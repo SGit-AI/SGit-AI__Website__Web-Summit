@@ -1,0 +1,150 @@
+{
+ "kind": "company",
+ "read_on": "2026-11-07",
+ "status": "draft (outreach@web-summit.silvio; to be verified by xray@web-summit.dinis)",
+ "run": {
+  "by": "outreach@web-summit.silvio, reading public pages with its own web tools; no OpenRouter search, no cost to the X-ray budget"
+ },
+ "incidents": [],
+ "leads": [],
+ "slug": "241-travel",
+ "subject": "241.travel",
+ "tagline": "A last-minute hotel club with free nights, an AI concierge, and a public rule that a person decides wherever money or data are involved.",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://241.travel",
+   "title": "241.travel: Spontan verreisen. Nächte geschenkt.",
+   "publisher": "241.travel",
+   "read_on": "2026-11-07",
+   "kind": "own-site"
+  },
+  {
+   "id": "s2",
+   "url": "https://241.travel/so-funktioniert-1-plus-1",
+   "title": "So funktioniert 1+1",
+   "publisher": "241.travel",
+   "read_on": "2026-11-07",
+   "kind": "own-site"
+  },
+  {
+   "id": "s3",
+   "url": "https://241.travel/ki-statement",
+   "title": "KI-Statement (July 2026)",
+   "publisher": "241.travel",
+   "read_on": "2026-11-07",
+   "kind": "own-site"
+  },
+  {
+   "id": "s4",
+   "url": "https://241.travel/fakten",
+   "title": "Fakten (22 July 2026)",
+   "publisher": "241.travel",
+   "read_on": "2026-11-07",
+   "kind": "own-site"
+  },
+  {
+   "id": "s5",
+   "url": "https://websummit.com/appearances/lis26/963c34a2-04cf-4641-ba8b-741a65fa0d64/241.travel",
+   "title": "241.travel at Web Summit Lisbon 2026 (ALPHA)",
+   "publisher": "Web Summit",
+   "read_on": "2026-11-07",
+   "kind": "event"
+  }
+ ],
+ "what_it_does": {
+  "text": "241.travel (T.B.G Ellmau OG, Tyrol) is a members-only last-minute hotel club in Europe: every deal includes at least one free night, from 1+1 to 6+1, with arrival from today to 20 days ahead and no prepayment. Hotels pay 8.88% commission only after the guest arrives; 510 partner hotels. Its concierge Rio answers members' messages using Anthropic or Google Gemini, with voice by ElevenLabs.",
+  "sources": [
+   "s1",
+   "s2",
+   "s4"
+  ]
+ },
+ "agents": [
+  {
+   "id": "a1",
+   "name": "Rio (241 concierge)",
+   "what": "An AI concierge that answers members' messages and drafts replies.",
+   "actions": [
+    "Understands enquiries and prepares replies",
+    "Speaks by voice through ElevenLabs"
+   ],
+   "sources": [
+    "s1",
+    "s3",
+    "s4"
+   ]
+  },
+  {
+   "id": "a2",
+   "name": "Back-office agents",
+   "what": "\"Agentic systems for backoffice\", in the Web Summit pitch; not described on the site.",
+   "actions": [
+    "Not described on the company's own pages"
+   ],
+   "sources": [
+    "s5"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "u1",
+   "name": "A member asks Rio for a 1+1 weekend",
+   "agent": "a1",
+   "who": "Club members",
+   "reach": [
+    {
+     "id": "r1",
+     "what": "Members' messages and voice",
+     "kind": "data",
+     "sources": [
+      "s3",
+      "s4"
+     ]
+    },
+    {
+     "id": "r2",
+     "what": "Model providers: Anthropic or Google Gemini (inputs not used for training, per the site); voice by ElevenLabs",
+     "kind": "outside",
+     "sources": [
+      "s4"
+     ]
+    }
+   ],
+   "mandate": [
+    {
+     "id": "m1",
+     "what": "Illustrative: answer and draft; a person sends and decides on bookings, money and data."
+    }
+   ],
+   "gap": [
+    {
+     "what": "The Web Summit pitch speaks of agentic back-office systems; the site's AI statement says people send and decide. Which is current is not stated.",
+     "reach": [
+      "r1"
+     ]
+    }
+   ],
+   "controls": [
+    {
+     "what": "\"Verschickt und verantwortet wird von Menschen\" (people send and are accountable)",
+     "sources": [
+      "s3"
+     ]
+    },
+    {
+     "what": "\"überall, wo es um dein Geld, deine Daten oder heikle Fälle geht, entscheidet bei uns ein Mensch\"",
+     "sources": [
+      "s3"
+     ]
+    }
+   ]
+  }
+ ],
+ "questions": [
+  "What do the back-office agents in the Web Summit pitch do, and can any of them act without a person?",
+  "Does Rio ever send a reply or make a booking by itself, or only draft?",
+  "Is there a record of each reply Rio drafted and the person who sent it?"
+ ]
+}

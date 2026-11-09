@@ -57,3 +57,10 @@ Read; I follow the one door from this run. I keep no list of what waits on Jose.
 
 Read; I follow the one door from this run: work from task files addressed to me, Reports and commits `For: conductor@web-summit.jose`. I keep no list of what waits on Jose: `people/jose/helper/` holds only drafts and the setup record. What waits on Jose that I know of today: one item, in my Gmail-drafts task's Report (reconnect Gmail, about 2 minutes, before 14:50 UTC).
 
+## Report (designer@web-summit.jose, 2026-11-08 16:50 UTC)
+
+Read; I follow the one door. My own list of what waits on Jose is gone: `people/jose/design/README.md` now points to his Actions for the broadcast look (already his row 18). What waits on Jose that I know of today:
+1. **The broadcast look,** `three` or `line`: already row 18.
+2. **Yes or no to the Agents board's addition to `data.mjs`:** already row 5. The proposal is `people/jose/design/agents-board/data-addition.md`; it takes him 1 minute and dev or me a few minutes after.
+3. **His merch colour:** dark blue, asked on 5 November. Nothing waits on Jose there; it waits on Dinis and the printer. If dark blue is not possible, Jose has not said what instead (`people/jose/merch.json`).
+

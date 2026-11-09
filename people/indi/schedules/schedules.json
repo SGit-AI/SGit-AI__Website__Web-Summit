@@ -1,0 +1,213 @@
+{
+  "about": "Every agent of Indi's, and when each one wakes up on its own. Times are UTC, which is the same as Lisbon and London time in November. Kept by conductor@web-summit.indi from the scheduled tasks in Indi's Claude account (checked 8 November 2026, 07:25 UTC) and people/indi/agents.json.",
+  "checked": "2026-11-08T07:25:00Z",
+  "scheduled": [
+    {
+      "id": "conductor",
+      "name": "Conductor",
+      "colour": "lav",
+      "status": "running",
+      "chat": "1 · conductor · runs your helpers, briefs you",
+      "times": [
+        "07:20",
+        "12:20",
+        "17:20"
+      ],
+      "cron": "20 7,12,17 * * *",
+      "what": "Runs your other helpers and keeps you up to date.",
+      "each": [
+        "Reads what changed on the team site",
+        "Reads your mentor's and helpers' notes",
+        "Keeps your folder and roster up to date",
+        "Adds your items to the stand-up"
+      ],
+      "reads": [
+        "The team site's changes",
+        "Your kit and the agents page",
+        "Messages addressed to you"
+      ],
+      "writes": [
+        "Your briefs (PDF)",
+        "Your roster (agents.json)",
+        "Board notes for you"
+      ],
+      "tells": "A short PDF brief and five lines in chat"
+    },
+    {
+      "id": "dashboard",
+      "name": "Dashboard",
+      "colour": "mint",
+      "status": "running",
+      "chat": "1 · dashboard · your to-do list",
+      "times": [
+        "07:30",
+        "12:30",
+        "17:30"
+      ],
+      "cron": "30 7,12,17 * * *",
+      "what": "Keeps your dashboard and your to-do list fresh.",
+      "each": [
+        "Reads the conductor's latest brief",
+        "Re-checks every task on your list",
+        "Updates your dashboard page"
+      ],
+      "reads": [
+        "Your briefs",
+        "The board's issues",
+        "The stand-up agenda"
+      ],
+      "writes": [
+        "Your to-do list (todo.json)",
+        "Your dashboard page"
+      ],
+      "tells": "Your to-do page, updated"
+    },
+    {
+      "id": "dev",
+      "name": "Developer",
+      "colour": "sky",
+      "status": "running",
+      "chat": "2 · dev · company pages (the factory)",
+      "times": [
+        "09:30",
+        "15:30"
+      ],
+      "cron": "30 9,15 * * *",
+      "what": "Builds what you and your conductor ask for, starting with the company pages.",
+      "each": [
+        "Picks the next job from you or the conductor",
+        "Builds it small and working",
+        "Writes what it tried and learned"
+      ],
+      "reads": [
+        "Your kit and brief",
+        "The company map",
+        "Messages for it"
+      ],
+      "writes": [
+        "Company pages (the factory)",
+        "Its run log"
+      ],
+      "tells": "Five lines in its chat"
+    },
+    {
+      "id": "social",
+      "name": "Social media",
+      "colour": "peach",
+      "status": "running",
+      "chat": "2 · social · daily post drafts (16:00)",
+      "times": [
+        "16:00"
+      ],
+      "cron": "0 16 * * *",
+      "what": "Drafts RiskMandate's LinkedIn posts, with picture ideas, following its plan to 12 November. You post them.",
+      "each": [
+        "Checks what changed at RiskMandate",
+        "Checks what happened at Web Summit",
+        "Checks the team's work",
+        "Drafts three posts with photo ideas"
+      ],
+      "reads": [
+        "riskmandate.ai",
+        "websummit.com",
+        "The team site"
+      ],
+      "writes": [
+        "Daily drafts (social folder)",
+        "The plan to 12 November"
+      ],
+      "tells": "Three lines: what to post today"
+    },
+    {
+      "id": "accountant",
+      "name": "Accountant",
+      "colour": "butter",
+      "status": "running",
+      "chat": "1 · accountant · what your helpers cost",
+      "times": [
+        "17:30"
+      ],
+      "cron": "30 17 * * *",
+      "what": "Measures what your helpers cost, and finds ways to spend less.",
+      "each": [
+        "Counts the tokens each helper used",
+        "Finds the biggest waste",
+        "Writes the day's token brief"
+      ],
+      "reads": [
+        "Each helper's cost record",
+        "The team site's changes"
+      ],
+      "writes": [
+        "The daily token brief (PDF)",
+        "The cost records (ledger)"
+      ],
+      "tells": "Total cost, biggest saving, what needs your yes"
+    }
+  ],
+  "oncall": [
+    {
+      "id": "messaging",
+      "name": "Messaging",
+      "colour": "rose",
+      "chat": "2 · messaging · the RiskMandate message",
+      "what": "Checks pages and drafts against the RiskMandate message."
+    },
+    {
+      "id": "factory",
+      "name": "Factory",
+      "colour": "mint",
+      "chat": "2 · factory · card loop, pipeline, outreach",
+      "what": "Writes each target company's analysis and how RiskMandate helps."
+    },
+    {
+      "id": "builder",
+      "name": "Builder",
+      "colour": "sky",
+      "chat": "2 · builder · Daniela's policies, setup guide",
+      "what": "Daniela's site, her learning space and her agents' policies."
+    },
+    {
+      "id": "designer",
+      "name": "Designer",
+      "colour": "peach",
+      "chat": "2 · designer · business cards and stickers",
+      "what": "Business cards and stickers for the summit."
+    },
+    {
+      "id": "ux",
+      "name": "UX",
+      "colour": "lav",
+      "chat": "2 · ux · dashboard design",
+      "what": "Makes your dashboard and pages easy to use."
+    },
+    {
+      "id": "recruiter",
+      "name": "Recruiter",
+      "colour": "butter",
+      "chat": "2 · recruiter · journalist shortlist",
+      "what": "A shortlist of journalists who could join. Names stay in its chat."
+    },
+    {
+      "id": "journalist",
+      "name": "Journalist",
+      "colour": "rose",
+      "chat": "3 · journalist · your reports",
+      "what": "Reports what matters to you. A timetable was proposed but never set up."
+    },
+    {
+      "id": "synthetic",
+      "name": "Synthetic users",
+      "colour": "sky",
+      "chat": "3 · synthetic · card tests (handed over)",
+      "what": "Invented people test your work. Handed over to the conductor."
+    },
+    {
+      "id": "vault",
+      "name": "Vault",
+      "colour": "mint",
+      "chat": "not started",
+      "what": "Your private vaults and their keys. Planned, not started."
+    }
+  ]
+}

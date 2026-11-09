@@ -1,15 +1,29 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 7 November 2026, 14:50 UTC (second run).
+Last run: 9 November 2026, 00:46 UTC (nineteenth run). Pushes only to workers/dev.venues.
+
+**Nineteenth run:** only dev@'s review b5a0da12 For: me since the eighteenth (it brought runs 17-18 onto dev). spec-share.md still a draft for Angelo's review, B2 still waits for security's review: nothing to build. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
+
+**Eighteenth run:** nothing new For: me since the seventeenth. spec-share.md still a draft for Angelo's review, B2 still waits for security's review: nothing to build. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
 
 ## Where things stand
-- `spec-venues.md` now exists. **Part A (the team's board) is approved**; **Part B (the venue map on PrompTugal.news) is "for review"**, so I build nothing of Part B and have not attached the newsroom.
-- Part A step 1 (the demo) and step 2 (board from a local copy and a queue, demo data) are already in `where.js`. This run: added the four buildings of decision b (MEO Arena, Pavilhão de Portugal, Oriente station, Vasco da Gama centre) to `PLACES`, using the exact labels in `venue-map.js`, so they can be chosen as a zone. `wzone` passes.
-- No real location is stored or shown. Security's review (decision d) is not recorded as done.
+- Spec-venues.md: Part A and Part B (as revised) are **approved**. Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing built, no real location anywhere.
+- **Part B1 item 1 shipped** on the newsroom's `dev` (a94b77f4c, For: dev@PrompTugal.dinis): `/summit/venue/`, plain SVG at build time, no script; buildings shaded from the programme's places; gate check added (`newsroom/build/features/venue.mjs`); words in `content/summit/venue.md`; data `assets/venue/venue-map.json` and `venue.css`. A stage's building is not in the schedule, so stages shade the whole campus (arena and four pavilions), never guessed.
+- `people/angelo/tools/venue-map.mjs` now takes `--newsroom <path>` and writes both copies (the team's venue-map.js came out unchanged). OpenStreetMap's API works from the session.
+- The newsroom's repository is attached with push; it moved to PrompTugal/PrompTugal__News__Website (redirect works).
 
-## Questions (for the desk, with a recommendation)
-1. Browser tests `tm` and `tmf` (Team and the machine) FAIL on current `dev` without my change (desktop and phone). They are dev.map@'s/dev@'s area. Recommendation: dev@ looks at them.
-2. `PLACES` still has "Hall 1-4" and "Stand" while the drawing's labels are "Pavilion 1-4" (decision b's list names pavilions). Renaming touches the seed data and `AREA_OF`; recommendation: rename in one small change with dashboard@, after a day of use as decision b says.
+## Part B1 is complete (newsroom live v0.1.650, For: dev@PrompTugal.dinis)
+- Item 3 shipped (7dce572c7): `assets/venue/venue.js` shades a reader's picks (`nr.schedule.v1`) on `/summit/venue/` and lists them by day, from a JSON block in the page; no network call (gate check added, also that the block holds no person). Unplaced sessions are listed as "not placed", never guessed. Words in `assets/venue/my-day.json`. Tested at 1280 (light) and 390 (dark).
+- Item 4 shipped (df21a88a0): My day links to the venue map (the summit page already did).
+- The venue page now runs one small script; `content/summit/venue.md` says so. journalist@'s article claim "the map has no script of its own" (026e945) is still true of the drawing, but the page itself now has venue.js: dev@PrompTugal.dinis / journalist@ may want to look.
 
-## Next run
-Check whether Part B says "approved" (then attach the newsroom and start with `venue.mjs`). If not: take the next Part A item that needs no real data and no vault, or do nothing but update this file.
+## Next
+- Share button (0o): once spec-share.md says approved, build it on the newsroom's dev (feature share.mjs, assets/share/, gate check, browser tests), For: dev@PrompTugal.dinis; under the desk's rule of 8 November (efab3a66) without waiting for its review, each commit saying what it changes and how to undo it. The four newspapers not read stay blank (bot check or 403 on two runs); no more retries unless Angelo asks.
+- Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing to build. Until then: keep the two copies of the map data matching, and check the newsroom's last two hours before any change.
+- `PLACES` rename (Hall to Pavilion) with dashboard@, after a day of use.
+
+## Questions (for the desk)
+1. Browser tests `tm` and `tmf` failed on dev before my change (dev.map@/dev@'s area), unchanged since last run.
+2. `PLACES` still has "Hall 1-4"/"Stand" vs the drawing's "Pavilion 1-4" (rename after a day of use, with dashboard@).
+3. Event dates in the newsroom's data include odd old ones (2022 dates under the MEO Arena place); the page filters to 6-13 November 2026. dev@PrompTugal.dinis / ontologist@ may want to look.
+4. My lane (people/angelo/policy/lanes.json) lists only people/angelo/proposals/WS-181/**, but the approved spec gives me people/angelo/venues/STATE.md, people/angelo/app/where*.js, venue-map*, people/angelo/tools/venue-map.mjs and my estimates file. For policy@PrompTugal.angelo: please widen it; until then each commit says Outside:.

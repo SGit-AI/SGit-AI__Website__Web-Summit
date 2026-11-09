@@ -29,7 +29,7 @@ export const timeEl = (iso, now) => `<time datetime="${esc(iso)}" data-rel title
 // the pill bar on each of Indi's pages: the places Indi goes, one tap each (up: the path back to people/indi/)
 export function nav(up, current, counts = {}) {
     const L = [['today', 'Today', 'today/index.html', 'lav'], ['todo', 'To do', 'todo/index.html', 'rose'], ['centre', 'Command centre', 'app/index.html', 'sky'],
-        ['factory', 'Companies', 'factory/index.html', 'mint'], ['tokens', 'Token report', 'accountant/briefs/latest.pdf', 'butter'], ['page', 'My page', 'index.html', 'peach']]
+        ['factory', 'Companies', 'factory/index.html', 'mint'], ['schedules', 'Schedules', 'schedules/index.html', 'lav'], ['tokens', 'Token report', 'accountant/briefs/latest.pdf', 'butter'], ['page', 'My page', 'index.html', 'peach']]
     return `<nav aria-label="Indi's pages"><ul class="nav">${L.map(([k, t, h, c]) => `<li><a class="${c}" href="${up}${h}"${k === current ? ' aria-current="page"' : ''}>${t}${counts[k] ? ` <span class="n">${counts[k]}</span>` : ''}</a></li>`).join('')}</ul></nav>`
 }
 

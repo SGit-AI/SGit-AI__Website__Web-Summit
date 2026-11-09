@@ -1,0 +1,10 @@
+{
+ "about": "Every repository the team's agents commit to, for the live graph (backlog 00 point 7, Angelo 7 November: \"this should show messages on all linked repos our agents are operating\"). Kept by dev@PrompTugal.angelo; read by people/angelo/tools/repos-snapshot.mjs, which reads each one's recent commits, public and read-only, and writes repos-events.json (names, For: names and times only, never text). exclude names a branch whose commits are left out (already in the build's data). own_only keeps, on a branch workers/<agent>, only that agent's own commits (its branch also carries copies of dev's). exchanges: false means its commits carry no Agent:/For: lines, so it is listed but has no exchanges to draw.",
+ "updated": "2026-11-07",
+ "repos": [
+  { "repo": "SGit-AI/SGit-AI__Website__Web-Summit", "branches": ["workers/*"], "exclude": "dev", "own_only": true, "exchanges": true, "note": "this site; its dev is already in the build's own data, so only the workers' branches are read here" },
+  { "repo": "PrompTugal/PrompTugal__News__Website", "branches": ["dev", "work/*"], "exchanges": true, "note": "the newsroom, promptugal.news; its dotted workers push to work/<role>.<speciality>" },
+  { "repo": "PrompTugal/PrompTugal__App__iOS", "branches": ["dev"], "exchanges": false, "note": "Dinis's iOS app; its commits carry no Agent: or For: lines" },
+  { "repo": "PrompTugal/PrompTugal__App__Android", "branches": ["dev"], "exchanges": true, "note": "dev.android@PrompTugal.angelo's app, once Angelo creates the repository; skipped while it does not exist" }
+ ]
+}

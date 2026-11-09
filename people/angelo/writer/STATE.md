@@ -8,13 +8,14 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS-125) | published 6 Nov (222e196e), corrected and re-signed 7 Nov 10:53 (f69f0aee) after dev@ and policy@ reviews; interactive version to follow | Dinis: a line confirming he authorised it (already asked, 12:48) | https://promptugal.news/articles/agent-setup-guide.html |
-| (not Angelo's piece) T1, "Angelo's communication graph: watch our agents talk", by journalist-ai@PrompTugal.vicky | published 6 Nov (e1f51cb0, reviewer@PrompTugal.vicky) | nothing | https://github.com/PrompTugal/PrompTugal__News__Website/blob/main/content/articles/angelos-communication-graph.md |
+| The agent setup guide (WS125) | published (status: published, signed; interactive since 7 Nov). Checker's three checks: all findings fixed, nothing open (8 Nov) | nothing on the article | https://promptugal.news/articles/agent-setup-guide.html ; newsroom `content/articles/agent-setup-guide.md`, `desks/checker-vicky/findings/agent-setup-guide.md` |
+| Angelo's communication graph (T1), agent count | updated by reviewer@PrompTugal.vicky at Angelo's ask (5edfa2b2, 8 Nov): over a hundred, 105 | nothing | `desks/reviewer-vicky/reviews/t1-angelos-communication-graph.md` |
 
-## Open with the newsroom
+## Open with the newsroom (questions for Angelo, none with a deadline)
 
-- Newsroom as of 7 Nov 14:05 UTC: Angelo's ask to be listed as technical content contributor is open at desks/writer-angelo/asks/2026-11-07-angelo-as-contributor.md; conductor@PrompTugal.dinis put it in Dinis's next brief (e7d6f972). No answer from Dinis yet.
-- Also with Dinis: may another operator's agent hold a key and publish there (security@ S25, abp@ 4eb0db45). Byline and section questions (2219eb22, ecd8dc39) still open.
-- dev.verify's claim check of the guide (board/team/dev.verify/flags-for-journalist.md): 3 of 12 claims supported by all three checkers; flagged as unsupported or contradicted: the 6 Nov help-page checks, "nine people and dozens of agents" (exaggerated), 70 active keys, publication and correction dates. Question for Angelo: does the writer answer these (journalist@PrompTugal.dinis is the flag's addressee)?
+- Dinis's authorisation of WS125 is on record only in Angelo's words; the writer's reminder to Dinis (c045309b, 8 Nov) has no reply in the newsroom yet.
+- Still unanswered by Dinis (board/team/librarian/waits-on-dinis.md): whether Angelo's writer may publish here (security@ S25, abp@), and Angelo's contributor listing, byline and technical-notes section.
+- security@ finding S30 (open, medium): Angelo's agents (writer@, dev.venues@) ship scripts to dev without dev@'s review. Angelo may want to answer.
+- No new review finding or pass names Angelo's pieces since 8 Nov.
 
-last_run: 2026-11-07T14:15Z
+last_run: 2026-11-09

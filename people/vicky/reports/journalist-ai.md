@@ -114,3 +114,53 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - applied SA16: P1 to P3 word for word in my prompts file and in my scheduled task's prompt. applied SCHED-7NOV: my task now runs at 08:18, 12:18 and 20:18 UTC. applied SA15: every draft from now has an image wired for the cover (T1 to T5 and S25 already have one). SA13: no draft of mine is open; T1 to T5 and S25 are published, and their reviews' "Fix first" dates from before the fixes.
 - Nothing new on my beat (S25 is published). The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
 - state: ok; done: SA13, SA15, SA16, SCHED-7NOV applied; next: new AI or robotics storylines; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 20:20 UTC (scheduled run)
+
+- No hold. decisions.md read (the revised SCHED-7NOV carries the conductor's title and Agent line); prompts file re-read, it agreed with my memory. applied SCHED-7NOV (four rounds): my task now runs at 08:18, 12:18, 16:18 and 20:18 UTC; prompts file updated. SA13: no open review of mine (T1 to T5 and S25 are published).
+- Draft S26, "Two editions a day: PrompTugal.news starts a daily newsletter" (517 words, newsroom v0.1.627). Sources, read 7 Nov: the newsletter's page, its morning and evening editions, the evening email version, newsletter.json. Cover: a summary card of the two editions (SVG). Note: the page says subscribers are handled by "the Web Summit team"; the email says the newsletter is "not affiliated with Web Summit", so the draft says it is the team behind PrompTugal.news. How to subscribe is not published.
+- Draft S27, "A map of Web Summit's buildings, and what each holds" (482 words, v0.1.628). Sources, read 7 Nov: the venue map page, venue-map.json, OpenStreetMap's licence page. Cover: a bar chart of the page's own session counts by building (SVG). For dev@PrompTugal.dinis: the map's building labels are about 9px at 390px wide, and "Oriente station" overlaps its outline, so I did not use a screenshot of it.
+- The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
+- state: ok; done: S26 and S27 drafted, SCHED-7NOV (four rounds) applied; next: review; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, about 21:45 UTC (S27 review fixes)
+
+- S27, reviewer@PrompTugal.vicky's two fact fixes, at Vicky's word: "the page runs no script" and "nothing is stored about the reader" replaced by what the build code says (the map itself is plain SVG drawn in advance, with no script of its own; the site's usual scripts still run, 21 script files as served, checked); "Centro Vasco de Gama" corrected to "the Vasco da Gama centre" in the text, alt text and chart label (as venue-map.json names it). The heading "Built to be safe to open" made neutral, as it leaned on the same claim. venue.mjs added as a source. Nothing else changed; status left at fix for the reviewer. Newsroom v0.1.644, For: reviewer@PrompTugal.vicky.
+- For dev.venues@PrompTugal.angelo (via the reviewer's note): the venue page's own "runs no script" sentence and its "Centro Vasco de Gama" spelling overstate and misspell in the same way.
+- The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there. No new storyline taken.
+- state: ok; done: S27 fixes; next: re-review; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 06:05 UTC (scheduled run)
+
+- No hold. decisions.md read (the new entries carry the conductor's title and Agent line); prompts file re-read, it agreed with my memory once SCHED-WS was added.
+- applied SCHED-WS: writing task trig_014T4B2EkggPSUDazhhJZ1Gf at 06:03, 11:03, 15:03, 19:03 UTC; fix-only task trig_01FpXptzb91YorA9vNLuwjUu at 07:08, 12:08, 16:08, 20:08 UTC; both match. applied REMOTE-WS: step 2 replaced word for word in both tasks (trig_014T4B2EkggPSUDazhhJZ1Gf, trig_01FpXptzb91YorA9vNLuwjUu) and in my prompts file, which now also holds the fix-only prompt. Read SA18 to SA21.
+- Nothing new on my beat; S26 and S27 are published; no Fix first open. Remote set and confirmed before pulling.
+- state: ok; done: SCHED-WS and REMOTE-WS applied; next: new AI or robotics storylines; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 11:05 UTC (scheduled run)
+
+- state: idle
+
+## Sun 8 Nov 2026, 15:10 UTC (scheduled run)
+
+- No hold. decisions.md read; prompts file re-read, it agreed with my memory apart from the new times, now added. applied SA22: writing at :09 past 06, 11, 15, 19 UTC (trig_014T4B2EkggPSUDazhhJZ1Gf) and fix-only at :14 past 07, 12, 16, 20 UTC (trig_01FpXptzb91YorA9vNLuwjUu), both as the conductor set them. applied SA18: the fix-only task runs as given (silent when nothing to fix). applied P17: if Vicky replaces this session, I write the hand-over note in people/vicky/handover/ first.
+- Nothing new on my beat (S28 is journalist-connections', now published). Remote set and confirmed before pulling.
+- state: ok; done: SA22, SA18, P17 confirmed; next: new AI or robotics storylines; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 19:15 UTC (scheduled run)
+
+- No hold. decisions.md and STYLE.md read; prompts file re-read, it agreed with my memory. applied HANDOFF-FIX: step 5 of my writing task (trig_014T4B2EkggPSUDazhhJZ1Gf) now ends ", For: reviewer@PrompTugal.vicky (the review hand-off).", word for word, and so does the copy in my prompts file. Added standing answer 23 to my prompts file (SA23).
+- Draft S29, "Who builds the parts of an AI agent? Startups at Web Summit" (508 words, newsroom v0.1.738, For: reviewer@PrompTugal.vicky). Source, read 8 Nov: Web Summit's featured startups list (the eight on its first of 26 pages, each in its own words); links to the five existing company pages. Cover: a layered diagram (SVG), phone-checked. Not checked: the companies' own claims ("leading", "first"), attributed and flagged.
+- S30 is journalist-connections' (Connections beat). Remote set and confirmed before pulling.
+- state: ok; done: HANDOFF-FIX and SA23 applied, S29 drafted; next: review; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 20:20 UTC (fix-only run: S29)
+
+- S29 revised after the reviewer's Fix first (54a2b751): the eight descriptions and countries now cite each company's own Web Summit page (all eight opened today, each carrying the quoted words), linked from the featured list at its current address; Beyond Presence's link to agents is stated as our reading (in "In short", the story and the summary). Wording fixes as suggested (Acrab's "purpose-built chips", Polygraf's own words, the "leading/first" caveat dropped, the image's bottom layer named "The base"). Image re-checked at phone width. 538 words. Newsroom v0.1.743, For: reviewer@PrompTugal.vicky.
+- state: ok; done: S29 revised; next: re-check by the reviewer; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 00:15 UTC (OVERNIGHT-9NOV, batch A1)
+
+- All 11 A1 companies written and pushed for review, status: in-review, in three pushes (newsroom v0.1.755, 8f0a358d, v0.1.756): cisco-outshift, datadog, deque, directus; elastic, exa, genspark, jetbrains; keewano, launchdarkly, linux-foundation-aaif. Backlog rows set "in review". Every source read 9 Nov: each company's own site for About (SA23: two or three plain sentences, claims marked, sources below) and Web Summit's own pages (appearance, event partners list, session pages with times) for "At Web Summit 2026".
+- Notes for the reviewer: Genspark's own site showed a security check (403, also in a browser), so its About rests on its Web Summit page and says so. The AAIF press conference is marked "Media only" because its page says "Media event only". Cisco's Portugal Tech Week showcase was left out (a side event, not Web Summit). Deque is not on the event partners list, so only its session is listed. Speakers named by role only, as on Web Summit's pages.
+- state: ok; done: batch A1, 11 of 11 in review; next: review fixes at my fix-only runs; ask: none; run: scheduled

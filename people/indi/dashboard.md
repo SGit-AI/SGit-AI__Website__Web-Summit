@@ -10,6 +10,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 ```cards
 **Today: your day on one screen** | today/index.html | What to do first, the next stand-up, what changed since you last looked, and what each of your agents is doing.
 **To do: everything left** | todo/index.html | Your tasks by when they are due (late ones in pink), the decisions waiting for you, and the jobs that are not on the board.
+**Schedules: who wakes when** | schedules/index.html | Each of your helpers on one timeline, with what it does and when it runs.
 **Command centre** | app/index.html | Your tasks by topic, search, and Ask Claude. Use it to pick up a task or ask a question.
 **Companies we want to meet** | factory/index.html | One picture page per company: what it does, its risks from AI agents, and how RiskMandate helps. Check each before you use it.
 **Today's token report** | accountant/briefs/latest.pdf | What your agents cost today, how to spend less, and the decisions it needs from you. New every day at 5:30 pm.
@@ -18,7 +19,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** a quiet Saturday. Two quick yes-or-no answers for your accountant helper, and the readers' test on PromptUGAL. Tomorrow: your key on each phone and iPad. Your GitHub name and your title still wait on Dinis. Everything else is on [your to-do list](todo/index.html).
+**Right now:** at the 6 pm stand-up, ask Dinis to confirm two things: the stand number for tonight's LinkedIn post, and the token rules (how your helpers save on cost) for the whole team. Then post at 6 pm. Before Monday evening: give your helper the 'lead to article' prompt. The summit opens tomorrow evening. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 

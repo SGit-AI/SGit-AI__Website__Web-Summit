@@ -137,3 +137,43 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Tables rebuilt from board-health.md (07:40), the 12:00 agenda and the board's front matter; WS-31 stays out at your word. New in "To follow up": WS-166 (keys on every device, due Sun 8, no owner); WS-177, WS-163 and WS-153 now marked overdue. Still open for you: the 5 Nov newsroom line (overdue) and the guide's token step (Dinis's 12:00 item on WS-170 asks the same).
 - Story candidates refreshed: 20 stories, 58 sources, all shown as links (desks/curator/README.md, 07:46 UTC).
 - state: ok; done: tables and stories refreshed, P22 and P27 applied; next: 17:45 wake; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 17:55 UTC (wake)
+
+- Read people/vicky/decisions.md (47541d70; ten new conductor commits since this morning, all with the Agent: line the reworded guard asks for, pushed by riskmandate-vicky). No HOLD.md; session key present. Re-read prompts/dashboard.md (P2): it matches. **Applied SA16**: P1 to P3 word for word in prompts/dashboard.md and in both of my scheduled tasks' prompts (I changed the tasks too).
+- Tables rebuilt (board-health.md 07:40, the 18:00 agenda, the 7 Nov brief, board front matter). New in "Needs me": Dinis's and your yes or no on parking the late unowned issues (18:00 agenda). Brief items 1 and 2 (the guard, the shortlist push) are done, so not shown. "To follow up" is now in due order.
+- Story candidates refreshed: 21 stories, 59 sources, all links (desks/curator/README.md, 11:50 UTC).
+- state: ok; done: SA16 applied, tables and stories refreshed; next: 07:50 wake on 8 Nov; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 07:55 UTC (wake)
+
+- Read people/vicky/decisions.md (212e084d; seven new conductor commits since last night, each with the Agent: line, pushed by riskmandate-vicky). No HOLD.md; session key present. Re-read prompts/dashboard.md (P2): it matches. **Applied SA21**: the Live AI Office link is on the "My agents" line (dev put it there) and stays through every rebuild; I touched nothing of dev's office pages.
+- Tables rebuilt (board-health.md 07:40, board front matter, the 18:00 agenda; no 12:00 agenda or new brief yet). The parking yes or no (team-collaboration's note 07:42: not taken in 24 hours) stays first in "Needs me", now overdue. WS-32 is now overdue; WS-168 and WS-166 are due today.
+- Story candidates refreshed: 23 stories, 61 sources, all links (desks/curator/README.md).
+- state: ok; done: SA21 applied, tables and stories refreshed; next: 17:45 wake; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 12:30 UTC (prompted: a shorter dashboard)
+
+- Vicky's word in chat: make her dashboard a decision page. Folded by default: earlier releases (the latest 3 stay visible), the agent details text, "From your mentor", and "Team follow-ups" (5). The agent network graph, "Needs me" and her own follow-ups (WS-153, WS-163) stay visible. Files: people/vicky/dashboard.md, people/vicky/prompts/dashboard.md (the layout rule), and my two scheduled tasks.
+- For dev@web-summit.dinis (owner of admin/build/build.mjs): a small opt-in change there. `render()` knows a block `:::details Title` ... `:::`, and a person's dashboard is folded only if its front matter says `compact: true` (only Vicky's does). Checked old code against new, built back to back: no other page's HTML or markdown changed (only build timestamps in generated JSON).
+- state: ok; done: dashboard folded, layout rule saved in prompts and both tasks; next: 17:45 wake; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 12:40 UTC (prompted: vault open, Office link)
+
+- Vicky's word in chat: "My vault" stays open by default with its read-only buttons visible (it is a plain section, never in a fold; the rule is now in prompts/dashboard.md and both tasks). A prominent "Open the Live AI Office →" link now sits under the agent network graph in "My agents", to the existing office/index.html; the Office is not embedded, and the link on the "My agents" links line stays (standing answer 21).
+- For dev@web-summit.dinis: one more line in the opt-in change to admin/build/build.mjs: a dashboard's front matter `office_link: <path>` (only when `compact: true`) adds that link by the graph. Only Vicky's dashboard sets it.
+- state: ok; done: Office link added, vault confirmed open, rules saved in prompts and both tasks; next: 17:45 wake; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 13:00 UTC (prompted: the vault opens by itself for Vicky)
+
+- Vicky's word in chat (option 1): in "My vault" the read-only vault app now opens by itself, only in a browser where the "Who are you?" pick (localStorage `ws.me`) is vicky, and only when the section scrolls into view (nothing loads at page start; not with Save-Data on). Everyone else keeps click-to-load. On a phone the frame is 60% of the screen high with a tap-to-use layer. Same published read key, same three buttons. Files: people/vicky/dashboard.md, admin/build/build.mjs, prompts/dashboard.md and both tasks.
+- For dev@web-summit.dinis (owner of admin/build/build.mjs): the `vault-app` fence takes an optional word `auto` (only Vicky's dashboard uses it). Checked old code with the old page against new code with the new page, built back to back: nothing outside people/vicky changed, Jose's vault frame included.
+- state: ok; done: auto-load for Vicky only, rule saved in prompts and both tasks; next: 17:45 wake; ask: none; run: prompted
+- 13:20: the tap-to-use hint on the phone is now a small dark pill, so it stays readable over the vault (people/vicky only; admin/build/build.mjs, auto branch).
+
+## Sun 8 Nov 2026, 17:55 UTC (wake)
+
+- Read people/vicky/decisions.md (cd2ecbc0; seven new conductor commits since this afternoon, each with the Agent: line, pushed by riskmandate-vicky). No HOLD.md; session key present. Re-read prompts/dashboard.md (P2): it matches. Nothing new was addressed to the dashboard.
+- **URGENT, for Vicky before the 18:00 stand-up:** Indi's conductor published /lead-to-article/ (WS-168) and asks "does this match your proposals?"; it is item "From a conversation with a lead to an article" on the 18:00 agenda (options: adopt as written, adopt with changes, not yet). pm@ reads it as a match (reports/pm.md, 17:40). It is the first row of "Needs me".
+- Tables rebuilt (board front matter, the 18:00 agenda, pm's 17:40 check). WS-168 moved to Indi's conductor in "Team follow-ups". Stories refreshed: 24 stories, 62 sources, all links (desks/curator/README.md). Vault, Office link and folds unchanged.
+- state: ok; done: tables and stories refreshed, URGENT lead-to-article decision surfaced; next: 07:50 wake on 9 Nov; ask: Vicky's yes, changes or not yet on /lead-to-article/ (I'd say adopt, as pm@ reads it); run: scheduled

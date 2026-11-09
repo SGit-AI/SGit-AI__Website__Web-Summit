@@ -1,37 +1,41 @@
 # Watcher: latest run
 
-**Run:** 2026-11-07 12:15 UTC (scheduled), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
+**Run:** 2026-11-08 22:15 UTC (scheduled), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
 
-**Range:** `dev` from `6ad2db9` to `641fbc1`.
+**Range:** `dev` from `fb659d1` to `524075d`.
 
 ## Who committed
 
-186 commits: 68 CI releases (counted), 1 by the watcher itself, none without an agent name, and 117 by agents: Angelo 57, Vicky 31, Dinis 15, Jose 9, Silvio 3, Indi 2. Security's 11:50 review (`f4a9fbe`) covers 105 of them.
+152 commits: 54 CI releases (counted), 1 by the watcher itself, none without an agent name, and 97 by agents: Vicky 38, Angelo 34, Silvio 11, Indi 7, Dinis 4, Jose 3. None is reviewed by security.
 
-## Open actions (re-checked every run)
+## A-06: seven done, one left
 
-1. **A-06, open for the ninth run: progress.** Your conductor changed the hourly drain's stored prompt to count only (11:27, C30), so it no longer pushes a vault. Still for you: the conductor's wake, dev, dashboard and vault prompts are the old text (automation's also lacks the one-door step, and the watcher's own lacks the measure step, which it does anyway), and the one-day schedules you approved (C30) are not set yet. The texts and times are in `people/jose/schedules.md`.
-2. **A-14, sixth run: dev@web-summit.dinis.** No commit in about 36 hours. For conductor@web-summit.dinis.
-3. **A-15, fifth run: dashboard@web-summit.dinis.** Nothing since 07:11 yesterday. For conductor@web-summit.dinis.
-4. **A-20, new: inbox@web-summit.silvio**, quiet again since 04:20 (four mail-check slots). For conductor@web-summit.silvio: have it log its runs.
+Dashboard (20:12) and automation (20:11) now have their pointers, and the hourly drain task was disabled at 17:21, as planned. **Only dev is left:** it still runs the 3 November text at 09:30 and 15:30. For you: paste the pointer into the dev task and set it to every two hours, 07:30 to 21:30. The task file is still marked open: your conductor marks it done.
 
-Closed: A-18 (Angelo's writer runner: its work shows under the writer's name, 7 commits this morning) and A-19 (Angelo's dashboard agent, 10:29).
+## Other open actions
+
+1. **A-21, fifth run, partly recovered: Dinis's account is back.** His conductor's own words: "back after 27 hours offline". His dashboard (20:08), abp (20:13), conductor (20:29) and mentor (20:43) committed again. Not yet back: dev, security, journalist, sgit, pulse, project-manager, designer and xray. **Security has not reviewed anything since its 11:51 wake yesterday**, so about 35 hours of commits wait for its 23:50 review.
+2. **A-14, twelfth run: dev@web-summit.dinis**, no commit in about 70 hours, even after the account came back.
+3. **A-23, fourth run: inbox@web-summit.silvio**, about 28 hours.
+4. **A-24, second run: procurement@web-summit.silvio**, missed its 07:30, 12:30 and 17:30 runs today.
+
+Closed: A-15 (Dinis's dashboard agent committed at 20:08).
 
 ## What to look at
 
-1. **High, open for the tenth run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address".
-2. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`), `board/WS-26-*` line 16.
-3. **Note: new branches outside `claude/*`.** Angelo's worker agents push to `workers/dev.map` (2 commits) and `workers/vault.kms` (1 commit), not to `dev`. They touch only `people/angelo/` files and match no rule, but CLAUDE.md says agents push to `dev` only. For Angelo's conductor to confirm.
-4. **Fixed:** the vault audit now treats PrompTugal-style agent names as names, not addresses (`326b690`), the gap raised on 6 November. Its two phone-rule matches (lines 41 and 42) are its own self-test samples.
-5. **Info:** you approved a one-day trial of the watcher on Sonnet (C30). You switch the model in this session; this run still ran on Opus (its ledger line), so the trial has not started. The accountant compares it tomorrow morning.
+1. **Note, raised by Dinis's conductor for security:** its drain found three unsigned messages on a lane of one of Silvio's outreach agents. A lane token sealed to that agent's key was used without its signature (its 20:29 commit, WS-170, WS-184). The watcher only relays where it is written.
+2. **High, open for the sixteenth run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address".
+3. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`), `board/WS-26-*` line 16.
+4. **Note:** shared code by Silvio's dev agent (`admin/tools/xray-jobs.mjs`, `assets/xray.js`, `assets/xray-status.js` and two more) and Angelo's dashboard agent (`.gitignore`). Listed, not judged.
 
 ## The checks
 
-- **Jose's agents:** 9 commits (conductor 5, dashboard, helper, dev, vault), every one with `Reviewed-by`. All their scheduled tasks fired on time.
-- **Email rule:** 183 lines in 60 commits, all PrompTugal-style agent names; none is a real mail domain.
-- **Other branches:** nothing new on `main`; the two `workers/*` branches above.
+- **Jose's agents:** 3 commits (conductor, dashboard, vault), every one with `Reviewed-by`. All their scheduled tasks fired on time.
+- **Email rule:** about 415 lines in about 52 commits by the watcher's own scan (its agent commits, first-parent diffs, exempting only web-summit names), all PrompTugal-style agent names; the vault audit exempts them.
+- **Other branches:** nothing new on `main`.
+- **The Sonnet trial for the watcher has not started:** this run ran on Opus (its ledger line).
 
 ## Could not check
 
-- Scheduled tasks in other people's accounts; work in other repositories (the newsroom).
+- Dinis's account and other people's scheduled tasks; work in other repositories (the newsroom).
 - The agents' run logs in the public vault `aym98gsm`: no `sgit` client yet.

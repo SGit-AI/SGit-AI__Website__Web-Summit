@@ -85,3 +85,35 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 - No fix-first drafts of mine (S24: Ready, published with its cover at Vicky's word). Nothing new on my beat in the curator's README (11:50 UTC): S25 is AI and robotics. No draft.
 - Applied SA13, SA15 (from my next draft), SA16 (prompts file and scheduled prompt changed) and SCHED-7NOV: my task now runs at 08:00, 12:00 and 20:00 UTC (next about 20:03). SA17 is for the reviewer.
 - state: idle; done: checks, updates applied, nothing new on the beat; next: the 20:00 UTC run; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 20:10 UTC (scheduled run)
+
+- Applied SCHED-7NOV (four rounds): my task now runs at 08:00, 12:00, 16:00 and 20:00 UTC (cron `0 8,12,16,20 * * *`), prompt kept; prompts file updated. No fix-first drafts; nothing new on my beat (S25 to S27 are AI and robotics). Newsroom remote reset from the old address again; nothing pushed there.
+- state: idle
+
+## Sun 8 Nov 2026, 05:50 UTC (scheduled run)
+
+- Applied REMOTE-WS: step 2 replaced word for word in both my tasks, trig_01SpLzX33tb8C82iAaPMBy3d (writing, now 05:45, 10:45, 14:45, 18:45 UTC per SCHED-WS) and trig_01ENwR7p1ggLZHK2RcyBPTud (fix-only, 06:50, 11:50, 15:50, 19:50 UTC); prompts file updated, with the fix-only prompt added. No fix-first drafts; nothing new on my beat. state: idle
+
+## Sun 8 Nov 2026, 10:50 UTC (scheduled run)
+
+- state: idle
+
+## Sun 8 Nov 2026, 14:55 UTC (scheduled run)
+
+- Applied SA22: my new times (writing :51 past 05, 10, 14, 18 UTC; fix-only :56 past 06, 11, 15, 19 UTC) are in my prompts file, added by the conductor; tasks unchanged by me. state: idle
+
+## Sun 8 Nov 2026, 18:55 UTC (scheduled run)
+
+- state: idle
+
+## Sun 8 Nov 2026, 20:00 UTC (fix-only run)
+
+- Applied HANDOFF-FIX: step 5 of my writing task (trig_01SpLzX33tb8C82iAaPMBy3d) now ends ", For: reviewer@PrompTugal.vicky (the review hand-off)."; prompts file copy updated and my 5 Nov rule (For: newsroom@web-summit.dinis) marked superseded; STYLE.md re-read (the reviewer's new hand-off line is in). No draft re-pushed. Also confirming SA18 (my fix-only task trig_01ENwR7p1ggLZHK2RcyBPTud runs) and SCHED-WS (both tasks at the conductor's times). No fix-first drafts.
+- state: ok; done: HANDOFF-FIX applied, SA18 and SCHED-WS confirmed; next: writing run 05:51 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 00:25 UTC (OVERNIGHT-9NOV, batch S1)
+
+- All 11 companies of batch S1 written and pushed with status: in-review, For: reviewer@PrompTugal.vicky (newsroom v0.1.757 to v0.1.759): 0xbow, 1password, air-apps, airia, aisle, akamai, arima, atlassian, c4ail, cerebras, cognizant, in desks/journalist-vicky/companies/. Backlog rows set to "in review". Every source read tonight.
+- Not confirmed: Akamai's own site refused the request (403), so its About rests on its own description on Web Summit's page (said in the file). Sessions come from Web Summit's session pages found through the newsroom's data; the appearance pages do not list sessions, so each file says Web Summit may list more. No "Media only" label on any of these sessions. Done well before 04:30.
+- state: ok; done: batch S1 complete, 11 in review; next: the 05:51 UTC writing run; ask: none; run: scheduled

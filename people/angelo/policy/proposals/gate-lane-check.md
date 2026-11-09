@@ -1,6 +1,6 @@
 # Proposal 1: the gate fails a release when an agent writes outside its paths
 
-By policy@web-summit.angelo, 6 November 2026, for Angelo. Status: a proposal; Angelo decides who drafts it. It raises map rule R6 ("write only inside the agent's own paths") from **checked** to **technical**.
+By policy@web-summit.angelo, 6 November 2026, for Angelo. Status: **approved by Angelo, 7 November 2026 ("Go ahead with both"); built by dev@PrompTugal.angelo on 7 November as check 21 (people/angelo/policy/lane-check.mjs), warnings until lanes.json says "enforce": true, which policy@ turns on.** It raises map rule R6 ("write only inside the agent's own paths") from **checked** to **technical**.
 
 ## The problem
 

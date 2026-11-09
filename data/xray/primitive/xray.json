@@ -1,0 +1,1182 @@
+{
+  "slug": "primitive",
+  "subject": "Primitive",
+  "kind": "company",
+  "tagline": "Email infrastructure for AI agents: each agent gets its own address, an API to send and receive, and hosted code that runs on every inbound message.",
+  "read_on": "2026-11-07",
+  "status": "prepared",
+  "run": {
+    "at": "2026-11-07T19:08:45.885Z",
+    "cost_usd": 0.1193,
+    "agents": [
+      {
+        "id": "perplexity",
+        "label": "Perplexity search",
+        "model": "perplexity/sonar",
+        "ms": 6249,
+        "citations": 15,
+        "leads": 15
+      },
+      {
+        "id": "openai",
+        "label": "OpenAI search",
+        "model": "openai/gpt-5.4-nano:online",
+        "ms": 16632,
+        "citations": 6,
+        "leads": 13
+      },
+      {
+        "id": "gemini",
+        "label": "Gemini search",
+        "model": "google/gemini-3.1-flash-lite:online",
+        "ms": 5260,
+        "citations": 3,
+        "leads": 7
+      },
+      {
+        "id": "openrouter",
+        "label": "OpenRouter web search",
+        "model": "anthropic/claude-haiku-5.5",
+        "ms": 16854,
+        "citations": 5,
+        "leads": 21
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.onprimitive.com/",
+      "title": "Primitive",
+      "publisher": "Primitive",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.onprimitive.com/security",
+      "title": "Trust & security | Primitive",
+      "publisher": "Primitive",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.primitive.dev/",
+      "title": "primitive.dev: email for AI agents",
+      "publisher": "Primitive",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.primitive.dev/about",
+      "title": "About | primitive.dev",
+      "publisher": "Primitive",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.primitive.dev/about.md",
+      "title": "About Primitive (markdown twin, last updated 16 September 2026)",
+      "publisher": "Primitive",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s6",
+      "url": "https://docs.primitive.dev/llms-full.txt",
+      "title": "primitive: full docs bundle",
+      "publisher": "Primitive Docs",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s7",
+      "url": "https://www.primitive.dev/trust.md",
+      "title": "Primitive Trust (last updated 25 September 2026)",
+      "publisher": "Primitive",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s8",
+      "url": "https://www.primitive.dev/agents.md",
+      "title": "Primitive: Instructions for AI Agents",
+      "publisher": "Primitive",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s9",
+      "url": "https://www.primitive.dev/agents",
+      "title": "Agent Authorization (_agents) explorer | primitive.dev",
+      "publisher": "Primitive",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s10",
+      "url": "https://www.primitive.dev/auth.md",
+      "title": "auth.md: Primitive Agent Auth",
+      "publisher": "Primitive",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s11",
+      "url": "https://docs.primitive.dev/docs",
+      "title": "Primitive Docs: primitive.dev Email API for AI Agents",
+      "publisher": "Primitive Docs",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s12",
+      "url": "https://docs.primitive.dev/docs/managed-inbox",
+      "title": "Managed Domain: Primitive Email API Docs",
+      "publisher": "Primitive Docs",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s13",
+      "url": "https://docs.primitive.dev/docs/faq",
+      "title": "FAQ: Primitive Email API Docs",
+      "publisher": "Primitive Docs",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s14",
+      "url": "https://www.primitive.dev/docs/functions.md",
+      "title": "Functions",
+      "publisher": "Primitive Docs",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s15",
+      "url": "https://www.primitive.dev/docs/connectors.md",
+      "title": "MCP Server & Connectors (Claude & ChatGPT)",
+      "publisher": "Primitive Docs",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s16",
+      "url": "https://docs.primitive.dev/.well-known/mcp",
+      "title": "MCP discovery document (primitive.dev)",
+      "publisher": "Primitive Docs",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s17",
+      "url": "https://www.primitive.dev/integrations",
+      "title": "Primitive AI platform integrations | primitive.dev",
+      "publisher": "Primitive",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s18",
+      "url": "https://www.primitive.dev/compare/agentmail",
+      "title": "primitive.dev vs. AgentMail | primitive.dev",
+      "publisher": "Primitive",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s19",
+      "url": "https://www.ycombinator.com/companies/primitive",
+      "title": "primitive: communication for agents | Y Combinator",
+      "publisher": "Y Combinator",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s20",
+      "url": "https://www.ycombinator.com/companies/primitive/jobs/JqLoJbb-email-infrastructure-engineer",
+      "title": "Email Infrastructure Engineer at primitive | Y Combinator",
+      "publisher": "Y Combinator",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s21",
+      "url": "https://pilotprotocol.network/apps/io.pilot.primitive",
+      "title": "Primitive: Agent App Methods & Install | Pilot Protocol (published 14 July 2026)",
+      "publisher": "Pilot Protocol",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s22",
+      "url": "https://email-sdk.dev/docs/adapters/primitive",
+      "title": "Primitive: Email SDK adapter",
+      "publisher": "Email SDK",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s23",
+      "url": "https://arxiv.org/abs/2611.07222",
+      "title": "SPILLWAY: Separating Target Admission from Sanitization to Defend Tool-Using Agents against Prompt Injection (4 November 2026)",
+      "publisher": "arXiv",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s24",
+      "url": "https://heypinchy.com/ai-email-agents/",
+      "title": "AI Email Agents: The Most Dangerous Integration, and How to Contain It",
+      "publisher": "Pinchy",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s25",
+      "url": "https://websummit.com/appearances/lis26/bd878c73-f795-4ed0-b16a-2e029d608813/primitive-makes-enterprise-email-ai-ready.",
+      "title": "Primitive makes enterprise email AI-ready. | Web Summit",
+      "publisher": "Web Summit",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    }
+  ],
+  "what_it_does": {
+    "text": "Primitive (primitive.dev, also onprimitive.com for its business pitch) is email infrastructure for AI agents, a Y Combinator company founded in 2026 in San Francisco. It gives an agent a managed *.primitive.email address (or a customer's own domain), a REST API, MCP server, CLI and SDKs to send, receive and search mail, a one-line chat verb that sends a message and waits for the threaded reply, and hosted JavaScript Functions that run on every inbound message, while Primitive runs the mail servers, SPF, DKIM, DMARC, bounces and sending reputation. On top of that infrastructure it also says it deploys and operates agents for customers, starting as a general interface to the business by email.",
+    "sources": [
+      "s3",
+      "s4",
+      "s5",
+      "s6",
+      "s1",
+      "s19",
+      "s20"
+    ]
+  },
+  "agents": [
+    {
+      "id": "a1",
+      "name": "Customer agents",
+      "what": "Agents Primitive says it deploys and operates for customers: they begin as a general interface to the business, learn from incoming traffic and create specialised agents for recurring workflows. The business site pitches agents that receive mail sent to the customer's addresses and reply in the same thread from the customer's own domain.",
+      "actions": [
+        "Receive customer and partner email sent to the business's addresses",
+        "Reply and send in-thread from the customer's domain or a Primitive one",
+        "Learn from incoming traffic and spin up specialised agents for recurring workflows"
+      ],
+      "sources": [
+        "s20",
+        "s1"
+      ]
+    },
+    {
+      "id": "a2",
+      "name": "Inbound Functions",
+      "what": "Hosted JavaScript handlers that Primitive runs on every email received at an address; the code is the customer's (or their agent's), the runtime is Primitive's. Primitive injects an organisation API key and the webhook secret into each handler, plus any per-Function secrets the customer sets (the docs' example is STRIPE_KEY).",
+      "actions": [
+        "Run on every inbound message routed to it",
+        "Reply or forward from inside the handler",
+        "Call external HTTP APIs",
+        "Use the injected org-scoped PRIMITIVE_API_KEY and custom secrets",
+        "Read and write Primitive Memories (durable JSON state)"
+      ],
+      "sources": [
+        "s14",
+        "s6",
+        "s3"
+      ]
+    },
+    {
+      "id": "a3",
+      "name": "MCP email connector",
+      "what": "A hosted MCP server that lets an assistant in Claude, ChatGPT, Cursor, VS Code or Goose act as the authorised Primitive organisation. /mcp lists read and send tools; /mcp/full adds managing domains, webhooks and filters. ChatGPT and Claude render an inbox widget inline.",
+      "actions": [
+        "listEmails, searchEmails, getEmail, getInboxStatus, getAccount (read-only)",
+        "sendEmail, replyToEmail (marked destructive; hosts are asked to confirm)",
+        "On /mcp/full: claim and verify domains, manage webhook endpoints and filters, inspect delivery history"
+      ],
+      "sources": [
+        "s15",
+        "s6",
+        "s16",
+        "s3"
+      ]
+    },
+    {
+      "id": "a4",
+      "name": "Coding-agent skills",
+      "what": "primitive-chat and primitive-inbox skills installed into Claude Code, Codex, Cursor and other coding agents with one command, plus a Codex plugin bundling the MCP server.",
+      "actions": [
+        "primitive chat: send to any address and wait (120 seconds by default) for the threaded reply",
+        "primitive-inbox: provision a managed *.primitive.email address that receives mail",
+        "Self-signup for an account through the agent signup flow"
+      ],
+      "sources": [
+        "s8",
+        "s17",
+        "s6"
+      ]
+    },
+    {
+      "id": "a5",
+      "name": "Docs help agent",
+      "what": "An agent Primitive runs at its own help address that answers product questions by email, grounded in the public docs; agents landing on the site are told to email it and wait for the reply.",
+      "actions": [
+        "Receive questions by email from any address",
+        "Reply in-thread with answers grounded in the public docs corpus"
+      ],
+      "sources": [
+        "s4",
+        "s5",
+        "s8"
+      ]
+    }
+  ],
+  "use_cases": [
+    {
+      "id": "u1",
+      "name": "A Function on a customer inbox, holding the org's key",
+      "agent": "a2",
+      "who": "A business that routes its customer address (orders and questions) to a hosted Function, as onprimitive.com pitches (illustrative deployment from documented capabilities)",
+      "reach": [
+        {
+          "id": "r1",
+          "what": "Every inbound message to the routed address, written by anyone who can send email; Primitive applies spam and policy filtering, but the content is untrusted text",
+          "kind": "outside",
+          "sources": [
+            "s3",
+            "s1"
+          ]
+        },
+        {
+          "id": "r2",
+          "what": "The whole organisation's stored mail, domains, Functions and Memories through the injected PRIMITIVE_API_KEY: Primitive credentials are organisation-scoped and do not advertise granular scopes",
+          "kind": "data",
+          "sources": [
+            "s14",
+            "s10",
+            "s7"
+          ]
+        },
+        {
+          "id": "r3",
+          "what": "Replying, forwarding and sending as the business, from its own domain, to recipients the account's send rules allow (broader external sending is enabled per organisation)",
+          "kind": "outside",
+          "sources": [
+            "s14",
+            "s13",
+            "s1"
+          ]
+        },
+        {
+          "id": "r4",
+          "what": "Any external HTTP API the handler is written to call",
+          "kind": "system",
+          "sources": [
+            "s14"
+          ]
+        },
+        {
+          "id": "r5",
+          "what": "Per-Function secrets injected into the running handler, such as a payment provider key (the docs' own example is STRIPE_KEY)",
+          "kind": "money",
+          "sources": [
+            "s14"
+          ]
+        },
+        {
+          "id": "r6",
+          "what": "Customers and partners whose correspondence is stored until the business deletes it: Primitive does not auto-delete mail on a schedule",
+          "kind": "people",
+          "sources": [
+            "s7",
+            "s3"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m1",
+          "what": "Illustrative: answer order and product questions sent to this one address, in the same thread"
+        },
+        {
+          "id": "m2",
+          "what": "Illustrative: read only the thread being answered; leave the rest of the organisation's mail alone"
+        },
+        {
+          "id": "m3",
+          "what": "Illustrative: never move money and never write to anyone who did not write first"
+        }
+      ],
+      "gap": [
+        {
+          "what": "The handler's key reaches the whole organisation, not the one address it serves; there is no narrower scope to give it",
+          "reach": [
+            "r2",
+            "r6"
+          ]
+        },
+        {
+          "what": "Secrets and outbound HTTP make the handler able to act on payment and other systems on the strength of text that anyone can email in",
+          "reach": [
+            "r1",
+            "r4",
+            "r5"
+          ]
+        },
+        {
+          "what": "Sending beyond the thread depends on the organisation's send rules, which are settings, not the mandate",
+          "reach": [
+            "r3"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "Webhook deliveries are signed with HMAC-SHA256; the Function scaffold verifies the signature before acting",
+          "sources": [
+            "s7",
+            "s14"
+          ]
+        },
+        {
+          "what": "Tokens are scoped to one organisation and tenants are isolated from each other",
+          "sources": [
+            "s7",
+            "s2"
+          ]
+        },
+        {
+          "what": "Recipient rules: new accounts can send only to addresses that previously sent authenticated mail; wider sending is enabled per organisation",
+          "sources": [
+            "s13",
+            "s10"
+          ]
+        },
+        {
+          "what": "Send rate limits of 1000 per hour and 10000 per day per organisation, and idempotency keys that stop a retried send going out twice",
+          "sources": [
+            "s6",
+            "s7"
+          ]
+        },
+        {
+          "what": "A Function activity log lists the email.sent and email.replied effects each handler produced, and invocations are logged",
+          "sources": [
+            "s14"
+          ]
+        },
+        {
+          "what": "Agents are told a threaded reply is not proof of who wrote it: trust it only when sender_verified is true",
+          "sources": [
+            "s8"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "A customer emails the business's order address asking where an order is",
+          "reach": "r1",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "The Function verifies the webhook signature and reads the order thread",
+          "reach": "r1",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "(illustrative) The message carries hidden text asking for 'all recent invoices'; the handler's model searches the organisation's stored mail with the injected key",
+          "reach": "r2",
+          "in_mandate": false,
+          "note": "The record shows an org-wide key held by a handler whose mandate is one address: read access to every mailbox in the organisation as grant, one thread as mandate, the difference as gap."
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "Replies in-thread with the order status",
+          "reach": "r3",
+          "in_mandate": true
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "(illustrative) Forwards the invoices it found to an outside address named in the hidden text",
+          "reach": "r3",
+          "in_mandate": false,
+          "note": "The record shows sending beyond the thread as reach the account's send rules decide, with the organisation's setting named as the only thing between the grant and the mandate."
+        },
+        {
+          "t": 6,
+          "actor": "agent",
+          "action": "(illustrative) Calls the payment provider with the STRIPE_KEY secret to issue a 'goodwill' refund the email asked for",
+          "reach": "r5",
+          "in_mandate": false,
+          "note": "The record shows a payment secret inside an email handler as money reach that no mandate line covers, priced as exposure."
+        },
+        {
+          "t": 7,
+          "actor": "person",
+          "action": "An operator reads the Function's activity log and sees the forward among the sends",
+          "reach": "r6",
+          "in_mandate": true
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "name": "An assistant connected to the org's mail over MCP",
+      "agent": "a3",
+      "who": "A person who adds Primitive as a connector in Claude or ChatGPT to triage the team's agent inboxes",
+      "reach": [
+        {
+          "id": "r7",
+          "what": "Every message in the authorised organisation: the connector acts on the whole organisation, reading and writing its email",
+          "kind": "data",
+          "sources": [
+            "s15",
+            "s10"
+          ]
+        },
+        {
+          "id": "r8",
+          "what": "Sending new mail and replies through the organisation's verified domains",
+          "kind": "outside",
+          "sources": [
+            "s15",
+            "s6"
+          ]
+        },
+        {
+          "id": "r9",
+          "what": "On /mcp/full: domains, webhook endpoints and filters, which decide where inbound mail is delivered",
+          "kind": "system",
+          "sources": [
+            "s15"
+          ]
+        },
+        {
+          "id": "r10",
+          "what": "Correspondents in the inbox, rendered inside the assistant host by the in-agent inbox widget",
+          "kind": "people",
+          "sources": [
+            "s16",
+            "s6"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m4",
+          "what": "Illustrative: summarise and triage new mail for the person"
+        },
+        {
+          "id": "m5",
+          "what": "Illustrative: draft replies; send only after the person approves each one"
+        },
+        {
+          "id": "m6",
+          "what": "Illustrative: never change where mail is routed"
+        }
+      ],
+      "gap": [
+        {
+          "what": "Send confirmation is a hint to the host (destructiveHint): a well-behaved assistant asks first; nothing in Primitive's grant distinguishes draft from send",
+          "reach": [
+            "r8"
+          ]
+        },
+        {
+          "what": "Connecting /mcp/full puts routing (webhooks, filters) in reach of the same conversation that reads untrusted mail",
+          "reach": [
+            "r9",
+            "r7"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "Send tools are marked destructive and documented as confirmation-gated: the assistant asks before it sends",
+          "sources": [
+            "s15",
+            "s6"
+          ]
+        },
+        {
+          "what": "Manage tools exist only on /mcp/full; an assistant on /mcp gets unknown_tool for them",
+          "sources": [
+            "s15"
+          ]
+        },
+        {
+          "what": "OAuth 2.0 authorisation code with PKCE; the assistant never holds the password and access can be revoked by reconnecting",
+          "sources": [
+            "s15"
+          ]
+        },
+        {
+          "what": "The inbox widget ships a Content-Security-Policy scoping connect-src, frame-ancestors and form-action",
+          "sources": [
+            "s6"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "Asks the assistant for a summary of today's mail",
+          "reach": "r7",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "Lists and reads new messages across the organisation's inboxes",
+          "reach": "r7",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "(illustrative) Reads a message telling it to add a webhook so 'the vendor can sync'",
+          "reach": "r10",
+          "in_mandate": true
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "(illustrative) Adds a webhook endpoint and filter that copy inbound mail to an outside URL, using /mcp/full",
+          "reach": "r9",
+          "in_mandate": false,
+          "note": "The record shows routing changes in the grant of a triage assistant, out of mandate, with the choice of /mcp over /mcp/full named as the control that applies."
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "Drafts a reply and asks the person before sending",
+          "reach": "r8",
+          "in_mandate": true
+        },
+        {
+          "t": 6,
+          "actor": "agent",
+          "action": "(illustrative) Sends a second reply without asking, because the host did not honour the hint",
+          "reach": "r8",
+          "in_mandate": false,
+          "note": "The record shows send as grant and approval-only send as mandate, with the confirmation recorded as an expectation on the host, not a boundary in the grant."
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "name": "An agent that signs itself up for an email identity",
+      "agent": "a4",
+      "who": "An autonomous or coding agent that uses Primitive's zero-touch signup to get an address, as agents.md invites it to",
+      "reach": [
+        {
+          "id": "r11",
+          "what": "Creating a new Primitive organisation and managed inbox with one unauthenticated POST, no email and no human in the loop",
+          "kind": "system",
+          "sources": [
+            "s10",
+            "s7"
+          ]
+        },
+        {
+          "id": "r12",
+          "what": "Replying to anyone who has already written to the new address (reply-only, 10 sends an hour, 50 a day)",
+          "kind": "outside",
+          "sources": [
+            "s10",
+            "s21"
+          ]
+        },
+        {
+          "id": "r13",
+          "what": "Durable Memories that keep state across turns and emails",
+          "kind": "data",
+          "sources": [
+            "s6",
+            "s21"
+          ]
+        },
+        {
+          "id": "r14",
+          "what": "Asking a human to confirm an email, or handing them a claim link, to upgrade the account (send cap lifts, Functions unlock)",
+          "kind": "people",
+          "sources": [
+            "s10"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m7",
+          "what": "Illustrative: use the email identity the operator issued; do not create accounts"
+        },
+        {
+          "id": "m8",
+          "what": "Illustrative: ask the operator before any external correspondence"
+        }
+      ],
+      "gap": [
+        {
+          "what": "The agent can mint its own identity and inbox that the operator never issued and may not know exists until a claim is asked for",
+          "reach": [
+            "r11",
+            "r13"
+          ]
+        },
+        {
+          "what": "Correspondence from that identity is outside any record the operator keeps",
+          "reach": [
+            "r12",
+            "r14"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "Zero-touch signup is rate-limited and can only create a brand-new tenant; it cannot read or alter an existing one",
+          "sources": [
+            "s7",
+            "s10"
+          ]
+        },
+        {
+          "what": "New agent accounts start reply-only with tight send limits; upgrading does not unlock arbitrary recipients",
+          "sources": [
+            "s10",
+            "s8"
+          ]
+        },
+        {
+          "what": "Domains can publish an _agents DNS record saying which agents may email them; no record means no permission, and Primitive says the same engine gates real sends",
+          "sources": [
+            "s9"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "Asks a coding agent a question about an API vendor",
+          "reach": "r13",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "(illustrative) Following agents.md, creates a Primitive account with the zero-touch signup",
+          "reach": "r11",
+          "in_mandate": false,
+          "note": "The record shows an identity created by the agent and not issued by the operator: a new address in reach, no line in the mandate."
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "(illustrative) Tries to email the vendor and is refused with recipient_not_allowed",
+          "reach": "r12",
+          "in_mandate": false,
+          "note": "The record shows the attempt and the account's reply-only rule as the control that applied; the attempt itself sits outside the mandate."
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "(illustrative) Asks the person to confirm an email so the account can be upgraded",
+          "reach": "r14",
+          "in_mandate": true
+        },
+        {
+          "t": 5,
+          "actor": "person",
+          "action": "Learns the agent has its own address and decides whether to claim it",
+          "reach": "r14",
+          "in_mandate": true
+        }
+      ]
+    }
+  ],
+  "incidents": [],
+  "questions": [
+    "Can a Function's injected key be narrowed to the one address or route it serves, instead of the whole organisation?",
+    "When a Function or MCP assistant sends, what does the record show about which inbound message prompted it, and can a customer export that link?",
+    "Which organisations have send_to_any_domain enabled, and what review does Primitive apply before it turns that on?",
+    "How do the agents you deploy and operate for customers decide when to create a new specialised agent, and who approves it?",
+    "Would you publish the _agents authorisation result alongside each send, so a recipient can see which agent sent and under which rule?",
+    "Your security page says it describes current practice, not an audited control set: is a SOC 2 or ISO 27001 audit planned, and what would it cover first?"
+  ],
+  "leads": [
+    {
+      "model": "perplexity",
+      "claim": "Primitive is email infrastructure for AI agents with programmatic send and receive over HTTP, managed agent addresses and hosted inbound handlers.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "perplexity",
+      "claim": "It offers an in-agent MCP app and persistent agent state (Primitive Memories).",
+      "status": "confirmed",
+      "source": "s16",
+      "note": "Memories confirmed on s6"
+    },
+    {
+      "model": "perplexity",
+      "claim": "A managed *.primitive.email address runs a JavaScript handler on every inbound message, uses Primitive MX and needs no user-managed DNS.",
+      "status": "confirmed",
+      "source": "s12",
+      "note": "The handler wording is on s3; s12 says mail is accepted by Primitive MX and delivered to active endpoints or Functions"
+    },
+    {
+      "model": "perplexity",
+      "claim": "An agent-to-agent chat verb sends a message and waits for the threaded reply, with no SMTP credentials.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "A hosted MCP app UI renders the inbox inside agent hosts such as ChatGPT and Claude.",
+      "status": "confirmed",
+      "source": "s16"
+    },
+    {
+      "model": "perplexity",
+      "claim": "One API sends outbound mail, receives inbound mail as signed JSON and runs hosted Functions on incoming messages.",
+      "status": "confirmed",
+      "source": "s11"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Use case: agent inbox automation reaching inboxes, inbound routing, hosted Functions and delivery history.",
+      "status": "confirmed",
+      "source": "s12",
+      "note": "Delivery history is listed on s15"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Use case: an inbox inside ChatGPT or Claude with send, receive and management.",
+      "status": "confirmed",
+      "source": "s15"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Primitive describes itself as email infrastructure for AI agents.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "It supports sending and receiving email via a REST API.",
+      "status": "confirmed",
+      "source": "s6"
+    },
+    {
+      "model": "perplexity",
+      "claim": "It can host an agent at a managed *.primitive.email subdomain.",
+      "status": "confirmed",
+      "source": "s6"
+    },
+    {
+      "model": "perplexity",
+      "claim": "It stores durable agent state with Primitive Memories.",
+      "status": "confirmed",
+      "source": "s6"
+    },
+    {
+      "model": "perplexity",
+      "claim": "It handles SPF, DKIM, DMARC, TLS-RPT, bounce processing and IP reputation.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "It positions itself as built for two-way agent conversations rather than only outbound transactional email.",
+      "status": "not-found",
+      "note": "s3 describes the chat verb and two-way use, and lists transactional sending as one use; it does not set the two against each other"
+    },
+    {
+      "model": "perplexity",
+      "claim": "It offers open machine-readable integrations for major agent platforms.",
+      "status": "confirmed",
+      "source": "s17"
+    },
+    {
+      "model": "openai",
+      "claim": "Agents get managed identities at *.primitive.email or custom domains, send and receive through authenticated APIs, run hosted Functions and use an agent-to-agent chat flow.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openai",
+      "claim": "Sends are asynchronous and return an identifier for status tracking.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openai",
+      "claim": "Inbound mail goes to developer webhooks or hosted JavaScript Functions per message.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openai",
+      "claim": "Authentication uses organisation-scoped bearer tokens: API keys or OAuth access tokens.",
+      "status": "confirmed",
+      "source": "s7"
+    },
+    {
+      "model": "openai",
+      "claim": "Organisations can control which agents may email their domain with a DNS TXT record (_agents), accept or reject with allow lists.",
+      "status": "confirmed",
+      "source": "s9"
+    },
+    {
+      "model": "openai",
+      "claim": "Prompt injection in email content can make a tool-using agent act on attacker instructions.",
+      "status": "confirmed",
+      "source": "s23",
+      "note": "A general research result; the paper does not name Primitive"
+    },
+    {
+      "model": "openai",
+      "claim": "Prompt injection against real-world LLM email agents (cited to an accelresearching.com URL).",
+      "status": "unverified",
+      "note": "The URL is a supplement retailer's product page; it timed out and then returned 502"
+    },
+    {
+      "model": "openai",
+      "claim": "Bearer tokens prim_ and prim_oat_ are required for customer data and scoped to one organisation; tenants are isolated.",
+      "status": "confirmed",
+      "source": "s7"
+    },
+    {
+      "model": "openai",
+      "claim": "Outbound mail uses managed DKIM, SPF, DMARC and TLS-RPT, with records generated and verified through the API.",
+      "status": "confirmed",
+      "source": "s7"
+    },
+    {
+      "model": "openai",
+      "claim": "Webhook deliveries are signed with HMAC-SHA256.",
+      "status": "confirmed",
+      "source": "s7"
+    },
+    {
+      "model": "openai",
+      "claim": "Stored inbound mail is not auto-deleted on a schedule.",
+      "status": "confirmed",
+      "source": "s7"
+    },
+    {
+      "model": "openai",
+      "claim": "The trust page says authentication, data isolation and message integrity are core to the product.",
+      "status": "confirmed",
+      "source": "s7"
+    },
+    {
+      "model": "openai",
+      "claim": "Agents can reach customer-controlled endpoints via signed webhooks and hosted Functions that parse, store, route and reply.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "gemini",
+      "claim": "Primitive offers a REST API for agent email, handles SPF, DKIM and DMARC, and provides managed subdomains and hosted JavaScript Functions.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "gemini",
+      "claim": "A Primitive agent acts as an autonomous interface for businesses, processing incoming email and executing workflows.",
+      "status": "confirmed",
+      "source": "s20",
+      "note": "The YC job page says Primitive deploys and operates agents for customers that begin as a general interface to the business"
+    },
+    {
+      "model": "gemini",
+      "claim": "Its agents maintain durable state with Primitive Memories.",
+      "status": "confirmed",
+      "source": "s6"
+    },
+    {
+      "model": "gemini",
+      "claim": "Use case: automated business communication for customer support and operations.",
+      "status": "confirmed",
+      "source": "s1",
+      "note": "The model cited the AgentMail comparison page (s18), which does not say this; onprimitive.com pitches agents for customers' questions and orders"
+    },
+    {
+      "model": "gemini",
+      "claim": "AI email agents face indirect prompt injection and data exfiltration risks.",
+      "status": "confirmed",
+      "source": "s24",
+      "note": "General guidance from another vendor; it does not name Primitive"
+    },
+    {
+      "model": "gemini",
+      "claim": "Primitive is Y Combinator-backed with usage-based pricing.",
+      "status": "confirmed",
+      "source": "s6",
+      "note": "YC backing is also on s18 and s19; the usage-based pricing is on s6, not on the page the model cited"
+    },
+    {
+      "model": "gemini",
+      "claim": "The primitive chat verb sends an email and returns the threaded reply in one call.",
+      "status": "confirmed",
+      "source": "s18"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Primitive offers one-call HTTP sending and receiving, managed *.primitive.email addresses, hosted handlers, and manages the protocol layer so agents need no SMTP credentials.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "A primitive-chat skill lets a coding agent email an agent or person and wait for the threaded reply; installs into Claude Code, Codex and Cursor.",
+      "status": "confirmed",
+      "source": "s8",
+      "note": "The cited GitHub page returned 403; read on agents.md"
+    },
+    {
+      "model": "openrouter",
+      "claim": "A primitive-inbox skill gives an agent a managed inbox that receives mail.",
+      "status": "confirmed",
+      "source": "s8",
+      "note": "GitHub returned 403; listing and search of stored mail is via the API (s6)"
+    },
+    {
+      "model": "openrouter",
+      "claim": "A hosted MCP server sends, reads and searches mail and manages domains, endpoints and filters over OAuth and Streamable HTTP.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Use case: an agent with its own email identity rather than a person's mailbox.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Use case: custom logic on every inbound message, with signed webhooks.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Use case: transactional sending from a verified custom domain.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Functions, Wake schedules, x402 payments and custom domains are gated on the free agent plan.",
+      "status": "confirmed",
+      "source": "s21"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Signup through the Pilot listing is rate-limited per IP, with 429 after several new accounts a day.",
+      "status": "confirmed",
+      "source": "s21"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The send-mail endpoint takes exactly one recipient and has no CC, BCC, custom header, tags or metadata.",
+      "status": "confirmed",
+      "source": "s22"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Primitive is Y Combinator-backed with a small team in San Francisco.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The inbound MX implementation and the Node, Python and Go SDKs are public on GitHub.",
+      "status": "confirmed",
+      "source": "s4",
+      "note": "GitHub itself returned 403 to us"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The REST API is versioned under /v1 and breaking changes come under a new version.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Primitive manages inbound MX, SPF, DKIM, DMARC, TLS-RPT, bounces and sending-IP reputation.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Inbound content is kept until the user deletes it.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Webhook deliveries are signed.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Primitive publishes an OpenAPI spec, llms.txt and MCP discovery document.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The MCP server is in public registries and works with Claude, Cursor, VS Code agent mode and Goose.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The free plan covers sending, replying, inbound list and search, threads, filters, webhooks and Memories.",
+      "status": "confirmed",
+      "source": "s21"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Sending requires a verified outbound domain, and API keys are prefixed prim_.",
+      "status": "confirmed",
+      "source": "s22"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Idempotency keys make a retried send replay the original result.",
+      "status": "confirmed",
+      "source": "s22"
+    }
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 24,
+    "seconds": 310,
+    "tokens_thousands": 164,
+    "finished": "2026-11-07T19:14Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Removed two \"incidents\" that were not events; Primitive's own note that it publishes no audit yet became a question."
+    ]
+  }
+}

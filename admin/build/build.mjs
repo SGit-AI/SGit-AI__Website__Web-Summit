@@ -18,17 +18,22 @@ import { expandSignoff } from './signoff-ui.mjs'
 import { keysPage as pkiKeysPage } from './pki.mjs'
 import * as GIT from './gitlog.mjs'
 import { highlights, highlightsHtml, highlightsMd, withHighlights } from './highlights.mjs'
+import { loadXray, xrayIndexHtml, xrayIndexMd, buildXray, buildXrayRuns } from './xray.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
 const VERSION = fs.readFileSync(path.join(ROOT, 'admin/build/version.txt'), 'utf8').trim()
 const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
+// the RiskMandate X-ray's subjects (data/xray/<slug>/xray.json; admin/build/xray.mjs), read first: the X-ray section lists them
+const XRAY = loadXray(ROOT)
 // navigation: a few sections on top, each with its own sub-menu; every page gets breadcrumbs back to its parent
 const SECTIONS = [
     { t: 'Start', h: 'start/index.html', re: /^start\//, sub: [] },
     { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast|wakes)\b/, sub: [['People', 'team/index.html'], ['The map', 'team/map/index.html'], ['Setup', 'team/setup/index.html'], ['Everything', 'team/everything/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['At work', 'wakes/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
     { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|cards|log|print|print-order|procurement|videos|research|reports|board-health|site-review|updates|meetings)\b/, sub: [['Stand-ups', 'meetings/index.html'], ['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Cards', 'cards/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Print files', 'print/index.html'], ['Procurement', 'procurement/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
+    // the RiskMandate X-ray for the booth (xray@web-summit.dinis, 7 November 2026, at Dinis's word): type a name, watch the agents X-ray it
+    { t: 'X-ray', h: 'xray/index.html', re: /^xray\b/, sub: [['X-ray a name', 'xray/index.html'], ['How it works', 'xray/how/index.html'], ...(fs.existsSync(path.join(ROOT, 'content/xray-decide.md')) ? [['Decide', 'xray/decide/index.html']] : []), ...XRAY.map(s => [s.subject.replace(/[&<>"]/g, ''), `xray/${s.slug}/index.html`])] },
     // the investors' section (WS-185, investors@web-summit.dinis, at Dinis's word of 6 November: "a very focused section just for investors")
     { t: 'Investors', h: 'investors/index.html', re: /^investors\b/, sub: [['For investors', 'investors/index.html'], ['Pitch deck', 'investors/pitch-deck/index.html'], ['Technology deck', 'investors/technology-deck/index.html'], ['The story', 'investors/story/index.html'], ['How we make money', 'investors/business-model/index.html'], ['The company', 'investors/company/index.html'], ['The investment', 'investors/investment/index.html'], ['Feedback', 'investors/feedback/index.html']] },
     { t: 'Observability', h: 'observability/index.html', re: /^observability\b/, sub: [['Explore', 'observability/index.html'], ['Dashboard', 'observability/dashboard/index.html'], ['Graph', 'observability/graph/index.html'], ['Agents', 'observability/agents/index.html'], ['Pages', 'observability/pages/index.html'], ['People', 'observability/team/index.html'], ['The vault', 'observability/vault/index.html'], ['How it works', 'observability/how-it-works/index.html'], ['The brief', 'brief-observability/index.html'], ['The pack', 'observability-pack/index.html']] },
@@ -109,7 +114,13 @@ function render(md) {
     let i = 0
     while (i < lines.length) {
         const l = lines[i]
-        if (l.startsWith('```cards')) {
+        if (/^:::details .+$/.test(l)) {
+            // a collapsible block (Vicky's dashboard, 8 Nov): ":::details Title" ... ":::"; native <details>, no script. Nothing else uses it.
+            const title = l.slice(11).trim(), inner = []
+            for (i++; i < lines.length && lines[i].trim() !== ':::'; i++) inner.push(lines[i])
+            i++
+            out.push(`<details class="fold"><summary style="cursor:pointer;font-weight:600;padding:.4rem 0">${inline(title)}</summary>${render(inner.join('\n'))}</details>`)
+        } else if (l.startsWith('```cards')) {
             const rows = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) rows.push(lines[i].split('|').map(c => c.trim()))
             i++
@@ -119,11 +130,11 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push(CHARTS[name] ? `<figure class="chart">${CHARTS[name](arg)}</figure>` : `<p class="meta">(no chart called ${esc(name)})</p>`)
-        } else if (/^```vault-app [a-z0-9-]+ [a-z0-9]{8,12}\s*$/.test(l)) {
-            const [person, id] = l.slice(13).trim().split(' ')
+        } else if (/^```vault-app [a-z0-9-]+ [a-z0-9]{8,12}( auto)?\s*$/.test(l)) {
+            const [person, id, auto] = l.slice(13).trim().split(' ')
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
-            out.push(vaultAppHtml(person, id))
+            out.push(vaultAppHtml(person, id, auto === 'auto'))
         } else if (/^```obs-live [a-z0-9-]+ [a-z0-9]{8,12}\s*$/.test(l)) {
             const [person, id] = l.slice(12).trim().split(' ')
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
@@ -144,6 +155,11 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push('<div class="crm" id="crm"><p class="meta">The diagram and the live CRM need JavaScript: they are drawn here by the page.</p></div>')
+        } else if (/^```xray\s*$/.test(l)) {
+            // the RiskMandate X-ray (xray@web-summit.dinis): a mount for assets/xray.js (front matter script: xray), with every subject as a plain link
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push(xrayIndexHtml(XRAY))
         } else if (/^```sticker-vote\s*$/.test(l)) {
             // the team's sticker vote (WS-167, conductor@web-summit.dinis): a mount for assets/stickers-vote.js, which the
             // page loads through its front matter (script: stickers-vote); without JavaScript it says so
@@ -443,7 +459,17 @@ const vaultsMd = who => {
 // key by postMessage, pinned to its origin; the key is never in a URL or the frame's storage, and the vault opens
 // read-only. The key comes only from the person's vaults.json, which vaultsMd's check limits to sgit_public_read_.
 let VAULT_APPS = 0
-const vaultAppHtml = (person, id) => {
+// ```vault-app <person> <vault id> auto``` (Vicky's dashboard, 8 Nov, option 1): the same frame, but opened by itself when
+// the visitor's browser says it is <person> (localStorage "ws.me", the "Who are you?" picker) and the section scrolls into
+// view; every other visitor keeps click-to-load. Without the word "auto" the output is byte-for-byte what it was.
+const vaultAutoJs = person => `var P=${JSON.stringify(person)},me='';try{me=localStorage.getItem('ws.me')||'';}catch(e){}` +
+    `var sd=false;try{sd=!!(navigator.connection&&navigator.connection.saveData);}catch(e){}` +
+    `if(me===P&&!sd&&'IntersectionObserver' in window){` +
+    `var w=null,ov=null;if(window.matchMedia&&matchMedia('(pointer:coarse)').matches){f.style.height='60vh';w=document.createElement('div');w.style.position='relative';f.parentNode.insertBefore(w,f);w.appendChild(f);` +
+    `ov=document.createElement('button');ov.type='button';ov.setAttribute('style','position:absolute;left:0;right:0;top:0;bottom:0;width:100%;background:transparent;border:0;padding:0 .5rem .6rem;display:flex;align-items:flex-end;justify-content:center;font:inherit;touch-action:pan-y;cursor:pointer');var hint=document.createElement('span');hint.textContent='Tap to use the vault. Swipe here to keep scrolling the page.';hint.setAttribute('style','background:rgba(15,23,42,.9);color:#fff;font-size:.85rem;line-height:1.3;padding:.4rem .7rem;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.25)');ov.appendChild(hint);` +
+    `ov.addEventListener('click',function(){ov.hidden=true;});w.appendChild(ov);document.addEventListener('touchstart',function(e){if(ov.hidden&&!w.contains(e.target))ov.hidden=false;},{passive:true});}` +
+    `var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();b.querySelector('[data-mode="app"]').click();clearTimeout(T);T=setTimeout(function(){t.textContent='The handshake timed out. Press Open the app to try again.';},12000);},{rootMargin:'200px 0px'});io.observe(b);}`
+const vaultAppHtml = (person, id, auto = false) => {
     const v = VAULTS().find(x => x.person === person && x.vault_id === id)
     if (!v) throw new Error(`vault-app ${person} ${id}: no such vault in people/${person}/vaults.json`)
     if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
@@ -458,7 +484,7 @@ const vaultAppHtml = (person, id) => {
         `function mount(m){armed=m;f.hidden=false;fs.hidden=false;t.textContent='Connecting to the vault...';f.src=O+(m==='vault'?'/en-gb/vault/':'/en-gb/app/')+'?embed=1&parent='+encodeURIComponent(location.origin);clearTimeout(T);` +
         `T=setTimeout(function(){if(m==='app'){f.src=O+'/#'+encodeURIComponent(C);t.textContent='The handshake timed out; opened by the link instead.';}else{t.textContent='The handshake timed out. Reload and try again.';}},12000);}` +
         `b.querySelectorAll('[data-mode]').forEach(function(x){x.addEventListener('click',function(){mount(x.getAttribute('data-mode'));});});` +
-        `fs.addEventListener('click',function(){try{if(f.requestFullscreen)f.requestFullscreen();}catch(e){}});b.querySelector('[data-newwin]').addEventListener('click',function(){window.open(O+'/#'+encodeURIComponent(C),'_blank','noopener');});}());</script>`
+        `fs.addEventListener('click',function(){try{if(f.requestFullscreen)f.requestFullscreen();}catch(e){}});b.querySelector('[data-newwin]').addEventListener('click',function(){window.open(O+'/#'+encodeURIComponent(C),'_blank','noopener');});${auto ? vaultAutoJs(person) : ''}}());</script>`
 }
 // the live observability panel: ```obs-live <person> <vault id>``` (observability@web-summit.dinis, 5 November 2026). The
 // page reads the vault itself, in the browser, with sgit.ai's reader (assets/vendor/sgit-ai/2026-11-05/vault-embed.js):
@@ -606,6 +632,7 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js?v=${VERSION}" defer></script>` : ''
     md = md.replace(/^```sticker-vault\s*\n```\s*$/m, '*The vault with full access is opened on the HTML page by assets/stickers-vault.js, for a person the vault key is sealed to.*')
     md = md.replace(/^```crm\s*\n```\s*$/m, '*On the HTML page: a diagram of the two layers, the public CRM browsed live with its published read key, and, for a person whose browser holds their key, Open the private CRM (assets/crm.js, from data/crm.json).*')
+    md = md.replace(/^```xray\s*\n```\s*$/m, () => `*On the HTML page: the input, the replay of each run and the graph, drawn by assets/xray.js.* The subjects X-rayed so far:\n\n${xrayIndexMd(XRAY)}`)
     md = md.replace(/^```sticker-vote\s*\n```\s*$/m, '*The vote: the twelve stickers, the Vote button, the vault and who has voted are drawn on the HTML page by assets/stickers-vote.js, from data/stickers-vote.json.*')
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index', head }))
     pages.push({ rel, title: meta.title, description: meta.summary })
@@ -646,11 +673,24 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
         }
         continue
     }
-    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
+    // compact: true in a person's dashboard.md front matter (Vicky's, 8 Nov) folds the long built sections; every other dashboard is built as before
+    const compact = String(meta.compact) === 'true', fold = (title, inner) => `:::details ${title}\n\n${inner.trim()}\n\n:::`
+    let SINCE = sinceMd(MEET, m.id, '../../'), AGENTS = `${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\``, MENTOR = mentorMd(m.id)
+    if (compact) {
+        const ls = SINCE.split('\n'), li = ls.map((l, k) => l.startsWith('- ') ? k : -1).filter(k => k >= 0)
+        if (li.length > 3) {   // the summary counts and the latest 3 releases; the rest folded
+            const rest = li.slice(3).map(k => ls[k]), drop = new Set(li.slice(3))
+            SINCE = ls.flatMap((l, k) => drop.has(k) ? [] : k === li[2] ? [l, '', fold(`Earlier releases (${rest.length} more)`, rest.join('\n'))] : [l]).join('\n')
+        }
+        const mine = INV.agents.filter(a => a.person === m.id)
+        AGENTS = `${mine.length} agents, ${mine.filter(a => a.commits).length} with commits so far. The network shows who writes to whom.\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${meta.office_link && /^[a-z0-9][a-z0-9\/._-]*$/i.test(String(meta.office_link)) ? `**[Open the Live AI Office →](${meta.office_link})**: the live view of these agents.\n\n` : ''}${fold('Show agent details', myAgentsMd(INV, m.id))}`
+        MENTOR = MENTOR ? fold('From your mentor', MENTOR.replace(/^## From your mentor \{#mentor\}\n\n/, '')) + '\n\n' : ''
+    }
+    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${SINCE}\n\n## My agents, as the team sees them {#my-agents}\n\n${AGENTS}\n\n${MENTOR}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
     const rel = `people/${m.id}/index.html`
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
     pages.push({ rel, title: meta.title, description: meta.summary })
-    twin(rel, meta.title, meta.summary, body)
+    twin(rel, meta.title, meta.summary, compact ? body.replace(/^:::details (.+)$/gm, '### $1').replace(/^:::\s*$/gm, '') : body)
 }
 
 // a person's own extra pages (WS-27, dev@web-summit.indi, 3 November): people/<id>/pages.mjs exports
@@ -686,6 +726,7 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     // the switcher at the top of every command centre: everyone's, in roster order
     data.team = teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => ({ id: x.id, name: x.name, ...(fs.existsSync(path.join(ROOT, 'people', x.id, 'photo.jpg')) ? { photo: `../../${x.id}/photo.jpg` } : {}) }))
     write(`people/${m.id}/app/data.json`, JSON.stringify(data))
+    if (app.extras) for (const [rel, text] of Object.entries(app.extras(data, ROOT))) write(rel, text)   // files a person's own data.mjs adds beside data.json (Angelo's live.json)
     {   // this person's slice of me.json
         const o = onboard(m.id), nx = MEET.next(), a = MEET.ack(m.id), since = MEET.log(a?.acknowledged_at || new Date(Date.now() - 864e5).toISOString())
         const open = data.issues.filter(i => i.named && i.status !== 'done'), h = i => i.due_at ? (Date.parse(i.due_at) - Date.now()) / 36e5 : 1e9
@@ -943,6 +984,11 @@ ${sections.join('\n')}`
     twin('wakes/index.html', 'The agents at work', `Every agent's schedule and wakes, from the git history, as of ${asOf} UTC.`, md)
     pages.push({ rel: 'wakes/index.html', title: 'The agents at work', description: 'Every agent: its schedule, its last wake, and what each wake did.' })
 }
+
+// the RiskMandate X-ray: a page and a deck per subject (admin/build/xray.mjs)
+buildXray({ list: XRAY, write, page, twin, pages, VERSION })
+// what happened: a run page per subject (/xray/<slug>/run/) and how every X-ray is made (/xray/how/)
+buildXrayRuns({ list: XRAY, write, page, twin, pages, VERSION })
 
 // machine surfaces
 pages.sort((a, b) => a.rel.localeCompare(b.rel))

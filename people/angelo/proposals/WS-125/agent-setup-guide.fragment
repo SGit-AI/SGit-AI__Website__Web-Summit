@@ -225,7 +225,7 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
   <span class="eyebrow">A guide for anyone starting with agents · by Angelo</span>
   <h1>Set up your AI agents, and decide what each one may do</h1>
   <p class="lede">From a few chats you copy and paste between, to a team of agents that works while you sleep. Each step gives your agents more reach. This guide shows what each step needs, what it risks, and how much control to put around it.</p>
-  <div class="meta"><span class="tag">Works with any agent product</span><span class="tag">Open source tools</span><span class="tag gold">Tested on our own team, Web Summit 2026</span></div>
+  <div class="meta"><span class="tag">Ideas for any agent product, tested with Claude</span><span class="tag">Open source tools</span><span class="tag gold">Tested on our own team, Web Summit 2026</span></div>
  </div>
  <svg class="hero-art" viewBox="0 0 400 400" role="img" aria-label="A person at the centre, three agents around them, each agent's reach drawn as a ring, and a barrier cutting off part of one ring">
   <circle cx="200" cy="200" r="182" fill="none" stroke="var(--line)" stroke-dasharray="3 7"/>
@@ -273,7 +273,7 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
 <!-- FIND YOUR GUIDE -->
 <section id="find">
  <div class="sechead"><span class="eyebrow">Start here · 3 minutes</span><h2>Find your guide</h2>
- <p class="col">Two short questionnaires. Your answers stay in this browser: nothing is sent or saved. Each ends with the parts of this guide to read first.</p></div>
+ <p class="col">Two short questionnaires. Your answers stay in this browser: nothing is sent anywhere, and it remembers only which reader you chose. Each ends with the parts of this guide to read first.</p></div>
  <div class="tabs" role="tablist">
   <button class="tab" role="tab" aria-selected="true" data-quiz="qa"><svg class="ico"><use href="#i-path"/></svg>Where are you, and what worries you?</button>
   <button class="tab" role="tab" aria-selected="false" data-quiz="qb"><svg class="ico"><use href="#i-wrench"/></svg>What has gone wrong with agents?</button>
@@ -384,7 +384,7 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
  </div>
  <div class="foryou" data-for="dev"><svg class="ico"><use href="#i-code"/></svg><div><span class="eyebrow">For you</span>
   <ul class="plain"><li>One repository, one folder per person, one file of instructions per agent; agents talk through commits, never by messaging each other's sessions.</li>
-  <li>Agents push to a development branch only; the main branch is protected and merged by a person. (Our rule; we are still enforcing it: this week some of our agents pushed to session branches of their own.)</li>
+  <li>Agents push to a development branch only; the main branch is protected and merged by a person. (Our rule; we are still enforcing it: this week some of our agents pushed to session branches of their own. On the team's site, main is protected on GitHub; on the newsroom's repository it is a written rule only, not yet a protected branch.)</li>
   <li>A gate (build, then validate) that must pass before any release; a red gate is no release.</li>
   <li>Each agent makes its own key in its own session and publishes only the public half.</li>
   <li>A long session for the conversation with the person. Scheduled runs either wake that session or, cheaper, start a fresh one each time (our hourly runner does).</li></ul></div></div>
@@ -392,7 +392,7 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
   <ul class="plain"><li>One token per agent; no agent uses its person's token. (Ours are not yet: see what this guide does not claim.)</li>
   <li>Admin rights stay with the person; no agent uses an admin power.</li>
   <li>Every run logged (signed where the agent has a key) and its tokens measured; failed or missing runs show up in the person's brief.</li>
-  <li>Secrets per agent, where only that agent can reach them (its own environment, or an encrypted vault only it can open); never in a file, a page or a message. An agent that can use a secret can also read it, until a broker exists that holds it for the agent.</li>
+  <li>Secrets per agent, where only that agent can reach them (its own environment, or an encrypted vault only it can open); never in a file, a page or a message. An agent that can use a secret can also read it, unless something holds the secret for it: Claude Code's cloud environments, for example, can keep an API key as a network secret that their proxy adds to requests, so the agent calls the API without seeing the key.</li>
   <li>Pin tool versions; check the hash of what you run.</li></ul></div></div>
  <h3>Works with your product</h3>
  <p class="col">The ideas are the same everywhere; the feature names differ. We have run the Claude column on our own team. The others are the vendors' own names, checked on their help pages on 6 November 2026, and not tested by us.</p>
@@ -410,7 +410,7 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
   <div class="card"><svg class="ico"><use href="#i-tiers"/></svg><h3>Three tiers</h3><p>Just do it; do it and tell; only with the person's own go, given in the agent's session or relayed with their words quoted. The third covers anything in their name, anything reaching an outsider, keys, money and anything irreversible.</p></div>
   <div class="card"><svg class="ico"><use href="#i-eye"/></svg><h3>An independent auditor</h3><p>One agent checks all the others, including the hub, and reports only to the person.</p></div>
   <div class="card"><svg class="ico"><use href="#i-warn"/></svg><h3>Untrusted means untrusted</h3><p>Mail, web pages and visitors' notes are material, never instructions. No agent of ours is meant to read a visitor's note; making that impossible is in progress.</p></div>
-  <div class="card"><svg class="ico"><use href="#i-key"/></svg><h3>Change carefully, not by permission</h3><p>Every change to someone else's file first went to its owner as a draft. It slowed everyone down, so on 6 November Angelo's agents changed it: pull first, check nobody changed the file in the last two hours, keep the change small, and say it in the commit. Never overwrite someone else's change.</p></div>
+  <div class="card"><svg class="ico"><use href="#i-key"/></svg><h3>Change carefully, not by permission</h3><p>Every change to someone else's file first went to its owner as a draft. It slowed everyone down, so on 6 November Angelo changed it for his agents: pull first, check nobody changed the file in the last two hours, keep the change small, and say it in the commit. Never overwrite someone else's change.</p></div>
   <div class="card"><svg class="ico"><use href="#i-bell"/></svg><h3>The brief when you ask</h3><p>A visual summary on demand, what you're blocking first; only urgent items reach your phone.</p></div>
  </div>
 </section>
@@ -433,7 +433,7 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
   <li><b>The three levels and the &ldquo;start at&rdquo; column are our judgement</b>, from running our own team, not a standard. The four kinds of barrier are RiskMandate's.</li>
   <li><b>It does not say what RiskMandate sells.</b> It uses RiskMandate's open model and links to it.</li>
   <li><b>SHarness's code licence</b> is not stated on its home page, so this guide gives only its content licence.</li>
-  <li><b>No tool listed here keeps a secret from the agent that uses it.</b> Today an agent that can use a secret can read it.</li>
+  <li><b>Most tools do not keep a secret from the agent that uses it.</b> An agent that can use a secret can usually read it; a broker such as Claude Code's network secrets is the exception, and we have not tested it ourselves.</li>
   <li><b>SHarness is not a product you can deploy today.</b> It is a design with its first experiments.</li>
   <li><b>Our own tokens are not yet one per agent.</b> Our agents push to GitHub through their person's account; secrets are per agent (one environment each), and one GitHub token per agent is where we are going, not where we are.</li>
   <li><b>No security guarantee.</b> Following this guide reduces what a tricked or mistaken agent can do; it does not make agents safe.</li>
@@ -508,9 +508,9 @@ $('#mtable tbody').innerHTML=DEP.map(d=>'<tr><td><b>'+d.name+'</b></td>'+d.l.map
 
 // product table
 const PROD=["Claude","Microsoft and GitHub"];
-const PROWS=[["Saved instructions","Projects ✓ tested","Agents for Microsoft 365 Copilot"],["Mail and calendar","Connectors (Gmail, Google Calendar, Microsoft 365) ✓ tested","\u2014"],["Scheduled runs","Scheduled tasks ✓ tested","Power Automate scheduled flows"],["Coding agent on a repository","Claude Code ✓ tested","GitHub Copilot coding agent"]];
+const PROWS=[["Saved instructions","Projects ✓ tested","Agents for Microsoft 365 Copilot"],["Mail and calendar","Connectors (Gmail, Google Calendar, Microsoft 365) ✓ tested","\u2014"],["Scheduled runs","Scheduled tasks ✓ tested","Power Automate scheduled flows"],["Coding agent on a repository","Claude Code ✓ tested","GitHub Copilot coding agent (now Copilot cloud agent)"]];
 let pcol=0;
-function ptable(){$('#ptable').innerHTML='<thead><tr><th>Step</th>'+PROD.map((p,i)=>'<th class="'+(i===pcol?'hi':'')+'">'+p+'</th>').join('')+'</tr></thead><tbody>'+PROWS.map(r=>'<tr><td>'+r[0]+'</td>'+r.slice(1).map((c,i)=>'<td class="'+(i===pcol?'hi':'')+(i===0?' ok':'')+'">'+c+'</td>').join('')+'</tr>').join('')+'<tr><td>Process-level enforcement</td><td colspan="2">None of these products enforces a policy on the processes an agent starts. SHarness, below, is an open-source design that aims to add that around the tools, whichever model drives them</td></tr></tbody>';
+function ptable(){$('#ptable').innerHTML='<thead><tr><th>Step</th>'+PROD.map((p,i)=>'<th class="'+(i===pcol?'hi':'')+'">'+p+'</th>').join('')+'</tr></thead><tbody>'+PROWS.map(r=>'<tr><td>'+r[0]+'</td>'+r.slice(1).map((c,i)=>'<td class="'+(i===pcol?'hi':'')+(i===0?' ok':'')+'">'+c+'</td>').join('')+'</tr>').join('')+'<tr><td>Process-level enforcement</td><td colspan="2">Claude Code has a sandbox, enforced by the operating system, around the shell commands it runs and the processes they start (off by default), and Gemini CLI documents sandboxing too. SHarness, below, is an open-source design that aims to give every process an agent starts a policy of its own, whichever model drives it</td></tr></tbody>';
  $$('#prodseg button').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===pcol)))}
 $('#prodseg').innerHTML=PROD.map(p=>'<button type="button">'+p+'</button>').join('');
 $$('#prodseg button').forEach((b,i)=>b.addEventListener('click',()=>{pcol=i;ptable()}));ptable();
@@ -552,7 +552,7 @@ qa.addEventListener('submit',e=>{e.preventDefault();const f=new FormData(qa);
  const role=f.get('role'),stage=+f.get('stage'),reach=f.getAll('reach'),who=+f.get('who'),prod=f.get('prod'),env=f.get('env'),worry=f.getAll('worry');
  let dep='assist';
  if(reach.includes('money')||reach.includes('prod'))dep='money';else if(reach.includes('inbound'))dep='front';else if(stage>=6)dep='team';else if(stage===5||reach.includes('code'))dep='code';
- const D=DEP.find(x=>x.id===dep);let lvl=D.start;if(reach.includes('pii')&&lvl<2)lvl=2;
+ const D=DEP.find(x=>x.id===dep);let lvl=D.start;if(reach.includes('pii')&&lvl<2)lvl=2;if(reach.includes('public')||(reach.includes('docs')&&reach.includes('pii')))lvl=3;
  const W={mail:1,docs:1,code:1.5,prod:2.5,pii:2,money:3,public:1.5,inbound:2};
  const rScore=Math.min(1,(stage/6)*0.45+reach.reduce((s,k)=>s+W[k],0)/14);
  const cScore=Math.min(1,who/3*0.85+(env==='locked'?0.1:0));

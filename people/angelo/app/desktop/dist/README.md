@@ -1,0 +1,1 @@
+Tauri asks for a front-end folder (`build.frontendDist` in `src-tauri/tauri.conf.json`). This app has none of its own: its one window loads the public live page, https://web-summit.sgit.ai/people/angelo/app/index.html?display=1#live. This file only keeps the folder in the repository.

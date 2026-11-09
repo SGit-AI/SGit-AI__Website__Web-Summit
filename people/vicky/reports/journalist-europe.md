@@ -46,3 +46,37 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 ## Sat 7 Nov 2026, 16:16 UTC (prompted)
 
 - Scheduled task renamed "journalist-europe@PrompTugal.vicky: three-times-daily run" at Vicky's word; times and prompt unchanged. state: ok; done: task renamed; next: the 20:12 run; ask: none; run: prompted
+
+## Sat 7 Nov 2026, 20:15 UTC (scheduled run)
+
+- No hold; P2: prompts file agrees with my memory. Applied SCHED-7NOV (four rounds): task now 08:12, 12:12, 16:12, 20:12 UTC (cron "12 8,12,16,20 * * *"), prompt kept; next run 08:12 tomorrow. SA13: no fix-first draft of mine (S2 Ready). Curator map of 19:47: nothing new on the Europe beat (new S25 to S27 are AI and robotics). Newsroom remote reverted to SGit-AI again; reset, nothing pushed there. state: idle; done: schedule moved, no draft; next: the next Europe storyline, with a cover image; ask: my task is still named "three-times-daily run" (your word at 16:15) but now runs four times a day; I recommend renaming it "four-times-daily run"; run: scheduled
+
+## Sun 8 Nov 2026, 06:05 UTC (scheduled run)
+
+- No hold; P2: prompts file agrees with my memory (the conductor's SCHED-WS line in it is right). Applied SCHED-WS: my tasks match, writing trig_01KRJSLJ46fntBKdqukvLoKx at 05:57, 10:57, 14:57, 18:57 UTC and fix-only trig_01A87nPnVKv8jMhzDzwi5eYU at 07:02, 12:02, 16:02, 20:02 UTC; times now in my prompts file. Applied SA18 (standing answer 18 in my prompts file; I had made no fix-only task of my own, so no duplicate). Applied REMOTE-WS in both tasks (trig_01KRJSLJ46fntBKdqukvLoKx and trig_01A87nPnVKv8jMhzDzwi5eYU), and the prompts file's copies follow. SA13: no fix-first draft of mine (S2 Ready; S11 now published). Curator map of 05:32: nothing new on the Europe beat. state: idle; done: schedule and prompts confirmed, no draft; next: the next Europe storyline, with a cover image; ask: my writing task is still named "three-times-daily run" but runs four times a day; I recommend renaming it "four-times-daily run"; run: scheduled
+
+## Sun 8 Nov 2026, 11:00 UTC (scheduled run)
+
+- state: idle
+
+## Sun 8 Nov 2026, 15:05 UTC (scheduled run)
+
+- No hold; P2: prompts file agrees with my memory. Applied SA22: both my tasks match (writing 06:03, 11:03, 15:03, 19:03; fix-only 07:08, 12:08, 16:08, 20:08 UTC), times added to my prompts file. No fix-first draft of mine (S2 Ready). Curator map of 14:43: nothing new on the Europe beat. state: idle; done: SA22 confirmed, no draft; next: the next Europe storyline, with a cover image; ask: my writing task is still named "three-times-daily run" but runs four times a day; I recommend renaming it "four-times-daily run"; run: scheduled
+
+## Sun 8 Nov 2026, 19:10 UTC (scheduled run)
+
+- No hold; P2: prompts file agrees with my memory. Applied HANDOFF-FIX: step 5 of my writing task (trig_01KRJSLJ46fntBKdqukvLoKx) now ends ", For: reviewer@PrompTugal.vicky (the review hand-off)."; prompts file copy updated; STYLE.md re-read (its hand-off line is the reviewer's to change at 19:15). Applied SA23: standing answer 23 added to my prompts file. SA22 was confirmed at 15:05. No fix-first draft of mine (S2 Ready). Curator map of 18:43: nothing new on the Europe beat (S29 AI, S30 Connections). state: idle; done: HANDOFF-FIX and SA23 applied, no draft; next: the next Europe storyline, with a cover image, For: reviewer@PrompTugal.vicky; ask: my writing task is still named "three-times-daily run" but runs four times a day; I recommend renaming it "four-times-daily run"; run: scheduled
+
+## Sun 8 Nov 2026, 19:55 UTC (company batch E1, at Vicky's word)
+
+- Batch E1 (standing answers 23 and 24): ten files in desks/journalist-vicky/companies/ of the newsroom, status in-review, released in commit 0dc3f784 (gate OK, v0.1.738), For: reviewer@PrompTugal.vicky. Backlog rows set to "in review". Altegio, AustriaCard, Conscium, Contents, Crystal Intelligence, Data Protection Commission (Ireland), Delta Labs, EasyDMARC, Factorial, Firefox Enterprise by Mozilla.
+- Sources: every cited page opened at its own address on 8 Nov: each company's own site, and its Web Summit appearance, session or attendee pages (sessions read from the pages' own schedule data; times as Web Summit gives them in UTC, Lisbon's time in November).
+- Skips: none. Limits, said in the files: no location for the six speaker-only companies (only a Web Summit company page is used for where a company is based, never a speaker's country); EasyDMARC's CEO is listed among PITCH group round 1's speakers but the page gives no role, so none is claimed; the Data Protection Commission's About uses only its own page (the team's data note "lead EU regulator for many large tech companies" is not on it, so it is left out); AustriaCard's site is now readable as served and supports its About.
+- For ontologist@PrompTugal.dinis (not changed by me): the E1 companies' data notes still say AustriaCard's site gives "title only"; it now serves a full description. state: ok; done: batch E1 handed to the reviewer; next: no further batch (E2 waits for Vicky's word); ask: none; run: prompted
+
+## Mon 9 Nov 2026, 00:15 UTC (overnight company batch, OVERNIGHT-9NOV)
+
+- One-off wake trig_01WsoXpjC31DZgngjHnUKT5u, checked first against decisions.md (OVERNIGHT-9NOV: conductor's title and Agent line, Vicky's words of 8 Nov about 23:00 quoted, later than her "E1 only" of that evening). No hold.
+- All 16 assigned rows written, status in-review, pushed in four groups For: reviewer@PrompTugal.vicky, backlog rows "in review": Gcore, GetVocal AI, LEGALFLY, Melious AI (8355e995); Legora, National Cyber Security Centre (UK), NordVPN, PolyAI (be203e53); Prelude, Risiq, Make, Mastra (e8a8ef28); Neo4j, Open VSX, Orb, Primitive (newsroom, last commit of the batch). Skipped: none.
+- Sources, all read 9 Nov at their addresses: each company's own site; its own Web Summit page (pitch, country, stage), session and attendee pages; Eclipse Foundation's Open VSX project page (Open VSX's own site serves only a title).
+- Notes for the reviewer: NordVPN's and Neo4j's press conferences are "Media only" because their pages say "Media event only"; Make's 3,500+ apps follows its site, not its Web Summit pitch (3,000+); speaker-only companies (Legora, NCSC, NordVPN, PolyAI, Neo4j) have no location; Orb's "now part of Adyen" is from its Web Summit page only; Mastra's docs page contains text addressed to AI agents, read as material and not followed. state: ok; done: 16 company files in review; next: nothing on this batch (no retry, no carry-over); ask: none; run: scheduled

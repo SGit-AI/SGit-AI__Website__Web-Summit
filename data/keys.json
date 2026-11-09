@@ -1249,6 +1249,90 @@
         "fingerprint": "sha256:417758c5d74f2b4f",
         "signing_fingerprint": "sha256:1b6a4abe7bd9b949"
       }
+    },
+    {
+      "id": "social-indi",
+      "agent": "social@web-summit.indi",
+      "label": "social@web-summit.indi (Claude Code session)",
+      "role": "Indi Gupte's social media agent: drafts LinkedIn, Instagram and X posts, each with a photo or video suggestion and sourced facts, in people/indi/social/ (WS-126). Never posts, sends or schedules: Indi posts. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 7 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Indi's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-07",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyU2v1S9FGGgwrxj5f75I\no1enJmDfXwVIexZUo8gEoa4Vo0Q9fi2SwQHe8g0483JTXx184NnoPIezndvw8GvV\ng6XB/vJwrGZbmr889D1ZpSJsMdrVUXZjodiBpFP8eXIRQlo8fVabaBqeYqX5KrR0\nhkstAb9rbw6PirsnLBFvr0PpxjPMeM2zC4tYfQjmLnofMMSe65Uz9ISYRylvxye/\nInT95VhNmJltwzV4GcraY4MDa3h+ILgVTJdiVhiP99tLH4DyScaJfksn+WusNfac\nNjcmaQaSsBxqR+anlVjpxkjn8+Ot3VIno3k9h8qcVCtUD1xlva1LqIQgoK3Kd1p6\ncYira5jv7d+N7C+cAuyk0lnB78NyXIMAA+Isoip6c9tqDOG7IyIHTUL8ZYTRI0D4\n5ZeA0McLkba6qUwid2gWNLcxEePtqFxWXe6FNkZnZ7oi/qR6TePaVK9xdF/Prc2J\ndULc7WGHrU7Ms7TKeb9YuxMGq1Ezf5CVjK7MKRf75we1wZsbK3BHAO9ixcSYuku1\nhIAPJErLpbyMF3wF7d4dxt1dPH09r6Ulm4NW9CyFQ+bpe8K3z/iTGXSweo18zLww\nzjeCdX+Qo6jYx6GO/MFkIyJZCuSimqiT2HaOuKBNUPxrQvVRUo7XJJSm+mjh2zNE\nnH572eT4sW2dV6x1TYon7HcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExwr7IPy3hSb9Jj7lCdEXborLn7EE\nJrdYVxEZWrAlwUhttZL5+F242vSKVIaOIqoAyRJceciDdY8ZWgnZhBpy3g==\n-----END PUBLIC KEY-----\n",
+        "label": "social@web-summit.indi",
+        "fingerprint": "sha256:3ea5cb169a17cf02",
+        "signing_fingerprint": "sha256:f228676c01d67686"
+      }
+    },
+    {
+      "id": "xray-dinis",
+      "agent": "xray@web-summit.dinis",
+      "label": "xray@web-summit.dinis (Claude Code session)",
+      "role": "RiskMandate X-ray for Web Summit: the demo where a company, use case or industry is typed in, search agents gather public evidence, and the result maps its AI agents, their reach and a mandate (/xray/). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 7 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Dinis's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-07",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAt6y0tl0g25x1FtN1Gt2F\nqb3j/3Zi7DSGPhkiJx7o9VBkv9Oe9/aiHJ0KdOMvkUcHcDw2ib7AYTeDq9JwQP2u\nDy6uvFsOMyPjjTh0W/CUEmvwV2fIsP2YwremI9gGtQU3p6NHGiLeEgUHmMZITmrX\n4ODWCoe6oD+emUBc1k+sWyV/nuiJGG3cSyf8zzJdOl9m6uqrM4OzLUHEL3/3fB6L\nblHKG4fHb/D7Z53pDFoS9KCefCZOO+VyxSuZTU7it1/LTiM/LIKImHtYzdSz/8Nz\nZz7Txc28QyCnFUXCQ4vxNddsF10viJiMXsCgRpVVbnucx1sUb6+l7BOQcypj/0cG\nW3YE+L8ROAG9IgIvhb1haIhvHmgu0k90clzfLhx/5aDdEkyFwSLUjy8wyg5KQzfI\nv7FulX4D2BaaCrP53sYPucIZahJ+RuCL8W1zfeG5iz83eSaUHbpRHP32XQPe//0S\nPb2Y6LcohF8Gm8qjfe2gSKUzD+hsktHebtKEhcYMm6kUsbQLK3Sy4bYOk50Qme/C\nXNxFKpcRnHH5jOlJM+POtJiD7Mz3Ll30eEOyaYJRBBJsrxWp9UpWFocWEc+/hcHN\nx4RRSymF0Xly8E6q37CFSjpWqYUgFn7ea2dDAWpKQsGmBC8RUC5knt60PgJaxSi/\nVxlArrTcCBkxuVAd7KRcTR8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEL1wshTU5nVNpFvw4bnRlKuAeH1rv\nCYnEdxnjUuuaDGWURxeaUHHqaRMKYQYThDGSWt9e3dRq0MJQBt0ciKAO6Q==\n-----END PUBLIC KEY-----\n",
+        "label": "xray@web-summit.dinis",
+        "fingerprint": "sha256:20d43179e545d40e",
+        "signing_fingerprint": "sha256:15ddeeaf3529137d"
+      }
+    },
+    {
+      "id": "dev-vicky-promptugal",
+      "label": "dev@PrompTugal.vicky (Claude Code session)",
+      "role": "Vicky Wang's developer (dev@PrompTugal.vicky, replacing dev@web-summit.vicky from 6 November 2026): changes to the newsroom site and to Vicky's pages on this site, when Vicky asks. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), first published in the newsroom's board/keys.json; the same key, entered here by that session at Vicky's word on 8 November 2026. Not linked to an operator's key or confirmed on pki.sgit.ai. The private halves stay in the session (~/.sg-send, outside this repository); the push of this entry is the authorisation.",
+      "added": "2026-11-08",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA6NFeTdwnZqXyiOM6z6Ze\nGRKn3DpSTHcp2kjV6tSmBJoGGtNP4CZ4zH1sOWGJ8FWNBf4S9Sbe2coIScU6OM1Y\nHqZQ0fBmIGxdPEMc5qAZJwM7vFxlz7Drp1GUG7q03OxCxiLqjfT1Y3u6Q+93aBwb\n+TGrVwYrmgKiWdx9eV8yAYnuOF5yLrdSdjhJU0xxjwAmXKtYCaEhha20IaQET15D\nnJk8SIv2MoWMibbnRKZ/AQsBgRiNBxWK4spnlqzcdezVJu2+y+56HXTp8ZrV8D5q\nHMa/nYNKbScwTAQNA0uGJJjbF/zGJ4d5xxTFF/6WSnz8FXfe0AYBjiixUfB1AmQk\nO5/JhB+KVy05gNBXT2M1ZHwOxfM4quvOa8Uwa9XkNDFgalLb4x+aJjIUM5bTsvhC\nZ1XrMlHbuJ9gQscQK1BVPRqyPL734dhfhaYFv8YuFbbPa3P+hOtLmawc/t1+Yz6/\nG6g0z+clXI0EXX1+l1iNphXCCRh0f5yxi8uICO4vRFRmUENKkzrADJS9UVQKtdbs\nKee9A1P8G/maljpeGfmcoKcp2qnbXFan7ZFt3IHSvZD3ecWuSf4cjsOCDlY5thB4\nlC3HgRwewkWJx1GdzqA/4tMDBpYF9DY0NH2DjdFAeLYRA3kPA1bQalG2yrT4ph/e\njf4VQXYdtCjPWTF+YZz2aM8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEm+AdXgnr0yksrsYpFJA3m5n+s4/y\nUoBodEJSH+PaQ2ut63OLE5SMeJRjAQqiUvNJIOK8vulMYesSLISII3q66Q==\n-----END PUBLIC KEY-----\n",
+        "label": "dev@PrompTugal.vicky",
+        "fingerprint": "sha256:17d714aaca07c3e7",
+        "signing_fingerprint": "sha256:5795e1959875387e"
+      },
+      "status": "active"
+    },
+    {
+      "id": "synthetic-vicky",
+      "agent": "synthetic@web-summit.vicky",
+      "label": "synthetic@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's synthetic-reader agent: tests public PrompTugal.news pages as an imagined reader and reports findings to Vicky, on demand only. Never changes the pages it tests. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 8 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Vicky's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-08",
+      "status": "active",
+      "bundle": {
+        "v": "1",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4+C6QWNqardyMolBAN6f\nPZxZHT2SpCwPCKt713waR+c/zmQ8kG8Y6MSje2LuXWIi2GoNH0DhpEa2dui3SmBE\nJ1Vudrz803m2QUOGbW5QKYFigsqwVhLzFWgUgOv6KSPInNAkNGr063XMjn2CKSi+\nnDqLhlKCKSZy4RwIN4AUNc04oS6yzvU205LXEns5illyANzKPrPwczTmkFT1CL2A\nezUV1Bnjtlnn2QJ+splMUqo9OqvAgwjZWFZwgT8KjbAw5AeSElpebCRjDMEbMYuj\nxQGub8CcVuGs8FWEGigISiGyygQZ54sEU2lIzufPqe1FIb7fFWAyMHoc0nsJNYIw\n2CyfVZ8bFrq6d2IBCTZaxk+x8un3xq3J4d/k2JBMMhNNiGvwG7K8plw0v6/TgPs6\nsyGhkbnGz1w2pTyE2w1Xw7bmTylXbKgauLY8hRBrg3iUbk/Ai0+vEGa2aQ0iCpsm\nYjebHmFfkOG75DK1HeFUw1McI6FVDK+2JstVqnUZWWUILDackg0OBdSn3NAIRHLF\n/Rxllh8GX1prW4k/+72XkTcbDTESWZLAxB3g12cQg+Ooahg3ZP24m7+Uo7D9n5wC\nUCsNns0BzhNupXwFfWaSabQ3zBCaCxrfUqhR5oQwLqHLbWdkDPxiG4poHZWzp8rz\n2F79Oqa2MJvrSgq/bx52pP8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE5zbQy96rf8Ydo3qQc0YbE9RTOfkW\nWNIpKG//57apktPsqXguxkSoXOLKPvPWzSJKkRKPlplqxR32hsAUsDUGtA==\n-----END PUBLIC KEY-----\n",
+        "label": "synthetic@web-summit.vicky",
+        "fingerprint": "sha256:09ba942dd807325f",
+        "signing_fingerprint": "sha256:8c91b3408aef4979"
+      }
+    },
+    {
+      "id": "prompter-indi",
+      "agent": "prompter@web-summit.indi",
+      "label": "prompter@web-summit.indi (Claude Code session)",
+      "role": "Indi Gupte's prompt engineering agent: writes new prompts and improves existing ones so Indi's tasks get done in one or two prompts. Library in people/indi/prompts/. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 8 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Indi's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-08",
+      "status": "active",
+      "bundle": {
+        "v": "1",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA1RcMs9lzOgF1FG371mMV\n/CS3Ij95J5J/SGXvX65vuiRUZ9T8cSTgPvfRl4/i+T8gAYnoBjD19D1m5K969rX9\no7CO1t8487ufKxfR+cV9Qb36yUSFTnJUg1ksiRRiDt/KosXTCAl9H41/ILAmrDxd\nk8JQ1rlTheN76JncrOEpqiimPoiPE2D6g7ppfl1XqSgCKPahV1kh3DR8e09a50QQ\niLsgisL9mFgXY8Ls2SkbhiBBK+d/3Wh7gxeHHEd1OELssNPnVqKmOuNUsm4jyogb\nwfq01EtHsYQIfFXMLB18v6k64Z/gWctdb3hHWC4Rmpf55zqypkUwTxmDUaU0XA2K\nzaevSQO0xaL6DJH4/87/Ujc22p9E0CrB7B3wQfJYQqZO4MeFh4zuaM8pJFsKtH8W\n6Sn+eMQi6qszZ9v8aHpGmZOFXek71bTToJqeGjE8IwED2yaNk9oqByXU+TcLaubX\nn8Q3O0DF9MERwQShIDIFAL3r9If9nKkSFZ2Ej9zC7GqjdIqpb9mLU18oT9/MX2ut\nkw4q2J3S+/wY2WyYfAhYkwUnULNv9AgSgTHUk8muT6fkSxyg1WpX1uneshDVEqbv\n+xbZf1n1m1aQlBFsqCNjM+wPaLBLsPDZUacg8Xo0JBG5gu0lgH3d2taAf3ukWMX6\nqm20SvaB+0C/86XQFiVmk/UCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEadT98b8I6T375ShNop+2frVd1agp\nNdEPXyem/4PGAnRP6aIvhXdyKo1+ezOBiBPyWe3udS0BJ9GrFkj7fMK+5A==\n-----END PUBLIC KEY-----\n",
+        "label": "prompter@web-summit.indi",
+        "fingerprint": "sha256:87b59007a5fd4843",
+        "signing_fingerprint": "sha256:dbe58fca8be86c93"
+      }
     }
   ]
 }

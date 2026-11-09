@@ -2,6 +2,65 @@
 
 By policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo. Newest run first. Each finding names the commit, the rule (the numbers are `map.md`'s) and the evidence. What the watcher (`people/jose/watcher/latest.md`) already reports is not repeated; a finding here adds what only Angelo's protocol makes a violation.
 
+## Run 5: 8 November 2026, 19:20 UTC (scheduled)
+
+**Range:** `fc224b97..053ca936`, 147 commits by Angelo's agents. Next run starts after `053ca936`.
+
+**The lane check, first day enforced:** 0 refused, 148 outside writes declared. 146 are the dashboard's, as the new reviewer of the map and app workers (138 cite the desk's brief `251d793b`, 8 cite your words in its session); its lane now includes the command centre, `people/angelo/workers/` and `people/angelo/map/` (the kit, your "Go as above for the dashboard agent"). One by the writer to the kit itself, with your "Yes to the kit change." quoted. Three new workers (dev.abp, dev.app, dev.work) push only to `workers/*`; no `claude/*` branch moved.
+
+### P-11 (for Angelo, before the first installer is built) the site is about to hand out a desktop app
+
+- **Evidence:** `d6152af4` (the dashboard reviewing dev.app, 12:02): a Tauri app for Windows and Mac ("frameless, transparent, always on top"), a download page on the site, and a draft CI workflow For Dinis's conductor that would build the installers and serve them from `/people/angelo/app/desktop/dl/`. Today the page says "Not built yet".
+- **Why it matters:** an installer from the site runs on the reader's computer with their rights, which is a long way past a web page. Built by CI from whatever is on `dev` (which every agent on the team can push), unsigned, it is the clearest supply-chain path on the site; your tiers put "anything that reaches a person" and "anything irreversible" in tier 3.
+- **Recommendation:** treat the first public installer as your tier-3 go, and ask for two things before it: the installers code-signed (Apple and Microsoft certificates, Dinis's call) and built only from a tagged release that a person approved, not from every push.
+
+### P-09, watched files: changed, read, clean
+
+- `pages.mjs` (`d6152af4`) now also places the app's download page (`people/angelo/app/desktop/page.mjs`, added to `watched.json`): its scripts fetch only `dl/builds.json` on this site, accept only `Mac` or `Windows` files with plain names, and build the links with DOM calls, not HTML strings.
+- The guide's script (`363e231f`, `1727e4c2`, the writer): one questionnaire rule (a public or personal-data deployment starts at Enforced) and wording. Nothing new that sends, stores or reaches keys.
+
+## Run 4: 8 November 2026, 07:30 UTC (scheduled)
+
+**Range:** `b776ef5c..fc224b97`, 99 commits by Angelo's agents. Pushes: the activity API from 7 November 23:36, and each branch's head. Next run starts after `fc224b97`.
+
+**Both barriers are built, and one is now on:**
+
+- **The signed-only drain** (`d89d2576`, dev@, 22:14, For its owners): read and checked. An unsigned message, or one signed by a key not on the keys page, is written as id, lane, time and length only; the lane name comes from the drain, not the message; the public form opens only lanes marked `public`, and a gate check refuses that mark on any of Angelo's agents' lanes. The test (`people/angelo/policy/tests/`) needs the `sgit_ai` package, which this container lacks; not run. R11 is now technical for the lanes (map).
+- **The lane check** (`42198055`, dev@, 22:17): check 21, warnings until `lanes.json` says `"enforce": true`, which dev@ left to me. Since it went in, every outside write by Angelo's agents was declared (5 of 5, 60 commits). **I turned enforcement on** in this commit: from now on release.sh and CI refuse an undeclared outside write.
+- **A gap closed:** the lanes and the check live in my folder, and five agents' lanes (`people/angelo/**`) included it, so an audited agent could have widened its own lane. `lanes.json` now reserves `people/angelo/policy/**` to me, refused to anyone else even when declared. dev@ wrote here five times to build the two barriers, at your word; that is the last time it can.
+- **P-10 closed:** routed by the desk (`318b1c2d`) and built the same evening.
+
+**Clean:**
+
+- **P-08:** the workers pushed only to `workers/*` (24 pushes since 23:36); no `claude/*` branch moved. **P-05:** team-collaboration's session branch has not moved since 11:43 yesterday; closed unless it moves again.
+- **P-09:** you chose to have me watch the page builder (`40ad331a`, "Ok sure."). `watched.json` holds the hashes. Since I read it, `pages.mjs` is unchanged and the guide's script changed only in its text (my WS-125 fixes, `c5814aec`, `5853ddfd`): no fetch, no storage beyond one key, nothing touching keys.
+- **R7:** dev@'s three writes to Dinis's team's files (`d89d2576`, `42198055`, `e89c0219`) name their owners and, after the check, declare each path.
+
+## Run 3: 7 November 2026, 19:15 UTC (scheduled)
+
+**Range:** `a3497d36..b776ef5c`, 97 commits by Angelo's agents. Pushes: the activity API from 16:47 (its last 100 events) and each branch's head. Next run starts after `b776ef5c`.
+
+**Clean:**
+
+- **P-08 settled as Angelo chose:** the new workers push only to `workers/<agent>` (`workers/dev.links`, `dev.map`, `dev.venues`, `research`, `vault.kms` exist; three pushes since 16:47, all there). The kit records it (`97eaa947`).
+- **R7, others' files:** crm's `5c7a04cb` (`data/companies.json`, Dinis's conductor's) names all five steps and its owner.
+- **Tier 3:** Angelo did his LinkedIn himself (`91cec20e`: "Ok I've done everything for today"); social-media drafts only. No sealing, no key, no admin action.
+- **Lanes:** every other write is inside the agent's paths, now that `reports/` and `proposals/` count for everyone (the protocol's place for drafts and reports).
+
+### P-09 (medium, for Angelo and security) R6 and WS-132: the writer added code the build runs, which puts a script on the site
+
+- **Evidence:** `aafbbb05` (writer, 10:44, at Angelo's "I want all interactivity to be back") created `people/angelo/pages.mjs`. The build imports and runs that module, in CI too, and it places the guide's inline script on `people/angelo/guide/`, on the same origin as the person keys in people's browsers.
+- **Why it matters:** this is WS-132's second risk, by name ("`people/<id>/pages.mjs` ... its pages carry raw HTML and a head of scripts"). Today's script is clean (I read it: the audience switch, the questionnaires, the dial; one `localStorage` key; nothing sent anywhere), and gate check 22 passed. But from now on any change to `agent-setup-guide.fragment`, by any agent that may write `proposals/`, ships script on the site with no review. The writer's ABP scope is the newsroom only.
+- **Recommendation:** ask security@web-summit.dinis to review it under WS-132, and make the fragment's script a file the gate pins by hash, so a change to it needs a person to update the hash.
+
+### P-10 (low, for Angelo) the barriers you approved at 11:30 are not on the backlog yet
+
+- `80d54893` recorded "Go ahead with both" For the desk. Eight hours on, neither `people/angelo/backlog.md` nor the desk's STATE.md names the signed-only drain or the lane gate, and dev@ has not touched the drain. The drain must land before the conductor's own token (WS-170) does.
+
+### P-05, still open
+
+- team-collaboration's session branch moved again at 11:43 (`166b6650`, the 11:40 brief). Its stored prompts still lack the "push only through release.sh" line.
+
 ## Run 2b: 7 November 2026, 10:40 UTC (Angelo woke me)
 
 **Range:** `975e2b20` to `a3497d36` (25 commits by Angelo's agents). Lanes: one write outside, the writer's report file again (`01fc7741`), noted in run 2. Two of the desk's commits name policy@: the WS-125 review (`c5e05274`) and a schedule of 07:10 and 19:10 (`1d6ba95d`); I acted on both only after Angelo confirmed them in this session.

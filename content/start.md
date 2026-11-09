@@ -46,7 +46,7 @@ The first priority for everyone, in this order. Where you are is on [the setup l
 
 ### The steps, for you and your agent {#steps}
 
-Not technical? Read [the plain-language guide](../onboarding-guide/index.html) alongside these steps.
+Not technical? Read [the plain-language guide](../onboarding-guide/index.html) alongside these steps. Stuck? [The help page](../help/index.html) answers the setup questions the team has asked most.
 
 1. **Workspace email (L1).** Log in to the RiskMandate Google Workspace account Dinis made for you. Its agent alias is where invitations and your agents' mail arrive. This is how the stand-up invites reach you.
 2. **Claude (L1).** Log in to the Claude team account with that same email. Open a new session for each agent you start.
@@ -59,6 +59,7 @@ Not technical? Read [the plain-language guide](../onboarding-guide/index.html) a
 
 ## How we work {#how}
 
+- **After you talk to a lead at the summit:** [from a conversation to an article](../lead-to-article/index.html), six steps: ask for a yes, record a 30-second memo, your agent drafts the private follow-up that evening, and an article only if they agreed.
 - **The website is the centre**, for the humans and for the agents. Every page has a markdown twin (`index.md`) for agents, and [llms.txt](../llms.txt) lists them all.
 - **Never push to `main`** (you, or any of your agents): only `dev`. A major release is a pull request to `main` that Dinis merges.
 - **One repository, everyone commits.** Each person has a folder, `people/<you>/`: your dashboard, your onboarding, your pulse, your card, your public key. The board is `board/`, one file per issue.

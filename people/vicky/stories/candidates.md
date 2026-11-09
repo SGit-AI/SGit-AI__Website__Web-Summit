@@ -6,12 +6,16 @@ Kept by curator@PrompTugal.vicky (until 6 November curator@web-summit.vicky), Vi
 
 **Connections** (from 5 November, at Dinis's direction): stories that link startups and companies at Web Summit so each gets the most out of the week: startups in the same field, startups and the investors or programmes that back that field, companies on the same stage or day, Portuguese startups and the European ones they could work with. They are marked "Connections" in the beat. Each link is the curator's suggestion from public facts: no source says these organisations plan to meet, and no story should say so. Organisations only; nothing private about anyone.
 
-Last updated: Saturday 7 November 2026, 07:46 UTC.
+Last updated: Sunday 8 November 2026, 14:43 UTC.
 
 ## At a glance
 
 | Id | Title | Beat | Added |
 |---|---|---|---|
+| S28 | Five AI builders on Web Summit's speaker list worth knowing (published 8 Nov) | Connections: the summit | 8 Nov |
+| S27 | A map of Web Summit's buildings, and what each holds | AI and robotics | 7 Nov |
+| S26 | Two editions a day: PrompTugal.news starts a daily newsletter | AI and robotics | 7 Nov |
+| S25 | The sign-in: how editors and agents prove who they are | AI and robotics | 7 Nov |
 | S24 | Driving to Web Summit? Road closures and drop-off points | The summit | 6 Nov |
 | S22 | From pineapple waste to fish feed: AgroGrINTech's pilot in Maia | Portugal | 6 Nov |
 | S20 | Lisbon's Octo Health launches health tracking in Portugal and the US | Portugal | 6 Nov |
@@ -32,6 +36,38 @@ Last updated: Saturday 7 November 2026, 07:46 UTC.
 | S3 | Road 2 Web Summit: Portugal's startups head for Lisbon | Portugal | 4 Nov |
 | S2 | Europe arrives in Pavilion 4: the Commission's week at Web Summit | Europe | 4 Nov |
 | S1 | Web Summit Lisbon: your first day, from airport to arena | The summit | 4 Nov |
+
+## S28: Five AI builders on Web Summit's speaker list worth knowing
+
+Connections: the summit, added 8 Nov. A theme-led guide to five AI builders on the speakers page: who they are by role and why a founder in the field might want to hear them. Theme-led (standing answers 19 and 20), for journalist-connections; different from S12, S15 and S16. Published on 8 Nov 2026: https://promptugal.news/articles/five-ai-builders-to-know.html. Not to be written again.
+
+Sources:
+
+- [Web Summit, "Meet Web Summit's 2026 speakers | Web Summit | November 9-12, 2026"](https://websummit.com/speakers/), read 8 November 2026
+
+## S27: A map of Web Summit's buildings, and what each holds
+
+AI and robotics, added 7 Nov. A new page draws the summit's buildings in Parque das Nações from OpenStreetMap and counts the programme's sessions in each; no people on it. A team topic (a site change).
+
+Sources:
+
+- [PrompTugal.news, "The venue map"](https://promptugal.news/summit/venue/index.html), read 7 November 2026
+
+## S26: Two editions a day: PrompTugal.news starts a daily newsletter
+
+AI and robotics, added 7 Nov. A morning edition (what is on today) and an evening edition (what happened and what is next), each a page and a short plain-text email with links. A team topic (a site change).
+
+Sources:
+
+- [PrompTugal.news, "The daily newsletter"](https://promptugal.news/newsletter/index.html), read 7 November 2026
+
+## S25: The sign-in: how editors and agents prove who they are
+
+AI and robotics, added 7 Nov. How PrompTugal.news lets its editors and agents sign in with a key handed over as a QR code, and the limits it states itself: readers need no account. A team topic (Vicky: our team's work is a standing topic), not in the five-part series.
+
+Sources:
+
+- [PrompTugal.news newsroom notes, "The sign-in: a key in a QR code, and what it is for"](https://promptugal.news/newsroom/notes/2026-11-06-the-sign-in/index.html), read 7 November 2026
 
 ## S24: Driving to Web Summit? Road closures and drop-off points
 
@@ -230,6 +266,16 @@ Sources:
 - [Executive Digest (SAPO), "Web Summit 2026: Metro de Lisboa prepara reforço de comboios e vigilância para receber 75 mil participantes"](https://executivedigest.sapo.pt/web-summit-2026-metro-de-lisboa-prepara-reforco-de-comboios-e-vigilancia-para-receber-75-mil-participantes/), read 4 November 2026
 - [Executive Digest (SAPO), "Web Summit: Carris reforça transporte com 'shuttle' e passe conjunto com metro e comboios"](https://executivedigest.sapo.pt/web-summit-carris-reforca-transporte-com-shuttle-e-passe-conjunto-com-metro-e-comboios/), read 5 November 2026
 - [Junta de Freguesia do Parque das Nações, "Web Summit – Condicionamentos de trânsito entre 9 e 12 de novembro"](https://www.jf-parquedasnacoes.pt/autarquia/noticias/web-summit-condicionamentos-de-transito-entre-9-e-12-de-novembro), read 6 November 2026
+
+## Connection storylines: order and readiness
+
+For journalist-connections, in priority order (standing answer 22).
+
+Ready to write now: none.
+
+Already published, not to be written again: S28 (https://promptugal.news/articles/five-ai-builders-to-know.html).
+
+Not ready yet, held until the researcher captures what the companies do: the healthtech, fintech and AI startups on Web Summit's featured list (names and tags only so far), and the speakers' policy and investment, mobility and devices, and infrastructure and security groups.
 
 ## Dropped
 

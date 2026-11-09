@@ -2,6 +2,54 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 8 November 2026, about 17:30 UTC (prompted by Angelo: a video for the LinkedIn post)
+
+- **A 53-second square video for the graph post**, at Angelo's word ("a video of the agents map ... from the beginning"; "if we get to show the actual deliverables ... even better"): his command centre's map playing back from 2 November, the commit replay, five live pages (PrompTugal.news home, articles, the graph, the story board, his interactive guide) with captions, and a closing card with the stand (Thursday 12 November, booth A1-30, ALPHA 1, Pavilion 1). Recorded from the public pages; kept out of the repository (sent to Angelo). Angelo posts it himself.
+- The "over a hundred agents" line: the conductor's change (b916e1d4) stands; the graph article's count asked of Vicky's desk (newsroom, desks/writer-angelo/asks/2026-11-08-graph-article-count.md), not edited by this desk.
+
+## 8 November 2026, 09:20 UTC (prompted by Angelo: the pending questions, one by one)
+
+- **Angelo confirmed his agents' protocol in this session** (the kit asks it once per agent): "Yes, I confirm".
+- **The live demo:** a rehearsal on Monday 9 November (topic, the whole flow once, timed, a one-page script with fallbacks for weak Wi-Fi).
+- **policy@'s open point on the questionnaire:** "Both as you propose": posting in public starts at Enforced; company documents at Reviewed, Enforced with personal data. Done in both versions (newsroom v0.1.696; the fragment here), tested.
+- **Check-ins:** twice a day to Thursday, about 08:00 and 17:00 Lisbon, into this session; a report only when something needs Angelo.
+- **Dinis:** Angelo asks him himself, and this desk nudged his conductors (newsroom reminder commit, For: Dinis, conductor@ and conductor.b@PrompTugal.dinis).
+- **Kit:** the writer's line now says it publishes at Angelo's word (Angelo: "Yes to the kit change").
+- **Website:** the recommendations for leggiopasqua.com went to Angelo as a PDF for his own agents (not kept here: his personal business); three questions for him in it.
+
+## 8 November 2026, 08:45 UTC (prompted by Angelo: "Get a status update")
+
+- **designer@PrompTugal.dinis read the elevated guide** (ade67367): in brand; its one note (headings under the sticky bar) fixed (newsroom v0.1.694).
+- **dev.verify@ flags** on the guide: c3 "contradicted" because the kit README (team site, `kit/README.md#promptugal`) still says journalist@ publishes the writer's pieces, while Angelo had his writer publish; the fix is a line in the kit (the conductor's file, Angelo's protocol: tier 3). c2, c5, c7 "unsupported" for want of a source the models could read.
+- **No answer from Dinis** on the contributor ask, keys or authorisation; account B's agents are paused (runner.writer's STATE).
+- **Backlog 0g (Angelo's website) is mine**, waiting on Angelo: where leggiopasqua.com lives and how it is edited. LinkedIn moved to social-media@ (0h).
+
+## 7 November 2026, late evening (prompted by Angelo: "Go ahead, in PrompTugal's brand")
+
+- **The PrompTugal article elevated** (newsroom 39e19860, v0.1.655): a hero in the site's dark band, a sticky "read this as" bar with icons that turns on "for you" boxes through the article, reading time and depth, a staircase, deployment tiles, a larger dial, card grids, icons on every questionnaire; all in the site's tokens. Checked live at phone and desktop, light and dark. The team site's copy stays, at Angelo's word.
+
+## 7 November 2026, about 22:00 UTC (prompted by Angelo: "Yep push it")
+
+- **The interactive article is live on PrompTugal.news** (newsroom 3c4a60fd, v0.1.644), pushed by this desk at Angelo's word instead of waiting for dev@PrompTugal.dinis's review; the commit asks dev@ to review after the fact and tells Dinis. Checked on the live site: every control, phone and desktop, no errors; tables and lists without scripts.
+- The team site's interactive copy stays; Angelo to decide whether it stays a mirror or points to the article. The Sunday guide post in the LinkedIn pack now has one link, the article.
+
+## 7 November 2026, evening (prompted by Angelo: "Please go ahead")
+
+- **The guide made interactive inside the PrompTugal.news article**, on the newsroom branch `work/writer-angelo` (ccd77f7b), for dev@PrompTugal.dinis to review and bring onto dev: a feature (`newsroom/build/features/guides.mjs`), a script and stylesheet (`assets/guides/`) that read the article's own tables, and a "Find your guide" section with the questionnaire as markdown. Gate OK; tested at phone and desktop, light and dark, and with scripts off.
+- **Open:** dev@'s review; it may wait on Dinis's answer about Angelo's agents in the newsroom. Until it merges, the article links to the interactive copy on the team site.
+
+## 7 November 2026, 18:45 UTC (prompted by Angelo: "pick up tasks that are waiting on you")
+
+- **checker@PrompTugal.vicky's fact-check of WS125** (newsroom b0a6e7c0): five findings and one smaller, all taken after re-reading each source; the article re-signed (newsroom v0.1.604), the check file updated. The interactive guide's fragment brought into line in the same way (dev@ last changed it at 11:42).
+- **Dinis's conductor** put the contributor ask in Dinis's brief at 12:52 (newsroom e7d6f972); no answer yet.
+- Nothing else waits on this desk: dev@'s re-sync (c5814aec) was done at 11:42; the LinkedIn pack is with Angelo.
+
+## 7 November 2026, afternoon (prompted by Angelo: "Ok I've done everything for today")
+
+- **LinkedIn, done by Angelo today:** headline, the top of his About, the line in his consultant entry, the Project with its Media and skills, the announcement post with the image (Web Summit's participant card with our band below it, made in this session, kept out of the repository: it has his photo), and Featured (post, film, guide, graph).
+- **Next, from the pack** (`proposals/social/README.md`): Sunday morning the communication graph, Sunday evening the guide; Monday to Thursday as planned; Jose to agree to being named on Thursday.
+- **Open, for Angelo:** Dinis's answer on the contributor ask (newsroom c8810c39) and on his agents' key question; dev@'s re-sync of the interactive guide's text.
+
 ## 7 November 2026, 12:40 UTC (prompted by Angelo)
 
 - **LinkedIn (WS-126):** drafts reworked with Angelo through the morning (`proposals/social/README.md`): "collaborating with the RiskMandate team" rather than a title at RiskMandate; a line in his consultant entry plus a Project; Featured for summit visitors; the declaration post with his meet page; how it fits WS-126, Jose's channels (WS-175) and Silvio's video pack.

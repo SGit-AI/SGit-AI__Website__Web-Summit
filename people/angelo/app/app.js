@@ -5,7 +5,10 @@
 (() => {
     'use strict'
     const here = document.currentScript ? document.currentScript.src : location.href
-    const load = rel => new Promise((ok, no) => { const s = document.createElement('script'); s.src = new URL(rel, here).href; s.onload = ok; s.onerror = no; document.head.appendChild(s) })
+    // each script carries this release's number (the page's own, as the site's assets do), so a browser never keeps last
+    // release's copy for the ten minutes the site lets it (Angelo, 7 November: a fix looked missing right after each release)
+    const VER = ((document.querySelector('a.ver') || {}).textContent || '').trim()
+    const load = rel => new Promise((ok, no) => { const s = document.createElement('script'); const u = new URL(rel, here); if (VER) u.searchParams.set('v', VER); s.src = u.href; s.onload = ok; s.onerror = no; document.head.appendChild(s) })
     const root = document.getElementById('cc')
     // the kanban's rules first, then the shared app; if the rules fail to load, the shared app still runs
     // the data file is fetched once (WS-84: 385 KB on the venue's wifi): this file starts the request, and the shared
@@ -20,7 +23,7 @@
             return orig.apply(this, arguments)
         }
     }
-    load('kanban-core.js').catch(() => null).then(() => load('replay.js').catch(() => null)).then(() => load('where.js').catch(() => null)).then(() => load('../../../assets/cc/app.js')).then(() => { if (root && window.AngeloKanban) start() })
+    load('kanban-core.js').catch(() => null).then(() => load('replay.js').catch(() => null)).then(() => load('live.js').catch(() => null)).then(() => load('where.js').catch(() => null)).then(() => load('../../../assets/cc/app.js')).then(() => { if (root && window.AngeloKanban) start() })
 
     // ---------- offline (WS-84 step 1, at Angelo's go): sw.js stores this page and what it loads ----------
     // ?offline=off unregisters the worker and deletes its store (remembered in this browser); ?offline=on turns it back on
@@ -62,7 +65,7 @@
     function start() {
         const K = window.AngeloKanban
         let D = null, failed = ''
-        const route = () => (location.hash.match(/^#(kanban|collab|where|summit|replay)(\?|$)/) || [])[1] || ''
+        const route = () => (location.hash.match(/^#(kanban|collab|where|summit|replay|live)(\?|$)/) || [])[1] || ''
         const mine = () => !!route()
         once.then(r => r.ok ? r.clone().json() : Promise.reject(new Error(r.status))).then(d => { D = d; nav(); loadCockpit(); if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
 
@@ -102,12 +105,13 @@
         // ---------- drawing ----------
         function draw() {
             if (route() === 'collab') return drawCollab()
+            if (route() === 'live') return drawLive()
             if (route() === 'where') return drawWhere()
             if (route() === 'summit') return drawSummit()
             if (route() === 'replay') {   // Replay's timeline lives under Team and the machine's map; old #replay addresses land there (the clip stays on its own)
                 const i = location.hash.indexOf('?'), q = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1))
                 if (q.get('c') === '1') return drawReplay()
-                const n = new URLSearchParams({ map: '1' }); if (q.get('w')) n.set('w', q.get('w'))
+                const n = new URLSearchParams({ map: '1', tl: '1' }); if (q.get('w')) n.set('w', q.get('w'))
                 for (const k of ['p', 'k', 'a', 'i', 'sel', 'm', 'r']) if (q.get(k)) n.set('r_' + k, q.get(k))
                 history.replaceState(history.state, '', location.pathname + location.search + '#collab?' + n.toString().replace(/%2C/g, ','))
                 return drawCollab()
@@ -119,9 +123,11 @@
             document.title = `Kanban · ${first}'s command centre`
             if (!D) { view.innerHTML = failed ? `<p class="note">The kanban could not load its data (${esc(failed)}); the summary below the page is the same data as text.</p>` : '<p class="note">Loading the board…</p>'; return }
             const s = state(), now = new Date(), ctx = D.kanban
+            if (s.fm && !s.open && D.tasks && K.taskColumns) return drawTasks(view, s, now)
             const shown = K.filter(D.issues, s, ctx, now)
             const needN = D.issues.filter(i => K.needsMe(i, ctx, now)).length
             view.innerHTML = `<div class="ak">${ownNote()}
+<p class="ak-views">Your tasks: <a href="#kanban">For me</a></p>
 <nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#where">Where → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 ${toolbar(s, shown.length, needN)}
 ${chips(s)}
@@ -172,6 +178,69 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             for (const k of ['st', 'due', 'pick', 'ws']) if (s[k].length && !(k === 'st' && sameList(s.st, K.DEFAULTS.st))) c.push([k, `${label[k]}: ${s[k].map(v => name(k, v)).join(', ')}`])
             if (k0(s)) c.push(['q', `“${s.q}”`])
             return c.length ? `<div class="ak-chips">${c.map(([k, l]) => `<button type="button" class="ak-chip" data-ak-clear="${k}" aria-label="Remove ${esc(l)}">${esc(l)} <span aria-hidden="true">×</span></button>`).join('')}</div>` : ''
+        }
+        // ---------- For me (spec-kanban-tasks.md, approved 7 November, cb97bf39): Needs you, In progress, Delivered, Done ----------
+        // Cards come from the build (data.mjs tasks()); their place and order from kanban-core.js. Seen and Needs changes copy
+        // one line for the desk session (B); signed sending on the desk's lane (A) comes once the desk's token is here (WS-170).
+        // Later and "since you last looked" are kept in this browser only, and the page works without them.
+        const LSK = { get(k, d) { try { const v = localStorage.getItem('ak.' + k); return v === null ? d : JSON.parse(v) } catch { return d } }, set(k, v) { try { localStorage.setItem('ak.' + k, JSON.stringify(v)) } catch { } } }
+        let copied = null // { id, line } of the last copied line, shown until the next one
+        function drawTasks(view, s, now) {
+            const first = (D.person.name || D.person.id).split(' ')[0], cards = D.tasks.cards
+            let last = LSK.get('lastLooked', '')
+            if (!last) { last = new Date().toISOString(); LSK.set('lastLooked', last) }
+            const changed = new Set(K.changedSince(cards, last))
+            const cols = K.taskColumns(cards, now, LSK.get('later', {}))
+            const marked = LSK.get('marked', {})
+            const chg = cols.map(c => [c.label, c.items.filter(t => changed.has(t.id)).length]).filter(x => x[1])
+            const link = (h, t) => h ? `<a href="${esc(h)}" target="_blank" rel="noopener">${esc(t)}</a>` : esc(t)
+            // chip colours by meaning (dashboard@'s look.md): tier 3 yellow, a click or a wait blue, overdue red, delivered green, needs changes orange
+            const chipCls = t => t.chip === 'tier 3' ? 't-yellow' : /overdue|stand-up|today/.test(t.chip) ? 't-red' : /waits|click|sent/.test(t.chip) ? 't-blue' : /delivered/.test(t.chip) ? 't-green' : t.chip === 'needs changes' ? 't-orange' : 'plain'
+            const card = t => `<article class="ak-card ak-task${changed.has(t.id) ? ' ak-new' : ''}" data-task="${esc(t.id)}">${changed.has(t.id) ? '<span class="ak-newb">NEW</span>' : ''}
+<span class="ak-meta">${t.chip ? `<span class="chip ${chipCls(t)}">${esc(t.chip)}</span>` : ''}${t.kind ? `<span class="chip plain" title="What was delivered">${esc(t.kind)}</span>` : ''}<span class="chip plain">${esc([t.agent, t.id].filter(Boolean).join(' · '))}</span></span>
+<b class="ak-tt" title="${esc(t.title)}">${esc(t.title)}</b>
+${t.rec ? `<span class="ak-rec">Recommended: <b>${esc(t.rec)}</b></span>` : ''}${t.waits && t.col !== 'done' && !/^nothing$/i.test(t.waits) ? `<span class="note">Waits on: ${esc(t.waits)}</span>` : ''}${t.done ? `<span class="note">${esc(t.done)}</span>` : ''}${t.note ? `<span class="note">Your line: ${esc(t.note)}</span>` : ''}
+${t.text && t.text !== t.title ? `<details class="ak-more"><summary>More</summary><p>${esc(t.text)}</p></details>` : ''}
+<span class="ak-acts">${t.col === 'need' ? `${t.link ? `<a class="cc-btn ak-primary" href="${esc(t.src === 'issue' ? '#kanban?f=0&m=0&t=open,picked,in%20progress,done&o=' + t.id : t.link)}"${t.src === 'issue' ? '' : ' target="_blank" rel="noopener"'}>Open</a>` : ''}${t.chip === 'click' ? `<button type="button" class="cc-btn" data-mark="done" data-id="${esc(t.id)}">I have done it</button>` : ''}<button type="button" class="cc-btn" data-later="${esc(t.id)}">Later</button>`
+                : t.col === 'delivered' ? (marked[t.id] ? `<span class="chip t-blue">sent</span><span class="note">${marked[t.id] === 'seen' ? 'Seen' : 'Needs changes'}: line copied for the desk</span>` : `<button type="button" class="cc-btn ak-primary" data-mark="seen" data-id="${esc(t.id)}">Seen ✓</button><button type="button" class="cc-btn" data-mark="changes" data-id="${esc(t.id)}">Needs changes…</button>`) + (t.link ? link(t.link, 'Open the delivery ↗') : '')
+                : t.link ? link(t.link, t.src === 'delivery' ? 'The delivery ↗' : 'The brief ↗') : ''}</span>
+${t.chip === 'tier 3' ? '<span class="ak-hint">Opens the question; your go is given in a session, not here.</span>' : t.col === 'delivered' && !marked[t.id] ? '<span class="ak-hint">Your key is not used here yet: this copies one line for the desk (signed sending comes with the desk\'s token).</span>' : ''}
+${copied && copied.id === t.id ? `<div class="ak-copy" role="status"><code>${esc(copied.line)}</code><span class="note">${copied.ok ? 'Copied.' : 'Select and copy it.'} Paste it in the desk session; the desk records it and the card moves on the next release.</span></div>` : ''}
+</article>`
+            const colHtml = c => {
+                if (c.key !== 'need') return c.items.map(card).join('') || `<p class="note">${c.key === 'delivered' ? 'Nothing waiting for you to check.' : c.key === 'done' ? 'Nothing done in the last 7 days.' : 'Nothing in progress.'}</p>`
+                const top = c.items.filter(t => t.src !== 'issue'), board = c.items.filter(t => t.src === 'issue')
+                return (top.map(card).join('') || '<p class="note">Nothing needs you right now.</p>') + (board.length ? `<details class="ak-fromboard"><summary>From the board: ${board.length} of your issues overdue, due today or at a stand-up</summary>${board.map(card).join('')}</details>` : '')
+            }
+            const tab = cols.find(c => c.key === s.tab) || cols[0]
+            const cnt = c => c.key === 'need' ? c.items.filter(t => t.src !== 'issue').length : c.items.length
+            // phone first (dashboard@'s check, d4853e79): the tabs and the cards before anything else; the links after them
+            const hm = t => new Date(t).toISOString().slice(11, 16)
+            const nNew = chg.reduce((a, [, n]) => a + n, 0)
+            const SHORT = { need: 'Needs you', progress: 'Working', delivered: 'To check', done: 'Done' }
+            const since = PHONE.matches
+                ? `<div class="ak-since ak-since-1" role="status"><span>${nNew ? `${nNew} new since ${esc(hm(last))}` : `Nothing new since ${esc(hm(last))}`}</span> <button type="button" class="cc-btn" data-looked>Mark looked</button></div>`
+                : `<div class="ak-since" role="status">${chg.length ? `Since you last looked (${esc(ago(last))}): ${chg.map(([l, n]) => `${n} in ${esc(l)}`).join(', ')}.` : `Nothing new since you last looked (${esc(ago(last))}).`} <button type="button" class="cc-btn" data-looked>Mark all as looked at</button></div>`
+            const links = `<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#where">Where → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>`
+            const others = `<p class="ak-views">Other views: <a href="#kanban?f=0">Status</a> · <a href="#kanban?f=0&c=due">Due</a> · <a href="#kanban?f=0&c=picked">Picked by</a> · <a href="#kanban?f=0&c=stream">Workstream</a> · <a href="#kanban?f=0&n=1">Needs me now</a></p>`
+            const body = PHONE.matches
+                ? `<div class="ak-tabs ak-tabs-2x2" role="tablist" aria-label="Your tasks">${cols.map(c => `<button type="button" role="tab" data-ak-tab="${c.key}" aria-selected="${c.key === tab.key}" aria-label="${esc(c.label)}, ${cnt(c)}">${esc(SHORT[c.key])} <b>${cnt(c)}</b></button>`).join('')}</div>${since}<div class="ak-list ak-tasks" role="tabpanel">${colHtml(tab)}</div>${others}${links}${ownNote()}`
+                : `${ownNote()}${links}${since}${others}<div class="ak-grid ak-tasks" style="--n:4">${cols.map(c => `<section class="ak-col" aria-label="${esc(c.label)}" data-col="${c.key}"><header>${esc(c.label)} <b>${cnt(c)}</b></header>${colHtml(c)}</section>`).join('')}</div>`
+            view.innerHTML = `<div class="ak">${body}
+${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unplaced.join('; '))}.</p>` : ''}
+<p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. From your backlog, the desk's "Open with Angelo", your board issues and deliveries reported to the desk (a "Delivered:" line). Cards move on the next release, usually within minutes.</p>
+</div>`
+            view.querySelectorAll('[data-ak-tab]').forEach(b => b.onclick = () => set({ tab: b.dataset.akTab }))
+            const looked = view.querySelector('[data-looked]'); if (looked) looked.onclick = () => { LSK.set('lastLooked', new Date().toISOString()); draw() }
+            view.querySelectorAll('[data-later]').forEach(b => b.onclick = () => { const l = LSK.get('later', {}); l[b.dataset.later] = Date.now() + 864e5; LSK.set('later', l); draw() })
+            view.querySelectorAll('[data-mark]').forEach(b => b.onclick = () => {
+                const t = cards.find(x => x.id === b.dataset.id); if (!t) return
+                let text = ''
+                if (b.dataset.mark === 'done') { const line = `Done: ${t.id} (${String(t.title).slice(0, 80)})`; copied = { id: t.id, line, ok: false }; try { navigator.clipboard.writeText(line).then(() => { copied.ok = true; draw() }, () => draw()) } catch { draw() } return }
+                if (b.dataset.mark === 'changes') { text = prompt('What needs changing? (one line, for the desk)') || ''; if (!text.trim()) return }
+                const line = K.copyLine(t, b.dataset.mark, text), done = ok => { copied = { id: t.id, line, ok }; const m = LSK.get('marked', {}); m[t.id] = b.dataset.mark; LSK.set('marked', m); draw() }
+                try { navigator.clipboard.writeText(line).then(() => done(true), () => done(false)) } catch { done(false) }
+            })
         }
         const k0 = s => !!(s.q || '').trim()
 
@@ -266,7 +335,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             const q = view.querySelector('input[data-ak="q"]')
             if (q) { let t; q.oninput = () => { clearTimeout(t); t = setTimeout(() => { set({ q: q.value }); reopen('Filter', true) }, 250) } }
             view.querySelectorAll('[data-ak-clear]').forEach(b => b.onclick = () => set({ [b.dataset.akClear]: b.dataset.akClear === 'q' ? '' : K.DEFAULTS[b.dataset.akClear].slice() }))
-            view.querySelectorAll('[data-ak-reset]').forEach(b => b.onclick = () => set({ ...K.DEFAULTS, st: K.DEFAULTS.st.slice(), pick: [], due: [], ws: [] }))
+            view.querySelectorAll('[data-ak-reset]').forEach(b => b.onclick = () => set({ ...K.DEFAULTS, fm: false, st: K.DEFAULTS.st.slice(), pick: [], due: [], ws: [] }))
             view.querySelectorAll('[data-ak-tab]').forEach(b => b.onclick = () => set({ tab: b.dataset.akTab }))
             view.querySelectorAll('[data-ak-card]').forEach(b => b.onclick = () => { history.pushState({ akCard: true }, ''); set({ open: b.dataset.akCard }) })
             view.querySelectorAll('[data-ak-close]').forEach(b => b.onclick = closeCard)
@@ -283,8 +352,28 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
         // the map's key stays open or closed as Angelo last left it (this browser only)
         const keyOpen = () => { try { return localStorage.getItem('ak-tm-key') !== '0' } catch { return true } }
         document.addEventListener('toggle', e => { if (e.target && e.target.classList && e.target.classList.contains('tm-key')) try { localStorage.setItem('ak-tm-key', e.target.open ? '1' : '0') } catch { } }, true)
-        const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '', map: p.get('map') === '1', f: p.get('f') || '', l: p.get('l') || '', fs: p.get('fs') === '1', w: p.get('w') || '' } }
-        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.l && c.l !== 'ring') q.push('l=' + c.l); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); if (c.fs && c.map) q.push('fs=1'); if (c.w && c.map) q.push('w=' + c.w); if (c.map) for (const [k, v] of new URLSearchParams(location.hash.slice(location.hash.indexOf('?') + 1))) if (k.startsWith('r_') && location.hash.includes('?')) q.push(k + '=' + encodeURIComponent(v).replace(/%2C/g, ',')); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
+        const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '', map: p.get('map') === '1', f: p.get('f') || '', l: p.get('l') || '', fs: p.get('fs') === '1', w: p.get('w') || '', d3: p.get('d3') === '1' } }
+        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.l && c.l !== 'ring') q.push('l=' + c.l); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); if (c.fs && c.map) q.push('fs=1'); if (c.w && c.map) q.push('w=' + c.w); if (c.d3 && c.map) q.push('d3=1'); for (const [k, v] of new URLSearchParams(location.hash.slice(location.hash.indexOf('?') + 1))) if ((k.startsWith('r_') || k === 'tl') && location.hash.includes('?')) q.push(k + '=' + encodeURIComponent(v).replace(/%2C/g, ',')); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
+        // backlog 0c3 (6), Angelo, 8 November: "The timeline in the team and the machine page should be independently collapsed, so
+        // that it doesn't load a huge amount of data for nothing." Closed by default, on its own (not the map's state), remembered on
+        // this device; an address that asks for it (tl=1, an old #replay link) or carries its filters (r_*) opens it. Closing drops them.
+        const TL_KEY = 'ak-tl-open'
+        const tlOpen = () => { let v = null; try { v = localStorage.getItem(TL_KEY) } catch { } return v === '1' || /[?&](tl=1|r_[a-z]+=)/.test(location.hash) }
+        const setTl = on => {
+            try { localStorage.setItem(TL_KEY, on ? '1' : '0') } catch { }
+            if (!on) { const i = location.hash.indexOf('?'), q = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); for (const k of [...q.keys()]) if (k.startsWith('r_') || k === 'tl') q.delete(k); const t = q.toString().replace(/%2C/g, ','); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (t ? '?' + t : '')) }
+            drawCollab()
+        }
+        // every commit since 2 November (the map's playback and the timeline): replay-events.json, out of data.json since 0c3 (6),
+        // fetched once, the first time the map or the timeline is opened. A build that still carries them in data.json needs nothing.
+        let evQ = null, evFailed = ''
+        const needEvents = () => {
+            if (!D || !D.replay || D.replay.events) return Promise.resolve()
+            if (!evQ) evQ = fetch(new URL('replay-events.json', DATA || location.href), { cache: 'no-cache' }).then(r => r.ok ? r.json() : Promise.reject(new Error('replay-events.json: ' + r.status)))
+                .then(j => { if (!Array.isArray(j.events)) throw new Error('replay-events.json holds no events'); D.replay.events = j.events; evFailed = '' })
+                .catch(e => { evQ = null; evFailed = String(e.message || e); throw e })
+            return evQ
+        }
         const openPerson = id => { history.pushState({ akCard: true }, ''); history.replaceState(history.state, '', location.pathname + location.search + '#collab?p=' + encodeURIComponent(id)); drawCollab() }
         const closePerson = () => { if (history.state && history.state.akCard) history.back(); else { history.replaceState(history.state, '', location.pathname + location.search + '#collab'); drawCollab() } }
         const initials = n => String(n).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase()
@@ -300,6 +389,52 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
         const lastAgo = l => l ? ago(l.replace(' ', 'T') + ':00Z') : 'no commit yet'
         const kanbanLink = id => `#kanban?m=0&t=open,picked,in%20progress,done&o=${encodeURIComponent(id)}`
 
+        // the live graph (live.js): the map as an always-on view, in a hexagon, that can pop out into its own window
+        function drawLive() {
+            const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title'); if (!view) return
+            const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
+            if (title) title.innerHTML = `${ownTitle('Live')}<small>${esc(first)}'s command centre</small>`
+            document.title = `Live · ${first}'s command centre`
+            if (!D || !D.collab || !window.AngeloLive) { view.innerHTML = failed ? `<p class="note">The board could not load its data (${esc(failed)}).</p>` : '<p class="note">Loading the team…</p>'; return }
+            // "Messages | Workstreams | Deliverables" (backlog 0f2 and 0c4, spec-work-view.md, dev.work@PrompTugal.angelo): the same graph,
+            // with each commit flying to its workstream, or what was made travelling to its destination (work*.js, loaded only when
+            // asked for); both are flat, so they leave 3D
+            const lvl = /[?&]v=ws(&|$)/.test(location.hash) ? 'ws' : /[?&]v=work(&|$)/.test(location.hash) ? 'work' : '', wv = !!lvl
+            const chip = (k, href, label, title) => `<a class="rp-chip${lvl === k ? ' on' : ''}" href="${href}" aria-pressed="${lvl === k}"${title ? ` title="${title}"` : ''}>${label}</a>`
+            const sw = `<div class="tm-tabs" role="group" aria-label="What the graph shows" data-wv-sw>${chip('', '#live' + (/[?&]d3=1(&|$)/.test(location.hash) ? '?d3=1' : ''), 'Messages', 'Who wrote to whom')}${chip('ws', '#live?v=ws', 'Workstreams', 'Each commit flying to the workstream (WS issue) it names')}${chip('work', '#live?v=work', 'Deliverables', 'What each agent and person made, travelling to where it went')}</div>`
+            view.innerHTML = `<div class="ak">${ownNote()}<nav class="ak-switch" aria-label="More views"><a href="#collab?map=1">← Team and the machine <span class="ak-mk" aria-hidden="true">✦</span></a></nav>${sw}<div data-ak-live></div><p class="note" data-wv-legend hidden></p></div>`
+            const lh = view.querySelector('[data-ak-live]')
+            const loadLevel = () => (lvl === 'ws' ? ['work.js', 'work-draw.js', 'work-live.js'] : ['work.js', 'work-draw.js', 'work-newsroom.js', 'work-live.js']).reduce((p, f) => p.then(() => window[{ 'work.js': 'AngeloWork', 'work-draw.js': 'AngeloWorkDraw', 'work-newsroom.js': 'AngeloWorkNews', 'work-live.js': 'AngeloWorkLive' }[f]] || load(f)), Promise.resolve())
+            const optsOf = () => lvl === 'ws' ? { base: new URL('./', here).href, file: 'workstreams.json' } : { base: new URL('./', here).href }
+            // the pop-out window (backlog 0c4 (5), Angelo 8 Nov about 23:00: "The popped out window doesn't show the work option"):
+            // the same three-way switch in its upper left corner, and the level drawn on its graph; a choice there sets this page's
+            // address, so the page and the pop-out always show the same level (a nav, not a div: the pop-out's body > div fills the window)
+            const popSync = () => {
+                const P = drawLive.pop; if (!P) return
+                if (P.wv) { P.wv.destroy(); P.wv = null }
+                const d = P.win.document; let bar = d.querySelector('[data-wv-popsw]')
+                if (!bar) {
+                    bar = d.createElement('nav'); bar.setAttribute('data-wv-popsw', ''); bar.setAttribute('role', 'group'); bar.setAttribute('aria-label', 'What the graph shows')
+                    bar.style.cssText = 'position:fixed;left:6px;top:6px;z-index:5;display:flex;gap:4px'; d.body.appendChild(bar)
+                    bar.addEventListener('click', e => { const a = e.target.closest('a[href]'); if (!a) return; e.preventDefault(); location.hash = a.getAttribute('href') })
+                }
+                bar.innerHTML = [['', '#live', 'Messages', 'Who wrote to whom'], ['ws', '#live?v=ws', 'Workstreams', 'Each commit flying to the workstream (WS issue) it names'], ['work', '#live?v=work', 'Deliverables', 'What each agent and person made, travelling to where it went']].map(([k, h, l, t]) => `<a class="rp-chip${lvl === k ? ' on' : ''}" href="${h}" aria-pressed="${lvl === k}" title="${t}" style="font-size:11px;padding:2px 8px;text-decoration:none">${l}</a>`).join('')
+                if (lvl) loadLevel().then(() => { if (drawLive.pop === P && !P.wv && P.host.isConnected && window.AngeloWorkLive) P.wv = window.AngeloWorkLive.mount(P.host, { ...optsOf(), win: P.win }) }).catch(() => null)
+            }
+            // onPop(null): the pop-out closed; the page draws again, inline, at the level its address says
+            window.AngeloLive.view(lh, { D, liveUrl: new URL('live.json', location.href).href, onPop: pop => { if (drawLive.pop && drawLive.pop.wv) drawLive.pop.wv.destroy(); drawLive.pop = pop; if (pop) popSync(); else if (/^#live/.test(location.hash)) drawLive() } })
+            popSync()
+            if (drawLive.wv) { drawLive.wv.destroy(); drawLive.wv = null }
+            if (!wv) return
+            loadLevel().then(() => {
+                const frame = lh.querySelector('[data-lv-frame]'), leg = view.querySelector('[data-wv-legend]'); if (!frame || !lh.isConnected || !window.AngeloWorkLive) return
+                drawLive.wv = window.AngeloWorkLive.mount(frame, optsOf())
+                const A = window.AngeloWork, ico = k => `<svg viewBox="-10 -10 20 20" width="18" height="18" aria-hidden="true" style="vertical-align:-4px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="${A.ICON_PATHS[k]}"/></svg>`
+                if (leg && lvl === 'ws') { leg.hidden = false; leg.innerHTML = `What travels: <span style="white-space:nowrap;margin-right:10px">${ico('doc')} a commit</span><br>Each doc is a commit that names a workstream (its Issue: line), flying from its maker to that workstream a few minutes after the commit. The squares are the nine busiest workstreams and the rest; they count the last 24 hours.` }
+                else if (leg) { leg.hidden = false; leg.innerHTML = `What travels: ${A.ICONS.map(k => `<span style="white-space:nowrap;margin-right:10px">${ico(k)} ${esc(k)}</span>`).join('')}<br>Each icon is something made, flying from its maker to where it went, a few minutes after its commit. The squares count the last 24 hours. Nothing is drawn without a commit.` }
+            }).catch(() => { const leg = view.querySelector('[data-wv-legend]'); if (leg) { leg.hidden = false; leg.textContent = 'The work view could not load.' } })
+        }
+
         function drawCollab() {
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
             if (!view) return
@@ -309,6 +444,10 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             if (!D || !D.collab) { view.innerHTML = failed ? `<p class="note">The board could not load its data (${esc(failed)}).</p>` : '<p class="note">Loading the team…</p>'; return }
             const C = D.collab, M = C.machine, name = id => (C.people.find(p => p.id === id) || { name: id }).name
             const max = Math.max(1, ...C.links.map(l => l.messages + l.shared))
+            const tl = tlOpen(), haveEv = !!(D.replay && D.replay.events)
+            if ((cstate().map || tl) && D.replay && !haveEv && !evFailed) needEvents().catch(() => null).then(() => { if (route() === 'collab') drawCollab() })
+            const evNote = !D.replay ? 'This build has no commits to show.' : evFailed ? `The commits could not load (${esc(evFailed)}).` : 'Loading the commits…'
+            const tlBody = !tl ? '<p class="note">Every commit since 2 November, a row per agent, on the map\'s clock, with its own filters. Closed, it loads and draws nothing.</p>' : haveEv ? '<div data-ak-tl></div>' : `<p class="note" data-ak-tl-wait>${evNote}</p>`
             view.innerHTML = `<div class="ak">${ownNote()}
 <nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 <section class="ak-machine" aria-label="The machine">
@@ -321,7 +460,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
                 const next = p.agents.map(a => ({ a, r: nextRun(a.schedule) })).filter(x => x.r).sort((x, y) => parseInt(x.r.wait) * (/h$/.test(x.r.wait) ? 60 : 1) - parseInt(y.r.wait) * (/h$/.test(y.r.wait) ? 60 : 1))[0]
                 return `<button type="button" class="ak-person" data-ak-person="${esc(p.id)}"><span class="ak-av">${esc(initials(p.name))}</span><span class="ak-pn"><b>${esc(p.name)}</b><small>${esc(p.role)}</small></span><span class="ak-meta"><span class="chip ${p.level >= 4 ? 't-green' : p.level >= 2 ? 't-blue' : 't-slate'}">L${esc(p.level)}</span><span class="chip plain">${p.agents.length} agent${p.agents.length === 1 ? '' : 's'}</span>${p.work.length ? `<span class="chip t-yellow">${p.work.length} picked</span>` : ''}</span>${next ? `<small class="note">Next run: ${esc(next.a.name.split('@')[0])} ${esc(next.r.wait)}</small>` : runs.length ? '' : '<small class="note">No schedule recorded</small>'}</button>`
             }).join('')}</div></section>
-${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane">Timeline</h3><div data-ak-tl></div></section>' : ''}
+${teamMap()}<section class="ak-tl" aria-label="Timeline"><div class="tm-top"><h3 class="ak-lane">Timeline</h3><button type="button" class="cc-btn" data-ak-tl-toggle aria-expanded="${tl}">${tl ? 'Hide the timeline' : 'Show the timeline'}</button></div>${tlBody}</section>
 <section aria-label="Who works with whom"><h3 class="ak-lane">Who works with whom</h3><p class="note">Messages: commits from one person's agents to another's (For: lines, last 7 days). Shared: open issues they both own.</p>
 <ul class="ak-links">${C.links.slice(0, 14).map(l => `<li><span>${esc(name(l.a))} and ${esc(name(l.b))}</span><span class="ak-barw"><span class="ak-barf" style="width:${Math.round((l.messages + l.shared) / max * 100)}%"></span></span><small class="note">${l.messages} messages, ${l.shared} shared</small></li>`).join('')}</ul></section>
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. Next runs are worked out in this browser from each agent's recorded schedule.</p>
@@ -329,16 +468,38 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
             view.querySelectorAll('[data-ak-person]').forEach(b => b.onclick = () => openPerson(b.dataset.akPerson))
             // the map played back (replay.js's mountFlow, on this map's own layout and focus)
             const host = view.querySelector('section.tm'), svgEl = host && host.querySelector('.tm-svg')
-            if (svgEl && lastMap && window.AngeloReplay && window.AngeloReplay.mountFlow) {
+            if (svgEl && lastMap && !haveEv) { const bar = host.querySelector('[data-tmf]'); if (bar) bar.innerHTML = `<p class="note">${evNote}</p>` }
+            if (svgEl && lastMap && haveEv && window.AngeloReplay && window.AngeloReplay.mountFlow) {
                 const { pos, C: MC, pull, col, focus, wl, place } = lastMap, c0 = cstate()
                 const personOf = n => { const m = String(n).match(/@(?:web-summit|promptugal)\.([a-z0-9-]+)$/i) || String(n).match(/^pt:([a-z0-9-]+):/); return m ? m[1].toLowerCase() : n }
                 const nodeOf = n => { const x = pos.get(n); if (x && x.kind !== 'k') return n; const pid = personOf(n); return pos.has(pid) && pos.get(pid).kind === 'p' ? pid : null }
                 const keep = (a, b) => { if (!focus) return true; if (focus.startsWith('k:')) return [a, b].some(id => wl.some(l => l.agent === id && 'k:' + l.kind === focus)); if (focus.includes('@') || focus.startsWith('pt:')) return a === focus || b === focus; return [a, b].some(id => id === focus || (pos.get(id) || {}).person === focus) }
                 window.AngeloReplay.mountFlow(host, { D, place, key: [c0.w || '24h', c0.l, c0.f].join('|'), svg: svgEl, pos, nodeOf, keep, w: c0.w || '24h', colOf: p => col.get(p), ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return { x: mx + (MC - mx) * pull, y: my + (MC - my) * pull } }, setWindow: w => setC({ ...cstate(), w }) })
             }
+            // "Messages | Workstreams | Deliverables" in playback (backlog 0f2 and 0c4, dev.work@PrompTugal.angelo): r_ws=1 flies each
+            // commit to the workstream it names (workstreams.json), r_work=1 what was made to where it went (deliveries.json), over the
+            // whole history (work-replay.js's mountMap); the files load only when asked for
+            if (drawCollab.wv) { drawCollab.wv.destroy(); drawCollab.wv = null }
+            if (svgEl && lastMap && haveEv && window.AngeloReplay && window.AngeloReplay.mountFlow) {
+                const m = lastMap, h0 = location.hash.replace(/[?&]r_(work|ws)=1(?=&|$)/g, '').replace(/#collab&/, '#collab?'), lvl = /[?&]r_ws=1(&|$)/.test(location.hash) ? 'ws' : /[?&]r_work=1(&|$)/.test(location.hash) ? 'work' : ''
+                const to = k => k ? h0 + (h0.includes('?') ? '&' : '?') + 'r_' + k + '=1' : h0, chip = (k, label, title) => `<a class="rp-chip${lvl === k ? ' on' : ''}" href="${esc(to(k))}" aria-pressed="${lvl === k}" title="${title}">${label}</a>`
+                const bar = host.querySelector('[data-tmf]'); if (bar) bar.insertAdjacentHTML('beforebegin', `<div class="tm-tabs" role="group" aria-label="What the playback shows" data-wv-sw>${chip('', 'Messages', 'Who wrote to whom')}${chip('ws', 'Workstreams', 'Each commit flying to the workstream (WS issue) it names')}${chip('work', 'Deliverables', 'What each agent and person made, travelling to where it went')}</div>`)
+                if (lvl) ['work.js', 'work-draw.js', 'work-replay.js'].reduce((p, f) => p.then(() => window[{ 'work.js': 'AngeloWork', 'work-draw.js': 'AngeloWorkDraw', 'work-replay.js': 'AngeloWorkReplay' }[f]] || load(f)), Promise.resolve()).then(() => {
+                    if (!svgEl.isConnected || drawCollab.wv) return
+                    drawCollab.wv = window.AngeloWorkReplay.mountMap(host, { svg: svgEl, pos: m.pos, col: m.col, rFrom: D.replay.from, t0: Math.round((Date.now() - Date.parse(D.replay.from)) / 6e4), base: new URL('./', here).href, ...(lvl === 'ws' ? { url: new URL('workstreams.json', here).href } : {}) })
+                }).catch(() => null)
+            }
+            // "⤓ Download clip" on the playback bar (backlog 0f3, dev.work@PrompTugal.angelo, clip-button.js): a video of this playback
+            // that WhatsApp plays inline; clip.js and the button load with the playback, the muxer only when a clip is made
+            if (svgEl && lastMap && haveEv && window.AngeloReplay && window.AngeloReplay.flow) (window.AngeloClip ? Promise.resolve() : load('clip.js')).then(() => window.AngeloClipButton || load('clip-button.js')).then(() => { if (host.isConnected) window.AngeloClipButton.mount(host, { work: () => drawCollab.wv, base: new URL('./', here).href }) }).catch(() => null)
             const tlHost = view.querySelector('[data-ak-tl]'); if (tlHost && window.AngeloReplay) window.AngeloReplay.render(tlHost, { D, ownTitle, ago, note: () => '', embed: true })
+            const tlt = view.querySelector('[data-ak-tl-toggle]'); if (tlt) tlt.onclick = () => setTl(!tlOpen())
             const tm = view.querySelector('[data-tm-toggle]'); if (tm) tm.onclick = () => setC({ ...cstate(), map: !cstate().map, f: '' })
             view.querySelectorAll('[data-tm-l]').forEach(g => g.onclick = () => setC({ ...cstate(), l: g.dataset.tmL, f: '' }))
+            view.querySelectorAll('[data-tm-3d]').forEach(g => g.onclick = () => setC({ ...cstate(), d3: !cstate().d3 }))
+            { const v3 = view.querySelector('[data-tm-3dv]')
+              if (v3 && lastMap) { const m = lastMap; (window.AngeloMap3D ? Promise.resolve() : load('map3d.js')).then(() => window.AngeloMap3D.mount(v3, { pos: m.pos, C: m.C, links: m.links, colOf: p => m.col.get(p), flow: () => window.AngeloReplay && window.AngeloReplay.view3d ? window.AngeloReplay.view3d() : null })).catch(() => { v3.innerHTML = '<p class="note">The 3D view could not load. Switch 3D off for the map.</p>' }) }
+              else if (window.AngeloMap3D) window.AngeloMap3D.unmount() }
             const tf = view.querySelector('[data-tm-fs]'); if (tf) tf.onclick = () => { const c = cstate(), on = !c.fs; setC({ ...c, map: true, fs: on }); try { if (on && document.documentElement.requestFullscreen && !document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => null); if (!on && document.fullscreenElement) document.exitFullscreen().catch(() => null) } catch { } }
             const tcp = view.querySelector('[data-tm-copy]'); if (tcp) tcp.onclick = async () => { const n = view.querySelector('[data-tm-copied]'); try { await navigator.clipboard.writeText(location.href); if (n) n.textContent = 'Link copied' } catch { if (n) n.textContent = location.href } }
             if (!window.__tmEsc) { window.__tmEsc = true; addEventListener('keydown', e => { if (e.key === 'Escape' && route() === 'collab' && cstate().fs) { const c = cstate(); setC({ ...c, fs: false }) } }); document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement && route() === 'collab' && cstate().fs) setC({ ...cstate(), fs: false }) }) }
@@ -350,10 +511,12 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
         // the whole team as one map (WS-97, Angelo's ask, 6 November): people on a ring, their agents fanned around them,
         // an arc for each pair that wrote to each other in the last 7 days (team-map.mjs's data); tap anyone to focus them
         const TM_COL = ['var(--rm-role-conductor)', 'var(--rm-role-dev)', 'var(--rm-gold)', 'var(--rm-role-video)', 'var(--rm-green)', 'var(--rm-role-outreach)', 'var(--rm-orange)', 'var(--rm-blue)', 'var(--rm-red)']
-        // three layouts (Angelo, 6 November): "ring", people on a ring with their agents around them; "agents", the agents at the
-        // centre and the people outside; "work", people outside, agents in a middle ring, and the kinds of work they did at the
-        // centre, each a shape of its own, with a flow from each agent to each kind, wider for more commits
-        const TM_LAYOUTS = [['ring', 'People ring'], ['agents', 'Agents at the centre'], ['work', 'Agents and their work']]
+        // three layouts (Angelo, 6 November): "ring", people on a ring with their agents around them; "agents", the agents' ring:
+        // "agents and their work" without the work (Angelo, 8 November, backlog 0e: "it should look like agents and their work, but
+        // without the work, so all agents in the other ring"), people outside, each person's agents in the ring inside them, the
+        // centre left to the lines; "work", the same rings with the kinds of work they did at the centre, each a shape of its own,
+        // with a flow from each agent to each kind, wider for more commits. live.js draws the same three (its own copy of placeFor).
+        const TM_LAYOUTS = [['ring', 'People ring'], ['agents', 'Agents ring'], ['work', 'Agents and their work']]
         const TM_KIND = { build: ['var(--rm-role-dev)', 6, 0], content: ['var(--rm-role-video)', 3, 0], outreach: ['var(--rm-role-outreach)', 5, 0.45], setup: ['var(--rm-green)', 4, 0], running: ['var(--rm-role-conductor)', 5, 0], riskmandate: ['var(--rm-gold)', 0, 0], merch: ['var(--rm-orange)', 8, 0] }
         const shape = (k, x, y, r) => { const [, n, inner] = TM_KIND[k] || ['', 0, 0]; if (!n) return `<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${r.toFixed(1)}"/>`; const pts = []; const m = inner ? n * 2 : n; for (let q = 0; q < m; q++) { const a = -Math.PI / 2 + q * 2 * Math.PI / m, rr = inner && q % 2 ? r * inner : r; pts.push(`${(x + rr * Math.cos(a)).toFixed(1)},${(y + rr * Math.sin(a)).toFixed(1)}`) } return `<polygon points="${pts.join(' ')}"/>` }
         let lastMap = null
@@ -362,14 +525,14 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
             const c = cstate(), M = D.collab && D.collab.map, L0 = TM_LAYOUTS.some(([k]) => k === c.l) ? c.l : 'ring'
             // full screen (fs=1 in the address), so the map alone can be opened from a link, or shown on a screen
             const fs = c.fs && c.map
-            const head = `<section class="cc-card tm${fs ? ' tm-fs' : ''}" aria-label="The whole team as one map"><div class="tm-top"><h3 class="ak-h3">The whole team as one map</h3><span class="tm-acts">${c.map ? `<button type="button" class="cc-btn" data-tm-fs aria-pressed="${fs}" title="${fs ? 'Back to the page (Esc)' : 'The map alone, full screen, with its own link'}">${fs ? '✕ Close full screen' : '⛶ Full screen'}</button><button type="button" class="cc-btn" data-tm-copy title="Copy a link to this map, as you see it: layout, focus${fs ? ', full screen' : ''}">🔗 Copy link</button><span class="note" data-tm-copied role="status"></span>` : ''}${fs ? '' : `<button type="button" class="cc-btn" data-tm-toggle aria-pressed="${c.map}">${c.map ? 'Hide the map' : 'Show the map'}</button>`}</span></div>`
+            const head = `<section class="cc-card tm${fs ? ' tm-fs' : ''}" aria-label="The whole team as one map"><div class="tm-top"><h3 class="ak-h3">The whole team as one map</h3><span class="tm-acts">${c.map ? `<button type="button" class="cc-btn" data-tm-fs aria-pressed="${fs}" title="${fs ? 'Back to the page (Esc)' : 'The map alone, full screen, with its own link'}">${fs ? '✕ Close full screen' : '⛶ Full screen'}</button><a class="cc-btn" href="#live" data-tm-live title="The map as an always-on live view, in a hexagon; it can pop out into its own window">◉ Live</a><button type="button" class="cc-btn" data-tm-copy title="Copy a link to this map, as you see it: layout, focus${fs ? ', full screen' : ''}">🔗 Copy link</button><span class="note" data-tm-copied role="status"></span>` : ''}${fs ? '' : `<button type="button" class="cc-btn" data-tm-toggle aria-pressed="${c.map}">${c.map ? 'Hide the map' : 'Show the map'}</button>`}</span></div>`
             if (!c.map) return head + `<p class="note">Everyone and their agents, and who wrote to whom in the last 7 days${M && M.totals ? ` (${M.totals.people} people, ${M.totals.agents} agents, ${M.totals.messages} messages)` : ''}.</p></section>`
             if (!M || M.error) return head + `<p class="note">The map's data is missing from this build${M && M.error ? ` (${esc(M.error)})` : ''}.</p></section>`
             const S = 1000, C = S / 2, col = new Map(M.people.map((p, i) => [p.id, TM_COL[i % TM_COL.length]])), pos = new Map(), NP = M.people.length
             const angleOf = i => -Math.PI / 2 + i * 2 * Math.PI / NP
             const RP = L0 === 'ring' ? 300 : 445
             M.people.forEach((p, i) => { const a = angleOf(i); pos.set(p.id, { x: C + RP * Math.cos(a), y: C + RP * Math.sin(a), a, kind: 'p', label: p.name.split(' ')[0], person: p.id }) })
-            const agentNode = (a, x, y) => ({ x, y, kind: 'a', label: a.short, person: a.person, family: a.family, commits: a.commits, name: a.id.startsWith('pt:') ? `${a.short}, PrompTugal (${a.id.split(':')[1]})` : a.id, kind2: a.kind || '', runsAs: a.runsAs || '', first: a.elsewhere ? a.first || '' : '' })
+            const agentNode = (a, x, y) => ({ x, y, kind: 'a', label: a.short, person: a.person, family: a.family, commits: a.commits, name: a.id.startsWith('pt:') ? `${a.short}, PrompTugal (${a.id.split(':')[1]})` : a.id, kind2: a.kind || '', runsAs: a.runsAs || '', first: a.elsewhere ? a.first || '' : '', quiet: !!a.quiet, own: a.own || 0 })
             // where a person's N agents sit, for this layout (also used while playing back, as agents arrive one by one)
             const placeFor = (P, N) => {
                 const out = []
@@ -377,15 +540,18 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
                     const rows = N > 16 ? 3 : 2, spread = Math.min(Math.PI * (rows === 3 ? 1.3 : 0.95), (0.16 * N + 0.3) / (rows - 1))
                     for (let k = 0; k < N; k++) { const t = P.a + (N > 1 ? -spread / 2 + k * spread / (N - 1) : 0), rr = 100 + (k % rows) * 32; out.push({ x: P.x + rr * Math.cos(t), y: P.y + rr * Math.sin(t) }) }
                 } else {
-                    // each person's agents in their own sector, between an inner and an outer radius (agents: the inner disc; work: a middle ring)
-                    const [r0, r1] = L0 === 'agents' ? [120, 340] : [290, 370], width = 2 * Math.PI / NP * 0.86, rows = Math.max(1, Math.ceil(N / (L0 === 'agents' ? 7 : 12)))
+                    // each person's agents in their own sector of one ring inside the people (agents and work alike; work adds the centre)
+                    const [r0, r1] = [290, 370], width = 2 * Math.PI / NP * 0.86, rows = Math.max(1, Math.ceil(N / 12))
                     const perRow = Math.ceil(N / rows)
                     for (let k = 0; k < N; k++) { const row = Math.floor(k / perRow), col2 = k % perRow, n = Math.min(perRow, N - row * perRow), t = P.a + (n > 1 ? -width / 2 + col2 * width / (n - 1) : 0), rr = rows > 1 ? r0 + (r1 - r0) * row / (rows - 1) : (r0 + r1) / 2; out.push({ x: C + rr * Math.cos(t), y: C + rr * Math.sin(t) }) }
                 }
                 return out
             }
+            // every agent its person declares (backlog 0f): the ones with no commits on dev yet (fresh sessions whose work is on
+            // their workers/ branch, or not yet run: data.mjs's M.sessionless) stand beside their person too, as in the live view
+            const ALL = M.agents.concat((M.sessionless || []).map(a => ({ ...a, quiet: true })))
             M.people.forEach(p => {
-                const mine = M.agents.filter(a => a.person === p.id).sort((x, y) => L0 === 'agents' ? (x.commits || 0) - (y.commits || 0) : (y.commits || 0) - (x.commits || 0)), P = pos.get(p.id)
+                const mine = ALL.filter(a => a.person === p.id).sort((x, y) => (y.commits || 0) - (x.commits || 0)), P = pos.get(p.id)
                 placeFor(P, mine.length).forEach((q, k) => pos.set(mine[k].id, agentNode(mine[k], q.x, q.y)))
             })
             // the kinds of work, at the centre (work layout)
@@ -398,11 +564,27 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
             const flowsOf = id => wl.filter(l => l.agent === id || 'k:' + l.kind === id)
             const near = id => { if (!c.f) return true; if (id === c.f) return true; const n = pos.get(id) || {}; if (!isAgentF && !isKindF) return n.person === c.f; if (isKindF) return n.kind === 'a' ? wl.some(l => l.agent === id && 'k:' + l.kind === c.f) : false; if (n.kind === 'k') return wl.some(l => l.agent === c.f && 'k:' + l.kind === id); return false }
             const links = M.links.filter(l => pos.has(l.from) && pos.has(l.to))
-            lastMap = { place: (pid, n) => placeFor(pos.get(pid), n), pos, C, pull: L0 === 'ring' ? 0.55 : L0 === 'agents' ? 0.25 : 0.1, col, focus: c.f, wl }
+            // the record's own events (spec-live-map.md section 2), as counts in each agent's tooltip: names and counts only
+            const LV = D.replay && D.replay.live && !D.replay.live.error ? D.replay.live : null, lc = new Map()
+            const cnt = (id, k) => { if (!pos.has(id)) return; const o = lc.get(id) || {}; o[k] = (o[k] || 0) + 1; lc.set(id, o) }
+            if (LV) {
+                for (const [, who, st] of LV.keys || []) cnt(who, st === 'published' ? 'kp' : 'ke')
+                for (const [, by, to] of LV.handovers || []) { cnt(by, 'hg'); cnt(to, 'hr') }
+                for (const [, who] of LV.lanes || []) { const o = lc.get(who); if (pos.has(who) && !(o && o.ln)) cnt(who, 'ln') }
+                for (const [, who, k] of LV.messages || []) cnt(who, k === 'verified' ? 'mv' : 'ms')
+            }
+            const pl = (n, one, many) => `${n} ${n === 1 ? one : many}`
+            const liveTip = id => { const o = lc.get(id); if (!o) return ''; const out = []
+                if (o.kp || o.ke) out.push(`keys: ${[o.kp ? `${o.kp} published` : '', o.ke ? `${o.ke} ended` : ''].filter(Boolean).join(', ')}`)
+                if (o.hg || o.hr) out.push(`${pl((o.hg || 0) + (o.hr || 0), 'key handed over', 'keys handed over')} (${[o.hg ? `${o.hg} given` : '', o.hr ? `${o.hr} received` : ''].filter(Boolean).join(', ')})`)
+                if (o.ln) out.push('a lane for sealed messages')
+                if (o.ms || o.mv) out.push(`sealed messages: ${[o.ms ? `${o.ms} sent` : '', o.mv ? `${o.mv} verified` : ''].filter(Boolean).join(', ')}`)
+                return out.length ? `. On the record: ${out.join('; ')}` : '' }
+            lastMap = { place: (pid, n) => placeFor(pos.get(pid), n), pos, links, C, pull: L0 === 'ring' ? 0.55 : L0 === 'agents' ? 0.25 : 0.1, col, focus: c.f, wl }
             const max = Math.max(1, ...links.map(l => l.n)), pull = L0 === 'ring' ? 0.55 : L0 === 'agents' ? 0.25 : 0.1
             const path = (a, b, k = pull) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return `M${a.x.toFixed(0)} ${a.y.toFixed(0)}Q${(mx + (C - mx) * k).toFixed(0)} ${(my + (C - my) * k).toFixed(0)} ${b.x.toFixed(0)} ${b.y.toFixed(0)}` }
             const lit = l => c.f && (l.from === c.f || l.to === c.f || (!isAgentF && !isKindF && ((pos.get(l.from) || {}).person === c.f || (pos.get(l.to) || {}).person === c.f)))
-            const spokes = L0 === 'ring' ? '' : `<g class="tm-spokes">${M.agents.filter(a => pos.has(a.id)).map(a => `<line x1="${pos.get(a.person).x.toFixed(0)}" y1="${pos.get(a.person).y.toFixed(0)}" x2="${pos.get(a.id).x.toFixed(0)}" y2="${pos.get(a.id).y.toFixed(0)}" stroke="${col.get(a.person)}" class="${c.f && !near(a.id) ? 'off' : ''}"/>`).join('')}</g>`
+            const spokes = L0 === 'ring' ? '' : `<g class="tm-spokes">${ALL.filter(a => pos.has(a.id)).map(a => `<line x1="${pos.get(a.person).x.toFixed(0)}" y1="${pos.get(a.person).y.toFixed(0)}" x2="${pos.get(a.id).x.toFixed(0)}" y2="${pos.get(a.id).y.toFixed(0)}" stroke="${col.get(a.person)}" class="${c.f && !near(a.id) ? 'off' : ''}"/>`).join('')}</g>`
             const wmax = Math.max(1, ...wl.map(l => l.n))
             const flows = W ? `<g class="tm-flows">${wl.map(l => { const on = !c.f || (isKindF ? 'k:' + l.kind === c.f : isAgentF ? l.agent === c.f : (pos.get(l.agent) || {}).person === c.f); return `<path d="${path(pos.get(l.agent), pos.get('k:' + l.kind), -0.15)}" stroke="${TM_KIND[l.kind][0]}" stroke-width="${(0.8 + 5 * Math.sqrt(l.n / wmax)).toFixed(2)}" class="${c.f ? (on ? 'on' : 'off') : ''}"><title>${esc((pos.get(l.agent) || {}).name || l.agent)}: ${l.n} commits on ${esc((W.kinds.find(k => k.id === l.kind) || {}).label || l.kind)}</title></path>` }).join('')}</g>` : ''
             const svg = `<svg class="tm-svg tm-${L0}" viewBox="0 0 ${S} ${S}" role="img" aria-label="${M.totals.people} people and ${M.totals.agents} agents${W ? ', and the kinds of work they did' : ', and who wrote to whom'}">
@@ -413,9 +595,10 @@ ${flows}
                 ? `<g class="tm-p${c.f && !near(id) ? ' off' : ''}" data-tm-f="${esc(id)}" tabindex="0" role="button" aria-label="${esc(n.label)}"><circle cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="26" fill="${col.get(id)}"/><text x="${n.x.toFixed(0)}" y="${(n.y + 5).toFixed(0)}">${esc(n.label)}</text></g>`
                 : n.kind === 'k'
                 ? `<g class="tm-k${c.f && !near(id) ? ' off' : ''}" data-tm-f="${esc(id)}" tabindex="0" role="button" aria-label="${esc(n.label)}" style="--kc:${TM_KIND[n.id][0]}">${shape(n.id, n.x, n.y, n.size)}<text x="${n.x.toFixed(0)}" y="${(n.y + n.size + 18).toFixed(0)}">${esc(n.label)}</text><title>${esc(n.label)}: ${n.total} commits in 7 days</title></g>`
-                : `<g class="tm-a${c.f && !near(id) && !(isAgentF ? links.some(l => lit(l) && (l.from === id || l.to === id)) : false) ? ' off' : ''}" data-tm-f="${esc(id)}"><${n.family !== 'web-summit' ? 'rect' : 'circle'} ${n.family !== 'web-summit' ? `x="${(n.x - 7).toFixed(0)}" y="${(n.y - 7).toFixed(0)}" width="14" height="14" transform="rotate(45 ${n.x.toFixed(0)} ${n.y.toFixed(0)})"` : `cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(4 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"`} fill="${col.get(n.person)}"/>${n.kind2 === 'fresh' || n.kind2 === 'scheduled' ? `<circle class="tm-kr ${n.kind2}" cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(9 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"/>` : ''}<title>${esc(n.name)}: ${n.runsAs ? `works as ${esc(n.runsAs)} (its commits count there)` : `${n.commits || 0} commits`}${n.family !== 'web-summit' ? ' (PrompTugal)' : ''}${n.kind2 ? `; ${({ fresh: 'a fresh session each run', scheduled: 'scheduled wakes into its own session', long: 'a long session' })[n.kind2] || n.kind2}` : ''}</title>${c.f && (id === c.f || (n.person === c.f && M.agents.filter(x => x.person === c.f).length <= 16)) ? `<text class="tm-al" x="${n.x.toFixed(0)}" y="${(n.y - 12).toFixed(0)}">${esc(n.label)}</text>` : ''}</g>`).join('')}</g></svg>`
+                : `<g class="tm-a${c.f && !near(id) && !(isAgentF ? links.some(l => lit(l) && (l.from === id || l.to === id)) : false) ? ' off' : ''}" data-tm-f="${esc(id)}"><${n.family !== 'web-summit' ? 'rect' : 'circle'} ${n.family !== 'web-summit' ? `x="${(n.x - 7).toFixed(0)}" y="${(n.y - 7).toFixed(0)}" width="14" height="14" transform="rotate(45 ${n.x.toFixed(0)} ${n.y.toFixed(0)})"` : `cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(4 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"`} fill="${col.get(n.person)}"/>${n.kind2 === 'fresh' || n.kind2 === 'scheduled' ? `<circle class="tm-kr ${n.kind2}" cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(9 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"/>` : ''}<title>${esc(n.name)}: ${n.runsAs ? `works as ${esc(n.runsAs)} (its commits count there)` : `${n.commits || 0} commits`}${n.own ? ` (${n.own} of its own on its workers/ branch in the last ${(M.workers_from || {}).hours || 48} hours)` : ''}${n.family !== 'web-summit' ? ' (PrompTugal)' : ''}${n.kind2 ? `; ${({ fresh: 'a fresh session each run', scheduled: 'scheduled wakes into its own session', long: 'a long session' })[n.kind2] || n.kind2}` : ''}${esc(liveTip(id))}</title>${c.f && (id === c.f || (n.person === c.f && M.agents.filter(x => x.person === c.f).length <= 16)) ? `<text class="tm-al" x="${n.x.toFixed(0)}" y="${(n.y - 12).toFixed(0)}">${esc(n.label)}</text>` : ''}</g>`).join('')}</g></svg>`
             const Lout = M.left_out || {}
-            const tabs = `<div class="tm-tabs" role="group" aria-label="Layout">${TM_LAYOUTS.map(([k, l]) => `<button type="button" class="rp-chip${k === L0 ? ' on' : ''}" data-tm-l="${k}" aria-pressed="${k === L0}">${esc(l)}</button>`).join('')}</div>`
+            // 3D (spec-live-map.md piece 5): a switch beside the layouts, off by default; the same map tilted and turned (map3d.js)
+            const tabs = `<div class="tm-tabs" role="group" aria-label="Layout">${TM_LAYOUTS.map(([k, l]) => `<button type="button" class="rp-chip${k === L0 ? ' on' : ''}" data-tm-l="${k}" aria-pressed="${k === L0}">${esc(l)}</button>`).join('')}<button type="button" class="rp-chip tm-3dsw${c.d3 ? ' on' : ''}" data-tm-3d aria-pressed="${c.d3}" title="The same map, tilted and turned; loads 1.6 MB of 3D libraries">3D</button></div>`
             const legend = W ? `<div class="tm-legend">${kinds.map(k => `<button type="button" class="tm-lg${c.f === 'k:' + k.id ? ' on' : ''}" data-tm-f="k:${k.id}" style="--kc:${TM_KIND[k.id][0]}"><svg viewBox="0 0 40 40" width="18" height="18" aria-hidden="true">${shape(k.id, 20, 20, 16)}</svg>${esc(k.label)} <b>${ktot[k.id]}</b></button>`).join('')}</div>` : ''
             // the key (Angelo, 6 November: "add a legend that clarifies what each type of symbol means"): every symbol on the
             // map, for the layout shown; the kinds of work keep their own tappable legend above (work layout)
@@ -434,9 +617,9 @@ ${flows}
             if (W) keyItems.push([sw('<path d="M3 20Q14 26 25 8" fill="none" stroke="var(--rm-text-secondary)" stroke-width="5" stroke-linecap="round" opacity=".7"/>'), "A flow: an agent's commits on one kind of work, wider for more; each kind of work is a shape, listed above"])
             const key = `<details class="tm-key"${keyOpen() ? ' open' : ''}><summary>Key: what each symbol means</summary><ul>${keyItems.map(([i, t]) => `<li>${i}<span>${esc(t)}</span></li>`).join('')}</ul><p class="note">Colour is the person. Tap anyone to focus them and their links; tap again to clear.</p></details>`
             const what = L0 === 'work' ? 'Each flow is an agent\'s commits in 7 days on issues of that kind of work (from the issue\'s area on the board), wider for more; PrompTugal\'s newsroom agents count as newsroom work, from their own repository. Tap a shape, an agent or a person to follow their work.'
-                : L0 === 'agents' ? 'The agents at the centre, each in its person\'s sector, and the people around them; an arc is a pair of agents that wrote to each other in 7 days.'
+                : L0 === 'agents' ? 'The agents in a ring, each beside its person, the people around them; an arc across the middle is a pair that wrote to each other in 7 days, wider for more.'
                 : `An arc is a pair that wrote to each other, wider for more. ${M.agents.some(a => a.kind) ? 'A solid ring is an agent woken on a schedule into its own session, a dashed ring one that starts a fresh session each run. ' : ''}`
-            return head + tabs + `<p class="note">${M.totals.people} people and ${M.totals.agents} agents active in the last ${M.days} days (${M.totals.promptugal} of them PrompTugal's, the diamonds), and ${M.totals.messages} messages. ${what} Tap a person or an agent to focus them (a person with many agents: names on hover or tap)${c.f ? `; focused on <b>${esc(c.f.replace(/^k:/, ''))}</b>, tap again to clear` : ''}.${Lout.agents ? ` Left out, not active: ${Lout.agents} agents${(Lout.people || []).length ? ` and ${esc(Lout.people.join(', '))}` : ''}.` : ''}</p>${legend}${key}<div class="tm-wrap">${svg}</div><div class="tmf" data-tmf></div><p class="note">From team-collaboration@web-summit.angelo's team-map.mjs, built with this release${M.promptugal ? `, with the PrompTugal newsroom's agents from its own repository as of ${esc(new Date(M.promptugal.read_at).toISOString().slice(0, 16).replace('T', ' '))} UTC (refreshed at dev@web-summit.angelo's wakes)` : ''}.</p></section>`
+            return head + tabs + `<p class="note">${M.totals.people} people and ${M.totals.agents} agents active in the last ${M.days} days (${M.totals.promptugal} of them PrompTugal's, the diamonds), and ${M.totals.messages} messages. ${what} Tap a person or an agent to focus them (a person with many agents: names on hover or tap)${c.f ? `; focused on <b>${esc(c.f.replace(/^k:/, ''))}</b>, tap again to clear` : ''}.${Lout.agents ? ` Left out, not active: ${Lout.agents} agents${(Lout.people || []).length ? ` and ${esc(Lout.people.join(', '))}` : ''}.` : ''}</p>${legend}${key}<div class="tm-wrap${c.d3 ? ' tm-3d-on' : ''}">${svg}${c.d3 ? '<div class="tm-3d" data-tm-3dv><p class="note">Loading the 3D view…</p></div>' : ''}</div><div class="tmf" data-tmf></div><p class="note">From team-collaboration@web-summit.angelo's team-map.mjs, built with this release${M.promptugal ? `, with the PrompTugal newsroom's agents from its own repository as of ${esc(new Date(M.promptugal.read_at).toISOString().slice(0, 16).replace('T', ' '))} UTC (refreshed at dev@web-summit.angelo's wakes)` : ''}.</p></section>`
         }
 
         function personSheet(id) {
@@ -517,6 +700,7 @@ ${day ? `<h3 class="ak-lane">${esc(DAYNAME(day))}${day === today ? ' (today)' : 
             if (!view) return
             if (!D || !window.AngeloReplay) { view.innerHTML = failed ? `<p class="note">Replay could not load (${esc(failed)}).</p>` : '<p class="note">Loading Replay…</p>'; return }
             document.title = `Replay · ${(D.person.name || D.person.id).split(' ')[0]}'s command centre`
+            if (D.replay && !D.replay.events) { view.innerHTML = `<p class="note">${evFailed ? `Replay could not load its commits (${esc(evFailed)}).` : 'Loading the commits…'}</p>`; if (!evFailed) needEvents().catch(() => null).then(() => { if (route() === 'replay') drawReplay() }); return }
             window.AngeloReplay.render(view, { D, title, note: ownNote, ownTitle, ago })
         }
         // Where (where.js, WS-181 step 1): the team's whereabouts and logistics, a demo kept on this device
