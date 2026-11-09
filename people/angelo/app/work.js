@@ -13,6 +13,8 @@
     const S = 1000, C = S / 2
     const DESTS0 = ['news', 'site', 'research', 'infra', 'app', 'keys', 'crm', 'email', 'linkedin', 'drafts']
     const NAMES0 = { news: 'PT News', site: 'the team site', research: 'research', infra: 'infrastructure', app: 'the app', keys: 'keys', crm: 'the CRM', email: 'email drafts', linkedin: 'LinkedIn', drafts: 'Drafts and proposals' }
+    // the short names, where the full ones do not fit beside their squares (a phone: backlog 0c4 (5))
+    const SHORT0 = { news: 'PT News', site: 'site', research: 'research', infra: 'infra', app: 'app', keys: 'keys', crm: 'CRM', email: 'email', linkedin: 'LinkedIn', drafts: 'drafts' }
     const ICONS = ['doc', 'cog', 'key', 'record', 'envelope', 'post']
     const FLIGHT_MS = 3000
 
@@ -38,7 +40,7 @@
     }
     // the rules that depend on the destinations, made for a list of them: the ten of the work view by default; variant() makes the
     // same for another ten (Workstreams, backlog 0c4: the busiest WS issues and "other"), each in the default's slot of its place
-    function level(DESTS, DEST_NAMES, SLOTS) {
+    function level(DESTS, DEST_NAMES, SLOTS, DEST_SHORT = {}) {
         function places(scale = 0.86) {      // scale: how far in from the rim the squares sit (the graph itself sits at GEO's scale)
             const out = new Map()
             DESTS.forEach(d => { const [e, f] = SLOTS[d], p = rimPoint((e + f) / 6); out.set(d, { x: C + (p.x - C) * scale, y: C + (p.y - C) * scale, nx: (p.x - C) / C, ny: (p.y - C) / C }) })
@@ -65,12 +67,14 @@
             for (const d of list) if (d.min >= from && d.min < to) c[d.dest]++
             return c
         }
-        return { DESTS, DEST_NAMES, SLOTS, places, unpack, merge, counts }
+        return { DESTS, DEST_NAMES, DEST_SHORT, SLOTS, places, unpack, merge, counts }
     }
-    const L0 = level(DESTS0, NAMES0, SLOTS0)
+    const L0 = level(DESTS0, NAMES0, SLOTS0, SHORT0)
     function variant(dests, names) {
         const slots = {}; dests.slice(0, DESTS0.length).forEach((d, i) => { slots[d] = SLOTS0[DESTS0[i]] })
-        return Object.assign({}, API, level(dests.slice(0, DESTS0.length), Object.assign({}, names), slots))
+        // a workstream's short name is its title without "WS-NN " (its square shows the number); "other workstreams" is "other"
+        const short = {}; for (const d of dests) short[d] = String(names[d] || d).replace(/^WS-\d+\s+/, '').replace(/^other workstreams$/i, 'other')
+        return Object.assign({}, API, level(dests.slice(0, DESTS0.length), Object.assign({}, names), slots, short))
     }
 
     // where a delivery leaves from: the maker's own node, else its person's (an agent the map does not draw yet), else nothing

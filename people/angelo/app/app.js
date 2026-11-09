@@ -404,13 +404,31 @@ ${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unpl
             const sw = `<div class="tm-tabs" role="group" aria-label="What the graph shows" data-wv-sw>${chip('', '#live' + (/[?&]d3=1(&|$)/.test(location.hash) ? '?d3=1' : ''), 'Messages', 'Who wrote to whom')}${chip('ws', '#live?v=ws', 'Workstreams', 'Each commit flying to the workstream (WS issue) it names')}${chip('work', '#live?v=work', 'Deliverables', 'What each agent and person made, travelling to where it went')}</div>`
             view.innerHTML = `<div class="ak">${ownNote()}<nav class="ak-switch" aria-label="More views"><a href="#collab?map=1">← Team and the machine <span class="ak-mk" aria-hidden="true">✦</span></a></nav>${sw}<div data-ak-live></div><p class="note" data-wv-legend hidden></p></div>`
             const lh = view.querySelector('[data-ak-live]')
-            window.AngeloLive.view(lh, { D, liveUrl: new URL('live.json', location.href).href })
+            const loadLevel = () => (lvl === 'ws' ? ['work.js', 'work-draw.js', 'work-live.js'] : ['work.js', 'work-draw.js', 'work-newsroom.js', 'work-live.js']).reduce((p, f) => p.then(() => window[{ 'work.js': 'AngeloWork', 'work-draw.js': 'AngeloWorkDraw', 'work-newsroom.js': 'AngeloWorkNews', 'work-live.js': 'AngeloWorkLive' }[f]] || load(f)), Promise.resolve())
+            const optsOf = () => lvl === 'ws' ? { base: new URL('./', here).href, file: 'workstreams.json' } : { base: new URL('./', here).href }
+            // the pop-out window (backlog 0c4 (5), Angelo 8 Nov about 23:00: "The popped out window doesn't show the work option"):
+            // the same three-way switch in its upper left corner, and the level drawn on its graph; a choice there sets this page's
+            // address, so the page and the pop-out always show the same level (a nav, not a div: the pop-out's body > div fills the window)
+            const popSync = () => {
+                const P = drawLive.pop; if (!P) return
+                if (P.wv) { P.wv.destroy(); P.wv = null }
+                const d = P.win.document; let bar = d.querySelector('[data-wv-popsw]')
+                if (!bar) {
+                    bar = d.createElement('nav'); bar.setAttribute('data-wv-popsw', ''); bar.setAttribute('role', 'group'); bar.setAttribute('aria-label', 'What the graph shows')
+                    bar.style.cssText = 'position:fixed;left:6px;top:6px;z-index:5;display:flex;gap:4px'; d.body.appendChild(bar)
+                    bar.addEventListener('click', e => { const a = e.target.closest('a[href]'); if (!a) return; e.preventDefault(); location.hash = a.getAttribute('href') })
+                }
+                bar.innerHTML = [['', '#live', 'Messages', 'Who wrote to whom'], ['ws', '#live?v=ws', 'Workstreams', 'Each commit flying to the workstream (WS issue) it names'], ['work', '#live?v=work', 'Deliverables', 'What each agent and person made, travelling to where it went']].map(([k, h, l, t]) => `<a class="rp-chip${lvl === k ? ' on' : ''}" href="${h}" aria-pressed="${lvl === k}" title="${t}" style="font-size:11px;padding:2px 8px;text-decoration:none">${l}</a>`).join('')
+                if (lvl) loadLevel().then(() => { if (drawLive.pop === P && !P.wv && P.host.isConnected && window.AngeloWorkLive) P.wv = window.AngeloWorkLive.mount(P.host, { ...optsOf(), win: P.win }) }).catch(() => null)
+            }
+            // onPop(null): the pop-out closed; the page draws again, inline, at the level its address says
+            window.AngeloLive.view(lh, { D, liveUrl: new URL('live.json', location.href).href, onPop: pop => { if (drawLive.pop && drawLive.pop.wv) drawLive.pop.wv.destroy(); drawLive.pop = pop; if (pop) popSync(); else if (/^#live/.test(location.hash)) drawLive() } })
+            popSync()
             if (drawLive.wv) { drawLive.wv.destroy(); drawLive.wv = null }
             if (!wv) return
-            const files = lvl === 'ws' ? ['work.js', 'work-draw.js', 'work-live.js'] : ['work.js', 'work-draw.js', 'work-newsroom.js', 'work-live.js']
-            files.reduce((p, f) => p.then(() => window[{ 'work.js': 'AngeloWork', 'work-draw.js': 'AngeloWorkDraw', 'work-newsroom.js': 'AngeloWorkNews', 'work-live.js': 'AngeloWorkLive' }[f]] || load(f)), Promise.resolve()).then(() => {
+            loadLevel().then(() => {
                 const frame = lh.querySelector('[data-lv-frame]'), leg = view.querySelector('[data-wv-legend]'); if (!frame || !lh.isConnected || !window.AngeloWorkLive) return
-                drawLive.wv = window.AngeloWorkLive.mount(frame, lvl === 'ws' ? { base: new URL('./', here).href, file: 'workstreams.json' } : { base: new URL('./', here).href })
+                drawLive.wv = window.AngeloWorkLive.mount(frame, optsOf())
                 const A = window.AngeloWork, ico = k => `<svg viewBox="-10 -10 20 20" width="18" height="18" aria-hidden="true" style="vertical-align:-4px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="${A.ICON_PATHS[k]}"/></svg>`
                 if (leg && lvl === 'ws') { leg.hidden = false; leg.innerHTML = `What travels: <span style="white-space:nowrap;margin-right:10px">${ico('doc')} a commit</span><br>Each doc is a commit that names a workstream (its Issue: line), flying from its maker to that workstream a few minutes after the commit. The squares are the nine busiest workstreams and the rest; they count the last 24 hours.` }
                 else if (leg) { leg.hidden = false; leg.innerHTML = `What travels: ${A.ICONS.map(k => `<span style="white-space:nowrap;margin-right:10px">${ico(k)} ${esc(k)}</span>`).join('')}<br>Each icon is something made, flying from its maker to where it went, a few minutes after its commit. The squares count the last 24 hours. Nothing is drawn without a commit.` }
