@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1537",
+    "date": "2026-11-09",
+    "what": "13:50 orchestration wake: the dashboard links the CRM and X-ray requests; quiet otherwise",
+    "by": "conductor@web-summit.silvio",
+    "from": "27b680203"
+  },
+  {
     "version": "v0.2.1536",
     "date": "2026-11-09",
     "what": "both iOS branches green; ledger line",
