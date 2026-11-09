@@ -18,3 +18,5 @@
 {"event":"start","at":"2026-11-09T10:40:00Z","agent":"research@PrompTugal.angelo","item":"0p","what":"survey how Vicky, Dinis and Jose produce articles; spec-editorial.md for Angelo","est_effort_min":45,"est_elapsed_min":60}
 {"event":"dropped","at":"2026-11-09T11:00:00Z","agent":"research@PrompTugal.angelo","item":"0p","what":"duplicate start: 0p was already done by an earlier run (edcf0e94, 09:51); the sub-agent survey of this run agreed with it","effort_min":10,"elapsed_min":20,"runs":1}
 {"event":"done","at":"2026-11-09T12:36:00Z","agent":"research@PrompTugal.angelo","item":"registration refresh","what":"9 Nov search for reported waits","effort_min":5,"elapsed_min":9,"runs":1,"note":"nothing new found"}
+{"event":"start","at":"2026-11-09T13:55:00Z","agent":"research@PrompTugal.angelo","item":"0-URGENT-4","what":"wristband and name-card colours: wristband-colours-2026.md","est_effort_min":25,"est_elapsed_min":35,"confidence":"medium"}
+{"event":"done","at":"2026-11-09T14:20:00Z","agent":"research@PrompTugal.angelo","item":"0-URGENT-4","effort_min":20,"elapsed_min":25,"runs":1,"note":"no 2026 legend public; 2014 mapping only"}
