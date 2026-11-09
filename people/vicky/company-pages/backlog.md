@@ -149,8 +149,8 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | National Cyber Security Centre (UK) | https://promptugal.news/companies/ncsc-uk/ | in review (9 Nov, overnight, commit be203e53) |
 | NordVPN | https://promptugal.news/companies/nordvpn/ | in review (9 Nov, overnight, commit be203e53) |
 | PolyAI | https://promptugal.news/companies/polyai/ | in review (9 Nov, overnight, commit be203e53) |
-| Prelude | https://promptugal.news/companies/prelude/ | writing (9 Nov, overnight, journalist-europe) |
-| Risiq GmbH | https://promptugal.news/companies/risiq/ | writing (9 Nov, overnight, journalist-europe) |
+| Prelude | https://promptugal.news/companies/prelude/ | in review (9 Nov, overnight, commit e8a8ef28) |
+| Risiq GmbH | https://promptugal.news/companies/risiq/ | in review (9 Nov, overnight, commit e8a8ef28) |
 
 ### A1: journalist-ai@PrompTugal.vicky (11)
 
@@ -172,8 +172,8 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| Make | https://promptugal.news/companies/make/ | writing (9 Nov, overnight, journalist-europe) |
-| Mastra | https://promptugal.news/companies/mastra/ | writing (9 Nov, overnight, journalist-europe) |
+| Make | https://promptugal.news/companies/make/ | in review (9 Nov, overnight, commit e8a8ef28) |
+| Mastra | https://promptugal.news/companies/mastra/ | in review (9 Nov, overnight, commit e8a8ef28) |
 | Neo4j | https://promptugal.news/companies/neo4j/ | writing (9 Nov, overnight, journalist-europe) |
 | Open VSX (Eclipse Foundation) | https://promptugal.news/companies/open-vsx/ | writing (9 Nov, overnight, journalist-europe) |
 | Orb | https://promptugal.news/companies/orb/ | writing (9 Nov, overnight, journalist-europe) |
