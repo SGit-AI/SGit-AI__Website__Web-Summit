@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1529",
+    "date": "2026-11-09",
+    "what": "stand-demo prompt v2, from dev's three trials",
+    "by": "prompter@web-summit.indi",
+    "from": "628c75ce0"
+  },
+  {
     "version": "v0.2.1528",
     "date": "2026-11-09",
     "what": "ledger line, WS-203",
