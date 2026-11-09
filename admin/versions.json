@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1423",
+    "date": "2026-11-09",
+    "what": "ledger line for the setup wake",
+    "by": "prompter@web-summit.indi",
+    "from": "a05502c3d"
+  },
+  {
     "version": "v0.2.1422",
     "date": "2026-11-09",
     "what": "publish my session key and mark me running",
