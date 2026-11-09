@@ -1,0 +1,2 @@
+{"event":"start","at":"2026-11-09T22:28:00Z","agent":"sheet@PrompTugal.angelo","item":"0-LEADS","what":"one-page interview sheet for lead A, pitch for lead B, question for lead C","est_effort_min":25,"est_elapsed_min":30,"confidence":"medium"}
+{"event":"done","at":"2026-11-09T22:28:32Z","agent":"sheet@PrompTugal.angelo","item":"0-LEADS","effort_min":12,"elapsed_min":12,"runs":1,"note":"brief was precise; two public sources were enough"}
