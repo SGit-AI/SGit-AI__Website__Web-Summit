@@ -112,10 +112,10 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| Hablla | https://promptugal.news/companies/hablla/ | to do |
-| iTRecruiter | https://promptugal.news/companies/itrecruiter/ | to do |
-| KPMG | https://promptugal.news/companies/kpmg-portugal/ | to do |
-| naPorta | https://promptugal.news/companies/naporta/ | to do |
+| Hablla | https://promptugal.news/companies/hablla/ | in review (9 Nov, overnight) |
+| iTRecruiter | https://promptugal.news/companies/itrecruiter/ | in review (9 Nov, overnight) |
+| KPMG | https://promptugal.news/companies/kpmg-portugal/ | in review (9 Nov, overnight) |
+| naPorta | https://promptugal.news/companies/naporta/ | in review (9 Nov, overnight) |
 | Olá Doutor | https://promptugal.news/companies/ola-doutor/ | to do |
 | ProHound | https://promptugal.news/companies/prohound/ | to do |
 | Rapidoc | https://promptugal.news/companies/rapidoc/ | to do |
