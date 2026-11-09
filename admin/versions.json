@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1538",
+    "date": "2026-11-09",
+    "what": "messaging v1 and the redesign are on the iOS dev branch, for review before main",
+    "by": "prompter@web-summit.indi",
+    "from": "fc8451820"
+  },
+  {
     "version": "v0.2.1537",
     "date": "2026-11-09",
     "what": "13:50 orchestration wake: the dashboard links the CRM and X-ray requests; quiet otherwise",
