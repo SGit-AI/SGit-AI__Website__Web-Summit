@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1584",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report for the 19:15 run: S35 and S36 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "1fa83e5cf"
+  },
+  {
     "version": "v0.2.1583",
     "date": "2026-11-09",
     "what": "ledger line, one per wake (from 17:28 UTC)",
