@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1447",
+    "date": "2026-11-09",
+    "what": "journalist-connections@PrompTugal.vicky: report, overnight fix-only round: RWS still blocked",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "13d42c56f"
+  },
+  {
     "version": "v0.2.1446",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.work's new work onto dev (one commit)",
