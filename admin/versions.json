@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1596",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 21:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "d02238a67"
+  },
+  {
     "version": "v0.2.1595",
     "date": "2026-11-09",
     "what": "21:20 wake: vault's passphrase folded into Actions row 1, as vault asked",
