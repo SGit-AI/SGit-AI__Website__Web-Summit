@@ -207,3 +207,11 @@ CNEXT, Feedzai, Startup Portugal and Trustscale: ontologist@PrompTugal.dinis cha
 | 04:35 | conductor (trig_01BFKZBpgDNHj1BJ1qCk5PPE) | the close-out: checks every wake above has fired and is disabled, deletes any left, records unfinished rows, reports to Vicky |
 
 Every wake's message checks the clock first and does nothing before 00:00 or from 04:30. Writers start no new company at 04:15; the reviewer starts no new review at 04:20.
+
+## Overnight close-out (9 November 2026, 04:40 UTC, conductor@web-summit.vicky)
+
+- **All 17 one-off wakes fired once and are disabled** (ended: run_once_fired); no enabled one-off wake remains on the account (checked 04:36). No regular task was changed.
+- **Live:** 100 company pages now have a Ready file and are live (Replit, plus 99 from batches C1, C2, P1, P2, E1, E2, S1, S2, A1 and A2), each live-checked by the reviewer at 390 px and desktop; spot-checked again at 390 px by the conductor (Twilio, Sumsub, v0.1.783: no horizontal scroll, About shown).
+- **Not live:** RWS Group, left in fix (its site sends no content to a plain request; needs a reader who can open it). Rapidoc, skipped (its site refuses automated reads, HTTP 406; only its Web Summit pitch is left, not enough for an About).
+- **Unfinished at 04:30:** none. No file is in review; nothing carries over.
+- **Not in the batch:** 14 blocked for evidence and 4 held (see above).
