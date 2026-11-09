@@ -47,11 +47,15 @@ function live() {
     if (run && !cur.done) run.steps = run.steps.filter(s => s.k !== 'end')       // the verdict only once the agent has finished
     return { state: cur.done ? (cur.code === 0 ? 'done' : 'failed') : 'running', story: cur.story, rung: cur.rung, started: cur.started, run: run && { ...run, id: 'live' } }
 }
+// POST /start only from this server's own page (dev@PrompTugal.angelo's finding, dc2ca5c5): a browser sends Origin with a
+// cross-site POST, so a page from anywhere else (or a DNS name rebound to 127.0.0.1) is refused; no Origin means a command
+// on this machine (curl), which is allowed.
+const ownPage = q => q.headers.origin === undefined || q.headers.origin === `http://127.0.0.1:${PORT}`
 const srv = http.createServer((q, s) => {
     const u = new URL(q.url, 'http://x')
     const send = (code, type, body) => { s.writeHead(code, { 'content-type': type, 'cache-control': 'no-store' }); s.end(body) }
     if (u.pathname === '/live.json') return send(200, TYPES['.json'], JSON.stringify(live()))
-    if (u.pathname === '/start' && q.method === 'POST') { const e = start(u.searchParams.get('story'), +u.searchParams.get('rung')); return send(e ? 409 : 200, TYPES['.json'], JSON.stringify({ ok: !e, error: e })) }
+    if (u.pathname === '/start' && q.method === 'POST') { if (!ownPage(q)) return send(403, TYPES['.json'], JSON.stringify({ ok: false, error: 'only this page may start a run' })); const e = start(u.searchParams.get('story'), +u.searchParams.get('rung')); return send(e ? 409 : 200, TYPES['.json'], JSON.stringify({ ok: !e, error: e })) }
     const f = FILES[u.pathname]
     if (!f || q.method !== 'GET') return send(404, 'text/plain', 'not here')
     send(200, TYPES[path.extname(f)], fs.readFileSync(path.join(ROOT, f)))
