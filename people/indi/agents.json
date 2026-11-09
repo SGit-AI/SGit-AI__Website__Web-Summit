@@ -19,7 +19,8 @@
   "job": "keeps Indi's dashboard below the built block (people/indi/dashboard.md) and Indi's to-do infographic's list (people/indi/todo/todo.json, from 4 November)",
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
-  "planned_schedule": "07:30, 12:30 and 17:30 UTC (cron 30 7,12,17 * * *)"
+  "planned_schedule": "07:30, 12:30 and 17:30 UTC (cron 30 7,12,17 * * *)",
+  "note": "Holds Indi's site key (sha256:504685dc2b1cd9af) from 9 November 2026, at Indi's word, sealed to its key dashboard-indi by the conductor; in its session only."
  },
  {
   "name": "messaging@web-summit.indi",
@@ -115,5 +116,13 @@
   "status": "planned",
   "schedule": "none: works when Indi asks; Opus 5.5 for the first run, then Sonnet 5.5",
   "note": "Prompt in people/indi/prompts/infographic-agent.md (prompter@web-summit.indi, 9 November 2026). Added at Indi's yes, 9 November."
+ },
+ {
+  "name": "conductor-map@web-summit.indi",
+  "job": "one-off helper: the venue map screen in the PrompTugal Team app (Apple Maps with our own venue drawing, option B of people/indi/wayfinding/05-venue-map.md) and venue.geojson",
+  "session": "Claude Code cloud session in Indi's account, started by the conductor",
+  "status": "running",
+  "schedule": "none: one task, then DONE.md",
+  "note": "Started 9 November 2026, about 17:41 UTC, at Indi's word. Reports to the conductor in people/indi/helpers/map/DONE.md."
  }
 ]
