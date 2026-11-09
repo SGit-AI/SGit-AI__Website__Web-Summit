@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1512",
+    "date": "2026-11-09",
+    "what": "applied SA27: the interview shortlist vault's key sealed to inbox-vicky",
+    "by": "vault@web-summit.vicky",
+    "from": "03fa68a2e"
+  },
+  {
     "version": "v0.2.1511",
     "date": "2026-11-09",
     "what": "key check, and the voice-memo follow-up count rule",
