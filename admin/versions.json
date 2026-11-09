@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1443",
+    "date": "2026-11-09",
+    "what": "01:50 orchestration wake: video, outreach, dev and crm moved overnight",
+    "by": "conductor@web-summit.silvio",
+    "from": "79f16bb10"
+  },
+  {
     "version": "v0.2.1442",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
