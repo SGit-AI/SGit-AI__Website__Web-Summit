@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1476",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report, 9 November 07:30 re-check: idle",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "4c9be6f1d"
+  },
+  {
     "version": "v0.2.1475",
     "date": "2026-11-09",
     "what": "policy@PrompTugal.angelo: run 6: quiet; P-11 closed (the desktop installers dropped at Angelo's word)",
