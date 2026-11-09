@@ -2,6 +2,8 @@
 title: Start here
 summary: The one page for the Web Summit 2026 team. Find your name, open your brief, paste your prompt into your own Claude, and get connected (Claude, GitHub, email, a PKI key, a schedule). Then how we work, the pulse, and the dates. Everyone champions RiskMandate.
 ---
+**Forgot your business cards? Put the RiskMandate card in Apple Wallet:** open [web-summit.sgit.ai/card/](../card/index.html) in Safari on your iPhone, tap **Add to Apple Wallet**, then **Add**. Double-click the side button to show it; they scan the QR. On Android: add the page to your Home screen.
+
 **Today, Monday: vote on the shirts, hoodies and cards on [the design page](../design/index.html#vote).**
 
 **Team: start here.** Find your name, open your brief, and paste the prompt from it into your own Claude. Your agent then takes you through getting connected, one step at a time. Everything here is public, on purpose: how we work is part of what we show.
