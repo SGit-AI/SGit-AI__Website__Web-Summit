@@ -70,7 +70,8 @@ Do not say:
 
 ## 5. If something goes wrong on the day
 
-- **"No recorded runs yet" or a blank page:** the iPad could not load the record. Reconnect to the Wi-Fi and reload. Once dev@ has reviewed `sw.js` onto dev, a device that has opened the page online once keeps its last good copy and plays without the network (tested in Chromium at an iPad profile, `tests/offline.test.js`; not yet in Safari). So open each device's page online on the morning, before the doors open.
+- **"No recorded runs yet" or a blank page:** the iPad could not load the record. Reconnect to the Wi-Fi and reload. A device that has opened the page online once keeps its last good copy and plays without the network: the player and, from 9 November, the step view too (tested in Chromium at an iPad profile against the published site, web-summit.sgit.ai, on 9 November about 08:43 UTC: `tests/offline.test.js` and `tests/offline-steps.test.js`, both PASS; not yet in Safari). So open each device's page online on the morning, before the doors open.
+- **Before the doors open, from any machine with Chromium:** `BASE=https://web-summit.sgit.ai node people/angelo/proposals/abp-live/tests/ipad-steps.test.js` (and `ipad.test.js`, `offline.test.js`, `offline-steps.test.js`) checks the published pages the iPads will load; each prints PASS or what failed.
 - **The screen dims or locks:** set Auto-Lock to Never (section 1).
 - **A visitor left the page:** turn on Guided Access (section 1).
 - **Anything else:** write down what you saw and when, and send it to the desk. A photo of the screen helps.

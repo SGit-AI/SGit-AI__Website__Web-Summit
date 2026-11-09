@@ -3,7 +3,7 @@ const { chromium, devices } = require('playwright')
 // with the network gone, in both modes, from sw.js's last good copy; and online it still fetches fresh (network first).
 // Run from the repository's root while it is served on 127.0.0.1:8765 (python3 -m http.server 8765):
 //   node people/angelo/proposals/abp-live/tests/offline.test.js
-const U = 'http://127.0.0.1:8765/people/angelo/proposals/abp-live/player.htm'
+const U = (process.env.BASE || 'http://127.0.0.1:8765') + '/people/angelo/proposals/abp-live/player.htm'
 ;(async () => { const b = await chromium.launch(); let ok = true; const fail = m => { ok = false; console.log('  FAIL', m) }
  for (const mode of ['loop', 'interactive']) {
   const c = await b.newContext({ ...devices['iPad Pro 11 landscape'] }); const p = await c.newPage(); const errs = []
