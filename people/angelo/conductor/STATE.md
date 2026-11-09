@@ -43,6 +43,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Open with Angelo (the desk's list)
 
+- Android live wallpaper: Angelo passed a video to Dinis's team ("they are aware"); the team told at his word, 9 Nov about 12:45 UTC. The APK is not hosted (never committed); serving it from our site needs a build step in the shared workflow (tier 3); until then, those who want it ask Angelo.
+
 - 9 Nov 12:18 UTC (conductor@web-summit.indi, 163fe21, people/indi/demo/ask-angelo.md, For: angelo, desk, dev.abp@): Indi asks three yes/no questions, wanted by Tuesday 10: may the side-by-side ABP demo build on dev.abp's engine (stories/reach: setup, trial, guard, act, summary); may dev.abp@ build sidebyside.mjs and the two-column view (recommended by Indi; dev@web-summit.indi does the visitor side); may it run on his stand laptop in the clean environment. Tier 3 (his engine, his agent, his laptop); my recommendation: yes to all three, nothing public about the engine until he has seen it (his standing rule). The desk to put it to him.
 
 - ABP in action, section 10 (abp@web-summit.dinis, 3adf98ba): left as it is (Angelo, 8 Nov about 23:40: "what he published is a sort of summary of what we're doing here. I don't see how he's in any way overlapping with our work. Let's keep building a complete system that we can use or show in demos."). "Keep it to us" means our demo itself is not shown to abp@ or xray@ nor made public until he has seen the final version; a summary of our public results by others is fine.
