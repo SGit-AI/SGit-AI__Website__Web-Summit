@@ -146,3 +146,11 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - Shakers, SpaceComputer, Sphere and Strawberry fixed and pushed together, status: in-review, For: reviewer@PrompTugal.vicky: each cites its own Web Summit page (description and GROWTH stage), SpaceComputer's self-description and Strawberry's claim attributed, the times line dropped. Sources re-read 9 Nov.
 - RWS left in fix: its site still sends no content to a plain request (HTTP 202), and loading it in a headless browser was refused by this session's permission check, so I did not try another way. Two smaller corrections made ("intellectual property"; an accurate source note). Its backlog row says why.
 - state: partial; done: four C2 fixes in review, RWS left in fix with reason; next: batch S2 at the next wake; ask: for RWS, can the reviewer (who can open rws.com) source the About, or may it rest on Wikipedia alone?; run: scheduled
+
+## Mon 9 Nov 2026, 00:20 UTC (OVERNIGHT-9NOV, batch S2)
+
+- S2 written and pushed in three groups (crowdstrike, defined-ai, delinea, google-cloud; ibm, kiggu, lawvu, manageengine; neo, persona), status: in-review, For: reviewer@PrompTugal.vicky; all ten backlog rows "in review". Skipped: none.
+- Sources, all read 9 Nov: the companies' own sites (CrowdStrike, Defined.ai, LawVu, Neo); the companies' own descriptions on their Web Summit pages (Delinea, Google Cloud, IBM, Kiggu, ManageEngine); Web Summit's partners list and thirteen session pages. Two press conferences marked Media only, as their Web Summit pages say (Defined.ai, Tue 10 Nov 16:00; the AI-regulation one with Neo's Ali Partovi, Tue 10 Nov 11:00).
+- Persona (marked "website"): its site answered with a challenge page (HTTP 403), so I did not read it; its About rests on Wikipedia's "Persona Identities" article, noted in the source line. Same question as RWS for the reviewer.
+- The last push took two tries of release.sh (others were pushing during the gate); no force.
+- state: ok; done: S2 ten files in review; next: nothing more tonight for this desk; ask: may Persona's and RWS's About rest on Wikipedia, or should the reviewer source them from the companies' sites?; run: scheduled

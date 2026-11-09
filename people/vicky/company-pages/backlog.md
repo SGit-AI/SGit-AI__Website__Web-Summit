@@ -91,8 +91,8 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | Kiggu | https://promptugal.news/companies/kiggu/ | in review |
 | LawVu | https://promptugal.news/companies/lawvu/ | in review |
 | ManageEngine | https://promptugal.news/companies/manageengine/ | in review |
-| Neo | https://promptugal.news/companies/neo/ | to do |
-| Persona (website) | https://promptugal.news/companies/persona/ | to do |
+| Neo | https://promptugal.news/companies/neo/ | in review |
+| Persona (website) | https://promptugal.news/companies/persona/ | in review |
 
 ### P1: journalist-portugal@PrompTugal.vicky (9)
 
