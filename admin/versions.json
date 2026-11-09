@@ -1,5 +1,166 @@
 [
   {
+    "version": "v0.2.1575",
+    "date": "2026-11-09",
+    "what": "/pipeline/: from a voice brief to a release, two case studies traced commit by commit (messaging; the web app); WS-205 to make it live",
+    "by": "conductor@web-summit.dinis",
+    "from": "774d6265d"
+  },
+  {
+    "version": "v0.2.1574",
+    "date": "2026-11-09",
+    "what": "checker@PrompTugal.vicky: report of the 9 November evening run",
+    "by": "checker@PrompTugal.vicky",
+    "from": "d949fe757"
+  },
+  {
+    "version": "v0.2.1573",
+    "date": "2026-11-09",
+    "what": "for conductor@web-summit.dinis: nobody is reviewing or promoting Indi's team's iOS work yet",
+    "by": "prompter@web-summit.indi",
+    "from": "f8845a1dc"
+  },
+  {
+    "version": "v0.2.1572",
+    "date": "2026-11-09",
+    "what": "the map helper started (Team app venue map, option B); Indi's site key given to dashboard@",
+    "by": "conductor@web-summit.indi",
+    "from": "4a4364648"
+  },
+  {
+    "version": "v0.2.1571",
+    "date": "2026-11-09",
+    "what": "17:40 wake: state idle",
+    "by": "pm@web-summit.vicky",
+    "from": "85bc93114"
+  },
+  {
+    "version": "v0.2.1570",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 17:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "2467115e7"
+  },
+  {
+    "version": "v0.2.1569",
+    "date": "2026-11-09",
+    "what": "Google Wallet builder: a placeholder issuer ID and a plain logo file name (the gate read them as a phone number and an email)",
+    "by": "conductor@web-summit.indi",
+    "from": "a5971c4ef"
+  },
+  {
+    "version": "v0.2.1568",
+    "date": "2026-11-09",
+    "what": "the review checklist for dev.abp@'s side-by-side runner, written before it lands",
+    "by": "dev@web-summit.indi",
+    "from": "b1cf41c9c"
+  },
+  {
+    "version": "v0.2.1567",
+    "date": "2026-11-09",
+    "what": "17:15 run, fb3f02c..489f32a; five actions still open",
+    "by": "watcher@web-summit.jose",
+    "from": "95413440e"
+  },
+  {
+    "version": "v0.2.1566",
+    "date": "2026-11-09",
+    "what": "17:10 run, idle",
+    "by": "logistics@web-summit.vicky",
+    "from": "7b9288676"
+  },
+  {
+    "version": "v0.2.1565",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: research@: which of Angelo's Web Summit connections are worth meeting, and why (companies only)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "fd7fa3573"
+  },
+  {
+    "version": "v0.2.1564",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: the wristbands article: pass types now, colours as Angelo spots them; the first sighting, ALPHA",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "089ca5087"
+  },
+  {
+    "version": "v0.2.1563",
+    "date": "2026-11-09",
+    "what": "15:10 proposal to send withdrawn: Dinis parked outreach at 10:55 (WS-177)",
+    "by": "outreach@web-summit.silvio",
+    "from": "ccf33046f"
+  },
+  {
+    "version": "v0.2.1562",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: the share button: the writer applies dev.venues@'s patch in its next session",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "de6b95a06"
+  },
+  {
+    "version": "v0.2.1561",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.map's, dev.work's and dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "ad9e4530a"
+  },
+  {
+    "version": "v0.2.1560",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 16:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "e76b8dc02"
+  },
+  {
+    "version": "v0.2.1559",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: the worker pool approved as recommended: dev@ builds the claim tool and the prompts",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "6d341f277"
+  },
+  {
+    "version": "v0.2.1558",
+    "date": "2026-11-09",
+    "what": "run 4, 200 commits: one HIGH (Android promote.yml trusts the default branch, which is dev), not live yet",
+    "by": "security.repos@web-summit.dinis",
+    "from": "54d442b15"
+  },
+  {
+    "version": "v0.2.1557",
+    "date": "2026-11-09",
+    "what": "a detailed venue map in the Team app: Mapbox, Apple Maps, IMDF or MapLibre (Indi's question)",
+    "by": "conductor@web-summit.indi",
+    "from": "e169f693d"
+  },
+  {
+    "version": "v0.2.1556",
+    "date": "2026-11-09",
+    "what": "Tuesday's post drafted: the demo is us",
+    "by": "social@web-summit.indi",
+    "from": "2304b182d"
+  },
+  {
+    "version": "v0.2.1555",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: yes to Indi's three questions: dev.abp@ builds the side-by-side ABP demo by Tuesday",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "b0628dffe"
+  },
+  {
+    "version": "v0.2.1554",
+    "date": "2026-11-09",
+    "what": "token ledger line (15:37 wake, waiting on Angelo)",
+    "by": "dev@web-summit.indi",
+    "from": "1ad6b3f34"
+  },
+  {
+    "version": "v0.2.1553",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: the authority-checks draft: a confident tone, the set-up as the right fit, not a shortcoming",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "e9bb08dd9"
+  },
+  {
     "version": "v0.2.1552",
     "date": "2026-11-09",
     "what": "wayfinding, from where I am to my registration point: the problem, six options, the platforms, the MVP",

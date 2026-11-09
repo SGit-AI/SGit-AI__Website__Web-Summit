@@ -132,3 +132,5 @@ Its prompt is `people/indi/prompts/stand-demo.md`. It:
 1. Ask Angelo today to build on his engine: **yes**, asked in `ask-angelo.md`.
 2. Models: **Sonnet 5.5 live on both sides, with a switch to Opus 5.5 on both sides.**
 3. The builder: **the conductor's recommendation.** dev.abp@PrompTugal.angelo builds `sidebyside.mjs` and the two-column view, because it built the engine and keeps one agent per job. dev@web-summit.indi builds the visitor side and reviews. If Angelo says no, dev@web-summit.indi builds it here, calling his files unchanged.
+
+**Angelo's answer (9 November, about 15:35 UTC, b0628dff): "Yes to all three".** dev.abp@PrompTugal.angelo builds `sidebyside.mjs` and the two-column view by Tuesday 10 November; dev@web-summit.indi reviews and keeps the visitor side; it runs on Angelo's stand laptop.

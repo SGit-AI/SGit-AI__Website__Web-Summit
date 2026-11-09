@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 624" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1400" height="624" fill="#faf9f5"/>
+<text x="30" y="44" font-size="26" font-weight="700" fill="#141413">Case 2: the news app on the web, from a voice brief to an installable app in 1 hour 35 minutes</text>
+<text x="30" y="74" font-size="15" fill="#5e5d59">Dinis speaks at about 14:40; three teams on two accounts; /app/ is live at 15:55 and installs offline at 16:15</text>
+<rect x="20" y="114" width="1360" height="66" rx="10" fill="#8a3b1f" fill-opacity="0.10"/>
+<text x="34" y="152.0" font-size="14" font-weight="700" fill="#8a3b1f">Dinis</text>
+<rect x="20" y="188" width="1360" height="66" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="226.0" font-size="14" font-weight="700" fill="#1f5f8b">main conductor</text>
+<rect x="20" y="262" width="1360" height="66" rx="10" fill="#3f5a2a" fill-opacity="0.10"/>
+<text x="34" y="300.0" font-size="14" font-weight="700" fill="#3f5a2a">PrompTugal conductor</text>
+<rect x="20" y="336" width="1360" height="66" rx="10" fill="#7a3e8a" fill-opacity="0.10"/>
+<text x="34" y="374.0" font-size="14" font-weight="700" fill="#7a3e8a">mobile@ (shared repo)</text>
+<rect x="20" y="410" width="1360" height="66" rx="10" fill="#5e5d59" fill-opacity="0.10"/>
+<text x="34" y="448.0" font-size="14" font-weight="700" fill="#5e5d59">dev@, ontologist@, designer@ (account B)</text>
+<rect x="20" y="484" width="1360" height="66" rx="10" fill="#c96442" fill-opacity="0.10"/>
+<text x="34" y="522.0" font-size="14" font-weight="700" fill="#c96442">security@PrompTugal</text>
+<line x1="279.6969696969697" y1="110" x2="279.6969696969697" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="279.6969696969697" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">14:45</text>
+<line x1="384.24242424242425" y1="110" x2="384.24242424242425" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="384.24242424242425" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">15:00</text>
+<line x1="488.7878787878788" y1="110" x2="488.7878787878788" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="488.7878787878788" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">15:15</text>
+<line x1="593.3333333333333" y1="110" x2="593.3333333333333" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="593.3333333333333" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">15:30</text>
+<line x1="697.8787878787879" y1="110" x2="697.8787878787879" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="697.8787878787879" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">15:45</text>
+<line x1="802.4242424242424" y1="110" x2="802.4242424242424" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="802.4242424242424" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">16:00</text>
+<line x1="906.969696969697" y1="110" x2="906.969696969697" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="906.969696969697" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">16:15</text>
+<line x1="1011.5151515151516" y1="110" x2="1011.5151515151516" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="1011.5151515151516" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">16:30</text>
+<line x1="1116.060606060606" y1="110" x2="1116.060606060606" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="1116.060606060606" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">16:45</text>
+<line x1="1220.6060606060605" y1="110" x2="1220.6060606060605" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="1220.6060606060605" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">17:00</text>
+<line x1="1325.1515151515152" y1="110" x2="1325.1515151515152" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="1325.1515151515152" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">17:15</text>
+<path d="M244.84848484848484 147.0 C262.27272727272725 147.0, 262.27272727272725 221.0, 279.6969696969697 221.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M279.6969696969697 221.0 C297.1212121212121 221.0, 297.1212121212121 369.0, 314.54545454545456 369.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M314.54545454545456 369.0 C328.4848484848485 369.0, 328.4848484848485 295.0, 342.42424242424244 295.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M342.42424242424244 295.0 C433.030303030303 295.0, 433.030303030303 443.0, 523.6363636363636 443.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M523.6363636363636 443.0 C645.6060606060606 443.0, 645.6060606060606 295.0, 767.5757575757576 295.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M767.5757575757576 295.0 C802.4242424242425 295.0, 802.4242424242425 517.0, 837.2727272727273 517.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M837.2727272727273 517.0 C872.1212121212121 517.0, 872.1212121212121 443.0, 906.969696969697 443.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M906.969696969697 443.0 C938.3333333333334 443.0, 938.3333333333334 443.0, 969.6969696969697 443.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M969.6969696969697 443.0 C1008.0303030303031 443.0, 1008.0303030303031 443.0, 1046.3636363636365 443.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M1046.3636363636365 443.0 C1185.757575757576 443.0, 1185.757575757576 443.0, 1325.1515151515152 443.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<circle cx="244.84848484848484" cy="147.0" r="7" fill="#8a3b1f" stroke="#fff" stroke-width="2"/>
+<text x="244.84848484848484" y="133.0" font-size="11.5" fill="#141413" text-anchor="middle">14:40 voice brief: app on the web</text>
+<circle cx="279.6969696969697" cy="221.0" r="7" fill="#1f5f8b" stroke="#fff" stroke-width="2"/>
+<text x="279.6969696969697" y="247.0" font-size="11.5" fill="#141413" text-anchor="middle">14:45 brief in PrompTugal&#x27;s board</text>
+<circle cx="314.54545454545456" cy="369.0" r="7" fill="#7a3e8a" stroke="#fff" stroke-width="2"/>
+<text x="314.54545454545456" y="355.0" font-size="11.5" fill="#141413" text-anchor="middle">14:50 schedule rules 7433286</text>
+<circle cx="342.42424242424244" cy="295.0" r="7" fill="#3f5a2a" stroke="#fff" stroke-width="2"/>
+<text x="342.42424242424244" y="321.0" font-size="11.5" fill="#141413" text-anchor="middle">14:54 shows_as live, routed</text>
+<circle cx="523.6363636363636" cy="443.0" r="7" fill="#5e5d59" stroke="#fff" stroke-width="2"/>
+<text x="523.6363636363636" y="429.0" font-size="11.5" fill="#141413" text-anchor="middle">15:20 /app/ and the pane</text>
+<circle cx="767.5757575757576" cy="295.0" r="7" fill="#3f5a2a" stroke="#fff" stroke-width="2"/>
+<text x="767.5757575757576" y="321.0" font-size="11.5" fill="#141413" text-anchor="middle">15:55 step 1 live</text>
+<circle cx="837.2727272727273" cy="517.0" r="7" fill="#c96442" stroke="#fff" stroke-width="2"/>
+<text x="837.2727272727273" y="503.0" font-size="11.5" fill="#141413" text-anchor="middle">16:05 read, sound</text>
+<circle cx="906.969696969697" cy="443.0" r="7" fill="#5e5d59" stroke="#fff" stroke-width="2"/>
+<text x="906.969696969697" y="469.0" font-size="11.5" fill="#141413" text-anchor="middle">16:15 installs, offline</text>
+<circle cx="969.6969696969697" cy="443.0" r="7" fill="#5e5d59" stroke="#fff" stroke-width="2"/>
+<text x="969.6969696969697" y="429.0" font-size="11.5" fill="#141413" text-anchor="middle">16:24 shows_as = shared rules</text>
+<circle cx="1046.3636363636365" cy="443.0" r="7" fill="#5e5d59" stroke="#fff" stroke-width="2"/>
+<text x="1046.3636363636365" y="469.0" font-size="11.5" fill="#141413" text-anchor="middle">16:35 brand read</text>
+<circle cx="1325.1515151515152" cy="443.0" r="7" fill="#5e5d59" stroke="#fff" stroke-width="2"/>
+<text x="1325.1515151515152" y="429.0" font-size="11.5" fill="#141413" text-anchor="middle">17:15 /app/ in brand v2.0</text>
+<text x="30" y="608" font-size="12" fill="#5e5d59">Times UTC, 9 November 2026, from the commits in each repository. Each dot is a commit or a message; the line follows the work.</text>
+</svg>

@@ -1,0 +1,30 @@
+{
+ "number": 38,
+ "date": "2026-11-09",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "Opening night: Android ships from main, the pipeline page is up, and six things only you can do",
+ "when": "Monday 9 November 2026, 18:15 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "Since 15:20: /pipeline/ traces two features from your voice to release (messaging 1 h 40 min, the web app 1 h 35 min). Android: conductors promote on security's signed pass, PR #2 merged, a full Play dry run green at v0.1.125, the HIGH fixed in code. The news app on the web installs offline. Indi's team's iOS work reaches TestFlight from dev; security reviews its latest stages now; nobody yet holds the iOS slot. The rota runs on four conductors. What remains needs your hands or your word.",
+ "stats": [
+  {"n": "74", "label": "team-site commits since 15:20"},
+  {"n": "1 h 40", "label": "voice brief to TestFlight (messaging)"},
+  {"n": "4 of 5", "label": "conductors on the rota"},
+  {"n": "6", "label": "things only you can do"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "GitHub, Apple and Google, in your hands", "detail": "Android: main as default branch, Environment promote limited to main, the Play credential. iOS: the team as internal TestFlight testers. OpenRouter: the top-up dev.verify@ waits on.", "options": ["tonight", "tomorrow morning"], "recommend": "Internal testers tonight: Indi's team builds every hour."},
+  {"id": "2", "ask": "The iOS conductor, your word in its session", "detail": "conductor@ios.PrompTugal.dinis (account B): yes to its 'Shall I?', take the :00 slot, read briefs/.", "options": ["now", "later"], "recommend": "Now."},
+  {"id": "3", "ask": "The Brief: trailer", "detail": "Android asks you to confirm it in its session; it lets the pipeline view connect every commit to your voice brief.", "options": ["yes", "no"], "recommend": "Yes."}
+ ],
+ "you_asked": [
+  {"at": "9 Nov, ~18:05", "said": "go all the way from the request and the voice memo to every single agent ... visualize it", "done": "Two case studies traced commit by commit, swimlane diagrams; WS-205 to make it live; a Pipeline view briefed for the Team app.", "where": "/pipeline/", "status": "v1 live"}
+ ],
+ "team": [
+  {"id": "Indi", "status": "active", "doing": "Team app redesign stages 2 to 4 on TestFlight; the RiskMandate card in Apple Wallet (/card/)"},
+  {"id": "Android", "status": "active", "doing": "release flow from main, Play dry run green"},
+  {"id": "PrompTugal", "status": "active", "doing": "/app/ in brand v2.0; /contribute/ and the beta list going ahead under security's conditions"}
+ ],
+ "next": ["19:12, 20:12 wakes (one line each); 21:12 brief 39."],
+ "sources": ["the watch, 18:15 UTC", "f8845a1d, a5658e9d, 37edd31d (Indi's team)", "conductor.android@'s message at 18:02", "/pipeline/"]
+}

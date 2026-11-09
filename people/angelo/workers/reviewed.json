@@ -1,24 +1,24 @@
 {
- "about": "The last commit of each worker branch that its reviewer brought onto dev (dev@PrompTugal.angelo for most; dashboard@PrompTugal.angelo for dev.map, dev.work and dev.app from 8 November; vault@ for vault.kms); the next review starts after it.",
+ "about": "The last commit of each worker branch that its reviewer brought onto dev (dev@PrompTugal.angelo for most; dashboard@PrompTugal.angelo for dev.map, dev.work and dev.app from 8 November; vault@ for vault.kms); the next review starts after it. From the worker pool (spec-worker-pool.md, approved 9 November): entries keyed pool/<item> for each item branch, by that item's reviewer.",
  "reviewed": {
   "dev.map": {
-   "sha": "e355a54e",
-   "at": "2026-11-09T14:50Z",
+   "sha": "fd90f771",
+   "at": "2026-11-09T17:00Z",
    "by": "dashboard@PrompTugal.angelo"
   },
   "research": {
-   "sha": "c3501617",
-   "at": "2026-11-09T14:40Z",
+   "sha": "5f96edcc",
+   "at": "2026-11-09T15:45Z",
    "by": "dev@PrompTugal.angelo"
   },
   "dev.links": {
-   "sha": "5f7da87f",
-   "at": "2026-11-09T13:45Z",
+   "sha": "e4038359",
+   "at": "2026-11-09T17:50Z",
    "by": "dev@PrompTugal.angelo"
   },
   "dev.venues": {
-   "sha": "a754301d",
-   "at": "2026-11-09T13:45Z",
+   "sha": "43b95490",
+   "at": "2026-11-09T17:50Z",
    "by": "dev@PrompTugal.angelo"
   },
   "vault.kms": {
@@ -27,23 +27,23 @@
    "by": "vault@PrompTugal.angelo"
   },
   "dev.abp": {
-   "sha": "5949da7c",
-   "at": "2026-11-09T13:45Z",
+   "sha": "118d8a8e",
+   "at": "2026-11-09T17:50Z",
    "by": "dev@PrompTugal.angelo"
   },
   "social-media": {
-   "sha": "0f14af69",
-   "at": "2026-11-08T10:45Z",
+   "sha": "afce3517",
+   "at": "2026-11-09T17:50Z",
    "by": "dev@PrompTugal.angelo"
   },
   "dev.work": {
-   "sha": "863349db",
-   "at": "2026-11-09T14:50Z",
+   "sha": "de999004",
+   "at": "2026-11-09T17:00Z",
    "by": "dashboard@PrompTugal.angelo"
   },
   "dev.app": {
-   "sha": "3530f9da",
-   "at": "2026-11-09T14:50Z",
+   "sha": "bed9fbc2",
+   "at": "2026-11-09T17:00Z",
    "by": "dashboard@PrompTugal.angelo"
   }
  }

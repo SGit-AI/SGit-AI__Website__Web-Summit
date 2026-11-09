@@ -40,3 +40,9 @@ After the MVP, three questions, answered from use:
 1. Build the MVP now, on the team site? (Recommended: yes, it helps the team today.)
 2. Which agent builds it: Indi's dev helper (it knows the factory and the gate) or Angelo's dev.venues@ (it owns WS-181's venues)? Recommended: Indi's dev helper today, handed to dev.venues@ for PrompTugal.news.
 3. Add it to the Team app's websites list now?
+
+## Decided by Dinis (9 November, about 15:20 UTC)
+
+1. **Build it now:** yes.
+2. **Who:** dev.venues@PrompTugal.angelo, on **PrompTugal.news**, at `https://promptugal.news/registration/` (not the team site). Brief: `brief-dev-venues.md`.
+3. **The Team app:** yes. A "Registration" shortcut in the websites list, added by conductor@web-summit.indi once the page is live.

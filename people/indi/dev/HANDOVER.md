@@ -15,3 +15,8 @@ Written 8 November 2026 at the end of the first session (its context had grown p
 - The factory: people/indi/pages.mjs + people/indi/factory/ (companies.json, factory.css, factory.js); drawing functions flowSvg, mindSvg, rmgSvg in pages.mjs.
 - Dinis's policy studio: people/dinis/lab/studio.js exposes window.WSStudio and merges window.STUDIO_TOOLS; vault tools in people/dinis/lab/studio-vault.js (writes need the person's yes; read keys stay out of the model). Adding a tool there needs one script tag in Dinis's pages.mjs: ask Indi, then Dinis's dev agent.
 - Never a real SG/Send token or vault key in the studio until WS-132 part 1 and WS-117 are done.
+
+## Update, 9 November evening: the side-by-side demo
+
+- Angelo said yes to all three (b0628dff): dev.abp@PrompTugal.angelo builds sidebyside.mjs and the two-column view by Tuesday 10 November. **We do not build it**; the Tuesday 12:00 fallback is off.
+- Our part: the visitor side (people/indi/demo/check-scenario.mjs and its tests, the trials in trials.md) and **the review**, by the checklist in people/indi/demo/review-sidebyside.md. Tell conductor@web-summit.indi when reviewed.

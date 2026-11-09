@@ -43,16 +43,17 @@ public final class Graph {
     // ---------------------------------------------------------------- the views (Angelo, 9 November: "choosing the view as in the website")
     /** The site's two themes (assets/cc/app.css): the page's background, surface, text, muted, action, LIVE's red and the people's colours. */
     public static final class Theme {
-        public final boolean light; public final int bg, surface, text, muted, action, live; public final int[] col;
-        Theme(boolean light, int bg, int surface, int text, int muted, int action, int gold) {
+        public final boolean light; public final int bg, surface, text, muted, action, live, border, secondary; public final int[] col;
+        Theme(boolean light, int bg, int surface, int text, int muted, int action, int gold, int border, int secondary) {
             this.light = light; this.bg = bg; this.surface = surface; this.text = text; this.muted = muted; this.action = action; this.live = LIVE_RED;
+            this.border = border; this.secondary = secondary;
             col = COL.clone(); col[2] = gold;   // only the gold differs between the themes (#F5B942 dark, #976000 light)
         }
         /** live3d.js's rgb(): in the dark each colour is lifted towards white; on a light page the colours are as they are. */
         public float[] rgb(int c) { return light ? new float[] { ((c >> 16) & 255) / 255f, ((c >> 8) & 255) / 255f, (c & 255) / 255f } : lift(c); }
     }
-    public static final Theme DARK = new Theme(false, 0x07111F, 0x0E2035, 0xF7FAFC, 0x9EB2C7, 0x05BFE9, 0xF5B942);
-    public static final Theme LIGHT = new Theme(true, 0xF7F8F8, 0xFFFFFF, 0x17243A, 0x56697F, 0x08769A, 0x976000);
+    public static final Theme DARK = new Theme(false, 0x07111F, 0x0E2035, 0xF7FAFC, 0x9EB2C7, 0x05BFE9, 0xF5B942, 0x294A64, 0xBCCCDC);
+    public static final Theme LIGHT = new Theme(true, 0xF7F8F8, 0xFFFFFF, 0x17243A, 0x56697F, 0x08769A, 0x976000, 0xD3DCE6, 0x43546B);
     /** The layouts the wallpaper offers: the page's 3D ball (live3d.js, from the people ring), and two of live.js's flat layouts. */
     public static final String[] LAYOUTS = { "3d", "ring", "agents" };
     // live.js's GEO: where the people sit, how far lines bend inward, how large the graph is inside the hexagon
@@ -60,7 +61,7 @@ public final class Graph {
 
     public static final class Node {
         public String id, kind, person, label, family; public double commits;
-        public double x, y, z, size; public float r, g, b; public boolean ring; public int index;
+        public double x, y, z, size; public float r, g, b; public boolean ring; public int index; public int color;   // color: the person's, as the theme has it
         double a;   // the person's angle on the ring
     }
     public static final class Link { public final Node from, to; public final double n; Link(Node f, Node t, double n) { from = f; to = t; this.n = n; } }
@@ -136,7 +137,7 @@ public final class Graph {
         for (Node n : pos.values()) {
             n.x = (n.x - C) * k; n.y = (C - n.y) * k; n.z = 0;
             int c = colIdx.containsKey(n.person) ? theme.col[colIdx.get(n.person)] : theme.muted;
-            float[] l = theme.rgb(c); n.r = l[0]; n.g = l[1]; n.b = l[2];
+            float[] l = theme.rgb(c); n.r = l[0]; n.g = l[1]; n.b = l[2]; n.color = c;
             n.size = flat ? k * ("p".equals(n.kind) ? 52 : !"web-summit".equals(n.family) ? 18 : 2 * (4 + Math.min(8, Math.sqrt(n.commits))))
                     : "p".equals(n.kind) ? 56 : !"web-summit".equals(n.family) ? 17 : 2 * (4 + Math.min(8, Math.sqrt(n.commits))) + 2;
             if (!"p".equals(n.kind)) n.label = "";
