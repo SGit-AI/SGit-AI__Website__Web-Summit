@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1478",
+    "date": "2026-11-09",
+    "what": "07:20 wake, summit day one: brief 18 to Jose (page views being lost: all five lanes full; Dinis back; dev's pointer the last)",
+    "by": "conductor@web-summit.jose",
+    "from": "98c384ef3"
+  },
+  {
     "version": "v0.2.1477",
     "date": "2026-11-09",
     "what": "07:15 run: no security review for 44 hours before the summit; the site's key handling changed meanwhile",
