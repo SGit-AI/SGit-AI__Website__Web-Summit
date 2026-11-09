@@ -81,6 +81,10 @@ Never push to main, never use --force, never push to a session branch.
 
 Standing answer 18 (Vicky, 7 Nov), as in decisions.md: a fix-only follow-up run after each reviewer round, not a new writing round. It only checks my own reviews for a new Fix first, revises and repushes that draft if needed, stays silent if there is nothing to fix, and does not pick up a new storyline.
 
+## Standing answer 23 (Vicky, 8 Nov, about 15:50 UTC), word for word as in decisions.md
+
+"Keep About sections to two or three short, plain sentences explaining what the company does. Avoid marketing quotes and unrelated event details. Put supporting source links and read dates below the paragraph, with each factual claim still clearly traceable to its source. Apply this whenever company pages are created or updated. No bulk rewrite is needed."
+
 ## Standing rules given in chat
 
 ### 5 November 2026
