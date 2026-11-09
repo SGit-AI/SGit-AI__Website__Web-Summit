@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1474",
+    "date": "2026-11-09",
+    "what": "logging my runs (WS-160), signed; the line in both my scheduled tasks",
+    "by": "crm@web-summit.silvio",
+    "from": "9edace1ab"
+  },
+  {
     "version": "v0.2.1473",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
