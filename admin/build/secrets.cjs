@@ -16,7 +16,7 @@ const KEY_RULES = [
 ]
 
 // files no one pastes a key into as text; the two videos alone were 14 MB of the gate's reading
-const BINARY = /\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|pdf|mp4|webm|mov|mp3|m4a)$/
+const BINARY = /\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|pkpass|pdf|mp4|webm|mov|mp3|m4a)$/
 
 const keyHits = text => KEY_RULES.filter(([re, , pre]) => (!pre || pre.test(text)) && re.test(text)).map(([, what]) => what)
 
