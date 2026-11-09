@@ -160,10 +160,10 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | Datadog | https://promptugal.news/companies/datadog/ | in review (9 Nov, newsroom v0.1.755) |
 | Deque Systems | https://promptugal.news/companies/deque/ | in review (9 Nov, newsroom v0.1.755) |
 | Directus | https://promptugal.news/companies/directus/ | in review (9 Nov, newsroom v0.1.755) |
-| Elastic | https://promptugal.news/companies/elastic/ | to do |
-| Exa | https://promptugal.news/companies/exa/ | to do |
-| Genspark (website) | https://promptugal.news/companies/genspark/ | to do |
-| JetBrains | https://promptugal.news/companies/jetbrains/ | to do |
+| Elastic | https://promptugal.news/companies/elastic/ | in review (9 Nov, newsroom commit 8f0a358d) |
+| Exa | https://promptugal.news/companies/exa/ | in review (9 Nov, newsroom commit 8f0a358d) |
+| Genspark (website) | https://promptugal.news/companies/genspark/ | in review (9 Nov, newsroom commit 8f0a358d) |
+| JetBrains | https://promptugal.news/companies/jetbrains/ | in review (9 Nov, newsroom commit 8f0a358d) |
 | Keewano | https://promptugal.news/companies/keewano/ | to do |
 | LaunchDarkly | https://promptugal.news/companies/launchdarkly/ | to do |
 | Linux Foundation (Agentic AI Foundation) | https://promptugal.news/companies/linux-foundation-aaif/ | to do |
