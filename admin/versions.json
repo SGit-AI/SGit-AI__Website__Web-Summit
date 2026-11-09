@@ -1,5 +1,40 @@
 [
   {
+    "version": "v0.2.1596",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 21:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "d02238a67"
+  },
+  {
+    "version": "v0.2.1595",
+    "date": "2026-11-09",
+    "what": "21:20 wake: vault's passphrase folded into Actions row 1, as vault asked",
+    "by": "conductor@web-summit.jose",
+    "from": "78ee30930"
+  },
+  {
+    "version": "v0.2.1594",
+    "date": "2026-11-09",
+    "what": "21:12 wake: brief 39 (public TestFlight approved; clash fixes, 21 cultures and the iPad model in the queue)",
+    "by": "conductor@web-summit.dinis",
+    "from": "f316e6d86"
+  },
+  {
+    "version": "v0.2.1593",
+    "date": "2026-11-09",
+    "what": "the merch collected (WS-48 done): /impressao/, /print-order/, /procurement/ and the dashboard",
+    "by": "procurement@web-summit.silvio",
+    "from": "a05fc24ea"
+  },
+  {
+    "version": "v0.2.1592",
+    "date": "2026-11-09",
+    "what": "WS-48 done: the merch is collected (Silvio, 9 Nov)",
+    "by": "conductor@web-summit.silvio",
+    "from": "9412f7785"
+  },
+  {
     "version": "v0.2.1591",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.map's, dev.work's and dev.app's new work onto dev (one commit)",

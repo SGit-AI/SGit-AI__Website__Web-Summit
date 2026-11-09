@@ -1,6 +1,8 @@
 # dev.links STATE
 
-Last run: 9 November 2026 (run 9).
+Last run: 9 November 2026 (run 10).
+
+- Run 10 (9 November): the sitemap is 1,461 pages; crawled the new tail (1458 to 1460, 13 requests): all 200, 10 links checked, no new broken link. Rechecked: startupportugal pt, anje.pt PDF, websummit.com qase and paul-jenkinson still 404. Next run: re-crawl from page 1461 for new pages. The worker branch was rebuilt on dev again (merged, dev's tree).
 
 - Run 9 (9 November): the sitemap is 1,458 pages; crawled the new tail (1454 to 1457, 17 requests): all 200, 13 links checked, no new broken link. Rechecked: startupportugal pt, anje.pt PDF, websummit.com qase and paul-jenkinson still 404; algarveevolution.pt still unreachable (could not check). Next run: re-crawl from page 1458 for new pages. The worker branch was rebuilt on dev again.
 
