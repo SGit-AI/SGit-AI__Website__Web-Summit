@@ -1,5 +1,187 @@
 [
   {
+    "version": "v0.2.1602",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: a one-off agent, sheet@, for Tuesday's interview sheet (0-LEADS)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "b32f3cdaa"
+  },
+  {
+    "version": "v0.2.1601",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: run 22:22, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "b6c2b3d2c"
+  },
+  {
+    "version": "v0.2.1600",
+    "date": "2026-11-09",
+    "what": "run 7, 157 commits: nothing found",
+    "by": "security.repos@web-summit.dinis",
+    "from": "eccb4650c"
+  },
+  {
+    "version": "v0.2.1599",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: brief dev.work for the dumbbell view and dev.map for the always-on glow",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "1ac23df8a"
+  },
+  {
+    "version": "v0.2.1598",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report: S34, S35 and S36 published; T2 corrected",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "62669769b"
+  },
+  {
+    "version": "v0.2.1597",
+    "date": "2026-11-09",
+    "what": "vault@PrompTugal.angelo: kms piece 2a reviewed (no finding) and brought onto dev; its tests were refused by auto mode this run",
+    "by": "vault@PrompTugal.angelo",
+    "from": "bf8d440e7"
+  },
+  {
+    "version": "v0.2.1596",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 21:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "d02238a67"
+  },
+  {
+    "version": "v0.2.1595",
+    "date": "2026-11-09",
+    "what": "21:20 wake: vault's passphrase folded into Actions row 1, as vault asked",
+    "by": "conductor@web-summit.jose",
+    "from": "78ee30930"
+  },
+  {
+    "version": "v0.2.1594",
+    "date": "2026-11-09",
+    "what": "21:12 wake: brief 39 (public TestFlight approved; clash fixes, 21 cultures and the iPad model in the queue)",
+    "by": "conductor@web-summit.dinis",
+    "from": "f316e6d86"
+  },
+  {
+    "version": "v0.2.1593",
+    "date": "2026-11-09",
+    "what": "the merch collected (WS-48 done): /impressao/, /print-order/, /procurement/ and the dashboard",
+    "by": "procurement@web-summit.silvio",
+    "from": "a05fc24ea"
+  },
+  {
+    "version": "v0.2.1592",
+    "date": "2026-11-09",
+    "what": "WS-48 done: the merch is collected (Silvio, 9 Nov)",
+    "by": "conductor@web-summit.silvio",
+    "from": "9412f7785"
+  },
+  {
+    "version": "v0.2.1591",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.map's, dev.work's and dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "21b540335"
+  },
+  {
+    "version": "v0.2.1590",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 20:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "3468593e4"
+  },
+  {
+    "version": "v0.2.1589",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: ledger line for the 20:21 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "b7549e747"
+  },
+  {
+    "version": "v0.2.1588",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 20:21 run, nothing new urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "761f71a10"
+  },
+  {
+    "version": "v0.2.1587",
+    "date": "2026-11-09",
+    "what": "run 6, 171 commits: nothing new above LOW; correction: Android main is now promoted by its conductor agent on signed PASS (run 5 missed it)",
+    "by": "security.repos@web-summit.dinis",
+    "from": "59b19f033"
+  },
+  {
+    "version": "v0.2.1586",
+    "date": "2026-11-09",
+    "what": "journalist-portugal@PrompTugal.vicky: report, S36 fixed",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "cb3f42ac3"
+  },
+  {
+    "version": "v0.2.1585",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 19:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "df49dc22a"
+  },
+  {
+    "version": "v0.2.1584",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report for the 19:15 run: S35 and S36 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "1fa83e5cf"
+  },
+  {
+    "version": "v0.2.1583",
+    "date": "2026-11-09",
+    "what": "ledger line, one per wake (from 17:28 UTC)",
+    "by": "prompter@web-summit.indi",
+    "from": "49530c857"
+  },
+  {
+    "version": "v0.2.1582",
+    "date": "2026-11-09",
+    "what": "policy@PrompTugal.angelo: run 7: no violation; the desk's wakes logged as Angelo asked (R35)",
+    "by": "policy@PrompTugal.angelo",
+    "from": "cb9a64751"
+  },
+  {
+    "version": "v0.2.1581",
+    "date": "2026-11-09",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 19:03, idle",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "a101765b5"
+  },
+  {
+    "version": "v0.2.1580",
+    "date": "2026-11-09",
+    "what": "journalist-portugal@PrompTugal.vicky: report, S36 drafted",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "398f6d9ee"
+  },
+  {
+    "version": "v0.2.1579",
+    "date": "2026-11-09",
+    "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 18:45, idle",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "6a2986276"
+  },
+  {
+    "version": "v0.2.1578",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.map's, dev.work's and dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "1efbc49ae"
+  },
+  {
+    "version": "v0.2.1577",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 18:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "4d76b4339"
+  },
+  {
     "version": "v0.2.1576",
     "date": "2026-11-09",
     "what": "dev@PrompTugal.angelo: live graph's snapshots refreshed (18:35 run); Dinis's WS-205 passed to the desk",

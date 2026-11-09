@@ -33,7 +33,11 @@ import java.util.List;
  */
 public class LiveMapWallpaper extends WallpaperService {
     static final String BASE = "https://web-summit.sgit.ai/people/angelo/app/";
-    static final long FPS_MS = 1000 / 15, LIVE_MS = 60_000, MAP_MS = 6 * 3600_000L;
+    static final long FPS_MS = 1000 / 15, SAVER_MS = 1000 / 5, LIVE_MS = 60_000, MAP_MS = 6 * 3600_000L;
+    // what the server last said of each file (its ETag), so an unchanged file is not downloaded again: it answers 304, no body
+    // kept only once the body has been read and stored (confirm), so a damaged body is downloaded again next time (dev.app@'s d6ad26fd)
+    static final java.util.Map<String, String> etags = new java.util.concurrent.ConcurrentHashMap<>(), pending = new java.util.concurrent.ConcurrentHashMap<>();
+    static void confirm(String url) { String t = pending.remove(url); if (t != null) etags.put(url, t); }
     // the view, chosen in SettingsActivity (Angelo, 9 November: "choosing the view as in the website"); kept on the phone
     static final String PREFS = "view", LAYOUT = "layout", THEME = "theme", LEVEL = "level";
     static String layout(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(LAYOUT, "3d"); }
@@ -61,7 +65,10 @@ public class LiveMapWallpaper extends WallpaperService {
         private final java.util.Map<String, Bitmap> destLogos = new java.util.HashMap<>();
         private long mapAt = 0; private boolean visible = false;
 
-        private final Runnable tick = new Runnable() { @Override public void run() { if (visible && view != null) { view.requestRender(); ui.postDelayed(this, isPreview() ? 1000 : FPS_MS); } } };
+        // 15 frames a second while seen; 5 with the phone's Battery Saver on (read as the wallpaper shows, not every frame); 1 in the
+        // picker's preview; none while hidden or with the screen off
+        private boolean saver = false;
+        private final Runnable tick = new Runnable() { @Override public void run() { if (visible && view != null) { view.requestRender(); ui.postDelayed(this, isPreview() ? 1000 : saver ? SAVER_MS : FPS_MS); } } };
         private final Runnable poll = new Runnable() { @Override public void run() { if (!visible) return; fetch(); net.postDelayed(this, LIVE_MS); } };
 
         @Override public void onCreate(SurfaceHolder holder) {
@@ -83,7 +90,8 @@ public class LiveMapWallpaper extends WallpaperService {
 
         @Override public void onVisibilityChanged(boolean v) {
             visible = v; ui.removeCallbacks(tick); net.removeCallbacks(poll);
-            if (v) { view.onResume(); ui.post(tick); net.post(() -> rebuild(false)); net.post(poll); } else view.onPause();
+            if (v) { try { saver = ((android.os.PowerManager) getSystemService(POWER_SERVICE)).isPowerSaveMode(); } catch (Exception e) { saver = false; }
+                view.onResume(); ui.post(tick); net.post(() -> rebuild(false)); net.post(poll); } else view.onPause();
         }
         // a new choice in the settings, or the phone's dark mode changed while hidden (checked as it shows again)
         @Override public void onSharedPreferenceChanged(SharedPreferences p, String key) { if (net != null) { net.post(() -> rebuild(true)); if (LEVEL.equals(key) && visible) net.post(this::fetch); } }
@@ -137,15 +145,16 @@ public class LiveMapWallpaper extends WallpaperService {
         private void fetch() {
             long now = System.currentTimeMillis();
             if (graph == null || now - mapAt > MAP_MS) {
+                mapAt = now;   // asked: the next ask in six hours, whether it came back new, unchanged (304) or not at all
                 String d = get(BASE + "data.json");
-                if (d != null) { try { Graph g = build(Json.parse(d)); graph = g; mapAt = now; write(cache("data.json"), d); } catch (Exception e) { Log.w("LiveMap", "map unreadable", e); } }
+                if (d != null) { try { Graph g = build(Json.parse(d)); graph = g; mapAt = now; write(cache("data.json"), d); confirm(BASE + "data.json"); } catch (Exception e) { Log.w("LiveMap", "map unreadable", e); } }
             }
             String l = get(BASE + "live.json");
-            if (l != null && graph != null) { try { events = Graph.events(Json.parse(l)); write(cache("live.json"), l); } catch (Exception e) { Log.w("LiveMap", "live.json unreadable", e); } }
+            if (l != null && graph != null) { try { events = Graph.events(Json.parse(l)); write(cache("live.json"), l); confirm(BASE + "live.json"); } catch (Exception e) { Log.w("LiveMap", "live.json unreadable", e); } }
             String lf = levelFile(), v = level(LiveMapWallpaper.this);
             if (lf != null) {   // workstreams.json about 50 KB, deliveries.json about 15 KB, only while that level is chosen
                 String w = get(BASE + lf);
-                if (w != null) { try { Object f = Json.parse(w); write(cache(lf), w); levelFrom(f, v); } catch (Exception e) { Log.w("LiveMap", lf + " unreadable", e); } }
+                if (w != null) { try { Object f = Json.parse(w); write(cache(lf), w); levelFrom(f, v); confirm(BASE + lf); } catch (Exception e) { Log.w("LiveMap", lf + " unreadable", e); } }
             }
         }
         private File cache(String name) { return new File(getFilesDir(), name); }
@@ -157,8 +166,12 @@ public class LiveMapWallpaper extends WallpaperService {
         try {
             c = (HttpURLConnection) java.net.URI.create(url).toURL().openConnection(); c.setConnectTimeout(15000); c.setReadTimeout(30000); c.setUseCaches(false);
             c.setRequestProperty("User-Agent", "PrompTugal live wallpaper (web-summit.sgit.ai)");
-            if (c.getResponseCode() != 200) return null;
-            try (InputStream in = c.getInputStream()) { return new String(all(in), StandardCharsets.UTF_8); }
+            String tag = etags.get(url); if (tag != null) c.setRequestProperty("If-None-Match", tag);
+            int code = c.getResponseCode(); if (code == 304) return null;   // unchanged since the last read: nothing downloaded
+            if (code != 200) return null;
+            String et = c.getHeaderField("ETag");
+            String body; try (InputStream in = c.getInputStream()) { body = new String(all(in), StandardCharsets.UTF_8); }
+            if (et != null) pending.put(url, et); else pending.remove(url); return body;
         } catch (Exception e) { return null; } finally { if (c != null) c.disconnect(); }
     }
     static String read(File f) { if (!f.exists()) return null; try (InputStream in = new FileInputStream(f)) { return new String(all(in), StandardCharsets.UTF_8); } catch (Exception e) { return null; } }

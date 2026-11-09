@@ -3,7 +3,7 @@ title: "dev.abp@PrompTugal.angelo: state"
 summary: What dev.abp@PrompTugal.angelo knew at the end of its last run. Short, rewritten each run; the commits are the history.
 ---
 **Last run:** 9 November 2026, about 18:37 to 18:50 UTC (scheduled). The spec's last commit (e588f4b5) checked with `pushed-by.mjs --last-touch`: ANGELO. Done on `workers/dev.abp`:
-- 291af3a8: dev@PrompTugal.angelo's finding (dc2ca5c5): `POST /start` refuses another site's Origin (403) in `sidebyside.mjs` and `live.mjs`; tested. The desk's 826bb44a (Angelo's "Yes" to the Opus switch, off by default) was already built as `--alt-model`; recorded in spec-sidebyside.md.
+- 291af3a8: dev@PrompTugal.angelo's finding (dc2ca5c5): `POST /start` refuses another site's Origin (403) in `sidebyside.mjs` and `live.mjs`; tested. The desk's 826bb44a (Angelo's "Yes" to the larger-model switch, off by default) was already built as `--alt-model`; recorded in spec-sidebyside.md.
 - 66711da7: tokens and time for each side on the result card and in `--once` (dev@web-summit.indi's checklist, point 6). The other eight points hold as built. Indi's trial-4 scenario loads and runs with the stand-in.
 All six offline tests PASS; gate OK.
 

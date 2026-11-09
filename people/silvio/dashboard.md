@@ -22,7 +22,7 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 
 *Updated by conductor@web-summit.silvio on Sat 7 Nov, 01:30 UTC, at Silvio's word.*
 
-- **The merch (WS-48):** **ordered, paid and the files sent to the printer.** Ready **Monday 9 or Tuesday 10 November** (not yet confirmed by the printer; I asked); Silvio and Dinis collect it by car. Files in Portuguese: [/impressao/](../../impressao/index.html).
+- **The merch (WS-48):** **collected.** Silvio, Monday 9 November, evening: "já fomos buscar as t-shirts ... já está tudo bem". Files in Portuguese: [/impressao/](../../impressao/index.html).
 - **Outreach (WS-25, WS-26, WS-177):** the new way, at Dinis's word: the first email is about the page PromptUGAL publishes about the company, never about RiskMandate. **World 1 chosen: hospitality, tourism and the Algarve** (7 Nov). 28 drafts in my Gmail; nothing sent until Dinis's yes and my PromptUGAL address.
 - **Videos (WS-72, WS-174):** my 30-second film "Your AI has access" ([page](../../videos/access-permission/index.html)); the stand loop re-rendered in six languages; every clean video in my videos vault (h9in5em4), checked frame by frame; two large files for me to upload with sgit.
 - **The team CRM (WS-170, WS-172, WS-173):** its private key sealed to my dev and inbox agents (7 Nov); the first email thread is in it, waiting for Dinis's and my review.
@@ -153,7 +153,7 @@ Counts only, never names: the people and companies stay in my own CRM (my brief'
 | Artwork final and sizes in | 7 people | 7 | ██████████ |
 | Order placed and paid | 1 | 1 | ██████████ |
 | Files sent to the printer | 1 | 1 | ██████████ |
-| Collected (Silvio and Dinis, Mon 9 Nov morning) | 21 T-shirts, 7 hoodies | 0 | ░░░░░░░░░░ |
+| Collected (Mon 9 Nov; Silvio: "já está tudo bem") | 21 T-shirts, 7 hoodies | collected | ██████████ |
 | Sponsor | dropped by Dinis, 2 Nov (WS-58 done) | none | n/a |
 
 ### Video (WS-52, WS-71, WS-72, WS-174) {#video-funnel}
@@ -172,7 +172,7 @@ Counts only, never names: the people and companies stay in my own CRM (my brief'
 
 **Still open,** what my agents cannot decide (check-in of 7 November, 07:20 UTC).
 
-1. **Me:** send the printer the pickup confirmation (procurement drafted it, by WhatsApp); is the merch ready Monday 9 or Tuesday 10?
+1. ~~**Me:** send the printer the pickup confirmation; is the merch ready Monday 9 or Tuesday 10?~~ Done: collected on 9 November.
 2. **Me:** the dev agent's "go" on WS-64, 159, 160, 166, 172, 184 (in its own session).
 3. **Me:** the outreach choices: introducers first (Algarve Evolution recommended); own KPMG Portugal, Startup Portugal and Feedzai (WS-30); sign as "Silvio Switha, PromptUGAL"; the 15 extra world-1 companies.
 4. **Me:** the stand loop's sound version: drop it, or send licensed music; WS-80 (the cast) in the video agent's lane or not.
@@ -181,7 +181,7 @@ Counts only, never names: the people and companies stay in my own CRM (my brief'
 
 **Decided** (7 November 2026, recorded by conductor@web-summit.silvio):
 
-- **The merch:** paid and the files sent; pickup Monday 9 November in the morning by Silvio and Dinis, on the way to Web Summit.
+- **The merch:** collected on Monday 9 November; all fine (Silvio).
 - **Outreach:** world 1 first (hospitality, tourism, the Algarve); the first email always leads with the company's PromptUGAL page.
 - **The private CRM's key:** sealed to dev@ and inbox@web-summit.silvio at my yes.
 - **Media:** no video or image files in git; my videos vault holds them, its key with my conductor.
@@ -247,5 +247,5 @@ Next: an email to send from (L2), then my PKI key (L3), then a conductor on a sc
 
 ## The merch order {#printers}
 
-*procurement@web-summit.silvio, Sat 7 Nov, 07:45 UTC.* **Ordered, paid and the files at the printer** (near Lisbon, chosen by Dinis on 3 November). Ready **Monday 9 or Tuesday 10 November**, not yet confirmed: Silvio asked the printer (7 Nov, 17:00) for collection on Monday, the hour and the place; Silvio and Dinis collect it by car. 21 T-shirts (each colour 1 M, 1 L, 1 XL), 7 hoodies (one per person, Vicky's lavender), RiskMandate only, one generic QR on the backs, the RiskMandate logo on the left sleeve. The printer's name and price stay private (it declined publication). The story: [the print order](../../print-order/index.html), [procurement](../../procurement/index.html), [in Portuguese](../../impressao/index.html).
+*procurement@web-summit.silvio, Mon 9 Nov, 21:15 UTC.* **Collected** (Silvio, 9 November; WS-48 done). Ordered, paid and the files sent to the printer (near Lisbon, chosen by Dinis on 3 November). 21 T-shirts (each colour 1 M, 1 L, 1 XL), 7 hoodies (one per person, Vicky's lavender), RiskMandate only, one generic QR on the backs, the RiskMandate logo on the left sleeve. The printer's name and price stay private (it declined publication). The story: [the print order](../../print-order/index.html), [procurement](../../procurement/index.html), [in Portuguese](../../impressao/index.html).
 
