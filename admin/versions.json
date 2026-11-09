@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1572",
+    "date": "2026-11-09",
+    "what": "the map helper started (Team app venue map, option B); Indi's site key given to dashboard@",
+    "by": "conductor@web-summit.indi",
+    "from": "4a4364648"
+  },
+  {
     "version": "v0.2.1571",
     "date": "2026-11-09",
     "what": "17:40 wake: state idle",
