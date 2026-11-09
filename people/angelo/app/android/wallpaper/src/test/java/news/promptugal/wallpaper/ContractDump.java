@@ -13,16 +13,18 @@ import java.util.Locale;
  */
 public final class ContractDump {
     public static void main(String[] a) throws Exception {
-        Graph g = Graph.fromData(Json.parse(new String(Files.readAllBytes(Paths.get(a[0])), "UTF-8")));
+        // optional: a[3] the layout ("3d", "ring", "agents"), a[4] the theme ("dark", "light"); the default is the 3D ball in the dark
+        Graph g = Graph.fromData(Json.parse(new String(Files.readAllBytes(Paths.get(a[0])), "UTF-8")), a.length > 3 ? a[3] : "3d", a.length > 4 && "light".equals(a[4]) ? Graph.LIGHT : Graph.DARK);
         List<Graph.Event> evs = Graph.events(Json.parse(new String(Files.readAllBytes(Paths.get(a[1])), "UTF-8")));
         double wall = Double.parseDouble(a[2]);
         StringBuilder o = new StringBuilder("{\"nodes\":[");
         for (Graph.Node n : g.nodes) o.append(String.format(Locale.ROOT, "%s{\"id\":%s,\"kind\":\"%s\",\"x\":%.6f,\"y\":%.6f,\"z\":%.6f,\"size\":%.6f,\"rgb\":[%.5f,%.5f,%.5f],\"ring\":%b,\"label\":%s}",
                 n.index > 0 ? "," : "", q(n.id), n.kind, n.x, n.y, n.z, n.size, n.r, n.g, n.b, n.ring, q(n.label)));
         o.append("],\"links\":[");
-        for (int i = 0; i < g.links.size(); i++) { Graph.Link l = g.links.get(i); double[] m = new double[3]; Graph.curveAt(l.from, l.to, 0.5, m);
+        for (int i = 0; i < g.links.size(); i++) { Graph.Link l = g.links.get(i); double[] m = new double[3]; g.curve(l.from, l.to, 0.5, m);
             o.append(String.format(Locale.ROOT, "%s{\"from\":%s,\"to\":%s,\"alpha\":%.6f,\"mid\":[%.4f,%.4f,%.4f]}", i > 0 ? "," : "", q(l.from.id), q(l.to.id), g.baseAlpha(l), m[0], m[1], m[2])); }
-        o.append("],\"events\":[");
+        o.append(String.format(Locale.ROOT, "],\"view\":{\"layout\":%s,\"flat\":%b,\"light\":%b,\"pull\":%.4f,\"spokes\":%d}", q(g.layout), g.flat, g.theme.light, g.pull, g.spokes.size()));
+        o.append(",\"events\":[");
         for (int i = 0; i < evs.size(); i++) { Graph.Event e = evs.get(i); Graph.Node f = g.nodeOf(e.agent);
             StringBuilder to = new StringBuilder(); for (String t : e.to) { Graph.Node n = g.nodeOf(t); to.append(to.length() > 0 ? "," : "").append(n == null ? "null" : q(n.id)); }
             o.append(String.format(Locale.ROOT, "%s{\"sha\":%s,\"ms\":%.0f,\"from\":%s,\"to\":[%s]}", i > 0 ? "," : "", q(e.sha), e.ms, f == null ? "null" : q(f.id), to)); }

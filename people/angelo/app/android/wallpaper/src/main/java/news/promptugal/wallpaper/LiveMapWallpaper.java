@@ -1,6 +1,8 @@
 package news.promptugal.wallpaper;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.opengl.GLSurfaceView;
@@ -32,15 +34,26 @@ import java.util.List;
 public class LiveMapWallpaper extends WallpaperService {
     static final String BASE = "https://web-summit.sgit.ai/people/angelo/app/";
     static final long FPS_MS = 1000 / 15, LIVE_MS = 60_000, MAP_MS = 6 * 3600_000L;
+    // the view, chosen in SettingsActivity (Angelo, 9 November: "choosing the view as in the website"); kept on the phone
+    static final String PREFS = "view", LAYOUT = "layout", THEME = "theme";
+    static String layout(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(LAYOUT, "3d"); }
+    static String themeChoice(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(THEME, "dark"); }
+    /** The theme to draw: the chosen one, or the phone's own when "follow the phone" is chosen. */
+    static Graph.Theme theme(Context c) {
+        String t = themeChoice(c);
+        if ("system".equals(t)) return (c.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES ? Graph.DARK : Graph.LIGHT;
+        return "light".equals(t) ? Graph.LIGHT : Graph.DARK;
+    }
 
     @Override public Engine onCreateEngine() { return new MapEngine(); }
 
-    final class MapEngine extends Engine implements MapRenderer.Source {
+    final class MapEngine extends Engine implements MapRenderer.Source, SharedPreferences.OnSharedPreferenceChangeListener {
         private GLSurfaceView view;
         private MapRenderer renderer;
         private final Handler ui = new Handler(Looper.getMainLooper());
         private HandlerThread netThread; private Handler net;
-        private volatile Graph graph; private volatile List<Graph.Event> events; private volatile Bitmap[] logos;
+        private volatile Graph graph; private volatile List<Graph.Event> events; private volatile Bitmap[] logos, logosLight;
+        private volatile Object data;   // the parsed data.json, kept so a change of view rebuilds the graph without the network
         private long mapAt = 0; private boolean visible = false;
 
         private final Runnable tick = new Runnable() { @Override public void run() { if (visible && view != null) { view.requestRender(); ui.postDelayed(this, isPreview() ? 1000 : FPS_MS); } } };
@@ -49,7 +62,8 @@ public class LiveMapWallpaper extends WallpaperService {
         @Override public void onCreate(SurfaceHolder holder) {
             super.onCreate(holder);
             netThread = new HandlerThread("live-map-net"); netThread.start(); net = new Handler(netThread.getLooper());
-            net.post(() -> { logos = new Bitmap[] { asset("riskmandate-mark.png"), asset("pt-news-stamp-dark.png") }; loadCached(); });
+            net.post(() -> { Bitmap rm = asset("riskmandate-mark.png"); logos = new Bitmap[] { rm, asset("pt-news-stamp-dark.png") }; logosLight = new Bitmap[] { rm, asset("pt-news-stamp-light.png") }; loadCached(); });
+            getSharedPreferences(PREFS, MODE_PRIVATE).registerOnSharedPreferenceChangeListener(this);
             view = new GLSurfaceView(LiveMapWallpaper.this) { @Override public SurfaceHolder getHolder() { return MapEngine.this.getSurfaceHolder(); } };
             view.setEGLContextClientVersion(2); view.setPreserveEGLContextOnPause(true);
             renderer = new MapRenderer(this, getResources().getDisplayMetrics().density);
@@ -64,31 +78,40 @@ public class LiveMapWallpaper extends WallpaperService {
 
         @Override public void onVisibilityChanged(boolean v) {
             visible = v; ui.removeCallbacks(tick); net.removeCallbacks(poll);
-            if (v) { view.onResume(); ui.post(tick); net.post(poll); } else view.onPause();
+            if (v) { view.onResume(); ui.post(tick); net.post(() -> rebuild(false)); net.post(poll); } else view.onPause();
+        }
+        // a new choice in the settings, or the phone's dark mode changed while hidden (checked as it shows again)
+        @Override public void onSharedPreferenceChanged(SharedPreferences p, String key) { if (net != null) net.post(() -> rebuild(true)); }
+        private void rebuild(boolean force) {
+            Object d = data; if (d == null) return; Graph g = graph; String L = layout(LiveMapWallpaper.this); Graph.Theme th = theme(LiveMapWallpaper.this);
+            if (!force && g != null && g.isFor(L, th)) return;
+            try { graph = Graph.fromData(d, L, th); } catch (Exception e) { Log.w("LiveMap", "view rebuild failed", e); }
         }
 
         @Override public void onOffsetsChanged(float xo, float yo, float xs, float ys, int xp, int yp) { if (renderer != null) renderer.offsetX = xo; }
 
         @Override public void onDestroy() {
             visible = false; ui.removeCallbacks(tick); if (net != null) net.removeCallbacksAndMessages(null);
+            getSharedPreferences(PREFS, MODE_PRIVATE).unregisterOnSharedPreferenceChangeListener(this);
             if (netThread != null) netThread.quitSafely();
             super.onDestroy();
         }
 
         @Override public Graph graph() { return graph; }
         @Override public List<Graph.Event> takeEvents() { List<Graph.Event> e = events; events = null; return e; }
-        @Override public Bitmap[] logos() { return logos; }
+        @Override public Bitmap[] logos(boolean light) { return light && logosLight != null ? logosLight : logos; }
+        private Graph build(Object d) { data = d; return Graph.fromData(d, layout(LiveMapWallpaper.this), theme(LiveMapWallpaper.this)); }
 
         // ---- the data, on the network thread
         private void loadCached() {
-            try { String d = read(cache("data.json")); if (d != null) graph = Graph.fromData(Json.parse(d)); } catch (Exception e) { Log.w("LiveMap", "cached map unreadable", e); }
+            try { String d = read(cache("data.json")); if (d != null) graph = build(Json.parse(d)); } catch (Exception e) { Log.w("LiveMap", "cached map unreadable", e); }
             try { String l = read(cache("live.json")); if (l != null && graph != null) events = Graph.events(Json.parse(l)); } catch (Exception e) { Log.w("LiveMap", "cached live.json unreadable", e); }
         }
         private void fetch() {
             long now = System.currentTimeMillis();
             if (graph == null || now - mapAt > MAP_MS) {
                 String d = get(BASE + "data.json");
-                if (d != null) { try { Graph g = Graph.fromData(Json.parse(d)); graph = g; mapAt = now; write(cache("data.json"), d); } catch (Exception e) { Log.w("LiveMap", "map unreadable", e); } }
+                if (d != null) { try { Graph g = build(Json.parse(d)); graph = g; mapAt = now; write(cache("data.json"), d); } catch (Exception e) { Log.w("LiveMap", "map unreadable", e); } }
             }
             String l = get(BASE + "live.json");
             if (l != null && graph != null) { try { events = Graph.events(Json.parse(l)); write(cache("live.json"), l); } catch (Exception e) { Log.w("LiveMap", "live.json unreadable", e); } }

@@ -1,5 +1,159 @@
 [
   {
+    "version": "v0.2.1543",
+    "date": "2026-11-09",
+    "what": "four real cases and PrompTugal.news published on the video library, at Silvio's word",
+    "by": "video@web-summit.silvio",
+    "from": "712852ce2"
+  },
+  {
+    "version": "v0.2.1542",
+    "date": "2026-11-09",
+    "what": "iOS team messaging v1 and redesign stage 1 (2199442, 3f921db): no security blocker; three low notes",
+    "by": "security.repos@web-summit.dinis",
+    "from": "f6da991e7"
+  },
+  {
+    "version": "v0.2.1541",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 14:23 run, nothing new urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "021804ad2"
+  },
+  {
+    "version": "v0.2.1540",
+    "date": "2026-11-09",
+    "what": "run 3, 236 commits: nothing found",
+    "by": "security.repos@web-summit.dinis",
+    "from": "6a1a40c94"
+  },
+  {
+    "version": "v0.2.1539",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: an article: running a hundred agents at once, and whether they self-organise",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "338c58935"
+  },
+  {
+    "version": "v0.2.1538",
+    "date": "2026-11-09",
+    "what": "messaging v1 and the redesign are on the iOS dev branch, for review before main",
+    "by": "prompter@web-summit.indi",
+    "from": "fc8451820"
+  },
+  {
+    "version": "v0.2.1537",
+    "date": "2026-11-09",
+    "what": "13:50 orchestration wake: the dashboard links the CRM and X-ray requests; quiet otherwise",
+    "by": "conductor@web-summit.silvio",
+    "from": "27b680203"
+  },
+  {
+    "version": "v0.2.1536",
+    "date": "2026-11-09",
+    "what": "both iOS branches green; ledger line",
+    "by": "prompter@web-summit.indi",
+    "from": "80f4f660f"
+  },
+  {
+    "version": "v0.2.1535",
+    "date": "2026-11-09",
+    "what": "request to Dinis: the newsroom's private interview vault, with a write-only lane for inbox@; standing answer 27 changed",
+    "by": "conductor@web-summit.vicky",
+    "from": "03b51e50d"
+  },
+  {
+    "version": "v0.2.1534",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: URGENT: an article on Web Summit's wristband and badge colours and what they mean",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "80709381b"
+  },
+  {
+    "version": "v0.2.1533",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: for the whole team: the agents map now runs as a live Android wallpaper",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "b362985ff"
+  },
+  {
+    "version": "v0.2.1532",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 13:27 run, nothing new urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "e7c2606dc"
+  },
+  {
+    "version": "v0.2.1531",
+    "date": "2026-11-09",
+    "what": "team messaging v1 on the 18:00 stand-up; Indi's account can now push to the iOS app",
+    "by": "prompter@web-summit.indi",
+    "from": "0bc3fc2ba"
+  },
+  {
+    "version": "v0.2.1530",
+    "date": "2026-11-09",
+    "what": "stand-demo prompt v3, when more than six files is fine",
+    "by": "prompter@web-summit.indi",
+    "from": "e6a1fcd00"
+  },
+  {
+    "version": "v0.2.1529",
+    "date": "2026-11-09",
+    "what": "stand-demo prompt v2, from dev's three trials",
+    "by": "prompter@web-summit.indi",
+    "from": "628c75ce0"
+  },
+  {
+    "version": "v0.2.1528",
+    "date": "2026-11-09",
+    "what": "ledger line, WS-203",
+    "by": "prompter@web-summit.indi",
+    "from": "bdf0a9657"
+  },
+  {
+    "version": "v0.2.1527",
+    "date": "2026-11-09",
+    "what": "/contributors/: the rules of the game as an infographic; part 1 (lots of small tasks) and part 2 (the contributors' wall and one-click sharing) (WS-204)",
+    "by": "conductor@web-summit.dinis",
+    "from": "6042214d1"
+  },
+  {
+    "version": "v0.2.1526",
+    "date": "2026-11-09",
+    "what": "dashboard@PrompTugal.angelo: Angelo installed the live wallpaper on his phone; his screen recording to follow",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "a9c64280a"
+  },
+  {
+    "version": "v0.2.1525",
+    "date": "2026-11-09",
+    "what": "ledger line, brief v6",
+    "by": "prompter@web-summit.indi",
+    "from": "d104637e2"
+  },
+  {
+    "version": "v0.2.1524",
+    "date": "2026-11-09",
+    "what": "Team app brief v6, who gets \"Still late\"",
+    "by": "prompter@web-summit.indi",
+    "from": "be9fe7853"
+  },
+  {
+    "version": "v0.2.1523",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "fcded9e0d"
+  },
+  {
+    "version": "v0.2.1522",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 12:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "8002f2ddc"
+  },
+  {
     "version": "v0.2.1521",
     "date": "2026-11-09",
     "what": "12:15 run: a new security agent reviewed the last day; 23 hours before it still unreviewed; A-06 only dev left",

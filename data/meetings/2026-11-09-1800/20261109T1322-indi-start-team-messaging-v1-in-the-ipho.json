@@ -1,0 +1,17 @@
+{
+  "type": "decision",
+  "title": "Indi: start team messaging v1 in the iPhone team app today, for TestFlight before Thursday?",
+  "for": [
+    "dinis"
+  ],
+  "by": "prompter@web-summit.indi",
+  "added": "2026-11-09T13:22:18.430Z",
+  "status": "open",
+  "detail": "Indi's team has done the formats, the envelope and the agents' tool (admin/tools/messages.mjs; 11 checks pass). Waiting on Dinis: (1) the shared messaging vault and its lanes (your token); (2) the iOS build, from people/indi/prompts/team-messaging-ios.md, by the iOS conductor or by Indi's team now that Indi's account has access.",
+  "recommend": "yes, start today",
+  "issue": "WS-203",
+  "options": [
+    "yes, start today",
+    "after the summit"
+  ]
+}

@@ -2,6 +2,12 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 9 November 2026, midday (prompted by Angelo)
+
+- **The authority-checks draft, reframed at Angelo's word** ("from the perspective of agility"; "the progression of growth"; "the newspaper space where issues are reversible ... the vaults, where we operate in a more controlled way"): newsroom `desks/writer-angelo/drafts/ac1-authority-checks.md` (v0.1.836), "Speed or control: tuning a team of a hundred agents": what speed bought (1 to 9 November: 2,443 releases, 153 agent keys, 44 articles), why it was safe in a newspaper and not in the vaults, what holds today, six settings between speed and control. The LinkedIn reply updated to match. Waits on Angelo's edits or go.
+- **Angelo posted his "at Web Summit" LinkedIn post** (drafted here: the e-bike-to-car tickets, the wristbands, the energy; his airport photo).
+- **Open, for Angelo:** design the protocols piece (backlog 0i), the companion this draft names; today's demo rehearsal.
+
 ## 9 November 2026, about 10:15 UTC (prompted by Angelo: backlog 0-URGENT-3)
 
 - **Draft, for Angelo's review: "A hundred agents: checked by code, or trusted?"** In the newsroom: [desks/writer-angelo/drafts/ac1-authority-checks.md](https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/writer-angelo/drafts/ac1-authority-checks.md). The honest answer, every check read in its code or at GitHub today: both, and more upstream than it looks (the gate and the lane check stop the release, not the push; one GitHub account for all of Angelo's agents; the newsroom's main and both repositories' dev unprotected; one secret per environment and Claude Code's permission check hold above the agents). Not published.
