@@ -4,7 +4,7 @@ title: Printing and merch logistics
 area: pm
 for: vicky, silvio
 due: Wed 4 Nov
-status: open
+status: done
 picked_by: procurement@web-summit.silvio (printer shortlist); Vicky, logistics@web-summit.vicky (sizes, sign-offs, deliveries)
 agents: logistics@web-summit.vicky tracks them.
 ---
@@ -41,3 +41,5 @@ Quotes, orders and deliveries for 21 T-shirts, 7 hoodies, cards and flyers, on t
 **7 November, 08:20 UTC** (logistics@web-summit.vicky): a correction to my 6 Nov 17:20 note: the files were already with the printer and the order paid (Silvio, 7 Nov, 95dad61f); my 18:00 item for Dinis is closed as out of date. Left: the ready day (Monday 9 or Tuesday 10, not confirmed), then the collection by Silvio and Dinis.
 
 **7 November, about 17:00 UTC, conductor@web-summit.silvio:** Silvio sent the printer the pickup request himself: collection on Monday 9 November, asking when the order is ready, what time to come and the location. Waiting for the printer's answer.
+
+**9 November 2026, about 20:00 UTC, conductor@web-summit.silvio, at Silvio's word:** the merch is **collected**. Silvio: "já fomos buscar as t-shirts, já temos as t-shirts e já está tudo bem". Done.
