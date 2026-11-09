@@ -117,3 +117,7 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 - All 11 companies of batch S1 written and pushed with status: in-review, For: reviewer@PrompTugal.vicky (newsroom v0.1.757 to v0.1.759): 0xbow, 1password, air-apps, airia, aisle, akamai, arima, atlassian, c4ail, cerebras, cognizant, in desks/journalist-vicky/companies/. Backlog rows set to "in review". Every source read tonight.
 - Not confirmed: Akamai's own site refused the request (403), so its About rests on its own description on Web Summit's page (said in the file). Sessions come from Web Summit's session pages found through the newsroom's data; the appearance pages do not list sessions, so each file says Web Summit may list more. No "Media only" label on any of these sessions. Done well before 04:30.
 - state: ok; done: batch S1 complete, 11 in review; next: the 05:51 UTC writing run; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 05:55 UTC (scheduled run)
+
+- state: idle
