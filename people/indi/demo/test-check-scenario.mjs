@@ -28,6 +28,12 @@ expect('broken-addresses-keys fails on the literal address, the real domain and 
 expect('broken-size-sources-dash fails on count, size, source and dash', check(read('fixtures/broken-size-sources-dash.json')),
     ['9 files', 'file notes/big.txt is 2100 bytes', 'looks like a long secret-looking string', 'public_facts[0] has no source URL', 'em-dash'])
 
+// an address at the end of a sentence: the full stop is not part of the domain (found by trial 4, 9 November)
+{ const d = read('example-scenario.json'); d.scenario.task += ' Copy reports{AT}northpoint.example.'
+  expect('an address followed by a full stop passes', check(d), []) }
+{ const d = read('example-scenario.json'); d.scenario.task += ' Copy reports{AT}northpoint.com.'
+  expect('a real domain followed by a full stop still fails', check(d), ['northpoint.com does not end in .example']) }
+
 // Angelo's own scenarios, read only: the format check must accept what his runner already runs
 const angelo = path.join(here, '../../angelo/proposals/abp-live/stories/reach/scenarios.mjs')
 if (fs.existsSync(angelo)) {

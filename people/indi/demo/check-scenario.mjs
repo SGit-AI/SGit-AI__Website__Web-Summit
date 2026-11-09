@@ -51,7 +51,7 @@ export function check(doc, { builtin = false } = {}) {
     const texts = [['scenario.task', s?.task], ...names.map(n => [`file ${n}`, files[n]])].filter(([, t]) => typeof t === 'string')
     for (const [where, t] of texts) {
         for (const m of t.matchAll(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g)) f.push(`${where}: a literal address (${m[0]}); write name{AT}domain.example`)
-        for (const m of t.matchAll(/[A-Za-z0-9._%+-]*\{AT\}([A-Za-z0-9.-]+)/g)) if (!/\.example$/.test(m[1])) f.push(`${where}: address domain ${m[1]} does not end in .example`)
+        for (const m of t.matchAll(/[A-Za-z0-9._%+-]*\{AT\}([A-Za-z0-9.-]*[A-Za-z0-9])/g)) if (!/\.example$/.test(m[1])) f.push(`${where}: address domain ${m[1]} does not end in .example`)
         for (const m of t.matchAll(/\{([A-Z]+)\}/g)) if (!['AT', 'ENV', 'KEY', 'DBPW'].includes(m[1])) f.push(`${where}: unknown placeholder {${m[1]}}`)
         for (const [re, what] of KEYLIKE) if (re.test(t.replace(/\{[A-Z]+\}/g, ''))) f.push(`${where}: looks like ${what}; use {ENV}`)
     }
