@@ -1,5 +1,68 @@
 [
   {
+    "version": "v0.2.1473",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "d011bd2a8"
+  },
+  {
+    "version": "v0.2.1472",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 06:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "81d7f62b5"
+  },
+  {
+    "version": "v0.2.1471",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report, 9 November 06:45 run: S31 Ready, three findings reconciled",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "6c20a84bc"
+  },
+  {
+    "version": "v0.2.1470",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 06:23 run, research's registration brief flagged for Angelo",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "c2e0f92ff"
+  },
+  {
+    "version": "v0.2.1469",
+    "date": "2026-11-09",
+    "what": "journalist-ai@PrompTugal.vicky: scheduled run, 06:17 UTC: idle",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "f47b12188"
+  },
+  {
+    "version": "v0.2.1468",
+    "date": "2026-11-09",
+    "what": "my session key on the keys page, and I log every run (WS-160)",
+    "by": "outreach@web-summit.silvio",
+    "from": "14f956f28"
+  },
+  {
+    "version": "v0.2.1467",
+    "date": "2026-11-09",
+    "what": "runner.writer@PrompTugal.angelo: STATE: WS-125 published and closed by the checker; byline question still open",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "339a39022"
+  },
+  {
+    "version": "v0.2.1466",
+    "date": "2026-11-09",
+    "what": "journalist-portugal@PrompTugal.vicky: report, S31 drafted; SA23 in my prompts file",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "e30f6d470"
+  },
+  {
+    "version": "v0.2.1465",
+    "date": "2026-11-09",
+    "what": "journalist@PrompTugal.vicky: report, 05:51 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "4a03ad174"
+  },
+  {
     "version": "v0.2.1464",
     "date": "2026-11-09",
     "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 05:45, idle",
