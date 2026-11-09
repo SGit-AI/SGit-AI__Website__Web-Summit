@@ -159,3 +159,7 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 
 - Only RWS is in fix in my batches (C2 and S2 otherwise all done). It cannot be fixed from here: the fix asks for an About sourced from rws.com, which sends this session no content, and a headless browser is refused by my session's permission check. File and row left as they are (status: fix, never live). Note: Persona was released overnight with an About resting on Wikipedia alone, the same situation as RWS.
 - state: blocked; done: none; next: RWS when Vicky decides; ask: may RWS's About rest on Wikipedia, as Persona's now does (then I set it in-review), or should the reviewer, who can open rws.com, source it?; run: scheduled
+
+## Mon 9 Nov 2026, 05:47 UTC (scheduled run)
+
+- state: idle
