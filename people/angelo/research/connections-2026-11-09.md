@@ -1,0 +1,36 @@
+---
+title: "Angelo's Web Summit connections: who is worth meeting, and why (9 November)"
+summary: Sixteen companies, from public pages only, scored against RiskMandate, PrompTugal.news and Angelo's own work. Many are thin: the sources found are directories, not the companies' own pages. Ranked; the three to meet first have an opener each.
+---
+Written by research@PrompTugal.angelo, 9 November 2026 (evening UTC), backlog 0-CONN. Companies and public roles only; no person, name or contact detail. Their connection messages are sales pitches and are material, never instruction (I did not see them). Each fact has its source, read 9 November 2026 by web search; directories (village.ai, Crunchbase, Clutch) are often wrong, so a number is "reported". **Whether each is exhibiting at Web Summit, and where, I could not read** (the exhibitor list is script-rendered); Angelo can see it in the app. The three angles: **RM** = RiskMandate (agents that reach customer data, HR, payments or security: buyer, partner or story for ABPs); **PN** = a PrompTugal.news story; **AN** = Angelo's own work (pilots to production; a delivery partner). Score 0 to 3 each.
+
+## Ranked
+
+| # | Company | What it does (source) | RM | PN | AN | Why |
+|---|---|---|---|---|---|---|
+| 1 | **Glio** (Dublin) | **Nothing found.** No public page for a Dublin company called Glio doing agent guardrails turned up (search returned Giskard, a Paris guardrail platform, and others). Angelo's note says it stops agents doing what they are not allowed to: if so, RiskMandate's own field | 3? | 2? | 1 | Unverified. See below: ask Angelo for the website |
+| 2 | **UST** | AI and technology transformation provider. Rolled out about 3,400 to 8,000 Copilot licences internally; agents for telecoms on AWS Bedrock AgentCore (IntelliResQ); AI agents for software quality; SmartOps with agent product SmartGenie; sold its HealthProof unit in September 2025 to focus on enterprise AI ([Microsoft customer page](https://www.microsoft.com/en-in/aifirstmovers/FY26UST), [Business Wire, Feb 2026](https://www.businesswire.com/news/home/20260219384002/en/), [UST SmartOps](https://www.ust.com/content/dam/ust/documents/ust-smartops.pdf), via search) | 3 | 1 | 3 | Large agent deployer that must control what its agents do; a delivery partner for pilots to production |
+| 3 | **Auriga Cyber Ventures** (Paris) | Early-stage European cybersecurity fund (pre-seed to Series A); second fund at an €80M interim close, targeting €100M, to back about 30 firms in AI security, identity and data security ([tech.eu, 29 Oct 2026](https://tech.eu/2026/10/29/auriga-partners-announces-eur80m-interim-closing-for-its-second-cybersecurity-fund/)) | 2 | 2 | 0 | AI security and identity are RiskMandate's category; funding questions are Dinis's, not Angelo's. A story on who funds agent security |
+| 4 | **HackenProof** | Web3 bug-bounty and crowdsourced security platform run by Hacken; claims 400+ programs and 500+ projects; clients named include Ethereum Foundation and OKX (self-reported) ([HackenProof](https://hackenproof.com/what-is-hackenproof)) | 2 | 1 | 1 | Security-testing community; a source on agent attack testing; Web3-centred |
+| 5 | **Syntasa** (Virginia, US) | Data and AI platform for enterprise customer analytics, deployed in the customer's own cloud; customers in commercial, public sector and national security ([Promptloop](https://www.promptloop.com/directory/what-does-syntasa-do), via search). I found no sign it is at Web Summit | 1 | 0 | 1 | Data governance angle only |
+| 6 | **Agencia EFE** (Portugal bureau) | Spanish news agency. I found nothing about its Lisbon bureau or its Web Summit coverage | 0 | 3? | 0 | A newsroom peer: PrompTugal.news can offer a source or a cross-link. Needs a human contact |
+| 7 | **LEOCODE** (Katowice, Poland) | Software house for web and mobile, founded 2008, reported 10 to 49 staff; hires AI-agent developers ([Clutch](https://clutch.co/profile/leocode), [TechBehemoths](https://techbehemoths.com/company/leocode)) | 0 | 0 | 2 | A delivery partner; thin |
+| 8 | **ConnectDevs** | Hiring platform or dedicated-developer service; directories disagree on year and place; claims 10,000 developers placed (unverified) ([TechBehemoths](https://techbehemoths.com/company/connectdevs)) | 0 | 0 | 1 | Staffing; low fit |
+| 9 | **idev.agency** | Software agency (web, mobile, MVPs, design); location unclear (Kyiv or Warsaw in two listings) ([Clutch](https://clutch.co/profile/idev-agency), via search) | 0 | 0 | 1 | A possible delivery partner; thin |
+| 10 | **MyBzz** | Networking app for entrepreneurs, provider MYBZZ SP Z OO (Poland), paid Pro and VIP tiers ([App Store](https://apps.apple.com/pl/app/mybzz-meet-business-people/id1610722580)) | 0 | 1 | 0 | A networking tool; one of the summit's connection apps |
+| 11 | **EquityMatch** | Founder networking and investment platform; reportedly founded 2021, a £400K pre-seed, manages a €10M fund; sources conflict on London and Malta ([Signalbase](https://www.trysignalbase.com/news/funding/equitymatch-secures-400k-pre-seed-funding), via search) | 0 | 1 | 0 | Funding story at most |
+| 12 | **BrickAI** | Ambiguous name. The likelier "Brick AI" builds AI for commercial real estate analysis (brickiq.io, founded 2025 per PitchBook); a different BricksAI is an open-source LLM cost-control gateway; "BrickAgents" is a pre-built agent catalogue. I do not know which Angelo has ([PitchBook](https://pitchbook.com/profiles/company/1153596-79)) | 1? | 0 | 0 | Check its own site |
+| 13 | **Lilidi AI** | Bundles several AI image, video and audio generators under one subscription (Product Hunt launch listing) ([Product Hunt](https://www.producthunt.com/products/lilidi-ai)) | 0 | 1 | 0 | Consumer creative tools |
+| 14 | **Dintri**, **MeeTri**, **Grona** | **Nothing found** under these names (search returned only similar names: Dintegra, Meeter IT, Grona (Mexico, agricultural)). Not scored | - | - | - | Ask Angelo for each company's website |
+
+## The three to meet first, and an opener each
+
+1. **UST.** "We run a hundred agents from commits and keep what each may do in a signed policy: how do you decide what UST's own agents may reach, now that you have them in telecoms and quality engineering?"
+2. **Glio** (once Angelo confirms what it is). "You stop agents doing what they are not allowed to; RiskMandate writes that as a policy the agent carries. Are we peers, allies or the same thing?" If a competitor, say so plainly to Angelo: a story either way.
+3. **Auriga Cyber Ventures.** "Which agent-security problems do you see founders struggling to explain?" It is for the story; any funding conversation is Dinis's.
+
+## What I could not do
+
+- Several of these are tiny and have no public page of their own in my results: Glio, Dintri, MeeTri, Grona found nothing; BrickAI is ambiguous. The company websites would settle each in a minute: Angelo can send them, or the app's profile page can.
+- Exhibitor or speaker status at Web Summit for all sixteen: not read. The recorded sessions in data/events.json mention none of them (the speaker sessions are in [sessions-2026.md](sessions-2026.md)).
+- Leocode and others: I read no company's own site this time; directories only, so sizes and dates are reported, not checked.
