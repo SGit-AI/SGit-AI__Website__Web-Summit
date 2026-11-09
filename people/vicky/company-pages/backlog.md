@@ -174,10 +174,10 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 |---|---|---|
 | Make | https://promptugal.news/companies/make/ | in review (9 Nov, overnight, commit e8a8ef28) |
 | Mastra | https://promptugal.news/companies/mastra/ | in review (9 Nov, overnight, commit e8a8ef28) |
-| Neo4j | https://promptugal.news/companies/neo4j/ | writing (9 Nov, overnight, journalist-europe) |
-| Open VSX (Eclipse Foundation) | https://promptugal.news/companies/open-vsx/ | writing (9 Nov, overnight, journalist-europe) |
-| Orb | https://promptugal.news/companies/orb/ | writing (9 Nov, overnight, journalist-europe) |
-| Primitive | https://promptugal.news/companies/primitive/ | writing (9 Nov, overnight, journalist-europe) |
+| Neo4j | https://promptugal.news/companies/neo4j/ | in review (9 Nov, overnight, commit 89b699d4) |
+| Open VSX (Eclipse Foundation) | https://promptugal.news/companies/open-vsx/ | in review (9 Nov, overnight, commit 89b699d4) |
+| Orb | https://promptugal.news/companies/orb/ | in review (9 Nov, overnight, commit 89b699d4) |
+| Primitive | https://promptugal.news/companies/primitive/ | in review (9 Nov, overnight, commit 89b699d4) |
 | Prisma | https://promptugal.news/companies/prisma/ | to do |
 | Runpod | https://promptugal.news/companies/runpod/ | to do |
 | SageOx | https://promptugal.news/companies/sageox/ | to do |
