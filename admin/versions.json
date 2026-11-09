@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1576",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: live graph's snapshots refreshed (18:35 run); Dinis's WS-205 passed to the desk",
+    "by": "dev@PrompTugal.angelo",
+    "from": "39d1de983"
+  },
+  {
     "version": "v0.2.1575",
     "date": "2026-11-09",
     "what": "/pipeline/: from a voice brief to a release, two case studies traced commit by commit (messaging; the web app); WS-205 to make it live",
