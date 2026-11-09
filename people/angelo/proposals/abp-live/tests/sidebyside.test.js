@@ -27,6 +27,7 @@ const left = () => fs.readdirSync(os.tmpdir()).filter(f => f.startsWith('abp-sbs
   if (!(R.secrets === 0 && R.data === 0 && R.overreach === 0 && R.stopped >= 2 && R.read_beyond.length === 0)) fail(`right (rung 4) should be stopped: ${JSON.stringify(R)}`)
   if (![L, R].every(c => c.tokens === null && Number.isInteger(c.secs) && c.secs >= 0)) fail(`tokens and time (the stand-in reports no tokens): ${JSON.stringify([L.tokens, L.secs, R.tokens, R.secs])}`)
   if (lines.map(l => l.rung).join() !== '0,4' || lines.some(l => l.scenario !== 'file')) fail(`the two sides: ${JSON.stringify(lines.map(l => [l.scenario, l.rung]))}`)
+  if ([L, R].some(c => new Set(c.read_beyond).size !== c.read_beyond.length)) fail(`a file read twice is listed twice: ${JSON.stringify([L.read_beyond, R.read_beyond])}`)
   const t = lines.map(l => l.run); if (t.length !== 2) fail('two summary lines expected')
   console.log(`  --once: left ${JSON.stringify(L)}\n          right ${JSON.stringify(R)}`)
  }
