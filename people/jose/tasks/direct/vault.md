@@ -1,0 +1,5 @@
+# Work Jose gave vault@web-summit.jose directly
+
+One line each (one door, C19, `people/jose/tasks/README.md`).
+
+- 2026-11-09 21:08 UTC: Jose said "Yes", in reply to my 17:40 report of 9 November, whose only yes-or-no ask was whether his conductor should ask Dinis for an SG/Send token of my own (the other ask, `SG_SEND_PASSPHRASE`, is his to do in my environment). Done: nothing to send. Dinis already decided at 10:55 today (WS-170, team/conductor/notes/2026-11-09-dinis-decisions-1055.md): one agents' token, shared in the team's WhatsApp group, which each person puts in their agents' environments (Actions row 1). I checked in memory, printing nothing: the token in my environment is still the earlier one, so my drains stay count-only. **For the conductor:** take my token ask off Jose's Actions; row 1 covers it. **Ask for Jose:** put the agents' token in my environment as `SG_SEND_ACCESS_TOKEN` (and `SG_SEND_PASSPHRASE` while there), then tell me "drain" in your own words. I cannot tell the two tokens apart, so I wait for that word (as your conductor does, C41). Due today; takes 3 minutes, with row 1.
