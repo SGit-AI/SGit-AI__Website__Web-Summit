@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1524",
+    "date": "2026-11-09",
+    "what": "Team app brief v6, who gets \"Still late\"",
+    "by": "prompter@web-summit.indi",
+    "from": "be9fe7853"
+  },
+  {
     "version": "v0.2.1523",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
