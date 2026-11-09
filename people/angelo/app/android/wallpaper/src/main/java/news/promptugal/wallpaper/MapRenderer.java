@@ -30,7 +30,7 @@ import javax.microedition.khronos.opengles.GL10;
  * names. It only draws: the engine is Graph.step(). By dev.app@PrompTugal.angelo, 8 November 2026 (backlog 00a2).
  */
 final class MapRenderer implements GLSurfaceView.Renderer {
-    interface Source { Graph graph(); List<Graph.Event> takeEvents(); Bitmap[] logos(boolean light); Work work(); List<Work.Row> takeWorkRows(); }
+    interface Source { Graph graph(); List<Graph.Event> takeEvents(); Bitmap[] logos(boolean light); Work work(); List<Work.Row> takeWorkRows(); Bitmap destLogo(String id, boolean light); }
 
     private final Source src; private final float density;
     volatile boolean still;            // the chooser's preview: no turning
@@ -272,8 +272,10 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         for (Work.Dest d : wk.dests) {
             float cx = x0 + (float) d.x * k, cy = y0 + (float) d.y * k, h = (float) (Work.SQ / 2 * s) * k, r = (float) (12 * s) * k;
             RectF q = new RectF(cx - h, cy - h, cx + h, cy + h); cv.drawRoundRect(q, r, r, fill); line.setStrokeWidth((float) (2 * s) * k); cv.drawRoundRect(q, r, r, line);
-            num.setTextSize((float) (22 * s) * k); if (!d.mark.isEmpty()) cv.drawText(d.mark, cx, cy + (float) (8 * s) * k, num);
-            else { Path ic = svgPath(Work.DOC, (float) (1.5 * s) * k, cx, cy); Paint m = new Paint(num); m.setStyle(Paint.Style.STROKE); m.setStrokeWidth((float) (2 * s) * k); m.setStrokeCap(Paint.Cap.ROUND); m.setStrokeJoin(Paint.Join.ROUND); cv.drawPath(ic, m); }
+            num.setTextSize((float) (22 * s) * k); Bitmap lg = d.logo ? src.destLogo(d.id, th.light) : null; float lh = (float) (18 * s) * k;
+            if (!d.mark.isEmpty()) cv.drawText(d.mark, cx, cy + (float) (8 * s) * k, num);
+            else if (lg != null) cv.drawBitmap(lg, null, new RectF(cx - lh, cy - lh, cx + lh, cy + lh), new Paint(Paint.FILTER_BITMAP_FLAG | Paint.ANTI_ALIAS_FLAG));
+            else { Path ic = svgPath(Work.markPath(d.id), (float) (1.5 * s) * k, cx, cy); Paint m = new Paint(num); m.setStyle(Paint.Style.STROKE); m.setStrokeWidth((float) (2 * s) * k); m.setStrokeCap(Paint.Cap.ROUND); m.setStrokeJoin(Paint.Join.ROUND); cv.drawPath(ic, m); }
             if (d.count > 0) { float bx = cx + (float) ((Work.SQ / 2 - 4) * s) * k, by = cy + (float) ((-Work.SQ / 2 + 4) * s) * k; cv.drawCircle(bx, by, (float) (13 * s) * k, badge); bt.setTextSize((float) (15 * s) * k); cv.drawText(d.count > 99 ? "99+" : String.valueOf(d.count), bx, by + (float) (5 * s) * k, bt); }
             Work.Pill p = pills.get(d.id); if (p == null) continue;
             RectF pr = new RectF(x0 + (float) p.x * k, y0 + (float) p.y * k, x0 + (float) (p.x + p.w) * k, y0 + (float) (p.y + p.h) * k); float ph = (float) p.h * k / 2;
@@ -304,19 +306,19 @@ final class MapRenderer implements GLSurfaceView.Renderer {
             // the trail: small dots from 0.25 behind, brightest in mid-flight
             int dt = dot(stroke); float tr = 3 * fk;
             for (int j = 1; j <= 6; j++) { Work.along(ax, ay, d.x, d.y, Math.max(0, e - j * 0.04), p); float al = (float) (0.85 * Math.sin(Math.PI * u) * (1 - j / 7.0)); drawTex(dt, nx(p[0]) - tr / W, ny(p[1]) - tr / H, nx(p[0]) + tr / W, ny(p[1]) + tr / H, al); }
-            Work.along(ax, ay, d.x, d.y, e, p); int[] t = icon(stroke, f.n, th);
+            Work.along(ax, ay, d.x, d.y, e, p); int[] t = icon(f.icon, stroke, f.n, th);
             float hw = t[1] / (float) W, hh = t[2] / (float) H; drawTex(t[0], nx(p[0]) - hw, ny(p[1]) - hh, nx(p[0]) + hw, ny(p[1]) + hh, 1);
         }
     }
     // a flight's icon (work-draw.js): a disc in the page's background, ringed in the maker's colour, the doc stroked in it, a soft
     // glow of the same colour, and the number when several merged; cached by colour and number
-    private int[] icon(int c, int n, Graph.Theme th) {
-        String key = c + "|" + Math.min(n, 99); int[] t = iconTex.get(key); if (t != null) return t;
+    private int[] icon(String kind, int c, int n, Graph.Theme th) {
+        String path = Work.ICON_PATHS.containsKey(kind) ? Work.ICON_PATHS.get(kind) : Work.DOC, key = kind + "|" + c + "|" + Math.min(n, 99); int[] t = iconTex.get(key); if (t != null) return t;
         float u = fk, side = 60 * u; Bitmap b = Bitmap.createBitmap(Math.max(4, Math.round(side)), Math.max(4, Math.round(side)), Bitmap.Config.ARGB_8888); Canvas cv = new Canvas(b);
         float cx = side / 2, cy = side / 2;
         Paint bg = new Paint(Paint.ANTI_ALIAS_FLAG); bg.setColor(0xFF000000 | th.bg); bg.setShadowLayer(6 * u, 0, 0, 0xFF000000 | c); cv.drawCircle(cx, cy, 17 * u, bg);
         Paint st = new Paint(Paint.ANTI_ALIAS_FLAG); st.setStyle(Paint.Style.STROKE); st.setColor(0xFF000000 | c); st.setStrokeWidth(2.5f * u); cv.drawCircle(cx, cy, 17 * u, st);
-        st.setStrokeWidth(2.8f * u); st.setStrokeCap(Paint.Cap.ROUND); st.setStrokeJoin(Paint.Join.ROUND); cv.drawPath(svgPath(Work.DOC, u, cx, cy), st);
+        st.setStrokeWidth(2.8f * u); st.setStrokeCap(Paint.Cap.ROUND); st.setStrokeJoin(Paint.Join.ROUND); cv.drawPath(svgPath(path, u, cx, cy), st);
         if (n > 1) { Paint nt = new Paint(Paint.ANTI_ALIAS_FLAG); nt.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD)); nt.setTextSize(15 * u); nt.setColor(0xFF000000 | th.text); cv.drawText(String.valueOf(Math.min(n, 99)), cx + 18 * u, cy - 12 * u, nt); }
         t = new int[] { texture(b), Math.round(side / 2), Math.round(side / 2) }; iconTex.put(key, t); return t;
     }
@@ -325,10 +327,10 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         Bitmap b = Bitmap.createBitmap(16, 16, Bitmap.Config.ARGB_8888); Paint p = new Paint(Paint.ANTI_ALIAS_FLAG); p.setColor(0xFF000000 | c); new Canvas(b).drawCircle(8, 8, 7, p);
         int x = texture(b); dotTex.put(c, x); return x;
     }
-    /** An SVG path of straight segments (M, L, H, V, Z, absolute or relative: the doc icon's), scaled by k about cx, cy. */
+    /** An SVG path (M, L, H, V, A, Z, absolute or relative: the icons' and marks'), scaled by k about cx, cy. */
     static Path svgPath(String d, float k, float cx, float cy) {
         Path p = new Path(); float x = 0, y = 0, sx = 0, sy = 0; char cmd = 'M'; int i = 0, n = d.length();
-        java.util.regex.Matcher m = java.util.regex.Pattern.compile("([MmLlHhVvZz])|(-?\\d*\\.?\\d+)").matcher(d);
+        java.util.regex.Matcher m = java.util.regex.Pattern.compile("([MmLlHhVvAaZz])|(-?\\d*\\.?\\d+)").matcher(d);
         List<Object> tok = new ArrayList<>(); while (m.find()) tok.add(m.group(1) != null ? (Object) m.group(1).charAt(0) : (Object) Float.parseFloat(m.group(2)));
         while (i < tok.size()) {
             if (tok.get(i) instanceof Character) { cmd = (Character) tok.get(i++); if (cmd == 'Z' || cmd == 'z') { p.close(); x = sx; y = sy; continue; } }
@@ -340,10 +342,25 @@ final class MapRenderer implements GLSurfaceView.Renderer {
                 case 'h': x += a; p.lineTo(cx + x * k, cy + y * k); break;
                 case 'V': y = a; p.lineTo(cx + x * k, cy + y * k); break;
                 case 'v': y += a; p.lineTo(cx + x * k, cy + y * k); break;
+                case 'A': case 'a': {   // rx ry rotation large sweep x y: the endpoint arc as Android's centre arc (no rotation in these icons)
+                    float ry = (Float) tok.get(i++); i++; boolean large = (Float) tok.get(i++) != 0, sweep = (Float) tok.get(i++) != 0;
+                    float ex = (Float) tok.get(i++), ey = (Float) tok.get(i++); if (cmd == 'a') { ex += x; ey += y; }
+                    arc(p, x, y, a, ry, large, sweep, ex, ey, k, cx, cy); x = ex; y = ey; break; }
                 default: break;
             }
         }
         return p;
+    }
+    // SVG's endpoint arc (F.6.5 of the SVG spec), no rotation: its centre and angles, drawn with Path.arcTo
+    private static void arc(Path p, float x1, float y1, float rx, float ry, boolean large, boolean sweep, float x2, float y2, float k, float cx, float cy) {
+        double dx = (x1 - x2) / 2.0, dy = (y1 - y2) / 2.0; rx = Math.abs(rx); ry = Math.abs(ry);
+        double lam = dx * dx / (rx * rx) + dy * dy / (ry * ry); if (lam > 1) { rx *= Math.sqrt(lam); ry *= Math.sqrt(lam); }
+        double num = rx * rx * ry * ry - rx * rx * dy * dy - ry * ry * dx * dx, den = rx * rx * dy * dy + ry * ry * dx * dx;
+        double co = (large == sweep ? -1 : 1) * Math.sqrt(Math.max(0, num / den)), ccx = co * rx * dy / ry, ccy = co * -ry * dx / rx;
+        double mx = ccx + (x1 + x2) / 2.0, my = ccy + (y1 + y2) / 2.0;
+        double t1 = Math.toDegrees(Math.atan2((dy - ccy) / ry, (dx - ccx) / rx)), t2 = Math.toDegrees(Math.atan2((-dy - ccy) / ry, (-dx - ccx) / rx)), dt = t2 - t1;
+        if (sweep && dt < 0) dt += 360; else if (!sweep && dt > 0) dt -= 360;
+        p.arcTo(new RectF(cx + (float) (mx - rx) * k, cy + (float) (my - ry) * k, cx + (float) (mx + rx) * k, cy + (float) (my + ry) * k), (float) t1, (float) dt, false);
     }
 
     // ---- small helpers
