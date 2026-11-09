@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 // Which GitHub account pushed a commit to dev? (the protocol, people/angelo/kit/README.md#protocol)
+//   node people/angelo/tools/pushed-by.mjs --last-touch <path>   THE WORKERS' CHECK (spec-new-agents.md, preamble 1b):
+//       the last commit on dev that touched <path>, asked of GitHub's commits API (never git log, whose answer in a
+//       shallow clone can be the clone's boundary commit: research@'s false stop, 9 November), then who pushed it
 //   node people/angelo/tools/pushed-by.mjs <sha> [<sha> ...]
 // Prints "<sha> <account> <time> ANGELO|NOT-ANGELO|UNKNOWN" per commit. Exit 0: all Angelo's; 1: one or more pushed by
 // someone else; 3: one or more could not be placed (UNKNOWN is not a "no": retry once, then stop and say so).
@@ -33,8 +36,18 @@ const anc = async (a, b) => {
 }
 // when the commit was made: pushes older than that cannot carry it
 const timeOf = async s => { const t = gitOut('show', '-s', '--format=%cI', s); if (t) return Date.parse(t); try { return Date.parse((await api(`${REPO}/commits/${s}`)).commit.committer.date) } catch { return NaN } }
-const shas = process.argv.slice(2)
-if (!shas.length) { console.error('usage: pushed-by.mjs <sha> [...]'); process.exit(2) }
+let shas = process.argv.slice(2)
+const lt = shas.indexOf('--last-touch')
+if (lt >= 0) {                                           // the path's last commit on dev, from GitHub, whatever this clone's depth
+  const p = shas[lt + 1]
+  if (!p) { console.error('usage: pushed-by.mjs --last-touch <path>'); process.exit(2) }
+  let c
+  try { c = (await api(`${REPO}/commits?sha=dev&per_page=1&path=${encodeURIComponent(p)}`))[0] } catch (e) { console.log(`${p}: unknown (GitHub's commits API: ${e.message}) UNKNOWN`); process.exit(3) }
+  if (!c) { console.log(`${p}: unknown (no commit on dev touches it) UNKNOWN`); process.exit(3) }
+  console.log(`${p}: last touched on dev by ${c.sha.slice(0, 9)} (${String(c.commit?.message || '').split('\n')[0].slice(0, 80)})`)
+  shas = [c.sha]
+}
+if (!shas.length) { console.error('usage: pushed-by.mjs --last-touch <path> | <sha> [...]'); process.exit(2) }
 // The activity API pages with a cursor (Link: <...&after=...>; rel="next"); &page= is ignored, so follow the
 // cursor until every commit asked about is placed, or MAX_PAGES (fixed 5 November, after vault@web-summit.angelo's a2bd8430).
 const MAX_PAGES = 30
