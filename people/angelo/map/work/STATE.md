@@ -17,7 +17,7 @@ Backlog 0f2 (the work view) and 0f3 (the WhatsApp clip). **Approved** by Angelo 
 - **Replay: done** (c95bce6): mountMap() puts the work view on the Team map while it plays (the map's viewBox opened to 0.84 plus a 7% margin, squares on that rim, deliveries.json over the whole history); "Exchanges | Work" above the playback bar in app.js drawCollab, r_work=1 in the address. Test wvrp.
 
 ## Open
-- **Waiting on dashboard@'s review:** the 16th run's commit (inside pills at most 28% across, its note in 52832206). be2077cb, b62ea65e (52832206) and fcfb1de4 (1b3da77c) are on dev.
+- **Review: nothing waiting.** The 16th run's work (42e3949, 31b892a) is on dev in dashboard@'s d8b278a; my branch's tree equals dev's after the 17th run's merge.
 - **Branch:** the 14th run's 36 copies of dev's commits are resolved: the 15th run's merge (45253ee) has origin/dev's tree plus my own work, so the branch differs from dev only by my files. Merge origin/dev, never rebase.
 - **Seen:** in a 440 px pop-out live.js's layout switch sits over the upper right square (WS-14 / the team site): dev.map@'s furniture, told in b62ea65e.
 - **Lane:** policy@ turned check 21 into a FAIL; lanes.json still has `writes: []` for me. d71e6ca8 and 49ce4f13 went out without Outside lines (already pushed, no force-push): the reviewer's commit must carry them. From 423f113f every commit of mine carries its own Outside lines. Gate my own range: LANE_RANGE=<my first commit of the run>^..HEAD.
@@ -27,4 +27,4 @@ Backlog 0f2 (the work view) and 0f3 (the WhatsApp clip). **Approved** by Angelo 
 - **The apps' repositories (spec rule table, last row): question to the desk, 15th run.** Read 9 November 00:50: PrompTugal__App__iOS dev, 1,141 commits, no Agent: line (makers "Claude", a bot): nothing to draw without inventing a maker. PrompTugal__App__Android dev, 71 commits, 68 with Agent: <role>@promptugal.ai (conductor.android, security.android, release.android, play.android ...), For: Dinis: not <role>@PrompTugal.<person>, so no roster person; repos-snapshot.mjs drops them too (0 events). Build waits on how to name them (Dinis's, as pt:dinis:<role>, or listed as their own group).
 
 ## Last run
-Sixteenth run, 9 November 01:51 to about 02:10 UTC: no new commits For me from the desk; merged origin/dev (51d667fe); dashboard@'s phone note (52832206): a pill inside the rim now reaches at most 28% of the drawing across (was 40%), the full name in its title; wvdraw checks it with long names. wvdraw, wsrp, wvpop, wvrp pass; gate OK.
+Seventeenth run, 9 November about 03:50 to 04:05 UTC: no new commits For me from the desk, runner.conductor or dev@; d8b278a (dashboard@'s review, material) brought the 16th run onto dev. Merged origin/dev. Every item of mine (0f2, 0f3, 0c4 (1, 3, 5)) is built and on dev; the rest waits on the desk (0c4 questions, the apps' naming) and Angelo (the WhatsApp proof). No code changed.
