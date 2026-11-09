@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1516",
+    "date": "2026-11-09",
+    "what": "the side-by-side ABP demo, personalised to the visitor's company: design, ABP template, demo agent",
+    "by": "conductor@web-summit.indi",
+    "from": "5b48b4102"
+  },
+  {
     "version": "v0.2.1515",
     "date": "2026-11-09",
     "what": "Team app v3 prototype, seven synthetic users, brief v4",
