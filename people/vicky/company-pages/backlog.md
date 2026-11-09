@@ -71,10 +71,10 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | 1Password (website) | https://promptugal.news/companies/1password/ | in review |
 | Air Apps (website) | https://promptugal.news/companies/air-apps/ | in review |
 | Airia | https://promptugal.news/companies/airia/ | in review |
-| AISLE | https://promptugal.news/companies/aisle/ | to do |
-| Akamai (website) | https://promptugal.news/companies/akamai/ | to do |
-| Arima | https://promptugal.news/companies/arima/ | to do |
-| Atlassian | https://promptugal.news/companies/atlassian/ | to do |
+| AISLE | https://promptugal.news/companies/aisle/ | in review |
+| Akamai (website) | https://promptugal.news/companies/akamai/ | in review |
+| Arima | https://promptugal.news/companies/arima/ | in review |
+| Atlassian | https://promptugal.news/companies/atlassian/ | in review |
 | Centre for AI Leadership (C4AIL) | https://promptugal.news/companies/c4ail/ | to do |
 | Cerebras | https://promptugal.news/companies/cerebras/ | to do |
 | Cognizant | https://promptugal.news/companies/cognizant/ | to do |
