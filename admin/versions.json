@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1563",
+    "date": "2026-11-09",
+    "what": "15:10 proposal to send withdrawn: Dinis parked outreach at 10:55 (WS-177)",
+    "by": "outreach@web-summit.silvio",
+    "from": "ccf33046f"
+  },
+  {
     "version": "v0.2.1562",
     "date": "2026-11-09",
     "what": "desk.conductor@PrompTugal.angelo: the share button: the writer applies dev.venues@'s patch in its next session",
