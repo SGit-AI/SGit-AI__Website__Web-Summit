@@ -141,7 +141,7 @@ final class MapRenderer implements GLSurfaceView.Renderer {
             // the steady flow drawn as a real exchange is (a bright glowing head and a short trail), a little smaller, so the
             // graph glows between bursts too; real exchanges keep the larger head
             if (f.flow) { double fa = 0.55 + 0.4 * Math.sin(Math.PI * f.u);
-                for (int j = 0; j <= 3; j++) { g.curve(a, f.to, Math.max(0, f.u - j * 0.025), tmp); dot(k++, a, j > 0 ? 20 - j * 3.5 : 34, j > 0 ? fa * 0.6 * (1 - j / 4.0) : fa); }
+                for (int j = 0; j <= 3; j++) { g.curve(a, f.to, Math.max(0, f.u - j * 0.025), tmp); dot(k++, a, j > 0 ? 23.5 - j * 3.5 : 34, j > 0 ? fa * 0.6 * (1 - j / 4.0) : fa); }
                 continue; }
             for (int j = 0; j <= Graph.TRAIL; j++) { g.curve(a, f.to, Math.max(0, f.u - j * 0.025), tmp); dot(k++, a, j > 0 ? 26 - j * 3.5 : 48, j > 0 ? 0.65 * (1 - j / (double) (Graph.TRAIL + 1)) : 1); }
         }
