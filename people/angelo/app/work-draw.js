@@ -82,15 +82,17 @@
         }
         const all = [...out.entries()]
         const overlap = (a, o) => a.x < o.x + o.w && o.x < a.x + a.w && a.y < o.y + o.h && o.y < a.y + a.h
-        // pills that overlap move apart vertically, away from each other
-        for (let pass = 0; pass < 6; pass++) for (let i = 0; i < all.length; i++) for (let j = i + 1; j < all.length; j++) {
-            const a = all[i][1], b = all[j][1]
-            if (overlap(a, b)) { const up = a.y + a.h / 2 < b.y + b.h / 2 ? a : b, down = up === a ? b : a, need = (up.y + up.h + 4 - down.y) / 2; up.y -= need; down.y += need }
-        }
-        // a pill on the furniture or on another destination's square steps off it vertically, the way away from its middle
-        for (const [d, a] of all) {
-            const block = avoid.concat([...P].filter(([e]) => e !== d).map(([, q]) => sqBox(q)))
-            for (let k = 0, o; k < 4 && (o = block.find(x => overlap(a, x))); k++) a.y = a.y + a.h / 2 < o.y + o.h / 2 ? o.y - a.h - 4 : o.y + o.h + 4
+        // pills that overlap move apart vertically, away from each other; a pill on the furniture or on another destination's square
+        // steps off it vertically, the way away from its middle; the two in turn, until nothing moves
+        const blocks = new Map(all.map(([d]) => [d, avoid.concat([...P].filter(([e]) => e !== d).map(([, q]) => sqBox(q)))]))
+        for (let round = 0; round < 6; round++) {
+            let moved = false
+            for (let pass = 0; pass < 6; pass++) for (let i = 0; i < all.length; i++) for (let j = i + 1; j < all.length; j++) {
+                const a = all[i][1], b = all[j][1]
+                if (overlap(a, b)) { const up = a.y + a.h / 2 < b.y + b.h / 2 ? a : b, down = up === a ? b : a, need = (up.y + up.h + 4 - down.y) / 2; up.y -= need; down.y += need; moved = true }
+            }
+            for (const [d, a] of all) for (let k = 0, o; k < 4 && (o = blocks.get(d).find(x => overlap(a, x))); k++) { a.y = a.y + a.h / 2 < o.y + o.h / 2 ? o.y - a.h - 4 : o.y + o.h + 4; moved = true }
+            if (!moved) break
         }
         return out
     }

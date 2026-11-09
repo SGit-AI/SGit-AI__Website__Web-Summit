@@ -435,8 +435,11 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
                 const st = w.document.createElement('style'); st.textContent = 'html,body{margin:0;height:100%;background:var(--rm-bg,#07111F)} body>div{height:100%}'; w.document.head.appendChild(st)
                 const box = w.document.createElement('div'); w.document.body.appendChild(box)
                 const inst = mount(box, { ...o, win: w, d3 })
+                // o.onPop({ win, host }) when the window opens and o.onPop(null) when it closes: the page adds to the pop-out what it
+                // shows inline (app.js: the Messages | Workstreams | Deliverables switch, backlog 0c4 (5), dev.work@PrompTugal.angelo)
+                if (o.onPop) o.onPop({ win: w, host: box })
                 frame.innerHTML = '<p class="note" style="padding:16px">Popped out. Close its window to bring the graph back here.</p>'; btn.textContent = '✕ Bring it back'
-                w.addEventListener('pagehide', () => { inst.destroy(); popped = null; if (host.isConnected) { btn.textContent = '⧉ Pop out'; frame.innerHTML = ''; current = mount(frame, { ...o, win: root, d3, keep3d: pipMode() === 'video' }) } })
+                w.addEventListener('pagehide', () => { inst.destroy(); popped = null; if (o.onPop) o.onPop(null); if (host.isConnected) { btn.textContent = '⧉ Pop out'; frame.innerHTML = ''; current = mount(frame, { ...o, win: root, d3, keep3d: pipMode() === 'video' }) } })
             } catch (e) { note.textContent = 'The pop-out window could not open: ' + (e && e.message ? e.message : e) }
         }
         return { destroy() { if (current) { current.destroy(); current = null } } }
