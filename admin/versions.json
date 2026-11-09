@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1439",
+    "date": "2026-11-09",
+    "what": "wave D in the private CRM: 11 actions drafted; nine wait for a PromptUGAL page",
+    "by": "crm@web-summit.silvio",
+    "from": "50f7744f2"
+  },
+  {
     "version": "v0.2.1438",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
