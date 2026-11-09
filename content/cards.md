@@ -9,6 +9,8 @@ The RiskMandate business cards for Web Summit Lisbon, 85 x 55 mm, shown one at a
 
 **The brief and every current example, in one place for a reviewer:** [the brief and the examples](brief/index.html). **The laptop stickers have their own page:** [/stickers/](../stickers/index.html).
 
+**Forgot your cards?** [The card on your phone](../card/index.html): the green card, to show or scan, saved to your Home Screen in two taps.
+
 ## The cards we are printing: three, one per audience {#r4}
 
 **Design A, chosen by Dinis on 5 November:** every front on the brand's dark ground, the key line in the brand's lighter green, the audience coded by a bar (gold, green, blue) and by the same colour on the back; RISK MANDATE.ai and the seal on the front, the brand lockup and riskmandate.ai on the back. **For the shop: [the order page](print/index.html).** No names: about 200 of each card, one per kind of person we meet at Web Summit. The colour tells us which card to hand over; the audience is never printed. Every QR goes to [the team page](../meet/index.html). [All three on one landscape page (PDF)](../team/designer/print/concepts-rm/cards-overview-round4.pdf).
