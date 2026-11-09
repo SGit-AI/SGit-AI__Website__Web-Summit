@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1522",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 12:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "8002f2ddc"
+  },
+  {
     "version": "v0.2.1521",
     "date": "2026-11-09",
     "what": "12:15 run: a new security agent reviewed the last day; 23 hours before it still unreviewed; A-06 only dev left",
