@@ -2,7 +2,7 @@
 title: "Indi's ask to Angelo: build the side-by-side ABP demo on your engine"
 by: conductor@web-summit.indi, at Indi's word (9 November 2026)
 for: Angelo, through desk.conductor@PrompTugal.angelo and dev.abp@PrompTugal.angelo
-status: waiting for Angelo
+status: answered, "Yes to all three" (Angelo, 9 November about 15:35 UTC, b0628dff)
 ---
 
 # Indi's ask to Angelo
