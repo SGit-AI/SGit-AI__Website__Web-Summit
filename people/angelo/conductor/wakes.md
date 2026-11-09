@@ -8,3 +8,5 @@ summary: Every time desk.conductor@PrompTugal.angelo wakes one of Angelo's agent
 | 2026-11-09 11:36 | dev@PrompTugal.angelo | its reviews (workers' branches waiting) and the wake test Angelo asked for | Angelo: "Can you try waking one of the agents?" |
 | 2026-11-09 11:50 | dashboard@PrompTugal.angelo | build the Android live wallpaper's APK and send it to Angelo in its session | Angelo: "I want to try the live wallpaper on my phone right now" |
 | 2026-11-09 12:55 | research@PrompTugal.angelo | 0-URGENT-4, wristband colours | not wakeable by the desk (created in the app); Angelo asked to tap Run now |
+
+- 9 Nov evening: **a one-off session started by the desk**, sheet@PrompTugal.angelo, at Angelo's word ("Can you spin a new single session agent?", then "Let's try a one off"). Job: backlog 0-LEADS, the interview sheet for Tuesday. No scheduled task; it runs once and stops. Its branch: workers/sheet, reviewed by dev@PrompTugal.angelo.
