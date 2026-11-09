@@ -1,0 +1,949 @@
+{
+ "at": "2026-11-09T23:30Z",
+ "account": "A",
+ "sessions": [
+  {
+   "id": "session_018yvwtPuEKsVWRsrhyWYs35",
+   "title": "gamma-ray@web-summit.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-09T23:26:15.452923Z",
+   "tags": [
+    "gamma-ray",
+    "promptugal",
+    "web-summit"
+   ]
+  },
+  {
+   "id": "session_018yvwtLjrBvKSbMXU6nJdMr",
+   "title": "security.repos@web-summit.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T22:22:08.090505Z",
+   "tags": [
+    "scheduled",
+    "security",
+    "web-summit"
+   ]
+  },
+  {
+   "id": "session_018yvwtPKLd7mcGZJRVp4H1a",
+   "title": "mobile@promptugal.ai.dinis: Android and iOS cross-collaboration",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-11-09T14:50:39.337911Z",
+   "tags": [
+    "android",
+    "ios",
+    "mobile",
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtPjmKA3PviDk16vsYP",
+   "title": "risk-mandate@promptugal.ai.dinis: hallucination evals",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T14:29:52.057114Z",
+   "tags": [
+    "on-device-llm",
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtQjYwpjPryaZAWSw6n",
+   "title": "dev.lab.android@promptugal.ai: ABP Lab side by side (I)",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-09T14:58:17.954126Z",
+   "tags": [
+    "on-device-llm",
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtLoJoLmNGomawqmHrU",
+   "title": "dev.chat.android@promptugal.ai: on-device chat (H)",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T16:39:56.386741Z",
+   "tags": [
+    "on-device-llm",
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtNmBbzWuXuBUfWVY46",
+   "title": "dev.llm.android@promptugal.ai: on-device LLM runtime and model setup (G)",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T15:19:41.185794Z",
+   "tags": [
+    "on-device-llm",
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtQBKD8yLu9WUCZjuUT",
+   "title": "dev.releases.android@promptugal.ai: feature F, What's new release articles",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T11:12:48.189066Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtPFB77ucsaWrmqTX5g",
+   "title": "editor.android@promptugal.ai: android.app.promptugal.ai site and articles",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T14:31:17.227891Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtQFeezHPsT8mXzd2Jx",
+   "title": "dev.stand.android@promptugal.ai: feature D, stand mode",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T11:13:07.470594Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtQeoBypWMyA9DnhE8i",
+   "title": "dev.mandate.android@promptugal.ai: feature C, this app's mandate",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-11-09T14:38:50.454370Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtNCP9pqhd42J3S9E8Y",
+   "title": "dev.abpdemo.android@promptugal.ai: feature B, ABP in every layer",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T11:12:47.331201Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtNT6RUqiLApfu3skSs",
+   "title": "dev.site.android@promptugal.ai: feature A, RiskMandate inside the app",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T11:12:56.686166Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtM6rEYCqgLA3GqcJkk",
+   "title": "qa.android@promptugal.ai: quality and testing",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-09T16:15:25.721428Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtQULeY1PiFvVaB4VTb",
+   "title": "design.android@promptugal.ai: UX and visual design",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T14:31:14.613123Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtQ2bqKHfLzJ7Gvi8dR",
+   "title": "architect.android@promptugal.ai: app architecture",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T14:30:04.342866Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtMEkVuWRqKhGm6yo4J",
+   "title": "security.android@promptugal.ai: review and supply chain",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-09T18:58:16.529599Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtMCc2BNFpAGvjDRenv",
+   "title": "play.android@promptugal.ai: Google Play groundwork",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T14:31:15.680327Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtM4VMbzGS28k1PsAeB",
+   "title": "devices.android@promptugal.ai: M2 device management",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T01:04:06.129114Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtQrryCdmM6VAmqnQvW",
+   "title": "release.android@promptugal.ai: CI and distribution",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T18:58:17.020152Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtLgnt1xeXPhQbaJ9uk",
+   "title": "app.android@promptugal.ai: RiskMandate Android app",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-09T14:32:37.182945Z",
+   "tags": [
+    "riskmandate-android"
+   ]
+  },
+  {
+   "id": "session_018yvwtQQhNMeaU9tg3HgWnP",
+   "title": "conductor.android@promptugal.ai",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-09T23:26:01.812958Z",
+   "tags": [
+    "android",
+    "promptugal",
+    "ui:pinned"
+   ]
+  },
+  {
+   "id": "session_018yvwtQvXF27F1oZCX7Xjj3",
+   "title": "investors@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T21:26:35.452403Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtMs43w1K2mZWczRrD8",
+   "title": "inbox@web-summit.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-11-06T18:09:10.337621Z",
+   "tags": [
+    "inbox",
+    "web-summit"
+   ]
+  },
+  {
+   "id": "session_018yvwtNjVAtMvKzzYUAcS3X",
+   "title": "investors@web-summit.dinis",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T10:59:26.208853Z",
+   "tags": [
+    "investors",
+    "web-summit"
+   ]
+  },
+  {
+   "id": "session_018yvwtLi1ZEdJTGqjPadshw",
+   "title": "backup@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-11-06T21:28:00.207918Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtPAxbjR7fcuXRui4tF",
+   "title": "researcher@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T21:29:24.488621Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtR7dyQAMruCDohb7qS",
+   "title": "designer.experiments@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T21:23:43.670347Z",
+   "tags": [
+    "promptugal",
+    "worker"
+   ]
+  },
+  {
+   "id": "session_018yvwtPmahQLWZAxLbVaSd6",
+   "title": "dev.verify@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T22:45:42.726393Z",
+   "tags": [
+    "promptugal",
+    "worker"
+   ]
+  },
+  {
+   "id": "session_018yvwtLModYJ9FzDUydSQ7W",
+   "title": "dev.data@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T22:43:23.025376Z",
+   "tags": [
+    "promptugal",
+    "worker"
+   ]
+  },
+  {
+   "id": "session_018yvwtLNQqdqPDPrcGoPYKt",
+   "title": "dev.portugal@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T22:43:38.100552Z",
+   "tags": [
+    "promptugal",
+    "worker"
+   ]
+  },
+  {
+   "id": "session_018yvwtNa6MgTBP9K9GjWnmM",
+   "title": "dev.graphs@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T22:43:37.250892Z",
+   "tags": [
+    "promptugal",
+    "worker"
+   ]
+  },
+  {
+   "id": "session_018yvwtMibJvX9sxnLBuiLEE",
+   "title": "dev.pages@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T22:43:25.501940Z",
+   "tags": [
+    "promptugal",
+    "worker"
+   ]
+  },
+  {
+   "id": "session_018yvwtNG4QFrk4pXdAojCxL",
+   "title": "dev.search@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T22:43:53.603270Z",
+   "tags": [
+    "promptugal",
+    "worker"
+   ]
+  },
+  {
+   "id": "session_018yvwtN3FiiL5EnPk35Hz4Q",
+   "title": "customers@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T21:28:41.440293Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtQG4hfVbvycXkifYXc",
+   "title": "designer@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T21:23:45.918927Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtNeY1KRZS5R6barxbD",
+   "title": "abp@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-11-08T20:39:40.256549Z",
+   "tags": [
+    "abp",
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtNseZ4j4agt2arDK5M",
+   "title": "correspondent@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T21:24:45.939439Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtNgf1CH2YZb7WqfNei",
+   "title": "librarian@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T21:25:09.498079Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtMPFU9MsUMpEjuEK1n",
+   "title": "sherpa@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T21:26:37.696981Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtNBvrcnvCkA11abbrH",
+   "title": "security@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-09T22:10:48.313782Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtNqd1q2vsNsqHg1m2i",
+   "title": "accountant@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-09T21:50:34.197920Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtQCGFqaAVtFCxWBYWk",
+   "title": "devops@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T21:27:41.600951Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtMLggiXipMS5bWQnxP",
+   "title": "historian@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T21:26:48.245339Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtPwS34zFWFNrJZbDkt",
+   "title": "synthetic@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-06T21:29:20.826537Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtNX1LDpfgHYSUMvVnv",
+   "title": "observability@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-09T23:20:03.384541Z",
+   "tags": [
+    "observability",
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtMab6bVYdn5MBf8gSM",
+   "title": "designer@PrompTugal.dinis",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T04:34:02.108370Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtLcqWG6JPoRm4WNpVw",
+   "title": "outreach@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-06T21:26:27.478776Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtQ6fQgzvZ6Jb3VukRF",
+   "title": "ontologist@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T21:27:01.595731Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtMwNGPJiBw728GuDNS",
+   "title": "dev@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T22:51:42.916863Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtLWKbLRgLcii5Yq23M",
+   "title": "journalist@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-11-06T21:26:37.542354Z",
+   "tags": [
+    "promptugal"
+   ]
+  },
+  {
+   "id": "session_018yvwtMe4xXJFw1aRGHvua4",
+   "title": "conductor@PrompTugal.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-09T23:28:48.940903Z",
+   "tags": [
+    "promptugal",
+    "ui:pinned"
+   ]
+  },
+  {
+   "id": "session_018yvwtM8j717LZDeb2aRbjF",
+   "title": "crm@web-summit.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-11-05T22:09:20.962364Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtQ4nYuQE5a3EYxqYva",
+   "title": "newsroom@web-summit.dinis",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T00:46:22.591537Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtNCAzS9VDHzmvaHCuV",
+   "title": "observability@web-summit.dinis",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_FAILED",
+   "updated": "2026-11-08T19:47:34.059388Z",
+   "tags": [
+    "observability",
+    "web-summit"
+   ]
+  },
+  {
+   "id": "session_018yvwtQLVrqJa3cTmxtZjFc",
+   "title": "newsroom@web-summit.dinis",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-04T12:14:00.782982Z",
+   "tags": [
+    "newsroom",
+    "web-summit"
+   ]
+  },
+  {
+   "id": "session_018yvwtMvQDrtRvzXLF8AUqr",
+   "title": "MeetScribe | Chrome Extension",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-03T14:25:48.018098Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtPxfxJ5fKM4KdQnkE4",
+   "title": "mentor@web-summit.dinis (the mentors)",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-08T20:44:00.406Z",
+   "tags": [
+    "mentors",
+    "scheduled",
+    "web-summit"
+   ]
+  },
+  {
+   "id": "session_018yvwtQP8rMvmpsX4kvMaQL",
+   "title": "dashboard@web-summit.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-08T20:12:05.790029Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtQmv4xGwYXJPGViUET",
+   "title": "abp@web-summit.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-11-08T20:16:35.256739Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtR2j3s7jYtasUWcwzq",
+   "title": "sgit@web-summit.dinis",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_FAILED",
+   "updated": "2026-11-08T16:51:05.066995Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtQYdru82gyQ7Xfvh56",
+   "title": "Web Summit 2026 project management",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_FAILED",
+   "updated": "2026-11-08T17:50:55.906125Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtNRGYr38taN7vmqdoe",
+   "title": "dev@web-summit.dinis",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-11-06T00:26:42.222223Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtQux1eGnRQaVfah5ub",
+   "title": "designer@web-summit.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_FAILED",
+   "updated": "2026-11-08T15:15:42.286949Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtP1kxdtFAwPvBZEitc",
+   "title": "security@web-summit.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_FAILED",
+   "updated": "2026-11-08T11:52:47.549345Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtMPAWqRoYpdfzT3GKk",
+   "title": "Web Summit 2026 agent setup",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_FAILED",
+   "updated": "2026-11-08T17:40:44.153410Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtMwCqQWyqt2iPgio4n",
+   "title": "journalist@web-summit.dinis",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_FAILED",
+   "updated": "2026-11-08T18:57:27.562572Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtMPVc6R9iMzkBcVpE2",
+   "title": "conductor.3@web-summit",
+   "status": "SESSION_STATUS_RUNNING",
+   "bucket": "SESSION_STATUS_BUCKET_WORKING",
+   "updated": "2026-11-09T23:34:22.971222Z",
+   "tags": [
+    "ui:pinned"
+   ]
+  },
+  {
+   "id": "session_018yvwtQbRnqR939iLzfYuSr",
+   "title": "projects@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-10-27T22:37:45.028487Z",
+   "tags": []
+  },
+  {
+   "id": "session_018yvwtMgbkXpRcHYWgi8XGh",
+   "title": "breaking@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-27T22:29:25.682236Z",
+   "tags": []
+  },
+  {
+   "id": "session_012dAoCQWsFAibCgWMCbBHZQ",
+   "title": "sharness | website@",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-28T00:05:35.564851Z",
+   "tags": []
+  },
+  {
+   "id": "session_015o6Pmm6sy7e8KDZimK4xss",
+   "title": "sharness.ai | conductor@",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-26T16:11:46.885831Z",
+   "tags": []
+  },
+  {
+   "id": "session_01VirpY2g54oG4UzB9cr8HTe",
+   "title": "sharness.ai | pbp@",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-26T04:53:34.017402Z",
+   "tags": []
+  },
+  {
+   "id": "session_01MLwweWuWASKfo5xGHnnDfS",
+   "title": "sharness.ai | dev@",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-26T02:57:27.351539Z",
+   "tags": []
+  },
+  {
+   "id": "session_01Tcmzzv2Z8vdyDjtdocgd5x",
+   "title": "sharness.ai | security@",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-10-26T00:01:17.340851Z",
+   "tags": []
+  },
+  {
+   "id": "session_0171YeSxD94VPq585nmqHCGv",
+   "title": "sharness.ai | sherpa@",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_REVIEW_READY",
+   "updated": "2026-10-26T00:48:35.968920Z",
+   "tags": []
+  },
+  {
+   "id": "session_017Ue7cxZnVfB98bPMW4Fccm",
+   "title": "loop | 4 | correspondent@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-10-27T23:57:24.294415Z",
+   "tags": []
+  },
+  {
+   "id": "session_01DpcHuz2qd66Azug45JhC2q",
+   "title": "fix-the-page.chrome-extension.sgit.ai",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-25T11:45:58.574933Z",
+   "tags": []
+  },
+  {
+   "id": "session_01DT2e224wDEYPXseeXyqUba",
+   "title": "loop | 3 | journalist@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-10-27T19:02:49.006823Z",
+   "tags": []
+  },
+  {
+   "id": "session_01E1SfxwnFrLK1hDzA55divK",
+   "title": "sharness.ai | cli@",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-10-28T00:00:18.730587Z",
+   "tags": []
+  },
+  {
+   "id": "session_01QAFFfBVHvUVcmbZyBGBKho",
+   "title": "sharness | cli",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-24T17:57:08.566061Z",
+   "tags": []
+  },
+  {
+   "id": "session_01NUvath8v2oGkhPwddJ3pgS",
+   "title": "loop | 12 | observability@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-28T00:59:48.050342Z",
+   "tags": []
+  },
+  {
+   "id": "session_01RR3krokJmVQdy7UE8rJV8s",
+   "title": "loop | 0 | conductor@php.newsroom",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-28T15:44:10.198893Z",
+   "tags": [
+    "conductor",
+    "php-newsroom",
+    "scheduled"
+   ]
+  },
+  {
+   "id": "session_01AhbKWBXQ2ETgYiQo18kCG7",
+   "title": "loop | 1 | researcher@php.newsroom (7r83qic5)",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-27T19:04:46.377799Z",
+   "tags": []
+  },
+  {
+   "id": "session_01Troky44BgeTf1SDvgTwNxz",
+   "title": "loop | 2 | curator@php.newsroom (3ytzxm3g)",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-27T19:04:28.768523Z",
+   "tags": []
+  },
+  {
+   "id": "session_011Lh927SsvmNuc6chyy3LaS",
+   "title": "loop | 5 | sherpa@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-10-28T00:06:46.475196Z",
+   "tags": []
+  },
+  {
+   "id": "session_019TV42nt6c1NL6MUTWVvpXG",
+   "title": "loop | 8 | pulse@newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-27T23:58:52.351945Z",
+   "tags": []
+  },
+  {
+   "id": "session_01Svbuj5QeZjNvn2WyJm6Lfb",
+   "title": "curator@php.newsroom (3ytzxm3g vault)",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-23T23:06:21.510553Z",
+   "tags": []
+  },
+  {
+   "id": "session_014pjPWwXXj4RsFypemoANbe",
+   "title": "abp@newsroom.sgit",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-10-22T19:58:12.469719Z",
+   "tags": []
+  },
+  {
+   "id": "session_017Bh11ZMAfrDDo17TasVhQS",
+   "title": "loop | 9 | desk@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-28T00:00:50.702424Z",
+   "tags": []
+  },
+  {
+   "id": "session_016wZtuCoQDVrXcpCnVGfWDv",
+   "title": "loop | 7 | ontologist@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-27T23:57:56.756780Z",
+   "tags": []
+  },
+  {
+   "id": "session_01ECCz4x6jvfD8PFckfAwFsR",
+   "title": "outreach@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-10-22T19:27:12.717996Z",
+   "tags": []
+  },
+  {
+   "id": "session_014jkS4dzXaDGwCqDAC8a9E6",
+   "title": "grc@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-22T21:45:15.120954Z",
+   "tags": []
+  },
+  {
+   "id": "session_01JwcAkgpS7iA8jgVZ8qeAEf",
+   "title": "storyboards@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-10-22T19:57:33.763658Z",
+   "tags": []
+  },
+  {
+   "id": "session_01NGKKjHkTowS7gQwZkhqT6A",
+   "title": "scheduled | 0 | conductor@php.newsroom",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-25T13:05:30.240079Z",
+   "tags": []
+  },
+  {
+   "id": "session_018KpB681SLkRCfFE9ercGEk",
+   "title": "loop | 6 | security@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-28T00:59:07.512192Z",
+   "tags": []
+  },
+  {
+   "id": "session_01T6FArjeF51Qtv4p2FeJwze",
+   "title": "loop | 11 | fact-checker@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_BLOCKED",
+   "updated": "2026-10-27T23:58:01.655473Z",
+   "tags": []
+  },
+  {
+   "id": "session_01QPq9oQELBGWHwP5FoWXAhP",
+   "title": "synthetic@newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-25T12:50:35.897505Z",
+   "tags": []
+  },
+  {
+   "id": "session_0119HKHSpRMfmaSRyjX7wbYY",
+   "title": "loop | 10 | librarian@php.newsroom",
+   "status": "SESSION_STATUS_IDLE",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-27T23:58:11.885363Z",
+   "tags": []
+  },
+  {
+   "id": "session_0175TsQRScaYBVwHeKw345iY",
+   "title": "researcher@php.newsroom (oq9gflln - source vault)",
+   "status": "SESSION_STATUS_ARCHIVED",
+   "bucket": "SESSION_STATUS_BUCKET_COMPLETED",
+   "updated": "2026-10-23T22:57:30.478371Z",
+   "tags": []
+  }
+ ]
+}
