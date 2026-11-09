@@ -16,23 +16,26 @@ Angelo, 9 November about 17:10 UTC, after the wallpaper's Deliverables level (0.
 - **No counts.** The list shows the mark and the full name only; the routes' widths carry how much.
 - **Questions 1 to 5 as recommended:** it replaces the rim for Deliverables and Workstreams on the page and the wallpaper; routes by person (tap a person for their agents' routes); widths over the last seven days, icons flying live; the network end a small live graph; dev.work@ builds the page's version, then dashboard@ ports it to the wallpaper with a test holding the two together.
 
+Then, about 17:35: *"I don't like the vertical list, it makes the lines awkward. We don't need to stress on the text labels, if we make the icons significative enough, we can just have the icons and maybe a 3-4 letters abbreviation?"* So **the list is gone**: the destinations are the dumbbell's second bell (below).
+
 ## Why the labels are awkward today
 
 The destinations sit on the hexagon's rim among the agents, so their names have to squeeze into pills beside or inside the rim. On a phone there is no room outside the rim, so every name goes inside, cut short, and moved up or down until it clears the others. That is the cause, and no styling fixes it: the names need a place of their own.
 
 ## The view
 
-![Wide](mock-wide.png) ![Phone](mock-phone.png) ![Phone, the team below](mock-phone-below.png)
+![Phone, the team on top](mock-phone.png) ![Phone, the team below](mock-phone-below.png)
+![Wide, the team on the left](mock-wide.png) ![Wide, the team on the right](mock-wide-right.png)
 
-(The mock-ups, redrawn without counts. The third flips the whole drawing to show "below"; the build moves the network to the other end without mirroring it.)
+(Redrawn after Angelo's 17:35 answer: icons and abbreviations, no list, no counts; the four ends of the setting.)
 
 The mock-ups are drawn from this site's own data (`data.json`'s map, and `deliveries.json`'s last seven days), in the dark theme.
 
 - **One end: the team and the machine.** The network as it is now, in a circle: the people, each with their agents beside them.
-- **The other end: the destinations.** A plain list, one row each: a mark or logo and the **full name, level, 16 to 18 px**. No count (Angelo). Busiest first, nearest the team. A destination with nothing this week stays in the list, dimmed, so the list does not jump about.
+- **The other end: the destinations, a second bell.** Ten icons on the arc that faces the team, **the busiest in the middle**, the quiet ones (nothing this week) dimmed towards the ends. Each icon says what it is (work-draw.js's marks, no two alike: a browser window for the site, a server rack for infrastructure, a pencil for drafts, a phone for the app, a key, a ledger for the CRM, an envelope, a magnifier; the PT News and LinkedIn logos), with **a 3 to 4 letter abbreviation under it**: PTN, SITE, RSCH, INFR, APP, KEYS, CRM, MAIL, LNKD, DRFT. The full name is the icon's title (a long press on the phone, a hover on the page). No count. For Workstreams, each icon is its WS number in the tile, and the abbreviation the issue's first word. A destination with nothing this week stays in the list, dimmed, so the list does not jump about.
 - **The middle: the routes.** One route from each person to each destination they delivered to this week, in the person's colour, **as wide as how much**. Each new delivery flies along its route as its icon (doc, cog, key, record, envelope, post), as today, and the row lights when it lands.
-- **Orientation, a setting:** the team on top, below, left or right (and Automatic). Across, the routes run straight into their rows; down, each person's route comes down its own lane in the gutter and turns into its row, like a metro map.
-- **Workstreams the same way.** The ten workstreams become the list ("WS-14 newsroom.web-summit…" in full, the number first), and the routes go to them.
+- **Orientation, a setting:** the team on top, below, left or right (and Automatic); the destinations' bell at the other end. Each route leaves its person, crosses the middle and arrives square on at its icon, so the routes fan out from one bell and gather into the other.
+- **Workstreams the same way:** its ten as the second bell, by number.
 - **What is read:** nothing new. `deliveries.json` and `workstreams.json`, as now; names and times only.
 
 ## Questions for Angelo, each with a recommendation
