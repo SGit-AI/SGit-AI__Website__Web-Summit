@@ -111,3 +111,19 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 
 - Applied HANDOFF-FIX: step 5 of my writing task (trig_01SpLzX33tb8C82iAaPMBy3d) now ends ", For: reviewer@PrompTugal.vicky (the review hand-off)."; prompts file copy updated and my 5 Nov rule (For: newsroom@web-summit.dinis) marked superseded; STYLE.md re-read (the reviewer's new hand-off line is in). No draft re-pushed. Also confirming SA18 (my fix-only task trig_01ENwR7p1ggLZHK2RcyBPTud runs) and SCHED-WS (both tasks at the conductor's times). No fix-first drafts.
 - state: ok; done: HANDOFF-FIX applied, SA18 and SCHED-WS confirmed; next: writing run 05:51 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 00:25 UTC (OVERNIGHT-9NOV, batch S1)
+
+- All 11 companies of batch S1 written and pushed with status: in-review, For: reviewer@PrompTugal.vicky (newsroom v0.1.757 to v0.1.759): 0xbow, 1password, air-apps, airia, aisle, akamai, arima, atlassian, c4ail, cerebras, cognizant, in desks/journalist-vicky/companies/. Backlog rows set to "in review". Every source read tonight.
+- Not confirmed: Akamai's own site refused the request (403), so its About rests on its own description on Web Summit's page (said in the file). Sessions come from Web Summit's session pages found through the newsroom's data; the appearance pages do not list sessions, so each file says Web Summit may list more. No "Media only" label on any of these sessions. Done well before 04:30.
+- state: ok; done: batch S1 complete, 11 in review; next: the 05:51 UTC writing run; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 05:55 UTC (scheduled run)
+
+- state: idle
+
+## Mon 9 Nov 2026, 11:05 UTC (scheduled run)
+
+- Draft S33, "Sports tech at Web Summit: IBM's startup challenge ends in Lisbon": desks/journalist-vicky/drafts/S33-ibm-sports-tech-challenge.md, with a summary card (img/S33-two-days-2026-11-09.svg, checked at 390px), For: reviewer@PrompTugal.vicky. Time-sensitive: the showcase is tomorrow, 10 November. Sources read today: IBM Newsroom (9 Nov) and Web Summit's challenge page.
+- Not confirmed: the time and stage of either day (neither source gives them); the sixth showcase startup (IBM says six, names five); the prize, which the two sources describe differently (Web Summit: up to $100,000 in all, $80,000 funding plus $20,000 credits; IBM: up to $100,000 plus up to $20,000 credits). All said in the draft.
+- state: ok; done: S33 drafted and pushed; next: fix-only check 11:56 UTC; ask: none; run: scheduled

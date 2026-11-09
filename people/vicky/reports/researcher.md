@@ -132,3 +132,18 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - Pages 2 to 26 left for now and no Algolia queries, at Vicky's word; the gap is recorded in the capture itself and in my prompts file (standing rules 5 and 6). 0 new captures; 1 capture's note revised in vault 41j3e9s9, audited and pushed.
 - For the curator: captures/2026-11-08-websummit-featured-startups-p1.md holds 100 featured startups (page 1 of 26, all GROWTH stage) by industry, with country, stage and each company's own pitch marked as a claim, not a checked fact; four are Portuguese. With captures/2026-11-08-websummit-speakers-by-theme.md (20 speakers by theme) it is ready for theme-led connection storylines (standing answer 19) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)).
 - state: ok; done: gap recorded, curator pointed at the two participant captures; next: regular runs from 05:15, public pages only; ask: none; run: prompted
+
+## Mon 9 Nov 2026, 05:15 UTC run (Portugal, participants)
+
+- decisions.md read first (five new commits, none for me; no HOLD.md); prompts file re-read, no difference.
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Portugal: the 78 startups Startup Portugal selected for Road 2 Web Summit 2026, by sector, each with its city and the article's one-line description (descriptions marked as claims); they pitch at the summit for the Most Promising Startup award, 15,000 euros ([Portugal Startup News, "Full list of 78 startups selected by Startup Portugal for Road 2 Web Summit 2026"](https://portugalstartupnews.com/2026/11/08/full-list-of-78-startups-selected-by-startup-portugal-for-road-2-web-summit-2026/)).
+- For the curator: with the 100 featured startups and the 20 speakers of 8 November, this gives a Portuguese cohort for connection stories; DIG-IN and RipeNew appear in two captures each. Opening previews (Renascença, Observador) not captured: no new facts.
+- state: ok; done: 1 capture (Road 2 Web Summit cohort); next: 10:15 run, opening day; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 10:15 UTC run (announcements, Portugal, participants)
+
+- decisions.md read first (one new commit, brief 8 clean-up, nothing for me; no HOLD.md); prompts file re-read, no difference. 2 captures went into vault 41j3e9s9, audited and pushed (the IBM file failed its first review for an organisation written like a web address, fixed, passed); sgit status in sync.
+- Announcements and participants: IBM's Sports Tech Startup Challenge ends at the summit, a showcase on 10 November and an invitation-only Prize Challenge on 11 November with six finalists (LingoPal, Fanory, Neuron Systems, LivXP, PressBox, TwelveLabs) and judges from IBM, Ferrari, FIFA and CNN ([IBM Newsroom, "IBM Sports Tech Startup Challenge culminates at Web Summit Lisbon 2026"](https://newsroom.ibm.com/blog-ibm-sports-tech-startup-challenge-culminates-at-web-summit-lisbon-2026)).
+- Portugal: Go Coimbra, with IPN and the University of Coimbra, brings 12 startups in digital health, AI, robotics, sustainability and aerospace, all four days ([Diário de Coimbra, "Go Coimbra apresenta 12 startups na Web Summit em Lisboa"](https://www.diariocoimbra.pt/2026/11/09/go-coimbra-apresenta-12-startups-na-web-summit-em-lisboa/)). Opening-day coverage of the Chinese delegation and robot speakers not captured again: already in the 8 November speakers capture.
+- state: ok; done: 2 captures; next: 14:15 run; ask: none; run: scheduled

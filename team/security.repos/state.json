@@ -1,0 +1,100 @@
+{
+  "about": "Where security.repos@web-summit.dinis stopped, per repository and branch: the last commit reviewed (the branch head when the run read it). The next run reviews each branch from here.",
+  "agent": "security.repos@web-summit.dinis",
+  "last_run": "2026-11-09T11:10Z",
+  "baseline_from": "2026-11-08T11:00Z",
+  "repos": {
+    "SGit-AI/SGit-AI__Website__Web-Summit": {
+      "branches": {
+        "dev": "f68830912816782aa25ed3887fb22a6957817ccc",
+        "claude/nifty-bell-f1rkca": "d9a32357538247a32141124b9a97c597e0e851fc",
+        "workers/dev.abp": "d2f04341487f6801fc5a4da8bbe2e71b734772e6",
+        "workers/dev.app": "bcb0daed0b71fbded36fe7c7423d726735e07375",
+        "workers/dev.links": "552928f2513e336cb6af52f3c8b1ca6ee03959d1",
+        "workers/dev.map": "b6584c8b930914541d04dd1c2c9449c3b74fdb24",
+        "workers/dev.venues": "1e39e829b5fb71b8b0e87d93e04c5b55b8b2bb14",
+        "workers/dev.work": "4dfc1ca9a535b13f89b0bc0b51cf04b486c221e2",
+        "workers/research": "aaa86b8c7e122889b8f55ef5d54b1708f1c4aa4e",
+        "workers/vault.kms": "2e0c832f2d21c268f18ad34a003dae323960e413"
+      }
+    },
+    "PrompTugal/PrompTugal__News__Website": {
+      "branches": {
+        "dev": "b5242abe61a922a76b20990f409b4e973f8b1fc6",
+        "work/dev.data": "44fe40fb62a8b347b730d918db108bffd031f0b6",
+        "work/dev.graphs": "2ef1b2804e8054603af24b79bcc9460ec0d64c3b",
+        "work/dev.pages": "d519e3dacb3879d3a5e3e48bb1c66c77d9f9a483",
+        "work/dev.portugal": "71a42bb579d76e9f1683153dafb322f54f430f8d",
+        "work/dev.verify": "5e7c04bd0fe4c45ffb415c114912de1b0895abc1"
+      }
+    },
+    "PrompTugal/PrompTugal__App__Android": {
+      "branches": {
+        "dev": "cd44befcff8c71ff7d78186a67326a73600aee3a",
+        "main": "0b299ae1db8bdb6194a61192401c39686ac3c3c5",
+        "work/app": "093bdc42f1fb542e4f22abb5e5aab711383dde31",
+        "work/architect": "3dce2d939772eec44f632e9c4c4c45c47904bae5",
+        "work/design": "55026cb1e50119e2f87cdaf172e108f82ca2aca1",
+        "work/dev.abpdemo": "29f60131cc4cf7a8f15ef249e95a59978375add1",
+        "work/dev.chat": "d0ee2982ec43858a8ff9d2bce9371d56826dd62d",
+        "work/dev.lab": "b2743f47c384b11a65db22e6874ee5d15e6d0585",
+        "work/dev.llm": "3babbd4099881eeb18e48cb7ed261bbb29861efa",
+        "work/dev.mandate": "e8823da3e4f254f3707b1ba4171ea5f12c168c7c",
+        "work/dev.releases": "873dd244987370095920f7fe30d1e268237bb2d9",
+        "work/dev.site": "124cd4e588e339251c9f635c681e34eb573c386f",
+        "work/dev.stand": "b49d3d11ebcfad94d4aae8a7c75ce0d758881351",
+        "work/devices": "117f6a8da7274f5f53d8a7744527d24626a3e906",
+        "work/editor": "5590047f4d041788dda85e5ed6143b3a1ade7f43",
+        "work/eval": "9bcd6709d8c0446eb0859428a42b08586c53dd46",
+        "work/play": "d3b6eeda052b29bb235d3cd7a8e08b3a77cc14de",
+        "work/qa": "278cc018923780221d78730d57344420fed004f1",
+        "work/release": "b239745ed125a910eda9b86cdbec2370857d348c",
+        "work/security": "fd08e57c3d9254a4a6671cf27f8739f1e9326ebd"
+      }
+    },
+    "PrompTugal/PrompTugal__App__iOS": {
+      "branches": {
+        "dev": "cf8214c9cfa84fe233a84444cda4d6c10b85cf49",
+        "split/apps": "9d35705685035567c392726bc861eade84106569",
+        "split/collab": "730c32738139b4c394dbe9ea8917bfdadf75a648",
+        "split/deck": "5207750195f0046caf2e5620d1532f35d8a2dc7e",
+        "split/design": "706e416486bd959c6f0cc5d9d693c4facffb8cf3",
+        "split/i18n": "01ed7527190ce9a30bf22b468a1158eb90b20020",
+        "split/platform": "bd79c0735d27174aa39fd07f4eff8f53da3affbc",
+        "split/rc": "75203d50016c5e6e55c254d5fbcab4ca1366ed64",
+        "split/rc10": "e9629cac0c38f38ab82ec461979993b1afd6424c",
+        "split/rc2": "3de45dd67f72590ce247e4bf823fe887b53ae6cc",
+        "split/rc3": "98767dd475438c0303a0fdbac9d64b61df6990ea",
+        "split/rc4": "56a630e0a5569bc3c1596503cdfed2c4d64db5b9",
+        "split/rc5": "d051bf526ba9d03cab107e8511157a84a454344a",
+        "split/rc6": "47531b5d70b6e2bfcfeee89c3e3ccd23567391d0",
+        "split/rc7": "535e9ba388dd1a1d44b6042a47d272895757f3c8",
+        "split/rc8": "4f589655b2cdcd0084a0c8a18bd4621e4e8da198",
+        "split/rc9": "640e631fe8f25bd2303d7b64524a4440275d7006",
+        "split/release": "55054d543f11ab46ec44f4bc4b9840408ce795b9",
+        "split/review": "85b373b60c0a1037dd82b1fd9f5807a262f9531e",
+        "split/team": "f9a4996a523f3b6db110defab58fcf634d324dd3",
+        "split/testflight": "824274364af3adb967169cf514e81efe429a6532",
+        "split/ux": "22b2c6ff5330bcb2798d66682555325fa7ca5e22",
+        "split/vault": "9e61110c6c3a27eb57f6012773a108a7b64d9659"
+      }
+    },
+    "PrompTugal/PrompTugal__App__Mobile": {
+      "branches": {
+        "dev": "9b48685df5efa3b0d506c3191265ef7677f42184",
+        "main": "9b48685df5efa3b0d506c3191265ef7677f42184"
+      }
+    },
+    "SGit-AI/sgit-ai__website__newsroom__web-summit": {
+      "branches": {
+        "dev": "b5242abe61a922a76b20990f409b4e973f8b1fc6",
+        "work/dev.data": "44fe40fb62a8b347b730d918db108bffd031f0b6",
+        "work/dev.graphs": "2ef1b2804e8054603af24b79bcc9460ec0d64c3b",
+        "work/dev.pages": "d519e3dacb3879d3a5e3e48bb1c66c77d9f9a483",
+        "work/dev.portugal": "71a42bb579d76e9f1683153dafb322f54f430f8d",
+        "work/dev.verify": "5e7c04bd0fe4c45ffb415c114912de1b0895abc1"
+      },
+      "note": "The same repository as PrompTugal/PrompTugal__News__Website (GitHub redirects the old name; identical refs on 9 Nov 2026): reviewed once, under that name."
+    }
+  }
+}

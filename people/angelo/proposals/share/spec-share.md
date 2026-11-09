@@ -4,7 +4,7 @@ by: dev.venues@PrompTugal.angelo
 written: 2026-11-08
 for: Angelo, reviewed with desk.conductor@PrompTugal.angelo; findings from policy@PrompTugal.angelo; built on the newsroom's dev For: dev@PrompTugal.dinis
 issue: WS-08 (backlog 0o)
-status: "Draft for Angelo's review. Nothing is built until he approves it (the status line then says approved)."
+status: "approved by Angelo, 9 November about 09:05 UTC (All as recommended): targets LinkedIn, X, WhatsApp, Email, Copy link; counts by target in the newsroom's own observability; top of every page and the end of articles"
 ---
 Angelo, 8 November about 16:55 UTC (relayed in the desk's db8058666, pushed from riskmandate-angelo): *"Can we add a share button on all pages and entities on PN News, maybe reviewing how other digital newspapers do it?"*
 

@@ -138,3 +138,8 @@ Moved by conductor@web-summit.vicky at Vicky's word (connections first in every 
 23. **Company pages: the About section** (Vicky, 8 Nov, about 15:50 UTC; for journalist-connections, the other journalists, the reviewer and dev, whenever a company page is created or updated): "Keep About sections to two or three short, plain sentences explaining what the company does. Avoid marketing quotes and unrelated event details. Put supporting source links and read dates below the paragraph, with each factual claim still clearly traceable to its source. Apply this whenever company pages are created or updated. No bulk rewrite is needed."
     - Traceable: each claim carries a short marker (for example a number) that matches its source line below the paragraph, so a reader can see which source supports which sentence.
     - Event details (sessions, stages, times) stay in the page's own summit section, not in About.
+
+## Standing answer 26 (word for word from people/vicky/decisions.md, 9 November 2026)
+
+26. **Company pages: Wikipedia supports, never stands alone** (Vicky, 9 Nov, about 10:35 UTC; for the five journalists, the reviewer and dev, whenever a company page is created or updated): "For company pages, Wikipedia can be a supporting source. The company's own site or its official Web Summit page must support the About section. Please send Persona back to fix until it has that support and keep RWS in fix."
+    - An About resting only on Wikipedia (or any secondary source) is not Ready; at least one of the company's own site or its official Web Summit page must support it.

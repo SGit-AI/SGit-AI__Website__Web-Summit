@@ -11,6 +11,9 @@
 // 3D (d3=1, backlog 0c): the same engine, drawn by live3d.js in WebGL: the same flow, pulses, lit lines and breathing, turned by hand.
 // Layouts (backlog 0e): the map's three (people ring, agents ring, agents and their work), switched by a quiet control in the hexagon's
 // corner, in the page and in the pop-out alike, remembered on this device (lv=<layout> in the address wins).
+// The dial (backlog 0c4 (4), Angelo, 8 November: "We should add to the live view the replay dial, so that it's possible to move back
+// and forth in time"): a slim time dial under the hexagon, over all that live.json holds (from 2 November); dragged back, the graph plays from that moment at
+// the same real pace (the flow as busy as it was then, the moment shown at the foot); "Live" brings it back to a few minutes behind now.
 (function (root) {
     'use strict'
     const NS = 'http://www.w3.org/2000/svg'
@@ -57,6 +60,10 @@
 /* inside the hexagon, small and quiet (backlog 0d): the logos and LIVE at the top, the moment shown at the bottom */
 .lv-top { position: absolute; left: 50%; top: 8.4%; transform: translateX(-50%); display: flex; align-items: center; gap: max(5px, 1.5cqmin); pointer-events: none; z-index: 2; }
 .lv-logo { width: clamp(14px, 4.6cqmin, 40px); height: clamp(14px, 4.6cqmin, 40px); border-radius: 22%; opacity: .92; display: block; }
+/* RiskMandate's mark as big as PT News's (backlog 0c4 (6), Angelo, 8 November: "the riskmandate logo is too small, it should equal the PT one"):
+   both are drawn in the same square, but on a dark hexagon RiskMandate's dark tile melts into it and only its inner ring shows, while
+   PT News's square shows whole; a faint edge round the tile (the file itself unchanged) shows the whole square, the same size as PT's */
+.lv-top.lv-on-dark .lv-logo[data-lv-logo="riskmandate"] { box-shadow: 0 0 0 max(1px, .14cqmin) rgba(247, 246, 242, .42); opacity: 1; }
 .lv-logo.gone { display: none; }
 /* larger in 3D (backlog 0c3, Angelo, 8 November: "The live 3d view should have the 2 logos bigger"), still inside the hexagon */
 .lv-3d-on .lv-logo { width: clamp(16px, 7.2cqmin, 66px); height: clamp(16px, 7.2cqmin, 66px); }
@@ -72,6 +79,15 @@
 .lv-live.old i, .lv-live.off i { animation: none; }
 .lv-live.off i { box-shadow: none; }
 @media (prefers-reduced-motion: reduce) { .lv-live i, .lv-live.on { animation: none; } }
+/* the time dial (0c4 (4)): in the strip under the hexagon's flat foot, quiet until used; "Live" shows only when looking back */
+.lv-dial { position: absolute; left: 50%; bottom: .8%; transform: translateX(-50%); width: 46%; display: flex; align-items: center; gap: max(4px, 1cqmin); z-index: 3; opacity: .45; transition: opacity .2s; }
+.lv-dial:hover, .lv-dial:focus-within, .lv-dial.past { opacity: 1; }
+.lv-dial input { flex: 1 1 auto; min-width: 0; margin: 0; height: clamp(14px, 4cqmin, 24px); accent-color: var(--rm-action, #4aa3ff); cursor: pointer; }
+.lv-dial button { font: 700 clamp(8px, 1.9cqmin, 13px)/1 var(--rm-font, system-ui, sans-serif); letter-spacing: .08em; color: var(--rm-red, #ff4d5e); background: var(--rm-surface, #0E2035); border: 1px solid currentColor; border-radius: 999px; padding: .3em .6em; cursor: pointer; white-space: nowrap; }
+.lv-dial button[hidden] { display: none; }
+.lv-live.past { color: var(--rm-text-muted, #9EB2C7); animation: none; }
+.lv-live.past i { animation: none; box-shadow: none; }
+.lv-when.past { color: var(--rm-text, #fff); }
 .lv-when { position: absolute; left: 50%; bottom: 8.6%; transform: translateX(-50%); font: 500 clamp(8px, 2cqmin, 16px)/1 var(--rm-font, system-ui, sans-serif); color: var(--rm-text-secondary, #9EB2C7); white-space: nowrap; font-variant-numeric: tabular-nums; pointer-events: none; text-shadow: 0 0 4px var(--rm-bg, #07111F); z-index: 2; }
 .lv-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 0 0 10px; }
 .lv-page { display: grid; gap: 10px; }
@@ -182,7 +198,7 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
         // asked when the 3D starts, not now: in a pop-out the copied stylesheets are still loading (backlog 0c2)
         const light = () => { const bg = (win.getComputedStyle(wrap).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).slice(0, 3).map(Number); return (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140 }
         // the logos and LIVE at the top of the hexagon (LIVE replaces the old freshness light), the moment shown at its foot
-        const top = doc.createElement('div'); top.className = 'lv-top'
+        const top = doc.createElement('div'); top.className = 'lv-top' + (light() ? '' : ' lv-on-dark')
         top.innerHTML = `<img class="lv-logo" data-lv-logo="riskmandate" alt="RiskMandate" title="RiskMandate" crossorigin="anonymous" referrerpolicy="no-referrer" src="${LOGO_RM()}"><span class="lv-live off" data-lv-live title="Reading the latest exchanges…"><i></i>LIVE</span><img class="lv-logo" data-lv-logo="promptugal" alt="PrompTugal.news" title="PrompTugal.news" crossorigin="anonymous" referrerpolicy="no-referrer" src="${LOGO_PT(light ? 'light' : 'dark')}">`
         for (const im of top.querySelectorAll('img')) im.onerror = () => im.classList.add('gone')   // offline: the label stays, the logo steps aside
         const dot = top.querySelector('[data-lv-live]'), when = doc.createElement('div'); when.className = 'lv-when'; when.setAttribute('data-lv-when', '')
@@ -192,14 +208,21 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
         lay.innerHTML = LAYOUTS.map(([k, t]) => `<button type="button" data-lv-l="${k}" data-s="${({ ring: 'P', agents: 'A', work: 'W' })[k]}" aria-pressed="${k === L}" title="${t}">${t}</button>`).join('')
         for (const b of lay.querySelectorAll('button')) b.onclick = () => { if (b.dataset.lvL !== L) relayout(b.dataset.lvL) }
         if (!o.bare) hex.appendChild(lay)   // display mode has no controls: its layout comes from the address or the device
+        // the time dial (0c4 (4)): minutes behind live, from live.json's first moment (its from) (set once it is read) to 0; not in display mode
+        const dial = doc.createElement('div'); dial.className = 'lv-dial'; dial.setAttribute('data-lv-dial', '')
+        dial.innerHTML = `<input type="range" data-lv-dial-r min="-2880" max="0" step="1" value="0" aria-label="Time: drag back to see an earlier moment" title="Drag back in time; Live to return"><button type="button" data-lv-golive hidden title="Back to live">● LIVE</button>`
+        const dialR = dial.querySelector('input'), goLive = dial.querySelector('button')
+        if (!o.bare) hex.appendChild(dial)
         // the moment on screen: now, less the fixed delay, in the viewer's own time zone
         // a small pop-out (the hexagon under 300 px) gets the short form: the day and the time, without the weekday and the zone
         const F = o => { try { return new Intl.DateTimeFormat(undefined, o) } catch { return { format: d => d.toString().slice(0, 21) } } }
         const fmtL = F({ weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }), fmtS = F({ day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
         let whenAt = '', narrow = false, wAt = -1e9
-        const paintWhen = () => { const t = Date.now() - DELAY_MS, d = new Date(t), m = Math.floor(t / 6e4)
-            if (t - wAt > 1000) { wAt = t; const w = hex.clientWidth; if (w) narrow = w < 300 }
-            const key = m + (narrow ? 'n' : 'w'); if (key === whenAt) return; whenAt = key; when.textContent = (narrow ? fmtS : fmtL).format(d); when.setAttribute('data-lv-shown', String(m * 6e4)); when.title = `What you see happened at this moment, ${Math.round(DELAY_MS / 6e4)} minutes behind now` }
+        let back = 0, drag = null   // how far the dial is behind live, in ms (0: live); while it is dragged, where it is
+        const ago = ms => { const m = Math.round(ms / 6e4); return m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${String(m % 60).padStart(2, '0')} min` }
+        const paintWhen = () => { const b = drag == null ? back : drag, t = Date.now() - DELAY_MS - b, d = new Date(t), m = Math.floor(t / 6e4)
+            const n0 = Date.now(); if (n0 - wAt > 1000) { wAt = n0; const w = hex.clientWidth; if (w) narrow = w < 300; top.classList.toggle('lv-on-dark', !light()) }   // the pop-out's styles arrive late, and the theme can change
+            const key = m + (narrow ? 'n' : 'w') + (b ? 'p' : ''); if (key === whenAt) return; whenAt = key; when.classList.toggle('past', !!b); when.textContent = (narrow ? fmtS : fmtL).format(d); when.setAttribute('data-lv-shown', String(m * 6e4)); when.title = b ? `Looking back: what you see happened at this moment, ${ago(b + DELAY_MS)} ago` : `What you see happened at this moment, ${Math.round(DELAY_MS / 6e4)} minutes behind now` }
         paintWhen()
 
         // 3D: the WebGL view over the hexagon's floor, fed by the engine below on each frame (live3d.js, loaded only now)
@@ -220,6 +243,7 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
 
         // ---- what moves ----
         const lines = new Map(), fly = [], hot = new Map(), seen = SEEN, queue = []
+        let allEvs = [], fromMs = 0
         let alive = true, raf = 0, timer = 0, built = 0, lastOk = 0, last = 0, debt = 0, flowN = 0, weights = [], wsum = 0, act = 1
         const pairEl = (a, b) => { const k = a + '|' + b; let e = lines.get(k); if (!e) { e = { path: el('path', { stroke: col.get(pos.get(a).person) || 'var(--rm-text-muted)', 'stroke-width': 3.2, 'stroke-opacity': 0, d: curve(pos.get(a), pos.get(b)) }, links), at: -1e9 }; lines.set(k, e) } return e }
         const colOf = id => col.get(pos.get(id).person) || 'var(--rm-text-muted)'
@@ -272,17 +296,17 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
         // every repository's exchanges come in the same list (live.json's repos; e[5] is the repository, 0 this site's dev), drawn alike
         const toEv = (L, e) => ({ sha: (e[5] || 0) + ':' + e[4], ms: Date.parse(L.from) + e[0] * 6e4, agent: L.agents[e[1]], to: e[3].map(i => L.targets[i]), repo: (L.repos || [])[e[5] || 0] })
         // how busy each pair has been: events weighted by their age (half-life HALF_LIFE_H hours); with no recent events, the graph's own links
-        const tally = evs => {
-            const m = new Map(), nowMs = Date.now(); let hour = 0
+        const tally = (evs, nowMs = Date.now()) => {
+            const m = new Map(); let hour = 0
             for (const e of evs) {
-                const from = nodeOf(e.agent); if (!from) continue
+                const from = nodeOf(e.agent); if (!from || e.ms > nowMs) continue   // looking back: nothing after the moment shown
                 const w = Math.pow(0.5, Math.max(0, nowMs - e.ms) / 36e5 / HALF_LIFE_H); if (nowMs - e.ms < 36e5) hour++
                 for (const t of e.to) { const to = nodeOf(t); if (to && to !== from) { const k = from + '|' + to; m.set(k, (m.get(k) || 0) + w) } }
             }
             if (!m.size) for (const l of M.links || []) if (pos.get(l.from) && pos.get(l.to)) m.set(l.from + '|' + l.to, l.n)
             weights = [...m].map(([k, w]) => { const [from, to] = k.split('|'); return { from, to, w } }); wsum = weights.reduce((x, y) => x + y.w, 0)
-            act = evs.length ? hour / (evs.length / 48) : 1
-            const ran = new Set(evs.filter(e => nowMs - e.ms < 2 * 36e5).map(e => nodeOf(e.agent)))
+            const n48 = evs.filter(e => e.ms <= nowMs).length; act = n48 ? hour / (n48 / 48) : 1
+            const ran = new Set(evs.filter(e => e.ms <= nowMs && nowMs - e.ms < 2 * 36e5).map(e => nodeOf(e.agent)))
             for (const [id, g] of N) if (pos.get(id).fresh) g.classList.toggle('lv-ran', ran.has(id))
             ranSet = ran
         }
@@ -292,8 +316,8 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
                 const r = await fetch(new URL(o.liveUrl || 'live.json', root.location.href).href, { cache: 'no-store' }); if (!r.ok) throw new Error(r.status)
                 const L = await r.json(); if (!alive) return
                 lastOk = Date.now(); built = Date.parse(L.built_at) || built
-                const evs = L.events.map(e => toEv(L, e)).sort((x, y) => x.ms - y.ms); tally(evs)
-                const firstEver = !seen.size, t = win.performance.now(), disp = Date.now() - DELAY_MS, items = []; let late = 0
+                const evs = L.events.map(e => toEv(L, e)).sort((x, y) => x.ms - y.ms); allEvs = evs; fromMs = Date.parse(L.from) || fromMs; tally(evs, Date.now() - back); dialRange()
+                const firstEver = !seen.size, t = win.performance.now(), disp = Date.now() - DELAY_MS - back, items = []; let late = 0
                 for (const e of evs) {
                     if (seen.has(e.sha)) continue; seen.add(e.sha)
                     if (firstEver && e.ms <= disp) continue                   // opening: nothing older than the delay is replayed
@@ -307,9 +331,32 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
         }
         const paintDot = () => {
             const age = built ? (Date.now() - built) / 6e4 : Infinity, ok = lastOk && Date.now() - lastOk < 3 * (POLL_MS + SPREAD_MS)
-            dot.className = 'lv-live ' + (!ok ? 'off' : age > STALE_MIN ? 'old' : 'on')
+            dot.className = 'lv-live ' + (!ok ? 'off' : age > STALE_MIN ? 'old' : 'on') + (back ? ' past' : '')
             dot.title = !ok ? 'Could not read the latest exchanges; trying again' : `Live: up to date as of ${new Date(built).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}${age > STALE_MIN ? `, over ${STALE_MIN} minutes ago (a quiet spell, or a slow release)` : ''}`
         }
+        // the dial (0c4 (4)): every exchange live.json holds after the chosen moment queued at its real pace from now; the
+        // ones in flight dropped; the flow weighed as it was then. Back to live: the same, from a few minutes behind now (nothing replayed twice
+        // at once: the queue is rebuilt, not added to)
+        const dialRange = () => { if (!fromMs) return; const lo = -Math.max(1, Math.floor((Date.now() - DELAY_MS - fromMs) / 6e4)); dialR.min = String(lo); if (back) dialR.value = String(-Math.round(back / 6e4)) }
+        const setBack = ms => {
+            const hi = fromMs ? Date.now() - DELAY_MS - fromMs : 0
+            back = Math.max(0, Math.min(hi, Math.round(ms)))
+            queue.length = 0
+            for (let i = fly.length - 1; i >= 0; i--) if (!fly[i].flow) { fly[i].dot.remove(); if (fly[i].halo) fly[i].halo.remove(); fly.splice(i, 1) }
+            const t = win.performance.now(), disp = Date.now() - DELAY_MS - back
+            enqueue(allEvs.filter(e => e.ms > disp).map(e => ({ ev: e, at: t + (e.ms - disp) })))
+            tally(allEvs, Date.now() - back)
+            dialR.value = String(-Math.round(back / 6e4)); goLive.hidden = !back; dial.classList.toggle('past', !!back); wrap.classList.toggle('lv-past', !!back)
+            dialR.setAttribute('aria-valuetext', back ? `${ago(back)} before live` : 'Live')
+            if (host.lvGraph) host.lvGraph.back = back
+            host.dispatchEvent(new win.CustomEvent('lv-time', { detail: { back, delay: DELAY_MS } }))   // for the work view, to follow the dial
+            paintWhen(); paintDot()
+        }
+        // while dragging only the moment at the foot follows; on release the graph goes there
+        dialR.addEventListener('input', () => { drag = -(+dialR.value) * 6e4; paintWhen() })
+        dialR.addEventListener('change', () => { drag = null; setBack(-(+dialR.value) * 6e4) })
+        goLive.onclick = () => setBack(0)
+        host.lvGraph.back = 0; host.lvGraph.setBack = ms => setBack(ms)
         // back from sleep or lost Wi-Fi: read at once instead of waiting for the next tick (a failed read is simply tried again)
         const again = () => { if (!alive || win.document.visibilityState === 'hidden') return; win.clearTimeout(timer); read(false) }
         win.addEventListener('online', again); win.document.addEventListener('visibilitychange', again)
@@ -435,8 +482,11 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
                 const st = w.document.createElement('style'); st.textContent = 'html,body{margin:0;height:100%;background:var(--rm-bg,#07111F)} body>div{height:100%}'; w.document.head.appendChild(st)
                 const box = w.document.createElement('div'); w.document.body.appendChild(box)
                 const inst = mount(box, { ...o, win: w, d3 })
+                // o.onPop({ win, host }) when the window opens and o.onPop(null) when it closes: the page adds to the pop-out what it
+                // shows inline (app.js: the Messages | Workstreams | Deliverables switch, backlog 0c4 (5), dev.work@PrompTugal.angelo)
+                if (o.onPop) o.onPop({ win: w, host: box })
                 frame.innerHTML = '<p class="note" style="padding:16px">Popped out. Close its window to bring the graph back here.</p>'; btn.textContent = '✕ Bring it back'
-                w.addEventListener('pagehide', () => { inst.destroy(); popped = null; if (host.isConnected) { btn.textContent = '⧉ Pop out'; frame.innerHTML = ''; current = mount(frame, { ...o, win: root, d3, keep3d: pipMode() === 'video' }) } })
+                w.addEventListener('pagehide', () => { inst.destroy(); popped = null; if (o.onPop) o.onPop(null); if (host.isConnected) { btn.textContent = '⧉ Pop out'; frame.innerHTML = ''; current = mount(frame, { ...o, win: root, d3, keep3d: pipMode() === 'video' }) } })
             } catch (e) { note.textContent = 'The pop-out window could not open: ' + (e && e.message ? e.message : e) }
         }
         return { destroy() { if (current) { current.destroy(); current = null } } }

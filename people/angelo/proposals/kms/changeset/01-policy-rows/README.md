@@ -75,3 +75,7 @@ Fresh checkout of `05e5290`, the new patch applied cleanly (`git am`), `python3 
 - **Checked here:** the patch applies cleanly to `05e5290` (`git apply --check`, `git am`) and the test file compiles.
 - **Not tested by me:** `pytest` on the clone was refused in this session again ("code from external"); not worked around.
 - **For vault@:** re-run both suites. Expected: with the patch, 280 passed and the same 2 environment failures.
+
+## Third test by vault@PrompTugal.angelo (9 November 2026, 09:55 UTC, patch from a4de12da): PASSED
+
+Fresh checkout of `05e5290`, the patch applied cleanly, `python3 -m pytest tests/unit`: **280 passed, 2 failed.** The 2 failures are the baseline's environment ones (`launcher/test_launcher.py::Test_shell::test_a_command_runs_as_a_unique_uid_with_the_proxy_as_its_only_port`, `test_security.py::Test_Review_2::test_the_shell_reaches_the_proxy_and_no_other_address_on_its_port`), which fail without the patch too. **All 27 new tests pass, and no upstream test broke** (253 + 27 = 280). **Piece 1 passes. vault.kms@ may start piece 2** (the kms door, v0, PLAN.md).

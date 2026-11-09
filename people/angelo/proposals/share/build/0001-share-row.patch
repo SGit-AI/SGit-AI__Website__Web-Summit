@@ -1,0 +1,196 @@
+From d740c605d165753b1d549c39b5670abab3d12e37 Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Mon, 9 Nov 2026 10:49:37 +0000
+Subject: [PATCH] dev.venues@PrompTugal.angelo: the share row on every public
+ page and the end of each article (backlog 0o)
+
+Draft, not run: this session could not run the newsroom's build or gate.
+Changes: features/share.mjs (row, decorate, gate check), assets/share/,
+the share words in data/site/site.json, one ${page.share} line in
+lib/shell.mjs. Undo: delete those and the line.
+
+Agent: dev.venues@PrompTugal.angelo
+Issue: WS-08
+For: dev@PrompTugal.dinis
+---
+ assets/share/share.css            | 16 +++++++
+ assets/share/share.js             | 31 ++++++++++++
+ data/site/site.json               |  3 +-
+ newsroom/build/features/share.mjs | 79 +++++++++++++++++++++++++++++++
+ newsroom/build/lib/shell.mjs      |  1 +
+ 5 files changed, 129 insertions(+), 1 deletion(-)
+ create mode 100644 assets/share/share.css
+ create mode 100644 assets/share/share.js
+ create mode 100644 newsroom/build/features/share.mjs
+
+diff --git a/assets/share/share.css b/assets/share/share.css
+new file mode 100644
+index 0000000..57124d6
+--- /dev/null
++++ b/assets/share/share.css
+@@ -0,0 +1,16 @@
++/* share.css: the share row (newsroom/build/features/share.mjs, assets/share/share.js); the look follows "Save for
++ * offline" (an outlined pill); the one filled button is Share where it opens the phone's sheet. designer@ restyles. */
++.share { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 0; font: 600 13px/1 var(--sans); }
++.share-end { margin: 32px 0 8px; padding-top: 16px; border-top: 1px solid var(--rule-2); }
++.share-head { width: 100%; margin: 0 0 4px; font: 700 15px/1.3 var(--sans); color: var(--ink); }
++.share-list { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
++.share-list[hidden] { display: none; }
++.share-label { color: var(--ink-3); margin-right: 2px; }
++.share-to, .share-open { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border: 1px solid var(--rule-2); border-radius: var(--radius-pill); background: var(--paper); color: var(--ink); font: inherit; text-decoration: none; cursor: pointer; }
++.share-to:hover, .share-to:focus-visible, .share-open:hover, .share-open:focus-visible { border-color: var(--brand); color: var(--brand); }
++.share-open { background: var(--brand); border-color: var(--brand); color: var(--on-brand, #fff); }
++.share-open:hover, .share-open:focus-visible { color: var(--on-brand, #fff); filter: brightness(1.1); }
++.share-open[hidden], .share-copy[hidden] { display: none; }
++.share-collapsed .share-label { display: none; }
++.share-collapsed .share-list { width: 100%; }
++@media print { .share { display: none; } }
+diff --git a/assets/share/share.js b/assets/share/share.js
+new file mode 100644
+index 0000000..c4bd90f
+--- /dev/null
++++ b/assets/share/share.js
+@@ -0,0 +1,31 @@
++/* share.js: the share row (newsroom/build/features/share.mjs). The links work without it; this adds the one Share
++ * button (the phone's own share sheet where the browser has one, else it opens the list) and Copy link. Nothing is
++ * loaded or sent: the sheet and the links go only where the reader chooses. */
++(function () {
++    var rows = document.querySelectorAll('.share'); if (!rows.length) return
++    var narrow = window.matchMedia('(max-width: 640px)')
++    function say(r, t) { var s = r.querySelector('.share-said'); if (s) s.textContent = t }
++    function copy(r, b) {
++        var u = r.dataset.url
++        var done = function () { var l = b.querySelector('span'), o = l.textContent; l.textContent = b.dataset.copied; say(r, b.dataset.copied); setTimeout(function () { l.textContent = o }, 2000) }
++        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(u).then(done, function () { prompt('', u) })
++        else prompt('', u)
++    }
++    Array.prototype.forEach.call(rows, function (r) {
++        var open = r.querySelector('.share-open'), list = r.querySelector('.share-list'), c = r.querySelector('.share-copy')
++        if (c) { c.hidden = false; c.addEventListener('click', function () { copy(r, c) }) }
++        function fit() {
++            var collapse = narrow.matches || !!navigator.share
++            r.classList.toggle('share-collapsed', collapse)
++            open.hidden = !collapse
++            if (!collapse) { list.hidden = false; open.setAttribute('aria-expanded', 'false') } else if (open.getAttribute('aria-expanded') !== 'true') list.hidden = true
++        }
++        open.addEventListener('click', function () {
++            if (navigator.share) { navigator.share({ title: r.dataset.title, text: r.dataset.text, url: r.dataset.url }).catch(function () { }); return }
++            var on = open.getAttribute('aria-expanded') !== 'true'
++            open.setAttribute('aria-expanded', on ? 'true' : 'false'); list.hidden = !on
++        })
++        if (narrow.addEventListener) narrow.addEventListener('change', fit)
++        fit()
++    })
++})()
+diff --git a/data/site/site.json b/data/site/site.json
+index 4ba5516..fd3c92c 100644
+--- a/data/site/site.json
++++ b/data/site/site.json
+@@ -37,5 +37,6 @@
+   "repo": "https://github.com/PrompTugal/PrompTugal__News__Website",
+   "team_site": "https://web-summit.sgit.ai/",
+   "licence": "code Apache-2.0, text and data CC BY 4.0",
+-  "footer_note": "Edited by Dinis Cruz, Indi Gupte and Vicky Wang, made with AI agents. Web Summit is named only to say where we report from. Text CC BY 4.0, code Apache-2.0."
++  "footer_note": "Edited by Dinis Cruz, Indi Gupte and Vicky Wang, made with AI agents. Web Summit is named only to say where we report from. Text CC BY 4.0, code Apache-2.0.",
++  "share": { "label": "Share", "end": "Share this article", "copy": "Copy link", "copied": "Link copied", "targets": { "linkedin": "LinkedIn", "x": "X", "whatsapp": "WhatsApp", "email": "Email" } }
+ }
+diff --git a/newsroom/build/features/share.mjs b/newsroom/build/features/share.mjs
+new file mode 100644
+index 0000000..09d9f6e
+--- /dev/null
++++ b/newsroom/build/features/share.mjs
+@@ -0,0 +1,79 @@
++// The share row (spec: SGit-AI/SGit-AI__Website__Web-Summit people/angelo/proposals/share/spec-share.md, approved by
++// Angelo on 9 November 2026: LinkedIn, X, WhatsApp, Email, Copy link; top of every public page and the end of each
++// article). Built by dev.venues@PrompTugal.angelo, For: dev@PrompTugal.dinis.
++//   decorate   sets page.share (the shell draws it under the lead) and, on an article, adds the row again at the end
++//   assets     share.js (the phone's own share sheet, else the list; Copy link) and share.css
++//   validate   every public page has the row; each link is one of four hosts or mailto:, carries the page's canonical
++//              address and no utm_; no share script from another site
++// The links are plain and built here: they work with no script. Nothing is loaded from another site, nothing is sent
++// anywhere until the reader taps a link. Undo: delete this file, assets/share/, the share words in data/site/site.json
++// and the one ${page.share} line in lib/shell.mjs.
++import { noindex } from '../lib/seo.mjs'
++export const order = 97
++export const assets = { css: ['assets/share/share.css'], js: ['assets/share/share.js'] }
++const HOSTS = ['www.linkedin.com', 'twitter.com', 'wa.me']
++const NEVER = /^(login\/|account\/|profile\/|offline\/|404\.html$)/
++export const wanted = p => !p.raw && p.listed !== false && !noindex(p) && p.type !== 'account' && !NEVER.test(p.rel)
++const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
++const plain = s => String(s ?? '').replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/[*_`]/g, '').trim()
++const ICON = {
++    share: '<path d="M12 3v12M7 8l5-5 5 5M5 13v7h14v-7"/>',
++    linkedin: '<path d="M5 9v10M5 5v.01M10 19v-6a3 3 0 0 1 6 0v6M10 9v10"/>',
++    x: '<path d="M5 4l14 16M19 4L5 20"/>',
++    whatsapp: '<path d="M4 20l1.4-4A8 8 0 1 1 8 18.6z"/>',
++    email: '<path d="M3 6h18v12H3zM3 6l9 7 9-7"/>',
++    copy: '<path d="M9 9h11v11H9zM5 15H4V4h11v1"/>',
++}
++const svg = k => `<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[k]}</svg>`
++export function links(url, title, summary) {
++    const u = encodeURIComponent(url), t = encodeURIComponent(title)
++    return [
++        ['linkedin', `https://www.linkedin.com/sharing/share-offsite/?url=${u}`],
++        ['x', `https://twitter.com/intent/tweet?url=${u}&text=${t}`],
++        ['whatsapp', `https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`],
++        ['email', `mailto:?subject=${t}&body=${encodeURIComponent((summary ? summary + '\n\n' : '') + url)}`],
++    ]
++}
++export function row(page, ctx, where) {
++    const W = ctx.SITE.share, url = ctx.BASE + page.rel, title = page.title, summary = plain(page.summary)
++    const a = links(url, title, summary).map(([k, h]) => `<a class="share-to share-${k}" href="${esc(h)}" target="_blank" rel="noopener" data-share="${k}">${svg(k)}<span>${esc(W.targets[k])}</span></a>`).join('')
++    return `<div class="share share-${where}" data-url="${esc(url)}" data-title="${esc(title)}" data-text="${esc(summary)}">` +
++        (where === 'end' ? `<p class="share-head">${esc(W.end)}</p>` : '') +
++        `<button type="button" class="share-open" aria-expanded="false" hidden>${svg('share')}<span>${esc(W.label)}</span></button>` +
++        `<div class="share-list" role="group" aria-label="${esc(W.label)}"><span class="share-label">${esc(W.label)}</span>${a}` +
++        `<button type="button" class="share-to share-copy" data-share="copy" data-copied="${esc(W.copied)}" hidden>${svg('copy')}<span>${esc(W.copy)}</span></button>` +
++        `<span class="share-said visually-hidden" role="status" aria-live="polite"></span></div></div>`
++}
++export function decorate(page, ctx) {
++    if (!ctx.SITE.share || !wanted(page)) return
++    page.share = row(page, ctx, 'top')
++    if (page.type === 'article') {
++        const prev = page.postHtml, end = row(page, ctx, 'end')
++        page.postHtml = html => (prev ? prev(html) : html) + '\n' + end
++    }
++}
++export function validate(gate) {
++    const out = [], sitemap = gate.generated.has('sitemap.xml') ? gate.text('sitemap.xml') : ''
++    const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1].slice(gate.BASE.length)).filter(r => r.endsWith('.html') && !NEVER.test(r))
++    if (!locs.length) return ['share: no pages in sitemap.xml to check']
++    for (const rel of locs) {
++        if (!gate.generated.has(rel)) continue
++        const html = gate.text(rel)
++        if (/<meta name="page-type" content="account"/.test(html)) continue
++        if (!/<p class="twin">/.test(html)) continue                         // a raw page with its own markup (the investors' site)
++        const canon = (html.match(/<link rel="canonical" href="([^"]+)"/) || [])[1]
++        if (!/class="share share-top"/.test(html)) { out.push(`${rel}: no share row`); continue }
++        for (const [, k, h] of html.matchAll(/<a class="share-to share-([a-z]+)" href="([^"]+)"/g)) {
++            const href = h.replace(/&amp;/g, '&')
++            if (/utm_/i.test(href)) out.push(`${rel}: share link ${k} carries utm_`)
++            if (href.startsWith('mailto:')) { if (!decodeURIComponent(href).includes(canon)) out.push(`${rel}: email share without the canonical address`); continue }
++            let u; try { u = new URL(href) } catch { out.push(`${rel}: share link ${k} is not a URL`); continue }
++            if (!HOSTS.includes(u.host)) out.push(`${rel}: share link ${k} goes to ${u.host}`)
++            if (!decodeURIComponent(u.search).includes(canon)) out.push(`${rel}: share link ${k} does not carry ${canon}`)
++        }
++        if (/<script[^>]+src="https?:\/\/[^"]*share/i.test(html)) out.push(`${rel}: loads a share script from another site`)
++        if (/<meta name="page-type" content="article"/.test(html) && !/class="share share-end"/.test(html)) out.push(`${rel}: an article without the share row at its end`)
++        if (out.length > 20) { out.push('share: more than 20 problems, stopping'); break }
++    }
++    return out
++}
+diff --git a/newsroom/build/lib/shell.mjs b/newsroom/build/lib/shell.mjs
+index af85d91..f3e1d47 100644
+--- a/newsroom/build/lib/shell.mjs
++++ b/newsroom/build/lib/shell.mjs
+@@ -119,6 +119,7 @@ ${page.label ? page.label.replace(/@@UP@@/g, up) : ''}
+ ${crumb}
+ <h1${front ? ' class="visually-hidden"' : ''}>${esc(title)}</h1>
+ ${summary ? `<p class="lead${front ? ' visually-hidden' : ''}">${inline(summary)}</p>` : ''}
++${page.share || ''}
+ </header>
+ ${tocHtml}
+ <div class="body">
+-- 
+2.43.0
+

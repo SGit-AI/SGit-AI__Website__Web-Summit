@@ -1,20 +1,18 @@
 # dev.map@PrompTugal.angelo: STATE
 
-Sixteenth run, 8 November 2026 (20:15 to about 21:00 UTC). No new commit For: dev.map@ since run 15; every named backlog item of mine is done or waiting on Angelo. dashboard@ reviews.
+Eighteenth run, 9 November 2026 (06:21 to about 07:10 UTC). No new commits For: dev.map@ since run 17 except dashboard@'s review (863e35df, run 17's work on dev). Every backlog item of mine is built or waits on someone (below).
 
 ## Done this run (on workers/dev.map, for dashboard@ to review)
-- 0c3 (1), the phone: the map's playback at a quarter CPU, 390 px, three days, timeline open was 31 fps (47 closed). JavaScript is about 16% of the time; the rest is painting and layering the map's SVG (2,590 elements) each frame. Tried and dropped (no measurable change): containment on the timeline, a layer for the playhead overlay, content-visibility, no transitions on the lines. Kept: dayLabel from one cached Intl.DateTimeFormat, one label per UTC day (it built a formatter every frame): 33 to 34 fps. A canvas for the moving layer is the real fix: a question for the desk.
+- The map's tests on today's dev: 26 run, 25 pass. lvrepo failed: its pick, the newest newsroom exchange, is now pt:dinis:dev -> pt:dinis:conductor, both drawn at Dinis's person node, and a node to itself is not drawn. The test now picks an exchange between two people; live.js unchanged (9883ae34).
 
-## Run 14 (18:15 to about 19:40 UTC)
-- 0c3 (6), the timeline collapsed on its own (app.js, replay.js, data.mjs): closed by default, a "Show the timeline" button whether the map is open or not, remembered on this device (localStorage `ak-tl-open`); `tl=1` or the timeline's own filters (`r_*`) in the address open it, and an old `#replay` link lands with `tl=1`; closing drops them. Drawn only when open.
-- The data: every commit since 2 November (`replay.events`) left data.json for `replay-events.json` (extras in data.mjs; ignored by `people/angelo/app/.gitignore`), fetched once, only when the map or the timeline is opened. The first load of the command centre (any view): data.json 1,137 KB -> 858 KB, gzipped 307 KB -> 217 KB (-29%). With the map open the commits are still fetched (its playback needs them); the timeline's 9,000 marks are not drawn unless it is open. Test `tmtlc`; `rpfps` opens the timeline with `tl=1`.
-
-## Done in a parallel run (19:09 to 19:40 UTC, run 15)
-- 0c0, dev.work@'s hook in live.js (7751d4e, the desk's a2c8e4c7): host.lvGraph and the 'lv-graph' event; wv, wvdraw, wvlive and the lv tests pass on dev's tree. dev.work@ adds the switch next.
-- lvmsg is not broken: it needs three sealed messages and a shallow clone holds two; with `git fetch --depth=3000 origin dev` it passes.
-- Two runs overlapped (this schedule fired while run 14 was still working): before starting, fetch workers/dev.map and check its newest commit's time; if it is under an hour old and STATE has no "Last run" end, the other run may still be going: take an item it is not on.
+## Yesterday (runs 14 to 17)
+- 0c4 (6) RiskMandate's logo as big as PT's, 0c4 (4) the dial on the live view; 0c3 (1) phone playback 31 to 33-34 fps; 0c3 (6) the timeline collapsed; 0c0 dev.work@'s hook in live.js.
+- Two runs can overlap: before starting, fetch workers/dev.map and check its newest commit's time; if under an hour old and STATE has no "Last run" end, take an item the other run is not on.
 
 ## Open
+- The dial over six days is coarse with a mouse on a phone (about 30 minutes a pixel); the arrow keys step one minute. If Angelo wants finer: a 48-hour default with a "whole record" switch.
+- The work view (dev.work@'s work-live.js) does not follow the dial yet: it can listen for 'lv-time' (detail.back) on the host. For dev.work@.
+- PT News's stamp is always the cream one: live.js passes the function `light` (always true) instead of `light()`; left as Angelo knows it, a question for the desk.
 - lvlabel fixed in its test: the live clock follows the viewer's locale (12-hour in New York); the test assumed 24-hour and failed after 13:00 there.
 - Offline (sw.js): replay-events.json is stored only once it has been fetched, so the timeline and the playback work offline only after one online visit with the map or timeline open.
 - 0f's rest: build Angelo's pick of the fresh-session mark (options: `people/angelo/proposals/live-map/fresh-mark-options.svg`, A, B or C); the dashed ring stays until he picks.
@@ -24,5 +22,8 @@ Sixteenth run, 8 November 2026 (20:15 to about 21:00 UTC). No new commit For: de
 - For policy@: my lane leaves out this STATE file (people/angelo/map/**); dashboard@'s review carries it onto dev.
 
 ## Last run
-Pushing: the branch already holds workers/dev.map (the join), so push straight away; never rebase on it (this run a stopped rebase was pushed by mistake: ddfcbb38..1c407729 are copies of dev's commits, fixed forward by 4c58d9f6, a merge that keeps the tree).
-Started from dev, joined workers/dev.map with `git merge -s ours` (needs `git fetch --depth=300 origin dev workers/dev.map` first in a shallow clone; `--depth=6000 origin dev` for tmf and the replay tests). Gate with LANE_RANGE=<the join commit>..HEAD.
+Run 20, 9 November 10:15 to about 10:25 UTC: nothing new For: dev.map@ since run 19 (only dashboard@'s review e07215db, and dev@'s snapshot refreshes in people/angelo/app/), no backlog change; every item built or waiting (Open, above). Ledger line only; unsigned run log.
+Run 19, 9 November 08:19 to about 08:30 UTC: nothing new For: dev.map@ since run 18 (only dashboard@'s review, 1538c093, bringing run 18 onto dev) and no backlog change; every item is built or waits on Angelo, the desk or dev.work@ (Open, above). Ledger line only; unsigned run log.
+Run 18 ended about 07:10 UTC: 9883ae34 (lvrepo) and its STATE on workers/dev.map.
+Pushing: the branch already holds workers/dev.map (the join), so push straight away; never rebase on it.
+Started from dev, joined workers/dev.map with `git merge -s ours` (needs `git fetch --depth=300 origin dev workers/dev.map` first in a shallow clone; `--depth=6000 origin dev` for tmf and the replay tests). Gate with LANE_RANGE=<the join commit>..HEAD. The 26 map tests take over 10 minutes: run them in the background with a long timeout.

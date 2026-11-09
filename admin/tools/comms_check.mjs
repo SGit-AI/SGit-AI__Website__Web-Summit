@@ -10,7 +10,9 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 // agent names are <agent>@web-summit.<person>, where <person> is a member id in data/team.json: a name, not an address
 const PEOPLE = new Set(JSON.parse(fs.readFileSync(path.join(ROOT, 'data/team.json'), 'utf8')).members.map(m => m.id))
 // and, from 6 November, the PrompTugal agents: <role>@PrompTugal.<person> (Dinis's word: journalist@PrompTugal.dinis and five more)
-const agentName = m => { const d = m.match(/@(?:web-summit|PrompTugal)\.([a-z0-9-]+)$/); return !!d && PEOPLE.has(d[1]) }
+// the mobile teams' agents (9 November): <role>.<platform>@promptugal.ai and <role>@promptugal.ai.<person>; a real
+// mailbox on promptugal.ai (a person's name, no platform suffix) still fails (conductor@web-summit.dinis)
+const agentName = m => { const d = m.match(/@(?:web-summit|PrompTugal)\.([a-z0-9-]+)$/) || m.match(/@promptugal\.ai\.([a-z0-9-]+)$/) || m.match(/@(?:ios|android|mobile)\.PrompTugal\.([a-z0-9-]+)$/); if (d) return PEOPLE.has(d[1]); return /^[a-z][a-z0-9-]*(?:\.[a-z0-9-]+)*\.(?:android|ios|mobile)@promptugal\.ai$/.test(m) }
 const RULES = [
     // anchored at the start of a run (dev@web-summit.dinis, 5 November): the same matches on all 2,101 tracked text
     // files, but no retry from every character of a long base64 run (465 ms -> 182 ms)

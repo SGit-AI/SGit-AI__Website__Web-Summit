@@ -16,19 +16,15 @@ Backlog 0f2 (the work view) and 0f3 (the WhatsApp clip). **Approved** by Angelo 
 - `people/angelo/app/work-replay.js`: replay's 'ak-clock' to flights per frame (merged) and counts; seeks fly nothing. Test `wvreplay` (node).
 - **Replay: done** (c95bce6): mountMap() puts the work view on the Team map while it plays (the map's viewBox opened to 0.84 plus a 7% margin, squares on that rim, deliveries.json over the whole history); "Exchanges | Work" above the playback bar in app.js drawCollab, r_work=1 in the address. Test wvrp.
 
-## Built this run (13th)
-- d71e6ca8: the work switch filled when on; wvsw and wvrp really in the light theme (dashboard@'s a32ac287).
-- 49ce4f13: 0c4 (1): the exchanges no longer dimmed in the live work view; flights brighter (glow in the maker's colour).
-- 423f113f: 0f3: "⤓ Download clip" and Shape under the map's playback bar (clip-button.js; replay.js flow().step; work-replay clock()). Test clipbtn (ffprobe).
-- dfe3d62d: 0c4 (3): "Messages | Workstreams | Deliverables" in live and playback; workstreams.json (deliveries.mjs readIssues/packIssues); work.js variant(); spec part 3. Tests ws, wssw, wsrp.
-
 ## Open
+- **Review: nothing waiting.** Everything up to the 22nd run is on dev (dashboard@'s 7853600c); my branch differs from dev only by the 23rd and 24th runs' STATE and ledger lines.
+- **Branch:** the 14th run's 36 copies of dev's commits are resolved: the 15th run's merge (45253ee) has origin/dev's tree plus my own work, so the branch differs from dev only by my files. Merge origin/dev, never rebase.
+- **Seen:** in a 440 px pop-out live.js's layout switch sits over the upper right square (WS-14 / the team site): dev.map@'s furniture, told in b62ea65e.
 - **Lane:** policy@ turned check 21 into a FAIL; lanes.json still has `writes: []` for me. d71e6ca8 and 49ce4f13 went out without Outside lines (already pushed, no force-push): the reviewer's commit must carry them. From 423f113f every commit of mine carries its own Outside lines. Gate my own range: LANE_RANGE=<my first commit of the run>^..HEAD.
 - **0f3 proof:** Angelo sends a clip to himself on WhatsApp on his iPhone; the fallback in a real Safari 16 not checked.
 - **0c4 questions (spec part 3), via the desk:** the nine squares fixed over the data's span (built) or per window; retire "Agents and their work".
-- Polish, from dashboard@'s 2e0eac44 (material): on the Team map the name pills use the rows layout with long leaders; try beside the squares at 1280.
-- Testing: merge origin/dev into the branch at the start of a run (this run: 4d9369f).
-- Other repositories (the apps): `deliveries-repos.json` from the snapshot, later.
+- Testing: merge origin/dev into the branch at the start of a run (16th run: 51d667fe).
+- **The apps' repositories (spec rule table, last row): question to the desk, 15th run.** Read 9 November 00:50: PrompTugal__App__iOS dev, 1,141 commits, no Agent: line (makers "Claude", a bot): nothing to draw without inventing a maker. PrompTugal__App__Android dev, 71 commits, 68 with Agent: <role>@promptugal.ai (conductor.android, security.android, release.android, play.android ...), For: Dinis: not <role>@PrompTugal.<person>, so no roster person; repos-snapshot.mjs drops them too (0 events). Build waits on how to name them (Dinis's, as pt:dinis:<role>, or listed as their own group).
 
 ## Last run
-Thirteenth run, 8 November 22:51 to about 23:30 UTC: the desk's efab3a6 (pushed by riskmandate-angelo, checked) gave 0c4 (1) and (3); dashboard@'s a32ac287 (material) the polish. Four commits on workers/dev.work, every test named in them PASS.
+Twenty-fourth run, 9 November about 10:51 to 11:00 UTC: spec-new-agents.md's last commit checked with pushed-by.mjs --last-touch (76bc54fa, riskmandate-angelo, ANGELO). No new commits For me from the desk, runner.conductor or dev@ since the 23rd run; the backlog has no new item for me (0f2, 0f3, 0c4 rows unchanged). Read as material: conductor@web-summit.dinis's 3bfbc8c7 (Dinis's decisions of 9 Nov 10:55), nothing in my job. Merged origin/dev. Every item of mine (0f2, 0f3, 0c4 (1, 3, 5)) is built and on dev; the rest waits on the desk (0c4 questions, the apps' naming) and Angelo (the WhatsApp proof). Sixth ledger-only run in a row: the hourly schedule is the desk's and Angelo's call. No code changed.

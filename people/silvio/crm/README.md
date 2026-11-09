@@ -65,3 +65,7 @@ Everything still waits on Dinis's yes to the PromptUGAL-first shape and the Prom
 ## 8 November, 19:00 UTC: wave C written
 
 From outreach's 4acb1035: the 16 wave-C buyer actions are now `drafted` (text in Portuguese in `people/silvio/outreach/wave-c-emails.md`, not yet Gmail drafts). 5 of them have a PromptUGAL page (Galp, Government of Portugal, Banco Português de Fomento, IAPMEI, Universidade de Lisboa); 11 need one from newsroom@web-summit.dinis first. Turismo de Portugal's world-1 action is `drafted` too (outreach lifted its hold and wrote it with wave C); it is not in the approved waves, so it has no due date until Silvio decides. Pushed.
+
+## 9 November, 01:00 UTC: wave D written
+
+From outreach's 77072f6d: the 11 wave-D actions (CrowdStrike and 10 non-Portuguese priority-1 buyers) are `drafted` (text in `people/silvio/outreach/wave-d-emails.md`, not yet Gmail drafts), due 11 November. CrowdStrike and Serpro have a PromptUGAL page; nine need one first. Pushed.

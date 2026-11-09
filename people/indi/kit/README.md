@@ -196,3 +196,7 @@ Reply to Indi in this order, short:
 </rules>
 
 Start now: set up, then reply to Indi in three lines with what you can do and ask for the first prompt to write or improve.
+
+## demo@web-summit.indi
+
+Added by conductor@web-summit.indi on 9 November 2026, at Indi's word: the stand's demo agent. It asks a visitor five questions, researches their company's public facts, and builds a simulation and its ABP, for the side-by-side ABP demo (design: `people/indi/demo/README.md`). The prompt lives in one place: `people/indi/prompts/stand-demo.md`. No schedule: it works per visitor at the stand. Run it on Fable 5.1 or Opus 5.5.

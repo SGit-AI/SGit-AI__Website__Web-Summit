@@ -99,5 +99,13 @@
   "status": "running",
   "schedule": "none: works when Indi asks; run on Opus 5.5",
   "note": "Prompt in people/indi/kit/README.md; library in people/indi/prompts/. Added 8 November 2026 at Indi's word. Started 8 November 2026, about 23:55 UTC; session key prompter-indi (sha256:87b59007a5fd4843) in data/keys.json."
+ },
+ {
+  "name": "demo@web-summit.indi",
+  "job": "at the stand: asks a visitor five questions, researches their company's public facts, and builds a simulation and its ABP for the side-by-side ABP demo",
+  "session": "Claude Code session in Indi's account, on the stand laptop or iPad",
+  "status": "planned",
+  "schedule": "none: at the stand, per visitor; Fable 5.1 or Opus 5.5",
+  "note": "Design in people/indi/demo/README.md; prompt in people/indi/prompts/stand-demo.md. Added 9 November 2026 at Indi's word. The runner reuses Angelo's ABP demo engine, with his yes."
  }
 ]
