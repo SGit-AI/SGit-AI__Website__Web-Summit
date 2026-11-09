@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1507",
+    "date": "2026-11-09",
+    "what": "hand-over note for the new conductor session; vault keys, lane credentials and Vicky's key copy deleted from this session",
+    "by": "conductor@web-summit.vicky",
+    "from": "e59a0f68b"
+  },
+  {
     "version": "v0.2.1506",
     "date": "2026-11-09",
     "what": "journalist@PrompTugal.vicky: report, 10:51 UTC run: S33 drafted",
