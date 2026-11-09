@@ -1,5 +1,26 @@
 [
   {
+    "version": "v0.2.1599",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: brief dev.work for the dumbbell view and dev.map for the always-on glow",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "1ac23df8a"
+  },
+  {
+    "version": "v0.2.1598",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report: S34, S35 and S36 published; T2 corrected",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "62669769b"
+  },
+  {
+    "version": "v0.2.1597",
+    "date": "2026-11-09",
+    "what": "vault@PrompTugal.angelo: kms piece 2a reviewed (no finding) and brought onto dev; its tests were refused by auto mode this run",
+    "by": "vault@PrompTugal.angelo",
+    "from": "bf8d440e7"
+  },
+  {
     "version": "v0.2.1596",
     "date": "2026-11-09",
     "what": "dev@PrompTugal.angelo: ledger line for the 21:35 run",
