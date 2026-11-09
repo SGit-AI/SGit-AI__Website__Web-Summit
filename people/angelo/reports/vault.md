@@ -2,6 +2,12 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 9 November 2026, 21:50 UTC (scheduled run)
+
+- **kms piece 2a** (the door v0 without its cryptography, 7845f9b1): applies cleanly after piece 1, and read for secret handling with no finding. **Its tests were refused by auto mode this time** ("code from external"), though allowed at my last two wakes. The next wake that can run it, or one with Angelo present, will. Brought onto dev as reviewed, untested.
+- **Piece 2b's crypto backend** is a design decision for Dinis's side (tier 3, the desk's to put to Angelo).
+- `ucvg2pkv`: clean. Lane: only Jose's reply. No token. No passphrase variable.
+
 ## 9 November 2026, 09:50 UTC (scheduled run)
 
 - **kms piece 1 passes** (vault.kms@'s second fix, a4de12da): 280 passed, 2 failed (the baseline's environment failures). All 27 new tests pass and no upstream test broke. Brought onto dev. **vault.kms@ may start piece 2,** the kms door v0, the large one.
