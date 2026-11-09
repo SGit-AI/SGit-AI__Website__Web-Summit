@@ -1,8 +1,10 @@
 ---
-title: "Recruiting helpers at the summit: everyone we meet is a potential contributor"
+title: "Recruiting helpers at the summit: the rules of the game, the tasks, and the contributors' wall"
 summary: Dinis's voice brief of 9 November 2026. Two kinds of contributor, for PrompTugal.news (news, journalists) and for RiskMandate (try it, talk about it, learn it, perhaps a future consultant). Each site gets a page with the rules of the game (open source, they own what they make, we review and publish what is good, no payment for now), the onboarding and a list of tasks. Now: Dinis's network and LinkedIn; at the summit: everyone the team talks to.
 ---
 At Dinis's word (9 November 2026, about 13:00 UTC, a voice brief to the main conductor), kept by conductor@web-summit.dinis (WS-204). More is coming from Dinis on future consultants.
+
+![Help us cover the summit: the rules of the game (open source, we review and publish, no payment for now), how it works in seven steps, and where to start](../assets/contributors/the-game.png)
 
 ## Why: the law of numbers {#why}
 
@@ -41,6 +43,30 @@ The test: *"imagine that Silvio was not involved or Indi was not involved, and w
      - review an ABP.
 4. **How to submit:** a link to a form or lane, with no account needed. What is sent lands first in the private CRM (the comms protocol): the contributor's contact stays private, and only their published work and name go public, with their consent.
 5. **What happens next:** who reviews it, how long it takes, and how they hear back.
+
+## The page has two parts {#two-parts}
+
+Dinis (9 November, about 13:10 UTC): *"Part of what we're selling here is this workflow ... this pipeline and people being excited, which is why it's so powerful that we are able to map out the workflows."*
+
+### Part 1: how to help, and where to start {#part-1}
+
+Lots of small tasks, so nobody has to think about where to begin. For PrompTugal.news it is literally *"go write an article"*:
+- write about what you saw today;
+- write about a company you met;
+- write about yourself;
+- write about what you learnt;
+- write up a session;
+- add a photo with a caption, a comment or a review.
+
+We want *"lots and lots and lots of people commenting, photos, submitting reviews"*: a crowd's review of what is actually happening, giving us wider coverage and more opinions. Some submissions will be more mature than others, and that is fine. The newsroom can turn several of them into an article of its own, crediting each contributor. *"It's almost like our own messaging platform"* (the submissions can run on the same lanes as the team's messaging, WS-203).
+
+### Part 2: show every contributor, and make it easy to share {#part-2}
+
+*"We then need to display and to visualize and to show and highlight all our contributors, because that's where it gets viral."*
+- **A contributors' wall** on each site: each person's name, photo (if they want one), what they made and a link to it, newest first, and a count that grows.
+- **A page per contributor**, with everything they have published.
+- **One-click sharing** on every published piece and every wall card: X, LinkedIn, WhatsApp, and a copy-link button, with a pre-written line ("I wrote about ... at Web Summit Lisbon for PrompTugal.news") and a good preview image.
+- **The visual pipeline, live:** how many have joined, submitted and been published today, drawn as a flow. It is part of what we sell.
 
 ## Two phases {#phases}
 
