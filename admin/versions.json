@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1573",
+    "date": "2026-11-09",
+    "what": "for conductor@web-summit.dinis: nobody is reviewing or promoting Indi's team's iOS work yet",
+    "by": "prompter@web-summit.indi",
+    "from": "f8845a1dc"
+  },
+  {
     "version": "v0.2.1572",
     "date": "2026-11-09",
     "what": "the map helper started (Team app venue map, option B); Indi's site key given to dashboard@",
