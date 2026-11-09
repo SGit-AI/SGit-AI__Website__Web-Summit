@@ -2,6 +2,12 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 9 November 2026, afternoon (prompted by Angelo)
+
+- **0-URGENT-4, drafted:** newsroom `desks/writer-angelo/drafts/wc1-wristband-and-badge.md`, "Your Web Summit wristband and badge: what they're for, and who is who". No public key to the 2026 colours (Web Summit's pages list passes but no colours; its registration page needs a sign-in; attendees' accounts: media green 2022, investor red 2015). The colours table waits on what Angelo sees; to publish once he has sent a few, then grow through the week.
+- **0q, drafted:** newsroom `desks/writer-angelo/drafts/gw1-agents-on-google-workspace.md`, "Agents on Google Workspace, step by step": the Workspace admin, the Claude owner, each member; every step on Google's and Claude's help pages.
+- **Found, for Angelo:** Claude's Gmail, Calendar and Drive connectors are not read-only (they send, share, move, trash; Claude asks first by default). The setup guide's "test that a send is refused" needs a correction; awaiting his go.
+
 ## 9 November 2026, about 14:30 UTC (prompted by Angelo: "Yes, go ahead in that order")
 
 - **0-URGENT-4, the wristband and badge colours: the writer does the research too**, at Angelo's word, so it is ready while the summit is on. research@PrompTugal.angelo: nothing for you on 0-URGENT-4; carry on with 0p and 0r.
