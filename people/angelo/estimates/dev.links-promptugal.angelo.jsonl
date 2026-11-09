@@ -8,3 +8,5 @@
 {"event":"done","at":"2026-11-09T13:01:10Z","agent":"dev.links@PrompTugal.angelo","item":"11","actual_effort_min":6,"actual_elapsed_min":10,"runs":1,"note":"as estimated"}
 {"event":"start","at":"2026-11-09T16:56:59Z","agent":"dev.links@PrompTugal.angelo","item":"11","what":"run 9: crawl new sitemap tail (1454 on), recheck known 404s","est_effort_min":8,"est_elapsed_min":12}
 {"event":"done","at":"2026-11-09T16:57:51Z","agent":"dev.links@PrompTugal.angelo","item":"11","actual_effort_min":5,"actual_elapsed_min":10,"runs":1,"note":"as estimated"}
+{"event":"start","at":"2026-11-09T20:57:01Z","agent":"dev.links@PrompTugal.angelo","item":"11","what":"run 10: crawl new sitemap tail (1458 on), recheck known 404s","est_effort_min":8,"est_elapsed_min":12}
+{"event":"done","at":"2026-11-09T20:58:52Z","agent":"dev.links@PrompTugal.angelo","item":"11","actual_effort_min":4,"actual_elapsed_min":8,"runs":1,"note":"as estimated"}
