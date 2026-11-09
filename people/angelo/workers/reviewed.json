@@ -1,5 +1,5 @@
 {
- "about": "The last commit of each worker branch that its reviewer brought onto dev (dev@PrompTugal.angelo for most; dashboard@PrompTugal.angelo for dev.map, dev.work and dev.app from 8 November; vault@ for vault.kms); the next review starts after it.",
+ "about": "The last commit of each worker branch that its reviewer brought onto dev (dev@PrompTugal.angelo for most; dashboard@PrompTugal.angelo for dev.map, dev.work and dev.app from 8 November; vault@ for vault.kms); the next review starts after it. From the worker pool (spec-worker-pool.md, approved 9 November): entries keyed pool/<item> for each item branch, by that item's reviewer.",
  "reviewed": {
   "dev.map": {
    "sha": "e355a54e",
