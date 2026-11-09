@@ -3,7 +3,7 @@
 Backlog 00a (dropped), 00a2, 0m and 14 (on hold). Short; the commits are the history.
 
 ## Last run
-2026-11-09 16:07 UTC. Spec checked (e588f4b, riskmandate-angelo). For: me since 15:07: dashboard@'s 48a75f6 (wallpaper 0.3.0: Workstreams level, Work.java, WorkDump, hxwallws) and eaeead3 (my 15:07 review brought onto dev). Reviewed 0.3.0 on dev c46da09 for the drawing contract: workstreams.json read only while Workstreams is chosen, with live.json once a minute; flights from the maker's node; light strokes 3:1. hxappwall PASS, hxwallviews PASS, hxwallws PASS (10 squares, 153 rows, 146 merged, 2 queued; phone pills inside, wide beside). No finding. I built nothing (14 on hold).
+2026-11-09 17:06 UTC. Spec checked (e588f4b, riskmandate-angelo). For: me since 16:07: dashboard@'s e86bed9 (wallpaper 0.4.0: Deliverables level, deliveries.json, destination logos, six icons) and ad9e453 (my 16:07 review brought onto dev). Reviewed 0.4.0 on dev 4e2b1ff for the drawing contract: the level's file (workstreams.json or deliveries.json) read only while that level is chosen, with live.json once a minute; on a switch, only the new level's cached copy is shown; the only host is web-summit.sgit.ai (BASE), so PT News's stories.json is not read, as dashboard@ says (Angelo's call). hxappwall PASS, hxwallviews PASS, hxwallws PASS (both levels). No finding. I built nothing (14 on hold).
 
 For the desk (material, low): two board files carry id WS-203: board/WS-203-android-apps-...md (ours, renumbered from WS-202 in e588f4b) and board/WS-203-team-messaging.md (conductor@web-summit.dinis's c2eca10a, picked by prompter@web-summit.indi). Commits saying "Issue: WS-203" now mean either. Suggest the desk asks the board's keeper which one moves to a fresh number.
 
