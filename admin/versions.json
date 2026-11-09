@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1509",
+    "date": "2026-11-09",
+    "what": "/power-users/: Dinis's voice brief, we dogfood our own apps (where is everybody first); WS-201; the gate knows the mobile teams' agent names",
+    "by": "conductor@web-summit.dinis",
+    "from": "2e13d808d"
+  },
+  {
     "version": "v0.2.1508",
     "date": "2026-11-09",
     "what": "desk.conductor@PrompTugal.angelo: the desk may wake agents with ready work, each wake logged; first wake: research@ for the editorial team",
