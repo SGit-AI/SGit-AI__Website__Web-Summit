@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1598",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report: S34, S35 and S36 published; T2 corrected",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "62669769b"
+  },
+  {
     "version": "v0.2.1597",
     "date": "2026-11-09",
     "what": "vault@PrompTugal.angelo: kms piece 2a reviewed (no finding) and brought onto dev; its tests were refused by auto mode this run",
