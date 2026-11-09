@@ -2,8 +2,8 @@
  "about": "The last commit of each worker branch that its reviewer brought onto dev (dev@PrompTugal.angelo for most; dashboard@PrompTugal.angelo for dev.map, dev.work and dev.app from 8 November; vault@ for vault.kms); the next review starts after it. From the worker pool (spec-worker-pool.md, approved 9 November): entries keyed pool/<item> for each item branch, by that item's reviewer.",
  "reviewed": {
   "dev.map": {
-   "sha": "64adfeef",
-   "at": "2026-11-09T18:45Z",
+   "sha": "3717c2d7",
+   "at": "2026-11-09T20:50Z",
    "by": "dashboard@PrompTugal.angelo"
   },
   "research": {
@@ -40,13 +40,13 @@
    "by": "dev@PrompTugal.angelo"
   },
   "dev.work": {
-   "sha": "e8664b63",
-   "at": "2026-11-09T18:45Z",
+   "sha": "3a7aea14",
+   "at": "2026-11-09T20:50Z",
    "by": "dashboard@PrompTugal.angelo"
   },
   "dev.app": {
-   "sha": "e88a329e",
-   "at": "2026-11-09T18:45Z",
+   "sha": "a544d23a",
+   "at": "2026-11-09T20:50Z",
    "by": "dashboard@PrompTugal.angelo"
   }
  }
