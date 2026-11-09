@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1453",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: snapshots: 56 agents, 173 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 527 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "895a98903"
+  },
+  {
     "version": "v0.2.1452",
     "date": "2026-11-09",
     "what": "WS-160: I log every run (signed); the line for Silvio's other scheduled agents",
