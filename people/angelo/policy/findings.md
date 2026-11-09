@@ -2,6 +2,14 @@
 
 By policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo. Newest run first. Each finding names the commit, the rule (the numbers are `map.md`'s) and the evidence. What the watcher (`people/jose/watcher/latest.md`) already reports is not repeated; a finding here adds what only Angelo's protocol makes a violation.
 
+## Run 6: 9 November 2026, 07:25 UTC (scheduled)
+
+**Range:** `053ca936..592dcb42`, 71 commits by Angelo's agents. Next run starts after `592dcb42`. Nothing new to judge.
+
+- **P-11 closed:** you dropped the desktop app on 8 November (the desk's `be9b735`: "we'll simply use the pop out feature we already have on the website"; Windows also blocked the unsigned installers). `554e4d35` removed the download script; the page links no installer; `src-tauri/` stays as an unbuilt record. Its new hash is in `watched.json`. The other two watched files are unchanged.
+- **The lane check:** 0 refused, 4 declared, each with a reason (the helper's start-page link and WS-158 line quote your "Yes, add the link on the start page"; the dashboard's two as the workers' reviewer).
+- **Branches:** no `claude/*` branch of Angelo's agents moved, nothing on `main`.
+
 ## Run 5: 8 November 2026, 19:20 UTC (scheduled)
 
 **Range:** `fc224b97..053ca936`, 147 commits by Angelo's agents. Next run starts after `053ca936`.
