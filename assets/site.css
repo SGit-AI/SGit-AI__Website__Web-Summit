@@ -688,6 +688,8 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
 .crm-plist li { margin: 0; padding: 0.6rem 0.8rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); }
 .crm-plist li.opened { border-color: var(--ok); background: var(--ok-soft); }
 .crm-plist li.not-you { opacity: 0.75; }
+.crm-plist.mine li:not(.opened) { display: none; }
+.crm-pfilter { margin: 0.6rem 0 0; }
 @media (max-width: 48rem) { .crm-cols { grid-template-columns: 1fr; } .crm-list { max-height: 18rem; } .crm-fig text { font-size: 15px; } }
 
 /* below 56rem the panel is a bottom sheet: its header (count and Submit) always shows; a tap opens the slots */
