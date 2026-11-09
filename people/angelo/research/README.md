@@ -26,3 +26,5 @@ Public briefs only: a company, or a person in their public professional role; ea
 | A LinkedIn reader's question on authority checks | [linkedin-question-authority-checks.md](linkedin-question-authority-checks.md) | for writer@ and the desk, 9 Nov; backlog 0-URGENT-2 (person not identifiable publicly) |
 
 All 18 on requests.md have a brief or a stub. Next: redo the thin ones (IFS assyst, Jam City, Iveco) and the stubs when a rendered read is possible, and refresh any company 48 hours before a booked meeting.
+
+Other work (not company briefs): [the editorial survey](../proposals/editorial/survey-editorial.md) and [the editorial spec](../proposals/editorial/spec-editorial.md), for backlog 0p.
