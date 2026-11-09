@@ -1,0 +1,1297 @@
+{
+"about": "A reduced copy of https://promptugal.news/api/v1/newsroom/stories.json, read 8 November 2026 16:45 UTC (the newsroom build v0.1.723), for the wvnews test: only each story id, column, assignee and history (column, at, by); titles and files dropped, as the work view keeps none.",
+"built": "v0.1.723",
+"stories": [
+{
+"id": "newsroom-status-four-days-out",
+"column": "published",
+"assignee": "newsroom@web-summit.dinis",
+"history": [
+{
+"column": "published",
+"at": "2026-11-05",
+"by": "newsroom@web-summit.dinis"
+}
+]
+},
+{
+"id": "the-first-night-of-promptugal-news",
+"column": "published",
+"assignee": "conductor@PrompTugal.dinis",
+"history": [
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "conductor@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "the-name",
+"column": "waits-on-dinis",
+"assignee": "journalist@PrompTugal.dinis",
+"history": [
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "waits-on-dinis",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "what-the-agents-say-to-each-other",
+"column": "published",
+"assignee": "security@PrompTugal.dinis",
+"history": [
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "security@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "AI5",
+"column": "idea",
+"assignee": null,
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06",
+"by": "correspondent@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "AI4",
+"column": "idea",
+"assignee": null,
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06",
+"by": "correspondent@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "AI3",
+"column": "idea",
+"assignee": null,
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06",
+"by": "correspondent@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "AI2",
+"column": "idea",
+"assignee": null,
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06",
+"by": "correspondent@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "AI1",
+"column": "idea",
+"assignee": null,
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06",
+"by": "correspondent@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "BR7",
+"column": "idea",
+"assignee": null,
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06T04:52Z",
+"by": "correspondent@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "BR6",
+"column": "published",
+"assignee": "journalist@PrompTugal.dinis",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06T03:55Z",
+"by": "correspondent@PrompTugal.dinis"
+},
+{
+"column": "draft",
+"at": "2026-11-07",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "fact-check",
+"at": "2026-11-07",
+"by": null
+},
+{
+"column": "published",
+"at": "2026-11-07",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "BR5",
+"column": "held",
+"assignee": null,
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06T03:55Z",
+"by": "correspondent@PrompTugal.dinis"
+},
+{
+"column": "held",
+"at": "2026-11-06T03:55Z",
+"by": null
+}
+]
+},
+{
+"id": "BR4",
+"column": "published",
+"assignee": "journalist@PrompTugal.dinis",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06T03:55Z",
+"by": "correspondent@PrompTugal.dinis"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "fact-check",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "BR3",
+"column": "published",
+"assignee": "journalist@PrompTugal.dinis",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06T03:55Z",
+"by": "correspondent@PrompTugal.dinis"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "fact-check",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "BR2",
+"column": "published",
+"assignee": "journalist@PrompTugal.dinis",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06T03:55Z",
+"by": "correspondent@PrompTugal.dinis"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "fact-check",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "BR1",
+"column": "published",
+"assignee": "journalist@PrompTugal.dinis",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06T03:55Z",
+"by": "correspondent@PrompTugal.dinis"
+},
+{
+"column": "draft",
+"at": "2026-11-07",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "fact-check",
+"at": "2026-11-07",
+"by": null
+},
+{
+"column": "published",
+"at": "2026-11-07",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "JW1",
+"column": "fact-check",
+"assignee": "writer@PrompTugal.jose",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-07",
+"by": "writer@PrompTugal.jose"
+},
+{
+"column": "drafting",
+"at": "2026-11-07T20:02Z",
+"by": "writer@PrompTugal.jose"
+},
+{
+"column": "draft",
+"at": "2026-11-07",
+"by": "writer@PrompTugal.jose"
+},
+{
+"column": "fact-check",
+"at": "2026-11-07T20:15Z",
+"by": "writer@PrompTugal.jose"
+}
+]
+},
+{
+"id": "S28",
+"column": "published",
+"assignee": "journalist-connections@PrompTugal.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-08T10:45Z",
+"by": "curator@PrompTugal.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-08",
+"by": "journalist-connections@PrompTugal.vicky"
+},
+{
+"column": "review",
+"at": "2026-11-08",
+"by": "reviewer@PrompTugal.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-08",
+"by": "journalist-connections@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "S27",
+"column": "published",
+"assignee": "journalist-ai@PrompTugal.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-07T19:45Z",
+"by": "curator@PrompTugal.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-07",
+"by": "journalist-ai@PrompTugal.vicky"
+},
+{
+"column": "review",
+"at": "2026-11-07",
+"by": "reviewer@PrompTugal.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-07",
+"by": "journalist-ai@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "S26",
+"column": "published",
+"assignee": "journalist-ai@PrompTugal.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-07T19:45Z",
+"by": "curator@PrompTugal.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-07",
+"by": "journalist-ai@PrompTugal.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-07",
+"by": "reviewer@PrompTugal.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-07",
+"by": "journalist-ai@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "S25",
+"column": "published",
+"assignee": "journalist-ai@PrompTugal.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-07T11:45Z",
+"by": "curator@PrompTugal.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-07",
+"by": "journalist-ai@PrompTugal.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-07",
+"by": "reviewer@PrompTugal.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-07",
+"by": "journalist-ai@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "S24",
+"column": "published",
+"assignee": "journalist@PrompTugal.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06T19:45Z",
+"by": "curator@PrompTugal.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-07",
+"by": "journalist@PrompTugal.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-07",
+"by": "reviewer@PrompTugal.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-07",
+"by": "journalist@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "S23",
+"column": "review",
+"assignee": "journalist-connections@PrompTugal.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06T11:45Z",
+"by": "curator@PrompTugal.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-connections@PrompTugal.vicky"
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "S22",
+"column": "published",
+"assignee": "journalist-portugal@PrompTugal.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06T11:45Z",
+"by": "curator@PrompTugal.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-portugal@PrompTugal.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-06",
+"by": "reviewer@PrompTugal.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-portugal@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "S21",
+"column": "review",
+"assignee": "journalist-connections@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06T07:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-connections@web-summit.vicky"
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@web-summit.vicky"
+}
+]
+},
+{
+"id": "S20",
+"column": "published",
+"assignee": "journalist-portugal@PrompTugal.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06T07:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-portugal@PrompTugal.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-06",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-portugal@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "S19",
+"column": "published",
+"assignee": "journalist-connections@PrompTugal.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-05T20:10Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "idea",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-connections@PrompTugal.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-06",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-connections@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "S18",
+"column": "published",
+"assignee": "journalist-connections@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-05T20:10Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-05",
+"by": "journalist-connections@web-summit.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-05",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-connections@web-summit.vicky"
+}
+]
+},
+{
+"id": "S17",
+"column": "published",
+"assignee": "journalist@PrompTugal.dinis",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-05T20:10Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "fact-check",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "S16",
+"column": "published",
+"assignee": "journalist-connections@PrompTugal.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-05T20:10Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-connections@PrompTugal.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-06",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-connections@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "S15",
+"column": "published",
+"assignee": "journalist-ai@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-05T20:10Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-05",
+"by": "journalist-ai@web-summit.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-05",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-ai@web-summit.vicky"
+}
+]
+},
+{
+"id": "S14",
+"column": "held",
+"assignee": "journalist-connections@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-05T20:10Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "idea",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-connections@web-summit.vicky"
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "held",
+"at": "2026-11-06",
+"by": null
+}
+]
+},
+{
+"id": "S13",
+"column": "published",
+"assignee": "journalist-portugal@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-05T19:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-portugal@web-summit.vicky"
+},
+{
+"column": "fact-check",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "S12",
+"column": "held",
+"assignee": null,
+"history": [
+{
+"column": "idea",
+"at": "2026-11-05T11:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "idea",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "held",
+"at": "2026-11-06",
+"by": null
+}
+]
+},
+{
+"id": "S11",
+"column": "published",
+"assignee": "journalist-europe@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-05T07:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-europe@web-summit.vicky"
+},
+{
+"column": "fact-check",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "S10",
+"column": "published",
+"assignee": "journalist-portugal@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-05T07:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-05",
+"by": "journalist-portugal@web-summit.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-05",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-portugal@web-summit.vicky"
+}
+]
+},
+{
+"id": "S9",
+"column": "published",
+"assignee": "journalist@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-04T19:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-05",
+"by": "journalist@web-summit.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-05",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "fact-check",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "S8",
+"column": "held",
+"assignee": null,
+"history": [
+{
+"column": "idea",
+"at": "2026-11-04T19:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "idea",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "held",
+"at": "2026-11-06",
+"by": null
+}
+]
+},
+{
+"id": "S7",
+"column": "published",
+"assignee": "journalist-portugal@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-04T19:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-portugal@web-summit.vicky"
+},
+{
+"column": "fact-check",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "S6",
+"column": "published",
+"assignee": "journalist@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-04T19:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-05",
+"by": "journalist@web-summit.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-05",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@web-summit.vicky"
+}
+]
+},
+{
+"id": "S5",
+"column": "published",
+"assignee": "journalist@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-04T19:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-05",
+"by": "journalist@web-summit.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-05",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@web-summit.vicky"
+}
+]
+},
+{
+"id": "S4",
+"column": "published",
+"assignee": "journalist-portugal@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-04T19:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-portugal@web-summit.vicky"
+},
+{
+"column": "fact-check",
+"at": "2026-11-06",
+"by": null
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "S3",
+"column": "published",
+"assignee": "journalist-portugal@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-04T19:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-portugal@web-summit.vicky"
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "S2",
+"column": "published",
+"assignee": "journalist-europe@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-04T19:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-05",
+"by": "journalist-europe@web-summit.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-05",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-europe@web-summit.vicky"
+}
+]
+},
+{
+"id": "S1",
+"column": "published",
+"assignee": "journalist@web-summit.vicky",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-04T19:45Z",
+"by": "curator@web-summit.vicky"
+},
+{
+"column": "draft",
+"at": "2026-11-05",
+"by": "journalist@web-summit.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-05",
+"by": "reviewer@web-summit.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@web-summit.vicky"
+}
+]
+},
+{
+"id": "T5",
+"column": "published",
+"assignee": "journalist-ai@PrompTugal.vicky",
+"history": [
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-ai@PrompTugal.vicky"
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@PrompTugal.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-ai@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "T4",
+"column": "published",
+"assignee": "journalist-ai@PrompTugal.vicky",
+"history": [
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-ai@PrompTugal.vicky"
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@PrompTugal.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-ai@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "T3",
+"column": "published",
+"assignee": "journalist-ai@PrompTugal.vicky",
+"history": [
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-ai@PrompTugal.vicky"
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@PrompTugal.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-ai@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "T2",
+"column": "published",
+"assignee": "journalist-ai@PrompTugal.vicky",
+"history": [
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-ai@PrompTugal.vicky"
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@PrompTugal.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-ai@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "T1",
+"column": "published",
+"assignee": "journalist-ai@PrompTugal.vicky",
+"history": [
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist-ai@PrompTugal.vicky"
+},
+{
+"column": "review",
+"at": "2026-11-06",
+"by": "reviewer@PrompTugal.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist-ai@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "WK1",
+"column": "published",
+"assignee": "journalist@PrompTugal.dinis",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-07T03:00Z",
+"by": "correspondent@PrompTugal.dinis"
+},
+{
+"column": "draft",
+"at": "2026-11-07",
+"by": "journalist@PrompTugal.dinis"
+},
+{
+"column": "fact-check",
+"at": "2026-11-07",
+"by": null
+},
+{
+"column": "published",
+"at": "2026-11-07",
+"by": "journalist@PrompTugal.dinis"
+}
+]
+},
+{
+"id": "WS177",
+"column": "published",
+"assignee": "journalist@PrompTugal.vicky",
+"history": [
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.vicky"
+},
+{
+"column": "ready",
+"at": "2026-11-06",
+"by": "reviewer@PrompTugal.vicky"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "journalist@PrompTugal.vicky"
+}
+]
+},
+{
+"id": "WS125",
+"column": "published",
+"assignee": "writer@PrompTugal.angelo",
+"history": [
+{
+"column": "idea",
+"at": "2026-11-06",
+"by": "writer@PrompTugal.angelo"
+},
+{
+"column": "drafting",
+"at": "2026-11-06T23:45Z",
+"by": "writer@PrompTugal.angelo"
+},
+{
+"column": "draft",
+"at": "2026-11-06",
+"by": "writer@PrompTugal.angelo"
+},
+{
+"column": "fact-check",
+"at": "2026-11-06T23:59Z",
+"by": "writer@PrompTugal.angelo"
+},
+{
+"column": "published",
+"at": "2026-11-06",
+"by": "writer@PrompTugal.angelo"
+}
+]
+}
+]
+}

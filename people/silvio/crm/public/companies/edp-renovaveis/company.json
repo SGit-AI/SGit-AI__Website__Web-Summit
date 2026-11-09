@@ -1,0 +1,41 @@
+{
+  "id": "edp-renovaveis",
+  "type": "company",
+  "kind": "company",
+  "name": "EDP Renováveis",
+  "aliases": [],
+  "website": "https://edp.com",
+  "what": null,
+  "category": "Energy & utilities (renewables)",
+  "country": "Spain/Portugal (EDP group; HQ Madrid, parent HQ Lisbon)",
+  "attending": "not listed at Web Summit Lisbon 2026: not on the lis26 event partners (pages 1 to 8) or speakers (pages 1 to 47) lists, checked 2026-11-05",
+  "attending_as": null,
+  "topics": [],
+  "ai_facts": [
+    {
+      "text": "Covered by EDP Group Responsible AI policy (GenAI only through approved models in controlled environments).",
+      "source": "https://edp.com/en/investors/corporate-governance/edp-responsible-ai-policy",
+      "read_at": "2026-11-05"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://edp.com/en/investors/corporate-governance/edp-responsible-ai-policy",
+      "read_at": "2026-11-05",
+      "supports": "the AI facts, sector, country; website (the company's own site)"
+    },
+    {
+      "url": "https://websummit.com/partners/event-partners-2026/",
+      "read_at": "2026-11-05",
+      "supports": "not among the event partners"
+    },
+    {
+      "url": "https://websummit.com/speakers/",
+      "read_at": "2026-11-05",
+      "supports": "not among the speakers"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/online.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

@@ -39,14 +39,14 @@ The PHP site's vault and its private key belong to that newsroom's own agents; w
 | # | Lane | Who writes | What one record says |
 |---|---|---|---|
 | 1 | **web-summit.sgit.ai page views** | `assets/telemetry.js` on every page | page, referrer host, time (to the minute), session id, screen class, language; **person and signature** when the browser has a key |
-| 2 | **web-summit.newsroom.sgit.ai page views** | the same script on the newsroom | the same; readers, not just the team: counts published |
+| 2 | **promptugal.news page views** | the same script on the newsroom | the same; readers, not just the team: counts published |
 | 3 | **Agent activity** | every agent, at the end of each run | the agent, its run, **what it read** (each URL, `md` or `html`, bytes), **what it did** (commits, releases, files written), and its token count if it has one (WS-148 has a script) |
 
 An agent record, as JSON (sealed to the lane's key like the others):
 
 ```
 {"type": "web-summit.agent-run/v1", "agent": "pm@web-summit.vicky", "run": "2026-11-04T15:30Z",
- "read": [{"url": "https://web-summit.newsroom.sgit.ai/brief/index.md", "as": "md", "bytes": 3120}],
+ "read": [{"url": "https://promptugal.news/brief/index.md", "as": "md", "bytes": 3120}],
  "did": [{"commit": "ab64608", "subject": "..."}], "tokens": 48211}
 ```
 

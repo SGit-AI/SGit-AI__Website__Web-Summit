@@ -1,0 +1,41 @@
+{
+  "id": "sonae",
+  "type": "company",
+  "kind": "company",
+  "name": "Sonae",
+  "aliases": [],
+  "website": "https://www.sonae.pt",
+  "what": null,
+  "category": "Retail & diversified group (MC/Continente, Worten)",
+  "country": "Portugal",
+  "attending": "not listed at Web Summit Lisbon 2026: not on the lis26 event partners (pages 1 to 8) or speakers (pages 1 to 47) lists, checked 2026-11-05",
+  "attending_as": null,
+  "topics": [],
+  "ai_facts": [
+    {
+      "text": "Published a Policy for the Responsible Adoption of AI, referencing the EU AI Act (Regulation 2024/1689).",
+      "source": "https://www.sonae.pt/fotos/governo_sociedade/politica_ia_sonae_5025581226a75bb2532089.pdf",
+      "read_at": "2026-11-05"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.sonae.pt/fotos/governo_sociedade/politica_ia_sonae_5025581226a75bb2532089.pdf",
+      "read_at": "2026-11-05",
+      "supports": "the AI facts, sector, country; website (the company's own site)"
+    },
+    {
+      "url": "https://websummit.com/partners/event-partners-2026/",
+      "read_at": "2026-11-05",
+      "supports": "not among the event partners"
+    },
+    {
+      "url": "https://websummit.com/speakers/",
+      "read_at": "2026-11-05",
+      "supports": "not among the speakers"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/online.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

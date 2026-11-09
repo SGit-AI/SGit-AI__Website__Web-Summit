@@ -1,0 +1,5 @@
+{
+  "about": "Settings for the cockpit's ranking in Angelo's command centre (people/angelo/app/, Needs me now), read by admin/build/cockpit.mjs. Angelo has no cockpit page of his own (his command centre is his one place, 5 November); one-click answers go, signed with his key, to his conductor's lane, which it drains at every hourly wake. Kept by dev@web-summit.angelo.",
+  "lane": "conductor@web-summit.angelo",
+  "drained": "every hour at :20, by conductor@web-summit.angelo"
+}

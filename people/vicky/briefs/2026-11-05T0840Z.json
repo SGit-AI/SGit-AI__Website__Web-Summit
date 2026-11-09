@@ -1,0 +1,84 @@
+{
+  "number": 4,
+  "date": "5 November 2026",
+  "kicker": "Web Summit 2026 · Vicky's conductor brief",
+  "title": "Thursday: two newsroom desks held overnight, now unblocked; vault keys for Dinis today",
+  "when": "5 November 2026, 08:40 UTC (the daily brief; since brief 3, 4 Nov 07:25 UTC)",
+  "by": "conductor@web-summit.vicky",
+  "headline": "Seven of your agents ran this morning and every release went live. The curator and the programme desk held their work at 07:45 and 08:15 because the newsroom's gate changed overnight; Dinis's conductor fixed the release script at 08:29, so the curator releases at 11:45 on its own, and the programme desk needs one word from you to release today's agenda before tomorrow. Dinis asks for your newsroom vault keys today (WS-153), and your photo needs your yes or no by Friday.",
+  "stats": [
+    {"n": "7 of 7", "label": "scheduled agents ran this morning; every release live"},
+    {"n": "2", "label": "desks holding work for a release (curator, programme)"},
+    {"n": "27", "label": "captures in the research vault (25 last night, 2 this morning)"},
+    {"n": "0", "label": "key mismatches on the keys page"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Release today's agenda (programme desk)",
+      "detail": "The programme desk's 08:15 agenda (209 items; one press conference moved to 10 Nov 11:30; 17 of the team's 80 sessions now at other times) is committed in the newsroom repository but not released, because the gate needed derived data outside its folder. Dinis's conductor changed release.sh at 08:29 (newsroom 24a9aba) so it derives the data itself. The curator will release at its 11:45 run; the programme desk does not run again until tomorrow 08:15.",
+      "options": ["open the programme session and say: pull dev in the newsroom repository and run release.sh again for your 08:15 agenda", "leave it until tomorrow 08:15 (the live agenda stays at yesterday's reading)"],
+      "recommend": "Open the programme session and say it: one line, and today's times go live."
+    },
+    {
+      "id": "2",
+      "ask": "WS-153, due today: your newsroom vault keys for Dinis's conductor",
+      "detail": "Dinis asks for the keys of the research vault and the interview shortlist vault, sent over vault@'s own inbox lane (the steps on /inbox/). The research vault's read key is already public on your vaults list. The shortlist goes only with your yes; you may send a read key (read only) instead of the vault key. Dinis needs to read the shortlist to pick from it (brief 9, decision 6).",
+      "options": ["shortlist: send its READ key only; research: point to the published read key", "shortlist: send nothing yet; research: point to the published read key", "send both full vault keys"],
+      "recommend": "The first: open the vault session and say: \"WS-153: send the shortlist vault's read key, not its vault key, to conductor@web-summit.dinis over your inbox lane as /inbox/ says, and record it on WS-153; for the research vault, say its read key is on people/vicky/vaults.json.\""
+    },
+    {
+      "id": "3",
+      "ask": "WS-163, by Friday: your photo on the site",
+      "detail": "Silvio's dev agent added photo.jpg to your folder for the command centre (256 px, no metadata). Security asks each person to say yes in their own words, or the file is removed and your initials come back.",
+      "options": ["yes, keep it", "remove it"],
+      "recommend": "Your choice; tell me in this session and I record your words in your onboarding notes."
+    }
+  ],
+  "you_asked": [
+    {"at": "4 Nov, about 21:05 UTC", "said": "Don't record WS-29 on the board yet ... Stop flagging these four as URGENT to me.", "done": "In inbox.md; pm@ and the dashboard followed it this morning (no URGENT, out of Needs me)", "where": "commit b7fea6d; reports/pm.md, reports/dashboard.md", "status": "done"},
+    {"at": "4 Nov, evening", "said": "programme@ now runs at 08:15 UTC daily", "done": "agents.json and the newsroom README; it ran at 08:15", "where": "commit f3ffb4f", "status": "done"},
+    {"at": "4 Nov, evening", "said": "Cancel the vault schedule for now ... Put any request for vault@ in my 08:30 brief", "done": "vault@ on demand; see For vault@ below", "where": "commit f793dc0", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "For vault@ (on demand)",
+      "items": ["WS-153: the newsroom vault keys for conductor@web-summit.dinis (f124bd1b, 4 Nov 21:31); ask 2 above. No reseal is waiting: no agent of yours has a new key since yesterday."]
+    },
+    {
+      "title": "What each agent did this morning",
+      "table": {
+        "head": ["Agent", "Run (UTC)", "What"],
+        "rows": [
+          ["researcher", "07:30", "2 captures in the research vault (ULisboa at the summit; Italy and Portugal in Beato); coe.int refuses automated reads"],
+          ["pm", "07:40", "Board health: 168 issues, 36 due today (25 with no owner), 69 overdue; WS-32 (sessions) has no owner and is the last input for WS-31"],
+          ["curator", "07:45", "Mapped the 2 new captures, 2 new story ideas; held for release (fixed at 08:29; releases at 11:45)"],
+          ["dashboard", "07:50", "Tables refreshed under your standing word; its question below"],
+          ["dev", "08:00", "Nothing built (as you asked); asks your word before it logs its runs with agent-log.mjs (a new rule from Dinis, 8511aa8)"],
+          ["logistics", "08:10", "The business cards are now 600 team cards with no names (WS-155); your personal card and the garments' collection are on the 13:00 for Dinis and Silvio"],
+          ["programme", "08:15", "Agenda of 209 items held for release (ask 1); the shortlist still all on the summit's schedule"]
+        ]
+      }
+    },
+    {
+      "title": "Also waiting on you, not urgent",
+      "items": [
+        "The dashboard's question: has dev@ been given its first tool? It has not; it builds nothing until you approve a plan in the dev session.",
+        "dev@ asks your word, in the dev session, before it starts logging each run with admin/tools/agent-log.mjs (the agents page, 5 Nov).",
+        "WS-149, today: the most important thing you did, for the stand-up's show page; tell me one line and I add it as your Highlight.",
+        "Your issues due today and tomorrow: WS-153 and WS-149 (today), WS-163 (Fri), WS-31 (Sat, pm@'s), WS-48 (logistics@'s); also listed, with no action: WS-25, WS-29, WS-41, WS-53."
+      ]
+    }
+  ],
+  "next": [
+    "11:45: the curator releases its map with the new release script.",
+    "12:50 and 17:50: my urgent relays, only if something needs you before a stand-up.",
+    "13:00 stand-up: your personal card and the garments' collection (logistics@'s items for Dinis and Silvio)."
+  ],
+  "sources": [
+    "people/vicky/reports/*.md (researcher, pm, curator, dashboard, dev, logistics, programme), 5 Nov 07:30 to 08:25 UTC",
+    "board/WS-153, WS-149, WS-163, WS-155 front matter and text at site v0.2.504",
+    "newsroom repository CLAUDE.md and commit 24a9aba (05 Nov 08:29)",
+    "deploy-pages runs on dev by riskmandate-vicky since 4 Nov 17:50; data/keys.json"
+  ]
+}

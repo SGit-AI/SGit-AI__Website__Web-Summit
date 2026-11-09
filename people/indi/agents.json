@@ -16,10 +16,11 @@
  },
  {
   "name": "dashboard@web-summit.indi",
-  "job": "keeps Indi's dashboard below the built block (people/indi/dashboard.md) and her to-do infographic's list (people/indi/todo/todo.json, from 4 November)",
+  "job": "keeps Indi's dashboard below the built block (people/indi/dashboard.md) and Indi's to-do infographic's list (people/indi/todo/todo.json, from 4 November)",
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
-  "planned_schedule": "07:30, 12:30 and 17:30 UTC (cron 30 7,12,17 * * *)"
+  "planned_schedule": "07:30, 12:30 and 17:30 UTC (cron 30 7,12,17 * * *)",
+  "note": "Holds Indi's site key (sha256:504685dc2b1cd9af) from 9 November 2026, at Indi's word, sealed to its key dashboard-indi by the conductor; in its session only."
  },
  {
   "name": "messaging@web-summit.indi",
@@ -83,5 +84,45 @@
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
   "note": "Started 4 November 2026 overnight by synthetic@web-summit.indi at Indi's word (WS-05), in its own Claude Code session, model Opus 5.5; tasks WS-06; prompt in people/indi/overnight/2026-11-04/ws-05-new-agents/PROMPTS.md."
+ },
+ {
+  "name": "social@web-summit.indi",
+  "job": "drafts one post a day for RiskMandate's LinkedIn page (company voice, plus a reshare line in Indi's voice), with a picture suggestion and dated sources, from a daily check of RiskMandate, Web Summit and the team's work; Indi posts (WS-126; LinkedIn only for now, Indi's word, 7 November)",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "note": "Started 7 November 2026, about 17:55 UTC, at Indi's word; first run the same evening (people/indi/social/2026-11-07.md). Session key social-indi (sha256:3ea5cb169a17cf02) in data/keys.json. Indi creates the 16:00 UTC scheduled task; this agent creates none.",
+  "schedule": "16:00 UTC daily (cron 0 16 * * *), a scheduled task firing into its own session, from 7 November"
+ },
+ {
+  "name": "prompter@web-summit.indi",
+  "job": "prompt engineering: writes new prompts and improves existing ones (especially rushed or garbled ones) so Indi's tasks get done in one or two prompts; works on Sonnet 5.5, Opus 5.5 and Fable 5.1",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "schedule": "none: works when Indi asks; run on Opus 5.5",
+  "note": "Prompt in people/indi/kit/README.md; library in people/indi/prompts/. Added 8 November 2026 at Indi's word. Started 8 November 2026, about 23:55 UTC; session key prompter-indi (sha256:87b59007a5fd4843) in data/keys.json."
+ },
+ {
+  "name": "demo@web-summit.indi",
+  "job": "at the stand: asks a visitor five questions, researches their company's public facts, and builds a simulation and its ABP for the side-by-side ABP demo",
+  "session": "Claude Code session in Indi's account, on the stand laptop or iPad",
+  "status": "planned",
+  "schedule": "none: at the stand, per visitor; Fable 5.1 or Opus 5.5",
+  "note": "Design in people/indi/demo/README.md; prompt in people/indi/prompts/stand-demo.md. Added 9 November 2026 at Indi's word. The runner reuses Angelo's ABP demo engine, with his yes."
+ },
+ {
+  "name": "infographic@web-summit.indi",
+  "job": "makes plain-word, pastel infographic pages on the team site at Indi's request, each tested on a stranger (a small sub-agent) before Indi sees it",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "planned",
+  "schedule": "none: works when Indi asks; Opus 5.5 for the first run, then Sonnet 5.5",
+  "note": "Prompt in people/indi/prompts/infographic-agent.md (prompter@web-summit.indi, 9 November 2026). Added at Indi's yes, 9 November."
+ },
+ {
+  "name": "conductor-map@web-summit.indi",
+  "job": "one-off helper: the venue map screen in the PrompTugal Team app (Apple Maps with our own venue drawing, option B of people/indi/wayfinding/05-venue-map.md) and venue.geojson",
+  "session": "Claude Code cloud session in Indi's account, started by the conductor",
+  "status": "running",
+  "schedule": "none: one task, then DONE.md",
+  "note": "Started 9 November 2026, about 17:41 UTC, at Indi's word. Reports to the conductor in people/indi/helpers/map/DONE.md."
  }
 ]

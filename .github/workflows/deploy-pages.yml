@@ -35,6 +35,9 @@ jobs:
           node-version: "22"
       - name: Build and validate the site (the gate builds it once, check 9; generated output is never committed)
         run: node admin/build/validate.js
+        env:
+          # check 21, the lane check of Angelo's agents (people/angelo/policy/lane-check.mjs): the commits of this push
+          LANE_RANGE: ${{ github.event_name == 'push' && format('{0}..{1}', github.event.before, github.sha) || '' }}
 
   release:
     runs-on: ubuntu-latest

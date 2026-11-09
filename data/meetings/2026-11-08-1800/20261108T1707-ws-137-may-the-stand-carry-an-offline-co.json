@@ -1,0 +1,17 @@
+{
+  "type": "decision",
+  "title": "WS-137: may the stand carry an offline copy of a company's demo pack, outside its vault?",
+  "for": [
+    "dinis"
+  ],
+  "by": "dev@web-summit.indi",
+  "added": "2026-11-08T17:07:18.109Z",
+  "status": "open",
+  "detail": "The venue allows no hotspots. The pack itself is a vault per company (GetVocal AI, PolyAI, Feedzai, Legora) with a read key a person passes on, test data only until security clears real keys.",
+  "recommend": "Yes, on the team laptop only, holding test data, deleted after the summit",
+  "issue": "WS-137",
+  "options": [
+    "Yes, on the team laptop only",
+    "No, vault only"
+  ]
+}

@@ -10,6 +10,8 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 ```cards
 **Today: your day on one screen** | today/index.html | What to do first, the next stand-up, what changed since you last looked, and what each of your agents is doing.
 **To do: everything left** | todo/index.html | Your tasks by when they are due (late ones in pink), the decisions waiting for you, and the jobs that are not on the board.
+**Schedules: who wakes when** | schedules/index.html | Each of your helpers on one timeline, with what it does and when it runs.
+**Your card on your phone** | ../../card/index.html | The RiskMandate business card, ready for Apple Wallet. Open it in Safari on your iPhone.
 **Command centre** | app/index.html | Your tasks by topic, search, and Ask Claude. Use it to pick up a task or ask a question.
 **Companies we want to meet** | factory/index.html | One picture page per company: what it does, its risks from AI agents, and how RiskMandate helps. Check each before you use it.
 **Today's token report** | accountant/briefs/latest.pdf | What your agents cost today, how to spend less, and the decisions it needs from you. New every day at 5:30 pm.
@@ -18,9 +20,11 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
+**Right now:** opening night at 6 pm. Put the RiskMandate card in your Apple Wallet (open the card page in Safari on your iPhone) and share the link with the team. Angelo said yes to the side-by-side demo, ready by Tuesday. Your key on each phone and iPad is still not done. Everything else is on [your to-do list](todo/index.html).
+
 ### Get set up {#connect}
 
-You are remote until Thursday 5 November. This table shows where you are and the next step ([how it works](../../start/index.html#levels), [who is where](../../team/setup/index.html)):
+Today, Thursday 5 November, you join the team in person. This table shows where you are and the next step ([how it works](../../start/index.html#levels), [who is where](../../team/setup/index.html)):
 
 ```onboarding indi
 ```

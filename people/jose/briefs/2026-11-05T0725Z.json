@@ -1,0 +1,103 @@
+{
+    "number": 8,
+    "date": "5 November 2026",
+    "kicker": "Web Summit 2026 · Jose's conductor brief",
+    "title": "Vote before 13:00; three decisions: the keys, the enum key, the helper's model",
+    "when": "5 November 2026, 07:25 UTC (scheduled wake; since brief 7, 4 November 17:25 UTC)",
+    "by": "conductor@web-summit.jose",
+    "headline": "Overnight: run logging (WS-160) for all your agents, run sheets for your two demos, QR codes on your meet page and brief, your issues tidied, and the watcher on the whole team. Before 13:00, Dinis's conductor asks everyone to vote on the stickers, which also tests the signed-ballot flow.",
+    "stats": [
+        {
+            "n": "13:00",
+            "label": "the sticker vote, and your stand-up item"
+        },
+        {
+            "n": "3",
+            "label": "asks"
+        },
+        {
+            "n": "3 of 8",
+            "label": "your agents measured by the accountant"
+        },
+        {
+            "n": "2,067",
+            "label": "page views drained (most of them an automated sweep)"
+        }
+    ],
+    "for_you": [
+        {
+            "id": "1",
+            "ask": "🗣️ Decide: how the observability vault keys travel (WS-154, with WS-156)",
+            "detail": "Your condition: the receiving conductor's person key; but Dinis's (sha256:c7ec751484fbf03d) is held by his conductor too (WS-138). Security's WS-156: a custodian instead. I hold the keys (and you do); none moves until you say. Details: board WS-154, WS-156.",
+            "options": [
+                "keep them held",
+                "seal to Dinis's person key",
+                "seal to the custodian WS-156 names, once it is named"
+            ],
+            "recommend": "Keep them held until WS-156 names the custodian, then seal to it."
+        },
+        {
+            "id": "2",
+            "ask": "✅ Approve: the enum key for WS-74's pending-count note",
+            "detail": "automation@ built an n8n flow that tells you how many feedback answers wait (998e857); it needs the lane's enum key, a secret, kept in n8n.",
+            "options": [
+                "give n8n the enum key",
+                "the vault agent counts on its runs and reports it; n8n never holds the key"
+            ],
+            "recommend": "The vault agent counts: it already drains that lane twice a day, so the key stays where it is."
+        },
+        {
+            "id": "3",
+            "ask": "✅ Approve: the accountant's first recommendation, the helper to Sonnet",
+            "detail": "The helper's ledger: 1 run, 142,884 tokens without cache reads, pass, Opus. Only 3 of 8 agents measured yet (people/jose/accountant/).",
+            "options": [
+                "yes, the helper to Sonnet now",
+                "wait for more runs"
+            ],
+            "recommend": "Yes: routine work, and your reviewer still checks every push. You change it in the helper's session."
+        }
+    ],
+    "you_asked": [],
+    "sections": [
+        {
+            "title": "Due today for you (from the board)",
+            "items": [
+                "WS-159 (the sticker vote): vote in your browser with your site key before 13:00, and drain the votes (you are one of four drainers); /stickers/vote/.",
+                "WS-154: your decision on the keys (ask 1).",
+                "WS-37: the end-to-end test of the page views with Angelo; announcing them waits on security's review.",
+                "WS-160: your agents log from their next runs (I already do); I record each on the issue once its first signed run shows.",
+                "WS-74: your word on the enum key (ask 2)."
+            ]
+        },
+        {
+            "title": "Blockers",
+            "items": [
+                "WS-37: security@web-summit.dinis's review of the page views (asked in 45e4b6e).",
+                "WS-108: only your own phone check (open both apps, scan both codes)."
+            ]
+        },
+        {
+            "title": "FYI",
+            "items": [
+                "13:00: your item proposing 15 site and UI issues to Angelo's and Dinis's dev agents; WS-129 and WS-34 still wait for Dinis and Angelo.",
+                "Dinis's conductor asks you to compare its observability page (/observability/) with yours and say what to keep from each (f47e088).",
+                "An automated sweep of the command centres from 03:05 to 05:08 (over 1,400 views, almost all webdriver); 59 failed signatures, all from automated browsers.",
+                "observability@web-summit.dinis sealed its observability vault key to your site key (89c5b9b); I can read it too, because I hold that key's private half (WS-138).",
+                "Filed for their owners: WS-161 (a gate check on duplicate issue numbers) and WS-162 (agent-log.mjs needs NODE_USE_ENV_PROXY=1 in a cloud session).",
+                "No new mentor note since 4 November 15:41; the watcher made no commit at 07:15."
+            ]
+        }
+    ],
+    "next": [
+        "12:20 run: record your 13:00 words; the agents' first WS-160 runs on the issue."
+    ],
+    "sources": [
+        "git log a5267fc..849c4be",
+        "commit f47e088 (conductor@web-summit.dinis, 04:38)",
+        "content/inbox.md; board/WS-154, WS-156, WS-159 (sticker vote), WS-160, WS-37, WS-74",
+        "people/jose/accountant/ledger/*.jsonl (the accountant, 07:22)",
+        "ws-observability-data drains 03:07 to 07:09",
+        "data/person-keys.json",
+        "commit 89c5b9b (observability@web-summit.dinis)"
+    ]
+}

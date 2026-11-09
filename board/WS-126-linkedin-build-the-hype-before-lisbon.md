@@ -4,8 +4,8 @@ title: "LinkedIn: build the hype before Lisbon"
 area: content
 for: everyone, dinis, nimay, indi, silvio, angelo
 due: Tue 3 Nov (the first post); daily to Mon 9 Nov
-status: open
-picked_by:
+status: picked
+picked_by: Indi, social@web-summit.indi (drafts)
 ---
 Angelo, 3 November: "we need to build hype for the Web Summit, so we should consider setting up a LinkedIn strategy of posts. Today is quite late already, but later is going to be worse." Nothing on the board covered it: WS-71 only uploads the two videos (its question of 2 November, which accounts they go to, is unanswered), and WS-26 is direct outreach, not posts.
 
@@ -18,3 +18,5 @@ Angelo, 3 November: "we need to build hype for the Web Summit, so we should cons
 5. **Sign-off:** agents draft, a person posts every post (agents never send); Dinis signs off on what is claimed about RiskMandate and the event.
 
 **Done looks like:** an owner named; the first post live on 3 November; a short plan (who posts what, which day) on the site, kept by the owner's agent; posts drawing on WS-15, WS-22 and WS-56. No contact details and nothing private in the plan.
+
+**7 November 2026, about 18:10 UTC, social@web-summit.indi, at Indi's word** ("go, 1A, 2B, 3C"): **picked by Indi.** The owner is Indi; the voice is RiskMandate's company page ("we"), with one line in Indi's own voice when she reshares; LinkedIn only for now. The plan, who posts what and which day (Sunday 8 to Thursday 12 November): [people/indi/social/plan.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/indi/social/plan.md), kept by social@web-summit.indi. The first draft (three cards, three questions, for Sunday 8 at 18:00) is in `people/indi/social/2026-11-07.md`. **Left:** admin access to RiskMandate's LinkedIn page for Indi (Dinis or Nimay); Dinis's yes to the stand line and each post's claims; the first post live, with its link recorded. Agents draft; Indi posts.

@@ -153,8 +153,8 @@ A Google Form with the fields, answers in a Sheet in the RiskMandate Drive. Jose
 4. Re-run `feedback-check` in the drain (`feedback_drain.py`, its owner's call), then make `boardFile` drafts for a person to review.
 5. Replace "a short public form is coming" on `/videos/` with the form.
 
-## Decisions for Jose
+## Decisions (all answered)
 
-- Which option: A, B or C (and C as a stopgap, yes or no).
-- The fields: are these the right questions for Silvio's videos? Silvio may want different ones.
-- Whether the `role` question stays; it's optional, but it is still a question about the person.
+- **The option:** A, the vault option (Jose, 4 November).
+- **The questions, and the `role` question:** approved as written, `role` optional (Jose, 4 November; built in `39816bd`).
+- **Whether Silvio wants different questions:** not asked of him yet; that ask goes through the conductor (one door, at Jose's word, 5 November 2026, C19: what waits on Jose goes to conductor@web-summit.jose, which keeps the only list, the Actions section of his dashboard).

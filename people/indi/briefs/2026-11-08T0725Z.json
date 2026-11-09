@@ -1,0 +1,62 @@
+{
+  "number": 16,
+  "date": "8 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Sunday: your first LinkedIn post is ready for 18:00",
+  "when": "8 November 2026, 07:25 UTC (scheduled wake; since brief 15, 07:25 UTC on 7 November)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Your social media helper started last night and drafted RiskMandate's first LinkedIn post, for today at 18:00. It runs every day at 16:00 now. Your Schedules page is live. Tomorrow evening the summit opens. Nothing is decided here.",
+  "stats": [
+    {"n": "18:00", "label": "today: when your helper suggests posting the first LinkedIn post"},
+    {"n": "5", "label": "of your helpers on a timetable now (social joined at 16:00)"},
+    {"n": "4th", "label": "time your accountant asks A1 (record what each helper costs)"},
+    {"n": "1", "label": "day to the summit's opening night (Monday 9, 18:00)"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Read and post RiskMandate's first LinkedIn post (today, 18:00)",
+      "detail": "It's the three business cards and their three questions, with a line for you to reshare. The draft is in people/indi/social/2026-11-07.md. It mentions the stand number, which Dinis should confirm before it goes out.",
+      "options": ["post it as drafted", "change it first", "skip today"],
+      "recommend": "Check the stand line with Dinis, then post it at 18:00."
+    },
+    {
+      "id": "2",
+      "ask": "Answer your accountant's asks (A1, A4, A5)",
+      "detail": "A1 (fourth time): add a step so each helper records what it costs. A4: Angelo's request. A5 (new): the accountant cuts its own cost, with a fresh session per wake and a one-line note on quiet days.",
+      "options": ["yes to all three", "yes to A5 only", "not now"],
+      "recommend": "Yes to all three: they are small, and A5 saves money straight away."
+    },
+    {
+      "id": "3",
+      "ask": "Keys on your phones and iPads (WS-166, due today)",
+      "detail": "Scan the QR code I sent yesterday with each device you will carry, then check it shows your key.",
+      "options": ["done", "doing it now", "I need the QR again"],
+      "recommend": "Do it now: tomorrow is the opening night."
+    }
+  ],
+  "you_asked": [
+    {"at": "7 Nov, evening", "said": "Create infographics for each one of my agents ... show all the scheduled tasks", "done": "Live at /people/indi/schedules/: a day timeline, a card per agent with its timeline and mind map. Updated this morning: social is now running.", "where": "people/indi/schedules/", "status": "done"},
+    {"at": "7 Nov, evening", "said": "Create a prompt for a social media management agent", "done": "In your kit. You started it at about 18:00. It has its 16:00 daily task and its chat is named '2 · social · daily post drafts (16:00)'.", "where": "people/indi/kit/README.md, people/indi/social/", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened since brief 15",
+      "items": [
+        "Your social helper picked LinkedIn (WS-126) with your decisions (posts in RiskMandate's voice, one reshare line in yours, LinkedIn only for now), wrote a plan to 12 November, and asked Silvio whether RiskMandate's page may post his 30-second film on Monday (e0b450b).",
+        "Your Schedules page went live, with a Schedules pill in your Today and To-do menus (0fd97fd).",
+        "A quiet night otherwise: Vicky's curator ran, nothing else was addressed to you."
+      ]
+    }
+  ],
+  "next": [
+    "Today 16:00: your social helper drafts Monday's post.",
+    "Today 18:00: post the first LinkedIn post, if you agree.",
+    "Monday 9 November, 18:00: the summit's opening night."
+  ],
+  "sources": [
+    "git log since 17:45 UTC on 7 November: 7c294dd, 437bbef, e0b450b, 0fd97fd",
+    "the scheduled tasks in your account at 07:25 UTC (social@ at 16:00 daily)",
+    "people/indi/social/README.md and 2026-11-07.md; people/indi/accountant/briefs/2026-11-07T1737Z.json"
+  ]
+}

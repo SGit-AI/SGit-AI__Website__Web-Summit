@@ -1,0 +1,41 @@
+{
+  "id": "tap",
+  "type": "company",
+  "kind": "company",
+  "name": "TAP Air Portugal",
+  "aliases": [],
+  "website": "https://www.flytap.com",
+  "what": null,
+  "category": "Airline",
+  "country": "Portugal",
+  "attending": "not listed at Web Summit Lisbon 2026: not on the lis26 event partners (pages 1 to 8) or speakers (pages 1 to 47) lists, checked 2026-11-05",
+  "attending_as": null,
+  "topics": [],
+  "ai_facts": [
+    {
+      "text": "Runs an AI flight-finder agent for customers on flytap.com.",
+      "source": "https://www.flytap.com/en_us/flight-finder-agent",
+      "read_at": "2026-11-05"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.flytap.com/en_us/flight-finder-agent",
+      "read_at": "2026-11-05",
+      "supports": "the AI facts, sector, country; website (the company's own site)"
+    },
+    {
+      "url": "https://websummit.com/partners/event-partners-2026/",
+      "read_at": "2026-11-05",
+      "supports": "not among the event partners"
+    },
+    {
+      "url": "https://websummit.com/speakers/",
+      "read_at": "2026-11-05",
+      "supports": "not among the speakers"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/online.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

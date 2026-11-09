@@ -8,8 +8,14 @@
   ],
   "by": "helper@web-summit.jose",
   "added": "2026-11-04T23:22:16.625Z",
-  "status": "open",
+  "status": "merged",
   "detail": "No GitHub username for Nimay is on record (data/team.json), so nobody can invite him. Next: Nimay makes or confirms a GitHub account with his Workspace email (riskmandate-nimay is the pattern; the 3 November record says it was still to be created) and sends the exact username to Angelo in writing, then accepts the invitation; his kit is ready after that. Draft for Jose to send: people/jose/helper/nimay.md.",
   "recommend": "Nimay sends the username today; Angelo invites from the-neuronin",
-  "issue": "WS-35"
+  "issue": "WS-35",
+  "merged": {
+    "into": "2026-11-03-1300/20261102T2254-nimay-jose-and-indi-are-all-at-the-push-.json",
+    "why": "The same block (WS-09): Indi is in, so only Nimay is left, and the next step is his GitHub username to Angelo. Not a decision for Dinis any more.",
+    "by": "project-manager@web-summit.dinis",
+    "at": "2026-11-05T07:51:34.766Z"
+  }
 }

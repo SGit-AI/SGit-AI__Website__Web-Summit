@@ -1,0 +1,17 @@
+{
+  "type": "decision",
+  "title": "The price answer for the stand: what may a team member say when asked about price or terms?",
+  "for": [
+    "dinis"
+  ],
+  "by": "dev@web-summit.indi",
+  "added": "2026-11-08T17:07:18.034Z",
+  "status": "open",
+  "detail": "WS-137 plan v2 (Indi's): one or two sentences agreed by Dinis go on the stand's answer sheet, so nobody improvises. Nothing goes on it without Dinis's words.",
+  "recommend": "Dinis gives one or two sentences, for example: pricing comes from Dinis; a first policy starts with one of your agents",
+  "issue": "WS-137",
+  "options": [
+    "Dinis gives the words",
+    "No price talk at all: 'Dinis will follow up'"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "number": 15,
+  "date": "7 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Your evening: dev did both tasks; the schedules wait for your paste; page views are safe",
+  "when": "7 November 2026, 17:20 UTC (scheduled wake; since brief 14, 07:20 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Dev finished both tasks you gave it this morning: your pulse view is live, and its pre-read of Angelo's five drafts is ready for your ten minutes. The one-day schedules have not started, because no wake text has been pasted yet. A correction: no page views were lost today. When lane 1 filled this afternoon, new views went to lane 2, as the site is built to do; I was wrong this morning to say they might be lost.",
+  "stats": [
+    {"n": "1,061", "label": "page views waiting: lane 1 full at 1,000, lane 2 at 61 (17:25)"},
+    {"n": "0", "label": "page views lost to the full lane; they go on to lane 2"},
+    {"n": "2 of 2", "label": "of today's tasks for dev done (15:37, 15:40)"},
+    {"n": "0", "label": "wake texts pasted so far (the one-day schedules wait)"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "🎙️ Tonight: your daily interview (about 10 min)",
+      "detail": "In Claude Chat voice mode, from the 'today' list below. Save the write-up in your Drive folder 'RiskMandate team meetings transcripts'; at 07:20 I turn it into your pulse (now live as a page), your decisions in your words and tasks. None came in for the last two nights.",
+      "options": ["tonight", "skip"],
+      "recommend": "Tonight: your new pulse page has nothing from an interview yet."
+    },
+    {
+      "id": "2",
+      "ask": "⏱️ Paste the wake texts and times, and start the designer",
+      "detail": "You approved the core schedules for one day (C30), but the scheduled tasks still have their old times and texts, so the day has not started and tomorrow's token count would show the old schedules. The texts and times are in schedules.md#paste (about 10 minutes); switch the watcher to Sonnet at the same time. The designer has no scheduled task, so the Agents board waits until you open its session or paste its 10:40 and 16:40 task.",
+      "options": ["paste tonight", "paste tomorrow morning", "drop the trial"],
+      "recommend": "Paste tomorrow morning before 07:20, so the trial is one whole day."
+    },
+    {
+      "id": "3",
+      "ask": "📖 Dev's pre-read of Angelo's five drafts: apply, change or wait for each",
+      "detail": "Dev's advice: apply WS-106 item 8 (the leak tripwire) and WS-45 (people's keys on /keys/), both through their keeper, Dinis's conductor; agree option A for WS-76 (no change before Lisbon); wait until after the summit for WS-36 and WS-78. Read only, nothing applied. About 10 minutes for the table at the top; due before the summit (Monday).",
+      "options": ["as dev advises", "I read it first"],
+      "recommend": "Read the table first; if you agree, say 'as dev advises' and I hand the two applies to their keeper the WS way."
+    }
+  ],
+  "you_asked": [
+    {
+      "at": "7 Nov, about 11:20 (C30)",
+      "said": "Action 22, WS-41: step 2 (the pulse view) yes; step 3 (the answer page) after the summit. Action 7: yes, dev pre-reads Angelo's five drafts for me.",
+      "done": "Both done by dev at 15:37 and 15:40: your pulse at /people/jose/pulse/ (every slot since 3 November, from your own check-ins only), and the pre-read in people/jose/dev/angelo-drafts-preread.md",
+      "where": "13fd571c, ad9bb2dc, 7fbb4a8e",
+      "status": "done"
+    },
+    {
+      "at": "7 Nov, about 11:20 (C30)",
+      "said": "ask Dinis on WS-170 for SG/Send tokens, one each for you and vault@web-summit.jose",
+      "done": "Asked at 11:29 on WS-170 and as a question at the 12:00 stand-up; no answer yet, and the 12:00 has no record",
+      "where": "e73ecc9a",
+      "status": "waiting"
+    }
+  ],
+  "sections": [
+    {
+      "title": "For your interview: today",
+      "items": [
+        "What your agents did: dev built your pulse view and pre-read Angelo's five drafts; I asked Dinis for tokens, changed my drain to count only, and handed the Agents board to the designer; vault counted its lane; the watcher saw the drain change (A-06 part done).",
+        "What you decided (C30, C31, C33): tokens asked; the core schedules for one day; the watcher on Sonnet for a day; WS-41 step 2 yes, step 3 after the summit; no observability agent before the summit; the Agents board; Nimay's draft once, which my Gmail refused.",
+        "Still open for you: paste the schedules; start the designer; dev's pre-read; the data.mjs yes when the designer's proposal comes; WS-163 (your photo); WS-175's last question; WS-157; C34, which I have only as a summary.",
+        "Your dashboard agent's standing question: what do you want to see first, and what do you never read?",
+        "What you learned today, in your words."
+      ]
+    },
+    {
+      "title": "Page views: a correction, and one loose end",
+      "items": [
+        "This morning (brief 14) I wrote that page views might be lost when lane 1 filled. That was wrong: assets/telemetry.js tries the next lane when one answers 507 (full). Lane 1 filled between 16:08 and 17:08, and lane 2 took 61 views by 17:25. A view is lost to a full lane only if all five are full; lanes 2 to 5 hold up to about 4,000 more (lanes 3 to 5 not counted).",
+        "Angelo's dev agent wrote at 16:44 that page views are being lost: it saw lane 1's 507 in the browser console. The views go on to lane 2; but every page now logs that one error until lane 1 is drained. The cure is the token (WS-170). A one-line change would also stop it: list lane 2 first in assets/telemetry.json. That file is shared site code, so I change it only at your word."
+      ]
+    },
+    {
+      "title": "Your agents since 07:20",
+      "items": [
+        "dev (09:35: WS-41 still waiting for your interview; 15:37 to 15:43): both tasks done and reviewed; one line added to your dashboard to link the pulse page (the gate needs every page linked), for the dashboard agent to move.",
+        "dashboard (07:31: noted Silvio's change to your command centre; 12:32): read its task; waits for the designer's board, one line in My agents says it is coming.",
+        "vault (11:44): counted its lane, no token yet. helper (08:52): Silvio at L6; Nimay the one left.",
+        "watcher (12:15): A-06 part done (my drain counts only); the rest waits for your paste. Its 17:15 run is not in yet."
+      ]
+    }
+  ],
+  "next": [
+    "07:20 tomorrow: your interview into your pulse and tasks, the accountant's numbers, and the schedule trial's count if it started."
+  ],
+  "sources": [
+    "telemetry_drain.py --dry (17:08, 17:25); assets/telemetry.js lines 69 to 73",
+    "git log origin/dev since 07:20; 5fae3759 (dev@PrompTugal.angelo)",
+    "people/jose/tasks/2026-11-07-*.md (Reports)",
+    "list_triggers (17:22, read only): no stored time or text changed since C30",
+    "your Drive folder (titles only: no new files)"
+  ]
+}

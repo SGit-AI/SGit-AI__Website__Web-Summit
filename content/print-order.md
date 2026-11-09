@@ -44,6 +44,8 @@ The proofs, one per person: [Dinis](../team/designer/print/proofs/dinis.svg) · 
 3. By when you need the final artwork and the sizes to make that date.
 4. Which T-shirt and hoodie colours you have in stock.
 
+**Update, 9 November: collected.** Silvio: "já temos as t-shirts e já está tudo bem". WS-48 is done.
+
 **Update, 4 November, evening: ordered.** Printer D has placed the order with its supplier; on Thursday 5 November it sends the layouts for approval and the invoice. The final files follow once Dinis confirms the update on [/print/#next](../print/index.html#next). The first printer is released.
 
 **Update, 4 November, 13:44:** Silvio sent Printer D the question: if we confirm today, with the sizes and the files, can it be ready to collect on **Monday 9 November in the morning** (or Saturday 7)? Silvio has since confirmed the order with it; its written answer is expected this afternoon.

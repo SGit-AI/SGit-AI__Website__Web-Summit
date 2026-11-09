@@ -1,0 +1,635 @@
+{
+  "about": "The team sticker vote (WS-167, admin/tools/stickers_vote.py). One append lane per team person with a site key; each lane token is sealed to that person (ws-ecies-1, data/person-keys.json), so only their browser opens it. Votes are signed by the person, sealed to drain_public_key (sgit hybrid v2) and written to their lane. The read key is published on purpose (Dinis): it renders the vault and lets anyone list who has a vote waiting, never what they chose.",
+  "agent": "conductor@web-summit.dinis",
+  "updated": "2026-11-05T03:57:22Z",
+  "closes_at": "2026-11-05T14:30:00Z",
+  "endpoint": "https://dev.send.sgraph.ai",
+  "vault_id": "uy67e2lt",
+  "read_key": "sgit_public_read_41e7a18261d8450fbd79ea4ee21d1585437886ba790e9541b9a042d3814f88bf",
+  "vault_url": "https://dev.vault.sgraph.ai/#sgit_public_read_41e7a18261d8450fbd79ea4ee21d1585437886ba790e9541b9a042d3814f88bf:uy67e2lt",
+  "drain_public_key": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlZaZ/PtFJw1qpe7TxsNP\nhaiZn6DZh4Ogal7PzNsK2lSrX6r/6/1d27LEts/+2jXxfXycEeFMz2IKx5PY/eDL\nCWhWdFFbCMSH5rO3vAeabzJ0FOgiTxA30JcZy8JzmXkvYu9UNskbz2N+kL6w+w40\npkrOO80hlvmuhgbkpSS2LVxkxBsRFL1fz4ptS+qCqCzlcHA5djeWU9BBs5P/AN+f\n1eFO2scEYVX7RiOUpheQhRpFQBMmWouk5g9mSFZM6mqYwgxrWiUnrki72KuhrjtV\nAMi0UoAL7Scpe3u4mK9OBcrw2owKy5H+EjkdS2NUW3fpvQdMvLNpV3Yf8WUWHQZL\nfefLD9+J/YQfphEYc4kSc08c2DmnPfAigsNGiRfE+KX1Bsp82B104H+tcNSUTtp2\nKqWdB75U7aBxm12Cwa5rCfCAvNOOfCfn+86dDK+U85+HPajxa6SeeZrTOVjyjCWf\nwFoWUCdXoR/HiOLGv7ANk5f8lG3j1pJxqE+Coz3c1v4/nvZVdiluG+kqsMhr+i5W\nHOmE36+i6tVtp1CTQ4foFatC6mhyADzxnMkl+M3fnqcfYtrml34uz6HOKLf7/xhp\nMXs8Sp4+gYLrsMHpRpKeKynJGdpT/bpNFP6nvg195pff8iLLUqioRUbGQOMYfNZd\n65MXqd2+OuZbImUvqfQAQkcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+  "drain_fingerprint": "sha256:18ea9086eb282293",
+  "stickers": [
+    {
+      "id": 1,
+      "nn": "01",
+      "slug": "road-trip-patch",
+      "name": "The road-trip patch",
+      "joke": "A retro travel patch: the bridge at sunset, a little green robot in a convertible holding a map labelled MANDATE.",
+      "words": "RISKMANDATE · WEB SUMMIT EDITION · LISBON 2026",
+      "group": "road-trip",
+      "group_title": "The road trip",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/01-road-trip-patch-v1.webp",
+      "variants": [
+        {
+          "v": 1,
+          "thumb": "assets/stickers/vote/01-road-trip-patch-v1.webp"
+        },
+        {
+          "v": 2,
+          "thumb": "assets/stickers/vote/01-road-trip-patch-v2.webp"
+        },
+        {
+          "v": 3,
+          "thumb": "assets/stickers/vote/01-road-trip-patch-v3.webp"
+        },
+        {
+          "v": 4,
+          "thumb": "assets/stickers/vote/01-road-trip-patch-v4.webp"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nn": "02",
+      "slug": "tram-ticket",
+      "name": "The tram ticket",
+      "joke": "A yellow Lisbon tram 28 ticket for agents, with the small print that matters.",
+      "words": "AGENT PASS · VALID WITHIN MANDATE ONLY",
+      "group": "road-trip",
+      "group_title": "The road trip",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/02-tram-ticket-v1.webp",
+      "variants": [
+        {
+          "v": 1,
+          "thumb": "assets/stickers/vote/02-tram-ticket-v1.webp"
+        },
+        {
+          "v": 2,
+          "thumb": "assets/stickers/vote/02-tram-ticket-v2.webp"
+        },
+        {
+          "v": 3,
+          "thumb": "assets/stickers/vote/02-tram-ticket-v3.webp"
+        },
+        {
+          "v": 4,
+          "thumb": "assets/stickers/vote/02-tram-ticket-v4.webp"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nn": "03",
+      "slug": "azulejo-tile",
+      "name": "The azulejo tile",
+      "joke": "A blue-and-white Portuguese tile whose pattern is the gap bar: authorised, then the gap.",
+      "words": "CONTROL THE GAP",
+      "group": "road-trip",
+      "group_title": "The road trip",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/03-azulejo-tile-v1.webp",
+      "variants": [
+        {
+          "v": 1,
+          "thumb": "assets/stickers/vote/03-azulejo-tile-v1.webp"
+        },
+        {
+          "v": 2,
+          "thumb": "assets/stickers/vote/03-azulejo-tile-v2.webp"
+        },
+        {
+          "v": 3,
+          "thumb": "assets/stickers/vote/03-azulejo-tile-v3.webp"
+        },
+        {
+          "v": 4,
+          "thumb": "assets/stickers/vote/03-azulejo-tile-v4.webp"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nn": "04",
+      "slug": "pastel-de-nata",
+      "name": "The pastel de nata",
+      "joke": "A golden custard tart wearing a tiny green tick like a medal, looking smug.",
+      "words": "FULLY AUTHORISED",
+      "group": "road-trip",
+      "group_title": "The road trip",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/04-pastel-de-nata-v1.webp",
+      "variants": [
+        {
+          "v": 1,
+          "thumb": "assets/stickers/vote/04-pastel-de-nata-v1.webp"
+        },
+        {
+          "v": 2,
+          "thumb": "assets/stickers/vote/04-pastel-de-nata-v2.webp"
+        },
+        {
+          "v": 3,
+          "thumb": "assets/stickers/vote/04-pastel-de-nata-v3.webp"
+        },
+        {
+          "v": 4,
+          "thumb": "assets/stickers/vote/04-pastel-de-nata-v4.webp"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nn": "05",
+      "slug": "passport-stamp",
+      "name": "The passport stamp",
+      "joke": "An entry stamp in green ink: the agent has landed, with paperwork.",
+      "words": "MANDATE APPROVED · LIS · 09-12 NOV 2026",
+      "group": "road-trip",
+      "group_title": "The road trip",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/05-passport-stamp-v1.webp",
+      "variants": [
+        {
+          "v": 1,
+          "thumb": "assets/stickers/vote/05-passport-stamp-v1.webp"
+        },
+        {
+          "v": 2,
+          "thumb": "assets/stickers/vote/05-passport-stamp-v2.webp"
+        },
+        {
+          "v": 3,
+          "thumb": "assets/stickers/vote/05-passport-stamp-v3.webp"
+        },
+        {
+          "v": 4,
+          "thumb": "assets/stickers/vote/05-passport-stamp-v4.webp"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nn": "06",
+      "slug": "road-sign",
+      "name": "The road sign",
+      "joke": "A warning sign: a small robot striding confidently towards a cliff edge.",
+      "words": "AGENT CROSSING: KNOW THEIR REACH",
+      "group": "road-trip",
+      "group_title": "The road trip",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/06-road-sign-v1.webp",
+      "variants": [
+        {
+          "v": 1,
+          "thumb": "assets/stickers/vote/06-road-sign-v1.webp"
+        },
+        {
+          "v": 2,
+          "thumb": "assets/stickers/vote/06-road-sign-v2.webp"
+        },
+        {
+          "v": 3,
+          "thumb": "assets/stickers/vote/06-road-sign-v3.webp"
+        },
+        {
+          "v": 4,
+          "thumb": "assets/stickers/vote/06-road-sign-v4.webp"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "nn": "07",
+      "slug": "the-keys",
+      "name": "The keys",
+      "joke": "Our robot, visibly sweating, holding an enormous ring of keys of every size.",
+      "words": "WITH GREAT ACCESS COMES GREAT RESPONSIBILITY",
+      "group": "road-trip",
+      "group_title": "The road trip",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/07-the-keys-v1.webp",
+      "variants": [
+        {
+          "v": 1,
+          "thumb": "assets/stickers/vote/07-the-keys-v1.webp"
+        },
+        {
+          "v": 2,
+          "thumb": "assets/stickers/vote/07-the-keys-v2.webp"
+        },
+        {
+          "v": 3,
+          "thumb": "assets/stickers/vote/07-the-keys-v3.webp"
+        },
+        {
+          "v": 4,
+          "thumb": "assets/stickers/vote/07-the-keys-v4.webp"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "nn": "08",
+      "slug": "the-seal",
+      "name": "The seal",
+      "joke": "An official starburst seal in gold and green, a big tick in the middle.",
+      "words": "VERIFIED MANDATE",
+      "group": "road-trip",
+      "group_title": "The road trip",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/08-the-seal-v1.webp",
+      "variants": [
+        {
+          "v": 1,
+          "thumb": "assets/stickers/vote/08-the-seal-v1.webp"
+        },
+        {
+          "v": 2,
+          "thumb": "assets/stickers/vote/08-the-seal-v2.webp"
+        },
+        {
+          "v": 3,
+          "thumb": "assets/stickers/vote/08-the-seal-v3.webp"
+        },
+        {
+          "v": 4,
+          "thumb": "assets/stickers/vote/08-the-seal-v4.webp"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "nn": "09",
+      "slug": "surfs-up",
+      "name": "Surf's up",
+      "joke": "The robot surfing a giant Nazare wave made of data, perfectly calm.",
+      "words": "RIDING THE WAVE, WITHIN MANDATE",
+      "group": "road-trip",
+      "group_title": "The road trip",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/09-surfs-up-v1.webp",
+      "variants": [
+        {
+          "v": 1,
+          "thumb": "assets/stickers/vote/09-surfs-up-v1.webp"
+        },
+        {
+          "v": 2,
+          "thumb": "assets/stickers/vote/09-surfs-up-v2.webp"
+        },
+        {
+          "v": 3,
+          "thumb": "assets/stickers/vote/09-surfs-up-v3.webp"
+        },
+        {
+          "v": 4,
+          "thumb": "assets/stickers/vote/09-surfs-up-v4.webp"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "nn": "10",
+      "slug": "hello-my-name-is",
+      "name": "Hello, my name is",
+      "joke": "The name-tag classic, with a blank to fill in at the stand.",
+      "words": "HELLO, MY AGENT'S MANDATE IS ____",
+      "group": "road-trip",
+      "group_title": "The road trip",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/10-hello-my-name-is-v1.webp",
+      "variants": [
+        {
+          "v": 1,
+          "thumb": "assets/stickers/vote/10-hello-my-name-is-v1.webp"
+        },
+        {
+          "v": 2,
+          "thumb": "assets/stickers/vote/10-hello-my-name-is-v2.webp"
+        },
+        {
+          "v": 3,
+          "thumb": "assets/stickers/vote/10-hello-my-name-is-v3.webp"
+        },
+        {
+          "v": 4,
+          "thumb": "assets/stickers/vote/10-hello-my-name-is-v4.webp"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "nn": "11",
+      "slug": "least-privilege",
+      "name": "Least privilege",
+      "joke": "A 1970s souvenir bumper sticker, with a big red heart.",
+      "words": "I LOVE LEAST PRIVILEGE",
+      "group": "road-trip",
+      "group_title": "The road trip",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/11-least-privilege-v1.webp",
+      "variants": [
+        {
+          "v": 1,
+          "thumb": "assets/stickers/vote/11-least-privilege-v1.webp"
+        },
+        {
+          "v": 2,
+          "thumb": "assets/stickers/vote/11-least-privilege-v2.webp"
+        },
+        {
+          "v": 3,
+          "thumb": "assets/stickers/vote/11-least-privilege-v3.webp"
+        },
+        {
+          "v": 4,
+          "thumb": "assets/stickers/vote/11-least-privilege-v4.webp"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "nn": "12",
+      "slug": "sardine-tin",
+      "name": "The sardine tin",
+      "joke": "A Portuguese sardine tin: every sardine is an agent, and one of them wears a green tag.",
+      "words": "ONE OF THESE HAS A MANDATE",
+      "group": "road-trip",
+      "group_title": "The road trip",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/12-sardine-tin-v1.webp",
+      "variants": [
+        {
+          "v": 1,
+          "thumb": "assets/stickers/vote/12-sardine-tin-v1.webp"
+        },
+        {
+          "v": 2,
+          "thumb": "assets/stickers/vote/12-sardine-tin-v2.webp"
+        },
+        {
+          "v": 3,
+          "thumb": "assets/stickers/vote/12-sardine-tin-v3.webp"
+        },
+        {
+          "v": 4,
+          "thumb": "assets/stickers/vote/12-sardine-tin-v4.webp"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "nn": "14",
+      "slug": "rooster-root-access",
+      "name": "Root access? Absolutely clucking not",
+      "joke": "A Barcelos rooster in sunglasses guards the giant key; the little robot asks nicely anyway.",
+      "words": "ROOT ACCESS? ABSOLUTELY CLUCKING NOT.",
+      "group": "creative",
+      "group_title": "Creative takes",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/14-rooster-root-access.webp"
+    },
+    {
+      "id": 15,
+      "nn": "15",
+      "slug": "summary-machine",
+      "name": "I asked for a summary",
+      "joke": "One small request, and the robot built a whole steam-powered city to answer it.",
+      "words": "I ASKED FOR A SUMMARY. ENTHUSIASM IS NOT A MANDATE.",
+      "group": "creative",
+      "group_title": "Creative takes",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/15-summary-machine.webp"
+    },
+    {
+      "id": 16,
+      "nn": "16",
+      "slug": "tiny-tram-scope-creep",
+      "name": "Next stop: scope creep",
+      "joke": "A tram 28 that keeps adding carriages: servers, databases, the filing cabinets.",
+      "words": "NEXT STOP: SCOPE CREEP.",
+      "group": "creative",
+      "group_title": "Creative takes",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/16-tiny-tram-scope-creep.webp"
+    },
+    {
+      "id": 17,
+      "nn": "17",
+      "slug": "booked-a-table",
+      "name": "I said book a table",
+      "joke": "Asked for dinner for two, the eight-armed robot also bought the restaurant, a tram and a yacht.",
+      "words": "I SAID BOOK A TABLE.",
+      "group": "creative",
+      "group_title": "Creative takes",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/17-booked-a-table.webp"
+    },
+    {
+      "id": 18,
+      "nn": "18",
+      "slug": "fado-robot",
+      "name": "It had access. It had no mandate",
+      "joke": "A fado for the robot who could, and did, with the audit trail sung in full.",
+      "words": "IT HAD ACCESS. IT HAD NO MANDATE.",
+      "group": "creative",
+      "group_title": "Creative takes",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/18-fado-robot.webp"
+    },
+    {
+      "id": 19,
+      "nn": "19",
+      "slug": "one-screw",
+      "name": "One screw. Why the flamethrower?",
+      "joke": "Mandate: tighten one screw. Reach: the whole toolbox, rocket included.",
+      "words": "ONE SCREW. WHY THE FLAMETHROWER?",
+      "group": "gap",
+      "group_title": "The gap",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/19-one-screw.webp"
+    },
+    {
+      "id": 20,
+      "nn": "20",
+      "slug": "the-key-situation",
+      "name": "Please only use the small key",
+      "joke": "The mandate is one pastel de nata; the key ring opens the rest of Lisbon.",
+      "words": "PLEASE ONLY USE THE SMALL KEY.",
+      "group": "gap",
+      "group_title": "The gap",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/20-the-key-situation.webp"
+    },
+    {
+      "id": 21,
+      "nn": "21",
+      "slug": "permissions-iceberg",
+      "name": "Seems like a small task",
+      "joke": "Reply to one email, says the tip; payroll and the admin consoles wait below the waterline.",
+      "words": "SEEMS LIKE A SMALL TASK.",
+      "group": "gap",
+      "group_title": "The gap",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/21-permissions-iceberg.webp"
+    },
+    {
+      "id": 22,
+      "nn": "22",
+      "slug": "hope-driven-development",
+      "name": "Hope-driven development",
+      "joke": "An octopus with every key and a sticky note that says be good. That is the security control.",
+      "words": "OUR SECURITY CONTROL IS A STICKY NOTE.",
+      "group": "gap",
+      "group_title": "The gap",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/22-hope-driven-development.webp"
+    },
+    {
+      "id": 23,
+      "nn": "23",
+      "slug": "scope-creep-theme-park",
+      "name": "One ride. All-access pass",
+      "joke": "The mandate is the carousel; the pass opens the whole park, haunted servers included.",
+      "words": "ONE RIDE. ALL-ACCESS PASS. WHAT COULD POSSIBLY GO WRONG?",
+      "group": "gap",
+      "group_title": "The gap",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/23-scope-creep-theme-park.webp"
+    },
+    {
+      "id": 24,
+      "nn": "24",
+      "slug": "three-bullet-points",
+      "name": "I asked for three bullet points",
+      "joke": "Three bullets asked for, one giant robot city delivered.",
+      "words": "I ASKED FOR THREE BULLET POINTS. THE REST IS RUNNING ON HOPE.",
+      "group": "gap",
+      "group_title": "The gap",
+      "placeholder": false,
+      "thumb": "assets/stickers/vote/24-three-bullet-points.webp"
+    }
+  ],
+  "lanes": [
+    {
+      "person": "dinis",
+      "name": "Dinis Cruz",
+      "lane": "baad248c791cb378cfbfebc96b72e7767a5ece7fcd1a0b35cb9d8484000a264f",
+      "key": "sha256:c7ec751484fbf03d",
+      "sealed_token": {
+        "v": "ws-ecies-1",
+        "to": "dinis",
+        "key": "sha256:c7ec751484fbf03d",
+        "by": "conductor@web-summit.dinis",
+        "at": "2026-11-05T02:51:59Z",
+        "epk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "eQKC0DThbt1MNSi-tR5Icsqhn0qrK_y6FblQZMxvrMc",
+          "y": "Aqe_YGEbqtIV0iu9plt74dNZVGprNqtAij5o8sVMJdk"
+        },
+        "iv": "t9yCLWX6OHCJB+dz",
+        "ct": "JKzRaq3//LgW9LFtPgO4sLOyJ4cDDbmbSiZHwItZdq6fCjpD+OKoFp2zObWjwCom6yzYfdGKysPvcOk40TQen8p92C0Fwk8ujVbuHlbKWkVRl7Y504sy9g1Yws2fKc8J6UiWzb1zHCcA6iwyXEpMrZWT+nec1R9aLff+J7km7yIHjdnlZ/04R8fDFv8aNmj0WilYD1peti+cESZDxvpZBcD13F4LtoztBvy0VLgXfJ0="
+      }
+    },
+    {
+      "person": "silvio",
+      "name": "Silvio Switha",
+      "lane": "a235bbf77a2d11c2340c30d1b45b9a0adb4dfe5d92d57e936759020ce31daf25",
+      "key": "sha256:c790b809522386ef",
+      "sealed_token": {
+        "v": "ws-ecies-1",
+        "to": "silvio",
+        "key": "sha256:c790b809522386ef",
+        "by": "conductor@web-summit.dinis",
+        "at": "2026-11-05T02:51:59Z",
+        "epk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "Y2mxZ0gf_AHEwmGqdoLYTPW1wlfvrDwcBXEaXBUhcRs",
+          "y": "k0S2HatvcPXpE50KmvuQidCZoLjI8sjHsFuKGeHapiY"
+        },
+        "iv": "H6JP+fBZ2rYKp/iZ",
+        "ct": "ajdb/doYIDH6cw19iIqHE0QrQbCF0ZmvoXv1dq1yllBSHmY0cTsa/v/kx27T9en1XXaFqtZuKrrVTWuWJBbpZr5GJ9wTdtc07vmKFLR8/4bjOOvuRSeBd5NXESzhTh2WNKxyZJLPe2kvtqjP4qDtE2z11CVzjuDvXRiNKMTWzUAhgnDJDhronHc6CNwtk83PBrtVhj9oAGYZmKuiFPcwvHCj1lFTF2FC/KFRVzT/gEMr"
+      }
+    },
+    {
+      "person": "angelo",
+      "name": "Angelo",
+      "lane": "35d3679f2c442d393c43321c2a7e952738b2551dbe04c519c7e7d4b1933a503e",
+      "key": "sha256:99fcf112697b7d3d",
+      "sealed_token": {
+        "v": "ws-ecies-1",
+        "to": "angelo",
+        "key": "sha256:99fcf112697b7d3d",
+        "by": "conductor@web-summit.dinis",
+        "at": "2026-11-05T02:51:59Z",
+        "epk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "xSl8jsz9GOqVEN1GSky-QYHjn1eSh2lkJrYgNCdq7e0",
+          "y": "E8jCgJZTWhYfVysjaAn0VYOmx_Oextl87lFCq1DFz8E"
+        },
+        "iv": "cZ50dct1eZp/Dvg1",
+        "ct": "HOnRx2cChx8WMqKjCg9uMqjcOflKTFpeOYUqm4aDO5Fe84LtuIHd776WCMVOSlnRviUCV+MMfDz2J8byTJAn1U/ePHDur0t6bSmS5IzwBlPba9BdzosD26Wv41ArinsAaYl9B/km2mEhp1FjLK57hO0CQNfLIH4jzfit4HaM5bhionPdcqscMqERXxZtzIxuFOFbSYOpTFargZB9I28trQqBzzVBm6bi0ruPE86a8azZ"
+      }
+    },
+    {
+      "person": "vicky",
+      "name": "Vicky Wang",
+      "lane": "9a3a8ff3b0c14513bc186abfa7db08e84adef98e3554202347cc9de328329b27",
+      "key": "sha256:5bd91e541026290e",
+      "sealed_token": {
+        "v": "ws-ecies-1",
+        "to": "vicky",
+        "key": "sha256:5bd91e541026290e",
+        "by": "conductor@web-summit.dinis",
+        "at": "2026-11-05T02:51:59Z",
+        "epk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "-F0qWrEwlZK_caoUZrFQO-i_U2nPqPP6M2F5dpur_TI",
+          "y": "S6kMS01BbaOzMC_C3jvH0lu_3-j5AJOvdQ0dVHxWq8E"
+        },
+        "iv": "u+0K9UPFpOpDBvid",
+        "ct": "eoFIRfAVpLaIM9JZ2fnfZ+m0CFManOOVqtxFlf9et4xrYOXDno0hrYpYbtSJW7SSdXEwVYiL0xXQCubSCLPKGXNwTdw9qfhXcz/mlcBkCzoqgP7PV11pW5ykKpKrA1XT+GUsLPy8sbR0xBfCi/ZSdNqBjzrju9GojqX6Hdc2V7I0ru7QC0bECSK4UGG3ZlSrFp8hc9AcTTgRVUYkHdG4HNugRgaskTDtwxu0Aq/CHLY="
+      }
+    },
+    {
+      "person": "indi",
+      "name": "Indi Gupte",
+      "lane": "d1d5e690f70d8a7fae4a62f70b39f37c14ec2256bc63d3ada8e7aa2ff679fdc1",
+      "key": "sha256:504685dc2b1cd9af",
+      "sealed_token": {
+        "v": "ws-ecies-1",
+        "to": "indi",
+        "key": "sha256:504685dc2b1cd9af",
+        "by": "conductor@web-summit.dinis",
+        "at": "2026-11-05T02:51:59Z",
+        "epk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "qL9RJUA5FKzigkWp2ovLgPIXqumOnT2oslCjFvxQIsM",
+          "y": "P9WcIt8f654vJyjejcCd93-3um92S3-M-XFpBXbbkOc"
+        },
+        "iv": "BwO5h+pJNTYTGPF8",
+        "ct": "EbJVDlXl/i1Da/IsiqgNIiIU+gtdaPDESkaUcDHnRQzMLA70CWXODMRantQs4RBnEruATjoTg8CqCD36Kne3VIyyzJQ+CapBanv7kiRA2p17LWf9cPCNltq8g4xA6vfJtB/+FLOCSfYOIPiOnsQWX0kt0VXsKmHE7gNCrVCLNypbR9wMek8yFr6ecVSm1HczgmHnl4fLuNyWo6xGHiitrvVTpTQVo+rWT7nKoFvblA=="
+      }
+    },
+    {
+      "person": "jose",
+      "name": "Jose Bota",
+      "lane": "0aeaadb025e64fb0a8cb62087867ed1460274a5f1677d6b9905623263298222a",
+      "key": "sha256:6b6b6fee14c2527c",
+      "sealed_token": {
+        "v": "ws-ecies-1",
+        "to": "jose",
+        "key": "sha256:6b6b6fee14c2527c",
+        "by": "conductor@web-summit.dinis",
+        "at": "2026-11-05T02:51:59Z",
+        "epk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "xffBuzfHQba2WnIMvRKHBL467m3mBqOPfsttbQ1eVD8",
+          "y": "nJz_sl9dNX25qdKvCibyQC1WOvJhqyC0AdjgF-SXyJE"
+        },
+        "iv": "baYpTaNAvJcmHlbL",
+        "ct": "1hasJrUb1Dr6d7F+UpJKXd4vrPWtzfnIiDN/B6yQjXdrj6n0JoM6PWx1v1AnqqKpyx3X6M/L8qZ+qAJoC6zbpGGRx6MdPn3lddtB3rKj9wH6LRLykiBFud0bt0YuU4sIVtEl0Si7N8krDx2oIsZJvFV4dzvbCwdyHk+gl5Cf/GZ0JvxD+60PuMUkUCLP/3d8PBLiPxSGmL0mEPS/9YaORNRuxCLB0tCjfC60CvX0DA=="
+      }
+    }
+  ],
+  "max_ranking": 10
+}

@@ -1,0 +1,28 @@
+{
+ "number": 30,
+ "date": "2026-11-06",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "inbox@ is ready and waits for Gmail; draft 1 needs one line changed; the 18:00 has no record",
+ "when": "Friday 6 November 2026, 20:35 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "inbox@web-summit.dinis opened the CRM keys, read António's thread and checked the links (all 200). It waits for Gmail. It found that draft 1 says his paragraph 'is going onto' the page and 'I will tell you when it is live': it is live now, so that line needs your word before you send. Nobody recorded the 18:00: no decision by 19:20 (team-collaboration@PrompTugal.angelo), five stand-ups in a row without one (project-manager@). PrompTugal started investors@PrompTugal.dinis at your word; it reads ours first and does not duplicate it.",
+ "stats": [
+  {"n": "58", "label": "team-site commits since 17:35"},
+  {"n": "0", "label": "Gmail drafts yet (Gmail not connected)"},
+  {"n": "5", "label": "stand-ups in a row without a recorded decision"},
+  {"n": "65", "label": "board issues on the parking list (45 to park, 20 kept)"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "Connect Gmail to inbox@ (session_018yvwtMs43w1K2mZWczRrD8)", "detail": "Drafts only; say which mailbox.", "options": ["your own", "a promptugal.news one"], "recommend": "Your own."},
+  {"id": "2", "ask": "Draft 1's line about the paragraph", "detail": "It says the paragraph is going onto the page; it is live.", "options": ["change it to 'is now on the page' (I do it in the CRM)", "you edit it in Gmail"], "recommend": "I change it, so the CRM's copy matches what is sent."},
+  {"id": "3", "ask": "The 18:00's decisions, and the parking list", "detail": "Nothing was recorded. One line per decision is enough; project-manager@ has 45 issues ready to park.", "options": ["tell me now", "at Saturday's stand-up"], "recommend": "Park the 45 now; it is a yes or no."}
+ ],
+ "you_asked": [],
+ "team": [
+  {"id": "Silvio", "status": "active", "doing": "the media vault (WS-174); asked how pages play video from it: answered (67c74462)"},
+  {"id": "Angelo", "status": "active", "doing": "his agents may now edit others' files under five steps against clashes (ce069603), offered as a direction"},
+  {"id": "Vicky", "status": "active", "doing": "WS-31 dropped; the reviewer handed to a new session"}
+ ],
+ "next": ["22:27 wake: the 18:00 record if you give it; Saturday's schedule."],
+ "sources": ["git log since 2026-11-06T17:35Z", "inbox@web-summit.dinis commit of 17:33", "58228923, e000a3be", "conductor@PrompTugal.dinis message at 20:03"]
+}

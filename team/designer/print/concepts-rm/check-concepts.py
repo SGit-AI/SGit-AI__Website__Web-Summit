@@ -39,14 +39,14 @@ SOURCED = {
               'Web Summit Edition', 'Meet us between Booths A1-30 on Thursday (12th)'],
 }
 for h in SOURCED['headline']: assert h in DESIGN_MD, h
-assert 'Web Summit Lisbon, 9 to 12 November 2026' in MEET_MD and 'find us at our stand on **Thursday 12 November**' in MEET_MD
+assert 'Web Summit Lisbon, 9 to 12 November 2026' in MEET_MD and 'at our stand on **Thursday 12 November**' in MEET_MD   # the meet pages' wording since WS-146 (4 November)
 BRAND_HOOK = 'Open source, and sixteen are published free.'   # riskmandate.ai/brand, "Profile"
 TBC = {'Job title to confirm', 'Stand number to confirm'}   # round 3's visible placeholders
 BRAND_BADGE = 'Agent Behaviour Policies: what one agent can reach, what you authorised it to do, and the gap between the two.'   # riskmandate.ai/brand, "Badge"
 MEAS = json.load(open(os.path.join(SCR, 'measure.json')))
 DESIGN = {p['id']: p for p in json.load(open(os.path.join(ROOT, 'data/design.json')))['people']}
 TEAM = {m['id']: m for m in json.load(open(os.path.join(ROOT, 'data/team.json')))['members']}
-SAFE = (7, 7, 84, 54); EPS = 0.05
+SAFE = (6, 6, 85, 55) if ROUND4 else (7, 7, 84, 54); EPS = 0.05   # round 4: 3 mm inside the trim (Dinis, 5 November: the back was "squished")
 fails, n_ok = [], 0
 def fail(f, msg): fails.append(f'{f}: {msg}')
 
@@ -83,10 +83,10 @@ for concept in CONCEPTS:
             # the seal: one, and clear space of half its width
             logos = re.findall(r'<g id="rm-logo"[^>]*data-d="([\d.]+)"', s)
             if len(logos) > 1: fail(rel, 'more than one rm-logo')
-            for lg in [i for i in items if i['role'] == 'logo']:
+            for lg in [i for i in items if i['role'] == 'logo']:   # (the lockup's own wordmark sits where the brand put it: exempt)
                 d = float(logos[0]); b = lg['box']; zone = (b[0] - d / 2, b[1] - d / 2, b[2] + d / 2, b[3] + d / 2)
                 for it in items:
-                    if it['role'] not in ('logo', 'placeholder') and overlap(zone, it['box']): fail(rel, f'{it["role"]} inside the seal\'s clear space')
+                    if it['role'] not in ('logo', 'placeholder', 'lockup') and overlap(zone, it['box']): fail(rel, f'{it["role"]} inside the seal\'s clear space')
                 for x, y, w, h, fill in re.findall(r'<rect x="([\d.]+)" y="([\d.]+)" width="([\d.]+)" height="([\d.]+)" fill="(#[0-9a-fA-F]{6})"/>', s):
                     if fill.lower() == colour.lower() and overlap(zone, (float(x), float(y), float(x) + float(w), float(y) + float(h))):
                         fail(rel, 'the person\'s colour inside the seal\'s clear space')

@@ -1,0 +1,41 @@
+{
+  "id": "millennium-bcp",
+  "type": "company",
+  "kind": "company",
+  "name": "Millennium bcp",
+  "aliases": [],
+  "website": "https://ind.millenniumbcp.pt",
+  "what": null,
+  "category": "Banking",
+  "country": "Portugal",
+  "attending": "not listed at Web Summit Lisbon 2026: not on the lis26 event partners (pages 1 to 8) or speakers (pages 1 to 47) lists, checked 2026-11-05",
+  "attending_as": null,
+  "topics": [],
+  "ai_facts": [
+    {
+      "text": "With Nova SBE launched an AI Academy ('AI Together') to train ~6,500 employees, mainly in generative AI (Nov 2025); created a Data & AI Transformation Office in May 2025.",
+      "source": "https://ind.millenniumbcp.pt/pt/Institucional/imprensa/Documents/2025/20251112_Millenniumbcp_Nova_SBE_AIAcademy_PT.pdf",
+      "read_at": "2026-11-05"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://ind.millenniumbcp.pt/pt/Institucional/imprensa/Documents/2025/20251112_Millenniumbcp_Nova_SBE_AIAcademy_PT.pdf",
+      "read_at": "2026-11-05",
+      "supports": "the AI facts, sector, country; website (the company's own site)"
+    },
+    {
+      "url": "https://websummit.com/partners/event-partners-2026/",
+      "read_at": "2026-11-05",
+      "supports": "not among the event partners"
+    },
+    {
+      "url": "https://websummit.com/speakers/",
+      "read_at": "2026-11-05",
+      "supports": "not among the speakers"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/online.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

@@ -1,0 +1,470 @@
+{
+ "subject": "Klarna's AI assistant (customer service agent)",
+ "kind": "company",
+ "slug": "klarna",
+ "run_at": "2026-11-07T19:08:54.696Z",
+ "note": "What each model said, as leads: not facts until their sources are read.",
+ "cost_usd": 0.0563,
+ "agents": [
+  {
+   "id": "perplexity",
+   "label": "Perplexity search",
+   "model": "perplexity/sonar",
+   "ms": 6808,
+   "cost_usd": 0.0062271,
+   "tokens": {
+    "in": 215,
+    "out": 1077
+   },
+   "finish": "stop",
+   "citations": [
+    {
+     "url": "https://openai.com/index/klarna/",
+     "title": "Klarna's AI assistant does the work of 700 full-time agents"
+    },
+    {
+     "url": "https://www.klarna.com/international/press/shopping-made-smarter-klarna-adds-more-ai-features-to-its-assistant-powered-by-openai/",
+     "title": "Klarna adds more AI features to its assistant powered by ..."
+    },
+    {
+     "url": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/",
+     "title": "Klarna AI assistant handles two-thirds of customer service ..."
+    },
+    {
+     "url": "https://www.klarna.com/us/help/",
+     "title": "Customer service | Klarna US"
+    },
+    {
+     "url": "https://www.klarna.com/international/press/ensure-ai-benefits-everyone/",
+     "title": "Ensure AI Benefits Everyone | Klarna International"
+    },
+    {
+     "url": "https://terencekok.com/research/case-studies/klarna-ai-assistant/pdf/",
+     "title": "How Klarna's AI assistant claims held up."
+    },
+    {
+     "url": "https://imagine.ai/research/klarna",
+     "title": "Klarna: Enterprise AI Deployment Profile | Imagine"
+    },
+    {
+     "url": "https://www.itpro.com/technology/artificial-intelligence/klarnas-ai-assistant-is-doing-the-work-of-700-people-and-it-paints-a-bleak-picture-for-the-future-of-work",
+     "title": "Klarna's AI assistant is doing the work of 700 people - ITPro"
+    },
+    {
+     "url": "https://www.customerexperiencedive.com/news/klarna-says-ai-agent-work-853-employees/805987/",
+     "title": "Klarna says its AI agent is doing the work of 853 employees"
+    },
+    {
+     "url": "https://www.klarna.com/international/press/90-of-klarna-staff-are-using-ai-daily-game-changer-for-productivity/",
+     "title": "90% of Klarna staff are using AI daily - game changer for ..."
+    },
+    {
+     "url": "https://www.ciodive.com/news/klarna-generative-ai-customer-service-call-center/709916/",
+     "title": "Klarna sees its AI assistant as a success. Is it too early to tell?"
+    },
+    {
+     "url": "https://www.zenml.io/llmops-database/ai-assistant-for-global-customer-service-automation",
+     "title": "Klarna: AI Assistant for Global Customer Service Automation"
+    },
+    {
+     "url": "https://www.langchain.com/blog/customers-klarna",
+     "title": "How Klarna's AI assistant redefined customer support at scale for 85 ..."
+    },
+    {
+     "url": "https://www.klarna.com/international/press/klarna-spotlight-spring-23-new-ai-powered-personalized-shopping-feed-and-innovations-for-consumers-and-retailers/",
+     "title": "New AI-powered, personalized shopping feed and ..."
+    },
+    {
+     "url": "https://www.euronews.com/2024/02/28/klarnas-ai-bot-is-doing-the-work-of-700-employees-what-will-happen-to-their-jobs",
+     "title": "Klarna's AI assistant does 'equivalent job of 700 employees,' CEO says"
+    }
+   ],
+   "answer_urls": [
+    "https://openai.com/index/klarna/",
+    "https://www.klarna.com/us/help/",
+    "https://www.klarna.com/international/press/ensure-ai-benefits-everyone/",
+    "https://www.klarna.com/international/press/shopping-made-smarter-klarna-adds-more-ai-features-to-its-assistant-powered-by-openai/",
+    "https://www.customerexperiencedive.com/news/klarna-says-ai-agent-work-853-employees/805987/",
+    "https://imagine.ai/research/klarna",
+    "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+   ],
+   "answer": {
+    "what_it_does": "Klarna’s AI assistant is an OpenAI-powered customer service chatbot in the Klarna app that handles customer support, shopping help, refunds, and returns. It also supports multilingual service and is positioned to improve the shopping and payments experience for Klarna customers worldwide.",
+    "ai_agents": [
+     {
+      "name": "Klarna AI assistant",
+      "what_it_does": "Customer service and shopping-support assistant for Klarna users, built to answer questions, route support, and handle common service tasks.",
+      "actions": [
+       "Chats with customers in the Klarna app",
+       "Answers customer service questions",
+       "Handles refunds and returns",
+       "Supports multilingual customer service",
+       "Assists with shopping guidance and finding products",
+       "Touches customer support data and service workflows"
+      ],
+      "source": "https://openai.com/index/klarna/"
+     },
+     {
+      "name": "Klarna AI assistant",
+      "what_it_does": "AI assistant that provides 24/7 app-based support and can escalate to a dedicated human agent when needed.",
+      "actions": [
+       "Provides 24/7 support in any language",
+       "Handles chat-based customer support",
+       "Routes customers to human agents",
+       "Touches support conversations and related account/service requests"
+      ],
+      "source": "https://www.klarna.com/us/help/"
+     },
+     {
+      "name": "Klarna AI assistant",
+      "what_it_does": "Klarna’s chatbot that is explicitly disclosed to users as an AI system, with an option for customers to choose a human representative.",
+      "actions": [
+       "Informs users they are interacting with a chatbot",
+       "Supports customer service conversations",
+       "Transfers users to human support on request",
+       "Touches customer service interactions"
+      ],
+      "source": "https://www.klarna.com/international/press/ensure-ai-benefits-everyone/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Customer service in the Klarna app",
+      "who_uses_it": "Klarna consumers needing account, payment, order, refund, or return help.",
+      "what_the_agent_can_reach": [
+       "Customer support conversations",
+       "Refund and return workflows",
+       "Payment-related support processes",
+       "Human support escalation"
+      ],
+      "source": "https://openai.com/index/klarna/"
+     },
+     {
+      "name": "24/7 multilingual support",
+      "who_uses_it": "Customers who want support outside business hours or in a preferred language.",
+      "what_the_agent_can_reach": [
+       "Chat support channels",
+       "Language handling for support interactions",
+       "Escalation to dedicated human agents"
+      ],
+      "source": "https://www.klarna.com/us/help/"
+     },
+     {
+      "name": "Shopping assistance",
+      "who_uses_it": "Consumers shopping through Klarna’s app or website.",
+      "what_the_agent_can_reach": [
+       "Product discovery assistance",
+       "Price-oriented shopping guidance",
+       "Chat-based shopping experience"
+      ],
+      "source": "https://www.klarna.com/international/press/shopping-made-smarter-klarna-adds-more-ai-features-to-its-assistant-powered-by-openai/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Klarna says users are clearly informed they are interacting with a chatbot, and they can switch to a human if preferred, reflecting transparency and escalation risk controls.",
+      "when": "2026-03-19",
+      "source": "https://www.klarna.com/international/press/ensure-ai-benefits-everyone/"
+     },
+     {
+      "what": "Public reporting noted customer complaints that the AI agent could give generic answers and struggle with more nuanced questions, indicating limitations in handling complex support cases.",
+      "when": "2025-11-20",
+      "source": "https://www.customerexperiencedive.com/news/klarna-says-ai-agent-work-853-employees/805987/"
+     },
+     {
+      "what": "Klarna has publicly said the assistant is not a full replacement for human support and maintains a dual-track approach with humans available to customers.",
+      "when": "2026-10-31",
+      "source": "https://imagine.ai/research/klarna"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Klarna’s AI assistant is powered by OpenAI technology.",
+      "source": "https://openai.com/index/klarna/"
+     },
+     {
+      "claim": "Klarna says the assistant is available in the Klarna app.",
+      "source": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+     },
+     {
+      "claim": "Klarna says the assistant can manage multilingual customer service, refunds, and returns.",
+      "source": "https://openai.com/index/klarna/"
+     },
+     {
+      "claim": "Klarna’s US help pages say the AI assistant provides 24/7 support in any language.",
+      "source": "https://www.klarna.com/us/help/"
+     },
+     {
+      "claim": "Klarna says users can choose a human agent if they prefer.",
+      "source": "https://www.klarna.com/international/press/ensure-ai-benefits-everyone/"
+     },
+     {
+      "claim": "Klarna has described the assistant as handling a large share of customer service chats and publicly linked it to major efficiency gains.",
+      "source": "https://openai.com/index/klarna/"
+     },
+     {
+      "claim": "Klarna has also added chat-based shopping features to its assistant.",
+      "source": "https://www.klarna.com/international/press/shopping-made-smarter-klarna-adds-more-ai-features-to-its-assistant-powered-by-openai/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI search",
+   "model": "openai/gpt-5.4-nano:online",
+   "ms": 9455,
+   "cost_usd": 0.0227988486,
+   "tokens": {
+    "in": 13174,
+    "out": 850
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "[url withheld: it matches the phone check]"
+   ],
+   "answer": {
+    "what_it_does": "Klarna’s AI assistant is a 24/7 customer service chatbot available in the Klarna app that handles customer service chats at scale. It manages tasks such as multilingual customer service and handling refunds and returns.",
+    "ai_agents": [
+     {
+      "name": "Klarna AI assistant (customer service agent)",
+      "what_it_does": "Provides multilingual, app-based customer service via conversational support, including handling refunds and returns.",
+      "actions": [
+       "Respond to customer service inquiries in more than 35 languages",
+       "Handle multilingual customer service chat interactions",
+       "Manage refunds and returns workflows mentioned by Klarna as tasks performed by the assistant",
+       "Operate 24/7 in Klarna’s covered markets"
+      ],
+      "source": "[url withheld: it matches the phone check]"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Customer support deflection and resolution (app chat)",
+      "who_uses_it": "Klarna consumers using the Klarna app for customer service",
+      "what_the_agent_can_reach": [
+       "Klarna app customer service chat interface",
+       "Klarna service-chat operations (as described through service chat logs and customer service chat handling metrics)",
+       "Refunds and returns processes (work performed by the assistant per Klarna’s disclosures)"
+      ],
+      "source": "[url withheld: it matches the phone check]"
+     }
+    ],
+    "incidents_or_risks": [],
+    "facts": [
+     {
+      "claim": "Klarna launched its AI assistant in February 2024 in partnership with OpenAI.",
+      "source": "[url withheld: it matches the phone check]"
+     },
+     {
+      "claim": "Klarna reports the AI assistant has handled 80% of customer service chats in the year ended December 31, 2025.",
+      "source": "[url withheld: it matches the phone check]"
+     },
+     {
+      "claim": "Klarna reports the AI assistant is available 24/7 in 23 markets and communicates in more than 35 languages.",
+      "source": "[url withheld: it matches the phone check]"
+     },
+     {
+      "claim": "Klarna reports its AI assistant has had 31 million conversations since launch (as of the year ended December 31, 2025 disclosures).",
+      "source": "[url withheld: it matches the phone check]"
+     },
+     {
+      "claim": "Klarna states the AI assistant manages tasks including multilingual customer service and refunds and returns.",
+      "source": "[url withheld: it matches the phone check]"
+     }
+    ]
+   }
+  },
+  {
+   "id": "gemini",
+   "label": "Gemini search",
+   "model": "google/gemini-3.1-flash-lite:online",
+   "ms": 2368,
+   "cost_usd": 0.00090387,
+   "tokens": {
+    "in": 232,
+    "out": 570
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+   ],
+   "answer": {
+    "what_it_does": "Klarna's AI assistant is an automated customer service tool designed to handle tasks such as managing refunds, returns, and payment issues 24/7. It leverages OpenAI's technology to provide personalized, multi-lingual support, effectively performing the work equivalent to 700 full-time agents.",
+    "ai_agents": [
+     {
+      "name": "Klarna AI Assistant",
+      "what_it_does": "Handles end-to-end customer service inquiries by interacting with users to resolve disputes, process returns, and manage payment schedules.",
+      "actions": [
+       "Accesses customer account data",
+       "Processes refunds and returns",
+       "Adjusts payment due dates",
+       "Integrates with Klarna's internal CRM and payment systems"
+      ],
+      "source": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Customer Support Automation",
+      "who_uses_it": "Klarna customers globally",
+      "what_the_agent_can_reach": [
+       "Customer transaction history",
+       "Payment status systems",
+       "Refund processing databases",
+       "Customer service communication channels"
+      ],
+      "source": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+     }
+    ],
+    "incidents_or_risks": [],
+    "facts": [
+     {
+      "claim": "In its first month of operation, the AI assistant handled 2.3 million conversations, equivalent to the workload of 700 full-time agents.",
+      "source": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+     },
+     {
+      "claim": "The AI assistant is available in 35 languages and has led to a 25% drop in repeat inquiries.",
+      "source": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter web search",
+   "model": "anthropic/claude-haiku-5.5",
+   "plugins": [
+    {
+     "id": "web",
+     "max_results": 6
+    }
+   ],
+   "max_tokens": 7000,
+   "ms": 25666,
+   "cost_usd": 0.026415378,
+   "tokens": {
+    "in": 40102,
+    "out": 5344
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/",
+    "https://www.customerexperiencedive.com/news/klarna-says-ai-agent-work-853-employees/805987/",
+    "https://www.bigeye.com/blog/klarnas-ai-customer-service-deployment",
+    "https://www.twig.so/blog/how-klarna-is-revolutionizing-customer-support-with-ai",
+    "https://www.usefini.com/blog/klarna-automates-two-thirds-of-customer-service-with-ai-assistant",
+    "https://www.twig.so/blog/klarna-ai-customer-support-efficiency",
+    "https://www.forbes.com/sites/quickerbettertech/2025/05/18/business-tech-news-klarna-reverses-on-ai-says-customers-like-talking-to-people/",
+    "https://www.forbes.com/sites/bernardmarr/2026/07/16/how-klarnas-ai-agent-strategy-backfired-but-became-a-useful-lesson/",
+    "https://irisagent.com/blog/klarna-ai-reversal-mid-market-lessons/"
+   ],
+   "answer": {
+    "what_it_does": "Klarna's AI assistant is an OpenAI-powered customer service agent built into the Klarna app and web experience, launched in February 2024, that answers consumer questions and handles tasks such as refunds, returns, payment issues and order status in more than 35 languages. Klarna says customers can still choose to reach live human agents, and the assistant hands complex cases to people.",
+    "ai_agents": [
+     {
+      "name": "Klarna AI Assistant (customer service chat agent)",
+      "what_it_does": "A conversational agent in the Klarna app and web chat that resolves routine consumer support requests and escalates harder cases to human staff.",
+      "actions": [
+       "Reads incoming customer messages and carries the full conversation, without a human in the loop for most cases (per third-party analysis)",
+       "Looks up account details, purchase history and payment status through internal systems",
+       "Reschedules or adjusts payment schedules and payment plans",
+       "Processes refunds and handles returns and order tracking",
+       "Answers policy, fee and spending-limit questions using help-center and policy content",
+       "Routes low-confidence or complex cases, such as disputes and fraud, to human agents with context attached (per third-party analysis)"
+      ],
+      "source": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Consumer self-service support in the Klarna app and web chat",
+      "who_uses_it": "Klarna's consumer base (Klarna reports about 150 million consumers worldwide), in 23 markets",
+      "what_the_agent_can_reach": [
+       "Customer account and purchase history",
+       "Payment schedules and outstanding balances",
+       "Refund and return workflows (money movement)",
+       "Payment-plan changes",
+       "Dispute and invoice inquiries",
+       "Escalation path to human support staff"
+      ],
+      "source": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Customers complained the AI gave generic answers and could not handle complicated or nuanced questions; Klarna had also let go of customer service staff with institutional knowledge. Klarna responded that it saw no drop in consumer satisfaction.",
+      "when": "Reported November 2025 (describing the 2025 period)",
+      "source": "https://www.customerexperiencedive.com/news/klarna-says-ai-agent-work-853-employees/805987/"
+     },
+     {
+      "what": "CEO Sebastian Siemiatkowski said cost had been too dominant an evaluation factor in organizing support, which produced lower quality, and Klarna began rehiring human agents and promised customers a human option.",
+      "when": "May 2025",
+      "source": "https://www.bigeye.com/blog/klarnas-ai-customer-service-deployment"
+     },
+     {
+      "what": "Klarna's public Q3 2025 update said the assistant does the work of 853 agents, versus the earlier 700 figure, with roughly $60M in annual savings. Critics said the 700 framing was misleading because it described avoided hiring during growth rather than layoffs.",
+      "when": "Q3 2025 update; critique in 2026 analyses",
+      "source": "https://www.twig.so/blog/how-klarna-is-revolutionizing-customer-support-with-ai"
+     },
+     {
+      "what": "Third-party analysis reported that the assistant sometimes gave confident but wrong answers about policy, fees or payment terms on edge cases, which the author treats as a compliance problem in fintech. This is an analyst's assessment, not a Klarna disclosure.",
+      "when": "Reported 2025-2026 (undated in source)",
+      "source": "https://www.twig.so/blog/how-klarna-is-revolutionizing-customer-support-with-ai"
+     },
+     {
+      "what": "Secondhand reporting of a hands-on critique found the assistant mainly automates Level-1 support and documented prompt-injection vulnerabilities alongside the guardrails Klarna deployed.",
+      "when": "Undated in source; critique cited in 2026 article",
+      "source": "https://www.usefini.com/blog/klarna-automates-two-thirds-of-customer-service-with-ai-assistant"
+     },
+     {
+      "what": "A reported concern that AI handling disputes and account closures autonomously raised compliance questions, and that customer satisfaction dropped on complex or emotional tickets even when answers were correct (third-party summary).",
+      "when": "Reported 2025-2026 (undated in source)",
+      "source": "https://www.twig.so/blog/klarna-ai-customer-support-efficiency"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Klarna announced the AI assistant on February 27, 2024; in its first month it handled 2.3 million conversations, about two-thirds of Klarna's customer service chats, which Klarna said equaled the work of 700 full-time agents.",
+      "source": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+     },
+     {
+      "claim": "Klarna said the assistant was available in 23 markets, around the clock, in more than 35 languages, and that customer satisfaction was on par with human agents.",
+      "source": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+     },
+     {
+      "claim": "Klarna reported average resolution time fell from 11 minutes to under 2 minutes and repeat inquiries dropped 25%.",
+      "source": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+     },
+     {
+      "claim": "Klarna's Q3 2025 public update put the assistant at the work of 853 agents and about $60M in annual savings.",
+      "source": "https://www.customerexperiencedive.com/news/klarna-says-ai-agent-work-853-employees/805987/"
+     },
+     {
+      "claim": "In a May 2025 statement, Klarna said it was 'not reversing on AI' and that its AI assistant performed the work of over 800 full-time roles.",
+      "source": "https://www.forbes.com/sites/quickerbettertech/2025/05/18/business-tech-news-klarna-reverses-on-ai-says-customers-like-talking-to-people/"
+     },
+     {
+      "claim": "Klarna's assistant is described as agentic: it accesses customer data, tracks ticket state, issues returns and manages payment plans, with a 100-person specialist team added to support complex queries alongside outsourced agents.",
+      "source": "https://www.forbes.com/sites/bernardmarr/2026/07/16/how-klarnas-ai-agent-strategy-backfired-but-became-a-useful-lesson/"
+     },
+     {
+      "claim": "Klarna's human support is now described as a freelance, on-demand model paying agents per shift, with AI kept in the loop for routine queries.",
+      "source": "https://irisagent.com/blog/klarna-ai-reversal-mid-market-lessons/"
+     },
+     {
+      "claim": "Klarna's outsourced external human agent count reportedly fell from about 3,000 to 2,300 as AI took on routine work.",
+      "source": "https://www.forbes.com/sites/bernardmarr/2026/07/16/how-klarnas-ai-agent-strategy-backfired-but-became-a-useful-lesson/"
+     },
+     {
+      "claim": "Klarna's assistant was built on OpenAI's GPT-4-class models, with integrations to Klarna's account and transaction systems and a help-center knowledge base (per third-party analysis, not confirmed by Klarna).",
+      "source": "https://www.twig.so/blog/klarna-ai-customer-support-efficiency"
+     }
+    ]
+   }
+  }
+ ]
+}

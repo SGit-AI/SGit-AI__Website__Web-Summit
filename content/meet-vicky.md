@@ -1,9 +1,9 @@
 ---
-title: Meet Vicky
+title: Meet Vicky Wang
 summary: You scanned Vicky's shirt or card at Web Summit 2026. Who Vicky is, what RiskMandate does, and how to book a meeting or talk to Vicky's agent.
 path: meet/vicky/index.html
 ---
-**Hello, and thanks for scanning.** You met Vicky, from the RiskMandate team at Web Summit Lisbon, 9 to 12 November 2026.
+**Hello, and thanks for scanning.** You met Vicky Wang, from the RiskMandate team at Web Summit Lisbon, 9 to 12 November 2026.
 
 ## RiskMandate, in short {#riskmandate}
 

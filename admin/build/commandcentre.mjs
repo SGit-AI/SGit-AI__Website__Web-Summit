@@ -9,6 +9,7 @@
 import fs from 'fs'
 import path from 'path'
 import { execFileSync } from 'child_process'
+import { clipWords as clip } from './text.mjs'
 
 
 export const frontMatter = t => {
@@ -51,13 +52,16 @@ export function build(root, person, now = new Date()) {
         const areas = [...new Set(named.map(m => m.area || 'other'))]
         config.workstreams = areas.map(a => ({ id: a, name: (AREA[a] || [a])[0], colour: (AREA[a] || [, 'slate'])[1], agent: '', issues: named.filter(m => (m.area || 'other') === a).map(m => m.id), with: '', goal: `The issues on the board in the area "${a}" named for you (grouped by the build; your agents can set workstreams in people/${person}/app/config.json).` }))
     }
+    // a person's own "done" for team-wide issues (people/<id>/app/config.json "done_for_me": {"WS-NN": "why"}): the issue stays
+    // open for the team on the board, and shows as done in this person's command centre only (Silvio, 7 November)
+    const doneForMe = config.done_for_me || {}
     const streamOf = id => (config.workstreams.find(w => w.issues.includes(id)) || {}).id || null
     const issues = fs.readdirSync(path.join(root, 'board')).filter(f => /^WS-\d+.*\.md$/.test(f)).map(f => {
         const { meta, body } = frontMatter(fs.readFileSync(path.join(root, 'board', f), 'utf8'))
         const forList = (meta.for || '').split(/,\s*/).map(s => s.trim()).filter(Boolean)
         return {
             id: meta.id, title: meta.title, area: meta.area || '', for: forList, due: meta.due || '', due_at: dueAt(meta.due),
-            recurring: /daily|every/i.test(meta.due || ''), status: (meta.status || 'open').toLowerCase(), picked_by: meta.picked_by || '',
+            recurring: /daily|every/i.test(meta.due || ''), status: (doneForMe[meta.id] ? 'done' : (meta.status || 'open').toLowerCase()), picked_by: meta.picked_by || '', done_for_me: doneForMe[meta.id] || '',
             agents: (meta.agents || '').replace(/\.$/, ''), body: body.slice(0, 1500), file: `board/${f}`,
             // named: the issue names the person; team: it is for everyone
             mine: forList.includes(person) || forList.includes('everyone'), named: forList.includes(person), stream: streamOf(meta.id) || (forList.includes('everyone') ? 'team' : null),
@@ -78,7 +82,9 @@ export function build(root, person, now = new Date()) {
     // "joined" = the onboarding notes record it joining, but it has not committed under its own name yet
     const notes = (readJson(root, `people/${person}/onboarding.json`) || {}).notes || ''
     const joined = name => new RegExp(`${name.replace(/[.@-]/g, '\\$&')}, joined`).test(notes)
-    const declared = [...new Set([...(me.agents || []), `dashboard@web-summit.${person}`])]
+    // ...and every agent the person's own people/<id>/agents.json declares (conductor@web-summit.jose, 5 November, at Jose's word)
+    const own = (readJson(root, `people/${person}/agents.json`) || []).map(a => a && a.name).filter(n => typeof n === 'string' && n.endsWith(`@web-summit.${person}`))
+    const declared = [...new Set([...(me.agents || []), ...own, `dashboard@web-summit.${person}`])]
     const agents = declared.map(name => {
         const short = name.split('@')[0], cfg = config.agents[short] || { colour: { conductor: 'conductor', dev: 'dev', dashboard: 'conductor', outreach: 'outreach', video: 'video', procurement: 'procurement' }[short] }, mine = work.filter(c => c.agents.includes(name))
         const status = mine.length ? 'active' : joined(name) ? 'joined' : 'proposed'
@@ -86,8 +92,8 @@ export function build(root, person, now = new Date()) {
     })
 
     // 4. the team's activity, last 48 hours, newest first (public commit subjects only)
-    const activity = work.filter(c => age(c) < 2 * 864e5).slice(0, 60).map(c => ({ hash: c.hash, at: c.at, subject: c.subject.slice(0, 160), agent: c.agents[0] || '', mine: c.agents.some(a => a.endsWith(`.${person}`)) }))
-    const messages = work.filter(c => age(c) < 2 * 864e5 && c.fors.some(f => f.includes(`web-summit.${person}`) || f === person)).map(c => ({ hash: c.hash, at: c.at, subject: c.subject.slice(0, 160), agent: c.agents[0] || '' }))
+    const activity = work.filter(c => age(c) < 2 * 864e5).slice(0, 60).map(c => ({ hash: c.hash, at: c.at, subject: clip(c.subject, 160), agent: c.agents[0] || '', mine: c.agents.some(a => a.endsWith(`.${person}`)) }))
+    const messages = work.filter(c => age(c) < 2 * 864e5 && c.fors.some(f => f.includes(`web-summit.${person}`) || f === person)).map(c => ({ hash: c.hash, at: c.at, subject: clip(c.subject, 160), agent: c.agents[0] || '' }))
 
     const onboarding = readJson(root, `people/${person}/onboarding.json`) || {}
     // decisions waiting: every open decision item for this person on the stand-up agenda (one file per item), then the config's own
@@ -99,11 +105,13 @@ export function build(root, person, now = new Date()) {
     const decisions = [...agendaDecisions, ...config.decisions]
     return {
         about: `Built from the repository at build time: board/WS-*.md, data/team.json, data/meetings/, people/${person}/ and git history. Public, like the rest of the site.`,
-        built_at: now.toISOString(), version, person: { id: person, name: me.name || person, role: me.role || '', owns: me.owns || [], status: me.status || '' },
+        built_at: now.toISOString(), version, person: { id: person, name: me.name || person, role: me.role || '', owns: me.owns || [], status: me.status || '', ...(fs.existsSync(path.join(root, 'people', person, 'photo.jpg')) ? { photo: '../photo.jpg' } : {}) },
         summit: config.summit, standups: config.standups, workstreams: config.workstreams, decisions, funnels: config.funnels, prompts: config.prompts, mail_searches: config.mail_searches, connectors: config.connectors, ideas: config.ideas || '',
         // chat in the page (assets/cc/app.js): only where the person's config.json sets it; the key is never here
         llm: config.llm || null,
         links: config.links || [],
+        // event mode (Silvio, 5 November): the summit's sessions and side events, already public on /summit/
+        event: (() => { const E = readJson(root, 'data/events.json') || {}; return { read_on: E.read_on || '', sessions: E.sessions || [], side_events: E.side_events || [] } })(),
         onboarding: { level: onboarding.level ?? null, steps: onboarding.steps || {}, updated: onboarding.updated || '' },
         issues, agents, activity, messages,
         repo: 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit', branch: 'dev',
@@ -133,5 +141,7 @@ export function summaryMd(d, now = new Date()) {
         '## My agents {#agents}',
         '',
         ...d.agents.map(a => `- **${a.name}** (${a.status}): ${a.job}${a.commits_7d ? `; ${a.commits_7d} commits this week` : ''}`),
+        '',
+        '[What changed in the command centre, day by day](../../../command-centre/index.html)',
     ].join('\n')
 }

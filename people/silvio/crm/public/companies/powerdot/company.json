@@ -1,0 +1,29 @@
+{
+  "id": "powerdot",
+  "type": "company",
+  "kind": "company",
+  "name": "Powerdot",
+  "aliases": [],
+  "website": "https://powerdot.eu",
+  "what": null,
+  "category": "energy / EV charging",
+  "country": "Portugal",
+  "attending": "at Web Summit Lisbon 2026: speaker: Co-founder & CEO (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/42501667-49a1-479b-bf77-fd88a2cf8be8/luis-santiago-pinto/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://powerdot.eu",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

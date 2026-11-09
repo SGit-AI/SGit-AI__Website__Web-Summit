@@ -205,6 +205,74 @@
       "note": "dev pass 18: the key-shape check scans 36.6 MB (2,726 files; /pki/keys/ alone 2.7 MB of QR paths) and took 421 ms; a literal-led prefilter (a necessary part of every match) runs first: 33 ms, same answer for every file; a planted key still fails the gate, and a broken prefilter fails the self-test. Gate 4.4 -> 4.0 s.",
       "pages": 423,
       "validate_seconds": 3.97
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: WS-132 part 1. Markdown links and images keep their URL only if http(s), mailto, a fragment or relative (safeUrl in build.mjs; also the cards fence); javascript:, data: and vbscript: render as plain text. Gate check 21 scans every href, src, action and formaction in the 465 built pages, entities decoded and control characters dropped as a browser does, with its own fixtures. Probed: nine hostile links rendered inert; with safeUrl disabled the gate fails on all five. Gate 5.2 s at 465 pages (4.7 s at 433 last pass: the growth is pages); build 3.6 s.",
+      "pages": 465,
+      "validate_seconds": 5.21,
+      "build_seconds": 3.59
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: the history read once per build. Profiled the build: 1.5 s in git processes, eight modules each reading the whole history for the same commits (build.mjs three times, orgchart, inventory, pki, meetings, highlights). admin/build/gitlog.mjs reads it once, memoized; each filters its own window. Output byte-identical (old and new code built back to back with BUILD_NOW pinned: only built_at differs). Build 3.87 -> 3.45 s, gate 5.27 -> 4.92 s (medians of three, 478 pages). Next: QR codes for the 49 keys are 1.2 s of the rest (pki.mjs, security's).",
+      "pages": 478,
+      "validate_seconds": 4.92,
+      "build_seconds": 3.45
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: WS-164 items 1 and 3. page() leaves keyring.js off any page that runs a script from people/ (resolved from its src) or a script a person's pages.mjs put on it: 34 of 492 pages (Indi's factory and today, the lab studio, the command centres with their own app.js). Gate check 22: no built page has both; no .js under people/ uses WSKeyring, ws-keyring, indexedDB, document.links or data/sealed/. Proved: with the filter off the gate fails on all 34; a planted people/ script calling WSKeyring fails. Gate 5.04 s at 492 pages (4.92 s at 478); build 3.47 s.",
+      "pages": 492,
+      "validate_seconds": 5.04,
+      "build_seconds": 3.47
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: one set of text helpers (admin/build/text.mjs: esc, escAttr, clipWords) for ten build modules; eight private copies of esc and two of the word-boundary clip removed. Output identical (built old and new with BUILD_NOW pinned) except the one intended change: cockpit.mjs cut commit subjects at 160 characters mid-word, the same bug sgit@ fixed in two other places (a cut agent name reads as an email address to the gate); now cut at a word. Gate 6.1 s at 500 pages, unchanged within noise (this machine read 6.0 s before the change; it was 5.0 s at 492 pages this morning, so the machine is slower now).",
+      "pages": 500,
+      "validate_seconds": 6.08
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: admin/tools/lane_for.py runs as any agent (vault@web-summit.angelo ran it from an edited copy, 11884c6e): --as/LANE_AS, --creds/LANE_CREDS, --why for the record, today's date; and it signs with the published key that matches the creds file, not the first key with the agent's name (an ended session's key would have signed). No copy to keep in step; the site and the gate unchanged.",
+      "pages": 503,
+      "validate_seconds": 6.37
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: WS-77 on phones: the section sub-menu is one sideways-scrolling row (Work: 40 px tall, was about 155: three rows of 16 links above the content), starting at the current page, both rows fading at the right edge. Six CSS rules and four lines in copy.js; no new script, no colour literal; desktop unchanged.",
+      "pages": 506,
+      "validate_seconds": 5.6
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: QR codes cached in .cache/qr/ (gitignored, by sha256 of the text; the same text always makes the same code). Interleaved medians of five, old against new: build 3.99 -> 2.84 s, gate 5.75 -> 4.59 s warm (5.74 s cold, as before). Output identical (built from the cache with BUILD_NOW pinned). Gate check 10's walk skips .cache. CI starts empty, so its build is unchanged unless the workflow caches .cache/ (a suggestion for the workflow's owner). Tried first and dropped: one mkdir per folder in write() and one git log for the print sign-offs: no difference in five interleaved runs, though the profiler showed them; not shipped.",
+      "pages": 511,
+      "validate_seconds": 4.59,
+      "build_seconds": 2.84
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: the gate's contact check (comms_check.mjs, check 15) 933 -> 410 ms. Its email pattern is anchored at the start of a run (identical matches on all 2,101 tracked text files: 6,897 matches, 0 files differ; 465 -> 182 ms on its own), and the key shapes use secrets.cjs's prefilters, as check 5 already did. Planted email and vault-key probes still fail. Gate 4.87 -> 4.37 s, medians of five interleaved runs, 521 pages. CI gains the same half second in both jobs.",
+      "pages": 521,
+      "validate_seconds": 4.37
     }
   ]
 }

@@ -1,0 +1,113 @@
+{
+  "number": 16,
+  "date": "8 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "The summit is tomorrow: paste the schedules, and a word with Dinis about tokens",
+  "when": "8 November 2026, 07:20 UTC (scheduled wake; since brief 15, 17:20 UTC yesterday)",
+  "by": "conductor@web-summit.jose",
+  "headline": "The one-day schedule trial has not started: no wake pointer was pasted overnight, so today runs on the old schedules unless you paste this morning. Page views are safe but filling: lanes 1 and 2 are full and lane 3 holds 388 (07:07), with about 2,600 places left; the busiest hour so far brought 255. None of Dinis's scheduled agents has committed since 16:41 yesterday, so the token ask is unanswered; a word from you to Dinis himself would unblock it. Your writer drafted its first piece, JW1, last night.",
+  "stats": [
+    {
+      "n": "2,388",
+      "label": "page views waiting (07:07): lanes 1 and 2 full, lane 3 at 388, about 2,600 places left"
+    },
+    {
+      "n": "0 of 8",
+      "label": "wake pointers pasted; the trial has not started"
+    },
+    {
+      "n": "~15 h",
+      "label": "since any scheduled agent of Dinis's committed (16:41 yesterday)"
+    },
+    {
+      "n": "1",
+      "label": "piece drafted by your writer (JW1, one door), waiting on the newsroom's review"
+    }
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "⏱️ Paste the eight wake pointers and their times this morning",
+      "detail": "Each is one short line; the full steps live in each agent's kit section (C39). The list, agent by agent, is in schedules.md#paste and in my reply of about 01:40. Switch the watcher to Sonnet at the same time. If you paste by about 09:00, today counts as the trial's first full day from that time and I report its tokens tomorrow at 07:20.",
+      "options": [
+        "paste this morning",
+        "skip the trial until after the summit"
+      ],
+      "recommend": "Paste this morning; 10 minutes. If the morning is too full, skip the trial until after the summit rather than half-start it."
+    },
+    {
+      "id": "2",
+      "ask": "🔑 A word with Dinis himself about the agents' tokens (WS-170)",
+      "detail": "His scheduled agents have been silent since 16:41 yesterday (your watcher's A-21; only his X-ray agent committed after, until 21:52), so the ask on WS-170 and at the 12:00 stand-up has not reached him. A message from you: tokens for your conductor and vault (and your CRM agent's, asked 6 November), or one drain of the page-view lanes by him before the summit. At yesterday's busiest hours the three free lanes would last about half a day to two days.",
+      "options": [
+        "I message Dinis",
+        "leave it on WS-170"
+      ],
+      "recommend": "Message Dinis today; one line."
+    },
+    {
+      "id": "3",
+      "ask": "📋 Before the summit: three reads, about 25 minutes",
+      "detail": "(a) Dev's pre-read of Angelo's five drafts: apply, change or wait for each (10 min). (b) Your writer's JW1 draft, and its paragraph about your Actions list (10 min). (c) Open your designer's session so it starts the Agents board (1 min; it has not run since 5 November).",
+      "options": [
+        "all three today",
+        "(c) only"
+      ],
+      "recommend": "(c) now, (a) and (b) this afternoon."
+    }
+  ],
+  "you_asked": [
+    {
+      "at": "8 Nov, about 01:10",
+      "said": "Go for a round of all the agents to see what is going on and due tasks and what can you make to move forward",
+      "done": "A round of all your agents; three Actions rows added (vault's passphrase, the writer's JW1 and its next piece); the CRM task's due line now says it waits on its token",
+      "where": "71de53d4",
+      "status": "done"
+    },
+    {
+      "at": "8 Nov, about 01:40",
+      "said": "Where is designer? Can you give the instructions for each agent?",
+      "done": "Answered in chat: the designer's session, not opened since 5 November and with no scheduled task, and the eight wake pointers with their times",
+      "where": "this session; schedules.md#paste",
+      "status": "done"
+    }
+  ],
+  "sections": [
+    {
+      "title": "What I did, at your word and within C39's own-scope list",
+      "items": [
+        "At your word (the 01:10 round): kept your Actions list, rows for vault@web-summit.jose's passphrase (hardening step 3) and writer@PrompTugal.jose's JW1 and next piece.",
+        "At your word (the 01:10 round): fixed a task-file source, the CRM task waits on its own token (WS-170), not a past date.",
+        "At your word (C39): gave the watcher a task, A-06 compares the stored prompts with the pointers.",
+        "Nothing without asking: no board issue status line changed; no Kit-edit of any agent's Each wake steps (those wait for the trial's token count and your keep or revert)."
+      ]
+    },
+    {
+      "title": "The accountant: yesterday (7 November), a baseline day",
+      "items": [
+        "From the ledgers: about 104M tokens, 7.3M of them not cache reads, about $60 (6 November: 92M, about $54; up about 11%). The costliest: the watcher ($17.09), dev ($13.13), your new writer ($10.95), the dashboard ($7.03).",
+        "The watcher still ran on Opus all day: its Sonnet trial has not started. No ledger line from automation, crm or the designer (they did not run, or committed nothing).",
+        "Yesterday is the baseline: the schedule trial starts only when the pointers are pasted."
+      ]
+    },
+    {
+      "title": "Your agents overnight",
+      "items": [
+        "writer@PrompTugal.jose (19:54 to 22:40): desk and key in the newsroom, your account can push there; JW1 drafted, fact-checked and fixed; waits on the newsroom's review and Dinis's yes for the desk (asked in its README's commit, no answer).",
+        "vault (17:43): hardening steps 1 and 2 done; asks you for SG_SEND_PASSPHRASE in its environment (step 3, 2 minutes).",
+        "dashboard (17:32): linked your pulse page; waits on the designer for the board.",
+        "dev, automation, helper: nothing new. The watcher's 07:15 run is not in yet."
+      ]
+    }
+  ],
+  "next": [
+    "12:20: the midday check; if you pasted, I delete the drain task once my wake carries the drain sentence."
+  ],
+  "sources": [
+    "telemetry_drain.py --dry, hourly (07:07)",
+    "list_triggers (07:22, read only): no stored prompt or time changed",
+    "git log origin/dev since 01:20; dfdf560d's successor a4537cf6 (watcher, 22:15)",
+    "people/jose/writer/STATE.md; people/jose/tasks/*.md",
+    "your Drive folder (titles only: no new files)"
+  ]
+}

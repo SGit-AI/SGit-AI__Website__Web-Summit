@@ -1,0 +1,271 @@
+{
+ "number": 3,
+ "date": "2026-11-06",
+ "kicker": "Web Summit 2026 · token accountant",
+ "title": "Brief 3: Angelo's agents measure, Indi's do not",
+ "when": "6 November 2026, 17:37 UTC (window: since brief 2, 5 November 17:35 UTC)",
+ "by": "accountant@web-summit.indi",
+ "headline": "Only my own line again, 177,635 fresh tokens; Angelo's seven agents wrote 31 ledger lines once the step was in their prompts, so A1 is still the biggest saving waiting, with synthetic's long session next.",
+ "stats": [
+  {
+   "n": "177,635",
+   "label": "tokens today (fresh, measured: mine only, since 4 Nov 19:12)"
+  },
+  {
+   "n": "5,914,918",
+   "label": "cache reads today (mine only)"
+  },
+  {
+   "n": "1 of 11",
+   "label": "Indi's agents measured of agents running"
+  },
+  {
+   "n": "not yet",
+   "label": "saving per day: waits on A1"
+  }
+ ],
+ "for_you": [
+  {
+   "id": "A1",
+   "ask": "Put the measure step in every agent's wake prompt (third time asked)?",
+   "detail": "Angelo's agents prove it: the step in the prompt gave 31 lines from 7 agents in a day. Indi's agents, asked by commit: 0 lines in two days. Old: '... do one run, release it, and report in five lines.' New: '... do one run, release it, run node people/indi/accountant/measure.mjs --agent <name> --task \"<one line>\" --since <wake start> --quality pass|fail|n/a --append and commit the line, and report in five lines.'",
+   "options": [
+    "Yes, the conductor adds it to all",
+    "Yes, Indi adds it herself",
+    "No"
+   ],
+   "recommend": "Yes, the conductor adds it to all"
+  },
+  {
+   "id": "A4",
+   "ask": "Angelo asks for a workload view of his scheduled agents (c7de3717), relayed by your conductor: may I do it?",
+   "detail": "Per agent: wakes a day, how many did something, tokens per useful run, and advice (add, keep, slow down, remove). His first question: does he need more dev agents? His ledger already has the numbers. Cost: about 30,000 tokens a day by my estimate, inside my budget. His runner writes a stopgap table meanwhile.",
+   "options": [
+    "Yes, add it to the daily brief",
+    "Yes, once, then decide",
+    "No, Indi's agents only"
+   ],
+   "recommend": "Yes, once, then decide"
+  },
+  {
+   "id": "A2",
+   "ask": "Test persona sub-agents on Sonnet 5.5 and Haiku 5.5 before synthetic users run 3?",
+   "detail": "Open since brief 1. Under 200,000 tokens, once.",
+   "options": [
+    "Yes, test before run 3",
+    "No, keep Opus 5.5"
+   ],
+   "recommend": "Yes, test before run 3"
+  }
+ ],
+ "you_asked": [],
+ "sections": [
+  {
+   "title": "1. Ledger",
+   "table": {
+    "head": [
+     "Agent",
+     "Wakes",
+     "Fresh input",
+     "Output",
+     "Cache write",
+     "Cache read",
+     "Sub-agent tokens",
+     "Per wake (trend)",
+     "Pass rate"
+    ],
+    "rows": [
+     [
+      "accountant@indi",
+      "1 (+ Indi's ask)",
+      "89",
+      "32,007",
+      "145,539",
+      "5,914,918",
+      "0",
+      "177,635 (up: two jobs in one line)",
+      "1/1"
+     ],
+     [
+      "10 other agents",
+      "0",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "2. Biggest three savings",
+   "items": [
+    "A1, measuring itself: no agent of Indi's can be tuned until it reports. Evidence: Angelo's 31 lines vs Indi's 0.",
+    "Synthetic's long session (brief 1): 173,399 cache reads per call. Waits on run 3.",
+    "Idle wakes: since brief 2, conductor made 6 commits and dashboard 4; dev, designer and six others made none. Once they measure, any wake that does nothing is a candidate to slow down, as Angelo did with his helper (12 wakes, 3 commits)."
+   ]
+  },
+  {
+   "title": "3. Model tests run",
+   "text": "None: A2 not answered."
+  },
+  {
+   "title": "4. Agents not yet measuring",
+   "text": "All ten. Asked 4 Nov: conductor, dev, dashboard, designer. Asked 5 Nov: messaging, factory, builder, ux, journalist, synthetic (asks.md). Not asked again. A3 (fresh conductor sessions) waits on A1."
+  },
+  {
+   "title": "5. Data notes and 6. My own use",
+   "text": "One ledger line in the window (mine, 5 Nov 17:36, covering Indi's report and guide and wake 2). Commit counts and Angelo's line counts from git. My use is above the measured saving (none) for a second day; review on 11 November. This wake: in brief 4."
+  }
+ ],
+ "next": [
+  "7 November, 17:30 UTC: brief 4."
+ ],
+ "sources": [
+  "people/indi/accountant/ledger/ (the accountant file)",
+  "people/angelo/ledger/ (line counts only)",
+  "people/indi/accountant/asks.md",
+  "git log since brief 2"
+ ],
+ "friendly": {
+  "title": "Your agents' token use, 6 November",
+  "summary": "Angelo's agents started reporting their tokens today: 31 reports from 7 agents. The difference: the step is written into their run instructions. Yours still are not reporting. One yes (A1) fixes that.",
+  "numbers": [
+   {
+    "n": "177,635",
+    "label": "Fresh tokens measured",
+    "explain": "Only mine: your report and guide, plus yesterday's run."
+   },
+   {
+    "n": "0",
+    "label": "Reports from your agents",
+    "explain": "Ten agents, asked by message, none reporting."
+   },
+   {
+    "n": "31",
+    "label": "Reports from Angelo's agents",
+    "explain": "From 7 agents in a day, once it was in their instructions."
+   },
+   {
+    "n": "8 of 10",
+    "label": "Your agents idle since yesterday",
+    "explain": "Only the conductor and dashboard committed."
+   }
+  ],
+  "agents": [
+   {
+    "name": "accountant",
+    "state": "reports",
+    "on": true
+   },
+   {
+    "name": "your ten other agents",
+    "state": "asked, not reporting",
+    "on": false
+   },
+   {
+    "name": "Angelo's seven agents",
+    "state": "reporting",
+    "on": true
+   }
+  ],
+  "bars_title": "Ledger lines: Angelo's agents vs yours",
+  "bars": [
+   {
+    "label": "Angelo's conductor",
+    "value": 11,
+    "shown": "11"
+   },
+   {
+    "label": "Angelo's team-collab",
+    "value": 6,
+    "shown": "6"
+   },
+   {
+    "label": "Angelo's dev",
+    "value": 5,
+    "shown": "5"
+   },
+   {
+    "label": "Angelo's other four",
+    "value": 9,
+    "shown": "9"
+   },
+   {
+    "label": "All ten of yours",
+    "value": 0,
+    "shown": "0"
+   }
+  ],
+  "bars_note": "Same script, same ask. The only difference is one line in each agent's instructions.",
+  "savings": [
+   {
+    "title": "Turn reporting on",
+    "plain": "Nothing can be trimmed until it is measured. One line in each agent's instructions does it.",
+    "evidence": "Angelo: 31 reports. You: 0."
+   },
+   {
+    "title": "Start fresh more often",
+    "plain": "Synthetic's long session re-read its history at every step. Still the biggest known waste.",
+    "evidence": "About 173,000 tokens re-read per step."
+   },
+   {
+    "title": "Slow down idle agents",
+    "plain": "Eight of your agents did nothing since yesterday. Once measured, quiet ones can wake less often.",
+    "evidence": "Angelo slowed his helper: 12 wakes, 3 commits."
+   }
+  ],
+  "decisions": [
+   {
+    "id": "A1",
+    "question": "Add the report step to every agent's instructions?",
+    "plain": "Your conductor adds one line to each. Third time asked; it is the key to everything else.",
+    "options": [
+     "Yes, the conductor adds it to all",
+     "Yes, I add it myself",
+     "No"
+    ],
+    "recommend": "Yes, the conductor adds it to all"
+   },
+   {
+    "id": "A4",
+    "question": "Angelo asks me for a workload view of his agents. May I?",
+    "plain": "For each agent: how often it wakes, how often it does something, tokens per useful run, and advice. About 30,000 tokens a day (my estimate).",
+    "options": [
+     "Yes, every day",
+     "Yes, once, then decide",
+     "No, your agents only"
+    ],
+    "recommend": "Yes, once, then decide"
+   },
+   {
+    "id": "A2",
+    "question": "Test cheaper models for the persona helpers?",
+    "plain": "Sonnet 5.5 and Haiku 5.5 against Opus 5.5, once, under 200,000 tokens.",
+    "options": [
+     "Yes, test first",
+     "No, keep Opus 5.5"
+    ],
+    "recommend": "Yes, test first"
+   }
+  ],
+  "glossary": [
+   [
+    "Fresh tokens",
+    "new reading, writing and memory: the real work."
+   ],
+   [
+    "Ledger line",
+    "one row of numbers an agent writes after each run."
+   ],
+   [
+    "Idle wake",
+    "a run that starts, reads, and changes nothing."
+   ]
+  ],
+  "next": "Brief 4 on 7 November at 17:30 UTC."
+ }
+}

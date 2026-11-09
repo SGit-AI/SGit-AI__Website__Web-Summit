@@ -1,0 +1,41 @@
+{
+  "id": "cgd",
+  "type": "company",
+  "kind": "company",
+  "name": "Caixa Geral de Depósitos",
+  "aliases": [],
+  "website": "https://www.cgd.pt",
+  "what": null,
+  "category": "Banking",
+  "country": "Portugal",
+  "attending": "not listed at Web Summit Lisbon 2026: not on the lis26 event partners (pages 1 to 8) or speakers (pages 1 to 47) lists, checked 2026-11-05",
+  "attending_as": null,
+  "topics": [],
+  "ai_facts": [
+    {
+      "text": "Runs the 'Assistente CAIXA' AI virtual assistant (site and app) that can carry out banking operations; published AI-in-banking guidance.",
+      "source": "https://www.cgd.pt/Site/Saldo-Positivo/formacao-e-tecnologia/Pages/inteligencia-artificial-na-banca.aspx",
+      "read_at": "2026-11-05"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.cgd.pt/Site/Saldo-Positivo/formacao-e-tecnologia/Pages/inteligencia-artificial-na-banca.aspx",
+      "read_at": "2026-11-05",
+      "supports": "the AI facts, sector, country; website (the company's own site)"
+    },
+    {
+      "url": "https://websummit.com/partners/event-partners-2026/",
+      "read_at": "2026-11-05",
+      "supports": "not among the event partners"
+    },
+    {
+      "url": "https://websummit.com/speakers/",
+      "read_at": "2026-11-05",
+      "supports": "not among the speakers"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/online.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

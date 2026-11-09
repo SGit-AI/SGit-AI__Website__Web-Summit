@@ -1,0 +1,53 @@
+{
+ "number": 18,
+ "date": "2026-11-05",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "Vicky's newsroom desks were stuck behind the gate: fixed; one vote is in (Silvio's)",
+ "when": "Thursday 5 November 2026, 08:40 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "155 agent commits and 124 releases since brief 17, most of them your night. This morning Vicky's programme and curator desks could not publish to the newsroom: its gate wants the derived data committed, and a desk agent writes only its own folder. Fixed: the newsroom's release script now derives the data itself, in a commit of its own (tested: a desk-only change goes red, then green). The sticker vote has one ballot waiting, Silvio's, which also proves his new key works; every conductor has your morning note asking for a vote before 13:00. My vote took the board number WS-159 an hour after Jose's conductor did; it is now WS-167.",
+ "stats": [
+  {"n": "155", "label": "agent commits since brief 17 (22:35)"},
+  {"n": "1 of 6", "label": "sticker ballots waiting (Silvio's); closes 14:30 UTC"},
+  {"n": "73", "label": "overdue issues (24 yesterday), Angelo's daily note"},
+  {"n": "0", "label": "messages in the conductor's inbox lanes"}
+ ],
+ "for_you": [
+  {
+   "id": "1",
+   "ask": "Vote, and drain once before 14:30",
+   "detail": "You are one of the four drainers. Vote at /stickers/vote/, then after a few ballots, /stickers/vote/vault/: open with full access, the lock (your SG/Send access token), Drain, the passphrase.",
+   "options": ["vote and drain yourself", "vote; leave the drain to Angelo, Jose or Indi, or to me from the command line"],
+   "recommend": "Vote now; I drain from the command line at the 12:27 wake if nobody has, so the 13:00 sees a count."
+  },
+  {
+   "id": "2",
+   "ask": "WS-165, the requests vault from your RiskMandate.ai agent: option A or B",
+   "detail": "A: a requests/ folder in ws-issues-public, contact details in ws-crm-private. B: a new pair of vaults. Also: who creates it, and should each stand-up brief list the requests due.",
+   "options": ["A", "B", "not now"],
+   "recommend": "A: no new keys; I list the due requests in each stand-up brief."
+  },
+  {
+   "id": "3",
+   "ask": "Your RiskMandate.ai agent's public key, to open its channel",
+   "detail": "/family/riskmandate-agent/: a vault each, a lane each way. Step 1 is its public key, handed to me by you; nothing moves until then.",
+   "options": ["paste its public bundle here", "later"],
+   "recommend": "Ask it to read the page and make the key; paste the public half here."
+  }
+ ],
+ "you_asked": [
+  {"at": "5 Nov, ~03:00 to 04:00", "said": "the sticker vote: top 10, gaps, drag you can see, the vault on its own page, on the home page, closes 14:30", "done": "All live (v0.2.466 onwards); the vault key sealed to you as well.", "where": "/stickers/vote/", "status": "open until 14:30"},
+  {"at": "5 Nov, ~04:15", "said": "an infographic ... everything that I've done ... call outs to the multiple agents and multiple humans", "done": "Your night in pictures, your agents' work only (82 commits, 16 agents), the latest cards, who needs to look at what.", "where": "/nights/2026-11-05/", "status": "done"},
+  {"at": "5 Nov, ~04:30", "said": "write a note and a debrief ... for their conductor ... they all go and vote", "done": "One note per conductor (Angelo, Jose, Indi, Vicky, Silvio), each its own commit; Nimay's on the page. Angelo's and Jose's conductors have already routed theirs.", "where": "/nights/2026-11-05/notes/", "status": "done"},
+  {"at": "5 Nov, ~05:00", "said": "a page on this website for briefing to other agents or other teams from our family, SGit ... and a communication channel with my agent at riskmandate.ai", "done": "/family/ with the sgit first-run feedback (point the sgit dev session at it) and the channel brief for your RiskMandate.ai agent.", "where": "/family/", "status": "the channel waits on its key"}
+ ],
+ "team": [
+  {"id": "Vicky's agents", "status": "unblocked", "doing": "programme@ and curator@ held their 07:45 and 08:15 runs behind the newsroom's gate; the fix is pushed, they can release at their next run"},
+  {"id": "Silvio", "status": "voted", "doing": "his video@ agent wrote four storyboards and the stand loop's shot list; dev@ opened WS-166, every person's key on every device before Monday"},
+  {"id": "Jose", "status": "briefed", "doing": "his conductor's brief 8 puts the vote first; his watcher ran team-wide for the first time"},
+  {"id": "Indi", "status": "in person today", "doing": "newsroom push access confirmed (WS-145); her patch live"},
+  {"id": "Angelo", "status": "briefed", "doing": "his dashboard agent proposes your cockpit as the pattern; the daily note: overdue tripled, decisions on you"}
+ ],
+ "next": ["10:27 wake: drain, the vote count, and the 13:00 deck and its PDF.", "12:27 wake: drain the votes from the command line if nobody has, so the 13:00 sees a count."],
+ "sources": ["git log since 2026-11-04T22:35Z (dev), both repositories", "stickers_vote.py status at 08:35 UTC", "feedback_drain.py at 08:33 UTC"]
+}

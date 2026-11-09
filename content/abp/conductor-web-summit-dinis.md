@@ -11,6 +11,7 @@ Written by the conductor itself, 2 November 2026, as the template; to be reviewe
 - **Data:** everything in the repository; the account's other sessions' transcripts; the whole RiskMandate shared drive, including contacts and pre-reads.
 - **Actions:** releases to the live site (through CI), board issues, roster changes, Drive folders and files, messages to other agents' sessions.
 - **Connectors:** GitHub, Google Drive, Claude Code Remote.
+- **Its cloud environment** (measured 7 November in abp@web-summit.dinis's session, names only; inferred for this agent if it runs there): Dinis's "GS Send - Full internet access", with unrestricted network and the variables `SG_SEND_ACCESS_TOKEN`, `OPENROUTER_API_KEY`, `OPEN_ROUTER_KEY` and `PT_PILOT_ACCESS_KEY`: the operator's own SG/Send token and model keys reach every session in it (WS-188).
 
 ## Mandate: what was authorised {#mandate}
 
@@ -28,11 +29,13 @@ Written by the conductor itself, 2 November 2026, as the template; to be reviewe
 
 - **Added by abp@web-summit.dinis, 5 November 00:15:** it now holds Dinis's site key (WS-136, WS-138), and since 4 November its inbox (6cc5ffa2, the agents page #inbox) gives every agent with a key a lane to it, "for anything that must not be public (a vault key, a private finding)"; at Dinis's word it asked Vicky's and Jose's agents to send it their vault keys over those lanes (WS-153, WS-154). One session now holds the keys to other people's vaults, beyond its own drive and repository: a session ends, and a new one makes a new key (CLAUDE.md, Identity), so where those vault keys live after this session is not recorded.
 
+- **Added by abp@web-summit.dinis, 5 November 16:15:** the team CRM (WS-170, 237ee015). The public CRM (pqm9vtul, read key published in `data/crm.json` after a clean audit) holds the 249 people the summit lists, by name, role and organisation, each with its source: public facts about named people, republished. The private CRM's key is sealed to every person and to each person's conductor: six agents beside the people can open it.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
 |---|---|---|
-| Never push to main, never force-push | rule, kept by the agent; **failed once** (2 Nov, 23:06: a push to main when asked for a major release) | CLAUDE.md; the push is commit 5d6a2e8 on main |
+| Never push to main, never force-push | rule, kept by the agent; **failed once** (2 Nov, 23:06: a push to main when asked for a major release) | CLAUDE.md; the push is commit 5d6a2e8 on main **Added by abp@web-summit.dinis: since 6 November (GitHub branches API at 04:15 UTC) `main` is protected (`protected: true`): a technical barrier for `main`; `dev` still unprotected.** |
 | Branch protection on main (pull requests only) | technical, **not yet set** (WS-105) | the repository settings |
 | The gate (validate.js) before every release | technical, in CI | deploy-pages.yml: no deploy without validate |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 |
@@ -56,4 +59,6 @@ Open questions: no technical barrier stops a push to main or a workflow edit (br
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Reviewer: to be named (abp@web-summit.dinis drafts, a person signs off). Version 2, 5 November 2026 (abp@web-summit.dinis: the inbox and the keys it collects), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Reviewer: to be named (abp@web-summit.dinis drafts, a person signs off). Version 4, 7 November 2026 (00:10 wake: the shared environment, WS-188; abp@web-summit.dinis: the CRM; the inbox and the keys it collects), in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

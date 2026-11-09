@@ -59,7 +59,7 @@
     "conductor": {
       "colour": "conductor",
       "job": "conducts Jose's agents and keeps people/jose/ with Jose: onboarding, agents.json, ack.json, stand-up items, the mentor's notes, and a numbered PDF brief to Jose",
-      "schedule": "cron 20 7,12,17 * * * (UTC), the wake; and cron 7 * * * * (UTC), the hourly telemetry drain (WS-37); both scheduled tasks fire into its own session, set at Jose's word on 3 and 4 November 2026"
+      "schedule": "cron 20 7,12,17 * * * (UTC), the wake; and cron 7 * * * * (UTC), the hourly page-view run (WS-37), which only counts from 6 November 2026, 00:07 UTC, until the conductor has an SG/Send token of its own (Dinis's rule); both scheduled tasks fire into its own session, set at Jose's word on 3 and 4 November 2026"
     },
     "dashboard": {
       "colour": "blue",
@@ -79,22 +79,22 @@
     "vault": {
       "colour": "slate",
       "job": "creates and manages Jose's SGit vaults (WS-120, /vault-agent/)",
-      "schedule": "on demand"
+      "schedule": "cron 40 11,17 * * * (UTC), a scheduled task firing into its own session since 5 November 2026 (its commit 47b7021)"
     },
     "automation": {
       "colour": "dev",
       "job": "started 4 November 2026 at Jose's word (first commit 998e857, 23:22): the n8n flows as tested code, WS-39 route 3 and the n8n side of WS-74",
-      "schedule": "cron 10 10,16 * * * (UTC); not yet confirmed as scheduled"
+      "schedule": "cron 10 10,16 * * * (UTC), a scheduled task firing into its own session since 4 November 2026 (its commit 765de20)"
     },
     "helper": {
       "colour": "blue",
       "job": "started 4 November 2026 at Jose's word (first commit 11884fc, 23:22): helps anyone stuck on setup (WS-35), drafts their next step for Jose to send, writes down what went wrong",
-      "schedule": "cron 50 8,14 * * * (UTC); not yet confirmed as scheduled"
+      "schedule": "cron 50 8,14 * * * (UTC), a scheduled task firing into its own session since 5 November 2026 (its commit c3342b2)"
     },
     "watcher": {
       "colour": "slate",
       "job": "Jose's security watcher, read-only",
-      "schedule": "cron 15 7,12,17 * * * (UTC); not yet confirmed as scheduled"
+      "schedule": "cron 15 7,12,17,22 * * * (UTC), a scheduled task firing into its own session since 4 November 2026, 23:10 UTC (its commit f1e9241); the 22:15 run added at Jose's word on 5 November 2026"
     },
     "reviewer": {
       "colour": "slate",

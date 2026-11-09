@@ -1,0 +1,45 @@
+/* Indi's agents and their timetables: pastel, rounded, easy on the eye. Dark ink on light pastel, in both themes. */
+.sc { --ink: #33324a; --soft: #5f5d78; --rose: #f9dbe4; --peach: #ffe3d3; --butter: #fff2c6; --sky: #d9ecfa; --mint: #d3f0e4; --lav: #e6e0f8;
+  --rose-e: #e59bb3; --peach-e: #efa784; --butter-e: #e2c35c; --sky-e: #86bde6; --mint-e: #7cc9ad; --lav-e: #a99be0;
+  font-family: 'Lexend', system-ui, sans-serif; line-height: 1.5; }
+.sc h2, .sc h3, .sc .tile b { font-family: 'Nunito', 'Lexend', system-ui, sans-serif; }
+.sc .lead { font-size: 1.15rem; }
+.sc h2 { display: flex; align-items: center; gap: .6rem; margin: 2.2rem 0 .8rem; font-size: 1.45rem; }
+.sc .rose { --c: var(--rose); --e: var(--rose-e); } .sc .peach { --c: var(--peach); --e: var(--peach-e); }
+.sc .butter { --c: var(--butter); --e: var(--butter-e); } .sc .sky { --c: var(--sky); --e: var(--sky-e); }
+.sc .mint { --c: var(--mint); --e: var(--mint-e); } .sc .lav { --c: var(--lav); --e: var(--lav-e); }
+.sc .pill { display: inline-grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 50%; color: var(--ink); font-weight: 800; background: var(--c); border: 2px solid var(--e); }
+.sc .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .8rem; margin: 1rem 0; }
+.sc .tile { background: var(--c); border: 2px solid var(--e); border-radius: 22px; padding: .9rem 1rem; color: var(--ink); }
+.sc .tile b { display: block; font-size: 2.3rem; line-height: 1.1; font-weight: 800; }
+.sc .tile span { color: var(--soft); font-size: .95rem; }
+.sc .frame { background: #fdfcf8; border: 1px solid #ece8f6; border-radius: 22px; padding: .6rem; box-shadow: 0 6px 20px rgba(80, 70, 140, .07); overflow-x: auto; }
+.sc-svg, .sc-strip { width: 100%; height: auto; display: block; }
+.sc-svg text, .sc-strip text { font-family: 'Lexend', system-ui, sans-serif; fill: #33324a; }
+.sc-svg .tk { stroke: #e6e2f2; stroke-width: 1.5; }
+.sc-svg .tl, .sc-strip .tl { font-size: 13px; fill: #5f5d78; }
+.sc-svg .tt, .sc-strip .tt { font-size: 13px; font-weight: 600; }
+.sc-svg .ln { font-size: 15px; font-weight: 600; }
+.sc-svg .mt { font-family: 'Nunito', 'Lexend', system-ui, sans-serif; font-size: 17px; font-weight: 800; }
+.sc-svg .mi { font-size: 14px; }
+.sc-svg .mc { font-family: 'Nunito', 'Lexend', system-ui, sans-serif; font-size: 19px; font-weight: 800; }
+.sc .cards { display: grid; grid-template-columns: 1fr !important; gap: 1.4rem; }
+.sc .ag { background: #fdfcf8; border: 1px solid #ece8f6; border-top: 10px solid var(--e); border-radius: 24px; padding: 1rem 1.2rem; color: var(--ink); box-shadow: 0 6px 20px rgba(80, 70, 140, .07); }
+.sc .ag header { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.sc .ag h3 { margin: 0; font-size: 1.4rem; }
+.sc .ag .dot { width: 1.1rem; height: 1.1rem; border-radius: 50%; background: var(--c); border: 3px solid var(--e); }
+.sc .st { margin-left: auto; border-radius: 999px; padding: .1rem .8rem; font-size: .9rem; background: var(--mint); border: 1px solid var(--mint-e); }
+.sc .st.planned { background: var(--butter); border: 1px dashed var(--butter-e); }
+.sc .what { font-size: 1.05rem; margin: .5rem 0; }
+.sc .when { margin: .3rem 0 .2rem; }
+.sc .time { display: inline-block; background: var(--c); border: 2px solid var(--e); border-radius: 12px; padding: 0 .55rem; font-weight: 600; margin-right: .2rem; }
+.sc .muted, .sc .meta { color: var(--soft); font-size: .92rem; }
+.sc .chat { margin: .2rem 0 0; color: var(--soft); }
+.sc .oc { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .8rem; }
+.sc .o { background: var(--c); border: 2px solid var(--e); border-radius: 22px; padding: .8rem 1rem; color: var(--ink); display: grid; gap: .2rem; }
+.sc .o .ic { width: 2.2rem; height: 2.2rem; border-radius: 50%; background: #fff; border: 2px solid var(--e); display: grid; place-items: center; font-family: 'Nunito', sans-serif; font-weight: 800; }
+.sc .o b { font-size: 1.1rem; } .sc .o .c { color: var(--soft); font-size: .85rem; }
+.sc .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.sc .hint { display: none; }
+@media (max-width: 640px) { .sc .tile b { font-size: 1.9rem; } .sc h2 { font-size: 1.25rem; }
+  .sc .frame .sc-svg { min-width: 720px; } .sc .scroll .sc-svg { min-width: 620px; } .sc .scroll .sc-strip { min-width: 520px; } .sc .hint { display: block; } }

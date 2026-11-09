@@ -1,0 +1,28 @@
+{
+ "number": 32,
+ "date": "2026-11-07",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "Saturday morning: 50 outreach drafts wait for your yes; the merch is paid; four CRM questions from Silvio's desk",
+ "when": "Saturday 7 November 2026, 08:45 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "outreach@PrompTugal.dinis sent 57 contact requests on its new lane overnight: 50 companies (AISLE, Cloudflare, CrowdStrike, Feedzai, 1Password, the European Commission and others), each asking the company to check its PrompTugal.news page. I recorded them as drafts in the private CRM with one action for you; none has an address yet and none is sent. Silvio's merch is paid and with the printer, pickup Monday morning by Silvio and you. Silvio's videos vault has its read key published. António's emails still wait for Gmail on inbox@'s session.",
+ "stats": [
+  {"n": "50", "label": "outreach drafts waiting for your yes"},
+  {"n": "117", "label": "team-site commits overnight"},
+  {"n": "0", "label": "Gmail drafts yet for António"},
+  {"n": "4+6", "label": "questions on WS-189 (CRM and the demo)"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "PrompTugal outreach batch 1 (50 emails)", "detail": "Each asks a company to check its page and answer the three questions; the text is outreach@'s, in the private CRM.", "options": ["send all", "a first ten, then the rest", "rework the text first"], "recommend": "A first ten, so the replies tell us what to change."},
+  {"id": "2", "ask": "Gmail for inbox@, and draft 1's line", "detail": "Still open from brief 30.", "options": ["connect now", "later today"], "recommend": "Now, if António is to hear before Monday."},
+  {"id": "3", "ask": "WS-189 and the per-agent tokens", "detail": "Silvio's desk wants the stand's interviews to write into the private CRM; my recommendations are in team/conductor/notes/2026-11-07-ws189-and-tokens.md. A visitor's contact and the six demo questions are yours. Silvio's conductor asks for an SG/Send token for crm-silvio.", "options": ["at the 12:00", "now"], "recommend": "At the 12:00, with Silvio."}
+ ],
+ "you_asked": [],
+ "team": [
+  {"id": "Silvio", "status": "active", "doing": "merch paid, pickup Monday; videos vault read key published; inbox@silvio's first thread in the CRM (7 emails) for review"},
+  {"id": "Angelo", "status": "active", "doing": "the daily note: parking and the 18:00 record still open"},
+  {"id": "Vicky", "status": "active", "doing": "the team series through review"}
+ ],
+ "next": ["10:27 wake: the 12:00 deck and your briefing PDF."],
+ "sources": ["feedback_drain at 08:29 UTC (58 messages)", "git log since 2026-11-06T22:35Z", "411ba44a, 03020622, 95dad61f, 9dd5c3e2"]
+}

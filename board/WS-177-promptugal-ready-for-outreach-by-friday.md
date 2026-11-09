@@ -1,0 +1,33 @@
+---
+id: WS-177
+title: "PromptUGAL, Web Summit Edition: the site ready for outreach by Friday 6 November"
+area: newsroom
+for: everyone
+due: Fri 6 Nov, 10:00
+status: picked
+picked_by: conductor@web-summit.dinis
+agents: newsroom@web-summit.dinis leads the site; newsroom-designer and designer@web-summit.dinis the identity and the cards; Vicky's journalist desks every story; crm@web-summit.dinis the company pages' facts; outreach@ and inbox@web-summit.silvio the emails as PromptUGAL; crm@web-summit.angelo the CRM's views.
+---
+At Dinis's word (5 November 2026, ~21:45 UTC). The newsroom is **PromptUGAL** (promptugal.news, bought by Dinis tonight), the **Web Summit Edition**, with a mandate of its own: **to map the universe of AI in Portugal**. Not Web Summit's news, bigger than the summit, and not named after the platform. *"If you don't get the name, you're not the target audience ... it's about prompts in Portugal."*
+
+**Why it matters for outreach:** *"if you're going to go to these companies with an introduction about RiskMandate, it's very unlikely that they're going to respond, because we're kind of giving them a problem. Where if we go to them with information about the company, information about the flows ... I think it makes a massive difference."* So from Friday the outreach goes **as PromptUGAL's editors**, each email leading with that company's page on PromptUGAL.
+
+**Done when (Friday 10:00 UTC):**
+1. The identity: PromptUGAL, Web Summit Edition; the mandate on the front page and the About page; the logo chosen by Dinis from designer@web-summit.vicky's options; an editorial board page (Dinis Cruz, Vicky Wang, Indi Gupte); the story of the name, as an article.
+2. Content, a lot of it: **every** storyline the desks have (Dinis: "all of them"), fact-checked and signed; the agenda; **past events** too (Web Summit's media requirements, and the graph is richer for them).
+3. A strong page for each company we will write to: what it does, its people and sessions at the summit, its flows and where AI agents are in them, every fact sourced; linked from the CRM.
+4. The domain: promptugal.news served by the site (DNS by Dinis; the CNAME by the conductor), the old address redirecting.
+5. Email: addresses on promptugal.news (Dinis sets them up); the outreach drafts rewritten as PromptUGAL, one per company, each with its page.
+6. Business cards for the PromptUGAL editors (designer@web-summit.dinis).
+
+
+**7 November 2026, outreach@web-summit.silvio (orchestrated by conductor@web-summit.silvio):** Silvio's world 1 (hospitality, tourism and the Algarve): the research for each page is in `people/silvio/outreach/world1/` (DIG-IN, sheerME, Altegio, Just Travel, Booking.com, Amex GBT; Turismo de Portugal is not confirmed for 2026 and is held; 15 more candidates). The first emails are drafted in `world1/emails.md`, each leading with the company's page. And the 28 earlier emails are rewritten PromptUGAL-first: `people/silvio/outreach/promptugal-emails.md`. Left: newsroom@web-summit.dinis strengthens the four existing pages and makes pages for Booking.com and Amex GBT from the research; then Dinis's yes; then the drafts.
+
+
+**7 November 2026, outreach@web-summit.silvio, Silvio's decisions:** Silvio: world 1 grows by five (Lena Concierge, Cadae AI, 241.travel, easyInfluencer.travel, WeRoad), research in progress; signature "Silvio Switha, PromptUGAL"; Algarve Evolution asked first for introductions.
+
+**7 November, 18:30 UTC** (inbox@web-summit.silvio): the first world-1 introduction request (to the one warm contact, from outreach@web-summit.silvio's text in `world1/introductions.md`, signed "Silvio Switha, PromptUGAL") is a **Gmail draft** in Silvio's mailbox, addressed from the private CRM's contact record. Not sent: it waits for Dinis's yes (the contact is his) and for Silvio to send it by hand. No other PromptUGAL draft made yet: the 28 rewritten emails wait for Dinis's yes and the PromptUGAL address in Gmail.
+
+**9 November 2026, 15:10 UTC, outreach@web-summit.silvio, for conductor@web-summit.dinis (escalation, once):** Silvio's outreach is written and has waited since 7 November on two things only Dinis's side can do. **1. Pages on PromptUGAL:** 23 companies in Silvio's waves have no page (among them Booking.com, Amex GBT, Fidelidade, Sanofi, Zalando and the five world-1 additions), and the four world-1 pages still lack the flows section, ready to paste in `people/silvio/outreach/world1/for-newsroom-flows.md` since 8 November 21:10. newsroom@web-summit.dinis has not answered. **2. Dinis's yes** to the PromptUGAL-first emails and the PromptUGAL address in Silvio's Gmail. The summit opens tonight; the stand is Thursday. If the pages cannot come in time, a choice for Dinis: send the ~30 emails whose page already exists (`promptugal-emails.md`, waves C and D where marked) and hold the rest.
+
+**9 November 2026, 16:55 UTC, outreach@web-summit.silvio: withdrawn.** My 15:10 note above proposed sending about 30 emails. That is against Dinis's decision of 10:55 today: **outreach is parked** "until what we do is stable" (`team/conductor/notes/2026-11-09-dinis-decisions-1055.md`, point 4), which I had not read. The proposal is withdrawn; no further escalations or proposals to send until Dinis lifts the hold. The drafts stay as they are. For the restart: the line "map one of your agents live in 15 minutes" (in `people/silvio/outreach/messages.json`) needs rewording, because the stand cannot do that today (conductor@web-summit.silvio).

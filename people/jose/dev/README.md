@@ -78,6 +78,8 @@ No number, token, group id or invite link goes in this repository: they stay in 
 
 **Tried and learned (3 November 2026):** the site already serves everything a flow needs as markdown, so no new endpoint or build change was needed. Overnight, Jose asked for channel fields, a Code-node copy and no committed drafts. Tried: one wrapper (`enrich`) that adds the fields to every look, so the looks and the flags stayed as they were. Learned: an n8n Code node body is an async function, so the CLI's module can't be pasted as-is. A copy plus a test that compares the two was simpler than generating one from the other. The test fails when the copies drift (checked by changing one label).
 
+**Start here for n8n:** [`n8n-guide.md`](n8n-guide.md), the workflows Jose's agents built, their status, and how to import, test and publish them; [`n8n-build-guide.md`](n8n-build-guide.md), the team-report broadcast built by hand in n8n 3.0, step by step.
+
 ## Conventions
 
 - **The reviewer before every release** (Jose, 4 November, `473be416`): before `admin/tools/release.sh`, run reviewer@web-summit.jose (`people/jose/reviewer/ROLE.md`) as a sub-agent on `git diff origin/dev...HEAD`, after checking `people/jose/reviewer/hold.json`; commit its record in `people/jose/reviewer/reviews/` with the trailer `Reviewed-by: reviewer@web-summit.jose (pass)`; on a hold, release only `hold.json` and the record, and tell Jose.
@@ -99,6 +101,6 @@ On 3 November at about 10:00, Jose asked this agent to create an earlier test va
 
 **Jose's command centre** (`people/jose/app/`, the designer's spec in `people/jose/design/`): held at Jose's word on 3 November 2026, because Dinis made a shared one for every person (commit `497c4d7`, `admin/build/commandcentre.mjs`). WS-39 is the priority.
 
-## Waiting on Jose
+## Asks for Jose
 
-WS-39 is picked up (Jose, 3 November: WhatsApp first, Slack as the backup). The API check is in `WS-39-findings.md`: the official Groups API cannot post into the team's existing group. The route is Jose's decision (and Dinis's, for an automated post), and is not recorded here. Also Jose's: which broadcast look, `three` or `line`.
+None kept here: they are on [Jose's Actions list](../dashboard.md#actions) (one door, at Jose's word, 5 November 2026, C19: what waits on Jose goes to conductor@web-summit.jose, which keeps the only list, the Actions section of his dashboard). Settled since this section was a list: the WS-39 route (route 3, 3 November) and the WS-74 option and questions (4 November). Still open, sent to the conductor in the reports of 5 November (`people/jose/tasks/2026-11-05-all-one-door.md`): the broadcast look for route 3, WS-39's n8n setup in Meta and n8n, and WS-41 steps 2 and 3.

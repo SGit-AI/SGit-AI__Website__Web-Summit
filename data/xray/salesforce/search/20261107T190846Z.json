@@ -1,0 +1,705 @@
+{
+ "subject": "Salesforce Agentforce",
+ "kind": "company",
+ "slug": "salesforce",
+ "run_at": "2026-11-07T19:08:46.978Z",
+ "note": "What each model said, as leads: not facts until their sources are read.",
+ "cost_usd": 0.0691,
+ "agents": [
+  {
+   "id": "perplexity",
+   "label": "Perplexity search",
+   "model": "perplexity/sonar",
+   "ms": 10054,
+   "cost_usd": 0.0068805,
+   "tokens": {
+    "in": 208,
+    "out": 1743
+   },
+   "finish": "stop",
+   "citations": [
+    {
+     "url": "https://developer.salesforce.com/developer-centers/agentforce",
+     "title": "Agentforce"
+    },
+    {
+     "url": "https://partners.salesforce.com/pdx/s/learn/article/agentforce-agents-and-use-cases-MCR4VCN6SU5VFQVGJT7UU45VQ6EI?language=en_US",
+     "title": "Agentforce Agents and Use Cases - Learn"
+    },
+    {
+     "url": "https://help.salesforce.com/s/articleView?id=004052187&language=en_US&type=1",
+     "title": "Agentforce: Salesforce Help portal Agentforce User Guide"
+    },
+    {
+     "url": "https://www.salesforce.com/agentforce/use-cases/sales/?bc=OTH",
+     "title": "Agentforce Use Cases for Sales"
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/ai/agentforce/guide/agent-examples.html",
+     "title": "Agentforce Examples | Agentforce Developer Guide | Salesforce ..."
+    },
+    {
+     "url": "https://www.salesforce.com/agentforce/?bc=HL",
+     "title": "Agentforce: The AI Agent Platform"
+    },
+    {
+     "url": "https://help.salesforce.com/s/products/agentforce?language=en_US",
+     "title": "Salesforce Help | Agentforce"
+    },
+    {
+     "url": "https://trailhead.salesforce.com/content/learn/modules/agentforce-for-industries-quick-look/get-to-know-agentforce-for-industries",
+     "title": "Unlocking Agentforce for Industry Success - Trailhead"
+    },
+    {
+     "url": "https://www.salesforce.com/platform/agentforce-platform/?bc=OTH",
+     "title": "Agentforce 360 Platform - Agentic Capabilities - Salesforce"
+    },
+    {
+     "url": "https://www.salesforce.com/agentforce/pre-built-use-cases/?bc=OTH",
+     "title": "Pre-Built Agentforce Use Cases"
+    },
+    {
+     "url": "https://www.salesforce.com/agentforce/use-cases/?bc=OTH",
+     "title": "Use Cases"
+    },
+    {
+     "url": "https://www.salesforce.com/agentforce/how-it-works/?bc=OTH",
+     "title": "How Does Agentforce Work?"
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/ai/agentforce/guide/get-started.html",
+     "title": "Get Started | Agentforce Developer Guide"
+    },
+    {
+     "url": "https://investor.salesforce.com/news/news-details/2024/Salesforces-Agentforce-Is-Here-Trusted-Autonomous-AI-Agents-to-Scale-Your-Workforce/default.aspx",
+     "title": "Salesforce's Agentforce Is Here: Trusted, Autonomous AI Agents to ..."
+    },
+    {
+     "url": "https://admin.salesforce.com/blog/2024/agentforce-actions-best-practices",
+     "title": "Get Started with Agentforce: Custom Actions"
+    }
+   ],
+   "answer_urls": [
+    "https://www.salesforce.com/agentforce/",
+    "https://www.salesforce.com/agentforce/use-cases/",
+    "https://partners.salesforce.com/pdx/s/learn/article/agentforce-agents-and-use-cases-MCR4VCN6SU5VFQVGJT7UU45VQ6EI?language=en_US",
+    "https://www.salesforce.com/agentforce/how-it-works/",
+    "https://www.salesforce.com/agentforce/pre-built-use-cases/",
+    "https://developer.salesforce.com/docs/ai/agentforce/guide/agent-examples.html",
+    "https://trailhead.salesforce.com/content/learn/modules/agentforce-for-industries-quick-look/get-to-know-agentforce-for-industries",
+    "https://developer.salesforce.com/docs/ai/agentforce/guide/get-started.html",
+    "https://www.salesforce.com/platform/agentforce-platform/?bc=OTH",
+    "https://investor.salesforce.com/news/news-details/2024/Salesforces-Agentforce-Is-Here-Trusted-Autonomous-AI-Agents-to-Scale-Your-Workforce/default.aspx",
+    "https://help.salesforce.com/s/products/agentforce?language=en_US",
+    "https://www.salesforce.com/agentforce/pre-built-use-cases/?bc=OTH",
+    "https://admin.salesforce.com/blog/2024/agentforce-actions-best-practices",
+    "https://developer.salesforce.com/developer-centers/agentforce"
+   ],
+   "answer": {
+    "what_it_does": "Agentforce is Salesforce’s AI agent platform for deploying autonomous agents that work across Salesforce workflows to answer questions, resolve cases, and take actions for customers and employees.[6][13] It is designed to connect with Salesforce data and business systems so agents can automate routine tasks, provide guidance, and support 24/7 operations.[7][13]",
+    "ai_agents": [
+     {
+      "name": "Service Agent",
+      "what_it_does": "Handles customer support interactions, resolves cases, and helps troubleshoot issues using customer history and company knowledge.[6][14]",
+      "actions": [
+       "Resolve cases",
+       "Draft follow-up email",
+       "Escalate to specialist",
+       "Pull customer history",
+       "Log interaction notes",
+       "Answer customer queries",
+       "Provide case resolution recommendations"
+      ],
+      "source": "https://www.salesforce.com/agentforce/"
+     },
+     {
+      "name": "Sales Agent",
+      "what_it_does": "Supports sales workflows by qualifying leads, sending outreach, and helping schedule follow-up actions.[6][12][14]",
+      "actions": [
+       "Qualify inbound lead",
+       "Update opportunity",
+       "Close renewal deal",
+       "Send personalized introductory email",
+       "Respond to pricing questions",
+       "Access calendar to schedule follow-up call",
+       "Generate a sales pitch",
+       "Search and pull in leads from an external system"
+      ],
+      "source": "https://www.salesforce.com/agentforce/"
+     },
+     {
+      "name": "Marketing Agent",
+      "what_it_does": "Creates campaigns, content, and outreach messaging to support marketing execution.[2][6][12][14]",
+      "actions": [
+       "Create marketing campaigns and content",
+       "Generate outreach messaging",
+       "Generate campaigns",
+       "Create briefs",
+       "Generate audience segments",
+       "Generate emails",
+       "Build end-to-end journeys"
+      ],
+      "source": "https://www.salesforce.com/agentforce/use-cases/"
+     },
+     {
+      "name": "Commerce Agent",
+      "what_it_does": "Helps manage commerce and ecommerce workflows such as promotions and order-related tasks.[2][6][12]",
+      "actions": [
+       "Generate brand promotions",
+       "Analyze and summarize order data",
+       "Manage websites",
+       "Generate personalized promotions"
+      ],
+      "source": "https://www.salesforce.com/agentforce/use-cases/"
+     },
+     {
+      "name": "HR Agent",
+      "what_it_does": "Assists with employee-facing HR tasks such as policy questions and onboarding.[6]",
+      "actions": [
+       "Processing leave request",
+       "Answering HR policy query",
+       "Onboarding new hire"
+      ],
+      "source": "https://www.salesforce.com/agentforce/"
+     },
+     {
+      "name": "IT Help Desk Agent",
+      "what_it_does": "Supports IT service workflows by helping resolve tickets and access issues.[6]",
+      "actions": [
+       "Resolving help desk ticket",
+       "Patching system alert",
+       "Resetting user access"
+      ],
+      "source": "https://www.salesforce.com/agentforce/"
+     },
+     {
+      "name": "Financial Services Agent",
+      "what_it_does": "Supports financial services workflows including risk assessment and investment planning.[2]",
+      "actions": [
+       "Conduct financial risk assessment",
+       "Insurance quote creation",
+       "Generate customized investment plans"
+      ],
+      "source": "https://partners.salesforce.com/pdx/s/learn/article/agentforce-agents-and-use-cases-MCR4VCN6SU5VFQVGJT7UU45VQ6EI?language=en_US"
+     },
+     {
+      "name": "Healthcare Agent",
+      "what_it_does": "Assists with patient-related analysis and compliance-oriented workflows.[2]",
+      "actions": [
+       "Analyze patient data",
+       "Generate patient risk assessment",
+       "Check HIPAA compliance"
+      ],
+      "source": "https://partners.salesforce.com/pdx/s/learn/article/agentforce-agents-and-use-cases-MCR4VCN6SU5VFQVGJT7UU45VQ6EI?language=en_US"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Customer service automation",
+      "who_uses_it": "Support teams and service organizations",
+      "what_the_agent_can_reach": [
+       "Cases",
+       "Customer history",
+       "Knowledge documents",
+       "Order information",
+       "Reservation workflows",
+       "Delivery issue records"
+      ],
+      "source": "https://www.salesforce.com/agentforce/how-it-works/"
+     },
+     {
+      "name": "Sales prospecting and follow-up",
+      "who_uses_it": "Sales teams and SDRs",
+      "what_the_agent_can_reach": [
+       "Leads",
+       "Opportunities",
+       "Email systems",
+       "Calendar availability",
+       "Account data"
+      ],
+      "source": "https://www.salesforce.com/agentforce/how-it-works/"
+     },
+     {
+      "name": "Marketing campaign generation",
+      "who_uses_it": "Marketing teams",
+      "what_the_agent_can_reach": [
+       "Campaign plans",
+       "Briefs",
+       "Audience segments",
+       "Emails",
+       "Customer goals and journey data"
+      ],
+      "source": "https://www.salesforce.com/agentforce/how-it-works/"
+     },
+     {
+      "name": "Employee support and HR workflows",
+      "who_uses_it": "HR teams and internal operations teams",
+      "what_the_agent_can_reach": [
+       "Leave requests",
+       "HR policy content",
+       "Employee onboarding workflows"
+      ],
+      "source": "https://www.salesforce.com/agentforce/"
+     },
+     {
+      "name": "IT service desk automation",
+      "who_uses_it": "IT operations and help desk teams",
+      "what_the_agent_can_reach": [
+       "Help desk tickets",
+       "System alerts",
+       "User access controls"
+      ],
+      "source": "https://www.salesforce.com/agentforce/"
+     },
+     {
+      "name": "Case deflection and self-service",
+      "who_uses_it": "Customer support organizations",
+      "what_the_agent_can_reach": [
+       "Routine inquiries",
+       "Self-service flows",
+       "Support queues"
+      ],
+      "source": "https://www.salesforce.com/agentforce/pre-built-use-cases/"
+     },
+     {
+      "name": "Industry-specific regulated workflows",
+      "who_uses_it": "Financial services, healthcare, manufacturing, and retail teams",
+      "what_the_agent_can_reach": [
+       "Risk assessments",
+       "Quotes",
+       "Investment plans",
+       "Patient data",
+       "Purchase orders",
+       "Compliance reporting",
+       "Inventory data"
+      ],
+      "source": "https://partners.salesforce.com/pdx/s/learn/article/agentforce-agents-and-use-cases-MCR4VCN6SU5VFQVGJT7UU45VQ6EI?language=en_US"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Salesforce says Agentforce should generate test cases, inspect potential responses, and apply guardrails before production deployment, indicating risks around incorrect or unsafe agent output if controls are weak.",
+      "when": "2024-10-29",
+      "source": "https://www.salesforce.com/agentforce/how-it-works/"
+     },
+     {
+      "what": "Salesforce documentation for example agents notes safeguards against dropped values, duplicate records, and false confirmations when creating records, showing the operational risk of data errors in agent-driven workflows.",
+      "when": "2026-09-24",
+      "source": "https://developer.salesforce.com/docs/ai/agentforce/guide/agent-examples.html"
+     },
+     {
+      "what": "Salesforce describes compliance features in industry use cases as part of the Trust Layer, implying privacy and regulatory risk considerations for sensitive workflows.",
+      "when": "2026-11-06",
+      "source": "https://trailhead.salesforce.com/content/learn/modules/agentforce-for-industries-quick-look/get-to-know-agentforce-for-industries"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Agentforce is the agent-driven layer of the Salesforce Platform.",
+      "source": "https://developer.salesforce.com/docs/ai/agentforce/guide/get-started.html"
+     },
+     {
+      "claim": "Agentforce is intended to deploy AI agents that work side-by-side with employees and serve customers 24/7.",
+      "source": "https://developer.salesforce.com/docs/ai/agentforce/guide/get-started.html"
+     },
+     {
+      "claim": "Agentforce integrates with Customer 360 across Sales, Service, Marketing, and Commerce.",
+      "source": "https://www.salesforce.com/platform/agentforce-platform/?bc=OTH"
+     },
+     {
+      "claim": "Salesforce markets Agentforce as enabling trusted autonomous AI agents to scale a workforce.",
+      "source": "https://investor.salesforce.com/news/news-details/2024/Salesforces-Agentforce-Is-Here-Trusted-Autonomous-AI-Agents-to-Scale-Your-Workforce/default.aspx"
+     },
+     {
+      "claim": "Agentforce can be used to automate tasks, gain insights, scale operations, and boost productivity.",
+      "source": "https://help.salesforce.com/s/products/agentforce?language=en_US"
+     },
+     {
+      "claim": "Salesforce lists pre-built use cases including deflecting routine inquiries and reducing support costs without adding headcount.",
+      "source": "https://www.salesforce.com/agentforce/pre-built-use-cases/?bc=OTH"
+     },
+     {
+      "claim": "Agentforce developer guidance includes custom actions, flows, prompt templates, and integrations with external systems.",
+      "source": "https://admin.salesforce.com/blog/2024/agentforce-actions-best-practices"
+     },
+     {
+      "claim": "Salesforce’s developer center for Agentforce references connecting language models to Salesforce and creating prompt templates for support-case summarization.",
+      "source": "https://developer.salesforce.com/developer-centers/agentforce"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI search",
+   "model": "openai/gpt-5.4-nano:online",
+   "ms": 15235,
+   "cost_usd": 0.0245230425,
+   "tokens": {
+    "in": 13185,
+    "out": 1707
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://help.salesforce.com/s/articleView?id=sf.copilot_building_blocks.htm&language=en_US&type=5",
+    "https://www.salesforce.com/news/stories/agentforce-sales-announcement/?bc=OTH&ver=1791477234",
+    "https://help.salesforce.com/s/articleView?id=005227986&language=en_US&type=1",
+    "https://developer.salesforce.com/docs/ai/agentforce/guide/get-started-actions.html",
+    "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Privacy/agentforce-privacy-FAQ.pdf",
+    "https://www.salesforce.com/ca/agentforce/how-it-works/"
+   ],
+   "answer": {
+    "what_it_does": "Salesforce Agentforce is Salesforce’s platform for building and deploying AI agents that can use company data and take actions within Salesforce and connected systems. Agents use Salesforce “data, reasoning, and actions” to plan work and execute tasks with controls such as guardrails and auditing.",
+    "ai_agents": [
+     {
+      "name": "Agentforce (platform for building custom agents)",
+      "what_it_does": "Provides an AI agent framework to create and customize agents that can be grounded in Salesforce and external data, then execute permitted actions in defined channels.",
+      "actions": [
+       "Use “actions” to retrieve information or perform tasks in Salesforce (including standard and custom actions).",
+       "Execute custom actions created from Salesforce capabilities (e.g., Apex REST actions, Apex controller methods, named queries/SOQL, invocable Apex methods).",
+       "Ground agent responses in Salesforce CRM data and optionally other sources (e.g., knowledge articles, uploaded files, or web sources via search/web tools; plus RAG via Agentforce tooling).",
+       "Deploy agents to channels (messaging platforms/apps/interfaces) and manage connections/escalation routing for customer/employee interactions."
+      ],
+      "source": "https://help.salesforce.com/s/articleView?id=sf.copilot_building_blocks.htm&language=en_US&type=5"
+     },
+     {
+      "name": "Agentforce Sales (out-of-the-box sales agents)",
+      "what_it_does": "Delivers AI agents for sales workflows to handle high-volume sales “grind” activities so sellers can focus on relationship building and closing deals.",
+      "actions": [
+       "Prospecting and lead engagement support.",
+       "Research to assist sales tasks.",
+       "Lead nurturing automation.",
+       "Meeting-related operational support such as scheduling (described for sales development use cases)."
+      ],
+      "source": "https://www.salesforce.com/news/stories/agentforce-sales-announcement/?bc=OTH&ver=1791477234"
+     },
+     {
+      "name": "Agentforce for Sales Development Representative (SDR) (out-of-the-box agent)",
+      "what_it_does": "Supports sales teams with lead engagement and operational automation such as meeting scheduling.",
+      "actions": [
+       "Lead engagement assistance.",
+       "Task automation for SDR workflows.",
+       "Meeting scheduling support."
+      ],
+      "source": "https://help.salesforce.com/s/articleView?id=005227986&language=en_US&type=1"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Sales development and lead engagement automation",
+      "who_uses_it": "Sales teams/SDR teams using Salesforce",
+      "what_the_agent_can_reach": [
+       "Salesforce CRM data (Salesforce platform data that agents are grounded in).",
+       "Operational sales workflow tasks such as lead engagement and meeting scheduling (i.e., tasks executed via defined Salesforce actions)."
+      ],
+      "source": "https://help.salesforce.com/s/articleView?id=005227986&language=en_US&type=1"
+     },
+     {
+      "name": "Service customer support and answer generation with grounding and escalation",
+      "who_uses_it": "Customer-facing service teams deploying Agentforce Service Agents",
+      "what_the_agent_can_reach": [
+       "Customer and company data available in Salesforce (agent grounded in controlled Salesforce CRM data).",
+       "Knowledge articles and other unstructured sources made available to the agent via Agentforce data grounding tools.",
+       "Customer-facing channels with escalation paths for complex/sensitive conversations."
+      ],
+      "source": "https://help.salesforce.com/s/articleView?id=005227986&language=en_US&type=1"
+     },
+     {
+      "name": "Custom enterprise agent actions across Salesforce and connected systems (via custom actions)",
+      "who_uses_it": "Developers and Salesforce admins building custom Agentforce agents",
+      "what_the_agent_can_reach": [
+       "Salesforce org capabilities exposed through actions (Apex REST, Apex controller methods, named queries/SOQL, invocable Apex).",
+       "Data accessible to grounded sources (CRM data plus knowledge/file/web sources depending on configured tools)."
+      ],
+      "source": "https://developer.salesforce.com/docs/ai/agentforce/guide/get-started-actions.html"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Risk of storing Customer Data in Agentforce (privacy/data retention considerations) and uncertainty around data handling",
+      "when": "",
+      "source": "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Privacy/agentforce-privacy-FAQ.pdf"
+     },
+     {
+      "what": "Agent reliability and governance risk (actions and outputs require auditing/controls to ensure compliance and traceability of AI agent actions)",
+      "when": "",
+      "source": "https://www.salesforce.com/ca/agentforce/how-it-works/"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "In Agentforce, “actions” are how an agent gets information or performs tasks, and agents can execute both standard actions and custom actions.",
+      "source": "https://help.salesforce.com/s/articleView?id=sf.copilot_building_blocks.htm&language=en_US&type=5"
+     },
+     {
+      "claim": "Agentforce agents are grounded in data; Salesforce states customers control what data agents can access, including integration with Salesforce CRM data.",
+      "source": "https://help.salesforce.com/s/articleView?id=sf.copilot_building_blocks.htm&language=en_US&type=5"
+     },
+     {
+      "claim": "Agentforce supports additional data sources including knowledge articles and fields, file uploads, and web sources via tools such as Agentforce Data Libraries and Search the Web; for unstructured sources, RAG can be used.",
+      "source": "https://help.salesforce.com/s/articleView?id=sf.copilot_building_blocks.htm&language=en_US&type=5"
+     },
+     {
+      "claim": "Salesforce describes Agentforce as built on the Salesforce Platform and organized around data, reasoning, and actions.",
+      "source": "https://www.salesforce.com/ca/agentforce/how-it-works/"
+     },
+     {
+      "claim": "Salesforce provides a set of developer-recognized Agentforce action types, including Apex REST Actions, AuraEnabled Actions (Apex controller methods), Named Query Actions (SOQL), and Apex Invocable Method Actions.",
+      "source": "https://developer.salesforce.com/docs/ai/agentforce/guide/get-started-actions.html"
+     },
+     {
+      "claim": "Salesforce states Einstein Trust Layer includes guardrails such as “zero data retention,” toxicity detection, secure data retrieval, and dynamic grounding, and includes an Audit Trail feature to track AI agent actions/outputs.",
+      "source": "https://www.salesforce.com/ca/agentforce/how-it-works/"
+     },
+     {
+      "claim": "Salesforce states Agentforce is the agentic layer of the unified Salesforce platform and is designed to integrate with Data Cloud for RAG/grounding in relevant structured and unstructured data uploaded to Data Cloud.",
+      "source": "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Privacy/agentforce-privacy-FAQ.pdf"
+     }
+    ]
+   }
+  },
+  {
+   "id": "gemini",
+   "label": "Gemini search",
+   "model": "google/gemini-3.1-flash-lite:online",
+   "ms": 2160,
+   "cost_usd": 0.000881595,
+   "tokens": {
+    "in": 226,
+    "out": 556
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.salesforce.com/news/stories/agentforce-service-agent/",
+    "https://www.salesforce.com/products/agentforce/",
+    "https://www.salesforce.com/news/stories/agentforce-atlas-reasoning-engine/",
+    "https://www.salesforce.com/news/stories/agentforce-launch/"
+   ],
+   "answer": {
+    "what_it_does": "Salesforce Agentforce is a platform that allows organizations to build and deploy autonomous AI agents capable of interacting with customer data and business systems to perform tasks. These agents work alongside human employees to automate complex workflows across service, sales, marketing, and commerce departments.",
+    "ai_agents": [
+     {
+      "name": "Service Agent",
+      "what_it_does": "An autonomous agent designed to handle customer service inquiries and resolve issues without human intervention.",
+      "actions": [
+       "Accesses Salesforce Data Cloud",
+       "Interacts with CRM records",
+       "Executes resolutions via integrated third-party systems",
+       "Uses Large Language Models for natural language processing"
+      ],
+      "source": "https://www.salesforce.com/news/stories/agentforce-service-agent/"
+     },
+     {
+      "name": "Sales Development Representative (SDR) Agent",
+      "what_it_does": "Automates the process of engaging with leads, answering questions, and scheduling meetings.",
+      "actions": [
+       "Processes lead data",
+       "Sends personalized emails",
+       "Manages calendar scheduling",
+       "Updates Salesforce lead status"
+      ],
+      "source": "https://www.salesforce.com/products/agentforce/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Customer Support Automation",
+      "who_uses_it": "Customer Service Departments",
+      "what_the_agent_can_reach": [
+       "Customer CRM profiles",
+       "Knowledge base articles",
+       "Order management systems",
+       "Customer service ticketing systems"
+      ],
+      "source": "https://www.salesforce.com/news/stories/agentforce-service-agent/"
+     }
+    ],
+    "incidents_or_risks": [],
+    "facts": [
+     {
+      "claim": "Agentforce agents are built on the Atlas Reasoning Engine, which allows them to plan, reason, and take action autonomously.",
+      "source": "https://www.salesforce.com/news/stories/agentforce-atlas-reasoning-engine/"
+     },
+     {
+      "claim": "Agentforce integrates directly with Salesforce Data Cloud to ground AI responses in real-time, trusted company data.",
+      "source": "https://www.salesforce.com/news/stories/agentforce-launch/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter web search",
+   "model": "anthropic/claude-haiku-5.5",
+   "plugins": [
+    {
+     "id": "web",
+     "max_results": 6
+    }
+   ],
+   "max_tokens": 7000,
+   "ms": 17950,
+   "cost_usd": 0.036796221,
+   "tokens": {
+    "in": 52219,
+    "out": 3892
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.salesforce.com/agentforce/",
+    "https://www.salesforceben.com/how-does-salesforces-agentforce-work/",
+    "https://www.salesforce.com/agentforce/how-it-works/",
+    "https://www.salesforce.com/platform/agentforce-platform/",
+    "https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html",
+    "https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce",
+    "https://www.securityweek.com/salesbleed-flaws-in-salesforce-agentforce-enabled-zero-click-data-exfiltration/",
+    "https://www.theregister.com/security/2026/09/24/salesforce-agentforce-vulns-allowed-0-click-crm-data-theft-anonymous-phishing/5298958",
+    "https://trailhead.salesforce.com/content/learn/modules/introduction-to-agentforce/get-to-know-agentforce-functionality",
+    "https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/explore-data-cloud-and-agentforce",
+    "https://help.salesforce.com/s/articleView?id=004691761&language=en_US&type=1",
+    "https://www.cynoteck.com/blog-post/salesforce-agentforce-complete-guide",
+    "https://www.apexhours.com/salesforce-agentforce/"
+   ],
+   "answer": {
+    "what_it_does": "Agentforce is Salesforce's platform for building and deploying AI agents that can understand requests, make decisions, and take actions inside a Salesforce environment. It runs on the Salesforce Platform and uses Salesforce data, including Data 360, along with governance and guardrails to limit what agents can do.",
+    "ai_agents": [
+     {
+      "name": "Service Agent",
+      "what_it_does": "Handles a wide range of customer service issues without preprogrammed scenarios, replacing traditional chatbots, and hands off to humans when needed.",
+      "actions": [
+       "Resolves cases",
+       "Recommends products",
+       "Manages orders and troubleshoots issues across web, phone, and apps",
+       "Hands off to human agents with a summary"
+      ],
+      "source": "https://www.salesforce.com/agentforce/"
+     },
+     {
+      "name": "Lead Nurturing Agent (formerly SDR)",
+      "what_it_does": "Works inbound leads around the clock, answering product questions, handling objections, and booking meetings, then passing prospects to a seller when a human is needed.",
+      "actions": [
+       "Books meetings across email, SMS, and WhatsApp",
+       "Reads CRM and external data about prospects",
+       "Hands conversations to a seller"
+      ],
+      "source": "https://www.salesforceben.com/how-does-salesforces-agentforce-work/"
+     },
+     {
+      "name": "Sales Coach",
+      "what_it_does": "Role-plays sales conversations so reps can practice pitches and objections against their actual deals and receive feedback.",
+      "actions": [
+       "Uses Salesforce deal data and generative AI to run role-play sessions"
+      ],
+      "source": "https://www.salesforceben.com/how-does-salesforces-agentforce-work/"
+     },
+     {
+      "name": "Merchandiser",
+      "what_it_does": "Assists ecommerce merchandisers with site setup, goal setting, promotions, product descriptions, and data-driven insights.",
+      "actions": [
+       "Creates personalized promotions and product descriptions",
+       "Produces data-driven insights from store and site data"
+      ],
+      "source": "https://www.salesforce.com/agentforce/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Customer service case resolution",
+      "who_uses_it": "Customer service teams and their customers across web, phone, and apps",
+      "what_the_agent_can_reach": [
+       "Case records",
+       "Order and account data",
+       "Knowledge articles and indexed documents via Data 360",
+       "Flows and Apex actions that can update records"
+      ],
+      "source": "https://www.salesforce.com/agentforce/how-it-works/"
+     },
+     {
+      "name": "Inbound sales lead handling",
+      "who_uses_it": "Sales teams and marketing or sales operations staff",
+      "what_the_agent_can_reach": [
+       "Lead and account records in the CRM",
+       "Email, SMS, and WhatsApp channels for outreach",
+       "Meeting scheduling",
+       "Slack messaging, where Slack actions are configured"
+      ],
+      "source": "https://www.salesforceben.com/how-does-salesforces-agentforce-work/"
+     },
+     {
+      "name": "Agent-driven data grounding and workflow automation",
+      "who_uses_it": "Enterprise administrators and developers building agents on the platform",
+      "what_the_agent_can_reach": [
+       "Structured and unstructured data from Salesforce clouds and external sources via Data 360",
+       "ERP and other connected systems via MuleSoft",
+       "Any system reachable through MCP or A2A integrations"
+      ],
+      "source": "https://www.salesforce.com/platform/agentforce-platform/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "ForcedLeak: a critical vulnerability chain (CVSS 9.4) reported by Noma Labs in which a malicious Web-to-Lead submission used indirect prompt injection to make Agentforce expose CRM data through an expired, still-trusted domain. Salesforce patched it by enforcing Trusted URLs for Agentforce and Einstein AI.",
+      "when": "Reported to Salesforce July 28, 2025; public disclosure September 25, 2025",
+      "source": "https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html"
+     },
+     {
+      "what": "ForcedLeak timeline and remediation details, including Salesforce implementing Trusted URLs enforcement on September 8, 2025.",
+      "when": "July 28, 2025 to September 25, 2025",
+      "source": "https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce"
+     },
+     {
+      "what": "SalesBleed: three vulnerabilities disclosed by Zenity Labs that could let an attacker submit a poisoned lead through a public Web-to-Lead form, later hijacking an Agentforce agent to leak CRM data or send phishing messages through its Slack integration. Zenity says the attack chains no longer work after fixes.",
+      "when": "Reported to Salesforce June 1, 2026; fixes confirmed by August 19, 2026; disclosed September 24, 2026",
+      "source": "https://www.securityweek.com/salesbleed-flaws-in-salesforce-agentforce-enabled-zero-click-data-exfiltration/"
+     },
+     {
+      "what": "The SalesBleed Slack-related flaw: the Reply to a Slack Thread action did not require user confirmation before sending and lacked visible attribution to the invoking user, so agent-sent messages could appear without approval.",
+      "when": "Disclosed September 24, 2026",
+      "source": "https://www.theregister.com/security/2026/09/24/salesforce-agentforce-vulns-allowed-0-click-crm-data-theft-anonymous-phishing/5298958"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Agentforce is built natively on the Salesforce Platform and connects to business data and metadata; Salesforce describes built-in encryption, policy enforcement, and access controls.",
+      "source": "https://www.salesforce.com/platform/agentforce-platform/"
+     },
+     {
+      "claim": "Agentforce agents can use structured and unstructured data, such as knowledge articles, CRM data, and data connected from external sources.",
+      "source": "https://trailhead.salesforce.com/content/learn/modules/introduction-to-agentforce/get-to-know-agentforce-functionality"
+     },
+     {
+      "claim": "Agentforce Data Library and the Einstein Trust Layer require Data 360 to be provisioned and enabled.",
+      "source": "https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/explore-data-cloud-and-agentforce"
+     },
+     {
+      "claim": "Data Cloud was rebranded to Data 360 on October 14, 2025, with functionality unchanged.",
+      "source": "https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/explore-data-cloud-and-agentforce"
+     },
+     {
+      "claim": "Agent actions can be built from existing Flows, Apex, prompt templates, and APIs, and integrate with native tools such as Data 360, Slack, and MuleSoft.",
+      "source": "https://www.salesforce.com/agentforce/how-it-works/"
+     },
+     {
+      "claim": "Agentforce supports MCP and A2A open protocols for connecting agents to apps, APIs, and other agents, via MuleSoft Agent Fabric and Flow.",
+      "source": "https://www.salesforce.com/platform/agentforce-platform/"
+     },
+     {
+      "claim": "Agentforce Analytics is enabled by default when Agentforce is turned on and collects agent usage, user inputs, and engagement data; administrators can disable collection in Setup.",
+      "source": "https://help.salesforce.com/s/articleView?id=004691761&language=en_US&type=1"
+     },
+     {
+      "claim": "Agentforce Sales (formerly Sales Cloud) and Service Cloud have been rebuilt around Agentforce, and a third-party guide reports Salesforce cited 29,000 deals closed and $800 million in annual recurring revenue by early 2026 in its Q4 FY2026 earnings report.",
+      "source": "https://www.cynoteck.com/blog-post/salesforce-agentforce-complete-guide"
+     },
+     {
+      "claim": "Pricing for Agentforce was reported to start at $2 per conversation, with volume discounts, in a 2025 guide; current pricing may differ.",
+      "source": "https://www.apexhours.com/salesforce-agentforce/"
+     }
+    ]
+   }
+  }
+ ]
+}

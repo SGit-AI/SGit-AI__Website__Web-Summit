@@ -1,0 +1,24 @@
+{
+  "kind": "github-access",
+  "label": "GitHub access",
+  "think": [
+    "Is the account the right one? The username is in the card; open the profile and check it is the person's Workspace account.",
+    "Which permission? Write lets them push; nobody but you needs Admin.",
+    "Only a repository admin can do it: if that is only you, it is yours, and it takes under a minute.",
+    "Done means invited: they still have to accept, and their conductor confirms a push works."
+  ],
+  "evidence": ["ask", "why", "issue", "agenda", "commits", "people"],
+  "links": [
+    ["Collaborators and access: {repo}", "https://github.com/{repo}/settings/access"],
+    ["Their GitHub profile: {user}", "https://github.com/{user}"],
+    ["The repository", "https://github.com/{repo}"],
+    ["The setup leaderboard", "../../../../team/setup/index.html"]
+  ],
+  "answers": [
+    { "id": "invited", "label": "Done: invited with {role}", "action": "done", "option": "Invited {user} to {repo} with {role} access", "primary": true },
+    { "id": "no-account", "label": "Can't: the account doesn't exist yet", "action": "details", "option": "The GitHub account {user} could not be found: ask them to create it, with their Workspace email" },
+    { "id": "other-role", "label": "Done, with another permission", "action": "done", "input": { "type": "text", "placeholder": "Which permission, and why" } },
+    { "id": "later", "label": "Later", "action": "later" }
+  ],
+  "chat": "This card asks Dinis to give a person access to a GitHub repository. Help him check the request is right and do it quickly."
+}

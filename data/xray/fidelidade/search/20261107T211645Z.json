@@ -1,0 +1,546 @@
+{
+ "subject": "Fidelidade, Portuguese insurer, its AI and agent pilots",
+ "kind": "company",
+ "slug": "fidelidade",
+ "run_at": "2026-11-07T21:16:45.376Z",
+ "note": "What each model said, as leads: not facts until their sources are read.",
+ "cost_usd": 0.0738,
+ "agents": [
+  {
+   "id": "perplexity",
+   "label": "Perplexity search",
+   "model": "perplexity/sonar",
+   "ms": 8480,
+   "cost_usd": 0.0062964,
+   "tokens": {
+    "in": 216,
+    "out": 1148
+   },
+   "finish": "stop",
+   "citations": [
+    {
+     "url": "https://www.qorusglobal.com/content/29715-innovation-at-fidelidade",
+     "title": "Innovation at Fidelidade"
+    },
+    {
+     "url": "https://www.essential-business.pt/2026/10/19/fidelidade-two-centuries-protecting-portugal/",
+     "title": "Fidelidade: Two centuries protecting Portugal"
+    },
+    {
+     "url": "https://www.sas.com/en_us/customers/fidelidade-en.html",
+     "title": "Streamlining financial management with advanced analytics - SAS"
+    },
+    {
+     "url": "https://fidelidade.pt/hubfs/site-fidelidade/documentacao-institucional/press-releases/knowledge_ai_excellence_in_data_&_ai_2026.pdf?hsLang=pt",
+     "title": "Knowledge AI da Fidelidade distinguido nos Excellence in ..."
+    },
+    {
+     "url": "https://www.outsystems.com/case-studies/fidelidade-insurance-low-code-success/",
+     "title": "Fidelidade Agile Insurance Innovation with Low-Code - OutSystems"
+    },
+    {
+     "url": "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/2023/Fidelidade_SFCR_EN_2023.pdf",
+     "title": "Solvency and Financial Condition Report 2023"
+    },
+    {
+     "url": "https://www.valantic.com/en/case-studies/fidelidade-unlocking-digital-transformation-in-insurance/",
+     "title": "Fidelidade: Unlocking Digital Transformation in Insurance"
+    },
+    {
+     "url": "https://fidelidade.pt/hubfs/site-fidelidade/documentacao-institucional/apresentacao_corporativa.pdf",
+     "title": "Corporate Presentation"
+    },
+    {
+     "url": "https://leadiq.com/c/fidelidade/5a1d8ab0240000240064acb8",
+     "title": "Fidelidade Company Overview, Contact Details & ..."
+    },
+    {
+     "url": "https://macaubusiness.com/ai-enhances-insurance-efficiency-but-cannot-replace-human-judgment-and-ethics-fidelidade-seminar/",
+     "title": "AI enhances insurance efficiency but cannot replace ..."
+    },
+    {
+     "url": "https://dxc.com/newsroom/04032023",
+     "title": "Portuguese Insurer Fidelidade Transforms Customer ..."
+    },
+    {
+     "url": "https://www.fidelidade.pt/PT/a-fidelidade/informacoes_legais/informlegais/Documents/RC_Fidelidade_2020_EN.pdf",
+     "title": "ANNUAL REPORT"
+    },
+    {
+     "url": "https://en.fosun.com/content/details46_5067.html",
+     "title": "Fidelidade Fuels Innovation with the Launch of Protechting ..."
+    },
+    {
+     "url": "https://www.fidelidade.pt/Documents/Relato%CC%81rio_de_Sustentabilidade_2017_-_en.pdf",
+     "title": "INNOVATION, MORE TIME FOR PEOPLE"
+    },
+    {
+     "url": "https://www.fidelidade.com.mo/insurance-products/commercial-insurance/non-compulsory-insurance/others/aviation/",
+     "title": "Aviation | 忠誠保險FIDELIDADE |"
+    }
+   ],
+   "answer_urls": [
+    "https://fidelidade.pt/hubfs/site-fidelidade/documentacao-institucional/press-releases/knowledge_ai_excellence_in_data_&ai_2026.pdf?hsLang=pt",
+    "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/2023/Fidelidade_SFCR_EN_2023.pdf",
+    "https://en.fosun.com/content/details46_5067.html",
+    "https://dxc.com/newsroom/04032023",
+    "https://www.qorusglobal.com/content/29715-innovation-at-fidelidade"
+   ],
+   "answer": {
+    "what_it_does": "Fidelidade is a Portuguese insurer and part of a broader financial and healthcare group with operations beyond Portugal.[2][5] Its public materials describe a strong push into AI-powered analytics, automation, omnichannel service, and digital customer experiences across insurance and related services.[1][2]",
+    "ai_agents": [
+     {
+      "name": "Knowledge AI (KAI)",
+      "what_it_does": "An internal AI solution that centralizes Fidelidade’s operational knowledge into one platform to provide autonomous, accurate answers and act as a digital “brain” for the company.[4]",
+      "actions": [
+       "Centralizes operational knowledge in a single platform",
+       "Uses a vector knowledge base, content editor, and language-model-based integration layer",
+       "Interacts with external systems",
+       "Feeds business knowledge into other AI systems at Fidelidade"
+      ],
+      "source": "https://fidelidade.pt/hubfs/site-fidelidade/documentacao-institucional/press-releases/knowledge_ai_excellence_in_data_&ai_2026.pdf?hsLang=pt"
+     },
+     {
+      "name": "SARA clinical questionnaire",
+      "what_it_does": "An AI-driven underwriting questionnaire used in the initial subscription process for certain products to assess clinical risk automatically.[6]",
+      "actions": [
+       "Collects subscription questionnaire data in the MyFidelidade customer area",
+       "Assesses customer clinical risk for defined profiles and products",
+       "Automatically accepts low-clinical-risk customers"
+      ],
+      "source": "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/2023/Fidelidade_SFCR_EN_2023.pdf"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Insurance product underwriting",
+      "who_uses_it": "Customers applying for individual Multicare and Life Risk products, and Fidelidade underwriting processes.[6]",
+      "what_the_agent_can_reach": [
+       "MyFidelidade customer area",
+       "Clinical questionnaire data",
+       "Underwriting/risk-assessment workflows",
+       "Automatic acceptance decisions for low-risk profiles"
+      ],
+      "source": "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/2023/Fidelidade_SFCR_EN_2023.pdf"
+     },
+     {
+      "name": "Operational knowledge assistant",
+      "who_uses_it": "Fidelidade employees across business areas involved in operations, with business teams validating the logic.[4]",
+      "what_the_agent_can_reach": [
+       "Operational knowledge base",
+       "External company systems through integration",
+       "Business logic maintained by staff",
+       "Other AI systems at Fidelidade"
+      ],
+      "source": "https://fidelidade.pt/hubfs/site-fidelidade/documentacao-institucional/press-releases/knowledge_ai_excellence_in_data_&ai_2026.pdf?hsLang=pt"
+     },
+     {
+      "name": "Pilot development for insurtech and healthtech",
+      "who_uses_it": "Startups and Fidelidade/Fosun innovation partners in the Protechting program.[13]",
+      "what_the_agent_can_reach": [
+       "Pilot funding up to €50,000",
+       "Internal insurance and healthcare challenge areas",
+       "Use cases such as product personalization, claims automation, and fraud prevention"
+      ],
+      "source": "https://en.fosun.com/content/details46_5067.html"
+     },
+     {
+      "name": "Customer data and personalization",
+      "who_uses_it": "Fidelidade’s digital channels and customer service operations.[11]",
+      "what_the_agent_can_reach": [
+       "Centralized customer records",
+       "Real-time customer information",
+       "Mobile app and website interactions",
+       "Personalized policy choices"
+      ],
+      "source": "https://dxc.com/newsroom/04032023"
+     }
+    ],
+    "incidents_or_risks": [],
+    "facts": [
+     {
+      "claim": "Fidelidade describes its innovation strategy as driven by AI-powered analytics, omnichannel engagement, and automation.",
+      "source": "https://www.qorusglobal.com/content/29715-innovation-at-fidelidade"
+     },
+     {
+      "claim": "Fidelidade says teams from IT, Marketing, Legal, Actuary, and Distribution collaborate on pilots to test and refine ideas.",
+      "source": "https://www.qorusglobal.com/content/29715-innovation-at-fidelidade"
+     },
+     {
+      "claim": "KAI won recognition in the Excellence in Data & AI 2026 awards in the insurance category.",
+      "source": "https://fidelidade.pt/hubfs/site-fidelidade/documentacao-institucional/press-releases/knowledge_ai_excellence_in_data_&ai_2026.pdf?hsLang=pt"
+     },
+     {
+      "claim": "The KAI platform is described as capable of interacting with external systems.",
+      "source": "https://fidelidade.pt/hubfs/site-fidelidade/documentacao-institucional/press-releases/knowledge_ai_excellence_in_data_&ai_2026.pdf?hsLang=pt"
+     },
+     {
+      "claim": "Fidelidade’s Protechting program has developed more than 40 pilots since 2018.",
+      "source": "https://en.fosun.com/content/details46_5067.html"
+     },
+     {
+      "claim": "Protechting has resulted in five commercial agreements.",
+      "source": "https://en.fosun.com/content/details46_5067.html"
+     },
+     {
+      "claim": "Priority pilot challenge areas include insurance product personalization, claims automation, and fraud prevention.",
+      "source": "https://en.fosun.com/content/details46_5067.html"
+     },
+     {
+      "claim": "Fidelidade’s customer data hub centralized 980 million customer records and processes up to 250,000 daily interactions.",
+      "source": "https://dxc.com/newsroom/04032023"
+     },
+     {
+      "claim": "The company says its digital channels serve 2.3 million customers and 1.2 million mobile users.",
+      "source": "https://dxc.com/newsroom/04032023"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI search",
+   "model": "openai/gpt-5.4-nano:online",
+   "ms": 15759,
+   "cost_usd": 0.0249778485,
+   "tokens": {
+    "in": 13332,
+    "out": 2051
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.fidelidade.pt/PT/a-fidelidade/QuemSomos/QuemSomos/Documents/2.%20RUIG%202024%20-%20VFinal_EN.pdf",
+    "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/RUI_Fidelidade_2025_EN_VF.pdf",
+    "https://www.fidelidade.pt/PT/a-fidelidade/Imprensa/Imprensa/Documents/2025/EN_PR%20Fidelidade_PDA_JIC_GAMA_02.12.2024.pdf",
+    "https://eco.sapo.pt/2021/12/16/assistente-virtual-da-fidelidade-vence-portugal-idc-digital-award/"
+   ],
+   "answer": {
+    "what_it_does": "Fidelidade has deployed and piloted AI applications to improve customer interactions and internal efficiency in its Portuguese insurance operations. Reported initiatives include an AI contact application/pilot for customer authentication and routing in the group contact center, and an “IA Contact” platform that uses AI for customer interaction management integrated with internal systems.",
+    "ai_agents": [
+     {
+      "name": "Contact AI Application Pilot (IVR authentication and routing)",
+      "what_it_does": "A pilot that develops an Interactive Voice Response (IVR) system to authenticate customers and route them to the most appropriate operators based on skills.",
+      "actions": [
+       "Interact with customers via IVR during inbound contact",
+       "Perform customer authentication",
+       "Redirect calls to operators based on skills",
+       "Operate within the Fidelidade Group contact center and is planned for transversal use across the group"
+      ],
+      "source": "https://www.fidelidade.pt/PT/a-fidelidade/QuemSomos/QuemSomos/Documents/2.%20RUIG%202024%20-%20VFinal_EN.pdf"
+     },
+     {
+      "name": "Contact IA (customer interaction management platform with assistant and content creation)",
+      "what_it_does": "An AI platform for managing customer interactions that includes a conversational assistant and content creation, integrated with internal systems.",
+      "actions": [
+       "Extract information to support customer interactions (as described in Fidelidade’s report)",
+       "Provide a conversational assistant for customer interaction workflows",
+       "Support content creation",
+       "Integrate with internal systems to enable operational use by teams"
+      ],
+      "source": "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/RUI_Fidelidade_2025_EN_VF.pdf"
+     },
+     {
+      "name": "KIA (Knowledge AI / generative AI assistant layer)",
+      "what_it_does": "A knowledge centralization/activation capability described as using generative AI, semantic search, and RAG to centralize institutional knowledge and accelerate access to critical data for decision-making and team autonomy.",
+      "actions": [
+       "Use generative AI to support institutional knowledge access",
+       "Use semantic search to retrieve relevant information",
+       "Use RAG (Retrieval-Augmented Generation) to ground answers on internal knowledge",
+       "Support decision-making and improve digital autonomy for teams"
+      ],
+      "source": "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/RUI_Fidelidade_2025_EN_VF.pdf"
+     },
+     {
+      "name": "GAMA (AI document processing solution)",
+      "what_it_does": "An AI solution that processes documents intelligently (document intelligence / intelligent document processing) developed by Fidelidade’s Centre for Artificial Intelligence & Analytics.",
+      "actions": [
+       "Process documents intelligently (intelligent document processing)",
+       "Support workflows requiring automated understanding of documents"
+      ],
+      "source": "https://www.fidelidade.pt/PT/a-fidelidade/Imprensa/Imprensa/Documents/2025/EN_PR%20Fidelidade_PDA_JIC_GAMA_02.12.2024.pdf"
+     },
+     {
+      "name": "speech bot MARIA (voice/speech bot for insurance project)",
+      "what_it_does": "A speech bot developed by Fidelidade’s Centre for Advanced Analytics and Fidelidade Assistance, publicly recognized as an award-winning digital project.",
+      "actions": [
+       "Operate as a speech bot interacting with users (speech-based assistance)",
+       "Support an insurance project workflow as part of Fidelidade Assistance / analytics capabilities"
+      ],
+      "source": "https://eco.sapo.pt/2021/12/16/assistente-virtual-da-fidelidade-vence-portugal-idc-digital-award/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Customer contact authentication and call routing (pilot)",
+      "who_uses_it": "Customers calling the Fidelidade Group contact center; Fidelidade contact center operators/teams.",
+      "what_the_agent_can_reach": [
+       "Customer authentication via IVR",
+       "Contact center operator routing (operators appropriate to skills)",
+       "Contact center systems needed to perform authentication and route calls"
+      ],
+      "source": "https://www.fidelidade.pt/PT/a-fidelidade/QuemSomos/QuemSomos/Documents/2.%20RUIG%202024%20-%20VFinal_EN.pdf"
+     },
+     {
+      "name": "Customer interaction management with conversational assistant",
+      "who_uses_it": "Fidelidade teams managing customer interactions and customer support workflows.",
+      "what_the_agent_can_reach": [
+       "Internal systems integrated for customer interaction workflows",
+       "Information used to support customer interactions",
+       "Customer-facing interaction channels (via the platform’s conversational assistant/content creation)"
+      ],
+      "source": "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/RUI_Fidelidade_2025_EN_VF.pdf"
+     },
+     {
+      "name": "Institutional knowledge assistant (semantic search + RAG)",
+      "who_uses_it": "Fidelidade teams and decision-makers needing internal institutional knowledge and critical data.",
+      "what_the_agent_can_reach": [
+       "Centralized institutional knowledge sources",
+       "Internal data used for retrieval (for RAG) and semantic search",
+       "Information used to support decisions and team autonomy (described at platform level)"
+      ],
+      "source": "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/RUI_Fidelidade_2025_EN_VF.pdf"
+     },
+     {
+      "name": "Intelligent document processing for internal operations (GAMA)",
+      "who_uses_it": "Fidelidade operational teams processing documents within insurance workflows.",
+      "what_the_agent_can_reach": [
+       "Documents processed within Fidelidade workflows",
+       "Document-processing capabilities provided to internal teams (described at solution level)"
+      ],
+      "source": "https://www.fidelidade.pt/PT/a-fidelidade/Imprensa/Imprensa/Documents/2025/EN_PR%20Fidelidade_PDA_JIC_GAMA_02.12.2024.pdf"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Risk relating to digital innovation and regulatory compliance in connection with implementation of digitalisation and artificial intelligence.",
+      "when": "As stated in Fidelidade’s 2024 non-financial statements document (time horizon context around Group implementation/continuous evolution).",
+      "source": "https://www.fidelidade.pt/PT/a-fidelidade/QuemSomos/QuemSomos/Documents/2.%20RUIG%202024%20-%20VFinal_EN.pdf"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Fidelidade states that a “Contact AI Application Pilot” started in 2024 at the Fidelidade Group Contact Center and focuses on developing an IVR system for customer authentication and routing to appropriate operators by skills.",
+      "source": "https://www.fidelidade.pt/PT/a-fidelidade/QuemSomos/QuemSomos/Documents/2.%20RUIG%202024%20-%20VFinal_EN.pdf"
+     },
+     {
+      "claim": "Fidelidade describes “Contact IA” as an advanced platform for customer interaction management using AI, including a conversational assistant, content creation, and integration with internal systems.",
+      "source": "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/RUI_Fidelidade_2025_EN_VF.pdf"
+     },
+     {
+      "claim": "Fidelidade’s report describes KIA as using generative AI, semantic search, and RAG to centralize and activate institutional knowledge.",
+      "source": "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/RUI_Fidelidade_2025_EN_VF.pdf"
+     },
+     {
+      "claim": "Fidelidade’s GAMA project uses AI to process documents intelligently and was developed by Fidelidade’s Centre for Artificial Intelligence & Analytics.",
+      "source": "https://www.fidelidade.pt/PT/a-fidelidade/Imprensa/Imprensa/Documents/2025/EN_PR%20Fidelidade_PDA_JIC_GAMA_02.12.2024.pdf"
+     },
+     {
+      "claim": "A speech bot called MARIA was developed by Fidelidade’s Centre for Advanced Analytics and Fidelidade Assistance and received an IDC Digital Award (Best Insurance Project) according to a public news report.",
+      "source": "https://eco.sapo.pt/2021/12/16/assistente-virtual-da-fidelidade-vence-portugal-idc-digital-award/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "gemini",
+   "label": "Gemini search",
+   "model": "google/gemini-3.1-flash-lite:online",
+   "ms": 1830,
+   "cost_usd": 0.000583605,
+   "tokens": {
+    "in": 234,
+    "out": 354
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.fidelidade.pt"
+   ],
+   "answer": {
+    "what_it_does": "Fidelidade is a leading Portuguese insurance company that provides a comprehensive range of insurance products, including life, health, and property coverage. The company is actively integrating artificial intelligence and digital transformation strategies to enhance customer experience, optimize internal processes, and modernize its service delivery.",
+    "ai_agents": [
+     {
+      "name": "Fidelidade AI Customer Service / Virtual Assistant",
+      "what_it_does": "Automates customer interactions to handle inquiries, policy management, and claims support.",
+      "actions": [
+       "Accesses customer policy databases",
+       "Processes claims information",
+       "Interacts with CRM systems to provide real-time updates"
+      ],
+      "source": "https://www.fidelidade.pt"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Claims Processing Automation",
+      "who_uses_it": "Claims department staff and customers",
+      "what_the_agent_can_reach": [
+       "Claims management systems",
+       "Digital document verification tools",
+       "Customer financial data related to policy coverage"
+      ],
+      "source": "https://www.fidelidade.pt"
+     }
+    ],
+    "incidents_or_risks": [],
+    "facts": [
+     {
+      "claim": "Fidelidade has invested significantly in a digital transformation program to implement AI-driven solutions across its insurance value chain.",
+      "source": "https://www.fidelidade.pt"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter web search",
+   "model": "anthropic/claude-haiku-5.5",
+   "plugins": [
+    {
+     "id": "web",
+     "max_results": 6
+    }
+   ],
+   "max_tokens": 7000,
+   "ms": 25147,
+   "cost_usd": 0.041936697,
+   "tokens": {
+    "in": 99643,
+    "out": 4792
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://eco.sapo.pt/2025/04/09/fidelidade-estuda-vender-solucao-interna-de-ia-apos-receber-varias-propostas-de-compra/",
+    "https://www.netthings.pt/2026/10/fidelidade-distinguida-nos-excellence.html",
+    "https://fidelidade.pt/",
+    "https://dealroom.co/news/135231-coalex-ai-raises-angel-round-from-angels-way-to-build-its-ai-trust-layer/",
+    "https://eco.sapo.pt/2024/12/08/fidelidade-recebe-dois-premios-por-projeto-de-inteligencia-artificial/",
+    "https://fidelidade.pt/institucional/quem-somos/sobre-nos/a-fidelidade",
+    "https://executivedigest.sapo.pt/da-fundacao-em-2026-a-agarrar-as-poupancas-dos-portugueses-fidelidade-junta-4-000-pessoas-e-anuncia-objetivos-da-seguradora/",
+    "https://segurus.pt/artigos/fidelidade-plataforma-longevidade"
+   ],
+   "answer": {
+    "what_it_does": "Fidelidade is a Lisbon-based insurer covering life and non-life lines, with a group presence in 14 countries and a leading share of the Portuguese market. It has built in-house AI tools, including a document-processing system, a knowledge platform and a virtual assistant, and has added third-party oversight for autonomous agents.",
+    "ai_agents": [
+     {
+      "name": "GAMA (Generic Analytical Model Automation)",
+      "what_it_does": "In-house intelligent document processing system built by Fidelidade's internal teams to handle large volumes of insurance paperwork, from claims to reimbursements.",
+      "actions": [
+       "Reads and processes incoming insurance documents, including claim-related paperwork and reimbursement files",
+       "Automates repetitive document handling that staff previously did by hand",
+       "Struggles with some folded paper accident declarations and phone-photographed forms, per the reporting"
+      ],
+      "source": "https://eco.sapo.pt/2025/04/09/fidelidade-estuda-vender-solucao-interna-de-ia-apos-receber-varias-propostas-de-compra/"
+     },
+     {
+      "name": "Knowledge AI (KAI)",
+      "what_it_does": "Central knowledge platform built by Fidelidade's Center for Artificial Intelligence & Analytics, combining a vector knowledge base with a language model to answer questions about policies, procedures and coverage.",
+      "actions": [
+       "Answers complex questions about policies, procedures and coverages almost instantly",
+       "Draws on a vector knowledge base that business experts can edit in real time",
+       "Connects a language model to external systems",
+       "Supplies business knowledge to the company's other AI systems"
+      ],
+      "source": "https://www.netthings.pt/2026/10/fidelidade-distinguida-nos-excellence.html"
+     },
+     {
+      "name": "Trusty",
+      "what_it_does": "Virtual assistant offered on Fidelidade's website to answer customer questions, with chat available via WhatsApp.",
+      "actions": [
+       "Answers customer questions through the website",
+       "Provides instant replies through WhatsApp chat"
+      ],
+      "source": "https://fidelidade.pt/"
+     },
+     {
+      "name": "Coalex.ai trust layer (third-party, integrated by Fidelidade)",
+      "what_it_does": "External platform from a Portuguese startup that supervises autonomous AI agents in real time and rates their actions on a health-score index; Fidelidade has integrated it to keep its autonomous agents compliant.",
+      "actions": [
+       "Monitors the actions of autonomous AI agents in real time",
+       "Scores agent actions on a zero-to-100 health index",
+       "Supports compliance checks on Fidelidade's autonomous agents"
+      ],
+      "source": "https://dealroom.co/news/135231-coalex-ai-raises-angel-round-from-angels-way-to-build-its-ai-trust-layer/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Claims and reimbursement document processing",
+      "who_uses_it": "Fidelidade internal operations and claims teams",
+      "what_the_agent_can_reach": [
+       "Claim documents and accident declarations",
+       "Photos of documents submitted by policyholders",
+       "Reimbursement paperwork"
+      ],
+      "source": "https://eco.sapo.pt/2024/12/08/fidelidade-recebe-dois-premios-por-projeto-de-inteligencia-artificial/"
+     },
+     {
+      "name": "Internal policy and procedure Q&A through KAI",
+      "who_uses_it": "Fidelidade business specialists and the company's other AI systems",
+      "what_the_agent_can_reach": [
+       "Policy documents and coverage terms held in the knowledge base",
+       "Internal procedures and company rules",
+       "External systems reached through the language model integration (specifics not published)"
+      ],
+      "source": "https://www.netthings.pt/2026/10/fidelidade-distinguida-nos-excellence.html"
+     },
+     {
+      "name": "Customer questions via Trusty",
+      "who_uses_it": "Fidelidade customers visiting the website or using WhatsApp",
+      "what_the_agent_can_reach": [
+       "Answers to general customer questions (underlying systems and data not published)"
+      ],
+      "source": "https://fidelidade.pt/"
+     },
+     {
+      "name": "Oversight of autonomous agents via Coalex.ai",
+      "who_uses_it": "Fidelidade AI and compliance teams",
+      "what_the_agent_can_reach": [
+       "Actions taken by Fidelidade's autonomous AI agents, as monitored by the platform (specific systems not published)"
+      ],
+      "source": "https://dealroom.co/news/135231-coalex-ai-raises-angel-round-from-angels-way-to-build-its-ai-trust-layer/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "The GAMA document-processing system still had difficulty reading some paper documents that policyholders typically fold, such as accident declaration forms kept in car glove boxes, sometimes submitted as phone photos.",
+      "when": "Reported April 2025",
+      "source": "https://eco.sapo.pt/2025/04/09/fidelidade-estuda-vender-solucao-interna-de-ia-apos-receber-varias-propostas-de-compra/"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Fidelidade is a group operating in 14 countries across 4 continents, leading the Portuguese market with a 28.1% share, and partnering with more than 6 million clients.",
+      "source": "https://fidelidade.pt/institucional/quem-somos/sobre-nos/a-fidelidade"
+     },
+     {
+      "claim": "Gross written premiums reached 6,529 million euros in 2025, according to Fidelidade's corporate site.",
+      "source": "https://fidelidade.pt/institucional/quem-somos/sobre-nos/a-fidelidade"
+     },
+     {
+      "claim": "Fidelidade's CEO-level group is controlled by the Chinese conglomerate Fosun, which holds about 85% of the capital.",
+      "source": "https://executivedigest.sapo.pt/da-fundacao-em-2026-a-agarrar-as-poupancas-dos-portugueses-fidelidade-junta-4-000-pessoas-e-anuncia-objetivos-da-seguradora/"
+     },
+     {
+      "claim": "The GAMA document-processing project won the Portugal Digital Awards 2024 categories Best Future of Work Project and Best Insurance Project, and the 2024 National Innovation Prize in the Transformation of Workplace category.",
+      "source": "https://eco.sapo.pt/2024/12/08/fidelidade-recebe-dois-premios-por-projeto-de-inteligencia-artificial/"
+     },
+     {
+      "claim": "The Knowledge AI (KAI) project won the Insurance category of the Excellence in Data & AI 2026 awards.",
+      "source": "https://www.netthings.pt/2026/10/fidelidade-distinguida-nos-excellence.html"
+     },
+     {
+      "claim": "In April 2025, Fidelidade was considering offering its internal AI document-processing solution to third parties after receiving several purchase proposals.",
+      "source": "https://eco.sapo.pt/2025/04/09/fidelidade-estuda-vender-solucao-interna-de-ia-apos-receber-varias-propostas-de-compra/"
+     },
+     {
+      "claim": "Fidelidade launched a Longevity IA digital platform in June 2026, which uses a questionnaire on habits and lifestyle to generate a projection of the user's life path.",
+      "source": "https://segurus.pt/artigos/fidelidade-plataforma-longevidade"
+     }
+    ]
+   }
+  }
+ ]
+}

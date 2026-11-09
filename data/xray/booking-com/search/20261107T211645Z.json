@@ -1,0 +1,595 @@
+{
+ "subject": "Booking.com AI Trip Planner and AI agents",
+ "kind": "company",
+ "slug": "booking-com",
+ "run_at": "2026-11-07T21:16:45.017Z",
+ "note": "What each model said, as leads: not facts until their sources are read.",
+ "cost_usd": 0.1243,
+ "agents": [
+  {
+   "id": "perplexity",
+   "label": "Perplexity search",
+   "model": "perplexity/sonar",
+   "ms": 6934,
+   "cost_usd": 0.0062964,
+   "tokens": {
+    "in": 212,
+    "out": 1144
+   },
+   "finish": "stop",
+   "citations": [
+    {
+     "url": "https://news.booking.com/en-us/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/",
+     "title": "Booking.com Launches New AI Trip Planner to Enhance Travel Planning Experience"
+    },
+    {
+     "url": "https://news.booking.com/how-bookingcoms-ai-trip-planner-can-inspire-travelers-to-plan-that-last-minute-summer-vacation/",
+     "title": "How Booking.com’s AI Trip Planner Can Inspire Travelers to ..."
+    },
+    {
+     "url": "https://news.booking.com/bookingcom-enhances-travel-planning-with-new-ai-powered-features--for-easier-smarter-decisions/",
+     "title": "Booking.com Enhances Travel Planning with New AI- ..."
+    },
+    {
+     "url": "https://openai.com/index/booking-com/",
+     "title": "Booking.com and OpenAI personalize travel at scale"
+    },
+    {
+     "url": "https://partner.booking.com/en-gb/click-magazine/industry-perspectives/how-we-use-generative-ai",
+     "title": "How we're using generative AI to help make your property stand out"
+    },
+    {
+     "url": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/",
+     "title": "Booking.com Debuts Agentic AI Innovations, Adding to its ..."
+    },
+    {
+     "url": "https://www.astronomer.io/case-studies/booking/",
+     "title": "Booking.com Orchestrates Data and AI at Scale with Astro"
+    },
+    {
+     "url": "https://www.servicenow.com/customers/booking.html",
+     "title": "Booking.com's AI agents get it right 97% of the time"
+    },
+    {
+     "url": "https://www.cnbc.com/2026/11/05/booking-holdings-q3-earnings-ai-opportunity.html",
+     "title": "AI is starting to help Booking's business. Its stock should benefit"
+    },
+    {
+     "url": "https://www.cnet.com/tech/services-and-software/how-to-use-the-ai-trip-planner-on-booking-com/",
+     "title": "How to Use the AI Trip Planner on Booking.com"
+    },
+    {
+     "url": "https://www.usatoday.com/story/travel/2024/06/13/expedia-romie-booking-ai-travel-planning/74054663007/",
+     "title": "Which AI trip planning tool is the best? Here's how Expedia's and Booking.com's compared."
+    },
+    {
+     "url": "https://www.phocuswire.com/news/technology/booking-develops-internal-platform-build-modular-ai-agents",
+     "title": "Booking.com develops internal platform to build modular AI agents"
+    },
+    {
+     "url": "https://skift.com/2024/10/30/booking-coms-ai-trip-planner-got-a-big-update-heres-how-it-works/",
+     "title": "The Booking.com AI Trip Planner Got an Update. How it Works - Skift"
+    },
+    {
+     "url": "https://theairankings.com/best-ai-travel-planners/",
+     "title": "Best AI Travel Planners in 2026: What Actually Works | The AI ..."
+    },
+    {
+     "url": "https://travel.yahoo.com/news/articles/booking-holdings-credits-ai-better-212242496.html",
+     "title": "Booking Holdings credits AI for better booking, customer service"
+    }
+   ],
+   "answer_urls": [
+    "https://www.phocuswire.com/news/technology/booking-develops-internal-platform-build-modular-ai-agents",
+    "https://news.booking.com/en-us/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/",
+    "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/",
+    "https://news.booking.com/bookingcom-enhances-travel-planning-with-new-ai-powered-features--for-easier-smarter-decisions/",
+    "https://www.cnbc.com/2026/11/05/booking-holdings-q3-earnings-ai-opportunity.html",
+    "https://openai.com/index/booking-com/"
+   ],
+   "answer": {
+    "what_it_does": "Booking.com’s AI Trip Planner is a conversational travel-planning feature that helps travelers ask general and specific trip questions, explore destinations and accommodations, and build itineraries. Booking later expanded it with AI-powered features and agentic experiences aimed at easier search, smarter decisions, and in-trip assistance.",
+    "ai_agents": [
+     {
+      "name": "AI Trip Planner Q&A",
+      "what_it_does": "Answers travelers’ property-related questions in a conversational flow.",
+      "actions": [
+       "Matches property mentions to the correct Booking.com property ID",
+       "Fetches relevant information from internal systems",
+       "Calculates distances and travel times to landmarks and transportation hubs"
+      ],
+      "source": "https://www.phocuswire.com/news/technology/booking-develops-internal-platform-build-modular-ai-agents"
+     },
+     {
+      "name": "AI Trip Planner",
+      "what_it_does": "Helps travelers plan trips by answering travel questions, suggesting destinations and accommodations, and generating itineraries.",
+      "actions": [
+       "Processes natural-language travel prompts",
+       "Searches destination and accommodation options",
+       "Generates itineraries for cities, countries, or regions",
+       "Uses real-time availability and pricing data from Booking.com"
+      ],
+      "source": "https://news.booking.com/en-us/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/"
+     },
+     {
+      "name": "AI-powered features in the booking journey",
+      "what_it_does": "Extends the trip-planning experience into embedded AI support across the booking journey.",
+      "actions": [
+       "Supports destination discovery",
+       "Supports accommodation comparison",
+       "Supports itinerary building",
+       "Supports answering questions during the trip-planning and in-trip stages"
+      ],
+      "source": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Destination discovery and inspiration",
+      "who_uses_it": "Travelers planning leisure or business trips",
+      "what_the_agent_can_reach": [
+       "Destination options",
+       "Accommodation options",
+       "Traveler preference inputs",
+       "Trip inspiration workflows"
+      ],
+      "source": "https://news.booking.com/en-us/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/"
+     },
+     {
+      "name": "Property Q&A and comparison",
+      "who_uses_it": "Travelers evaluating specific hotels or stays",
+      "what_the_agent_can_reach": [
+       "Property records in Booking.com systems",
+       "Property IDs",
+       "Location and distance calculations",
+       "Travel time estimates to nearby places"
+      ],
+      "source": "https://www.phocuswire.com/news/technology/booking-develops-internal-platform-build-modular-ai-agents"
+     },
+     {
+      "name": "In-trip assistance",
+      "who_uses_it": "Travelers already at their destination",
+      "what_the_agent_can_reach": [
+       "Attractions and local options",
+       "Booking.com trip-planning data",
+       "In-trip guidance features"
+      ],
+      "source": "https://news.booking.com/bookingcom-enhances-travel-planning-with-new-ai-powered-features--for-easier-smarter-decisions/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Public sources describe Booking.com’s shift from a standalone AI Trip Planner toward embedded and agentic AI features, but no public incident specific to the AI Trip Planner was identified in the search results.",
+      "when": "2025-10-09",
+      "source": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/"
+     },
+     {
+      "what": "Industry coverage notes the strategic risk that AI agents could bypass online travel intermediaries, although Booking argues its inventory, payments, and supplier relationships make it a strong partner for those systems.",
+      "when": "2026-11-05",
+      "source": "https://www.cnbc.com/2026/11/05/booking-holdings-q3-earnings-ai-opportunity.html"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Booking.com launched the AI Trip Planner in June 2023.",
+      "source": "https://news.booking.com/en-us/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/"
+     },
+     {
+      "claim": "Travelers can use the AI Trip Planner to ask both general and specific travel-related questions.",
+      "source": "https://news.booking.com/en-us/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/"
+     },
+     {
+      "claim": "Booking.com said the AI Trip Planner can help create itineraries for a city, country, or region.",
+      "source": "https://news.booking.com/bookingcom-enhances-travel-planning-with-new-ai-powered-features--for-easier-smarter-decisions/"
+     },
+     {
+      "claim": "Booking.com’s AI Trip Planner can incorporate real-time availability and pricing data from Booking.com’s database.",
+      "source": "https://openai.com/index/booking-com/"
+     },
+     {
+      "claim": "Booking.com has described AgentHub as an internal platform for building modular, production-grade AI agents and workflows.",
+      "source": "https://www.phocuswire.com/news/technology/booking-develops-internal-platform-build-modular-ai-agents"
+     },
+     {
+      "claim": "One of the first agents built on AgentHub was the AI Trip Planner Q&A.",
+      "source": "https://www.phocuswire.com/news/technology/booking-develops-internal-platform-build-modular-ai-agents"
+     },
+     {
+      "claim": "Booking.com has publicly said its AI features are evolving into an embedded AI-powered companion across the booking journey.",
+      "source": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI search",
+   "model": "openai/gpt-5.4-nano:online",
+   "ms": 12392,
+   "cost_usd": 0.0343298439,
+   "tokens": {
+    "in": 17371,
+    "out": 1349
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://news.booking.com/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/",
+    "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/",
+    "https://q-xx.bstatic.com/data/mobile/2025%20-%20Audit%20implementation%20report.pdf",
+    "https://openai.com/index/booking-com/"
+   ],
+   "answer": {
+    "what_it_does": "Booking.com’s AI Trip Planner lets travelers describe trip ideas in natural language and receive conversational suggestions such as destination and accommodation options, itinerary concepts, and travel inspiration. It’s integrated into Booking.com’s booking flow, surfacing visual lists with deep-links to property details and enabling users to complete reservations from within the app interface.",
+    "ai_agents": [
+     {
+      "name": "AI Trip Planner (conversational trip planning agent)",
+      "what_it_does": "Guides trip discovery and planning via chat by interpreting traveler intent and generating destination/accommodation recommendations and itinerary ideas, then linking back to relevant Booking.com properties and pricing/availability.",
+      "actions": [
+       "Collects user intent through chat prompts describing travel preferences and constraints",
+       "Generates destination and accommodation recommendations and itinerary suggestions based on user inputs",
+       "Displays a visual list of destinations/properties including Booking.com pricing and deep-links to details",
+       "Enables users to reserve by connecting chat results to the accommodation booking experience in the Booking.com app"
+      ],
+      "source": "https://news.booking.com/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/"
+     },
+     {
+      "name": "AI Trip Support / agentic customer-service support (embedded AI tools around the trip journey)",
+      "what_it_does": "Provides automated, context-aware customer service responses for common trip questions and can hand off to human representatives for more complex issues, using booking/property context pulled to answer traveler questions.",
+      "actions": [
+       "Acts as a first point of contact for travelers with 24/7 guidance on customer service topics",
+       "Gathers relevant information from the property context to answer questions (e.g., parking availability) to support independent reservation changes",
+       "Facilitates handover to an informed customer service representative for complex questions",
+       "Connects to other support flows when needed"
+      ],
+      "source": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Conversational trip discovery and itinerary building (top-of-funnel planning)",
+      "who_uses_it": "Travelers planning trips on Booking.com (including those scoping destinations and accommodations before booking).",
+      "what_the_agent_can_reach": [
+       "Booking.com customer-facing app interface (chat experience and recommendation UI)",
+       "Booking.com property listing details surfaced from recommendation results",
+       "Booking.com pricing information and availability displayed alongside recommendations",
+       "Accommodation booking/reservation functionality via deep-links/integration in the app"
+      ],
+      "source": "https://news.booking.com/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/"
+     },
+     {
+      "name": "Automated property/trip Q&A and faster support resolution during the booking journey",
+      "who_uses_it": "Travelers needing trip-related information and support (especially for questions that can be answered using property and booking context).",
+      "what_the_agent_can_reach": [
+       "Property-related information used to answer traveler questions (e.g., parking availability)",
+       "Reservation/change flows that depend on accurate trip information",
+       "Booking.com customer service representative handover workflow (human support escalation)"
+      ],
+      "source": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Risk of incomplete or inaccurate information being published from recommender systems (control recommendation to improve completeness/accuracy).",
+      "when": "",
+      "source": "https://q-xx.bstatic.com/data/mobile/2025%20-%20Audit%20implementation%20report.pdf"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Booking.com’s AI Trip Planner is built on Booking.com’s existing ML models that recommend destination and accommodation options, and it is partially powered by LLM technology from OpenAI’s ChatGPT API.",
+      "source": "https://news.booking.com/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/"
+     },
+     {
+      "claim": "The AI Trip Planner can handle general travel questions as well as more specific queries across multiple stages of trip planning, including scoping destinations/accommodations and creating itineraries for a city/country/region.",
+      "source": "https://news.booking.com/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/"
+     },
+     {
+      "claim": "Booking.com states the AI Trip Planner integrates into the accommodation booking experience in the Booking.com app, allowing users to complete reservations from the AI planner’s recommendations.",
+      "source": "https://news.booking.com/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/"
+     },
+     {
+      "claim": "OpenAI reports that Booking.com integrated its data systems with OpenAI LLMs to deliver intent-driven travel experiences and that the AI Trip Planner pulls real-time availability and pricing data from Booking.com.",
+      "source": "https://openai.com/index/booking-com/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "gemini",
+   "label": "Gemini search",
+   "model": "google/gemini-3.1-flash-lite:online",
+   "ms": 6105,
+   "cost_usd": 0.0578241675,
+   "tokens": {
+    "in": 231,
+    "out": 1567
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://phocuswire.com/booking-com-develops-internal-platform-to-build-modular-ai-agents",
+    "https://www.booking.com/articles/news-booking-com-launches-agentic-ai-innovations.en-gb.html",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVz0uExw2LCbt3iC8jSR8_47IdV2Udg7A44uEbwSZrUzXmzz3HsTFFeLT4G-e9Q3IQ32rRKOyv8bS0VXr5Yqnj6gD1VJf-N2lReLwnMb25IfrSYaKsnqWq7AKcKEtuKLZ5XLsv0il28x7oTiND2qk3k4IUgFrD9KHqivRjS5E8ocGIKc6o54QBkVo_U2euA0KWFExKJSshSCTuZCdfaN1Edr6vt4_oeMuiI9t-HJ27lWM=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTKA545OTZ8ybotVlIF38uZ24dBQSWHVMWVzeSqh53ILHJbGLnS04YnRgj997yjcf7XSBVuF19YYR8KgV3_PWEDqo5VCa94-pdL28eTuynjunOi_m0MH2pXMThoplzeh8U44JC-ZHK6oQJj1sPwNcLG7nG0MsjLbm7qeHivTpQtuXLNwBW87W-",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdn4WMTnmJjmGUPLJZKblnHRgvPuqRDeIKxEuaJg29NrE9IIoDWryVN23GbUSgvqGuc_B8WsV6NDiL2EAC3cJeMmENm_TY2MMy9kixdfDJWRuI9x9jk517MS-Lze1QrU9e4HTkZebVAhFR-zjnk1gWkq9mLYNvbV_6IHB0kkf9OAB95yk6DrgJ9UsjlWilRtFwpgY5oI1o",
+    "https://openai.com/customers/booking-com"
+   ],
+   "answer": {
+    "what_it_does": "The Booking.com AI Trip Planner is a generative AI-powered tool that allows travelers to plan trips through natural language conversations, providing personalized recommendations for destinations, accommodations, and activities. It integrates real-time inventory, pricing, and property data to help users scope out travel options, build detailed itineraries, and transition directly into the booking process.",
+    "ai_agents": [
+     {
+      "name": "AI Trip Planner Q&A",
+      "what_it_does": "Answers property-specific questions by retrieving information from listing details, guest reviews, and photos.",
+      "actions": [
+       "Matches user property mentions to internal Booking.com property IDs",
+       "Fetches information from internal systems",
+       "Calculates distances and travel times to landmarks and transport hubs"
+      ],
+      "source": "https://phocuswire.com/booking-com-develops-internal-platform-to-build-modular-ai-agents"
+     },
+     {
+      "name": "Smart Messenger",
+      "what_it_does": "Automates partner-to-guest communications by gathering reservation data to autonomously suggest responses and actions.",
+      "actions": [
+       "Integrates partner, property, and reservation information",
+       "Suggests relevant information to support guests",
+       "Learns from past interactions to improve accuracy"
+      ],
+      "source": "https://www.booking.com/articles/news-booking-com-launches-agentic-ai-innovations.en-gb.html"
+     },
+     {
+      "name": "AI Rental Helper",
+      "what_it_does": "Provides instant answers to customer questions regarding car rental bookings.",
+      "actions": [
+       "Clarifies terms and conditions",
+       "Explains payment methods and pick-up checklists",
+       "Provides insurance information"
+      ],
+      "source": "https://www.booking.com/articles/news-booking-com-launches-agentic-ai-innovations.en-gb.html"
+     },
+     {
+      "name": "AI Voice Support",
+      "what_it_does": "Enables voice-powered trip management and customer service interactions.",
+      "actions": [
+       "Accesses user booking details",
+       "Assists with requests like reservation cancellations",
+       "Connects to human agents with relevant context when necessary"
+      ],
+      "source": "https://www.booking.com/articles/news-booking-com-launches-agentic-ai-innovations.en-gb.html"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Trip Discovery and Planning",
+      "who_uses_it": "Leisure and business travelers.",
+      "what_the_agent_can_reach": [
+       "Live bookable inventory",
+       "Pricing and availability data",
+       "User reviews and destination data"
+      ],
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVz0uExw2LCbt3iC8jSR8_47IdV2Udg7A44uEbwSZrUzXmzz3HsTFFeLT4G-e9Q3IQ32rRKOyv8bS0VXr5Yqnj6gD1VJf-N2lReLwnMb25IfrSYaKsnqWq7AKcKEtuKLZ5XLsv0il28x7oTiND2qk3k4IUgFrD9KHqivRjS5E8ocGIKc6o54QBkVo_U2euA0KWFExKJSshSCTuZCdfaN1Edr6vt4_oeMuiI9t-HJ27lWM="
+     },
+     {
+      "name": "Automated Partner Communications",
+      "who_uses_it": "Accommodation partners and property hosts.",
+      "what_the_agent_can_reach": [
+       "Reservation data",
+       "Custom reply templates",
+       "Guest communication systems"
+      ],
+      "source": "https://www.booking.com/articles/news-booking-com-launches-agentic-ai-innovations.en-gb.html"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "General risks associated with AI travel planning include inaccurate information, 'hallucinations' (generating false details), outdated pricing, and privacy concerns regarding input data.",
+      "when": "Ongoing/General",
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTKA545OTZ8ybotVlIF38uZ24dBQSWHVMWVzeSqh53ILHJbGLnS04YnRgj997yjcf7XSBVuF19YYR8KgV3_PWEDqo5VCa94-pdL28eTuynjunOi_m0MH2pXMThoplzeh8U44JC-ZHK6oQJj1sPwNcLG7nG0MsjLbm7qeHivTpQtuXLNwBW87W-"
+     },
+     {
+      "what": "High consumer concern regarding data privacy, security, and the potential for AI to act without explicit user confirmation on financial transactions.",
+      "when": "2026",
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdn4WMTnmJjmGUPLJZKblnHRgvPuqRDeIKxEuaJg29NrE9IIoDWryVN23GbUSgvqGuc_B8WsV6NDiL2EAC3cJeMmENm_TY2MMy9kixdfDJWRuI9x9jk517MS-Lze1QrU9e4HTkZebVAhFR-zjnk1gWkq9mLYNvbV_6IHB0kkf9OAB95yk6DrgJ9UsjlWilRtFwpgY5oI1o"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Booking.com developed 'AgentHub', an internal platform that allows teams to build and deploy modular AI agents for various travel services.",
+      "source": "https://phocuswire.com/booking-com-develops-internal-platform-to-build-modular-ai-agents"
+     },
+     {
+      "claim": "The AI Trip Planner was built by combining Booking.com's existing machine learning infrastructure with the OpenAI ChatGPT API.",
+      "source": "https://openai.com/customers/booking-com"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter web search",
+   "model": "anthropic/claude-haiku-5.5",
+   "plugins": [
+    {
+     "id": "web",
+     "max_results": 6
+    }
+   ],
+   "max_tokens": 7000,
+   "ms": 24788,
+   "cost_usd": 0.025841376,
+   "tokens": {
+    "in": 32574,
+    "out": 5690
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://news.booking.com/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/",
+    "https://www.phocuswire.com/news/technology/booking-develops-internal-platform-build-modular-ai-agents",
+    "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/",
+    "https://www.conduit.ai/blog/will-ai-agents-replace-booking-com",
+    "https://thenextweb.com/news/booking-com-diageo-ai-at-scale-regrettable-work-humanx",
+    "https://news.booking.com/bookingcom-enhances-travel-planning-with-new-ai-powered-features--for-easier-smarter-decisions/",
+    "https://openai.com/index/booking-com/",
+    "https://booking.ai/introducing-agenthub-booking-com-platform-for-modular-travel-ai-agents-68bc521a0f50?gi=95c392171212",
+    "https://venturebeat.com/ai/booking-coms-agent-strategy-disciplined-modular-and-already-delivering-2"
+   ],
+   "answer": {
+    "what_it_does": "Booking.com's AI Trip Planner is a conversational feature in its app that helps travelers explore destinations, draft itineraries and move from chat to an accommodation booking, built on OpenAI large language models and the company's existing recommendation models. The company is also building an in-house agent platform, AgentHub, that powers trip-planning, search, partner-messaging and trip-management agents across the booking funnel.",
+    "ai_agents": [
+     {
+      "name": "AI Trip Planner (conversational trip planning agent)",
+      "what_it_does": "Answers open-ended travel questions in chat, suggests destinations and stays, and builds itineraries, then links travelers to bookable properties in the app.",
+      "actions": [
+       "Answers general travel questions and destination or accommodation queries in a chat interface",
+       "Produces visual lists of destinations and properties with Booking.com pricing and deep links",
+       "Lets users complete an accommodation reservation in the app from the chat",
+       "Uses OpenAI LLM capabilities via API on top of Booking.com's existing machine learning recommendation models",
+       "Pulls real-time availability and pricing data, per OpenAI's case study"
+      ],
+      "source": "https://news.booking.com/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/"
+     },
+     {
+      "name": "AI Trip Planner Q&A agent (built on AgentHub)",
+      "what_it_does": "Answers traveler questions about specific properties in a conversational way, and was one of the first agents built on AgentHub.",
+      "actions": [
+       "Matches property mentions in a user's message to the correct Booking.com property ID",
+       "Fetches property information from internal Booking.com systems",
+       "Calculates distances and travel times for the traveler",
+       "Operates within the AgentHub platform's guardrails"
+      ],
+      "source": "https://www.phocuswire.com/news/technology/booking-develops-internal-platform-build-modular-ai-agents"
+     },
+     {
+      "name": "Smart Messenger (partner-facing messaging agent)",
+      "what_it_does": "Helps accommodation partners reply to guest messages by suggesting and sending responses, and learns from past interactions and feedback.",
+      "actions": [
+       "Gathers partner, property and reservation information to decide what to suggest or do",
+       "Generates responses to guest messages on behalf of partners in the Extranet",
+       "Works with partner-defined Auto-Reply topics for common and unique guest questions",
+       "Learns from past interactions and user feedback"
+      ],
+      "source": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/"
+     },
+     {
+      "name": "AI Voice Support and trip-management assistant",
+      "what_it_does": "Provides voice-powered trip management for travelers with existing reservations and can hand off to a human agent when needed.",
+      "actions": [
+       "Reads the traveler's booking details to answer trip-management questions, such as cancellation requests",
+       "Escalates to a human customer-support agent and passes along the case context",
+       "Currently runs on English and German phone lines, with Italian and Spanish in testing"
+      ],
+      "source": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/"
+     },
+     {
+      "name": "AI Rental Helper (car rental assistant)",
+      "what_it_does": "Answers common customer questions about a car rental booking and explains its lengthy terms.",
+      "actions": [
+       "Answers questions about the customer's car rental booking and terms and conditions"
+      ],
+      "source": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Leisure traveler trip planning and search",
+      "who_uses_it": "Booking.com app users planning trips, including Genius members in the initial US beta",
+      "what_the_agent_can_reach": [
+       "Booking.com property inventory and pricing",
+       "Real-time availability data",
+       "Accommodation reservation flow in the app",
+       "Destination and property recommendation models"
+      ],
+      "source": "https://news.booking.com/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/"
+     },
+     {
+      "name": "Accommodation partner guest messaging",
+      "who_uses_it": "Accommodation partners (hotels and other properties) using the Extranet, initially in the US, UK, New Zealand and Australia for Smart Messenger",
+      "what_the_agent_can_reach": [
+       "Partner, property and reservation information",
+       "Guest messages in the partner-to-guest channel",
+       "Partner-defined auto-reply topics"
+      ],
+      "source": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/"
+     },
+     {
+      "name": "Traveler trip management and customer support",
+      "who_uses_it": "Travelers with existing reservations calling or using Booking.com support",
+      "what_the_agent_can_reach": [
+       "Traveler booking details",
+       "Cancellation and change requests",
+       "Human customer-support agents via handoff"
+      ],
+      "source": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Booking.com's 2025 annual report warned that AI agents may evolve into full-service booking platforms, adding competitive pressure and disintermediating online travel companies (as quoted by a third-party analysis).",
+      "when": "2025 annual report, analysed in 2026",
+      "source": "https://www.conduit.ai/blog/will-ai-agents-replace-booking-com"
+     },
+     {
+      "what": "Booking.com's CFO said traffic from large language models is significantly below 1% of room nights, paid and unpaid combined, so AI-agent exposure is currently small.",
+      "when": "August 4, 2026 earnings call",
+      "source": "https://www.conduit.ai/blog/will-ai-agents-replace-booking-com"
+     },
+     {
+      "what": "Booking.com's chief business officer said the company built AI orchestration tools it now regrets, because frontier model makers later shipped the same capabilities, and that for Booking.com the main failure mode would be irrelevant content or wrong prices.",
+      "when": "Late September 2026 (HumanX Amsterdam panel)",
+      "source": "https://thenextweb.com/news/booking-com-diageo-ai-at-scale-regrettable-work-humanx"
+     },
+     {
+      "what": "Booking.com research found 89% of people want to use AI to research travel but only 6% trust it to make travel decisions, which the company cites as a trust barrier to agentic booking.",
+      "when": "Reported September 2026",
+      "source": "https://thenextweb.com/news/booking-com-diageo-ai-at-scale-regrettable-work-humanx"
+     },
+     {
+      "what": "Booking.com's Chief Business Officer said travel is among the last categories expected to move to agentic commerce, and that LLMs are used for research but not yet for booking.",
+      "when": "September 2026",
+      "source": "https://thenextweb.com/news/booking-com-diageo-ai-at-scale-regrettable-work-humanx"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "The AI Trip Planner was announced in June 2023 as a beta for selected US Genius members in the Booking.com app and was built partly on OpenAI's ChatGPT API.",
+      "source": "https://news.booking.com/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/"
+     },
+     {
+      "claim": "By late 2024 the AI Trip Planner had expanded via the mobile app to the United Kingdom, Australia, New Zealand and Singapore.",
+      "source": "https://news.booking.com/bookingcom-enhances-travel-planning-with-new-ai-powered-features--for-easier-smarter-decisions/"
+     },
+     {
+      "claim": "Booking.com's AI Trip Planner was launched within about 10 weeks of starting with OpenAI's API and a hackathon, according to OpenAI's customer story.",
+      "source": "https://openai.com/index/booking-com/"
+     },
+     {
+      "claim": "Booking.com reported that its Property Q&A feature lowered support volumes through more accurate in-app answers, and that Smart Filters reduced search time.",
+      "source": "https://openai.com/index/booking-com/"
+     },
+     {
+      "claim": "AgentHub is Booking.com's internal platform for building LLM-driven travel agents; teams can build and deploy agents in hours using configuration and reusable components.",
+      "source": "https://booking.ai/introducing-agenthub-booking-com-platform-for-modular-travel-ai-agents-68bc521a0f50?gi=95c392171212"
+     },
+     {
+      "claim": "AgentHub includes guardrails such as prompt-injection detection, PII filtering and jailbreak prevention.",
+      "source": "https://booking.ai/introducing-agenthub-booking-com-platform-for-modular-travel-ai-agents-68bc521a0f50?gi=95c392171212"
+     },
+     {
+      "claim": "Booking.com plans to add multi-agent collaboration, multimodal inputs, long-term memory and personalization to AgentHub, which it describes as still evolving.",
+      "source": "https://www.phocuswire.com/news/technology/booking-develops-internal-platform-build-modular-ai-agents"
+     },
+     {
+      "claim": "Booking.com reports its hybrid strategy, including selective work with OpenAI, has roughly doubled accuracy across key retrieval, ranking and customer-interaction tasks.",
+      "source": "https://venturebeat.com/ai/booking-coms-agent-strategy-disciplined-modular-and-already-delivering-2"
+     },
+     {
+      "claim": "Booking.com says Smart Messenger's early experiments produced a 73% increase in partner satisfaction compared with previous messaging tools.",
+      "source": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/"
+     }
+    ]
+   }
+  }
+ ]
+}

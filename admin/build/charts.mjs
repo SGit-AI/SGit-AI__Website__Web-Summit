@@ -3,7 +3,7 @@
 // site's tokens, so designer@web-summit.dinis can restyle every chart in one place (WS-123, item 2) without touching
 // this file. No dependencies, no JavaScript in the page; each chart has a title and a text fallback for screen readers.
 
-const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+import { escAttr as esc } from './text.mjs'
 const hm = t => new Date(t).toISOString().slice(11, 16)
 
 /**

@@ -2,6 +2,8 @@
 title: Start here
 summary: The one page for the Web Summit 2026 team. Find your name, open your brief, paste your prompt into your own Claude, and get connected (Claude, GitHub, email, a PKI key, a schedule). Then how we work, the pulse, and the dates. Everyone champions RiskMandate.
 ---
+**Forgot your business cards? Put the RiskMandate card in Apple Wallet:** open [web-summit.sgit.ai/card/](../card/index.html) in Safari on your iPhone, tap **Add to Apple Wallet**, then **Add**. Double-click the side button to show it; they scan the QR. On Android: add the page to your Home screen.
+
 **Today, Monday: vote on the shirts, hoodies and cards on [the design page](../design/index.html#vote).**
 
 **Team: start here.** Find your name, open your brief, and paste the prompt from it into your own Claude. Your agent then takes you through getting connected, one step at a time. Everything here is public, on purpose: how we work is part of what we show.
@@ -14,7 +16,7 @@ summary: The one page for the Web Summit 2026 team. Find your name, open your br
 | **Nimay Parekh** | Business, positioning, outreach and investors | [your brief](../brief-nimay/index.html) | [your dashboard](../people/nimay/index.html) | [your prompt](../brief-nimay/index.html#prompt) |
 | **Angelo** | Technical lead: the site, the agents, the behaviour policies | [your brief](../brief-angelo/index.html) | [your dashboard](../people/angelo/index.html) | [your prompt](../brief-angelo/index.html#prompt) |
 | **Jose Bota** | Technical: automation, messaging, the agents | [your brief](../brief-jose/index.html) | [your dashboard](../people/jose/index.html) | [your prompt](../brief-jose/index.html#prompt) |
-| **Vicky** | Project manager: the structure, the deadlines, the logistics | [your brief](../brief-vicky/index.html) | [your dashboard](../people/vicky/index.html) | [your prompt](../brief-vicky/index.html#prompt) |
+| **Vicky Wang** | Project manager: the structure, the deadlines, the logistics | [your brief](../brief-vicky/index.html) | [your dashboard](../people/vicky/index.html) | [your prompt](../brief-vicky/index.html#prompt) |
 | **Silvio Switha** | Ideas, outreach, local, and video | [your brief](../brief-silvio/index.html) | [your dashboard](../people/silvio/index.html) | [your prompt](../brief-silvio/index.html#prompt) |
 | **Indi Gupte** | The message, outreach, and the factory of examples | [your brief](../brief-indi/index.html) | [your dashboard](../people/indi/index.html) | [your prompt](../brief-indi/index.html#prompt) |
 | **Sarah** | Designer: the shirts, hoodies, cards and flyer | [your brief](../brief-sarah/index.html) | [your dashboard](../people/sarah/index.html) | [your prompt](../brief-sarah/index.html#prompt) |
@@ -46,7 +48,7 @@ The first priority for everyone, in this order. Where you are is on [the setup l
 
 ### The steps, for you and your agent {#steps}
 
-Not technical? Read [the plain-language guide](../onboarding-guide/index.html) alongside these steps.
+Not technical? Read [the plain-language guide](../onboarding-guide/index.html) alongside these steps. Stuck? [The help page](../help/index.html) answers the setup questions the team has asked most.
 
 1. **Workspace email (L1).** Log in to the RiskMandate Google Workspace account Dinis made for you. Its agent alias is where invitations and your agents' mail arrive. This is how the stand-up invites reach you.
 2. **Claude (L1).** Log in to the Claude team account with that same email. Open a new session for each agent you start.
@@ -55,10 +57,12 @@ Not technical? Read [the plain-language guide](../onboarding-guide/index.html) a
 5. **Your dashboard agent (L4).** In another session, start `dashboard@web-summit.<you>` with the prompt on [the agents page](../agents/index.html#dashboard-agent). It keeps your dashboard, the page you read first, from [the templates](../dashboards/index.html), and asks you what you want on it.
 6. **Agent keys (L4).** Each agent makes its own key in its own session and publishes only the public half: `node pki-agent.mjs keygen --session` ([the tool](https://pki.sgit.ai/agents/pki-agent.mjs)), then an entry for it on the keys page (`data/keys.json`), committed by that agent. The push to this repository is its authorisation; the private half never leaves the session. No browser and no website registration needed.
 7. **A schedule (L5).** Give your conductor and dashboard agents a scheduled task that fires into their own session (for example 07:30, 12:30 and 17:30, before each stand-up).
-8. **The vaults (L6).** Put the SG/Send access token Dinis sent you in your Claude environment (`SG_SEND_ACCESS_TOKEN`, never in chat), start your **vault agent** (`vault@web-summit.<you>`), and make and publish your own vaults: [your vault agent, step by step](../vault-agent/index.html). Angelo, Jose and Silvio go first. Team vault keys are sealed to your agents' keys and arrive as QR codes. The private vault holds what cannot be public (meetings, contacts).
+8. **The vaults (L6).** Start your **vault agent** (`vault@web-summit.<you>`). It gets an SG/Send access token of its own: one per agent, issued by Dinis and sealed to the agent's key, never your token, never in chat. Then it can make and publish your own vaults: [your vault agent, step by step](../vault-agent/index.html). Angelo, Jose and Silvio are done. Team vault keys are sealed to your agents' keys and arrive as a QR code or over the conductor's inbox lane. The private vault holds what cannot be public (meetings, contacts).
 
 ## How we work {#how}
 
+- **After you talk to a lead at the summit:** [from a conversation to an article](../lead-to-article/index.html), six steps: ask for a yes, record a 30-second memo, your agent drafts the private follow-up that evening, and an article only if they agreed.
+- **Forgot your business cards?** [The card on your phone](../card/index.html): show it or let them scan it; on your Home Screen in two taps.
 - **The website is the centre**, for the humans and for the agents. Every page has a markdown twin (`index.md`) for agents, and [llms.txt](../llms.txt) lists them all.
 - **Never push to `main`** (you, or any of your agents): only `dev`. A major release is a pull request to `main` that Dinis merges.
 - **One repository, everyone commits.** Each person has a folder, `people/<you>/`: your dashboard, your onboarding, your pulse, your card, your public key. The board is `board/`, one file per issue.
@@ -74,7 +78,7 @@ Not technical? Read [the plain-language guide](../onboarding-guide/index.html) a
 
 ## The stand-ups {#standups}
 
-Two a day, **13:00 and 18:00** (Lisbon = UTC): for deciding, not for reporting. Before each one, read **your briefing**: it is on your dashboard and on [the stand-ups page](../meetings/index.html): the decisions and questions for you, your issues due, and what happened since you last looked.
+Two a day, **12:00 and 18:00** (Lisbon = UTC; the midday one moved from 13:00 on 5 November, by the team's vote): for deciding, not for reporting. Before each one, read **your briefing**: it is on your dashboard and on [the stand-ups page](../meetings/index.html): the decisions and questions for you, your issues due, and what happened since you last looked.
 
 - **Add to the agenda any time**, for the next stand-up or a later one: tell your agent *"add to the next stand-up: ..."* (a decision, a question, an idea or a quick sync).
 - **When you have read your briefing**, tell your agent *"acknowledge"*: it records the time, and your next briefing shows only what is new since then.

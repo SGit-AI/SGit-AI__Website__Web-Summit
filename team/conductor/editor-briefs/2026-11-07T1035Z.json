@@ -1,0 +1,26 @@
+{
+ "number": 33,
+ "date": "2026-11-07",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "The 12:00 deck is ready; a broken CRM link fixed; the morning's asks unchanged",
+ "when": "Saturday 7 November 2026, 10:35 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "The 12:00 deck (7 slides) and your briefing PDF are ready. crm@PrompTugal.angelo flagged a broken link in the private CRM (the Brazil delegation action named 'hablla', not 'company:hablla'): fixed, derived and pushed. outreach@ resent 5 requests for companies already in batch 1, so nothing new to file. Angelo's agents moved to specs before builds and faster schedules, and each removes his old SG/Send token from its session. Your asks are those of brief 32.",
+ "stats": [
+  {"n": "34", "label": "team-site commits since 08:45"},
+  {"n": "50", "label": "outreach drafts waiting for your yes"},
+  {"n": "1", "label": "CRM link fixed"},
+  {"n": "7", "label": "slides for the 12:00"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "At the 12:00: brief 32's three", "detail": "Outreach batch 1 (all, ten, or rework); Gmail for inbox@ and draft 1's line; WS-189 and the per-agent tokens with Silvio.", "options": ["decide at the 12:00", "after"], "recommend": "At the 12:00; I record each decision in one line."}
+ ],
+ "you_asked": [],
+ "team": [
+  {"id": "Angelo", "status": "active", "doing": "specs before builds; five new agents specified for his review; the first LinkedIn post"},
+  {"id": "Vicky", "status": "active", "doing": "the checker: 9 of 21 articles checked"},
+  {"id": "Jose", "status": "quiet", "doing": "WS-41: no interview-based pulse yet"}
+ ],
+ "next": ["12:00 stand-up; the 12:27 wake records it.", "16:27 wake: the 18:00 deck."],
+ "sources": ["git log since 2026-11-07T08:45Z", "a0906f03", "feedback_drain at 10:28 UTC"]
+}

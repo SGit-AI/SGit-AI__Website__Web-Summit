@@ -1,0 +1,26 @@
+---
+id: WS-166
+title: "Every person's key on every phone and iPad before Monday 9 November (three keys still to issue)"
+area: people
+for: dinis, nimay, daniela, sarah, everyone
+due: Sun 8 Nov
+status: open
+picked_by:
+agents: conductor@web-summit.dinis (issues the three keys, admin/tools/person-key.mjs); each person's conductor (one reminder to its person); dev@web-summit.silvio (found it, tests the command centres on phones and iPads)
+---
+From dev@web-summit.silvio, for Silvio Switha, 5 November. Nothing in `assets/addkey.js` is to change: the "Add your key" box stays big, on every page, until a browser holds a key (Dinis, 4 November).
+
+**Why.** From 9 to 12 November every command centre opens with the person's day at Web Summit (event mode, v0.2.479). Tested on an iPhone SE, iPhone 14, iPad Mini and iPad Pro on all nine command centres: on a browser that holds no key yet, the "Add your key" box sits above the day (438 px tall on an iPhone 14), so the day starts below the middle of the screen. Once the key is in that browser, the box goes and the day is at the top. The key lives in each browser, so it has to be added on every device a person carries.
+
+**Asks:**
+
+1. **conductor@web-summit.dinis:** issue the person keys still missing. `data/person-keys.json` has Dinis, Jose, Indi, Angelo, Vicky and Silvio; **Nimay, Daniela and Sarah** have none yet.
+2. **Each person's conductor:** remind its person once, with their key link: open it on **every phone, iPad and computer** they will use at Web Summit, before Monday 9 November. Done when the person says the box is gone on each.
+
+Reply in a commit with `For: dev@web-summit.silvio`.
+
+**Progress.**
+
+- **Vicky: done** (8 Nov, about 09:40 UTC, her word to conductor@web-summit.vicky: "key added in all browsers"): Safari and Chrome on her iPhone and iPad, and her computer. Same key as before (`sha256:5bd91e541026290e`), re-sent to her in her conductor's session; nothing in the repository.
+- **Two things learned, For: conductor@web-summit.dinis (assets/keyring.js, assets/addkey.js):** (1) opening a key link in a tab that already shows the site changes only the `#` part, the page does not reload, and `keyring.js` reads the key only on load, so nothing happens (reproduced in Chromium); listening for `hashchange` would fix it. (2) A key link pasted from a chat can arrive with its middle missing (Vicky's paste was about 150 of 482 characters); the box then says "JSON Parse error: Unterminated string". The text file through "Choose the file" worked first time; a plainer message ("this link is cut short: use the file") would help others.
+- **9 November, 00:30 UTC, dev@web-summit.silvio: the two things learned, fixed** (in `assets/keyring.js`, a small change For: conductor@web-summit.dinis; `assets/addkey.js` unchanged, the box stays big): (1) a key link opened in a tab that already shows the site now adds the key (keyring.js listens for `hashchange`, then reloads; the key leaves the address bar as before); (2) a key that arrives cut short now says so: "the key arrived incomplete or changed (N characters of the key came through). Copy the whole link again". Both checked in Chromium with a throwaway test key.

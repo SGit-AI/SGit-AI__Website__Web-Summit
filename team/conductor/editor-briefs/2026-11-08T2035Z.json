@@ -1,0 +1,29 @@
+{
+ "number": 36,
+ "date": "2026-11-08",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "Back after 27 hours offline; the summit opens tomorrow; tokens and Gmail still wait for you",
+ "when": "Sunday 8 November 2026, 20:35 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "My session's worker restarted repeatedly from Saturday 17:27 and I missed eight wakes, including the 18:00 decks; I am back at 20:27 Sunday. In that time: 594 commits. Angelo says the stand-ups are over and meetings are on demand (his words, 8 Nov 12:05); the calendar series is yours, so I have not changed it. The per-agent SG/Send tokens are the most repeated ask (Silvio's crm agent has 150 actions and 84 companies waiting to push; Jose's three agents). Gmail is still not connected to inbox@, so António's emails and the 50 outreach drafts are unsent. Indi left two items for you to read: the token-efficiency ABP (WS-148) and lead-to-article (WS-168).",
+ "stats": [
+  {"n": "27 h", "label": "I was offline (8 wakes missed)"},
+  {"n": "594", "label": "team-site commits since Saturday 14:35"},
+  {"n": "4", "label": "agents waiting on an SG/Send token (WS-170)"},
+  {"n": "0", "label": "emails sent to António or the 50 companies"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "Per-agent SG/Send tokens (WS-170)", "detail": "crm@web-summit.silvio (150 actions, 84 companies waiting), conductor-, vault- and crm-jose. Only you issue them.", "options": ["issue tonight", "after the summit"], "recommend": "Tonight, for the CRM agents: the stand's follow-ups land there from tomorrow."},
+  {"id": "2", "ask": "Stand-ups: over, or the series stays?", "detail": "Angelo says over, meetings on demand; Indi still put two items on tonight's 18:00. The calendar series is yours.", "options": ["end the series; meet on demand", "keep one a day during the summit"], "recommend": "One short one a day during the summit, at the stand, so decisions get recorded."},
+  {"id": "3", "ask": "Gmail for inbox@ (António, and outreach batch 1)", "detail": "Unchanged since Friday.", "options": ["connect now", "drop it until after the summit"], "recommend": "Connect now if António should hear before the summit; otherwise park both."}
+ ],
+ "you_asked": [],
+ "team": [
+  {"id": "Silvio", "status": "active", "doing": "the team's video library (/people/silvio/videos/); the booth's subject-to-request flow (WS-194); a first introduction drafted in Gmail, not sent"},
+  {"id": "Indi", "status": "active", "doing": "token efficiency (WS-148); lead-to-article (WS-168); three companies for WS-137"},
+  {"id": "Angelo", "status": "active", "doing": "the live graph and its pop-out; the hexagon desktop app dropped; Android app repository"},
+  {"id": "Jose", "status": "waiting", "doing": "tokens for three agents"}
+ ],
+ "next": ["22:27 wake; Monday 08:27: the first summit day's brief."],
+ "sources": ["git log since 2026-11-07T14:35Z", "b310f63b, acf0674b, dccca5fc, e539bba2, 2079d4c6", "feedback_drain at 20:29 UTC (3 unsigned messages on outreach-b-promptugal's lane, kept as id, time and length only)"]
+}

@@ -5,7 +5,7 @@
 // admin/tools/meeting_pdfs.sh). Deterministic: the same sources and history give the same pages.
 import fs from 'fs'
 import path from 'path'
-import { execFileSync } from 'child_process'
+import { history as gitHistory } from './gitlog.mjs'
 import { slots } from '../tools/agenda.mjs'
 
 const TYPES = [['decision', 'Decisions'], ['question', 'Questions'], ['idea', 'Ideas'], ['sync', 'Quick syncs']]
@@ -22,7 +22,7 @@ export function meetingsContext(ROOT) {
     // the history is read once per build and filtered here: it was one git process per person, per stand-up, four
     // times over (about 300 a build, 1.9 of the build's 2.6 seconds, and the gate builds twice; dev@web-summit.dinis)
     let history = null
-    const readHistory = () => { try { return execFileSync('git', ['log', '--format=%cI%x1f%an%x1f%s'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString().split('\n').filter(Boolean).map(l => { const [at, an, s] = l.split('\x1f'); return { at, t: Date.parse(at), an, s, release: /^site v[0-9]/.test(s) } }) } catch { return [] } }
+    const readHistory = () => { try { return gitHistory(ROOT).map(({ at, t, an, s }) => ({ at, t, an, s, release: /^site v[0-9]/.test(s) })) } catch { return [] } }
     const log = since => { history ??= readHistory(); const from = Date.parse(since); return history.filter(x => x.t >= from).map(({ t, ...x }) => x) }
     const ack = id => { const f = path.join(ROOT, 'people', id, 'ack.json'); return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null }
     return { S, all, items, agenda, next, log, ack }

@@ -1,0 +1,26 @@
+{
+ "number": 27,
+ "date": "2026-11-06",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "A quiet wake: one security gap closed, the 12:00 deck with Angelo's team map; the 12:00's decisions not yet recorded",
+ "when": "Friday 6 November 2026, 12:40 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "Security found that the deck files (.show) are raw HTML on a page that loads the keyring, unchecked by the gate; the gate now refuses any script but the deck's own, any handler and any javascript: (tested). Angelo's agent added a team-map slide to the 12:00 deck at his word; the PDF now has it (10 slides). Vicky's newsroom desks moved to @PrompTugal.vicky names; Angelo joined PrompTugal as an editor; Indi has not joined yet. Nothing from the 12:00 is on the record yet.",
+ "stats": [
+  {"n": "1", "label": "security gap closed (decks, WS-164)"},
+  {"n": "10", "label": "slides in the 12:00 deck, with the team map"},
+  {"n": "0", "label": "decisions of the 12:00 recorded"},
+  {"n": "0", "label": "messages in the inbox"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "The 12:00's decisions, one line each", "detail": "Silvio on PrompTugal, the promptugal.news addresses, transcripts, tokens, cards and garments.", "options": ["here", "Angelo's notes"], "recommend": "Here, now."}
+ ],
+ "you_asked": [],
+ "team": [
+  {"id": "Angelo", "status": "joined PrompTugal", "doing": "an editor there; the team map"},
+  {"id": "Vicky", "status": "joined PrompTugal", "doing": "her desks renamed @PrompTugal.vicky; a scout agent on how to run many agents"},
+  {"id": "Indi", "status": "not yet", "doing": "four answers open (her conductor's brief 13)"}
+ ],
+ "next": ["16:27 wake: the 18:00 deck."],
+ "sources": ["git log since 2026-11-06T10:40Z (dev)", "security@web-summit.dinis fbd8cfdf; team-collaboration@web-summit.angelo b68f5b82"]
+}

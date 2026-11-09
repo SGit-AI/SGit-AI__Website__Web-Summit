@@ -1075,6 +1075,120 @@
         "l": "RiskMandate is a passport for a company's AI assistants: it shows abroad what they are allowed to do."
       },
       "opener": "Portuguese companies selling AI abroad will be asked how they control it. We can give them the answer."
+    },
+    {
+      "id": "getvocal-ai",
+      "tagline": "AI agents that run large companies' customer contact centres, sold on control and trust.",
+      "flow": [
+        "A model of how the business works",
+        "A fleet of AI agents across channels",
+        "People and AI improving each other"
+      ],
+      "what_n": "GetVocal AI orchestrates a fleet of AI agents across a contact centre's channels, with people in the loop, and sells it on full control and trust.",
+      "what_l": "GetVocal AI gives big companies a team of AI helpers that answer customers on the phone, by chat and by message, with people watching over them.",
+      "risks": [
+        {
+          "t": "Agents acting for a brand",
+          "n": "Each agent speaks and acts for a large brand to its customers; a wrong promise, refund or disclosure is the brand's.",
+          "l": "The helper tells a customer something the company never agreed to, and the company has to stand by it."
+        },
+        {
+          "t": "Control has to be proved",
+          "n": "Enterprise and regulated buyers will ask for evidence of the 'full control' being sold, per agent, not a claim.",
+          "l": "Saying 'we're in control' is easy; the customer's lawyers will ask to see it."
+        },
+        {
+          "t": "A fleet grows fast",
+          "n": "As a fleet grows, each agent's access to customer systems and data multiplies, and the record of what each may do falls behind.",
+          "l": "Ten helpers become eighty, and nobody wrote down what each one may touch."
+        }
+      ],
+      "helps": {
+        "reach": "Every customer system and channel each agent in the fleet can act on.",
+        "mandate": "What each agent may say and do, set by the brand.",
+        "gap": "Actions the platform allows but the brand never approved.",
+        "barriers": "Human oversight and platform controls, named with evidence.",
+        "provenance": "Which brand owns each agent, who approved it, which version runs.",
+        "n": "GetVocal AI already sells control and trust. A RiskMandate policy per agent turns that promise into a record its enterprise customers can read and its customers' insurers can rely on: a sales asset, not a cost.",
+        "l": "GetVocal AI promises its helpers are under control; RiskMandate writes it down, helper by helper, so its customers can check."
+      },
+      "opener": "You sell your agents on control and trust. Your customers will ask you to prove it, agent by agent. We write that proof."
+    },
+    {
+      "id": "polyai",
+      "tagline": "Voice AI agents that answer customer phone calls for large companies, from start to finish.",
+      "flow": [
+        "Voice AI for customer service",
+        "Agents that talk and act on calls",
+        "For large enterprises"
+      ],
+      "what_n": "PolyAI builds an agentic voice platform: AI agents that hold customer-service phone conversations and act on them for enterprises.",
+      "what_l": "PolyAI makes AI that answers a company's phone: it talks to customers and sorts out what they called about.",
+      "risks": [
+        {
+          "t": "A voice that can act",
+          "n": "A voice agent that can change bookings, accounts or orders acts on a caller's word, which can be faked or misheard.",
+          "l": "Someone rings pretending to be you, and the AI changes your account."
+        },
+        {
+          "t": "Regulated callers",
+          "n": "In banking and other regulated services, every action on a call must be within what the firm has authorised, with evidence.",
+          "l": "A bank must be able to show exactly what its phone helper is allowed to do."
+        },
+        {
+          "t": "Coached, not written down",
+          "n": "Agents are tuned and coached over time; without a written policy, nobody can show what the agent may and may not do today.",
+          "l": "The helper was trained like a new employee, but there is no job description to check it against."
+        }
+      ],
+      "helps": {
+        "reach": "Every system a voice agent can act on during a call.",
+        "mandate": "The tasks the enterprise authorised it to do on a call.",
+        "gap": "Actions on a call beyond that authority.",
+        "barriers": "Caller checks, limits and hand-offs to people, with evidence.",
+        "provenance": "Which client owns each agent, who reviewed it, which version is live.",
+        "n": "Their own session calls it coaching an AI agent like human talent. A behaviour policy is that coaching written down: a job description per voice agent that a bank's risk team can review and an insurer can read.",
+        "l": "RiskMandate writes the job description for each phone helper, so the bank knows exactly what it may do."
+      },
+      "opener": "You coach your agents like human talent. Human talent has a job description. We write one for each of your agents."
+    },
+    {
+      "id": "legora",
+      "tagline": "AI and agents for lawyers: reviewing, researching and drafting legal work.",
+      "flow": [
+        "Collaborative AI for lawyers",
+        "Agents review, research and draft",
+        "Law firms and legal teams"
+      ],
+      "what_n": "Legora gives lawyers collaborative AI for review, research, drafting and advice, and is scaling AI agents for professional work.",
+      "what_l": "Legora is an AI helper for lawyers: it reads contracts, finds the law and drafts documents.",
+      "risks": [
+        {
+          "t": "Confidential documents",
+          "n": "Legal agents work on privileged, confidential documents; access beyond the matter at hand is a breach of duty.",
+          "l": "The helper can see files from cases it was never asked to work on."
+        },
+        {
+          "t": "Professional liability",
+          "n": "Work product goes to clients under a lawyer's name; an agent's error becomes the firm's professional liability.",
+          "l": "If the helper gets the law wrong, it is the lawyer who answers for it."
+        },
+        {
+          "t": "From chat to agents",
+          "n": "Moving from answering questions to agents that act on work multiplies what each agent can reach and do.",
+          "l": "A helper that only answered questions now does whole tasks on its own."
+        }
+      ],
+      "helps": {
+        "reach": "Every document set, workspace and action an agent can reach.",
+        "mandate": "The matter and task the lawyer gave it.",
+        "gap": "Access to other matters, or actions beyond the task.",
+        "barriers": "Matter walls, reviews and approvals, with evidence.",
+        "provenance": "Which firm and lawyer own the agent, who reviewed it, which version.",
+        "n": "Law firms are among the most careful buyers there are. A RiskMandate policy per agent gives each firm a record its risk partner, its clients and its insurer can read, which helps Legora sell agents into firms that need proof before they say yes.",
+        "l": "RiskMandate writes down which files each legal helper may open and what it may do, so the law firm can say yes with confidence."
+      },
+      "opener": "Your agents now do real legal work. Every firm's risk partner will ask what they may touch. We write that down, per agent."
     }
   ]
 }

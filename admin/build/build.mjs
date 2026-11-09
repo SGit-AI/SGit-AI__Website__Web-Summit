@@ -2,6 +2,7 @@
 // Renders the site from content/ (markdown with a front-matter header) into HTML, plus the machine surfaces:
 // llms.txt, sitemap.xml, index.md, the articles index, markdown twins and admin/versions.html.
 // No dependencies. Never hand-edit a generated page; edit content/ and run: node admin/build/build.mjs
+import { expandInfographic } from './infographic.mjs'
 import fs from 'fs'
 import path from 'path'
 import * as CAST from './cast.mjs'
@@ -15,26 +16,36 @@ import { orgchartSvg } from './orgchart.mjs'
 import { homeBlocks, expandHome } from './home.mjs'
 import { expandSignoff } from './signoff-ui.mjs'
 import { keysPage as pkiKeysPage } from './pki.mjs'
+import * as GIT from './gitlog.mjs'
 import { highlights, highlightsHtml, highlightsMd, withHighlights } from './highlights.mjs'
+import { loadXray, xrayIndexHtml, xrayIndexMd, buildXray, buildXrayRuns } from './xray.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
 const VERSION = fs.readFileSync(path.join(ROOT, 'admin/build/version.txt'), 'utf8').trim()
 const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
+// the RiskMandate X-ray's subjects (data/xray/<slug>/xray.json; admin/build/xray.mjs), read first: the X-ray section lists them
+const XRAY = loadXray(ROOT)
 // navigation: a few sections on top, each with its own sub-menu; every page gets breadcrumbs back to its parent
 const SECTIONS = [
     { t: 'Start', h: 'start/index.html', re: /^start\//, sub: [] },
     { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast|wakes)\b/, sub: [['People', 'team/index.html'], ['The map', 'team/map/index.html'], ['Setup', 'team/setup/index.html'], ['Everything', 'team/everything/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['At work', 'wakes/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
     { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|cards|log|print|print-order|procurement|videos|research|reports|board-health|site-review|updates|meetings)\b/, sub: [['Stand-ups', 'meetings/index.html'], ['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Cards', 'cards/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Print files', 'print/index.html'], ['Procurement', 'procurement/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
-    { t: 'PKI', h: 'pki/index.html', re: /^(pki|keys|vaults)\b/, sub: [['PKI', 'pki/index.html'], ['Keys and QR codes', 'pki/keys/index.html'], ['Giving out secrets', 'pki/secrets/index.html'], ['Signing off', 'pki/sign-off/index.html'], ['Sign in with pki.sgit.ai', 'pki/sso/index.html'], ['Review', 'pki/review/index.html'], ['Public keys', 'keys/index.html'], ['Vaults', 'vaults/index.html']] },
-    { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
+    // the RiskMandate X-ray for the booth (xray@web-summit.dinis, 7 November 2026, at Dinis's word): type a name, watch the agents X-ray it
+    { t: 'X-ray', h: 'xray/index.html', re: /^xray\b/, sub: [['X-ray a name', 'xray/index.html'], ['How it works', 'xray/how/index.html'], ...(fs.existsSync(path.join(ROOT, 'content/xray-decide.md')) ? [['Decide', 'xray/decide/index.html']] : []), ...XRAY.map(s => [s.subject.replace(/[&<>"]/g, ''), `xray/${s.slug}/index.html`])] },
+    // the investors' section (WS-185, investors@web-summit.dinis, at Dinis's word of 6 November: "a very focused section just for investors")
+    { t: 'Investors', h: 'investors/index.html', re: /^investors\b/, sub: [['For investors', 'investors/index.html'], ['Pitch deck', 'investors/pitch-deck/index.html'], ['Technology deck', 'investors/technology-deck/index.html'], ['The story', 'investors/story/index.html'], ['How we make money', 'investors/business-model/index.html'], ['The company', 'investors/company/index.html'], ['The investment', 'investors/investment/index.html'], ['Feedback', 'investors/feedback/index.html']] },
+    { t: 'Observability', h: 'observability/index.html', re: /^observability\b/, sub: [['Explore', 'observability/index.html'], ['Dashboard', 'observability/dashboard/index.html'], ['Graph', 'observability/graph/index.html'], ['Agents', 'observability/agents/index.html'], ['Pages', 'observability/pages/index.html'], ['People', 'observability/team/index.html'], ['The vault', 'observability/vault/index.html'], ['How it works', 'observability/how-it-works/index.html'], ['The brief', 'brief-observability/index.html'], ['The pack', 'observability-pack/index.html']] },
+    { t: 'PKI', h: 'pki/index.html', re: /^(pki|keys|vaults)\b/, sub: [['PKI', 'pki/index.html'], ['Keys and QR codes', 'pki/keys/index.html'], ['Giving out secrets', 'pki/secrets/index.html'], ['Signing off', 'pki/sign-off/index.html'], ['Sign in with pki.sgit.ai', 'pki/sso/index.html'], ['Review', 'pki/review/index.html'], ['Published secrets', 'pki/published-secrets/index.html'], ['Public keys', 'keys/index.html'], ['Vaults', 'vaults/index.html']] },
+    { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['Brand: PrompTugal.news', 'admin/brand/promptugal/index.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
 ]
 const NAV = SECTIONS.map(s => [s.t, s.h])
 const sectionOf = rel => SECTIONS.find(s => s.re.test(rel))
 const personOf = rel => { const m = rel.match(/^(?:brief-([a-z0-9-]+)|people\/([a-z0-9-]+)|meet\/([a-z0-9-]+)|team\/([a-z0-9-]+))\//); const id = m && (m[1] || m[2] || m[3] || m[4]); return id && teamData.members.find(x => x.id === id) }
 
-const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+import { esc } from './text.mjs'
+import { clipWords } from './text.mjs'
 const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 // everything written here is generated: gitignored, built by CI, never committed; the list goes to .generated.txt for the gate
 const GENERATED = new Set()
@@ -59,6 +70,11 @@ process.on('exit', code => {
     fs.writeFileSync(list, [...GENERATED].sort().join('\n') + '\n')
 })
 
+// a link or image from markdown keeps its URL only if it is http(s), mailto, a fragment or relative (WS-132 part 1):
+// javascript:, data:, vbscript: and any other scheme render as plain text, so no page text can carry live code.
+// Browsers ignore control characters and whitespace in a scheme, so they are stripped before the test
+const safeUrl = u => { const m = String(u).replace(/[\u0000-\u0020]/g, '').match(/^([a-z][a-z0-9+.-]*):/i); return !m || /^(https?|mailto)$/i.test(m[1]) }
+
 // code spans are set aside first, so nothing inside them is read as markup; emphasis follows markdown's flanking
 // rule (no space just inside the stars), so a cron line like 27 */2 * * * stays as written
 function inline(s) {
@@ -67,8 +83,8 @@ function inline(s) {
         .replace(/`([^`]+)`/g, (_, c) => `\u0000${codes.push(c) - 1}\u0000`)
         .replace(/\*\*(?=\S)([^*]+?)(?<=\S)\*\*/g, '<b>$1</b>')
         .replace(/\*(?=[^\s*])([^*]+?)(?<=[^\s*])\*/g, '<i>$1</i>')
-        .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, '<img src="$2" alt="$1" loading="lazy">')
-        .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>')
+        .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_, a, u) => safeUrl(u) ? `<img src="${u}" alt="${a}" loading="lazy">` : a)
+        .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, t, u) => safeUrl(u) ? `<a href="${u}">${t}</a>` : t)
         .replace(/\u0000(\d+)\u0000/g, (_, n) => `<code>${codes[n]}</code>`)
 }
 
@@ -98,21 +114,58 @@ function render(md) {
     let i = 0
     while (i < lines.length) {
         const l = lines[i]
-        if (l.startsWith('```cards')) {
+        if (/^:::details .+$/.test(l)) {
+            // a collapsible block (Vicky's dashboard, 8 Nov): ":::details Title" ... ":::"; native <details>, no script. Nothing else uses it.
+            const title = l.slice(11).trim(), inner = []
+            for (i++; i < lines.length && lines[i].trim() !== ':::'; i++) inner.push(lines[i])
+            i++
+            out.push(`<details class="fold"><summary style="cursor:pointer;font-weight:600;padding:.4rem 0">${inline(title)}</summary>${render(inner.join('\n'))}</details>`)
+        } else if (l.startsWith('```cards')) {
             const rows = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) rows.push(lines[i].split('|').map(c => c.trim()))
             i++
-            out.push(`<div class="cards">${rows.map(([t, h, d]) => `<a class="card" href="${h}"><b>${inline(t)}</b><span>${inline(d)}</span></a>`).join('')}</div>`)
+            out.push(`<div class="cards">${rows.map(([t, h, d]) => `<a class="card" href="${safeUrl(h) ? esc(h) : '#'}"><b>${inline(t)}</b><span>${inline(d)}</span></a>`).join('')}</div>`)
         } else if (/^```chart [a-z-]+( [a-z0-9-]+)?\s*$/.test(l)) {
             const [name, arg] = l.slice(9).trim().split(' ')
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push(CHARTS[name] ? `<figure class="chart">${CHARTS[name](arg)}</figure>` : `<p class="meta">(no chart called ${esc(name)})</p>`)
-        } else if (/^```vault-app [a-z0-9-]+ [a-z0-9]{8,12}\s*$/.test(l)) {
-            const [person, id] = l.slice(13).trim().split(' ')
+        } else if (/^```vault-app [a-z0-9-]+ [a-z0-9]{8,12}( auto)?\s*$/.test(l)) {
+            const [person, id, auto] = l.slice(13).trim().split(' ')
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
-            out.push(vaultAppHtml(person, id))
+            out.push(vaultAppHtml(person, id, auto === 'auto'))
+        } else if (/^```obs-live [a-z0-9-]+ [a-z0-9]{8,12}\s*$/.test(l)) {
+            const [person, id] = l.slice(12).trim().split(' ')
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push(obsLiveHtml(person, id))
+        } else if (/^```obs-view [a-z]+ [a-z0-9-]+ [a-z0-9]{8,12}\s*$/.test(l)) {
+            const [view, person, id] = l.slice(12).trim().split(' ')
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push(obsViewHtml(view, person, id))
+        } else if (/^```sticker-vault\s*$/.test(l)) {
+            // the sticker vote's vault with full access, its own page (assets/stickers-vault.js)
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push('<div class="sv" id="sticker-vault"><p class="meta">This page needs JavaScript: it opens the vault key sealed to you, in this browser only.</p></div>')
+        } else if (/^```crm\s*$/.test(l)) {
+            // the team CRM (WS-170, conductor@web-summit.dinis): a mount for assets/crm.js (front matter script: crm)
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push('<div class="crm" id="crm"><p class="meta">The diagram and the live CRM need JavaScript: they are drawn here by the page.</p></div>')
+        } else if (/^```xray\s*$/.test(l)) {
+            // the RiskMandate X-ray (xray@web-summit.dinis): a mount for assets/xray.js (front matter script: xray), with every subject as a plain link
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push(xrayIndexHtml(XRAY))
+        } else if (/^```sticker-vote\s*$/.test(l)) {
+            // the team's sticker vote (WS-167, conductor@web-summit.dinis): a mount for assets/stickers-vote.js, which the
+            // page loads through its front matter (script: stickers-vote); without JavaScript it says so
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push('<div class="sv" id="sticker-vote"><p class="meta">The vote needs JavaScript: the twelve stickers, the Vote button and who has voted are drawn here by the page.</p></div>')
         } else if (l.startsWith('```')) {
             const buf = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) buf.push(lines[i])
@@ -151,16 +204,20 @@ function render(md) {
 // the left rail on wide screens: the section's pages, then this page's own headings (WS-77, WS-91)
 function rail(rel, up, body) {
     const sec = sectionOf(rel)
-    const toc = [...body.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)].map(m => [m[1], m[2].replace(/<[^>]+>/g, '')])
-    const pages = sec && sec.sub.length ? `<p class="rail-h">${esc(sec.t)}</p><ul>${sec.sub.map(([t, h]) => `<li><a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a></li>`).join('')}</ul>` : ''
-    const on = toc.length > 1 ? `<p class="rail-h">On this page</p><ul class="toc">${toc.map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join('')}</ul>` : ''
-    return pages || on ? `<aside class="rail" aria-label="Section and page contents">${pages}${on}</aside>` : ''
+    // Dinis, 5 November: a left menu only where a section has pages of its own, and it lists pages, never links
+    // inside the same page ("On this page" is gone); it should look like a menu
+    const pages = sec && sec.sub.length > 1 ? `<nav class="menu" aria-label="${esc(sec.t)}"><a class="menu-h" href="${up}${sec.h}">${esc(sec.t)}</a><ul>${sec.sub.map(([t, h]) => `<li><a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a></li>`).join('')}</ul></nav>` : ''
+    return pages ? `<aside class="rail" aria-label="${esc(sec.t)}: its pages">${pages}</aside>` : ''
 }
 
-function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '' }) {
+function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '', wide = false, focus = false, personScripts = false }) {
     const up = '../'.repeat(rel.split('/').length - 1)
+    // WS-164 item 1 (security@web-summit.dinis): a page that runs a person's own script (any script whose file is under
+    // people/, or a script a person's pages.mjs put on the page) gets no keyring.js, so no script but the site's own sits
+    // beside a person's key. The site's scripts that use the keyring (me, feedback, telemetry, obs) do without it there
+    const foreign = personScripts || [...`${head}${body}`.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].some(([, src]) => !/^https?:/.test(src) && path.posix.normalize(path.posix.join(path.posix.dirname(rel), src)).startsWith('people/'))
     body = String(body).replaceAll('href="@@/', `href="${up}`)   // links from build-time blocks (the agenda) written from the site root
-    const side = home ? '' : rail(rel, up, body)
+    const side = home || wide ? '' : rail(rel, up, body)   // wide: a cockpit (people/<id>/dashboard.md, layout: cockpit) uses the whole screen
     const heroed = home && body.includes('class="hm-hero"')   // the home page's hero band (WS-103) is its title
     const url = `https://${HOST}/${rel}`
     const agent = `For an agent: this page is ${url}${mdTwin ? ` (markdown: https://${HOST}/${mdTwin})` : ''}. Site index for agents: https://${HOST}/llms.txt. Source: ${REPO} (release branch dev). Identity of the agent that runs this site: https://${HOST}/agent/index.html.`
@@ -174,23 +231,22 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
 <link rel="canonical" href="${url}">
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${esc(title)}">
-<link rel="stylesheet" href="${up}assets/site.css">${head}
+<link rel="stylesheet" href="${up}assets/site.css?v=${VERSION}">${head}
 </head>
-<body data-section="${home ? 'home' : (sectionOf(rel)?.t || 'other').toLowerCase()}" data-up="${up}">
+<body data-section="${home ? 'home' : (sectionOf(rel)?.t || 'other').toLowerCase()}" data-up="${up}"${focus ? ' data-focus' : ''}>
 <a class="skip" href="#main">Skip to the content</a>
 <nav class="site"><div class="row">
 <a class="brand" href="${up}index.html">web-summit<span>.sgit.ai</span></a>
-<a class="parent" href="https://sgit.ai" title="sgit.ai: the parent project">↗ part of <b>sgit.ai</b></a>
-<a class="ver" href="${up}admin/versions.html#${VERSION}" title="This version of the site: what changed, and the commit">${VERSION}</a>
 <div class="links">${SECTIONS.map(x => `<a href="${up}${x.h}"${sectionOf(rel) === x ? ' aria-current="page"' : ''}>${x.t}</a>`).join('')}</div>
 <div class="me-pick" id="me-pick"></div>
+<a class="ver" href="${up}admin/versions.html#${VERSION}" title="This version of the site: what changed, and the commit">${VERSION}</a>
+<a class="parent" href="https://sgit.ai" title="sgit.ai: the parent project">↗ <b>sgit.ai</b></a>
 <a class="gh" href="${REPO}">★ GitHub</a>
-</div></nav>
-${(() => { const sec = sectionOf(rel); return sec && sec.sub.length ? `<nav class="subnav" aria-label="${sec.t}"><div class="row">${sec.sub.map(([t, h]) => `<a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</div></nav>` : '' })()}
-<div class="frame${side ? ' with-rail' : ''}">${side}
-<main id="main"${home ? ' class="home"' : ''}>
-<section class="for-you" id="for-you" hidden aria-label="For you"></section>
-${home ? '' : (() => {
+</div><div class="me-strip" id="me-strip" hidden></div></nav>
+${wide ? '' : (() => { const sec = sectionOf(rel); return sec && sec.sub.length ? `<nav class="subnav" aria-label="${sec.t}"><div class="row">${sec.sub.map(([t, h]) => `<a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</div></nav>` : '' })()}
+<div class="frame${side ? ' with-rail' : ''}${wide ? ' wide' : ''}">${side}
+<main id="main"${home ? ' class="home"' : wide ? ' class="cockpit"' : ''}>
+${home || wide ? '' : (() => {
     const sec = sectionOf(rel), who = personOf(rel), c = [`<a href="${up}index.html">Home</a>`]
     if (sec) c.push(`<a href="${up}${sec.h}">${sec.t}</a>`)
     if (who && who.kind === 'human' && !rel.startsWith('team/')) c.push(`<a href="${up}team/${who.id}/index.html">${esc(who.name)}</a>`)
@@ -198,19 +254,20 @@ ${home ? '' : (() => {
     const bar = who && who.kind === 'human' ? `<p class="personbar">${castIcon(who.id, 'icon')}<b>${esc(who.name)}</b>${[['Profile', `team/${who.id}/index.html`], ['Brief', `brief-${who.id}/index.html`], ['Dashboard', `people/${who.id}/index.html`], who.core ? ['Meet page', `meet/${who.id}/index.html`] : null].filter(Boolean).filter(([, h]) => fs.existsSync(path.join(ROOT, h)) || h.startsWith('brief-') || h.startsWith('people/') || h.startsWith('meet/') || h.startsWith('team/')).map(([t, h]) => rel === h ? `<span aria-current="page">${t}</span>` : `<a href="${up}${h}">${t}</a>`).join('')}</p>` : ''
     return `<nav class="crumbs" aria-label="Breadcrumbs">${c.join('<span>›</span>')}<span>›</span><span aria-current="page">${esc(title)}</span></nav>${bar}`
 })()}
-${heroed ? '' : `<h1>${inline(title)}</h1>
+${heroed || wide ? '' : `<h1>${inline(title)}</h1>
 ${lead ? `<p class="lead">${inline(lead)}</p>` : ''}
 ${home ? `<p class="countdown" data-countdown="2026-11-09">Web Summit Lisbon: 9 to 12 November 2026</p><script src="assets/countdown.js" defer></script>` : ''}`}
 ${meta}
 ${body}
+${wide && !focus ? '<section class="for-you" id="for-you" hidden aria-label="For you: your key and what is sealed to you"></section>' : ''}
 </main>
 </div>
-<script src="${up}assets/copy.js" defer></script>
-<script src="${up}assets/keyring.js" defer></script>
-<script src="${up}assets/addkey.js" defer></script>
-<script src="${up}assets/me.js" defer></script>
-<script src="${up}assets/feedback.js" defer></script>
-<script src="${up}assets/telemetry.js" defer></script>
+<script src="${up}assets/copy.js?v=${VERSION}" defer></script>
+${foreign ? '' : `<script src="${up}assets/keyring.js?v=${VERSION}" defer></script>\n`}<script src="${up}assets/addkey.js?v=${VERSION}" defer></script>
+<script src="${up}assets/me.js?v=${VERSION}" defer></script>
+<script src="${up}assets/feedback.js?v=${VERSION}" defer></script>
+<script src="${up}assets/telemetry.js?v=${VERSION}" defer></script>
+<script src="${up}assets/obs-dinis.js?v=${VERSION}" defer></script>
 <footer><div class="row"><span>Built and run by an AI agent with a named human operator.</span><a class="ver" href="${up}admin/versions.html#${VERSION}">${VERSION}</a><a href="${REPO}">GitHub</a><span>Code Apache-2.0, text CC BY 4.0</span></div></footer>
 <div class="agent-block"><pre><code>${esc(agent)}</code></pre></div>
 </body>
@@ -402,12 +459,22 @@ const vaultsMd = who => {
 // key by postMessage, pinned to its origin; the key is never in a URL or the frame's storage, and the vault opens
 // read-only. The key comes only from the person's vaults.json, which vaultsMd's check limits to sgit_public_read_.
 let VAULT_APPS = 0
-const vaultAppHtml = (person, id) => {
+// ```vault-app <person> <vault id> auto``` (Vicky's dashboard, 8 Nov, option 1): the same frame, but opened by itself when
+// the visitor's browser says it is <person> (localStorage "ws.me", the "Who are you?" picker) and the section scrolls into
+// view; every other visitor keeps click-to-load. Without the word "auto" the output is byte-for-byte what it was.
+const vaultAutoJs = person => `var P=${JSON.stringify(person)},me='';try{me=localStorage.getItem('ws.me')||'';}catch(e){}` +
+    `var sd=false;try{sd=!!(navigator.connection&&navigator.connection.saveData);}catch(e){}` +
+    `if(me===P&&!sd&&'IntersectionObserver' in window){` +
+    `var w=null,ov=null;if(window.matchMedia&&matchMedia('(pointer:coarse)').matches){f.style.height='60vh';w=document.createElement('div');w.style.position='relative';f.parentNode.insertBefore(w,f);w.appendChild(f);` +
+    `ov=document.createElement('button');ov.type='button';ov.setAttribute('style','position:absolute;left:0;right:0;top:0;bottom:0;width:100%;background:transparent;border:0;padding:0 .5rem .6rem;display:flex;align-items:flex-end;justify-content:center;font:inherit;touch-action:pan-y;cursor:pointer');var hint=document.createElement('span');hint.textContent='Tap to use the vault. Swipe here to keep scrolling the page.';hint.setAttribute('style','background:rgba(15,23,42,.9);color:#fff;font-size:.85rem;line-height:1.3;padding:.4rem .7rem;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.25)');ov.appendChild(hint);` +
+    `ov.addEventListener('click',function(){ov.hidden=true;});w.appendChild(ov);document.addEventListener('touchstart',function(e){if(ov.hidden&&!w.contains(e.target))ov.hidden=false;},{passive:true});}` +
+    `var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();b.querySelector('[data-mode="app"]').click();clearTimeout(T);T=setTimeout(function(){t.textContent='The handshake timed out. Press Open the app to try again.';},12000);},{rootMargin:'200px 0px'});io.observe(b);}`
+const vaultAppHtml = (person, id, auto = false) => {
     const v = VAULTS().find(x => x.person === person && x.vault_id === id)
     if (!v) throw new Error(`vault-app ${person} ${id}: no such vault in people/${person}/vaults.json`)
     if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
     const n = ++VAULT_APPS, k = `va${n}`
-    return `<div class="vault-app" id="${k}"><p><button type="button" data-mode="app">Open the app</button> <button type="button" data-mode="vault">Browse its files</button> <button type="button" data-fs hidden>Full screen</button></p>` +
+    return `<div class="vault-app" id="${k}"><p><button type="button" data-mode="app">Open the app</button> <button type="button" data-mode="vault">Browse its files</button> <button type="button" data-fs hidden>Full screen</button> <button type="button" data-newwin>Open in a new window</button></p>` +
         `<p class="meta" data-note>${esc(v.name)} (<code>${v.vault_id}</code>), read only. Opens <code>dev.vault.sgraph.ai</code> in a frame and hands it this page's published read key.</p>` +
         `<iframe title="${esc(v.name)}, the vault opened read-only" allow="fullscreen" allowfullscreen hidden style="width:100%;height:70vh;border:1px solid #ccc;border-radius:6px"></iframe></div>` +
         `<script>(function(){var O='https://dev.vault.sgraph.ai',C=${JSON.stringify(v.read_key + ':' + v.vault_id)},b=document.getElementById('${k}'),f=b.querySelector('iframe'),t=b.querySelector('[data-note]'),fs=b.querySelector('[data-fs]'),armed=null,T=null;` +
@@ -417,7 +484,29 @@ const vaultAppHtml = (person, id) => {
         `function mount(m){armed=m;f.hidden=false;fs.hidden=false;t.textContent='Connecting to the vault...';f.src=O+(m==='vault'?'/en-gb/vault/':'/en-gb/app/')+'?embed=1&parent='+encodeURIComponent(location.origin);clearTimeout(T);` +
         `T=setTimeout(function(){if(m==='app'){f.src=O+'/#'+encodeURIComponent(C);t.textContent='The handshake timed out; opened by the link instead.';}else{t.textContent='The handshake timed out. Reload and try again.';}},12000);}` +
         `b.querySelectorAll('[data-mode]').forEach(function(x){x.addEventListener('click',function(){mount(x.getAttribute('data-mode'));});});` +
-        `fs.addEventListener('click',function(){try{if(f.requestFullscreen)f.requestFullscreen();}catch(e){}});}());</script>`
+        `fs.addEventListener('click',function(){try{if(f.requestFullscreen)f.requestFullscreen();}catch(e){}});b.querySelector('[data-newwin]').addEventListener('click',function(){window.open(O+'/#'+encodeURIComponent(C),'_blank','noopener');});${auto ? vaultAutoJs(person) : ''}}());</script>`
+}
+// the live observability panel: ```obs-live <person> <vault id>``` (observability@web-summit.dinis, 5 November 2026). The
+// page reads the vault itself, in the browser, with sgit.ai's reader (assets/vendor/sgit-ai/2026-11-05/vault-embed.js):
+// headline numbers from data/public.json, then the vault's own app in a sandboxed frame. The key comes only from the
+// person's vaults.json and must be a published read key (sgit_public_read_), as for vault-app.
+const obsLiveHtml = (person, id) => {
+    const v = VAULTS().find(x => x.person === person && x.vault_id === id)
+    if (!v) throw new Error(`obs-live ${person} ${id}: no such vault in people/${person}/vaults.json`)
+    if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
+    return `<div class="obs-live" data-endpoint="https://dev.send.sgraph.ai" data-vault="${v.vault_id}" data-key="${v.read_key}" data-title="${esc(v.name)}">` +
+        `<p data-head></p><p class="meta" data-note>Opening vault <code>${v.vault_id}</code> with its published read key…</p><div data-app></div></div>` +
+        `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-live.js?v=${VERSION}" defer></script>`
+}
+// an observability view drawn by this site from the public vault's data/public.json: ```obs-view <stats|agents|pages|team>
+// <person> <vault id>``` (observability@web-summit.dinis, 5 November 2026); assets/obs-view.js reads and draws it.
+const obsViewHtml = (view, person, id) => {
+    const v = VAULTS().find(x => x.person === person && x.vault_id === id)
+    if (!v) throw new Error(`obs-view ${person} ${id}: no such vault in people/${person}/vaults.json`)
+    if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
+    return `<div class="obs-view" data-view="${view}" data-base="${UP}" data-endpoint="https://dev.send.sgraph.ai" data-vault="${v.vault_id}" data-key="${v.read_key}">` +
+        `<p class="meta" data-note>Opening vault <code>${v.vault_id}</code> with its published read key, decrypting in your browser…</p><div data-out></div></div>` +
+        `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-view.js?v=${VERSION}" defer></script>`
 }
 let UP = '../'
 const expandIssues =(body, up = '../') => { UP = up; return body
@@ -468,7 +557,7 @@ const INV = getINV()
 // whole history, read once; a recipient is an agent name or a person's id
 CHARTS['agents-map'] = (() => {
     let talks = null
-    const read = () => { const m = new Map(); try { for (const b of execFileSync('git', ['log', '--format=%b%x1e'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString().split('\x1e')) {
+    const read = () => { const m = new Map(); try { for (const { b } of GIT.history(ROOT)) {
         const from = (b.match(/^Agent: *([a-z0-9-]+@web-summit\.[a-z0-9-]+)/m) || [])[1]; if (!from) continue
         for (const line of b.match(/^For: *(.+)$/gm) || []) for (const to of line.slice(4).split(/,\s*/).map(x => x.trim()).filter(x => /^[a-z0-9-]+(@web-summit\.[a-z0-9-]+)?$/.test(x))) { const k = `${from}|${to}`; m.set(k, (m.get(k) || 0) + 1) }
     } } catch { } return [...m].map(([k, n]) => { const [from, to] = k.split('|'); return { from, to, n } }) }
@@ -498,6 +587,7 @@ CHARTS['agents-map'] = (() => {
 
 // the stand-ups: data/meetings/ -> meetings/ (admin/build/meetings.mjs)
 const MEET = meetingsContext(ROOT)
+const CK = await import(path.join(ROOT, 'admin/build/cockpit.mjs'))
 // the agenda to the summit (WS-143, item 1): /agenda.json, and ```chart agenda``` wherever a page wants it; built from
 // the stand-ups, the board, the plan and the summit at every release. BUILD_NOW pins "now", as for the stand-ups.
 // hasPage is meetings.mjs's own rule for which stand-ups get a page (today to two days on, or any with items)
@@ -517,6 +607,17 @@ for (const f of (fs.existsSync(path.join(ROOT, 'team/conductor/shows')) ? fs.rea
     pages.push({ rel, title, description: 'The presentation for this stand-up.' }); twin(rel, title, 'The presentation for this stand-up, built from the repository.', md)
 }
 
+// the investor decks (WS-185, investors@web-summit.dinis, 6 November 2026): team/investors/decks/<slug>.deck is an HTML
+// fragment made by team/investors/tools/make_decks.py, presented by assets/deck.js like the stand-up shows, at
+// investors/<slug>/; its first two lines are <!-- title: ... --> and <!-- summary: ... -->
+for (const f of (fs.existsSync(path.join(ROOT, 'team/investors/decks')) ? fs.readdirSync(path.join(ROOT, 'team/investors/decks')) : []).filter(f => f.endsWith('.deck'))) {
+    const raw = fs.readFileSync(path.join(ROOT, 'team/investors/decks', f), 'utf8'), rel = `investors/${f.replace(/\.deck$/, '')}/index.html`
+    const title = (raw.match(/<!-- title: (.*?) -->/) || [, f])[1], description = (raw.match(/<!-- summary: (.*?) -->/) || [, title])[1]
+    const md = raw.replace(/<!--[\s\S]*?-->/g, '').replace(/<style>[\s\S]*?<\/style>/, '').replace(/<script[\s\S]*?<\/script>/g, '').replace(/<section[^>]*aria-label="([^"]*)"[^>]*>/g, '\n\n---\n\n').replace(/<h[12][^>]*>/g, '\n## ').replace(/<li>/g, '\n- ').replace(/<br>/g, '\n').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/[ \t]+/g, ' ').replace(/\n\s+/g, '\n').trim()
+    write(rel, page({ rel, title, description, body: raw, mdTwin: twinPath(rel) }))
+    pages.push({ rel, title, description }); twin(rel, title, description, md)
+}
+
 // plain pages: content/index.md -> index.html, content/<name>.md -> <name>/index.html
 for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWith('.md'))) {
     const raw = fs.readFileSync(path.join(ROOT, 'content', f), 'utf8')
@@ -524,8 +625,16 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     const name = f.replace(/\.md$/, ''), body = expandIssues(rawBody, name === 'index' ? '' : '../'), rel = meta.path || (name === 'index' ? 'index.html' : `${name}/index.html`)
     let html = render(body), md = body
     if (name === 'index') ({ html, md } = expandHome(html, md, homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES, plan, castData, merch })))
-    if (name === 'print') ({ html, md } = expandSignoff(html, md, ROOT))   // the Official Sign-off, from the signatures (WS-113)
-    write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index' }))
+    if (name === 'print') ({ html, md } = expandSignoff(html, md, ROOT))
+    if (meta.infographic) ({ html, md } = expandInfographic(html, md, ROOT, meta.infographic, rel))   // a night's summary in pictures (Dinis, 5 Nov)   // the Official Sign-off, from the signatures (WS-113)
+    // a page's own script, named in its front matter (script: <name> loads assets/<name>.js; WS-167)
+    if (meta.script && !/^[a-z0-9-]+$/.test(meta.script)) throw new Error(`content/${f}: script must name a file in assets/ ([a-z0-9-])`)
+    const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js?v=${VERSION}" defer></script>` : ''
+    md = md.replace(/^```sticker-vault\s*\n```\s*$/m, '*The vault with full access is opened on the HTML page by assets/stickers-vault.js, for a person the vault key is sealed to.*')
+    md = md.replace(/^```crm\s*\n```\s*$/m, '*On the HTML page: a diagram of the two layers, the public CRM browsed live with its published read key, and, for a person whose browser holds their key, Open the private CRM (assets/crm.js, from data/crm.json).*')
+    md = md.replace(/^```xray\s*\n```\s*$/m, () => `*On the HTML page: the input, the replay of each run and the graph, drawn by assets/xray.js.* The subjects X-rayed so far:\n\n${xrayIndexMd(XRAY)}`)
+    md = md.replace(/^```sticker-vote\s*\n```\s*$/m, '*The vote: the twelve stickers, the Vote button, the vault and who has voted are drawn on the HTML page by assets/stickers-vote.js, from data/stickers-vote.json.*')
+    write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index', head }))
     pages.push({ rel, title: meta.title, description: meta.summary })
     if (name !== 'index') twin(rel, meta.title, meta.summary, md)
     if (name === 'index') write('index.md', `# ${meta.title}\n\n${meta.summary}\n\nSite version: ${VERSION}\n\n${md.trim().replace('{{numbers}}', NUMBERS_MD)}\n`)
@@ -545,11 +654,43 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const f = path.join(ROOT, 'people', m.id, 'dashboard.md')
     if (!fs.existsSync(f)) continue
     const { meta, body: rawBody } = parse(fs.readFileSync(f, 'utf8'))
-    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
+    if (meta.layout === 'cockpit') {   // Dinis, 5 November: the first dashboard, full width, built from data (admin/build/cockpit.mjs)
+        const D = CK.cockpit({ ROOT, id: m.id, teamData, ISSUES, MEET, INV, OB, VERSION })
+        write(`people/${m.id}/dashboard.json`, JSON.stringify(D))
+        const rel = `people/${m.id}/index.html`, more = expandIssues(rawBody, '../../'), md = CK.cockpitMd(D) + '\n\n' + more
+        write(rel, page({ rel, title: meta.title, description: meta.summary, wide: true, mdTwin: twinPath(rel),
+            head: '<link rel="stylesheet" href="../../assets/cockpit.css"><script type="module" src="../../assets/cockpit.js"></script>',
+            body: `<div id="ck" data-src="dashboard.json" data-lanes="../../assets/feedback.json"></div><div id="ck-fallback">${render(CK.cockpitMd(D))}</div><section class="ck-more" id="more">${render(more)}</section>` }))
+        pages.push({ rel, title: meta.title, description: meta.summary }); twin(rel, meta.title, meta.summary, md)
+        // the focus pages (Dinis, 5 November): one queue, one card at a time, nothing else on the screen
+        for (const [slug, q, t] of [['only-you', 'only_you', 'Only you can do this'], ['decide', 'decisions', 'Decide']]) {
+            const frel = `people/${m.id}/focus/${slug}/index.html`, ftitle = `${t}: ${m.name.split(' ')[0]}'s focus`, items = D[q]
+            const fmd = `${items.length} cards, highest priority first. Each one is drawn from its kind (data/cards/), with its evidence, links, relationships and answers; this list is the same data as text.\n\n${items.map((x, i) => `${i + 1}. **${(x.issue || x.id) ? (x.issue || x.id) + ': ' : ''}${x.title.replace(/\|/g, '/')}** (${x.kind}, priority ${x.score}). ${x.why}.`).join('\n')}`
+            write(frel, page({ rel: frel, title: ftitle, description: `${t}: ${m.name}'s cards, one at a time, each with its evidence and the answers that fit it.`, wide: true, focus: true, mdTwin: twinPath(frel),
+                head: '<script type="module" src="../../../../assets/components/ws-focus-queue/v0/v0.1/v0.1.0/ws-focus-queue.js"></script>',
+                body: `<ws-focus-queue data-src="../../dashboard.json" data-lanes="../../../../assets/feedback.json" data-queue="${q}" data-person="${m.id}" data-back="../../index.html"></ws-focus-queue><noscript>${render(fmd)}</noscript>` }))
+            pages.push({ rel: frel, title: ftitle, description: t }); twin(frel, ftitle, t, fmd)
+        }
+        continue
+    }
+    // compact: true in a person's dashboard.md front matter (Vicky's, 8 Nov) folds the long built sections; every other dashboard is built as before
+    const compact = String(meta.compact) === 'true', fold = (title, inner) => `:::details ${title}\n\n${inner.trim()}\n\n:::`
+    let SINCE = sinceMd(MEET, m.id, '../../'), AGENTS = `${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\``, MENTOR = mentorMd(m.id)
+    if (compact) {
+        const ls = SINCE.split('\n'), li = ls.map((l, k) => l.startsWith('- ') ? k : -1).filter(k => k >= 0)
+        if (li.length > 3) {   // the summary counts and the latest 3 releases; the rest folded
+            const rest = li.slice(3).map(k => ls[k]), drop = new Set(li.slice(3))
+            SINCE = ls.flatMap((l, k) => drop.has(k) ? [] : k === li[2] ? [l, '', fold(`Earlier releases (${rest.length} more)`, rest.join('\n'))] : [l]).join('\n')
+        }
+        const mine = INV.agents.filter(a => a.person === m.id)
+        AGENTS = `${mine.length} agents, ${mine.filter(a => a.commits).length} with commits so far. The network shows who writes to whom.\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${meta.office_link && /^[a-z0-9][a-z0-9\/._-]*$/i.test(String(meta.office_link)) ? `**[Open the Live AI Office →](${meta.office_link})**: the live view of these agents.\n\n` : ''}${fold('Show agent details', myAgentsMd(INV, m.id))}`
+        MENTOR = MENTOR ? fold('From your mentor', MENTOR.replace(/^## From your mentor \{#mentor\}\n\n/, '')) + '\n\n' : ''
+    }
+    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${SINCE}\n\n## My agents, as the team sees them {#my-agents}\n\n${AGENTS}\n\n${MENTOR}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
     const rel = `people/${m.id}/index.html`
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
     pages.push({ rel, title: meta.title, description: meta.summary })
-    twin(rel, meta.title, meta.summary, body)
+    twin(rel, meta.title, meta.summary, compact ? body.replace(/^:::details (.+)$/gm, '### $1').replace(/^:::\s*$/gm, '') : body)
 }
 
 // a person's own extra pages (WS-27, dev@web-summit.indi, 3 November): people/<id>/pages.mjs exports
@@ -559,7 +700,7 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     if (!fs.existsSync(f)) continue
     for (const p of (await import(f)).build(ROOT)) {
         if (!p.rel.startsWith(`people/${m.id}/`) || !p.rel.endsWith('.html')) throw new Error(`people/${m.id}/pages.mjs: ${p.rel} is outside people/${m.id}/`)
-        write(p.rel, page({ rel: p.rel, title: p.title, description: p.description, body: p.body, head: p.head || '', mdTwin: twinPath(p.rel) }))
+        write(p.rel, page({ rel: p.rel, title: p.title, description: p.description, body: p.body, head: p.head || '', mdTwin: twinPath(p.rel), personScripts: /<script\b/i.test(`${p.head || ''}${p.body || ''}`) }))
         pages.push({ rel: p.rel, title: p.title, description: p.description }); twin(p.rel, p.title, p.description, p.md)
     }
 }
@@ -575,7 +716,7 @@ const CC = await import(path.join(ROOT, 'admin/build/commandcentre.mjs'))
 // dashboard@web-summit.dinis (the panels' content) and designer@web-summit.dinis (the look).
 const ME = { built_at: new Date().toISOString(), version: VERSION, people: {} }
 const DAYS14 = [...Array(10)].map((_, k) => new Date(Date.now() - (9 - k) * 864e5).toISOString().slice(0, 10))
-const daily = (() => { const by = {}; try { for (const l of execFileSync('git', ['log', '--since=10 days ago', '--format=%cI%x1f%s%x1f%b%x1e'], { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 << 20 }).split('\x1e')) { const [at, sub, body] = l.trim().split('\x1f'); if (!at || /^site v\d/.test(sub)) continue; const d = at.slice(0, 10); for (const p of new Set([...`${sub}\n${body || ''}`.matchAll(/@web-summit\.([a-z0-9-]+)/g)].map(x => x[1]))) { by[p] ??= {}; by[p][d] = (by[p][d] || 0) + 1 } } } catch {} return id => DAYS14.map(d => (by[id] || {})[d] || 0) })()
+const daily = (() => { const by = {}; try { for (const { at, s: sub, b: body } of GIT.since(ROOT, Date.now() - 10 * 864e5)) { if (/^site v\d/.test(sub)) continue; const d = at.slice(0, 10); for (const p of new Set([...`${sub}\n${body || ''}`.matchAll(/@web-summit\.([a-z0-9-]+)/g)].map(x => x[1]))) { by[p] ??= {}; by[p][d] = (by[p][d] || 0) + 1 } } } catch {} return id => DAYS14.map(d => (by[id] || {})[d] || 0) })()
 for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const dir = path.join(ROOT, 'people', m.id, 'app')
     if (!fs.existsSync(path.join(ROOT, 'people', m.id))) continue
@@ -583,19 +724,23 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const app = own ? await import(path.join(dir, 'data.mjs')) : CC
     const data = app.build(ROOT, m.id)
     // the switcher at the top of every command centre: everyone's, in roster order
-    data.team = teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => ({ id: x.id, name: x.name }))
+    data.team = teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => ({ id: x.id, name: x.name, ...(fs.existsSync(path.join(ROOT, 'people', x.id, 'photo.jpg')) ? { photo: `../../${x.id}/photo.jpg` } : {}) }))
     write(`people/${m.id}/app/data.json`, JSON.stringify(data))
+    if (app.extras) for (const [rel, text] of Object.entries(app.extras(data, ROOT))) write(rel, text)   // files a person's own data.mjs adds beside data.json (Angelo's live.json)
     {   // this person's slice of me.json
         const o = onboard(m.id), nx = MEET.next(), a = MEET.ack(m.id), since = MEET.log(a?.acknowledged_at || new Date(Date.now() - 864e5).toISOString())
         const open = data.issues.filter(i => i.named && i.status !== 'done'), h = i => i.due_at ? (Date.parse(i.due_at) - Date.now()) / 36e5 : 1e9
+        const ck = CK.cockpit({ ROOT, id: m.id, teamData, ISSUES, MEET, INV, OB, VERSION })   // the same counts as the cockpit, for the top bar's strip
         ME.people[m.id] = {
+            only_you: ck.only_you.length, decide: ck.decisions.length, standup_at: nx.at,
+            focus: /^layout: cockpit$/m.test((d => fs.existsSync(d) ? fs.readFileSync(d, 'utf8') : '')(path.join(ROOT, 'people', m.id, 'dashboard.md'))),
             id: m.id, name: m.name, first: m.name.split(' ')[0], role: m.role || '', colour: CAST_PEOPLE[m.id]?.colour || merch[m.id] || '',
             level: o.level, level_name: LEVELS[o.level], next: o.next,
             open: open.length, overdue: open.filter(i => h(i) < 0 && !i.recurring).length, soon: open.filter(i => h(i) >= 0 && h(i) <= 72).length,
             urgent: open.filter(i => !i.recurring).sort((x, y) => h(x) - h(y)).slice(0, 5).map(i => ({ id: i.id, title: i.title, due: i.due, status: i.status, late: h(i) < 0 })),
             decisions: data.decisions.slice(0, 6).map(d => ({ what: d.what, issue: d.issue, source: d.source })),
-            agents: data.agents.map(g => ({ name: g.name, status: g.status, last_at: g.last_at, last: (g.last_subject || '').replace(/^[^:]+: /, '').slice(0, 120) })),
-            messages: data.messages.slice(0, 5).map(x => ({ at: x.at, from: x.agent, subject: x.subject.replace(/^[^:]+: /, '').slice(0, 140) })),
+            agents: data.agents.map(g => ({ name: g.name, status: g.status, last_at: g.last_at, last: clipWords((g.last_subject || '').replace(/^[^:]+: /, ''), 120) })),
+            messages: data.messages.slice(0, 5).map(x => ({ at: x.at, from: x.agent, subject: clipWords(x.subject.replace(/^[^:]+: /, ''), 140) })),
             daily: daily(m.id), days: DAYS14,
             acked: a?.acknowledged_at || null, since: { releases: since.filter(x => x.release).length, commits: since.filter(x => !x.release).length },
             briefing: `meetings/${nx.id}/${m.id}/index.html`, standup: `${nx.day} ${nx.time}`,
@@ -776,9 +921,7 @@ ${(events.gaps || []).length ? `<h2 id="gaps">What we could not confirm</h2>${li
     const GH = `${REPO}/commit/`
     let commits = [], note = ''
     try {
-        const raw = execFileSync('git', ['log', '--since=2026-10-25', '--format=%H%x1f%cI%x1f%s%x1f%b%x1e'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()
-        commits = raw.split('\x1e').map(r => r.trim()).filter(Boolean).map(r => {
-            const [sha, at, subject, body = ''] = r.split('\x1f')
+        commits = GIT.since(ROOT, '2026-10-25T00:00:00').map(({ sha, at, s: subject, b: body }) => {
             const agent = (body.match(/^Agent: *(\S+)/m) || [])[1] || (subject.match(/^([a-z0-9-]+@web-summit\.[a-z0-9-]+):/) || [])[1] || ''
             const session = (body.match(/^Claude-Session: *(https:\/\/claude\.ai\/code\/session_[A-Za-z0-9]+)/m) || [])[1] || ''
             const release = (subject.match(/^site (v\d+\.\d+\.\d+): (.*)$/) || []).slice(1)
@@ -841,6 +984,11 @@ ${sections.join('\n')}`
     twin('wakes/index.html', 'The agents at work', `Every agent's schedule and wakes, from the git history, as of ${asOf} UTC.`, md)
     pages.push({ rel: 'wakes/index.html', title: 'The agents at work', description: 'Every agent: its schedule, its last wake, and what each wake did.' })
 }
+
+// the RiskMandate X-ray: a page and a deck per subject (admin/build/xray.mjs)
+buildXray({ list: XRAY, write, page, twin, pages, VERSION })
+// what happened: a run page per subject (/xray/<slug>/run/) and how every X-ray is made (/xray/how/)
+buildXrayRuns({ list: XRAY, write, page, twin, pages, VERSION })
 
 // machine surfaces
 pages.sort((a, b) => a.rel.localeCompare(b.rel))

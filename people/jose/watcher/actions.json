@@ -1,0 +1,422 @@
+{
+ "schema": "web-summit.sgit.ai/watcher-actions/v1",
+ "by": "watcher@web-summit.jose",
+ "about": "At Jose's word (5 November 2026): every time an agent looks stopped or late, the watcher opens an action here with what it found and what it recommends, addressed to Jose's conductor and to the agent's owner's conductor in its commit (For:). Every run re-checks each open action: closed when the agent commits again or its scheduled task is seen to fire; still open after two runs, it is raised again at the top of the commit. The watcher only reports and recommends; it never changes an agent, a task or a session (WS-129). An action's 'opened' is the run that first flagged the agent (12:15), before the loop existed.",
+ "updated": "2026-11-09T17:20Z",
+ "actions": [
+  {
+   "id": "A-2026-11-05-01",
+   "agent": "dashboard@web-summit.dinis",
+   "owner": "dinis",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.dinis"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T12:15Z",
+   "runs_open": 4,
+   "seen": "no commit since 02:54 (24c7798); hourly 07:06 to 22:06, so all 16 slots today without a commit",
+   "likely_cause": "idle, not broken: its job is to drain Dinis's cockpit lane and apply his signed answers, and its last commit says the lane was empty because Dinis's answers had not been submitted from his browser; if it commits nothing on an empty lane, it looks stopped. Not confirmed: the task lives in Dinis's account, which the watcher cannot see",
+   "recommend": "conductor@web-summit.dinis or Dinis: check the task 'dashboard@web-summit.dinis' fired (last run, status) and whether Dinis's cockpit answers are still unsubmitted; have the agent log every run, idle ones too (WS-160), so a quiet run is visible",
+   "raised": "open four runs: raised at the top of the 22:15 commit",
+   "closed": "2026-11-06T07:15Z",
+   "cause": "recovered: committed at 07:11 on 6 November (its first commit since 02:54 on 5 November)"
+  },
+  {
+   "id": "A-2026-11-05-02",
+   "agent": "vault@web-summit.jose",
+   "owner": "jose",
+   "to": [
+    "conductor@web-summit.jose"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T12:15Z",
+   "closed": "2026-11-05T14:22Z",
+   "seen": "no commit since 01:36; the 11:40 slot passed",
+   "cause": "not stopped: its scheduled task fired at 11:40 and succeeded (Jose's account), and found nothing to commit",
+   "recommend": "conductor@web-summit.jose: its stored scheduled-task prompt has no WS-160 log step (the kit's shared section requires one for every run), so its quiet runs leave no trace; update the stored prompt to log each run"
+  },
+  {
+   "id": "A-2026-11-05-03",
+   "agent": "helper@web-summit.jose",
+   "owner": "jose",
+   "to": [
+    "conductor@web-summit.jose"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T12:15Z",
+   "closed": "2026-11-05T14:22Z",
+   "seen": "no commit since 01:18; the 08:50 slot passed",
+   "cause": "not stopped: its scheduled task fired at 08:50 and succeeded, and found nobody stuck (commits nothing then); next 14:50",
+   "recommend": "none",
+   "recheck": "17:15: its task fired again at 14:51 and succeeded; still nothing to commit"
+  },
+  {
+   "id": "A-2026-11-05-04",
+   "agent": "outreach@web-summit.silvio",
+   "owner": "silvio",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.silvio"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T12:15Z",
+   "closed": "2026-11-05T14:22Z",
+   "seen": "no commit from 02:28 to 14:06",
+   "cause": "recovered: committed at 14:06, 14:07 and 14:11 (0fb3d8b, ba8a1b9, ddbee3e)",
+   "recommend": "none"
+  },
+  {
+   "id": "A-2026-11-05-05",
+   "agent": "curator@web-summit.vicky",
+   "owner": "vicky",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.vicky"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T12:15Z",
+   "closed": "2026-11-05T14:22Z",
+   "seen": "the 11:45 slot passed with no commit",
+   "cause": "recovered: committed its 11:45 run's report at 12:38 (f878f9a)",
+   "recommend": "none"
+  },
+  {
+   "id": "A-2026-11-05-06",
+   "agent": "Jose's agents' stored scheduled-task prompts",
+   "owner": "jose",
+   "to": [
+    "conductor@web-summit.jose"
+   ],
+   "status": "open",
+   "opened": "2026-11-05T14:22Z",
+   "runs_open": 18,
+   "seen": "at 17:20 on 9 November: only dev is left (the 3 November text, 30 9,15; it fired at 15:34 and succeeded)",
+   "likely_cause": "the tasks were made before the kit changed; the agents re-read the kit at each wake, so they may follow it anyway, but the stored prompts disagree",
+   "recommend": "Jose: paste the pointer into the dev task and set it to 30 7-21/2",
+   "raised": "open eighteen runs, one agent left: raised",
+   "per_agent": {
+    "conductor": "done: pointer pasted, time every hour 07:20 to 21:20 (20 7-21)",
+    "dev": "open: still the 3 November text; time 30 9,15, not every two hours 07:30 to 21:30",
+    "dashboard": "done: pointer pasted (20:12)",
+    "vault": "done: pointer pasted, time right",
+    "automation": "done: pointer pasted (20:11)",
+    "helper": "done: pointer pasted, time every two hours 07:50 to 21:50",
+    "watcher": "done: pointer pasted, time right",
+    "designer": "done: new task with the pointer at 40 10,16 (created 13:38)"
+   },
+   "compared_with": "people/jose/schedules.md#paste: the short pointers (C39) and the times (C30), at Jose's word through the conductor's task file people/jose/tasks/2026-11-07-watcher-a06-pointers.md; the hourly drain is excluded (it counts only, then is deleted); sales-coach, crm and the writer have no task"
+  },
+  {
+   "id": "A-2026-11-05-07",
+   "agent": "helper@web-summit.angelo",
+   "owner": "angelo",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.angelo"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T17:15Z",
+   "runs_open": 1,
+   "seen": "no commit since 12:52 (fa6f43d); schedule every two hours at :50 (people/angelo/agents.json), so the 14:50 and 16:50 slots passed",
+   "likely_cause": "probably idle: it answers setup questions and keeps /help/, so a run with no question commits nothing; not confirmed (its task is in Angelo's account)",
+   "recommend": "conductor@web-summit.angelo: check its task fired; have it log every run (WS-160) so quiet runs show",
+   "closed": "2026-11-05T22:15Z",
+   "cause": "recovered: committed at 18:51 (helper@web-summit.angelo); one slot (20:50) since without a commit, within 'late'"
+  },
+  {
+   "id": "A-2026-11-05-08",
+   "agent": "researcher@web-summit.vicky",
+   "owner": "vicky",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.vicky"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T17:15Z",
+   "runs_open": 1,
+   "seen": "no commit since 11:37 (a34f54a, its 11:30 run); schedule 07:30, 11:30, 15:30, 19:30, so the 15:30 slot passed",
+   "likely_cause": "late by one slot; its captures go to the research vault (41j3e9s9), and a run with no new capture may commit nothing here",
+   "recommend": "conductor@web-summit.vicky: check the 15:30 run happened",
+   "closed": "2026-11-05T22:15Z",
+   "cause": "recovered: committed its 19:30 run at 19:36"
+  },
+  {
+   "id": "A-2026-11-05-09",
+   "agent": "curator@web-summit.vicky",
+   "owner": "vicky",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.vicky"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T17:15Z",
+   "runs_open": 1,
+   "seen": "no commit since 12:38 (f878f9a, its 11:45 run); schedule 07:45, 11:45, 15:45, 19:45, so the 15:45 slot passed",
+   "likely_cause": "late by one slot; it writes its map in the newsroom repository (desks/curator/), so its work may not show here at all",
+   "recommend": "conductor@web-summit.vicky: check the 15:45 run; the watcher sees only this repository",
+   "closed": "2026-11-05T22:15Z",
+   "cause": "recovered: three commits, last 20:07"
+  },
+  {
+   "id": "A-2026-11-05-10",
+   "agent": "pulse@web-summit.dinis",
+   "owner": "dinis",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.dinis"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T17:15Z",
+   "closed": "2026-11-05T17:15Z",
+   "seen": "people/dinis/agents.json says 08:40, 13:10 and 19:40, but its commits say 'the 12:40 pulse' (7e4b690, 12:41)",
+   "cause": "not late: it ran at 12:40; its schedule in agents.json is out of date",
+   "recommend": "conductor@web-summit.dinis: update pulse's schedule in people/dinis/agents.json"
+  },
+  {
+   "id": "A-2026-11-05-11",
+   "agent": "conductor@web-summit.angelo",
+   "owner": "angelo",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.angelo"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T22:15Z",
+   "runs_open": 2,
+   "seen": "committed at 22:22 on 5 November, then no commit in the 8 hourly slots 23:20 to 06:20",
+   "likely_cause": "quiet overnight wakes with nothing to commit; not confirmed",
+   "recommend": "Angelo or policy@web-summit.angelo: check the task fired; have it log every run (WS-160)",
+   "raised": "open two runs",
+   "closed": "2026-11-06T12:15Z",
+   "cause": "recovered: 23 commits since 07:00, last 11:44"
+  },
+  {
+   "id": "A-2026-11-05-12",
+   "agent": "inbox@web-summit.silvio",
+   "owner": "silvio",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.silvio"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T22:15Z",
+   "runs_open": 5,
+   "seen": "no commit since it joined at 16:33 on 5 November (about 30 hours)",
+   "likely_cause": "probably idle here: its work is drafts in Silvio's mailbox and actions in the CRM, which a mail check need not commit to this repository",
+   "recommend": "conductor@web-summit.silvio: check the mail checks run; have it log every run (WS-160) so the watcher can see them",
+   "raised": "open five runs: raised",
+   "closed": "2026-11-07T07:15Z",
+   "cause": "recovered: committed three times, last 04:20 on 7 November"
+  },
+  {
+   "id": "A-2026-11-06-13",
+   "agent": "helper@web-summit.angelo",
+   "owner": "angelo",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.angelo"
+   ],
+   "status": "closed",
+   "opened": "2026-11-06T07:15Z",
+   "runs_open": 1,
+   "seen": "no commit since 22:51 on 5 November; every two hours at :50, so 00:50 to 06:50 (4 slots) passed",
+   "likely_cause": "quiet overnight: it commits only when someone has a setup question; not confirmed",
+   "recommend": "conductor@web-summit.angelo: have it log every run (WS-160)",
+   "closed": "2026-11-06T12:15Z",
+   "cause": "recovered: committed at 08:51"
+  },
+  {
+   "id": "A-2026-11-06-14",
+   "agent": "dev@web-summit.dinis",
+   "owner": "dinis",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.dinis"
+   ],
+   "status": "open",
+   "opened": "2026-11-06T07:15Z",
+   "runs_open": 15,
+   "seen": "no commit since 23:53 on 5 November, about 90 hours",
+   "likely_cause": "unknown; its mandate is a refactoring pass every wake, so a quiet wake is unusual; not confirmed (Dinis's account)",
+   "recommend": "conductor@web-summit.dinis: check its 00:40 to 09:40 wakes",
+   "raised": "open fifteen runs; part of A-21"
+  },
+  {
+   "id": "A-2026-11-06-15",
+   "agent": "dashboard@web-summit.dinis",
+   "owner": "dinis",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.dinis"
+   ],
+   "status": "closed",
+   "opened": "2026-11-06T12:15Z",
+   "runs_open": 10,
+   "seen": "no commit since 07:11 on 6 November, about 58 hours",
+   "likely_cause": "as on 5 November (A-01): probably idle with no cockpit answers to apply; not confirmed",
+   "recommend": "conductor@web-summit.dinis: have it log every run (WS-160), so its quiet hours show and this stops reopening",
+   "raised": "open eight runs; part of A-21",
+   "closed": "2026-11-08T22:15Z",
+   "cause": "recovered: dashboard@web-summit.dinis committed at 20:08 on 8 November"
+  },
+  {
+   "id": "A-2026-11-06-16",
+   "agent": "dev@web-summit.angelo",
+   "owner": "angelo",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.angelo"
+   ],
+   "status": "closed",
+   "opened": "2026-11-06T12:15Z",
+   "runs_open": 1,
+   "seen": "no commit since 08:38; every two hours at :35, so the 10:35 slot passed",
+   "likely_cause": "late by one slot",
+   "recommend": "none yet; re-checked at 17:15",
+   "closed": "2026-11-06T17:15Z",
+   "cause": "recovered: 8 commits under its old web-summit name, last 16:36 (only its row in people/angelo/agents.json was renamed)"
+  },
+  {
+   "id": "A-2026-11-06-17",
+   "agent": "procurement@web-summit.silvio",
+   "owner": "silvio",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.silvio"
+   ],
+   "status": "closed",
+   "opened": "2026-11-06T17:15Z",
+   "runs_open": 2,
+   "seen": "its dashboard runs at 07:30, 12:30 and 17:30; last commit 07:41, so 12:30 and 17:30 passed",
+   "likely_cause": "stopped, or dashboard runs with nothing new; not confirmed (Silvio's account)",
+   "recommend": "conductor@web-summit.silvio: check its 12:30 and 17:30 runs",
+   "raised": "open two runs: raised",
+   "closed": "2026-11-07T07:15Z",
+   "cause": "recovered: committed at 04:31 on 7 November"
+  },
+  {
+   "id": "A-2026-11-06-18",
+   "agent": "Angelo's writer runner (runner.writer, PrompTugal style)",
+   "owner": "angelo",
+   "to": [
+    "conductor@web-summit.jose",
+    "desk.conductor (Angelo's, PrompTugal style)"
+   ],
+   "status": "closed",
+   "opened": "2026-11-06T22:15Z",
+   "runs_open": 2,
+   "seen": "first commit at 23:17 on 6 November, then none at 01:05, 03:05 or 05:05 (every two hours at :05)",
+   "likely_cause": "started, then quiet: it may commit only when it has something new; not confirmed",
+   "recommend": "Angelo's conductor: say whether it has started, and under which name it commits",
+   "raised": "open two runs (reopened at review: it had been closed on its first commit)",
+   "closed": "2026-11-07T12:15Z",
+   "cause": "its work shows under the writer's name: 7 commits by Angelo's writer agent this morning; the runner name itself has no commit since 23:17"
+  },
+  {
+   "id": "A-2026-11-07-19",
+   "agent": "Angelo's dashboard agent (PrompTugal style)",
+   "owner": "angelo",
+   "to": [
+    "conductor@web-summit.jose",
+    "Angelo's desk conductor"
+   ],
+   "status": "closed",
+   "opened": "2026-11-07T07:15Z",
+   "runs_open": 1,
+   "seen": "last commit 00:39 on 7 November; every three hours at :30, so 03:30 and 06:30 passed",
+   "likely_cause": "quiet night runs; not confirmed",
+   "recommend": "Angelo's conductor: check its 03:30 and 06:30 runs",
+   "closed": "2026-11-07T12:15Z",
+   "cause": "recovered: committed at 10:29"
+  },
+  {
+   "id": "A-2026-11-07-20",
+   "agent": "inbox@web-summit.silvio",
+   "owner": "silvio",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.silvio"
+   ],
+   "status": "closed",
+   "opened": "2026-11-07T12:15Z",
+   "runs_open": 1,
+   "seen": "last commit 04:20; mail check every two hours at :15, so 06:15, 08:15, 10:15 and 12:15 passed",
+   "likely_cause": "mail checks with nothing to commit, as before (A-12); not confirmed",
+   "recommend": "conductor@web-summit.silvio: have it log every run (WS-160) so its checks show",
+   "closed": "2026-11-07T17:15Z",
+   "cause": "recovered: committed at 17:12"
+  },
+  {
+   "id": "A-2026-11-07-21",
+   "agent": "Dinis's scheduled agents",
+   "owner": "dinis",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.dinis",
+    "dinis"
+   ],
+   "status": "open",
+   "opened": "2026-11-07T22:15Z",
+   "runs_open": 8,
+   "seen": "Dinis's conductor is active (last 15:20), and security.repos (16:19) and investors (10:57) commit; still quiet: dev (about 90 hours), the old security agent (54), journalist (50), sgit, pulse and project-manager (53), designer (50), xray (44), and dashboard, abp and mentor (about 21 hours, since 20:08 to 20:43 on 8 November)",
+   "likely_cause": "confirmed account-wide: an outage of about 27 hours in Dinis's account, by his conductor's own words",
+   "recommend": "Dinis: look at the scheduled tasks in his account (last run and status); conductor@web-summit.jose: raise it with Dinis at the next stand-up if it is not back by morning",
+   "raised": "open eight runs: raised"
+  },
+  {
+   "id": "A-2026-11-08-22",
+   "agent": "Angelo's CRM agent (PrompTugal style)",
+   "owner": "angelo",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.angelo"
+   ],
+   "status": "closed",
+   "opened": "2026-11-08T07:15Z",
+   "runs_open": 2,
+   "seen": "his dashboard (12:02) and writer runner (12:06) committed again; the CRM agent has not since 00:52 (03:50, 06:50 and 09:50 passed)",
+   "likely_cause": "quiet night runs with nothing to commit; not account-wide; not confirmed",
+   "recommend": "Angelo's conductor: check the CRM agent's task fired",
+   "raised": "open two runs: raised",
+   "closed": "2026-11-08T17:15Z",
+   "cause": "recovered: Angelo's CRM agent committed again at 12:53"
+  },
+  {
+   "id": "A-2026-11-08-23",
+   "agent": "inbox@web-summit.silvio",
+   "owner": "silvio",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.silvio"
+   ],
+   "status": "open",
+   "opened": "2026-11-08T07:15Z",
+   "runs_open": 7,
+   "seen": "no commit since 18:16 on 7 November, about 47 hours",
+   "likely_cause": "night mail checks with nothing to commit, as with A-12 and A-20",
+   "recommend": "conductor@web-summit.silvio: have it log every run (WS-160)",
+   "raised": "open seven runs: raised"
+  },
+  {
+   "id": "A-2026-11-08-24",
+   "agent": "procurement@web-summit.silvio",
+   "owner": "silvio",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.silvio"
+   ],
+   "status": "open",
+   "opened": "2026-11-08T17:15Z",
+   "runs_open": 5,
+   "seen": "no commit since 17:41 on 7 November, about 48 hours",
+   "likely_cause": "stopped or idle; Silvio's other agents are working, so not account-wide; not confirmed",
+   "recommend": "conductor@web-summit.silvio: check its task",
+   "raised": "open five runs: raised"
+  }
+ ],
+ "could_not_check": [
+  "scheduled tasks in other people's accounts",
+  "the agents' run logs (public vault aym98gsm): not readable from this session yet (no sgit client)"
+ ]
+}

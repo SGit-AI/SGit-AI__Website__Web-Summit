@@ -15,7 +15,10 @@
 // and, from git history, when its agent last committed ("last seen"). Quiet for more than 48 hours before the newest
 // commit is flagged: a session key may be gone even when nobody marked it ended. Deterministic: no clock is read.
 import crypto from 'node:crypto'
-import { execFileSync } from 'node:child_process'
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { history } from './gitlog.mjs'
 import { qrcode } from './vendor/qrcode-generator-2.0.4.mjs'
 
 const b64url = buf => Buffer.from(buf).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
@@ -28,11 +31,21 @@ export const keyCode = b => `k1.${b64url(der(b.encrypt))}.${b64url(der(b.sign))}
 export const qrKeyText = (b) => JSON.stringify({ v: 1, kind: 'pki.sgit.ai/qr/key/v1', fp: b.signing_fingerprint, label: String(b.label || '').slice(0, 80), code: keyCode(b) })
 
 /** one QR code as an inline SVG: black on white (scanners need the contrast in both themes), 4-module quiet zone */
+// A QR code is the same for the same text, and making one for a 4096-bit key is ~25 ms (1.2 s for the 49 keys), so
+// each is kept in .cache/qr/ (gitignored, never published) by the sha256 of its text: a local build or gate makes only
+// the new ones; CI starts empty and makes them all, as before (dev@web-summit.dinis, 5 November)
+const QR_CACHE = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '.cache', 'qr')
 export function qrSvg(text, title) {
-    const q = qrcode(0, 'L'); q.addData(text, 'Byte'); q.make()
-    const n = q.getModuleCount(), m = 4, size = n + 2 * m
-    let d = ''
-    for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) if (q.isDark(y, x)) d += `M${x + m} ${y + m}h1v1h-1z`
+    const f = path.join(QR_CACHE, crypto.createHash('sha256').update(text).digest('hex') + '.txt')
+    let size, d
+    try { [size, d] = fs.readFileSync(f, 'utf8').split('\n'); size = +size } catch { }
+    if (!size) {
+        const q = qrcode(0, 'L'); q.addData(text, 'Byte'); q.make()
+        const n = q.getModuleCount(), m = 4
+        size = n + 2 * m; d = ''
+        for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) if (q.isDark(y, x)) d += `M${x + m} ${y + m}h1v1h-1z`
+        try { fs.mkdirSync(QR_CACHE, { recursive: true }); fs.writeFileSync(f, `${size}\n${d}`) } catch { }
+    }
     return `<svg class="qr" viewBox="0 0 ${size} ${size}" role="img" aria-label="${title.replace(/"/g, '&quot;')}" shape-rendering="crispEdges"><rect width="${size}" height="${size}" fill="#fff"/><path d="${d}" fill="#000"/></svg>`
 }
 
@@ -43,7 +56,7 @@ const personOfAgent = a => (a.match(/@web-summit\.([a-z0-9-]+)$/) || [])[1] || '
 /** the cards' data: one row per key, with its status, its agent, its person and when it was last seen in git */
 export function keyRows(ROOT, keyData) {
     let log = []
-    try { log = execFileSync('git', ['log', '--format=%ct%x09%s', 'HEAD'], { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 << 20 }).split('\n').filter(Boolean).map(l => { const [t, ...s] = l.split('\t'); return { t: +t, s: s.join('\t') } }) } catch {}
+    log = history(ROOT).map(c => ({ t: c.t / 1000, s: c.s }))
     const newest = log.length ? log[0].t : 0
     return keyData.keys.map(k => {
         const agent = agentOf(k), b = k.bundle

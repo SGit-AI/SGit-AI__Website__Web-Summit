@@ -2,6 +2,100 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 9 November 2026, 09:50 UTC (scheduled run)
+
+- **kms piece 1 passes** (vault.kms@'s second fix, a4de12da): 280 passed, 2 failed (the baseline's environment failures). All 27 new tests pass and no upstream test broke. Brought onto dev. **vault.kms@ may start piece 2,** the kms door v0, the large one.
+- `ucvg2pkv`: re-audit running at commit time; a follow-up only if it finds anything. Lane: only Jose's reply. No token. No passphrase variable.
+
+## 8 November 2026, 21:50 UTC (scheduled run)
+
+- **kms piece 1 re-tested** (vault.kms@'s fix, ada6d359): 279 passed, 3 failed: 2 environment, plus one of the patch's tests, `test_no_kms_key_leaves_the_hash_of_an_old_policy_alone`, whose own `old` document still lacks `files`. 26 of the 27 new tests pass. One more line for vault.kms@ to fix. Piece 2 still held. This time the run was allowed in Auto mode.
+- `ucvg2pkv`: re-audit running at commit time; a follow-up only if it finds anything. Lane: only Jose's reply. No token. No passphrase variable.
+
+## 8 November 2026, 10:30 UTC (prompted by Angelo: "wake up", after switching out of Auto mode)
+
+- **kms piece 1 tested at last** (Angelo approved each run): baseline 253 passed, 2 failed (environment); with the patch 276 passed, 6 failed, the same 2 plus **4 of the patch's 27 new tests**. One cause: the test documents lack the required `files` section, a fixture error, not one in the policy code. Results and the fix are in the piece's README. **vault.kms@:** fix the fixtures; I re-run both suites. Piece 2 still held.
+- **For Angelo:** Auto mode can come back on now. The next test runs (piece 1's fix, then each piece) need the same mode switch.
+
+## 8 November 2026, 09:50 UTC (scheduled run)
+
+- **kms piece 1's tests: still blocked.** pytest was missing and is now installed. Running SHarness's suite is still refused by auto mode ("code from external"), the baseline included, even as a plain `python3 -m pytest …` command. So the permission rule Angelo was given the syntax for is not in this session yet. Piece 2 stays held.
+- **The new protocol lines,** estimates (a7da7bd4) and the lane check (42198055): from this run. My estimates file is `people/angelo/estimates/`, and this run's commit stays inside my lane.
+- `ucvg2pkv`: clean (read key only; vault-audit.mjs agrees). Lane: only Jose's reply. No token. No passphrase variable.
+
+## 7 November 2026, 22:10 UTC (prompted by Angelo: "Wake up")
+
+- **c604384a** ("Ok, go with A"): I run the SHarness tests for vault.kms@'s pieces. Piece 1 applies cleanly to `05e5290` and compiles, **but auto mode refused running pytest in my session too** ("code from external"), the baseline included. It refuses without asking, so no prompt reached Angelo. **Needed:** Angelo allows `python3 -m pytest` in this session. Piece 2 stays held.
+- Otherwise nothing new. Lane: only Jose's reply. No token. No passphrase variable yet.
+
+## 7 November 2026, 21:50 UTC (scheduled run)
+
+- **vault.kms@'s piece 1 (per-agent policy rows) reviewed and brought onto dev, marked untested.** The code reads clean: no secret, two files, strict checks. **Its tests have never run:** auto mode refuses cloning and running SHarness's code in vault.kms@'s session and in mine ("code from external"), and neither of us worked around it. Piece 2 is held until a test run is allowed: either Angelo adds a permission for it, or Dinis's side runs it at the handover.
+- **Angelo's decisions noted:** `ucvg2pkv`'s key stays with me, with no handover to Dinis (5d0945d8). WS-181 approved "all as recommended" (daca6e6c): I create both vaults when my own token comes. Environments: I move once, with my token and `SG_SEND_PASSPHRASE` then (6819e6d6). "Keep going while there is work" (016fc846).
+- `ucvg2pkv`: clean. Lane: only Jose's reply. Own token: not yet.
+
+## 7 November 2026, 12:15 UTC (prompted by Angelo: "Check your brief")
+
+- **The four hardening steps** (130fe1c4, Angelo's go):
+  1. **Token out of the vault clones: done** (10:35).
+  2. **Credentials through pipes, never files: done.** My lane credentials open into memory and pass to tools over a pipe. My only credentials file holds my public fingerprint and nothing secret.
+  3. **A passphrase on `~/.sg-send/keys`: blocked on an environment variable only Angelo can add**, `SG_SEND_PASSPHRASE`, in my agent's environment. It reaches this session at its next restart, and then I encrypt my keys in place and pass it to my tools.
+  4. **Never run `show-key` or `vault info` where it prints a key: kept,** and written into the changeset plan's review rules.
+- **The changeset's plan** for vault.kms@ (130fe1c4): `people/angelo/proposals/kms/changeset/PLAN.md`. Nine pieces in order, each with the files it touches in SHarness-AI__CLI (at 05e5290) and sgit (0.27.0) and the tests that prove it, plus the worker's rules and what I check in each review.
+- **WS-181 pins** (592d1096, "Agreed on C"): `vaults.md` now says zones by default, and an exact pin only by the person's choice each time, expiring, team-only, never public, never at a home or hotel.
+
+## 7 November 2026, 10:35 UTC (from the conductor, 66b37f04)
+
+- **token: not set in my environment** (checked, printed nothing). **Two copies on disk removed:** the `token` files sgit had kept in two of my vault clones (`.sg_vault/local/`). The inbox clone had none, the clones' `config.json` holds no token, and no other token file is in my home folder. This also answers open question 2 of 10:20.
+- The `unset` line in `~/.bashrc` and `~/.profile` was not added: auto mode refused it as persistence, and it is needed only when the token is set, which it is not.
+- Effect: those two clones cannot push until I have my own token, which the token rule asks anyway.
+
+## 7 November 2026, 10:20 UTC (prompted by Angelo: "Wake up")
+
+- **Asked:** a wake. **Done:** pulled dev, checked work for me, my token, my lane. Nothing new since 09:57. My lane holds only Jose's reply (verified 6 November). `ucvg2pkv` was audited clean at 09:50. No SG/Send token in my environment, and none issued to me yet.
+- **Open questions for Angelo, each with my recommendation:**
+  1. **The sealed QR** of `ucvg2pkv`'s vault key, for Dinis by 11 November, when it expires. *Hand it over this weekend.* Until the registry opens it, the only copy is in my session.
+  2. **Angelo's token in my three vault clones** (`.sg_vault/local/`): *go to remove them* (tier 3).
+  3. **sharness.kms** (`proposals/kms/spec-kms.md`): *after the summit, and the four small steps now.*
+  4. **WS-181's vaults** (`proposals/WS-181/vaults.md`): *go* on the split; readers of the private vault: *the whole team*; *delete it after the summit*.
+  5. **The live map's public view** (`proposals/live-map/`): *counted by day and 24 hours behind*; minutes in the team view only.
+  6. **My own SG/Send token:** still with Dinis (asked 5 November). Nothing for Angelo unless he wants to chase it.
+
+## 7 November 2026, 09:50 UTC (scheduled run)
+
+- **c7d26a01, my part of the two designs due 18:00:** the live map's "data and who may see it" (`people/angelo/proposals/live-map/data-and-who-may-see-it.md`): public-record events only, sealed file names reduced to a kind, never content, secrets or locations, and a public view by day with a lag. And the venues on PrompTugal.news (a section added to `WS-181/vaults.md`): team locations only in the team's view; a public place only by the person's own signed opt-in, kept in a replace-only file with an expiry, **never in a vault**, because a vault keeps the history.
+- **4c285114, sharness.kms:** research under way; the one-page analysis comes in its own commit.
+- **The token is gone from my environment** (option A, one environment per agent). Good, as I was not using it. **Left over:** sgit kept copies of Angelo's token inside my three vault clones (`.sg_vault/local/`). Removing them is tier 3 (tokens). I recommend removing them, at Angelo's go.
+- `ucvg2pkv`: clean. My lane: only Jose's reply, already verified. My own token: not issued.
+
+## 6 November 2026, 21:50 UTC (scheduled run): now vault@PrompTugal.angelo
+
+- **Renamed** (90299d08): I commit as vault@PrompTugal.angelo from this run. My key on the keys page is still labelled with the old name.
+- **WS-120 is closed both ways.** Jose's agent's reply is on my lane. Its signature is valid against vault-jose on the keys page (pushed by Jose's account), and it is recorded on WS-120. I read it in place with my lane keys and my private key, without draining, because draining pushes and I have no token of my own.
+- **WS-181** (d7e29b42): my part of the design, the two vaults and the sync, is in `people/angelo/proposals/WS-181/vaults.md`, for Angelo's go. Nothing is built.
+- **The new protocol line** (ce069603, direct changes to other people's files after five steps against clashes): noted. Nothing of mine needs it this run.
+- `ucvg2pkv`: clean (read key only; `vault-audit.mjs` agrees). My own SG/Send token: still not issued.
+
+## 6 November 2026, 09:50 UTC (scheduled run)
+
+- `ucvg2pkv`: clean (re-audited with the read key; `vault-audit.mjs` in default mode agrees). My lane: empty. Jose's reply (WS-120): not yet.
+- My own SG/Send token: not issued yet (none in `data/sealed/agents/`), so no vault pushes and no drain.
+- Token ledger on (WS-148, af94b5f9): my file in `people/angelo/ledger/`, one line per run.
+
+## 5 November 2026, 21:50 UTC (scheduled run)
+
+- **WS-120 lane test.** Angelo to Jose: received and verified by vault@web-summit.jose (5c6ddde3). Jose to Angelo: not sent. Jose's vault agent waits for a task file from conductor@web-summit.jose under Jose's one-door rule. My lane is empty.
+- **One SG/Send access token per agent** (vault guide step 1, Dinis's rule of 5 November). The only token in this session is Angelo's, so from this run I push no vault with it. That includes draining my lane, since `feedback_drain.py` pushes into the inbox vault. Appends need no token, and audits only read. **I need my own token:** issued by Dinis, sealed by the conductor to vault-angelo (sha256:c4e53e483cf18e9e) in `data/sealed/agents/vault@web-summit.angelo/`.
+- **Audit of `ucvg2pkv`:** running at commit time (a separate sub-agent, read key only); a follow-up only if it finds anything.
+
+## 5 November 2026, 09:50 UTC (scheduled run, with the conductor's 8401935e)
+
+- **The feedback lane to conductor@web-summit.angelo is live** (option A, in Angelo's words "Ok with A and E", relayed in 8401935e; pushed from riskmandate-angelo). It is inbox vault `j7saxp0v` on dev.send.sgraph.ai, with one append lane. Its credentials (vault key, enum key, append token) are sealed to conductor-angelo (sha256:6a2ec8ebfdbece42) and signed by this agent, in `data/inbox/lane-conductor-angelo.json`. The lane is in `assets/feedback.json` lanes[]: the append token, which can only write, and the conductor's public key. This agent kept no copy: the tool deletes its clone.
+- **How it was made:** `admin/tools/lane_for.py`, run from a copy with three lines changed (the operator `ME`, its credentials file, and the provenance wording), because the tool names dev@web-summit.dinis as its only operator. Suggestion for its owner: take `ME` and `MY_CREDS` from the environment.
+- **Audited before commit** by a separate security sub-agent: one lane added, the other six byte-identical, no secret outside the sealed envelope, the access token in neither file, the gate OK.
+- **For the conductor:** open `data/inbox/lane-conductor-angelo.json` with your key, write the creds file, clone the vault and drain with `admin/tools/feedback_drain.py` (the steps are in the file's `how`). Until you drain it, messages wait on the lane.
+- **Logging (WS-160):** from this run.
+
 ## 4 November 2026, 21:50 UTC (scheduled run)
 
 - **Audit of `ucvg2pkv`: clean.** A separate security sub-agent read it with the published read key alone. There are no new commits since 3 November (three, the first empty). Every file at every commit was read, and the access token was compared in-process.

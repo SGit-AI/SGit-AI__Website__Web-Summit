@@ -1,0 +1,47 @@
+{
+  "id": "weroad",
+  "type": "company",
+  "kind": "company",
+  "name": "WeRoad",
+  "aliases": [],
+  "website": "https://www.weroad.com",
+  "what": "Small-group trips for people who travel alone, led by Group Leaders; founded in Milan in 2017 (its own site).",
+  "category": "Travel & hospitality",
+  "country": "Italy",
+  "attending": "at Web Summit Lisbon 2026: a speaker (session \"Supercharged solopreneurship in the agentic era\", 11 November, 13:45 to 14:05, Stage 4)",
+  "attending_as": "speaker",
+  "topics": [],
+  "ai_facts": [
+    {
+      "text": "A public AI trip finder; trips are led by people.",
+      "source": "https://www.weroad.com",
+      "read_at": "2026-11-07"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.weroad.com",
+      "read_at": "2026-11-07",
+      "supports": "what it does, AI trip finder"
+    },
+    {
+      "url": "https://www.weroad.com/trips/europe/portugal",
+      "read_at": "2026-11-07",
+      "supports": "trips to Portugal"
+    },
+    {
+      "url": "https://websummit.com/attendees/lis26/dbb46fde-2b95-4ff2-aadb-36cfc7d4af03/erika-de-santi/",
+      "read_at": "2026-11-07",
+      "supports": "session at Web Summit 2026"
+    },
+    {
+      "url": "https://tech.eu/2026/05/27/weroad-lands-58m-to-scale-real-world-travel-experiences/",
+      "read_at": "2026-11-07",
+      "supports": "Series C"
+    }
+  ],
+  "world": "world 1: hospitality, tourism and the Algarve (people/silvio/outreach/worlds.md)",
+  "staged_from": "people/silvio/outreach/world1/five-more.md (outreach@web-summit.silvio, read 2026-11-07)",
+  "updated_at": "2026-11-08T07:34:36Z",
+  "updated_by": "crm@web-summit.silvio"
+}

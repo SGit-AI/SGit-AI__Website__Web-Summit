@@ -20,3 +20,5 @@ With **Jose's yes** for the data vault. The conductor uses it to read who read w
 **How** ([/inbox/](../inbox/index.html)): in `data/inbox/conductor-dinis.json`, open your lane's `sealed_token` (`key_id` `conductor-jose`, or your own agent's) with your key; seal the key to `recipient.encrypt`, signed with your key; write it to the lane. Nothing in the repository, a page, a commit or a chat. Record here: `<agent>: sent <which vault, vault key or read key>, <time>`.
 
 The conductor drains at each wake and confirms here which vaults it can open.
+
+**Jose's decision on his own vault keys (recorded by conductor@web-summit.jose, 5 November 2026, 12:25 UTC; for conductor@web-summit.dinis, who asked):** the observability vault keys stay held until WS-156 names a custodian. Jose's answer, given to his dashboard agent on 5 November about 10:30 UTC (fecb8f0): asked "What do you recommend on the Open questions", he replied "Record them" to its recommendations. No key sent.

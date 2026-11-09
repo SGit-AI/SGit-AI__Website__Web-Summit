@@ -33,3 +33,133 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - Portugal: Técnico (ULisboa) at stand E272, Pavilion 2, 10 to 12 November, with robots, a VR demo and six spin-offs (tecnico.ulisboa.pt, 29 Oct).
 - Announcements: ApexBrasil brings about 200 Brazilian companies, with a 324 m2 pavilion in the MEO Arena (executivedigest.sapo.pt, 4 Nov).
 - Nothing new since the earlier runs on websummit.com/blog or portugalstartupnews.com; no exact quotes added yet to the 21 earlier captures.
+
+## Thu 5 Nov 2026, 07:30 UTC run (Portugal, Europe)
+
+- 2 captures went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Portugal: ULisboa at Web Summit for the second year, stand in Pavilion 1, 10 to 12 November, and UniVerse with nine Portuguese universities on 10 November at the Portugal Pavilion Congress Centre (ulisboa.pt, 19 Oct).
+- Europe: European Tech Champions, Italy and Portugal, on 11 November at Unicorn Stage, Beato, by Unicorn Factory Lisboa, the Embassy of Italy and the Italian Trade Agency (portugalglobal.pt).
+- Could not: coe.int refused automated reads (a Council of Europe media advisory on Web Summit 2026); nothing new on websummit.com/blog or portugalstartupnews.com since 3 November.
+
+## Thu 5 Nov 2026, 11:30 UTC run (the summit)
+
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- The summit: the 2026 speakers page says 800 speakers; its first page leads with Chinese technology and robotics companies (AgiBot, Unitree, Galbot, Pony.ai, Xiaomi, Tencent, MiniMax), and lists a robot, Galbot's G1, as a speaker (websummit.com/speakers/).
+- Not captured: news since 07:30 repeats stories already in the vault (the Brazilian delegation, Metro's extra service); robotics previews by PanAsiaBiz and Portugal.fr only in so far as the speakers page confirms them.
+
+## Thu 5 Nov 2026, 19:30 UTC run (the summit, Portugal)
+
+- 2 captures went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- The summit: Carris runs a dedicated Shuttle Web Summit between Praça do Comércio (Sul e Sueste) and Oriente, 9 to 12 November, and says the transport pass is also sold at the Web Summit Welcome Center, not only the airport (executivedigest.sapo.pt, 5 Nov). Differs from Metro's page; flagged for the curator.
+- Portugal: an EY report puts Web Summit's contribution at about 250 million euros a year, nearly 2.5 billion over ten editions, with Portuguese startups up from 2,193 in 2016 to 5,091 in 2025 (executivedigest.sapo.pt, 5 Nov; the EY report itself not read).
+- Not captured: the event's future in Lisbon after 2028 and remarks on protests (observador.pt, expresso.pt), outside the positive line; Público's count of 300 Brazilian startups, which differs from ApexBrasil's 200.
+
+## Fri 6 Nov 2026, 07:30 UTC run (Portugal)
+
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Portugal: Lisbon healthtech Octo Health launches its health tracking platform in Portugal and the US, with testing for 110+ biomarkers, after a 2.7 million euro pre-seed led by 3xP Global (portugalstartupnews.com, 5 Nov).
+- Nothing new overnight on websummit.com/blog, Metro de Lisboa, Executive Digest or the Commission's digital strategy news.
+
+## Fri 6 Nov 2026, 11:30 UTC run (Portugal)
+
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Portugal: startup AgroGrINTech extracts bromelain from pineapple waste for fish feed at a pilot unit in Maia, about 200 kg a year, in the PRR-funded Pep4Fish project (portugalglobal.pt, 4 Nov).
+- Nothing new since 07:30 on websummit.com/blog, Portugal Startup News, Metro de Lisboa or Executive Digest about the summit.
+
+## Fri 6 Nov 2026, 15:30 UTC run
+
+- Read people/vicky/decisions.md first (all its commits pushed from riskmandate-vicky as conductor@web-summit.vicky, so the guard holds): applied P1 (no HOLD.md), P2 (re-read prompts/researcher.md; it matches my memory), P3 (this status line), P10 and P17 (noted, for a compaction or a replacement). Standing answers noted, including 9 for how I write sources.
+- 0 captures went into vault 41j3e9s9: nothing new in the beats since 11:30 ([Executive Digest, "Web Summit: Carris reforça transporte"](https://executivedigest.sapo.pt/web-summit-carris-reforca-transporte-com-shuttle-e-passe-conjunto-com-metro-e-comboios/) and the Brazilian delegation are already in the vault).
+- state: idle
+
+## Fri 6 Nov 2026, 19:30 UTC run (the summit)
+
+- decisions.md read first: no HOLD.md; standing answers 7 and 10 changed since 15:30 (both pushed from riskmandate-vicky), nothing new for the researcher; prompts file re-read, no difference.
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- The summit: roads around the venue close from 19:00 on 8 November to 23:00 on 12 November, residents' garages kept open; a temporary Carris terminal by Gare do Oriente, and drop-off areas on Rua do Caribe and Alameda dos Oceanos ([Junta de Freguesia do Parque das Nações, "Web Summit – Condicionamentos de trânsito entre 9 e 12 de novembro"](https://www.jf-parquedasnacoes.pt/autarquia/noticias/web-summit-condicionamentos-de-transito-entre-9-e-12-de-novembro)).
+- state: ok; done: 1 capture (road closures); next: 07:30 run; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 07:30 UTC run
+
+- decisions.md read first (new entries pushed from riskmandate-vicky): no HOLD.md; applied P22 (I don't use Gmail) and P27 (no prompt text in reports; my prompts file holds no private names); P17's note now goes in people/vicky/handover/; prompts file re-read, no difference. 0 captures went into vault 41j3e9s9; a Coimbra startup story could not be found at its source ([Notícias de Coimbra](https://www.noticiasdecoimbra.pt/)).
+- state: idle
+
+## Sat 7 Nov 2026, 11:30 UTC run
+
+- decisions.md read first (all new commits pass the reworded guard; nothing new for me; no HOLD.md); 0 captures went into vault 41j3e9s9 ([ULisboa, "ULisboa na Web Summit 2026"](https://www.ulisboa.pt/evento/ulisboa-na-web-summit-2026) repeats what is captured). state: idle; ask: P1 to P3 were taken out of decisions.md as "carried in the agents' own prompts", but mine does not carry them yet; may I add them to my scheduled task's prompt and prompts file? Recommended: yes, word for word as they stood.
+
+## Sat 7 Nov 2026, 15:30 UTC run
+
+- decisions.md read first (new commits pass the guard; no HOLD.md): applied SA16, P1 to P3 word for word in prompts/researcher.md and in my scheduled task's prompt (changed at 15:36 UTC); 0 captures went into vault 41j3e9s9 ([Executive Digest](https://executivedigest.sapo.pt/) and the rest: protests and repeats only). state: idle
+
+## Sat 7 Nov 2026, 19:30 UTC run
+
+- state: idle
+
+## Sun 8 Nov 2026, 05:15 UTC run
+
+- decisions.md read first (new commits pass the guard; no HOLD.md): applied SCHED-WS, my task (trig_01KV2FctiUnh6ratBLVcsfSj) fires at 05:15, 10:15, 14:15, 18:15 UTC and matches; P2: my prompts file had the new times from the conductor and the file wins over my memory (07:30 to 19:30), so I brought its older cron line into line. 0 captures went into vault 41j3e9s9 (overnight news is protests only, [RTP](https://www.rtp.pt/)). state: idle
+
+## Sun 8 Nov 2026, 10:15 UTC run (the summit, participants)
+
+- decisions.md read first (new commits pass the guard; no HOLD.md): applied SA19C, the participants passage is in my scheduled task's prompt (changed 10:17 UTC) and in prompts/researcher.md; SA19B is not for me.
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Participants: 20 speakers from the first view of the speakers page, by name, role and organisation, grouped by theme (robotics, AI models, mobility and devices, infrastructure and security, investment and policy); the AgiBot A3 robot is now listed, which the 5 November capture could not confirm ([Web Summit, "Meet Web Summit's 2026 speakers"](https://websummit.com/speakers/)).
+- state: ok; done: SA19C applied, 1 participants capture; next: what each organisation does, and the partners and startup pages, from 14:15; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 14:15 UTC run (participants)
+
+- decisions.md read first (standing answer 22 is new, not for me; no HOLD.md); prompts file re-read, no difference.
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Participants: 100 startups from page 1 of 26 of Web Summit's featured startups, under the page's own industry tags (30 in AI and machine learning, 11 fintech, 11 healthtech, 6 hardware and robotics, and more) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)). The partners page lists past speakers only, so nothing from it.
+- state: partial; done: 1 participants capture; next: pages 2 to 26 and what the speakers' organisations do, at the next runs; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 18:15 UTC run (participants)
+
+- decisions.md read first (seven new commits, all on company pages, the reviewer and the checker, none for me; no HOLD.md); prompts file re-read, no difference.
+- 1 capture revised in vault 41j3e9s9 (0 new files): the 100 featured startups now carry country, programme stage and their own one-line pitch, quoted; four are Portuguese (ChatPlace, DIG-IN, iTRTech Group, sheerME) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)). The first security review failed on a web address inside a pitch; addresses are now cut and marked, and the second review passed.
+- Could not: pages 2 to 26 load through Web Summit's API, not the page, so only page 1's 100 are captured.
+- state: partial; done: startups capture enriched and audited; next: what the speakers' organisations do; ask: may I read pages 2 to 26 through the API the page itself calls (graphql.cilabs.com, public, no login)? Recommended: yes, read-only, same fields; run: scheduled
+
+## Sun 8 Nov 2026, about 19:00 UTC (one-off, at Vicky's word)
+
+- Correction to my 18:15 report: the featured startups page does not load pages 2 to 26 from graphql.cilabs.com (that is its shop and checkout service); its own configuration says the list comes from Algolia, with a setting of 20 items free without login ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)). The page itself renders only page 1, whatever the page parameter.
+- Vicky's permission covered graphql.cilabs.com only, so I read nothing from Algolia and did not probe graphql.cilabs.com for a list it does not serve; 0 captures went into vault 41j3e9s9. Coverage stays 100 of the startups (page 1 of 26), 20 speakers; nothing new for the curator from this run.
+- state: blocked; done: checked the page's real data source, corrected my report; next: the regular runs, unchanged; ask: may I read pages 2 to 26 from the Algolia search the page uses, with the page's own public search key, read-only, the same five company fields, slowly? Recommended: only if Vicky is content that the "20 free without login" setting is not an access limit we would be going around; otherwise leave it at page 1; run: prompted
+
+## Sun 8 Nov 2026, about 19:25 UTC (Vicky's word: pages 2 to 26 left)
+
+- Pages 2 to 26 left for now and no Algolia queries, at Vicky's word; the gap is recorded in the capture itself and in my prompts file (standing rules 5 and 6). 0 new captures; 1 capture's note revised in vault 41j3e9s9, audited and pushed.
+- For the curator: captures/2026-11-08-websummit-featured-startups-p1.md holds 100 featured startups (page 1 of 26, all GROWTH stage) by industry, with country, stage and each company's own pitch marked as a claim, not a checked fact; four are Portuguese. With captures/2026-11-08-websummit-speakers-by-theme.md (20 speakers by theme) it is ready for theme-led connection storylines (standing answer 19) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)).
+- state: ok; done: gap recorded, curator pointed at the two participant captures; next: regular runs from 05:15, public pages only; ask: none; run: prompted
+
+## Mon 9 Nov 2026, 05:15 UTC run (Portugal, participants)
+
+- decisions.md read first (five new commits, none for me; no HOLD.md); prompts file re-read, no difference.
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Portugal: the 78 startups Startup Portugal selected for Road 2 Web Summit 2026, by sector, each with its city and the article's one-line description (descriptions marked as claims); they pitch at the summit for the Most Promising Startup award, 15,000 euros ([Portugal Startup News, "Full list of 78 startups selected by Startup Portugal for Road 2 Web Summit 2026"](https://portugalstartupnews.com/2026/11/08/full-list-of-78-startups-selected-by-startup-portugal-for-road-2-web-summit-2026/)).
+- For the curator: with the 100 featured startups and the 20 speakers of 8 November, this gives a Portuguese cohort for connection stories; DIG-IN and RipeNew appear in two captures each. Opening previews (Renascença, Observador) not captured: no new facts.
+- state: ok; done: 1 capture (Road 2 Web Summit cohort); next: 10:15 run, opening day; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 10:15 UTC run (announcements, Portugal, participants)
+
+- decisions.md read first (one new commit, brief 8 clean-up, nothing for me; no HOLD.md); prompts file re-read, no difference. 2 captures went into vault 41j3e9s9, audited and pushed (the IBM file failed its first review for an organisation written like a web address, fixed, passed); sgit status in sync.
+- Announcements and participants: IBM's Sports Tech Startup Challenge ends at the summit, a showcase on 10 November and an invitation-only Prize Challenge on 11 November with six finalists (LingoPal, Fanory, Neuron Systems, LivXP, PressBox, TwelveLabs) and judges from IBM, Ferrari, FIFA and CNN ([IBM Newsroom, "IBM Sports Tech Startup Challenge culminates at Web Summit Lisbon 2026"](https://newsroom.ibm.com/blog-ibm-sports-tech-startup-challenge-culminates-at-web-summit-lisbon-2026)).
+- Portugal: Go Coimbra, with IPN and the University of Coimbra, brings 12 startups in digital health, AI, robotics, sustainability and aerospace, all four days ([Diário de Coimbra, "Go Coimbra apresenta 12 startups na Web Summit em Lisboa"](https://www.diariocoimbra.pt/2026/11/09/go-coimbra-apresenta-12-startups-na-web-summit-em-lisboa/)). Opening-day coverage of the Chinese delegation and robot speakers not captured again: already in the 8 November speakers capture.
+- state: ok; done: 2 captures; next: 14:15 run; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 14:15 UTC run (SA28, gaps, Portugal)
+
+- decisions.md read first (no HOLD.md): applied SA28; my scheduled task's prompt now holds the researcher's part (changed 14:17 UTC) and so does prompts/researcher.md. Read the agenda (newsroom dev, desks/programme/agenda.json), the curator's latest map (desks/curator/2026-11-09-1045.json); programme's report has no "agenda changes:" line yet.
+- 1 capture went into vault 41j3e9s9, audited and pushed: the Portugal Stand is in Pavilion 1, E145, at the entrance, with AICEP's teams there all four days ([AICEP Portugal Global, "AICEP na Web Summit 2026 | Portugal liga-se ao mundo"](https://www.portugalglobal.pt/pt/noticias/2026/novembro/aicep-na-web-summit-2026-portugal-liga-se-ao-mundo/)).
+- Gaps filled from captures already in the vault: what Braining, UpSpeech and Twin Factory do (2026-11-09-road-2-web-summit-78-startups.md). Humanos's country: the Road 2 list says Madeira, Web Summit's featured startups page says United States; both captured, not resolved.
+- Gaps still open: IBM showcase time and stage (Web Summit's IBM page gives only the days, Tue 10 and Wed 11; the schedule loads in the browser); Go Coimbra's 12 startups and stand (no public page names them; the August article was the call for applications); Road 2 pitch times; EU funding calls; other delegations.
+- state: ok; done: SA28 applied, 1 capture, 3 gaps answered from existing captures; next: 18:15 run, the open gaps; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 18:15 UTC run (SA28 gaps, from the agenda's session pages)
+
+- decisions.md read first (nothing new for me; no HOLD.md); prompts file re-read, no difference; read the agenda (generated 05:10), the curator's map desks/curator/2026-11-09-1455.json; programme's report has no "agenda changes:" line yet. 7 captures went into vault 41j3e9s9, audited and pushed.
+- Gaps filled ([Web Summit session pages](https://websummit.com/schedule/), one capture each, 2026-11-09-session-*.md): Spotlight press conference, Tue 10 Nov 12:30, Stage 2, Web Summit's CEO with Paraíba's science secretary, Sebrae Paraíba and FAPESQ-PB; the CEO's press conference, Wed 11 Nov 11:00, Stage 2. Both are "Media event only", and neither page says what will be covered.
+- Also captured for Portugal: Startup Portugal's masterclass, Tue 10 Nov 12:00, Masterclass 1; Discord's Lisbon expansion with Lisbon's mayor and Unicorn Factory Lisboa, Wed 11 Nov 10:30; Unicorn Factory Lisboa, Hub71, Instituto Caldeira and Q Branch's scaleup programme, Thu 12 Nov 11:00; the Road 2 Web Summit winner, Thu 12 Nov 12:30 (part of the Road 2 gap); a founders in Portugal meetup, Thu 12 Nov 13:30.
+- Still open: the Portugal Stand's own programme and exhibitors (no AICEP, Startup Portugal or Unicorn Factory page lists them); the IBM showcase time and stage; Go Coimbra's startups; Road 2 pitch times before the final; EU funding calls; other delegations; Humanos's country (two sources disagree).
+- state: ok; done: 7 captures, 2 priority gaps filled; next: 05:15 run; ask: none; run: scheduled

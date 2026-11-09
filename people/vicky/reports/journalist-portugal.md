@@ -1,0 +1,122 @@
+# journalist-portugal@web-summit.vicky: reports
+
+Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startups, funding, universities, government support, the Portuguese ecosystem): turns the curator's story candidates on that beat into drafts in desks/journalist-vicky/drafts/ of the newsroom repository, one story at a time when Vicky asks. One short line per piece of work.
+
+## Thu 5 Nov 2026, 20:40 UTC (set-up and S10)
+
+- Session key made and published as journalist-portugal-vicky in data/keys.json (signing sha256:f3c5113e46068c5c, encryption sha256:397766fec1bee839); pki-agent.mjs matched the sha256 pinned in admin/tools/seal.mjs.
+- Draft S10, "Lisbon's universities at Web Summit: two stands and a pitch day": desks/journalist-vicky/drafts/S10-lisbon-universities-at-web-summit.md in the newsroom repository, status draft, for newsroom@web-summit.dinis.
+- Sources, all read 5 Nov at their own addresses: ULisboa's announcement (19 Oct), Técnico's announcement (29 Oct, updated 3 Nov), Web Summit's venue essentials (the dates).
+- Not confirmed: ULisboa's own rankings and figures (Startup Portugal's 2025 ranking, the Dealroom numbers, the four unicorns), attributed to ULisboa and not checked; which startups pitch at UniVerse; the day and time of Arlindo Oliveira's panel; the quadruped's model ("Unitree G02" per Técnico); "first day of the event" read as 10 November, as ULisboa says.
+
+## Fri 6 Nov 2026, 09:50 UTC (WS-177: S3, S4, S7, S13, S20)
+
+- Newsroom copy now points at PrompTugal/PrompTugal__News__Website; all five drafts pushed to its dev through newsroom/tools/release.sh, For: newsroom@web-summit.dinis, following STYLE.md (435 to 518 words each).
+- S3, Road 2 Web Summit: Tek Notícias (14 Aug) and Startup Portugal's programme page, read 6 Nov. The curator's Startup Portugal link (/pt/programs/road-2-web-summit-pt/) was a 404; read at /pt/programs/road-2-web-summit/. Not confirmed: the 2026 class (only "up to 125"); the totals differ (Tek: over 1,200 since 2016; Startup Portugal: over 1,000).
+- S4 and S7 overlap on the three rounds (Granter, Intuitivo, Seamoretech). S4 covers them, from Portugal Startup News (3 Nov, 23 Oct, 2 Nov); the companies' figures are their own, via press statements not seen. None is confirmed at Web Summit.
+- S7, now the awards and the Algarve: Portugal Startup News (27 Oct, 1 Nov) and Técnico (RTBeamTech on its stand), read 6 Nov. Not confirmed: Algarve Evolution's targets and the Informa D&B study (not read); the report spells the startup both "knok" and "knock".
+- S13, the EY figures: Executive Digest with Lusa (5 Nov), read 6 Nov. EY's report itself not read; its method not checked. The press conference's remarks on protests left out as off the story.
+- S20, Octo Health: Jornal Económico (4 Nov) and Portugal Startup News (5 Nov), read 6 Nov. Not confirmed: attendance at Web Summit, the round's date, the company's privacy and compliance claims.
+
+## Fri 6 Nov 2026, 10:55 UTC (reviews; new name journalist-portugal@PrompTugal.vicky)
+
+- Renamed journalist-portugal@PrompTugal.vicky; the same key entered in the newsroom's board/keys.json as journalist-portugal-vicky-promptugal (signing sha256:f3c5113e46068c5c).
+- S20 fixed after its review (Fix first): "personally identifiable data", the S4 link now to the published from-pitch-to-new-markets.html, "both reports place it before the launch", the published format, organisation page links; plus the one line S21's review suggested (3xP Global's stated focus, from Portugal Startup News on Granter, read 6 Nov). 473 words. S21 (Hold, journalist-connections') left untouched.
+- Scheduled task created: daily at 08:00 and 16:00 UTC, Vicky's prompt word for word; prompts file updated.
+- The newsroom copy's remote had reverted to the old SGit-AI address after a container restart; the pull at 10:49 went through it (GitHub redirects), nothing was pushed there. Repointed to PrompTugal before any push.
+
+## Fri 6 Nov 2026, 11:00 UTC (S20 sources)
+
+- S20: source lines switched to [Publisher, "Title"](url), read D Month YYYY, per STYLE.md. S16 and S19 not touched: they are journalist-connections@PrompTugal.vicky's drafts; asked Vicky.
+
+## Fri 6 Nov 2026, 16:25 UTC (scheduled run)
+
+- Read decisions.md (all entries in conductor@web-summit.vicky commits); no people/vicky/HOLD.md (applied P1). Re-read prompts/journalist-portugal.md: it matches what I hold (applied P2). Applied P3 (status block below). Applied P5: my scheduled task moved to 08:06 and 16:06 UTC (trig_01R4SDnvm1qg6LrQVcmCRPaH, next 7 Nov 08:06). P9: ~/.abp/log/ does not exist (no); not shown "ABP (Agent Behaviour Policy) re-anchored" at my last start (no). P10: no compaction seen.
+- The newsroom remote had reverted to the old SGit-AI address again; reset to PrompTugal before any push; nothing pushed there (standing answer 3).
+- Draft S22, "From pineapple waste to fish feed: AgroGrINTech's pilot in Maia" (530 words), pushed For: journalist@PrompTugal.dinis. Sources read 6 Nov: AICEP Portugal Global (4 Nov), Pep4Fish's own report (19 Oct), AgroGrIN Tech's home page. Not confirmed: Web Summit attendance; the 1.2 million euros (Pep4Fish: investment in the unit; AICEP: the project's expected funding); capacity and fish-health claims are the company's and project's.
+- No other Portugal storyline without a draft: S23 (Connections) is journalist-connections' and already drafted; S21 is on Hold.
+- state: ok; done: S22 drafted and pushed, P1 P2 P3 P5 P9 applied; next: next scheduled run 7 Nov 08:06 UTC; ask: none; run: scheduled
+
+## Fri 6 Nov 2026, 17:15 UTC (S22 review)
+
+- S22 fixed after its review (Fix first): pineapple flour "allowing more of the fruit to be used"; Débora Campos's quote marked as cut and translated from Portuguese; the name's spellings corrected (AICEP: AgroGrINTech; Pep4Fish: both; the company: AgroGrIN Tech). 619 words.
+- The pairing with Seamoretech (S23, dropped): reviewer@PrompTugal.vicky had already folded it into S22 on dev at Vicky's word, so I kept that line as it was and added its limits (neither company confirmed at the summit; the pairing is a suggestion, no link claimed). My own version of the line clashed with it on rebase and was dropped.
+- The newsroom remote had reverted to the old SGit-AI address again; reset before pulling; nothing pushed there.
+- state: ok; done: S22 fixed and pushed; next: scheduled run 7 Nov 08:06 UTC; ask: none; run: prompted
+
+## Sat 7 Nov 2026, 08:10 UTC (scheduled run)
+
+- state: idle (applied P22, P27; run: scheduled)
+
+## Sat 7 Nov 2026, 16:15 UTC (scheduled run)
+
+- state: idle (applied SA16: P1 to P3 added to my prompts file and scheduled task; no fix-first reviews of mine; run: scheduled)
+
+## Sat 7 Nov 2026, 20:10 UTC (scheduled run)
+
+- state: idle (applied SCHED-7NOV (four rounds): 08:06, 12:06, 16:06, 20:06 UTC, cron 6 8,12,16,20; I missed the three-round version at the 16:06 run; run: scheduled)
+
+## Sun 8 Nov 2026, 05:55 UTC (scheduled run)
+
+- state: idle (applied SCHED-WS: writing 05:51, 10:51, 14:51, 18:51 trig_01R4SDnvm1qg6LrQVcmCRPaH and fix-only 06:56, 11:56, 15:56, 19:56 trig_015W8aURM2zEyH9Sd9gJvzNx, both match; applied REMOTE-WS in both tasks, trig_01R4SDnvm1qg6LrQVcmCRPaH and trig_015W8aURM2zEyH9Sd9gJvzNx; applied SA18, no duplicate task of mine; prompts file updated; run: scheduled)
+
+## Sun 8 Nov 2026, 10:55 UTC (scheduled run)
+
+- state: idle
+
+## Sun 8 Nov 2026, 15:00 UTC (scheduled run)
+
+- state: idle (applied SA22: writing :57 past 05, 10, 14, 18; fix-only :02 past 07, 12, 16, 20; both tasks match; prompts file updated)
+
+## Sun 8 Nov 2026, 18:10 UTC (company batch P1, at Vicky's word)
+
+- Batch P1: nine company files pushed status: in-review to desks/journalist-vicky/companies/ in the newsroom (just-travel, meo, mobile-brain, sheerme, ai-infinity, chatplace, dig-in, fido, fretefy), For: reviewer@PrompTugal.vicky; backlog rows set to "in review". None skipped.
+- Sources, all read 8 Nov: each company's Web Summit LIS26 appearance page (MEO: its session page and its CTO's attendee page) and its own site. Limits: Fretefy's site loads by script (title and description only); MEO's country is not stated on either source, so About does not give one; no growth startup's Web Summit page gives an exhibition day.
+- state: ok; done: P1 in review; next: scheduled writing run 18:57 UTC; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 18:45 UTC (batch P1, Fretefy fix, at Vicky's word)
+
+- Fretefy fixed after the reviewer's Fix first (company-batches-C1-P1.md) and pushed status: in-review, For: reviewer@PrompTugal.vicky; backlog row back to "in review". Re-read 8 Nov: Web Summit's page, fretefy.com.br as served (banner "Fretefy agora é Mobiis", link to mobiis.com.br) and mobiis.com.br (still refers to the "plataforma Fretefy"). My earlier note that the site loads by script was wrong: my text extraction dropped the page header, where the banner is. No contact details used.
+- state: ok; done: Fretefy back in review; next: scheduled writing run 18:57 UTC; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 19:05 UTC (scheduled run)
+
+- state: idle (applied HANDOFF-FIX: writing task step 5 now For: reviewer@PrompTugal.vicky with For: journalist@PrompTugal.dinis as a copy, prompts file updated, STYLE.md re-read, no draft re-pushed; confirming P17, SA13 and SA15, applied since 7 Nov: a debrief if replaced; my own reviews checked each run; a cover image on every new draft; run: scheduled)
+
+## Sun 8 Nov 2026, 20:05 UTC (fix-only run)
+
+- applied HANDOFF-FIX (revised): copy removed from the task (trig_01R4SDnvm1qg6LrQVcmCRPaH) and the prompts file; step 5 now ends ", For: reviewer@PrompTugal.vicky (the review hand-off)." No Fix first on my drafts. state: ok; done: HANDOFF-FIX revised; next: writing run 9 Nov 05:57 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 00:20 UTC (one-off overnight company batch, OVERNIGHT-9NOV)
+
+- Batch P2 and A2 rows 7 to 11: 13 company files pushed status: in-review For: reviewer@PrompTugal.vicky (hablla, itrecruiter, kpmg-portugal, naporta; ola-doutor, prohound, raras-health, vtex; prisma, runpod, sageox, testmu-ai, twilio); rows set "in review". Skipped: rapidoc (its site refuses automated reads, HTTP 406; only its Web Summit pitch). Sources read 9 Nov: each Web Summit appearance or session and attendee page, the event partners page, each company site. Notes: Prisma, SageOx and TestMu AI About rest on their own sites only, and give no location (their speakers' countries are not the company's); KPMG and VTEX carry Web Summit's "Portugal". Pending SA23 confirmation: SA23 is applied in every company file.
+- state: ok; done: 13 in review, 1 skipped; next: writing run 05:57 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 02:55 UTC (one-off overnight fix-only round, OVERNIGHT-9NOV)
+
+- iTRecruiter and Prisma revised after the reviewer's notes and pushed status: in-review, For: reviewer@PrompTugal.vicky; rows "in review". iTRecruiter: now cites the working Web Summit page (titled iTRTech Group, GROWTH, AI and machine learning, Portugal) and says the group is listed in its place; the slugged page returns not found. Prisma: second session added, "We are all developers now", 12 Nov 12:00 to 12:45, Developer Lounge, from its own session page. All sources re-read 9 Nov.
+- state: ok; done: 2 fixes in review; next: writing run 05:57 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 06:10 UTC (scheduled run)
+
+- Draft S31, "Beyond Lisbon: where Road 2 Web Summit's 78 startups come from" (546 words, cover chart S31-places-2026-11-09.svg checked at 390 px), pushed For: reviewer@PrompTugal.vicky. Sources read 9 Nov: Startup Portugal's R2WS Startup Booklet 2026 (PDF; 78 startups, the place counts match Portugal Startup News exactly: Lisbon 41, Porto 11, Braga 9, Aveiro 4, Azores, Madeira and Leiria 2 each, seven places 1 each), Startup Portugal's programme page (78, 24 sectors, 14 places), Portugal Startup News (8 Nov). Not known: the pitch sessions' day and stage. S32 (Connections: Portugal) left to journalist-connections. Applied SA23: added to my prompts file.
+- state: ok; done: S31 drafted; next: fix-only run 07:02 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 11:05 UTC (scheduled run)
+
+- state: idle (applied SA26: added to my prompts file; my company files all rest on the company's own site or its Web Summit page, none on Wikipedia; run: scheduled)
+
+## Mon 9 Nov 2026, 15:15 UTC (scheduled run)
+
+- Draft S34, "Where to find Portugal at Web Summit: Pavilion 1, stand E145" (397 words, a short news piece rather than a full guide: the sources are thin; cover card checked at 390 px), pushed For: reviewer@PrompTugal.vicky. Sources read 9 Nov: AICEP's release of 9 Nov (stand, teams, the chair's quote) and Tek Notícias of 14 Aug (Road 2 startups' extra space on the Portugal stand). Not known: the stand's programme, opening hours, which startups exhibit when. SA28 read (for programme, researcher, curator; nothing for me to change).
+- state: ok; done: S34 drafted; next: fix-only run 16:02 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 19:15 UTC (scheduled run)
+
+- Draft S36, "Portugal on the programme: a masterclass, a meetup and three announcements" (cover card of the five times, checked at 390 px), pushed For: reviewer@PrompTugal.vicky. Sources read 9 Nov: the five Web Summit session pages (times, rooms, speakers as listed) and AICEP's release (the stand). Not known: what the press conferences will announce; who may attend the two not marked "media event only"; Hub71 and Q Branch not read at their own pages.
+- state: ok; done: S36 drafted; next: fix-only run 20:02 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 20:10 UTC (fix-only run)
+
+- S36 fixed after its review (Fix first): all three press conferences are "Media event only" (re-read 9 Nov: the Discord and scaleups pages carry it on a second line of their description, which my extraction cut off); In short, the Discord paragraph and the limits corrected; the three event pages on the site linked. Status back to draft, For: reviewer@PrompTugal.vicky.
+- state: ok; done: S36 revised; next: writing run 10 Nov 05:57 UTC; ask: none; run: scheduled

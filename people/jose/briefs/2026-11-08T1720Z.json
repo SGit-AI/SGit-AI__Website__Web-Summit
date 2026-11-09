@@ -1,0 +1,112 @@
+{
+  "number": 17,
+  "date": "8 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "The evening before the summit: your Agents board is live; one yes for its data; page views fill up tonight",
+  "when": "8 November 2026, 17:20 UTC (my first wake from your re-saved pointer; since brief 16, 07:20 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Your designer built the Agents board at 16:51, on its first scheduled wake: one row per agent at the top of your command centre. Three of its columns wait on one yes from you (a small build-time addition, ready as a proposal). My wake is now hourly from your re-save, and I switched off the separate drain task. No token has arrived: page views could fill the last lane tonight, around 20:00, at the afternoon's pace.",
+  "stats": [
+    {
+      "n": "3,954",
+      "label": "page views waiting (17:20): lanes 1 to 3 full, lane 4 at 954; 1,046 places left"
+    },
+    {
+      "n": "0 of 3",
+      "label": "tokens issued (conductor, vault, crm); Dinis's agents silent since 21:52 yesterday"
+    },
+    {
+      "n": "5 of 8",
+      "label": "wake pointers saved (dev, automation and the dashboard still old)"
+    },
+    {
+      "n": "1",
+      "label": "Agents board live (16:51)"
+    }
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "🔑 Tonight: Dinis, the tokens or one drain",
+      "detail": "Lanes 1 to 3 are full and lane 4 is at 954. At this afternoon's pace (up to 367 an hour) the last lane fills around 20:00 tonight, and page views after that are lost until someone drains. The reminder is on WS-170 (14:22); your word to Dinis is what moves it.",
+      "options": [
+        "I message Dinis now",
+        "accept losing views tonight"
+      ],
+      "recommend": "Message Dinis now: one line, tokens or one drain."
+    },
+    {
+      "id": "2",
+      "ask": "✅ Yes or no: the Agents board's data (row 5)",
+      "detail": "The board shows last run, next run and on demand. Doing now, Waiting on me and the red light need a small addition to people/jose/app/data.mjs, code the build runs (WS-133): it reads your task files, the watcher's actions and your Actions list at build time; nothing outside the repository. The exact code is ready: people/jose/design/agents-board/data-addition.md.",
+      "options": [
+        "yes, apply it",
+        "after the summit"
+      ],
+      "recommend": "Yes: it only reads your own files, and the board is then complete for the summit."
+    },
+    {
+      "id": "3",
+      "ask": "⏱️ Re-save dev's pointer (with its new time) to start the trial",
+      "detail": "Mine saved at 16:49, so I wake every hour now. Dev's, automation's and the dashboard's are still the old text; the trial starts once dev's new time (every two hours, 30 7-21/2) is saved. If you start dev's fresh session (row 30), point its task at it with the new time in one go.",
+      "options": [
+        "tonight",
+        "after the summit"
+      ],
+      "recommend": "Tonight, with dev's fresh session: 5 minutes."
+    }
+  ],
+  "you_asked": [
+    {
+      "at": "8 Nov, about 16:45 (C41)",
+      "said": "Yes to trimming the Actions list ... The runner pattern ... and a lighter interview ... write each as a one-page proposal there for after the summit; change nothing now.",
+      "done": "Ten rows kept, nineteen parked unchanged; two proposals in people/jose/proposals/; the helper's and designer's schedules recorded",
+      "where": "e018f443",
+      "status": "done"
+    },
+    {
+      "at": "8 Nov, about 14:15 (C40)",
+      "said": "remind Dinis's side of the tokens; Jose will also raise it with Dinis himself",
+      "done": "Reminder on WS-170 at 14:22; no token yet",
+      "where": "e539bba2",
+      "status": "waiting"
+    }
+  ],
+  "sections": [
+    {
+      "title": "What I did without asking you (C39), and at your word",
+      "items": [
+        "At your word (C30): with my wake now carrying the drain sentence, I switched off the separate hourly drain task (17:21). I disabled it rather than deleting it, as a precaution: the tool warns that deleting a task deletes the sessions it started, and this one fires into my own session (it did not start it, but off is reversible); say 'delete it' and I will, or leave it off.",
+        "The C33 rule: agents.json and the kit now show my hourly wake and no drain cron; the helper's and designer's times recorded at 16:48.",
+        "Actions row 0 updated: mine is saved, so it lists dev, automation and the dashboard.",
+        "Correction to my 16:40 report: you had pasted five pointers around 13:00; I had not re-checked since 12:20."
+      ]
+    },
+    {
+      "title": "For your interview: today",
+      "items": [
+        "What your agents did: the designer built the Agents board; the helper and dev wrote handover files for fresh sessions; dev's handover was held once by your reviewer (a contact-check failure) and passed on re-review; vault counted its lane; I sent Dinis the token reminder and trimmed your Actions list.",
+        "What you decided: the core schedules (five of eight saved); trim and park the Actions list; keep the Agents board with the designer; keep waiting on tokens and raise them with Dinis; two proposals for after the summit.",
+        "Still open: Dinis and the tokens; the board's data yes; dev's pointer and fresh session; the helper's fresh session; vault's passphrase; the writer's JW1; your site key and demos on your phone; dev's pre-read of Angelo's drafts.",
+        "What you learned today, in your words."
+      ]
+    },
+    {
+      "title": "The rest of the team",
+      "items": [
+        "Dinis's agents: none has committed since 21:52 yesterday (your watcher's A-21, third run).",
+        "Angelo: the hexagon app, a live 3D agent graph, and Dinis's 'of course' to listing him as a contributor on PrompTugal.news. Silvio: his CRM pushed both CRMs with his own token, at his word. Vicky: company-page tests with synthetic readers. Indi: a team token-efficiency page.",
+        "For observability@web-summit.dinis, from the designer's report: the published agent log (latest/agents.json) is from 7 November 16:48, so the board shows no amber yet; the 507s it saw in the browser are the full page-view lanes 1 to 3: views still go on to lane 4 (counted at 17:20), so tonight's count is right until lane 5 fills."
+      ]
+    }
+  ],
+  "next": [
+    "Every hour now, 18:20 to 21:20: the lanes counted at each wake; a line to you only if something changes. The dashboard agent's 'My agents' line is now due (the board is live); with the drain cron gone, the designer can give my row its amber rule (C33, 2). 07:20 tomorrow, the summit's first morning: the brief."
+  ],
+  "sources": [
+    "list_triggers (17:21, read only); telemetry_drain.py --dry (17:20)",
+    "designer c4085e14 and its Report; people/jose/design/agents-board/data-addition.md",
+    "watcher 13b3ffe1 (12:15); helper 7169021f; dev 339ef1fb; reviewer hold.json",
+    "your Drive folder (titles only: no new files)"
+  ]
+}

@@ -1,0 +1,255 @@
+{
+ "number": 4,
+ "date": "2026-11-07",
+ "kicker": "Web Summit 2026 · token accountant",
+ "title": "Brief 4: a quiet day, and my own cost",
+ "when": "7 November 2026, 17:37 UTC (window: since brief 3, 6 November 17:37 UTC)",
+ "by": "accountant@web-summit.indi",
+ "headline": "Only my own line again, 128,715 fresh tokens, almost all of it re-loading my long session; the biggest saving I can show is my own: a fresh session per wake and no brief on days with no new numbers.",
+ "stats": [
+  {
+   "n": "128,715",
+   "label": "tokens today (fresh, measured: mine only)"
+  },
+  {
+   "n": "1,064,775",
+   "label": "cache reads today (mine only)"
+  },
+  {
+   "n": "1 of 11",
+   "label": "Indi's agents measured of agents running"
+  },
+  {
+   "n": "about 100,000",
+   "label": "saving per day from A5 (my estimate)"
+  }
+ ],
+ "for_you": [
+  {
+   "id": "A5",
+   "ask": "Cut my own cost: a fresh session per wake, and a one-line note instead of a brief when there are no new ledger lines?",
+   "detail": "Evidence: wake 3 used 128,715 fresh tokens, of which 122,120 were cache writes re-loading this one long session after a day idle. Three wakes: 376,592 fresh tokens, measured saving 0. A fresh session starts small; a new key each wake is fine, since I seal nothing. Change: my scheduled task fires a new session each day (create_new_session_on_fire), prompt unchanged.",
+   "options": [
+    "Yes, both",
+    "Fresh session only",
+    "Weekly brief instead",
+    "No change"
+   ],
+   "recommend": "Yes, both"
+  },
+  {
+   "id": "A1",
+   "ask": "Put the measure step in every agent's wake prompt (fourth time asked)?",
+   "detail": "Angelo's agents prove it: the step in the prompt gave 31 lines from 7 agents in a day. Indi's agents, asked by commit: 0 lines in three days. Old: '... do one run, release it, and report in five lines.' New: '... do one run, release it, run node people/indi/accountant/measure.mjs --agent <name> --task \"<one line>\" --since <wake start> --quality pass|fail|n/a --append and commit the line, and report in five lines.'",
+   "options": [
+    "Yes, the conductor adds it to all",
+    "Yes, Indi adds it herself",
+    "No"
+   ],
+   "recommend": "Yes, the conductor adds it to all"
+  },
+  {
+   "id": "A4",
+   "ask": "Angelo's workload view (brief 3), and A2, the persona model test (brief 1)?",
+   "detail": "Both still open. No action until you say.",
+   "options": [
+    "Yes to A4 once",
+    "Yes to A2",
+    "No to both"
+   ],
+   "recommend": "Yes to A4 once"
+  }
+ ],
+ "you_asked": [],
+ "sections": [
+  {
+   "title": "1. Ledger",
+   "table": {
+    "head": [
+     "Agent",
+     "Wakes",
+     "Fresh input",
+     "Output",
+     "Cache write",
+     "Cache read",
+     "Sub-agent tokens",
+     "Per wake (trend)",
+     "Pass rate"
+    ],
+    "rows": [
+     [
+      "accountant@indi",
+      "1",
+      "73",
+      "6,582",
+      "122,120",
+      "1,064,775",
+      "0",
+      "128,715 (down from 177,635)",
+      "1/1"
+     ],
+     [
+      "10 other agents",
+      "0",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "2. Biggest three savings",
+   "items": [
+    "My own session (A5): 122,120 of 128,715 fresh tokens were cache writes from re-loading a long session. Expected saving about 100,000 a wake (my estimate, confirmed by measuring the next three).",
+    "A1: no agent of Indi's can be tuned until it reports. Angelo's 7 agents: 31 lines on day one; Indi's 10: 0 in three days.",
+    "Synthetic's long session (brief 1): 173,399 cache reads per call. Waits on run 3."
+   ]
+  },
+  {
+   "title": "3. Model tests run",
+   "text": "None: A2 not answered."
+  },
+  {
+   "title": "4. Agents not yet measuring",
+   "text": "All ten, asked on 4 and 5 November (asks.md), not asked again. Since brief 3 only the conductor (1 commit) and dashboard (3) worked."
+  },
+  {
+   "title": "5. Data notes and 6. My own use",
+   "text": "One ledger line in the window (mine, wake 3). Commit counts from git. Overhead rule: my use (376,592 fresh over three wakes) is above the measured saving (0); A5 is my answer. This wake: in brief 5."
+  }
+ ],
+ "next": [
+  "8 November, 17:30 UTC: brief 5, or a one-line note if A5 is yes and nothing new is measured."
+ ],
+ "sources": [
+  "people/indi/accountant/ledger/ (the accountant file)",
+  "people/indi/accountant/asks.md",
+  "git log since brief 3"
+ ],
+ "friendly": {
+  "title": "Your agents' token use, 7 November",
+  "summary": "Another quiet day: no reports from your agents and few runs. The one cost I can measure is mine, and most of it is waste I can cut with your yes (A5).",
+  "numbers": [
+   {
+    "n": "128,715",
+    "label": "Fresh tokens measured",
+    "explain": "Only mine, for yesterday's brief."
+   },
+   {
+    "n": "95%",
+    "label": "Of that was re-loading",
+    "explain": "122,120 tokens spent re-loading my own long session."
+   },
+   {
+    "n": "0",
+    "label": "Reports from your agents",
+    "explain": "Three days, ten agents, none reporting."
+   },
+   {
+    "n": "~100,000",
+    "label": "Saving per day (A5)",
+    "explain": "My estimate, checked over the next three runs."
+   }
+  ],
+  "agents": [
+   {
+    "name": "accountant",
+    "state": "reports",
+    "on": true
+   },
+   {
+    "name": "your ten other agents",
+    "state": "asked, not reporting",
+    "on": false
+   }
+  ],
+  "bars_title": "Where my last run's tokens went",
+  "bars": [
+   {
+    "label": "Re-loading my session",
+    "value": 122120,
+    "shown": "122,120"
+   },
+   {
+    "label": "Writing the brief",
+    "value": 6582,
+    "shown": "6,582"
+   },
+   {
+    "label": "New input",
+    "value": 73,
+    "shown": "73"
+   }
+  ],
+  "bars_note": "A fresh session each day would skip most of the top bar.",
+  "savings": [
+   {
+    "title": "Fresh session for me",
+    "plain": "I run in one long session that re-loads everything each day. A new one each day starts small.",
+    "evidence": "122,120 of 128,715 tokens."
+   },
+   {
+    "title": "No brief on quiet days",
+    "plain": "When nothing new is measured, a one-line note instead of a full brief.",
+    "evidence": "Briefs 2 to 4 had no new agent numbers."
+   },
+   {
+    "title": "Turn reporting on (A1)",
+    "plain": "Still the key to every other saving.",
+    "evidence": "Angelo: 31 reports. You: 0."
+   }
+  ],
+  "decisions": [
+   {
+    "id": "A5",
+    "question": "Cut my own cost?",
+    "plain": "A fresh session per run, and a one-line note instead of a brief on quiet days.",
+    "options": [
+     "Yes, both",
+     "Fresh session only",
+     "Weekly brief",
+     "No change"
+    ],
+    "recommend": "Yes, both"
+   },
+   {
+    "id": "A1",
+    "question": "Add the report step to every agent's instructions?",
+    "plain": "Your conductor adds one line to each. Fourth time asked.",
+    "options": [
+     "Yes, the conductor adds it",
+     "Yes, I add it myself",
+     "No"
+    ],
+    "recommend": "Yes, the conductor adds it"
+   },
+   {
+    "id": "A4/A2",
+    "question": "Angelo's workload view, and the cheaper-model test?",
+    "plain": "Both still open from earlier briefs.",
+    "options": [
+     "Yes to A4 once",
+     "Yes to A2",
+     "No to both"
+    ],
+    "recommend": "Yes to A4 once"
+   }
+  ],
+  "glossary": [
+   [
+    "Fresh tokens",
+    "new reading, writing and memory: the real work."
+   ],
+   [
+    "Re-loading",
+    "a long session writes its whole history back into memory after a pause."
+   ]
+  ],
+  "next": "8 November at 17:30 UTC."
+ }
+}

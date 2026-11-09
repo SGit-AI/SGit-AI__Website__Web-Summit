@@ -1,0 +1,106 @@
+{
+  "number": 9,
+  "date": "5 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Your answers recorded; navy on Dinis's table; the watcher now reports to me",
+  "when": "5 November 2026, 12:25 UTC (scheduled wake; since brief 8, 07:25 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Your eight answers to your dashboard agent (\"Record them\") are recorded where they belong. Your navy wish went to today's stand-up for Dinis and Silvio; orange stands until Dinis says yes. Your watcher's reports now come to me at every wake, as you asked.",
+  "stats": [
+    {
+      "n": "8",
+      "label": "your answers recorded"
+    },
+    {
+      "n": "2",
+      "label": "asks"
+    },
+    {
+      "n": "2,156",
+      "label": "page views drained (12:07)"
+    },
+    {
+      "n": "1 high",
+      "label": "watcher flag open (with security)"
+    }
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "✅ Do: switch the helper to Sonnet in its own session",
+      "detail": "Your answer 4. I recorded it in agents.json; only you can change a session's model. The accountant checks it again on Saturday 7 November from the helper's ledger.",
+      "options": [
+        "done",
+        "not yet"
+      ],
+      "recommend": "Switch it before its 14:50 wake."
+    },
+    {
+      "id": "2",
+      "ask": "✅ Do: paste your site key on every device you will use before Monday (WS-136, WS-166)",
+      "detail": "From your mentor's last note (08:41, a handover: the mentor stops here). Your key is issued; the board has no line saying it is pasted.",
+      "options": [
+        "done on this device",
+        "done on all"
+      ],
+      "recommend": "Paste it now on your phone and laptop."
+    }
+  ],
+  "you_asked": [
+    {
+      "at": "5 Nov, about 11:52",
+      "said": "I'd like dark blue (navy) for my shirts and hoodie instead of orange, if it's clearly different from Nimay's royal blue and Dinis agrees; otherwise keep orange",
+      "done": "Recorded with your designer's earlier note in people/jose/merch.json; an item on today's stand-up (moved to 12:00) for Dinis, with Silvio asked to check on the printer's charts that a navy is clearly different from Nimay's azul real. Orange stands until Dinis says yes.",
+      "where": "commits 1fa1d6f (designer@), f3aadb4",
+      "status": "waiting on Dinis"
+    },
+    {
+      "at": "5 Nov, about 12:05",
+      "said": "did i pasted the transcripts of any meeting?",
+      "done": "No: you pasted your own notes of two meetings (the 4 November stand-up and the 18:00 sync), recorded as your captures (WS-107).",
+      "where": "data/meetings/2026-11-04-1300/",
+      "status": "answered"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Your answers, recorded (fecb8f0, \"Record them\")",
+      "items": [
+        "1. Your 15 site and UI issues to Angelo's and Dinis's dev agents: your position on today's item; Angelo and Dinis decide with you.",
+        "2. WS-154: the observability vault keys stay held until WS-156 names a custodian (on the board).",
+        "3. WS-74: your vault agent counts the pending answers; n8n never holds the lane's enum key (on the board, for automation@).",
+        "4. The helper on Sonnet (agents.json; ask 1).",
+        "5. The watcher may write its own ledger file only (its policy.json).",
+        "6. The designer runs the reviewer before every release (ccfecef).",
+        "7 and 8 are yours: the command centre as your first view after the stand-up; ask Indi about a named card (WS-155)."
+      ]
+    },
+    {
+      "title": "The watcher, now routed to me",
+      "items": [
+        "At your word (0292242): its reports are addressed to you and me; I read latest.md and activity.json at every wake (kit, ROLE.md, policy.json updated).",
+        "High, open: three email-address rule hits in content/family-riskmandate-agent.md (f20d264, Dinis's conductor), sent to security; not yours to fix.",
+        "Medium: dev@web-summit.silvio changed shared build code and five people's photos, yours included; listed, not judged. Your designer's case is handled.",
+        "Its 12:15 run made no commit (nothing new, or not run: only commits are visible)."
+      ]
+    },
+    {
+      "title": "Due today for you (from the board)",
+      "items": [
+        "WS-37: the end-to-end test of the page views with Angelo.",
+        "WS-41: your pulse for today: none yet in people/jose/pulse/. One line: how it felt.",
+        "The sticker vote closes 14:30 (WS-167)."
+      ]
+    }
+  ],
+  "next": [
+    "17:20 run: record the stand-up's words on navy and on your issues; the helper's model; the watcher's 17:15 report."
+  ],
+  "sources": [
+    "git log 57c685a..origin/dev",
+    "commits fecb8f0 (dashboard@), 0292242 (watcher@), 1fa1d6f (designer@), f3aadb4",
+    "people/jose/watcher/latest.md, activity.json",
+    "people/jose/mentor/2026-11-05-0841.md",
+    "ws-observability-data drain 12:07"
+  ]
+}

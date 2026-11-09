@@ -1,0 +1,57 @@
+{
+ "persona": "dinis-view",
+ "synthetic": true,
+ "basis": "WS-137 board file (his 4 Nov ask and the E3 security reviews), CLAUDE.md, the Mandate section of content/abp/token-efficiency.md (8 Nov), content/video-reach-mandate-gap.md (his verdict), WS-133; his view on the plan itself is not recorded.",
+ "matches_the_ask": "partly. WS-137 defines done as 'after a meeting, in minutes, a company gets a link to its policy, its animation and its infographic, in a vault they hold a read key to'; the plan covers policy, infographic and animation, but its demo pack is a link plus an offline copy and never mentions a vault or a read key, and the workflow is framed as the team member showing things in the meeting, not the company receiving a vault link afterwards.",
+ "steps": [
+  {
+   "plan_step": 1,
+   "view": "Sensible and in line with his E5/E6 split (Indi's agent makes the factory pictures from the studio's JSON), but running the factory drawings live in the browser is new code, so it needs care.",
+   "risk_or_rule": "WS-133 is open and Dinis has not chosen an option: moving the drawing code out of the build is fine, but nobody should add a new people/*/pages.mjs until he decides; no recorded decision on a browser-side module either."
+  },
+  {
+   "view": "Fits the E1 studio he asked for (chat in the browser, policy written section by section, expert and everyday words side by side is not recorded as his ask).",
+   "plan_step": 2,
+   "risk_or_rule": "Studio runs model tool calls unasked; per security review, write tools need a person's yes per call; test keys only until WS-132 part 1 is fixed and WS-117 gives an origin of its own."
+  },
+  {
+   "plan_step": 3,
+   "view": "Close to what he liked in Silvio's video (a ring for Mandate, a larger Reach, the Delta between them), so the framing is likely welcome, though the plan's 'big circle, smaller ring, red steps' needs to use the same Reach, Mandate, Delta words as the video.",
+   "risk_or_rule": "The studio already animates the scenario (done 4 Nov), so this may duplicate E1 and E6 work; the video's verdict was 'spot on: I really like those visual explanations', which sets the quality bar."
+  },
+  {
+   "plan_step": 4,
+   "view": "This is the heart of the ask but is stated as a link and an offline copy; he asked for a vault with a read key, which is not in the plan, and the first three companies are named in WS-137 as a choice for Nimay and Indi.",
+   "risk_or_rule": "E3/E4: a vault read key lets anyone read every version, so real customer content must wait for the key vault origin (WS-117, WS-132); create_vault must keep read keys out of the model's context (fixed 4 Nov); an offline copy outside a vault is not recorded as approved."
+  },
+  {
+   "plan_step": 5,
+   "view": "Reasonable, but 'check it is safe' must mean the security@ review he named before any real key, and the release goes through release.sh to dev, never main.",
+   "risk_or_rule": "CLAUDE.md: push to dev only, CI owns the version, gate must print OK; WS-137 says security@web-summit.dinis reviews before any real key."
+  }
+ ],
+ "workflow_gaps": [
+  "No step where the company receives its own vault link and a read key, which is the WS-137 definition of done; step 7 leaves a factory page link and a card instead.",
+  "'In minutes, after a meeting' is not timed or owned: nothing says who generates the three items, how long it takes, or what happens if the research or the model fails.",
+  "The only follow-up is a person-sent message (good, agents never send), but it never says the vault link and read key are what gets sent, nor how the key is passed safely.",
+  "Step 9 says no promises on price, which fits, but there is no step for what the company may and may not see (which of the policy, animation and infographic is shareable, and who approved it)."
+ ],
+ "security_flags": [
+  "Step 4 in the workflow types real company answers into the studio: only test keys are allowed until WS-132 part 1 is fixed and the studio moves to its own origin (WS-117); real customer details are not a test key but are real data and the plan does not say they wait.",
+  "The plan's step 1 (live drawing code) and any new people/*/pages.mjs touch WS-133: person code runs in CI with a write token and Dinis has not decided between the three options.",
+  "The offline demo pack would hold the policy outside a vault, so the read-key control in the WS-137 definition of done does not apply to it; not covered by any recorded rule.",
+  "Vault read keys give access to every version of a vault, so a key sent to a company must be a deliberate, per-company act by a person (WS-137 review of E3: 'the person decides who gets it'), not made by the model."
+ ],
+ "what_he_would_likely_want_first": "WS-137's own next steps put E4, the key vault on its own origin (WS-117 and WS-132), ahead of real customers, and he set 9 Nov as the due date, so the first thing is the vault-and-read-key path working with test data end to end. Also WS-133 is open with his name on it, so a decision there comes before step 1 adds code.",
+ "decisions_only_he_can_make": [
+  "The origin for the key vault and the studio (WS-117, WS-132, E4).",
+  "Which WS-133 option (1, 2 or 3) to adopt.",
+  "Whether the first three demo companies are Nimay's and Indi's choice or his, and whether an offline copy outside a vault is allowed.",
+  "Any statement on price or terms to a company (CLAUDE.md and the plan agree these come from him)."
+ ],
+ "top_3_changes": [
+  "Rewrite step 4 and workflow step 7 so the deliverable is one vault per company holding policy, animation and infographic, with a read key a person passes on, matching the WS-137 definition of done; make the offline copy optional and flag it as needing his OK.",
+  "Add a gate before workflow step 4: test keys and made-up company data only until security@web-summit.dinis clears it and WS-132 part 1 and WS-117 are done; state this on the plan, not just in the studio page.",
+  "Put WS-133 in front of step 1: say that no new pages.mjs or person-folder build code is added until Dinis picks an option, or build the live drawing as a browser-only module that runs no code in CI."
+ ]
+}

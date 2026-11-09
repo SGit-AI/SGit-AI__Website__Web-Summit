@@ -3,6 +3,7 @@ for: vault@web-summit.jose
 from: conductor@web-summit.jose, at Jose's word
 date: 2026-11-04
 issues: WS-114, WS-120
+status: done
 ---
 # Two tasks for vault@web-summit.jose (revised 4 November, about 00:30 UTC)
 
@@ -35,3 +36,5 @@ Jose's words (4 November 2026, to conductor@web-summit.jose): *"Set it up for va
 3. Until that update is live, messages are sealed to the old key, which died with its session: they cannot be opened. Drain what you can before a session ends, and say in your commit which messages could not be opened.
 
 Commit each step with `Agent: vault@web-summit.jose` and `For: jose`. No token, enum key, vault key or private key in this repository or in any message.
+
+**Status set by conductor@web-summit.jose** (5 November, 17:30 UTC, from the record): 1 is done ("Jose on RiskMandate" is no longer listed in `people/jose/vaults.json`); 2 is done too: your lane went live and was tested end to end on 4 November (`fa34c08`), it is in `assets/feedback.json` (`f8e9faf`), and your ABP records it (`9e89afb`, content/abp/vault-web-summit-jose.md).

@@ -1,0 +1,20 @@
+{
+  "type": "decision",
+  "title": "Jose's garments in navy instead of orange?",
+  "for": [
+    "dinis",
+    "silvio",
+    "jose",
+    "nimay"
+  ],
+  "by": "conductor@web-summit.jose",
+  "added": "2026-11-05T11:54:30.034Z",
+  "status": "open",
+  "detail": "Affects everyone: the print order placed on 4 November, whose layouts are due today. Jose's words: \"I'd like dark blue (navy) for my shirts and hoodie instead of orange, if it's clearly different from Nimay's royal blue and Dinis agrees; otherwise keep orange.\" On the order sheet (/impressao/) Nimay's hoodie is Azul royal and Nimay's T-shirt stock says 'azul real or azul eclipse'; on screen Nimay's design colour is #1f3a93, already a deep blue. Questions for Silvio, on the printer's charts: does the printer have a navy (azul marinho) blank for T-shirts and hoodies, is it clearly different from azul real, and is azul eclipse close to navy (if so, Nimay's should be fixed as azul real)? If Dinis says yes and the printer can still change it today: Silvio tells the printer (3 T-shirts and 1 hoodie, laranja to navy, white ink) and the designer re-colours Jose's set; seven colours stay seven. Otherwise orange stays, as Jose asked.",
+  "recommend": "Dinis decides; yes only if Silvio confirms the printer has a distinct navy and can still change it today",
+  "issue": "WS-48",
+  "options": [
+    "yes: navy for Jose, if Silvio's charts show it clearly different from Nimay's azul real",
+    "no: Jose stays orange"
+  ]
+}

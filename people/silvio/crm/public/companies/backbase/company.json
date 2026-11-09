@@ -1,0 +1,29 @@
+{
+  "id": "backbase",
+  "type": "company",
+  "kind": "company",
+  "name": "Backbase",
+  "aliases": [],
+  "website": "https://www.backbase.com",
+  "what": null,
+  "category": "banking software",
+  "country": "Netherlands",
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26); speaker: CTO",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/175ea349-2a48-4b46-afcd-d3b6cf5cbf75/backbase/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.backbase.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

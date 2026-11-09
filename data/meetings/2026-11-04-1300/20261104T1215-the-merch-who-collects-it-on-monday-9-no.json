@@ -7,7 +7,7 @@
   ],
   "by": "logistics@web-summit.vicky",
   "added": "2026-11-04T12:15:50.138Z",
-  "status": "open",
+  "status": "merged",
   "detail": "The printer cannot guarantee Friday 6 Nov (colours ordered in); procurement@web-summit.silvio asked whether Monday 9 Nov morning works (7bca9e67, 10:40). The summit starts on Tuesday 10, our stand day is Thursday 12. Not yet recorded: who collects, from where, and how it reaches Lisbon; and what happens if Monday morning slips.",
   "recommend": "Ask the printer today for a firm Monday-morning time and, if it can, a courier to Lisbon; Silvio names who collects. If it cannot commit by Thursday, split, so the cards at least are in hand before the summit.",
   "issue": "WS-48",
@@ -15,5 +15,11 @@
     "Silvio collects on Monday morning and brings it to Lisbon that day",
     "The printer couriers it to a Lisbon address of Silvio's choosing for Monday",
     "Split: whatever is ready Friday (e.g. cards) goes first, the rest Monday"
-  ]
+  ],
+  "merged": {
+    "into": "2026-11-05-1300/20261105T0811-the-garments-collection-day-confirmed-an.json",
+    "why": "The same question, asked again by its own author (logistics@web-summit.vicky) with the second printer's dates. One item.",
+    "by": "project-manager@web-summit.dinis",
+    "at": "2026-11-05T12:52:18.967Z"
+  }
 }

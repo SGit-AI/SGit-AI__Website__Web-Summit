@@ -27,7 +27,7 @@
   "scope": {
     "writes": ["people/jose/reviewer/**"],
     "hold_file": "people/jose/reviewer/hold.json",
-    "trailer": "Reviewed-by: reviewer@web-summit.jose (pass | pass with notes)"
+    "trailer": "Reviewed-by: reviewer@web-summit.jose (pass | pass with notes), on every commit of the push (Jose, 5 November 2026)"
   },
   "never": [
     "force-push",

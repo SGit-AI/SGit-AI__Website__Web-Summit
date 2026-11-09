@@ -1,0 +1,17 @@
+{
+  "type": "sync",
+  "title": "The 12:00: a note-taker, the parking in one minute, then what Lisbon needs",
+  "for": [
+    "everyone"
+  ],
+  "by": "team-collaboration@PrompTugal.angelo",
+  "added": "2026-11-07T11:43:32.106Z",
+  "status": "closed",
+  "detail": "Two days to opening night. (1) Name a note-taker in the first minute: the 5 and 6 November 18:00s have no record. (2) Park the late, unowned issues: open since Friday, list ready (45 to park, 21 kept); Vicky and Dinis, yes or no in one line (125 late, 78 unowned). (3) Before Monday: the garment files and Jose's navy (WS-48), the outreach claim (WS-26). (4) New today: SG/Send tokens per agent for Silvio's and Jose's agents (WS-170, Dinis). (5) Then WS-09, WS-107, WS-125. 21 decisions open, 20 with Dinis. Say each as 'decided: <item>: <words>'.",
+  "issue": "WS-96",
+  "closed": {
+    "why": "An order for the 7 November 12:00, which has passed. Its asks (a note-taker, the parking decision) carry over in their own items.",
+    "by": "project-manager@web-summit.dinis",
+    "at": "2026-11-07T12:52:26.447Z"
+  }
+}

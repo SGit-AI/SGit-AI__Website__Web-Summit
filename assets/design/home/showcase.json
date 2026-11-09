@@ -1,0 +1,28 @@
+{
+  "about": "What the home page shows a visitor (Dinis, 6 November 2026: a home page to share, for us and for new people: what we write, what we have made, and the agents in action). Kept by designer@web-summit.dinis; rendered by admin/build/home.mjs ({{shots}}, {{writing}}, {{made}}). Screenshots taken on 6 November 2026 from this site's own pages, the key box and the menus hidden; each links to the live page.",
+  "shots": [
+    {"img": "assets/design/home/team-map.jpg", "title": "The team as one picture", "text": "Seven people (and two who work with us), each ringed by their own AI agents. A filled dot has committed work; the grey curves are the messages agents send each other.", "href": "team/map/index.html", "wide": true},
+    {"img": "assets/design/home/runs-today.jpg", "title": "Every scheduled run, today", "text": "Each row is an agent on a timer: a green dot is a run that did work, a crossed dot a run that found nothing to do.", "href": "wakes/index.html"},
+    {"img": "assets/design/home/replay.jpg", "title": "Replay the week", "text": "Angelo's command centre plays back every commit since 2 November, who it was for, and the stand-ups in between.", "href": "people/angelo/app/index.html#replay"},
+    {"img": "assets/design/home/command-centre.jpg", "title": "A command centre per person", "text": "What needs each of us today, our agents' reports, and a voice box to brief them: built by our agents, for us.", "href": "people/angelo/app/index.html"},
+    {"img": "assets/design/home/observability.jpg", "title": "Who reads what, and what the agents did", "text": "Readers, the team, synthetic visitors, crawlers and every agent run, hour by hour, decrypted in your browser from an encrypted vault.", "href": "observability/index.html"}
+  ],
+  "promptugal": {
+    "name": "PrompTugal.news",
+    "href": "https://promptugal.news/",
+    "about": "Our newsroom for Web Summit Lisbon: technology and AI in Portugal, every fact sourced, written and checked by AI agents with a human editor.",
+    "picks": [
+      {"title": "Angelo's communication graph: watch our agents talk", "href": "https://promptugal.news/articles/angelos-communication-graph.html", "summary": "The whole team and its AI agents as one map, and every commit since 2 November played back."},
+      {"title": "How our agents talk: commits, inboxes and signed keys", "href": "https://promptugal.news/articles/how-the-agents-talk.html", "summary": "A line in each commit that says who it is for, sealed inboxes, and keys that prove who sent what."},
+      {"title": "Many agents, one newsroom: how they avoid collisions", "href": "https://promptugal.news/articles/how-agents-avoid-collisions.html", "summary": "Dozens of agents write, build and check the newsroom at once; seven simple habits keep them apart."},
+      {"title": "Three mistakes our agents made, and the rules they left", "href": "https://promptugal.news/articles/mistakes-we-made.html", "summary": "Overlapping stories, links nobody could click, copies pointing at an old site: each left a rule."},
+      {"title": "The newsroom four days out, in pictures", "href": "https://promptugal.news/articles/newsroom-status-four-days-out.html", "summary": "What is live, what the agent desks found, what is next and what waits on a person."}
+    ],
+    "all": "https://promptugal.news/articles/index.html"
+  },
+  "made": [
+    {"img": "assets/design/home/shirts.jpg", "title": "Seven shirts, seven questions", "text": "A colour and a RiskMandate question each, a QR on the back. Designed, proofed and signed off through the agents.", "href": "print/index.html"},
+    {"img": "assets/design/home/cards.jpg", "title": "Three cards, one per audience", "text": "Executives, GRC and security people each get their own question. Printed in London for Lisbon.", "href": "cards/index.html"},
+    {"img": "stickers", "title": "Twenty-three stickers, voted by the team", "text": "A road trip to Lisbon, creative takes and the gap, ranked by the team with signed ballots.", "href": "stickers/vote/index.html"}
+  ]
+}

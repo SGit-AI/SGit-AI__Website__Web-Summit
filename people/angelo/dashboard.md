@@ -1,79 +1,47 @@
 ---
 title: Angelo's dashboard
-summary: The page Angelo reads first. The top is built for Angelo; the rest is kept by Angelo's dashboard agent (dashboard@web-summit.angelo) in five sections: what needs Angelo now, whether everyone is connected, the machine, the technical pool with Jose, and what Angelo's agents are doing.
+summary: The page Angelo reads first, about action: what is blocked on Angelo, the decisions waiting, then links into his command centre, where the work is. Kept by dashboard@PrompTugal.angelo for Angelo's conductor.
 ---
-**Your first view is [the command centre](app/index.html)** (your answer, 3 November). This classic page is kept in the same order, as the text version and the fallback: what's pending for you, is everyone connected, the machine, the technical pool with Jose, and your agents. Kept by `dashboard@web-summit.angelo`; tell it what you want first and what you never read.
+**Work in [your command centre](app/index.html#kanban).** This page is the short version: what waits on you, then links. Kept by `dashboard@PrompTugal.angelo` under [the protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol); your conductor's digest, when you ask for it in the desk session, carries the detail; its hourly runner flags anything urgent first. Stand-ups: 12:00 and 18:00 UTC from 5 November.
 
-**How this page is kept (from 4 November, [the protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol)):** `dashboard@web-summit.angelo` takes its work from your conductor and reports to it in commits; what it needs from you reaches you in your conductor's digest (about 08:00, 13:00 and 18:00 UTC).
+## 1. Blocked on you {#needs}
 
-## 1. What's pending for me {#needs}
+Your go is needed before these move:
 
-In the order to do it (21:30 run, Wednesday 4 November). Your app has this as a filter: [Kanban, Needs me now](app/index.html#kanban). Your conductor's digest (about 08:00, 13:00 and 18:00 UTC) carries the questions only you can answer.
+- **Two specs to review with your desk:** [the live map](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/proposals/live-map/spec-live-map.md) (Replay inside Team and the machine, keys, sealed messages and lanes, a public version, a 3D option) and [the venues, Part B](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/proposals/WS-181/spec-venues.md) (the venue map on PrompTugal.news; Part A, the team's board, is approved). dev.map and dev.venues build only after.
+- **The presence agent:** team-collaboration as the team's one presence agent, opening everyone's locations (tier 3).
+- **Jose's conductor proposes** that your dev agent and Dinis's own 15 unpicked site and UI issues that name Jose; ask your desk for it.
+- **Held for you by your conductor:** practising onboarding with a real person (WS-35, WS-124), and token and context optimisation (WS-148).
+- **The visitors' inbox** for your meet page goes live only on your word, after security's review (WS-64, WS-119).
 
-- **Waiting on your go (tier 3), in your conductor's digest:** the lane to your conductor (it unblocks the app's sealed messages, slice 3, and your vault agent's next step), the signature rule for your conductor, and the presence agent proposed for team-collaboration (everyone's locations).
-- **Still open from today's stand-ups** ([13:00 agenda](../../meetings/2026-11-04-1300/index.html)): WS-34 (may your dev agent change shared site code) and WS-64 (Vicky's inbox).
-- **Overdue and due today:** in [My issues](#issues) and the app's Needs me now: WS-105 (protect main), WS-33, WS-98, WS-129 and your part of WS-120.
-- **Settled today:** WS-124 (you send the GitHub invitations, from the-neuronin; WS-100, the long form, is done with Vicky) and WS-136 (your key and signed messages).
+**Settled on 7 November:** WS-181, zones and buildings by default, an exact pin only when a person chooses it each time (your "C"); agents publish what you started, and its fixes; your agents change PrompTugal.news's dev directly. **Settled on 6 November:** your agents keep their keys under their new names; abp@'s update of their ABPs accepted; you approved your agents' ABPs as they stand (WS-34); your agent setup guide is with PrompTugal.news for review (WS-125); every agent of yours measures its tokens each run, into [your ledger](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/angelo/ledger) (WS-148); your digest carries a cost section. You joined PrompTugal.news as an editor (admin rights stay yours alone, never your agents'); [your card](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/card.md) is complete; the digest comes on demand. **Settled on 5 November:** your mentor handed over and retired (L6, two days on schedule); the lane to your conductor (made by your vault agent), the signature rule (your signed messages count for tier 1 and 2 only), WS-34, as you changed it on 6 November: your agents may change other people's files directly, with five steps against clashing, offline for your command centre, and no separate cockpit: the command centre is your one place ([the protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol)).
 
-**What your agents are on (from your conductor, by priority before Lisbon):** dev: summit days are in your app (slice 7, done this evening); next, drafts for WS-64 (booking and "talk to my agent" on the meet pages) and WS-84 (offline pages at the summit); team-collaboration: the stand-up show (WS-150), debriefs and the daily note; helper: the help page (/help/, linked here once it is on the site); vault: waiting on the lane. Jose's agents keep WS-37 and WS-74.
+## 2. My work {#work}
 
-## My own app: the brief {#wishlist}
+- **[Needs me now](app/index.html#kanban?n=1):** overdue, due today, and every issue with an open stand-up item for you.
+- **[My tasks](app/index.html#kanban):** open, picked and in progress; done ones are hidden.
+- **[The technical pool with Jose](app/index.html#kanban?m=0&w=pool):** who picked what.
+- **[Summit days](app/index.html#summit)**, **[the collaboration board](app/index.html#collab)** and **[Replay](app/index.html#replay)** (every commit since 2 November as a timeline, filtered and played back, with who wrote to whom, each agent's runs from its own log, and a 60-second clip of any window).
+- **[Dinis's notes for you](../../nights/2026-11-05/notes/index.html#angelo)** (5 November, morning).
 
-Angelo's command centre of his own, in `people/angelo/app/`, so nobody else's view or data changes; others take what they like. The brief was agreed with Angelo on 4 November and handed to `dev@web-summit.angelo`, which keeps it as `people/angelo/app/BRIEF.md` with the code.
+## 3. Is the machine healthy? {#machine}
 
-- **A kanban of every task:** "My tasks" on by default, "Needs me now" as a filter, filters by picked-by, due, workstream, status and keyword, columns and swim-lanes by any of those, sort by any field. Moving a card is a sealed message to the conductor.
-- **Messages sealed from the start,** with their status as icons on the card (red on a possible conflict) and a Messages pane for all of them.
-- **A collaboration board** of people and agents, with schedules and the machine.
-- **Summit days:** the public schedule, then sealed summaries of people's own calendars.
-- **A map each person shares on their own terms,** with a time on every location; the presence agent central, proposed to be `team-collaboration@web-summit.angelo`, once the team agrees.
+[CI failures](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/actions?query=is%3Afailure) · [the last releases](../../admin/versions.html) · [who is set up](../../team/setup/index.html) · [the keys page](../../keys/index.html). Main is not protected yet (WS-105).
 
-**Built on 4 November by `dev@web-summit.angelo`:** slice 0 (your own app, the shared one extended), slices 1 and 2 ([the kanban](app/index.html#kanban): cards, My tasks and Needs me now, filters, columns and swim-lanes, sort, bookmarkable views; read-only, no drag on the phone) slice 5 (the collaboration board, read-only) and slice 7 ([Summit days](app/index.html#summit): one tab per day, the stand-ups, the team's picked sessions and side events, now and next; Web Summit publishes no API, so it reads the sourced data/events.json). Next: slice 3, sealed sending, which waits on the lane to your conductor that your vault agent is setting up. The brief is [BRIEF.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/app/BRIEF.md).
+## 4. My agents {#agents}
 
-## 2. Is everyone connected? {#connected}
+Nine agents, named `<role>@PrompTugal.angelo` from 6 November (the conductor as desk and runner). All but one work through your conductor; the policy agent audits them all, the conductor included, and reports to you directly. What each did is in "My agents, as the team sees them" at the top, and on [the collaboration board](app/index.html#collab).
 
-Who is stuck, and at which step (WS-35). The full picture is [the setup leaderboard](../../team/setup/index.html); everyone's row:
+- **conductor:** the hub, in two parts: a lean hourly runner (its last line says "URGENT for Angelo:" or "Nothing urgent."), and the desk, which writes your digest when you ask.
+- **dev:** your command centre (Kanban, Team and the machine, Summit days, Replay, Where) and reviews of your guides; hourly. Writing the spec for four new agents for your review today.
+- **team-collaboration:** stand-ups, debriefs, the daily note, the stand-up show; brief at 11:40 and 17:40, debrief at 13:15 and 19:15; and the whole team as one map, now also in [your command centre](app/index.html#collab).
+- **vault:** your vaults and the lane to your conductor (WS-120); what the live map and venues may show, and sharness.kms, analysed; every four hours. It pushes no vault until it has its own SG/Send token.
+- **crm:** your area in the team's private CRM, and the inbox agent built to its lane at your go; every three hours.
+- **helper:** setup questions and the help page (WS-158); twice a day, 10:50 and 16:50 UTC.
+- **writer** (new): your articles, guides and technical notes for PrompTugal.news, a session per piece that you start; its **runner** checks the newsroom every two hours and keeps the writer's state.
+- **policy:** the auditor of your agents against their ABPs and your protocol; read-only, reports to you. Twice a day, 07:10 and 19:10 UTC; [the map](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/policy/map.md) and [the findings](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/policy/findings.md).
+- **dashboard:** this page and your command centre; every three hours.
+- **Coming (their spec approved by you, 7 November):** dev.map (Team and the machine, live), dev.venues (the venue map and our private locations, WS-181), dev.links (broken links on PrompTugal.news), research (public briefs before meetings), social-media (your LinkedIn, drafts only; you post) and vault.kms (the sharness.kms changeset). Each pushes to its own branch; dev or vault brings its work onto dev.
+- **dev.app:** the Android work (WS-202, WS-203). Its own Android apps are on hold, because PromptUGAL's Android app already exists (Dinis's); the live wallpaper of the agents map is ready as a module to offer, your call, and runs on your phone ("beautiful", 9 November). Now building, at your go: the website's views on it (layout, level, theme) from a Settings screen in the wallpaper picker ([its guide](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/app/android/README.md)). [The live graph on any screen](app/desktop/index.html) stays: the browser's pop-out, display mode, or a Home Screen app on the iPad. The desktop app is dropped; if its copy is still on your laptop, uninstall it.
 
-```onboarding all
-```
-
-The onboarding issues:
-
-```issues area:onboarding
-```
-
-## 3. The machine {#machine}
-
-- **main's protection:** WS-105 and WS-90 below; until they are done, "never push to main" is a rule, not a setting.
-- **The last release and its gate:** [the versions](../../admin/versions.html) (the version in the top bar links to its row), built and gated by [CI](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/actions/workflows/deploy-pages.yml).
-- **CI failures:** [failed runs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/actions?query=is%3Afailure).
-- **Keys published against agents running:** [the keys page](../../keys/index.html) against [the agents at work](../../wakes/index.html) and [everything on the team](../../team/everything/index.html).
-
-## 4. The technical pool with Jose {#pool}
-
-One pool: you two choose who takes what, and `picked_by` says who did. [Jose's dashboard](../jose/index.html) shows the same board.
-
-```issues area:tech
-```
-
-## 5. My agents {#agents}
-
-What each did since the last run is in "My agents, as the team sees them" at the top and in [the log on dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commits/dev); the prompts and schedules are in [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md).
-
-- **conductor@web-summit.angelo**: the hub: sends your agents work and takes their reports in commits, keeps `people/angelo/`, and brings you what only you can decide, in a digest about 08:00, 13:00 and 18:00 UTC. Hourly, round the clock.
-- **dev@web-summit.angelo**: your own command centre ([the brief](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/app/BRIEF.md)), and drafts for the technical pool. Every two hours, round the clock.
-- **team-collaboration@web-summit.angelo**: the stand-ups (calendar, brief, debrief, follow-ups, WS-96), the daily bottleneck note (WS-97) and the stand-up show (WS-150). 07:40, 12:40 and 17:40 UTC, debriefs at 14:15 and 19:15, and its inbox six times a day.
-- **vault@web-summit.angelo**: your SGit vaults (WS-120): your first vault published after an audit. 09:50 and 21:50 UTC.
-- **helper@web-summit.angelo**: answers setup questions from anyone on the team and keeps the help page (/help/). Every two hours, proposed.
-- **dashboard@web-summit.angelo**: keeps this page and your command centre for your conductor, under [the protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol). Every three hours, round the clock.
-
-All six work through your conductor (the protocol, 4 November): work comes in commits from it, reports go back to it.
-
-## My issues {#issues}
-
-```issues angelo
-```
-
-## My pulse {#pulse}
-
-```pulse angelo
-```
+Questions? [The help page](../../help/index.html), kept by helper@PrompTugal.angelo.

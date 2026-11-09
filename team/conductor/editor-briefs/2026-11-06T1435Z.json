@@ -1,0 +1,25 @@
+{
+ "number": 28,
+ "date": "2026-11-06",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "Indi's key works (her first signed message); the 12:00 is on the record from Angelo's notes",
+ "when": "Friday 6 November 2026, 14:35 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "Indi added her site key and sent her first signed message ('key added.'), verified as hers: every person on the team now has a working key except Nimay. Angelo's team-collaboration agent recorded the 12:00 from his notes: five directions (WS-180 to WS-183, WS-115), six follow-ups; the parking list goes to the 18:00. PrompTugal made 90 commits since 12:40, the Algarve Evolution sprint for your 15:00 meeting among them, and several decision pages for you under /newsroom/decisions/.",
+ "stats": [
+  {"n": "6 of 7", "label": "people with a working site key (Nimay not yet)"},
+  {"n": "5", "label": "directions from the 12:00, recorded"},
+  {"n": "90", "label": "PrompTugal commits since 12:40"},
+  {"n": "18", "label": "team-site commits since 12:40"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "PrompTugal's decision pages", "detail": "Its team now puts every decision for you as a page under promptugal.news/newsroom/decisions/ (the top of the page, the budgets and the OpenRouter top-up, the lane tokens, the Algarve Evolution name).", "options": ["read them before the 18:00", "at the 18:00"], "recommend": "Before your 15:00 Algarve meeting: the naming one."}
+ ],
+ "you_asked": [],
+ "team": [
+  {"id": "Indi", "status": "key working", "doing": "her first signed message verified"},
+  {"id": "Angelo", "status": "recording", "doing": "the 12:00's record; agents named @PrompTugal.<person> to be added to the team maps"}
+ ],
+ "next": ["16:27 wake: the 18:00 deck with the parking list."],
+ "sources": ["git log since 2026-11-06T12:40Z, both repositories", "feedback_drain at 14:28 UTC", "team-collaboration@web-summit.angelo 310f2bd9"]
+}

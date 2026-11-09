@@ -1,0 +1,32 @@
+{
+ "number": 25,
+ "date": "2026-11-06",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "promptugal.news is live; the email twin is in the CRM; Silvio asks for PrompTugal access",
+ "when": "Friday 6 November 2026, 08:45 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "79 agent commits overnight on the team site, and the PrompTugal team's own hourly runs. promptugal.news resolves to GitHub Pages and serves the site. I reviewed and applied Angelo's CRM agent's email twin (an inbox, thread and company view of the CRM's mail, mail always plain text; tested on a hostile email) and pushed it to both CRM vaults. The observability handover you asked for reached me on the feedback pane and is relayed, unchanged, to PrompTugal's conductor for its observability agent. Silvio wants three agents of his own on PrompTugal and push access to its repository. Angelo's note: 108 issues late, 70 unowned, and the stand-ups still have no notes.",
+ "stats": [
+  {"n": "79", "label": "agent commits on the team site overnight"},
+  {"n": "200", "label": "promptugal.news answers (DNS on GitHub Pages)"},
+  {"n": "108", "label": "late issues (70 unowned), Angelo's daily note"},
+  {"n": "1", "label": "message relayed between the teams (the observability handover)"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "Silvio on PrompTugal: push access for riskmandate-silvio, and agents named <role>@PrompTugal.silvio", "detail": "conductor@web-summit.silvio 84aed400: conductor@, journalist@ and dev@PrompTugal.silvio. The PrompTugal rules say a new session only at your word, and the agents there are yours today.", "options": ["yes to both", "access only (his agents later)", "not now"], "recommend": "Access for Silvio himself now; his agents after the summit's first day, so PrompTugal's own team settles first."},
+  {"id": "2", "ask": "HTTPS on promptugal.news", "detail": "DNS points at GitHub Pages; in the repository's Pages settings, tick 'Enforce HTTPS' once the certificate is issued (dev@PrompTugal.dinis owns the domain).", "options": ["done", "ask dev@PrompTugal.dinis to check"], "recommend": "Check it in Settings, Pages, this morning."},
+  {"id": "3", "ask": "Notes at the stand-ups", "detail": "Angelo's note: stand-ups held without notes or a transcript; team-collaboration@angelo cannot record what it never sees. The 12:00 today: someone types one line per decision, or the Meet transcript goes to the record (WS-98).", "options": ["turn transcripts on (WS-98)", "a person takes one-line notes", "you give me the lines after"], "recommend": "Transcripts on; until then, one line each to me after the call."}
+ ],
+ "you_asked": [
+  {"at": "6 Nov, ~04:30", "said": "the observability agent's briefing ... sends it to you, then you can send it to the other team", "done": "Received on the feedback pane (unsigned there), relayed unchanged on my lane to PrompTugal's conductor for observability@PrompTugal.dinis.", "where": "PrompTugal inbox axmydi66", "status": "done"},
+  {"at": "5 Nov, ~18:40", "said": "an email UI ... a Gmail clone ... an email twin", "done": "Angelo's CRM agent built it; reviewed, tested and applied; live in both CRM apps and on /crm/.", "where": "/crm/", "status": "live; waits for inbox@silvio's first threads"}
+ ],
+ "team": [
+  {"id": "Vicky", "status": "publishing", "doing": "her programme desk's agenda live on PrompTugal, 8 new press conferences"},
+  {"id": "Angelo", "status": "built", "doing": "the email twin; a leak tripwire before every push, for its keeper"},
+  {"id": "Indi", "status": "testing", "doing": "a readers-test prompt for her synthetic session; her key still the CRM blocker (WS-178)"},
+  {"id": "Silvio", "status": "asking", "doing": "PrompTugal access and agents"}
+ ],
+ "next": ["10:27 wake: the 12:00 deck and your briefing PDF."],
+ "sources": ["git log since 2026-11-05T22:35Z (dev)", "DNS and HTTP checks of promptugal.news at 08:40 UTC", "crm@web-summit.angelo d870d02c; conductor@web-summit.silvio 84aed400; team-collaboration@web-summit.angelo 60334630"]
+}

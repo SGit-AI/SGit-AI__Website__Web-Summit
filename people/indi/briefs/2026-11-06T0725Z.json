@@ -1,0 +1,62 @@
+{
+  "number": 12,
+  "date": "6 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Friday: the newsroom has a new name, and your helpers have a job",
+  "when": "6 November 2026, 07:25 UTC (scheduled wake; since brief 11, 17:25 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Last night Dinis renamed the newsroom PromptUGAL, a news site that maps AI companies in Portugal. Outreach starts today at 10:00 UTC. He asked your helpers to test the new site as readers, and none has done it yet. He has also named you on the editorial board page. Three short things need you. Nothing is decided here.",
+  "stats": [
+    {"n": "10:00", "label": "today, UTC: PromptUGAL is meant to be ready for outreach (WS-177)"},
+    {"n": "0", "label": "of your helpers have tested it yet"},
+    {"n": "3", "label": "answers still open from yesterday (key, GitHub name, second conductor)"},
+    {"n": "no", "label": "I cannot open promptugal.news from my session, so I have not seen it"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Let your helpers test the new site as readers, before 10:00",
+      "detail": "Dinis's note says your three helpers (synthetic, ux, messaging) should pretend to be readers who got an email from PromptUGAL, look at the front page and one company page, and report. First, your Claude environment must allow the address promptugal.news, the same place you allowed the others (Network access, Allowed domains). Then paste the prompt I wrote into your synthetic helper's session. It is in people/indi/promptugal/readers-prompt.md.",
+      "options": ["allow it and paste the prompt now", "allow it, and I start a new helper for it", "skip it"],
+      "recommend": "Allow the address and paste the prompt: it takes five minutes, and the report helps Dinis before the emails go out."
+    },
+    {
+      "id": "2",
+      "ask": "Say yes or no to being named on the editorial board page",
+      "detail": "Dinis's plan lists an editorial board page with three names: Dinis Cruz, Vicky Wang and Indi Gupte. It will be public. Nothing about a person goes on a public page without their own yes. Tell Dinis, in your own words, whether your name and the title 'editor' are fine.",
+      "options": ["yes, name me", "yes, but a different title", "no, leave me off"],
+      "recommend": "Your choice. If yes, say which title you want shown."
+    },
+    {
+      "id": "3",
+      "ask": "Three answers from yesterday, still open",
+      "detail": "(a) Is the other 'conductor' helper that wrote your card yours: keep me, keep it, or both? (b) Is riskmandate-indi your GitHub name? Dinis's security check waits on it (WS-178). (c) Add your site key (WS-136): the link is in chat above.",
+      "options": ["answer all three here", "answer later today"],
+      "recommend": "Answer (b) first: it is one word, and Dinis's checks are waiting on it."
+    }
+  ],
+  "you_asked": [
+    {"at": "5 Nov, 17:25 UTC", "said": "(my brief 11 questions) which conductor, which GitHub name, an offline demo?", "done": "No answer yet. Nothing changed.", "where": "-", "status": "waiting"}
+  ],
+  "sections": [
+    {
+      "title": "1. What changed overnight",
+      "items": [
+        "The newsroom is now PromptUGAL, Web Summit Edition, at promptugal.news. Its job: to map the universe of AI in Portugal, bigger than the summit. The old web address now shows 'not found' (WS-177, 85c83882).",
+        "From today, outreach goes out under the PromptUGAL name, each email leading with the company's page rather than with RiskMandate. Nothing is sent until Dinis sets up the addresses and says yes.",
+        "Your helpers' commits stopped at 17:37 yesterday. The 21:45 note reached them as a commit, but nobody started a session for it.",
+        "Dinis's security helper checked everyone's keys. Five pass, and yours wait on your GitHub name (WS-178)."
+      ]
+    }
+  ],
+  "next": [
+    "17:20: my next wake.",
+    "When your readers' report is in, I tell Dinis's newsroom, as his note asks.",
+    "Tell me 'acknowledge' when you have read briefs 1 to 12."
+  ],
+  "sources": [
+    "git log since 17:20 UTC on 5 November: 14003ac6, 85c83882, 443c8aab, 558f12e",
+    "board/WS-177 and team/conductor/notes/2026-11-05/promptugal-sprint.md",
+    "promptugal.news and the old newsroom address, checked at 07:21 UTC: the first not reachable from my session, the second 404"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "comarch",
+  "type": "company",
+  "kind": "company",
+  "name": "Comarch",
+  "aliases": [],
+  "website": "https://www.comarch.com",
+  "what": null,
+  "category": "IT for finance / telecoms",
+  "country": "Poland",
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26)",
+  "attending_as": "event partner",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/e93401d0-4cbc-40dc-b8f6-85cd195bf87b/comarch/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.comarch.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

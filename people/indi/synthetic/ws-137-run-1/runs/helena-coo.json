@@ -1,0 +1,69 @@
+{
+ "persona": "helena-coo",
+ "synthetic": true,
+ "first_impression": "The master key idea is clear and a bit alarming, which is probably the point. But I have heard this kind of pitch from every vendor this year, so I want to know who you are, who has bought this, and what it costs me before I give you more of my 20 minutes.",
+ "understood_riskmandate": "partly: I get that it writes one page per agent showing what it can touch versus what it should touch, but I do not know if it is software, a consultancy service or a certificate, and I do not know who would stand behind a Licence to Operate.",
+ "steps": [
+  {
+   "step": 1,
+   "reaction": "That is your homework, not mine, but it is nice that you came prepared; just do not tell me you read my company page and then get my business wrong.",
+   "keeps_me": "yes"
+  },
+  {
+   "step": 2,
+   "reaction": "'Does it have permission?' is a fair question and I honestly cannot answer it today, which is uncomfortable, so you have my attention.",
+   "keeps_me": "yes"
+  },
+  {
+   "step": 3,
+   "reaction": "The new employee with a master key is something I can repeat to my board, and that is useful, though it is a bit simple for a COO who runs 900 people.",
+   "keeps_me": "yes"
+  },
+  {
+   "step": 4,
+   "reaction": "You want me to list our agents and what they can reach, typed into your tool: who sees that data, where does it go, and I am not putting claims or customer system details into anything with test keys.",
+   "keeps_me": "no"
+  },
+  {
+   "step": 5,
+   "reaction": "A red ring on my own situation is the part I would actually show my board, but I can see it is not built yet, and a picture of a risk is not proof of one.",
+   "keeps_me": "yes"
+  },
+  {
+   "step": 6,
+   "reaction": "One page my security team, my board and my insurer all read is attractive, but will my regulator and my insurer actually accept it, or is this just your document?",
+   "keeps_me": "yes"
+  },
+  {
+   "step": 7,
+   "reaction": "A link and a QR code is fine and low pressure; a copy that works offline is thoughtful, but today I only get a web page link, which is thin.",
+   "keeps_me": "yes"
+  },
+  {
+   "step": 8,
+   "reaction": "Good that a person reads the message before it is sent, since I do not want an AI emailing me, though I would like to know what you keep about me.",
+   "keeps_me": "yes"
+  },
+  {
+   "step": 9,
+   "reaction": "Writing a real policy for one real agent is a sensible small start, but 'no promises on price' means I cannot take it to anyone yet, and that is where a lot of vendors lose me.",
+   "keeps_me": "no"
+  }
+ ],
+ "moment_most_convinced": "Step 5, the gap picture, because it turns something abstract into a red area I could show my board; step 2 is close behind because it names a question I cannot answer.",
+ "moment_lost_interest": "Step 4, because I am asked to describe my agents and their access to a vendor I have just met, with only test keys, and no word on confidentiality or where the data goes. Step 9 also loses me because of no price or terms.",
+ "unanswered_questions": [
+  "Who is RiskMandate, who has used it, and who stands behind the Licence to Operate if something goes wrong?",
+  "Will my regulator and my insurer accept this document, and has either ever seen one?",
+  "What happens to the information I type about our agents and systems, and who can see it?",
+  "How much of my team's time does a first policy take, and what will it cost me?",
+  "Does it check what the agent really does, or only what we tell you it does?"
+ ],
+ "would_take_next_step": "maybe: I would need a named reference from a regulated firm, a plain statement on data handling, a rough time and cost range for one pilot policy, and evidence that an insurer or regulator has read this kind of page.",
+ "plan_comments": "The five steps read as a list of things you are building, not things I get, and the buyer parts (live infographic, animation, offline pack) are all still plans. The offline pack for a customer to share inside the company is the most useful bit for me, because I will have to sell this to my board. I would want evidence and pricing in the plan as much as pictures.",
+ "top_3_changes": [
+  "Add a step early on who RiskMandate is and who vouches for it: a named customer or regulator or insurer reference, plus what a Licence to Operate is worth and who issues it.",
+  "Before step 4, say plainly how my information is handled, and offer a safe way in, such as a made-up example agent or a sample from my sector, instead of asking me to describe my real agents on the spot.",
+  "Give step 9 a real answer: a rough time and cost range for a first policy and a pilot, or at least how pricing works, so I can take something concrete to my board."
+ ]
+}

@@ -1,0 +1,4 @@
+{
+ "about": "Device keys for team messaging (WS-203): one entry per iPhone, iPad or Android device, public halves only (P-256 JWK for encrypt and sign, from the device's Secure Enclave or Keystore). A device is added by its person from a device already trusted. Format: people/indi/messaging/FORMATS.md, section 5.",
+ "keys": []
+}

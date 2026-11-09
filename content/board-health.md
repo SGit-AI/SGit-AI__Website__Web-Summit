@@ -4,38 +4,35 @@ summary: What the project manager read on the board (board/WS-NN-*.md), the plan
 ---
 Written by project-manager@web-summit.dinis from the issue files in `board/` ([the board](../briefs/index.html#issues)), `data/meetings/` ([the stand-ups](../meetings/index.html)), `people/*/onboarding.json` and the git log. Vicky picked up WS-46 on 3 November; her own note, written by pm@web-summit.vicky once a day at 07:40 for her deadlines, is [people/vicky/board-health.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/board-health.md) . This page stays the team-wide view until Vicky decides otherwise. Each run replaces the last; earlier runs are in the file's git history.
 
-## Run of 4 November 2026, 17:50 UTC
+## Update, 7 November 2026, 12:50 UTC
 
-Read: everything at commit `b1350b2` on dev (v0.2.327). Since 12:50: seven new issues (WS-145 to WS-151), two done (WS-100; WS-23 with five booked meetings in the private vault), and an incident, WS-151: why WS-145 sat buried on Dinis's dashboard. My review is in the file.
+No change on the board since 07:50: no issue done, none new, and no stand-up decision recorded at the 12:00. The 07:50 run below stands, including the parking list (50 to park, 24 kept). On the 18:00 agenda, the two SG/Send token asks (crm-silvio, and conductor-jose with vault-jose, both WS-170) are one item now, so Dinis answers once for all three agents. Two past "order of the meeting" items are closed (the 6 November 18:00 and today's 12:00). 34 items are open.
+
+## Run of 7 November 2026, 07:50 UTC
+
+Read: everything at commit `1a3f501` on dev (v0.2.970). Since 17:50 yesterday: four done (WS-17 merged into WS-185, WS-31, WS-75, WS-174), three new (WS-187 and WS-188 on secrets and the shared origin, WS-189 on the summit desk writing to the private CRM), and **one decision recorded**: the merch is collected on Monday by Silvio with Dinis, on the way to Web Summit (Silvio, 7 November). The 18:00 of 6 November left no record (team-collaboration@PrompTugal.angelo, 07:40).
+
+**WS-31 is closed** at Vicky's word (21:13): everyone has their meetings in their own calendars, so the 10 to 12 November schedules are not needed. That ends my own WS-31 duty too.
 
 ### Only Dinis can do this {#only-dinis}
 
-At most five, ranked by who is blocked. Each one is an action no agent can take. From WS-151: this block comes first, and each ask stands alone.
+From the board's `only: dinis` field: **WS-13** (the merch budget, blocks Silvio; the order and collection are settled, so a one-line "yes, as spent" closes it), **WS-105** (who may merge to main), **WS-115** (the OpenRouter key per agent, and more models), and **WS-180** (who runs a back office from outside the summit, before Monday; marked `only:` since 6 November). New on today's 12:00: an SG/Send access token for crm-silvio (WS-170).
 
-| # | Issue | Who is blocked | The action |
-|---|---|---|---|
-| 1 | **WS-145** Indi's write access to the newsroom | Indi, and her newsroom desks (WS-141) | On GitHub, in SGit-AI/SGit-AI__Website__Newsroom__Web-Summit, go to Settings, Collaborators and teams, Add people, and add `riskmandate-indi` with Write. Angelo is not an admin there (`a6c8a91`). |
-| 2 | **WS-09 / WS-124** who sends the GitHub invitations | Nimay (still to create `riskmandate-nimay`) | Say "Angelo sends them" in one line, and the start page says one thing. |
-| 3 | **WS-113** your yes on the generic-QR set and the RiskMandate logo | The printer: sign-offs are at 3 of 7, and delivery is now aimed at Monday 9 November | On [/print/](../print/index.html). |
-| 4 | **WS-105 / WS-90** protect main | Every agent: "never push to main" is a rule with no barrier behind it | On GitHub, in the repository's Settings, Rules, add a rule for `main` that requires a pull request. |
-| 5 | **WS-115** the OpenRouter key, one per agent | Ask Claude on the command centres | Seal and sign one key per agent. |
+### The parking decision, still open {#parking}
 
-Also yours, but not blocking anyone: WS-10 (workspace email), WS-12 (verify keys as the anchor), WS-88 (a public role address), WS-98 (Meet recording), and whether to close WS-62 and WS-56 and renumber the duplicate WS-106.
+Not decided at the 18:00 (no record). Updated for today: **74 issues** dated up to yesterday are not done and have nobody on them. I recommend yes, keeping **24** out of the parking pass: the RiskMandate core, everything only Dinis can do with its pair WS-90, WS-09 (it blocks Nimay), who records and Meet transcripts (WS-107, WS-98), the merch sign-off, and the open security issues.
+
+- **Keep, 24:** WS-09, WS-13, WS-15, WS-16, WS-18, WS-19, WS-20, WS-21, WS-66, WS-90, WS-98, WS-105, WS-107, WS-109, WS-113, WS-115, WS-118, WS-119, WS-122, WS-132, WS-152, WS-154, WS-156, WS-164.
+- **Park, 50:** WS-01, WS-02, WS-03, WS-04, WS-05, WS-06, WS-10, WS-12, WS-24, WS-28, WS-30, WS-34, WS-38, WS-40, WS-41, WS-42, WS-43, WS-53, WS-56, WS-59, WS-60, WS-62, WS-68, WS-69, WS-70, WS-73, WS-77, WS-79, WS-80, WS-81, WS-82, WS-88, WS-99, WS-110, WS-111, WS-112, WS-117, WS-121, WS-127, WS-133, WS-136, WS-138, WS-143, WS-144, WS-146, WS-147, WS-150, WS-160, WS-162, WS-165.
+
+"Parked" means `status: parked` with a one-line note in each file. Nothing changes until the decision is recorded in Dinis's or Vicky's words.
 
 ### The rest of the board
 
-**In one line.** 152 issue files: 106 open, 20 picked, 5 in progress, 21 done. 54 were due today and are not done, 41 of them with nobody in `picked_by:`. Tomorrow, Thursday 5 November, adds 23 more with nobody on them: WS-05, WS-17, WS-20, WS-21, WS-26, WS-36, WS-38, WS-42, WS-69, WS-75, WS-76, WS-79, WS-80, WS-110, WS-111, WS-117, WS-127, WS-131, WS-133, WS-138, WS-139, WS-144 and WS-150.
+**In one line.** 190 issue files: 108 open, 45 picked, 5 in progress, 32 done. **120 dated up to yesterday are not done, 74 with nobody on them.** Today and tomorrow, 20 are due, 14 with nobody on them: WS-32, WS-61, WS-157, WS-166 (everyone's key on every device before Web Summit), WS-168, WS-169, WS-173, WS-176, WS-179, WS-180, WS-182, WS-186, WS-187 and WS-189.
 
-**Still the biggest risk.** The RiskMandate core (WS-15, WS-16, WS-18, WS-19, WS-22, WS-66, WS-109) was due today with nobody on it. WS-17 (material for investors), WS-20 (the landing page) and WS-21 (the offer and how to buy it) are due tomorrow, also with nobody on them. "Who writes the one paragraph" has been on the agenda since 2 November.
+**Before Lisbon (Tuesday).** WS-166 (keys on every device) and WS-179 (sessions push only to dev) are the two that matter on the day. WS-187, WS-188 and WS-189 are new security findings, all without an owner.
 
-**Stand-ups are not deciding.** One decision has been recorded since Tuesday morning: the print order. The 18:00 has 29 open items, 27 of them carried over. Who records (WS-107) is still open, and moving the midday slot (13:07) is now an item too.
+**Stand-ups.** The 12:00 has 36 open items, 35 carried over. One decision has been recorded in six stand-ups.
 
-**The merch.** The printer is aiming for Monday 9 November. Who collects is on the agenda (logistics@web-summit.vicky). Sign-offs are still at 3 of 7 (Angelo, Dinis, Vicky). /impressao/ has the files in Portuguese for the printer (procurement@web-summit.silvio).
-
-**WS-31 (the schedules, Vicky).** WS-23 is done, so the booked meetings are in the vault. WS-25 (the first five companies) is still an open decision. WS-29 (hot leads) and WS-32 (sessions) still have nobody on them.
-
-**Tidied this run.** On the 18:00 agenda, the two newsroom decisions (13:00 and 18:00) are made one, and the only-Dinis part, WS-145, is first in my item, standing alone. On the board, WS-145's `agents:` line no longer says Angelo can do it. The review of the WS-151 findings is in the file.
-
-**Load.** Open issues per named owner: Dinis 54, Angelo 46, Jose 35, Indi 20, Nimay 17, Silvio 16, Vicky 11, Sarah 10, Daniela 4. Another 24 are for everyone and 6 for anyone.
-
-**The pulse.** Still two check-ins in total: Vicky (3 November, morning) and Jose (3 November, evening). None on Wednesday.
+**The pulse.** Two check-ins in total, both from 3 November.

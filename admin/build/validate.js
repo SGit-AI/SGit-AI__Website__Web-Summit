@@ -17,6 +17,8 @@
 //  14. the company map: every company has a source with a URL and the date read
 //  15. public forever: no email, phone number or key shape in comms/, data/ or team/
 //  16. every closed wake record has its five steps
+//  22. no person's script beside keyring.js, and none that reaches for the keyring or data/sealed/ (WS-164)
+//  21. every URL in a built page is http(s), mailto, a fragment or relative: no javascript:, data: or vbscript: (WS-132)
 //  18. briefs (WS-112): warnings only, never a failure: more than three asks, or next / sources / wide not a list
 'use strict'
 const fs = require('fs')
@@ -33,7 +35,7 @@ const read = p => text(path.join(ROOT, p))
 
 function walk(dir, out = []) {
     for (const name of fs.readdirSync(dir)) {
-        if (['.git', '.github', 'node_modules', '.sg_vault'].includes(name)) continue
+        if (['.git', '.github', 'node_modules', '.sg_vault', '.cache'].includes(name)) continue   // .cache: gitignored build caches, never committed or published
         const p = path.join(dir, name)
         if (fs.statSync(p).isDirectory()) walk(p, out); else out.push(p)
     }
@@ -72,7 +74,8 @@ if (new Set(rows).size !== rows.length) errors.push('admin/versions.html lists a
 for (const f of htmlFiles) {
     for (const m of text(f).matchAll(/(?:href|src)="([^"#]+)(?:#[^"]*)?"/g)) {
         if (/^(https?:|mailto:|data:|\/\/)/.test(m[1])) continue
-        if (!fs.existsSync(path.resolve(path.dirname(f), m[1]))) errors.push(`${rel(f)}: broken link -> ${m[1]}`)
+        // a query string (assets' ?v=<version>, for cache-busting) is not part of the file: the file itself must exist
+        if (!fs.existsSync(path.resolve(path.dirname(f), m[1].replace(/\?.*$/, '')))) errors.push(`${rel(f)}: broken link -> ${m[1]}`)
     }
 }
 
@@ -158,6 +161,40 @@ try {
     for (const f of ignored) errors.push(`${f}: is gitignored, so CI will not have it`)
 } catch (e) { if (e.status !== 1) errors.push(`git check-ignore failed: ${e.message}`) }
 
+// 21. no live code in a URL (WS-132 part 1): every href, src, action and formaction in every built page is http(s), mailto,
+// a fragment or relative. Entities are decoded and control characters dropped first, as a browser does, so
+// java&#115;cript: or a tab inside the scheme is caught too. build.mjs's safeUrl() keeps markdown from making one
+{
+    const ent = s => s.replace(/&#x([0-9a-f]+);?/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&#(\d+);?/g, (_, d) => String.fromCodePoint(+d)).replace(/&colon;/gi, ':').replace(/&tab;|&newline;/gi, '').replace(/&amp;/gi, '&')
+    const bad = v => { const m = ent(v).replace(/[\u0000-\u0020]/g, '').match(/^([a-z][a-z0-9+.-]*):/i); return m && !/^(https?|mailto)$/i.test(m[1]) }
+    if (!bad('java&#115;cript:x') || !bad('JaVa\tScRiPt:x') || !bad('data:text/html,x') || bad('https://x') || bad('a/b:c') || bad('#x')) errors.push('validate.js: check 21 fixtures failed')
+    for (const f of htmlFiles) for (const m of read(rel(f)).matchAll(/\s(?:href|src|action|formaction|xlink:href)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/gi))
+        if (bad(m[1] ?? m[2] ?? m[3])) errors.push(`${rel(f)}: a URL with a scheme that can run code: ${(m[1] ?? m[2] ?? m[3]).slice(0, 30)} (WS-132)`)
+}
+
+// 22. a person's script never sits beside a person's key (WS-164, security@web-summit.dinis): (a) no built page that runs a
+// script from people/ also loads keyring.js; (b) no script a browser runs from people/ (.js files) reaches for the
+// keyring, IndexedDB, the page's links or data/sealed/ (security's list, with "sealed" narrowed to the sealed folder:
+// the word alone is in people's prose, as in "sealed sending comes with slice 3")
+{
+    const REACH = /WSKeyring|ws-keyring|indexedDB|document\.links|data\/sealed\//
+    for (const f of files.filter(f => rel(f).startsWith('people/') && f.endsWith('.js'))) { const m = read(rel(f)).match(REACH); if (m) errors.push(`${rel(f)}: a person's script uses ${m[0]} (WS-164: the keyring and sealed items are the site's scripts' only)`) }
+    // (c) a deck (team/conductor/shows/<id>.show) is raw HTML on a page that loads the keyring (WS-164, the fourth route,
+    // security@web-summit.dinis 6 November): no script but the site's own assets/deck.js, no on*= handler, no javascript:
+    const SHOWS = path.join(ROOT, 'team', 'conductor', 'shows')
+    if (fs.existsSync(SHOWS)) for (const f of fs.readdirSync(SHOWS).filter(f => f.endsWith('.show'))) {
+        const t = fs.readFileSync(path.join(SHOWS, f), 'utf8'), at = `team/conductor/shows/${f}`
+        for (const m of t.matchAll(/<script\b[^>]*>/gi)) if (!/^<script src="(\.\.\/)*assets\/deck\.js" defer><\/?script>?$|^<script src="(\.\.\/)*assets\/deck\.js" defer>$/.test(m[0])) errors.push(`${at}: a script other than assets/deck.js (${m[0].slice(0, 60)}) on a page with the keyring (WS-164)`)
+        if (/\son[a-z]+\s*=/i.test(t)) errors.push(`${at}: an on*= handler on a page with the keyring (WS-164)`)
+        if (/javascript:/i.test(t)) errors.push(`${at}: a javascript: link on a page with the keyring (WS-164)`)
+    }
+    for (const f of htmlFiles) {
+        const h = read(rel(f)); if (!h.includes('assets/keyring.js')) continue
+        const own = [...h.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]).find(src => !/^https?:/.test(src) && path.posix.normalize(path.posix.join(path.posix.dirname(rel(f)), src)).startsWith('people/'))
+        if (own) errors.push(`${rel(f)}: loads keyring.js beside a person's script ${own} (WS-164)`)
+    }
+}
+
 // 17. prose has no em-dashes (the estate's house style; the guidance on sgit.ai lists it in every gate)
 for (const dir of ['content', 'board', 'people']) for (const f of walk(path.join(ROOT, dir)).filter(f => f.endsWith('.md'))) if (read(rel(f)).includes('\u2014')) errors.push(`${rel(f)}: an em-dash in prose (use a colon, a comma or a full stop)`)
 
@@ -229,6 +266,24 @@ catch (e) { errors.push(`wake check: ${(e.stderr || '').toString()}`.trim()) }
 try { execFileSync('node', [path.join(__dirname, '..', 'tools', 'signoff.mjs'), 'verify'], { cwd: ROOT, stdio: 'pipe' }) }
 catch (e) { errors.push(`sign-off check: ${(e.stdout || '').toString().split('\n').filter(l => /bad signature/.test(l)).join('; ')}`.trim()) }
 
+// 20. P-01 (policy@PrompTugal.angelo, approved by Angelo 7 November): no lane of one of Angelo's agents is open to the public
+// form (assets/feedback.json, `public: true`), so a stranger's link can never reach an agent's lane
+try {
+    const fb = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/feedback.json'), 'utf8'))
+    for (const l of [fb, ...(fb.lanes || [])]) if (l && l.public === true && /@(web-summit|promptugal)\.angelo$/i.test(String(l.agent || ''))) errors.push(`feedback.json: the lane of ${String(l.agent).split('@')[0]}@ (Angelo's) is marked public; an agent's lane is never open to the public form (P-01)`)
+} catch (e) { errors.push(`feedback.json: ${e.message}`) }
+
+// 21. the lane check (policy@PrompTugal.angelo's gate-lane-check.md, approved by Angelo 7 November): a commit by one of
+// Angelo's agents writes only inside its lane (people/angelo/policy/lanes.json), or says why on an "Outside: <path>; <why>"
+// line. Range: LANE_RANGE (CI: the push) or origin/dev..HEAD (release.sh, before the push). Refuses only when lanes.json
+// says "enforce": true (policy@ turns it on once the lanes match the agents' work); until then the gate prints warnings.
+const laneFindings = []
+try {
+    const out = JSON.parse(execFileSync('node', [path.join(ROOT, 'people/angelo/policy/lane-check.mjs'), '--gate'], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }))
+    for (const l of out.declared) console.log('lanes: declared ' + l)
+    for (const l of out.refused) (out.enforce ? errors : laneFindings).push('lanes: ' + l)
+} catch (e) { laneFindings.push(`lanes: the check did not run (${String(e.message).split('\n')[0]})`) }
+
 // 18. the briefs' shape (WS-112): printed as warnings, never a failure, so a brief is never held back by its form
 const warnings = []
 try {
@@ -240,6 +295,7 @@ try {
         for (const k of ['next', 'sources', 'wide']) if (k in b && !Array.isArray(b[k])) warnings.push(`brief ${rel}: "${k}" is a ${typeof b[k]}, not a list`)
     }
 } catch (e) { warnings.push(`briefs: ${e.message}`) }
+warnings.push(...laneFindings)
 if (warnings.length) console.log(warnings.map(w => 'WARN ' + w).join('\n'))
 
 if (errors.length) { console.error(errors.map(e => 'FAIL ' + e).join('\n')); process.exit(1) }

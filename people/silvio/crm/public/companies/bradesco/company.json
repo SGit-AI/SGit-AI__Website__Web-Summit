@@ -1,0 +1,29 @@
+{
+  "id": "bradesco",
+  "type": "company",
+  "kind": "company",
+  "name": "Bradesco (Inovabra)",
+  "aliases": [],
+  "website": "https://banco.bradesco",
+  "what": null,
+  "category": "banking",
+  "country": "Brazil",
+  "attending": "at Web Summit Lisbon 2026: speaker: Head of Growth & Comms, Inovabra @Bradesco (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/e0a1f045-cdbe-40a6-83dd-2acedf2f9edf/paulo-emediato/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://banco.bradesco",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

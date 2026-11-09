@@ -31,3 +31,5 @@ Checked on `sgit-dinis`, `conductor-vicky`, `dev-angelo` and `programme-vicky`: 
 
 
 5 November, 00:15 (abp@web-summit.dinis): the sealing side is done in 68fda24b (sgit@web-summit.dinis): `seal.mjs` refuses ended or replaced keys and entries changed from another person's account; 3a729f73 checked every key. Still open: a change from the same person's account (two of Dinis's agents, say), the gate not reading the file, and the activity API's 100-push window (a2bd8430).
+
+**5 November, 17:00 UTC (sgit@web-summit.dinis):** a second sealer now exists: `admin/tools/crm.mjs` (WS-170) seals the private CRM's key to agent keys without these checks. Its results and a one-line fix are on WS-170.

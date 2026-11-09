@@ -1,0 +1,536 @@
+{
+ "subject": "Primitive, email built for AI agents",
+ "kind": "company",
+ "slug": "primitive",
+ "run_at": "2026-11-07T19:08:45.885Z",
+ "note": "What each model said, as leads: not facts until their sources are read.",
+ "cost_usd": 0.1193,
+ "agents": [
+  {
+   "id": "perplexity",
+   "label": "Perplexity search",
+   "model": "perplexity/sonar",
+   "ms": 6249,
+   "cost_usd": 0.0059202,
+   "tokens": {
+    "in": 211,
+    "out": 769
+   },
+   "finish": "stop",
+   "citations": [
+    {
+     "url": "https://docs.primitive.dev/llms-full.txt",
+     "title": "llms-full.txt"
+    },
+    {
+     "url": "https://github.com/primitivedotdev",
+     "title": "primitive.dev · GitHub"
+    },
+    {
+     "url": "https://www.primitive.dev/about",
+     "title": "About Primitive"
+    },
+    {
+     "url": "https://www.primitive.dev/",
+     "title": "primitive.dev: email for AI agents"
+    },
+    {
+     "url": "https://www.primitive.dev/about.md",
+     "title": "www.primitive.dev"
+    },
+    {
+     "url": "https://aventure.vc/companies/primitive-san-francisco-ca-us/website",
+     "title": "primitive Website, Blog & Press Pages - aVenture"
+    },
+    {
+     "url": "https://www.ycombinator.com/companies/primitive/jobs/JqLoJbb-email-infrastructure-engineer",
+     "title": "Email Infrastructure Engineer at primitive"
+    },
+    {
+     "url": "https://docs.primitive.dev/.well-known/mcp",
+     "title": "mcp"
+    },
+    {
+     "url": "https://docs.primitive.dev/docs",
+     "title": "Primitive Docs — primitive.dev Email API for AI Agents"
+    },
+    {
+     "url": "https://deadsimple.email/compare/primitive.html",
+     "title": "Primitive (primitive.dev) Alternative — Dead Simple Email (2026)"
+    },
+    {
+     "url": "https://www.zeitgeist.bot/company/primitive",
+     "title": "Primitive: Agent Email Product, Founder Profiles, Funding ..."
+    },
+    {
+     "url": "https://tedix.dev/apps/primitive/",
+     "title": "Primitive Email — AI App | Tedix Directory"
+    },
+    {
+     "url": "https://www.primitive.dev/integrations",
+     "title": "Primitive AI platform integrations"
+    },
+    {
+     "url": "https://docs.primitive.dev/docs/managed-inbox",
+     "title": "managed-inbox"
+    },
+    {
+     "url": "https://docs.primitive.dev/docs/faq",
+     "title": "faq"
+    }
+   ],
+   "answer_urls": [
+    "https://docs.primitive.dev/docs/managed-inbox",
+    "https://www.primitive.dev/about",
+    "https://docs.primitive.dev/.well-known/mcp",
+    "https://docs.primitive.dev/docs",
+    "https://www.primitive.dev/",
+    "https://docs.primitive.dev/llms-full.txt",
+    "https://www.primitive.dev/integrations"
+   ],
+   "answer": {
+    "what_it_does": "Primitive is email infrastructure built for AI agents, providing programmatic send/receive over HTTP, managed agent email addresses, and hosted inbound handlers. It also offers an in-agent MCP app and persistent agent state so agents can exchange, process, and retain email-driven workflows.",
+    "ai_agents": [
+     {
+      "name": "Managed inbox agent",
+      "what_it_does": "Exposes a managed *.primitive.email address that runs a JavaScript handler on every inbound message.",
+      "actions": [
+       "Receives inbound email",
+       "Runs JavaScript Functions on incoming messages",
+       "Uses Primitive MX",
+       "Processes email without user-managed DNS",
+       "Routes mail to active endpoints or Functions"
+      ],
+      "source": "https://docs.primitive.dev/docs/managed-inbox"
+     },
+     {
+      "name": "Agent-to-agent chat",
+      "what_it_does": "Lets an agent send a message to another agent or person and wait for the threaded reply in one verb.",
+      "actions": [
+       "Sends email over HTTP",
+       "Waits for threaded replies",
+       "Reaches human inboxes and other agents",
+       "Uses no SMTP credentials or mail server setup"
+      ],
+      "source": "https://www.primitive.dev/about"
+     },
+     {
+      "name": "Hosted MCP inbox app",
+      "what_it_does": "Provides an in-agent MCP app UI that renders an inbox inside agent hosts like ChatGPT and Claude.",
+      "actions": [
+       "Exposes inbox UI inside agent hosts",
+       "Interfaces through MCP",
+       "Supports email send, receive, and management"
+      ],
+      "source": "https://docs.primitive.dev/.well-known/mcp"
+     },
+     {
+      "name": "Email API agent",
+      "what_it_does": "Gives developers and agents one API for sending outbound mail, receiving inbound mail as signed JSON, and running hosted Functions on incoming messages.",
+      "actions": [
+       "Sends outbound mail",
+       "Receives inbound mail as signed JSON",
+       "Runs hosted Functions on inbound messages",
+       "Integrates through REST APIs and SDKs"
+      ],
+      "source": "https://docs.primitive.dev/docs"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Agent inbox automation",
+      "who_uses_it": "Developers building AI agents and internal automation workflows",
+      "what_the_agent_can_reach": [
+       "Email inboxes",
+       "Inbound email routing",
+       "Hosted Functions",
+       "Delivery history"
+      ],
+      "source": "https://docs.primitive.dev/docs/managed-inbox"
+     },
+     {
+      "name": "Two-way agent communication",
+      "who_uses_it": "Teams building autonomous agents that need to contact people or other agents",
+      "what_the_agent_can_reach": [
+       "People via email",
+       "Other AI agents",
+       "Threaded conversations",
+       "Email identity"
+      ],
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "name": "Inbox inside ChatGPT or Claude",
+      "who_uses_it": "Users operating agents in major agent platforms",
+      "what_the_agent_can_reach": [
+       "Inbox data",
+       "Send and receive actions",
+       "Email management inside agent hosts"
+      ],
+      "source": "https://docs.primitive.dev/.well-known/mcp"
+     }
+    ],
+    "incidents_or_risks": [],
+    "facts": [
+     {
+      "claim": "Primitive describes itself as email infrastructure for AI agents.",
+      "source": "https://www.primitive.dev/about"
+     },
+     {
+      "claim": "Primitive supports sending and receiving email via a REST API.",
+      "source": "https://docs.primitive.dev/llms-full.txt"
+     },
+     {
+      "claim": "Primitive can host an agent at a managed *.primitive.email subdomain.",
+      "source": "https://docs.primitive.dev/llms-full.txt"
+     },
+     {
+      "claim": "Primitive stores durable agent state with Primitive Memories.",
+      "source": "https://docs.primitive.dev/llms-full.txt"
+     },
+     {
+      "claim": "Primitive handles SPF, DKIM, DMARC, TLS-RPT, bounce processing, and IP reputation.",
+      "source": "https://www.primitive.dev/about"
+     },
+     {
+      "claim": "Primitive positions itself as built for two-way agent conversations rather than only outbound transactional email.",
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "claim": "Primitive offers open machine-readable integrations for major agent platforms.",
+      "source": "https://www.primitive.dev/integrations"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI search",
+   "model": "openai/gpt-5.4-nano:online",
+   "ms": 16632,
+   "cost_usd": 0.0448622856,
+   "tokens": {
+    "in": 20268,
+    "out": 1544
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.primitive.dev/",
+    "https://www.primitive.dev/agents",
+    "https://arxiv.org/abs/2611.07222",
+    "https://accelresearching.com/accel-zinc-picolinate-50mg/?_=%2Fpdf%2F2507.02699%23nLw79nwZb1b3uPkZUsgpm5M%3D",
+    "https://www.primitive.dev/about",
+    "https://docs.primitive.dev/trust"
+   ],
+   "answer": {
+    "what_it_does": "Primitive is email infrastructure built for AI agents, giving agents their own managed email identities (including inboxes at *.primitive.email and optional custom domains). It lets agents send/receive email via authenticated APIs and run hosted JavaScript handlers (Functions) on inbound messages, plus support an agent-to-agent chat flow.",
+    "ai_agents": [
+     {
+      "name": "primitive.dev (AI agents using Primitive)",
+      "what_it_does": "Use Primitive’s email API to send and receive messages as their own identity, and optionally execute hosted Functions on inbound email.",
+      "actions": [
+       "Send outbound email via authenticated HTTP API (async send returning delivery/status information).",
+       "Receive inbound email either via developer webhooks or via hosted JavaScript Functions invoked on each inbound message.",
+       "Host and run code on inbound messages through Primitive-managed Functions runtime.",
+       "Execute an agent-to-agent “primitive chat” style flow that delivers a message and returns the threaded reply in a single round trip.",
+       "Manage/route inbound email using filters and configured webhook/function targets.",
+       "Authenticate/authorize using scoped bearer tokens (API keys or OAuth access tokens).",
+       "Use managed inbox addresses under *.primitive.email or connected custom domains with managed email authentication (SPF/DKIM/DMARC/TLS-RPT)."
+      ],
+      "source": "https://www.primitive.dev/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Agent-native inbox + automated inbound processing",
+      "who_uses_it": "Developers building autonomous or semi-autonomous AI agents that need email as a communication channel.",
+      "what_the_agent_can_reach": [
+       "People and organizations reachable via normal email addresses (inbound/outbound messaging).",
+       "Other AI agents that can communicate using email addressing and Primitive’s chat/threading behavior.",
+       "Customer-controlled endpoints via signed webhooks (agent processing can send events to developer-supplied URLs).",
+       "Primitive-managed hosted Functions that can parse, store, route, and reply to inbound messages."
+      ],
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "name": "Domain-restricted agent email authorization (allowing specific agents to send to your domain)",
+      "who_uses_it": "Organizations that want control over which AI agents/platforms may email their domain.",
+      "what_the_agent_can_reach": [
+       "Inbound email delivery to addresses on the organization’s domain for explicitly authorized agents/platforms.",
+       "Protected inbound processing gates based on DNS authorization (TXT record) that determines whether agent-sent email is accepted or rejected."
+      ],
+      "source": "https://www.primitive.dev/agents"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Security risk: email and hosted-function execution can be abused if an AI agent is tricked into acting on malicious or attacker-controlled instructions embedded in email content (prompt-injection risk affecting tool-using agents).",
+      "when": "",
+      "source": "https://arxiv.org/abs/2611.07222"
+     },
+     {
+      "what": "Security risk: prompt injection attacks against real-world LLM email agents can manipulate how an agent drafts and sends email using mailbox-like primitives.",
+      "when": "",
+      "source": "https://accelresearching.com/accel-zinc-picolinate-50mg/?_=%2Fpdf%2F2507.02699%23nLw79nwZb1b3uPkZUsgpm5M%3D"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Primitive is email infrastructure built for AI agents.",
+      "source": "https://www.primitive.dev/about"
+     },
+     {
+      "claim": "Primitive provides one-call email sending/receiving, managed *.primitive.email addresses that run a JavaScript handler on every inbound message, and an agent-to-agent chat verb that returns the threaded reply.",
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "claim": "Inbound messages can be delivered to a webhook endpoint or processed by a hosted JavaScript Function running on every received message.",
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "claim": "Primitive requires bearer tokens (API keys prefixed prim_ or OAuth tokens prefixed prim_oat_) for endpoints that read/modify customer data, and tokens are scoped to a single organization; tenant isolation prevents one org from accessing another org’s mailbox contents/functions/memories.",
+      "source": "https://docs.primitive.dev/trust"
+     },
+     {
+      "claim": "Outbound mail is signed/authenticated with managed DKIM, SPF, DMARC, and TLS-RPT, and domain authentication records are generated and verified through the API.",
+      "source": "https://docs.primitive.dev/trust"
+     },
+     {
+      "claim": "Webhook deliveries are signed with HMAC-SHA256 so receivers can verify authenticity before acting.",
+      "source": "https://docs.primitive.dev/trust"
+     },
+     {
+      "claim": "Primitive provides an agent authorization mechanism using a DNS TXT record (_agents) that controls which agents/platforms may email a domain (accept/reject and allow lists).",
+      "source": "https://www.primitive.dev/agents"
+     },
+     {
+      "claim": "Primitive does not auto-delete stored inbound mail on a schedule; inbound message contents are retained until deleted.",
+      "source": "https://docs.primitive.dev/trust"
+     },
+     {
+      "claim": "Primitive’s trust/security documentation states authentication, data isolation, and message integrity are core to the product and describes how its security boundaries work.",
+      "source": "https://docs.primitive.dev/trust"
+     }
+    ]
+   }
+  },
+  {
+   "id": "gemini",
+   "label": "Gemini search",
+   "model": "google/gemini-3.1-flash-lite:online",
+   "ms": 5260,
+   "cost_usd": 0.0432939375,
+   "tokens": {
+    "in": 229,
+    "out": 1116
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm_0AXnBQpzpa-YflUn9oxeuOe_4-iEHR76IvdT98hjqN6pUg7DND1Hrtad79F1hlXkDdXkQV2qZybwnf9nwD_BGtWYHECAqvY1sKcfMUwu5X1m8gOMXSjeG4Wa_-yMhu7eFpVWVyUu4qEHXdRy1qmF5YCQB7NURMIBC1L1AOkStX9wPdIRQOfCcI-3z7R2GfxSiuOcw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLjBEj3Qv0ShZXCii_UA0YHaCI1mZmn8-TOiPpa3HGSjgvsF6mvIH-rQSpJR0Sh9Uezx65MeoHu6B3FTi1xAtIDjN2yHQelMhQpQtARIGkIPJyAtuZPIsE9P5o3126CkyP8x0roi0=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHNkXert3uO42Vx0qRy82nl4Q3zr7EWFWNRo_My_FIIn1GKiAfJrEBiXq-2916gKikxWNxnpIx3WtG7I5bH0H0irYZXhO0J6wwfkVY4ZC3RUsCrE_gpTvmgatzEUxGn65v"
+   ],
+   "answer": {
+    "what_it_does": "Primitive provides email infrastructure designed specifically for AI agents, allowing them to send and receive emails via a REST API. It handles complex email protocols and deliverability tasks, such as SPF, DKIM, and DMARC, while providing managed subdomains and hosted JavaScript functions for processing inbound messages.",
+    "ai_agents": [
+     {
+      "name": "Primitive Agent",
+      "what_it_does": "Acts as an autonomous interface for businesses by processing incoming email traffic and executing specific workflows.",
+      "actions": [
+       "Sending and receiving emails",
+       "Executing JavaScript handlers on inbound messages",
+       "Maintaining durable state (Primitive Memories) across interactions",
+       "Interacting with external systems via email as a communication protocol"
+      ],
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm_0AXnBQpzpa-YflUn9oxeuOe_4-iEHR76IvdT98hjqN6pUg7DND1Hrtad79F1hlXkDdXkQV2qZybwnf9nwD_BGtWYHECAqvY1sKcfMUwu5X1m8gOMXSjeG4Wa_-yMhu7eFpVWVyUu4qEHXdRy1qmF5YCQB7NURMIBC1L1AOkStX9wPdIRQOfCcI-3z7R2GfxSiuOcw=="
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Automated Business Communication",
+      "who_uses_it": "Developers and businesses building AI-powered customer support or operational workflows.",
+      "what_the_agent_can_reach": [
+       "External email inboxes",
+       "Internal business systems via email-triggered webhooks",
+       "Support and triage workflows"
+      ],
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLjBEj3Qv0ShZXCii_UA0YHaCI1mZmn8-TOiPpa3HGSjgvsF6mvIH-rQSpJR0Sh9Uezx65MeoHu6B3FTi1xAtIDjN2yHQelMhQpQtARIGkIPJyAtuZPIsE9P5o3126CkyP8x0roi0="
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "General security risks associated with AI email agents include indirect prompt injection via untrusted incoming email content and potential data exfiltration if an agent has broad permissions.",
+      "when": "Ongoing/General industry risk reported 2026",
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHNkXert3uO42Vx0qRy82nl4Q3zr7EWFWNRo_My_FIIn1GKiAfJrEBiXq-2916gKikxWNxnpIx3WtG7I5bH0H0irYZXhO0J6wwfkVY4ZC3RUsCrE_gpTvmgatzEUxGn65v"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Primitive is a Y Combinator-backed company that offers usage-based pricing for its email infrastructure services.",
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLjBEj3Qv0ShZXCii_UA0YHaCI1mZmn8-TOiPpa3HGSjgvsF6mvIH-rQSpJR0Sh9Uezx65MeoHu6B3FTi1xAtIDjN2yHQelMhQpQtARIGkIPJyAtuZPIsE9P5o3126CkyP8x0roi0="
+     },
+     {
+      "claim": "The platform provides a 'primitive chat' verb that enables an AI agent to send an email and receive a threaded reply in a single synchronous API call.",
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLjBEj3Qv0ShZXCii_UA0YHaCI1mZmn8-TOiPpa3HGSjgvsF6mvIH-rQSpJR0Sh9Uezx65MeoHu6B3FTi1xAtIDjN2yHQelMhQpQtARIGkIPJyAtuZPIsE9P5o3126CkyP8x0roi0="
+     }
+    ]
+   }
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter web search",
+   "model": "anthropic/claude-haiku-5.5",
+   "plugins": [
+    {
+     "id": "web",
+     "max_results": 6
+    }
+   ],
+   "max_tokens": 7000,
+   "ms": 16854,
+   "cost_usd": 0.025218864,
+   "tokens": {
+    "in": 39076,
+    "out": 3132
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.primitive.dev/",
+    "https://github.com/primitivedotdev",
+    "https://pilotprotocol.network/apps/io.pilot.primitive",
+    "https://email-sdk.dev/docs/adapters/primitive",
+    "https://www.primitive.dev/about"
+   ],
+   "answer": {
+    "what_it_does": "Primitive is email infrastructure for AI agents, offering one-call HTTP sending and receiving, managed *.primitive.email addresses, and hosted JavaScript handlers that run on inbound mail. It also handles the mail protocol layer (DNS authentication, bounces, sending reputation) so agents don't need their own mail server or SMTP credentials. Source: https://www.primitive.dev/",
+    "ai_agents": [
+     {
+      "name": "primitive-chat skill",
+      "what_it_does": "A packaged agent skill that lets a coding agent email another agent or person and wait for the threaded reply.",
+      "actions": [
+       "Sends an email to any address with one command and returns the threaded reply in the same call",
+       "Installs into coding agents such as Claude Code, Codex, and Cursor via the skills registry"
+      ],
+      "source": "https://github.com/primitivedotdev"
+     },
+     {
+      "name": "primitive-inbox skill",
+      "what_it_does": "A packaged agent skill that gives an agent a managed inbox that receives mail.",
+      "actions": [
+       "Receives inbound email at a managed *.primitive.email address",
+       "Lists, searches, and reads stored inbound messages and threads through the Primitive API"
+      ],
+      "source": "https://github.com/primitivedotdev"
+     },
+     {
+      "name": "Primitive hosted MCP server",
+      "what_it_does": "A hosted Model Context Protocol server that exposes Primitive's email functions as tools to any MCP-compatible client.",
+      "actions": [
+       "Sends and reads email",
+       "Searches mail and manages domains, endpoints, and filters",
+       "Authenticates via OAuth over Streamable HTTP"
+      ],
+      "source": "https://www.primitive.dev/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Agent with its own email identity",
+      "who_uses_it": "Operators of AI agents that need their own email identity rather than access to a person's existing mailbox",
+      "what_the_agent_can_reach": [
+       "Its own managed *.primitive.email address",
+       "Outbound email to other agents and people",
+       "Stored inbound message history until deleted"
+      ],
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "name": "Agent that runs custom logic on inbound mail",
+      "who_uses_it": "Developers exposing a contact address for an agent",
+      "what_the_agent_can_reach": [
+       "Hosted JavaScript handler run on every inbound message",
+       "Ability to parse, store, reply to, or route messages",
+       "Webhook endpoints that receive signed inbound events"
+      ],
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "name": "Transactional sending from a custom domain",
+      "who_uses_it": "Teams whose agents send transactional email from their own domain",
+      "what_the_agent_can_reach": [
+       "Outbound sending from a verified custom domain",
+       "Recipients reached over ordinary email"
+      ],
+      "source": "https://www.primitive.dev/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Hosted Functions, Wake schedules, x402 payments, and custom domains are gated on the free agent plan and return a plan or entitlement error until the account is upgraded.",
+      "when": "Listing dated July 14, 2026",
+      "source": "https://pilotprotocol.network/apps/io.pilot.primitive"
+     },
+     {
+      "what": "Signup through the third-party listing is rate-limited per IP, returning HTTP 429 after several new accounts per day.",
+      "when": "Listing dated July 14, 2026",
+      "source": "https://pilotprotocol.network/apps/io.pilot.primitive"
+     },
+     {
+      "what": "The send-mail endpoint accepts exactly one recipient and has no CC, BCC, custom header, tags, or metadata fields, which limits fan-out and fallback use.",
+      "when": "Adapter documentation dated about one week before the search",
+      "source": "https://email-sdk.dev/docs/adapters/primitive"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Primitive describes itself as Y Combinator-backed email infrastructure for AI agents, with a small team based in San Francisco.",
+      "source": "https://www.primitive.dev/about"
+     },
+     {
+      "claim": "The inbound MX implementation and the Node.js, Python, and Go SDKs are published publicly on GitHub.",
+      "source": "https://www.primitive.dev/about"
+     },
+     {
+      "claim": "Primitive's REST API is versioned under /v1, and breaking changes are released under a new version rather than altering an existing one.",
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "claim": "Primitive says it manages inbound MX, SPF, DKIM, DMARC, TLS-RPT, bounce processing, and sending-IP reputation.",
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "claim": "Inbound email content is retained until the user deletes it, and Primitive does not auto-delete stored mail on a schedule.",
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "claim": "Webhook deliveries from Primitive are signed so receivers can verify authenticity before acting on a message.",
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "claim": "Primitive publishes machine-readable descriptions such as an OpenAPI specification, an llms.txt file, and an MCP discovery document so agents can find and use it.",
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "claim": "Primitive's MCP server is listed in public registries and works with Claude, Cursor, VS Code agent mode, and Goose.",
+      "source": "https://www.primitive.dev/"
+     },
+     {
+      "claim": "Primitive lists a free plan that covers sending, replying, inbound listing and search, threads, filters, webhook endpoints, and durable Memories.",
+      "source": "https://pilotprotocol.network/apps/io.pilot.primitive"
+     },
+     {
+      "claim": "Primitive's send-mail API requires a verified outbound domain for the sending organization, and the sender API key uses a prim_ prefix.",
+      "source": "https://email-sdk.dev/docs/adapters/primitive"
+     },
+     {
+      "claim": "Primitive's send endpoint supports idempotency keys so a retried send with the same key and body replays the original result rather than sending twice.",
+      "source": "https://email-sdk.dev/docs/adapters/primitive"
+     }
+    ]
+   }
+  }
+ ]
+}

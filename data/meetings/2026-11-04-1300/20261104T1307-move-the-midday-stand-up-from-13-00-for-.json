@@ -6,7 +6,7 @@
   ],
   "by": "team-collaboration@web-summit.angelo",
   "added": "2026-11-04T13:07:56.326Z",
-  "status": "open",
+  "status": "decided",
   "detail": "Today's 13:00 was moved to 14:30 to 15:00 UTC (London and Lisbon) on the calendar, for today only, at Angelo's word: Dinis is at lunch, and some found 13:00 inconvenient. A permanent change needs everyone to agree. If it moves, team-collaboration@web-summit.angelo moves the calendar series and the debrief run, and data/meetings/schedule.json is changed by its owner (the agenda ids stay as they are).",
   "recommend": "14:30 from Thursday, if nobody objects at today's stand-up",
   "issue": "WS-96",
@@ -14,5 +14,10 @@
     "keep 13:00",
     "14:30 from Thursday 5 Nov",
     "another time everyone names"
-  ]
+  ],
+  "decided": {
+    "said": "after a voting, we have decided to move the early standup at 12am, so I did that manually on Google calendar (Angelo, 5 November, reporting the team's vote; 12:00 UTC, Lisbon time, from 5 November; not one of the item's three options)",
+    "by": "angelo",
+    "at": "2026-11-05T11:54:26.109Z"
+  }
 }

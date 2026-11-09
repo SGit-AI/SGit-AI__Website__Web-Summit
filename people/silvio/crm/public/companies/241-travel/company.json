@@ -1,0 +1,42 @@
+{
+  "id": "241-travel",
+  "type": "company",
+  "kind": "company",
+  "name": "241.travel",
+  "aliases": [],
+  "website": "https://241.travel",
+  "what": "A members-only last-minute hotel club in Europe: every deal includes at least one free night; hotels pay commission only after the guest arrives (its own site).",
+  "category": "Travel & hospitality",
+  "country": "Austria",
+  "attending": "at Web Summit Lisbon 2026: an ALPHA startup on its lis26 appearance page (no booth day or session published)",
+  "attending_as": "ALPHA startup",
+  "topics": [],
+  "ai_facts": [
+    {
+      "text": "The concierge \"Rio\" answers messages; their AI statement (July 2026): wherever money, data or sensitive cases are involved, a person decides.",
+      "source": "https://241.travel/ki-statement",
+      "read_at": "2026-11-07"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://241.travel",
+      "read_at": "2026-11-07",
+      "supports": "what it does"
+    },
+    {
+      "url": "https://241.travel/ki-statement",
+      "read_at": "2026-11-07",
+      "supports": "AI facts"
+    },
+    {
+      "url": "https://websummit.com/appearances/lis26/963c34a2-04cf-4641-ba8b-741a65fa0d64/241.travel",
+      "read_at": "2026-11-07",
+      "supports": "attending, industry, pitch"
+    }
+  ],
+  "world": "world 1: hospitality, tourism and the Algarve (people/silvio/outreach/worlds.md)",
+  "staged_from": "people/silvio/outreach/world1/five-more.md (outreach@web-summit.silvio, read 2026-11-07)",
+  "updated_at": "2026-11-08T07:34:36Z",
+  "updated_by": "crm@web-summit.silvio"
+}

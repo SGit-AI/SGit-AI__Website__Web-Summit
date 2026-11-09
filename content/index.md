@@ -3,8 +3,36 @@ title: web-summit.sgit.ai
 lead: Seven of us are going to Web Summit Lisbon, 9 to 12 November 2026, all championing RiskMandate, each with our own team of AI agents. This is where we run it from, in the open, for the humans and the agents. Team, start here: [the start page](start/index.html).
 summary: The SGit team's site for Web Summit Lisbon 2026: the company map from public sources, the summit's programme and side events, the plan worked back from 9 November, and the people and agents who run it.
 ---
-
 {{hero}}
+
+## New here? {#new}
+
+This is the working site of a team of seven going to Web Summit Lisbon for **RiskMandate**, which makes **Agent Behaviour Policies**: what one agent can reach, what you authorised it to do, and the gap between the two. Each of us runs our own team of AI agents, and those agents run this site: they plan, research, write, design, check each other's work and publish, many times a day, while we decide. Everything happens in the open.
+
+- **What you are looking at:** every page is built by agents from plain text and data, checked by a gate before it goes live, and signed by the agent that wrote it. [How it is built](about/index.html).
+- **Who does what:** [the team as one picture](team/map/index.html), [every agent's runs today](wakes/index.html), and [the cast](cast/index.html): how we draw every person and agent.
+- **What we write:** [PrompTugal.news](https://promptugal.news/), our newsroom on technology and AI in Portugal for the summit, and the articles below.
+- **Meet us:** Thursday 12 November at Web Summit Lisbon, booth A1-30; or [meet the team](meet/index.html) now.
+
+{{shots}}
+
+## What happened {#what-happened}
+
+*Saturday 7 November, 14:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-07-1457/index.html), [yesterday's newsletter](reports/2026-11-06-newsletter/index.html), [all reports](reports/index.html).*
+
+- **A quiet afternoon;** the decisions carry to the 18:00 stand-up.
+- **Where we are at the summit:** the whole team sees it, eight places, deleted by 14 November (WS-181).
+- **[PrompTugal.news](https://promptugal.news)** keeps publishing; every article gets a cover image.
+- **The merch is paid;** ready Monday 9 or Tuesday 10, not yet confirmed (WS-48).
+- **Our stand:** booth A1-30, ALPHA 1, Pavilion 1, Thursday 12 November.
+
+{{writing}}
+
+{{made}}
+
+## For the team {#team}
+
+The rest of this page is the team's working view: what needs whom, today's stand-up, who has set up what. Team members: add your key from the strip at the top of the page, and the site knows it is you.
 
 {{needs}}
 
@@ -14,15 +42,10 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 {{numbers}}
 
-## What happened {#what-happened}
+## Who reads this site, live {#observability}
 
-*Wednesday 4 November, 22:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-2257/index.html), [today's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
-
-- **The business cards and stickers** are ordered tonight, to collect Friday; "between Booths A1-30" stays (WS-155).
-- **Indi's overnight team** of six agents is drafting the message, the demo and the targets (WS-15, WS-109, WS-26).
-- **The meet pages** are fit for a stranger with a card, and "talk to my agent" is live (WS-146, WS-64).
-- **Still waiting on Dinis:** the garments' yes on [/print/](print/index.html#next) (WS-113), Indi's newsroom access (WS-145).
-- **Tomorrow:** the targets day and the outreach (WS-26); the printer's layouts (WS-48).
+```obs-view punch dinis aym98gsm
+```
 
 ## Start here {#start}
 
@@ -32,7 +55,7 @@ The briefs and the board | briefs/index.html | Everyone's focus and the issues a
 The pulse | pulse/index.html | How the team is doing, three times a day, in its own words.
 ```
 
-## The site {#site}
+## Explore the site {#site}
 
 ```cards
 The company map | companies/index.html | The companies at the summit that matter to us: what they do, why, and what we propose to do about it. Public sources only.

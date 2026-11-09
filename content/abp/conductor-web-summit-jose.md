@@ -23,12 +23,16 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 - It sends Jose a PDF brief each run (the agents page, #briefs): sending to its own person is in its mandate; by what channel is not recorded.
 - Its prompt says only Jose and Dinis instruct it: two principals, no order between them.
 - Write anywhere in the repository: its push access is not limited to `people/jose/` and `board/`, the paths its person's brief gives it.
-- Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 00:15 on 3 November).
+- Rewrite history on `dev`: `dev` is not protected (`main` is, since 6 November) (GitHub branches API, 2 November; still at 00:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
 - **Code in its person's folder runs in CI** (WS-133, 4 November): `admin/build/build.mjs` runs `people/<id>/pages.mjs` and a person's own `app/data.mjs` in the release job, which holds a token that can push and deploy. Writing only in its own folder no longer bounds what it can do.
 
 - **It holds its person's site key** (WS-136, WS-138): it issues the key in its own session and keeps the private half (the agents page, #person-key). A verified "signed by <person>" on a lane message is the one thing that turns lane input into an instruction, so it can sign as its person.
+
+- **It can open the team's private CRM** (WS-170, 237ee015): the private CRM's vault key is sealed to every person and to each person's conductor (`data/sealed/agents/`); the private CRM holds the coordination actions, each sealed to Dinis and its owner, and the public CRM's key.
+
+- **One door** (2191c0b2, at Jose's word): it is now the only way work reaches Jose's agents; it reads every commit addressed to them and hands work out as task files. Proposed schedules for Jose's agents, about 158M to 194M tokens a day, wait for Jose's approval.
 
 ## Barriers: what really stands in the way {#barriers}
 
@@ -36,7 +40,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 |---|---|---|
 | Never send; a person sends every message | rule, kept by the agent | Jose's brief, part two |
 | Writes only `people/jose/`, the board and the agenda | rule, kept by the agent | the brief; git has no per-path write control |
-| Never push to main, never force-push, never disable a check | rule, kept by the agent | CLAUDE.md; `main` and `dev` are not protected |
+| Never push to main, never force-push, never disable a check | rule, kept by the agent; for `main`, technical since 6 November | CLAUDE.md; `main` and `dev` were not protected before. **Since 6 November (GitHub branches API at 04:15 UTC), `main` is protected (`protected: true`; the rule's details not read): for `main` this is now a technical barrier. `dev` is still unprotected, and 17 `claude/*` session branches exist; WS-179 (proposed at Angelo's word, 6 November) would have every session push only to `dev`, delete them, and refuse new ones.** |
 | The gate (validate.js) before every deploy | technical, in CI | deploy-pages.yml; it stops a red build deploying, not the push |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 (scans `people/` and `board/`) |
 | reviewer@web-summit.jose reviews every diff before `release.sh`; a hold releases only `hold.json` and the review record | review, before the push, a sub-agent in the agent's own session | `people/jose/kit/README.md` (473be41, started 4 November 00:52 at Jose's word); its first hold, 01:25, stopped vault@web-summit.jose's draft that would have published a token's value (d8301cd) |
@@ -59,4 +63,6 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 
 ## Provenance {#provenance}
 
-Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 4, 4 November 2026 (08:10 wake: the person key, WS-138; 04:10 wake: Jose's reviewer; 00:10 wake: WS-133), in `content/abp/` with its history in git.
+Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 6, 5 November 2026 (16:10 wake: one door, the private CRM; 16:10 wake: the private CRM; 08:10 wake: the person key, WS-138; 04:10 wake: Jose's reviewer; 00:10 wake: WS-133), in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

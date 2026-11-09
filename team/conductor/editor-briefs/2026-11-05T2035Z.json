@@ -1,0 +1,32 @@
+{
+ "number": 23,
+ "date": "2026-11-05",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "Your CRM agent mapped the Brazilian delegation; agents need their own access tokens; the 18:00 is not recorded",
+ "when": "Thursday 5 November 2026, 20:35 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "crm@web-summit.dinis opened both CRM keys, put 11 Brazilian startups in the public CRM (each with sources and an AI-agents line) and its best RiskMandate fits (Hablla, Raras Health) in the private one, for you and Silvio. It has now stopped, at your word that every agent needs its own SG/Send access token: its next changes wait for one. My schedule change for the 12:00 broke the gate for everyone from 18:00 (Indi's today page had the times built in); Jose's conductor fixed it within the hour. Vicky's team grew: four journalist desks and a designer with eight logo options, for \"Promptugal News\". Nothing from the 18:00 is on the record yet.",
+ "stats": [
+  {"n": "11", "label": "Brazilian startups in the public CRM (crm@dinis)"},
+  {"n": "2", "label": "RiskMandate fits flagged in the private CRM (Hablla, Raras Health)"},
+  {"n": "0", "label": "decisions of the 18:00 on the record"},
+  {"n": "5", "label": "new agents of Vicky's (four journalists, a designer)"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "An SG/Send access token for each agent that writes a vault", "detail": "Your word (crm@dinis, 1b4f242a): everybody has their own. Only you can issue them. Who needs one now: crm@dinis, crm@angelo, inbox@silvio (WS-173), video@silvio (WS-174), each conductor with an inbox. Seal each to its agent's key, or hand them to me in this session and I seal them (data/sealed/agents/).", "options": ["issue them now", "issue for the CRM agents first", "later"], "recommend": "The CRM agents and inbox@silvio first, tonight."},
+  {"id": "2", "ask": "What did the 18:00 decide?", "detail": "team-collaboration@angelo's 19:15 debrief found no notes and no transcript. On the deck: the outreach claim, Monday's merch, the online slots, Meet transcripts, the vote, the tokens.", "options": ["one line each here", "Angelo's notes"], "recommend": "One line each here; I record them in your words."},
+  {"id": "3", "ask": "The name: PromptUGAL (yours) or Promptugal News (Vicky's designer's eight logos use it)", "detail": "The site now says PromptUGAL; designer@vicky drew 'Promptugal News'.", "options": ["PromptUGAL", "PromptUGAL News", "Promptugal News"], "recommend": "Say which, and I tell Vicky's designer before it goes further."}
+ ],
+ "you_asked": [
+  {"at": "5 Nov, ~19:20", "said": "rename ... to PromptUGAL ... Promptugal.news", "done": "The newsroom is PromptUGAL (newsroom 4daf8fb6); the domain waits on its DNS.", "where": "web-summit.newsroom.sgit.ai", "status": "the domain waits on you"},
+  {"at": "5 Nov, ~18:40", "said": "company, then comms, then emails ... EML ... a vault for the videos ... channels ... the email twin ... an article", "done": "The article (signed) and WS-173 to WS-176, each sent to its agents.", "where": "/articles/one-place-for-every-conversation.html", "status": "with the agents"}
+ ],
+ "team": [
+  {"id": "Vicky", "status": "growing", "doing": "four journalist desks drafting S2, S5, S6, S15, S18; a designer with logo options; her conductor has the CRM key and an inbox lane"},
+  {"id": "Jose", "status": "fixed the build", "doing": "the gate's break from my schedule change, fixed at 18:18"},
+  {"id": "Angelo", "status": "waiting", "doing": "the 18:00 record waits on notes; WS-176 handed to his CRM agent"},
+  {"id": "Indi", "status": "measuring", "doing": "her accountant measured the agents' token use"}
+ ],
+ "next": ["22:27 wake: the 18:00 record if you give the lines; the tokens sealed if you issue them.", "Friday 08:27: the 12:00 deck with Angelo's WS-150 slide."],
+ "sources": ["git log since 2026-11-05T17:35Z (dev), both repositories", "crm@web-summit.dinis 460fd3a6, 1b4f242a; conductor@web-summit.jose fa36c6e2; team-collaboration@web-summit.angelo db356bee"]
+}

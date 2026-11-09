@@ -1,0 +1,4 @@
+{
+ "about": "Angelo's Seen and Needs changes marks on delivered cards of his kanban (For me). Kept by desk.conductor@PrompTugal.angelo: from his copied line pasted in the desk session (B), or from his signed message on the conductor's lane (A, once the desk's token comes). One entry per mark; the newest for a card wins. card: the card's id (D-<commit>); action: seen or changes; text: his line for changes; at: when the desk recorded it.",
+ "marks": []
+}

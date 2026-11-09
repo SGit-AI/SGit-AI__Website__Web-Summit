@@ -1,0 +1,79 @@
+diff --git a/admin/tools/release.sh b/admin/tools/release.sh
+index fe63b983..fecf20b0 100755
+--- a/admin/tools/release.sh
++++ b/admin/tools/release.sh
+@@ -27,6 +27,8 @@ for attempt in 1 2 3 4 5; do
+   fi
+   node admin/build/validate.js   # the gate builds the site itself, once (check 9)
+   [ "${DRY:-0}" = 1 ] && { echo "DRY: would push $(git rev-list --count "origin/$BRANCH..HEAD") commit(s)"; exit 0; }
++  # the leak tripwire (WS-106 item 8): key shapes and the secret parts of keys held on this machine, in what is pushed
++  node admin/tools/tripwire.mjs "origin/$BRANCH..HEAD" || { echo "release.sh: the tripwire refused this push"; exit 1; }
+   MINE=$(git rev-parse HEAD)
+   if git push -q origin "HEAD:$BRANCH"; then echo "pushed ${MINE:0:9}; CI numbers the release"; break; fi
+   echo "release.sh: someone pushed first; rebasing and trying again"
+diff --git a/admin/tools/tripwire.mjs b/admin/tools/tripwire.mjs
+new file mode 100644
+index 00000000..0ecc6a66
+--- /dev/null
++++ b/admin/tools/tripwire.mjs
+@@ -0,0 +1,60 @@
++#!/usr/bin/env node
++// The leak tripwire (WS-106 "Meet the estate's repository standard", item 8; proposed by dev@web-summit.angelo, 6 November
++// 2026), after sgit.ai/docs/guidance/repositories.md: against what is about to be pushed, not the whole tree, check
++//   1. the secret shapes the gate already knows (admin/build/secrets.cjs, one list for everything), and
++//   2. the secret part of every key this machine holds locally (~/.sg-send/: session keys, issued person keys), which no
++//      shape can catch: an encrypted private key, a JWK's "d", a raw key pasted without its header.
++// It prints which file in the push matched which local key file, never the secret. Exit 1 on a match.
++//   node admin/tools/tripwire.mjs origin/dev..HEAD        what release.sh is about to push
++//   node admin/tools/tripwire.mjs --diff-file <file>      a diff (or any text) from a file, for its own tests
++import fs from 'fs'
++import os from 'os'
++import path from 'path'
++import { execFileSync } from 'child_process'
++import { createRequire } from 'module'
++
++const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
++const { keyHits, BINARY } = createRequire(import.meta.url)(path.join(ROOT, 'admin/build/secrets.cjs'))
++const args = process.argv.slice(2)
++
++// the added lines, per file
++function added() {
++    const i = args.indexOf('--diff-file')
++    if (i >= 0) return [{ file: args[i + 1], text: fs.readFileSync(args[i + 1], 'utf8').replace(/^\+/gm, '') }]   // a diff's added-line marks off, as for a range
++    const range = args[0] || 'origin/dev..HEAD'
++    const out = execFileSync('git', ['diff', '--no-color', '--no-ext-diff', '-U0', range], { cwd: ROOT, maxBuffer: 256 << 20 }).toString()
++    const files = []; let cur = null
++    for (const l of out.split('\n')) {
++        if (l.startsWith('+++ ')) { cur = { file: l.slice(4).replace(/^b\//, ''), text: '' }; files.push(cur); continue }
++        if (cur && l.startsWith('+') && !l.startsWith('+++')) cur.text += l.slice(1) + '\n'
++    }
++    return files.filter(f => f.file !== '/dev/null' && !BINARY.test(f.file))
++}
++
++// the secret parts of local keys: PEM bodies, private JWK members, long secret-looking values in key files
++function localSecrets() {
++    const dirs = [path.join(os.homedir(), '.sg-send'), ...(process.env.TRIPWIRE_DIRS || '').split(':').filter(Boolean)]
++    const out = []
++    const walk = d => { try { for (const e of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, e.name); if (e.isDirectory()) walk(p); else if (e.isFile()) take(p) } } catch { } }
++    function take(p) {
++        let t; try { if (fs.statSync(p).size > 1 << 20) return; t = fs.readFileSync(p, 'utf8') } catch { return }
++        for (const m of t.matchAll(/-----BEGIN [A-Z ]*PRIVATE KEY-----([\s\S]*?)-----END/g)) out.push({ from: p, secret: m[1].replace(/\s+/g, '') })
++        try { const walkJ = (o, k) => { if (o && typeof o === 'object') { for (const [kk, v] of Object.entries(o)) walkJ(v, kk) } else if (typeof o === 'string' && (k === 'd' || /private|secret|vault_key|write_key/i.test(k || '')) && o.length >= 32) out.push({ from: p, secret: o.replace(/\s+/g, '') }) }; walkJ(JSON.parse(t)) } catch { }
++    }
++    for (const d of dirs) walk(d)
++    return out
++}
++
++// a secret counts as leaked when any 24-character window of it appears in the push, wrapped or not
++function leaks(text, secrets) {
++    const flat = text.replace(/\s+/g, '')
++    return secrets.filter(({ secret }) => { for (let i = 0; i + 24 <= secret.length; i += 12) if (flat.includes(secret.slice(i, i + 24))) return true; return false })
++}
++
++const files = added(), secrets = localSecrets(), found = []
++for (const f of files) {
++    for (const what of keyHits(f.text)) found.push(`${f.file}: ${what}`)
++    for (const s of leaks(f.text, secrets)) found.push(`${f.file}: the secret part of a key held on this machine (${s.from.replace(os.homedir(), '~')})`)
++}
++if (found.length) { console.error('tripwire: refused, nothing pushed:\n  ' + [...new Set(found)].join('\n  ')); process.exit(1) }
++console.log(`tripwire: clean (${files.length} files, ${secrets.length} local secrets checked)`)

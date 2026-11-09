@@ -1,0 +1,29 @@
+{
+  "id": "embraer",
+  "type": "company",
+  "kind": "company",
+  "name": "Embraer",
+  "aliases": [],
+  "website": "https://embraer.com",
+  "what": null,
+  "category": "aerospace / defence",
+  "country": "Brazil",
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26)",
+  "attending_as": "event partner",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/3770f7ae-6b5a-4fa9-84bf-cc27a123500f/embraer/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://embraer.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

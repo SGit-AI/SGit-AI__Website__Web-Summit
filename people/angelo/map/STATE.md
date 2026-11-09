@@ -1,0 +1,33 @@
+# dev.map@PrompTugal.angelo: STATE
+
+Eighteenth run, 9 November 2026 (06:21 to about 07:10 UTC). No new commits For: dev.map@ since run 17 except dashboard@'s review (863e35df, run 17's work on dev). Every backlog item of mine is built or waits on someone (below).
+
+## Done this run (on workers/dev.map, for dashboard@ to review)
+- The map's tests on today's dev: 26 run, 25 pass. lvrepo failed: its pick, the newest newsroom exchange, is now pt:dinis:dev -> pt:dinis:conductor, both drawn at Dinis's person node, and a node to itself is not drawn. The test now picks an exchange between two people; live.js unchanged (9883ae34).
+
+## Yesterday (runs 14 to 17)
+- 0c4 (6) RiskMandate's logo as big as PT's, 0c4 (4) the dial on the live view; 0c3 (1) phone playback 31 to 33-34 fps; 0c3 (6) the timeline collapsed; 0c0 dev.work@'s hook in live.js.
+- Two runs can overlap: before starting, fetch workers/dev.map and check its newest commit's time; if under an hour old and STATE has no "Last run" end, take an item the other run is not on.
+
+## Open
+- The dial over six days is coarse with a mouse on a phone (about 30 minutes a pixel); the arrow keys step one minute. If Angelo wants finer: a 48-hour default with a "whole record" switch.
+- The work view (dev.work@'s work-live.js) does not follow the dial yet: it can listen for 'lv-time' (detail.back) on the host. For dev.work@.
+- PT News's stamp is always the cream one: live.js passes the function `light` (always true) instead of `light()`; left as Angelo knows it, a question for the desk.
+- lvlabel fixed in its test: the live clock follows the viewer's locale (12-hour in New York); the test assumed 24-hour and failed after 13:00 there.
+- Offline (sw.js): replay-events.json is stored only once it has been fetched, so the timeline and the playback work offline only after one online visit with the map or timeline open.
+- 0f's rest: build Angelo's pick of the fresh-session mark (options: `people/angelo/proposals/live-map/fresh-mark-options.svg`, A, B or C); the dashed ring stays until he picks.
+- The replay at a quarter CPU speed (a phone) is 33 to 34 fps with the timeline open (run 16): the rest is the map's own paint. Next step if the desk wants it before the summit: the map's moving layer (lines, dots) on a canvas over the still SVG; estimate about two runs.
+- Item 00's rest: Safari and iPad untested (no WebKit here).
+- dashboard@'s b52ac2f0 (For: dev.map@, Angelo about 17:45: "Can we have the glowy version all the time? Ideally on all views."): the steady flow drawn with a glowing head and trail, lines lit at min(1, op * 1.25), in live3d.js and live.js's 2D flow (people/angelo/proposals/live-map/glow/README.md). Not from the desk, so material: ready to build within the hour once the desk briefs it.
+- Piece 4 (public /team/map/) needs build.mjs and the newsroom: a question for the desk.
+- For policy@: my lane leaves out this STATE file (people/angelo/map/**); dashboard@'s review carries it onto dev.
+
+## Last run
+Run 25, 9 November 20:17 to about 20:30 UTC: nothing from the desk, runner or dev@ For: dev.map@ since run 24; only dashboard@'s review 1efbc49a (run 24 onto dev), which again asks the desk to brief the glow (b52ac2f0): still material until the desk does (Open, above). The backlog's change since (a3a00cfc, research@) is not mine. pushed-by --last-touch checked the spec (e588f4b5, ANGELO); a plain git log in this shallow clone gave the boundary b52ac2f0, as 1b2 warns. Ledger line only; unsigned run log.
+Run 24, 9 November 18:16 to about 18:25 UTC: nothing from the desk, runner or dev@ For: dev.map@ since run 23; dashboard@'s b52ac2f0 (the glow on all views) is material until the desk briefs it (Open, above); the backlog's changes since (research@, the wristbands article, the pool) are not mine. pushed-by --last-touch checked the spec (e588f4b5, ANGELO). Ledger line only; unsigned run log.
+Run 23, 9 November 16:18 to about 16:25 UTC: nothing new For: dev.map@ since run 22 (only dashboard@'s reviews df4b6084, eaeead3b and its Android wallpaper work 48a75f60, not mine); the backlog's changes since (an article, the authority-checks draft, dev.abp@'s demo) are not mine; every item built or waiting (Open, above). pushed-by --last-touch checked the spec (e588f4b5, ANGELO). Ledger line only; unsigned run log.
+Run 22, 9 November 14:15 to about 14:25 UTC: nothing new For: dev.map@ since run 21 (only dashboard@'s review b4a65e23); the backlog's changes since (Android wallpaper, articles) are not mine; every item built or waiting (Open, above). pushed-by --last-touch checked the spec (e588f4b5, ANGELO). Ledger line only; unsigned run log.
+Run 21, 9 November 12:23 to about 12:30 UTC: nothing new For: dev.map@ since run 20 (only dashboard@'s review 8ea65ed5); the backlog's changes (0-POOL, 0-FIX, 0-URGENT-2/3, 14 removed) are not mine; every item built or waiting (Open, above). pushed-by --last-touch checked the spec (e588f4b5, ANGELO). Ledger line only; unsigned run log.
+Run 18 ended about 07:10 UTC: 9883ae34 (lvrepo) and its STATE on workers/dev.map.
+Pushing: the branch already holds workers/dev.map (the join), so push straight away; never rebase on it.
+Started from dev, joined workers/dev.map with `git merge -s ours` (needs `git fetch --depth=300 origin dev workers/dev.map` first in a shallow clone; `--depth=6000 origin dev` for tmf and the replay tests). Gate with LANE_RANGE=<the join commit>..HEAD. The 26 map tests take over 10 minutes: run them in the background with a long timeout.

@@ -1,0 +1,29 @@
+{
+  "id": "rtp",
+  "type": "company",
+  "kind": "company",
+  "name": "RTP - Rádio e Televisão de Portugal",
+  "aliases": [],
+  "website": "https://www.rtp.pt",
+  "what": null,
+  "category": "public broadcaster",
+  "country": "Portugal",
+  "attending": "at Web Summit Lisbon 2026: speaker: Editor-in-Chief (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/624d70f9-470b-4adc-a09a-58519101b8fa/vitor-gon%C3%A7alves/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.rtp.pt",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

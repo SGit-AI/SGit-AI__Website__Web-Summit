@@ -2,7 +2,7 @@
 title: The design sprint: shirts, hoodies and cards
 summary: The home page's redesign (WS-103), and mock-ups for the team's merch (7 T-shirt concepts, 2 hoodies, 2 business cards, a colour for each of the seven) built to start conversations and meetings about RiskMandate, each with a QR to the wearer's meet page. Everyone votes today, Monday 2 November; the design is nailed by the end of the day.
 ---
-**The final set and the print files are on [the print files page](../print/index.html)**, for Dinis to sign off person by person and for the printers to download (3 November). RiskMandate only: no sponsor, no other brand, no Web Summit name. **Deadline: the end of today, Monday 2 November.** Everyone votes; Sarah and the designer agent turn the winners into print files; Vicky orders. Mock-ups, not print files: they show the idea, not the final type. Tap one to see it full size.
+**For the card printer (ProntaPrint Chiswick): [the cards and stickers order page](../cards/print/index.html).** **The final set and the print files are on [the print files page](../print/index.html)**, for Dinis to sign off person by person and for the printers to download (3 November). RiskMandate only: no sponsor, no other brand, no Web Summit name. **Deadline: the end of today, Monday 2 November.** Everyone votes; Sarah and the designer agent turn the winners into print files; Vicky orders. Mock-ups, not print files: they show the idea, not the final type. Tap one to see it full size.
 
 ## The brief {#brief}
 

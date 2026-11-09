@@ -1,0 +1,544 @@
+{
+ "subject": "Cloudflare (agents, Workers AI, AI Gateway)",
+ "kind": "company",
+ "slug": "cloudflare",
+ "run_at": "2026-11-07T19:08:53.909Z",
+ "note": "What each model said, as leads: not facts until their sources are read.",
+ "cost_usd": 0.0679,
+ "agents": [
+  {
+   "id": "perplexity",
+   "label": "Perplexity search",
+   "model": "perplexity/sonar",
+   "ms": 6072,
+   "cost_usd": 0.0059499,
+   "tokens": {
+    "in": 215,
+    "out": 790
+   },
+   "finish": "stop",
+   "citations": [
+    {
+     "url": "https://developers.cloudflare.com/ai-gateway/get-started/",
+     "title": "Getting started · Cloudflare AI Gateway docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/workers-ai/",
+     "title": "Overview · Cloudflare Workers AI docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/ai-gateway/configuration/manage-gateway/",
+     "title": "Manage gateways · Cloudflare AI Gateway docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/ai-gateway/",
+     "title": "Overview · Cloudflare AI Gateway docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/workers-ai/llms.txt",
+     "title": "Cloudflare Docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/ai-gateway/configuration/cloudflare-access/",
+     "title": "Cloudflare Access · Cloudflare AI Gateway docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/ai-gateway/features/",
+     "title": "Features · Cloudflare AI Gateway docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/ai-search/configuration/models/ai-gateway/",
+     "title": "AI Gateway · Cloudflare AI Search docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/ai-gateway/tutorials/",
+     "title": "Tutorials · Cloudflare AI Gateway docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/workers/",
+     "title": "Overview · Cloudflare Workers docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/ai-gateway/usage/",
+     "title": "Using AI Gateway - Cloudflare Docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/workers-ai/guides/tutorials/",
+     "title": "Tutorials · Cloudflare Workers AI docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/ai-gateway/configuration/",
+     "title": "Configuration · Cloudflare AI Gateway docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/workers-ai/guides/",
+     "title": "Guides · Cloudflare Workers AI docs"
+    },
+    {
+     "url": "https://developers.cloudflare.com/workers-ai/concepts/",
+     "title": "Concepts · Cloudflare Workers AI docs"
+    }
+   ],
+   "answer_urls": [
+    "https://developers.cloudflare.com/agents/index.md",
+    "https://developers.cloudflare.com/workers-ai/",
+    "https://developers.cloudflare.com/ai-gateway/",
+    "https://developers.cloudflare.com/ai-gateway/configuration/cloudflare-access/",
+    "https://developers.cloudflare.com/ai-gateway/get-started/",
+    "https://developers.cloudflare.com/ai-search/configuration/models/ai-gateway/",
+    "https://developers.cloudflare.com/workers/"
+   ],
+   "answer": {
+    "what_it_does": "Cloudflare Workers AI runs AI models serverlessly on Cloudflare’s network, including from Workers, Pages, or via API, so developers can invoke GPU-backed models without managing infrastructure.[2] Cloudflare AI Gateway adds a control layer for AI apps that provides visibility, routing, billing, caching, and security, and it works with Workers AI and other providers.[4][5]",
+    "ai_agents": [
+     {
+      "name": "Cloudflare Agents",
+      "what_it_does": "Build AI-powered agents on Cloudflare that can perform complex tasks using Workers AI and the Cloudflare Agents SDK.[5]",
+      "actions": [
+       "Use Workers AI models",
+       "Use the Cloudflare Agents SDK",
+       "Run as cloud-hosted AI assistants within Cloudflare’s developer platform"
+      ],
+      "source": "https://developers.cloudflare.com/agents/index.md"
+     },
+     {
+      "name": "Workers AI",
+      "what_it_does": "Run AI models serverlessly on Cloudflare’s network and call them from Workers, Pages, or the Cloudflare API.[2]",
+      "actions": [
+       "Invoke GPU-backed models",
+       "Access Cloudflare Workers, Pages, and API endpoints",
+       "Use as the model runtime for agent workflows"
+      ],
+      "source": "https://developers.cloudflare.com/workers-ai/"
+     },
+     {
+      "name": "AI Gateway",
+      "what_it_does": "Route and observe AI requests through a unified control plane for AI apps and model providers.[4][5]",
+      "actions": [
+       "Route requests to Workers AI and third-party models",
+       "Apply observability and analytics",
+       "Handle caching, security, routing, and billing"
+      ],
+      "source": "https://developers.cloudflare.com/ai-gateway/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Customer support and task automation agents",
+      "who_uses_it": "Developers and teams building AI assistants on Cloudflare",
+      "what_the_agent_can_reach": [
+       "Workers AI models",
+       "Cloudflare Workers",
+       "Cloudflare Pages",
+       "Cloudflare API"
+      ],
+      "source": "https://developers.cloudflare.com/workers-ai/"
+     },
+     {
+      "name": "Managed AI application routing and governance",
+      "who_uses_it": "Teams operating AI apps that use multiple model providers",
+      "what_the_agent_can_reach": [
+       "Workers AI",
+       "Anthropic",
+       "Google Gemini",
+       "OpenAI",
+       "Replicate",
+       "Gateway logs and analytics",
+       "Billing and API keys"
+      ],
+      "source": "https://developers.cloudflare.com/ai-gateway/"
+     },
+     {
+      "name": "Coding agents and non-browser clients",
+      "who_uses_it": "Developers using Cloudflare Access with AI Gateway",
+      "what_the_agent_can_reach": [
+       "OpenAI-compatible AI Gateway endpoints",
+       "Workers AI models",
+       "Bearer-token-authenticated endpoints"
+      ],
+      "source": "https://developers.cloudflare.com/ai-gateway/configuration/cloudflare-access/"
+     }
+    ],
+    "incidents_or_risks": [],
+    "facts": [
+     {
+      "claim": "AI Gateway requires an Account ID and API token with AI Gateway Read, AI Gateway Edit, and Workers AI Read permissions for setup.",
+      "source": "https://developers.cloudflare.com/ai-gateway/get-started/"
+     },
+     {
+      "claim": "Workers AI requests through AI Gateway require the cf-aig-gateway-id header when using the gateway path described in the docs.",
+      "source": "https://developers.cloudflare.com/ai-gateway/get-started/"
+     },
+     {
+      "claim": "Cloudflare AI Gateway supports Workers AI plus major external providers including Anthropic, Google Gemini, OpenAI, and Replicate.",
+      "source": "https://developers.cloudflare.com/ai-gateway/"
+     },
+     {
+      "claim": "Cloudflare AI Search instances connect to an AI Gateway, and embedding, reranking, query rewriting, and response generation can run through that gateway.",
+      "source": "https://developers.cloudflare.com/ai-search/configuration/models/ai-gateway/"
+     },
+     {
+      "claim": "Cloudflare describes Workers AI as serverless AI inference on its network without managing scaling or unused infrastructure.",
+      "source": "https://developers.cloudflare.com/workers-ai/"
+     },
+     {
+      "claim": "Cloudflare Workers documentation highlights serverless AI inference for running LLMs and generating images with Workers AI.",
+      "source": "https://developers.cloudflare.com/workers/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI search",
+   "model": "openai/gpt-5.4-nano:online",
+   "ms": 17142,
+   "cost_usd": 0.0239289336,
+   "tokens": {
+    "in": 13269,
+    "out": 1748
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://developers.cloudflare.com/agents/",
+    "https://www.cloudflare.com/products/workers-ai/",
+    "https://developers.cloudflare.com/ai-gateway/features/",
+    "https://developers.cloudflare.com/docs-for-agents/",
+    "https://developers.cloudflare.com/changelog/product/ai-gateway/",
+    "https://github.com/cloudflare/agents/blob/main/docs/agents/mcp-client.md",
+    "https://blog.cloudflare.com/kv-cache-exposure-remediation",
+    "https://developers.cloudflare.com/agents/harnesses/think/",
+    "https://developers.cloudflare.com/ai-gateway/get-started/",
+    "https://developers.cloudflare.com/agents/models/"
+   ],
+   "answer": {
+    "what_it_does": "Cloudflare offers the platform capabilities needed to build, host, and run AI agents on its edge network using Workers AI for model inference and Durable Objects for agent state. Cloudflare AI Gateway provides a unified front door for accessing AI models with routing, caching, rate/spend controls, and observability across providers, and the Agents tooling integrates with tools/data via MCP.",
+    "ai_agents": [
+     {
+      "name": "Cloudflare Agents (Agents platform)",
+      "what_it_does": "Build and host stateful AI agents on Cloudflare’s network, using the Agents SDK and agent primitives that run on Durable Objects, with support for tool use and MCP-based integrations.",
+      "actions": [
+       "Runs hosted agent instances on Cloudflare using the Agents SDK and Durable Objects for state management.",
+       "Invokes AI models through Workers AI and/or AI Gateway via the Agents SDK model providers.",
+       "Uses tool-calling and MCP servers (remote tool/data providers) to read resources and call tools the agent can access.",
+       "Can use managed remote MCP servers to enable the agent to search documentation, call the Cloudflare API, and query logs/analytics while it works.",
+       "Persists agent state (including SQL database integration patterns described in MCP server architecture materials)."
+      ],
+      "source": "https://developers.cloudflare.com/agents/"
+     },
+     {
+      "name": "Workers AI (agent model runtime used by Agents)",
+      "what_it_does": "Provides globally available model inference to power agent workflows executed on Cloudflare (including model catalog access and modalities such as text/image).",
+      "actions": [
+       "Serves AI inference globally from Workers AI with one API call.",
+       "Provides a rich model catalog used by agents/workflows for generation and agentic coding workflows.",
+       "Used as the model provider for the Agents SDK (via Workers AI and AI Gateway model providers)."
+      ],
+      "source": "https://www.cloudflare.com/products/workers-ai/"
+     },
+     {
+      "name": "AI Gateway (agent model access layer used by Agents)",
+      "what_it_does": "Routes and manages requests to AI models (including Workers AI and third-party providers) with security/performance controls such as caching, routing, rate limiting, spend controls, and observability.",
+      "actions": [
+       "Routes requests to the most cost-effective model that can handle the task while maintaining response quality (auto routing).",
+       "Caches and serves identical requests from Cloudflare’s global cache to reduce latency and repeated API calls.",
+       "Enforces rate limiting and spend limits / cost optimization controls.",
+       "Provides observability/logging/analytics and security features for model usage.",
+       "Can be protected with Cloudflare Access so authenticated identity is used for logs/analytics/routing/spend controls."
+      ],
+      "source": "https://developers.cloudflare.com/ai-gateway/features/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "AI customer support / helpdesk agents that understand and act using Cloudflare tools",
+      "who_uses_it": "Enterprises building agentic support experiences that need the agent to call Cloudflare systems and browse/query internal and Cloudflare-provided information.",
+      "what_the_agent_can_reach": [
+       "Cloudflare product interfaces via documented integrations (e.g., Cloudflare API access via MCP server patterns).",
+       "Cloudflare documentation and related information sources via managed remote MCP servers.",
+       "Cloudflare logs/analytics (queried by managed remote MCP server capabilities).",
+       "Model inference endpoints via Workers AI and/or AI Gateway for generating responses."
+      ],
+      "source": "https://developers.cloudflare.com/docs-for-agents/"
+     },
+     {
+      "name": "Multi-model agent workflows with centralized cost/routing controls",
+      "who_uses_it": "Engineering teams deploying agentic applications that need consistent model access, routing strategy, caching, and usage controls across providers.",
+      "what_the_agent_can_reach": [
+       "Third-party and Workers AI model providers through AI Gateway catalog/routing.",
+       "Cloudflare edge caching layer for cached responses.",
+       "Organization-wide usage analytics and spend controls (dashboard/analytics capabilities).",
+       "Protected AI endpoints when gated behind Cloudflare Access (authenticated identity reflected in logs/analytics/routing/spend controls)."
+      ],
+      "source": "https://developers.cloudflare.com/changelog/product/ai-gateway/"
+     },
+     {
+      "name": "Tool-using agents that integrate external tools and data via MCP",
+      "who_uses_it": "Developers building agents that need to call external tools/data sources in a structured way (for example, search, operations, or service-specific capabilities).",
+      "what_the_agent_can_reach": [
+       "External tool/data resources exposed by MCP servers through the agent’s MCP client integration.",
+       "Remote MCP server interfaces that can request input during tool calls (per the MCP client architecture patterns).",
+       "Durable state and associated persistence components described in Cloudflare MCP server one-pager materials."
+      ],
+      "source": "https://github.com/cloudflare/agents/blob/main/docs/agents/mcp-client.md"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model caused some customers to receive responses containing data from other customers’ requests.",
+      "when": "Incident window reported as between August 27 and September 9, 2026; Cloudflare took the model offline within 40 minutes of declaring an incident after reproducing/alerting.",
+      "source": "https://blog.cloudflare.com/kv-cache-exposure-remediation"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Cloudflare Agents documentation describes agents as tools like Cursor/GitHub Copilot/Claude Code that can answer questions about Cloudflare products, generate configuration, and call Cloudflare APIs on a user’s behalf.",
+      "source": "https://developers.cloudflare.com/docs-for-agents/"
+     },
+     {
+      "claim": "Cloudflare’s AI Gateway provides capabilities including routing, caching, rate limiting, and spend/cost optimization features for managing AI application requests.",
+      "source": "https://developers.cloudflare.com/ai-gateway/features/"
+     },
+     {
+      "claim": "Cloudflare Agents documentation states that Think builds on Cloudflare primitives where Workers AI provides the model and each agent instance is a Durable Object that stores its state.",
+      "source": "https://developers.cloudflare.com/agents/harnesses/think/"
+     },
+     {
+      "claim": "AI Gateway changelog documentation states that AI Gateway uses the same AI binding and REST API to call models hosted on Workers AI or supported third-party providers, and provides observability, logging, caching, security, and billing controls.",
+      "source": "https://developers.cloudflare.com/changelog/product/ai-gateway/"
+     },
+     {
+      "claim": "AI Gateway setup guidance indicates that callers use an AI Gateway API token with permissions such as AI Gateway - Read, AI Gateway - Edit, and Workers AI - Read.",
+      "source": "https://developers.cloudflare.com/ai-gateway/get-started/"
+     },
+     {
+      "claim": "Cloudflare Agents model documentation states that the Agents SDK includes model providers for Workers AI and AI Gateway, including an AI Gateway catalog model identifier format (author/model).",
+      "source": "https://developers.cloudflare.com/agents/models/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "gemini",
+   "label": "Gemini search",
+   "model": "google/gemini-3.1-flash-lite:online",
+   "ms": 2007,
+   "cost_usd": 0.00072567,
+   "tokens": {
+    "in": 232,
+    "out": 450
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.cloudflare.com/developer-platform/workers-ai/",
+    "https://www.cloudflare.com/developer-platform/ai-gateway/",
+    "https://www.cloudflarestatus.com/",
+    "https://blog.cloudflare.com/workers-ai/"
+   ],
+   "answer": {
+    "what_it_does": "Cloudflare provides a global edge computing platform that enables developers to build and deploy serverless applications, run AI models, and manage AI traffic through integrated gateways. Its ecosystem allows for low-latency AI inference and intelligent routing directly on the network's global infrastructure.",
+    "ai_agents": [
+     {
+      "name": "Cloudflare Workers AI",
+      "what_it_does": "An inference platform that allows developers to run AI models directly on Cloudflare's global edge network using serverless compute.",
+      "actions": [
+       "Executes large language models and other AI workloads",
+       "Interfaces with vector databases",
+       "Processes data requests at the edge"
+      ],
+      "source": "https://www.cloudflare.com/developer-platform/workers-ai/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "AI Gateway",
+      "who_uses_it": "Developers and enterprises managing AI application traffic.",
+      "what_the_agent_can_reach": [
+       "API rate limits",
+       "Caching layers for AI responses",
+       "Analytics and usage logs",
+       "Multiple LLM providers"
+      ],
+      "source": "https://www.cloudflare.com/developer-platform/ai-gateway/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Cloudflare experienced a significant outage affecting its dashboard and API, which impacted the management of Workers and other services.",
+      "when": "2024",
+      "source": "https://www.cloudflarestatus.com/"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Cloudflare Workers AI supports a variety of open-source models, including Llama and Mistral, running on GPUs located in Cloudflare's data centers.",
+      "source": "https://blog.cloudflare.com/workers-ai/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter web search",
+   "model": "anthropic/claude-haiku-5.5",
+   "plugins": [
+    {
+     "id": "web",
+     "max_results": 6
+    }
+   ],
+   "max_tokens": 7000,
+   "ms": 24880,
+   "cost_usd": 0.037315872,
+   "tokens": {
+    "in": 49693,
+    "out": 5447
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://developers.cloudflare.com/agents/tools/mcp/",
+    "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+    "https://developers.cloudflare.com/ai-search/agent-sdks/agents-sdk/",
+    "https://agents.cloudflare.com/",
+    "https://blog.cloudflare.com/building-ai-agents-with-mcp-authn-authz-and-durable-objects/",
+    "https://blog.cloudflare.com/cloudflare-outage-february-20-2026/",
+    "https://blog.cloudflare.com/tag/post-mortem/",
+    "https://blog.cloudflare.com/tag/outage/",
+    "https://statusgator.com/services/cloudflare/outage-history",
+    "https://developers.cloudflare.com/ai-gateway/",
+    "https://blog.cloudflare.com/ai-platform/",
+    "https://developers.cloudflare.com/changelog/post/2025-12-22-agents-sdk-ai-sdk-v6/",
+    "https://github.com/cloudflare/agents"
+   ],
+   "answer": {
+    "what_it_does": "Cloudflare's Agents SDK lets developers build stateful AI agents that run on Cloudflare Workers and Durable Objects, with access to models, tools, and external MCP servers. Its AI Gateway and Workers AI products route and host model calls, and Cloudflare also runs managed MCP servers that let outside AI agents work with Cloudflare accounts and APIs.",
+    "ai_agents": [
+     {
+      "name": "Cloudflare Agents SDK agents",
+      "what_it_does": "Durable Object-based agents that call AI models, connect to remote MCP servers, run scheduled work, and can pause tool use for human approval.",
+      "actions": [
+       "Call Workers AI, AI Gateway catalog, and vendor models (OpenAI, Anthropic, Google) through createAI or the AI binding",
+       "Connect to remote MCP servers with addMcpServer and use their tools in model calls",
+       "Run tools that require human approval before executing, such as a payment tool with a threshold",
+       "Schedule future work and keep state, storage, and WebSocket connections",
+       "Per the docs, the SDK also includes web fetch, web search, browser automation, sandboxed code execution, AI Search, MCP servers, and payments"
+      ],
+      "source": "https://developers.cloudflare.com/agents/tools/mcp/"
+     },
+     {
+      "name": "Cloudflare API MCP server (managed, agent-facing)",
+      "what_it_does": "A managed remote MCP server that lets an external AI agent read and change a Cloudflare account through the Cloudflare API, authorized by OAuth or an API token.",
+      "actions": [
+       "Search the Cloudflare API's over 2,500 endpoints (DNS, Workers, R2, Zero Trust and others) and execute calls against them",
+       "Search Cloudflare developer documentation",
+       "Generate and run JavaScript against the API inside an isolated Dynamic Worker sandbox",
+       "Make suggested configuration changes to the account, within the permissions granted during OAuth authorization",
+       "Touches account configuration, DNS, Workers, R2 and Zero Trust data, subject to granted scopes"
+      ],
+      "source": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/"
+     },
+     {
+      "name": "AI Search agent example (Agents SDK)",
+      "what_it_does": "A sample chat agent that provisions its own AI Search instance, indexes documents, and answers questions by calling a search tool.",
+      "actions": [
+       "Create an AI Search instance for the agent",
+       "Upload and index documents into that instance",
+       "Call a search_knowledge_base tool before replying to the user",
+       "Store chat history in a Durable Object"
+      ],
+      "source": "https://developers.cloudflare.com/ai-search/agent-sdks/agents-sdk/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Remote MCP server built on the Agents SDK",
+      "who_uses_it": "Knock, a company that uses the Agents SDK to build and ship its remote MCP server for its customers (per a Cloudflare testimonial)",
+      "what_the_agent_can_reach": [
+       "Tools exposed by the customer's MCP server to outside AI agents",
+       "Whatever data and services that MCP server is wired to (not specified in the source)"
+      ],
+      "source": "https://agents.cloudflare.com/"
+     },
+     {
+      "name": "Agents acting on a user's behalf through third-party MCP servers",
+      "who_uses_it": "Developers building agents on Cloudflare that need external services; the Cloudflare blog describes this pattern generally",
+      "what_the_agent_can_reach": [
+       "Third-party services exposed as MCP tools, accessed with the end user's OAuth grant",
+       "Actions taken on the end user's behalf in those services (the source gives email, meeting booking and code deployment as examples)"
+      ],
+      "source": "https://blog.cloudflare.com/building-ai-agents-with-mcp-authn-authz-and-durable-objects/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Cloudflare post-mortem: a change to BYOIP address handling withdrew about 1,100 customer prefixes via BGP, making some customers' services unreachable for 6 hours 7 minutes. Cloudflare said it was not an attack.",
+      "when": "February 20, 2026",
+      "source": "https://blog.cloudflare.com/cloudflare-outage-february-20-2026/"
+     },
+     {
+      "what": "Global service outage caused by a bug in the generation of a Bot Management feature file, affecting many Cloudflare services.",
+      "when": "November 18, 2025",
+      "source": "https://blog.cloudflare.com/tag/post-mortem/"
+     },
+     {
+      "what": "Significant traffic outage caused by configuration changes made to mitigate an industry-wide React Server Components vulnerability; lasted about 25 minutes. Cloudflare said it was not an attack.",
+      "when": "December 5, 2025",
+      "source": "https://blog.cloudflare.com/tag/outage/"
+     },
+     {
+      "what": "Attackers exploited the integration between Salesloft's Drift chat agent and Salesforce to gain unauthorized access to Salesforce tenants of Cloudflare and other companies. This is a third-party AI-agent integration risk; the source snippet gives no exact date.",
+      "when": "2025 (exact date not given in the cited snippet)",
+      "source": "https://blog.cloudflare.com/tag/post-mortem/"
+     },
+     {
+      "what": "Degraded performance and errors in the ENAM region across AI Search, Artifacts, Containers, D1, Durable Objects, Workers Assets and Workflows, resolved the same evening. Reported by StatusGator, a third-party aggregator.",
+      "when": "August 26, 2026",
+      "source": "https://statusgator.com/services/cloudflare/outage-history"
+     },
+     {
+      "what": "Dashboard and a set of related APIs were unavailable or partially available for about an hour.",
+      "when": "September 12, 2025",
+      "source": "https://blog.cloudflare.com/tag/post-mortem/"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "AI Gateway offers caching, rate limiting, fallback routing, and request logs covering prompt, response, provider, token usage and cost.",
+      "source": "https://developers.cloudflare.com/ai-gateway/"
+     },
+     {
+      "claim": "Cloudflare describes AI Gateway as a unified inference layer letting developers call models from 14+ providers through the same binding used for Workers AI.",
+      "source": "https://blog.cloudflare.com/ai-platform/"
+     },
+     {
+      "claim": "AI Gateway buffers streaming responses independently of the agent's lifetime, so an interrupted agent can reconnect and retrieve the response without paying for the tokens twice.",
+      "source": "https://blog.cloudflare.com/ai-platform/"
+     },
+     {
+      "claim": "Agents SDK v0.3.0 (December 2025) added dynamic tool approval for human-in-the-loop workflows and a unified tool pattern with all tools defined on the server.",
+      "source": "https://developers.cloudflare.com/changelog/post/2025-12-22-agents-sdk-ai-sdk-v6/"
+     },
+     {
+      "claim": "Agents hibernate when idle and wake on demand, and each agent is a persistent, stateful environment powered by Durable Objects.",
+      "source": "https://github.com/cloudflare/agents"
+     },
+     {
+      "claim": "Cloudflare runs a catalog of managed remote MCP servers that clients can connect to using OAuth, and API tokens can be used for CI/CD or automation.",
+      "source": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/"
+     },
+     {
+      "claim": "Workers AI is billed on usage, and Cloudflare Workers charges for CPU time rather than wall time spent waiting on I/O.",
+      "source": "https://agents.cloudflare.com/"
+     },
+     {
+      "claim": "Cloudflare states that the outages on December 5, 2025 and February 20, 2026 were not caused by attacks.",
+      "source": "https://blog.cloudflare.com/cloudflare-outage-february-20-2026/"
+     }
+    ]
+   }
+  }
+ ]
+}

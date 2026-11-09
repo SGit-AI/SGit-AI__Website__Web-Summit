@@ -11,7 +11,7 @@ Agreed with Jose on 4 November 2026. Written by `designer@web-summit.jose` for `
   - `app.css` imports the shared stylesheet (`@import url('../../../assets/cc/app.css')`) and adds only the view's styles.
 
   So every fix to the shared app still reaches Jose's, and the switcher row, the other views, Ask Claude and the theme stay as they are.
-- **Both dashboards, one page.** The shared command centre stays; the new view, **Mission**, is one more entry in its menu (`#mission`). The classic dashboard (`/people/jose/`) is untouched.
+- **A command centre like Angelo's** (Jose, 5 November): the shared app, plus **Mission** (`#mission`, Jose's own, the first view) and Angelo's three views, **Kanban**, **Team and the machine** and **Summit days** (slices 7 to 9). The shared views stay in the menu; the classic dashboard (`/people/jose/`) is untouched.
 - **What Jose asked to fix**, from his live page on 4 November:
   - his agents are wrong: the conductor and designer are missing, the never-run ones are listed, and there are no schedules;
   - there are too many numbers ("36 open · 32 due within 72 h") and too little signal;
@@ -25,7 +25,7 @@ The rules are already written and tested, next to this brief. Copy, import or re
 
 | File | What it is |
 |---|---|
-| [`model.js`](model.js) | The rules as pure functions: `parseDue`, `cronTimes`, `slots`, `health`, `model` (the whole view's state against `now`), `openBoard` (slice 7). A classic script: runs in a browser (`window.JoseCC`) and in node. |
+| [`model.js`](model.js) | The rules as pure functions: `parseDue`, `cronTimes`, `slots`, `health`, `model` (the whole view's state against `now`), `openBoard` (slice 7's preset). A classic script: runs in a browser (`window.JoseCC`) and in node. |
 | [`check.mjs`](check.mjs) | 88 golden checks: every `due:` form on the board, the crons, health edge cases, and the four states of the screenshots. `node people/jose/design/mission/check.mjs` must print `OK`. |
 | [`fixture.json`](fixture.json), [`scenarios.js`](scenarios.js) | The real data at 3 November 02:00 UTC, and the four states built from it, each change named. |
 | [Phone, all clear](preview-all-clear-phone.jpg) · [phone, overdue and quiet](preview-overdue-quiet-phone.jpg) · [desktop, overdue and quiet](preview-overdue-quiet-desktop.jpg) | The layout and the rules as Jose picked them. **The colours here are the preview's, not the build's:** the view uses the shared tokens (see "The look"). |
@@ -41,7 +41,10 @@ The rules are already written and tested, next to this brief. Copy, import or re
 | 4 | New since I last looked | 2 |
 | 5 | Decisions in `config.json`, with a status | 2 |
 | 6 | Mission as the first view (Jose's decision: from slice 3 on) | 3 |
-| 7 | Open issues: the whole board, only what is not done, grouped by when, on a phone | 0 |
+| 7 | Kanban, from Angelo's, with Jose's "open issues" layout | 0 |
+| 8 | Team and the machine, from Angelo's | 0 |
+| 9 | Summit days, from Angelo's | 0 |
+| later | Messages to Jose's conductor, card moves, the map: as in Angelo's brief | Jose's person key and a lane for his conductor |
 
 ### 0. Jose's own app, working the same as today
 
@@ -145,35 +148,55 @@ Jose's decision: **Mission opens first, from slice 3 on.** Until agent health is
 - The shared Home stays one tap away in the menu and the tab bar; the switcher row is unchanged.
 - One rule in `app.js`, so it is easy to undo if Jose changes his mind.
 
-### 7. Open issues (Jose's ask, 5 November)
+### Slices 7 to 9: Angelo's three views, copied (Jose, 5 November)
 
-Jose finds the issue list on [the briefs page](https://web-summit.sgit.ai/briefs/index.html#issues) too long: all 157 issues, the 22 done ones included, in one five-column table with each issue's full text, about 250 KB. He wants only the open ones, easy to read, **in his own app only**: the team page stays as it is.
+Angelo's own command centre (`people/angelo/app/`, by dev@web-summit.angelo) adds three views to the shared app, all read-only and live: Kanban, Team and the machine, and Summit days. Jose wants the same. Their code is not tied to Angelo: who counts as "me" comes from the data's `person`; only `kanban-core.js`'s self-test and its global name (`AngeloKanban`) mention him.
 
-- **One more view in the shared menu and the phone's tab bar: Open issues** (`#open`; the shared app already uses `#board` for the Team board).
-- **What it shows:** every issue on the board that is not done (status `done` or `dropped`, or `picked_by` starting "dropped", are left out), from the shared `data.json`'s `issues`, which already has the whole board. A line at the bottom says how many are done and hidden, with "show them" opening them in a group of their own.
-- **Grouped by when, most urgent first,** each group a card with its count and how many nobody has picked:
-  - Overdue;
-  - Due today (by 23:59 UTC today);
-  - This week (within 7 days);
-  - Later;
-  - Ongoing (recurring);
-  - No date.
+- **Copy, don't load.** Copy what the three views need into `people/jose/app/`:
+  - from `data.mjs`: `kanban()`, `collab()` and `summitDays()`;
+  - from `app.js`: the three views and the menu entries;
+  - from `app.css`: the `.ak-*` styles;
+  - and `kanban-core.js`, renamed `JoseKanban`, with its self-test made Jose's.
 
-  Within a group, earliest due first, then by number. Overdue carries the triangle and the accent; nothing else does.
-- **One row per issue:**
-  - number (mono) and title, up to two lines;
-  - who picked it, on one line, or **"nobody yet"** in bold (not in the accent: it is a fact, not an alarm);
-  - on the right, "N h late" or "N days late" for overdue, otherwise the due text.
+  Write in each file which commit of Angelo's it came from (`17201cb`, 5 November 2026, is the newest today). Loading Angelo's files from his folder would let every change he makes for himself change Jose's page, or break it. A copy is Jose's own, and nobody else's page changes either way.
+- **Credit and courtesy:** each copied file keeps a line saying it is from Angelo's app, by dev@web-summit.angelo.
+- **"Me" is Jose:** `for:` lists jose, or Jose or one of his agents picked it. His agents are the corrected list from slice 1, which uses the same rule as Mission.
+- **Everything else as Angelo's brief describes it** (`people/angelo/app/BRIEF.md`, sections 1, 2 and 5):
+  - the kanban's filters, layout, sort and bookmarkable views;
+  - the collaboration board's people, agents and the machine;
+  - the public schedule by day.
 
-  A tap opens the issue's details: its full text (the shared `body`, cut at 1500 characters, with "the rest on GitHub"), who it is for, and the link to the file.
-- **Three filters,** buttons 44 px tall, each with its count, kept in the address (`#open?f=unpicked`):
-  - **All open** (the default);
-  - **Nobody yet** (not picked: the issues anyone can pick up);
-  - **Mine** (for Jose, or picked by Jose or one of his agents).
-- **On a phone, a list, never the table.** Each group shows its first 4 rows and "Show all N"; on a wide screen, each group shows up to 10 rows.
-- **The rule is `openBoard(issues, now, filter)` in `model.js`,** checked in `check.mjs`. It keys rows by file, because two board files share WS-106.
-- **Previews from the real board on 5 November:** [all open, phone](preview-open-issues-phone.jpg) (135 open: 72 overdue, 32 due today, 18 this week, 11 ongoing, 2 with no date) and [mine, phone](preview-open-issues-mine-phone.jpg) (35). They use the shared dark colours, as the build will.
-- **Done when** the counts on Jose's page match `openBoard` on the same `data.json`, and the view works at 390 px and 1280 px.
+  Dev may take Angelo's later fixes when Jose's page would benefit, saying in the commit which ones.
+
+#### 7. Kanban, with Jose's "open issues" layout
+
+Jose's ask (5 November): the briefs page's list (157 issues, done ones included, each with its full text) is too long. He wants **only the open ones, easy to read, in his own app only**; the team page stays as it is. Angelo's kanban already shows only what is not done and can set its columns by due, so there is no separate view: Jose's layout is a **preset** of the kanban.
+
+- **The preset "Open issues",** one tap from the kanban's top bar, and a bookmarkable address (`#kanban?…`):
+  - every issue on the board that is not done (not only Jose's), with done and dropped left out;
+  - columns by due, most urgent first: Overdue, Due today, This week, Later, Ongoing, No date;
+  - within a column, earliest due first, then by number.
+- **Each column says** its count and how many nobody has picked.
+- **On a card:** "nobody yet" is in bold, not in the accent; it is a fact, not an alarm. Overdue cards say how late ("2 days late").
+- **Filters for this preset,** on top of the kanban's own: **All open**, **Nobody yet** and **Mine**.
+- **Done issues:** a line at the bottom says how many there are and that they are hidden, with a way to show them.
+- **The grouping rule is `openBoard(issues, now, filter)` in `model.js`,** checked in `check.mjs`. It keys rows by file, because two board files share WS-106. Use it, or make the kanban's due buckets agree with it: they must give the same counts.
+- **Previews from the real board on 5 November,** in the shared dark colours: [all open, phone](preview-open-issues-phone.jpg) (135 open: 72 overdue, 32 due today, 18 this week, 11 ongoing, 2 with no date) and [mine, phone](preview-open-issues-mine-phone.jpg) (35). In the build they are the kanban's columns: one column at a time on a phone, as Angelo's does.
+- **Done when** the preset's counts on Jose's page match `openBoard` on the same `data.json`.
+
+#### 8. Team and the machine
+
+As Angelo's: the last release and the gate, CI (with the page saying what it cannot see), agents and keys, then everyone with their level, agents, picked work and next run. Nothing changes for Jose except who is "me".
+
+#### 9. Summit days
+
+As Angelo's: the event's public schedule from `data/events.json` and the stand-ups, by day, with sources. Each person's own calendar waits for their consent, as in Angelo's brief.
+
+#### Later: messages, card moves, the map
+
+As Angelo's slices 3, 4, 6 and 8. They need Jose's person key, a lane for his conductor, and the signature rule in his conductor's rules, as Angelo's do. Not started until Jose asks.
+
+**Done when** (slices 7 to 9) each view works on Jose's page at 390 px and 1280 px with Jose as "me", and nobody else's `data.json` or page changes. To check: build before and after, then diff the others' `data.json`.
 
 ## The look
 

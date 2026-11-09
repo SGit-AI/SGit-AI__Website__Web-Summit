@@ -1,0 +1,29 @@
+{
+  "id": "nestle",
+  "type": "company",
+  "kind": "company",
+  "name": "Nestlé",
+  "aliases": [],
+  "website": "https://www.nestle.com",
+  "what": null,
+  "category": "consumer goods",
+  "country": "Switzerland",
+  "attending": "at Web Summit Lisbon 2026: speaker: Chief Digital Officer (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/65b0add1-eebd-4973-b9fa-8e8ed74ce5e9/mathieu-ovaert/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.nestle.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

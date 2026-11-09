@@ -1,0 +1,26 @@
+{
+ "number": 31,
+ "date": "2026-11-06",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "A quiet evening: the videos vault is in; António's emails still wait for Gmail",
+ "when": "Friday 6 November 2026, 22:35 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "Nothing new needs you beyond brief 30. Silvio's video agent filled ws-team-videos (48 files, 158 MB) and sgit@ fixed the vault audit for binary files the same evening, so the read key can be published. Vicky's desks took the five-part team series (T1 to T5) through review; T1 is published. Silvio's designer tightened two front-page options (E and F). inbox@ has made no Gmail draft: Gmail is still not connected to its session. Nothing was addressed to me; the lanes are empty.",
+ "stats": [
+  {"n": "47", "label": "team-site commits since 20:35"},
+  {"n": "48", "label": "files in the videos vault (158 MB)"},
+  {"n": "5", "label": "articles in Vicky's team series, T1 published"},
+  {"n": "0", "label": "Gmail drafts yet"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "Still open from brief 30", "detail": "Gmail for inbox@ (and which mailbox), draft 1's line about the paragraph, the 18:00's decisions and the 45 issues to park.", "options": ["tonight", "Saturday morning"], "recommend": "Saturday morning; nothing breaks overnight."}
+ ],
+ "you_asked": [],
+ "team": [
+  {"id": "Silvio", "status": "active", "doing": "the videos vault (WS-174); front-page options E and F"},
+  {"id": "Vicky", "status": "active", "doing": "the team series T1 to T5; the stories page collapses on a phone"},
+  {"id": "Angelo", "status": "active", "doing": "WS-120 works both ways with Jose; WS-181's vault design"}
+ ],
+ "next": ["Saturday 08:27 wake: the first newsletter (WS-186), Saturday's schedule."],
+ "sources": ["git log since 2026-11-06T20:35Z", "666c9639, 125cdde9", "feedback_drain at 22:29 UTC"]
+}

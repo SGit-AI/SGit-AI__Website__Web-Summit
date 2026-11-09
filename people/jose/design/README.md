@@ -35,7 +35,7 @@ All three shared one data model and the same rules, and differed only in layout,
 
 ## The broadcast look (WS-39)
 
-Proposed in the first round, and still waiting for Jose's word. Both looks as they would appear in WhatsApp and in Slack, from dev's script: [broadcast/](broadcast/README.md). In a group chat, people read three points, not seven: a fixed title line, the day and the stand-up times, the first three points with their bold lead, then `+N more:` and the link. See [broadcast-looks.png](broadcast-looks.png).
+Proposed in the first round; the choice is on [Jose's Actions](../dashboard.md#actions) (one door, C19), not kept here. Both looks as they would appear in WhatsApp and in Slack, from dev's script: [broadcast/](broadcast/README.md). In a group chat, people read three points, not seven: a fixed title line, the day and the stand-up times, the first three points with their bold lead, then `+N more:` and the link. See [broadcast-looks.png](broadcast-looks.png).
 
 ```
 *RiskMandate team · 00:57 report*

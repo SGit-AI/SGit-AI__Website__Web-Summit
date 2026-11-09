@@ -1,0 +1,30 @@
+{
+  "id": "asf",
+  "type": "company",
+  "kind": "company",
+  "name": "ASF - Autoridade de Supervisão de Seguros e Fundos de Pensões",
+  "aliases": [],
+  "website": null,
+  "what": null,
+  "category": null,
+  "country": null,
+  "attending": "not listed at Web Summit Lisbon 2026: not on the lis26 event partners (pages 1 to 8) or speakers (pages 1 to 47) lists, checked 2026-11-05",
+  "attending_as": null,
+  "topics": [],
+  "to_source": "what it is, its sector, country and website: none read from a public page yet, so left empty",
+  "sources": [
+    {
+      "url": "https://websummit.com/partners/event-partners-2026/",
+      "read_at": "2026-11-05",
+      "supports": "not among the event partners"
+    },
+    {
+      "url": "https://websummit.com/speakers/",
+      "read_at": "2026-11-05",
+      "supports": "not among the speakers"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/online.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

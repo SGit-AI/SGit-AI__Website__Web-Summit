@@ -6,9 +6,10 @@
   "dev_style": "a settler developer: picks up what explorers started and makes it solid, tested and maintainable, with some exploring of its own",
   "mentor": {
     "name": "mentor@web-summit.angelo",
-    "status": "active",
+    "status": "retired",
     "retire_when": "the person is at L5 and their agents have run on their own for two days",
-    "ends": "2026-11-13"
+    "ends": "2026-11-13",
+    "retired": "2026-11-05T12:41Z: handover note people/angelo/mentor/2026-11-05-1241.md; at L6, his agents met their scheduled slots for two days without a prompt; quiet runs commit nothing under his protocol (team/mentors/runs/2026-11-05-1241.md)"
   },
   "notes": "At L3 with a conductor, dev and team-collaboration agent: next are his dashboard agent and his agents on schedules.",
   "source": "Drafted by conductor@web-summit.dinis on 2 November 2026 from Dinis's words (explorer and settler developers, the briefs); Angelo corrects it, and the mentor reads it every run."

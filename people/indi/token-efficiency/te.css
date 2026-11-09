@@ -1,0 +1,13 @@
+/* The token-efficiency report: the schedules page's pastel look, plus readable tables and lists. */
+.te .te-body h2 { margin-top: 2.2rem; }
+.te .te-body h3 { font-family: 'Nunito', 'Lexend', system-ui, sans-serif; font-size: 1.25rem; margin: 1.6rem 0 .5rem; color: var(--ink); }
+.te .te-body p, .te .te-body li { color: var(--ink); max-width: 46rem; }
+.te .te-body ul, .te .te-body ol { padding-left: 1.4rem; }
+.te .te-body li { margin: .35rem 0; }
+.te .te-body ol > li::marker { font-weight: 800; color: var(--lav-e); }
+.te .te-table { overflow-x: auto; margin: .8rem 0 1.2rem; }
+.te table { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 560px; background: #fdfcf8; border: 1px solid #ece8f6; border-radius: 18px; overflow: hidden; font-size: .95rem; }
+.te th { background: var(--lav); text-align: left; padding: .55rem .7rem; font-weight: 600; color: var(--ink); }
+.te td { padding: .5rem .7rem; border-top: 1px solid #ece8f6; color: var(--ink); vertical-align: top; }
+.te tr:nth-child(even) td { background: #faf8fd; }
+.te code { background: var(--butter); border-radius: 6px; padding: 0 .3rem; font-size: .88em; overflow-wrap: anywhere; }

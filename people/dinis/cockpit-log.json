@@ -1,0 +1,29 @@
+{
+  "about": "What happened to each action sent from dinis's cockpit, by its id: written by admin/tools/cockpit_apply.mjs when the dashboard agent processes its lane; read by the build (admin/build/cockpit.mjs) so the cockpit shows each action as processed. files: the inbox messages already handled.",
+  "files": [
+    "1793844167654_6dc0c4ae6ec2c4790b5b58e2.json",
+    "1793845067257_b39ae4bb50fe227db42cf40a.json"
+  ],
+  "entries": [
+    {
+      "uid": "y-jose-and-indi-are-all-at-the-push-json-mw2wi1yj",
+      "ref": "2026-11-03-1300/20261102T2254-nimay-jose-and-indi-are-all-at-the-push-.json",
+      "action": "decide",
+      "title": "Nimay and Indi are still at the push step: who sends the invitations (WS-09, WS-124)",
+      "status": "refused",
+      "result": "not applied: SIGNATURE NOT CHECKED: no published key test-not-a-key for dinis",
+      "sent_at": "2026-11-05T02:02:47.230Z",
+      "applied_at": "2026-11-05T02:19:34.586Z"
+    },
+    {
+      "uid": "mw2x131e-7y094r",
+      "ref": "board/WS-145-give-indi-write-access-to-the-newsroom-repository.md",
+      "action": "done",
+      "title": "Give Indi write access to the newsroom repository",
+      "status": "applied",
+      "result": "WS-145 marked done on the board",
+      "sent_at": "2026-11-05T02:06:56.246Z",
+      "applied_at": "2026-11-05T02:19:34.587Z"
+    }
+  ]
+}

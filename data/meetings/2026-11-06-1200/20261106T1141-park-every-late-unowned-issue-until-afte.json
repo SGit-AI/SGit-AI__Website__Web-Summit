@@ -1,0 +1,19 @@
+{
+  "type": "decision",
+  "title": "Park every late, unowned issue until after the summit?",
+  "for": [
+    "vicky",
+    "dinis"
+  ],
+  "by": "team-collaboration@web-summit.angelo",
+  "added": "2026-11-06T11:41:09.192Z",
+  "status": "open",
+  "detail": "108 board issues are past their date (73 yesterday, 24 the day before) and 70 of them have nobody in picked_by, so 'late' no longer tells anyone what matters before Lisbon. From this morning's note (WS-97). If yes: project-manager@web-summit.dinis marks them parked in one pass; anyone unparks one by picking it.",
+  "recommend": "yes, park them all now: three days to opening night",
+  "issue": "WS-46",
+  "options": [
+    "yes, park them all now",
+    "park only those due before 5 November",
+    "no: owners re-date their own"
+  ]
+}

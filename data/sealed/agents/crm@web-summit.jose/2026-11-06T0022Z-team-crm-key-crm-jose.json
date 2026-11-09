@@ -1,0 +1,12 @@
+{
+  "v": "pki-link",
+  "to": "crm-jose",
+  "agent": "crm@web-summit.jose",
+  "key": "sha256:35512958adc88706",
+  "by": "conductor@web-summit.jose",
+  "signing_fingerprint": "sha256:006ceb9a9e3febbe",
+  "at": "2026-11-06T0022Z",
+  "expires_days": 7,
+  "about": "The team CRM's private vault key (ws-team-crm-private, 5n0aocvz), sealed by conductor@web-summit.jose with admin/tools/seal.mjs from the copy conductor@web-summit.dinis sealed to it, at Jose's word (6 November 2026): the key crm-jose was pushed by riskmandate-jose, Jose's account on the roster (seal.mjs --check). Open with: node pki-agent.mjs open <link> --save ~/.sg-send/crm (only crm-jose's key opens it).",
+  "link": "https://pki.sgit.ai/m/#m1.35512958adc88706.1T-KBR7m4YvrN9BsJtbh-Eec6XKLMY8VpgXf0dTLryCp5VwIJueR8Mnp8lZsyDzBBhJuA3C6CGHpCdHFZQ9e5NmGlRtFiortgnameNYJVGw5_PzUuBe3KrSfOSPcMadVTbJa2Uv149chxRoFAbDb6_VJnbLdhpsCRq4kY9xPFlssu1J6s6A1H5CLTO76M9sH4ASxWmfPg3bDaJXRCgiYY5aOhdLjer0iXP7lyJM9k0PUgN8zxjw_l56bus9KTZV2YMBl72jhBGUEJ508Fn1ToXPjPyIqOCZZFlq7xUuqSLddr4vkQ3dpcBp6M4hHmJ8uSxL4Y4tGJgteFKs1DjcjZilHW2pAghZ6iuMIq_beVgh7f8G3dZhrZfAj1uZiQ23Jz4n86sLNxYmpgEN-el_1bG6CmteAz0RyrakcI_pa0gTssMqiCwF3ocgkLtlcxnvWth53HCj1nWxzBEJr4phr0tUGXpoyKFay-ueWiqO2JSPvwu4B2GgN64lW0e2IfTo2OFtN5-g0CI_Uo3t8XdBNebh8x6PTgk8GjSWmNuvN1DilOYwdoxY9oj0WtjJmqrESJ4wUxG6xpmeBQ5J6ed0SUfaTt6DddHFTCoN5wHTsnPiDRJ2eM1sWHIeRrawL2Jyn6ew3vDCPnA_8BRs_8rvnizXf7EXGVEUlRMBwLbdddRA.EKh-LLwPyuubUlXO.oynNwaPL7_C62wXYcWcXEpFOaoZoULgACp2kXE2ZFJF6lPhqqFb8DOjLL2yM_HfUhQZJfcujxM_H-ObYetgOARGQvGW6zs-N5EI0BDmpWGZd-678Xp8KyGAomZimpu13NWxspWVmmKqm554iD00ztvOm5KWBVbIxAVw1uMMCu3bg5vCnoxlT1nCaBJwiv6XkhfzRdqQust21aEgxup8w9omZ0kWnWF1iiF9q287PQEAGqTI6b1kisDBmutKYut8Cen8tzyfSxYPZrbnrhmYpFREcz_uZSvmRgn1dczg_jc14MpgEHOXHWbHGn9gX5198ADRg6O8lwmcnTIbOeQp5AXCGsq1wbJ-1Y8ugEjxPZz6k5HUidHPDXfhNtq4MehCOw60XUa3yQWGi8MNelMqJ2rnY6G2-6G9V6cre0xskz9lTFGLTzQnjUeX_rlhpzf_d-sATQvjd0ENXmXOCWBj7YZmUyoQ-NSyRdsSqDHRuCVUV1UhuF8uE0-0ASgF1SpbDR6wYzO8NFzRTp7EvNGR-ABnZbNhuRkpHbQKSnrs4VoS06JV265bQ2BO64zNxjiL9uz7VXHGGGSNeZuHal3-SeBo0yryMYt0f3SlssjrwLHiz6eJa5VXQfYU2gM7bjdEXnLB3doCCADJnMScv58xQl-kV_ihwrV0pvtKdJjfxyX340NPuOtnsyKYdOLbzFvV0bw7WGaa4UHL_SvJnlG36MvklOa8RSI5hEs2OxXA9Uts6dvn_w1x-KH6o-sUlYu0E1Gc-Z3D0pZqXUUqTCAnKBn3dtoRtF7KxcpZIK5qqld_moJBpBLuWlIu3eXII0DD2f7Gu-34su23TXBXsHFfiMPlhAlCyq1dq60mZ6G0u7qc.mGWz9hc3ctroapTzc-BNCe5P4xQAAUIE31VA1DruI4NJQXv5uHe9Shby2lLoG99c35z8x6EOMpxhZpBFov_u0A.006ceb9a9e3febbe"
+}

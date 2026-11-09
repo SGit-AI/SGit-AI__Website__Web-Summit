@@ -1,0 +1,56 @@
+diff --git a/team/conductor/tools/show_deck.py b/team/conductor/tools/show_deck.py
+index 12ef0660..d134e82a 100644
+--- a/team/conductor/tools/show_deck.py
++++ b/team/conductor/tools/show_deck.py
+@@ -96,7 +96,7 @@ late = sorted([x for x in B if dday(x.get('due')) is not None and dday(x.get('du
+ urgent = [x for x in B if dday(x.get('due')) == today]
+ logi = [x for x in B if x.get('area') in ('merch', 'ops') or re.search(r'print|merch|shirt|hoodie|collect|travel|hotel|badge|ticket|booth|the stand(?![-\w])', x.get('title', ''), re.I)]
+ def row(x, tone): return f'<li class="{tone}"><b>{E(x["id"])}</b> {E(x.get("title", "")[:95])} <span>{E(x.get("due", ""))} · {E(x.get("for", ""))} · {E(x.get("status", ""))}</span></li>'
+-S.append(('Urgent, late and logistics', f'<h2>Open points first: urgent, late, logistics</h2><div class="three"><div><h3>Late ({len(late)})</h3><ul class="pts">' + ''.join(row(x, 'late') for x in late[:9]) + (f'<li class="more">and {len(late) - 9} more on the board</li>' if len(late) > 9 else '') + f'</ul></div><div><h3>Due today ({len(urgent)})</h3><ul class="pts">' + ''.join(row(x, 'today') for x in urgent[:9]) + (f'<li class="more">and {len(urgent) - 9} more</li>' if len(urgent) > 9 else '') + f'</ul></div><div><h3>Logistics ({len(logi)})</h3><ul class="pts">' + ''.join(row(x, 'logi') for x in logi[:9]) + '</ul></div></div><p class="cap">From the board at build time: open issues past their due date, due today, and logistics (merch, print, travel, the stand). At Angelo\'s ask (a signed message, 17:25).</p>'))
++# WS-150 (Angelo, 5 November): the generic 'Open points first' slide is gone; its counts move to the strip on 'What needs us today'
+ S.append(('The day, hour by hour', f'<h2>Who worked when: commits per hour, per person (their agents), since the last stand-up</h2>{heat()}<p class="cap">Each square is an hour; darker is more.</p>'))
+ S.append(('The agents', f'<h2>{active_agents} agents did work today; {akeys} keys on the keys page</h2>{dots()}<p class="cap">One dot per agent that committed under its own name since the last stand-up.</p>'))
+ # the meeting's own story: team/conductor/shows/<meeting id>.py, run here with everything above in scope (S, shot,
+@@ -104,6 +104,28 @@ S.append(('The agents', f'<h2>{active_agents} agents did work today; {akeys} key
+ NARR = f'team/conductor/shows/{MID}.py'
+ if os.path.exists(NARR): exec(open(NARR).read())
+ 
++# WS-150 (Angelo's brief, 5 November; people/angelo/proposals/WS-150/): the meeting's "To decide" slide becomes "What needs us
++# today": at most five, ranked by what blocks Lisbon, from team-collaboration@web-summit.angelo's ranking
++# (people/angelo/tools/standup-show.mjs --rank, read-only), with the counts strip slide 2 used to carry. Follow-ups stay last.
++def needs_us_today():
++    try:
++        r = json.loads(subprocess.run(['node', 'people/angelo/tools/standup-show.mjs', '--rank', '.', MID], capture_output=True, text=True, check=True).stdout)
++    except Exception as e:
++        return None
++    lu = len([x for x in late if not x.get('picked_by')])
++    NEED = {'Decide': 'n-dec', 'Write': 'n-wri', 'Do': 'n-wri', 'Needs owner': 'n-own'}
++    rows_ = ''.join(f'<li class="{E(t["tone"])}"><span class="nn">{i}</span><div class="nt"><b>{E(t["title"])}</b><span>{E(t["sub"])}</span></div><span class="no">{E(t["owner"])}</span><span class="nd {NEED.get(t["need"], "n-dec")}">{E(t["need"])}</span><span class="nb">{E(t["by"])}</span></li>' for i, t in enumerate(r['top'], 1))
++    strip = f'<div class="nstrip"><span><b>{len(late)}</b> late · <b>{lu}</b> with no owner: park them?</span><span><b>{len(urgent)}</b> due today</span><span>Logistics before Lisbon: <b>{len(logi)}</b></span><span>Full list: the board</span></div>'
++    return f'<h2>{["Nothing", "One thing", "Two things", "Three things", "Four things", "Five things"][len(r["top"])]} that need us today</h2><p class="cap nsub">Ranked by what blocks Lisbon (Mon 9 Nov). One owner each. Everything else is on the board.</p><ol class="needs">{rows_}</ol>{strip}'
++_n = needs_us_today()
++if _n:
++    _i = next((k for k, (t, _) in enumerate(S) if t in ('To decide now', 'To decide')), None)
++    if _i is not None: S[_i] = ('What needs us today', _n)
++    else:
++        _f = next((k for k, (t, _) in enumerate(S) if t == 'Follow-ups'), len(S)); S.insert(_f, ('What needs us today', _n))
++_f = [x for x in S if x[0] == 'Follow-ups']
++S = [x for x in S if x[0] != 'Follow-ups'] + _f
++
+ css = '''
+ .deck{--paper:var(--surface);font-size:17px}.deck *{box-sizing:border-box}
+ .deck .slide{position:relative;aspect-ratio:16/9;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:2.2em 2.6em;margin:0 0 1.6em;overflow:hidden;display:flex;flex-direction:column}
+@@ -131,6 +153,13 @@ css = '''
+ .deck.full,.deck:fullscreen{position:fixed;inset:0;z-index:1000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1vh 2vw;font-size:clamp(14px,1.45vw,26px)}
+ .deck.full .slide.current,.deck:fullscreen .slide.current{width:min(96vw,150vh)}.deck.full .deck-bar,.deck:fullscreen .deck-bar{width:min(96vw,150vh);margin:.6em 0 0}
+ html.deck-on body{overflow:hidden}
++.deck .nsub{margin:-.7em 0 .9em}.deck .needs{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.45em;flex:1 1 0;min-height:0}
++.deck .needs li{display:grid;grid-template-columns:2.2em 1fr 9em 8em 5em;align-items:center;gap:.6em;background:var(--surface-2);border-radius:12px;border-left:6px solid #d97706;padding:.45em .9em;margin:0}
++.deck .needs li.hot{border-left-color:#c0392b}.deck .needs .nn{font:400 1.5em Georgia,serif;color:var(--ink-2)}.deck .needs .nt b{display:block;font-size:1.05em;line-height:1.2}.deck .needs .nt span{color:var(--ink-2);font-size:.8em}
++.deck .needs .no{font-weight:600}.deck .needs .nd{justify-self:start;font:700 .72em system-ui;letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:.3em .8em}
++.deck .n-dec{background:#fde2e0;color:#b42318}.deck .n-wri{background:#dcf3e6;color:#16794c}.deck .n-own{background:#fdf0d5;color:#a15c07}.deck .needs .nb{text-align:right;font-weight:600}
++.deck .nstrip{display:flex;flex-wrap:wrap;gap:.6em;margin-top:.8em;font-size:.85em}.deck .nstrip span{background:var(--surface-2);border-radius:10px;padding:.35em .8em}
++@media (max-width:760px){.deck .needs li{grid-template-columns:2em 1fr;}.deck .needs .no,.deck .needs .nd,.deck .needs .nb{grid-column:2}}
+ @media (max-width:760px){.deck .slide{aspect-ratio:auto;min-height:70vh;padding:1.1em;overflow:visible}.deck .two,.deck .tiles,.deck .keys,.deck .three{grid-template-columns:1fr}.deck .two{flex:none}.deck .shot img{flex:none;height:auto;max-height:45vh}
+ .deck .slide h1{font-size:2.2em}.deck .slide h2{font-size:1.35em}.deck .dotrow{grid-template-columns:5em 1fr}.deck .dotrow em{grid-column:1/-1}.deck .raci{font-size:.75em}.deck .bars .b{grid-template-columns:5em 1fr 2.5em}.deck .three{flex:none;overflow:visible}.deck .deck-gap{display:none}}
+ @media print{.deck .deck-bar{display:none}}

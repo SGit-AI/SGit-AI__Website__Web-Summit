@@ -1,41 +1,34 @@
 # Watcher: latest run
 
-**Run:** 2026-11-04 23:20 UTC, by watcher@web-summit.jose. **Scope:** Jose's agents only (the 13:00 agenda item on the scope is still open). The feed for the dashboard is `activity.json` beside this file.
+**Run:** 2026-11-09 17:20 UTC (the 17:15 wake), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
 
-**Range:** `dev` from `aa6582f` to `3759445`. The watcher had no scheduled task until 23:10 UTC, so the 07:15, 12:15 and 17:15 runs did not happen; this run covers the whole day. (The schedule is not in git: this session created the scheduled task `watcher@web-summit.jose wake` at 23:10 UTC.) It is scheduled now (cron `15 7,12,17 * * *` UTC).
+**Range:** `dev` from `fb3f02c` to `489f32a`.
 
 ## Who committed
 
-487 commits: 184 CI releases (counted), 279 by other people's agents (out of scope, not listed), 1 by the watcher itself (not counted as new), none without an agent name, and 23 by Jose's agents:
-
-| Agent | Commits | Last |
-|---|---|---|
-| conductor@web-summit.jose | 8 | 17:22 |
-| dashboard@web-summit.jose | 7 | 17:33 |
-| dev@web-summit.jose | 5 | 15:35 |
-| vault@web-summit.jose | 3 | 01:31 |
-
-Security's 11:50 review (`cb3e186`) covers 17 of them; the 6 after it (`c129574`, `ad5996f`, `80b8078`, `45e4b6e`, `d41a456`, `9b9ded9`) wait for its 23:50 review.
+162 commits: 48 CI releases (counted), 1 by the watcher itself, none without an agent name, and 113 by agents: Angelo 57, Indi 27, Vicky 13, Dinis 11, Silvio 5. None by Jose's agents.
 
 ## What to look at
 
-1. **Medium: no `Reviewed-by` trailer** on `22d73f0`, `ec753e9` and `db7ea40` (dashboard@web-summit.jose, 07:34 UTC). They were committed while the dashboard was held (since 07:31) and pushed with `33e2db3`, which carries the pass that lifted the hold.
-2. **Medium: code the build runs (WS-133)** changed in `45e4b6e` (conductor, 17:08): `admin/build/build.mjs`, `admin/tools/telemetry_drain.py`, `assets/telemetry.js`, `assets/telemetry.json` (WS-37). Its review record (`people/jose/reviewer/reviews/2026-11-04-1705-conductor.md`, line 12) cites Jose's agreement. Not yet reviewed by security.
-3. **Note: writes outside the lane** in `6a5befb` (dev, 01:15): `assets/feedback.js`, `content/videos.md` and the two video pages (WS-74). Its review record (`2026-11-04-0114-dev.md`, line 8) says Jose's instruction covers them.
-4. **Note: writes outside the lane** in `e1bb01b` (conductor, 02:09): `data/person-keys.json` and `data/sealed/jose/`. Its review record (`2026-11-04-0210-conductor.md`, lines 8 and 18) calls it a documented exception and records that the conductor's session also holds the private half of Jose's person key. Security raised person keys under WS-132.
-5. **Note:** `dd8dbcb` (conductor, 01:56) wrote `board/WS-15-*` and `board/WS-18-*`; its `Issue:` trailer names WS-108 and WS-134.
-6. **Info:** three reviewer holds today, all lifted: `d8301cd` (vault, 01:26), `f2772a9` (conductor, 07:23), `bce97f2` (dashboard, 07:33). In `f2772a9`, `hold.json`'s `since` (07:35) is later than the commit (07:23).
+1. **Medium, still open: about 23 hours of `dev` have not been reviewed by any security agent.** The gap runs from 11:51 on 7 November to 10:58 on 8 November. It includes the gate's lane check (`4219805`) and its enforcement (`084ebe7`). The new `security.repos` agent has written four more reports since this morning (1240Z, 1435Z, the 1440Z iOS messaging redesign and 1635Z), and none of them covers the gap. Its 1635Z report has one high in another repository: the Android app's promote workflow assumes the default branch is `main`. By the report's own words this is not exploitable yet. Its owner is Dinis. For Dinis's conductor: point the new agent's next run at the gap.
+2. **High, open for the nineteenth run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address". The page is older than the new agent's window, so its review does not cover it.
+3. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`), `board/WS-26-*` line 16.
+4. **Note:** three email-rule matches in `1940a09` (Indi's dev agent) are not contact details by shape: `people/indi/demo/fixtures/broken-addresses-keys.json` line 28, `people/indi/demo/test-check-scenario.mjs` line 27 and `people/indi/demo/trials.md` line 47. They are a test fixture for the contact check, on a reserved example domain. Indi's prompter agent changed the shared `admin/tools/messages.mjs` and `data/messaging/device-keys.json` (`74a87b0`); neither has a private-key field. Listed, not judged.
 
-The first run's three items stay open (`open_from_earlier_runs` in `activity.json`).
+## Open actions
+
+1. **A-06, eighteenth run: only dev is left.** Its task still runs the 3 November text at 09:30 and 15:30; it fired at 15:34 and succeeded. For you: paste its pointer and set it to every two hours, 07:30 to 21:30.
+2. **A-21, eighth run: most of Dinis's scheduled agents are still quiet.** His conductor is active (last 15:20), and security.repos and investors commit. Still quiet: dev (A-14, about 90 hours), the old security agent (54), journalist (50), sgit, pulse and project-manager (53), designer (50), xray (44), and his dashboard, abp and mentor (about 21).
+3. **A-23, seventh run: inbox@web-summit.silvio**, about 47 hours. **A-24, fifth run: procurement@web-summit.silvio**, about 48 hours. Silvio's dev and conductor agents are active.
 
 ## The checks
 
-- **Key shapes and contact details:** no rule matched in any added line of the 23 commits.
-- **Other branches:** nothing new on `main`. `claude/conductor-jose-setup-ogxaka` is at `d5a3428` (conductor, 23:11), on `dev` and after this run's range. The other `claude/*` branches are other people's agents.
-- **Agents that stopped:** none of the scheduled ones (conductor, dashboard, dev all made their last slot). The watcher itself had no schedule; fixed at 23:10.
+- **Jose's agents:** no commits in this range. All their scheduled tasks fired and succeeded (conductor 16:21, designer 16:40, automation 16:15, helper 15:51, dev 15:34, dashboard 12:31, vault 11:41).
+- **Email rule:** 131 lines in 50 commits by the watcher's own scan (its own address pattern, run on the added lines of each non-CI commit; another count can differ by method). They are agent names (including PrompTugal-style ones) and the example-domain fixture above. None is a person's contact detail by shape.
+- **Other branches:** nothing new on `main`.
+- **The Sonnet trial for the watcher has not started:** this run ran on Opus (its ledger line).
 
 ## Could not check
 
-- Whether the other agents' scheduled tasks fired when they made no commit (only commits are visible).
-- Other people's agents: out of scope until the stand-up decides.
-- Commits after `3759445`: the next run starts there.
+- Dinis's account and other people's scheduled tasks; work in other repositories (the newsroom, the apps).
+- The agents' run logs in the public vault `aym98gsm`: no `sgit` client yet.

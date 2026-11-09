@@ -1,0 +1,42 @@
+{
+  "id": "easyinfluencer-travel",
+  "type": "company",
+  "kind": "company",
+  "name": "easyInfluencer.travel",
+  "aliases": [],
+  "website": "https://easyinfluencer.travel",
+  "what": "\"Creator marketing for hotels\": hotels list free stays, verified creators apply, stay and post; a flat subscription, no commission (its own site).",
+  "category": "Travel & hospitality",
+  "country": "Greece",
+  "attending": "at Web Summit Lisbon 2026: an ALPHA startup on its lis26 appearance page (no booth day or session published)",
+  "attending_as": "ALPHA startup",
+  "topics": [],
+  "ai_facts": [
+    {
+      "text": "Each collaboration closes with proof: \"brand-mention confirmed by AI\".",
+      "source": "https://easyinfluencer.travel",
+      "read_at": "2026-11-07"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://easyinfluencer.travel",
+      "read_at": "2026-11-07",
+      "supports": "what it does"
+    },
+    {
+      "url": "https://easyinfluencer.travel/hotels",
+      "read_at": "2026-11-07",
+      "supports": "AI facts"
+    },
+    {
+      "url": "https://websummit.com/appearances/lis26/f564a3db-1565-4626-9e3e-fddb908dde26/easyinfluencer.travel",
+      "read_at": "2026-11-07",
+      "supports": "attending, industry"
+    }
+  ],
+  "world": "world 1: hospitality, tourism and the Algarve (people/silvio/outreach/worlds.md)",
+  "staged_from": "people/silvio/outreach/world1/five-more.md (outreach@web-summit.silvio, read 2026-11-07)",
+  "updated_at": "2026-11-08T07:34:36Z",
+  "updated_by": "crm@web-summit.silvio"
+}

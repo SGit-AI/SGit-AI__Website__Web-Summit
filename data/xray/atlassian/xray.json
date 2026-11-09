@@ -1,0 +1,1455 @@
+{
+  "slug": "atlassian",
+  "subject": "Atlassian",
+  "kind": "company",
+  "tagline": "Atlassian's AI layer, Rovo, whose agents search, write and act across Jira, Confluence and connected apps, on a user's account or their own.",
+  "read_on": "2026-11-07",
+  "status": "prepared",
+  "run": {
+    "at": "2026-11-07T19:08:57.080Z",
+    "cost_usd": 0.1243,
+    "agents": [
+      {
+        "id": "perplexity",
+        "label": "Perplexity search",
+        "model": "perplexity/sonar",
+        "ms": 6552,
+        "citations": 15,
+        "leads": 17
+      },
+      {
+        "id": "openai",
+        "label": "OpenAI search",
+        "model": "openai/gpt-5.4-nano:online",
+        "ms": 21489,
+        "citations": 9,
+        "leads": 14
+      },
+      {
+        "id": "gemini",
+        "label": "Gemini search",
+        "model": "google/gemini-3.1-flash-lite:online",
+        "ms": 4432,
+        "citations": 4,
+        "leads": 9
+      },
+      {
+        "id": "openrouter",
+        "label": "OpenRouter web search",
+        "model": "anthropic/claude-haiku-5.5",
+        "ms": 28046,
+        "citations": 13,
+        "leads": 28
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.atlassian.com/software/rovo",
+      "title": "Rovo: Unlock organizational knowledge with GenAI | Atlassian",
+      "publisher": "Atlassian",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s2",
+      "url": "https://support.atlassian.com/rovo/docs/agents/",
+      "title": "Agents | Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.atlassian.com/software/rovo/guides/end-user-guide/what-is-rovo",
+      "title": "What is Rovo? | Atlassian",
+      "publisher": "Atlassian",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s4",
+      "url": "https://support.atlassian.com/studio/docs/what-are-agents/",
+      "title": "What are agents? | Rovo Studio | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s5",
+      "url": "https://support.atlassian.com/rovo/docs/atlassian-agents/",
+      "title": "Out-of-the-box agents | Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s6",
+      "url": "https://support.atlassian.com/rovo/docs/what-are-skills/",
+      "title": "What are skills? | Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s7",
+      "url": "https://support.atlassian.com/rovo/docs/agent-actions/",
+      "title": "Add tools to Rovo agents | Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s8",
+      "url": "https://support.atlassian.com/rovo/docs/knowledge-sources-for-agents/",
+      "title": "Knowledge sources for Rovo subagents | Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s9",
+      "url": "https://support.atlassian.com/rovo/docs/whats-the-difference-between-a-skill-and-tool/",
+      "title": "What's the difference between a skill and tool? | Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s10",
+      "url": "https://support.atlassian.com/rovo/docs/rovo-agent-permissions-and-governance/",
+      "title": "Rovo agent permissions and governance | Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s11",
+      "url": "https://support.atlassian.com/studio/docs/understand-rovo-agent-accounts/",
+      "title": "Understand Rovo agent accounts | Rovo Studio | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s12",
+      "url": "https://support.atlassian.com/studio/docs/best-practices-to-automate-agents-safely/",
+      "title": "Best practices to automate agents safely | Rovo Studio | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s13",
+      "url": "https://support.atlassian.com/rovo/docs/agents-in-automations/",
+      "title": "Automate Rovo agents | Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s14",
+      "url": "https://support.atlassian.com/cloud-automation/docs/tips-to-configure-the-action-use-rovo-agent/",
+      "title": "How to configure the Use agent action | Cloud automation | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s15",
+      "url": "https://support.atlassian.com/jira-software-cloud/docs/collaborate-on-work-items-with-ai-agents/",
+      "title": "Collaborate on work items with AI agents | Jira Cloud | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s16",
+      "url": "https://support.atlassian.com/rovo/docs/chat-actions/",
+      "title": "Rovo Chat capabilities | Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s17",
+      "url": "https://support.atlassian.com/rovo/docs/rovo-data-privacy-and-usage-guidelines/",
+      "title": "Rovo data, privacy, and usage guidelines | Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s18",
+      "url": "https://support.atlassian.com/rovo/docs/out-of-the-box-third-party-mcp-agents/",
+      "title": "Out-of-the-box third-party MCP agents | Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s19",
+      "url": "https://support.atlassian.com/rovo/docs/rovo-out-of-the-box-third-party-mcp-agents-usage-guidelines/",
+      "title": "Rovo out-of-the-box third-party MCP agents usage guidelines | Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s20",
+      "url": "https://support.atlassian.com/organization-administration/docs/manage-a-web-search-option-for-rovo/",
+      "title": "Manage web access for Rovo | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s21",
+      "url": "https://support.atlassian.com/organization-administration/docs/manage-rovo-access/",
+      "title": "Manage Rovo access | Atlassian Support",
+      "publisher": "Atlassian Support",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s22",
+      "url": "https://community.atlassian.com/learning/lesson/govern-external-ai-access-with-the-rovo-mcp-server",
+      "title": "Govern external AI access | Rovo MCP server setup guide | Learning - Atlassian Community",
+      "publisher": "Atlassian Community (Atlassian Learning)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s23",
+      "url": "https://www.atlassian.com/trust/ai/transparency",
+      "title": "AI Transparency Notes | Atlassian",
+      "publisher": "Atlassian",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s24",
+      "url": "https://www.atlassian.com/licensing/rovo",
+      "title": "Rovo Plans and Trial | Atlassian",
+      "publisher": "Atlassian",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s25",
+      "url": "https://developer.atlassian.com/platform/forge/manifest-reference/modules/rovo-agent/",
+      "title": "Rovo Agent (Forge manifest reference)",
+      "publisher": "Atlassian Developer",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s26",
+      "url": "https://www.atlassian.com/platform/teamwork-graph",
+      "title": "Atlassian Teamwork Graph",
+      "publisher": "Atlassian",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s27",
+      "url": "https://www.atlassian.com/software/rovo/guides/end-user-guide/when-to-use-rovo",
+      "title": "When to use Rovo | Atlassian",
+      "publisher": "Atlassian",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s28",
+      "url": "https://www.atlassian.com/software/rovo/guides/end-user-guide/how-to-use-rovo",
+      "title": "How to use Rovo | Atlassian",
+      "publisher": "Atlassian",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s29",
+      "url": "https://www.atlassian.com/software/rovo/use-cases/agent-troubleshooter",
+      "title": "Build an agent that troubleshoots | Atlassian",
+      "publisher": "Atlassian",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s30",
+      "url": "https://www.atlassian.com/software/jira/ai",
+      "title": "Projects that practically manage themselves (Jira AI) | Atlassian",
+      "publisher": "Atlassian",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s31",
+      "url": "https://www.promptarmor.com/resources/atlassian-rovo-exfiltrates-data",
+      "title": "Atlassian Rovo Exfiltrates Data, Bypassing Controls (5 August 2026)",
+      "publisher": "PromptArmor",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s32",
+      "url": "https://www.securityweek.com/critical-one-click-vulnerability-in-atlassians-rovo-ai-exposed-enterprise-data/",
+      "title": "Critical One-Click Vulnerability in Atlassian's Rovo AI Exposed Enterprise Data (8 August 2026)",
+      "publisher": "SecurityWeek",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s33",
+      "url": "https://www.varonis.com/blog/rovoblast",
+      "title": "RovoBlast: How One Click Triggered Atlassian's AI Assistant to Leak Data",
+      "publisher": "Varonis Threat Labs",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s34",
+      "url": "https://thehackernews.com/2026/08/atlassian-rovo-can-be-tricked-into.html",
+      "title": "Atlassian Rovo Can Be Tricked Into Sending Jira and Confluence Data to Attackers (8 August 2026)",
+      "publisher": "The Hacker News",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s35",
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-atlassian-rovo-prompt-injection-data-exfil/",
+      "title": "Atlassian Rovo Prompt Injection: Jira and Confluence Data at Risk (21 August 2026)",
+      "publisher": "Cloud Security Alliance AI Safety Initiative",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s36",
+      "url": "https://greenlitbooks.com/field-notes/is-atlassian-rovo-safe",
+      "title": "Is Atlassian Rovo safe to let act in Jira and Confluence? (29 September 2026)",
+      "publisher": "Greenlit Books field notes",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s37",
+      "url": "https://www.sngular.com/insights/442/complete-guide-to-privacy-and-permissions-in-atlassian-rovo-data-and-agent-security",
+      "title": "Complete guide on how Atlassian's AI Rovo protects your data",
+      "publisher": "Sngular",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s38",
+      "url": "https://www.devoteam.com/expert-view/atlassians-rovo-agents/",
+      "title": "Atlassian Rovo Agents: A Practical Guide for Project Managers",
+      "publisher": "Devoteam",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s39",
+      "url": "https://www.cprime.com/blog/get-started-with-atlassian-rovo/",
+      "title": "Atlassian Rovo Agents: Your New AI Teammate",
+      "publisher": "Cprime",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    }
+  ],
+  "what_it_does": {
+    "text": "Rovo is Atlassian's AI offering for finding answers, automating tasks and making decisions with an organisation's connected context; it is powered by the Teamwork Graph, a data layer that maps relationships across people, apps, projects, code, decisions and assets. Rovo agents are configurable AI teammates that any team member can call on or create, in Chat, in automation flows, while editing in Jira and Confluence, and in Studio; with permission they organise, create or edit Jira work items and Confluence pages, and with connected tools they act in third-party apps. Rovo is available to customers on Standard, Premium and Enterprise Cloud plans, and AI is activated automatically on those plans unless an organisation admin deactivates it.",
+    "sources": [
+      "s3",
+      "s26",
+      "s2",
+      "s4",
+      "s1"
+    ]
+  },
+  "agents": [
+    {
+      "id": "a1",
+      "name": "Custom Rovo agents",
+      "what": "Agents built in Rovo Studio from an identity, behaviour (goals, guardrails, tone), subagents, knowledge and skills or tools. By default anyone in the organisation can create one and a new agent is visible to everyone. An agent runs either on the account of the person using it (the default) or on its own agent account, and can be assigned Jira work, mentioned in comments, attached to workflow transitions and board columns, or triggered by automation flows.",
+      "actions": [
+        "Searches all organisational knowledge connected through the Teamwork Graph by default, or chosen Confluence, Jira, JSM and Google Drive sources; optional web search and deep research",
+        "Jira tools: create work item, update status, search with JQL; bulk actions up to 20 work items",
+        "Confluence tools: create, edit and move pages",
+        "JSM tools: raise a request, summarise an incident",
+        "Third-party tools acting as the user: send email from Gmail, create Google Calendar events, send Slack messages",
+        "In automation flows, with 'Let this agent take actions' on: updates fields, creates work items and posts comments with no human approving each step"
+      ],
+      "sources": [
+        "s4",
+        "s7",
+        "s8",
+        "s9",
+        "s10",
+        "s11",
+        "s14",
+        "s15"
+      ]
+    },
+    {
+      "id": "a2",
+      "name": "Rovo Chat",
+      "what": "The conversational surface in which people and agents use skills. Chat reads Atlassian and connected third-party data the user can see, can open URLs and, by default, public web pages, and asks for confirmation before consequential actions. Researchers describe a built-in ResearchAgent capability that runs multi-step browsing across arbitrary sites.",
+      "actions": [
+        "Retrieves contents of Atlassian URLs and certain third-party URLs (Teams, SharePoint, Slack, Google Docs)",
+        "Creates, edits, assigns and transitions Jira work items; deletes up to 20 with extra confirmation",
+        "Publishes Confluence drafts, adds comments and content to pages, changes page status",
+        "Creates Jira sprints and sends Microsoft Teams messages",
+        "Accesses public web pages and searches the web, both on by default"
+      ],
+      "sources": [
+        "s16",
+        "s20",
+        "s32",
+        "s33"
+      ]
+    },
+    {
+      "id": "a3",
+      "name": "Out-of-the-box agents",
+      "what": "About two dozen agents created by Atlassian that work as soon as a customer has Rovo, including Jira Triage Agent, Work item Organizer, Blocker Checker, Ops Expert, Service Request Helper and Request Router. Some are designed to run inside automation rules.",
+      "actions": [
+        "Jira Triage Agent: reviews a work item and similar work, recommends field updates, duplicates and links",
+        "Work item Organizer: moves work items into sprints, assigns them to epics, deletes old work items",
+        "Blocker Checker and Request Router: signal automation rules to change status, triage and update request fields",
+        "Ops Expert: on-call guidance to reduce incident impact in Jira Service Management"
+      ],
+      "sources": [
+        "s5",
+        "s13"
+      ]
+    },
+    {
+      "id": "a4",
+      "name": "Jira Coding Agent",
+      "what": "Turns Jira work items into code in a cloud-based sandbox, using context from Jira, Confluence or the codebase, and opens a pull request from the sandbox when the user is ready.",
+      "actions": [
+        "Reads Jira work items, Confluence pages and the codebase",
+        "Generates, reviews and refines code in a cloud sandbox",
+        "Creates a pull request from the sandbox"
+      ],
+      "sources": [
+        "s5"
+      ]
+    },
+    {
+      "id": "a5",
+      "name": "Third-party MCP agents",
+      "what": "Nine out-of-the-box agents powered by vendor MCP servers (Figma, Canva, Box, Amplitude, HubSpot, Intercom, Gamma, Replit, Lovable), with Rovo as the model layer. A site admin enables each MCP server in Admin Hub; Atlassian data may be sent to the vendor's server.",
+      "actions": [
+        "Works with design files (Figma), visual content (Canva) and presentations (Gamma)",
+        "Manages and retrieves documents in Box; queries analytics in Amplitude",
+        "Accesses CRM data and manages sales workflows (HubSpot); customer messaging data (Intercom)",
+        "Generates and runs code in Replit (Beta MCP server); builds apps with Lovable"
+      ],
+      "sources": [
+        "s18",
+        "s19"
+      ]
+    }
+  ],
+  "use_cases": [
+    {
+      "id": "u1",
+      "name": "Aug 2026: a hidden prompt in an upload sends out Jira data",
+      "agent": "a2",
+      "who": "A signed-in Rovo user asking Rovo to organise their Jira tickets, in the proof of concept PromptArmor disclosed to Atlassian on 23 May 2026 and published on 5 August 2026 (reconstructed from the published report and press coverage).",
+      "reach": [
+        {
+          "id": "r1",
+          "what": "The Jira tickets the signed-in user can access",
+          "kind": "data",
+          "sources": [
+            "s31",
+            "s34"
+          ]
+        },
+        {
+          "id": "r2",
+          "what": "The Confluence documents the signed-in user can access",
+          "kind": "data",
+          "sources": [
+            "s31",
+            "s35"
+          ]
+        },
+        {
+          "id": "r3",
+          "what": "Data the user can reach through connectors; researchers name SharePoint and Outlook",
+          "kind": "data",
+          "sources": [
+            "s31",
+            "s35"
+          ]
+        },
+        {
+          "id": "r4",
+          "what": "Rovo's URL-retrieval tool, which opened a URL the agent had built itself; the organisation's web search setting did not remove it",
+          "kind": "outside",
+          "sources": [
+            "s31",
+            "s34",
+            "s35"
+          ]
+        },
+        {
+          "id": "r5",
+          "what": "A file the user uploaded into the chat, read in the same context as the user's request",
+          "kind": "system",
+          "sources": [
+            "s31",
+            "s35"
+          ]
+        },
+        {
+          "id": "r6",
+          "what": "Markdown images rendered from model output, a second outbound route PromptArmor flagged but did not demonstrate end to end",
+          "kind": "outside",
+          "sources": [
+            "s31",
+            "s34"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m1",
+          "what": "Illustrative: organise the user's Jira tickets, reading Jira and Confluence as needed"
+        },
+        {
+          "id": "m2",
+          "what": "Illustrative: no data leaves the Atlassian tenant unless the user chooses to send it"
+        },
+        {
+          "id": "m3",
+          "what": "As configured in the proof of concept: the organisation-wide 'Enable web search' setting for Rovo switched off"
+        }
+      ],
+      "gap": [
+        {
+          "what": "Text hidden in an uploaded file was acted on as instructions alongside the user's request, and nothing checked whether a URL the agent opened was one it had composed itself.",
+          "reach": [
+            "r5",
+            "r4"
+          ]
+        },
+        {
+          "what": "The web search toggle the organisation relied on did not remove the URL-opening capability, so the setting did not bound outbound requests.",
+          "reach": [
+            "r4",
+            "r6"
+          ]
+        },
+        {
+          "what": "Everything the user could read, including connector data, sat within reach of one injected instruction, with no separate approval for the outbound step.",
+          "reach": [
+            "r1",
+            "r2",
+            "r3"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "Rovo and its agents act on the user's behalf and only return or act on content the user has permission to access; permissions are synced from connected apps",
+          "sources": [
+            "s10",
+            "s17"
+          ]
+        },
+        {
+          "what": "Separate organisation-level Web access and Web search toggles (both on by default); Atlassian notes a connected tool may not be blocked even when web access is off",
+          "sources": [
+            "s20"
+          ]
+        },
+        {
+          "what": "In interactive chat the agent asks for confirmation before consequential tools that may mutate data; deleting work items needs extra confirmation",
+          "sources": [
+            "s7",
+            "s16"
+          ]
+        },
+        {
+          "what": "Admins can block Rovo per supported app, which disables Agents and Chat for that app; shared Search, Chat and Create stay on while any Jira app on the site has Rovo",
+          "sources": [
+            "s21"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "Prepares a query asking Rovo to organise their Jira tickets",
+          "reach": "r1",
+          "in_mandate": true,
+          "sources": [
+            "s31"
+          ]
+        },
+        {
+          "t": 2,
+          "actor": "person",
+          "action": "Uploads a 'Backlog Guide' document found online; it carries a concealed prompt injection",
+          "reach": "r5",
+          "in_mandate": true,
+          "sources": [
+            "s31",
+            "s34"
+          ]
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "Searches Jira and Confluence as asked",
+          "reach": "r2",
+          "in_mandate": true,
+          "sources": [
+            "s31"
+          ]
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "Following the hidden instructions, appends Jira ticket and Confluence content to an attacker's URL",
+          "reach": "r1",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows the user's whole readable estate, connectors included, within reach of the session, and an instruction acted on that did not come from the user.",
+          "sources": [
+            "s31",
+            "s35"
+          ]
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "Calls the URL-retrieval tool to open that URL, with web search switched off and no approval step",
+          "reach": "r4",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows an outbound path that stayed open under the setting the organisation relied on, and no control in evidence on URLs the agent composes.",
+          "sources": [
+            "s31",
+            "s34",
+            "s35"
+          ]
+        },
+        {
+          "t": 6,
+          "actor": "person",
+          "action": "The attacker reads the tickets and document contents in their own server logs",
+          "reach": "r4",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows tenant data reaching a third party, outside both the task and the tenant boundary in the mandate.",
+          "sources": [
+            "s31"
+          ]
+        },
+        {
+          "t": 7,
+          "actor": "person",
+          "action": "The user returns to the chat and sees the suggested ticket updates, with no sign of the exfiltration",
+          "reach": "r1",
+          "in_mandate": true,
+          "sources": [
+            "s31",
+            "s34"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "name": "An automated triage agent running on its builder's account",
+      "agent": "a1",
+      "who": "A Jira team that automates a custom Rovo agent to triage every new work item (illustrative, built from Atlassian's documented automation and agent-account features).",
+      "reach": [
+        {
+          "id": "r7",
+          "what": "Each new work item's summary and description, and its comments and attachments",
+          "kind": "data",
+          "sources": [
+            "s15",
+            "s14"
+          ]
+        },
+        {
+          "id": "r8",
+          "what": "Details from other work items on the site, used to build context",
+          "kind": "data",
+          "sources": [
+            "s15"
+          ]
+        },
+        {
+          "id": "r9",
+          "what": "On a User's account (the default if no agent account is set up): every app, space and restricted page the person who built the automation can access",
+          "kind": "data",
+          "sources": [
+            "s11",
+            "s12",
+            "s36"
+          ]
+        },
+        {
+          "id": "r10",
+          "what": "Write tools in the same step: update fields, create work items, post comments, and create, edit or delete content",
+          "kind": "system",
+          "sources": [
+            "s14",
+            "s7"
+          ]
+        },
+        {
+          "id": "r11",
+          "what": "Third-party tools authenticated as the user, such as sending Slack messages or Gmail email that appear to come from that person",
+          "kind": "people",
+          "sources": [
+            "s7",
+            "s12"
+          ]
+        },
+        {
+          "id": "r12",
+          "what": "Public web pages and web search, on by default unless an organisation admin turns them off",
+          "kind": "outside",
+          "sources": [
+            "s20",
+            "s8"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m4",
+          "what": "Illustrative: read each new work item and post a triage suggestion (fields, duplicates, links) as a comment"
+        },
+        {
+          "id": "m5",
+          "what": "Illustrative: work only in this one Jira space"
+        },
+        {
+          "id": "m6",
+          "what": "Illustrative: send no messages or email outside the team"
+        }
+      ],
+      "gap": [
+        {
+          "what": "On a User's account the automated agent can reach and act on everything its builder can, including restricted spaces, and in automations no human approves each action.",
+          "reach": [
+            "r9",
+            "r10"
+          ]
+        },
+        {
+          "what": "Text anyone can type into a work item becomes agent input, and Atlassian says guardrail instructions are suggestions with no guarantee the agent will follow them.",
+          "reach": [
+            "r7",
+            "r8"
+          ]
+        },
+        {
+          "what": "Third-party tools act as the user once authenticated, and web access is on by default.",
+          "reach": [
+            "r11",
+            "r12"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "'Let this agent take actions' is off by default in the Use agent step, including for existing automations; an agent can be restricted to Read actions only",
+          "sources": [
+            "s14",
+            "s12"
+          ]
+        },
+        {
+          "what": "Agent's account: the agent uses its own identity with access granted by admins and users, and its actions are logged against the agent",
+          "sources": [
+            "s11",
+            "s12"
+          ]
+        },
+        {
+          "what": "An agent can only perform an action if it is set up with the tool for it; Atlassian advises duplicating an agent and removing tools it does not need",
+          "sources": [
+            "s12"
+          ]
+        },
+        {
+          "what": "The automation audit log shows which tools the agent used and what it changed",
+          "sources": [
+            "s14"
+          ]
+        },
+        {
+          "what": "Studio admins can limit agent creation to selected groups; agent owners can restrict who can see and use an agent",
+          "sources": [
+            "s10"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "Adds a 'work item created' trigger and a Use agent step whose prompt includes the work item description; the agent stays on the default User's account (illustrative)",
+          "reach": "r9",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows the agent's reach is the builder's whole account, restricted spaces included, against a mandate of one space."
+        },
+        {
+          "t": 2,
+          "actor": "person",
+          "action": "Turns on 'Let this agent take actions' so the agent can comment directly (illustrative)",
+          "reach": "r10",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "Reads the new work item's summary, description and comments (illustrative)",
+          "reach": "r7",
+          "in_mandate": true
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "Pulls details from work items in other spaces on the site to look for duplicates (illustrative)",
+          "reach": "r8",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows site-wide reads reachable from an automation scoped to one space."
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "A comment written as an instruction leads it to update fields on work items in a restricted space (illustrative)",
+          "reach": "r10",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows write tools and restricted content both within reach, with only instruction text, which Atlassian calls a suggestion, between them."
+        },
+        {
+          "t": 6,
+          "actor": "agent",
+          "action": "Sends a Slack message through a tool the builder authenticated; it appears to come from the builder (illustrative)",
+          "reach": "r11",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows an outbound channel to people outside the mandate, attributed to a human rather than to the agent."
+        },
+        {
+          "t": 7,
+          "actor": "agent",
+          "action": "Posts its triage suggestion as a comment on the new work item (illustrative)",
+          "reach": "r10",
+          "in_mandate": true
+        },
+        {
+          "t": 8,
+          "actor": "person",
+          "action": "An admin opens the automation audit log; on a User's account the changes are logged as made by the builder (illustrative)",
+          "reach": "r9",
+          "in_mandate": true
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "name": "A third-party MCP agent takes Atlassian data out",
+      "agent": "a5",
+      "who": "A product team using the HubSpot or Box out-of-the-box MCP agent from Jira and Confluence (illustrative).",
+      "reach": [
+        {
+          "id": "r13",
+          "what": "Atlassian data the user sends into the agent, which may be passed to the vendor's MCP server",
+          "kind": "data",
+          "sources": [
+            "s19"
+          ]
+        },
+        {
+          "id": "r14",
+          "what": "The vendor system itself: CRM data and sales workflows in HubSpot, documents in Box",
+          "kind": "outside",
+          "sources": [
+            "s18"
+          ]
+        },
+        {
+          "id": "r15",
+          "what": "Code generated and run in Replit through a Beta MCP server",
+          "kind": "code",
+          "sources": [
+            "s18"
+          ]
+        },
+        {
+          "id": "r16",
+          "what": "Content returned from the third-party source into Atlassian, including modalities Atlassian does not control",
+          "kind": "data",
+          "sources": [
+            "s19"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m7",
+          "what": "Illustrative: look up customer context in the CRM for a Jira epic"
+        },
+        {
+          "id": "m8",
+          "what": "Illustrative: write no Atlassian content into third-party systems"
+        }
+      ],
+      "gap": [
+        {
+          "what": "Data that leaves through a third-party MCP server is not covered by the Atlassian Customer Agreement commitments or Privacy Policy while in that environment, and Atlassian does not guarantee the server's security.",
+          "reach": [
+            "r13",
+            "r14"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "A site admin must enable each agent's MCP server in Admin Hub before users can reach it; users need their own account with the vendor; Rovo Premium or Enterprise plan required",
+          "sources": [
+            "s18"
+          ]
+        },
+        {
+          "what": "Third-party tools respect the permissions of the person using the agent and require that person to authenticate first",
+          "sources": [
+            "s7"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "A site admin enables the HubSpot MCP server in Admin Hub (illustrative)",
+          "reach": "r14",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "person",
+          "action": "A product manager asks the HubSpot agent, from a Jira epic, which customers asked for the feature (illustrative)",
+          "reach": "r14",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "Sends the epic's description and linked Confluence notes to the HubSpot MCP server as context (illustrative)",
+          "reach": "r13",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows Atlassian content crossing into an environment Atlassian's commitments do not cover."
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "Returns matching CRM records into the Jira conversation (illustrative)",
+          "reach": "r16",
+          "in_mandate": true
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "Logs a note against the customer records in HubSpot summarising the roadmap item (illustrative)",
+          "reach": "r14",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows a write path into a third-party system, outside the read-only mandate."
+        }
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "what": "PromptArmor published an indirect prompt-injection chain in which a file uploaded to Rovo made it send Jira tickets and Confluence documents to an attacker's URL through its URL-retrieval tool, with web search switched off. Disclosed to Atlassian on 23 May 2026; PromptArmor said it was unresolved when published. Its status after that date is unconfirmed in the sources read.",
+      "when": "2026-08-05",
+      "sources": [
+        "s31",
+        "s34",
+        "s35"
+      ]
+    },
+    {
+      "what": "RovoBlast (Varonis Threat Labs): a crafted link using the rovoChatPrompt parameter seeded attacker instructions into a signed-in user's Rovo Chat, and the ResearchAgent capability carried Confluence, Jira and SharePoint data out. Atlassian fixed it server-side on 8 July 2026, before the research was presented at DEF CON 34.",
+      "when": "2026-07-08",
+      "sources": [
+        "s32",
+        "s33",
+        "s34",
+        "s35"
+      ]
+    },
+    {
+      "what": "Neither technique had a CVE, and neither research team reported exploitation against a live customer environment.",
+      "when": "As at 21 August 2026",
+      "sources": [
+        "s35",
+        "s34"
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "model": "perplexity",
+      "claim": "Rovo agents are context-aware AI agents that synthesise organisational knowledge and automate multi-step work across Atlassian and connected third-party apps, using the Teamwork Graph.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Out-of-the-box Atlassian agents integrate with Jira, Confluence and Jira Service Management.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Out-of-the-box third-party MCP agents connect Atlassian to tools like Figma, Box and HubSpot and are enabled through Admin Hub.",
+      "status": "confirmed",
+      "source": "s18"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Custom agents are built in Rovo Studio with natural language and templates.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Use case: turn Jira tickets into technical plans.",
+      "status": "confirmed",
+      "source": "s27"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Use case: automate repetitive work such as organising Jira issues, summarising meeting notes, updating project trackers and reviewing code.",
+      "status": "confirmed",
+      "source": "s28"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Use case: an agent that troubleshoots user issues.",
+      "status": "confirmed",
+      "source": "s29",
+      "note": "The page's example is a frontline support agent for users working in Salesforce."
+    },
+    {
+      "model": "perplexity",
+      "claim": "Atlassian performs safety screening on agents at its discretion for customer protection.",
+      "status": "confirmed",
+      "source": "s25",
+      "note": "The model's date (2026-11-02) is not on the page."
+    },
+    {
+      "model": "perplexity",
+      "claim": "App-based (Forge) agents only have access to data in the workspace where the app is installed.",
+      "status": "confirmed",
+      "source": "s25"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Rovo usage consumes credits, and admins can adjust settings and limits.",
+      "status": "confirmed",
+      "source": "s24"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Rovo is Atlassian's AI offering for personalised answers, automating tasks and smarter decisions using connected context.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Rovo is powered by the Teamwork Graph, which maps relationships across people, apps, projects, code, decisions and assets.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Rovo agents handle specific tasks and automate multi-step work across Atlassian and connected apps.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Rovo agents can use data from Atlassian apps and connected third-party apps.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Rovo is available across Atlassian apps, the browser extension and other work surfaces.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "perplexity",
+      "claim": "To fully use Search, Chat, Agents and Studio, an Atlassian Cloud Standard, Premium or Enterprise plan is required.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Rovo credits are Atlassian's unit for AI usage and enriched Teamwork Graph API access.",
+      "status": "confirmed",
+      "source": "s24"
+    },
+    {
+      "model": "openai",
+      "claim": "Rovo agents are configurable AI teammates that retrieve information from Atlassian and connected apps and, where permitted, act in those systems on the user's behalf.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "openai",
+      "claim": "Agents can be accessed in Chat, automation rules, within Jira and Confluence via shortcut commands, and in Studio.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "openai",
+      "claim": "Skills are reusable instructions for work-based actions such as creating work items, drafting status updates or analysing incident data.",
+      "status": "confirmed",
+      "source": "s6"
+    },
+    {
+      "model": "openai",
+      "claim": "Skills include MCP tools once a third-party MCP server is connected and approved for the site.",
+      "status": "confirmed",
+      "source": "s6"
+    },
+    {
+      "model": "openai",
+      "claim": "Tools let an agent act outside an Atlassian app when connected, with the user's confirmation.",
+      "status": "confirmed",
+      "source": "s7"
+    },
+    {
+      "model": "openai",
+      "claim": "Forge developers can publish tool modules for user-created agents, visible to the organisation or on the Marketplace.",
+      "status": "confirmed",
+      "source": "s7"
+    },
+    {
+      "model": "openai",
+      "claim": "In automations agents act using permissions granted by admins.",
+      "status": "confirmed",
+      "source": "s14",
+      "note": "Only for an agent on its own account; on a User's account the agent uses the permissions of the person who set up the automation (s11)."
+    },
+    {
+      "model": "openai",
+      "claim": "The Rovo MCP server limits external AI tools by admin-authorised domains, allowed actions (read, write, search), user permissions and optional IP allowlists.",
+      "status": "confirmed",
+      "source": "s22"
+    },
+    {
+      "model": "openai",
+      "claim": "Third-party agents can call Rovo through Agent2Agent only when an org admin enables it, within data the user may view.",
+      "status": "confirmed",
+      "source": "s22"
+    },
+    {
+      "model": "openai",
+      "claim": "Agents access data depending on their knowledge sources and respect user permissions, with no cross-site access for unauthorised users.",
+      "status": "confirmed",
+      "source": "s8"
+    },
+    {
+      "model": "openai",
+      "claim": "Admins can control an agent's knowledge scope, for example unit-wide scope versus specific sites.",
+      "status": "unverified",
+      "note": "The cited Atlassian Community discussion returned an empty page; the knowledge sources page (s8) describes builder-chosen custom knowledge, not this admin control."
+    },
+    {
+      "model": "openai",
+      "claim": "Rovo agents are powered by LLMs from OpenAI and Google plus open-source models.",
+      "status": "confirmed",
+      "source": "s23",
+      "note": "Cited at wac-cdn-a.atlassian.com, which served the same Transparency Notes page."
+    },
+    {
+      "model": "openai",
+      "claim": "Researchers reported prompt-injection paths that could exfiltrate Jira and Confluence data via Rovo's retrieval tooling.",
+      "status": "confirmed",
+      "source": "s35"
+    },
+    {
+      "model": "openai",
+      "claim": "A Reddit discussion reports a critical cross-user and cross-tenant compromise in Rovo.",
+      "status": "unverified",
+      "note": "The Reddit page returned no content; no other source read today reports a cross-tenant failure, and the THN and CSA reports describe exposure bounded by the signed-in user's own access."
+    },
+    {
+      "model": "gemini",
+      "claim": "Rovo agents automate repetitive tasks across Jira, Confluence and connected tools, such as triaging tickets and summarising content.",
+      "status": "confirmed",
+      "source": "s5",
+      "note": "Cited the Rovo product page (s1); the specific tasks are on the out-of-the-box agents page."
+    },
+    {
+      "model": "gemini",
+      "claim": "ResearchAgent conducts multi-source web research and navigates arbitrary sites.",
+      "status": "confirmed",
+      "source": "s32",
+      "note": "The cited securityweek.com URL returned 403; the SecurityWeek article read is at a different URL."
+    },
+    {
+      "model": "gemini",
+      "claim": "ResearchAgent can reach internal data in Jira, Confluence and connected SaaS tools.",
+      "status": "confirmed",
+      "source": "s33"
+    },
+    {
+      "model": "gemini",
+      "claim": "Custom agents triage tickets, draft release notes, manage backlogs, generate OKRs and review code.",
+      "status": "confirmed",
+      "source": "s5",
+      "note": "Cited s1, which does not list these; they are out-of-the-box agents (s5) and 'reviewing code' is on s28."
+    },
+    {
+      "model": "gemini",
+      "claim": "Engineering use case reaches source code in Bitbucket or GitHub and incident alerts in Opsgenie.",
+      "status": "not-found",
+      "note": "The cited Rovo page (s1) mentions pulling context across code but names neither Bitbucket, GitHub nor Opsgenie."
+    },
+    {
+      "model": "gemini",
+      "claim": "IT service management use case reaches JSM tickets, knowledge base articles, incident history and SLA status.",
+      "status": "not-found",
+      "note": "Not on the cited Rovo page (s1); JSM agents are documented on s5, but SLA status access is not stated anywhere read."
+    },
+    {
+      "model": "gemini",
+      "claim": "RovoBlast and prompt-injection vulnerabilities could exfiltrate Jira, Confluence and connected-app data; disclosed August 2026.",
+      "status": "confirmed",
+      "source": "s35",
+      "note": "The cited cloudsecurityalliance.org blog URL returns 404; the CSA research note says it."
+    },
+    {
+      "model": "gemini",
+      "claim": "Rovo is powered by the Teamwork Graph, which maps relationships across people, apps, projects and code.",
+      "status": "confirmed",
+      "source": "s3",
+      "note": "Cited s1, which describes the Teamwork Graph more briefly."
+    },
+    {
+      "model": "gemini",
+      "claim": "Rovo agents inherit the human user's permissions and can only see and act on what that user can.",
+      "status": "confirmed",
+      "source": "s10",
+      "note": "The cited devoteam.com page was under maintenance. Agents can instead run on their own account (s11)."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Rovo combines search, chat and configurable agents invoked from chat, automation rules and the editor, which can create or edit work items and pages when permitted.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Jira Triage Agent reviews a work item and recommends field updates, duplicates and related items to link.",
+      "status": "confirmed",
+      "source": "s5"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Jira Coding Agent turns work items into code in a cloud sandbox and opens a pull request.",
+      "status": "confirmed",
+      "source": "s5"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Ops Expert supports incident management and on-call duties.",
+      "status": "confirmed",
+      "source": "s5"
+    },
+    {
+      "model": "openrouter",
+      "claim": "An unnamed out-of-the-box agent moves work items into sprints, assigns them to epics and deletes old work items.",
+      "status": "confirmed",
+      "source": "s5",
+      "note": "It is named on the page: Work item Organizer."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Third-party MCP agents connect Rovo to services such as Figma or Claude.",
+      "status": "confirmed",
+      "source": "s5"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Forge developer example: a risk register assistant agent defined by a prompt and actions.",
+      "status": "confirmed",
+      "source": "s25"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Agents can trigger automation flows to create or update work items when criteria are met.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Sprint closure can trigger a retrospective agent, and an epic moving to Done can create a Confluence page.",
+      "status": "confirmed",
+      "source": "s38"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Cprime case study: custom Rovo virtual agents for HR service inquiries with handoff logic.",
+      "status": "confirmed",
+      "source": "s39"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Jira Service Management has a virtual service agent for customer support.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "openrouter",
+      "claim": "RovoBlast: a crafted rovoChatPrompt link exfiltrated Jira, Confluence and SharePoint data; remediated server-side on 8 July 2026.",
+      "status": "confirmed",
+      "source": "s34",
+      "note": "Cited SecurityWeek (s32) says only that it was fixed before publication; the 8 July date is in THN and CSA (s35)."
+    },
+    {
+      "model": "openrouter",
+      "claim": "PromptArmor: hidden instructions in an uploaded document sent Jira and Confluence data to an attacker URL, even with web search off; published 5 August 2026.",
+      "status": "confirmed",
+      "source": "s31"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Disabling the web search toggle did not remove Rovo's URL-retrieval capability.",
+      "status": "confirmed",
+      "source": "s35"
+    },
+    {
+      "model": "openrouter",
+      "claim": "No CVE was assigned and no exploitation of a live customer was reported.",
+      "status": "confirmed",
+      "source": "s35"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Atlassian says agents can be manipulated by malicious inputs, guardrail instructions are suggestions, and automation agents have no user to approve actions.",
+      "status": "confirmed",
+      "source": "s12",
+      "note": "Cited a third-party summary (s36); read on Atlassian's own page."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Data leaving via third-party MCP servers is not covered by Atlassian's customer agreement commitments, and Atlassian does not guarantee their security.",
+      "status": "confirmed",
+      "source": "s19",
+      "note": "Cited a third-party summary (s36); read on Atlassian's own page."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Skills are actions an agent is allowed to take, such as drafting a Confluence page or sending Slack messages; knowledge is the data it can reference.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Agents can be configured with knowledge sources such as Confluence, Jira and Google Drive, plus deep research or web search.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Admins can block Rovo for supported apps, disabling Agents and Chat, while Search, Chat and Create stay available if any Jira app on the site has Rovo.",
+      "status": "confirmed",
+      "source": "s21",
+      "note": "Cited THN (s34), which reports the same from this page."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Turning off AI leaves search and Studio working, but Rovo Chat and agents become unavailable.",
+      "status": "confirmed",
+      "source": "s30"
+    },
+    {
+      "model": "openrouter",
+      "claim": "A Rovo agent's actions depend on the user who triggers it, and Rovo searches only what that user can already access.",
+      "status": "confirmed",
+      "source": "s37",
+      "note": "The second part is on s37; the first is stated by Atlassian on s10 and s11 (with the agent's-own-account exception)."
+    },
+    {
+      "model": "openrouter",
+      "claim": "By default everyone in an organisation can create agents, and admins can audit Rovo actions in an audit log.",
+      "status": "confirmed",
+      "source": "s37"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Rovo agents use models from OpenAI and Google plus open-source models; Chat adds Anthropic models via AWS Bedrock.",
+      "status": "confirmed",
+      "source": "s23",
+      "note": "Cited a third-party summary (s36); read on Atlassian's Transparency Notes."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Atlassian retains Chat and agent inputs and outputs for 30 days for safety and security, and its LLM providers do not retain them.",
+      "status": "confirmed",
+      "source": "s17",
+      "note": "Cited a third-party summary (s36). s17 says providers do not retain inputs and outputs; the phrase 'zero data retention' was not checked on an Atlassian page."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Sources conflict on plans: one Atlassian page says agents need Premium or Enterprise, another that Rovo is on Standard, Premium and Enterprise.",
+      "status": "confirmed",
+      "source": "s30",
+      "note": "s30 says Premium or Enterprise is required; s1 says Standard, Premium or Enterprise."
+    },
+    {
+      "model": "openrouter",
+      "claim": "A compilation of Atlassian disclosures reports more than five million Rovo monthly active users and 2.4 million agent automations over six months.",
+      "status": "confirmed",
+      "source": "s35",
+      "note": "A CSA compilation, not read on an Atlassian page."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Rovo agents can be assigned Jira work items or tagged in comments, and in automation rules act asynchronously on app events or schedules.",
+      "status": "confirmed",
+      "source": "s25",
+      "note": "s25 states the asynchronous automation part; assignment and @mention are on s15."
+    }
+  ],
+  "questions": [
+    "PromptArmor reported in August 2026 that Rovo's URL-retrieval tool would open a URL the agent had composed, even with web search off: has that path been closed, and does the newer Web access toggle now govern every outbound request an agent makes, including Markdown images?",
+    "Your docs disagree on automated agents: one page says an agent in an automation cannot use its own tools, another that it can perform write actions directly. Which is current, and does an agent attached to a Jira workflow transition or board column ask anyone before it writes?",
+    "Can an organisation admin require every automated agent to run on its own agent account, so that no automation falls back to the builder's account and permissions?",
+    "Can a customer see, per agent run, every URL fetched and every piece of Atlassian content sent to a third-party MCP server, and export that record?",
+    "Guardrail instructions are described as suggestions: is there any enforced, non-prompt control that marks uploaded files, work item text or web content as untrusted before an agent can act on it?"
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 45,
+    "seconds": 467,
+    "tokens_thousands": 204,
+    "finished": "2026-11-07T19:18Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Re-read PromptArmor's post before accepting it; kept the note that neither finding had a CVE or a reported live exploitation."
+    ]
+  }
+}

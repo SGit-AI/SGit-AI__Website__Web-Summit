@@ -1,0 +1,564 @@
+{
+ "subject": "AI agents in insurance claims handling",
+ "kind": "industry",
+ "slug": "insurance-claims-agents",
+ "run_at": "2026-11-07T18:34:05.571Z",
+ "note": "What each model said, as leads: not facts until their sources are read.",
+ "cost_usd": 0.0809,
+ "agents": [
+  {
+   "id": "perplexity",
+   "label": "Perplexity search",
+   "model": "perplexity/sonar",
+   "ms": 11733,
+   "cost_usd": 0.0071379,
+   "tokens": {
+    "in": 210,
+    "out": 1996
+   },
+   "finish": "stop",
+   "citations": [
+    {
+     "url": "https://simplifai.ai/",
+     "title": "AI Agent for Insurance Claims | Simplifai"
+    },
+    {
+     "url": "https://www.bevaya.ai/",
+     "title": "Bevaya | AI Agent Platform Built for Insurance"
+    },
+    {
+     "url": "https://www.microsoft.com/en-gb/microsoft-cloud/blog/insurance/2025/05/01/transforming-insurance-with-ai-powered-autonomous-agents/",
+     "title": "Transforming insurance with AI-powered autonomous agents"
+    },
+    {
+     "url": "https://aws.amazon.com/marketplace/pp/prodview-urx7ti5tkgme6",
+     "title": "AI-Powered Insurance Claim Agent | AWS Marketplace"
+    },
+    {
+     "url": "https://aws.amazon.com/marketplace/pp/prodview-eohmhpk4fhrus",
+     "title": "Claim Insurance Journey Agent: Intelligent Claims Journey Management"
+    },
+    {
+     "url": "https://poly.ai/industries/insurance",
+     "title": "Insurance"
+    },
+    {
+     "url": "https://www.salesforce.com/financial-services/artificial-intelligence/ai-agents-in-insurance/?bc=OTH",
+     "title": "AI Agents for Insurance: Definition, Benefits, and Uses"
+    },
+    {
+     "url": "https://www.finextra.com/blogposting/32046/agentic-ai-in-insurance-claims-where-to-start-what-to-automate-and-what-to-keep-human-controlled",
+     "title": "Agentic AI in Insurance Claims: Where to Start, What to Automate, and What to Keep Human-Controlled: By Vital Soupel"
+    },
+    {
+     "url": "https://www.allianz.com/en/mediacenter/news/articles/251103-when-the-storm-clears-so-should-the-claim-queue.html",
+     "title": "How Agentic AI Is Transforming Insurance Claims Processing"
+    },
+    {
+     "url": "https://peakflo.co/industries/insurance",
+     "title": "AI Voice Agents for Insurance - Peakflo"
+    },
+    {
+     "url": "https://www.blueprism.com/guides/ai/ai-agents-in-insurance/",
+     "title": "AI Agents for Insurance"
+    },
+    {
+     "url": "https://www.ltm.com/insights/blogs/reimagining-insurance-claims-with-agentic-ai-a-new-era-of-accuracy-speed-and-trust",
+     "title": "Reimagining Insurance Claims With Agentic Ai: A New Era Of ... - LTM"
+    },
+    {
+     "url": "https://ezintegrations.ai/product/agentic-ai-insurance-claims/",
+     "title": "Autonomous Insurance Claims Orchestration | Goldfinch"
+    },
+    {
+     "url": "https://www.tp.com/en-us/insights-list/insightful-articles/global/ai-customer-service-in-insurance-claims-is-only-as-good-as-the-workflow-behind-it/",
+     "title": "AI customer service in insurance claims | TP"
+    },
+    {
+     "url": "https://www.dialpad.com/industry/insurance/ai-agents/",
+     "title": "AI Agents for Insurance | Dialpad"
+    }
+   ],
+   "answer_urls": [
+    "https://simplifai.ai/",
+    "https://www.bevaya.ai/",
+    "https://www.microsoft.com/en-gb/microsoft-cloud/blog/insurance/2025/05/01/transforming-insurance-with-ai-powered-autonomous-agents/",
+    "https://aws.amazon.com/marketplace/pp/prodview-eohmhpk4fhrus",
+    "https://poly.ai/industries/insurance",
+    "https://www.blueprism.com/guides/ai/ai-agents-in-insurance/",
+    "https://ezintegrations.ai/product/agentic-ai-insurance-claims/",
+    "https://www.dialpad.com/industry/insurance/ai-agents/",
+    "https://www.finextra.com/blogposting/32046/agentic-ai-in-insurance-claims-where-to-start-what-to-automate-and-what-to-keep-human-controlled",
+    "https://www.allianz.com/en/mediacenter/news/articles/251103-when-the-storm-clears-so-should-the-claim-queue.html",
+    "https://www.tp.com/en-us/insights-list/insightful-articles/global/ai-customer-service-in-insurance-claims-is-only-as-good-as-the-workflow-behind-it/",
+    "https://www.salesforce.com/financial-services/artificial-intelligence/ai-agents-in-insurance/?bc=OTH"
+   ],
+   "answer": {
+    "what_it_does": "AI agents in insurance claims handling automate parts of the claims lifecycle such as intake, document extraction, coverage checks, fraud screening, triage, settlement recommendations, and customer updates. They are typically designed to hand off exceptions or final payment decisions to human adjusters while improving speed, consistency, and auditability.[3][8][11]",
+    "ai_agents": [
+     {
+      "name": "Simplifai AI Agent for Insurance Claims",
+      "what_it_does": "Handles the full claims lifecycle, including damage assessment, reserve calculation, fraud and leakage checks, and preparing decision-ready claims for a human.",
+      "actions": [
+       "processes claim emails and workflow stages",
+       "assesses damage",
+       "calculates reserves",
+       "checks for fraud and leakage",
+       "prepares claims for human review"
+      ],
+      "source": "https://simplifai.ai/"
+     },
+     {
+      "name": "Bevaya AI Agent Platform",
+      "what_it_does": "Reads, analyzes, and recommends actions across insurance workflows including claims and policy servicing.",
+      "actions": [
+       "analyzes claims-related documents",
+       "recommends next actions",
+       "supports claims workflows",
+       "touches insurance document corpora and production workflows"
+      ],
+      "source": "https://www.bevaya.ai/"
+     },
+     {
+      "name": "Microsoft Claimens",
+      "what_it_does": "Supports claims handling by extracting and validating claim data, guiding customers through forms, and routing claims for approval or escalation.",
+      "actions": [
+       "extracts claim data from forms, emails, and portals",
+       "validates claims data against policies and coverage terms",
+       "routes claims for approval or escalation",
+       "handles calls and guides customers through claim forms"
+      ],
+      "source": "https://www.microsoft.com/en-gb/microsoft-cloud/blog/insurance/2025/05/01/transforming-insurance-with-ai-powered-autonomous-agents/"
+     },
+     {
+      "name": "AWS Claim Insurance Journey Agent",
+      "what_it_does": "Delivers notifications and nudges throughout the claims lifecycle to keep claimants informed and moving through the process.",
+      "actions": [
+       "sends claim lifecycle notifications",
+       "issues personalized nudges",
+       "supports claims journey management"
+      ],
+      "source": "https://aws.amazon.com/marketplace/pp/prodview-eohmhpk4fhrus"
+     },
+     {
+      "name": "Poly.ai Insurance Agent",
+      "what_it_does": "Collects claim details, helps customers check claim status, and answers questions about required documentation.",
+      "actions": [
+       "collects first notice of loss information",
+       "transfers information to a claims agent",
+       "checks claim status",
+       "answers documentation questions",
+       "supports claims submission"
+      ],
+      "source": "https://poly.ai/industries/insurance"
+     },
+     {
+      "name": "Blue Prism AI Agents for Insurance",
+      "what_it_does": "Supports claims triage, suspicious-activity detection, customer support, and exception handling in regulated insurance operations.",
+      "actions": [
+       "analyzes policyholder data",
+       "assesses risk profiles",
+       "automates claims triage",
+       "detects suspicious activity",
+       "provides customer support"
+      ],
+      "source": "https://www.blueprism.com/guides/ai/ai-agents-in-insurance/"
+     },
+     {
+      "name": "Goldfinch Autonomous Insurance Claims Orchestration",
+      "what_it_does": "Coordinates specialist agents across FNOL, coverage, investigation, fraud, settlement, litigation, and recovery.",
+      "actions": [
+       "reads policy management data",
+       "reads claims management data",
+       "uses damage assessment models",
+       "uses fraud models",
+       "shares state through a claims vector database",
+       "reroutes claims when fraud risk changes"
+      ],
+      "source": "https://ezintegrations.ai/product/agentic-ai-insurance-claims/"
+     },
+     {
+      "name": "Dialpad Resolve Insurance Agent",
+      "what_it_does": "Handles conversational claims intake, collects incident details, confirms policy information, and creates summaries for claims teams.",
+      "actions": [
+       "talks with policyholders",
+       "collects incident details",
+       "confirms policy information",
+       "generates claim summaries",
+       "connects to carrier or agency business systems"
+      ],
+      "source": "https://www.dialpad.com/industry/insurance/ai-agents/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "First Notice of Loss intake",
+      "who_uses_it": "Policyholders, contact-center teams, and claims intake staff",
+      "what_the_agent_can_reach": [
+       "claim intake channels",
+       "policy information",
+       "incident details",
+       "claims team handoff",
+       "carrier or agency business systems"
+      ],
+      "source": "https://www.dialpad.com/industry/insurance/ai-agents/"
+     },
+     {
+      "name": "Claims document extraction and validation",
+      "who_uses_it": "Claims operations teams and adjusters",
+      "what_the_agent_can_reach": [
+       "forms",
+       "emails",
+       "portals",
+       "coverage terms",
+       "policy records",
+       "claim files"
+      ],
+      "source": "https://www.microsoft.com/en-gb/microsoft-cloud/blog/insurance/2025/05/01/transforming-insurance-with-ai-powered-autonomous-agents/"
+     },
+     {
+      "name": "Claims triage and routing",
+      "who_uses_it": "Claims managers and processing teams",
+      "what_the_agent_can_reach": [
+       "severity tiers",
+       "approval queues",
+       "escalation paths",
+       "human adjusters",
+       "claim routing rules"
+      ],
+      "source": "https://www.finextra.com/blogposting/32046/agentic-ai-in-insurance-claims-where-to-start-what-to-automate-and-what-to-keep-human-controlled"
+     },
+     {
+      "name": "Fraud screening",
+      "who_uses_it": "Claims investigators and fraud teams",
+      "what_the_agent_can_reach": [
+       "anomaly signals",
+       "fraud models",
+       "evidence packages",
+       "risk scores",
+       "investigation queues"
+      ],
+      "source": "https://www.blueprism.com/guides/ai/ai-agents-in-insurance/"
+     },
+     {
+      "name": "Payout calculation and settlement support",
+      "who_uses_it": "Claims handlers and settlement teams",
+      "what_the_agent_can_reach": [
+       "settlement estimates",
+       "repair databases",
+       "claim outcomes",
+       "payment decisions",
+       "human approval workflows"
+      ],
+      "source": "https://www.allianz.com/en/mediacenter/news/articles/251103-when-the-storm-clears-so-should-the-claim-queue.html"
+     },
+     {
+      "name": "Customer status updates and journey management",
+      "who_uses_it": "Policyholders and service teams",
+      "what_the_agent_can_reach": [
+       "claim status updates",
+       "notifications",
+       "nudges",
+       "customer communications",
+       "claims lifecycle milestones"
+      ],
+      "source": "https://aws.amazon.com/marketplace/pp/prodview-eohmhpk4fhrus"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Claims AI without workflow context can degrade information accuracy and increase handling time when data moves between disconnected systems.",
+      "when": "2026-11-07",
+      "source": "https://www.tp.com/en-us/insights-list/insightful-articles/global/ai-customer-service-in-insurance-claims-is-only-as-good-as-the-workflow-behind-it/"
+     },
+     {
+      "what": "AI agents without policy-level guardrails can issue inaccurate coverage statements, creating compliance and audit exposure.",
+      "when": "2026-11-07",
+      "source": "https://www.tp.com/en-us/insights-list/insightful-articles/global/ai-customer-service-in-insurance-claims-is-only-as-good-as-the-workflow-behind-it/"
+     },
+     {
+      "what": "Separating fraud screening from intake can let fraud risk escalate without visibility across the claims workflow.",
+      "when": "2026-11-07",
+      "source": "https://www.tp.com/en-us/insights-list/insightful-articles/global/ai-customer-service-in-insurance-claims-is-only-as-good-as-the-workflow-behind-it/"
+     },
+     {
+      "what": "Claims automation still requires human oversight for exceptions, escalation, and final payment decisions in regulated environments.",
+      "when": "2025-05-01",
+      "source": "https://www.microsoft.com/en-gb/microsoft-cloud/blog/insurance/2025/05/01/transforming-insurance-with-ai-powered-autonomous-agents/"
+     },
+     {
+      "what": "Agentic claims systems can produce harmful outcomes if fraud checks, coverage validation, or payout logic are not coordinated across agents.",
+      "when": "2025-11-03",
+      "source": "https://www.allianz.com/en/mediacenter/news/articles/251103-when-the-storm-clears-so-should-the-claim-queue.html"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "AI agents in insurance can automate extraction and validation of claims data from forms, emails, and portals.",
+      "source": "https://www.microsoft.com/en-gb/microsoft-cloud/blog/insurance/2025/05/01/transforming-insurance-with-ai-powered-autonomous-agents/"
+     },
+     {
+      "claim": "Some insurance AI agents can check coverage and coverage terms against policies before routing a claim.",
+      "source": "https://www.microsoft.com/en-gb/microsoft-cloud/blog/insurance/2025/05/01/transforming-insurance-with-ai-powered-autonomous-agents/"
+     },
+     {
+      "claim": "Insurance AI agents are used to collect first notice of loss details and generate summaries for adjusters.",
+      "source": "https://www.dialpad.com/industry/insurance/ai-agents/"
+     },
+     {
+      "claim": "Claims-focused AI agents can identify damage, scan repair databases, and produce repair estimates.",
+      "source": "https://www.finextra.com/blogposting/32046/agentic-ai-in-insurance-claims-where-to-start-what-to-automate-and-what-to-keep-human-controlled"
+     },
+     {
+      "claim": "Agentic claims systems can include specialized roles such as coverage, weather, fraud, payout, and audit agents.",
+      "source": "https://www.allianz.com/en/mediacenter/news/articles/251103-when-the-storm-clears-so-should-the-claim-queue.html"
+     },
+     {
+      "claim": "Insurance AI agents are marketed for high-volume processes such as claims handling because they can scale without increasing headcount.",
+      "source": "https://www.salesforce.com/financial-services/artificial-intelligence/ai-agents-in-insurance/?bc=OTH"
+     },
+     {
+      "claim": "Claims AI systems are commonly designed to escalate exceptions to humans rather than fully replace adjusters.",
+      "source": "https://www.blueprism.com/guides/ai/ai-agents-in-insurance/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI search",
+   "model": "openai/gpt-5.4-nano:online",
+   "ms": 17094,
+   "cost_usd": 0.0352681956,
+   "tokens": {
+    "in": 17638,
+    "out": 2212
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://docs.guidewire.com/security/secure-ai-agents/securing-a-claim-summarization-agent/",
+    "https://ir.guidewire.com/news-releases/news-release-details/guidewire-delivers-open-secure-and-complete-core-platform",
+    "https://www.guidewire.com/products/technology/insurance-ai-from-guidewire",
+    "https://github.com/aws-samples/sample-agentic-insurance-claims-processing-demo",
+    "https://www.webneuron.com/case-studies/insurance-claims-automation-machine-learning/",
+    "https://cdn.featuredcustomers.com/CustomerCaseStudy.document/automate-claims-document-indexing.pdf",
+    "https://www.sas.com/content/dam/SAS/en_us/doc/productbrief/sas-fraud-framework-insurance-103882.pdf",
+    "https://content.naic.org/sites/default/files/inline-files/ai-risk-evaluation-supplement-version-6.0-received-comments-final.pdf"
+   ],
+   "answer": {
+    "what_it_does": "AI agents in insurance claims handling automate and assist steps of the claims lifecycle—especially intake, document/evidence extraction, triage, recommendations, and routing/escalation—often with human-in-the-loop controls for higher-stakes actions. They work by integrating with insurer systems of record (e.g., claims platforms) to turn unstructured claim documents and communications into structured claims decisions and next-best actions.",
+    "ai_agents": [
+     {
+      "name": "Guidewire Claim Summarization / Claim Summarization Agent",
+      "what_it_does": "Analyzes insurance claim documents and generates claim summaries and recommended next steps, with controls to prevent high-stakes actions from being taken solely based on the model’s output.",
+      "actions": [
+       "Read and analyze claim documents (e.g., demand letters, medical reports, adjuster notes) and produce a structured claim summary",
+       "Recommend next steps (e.g., close with no action, request more information, or settle) under a governance pattern",
+       "Enforce human-in-the-loop approval gates for high-stakes decisions like settling",
+       "Apply evaluation/accuracy gates and data-minimization/masking guidance when handling sensitive information"
+      ],
+      "source": "https://docs.guidewire.com/security/secure-ai-agents/securing-a-claim-summarization-agent/"
+     },
+     {
+      "name": "Guidewire Concierge (autonomous claimant agent)",
+      "what_it_does": "Provides a claimant-facing AI agent that collects loss details and delivers decision-ready claims to the insurer’s claims handling workflow.",
+      "actions": [
+       "Interact with claimants via voice or chat to capture full loss details",
+       "Deliver decision-ready claims to the claims system (ClaimCenter) for downstream processing"
+      ],
+      "source": "https://ir.guidewire.com/news-releases/news-release-details/guidewire-delivers-open-secure-and-complete-core-platform"
+     },
+     {
+      "name": "Guidewire ProNavigator / embedded AI assistant & agents for adjusters",
+      "what_it_does": "Assists claims adjusters with contextual answers, suggestions, and next-best actions using the policy/claim context available inside the Guidewire core platform.",
+      "actions": [
+       "Answer adjuster questions about the policy, claim, or in-progress task",
+       "Provide recommended next-best actions on policies and claims",
+       "Execute administrative tasks when prompted (within defined controls)"
+      ],
+      "source": "https://www.guidewire.com/products/technology/insurance-ai-from-guidewire"
+     },
+     {
+      "name": "Amazon Bedrock AgentCore-based multi-agent claims processing demo (sample architecture)",
+      "what_it_does": "Implements a multi-agent pipeline for claims processing where specialist agents perform identity verification, document extraction, policy validation, fraud detection, and adjudication with human-in-the-loop governance.",
+      "actions": [
+       "Identity verification",
+       "Document extraction",
+       "Policy validation",
+       "Fraud detection",
+       "Adjudication with human-in-the-loop governance",
+       "Track and update claim status through an event-driven processing pipeline"
+      ],
+      "source": "https://github.com/aws-samples/sample-agentic-insurance-claims-processing-demo"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Automated claims intake, document capture, and triage with straight-through processing for low-complexity claims",
+      "who_uses_it": "Insurance claims operations teams at property & casualty insurers",
+      "what_the_agent_can_reach": [
+       "Inbound claim intake channels (emails/attachments and other intake channels described in the case study)",
+       "Document AI processing pipeline components (OCR and layout-aware extraction models)",
+       "Structured claim objects created from unstructured documents (e.g., policy number, loss date, claimant details, loss description with confidence scores)",
+       "Routing outcomes that determine whether claims go straight through vs. require human adjuster judgement",
+       "Fraud referral signals derived from unstructured documents"
+      ],
+      "source": "https://www.webneuron.com/case-studies/insurance-claims-automation-machine-learning/"
+     },
+     {
+      "name": "Claims document indexing/matching to the correct claim record (when claim number is missing or documents arrive without clear identifiers)",
+      "who_uses_it": "Specialty insurers’ claims departments and coordinators",
+      "what_the_agent_can_reach": [
+       "Claims input systems that receive correspondence and documents",
+       "A secure AI cloud processing environment for document reading",
+       "The insurer’s claims database for claim number lookup and searching when identifiers are missing",
+       "Automatic filing/routing of documents into the correct claim record",
+       "Extraction of key identifiers (e.g., names, policy numbers, dates of loss, vehicle IDs) from correspondence"
+      ],
+      "source": "https://cdn.featuredcustomers.com/CustomerCaseStudy.document/automate-claims-document-indexing.pdf"
+     },
+     {
+      "name": "Claims fraud likelihood scoring and investigation workflows (insurance fraud decisioning)",
+      "who_uses_it": "Insurance fraud analysts and claims managers; SIU (Special Investigation Unit) teams",
+      "what_the_agent_can_reach": [
+       "Claims process data used by the fraud analytical engine",
+       "Outputs including fraud likelihood scoring at stages of the claims process",
+       "Automated business-rules evaluation and ML/AI/text-mining/database searches/anomaly detection/network link analysis capabilities",
+       "Investigation reporting artifacts and watchlists against fraud entities"
+      ],
+      "source": "https://www.sas.com/content/dam/SAS/en_us/doc/productbrief/sas-fraud-framework-insurance-103882.pdf"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "High-stakes financial decisions (e.g., settling a claim) must not be executed solely based on the AI model’s recommendation; incorrect actions would create measurable business/legal harm.",
+      "when": "Ongoing risk addressed by the documented governance pattern (no single incident date provided in the source).",
+      "source": "https://docs.guidewire.com/security/secure-ai-agents/securing-a-claim-summarization-agent/"
+     },
+     {
+      "what": "AI intake/triage that depends on structured fields can miss fraud signals contained in unstructured claim documents if those signals are not evaluated; routing errors can result when document content is not properly analyzed.",
+      "when": "Stated as a limitation in the described operational context of the case study (no single incident date provided in the source).",
+      "source": "https://www.webneuron.com/case-studies/insurance-claims-automation-machine-learning/"
+     },
+     {
+      "what": "Incorrectly configured or overly permissive AI agent actions could change payee and pay claims without required verification, which is described as an AI-risk concern in an NAIC AI risk evaluation supplement.",
+      "when": "Risk framework published with versioned supplement timing (the source provides the document date as published/received within the PDF).",
+      "source": "https://content.naic.org/sites/default/files/inline-files/ai-risk-evaluation-supplement-version-6.0-received-comments-final.pdf"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Guidewire’s AI on the core insurance platform is designed to be grounded, governed, and open, with audit traces and data logs for compliance, and claims agents can review a claim using policy/claim context while staying within defined permissions.",
+      "source": "https://www.guidewire.com/products/technology/insurance-ai-from-guidewire"
+     },
+     {
+      "claim": "In a Guidewire-described pattern, a claim summarization agent may recommend next steps (including closing with no action, requesting more information, or settling) but high-stakes actions must be protected with human-in-the-loop approval gates.",
+      "source": "https://docs.guidewire.com/security/secure-ai-agents/securing-a-claim-summarization-agent/"
+     },
+     {
+      "claim": "Guidewire describes “Concierge” as a claimant-facing autonomous agent using voice or chat that captures full loss details and delivers decision-ready claims to ClaimCenter.",
+      "source": "https://ir.guidewire.com/news-releases/news-release-details/guidewire-delivers-open-secure-and-complete-core-platform"
+     },
+     {
+      "claim": "An AWS sample multi-agent insurance claims processing demo using Amazon Bedrock AgentCore describes specialist agents for identity verification, document extraction, policy validation, fraud detection, and adjudication with human-in-the-loop governance.",
+      "source": "https://github.com/aws-samples/sample-agentic-insurance-claims-processing-demo"
+     },
+     {
+      "claim": "A document AI + automated triage case study states the solution replaced manual first-notice-of-loss rekeying with document AI, automated triage, and straight-through processing for low-complexity claims.",
+      "source": "https://www.webneuron.com/case-studies/insurance-claims-automation-machine-learning/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "gemini",
+   "label": "Gemini search",
+   "model": "google/gemini-3.1-flash-lite:online",
+   "ms": 2300,
+   "cost_usd": 0.000806355,
+   "tokens": {
+    "in": 228,
+    "out": 505
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.mckinsey.com/industries/financial-services/our-insights/insurance-2030-the-impact-of-ai-on-the-future-of-insurance",
+    "https://www2.deloitte.com/us/en/insights/industry/financial-services/artificial-intelligence-insurance-claims.html",
+    "https://www.naic.org/documents/cipr_newsletter_2023_04.pdf",
+    "https://www.accenture.com/us-en/industries/insurance-index"
+   ],
+   "answer": {
+    "what_it_does": "AI agents in insurance claims handling automate the intake, validation, and settlement processes by analyzing documents, images, and policy data in real-time. They function to accelerate claim lifecycles, reduce administrative overhead, and ensure consistent decision-making across complex policy frameworks.",
+    "ai_agents": [
+     {
+      "name": "Claims Automation Agents",
+      "what_it_does": "These agents ingest unstructured data from claims submissions to cross-reference policy coverage and fraud indicators automatically.",
+      "actions": [
+       "OCR extraction from medical reports and repair invoices",
+       "Integration with core policy administration systems",
+       "API calls to external fraud detection databases"
+      ],
+      "source": "https://www.mckinsey.com/industries/financial-services/our-insights/insurance-2030-the-impact-of-ai-on-the-future-of-insurance"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Automated First Notice of Loss (FNOL)",
+      "who_uses_it": "Property and Casualty insurers",
+      "what_the_agent_can_reach": [
+       "Claims management systems (CMS)",
+       "Customer policy records",
+       "Payment authorization gateways for immediate payouts"
+      ],
+      "source": "https://www2.deloitte.com/us/en/insights/industry/financial-services/artificial-intelligence-insurance-claims.html"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Algorithmic bias in claims settlement leading to disparate impact and regulatory scrutiny.",
+      "when": "2023-2024",
+      "source": "https://www.naic.org/documents/cipr_newsletter_2023_04.pdf"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "AI-driven claims processing can reduce claim cycle times by up to 90% while significantly lowering operational costs.",
+      "source": "https://www.accenture.com/us-en/industries/insurance-index"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter web search",
+   "model": "anthropic/claude-haiku-5.5",
+   "plugins": [
+    {
+     "id": "web",
+     "max_results": 6
+    }
+   ],
+   "max_tokens": 4000,
+   "ms": 23259,
+   "cost_usd": 0.037685538,
+   "tokens": {
+    "in": 58337,
+    "out": 4465
+   },
+   "finish": "length",
+   "citations": [],
+   "answer_urls": [
+    "https://www.allianz.com/en/mediacenter/news/articles/251103-when-the-storm-clears-so-should-the-claim-queue.html",
+    "https://beam.ai/agents/insurance-claim-processing-agent/",
+    "https://www.lyzr.ai/blog/ai-agents-for-insurance-claims/",
+    "https://www.netsuite.com/portal/resource/articles/business-strategy/insurance-agentic-ai.shtml",
+    "https://www.v7labs.com/blog/automated-claims-processing-for-insurance",
+    "https://www.allianz.com/en/mediacenter/news/articles/251103-when-the-storm-clears-so-should-the-claim-queue"
+   ],
+   "answer": null,
+   "raw": "{\"what_it_does\": \"Insurers are using agentic AI to handle claims intake, document extraction, coverage checks, fraud triage and, for simple files, settlement, usually with a human approving payouts and complex or high-value claims. Vendors describe these agents as working on top of existing policy and claims platforms, while health-plan use of algorithmic denials is the subject of active litigation and new state rules.\",\n\"ai_agents\": [\n{\"name\": \"Allianz Project Nemo\", \"what_it_does\": \"Allianz's agentic system for low-complexity food spoilage claims, which runs a planner agent plus specialist agents for coverage, weather and fraud checks.\", \"actions\": [\"Planner agent starts and sequences the claim workflow\", \"Coverage agent checks whether the policy covers food spoilage in severe weather\", \"Weather agent confirms whether a matching weather event occurred\", \"Cyber agent oversees data security\", \"Fraud-detection agent screens the claim\", \"Human claims professional makes the final payout decision\"], \"source\": \"https://www.allianz.com/en/mediacenter/news/articles/251103-when-the-storm-clears-so-should-the-claim-queue.html\"},\n{\"name\": \"Beam AI insurance claim processing agent\", \"what_it_does\": \"Vendor-built agent that extracts claim data, validates it against policy terms, flags suspicious claims and pays approved ones.\", \"actions\": [\"Extracts claim data with OCR and structured-format parsing\", \"Validates against policy terms and coverage limits\", \"Connects to Guidewire, Duck Creek, Majesco and Insurity policy and claims systems\", \"Queries ISO ClaimSearch and LexisNexis for fraud signals\", \"Routes flagged claims to the special investigations unit\", \"Initiates subrogation workflows\", \"Triggers payments through banking platforms\"], \"source\": \"https://beam.ai/agents/insurance-claim-processing-agent/\"},\n{\"name\": \"Lyzr insurance claims agents\", \"what_it_does\": \"Vendor-built agents for auto, health, property and travel claims that check documents, policy terms and fraud signals.\", \"actions\": [\"Compares repair shop estimates with telematics data\", \"Uses Tractable image recognition for vehicle damage\", \"Syncs with Salesforce CRM\", \"Validates prescriptions and checks invoices against plan coverage in health claims\", \"Pulls drone images and NOAA data for property claims\", \"Parses customer emails and queries airline APIs for travel claims\"], \"source\": \"https://www.lyzr.ai/blog/ai-agents-for-insurance-claims/\"},\n{\"name\": \"Travelers agentic claims assistant\", \"what_it_does\": \"Customer-facing agent that helps policyholders file routine auto damage claims and carries them through to completion.\", \"actions\": [\"Runs intake for routine auto damage claims\", \"Looks up the policy\", \"Submits the claim\", \"Brings in a specialist at the customer's request or when judgment is needed\"], \"source\": \"https://www.netsuite.com/portal/resource/articles/business-strategy/insurance-agentic-ai.shtml\"},\n{\"name\": \"V7 Go\", \"what_it_does\": \"Document-focused AI agent platform for insurers handling claims intake, document review and loss adjustment.\", \"actions\": [\"Reads medical reports, legal correspondence, adjuster notes and claim summaries\", \"Extracts fields and links each one to its location in the source document\", \"Runs numeric calculations and Python analysis on claim data\"], \"source\": \"https://www.v7labs.com/blog/automated-claims-processing-for-insurance\"}\n],\n\"use_cases\": [\n{\"name\": \"Low-complexity property and food spoilage claims\", \"who_uses_it\": \"Allianz claims teams and policyholders filing online (Australia)\", \"what_the_agent_can_reach\": [\"Policy coverage records\", \"Weather event data\", \"Claim intake from the online portal\", \"Payout recommendation, with a human making the final payout call\"], \"source\": \"https://www.allianz.com/en/mediacenter/news/articles/251103-when-the-storm-clears-so-should-the-claim-queue."
+  }
+ ]
+}

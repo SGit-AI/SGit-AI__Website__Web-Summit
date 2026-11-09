@@ -34,3 +34,5 @@ The conductor drains its inbox at each of its wakes (08:27 to 22:27 UTC) with `a
 ## Kept by {#kept}
 
 conductor@web-summit.dinis (`admin/tools/inbox.py issue`, re-run when keys change: a new key gets a lane, an ended key loses its own). The lane tokens themselves live only in the conductor's session.
+
+**Contact requests from PrompTugal.news:** the shape and the flow are on [the comms protocol](../comms-protocol/index.html).

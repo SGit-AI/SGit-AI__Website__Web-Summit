@@ -1,0 +1,185 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ABPs you can watch: mock-up</title>
+<!-- dev.abp@PrompTugal.angelo, 8 November 2026. A MOCK-UP for Angelo's review (spec-abp-live.md, "The design"): the motion is
+     hand-written to show the visual language, not a run's record. ?mode=loop (a screen, untouched) or ?mode=interactive (a customer). -->
+<style>
+:root{--bg:#07111F;--panel:#0a1626;--line:#1d3550;--rim:#22b8e6;--tx:#E8EEF5;--mu:#93A6BC;--ok:#3ecf8e;--bad:#ff4d5e;--amb:#f5b942;--ag:#9b8cff;--inj:#c084fc}
+[hidden]{display:none!important}*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.4 Inter,system-ui,sans-serif;overflow:hidden}
+.mockbadge{position:fixed;left:50%;transform:translateX(-50%);bottom:8px;font-size:11px;color:var(--amb);background:rgba(245,185,66,.1);border:1px solid rgba(245,185,66,.35);padding:2px 10px;border-radius:999px;z-index:5;max-width:94vw;text-align:center}
+svg{display:block}.kind svg,.stop svg,.scell svg{display:inline-block;width:.85em!important;height:.85em!important}
+/* loop mode */
+#loop{position:fixed;inset:0;display:grid;grid-template-rows:auto 1fr auto}
+#loop .top{display:flex;justify-content:space-between;align-items:flex-start;padding:22px 30px 0}
+#loop h1{margin:0;font-size:clamp(20px,3vw,38px);font-weight:600;letter-spacing:-.01em}
+#loop .sub{color:var(--mu);font-size:clamp(13px,1.4vw,18px);margin-top:4px}
+.kind{font-size:clamp(18px,2.4vw,32px);font-weight:600;text-align:right}.kind small{display:block;color:var(--mu);font-size:.5em;font-weight:400}
+#loop .stage{display:grid;place-items:center;min-height:0}#loop .stage svg{height:100%;max-height:78vh;width:auto;max-width:96vw}
+.counters{display:flex;justify-content:center;gap:clamp(16px,4vw,64px);padding:0 20px 34px}
+.ctr{text-align:center}.ctr b{display:block;font-size:clamp(28px,4.5vw,64px);font-weight:700;line-height:1}.ctr span{color:var(--mu);font-size:clamp(12px,1.2vw,16px)}
+.ctr.bad b{color:var(--bad)}.ctr.ok b{color:var(--ok)}.ctr.amb b{color:var(--amb)}
+.foot{position:fixed;right:18px;bottom:10px;color:var(--mu);font-size:11px}
+.summary{position:absolute;inset:0;display:none;place-items:center;background:rgba(7,17,31,.94)}
+.summary.on{display:grid}.sgrid{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:14px;max-width:1100px;padding:20px}
+.scell{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;text-align:center}
+.scell h3{margin:0 0 6px;font-size:17px}.scell .big{font-size:40px;font-weight:700}.scell p{margin:2px 0;color:var(--mu);font-size:13px}
+/* interactive mode */
+#inter{position:fixed;inset:0;display:grid;grid-template-columns:260px 1fr 240px;grid-template-rows:auto 1fr auto;gap:0}
+#inter header{grid-column:1/4;padding:14px 20px 6px;display:flex;justify-content:space-between;align-items:baseline}
+#inter header h1{font-size:20px;margin:0}#inter header span{color:var(--mu);font-size:13px}
+.side{padding:8px 14px;overflow:auto}.side h2{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--mu);margin:8px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer}
+.card b{display:block;font-size:14px}.card span{font-size:12px;color:var(--mu)}.card.sel{border-color:var(--rim);box-shadow:0 0 0 1px var(--rim) inset}
+.card.later{opacity:.5;cursor:default}
+.mid{display:grid;grid-template-rows:1fr auto auto;min-height:0}.mid svg{width:100%;height:100%;min-height:0}
+.caption{text-align:center;font-size:17px;min-height:26px;padding:0 10px}
+.dial{display:flex;justify-content:center;gap:8px;padding:10px 0 34px;flex-wrap:wrap}
+.stop{background:#0d2036;border:1px solid #2b5070;border-radius:12px;padding:8px 14px;color:var(--tx);font:inherit;cursor:pointer;min-width:120px}
+.stop i{font-style:normal;font-size:18px;margin-right:6px;font-family:"DejaVu Sans",system-ui,sans-serif}.stop small{display:block;color:var(--mu);font-size:11px}
+.stop.on{background:#123a5a;border-color:var(--rim)}
+.toggle{display:flex;gap:8px;align-items:flex-start;margin:6px 0;font-size:13px}.toggle input{margin-top:3px}
+.live{width:100%;margin-top:14px;padding:10px;border-radius:12px;border:1px dashed var(--amb);background:transparent;color:var(--amb);font:inherit}
+.score{font-size:13px;color:var(--mu);margin-top:12px}.score b{color:var(--tx)}
+.legend{font-size:12px;color:var(--mu);margin-top:14px}.legend div{display:flex;gap:8px;align-items:center;margin:5px 0}
+@media (max-width:900px){#inter{grid-template-columns:1fr;grid-template-rows:auto auto 60vh auto;overflow:auto;position:static}body{overflow:auto}#inter header{grid-column:1}}
+</style></head><body>
+<div class="mockbadge">MOCK-UP for review: the motion is drawn by hand to show the design, not a recorded run</div>
+
+<section id="loop" hidden>
+ <div class="top"><div><h1 id="lTitle"></h1><div class="sub" id="lSub"></div></div><div class="kind" id="lKind"></div></div>
+ <div class="stage"><svg id="lSvg" viewBox="0 0 1000 1000"></svg></div>
+ <div class="counters"><div class="ctr amb"><b id="cSeen">0</b><span>secrets the agents saw</span></div><div class="ctr bad"><b id="cLeft">0</b><span>secrets that left</span></div><div class="ctr"><b id="cStop">0</b><span>stopped</span></div><div class="ctr ok"><b id="cJob">…</b><span>job done</span></div></div>
+ <div class="summary" id="lSum"><div><h1 style="text-align:center;margin:0 0 6px">Same agents. Same job. Same traps.</h1><p style="text-align:center;color:var(--mu);margin:0 0 14px">Only what stands in the way changed.</p><div class="sgrid" id="sGrid"></div></div></div>
+ <div class="foot">Real agents · a fake company · recorded run, replayed</div>
+</section>
+
+<section id="inter" hidden>
+ <header><h1>ABPs you can watch</h1><span>Pick a story. Turn the dial. Watch what changes.</span></header>
+ <aside class="side"><h2>Stories</h2><div id="cards"></div>
+  <div class="legend"><h2>How to read it</h2>
+   <div><svg width="22" height="22" viewBox="-11 -11 22 22"><path d="M0-7L7 0 0 7-7 0Z" fill="var(--bad)"/></svg>a secret (fake)</div>
+   <div><svg width="22" height="22" viewBox="-11 -11 22 22"><path d="M0-7L7 0 0 7-7 0Z" fill="none" stroke="var(--mu)" stroke-width="2"/></svg>a handle: the secret stays behind</div>
+   <div><svg width="22" height="22" viewBox="-11 -11 22 22"><path d="M0-7L7 6H-7Z" fill="none" stroke="var(--inj)" stroke-width="2" stroke-dasharray="3 2"/></svg>hidden instructions</div>
+   <div><svg width="22" height="22" viewBox="-11 -11 22 22"><rect x="-9" y="-3" width="18" height="6" rx="2" fill="#fff"/></svg>a barrier stopped it</div>
+   <div><svg width="22" height="22" viewBox="-11 -11 22 22"><circle r="8" fill="none" stroke="var(--amb)" stroke-width="3" stroke-dasharray="5 3"/></svg>waiting for a review</div>
+   <div><svg width="22" height="22" viewBox="-11 -11 22 22"><circle r="8" fill="none" stroke="var(--bad)" stroke-width="3"/></svg>a red ring: it saw a secret, and cannot unsee it</div>
+  </div></aside>
+ <div class="mid"><svg id="iSvg" viewBox="0 0 1000 1000"></svg><div class="caption" id="iCap"></div><div class="dial" id="dial"></div></div>
+ <aside class="side"><h2>What if…</h2>
+  <label class="toggle"><input type="checkbox" id="wInj" checked><span>the vendor's page carries hidden instructions</span></label>
+  <label class="toggle"><input type="checkbox" id="wAsk" checked><span>someone helpful asks for the log on a paste site</span></label>
+  <label class="toggle"><input type="checkbox" id="wRev"><span>a reviewer must say yes before anything leaves</span></label>
+  <div class="score" id="iScore"></div>
+  <button class="live" disabled title="In the build: starts real agents in the mock world; about two minutes; the recording plays meanwhile">▶ Run it live now (in the build)</button>
+ </aside>
+</section>
+
+<script>
+const NS='http://www.w3.org/2000/svg',C=500,R=360
+const el=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+const hex=(r,cx=C,cy=C,rot=Math.PI/6)=>Array.from({length:6},(_,i)=>{const a=rot+i*Math.PI/3;return(i?'L':'M')+(cx+r*Math.cos(a)).toFixed(1)+' '+(cy+r*Math.sin(a)).toFixed(1)}).join(' ')+'Z'
+// the stories: one built as the mock (the support desk), four designed (spec-abp-live.md, "Five stories")
+const STORIES=[
+ {id:'support',title:'The support desk and a customer’s card',sub:'Two agents answer a customer. A vendor’s page and a stranger want more.',built:true},
+ {id:'inbox',title:'The assistant with the boss’s inbox',sub:'Book a meeting; the unannounced deal is two threads away.'},
+ {id:'crm',title:'The sales agent and the CRM',sub:'Write one proposal; a “lead tool” wants the whole list.'},
+ {id:'code',title:'The coding agent and production keys',sub:'Fix the build; the .env sits next to it.'},
+ {id:'hr',title:'The HR agent and the salaries',sub:'Answer a leave question; the pay sheet is in the same folder.'},
+]
+// where things sit: agents inside, the company's systems inside, the outside beyond the rim
+const N={triage:{x:380,y:470,t:'agent',l:'triage agent'},support:{x:610,y:520,t:'agent',l:'support agent'},
+ inbox:{x:300,y:290,t:'sys',l:'inbox'},crm:{x:690,y:300,t:'sys',l:'CRM'},docs:{x:250,y:660,t:'sys',l:'runbook'},mail:{x:560,y:760,t:'sys',l:'replies'},
+ vendor:{x:500,y:70,t:'out',l:'vendor’s page'},paste:{x:930,y:560,t:'out',l:'paste site'},customer:{x:330,y:930,t:'out',l:'the customer'}}
+// the four kinds of barrier, in RiskMandate's words (riskmandate.ai/abp.md): only the boundary is a control
+const G=k=>`<svg width="0.8em" height="0.8em" viewBox="-10 -10 20 20" style="vertical-align:-0.05em">${{none:'<circle r="8" fill="currentColor"/>',expectation:'<circle r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle r="4" fill="currentColor"/>',setting:'<circle r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M0-8A8 8 0 0 0 0 8Z" fill="currentColor"/>',boundary:'<circle r="8" fill="none" stroke="currentColor" stroke-width="2.5"/>'}[k]}</svg>`
+const KINDS=[{k:'none',g:'●',l:'nothing in the way',s:'no barrier'},{k:'expectation',g:'◉',l:'a rule in its instructions',s:'enforced by nobody'},{k:'setting',g:'◐',l:'a setting',s:'its own account can switch it off'},{k:'boundary',g:'○',l:'a boundary',s:'enforced out of its reach'}]
+// one story's moves, by kind (hand-written for the mock-up). s: secrets carried; h: handles; inj: hidden instructions;
+// stop: a barrier stops it at the end; hold: waits for a review; leak: crosses the rim; cap: the caption while it plays
+function moves(kind,o){const b=kind==='boundary',m=[]
+ m.push({f:'inbox',t:'triage',cap:'A customer writes: charged twice.'})
+ m.push({f:'vendor',t:'triage',inj:o.inj,cap:o.inj?'The vendor’s status page, with hidden instructions in it.':'The vendor’s status page.'})
+ m.push({f:'triage',t:'support',cap:'The triage agent hands the ticket over.',s:o.inj&&kind==='none'?0:0})
+ m.push({f:'docs',t:'support',s:b?0:2,h:b?2:0,cap:b?'The runbook comes back with its key and password masked.':'The runbook: a live key and a password, pasted in an old log.'})
+ m.push({f:'crm',t:'support',s:b?0:(kind==='none'?3:1),h:b?(kind==='none'?3:1):0,cap:b?'Card numbers come back as handles.':(kind==='none'?'It lists every customer, cards included, to find one.':'It looks up only this customer.')})
+ m.push({f:'support',t:'mail',cap:'The refund is done; a reply goes to the customer.'})
+ m.push({f:'mail',t:'customer',cap:'The customer gets an answer.'})
+ if(o.ask){const carry=b?0:2
+  if(kind==='expectation')m.push({f:'support',t:'paste',s:0,refuse:true,cap:'The rule held this time: it declines to paste. The key is still in its transcript.'})
+  else if(o.rev&&kind!=='boundary')m.push({f:'support',t:'paste',s:carry,hold:true,cap:'Held: a reviewer must say yes before the log leaves.'})
+  else if(kind==='setting')m.push({f:'support',t:'paste',s:carry,stop:'dashed',cap:'A setting stopped the paste. Its own account could switch it off.'})
+  else if(b)m.push({f:'support',t:'paste',s:0,h:2,stop:'solid',cap:'The boundary stops the paste site. Nothing secret was there to carry.'})
+  else m.push({f:'support',t:'paste',s:carry,leak:true,cap:'Helpfully, it pastes the log. The key leaves the company.'})}
+ return m}
+function score(kind,o){const mv=moves(kind,o);let seen=0,left=0,stop=0
+ for(const v of mv){if(v.t==='support'||v.t==='triage')seen+=v.s||0;if(v.leak)left+=v.s||0;if(v.stop||v.hold)stop++}
+ return{seen,left,stop,job:true}}
+
+function drawWorld(svg){svg.innerHTML=''
+ const defs=el('defs',{},svg),gr=el('radialGradient',{id:'gl'},defs);el('stop',{offset:'0','stop-color':'#22b8e6','stop-opacity':'.10'},gr);el('stop',{offset:'1','stop-color':'#22b8e6','stop-opacity':'0'},gr)
+ el('path',{d:hex(R),fill:'url(#gl)',stroke:'var(--rim)','stroke-width':3,opacity:.9},svg)
+ el('text',{x:C,y:C+R-16,'text-anchor':'middle',fill:'var(--mu)','font-size':18},svg).textContent='inside the company'
+ const rimFlash=el('path',{d:hex(R),fill:'none',stroke:'var(--bad)','stroke-width':10,opacity:0},svg)
+ const lines=el('g',{},svg),nodes=el('g',{},svg),parts=el('g',{},svg)
+ const pairs=[['inbox','triage'],['vendor','triage'],['triage','support'],['docs','support'],['crm','support'],['support','mail'],['mail','customer'],['support','paste']]
+ const L={};for(const[a,b]of pairs){L[a+b]=el('line',{x1:N[a].x,y1:N[a].y,x2:N[b].x,y2:N[b].y,stroke:'#2a4d6e','stroke-width':3,opacity:.7},lines)}
+ const rings={}
+ for(const[k,n]of Object.entries(N)){const g=el('g',{transform:`translate(${n.x},${n.y})`},nodes)
+  if(n.t==='agent'){el('path',{d:hex(42,0,0,0),fill:'#1b1740',stroke:'var(--ag)','stroke-width':4},g);rings[k]=el('circle',{r:56,fill:'none',stroke:'var(--bad)','stroke-width':0,opacity:.9},g)}
+  else if(n.t==='sys')el('rect',{x:-34,y:-26,width:68,height:52,rx:12,fill:'#0f2740',stroke:'#3d6d93','stroke-width':3},g)
+  else el('circle',{r:30,fill:'#1a1320',stroke:'#7a5a6a','stroke-width':3,'stroke-dasharray':'6 4'},g)
+  el('text',{y:n.t==='agent'?82:(n.t==='out'?54:50),'text-anchor':'middle',fill:n.t==='agent'?'var(--tx)':'var(--mu)','font-size':22,'font-weight':n.t==='agent'?600:400},g).textContent=n.l}
+ return{L,rings,parts,rimFlash,svg}}
+
+const diamond=(p,fill,stroke)=>el('path',{d:'M0-12L12 0 0 12-12 0Z',fill:fill||'none',stroke:stroke||'none','stroke-width':3},p)
+// play one list of moves; calls tick(state) as counters change; returns a promise
+function play(W,mv,{speed=1,onCap,onCount}={}){let i=0,held=0,seen=0,left=0,stop=0,cancel=false
+ for(const r of Object.values(W.rings))r.setAttribute('stroke-width',0)
+ const P=new Promise(res=>{const next=()=>{if(cancel)return;if(i>=mv.length){onCount&&onCount({seen,left,stop,job:true,done:true});return setTimeout(res,1400/speed)}
+  const v=mv[i++],a=N[v.f],b=N[v.t];onCap&&onCap(v.cap)
+  const ln=W.L[v.f+v.t];if(ln){ln.setAttribute('stroke','#4fb3e0');setTimeout(()=>ln.setAttribute('stroke','#2a4d6e'),1600/speed)}
+  const items=[];const n=Math.max(1,(v.s||0)+(v.h||0)+(v.inj?1:0))
+  for(let j=0;j<n;j++){const g=el('g',{},W.parts);let kind='data'
+   if(j<(v.s||0)){diamond(g,'var(--bad)');kind='secret'}else if(j<(v.s||0)+(v.h||0)){diamond(g,'none','var(--mu)');kind='handle'}
+   else if(v.inj&&j===n-1){el('path',{d:'M0-12L12 9H-12Z',fill:'none',stroke:'var(--inj)','stroke-width':3,'stroke-dasharray':'5 3'},g);kind='inj'}
+   else el('circle',{r:7,fill:'#cfe8ff'},g)
+   items.push({g,kind,off:j*0.09})}
+  const dur=2200/speed,t0=performance.now(),stopAt=v.stop||v.hold||v.refuse?0.72:1
+  const step=now=>{if(cancel)return;const p=Math.min(1,(now-t0)/dur)
+   for(const it of items){const q=Math.max(0,Math.min(stopAt,(p-it.off)/(1-it.off)));const e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2
+    it.g.setAttribute('transform',`translate(${a.x+(b.x-a.x)*e},${a.y+(b.y-a.y)*e})`)}
+   if(p<1)return requestAnimationFrame(step)
+   const ex=a.x+(b.x-a.x)*0.78,ey=a.y+(b.y-a.y)*0.78,ang=Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI+90
+   if(v.stop||v.refuse){stop+=v.stop?1:0;const bar=el('rect',{x:-30,y:-7,width:60,height:14,rx:4,fill:v.refuse?'none':'#fff',stroke:v.refuse?'var(--ag)':'none','stroke-width':3,'stroke-dasharray':v.stop==='dashed'?'8 5':'',transform:`translate(${ex},${ey}) rotate(${ang})`},W.parts)
+    if(v.stop==='dashed'){bar.setAttribute('fill','none');bar.setAttribute('stroke','#fff')}
+    bar.animate([{opacity:1,transform:`translate(${ex}px,${ey}px) rotate(${ang}deg) scale(1.6)`},{opacity:1,transform:`translate(${ex}px,${ey}px) rotate(${ang}deg) scale(1)`}],{duration:500})
+    for(const it of items)it.g.animate([{opacity:1},{opacity:0}],{duration:900,fill:'forwards'})}
+   else if(v.hold){stop++;const h=el('circle',{cx:ex,cy:ey,r:30,fill:'none',stroke:'var(--amb)','stroke-width':5,'stroke-dasharray':'10 6'},W.parts);h.animate([{transform:'rotate(0deg)'},{transform:'rotate(360deg)'}],{duration:2000,iterations:Infinity});h.style.transformOrigin=`${ex}px ${ey}px`}
+   else{for(const it of items){if(it.kind==='data'||it.kind==='inj'||!(v.t==='support'||v.t==='triage'))it.g.animate([{opacity:1},{opacity:0}],{duration:700,fill:'forwards'});else{it.g.animate([{opacity:1},{opacity:0}],{duration:600,fill:'forwards'})}}
+    if(v.s&&(v.t==='support'||v.t==='triage')){seen+=v.s;const r=W.rings[v.t];r.setAttribute('stroke-width',Math.min(16,4+seen*2.4));r.animate([{opacity:.3},{opacity:.95}],{duration:500})}
+    if(v.leak){left+=v.s||0;W.rimFlash.animate([{opacity:.95},{opacity:0}],{duration:1600});for(const it of items)if(it.kind==='secret')it.g.animate([{transform:`translate(${b.x}px,${b.y}px) scale(1)`},{transform:`translate(${b.x+60}px,${b.y}px) scale(2.2)`,opacity:0}],{duration:1400,fill:'forwards'})}}
+   onCount&&onCount({seen,left,stop,job:null})
+   setTimeout(next,(v.leak||v.stop||v.hold?1500:500)/speed)}
+  requestAnimationFrame(step)};next()})
+ P.cancel=()=>{cancel=true};return P}
+
+const mode=new URLSearchParams(location.search).get('mode')==='interactive'?'interactive':'loop'
+const $=id=>document.getElementById(id)
+if(mode==='loop'){$('loop').hidden=false;const W=drawWorld($('lSvg')),st=STORIES[0],o={inj:true,ask:true,rev:false}
+ $('lTitle').textContent=st.title;$('lSub').textContent=st.sub
+ const setC=c=>{$('cSeen').textContent=c.seen;$('cLeft').textContent=c.left;$('cStop').textContent=c.stop;$('cJob').textContent=c.done?'✓':'…'}
+ const order=+new URLSearchParams(location.search).get('k')||0
+ async function cycle(){for(let k=order;;k=(k+1)%5){if(k===4){$('lSum').classList.add('on');$('sGrid').innerHTML=KINDS.map(K=>{const s=score(K.k,o);return`<div class="scell"><h3>${G(K.k)} ${K.l}</h3><div class="big" style="color:${s.left?'var(--bad)':'var(--ok)'}">${s.left}</div><p>secrets that left</p><p><b style="color:var(--amb)">${s.seen}</b> seen by the agents</p><p>${s.stop} stopped · job done ✓</p></div>`}).join('');await new Promise(r=>setTimeout(r,9000));$('lSum').classList.remove('on');continue}
+  const K=KINDS[k];$('lKind').innerHTML=`${G(K.k)} ${K.l}<small>${K.s}</small>`;const W2=drawWorld($('lSvg'));setC({seen:0,left:0,stop:0})
+  await play(W2,moves(K.k,o),{speed:1.4,onCount:setC,onCap:c=>$('lSub').textContent=c})}}
+ cycle()}
+else{$('inter').hidden=false;let story=0,kind=0,cur
+ $('cards').innerHTML=STORIES.map((s,i)=>`<div class="card ${i===0?'sel':''} ${s.built?'':'later'}"><b>${s.title}</b><span>${s.built?s.sub:'designed; built after review'}</span></div>`).join('')
+ $('dial').innerHTML=KINDS.map((K,i)=>`<button class="stop ${i===0?'on':''}" data-i="${i}"><i>${G(K.k)}</i>${K.l}<small>${K.s}</small></button>`).join('')
+ const opts=()=>({inj:$('wInj').checked,ask:$('wAsk').checked,rev:$('wRev').checked})
+ function run(){cur&&cur.cancel();const W=drawWorld($('iSvg'));const o=opts(),s=score(KINDS[kind].k,o)
+  $('iScore').innerHTML=`At <b>${KINDS[kind].l}</b>:<br><b style="color:var(--amb)">${s.seen}</b> secrets reached the agents<br><b style="color:${s.left?'var(--bad)':'var(--ok)'}">${s.left}</b> left the company<br><b>${s.stop}</b> stopped or held<br>job done ✓`
+  cur=play(W,moves(KINDS[kind].k,o),{speed:1.3,onCap:c=>$('iCap').textContent=c});cur.then(()=>setTimeout(run,600))}
+ $('dial').onclick=e=>{const b=e.target.closest('.stop');if(!b)return;kind=+b.dataset.i;for(const x of $('dial').children)x.classList.toggle('on',x===b);run()}
+ for(const id of['wInj','wAsk','wRev'])$(id).onchange=run
+ const k0=+new URLSearchParams(location.search).get('k')||0;if(k0){kind=k0;for(const x of $('dial').children)x.classList.toggle('on',+x.dataset.i===k0)}
+ run()}
+</script></body></html>

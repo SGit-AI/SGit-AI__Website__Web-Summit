@@ -1,0 +1,37 @@
+{
+  "id": "lena-concierge",
+  "type": "company",
+  "kind": "company",
+  "name": "Lena Concierge",
+  "aliases": [],
+  "website": "https://lenaconcierge.com",
+  "what": "\"The AI concierge for alpine hospitality\": answers guests in their language, checks live availability in the property's PMS and takes the booking in the same chat (its own site).",
+  "category": "Travel & hospitality",
+  "country": "Switzerland",
+  "attending": "at Web Summit Lisbon 2026: an ALPHA startup on its lis26 appearance page (no booth day or session published)",
+  "attending_as": "ALPHA startup",
+  "topics": [],
+  "ai_facts": [
+    {
+      "text": "Prices and opening hours come from checked facts; emergencies are answered from fixed, tested text, not written by a model, and the owner is notified.",
+      "source": "https://lenaconcierge.com/?lang=en",
+      "read_at": "2026-11-07"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://lenaconcierge.com/?lang=en",
+      "read_at": "2026-11-07",
+      "supports": "what it does, AI facts"
+    },
+    {
+      "url": "https://websummit.com/appearances/lis26/ea87aa28-83d6-42ca-bad5-baf2491d379a/lena-concierge-/",
+      "read_at": "2026-11-07",
+      "supports": "attending, industry"
+    }
+  ],
+  "world": "world 1: hospitality, tourism and the Algarve (people/silvio/outreach/worlds.md)",
+  "staged_from": "people/silvio/outreach/world1/five-more.md (outreach@web-summit.silvio, read 2026-11-07)",
+  "updated_at": "2026-11-08T07:34:36Z",
+  "updated_by": "crm@web-summit.silvio"
+}

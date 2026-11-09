@@ -1,0 +1,69 @@
+{
+  "number": 10,
+  "date": "5 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Midday: your key unlocks the vote, which closes at 14:30",
+  "when": "5 November 2026, 12:25 UTC (scheduled wake; since brief 9, 07:25 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Your site key is still not added. It is the one thing blocking your sticker vote, which closes at 14:30, and the vote is now issue WS-167 (my brief 9 called it WS-159). Dinis has not yet said which newsroom desks your agents run. Nothing is decided here.",
+  "stats": [
+    {"n": "2h 05m", "label": "left to vote: it closes at 14:30 UTC"},
+    {"n": "19 h", "label": "since your key (WS-136) was due at 18:00 on 4 November"},
+    {"n": "7", "label": "issue drafts from your agents waiting for your review (your mentor, 08:41)"},
+    {"n": "0", "label": "newsroom desks of yours started; the split is still Dinis's to say"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Add your site key, then vote (WS-136, WS-167, closes 14:30)",
+      "detail": "Use the link or the QR I sent on 4 November. It works on your laptop and on each phone or iPad (WS-166 asks for that by Monday). Then open https://web-summit.sgit.ai/stickers/vote/ in the same browser, rank your top picks and press Submit. If you cannot find the link, say so and I will send it again here.",
+      "options": ["now", "send me the link again", "skip the vote"],
+      "recommend": "Now: it is quick, and the vote closes in about two hours."
+    },
+    {
+      "id": "2",
+      "ask": "Review your agents' overnight drafts, starting with the message (WS-15)",
+      "detail": "Your mentor suggests an hour with the seven drafts while you are in person today. Your dashboard lists each one with its issue: WS-15 (the message), WS-19 (the card loop), WS-22, WS-26, WS-27, WS-59, WS-125. The message is the first to agree with Nimay.",
+      "options": ["start with WS-15", "start with WS-27 (company pages)", "later today"],
+      "recommend": "Start with WS-15: Thursday's outreach depends on it."
+    },
+    {
+      "id": "3",
+      "ask": "Tell me 'acknowledge' for briefs 1 to 10",
+      "detail": "I have never recorded that you have read a brief, so every one starts from the beginning. One word fixes it, and the to-do list asks for it (WS-112).",
+      "options": ["acknowledge", "not yet"],
+      "recommend": "Acknowledge once you have skimmed this one."
+    }
+  ],
+  "you_asked": [
+    {"at": "5 Nov, 07:25 UTC", "said": "(my brief 9 question) Which newsroom desks, if any, should your agents start now that you can push?", "done": "Waiting for your answer. Dinis's 18:00 sync, as Jose's conductor captured it, names Vicky for the researcher and newsroom@web-summit.dinis for the correspondent. It names no desk for you.", "where": "data/meetings/2026-11-04-1800/", "status": "waiting"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened since brief 9",
+      "items": [
+        "Dinis's conductor renumbered the sticker vote from WS-159 to WS-167 (72490583). The vote page is unchanged.",
+        "Angelo asked Dinis's conductor to drain the sticker votes (28c6f32), so you are not needed for the drain unless you want to be.",
+        "The midday stand-up now starts at 12:00 from today, by the team's vote (c44d8c5).",
+        "Vicky's desks are unblocked in the newsroom, and her curator flagged the newsroom's gate: it now needs derived data outside its own folder (5d2f0c9). That is Vicky's and Dinis's agent's fix, and it asks nothing of you.",
+        "Your dashboard agent built your to-do list at 07:30 (people/indi/todo/todo.json). The newsroom is at v0.1.14."
+      ]
+    },
+    {
+      "title": "2. From your mentor (08:41)",
+      "items": ["Spend an hour on the seven drafts, then add your key. Your mentor hands over tomorrow at 08:41 if your agents keep running on their own."]
+    }
+  ],
+  "next": [
+    "14:30: the sticker vote closes.",
+    "17:20: my next wake.",
+    "Until you say which desks to start, I start none."
+  ],
+  "sources": [
+    "git log since 07:20 UTC on 5 November: 72490583, b08f8b5, 28c6f32, c44d8c5, 5d2f0c9, b4a703e",
+    "board/WS-167, board/WS-136 at 12:20 UTC",
+    "data/meetings/2026-11-04-1800/ (the captured sync)",
+    "people/indi/mentor/2026-11-05-0841.md, people/indi/todo/todo.json",
+    "https://web-summit.newsroom.sgit.ai/ at 12:20 UTC: v0.1.14"
+  ]
+}

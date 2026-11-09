@@ -1,0 +1,70 @@
+diff --git a/assets/cockpit.js b/assets/cockpit.js
+index 1e1050b8..ec45f48b 100644
+--- a/assets/cockpit.js
++++ b/assets/cockpit.js
+@@ -11,8 +11,14 @@
+ import { linkTo } from './components/ws-shared/v0/v0.1/v0.1.0/ws-shared.js'
+ (() => {
+     'use strict'
+-    const root = document.getElementById('ck')
+-    if (!root) return
++    // WS-06 (proposed by dev@web-summit.angelo): another page can host the cockpit's decide part (a person's own command
++    // centre): it sets window.WSCockpitConfig = { src, lanes, only: 'decide' } before loading this module, and calls
++    // window.WSCockpit.mount(el) whenever it draws the element to fill. The signing, sealing and sending stay here.
++    let root = document.getElementById('ck')
++    const CFG = root ? root.dataset : window.WSCockpitConfig
++    if (!CFG) return
++    const ONLY = CFG.only || ''
++    window.WSCockpit = { mount(el) { root = el; if (D && root) draw() } }
+     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+     const LS = { get(k, d) { try { const v = localStorage.getItem('ck.' + k); return v === null ? d : JSON.parse(v) } catch { return d } }, set(k, v) { try { localStorage.setItem('ck.' + k, JSON.stringify(v)) } catch { } } }
+     const ago = t => { if (!t) return 'never'; const m = Math.round((Date.now() - new Date(t)) / 6e4); return m < 60 ? `${Math.max(1, m)} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago` }
+@@ -147,6 +153,8 @@ ${by.done.length + by.refused.length ? `<button type="button" class="ck-btn ghos
+     }
+ 
+     function draw() {
++        if (!root) return
++        if (ONLY === 'decide') return drawDecide()
+         const H = D.health, today = new Date().toISOString().slice(0, 10), ms = D.milestones.filter(m => m.at >= today).slice(0, 4)
+         const onlyLeft = D.only_you.filter(x => !acted(x.file)), decLeft = D.decisions.filter(x => !acted(x.ref))
+         const decs = showAll ? decLeft : decLeft.slice(0, 7), inPanel = (D.only_you.length - onlyLeft.length) + (D.decisions.length - decLeft.length)
+@@ -186,6 +194,21 @@ ${decLeft.length > 7 ? `<button type="button" class="ck-btn ghost wide" data-all
+         wire()
+     }
+ 
++    // the decide part alone, for a page that hosts it: what only you can do, the decisions, and your actions; no focus links
++    function drawDecide() {
++        const onlyLeft = D.only_you.filter(x => !acted(x.file)), decLeft = D.decisions.filter(x => !acted(x.ref)), decs = showAll ? decLeft : decLeft.slice(0, 7)
++        const noFocus = h => h.replace(/<a class="ck-btn( go)?" href="focus\/[^"]*">Open the card<\/a>/g, '')
++        const sx = root.querySelector('.ck-p-list') ? root.querySelector('.ck-p-list').scrollTop : 0
++        root.innerHTML = `<div class="ck-grid ck-only-decide"><div class="ck-main">
++${onlyLeft.length ? `<section class="ck-sec"><h2>Only you can do this <span>${onlyLeft.length}</span></h2>${noFocus(onlyLeft.map(onlyCard).join(''))}</section>` : ''}
++<section class="ck-sec"><h2>Decide <span>${decLeft.length}</span></h2><p class="ck-sub">Choose an option (★ is the recommendation), add your words, then <b>Decide</b>, or <b>Delegate</b> it to someone who can.</p>
++${noFocus(decs.map(decCard).join('')) || '<p class="ck-empty">Nothing waits on your decision.</p>'}
++${decLeft.length > 7 ? `<button type="button" class="ck-btn ghost wide" data-all>${showAll ? 'Show the top seven' : `Show all ${decLeft.length}`}</button>` : ''}</section>
++</div><aside class="ck-side">${panel()}</aside></div>`
++        const pn = root.querySelector('.ck-p-list'); if (pn) pn.scrollTop = sx
++        wire()
++    }
++
+     const find = ref => D.only_you.find(x => x.file === ref) || D.decisions.find(x => x.ref === ref) || (Q.find(e => e.ref === ref) || {})
+     const words = ref => { const t = root.querySelector(`textarea[data-words="${CSS.escape(ref)}"]`); return t ? t.value.trim() : '' }
+     function wire() {
+@@ -208,14 +231,14 @@ ${decLeft.length > 7 ? `<button type="button" class="ck-btn ghost wide" data-all
+         const s = root.querySelector('[data-send]'); if (s) s.onclick = send
+     }
+ 
+-    Promise.all([fetch(root.dataset.src, { cache: 'no-cache' }).then(r => r.json()), fetch(root.dataset.lanes, { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null), KR() ? KR().ready.catch(() => null) : null])
++    Promise.all([fetch(CFG.src, { cache: 'no-cache' }).then(r => r.json()), fetch(CFG.lanes, { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null), KR() ? KR().ready.catch(() => null) : null])
+         .then(([d, lanes]) => {
+             D = d; LANE = lanes && (lanes.lanes || []).find(l => l.agent === D.lane.agent) || null
+             // the first version kept one answer per card ('out', 'sent'): carry any over as entries
+             const old = LS.get('out', null); if (old) { for (const a of Object.values(old)) Q.push({ ...a, uid: uid(), state: 'draft' }); try { localStorage.removeItem('ck.out'); localStorage.removeItem('ck.sent') } catch { } }
+             // processed entries older than a week leave on their own
+             const P0 = P(), wk = Date.now() - 7 * 864e5; Q = Q.filter(e => !P0[e.uid] || Date.parse(P0[e.uid].applied_at) > wk); for (const e of Q) if (P0[e.uid]) e.state = 'processed'; save()
+-            document.documentElement.classList.add('ck-on'); draw()
++            if (!ONLY) document.documentElement.classList.add('ck-on'); draw()
+         })
+-        .catch(e => { root.innerHTML = `<p class="ck-note">The cockpit could not load (${esc(e.message)}); the same data is below as text.</p>` })
++        .catch(e => { if (root) root.innerHTML = `<p class="ck-note">The cockpit could not load (${esc(e.message)}); the same data is below as text.</p>` })
+ })()

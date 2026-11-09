@@ -1,0 +1,21 @@
+{
+  "kind": "budget",
+  "label": "A budget",
+  "think": [
+    "Have you already said yes somewhere? The evidence below shows what was decided, in your words.",
+    "What does no cost? Usually a date: say which.",
+    "A ceiling lets the person act without coming back to you."
+  ],
+  "evidence": ["ask", "why", "issue", "agenda", "commits", "people"],
+  "links": [
+    ["The print order brief", "../../../../print-order/index.html"],
+    ["The print files", "../../../../print/index.html"]
+  ],
+  "answers": [
+    { "id": "already", "label": "Already decided: my yes of 3 Nov stands", "action": "decide", "option": "Yes: my yes of 3 November to Silvio is the budget", "primary": true },
+    { "id": "ceiling", "label": "Yes, up to a ceiling", "action": "decide", "input": { "type": "text", "placeholder": "The ceiling, e.g. EUR 1,500" }, "option": "Yes, up to" },
+    { "id": "no", "label": "No", "action": "decide", "option": "No", "input": { "type": "text", "placeholder": "Why, and what instead" } },
+    { "id": "details", "label": "Need more details", "action": "details", "input": { "type": "text", "placeholder": "What you need to see" } }
+  ],
+  "chat": "This card asks Dinis for a spending decision. Help him check what he already agreed and what saying no would cost."
+}

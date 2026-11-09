@@ -1,0 +1,47 @@
+{
+  "agent": "security",
+  "started": "2026-11-05T03:49:33Z",
+  "kind": "special review, on Dinis's word",
+  "objective": "Every PKI key and encrypted secret published on the site: what it is, who can open it, how it is sealed, and what follows if a key leaks",
+  "commit": "054f5fe1",
+  "plan": [],
+  "steps": [
+    {
+      "n": 1,
+      "step": "plan",
+      "verdict": "go",
+      "comment": "Inventory and trace every published key and sealed secret; one page, issues",
+      "at": "2026-11-05T03:49:41.163Z"
+    },
+    {
+      "n": 2,
+      "step": "pre-review",
+      "verdict": "go",
+      "comment": "Read-only on others' files; writes team/security/**, content/pki/, my board issues",
+      "at": "2026-11-05T03:49:41.207Z"
+    },
+    {
+      "n": 3,
+      "step": "work",
+      "verdict": "done",
+      "comment": "Inventory of every published key/sealed secret; headers read, none opened; recipients traced; history checked; page /pki/published-secrets/, WS-164",
+      "at": "2026-11-05T03:52:25.608Z"
+    },
+    {
+      "n": 4,
+      "step": "post-review",
+      "verdict": "finding",
+      "comment": "One high (WS-164: secrets opened beside other people's scripts), three medium, one low; no leak found",
+      "at": "2026-11-05T03:52:25.648Z"
+    },
+    {
+      "n": 5,
+      "step": "post-check",
+      "verdict": "as-planned",
+      "comment": "All five plan items done",
+      "at": "2026-11-05T03:52:25.681Z"
+    }
+  ],
+  "outcome": "ok",
+  "closed": "2026-11-05T03:52:25.734Z"
+}

@@ -1,0 +1,172 @@
+{
+  "number": 11,
+  "date": "6 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Morning: the drain's stored prompt first, three asks, and your stand-up items at 12:00",
+  "when": "6 November 2026, 07:45 UTC (scheduled wake, the morning one; since brief 10, 5 November 17:30 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Overnight your CRM agent started, got the private CRM's key, wrote the channels area and took your answers to its questions; your C24 is done. The page views are only counted now, under Dinis's token rule, and he has not answered the token request yet. Three asks: let me fix my drain task's stored prompt, the accountant's model advice, and a pre-read of Angelo's five drafts.",
+  "stats": [
+    {
+      "n": "115",
+      "label": "page views waiting, counted not drained (07:07)"
+    },
+    {
+      "n": "4 of 7",
+      "label": "agents reported through the one door"
+    },
+    {
+      "n": "5",
+      "label": "agents the accountant would move to Sonnet"
+    },
+    {
+      "n": "3",
+      "label": "asks for you this morning"
+    }
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "✅ Approve: let me fix my own drain task's stored prompt now (your watcher's A-06, fourth run)",
+      "detail": "The prompt stored in my hourly drain task still says to drain and push the page-view vault with the token in your environment, which Dinis's rule forbids. Since 00:07 I only count at run time, but the stored text says otherwise. Paste the count-only text from schedules.md#paste yourself, or say 'change your drain task' and I change my own task (my own session's task, WS-129). The other stored prompts wait for your schedules decision (Actions 3 and 4, overdue since 07:00).",
+      "options": [
+        "change your drain task",
+        "I paste it myself"
+      ],
+      "recommend": "Change your drain task: one word from you, and the stored prompt matches what I do; you paste the rest when you decide the schedules."
+    },
+    {
+      "id": "2",
+      "ask": "🔁 Decide: the accountant's advice, five agents to Sonnet, one at a time",
+      "detail": "From the ledgers only (27 lines, 9 agents, each before its review): dashboard 3.0M tokens a wake (312K without cache reads), passed 5 of 5; watcher 5.5M (368K), 3 of 3; dev 6.6M (577K), 2 of 2; automation 3.6M (216K), 2 of 2; crm 4.1M (129K), 6 of 6. Cache reads are about 90 to 97% of their tokens and cost the same on both models ($0.20 per million); Sonnet 5.5 halves the rest ($2 / $10 per million against Opus 5.5's $4 / $20), so a routine wake costs roughly a third less. Opus stays for the conductor (Dinis), the helper (your word), the designer and vault. You change the model in each agent's session; the accountant changes nothing.",
+      "options": [
+        "yes, one at a time, the dashboard first",
+        "not now"
+      ],
+      "recommend": "Yes, the dashboard first: the most routine work and five passes out of five; the accountant watches its next three wakes before the next agent moves."
+    },
+    {
+      "id": "3",
+      "ask": "📋 Decide: a pre-read by dev of Angelo's five drafts for your review",
+      "detail": "dev@web-summit.angelo has sent five drafts 'for Jose's review': WS-36 (a conductor of conductors), WS-45 (people's keys on /keys/), WS-76 (video hosting options), WS-78 (a kicker line and a colour-debt check) and WS-106 item 8 (a leak tripwire in release.sh). About 10 minutes each. Under the one door I can give dev a task: one line each in its Report (what it changes, whose file, what you should check, a recommendation). The review stays yours; nothing is applied.",
+      "options": [
+        "yes, dev pre-reads all five today",
+        "I review them myself",
+        "later"
+      ],
+      "recommend": "Yes: dev runs at 09:30, and its pre-read turns 50 minutes of reading into 10."
+    }
+  ],
+  "you_asked": [
+    {
+      "at": "5 Nov, about 17:10",
+      "said": "did c19 was pushed",
+      "done": "Yes: live in v0.2.586",
+      "where": "v0.2.586",
+      "status": "answered"
+    },
+    {
+      "at": "5 Nov, about 17:55",
+      "said": "let me know when concluded",
+      "done": "The review concluded, brief 10 went out with its fixes, and the gate fix unblocked the team",
+      "where": "v0.2.632",
+      "status": "done"
+    },
+    {
+      "at": "5 Nov, about 22:20",
+      "said": "what were Dinis instructions to the crm?",
+      "done": "Nine instructions, in his words as his agents recorded them (WS-170 to WS-176); WS-175, the channels area, is yours",
+      "where": "this conversation; board/WS-170, WS-175",
+      "status": "answered"
+    },
+    {
+      "at": "5 Nov, about 22:30",
+      "said": "yes. he said to put on my agenda, correct? crm@web-summit.jose",
+      "done": "Not on a stand-up agenda: Dinis asked his conductor to ask yours. crm@web-summit.jose set up (its prompt in the kit, WS-175 its first task)",
+      "where": "v0.2.677",
+      "status": "done"
+    },
+    {
+      "at": "5 Nov, about 23:00",
+      "said": "is the crm crm@web-summit.jose ready to go live? if so, what's the prompt? what do dinis uses?",
+      "done": "The prompt given; Dinis's CRM agent uses his conductor's ready prompt with two first jobs",
+      "where": "people/jose/kit/README.md",
+      "status": "answered"
+    },
+    {
+      "at": "6 Nov, about 00:20",
+      "said": "Read crm@web-summit.jose's commit of 6 November 00:14 and seal the private CRM's key to crm-jose with admin/tools/seal.mjs --to crm-jose.",
+      "done": "Sealed after seal.mjs --check passed (pushed by your roster account); its three questions answered",
+      "where": "v0.2.696",
+      "status": "done"
+    },
+    {
+      "at": "6 Nov, about 00:50",
+      "said": "respond to him",
+      "done": "Your CRM agent's 00:48 Report answered in its task file",
+      "where": "v0.2.702",
+      "status": "done"
+    },
+    {
+      "at": "6 Nov, about 00:55",
+      "said": "Put a list in people/jose/schedules.md, next to the schedules proposal: for each scheduled agent, its current kit wake text, ready to paste, plus one line on what changed. (C24, five items)",
+      "done": "All five: the paste list in schedules.md, the Actions item, crm-jose's token asked of Dinis, the helper on Opus, the helper's task file",
+      "where": "v0.2.702",
+      "status": "done"
+    },
+    {
+      "at": "6 Nov, about 01:20",
+      "said": "3. what do you recommend?",
+      "done": "A line on WS-175 for the tool's owner, rather than a new issue; on your Actions list as a yes or no",
+      "where": "this conversation",
+      "status": "waiting for you"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Overnight",
+      "items": [
+        "Your CRM agent: its key at 23:17 (pushed by your account); the private CRM's key sealed to it at 00:22 with seal.mjs, the pusher checked; 11 channels (10 at 00:48, then PromptUGAL's LinkedIn at your 00:59 answer) and 6 drafted posts in the private CRM, saved locally until its own token. You answered its five questions and its follow-up in its session (RiskMandate has its own LinkedIn page); on the fifth, who owns the email outreach, you were not sure, so it stays open.",
+        "Page views: from 00:07 my hourly runs only count, under Dinis's rule that no agent pushes a vault with a person's token. My drains from 19:07 to 23:07 pushed with your token after that rule: my mistake, stopped. 115 views wait in lane 1, which holds 1,000.",
+        "Tokens: crm-jose's asked of Dinis on WS-170 at 01:04, at your word. No answer yet; Angelo's request for his three agents is unanswered too.",
+        "Corrections to brief 10: its ask 2(c) offered two ways to drain an inbox lane that Dinis's rule no longer allows; the schedule numbers are about 113M tokens a day now and 172M to 207M proposed (1.5 to 1.8 times), with the watcher's fourth run and measured costs."
+      ]
+    },
+    {
+      "title": "Yesterday's 18:00 stand-up, for your debrief",
+      "items": [
+        "From its transcript in your folder, read for your debrief only: no decision or follow-up of yours is on it. Nothing else from it goes into the repository (your rule).",
+        "The connector saved a copy of the transcript in my session; I deleted it at once, and the kit now says to. The meeting's record is team-collaboration@web-summit.angelo's and is not written yet."
+      ]
+    },
+    {
+      "title": "Today",
+      "items": [
+        "Stand-ups at 12:00 and 18:00 UTC. Your three items are still open and carry over by the stand-up rule (data/meetings/schedule.json): your 15 site and UI issues (Angelo's dev agent has five, video@web-summit.silvio one; nine have nobody, two of them due today, WS-43 and WS-81), your navy wish, and the transcripts item.",
+        "WS-163, your photo on the site: keep or remove, due today.",
+        "WS-157, a real notification for urgent work, with Angelo: nobody has it, due Saturday.",
+        "Task Reports due: the helper's Gmail drafts (08:50), dev's one-door test (09:30), vault's three tasks (11:40). The dashboard reported at 07:31."
+      ]
+    },
+    {
+      "title": "Your watcher (07:15)",
+      "items": [
+        "A-06, fourth run: the stored prompts, the drain's first (ask 1).",
+        "High, fifth run: three email-address lines on a page by Dinis's conductor, with security. Your agents' ten commits overnight all carry the reviewer's line, and all your scheduled tasks fired on time."
+      ]
+    }
+  ],
+  "next": [
+    "12:20: dev's test Report if it is in, the helper's drafts, and your words from the 12:00 stand-up.",
+    "This evening: the 'today' list for your interview."
+  ],
+  "sources": [
+    "git log origin/dev since 5 November 17:30",
+    "people/jose/tasks/*.md and direct/*.md",
+    "people/jose/watcher/latest.md and actions.json (07:15)",
+    "people/jose/accountant/ledger/*.jsonl (the accountant, 07:30, ledgers only)",
+    "the model reference for prices (Opus 5.5 and Sonnet 5.5)",
+    "your Drive folder 'RiskMandate team meetings transcripts': the 5 November 18:00 transcript, for your debrief only",
+    "board/WS-170, WS-175, WS-163, WS-157; data/meetings/"
+  ]
+}

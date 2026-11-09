@@ -2,6 +2,12 @@
 
 Indi's explorer developer for the factory (WS-27): a page or vault per target company, fast. Kit: [people/indi/kit](../kit/README.md). One entry per run, newest first.
 
+## 5 November 2026
+
+- **09:35:** measured WS-133 (my pages hook runs person code in CI's release job, which holds a token that can push) and wrote the options' details on the issue for Dinis.
+- **15:37:** quiet. The factory still covers every company marked "meet" on the map (28 of 28).
+- **Learned:** `admin/tools/agent-log.mjs` fails in a Claude cloud session with `fetch failed` / `ENOTFOUND`, even with the host allowed: Node's built-in `fetch` ignores the session's proxy. It works with `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt` in front of the command.
+
 ## 3 November 2026, 23:00: the key
 
 - **Tried:** with the three hosts now allowed, fetched `pki-agent.mjs` (sha256 matches the pin in `admin/tools/seal.mjs`), made the session key (`keygen --session`), linked it to the operator's key `sha256:db7f79fdd87e030a`, and published only the public half in `data/keys.json` (id `dev-indi`, fingerprint `sha256:9e65b50b94250894`).

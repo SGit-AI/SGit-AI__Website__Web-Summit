@@ -1,0 +1,4697 @@
+{
+"about": "The side events of Web Summit Lisbon 2026 week (6 to 14 November), for the RiskMandate and PromptUGAL team. Built by outreach@web-summit.silvio from each event's registration page and PromptUGAL's events of the week; starting list: 'Web Summit Lisbon 2026 Side Events' by iProxy (https://iproxy.online/blog/web-summit-2026-side-events/), read on 6 November 2026. Times are Lisbon time. 'worlds' are tagged automatically from each event's words and may be wrong. Long numeric ids in some registration links are stored in base 36 after a '~' (the page decodes them), so the site's gate does not read them as phone numbers.",
+"read_on": "2026-11-06",
+"events": [
+{
+"day": "2026-11-06",
+"name": "Private Wealth and Investment Gathering (invitation only), listed by Algarve Evolution",
+"venue": "Almancil, Algarve (exact place given on sign-up)",
+"metro": "",
+"organiser": "",
+"price": "",
+"approval": null,
+"register": "https://www.algarveevolution.pt/event/private-wealth-investment-gathering-180/register",
+"promptugal": "https://promptugal.news/events/private-wealth-and-investment-gathering/index.html",
+"worlds": [
+"Turismo e Algarve",
+"Convite ou aprovação"
+],
+"time": "15:00-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-06",
+"name": "TMCT'26, Tourism Management and Computing Technologies International Conference: in-person days 5 to 7 November (online days were 2 and 3 November)",
+"venue": "Hotel Pestana Alvor Praia, Portimão, Algarve",
+"metro": "",
+"organiser": "",
+"price": "",
+"approval": null,
+"register": "https://www.algarveevolution.pt/event/tourism-management-computing-technologies-international-conference-149/register",
+"promptugal": "https://promptugal.news/events/tmct-26-tourism-management-and-computing/index.html",
+"worlds": [
+"Turismo e Algarve"
+],
+"time": "",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-06",
+"name": "Portugal Tech Week 2026 begins (6 to 15 November): a decentralised festival of tech and innovation events across Portugal",
+"venue": "Nationwide, including Lisbon",
+"metro": "",
+"organiser": "",
+"price": "",
+"approval": null,
+"register": "https://portugaltechweek.com/",
+"promptugal": "https://promptugal.news/events/portugal-tech-week-2026-begins/index.html",
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-07",
+"name": "DevFest Lagos 2026 (Google Developer Group Lagos)",
+"venue": "Lagos, Algarve",
+"metro": "",
+"organiser": "",
+"price": "",
+"approval": null,
+"register": "https://www.algarveevolution.pt/event/gdg-lagos-182/register",
+"promptugal": "https://promptugal.news/events/devfest-lagos-2026/index.html",
+"worlds": [
+"Turismo e Algarve"
+],
+"time": "08:30-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-07",
+"name": "The 2027 AI Playbook: What VCs, Enterprises & Creators Are Betting On",
+"venue": "Golden Dragon - Finest Beer House in Lisbon",
+"metro": "Picoas station, Yellow line",
+"organiser": "Slavi Slavev and Stan Slavev",
+"price": "€15",
+"approval": true,
+"register": "https://luma.com/cicixstd",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Investidores",
+"Criadores e media",
+"Convite ou aprovação"
+],
+"time": "10:45-15:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-07",
+"name": "Startup Websummit Kick-off – 2nd edition",
+"venue": "Estádio da Tapadinha",
+"metro": "",
+"organiser": "Manie",
+"price": "€5+",
+"approval": true,
+"register": "https://luma.com/rbtux91d",
+"promptugal": "https://promptugal.news/events/startup-web-summit-kick-off/index.html",
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "13:00-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-07",
+"name": "The Lisbon Longevity Salon",
+"venue": "TEJÁ HOUSE",
+"metro": "Cais do Sodré station, Green line",
+"organiser": "Xragency",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/m2p8i4y2",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "from 09:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Founders Breakfast Lisbon | Before Web Summit 2026",
+"venue": "Address not announced",
+"metro": "",
+"organiser": "George Petrovsky",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/7smze3ck",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "10:00-12:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Yorkseed Summit",
+"venue": "Address not announced",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "€245+",
+"approval": true,
+"register": "https://luma.com/6msiekjk",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "10:00-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Morning Coffee Rave: Web Summit Edition ☕️🪩",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Sundaze Morning Social",
+"price": "€7.50+",
+"approval": true,
+"register": "https://luma.com/73pnxg99",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve",
+"Convite ou aprovação"
+],
+"time": "11:00-14:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Growth Marketing Hackathon · Lisbon",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Grona",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/36lbxzcp",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "11:00-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "AI in Marketing. Good. Bad. And ugly.",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Volodymyr Rudov-Tsymbalist",
+"price": "€35",
+"approval": true,
+"register": "https://luma.com/5344vb9o",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "13:00-16:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Tech Run Lisbon 2026",
+"venue": "Unicorn Factory Lisboa, Beato",
+"metro": "",
+"organiser": "iOn live",
+"price": "€20",
+"approval": false,
+"register": "https://waitastart.com/tech-run-2026/",
+"promptugal": "https://promptugal.news/events/tech-run-lisboa/index.html",
+"worlds": [],
+"time": "14:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Feral Founders Club Happy Hour – Web Summit Week",
+"venue": "Quiosque do Pipo",
+"metro": "Cais do Sodré station, Green line",
+"organiser": "Feral Founders Club",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/bympx9u3",
+"promptugal": null,
+"worlds": [],
+"time": "15:00-17:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "DIASPORA CALLING Kick off Websummit",
+"venue": "Fábrica Braço de Prata",
+"metro": "Bela Vista station, Red line",
+"organiser": "BLACK COMMUNITY AT WEBSUMMIT 2026",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/be1bfzko",
+"promptugal": null,
+"worlds": [],
+"time": "16:00-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Sunday Sauna: Hot & Cold Session",
+"venue": "Venue shared after registration",
+"metro": "",
+"organiser": "Octo Health",
+"price": "€20",
+"approval": false,
+"register": "https://luma.com/23dv6uxb",
+"promptugal": null,
+"worlds": [],
+"time": "16:30-18:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Side Event: staaake Opening AI/Tech – Power Walk",
+"venue": "Black Labely",
+"metro": "Oriente station, Red line",
+"organiser": "staaake",
+"price": "Free+",
+"approval": false,
+"register": "https://luma.com/staaake-0qh8",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "17:00-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Startup Crash Test: AI & Regulated Industries",
+"venue": "Venue shared after registration",
+"metro": "",
+"organiser": "Ironlane ai",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/xbo1iedf",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "17:00-20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "4th Annual staaake Jump Off Rooftop AI/Tech Event – Reverse Network Meet",
+"venue": "IDB Rooftop by Mīrārī",
+"metro": "Moscavide station, Red line",
+"organiser": "staaake",
+"price": "Free+",
+"approval": false,
+"register": "https://luma.com/staaake-faz5",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "18:00-20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "ProofPoint WebSummit by HackenProof – 1001 Scam Nights",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "HackenProof",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/z0sbnfpg",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "18:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Web Summit – Networking Event @ Delirium Café",
+"venue": "Delirium Café",
+"metro": "Baixa-Chiado station, Blue line, Green line",
+"organiser": "WeRoad",
+"price": "Free",
+"approval": false,
+"register": "https://www.eventbrite.co.uk/e/web-summit-networking-event-delirium-cafe-tickets-~pk58bs29",
+"promptugal": null,
+"worlds": [],
+"time": "18:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Here comes the Question! – Quiz Night with Alexander Drouz",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "YR! Events",
+"price": "€140",
+"approval": true,
+"register": "https://luma.com/8xrdlzm6",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "18:00-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "WEB SUMMIT WEEK WELCOME MEETUP – LISBON KICKOFF",
+"venue": "Spot Lisboa",
+"metro": "Baixa-Chiado station, Blue line, Green line",
+"organiser": "EXPATS LISBON CONNECTION",
+"price": "Free",
+"approval": false,
+"register": "https://www.meetup.com/expats-locals-meet-up-for-making-new-friends-in-lisbon/events/316454488/",
+"promptugal": null,
+"worlds": [],
+"time": "19:00-23:55",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "The Real Deal Table – Investor Dinner hosted by Djassi Ventures",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Djassi Ventures",
+"price": "£40",
+"approval": true,
+"register": "https://luma.com/n527p78y",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:30-22:00",
+"status": "closed",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Indvstry's Powerhouse welcome Mixer",
+"venue": "Venue shared after registration",
+"metro": "",
+"organiser": "Indvstry Clvb",
+"price": "€10+",
+"approval": false,
+"register": "https://luma.com/ieagzoke",
+"promptugal": null,
+"worlds": [
+"Investidores"
+],
+"time": "19:30-23:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Female Tech Builders & Women in Tech – Welcome Dinner (1 drink included 🥂)",
+"venue": "Address not announced",
+"metro": "",
+"organiser": "Female Tech Builders",
+"price": "€10+",
+"approval": false,
+"register": "https://luma.com/poylvrge",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve"
+],
+"time": "20:00-22:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Yorkseed Lisbon Delegation 2026",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/vmqjiq9m",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "from 09:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Women Leaders Delegation @ Web Summit Lisbon",
+"venue": "MEO Arena",
+"metro": "Oriente station, Red line",
+"organiser": "net4tec | 4 WoMen Careers in Technology",
+"price": "€450+",
+"approval": false,
+"register": "https://www.eventbrite.ie/e/women-leaders-delegation-web-summit-lisbon-tickets-~pjnitlim",
+"promptugal": null,
+"worlds": [],
+"time": "from 18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-08",
+"name": "Yorkseed Web Summit Pre-Game 🥂",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/websummitlisbonpregame",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "from 21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Startups & Scaleups Embassy Forum",
+"venue": "Avenida dos Combatentes",
+"metro": "Praça de Espanha station, Blue line",
+"organiser": "Association for Competitive Technology (ACT)",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/actonline-8vfb",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "09:30-11:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Get 2 Know Lisbon Before the Tech Conference in 1h – Power Walk",
+"venue": "Farmácia Mouraria",
+"metro": "Martim Moniz station, Green line",
+"organiser": "staaake",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/staaake-6236",
+"promptugal": null,
+"worlds": [],
+"time": "10:00-11:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Build Your Second Brain with Claude",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/sknzoqn5",
+"promptugal": "https://promptugal.news/events/build-your-second-brain-with-claude/index.html",
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "10:00-11:30",
+"status": "sold-out",
+"pick": true
+},
+{
+"day": "2026-11-09",
+"name": "Creator Economy Breakfast by Enchant",
+"venue": "Alameda dos Oceanos 43D",
+"metro": "Oriente station, Red line",
+"organiser": "Enchant Startup accelerator",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/ua56dpt3",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Investidores",
+"Criadores e media",
+"Convite ou aprovação"
+],
+"time": "10:00-11:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Start Global: A Morning of Technology, Capital and New Opportunities",
+"venue": "DLA Piper ABBC",
+"metro": "Baixa-Chiado station, Blue line, Green line",
+"organiser": "BeeGlobal",
+"price": "€8+",
+"approval": false,
+"register": "https://luma.com/39l41zrj",
+"promptugal": null,
+"worlds": [
+"Investidores"
+],
+"time": "10:00-14:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Investment Readiness Mini (1 day) Accelerator program",
+"venue": "Martinhal Lisbon Oriente",
+"metro": "Oriente station, Red line",
+"organiser": "Canopy",
+"price": "€100+",
+"approval": true,
+"register": "https://luma.com/canopy-4vtq",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "10:00-16:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Tesla Venture Studio *Soonicorn Showcase 2026*",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Tesla Venture Studio",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/eeka2x14",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "10:00-17:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Lisbon Beyond Summit 2026",
+"venue": "MYRIAD CRYSTAL CENTER",
+"metro": "",
+"organiser": "IAPMEI",
+"price": "",
+"approval": false,
+"register": "https://www.b2match.com/e/lisbon-beyond-summit-2026/components/74881",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Investidores"
+],
+"time": "10:20-12:40",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Web Summit | Notion Morning Power Walk (Monday)",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "non code studio",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/tlnhzeyu",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "10:30-12:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Where Tech Meets ESG Demand. Making the Complex Simple for Every Company",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/g1m7brtw",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Convite ou aprovação"
+],
+"time": "12:00-12:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Investors Only Brunch by Enchant Venture Studio",
+"venue": "Alameda dos Oceanos 43D",
+"metro": "Oriente station, Red line",
+"organiser": "Enchant Startup accelerator",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/ef11evd2",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "12:00-13:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Yorkseed Executive Lunch",
+"venue": "Venue shared after registration",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "€79+",
+"approval": false,
+"register": "https://luma.com/ryyphlgu",
+"promptugal": null,
+"worlds": [
+"Investidores"
+],
+"time": "12:00-14:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Taste Of Leadership: Women Networking Lunch (Websummit Community Partner)",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Women Leaders Circle",
+"price": "€67+",
+"approval": true,
+"register": "https://luma.com/z17619u8",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "12:00-15:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Workshop: Build your first app, with zero code.",
+"venue": "The Clubhouse | Founder's Cowork Community",
+"metro": "Terreiro do Paço station, Blue line",
+"organiser": "Trisha Lim",
+"price": "€57",
+"approval": true,
+"register": "https://luma.com/ew0pk2iv",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "13:00-15:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Meet & Greet + Subway Ride to AI/Tech Conf Opening – Reverse Network Meet",
+"venue": "Praça do Comércio",
+"metro": "Terreiro do Paço station, Blue line",
+"organiser": "staaake",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/staaake-pru6",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "14:00-15:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Padel Mixer: Opening Rally",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Octo Health",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/od3pmo63",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "14:00-17:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Startup Guide Summit",
+"venue": "Casa do Impacto",
+"metro": "Restauradores station, Blue line",
+"organiser": "Startup Guide",
+"price": "€15+",
+"approval": false,
+"register": "https://luma.com/otenqnxf",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "14:00-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "COREangels Day Lisbon 2026 + Awards, Dinner & Boat Party",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "COREangels",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/2msw1omn",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "14:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "AI Adoption in 2026: What Worked, What Didn't (Design Studio POV",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/2g1wb256",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "14:30-15:30",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Innovation Edge: Unlocking Cross-Border Capital, Incubation, and Scale 🇵🇹🇺🇸",
+"venue": "U.S. Embassy Lisbon, Av. dos Combatentes entrance",
+"metro": "",
+"organiser": "Innovate Bay",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/ibe-lisbon",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "14:30-17:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Venture Studios: Below the Surface | STUDIOS.PT Web Summit Side Event",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "STUDIOS.PT",
+"price": "€50",
+"approval": true,
+"register": "https://luma.com/studios-h0nq",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "15:00-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Marketers Who AI: A Live Build, Tailored to You",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Algomarketing",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/6c1oqo3s",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "16:00-17:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Principal and Emerging Manager Mastermind Meetup",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "The VC Coach and PitchMeFirst",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/uzescd5y",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "16:00-17:30",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Walkabout Lisbon Web Summit Special #3",
+"venue": "Praça da Figueira",
+"metro": "",
+"organiser": "Walkabout Lisbon",
+"price": "Free",
+"approval": false,
+"register": "https://www.meetup.com/walkaboutlisbon/events/317101631/",
+"promptugal": null,
+"worlds": [],
+"time": "16:00-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Ovee – The overview effect for events",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/9xc5m99h",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "16:30-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "AI Leaders in Tech Night // Lisbon",
+"venue": "Devoteam Portugal",
+"metro": "Oriente station, Red line",
+"organiser": "Builders",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/ai-leaders-in-tech",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "17:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "FOUNDERS @ WebSummit",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "FOUNDERS",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/ie4jh0pf",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "17:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "App Growth Night during WebSummit, Lisbon",
+"venue": "Unicorn Factory Lisboa, Beato",
+"metro": "Bela Vista station, Red line",
+"organiser": "Mobile marketing events by web2wave",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/whn3hxlk",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "17:00-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Entering a new market: what to establish before scaling sales",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Maximilian Gödecke",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/8zfo6k4o",
+"promptugal": null,
+"worlds": [],
+"time": "18:00-18:45",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Lisbon Digital Party",
+"venue": "Casica - Italian Trattoria",
+"metro": "Oriente station, Red line",
+"organiser": "Fermatix AI",
+"price": "€50+",
+"approval": false,
+"register": "https://luma.com/dh7rdy4s",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "18:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Pitch&Drink with P2S.vc in Lisbon",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Pre-seed to Succeed",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/k1ftimq0",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "18:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Vapi × Deepgram: Web Summit Mixer",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Vapi",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/vapi-t98x",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "18:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "International Pitch Night",
+"venue": "Unicorn Factory Lisboa, Beato",
+"metro": "Santa Apolónia station, Blue line",
+"organiser": "Unicorn Factory Lisboa",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/ijusz0ve",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "18:00-23:00",
+"status": "closed",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "AI in the Palace",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "CryptoMondays Lisbon × RE:WORLD",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/ksw5fd00",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Investidores"
+],
+"time": "19:00-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Good Company, New Media – a Dinner hosted by beehiiv x Sounds Profitable",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "beehiiv × Sounds Profitable",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/ndt2zymg",
+"promptugal": null,
+"worlds": [
+"Criadores e media",
+"Convite ou aprovação"
+],
+"time": "19:00-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Dealflow.eu Networking Cocktail | Invite-Only",
+"venue": "Cuatrecasas",
+"metro": "Marquês de Pombal station, Blue line, Yellow line",
+"organiser": "Dealflow.eu",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/zqngp9lg",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:00-21:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "OPUS Founders' Table – Web Summit Edition",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "OPUS Events",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/at5dljb4",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "19:00-21:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Build AI Agents with Dust: Hands-on Workshop in Lisbon",
+"venue": "Kube Coworking | Lisboa",
+"metro": "Alvalade station, Green line",
+"organiser": "Wesype with Dust",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/ewocbirk",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "19:30-21:30",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Founders' House w/ Shilling x Unicorn Factory Lisboa x Actyus x Plus Partners",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Shilling VC",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/d21vqf6g",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:30-22:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Full Circle Live – Creating in the Age of AI: What Still Needs to Be Human?",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Full Circle Podcast",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/olnw4scl",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes",
+"Criadores e media"
+],
+"time": "20:00-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Danish Meet&Greet Websummit 2026",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Pernille Korzon",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/0l7njtv8",
+"promptugal": null,
+"worlds": [
+"Criadores e media",
+"Convite ou aprovação"
+],
+"time": "20:00-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Founders Drinks at the WebSummit",
+"venue": "Alfama",
+"metro": "Martim Moniz station, Green line",
+"organiser": "Georgina Smith",
+"price": "€19.50",
+"approval": false,
+"register": "https://luma.com/r2pzy2pc",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve"
+],
+"time": "20:30-22:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Female Founders Sushi Night – Websummit",
+"venue": "MIYAZAKI LISBOA",
+"metro": "Saldanha station, Yellow line, Red line",
+"organiser": "Female Founders Breakfast – Europe",
+"price": "€55+",
+"approval": true,
+"register": "https://luma.com/female-2kac",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "20:30-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "staaake Side Event: Monday Opening Night Tech/AI staaake Dinner Club",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "staaake",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/ds4mzkpm",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "21:00-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Cooler Cities, Better Walks: Designing Lisbon for Heat-Resilient Mobility",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/21lorwny",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "21:30-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Wellness × Tech Portugal: Lisbon Tech Week",
+"venue": "Hub Criativo do Beato",
+"metro": "",
+"organiser": "Wellness × Tech Portugal",
+"price": "Free",
+"approval": true,
+"register": "https://wellnessand.world/register",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve",
+"Portugal e Brasil",
+"Convite ou aprovação"
+],
+"time": "9 Nov-13 Nov",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Beato Innovation District Tour | WebSummit Lisboa",
+"venue": "Unicorn Factory Lisboa, Beato",
+"metro": "Santa Apolónia station, Blue line",
+"organiser": "Unicorn Factory Lisboa",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/2rkcd9uz",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "from 09:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "R-Founders Breakfasts (R-Founders Week Web Summit '26)",
+"venue": "Lisbon (venue announced to registered guests)",
+"metro": "",
+"organiser": "R-Founders Global",
+"price": "€310+",
+"approval": true,
+"register": "https://r-founders.com/websummit-party",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "from 10:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Yorkseed House: Web Summit Lisbon",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "€20+",
+"approval": true,
+"register": "https://luma.com/a2jp6jc9",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "from 10:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Family Offices Investors Summit 🥂🕯Michelin‑Dinner · Trading Live📍Lisbon📍Nov 9-12 #WEbSummit 🇵🇹",
+"venue": "Address not announced",
+"metro": "",
+"organiser": "FamilyOfficesInvestors",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/FOIS_WEBSUMMIT26",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "from 15:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "FOUNDERS NIGHT #8 | best networking side event at Web Summit 2026 Lisbon",
+"venue": "Cavo Rooftop, Lisbon Cruise Terminal",
+"metro": "",
+"organiser": "Startup Founders",
+"price": "€32+",
+"approval": false,
+"register": "https://www.eventbrite.com/e/founders-night-8-pitch-your-startup-on-web-summit26-best-side-event-tickets-~pjsniwg0",
+"promptugal": null,
+"worlds": [
+"Investidores"
+],
+"time": "from 18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Startalyst – The Biggest Startup Dinner & 60sec Elevator Pitch of Web Summit Week!",
+"venue": "Kais Restaurant & Events",
+"metro": "Cais do Sodré station, Green line",
+"organiser": "Dejan Milosevic",
+"price": "€85+",
+"approval": false,
+"register": "https://luma.com/7lzef16b",
+"promptugal": null,
+"worlds": [
+"Investidores"
+],
+"time": "from 19:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Borderless Paydone night powered by WeExpert",
+"venue": "Papoila Bar",
+"metro": "",
+"organiser": "Borderless Night by PayDone",
+"price": "Free",
+"approval": false,
+"register": "https://www.meetup.com/borderless-night-by-paydone/events/316850563/",
+"promptugal": null,
+"worlds": [
+"Investidores"
+],
+"time": "from 19:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "The First Conversation · Web Summit Kickoff",
+"venue": "The Midnight Espresso | Chiado",
+"metro": "Cais do Sodré station, Green line",
+"organiser": "Kamille Cristaldo",
+"price": "€12",
+"approval": true,
+"register": "https://luma.com/eshxethz",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "from 20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "The Yorkseed Soirée – Web Summit Kick Off Party 2026",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "€15+",
+"approval": true,
+"register": "https://luma.com/44qkfxdu",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "from 20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-09",
+"name": "Portugal Tech Week Palace (until 13 November)",
+"venue": "PTW Palace, Rua Gomes Freire 98, Lisbon",
+"metro": "",
+"organiser": "",
+"price": "",
+"approval": null,
+"register": "https://portugaltechweek.com/events/portugal-tech-week-palace-09-13-november/",
+"promptugal": "https://promptugal.news/events/portugal-tech-week-palace/index.html",
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-10",
+"name": "Web Summit x Tech Talks Run Club & Coffee",
+"venue": "Equestrian Statue of King José I",
+"metro": "Terreiro do Paço station, Blue line",
+"organiser": "David Savage",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/mpv6bmso",
+"promptugal": null,
+"worlds": [],
+"time": "07:00-08:00",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Wake Up Club: Morning Beats",
+"venue": "Unicorn Factory Lisboa, Beato Innovation District",
+"metro": "",
+"organiser": "Octo Health",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/r4xafhwp",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "07:30-09:15",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Founders 5K @ WebSummit",
+"venue": "Praça do Comércio",
+"metro": "Terreiro do Paço station, Blue line",
+"organiser": "Misha | getkantis.com",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/w82fq7jf",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "08:00-10:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "AI Founders Breakfast",
+"venue": "Alameda dos Oceanos 43D",
+"metro": "Oriente station, Red line",
+"organiser": "Enchant Startup accelerator",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/i1gm8wtu",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "09:00-10:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Travel Tech Breakfast",
+"venue": "Alameda dos Oceanos 43D",
+"metro": "Oriente station, Red line",
+"organiser": "Enchant Startup accelerator",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/aeh4k9rt",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve",
+"IA e agentes",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "09:00-10:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "App Growth Breakfast @ Web Summit Lisbon",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Campaignswell Events",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/shjh7kkx",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "09:00-11:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Creator Breakfast",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Lukas Fiedler",
+"price": "€25",
+"approval": true,
+"register": "https://luma.com/r6d70fvk",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Criadores e media",
+"Convite ou aprovação"
+],
+"time": "09:00-11:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Data Leaders 2026",
+"venue": "Centro Cultural de Belém, Praça do Império",
+"metro": "",
+"organiser": "Selectzero",
+"price": "Free",
+"approval": false,
+"register": "https://www.eventbrite.pt/e/bilhetes-data-leaders-2026-1996443575477",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "09:00-12:00",
+"status": "postponed",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Builder Cafe by MongoDB, HYPE and Outsite @ Web Summit",
+"venue": "Outsite Cowork Café - Lisbon",
+"metro": "Cais do Sodré station, Green line",
+"organiser": "MongoDB",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/buildercafe",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "09:00-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "VNTR Summit Lisbon 2026",
+"venue": "Olissippo Oriente Hotel",
+"metro": "",
+"organiser": "VNTR",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/70o134px",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "09:00-23:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Founders Break-fast at the Websummit",
+"venue": "Alfama",
+"metro": "Martim Moniz station, Green line",
+"organiser": "Georgina Smith",
+"price": "€16.50",
+"approval": false,
+"register": "https://luma.com/8vd4alqn",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve"
+],
+"time": "09:30-11:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "The Human Side of Leadership in the Age of AI",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/tygxr7we",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "10:00-11:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "What got me here won’t get me there: going from expert to strategic mindset",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/je9ro94l",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "10:00-11:00",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Web Summit Edition – International Networking Brunch by Ladies Who Talk",
+"venue": "11:11 cafe Prata",
+"metro": "",
+"organiser": "Ladies Who Talk",
+"price": "€29+",
+"approval": false,
+"register": "https://www.eventbrite.pt/e/web-summit-edition-international-networking-brunch-by-ladies-who-talk-tickets-~pjyzt39f",
+"promptugal": null,
+"worlds": [],
+"time": "10:00-13:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "AI-Powered Customer Discovery: 3× Cheaper, 6× Faster – Without Losing the Human Signal",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/jv1gzi37",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "11:30-12:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Conversational AI in Marketing",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/zdwz12g8",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "11:30-12:30",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Yorkseed Capital Lunch",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "€79+",
+"approval": true,
+"register": "https://luma.com/lj25z4k3",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "12:00-14:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "staaake Side Event: Tuesday Tech/AI Lunch staaake Dinner Club",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "staaake",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/1752fhyz",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "12:30-14:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Zillennium: Creator Economy Session",
+"venue": "MEO Arena",
+"metro": "Oriente station, Red line",
+"organiser": "Indvstry Clvb",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/vwibw2xa",
+"promptugal": null,
+"worlds": [
+"Criadores e media",
+"Convite ou aprovação"
+],
+"time": "14:00-15:00",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "From Basic Technology to AI: How Ordinary People Create Extraordinary Social Impact",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/r9jdpljb",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "14:30-15:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "From Smart Devices to Intelligent Spaces: Designing Human Control",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/1tnfd1lm",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "14:30-15:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Canopy Members Padel Mixer",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Canopy",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/u3zhtvuj",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "15:00-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Yorkseed Cross-Border Venture Salon",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/hox2a889",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "15:00-19:00",
+"status": "closed",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Built in Brazil, Scaled from Lisbon",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Association for Competitive Technology (ACT)",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/actonline-2zkp",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "16:00-17:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "From DNA to AI: The History of an Obsolete Species",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/iobshruu",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "16:00-17:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Show Me Your Workflow: A GTM Stand-Up Show",
+"venue": "Address not announced",
+"metro": "",
+"organiser": "Digitalista.Tech",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/vh2y9e22",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "16:30-19:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Superconnectors Lisbon 2026 @ Web Summit",
+"venue": "PTW Palace",
+"metro": "",
+"organiser": "Superconnectors",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/scs-lisbon-2026",
+"promptugal": "https://promptugal.news/events/superconnectors-lisbon-2026-web-summit/index.html",
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "17:00-19:00",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-10",
+"name": "The New Media Mixer",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "EUVC",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/wxcjr5lo",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Criadores e media",
+"Convite ou aprovação"
+],
+"time": "17:00-19:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "AUSTRIA BUSINESS NIGHT 2026",
+"venue": "Centro Vasco de Gama",
+"metro": "",
+"organiser": "",
+"price": "",
+"approval": null,
+"register": "https://websummit.com/sessions/lis26/48bef612-6641-495b-a025-d4a684f40d3e/austria-business-night-2026/",
+"promptugal": "https://promptugal.news/events/austria-business-night-2026/index.html",
+"worlds": [],
+"time": "17:00-19:00",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-10",
+"name": "Magusto Tech +",
+"venue": "Quidgest - Consultores de Gestão, SA",
+"metro": "Picoas station, Yellow line",
+"organiser": "Quidgest",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/cs3guwjk",
+"promptugal": null,
+"worlds": [],
+"time": "17:00-20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "UniVerse 2026 – Entrepreneurial Academy: Where Innovation is Born",
+"venue": "Centro de Congressos ULisboa",
+"metro": "",
+"organiser": "",
+"price": "",
+"approval": null,
+"register": "https://websummit.com/sessions/lis26/08efc892-75d2-4a34-b99b-4a01ee16addc/universe-2026-entrepreneurial-academy-where-innovation-is-born/",
+"promptugal": "https://promptugal.news/events/universe-2026-entrepreneurial-academy-where-innovation-is/index.html",
+"worlds": [],
+"time": "17:00-20:00",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-10",
+"name": "AI House @ Web Summit Lisbon",
+"venue": "Lisbon, Portugal • venue TBA",
+"metro": "",
+"organiser": "Modev",
+"price": "Free",
+"approval": true,
+"register": "https://www.modev.com/ai-house-tour/web-summit-lisbon",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "17:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "The Future of Leadership in the Age of AI",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Lisbon Business Leaders",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/6g9yx89x",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "17:30-18:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Diaspora Leaders: A Global InnovationMeetup",
+"venue": "Soul kitchen & bar",
+"metro": "",
+"organiser": "",
+"price": "",
+"approval": null,
+"register": "https://websummit.com/sessions/lis26/dca33d36-be95-4d76-b84e-538b85e4ac0d/diaspora-leaders-a-global-innovationmeetup/",
+"promptugal": "https://promptugal.news/events/diaspora-leaders-a-global-innovationmeetup/index.html",
+"worlds": [],
+"time": "17:30-19:00",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-10",
+"name": "Web Summit Side Event | Building a Tech Hub | Aubay Portugal + IBM",
+"venue": "Companhia Ibm Portuguesa, S.A.",
+"metro": "Oriente station, Red line",
+"organiser": "Aubay Portugal",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/t0zlkfex",
+"promptugal": "https://promptugal.news/events/building-a-tech-hub-side-event-happy-hour-aubay-portugal-ibm/index.html",
+"worlds": [
+"Portugal e Brasil",
+"Convite ou aprovação"
+],
+"time": "17:30-20:00",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-10",
+"name": "Coimbra Supernova: How Any Business Can Profit from the Space Economy",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "GO Coimbra",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/scr30pp1",
+"promptugal": "https://promptugal.news/events/coimbra-supernova-how-any-business-can-profit-from-the/index.html",
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "17:30-20:30",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-10",
+"name": "German-Brazilian Startup Night",
+"venue": "Gale patio",
+"metro": "",
+"organiser": "",
+"price": "",
+"approval": null,
+"register": "https://websummit.com/sessions/lis26/8614a78e-c6b7-4c95-8f7b-a52a4cc38885/german-brazilian-startup-night/",
+"promptugal": "https://promptugal.news/events/german-brazilian-startup-night/index.html",
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "17:30-22:30",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-10",
+"name": "Angels Meetup | WebSummit Edition – 10th November 2026",
+"venue": "PTW Palace",
+"metro": "",
+"organiser": "Investors Portugal",
+"price": "Free",
+"approval": false,
+"register": "https://www.eventbrite.pt/e/angels-meetup-websummit-edition-10th-november-2026-tickets-~pkiw4p5j",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Investidores"
+],
+"time": "18:00-20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Across the Atlantic: RedBridge x THV Web Summit Night with Globalfy 🌉",
+"venue": "Venue shared after registration",
+"metro": "",
+"organiser": "RedBridge Lisbon",
+"price": "€12+",
+"approval": true,
+"register": "https://luma.com/1x92lkjk",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "18:00-21:30",
+"status": "closed",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Founders Fire @ Web Summit: AI Visibility Talks",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Founders Fire Events",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/mfkii7ss",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "18:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "TOP AI & DEEP TECH STARTUP Pitch Competition at Web Summit",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Sobremesa Agency",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/5e8xyngj",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "18:00-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Connect Lisboa – Mayor's Official Reception",
+"venue": "Câmara Municipal de Lisboa",
+"metro": "",
+"organiser": "CML | Direção Municipal de Economia e Inovação",
+"price": "Free",
+"approval": false,
+"register": "https://www.eventbrite.pt/e/connect-lisboa-mayors-official-reception-tickets-~pk8bza5s",
+"promptugal": null,
+"worlds": [],
+"time": "18:30-20:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Barcelona Catalonia Networking Cocktail 2026",
+"venue": "Fintech House Lisboa, Av. Duque de Loulé 12",
+"metro": "",
+"organiser": "ACCIÓ – Catalonia Trade and Investment",
+"price": "Free",
+"approval": true,
+"register": "https://marketaccess-global.com/en/barcelona-catalonia-networking-cocktail-2026",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "18:30-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Psychedelics for Entrepreneurial Resilience",
+"venue": "Impact Hub Lisbon, Penha",
+"metro": "",
+"organiser": "OR",
+"price": "€15",
+"approval": false,
+"register": "https://www.eventbrite.pt/e/psychedelics-for-entrepreneurial-resilience-tickets-~pkawst5g",
+"promptugal": null,
+"worlds": [],
+"time": "18:30-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "The Green Match",
+"venue": "Lisbon, Portugal • venue TBC",
+"metro": "",
+"organiser": "Unicorn Factory Lisboa",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/ivpnhbap",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "18:30-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Off The Grid_",
+"venue": "Avila Spaces (exact room to approved guests)",
+"metro": "",
+"organiser": "CyberX and Nucleon Security",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/f5sw6rrz",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Convite ou aprovação"
+],
+"time": "18:30-21:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Web Summit Dinner",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Association for Competitive Technology (ACT)",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/actonline-olia",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "18:30-21:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Get Together Lisboa",
+"venue": "Black Sheep Lisboa",
+"metro": "Rato station, Yellow line",
+"organiser": "Drummond Advisors",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/fnq6dvmh",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Convite ou aprovação"
+],
+"time": "18:30-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Scaling Businesses With AI | Growth, Fundraising & Hands-On Workshop | Shaping the AI Era",
+"venue": "Second Home Mercado",
+"metro": "Cais do Sodré station, Green line",
+"organiser": "GrowthGirls",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/4k35kza3",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "18:30-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "BeGlobe American Venture Party",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "BeGlobe PR Agency",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/americanpartybeglobe",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Criadores e media",
+"Convite ou aprovação"
+],
+"time": "18:30-23:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Challenger Safety: The Missing Link in AI Adoption",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/ukh46qdq",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "19:00-20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Beyond the Booth: Event marketing that actually converts",
+"venue": "Address not announced",
+"metro": "",
+"organiser": "Jos",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/pjelrd6t",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "19:00-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Black Capital Exchange | Exploring capital, customers, expertise and opportunities in diverse markets",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "MELLA SUPPLY",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/wv8nwa1p",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:00-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "WebSummit Dinner 2026 with Atempo Growth, Foundation Ventures, Shilling VC & Love Ventures",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Love Ventures",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/hvo7vji4",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:00-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "AI in Ecommerce Lisbon (Web Summit Week)",
+"venue": "Heden Workspaces",
+"metro": "Santa Apolónia station, Blue line",
+"organiser": "Perspective",
+"price": "€20",
+"approval": false,
+"register": "https://www.eventbrite.ie/e/ai-in-ecommerce-lisbon-web-summit-week-tickets-1994374286177",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "19:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Founder Night Out",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/q2bwacoi",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Future Unicorns Party by Zubr Capital",
+"venue": "Suspenso Lisboa",
+"metro": "",
+"organiser": "Zubr Capital",
+"price": "€35",
+"approval": false,
+"register": "https://fienta.com/future-unicorns-party-by-zubr-capital-2",
+"promptugal": null,
+"worlds": [
+"Investidores"
+],
+"time": "19:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Lisbon x Utrecht Region Dinner",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Berend Casper",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/4mb45x6y",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Pre-IPO Secondaries Cocktail Hours for VCs, LPs, Family Offices and UHNWI",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Seconda Private Markets",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/iecg7wfr",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "VNTR Summit After Party Lisbon",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "VNTR",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/pucha8c8",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:00-23:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "AI, innovation and competitiveness – can Europe lead?",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/portugal-k5is",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:30-20:15",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "AI Content OS VIP Dinner: Costa Coffee lessons",
+"venue": "Rua das Portas de Santo Antão",
+"metro": "",
+"organiser": "",
+"price": "",
+"approval": null,
+"register": "https://websummit.com/sessions/lis26/af0e6d56-55d1-4358-8020-4bb3577e087c/ai-content-os-vip-dinner-costa-coffee-lessons/",
+"promptugal": "https://promptugal.news/events/ai-content-os-vip-dinner-costa-coffee-lessons/index.html",
+"worlds": [
+"IA e agentes",
+"Criadores e media",
+"Convite ou aprovação"
+],
+"time": "19:30-22:00",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-10",
+"name": "AWS After Hours @ PTW Palace",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/portugal-vkh5",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Investidores"
+],
+"time": "20:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Web Summit Dinner – IT Leaders: AI Transformation",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Harriet",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/ak3zq2hg",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "20:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Unofficial Web Summit LGBTQ+ Party",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Raymond Hannes",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/wq3ah62v",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Criadores e media",
+"Convite ou aprovação"
+],
+"time": "20:00-23:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "How AI Tools Change How Women Do Business",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/hygeshkm",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "20:30-21:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Safe Tech Dinner @ the Websummit",
+"venue": "Alfama",
+"metro": "Martim Moniz station, Green line",
+"organiser": "Georgina Smith",
+"price": "€19.50",
+"approval": false,
+"register": "https://luma.com/s8b4bgf8",
+"promptugal": null,
+"worlds": [],
+"time": "20:30-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "English Comedy Showcase – The BEST comedians in Lisbon 🔥 Websummit Special",
+"venue": "Selva Comedy Cafe",
+"metro": "",
+"organiser": "Lisbon Digital Nomads",
+"price": "Free",
+"approval": false,
+"register": "https://www.meetup.com/lisbon-digital-nomads/events/316677822/",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve",
+"Criadores e media"
+],
+"time": "20:30-22:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Coimbra Ecosystem Dinner @ Web Summit 2026",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "GO Coimbra",
+"price": "€23",
+"approval": true,
+"register": "https://luma.com/tnqfx2fa",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "20:30-23:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "GLOBALS On Tour Lisbon 2026: Pitch on the Bus @ Web Summit",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Club GLOBALS",
+"price": "Free+",
+"approval": true,
+"register": "https://events.clubglobals.com/GLOBALSOnTourLisbon2026",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "from 18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Ukrainian Community Networking",
+"venue": "IDB Rooftop by Mīrārī",
+"metro": "",
+"organiser": "SendPulse",
+"price": "Free",
+"approval": false,
+"register": "https://event.sendpulse.com/ukrainian-networking-lisbon",
+"promptugal": "https://promptugal.news/events/ukrainian-community-networking/index.html",
+"worlds": [],
+"time": "from 18:00",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-10",
+"name": "Venture Night@Web Summit Lisbon 2026 – The Ultimate Startup & Investor Experience!",
+"venue": "Rua do Norte 115",
+"metro": "Baixa-Chiado station, Blue line, Green line",
+"organiser": "TechEmbassy",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/VentureNigh_Lisbon",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "from 18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-10",
+"name": "Uncharted Jazzy Summit by F1V, Solidgate, SID Fund, 28digital, Aleph Microsoft Advertising, 500 Global, MongoDB, CircleCI",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Flyer One Ventures",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/7f0xwdil",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "from 19:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Health in Motion: 5K Run",
+"venue": "Terreiro do Paço",
+"metro": "",
+"organiser": "Octo Health",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/60z0xibv",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "07:15-09:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Supernovas Breakfast: Women Founders & Investors",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "EIT Community Supernovas",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/ra0rls8k",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "08:30-10:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Sales Leaders Breakfast · Web Summit 2026",
+"venue": "Lisbon (venue announced to registered guests)",
+"metro": "",
+"organiser": "Nazarii Bihniak",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/l4098oo8",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "09:00-10:15",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Founders Break-fast @the Websummit",
+"venue": "Alfama",
+"metro": "Martim Moniz station, Green line",
+"organiser": "Georgina Smith",
+"price": "€16.50",
+"approval": false,
+"register": "https://luma.com/9nzzd63p",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve"
+],
+"time": "09:30-11:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Human Performance Under Uncertainty: How the Brain Responds When We Don’t Know What Comes Next",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/xn30wgrj",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "10:00-11:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "The Human Side of Artificial Intelligence: Emotional Intelligence and the Future of Work – Portugal Tech Week 2026",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/r1ixujpv",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "10:00-11:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Roast your website, or win a coffee!",
+"venue": "TEJÁ HOUSE",
+"metro": "Cais do Sodré station, Green line",
+"organiser": "Best Web Summit Side Events in Lisbon",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/m146luuy",
+"promptugal": null,
+"worlds": [],
+"time": "10:00-14:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Fake by Default – How to prove what’s real",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Cybertech Acceleration with 351 Portuguese Startup Association",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/w71bd25m",
+"promptugal": "https://promptugal.news/events/fake-by-default/index.html",
+"worlds": [
+"Portugal e Brasil",
+"Criadores e media"
+],
+"time": "11:30-12:30",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-11",
+"name": "The Startup Legal Roast: Top Mistakes That Kill Your Startup",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/e42tit8k",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "11:30-12:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "staaake Side Event: Wednesday Tech/AI Lunch staaake Dinner Club",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "staaake",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/fwtrd98x",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "12:30-14:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "AI Engineers' Lunch · Web Summit week",
+"venue": "Cantinho do Avillez - Parque das Nações",
+"metro": "Oriente station, Red line",
+"organiser": "Palo Alto Ai Research Lab",
+"price": "€20+",
+"approval": true,
+"register": "https://luma.com/85k5kz1g",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "12:30-14:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Yorkseed Allocator Lunch",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "€119+",
+"approval": true,
+"register": "https://luma.com/jmjk0qqh",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "12:30-14:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "London & Beyond: Lisbon",
+"venue": "VIP Executive Art’s Hotel",
+"metro": "Moscavide station, Red line",
+"organiser": "Goodwille Ltd",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/4pugsvqv",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "13:00-15:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Female Club Brunch Lisbon",
+"venue": "Lisbon, Portugal • address after approval",
+"metro": "",
+"organiser": "VNTR",
+"price": "Free",
+"approval": true,
+"register": "https://www.vntr.vc/events/female-club-brunch-lisbon-11-november-2026-1794403800",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "13:30-15:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Capital Allocators Room",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Spark",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/9ye9ypm8",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "14:00-19:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Bridging Capital Across Borders: Investors, Founders & Ecosystems",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "ALBAN Global Network",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/148l175b",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "15:30-17:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "From Portugal to the U.S.: A Founder’s Playbook for International Expansion",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/portugal-6tns",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "16:00-17:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Yorkseed Investor Pitch",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/bmu7tyec",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "16:00-20:00",
+"status": "closed",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Elevon CZ/SK Community Night",
+"venue": "Catamaran on the Tagus (boarding point sent to guests)",
+"metro": "",
+"organiser": "Elevon",
+"price": "Free",
+"approval": true,
+"register": "https://elevon.io/websummit/night",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "17:00-19:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Web Summit Side Event | The Next Move",
+"venue": "Avila Spaces Trabalho",
+"metro": "Oriente station, Red line",
+"organiser": "Aubay Portugal",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/aa65srr3",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Convite ou aprovação"
+],
+"time": "17:00-19:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Lisbon Tech Side Event",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Growth Division",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/f3c6aqvx",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "17:00-19:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Beyond the AppStore: Margins, Retention & the Real Math of Web2App",
+"venue": "Address not announced",
+"metro": "",
+"organiser": "Sobremesa Agency",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/20qjokzl",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "17:00-20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Valois in Lisbon : The Allocator Table",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/k0zamjmi",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "17:00-20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Web Summit Lisbon | Notion Power Walk",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Non Code Studio",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/n5vfp5oz",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "17:00-20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "AI for Business / Applied AI Pitch Party",
+"venue": "Casica - Italian Trattoria",
+"metro": "Oriente station, Red line",
+"organiser": "Enchant Startup accelerator",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/hz3ma5fl",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "17:00-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Like minded | Web Summit",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "like minded",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/yatbt1w6",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "17:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Taste Japan & Make Career Connections Meet Japanese Startups Expanding into Europe!",
+"venue": "Praça Beato",
+"metro": "Bela Vista station, Red line",
+"organiser": "Tokyo Startup Talent 事務局/Office",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/f31mqr0v",
+"promptugal": null,
+"worlds": [],
+"time": "17:25-19:00",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "From Automation to Autonomy: How AI is changing the way we run technology (Cisco showcase)",
+"venue": "PTW Palace, Rua Gomes Freire 98, Lisbon",
+"metro": "",
+"organiser": "",
+"price": "",
+"approval": null,
+"register": "https://portugaltechweek.com/events/from-automation-to-autonomy-how-ai-is-changing-the-way-we-run-technology-2/",
+"promptugal": "https://promptugal.news/events/from-automation-to-autonomy/index.html",
+"worlds": [
+"IA e agentes"
+],
+"time": "17:30-18:30",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-11",
+"name": "Defense Tech Meetup #9: Sovereignty by Design",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Productized",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/whll1umb",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "17:45-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Rize – The Reset 11:11 | A Web Summit Wellness Experience",
+"venue": "Venue shared after registration",
+"metro": "",
+"organiser": "Rize",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/8xh639r3",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve"
+],
+"time": "18:00-20:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "TTI at Web Summit | \"Pushing the AI Frontier Where Innovation & Safety Meet”",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Top Tier Impact",
+"price": "€20",
+"approval": true,
+"register": "https://luma.com/3504dzdm",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "18:00-20:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Latin America After Hours",
+"venue": "Casa Da América Latina - Associação",
+"metro": "",
+"organiser": "Casa da América Latina",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/bemptbqf",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "18:00-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "LisboaUX: Web Summit Edition",
+"venue": "Casa do Impacto",
+"metro": "Restauradores station, Blue line",
+"organiser": "LisboaUX",
+"price": "",
+"approval": false,
+"register": "https://luma.com/yvm04djt",
+"promptugal": null,
+"worlds": [],
+"time": "18:00-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Tech Startups on the Rooftop",
+"venue": "ROOFTOP - TOPO MARTIM MONIZ",
+"metro": "Martim Moniz station, Green line",
+"organiser": "Anna S",
+"price": "Free+",
+"approval": false,
+"register": "https://luma.com/rjh3pf7g",
+"promptugal": null,
+"worlds": [],
+"time": "18:00-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Web Summit – Networking Event @ Delirium Café",
+"venue": "Delirium Café",
+"metro": "Baixa-Chiado station, Blue line, Green line",
+"organiser": "WeRoad",
+"price": "Free",
+"approval": false,
+"register": "https://www.eventbrite.co.uk/e/web-summit-networking-event-delirium-cafe-tickets-~pk58hip6",
+"promptugal": null,
+"worlds": [],
+"time": "18:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "AI Horizon Conference 2026",
+"venue": "Lumen Hotel",
+"metro": "Picoas station, Yellow line",
+"organiser": "Ethics and Integrity International Association (AIEI)",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/p6glepvg",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "18:00-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "DemoNightLx Web Summit Week Edition",
+"venue": "PTW Palace, Rua Gomes Freire 98",
+"metro": "Anjos station, Green line",
+"organiser": "Canopy",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/2ofzih7t",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "18:30-20:30",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Pitch Like You Mean It: Comedy Techniques for Founders",
+"venue": "Cultura Lounge Bar",
+"metro": "Cais do Sodré station, Green line",
+"organiser": "Zinaida Celac",
+"price": "€20+",
+"approval": false,
+"register": "https://luma.com/om7ccch6",
+"promptugal": null,
+"worlds": [
+"Criadores e media"
+],
+"time": "18:30-21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Kick off meeting WebSummit Lisbon",
+"venue": "Javá",
+"metro": "",
+"organiser": "Life With Artificials",
+"price": "Free",
+"approval": false,
+"register": "https://www.meetup.com/life-with-artificials/events/317058510/",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "18:30-21:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Romanian Tech Night at WEBSUMMIT",
+"venue": "Central Lisbon (address after approval)",
+"metro": "",
+"organiser": "Daniel Giurea",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/4vu5ru1h",
+"promptugal": "https://promptugal.news/events/romanian-tech-night-at-web-summit-lisbon-2026/index.html",
+"worlds": [
+"Portugal e Brasil",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "18:30-21:30",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-11",
+"name": "Web Summit Dinner",
+"venue": "Lost In, Rua Dom Pedro V 56 D",
+"metro": "",
+"organiser": "Association for Competitive Technology (ACT)",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/actonline-ya99",
+"promptugal": null,
+"worlds": [],
+"time": "18:30-21:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Funders & Founders Night by AltaIR Capital: The New Shape of Early Stage",
+"venue": "2056 Clubhouse by VNTR · Sintra",
+"metro": "",
+"organiser": "AltaIR Capital",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/h19cccc5",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "18:30-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Tech Art Lisboa – PTW26 Edition",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "MILL Makers In Little Lisbon",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/cxjjr2ko",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "19:00-21:00",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Apify After Hours @ PTW Palace",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/portugal-hod9",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "19:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Private Dinner for 30 defence leaders funding peace through power",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Nazarii Hrechanyk",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/edm55r5w",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "AI Build Sprint: Ship a Business App for Your Ops",
+"venue": "Spaces Oriente",
+"metro": "",
+"organiser": "",
+"price": "",
+"approval": null,
+"register": "https://websummit.com/sessions/lis26/70dbfe60-5408-4d7a-abf6-29c2ef24be48/ai-build-sprint-ship-a-business-app-for-your-ops/",
+"promptugal": "https://promptugal.news/events/ai-build-sprint-ship-a-business-app-for-your-ops/index.html",
+"worlds": [
+"IA e agentes"
+],
+"time": "19:00-22:00",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-11",
+"name": "Indvstry Power House: Diaspora Dinner Lisbon",
+"venue": "Venue shared after registration",
+"metro": "",
+"organiser": "Indvstry Clvb",
+"price": "€150+",
+"approval": false,
+"register": "https://luma.com/1hj85rcr",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "19:00-22:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "The Founder Effect: What You Choose to Build Once You've Already Won",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Oleg Mosyazh",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/wrz9dilz",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "19:00-22:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Foundacious Lisbon",
+"venue": "Palácio de Tancos",
+"metro": "Rossio station, Green line",
+"organiser": "beel and Germany Trade and Invest",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/lapwcmfu",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:00-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "IndieSummit // Lisboa Meetup: Entrepreneur Social (powered by Ramen Club)",
+"venue": "Musa da Bica",
+"metro": "",
+"organiser": "IndieBeers Lisboa 🇵🇹",
+"price": "Free",
+"approval": false,
+"register": "https://www.meetup.com/indiebeers-lisboa/events/317024539/",
+"promptugal": null,
+"worlds": [],
+"time": "19:00-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Venture Dinner",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "MA Family",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/0bx40d1c",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:00-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Market Expansion Dinner",
+"venue": "Cantinho do Avillez - Parque das Nações",
+"metro": "Oriente station, Red line",
+"organiser": "Gecko",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/6l83ko1d",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "19:30-23:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Fitness & Sports: Investor Meetup",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Filippo Chisari",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/hf6h4k22",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve",
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "20:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "FUTURE-TECH 2026",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/25z2ph1o",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "20:30-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Karumi AI Lands in Lisbon",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Karumi AI",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/bsjzwei2",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "21:00-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Yorkseed Founder Problem-Solving Lab",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/i3k6r9vm",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "from 10:00",
+"status": "closed",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Work in Finland Web Summit Side Event",
+"venue": "Hotel Olissippo Oriente",
+"metro": "",
+"organiser": "Business Finland (Work in Finland)",
+"price": "",
+"approval": false,
+"register": "https://www.workinfinland.com/en/events/web-summit-lisbon-2026/",
+"promptugal": "https://promptugal.news/events/work-in-finland-side-event/index.html",
+"worlds": [],
+"time": "from 17:30",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-11",
+"name": "Upside Club • Poker Night #2",
+"venue": "Address not announced",
+"metro": "",
+"organiser": "Upside Club",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/upside-pokernight-websummit-november2026",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "from 19:00",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "R-Founders Week WebSummit'26 | R-Founders Party 11.11",
+"venue": "Maat Café & Kitchen",
+"metro": "",
+"organiser": "R-Founders Global",
+"price": "€130+",
+"approval": true,
+"register": "https://luma.com/wft7z9qj",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "from 19:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Founders House Party | Web Summit '26",
+"venue": "Casa do Presidente",
+"metro": "",
+"organiser": "2Day Founders",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/jp6yr213",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "from 20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-11",
+"name": "Enchant Afterparty",
+"venue": "Casica - Italian Trattoria",
+"metro": "Oriente station, Red line",
+"organiser": "Enchant Startup accelerator",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/m7z4xi8a",
+"promptugal": null,
+"worlds": [
+"Investidores"
+],
+"time": "from 21:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Female Founders Breakfast: Websummit Special",
+"venue": "Avila Spaces",
+"metro": "Oriente station, Red line",
+"organiser": "Female Founders Breakfast – Europe",
+"price": "€35",
+"approval": true,
+"register": "https://luma.com/sx67k4x0",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "09:00-10:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Open Coffee Lisbon Web Summit Special#53",
+"venue": "Impact Hub Lisbon, Penha",
+"metro": "",
+"organiser": "Open Coffee Lisbon",
+"price": "Free",
+"approval": false,
+"register": "https://www.meetup.com/open-coffee-lisbon/events/316495551/",
+"promptugal": null,
+"worlds": [],
+"time": "09:30-11:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Canopy Campfire – How is AI changing your life?",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Canopy",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/g87gj7f6",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "10:00-11:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Kids Young Founders Pitch at Tech Week Palace 2026",
+"venue": "PTW Palace, Rua Gomes Freire 98",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/7jgs6qn9",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "10:00-12:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "staaake Side Event: Thursday AI/Tech Lunch staaake Dinner Club",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "staaake",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/9ardymp7",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "12:30-14:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "AI PROMISES TO GIVE US TIME BACK. WHO GETS TO KEEP IT?",
+"venue": "PTW Palace",
+"metro": "",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/nlqmie2v",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "13:00-14:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "WorkShop with Parents | Unicorn School",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Unicorn School",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/kjbdyht9",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "13:00-15:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Entrepreneur Community Meet the Founder | Unicorn School",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Unicorn School",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/h3nyq6ui",
+"promptugal": null,
+"worlds": [],
+"time": "15:00-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Yorkseed LP Curated Circle",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/n3fw32li",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "15:00-19:00",
+"status": "closed",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Breaking into America: US Fundraising Playbook for European Founders",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Lex Padilla",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/fdr23mdq",
+"promptugal": null,
+"worlds": [
+"Investidores"
+],
+"time": "16:00-17:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Founder Decompression",
+"venue": "The Hot Cold Club",
+"metro": "Rato station, Yellow line",
+"organiser": "Terence Lapidus",
+"price": "€25",
+"approval": true,
+"register": "https://luma.com/khjuq5zp",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "16:00-18:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Yorkseed Cross-Border Venture Salon",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/ymrb63b7",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "16:00-20:00",
+"status": "closed",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Post Web Summit Reset: Sauna & Cold Plunge",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Biohacking & Longevity Lisbon",
+"price": "€40",
+"approval": true,
+"register": "https://luma.com/uau5nem3",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "16:30-18:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Building Better Trading Strategies with AI",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "AI Velocity Trading",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/dwuofjy8",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "17:30-18:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Side Event: staaake Closing AI/Tech – Power Walk",
+"venue": "The Bull Steak",
+"metro": "Moscavide station, Red line",
+"organiser": "staaake",
+"price": "Free+",
+"approval": false,
+"register": "https://luma.com/staaake-m5bj",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "17:30-18:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "EIT Jumpstarter 2026 Awards Ceremony | Web Summit Side event",
+"venue": "Unicorn Factory Lisboa, Beato",
+"metro": "Santa Apolónia station, Blue line",
+"organiser": "EIT Jumpstarter",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/a2ue9hpo",
+"promptugal": "https://promptugal.news/events/eit-jumpstarter-awards-ceremony/index.html",
+"worlds": [
+"Investidores",
+"Criadores e media",
+"Convite ou aprovação"
+],
+"time": "17:30-21:00",
+"status": "",
+"pick": true
+},
+{
+"day": "2026-11-12",
+"name": "staaake Side Event. Hangover Rooftop AI/Tech Event – Reverse Network Meet",
+"venue": "IDB Rooftop by Mīrārī",
+"metro": "Moscavide station, Red line",
+"organiser": "staaake",
+"price": "Free+",
+"approval": false,
+"register": "https://luma.com/staaake-i8fm",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "18:30-20:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Closing Night of Web Summit Week: Founders, Drinks and Snacks at The Nest",
+"venue": "Avenida 5 de Outubro 146",
+"metro": "Campo Pequeno station, Yellow line",
+"organiser": "The Nest Lisbon",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/wt5b7nsg",
+"promptugal": null,
+"worlds": [],
+"time": "18:30-21:00",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Founders (don't) cry",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/ldiykyt8",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "19:00-20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Leadership Through Dance: Presence, Posture & Non-Verbal Communication",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Nóra Jurics-Fehér",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/9ifnf5ev",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "19:00-20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Contracts & Cocktails: A Founder Legal Tech Mixer",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Stripe Legal Tech Community × Contractr AI",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/hihh4mxe",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "19:00-21:00",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Lisbon Digital Nomads After Hours @ PTW Palace",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/portugal-hku2",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve",
+"Portugal e Brasil"
+],
+"time": "19:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Yorkseed Grand Finale | Web Summit 2026",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/i7llsb2c",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "19:00-23:00",
+"status": "closed",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "WEB SUMMIT WEEK – FINAL NIGHT",
+"venue": "Spot Lisboa",
+"metro": "Baixa-Chiado station, Blue line, Green line",
+"organiser": "EXPATS LISBON CONNECTION",
+"price": "Free",
+"approval": false,
+"register": "https://www.meetup.com/expats-locals-meet-up-for-making-new-friends-in-lisbon/events/316454556/",
+"promptugal": null,
+"worlds": [],
+"time": "19:00-23:55",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "OPUS After Hours – Web Summit Edition",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "OPUS Events",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/s73xrx2r",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "19:30-22:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Weekly Lisbon Digital Nomads Meetup – Websummit Special",
+"venue": "Lisbon (venue announced closer to the event)",
+"metro": "",
+"organiser": "Lisbon Digital Nomads",
+"price": "Free",
+"approval": false,
+"register": "https://www.meetup.com/lisbon-digital-nomads/events/tqsgztyjcpbqb/",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve"
+],
+"time": "19:30-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "The 100-Year Dinner: Longevity Served",
+"venue": "Cobaia",
+"metro": "Alvalade station, Green line",
+"organiser": "Octo Health",
+"price": "€30",
+"approval": false,
+"register": "https://luma.com/erp6nqvm",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve",
+"Investidores"
+],
+"time": "19:45-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Backyard Afterparty by YR!",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "YR! Events",
+"price": "€180",
+"approval": true,
+"register": "https://luma.com/rk9zqqyx",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "from 19:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-12",
+"name": "Get Down At The Dev House",
+"venue": "Venue shared after registration",
+"metro": "",
+"organiser": "/unsupervised",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/aivsqim4",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "from 20:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Lisbon Community Week Conference 2026",
+"venue": "Impact Hub Lisbon, Penha",
+"metro": "Arroios station, Green line",
+"organiser": "Led by Community",
+"price": "€199",
+"approval": false,
+"register": "https://luma.com/lisbon-community-week-2026",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "09:00-20:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Websummit Decomp @ DOMA Portugal",
+"venue": "DOMA Portugal, Gradil · Mafra",
+"metro": "",
+"organiser": "DOMA Portugal & s16 community",
+"price": "€100",
+"approval": true,
+"register": "https://app.shmity.ai/events/7128d4dc-e9a4-447d-8de5-99b066a5426e",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Convite ou aprovação"
+],
+"time": "09:00-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Speak Up or Stay Silent? Emotional Intelligence for Leaders Across Cultures",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/fjm6iq0g",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "10:00-11:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Lisbon 2026 Venture Capital World Summit",
+"venue": "Spaces Oriente",
+"metro": "Oriente station, Red line",
+"organiser": "Venture Capital World Summit",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/s23ft4kf",
+"promptugal": null,
+"worlds": [
+"Investidores",
+"Convite ou aprovação"
+],
+"time": "10:00-17:00",
+"status": "sold-out",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Web Summit | Notion Morning Power Walk (Friday)",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "non code studio",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/na45i7k7",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "10:30-12:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Beach Field Trip post Tech/AI Conference. – Reverse Network Meet",
+"venue": "Lisbon Bike Rentals",
+"metro": "Cais do Sodré station, Green line",
+"organiser": "staaake",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/staaake-hg41",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve",
+"IA e agentes"
+],
+"time": "11:00-13:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Is Your AI Startup Ready for Europe? The EU AI Act, Product Readiness and Investor Expectations",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/buqma11b",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes",
+"Investidores"
+],
+"time": "11:30-12:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Supergrowth: How to Build an AI-Powered Distribution Machine",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/n37aqp4s",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "14:30-15:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Why Users Leave Your AI Feature (and How to Make Them Stay) | Portugal Tech Week",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/bcrch66r",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"IA e agentes"
+],
+"time": "14:30-15:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "People Pitch – After Summit, Before the Future",
+"venue": "PTW Palace",
+"metro": "",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/msen6vui",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Convite ou aprovação"
+],
+"time": "16:00-17:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "The Marketing Meetup x Portugal Tech Week: The Martech Hangover",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "The Marketing Meetup",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/lbekbkuf",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "16:30-18:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "How web apps work: for product managers who want to follow the technical conversation",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/0hccxsn4",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil"
+],
+"time": "19:00-21:30",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Meetball After Hours @ PTW Palace",
+"venue": "PTW Palace",
+"metro": "Anjos station, Green line",
+"organiser": "Portugal Tech Week",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/portugal-tw4y",
+"promptugal": null,
+"worlds": [
+"Portugal e Brasil",
+"Investidores"
+],
+"time": "19:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Websummit After-party • Casual Socialising Evening • ROOFTOP DJ PARTY",
+"venue": "TOPO Rooftop Bar",
+"metro": "",
+"organiser": "International Friends Lisbon",
+"price": "Free",
+"approval": false,
+"register": "https://www.meetup.com/international-friends-lisbon/events/dcvqbvyjcpbrb/",
+"promptugal": null,
+"worlds": [],
+"time": "19:00-23:59",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "staaake Side Event: Friday Tech/AI Dinner staaake Dinner Club",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "staaake",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/4flg4sa3",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "20:00-22:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Last Man/Woman Standing B(AI)rro Alto Bar Event – Reverse Network Meet",
+"venue": "Yggy Bar",
+"metro": "Baixa-Chiado station, Blue line, Green line",
+"organiser": "staaake",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/staaake-bv5x",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "22:00-23:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Yorkseed Legal & Compliance Clinic",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "Yorkseed ™",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/tjv48y4k",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "from 10:00",
+"status": "closed",
+"pick": false
+},
+{
+"day": "2026-11-13",
+"name": "Crypto Padel by WhiteBIT & Play Padel Club & Spredo",
+"venue": "NAVE - Padel x Pickleball",
+"metro": "Bela Vista station, Red line",
+"organiser": "WhiteBIT Events",
+"price": "Free",
+"approval": true,
+"register": "https://luma.com/hrem9w27",
+"promptugal": null,
+"worlds": [
+"Convite ou aprovação"
+],
+"time": "from 16:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-14",
+"name": "AI Devs & Hoopers Morning Run at Lisbon Tech Conf – Hoopers Meet",
+"venue": "Parque Docas Ponte Telpark · Santo Amaro",
+"metro": "",
+"organiser": "staaake",
+"price": "Free",
+"approval": false,
+"register": "https://luma.com/staaake-hghb",
+"promptugal": null,
+"worlds": [
+"IA e agentes"
+],
+"time": "11:00-12:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-14",
+"name": "Web Summit Unwind: A Traditional Banya Experience",
+"venue": "Rua Barbosa du Bocage 16 · Sintra",
+"metro": "",
+"organiser": "Nomad Steam",
+"price": "€110",
+"approval": false,
+"register": "https://luma.com/alft36rf",
+"promptugal": null,
+"worlds": [
+"Turismo e Algarve"
+],
+"time": "12:00-15:00",
+"status": "",
+"pick": false
+},
+{
+"day": "2026-11-14",
+"name": "staaake Side Event: Saturday Tech/AI Dinner staaake Dinner Club",
+"venue": "Venue shared after approval",
+"metro": "",
+"organiser": "staaake",
+"price": "Free+",
+"approval": true,
+"register": "https://luma.com/n117wylo",
+"promptugal": null,
+"worlds": [
+"IA e agentes",
+"Convite ou aprovação"
+],
+"time": "19:00-21:00",
+"status": "",
+"pick": false
+}
+]
+}

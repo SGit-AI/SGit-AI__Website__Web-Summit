@@ -38,6 +38,12 @@
         "from_collar_mm": 120
       },
       "qr_code_mm": 90
+    },
+    "sleeve": {
+      "width_mm": 75,
+      "where": "the left sleeve (the wearer's left), centred on the sleeve, its top about 100 mm below the shoulder seam",
+      "on": "every T-shirt and hoodie",
+      "source": "Silvio's choice, confirmed by Dinis in person (relayed by procurement@web-summit.silvio, 4 November 17:10 UTC); to be confirmed by Dinis in the designer's session"
     }
   },
   "card": {
@@ -114,7 +120,10 @@
       ],
       "tagline": "People. Policy. Protection.",
       "stock_colour": "no true purple in Ankara: lavanda or bordô, for Dinis or Vicky to choose",
-      "card_name": "Vicky Wang"
+      "card_name": "Vicky Wang",
+      "hoodie_colour": "#B9A7D6",
+      "hoodie_colour_name": "lavender (approximate on screen)",
+      "hoodie_ink": "black"
     },
     {
       "id": "silvio",

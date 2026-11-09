@@ -12,8 +12,9 @@
 // returns only the new vault's id: its read key, like its vault key, stays in the person's panel (WS-137 review).
 // The vault key of a vault made here is shown to the person in the "Vaults made in this browser" panel, to copy into
 // their password manager, and is kept in this browser's local storage so the studio can keep writing to it. The access
-// token is pasted by the person into that panel and kept the same way. Use a test token until security@web-summit.dinis
-// has reviewed this (WS-137): local storage is shared by every script on this origin.
+// token is pasted by the person into that panel and kept the same way. Test tokens only (security@web-summit.dinis,
+// WS-137): local storage is shared by every script on this origin. WS-132 part 1 closed the markdown route on
+// 5 November; scripts in people/<id>/ still run here, so real tokens wait for the studio's own origin (WS-117).
 (() => {
     'use strict'
     const here = document.currentScript && document.currentScript.src
@@ -132,7 +133,7 @@
         const vs = mine()
         el.innerHTML = `<summary>Vaults made in this browser (${vs.length})</summary>
 <p>For the <b>Vaults</b> tools. The studio never shows the model a vault key or your token. ${token() ? 'An SG/Send access token is set in this browser.' : 'To make vaults, paste your SG/Send access token (from Dinis):'} <input id="st-tok" type="password" autocomplete="off" placeholder="SG/Send access token" size="28"> <button id="st-tok-save">${token() ? 'Replace' : 'Keep in this browser'}</button>${token() ? ' <button id="st-tok-del">Forget it</button>' : ''}</p>
-<p class="meta">Experimental (WS-137): use a test token until security has reviewed it. Local storage is readable by every script on this site.</p>
+<p class="meta">Experimental (WS-137, reviewed by security on 4 November): use a test token only. Local storage is readable by every script on this site. Markdown can no longer make a script link (WS-132 part 1, 5 November), but scripts in <code>people/&lt;id&gt;/</code> still run here. Real tokens wait for the studio's own origin (WS-117).</p>
 ${vs.length ? `<table><tr><th>Vault</th><th>Read key (public)</th><th>Vault key (yours only)</th></tr>${vs.map((v, i) => `<tr><td><b>${esc(v.name)}</b><br><code>${esc(v.id)}</code></td><td><a href="https://dev.vault.sgraph.ai/#${esc(v.read.replace(':', '%3A'))}" target="_blank" rel="noopener">open</a> · <code>${esc(v.read.slice(0, 30))}…</code> <button data-copy-read="${i}">copy</button></td><td><button data-show="${i}">show</button> <button data-copy-key="${i}">copy</button> <span data-key="${i}"></span></td></tr>`).join('')}</table><p class="meta">Copy each vault key into your password manager: there is no reset, and clearing this browser's data loses it. Never paste it into the chat.</p>` : ''}`
         el.querySelector('#st-tok-save').onclick = () => { const t = el.querySelector('#st-tok').value.trim(); if (t) { LS.set('studio.sgsend.token', t); panel() } }
         const del = el.querySelector('#st-tok-del'); if (del) del.onclick = () => { try { localStorage.removeItem('studio.sgsend.token') } catch { } panel() }

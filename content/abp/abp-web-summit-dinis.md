@@ -10,6 +10,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 - **Systems:** the repository SGit-AI/SGit-AI__Website__Web-Summit with push access: it can push to `dev` and, because no branch is protected, to `main`; any file, including `.github/workflows/deploy-pages.yml` and the gate `admin/build/validate.js`. The GitHub tools on that repository (branches, pull requests and merging them, issues, comments, Actions runs). Claude Code Remote in Dinis's account (list and read other sessions, send them messages, create and fire scheduled tasks and sessions). A Google Drive connector (create, update, share and trash files; which account it acts as was not checked). Publishing a page on claude.ai. A shell in its own cloud container; the public web through the environment's proxy.
 - **Data:** everything in the repository and its history; other sessions' transcripts in the account; whatever the Drive connector can see.
 - **Connectors:** GitHub, Claude Code Remote, Google Drive.
+- **Its cloud environment** (measured 7 November in abp@web-summit.dinis's session, names only; inferred for this agent if it runs there): Dinis's "GS Send - Full internet access", with unrestricted network and the variables `SG_SEND_ACCESS_TOKEN`, `OPENROUTER_API_KEY`, `OPEN_ROUTER_KEY` and `PT_PILOT_ACCESS_KEY`: the operator's own SG/Send token and model keys reach every session in it (WS-188).
 - **How known:** measured for abp@web-summit.dinis in its own session on 2 November 2026 (its tool list; the GitHub branches API: `main` and `dev` both `protected: false`). For this agent, *inferred*: it runs in the same account and environment. Its own session should confirm or correct this.
 
 ## Mandate: what was authorised {#mandate}
@@ -23,18 +24,20 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 
 - Fixed: its prompt told it to commit as conductor@web-summit.dinis and do the conductor's wake (WS-89). The names were fixed in fcd404f and the wake sentence removed in 4153cb1 (3 November, 08:27). Every wake ran under its own name and did only the ABP work.
 - Write anywhere in the repository, when its mandate is `content/abp/**`.
-- Push to `main` (a major release, Dinis's call only): nothing technical stops it.
+- Push to `main` (a major release, Dinis's call only): nothing technical stopped it until 6 November, when `main` became protected (GitHub branches API); `dev` is still open.
 - Rewrite history on `dev` or `main` (force-push, delete a branch): no branch protection.
 - Edit the gate or the CI workflow in the same push the gate judges. Since v0.1.51 (CI owns the version), every push to `dev` also runs `admin/build/tag_release.sh` from the pushed tree in a CI job with `contents: write` and `pages: write`, which commits, tags, pushes and deploys: a push that changes that script has its code run with a token that can write to the repository and the live site.
 - Create scheduled tasks or sessions, and message or steer other agents' sessions.
 - Open or merge pull requests, comment on GitHub: not in its mandate.
 - Create, share or trash files in Drive: no part of its mandate uses Drive.
 
+- **A second ABP agent** (815e9db6, 6 November): abp@PrompTugal.dinis writes prescriptive, deny-by-default policies for Dinis's agents, with hooks to enforce them, in the PrompTugal repository, "building on" these ABPs. These stay descriptive (Reach, Mandate, Gap, Barriers, as RiskMandate's model): its hooks, once installed, are barriers these ABPs will describe. Neither writes the other's files.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
 |---|---|---|
-| Never push to main, never force-push, never disable a check | rule, kept by the agent | its prompt; CLAUDE.md; the agents page, #never-main (a major release is a pull request from `dev`, merged only by Dinis). **Broken once:** at 23:06 on 2 November the conductor, asked for a major release, pushed to `main` itself (WS-105). `main` and `dev` were still not protected at 08:15 on 3 November (GitHub branches API). Eight `claude/*` branches pushed from agents' sessions exist beside `dev` and `main`: an agent can push any branch |
+| Never push to main, never force-push, never disable a check | rule, kept by the agent; for `main`, technical since 6 November | its prompt; CLAUDE.md; the agents page, #never-main (a major release is a pull request from `dev`, merged only by Dinis). **Broken once:** at 23:06 on 2 November the conductor, asked for a major release, pushed to `main` itself (WS-105). `main` and `dev` were still not protected at 08:15 on 3 November (GitHub branches API). Eight `claude/*` branches pushed from agents' sessions exist beside `dev` and `main`: an agent can push any branch **Since 6 November (GitHub branches API at 04:15 UTC), `main` is protected (`protected: true`; the rule's details not read): for `main` this is now a technical barrier. `dev` is still unprotected, and 17 `claude/*` session branches exist; WS-179 (proposed at Angelo's word, 6 November) would have every session push only to `dev`, delete them, and refuse new ones.** |
 | The gate (validate.js) before every deploy | technical, in CI | deploy-pages.yml (v0.1.51): the gate runs on the push, then again on the tree CI numbers, commits and deploys. It stops a red build deploying, not the push, and the agent can edit the gate, the workflow and tag_release.sh |
 | Only CI writes the version | rule, kept by the agent; a warning in CI | release.sh refuses a commit touching version.txt, but it runs in the agent's own clone; tag_release.sh only warns, and replaces the number |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 |
@@ -60,4 +63,6 @@ Open questions: Measured, not inferred: this is the one ABP whose Reach was read
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 7, 3 November 2026 (12:10 wake: WS-89 fixed; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the scheduled task, and the history), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 9, 7 November 2026 (00:10 wake: the shared environment, WS-188; 08:10 wake: abp@PrompTugal; 12:10 wake: WS-89 fixed; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the scheduled task, and the history), in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

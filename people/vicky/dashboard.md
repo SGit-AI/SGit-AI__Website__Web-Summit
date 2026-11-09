@@ -1,38 +1,48 @@
 ---
-title: Vicky's dashboard
+title: Vicky Wang's dashboard
 summary: The page Vicky reads first. The top is built for Vicky; below it, what needs Vicky today and tomorrow, then only what the command centre does not show.
+compact: true
+office_link: office/index.html
 ---
 Kept short at Vicky's word (3 November): your issues, decisions and agents are in [your command centre](app/index.html); here is only what it does not show. The **For you** panel: your issues first.
 
 ## Needs me {#needs-me}
 
-*Written by your dashboard agent at each wake from the board, the stand-up agendas, your conductor's briefs and the board-health notes; soonest first. Last updated: Wed 4 Nov, 17:58 UTC.*
+*Written by your dashboard agent at each wake from the board, the stand-up agendas, your conductor's briefs and the board-health notes; soonest first. Last updated: Mon 9 Nov, 17:55 UTC.*
 
 | Type | What | Due | With |
 |---|---|---|---|
-| Decide | [Who records stand-up decisions](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-107-stand-up-decisions-recorded-in-the-person-s-words.md) | **Overdue:** Tue 3 Nov, 13:00; carried to 18:00 | Dinis, Angelo |
-| Decide | [Owners: first five, hot leads, pulse app, PM write-up](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/pm-four-issues-2026-11-04.md) (WS-25, WS-29, WS-41, WS-53) | Today, 18:00 stand-up | pm@ proposed; Nimay, Silvio; Angelo, Jose |
-| Do | [Follow up the pending meeting invitations](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/outreach-2026-11-04.md) | From today | Nimay |
-| Decide | [Your dev agent's first tool](briefs/2026-11-04T0725Z.pdf) | Before its wake, Thu 08:00 | dev@web-summit.vicky |
+| Decide | [Park the late, unowned issues: yes or no](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/data/meetings/2026-11-07-1800/20261107T1741-the-18-00-a-note-taker-the-parking-in-on.json) | **Overdue:** Sat 7 Nov, 18:00 (not taken) | Dinis too; the list is ready (45 to park, 21 kept); recommended: yes; Angelo asks for it first at today's 12:00 |
+| Decide | [One line for the record: the 5 Nov newsroom decision](briefs/2026-11-06T0845Z.pdf) | **Overdue:** Fri 6 Nov | Your conductor records your words |
 
 ## To follow up {#follow-up}
+
+Mine to act on or decide: issues you picked. The rest of the plan's follow-ups are under Team follow-ups. **No owner** means nobody is named in `picked_by`.
+
+| What | Owner | Status | Due | Risk / next step |
+|---|---|---|---|---|
+| [Newsroom vault keys](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-153-vicky-s-vault-keys-to-the-conductor-over-the-inbox.md) (WS-153) | You; waiting on conductor@web-summit.dinis | Picked | **Overdue:** Thu 5 Nov | Dinis's conductor to confirm it can open the vaults |
+| [Photos on the site](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-163-each-person-confirms-their-own-photo.md) (WS-163) | You | Yours confirmed | **Overdue:** Fri 6 Nov | Angelo, Indi, Jose and Dinis still to answer |
+
+:::details Team follow-ups (5)
 
 Not mine, but on the plan: due by Thursday, overdue, or blocking someone. **No owner** means nobody is named in `picked_by` (in brackets, who it is for).
 
 | What | Owner | Status | Due | Risk / next step |
 |---|---|---|---|---|
-| [Print sign-off](../../print/index.html) | **No owner** (for Dinis) | Open, 3 of 7 signed | **Overdue:** Tue 3 Nov, 16:00 | The next set (generic QR, your name) waits on Dinis; then you sign again |
-| [GitHub invitations](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-09-add-everyone-s-github-account-to-the-repository.md) | **No owner** (for Dinis) | Open | **Overdue:** Tue 3 Nov | Confirm Angelo as the sender; Nimay creates his account first |
-| [Final artwork](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-57-shirt-and-hoodie-artwork-final.md) | designer@web-summit.dinis | In progress | **Overdue:** today, 12:00 | "Project Manager" missing from your card; asked of the designer |
-| [Merch delivery](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-48-printing-and-merch-logistics.md) | logistics@web-summit.vicky, procurement@web-summit.silvio | Ordered | Today | Collection Mon 9 Nov morning: no collector yet; layouts and invoice Thu |
-| [Vaults first](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-120-vaults-first-angelo-jose-silvio.md) | **No owner** (for Angelo, Jose, Silvio) | Open; Jose's part done | Today | Angelo and Silvio still to go; WS-31 (your schedules) waits on it |
-| [Big outreach, 50 targets](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-26-the-big-outreach-50-targets-for-thursday-and-fri.md) | **No owner** (for Silvio, Indi) | Open | Thu 5 Nov | Needs an owner at 18:00 |
+| [Pulse app](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-41-the-pulse-app.md); [PM workflow write-up](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-53-silvio-s-agentic-project-management-workflow-wri.md) | **No owner** (Jose; Silvio) | Open | **Overdue:** Wed 4 Nov | Not yours, at your word; theirs to pick up |
+| [The 12 storylines](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-177-promptugal-ready-for-outreach-by-friday.md) (WS-177) | conductor@web-summit.dinis | Picked | **Overdue:** Fri 6 Nov, 10:00 | Outreach is parked (Dinis, 9 Nov 10:55); the stories still help the newsroom |
+| [Sessions each person attends](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-32-the-sessions-each-person-attends.md) | **No owner** (for everyone) | Open | **Overdue:** Sat 7 Nov | Each person adds their own |
+| [Every person's key on every device](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-166-every-person-s-key-on-every-device-before-web-summit.md) (WS-166) | **No owner** (for Dinis, Nimay, Daniela, Sarah, everyone) | Open | **Overdue:** Sun 8 Nov | The summit starts tomorrow (Tue 10 Nov); someone to pick it up |
+| [Three apps, three lines](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-199-three-apps-three-lines.md) (WS-199) | **No owner** (for everyone) | Open | Today, Mon 9 Nov | The summit starts tomorrow; someone to pick it up |
+:::
 
 ## My vault {#vault}
 
-Open it here, live from the vault (read only; nothing loads until you click). All the team's vaults: [the vaults page](../../vaults/index.html).
+Open it here, live from the vault (read only). If the site knows it is you ("Who are you?"), it opens by itself when you scroll here; for everyone else nothing loads until you click. All the team's vaults: [the vaults page](../../vaults/index.html).
 
-```vault-app vicky k64ma7jd
+```vault-app vicky k64ma7jd auto
 ```
 
-[The reports](../../reports/index.html) · [the board's health](../../board-health/index.html) · [the team's pulse](../../pulse/index.html)
+- **My agents:** [Reports](../../reports/index.html) · [Board health](../../board-health/index.html) · [Team pulse](../../pulse/index.html) · [Work so far](work-so-far/index.html) · [Live AI Office](office/index.html)
+- **PrompTugal.news:** [Story ideas](stories/index.html) · [Logo options](promptugal/index.html)

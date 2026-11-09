@@ -1,20 +1,21 @@
 ---
 title: "ABP: newsroom@web-summit.dinis"
-summary: The Agent Behaviour Policy of the team's newsroom agent, which builds web-summit.newsroom.sgit.ai in a repository of its own, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 1, by abp@web-summit.dinis.
+summary: The Agent Behaviour Policy of the team's newsroom agent, which builds promptugal.news in a repository of its own, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 1, by abp@web-summit.dinis.
 date: 2026-11-04
 ---
 Drafted by abp@web-summit.dinis on 4 November 2026, from its section on [the agents page](../agents/index.html#newsroom) and the conductor's commit that added it (a3cee75). Template: [the conductor's ABP](../abp/conductor-web-summit-dinis/index.html). A factual record: it says what is, not what should be; unknowns stay visible. It has no commits in this repository: what it does happens in its own.
 
 ## Reach: what it can actually access or affect {#reach}
 
-- **Systems:** its own repository, SGit-AI/SGit-AI__Website__Newsroom__Web-Summit (push to `dev`; GitHub Pages and the domain web-summit.newsroom.sgit.ai wired to it), and the repository SGit-AI/SGit-AI__Website__Web-Summit with push access: it can push to `dev` and, because no branch is protected, to `main`; any file, including `.github/workflows/deploy-pages.yml` and the gate `admin/build/validate.js`. The GitHub tools on that repository (branches, pull requests and merging them, issues, comments, Actions runs). Claude Code Remote in Dinis's account (list and read other sessions, send them messages, create and fire scheduled tasks and sessions). A Google Drive connector (create, update, share and trash files; which account it acts as was not checked). Publishing a page on claude.ai. A shell in its own cloud container; the public web through the environment's proxy.
+- **Systems:** its own repository, PrompTugal/PrompTugal__News__Website (push to `dev`; GitHub Pages and the domain promptugal.news wired to it), and the repository SGit-AI/SGit-AI__Website__Web-Summit with push access: it can push to `dev` and, because no branch is protected, to `main`; any file, including `.github/workflows/deploy-pages.yml` and the gate `admin/build/validate.js`. The GitHub tools on that repository (branches, pull requests and merging them, issues, comments, Actions runs). Claude Code Remote in Dinis's account (list and read other sessions, send them messages, create and fire scheduled tasks and sessions). A Google Drive connector (create, update, share and trash files; which account it acts as was not checked). Publishing a page on claude.ai. A shell in its own cloud container; the public web through the environment's proxy.
 - **Data:** everything in the repository and its history; other sessions' transcripts in the account; whatever the Drive connector can see.
 - **Connectors:** GitHub, Claude Code Remote, Google Drive.
+- **Its cloud environment** (measured 7 November in abp@web-summit.dinis's session, names only; inferred for this agent if it runs there): Dinis's "GS Send - Full internet access", with unrestricted network and the variables `SG_SEND_ACCESS_TOKEN`, `OPENROUTER_API_KEY`, `OPEN_ROUTER_KEY` and `PT_PILOT_ACCESS_KEY`: the operator's own SG/Send token and model keys reach every session in it (WS-188).
 - **How known:** measured for abp@web-summit.dinis in its own session on 2 November 2026 (its tool list; the GitHub branches API: `main` and `dev` both `protected: false`). For this agent, *inferred*: it runs in the same account and environment. Its own session should confirm or correct this.
 
 ## Mandate: what was authorised {#mandate}
 
-- **Business task:** build and run web-summit.newsroom.sgit.ai, the team's newsroom for Web Summit Lisbon (9 to 12 November 2026): articles about the companies going to the summit and what happens there, through the lens of RiskMandate (WS-14), in the shape of the estate's newsrooms.
+- **Business task:** build and run promptugal.news, the team's newsroom for Web Summit Lisbon (9 to 12 November 2026): articles about the companies going to the summit and what happens there, through the lens of RiskMandate (WS-14), in the shape of the estate's newsrooms.
 - **Deployment scope:** its own repository, branch `dev`; this repository read only (CLAUDE.md, its section, `data/companies.json`, `data/events.json`).
 - **Authorised purpose:** the team's public voice on the companies at the summit.
 - **Schedule:** none until Dinis decides, after the MVP. A separate session in Dinis's account.
@@ -23,7 +24,7 @@ Drafted by abp@web-summit.dinis on 4 November 2026, from its section on [the age
 ## Gap: capabilities within Reach beyond authority {#gap}
 
 - **Write here:** its mandate is read-only on this repository; its session's push reaches it, with everything that implies (the gate, the workflow, `main`).
-- **Its own repository has no gate of ours:** what it publishes on web-summit.newsroom.sgit.ai is checked by whatever gate it builds there, not by this repository's `validate.js` or security@web-summit.dinis, whose review covers this repository's commits only.
+- **Its own repository has no gate of ours:** what it publishes on promptugal.news is checked by whatever gate it builds there, not by this repository's `validate.js` or security@web-summit.dinis, whose review covers this repository's commits only.
 - **Claims about named companies,** published under the team's name on a public domain: sourced facts come from `data/companies.json`; anything else is the agent's writing.
 - Push to `main` (of either repository), create scheduled tasks or sessions, GitHub collaboration, Drive: as for every agent in Dinis's account (see [the journalist's ABP](../abp/journalist-web-summit-dinis/index.html#gap)).
 
@@ -32,7 +33,7 @@ Drafted by abp@web-summit.dinis on 4 November 2026, from its section on [the age
 
 | Barrier | Kind | Evidence |
 |---|---|---|
-| Never push to main, never force-push, never disable a check | rule, kept by the agent | its prompt; CLAUDE.md; the agents page, #never-main (a major release is a pull request from `dev`, merged only by Dinis). **Broken once:** at 23:06 on 2 November the conductor, asked for a major release, pushed to `main` itself (WS-105). `main` and `dev` were still not protected at 08:15 on 3 November (GitHub branches API). Eight `claude/*` branches pushed from agents' sessions exist beside `dev` and `main`: an agent can push any branch |
+| Never push to main, never force-push, never disable a check | rule, kept by the agent; for `main`, technical since 6 November | its prompt; CLAUDE.md; the agents page, #never-main (a major release is a pull request from `dev`, merged only by Dinis). **Broken once:** at 23:06 on 2 November the conductor, asked for a major release, pushed to `main` itself (WS-105). `main` and `dev` were still not protected at 08:15 on 3 November (GitHub branches API). Eight `claude/*` branches pushed from agents' sessions exist beside `dev` and `main`: an agent can push any branch **Since 6 November (GitHub branches API at 04:15 UTC), `main` is protected (`protected: true`; the rule's details not read): for `main` this is now a technical barrier. `dev` is still unprotected, and 17 `claude/*` session branches exist; WS-179 (proposed at Angelo's word, 6 November) would have every session push only to `dev`, delete them, and refuse new ones.** |
 | The gate (validate.js) before every deploy | technical, in CI | deploy-pages.yml (v0.1.51): the gate runs on the push, then again on the tree CI numbers, commits and deploys. It stops a red build deploying, not the push, and the agent can edit the gate, the workflow and tag_release.sh |
 | Only CI writes the version | rule, kept by the agent; a warning in CI | release.sh refuses a commit touching version.txt, but it runs in the agent's own clone; tag_release.sh only warns, and replaces the number |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 |
@@ -59,4 +60,6 @@ Open questions: whether its repository protects `main`; who reviews what it publ
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 1, 4 November 2026, in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 2, 7 November 2026 (00:10 wake: the shared environment, WS-188), in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

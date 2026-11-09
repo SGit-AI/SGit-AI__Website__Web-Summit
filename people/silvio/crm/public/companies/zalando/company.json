@@ -1,0 +1,29 @@
+{
+  "id": "zalando",
+  "type": "company",
+  "kind": "company",
+  "name": "Zalando",
+  "aliases": [],
+  "website": "https://www.zalando.com",
+  "what": null,
+  "category": "e-commerce",
+  "country": "Germany",
+  "attending": "at Web Summit Lisbon 2026: speaker: CTO (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/55280b70-7fc0-4d77-a459-9a71d711e652/graeme-smith/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.zalando.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

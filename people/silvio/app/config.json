@@ -148,5 +148,28 @@
       "https://claude.ai/artifact/1RCwGGKm3XU9mCwajfcn93",
       "private"
     ]
-  ]
+  ],
+  "done_for_me": {
+    "WS-01": "My dedicated Claude account (onboarding 9 of 9).",
+    "WS-02": "GitHub, push access and my Workspace email (onboarding 9 of 9).",
+    "WS-03": "My agents' keys on data/keys.json and my dashboard agent.",
+    "WS-04": "My agents run on schedules (procurement, outreach).",
+    "WS-05": "Several agents, several scheduled sessions (onboarding 9 of 9).",
+    "WS-94": "procurement@web-summit.silvio keeps my dashboard on a schedule.",
+    "WS-99": "dashboard@web-summit.silvio runs.",
+    "WS-121": "My vault is published (Silvio on RiskMandate, ayaexnc7; my videos vault h9in5em4).",
+    "WS-136": "My site key is in my browser (4 November).",
+    "WS-56": "The shirt lines are on the merch: ordered, paid, files sent (7 November).",
+    "WS-63": "The final design set and print files: sent to the printer and paid (7 November).",
+    "WS-50": "Not mine to do: the journalist's report is Dinis's journalist agent's job.",
+    "WS-107": "Not mine to do: recording stand-up decisions is the recorder's job (I record mine with agenda.mjs).",
+    "WS-167": "I voted on the stickers (5 November, first of the team).",
+    "WS-170": "The team CRM: I can open it (/crm/), and my conductor opened its key.",
+    "WS-172": "The CRM's editors: the private key sealed to my dev, inbox and crm agents (7 November).",
+    "WS-126": "Not mine to do: LinkedIn is Indi's (my videos are there as content).",
+    "WS-73": "Not mine to do: these are the team's votes on my videos.",
+    "WS-109": "Not mine to do: Dinis chooses the demo and its lines.",
+    "WS-123": "Not mine to do: Dinis's conductor and dashboard agents build it.",
+    "WS-143": "Not mine to do: the home page is the journalist's and the designer's."
+  }
 }

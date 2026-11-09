@@ -1,0 +1,29 @@
+{
+  "id": "enbw-it-solutions-portugal",
+  "type": "company",
+  "kind": "company",
+  "name": "EnBW IT-Solutions Portugal",
+  "aliases": [],
+  "website": "https://www.enbw.com",
+  "what": null,
+  "category": "energy / utilities IT",
+  "country": "Portugal",
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26)",
+  "attending_as": "event partner",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/d9c8ff53-796d-4c57-8cec-08a1ce1c42c0/enbw-it-solutions/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.enbw.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

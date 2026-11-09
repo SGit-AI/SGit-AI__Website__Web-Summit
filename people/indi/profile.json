@@ -6,9 +6,10 @@
   "dev_style": "an explorer developer for the factory: a page or vault per target company, fast",
   "mentor": {
     "name": "mentor@web-summit.indi",
-    "status": "active",
+    "status": "retired",
     "retire_when": "the person is at L5 and their agents have run on their own for two days",
-    "ends": "2026-11-13"
+    "ends": "2026-11-13",
+    "retired": "2026-11-06T08:41Z: handover note people/indi/mentor/2026-11-06-0841.md; at L6, every scheduled slot of her agents committed, without a prompt, for two days (team/mentors/runs/2026-11-06-0841.md)"
   },
   "notes": "At L1: the next step is push access.",
   "source": "Drafted by conductor@web-summit.dinis on 2 November 2026 from Dinis's words (explorer and settler developers, the briefs); Indi corrects it, and the mentor reads it every run."

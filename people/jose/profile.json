@@ -6,9 +6,10 @@
   "dev_style": "a builder developer for automations and integrations (n8n, WhatsApp, the site)",
   "mentor": {
     "name": "mentor@web-summit.jose",
-    "status": "active",
+    "status": "retired",
     "retire_when": "the person is at L5 and their agents have run on their own for two days",
-    "ends": "2026-11-13"
+    "ends": "2026-11-13",
+    "retired": "2026-11-05T08:41Z: handover note people/jose/mentor/2026-11-05-0841.md; at L6, his scheduled agents met every slot for two days without a prompt (team/mentors/runs/2026-11-05-0841.md)"
   },
   "notes": "At L1: the next step is push access; pair him with Angelo on the technical pool.",
   "source": "Drafted by conductor@web-summit.dinis on 2 November 2026 from Dinis's words (explorer and settler developers, the briefs); Jose corrects it, and the mentor reads it every run.",

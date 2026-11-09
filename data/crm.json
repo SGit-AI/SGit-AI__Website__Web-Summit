@@ -1,0 +1,18 @@
+{
+  "about": "The team CRM (WS-170, admin/tools/crm.mjs). The public CRM's read key is published on purpose: it reads public facts only. The private CRM's vault key is sealed to each person (data/sealed/<id>/*-team-crm-key.json) and to their conductors (data/sealed/agents/); its sensitive records are sealed again, to an audience (ws-crm-env-1).",
+  "agent": "conductor@web-summit.dinis",
+  "updated": "2026-11-05T14:47:14Z",
+  "endpoint": "https://dev.send.sgraph.ai",
+  "public": {
+    "name": "ws-team-crm-public",
+    "vault_id": "pqm9vtul",
+    "read_key": "sgit_public_read_bb7c104297b763a2134e039b441541048acc09e471e61e4d562f08fac73c9996",
+    "vault_url": "https://dev.vault.sgraph.ai/#sgit_public_read_bb7c104297b763a2134e039b441541048acc09e471e61e4d562f08fac73c9996:pqm9vtul"
+  },
+  "private": {
+    "name": "ws-team-crm-private",
+    "vault_id": "5n0aocvz",
+    "key_file_suffix": "-team-crm-key.json"
+  },
+  "envelope": "ws-crm-env-1"
+}

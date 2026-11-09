@@ -37,6 +37,13 @@
             say('This browser cannot read a QR code from a picture: use the text file or the link instead (or scan the QR with another phone\'s camera).', true)
         }
         box.querySelector('form').onsubmit = e => { e.preventDefault(); add(box.querySelector('#ak-text').value) }
+        // the home page is shared with people new to us (Dinis, 6 November 2026): there the box is a slim strip that opens
+        // on a tap, for the team; every other page keeps it big until the browser holds a key
+        if (main.classList.contains('home')) {
+            const det = document.createElement('details'); det.className = 'addkey-mini'
+            det.innerHTML = '<summary>Team: add your key</summary>'; det.appendChild(box)
+            main.insertBefore(det, main.firstChild); return
+        }
         main.insertBefore(box, main.firstChild)
     })
 })()

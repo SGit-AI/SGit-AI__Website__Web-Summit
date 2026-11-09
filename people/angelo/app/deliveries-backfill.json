@@ -1,0 +1,4 @@
+{
+ "about": "The work view's backfill (spec-work-view.md, source 3): deliveries that touched no repository, from before the kind-first \"Delivered:\" habit. Each entry { at, agent, kind, destination, sha }, where sha is the commit that records the delivery; kind is one of doc, cog, key, record, envelope, post; destination one of news, site, research, infra, app, keys, crm, email, linkedin, drafts. Names, kinds and times only: never a recipient, a subject or any text. Kept by dev.work@PrompTugal.angelo; the wv test checks every sha is a real commit.",
+ "entries": []
+}

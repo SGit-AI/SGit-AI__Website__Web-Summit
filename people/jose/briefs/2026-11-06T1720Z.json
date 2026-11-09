@@ -1,0 +1,111 @@
+{
+  "number": 13,
+  "date": "6 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Your evening: the list for your interview, and the asks that still wait",
+  "when": "6 November 2026, 17:20 UTC (scheduled wake; since brief 12, 12:25 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "A quiet afternoon for your agents: automation made the WS-74 count file work end to end, dev checked WS-41, and the helper is still blocked on Gmail. I said hello to Dinis's conductor through my lane, as you asked. Below is the 'today' list for your interview, and the asks that still wait for your word.",
+  "stats": [
+    {
+      "n": "19",
+      "label": "commits by your agents today"
+    },
+    {
+      "n": "264",
+      "label": "page views waiting, counted not drained (17:07)"
+    },
+    {
+      "n": "6",
+      "label": "runs your watcher has raised A-06 (the drain task's stored prompt)"
+    },
+    {
+      "n": "0",
+      "label": "new files in your Drive folder since this morning"
+    }
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "🎙️ Tonight: your daily interview (about 10 min)",
+      "detail": "In Claude Chat voice mode, from the 'today' list below. Save the write-up in your Drive folder 'RiskMandate team meetings transcripts'. At my next wake (07:20) I turn it into your pulse, your decisions in your words, and task files for your agents. Nothing else from it goes into the repository.",
+      "options": [
+        "done tonight",
+        "skip today"
+      ],
+      "recommend": "Do it tonight: dev's WS-41 has only 2 check-ins, and your interview is the first one from a write-up."
+    },
+    {
+      "id": "2",
+      "ask": "📧 Still waiting: your helper's Gmail drafts (Silvio and Nimay)",
+      "detail": "The helper tried again at 14:50 and was refused again: its Gmail connector is still signed out. Reconnect Gmail at https://claude.ai/customize/connectors (the helper's session may need a fresh start), or let me try the two drafts from my session, 'To' empty.",
+      "options": [
+        "reconnect Gmail",
+        "let my conductor try the drafts"
+      ],
+      "recommend": "Let me try them: two drafts, 'To' empty; you fill in the addresses."
+    },
+    {
+      "id": "3",
+      "ask": "✅ Still waiting: one word for my drain task's stored prompt (A-06)",
+      "detail": "It fired again at 17:08 with the old text that says to push with your token. I only count, under Dinis's rule, but the stored text should match. Say 'change your drain task', or paste the text from schedules.md#paste.",
+      "options": [
+        "change your drain task",
+        "I paste it myself"
+      ],
+      "recommend": "Change your drain task."
+    }
+  ],
+  "you_asked": [
+    {
+      "at": "6 Nov, about 15:25",
+      "said": "say hello to him, have you done this setup for our agents?",
+      "done": "Sent: a hello to Dinis's conductor, sealed to its key and signed with mine, through my inbox lane; the lane answered 200. No reply yet; his conductor reads its lanes on its own schedule.",
+      "where": "data/inbox/conductor-dinis.json (my lane)",
+      "status": "done"
+    }
+  ],
+  "sections": [
+    {
+      "title": "For your interview: today",
+      "items": [
+        "What your agents did: the one-door test came back (dev, 37 issues); vault finished its three tasks; your CRM agent wrote the channels area (00:52); automation made the WS-74 count file work end to end (16:15).",
+        "What you decided: the helper stays on Opus; the CRM agent's own token is asked of Dinis; Gmail drafts go out with 'To' empty and no address in the repository.",
+        "Still open for you: the Gmail drafts, the drain task's text, the faster schedules and their paste texts (overdue since 07:00; about 113M tokens a day now, 172M to 207M proposed), the five agents to Sonnet, dev's pre-read of Angelo's drafts, WS-163 (your photo, due today), WS-175's last question (who owns email outreach), the derive proposal (a line on WS-175, a new issue, or nothing), WS-157.",
+        "Your dashboard agent's standing question: what do you want to see first, and what do you never read?",
+        "What you learned today, in your words."
+      ]
+    },
+    {
+      "title": "The one door, since 12:25",
+      "items": [
+        "automation (16:15): WS-74's count file is live and the n8n flow accepts it.",
+        "dev (15:34): WS-41 still has 2 check-ins; your first interview-based pulse is due tonight.",
+        "helper (14:52): the Gmail task still blocked (ask 2).",
+        "dashboard (12:31): WS-120's lane with Angelo works both ways."
+      ]
+    },
+    {
+      "title": "From others, for you",
+      "items": [
+        "abp@web-summit.dinis (13:31, 630ca8a8, For: your conductor): the ABPs are now in the 'explorer phase' (they watch and advise, they block nothing); a study of connectors (a connector reaches the whole account, for every agent); your agents' ABPs carry the phase line, and your watcher's ABP gets the reviewer step. Nothing for you to do."
+      ]
+    },
+    {
+      "title": "Your watcher (17:15)",
+      "items": [
+        "A-06 in its sixth run (ask 3). High, seventh run, for Dinis's security agent: email-address lines on a page by Dinis's conductor. Other open items are for other conductors."
+      ]
+    }
+  ],
+  "next": [
+    "07:20 tomorrow: your interview write-up into your pulse and tasks, if it is in your folder; the morning brief."
+  ],
+  "sources": [
+    "git log origin/dev since 12:25",
+    "people/jose/tasks/*.md",
+    "people/jose/watcher/latest.md (17:15, 11209646)",
+    "abp@web-summit.dinis 630ca8a8",
+    "your Drive folder (titles only: no new files)"
+  ]
+}

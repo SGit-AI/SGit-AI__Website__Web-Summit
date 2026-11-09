@@ -1,8 +1,8 @@
 # The Web Summit newsroom: a review and a first pass
 
-By conductor@web-summit.indi, at Indi's word, on 4 November 2026. Indi passed on Dinis's message of the same day: the newsroom at [web-summit.newsroom.sgit.ai](https://web-summit.newsroom.sgit.ai/) should become a full publication, learn from the three earlier newsrooms, and be clear, efficient and easy to use.
+By conductor@web-summit.indi, at Indi's word, on 4 November 2026. Indi passed on Dinis's message of the same day: the newsroom at [promptugal.news](https://promptugal.news/) should become a full publication, learn from the three earlier newsrooms, and be clear, efficient and easy to use.
 
-**Updated at 12:45 UTC** to follow the newsroom's brief pack ([web-summit.newsroom.sgit.ai/brief/](https://web-summit.newsroom.sgit.ai/brief/)), at Indi's word after Dinis pointed to it. Where this page and the pack differ, the pack wins, and brief 1 (Dinis's own words) wins over both.
+**Updated at 12:45 UTC** to follow the newsroom's brief pack ([promptugal.news/brief/](https://promptugal.news/brief/)), at Indi's word after Dinis pointed to it. Where this page and the pack differ, the pack wins, and brief 1 (Dinis's own words) wins over both.
 
 **What is here:**
 
@@ -107,7 +107,7 @@ The patch copies most of this.
 
 ## Proposed publishing roles {#roles}
 
-**Superseded by brief 4** ([the desks and the run](https://web-summit.newsroom.sgit.ai/brief/04-the-desks-and-the-run/index.html)). Brief 4 maps these six roles onto Dinis's pipeline: researcher, curator, journalist, fact-checker, correspondent and the desk, with security and a conductor. It proposes, for Dinis to decide, that Indi owns the editorial side: **the desk, the journalist and the fact-checker**. Indi's agents will start those desks when Indi says go and Dinis has decided the split. Kept below as first proposed.
+**Superseded by brief 4** ([the desks and the run](https://promptugal.news/brief/04-the-desks-and-the-run/index.html)). Brief 4 maps these six roles onto Dinis's pipeline: researcher, curator, journalist, fact-checker, correspondent and the desk, with security and a conductor. It proposes, for Dinis to decide, that Indi owns the editorial side: **the desk, the journalist and the fact-checker**. Indi's agents will start those desks when Indi says go and Dinis has decided the split. Kept below as first proposed.
 
 Six roles for a four-day event, adapted from the PHP newsroom's agent cards. Each is one agent, or one person with an agent.
 
@@ -137,9 +137,9 @@ Six roles for a four-day event, adapted from the PHP newsroom's agent cards. Eac
 
 ## What is needed {#needs}
 
-1. **Push access** to SGit-AI/SGit-AI__Website__Newsroom__Web-Summit for Indi's GitHub account, so Indi's agents can work there directly.
+1. **Push access** to PrompTugal/PrompTugal__News__Website for Indi's GitHub account, so Indi's agents can work there directly.
 2. **Done (4 November, about 11:20 UTC):** Indi allowed these hosts, and all four load from this session:
-   - web-summit.newsroom.sgit.ai
+   - promptugal.news
    - newsroom.sgit.ai
    - pt.newsroom.sgit.ai
    - php.oct.2026.newsroom.sgit.ai
