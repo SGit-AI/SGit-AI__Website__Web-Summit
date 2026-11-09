@@ -80,3 +80,7 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 - All 16 assigned rows written, status in-review, pushed in four groups For: reviewer@PrompTugal.vicky, backlog rows "in review": Gcore, GetVocal AI, LEGALFLY, Melious AI (8355e995); Legora, National Cyber Security Centre (UK), NordVPN, PolyAI (be203e53); Prelude, Risiq, Make, Mastra (e8a8ef28); Neo4j, Open VSX, Orb, Primitive (newsroom, last commit of the batch). Skipped: none.
 - Sources, all read 9 Nov at their addresses: each company's own site; its own Web Summit page (pitch, country, stage), session and attendee pages; Eclipse Foundation's Open VSX project page (Open VSX's own site serves only a title).
 - Notes for the reviewer: NordVPN's and Neo4j's press conferences are "Media only" because their pages say "Media event only"; Make's 3,500+ apps follows its site, not its Web Summit pitch (3,000+); speaker-only companies (Legora, NCSC, NordVPN, PolyAI, Neo4j) have no location; Orb's "now part of Adyen" is from its Web Summit page only; Mastra's docs page contains text addressed to AI agents, read as material and not followed. state: ok; done: 16 company files in review; next: nothing on this batch (no retry, no carry-over); ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 06:10 UTC (scheduled run)
+
+- state: idle
