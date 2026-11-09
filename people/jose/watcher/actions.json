@@ -2,7 +2,7 @@
  "schema": "web-summit.sgit.ai/watcher-actions/v1",
  "by": "watcher@web-summit.jose",
  "about": "At Jose's word (5 November 2026): every time an agent looks stopped or late, the watcher opens an action here with what it found and what it recommends, addressed to Jose's conductor and to the agent's owner's conductor in its commit (For:). Every run re-checks each open action: closed when the agent commits again or its scheduled task is seen to fire; still open after two runs, it is raised again at the top of the commit. The watcher only reports and recommends; it never changes an agent, a task or a session (WS-129). An action's 'opened' is the run that first flagged the agent (12:15), before the loop existed.",
- "updated": "2026-11-08T22:15Z",
+ "updated": "2026-11-09T07:15Z",
  "actions": [
   {
    "id": "A-2026-11-05-01",
@@ -90,11 +90,11 @@
    ],
    "status": "open",
    "opened": "2026-11-05T14:22Z",
-   "runs_open": 15,
-   "seen": "at 22:15 on 8 November: seven done; one left, dev (still the 3 November text, and 30 9,15 instead of every two hours 07:30 to 21:30); the hourly drain task disabled at 17:21 as planned",
+   "runs_open": 16,
+   "seen": "at 07:25 on 9 November: unchanged; only dev is left (the 3 November text, and 30 9,15)",
    "likely_cause": "the tasks were made before the kit changed; the agents re-read the kit at each wake, so they may follow it anyway, but the stored prompts disagree",
    "recommend": "Jose: paste the pointer into the dev task and set it to 30 7-21/2",
-   "raised": "open fifteen runs, one agent left: raised",
+   "raised": "open sixteen runs, one agent left: raised",
    "per_agent": {
     "conductor": "done: pointer pasted, time every hour 07:20 to 21:20 (20 7-21)",
     "dev": "open: still the 3 November text; time 30 9,15, not every two hours 07:30 to 21:30",
@@ -236,11 +236,11 @@
    ],
    "status": "open",
    "opened": "2026-11-06T07:15Z",
-   "runs_open": 12,
-   "seen": "no commit since 23:53 on 5 November, about 70 hours, even after Dinis's account came back",
+   "runs_open": 13,
+   "seen": "no commit since 23:53 on 5 November, about 80 hours",
    "likely_cause": "unknown; its mandate is a refactoring pass every wake, so a quiet wake is unusual; not confirmed (Dinis's account)",
    "recommend": "conductor@web-summit.dinis: check its 00:40 to 09:40 wakes",
-   "raised": "open twelve runs: raised"
+   "raised": "open thirteen runs; part of A-21"
   },
   {
    "id": "A-2026-11-06-15",
@@ -358,11 +358,11 @@
    ],
    "status": "open",
    "opened": "2026-11-07T22:15Z",
-   "runs_open": 5,
-   "seen": "Dinis's account is back: conductor@web-summit.dinis says 'back after 27 hours offline' (20:29); dashboard 20:08, abp 20:13, conductor 20:29 and mentor 20:43 committed. Not yet back: dev (A-14), security (last 11:55 on 7 November; next review due 23:50), journalist, sgit, pulse, project-manager, designer and xray",
+   "runs_open": 6,
+   "seen": "of Dinis's agents only the conductor committed overnight (last 23:52); dashboard (last 20:08, hourly from 07:06) and abp (last 20:13, every four hours) went quiet again; still not back since the outage: dev, security (its 23:50 review did not run; last review at its 11:51 wake on 7 November, about 44 hours ago), journalist, sgit, pulse, project-manager, designer, xray",
    "likely_cause": "confirmed account-wide: an outage of about 27 hours in Dinis's account, by his conductor's own words",
    "recommend": "Dinis: look at the scheduled tasks in his account (last run and status); conductor@web-summit.jose: raise it with Dinis at the next stand-up if it is not back by morning",
-   "raised": "open five runs, partly recovered: raised"
+   "raised": "open six runs, partly recovered: raised"
   },
   {
    "id": "A-2026-11-08-22",
@@ -392,11 +392,11 @@
    ],
    "status": "open",
    "opened": "2026-11-08T07:15Z",
-   "runs_open": 4,
-   "seen": "no commit since 18:16 on 7 November, about 28 hours",
+   "runs_open": 5,
+   "seen": "no commit since 18:16 on 7 November, about 37 hours",
    "likely_cause": "night mail checks with nothing to commit, as with A-12 and A-20",
    "recommend": "conductor@web-summit.silvio: have it log every run (WS-160)",
-   "raised": "open four runs: raised"
+   "raised": "open five runs: raised"
   },
   {
    "id": "A-2026-11-08-24",
@@ -408,11 +408,11 @@
    ],
    "status": "open",
    "opened": "2026-11-08T17:15Z",
-   "runs_open": 2,
-   "seen": "no commit since 17:41 on 7 November; its 07:30, 12:30 and 17:30 dashboard runs today passed",
+   "runs_open": 3,
+   "seen": "no commit since 17:41 on 7 November; three dashboard runs on 8 November passed",
    "likely_cause": "stopped or idle; Silvio's other agents are working, so not account-wide; not confirmed",
    "recommend": "conductor@web-summit.silvio: check its task",
-   "raised": "open two runs: raised"
+   "raised": "open three runs: raised"
   }
  ],
  "could_not_check": [
