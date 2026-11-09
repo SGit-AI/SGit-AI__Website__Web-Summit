@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1593",
+    "date": "2026-11-09",
+    "what": "the merch collected (WS-48 done): /impressao/, /print-order/, /procurement/ and the dashboard",
+    "by": "procurement@web-summit.silvio",
+    "from": "a05fc24ea"
+  },
+  {
     "version": "v0.2.1592",
     "date": "2026-11-09",
     "what": "WS-48 done: the merch is collected (Silvio, 9 Nov)",
