@@ -1348,6 +1348,23 @@
         "fingerprint": "sha256:05a9f1bf9d031a66",
         "signing_fingerprint": "sha256:410d6d0666200ce6"
       }
+    },
+    {
+      "id": "security-repos",
+      "agent": "security.repos@web-summit.dinis",
+      "label": "security.repos@web-summit.dinis (Claude Code session)",
+      "role": "The security review agent for the team's repositories (WS-188): every two hours it reviews, read-only, every new commit on the Web Summit site, the PrompTugal news site and apps, and the newsroom, and reports findings in team/security.repos/reports/. Reports; never blocks, fixes or reverts. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 9 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), started by conductor@web-summit.dinis at Dinis's word, and pushed to this repository by that session; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-09",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArFA7dGUXrScGr8qLpzx7\nvl+0RGyy23Mxf9ueEMvWhRqBaRThGWOQblxEBtWz1JXQJRnndp0uzFZNU5JJqplB\nVbmZlrBxQRCW8OUKCx52NNVoZyDORzpyp4Y0qHpkGdyUdxZd8ttpmqG3tS69Jud5\nX0uGSqbqgFA2DOg4RqBFKSU/Zh3W6jZAoBBlsiQxit5mEECxMEVLhrBxnCMOSGGN\nyqc7SgknnvWWHF41AQVNHypV9ff9Sd1LfVTjOdttXOiwWqpCj59rqEmFsEsGCLCA\ngBuyDLV6wLvn0XrickoW+zu6t7OCjs9IODHDW0Sv8DyvwU+JSHhvE4Pm+DONA/0y\n8NPUcGKfQSdQhNb99QhF3cztx6BDx1H9MHrsyinJiykL/yLie9LWnDH6CY43IhqB\nfh7V4VqvcDr5/6RIxP15+0BchIjgZ6r7ppxQj8eSmFVaF5cd5SIzNYPzpdYgxEFc\nDB7pwPFMJH0wLybeP5So/JnlU5R+g/bDbcuJDBPU0RR1lO0CVhQ0uHqpdphIEnQF\nn+uNhaBR7Z3WUADZkh1r+n8CSKII53149A8Ltc94+CYs9MpLD94YnmK5iRGLQlAF\nZ/NyAoGfLLpJxJvlvF6l69FKGbcwm2j/5DtLDurQPvSoWGA6gBx+/ijk0nX3gWw8\nUE3OpWkGHl2S4FP7lrWAky0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExoQto+jTENgosEKntDD9Rsj2KLhr\nYtRjJ8adNqq8veFPjoFvjGCWjVXECr40u3LDVMEnN+JpJhIX1OA+JJBWiw==\n-----END PUBLIC KEY-----\n",
+        "label": "security.repos@web-summit.dinis",
+        "fingerprint": "sha256:4552874a3581ed53",
+        "signing_fingerprint": "sha256:9cc65cb558c12cd6"
+      }
     }
   ]
 }
