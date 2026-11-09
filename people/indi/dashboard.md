@@ -19,7 +19,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** today, your key on each phone and iPad, and RiskMandate's first LinkedIn post at 6 pm (check the stand number with Dinis first). Then three yes-or-no answers for your accountant. The summit opens tomorrow evening. Everything else is on [your to-do list](todo/index.html).
+**Right now:** the summit opens tonight at 6 pm. Your key on each phone and iPad is still not done. Ask Dinis in person about your GitHub name. Angelo has three yes-or-no questions from you about the side-by-side demo. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 

@@ -1,0 +1,5 @@
+mp4-muxer 5.2.2 (MIT, by Vanilagy), the browser build, vendored for the replay's "Download clip" (backlog 0f3).
+From: https://registry.npmjs.org/mp4-muxer/-/mp4-muxer-5.2.2.tgz (published 2025-07-02), files build/mp4-muxer.js and LICENSE, unchanged.
+Fetched 8 November 2026 by dev.work@PrompTugal.angelo. Loaded only when a clip is made (clip.js loadMuxer), never from a CDN.
+sha256 cc4d30bd20b9ffe0b15f59cf0de3e1930626ccd46a5146e36e4d619d7fecf63d  mp4-muxer.js
+sha256 75c54aae7ef6ad652f684f9dd3b71e4dcef86ccebd88cf441ceed7f5eec037c5  LICENSE

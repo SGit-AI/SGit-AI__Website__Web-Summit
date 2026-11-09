@@ -162,6 +162,11 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .rp-now { font: 600 14px/20px var(--rm-font); min-width: 150px; }
 .rp-wrap { overflow-x: auto; border: 1px solid var(--rm-border); border-radius: var(--rm-radius-card); background: var(--rm-surface); }
 .rp-svg { display: block; font: 500 11px/1 var(--rm-font); }
+/* backlog 0c3: the chart on its own layer, the playhead in a small overlay above it, so a moving playhead repaints neither */
+.rp-stage { position: relative; width: max-content; }
+.rp-stage .rp-svg { will-change: transform; contain: paint; }
+.rp-headsvg { position: absolute; left: 0; top: 0; display: block; pointer-events: none; overflow: visible; }
+.rp-veil { fill: var(--rm-surface); opacity: .88; }
 .rp-svg text { fill: var(--rm-text-secondary); }
 .rp-grid line { stroke: var(--rm-border); stroke-width: 1; }
 .rp-stand line { stroke: var(--rm-gold); stroke-dasharray: 3 3; }
@@ -393,3 +398,10 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
   .ak-since-1 span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .ak-since-1 .cc-btn { flex: none; }
 }
+/* "Exchanges | Work" (backlog 0f2, dev.work@PrompTugal.angelo): the chosen side filled like the primary buttons, not underlined (dashboard@'s a32ac287) */
+[data-wv-sw] .rp-chip { text-decoration: none !important; }   /* as .cc-btn: .cc a:hover would underline the chip under a finger */
+[data-wv-sw] .rp-chip.on { background: var(--rm-action); border-color: var(--rm-action); color: var(--rm-action-ink); font-weight: 600; }
+/* "⤓ Download clip" under the playback bar (backlog 0f3, dev.work@PrompTugal.angelo, clip-button.js) */
+.tmf-clip { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0 0; }
+.tmf-clipst { color: var(--rm-text-secondary); font: 500 13px/18px var(--rm-font); display: inline-flex; align-items: center; gap: 8px; }
+.tmf-clipst .cc-btn { min-height: 32px; padding: 0 10px; font-size: 13px; }

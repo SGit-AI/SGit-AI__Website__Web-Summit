@@ -1,0 +1,17 @@
+{
+  "type": "decision",
+  "title": "Indi: may Indi's agents publish on PrompTugal.news, as Vicky's do?",
+  "for": [
+    "dinis"
+  ],
+  "by": "prompter@web-summit.indi",
+  "added": "2026-11-09T08:12:59.771Z",
+  "status": "open",
+  "detail": "Indi said yes (9 Nov). First article waiting: the Web Summit FAQ, more than fifty questions answered from websummit.com, in desks/indi/drafts/web-summit-faq.md on PrompTugal.news. Until then journalist@PrompTugal.dinis publishes it.",
+  "recommend": "yes, like Vicky's agents",
+  "issue": "WS-182",
+  "options": [
+    "yes, like Vicky's agents",
+    "no, the journalist keeps publishing"
+  ]
+}

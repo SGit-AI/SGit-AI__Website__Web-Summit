@@ -6,6 +6,7 @@ path: videos/index.html
 RiskMandate is technical, so a 20-second promo is not enough: we explain it with stories and visual explanations, with and without sound. Made by Silvio Switha's video pipeline; published here first, then on our video channels.
 
 ```cards
+The video library, ready to post | ../people/silvio/videos/index.html | For the team and whoever posts on social media: every approved video, EN and PT, with its post text, to watch, download and share.
 Reach, Mandate, Gap | reach-mandate-gap/index.html | 53 s. The visual explanation: what an agent can reach, what it was authorised to do, and the gap.
 RiskMandate Stories: fifty new agents | fifty-new-agents/index.html | 2 min 44 s. Monday, fifty new agents, and the questions before you switch them on.
 Your AI has access. Does it have permission? | access-permission/index.html | 30 s, subtitled. Silvio's short film for the stand's loop and LinkedIn: the same lines as the T-shirts.

@@ -1,6 +1,6 @@
 ---
 title: "Agent Behaviour Policies: one for each of our agents"
-summary: An Agent Behaviour Policy (ABP) for every agent on the Web Summit 2026 team (87 pages), in RiskMandate's terms, in the explorer phase. With the scenarios where the policies caught something, and the study of the connectors.
+summary: An Agent Behaviour Policy (ABP) for every agent on the Web Summit 2026 team (93 pages), in RiskMandate's terms, in the explorer phase. With the scenarios where the policies caught something, and the study of the connectors.
 ---
 Kept by abp@web-summit.dinis. RiskMandate shown on ourselves: for every agent we run, its **Reach** (what it can actually do), its **Mandate** (what it was asked to do), the **Gap** between them, and the **Barrier** that really stands in the way, each labelled as a rule, a review or a technical control, with the evidence. The model: [Agent Behaviour Policy](https://riskmandate.ai/agent-behaviour-policy.html).
 
@@ -33,14 +33,18 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [sgit@web-summit.dinis](sgit-web-summit-dinis/index.html)
 - [the PrompTugal team (nine agents @PrompTugal.dinis)](promptugal-team-promptugal-dinis/index.html)
 
-## Angelo's agents (17) {#angelo}
+## Angelo's agents (21) {#angelo}
 
 - [crm@PrompTugal.angelo](crm-promptugal-angelo/index.html)
 - [dashboard@PrompTugal.angelo](dashboard-promptugal-angelo/index.html)
 - [desk.conductor@PrompTugal.angelo](desk-conductor-promptugal-angelo/index.html)
+- [dev.abp@PrompTugal.angelo](dev-abp-promptugal-angelo/index.html)
+- [dev.android@PrompTugal.angelo](dev-android-promptugal-angelo/index.html)
+- [dev.app@PrompTugal.angelo](dev-app-promptugal-angelo/index.html)
 - [dev.links@PrompTugal.angelo](dev-links-promptugal-angelo/index.html)
 - [dev.map@PrompTugal.angelo](dev-map-promptugal-angelo/index.html)
 - [dev.venues@PrompTugal.angelo](dev-venues-promptugal-angelo/index.html)
+- [dev.work@PrompTugal.angelo](dev-work-promptugal-angelo/index.html)
 - [dev@PrompTugal.angelo](dev-promptugal-angelo/index.html)
 - [helper@PrompTugal.angelo](helper-promptugal-angelo/index.html)
 - [policy@PrompTugal.angelo](policy-promptugal-angelo/index.html)
@@ -53,7 +57,7 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [vault@PrompTugal.angelo](vault-promptugal-angelo/index.html)
 - [writer@PrompTugal.angelo](writer-promptugal-angelo/index.html)
 
-## Indi's agents (11) {#indi}
+## Indi's agents (12) {#indi}
 
 - [accountant@web-summit.indi](accountant-web-summit-indi/index.html)
 - [builder@web-summit.indi](builder-web-summit-indi/index.html)
@@ -64,10 +68,11 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [factory@web-summit.indi](factory-web-summit-indi/index.html)
 - [journalist@web-summit.indi](journalist-web-summit-indi/index.html)
 - [messaging@web-summit.indi](messaging-web-summit-indi/index.html)
+- [social@web-summit.indi](social-web-summit-indi/index.html)
 - [synthetic@web-summit.indi](synthetic-web-summit-indi/index.html)
 - [ux@web-summit.indi](ux-web-summit-indi/index.html)
 
-## Jose's agents (12) {#jose}
+## Jose's agents (13) {#jose}
 
 - [accountant@web-summit.jose](accountant-web-summit-jose/index.html)
 - [automation@web-summit.jose](automation-web-summit-jose/index.html)
@@ -81,6 +86,7 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [sales-coach@web-summit.jose](sales-coach-web-summit-jose/index.html)
 - [vault@web-summit.jose](vault-web-summit-jose/index.html)
 - [watcher@web-summit.jose](watcher-web-summit-jose/index.html)
+- [writer@PrompTugal.jose](writer-promptugal-jose/index.html)
 
 ## Silvio's agents (11) {#silvio}
 

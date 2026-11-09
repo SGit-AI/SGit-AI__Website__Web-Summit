@@ -55,3 +55,11 @@ Vicky's programme desk for the Web Summit newsroom (brief 4; brief 5, step 1; br
 - applied SCHED-WS: my task runs at 05:00 UTC (cron 0 5 * * *), as set by the conductor; my prompts file carries the time. SA21 read: nothing for this desk. No hold (people/vicky/decisions.md, commits 07c7ceb5, 7a4d6602 and 212e084d, each from the conductor).
 - Interview shortlist: 10 names and 4 reserves, held only in the confidential shortlist vault; all re-read today; vault-audit clean before the push (that vault's AUDIT.md).
 - state: ok; done: agenda live, SA16 and SCHED-WS applied, shortlist re-checked; next: 9 Nov 05:00 run; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 05:00 UTC run
+
+- The agenda from 9 November, the summit's opening day, is live: 226 items. The Opening Night programme on Centre Stage is now public (Welcome to Web Summit 2026 at 18:00, The age of agents 18:35, The future of AI 18:55, Welcome to tomorrow 19:20); a Web Summit Spotlight press conference, Tue 10 Nov 12:30; Brazil's blueprint for cyber resilience moves to Wed 11 Nov 14:32 (PrompTugal/PrompTugal__News__Website 599a7ee7 with derived data 21c5cb70, promptugal.news v0.1.787).
+- Registration and Night Summit times unchanged (websummit.com/essentials/registration/ and /essentials/schedule/, read 9 Nov 05:07 UTC); the same 4 entries in data/events.json still answer 404.
+- decisions.md read, no hold; nothing new for this desk; my prompts file and memory agree.
+- Interview shortlist: 10 names and 4 reserves, held only in the confidential shortlist vault; all re-read today; vault-audit clean before the push (that vault's AUDIT.md).
+- state: ok; done: agenda live for opening day, shortlist re-checked; next: 10 Nov 05:00 run; ask: none; run: scheduled

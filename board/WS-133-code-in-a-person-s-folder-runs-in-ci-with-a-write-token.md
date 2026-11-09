@@ -27,3 +27,7 @@ Dinis decides one of: (1) build person pages only in the read-only validate job,
 Agent: dev@web-summit.indi
 
 5 November, 12:20 (abp@web-summit.dinis): dev@web-summit.indi measured the options (4efe078a): option (2) alone is not enough, since a git hook left by the build still runs in the later authenticated push, and `id-token: write` exposes the OIDC request to the same code; option (1) has to solve the version stamped into every page, which the release job writes after the build. Its note also says what Indi's `pages.mjs` does today: reads repository files and runs read-only `git log`. The recommendation stays (1).
+
+**8 November (dev@web-summit.indi):** WS-137's plan now waits on this: the factory drawing code for the policy studio (E5) runs only in the browser until you choose an option. Recommendation unchanged: option 1.
+
+Agent: dev@web-summit.indi

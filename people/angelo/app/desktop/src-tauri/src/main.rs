@@ -27,14 +27,17 @@ const LABEL: &str = "live";
 /// 3D (the pop-out's 3D switch, so the app and the pop-out stay in step): the page's own d3=1, remembered the same way;
 /// the app reloads into it. A drag still moves the window; the 3D graph turns by itself.
 const INIT: &str = r#"(() => {
-  const css = 'html,body{background:transparent!important}body *:not(.lv-display):not(.lv-display *){visibility:hidden!important}'
+  // no scroll bar (Angelo, 8 November: "there is a scroll bar appearing"): the page is wider and taller than the window
+  const css = 'html,body{background:transparent!important;overflow:hidden!important;scrollbar-width:none!important}::-webkit-scrollbar{display:none!important}'
+    + 'body *:not(.lv-display):not(.lv-display *):not(#hexapp-ui):not(#hexapp-ui *){visibility:hidden!important}'
     + '.lv-display{visibility:visible!important}.lv-display,.lv-display .lv{background:transparent!important}'
     + '.lv-display .lv,.lv-display .lv-3d{cursor:default!important}.lv-display .lv-fill{opacity:1!important}';
   const add = () => { if (document.getElementById('hexapp-css')) return; const s = document.createElement('style'); s.id = 'hexapp-css'; s.textContent = css; (document.head || document.documentElement).appendChild(s) };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', add); else add();
   const inside = e => { const w = innerWidth, h = innerHeight, s = Math.min(w, h); const u = (e.clientX - (w - s) / 2) / s * 1000, v = (e.clientY - (h - s) / 2) / s * 1000, dv = Math.abs(v - 500); return dv <= 433 && Math.abs(u - 500) <= 500 - 250 * dv / 433 };
   const invoke = (cmd, args) => { try { return window.__TAURI_INTERNALS__.invoke(cmd, args || {}) } catch (e) { } };
-  let calm = false; try { calm = localStorage.getItem('hexapp-calm') === '1' } catch (e) { }
+  // Calm on by default (Angelo, 8 November: "it sent my laptop's fan in high gear"); off only when chosen
+  let calm = true; try { calm = localStorage.getItem('hexapp-calm') !== '0' } catch (e) { }
   const R = window.requestAnimationFrame.bind(window), C = window.cancelAnimationFrame.bind(window), ids = new Map(); let n = 1e9, lastT = 0;
   window.requestAnimationFrame = cb => { const id = ++n;
     const go = () => ids.set(id, R(ts => { ids.delete(id); if (calm && ts !== lastT && ts - lastT < 60) return later(); lastT = ts; cb(ts) }));
@@ -45,9 +48,44 @@ const INIT: &str = r#"(() => {
     d3: () => d3, set3d: v => { try { localStorage.setItem('hexapp-3d', v ? '1' : '0') } catch (e) { } ; go3d(!!v) } };
   let d3 = /(^|&)d3=1(&|$)/.test(location.search.slice(1)); try { const k = localStorage.getItem('hexapp-3d'); if (k !== null && (k === '1') !== d3) go3d(k === '1') } catch (e) { }
   function go3d(v) { if (v === d3) return; const q = location.search.slice(1).split('&').filter(x => x && x !== 'd3=1'); if (v) q.push('d3=1'); location.replace(location.pathname + '?' + q.join('&') + location.hash) }
-  addEventListener('mousedown', e => { if (e.button === 0 && inside(e)) { e.preventDefault(); invoke('plugin:window|start_dragging', { label: 'live' }) } }, true);
+  addEventListener('mousedown', e => { if (e.button === 0 && inside(e) && !(e.target.closest && e.target.closest('#hexapp-ui'))) { e.preventDefault(); invoke('plugin:window|start_dragging', { label: 'live' }) } }, true);
   addEventListener('contextmenu', e => { e.preventDefault(); invoke('show_menu', { calm, d3 }) }, true);
-  addEventListener('keydown', e => { if (e.key === 'Escape') { e.stopImmediatePropagation(); e.preventDefault() } }, true);
+  addEventListener('keydown', e => { if (e.key === 'Escape') { e.stopImmediatePropagation(); e.preventDefault(); const p = document.getElementById('hexapp-panel'); if (p) p.hidden = true } }, true);
+  // The control panel (Angelo, 8 November: "a little control panel to choose the view, to resize it, etc. Also to close
+  // it"): a quiet gear and a close button beside the logos at the hexagon's top; the gear opens a small panel in the hexagon's middle,
+  // the same choices as the right-click menu. Inside the hexagon, so its clicks reach the page; a drag never starts on it.
+  const ui = () => {
+    if (document.getElementById('hexapp-ui') || !document.body) return;
+    const lay = (() => { try { return localStorage.getItem('ak.lvLayout') || 'ring' } catch (e) { return 'ring' } })();
+    const st = document.createElement('style'); st.textContent = '#hexapp-ui,#hexapp-ui *{visibility:visible!important}#hexapp-ui #hexapp-panel[hidden]{display:none!important}#hexapp-ui{position:fixed;inset:0;pointer-events:none;z-index:2147483000;font:500 13px/1.2 system-ui,sans-serif;color:#eef3f8}'
+      + '#hexapp-ui button{pointer-events:auto;cursor:pointer;border:1px solid rgba(201,214,227,.35);background:rgba(14,32,53,.88);color:#eef3f8;border-radius:999px;font:inherit}'
+      + '#hexapp-ui button:hover,#hexapp-ui button:focus-visible{border-color:#05BFE9;outline:none}'
+      + '#hexapp-bar{position:absolute;left:calc(50% + min(100vw,100vh)*.115);top:calc(50% - min(100vw,100vh)*.405);display:flex;gap:6px;opacity:.35;transition:opacity .2s}'
+      + '#hexapp-ui:hover #hexapp-bar,#hexapp-bar:focus-within{opacity:1}#hexapp-bar button{width:26px;height:26px;padding:0;font-size:14px}'
+      + '#hexapp-panel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:auto;background:rgba(7,17,31,.94);border:1px solid #294A64;border-radius:14px;padding:10px 12px;display:grid;gap:8px;min-width:200px;box-shadow:0 8px 24px rgba(0,0,0,.4)}'
+      + '#hexapp-panel[hidden]{display:none}#hexapp-panel b{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#9EB2C7}'
+      + '#hexapp-panel .r{display:flex;flex-wrap:wrap;gap:5px}#hexapp-panel .r button{padding:4px 10px}#hexapp-panel button[aria-pressed=true]{background:#05BFE9;color:#04121F;border-color:#05BFE9}';
+    document.head.appendChild(st);
+    const d = document.createElement('div'); d.id = 'hexapp-ui';
+    const b = (id, t, on) => `<button type="button" data-a="${id}"${on === undefined ? '' : ` aria-pressed="${on}"`}>${t}</button>`;
+    d.innerHTML = `<div id="hexapp-bar">${b('panel', '⚙')}${b('quit', '✕')}</div><div id="hexapp-panel" hidden role="dialog" aria-label="Controls">`
+      + `<b>View</b><div class="r">${b('lv:ring', 'People ring', lay === 'ring')}${b('lv:agents', 'Agents ring', lay === 'agents')}${b('lv:work', 'Work', lay === 'work')}</div>`
+      + `<div class="r">${b('2d', '2D', !d3)}${b('3d', '3D', d3)}</div>`
+      + `<b>Size</b><div class="r">${b('size_s', 'S')}${b('size_m', 'M')}${b('size_l', 'L')}</div>`
+      + `<b>Window</b><div class="r">${b('on_top', 'Always on top')}${b('calm', 'Calm', calm)}</div>`
+      + `<div class="r">${b('browser', 'Open in browser')}${b('reload', 'Reload')}${b('quit', 'Close')}</div></div>`;
+    document.body.appendChild(d);
+    d.addEventListener('click', e => { const t = e.target.closest('button'); if (!t) return; const a = t.dataset.a, p = document.getElementById('hexapp-panel');
+      if (a === 'panel') { p.hidden = !p.hidden; return }
+      if (a.startsWith('lv:')) { try { localStorage.setItem('ak.lvLayout', a.slice(3)) } catch (e) { } location.reload(); return }
+      if (a === '2d' || a === '3d') { window.__hexapp.set3d(a === '3d'); return }
+      if (a === 'calm') { window.__hexapp.setCalm(!calm); t.setAttribute('aria-pressed', String(calm)); return }
+      if (a === 'reload') { location.reload(); return }
+      Promise.resolve(invoke('app_action', { id: a })).then(v => { if (a === 'on_top' && typeof v === 'boolean') t.setAttribute('aria-pressed', String(v)) });
+      if (a === 'size_s' || a === 'size_m' || a === 'size_l') p.hidden = true });
+    Promise.resolve(invoke('app_action', { id: 'on_top_state' })).then(v => { const t = d.querySelector('[data-a=on_top]'); if (t && typeof v === 'boolean') t.setAttribute('aria-pressed', String(v)) });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ui); else ui();
 })();"#;
 
 static ON_TOP: AtomicBool = AtomicBool::new(true);
@@ -71,9 +109,19 @@ fn show_menu(window: WebviewWindow, calm: Option<bool>, d3: Option<bool>) -> Res
     window.popup_menu(&menu).map_err(err)
 }
 
-fn on_menu(app: &AppHandle, event: MenuEvent) {
+/// The control panel's actions (the same as the menu's, for the window itself); returns "always on top" afterwards.
+/// Only these ids do anything; any other is ignored.
+#[tauri::command]
+fn app_action(app: AppHandle, id: String) -> bool {
+    if id != "on_top_state" && matches!(id.as_str(), "on_top" | "size_s" | "size_m" | "size_l" | "browser" | "quit") { act(&app, &id) }
+    ON_TOP.load(Ordering::Relaxed)
+}
+
+fn on_menu(app: &AppHandle, event: MenuEvent) { act(app, event.id().as_ref()) }
+
+fn act(app: &AppHandle, id: &str) {
     let Some(w) = app.get_webview_window(LABEL) else { return };
-    match event.id().as_ref() {
+    match id {
         "on_top" => { let v = !ON_TOP.load(Ordering::Relaxed); ON_TOP.store(v, Ordering::Relaxed); let _ = w.set_always_on_top(v); }
         "size_s" => { let _ = w.set_size(LogicalSize::new(280.0, 280.0)); }
         "size_m" => { let _ = w.set_size(LogicalSize::new(420.0, 420.0)); }
@@ -101,7 +149,7 @@ fn open_in_browser(url: &str) {
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_window_state::Builder::default().build())
-        .invoke_handler(tauri::generate_handler![show_menu])
+        .invoke_handler(tauri::generate_handler![show_menu, app_action])
         .on_menu_event(on_menu)
         .setup(|app| {
             let url = WebviewUrl::External(LIVE_URL.parse().expect("the live page's address"));

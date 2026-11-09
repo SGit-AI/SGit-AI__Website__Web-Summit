@@ -14,22 +14,29 @@ AI agents are computer programs that do tasks for a company on their own: answer
 
 That page is an **Agent Behaviour Policy**. It ends in a **Licence to Operate**: what the agent may do, and on what conditions. Bosses, security teams and insurers all read the same page.
 
-## The plan: five steps
+## The plan: five steps (version 2, 8 November, after the synthetic review; Indi said yes to all five changes)
 
-1. **Make the drawings reusable.** We already have 28 picture pages, one per company we want to meet; today they are only made when the website is built. This step lets the same drawings be made live, in the browser, during a conversation, so a team member can produce the pictures for a new company on the spot.
-2. **A "Make the infographic" button in the policy studio.** The policy studio is a chat page (built): you describe a company's AI agents and it writes their policy section by section. The button turns that conversation into three pictures (what the company does, the risks from its agents, how RiskMandate helps), each in expert words and everyday words side by side.
-3. **The animation.** A short moving picture of the customer's own situation: a big circle (everything their agent can touch) grows, a smaller ring (what it is allowed to do) appears, their people and agents arrive, and the risky steps outside the ring flash red. Most people see the risk in seconds when it moves.
-4. **The demo pack.** One link per company holding its policy, infographic and animation, plus a copy that works without internet (the venue allows no hotspots), so the customer leaves with something to share inside their company. Needs Indi and Nimay to pick the first three companies.
-5. **Test and hand over.** Check it works and is safe, put it live, and tell the team.
+Built in this order, so the most useful part for Thursday is ready first.
 
-## The customer workflow: what a team member shows and says, in order
+1. **The demo pack, as a vault per company.** A vault is a private online folder; a read key is the password that lets one company open theirs and nothing else. Each of the three companies gets one vault holding its policy, infographic and animation. **Test data only** until the security agent approves real keys (WS-132, WS-117). A copy that works without internet is a stand backup only, **if Dinis allows it**.
+2. **Testing, early.** Every piece is tried with wifi switched off and in a headless browser (a browser run by a program, no screen) against a pretend model, before it goes near a customer.
+3. **A "Make the infographic" button in the policy studio.** It turns the studio's conversation into the three pictures (what the company does, its risks from agents, how RiskMandate helps), expert and everyday words side by side. It runs **only in the browser**: nothing new runs while the website is rebuilt, until Dinis decides WS-133.
+4. **The animation, built on the studio's own.** The studio already animates a scenario (since 4 November). This makes it RiskMandate's picture, in the same words as Silvio's video: Reach, Mandate, and the gap between them.
+5. **Hand over.** Put it live, and tell Dinis, the designer agent and the security agent, with what is done and what is not.
+
+**Also for Thursday, not code:** one page of likely objections and a price answer, agreed with Dinis (no one improvises on price or terms); and a short note taken after every stand conversation.
+
+## The customer workflow: what a team member shows and says, in order (version 2)
 
 1. **Before the meeting, know them.** Read the company's factory page: what they do, the likely risks from their agents, the suggested opening line. *Exists today (28 pages).*
-2. **Open with one question** they can't easily answer: "Do you know what your agents are doing?" or "Your AI has access. Does it have permission?" It starts on their problem, not our product. *Exists today (shirt and card lines).*
-3. **Explain the problem in everyday words:** "An AI agent is like a new employee with a master key. Most companies don't know which doors the key opens." Show the "RiskMandate in one picture" panel. *Exists today.*
-4. **Ask about their agents:** what they run or plan to run, what each is for, what each can reach. Type the answers into the policy studio, as you talk or later. *Exists today; only test keys may be used for now.*
-5. **Show their gap:** the animation of their own scenario and the risks picture. "This is what your agent can do. This is what you asked it to do. The red part is the risk nobody has written down." *Planned (steps 2 and 3).*
-6. **Show what RiskMandate gives them:** the draft policy, Reach to Licence to Operate. "One page per agent. Your security team, your board and your insurer all read the same record." *Exists today (the studio writes it).*
-7. **Leave something behind:** the demo pack link, and your business card with its QR code. *Planned (step 4); today, the factory page link.*
-8. **Follow up:** an agent drafts the message; **a person reads it and sends it** (agents never send). Thanks, the pack link, and one proposed next step, such as writing the policy for one of their real agents together. *Exists today (the follow-up loop).*
-9. **The next step:** agree a first agent to write a real policy for. **No promises** on prices or terms: those come from Dinis, not from the pages or the agents.
+2. **Open with one question** they can't easily answer: "Do you know what your agents are doing?" or "Your AI has access. Does it have permission?" *Exists today (shirt and card lines).*
+3. **Check they are the right person (new).** "Do you run AI agents today, or plan to? Who in your company owns the risk if one goes wrong?" If they run none and plan none, thank them, give a card, and move on. *Script only.*
+4. **Explain the problem in everyday words:** "An AI agent is like a new employee with a master key. Most companies don't know which doors the key opens." Show the "RiskMandate in one picture" panel. *Exists today.*
+5. **Say who we are and who vouches for us (new).** Who is behind RiskMandate, what a Licence to Operate is, and who reads it (their security team, board, insurer). Only what is public and true. *Wording to agree with Dinis.*
+6. **Work through an example, not their secrets (changed).** Use a made-up example from their industry in the policy studio, so they share nothing confidential. Ask about their real agents only if they offer. *The studio exists today; test keys only for now.*
+7. **Show the gap:** the animation and the risks picture. "This is what the agent can do. This is what it was asked to do. The red part is the risk nobody has written down." *Planned (plan steps 3 and 4).*
+8. **Show what RiskMandate gives them:** one page per agent, Reach to Licence to Operate. "Your security team, your board and your insurer all read the same record." *Exists today (the studio writes it).*
+9. **Handle the questions** with the agreed answer sheet, including price: "Pricing comes from Dinis; here is how a first policy starts." *Planned (to agree with Dinis).*
+10. **Leave something behind:** their vault link and read key, passed on by a person, and your card with its QR code. *Planned (plan step 1); today, the factory page link.*
+11. **Take a note within minutes (new):** name, role, company, their agents, the next step. *Planned: a simple note form.*
+12. **Follow up:** an agent drafts it; **a person reads it and sends it**. Thanks, the vault link, and one next step: writing the policy for one of their real agents together. *Exists today (the follow-up loop).*

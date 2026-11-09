@@ -21,7 +21,8 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
     return { cls: live.className, color: cs.color, anim: dotA, liveIn: inside(live), liveFont: parseFloat(cs.fontSize), logos: logos.map(i => ({ src: i.getAttribute('src'), w: i.getBoundingClientRect().width, inside: inside(i), loaded: i.naturalWidth > 0 })),
       when: when.textContent, shown: +when.dataset.lvShown, whenIn: inside(when), whenFont: parseFloat(getComputedStyle(when).fontSize), oldDot: !!document.querySelector('.lv-dot'), now: Date.now() } })
   const a = await st()
-  const expect = new Intl.DateTimeFormat('en-US', { timeZone: TZ, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date(a.shown)).replace(/^24/, '00')
+  // the page follows the viewer's locale (en-US here: 12-hour); a 24-hour expectation failed after 13:00 in New York (dev.map, 8 November)
+  const expect = new Intl.DateTimeFormat('en-US', { timeZone: TZ, hour: '2-digit', minute: '2-digit' }).format(new Date(a.shown))
   await p.locator('.lv-hex').screenshot({ path: `${S}/lvlabel-${n}-${scheme}.png` })
   mode = 'stale'; await p.waitForFunction(() => /\bold\b/.test(document.querySelector('[data-lv-live]').className), null, { timeout: 8000 }).catch(() => { }); const o = await st()
   mode = 'down'; await p.waitForFunction(() => /\boff\b/.test(document.querySelector('[data-lv-live]').className), null, { timeout: 15000 }).catch(() => { }); const d = await st()

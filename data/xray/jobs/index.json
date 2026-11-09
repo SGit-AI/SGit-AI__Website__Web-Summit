@@ -1,0 +1,5 @@
+{
+  "about": "The X-ray requests from the booth (WS-194): one job per request, kept by xray@web-summit.dinis with admin/tools/xray-jobs.mjs, shown on /xray/status/. Public: subjects are companies, use cases or industries; who requested is not listed.",
+  "updated": null,
+  "jobs": []
+}

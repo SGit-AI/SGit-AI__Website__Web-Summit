@@ -2,9 +2,7 @@
 title: Setup help
 summary: The team's setup questions, each answered once so it helps the next person. Newest first, with where each answer comes from. Kept by helper@PrompTugal.angelo (formerly helper@web-summit.angelo); ask by committing with "For: helper@PrompTugal.angelo", or ask Angelo.
 ---
-> **Draft (WS-158): Angelo has not yet read these answers.** They come from the team's guides, each with its source; if one is wrong, tell helper@PrompTugal.angelo.
-
-The questions people on the team have asked while getting set up, answered once so the next person finds the answer here. Newest first. Each answer says where it comes from; where nobody knows yet, it says so. All six were reviewed on 7 November against the guides as they stand that day; each that changed says so in one line.
+The questions people on the team have asked while getting set up, answered once so the next person finds the answer here. Newest first. Each answer says where it comes from; where nobody knows yet, it says so. All six were reviewed on 7 November against the guides as they stood that day, and read and corrected with Angelo on 8 November; each change says so in one line. If an answer is wrong or out of date, tell helper@PrompTugal.angelo.
 
 **Ask a question:** tell your agent *"ask Angelo's helper: ..."*. It commits the question with the line `For: helper@PrompTugal.angelo` (the old name, helper@web-summit.angelo, still reaches me), and the answer comes back in a commit for your agent, then appears here. Or ask Angelo. The steps themselves are on [the start page](../start/index.html#steps) and, in plain language, in [the onboarding guide](../onboarding-guide/index.html).
 
@@ -100,12 +98,12 @@ Do this **before** an agent makes its key: a key made in a session you then repl
 
 It is almost always one of three things:
 
-1. **The invitation isn't accepted yet.** Send your **exact GitHub username** in writing to Angelo (he sends the invitations himself, WS-124; Dinis can too). Agents never send invitations: admin rights stay with people. It arrives in your **Workspace email**: press **View invitation**, then the green **Accept invitation**. Not there? Check spam, then **Notifications** at the top right of github.com. Invitations expire: ask for a new one.
+1. **The invitation isn't accepted yet.** Send your **exact GitHub username** in writing to Angelo (he sends the invitations himself, from his GitHub account `the-neuronin`, WS-124; Dinis can too). The invitation arrives in your **Workspace email**: press **View invitation**, then the green **Accept invitation**. Not there? Check spam, then **Notifications** at the top right of github.com. Invitations expire: ask for a new one. Agents never send invitations: admin rights stay with people.
 2. **Claude Code is connected to a different GitHub account**, often a personal one. Check at https://claude.ai/connect-github.
 3. **The session was opened before you accepted.** Open a new session.
 
 Saying "done" is not enough: twice, someone was recorded as having a GitHub account that nobody could find. Only an **admin** of a repository can invite; another repository (the newsroom's, for example) has its own admins (WS-141).
 
-*Revised 7 November: invitations come from Angelo or Dinis in person, never from an agent (Angelo's rule of 6 November). The start page's step 3 still says to send the username to Dinis; either works.*
+*Revised 7 November: invitations come from Angelo or Dinis in person, never from an agent (Angelo's rule of 6 November). The start page's step 3 still says to send the username to Dinis; either works. Revised 8 November, at Angelo's word: the account invitations come from (the-neuronin), and the agents' rule moved to the end of the point.*
 
 *Sources: the onboarding guide's step 3A and "What goes wrong"; [WS-09 and WS-124](../briefs/index.html#issues); Angelo's protocol, "Admin rights" (commit 2219eb2); commit 575d48b (Indi invited by Angelo); commit a6c8a91 (WS-141).*

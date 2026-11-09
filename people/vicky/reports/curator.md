@@ -198,3 +198,37 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 
 - Added to my scheduled prompt, at Vicky's word and word for word, right after standing answer 22's line: "Before marking a connection storyline ready, re-check it against published articles and drafts." Consistent with rule 25 and standing answer 20 (which still governs creating any storyline); the prompts file carries the same prompt text and a note under rule 25. Schedule unchanged: `30 5,10,14,18 * * *`, next run 18:30 UTC.
 - state: ok; done: sentence added to the task prompt and the prompts file; next: the 18:30 run; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 17:00 UTC (prompted: desk review across all five desks)
+
+- applied (Vicky's word in chat): from the next run with new research I review the researcher's material across all five desks, summit, Europe, Portugal, AI and connections, and turn suitable material into mature, non-duplicate assignments for each desk's journalist, each with a reader angle and sources; connections are not the focus. A desk with nothing suitable gets a one-line reason in the map's `desk_review`, missing evidence goes to the researcher as a gap, and no story is forced. It is in my scheduled prompt (end of step 4) and my prompts file (rule 26); schedule unchanged, next run 18:30 UTC.
+- state: ok; done: desk review added to the task prompt and prompts file; next: the 18:30 run; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 18:30 UTC run (first desk review)
+
+- decisions.md read first: no HOLD.md; answers 23 to 25 and the company-page items are for others; prompts file re-read, it matches. New research: the researcher's 18:15 revision of [Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/), read 8 November 2026 (country, stage, pitch for the first 100 startups); map desks/curator/2026-11-08-1845.json.
+- Desk review: AI desk, S29 "Who builds the parts of an AI agent? Startups at Web Summit" (Mastra, Keewano, Acrab AI, Humanos, Polygraf AI, GetVocal, Beyond Presence, Cnext), ready for journalist-ai; connections, S30 "Eleven health startups at Web Summit, by the problem they tackle", ready for journalist-connections; both checked against articles, drafts and the site's company pages (profiles exist for five of the AI startups, to be linked not repeated).
+- No assignment: summit (nothing practical or programme-related is new), Europe (only a count over one list page of 26), Portugal (four Portuguese startups among the first 100 would misstate the total). Gap for the researcher: the whole featured list, which would let those desks have assignments; the researcher has asked you whether it may read it, so that is your call.
+- state: ok; done: first desk review, S29 and S30 assigned; next: the 05:30 run on 9 November; ask: may the researcher read pages 2 to 26 of the featured list (recommend: your call, it unlocks the Portugal, Europe and summit desks); run: scheduled
+
+## Sun 8 Nov 2026, 19:10 UTC (prompted: desk requests for the researcher)
+
+- applied: the gap about pages 2 to 26 stays recorded (map 2026-11-08-1845 now says "recorded, not requested"); S29 and S30 stand with their stated limits; no assignment depends on the list, and I do not ask for the search service. Rule 27 in my prompts file; the scheduled prompt is unchanged.
+- Requests routed to the researcher through the map's gaps list (desks/curator/2026-11-08-1900.json, newsroom), each with a reader angle and ordinary public sources: Portugal, (1) which Portuguese startups are in the Road 2 Web Summit class and at the Portugal stand, and what each does, from Startup Portugal's own page; (2) what is on at the Pavilhão de Portugal and in Lisbon side events, from the organisers' and the city's pages. Europe, (1) EU funding calls for startups open now, with dates, from europa.eu pages; (2) which other countries bring national delegations and what each offers, from each national agency's page. Summit, (1) what Web Summit says on accessibility, safety and practical needs at the venue; (2) evening events and the city's programme in summit week.
+- No assignment for the summit, Europe and Portugal desks until a capture supports one; none forced.
+- state: ok; done: gaps routed, pagination gap kept as record only; next: the 05:30 run on 9 November; ask: none; run: prompted
+
+## Mon 9 Nov 2026, 05:30 UTC run (desk review)
+
+- decisions.md read first: no HOLD.md; HANDOFF-FIX and OVERNIGHT-9NOV are not for me; prompts file re-read, it matches. New research: [Portugal Startup News, "Full list of 78 startups selected by Startup Portugal for Road 2 Web Summit 2026"](https://portugalstartupnews.com/2026/11/08/full-list-of-78-startups-selected-by-startup-portugal-for-road-2-web-summit-2026/), read 9 November 2026, which answers my first Portugal request; map desks/curator/2026-11-09-0545.json.
+- Desk review: Portugal, S31 "Beyond Lisbon: where Road 2 Web Summit's 78 startups come from" ready for journalist-portugal (Lisbon has 41 of the 78; no article or draft names the 78 or their cities). Summit and Europe: no assignment (pitch times not captured; the Europe requests still open). AI and connections: none ready; S29 and S30 are already published, and S32 (rehab beyond the clinic) is not ready until three companies' own pages are captured.
+- For the fact-checker and reviewer: S29 (published) says Humanos is from the United States, as Web Summit's page shows; the Startup Portugal list gives Madeira, so check Humanos's own page. S3 (published) says up to 125 companies were to be selected; the article says 78 were.
+- Requests for the researcher (in the map): when and where the Road 2 pitches run; what Braining, UpSpeech and Twin Factory do; where Humanos is based and what BASTYN and KBAI Research do.
+- state: ok; done: desk review, S31 ready, S32 held; next: the 10:30 run; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 10:30 UTC run (desk review)
+
+- decisions.md read first: no HOLD.md; answer 26 and brief 8's clean-up are not for me; prompts file re-read, it matches. New research (two captures, researcher's 10:15 run): [IBM Newsroom, "IBM Sports Tech Startup Challenge culminates at Web Summit Lisbon 2026"](https://newsroom.ibm.com/blog-ibm-sports-tech-startup-challenge-culminates-at-web-summit-lisbon-2026) and [Diário de Coimbra, "Go Coimbra apresenta 12 startups na Web Summit em Lisboa"](https://www.diariocoimbra.pt/2026/11/09/go-coimbra-apresenta-12-startups-na-web-summit-em-lisboa/), both read 9 November 2026; map desks/curator/2026-11-09-1045.json.
+- Desk review: summit desk, S33 "Sports tech at Web Summit: IBM's startup challenge ends in Lisbon" ready for journalist and time-sensitive (the showcase is on 10 November; no article or draft names IBM's challenge). Portugal: no new assignment; S31 is already drafted and Ready (held for you), and the Go Coimbra stand cannot be written yet because the 12 startups are not named and no stand location is given. Europe, AI, connections: nothing new that is ready.
+- Requests for the researcher: the showcase time and stage from Web Summit's schedule; Go Coimbra's and IPN's own pages naming the 12 startups and the stand.
+- state: ok; done: desk review, S33 ready, S31 marked drafted; next: the 14:30 run; ask: none; run: scheduled

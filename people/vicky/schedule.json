@@ -1,24 +1,30 @@
 {
  "about": "Every scheduled task of Vicky's agents, one row per task (UTC). Kept by conductor@web-summit.vicky (scout's P4, accepted by Vicky on 6 Nov 2026), checked against the account's scheduled tasks in each 08:30 brief. Changes to tasks are Vicky's; the conductor changes one only at her word (as for the Web Summit timetable, 7 Nov).",
- "checked": "2026-11-08T12:50Z",
+ "checked": "2026-11-09T08:45Z",
  "tasks": [
   {
    "agent": "conductor@web-summit.vicky",
    "task": "the morning brief",
    "cron_utc": "30 8 * * *",
-   "task_id": "trig_013xdhaBHbA52GD47m1JaKDL",
+   "task_id": "trig_016G4zCbDfCSU5A7mcAy3wq4",
    "state": "enabled",
    "since": "4 Nov 2026",
-   "at_whose_word": "Vicky (08:30 brief, 4 Nov; 09:00, 09:30 and 09:45 on 7 Nov; back to 08:30 for the Web Summit timetable, 7 Nov about 23:00, after the reviewer's 07:20 re-check)"
+   "at_whose_word": "Vicky (08:30 brief, 4 Nov; 09:00, 09:30 and 09:45 on 7 Nov; back to 08:30 for the Web Summit timetable, 7 Nov about 23:00, after the reviewer's 07:20 re-check)",
+   "session": "the new conductor session, from 9 Nov 2026 about 11:05 UTC (hand-over, P17)",
+   "replaces": "trig_013xdhaBHbA52GD47m1JaKDL (the old session's task, disabled, not deleted, 9 Nov 2026 11:06 UTC)",
+   "checked": "2026-11-09T11:07Z"
   },
   {
    "agent": "conductor@web-summit.vicky",
    "task": "the evening relay",
    "cron_utc": "45 20 * * *",
-   "task_id": "trig_016MC7wrcBLcFqSgfthMqAnZ",
+   "task_id": "trig_01Xh41C12RjjrZQ14R6EEPHy",
    "state": "enabled",
    "since": "2 Nov 2026",
-   "at_whose_word": "Vicky (17:50 from 5 Nov; 21:30 on 7 Nov; 20:45 for the Web Summit timetable, 7 Nov about 23:00, after the reviewer's 20:20 re-check)"
+   "at_whose_word": "Vicky (17:50 from 5 Nov; 21:30 on 7 Nov; 20:45 for the Web Summit timetable, 7 Nov about 23:00, after the reviewer's 20:20 re-check)",
+   "session": "the new conductor session, from 9 Nov 2026 about 11:05 UTC (hand-over, P17)",
+   "replaces": "trig_016MC7wrcBLcFqSgfthMqAnZ (the old session's task, disabled, not deleted, 9 Nov 2026 11:06 UTC)",
+   "checked": "2026-11-09T11:07Z"
   },
   {
    "agent": "dashboard@web-summit.vicky",
@@ -159,10 +165,24 @@
    "agent": "conductor@web-summit.vicky",
    "task": "the 17:30 newsroom check",
    "cron_utc": "30 17 * * *",
-   "task_id": "trig_01NYwcWXpPmsPK9MLgtq5NAt",
+   "task_id": "trig_01JBMeid4ogSPQwGi4EehQaN",
    "state": "enabled",
    "since": "7 Nov 2026",
-   "at_whose_word": "Vicky (7 Nov): a lightweight check; silent unless actionable. Kept at 17:30 in the Web Summit timetable (after the reviewer's 16:20 re-check)"
+   "at_whose_word": "Vicky (7 Nov): a lightweight check; silent unless actionable. Kept at 17:30 in the Web Summit timetable (after the reviewer's 16:20 re-check)",
+   "session": "the new conductor session, from 9 Nov 2026 about 11:05 UTC (hand-over, P17)",
+   "replaces": "trig_01NYwcWXpPmsPK9MLgtq5NAt (the old session's task, disabled, not deleted, 9 Nov 2026 11:06 UTC)",
+   "checked": "2026-11-09T11:07Z"
+  },
+  {
+   "agent": "conductor@web-summit.vicky",
+   "task": "the midday check",
+   "cron_utc": "50 12 * * *",
+   "task_id": "trig_01BWSDV2eWe5d4Z5rvr3gJkC",
+   "state": "enabled",
+   "since": "9 Nov 2026",
+   "at_whose_word": "Vicky (9 Nov, about 11:10 UTC): a light run 30 minutes after the reviewer's 12:20 re-check; Ready drafts with publish lines and open questions only; silent otherwise",
+   "session": "the new conductor session, from 9 Nov 2026",
+   "checked": "2026-11-09T11:15Z"
   },
   {
    "agent": "journalist@PrompTugal.vicky",

@@ -1,0 +1,144 @@
+{
+ "kind": "company",
+ "read_on": "2026-11-07",
+ "status": "draft (outreach@web-summit.silvio; to be verified by xray@web-summit.dinis)",
+ "run": {
+  "by": "outreach@web-summit.silvio, reading public pages with its own web tools; no OpenRouter search, no cost to the X-ray budget"
+ },
+ "incidents": [],
+ "leads": [],
+ "slug": "lena-concierge",
+ "subject": "Lena Concierge",
+ "tagline": "An AI concierge for alpine hotels and rentals that answers guests in their language and books rooms inside the chat, with emergencies kept away from the model.",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://lenaconcierge.com/?lang=en",
+   "title": "Lena Concierge: the AI concierge for alpine hospitality",
+   "publisher": "Lena Concierge",
+   "read_on": "2026-11-07",
+   "kind": "own-site"
+  },
+  {
+   "id": "s2",
+   "url": "https://websummit.com/appearances/lis26/ea87aa28-83d6-42ca-bad5-baf2491d379a/lena-concierge-/",
+   "title": "Lena Concierge at Web Summit Lisbon 2026 (ALPHA)",
+   "publisher": "Web Summit",
+   "read_on": "2026-11-07",
+   "kind": "event"
+  }
+ ],
+ "what_it_does": {
+  "text": "Lena is a guest-facing chat concierge for alpine hosts, live in Saas-Fee since summer 2026. It answers guests 24/7 in five languages about lifts, weather, restaurants and events, checks live availability in the property's booking system (apaleo) and takes the booking inside the chat; restaurant requests go out by WhatsApp. On 4 October 2026 it reported 962 guest conversations in production and 35 properties connected.",
+  "sources": [
+   "s1",
+   "s2"
+  ]
+ },
+ "agents": [
+  {
+   "id": "a1",
+   "name": "Lena (guest concierge)",
+   "what": "A chat agent that answers from checked facts and books rooms in the property's PMS.",
+   "actions": [
+    "Answers guest questions from separate stores of resort knowledge and property data",
+    "Checks live availability in apaleo and makes or cancels bookings inside the chat",
+    "Offers Booking.com Demand when the property is full",
+    "Sends restaurant table requests by WhatsApp",
+    "Notifies the owner on emergencies"
+   ],
+   "sources": [
+    "s1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "u1",
+   "name": "A guest books a room at 23:40 with nobody at the desk",
+   "agent": "a1",
+   "who": "Guests of small alpine hotels and holiday rentals",
+   "reach": [
+    {
+     "id": "r1",
+     "what": "The property's booking system (apaleo): offers, reservations, cancellations",
+     "kind": "system",
+     "sources": [
+      "s1"
+     ]
+    },
+    {
+     "id": "r2",
+     "what": "Guest messages in the chat, in five languages",
+     "kind": "data",
+     "sources": [
+      "s1"
+     ]
+    },
+    {
+     "id": "r3",
+     "what": "Restaurants, by WhatsApp",
+     "kind": "outside",
+     "sources": [
+      "s1"
+     ]
+    },
+    {
+     "id": "r4",
+     "what": "Booking.com Demand, for guests when the property is full",
+     "kind": "outside",
+     "sources": [
+      "s1"
+     ]
+    }
+   ],
+   "mandate": [
+    {
+     "id": "m1",
+     "what": "Illustrative: answer from checked facts only; never quote a price for another property."
+    },
+    {
+     "id": "m2",
+     "what": "Illustrative: book or cancel only the guest's own reservation, after the guest confirms."
+    },
+    {
+     "id": "m3",
+     "what": "Illustrative: emergencies answered by fixed text, never by the model."
+    }
+   ],
+   "gap": [
+    {
+     "what": "The PMS integration can make and cancel reservations; the page does not say whether a cancellation needs the guest or the host to confirm.",
+     "reach": [
+      "r1"
+     ]
+    }
+   ],
+   "controls": [
+    {
+     "what": "Prices and opening hours come from checked facts; \"the model chooses the fact and understands the question\"",
+     "sources": [
+      "s1"
+     ]
+    },
+    {
+     "what": "Medical, fire and avalanche emergencies are answered from fixed, tested text; \"no model writes that reply\"; the owner is notified",
+     "sources": [
+      "s1"
+     ]
+    },
+    {
+     "what": "\"Lena never quotes its own price for somebody else's house\"",
+     "sources": [
+      "s1"
+     ]
+    }
+   ]
+  }
+ ],
+ "questions": [
+  "When Lena cancels a booking in the PMS, who confirms it: the guest, the host, or nobody?",
+  "Can a host limit Lena to answering and proposing, with the booking done by a person?",
+  "Is there a record per action of what Lena did in the PMS, that the host can export?"
+ ]
+}

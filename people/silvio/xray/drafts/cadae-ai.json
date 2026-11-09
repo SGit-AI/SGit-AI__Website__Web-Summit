@@ -1,0 +1,172 @@
+{
+ "kind": "company",
+ "read_on": "2026-11-07",
+ "status": "draft (outreach@web-summit.silvio; to be verified by xray@web-summit.dinis)",
+ "run": {
+  "by": "outreach@web-summit.silvio, reading public pages with its own web tools; no OpenRouter search, no cost to the X-ray budget"
+ },
+ "incidents": [],
+ "leads": [],
+ "slug": "cadae-ai",
+ "subject": "Cadae AI",
+ "tagline": "A virtual chief engineer for hotels: AI that finds energy and water savings and prepares the work, while the hotel team approves.",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://cadae.ai/en-GB",
+   "title": "Cadae: a virtual chief engineer for every hotel",
+   "publisher": "Cadae",
+   "read_on": "2026-11-07",
+   "kind": "own-site"
+  },
+  {
+   "id": "s2",
+   "url": "https://cadae.ai/en-GB/services",
+   "title": "Cadae services: the five steps",
+   "publisher": "Cadae",
+   "read_on": "2026-11-07",
+   "kind": "own-site"
+  },
+  {
+   "id": "s3",
+   "url": "https://cadae.ai/en-GB/updates/virtual-chief-engineer",
+   "title": "A virtual chief engineer for hotel energy and water (5 November 2026)",
+   "publisher": "Cadae",
+   "read_on": "2026-11-07",
+   "kind": "own-site"
+  },
+  {
+   "id": "s4",
+   "url": "https://cadae.ai/en-GB/mcp",
+   "title": "MCP for hotel operations",
+   "publisher": "Cadae",
+   "read_on": "2026-11-07",
+   "kind": "own-site"
+  },
+  {
+   "id": "s5",
+   "url": "https://cadae.ai/en-GB/about",
+   "title": "About Cadae",
+   "publisher": "Cadae",
+   "read_on": "2026-11-07",
+   "kind": "own-site"
+  },
+  {
+   "id": "s6",
+   "url": "https://websummit.com/appearances/lis26/994635a7-943f-4d65-9da3-f6ac75d746f0/cadae-ai/",
+   "title": "Cadae AI at Web Summit Lisbon 2026 (ALPHA)",
+   "publisher": "Web Summit",
+   "read_on": "2026-11-07",
+   "kind": "event"
+  }
+ ],
+ "what_it_does": {
+  "text": "Cadae (Cadae Limited, London) models what each hotel should use in energy and water, measures the gap every month, finds and costs savings projects, tracks delivery and verifies savings against a baseline. Its AI prepares investigations and proposed actions for the hotel team to review and approve. Since 15 August 2026 an MCP server lets Claude, ChatGPT or Cursor query a hotel portfolio, scoped to the user's access.",
+  "sources": [
+   "s1",
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ]
+ },
+ "agents": [
+  {
+   "id": "a1",
+   "name": "Cadae's AI (the virtual chief engineer)",
+   "what": "Prepares investigations and proposed actions on energy and water.",
+   "actions": [
+    "Combines utility use with hotel activity and weather",
+    "Prepares an investigation or a proposed action with evidence and costs",
+    "Tracks delivery and checks outcomes against a baseline"
+   ],
+   "sources": [
+    "s1",
+    "s2",
+    "s3"
+   ]
+  },
+  {
+   "id": "a2",
+   "name": "Cadae MCP server",
+   "what": "Connects AI assistants to hotels, results, projects, savings tasks and people.",
+   "actions": [
+    "Exposes portfolio data to Claude, ChatGPT or Cursor",
+    "Scoped to the access the user already holds (OAuth or API token)"
+   ],
+   "sources": [
+    "s4"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "u1",
+   "name": "An owner asks an AI assistant which hotel to fix first",
+   "agent": "a2",
+   "who": "Hotel groups and owners using Claude, ChatGPT or Cursor through the MCP server",
+   "reach": [
+    {
+     "id": "r1",
+     "what": "Hotels, PHI results, projects, savings tasks and people in the portfolio",
+     "kind": "data",
+     "sources": [
+      "s4"
+     ]
+    },
+    {
+     "id": "r2",
+     "what": "Whatever the user's own permissions allow",
+     "kind": "system",
+     "sources": [
+      "s4"
+     ]
+    }
+   ],
+   "mandate": [
+    {
+     "id": "m1",
+     "what": "Illustrative: read results and projects to answer questions; no changes."
+    },
+    {
+     "id": "m2",
+     "what": "Illustrative: any new project or approval goes through a person in Cadae."
+    }
+   ],
+   "gap": [
+    {
+     "what": "The MCP page does not say whether its tools can write (create projects, approve tasks), only that access follows the user's permissions.",
+     "reach": [
+      "r1",
+      "r2"
+     ]
+    }
+   ],
+   "controls": [
+    {
+     "what": "\"Cadae does not commit budget, contact contractors or change how plant runs.\"",
+     "sources": [
+      "s3"
+     ]
+    },
+    {
+     "what": "\"Cadae's AI prepares the next steps for your team to review and approve.\"",
+     "sources": [
+      "s1"
+     ]
+    },
+    {
+     "what": "MCP access is \"scoped to the access you hold\"",
+     "sources": [
+      "s4"
+     ]
+    }
+   ]
+  }
+ ],
+ "questions": [
+  "Can the MCP tools create or approve anything, or only read?",
+  "When an AI assistant reads a portfolio through MCP, is each read recorded for the owner?",
+  "Who in the hotel approves a proposed action, and is that approval recorded with the verified savings?"
+ ]
+}

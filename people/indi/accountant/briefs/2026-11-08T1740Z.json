@@ -1,0 +1,299 @@
+{
+ "number": 5,
+ "date": "2026-11-08",
+ "kicker": "Web Summit 2026 · token accountant",
+ "title": "Brief 5: the first real numbers, and long sessions",
+ "when": "8 November 2026, 17:40 UTC (window: since brief 4, 7 November 17:37 UTC)",
+ "by": "accountant@web-summit.indi",
+ "headline": "1,073,332 fresh tokens measured across dev, dashboard and me; the biggest saving is a fresh session per wake, since each wake first re-loads 200,000 tokens or more of old context, about 900,000 a day (my estimate).",
+ "stats": [
+  {
+   "n": "1,073,332",
+   "label": "tokens today (fresh input + output + cache writes)"
+  },
+  {
+   "n": "10,562,441",
+   "label": "cache reads today"
+  },
+  {
+   "n": "3 of 11",
+   "label": "agents measured of agents running"
+  },
+  {
+   "n": "~900,000",
+   "label": "saving per day from A6 (my estimate)"
+  }
+ ],
+ "for_you": [
+  {
+   "id": "A6",
+   "ask": "A fresh session per wake for dev, dashboard and me (replaces A3 and A5)?",
+   "detail": "Each call carries 211,933 to 329,982 tokens of old context. dev's quiet 15:38 wake: 204,461 of 206,199 fresh was re-loading; dashboard 216,426 of 219,031; me 132,612 of 137,217. Old: the task fires into one standing session. New: a new session each firing (create_new_session_on_fire), same prompt, new key per CLAUDE.md. Saving about 900,000 a day if a fresh wake starts near 40,000 (estimate).",
+   "options": [
+    "Yes, all three",
+    "Me first, then the others",
+    "No"
+   ],
+   "recommend": "Yes, all three"
+  },
+  {
+   "id": "A4",
+   "ask": "Angelo's workload view (brief 3)?",
+   "detail": "Still open. Angelo's ledgers are on the team page too.",
+   "options": [
+    "Yes, once",
+    "No"
+   ],
+   "recommend": "Yes, once"
+  },
+  {
+   "id": "A2",
+   "ask": "The persona model test (brief 1)?",
+   "detail": "Still open. dev ran one wake on Sonnet 5.5 today (pass), a first data point.",
+   "options": [
+    "Yes, test before run 3",
+    "No"
+   ],
+   "recommend": "Yes, test before run 3"
+  }
+ ],
+ "you_asked": [
+  {
+   "at": "8 November, Indi (via conductor@web-summit.indi, 855c61df)",
+   "said": "the token-efficiency ABP for every agent, and its rollout",
+   "done": "A1 in effect for dev and dashboard; three-wake check under way.",
+   "where": "/abp/token-efficiency/",
+   "status": "in progress"
+  }
+ ],
+ "sections": [
+  {
+   "title": "1. Ledger",
+   "table": {
+    "head": [
+     "Agent",
+     "Wakes",
+     "Fresh input",
+     "Output",
+     "Cache write",
+     "Cache read",
+     "Sub-agent tokens",
+     "Per wake (trend)",
+     "Pass rate"
+    ],
+    "rows": [
+     [
+      "dev@indi",
+      "3",
+      "55",
+      "28,751",
+      "468,425",
+      "7,372,403",
+      "219,853 fresh; 961,022 cache read",
+      "239,028 (first)",
+      "3/3"
+     ],
+     [
+      "dashboard@indi",
+      "1",
+      "13",
+      "2,592",
+      "216,426",
+      "1,635,297",
+      "0",
+      "219,031 (first)",
+      "1/1"
+     ],
+     [
+      "accountant@indi",
+      "1",
+      "8",
+      "4,597",
+      "132,612",
+      "593,719",
+      "0",
+      "137,217 (up from 128,715)",
+      "1/1"
+     ],
+     [
+      "8 other agents",
+      "0",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "2. Biggest three savings",
+   "items": [
+    "Long sessions (A6): 211,933 to 329,982 cache reads per call for dev, 233,613 for dashboard; most fresh tokens are cache writes re-loading after hours idle.",
+    "Quiet wakes: dev's 15:38 wake changed nothing and cost 206,199 fresh.",
+    "Sub-agents: dev's 3 review helpers used 207,911 fresh; shorter briefs next."
+   ]
+  },
+  {
+   "title": "3. Model tests run",
+   "text": "None (A2 open). dev's 15:38 wake ran on Sonnet 5.5 and passed."
+  },
+  {
+   "title": "4. Agents not yet measuring",
+   "text": "Told to their conductor, per the role: conductor@web-summit.indi itself (9 commits, no line), designer, messaging, factory, builder, ux, journalist, synthetic. social: asked today."
+  },
+  {
+   "title": "5. Data notes and 6. My own use",
+   "text": "Lines since 7 Nov 17:37 UTC. Context per call = cache reads over calls. The 40,000 fresh start is an estimate. New in my role: a daily sealed report to the conductor's inbox (sent today) and the team page (next wake). My use: brief 6."
+  }
+ ],
+ "next": [
+  "9 November: brief 6, the team page, three-wake checks."
+ ],
+ "sources": [
+  "people/indi/accountant/ledger/ (dev, dashboard, accountant files)",
+  "people/indi/agents.json",
+  "git log since brief 4"
+ ],
+ "friendly": {
+  "title": "Your agents' token use, 8 November",
+  "summary": "Real numbers at last: dev and dashboard now report. The big finding: every run first re-loads 200,000 or more tokens of old conversation. Starting each run fresh (A6) would save about 900,000 tokens a day.",
+  "numbers": [
+   {
+    "n": "1.07 million",
+    "label": "Fresh tokens today",
+    "explain": "dev, dashboard and me."
+   },
+   {
+    "n": "10.6 million",
+    "label": "Cache reads today",
+    "explain": "Re-reading old context at every step."
+   },
+   {
+    "n": "3 of 11",
+    "label": "Agents reporting",
+    "explain": "Up from 1. dev and dashboard started today."
+   },
+   {
+    "n": "~900,000",
+    "label": "Saving per day (A6)",
+    "explain": "My estimate, checked over the next three runs."
+   }
+  ],
+  "agents": [
+   {
+    "name": "dev",
+    "state": "reports",
+    "on": true
+   },
+   {
+    "name": "dashboard",
+    "state": "reports",
+    "on": true
+   },
+   {
+    "name": "accountant",
+    "state": "reports",
+    "on": true
+   },
+   {
+    "name": "conductor, designer, messaging, factory, builder, ux, journalist, synthetic, social",
+    "state": "not yet",
+    "on": false
+   }
+  ],
+  "bars_title": "Old context carried on every step (tokens)",
+  "bars": [
+   {
+    "label": "dev, 17:03 run",
+    "value": 329982,
+    "shown": "329,982"
+   },
+   {
+    "label": "dev, 16:54 run",
+    "value": 277378,
+    "shown": "277,378"
+   },
+   {
+    "label": "dashboard",
+    "value": 233613,
+    "shown": "233,613"
+   },
+   {
+    "label": "dev, 15:38 run",
+    "value": 211933,
+    "shown": "211,933"
+   },
+   {
+    "label": "me",
+    "value": 148429,
+    "shown": "148,429"
+   }
+  ],
+  "bars_note": "It grows run after run, because each agent lives in one long session. A fresh session starts small.",
+  "savings": [
+   {
+    "title": "Start each run fresh",
+    "plain": "Each run first re-loads the whole old conversation. A new session per run skips that.",
+    "evidence": "dev: 204,461 of 206,199 tokens re-loading."
+   },
+   {
+    "title": "Cheap quiet runs",
+    "plain": "A run that changes nothing should cost little. Today one cost 206,199 tokens.",
+    "evidence": "dev, 15:38: read, checked, no change."
+   },
+   {
+    "title": "Lighter helpers",
+    "plain": "dev's three review helpers used 207,911 fresh tokens. Shorter briefs next.",
+    "evidence": "3 helpers, one task."
+   }
+  ],
+  "decisions": [
+   {
+    "id": "A6",
+    "question": "Start each run in a fresh session, for dev, dashboard and me?",
+    "plain": "Same instructions, new session each time. About 900,000 tokens a day saved.",
+    "options": [
+     "Yes, all three",
+     "Me first",
+     "No"
+    ],
+    "recommend": "Yes, all three"
+   },
+   {
+    "id": "A4",
+    "question": "Angelo's workload view?",
+    "plain": "Still open from brief 3.",
+    "options": [
+     "Yes, once",
+     "No"
+    ],
+    "recommend": "Yes, once"
+   },
+   {
+    "id": "A2",
+    "question": "Test cheaper models for the persona helpers?",
+    "plain": "Still open. dev already ran one good run on Sonnet 5.5 today.",
+    "options": [
+     "Yes, test first",
+     "No"
+    ],
+    "recommend": "Yes, test first"
+   }
+  ],
+  "glossary": [
+   [
+    "Fresh tokens",
+    "new reading, writing and memory: the real work."
+   ],
+   [
+    "Re-loading",
+    "after a pause, a long session writes its whole history back into memory."
+   ]
+  ],
+  "next": "9 November at 17:30 UTC."
+ }
+}

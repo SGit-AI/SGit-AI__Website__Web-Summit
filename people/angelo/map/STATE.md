@@ -1,20 +1,30 @@
 # dev.map@PrompTugal.angelo: STATE
 
-Twelfth run, 8 November 2026 (12:15 to about 12:45 UTC). Backlog 0c2 (the desk's 11:52 and 11:55 briefs, 57521ef and 1f87ac2, both pushed by riskmandate-angelo); dashboard@ is my reviewer from today (251d793, 52a333d brought the eleventh run's work onto dev).
+Eighteenth run, 9 November 2026 (06:21 to about 07:10 UTC). No new commits For: dev.map@ since run 17 except dashboard@'s review (863e35df, run 17's work on dev). Every backlog item of mine is built or waits on someone (below).
 
 ## Done this run (on workers/dev.map, for dashboard@ to review)
-- 0c2 (1): the replay's 3D drew no messages because map3d.js was never given them (it drew `{ now }` only). replay.js now hands the playback's moment (in flight, lit lines, busy agents) to map3d.js each frame (`AngeloReplay.view3d`); light theme gets normal blending there too.
-- 0c2 (2): the live 3D turns once every 50 s (was about 105), held while a hand turns it and 2.5 s after. The map's own 3D orbit is unchanged (105 s).
-- 0c2 (3): the popped-out 3D was black because its window's copied stylesheets were still loading when live3d.js read its colours (CSS variables unresolved, cached as black). live3d.js now waits for them (4 s at most), and live.js asks light or dark only then.
-- Test `lv3dfix` for all three (fails on the old code). It opens a real Document PiP window in headless Chromium and counts colour families. Safari's video pop-out draws the page's own canvas, which was never black; untested here (no WebKit).
+- The map's tests on today's dev: 26 run, 25 pass. lvrepo failed: its pick, the newest newsroom exchange, is now pt:dinis:dev -> pt:dinis:conductor, both drawn at Dinis's person node, and a node to itself is not drawn. The test now picks an exchange between two people; live.js unchanged (9883ae34).
+
+## Yesterday (runs 14 to 17)
+- 0c4 (6) RiskMandate's logo as big as PT's, 0c4 (4) the dial on the live view; 0c3 (1) phone playback 31 to 33-34 fps; 0c3 (6) the timeline collapsed; 0c0 dev.work@'s hook in live.js.
+- Two runs can overlap: before starting, fetch workers/dev.map and check its newest commit's time; if under an hour old and STATE has no "Last run" end, take an item the other run is not on.
 
 ## Open
+- The dial over six days is coarse with a mouse on a phone (about 30 minutes a pixel); the arrow keys step one minute. If Angelo wants finer: a 48-hour default with a "whole record" switch.
+- The work view (dev.work@'s work-live.js) does not follow the dial yet: it can listen for 'lv-time' (detail.back) on the host. For dev.work@.
+- PT News's stamp is always the cream one: live.js passes the function `light` (always true) instead of `light()`; left as Angelo knows it, a question for the desk.
+- lvlabel fixed in its test: the live clock follows the viewer's locale (12-hour in New York); the test assumed 24-hour and failed after 13:00 there.
+- Offline (sw.js): replay-events.json is stored only once it has been fetched, so the timeline and the playback work offline only after one online visit with the map or timeline open.
 - 0f's rest: build Angelo's pick of the fresh-session mark (options: `people/angelo/proposals/live-map/fresh-mark-options.svg`, A, B or C); the dashed ring stays until he picks.
-- lvmsg fails in a fresh shallow session on dev's own tree (2 sealed messages in its window, it wants 3): dev@'s test, reported.
+- The replay at a quarter CPU speed (a phone) is 33 to 34 fps with the timeline open (run 16): the rest is the map's own paint. Next step if the desk wants it before the summit: the map's moving layer (lines, dots) on a canvas over the still SVG; estimate about two runs.
 - Item 00's rest: Safari and iPad untested (no WebKit here).
 - Piece 4 (public /team/map/) needs build.mjs and the newsroom: a question for the desk.
-- For policy@: my lane (people/angelo/policy/lanes.json) leaves out this STATE file, which the spec gives me (spec-new-agents.md: "plus your STATE"), so f2474c31 has no Outside: line and the lane check fails on my branch; dashboard@'s review commit carries it onto dev. Please add people/angelo/map/** to dev.map@'s writes.
-- 00a is dev.app@'s; 0f2 and 0f3 dev.work@'s (live.js and the layouts stay mine).
+- For policy@: my lane leaves out this STATE file (people/angelo/map/**); dashboard@'s review carries it onto dev.
 
 ## Last run
-Started from dev, joined workers/dev.map with `git merge -s ours` (needs `git fetch --depth=300 origin dev workers/dev.map` first in a shallow clone; `--depth=3000 origin dev` for tmf). Gate with LANE_RANGE=<the join commit>..HEAD.
+Run 21, 9 November 12:23 to about 12:30 UTC: nothing new For: dev.map@ since run 20 (only dashboard@'s review 8ea65ed5); the backlog's changes (0-POOL, 0-FIX, 0-URGENT-2/3, 14 removed) are not mine; every item built or waiting (Open, above). pushed-by --last-touch checked the spec (e588f4b5, ANGELO). Ledger line only; unsigned run log.
+Run 20, 9 November 10:15 to about 10:25 UTC: nothing new For: dev.map@ since run 19 (only dashboard@'s review e07215db, and dev@'s snapshot refreshes in people/angelo/app/), no backlog change; every item built or waiting (Open, above). Ledger line only; unsigned run log.
+Run 19, 9 November 08:19 to about 08:30 UTC: nothing new For: dev.map@ since run 18 (only dashboard@'s review, 1538c093, bringing run 18 onto dev) and no backlog change; every item is built or waits on Angelo, the desk or dev.work@ (Open, above). Ledger line only; unsigned run log.
+Run 18 ended about 07:10 UTC: 9883ae34 (lvrepo) and its STATE on workers/dev.map.
+Pushing: the branch already holds workers/dev.map (the join), so push straight away; never rebase on it.
+Started from dev, joined workers/dev.map with `git merge -s ours` (needs `git fetch --depth=300 origin dev workers/dev.map` first in a shallow clone; `--depth=6000 origin dev` for tmf and the replay tests). Gate with LANE_RANGE=<the join commit>..HEAD. The 26 map tests take over 10 minutes: run them in the background with a long timeout.

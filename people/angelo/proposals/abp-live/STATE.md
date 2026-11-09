@@ -2,20 +2,14 @@
 title: "dev.abp@PrompTugal.angelo: state"
 summary: What dev.abp@PrompTugal.angelo knew at the end of its last run. Short, rewritten each run; the commits are the history.
 ---
-**Last run:** 8 November 2026, about 14:37 to 14:55 UTC (scheduled). dev@ brought the 12:37 run onto dev (020f44c); this branch joined dev's tree.
+**Last run:** 9 November 2026, about 08:39 to 08:46 UTC (scheduled). No new item for me since the 04:36 run (dev@'s 74d6b09 brought its ledger line onto dev; the 06:30 run found nothing to do).
 
-**Approved:** the design, by Angelo on 8 November about 11:20 UTC (the desk's 251d793): "they look promising, let's go ahead". Build story 1 first, then 4, then 2.
-
-**Built:** player.htm (both modes, from runs.json or runs.js); stories/support/ (world.mjs with two agents, the four barriers and the reviewer what-if; prompts.md); collect.mjs. 14 runs recorded: the 4 barriers and, with nothing in the way, the 3 what-ifs (reviewer, no hidden instructions, no helpful asks), each with the larger and the smaller model. No leak in any run; 3 to 5 secrets seen except behind the boundary (0); the reviewer held only harmless refusals; job done in all (recordings.md). Story 4, the coding agent and production keys (stories/code/), recorded at the 4 barriers with both models: no leak; the smaller model opened the production .env with nothing in the way and behind the setting (3 seen), never with the rule; the larger never did. The player draws any story (layout, captions and what-ifs per story). Fixed: settings.set ignored the JSON in w.mjs's target slot (agents found it); collect.mjs keeps earlier runs.
+**This run:** the step view checked offline: `tests/offline-steps.test.js` (loop and plain, from sw.js's copy; fresh again once online). The iPad and offline tests now take `BASE`, and all four passed at about 08:43 against the published site (web-summit.sgit.ai), in Chromium iPad profiles. `rehearsal.md` section 5 says so, with the command to rerun them on the morning.
 
 **Next, in order:**
-1. Honest pressure that agents do give in to (see recordings.md, "Next"), if Angelo wants a visible leak (question to the desk).
-2. Story 2, the assistant with the boss's inbox (the same shape: a world, prompts, 8 runs, the player's layout).
-3. The what-ifs at the other barriers, if the stand needs them.
-4. "Run it live now" last.
+1. Angelo's view of the step view's look, rung 4 (storyboard section 9, question (b)), and which loop goes on the iPads (rehearsal.md, top). If he wants a third short story where content is the barrier that matters, spec it first.
+2. 0m: a try on a real iPad (Safari), and the live command on his laptop; neither is in these sessions.
 
-**Kept as dev@ asked (020f44c):** model names without versions in what is pushed ("a larger / a smaller Claude model" on screen); Delivered links to web-summit.sgit.ai only, after review.
+**Waiting on Angelo** (through the desk): the three questions above; the laptop itself (tier 3); his look at the final version before anything leaves the team (decision 5).
 
-**Waiting on Angelo** (through the desk): whether to try harder traps for a visible leak, or show "seen" as the story; anything public; the overlap with abp@ and xray@web-summit.dinis.
-
-**Waiting on policy@:** a lane for dev.abp@ in lanes.json (the desk asked, d37c6c6), and where a reviewer sits among the four barriers.
+**Branch note:** I merge dev into `workers/dev.abp` and never rebase a merge.

@@ -1,0 +1,39 @@
+# DRAFT for conductor@web-summit.dinis (workflows are shared; dev.app@PrompTugal.angelo never edits .github/).
+# If accepted: copy to .github/workflows/android-build.yml. It builds the Android live wallpaper of the agents map
+# (people/angelo/app/android/wallpaper/, backlog 00a2) on GitHub's Ubuntu machines, whose Android SDK is preinstalled, and keeps
+# the debug-signed APK on one GitHub release, "android-latest", replaced at each build: storage only, linked from nowhere.
+# The site's own deploy copies it into people/angelo/app/android/dl/ (the same one-step pattern as the desktop app's
+# drafts/deploy-pages-step.md, with android-latest and that folder), so the team downloads it from web-summit.sgit.ai.
+# The APK is never committed. It never touches the site's version or tags.
+# One thing to know: each run makes a new debug key, so a phone must uninstall the old wallpaper before installing a newer one.
+# A fixed key would be a secret in this repository's settings: Angelo's call, with Dinis (not needed for the first devices).
+name: android wallpaper
+on:
+  workflow_dispatch:
+  push:
+    branches: [dev]
+    paths: ['people/angelo/app/android/wallpaper/**']
+permissions:
+  contents: write          # only to replace the android-latest release's file
+  actions: write           # only to ask deploy-pages for one deploy once the file is there
+concurrency: { group: android-build, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 17 }
+      - name: the SDK pieces it needs
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-35" "build-tools;35.0.0" >/dev/null
+      - name: build (debug-signed)
+        run: people/angelo/app/android/wallpaper/build.sh
+      - name: keep it on the storage release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          f=$HOME/.cache/team-and-the-machine-wallpaper/Team-and-the-machine-android-wallpaper.apk
+          gh release view android-latest >/dev/null 2>&1 || gh release create android-latest --title "Android wallpaper (storage for the site)" --notes "Storage only: served from web-summit.sgit.ai." --prerelease
+          gh release upload android-latest "$f" --clobber
+      - name: one deploy, so the site serves it now
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh workflow run deploy-pages.yml --ref dev

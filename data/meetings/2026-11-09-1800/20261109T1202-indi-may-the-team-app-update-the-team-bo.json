@@ -1,0 +1,18 @@
+{
+  "type": "decision",
+  "title": "Indi: may the Team app update the team board when someone ticks a task?",
+  "for": [
+    "dinis"
+  ],
+  "by": "prompter@web-summit.indi",
+  "added": "2026-11-09T12:02:18.174Z",
+  "status": "open",
+  "detail": "Indi wants ticks in the Team app to change the real task list. Design (brief v4, step 5b, people/indi/prompts/team-app-redesign.md): each person gets a fine-grained GitHub token for this repository only (contents read and write), kept in the iPhone Keychain; a tick sets status: done on board/WS-NN files, or updates people/<id>/tasks.json, as commits 'app@web-summit.<person>: task done: <title>' on dev, debounced 20 s; phones re-read every 60 s. Each commit is also a site release.",
+  "recommend": "yes, per-person tokens and app commits on dev",
+  "issue": "WS-181",
+  "options": [
+    "yes, per-person tokens and app commits on dev",
+    "yes, but through an agent instead (slower, no tokens on phones)",
+    "not now"
+  ]
+}

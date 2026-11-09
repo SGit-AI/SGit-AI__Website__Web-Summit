@@ -3,7 +3,7 @@ title: "The map's work view (deliverables travelling to their destinations) and 
 by: dev.work@PrompTugal.angelo
 written: 2026-11-08
 for: Angelo, reviewed with desk.conductor@PrompTugal.angelo; findings from policy@PrompTugal.angelo; dashboard@PrompTugal.angelo reviews the build (from 8 November, 251d793b)
-issue: WS-08 (backlog 0f2 and 0f3)
+issue: WS-08 (backlog 0f2, 0f3 and 0c4)
 status: "approved by Angelo, 8 November about 16:30 UTC (Yes, tell dev.work go), with his answers of 11:30 folded in; question 7 taken as recommended: day only for the newsroom's past pieces in replay, for now"
 ---
 ## What and why
@@ -107,6 +107,19 @@ An MP4 with H.264 video (`avc1`, Main or Baseline profile, `yuv420p`), even widt
 - **The proof that counts:** Angelo sends one clip to himself on WhatsApp, on his iPhone, and it plays inline. Until he has, 0f3 stays "delivered, to check".
 - **The work view:** `wv` checks each rule row with a fixture commit (an article to PT News as a doc, a key to keys, a STATE change hidden, a release hidden), a "Delivered: email draft, ..." line becoming an envelope to email drafts with no text drawn, the backfill's shas all real, merges when ten land in a minute, and replay over the full history at 1280 and 390 px, light and dark.
 
+## Part 3: three levels, "Messages | Workstreams | Deliverables" (backlog 0c4)
+
+Angelo, 8 November about 22:25 (the desk's efab3a6, pushed from riskmandate-angelo): *"the current view organised by workstream is not really nice, can we turn it in the same way as the work view, we can call the 3 levels: messages, workstreams and deliverables?"* The desk's row 0c4 gives the design; this part records how it is built, for Angelo's look. It reuses Part 1's drawing whole, so it adds no new look of its own.
+
+- **One switch, three levels,** in live and in playback: **Messages** (today's "Exchanges": who addressed whom), **Workstreams** (new), **Deliverables** (today's "Work"). The address keeps it (`v=ws` and `v=work` on live, `r_ws=1` and `r_work=1` in playback; the old `v=work` and `r_work=1` addresses keep working). The old layout "Agents and their work" stays in the layouts switch until Angelo has seen Workstreams, then it is retired (a question below).
+- **Workstreams:** the people and agents as today; at the rim, in Part 1's squares and pills, the **nine busiest workstreams** (WS issues with the most commits naming them in an `Issue:` trailer over the data's span), each pill `WS-NN` and the issue's short title from `board/WS-NN-*.md`, and a tenth square, **"other workstreams"**, for the rest. At each commit's real moment, a doc icon in the maker's colour travels from its agent to its workstream, merged with a number when several land in the same minute, and each square counts for the window shown, as Part 1 does. Over half of the last week's commits name an issue (1,695 of 3,168), so the view is busy and true.
+- **The data:** `workstreams.json`, written by the build beside `deliveries.json` in the same packed form (`people/angelo/tools/deliveries.mjs`: `readIssues()` and `packIssues()`), names and minutes only: the maker, the issue id, the commit's short sha. No subject, body or file name. Only this repository's commits for now (the newsroom's have no `Issue:` trailers).
+- **Owners:** dev.work@ (the data, the switch, the drawing, the tests `ws`, `wssw`); dev.map@'s files are not changed beyond the switch's lines in app.js.
+
+**Questions for Angelo (via the desk), each with a recommendation; the build goes ahead on the recommendations:**
+1. Nine named workstreams and "other": or the nine of the window shown (they would change as the window moves)? *Recommended: the data's nine, so the squares stay put.*
+2. Retire "Agents and their work" once Workstreams is on dev? *Recommended: yes, after you have seen it.*
+
 ## Out of scope
 
 - Changing any logo (colour, shape, crop) or using one without its destination's name beside it.
@@ -122,6 +135,8 @@ An MP4 with H.264 video (`avc1`, Main or Baseline profile, `yuv420p`), even widt
 - **A rule misreads a commit** (a code change inside `content/` read as a doc): the rule table is one list in deliveries.mjs, tested row by row, and easy to change.
 - **"Delivered:" lines are free text**: only the kind and the path are read; everything else in the line is dropped before the data is written.
 - **WebCodecs' H.264 is missing on some Linux Chromium builds** (no proprietary codecs): the button says so there. **Checked, 8 November (second run), in the cloud session's Chromium (HeadlessChrome 153, Playwright, served from localhost: WebCodecs needs a secure context, so a `file:` or `data:` page has no `VideoEncoder`):** `VideoEncoder.isConfigSupported` says yes to `avc1.4D0028` (Main 4.0, the spec's choice) and `avc1.640028` (High 4.0) at 1080 x 1080, no to `avc1.42001f` (Baseline 3.1, too low a level for 1080; fine at 720); 30 frames of a 640 x 640 canvas encoded to 30 chunks, 57 KB, no error. MediaRecorder accepts `video/mp4;codecs=avc1`; ffprobe on its output: `h264`, Constrained Baseline, `yuvj420p` (full range), and the boxes `ftyp moov moof mdat ... mfra` (fragmented). So the tests can run here on the primary path; the fallback needs the rewrite above. ffmpeg and ffprobe are installed in the session, so the format test uses ffprobe.
+- **A canvas handed to the encoder as it is comes out full range** (`yuvj420p`, found by the `clip` test, 8 November, seventh run): `clip.js` converts each frame to I420 itself, limited range, BT.709, so ffprobe reads `yuv420p`, `tv`. It costs a few milliseconds a frame.
+- **The fallback stays full range** (built 8 November, seventh run): `clip.js` `record()` rewrites MediaRecorder's fragmented file as one fast-start MP4 with the samples untouched, so it stays `yuvj420p`; flagging it limited would shift the colours. The button's note says the colours may look a little flat and to keep the tab in front (it records in real time). Whether WhatsApp plays it inline needs a Safari 16 device to check.
 - **Clip time on a slow machine:** a minute of 1080 x 1080 at 30 fps is 1,800 frames; drawing SVG to canvas costs about 10 to 30 ms a frame, so 20 to 60 seconds to make. The progress bar and Cancel cover it.
 - **Shared files** (data.mjs, app.js, live.js): small changes, checked against the last two hours, sent as drafts on a clash.
 

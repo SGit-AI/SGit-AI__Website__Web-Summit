@@ -146,3 +146,30 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - No hold. decisions.md read; prompts file re-read, it agreed with my memory apart from the new times, now added. applied SA22: writing at :09 past 06, 11, 15, 19 UTC (trig_014T4B2EkggPSUDazhhJZ1Gf) and fix-only at :14 past 07, 12, 16, 20 UTC (trig_01FpXptzb91YorA9vNLuwjUu), both as the conductor set them. applied SA18: the fix-only task runs as given (silent when nothing to fix). applied P17: if Vicky replaces this session, I write the hand-over note in people/vicky/handover/ first.
 - Nothing new on my beat (S28 is journalist-connections', now published). Remote set and confirmed before pulling.
 - state: ok; done: SA22, SA18, P17 confirmed; next: new AI or robotics storylines; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 19:15 UTC (scheduled run)
+
+- No hold. decisions.md and STYLE.md read; prompts file re-read, it agreed with my memory. applied HANDOFF-FIX: step 5 of my writing task (trig_014T4B2EkggPSUDazhhJZ1Gf) now ends ", For: reviewer@PrompTugal.vicky (the review hand-off).", word for word, and so does the copy in my prompts file. Added standing answer 23 to my prompts file (SA23).
+- Draft S29, "Who builds the parts of an AI agent? Startups at Web Summit" (508 words, newsroom v0.1.738, For: reviewer@PrompTugal.vicky). Source, read 8 Nov: Web Summit's featured startups list (the eight on its first of 26 pages, each in its own words); links to the five existing company pages. Cover: a layered diagram (SVG), phone-checked. Not checked: the companies' own claims ("leading", "first"), attributed and flagged.
+- S30 is journalist-connections' (Connections beat). Remote set and confirmed before pulling.
+- state: ok; done: HANDOFF-FIX and SA23 applied, S29 drafted; next: review; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 20:20 UTC (fix-only run: S29)
+
+- S29 revised after the reviewer's Fix first (54a2b751): the eight descriptions and countries now cite each company's own Web Summit page (all eight opened today, each carrying the quoted words), linked from the featured list at its current address; Beyond Presence's link to agents is stated as our reading (in "In short", the story and the summary). Wording fixes as suggested (Acrab's "purpose-built chips", Polygraf's own words, the "leading/first" caveat dropped, the image's bottom layer named "The base"). Image re-checked at phone width. 538 words. Newsroom v0.1.743, For: reviewer@PrompTugal.vicky.
+- state: ok; done: S29 revised; next: re-check by the reviewer; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 00:15 UTC (OVERNIGHT-9NOV, batch A1)
+
+- All 11 A1 companies written and pushed for review, status: in-review, in three pushes (newsroom v0.1.755, 8f0a358d, v0.1.756): cisco-outshift, datadog, deque, directus; elastic, exa, genspark, jetbrains; keewano, launchdarkly, linux-foundation-aaif. Backlog rows set "in review". Every source read 9 Nov: each company's own site for About (SA23: two or three plain sentences, claims marked, sources below) and Web Summit's own pages (appearance, event partners list, session pages with times) for "At Web Summit 2026".
+- Notes for the reviewer: Genspark's own site showed a security check (403, also in a browser), so its About rests on its Web Summit page and says so. The AAIF press conference is marked "Media only" because its page says "Media event only". Cisco's Portugal Tech Week showcase was left out (a side event, not Web Summit). Deque is not on the event partners list, so only its session is listed. Speakers named by role only, as on Web Summit's pages.
+- state: ok; done: batch A1, 11 of 11 in review; next: review fixes at my fix-only runs; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 06:17 UTC (scheduled run)
+
+- state: idle
+
+## Mon 9 Nov 2026, 11:16 UTC (scheduled run)
+
+- No hold. applied SA26: standing answer 26 added word for word to my prompts file. None of my 11 company pages rests on Wikipedia; Genspark's About rests on its official Web Summit page, which SA26 allows. Nothing new on my beat (S33 is the summit beat). Remote set and confirmed before pulling.
+- state: ok; done: SA26 applied; next: new AI or robotics storylines; ask: none; run: scheduled

@@ -113,3 +113,37 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
 - Participants: 100 startups from page 1 of 26 of Web Summit's featured startups, under the page's own industry tags (30 in AI and machine learning, 11 fintech, 11 healthtech, 6 hardware and robotics, and more) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)). The partners page lists past speakers only, so nothing from it.
 - state: partial; done: 1 participants capture; next: pages 2 to 26 and what the speakers' organisations do, at the next runs; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 18:15 UTC run (participants)
+
+- decisions.md read first (seven new commits, all on company pages, the reviewer and the checker, none for me; no HOLD.md); prompts file re-read, no difference.
+- 1 capture revised in vault 41j3e9s9 (0 new files): the 100 featured startups now carry country, programme stage and their own one-line pitch, quoted; four are Portuguese (ChatPlace, DIG-IN, iTRTech Group, sheerME) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)). The first security review failed on a web address inside a pitch; addresses are now cut and marked, and the second review passed.
+- Could not: pages 2 to 26 load through Web Summit's API, not the page, so only page 1's 100 are captured.
+- state: partial; done: startups capture enriched and audited; next: what the speakers' organisations do; ask: may I read pages 2 to 26 through the API the page itself calls (graphql.cilabs.com, public, no login)? Recommended: yes, read-only, same fields; run: scheduled
+
+## Sun 8 Nov 2026, about 19:00 UTC (one-off, at Vicky's word)
+
+- Correction to my 18:15 report: the featured startups page does not load pages 2 to 26 from graphql.cilabs.com (that is its shop and checkout service); its own configuration says the list comes from Algolia, with a setting of 20 items free without login ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)). The page itself renders only page 1, whatever the page parameter.
+- Vicky's permission covered graphql.cilabs.com only, so I read nothing from Algolia and did not probe graphql.cilabs.com for a list it does not serve; 0 captures went into vault 41j3e9s9. Coverage stays 100 of the startups (page 1 of 26), 20 speakers; nothing new for the curator from this run.
+- state: blocked; done: checked the page's real data source, corrected my report; next: the regular runs, unchanged; ask: may I read pages 2 to 26 from the Algolia search the page uses, with the page's own public search key, read-only, the same five company fields, slowly? Recommended: only if Vicky is content that the "20 free without login" setting is not an access limit we would be going around; otherwise leave it at page 1; run: prompted
+
+## Sun 8 Nov 2026, about 19:25 UTC (Vicky's word: pages 2 to 26 left)
+
+- Pages 2 to 26 left for now and no Algolia queries, at Vicky's word; the gap is recorded in the capture itself and in my prompts file (standing rules 5 and 6). 0 new captures; 1 capture's note revised in vault 41j3e9s9, audited and pushed.
+- For the curator: captures/2026-11-08-websummit-featured-startups-p1.md holds 100 featured startups (page 1 of 26, all GROWTH stage) by industry, with country, stage and each company's own pitch marked as a claim, not a checked fact; four are Portuguese. With captures/2026-11-08-websummit-speakers-by-theme.md (20 speakers by theme) it is ready for theme-led connection storylines (standing answer 19) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)).
+- state: ok; done: gap recorded, curator pointed at the two participant captures; next: regular runs from 05:15, public pages only; ask: none; run: prompted
+
+## Mon 9 Nov 2026, 05:15 UTC run (Portugal, participants)
+
+- decisions.md read first (five new commits, none for me; no HOLD.md); prompts file re-read, no difference.
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Portugal: the 78 startups Startup Portugal selected for Road 2 Web Summit 2026, by sector, each with its city and the article's one-line description (descriptions marked as claims); they pitch at the summit for the Most Promising Startup award, 15,000 euros ([Portugal Startup News, "Full list of 78 startups selected by Startup Portugal for Road 2 Web Summit 2026"](https://portugalstartupnews.com/2026/11/08/full-list-of-78-startups-selected-by-startup-portugal-for-road-2-web-summit-2026/)).
+- For the curator: with the 100 featured startups and the 20 speakers of 8 November, this gives a Portuguese cohort for connection stories; DIG-IN and RipeNew appear in two captures each. Opening previews (Renascença, Observador) not captured: no new facts.
+- state: ok; done: 1 capture (Road 2 Web Summit cohort); next: 10:15 run, opening day; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 10:15 UTC run (announcements, Portugal, participants)
+
+- decisions.md read first (one new commit, brief 8 clean-up, nothing for me; no HOLD.md); prompts file re-read, no difference. 2 captures went into vault 41j3e9s9, audited and pushed (the IBM file failed its first review for an organisation written like a web address, fixed, passed); sgit status in sync.
+- Announcements and participants: IBM's Sports Tech Startup Challenge ends at the summit, a showcase on 10 November and an invitation-only Prize Challenge on 11 November with six finalists (LingoPal, Fanory, Neuron Systems, LivXP, PressBox, TwelveLabs) and judges from IBM, Ferrari, FIFA and CNN ([IBM Newsroom, "IBM Sports Tech Startup Challenge culminates at Web Summit Lisbon 2026"](https://newsroom.ibm.com/blog-ibm-sports-tech-startup-challenge-culminates-at-web-summit-lisbon-2026)).
+- Portugal: Go Coimbra, with IPN and the University of Coimbra, brings 12 startups in digital health, AI, robotics, sustainability and aerospace, all four days ([Diário de Coimbra, "Go Coimbra apresenta 12 startups na Web Summit em Lisboa"](https://www.diariocoimbra.pt/2026/11/09/go-coimbra-apresenta-12-startups-na-web-summit-em-lisboa/)). Opening-day coverage of the Chinese delegation and robot speakers not captured again: already in the 8 November speakers capture.
+- state: ok; done: 2 captures; next: 14:15 run; ask: none; run: scheduled

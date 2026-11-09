@@ -1,0 +1,58 @@
+{
+  "number": 18,
+  "date": "9 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Monday: the summit opens tonight, and ten quick questions wait for you",
+  "when": "9 November 2026, 07:25 UTC (scheduled wake; since brief 17, 17:25 UTC on 8 November)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Your new prompt helper did five tasks overnight and left ten questions, each answered in a word. The first token report arrived in your accounts inbox. Dinis is back after 27 hours offline, and the stand-ups are now called only when needed. The summit opens tonight at 18:00. Nothing is decided here.",
+  "stats": [
+    {"n": "10", "label": "one-word questions from your prompt helper (QUESTIONS.md)"},
+    {"n": "4", "label": "new prompts in your library overnight"},
+    {"n": "1st", "label": "token report delivered through your accounts inbox, end to end"},
+    {"n": "18:00", "label": "tonight: the summit's opening night"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Answer your prompt helper's ten questions",
+      "detail": "people/indi/overnight/2026-11-09/QUESTIONS.md. Reply with numbers, for example '1 yes, 2 no'. Questions 8 and 10 change my files: a 'Helpers' paragraph in my instructions, and the infographic agent in your list. I change nothing until you say yes.",
+      "options": ["answer now", "answer after the opening night"],
+      "recommend": "Answer now: it takes two minutes, and question 3 (the Team app brief to Dinis) is time-sensitive."
+    },
+    {
+      "id": "2",
+      "ask": "The token rules and the lead-to-article page: Dinis to read, not a stand-up",
+      "detail": "Last night's stand-up did not happen in the usual way: Dinis was offline, and Angelo recorded that stand-ups are now called when needed. Both items stay open for Dinis. My reminder to his conductor is on dev.",
+      "options": ["leave them with Dinis", "ask him in person today"],
+      "recommend": "Ask him in person today, in one sentence: they help everyone from tonight."
+    }
+  ],
+  "you_asked": [
+    {"at": "8 Nov, evening", "said": "Create a prompt engineering agent ... to function with Sonnet 5.5, Opus 5.5 and Fable 5.1", "done": "Written and started. It did five tasks overnight: the Web Summit FAQ, a Team app redesign, an iPhone and Android release plan, helper sessions, and an infographic agent.", "where": "people/indi/prompts/, people/indi/overnight/2026-11-09/", "status": "done"},
+    {"at": "8 Nov, evening", "said": "Leave the stand-up items for Dinis to read; send his conductor a reminder", "done": "Reminder committed for conductor@web-summit.dinis; both agenda items carry the note.", "where": "data/meetings/2026-11-08-1800/", "status": "done"},
+    {"at": "8 Nov, evening", "said": "A workflow to edit the PrompTugal Team app through Claude Code and GitHub", "done": "Given in chat: branch, build check, screenshots, pull request, TestFlight. It needs write access from Dinis first.", "where": "PrompTugal/PrompTugal__App__iOS", "status": "waiting on Dinis"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened since brief 17",
+      "items": [
+        "Your prompt helper started, published its key, and worked overnight (cdbedd4, bb8df4e, 0593469).",
+        "Your accountant's report for 8 November reached your accounts inbox and was opened and filed: the first time the whole route worked. Your dev helper used the most tokens (three wakes).",
+        "Dinis is back after 27 hours offline (230d1ab). He published /apps/, the three apps on one page (650bffa).",
+        "Stand-ups are now on demand, in Angelo's words (0660413).",
+        "The team's shirts are paid for and at the printer; Dinis and Silvio collect them today or tomorrow (58db4f8)."
+      ]
+    }
+  ],
+  "next": [
+    "Today 18:00: the summit's opening night.",
+    "Today 16:00: your social helper drafts tomorrow's post.",
+    "Tuesday 10 November, 12:45: I check how many helpers follow the token rules."
+  ],
+  "sources": [
+    "git log since 17:45 UTC on 8 November: cdbedd4, bb8df4e, 0593469, 230d1ab, 650bffa, 0660413, 58db4f8",
+    "drain.py at 07:25 UTC: 1 report written (accountant@web-summit.indi, 8 November)",
+    "people/indi/overnight/2026-11-09/QUESTIONS.md"
+  ]
+}

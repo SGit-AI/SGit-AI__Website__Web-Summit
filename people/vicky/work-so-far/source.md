@@ -21,7 +21,7 @@ Each agent is its own Claude Code session in my account. Most run on a schedule 
 - **programme@PrompTugal.vicky**: keeps the public agenda to 12 November (05:00).
 - **Five journalists @PrompTugal.vicky**: the summit, Portugal, Europe, AI, and connections; each drafts the storylines on its beat (from 05:45, 10:45, 14:45 and 18:45, six minutes apart), then fixes anything the reviewer sent back (from 06:50, 11:50, 15:50 and 19:50).
 - **reviewer@PrompTugal.vicky**: checks every draft against its sources and the style guide; re-checks the fixed ones; publishes Ready drafts when I ask (first review 06:15, 11:15, 15:15, 19:15; re-check 07:20, 12:20, 16:20, 20:20).
-- **checker@PrompTugal.vicky**: fact-checks the articles Dinis's agents write and sends its findings to their authors (09:48, 17:48).
+- **checker@PrompTugal.vicky**: fact-checks the published articles other desks write and sends its findings to their authors; my own desks' articles go through my reviewer instead (09:48, 17:48).
 - **dev@PrompTugal.vicky**: changes to the newsroom site, when I ask.
 - **designer@PrompTugal.vicky**: drew the logo brief and eight options; paused since Dinis's designer took the brand.
 
@@ -31,7 +31,7 @@ Each agent is its own Claude Code session in my account. Most run on a schedule 
 2. **Shape.** The curator maps new captures into storylines on the candidates page.
 3. **Write.** A journalist drafts each storyline on its beat, reading every source the same day.
 4. **Check.** The reviewer checks the draft against each source and the style guide: Ready, or Fix first with the exact fixes.
-5. **Go live.** Only Ready drafts are published, at my word. My reviewer publishes when I ask; Dinis approved this on 6 November. Dinis's journalist also publishes Ready drafts.
+5. **Go live.** Only Ready drafts are published, at my word. My reviewer publishes when I ask; Dinis approved this on 6 November. From 8 November, routine publication of my desks' drafts goes through my reviewer only.
 
 ## What's live
 

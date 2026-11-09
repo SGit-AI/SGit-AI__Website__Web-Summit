@@ -2,6 +2,8 @@
 title: "desk.conductor@PrompTugal.angelo: the state"
 summary: What Angelo's conductor knows between runs. The hourly runner (a fresh session each wake) and the desk (the long session Angelo talks to) both read it first and keep it current. Facts and pointers only: no secret, no contact detail.
 ---
+**URGENT for Angelo (9 Nov 06:23 UTC):** research@'s registration brief is in (people/angelo/research/registration-2026.md): airport desk likely smooth, venue first morning (Tue 10 Nov 08:30-10:00) likely long; best is the airport on arrival, or Pavilhao de Portugal today (Mon 9 Nov, open 12:00-22:00), not Tuesday morning. Its question: when does he land? The desk to put it to him today.
+
 **Read this first, every run.** Then `people/angelo/kit/README.md` (the protocol) and the commits since `last_run` below. Update this file before you end, in the same commit as your run's work.
 
 ## Who is who
@@ -40,6 +42,12 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 | WS-181: designs page.md and vaults.md | Angelo | 6 Nov 22:40 | before Monday | his go, then security@web-summit.dinis |
 
 ## Open with Angelo (the desk's list)
+
+- 9 Nov 12:18 UTC (conductor@web-summit.indi, 163fe21, people/indi/demo/ask-angelo.md, For: angelo, desk, dev.abp@): Indi asks three yes/no questions, wanted by Tuesday 10: may the side-by-side ABP demo build on dev.abp's engine (stories/reach: setup, trial, guard, act, summary); may dev.abp@ build sidebyside.mjs and the two-column view (recommended by Indi; dev@web-summit.indi does the visitor side); may it run on his stand laptop in the clean environment. Tier 3 (his engine, his agent, his laptop); my recommendation: yes to all three, nothing public about the engine until he has seen it (his standing rule). The desk to put it to him.
+
+- ABP in action, section 10 (abp@web-summit.dinis, 3adf98ba): left as it is (Angelo, 8 Nov about 23:40: "what he published is a sort of summary of what we're doing here. I don't see how he's in any way overlapping with our work. Let's keep building a complete system that we can use or show in demos."). "Keep it to us" means our demo itself is not shown to abp@ or xray@ nor made public until he has seen the final version; a summary of our public results by others is fine.
+
+- Desktop app dropped (Angelo, 8 Nov about 18:10 UTC): the website's pop-out is enough; the urgent CI request to Dinis's conductor withdrawn; no signing.
 
 - Asked the team at Angelo's word (dev@ 05b5bd01, his answer "Ask the team"): whoever has a Mac or an iPad tries the live graph's Pop out in Safari and says whether it keeps moving. Sent 8 Nov about 16:40 UTC to every conductor.
 - LinkedIn wording conflict: Angelo told dev@ "Over a hundred" (05b5bd01, 16:25); writer@ then changed posts.md to "dozens" to match the live article (b52d7013, 16:31). His call.
@@ -96,24 +104,28 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - P-07 (policy@, 7 Nov, findings.md): is an email from a stranger a visitor's note (read by no agent, only sealed to Angelo)? Needed before inbox@'s design (crm@ due 16:50 run); also P-05 (team-collaboration still pushes its session branch).
 
-## Workload (8 Nov 07:21 UTC, last 24 h; tokens = ledger, without cache reads, sub-agents included; commits counted by Agent trailer, so a floor)
+## Workload (9 Nov 07:27 UTC, last 24 h; tokens = ledger without cache reads, sub-agents included; commits by Agent trailer on dev, a floor)
 
-| Agent | Wakes | Commits | Open work | Waits on | Tokens | Recommend |
+| Agent | Ledger lines | Commits | Open work | Waits on | Tokens | Recommend |
 |---|---|---|---|---|---|---|
-| dev | 22 ledger lines (hourly) | 12 | context rules, android spec, live-map follow-ups | nothing | 2.21M | keep: the builder; lighter than yesterday (4.77M) |
-| team-collaboration | 8 (6 inbox + stand-ups) | 0 by trailer | none routed | Angelo's parking | 2.66M | slow down: heaviest after dashboard for no commits; inbox wakes 6/day to 3 |
-| dashboard | 9 (every 3 h) | 0 | none routed | Angelo's tapped-spots choice | 4.08M | slow down: highest tokens, no commits, asks the same unanswered questions; every 6 h |
-| helper | 3 | 0 | none | no questions | 1.24M | keep, or once a day: nothing asked of it |
-| vault | 5 | 0 | WS-181 | Angelo's go, SG_SEND_PASSPHRASE, own token (WS-170) | 1.40M | keep |
-| crm | 4 | 0 | inbox@ design (done), Accenture | Angelo's go on inbox (tier 3), tokens | 1.47M | keep |
-| policy | 2 | 2 | P-07 closed with run 4; P-05 quiet | nothing | not in ledger | keep: daily |
-| dev.map | 9 | worker branch 06:55 | spec 00a/00b | Angelo's answers | 1.20M | keep |
-| dev.venues | 8 | worker branch 06:48 | WS-181 spec | Angelo's review | 0.50M | keep |
-| dev.links | 4 | worker branch 22:11 | none open | nothing | 0.28M | keep |
-| research | 3 | worker branch 22:13 | 18 companies | Angelo's go | 0.19M | keep |
-| vault.kms | 1 | worker branch 00:08 | sharness.kms steps | nothing | 0.06M | keep |
-| runner.conductor | 24 | 6 | none | nothing | 0.61M (two ledger names) | keep |
-| desk.conductor | 0 (no schedule) | 0 | none | Angelo | 0 | keep: on demand |
+| dev | 2 (names split; hourly wakes) | 9 | snapshots, reviews, missed-brief fix | nothing | 37.7M on 2 lines (looks like a long session logged once) | keep; check the ledger line, it is 17x yesterday |
+| dashboard | 21 (reviewer, hourly) | 6 | reviews of workers | Angelo's tapped-spots choice | 1.03M | keep: now useful as reviewer; down from 4.08M |
+| team-collaboration | 4 | 0 | none routed | Angelo's parking | 0.03M | keep: slowed, cheap |
+| helper | 2 | 0 | none | nothing | 1.40M | once a day or remove: nothing asked of it |
+| vault | 3 | 0 | WS-181, passphrase, token | Angelo's go (tier 3), WS-170 | 0.98M | keep |
+| crm | 1 | 0 | inbox@ design done | Angelo's go (tier 3) | 0.44M | keep |
+| policy | 2 | 2 | none (P-11 closed) | nothing | not in ledger | keep: daily |
+| dev.abp | 10 | via reviewer | ABP demo | nothing | 3.61M | keep through the summit, then slow |
+| dev.map | 8 | via reviewer | map levels | Angelo's answers | 1.37M | keep |
+| dev.work | 19 | via reviewer | work view; Android label question | Angelo's word | 1.81M | slow down: runs are ledger-only, every item waits on someone |
+| dev.app | 17 | via reviewer | none (desktop dropped) | nothing | 1.31M | slow down to every 3 h or remove: ledger-only runs |
+| dev.venues | 12 | via reviewer | WS-181 spec | Angelo's review | 0.66M | slow down: quiet runs |
+| dev.links | 3 | 0 | none | nothing | 0.12M | keep |
+| research | 5 | 0 | registration brief delivered | Angelo's landing time | 0.42M | keep hourly until the summit |
+| vault.kms | 1 | 0 | after the summit | nothing | 0.05M | keep |
+| social-media | 1 | 0 | LinkedIn drafts | Angelo | 0.07M | keep |
+| runner.conductor | 18 (two names) | 4 | none | nothing | 0.42M | keep |
+| desk.conductor | 0 | 0 | none | Angelo | 0 | keep: on demand |
 
 - Angelo's social media (7 Nov, his note: "there is nothing there yet and it's not great"): a topic to open with him; starting points: WS-126 (LinkedIn), people/angelo/profiles-proposal.md, his card; posting in his name is tier 3.
 
@@ -134,22 +146,20 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 ## Waiting on others
 
 - Dinis: a line on the contributor ask and on another operator's agent publishing at the newsroom (writer@, 14:05); the three SG/Send tokens (WS-170); where his transcript extension is (WS-98); CLAUDE.md lines for WS-129 and WS-179.
-- conductor@web-summit.dinis: URGENT (8 Nov 16:2x): take dev.app@'s two CI drafts (desktop-build.yml, deploy-pages-step.md) so installers exist before the summit; WS-150's deck patch (routed 5 Nov 15:48), WS-131's patch (5 Nov 00:38), the cockpit one-click patch, WS-45, WS-36, WS-78, WS-106 drafts.
+- conductor@web-summit.dinis: (the 8 Nov 16:2x CI-drafts request was withdrawn at 18:11, be9b735: nothing needed); WS-150's deck patch (routed 5 Nov 15:48), WS-131's patch (5 Nov 00:38), the cockpit one-click patch, WS-45, WS-36, WS-78, WS-106 drafts.
 - security@web-summit.dinis: five questions on WS-181's vaults (vault@'s design); vault@ needs its own token (WS-170).
 - security@web-summit.dinis: the public visitor inbox design (WS-64, WS-119).
 - Indi's side: whether accountant@web-summit.indi reads `people/angelo/ledger/` (WS-148).
 
 ## Recent
-
-- 8 Nov 16:21: the runner: URGENT sent on. Since 15:21: dashboard@ (4d70614) relayed Angelo's word (quoted, push check passed): ask Dinis's conductor today to take dev.app@'s two CI drafts (installers workflow, deploy step); I committed the request For: conductor@web-summit.dinis and dev.app@. Desk (live) routed Angelo's words on 3D dots, LinkedIn, ABP demo, contributor. dev@ report, workers reviewed onto dev: information only. Vicky's and Jose's and Indi's work: information only.
-- 8 Nov 15:21: the runner: nothing urgent. Since 14:21: dashboard@ (662e679, For: dev.app@ and desk) brought dev.app's new work onto dev; dev@ (7b71cfa) refreshed the snapshot (55 agents, 150 pairs): reports, information only. Vicky's side (PILOT-REPLIT live, journalists, curator, reviewer), Silvio's video films, Jose's token reminder for Dinis: information only. Stalls (5c): none seen by commits.
-- 8 Nov 14:21: the runner: nothing urgent. Since 13:21: the desk (9f3f449, 591c03f, at Angelo's 13:15 word) put "our own website first; any other host is a tier-3 question" in the kit, For: every agent of his. dashboard@ (6c25bb1, 33ec144, d30dd3f) brought dev.app's, dev.work's, dev.abp's, dev.venues's and dev.links's work onto dev; dev@ (3b8785e) refreshed the snapshot (55 agents, 150 pairs). runner.writer@ state, Vicky's Replit pilot and researcher, Jose's designer schedule: information only. Stalls (5c): none seen (list_triggers not used).
-- 8 Nov 13:21: the runner: nothing urgent. Since 12:21: the desk (b310f63) ended the stand-ups at Angelo's word (team-collaboration@ routed). Indi's conductor (8deb20d, 001fc0c, For: conductor@web-summit.angelo) asks for an accountant per person and token reporting: tier 3, added to Open with Angelo. Vicky's dev@ (Live AI Office, requests to her own conductor): information only.
-- 8 Nov 12:21: the runner: nothing urgent. Since 11:20: dashboard@ (52a333d, d6152af, For: desk and policy@) reviewed and brought the map and app workers' first work onto dev (dev.map's agents ring, dev.work's spec and mock-up, dev.app's hexagon app prototype and download page). Two for the desk to put forward: dev.app@'s CI draft for the Windows/Mac installers (For conductor@web-summit.dinis, .github/ is shared), and dev.work@/dev.app@ still have no lane (policy@'s). The desk (980905a) struck dev@'s finished backlog items; runner.writer@ (1d9d437) logged the guide's three new findings, Dinis's answers open. Vicky's side (dashboard, journalist-connections): information only. Stalls (5c): none seen by commits (list_triggers not available).
-- 8 Nov 11:21: the runner: nothing urgent. Since 10:21: dev@ (b2a4dec, 4fc55e2) brought social-media@'s first posts onto dev and refreshed the snapshot (55 agents, 146 pairs), reports; social-media's two questions added to Open with Angelo. Stalls (5c): none seen. Others' work (Silvio's conductor/crm/dev: WS-172 token ask for crm@web-summit.silvio, incidents list sealed; Vicky's journalists, curator): information only.
-- 8 Nov 10:21: the runner: nothing to route; nothing urgent. Since 09:21 the desk routed its own work (work view, dev.work@/dev.app@, replay clip, meetings workflow, newsroom fix to Dinis's team). dev@ (33a636a, c79f73b, 5561c99, eda6f94) brought the workers' work onto dev and recorded the reviews of research, dev.links, dev.venues, dev.abp@ (dev.abp@'s spec of the watchable ABPs awaits Angelo), snapshot 55 agents/146 pairs. vault@ (c9581d5) as above, already routed to vault.kms@. runner.writer@ (4be4c8f): checker@ raised three findings on the guide's interactive version, its own piece to correct. Others' work (Vicky's researcher/vault/checker, Jose's wake): information only.
-- 8 Nov 09:21: the runner: nothing to route; nothing urgent. Since 08:21 the desk routed Angelo's words itself: dev.abp@ created and briefed (two watchable demo modes), the Tauri hexagonal app approved (6891bc2, For: dev.map@, dev@; unsigned builds, kept in this repository, Windows/Mac installers, CI workflow draft For: conductor@web-summit.dinis), a protocols article for writer@, every agent on the replay map, the work view. writer@ (363e231, For: desk, policy@) applied Angelo's answers (protocol confirmed, Monday rehearsal, questionnaire levels). dev@ (6e50345, 81e9965) fixed pushed-by.mjs for fresh sessions and brought dev.map's work onto dev. Stalls (5c): none seen. Others' work (Vicky's standing answer 19, curator): information only.
-- 8 Nov 08:21: the runner: nothing urgent. Since 07:21: the desk (c0c8eb9, 57b7e33, 583fbbf, For: dev@, dev.map@, research@ and me) already routed Angelo's words: pushed-by.mjs fix first (research@ stopped on 'unknown'), 3D as the live graph, layout switch and outer-ring layout, floating-map logos/LIVE label, and all agents on the map (0f); my 5c rule updated (worker fired twice since its last commit = Stalled; list_triggers not available to me this run, so only commit-based stall check, none seen). dev@ (36c79ae, 42197de, ca9c459) brought dev.map's key events/3D and dev.venues's quiet run onto dev. team-collaboration@'s stand-up question added to Open with Angelo. Others' work (Vicky, Jose, Indi, Silvio, Dinis's silence A-21; watcher's A-22 on Angelo's quiet agents): information only.
-- 8 Nov 07:21: the runner: nothing to route; nothing urgent. Since 06:21: policy@ run 4 (084ebe7, For: angelo and desk): both barriers checked, the lane check now enforced (release.sh and CI refuse an undeclared write outside a lane), people/angelo/policy/** reserved to policy@; P-10 closed, R6 and R11 technical. Every agent of Angelo's now needs an "Outside: <path>; <why>" line for a write outside its lane. dev@ (657aa7c, 4644c18) brought dev.map's sealed-message playback onto dev and refreshed the snapshot (55 agents, 143 pairs). Workload table refreshed (dashboard and team-collaboration: slow down, for Angelo). Stalls (5c): none confirmed; dev.links and research quiet since 22:1x, their items wait on Angelo or are done.
-
-last_run: 2026-11-08T16:21:28Z (the runner)
+- 9 Nov 12:2x: the runner: nothing urgent (the 06:23 registration item stands; Pavilhao window open now). Since 11:22: Indi's conductor asked Angelo three questions on the side-by-side ABP demo (163fe21, now under Open with Angelo, wanted by Tue 10); desk (d24e5b3) routed dev@ the worker-pool spec, (40a1dac) dashboard@ builds the Android wallpaper APK; security.repos@ run 2 (8e152fc): no critical or high, one medium (openrouter.ai coming to the RiskMandate Android app, For: Dinis's android conductor), information; prompter@/indi team-app v3-v5 and Vicky's work: information. Stalls (5c): none seen.
+- 9 Nov 11:2x: the runner: nothing new urgent (the 06:23 registration item stands; today's Pavilhao window opens 12:00). Since 10:20: desk (54d01e4) opened WS-202 for the Android apps (claims shell, event, team app; For: dev.android@, dev.app@, jose, dinis), (9697945) routed the Google Workspace article to writer@, (9577ee8) desk may wake agents with ready work, research@ first for the editorial team; writer@ (f688309) report: authority-checks draft and LinkedIn reply await Angelo's review (0-URGENT-3, already with the desk); Dinis's decisions 10:55 (3bfbc8c), security.repos@ first run baseline: no critical or high (cb4e0b7); Vicky's new conductor session (keys, tasks): information. Stalls (5c): none seen.
+- 9 Nov 10:2x: the runner: nothing new urgent (the 06:23 registration item stands). Since 09:20: desk (7390edd, Angelo 09:30) asked research@ then writer@ for an editorial-team survey and spec (routed, nothing for me); dev@ (4aa219a) pushed-by.mjs --last-touch for workers (fix of the 08:48 false alarm); reviewer batches for dev.map/work/app/abp/venues/research onto dev; dashboard@ built the Android wallpaper APK and sent it to Angelo for a phone test (2104fca); vault@ (5d695d8) kms piece 1 passes, vault.kms@ starts piece 2; runner.writer@ three pieces published. Others' (Silvio, Indi, Vicky) work: information. Stalls (5c): none seen by commits.
+- 9 Nov 09:2x: the runner: nothing new urgent (the 06:23 registration item stands; writer@'s report repeats the open question: when he lands, and the demo rehearsal topic/time). Since 08:21: desk (8a57df0) routed Angelo's LinkedIn authority-checks question to research@ then writer@ (draft for his review before publishing); desk (76bc54f) cleared research@'s stop as a shallow-clone false alarm, dev@ to fix pushed-by.mjs; desk (20e9501) Angelo approved the share button as recommended, dev.venues@ builds it today; writer@ published the wristband article on PromptUGAL.news; Vicky's brief 8: information. Stalls (5c): none seen.
+- 9 Nov 08:2x: the runner: nothing urgent (the 06:23 research registration item stands). Since 07:27: reviewer@ brought dev.abp/map/work/app work onto dev (information); team-collaboration's 9 Nov note (26 open, 25 with Dinis, 2ff2923); Indi's answers (3ce6820): two items for Dinis at 12:00 (WS-181 Team app redesign, WS-182 Indi's agents on PrompTugal.news), information for us; writer's run closed (WS125 published). Nothing to route.
+- 9 Nov 07:27: the runner: nothing urgent (the 06:23 research registration item stands, nothing new). Since 06:23: policy@ run 6 (1824052): quiet, P-11 closed (desktop dropped); conductor@web-summit.indi (537bbbb, brief 18): first token report from accountant@indi filed, For: indi (information; WS-148 accounting side); dashboard@ reviewer batches for dev.work/dev.app (ledger-only); dev@ snapshot 56 agents, 176 pairs; Vicky S31 Ready; Silvio's meet page (WS-64, For: dev@web-summit.angelo, information) and crm logging: information only. Workload table refreshed. Stalls (5c): none seen.
+- 9 Nov 06:23: the runner: URGENT (time-bound, not blocking): research@'s registration brief (via dev@, 4eee9a1 range) answers Angelo's 0-URGENT: airport desk smooth, collect today at Pavilhao de Portugal (12:00-22:00) or at the airport on arrival, never Tuesday morning; asks when he lands. Also: dev@ (4b697db, 30f91b6) found research's brief had waited six hours on its branch, now lists every worker branch each wake; runner.writer@ (339a390): WS-125 closed by the checker, byline question still open; Vicky's, Silvio's (outreach key, WS-160) runs: information only. Stalls (5c): none seen.
+- 9 Nov 05:20: the runner: nothing urgent. Since 04:20: dashboard@ as reviewer (34eaf27, 8105428) brought dev.work's and dev.app's ledger/STATE-only runs onto dev (every item waits on someone; information); Vicky's OVERNIGHT-9NOV closed (0493237: 100 company pages, RWS in fix), programme@ opening-day agenda (WS-14) and researcher@ capture (78 Road 2 startups); Silvio's video@ (two films, wait on Silvio's OK) and conductor@ 04:50 wake: information only. Stalls (5c): none seen by commits.
+- 9 Nov 04:20: the runner: nothing urgent. Since 03:20: Vicky's last overnight wake idle (de4ed77); dev@ snapshot (895a989, 56 agents, 173 pairs) and review of dev.venues's quiet run (7a55d2b); dev@web-summit.silvio (be2f3ff, WS-160): logs its runs, line for Silvio's other agents (Silvio's side, information); runner.writer@ (6d22178): WS125 closed, contributor ask to Dinis still unanswered (already under Waiting). Stalls (5c): none seen.
+- 9 Nov 03:20: the runner: nothing urgent. Since 02:23: dashboard@ as reviewer (d8b278a, For: dev.work@, desk) brought dev.work's phone-label fix onto dev (closes its own earlier note; information); Vicky's overnight batches (100 company pages done, RWS still blocked) and dashboard@web-summit.silvio's WS-200 (newsroom theme switch, For: newsroom@web-summit.dinis, waits on Dinis's side): information only. Stalls (5c): none seen.
+last_run: 2026-11-09T12:25:21Z (the runner)

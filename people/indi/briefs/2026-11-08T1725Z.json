@@ -1,0 +1,55 @@
+{
+  "number": 17,
+  "date": "8 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Sunday evening: the first team follows your token rules",
+  "when": "8 November 2026, 17:25 UTC (scheduled wake; since brief 16, 07:25 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Three things went live today: the token report, the token rules for every helper on the team, and the page on turning a summit conversation into an article. Jose's helpers are the first to follow the rules. The stand-up at 18:00 decides the rest. Nothing is decided here.",
+  "stats": [
+    {"n": "3", "label": "pages of yours live today: token report, token rules, lead-to-article"},
+    {"n": "2", "label": "of Jose's helpers already started fresh, as the rules ask"},
+    {"n": "0", "label": "accountant reports in your inbox so far (other accountants have no key yet)"},
+    {"n": "18:00", "label": "today: the stand-up where Dinis confirms your items"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "At the 18:00 stand-up: ask Dinis to confirm the token rules and the lead-to-article page",
+      "detail": "Both are on the agenda already. Your dev helper also put three of its own questions there (the price answer for the stand, WS-133, an offline copy for the stand).",
+      "options": ["raise them", "leave them for Dinis to read"],
+      "recommend": "Raise them: one minute each."
+    },
+    {
+      "id": "2",
+      "ask": "Paste the lead-to-article prompt into your own helper?",
+      "detail": "The short prompt on the page lets your helper turn your 30-second voice memos into a private follow-up and, with a yes, an article draft.",
+      "options": ["yes, do it for me", "I'll do it myself", "not yet"],
+      "recommend": "Yes, before Monday evening."
+    }
+  ],
+  "you_asked": [
+    {"at": "8 Nov, afternoon", "said": "Make a plan of at most five steps to finish WS-168", "done": "Done: one page for everyone at the summit, linked from the start page. On the stand-up for Dinis.", "where": "/lead-to-article/", "status": "done"},
+    {"at": "8 Nov, afternoon", "said": "Create the token ABP and deploy it to everyone else's agents", "done": "Live at /abp/token-efficiency/, pointed to from the agents page. Jose's helpers started following it.", "where": "/abp/token-efficiency/", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened since brief 16",
+      "items": [
+        "Your token report, the accountant's role, the accounts inbox and the token rules all went live (v0.2.1277 to v0.2.1286).",
+        "Jose's dev and helper wrote handover notes to start fresh sessions, rule 2 of your token rules (339ef1f, 7169021). Jose also has an accountant now, but it has no key yet, so it cannot send you reports.",
+        "Your dev helper checked the four demo companies on the Web Summit site and added Legora (677fd9f).",
+        "One new key on the team (Vicky's synthetic tester). No new accountant keys, so no new inbox lanes were needed."
+      ]
+    }
+  ],
+  "next": [
+    "Today 17:30: your accountant's daily wake.",
+    "Today 18:00: the stand-up.",
+    "Tuesday 10 November, 12:45: I check how many helpers follow the token rules, and report to you."
+  ],
+  "sources": [
+    "git log since 07:25 UTC on 8 November: 339ef1f, 7169021, 677fd9f, c732e25, d4edac9",
+    "drain.py at 17:21 UTC: 0 pending; data/keys.json and data/inbox/conductor-indi.json"
+  ]
+}
