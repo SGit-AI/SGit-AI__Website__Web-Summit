@@ -9,7 +9,7 @@ Kept by conductor@web-summit.vicky at Vicky's word (8 November 2026, about 17:45
 | Count | |
 |---|---|
 | Company pages on promptugal.news | 120 |
-| Already done | 39 (Replit; C1, ten; P1, nine; E1, ten; C2, nine) |
+| Already done | 93 (Replit; C1, ten; P1, nine; E1, ten; C2, nine; overnight, 54 so far) |
 | In this backlog | 101, in 10 batches |
 | Blocked, missing evidence | 14 |
 | Held, someone else working on the data | 4 |
@@ -67,14 +67,14 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| 0xbow | https://promptugal.news/companies/0xbow/ | in review |
-| 1Password (website) | https://promptugal.news/companies/1password/ | in review |
-| Air Apps (website) | https://promptugal.news/companies/air-apps/ | in review |
-| Airia | https://promptugal.news/companies/airia/ | in review |
-| AISLE | https://promptugal.news/companies/aisle/ | in review |
-| Akamai (website) | https://promptugal.news/companies/akamai/ | in review |
-| Arima | https://promptugal.news/companies/arima/ | in review |
-| Atlassian | https://promptugal.news/companies/atlassian/ | in review |
+| 0xbow | https://promptugal.news/companies/0xbow/ | done (9 Nov, v0.1.761, live-checked) |
+| 1Password (website) | https://promptugal.news/companies/1password/ | done (9 Nov, v0.1.761, live-checked) |
+| Air Apps (website) | https://promptugal.news/companies/air-apps/ | done (9 Nov, v0.1.761, live-checked) |
+| Airia | https://promptugal.news/companies/airia/ | done (9 Nov, v0.1.761, live-checked) |
+| AISLE | https://promptugal.news/companies/aisle/ | done (9 Nov, v0.1.761, live-checked) |
+| Akamai (website) | https://promptugal.news/companies/akamai/ | done (9 Nov, v0.1.761, live-checked) |
+| Arima | https://promptugal.news/companies/arima/ | done (9 Nov, v0.1.761, live-checked) |
+| Atlassian | https://promptugal.news/companies/atlassian/ | done (9 Nov, v0.1.761, live-checked) |
 | Centre for AI Leadership (C4AIL) | https://promptugal.news/companies/c4ail/ | in review |
 | Cerebras | https://promptugal.news/companies/cerebras/ | in review |
 | Cognizant | https://promptugal.news/companies/cognizant/ | in review |
@@ -83,14 +83,14 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| CrowdStrike | https://promptugal.news/companies/crowdstrike/ | in review |
-| Defined.ai | https://promptugal.news/companies/defined-ai/ | in review |
-| Delinea | https://promptugal.news/companies/delinea/ | in review |
-| Google Cloud | https://promptugal.news/companies/google-cloud/ | in review |
-| IBM | https://promptugal.news/companies/ibm/ | in review |
-| Kiggu | https://promptugal.news/companies/kiggu/ | in review |
-| LawVu | https://promptugal.news/companies/lawvu/ | in review |
-| ManageEngine | https://promptugal.news/companies/manageengine/ | in review |
+| CrowdStrike | https://promptugal.news/companies/crowdstrike/ | done (9 Nov, v0.1.761, live-checked) |
+| Defined.ai | https://promptugal.news/companies/defined-ai/ | done (9 Nov, v0.1.761, live-checked) |
+| Delinea | https://promptugal.news/companies/delinea/ | done (9 Nov, v0.1.761, live-checked) |
+| Google Cloud | https://promptugal.news/companies/google-cloud/ | done (9 Nov, v0.1.761, live-checked) |
+| IBM | https://promptugal.news/companies/ibm/ | done (9 Nov, v0.1.761, live-checked) |
+| Kiggu | https://promptugal.news/companies/kiggu/ | done (9 Nov, v0.1.761, live-checked) |
+| LawVu | https://promptugal.news/companies/lawvu/ | done (9 Nov, v0.1.761, live-checked) |
+| ManageEngine | https://promptugal.news/companies/manageengine/ | done (9 Nov, v0.1.761, live-checked) |
 | Neo | https://promptugal.news/companies/neo/ | in review |
 | Persona (website) | https://promptugal.news/companies/persona/ | in review |
 
@@ -112,15 +112,15 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| Hablla | https://promptugal.news/companies/hablla/ | in review (9 Nov, overnight) |
-| iTRecruiter | https://promptugal.news/companies/itrecruiter/ | in review (9 Nov, overnight) |
-| KPMG | https://promptugal.news/companies/kpmg-portugal/ | in review (9 Nov, overnight) |
-| naPorta | https://promptugal.news/companies/naporta/ | in review (9 Nov, overnight) |
-| Olá Doutor | https://promptugal.news/companies/ola-doutor/ | in review (9 Nov, overnight) |
-| ProHound | https://promptugal.news/companies/prohound/ | in review (9 Nov, overnight) |
+| Hablla | https://promptugal.news/companies/hablla/ | done (9 Nov, v0.1.761, live-checked) |
+| iTRecruiter | https://promptugal.news/companies/itrecruiter/ | fix: its Web Summit page is now 404; listed as iTRTech Group, in AI and machine learning; back to journalist-portugal |
+| KPMG | https://promptugal.news/companies/kpmg-portugal/ | done (9 Nov, v0.1.761, live-checked) |
+| naPorta | https://promptugal.news/companies/naporta/ | done (9 Nov, v0.1.761, live-checked) |
+| Olá Doutor | https://promptugal.news/companies/ola-doutor/ | done (9 Nov, v0.1.761, live-checked) |
+| ProHound | https://promptugal.news/companies/prohound/ | done (9 Nov, v0.1.760, live-checked) |
 | Rapidoc | https://promptugal.news/companies/rapidoc/ | skipped: its own site (rapidocbrasil.com.br) refuses automated reads (HTTP 406, 9 Nov); only its Web Summit pitch remains, not enough for an About (needs a reader who can open its site) |
-| Raras Health | https://promptugal.news/companies/raras-health/ | in review (9 Nov, overnight) |
-| VTEX | https://promptugal.news/companies/vtex/ | in review (9 Nov, overnight) |
+| Raras Health | https://promptugal.news/companies/raras-health/ | done (9 Nov, v0.1.760, live-checked) |
+| VTEX | https://promptugal.news/companies/vtex/ | done (9 Nov, v0.1.760, live-checked) |
 
 ### E1: journalist-europe@PrompTugal.vicky (10)
 
@@ -141,48 +141,48 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| Gcore | https://promptugal.news/companies/gcore/ | in review (9 Nov, overnight, commit 8355e995) |
-| GetVocal AI | https://promptugal.news/companies/getvocal-ai/ | in review (9 Nov, overnight, commit 8355e995) |
-| LEGALFLY | https://promptugal.news/companies/legalfly/ | in review (9 Nov, overnight, commit 8355e995) |
-| Legora | https://promptugal.news/companies/legora/ | in review (9 Nov, overnight, commit be203e53) |
-| Melious AI GmbH | https://promptugal.news/companies/melious-ai/ | in review (9 Nov, overnight, commit 8355e995) |
-| National Cyber Security Centre (UK) | https://promptugal.news/companies/ncsc-uk/ | in review (9 Nov, overnight, commit be203e53) |
-| NordVPN | https://promptugal.news/companies/nordvpn/ | in review (9 Nov, overnight, commit be203e53) |
-| PolyAI | https://promptugal.news/companies/polyai/ | in review (9 Nov, overnight, commit be203e53) |
-| Prelude | https://promptugal.news/companies/prelude/ | in review (9 Nov, overnight, commit e8a8ef28) |
-| Risiq GmbH | https://promptugal.news/companies/risiq/ | in review (9 Nov, overnight, commit e8a8ef28) |
+| Gcore | https://promptugal.news/companies/gcore/ | done (9 Nov, v0.1.761, live-checked) |
+| GetVocal AI | https://promptugal.news/companies/getvocal-ai/ | done (9 Nov, v0.1.761, live-checked) |
+| LEGALFLY | https://promptugal.news/companies/legalfly/ | done (9 Nov, v0.1.761, live-checked) |
+| Legora | https://promptugal.news/companies/legora/ | done (9 Nov, v0.1.761, live-checked) |
+| Melious AI GmbH | https://promptugal.news/companies/melious-ai/ | done (9 Nov, v0.1.761, live-checked) |
+| National Cyber Security Centre (UK) | https://promptugal.news/companies/ncsc-uk/ | done (9 Nov, v0.1.761, live-checked) |
+| NordVPN | https://promptugal.news/companies/nordvpn/ | done (9 Nov, v0.1.761, live-checked) |
+| PolyAI | https://promptugal.news/companies/polyai/ | done (9 Nov, v0.1.761, live-checked) |
+| Prelude | https://promptugal.news/companies/prelude/ | done (9 Nov, v0.1.761, live-checked) |
+| Risiq GmbH | https://promptugal.news/companies/risiq/ | done (9 Nov, v0.1.760, live-checked) |
 
 ### A1: journalist-ai@PrompTugal.vicky (11)
 
 | Company | Page | Status |
 |---|---|---|
-| Cisco (Outshift by Cisco) | https://promptugal.news/companies/cisco-outshift/ | in review (9 Nov, newsroom v0.1.755) |
-| Datadog | https://promptugal.news/companies/datadog/ | in review (9 Nov, newsroom v0.1.755) |
-| Deque Systems | https://promptugal.news/companies/deque/ | in review (9 Nov, newsroom v0.1.755) |
-| Directus | https://promptugal.news/companies/directus/ | in review (9 Nov, newsroom v0.1.755) |
-| Elastic | https://promptugal.news/companies/elastic/ | in review (9 Nov, newsroom commit 8f0a358d) |
-| Exa | https://promptugal.news/companies/exa/ | in review (9 Nov, newsroom commit 8f0a358d) |
-| Genspark (website) | https://promptugal.news/companies/genspark/ | in review (9 Nov, newsroom commit 8f0a358d) |
-| JetBrains | https://promptugal.news/companies/jetbrains/ | in review (9 Nov, newsroom commit 8f0a358d) |
-| Keewano | https://promptugal.news/companies/keewano/ | in review (9 Nov, newsroom commit c4210cfb) |
-| LaunchDarkly | https://promptugal.news/companies/launchdarkly/ | in review (9 Nov, newsroom commit c4210cfb) |
-| Linux Foundation (Agentic AI Foundation) | https://promptugal.news/companies/linux-foundation-aaif/ | in review (9 Nov, newsroom commit c4210cfb) |
+| Cisco (Outshift by Cisco) | https://promptugal.news/companies/cisco-outshift/ | done (9 Nov, v0.1.761, live-checked) |
+| Datadog | https://promptugal.news/companies/datadog/ | done (9 Nov, v0.1.761, live-checked) |
+| Deque Systems | https://promptugal.news/companies/deque/ | done (9 Nov, v0.1.761, live-checked) |
+| Directus | https://promptugal.news/companies/directus/ | done (9 Nov, v0.1.761, live-checked) |
+| Elastic | https://promptugal.news/companies/elastic/ | done (9 Nov, v0.1.761, live-checked) |
+| Exa | https://promptugal.news/companies/exa/ | done (9 Nov, v0.1.761, live-checked) |
+| Genspark (website) | https://promptugal.news/companies/genspark/ | done (9 Nov, v0.1.761, live-checked) |
+| JetBrains | https://promptugal.news/companies/jetbrains/ | done (9 Nov, v0.1.761, live-checked) |
+| Keewano | https://promptugal.news/companies/keewano/ | done (9 Nov, v0.1.761, live-checked) |
+| LaunchDarkly | https://promptugal.news/companies/launchdarkly/ | done (9 Nov, v0.1.761, live-checked) |
+| Linux Foundation (Agentic AI Foundation) | https://promptugal.news/companies/linux-foundation-aaif/ | done (9 Nov, v0.1.761, live-checked) |
 
 ### A2: journalist-ai@PrompTugal.vicky (11)
 
 | Company | Page | Status |
 |---|---|---|
-| Make | https://promptugal.news/companies/make/ | in review (9 Nov, overnight, commit e8a8ef28) |
-| Mastra | https://promptugal.news/companies/mastra/ | in review (9 Nov, overnight, commit e8a8ef28) |
-| Neo4j | https://promptugal.news/companies/neo4j/ | in review (9 Nov, overnight, commit 89b699d4) |
-| Open VSX (Eclipse Foundation) | https://promptugal.news/companies/open-vsx/ | in review (9 Nov, overnight, commit 89b699d4) |
-| Orb | https://promptugal.news/companies/orb/ | in review (9 Nov, overnight, commit 89b699d4) |
-| Primitive | https://promptugal.news/companies/primitive/ | in review (9 Nov, overnight, commit 89b699d4) |
-| Prisma | https://promptugal.news/companies/prisma/ | in review (9 Nov, overnight) |
-| Runpod | https://promptugal.news/companies/runpod/ | in review (9 Nov, overnight) |
-| SageOx | https://promptugal.news/companies/sageox/ | in review (9 Nov, overnight) |
-| TestMu AI | https://promptugal.news/companies/testmu-ai/ | in review (9 Nov, overnight) |
-| Twilio | https://promptugal.news/companies/twilio/ | in review (9 Nov, overnight) |
+| Make | https://promptugal.news/companies/make/ | done (9 Nov, v0.1.761, live-checked) |
+| Mastra | https://promptugal.news/companies/mastra/ | done (9 Nov, v0.1.761, live-checked) |
+| Neo4j | https://promptugal.news/companies/neo4j/ | done (9 Nov, v0.1.761, live-checked) |
+| Open VSX (Eclipse Foundation) | https://promptugal.news/companies/open-vsx/ | done (9 Nov, v0.1.761, live-checked) |
+| Orb | https://promptugal.news/companies/orb/ | done (9 Nov, v0.1.761, live-checked) |
+| Primitive | https://promptugal.news/companies/primitive/ | done (9 Nov, v0.1.761, live-checked) |
+| Prisma | https://promptugal.news/companies/prisma/ | fix: a second session (12 Nov, 12:00, Developer Lounge) left out; back to journalist-portugal |
+| Runpod | https://promptugal.news/companies/runpod/ | done (9 Nov, v0.1.760, live-checked) |
+| SageOx | https://promptugal.news/companies/sageox/ | done (9 Nov, v0.1.760, live-checked) |
+| TestMu AI | https://promptugal.news/companies/testmu-ai/ | done (9 Nov, v0.1.760, live-checked) |
+| Twilio | https://promptugal.news/companies/twilio/ | done (9 Nov, v0.1.760, live-checked) |
 
 ## Blocked: missing evidence (14)
 
