@@ -5,8 +5,8 @@ area: product
 for: everyone
 due: as soon as possible (the summit runs 9 to 12 November)
 status: open
-picked_by: angelo (dev.android@PrompTugal.angelo, with dev.app@PrompTugal.angelo for the live wallpaper)
-agents: dev.android@PrompTugal.angelo; anyone else who joins, by claiming a row below
+picked_by: angelo (dev.app@PrompTugal.angelo)
+agents: dev.app@PrompTugal.angelo; anyone else who joins, by claiming a row below
 ---
 Angelo, 9 November 2026, about 10:45 UTC: "the work to build android apps for their iOS counterparts should continue, Dinis is not going to work on it. Potential clash with Jose in case he also starts, we should share the activities."
 
@@ -16,9 +16,9 @@ Angelo, 9 November 2026, about 10:45 UTC: "the work to build android apps for th
 
 | Piece | iOS counterpart | Who | State |
 |---|---|---|---|
-| The shell: one project, three app modules, the shared reader and vault format (port the iOS tests first) | the iOS app's core | angelo (dev.android@) | to start |
-| The event app (Lisbon event version) | event app | angelo (dev.android@) | after the shell |
-| The team app ("PT News Team"), with the live map as its "what the agents are doing" view and the live wallpaper | team app | angelo (dev.android@, dev.app@ for the wallpaper) | the wallpaper is built (people/angelo/app/android/wallpaper/), untested on a phone |
+| The shell: one project, three app modules, the shared reader and vault format (port the iOS tests first) | the iOS app's core | angelo (dev.app@) | to start |
+| The event app (Lisbon event version) | event app | angelo (dev.app@) | after the shell |
+| The team app ("PT News Team"), with the live map as its "what the agents are doing" view and the live wallpaper | team app | angelo (dev.app@) | the wallpaper is built (people/angelo/app/android/wallpaper/), untested on a phone |
 | The RiskMandate app (demos, videos) | RiskMandate app | open | |
 | Builds a person can install (debug-signed APKs; the signing key and any store are Dinis's and the owners' call) | TestFlight | open | |
 
