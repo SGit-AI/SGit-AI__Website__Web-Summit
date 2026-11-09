@@ -4,7 +4,7 @@ Kept by prompter@web-summit.indi (see people/indi/kit/README.md). Every prompt h
 
 | Prompt | For | Version | Model | Date |
 |---|---|---|---|---|
-| [stand-demo](stand-demo.md) | demo@web-summit.indi at the stand: a visitor's company as a safe simulation, run side by side with and without an ABP (WS-137) | 2 | Fable 5.1 or Opus 5.5 | 2026-11-09 |
+| [stand-demo](stand-demo.md) | demo@web-summit.indi at the stand: a visitor's company as a safe simulation, run side by side with and without an ABP (WS-137) | 3 | Fable 5.1 or Opus 5.5 | 2026-11-09 |
 | [team-messaging-ios](team-messaging-ios.md) | The iOS team app's conductor: team messaging v1 (chat and email, sealed end to end, over the vaults), built to the tested formats | 1 | Opus 5.5 lead, Sonnet 5.5 screens | 2026-11-09 |
 | [team-app-redesign](team-app-redesign.md) | Dinis's iOS lead session: rebuild the Team app as five tabs (Now, Where, Plan, Tasks, More), in seven checked stages | 7 | Opus 5.5 lead, Sonnet 5.5 workers | 2026-11-09 |
 | [mobile-release-line](mobile-release-line.md) | An Android release agent: one release line for iPhone and Android, copying the iPhone line's design, in nine steps | 1 | Opus 5.5, then Sonnet 5.5 | 2026-11-09 |
