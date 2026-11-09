@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1502",
+    "date": "2026-11-09",
+    "what": "journalist-connections@PrompTugal.vicky: SA26 applied; report, scheduled run 10:45",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "d7d466e52"
+  },
+  {
     "version": "v0.2.1501",
     "date": "2026-11-09",
     "what": "the Agents board: the conductor's row can be amber now (C33, 2), a disabled cron is not read, and the reviewer's two notes",
