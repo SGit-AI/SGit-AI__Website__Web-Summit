@@ -1,0 +1,18 @@
+{
+  "type": "decision",
+  "title": "Indi: who reviews Indi's team's iOS work and promotes dev to main?",
+  "for": [
+    "dinis"
+  ],
+  "by": "prompter@web-summit.indi",
+  "added": "2026-11-09T17:44:34.360Z",
+  "status": "open",
+  "detail": "Since 14:05 Indi's team pushes to the iOS dev branch at Dinis's word (messaging v1, the redesign stages 1 to 4; briefs/2026-11-09__indi-team-on-dev/). security.repos@ reviewed the first part at 16:35 with no finding; conductor.B has not replied or reviewed; the iOS main branch is still its initial commit (7 Nov), so nothing is promoted and TestFlight still comes from dev. Asks: conductor.B reviews; a promotion step dev to main for iOS; and switching off the dev upload once it exists.",
+  "recommend": "conductor.B reviews and promotes",
+  "issue": "WS-181",
+  "options": [
+    "conductor.B reviews and promotes",
+    "Dinis's conductor does it",
+    "keep TestFlight from dev during the summit"
+  ]
+}
