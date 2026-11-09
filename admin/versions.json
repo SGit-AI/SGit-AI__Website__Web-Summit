@@ -1,5 +1,131 @@
 [
   {
+    "version": "v0.2.1437",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: overnight backlog: C4AIL, Cerebras, Cognizant, Neo, Persona done (v0.1.762)",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "5a3061f33"
+  },
+  {
+    "version": "v0.2.1436",
+    "date": "2026-11-09",
+    "what": "ledger line for the overnight wake of 9 November",
+    "by": "prompter@web-summit.indi",
+    "from": "5adc2d18b"
+  },
+  {
+    "version": "v0.2.1435",
+    "date": "2026-11-09",
+    "what": "infographic agent prompt; questions for Indi",
+    "by": "prompter@web-summit.indi",
+    "from": "cdbedd46e"
+  },
+  {
+    "version": "v0.2.1434",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: overnight backlog: 54 done (v0.1.760 and v0.1.761, live-checked), iTRecruiter and Prisma fix",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "66f02bf8f"
+  },
+  {
+    "version": "v0.2.1433",
+    "date": "2026-11-09",
+    "what": "WS-166: a key link opened in a tab already on the site now adds the key; a cut-short key says so",
+    "by": "dev@web-summit.silvio",
+    "from": "e6c7e6b50"
+  },
+  {
+    "version": "v0.2.1432",
+    "date": "2026-11-09",
+    "what": "journalist-connections@PrompTugal.vicky: overnight S2: neo, persona in review; report",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "22e53d8fe"
+  },
+  {
+    "version": "v0.2.1431",
+    "date": "2026-11-09",
+    "what": "journalist-ai@PrompTugal.vicky: backlog, A1: keewano, launchdarkly, linux-foundation-aaif in review; batch A1 done; report",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "eab69bba0"
+  },
+  {
+    "version": "v0.2.1430",
+    "date": "2026-11-09",
+    "what": "journalist-europe@PrompTugal.vicky: overnight batch complete, 16 rows in review; report",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "72cf5ff84"
+  },
+  {
+    "version": "v0.2.1429",
+    "date": "2026-11-09",
+    "what": "journalist-europe@PrompTugal.vicky: overnight batch, Prelude, Risiq, Make, Mastra in review",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "4d6bb9922"
+  },
+  {
+    "version": "v0.2.1428",
+    "date": "2026-11-09",
+    "what": "journalist-portugal@PrompTugal.vicky: overnight batch, hablla, itrecruiter, kpmg-portugal, naporta in review",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "8da04820a"
+  },
+  {
+    "version": "v0.2.1427",
+    "date": "2026-11-09",
+    "what": "journalist-connections@PrompTugal.vicky: overnight S2: ibm, kiggu, lawvu, manageengine in review",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "1da4ff746"
+  },
+  {
+    "version": "v0.2.1426",
+    "date": "2026-11-09",
+    "what": "journalist-europe@PrompTugal.vicky: overnight batch, Gcore, GetVocal AI, LEGALFLY, Melious AI in review",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "cea1e2fcb"
+  },
+  {
+    "version": "v0.2.1425",
+    "date": "2026-11-09",
+    "what": "wave D written: 11 first emails to CrowdStrike and the non-Portuguese priority-1 buyers",
+    "by": "outreach@web-summit.silvio",
+    "from": "77072f6de"
+  },
+  {
+    "version": "v0.2.1424",
+    "date": "2026-11-09",
+    "what": "journalist-europe@PrompTugal.vicky: overnight batch, E2 and A2 rows 1 to 6 taken (writing)",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "10cbd7005"
+  },
+  {
+    "version": "v0.2.1423",
+    "date": "2026-11-09",
+    "what": "ledger line for the setup wake",
+    "by": "prompter@web-summit.indi",
+    "from": "a05502c3d"
+  },
+  {
+    "version": "v0.2.1422",
+    "date": "2026-11-09",
+    "what": "publish my session key and mark me running",
+    "by": "prompter@web-summit.indi",
+    "from": "f2a17f753"
+  },
+  {
+    "version": "v0.2.1421",
+    "date": "2026-11-08",
+    "what": "prompter@web-summit.indi, a prompt engineering agent, at Indi's word",
+    "by": "conductor@web-summit.indi",
+    "from": "84311754d"
+  },
+  {
+    "version": "v0.2.1420",
+    "date": "2026-11-08",
+    "what": "OVERNIGHT-9NOV: the C2 fixes before S2 (00:01) and a fix-only round at 02:45 to 02:49, one-off wakes",
+    "by": "conductor@web-summit.vicky",
+    "from": "0bff3729c"
+  },
+  {
     "version": "v0.2.1419",
     "date": "2026-11-08",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
