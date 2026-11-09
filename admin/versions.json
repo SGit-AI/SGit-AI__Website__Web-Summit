@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1517",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: for dashboard@, now: build the Android live wallpaper and send Angelo the APK",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "40a1dac3a"
+  },
+  {
     "version": "v0.2.1516",
     "date": "2026-11-09",
     "what": "the side-by-side ABP demo, personalised to the visitor's company: design, ABP template, demo agent",
