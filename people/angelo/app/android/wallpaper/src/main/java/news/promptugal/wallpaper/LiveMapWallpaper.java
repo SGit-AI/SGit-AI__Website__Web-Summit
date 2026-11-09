@@ -35,8 +35,10 @@ public class LiveMapWallpaper extends WallpaperService {
     static final String BASE = "https://web-summit.sgit.ai/people/angelo/app/";
     static final long FPS_MS = 1000 / 15, LIVE_MS = 60_000, MAP_MS = 6 * 3600_000L;
     // the view, chosen in SettingsActivity (Angelo, 9 November: "choosing the view as in the website"); kept on the phone
-    static final String PREFS = "view", LAYOUT = "layout", THEME = "theme";
+    static final String PREFS = "view", LAYOUT = "layout", THEME = "theme", LEVEL = "level";
     static String layout(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(LAYOUT, "3d"); }
+    /** The level: "messages" (the exchanges alone, as before) or "workstreams" (the WS issues' squares and their flights too). */
+    static String level(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(LEVEL, "messages"); }
     static String themeChoice(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(THEME, "dark"); }
     /** The theme to draw: the chosen one, or the phone's own when "follow the phone" is chosen. */
     static Graph.Theme theme(Context c) {
@@ -54,6 +56,7 @@ public class LiveMapWallpaper extends WallpaperService {
         private HandlerThread netThread; private Handler net;
         private volatile Graph graph; private volatile List<Graph.Event> events; private volatile Bitmap[] logos, logosLight;
         private volatile Object data;   // the parsed data.json, kept so a change of view rebuilds the graph without the network
+        private volatile Work work; private volatile List<Work.Row> workRows; private volatile Object workFile;
         private long mapAt = 0; private boolean visible = false;
 
         private final Runnable tick = new Runnable() { @Override public void run() { if (visible && view != null) { view.requestRender(); ui.postDelayed(this, isPreview() ? 1000 : FPS_MS); } } };
@@ -81,11 +84,18 @@ public class LiveMapWallpaper extends WallpaperService {
             if (v) { view.onResume(); ui.post(tick); net.post(() -> rebuild(false)); net.post(poll); } else view.onPause();
         }
         // a new choice in the settings, or the phone's dark mode changed while hidden (checked as it shows again)
-        @Override public void onSharedPreferenceChanged(SharedPreferences p, String key) { if (net != null) net.post(() -> rebuild(true)); }
+        @Override public void onSharedPreferenceChanged(SharedPreferences p, String key) { if (net != null) { net.post(() -> rebuild(true)); if (LEVEL.equals(key) && visible) net.post(this::fetch); } }
         private void rebuild(boolean force) {
             Object d = data; if (d == null) return; Graph g = graph; String L = layout(LiveMapWallpaper.this); Graph.Theme th = theme(LiveMapWallpaper.this);
             if (!force && g != null && g.isFor(L, th)) return;
             try { graph = Graph.fromData(d, L, th); } catch (Exception e) { Log.w("LiveMap", "view rebuild failed", e); }
+            levelFrom(workFile);
+        }
+        // the level's file: workstreams.json when Workstreams is chosen (read with live.json, once a minute), nothing for Messages
+        private void levelFrom(Object f) {
+            if (!"workstreams".equals(level(LiveMapWallpaper.this))) { work = null; return; }
+            if (f == null) return;
+            try { Work w = work; if (w == null || !"workstreams".equals(w.level)) w = new Work("workstreams", f); workRows = w.rows(f); work = w; workFile = f; } catch (Exception e) { Log.w("LiveMap", "workstreams unreadable", e); }
         }
 
         @Override public void onOffsetsChanged(float xo, float yo, float xs, float ys, int xp, int yp) { if (renderer != null) renderer.offsetX = xo; }
@@ -99,6 +109,8 @@ public class LiveMapWallpaper extends WallpaperService {
 
         @Override public Graph graph() { return graph; }
         @Override public List<Graph.Event> takeEvents() { List<Graph.Event> e = events; events = null; return e; }
+        @Override public Work work() { return work; }
+        @Override public List<Work.Row> takeWorkRows() { List<Work.Row> r = workRows; workRows = null; return r; }
         @Override public Bitmap[] logos(boolean light) { return light && logosLight != null ? logosLight : logos; }
         private Graph build(Object d) { data = d; return Graph.fromData(d, layout(LiveMapWallpaper.this), theme(LiveMapWallpaper.this)); }
 
@@ -106,6 +118,7 @@ public class LiveMapWallpaper extends WallpaperService {
         private void loadCached() {
             try { String d = read(cache("data.json")); if (d != null) graph = build(Json.parse(d)); } catch (Exception e) { Log.w("LiveMap", "cached map unreadable", e); }
             try { String l = read(cache("live.json")); if (l != null && graph != null) events = Graph.events(Json.parse(l)); } catch (Exception e) { Log.w("LiveMap", "cached live.json unreadable", e); }
+            try { String w = read(cache("workstreams.json")); if (w != null) { workFile = Json.parse(w); levelFrom(workFile); } } catch (Exception e) { Log.w("LiveMap", "cached workstreams.json unreadable", e); }
         }
         private void fetch() {
             long now = System.currentTimeMillis();
@@ -115,6 +128,10 @@ public class LiveMapWallpaper extends WallpaperService {
             }
             String l = get(BASE + "live.json");
             if (l != null && graph != null) { try { events = Graph.events(Json.parse(l)); write(cache("live.json"), l); } catch (Exception e) { Log.w("LiveMap", "live.json unreadable", e); } }
+            if ("workstreams".equals(level(LiveMapWallpaper.this))) {   // about 50 KB, only while that level is chosen
+                String w = get(BASE + "workstreams.json");
+                if (w != null) { try { Object f = Json.parse(w); write(cache("workstreams.json"), w); levelFrom(f); } catch (Exception e) { Log.w("LiveMap", "workstreams.json unreadable", e); } }
+            }
         }
         private File cache(String name) { return new File(getFilesDir(), name); }
         private Bitmap asset(String name) { try (InputStream in = getAssets().open(name)) { return BitmapFactory.decodeStream(in); } catch (Exception e) { return null; } }

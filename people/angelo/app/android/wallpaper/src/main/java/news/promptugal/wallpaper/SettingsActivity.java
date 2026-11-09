@@ -23,6 +23,8 @@ public class SettingsActivity extends Activity {
     static final String[][] LAYOUTS = { { "3d", "3D", "The team as a turning ball" }, { "ring", "People ring", "Each person with their agents beside them" },
             { "agents", "Agents ring", "The people outside, their agents in one ring inside" } };
     static final String[][] THEMES = { { "dark", "Dark" }, { "light", "Light" }, { "system", "Follow the phone" } };
+    // the levels, as the site's switch names them (live.js and work.js): the exchanges, and the workstreams they serve
+    static final String[][] LEVELS = { { "messages", "Messages", "Who wrote to whom, as it happens" }, { "workstreams", "Workstreams", "The busiest WS issues on the rim, each commit flying to its own" } };
 
     @Override protected void onCreate(Bundle b) {
         super.onCreate(b);
@@ -35,18 +37,26 @@ public class SettingsActivity extends Activity {
         col.addView(h); col.addView(p);
 
         col.addView(heading("Layout", pad));
-        RadioGroup lg = new RadioGroup(this); String L = LiveMapWallpaper.layout(this);
-        for (int i = 0; i < LAYOUTS.length; i++) lg.addView(option(i, LAYOUTS[i][1] + "\n" + LAYOUTS[i][2], LAYOUTS[i][0].equals(L), d));
-        lg.setOnCheckedChangeListener((g, id) -> prefs.edit().putString(LiveMapWallpaper.LAYOUT, LAYOUTS[id][0]).apply());
+        // each choice its own id across both groups (layouts from 100, themes from 200), and no saved state: the screen is
+        // always drawn from the phone's stored choice, so a rotation cannot put one group's check into the other (dev.app@'s 3530f9da)
+        RadioGroup lg = new RadioGroup(this); lg.setSaveEnabled(false); String L = LiveMapWallpaper.layout(this);
+        for (int i = 0; i < LAYOUTS.length; i++) lg.addView(option(100 + i, LAYOUTS[i][1] + "\n" + LAYOUTS[i][2], LAYOUTS[i][0].equals(L), d));
+        lg.setOnCheckedChangeListener((g, id) -> { int i = id - 100; if (i >= 0 && i < LAYOUTS.length) prefs.edit().putString(LiveMapWallpaper.LAYOUT, LAYOUTS[i][0]).apply(); });
         col.addView(lg);
 
+        col.addView(heading("Level", pad));
+        RadioGroup vg = new RadioGroup(this); vg.setSaveEnabled(false); String V = LiveMapWallpaper.level(this);
+        for (int i = 0; i < LEVELS.length; i++) vg.addView(option(300 + i, LEVELS[i][1] + "\n" + LEVELS[i][2], LEVELS[i][0].equals(V), d));
+        vg.setOnCheckedChangeListener((g, id) -> { int i = id - 300; if (i >= 0 && i < LEVELS.length) prefs.edit().putString(LiveMapWallpaper.LEVEL, LEVELS[i][0]).apply(); });
+        col.addView(vg);
+
         col.addView(heading("Theme", pad));
-        RadioGroup tg = new RadioGroup(this); String T = LiveMapWallpaper.themeChoice(this);
-        for (int i = 0; i < THEMES.length; i++) tg.addView(option(i, THEMES[i][1], THEMES[i][0].equals(T), d));
-        tg.setOnCheckedChangeListener((g, id) -> prefs.edit().putString(LiveMapWallpaper.THEME, THEMES[id][0]).apply());
+        RadioGroup tg = new RadioGroup(this); tg.setSaveEnabled(false); String T = LiveMapWallpaper.themeChoice(this);
+        for (int i = 0; i < THEMES.length; i++) tg.addView(option(200 + i, THEMES[i][1], THEMES[i][0].equals(T), d));
+        tg.setOnCheckedChangeListener((g, id) -> { int i = id - 200; if (i >= 0 && i < THEMES.length) prefs.edit().putString(LiveMapWallpaper.THEME, THEMES[i][0]).apply(); });
         col.addView(tg);
 
-        TextView soon = text("Coming next: the Agents and their work layout, and the Workstreams and Deliverables levels.", 13, Graph.MUTED); soon.setPadding(0, pad, 0, pad / 2);
+        TextView soon = text("Coming next: the Deliverables level, and the Agents and their work layout.", 13, Graph.MUTED); soon.setPadding(0, pad, 0, pad / 2);
         col.addView(soon);
         Button done = new Button(this); done.setText("Done"); done.setOnClickListener(v -> finish()); col.addView(done);
 
@@ -58,7 +68,7 @@ public class SettingsActivity extends Activity {
     private TextView heading(String s, int pad) { TextView t = text(s, 17, Graph.TEXT); t.setTypeface(Typeface.DEFAULT_BOLD); t.setPadding(0, pad / 2, 0, pad / 4); return t; }
     // one choice: at least 48 dp high, as Android asks of anything a finger taps
     private RadioButton option(int id, String label, boolean on, float d) {
-        RadioButton r = new RadioButton(this); r.setId(id); r.setText(label); r.setTextSize(15); r.setTextColor(0xFF000000 | Graph.TEXT);
+        RadioButton r = new RadioButton(this); r.setId(id); r.setSaveEnabled(false); r.setText(label); r.setTextSize(15); r.setTextColor(0xFF000000 | Graph.TEXT);
         r.setMinHeight((int) (48 * d)); r.setGravity(Gravity.CENTER_VERTICAL); r.setPadding((int) (8 * d), (int) (6 * d), 0, (int) (6 * d));
         r.setChecked(on); return r;
     }
