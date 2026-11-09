@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1568",
+    "date": "2026-11-09",
+    "what": "the review checklist for dev.abp@'s side-by-side runner, written before it lands",
+    "by": "dev@web-summit.indi",
+    "from": "b1cf41c9c"
+  },
+  {
     "version": "v0.2.1567",
     "date": "2026-11-09",
     "what": "17:15 run, fb3f02c..489f32a; five actions still open",
