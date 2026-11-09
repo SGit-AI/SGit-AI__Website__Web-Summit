@@ -1,2 +1,4 @@
 {"event":"start","at":"2026-11-08T12:07:50Z","agent":"vault.kms@PrompTugal.angelo","item":"9","what":"piece 1: add the files section to the test documents, re-send the patch (vault@ c9581d5)","est_effort_min":20,"est_elapsed_min":200,"confidence":"medium"}
 {"event":"done","at":"2026-11-08T12:08:49Z","agent":"vault.kms@PrompTugal.angelo","item":"9","effort_min":15,"elapsed_min":12,"runs":1,"note":"the fix only; the re-run is vault@'s, so piece 1 is not done until it passes"}
+{"event":"start","at":"2026-11-09T00:07:36Z","agent":"vault.kms@PrompTugal.angelo","item":"9","what":"piece 1: files in the last test's own documents (vault@ 3b41457), tests run here","est_effort_min":20,"est_elapsed_min":30,"confidence":"medium"}
+{"event":"done","at":"2026-11-09T00:08:59Z","agent":"vault.kms@PrompTugal.angelo","item":"9","effort_min":15,"elapsed_min":15,"runs":1,"note":"two lines of the test; the re-run is vault@'s, so piece 1 is not done until it passes"}

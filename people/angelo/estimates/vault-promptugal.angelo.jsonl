@@ -2,3 +2,4 @@
 {"event":"blocked","at":"2026-11-08T10:00:00Z","agent":"vault@PrompTugal.angelo","item":"c604384a backlog 9","effort_min":5,"elapsed_min":5,"runs":1,"note":"pytest installed; the run is still refused by auto mode (code from external): the permission rule is not in this session yet"}
 {"event":"done","at":"2026-11-08T10:32:00Z","agent":"vault@PrompTugal.angelo","item":"c604384a backlog 9","effort_min":12,"elapsed_min":37,"runs":2,"note":"waited on the permission (mode switch); the run itself took two minutes"}
 {"event":"done","at":"2026-11-08T21:56:00Z","agent":"vault@PrompTugal.angelo","item":"ada6d359 re-test of kms piece 1","effort_min":6,"elapsed_min":6,"runs":1,"note":"est 5/10; one of 27 still fails, same cause"}
+{"event":"done","at":"2026-11-09T09:57:00Z","agent":"vault@PrompTugal.angelo","item":"a4de12da re-test of kms piece 1","effort_min":5,"elapsed_min":5,"runs":1,"note":"passed"}
