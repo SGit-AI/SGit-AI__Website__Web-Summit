@@ -12,7 +12,7 @@ At Dinis's word (9 November 2026, about 13:20 UTC), kept by conductor@web-summit
 
 | # | Who | Joined | Found by | Track | What they made | Share |
 |---|---|---|---|---|---|---|
-| 1 | **Andrew** | 9 Nov 2026 | Silvio | to choose: PrompTugal.news or RiskMandate | first piece coming | his card goes live once he says yes |
+| 1 | **Andrew** | 9 Nov 2026 | Silvio | PrompTugal.news: writing about the summit | first article coming | his card goes live once he says yes |
 
 Each card shows only what the collaborator chooses: their name as they want it, a photo, a line about themselves, a link (LinkedIn, X or a site), and everything they have published. Nothing else about them is published, and their contact details stay in the team's private CRM.
 
@@ -27,7 +27,7 @@ Each card shows only what the collaborator chooses: their name as they want it, 
 - **One group for everyone involved.** Collaborators and the team, to share what they are working on, ask questions and hear what is new.
 - **Joined by invitation only:** the invite link is never published. A team member adds each new collaborator once they have said hello.
 - **What is said there stays there.** Nothing from the group is published without the person's yes.
-- **Created by Dinis or Silvio.** Its link lives only in the private CRM, under `channels/collaborators/`.
+- **Created on 9 November**, with Andrew its first member. Its link lives only in the private CRM, under `channels/collaborators/`.
 
 ## Why it spreads {#viral}
 

@@ -1,0 +1,31 @@
+{
+ "number": 37,
+ "date": "2026-11-09",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "Opening night: Indi's messaging cleared by security; the iOS conductor needs your word; the web app and /contribute/ wait for your yes",
+ "when": "Monday 9 November 2026, 15:20 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "Today: three apps and their line (/apps/), power users, how we work, team messaging, contributors (Andrew, the first, in the WhatsApp group), the security agent across every repository, five conductors on a rota, the shared mobile repository with one set of schedule rules, and the news app on the web. Indi's team merged messaging v1 and the Team app redesign into iOS dev; security.repos@ found no blocker. But nobody can promote them: the iOS conductor is conductor@ios.PrompTugal.dinis on account B, not scheduled, and it waits for your 'Shall I?'. The web app and /contribute/ wait for your yes in PrompTugal's session, under security@'s six conditions.",
+ "stats": [
+  {"n": "314", "label": "team-site commits since brief 36"},
+  {"n": "5", "label": "conductors, 4 on the rota (iOS's slot empty)"},
+  {"n": "1", "label": "collaborator (Andrew)"},
+  {"n": "0", "label": "critical security findings across five repositories"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "The iOS conductor (account B)", "detail": "conductor@ios.PrompTugal.dinis (session_01Kw9UwE9gAjjqZsaGvxpotd) is the iOS conductor, not on a schedule, waiting on your 'Shall I?' (merge its app-first and RiskMandate briefs into iOS dev). Tell it: yes; take the :00 hourly slot; read briefs/ in the iOS repo; promote Indi's messaging and redesign to main when the security review passes.", "options": ["tell it now", "later"], "recommend": "Now: Indi's work and M-iPad both wait on it."},
+  {"id": "2", "ask": "The web app and /contribute/", "detail": "In PrompTugal's session: yes to both under security@'s six conditions (no personal details in PrompTugal's repo, sealed write-only lanes, names only with consent, EXIF stripped, no outside scripts, CC BY 4.0 shown).", "options": ["yes", "not yet"], "recommend": "Yes: the summit opens tonight."},
+  {"id": "3", "ask": "Silvio's outreach (WS-177)", "detail": "outreach@web-summit.silvio asks to send about 30 emails whose PromptUGAL pages exist, holding the rest. You parked outreach this morning.", "options": ["stay parked", "send the 30 with pages"], "recommend": "Stay parked until the contributor and beta flows are live; then send."}
+ ],
+ "you_asked": [
+  {"at": "9 Nov, ~14:05", "said": "five conductors ... at least 15-minute blocks", "done": "Rota live: main :12, Android :24, news :36, conductor.b :48; the watch file in PrompTugal's board.", "where": "board/the-conductors.md", "status": "four of five; iOS slot empty"},
+  {"at": "9 Nov, ~14:40", "said": "run the iPhone app on the web", "done": "Brief to PrompTugal; shared schedule rules (mobile@, 7433286); shows_as on every event.", "where": "board/briefs/2026-11-09-the-app-on-the-web.md", "status": "waits for your yes"}
+ ],
+ "team": [
+  {"id": "Indi", "status": "active", "doing": "team messaging v1 and the Team app redesign on iOS dev"},
+  {"id": "Silvio", "status": "active", "doing": "found Andrew; outreach waiting"},
+  {"id": "Angelo", "status": "active", "doing": "the live map (WS-181) and the venues"}
+ ],
+ "next": ["16:12, 17:12 wakes (one line each); 18:12 brief 38."],
+ "sources": ["the watch, 15:20 UTC", "f6da991e, 6a1a40c9 (security.repos@)", "conductor.b@'s watch line 15:20", "b26dd86c", "95f9da82 (security@PrompTugal)"]
+}
