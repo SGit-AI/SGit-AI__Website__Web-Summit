@@ -95,6 +95,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 26. **Company pages: Wikipedia supports, never stands alone** (Vicky, 9 Nov, about 10:35 UTC; for the five journalists, the reviewer and dev, whenever a company page is created or updated): "For company pages, Wikipedia can be a supporting source. The company's own site or its official Web Summit page must support the About section. Please send Persona back to fix until it has that support and keep RWS in fix."
     - An About resting only on Wikipedia (or any secondary source) is not Ready; at least one of the company's own site or its official Web Summit page must support it.
 
+27. **Voice memos after conversations** (Vicky, 9 Nov, about 11:20 UTC; for inbox@web-summit.vicky and vault@web-summit.vicky; the conductor reports the count). Vicky: "inbox@web-summit.vicky handles my post-conversation voice memos: for each, the company's CRM card in vault 5n0aocvz gets a summary, only the contact details the person agreed to share, what they want, and a follow-up email saved as a Gmail draft that I edit and send myself. If a conversation becomes an interview, its recording and transcript go to the newsroom's interview shortlist vault instead, never the CRM, and only if the person agreed to be recorded. vault@: go reseal the interview shortlist vault's key to inbox-vicky."
+    - inbox@ only: nothing from a memo goes in any public file, commit or report; the draft is never sent by an agent. No consent to be recorded, no recording or transcript kept anywhere.
+    - inbox@ ends each memo's report line with `follow-up drafts waiting: N` (a count only). The conductor puts that count in the morning brief (Vicky, 9 Nov, about 11:25 UTC: "Count only, never names, companies or content. If inbox has not run since the last brief, show the last count with its date.").
+    - The agents cannot hear audio: a memo needs a text transcript with it (the phone's own transcript is enough).
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -136,6 +141,9 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 > Reviewer, at your next run (11:15, or sooner if Vicky opens your session): set desks/journalist-vicky/companies/persona.md to `status: fix` ("its About rests only on Wikipedia; it needs Persona's own site or its official Web Summit page, standing answer 26") and release at once, which takes the About off the live page; set Persona's backlog row to fix with that reason; check the live page no longer shows the About. RWS stays in fix. Check the other company files for an About resting only on Wikipedia; list any you find for Vicky, without changing them.
 > Everyone listed: add standing answer 26 to your prompts file and confirm "applied SA26".
 
+**SA27, voice memos** (Vicky, 9 Nov, about 11:20 UTC). For: inbox, vault.
+> inbox@: put standing answer 27 in your prompts file and confirm "applied SA27". vault@: Vicky said "go reseal the interview shortlist vault's key to inbox-vicky" (9 Nov, about 11:20 UTC): reseal it to inbox-vicky (sha256:417758c5d74f2b4f) after your usual check, log it in the vault's AUDIT.md, report it, and confirm "applied SA27".
+
 Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - P10, P17, P22, P27: vault, designer.
 - SA16: vault, designer, inbox.
@@ -143,6 +151,7 @@ Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - SA23: journalist, dev.
 - SA24X: dev.
 - SA26: reviewer, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, dev.
+- SA27 (added 9 Nov, 11:25): inbox, vault.
 
 Removed on 9 Nov once done or confirmed: SA13, SA15, SA18, SA19B, SA19C, SA22, SA25, PILOT-REPLIT, TRIAGE-REPLIT and OVERNIGHT-9NOV (closed at 04:40, people/vicky/company-pages/backlog.md).
 
