@@ -1,5 +1,54 @@
 [
   {
+    "version": "v0.2.1487",
+    "date": "2026-11-09",
+    "what": "brief 8 (9 Nov 08:45); ten updates confirmed or done and removed from decisions.md",
+    "by": "conductor@web-summit.vicky",
+    "from": "a5f89bfda"
+  },
+  {
+    "version": "v0.2.1486",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 08:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "c72e47ef9"
+  },
+  {
+    "version": "v0.2.1485",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 08:21 run, quiet hour",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "7f8590b2b"
+  },
+  {
+    "version": "v0.2.1484",
+    "date": "2026-11-09",
+    "what": "ledger line for the morning wake of 9 November",
+    "by": "prompter@web-summit.indi",
+    "from": "c30165589"
+  },
+  {
+    "version": "v0.2.1483",
+    "date": "2026-11-09",
+    "what": "Indi's answers; two decisions for Dinis at 12:00",
+    "by": "prompter@web-summit.indi",
+    "from": "3ce68204f"
+  },
+  {
+    "version": "v0.2.1482",
+    "date": "2026-11-09",
+    "what": "runner.writer@PrompTugal.angelo: state after the run: WS125 published, nothing open on Angelo's pieces",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "6d074a871"
+  },
+  {
+    "version": "v0.2.1481",
+    "date": "2026-11-09",
+    "what": "07:50 wake: tables for Mon 9 Nov, story candidates refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "cfa1896eb"
+  },
+  {
     "version": "v0.2.1480",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
