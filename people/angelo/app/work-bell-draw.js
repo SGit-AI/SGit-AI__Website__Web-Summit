@@ -79,7 +79,7 @@
         }
         // the frame for the setting and the screen's shape; the icons in their places and the network moved into its circle
         function lay() {
-            const r = wrap.getBoundingClientRect(), o2 = B.orient(setting, r.width, r.height)
+            const r = wrap.getBoundingClientRect(), o2 = B.orient(setting, win.innerWidth || r.width, win.innerHeight || r.height)   // Automatic: by the screen's shape (the spec), not the box's; a pop-out is its own window
             const order = B.ordered(A.DESTS, weights).join()
             if (L && o2 === or && L.order === order) return
             or = o2; L = B.layout(or, A.DESTS, weights); L.order = order; NM = B.netMap(L, G.C, G.S)
@@ -106,7 +106,7 @@
                 const p = L.places.get(d)
                 x.g.setAttribute('transform', `translate(${f1(p.x)} ${f1(p.y)})`); x.g.classList.toggle('wb-quiet', p.quiet)
                 x.inner.setAttribute('transform', `scale(${s.toFixed(3)})`)
-                const lb = B.label(p, ICON * s / 2, font, x.ab.textContent.length, font > ABBR_FONT * 1.2 && (or === 'top' || or === 'below'))   // straight out from the icon, away from the team
+                const lb = B.label(p, ICON * s / 2, font, x.ab.textContent.length, font > ABBR_FONT * 1.2)   // straight out from the icon, away from the team; on a small screen every other one on the inner side, whichever end
                 x.ab.setAttribute('x', f1(lb.x)); x.ab.setAttribute('y', f1(lb.y)); x.ab.setAttribute('text-anchor', lb.anchor); x.ab.style.fontSize = f1(font) + 'px'
             }
         }

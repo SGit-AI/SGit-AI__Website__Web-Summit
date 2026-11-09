@@ -28,7 +28,7 @@ for (const or of ['top', 'below', 'left', 'right']) {
     // and on a phone (the text at 36 units, staggered)
     // (a 390 px phone: the view about 356 px wide, or 360 px high on its side, the text 12 px and the icons 24 px, in the frame's units)
     const tall = or === 'top' || or === 'below', ph = tall ? L.w / 356 : L.h / 360   // a phone held upright, or on its side
-    for (const [F, I, st] of [[26, ICON, false], [12 * ph, Math.max(ICON, 24 * ph), tall]]) {   // staggered only under the icons (work-bell-draw.js)
+    for (const [F, I, st] of [[26, ICON, false], [12 * ph, Math.max(ICON, 24 * ph), true]]) {   // staggered on a small screen at every end (work-bell-draw.js)
     const boxes = pts.map(([d, p]) => { const lb = B.label(p, I / 2, F, 4, st); return { d, ic: { l: p.x - I / 2, r: p.x + I / 2, t: p.y - I / 2, b: p.y + I / 2 }, ab: { l: p.x + lb.cx - lb.w / 2, r: p.x + lb.cx + lb.w / 2, t: p.y + lb.cy - lb.h / 2, b: p.y + lb.cy + lb.h / 2 } } })
     const hit = (a, c) => a.l < c.r && c.l < a.r && a.t < c.b && c.t < a.b
     for (const x of boxes) for (const y of boxes) if (x !== y && (hit(x.ab, y.ic) || hit(x.ab, y.ab))) fail(`${or} (${F.toFixed(0)}): ${x.d}'s abbreviation on ${y.d}`)

@@ -17,7 +17,7 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     const st = () => p.evaluate(() => ({ sw: [...document.querySelectorAll('[data-wv-sw] a')].map(a => a.textContent + ':' + a.getAttribute('aria-pressed')), sq: document.querySelectorAll('.tm-svg .wv-sq').length,
       vb: document.querySelector('.tm-svg').getAttribute('viewBox'), loaded: !!window.AngeloWorkReplay, fly: document.querySelectorAll('.tm-svg .wv-fly').length,
       n: [...document.querySelectorAll('.tm-svg .wv-n')].filter(e => e.style.display !== 'none').length, bell: document.querySelectorAll('.tm-svg .wb-ic').length, routes: document.querySelectorAll('.tm-svg .wb-route').length,
-      graph: !!document.querySelector('.tm-svg > .wb-graph > .tm-nodes'), inside: (() => { const f = document.querySelector('.tm-svg').getBoundingClientRect(); return [...document.querySelectorAll('.tm-svg .wb-ic')].every(g => { const b = g.getBoundingClientRect(); return b.left >= f.left - 1 && b.right <= f.right + 1 && b.top >= f.top - 1 && b.bottom <= f.bottom + 1 }) })(), nodesTop: !!document.querySelector('.tm-svg > .tm-nodes'), over: document.documentElement.scrollWidth > innerWidth }))
+      graph: !!document.querySelector('.tm-svg > .wb-graph > .tm-nodes'), overlap: (() => { const bs = [...document.querySelectorAll('.tm-svg .wb-ic')].flatMap(g => [g.querySelector('rect'), g.querySelector('.wb-ab')].map(e => ({ g, b: e.getBoundingClientRect() }))), hit = (a, c) => a.left + 1 < c.right && c.left + 1 < a.right && a.top + 1 < c.bottom && c.top + 1 < a.bottom; return bs.filter(x => bs.some(y => y.g !== x.g && hit(x.b, y.b))).map(x => x.g.dataset.dest) })(), inside: (() => { const f = document.querySelector('.tm-svg').getBoundingClientRect(); return [...document.querySelectorAll('.tm-svg .wb-ic')].every(g => { const b = g.getBoundingClientRect(); return b.left >= f.left - 1 && b.right <= f.right + 1 && b.top >= f.top - 1 && b.bottom <= f.bottom + 1 }) })(), nodesTop: !!document.querySelector('.tm-svg > .tm-nodes'), over: document.documentElement.scrollWidth > innerWidth }))
     const ex = await st()
     if (ex.sw.join() !== 'Messages:true,Workstreams:false,Deliverables:false') fail(`${tag}: the switch on opening ${ex.sw.join()}`)
     if (ex.sq || ex.vb !== '0 0 1000 1000') fail(`${tag}: work drawn in Exchanges ${JSON.stringify(ex)}`)
@@ -30,6 +30,7 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     if (wk.sq !== 10) fail(`${tag}: ${wk.sq} squares in Work`)
     if (wk.vb === '0 0 1000 1000') fail(`${tag}: the map's frame was not opened for the dumbbell`)
     // the dumbbell (backlog 0c5): the ten icons on its bell, the map moved whole into its circle, routes from the week before
+    if (wk.overlap && wk.overlap.length) fail(`${tag}: icons or abbreviations overlap in playback (${[...new Set(wk.overlap)]})`)
     if (!wk.inside) fail(`${tag}: an icon or its abbreviation leaves the map's frame`)
     if (wk.bell !== 10 || !wk.graph) fail(`${tag}: the playback does not draw the dumbbell ${JSON.stringify(wk)}`)
     if (wk.over) fail(`${tag}: the page scrolls sideways`)

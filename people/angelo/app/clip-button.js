@@ -38,22 +38,24 @@
         }
     }
     // a copy of the map for one frame: its frame widened to all that is drawn (the names outside the rim, on a phone in rows above
-    // and below, are drawn past the map's own frame), made square about its centre, and the logos as data
-    function frameCopy(svg) {
+    // and below, are drawn past the map's own frame), made the picture's shape (aspect: width over height, square by default)
+    // about its centre, so a tall drawing (the dumbbell, team on top) fills a tall clip, and the logos as data
+    function frameCopy(svg, aspect = 1) {
         const c = svg.cloneNode(true), vb = (svg.getAttribute('viewBox') || '0 0 1000 1000').split(/[\s,]+/).map(Number)
         let [x0, y0, x1, y1] = [vb[0], vb[1], vb[0] + vb[2], vb[1] + vb[3]]
         try { const b = svg.getBBox(); if (b.width && b.height) { x0 = Math.min(x0, b.x); y0 = Math.min(y0, b.y); x1 = Math.max(x1, b.x + b.width); y1 = Math.max(y1, b.y + b.height) } } catch { }
-        const side = Math.max(x1 - x0, y1 - y0) * 1.02, cx = (x0 + x1) / 2, cy = (y0 + y1) / 2
-        c.setAttribute('viewBox', [cx - side / 2, cy - side / 2, side, side].map(v => +v.toFixed(1)).join(' '))
+        const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, fw = Math.max(x1 - x0, (y1 - y0) * aspect) * 1.02, fh = fw / aspect
+        c.setAttribute('viewBox', [cx - fw / 2, cy - fh / 2, fw, fh].map(v => +v.toFixed(1)).join(' '))
         for (const im of c.querySelectorAll('image')) { const u = dataUrls.get(im.getAttribute('href') || im.getAttribute('xlink:href')); if (u) im.setAttribute('href', u); else if (u === '') im.remove() }
         return c
     }
     // the picture of the map now, centred on a w x h frame filled with the page's background, above the caption
     async function paintFrame(cx, svg, w, h, bg, C) {
         cx.fillStyle = bg; cx.fillRect(0, 0, w, h)
-        const c = frameCopy(svg), text = new root.XMLSerializer().serializeToString(c)
-        const side = Math.round(Math.min(w, h * 0.86)), img = await C.svgImage(c, frameCss(svg.ownerDocument, text), side, side)
-        cx.drawImage(img, Math.round((w - side) / 2), Math.round((h * 0.93 - side) / 2), side, side)
+        // the picture's area: the frame's width, 86% of its height (the caption below); a square drawing is as large as before
+        const bw = w, bh = Math.round(h * 0.86), c = frameCopy(svg, bw / bh), text = new root.XMLSerializer().serializeToString(c)
+        const img = await C.svgImage(c, frameCss(svg.ownerDocument, text), bw, bh)
+        cx.drawImage(img, 0, Math.round((h * 0.93 - bh) / 2), bw, bh)
     }
 
     // mount(host, o): host is the map's section (it holds the playback bar, [data-tmf]); o.work() the work view on the map, if on
