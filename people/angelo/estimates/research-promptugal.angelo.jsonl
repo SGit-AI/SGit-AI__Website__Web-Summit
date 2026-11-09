@@ -15,3 +15,4 @@
 {"event":"done","at":"2026-11-09T09:45:00Z","agent":"research@PrompTugal.angelo","item":"0-URGENT","what":"registration refresh","effort_min":8,"elapsed_min":15,"runs":1,"note":"nothing new found"}
 {"event":"start","at":"2026-11-09T09:47:29Z","agent":"research@PrompTugal.angelo","item":"0p","what":"survey of how others produce articles, then spec-editorial.md","est_effort_min":25,"est_elapsed_min":40,"confidence":"medium"}
 {"event":"done","at":"2026-11-09T09:50:51Z","agent":"research@PrompTugal.angelo","item":"0p","what":"editorial survey and spec","effort_min":30,"elapsed_min":50,"runs":1,"note":"longer than estimated: three sources to read, a merge conflict first"}
+{"event":"start","at":"2026-11-09T10:40:00Z","agent":"research@PrompTugal.angelo","item":"0p","what":"survey how Vicky, Dinis and Jose produce articles; spec-editorial.md for Angelo","est_effort_min":45,"est_elapsed_min":60}
