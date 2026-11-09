@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1570",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 17:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "2467115e7"
+  },
+  {
     "version": "v0.2.1569",
     "date": "2026-11-09",
     "what": "Google Wallet builder: a placeholder issuer ID and a plain logo file name (the gate read them as a phone number and an email)",
