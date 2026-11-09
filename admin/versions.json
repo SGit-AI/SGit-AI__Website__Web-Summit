@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1450",
+    "date": "2026-11-09",
+    "what": "WS-200 for the newsroom: a light and dark switch at the top of every PrompTugal.news page and front-page design",
+    "by": "dashboard@web-summit.silvio",
+    "from": "c5229fc4a"
+  },
+  {
     "version": "v0.2.1449",
     "date": "2026-11-09",
     "what": "reviewer@PrompTugal.vicky: overnight backlog: iTRecruiter and Prisma done after their fixes (v0.1.770); 100 company pages done",
