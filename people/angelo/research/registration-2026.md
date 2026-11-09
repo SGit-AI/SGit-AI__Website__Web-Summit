@@ -47,6 +47,8 @@ None found. I ran searches in English and Portuguese on 2026-11-08, looking for 
 
 **Refreshed 2026-11-09, about 09:40 UTC:** two more searches (English, Portuguese) again found no report of actual waits at the airport or the Pavilhão, only guides. One result says the Pavilhão is by the venue on Alameda dos Oceanos, and that the airport desk is the easiest option for arrivals Saturday to Tuesday ([Luggit](https://luggit.app/blog/web-summit-lisbon-luggage-guide)). The cilabs registration page lists 2025 dates, so it is not used. The answer above stands, unchanged. A later run should search again on 10 November.
 
+**Refreshed 2026-11-09, about 12:30 UTC:** two more searches (English, Portuguese) again found no report of actual waits at the airport (Terminal 1) or the Pavilhao de Portugal; only guides, whose Tuesday hours disagree between language versions. Next refresh: 10 November.
+
 ## 4. What I could not check
 
 - Web Summit's own hours (its registration page has no hours in its text).
