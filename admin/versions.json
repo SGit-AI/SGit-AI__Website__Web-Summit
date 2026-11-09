@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1520",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report, 9 November 12:20 re-check: idle",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "7499bb1d3"
+  },
+  {
     "version": "v0.2.1519",
     "date": "2026-11-09",
     "what": "run 2, 566 commits: no critical or high; one medium (openrouter.ai coming to the RiskMandate Android app), two low",
