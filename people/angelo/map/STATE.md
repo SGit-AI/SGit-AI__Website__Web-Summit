@@ -1,13 +1,12 @@
 # dev.map@PrompTugal.angelo: STATE
 
-Seventeenth run, 8 November 2026 (23:16 to 23:52 UTC). Two desk commits For: dev.map@ (efab3a6, f12844f, both pushed by riskmandate-angelo): backlog 0c4 (4) and (6). dashboard@ reviews.
+Eighteenth run, 9 November 2026 (06:21 to about 07:10 UTC). No new commits For: dev.map@ since run 17 except dashboard@'s review (863e35df, run 17's work on dev). Every backlog item of mine is built or waits on someone (below).
 
 ## Done this run (on workers/dev.map, for dashboard@ to review)
-- 0c4 (6), RiskMandate's logo as big as PT News's (live.js): both were already the same square; on the dark hexagon RiskMandate's dark tile melted into it and only its inner ring showed, while PT's cream square showed whole. A faint edge round the RiskMandate tile on a dark hexagon (none on a light one; the file unchanged), so both read as the same square, in 2D, 3D and the pop-out (re-checked each second, as the pop-out's styles arrive late). Tried first and dropped: drawing it 1.4 times larger (its tile then showed bigger than PT's). Test `lvlogo`.
-- 0c4 (4), the replay's dial on the live view (live.js): a slim time dial in the strip under the hexagon's foot, over all live.json holds (from 2 November); dragging moves the moment at the foot; on release the graph plays from there at the real pace (queue rebuilt from live.json, the flow weighed as it was then), LIVE goes grey and a "● LIVE" button returns. Not in display mode. host.lvGraph.back and a 'lv-time' event for dev.work@'s work view to follow (work-live.js does not yet). Test `lvdial`.
+- The map's tests on today's dev: 26 run, 25 pass. lvrepo failed: its pick, the newest newsroom exchange, is now pt:dinis:dev -> pt:dinis:conductor, both drawn at Dinis's person node, and a node to itself is not drawn. The test now picks an exchange between two people; live.js unchanged (9883ae34).
 
-## Earlier today (runs 14 to 16)
-- 0c3 (1) phone playback 31 to 33-34 fps (cached day formatter); 0c3 (6) the timeline collapsed and the commits out of data.json (replay-events.json); 0c0 dev.work@'s hook in live.js.
+## Yesterday (runs 14 to 17)
+- 0c4 (6) RiskMandate's logo as big as PT's, 0c4 (4) the dial on the live view; 0c3 (1) phone playback 31 to 33-34 fps; 0c3 (6) the timeline collapsed; 0c0 dev.work@'s hook in live.js.
 - Two runs can overlap: before starting, fetch workers/dev.map and check its newest commit's time; if under an hour old and STATE has no "Last run" end, take an item the other run is not on.
 
 ## Open
@@ -23,6 +22,6 @@ Seventeenth run, 8 November 2026 (23:16 to 23:52 UTC). Two desk commits For: dev
 - For policy@: my lane leaves out this STATE file (people/angelo/map/**); dashboard@'s review carries it onto dev.
 
 ## Last run
-Run 17 ended 23:52 UTC: two commits (dc791bdb, 123b5bf0) and this one on workers/dev.map; unsigned run log; ledger line.
-Pushing: the branch already holds workers/dev.map (the join), so push straight away; never rebase on it (this run a stopped rebase was pushed by mistake: ddfcbb38..1c407729 are copies of dev's commits, fixed forward by 4c58d9f6, a merge that keeps the tree).
-Started from dev, joined workers/dev.map with `git merge -s ours` (needs `git fetch --depth=300 origin dev workers/dev.map` first in a shallow clone; `--depth=6000 origin dev` for tmf and the replay tests). Gate with LANE_RANGE=<the join commit>..HEAD.
+Run 18 ended about 07:10 UTC: 9883ae34 (lvrepo) and this one on workers/dev.map; unsigned run log; ledger line.
+Pushing: the branch already holds workers/dev.map (the join), so push straight away; never rebase on it.
+Started from dev, joined workers/dev.map with `git merge -s ours` (needs `git fetch --depth=300 origin dev workers/dev.map` first in a shallow clone; `--depth=6000 origin dev` for tmf and the replay tests). Gate with LANE_RANGE=<the join commit>..HEAD. The 26 map tests take over 10 minutes: run them in the background with a long timeout.
