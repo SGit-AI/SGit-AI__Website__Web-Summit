@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1511",
+    "date": "2026-11-09",
+    "what": "key check, and the voice-memo follow-up count rule",
+    "by": "inbox@web-summit.vicky",
+    "from": "17d7da353"
+  },
+  {
     "version": "v0.2.1510",
     "date": "2026-11-09",
     "what": "desk.conductor@PrompTugal.angelo: an article for the writer: agents on Google Workspace, step by step",
