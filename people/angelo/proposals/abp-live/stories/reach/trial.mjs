@@ -28,6 +28,8 @@ const lines = (r.stdout || '').split('\n').filter(Boolean).map(l => { try { retu
 const res = lines.find(l => l.type === 'result') || {}
 const of = path.join(RUN, 'gw', 'outside.jsonl')
 const denied = (res.permission_denials || []).length + (fs.existsSync(of) ? fs.readFileSync(of, 'utf8').trim().split('\n').filter(Boolean).length : 0)
-fs.writeFileSync(path.join(RUN, 'gw', 'trial.json'), JSON.stringify({ model: label, denied_outside_shell: denied, turns: res.num_turns, cost_usd: res.total_cost_usd, reply: res.result || '' }))
+fs.writeFileSync(path.join(RUN, 'gw', 'trial.json'), JSON.stringify({ model: label, denied_outside_shell: denied, turns: res.num_turns, cost_usd: res.total_cost_usd,
+    tokens: res.usage ? ['input_tokens', 'output_tokens', 'cache_creation_input_tokens', 'cache_read_input_tokens'].reduce((a, k) => a + (res.usage[k] || 0), 0) : null,   // counts only, for the result card
+    reply: res.result || '' }))
 const sum = JSON.parse(execFileSync('node', [path.join(HERE, 'summary.mjs'), RUN], { encoding: 'utf8' }))
 console.log(JSON.stringify({ ...sum, model: label, denied_outside_shell: denied, turns: res.num_turns }))

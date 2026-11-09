@@ -184,3 +184,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Tables rebuilt (board front matter, pm@'s 07:40 note, the 18:00 agenda of 8 Nov; no newer agenda or brief yet). Still open for Vicky, now overdue: her yes, changes or not yet on Indi's /lead-to-article/ (WS-168; no decision recorded at 07:40, reports/pm.md) and the parking yes or no. New in "Team follow-ups": WS-199 (three apps, three lines; due today, no owner); WS-166 and WS-168 now overdue, with the summit tomorrow.
 - Story candidates refreshed: 28 stories, 66 sources, all links (desks/curator/README.md). Vault, Office link and folds unchanged.
 - state: ok; done: tables and stories refreshed; next: 17:45 wake; ask: Vicky's answer on /lead-to-article/ (I'd say adopt, as pm@ reads it); run: scheduled
+
+## Mon 9 Nov 2026, 17:55 UTC (wake)
+
+- Read people/vicky/decisions.md (d567a14d; seven new conductor commits since this morning, each with the Agent: line, pushed by riskmandate-vicky). No HOLD.md; session key present. Re-read prompts/dashboard.md (P2): it matches. Nothing new was addressed to the dashboard (SA26 to SA28 are for others).
+- Tables rebuilt (board, pm@'s 07:40 note, brief of 9 Nov 08:45, the 9 Nov agendas). Off "Needs me": the lead-to-article decision (Vicky's review is recorded, 2d972ba7, and Dinis adopted WS-168 at 10:55, 3bfbc8c7) and the guide's token step (Dinis settled tokens via the team, same note). Still open for Vicky: the parking yes or no (Angelo's note: still undecided) and the 5 Nov newsroom record line. WS-168 is off the follow-ups; WS-177 notes that outreach is parked.
+- Story candidates refreshed: 30 stories, 68 sources, all links (desks/curator/README.md). Vault, Office link and folds unchanged.
+- state: ok; done: tables and stories refreshed; next: 07:50 wake on 10 Nov (the summit's first day); ask: none; run: scheduled

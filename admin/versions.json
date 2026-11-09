@@ -1,5 +1,208 @@
 [
   {
+    "version": "v0.2.1591",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.map's, dev.work's and dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "21b540335"
+  },
+  {
+    "version": "v0.2.1590",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 20:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "3468593e4"
+  },
+  {
+    "version": "v0.2.1589",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: ledger line for the 20:21 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "b7549e747"
+  },
+  {
+    "version": "v0.2.1588",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 20:21 run, nothing new urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "761f71a10"
+  },
+  {
+    "version": "v0.2.1587",
+    "date": "2026-11-09",
+    "what": "run 6, 171 commits: nothing new above LOW; correction: Android main is now promoted by its conductor agent on signed PASS (run 5 missed it)",
+    "by": "security.repos@web-summit.dinis",
+    "from": "59b19f033"
+  },
+  {
+    "version": "v0.2.1586",
+    "date": "2026-11-09",
+    "what": "journalist-portugal@PrompTugal.vicky: report, S36 fixed",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "cb3f42ac3"
+  },
+  {
+    "version": "v0.2.1585",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 19:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "df49dc22a"
+  },
+  {
+    "version": "v0.2.1584",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report for the 19:15 run: S35 and S36 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "1fa83e5cf"
+  },
+  {
+    "version": "v0.2.1583",
+    "date": "2026-11-09",
+    "what": "ledger line, one per wake (from 17:28 UTC)",
+    "by": "prompter@web-summit.indi",
+    "from": "49530c857"
+  },
+  {
+    "version": "v0.2.1582",
+    "date": "2026-11-09",
+    "what": "policy@PrompTugal.angelo: run 7: no violation; the desk's wakes logged as Angelo asked (R35)",
+    "by": "policy@PrompTugal.angelo",
+    "from": "cb9a64751"
+  },
+  {
+    "version": "v0.2.1581",
+    "date": "2026-11-09",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 19:03, idle",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "a101765b5"
+  },
+  {
+    "version": "v0.2.1580",
+    "date": "2026-11-09",
+    "what": "journalist-portugal@PrompTugal.vicky: report, S36 drafted",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "398f6d9ee"
+  },
+  {
+    "version": "v0.2.1579",
+    "date": "2026-11-09",
+    "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 18:45, idle",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "6a2986276"
+  },
+  {
+    "version": "v0.2.1578",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.map's, dev.work's and dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "1efbc49ae"
+  },
+  {
+    "version": "v0.2.1577",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 18:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "4d76b4339"
+  },
+  {
+    "version": "v0.2.1576",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: live graph's snapshots refreshed (18:35 run); Dinis's WS-205 passed to the desk",
+    "by": "dev@PrompTugal.angelo",
+    "from": "39d1de983"
+  },
+  {
+    "version": "v0.2.1575",
+    "date": "2026-11-09",
+    "what": "/pipeline/: from a voice brief to a release, two case studies traced commit by commit (messaging; the web app); WS-205 to make it live",
+    "by": "conductor@web-summit.dinis",
+    "from": "774d6265d"
+  },
+  {
+    "version": "v0.2.1574",
+    "date": "2026-11-09",
+    "what": "checker@PrompTugal.vicky: report of the 9 November evening run",
+    "by": "checker@PrompTugal.vicky",
+    "from": "d949fe757"
+  },
+  {
+    "version": "v0.2.1573",
+    "date": "2026-11-09",
+    "what": "for conductor@web-summit.dinis: nobody is reviewing or promoting Indi's team's iOS work yet",
+    "by": "prompter@web-summit.indi",
+    "from": "f8845a1dc"
+  },
+  {
+    "version": "v0.2.1572",
+    "date": "2026-11-09",
+    "what": "the map helper started (Team app venue map, option B); Indi's site key given to dashboard@",
+    "by": "conductor@web-summit.indi",
+    "from": "4a4364648"
+  },
+  {
+    "version": "v0.2.1571",
+    "date": "2026-11-09",
+    "what": "17:40 wake: state idle",
+    "by": "pm@web-summit.vicky",
+    "from": "85bc93114"
+  },
+  {
+    "version": "v0.2.1570",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 17:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "2467115e7"
+  },
+  {
+    "version": "v0.2.1569",
+    "date": "2026-11-09",
+    "what": "Google Wallet builder: a placeholder issuer ID and a plain logo file name (the gate read them as a phone number and an email)",
+    "by": "conductor@web-summit.indi",
+    "from": "a5971c4ef"
+  },
+  {
+    "version": "v0.2.1568",
+    "date": "2026-11-09",
+    "what": "the review checklist for dev.abp@'s side-by-side runner, written before it lands",
+    "by": "dev@web-summit.indi",
+    "from": "b1cf41c9c"
+  },
+  {
+    "version": "v0.2.1567",
+    "date": "2026-11-09",
+    "what": "17:15 run, fb3f02c..489f32a; five actions still open",
+    "by": "watcher@web-summit.jose",
+    "from": "95413440e"
+  },
+  {
+    "version": "v0.2.1566",
+    "date": "2026-11-09",
+    "what": "17:10 run, idle",
+    "by": "logistics@web-summit.vicky",
+    "from": "7b9288676"
+  },
+  {
+    "version": "v0.2.1565",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: research@: which of Angelo's Web Summit connections are worth meeting, and why (companies only)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "fd7fa3573"
+  },
+  {
+    "version": "v0.2.1564",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: the wristbands article: pass types now, colours as Angelo spots them; the first sighting, ALPHA",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "089ca5087"
+  },
+  {
+    "version": "v0.2.1563",
+    "date": "2026-11-09",
+    "what": "15:10 proposal to send withdrawn: Dinis parked outreach at 10:55 (WS-177)",
+    "by": "outreach@web-summit.silvio",
+    "from": "ccf33046f"
+  },
+  {
     "version": "v0.2.1562",
     "date": "2026-11-09",
     "what": "desk.conductor@PrompTugal.angelo: the share button: the writer applies dev.venues@'s patch in its next session",

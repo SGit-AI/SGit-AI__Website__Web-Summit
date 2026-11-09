@@ -46,6 +46,7 @@ Kept by policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo only
 | R32 | Estimate each piece of work before starting (effort, elapsed) and record the actual, in `people/angelo/estimates/<agent>.jsonl` | protocol (Angelo, 7 November) | **rule only** |
 | R33 | Code that runs on the site's origin (`people/angelo/pages.mjs`, the guide's inline script) is watched: policy records its hash and reads every change | P-09, Angelo's "Ok sure." to option B (7 November, `40ad331a`) | **checked** by policy (`watched.json`) |
 | R34 | Anything shown or linked is served from our own site once reviewed onto dev, never a third-party host; a blocker is a tier-3 question for Angelo | protocol (Angelo, 8 November) | **rule only** |
+| R35 | The desk may fire an agent's scheduled task ("Run now") when it has ready work, logging each wake first in `people/angelo/conductor/wakes.md`; still never creates, messages or reads a session | protocol (Angelo, 9 November about 10:35 UTC) | **rule only**; checked by policy against `wakes.md` (an off-schedule fire is not visible from the repository). The platform lets the desk fire only tasks an agent created |
 
 ## Each agent: its paths and its own rules
 
@@ -76,6 +77,7 @@ Kept by policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo only
 
 ## Changes
 
+- 9 November 2026, 19:15: R35 (the desk may wake agents, logged).
 - 8 November 2026, 19:20: R34 (our own website first); the dashboard reviews the map and app workers, hourly, its lane widened; three new workers; the app's download page watched (R33).
 - 8 November 2026, 07:30: R6 and R11 now technical (the lane check enforced, the signed-only drain); R31 to R33; my folder reserved to me.
 - 7 November 2026, 19:15: R26 to R30 (publishing in the pipeline, Delivered lines, the backlog, workers' branches, the newsroom repository); six new workers; reports/ and proposals/ count for every agent.
