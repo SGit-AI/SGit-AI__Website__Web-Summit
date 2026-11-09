@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1528",
+    "date": "2026-11-09",
+    "what": "ledger line, WS-203",
+    "by": "prompter@web-summit.indi",
+    "from": "bdf0a9657"
+  },
+  {
     "version": "v0.2.1527",
     "date": "2026-11-09",
     "what": "/contributors/: the rules of the game as an infographic; part 1 (lots of small tasks) and part 2 (the contributors' wall and one-click sharing) (WS-204)",
