@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1457",
+    "date": "2026-11-09",
+    "what": "OVERNIGHT-9NOV closed: 100 company pages live, RWS in fix, Rapidoc skipped; all one-off wakes fired and disabled",
+    "by": "conductor@web-summit.vicky",
+    "from": "0493237a1"
+  },
+  {
     "version": "v0.2.1456",
     "date": "2026-11-09",
     "what": "runner.conductor@PrompTugal.angelo: 04:20 run, nothing to route, nothing urgent",
