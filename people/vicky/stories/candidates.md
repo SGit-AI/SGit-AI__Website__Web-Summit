@@ -6,12 +6,16 @@ Kept by curator@PrompTugal.vicky (until 6 November curator@web-summit.vicky), Vi
 
 **Connections** (from 5 November, at Dinis's direction): stories that link startups and companies at Web Summit so each gets the most out of the week: startups in the same field, startups and the investors or programmes that back that field, companies on the same stage or day, Portuguese startups and the European ones they could work with. They are marked "Connections" in the beat. Each link is the curator's suggestion from public facts: no source says these organisations plan to meet, and no story should say so. Organisations only; nothing private about anyone.
 
-Last updated: Sunday 8 November 2026, 14:43 UTC.
+Last updated: Monday 9 November 2026, 05:41 UTC.
 
 ## At a glance
 
 | Id | Title | Beat | Added |
 |---|---|---|---|
+| S32 | Rehab beyond the clinic: three Portuguese startups at Web Summit | Connections: Portugal | 9 Nov |
+| S31 | Beyond Lisbon: where Road 2 Web Summit's 78 startups come from | Portugal | 9 Nov |
+| S30 | Eleven health startups at Web Summit, by the problem they tackle (published 8 Nov) | Connections: the summit | 8 Nov |
+| S29 | Who builds the parts of an AI agent? Startups at Web Summit (published 8 Nov) | AI and robotics | 8 Nov |
 | S28 | Five AI builders on Web Summit's speaker list worth knowing (published 8 Nov) | Connections: the summit | 8 Nov |
 | S27 | A map of Web Summit's buildings, and what each holds | AI and robotics | 7 Nov |
 | S26 | Two editions a day: PrompTugal.news starts a daily newsletter | AI and robotics | 7 Nov |
@@ -36,6 +40,38 @@ Last updated: Sunday 8 November 2026, 14:43 UTC.
 | S3 | Road 2 Web Summit: Portugal's startups head for Lisbon | Portugal | 4 Nov |
 | S2 | Europe arrives in Pavilion 4: the Commission's week at Web Summit | Europe | 4 Nov |
 | S1 | Web Summit Lisbon: your first day, from airport to arena | The summit | 4 Nov |
+
+## S32: Rehab beyond the clinic: three Portuguese startups at Web Summit
+
+Connections: Portugal, added 9 Nov. Braining, UpSpeech and Twin Factory: different technology on the same problem, helping people recover outside the clinic. Not ready: each company is known only from one article's one-line description; waits for the companies' own pages.
+
+Sources:
+
+- [Portugal Startup News, "Full list of 78 startups selected by Startup Portugal for Road 2 Web Summit 2026"](https://portugalstartupnews.com/2026/11/08/full-list-of-78-startups-selected-by-startup-portugal-for-road-2-web-summit-2026/), read 9 November 2026
+
+## S31: Beyond Lisbon: where Road 2 Web Summit's 78 startups come from
+
+Portugal, added 9 Nov. Lisbon has 41 of the 78 startups selected for Road 2 Web Summit; a tour of the other 37, from Porto and Braga to the Azores and Madeira, and what they build. For journalist-portugal.
+
+Sources:
+
+- [Portugal Startup News, "Full list of 78 startups selected by Startup Portugal for Road 2 Web Summit 2026"](https://portugalstartupnews.com/2026/11/08/full-list-of-78-startups-selected-by-startup-portugal-for-road-2-web-summit-2026/), read 9 November 2026
+
+## S30: Eleven health startups at Web Summit, by the problem they tackle
+
+Connections: the summit, added 8 Nov. The health and wellness startups on Web Summit's featured list, grouped by the problem each says it tackles, from a first look at the list. For journalist-connections. From the first page of 26 only. Published on 8 Nov 2026: https://promptugal.news/articles/health-startups-by-problem.html. Not to be written again.
+
+Sources:
+
+- [Web Summit, "Featured startups at Web Summit | November 9-12, 2026"](https://websummit.com/featured-startups/), read 8 November 2026
+
+## S29: Who builds the parts of an AI agent? Startups at Web Summit
+
+AI and robotics, added 8 Nov. A reader's guide to the AI-agent stack as eight startups on the featured list describe themselves, from frameworks and databases to governance and the products on top. For journalist-ai (AI desk). From the first page of 26 only. Published on 8 Nov 2026: https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html. Not to be written again.
+
+Sources:
+
+- [Web Summit, "Featured startups at Web Summit | November 9-12, 2026"](https://websummit.com/featured-startups/), read 8 November 2026
 
 ## S28: Five AI builders on Web Summit's speaker list worth knowing
 
@@ -267,15 +303,19 @@ Sources:
 - [Executive Digest (SAPO), "Web Summit: Carris reforça transporte com 'shuttle' e passe conjunto com metro e comboios"](https://executivedigest.sapo.pt/web-summit-carris-reforca-transporte-com-shuttle-e-passe-conjunto-com-metro-e-comboios/), read 5 November 2026
 - [Junta de Freguesia do Parque das Nações, "Web Summit – Condicionamentos de trânsito entre 9 e 12 de novembro"](https://www.jf-parquedasnacoes.pt/autarquia/noticias/web-summit-condicionamentos-de-transito-entre-9-e-12-de-novembro), read 6 November 2026
 
-## Connection storylines: order and readiness
+## Assignments by desk: order and readiness
 
-For journalist-connections, in priority order (standing answer 22).
+For the five journalists, in priority order (standing answers 20 and 22, the desk review of 8 November). Each was checked against the articles and drafts at this run.
 
-Ready to write now: none.
+Ready to write now:
 
-Already published, not to be written again: S28 (https://promptugal.news/articles/five-ai-builders-to-know.html).
+1. S31, Beyond Lisbon: where Road 2 Web Summit's 78 startups come from: for the Portugal desk (journalist-portugal). Where the 78 Road 2 Web Summit startups come from, city by city and what they build; the source is Portugal Startup News' account of Startup Portugal's selection, not a Web Summit page, so re-read it and Startup Portugal's own page the same day; descriptions are not checked; do not give a city for Humanos until its country is checked.
 
-Not ready yet, held until the researcher captures what the companies do: the healthtech, fintech and AI startups on Web Summit's featured list (names and tags only so far), and the speakers' policy and investment, mobility and devices, and infrastructure and security groups.
+Already published, not to be written again: S28 (https://promptugal.news/articles/five-ai-builders-to-know.html); S29 (https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html); S30 (https://promptugal.news/articles/health-startups-by-problem.html).
+
+No assignment this run: the summit desk (the pitch times are not captured yet) and the Europe desk (its two requests to the researcher are still open); the AI and connections desks have nothing new that is ready. Reasons and the evidence wanted from the researcher are in the latest map.
+
+Held until the researcher captures more: S32 (rehab beyond the clinic) until the three companies' own pages are captured; a Portuguese angle on AI trust and risk until the Humanos country question is settled; fintech startups on the featured list; and the speakers' policy and investment, mobility and devices, and infrastructure and security groups.
 
 ## Dropped
 
