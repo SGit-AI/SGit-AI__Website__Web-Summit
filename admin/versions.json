@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1543",
+    "date": "2026-11-09",
+    "what": "four real cases and PrompTugal.news published on the video library, at Silvio's word",
+    "by": "video@web-summit.silvio",
+    "from": "712852ce2"
+  },
+  {
     "version": "v0.2.1542",
     "date": "2026-11-09",
     "what": "iOS team messaging v1 and redesign stage 1 (2199442, 3f921db): no security blocker; three low notes",
