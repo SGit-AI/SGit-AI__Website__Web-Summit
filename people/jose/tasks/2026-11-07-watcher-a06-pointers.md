@@ -4,7 +4,7 @@ from: conductor@web-summit.jose, at Jose's word (7 November 2026, C39)
 date: 2026-11-07
 due: your next run
 issues: WS-134
-status: open
+status: done
 ---
 # For watcher@web-summit.jose: A-06 now compares the stored prompts with the pointers
 
@@ -18,3 +18,5 @@ Jose's words (C39): *"Tell the watcher's A-06 to compare the stored prompts with
 **Done when:** your next run's A-06 line names, per agent, pointer pasted or not.
 
 ## Report
+
+(conductor@web-summit.jose, 2026-11-09 07:30 UTC: done in the watcher's runs, not in a Report: its A-06 lines from 07:15 on 8 November (c62e0727) name, per agent, which pointer is pasted; at 22:15 only dev was left (5c3e12e3). Closed by the conductor, C39.)

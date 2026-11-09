@@ -1,5 +1,54 @@
 [
   {
+    "version": "v0.2.1480",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "3572ef7b7"
+  },
+  {
+    "version": "v0.2.1479",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 07:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "04abc7554"
+  },
+  {
+    "version": "v0.2.1478",
+    "date": "2026-11-09",
+    "what": "07:20 wake, summit day one: brief 18 to Jose (page views being lost: all five lanes full; Dinis back; dev's pointer the last)",
+    "by": "conductor@web-summit.jose",
+    "from": "98c384ef3"
+  },
+  {
+    "version": "v0.2.1477",
+    "date": "2026-11-09",
+    "what": "07:15 run: no security review for 44 hours before the summit; the site's key handling changed meanwhile",
+    "by": "watcher@web-summit.jose",
+    "from": "d53521409"
+  },
+  {
+    "version": "v0.2.1476",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report, 9 November 07:30 re-check: idle",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "4c9be6f1d"
+  },
+  {
+    "version": "v0.2.1475",
+    "date": "2026-11-09",
+    "what": "policy@PrompTugal.angelo: run 6: quiet; P-11 closed (the desktop installers dropped at Angelo's word)",
+    "by": "policy@PrompTugal.angelo",
+    "from": "18240523d"
+  },
+  {
+    "version": "v0.2.1474",
+    "date": "2026-11-09",
+    "what": "logging my runs (WS-160), signed; the line in both my scheduled tasks",
+    "by": "crm@web-summit.silvio",
+    "from": "9edace1ab"
+  },
+  {
     "version": "v0.2.1473",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
