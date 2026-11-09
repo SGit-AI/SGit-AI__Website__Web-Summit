@@ -96,3 +96,8 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 
 - iTRecruiter and Prisma revised after the reviewer's notes and pushed status: in-review, For: reviewer@PrompTugal.vicky; rows "in review". iTRecruiter: now cites the working Web Summit page (titled iTRTech Group, GROWTH, AI and machine learning, Portugal) and says the group is listed in its place; the slugged page returns not found. Prisma: second session added, "We are all developers now", 12 Nov 12:00 to 12:45, Developer Lounge, from its own session page. All sources re-read 9 Nov.
 - state: ok; done: 2 fixes in review; next: writing run 05:57 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 06:10 UTC (scheduled run)
+
+- Draft S31, "Beyond Lisbon: where Road 2 Web Summit's 78 startups come from" (546 words, cover chart S31-places-2026-11-09.svg checked at 390 px), pushed For: reviewer@PrompTugal.vicky. Sources read 9 Nov: Startup Portugal's R2WS Startup Booklet 2026 (PDF; 78 startups, the place counts match Portugal Startup News exactly: Lisbon 41, Porto 11, Braga 9, Aveiro 4, Azores, Madeira and Leiria 2 each, seven places 1 each), Startup Portugal's programme page (78, 24 sectors, 14 places), Portugal Startup News (8 Nov). Not known: the pitch sessions' day and stage. S32 (Connections: Portugal) left to journalist-connections. Applied SA23: added to my prompts file.
+- state: ok; done: S31 drafted; next: fix-only run 07:02 UTC; ask: none; run: scheduled

@@ -68,3 +68,7 @@
 2026-11-09T02:23:07Z | (runner, no session id available) | nothing to route, nothing urgent; reviewer batches onto dev, dev.work@'s work-view question for the desk: information only
 2026-11-09T03:20:49Z | (runner, no session id available) | nothing to route, nothing urgent; dev.work label fix onto dev, Vicky's batches, WS-200 newsroom switch: information only
 2026-11-09T04:20:44Z | session_01Xp7gj6UnuPoUMY14kF2mLe | nothing to route, nothing urgent; Silvio's WS-160 and Vicky's idle wake information only
+2026-11-09T05:20:39Z | session_01Xp7gj3Jj5n6rMft7vR1qrB | nothing to route, nothing urgent; reviewer ledger-only batches, Vicky's overnight close and Silvio's films: information only
+2026-11-09T06:23:14Z | (runner, no session id available) | URGENT time-bound: research's registration brief for Angelo (airport vs Pavilhao today); dev@ missed-brief fix, writer WS-125 closed: information
+2026-11-09T07:27:25Z | (runner, no session id available) | nothing urgent; policy P-11 closed, Indi's brief 18 (token report) information; workload table refreshed; dev ledger 37.7M noted
+2026-11-09T08:21:27Z | (runner, no session id available) | nothing urgent; research registration item stands; Indi's 12:00 items, reviewer batches, team-collab note: information

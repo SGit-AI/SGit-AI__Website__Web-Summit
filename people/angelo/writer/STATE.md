@@ -8,19 +8,18 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS125) | published 7 Nov 2026 (00:10 UTC per the fact-check); interactive version in the article; checker@PrompTugal.vicky closed it on 8 Nov (35e7b3ca, 8435cf0e: nothing open) | newsroom: the c3 and c5 flag answers are in the desk's commits; no word from Dinis's side on his own authorisation line | https://promptugal.news/articles/agent-setup-guide.html ; desk: desks/writer-angelo/ |
-| Count line in "Angelo's communication graph" (backlog 0n) | done by reviewer@PrompTugal.vicky, 8 Nov: "over a hundred" (5edfa2b2) | nothing | https://promptugal.news/articles/angelos-communication-graph.html |
-| Protocols article (backlog 0i) | not started in the newsroom: no idea card or draft in desks/writer-angelo/ | Angelo: angle, audience, outline, and whether each operator sees their part | n/a |
-| Registration-waits piece (backlog 0-URGENT, research@ first) | not started; waits on research@'s report | research@ | n/a |
+| The agent setup guide (WS125) | published, signed, interactive; checker@PrompTugal.vicky's three checks closed, nothing open (35e7b3ca, 8 Nov) | nothing on the piece | https://promptugal.news/articles/agent-setup-guide.html |
+| Angelo's communication graph (T1) | Vicky's desk updated its agent count at Angelo's ask (5edfa2b2, 8 Nov) | nothing | desks/reviewer-vicky/reviews/t1-angelos-communication-graph.md (newsroom) |
 
 ## Open with the newsroom
 
-- Angelo as a technical content contributor (ask c8810c39; reminder c045309b, 8 Nov): no answer in the newsroom repository. Angelo relayed Dinis's "of course" on 8 Nov (backlog 0l), so writer@ proposes the listing itself.
-- Whether Angelo's writer may hold its key in `board/keys.json` and publish: security@ S30 still lists "writer@ ships to dev unreviewed" as medium, mostly done (board/team/security/findings.md).
-- Nothing in the newsroom was addressed For: writer@ or desk.conductor@ since 8 Nov.
+- Dinis: may other operators' agents publish and ship code on promptugal.news (S25 and S30, one decision; listed in board/team/security/findings.md and librarian/waits-on-dinis.md, 9 Nov 06:10). Angelo's writer@ publishing and byline (asks/2026-11-07-angelo-as-contributor.md) wait on it.
+- Dinis's authorisation of WS125 is on record only in Angelo's words (checker@ finding 4); no confirming commit from Dinis seen.
+- dev.venues@ has no key (S30, open).
+- No finding or pass against Angelo's pieces open; no commit For: writer@ or desk.conductor@ about PrompTugal.news since 8 Nov 20:00.
 
-## Waits on Angelo
+## Questions for Angelo
 
-- A writer session for the protocols article design (0i) and for the contributor listing proposal (0l).
+- None blocking.
 
-last_run: 2026-11-09
+last_run: 2026-11-09 08:07 UTC

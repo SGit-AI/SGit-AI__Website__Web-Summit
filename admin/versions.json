@@ -1,5 +1,208 @@
 [
   {
+    "version": "v0.2.1485",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 08:21 run, quiet hour",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "7f8590b2b"
+  },
+  {
+    "version": "v0.2.1484",
+    "date": "2026-11-09",
+    "what": "ledger line for the morning wake of 9 November",
+    "by": "prompter@web-summit.indi",
+    "from": "c30165589"
+  },
+  {
+    "version": "v0.2.1483",
+    "date": "2026-11-09",
+    "what": "Indi's answers; two decisions for Dinis at 12:00",
+    "by": "prompter@web-summit.indi",
+    "from": "3ce68204f"
+  },
+  {
+    "version": "v0.2.1482",
+    "date": "2026-11-09",
+    "what": "runner.writer@PrompTugal.angelo: state after the run: WS125 published, nothing open on Angelo's pieces",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "6d074a871"
+  },
+  {
+    "version": "v0.2.1481",
+    "date": "2026-11-09",
+    "what": "07:50 wake: tables for Mon 9 Nov, story candidates refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "cfa1896eb"
+  },
+  {
+    "version": "v0.2.1480",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "3572ef7b7"
+  },
+  {
+    "version": "v0.2.1479",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 07:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "04abc7554"
+  },
+  {
+    "version": "v0.2.1478",
+    "date": "2026-11-09",
+    "what": "07:20 wake, summit day one: brief 18 to Jose (page views being lost: all five lanes full; Dinis back; dev's pointer the last)",
+    "by": "conductor@web-summit.jose",
+    "from": "98c384ef3"
+  },
+  {
+    "version": "v0.2.1477",
+    "date": "2026-11-09",
+    "what": "07:15 run: no security review for 44 hours before the summit; the site's key handling changed meanwhile",
+    "by": "watcher@web-summit.jose",
+    "from": "d53521409"
+  },
+  {
+    "version": "v0.2.1476",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report, 9 November 07:30 re-check: idle",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "4c9be6f1d"
+  },
+  {
+    "version": "v0.2.1475",
+    "date": "2026-11-09",
+    "what": "policy@PrompTugal.angelo: run 6: quiet; P-11 closed (the desktop installers dropped at Angelo's word)",
+    "by": "policy@PrompTugal.angelo",
+    "from": "18240523d"
+  },
+  {
+    "version": "v0.2.1474",
+    "date": "2026-11-09",
+    "what": "logging my runs (WS-160), signed; the line in both my scheduled tasks",
+    "by": "crm@web-summit.silvio",
+    "from": "9edace1ab"
+  },
+  {
+    "version": "v0.2.1473",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "d011bd2a8"
+  },
+  {
+    "version": "v0.2.1472",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 06:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "81d7f62b5"
+  },
+  {
+    "version": "v0.2.1471",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report, 9 November 06:45 run: S31 Ready, three findings reconciled",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "6c20a84bc"
+  },
+  {
+    "version": "v0.2.1470",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 06:23 run, research's registration brief flagged for Angelo",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "c2e0f92ff"
+  },
+  {
+    "version": "v0.2.1469",
+    "date": "2026-11-09",
+    "what": "journalist-ai@PrompTugal.vicky: scheduled run, 06:17 UTC: idle",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "f47b12188"
+  },
+  {
+    "version": "v0.2.1468",
+    "date": "2026-11-09",
+    "what": "my session key on the keys page, and I log every run (WS-160)",
+    "by": "outreach@web-summit.silvio",
+    "from": "14f956f28"
+  },
+  {
+    "version": "v0.2.1467",
+    "date": "2026-11-09",
+    "what": "runner.writer@PrompTugal.angelo: STATE: WS-125 published and closed by the checker; byline question still open",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "339a39022"
+  },
+  {
+    "version": "v0.2.1466",
+    "date": "2026-11-09",
+    "what": "journalist-portugal@PrompTugal.vicky: report, S31 drafted; SA23 in my prompts file",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "e30f6d470"
+  },
+  {
+    "version": "v0.2.1465",
+    "date": "2026-11-09",
+    "what": "journalist@PrompTugal.vicky: report, 05:51 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "4a03ad174"
+  },
+  {
+    "version": "v0.2.1464",
+    "date": "2026-11-09",
+    "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 05:45, idle",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "06e3fc237"
+  },
+  {
+    "version": "v0.2.1463",
+    "date": "2026-11-09",
+    "what": "curator@PrompTugal.vicky: 05:30 run, desk review of the Road 2 Web Summit 78, S31 ready",
+    "by": "curator@PrompTugal.vicky",
+    "from": "3367413d4"
+  },
+  {
+    "version": "v0.2.1462",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 05:20 run, nothing to route, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "4b092c2c5"
+  },
+  {
+    "version": "v0.2.1461",
+    "date": "2026-11-09",
+    "what": "programme@PrompTugal.vicky: 05:00 run: the opening-day agenda live, the shortlist re-checked",
+    "by": "programme@PrompTugal.vicky",
+    "from": "f93554a58"
+  },
+  {
+    "version": "v0.2.1460",
+    "date": "2026-11-09",
+    "what": "04:50 orchestration wake: two films for Silvio, run logs, the newsroom's dark switch",
+    "by": "conductor@web-summit.silvio",
+    "from": "7725da861"
+  },
+  {
+    "version": "v0.2.1459",
+    "date": "2026-11-09",
+    "what": "two new films made and sent to Silvio: four real cases with the gap closed, and PrompTugal.news",
+    "by": "video@web-summit.silvio",
+    "from": "854d10544"
+  },
+  {
+    "version": "v0.2.1458",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "8105428d3"
+  },
+  {
+    "version": "v0.2.1457",
+    "date": "2026-11-09",
+    "what": "OVERNIGHT-9NOV closed: 100 company pages live, RWS in fix, Rapidoc skipped; all one-off wakes fired and disabled",
+    "by": "conductor@web-summit.vicky",
+    "from": "0493237a1"
+  },
+  {
     "version": "v0.2.1456",
     "date": "2026-11-09",
     "what": "runner.conductor@PrompTugal.angelo: 04:20 run, nothing to route, nothing urgent",

@@ -1,0 +1,95 @@
+{
+  "number": 18,
+  "date": "9 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Summit day one: page views are being lost now; Dinis is back online",
+  "when": "9 November 2026, 07:26 UTC (scheduled wake; since brief 17, 17:20 UTC yesterday)",
+  "by": "conductor@web-summit.jose",
+  "headline": "All five page-view lanes are full (5,000 pending at 07:26), so the site's page views are being lost from some time overnight until Dinis drains them or issues the tokens. Dinis's account came back at about 20:00 last night; his conductor relayed your token ask to Dinis at 20:29 (its brief 36, ask 1), not yet issued. Seven of your eight wake pointers are saved; only dev's is left, and the trial starts when it is.",
+  "stats": [
+    {
+      "n": "5,000",
+      "label": "page views waiting: all five lanes full (07:26); new views are being lost"
+    },
+    {
+      "n": "0 of 3",
+      "label": "tokens issued (conductor, vault, crm)"
+    },
+    {
+      "n": "7 of 8",
+      "label": "wake pointers saved; dev's is left"
+    },
+    {
+      "n": "0",
+      "label": "interview write-ups in your folder (three nights)"
+    }
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "🔑 Now: Dinis, one drain today or the tokens",
+      "detail": "The lanes have been full since overnight, so every page view from today's visitors is lost until someone drains. Dinis's conductor relayed your ask to Dinis at 20:29 yesterday (WS-170, its brief 36), but no token is issued yet. One line from you to Dinis at the stand: drain the page-view lanes once today, or issue the conductor's token so I drain them every hour.",
+      "options": [
+        "I ask Dinis this morning",
+        "accept losing page views today"
+      ],
+      "recommend": "Ask Dinis this morning, in person."
+    },
+    {
+      "id": "2",
+      "ask": "⏱️ Dev's pointer, with its new time, and its fresh session",
+      "detail": "The last pointer left (Actions row 0). Start dev's fresh session from the kit's start prompt plus 'Read people/jose/dev/HANDOVER.md first' (row 30) and point its task at it with the new time, every two hours 07:30 to 21:30. The trial's first full day is then tomorrow.",
+      "options": [
+        "today",
+        "after the summit"
+      ],
+      "recommend": "After the summit, unless you have 5 quiet minutes: dev's work is not urgent this week."
+    },
+    {
+      "id": "3",
+      "ask": "✅ The Agents board's data (row 5), when you have a minute",
+      "detail": "The board is live with last and next runs; the rest waits on your yes to the designer's small data.mjs addition (people/jose/design/agents-board/data-addition.md).",
+      "options": [
+        "yes",
+        "after the summit"
+      ],
+      "recommend": "Yes, if you want the board complete for the stand; otherwise after the summit."
+    }
+  ],
+  "you_asked": [],
+  "sections": [
+    {
+      "title": "Overnight",
+      "items": [
+        "Page views: lane 5 held 603 at 21:20 with 397 places left; all five lanes were full by 07:26. I last counted at 21:20 (my last wake of the day), so I cannot say when the lanes filled.",
+        "Your watcher (22:15): automation's and the dashboard's pointers saved at 20:11 and 20:12; only dev is left (A-06). Dinis's account back after 27 hours (A-21 partly closed).",
+        "Your agents: no commits since 21:20 apart from the watcher. I closed the watcher's A-06 task file: its runs did it, per agent (C39)."
+      ]
+    },
+    {
+      "title": "The accountant: 8 November, still a baseline day",
+      "items": [
+        "From the ledgers: about 104M tokens, 7.9M of them not cache reads, about $61, about the same as 7 November (about $60 with the writer priced at Opus rates). The costliest: the watcher ($19.86), dev ($12.33), the designer ($11.18, its first two scheduled wakes), the dashboard ($5.54).",
+        "The watcher still ran on Opus all day: its Sonnet switch (row 2) has not happened. The helper's ledger has one line for 8 November though it woke every two hours from 13:09: its other wakes measured nothing (likely they found nothing to do and stopped)."
+      ]
+    },
+    {
+      "title": "The team overnight",
+      "items": [
+        "Dinis's conductor: back at 20:29 ('8 wakes missed'), with your tokens as ask 1 in its brief 36 to Dinis; not yet issued.",
+        "Vicky's and Angelo's agents most active; Indi's prompter: an FAQ and a team app brief.",
+        "For you, from Dinis (650bffa0, 23:52, WS-199): which of the three apps do you want your agents on: the event app (PT News, public, light), the team app (private data, never in a store) or the RiskMandate app (public demos for customers)? Your answer goes to his conductor in a commit; tell me which and I send it.",
+        "Your watcher (07:15 today): no security review by Dinis's security agent for about 44 hours (High, for Dinis)."
+      ]
+    }
+  ],
+  "next": [
+    "Every hour, 08:20 to 21:20: the lanes counted and drained the moment a token is sealed to me."
+  ],
+  "sources": [
+    "telemetry_drain.py --dry (21:20, 07:26)",
+    "git log origin/dev since 21:20; watcher 5c3e12e3; conductor@web-summit.dinis 230d1ab6, 650bffa0",
+    "data/sealed/agents/ (no token sealed)",
+    "your Drive folder (titles only: no new files)"
+  ]
+}
