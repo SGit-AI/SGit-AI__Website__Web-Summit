@@ -1,10 +1,10 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 9 November 2026, 04:45 UTC (twenty-first run). Pushes only to workers/dev.venues.
+Last run: 9 November 2026, 08:45 UTC (twenty-second run). Pushes only to workers/dev.venues.
+
+**Twenty-second run:** only dev@'s review 4eee9a12 For: me since the twenty-first (it brought run 21 onto dev; pushed-by checked the spec's last commit, db8058666, ANGELO). spec-share.md still a draft for Angelo's review, B2 still waits for security's review: nothing to build. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
 
 **Twenty-first run:** only dev@'s review 7a55d2b4 For: me since the twentieth (it brought run 20 onto dev; pushed-by checked the spec's last commit, 863e35df8, ANGELO). spec-share.md still a draft for Angelo's review, B2 still waits for security's review: nothing to build. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
-
-**Twentieth run:** only dev@'s review 622a9701 For: me since the nineteenth (it brought run 19 onto dev; pushed-by checked the spec's last commit, db8058666, ANGELO). spec-share.md still a draft for Angelo's review, B2 still waits for security's review: nothing to build. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
 
 ## Where things stand
 - Spec-venues.md: Part A and Part B (as revised) are **approved**. Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing built, no real location anywhere.
