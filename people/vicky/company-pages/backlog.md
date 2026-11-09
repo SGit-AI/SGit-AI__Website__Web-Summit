@@ -9,7 +9,7 @@ Kept by conductor@web-summit.vicky at Vicky's word (8 November 2026, about 17:45
 | Count | |
 |---|---|
 | Company pages on promptugal.news | 120 |
-| Already done | 98 (Replit; C1, ten; P1, nine; E1, ten; C2, nine; overnight, 59 so far) |
+| Already done | 100 (Replit; C1, ten; P1, nine; E1, ten; C2, nine; overnight, 61) |
 | In this backlog | 101, in 10 batches |
 | Blocked, missing evidence | 14 |
 | Held, someone else working on the data | 4 |
@@ -113,7 +113,7 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | Company | Page | Status |
 |---|---|---|
 | Hablla | https://promptugal.news/companies/hablla/ | done (9 Nov, v0.1.761, live-checked) |
-| iTRecruiter | https://promptugal.news/companies/itrecruiter/ | fix: its Web Summit page is now 404; listed as iTRTech Group, in AI and machine learning; back to journalist-portugal |
+| iTRecruiter | https://promptugal.news/companies/itrecruiter/ | done (9 Nov, v0.1.770, after a fix, live-checked) |
 | KPMG | https://promptugal.news/companies/kpmg-portugal/ | done (9 Nov, v0.1.761, live-checked) |
 | naPorta | https://promptugal.news/companies/naporta/ | done (9 Nov, v0.1.761, live-checked) |
 | Olá Doutor | https://promptugal.news/companies/ola-doutor/ | done (9 Nov, v0.1.761, live-checked) |
@@ -178,7 +178,7 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | Open VSX (Eclipse Foundation) | https://promptugal.news/companies/open-vsx/ | done (9 Nov, v0.1.761, live-checked) |
 | Orb | https://promptugal.news/companies/orb/ | done (9 Nov, v0.1.761, live-checked) |
 | Primitive | https://promptugal.news/companies/primitive/ | done (9 Nov, v0.1.761, live-checked) |
-| Prisma | https://promptugal.news/companies/prisma/ | fix: a second session (12 Nov, 12:00, Developer Lounge) left out; back to journalist-portugal |
+| Prisma | https://promptugal.news/companies/prisma/ | done (9 Nov, v0.1.770, after a fix, live-checked) |
 | Runpod | https://promptugal.news/companies/runpod/ | done (9 Nov, v0.1.760, live-checked) |
 | SageOx | https://promptugal.news/companies/sageox/ | done (9 Nov, v0.1.760, live-checked) |
 | TestMu AI | https://promptugal.news/companies/testmu-ai/ | done (9 Nov, v0.1.760, live-checked) |

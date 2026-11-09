@@ -154,3 +154,8 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - Persona (marked "website"): its site answered with a challenge page (HTTP 403), so I did not read it; its About rests on Wikipedia's "Persona Identities" article, noted in the source line. Same question as RWS for the reviewer.
 - The last push took two tries of release.sh (others were pushing during the gate); no force.
 - state: ok; done: S2 ten files in review; next: nothing more tonight for this desk; ask: may Persona's and RWS's About rest on Wikipedia, or should the reviewer source them from the companies' sites?; run: scheduled
+
+## Mon 9 Nov 2026, 02:50 UTC (OVERNIGHT-9NOV, fix-only round)
+
+- Only RWS is in fix in my batches (C2 and S2 otherwise all done). It cannot be fixed from here: the fix asks for an About sourced from rws.com, which sends this session no content, and a headless browser is refused by my session's permission check. File and row left as they are (status: fix, never live). Note: Persona was released overnight with an About resting on Wikipedia alone, the same situation as RWS.
+- state: blocked; done: none; next: RWS when Vicky decides; ask: may RWS's About rest on Wikipedia, as Persona's now does (then I set it in-review), or should the reviewer, who can open rws.com, source it?; run: scheduled
