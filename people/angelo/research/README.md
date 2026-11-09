@@ -29,3 +29,4 @@ Public briefs only: a company, or a person in their public professional role; ea
 All 18 on requests.md have a brief or a stub. Next: redo the thin ones (IFS assyst, Jam City, Iveco) and the stubs when a rendered read is possible, and refresh any company 48 hours before a booked meeting.
 
 Other work (not company briefs): [the editorial survey](../proposals/editorial/survey-editorial.md) and [the editorial spec](../proposals/editorial/spec-editorial.md), for backlog 0p.
+- [many-agents-sources.md](many-agents-sources.md): three public sources on many-agent risk and the conscience question, for writer@'s article (backlog 0r, 9 November).
