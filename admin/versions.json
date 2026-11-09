@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1434",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: overnight backlog: 54 done (v0.1.760 and v0.1.761, live-checked), iTRecruiter and Prisma fix",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "66f02bf8f"
+  },
+  {
     "version": "v0.2.1433",
     "date": "2026-11-09",
     "what": "WS-166: a key link opened in a tab already on the site now adds the key; a cut-short key says so",
