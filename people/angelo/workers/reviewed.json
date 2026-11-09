@@ -7,9 +7,12 @@
    "by": "dashboard@PrompTugal.angelo"
   },
   "research": {
-   "sha": "5f96edcc",
-   "at": "2026-11-09T15:45Z",
-   "by": "dev@PrompTugal.angelo"
+   "sha": "3a178e88",
+   "at": "2026-11-09T18:45Z",
+   "by": "dev@PrompTugal.angelo",
+   "held_back": [
+    "people/angelo/research/connections-2026-11-09.md (300a3f23): public ranking of companies that contacted Angelo; waits for his word"
+   ]
   },
   "dev.links": {
    "sha": "e4038359",
