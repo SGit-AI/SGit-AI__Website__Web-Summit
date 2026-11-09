@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1452",
+    "date": "2026-11-09",
+    "what": "WS-160: I log every run (signed); the line for Silvio's other scheduled agents",
+    "by": "dev@web-summit.silvio",
+    "from": "be2f3ff6f"
+  },
+  {
     "version": "v0.2.1451",
     "date": "2026-11-09",
     "what": "runner.conductor@PrompTugal.angelo: 03:20 run, nothing to route, nothing urgent",
