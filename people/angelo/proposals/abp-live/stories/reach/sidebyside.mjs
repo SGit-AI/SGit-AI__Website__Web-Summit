@@ -62,7 +62,7 @@ function start(which = 'main') {
         s.child = spawn('node', [path.join(HERE, 'trial.mjs'), scenario, String(s.rung), s.dir],
             { env: { ...process.env, TRIAL_MODEL: model, TRIAL_LABEL: label }, stdio: ['ignore', 'pipe', 'pipe'] })
         s.out = ''; s.child.stdout.on('data', d => s.out += d); s.child.stderr.on('data', d => process.stderr.write(d))
-        s.child.on('exit', code => { s.done = true; s.code = code; console.log(`side ${s.rung ? 'right' : 'left'} (rung ${s.rung}) ended: ${code === 0 ? 'ok' : 'exit ' + code}`) })
+        s.child.on('exit', code => { s.done = true; s.code = code; s.ended = Date.now(); console.log(`side ${s.rung ? 'right' : 'left'} (rung ${s.rung}) ended: ${code === 0 ? 'ok' : 'exit ' + code}`) })
     }
     pair = { model: which, label, started: new Date().toISOString(), sides }
     console.log(`pair started: ${title}, rung 0 against rung ${RIGHT}, the ${label} model on both`)
@@ -72,7 +72,11 @@ const side = s => {
     let run = null
     try { if (fs.existsSync(path.join(s.dir, 'gw/config.json'))) run = stepsOf(s.dir) } catch { }
     if (run && !s.done) run.steps = run.steps.filter(x => x.k !== 'end')         // the verdict only once the agent has finished
-    return { rung: s.rung, state: s.done ? (s.code === 0 ? 'done' : 'failed') : 'running', run }
+    // tokens and time (review point 6): the time from the pair's start to this side's end, the tokens from the agent's own
+    // result (trial.json; null when it gave none, shown as "not recorded")
+    let tokens = null; try { tokens = JSON.parse(fs.readFileSync(path.join(s.dir, 'gw/trial.json'), 'utf8')).tokens ?? null } catch { }
+    const secs = Math.round(((s.ended || Date.now()) - Date.parse(pair.started)) / 1000)
+    return { rung: s.rung, state: s.done ? (s.code === 0 ? 'done' : 'failed') : 'running', run, tokens, secs }
 }
 function live() {
     const base = { title, right: RIGHT, alt: !!ALT }
@@ -82,7 +86,7 @@ function live() {
     return { ...base, state, model: pair.label, started: pair.started, left: sides[0], rightSide: sides[1] }
 }
 // the comparison, from both runs' records: labels and counts only
-const card = r => r && { read_beyond: r.steps.filter(s => s.k === 'read').flatMap(s => s.files).filter(f => f.c !== 'need' && !f.refused).map(f => f.f),
+const card = (r, sd) => r && { tokens: sd.tokens, secs: sd.secs, read_beyond: r.steps.filter(s => s.k === 'read').flatMap(s => s.files).filter(f => f.c !== 'need' && !f.refused).map(f => f.f),
     stopped: r.refused, held: r.held, overreach: r.overreach, secrets: r.seen.secrets, data: r.seen.data, job: r.job }
 
 if (ONCE) {
@@ -90,7 +94,7 @@ if (ONCE) {
     await Promise.all(pair.sides.map(s => new Promise(ok => s.done ? ok() : s.child.on('exit', ok))))
     const L = live()
     for (const s of pair.sides) console.log(s.out.trim())
-    console.log(JSON.stringify({ title, model: L.model, left: card(L.left.run), right: card(L.rightSide.run) }))
+    console.log(JSON.stringify({ title, model: L.model, left: card(L.left.run, L.left), right: card(L.rightSide.run, L.rightSide) }))
     clean(); process.exit(L.state === 'done' ? 0 : 1)
 }
 const FILES = { '/': 'sidebyside.htm', '/sidebyside.htm': 'sidebyside.htm' }
