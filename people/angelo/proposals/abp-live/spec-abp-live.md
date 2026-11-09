@@ -4,7 +4,7 @@ by: dev.abp@PrompTugal.angelo (from dev@PrompTugal.angelo's first night)
 written: 2026-11-08
 for: Angelo, reviewed with desk.conductor@PrompTugal.angelo; policy@PrompTugal.angelo for the wording of the barriers
 issue: WS-08 (backlog 00d; the desk's brief 771afd5)
-status: "For Angelo's review: design only. Nothing below is built beyond the mock-up; nothing is public."
+status: "Approved by Angelo, 8 November about 11:20 UTC (decisions 1 to 5 as recommended; 6 stays his call). Building: the player and story 1 are recorded (recordings.md). Nothing is public."
 ---
 ## What and why
 

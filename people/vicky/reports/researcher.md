@@ -106,3 +106,29 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
 - Participants: 20 speakers from the first view of the speakers page, by name, role and organisation, grouped by theme (robotics, AI models, mobility and devices, infrastructure and security, investment and policy); the AgiBot A3 robot is now listed, which the 5 November capture could not confirm ([Web Summit, "Meet Web Summit's 2026 speakers"](https://websummit.com/speakers/)).
 - state: ok; done: SA19C applied, 1 participants capture; next: what each organisation does, and the partners and startup pages, from 14:15; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 14:15 UTC run (participants)
+
+- decisions.md read first (standing answer 22 is new, not for me; no HOLD.md); prompts file re-read, no difference.
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Participants: 100 startups from page 1 of 26 of Web Summit's featured startups, under the page's own industry tags (30 in AI and machine learning, 11 fintech, 11 healthtech, 6 hardware and robotics, and more) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)). The partners page lists past speakers only, so nothing from it.
+- state: partial; done: 1 participants capture; next: pages 2 to 26 and what the speakers' organisations do, at the next runs; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 18:15 UTC run (participants)
+
+- decisions.md read first (seven new commits, all on company pages, the reviewer and the checker, none for me; no HOLD.md); prompts file re-read, no difference.
+- 1 capture revised in vault 41j3e9s9 (0 new files): the 100 featured startups now carry country, programme stage and their own one-line pitch, quoted; four are Portuguese (ChatPlace, DIG-IN, iTRTech Group, sheerME) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)). The first security review failed on a web address inside a pitch; addresses are now cut and marked, and the second review passed.
+- Could not: pages 2 to 26 load through Web Summit's API, not the page, so only page 1's 100 are captured.
+- state: partial; done: startups capture enriched and audited; next: what the speakers' organisations do; ask: may I read pages 2 to 26 through the API the page itself calls (graphql.cilabs.com, public, no login)? Recommended: yes, read-only, same fields; run: scheduled
+
+## Sun 8 Nov 2026, about 19:00 UTC (one-off, at Vicky's word)
+
+- Correction to my 18:15 report: the featured startups page does not load pages 2 to 26 from graphql.cilabs.com (that is its shop and checkout service); its own configuration says the list comes from Algolia, with a setting of 20 items free without login ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)). The page itself renders only page 1, whatever the page parameter.
+- Vicky's permission covered graphql.cilabs.com only, so I read nothing from Algolia and did not probe graphql.cilabs.com for a list it does not serve; 0 captures went into vault 41j3e9s9. Coverage stays 100 of the startups (page 1 of 26), 20 speakers; nothing new for the curator from this run.
+- state: blocked; done: checked the page's real data source, corrected my report; next: the regular runs, unchanged; ask: may I read pages 2 to 26 from the Algolia search the page uses, with the page's own public search key, read-only, the same five company fields, slowly? Recommended: only if Vicky is content that the "20 free without login" setting is not an access limit we would be going around; otherwise leave it at page 1; run: prompted
+
+## Sun 8 Nov 2026, about 19:25 UTC (Vicky's word: pages 2 to 26 left)
+
+- Pages 2 to 26 left for now and no Algolia queries, at Vicky's word; the gap is recorded in the capture itself and in my prompts file (standing rules 5 and 6). 0 new captures; 1 capture's note revised in vault 41j3e9s9, audited and pushed.
+- For the curator: captures/2026-11-08-websummit-featured-startups-p1.md holds 100 featured startups (page 1 of 26, all GROWTH stage) by industry, with country, stage and each company's own pitch marked as a claim, not a checked fact; four are Portuguese. With captures/2026-11-08-websummit-speakers-by-theme.md (20 speakers by theme) it is ready for theme-led connection storylines (standing answer 19) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)).
+- state: ok; done: gap recorded, curator pointed at the two participant captures; next: regular runs from 05:15, public pages only; ask: none; run: prompted

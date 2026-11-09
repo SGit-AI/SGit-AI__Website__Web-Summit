@@ -168,11 +168,13 @@ function office(ROOT) {
     const hhmm = (h, m) => `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`
     const cronTimes = c => { const [m, h, ...rest] = String(c || '').trim().split(/\s+/); if (!/^\d+$/.test(m) || !/^[\d,]+$/.test(h || '') || rest.join(' ') !== '* * *') return []; return h.split(',').map(x => hhmm(+x, +m)) }
     let tasks = []; try { tasks = JSON.parse(read('schedule.json')).tasks || [] } catch { }
-    const live = t => !t.state || t.state === 'enabled', cron = {}, rounds = {}
+    // quiet: the times of runs that may end with no record at all (a fix-only follow-up with nothing to fix writes nothing)
+    const live = t => !t.state || t.state === 'enabled', cron = {}, rounds = {}, quietAt = {}
     for (const t of tasks.filter(live)) {
         const short = String(t.agent || '').split('@')[0]; if (!names[short] || NO_TIMES.has(short)) continue
         cron[short] = [...new Set([...(cron[short] || []), ...cronTimes(t.cron_utc)])].sort()
         const kind = /fix-only/i.test(t.task) ? 'fix' : /re-check/i.test(t.task) ? 'recheck' : /first review/i.test(t.task) ? 'first' : null
+        if (kind === 'fix') quietAt[short] = [...new Set([...(quietAt[short] || []), ...cronTimes(t.cron_utc)])].sort()
         if (kind && !rounds[kind]) rounds[kind] = cronTimes(t.cron_utc).length
     }
     // confirmed: the author times of the last commits carrying "Agent: <name>"; no git, no times (never a failure)
@@ -186,14 +188,41 @@ function office(ROOT) {
             for (const rec of out.split('\x1e').slice(1)) {
                 const [at, body = ''] = rec.split('\x1f'), short = who[((body.match(/^Agent:\s*(\S+)\s*$/m) || [])[1] || '').toLowerCase()]
                 if (!short || NO_TIMES.has(short)) continue
-                ;(confirmed[short] ||= []).length < 3 && confirmed[short].push(utc(at))
+                ;(confirmed[short] ||= []).length < 12 && confirmed[short].push(utc(at))
             }
             dataAt = utc(cp.execFileSync('git', ['log', '-1', '--format=%cI'], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim())
         }
     } catch { }
     // the status word of each agent's last report entry (its last "state:" line), and whether that entry says URGENT
+    // run evidence, preferred over commit times: each dated entry of the agent's report ("## Sun 8 Nov 2026, 10:50 UTC ..."
+    // or "- Sat 7 Nov 2026, 22:20 UTC ..."), as its time and its state word only (the text is never copied)
+    const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    const runsOf = short => {
+        // the forms in use: "## Sun 8 Nov 2026, 10:50 UTC", "## 7 November 2026, 07:40 UTC", "## 7 November, 08:20 UTC" (the
+        // year then is the data's), "- Sat 7 Nov 2026, about 10:30 UTC"
+        const t = read(`reports/${short}.md`), heads = [...t.matchAll(/^(?:#{2,3}\s+|-\s+)(?:(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)[a-z]*,?\s+)?(\d{1,2})\s+([A-Z][a-z]+)(?:\s+(\d{4}))?,?\s+(?:about\s+)?(\d{1,2}):(\d{2})\s*UTC/gm)]
+        const year = +(dataAt || '2026').slice(0, 4)
+        return heads.map((m, i) => {
+            const mo = MONTHS.indexOf(m[2].slice(0, 3)); if (mo < 0) return null
+            m[3] = m[3] || year
+            const body = t.slice(m.index, i + 1 < heads.length ? heads[i + 1].index : t.length), st = [...body.matchAll(/state:\s*(ok|partial|idle|blocked|failed)\b/gi)].pop()
+            const et = Date.UTC(+m[3], mo, +m[1], +m[4], +m[5]), iso = x => new Date(x).toISOString().slice(0, 16) + 'Z'
+            // a fix-only run is silent when there is nothing to fix; the journalist's next writing run (the same session)
+            // may say how it went, "fix-only 11:56: nothing to fix" or "fix-only 11:56: revised <draft>": that is evidence
+            // for the fix-only run, dated to its own time (the day before when the time is later than the entry's)
+            const fix = [...body.matchAll(/fix-only (\d{1,2}):(\d{2})(?: UTC)?: (nothing to fix|idle|revised)/gi)].map(f => {
+                let ft = Date.UTC(+m[3], mo, +m[1], +f[1], +f[2]); if (ft > et) ft -= 864e5
+                return { at: iso(ft), state: /revised/i.test(f[3]) ? 'ok' : 'idle', urgent: false }
+            })
+            return [{ at: iso(et), state: st ? st[1].toLowerCase() : null, urgent: /\bURGENT\b/.test(body) }, ...fix]
+        }).filter(Boolean).flat().sort((x, y) => y.at.localeCompare(x.at)).slice(0, 12)
+    }
+    // the agents whose rules make them write a report line on every run, "state: idle" when there is nothing to do (P3,
+    // now in every agent's prompts: decisions.md, SA16 and its For: list): for them, and only for those with a dated
+    // report on file, a run that leaves no report at all can be called late
+    const every = new Set(((read('decisions.md').match(/\*\*SA16,[^\n]*?For: ([^\n]+)/) || [])[1] || '').replace(/\.\s*$/, '').split(/,\s*/).map(x => x.trim()).filter(Boolean))
     const report = short => {
-        const t = read(`reports/${short}.md`), all = [...t.matchAll(/state:\s*(ok|partial|idle|blocked)\b/gi)]
+        const t = read(`reports/${short}.md`), all = [...t.matchAll(/state:\s*(ok|partial|idle|blocked|failed)\b/gi)]
         if (!all.length) return { status: null, urgent: false }
         const last = all[all.length - 1], before = t.slice(0, last.index), start = Math.max(before.lastIndexOf('\n## '), before.lastIndexOf('\n- '), 0)
         return { status: last[1].toLowerCase(), urgent: /\bURGENT\b/.test(t.slice(start, t.indexOf('\n', last.index) < 0 ? t.length : t.indexOf('\n', last.index))) }
@@ -201,7 +230,7 @@ function office(ROOT) {
     const list = Object.keys(ROLES).filter(s => names[s]).map(short => {
         const [area, role] = ROLES[short], quiet = NO_TIMES.has(short)
         const r = quiet ? { status: null, urgent: false } : report(short)
-        return { short, role, area, on_demand: quiet || !(cron[short] || []).length, cron: quiet ? [] : (cron[short] || []), confirmed: quiet ? [] : (confirmed[short] || []), status: r.status, urgent: r.urgent }
+        return { short, role, area, on_demand: quiet || !(cron[short] || []).length, cron: quiet ? [] : (cron[short] || []), quiet: quiet ? [] : (quietAt[short] || []), reports_every_run: !quiet && every.has(short) && runsOf(short).length > 0, runs: quiet ? [] : runsOf(short), confirmed: quiet ? [] : (confirmed[short] || []), status: r.status, urgent: r.urgent }
     })
     // the newsroom strip, from files on this site: the curator's candidates, the reports' status words, the schedule
     const cand = read('stories/candidates.md'), writers = list.filter(a => a.area === 'writing')
@@ -251,6 +280,7 @@ function office(ROOT) {
 .k-inferred { border-color: var(--line-2); color: var(--ink-2); opacity: .7 }
 .k-late { background: var(--warn-soft); color: var(--warn); border-color: var(--warn) }
 .k-unconfirmed { border: 2px dotted var(--ink-2); color: var(--ink-2) }
+.k-idle { background: var(--ok-soft); color: var(--ok); border-color: var(--ok) }
 .k-error { background: var(--bad); color: var(--accent-ink, #fff); border-color: var(--bad) }
 .k-ondemand { background: var(--wait-soft); color: var(--wait); border-color: var(--line-2) }
 .office-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.2rem, 1fr)); gap: .4rem; list-style: none; padding: 0; margin: .5rem 0 1.25rem; counter-reset: st }
@@ -265,17 +295,19 @@ function office(ROOT) {
 .office-wrap { overflow-x: auto }
 @media (max-width: 600px) { .office-table th:nth-child(2), .office-table td:nth-child(2), .office-table th:nth-child(3), .office-table td:nth-child(3) { display: none } .office-table th[scope=row] { white-space: normal } }
 </style>`
-    const body = `<p>Vicky's AI agents at work, drawn as an office: each agent has a desk in its team's room, walks to it when a run is due, and rests in the lounge between runs. Tap a figure to see who it is and what we know.</p>
+    const body = `<p>Vicky's AI agents at work, drawn as an office: each agent has a desk in its team's room, walks to it when a run is due, and rests between runs. Tap a figure to see who it is and what we know. A run is judged by the agent's own report first, then by its commits.</p>
 <p class="office-banner" id="office-banner" aria-live="polite">Near-live: updated with each site release, last data <b>${esc(at)} UTC</b>.</p>
 <div class="office-stage"><canvas id="office-canvas" width="720" height="420" role="img" aria-label="An animated office of Vicky's agents; the same facts are in the table below">Your browser shows no canvas; the table below has the same facts.</canvas></div>
 <p class="office-detail" id="office-detail" aria-live="polite"></p>
 <h2>How to read it</h2>
 <ul class="office-legend">
-<li><span class="office-key k-confirmed">12:05</span><span><b>Confirmed</b>: the agent committed its work; the badge shows when (UTC). Solid, because the site's record shows it.</span></li>
-<li><span class="office-key k-scheduled">due</span><span><b>Scheduled</b>: a run is due at the time shown (dashed outline), from its schedule. Nothing has happened yet.</span></li>
-<li><span class="office-key k-inferred">?</span><span><b>Inferred</b>: the run should be under way (faded, with a "?"), from the due time until a commit confirms it or 30 minutes pass; then it shows <span class="office-key k-late">late</span> if the published data reaches past those 30 minutes.</span></li>
-<li><span class="office-key k-unconfirmed">unconfirmed</span><span><b>Unconfirmed</b>: the run was due over 30 minutes ago, but the published data is older than that, so it is not known yet whether it ran.</span></li>
-<li><span class="office-key k-error">!</span><span><b>Error</b>: the agent's last report says blocked or URGENT.</span></li>
+<li><span class="office-key k-confirmed">12:05</span><span><b>Confirmed</b>: the run happened. The agent's report shows it, or a commit does; a commit is not needed. The badge gives the time (UTC).</span></li>
+<li><span class="office-key k-idle">idle 12:05</span><span><b>Idle</b>: the run happened and found nothing to do, by the agent's report. No commit is needed.</span></li>
+<li><span class="office-key k-scheduled">due 12:05</span><span><b>Scheduled</b>: the next run is due at the time shown and has not started yet.</span></li>
+<li><span class="office-key k-inferred">running?</span><span><b>Running (inferred)</b>: within the run's expected 30 minutes; it may still be at work, not confirmed yet (a faded figure at its desk).</span></li>
+<li><span class="office-key k-late">late</span><span><b>Late</b>: the run should have finished, the agent writes a report on every run, and none is there, though the published data is recent enough to show it.</span></li>
+<li><span class="office-key k-unconfirmed">unknown</span><span><b>Unknown</b>: the data cannot tell whether the run happened: it is older than the run's 30 minutes, or the run is a fix-only follow-up (it leaves no record when there is nothing to fix), or the agent keeps no dated report.</span></li>
+<li><span class="office-key k-error">!</span><span><b>Error</b>: the agent's latest report says blocked, failed or URGENT.</span></li>
 <li><span class="office-key k-ondemand">On demand</span><span><b>On demand</b>: works only when Vicky asks; no times are shown for the inbox or the vault agent.</span></li>
 </ul>
 <h2>The newsroom</h2>
@@ -285,6 +317,6 @@ function office(ROOT) {
 <p class="meta">Built from <code>people/vicky/schedule.json</code>, the site's commit record, the agents' reports and <code>people/vicky/stories/candidates.md</code>, at each site release: facts as of the last data time above. Characters and furniture are original pixel art (<a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/office/CREDITS.md">credits</a>).</p>
 <script type="application/json" id="office-data">${embed}</script>
 <script src="office.js" defer></script>`
-    const md = `Vicky's AI agents as an office, near-live: updated with each site release, last data ${at} UTC. States: confirmed (a commit shows the work), scheduled (a run is due), inferred (a run should be under way; late after 30 minutes without a commit, when the data reaches that far; unconfirmed when it does not), error (blocked or URGENT), on demand.\n\n## The newsroom\n\n${newsroom.map(n => `- ${n.stage}: ${n.count}${n.of ? ` of ${n.of}` : ''} ${n.unit}`).join('\n')}\n\n## Who is where\n\n| Agent | Job | Room | Runs (UTC) | Last confirmed (UTC) | Last report |\n|---|---|---|---|---|---|\n${list.map(a => `| ${a.short} | ${a.role} | ${AREAS[a.area]} | ${when(a)} | ${a.confirmed[0] ? a.confirmed[0].replace('T', ' ').replace('Z', '') : (a.on_demand && NO_TIMES.has(a.short) ? 'not shown' : 'none')} | ${a.urgent ? 'URGENT' : a.status || 'none'} |`).join('\n')}\n\nThe same facts as JSON are inside the page, in its office-data block.`
+    const md = `Vicky's AI agents as an office, near-live: updated with each site release, last data ${at} UTC. States: confirmed (the agent's report or a commit shows the run; a commit is not needed), idle (the report says the run found nothing to do), scheduled (the next run is due), running (inferred: within the run's expected 30 minutes), late (no report from an agent that reports on every run, with data recent enough to tell), unknown (the data cannot tell, for example a fix-only run that leaves no record when there is nothing to fix), error (the latest report says blocked, failed or URGENT), on demand.\n\n## The newsroom\n\n${newsroom.map(n => `- ${n.stage}: ${n.count}${n.of ? ` of ${n.of}` : ''} ${n.unit}`).join('\n')}\n\n## Who is where\n\n| Agent | Job | Room | Runs (UTC) | Last confirmed (UTC) | Last report |\n|---|---|---|---|---|---|\n${list.map(a => `| ${a.short} | ${a.role} | ${AREAS[a.area]} | ${when(a)} | ${a.confirmed[0] ? a.confirmed[0].replace('T', ' ').replace('Z', '') : (a.on_demand && NO_TIMES.has(a.short) ? 'not shown' : 'none')} | ${a.urgent ? 'URGENT' : a.status || 'none'} |`).join('\n')}\n\nThe same facts as JSON are inside the page, in its office-data block.`
     return [{ rel: 'people/vicky/office/index.html', title: 'The Live AI Office', description: "Vicky's AI agents as a near-live pixel-art office: who is at their desk, who is due, who is late, and the newsroom's pipeline, updated with each site release.", body, head, md }]
 }

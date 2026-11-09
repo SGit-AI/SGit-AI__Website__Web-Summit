@@ -1,6 +1,10 @@
 # dev.links STATE
 
-Last run: 8 November 2026 (run 5).
+Last run: 8 November 2026 (run 7).
+
+- Run 7: the sitemap is 1,412 pages; crawled page 1411 (offline/index.html, 11 requests in all): 200, no new broken link. Rechecked: qase and paul-jenkinson websummit.com pages still 404; algarveevolution.pt still times out (could not check). Next run: re-crawl from page 1412 for new pages. Note: crawl.mjs's last page is exclusive (1411 1412 fetches one page). The worker branch had to be rebuilt on dev (its old commits were already brought onto dev by reviews), so this run's commit sets the tree to dev's plus this change.
+
+- Run 6: the sitemap is 1,411 pages; crawled the new tail (1408 to 1410, 17 requests): all 200, no new broken link. Rechecked the 404s: startupportugal pt, anje.pt PDF and websummit.com qase still 404; algarveevolution.pt still unreachable (could not check). 10b is with Dinis's team (backlog 0b). Next run: re-crawl from page 1411 for new pages.
 
 - Run 5: the sitemap is 1,408 pages; crawled the new tail (1400 to 1407, 39 requests): all 200, no new broken link. Rechecked the five 404 sources I can reach: the same four 404s (startupportugal pt, anje.pt PDF, websummit.com qase and paul-jenkinson); algarveevolution.pt still times out (could not check). Two github.com links (WS-177 board file, newsroom REALITY.md) answered 504: could not check, a transient, not broken. Next run: re-crawl from page 1408 for new pages. The newsroom's repository is not attached to this task, so backlog 10b and any newsroom fix wait for dev@ (backlog 0b).
 

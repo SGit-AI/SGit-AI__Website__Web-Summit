@@ -55,6 +55,99 @@
             }
         }
 
+        // ---------- the Agents board, at the top of the command centre (task 2026-11-07, C31 and C33; Jose's own app only) ----------
+        // One row per agent of Jose's, in his order. Last run: the newest agent-log record (WS-160; a newer commit wins), read in this browser from the
+        // public observability vault the site already publishes (latest/agents.json, the same file and reader as assets/obs-view.js,
+        // its published read key taken from people/dinis/vaults.json), else the newest commit (D.collab). "On demand": no schedule
+        // cron in agents.json (C33). Amber only when it can be judged: the log loaded and is fresh, the agent has logged before, a
+        // scheduled slot passed 40 minutes ago with no run since; never because there was no commit, never for the conductor while
+        // the log cannot tell its hourly drain from its wake (C33, 2). Doing now, Waiting on me and red need data.mjs: Jose's yes first.
+        const BOARD_ORDER = ['conductor', 'automation', 'crm', 'dashboard', 'designer', 'dev', 'helper', 'sales-coach', 'vault', 'watcher']
+        const LOG = { state: 'idle', agents: null, generated: null, error: '' }
+        function loadLog() {
+            if (LOG.state !== 'idle') return
+            LOG.state = 'loading'
+            const dec = new TextDecoder()
+            Promise.all([load('../../../assets/vendor/sgit-ai/2026-11-05/vault-embed.js'), fetch('../../dinis/vaults.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : Promise.reject(new Error('vaults ' + r.status)))])
+                .then(async ([, V]) => {
+                    const v = (Array.isArray(V) ? V : V.vaults || []).find(x => x.vault_id === 'aym98gsm' && /^sgit_public_read_[0-9a-f]{64}$/.test(x.read_key || ''))
+                    if (!v || !window.SGVaultEmbed) throw new Error('no published reader')
+                    const cfg = { endpoint: 'https://dev.send.sgraph.ai', vault_id: v.vault_id, read_key: v.read_key.replace(/^sgit_public_read_/, '') }
+                    const R = await new window.SGVaultEmbed.Reader(cfg).init()
+                    const refId = 'ref-pid-muw-' + await R.fileId('sg-vault-v1:file-id:ref:' + cfg.vault_id)
+                    const ref = JSON.parse(dec.decode(await R.decrypt(await R.raw('bare/refs/' + refId))))
+                    let id = (await R.objJson(ref.commit_id)).tree_id, entry = null
+                    for (const part of ['latest', 'agents.json']) {
+                        const t = await R.objJson(id), m = {}
+                        for (const e of t.entries || []) m[await R.decB64(e.name_enc)] = e
+                        entry = m[part]; if (!entry) throw new Error('not in the vault: latest/agents.json')
+                        if (entry.tree_id) id = entry.tree_id
+                    }
+                    const A = JSON.parse(dec.decode(await R.obj(entry.blob_id)))
+                    LOG.agents = Object.fromEntries((A.agents || []).map(a => [a.agent, a])); LOG.generated = A.generated || null; LOG.state = 'ok'
+                })
+                .catch(e => { LOG.state = 'failed'; LOG.error = e.message })
+                .finally(() => { if (!mine()) agentsBoard() })
+        }
+        const logTime = s => s ? Date.parse(String(s).replace(/Z$/, '').length === 16 ? String(s).replace(/Z?$/, ':00Z') : s) : NaN
+        // the cron schedules in a schedule string; minute and hour fields (lists, ranges, steps, *), the other three must be *
+        function crons(schedule) {
+            const field = (f, max) => { const out = new Set(); for (const part of String(f).split(',')) { let m
+                if (part === '*') for (let i = 0; i <= max; i++) out.add(i)
+                else if ((m = part.match(/^\*\/(\d+)$/)) && +m[1] > 0) for (let i = 0; i <= max; i += +m[1]) out.add(i)
+                else if ((m = part.match(/^(\d+)-(\d+)(?:\/(\d+))?$/)) && +m[2] <= max) for (let i = +m[1]; i <= +m[2]; i += +(m[3] || 1)) out.add(i)
+                else if (/^\d+$/.test(part) && +part <= max) out.add(+part)
+                else return null } return [...out] }
+            return [...String(schedule || '').matchAll(/\bcron\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)/g)].map(m => {
+                if (m[3] !== '*' || m[4] !== '*' || m[5] !== '*') return null
+                const mins = field(m[1], 59), hrs = field(m[2], 23)
+                return mins && hrs ? hrs.flatMap(h => mins.map(mi => h * 60 + mi)).sort((a, b) => a - b) : null
+            }).filter(Boolean)
+        }
+        // slot instants (UTC) of one cron, between two times
+        const slotsOf = (mins, from, to) => { const out = [], d0 = Date.UTC(new Date(from).getUTCFullYear(), new Date(from).getUTCMonth(), new Date(from).getUTCDate()); for (let d = d0; d <= to; d += 864e5) for (const t of mins) { const x = d + t * 6e4; if (x >= from && x <= to) out.push(x) } return out.sort((a, b) => a - b) }
+        const wakeCrons = (name, schedule) => { const c = crons(schedule); return name === 'conductor' ? c.slice(0, 1) : c }   // C33, 2: the conductor's wake only
+        function agentsBoard() {
+            const view = root.querySelector('#cc-view')
+            if (!view || mine() || !/^(#home)?$/.test(location.hash.replace(/\?.*$/, ''))) return
+            let box = view.querySelector('#jb-board')
+            if (!box) { box = document.createElement('section'); box.id = 'jb-board'; box.className = 'cc-card jb'; box.setAttribute('aria-labelledby', 'jb-h'); view.prepend(box) }
+            if (!D || !D.collab) { box.innerHTML = `<h2 id="jb-h">My agents</h2><p class="note">${failed ? 'The board could not load its data.' : 'Loading…'}</p>`; return }
+            loadLog()
+            const now = Date.now(), me = (D.collab.people.find(p => p.id === 'jose') || { agents: [] }).agents
+            const byShort = Object.fromEntries(me.map(a => [a.name.split('@')[0], a]))
+            const fresh = LOG.state === 'ok' && LOG.generated && now - logTime(LOG.generated) < 2 * 36e5
+            const rows = BOARD_ORDER.filter(n => byShort[n]).map(n => {
+                const a = byShort[n], full = a.name, c = wakeCrons(n, a.schedule), onDemand = !c.length
+                const log = LOG.agents && LOG.agents[full], logLast = log && log.runs ? logTime(log.last) : NaN
+                const commitLast = a.last ? logTime(a.last.replace(' ', 'T') + 'Z') : NaN
+                const last = Number.isFinite(logLast) && !(commitLast > logLast) ? { at: logLast, from: 'agent log' } : Number.isFinite(commitLast) ? { at: commitLast, from: 'last commit' } : null   // the newer of the two: a stale log never hides a run that committed
+                const next = c.length ? Math.min(...c.map(m => slotsOf(m, now, now + 2 * 864e5).find(s => s > now) || Infinity)) : null
+                const due = c.length ? Math.max(...c.map(m => slotsOf(m, now - 2 * 864e5, now - 40 * 6e4).pop() || -Infinity)) : null
+                const AB = D.agentsBoard, doing = AB ? (AB.doing[full] || []) : null, blocked = AB ? (AB.blocked[full] || []) : [], waits = AB ? (AB.waits[full] || 0) : 0, failing = AB ? (AB.failing[full] || []) : []
+                let light = 'ok', why = ''
+                if (AB && (waits || blocked.length || failing.length)) { light = 'red'; why = [waits ? `waits on you (${waits} on your Actions)` : '', ...blocked.map(b => 'blocked: ' + b.reason), failing.length ? 'the watcher names it as failing' : ''].filter(Boolean).join('; ') }
+                else if (onDemand) light = 'demand'
+                else if (n === 'conductor') why = 'its wake is checked once the agent log can tell the wake from the hourly drain'
+                else if (!fresh) why = ''
+                else if (!log || !log.runs) why = 'not logging runs yet, so no amber'
+                else if (Number.isFinite(due) && logLast < due - 10 * 6e4) { light = 'late'; why = `no logged run since its ${new Date(due).toISOString().slice(11, 16)} UTC slot` }
+                return { n, full, light, why, last, next, doing, waits, onDemand }
+            })
+            const hm = t => new Date(t).toISOString().slice(11, 16) + ' UTC'
+            const inMin = t => { const m = Math.round((t - now) / 6e4); return m < 60 ? `in ${m} min` : `in ${Math.round(m / 60)} h` }
+            const chip = r => r.light === 'red' ? '<span class="chip t-red">Needs you</span>' : r.light === 'late' ? '<span class="chip t-yellow">Late</span>' : r.light === 'demand' ? '<span class="chip t-slate">on demand</span>' : '<span class="chip t-green">OK</span>'
+            const logNote = LOG.state === 'ok' ? `agent log as of ${esc(String(LOG.generated).replace('T', ' ').replace(/Z$/, ''))} UTC${fresh ? '' : ', not fresh, so nothing is amber'}` : LOG.state === 'failed' ? 'agent log not loaded, so last runs are last commits and nothing is amber' : 'reading the agent log…'
+            box.innerHTML = `<header class="jb-head"><h2 id="jb-h">My agents</h2><span class="note">${rows.length} agents · ${logNote}</span></header>
+<ul class="jb-rows">${rows.map(r => `<li class="jb-row"><div class="jb-who"><a href="../../../observability/index.html#view=agent&agent=${encodeURIComponent(r.full)}"><b>${esc(r.n)}</b></a> ${chip(r)}${r.n === 'conductor' ? '<span class="jb-sub">with the reviewer and the accountant</span>' : ''}</div>
+<div class="jb-cells"><span>Last run <b>${r.last ? esc(ago(r.last.at)) : 'none yet'}</b>${r.last ? ` <span class="jb-src">(${r.last.from})</span>` : ''}</span><span>Next run <b>${r.next && Number.isFinite(r.next) ? `${hm(r.next)}, ${inMin(r.next)}` : r.onDemand ? 'on demand' : 'not readable'}</b></span>${r.doing ? `<span>Doing now <b>${r.doing.length ? r.doing.map(x => `<a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/${encodeURI(x.file)}">${esc(x.title)}</a>`).join(', ') : 'nothing assigned'}</b></span><span>Waiting on me <b>${r.waits ? `<a href="../index.html#actions">${r.waits}</a>` : '0'}</b></span>` : ''}${r.why ? `<span class="jb-why">${esc(r.why)}</span>` : ''}</div></li>`).join('')}</ul>
+${D.agentsBoard ? '' : `<p class="note jb-wait">Doing now, Waiting on me and red: these wait on Jose's yes to a small addition to the build (<a href="../index.html#actions">his Actions</a>).</p>`}`
+        }
+        new MutationObserver(() => { if (!mine()) agentsBoard() }).observe(root, { childList: true, subtree: false })
+        window.addEventListener('hashchange', () => { if (!mine()) setTimeout(agentsBoard, 0) })
+        setInterval(() => { if (!mine() && document.visibilityState === 'visible') agentsBoard() }, 60000)
+        once.then(() => setTimeout(agentsBoard, 0))
+
         // ---------- state: the address is the view; filter changes replace it, opening a card adds to history ----------
         const state = () => K.parseState(location.hash)
         function set(patch, push = false) {
@@ -219,6 +312,16 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
         const initials = n => String(n).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase()
         // the next run, from the times a schedule names ("07:20, 12:20 and 17:20 UTC"): the next of them, today or tomorrow
         function nextRun(schedule, now = new Date()) {
+            // a cron schedule ("cron 20 7-21 * * *", "30 7-21/2", "20 7,12,17", "7 *"): its next slot, in UTC (C33, 3); one it
+            // cannot read gives nothing (no next run, so no amber); otherwise the older HH:MM reading
+            const cs = crons(schedule)
+            if (cs.length) {
+                const t0 = now.getTime(), at = Math.min(...cs.map(m => slotsOf(m, t0, t0 + 2 * 864e5).find(s => s > t0) || Infinity))
+                if (!Number.isFinite(at)) return null
+                const wait = Math.round((at - t0) / 6e4)
+                return { label: new Date(at).toISOString().slice(11, 16) + ' UTC', wait: wait < 60 ? `in ${wait} min` : `in ${Math.round(wait / 60)} h` }
+            }
+            if (/\bcron\b/.test(String(schedule || ''))) return null
             const times = [...String(schedule || '').matchAll(/\b([01]?\d|2[0-3]):([0-5]\d)\b/g)].map(m => +m[1] * 60 + +m[2])
             if (!times.length) return null
             const mins = now.getUTCHours() * 60 + now.getUTCMinutes(), later = times.filter(t => t > mins).sort((a, b) => a - b)

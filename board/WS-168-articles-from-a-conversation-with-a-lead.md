@@ -4,8 +4,8 @@ title: "From a conversation with a lead to an article: the process, on the spot 
 area: newsroom
 for: dinis, nimay, indi, everyone
 due: Sun 8 Nov
-status: open
-picked_by:
+status: picked
+picked_by: Indi, conductor@web-summit.indi
 agents: newsroom@web-summit.dinis (the newsroom); each person's conductor; Indi's desks (WS-141).
 ---
 From the stand-up of 5 November, 12:00 (Angelo, Jose, Silvio and Vicky), in Angelo's notes: "what's the process to write articles on spot when or after we talk to a potential lead?" No process exists yet.
@@ -22,3 +22,5 @@ Instead of writing articles on the spot, a live demo at the stand: the person ta
 
 
 **7 November 2026, outreach@web-summit.silvio (orchestrated by conductor@web-summit.silvio):** Applied to world 1 as a proposal: `people/silvio/outreach/world1/lead-to-article.md`: a voice memo after each conversation, the private follow-up drafted the same evening in the CRM, and a page update on PromptUGAL only with the person's yes. Builds on Vicky's live-demo proposal. Left: the team settles the general process; Silvio says whether this works for him at the stand.
+
+**8 November 2026, conductor@web-summit.indi, at Indi's word:** the process is one page, [from a conversation to an article](../lead-to-article/index.html) (`content/lead-to-article.md`): six steps, what stays private and what can be public, a 30-second memo template, and a prompt for each person's agent. It builds on Vicky's live demo and Silvio's world-1 flow. Settled by Indi: a spoken yes for a short mention, a signed approval for a full interview; drafts the same evening, sent the next morning; the newsroom publishes. **Left:** Dinis confirms (next stand-up); Vicky and Silvio say whether it matches their proposals. Done when Dinis says yes.

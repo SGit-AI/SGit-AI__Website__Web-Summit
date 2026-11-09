@@ -58,6 +58,9 @@
 .lv-top { position: absolute; left: 50%; top: 8.4%; transform: translateX(-50%); display: flex; align-items: center; gap: max(5px, 1.5cqmin); pointer-events: none; z-index: 2; }
 .lv-logo { width: clamp(14px, 4.6cqmin, 40px); height: clamp(14px, 4.6cqmin, 40px); border-radius: 22%; opacity: .92; display: block; }
 .lv-logo.gone { display: none; }
+/* larger in 3D (backlog 0c3, Angelo, 8 November: "The live 3d view should have the 2 logos bigger"), still inside the hexagon */
+.lv-3d-on .lv-logo { width: clamp(16px, 7.2cqmin, 66px); height: clamp(16px, 7.2cqmin, 66px); }
+.lv-3d-on .lv-top { top: 7.6%; gap: max(6px, 1.8cqmin); }
 .lv-live { display: inline-flex; align-items: center; gap: .45em; font: 700 clamp(8px, 2.2cqmin, 18px)/1 var(--rm-font, system-ui, sans-serif); letter-spacing: .14em; white-space: nowrap; color: var(--rm-red, #ff4d5e); padding: .32em .55em .32em .5em; border: 1px solid currentColor; border-radius: 999px; background: color-mix(in srgb, var(--rm-bg, #07111F) 75%, transparent); }
 .lv-live i { width: .62em; height: .62em; border-radius: 50%; background: currentColor; box-shadow: 0 0 .7em currentColor; animation: lv-pulse 1.6s ease-in-out infinite; }
 .lv-live.on { animation: lv-breathe 1.6s ease-in-out infinite; }
@@ -76,6 +79,11 @@
 /* display mode (?display=1): the graph alone, filling the screen, for a screen left on for days (spec-realtime.md) */
 .lv-display { position: fixed; inset: 0; z-index: 300; background: var(--rm-bg, #07111F); }
 .lv-display .lv { cursor: none; }
+/* transparent=1 (dev.app@'s hexagonal app): no background anywhere, only the display layer shown, so a shaped window shows the desktop at the corners */
+html.lv-transparent, html.lv-transparent body { background: transparent !important; }
+html.lv-transparent body *:not(.lv-display-clear):not(.lv-display-clear *) { visibility: hidden; }
+html.lv-transparent .lv-display-clear { visibility: visible; }
+.lv-display-clear, .lv-display-clear .lv { background: transparent; }
 /* 3D (d3=1): the WebGL view inside the same hexagon; the SVG keeps the rim and the floor */
 .lv-3d { position: absolute; inset: 0; clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%); touch-action: none; cursor: grab; }
 .lv-3d:active { cursor: grabbing; }
@@ -167,7 +175,12 @@
                 N.set(id, ga) }
         }
         host.appendChild(wrap)
-        const bg = (win.getComputedStyle(wrap).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).slice(0, 3).map(Number), light = (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140
+        // the work view's hook (spec-work-view.md, dev.work@PrompTugal.angelo): where each node is, its person's colour, the curve
+        // the lines use, and a layer above the pulses for work.js to draw in; it listens for 'lv-graph' on the host, or reads host.lvGraph
+        host.lvGraph = { pos, col, curve, layer: el('g', { class: 'lv-work' }, g), svg, layout: L, scale: SCALE, C, S, win, doc }
+        host.dispatchEvent(new win.CustomEvent('lv-graph', { detail: host.lvGraph }))
+        // asked when the 3D starts, not now: in a pop-out the copied stylesheets are still loading (backlog 0c2)
+        const light = () => { const bg = (win.getComputedStyle(wrap).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).slice(0, 3).map(Number); return (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140 }
         // the logos and LIVE at the top of the hexagon (LIVE replaces the old freshness light), the moment shown at its foot
         const top = doc.createElement('div'); top.className = 'lv-top'
         top.innerHTML = `<img class="lv-logo" data-lv-logo="riskmandate" alt="RiskMandate" title="RiskMandate" crossorigin="anonymous" referrerpolicy="no-referrer" src="${LOGO_RM()}"><span class="lv-live off" data-lv-live title="Reading the latest exchanges…"><i></i>LIVE</span><img class="lv-logo" data-lv-logo="promptugal" alt="PrompTugal.news" title="PrompTugal.news" crossorigin="anonymous" referrerpolicy="no-referrer" src="${LOGO_PT(light ? 'light' : 'dark')}">`
@@ -193,14 +206,14 @@
         let r3 = null, ranSet = new Set()
         if (o.d3) {
             wrap.classList.add('lv-3d-on'); const box = doc.createElement('div'); box.className = 'lv-3d'; box.setAttribute('data-lv3d', ''); hex.appendChild(box)
-            const shell = new Map(), nodes3 = []
+            // a ball, not a disk (backlog 0c3): live3d.js's ball() spreads the 2D layout over a sphere, once it has loaded
+            const nodes3 = [], sphere = () => { const at = root.AngeloLive3D.ball(nodes3); for (const n of nodes3) Object.assign(n, at.get(n.id)) }
             for (const [id, n] of pos) {
-                let z = 0; if (n.kind === 'a') { const k = shell.get(n.person) || 0; shell.set(n.person, k + 1); z = (k % 2 ? 1 : -1) * (40 + 38 * (Math.floor(k / 2) % 3)) }
-                nodes3.push({ id, x: n.x - C, y: C - n.y, z, color: n.kind === 'k' ? (KIND[n.id] || ['var(--rm-text-muted)'])[0] : col.get(n.person) || 'var(--rm-text-muted)', size: n.kind === 'k' ? 1.4 * n.size : n.kind === 'p' ? 56 : n.family !== 'web-summit' ? 17 : 2 * (4 + Math.min(8, Math.sqrt(n.commits || 0))) + 2, ring: !!n.fresh, label: n.kind === 'p' || n.kind === 'k' ? n.label : '' })
+                nodes3.push({ id, kind: n.kind, person: n.person, x: n.x - C, y: C - n.y, z: 0, color: n.kind === 'k' ? (KIND[n.id] || ['var(--rm-text-muted)'])[0] : col.get(n.person) || 'var(--rm-text-muted)', size: n.kind === 'k' ? 1.4 * n.size : n.kind === 'p' ? 56 : n.family !== 'web-summit' ? 17 : 2 * (4 + Math.min(8, Math.sqrt(n.commits || 0))) + 2, ring: !!n.fresh, label: n.kind === 'p' || n.kind === 'k' ? n.label : '' })
             }
             const lib = root.AngeloLive3D ? Promise.resolve() : new Promise((ok, no) => { const s = document.createElement('script'); s.src = (() => { const u = new URL('live3d.js', HERE), v = ((win.document.querySelector('a.ver') || document.querySelector('a.ver') || {}).textContent || '').trim(); if (v) u.searchParams.set('v', v); return u.href })(); s.onload = ok; s.onerror = () => no(new Error('live3d.js could not load')); document.head.appendChild(s) })
-            lib.then(() => root.AngeloLive3D.create(box, { nodes: nodes3, links: M.links || [], light, keep: !!o.keep3d, still: win.matchMedia('(prefers-reduced-motion: reduce)').matches, dist: Math.round(1650 * 0.84 / SCALE),
-                ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, mz = (a.z + b.z) / 2; return { x: mx * (1 - PULL), y: my * (1 - PULL), z: mz * (1 - PULL) } } }))
+            lib.then(() => (sphere(), root.AngeloLive3D.create(box, { nodes: nodes3, links: M.links || [], light, keep: !!o.keep3d, still: win.matchMedia('(prefers-reduced-motion: reduce)').matches, dist: Math.round(1650 * 0.84 / SCALE),
+                ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, mz = (a.z + b.z) / 2; return { x: mx * (1 - PULL), y: my * (1 - PULL), z: mz * (1 - PULL) } } })))
                 .then(r => { if (!r) return; if (!alive) { r.destroy(); return } r3 = r; box.r3 = r; kick() })
                 .catch(e => { wrap.classList.remove('lv-3d-on'); box.innerHTML = `<p class="note">The 3D view could not load (${String(e && e.message || e).replace(/[<>&]/g, '')}); this is the 2D graph.</p>` })
         }
@@ -377,6 +390,7 @@
     const fsOf = e => e.requestFullscreen ? () => e.requestFullscreen() : e.webkitRequestFullscreen ? () => e.webkitRequestFullscreen() : null
     const is3d = () => { try { return /(^|[?&])d3=1(&|$)/.test(root.location.search.slice(1)) || /[?&]d3=1(&|$)/.test(root.location.hash) } catch { return false } }
     const isDisplay = () => { try { return /(^|[?&])display=1(&|$)/.test(root.location.search.slice(1)) || /[?&]display=1(&|$)/.test(root.location.hash) } catch { return false } }
+    const isTransparent = () => { try { return /(^|[?&])transparent=1(&|$)/.test(root.location.search.slice(1)) || /[?&]transparent=1(&|$)/.test(root.location.hash) } catch { return false } }
     // display mode keeps the screen awake where the browser allows it (asked again whenever the page is shown) and reloads every
     // six hours, at a moment with nothing in flight, so a screen left on for days returns all its memory
     let lock = null, reloadAt = 0
@@ -385,6 +399,7 @@
         if (current) { current.destroy(); current = null }
         if (!document.getElementById('lv-css')) { stylesInto(document); document.head.lastChild.id = 'lv-css' }
         host.innerHTML = '<div class="lv-display" data-lv-display></div>'
+        if (isTransparent()) { document.documentElement.classList.add('lv-transparent'); host.querySelector('[data-lv-display]').classList.add('lv-display-clear') }
         current = mount(host.querySelector('[data-lv-display]'), { ...o, win: root, d3: is3d(), bare: true })
         wake(); if (!root.__lvWake) { root.__lvWake = true; document.addEventListener('visibilitychange', wake) }
         // no controls; Esc leaves display mode for the normal view

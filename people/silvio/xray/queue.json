@@ -1,62 +1,76 @@
 {
-  "about": "Proposal 2 (Silvio's team): the prepared X-rays as a managed queue. Subjects proposed by conductor@the team site.silvio for xray@web-summit.dinis to accept; xray@ owns the runs, accountant@ the budgets. Silvio's world 1 (hospitality, tourism and the Algarve) after the three the brief names, so each X-ray also opens an outreach conversation. States: proposed, accepted, running, ready. Moved to the team site with X-ray (WS-195), 7 November.",
-  "updated": "2026-11-07",
+  "about": "Proposal 2 (Silvio's team): the prepared X-rays as a managed queue. Subjects proposed by conductor@the team site.silvio for xray@web-summit.dinis to accept; xray@ owns the runs, accountant@ the budgets. Silvio's world 1 (hospitality, tourism and the Algarve) after the three the brief names, so each X-ray also opens an outreach conversation. States: proposed, accepted, running, ready. Moved to the team site with X-ray (WS-195), 7 November. 'sources_ready' points to outreach@'s sourced research for that subject, read 7 November 2026, as a head start for the reading.",
+  "updated": "2026-11-08",
   "subjects": [
     {
       "subject": "Algarve Evolution",
       "kind": "company",
       "why": "world 1; the one warm contact (Dinis's meeting)",
       "state": "proposed",
-      "owner": "outreach@web-summit.silvio follows up"
+      "owner": "outreach@web-summit.silvio follows up",
+      "note": "Little public about their own agents (xray@, 7 November): better named inside the use-case and industry X-rays, only where a source does. Silvio and Dinis to decide."
     },
     {
       "subject": "Booking.com",
       "kind": "company",
       "why": "world 1; event partner at Web Summit 2026",
-      "state": "proposed",
-      "owner": "outreach@web-summit.silvio follows up"
+      "state": "running",
+      "owner": "outreach@web-summit.silvio follows up",
+      "note": "Searched by xray@web-summit.dinis on 7 November, 21:16 UTC, at Dinis's word (\"Go for it\"); being read.",
+      "sources_ready": "people/silvio/outreach/world1/booking-com.md"
     },
     {
       "subject": "Turismo de Portugal",
       "kind": "company",
-      "why": "world 1; event partner at Web Summit 2026",
+      "why": "world 1; event partner at Web Summit 2026, listed as \"Tourism of Portugal\" (https://websummit.com/appearances/lis26/91e2a435-8c94-42b3-a74d-130446723990/tourism-of-portugal/, track PARTNER, checked 8 November 2026)",
       "state": "proposed",
-      "owner": "outreach@web-summit.silvio follows up"
+      "owner": "outreach@web-summit.silvio follows up",
+      "sources_ready": "people/silvio/outreach/world1/turismo-de-portugal.md"
     },
     {
       "subject": "DIG-IN",
       "kind": "company",
       "why": "world 1; data on the hospitality economy",
       "state": "proposed",
-      "owner": "outreach@web-summit.silvio follows up"
+      "owner": "outreach@web-summit.silvio follows up",
+      "sources_ready": "people/silvio/outreach/world1/dig-in.md",
+      "note": "Little public about their own agents (xray@, 7 November): better named inside the use-case and industry X-rays, only where a source does. Silvio and Dinis to decide."
     },
     {
       "subject": "sheerME",
       "kind": "company",
       "why": "world 1; bookings and payments",
       "state": "proposed",
-      "owner": "outreach@web-summit.silvio follows up"
+      "owner": "outreach@web-summit.silvio follows up",
+      "sources_ready": "people/silvio/outreach/world1/sheerme.md",
+      "note": "Little public about their own agents (xray@, 7 November): better named inside the use-case and industry X-rays, only where a source does. Silvio and Dinis to decide."
     },
     {
       "subject": "Altegio",
       "kind": "company",
       "why": "world 1; bookings for service businesses",
       "state": "proposed",
-      "owner": "outreach@web-summit.silvio follows up"
+      "owner": "outreach@web-summit.silvio follows up",
+      "sources_ready": "people/silvio/outreach/world1/altegio.md",
+      "note": "Public agent material exists: four MCP servers and an Analytics Agent on its own pages (world1/altegio.md), so a company X-ray is not thin."
     },
     {
       "subject": "Just Travel",
       "kind": "company",
       "why": "world 1; travel platform",
       "state": "proposed",
-      "owner": "outreach@web-summit.silvio follows up"
+      "owner": "outreach@web-summit.silvio follows up",
+      "sources_ready": "people/silvio/outreach/world1/just-travel.md",
+      "note": "Little public about their own agents (xray@, 7 November): better named inside the use-case and industry X-rays, only where a source does. Silvio and Dinis to decide."
     },
     {
       "subject": "Amex GBT",
       "kind": "company",
       "why": "world 1; business travel; speaker at Web Summit 2026",
-      "state": "proposed",
-      "owner": "outreach@web-summit.silvio follows up"
+      "state": "running",
+      "owner": "outreach@web-summit.silvio follows up",
+      "note": "Searched by xray@web-summit.dinis on 7 November, 21:16 UTC, at Dinis's word (\"Go for it\"); being read.",
+      "sources_ready": "people/silvio/outreach/world1/amex-gbt.md"
     },
     {
       "subject": "hospitality in the Algarve",
@@ -69,15 +83,17 @@
       "subject": "Feedzai",
       "kind": "company",
       "why": "Who let the agent in?, Thursday 12 November",
-      "state": "proposed",
-      "owner": "xray@web-summit.dinis"
+      "state": "running",
+      "owner": "xray@web-summit.dinis",
+      "note": "Searched by xray@web-summit.dinis on 7 November, 21:16 UTC, at Dinis's word (\"Go for it\"); being read."
     },
     {
       "subject": "Fidelidade",
       "kind": "company",
       "why": "largest Portuguese insurer, event partner",
-      "state": "proposed",
-      "owner": "xray@web-summit.dinis"
+      "state": "running",
+      "owner": "xray@web-summit.dinis",
+      "note": "Searched by xray@web-summit.dinis on 7 November, 21:16 UTC, at Dinis's word (\"Go for it\"); being read."
     },
     {
       "subject": "hotel guest messaging with AI agents",
@@ -85,6 +101,33 @@
       "why": "world 1 as a use case",
       "state": "proposed",
       "owner": "xray@web-summit.dinis"
+    },
+    {
+      "subject": "Lena Concierge",
+      "kind": "company",
+      "why": "world 1 (added by Silvio, 7 Nov); an AI concierge that books inside the chat; its own pages describe facts-only answers and emergencies left to fixed text",
+      "state": "draft ready",
+      "owner": "outreach@web-summit.silvio follows up",
+      "sources_ready": "people/silvio/outreach/world1/five-more.md",
+      "draft": "people/silvio/xray/drafts/lena-concierge.json"
+    },
+    {
+      "subject": "Cadae AI",
+      "kind": "company",
+      "why": "world 1 (added by Silvio, 7 Nov); AI for hotel energy and water, an MCP server; 'does not commit budget… or change how plant runs'",
+      "state": "draft ready",
+      "owner": "outreach@web-summit.silvio follows up",
+      "sources_ready": "people/silvio/outreach/world1/five-more.md",
+      "draft": "people/silvio/xray/drafts/cadae-ai.json"
+    },
+    {
+      "subject": "241.travel",
+      "kind": "company",
+      "why": "world 1 (added by Silvio, 7 Nov); hotel club with an AI concierge and a published AI statement ('a person decides' on money and data)",
+      "state": "draft ready",
+      "owner": "outreach@web-summit.silvio follows up",
+      "sources_ready": "people/silvio/outreach/world1/five-more.md",
+      "draft": "people/silvio/xray/drafts/241-travel.json"
     }
   ]
 }

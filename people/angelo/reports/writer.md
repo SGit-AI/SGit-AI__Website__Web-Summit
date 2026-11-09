@@ -2,6 +2,11 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 8 November 2026, about 17:30 UTC (prompted by Angelo: a video for the LinkedIn post)
+
+- **A 53-second square video for the graph post**, at Angelo's word ("a video of the agents map ... from the beginning"; "if we get to show the actual deliverables ... even better"): his command centre's map playing back from 2 November, the commit replay, five live pages (PrompTugal.news home, articles, the graph, the story board, his interactive guide) with captions, and a closing card with the stand (Thursday 12 November, booth A1-30, ALPHA 1, Pavilion 1). Recorded from the public pages; kept out of the repository (sent to Angelo). Angelo posts it himself.
+- The "over a hundred agents" line: the conductor's change (b916e1d4) stands; the graph article's count asked of Vicky's desk (newsroom, desks/writer-angelo/asks/2026-11-08-graph-article-count.md), not edited by this desk.
+
 ## 8 November 2026, 09:20 UTC (prompted by Angelo: the pending questions, one by one)
 
 - **Angelo confirmed his agents' protocol in this session** (the kit asks it once per agent): "Yes, I confirm".

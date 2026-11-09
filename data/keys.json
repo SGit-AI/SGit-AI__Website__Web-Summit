@@ -1299,6 +1299,40 @@
         "signing_fingerprint": "sha256:5795e1959875387e"
       },
       "status": "active"
+    },
+    {
+      "id": "synthetic-vicky",
+      "agent": "synthetic@web-summit.vicky",
+      "label": "synthetic@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's synthetic-reader agent: tests public PrompTugal.news pages as an imagined reader and reports findings to Vicky, on demand only. Never changes the pages it tests. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 8 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Vicky's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-08",
+      "status": "active",
+      "bundle": {
+        "v": "1",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4+C6QWNqardyMolBAN6f\nPZxZHT2SpCwPCKt713waR+c/zmQ8kG8Y6MSje2LuXWIi2GoNH0DhpEa2dui3SmBE\nJ1Vudrz803m2QUOGbW5QKYFigsqwVhLzFWgUgOv6KSPInNAkNGr063XMjn2CKSi+\nnDqLhlKCKSZy4RwIN4AUNc04oS6yzvU205LXEns5illyANzKPrPwczTmkFT1CL2A\nezUV1Bnjtlnn2QJ+splMUqo9OqvAgwjZWFZwgT8KjbAw5AeSElpebCRjDMEbMYuj\nxQGub8CcVuGs8FWEGigISiGyygQZ54sEU2lIzufPqe1FIb7fFWAyMHoc0nsJNYIw\n2CyfVZ8bFrq6d2IBCTZaxk+x8un3xq3J4d/k2JBMMhNNiGvwG7K8plw0v6/TgPs6\nsyGhkbnGz1w2pTyE2w1Xw7bmTylXbKgauLY8hRBrg3iUbk/Ai0+vEGa2aQ0iCpsm\nYjebHmFfkOG75DK1HeFUw1McI6FVDK+2JstVqnUZWWUILDackg0OBdSn3NAIRHLF\n/Rxllh8GX1prW4k/+72XkTcbDTESWZLAxB3g12cQg+Ooahg3ZP24m7+Uo7D9n5wC\nUCsNns0BzhNupXwFfWaSabQ3zBCaCxrfUqhR5oQwLqHLbWdkDPxiG4poHZWzp8rz\n2F79Oqa2MJvrSgq/bx52pP8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE5zbQy96rf8Ydo3qQc0YbE9RTOfkW\nWNIpKG//57apktPsqXguxkSoXOLKPvPWzSJKkRKPlplqxR32hsAUsDUGtA==\n-----END PUBLIC KEY-----\n",
+        "label": "synthetic@web-summit.vicky",
+        "fingerprint": "sha256:09ba942dd807325f",
+        "signing_fingerprint": "sha256:8c91b3408aef4979"
+      }
+    },
+    {
+      "id": "prompter-indi",
+      "agent": "prompter@web-summit.indi",
+      "label": "prompter@web-summit.indi (Claude Code session)",
+      "role": "Indi Gupte's prompt engineering agent: writes new prompts and improves existing ones so Indi's tasks get done in one or two prompts. Library in people/indi/prompts/. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 8 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Indi's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-08",
+      "status": "active",
+      "bundle": {
+        "v": "1",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA1RcMs9lzOgF1FG371mMV\n/CS3Ij95J5J/SGXvX65vuiRUZ9T8cSTgPvfRl4/i+T8gAYnoBjD19D1m5K969rX9\no7CO1t8487ufKxfR+cV9Qb36yUSFTnJUg1ksiRRiDt/KosXTCAl9H41/ILAmrDxd\nk8JQ1rlTheN76JncrOEpqiimPoiPE2D6g7ppfl1XqSgCKPahV1kh3DR8e09a50QQ\niLsgisL9mFgXY8Ls2SkbhiBBK+d/3Wh7gxeHHEd1OELssNPnVqKmOuNUsm4jyogb\nwfq01EtHsYQIfFXMLB18v6k64Z/gWctdb3hHWC4Rmpf55zqypkUwTxmDUaU0XA2K\nzaevSQO0xaL6DJH4/87/Ujc22p9E0CrB7B3wQfJYQqZO4MeFh4zuaM8pJFsKtH8W\n6Sn+eMQi6qszZ9v8aHpGmZOFXek71bTToJqeGjE8IwED2yaNk9oqByXU+TcLaubX\nn8Q3O0DF9MERwQShIDIFAL3r9If9nKkSFZ2Ej9zC7GqjdIqpb9mLU18oT9/MX2ut\nkw4q2J3S+/wY2WyYfAhYkwUnULNv9AgSgTHUk8muT6fkSxyg1WpX1uneshDVEqbv\n+xbZf1n1m1aQlBFsqCNjM+wPaLBLsPDZUacg8Xo0JBG5gu0lgH3d2taAf3ukWMX6\nqm20SvaB+0C/86XQFiVmk/UCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEadT98b8I6T375ShNop+2frVd1agp\nNdEPXyem/4PGAnRP6aIvhXdyKo1+ezOBiBPyWe3udS0BJ9GrFkj7fMK+5A==\n-----END PUBLIC KEY-----\n",
+        "label": "prompter@web-summit.indi",
+        "fingerprint": "sha256:87b59007a5fd4843",
+        "signing_fingerprint": "sha256:dbe58fca8be86c93"
+      }
     }
   ]
 }

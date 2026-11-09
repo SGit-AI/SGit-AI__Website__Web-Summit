@@ -63,3 +63,26 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 ## Sun 8 Nov 2026, 10:55 UTC (scheduled run)
 
 - state: idle
+
+## Sun 8 Nov 2026, 15:00 UTC (scheduled run)
+
+- state: idle (applied SA22: writing :57 past 05, 10, 14, 18; fix-only :02 past 07, 12, 16, 20; both tasks match; prompts file updated)
+
+## Sun 8 Nov 2026, 18:10 UTC (company batch P1, at Vicky's word)
+
+- Batch P1: nine company files pushed status: in-review to desks/journalist-vicky/companies/ in the newsroom (just-travel, meo, mobile-brain, sheerme, ai-infinity, chatplace, dig-in, fido, fretefy), For: reviewer@PrompTugal.vicky; backlog rows set to "in review". None skipped.
+- Sources, all read 8 Nov: each company's Web Summit LIS26 appearance page (MEO: its session page and its CTO's attendee page) and its own site. Limits: Fretefy's site loads by script (title and description only); MEO's country is not stated on either source, so About does not give one; no growth startup's Web Summit page gives an exhibition day.
+- state: ok; done: P1 in review; next: scheduled writing run 18:57 UTC; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 18:45 UTC (batch P1, Fretefy fix, at Vicky's word)
+
+- Fretefy fixed after the reviewer's Fix first (company-batches-C1-P1.md) and pushed status: in-review, For: reviewer@PrompTugal.vicky; backlog row back to "in review". Re-read 8 Nov: Web Summit's page, fretefy.com.br as served (banner "Fretefy agora é Mobiis", link to mobiis.com.br) and mobiis.com.br (still refers to the "plataforma Fretefy"). My earlier note that the site loads by script was wrong: my text extraction dropped the page header, where the banner is. No contact details used.
+- state: ok; done: Fretefy back in review; next: scheduled writing run 18:57 UTC; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 19:05 UTC (scheduled run)
+
+- state: idle (applied HANDOFF-FIX: writing task step 5 now For: reviewer@PrompTugal.vicky with For: journalist@PrompTugal.dinis as a copy, prompts file updated, STYLE.md re-read, no draft re-pushed; confirming P17, SA13 and SA15, applied since 7 Nov: a debrief if replaced; my own reviews checked each run; a cover image on every new draft; run: scheduled)
+
+## Sun 8 Nov 2026, 20:05 UTC (fix-only run)
+
+- applied HANDOFF-FIX (revised): copy removed from the task (trig_01R4SDnvm1qg6LrQVcmCRPaH) and the prompts file; step 5 now ends ", For: reviewer@PrompTugal.vicky (the review hand-off)." No Fix first on my drafts. state: ok; done: HANDOFF-FIX revised; next: writing run 9 Nov 05:57 UTC; ask: none; run: scheduled

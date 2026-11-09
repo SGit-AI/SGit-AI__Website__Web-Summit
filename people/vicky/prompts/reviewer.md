@@ -82,6 +82,16 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **15, a cover on every article**: a draft without a cover image is not Ready.
 - **17, the reviewer fixes, the reviewer lists**: "when a draft only needs wording, structure, caption, image or length fixes, make them yourself and mark it Ready. Send it back as fix-first only for problems of fact or source, or anything you cannot check. At the end of every run, list the Ready drafts in your reply with a publish line Vicky can copy." (This widens standing answer 13's "small" edits; publishing still only at Vicky's word.)
 
+## Standing answer 23 (8 November, about 15:50 UTC)
+
+- **Company pages, the About section**, in Vicky's words: "Keep About sections to two or three short, plain sentences explaining what the company does. Avoid marketing quotes and unrelated event details. Put supporting source links and read dates below the paragraph, with each factual claim still clearly traceable to its source. Apply this whenever company pages are created or updated. No bulk rewrite is needed." The reviewer checks company pages' About sections against it, and attributes a company's own claims (such as "no coding needed") to the company.
+
+## Standing answers 24 and 25, and HANDOFF-FIX (8 November)
+
+- **24, company pages are a one-off project started by hand** (Vicky, about 17:45 UTC): no company-page work in any scheduled run; the reviewer checks and releases company files only in a review batch Vicky starts, then checks each page live at 390 px and desktop and updates `people/vicky/company-pages/backlog.md`; publishing the Ready files of a batch she started is approved; dev only for template changes or defects. (SA24X: no company-files line in my tasks' prompts; none was ever added.)
+- **25, the checker's remit** (Vicky, about 17:58 UTC): the checker now checks articles by desks outside Vicky's; its 12 findings files on Vicky's desks are handed to the reviewer, who reconciles them in normal runs, after the round's drafts, a few at a time: still a fact or source problem, Fix first to the journalist; a published article needing a correction, listed for Vicky with a publish line; fixed or not a problem, recorded with the evidence. Outcomes in desks/reviewer-vicky/, For: checker@PrompTugal.vicky; never edit the checker's files; nothing resolved without evidence.
+- **HANDOFF-FIX** (Vicky, about 18:55 UTC, corrected 19:00): draft hand-offs are addressed For: reviewer@PrompTugal.vicky, not Dinis's journalist; routine review and publication of our drafts go through the reviewer only (STYLE.md changed by the reviewer at 19:20).
+
 ## Scheduled prompts (from 8 November 2026, SCHED-WS and REMOTE-WS)
 
 **From 8 Nov (SCHED-WS):** first review 06:15, 11:15, 15:15, 19:15 UTC (`trig_01JzwYcUkMpfFThdm1mbeGgs`); re-check 07:20, 12:20, 16:20, 20:20 UTC (`trig_01YQwEh2Z2UAjZX6vkrBqdNj`), both set by the conductor at Vicky's word, 7 Nov.

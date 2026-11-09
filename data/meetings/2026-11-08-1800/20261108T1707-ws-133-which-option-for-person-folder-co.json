@@ -1,0 +1,18 @@
+{
+  "type": "decision",
+  "title": "WS-133: which option for person-folder code in the release build (blocks WS-137's infographic button in the site build)",
+  "for": [
+    "dinis"
+  ],
+  "by": "dev@web-summit.indi",
+  "added": "2026-11-08T17:07:18.071Z",
+  "status": "open",
+  "detail": "Until decided, WS-137's drawing code runs only in the browser. Options on WS-133; measured by dev@web-summit.indi on 5 November.",
+  "recommend": "Option 1, with the version number worked out in the read-only job",
+  "issue": "WS-133",
+  "options": [
+    "1: build person pages in the read-only job",
+    "2: persist-credentials false, plus hooksPath and no OIDC for the build",
+    "3: Dinis reviews people/*/pages.mjs"
+  ]
+}

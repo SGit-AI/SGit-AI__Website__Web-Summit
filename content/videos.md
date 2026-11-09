@@ -6,6 +6,7 @@ path: videos/index.html
 RiskMandate is technical, so a 20-second promo is not enough: we explain it with stories and visual explanations, with and without sound. Made by Silvio Switha's video pipeline; published here first, then on our video channels.
 
 ```cards
+The video library, ready to post | ../people/silvio/videos/index.html | For the team and whoever posts on social media: every approved video, EN and PT, with its post text, to watch, download and share.
 Reach, Mandate, Gap | reach-mandate-gap/index.html | 53 s. The visual explanation: what an agent can reach, what it was authorised to do, and the gap.
 RiskMandate Stories: fifty new agents | fifty-new-agents/index.html | 2 min 44 s. Monday, fifty new agents, and the questions before you switch them on.
 Your AI has access. Does it have permission? | access-permission/index.html | 30 s, subtitled. Silvio's short film for the stand's loop and LinkedIn: the same lines as the T-shirts.
@@ -15,6 +16,9 @@ Storyboard: for sellers of agents | storyboard-sellers/index.html | About 60 s. 
 Storyboard: the Licence to Operate in 30 s | storyboard-licence/index.html | For LinkedIn: who authorised it, who owns it, until when. For comment.
 Storyboard: the demo is us | storyboard-our-team/index.html | About 90 s. Our own team and its agents, under behaviour policies. For comment.
 Storyboard: an X-ray in 30 seconds | storyboard-xray/index.html | For the stand loop: one real X-ray run, silent and captioned (WS-197). For Silvio's yes.
+With and without RiskMandate: the access that stayed | storyboard-access-stayed/index.html | About 40 s, EN and PT. An account left behind; a person closes it. For Silvio's yes.
+With and without RiskMandate: the agent beyond its mandate | storyboard-agent-beyond-mandate/index.html | About 40 s, EN and PT. A refund and deleted files; the access removed beforehand. For Silvio's yes.
+With and without RiskMandate: the supplier with the open door | storyboard-supplier-open-door/index.html | About 40 s, EN and PT. A supplier's connection narrowed to what is needed. For Silvio's yes.
 ```
 
 ## Where the videos live {#where}

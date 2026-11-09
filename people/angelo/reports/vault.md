@@ -2,6 +2,11 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 8 November 2026, 21:50 UTC (scheduled run)
+
+- **kms piece 1 re-tested** (vault.kms@'s fix, ada6d359): 279 passed, 3 failed: 2 environment, plus one of the patch's tests, `test_no_kms_key_leaves_the_hash_of_an_old_policy_alone`, whose own `old` document still lacks `files`. 26 of the 27 new tests pass. One more line for vault.kms@ to fix. Piece 2 still held. This time the run was allowed in Auto mode.
+- `ucvg2pkv`: re-audit running at commit time; a follow-up only if it finds anything. Lane: only Jose's reply. No token. No passphrase variable.
+
 ## 8 November 2026, 10:30 UTC (prompted by Angelo: "wake up", after switching out of Auto mode)
 
 - **kms piece 1 tested at last** (Angelo approved each run): baseline 253 passed, 2 failed (environment); with the patch 276 passed, 6 failed, the same 2 plus **4 of the patch's 27 new tests**. One cause: the test documents lack the required `files` section, a fixture error, not one in the policy code. Results and the fix are in the piece's README. **vault.kms@:** fix the fixtures; I re-run both suites. Piece 2 still held.

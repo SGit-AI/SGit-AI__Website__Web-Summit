@@ -20,24 +20,37 @@
         if (!el.isConnected) return
         el.innerHTML = ''
         const phone = matchMedia('(max-width: 767px)').matches, still = phone || matchMedia('(prefers-reduced-motion: reduce)').matches
-        // positions: the 2D layout's x and y, around the centre; z a shell for each person's agents (alternating in front and
-        // behind, three depths), people and the kinds of work on the plane
-        const seen = new Map(), nodes = []
+        // positions: a ball, not a disk (backlog 0c3), from the 2D layout's directions round the centre (live3d.js's ball())
+        const nodes = []
         for (const [id, n] of o.pos) {
-            let z = 0
-            if (n.kind === 'a') { const k = seen.get(n.person) || 0; seen.set(n.person, k + 1); z = (k % 2 ? 1 : -1) * (45 + 40 * (Math.floor(k / 2) % 3)) }
-            nodes.push({ id, x: n.x - o.C, y: o.C - n.y, z, color: n.kind === 'k' ? 'var(--rm-text-secondary)' : (o.colOf(n.person) || 'var(--rm-text-muted)'),
+            nodes.push({ id, kind: n.kind, person: n.person, x: n.x - o.C, y: o.C - n.y, z: 0, color: n.kind === 'k' ? 'var(--rm-text-secondary)' : (o.colOf(n.person) || 'var(--rm-text-muted)'),
                 size: n.kind === 'p' ? 56 : n.kind === 'k' ? 30 : 2 * (4 + Math.min(8, Math.sqrt(n.commits || 0))) + 2, label: n.kind === 'p' ? n.label : '' })
         }
+        const flat = new Map(nodes.map(n => [n.id, { x: n.x, y: n.y }])), full = window.AngeloLive3D.ball(nodes)
+        for (const n of nodes) Object.assign(n, full.get(n.id))
         const ids = new Set(nodes.map(n => n.id)), links = (o.links || []).filter(l => ids.has(l.from) && ids.has(l.to))
         let r
-        try { r = await window.AngeloLive3D.create(el, { nodes, links, still, dist: 1700, ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, mz = (a.z + b.z) / 2; return { x: mx * 0.8, y: my * 0.8, z: mz * 0.8 } } }) }
+        try { r = await window.AngeloLive3D.create(el, { nodes, links, still, dist: 1700, turnS: 105, light: () => { const m = (getComputedStyle(document.body).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).map(Number); return (0.299 * m[0] + 0.587 * m[1] + 0.114 * m[2]) > 140 && !(m.length > 3 && m[3] === 0) }, ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, mz = (a.z + b.z) / 2; return { x: mx * 0.8, y: my * 0.8, z: mz * 0.8 } } }) }
         catch (e) { el.innerHTML = `<p class="note">The 3D view could not load (${esc(e.message || e)}). Switch 3D off for the map.</p>`; return }
         if (!r || !el.isConnected) { r && r.destroy(); return }
         const go = el.ownerDocument.createElement('a'); go.className = 'cc-btn tm-3dlive'; go.href = '#live?d3=1'; go.textContent = '◉ Live, in 3D'; go.title = 'The live graph in 3D: every exchange travels and lights its line'; el.appendChild(go)
         el.dataset.tm3dNodes = String(nodes.length); el.dataset.tm3dLinks = String(links.length); el.dataset.tm3dOrbit = still ? 'still' : 'orbit'
         const win = el.ownerDocument.defaultView || window, c = { r, win, alive: true, raf: 0, el }
-        const tick = t => { if (!c.alive || !el.isConnected) return; r.draw({ now: t }); c.raf = win.requestAnimationFrame(tick) }
+        // the playback's own moment (o.flow, from replay.js): its messages travel and light their lines here as in 2D (backlog 0c2)
+        // and who is on the map at that moment (backlog 0c3, Angelo, 8 November: "in the replay, the 3d map doesn't adapt as agents
+        // appear and disappear, it seems to have a static map"): an agent joins from its person and fades in, one that has not
+        // been used yet waits faded at its person, and the ball is laid out again for those present, each easing to its new place
+        let sig = null, place = null, vis = null
+        const arrange = on => {
+            const s2 = [...on].sort().join(','); if (s2 === sig) return; sig = s2
+            const here = nodes.filter(n => n.kind !== 'a' || on.has(n.id)).map(n => ({ id: n.id, kind: n.kind, person: n.person, ...flat.get(n.id) })), at = window.AngeloLive3D.ball(here)
+            place = new Map(); vis = new Map()
+            for (const n of nodes) { const g = at.get(n.id); if (g) { place.set(n.id, g); vis.set(n.id, 1) } else { place.set(n.id, at.get(n.person) || full.get(n.id)); vis.set(n.id, 0) } }
+            el.dataset.tm3dOn = String(here.filter(n => n.kind === 'a').length)
+        }
+        const tick = t => { if (!c.alive || !el.isConnected) return; let f = null; try { f = o.flow && o.flow() } catch { }
+            if (f && f.on) arrange(f.on)
+            r.draw(f ? { now: t, fly: f.fly, lines: f.lines, hot: f.hot, place: f.on ? place : null, vis: f.on ? vis : null } : { now: t }); c.raf = win.requestAnimationFrame(tick) }
         c.raf = win.requestAnimationFrame(tick); cur = c
     }
     window.AngeloMap3D = { mount, unmount }

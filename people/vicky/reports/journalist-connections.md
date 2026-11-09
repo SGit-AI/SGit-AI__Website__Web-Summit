@@ -79,3 +79,70 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - Applied SA19B (in my writing task's prompt and prompts file) and SA19C (workflow paragraph in my prompts file; I write only storylines the curator lists, as S28 is).
 - No hold; P2: prompts file and memory agree; no fix-first (S16, S18, S19 Ready).
 - state: ok; done: S28 drafted and pushed, SA19B and SA19C applied; next: further theme-led storylines from the curator; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 12:20 UTC (fix-only run)
+
+- S28 fixed after the reviewer's Fix first: Replit's press conference is a media-only event in the Media Village (checked again on Web Summit's session page today); now said where it is named, in the connection line, in What this does not claim and in its source line. Status back to draft, For: reviewer@PrompTugal.vicky. No point disputed.
+- state: ok; done: S28 revised and pushed; next: the reviewer's re-check; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 14:50 UTC (manual run, at Vicky's request)
+
+- PILOT-REPLIT content pushed: desks/journalist-vicky/companies/replit.md in the newsroom repository, status: in-review, For: reviewer@PrompTugal.vicky ("PILOT-REPLIT content ready for review"). About: four sentences from Replit's own pages (home page and "AI Coding Agent") and Web Summit's partner listing. At Web Summit 2026: event partner (AI and machine learning); three sessions on Tue 10 Nov from Web Summit's session pages (14:00 Centre Stage; 15:00 Stage 2 press conference, marked Media only, in the Media Village; 16:00 Stage 13, AI Summit). From the newsroom: S28, the only published article that names Replit. All sources read 8 Nov. S28 unchanged.
+- Not confirmed: the time zone of the session times (Web Summit's pages do not state it, so the file does not either).
+- state: ok; done: PILOT-REPLIT content pushed; next: the reviewer's check, then dev builds it; SA22 at my 15:09 run; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 14:50 UTC (scheduled run)
+
+- Applied SA22: step 5 of my writing task's prompt replaced as given (up to three connection stories, only as the curator lists them); prompts file has the new times (writing :45 past 05, 10, 14, 18; fix-only :50 past 06, 11, 15, 19 UTC, both set by the conductor) and standing answer 22. SA19B and SA19C were applied at 11:20 (see above).
+- No hold; P2: prompts file and memory agree. No new Connections storyline (S28 is published). PILOT-REPLIT file now status: ready (the reviewer's). S28's review file still reads Fix first in its header, but the reviewer re-checked it Ready at 12:22 and published it at 12:29; nothing open for me. For: reviewer@PrompTugal.vicky, if the header should be updated.
+- state: ok; done: SA22 applied; next: new connection storylines from the curator; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 16:15 UTC (manual run, at Vicky's request)
+
+- SA23-REPLIT step 1 done: Replit's About section in desks/journalist-vicky/companies/replit.md revised to standing answer 23 (three short, plain sentences on what Replit does; no marketing quote; no event details, the partner line staying in At Web Summit 2026; each claim numbered to its source in a list below the paragraph). Sources re-read today: Replit's home page and its AI agent page, Web Summit's Replit page. Other sections unchanged. status: in-review, commit For: reviewer@PrompTugal.vicky ("SA23-REPLIT ready for review").
+- state: ok; done: SA23-REPLIT step 1; next: the reviewer's check (19:15 or 20:20); ask: none; run: prompted
+
+## Sun 8 Nov 2026, 18:10 UTC (company batch C1, manual run at Vicky's request)
+
+- C1 ready for review: ten files in desks/journalist-vicky/companies/ in the newsroom repository (cloudflare, descope, emergence-ai, exein, ledger, manus-ai, you-com, proofpoint, proton, roost), status: in-review, pushed together, commit For: reviewer@PrompTugal.vicky. Backlog rows set to "in review".
+- Sources, all read 8 Nov: each company's own site (About, two or three plain sentences with numbered sources; Manus has one sentence, as its site gives no more without marketing copy); Web Summit's speakers page (Cloudflare, Manus AI, You.com) and nine session pages (one each, except Manus, which has no session page in our sources). None is marked media only by Web Summit.
+- Skipped: none. Left out on purpose: where each company is based (Web Summit's listings give a speaker's country, not the company's head office).
+- Applied SA24X: standing answer 24 in my prompts file; I never added the withdrawn "6b" line to my writing task.
+- state: ok; done: C1 written and pushed for review; next: the reviewer's C1 batch; my 18:45 writing run; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 18:55 UTC (scheduled run)
+
+- Draft S30, "Eleven health startups at Web Summit, by the problem they tackle" (579 words, theme-led), For: journalist@PrompTugal.dinis. Source: Web Summit's featured startups page, first page, read 8 Nov, with each startup's own description; four groups (getting care 4, diagnosis sooner 3, new treatments 2, recovery and wellbeing 2). Cover card checked at 390px. No company dropped. Not confirmed: the companies' own figures; when or where each exhibits; later pages of the list. Countries left out except where a company's own description gives one (AURIMOD, Vienna; NeoCannBio, Korea).
+- The only storyline the curator lists as ready for my desk; S29 is for journalist-ai.
+- No hold; P2: prompts file and memory agree. No fix-first open for me: C1 all Ready and released (the batch's one fix, Fretefy, is journalist-portugal's P1); S28's review header still reads Fix first but it was re-checked and published at 12:22 and 12:29.
+- state: ok; done: S30 drafted and pushed; next: the reviewer's check; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 19:10 UTC (prompted, at Vicky's request)
+
+- Correction to the 18:55 line: S30's handoff is to reviewer@PrompTugal.vicky through the normal review queue (it reviews every draft in desks/journalist-vicky/drafts/ without a review; S30 had none). Recorded in a commit For: reviewer@PrompTugal.vicky. Not duplicated, not released.
+- S30 now says, in In short, What this does not claim and its source line, that the eleven come from page 1 of 26 of Web Summit's featured startups, whose 100 entries are all GROWTH stage, and are not a complete or representative list (re-checked on Web Summit's page today).
+- state: ok; done: S30 handoff corrected and sample stated; next: the reviewer's check; ask: should my writing task's step 5 say For: reviewer@PrompTugal.vicky instead of journalist@PrompTugal.dinis? (recommended: yes); run: prompted
+
+## Sun 8 Nov 2026, 19:00 UTC (prompted, at Vicky's request): routing fix
+
+- **For conductor@web-summit.vicky's routing audit.** Cause: step 5 of my writing task (trig_01RqSqjPAC6WuwNmTbjKFzwa) said "For: journalist@PrompTugal.dinis", as set on 6 Nov, before Vicky's reviewer queue existed. So my draft commits (S23, S28, S30, and S14, S16, S19 and S21 earlier) named Dinis's journalist rather than reviewer@PrompTugal.vicky, and my 18:55 report line repeated it for S30. Effect: none on review, since the reviewer reviews every unreviewed draft in desks/journalist-vicky/drafts/; only the commit's address and the report were misleading. Fix: step 5 now says "For: reviewer@PrompTugal.vicky" (task updated 18:56 UTC; schedule unchanged, writing at :45 past 05, 10, 14, 18 UTC); prompts file synchronised; S30's handoff recorded For: reviewer@PrompTugal.vicky (commit 9fbce7be). The fix-only task already addressed the reviewer and is unchanged.
+- state: ok; done: step 5 readdressed, prompts file synchronised, cause and fix recorded; next: next writing run 05:45 tomorrow; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 19:15 UTC (company batch C2, manual run at Vicky's request)
+
+- C2 ready for review: ten files in desks/journalist-vicky/companies/ in the newsroom repository (rws, scrut-automation, shakers, spacecomputer, sphere, strawberry, sumsub, the-hacking-games, topsec-cloud-solutions, trent-ai), status: in-review, pushed together, commit For: reviewer@PrompTugal.vicky. Backlog rows set to "in review".
+- Sources, all read 8 Nov: the companies' own sites; Web Summit's featured startups page (Shakers, SpaceComputer, Sphere, Strawberry: GROWTH-stage featured startups, each with its own description); eight Web Summit session pages for the other six.
+- RWS (marked "website"): its site refused an automated read (HTTP 202, no content), so its About rests on Wikipedia's "RWS Group" article, noted in the source line. Its press conference (Tue 10 Nov, 11:30, Stage 2) is marked Media only, as Web Summit's page says.
+- Skipped: none. Blockers: none. Left out on purpose: where each company is based, as in C1.
+- state: ok; done: C2 written and pushed for review; next: my 19:50 fix-only run; no further batch; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 19:58 UTC (fix-only run)
+
+- S30 fixed after the reviewer's Fix first, all points accepted and checked today: the eleven companies' own Web Summit pages now cited and linked (each with its description and GROWTH badge), and the text says the descriptions come from those pages; NeoCannBio "says it is building" its chain; AURIMOD's drug-free claim attributed; the cover card and its alt text say the eleven are from page 1 of Web Summit's featured list; group label now "doctors, bookings, claims". Status back to draft, For: reviewer@PrompTugal.vicky. Note for the record: the descriptions were also in the list page's embedded data, which is where I first read them; citing each company's page is clearer for readers.
+- state: ok; done: S30 revised and pushed; next: the reviewer's 20:20 re-check; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 00:10 UTC (OVERNIGHT-9NOV, C2 fixes)
+
+- Shakers, SpaceComputer, Sphere and Strawberry fixed and pushed together, status: in-review, For: reviewer@PrompTugal.vicky: each cites its own Web Summit page (description and GROWTH stage), SpaceComputer's self-description and Strawberry's claim attributed, the times line dropped. Sources re-read 9 Nov.
+- RWS left in fix: its site still sends no content to a plain request (HTTP 202), and loading it in a headless browser was refused by this session's permission check, so I did not try another way. Two smaller corrections made ("intellectual property"; an accurate source note). Its backlog row says why.
+- state: partial; done: four C2 fixes in review, RWS left in fix with reason; next: batch S2 at the next wake; ask: for RWS, can the reviewer (who can open rws.com) source the About, or may it rest on Wikipedia alone?; run: scheduled

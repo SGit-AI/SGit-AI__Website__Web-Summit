@@ -23,7 +23,7 @@
         if (embed) {
             const i = location.hash.indexOf('?'), q = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)), set = (k, v) => { if (v) q.set('r_' + k, v); else q.delete('r_' + k) }
             set('p', s.p.join(',')); set('k', s.k.join(',')); set('a', s.a); set('i', s.i); set('sel', s.sel); set('m', s.m ? '' : '0'); set('r', s.r ? '1' : '')
-            q.set('map', '1'); const t = q.toString().replace(/%2C/g, ',').replace(/%3A/g, ':'); return '#collab' + (t ? '?' + t : '')
+            const t = q.toString().replace(/%2C/g, ',').replace(/%3A/g, ':'); return '#collab' + (t ? '?' + t : '')
         }
         const q = []; if (s.w !== '24h') q.push('w=' + s.w); if (s.p.length) q.push('p=' + s.p.join(',')); if (s.k.length) q.push('k=' + s.k.join(','))
         if (s.a) q.push('a=' + encodeURIComponent(s.a)); if (s.i) q.push('i=' + encodeURIComponent(s.i)); if (s.sel) q.push('sel=' + s.sel); if (!s.m) q.push('m=0'); if (s.r) q.push('r=1'); if (s.c) q.push('c=1')
@@ -31,7 +31,10 @@
     }
     const at = (R, m) => new Date(Date.parse(R.from) + m * 6e4)
     const hhmm = d => d.toISOString().slice(11, 16)
-    const dayLabel = d => d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' })
+    // one formatter, and one label per UTC day: the map's playback asks for it on every frame (twice with the timeline open),
+    // and toLocaleDateString built a new formatter each time (dev.map@, 8 November: about 4% of a phone's playback)
+    const dayFmt = new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }), dayMemo = new Map()
+    const dayLabel = d => { const k = Math.floor(d.getTime() / 864e5); let v = dayMemo.get(k); if (v === undefined) dayMemo.set(k, v = dayFmt.format(d)); return v }
 
     // which events this view shows, and its time span in minutes since 2 November
     function select(R, s, nowMin) {
@@ -49,6 +52,7 @@
     // the map's clock (mountFlow) and the embedded timeline share one moment: the map says where it is, the timeline follows,
     // and a commit picked on the timeline moves the map there
     let flowApi = null, embedClock = null
+    const fa = () => flowApi && flowApi.alive() ? flowApi : null
     // slice 4: the agents' runs (WS-160), read in this browser from observability's public vault with its published read key,
     // through the site's vendored reader (assets/vendor/sgit-ai/.../vault-embed.js): only when asked, once per page
     let RUNS = null   // null | 'loading' | [runs] | Error
@@ -70,7 +74,7 @@
         if (title && !E) title.innerHTML = `${ownTitle('Replay')}<small>${esc((D.person.name || D.person.id).split(' ')[0])}'s command centre</small>`
         if (!R) { view.innerHTML = '<p class="note">Replay has no data in this build.</p>'; return }
         const s = parse(location.hash, E), nowMin = Math.round((Date.now() - Date.parse(R.from)) / 6e4)
-        if (E) setTimeout(() => { if (flowApi) flowApi.pick(s.sel) }, 0)   // the map, drawn before this timeline, picks out the commit's agent
+        if (E) setTimeout(() => { if (fa()) fa().pick(s.sel) }, 0)   // the map, drawn before this timeline, picks out the commit's agent
         const { start, end, ev } = select(R, s, nowMin), phone = PHONE()
         // rows: per agent grouped by person; on a phone, per person
         const agentsSeen = new Set(ev.filter(e => e[1] >= 0).map(e => e[1]))
@@ -106,7 +110,7 @@ ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}
 <g class="rp-arcs">${arcs.map(([e, n]) => `<path class="rp-e rp-arc${e[6] === s.sel ? ' on' : ''}" data-t="${e[0]}" data-h="${esc(e[6])}" d="${arcPath(e, n)}" stroke="${KINDS[e[2]][1]}"/>`).join('')}</g>
 <g class="rp-runs">${runMarks.map(([u, n, t]) => `<rect class="rp-e rp-run${u.signed ? ' signed' : ''}" data-t="${t}" x="${(x(t) - 4).toFixed(1)}" y="${TOP + n * RH + 2}" width="8" height="${RH - 4}" rx="2"><title>${esc(u.agent)} ran at ${esc(u.run.slice(11, 16))} UTC (${esc(u.trigger || 'run')}${u.signed ? ', signed' : ''}): read ${(u.read || []).length}, did ${(u.did || []).length}${u.notes ? '. ' + esc(u.notes) : ''}</title></rect>`).join('')}</g>
 <g class="rp-dots">${ev.filter(e => e[1] >= 0 && rowOf.has(e[1])).map(e => `<circle class="rp-e${e[6] === s.sel ? ' on' : ''}" data-t="${e[0]}" data-h="${esc(e[6])}" cx="${x(e[0]).toFixed(1)}" cy="${TOP + rowOf.get(e[1]) * RH + RH / 2}" r="${phone ? 4 : 3.5}" fill="${KINDS[e[2]][1]}"><title>${esc(R.agents[e[1]].name)}, ${esc(hhmm(at(R, e[0])))} UTC: ${esc(e[5])}</title></circle>`).join('')}</g>
-<line class="rp-head" x1="${x(end)}" x2="${x(end)}" y1="${TOP - 10}" y2="${H}"/></svg>`
+</svg><svg class="rp-headsvg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-hidden="true"><rect class="rp-veil" x="${x(end)}" y="${TOP - 4}" width="0" height="${H - TOP + 4}" display="none"/><line class="rp-head" x1="${x(end)}" x2="${x(end)}" y1="${TOP - 10}" y2="${H}"/></svg>`
         const chip = (k, v, l, on, col) => `<button type="button" class="rp-chip${on ? ' on' : ''}" data-rp="${k}" data-v="${esc(v)}" aria-pressed="${on}">${col ? `<i style="background:${col}"></i>` : ''}${esc(l)}</button>`
         const agentOpts = [...agentsSeen].map(i => R.agents[i].name).sort()
         view.innerHTML = `<div class="${E ? 'rp rp-embed' : 'ak rp'}${s.c ? ' rp-clip' : ''}">${s.c ? `<header class="rp-cliphead"><b>The team at work: ${esc(WINDOWS[s.w][0].toLowerCase())}, in 60 seconds</b><span data-rp-now></span><button type="button" class="cc-btn" data-rp-exit>Close the clip</button></header>` : note()}
@@ -129,7 +133,7 @@ ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}
 </div>
 <p class="note">${ev.length} commits and releases shown. Tap a dot for the commit;  an arc is a commit's For: line, from its agent to the agent or person it is for. Kinds are read from each commit (who it is from and to), so they are a guide, not a record.</p>
 ${s.r ? `<p class="note rp-runnote">${RUNS === 'loading' || !RUNS ? 'Reading the agents\' run logs from observability\'s public vault…' : RUNS instanceof Error ? `The run logs could not be read (${esc(RUNS.message)}).` : `${runMarks.length} runs shown (▮, green when signed), from the latest ${RUNS.length} the agents logged (WS-160); runs carry no duration, so each is a mark at its minute.`}</p>` : ''}
-<div class="rp-wrap">${rows.length ? svg : '<p class="note">Nothing in this window for these filters.</p>'}</div>
+<div class="rp-wrap">${rows.length ? `<div class="rp-stage">${svg}</div>` : '<p class="note">Nothing in this window for these filters.</p>'}</div>
 ${sel ? detail(R, sel) : ''}
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}: every commit on dev since 2 November up to that release.</p>
 </div>`
@@ -157,7 +161,7 @@ ${sel ? detail(R, sel) : ''}
         const w = view.querySelector('[data-rp-w]'); if (w) w.onchange = () => go({ w: w.value })
         const a = view.querySelector('[data-rp-a]'); if (a) a.onchange = () => go({ a: a.value })
         const i = view.querySelector('[data-rp-i]'); if (i) { let t; i.oninput = () => { clearTimeout(t); t = setTimeout(() => { go({ i: i.value }); const n = view.querySelector('[data-rp-i]'); if (n) { n.focus(); n.setSelectionRange(n.value.length, n.value.length) } }, 300) } }
-        view.querySelectorAll('circle.rp-e').forEach(c => c.onclick = () => { if (ctx.embed && flowApi && c.dataset.h !== s.sel) flowApi.seek(+c.dataset.t); go({ sel: c.dataset.h === s.sel ? '' : c.dataset.h }) })
+        view.querySelectorAll('circle.rp-e').forEach(c => c.onclick = () => { if (ctx.embed && fa() && c.dataset.h !== s.sel) fa().seek(+c.dataset.t); go({ sel: c.dataset.h === s.sel ? '' : c.dataset.h }) })
         // playback: dots after the playhead fade; the pointer walks the sorted dots so each frame touches only what changed
         const dots = [...view.querySelectorAll('.rp-e')].sort((p, q) => +p.dataset.t - +q.dataset.t)
         const head = view.querySelector('.rp-head'), now = view.querySelector('[data-rp-now]'), scrub = view.querySelector('[data-rp-scrub]'), btn = view.querySelector('[data-rp-play]'), speed = view.querySelector('[data-rp-speed]')
@@ -165,21 +169,33 @@ ${sel ? detail(R, sel) : ''}
         let shown = dots.length
         const rateNow = () => s.c ? Math.max(1, (end - start) / 60) : +(speed ? speed.value : 60)
         const arcs = [...view.querySelectorAll('.rp-arc')], playing = () => !!play
-        function seek(t) {
+        // backlog 0c3 (Angelo, 8 November: "The replay agents map is very slow, when I play it it stutters quite a bit"): the
+        // chart holds thousands of marks, and every change inside it repainted all of them, once a frame while the map played.
+        // The playhead now lives in its own small overlay (moving it repaints nothing else), and while the chart follows the
+        // map's clock while the map plays, the marks stay as they are and a light veil over the chart's future moves with the
+        // playhead instead; each mark fades as before once the map pauses, or on any seek by hand.
+        const veil = view.querySelector('.rp-veil'), right = x(end)
+        let veiled = false
+        function seek(t, follow) {
             t = Math.max(start, Math.min(end, t))
+            if (head) { head.setAttribute('x1', x(t)); head.setAttribute('x2', x(t)) }
+            if (now) { const nt = `${dayLabel(at(R, t))} ${hhmm(at(R, t))} UTC`; if (now.textContent !== nt) now.textContent = nt }   // the same text again still costs a layout
+            if (scrub && +scrub.value !== Math.round(t)) scrub.value = Math.round(t)
+            if (follow && veil) {
+                if (!veiled) { veiled = true; veil.removeAttribute('display'); while (shown < dots.length) dots[shown++].classList.remove('fut') }
+                veil.setAttribute('x', x(t)); veil.setAttribute('width', Math.max(0, right - x(t)).toFixed(1)); return t
+            }
+            if (veiled) { veiled = false; if (veil) veil.setAttribute('display', 'none') }   // SVG has no hidden
             while (shown > 0 && +dots[shown - 1].dataset.t > t) dots[--shown].classList.add('fut')
             while (shown < dots.length && +dots[shown].dataset.t <= t) dots[shown++].classList.remove('fut')
             // slice 3: the messages of the last 90 minutes before the playhead are drawn bright, so each one lights up as it happens
             if (arcs.length && playing()) for (const a of arcs) a.classList.toggle('now', +a.dataset.t <= t && +a.dataset.t > t - 90)
-            if (head) { head.setAttribute('x1', x(t)); head.setAttribute('x2', x(t)) }
-            if (now) now.textContent = `${dayLabel(at(R, t))} ${hhmm(at(R, t))} UTC`
-            if (scrub && +scrub.value !== Math.round(t)) scrub.value = Math.round(t)
             return t
         }
         // embedded: follow the map's clock
         if (embedClock) removeEventListener('ak-clock', embedClock)
         embedClock = null
-        if (ctx.embed) { embedClock = e => { if (view.isConnected) seek(e.detail) }; addEventListener('ak-clock', embedClock); if (flowApi && flowApi.at() != null) seek(flowApi.at()) }
+        if (ctx.embed) { embedClock = e => { if (view.isConnected) seek(e.detail, !!(fa() && fa().playing())) }; addEventListener('ak-clock', embedClock); if (fa() && fa().at() != null) seek(fa().at()) }
         const stop = () => { if (play) { cancelAnimationFrame(play.raf); clearTimeout(play.raf) } play = null; arcs.forEach(a => a.classList.remove('now')); if (btn) { btn.textContent = '▶ Play'; btn.setAttribute('aria-pressed', 'false') } }
         if (scrub) scrub.oninput = () => { stop(); seek(+scrub.value) }
         const j = view.querySelector('[data-rp-jump]'); if (j) j.onchange = () => { if (j.value) { stop(); seek(+j.value) } }
@@ -212,7 +228,7 @@ ${sel ? detail(R, sel) : ''}
     // per map (o.key: window, layout, focus), and picked up again by the new map
     let flowState = { key: '', t: null, playing: false, speed: '' }
     function mountFlow(host, o) {
-        const R = o.D && o.D.replay, bar = host.querySelector('[data-tmf]'); if (!R || !bar || !o.svg) return
+        const R = o.D && o.D.replay, bar = host.querySelector('[data-tmf]'); if (!R || !R.events || !bar || !o.svg) return
         const w = WINDOWS[o.w] ? o.w : '24h', nowMin = Math.round((Date.now() - Date.parse(R.from)) / 6e4), end = nowMin, start = WINDOWS[w][1] ? Math.max(0, end - WINDOWS[w][1]) : 0
         const lowerBound = (arr, v, key) => { let lo = 0, hi = arr.length; while (lo < hi) { const mid = (lo + hi) >> 1; if (key(arr[mid]) <= v) lo = mid + 1; else hi = mid } return lo }
         const isAgent = id => { const n = o.pos.get(id); return !!n && n.kind === 'a' }
@@ -323,6 +339,7 @@ ${sel ? detail(R, sel) : ''}
                 const k = lowerBound(p.ts, T, x => x), last = k ? p.ts[k - 1] : null, ends = isOn(p.from) && isOn(p.to)
                 const op = last == null || !ends ? 0 : T <= last + travel ? 1 : Math.max(0, 1 - (T - last - travel) / fade), el = links[p.i], vis = op > 0.03
                 if (vis !== p.vis) { el.classList.toggle('z', !vis); p.vis = vis }
+                p.op = vis ? op : 0
                 if (vis) { const ow = (0.8 + 4.2 * Math.sqrt(k / maxN)).toFixed(2), oo = (0.15 + 0.65 * op).toFixed(2); if (ow !== p.ow) el.setAttribute('stroke-width', p.ow = ow); if (oo !== p.oo) el.setAttribute('stroke-opacity', p.oo = oo) }
             }
             const sent = lowerBound(msgs, T, m => m.t), lo = lowerBound(msgs, T - travel, m => m.t); fly = msgs.slice(Math.max(lo, sent - POOL), sent)
@@ -336,7 +353,7 @@ ${sel ? detail(R, sel) : ''}
             hot = busy
             const e = acts[lowerBound(acts, T, x => x[0]) - 1], key = e ? e[6] : ''
             if (key !== lastTick) { lastTick = key; tick.innerHTML = e ? `<b>${esc(hhmm(at(R, e[0])))}</b> ${esc(nameOf(R.agents[e[1]].name))}${e[3].length ? ' → ' + esc(e[3].map(i => nameOf(R.targets[i])).join(', ')) : ''}: ${esc(e[5])}` : '' }
-            now.textContent = `${dayLabel(at(R, T))} ${hhmm(at(R, T))} UTC · ${total} agent${total === 1 ? '' : 's'}`
+            const nt = `${dayLabel(at(R, T))} ${hhmm(at(R, T))} UTC · ${total} agent${total === 1 ? '' : 's'}`; if (now.textContent !== nt) now.textContent = nt
             if (+scrub.value !== Math.round(T)) scrub.value = Math.round(T)
             flowState.t = T
             dispatchEvent(new CustomEvent('ak-clock', { detail: T }))
@@ -391,10 +408,13 @@ ${sel ? detail(R, sel) : ''}
         }
         const kick = () => { if (!raf) { lastTs = 0; raf = requestAnimationFrame(frame) } }
         function seek(t) { T = Math.max(start, Math.min(end, t)); if (!on) { on = true; o.svg.classList.add('tm-replay') } state(); kick(); return T }
+        // the clip (backlog 0f3, dev.work@PrompTugal.angelo, clip-button.js): one frame at t, moved dt seconds, on the clip's own clock
+        // and not the screen's, so a slow machine makes the same video; seek(T) afterwards hands the map back to the screen
+        function step(t, dt) { if (raf) { cancelAnimationFrame(raf); raf = 0 } T = Math.max(start, Math.min(end, t)); if (!on) { on = true; o.svg.classList.add('tm-replay') } state(); paint(dt); return T }
         const key = o.key || w
         if (flowState.key !== key) flowState = { key, t: null, playing: false, speed: flowState.speed }
         if (flowState.speed) speed.value = flowState.speed
-        function stop() { playing = false; flowState.playing = false; btn.textContent = '▶ Play back'; btn.setAttribute('aria-pressed', 'false') }
+        function stop() { playing = false; flowState.playing = false; btn.textContent = '▶ Play back'; btn.setAttribute('aria-pressed', 'false'); if (on) dispatchEvent(new CustomEvent('ak-clock', { detail: T })) }   // the timeline drops its veil
         function play() { playing = true; flowState.playing = true; btn.textContent = '❚❚ Pause'; btn.setAttribute('aria-pressed', 'true'); kick() }
         scrub.oninput = () => { stop(); seek(+scrub.value) }
         const j = bar.querySelector('[data-tmf-jump]'); j.onchange = () => { if (j.value) { stop(); seek(+j.value) } }
@@ -408,9 +428,21 @@ ${sel ? detail(R, sel) : ''}
             const e = sha && R.events.find(x => x[6] === sha && x[1] >= 0), from = e && o.nodeOf(R.agents[e[1]].name), v = from && N.get(from)
             if (v) v.g.classList.add('tmf-pick')
         }
-        flowApi = { seek, at: () => flowState.t, pick }
+        // the same moment for the map in 3D (backlog 0c2, Angelo, 8 November: "the current 3D view in the replay page doesn't show
+        // the messages flowing, for some reason they are invisible": map3d.js was never given them). What is in flight, the lit
+        // lines and who is busy, in live3d.js's own terms, read by map3d.js on each of its frames; nothing before Play back or a seek.
+        const lit3 = new Map()
+        const view3d = () => {
+            if (!on || !host.isConnected) return null
+            for (const p of P) { const k = p.from + '|' + p.to; let e = lit3.get(k); if (!e) lit3.set(k, e = { op: 0 }); e.op = p.op || 0 }
+            // who is on the map now (backlog 0c3): the 3D adds, fades and makes room as the 2D does
+            const onIds = new Set(); for (const [id, a] of N) if (a.on) onIds.add(id)
+            return { fly: fly.map(m => ({ from: m.from, to: m.to, u: Math.min(1, Math.max(0, (T - m.t) / travel)) })), lines: lit3, hot, on: onIds }
+        }
+        flowApi = { seek, at: () => flowState.t, pick, view3d, playing: () => playing, alive: () => host.isConnected,
+            step, stop, range: () => [start, end], rate, ms: m => Date.parse(R.from) + m * 6e4 }   // the last line for the clip (0f3)
         return { seek, msgs: msgs.length }
     }
 
-    root.AngeloReplay = { render, parse, mountFlow }
+    root.AngeloReplay = { render, parse, mountFlow, view3d: () => fa() ? fa().view3d() : null, flow: () => fa() }
 })(typeof self !== 'undefined' ? self : this)

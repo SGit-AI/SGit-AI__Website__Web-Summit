@@ -179,3 +179,41 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - New storyline S28 for journalist-connections, beat "Connections: the summit": "Five AI builders on Web Summit's speaker list worth knowing" (Tao Zhang of Manus AI, Dahai Li of ModelBest, Alan Shen of MiniMax, Richard Socher of You.com, Michele Catasta of Replit). No article or draft names them; the robotics group is not listed again (S12 and S15 cover it). Newsroom: desks/curator/2026-11-08-1045.json.
 - For the fact-checker: only the page's first view was read and its order rotates, so the five are a sample; what each company does is not captured yet, so the writer takes it from each company's own page. Held for the next pass, when the researcher's "what each organisation does" arrives: the policy and investment group, mobility and devices, infrastructure and security.
 - state: ok; done: S28 listed, SA19C recorded; next: the 14:30 run; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 14:30 UTC run
+
+- applied SA22: the curator line is in my scheduled prompt (before step 3) and my prompts file (rule 24); my times are unchanged. decisions.md read first: no HOLD.md; PILOT-REPLIT is not for me; the conductor's commit e189da66 is the source; prompts file re-read, it matches.
+- New capture in vault 41j3e9s9 (researcher's 14:15 run): [Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/), read 8 November 2026, page 1 of 26, 100 startups with the page's industry tags (names and tags only). Mapped in desks/curator/2026-11-08-1445.json and held: no storyline yet, because what the startups do and where they are based is not captured; none of the names is in a published article or draft.
+- Priority list for journalist-connections: 1, S28 (the five AI builders), ready to write now, with the writer taking what each company does from its own page and re-reading the speakers page the same day. Nothing else is ready; the README has a section "Connection storylines: order and readiness" (newsroom).
+- state: ok; done: SA22 applied, startups capture mapped and held, S28 marked ready; next: the 18:30 run; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 15:20 UTC (prompted correction: S28 already published)
+
+- Corrected, at Vicky's word: S28 is published, [PrompTugal.news, "Five AI builders on Web Summit's speaker list worth knowing"](https://promptugal.news/articles/five-ai-builders-to-know.html), read 8 November 2026 (reviewer's commit b0eab872 at 12:29 UTC, v0.1.704). Both maps (2026-11-08-1045 and -1445) now say so, the README marks it "(published 8 Nov)" and its "Ready to write now" list is empty (newsroom release in progress).
+- Why the check missed it: at 14:30 I ran the duplicate check (standing answer 20) only on the 100 new startup names, not again on S28 itself before marking it ready, although its draft (11:12) and article (12:29) were already in the clone I had pulled. Fixed in my prompts file (rule 25) and in the generator, which now refuses a ready story whose title matches an article or a draft (tested: it stops on S28). I did not change the scheduled prompt.
+- PILOT-REPLIT is a separate addition to the existing Replit company page, not an S28 draft; nothing for me.
+- state: ok; done: S28 marked published, ready list empty, check added; next: the 18:30 run; ask: may I add one sentence to the scheduled prompt too, "before marking a connection storyline ready, re-check it against published articles and drafts"? (recommend yes, though rule 25 already binds me); run: prompted
+
+## Sun 8 Nov 2026, 15:35 UTC (prompted: re-check sentence)
+
+- Added to my scheduled prompt, at Vicky's word and word for word, right after standing answer 22's line: "Before marking a connection storyline ready, re-check it against published articles and drafts." Consistent with rule 25 and standing answer 20 (which still governs creating any storyline); the prompts file carries the same prompt text and a note under rule 25. Schedule unchanged: `30 5,10,14,18 * * *`, next run 18:30 UTC.
+- state: ok; done: sentence added to the task prompt and the prompts file; next: the 18:30 run; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 17:00 UTC (prompted: desk review across all five desks)
+
+- applied (Vicky's word in chat): from the next run with new research I review the researcher's material across all five desks, summit, Europe, Portugal, AI and connections, and turn suitable material into mature, non-duplicate assignments for each desk's journalist, each with a reader angle and sources; connections are not the focus. A desk with nothing suitable gets a one-line reason in the map's `desk_review`, missing evidence goes to the researcher as a gap, and no story is forced. It is in my scheduled prompt (end of step 4) and my prompts file (rule 26); schedule unchanged, next run 18:30 UTC.
+- state: ok; done: desk review added to the task prompt and prompts file; next: the 18:30 run; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 18:30 UTC run (first desk review)
+
+- decisions.md read first: no HOLD.md; answers 23 to 25 and the company-page items are for others; prompts file re-read, it matches. New research: the researcher's 18:15 revision of [Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/), read 8 November 2026 (country, stage, pitch for the first 100 startups); map desks/curator/2026-11-08-1845.json.
+- Desk review: AI desk, S29 "Who builds the parts of an AI agent? Startups at Web Summit" (Mastra, Keewano, Acrab AI, Humanos, Polygraf AI, GetVocal, Beyond Presence, Cnext), ready for journalist-ai; connections, S30 "Eleven health startups at Web Summit, by the problem they tackle", ready for journalist-connections; both checked against articles, drafts and the site's company pages (profiles exist for five of the AI startups, to be linked not repeated).
+- No assignment: summit (nothing practical or programme-related is new), Europe (only a count over one list page of 26), Portugal (four Portuguese startups among the first 100 would misstate the total). Gap for the researcher: the whole featured list, which would let those desks have assignments; the researcher has asked you whether it may read it, so that is your call.
+- state: ok; done: first desk review, S29 and S30 assigned; next: the 05:30 run on 9 November; ask: may the researcher read pages 2 to 26 of the featured list (recommend: your call, it unlocks the Portugal, Europe and summit desks); run: scheduled
+
+## Sun 8 Nov 2026, 19:10 UTC (prompted: desk requests for the researcher)
+
+- applied: the gap about pages 2 to 26 stays recorded (map 2026-11-08-1845 now says "recorded, not requested"); S29 and S30 stand with their stated limits; no assignment depends on the list, and I do not ask for the search service. Rule 27 in my prompts file; the scheduled prompt is unchanged.
+- Requests routed to the researcher through the map's gaps list (desks/curator/2026-11-08-1900.json, newsroom), each with a reader angle and ordinary public sources: Portugal, (1) which Portuguese startups are in the Road 2 Web Summit class and at the Portugal stand, and what each does, from Startup Portugal's own page; (2) what is on at the Pavilhão de Portugal and in Lisbon side events, from the organisers' and the city's pages. Europe, (1) EU funding calls for startups open now, with dates, from europa.eu pages; (2) which other countries bring national delegations and what each offers, from each national agency's page. Summit, (1) what Web Summit says on accessibility, safety and practical needs at the venue; (2) evening events and the city's programme in summit week.
+- No assignment for the summit, Europe and Portugal desks until a capture supports one; none forced.
+- state: ok; done: gaps routed, pagination gap kept as record only; next: the 05:30 run on 9 November; ask: none; run: prompted

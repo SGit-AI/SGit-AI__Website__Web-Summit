@@ -51,3 +51,15 @@
 2026-11-08T09:21:00Z | n/a (no get_session) | nothing to route; desk routed dev.abp@, the Tauri app and the protocols article itself; none urgent
 2026-11-08T10:21:00Z | n/a (no get_session) | nothing to route; dev@ recorded worker reviews, vault@'s kms test result already routed to vault.kms@; none urgent
 2026-11-08T11:20:34Z | session_01Xp7gj4SKmQWimzFNZug7Rf | nothing to route; social-media's two questions to Open with Angelo; nothing urgent
+2026-11-08T12:21:00Z | session_01Xp7gj66oKtc1nocZgC7TGx | nothing urgent; dashboard@ brought map/app workers' work onto dev; dev.app CI draft and missing lanes noted for the desk
+2026-11-08T13:20:43Z | n/a (no get_session) | nothing urgent; Indi's accountant/token-reporting ask (tier 3) added to Open with Angelo; stand-ups end routed by the desk
+2026-11-08T14:21:16Z | session_01Xp7gj5ZKz2BQHCPCxFJHez | nothing urgent; desk's 'own website first' rule in the kit; workers' work brought onto dev; no stalls seen
+2026-11-08T15:21:15Z | runner (no session id available) | nothing urgent; Angelo's agents' reports only (dashboard, dev); others' work information
+2026-11-08T16:21:28Z | session_01Xp7gj68ZjrE57LvejsvS75 | URGENT relayed: request to Dinis's conductor for dev.app's CI drafts; nothing else to route
+2026-11-08T17:20:36Z | runner (no session id available) | nothing urgent; dashboard's Smart App Control question is with Angelo (signing is tier 3); nothing to route
+2026-11-08T18:21:20Z | session_01Xp7gj61vNpidtdQYHAVT7A | nothing to route, nothing urgent; stale CI-request line cleared
+2026-11-08T19:20:43Z | runner (no session id available) | nothing to route, nothing urgent; STATE upkeep (policy's P-11 moot after the desktop app was dropped)
+2026-11-08T20:21:59Z | (session_01Xp7gj5TZToFrcxC6GciQC1) | nothing to route, nothing urgent; reviews and snapshot, information only
+2026-11-08T21:20:47Z | (runner, no session id available) | nothing to route, nothing urgent; reviews onto dev, information only
+2026-11-08T22:20:45Z | (runner, no session id available) | nothing to route, nothing urgent; vault kms re-test, dev.abp trial, S30: information only
+2026-11-08T23:20:51Z | (runner, no session id available) | nothing to route, nothing urgent; ABP decisions routed by desk, WS-158 done: information only

@@ -1,6 +1,6 @@
 [package]
 name = "team-and-the-machine"
-version = "0.1.0"
+version = "0.1.1"
 description = "The live graph of Angelo's team and agents in a hexagonal window: a shell that loads the public live page, no data and no key"
 edition = "2021"
 publish = false
