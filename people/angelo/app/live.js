@@ -253,11 +253,13 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
         let unit = 1, unitAt = -1e9
         const px = (base, minPx, now) => { if (now - unitAt > 1000) { const w = svg.getBoundingClientRect().width; if (w) unit = w / S * SCALE; unitAt = now } return f1(Math.max(base, minPx / Math.max(unit, 0.05))) }
         const launch = (from, to, now) => { const e = pairEl(from, to); e.at = now; const c = colOf(from); fly.push({ from, to, t0: now, ms: TRAVEL_MS, halo: el('circle', { r: px(14, 12, now), fill: c, class: 'halo' }, pulses), dot: el('circle', { r: px(7.5, 6, now), fill: c }, pulses) }); if (fly.length > 160) { const x = fly.shift(); x.dot.remove(); x.halo && x.halo.remove() } }
-        // the constant flow: small, faint, slower dots on the lines, chosen by how busy each pair has been lately
+        // the constant flow: slower dots on the lines, chosen by how busy each pair has been lately; drawn glowing as a real exchange is, a
+        // little smaller (a halo, alpha 0.55 to 0.95 over its trip), its line lit at min(1, op * 1.25) (backlog 0c6, Angelo, 9 November: "Can we
+        // have the glowy version all the time? Ideally on all views.")
         const flowOne = (now) => {
             if (!wsum || flowN >= FLOW_MAX) return
             let r = Math.random() * wsum, k = 0; while (k < weights.length - 1 && (r -= weights[k].w) > 0) k++
-            const w = weights[k], e = pairEl(w.from, w.to), ms = FLOW_TRAVEL_MS * (0.8 + Math.random() * 0.5); e.flowAt = now; e.flowMs = ms; flowN++; fly.push({ from: w.from, to: w.to, t0: now, ms, flow: true, dot: el('circle', { r: px(5.5, 4.5, now), fill: colOf(w.from), class: 'flow' }, pulses) })
+            const w = weights[k], e = pairEl(w.from, w.to), ms = FLOW_TRAVEL_MS * (0.8 + Math.random() * 0.5); e.flowAt = now; e.flowMs = ms; flowN++; fly.push({ from: w.from, to: w.to, t0: now, ms, flow: true, halo: el('circle', { r: px(10, 8.5, now), fill: colOf(w.from), class: 'halo flow' }, pulses), dot: el('circle', { r: px(5.5, 4.5, now), fill: colOf(w.from), class: 'flow' }, pulses) })
         }
         const busy = (id, now) => { if (!hot.has(id)) N.get(id).classList.add('lv-hot'); hot.set(id, now + 1200) }
         // one event: from its agent to each of its targets; with no target the agent alone lights up
@@ -281,9 +283,9 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
                 const a = pos.get(f.from), b = pos.get(f.to), q = bend(a, b), v = 1 - u
                 const x = f1(v * v * a.x + 2 * v * u * q.x + u * u * b.x), y = f1(v * v * a.y + 2 * v * u * q.y + u * u * b.y)
                 f.dot.setAttribute('cx', x); f.dot.setAttribute('cy', y); if (f.halo) { f.halo.setAttribute('cx', x); f.halo.setAttribute('cy', y) }
-                if (f.flow) f.dot.style.opacity = (0.55 + 0.45 * Math.sin(Math.PI * u)).toFixed(2)
+                if (f.flow) { const fa = 0.55 + 0.4 * Math.sin(Math.PI * u); f.dot.style.opacity = fa.toFixed(2); f.halo.style.opacity = (0.45 * fa).toFixed(2) }
             }
-            for (const [, e] of lines) { const age = now - e.at, fa = e.flowAt ? now - e.flowAt : 1e9, fop = fa < e.flowMs ? 0.75 : Math.max(0, 0.75 * (1 - (fa - e.flowMs) / 1500)), op = Math.max(fop, age < TRAVEL_MS ? 0.95 : Math.max(0, 0.95 * (1 - (age - TRAVEL_MS) / FADE_MS))); const v = op.toFixed(2); if (v !== e.op) { e.op = v; if (!r3) e.path.setAttribute('stroke-opacity', v) } }
+            for (const [, e] of lines) { const age = now - e.at, fa = e.flowAt ? now - e.flowAt : 1e9, fop = fa < e.flowMs ? 0.75 : Math.max(0, 0.75 * (1 - (fa - e.flowMs) / 1500)), op = Math.max(fop, age < TRAVEL_MS ? 0.95 : Math.max(0, 0.95 * (1 - (age - TRAVEL_MS) / FADE_MS))); const v = op.toFixed(2); if (v !== e.op) { e.op = v; if (!r3) e.path.setAttribute('stroke-opacity', Math.min(1, op * 1.25).toFixed(2)) } }
             for (const [id, until] of hot) if (until <= now) { hot.delete(id); N.get(id).classList.remove('lv-hot') }
             // 3D: the same state, drawn in WebGL; the dots breathe more when the team is busier
             if (r3) { try { r3.draw({ now, fly, lines, hot, ran: ranSet, breath: 0.035 + 0.035 * Math.min(2, act) }) } catch (e) { r3 = null } }

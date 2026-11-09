@@ -106,7 +106,7 @@ void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 
         const tc = rgb('var(--rm-text, #fff)'); rings.forEach((n, i) => { n = P(n.id); rpos.setXYZ(i, n.x, n.y, n.z); rcol.setXYZ(i, tc.r, tc.g, tc.b); rsz.setX(i, n.size * 2.1); ral.setX(i, 0.45) }); rg.setDrawRange(0, rings.length)
         const ringMat = mat(VS_PTS, FS_PTS(2)), ringObj = new T.Points(rg, ringMat); ringObj.frustumCulled = false; world.add(ringObj)
 
-        // the moving dots: real exchanges bright with a glow and a short trail, the flow small and faint
+        // the moving dots: real exchanges bright with a glow and a short trail, the flow the same a little smaller (backlog 0c6)
         const dg = new T.BufferGeometry(), dpos = buf(dg, 'position', MAXDOTS * (TRAIL + 1), 3), dcol = buf(dg, 'col', MAXDOTS * (TRAIL + 1), 3), dsz = buf(dg, 'size', MAXDOTS * (TRAIL + 1), 1), dal = buf(dg, 'alpha', MAXDOTS * (TRAIL + 1), 1)
         dg.setDrawRange(0, 0); const dotsMat = mat(VS_PTS, FS_PTS(1), light ? T.NormalBlending : T.AdditiveBlending), dotsObj = new T.Points(dg, dotsMat); dotsObj.frustumCulled = false; world.add(dotsObj)
 
@@ -157,8 +157,9 @@ void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 
                 }
                 el.dataset.lv3dShown = String(live.filter(n => n.v > 0.5).length)
             }
-            // the lines lit by the engine, as bright as in 2D
-            if (st.lines) { let ch = false; for (const [k, e] of st.lines) { const v = +e.op || 0; if (v === e.op3) continue; const s = slotOf(k); if (s < 0) continue; e.op3 = v; const a = Math.min(1, v * 1.05), ga = a * (light ? 0.22 : 0.3); for (let j = s * SEG * 2, n = j + SEG * 2; j < n; j++) lal.setX(j, a); for (let j = s * GS, n = j + GS; j < n; j++) gal.setX(j, ga); ch = true } if (ch) lal.needsUpdate = gal.needsUpdate = true }
+            // the lines lit by the engine, as bright as in 2D; at min(1, op * 1.25) (backlog 0c6, Angelo, 9 November: "Can we have the glowy
+            // version all the time?"), so a line lit by the steady flow (op 0.75) glows nearly as much as one lit by a real exchange (0.95)
+            if (st.lines) { let ch = false; for (const [k, e] of st.lines) { const v = +e.op || 0; if (v === e.op3) continue; const s = slotOf(k); if (s < 0) continue; e.op3 = v; const a = Math.min(1, v * 1.25), ga = a * (light ? 0.22 : 0.3); for (let j = s * SEG * 2, n = j + SEG * 2; j < n; j++) lal.setX(j, a); for (let j = s * GS, n = j + GS; j < n; j++) gal.setX(j, ga); ch = true } if (ch) lal.needsUpdate = gal.needsUpdate = true }
             // the nodes: busy ones larger and whiter, all breathing gently with the team's activity
             const br = st.breath || 0, now = st.now || t0
             for (let i = 0; i < nN; i++) { const n = live[i], h = st.hot && st.hot.has(n.id), c = ncols[i], b = 1 + br * Math.sin(now / 1400 + i * 1.7)
@@ -169,7 +170,11 @@ void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 
             // the moving dots, with a short fading trail behind each real exchange
             let k = 0
             for (const f of st.fly || []) { if (k >= MAXDOTS * (TRAIL + 1) - TRAIL - 1) break; const a = P(f.from), b = P(f.to); if (!a || !b) continue; const c = a.c || (a.c = rgb(a.color))
-                if (f.flow) { curveAt(a, b, f.u, tmp); dpos.setXYZ(k, tmp.x, tmp.y, tmp.z); dcol.setXYZ(k, c.r, c.g, c.b); dsz.setX(k, 13); dal.setX(k, 0.5 + 0.45 * Math.sin(Math.PI * f.u)); k++; continue }
+                // the steady flow drawn as a real exchange is, a little smaller (backlog 0c6, people/angelo/proposals/live-map/glow/): a glowing
+                // head (34, alpha 0.55 to 0.95 over its trip) and a three-dot trail (20, 16.5, 13 at 0.6 of the head's alpha, fading)
+                if (f.flow) { const fa = 0.55 + 0.4 * Math.sin(Math.PI * f.u)
+                    for (let j = 0; j <= 3; j++) { curveAt(a, b, Math.max(0, f.u - j * 0.025), tmp); dpos.setXYZ(k, tmp.x, tmp.y, tmp.z); dcol.setXYZ(k, c.r, c.g, c.b); dsz.setX(k, j ? 23.5 - j * 3.5 : 34); dal.setX(k, j ? fa * 0.6 * (1 - j / 4) : fa); k++ }
+                    continue }
                 for (let j = 0; j <= TRAIL; j++) { const u = Math.max(0, f.u - j * 0.025); curveAt(a, b, u, tmp2); dpos.setXYZ(k, tmp2.x, tmp2.y, tmp2.z); dcol.setXYZ(k, c.r, c.g, c.b); dsz.setX(k, j ? 26 - j * 3.5 : 48); dal.setX(k, j ? 0.65 * (1 - j / (TRAIL + 1)) : 1); k++ } }
             dg.setDrawRange(0, k); if (k) { dpos.needsUpdate = dcol.needsUpdate = dsz.needsUpdate = dal.needsUpdate = true }
             R.render(scene, cam)

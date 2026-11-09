@@ -1,9 +1,13 @@
 # dev.map@PrompTugal.angelo: STATE
 
-Eighteenth run, 9 November 2026 (06:21 to about 07:10 UTC). No new commits For: dev.map@ since run 17 except dashboard@'s review (863e35df, run 17's work on dev). Every backlog item of mine is built or waits on someone (below).
+Twenty-sixth run, 9 November 2026 (22:19 to about 22:45 UTC). The desk briefed the glow at last: 1ac23df8 (desk.conductor@, pushed from riskmandate-angelo), backlog 0c6.
 
 ## Done this run (on workers/dev.map, for dashboard@ to review)
-- The map's tests on today's dev: 26 run, 25 pass. lvrepo failed: its pick, the newest newsroom exchange, is now pt:dinis:dev -> pt:dinis:conductor, both drawn at Dinis's person node, and a node to itself is not drawn. The test now picks an exchange between two people; live.js unchanged (9883ae34).
+- 0c6, the live graph glowing all the time (people/angelo/proposals/live-map/glow/README.md), drawing only:
+  - live3d.js: the steady flow drawn as a real exchange, a little smaller: a head of 34 at alpha 0.55 to 0.95 over its trip and a three-dot trail of 20, 16.5 and 13 at 0.6 of the head's alpha, fading; lit lines at min(1, op * 1.25), where they were op * 1.05.
+  - live.js (2D, every layout): each flow dot gets a halo (r 10, as a real exchange's 14 is to its 7.5 dot), opacity 0.45 of the dot's 0.55 to 0.95; lit lines' stroke-opacity min(1, op * 1.25). The engine's own op (which 3D reads) is unchanged. The halo carries class "flow" too, so the six-hourly reload, which waits for no real exchange in flight, still sees only flow.
+  - New test lvglow (2D halos and 0.94 lines, 3D four points a flow dot), at 1280 and 390 px, light and dark.
+  - The trail sizes follow the brief (20/16.5/13); the wallpaper's MapRenderer.java draws 16.5/13/9.5 (20 - j * 3.5, j from 1). For dashboard@: one of the two to match the other.
 
 ## Yesterday (runs 14 to 17)
 - 0c4 (6) RiskMandate's logo as big as PT's, 0c4 (4) the dial on the live view; 0c3 (1) phone playback 31 to 33-34 fps; 0c3 (6) the timeline collapsed; 0c0 dev.work@'s hook in live.js.
@@ -18,11 +22,11 @@ Eighteenth run, 9 November 2026 (06:21 to about 07:10 UTC). No new commits For: 
 - 0f's rest: build Angelo's pick of the fresh-session mark (options: `people/angelo/proposals/live-map/fresh-mark-options.svg`, A, B or C); the dashed ring stays until he picks.
 - The replay at a quarter CPU speed (a phone) is 33 to 34 fps with the timeline open (run 16): the rest is the map's own paint. Next step if the desk wants it before the summit: the map's moving layer (lines, dots) on a canvas over the still SVG; estimate about two runs.
 - Item 00's rest: Safari and iPad untested (no WebKit here).
-- dashboard@'s b52ac2f0 (For: dev.map@, Angelo about 17:45: "Can we have the glowy version all the time? Ideally on all views."): the steady flow drawn with a glowing head and trail, lines lit at min(1, op * 1.25), in live3d.js and live.js's 2D flow (people/angelo/proposals/live-map/glow/README.md). Not from the desk, so material: ready to build within the hour once the desk briefs it.
 - Piece 4 (public /team/map/) needs build.mjs and the newsroom: a question for the desk.
 - For policy@: my lane leaves out this STATE file (people/angelo/map/**); dashboard@'s review carries it onto dev.
 
 ## Last run
+Run 26, 9 November 22:19 to about 22:45 UTC: the desk's 1ac23df8 (ANGELO) briefed 0c6, the glow; built (Done, above). pushed-by --last-touch checked the spec (e588f4b5, ANGELO).
 Run 25, 9 November 20:17 to about 20:30 UTC: nothing from the desk, runner or dev@ For: dev.map@ since run 24; only dashboard@'s review 1efbc49a (run 24 onto dev), which again asks the desk to brief the glow (b52ac2f0): still material until the desk does (Open, above). The backlog's change since (a3a00cfc, research@) is not mine. pushed-by --last-touch checked the spec (e588f4b5, ANGELO); a plain git log in this shallow clone gave the boundary b52ac2f0, as 1b2 warns. Ledger line only; unsigned run log.
 Run 24, 9 November 18:16 to about 18:25 UTC: nothing from the desk, runner or dev@ For: dev.map@ since run 23; dashboard@'s b52ac2f0 (the glow on all views) is material until the desk briefs it (Open, above); the backlog's changes since (research@, the wristbands article, the pool) are not mine. pushed-by --last-touch checked the spec (e588f4b5, ANGELO). Ledger line only; unsigned run log.
 Run 23, 9 November 16:18 to about 16:25 UTC: nothing new For: dev.map@ since run 22 (only dashboard@'s reviews df4b6084, eaeead3b and its Android wallpaper work 48a75f60, not mine); the backlog's changes since (an article, the authority-checks draft, dev.abp@'s demo) are not mine; every item built or waiting (Open, above). pushed-by --last-touch checked the spec (e588f4b5, ANGELO). Ledger line only; unsigned run log.
