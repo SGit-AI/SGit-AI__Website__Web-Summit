@@ -37,7 +37,8 @@ public class LiveMapWallpaper extends WallpaperService {
     // the view, chosen in SettingsActivity (Angelo, 9 November: "choosing the view as in the website"); kept on the phone
     static final String PREFS = "view", LAYOUT = "layout", THEME = "theme", LEVEL = "level";
     static String layout(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(LAYOUT, "3d"); }
-    /** The level: "messages" (the exchanges alone, as before) or "workstreams" (the WS issues' squares and their flights too). */
+    /** The level: "messages" (the exchanges alone, as before), "workstreams" (the WS issues' squares and their flights too) or
+     *  "deliverables" (what was made and where it went: deliveries.json's ten destinations). */
     static String level(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(LEVEL, "messages"); }
     static String themeChoice(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(THEME, "dark"); }
     /** The theme to draw: the chosen one, or the phone's own when "follow the phone" is chosen. */
@@ -56,7 +57,8 @@ public class LiveMapWallpaper extends WallpaperService {
         private HandlerThread netThread; private Handler net;
         private volatile Graph graph; private volatile List<Graph.Event> events; private volatile Bitmap[] logos, logosLight;
         private volatile Object data;   // the parsed data.json, kept so a change of view rebuilds the graph without the network
-        private volatile Work work; private volatile List<Work.Row> workRows; private volatile Object workFile;
+        private volatile Work work; private volatile List<Work.Row> workRows; private volatile Object workFile; private volatile String workFileLevel;
+        private final java.util.Map<String, Bitmap> destLogos = new java.util.HashMap<>();
         private long mapAt = 0; private boolean visible = false;
 
         private final Runnable tick = new Runnable() { @Override public void run() { if (visible && view != null) { view.requestRender(); ui.postDelayed(this, isPreview() ? 1000 : FPS_MS); } } };
@@ -91,11 +93,18 @@ public class LiveMapWallpaper extends WallpaperService {
             try { graph = Graph.fromData(d, L, th); } catch (Exception e) { Log.w("LiveMap", "view rebuild failed", e); }
             levelFrom(workFile);
         }
-        // the level's file: workstreams.json when Workstreams is chosen (read with live.json, once a minute), nothing for Messages
-        private void levelFrom(Object f) {
-            if (!"workstreams".equals(level(LiveMapWallpaper.this))) { work = null; return; }
-            if (f == null) return;
-            try { Work w = work; if (w == null || !"workstreams".equals(w.level)) w = new Work("workstreams", f); workRows = w.rows(f); work = w; workFile = f; } catch (Exception e) { Log.w("LiveMap", "workstreams unreadable", e); }
+        // the level's file: workstreams.json or deliveries.json while that level is chosen (read with live.json, once a minute)
+        private String levelFile() { String v = level(LiveMapWallpaper.this); return "workstreams".equals(v) ? "workstreams.json" : "deliverables".equals(v) ? "deliveries.json" : null; }
+        private void levelFrom(Object f) { levelFrom(f, workFileLevel); }
+        private void levelFrom(Object f, String fileLevel) {
+            String v = level(LiveMapWallpaper.this);
+            if (levelFile() == null) { work = null; return; }
+            if (f == null || !v.equals(fileLevel)) {   // the file in hand is another level's: this level's own copy on the phone, else none until it is read
+                if (work != null && !v.equals(work.level)) work = null;
+                String c = read(cache(levelFile())); if (c == null) return;
+                try { f = Json.parse(c); } catch (Exception e) { return; }
+            }
+            try { Work w = work; if (w == null || !v.equals(w.level)) w = new Work(v, f); workRows = w.rows(f); work = w; workFile = f; workFileLevel = v; } catch (Exception e) { Log.w("LiveMap", v + " unreadable", e); }
         }
 
         @Override public void onOffsetsChanged(float xo, float yo, float xs, float ys, int xp, int yp) { if (renderer != null) renderer.offsetX = xo; }
@@ -110,6 +119,10 @@ public class LiveMapWallpaper extends WallpaperService {
         @Override public Graph graph() { return graph; }
         @Override public List<Graph.Event> takeEvents() { List<Graph.Event> e = events; events = null; return e; }
         @Override public Work work() { return work; }
+        @Override public Bitmap destLogo(String id, boolean light) {
+            String name = "news".equals(id) ? (light ? "wl-pt-news-light.png" : "wl-pt-news-dark.png") : "linkedin".equals(id) ? "wl-linkedin.png" : null;
+            if (name == null) return null; synchronized (destLogos) { if (!destLogos.containsKey(name)) destLogos.put(name, asset(name)); return destLogos.get(name); }
+        }
         @Override public List<Work.Row> takeWorkRows() { List<Work.Row> r = workRows; workRows = null; return r; }
         @Override public Bitmap[] logos(boolean light) { return light && logosLight != null ? logosLight : logos; }
         private Graph build(Object d) { data = d; return Graph.fromData(d, layout(LiveMapWallpaper.this), theme(LiveMapWallpaper.this)); }
@@ -118,7 +131,8 @@ public class LiveMapWallpaper extends WallpaperService {
         private void loadCached() {
             try { String d = read(cache("data.json")); if (d != null) graph = build(Json.parse(d)); } catch (Exception e) { Log.w("LiveMap", "cached map unreadable", e); }
             try { String l = read(cache("live.json")); if (l != null && graph != null) events = Graph.events(Json.parse(l)); } catch (Exception e) { Log.w("LiveMap", "cached live.json unreadable", e); }
-            try { String w = read(cache("workstreams.json")); if (w != null) { workFile = Json.parse(w); levelFrom(workFile); } } catch (Exception e) { Log.w("LiveMap", "cached workstreams.json unreadable", e); }
+            String lf = levelFile();
+            try { String w = lf == null ? null : read(cache(lf)); if (w != null) levelFrom(Json.parse(w), level(LiveMapWallpaper.this)); } catch (Exception e) { Log.w("LiveMap", "cached level file unreadable", e); }
         }
         private void fetch() {
             long now = System.currentTimeMillis();
@@ -128,9 +142,10 @@ public class LiveMapWallpaper extends WallpaperService {
             }
             String l = get(BASE + "live.json");
             if (l != null && graph != null) { try { events = Graph.events(Json.parse(l)); write(cache("live.json"), l); } catch (Exception e) { Log.w("LiveMap", "live.json unreadable", e); } }
-            if ("workstreams".equals(level(LiveMapWallpaper.this))) {   // about 50 KB, only while that level is chosen
-                String w = get(BASE + "workstreams.json");
-                if (w != null) { try { Object f = Json.parse(w); write(cache("workstreams.json"), w); levelFrom(f); } catch (Exception e) { Log.w("LiveMap", "workstreams.json unreadable", e); } }
+            String lf = levelFile(), v = level(LiveMapWallpaper.this);
+            if (lf != null) {   // workstreams.json about 50 KB, deliveries.json about 15 KB, only while that level is chosen
+                String w = get(BASE + lf);
+                if (w != null) { try { Object f = Json.parse(w); write(cache(lf), w); levelFrom(f, v); } catch (Exception e) { Log.w("LiveMap", lf + " unreadable", e); } }
             }
         }
         private File cache(String name) { return new File(getFilesDir(), name); }

@@ -24,7 +24,8 @@ public class SettingsActivity extends Activity {
             { "agents", "Agents ring", "The people outside, their agents in one ring inside" } };
     static final String[][] THEMES = { { "dark", "Dark" }, { "light", "Light" }, { "system", "Follow the phone" } };
     // the levels, as the site's switch names them (live.js and work.js): the exchanges, and the workstreams they serve
-    static final String[][] LEVELS = { { "messages", "Messages", "Who wrote to whom, as it happens" }, { "workstreams", "Workstreams", "The busiest WS issues on the rim, each commit flying to its own" } };
+    static final String[][] LEVELS = { { "messages", "Messages", "Who wrote to whom, as it happens" }, { "workstreams", "Workstreams", "The busiest WS issues on the rim, each commit flying to its own" },
+            { "deliverables", "Deliverables", "What was made and where it went: PT News, the site, research and more" } };
 
     @Override protected void onCreate(Bundle b) {
         super.onCreate(b);
@@ -56,7 +57,7 @@ public class SettingsActivity extends Activity {
         tg.setOnCheckedChangeListener((g, id) -> { int i = id - 200; if (i >= 0 && i < THEMES.length) prefs.edit().putString(LiveMapWallpaper.THEME, THEMES[i][0]).apply(); });
         col.addView(tg);
 
-        TextView soon = text("Coming next: the Deliverables level, and the Agents and their work layout.", 13, Graph.MUTED); soon.setPadding(0, pad, 0, pad / 2);
+        TextView soon = text("Coming next: the Agents and their work layout.", 13, Graph.MUTED); soon.setPadding(0, pad, 0, pad / 2);
         col.addView(soon);
         Button done = new Button(this); done.setText("Done"); done.setOnClickListener(v -> finish()); col.addView(done);
 

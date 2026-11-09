@@ -491,7 +491,8 @@
         "label": "conductor@web-summit.indi",
         "fingerprint": "sha256:6af242af55ef7980",
         "signing_fingerprint": "sha256:10ede272aaccf89e"
-      }
+      },
+      "status": "retired: the second session stopped on 4 November 2026; Indi chose the first (conductor-indi). Retired on 9 November 2026 at Indi's word; sign or seal nothing to it. Indi's conductor's key is conductor-indi"
     },
     {
       "id": "watcher-jose",

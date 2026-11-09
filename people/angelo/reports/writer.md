@@ -2,6 +2,12 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 9 November 2026, 16:40 UTC (scheduled run)
+
+- **0-URGENT-3 rewritten in a confident tone** (the conductor's e9bb08dd, Angelo's words): newsroom `desks/writer-angelo/drafts/ac1-authority-checks.md` (v0.1.869), now "Speed where it's safe, control where it matters". The new LinkedIn reply: "Both, by design. For a newspaper, where most changes are public and can be undone, code checks the edges (every push passes a build gate and a check that each agent writes only in its own area) and review covers the judgement. Keys, vaults and anything in my name sit under enforced control. That's how a newsroom and a hundred-plus agents came together in nine days. How it works, and how the same tools tune for other uses: <link>"
+- research@ delivered 0r's three public sources (b1f75d2d); the 0r article waits for Angelo's go to start.
+- No answer from Dinis; no reviews or changes by others to the guide, the wristband article or this desk; all pages load.
+
 ## 9 November 2026, afternoon (prompted by Angelo)
 
 - **0-URGENT-4, drafted:** newsroom `desks/writer-angelo/drafts/wc1-wristband-and-badge.md`, "Your Web Summit wristband and badge: what they're for, and who is who". No public key to the 2026 colours (Web Summit's pages list passes but no colours; its registration page needs a sign-in; attendees' accounts: media green 2022, investor red 2015). The colours table waits on what Angelo sees; to publish once he has sent a few, then grow through the week.
