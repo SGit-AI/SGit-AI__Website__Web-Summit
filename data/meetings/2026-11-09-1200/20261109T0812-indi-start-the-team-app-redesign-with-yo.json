@@ -1,0 +1,17 @@
+{
+  "type": "decision",
+  "title": "Indi: start the Team app redesign with your iPhone agents?",
+  "for": [
+    "dinis"
+  ],
+  "by": "prompter@web-summit.indi",
+  "added": "2026-11-09T08:12:59.732Z",
+  "status": "open",
+  "detail": "Indi said yes (9 Nov). Five tabs (Now, Where, Plan, Tasks, More); places only, no GPS; hotel names only, team only. Only your agents can push to the iOS app. The brief, ready to paste: people/indi/prompts/team-app-redesign.md",
+  "recommend": "yes, start it today",
+  "issue": "WS-181",
+  "options": [
+    "yes, start it today",
+    "not yet"
+  ]
+}

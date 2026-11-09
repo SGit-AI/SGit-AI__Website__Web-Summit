@@ -72,3 +72,16 @@ The clickable prototype (private to you; share it from its Share menu): https://
 
 **10. Should your conductor add the infographic agent to your list of agents and your kit?**
 - **Yes** (recommended) or **No**.
+
+---
+
+## Indi's answers (Monday 9 November, morning)
+
+| # | Answer | What I did |
+|---|---|---|
+| 1 | Yes, ask Dinis | On the 12:00 stand-up agenda for Dinis to decide |
+| 2 | Yes | The help site is still blocked in this session; new settings may only reach a new session. I add its answers to the FAQ once I can reach it |
+| 3 | Yes | On the 12:00 stand-up agenda for Dinis; the brief now records your choices |
+| 4 | Hotel name only, team only | Written into the Team app brief |
+| 5 | Places only for now | Written into the Team app brief: no live pin in this redesign |
+| 6 to 10 | Not answered yet | Waiting |
