@@ -75,9 +75,9 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | Akamai (website) | https://promptugal.news/companies/akamai/ | in review |
 | Arima | https://promptugal.news/companies/arima/ | in review |
 | Atlassian | https://promptugal.news/companies/atlassian/ | in review |
-| Centre for AI Leadership (C4AIL) | https://promptugal.news/companies/c4ail/ | to do |
-| Cerebras | https://promptugal.news/companies/cerebras/ | to do |
-| Cognizant | https://promptugal.news/companies/cognizant/ | to do |
+| Centre for AI Leadership (C4AIL) | https://promptugal.news/companies/c4ail/ | in review |
+| Cerebras | https://promptugal.news/companies/cerebras/ | in review |
+| Cognizant | https://promptugal.news/companies/cognizant/ | in review |
 
 ### S2: journalist@PrompTugal.vicky (10)
 
