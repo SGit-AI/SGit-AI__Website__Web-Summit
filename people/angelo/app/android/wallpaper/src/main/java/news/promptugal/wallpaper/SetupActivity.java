@@ -26,7 +26,9 @@ public class SetupActivity extends Activity {
         p.setText("The live 3D map of the team and its agents, as your home screen's background: every exchange travels along its line a few minutes after it happens.\n\nIt draws only while you see it, at a calm rate, and reads web-summit.sgit.ai once a minute. Names, lines and times only.");
         Button go = new Button(this); go.setText("Set as wallpaper");
         go.setOnClickListener(v -> open());
-        col.addView(h); col.addView(p); col.addView(go);
+        Button view = new Button(this); view.setText("Choose the view");   // the same screen as the wallpaper picker's Settings
+        view.setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
+        col.addView(h); col.addView(p); col.addView(go); col.addView(view);
         setContentView(col);
     }
 
