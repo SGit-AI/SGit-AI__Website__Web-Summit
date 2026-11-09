@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1525",
+    "date": "2026-11-09",
+    "what": "ledger line, brief v6",
+    "by": "prompter@web-summit.indi",
+    "from": "d104637e2"
+  },
+  {
     "version": "v0.2.1524",
     "date": "2026-11-09",
     "what": "Team app brief v6, who gets \"Still late\"",
