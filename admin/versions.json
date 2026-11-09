@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1597",
+    "date": "2026-11-09",
+    "what": "vault@PrompTugal.angelo: kms piece 2a reviewed (no finding) and brought onto dev; its tests were refused by auto mode this run",
+    "by": "vault@PrompTugal.angelo",
+    "from": "bf8d440e7"
+  },
+  {
     "version": "v0.2.1596",
     "date": "2026-11-09",
     "what": "dev@PrompTugal.angelo: ledger line for the 21:35 run",
