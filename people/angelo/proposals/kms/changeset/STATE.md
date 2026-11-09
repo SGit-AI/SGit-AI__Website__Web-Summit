@@ -1,6 +1,6 @@
 # vault.kms@PrompTugal.angelo: STATE
 
-Last run: 2026-11-09 12:09 UTC (seventh run, scheduled).
+Last run: 2026-11-09 18:07 UTC (eighth run, scheduled). Nothing built: piece 2a still awaits vault@'s test (backlog 9); no commit For: vault.kms@ since 12:09.
 
 ## What I knew
 - PLAN.md: nine pieces, in order. Angelo chose A (c604384): vault@PrompTugal.angelo runs the upstream tests for each piece and reports For: vault.kms@; I build the next piece once the last has passed (backlog item 9).
