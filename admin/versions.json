@@ -1,5 +1,82 @@
 [
   {
+    "version": "v0.2.1514",
+    "date": "2026-11-09",
+    "what": "11:40 wake: lane counted, not drained (no token of my own yet); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "b418bcf9e"
+  },
+  {
+    "version": "v0.2.1513",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 11:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "ced3da041"
+  },
+  {
+    "version": "v0.2.1512",
+    "date": "2026-11-09",
+    "what": "applied SA27: the interview shortlist vault's key sealed to inbox-vicky",
+    "by": "vault@web-summit.vicky",
+    "from": "03fa68a2e"
+  },
+  {
+    "version": "v0.2.1511",
+    "date": "2026-11-09",
+    "what": "key check, and the voice-memo follow-up count rule",
+    "by": "inbox@web-summit.vicky",
+    "from": "17d7da353"
+  },
+  {
+    "version": "v0.2.1510",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: an article for the writer: agents on Google Workspace, step by step",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "96979451c"
+  },
+  {
+    "version": "v0.2.1509",
+    "date": "2026-11-09",
+    "what": "/power-users/: Dinis's voice brief, we dogfood our own apps (where is everybody first); WS-201; the gate knows the mobile teams' agent names",
+    "by": "conductor@web-summit.dinis",
+    "from": "2e13d808d"
+  },
+  {
+    "version": "v0.2.1508",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: the desk may wake agents with ready work, each wake logged; first wake: research@ for the editorial team",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "9577ee892"
+  },
+  {
+    "version": "v0.2.1507",
+    "date": "2026-11-09",
+    "what": "hand-over note for the new conductor session; vault keys, lane credentials and Vicky's key copy deleted from this session",
+    "by": "conductor@web-summit.vicky",
+    "from": "e59a0f68b"
+  },
+  {
+    "version": "v0.2.1506",
+    "date": "2026-11-09",
+    "what": "journalist@PrompTugal.vicky: report, 10:51 UTC run: S33 drafted",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "03e88ae7c"
+  },
+  {
+    "version": "v0.2.1505",
+    "date": "2026-11-09",
+    "what": "the company pages follow Dinis's answer of 9 November: The Cyber Boardroom carries the commercial work today, My Feeds exists",
+    "by": "investors@web-summit.dinis",
+    "from": "a722b225a"
+  },
+  {
+    "version": "v0.2.1504",
+    "date": "2026-11-09",
+    "what": "10:50 orchestration wake: quiet, everyone waiting on Silvio or Dinis",
+    "by": "conductor@web-summit.silvio",
+    "from": "1fa62ae47"
+  },
+  {
     "version": "v0.2.1503",
     "date": "2026-11-09",
     "what": "WS-168: Vicky's review of /lead-to-article/: the six steps work, keep the title; a suggestion on interviews on the spot, for Indi",

@@ -121,3 +121,9 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 ## Mon 9 Nov 2026, 05:55 UTC (scheduled run)
 
 - state: idle
+
+## Mon 9 Nov 2026, 11:05 UTC (scheduled run)
+
+- Draft S33, "Sports tech at Web Summit: IBM's startup challenge ends in Lisbon": desks/journalist-vicky/drafts/S33-ibm-sports-tech-challenge.md, with a summary card (img/S33-two-days-2026-11-09.svg, checked at 390px), For: reviewer@PrompTugal.vicky. Time-sensitive: the showcase is tomorrow, 10 November. Sources read today: IBM Newsroom (9 Nov) and Web Summit's challenge page.
+- Not confirmed: the time and stage of either day (neither source gives them); the sixth showcase startup (IBM says six, names five); the prize, which the two sources describe differently (Web Summit: up to $100,000 in all, $80,000 funding plus $20,000 credits; IBM: up to $100,000 plus up to $20,000 credits). All said in the draft.
+- state: ok; done: S33 drafted and pushed; next: fix-only check 11:56 UTC; ask: none; run: scheduled

@@ -41,6 +41,10 @@ Only these, on `dev`, through `AGENT=inbox@web-summit.vicky admin/tools/release.
 
 Commit subject `inbox@web-summit.vicky: <what>`, trailers `Agent: inbox@web-summit.vicky`, and `For:` whoever should act. Never `main`, never `--force`.
 
+## Voice memos: the follow-up count (Vicky, 9 November 2026)
+
+Each time I handle a voice memo, I end my report line with `follow-up drafts waiting: N`, where N is the number of follow-up drafts in Vicky's Gmail that she has not sent yet. A count only: no names, no content. I count from Gmail drafts, read-only, and never write the count's source anywhere public.
+
 ## Other standing rules
 
 - Vicky's newest instruction in chat beats this file.
