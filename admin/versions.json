@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1431",
+    "date": "2026-11-09",
+    "what": "journalist-ai@PrompTugal.vicky: backlog, A1: keewano, launchdarkly, linux-foundation-aaif in review; batch A1 done; report",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "eab69bba0"
+  },
+  {
     "version": "v0.2.1430",
     "date": "2026-11-09",
     "what": "journalist-europe@PrompTugal.vicky: overnight batch complete, 16 rows in review; report",
