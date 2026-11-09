@@ -15,7 +15,7 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     await p.goto(BASE + 'index.html#live', { waitUntil: 'networkidle' }); await p.waitForSelector('.lv-svg')
     const st = () => p.evaluate(() => ({ sw: [...document.querySelectorAll('[data-wv-sw] a')].map(a => a.textContent + ':' + a.getAttribute('aria-pressed')), sq: document.querySelectorAll('.wv-sq').length,
       leg: (() => { const l = document.querySelector('[data-wv-legend]'); return l && !l.hidden ? l.querySelectorAll('svg').length : 0 })(), loaded: !!window.AngeloWorkLive,
-      cls: !!document.querySelector('.lv.lv-workview'), over: document.documentElement.scrollWidth > innerWidth }))
+      cls: !!document.querySelector('.lv.lv-workview, .lv.lv-bellview'),   /* the rim, or the dumbbell (0c5) */ over: document.documentElement.scrollWidth > innerWidth }))
     const ex = await st()
     if (ex.sw.join() !== 'Messages:true,Workstreams:false,Deliverables:false') fail(`${tag}: the switch on opening ${ex.sw.join()}`)
     if (ex.sq || ex.leg || ex.cls) fail(`${tag}: work drawn in Exchanges ${JSON.stringify(ex)}`)

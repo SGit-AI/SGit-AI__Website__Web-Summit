@@ -10,18 +10,19 @@
     'use strict'
     const DAY = 864e5
     function mount(host, o = {}) {
-        const Dr = root.AngeloWorkDraw, News = o.file ? null : root.AngeloWorkNews, win = o.win || root, file = o.file || 'deliveries.json'
+        // the dumbbell (backlog 0c5, spec-dumbbell.md) where it is loaded, else the rim; o.rim: the rim whatever is loaded
+        const Dr = !o.rim && root.AngeloWorkBellDraw && root.AngeloWorkBell ? root.AngeloWorkBellDraw : root.AngeloWorkDraw, News = o.file ? null : root.AngeloWorkNews, win = o.win || root, file = o.file || 'deliveries.json'
         let A = o.file ? null : root.AngeloWork        // o.file (workstreams.json, backlog 0c4): its own destinations, known once it is read
         const base = o.base || '', delay = o.delayMs != null ? o.delayMs : 4 * 6e4, every = o.every || 6e4
         let V = null, alive = true, timer = 0, newsPoll = null, note = null, newsFirst = true
-        const seen = new Set(), past = []            // keys already shown; every delivery known, for the counts: { at, dest }
+        const seen = new Set(), past = []            // keys already shown; every delivery known, for the counts and the routes: { at, dest, maker }
         const timers = new Set()
         const later = (fn, ms) => { const t = win.setTimeout(() => { timers.delete(t); if (alive) fn() }, Math.max(0, ms)); timers.add(t) }
-        const recount = () => { if (!V || !A) return; const now = Date.now(), c = Object.fromEntries(A.DESTS.map(d => [d, 0])); for (const d of past) if (d.at > now - DAY && d.at <= now - (d.news ? 0 : delay)) c[d.dest]++; V.counts(c) }
+        const recount = () => { if (!V || !A) return; const now = Date.now(), c = Object.fromEntries(A.DESTS.map(d => [d, 0])); for (const d of past) if (d.at > now - DAY && d.at <= now - (d.news ? 0 : delay)) c[d.dest]++; V.counts(c); if (V.week) V.week(past.filter(d => d.at <= now - (d.news ? 0 : delay)), now) }
         // a batch of new deliveries ({ at, maker, icon, dest, key }): merged by minute and destination, each flying at at + delay
         // (one that reached us later than that flies at once, a beat apart)
         function play(list, now, lag) {
-            const fresh = list.filter(d => !seen.has(d.key)); for (const d of fresh) { seen.add(d.key); past.push({ at: d.at, dest: d.dest, news: !lag }) }
+            const fresh = list.filter(d => !seen.has(d.key)); for (const d of fresh) { seen.add(d.key); past.push({ at: d.at, dest: d.dest, maker: d.maker, news: !lag }) }
             const M = A.merge(fresh.map(d => ({ min: Math.floor(d.at / 6e4), dest: d.dest, icon: d.icon, maker: d.maker, sha: d.key })))
             let late = 0
             for (const m of M) { const due = m.min * 6e4 + lag - now; later(() => { if (V) { V.fly([m], win.performance.now()); recount() } }, due > 0 ? due : 350 * late++) }
@@ -33,7 +34,7 @@
                 const W = await r.json()
                 if (!A) { A = root.AngeloWork.variant(W.dests || [], W.names || {}); if (host.lvGraph) attach(host.lvGraph) }
                 const list = rowsOf(W), now = Date.now()
-                if (first) for (const d of list) if (d.at <= now - delay) { seen.add(d.key); past.push({ at: d.at, dest: d.dest }) }
+                if (first) for (const d of list) if (d.at <= now - delay) { seen.add(d.key); past.push({ at: d.at, dest: d.dest, maker: d.maker }) }
                 play(list, now, delay); recount()
             } catch { }
             if (alive) timer = win.setTimeout(() => read(false), every)
@@ -56,7 +57,7 @@
         if (News) newsPoll = News.poll({ fetch: (u, x) => win.fetch(u, x), url: o.newsUrl || News.URL_STORIES, every: o.newsEvery || News.POLL_MS, setTimeout: (f, ms) => win.setTimeout(f, ms), clearTimeout: t => win.clearTimeout(t),
             onList: (all, news) => {
                 say('')
-                if (newsFirst) { newsFirst = false; for (const d of all) { seen.add('news|' + d.key); past.push({ at: d.at, dest: d.dest, news: true }) } }
+                if (newsFirst) { newsFirst = false; for (const d of all) { seen.add('news|' + d.key); past.push({ at: d.at, dest: d.dest, maker: d.maker, news: true }) } }
                 play(news.map(d => ({ ...d, key: 'news|' + d.key })), Date.now(), 0); recount()
             },
             onError: why => say(why) })

@@ -50,8 +50,12 @@
         const win = o.win || root, P = player(A, A.unpack(W), { offset: offset(o.rFrom, W.from), window: o.window })
         let clock = null   // the clip's own clock (clock(fn)), while it records; else the screen's
         const now = () => clock ? clock() : (win.performance ? win.performance.now() : Date.now())
-        const on = e => { if (e.detail == null) return; const r = P.at(+e.detail, true); V.counts(r.counts); if (r.fly.length) V.fly(r.fly, now()) }
-        if (o.t0 != null) V.counts(P.at(+o.t0, false).counts)
+        // the dumbbell's routes: the seven days before replay's moment, in deliveries' own times, read again once a replay hour
+        const wFrom = Date.parse(W.from), wOff = offset(o.rFrom, W.from), rows = V.week ? A.unpack(W).map(d => ({ at: wFrom + d.min * 6e4, maker: d.maker, dest: d.dest })) : null
+        let wk = null
+        const week = T => { if (!rows) return; const h = Math.floor((T + wOff) / 60); if (h === wk) return; wk = h; V.week(rows, wFrom + (T + wOff) * 6e4) }
+        const on = e => { if (e.detail == null) return; const r = P.at(+e.detail, true); V.counts(r.counts); week(+e.detail); if (r.fly.length) V.fly(r.fly, now()) }
+        if (o.t0 != null) { V.counts(P.at(+o.t0, false).counts); week(+o.t0) }
         win.addEventListener('ak-clock', on)
         const off = () => win.removeEventListener('ak-clock', on)
         off.clock = fn => { clock = fn || null; if (V.manual) V.manual(!!fn) }
@@ -73,23 +77,35 @@
     function mountMap(host, o = {}) {
         const win = o.win || root, doc = o.doc || win.document, A = win.AngeloWork, D = win.AngeloWorkDraw, svg = o.svg
         const NS = 'http://www.w3.org/2000/svg', S = A ? A.S : 1000
-        let alive = true, V = null, unhook = null, layer = null, vb = null
+        const Bd = win.AngeloWorkBellDraw, bell = !o.rim && Bd && win.AngeloWorkBell   // the dumbbell where it is loaded (backlog 0c5), else the rim
+        let alive = true, V = null, unhook = null, layer = null, vb = null, gG = null
         const ready = (async () => {
             if (!A || !D || !svg) return false
             let W = o.W
             if (!W) { try { const r = await win.fetch(new URL(o.url || (o.base || '') + 'deliveries.json', win.location.href).href, { cache: 'no-store' }); if (!r.ok) throw new Error(r.status); W = await r.json() } catch { return false } }
             if (!alive || !svg.isConnected || !W || !W.rows) return false
             const AL = W.names ? A.variant(W.dests || [], W.names) : A    // workstreams.json (backlog 0c4): its own ten destinations
-            vb = svg.getAttribute('viewBox'); svg.setAttribute('viewBox', roomy(S, SCALE)); svg.classList.add('wv-map')
-            layer = doc.createElementNS(NS, 'g'); layer.setAttribute('class', 'lv-work'); svg.appendChild(layer)
-            V = D.attach({ svg, pos: o.pos, col: o.col, layer, scale: SCALE, win, doc }, { base: o.base, light: o.light, A: AL })
+            vb = svg.getAttribute('viewBox'); svg.classList.add('wv-map')
+            layer = doc.createElementNS(NS, 'g'); layer.setAttribute('class', 'lv-work')
+            if (bell) {
+                // the dumbbell moves the whole map into its circle: the map's drawing (everything but its defs, styles and title)
+                // into one group, the work layer on top of it; put back as it was on destroy
+                gG = doc.createElementNS(NS, 'g'); gG.setAttribute('class', 'wb-graph')
+                for (const c of [...svg.childNodes]) if (!(c.nodeType === 1 && /^(defs|style|title)$/i.test(c.localName))) gG.appendChild(c)
+                svg.appendChild(gG); gG.appendChild(layer)
+                V = Bd.attach({ svg, pos: o.pos, col: o.col, layer, scale: 1, C: S / 2, S, win, doc }, { base: o.base, light: o.light, A: AL, tap: false })
+            } else {
+                svg.setAttribute('viewBox', roomy(S, SCALE)); svg.appendChild(layer)
+                V = D.attach({ svg, pos: o.pos, col: o.col, layer, scale: SCALE, win, doc }, { base: o.base, light: o.light, A: AL })
+            }
             unhook = wire(V, AL, W, { rFrom: o.rFrom, t0: o.t0, win, window: o.window })
             return true
         })()
         function destroy() {
             alive = false; if (unhook) unhook(); if (V) V.destroy(); if (layer) layer.remove()
+            if (gG) { while (gG.firstChild) svg.insertBefore(gG.firstChild, gG); gG.remove() }
             if (vb != null) { svg.setAttribute('viewBox', vb); svg.classList.remove('wv-map') }
-            unhook = V = layer = null; vb = null
+            unhook = V = layer = gG = null; vb = null
         }
         // clock(fn): the clip (clip-button.js) flies the deliveries on its own clock (fn() in milliseconds) and steps them itself with
         // view().step(fn()); clock(null) gives them back to the screen
