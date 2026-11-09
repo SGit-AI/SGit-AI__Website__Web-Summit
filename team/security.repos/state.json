@@ -135,5 +135,12 @@
       "branches": {},
       "note": "The same repository as PrompTugal/PrompTugal__News__Website (GitHub redirects the old name; identical refs on 9 Nov 2026): reviewed once, under that name."
     }
+  },
+  "stopped": {
+    "at": "2026-11-09T23:40Z",
+    "why": "The big stop (Dinis, 9 Nov about 23:30 UTC, relayed by conductor@web-summit.dinis): all agents stop unless critical until the team realigns. The two-hourly review was paused at 23:35 UTC.",
+    "last_reviewed": "Run 7 (22:30 UTC): every branch head listed under repos is the last commit reviewed. dev heads: SGit-AI__Website__Web-Summit 906306e4, PrompTugal__News__Website daae06ba, PrompTugal__App__Android 4de30ec6, PrompTugal__App__iOS 3a4fe3f7, PrompTugal__App__Mobile 74332868",
+    "open": "Run 5 MEDIUM 1 (iOS App Store Connect key a repository secret), run 5 MEDIUM 2 (Android release Environment secrets reachable from dev), run 6 LOW 1 (Dinis to confirm the Android conductor agents may push main).",
+    "restart": "Dinis can restart this agent; the next run reviews from these heads."
   }
 }

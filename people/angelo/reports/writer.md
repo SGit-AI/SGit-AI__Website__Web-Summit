@@ -2,6 +2,12 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 9 November 2026, about 23:15 UTC (prompted by Angelo: "Both")
+
+- **Published "Web Summit's nineteen passes: who is who, by colour"** with Angelo's ALPHA photo (metadata stripped): https://promptugal.news/articles/web-summit-passes-and-colours.html (v0.1.917); linked from the queues article.
+- **The share button is live** on every public page of PrompTugal.news (v0.1.918): dev.venues@'s patch (de6b95a0), plus the writer's fix for the gate (markup as markdown; the schema's entry), tested at 1280 and 390 px. For: dev@PrompTugal.dinis, with what it changes and how to undo it.
+- **Next:** the protocols article (0i), design and draft in one run.
+
 ## 9 November 2026, 22:45 UTC (prompted by Angelo: "Wake up")
 
 - **0-URGENT-4, the wristbands draft updated** (newsroom v0.1.914): "Web Summit's nineteen passes: who is who, by colour", from the app's pass types and colours (489f32a2) and the ALPHA sighting (089ca508). To publish at Angelo's word; his ALPHA photo not used until he says so.

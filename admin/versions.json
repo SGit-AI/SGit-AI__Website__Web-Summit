@@ -1,5 +1,47 @@
 [
   {
+    "version": "v0.2.1609",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 23:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "6a1c76ccc"
+  },
+  {
+    "version": "v0.2.1608",
+    "date": "2026-11-09",
+    "what": "THE BIG STOP: counts only for account A's before (the raw session list tripped the contact check)",
+    "by": "conductor@web-summit.dinis",
+    "from": "25389812b"
+  },
+  {
+    "version": "v0.2.1607",
+    "date": "2026-11-09",
+    "what": "WS-206: design first; gamma-ray@web-summit.dinis started for Dinis; the PrompTugal build on hold",
+    "by": "conductor@web-summit.dinis",
+    "from": "9e6756aef"
+  },
+  {
+    "version": "v0.2.1606",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: scheduled run 23:20: nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "d391dd002"
+  },
+  {
+    "version": "v0.2.1605",
+    "date": "2026-11-09",
+    "what": "writer@PrompTugal.angelo: report: the passes article published with the photo; the share button live",
+    "by": "writer@PrompTugal.angelo",
+    "from": "b2ded4378"
+  },
+  {
+    "version": "v0.2.1604",
+    "date": "2026-11-09",
+    "what": "22:50 orchestration wake: everyone committed what was pending; Silvio's highlight is up; design and crm wait on him",
+    "by": "conductor@web-summit.silvio",
+    "from": "f17623b00"
+  },
+  {
     "version": "v0.2.1603",
     "date": "2026-11-09",
     "what": "writer@PrompTugal.angelo: report: the wristbands draft with the nineteen passes; Dinis's answer on keys and publishing; the interview sheet not yet in",
