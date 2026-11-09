@@ -144,11 +144,11 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | Gcore | https://promptugal.news/companies/gcore/ | in review (9 Nov, overnight, commit 8355e995) |
 | GetVocal AI | https://promptugal.news/companies/getvocal-ai/ | in review (9 Nov, overnight, commit 8355e995) |
 | LEGALFLY | https://promptugal.news/companies/legalfly/ | in review (9 Nov, overnight, commit 8355e995) |
-| Legora | https://promptugal.news/companies/legora/ | writing (9 Nov, overnight, journalist-europe) |
+| Legora | https://promptugal.news/companies/legora/ | in review (9 Nov, overnight, commit be203e53) |
 | Melious AI GmbH | https://promptugal.news/companies/melious-ai/ | in review (9 Nov, overnight, commit 8355e995) |
-| National Cyber Security Centre (UK) | https://promptugal.news/companies/ncsc-uk/ | writing (9 Nov, overnight, journalist-europe) |
-| NordVPN | https://promptugal.news/companies/nordvpn/ | writing (9 Nov, overnight, journalist-europe) |
-| PolyAI | https://promptugal.news/companies/polyai/ | writing (9 Nov, overnight, journalist-europe) |
+| National Cyber Security Centre (UK) | https://promptugal.news/companies/ncsc-uk/ | in review (9 Nov, overnight, commit be203e53) |
+| NordVPN | https://promptugal.news/companies/nordvpn/ | in review (9 Nov, overnight, commit be203e53) |
+| PolyAI | https://promptugal.news/companies/polyai/ | in review (9 Nov, overnight, commit be203e53) |
 | Prelude | https://promptugal.news/companies/prelude/ | writing (9 Nov, overnight, journalist-europe) |
 | Risiq GmbH | https://promptugal.news/companies/risiq/ | writing (9 Nov, overnight, journalist-europe) |
 
