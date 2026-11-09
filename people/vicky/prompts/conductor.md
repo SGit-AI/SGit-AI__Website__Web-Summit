@@ -45,6 +45,27 @@ P3: End every run's report line with: `state: ok|partial|idle|blocked; done: ...
 
 For me: P1 is step 0 of each wake; P2 is reading this file at each wake; P3 applies to my commit messages for each wake (my reports are the brief and the relay, which carry their own status).
 
+## Scheduled task: the midday check, 12:50 UTC (cron 50 12 * * *, trig_01BWSDV2eWe5d4Z5rvr3gJkC, from 9 Nov; Vicky, 9 Nov about 11:10 UTC)
+
+```
+Scheduled wake: conductor@web-summit.vicky, the midday check (12:50 UTC). Pull dev on the team site. Read people/vicky/decisions.md, then people/vicky/prompts/conductor.md, and do the check exactly as its section "The midday check" says (the hold first). If nothing needs Vicky, write nothing to her and commit nothing. Where the file and your memory disagree, the file wins.
+
+P1 to P3, word for word (standing answer 16):
+P1: At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+P2: At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+P3: End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
+```
+
+## The midday check (12:50 UTC): what to do
+
+At Vicky's word (9 Nov): a light run, about 30 minutes after the reviewer's midday re-check (12:20; its first review is at 11:15). Not a brief: no PDF, no agent table, no usage, no records. Silent unless something needs her.
+
+0. **Hold.** If `people/vicky/HOLD.md` exists, tell Vicky in one line that the hold is on and do nothing else.
+1. Pull dev; re-read decisions.md and this file. Fetch the newsroom (PrompTugal/PrompTugal__News__Website, dev).
+2. List only what needs her: (a) drafts the reviewer has marked Ready and not yet published (its 11:15 and 12:20 runs, and any Ready left from the morning), each with its publish line in a code block for the `reviewer` window; (b) open questions from her agents that wait on her (asks in reports since the 08:30 brief), each with my recommendation and the exact reply, routed through me per standing answer 14.
+3. Tell her in this session in the brief's action format, briefly: **1. Urgent / Risks** only if there is any, then **2. Actions & Replies by window**.
+4. If nothing needs her, write nothing to her and commit nothing. Never WS-25, WS-29, WS-41 or WS-53.
+
 ## Scheduled task: the 17:30 newsroom check, 17:30 UTC (cron 30 17 * * *, trig_01JBMeid4ogSPQwGi4EehQaN from 9 Nov 11:06 UTC, the new session; before it trig_01NYwcWXpPmsPK9MLgtq5NAt)
 
 ```
@@ -167,3 +188,4 @@ From 8 Nov (Vicky's word, the Web Summit timetable) the relay runs at 20:45, aft
 - **9 Nov, 04:40:** OVERNIGHT-9NOV closed: 17 one-off wakes fired and disabled, none left; 100 company pages live (99 overnight and before, plus Replit); RWS in fix, Rapidoc skipped; nothing unfinished. In the 08:30 brief: one line, and the two blocked pages.
 - **9 Nov, about 10:35:** standing answer 26: Wikipedia may support a company page's About but never stand alone; the company's own site or official Web Summit page must support it. Persona back to fix through the reviewer (SA26); RWS stays in fix. WS-168: Vicky looks at https://web-summit.sgit.ai/lead-to-article/ herself before confirming; no answer to Indi yet.
 - **9 Nov, about 11:00:** a new conductor session took over (hand-over note `people/vicky/handover/conductor-2026-11-09.md`, P17). Its key is conductor-vicky-2 (conductor-vicky retired); its three scheduled tasks fire into the new session and the old ones are disabled, not deleted. Vicky: do not request the CRM key or set up a feedback inbox unless she asks. Until then the brief's step 2 says "inbox lane: none", with no URGENT line for the missing creds, and step 12's CRM key is not held.
+- **9 Nov, about 11:10:** a fourth run, the midday check at 12:50 UTC (trig_01BWSDV2eWe5d4Z5rvr3gJkC), 30 minutes after the reviewer's 12:20 re-check (the reviewer no longer runs at 13:00): only Ready drafts with publish code blocks and open questions; silent if nothing needs her. My runs: 08:30 brief, 12:50 midday check, 17:30 newsroom check, 20:45 relay. Session ids for usage readings (get_session only) were given in chat and are kept in the session, never in the repository; if lost, find them with list_sessions.

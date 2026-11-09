@@ -124,7 +124,7 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 > - reviewer, first review: 06:15, 11:15, 15:15, 19:15 (trig_01JzwYcUkMpfFThdm1mbeGgs)
 > - fix-only (standing answer 18), same order: journalist-connections 06:50, 11:50, 15:50, 19:50 (trig_014fa4xbTLFyrXdfF4pzv8KD); journalist :56 past 06, 11, 15, 19 (trig_01ENwR7p1ggLZHK2RcyBPTud); journalist-portugal :02 past 07, 12, 16, 20 (trig_015W8aURM2zEyH9Sd9gJvzNx); journalist-europe :08 past 07, 12, 16, 20 (trig_01A87nPnVKv8jMhzDzwi5eYU); journalist-ai :14 past 07, 12, 16, 20 (trig_01FpXptzb91YorA9vNLuwjUu)
 > - reviewer, re-check (a second task, new): 07:20, 12:20, 16:20, 20:20 (trig_01YQwEh2Z2UAjZX6vkrBqdNj). It looks first at drafts revised after a Fix first and applies standing answer 17.
-> - unchanged: dashboard, pm, logistics, checker, scout. The conductor: brief 08:30, light check 17:30, relay 20:45.
+> - unchanged: dashboard, pm, logistics, checker, scout. The conductor: brief 08:30, midday check 12:50 (from 9 Nov, at Vicky's word: Ready drafts and open questions only, silent otherwise), light check 17:30, relay 20:45.
 
 **SA16, P1 to P3 word for word in your prompts file and scheduled prompt** (Vicky, 7 Nov). For: conductor, dashboard, pm, logistics, vault, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, designer, dev, scout, inbox.
 > Apply standing answer 16 at your next run, without asking first, and confirm "applied SA16" in your report (say whether you also changed a scheduled task's prompt).
