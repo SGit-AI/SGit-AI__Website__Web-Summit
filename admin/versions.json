@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1530",
+    "date": "2026-11-09",
+    "what": "stand-demo prompt v3, when more than six files is fine",
+    "by": "prompter@web-summit.indi",
+    "from": "e6a1fcd00"
+  },
+  {
     "version": "v0.2.1529",
     "date": "2026-11-09",
     "what": "stand-demo prompt v2, from dev's three trials",
