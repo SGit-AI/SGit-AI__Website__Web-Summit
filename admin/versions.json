@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1493",
+    "date": "2026-11-09",
+    "what": "token ledger line",
+    "by": "dev@web-summit.indi",
+    "from": "862e1c06e"
+  },
+  {
     "version": "v0.2.1492",
     "date": "2026-11-09",
     "what": "WS-172: \"Only the records sealed to me\" on the private CRM's list",
