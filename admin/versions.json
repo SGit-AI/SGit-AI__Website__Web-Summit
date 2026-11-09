@@ -1,5 +1,68 @@
 [
   {
+    "version": "v0.2.1503",
+    "date": "2026-11-09",
+    "what": "WS-168: Vicky's review of /lead-to-article/: the six steps work, keep the title; a suggestion on interviews on the spot, for Indi",
+    "by": "conductor@web-summit.vicky",
+    "from": "f692a1eac"
+  },
+  {
+    "version": "v0.2.1502",
+    "date": "2026-11-09",
+    "what": "journalist-connections@PrompTugal.vicky: SA26 applied; report, scheduled run 10:45",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "d7d466e52"
+  },
+  {
+    "version": "v0.2.1501",
+    "date": "2026-11-09",
+    "what": "the Agents board: the conductor's row can be amber now (C33, 2), a disabled cron is not read, and the reviewer's two notes",
+    "by": "designer@web-summit.jose",
+    "from": "419b83ed6"
+  },
+  {
+    "version": "v0.2.1500",
+    "date": "2026-11-09",
+    "what": "curator@PrompTugal.vicky: 10:30 run, desk review of IBM's challenge and Go Coimbra, S33 ready",
+    "by": "curator@PrompTugal.vicky",
+    "from": "799024079"
+  },
+  {
+    "version": "v0.2.1499",
+    "date": "2026-11-09",
+    "what": "standing answer 26: the time corrected to about 10:35 UTC",
+    "by": "conductor@web-summit.vicky",
+    "from": "ea96e988e"
+  },
+  {
+    "version": "v0.2.1498",
+    "date": "2026-11-09",
+    "what": "Indi's answers 6 to 10; ten-developers card",
+    "by": "prompter@web-summit.indi",
+    "from": "3df3ed529"
+  },
+  {
+    "version": "v0.2.1497",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 10:20 run, nothing new urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "e52fad105"
+  },
+  {
+    "version": "v0.2.1496",
+    "date": "2026-11-09",
+    "what": "runner.writer@PrompTugal.angelo: STATE: three pieces published, wristband article checked clean",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "7e3f7617a"
+  },
+  {
+    "version": "v0.2.1495",
+    "date": "2026-11-09",
+    "what": "vault@PrompTugal.angelo: kms piece 1 passes (280 passed, only the 2 environment failures); vault.kms@ may start piece 2",
+    "by": "vault@PrompTugal.angelo",
+    "from": "5d695d8e2"
+  },
+  {
     "version": "v0.2.1494",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",

@@ -1,12 +1,12 @@
 ---
 name: team-app-redesign
 for: Dinis's iOS conductor (account B) and the sessions it runs; written at Indi's word
-version: 2
+version: 3
 model: Opus 5.5 for the lead session; Sonnet 5.5 for each stage's worker sessions
 date: 2026-11-09
 by: prompter@web-summit.indi
 issue: WS-181 (where everyone is), WS-177
-prototype: https://claude.ai/artifact/5mPaRudVP26GSzKSqeG7jq (private to Indi's account; Indi shares it)
+prototype: https://claude.ai/artifact/UNEQvnWpSuoeDX9iBEhoVi (five drafts in today's look; private to Indi's account; Indi shares it)
 ---
 # Prompt: redesign the PrompTugal Team app
 
@@ -29,7 +29,8 @@ Turn the Team app into the team's one place for the summit: where everyone is, w
 - Dinis's product line (PrompTugal.news board/guidance/2026-11-08-three-apps-three-lines.md): the Team app is the only app that may hold private data; it never goes to App Review; experimental features belong here, not in the public PrompTugal app.
 - How a change ships: a push to dev runs ios.yml (build and tests); website.yml releases dev and tags it; ios-release.yml then builds, signs and uploads only the apps the change touched (apps.json paths). Release notes for testers: scripts/testflight/what-to-test-team.txt.
 - Indi's decisions (9 November 2026): places only for the summit, with no live pin in this redesign; hotels shown by name only, to the team only, never an address.
-- The clickable prototype of the target design: https://claude.ai/artifact/5mPaRudVP26GSzKSqeG7jq (ask Indi to share it if you cannot open it). Its look: pastel fills with dark text (mint #cdefe3, lavender #e3ddf7, peach #ffe1d0, butter #fff3c4, sky #d6ecfa, rose #f9d9e3), a darker edge colour of each for text and icons, Lexend for text, a rounded display face for titles, light and dark mode.
+- The look: keep today's Team app look, so the change is not a shock to the eye (Indi, 9 November 2026). Beige background #f4f1ea, off-white cards #fefdf9 with 18-point corners, the serif display face for headlines, the system font for text, red small-capital labels and buttons #9f3031, numbers in green #2f6929, amber #835c1c and red, gold initials circles #e8b940, the segmented controls and the floating tab bar.
+- Five clickable drafts in that look, from almost unchanged (A, "Familiar") to people first (E, "Faces"): https://claude.ai/artifact/UNEQvnWpSuoeDX9iBEhoVi (private to Indi's account; ask Indi to share it). Build the draft Indi picks; until Indi picks, build draft A, the smallest change.
 </context>
 
 <steps>
@@ -40,7 +41,7 @@ Do the stages in order. After each stage: the CI run on dev is green, and you wr
 3. Where tab. Follow spec-venues.md Part A: a list grouped by place, and a "Venue plan" view (a simple drawn plan of MEO Arena, Pavilions 1 to 5, Pavilhão de Portugal and our stand, not a map tile). Updating my place is two taps: a place, then how long (30 min, 1 h, 2 h, rest of day). Fade a line older than 3 hours; older than 12 hours, show "not seen since". Write updates to the local store first and send them on the append lane when online. A person sheet shows place, until, next, hotel name (team only) and two buttons: "Message on WhatsApp" and "Meet here".
 4. Plan tab. A Monday to Thursday day strip. One list per day that merges the agenda picks, the official Web Summit events from PTAgenda, the team's stand-ups (12:00 and 18:00 Lisbon) and stand shifts, and team meetups, each with a colour key. "+ Meetup" opens a sheet with four choices (what, where, when, who) and two actions: add it to the team plan in the private vault and open WhatsApp with the message written (https://wa.me/?text=<encoded message>, or the share sheet if WhatsApp is not installed); and add it to the phone's calendar with EventKit (write-only access, with its usage string in Apps/Team/Config). Below the list, "Where we're staying": hotel names grouped by hotel, from the private vault only.
 5. Tasks tab. Group every person's open tasks from people/<id>/app/data.json into six categories: Outreach, Meetings, The stand, Content, Logistics, Agents. Show done / total and a progress bar per category, and the filters Mine, Everyone, Overdue. If a task has no category, put it in the category its title fits best and say in the commit how you mapped them.
-6. Look and feel. One set of colour and type tokens in the app (the prototype's palette, both themes, at least 4.5:1 contrast for text). Text uses Dynamic Type, never below 15 point. Tap targets at least 44 by 44 points. Every place has a colour, an SF Symbol and a word, so colour is never the only clue.
+6. Look and feel. Keep today's colours, fonts, cards, tiles, segmented controls and floating tab bar (the context lists them); add no new palette or font. Text uses Dynamic Type, never below 15 point. Tap targets at least 44 by 44 points. Every place has a colour, an SF Symbol and a word, so colour is never the only clue.
 7. Ship. Update what-to-test-team.txt with what changed and what to try, in plain words. Run screens.yml for app=team, check the new screens at iPhone and iPad sizes, then let the release reach TestFlight. Tell Indi and Dinis in a commit (trailer For: indi and For: dinis) which build number to install.
 </steps>
 
@@ -82,4 +83,5 @@ You have finished when: all seven stages are on dev with green CI; the Team app 
 
 ## Previous versions
 
+- **Version 2** (9 November 2026, morning): asked for a new pastel palette and the Lexend font, from the first prototype (https://claude.ai/artifact/5mPaRudVP26GSzKSqeG7jq). Indi found it too abrupt a change. Version 3 keeps today's look and points to five drafts in it.
 - **Version 1** (9 November 2026, overnight): the same brief without Indi's decisions. Version 2 adds them to the context (places only; hotel names only, team only) and names the GPS rule as Indi's choice.

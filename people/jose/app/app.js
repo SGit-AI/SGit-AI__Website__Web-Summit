@@ -60,8 +60,8 @@
         // public observability vault the site already publishes (latest/agents.json, the same file and reader as assets/obs-view.js,
         // its published read key taken from people/dinis/vaults.json), else the newest commit (D.collab). "On demand": no schedule
         // cron in agents.json (C33). Amber only when it can be judged: the log loaded and is fresh, the agent has logged before, a
-        // scheduled slot passed 40 minutes ago with no run since; never because there was no commit, never for the conductor while
-        // the log cannot tell its hourly drain from its wake (C33, 2). Doing now, Waiting on me and red need data.mjs: Jose's yes first.
+        // scheduled slot passed 40 minutes ago with no run since; never because there was no commit, for the conductor, its wake
+        // cron only (C33, 2; its drain is disabled since 8 Nov 17:21, and a cron its schedule calls disabled is not read). Doing now, Waiting on me and red need data.mjs: Jose's yes first.
         const BOARD_ORDER = ['conductor', 'automation', 'crm', 'dashboard', 'designer', 'dev', 'helper', 'sales-coach', 'vault', 'watcher']
         const LOG = { state: 'idle', agents: null, generated: null, error: '' }
         function loadLog() {
@@ -95,11 +95,13 @@
             const field = (f, max) => { const out = new Set(); for (const part of String(f).split(',')) { let m
                 if (part === '*') for (let i = 0; i <= max; i++) out.add(i)
                 else if ((m = part.match(/^\*\/(\d+)$/)) && +m[1] > 0) for (let i = 0; i <= max; i += +m[1]) out.add(i)
-                else if ((m = part.match(/^(\d+)-(\d+)(?:\/(\d+))?$/)) && +m[2] <= max) for (let i = +m[1]; i <= +m[2]; i += +(m[3] || 1)) out.add(i)
+                else if ((m = part.match(/^(\d+)-(\d+)(?:\/(\d+))?$/)) && +m[2] <= max && +(m[3] || 1) > 0) for (let i = +m[1]; i <= +m[2]; i += +(m[3] || 1)) out.add(i)
                 else if (/^\d+$/.test(part) && +part <= max) out.add(+part)
                 else return null } return [...out] }
-            return [...String(schedule || '').matchAll(/\bcron\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)/g)].map(m => {
+            const S = String(schedule || '')
+            return [...S.matchAll(/\bcron\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)/g)].map(m => {
                 if (m[3] !== '*' || m[4] !== '*' || m[5] !== '*') return null
+                if (/^[^;.]{0,20}\bdisabled\b/.test(S.slice(m.index + m[0].length).replace(/^\)\s*/, ''))) return null   // "(cron 7 * * * *) disabled": not a schedule
                 const mins = field(m[1], 59), hrs = field(m[2], 23)
                 return mins && hrs ? hrs.flatMap(h => mins.map(mi => h * 60 + mi)).sort((a, b) => a - b) : null
             }).filter(Boolean)
@@ -128,7 +130,6 @@
                 let light = 'ok', why = ''
                 if (AB && (waits || blocked.length || failing.length)) { light = 'red'; why = [waits ? `waits on you (${waits} on your Actions)` : '', ...blocked.map(b => 'blocked: ' + b.reason), failing.length ? 'the watcher names it as failing' : ''].filter(Boolean).join('; ') }
                 else if (onDemand) light = 'demand'
-                else if (n === 'conductor') why = 'its wake is checked once the agent log can tell the wake from the hourly drain'
                 else if (!fresh) why = ''
                 else if (!log || !log.runs) why = 'not logging runs yet, so no amber'
                 else if (Number.isFinite(due) && logLast < due - 10 * 6e4) { light = 'late'; why = `no logged run since its ${new Date(due).toISOString().slice(11, 16)} UTC slot` }
@@ -140,7 +141,7 @@
             const logNote = LOG.state === 'ok' ? `agent log as of ${esc(String(LOG.generated).replace('T', ' ').replace(/Z$/, ''))} UTC${fresh ? '' : ', not fresh, so nothing is amber'}` : LOG.state === 'failed' ? 'agent log not loaded, so last runs are last commits and nothing is amber' : 'reading the agent log…'
             box.innerHTML = `<header class="jb-head"><h2 id="jb-h">My agents</h2><span class="note">${rows.length} agents · ${logNote}</span></header>
 <ul class="jb-rows">${rows.map(r => `<li class="jb-row"><div class="jb-who"><a href="../../../observability/index.html#view=agent&agent=${encodeURIComponent(r.full)}"><b>${esc(r.n)}</b></a> ${chip(r)}${r.n === 'conductor' ? '<span class="jb-sub">with the reviewer and the accountant</span>' : ''}</div>
-<div class="jb-cells"><span>Last run <b>${r.last ? esc(ago(r.last.at)) : 'none yet'}</b>${r.last ? ` <span class="jb-src">(${r.last.from})</span>` : ''}</span><span>Next run <b>${r.next && Number.isFinite(r.next) ? `${hm(r.next)}, ${inMin(r.next)}` : r.onDemand ? 'on demand' : 'not readable'}</b></span>${r.doing ? `<span>Doing now <b>${r.doing.length ? r.doing.map(x => `<a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/${encodeURI(x.file)}">${esc(x.title)}</a>`).join(', ') : 'nothing assigned'}</b></span><span>Waiting on me <b>${r.waits ? `<a href="../index.html#actions">${r.waits}</a>` : '0'}</b></span>` : ''}${r.why ? `<span class="jb-why">${esc(r.why)}</span>` : ''}</div></li>`).join('')}</ul>
+<div class="jb-cells"><span>Last run <b>${r.last ? esc(ago(r.last.at)) : 'none yet'}</b>${r.last ? ` <span class="jb-src">(${r.last.from})</span>` : ''}</span><span>Next run <b>${r.next && Number.isFinite(r.next) ? `${hm(r.next)}, ${inMin(r.next)}` : r.onDemand ? 'on demand' : 'not readable'}</b></span>${r.doing ? `<span>Doing now <b>${r.doing.length ? r.doing.map(x => `<a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/${encodeURI(x.file)}">${esc(x.title)}</a>`).join(', ') : 'nothing assigned'}</b></span><span>Waiting on me <b>${r.waits ? `<a href="../index.html#actions">${Number(r.waits) || 0}</a>` : '0'}</b></span>` : ''}${r.why ? `<span class="jb-why">${esc(r.why)}</span>` : ''}</div></li>`).join('')}</ul>
 ${D.agentsBoard ? '' : `<p class="note jb-wait">Doing now, Waiting on me and red: these wait on Jose's yes to a small addition to the build (<a href="../index.html#actions">his Actions</a>).</p>`}`
         }
         new MutationObserver(() => { if (!mine()) agentsBoard() }).observe(root, { childList: true, subtree: false })

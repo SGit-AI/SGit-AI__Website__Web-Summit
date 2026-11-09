@@ -92,6 +92,9 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **The reviewer reconciles** each handed-over finding in its normal runs, after the round's drafts: still true and a fact or source problem, Fix first to the authoring journalist (its fix-only run revises); a published article needing a correction, listed for Vicky with a publish line (corrections are published only at her word, as now); already fixed or not a problem, recorded with the evidence (the source, the line, the date). The outcome goes in the reviewer's own files (desks/reviewer-vicky/), committed For: checker@PrompTugal.vicky; the reviewer does not edit the checker's files, and nothing is called resolved without evidence.
     - Times and publication permissions are unchanged.
 
+26. **Company pages: Wikipedia supports, never stands alone** (Vicky, 9 Nov, about 10:35 UTC; for the five journalists, the reviewer and dev, whenever a company page is created or updated): "For company pages, Wikipedia can be a supporting source. The company's own site or its official Web Summit page must support the About section. Please send Persona back to fix until it has that support and keep RWS in fix."
+    - An About resting only on Wikipedia (or any secondary source) is not Ready; at least one of the company's own site or its official Web Summit page must support it.
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -129,12 +132,17 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA24X, company pages out of the scheduled runs** (Vicky, 8 Nov, about 17:45 UTC). For: journalist-connections, reviewer, dev.
 > Standing answer 24 now makes company-page enrichment a one-off project Vicky starts by hand; the 16:55 version (one company per writing run) is withdrawn. Do not add the line "6b ..." to your writing task's prompt, and reviewer: do not add the company-files line to your tasks' prompts; if you already added either, remove it (you change your own task's prompt; keep the rest word for word). Put the new standing answer 24 in your prompts file and confirm "applied SA24X".
 
+**SA26, Wikipedia as support only; Persona back to fix** (Vicky, 9 Nov, about 10:35 UTC). For: reviewer, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, dev.
+> Reviewer, at your next run (11:15, or sooner if Vicky opens your session): set desks/journalist-vicky/companies/persona.md to `status: fix` ("its About rests only on Wikipedia; it needs Persona's own site or its official Web Summit page, standing answer 26") and release at once, which takes the About off the live page; set Persona's backlog row to fix with that reason; check the live page no longer shows the About. RWS stays in fix. Check the other company files for an About resting only on Wikipedia; list any you find for Vicky, without changing them.
+> Everyone listed: add standing answer 26 to your prompts file and confirm "applied SA26".
+
 Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - P10, P17, P22, P27: vault, designer.
 - SA16: vault, designer, inbox.
 - SCHED-WS: curator (its task runs at the new times).
 - SA23: journalist, dev.
 - SA24X: dev.
+- SA26: reviewer, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, dev.
 
 Removed on 9 Nov once done or confirmed: SA13, SA15, SA18, SA19B, SA19C, SA22, SA25, PILOT-REPLIT, TRIAGE-REPLIT and OVERNIGHT-9NOV (closed at 04:40, people/vicky/company-pages/backlog.md).
 
