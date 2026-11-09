@@ -75,7 +75,8 @@ Angelo, 9 November about 13:10 UTC, with the wallpaper on his phone: *"Can we en
 - **Layout:** 3D (the ball, as before), People ring, Agents ring: the page's own `layout()` ported into `Graph.java`, flat and face on, scaled into the hexagon by `GEO`'s scale, the lines bent by its pull, the Agents ring's spokes. **Theme:** dark, light (app.css's light tokens, the light PT News stamp, glows drawn plainly as `live3d.js` does on a light page) or the phone's own.
 - **Held to the page by tests:** `hxappwall` (the 3D ball, dark, unchanged) and `hxwallviews` (the flat layouts and the light theme).
 - **Level** (0.3.0, 9 November): Messages, or Workstreams: `work.js`, `work-draw.js` and `work-live.js` ported into `Work.java` (squares, numbers, pills, counts, the document flights in the maker's colour, darker on light), held to the page by `hxwallws`. Squares and pills drawn into the hexagon's overlay (again when a count changes), the flights each frame from the maker's node where it is on screen, so they work on the turning ball too.
-- **To come, in this order:** Deliverables (its marks need the icons' arcs), then the Agents and their work layout.
+- **Deliverables** (0.4.0, 9 November): `deliveries.json`'s ten destinations with work.js's names, work-draw.js's marks (the PT News and LinkedIn logos from `work-logos/`), the six icons (SVG arcs drawn as Android arcs), held by `hxwallws`. One difference from the page, on purpose: no read of PT News's own `stories.json` (promptugal.news), because the wallpaper reads web-summit.sgit.ai only; the newsroom's steps reach it when they are commits here. Angelo's call if he wants it.
+- **To come:** the Agents and their work layout.
 
 ## Questions for Angelo (via the desk)
 

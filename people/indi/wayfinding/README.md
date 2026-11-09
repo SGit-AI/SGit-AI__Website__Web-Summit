@@ -14,5 +14,6 @@ Dinis, arriving at his hotel on 9 November: *"How can we have the technology and
 | [02-options.md](02-options.md) | Six ways to solve it, from the simplest to the most advanced |
 | [03-platforms.md](03-platforms.md) | Where each can live: the team site, PrompTugal.news, the Team app, Claude, Angelo's command centre |
 | [04-recommendation.md](04-recommendation.md) | The MVP, how to build it in an hour, and the next three iterations |
+| [05-venue-map.md](05-venue-map.md) | A detailed venue map in the Team app: Mapbox, Apple Maps, IMDF or MapLibre |
 
 **The short answer:** the MVP is one public page with the two registration points, their hours today, and an "open in Maps" button for each. A "from where I am" button draws a straight line on a simple map, on the phone only. The Team app shows websites, so the same page appears in the app with no app release.

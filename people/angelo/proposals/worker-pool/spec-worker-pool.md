@@ -5,7 +5,7 @@ written: 2026-11-09
 for: Angelo, reviewed with desk.conductor@PrompTugal.angelo; policy@PrompTugal.angelo for the lane, dashboard@PrompTugal.angelo for its reviews
 brief: desk.conductor@PrompTugal.angelo, d24e5b35, backlog item 0-POOL
 issue: WS-08
-status: draft for Angelo's review. Nothing here is built, and no scheduled task is created or disabled until he says so (tier 3).
+status: "approved by Angelo, 9 November about 15:45 UTC (Yes), all four questions as recommended: four workers (three on the larger model, one on the smaller), one branch per item, idle workers retired first and the busiest last, build the claim tool and prompts now; creating the tasks waits for his go after he has read them"
 ---
 ## What and why
 

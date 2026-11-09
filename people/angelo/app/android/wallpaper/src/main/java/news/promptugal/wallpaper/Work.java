@@ -23,10 +23,33 @@ public final class Work {
     // work.js's SLOTS0, in DESTS0's order: [edge, fraction along it], edges clockwise from the top; a level's destinations take them in turn
     static final double[][] SLOTS = { { 5, 0.7 }, { 1, 0.3 }, { 1, 0.6 }, { 1, 0.9 }, { 2, 0.35 }, { 2, 0.75 }, { 4, 0.25 }, { 4, 0.65 }, { 5, 0.1 }, { 5, 0.4 } };
     static final double[][] HEX = { { 250, 67 }, { 750, 67 }, { 1000, 500 }, { 750, 933 }, { 250, 933 }, { 0, 500 } };
-    // the doc icon (work.js's ICON_PATHS.doc), the only one a workstream's flight carries
-    public static final String DOC = "M-6 -9h8l4 4v14h-12zM2 -9v4h4M-3 -1h6M-3 3h6";
+    // the six icons a delivery flies as (work.js's ICON_PATHS), in a 24 x 24 box centred on 0,0, stroked; Workstreams flies docs
+    public static final Map<String, String> ICON_PATHS = new LinkedHashMap<>();
+    // the Deliverables squares' own marks (work-draw.js's MARK and MARK_PATHS: no two destinations alike), and the two with a logo
+    public static final Map<String, String> MARK = new LinkedHashMap<>(), MARK_PATHS = new LinkedHashMap<>();
+    public static final java.util.Set<String> LOGO = new java.util.HashSet<>(java.util.Arrays.asList("news", "linkedin"));
+    // work.js's DESTS0, NAMES0 and SHORT0: the Deliverables level's ten, its names and the short ones for a phone
+    static final String[] DESTS0 = { "news", "site", "research", "infra", "app", "keys", "crm", "email", "linkedin", "drafts" };
+    static final Map<String, String> NAMES0 = new LinkedHashMap<>(), SHORT0 = new LinkedHashMap<>();
+    static {
+        String[][] ic = { { "doc", "M-6 -9h8l4 4v14h-12zM2 -9v4h4M-3 -1h6M-3 3h6" }, { "cog", "M0 -9v3M0 6v3M-9 0h3M6 0h3M-6.4 -6.4l2.1 2.1M4.3 4.3l2.1 2.1M-6.4 6.4l2.1-2.1M4.3 -4.3l2.1-2.1M0 -4a4 4 0 1 0 0.01 0" },
+                { "key", "M-5 -3a4 4 0 1 0 0.01 0M-1 -3h10M5 -3v4M8 -3v3" }, { "record", "M-8 -7h16v14h-16zM-8 -2h16M-8 3h16M-3 -7v14" },
+                { "envelope", "M-9 -6h18v12h-18zM-9 -6l9 7l9 -7" }, { "post", "M-8 -8h16v12h-9l-4 4v-4h-3zM-4 -4h8M-4 0h5" } };
+        for (String[] x : ic) ICON_PATHS.put(x[0], x[1]);
+        String[][] mk = { { "site", "site" }, { "research", "research" }, { "infra", "infra" }, { "app", "app" }, { "keys", "key" }, { "crm", "record" }, { "email", "envelope" }, { "drafts", "drafts" } };
+        for (String[] x : mk) MARK.put(x[0], x[1]);
+        String[][] mp = { { "site", "M-9 -7h18v14h-18zM-9 -3h18M-6.5 -5h0.5M-4 -5h0.5" }, { "research", "M-7 -3a5 5 0 1 0 10 0a5 5 0 1 0 -10 0M1.6 0.6l6.4 6.4" },
+                { "infra", "M-8 -8h16v6h-16zM-8 2h16v6h-16zM-5 -5h3M-5 5h3M4 -5h0.5M4 5h0.5" }, { "app", "M-5 -9h10v18h-10zM-2 6h4" }, { "drafts", "M-7 7l1.5 -5l9 -9l3.5 3.5l-9 9zM-5.5 2l3.5 3.5M1.5 -5l3.5 3.5" } };
+        for (String[] x : mp) MARK_PATHS.put(x[0], x[1]);
+        String[][] nm = { { "news", "PT News", "PT News" }, { "site", "the team site", "site" }, { "research", "research", "research" }, { "infra", "infrastructure", "infra" }, { "app", "the app", "app" },
+                { "keys", "keys", "keys" }, { "crm", "the CRM", "CRM" }, { "email", "email drafts", "email" }, { "linkedin", "LinkedIn", "LinkedIn" }, { "drafts", "Drafts and proposals", "drafts" } };
+        for (String[] x : nm) { NAMES0.put(x[0], x[1]); SHORT0.put(x[0], x[2]); }
+    }
+    public static final String DOC = ICON_PATHS.get("doc");
+    /** A square's mark as a path (work-draw.js's markPath): its own, else one of the icons, else the doc. */
+    public static String markPath(String dest) { String k = MARK.containsKey(dest) ? MARK.get(dest) : "doc"; return MARK_PATHS.containsKey(k) ? MARK_PATHS.get(k) : ICON_PATHS.containsKey(k) ? ICON_PATHS.get(k) : DOC; }
 
-    public static final class Dest { public String id, name, shortName, mark; public double x, y, nx, ny; public int count; public double litUntil; }
+    public static final class Dest { public String id, name, shortName, mark; public boolean logo; public double x, y, nx, ny; public int count; public double litUntil; }
     public static final class Row { public double at; public String maker, icon, dest, key; }
     public static final class Flight { public String maker, icon, dest; public int n; public double min, t0; }
 
@@ -40,14 +63,18 @@ public final class Work {
         return new double[] { a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f };
     }
 
-    /** A level from its file (workstreams.json): its destinations in order, their names, short names and places (scale 1: on the rim). */
+    /** A level from its file: Deliverables (deliveries.json, work.js's own ten, their names and slots) or Workstreams
+     *  (workstreams.json, its own ten named in the file, work.js's variant()); each with names, short names and places (on the rim). */
     public Work(String level, Object file) {
-        this.level = level;
-        Map<String, Object> W = Json.obj(file); List<Object> ds = Json.arr(W.get("dests")); Map<String, Object> names = Json.obj(W.get("names"));
+        this.level = level; boolean ws = "workstreams".equals(level);
+        Map<String, Object> W = Json.obj(file); List<Object> ds = ws ? Json.arr(W.get("dests")) : new ArrayList<>(java.util.Arrays.asList((Object[]) DESTS0)); Map<String, Object> names = Json.obj(W.get("names"));
         for (int i = 0; i < ds.size() && i < SLOTS.length; i++) {
-            Dest d = new Dest(); d.id = Json.str(ds.get(i)); String nm = Json.str(names.get(d.id)); d.name = nm == null ? d.id : nm;
-            // work.js's variant(): the short name is the title without "WS-NN " (its square shows the number); "other workstreams" is "other"
-            d.shortName = d.name.replaceFirst("^WS-\\d+\\s+", "").replaceFirst("(?i)^other workstreams$", "other");
+            Dest d = new Dest(); d.id = Json.str(ds.get(i));
+            if (ws) {
+                String nm = Json.str(names.get(d.id)); d.name = nm == null ? d.id : nm;
+                // work.js's variant(): the short name is the title without "WS-NN " (its square shows the number); "other workstreams" is "other"
+                d.shortName = d.name.replaceFirst("^WS-\\d+\\s+", "").replaceFirst("(?i)^other workstreams$", "other");
+            } else { d.name = NAMES0.get(d.id); d.shortName = SHORT0.get(d.id); d.logo = LOGO.contains(d.id); }
             d.mark = d.id.matches("^WS-\\d+$") ? d.id.substring(3) : "";
             double[] p = rimPoint((SLOTS[i][0] + SLOTS[i][1]) / 6); d.x = p[0]; d.y = p[1]; d.nx = (p[0] - C) / C; d.ny = (p[1] - C) / C;
             dests.add(d); byId.put(d.id, d);
@@ -63,7 +90,7 @@ public final class Work {
             List<Object> r = Json.arr(o); if (r.size() < 6) continue;
             Row x = new Row(); x.at = from + Json.num(r.get(0), 0) * 6e4;
             x.maker = at(makers, r.get(1)); x.icon = at(icons, r.get(2)); x.dest = at(ds, r.get(3)); String repo = at(repos, r.get(4));
-            if (x.maker == null || x.icon == null || x.dest == null || !byId.containsKey(x.dest)) continue;
+            if (x.maker == null || x.icon == null || x.dest == null || !byId.containsKey(x.dest) || !ICON_PATHS.containsKey(x.icon)) continue;
             x.key = (repo == null ? "" : repo) + ":" + Json.str(r.get(5)) + ":" + x.dest; out.add(x);
         }
         return out;
