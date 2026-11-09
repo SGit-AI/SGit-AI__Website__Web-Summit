@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1557",
+    "date": "2026-11-09",
+    "what": "a detailed venue map in the Team app: Mapbox, Apple Maps, IMDF or MapLibre (Indi's question)",
+    "by": "conductor@web-summit.indi",
+    "from": "e169f693d"
+  },
+  {
     "version": "v0.2.1556",
     "date": "2026-11-09",
     "what": "Tuesday's post drafted: the demo is us",
