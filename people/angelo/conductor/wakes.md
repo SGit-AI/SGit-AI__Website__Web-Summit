@@ -1,0 +1,7 @@
+---
+title: "The desk's wakes"
+summary: Every time desk.conductor@PrompTugal.angelo wakes one of Angelo's agents outside its schedule, at his word of 9 November: when, which agent, for which backlog item, and why now.
+---
+| Time (UTC) | Agent | Backlog item | Why now |
+|---|---|---|---|
+| 2026-11-09 10:35 | research@PrompTugal.angelo | 0p, Angelo's editorial team (survey and spec) | its LinkedIn item is done; next scheduled run 12:25 |
