@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1602",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: a one-off agent, sheet@, for Tuesday's interview sheet (0-LEADS)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "b32f3cdaa"
+  },
+  {
     "version": "v0.2.1601",
     "date": "2026-11-09",
     "what": "runner.conductor@PrompTugal.angelo: run 22:22, nothing urgent",
