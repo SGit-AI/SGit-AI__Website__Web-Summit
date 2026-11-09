@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1514",
+    "date": "2026-11-09",
+    "what": "11:40 wake: lane counted, not drained (no token of my own yet); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "b418bcf9e"
+  },
+  {
     "version": "v0.2.1513",
     "date": "2026-11-09",
     "what": "dev@PrompTugal.angelo: ledger line for the 11:35 run",
