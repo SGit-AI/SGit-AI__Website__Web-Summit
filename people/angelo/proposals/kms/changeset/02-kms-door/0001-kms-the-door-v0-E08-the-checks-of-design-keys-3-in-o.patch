@@ -1,0 +1,778 @@
+From 2f21524e879ed19dbfeb256ae3010edb0df1c4ea Mon Sep 17 00:00:00 2001
+From: "vault.kms@PrompTugal.angelo" <noreply@anthropic.com>
+Date: Mon, 9 Nov 2026 12:15:45 +0000
+Subject: [PATCH] =?UTF-8?q?kms:=20the=20door=20v0=20(E08),=20the=20checks?=
+ =?UTF-8?q?=20of=20design/keys=20=C2=A73=20in=20order,=20cryptography=20as?=
+ =?UTF-8?q?=20a=20backend?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+sharness_ai/kms/: KMS on the door kit (init, identity, unwrap, seal_to, destroy;
+GET /v0/policy and /v0/hello from Door), checks 1 to 8 in the design's order,
+the per-agent kms rows of the policy (one session, one agent), nonces kept
+until ts + 2 min, max_uses, a fresh approval for write and seal_to, keys
+handed over as bytearrays and zeroed before the answer. Crypto.py is the
+backend interface; the only backend, NoCrypto, answers 501, because the
+envelope needs AES-256-GCM, which neither the standard library nor the
+openssl 3.0 command line provides. tests/unit/kms/test_kms.py: one test
+per check, with a test-only backend; every key made inside the test.
+---
+ sharness_ai/kms/ACCEPTS.json |  16 ++
+ sharness_ai/kms/Crypto.py    |  84 +++++++++
+ sharness_ai/kms/EMITS.json   |   2 +
+ sharness_ai/kms/KMS.py       | 269 +++++++++++++++++++++++++++++
+ sharness_ai/kms/__init__.py  |  13 ++
+ tests/unit/kms/test_kms.py   | 321 +++++++++++++++++++++++++++++++++++
+ 6 files changed, 705 insertions(+)
+ create mode 100644 sharness_ai/kms/ACCEPTS.json
+ create mode 100644 sharness_ai/kms/Crypto.py
+ create mode 100644 sharness_ai/kms/EMITS.json
+ create mode 100644 sharness_ai/kms/KMS.py
+ create mode 100644 sharness_ai/kms/__init__.py
+ create mode 100644 tests/unit/kms/test_kms.py
+
+diff --git a/sharness_ai/kms/ACCEPTS.json b/sharness_ai/kms/ACCEPTS.json
+new file mode 100644
+index 0000000..1c224ad
+--- /dev/null
++++ b/sharness_ai/kms/ACCEPTS.json
+@@ -0,0 +1,16 @@
++{
++ "schema": "sharness-ai.door-contract/v0",
++ "door": "sharness.kms",
++ "nouns": ["vault_id", "op (read | write)", "a sealed vault key", "a one-time public key E"],
++ "routes": [
++  {"method": "POST", "path": "/v0/init", "op": "init", "callers": ["launcher"], "body": "{policy_hash, expires, session_auth_pub?}"},
++  {"method": "GET", "path": "/v0/identity", "op": "identity", "callers": ["net", "llm", "launcher"], "body": "none"},
++  {"method": "POST", "path": "/v0/unwrap", "op": "unwrap", "callers": ["net"], "body": "{v, op, sealed, vault_id, eph_pub, nonce, ts, policy_hash, sig?}"},
++  {"method": "POST", "path": "/v0/seal_to", "op": "seal_to", "callers": ["net"], "body": "{v, op, sealed, vault_id, recipient_k1, expires, nonce, ts, policy_hash, sig?}"},
++  {"method": "POST", "path": "/v0/destroy", "op": "destroy", "callers": ["launcher"], "body": "{}"}
++ ],
++ "always": ["GET /v0/hello", "GET /v0/policy", "GET /v0/log (the launcher only)"],
++ "checks": ["1 peer role", "2 sig (when an auth key is bound)", "3 ts within 60 s, nonce unseen", "4 policy hash, a row allows op for vault_id", "5 open sealed", "6 derive, scrub", "7 limits", "8 audit"],
++ "verdicts": {"200": "done", "400": "not the schema", "403": "refused, with the check and the row", "409": "no identity, or one already", "410": "destroyed", "413": "body over 16 KiB", "501": "no cryptography backend"},
++ "max_body": 16384
++}
+diff --git a/sharness_ai/kms/Crypto.py b/sharness_ai/kms/Crypto.py
+new file mode 100644
+index 0000000..aebf3be
+--- /dev/null
++++ b/sharness_ai/kms/Crypto.py
+@@ -0,0 +1,84 @@
++"""The kms's cryptography, behind one small interface, so that the door's checks (who, when, which
++policy, how often) are written once and the primitives can be chosen separately.
++
++A backend opens a sealed vault key (check 5), derives the per-operation keys from it (check 6),
++seals a response to the caller's one-time key E (§3 "Sealing to E"), re-seals to another identity
++(`seal_to`), makes and reports the session identity, verifies the session auth key's signature
++(check 2, remote kms) and scrubs. Every clear key it hands the door is a `bytearray`, so the door
++can zero it in place after use (the design's "scrub Python bytes after copying").
++
++`NoCrypto` is the default and refuses everything with `Unavailable` (the door answers 501): the
++standard library has no ECDH, no ECDSA and no AES-GCM, and the openssl 3.0 command line refuses
++AEAD ciphers (`enc: AEAD ciphers not supported`), so the design's envelope cannot be built here
++without a dependency exception. That choice is the upstream's, not this patch's."""
++from dataclasses import dataclass
++
++
++class CryptoRefusal(Exception):
++    """A sealed input that must be refused (not addressed to us, a bad signature, expired, an
++    unknown sender). The message is the reason given to the caller: never a key, never plaintext."""
++
++
++class Unavailable(Exception):
++    """No backend can do this here."""
++
++
++@dataclass
++class Opened:
++    vault_id  : str
++    vault_key : bytearray          # clear, inside the kms only; the door zeroes it after derive
++    sender_fp : str                # "sha256:<16 hex>" of the sender's signing key
++    expires   : int                # Unix seconds; the sealed key's own expiry (policy, not cryptography)
++
++
++class Crypto:
++    name = "crypto"
++
++    def identity(self):                                      # {"k1", "record_fp", "enc_fp"} or None
++        raise Unavailable(self.why())
++
++    def make_identity(self) -> dict:
++        raise Unavailable(self.why())
++
++    def verify(self, auth_pub: str, message: bytes, sig: str) -> bool:
++        raise Unavailable(self.why())
++
++    def open(self, sealed: str, pins: dict) -> Opened:       # check 5; raises CryptoRefusal
++        raise Unavailable(self.why())
++
++    def derive(self, opened: Opened, op: str) -> dict:       # check 6: {"read_key": bytearray, "write_key"?: bytearray, ...}
++        raise Unavailable(self.why())
++
++    def seal_to_eph(self, plain: bytearray, eph_pub: str, nonce: bytes, info: bytes, aad: bytes) -> str:
++        raise Unavailable(self.why())
++
++    def seal_to(self, opened: Opened, recipient_k1: str, expires: int, op: str) -> str:
++        raise Unavailable(self.why())
++
++    def scrub(self):
++        pass
++
++    def why(self) -> str:
++        return f"the {self.name} backend cannot do this"
++
++
++class NoCrypto(Crypto):
++    name = "none"
++
++    def identity(self):
++        return None
++
++    def why(self) -> str:
++        return ("no cryptography backend: the envelope of design/keys §3 needs ECDH P-256, HKDF and AES-256-GCM, which the "
++                "standard library lacks and the openssl 3.0 command line refuses (AEAD); choosing one is the upstream's decision")
++
++
++def scrub(*buffers):
++    """Zero each bytearray in place (best effort: a copy Python made earlier is not reached)."""
++    for b in buffers:
++        if isinstance(b, bytearray):
++            for i in range(len(b)):
++                b[i] = 0
++
++
++__all__ = ["Crypto", "CryptoRefusal", "NoCrypto", "Opened", "Unavailable", "scrub"]
+diff --git a/sharness_ai/kms/EMITS.json b/sharness_ai/kms/EMITS.json
+new file mode 100644
+index 0000000..459991a
+--- /dev/null
++++ b/sharness_ai/kms/EMITS.json
+@@ -0,0 +1,2 @@
++{"schema": "sharness-ai.door-contract/v0", "door": "sharness.kms",
++ "targets": {"none": "the kms calls nobody: every answer is a verdict, an identity's public half or an envelope sealed to the caller's one-time key"}}
+diff --git a/sharness_ai/kms/KMS.py b/sharness_ai/kms/KMS.py
+new file mode 100644
+index 0000000..138e031
+--- /dev/null
++++ b/sharness_ai/kms/KMS.py
+@@ -0,0 +1,269 @@
++"""sharness.kms, the door (E08, v0): the checks of sharness.ai/design/keys §3, in their order.
++
++    unwrap   1 the TLS peer is net            2 sig, when init bound an auth key
++             3 ts within 60 s; nonce unseen   4 policy hash is ours; a kms row of this session's agent
++                                                allows op for vault_id, and has not run out (until)
++             5 open sealed (the backend)      6 vault id inside == vault_id; derive; scrub the vault key
++             7 limits: max_uses; write needs a fresh approval
++             8 the audit line: the door's own line, whose `row` names op, vault id and agent, never a key
++    seal_to  the same checks, with `op` the right handed on; it always needs a fresh approval
++    init     the launcher only: the policy hash must be ours; makes the identity once
++    identity its public half only; destroy: the launcher only, scrubs, idempotent; then every call is 410
++
++One session is one agent: the launcher starts the kms with that agent's name, and only the kms rows
++naming it count (piece 1's rows, `policy["kms"]`). Nothing here holds a clear key longer than one
++request: the backend hands keys over as bytearrays and they are zeroed before the answer is sent."""
++import base64
++import binascii
++import calendar
++import hashlib
++import json
++import os
++import threading
++import time
++
++from sharness_ai.door import Contract, Door, Verdict
++from sharness_ai.kms.Crypto import CryptoRefusal, NoCrypto, Unavailable, scrub
++from sharness_ai.policy import kms_problems, policy_hash
++
++HERE = os.path.dirname(__file__)
++MAX_BODY = 16 << 10                      # §3: strict schemas, size-capped
++SKEW = 60                                # check 3: ts within ±60 s
++NONCE_KEEP = 120                         # nonces recorded until ts + 2 min
++EXPIRES_IN = 300                         # the unwrap response's expires_in
++MAX_TEXT = 8192                          # a sealed m1 or a k1, as text
++FIELDS = {
++    "unwrap":  ({"v", "op", "sealed", "vault_id", "eph_pub", "nonce", "ts", "policy_hash"}, {"sig"}),
++    "seal_to": ({"v", "op", "sealed", "vault_id", "recipient_k1", "expires", "nonce", "ts", "policy_hash"}, {"sig"}),
++    "init":    ({"policy_hash", "expires"}, {"session_auth_pub"}),
++    "destroy": (set(), set()),
++}
++P256_SPKI = 91                           # an uncompressed P-256 SubjectPublicKeyInfo, DER
++
++
++def canonical(doc: dict) -> bytes:
++    return json.dumps(doc, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()
++
++
++def b64(text, size: int = None):
++    """The bytes, or None: strict base64, of exactly `size` bytes when given."""
++    if not isinstance(text, str) or len(text) > MAX_TEXT:
++        return None
++    try:
++        raw = base64.b64decode(text, validate=True)
++    except (binascii.Error, ValueError):
++        return None
++    return raw if size is None or len(raw) == size else None
++
++
++def parse_ts(text):
++    """Unix seconds from "YYYY-MM-DDTHH:MM:SSZ", or None."""
++    try:
++        return calendar.timegm(time.strptime(text, "%Y-%m-%dT%H:%M:%SZ")) if isinstance(text, str) and len(text) == 20 else None
++    except ValueError:
++        return None
++
++
++class KMS(Door):
++    role = "kms"
++
++    def __init__(self, session, policy: dict, agent: str, crypto=None, approve=None, pins: dict = None,
++                 port: int = 0, audit_stream=None, clock=time.time):
++        problems = kms_problems(policy.get("kms", []))
++        if problems:
++            raise ValueError(f"the kms rows are not valid: {problems[0]}")
++        self.agent, self.crypto = agent, crypto or NoCrypto()
++        self.approve = approve                      # callable(agent, vault_id, op) -> bool: a fresh approval, or None (none here)
++        self.pins = dict(pins or {})                # {"root": "sha256:…"} and/or {"senders": [...]}: whom a sealed key may come from
++        self.clock, self.lock = clock, threading.Lock()
++        self.nonces, self.uses = {}, {}             # nonce -> keep-until; (agent, vault_id) -> successful unwraps
++        self.auth_pub, self.destroyed = None, False
++        self.rows = {r["vault_id"]: r for r in policy.get("kms", []) if r["agent"] == agent}
++        super().__init__(session, Contract(HERE), policy, port=port, audit_stream=audit_stream,
++                         targets={"sharness.kms.none" if isinstance(self.crypto, NoCrypto) else f"sharness.kms.{self.crypto.name}": "live"})
++
++    # ---- the door ---------------------------------------------------------------------------------------
++    def handle(self, request: dict) -> Verdict:
++        route, peer, body = request["route"], request["peer"], request["body"]
++        op = route["op"]
++        with self.lock:                             # one request at a time: nonces and counts are exact
++            if peer not in route.get("callers", ()):                                       # check 1
++                return Verdict.refuse(f"{op} is for {', '.join(route.get('callers', ()))} only, not {peer or '?'}", "check 1: the peer role")
++            if self.destroyed:
++                if op == "destroy":
++                    return Verdict.ok()                     # idempotent
++                return Verdict.refuse("this kms was destroyed; a new session starts a new one", "destroy", status=410)
++            if op == "identity":
++                ident = self.crypto.identity()
++                if not ident:
++                    return Verdict.refuse("no identity yet: the launcher calls init first", "init", status=409)
++                return Verdict.ok(k1=ident["k1"], record_fp=ident["record_fp"], enc_fp=ident["enc_fp"])
++            if len(body) > MAX_BODY:
++                return Verdict.refuse(f"body over {MAX_BODY} bytes", "§3 size cap", status=413)
++            doc, why = self.schema(op, body)
++            if doc is None:
++                return Verdict.refuse(why, "§3 strict schema", status=400)
++            try:
++                return getattr(self, f"op_{op}")(doc)
++            except Unavailable as e:
++                return Verdict.refuse(str(e), f"backend {self.crypto.name}", status=501)
++
++    def schema(self, op: str, body: bytes):
++        need, may = FIELDS[op]
++        try:
++            doc = json.loads(body or b"{}")
++        except (ValueError, UnicodeDecodeError):
++            return None, "the body is not JSON"
++        if not isinstance(doc, dict):
++            return None, "the body is not one JSON object"
++        missing, extra = sorted(need - set(doc)), sorted(set(doc) - need - may)
++        if missing or extra:
++            return None, f"fields: missing {missing}, unknown {extra}"
++        if op in ("unwrap", "seal_to"):
++            if doc["v"] != 1 or isinstance(doc["v"], bool):
++                return None, "v must be 1"
++            if doc["op"] not in ("read", "write"):
++                return None, "op must be read or write"
++            for k in ("sealed", "vault_id", "policy_hash", "ts") + (("recipient_k1",) if op == "seal_to" else ()):
++                if not isinstance(doc[k], str) or not doc[k] or len(doc[k]) > MAX_TEXT:
++                    return None, f"{k} must be a non-empty string"
++            if b64(doc["nonce"], 16) is None:
++                return None, "nonce must be 16 bytes, base64"
++            if op == "unwrap" and b64(doc["eph_pub"], P256_SPKI) is None:
++                return None, "eph_pub must be a P-256 public key (SPKI DER, base64)"
++            if parse_ts(doc["ts"]) is None:
++                return None, "ts must be YYYY-MM-DDTHH:MM:SSZ"
++        if "expires" in doc and (isinstance(doc["expires"], bool) or not isinstance(doc["expires"], int) or doc["expires"] < 0):
++            return None, "expires must be a Unix time in whole seconds"
++        if "sig" in doc and b64(doc["sig"]) is None:
++            return None, "sig must be base64"
++        return doc, ""
++
++    # ---- the ops -----------------------------------------------------------------------------------------
++    def op_init(self, doc) -> Verdict:
++        if doc["policy_hash"] != policy_hash(self.policy):
++            return Verdict.refuse("policy_hash is not this kms's policy", "check 4: the policy hash")
++        if self.crypto.identity():
++            return Verdict.refuse("this kms already has an identity; one per session", "init", status=409)
++        pub = doc.get("session_auth_pub")
++        if pub is not None and b64(pub, P256_SPKI) is None:
++            return Verdict.refuse("session_auth_pub must be a P-256 public key (SPKI DER, base64)", "§3 strict schema", status=400)
++        ident = self.crypto.make_identity()
++        self.auth_pub = pub
++        return Verdict.ok(k1=ident["k1"], record_fp=ident["record_fp"], enc_fp=ident["enc_fp"])
++
++    def op_destroy(self, doc) -> Verdict:
++        self.crypto.scrub()
++        self.nonces.clear()
++        self.uses.clear()
++        self.auth_pub, self.destroyed = None, True
++        return Verdict.ok()
++
++    def checks_2_to_4(self, doc):
++        """None when the request passes checks 2, 3 and 4; else the refusal."""
++        signed = {k: v for k, v in doc.items() if k != "sig"}
++        if self.auth_pub is not None:                                                         # check 2
++            if "sig" not in doc:
++                return Verdict.refuse("this kms is bound to a session auth key: the request must be signed", "check 2: sig")
++            if not self.crypto.verify(self.auth_pub, canonical(signed), doc["sig"]):
++                return Verdict.refuse("sig does not verify with the bound session auth key", "check 2: sig")
++        now = self.clock()                                                                     # check 3
++        ts = parse_ts(doc["ts"])
++        if abs(now - ts) > SKEW:
++            return Verdict.refuse(f"ts is {int(now - ts)} s from this kms's clock; at most {SKEW}", "check 3: ts")
++        for n, until in list(self.nonces.items()):
++            if until < now:
++                del self.nonces[n]
++        if doc["nonce"] in self.nonces:
++            return Verdict.refuse("nonce seen before: a replay", "check 3: nonce")
++        self.nonces[doc["nonce"]] = ts + NONCE_KEEP                                           # recorded even if refused below
++        if doc["policy_hash"] != policy_hash(self.policy):                                    # check 4
++            return Verdict.refuse("policy_hash is not this kms's policy", "check 4: the policy hash")
++        row = self.rows.get(doc["vault_id"])
++        where = f"kms[{self.agent}, {doc['vault_id']}]"
++        if row is None:
++            return Verdict.refuse(f"no kms row lets {self.agent} use vault {doc['vault_id']}", f"check 4: no row {where}")
++        if doc["op"] not in row["ops"]:
++            return Verdict.refuse(f"the row allows {row['ops']}, not {doc['op']}", f"check 4: {where} ops")
++        if now >= row["until"]:
++            return Verdict.refuse("the row has run out (until)", f"check 4: {where} until")
++        return None
++
++    def opened(self, doc):
++        """Checks 5 and the first half of 6: (opened, None) or (None, refusal)."""
++        try:
++            o = self.crypto.open(doc["sealed"], self.pins)                                    # check 5
++        except CryptoRefusal as e:
++            return None, Verdict.refuse(f"sealed: {e}", "check 5: open")
++        if o.expires <= self.clock():
++            scrub(o.vault_key)
++            return None, Verdict.refuse("the sealed key has expired", "check 5: expiry")
++        if o.vault_id != doc["vault_id"]:                                                     # check 6: what is inside decides
++            scrub(o.vault_key)
++            return None, Verdict.refuse("vault_id is not the vault inside sealed", "check 6: vault id")
++        return o, None
++
++    def limits(self, doc, sealing: bool = False):
++        """Check 7: None, or the refusal. Counts only what then succeeds."""
++        key, row = (self.agent, doc["vault_id"]), self.rows[doc["vault_id"]]
++        if self.uses.get(key, 0) >= row["max_uses"]:
++            return Verdict.refuse(f"max_uses {row['max_uses']} reached", f"check 7: kms[{self.agent}, {doc['vault_id']}] max_uses")
++        if doc["op"] == "write" or sealing:
++            if self.approve is None or not self.approve(self.agent, doc["vault_id"], "seal_to" if sealing else doc["op"]):
++                return Verdict.refuse("needs a fresh approval, and none was given", "check 7: fresh approval")
++        return None
++
++    def done(self, doc, verb: str, **body) -> Verdict:
++        key = (self.agent, doc["vault_id"])
++        self.uses[key] = self.uses.get(key, 0) + 1
++        v = Verdict.ok(**body)
++        v.row = f"{verb} {doc['op']} kms[{self.agent}, {doc['vault_id']}] use {self.uses[key]}"   # check 8: the audit line's row
++        return v
++
++    def op_unwrap(self, doc) -> Verdict:
++        refused = self.checks_2_to_4(doc)
++        if refused:
++            return refused
++        o, refused = self.opened(doc)
++        if refused:
++            return refused
++        keys, plain = {}, bytearray()
++        try:
++            keys = self.crypto.derive(o, doc["op"])                                         # check 6
++            scrub(o.vault_key)
++            if doc["op"] == "read" and "write_key" in keys:
++                return Verdict.refuse("the backend derived a write key for a read", "check 6: derive")
++            refused = self.limits(doc)                                                       # check 7
++            if refused:
++                return refused
++            plain = bytearray(b'{"vault_id":' + json.dumps(o.vault_id).encode())
++            for k in sorted(keys):
++                plain += b',"' + k.encode() + b'":"' + base64.b64encode(keys[k]) + b'"'
++            plain += b"}"
++            info = b"|".join((b"sgit-kms/v1", doc["op"].encode(), doc["vault_id"].encode(), b64(doc["eph_pub"])))
++            env = self.crypto.seal_to_eph(plain, doc["eph_pub"], b64(doc["nonce"], 16), info,
++                                          hashlib.sha256(canonical(doc)).digest())
++            return self.done(doc, "unwrap", v=1, sealed_to_eph=env, expires_in=EXPIRES_IN)
++        finally:
++            scrub(o.vault_key, plain, *keys.values())
++
++    def op_seal_to(self, doc) -> Verdict:
++        refused = self.checks_2_to_4(doc)
++        if refused:
++            return refused
++        if doc["expires"] <= self.clock():
++            return Verdict.refuse("expires is in the past", "§3 seal_to")
++        o, refused = self.opened(doc)
++        if refused:
++            return refused
++        try:
++            refused = self.limits(doc, sealing=True)
++            if refused:
++                return refused
++            m1 = self.crypto.seal_to(o, doc["recipient_k1"], doc["expires"], doc["op"])
++            return self.done(doc, "seal_to", v=1, m1=m1)
++        finally:
++            scrub(o.vault_key)
++
++
++__all__ = ["KMS", "MAX_BODY", "SKEW", "canonical"]
+diff --git a/sharness_ai/kms/__init__.py b/sharness_ai/kms/__init__.py
+new file mode 100644
+index 0000000..fcd57f8
+--- /dev/null
++++ b/sharness_ai/kms/__init__.py
+@@ -0,0 +1,13 @@
++"""sharness.kms: where a secret lives (E08, v0). A door on the door kit: `init`, `GET /v0/identity`,
++`GET /v0/policy`, `POST /v0/unwrap`, `POST /v0/seal_to`, `destroy`, with the checks of
++sharness.ai/design/keys §3 in their order. Keys never leave: an unwrap answers only an envelope
++sealed to the caller's one-time key.
++
++Status: proposed (vault.kms@PrompTugal.angelo's changeset, piece 2a). The door logic runs; the
++cryptography is a backend (`Crypto`), and the only one here is `NoCrypto`, which refuses with 501:
++the design's envelope needs AES-256-GCM, which neither the standard library nor the openssl 3.0
++command line offers. Choosing a backend is the open decision (README of the piece)."""
++from sharness_ai.kms.Crypto import Crypto, CryptoRefusal, NoCrypto, Opened
++from sharness_ai.kms.KMS import KMS
++
++__all__ = ["Crypto", "CryptoRefusal", "KMS", "NoCrypto", "Opened"]
+diff --git a/tests/unit/kms/test_kms.py b/tests/unit/kms/test_kms.py
+new file mode 100644
+index 0000000..b75469d
+--- /dev/null
++++ b/tests/unit/kms/test_kms.py
+@@ -0,0 +1,321 @@
++"""sharness.kms v0 (piece 2a of the kms changeset): one test per check of design/keys §3, each refused with
++its verdict; unwrap answers only an envelope and never a clear key; a replayed nonce is refused; the vault key
++is zeroed; the audit line holds no secret. The cryptography is a test backend (`Fake`) defined here: it proves
++the door, not the primitives. Every key and identifier is made up inside the test and discarded."""
++import base64
++import hashlib
++import hmac
++import json
++import secrets
++import shutil
++import time
++
++import pytest
++
++from sharness_ai.door import Client, Session
++from sharness_ai.kms import KMS, CryptoRefusal, NoCrypto, Opened
++from sharness_ai.kms.Crypto import Crypto
++from sharness_ai.kms.KMS import MAX_BODY, canonical
++from sharness_ai.policy import policy_hash
++
++NOW = 1_800_000_000
++AGENT, VAULT = "agent-a", "vault-1"
++FILES = {"read": [], "write": [], "exec": []}
++
++
++def row(**kw):
++    return dict({"agent": AGENT, "vault_id": VAULT, "ops": ["read", "write"], "max_uses": 3, "until": NOW + 3600}, **kw)
++
++
++def policy(*rows):
++    return {"pbp": 1, "id": "kms-test", "network": "none", "files": dict(FILES), "kms": list(rows) or [row()]}
++
++
++def ts(offset=0):
++    return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(NOW + offset))
++
++
++class Fake(Crypto):
++    """A test backend: a "sealed" key is base64 JSON naming its recipient; keys are HMACs. Not cryptography."""
++    name = "fake"
++
++    def __init__(self):
++        self.ident, self.handed, self.plains, self.scrubbed = None, [], [], False
++        self.vault_key = secrets.token_bytes(32)           # made here, never written anywhere
++
++    def identity(self):
++        return self.ident
++
++    def make_identity(self):
++        self.ident = {"k1": "k1-" + secrets.token_hex(8), "record_fp": "sha256:" + secrets.token_hex(8), "enc_fp": "sha256:" + secrets.token_hex(8)}
++        return self.ident
++
++    def seal(self, to=None, vault_id=VAULT, expires=NOW + 600, sender="sha256:" + "a" * 16):
++        doc = {"to": to or self.ident["record_fp"], "vault_id": vault_id, "key": self.vault_key.hex(), "from": sender, "expires": expires}
++        return base64.b64encode(json.dumps(doc).encode()).decode()
++
++    def verify(self, auth_pub, message, sig):
++        return hmac.compare_digest(sig, base64.b64encode(hmac.new(auth_pub.encode(), message, hashlib.sha256).digest()).decode())
++
++    def open(self, sealed, pins):
++        doc = json.loads(base64.b64decode(sealed))
++        if doc["to"] != self.ident["record_fp"]:
++            raise CryptoRefusal("not addressed to this kms")
++        if doc["from"] not in pins.get("senders", []):
++            raise CryptoRefusal("the sender is not pinned")
++        key = bytearray(bytes.fromhex(doc["key"]))
++        self.handed.append(key)
++        return Opened(doc["vault_id"], key, doc["from"], doc["expires"])
++
++    def derive(self, opened, op):
++        out = {"read_key": bytearray(hmac.new(bytes(opened.vault_key), b"read", hashlib.sha256).digest())}
++        if op == "write":
++            out["write_key"] = bytearray(hmac.new(bytes(opened.vault_key), b"write", hashlib.sha256).digest())
++        return out
++
++    def seal_to_eph(self, plain, eph_pub, nonce, info, aad):
++        self.plains.append(bytes(plain))                      # the test reads what would have been sealed
++        return "env-" + hashlib.sha256(bytes(plain) + aad).hexdigest()
++
++    def seal_to(self, opened, recipient_k1, expires, op):
++        return "m1-" + hashlib.sha256(recipient_k1.encode() + op.encode()).hexdigest()
++
++    def scrub(self):
++        self.scrubbed, self.ident = True, None
++
++
++def _kms():
++    return make()
++
++
++kms = pytest.fixture(_kms, name="kms")          # a fresh kms with the test backend, per test
++
++
++def make(pol=None, approve=None, crypto=None, agent=AGENT, init=True):
++    crypto = crypto or Fake()
++    k = KMS(None, pol or policy(), agent, crypto=crypto, approve=approve, pins={"senders": ["sha256:" + "a" * 16]},
++            clock=lambda: NOW)
++    if init and isinstance(crypto, Fake):
++        crypto.make_identity()
++    return k
++
++
++def unwrap_doc(k, **kw):
++    d = {"v": 1, "op": "read", "sealed": k.crypto.seal() if isinstance(k.crypto, Fake) else "m1.x", "vault_id": VAULT,
++         "eph_pub": base64.b64encode(secrets.token_bytes(91)).decode(), "nonce": base64.b64encode(secrets.token_bytes(16)).decode(),
++         "ts": ts(), "policy_hash": policy_hash(k.policy)}
++    d.update(kw)
++    return {k2: v for k2, v in d.items() if v is not None}
++
++
++def call(k, path, doc=None, peer="net", method="POST", raw=None):
++    body = raw if raw is not None else (json.dumps(doc).encode() if doc is not None else b"")
++    v = k.dispatch(peer, method, path, body)
++    return v
++
++
++class Test_Check_1_The_Peer:
++    def test_unwrap_is_net_s_only(self, kms):
++        v = call(kms, "/v0/unwrap", unwrap_doc(kms), peer="llm")
++        assert v.status == 403 and v.row == "check 1: the peer role"
++
++    def test_the_app_never_reaches_the_kms(self, kms):
++        v = call(kms, "/v0/unwrap", unwrap_doc(kms), peer="app")
++        assert v.status == 403 and "edge app->kms" in v.reason
++
++    def test_init_and_destroy_are_the_launcher_s(self, kms):
++        for path in ("/v0/init", "/v0/destroy"):
++            assert call(kms, path, {}, peer="net").row == "check 1: the peer role"
++
++
++class Test_Schema:
++    @pytest.mark.parametrize("change", [{"vault_id": None}, {"extra": 1}, {"v": 2}, {"v": True}, {"op": "sign"},
++                                        {"nonce": base64.b64encode(b"short").decode()}, {"eph_pub": "not base64!"},
++                                        {"ts": "yesterday"}, {"sig": "%%%"}])
++    def test_a_request_outside_the_schema_is_400(self, kms, change):
++        assert call(kms, "/v0/unwrap", unwrap_doc(kms, **change)).status == 400
++
++    def test_not_json_and_too_big(self, kms):
++        assert call(kms, "/v0/unwrap", raw=b"[1]").status == 400
++        assert call(kms, "/v0/unwrap", raw=b"{" + b" " * MAX_BODY + b"}").status == 413
++
++
++class Test_Check_2_The_Signature:
++    def bound(self):
++        k = make(init=False)
++        auth = base64.b64encode(secrets.token_bytes(91)).decode()
++        assert call(k, "/v0/init", {"policy_hash": policy_hash(k.policy), "expires": NOW + 60, "session_auth_pub": auth}, peer="launcher").allowed
++        return k, auth
++
++    def test_a_bound_kms_refuses_an_unsigned_request(self):
++        k, _ = self.bound()
++        assert call(k, "/v0/unwrap", unwrap_doc(k)).row == "check 2: sig"
++
++    def test_a_bound_kms_refuses_a_wrong_signature_and_takes_a_right_one(self):
++        k, auth = self.bound()
++        bad = unwrap_doc(k, sig=base64.b64encode(b"x" * 32).decode())
++        assert call(k, "/v0/unwrap", bad).row == "check 2: sig"
++        d = unwrap_doc(k)
++        d["sig"] = base64.b64encode(hmac.new(auth.encode(), canonical(d), hashlib.sha256).digest()).decode()
++        assert call(k, "/v0/unwrap", d).allowed
++
++
++class Test_Check_3_Time_And_Nonce:
++    @pytest.mark.parametrize("offset", [61, -61])
++    def test_ts_more_than_60_s_away_is_refused(self, kms, offset):
++        assert call(kms, "/v0/unwrap", unwrap_doc(kms, ts=ts(offset))).row == "check 3: ts"
++
++    def test_a_replayed_nonce_is_refused(self, kms):
++        d = unwrap_doc(kms)
++        assert call(kms, "/v0/unwrap", d).allowed
++        v = call(kms, "/v0/unwrap", d)
++        assert not v.allowed and v.row == "check 3: nonce"
++
++    def test_a_nonce_refused_later_on_still_cannot_be_replayed(self, kms):
++        d = unwrap_doc(kms, vault_id="vault-unknown")
++        assert call(kms, "/v0/unwrap", d).row.startswith("check 4")
++        assert call(kms, "/v0/unwrap", d).row == "check 3: nonce"
++
++
++class Test_Check_4_Policy:
++    def test_another_policy_hash_is_refused(self, kms):
++        assert call(kms, "/v0/unwrap", unwrap_doc(kms, policy_hash="sha256:" + "0" * 64)).row == "check 4: the policy hash"
++
++    def test_no_row_for_the_vault_is_refused(self, kms):
++        assert call(kms, "/v0/unwrap", unwrap_doc(kms, vault_id="vault-2")).row.startswith("check 4: no row")
++
++    def test_a_row_of_another_agent_does_not_count(self):
++        k = make(policy(row(agent="agent-b")))
++        assert call(k, "/v0/unwrap", unwrap_doc(k)).row.startswith("check 4: no row")
++
++    def test_an_op_the_row_does_not_allow_is_refused(self):
++        k = make(policy(row(ops=["read"])), approve=lambda *a: True)
++        assert call(k, "/v0/unwrap", unwrap_doc(k, op="write")).row.endswith("ops")
++
++    def test_a_row_past_its_until_is_refused(self):
++        k = make(policy(row(until=NOW)))
++        assert call(k, "/v0/unwrap", unwrap_doc(k)).row.endswith("until")
++
++    def test_invalid_rows_stop_the_kms_from_starting(self):
++        with pytest.raises(ValueError):
++            make(policy(row(ops=["sign"])))
++
++
++class Test_Check_5_Open:
++    def test_a_key_sealed_to_someone_else_is_refused(self, kms):
++        d = unwrap_doc(kms, sealed=kms.crypto.seal(to="sha256:" + "b" * 16))
++        v = call(kms, "/v0/unwrap", d)
++        assert v.row == "check 5: open" and "not addressed" in v.reason
++
++    def test_an_unpinned_sender_is_refused(self, kms):
++        d = unwrap_doc(kms, sealed=kms.crypto.seal(sender="sha256:" + "c" * 16))
++        assert call(kms, "/v0/unwrap", d).row == "check 5: open"
++
++    def test_an_expired_sealed_key_is_refused_and_zeroed(self, kms):
++        d = unwrap_doc(kms, sealed=kms.crypto.seal(expires=NOW))
++        assert call(kms, "/v0/unwrap", d).row == "check 5: expiry"
++        assert not any(kms.crypto.handed[-1])
++
++
++class Test_Check_6_Derive:
++    def test_the_vault_inside_decides(self, kms):
++        k = make(policy(row(), row(vault_id="vault-2")))
++        d = unwrap_doc(k, vault_id="vault-2", sealed=k.crypto.seal(vault_id=VAULT))
++        assert call(k, "/v0/unwrap", d).row == "check 6: vault id"
++
++    def test_read_carries_no_write_key_and_the_vault_key_is_zeroed(self, kms):
++        assert call(kms, "/v0/unwrap", unwrap_doc(kms)).allowed
++        plain = json.loads(kms.crypto.plains[-1])
++        assert set(plain) == {"vault_id", "read_key"}
++        assert not any(kms.crypto.handed[-1])                 # the bytearray the backend handed over is all zeros
++
++
++class Test_Check_7_Limits:
++    def test_max_uses_counts_successes_only(self, kms):
++        call(kms, "/v0/unwrap", unwrap_doc(kms, ts=ts(99)))   # refused at check 3: not counted
++        for _ in range(3):
++            assert call(kms, "/v0/unwrap", unwrap_doc(kms)).allowed
++        assert call(kms, "/v0/unwrap", unwrap_doc(kms)).row.endswith("max_uses")
++
++    def test_write_needs_a_fresh_approval(self):
++        k = make()
++        assert call(k, "/v0/unwrap", unwrap_doc(k, op="write")).row == "check 7: fresh approval"
++        asked = []
++        k = make(approve=lambda *a: asked.append(a) or True)
++        assert call(k, "/v0/unwrap", unwrap_doc(k, op="write")).allowed
++        assert asked == [(AGENT, VAULT, "write")]
++        assert set(json.loads(k.crypto.plains[-1])) == {"vault_id", "read_key", "write_key"}
++
++
++class Test_Check_8_The_Answer_And_The_Audit:
++    def test_unwrap_answers_an_envelope_and_never_a_clear_key(self, kms):
++        v = call(kms, "/v0/unwrap", unwrap_doc(kms))
++        out = json.dumps(v.payload())
++        assert set(v.body) == {"v", "sealed_to_eph", "expires_in"} and v.body["expires_in"] == 300
++        key = kms.crypto.vault_key
++        read_key = hmac.new(key, b"read", hashlib.sha256).digest()
++        for secret in (key, read_key):
++            assert secret.hex() not in out and base64.b64encode(secret).decode() not in out
++
++    def test_the_audit_line_names_op_vault_and_agent_and_holds_no_secret(self, kms):
++        kms.audit.record("net", "POST", "/v0/unwrap", 1, call(kms, "/v0/unwrap", unwrap_doc(kms)))
++        line = kms.audit.dump()[-1]
++        assert line["row"] == f"unwrap read kms[{AGENT}, {VAULT}] use 1"
++        text = json.dumps(line)
++        key = kms.crypto.vault_key
++        assert key.hex() not in text and base64.b64encode(key).decode() not in text
++
++
++class Test_Init_Identity_Destroy_SealTo:
++    def test_init_once_with_our_policy_hash(self):
++        k = make(init=False)
++        assert call(k, "/v0/identity", method="GET", peer="net").status == 409
++        assert call(k, "/v0/init", {"policy_hash": "sha256:x", "expires": NOW}, peer="launcher").row == "check 4: the policy hash"
++        v = call(k, "/v0/init", {"policy_hash": policy_hash(k.policy), "expires": NOW + 60}, peer="launcher")
++        assert v.allowed and set(v.body) == {"k1", "record_fp", "enc_fp"}
++        assert call(k, "/v0/init", {"policy_hash": policy_hash(k.policy), "expires": NOW + 60}, peer="launcher").status == 409
++        assert call(k, "/v0/identity", method="GET", peer="net").body == v.body
++
++    def test_destroy_scrubs_is_idempotent_and_ends_the_kms(self, kms):
++        assert call(kms, "/v0/destroy", {}, peer="launcher").allowed and kms.crypto.scrubbed
++        assert call(kms, "/v0/destroy", {}, peer="launcher").allowed          # idempotent
++        assert call(kms, "/v0/unwrap", unwrap_doc(kms)).status == 410
++
++    def test_seal_to_always_needs_a_fresh_approval(self):
++        def doc(k):
++            d = unwrap_doc(k, recipient_k1="k1-other", expires=NOW + 600)
++            del d["eph_pub"]
++            return d
++        k = make()
++        assert call(k, "/v0/seal_to", doc(k)).row == "check 7: fresh approval"
++        k = make(approve=lambda *a: True)
++        v = call(k, "/v0/seal_to", doc(k))
++        assert v.allowed and v.body["m1"].startswith("m1-") and not any(k.crypto.handed[-1])
++
++
++class Test_No_Backend:
++    def test_without_a_backend_the_checks_still_run_then_501(self):
++        k = make(crypto=NoCrypto())
++        assert call(k, "/v0/identity", method="GET").status == 409
++        assert call(k, "/v0/unwrap", unwrap_doc(k, ts=ts(99))).row == "check 3: ts"       # refused before any cryptography
++        v = call(k, "/v0/unwrap", unwrap_doc(k))
++        assert v.status == 501 and "AES-256-GCM" in v.reason
++        assert call(k, "/v0/init", {"policy_hash": policy_hash(k.policy), "expires": NOW + 60}, peer="launcher").status == 501
++
++
++class Test_Over_Mutual_TLS:
++    pytestmark = pytest.mark.skipif(not shutil.which("openssl"), reason="needs openssl to issue a session")
++
++    def test_net_reaches_the_kms_and_the_app_does_not(self, tmp_path):
++        s = Session.new(str(tmp_path / "s"), ("app", "net", "kms", "launcher"))
++        k = KMS(s, policy(), AGENT)                           # NoCrypto, the real clock
++        port = k.serve(background=True)
++        try:
++            status, data = Client(s, "net", "kms", port).request("GET", "/v0/identity")
++            assert status == 409
++            status, data = Client(s, "app", "kms", port).request("POST", "/v0/unwrap", b"{}")
++            assert status == 403 and "edge app->kms" in data["reason"]
++            status, data = Client(s, "launcher", "kms", port).request("GET", "/v0/hello")
++            assert status == 200 and data["door"] == "sharness.kms" and data["targets"] == {"sharness.kms.none": "live"}
++        finally:
++            k.stop()
+-- 
+2.43.0
+
