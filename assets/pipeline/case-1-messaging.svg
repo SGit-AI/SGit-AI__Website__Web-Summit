@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 624" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1400" height="624" fill="#faf9f5"/>
+<text x="30" y="44" font-size="26" font-weight="700" fill="#141413">Case 1: team messaging, from a voice brief to TestFlight in 1 hour 40 minutes</text>
+<text x="30" y="74" font-size="15" fill="#5e5d59">Dinis speaks at about 12:45; Indi&#x27;s team builds it in the iOS Team app; it is on TestFlight at 14:25 and through security review at 14:26</text>
+<rect x="20" y="114" width="1360" height="66" rx="10" fill="#8a3b1f" fill-opacity="0.10"/>
+<text x="34" y="152.0" font-size="14" font-weight="700" fill="#8a3b1f">Dinis</text>
+<rect x="20" y="188" width="1360" height="66" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="226.0" font-size="14" font-weight="700" fill="#1f5f8b">main conductor</text>
+<rect x="20" y="262" width="1360" height="66" rx="10" fill="#3f5a2a" fill-opacity="0.10"/>
+<text x="34" y="300.0" font-size="14" font-weight="700" fill="#3f5a2a">Indi&#x27;s team</text>
+<rect x="20" y="336" width="1360" height="66" rx="10" fill="#5e5d59" fill-opacity="0.10"/>
+<text x="34" y="374.0" font-size="14" font-weight="700" fill="#5e5d59">iOS repo and CI</text>
+<rect x="20" y="410" width="1360" height="66" rx="10" fill="#7a3e8a" fill-opacity="0.10"/>
+<text x="34" y="448.0" font-size="14" font-weight="700" fill="#7a3e8a">security.repos@</text>
+<rect x="20" y="484" width="1360" height="66" rx="10" fill="#c96442" fill-opacity="0.10"/>
+<text x="34" y="522.0" font-size="14" font-weight="700" fill="#c96442">TestFlight</text>
+<line x1="260.0" y1="110" x2="260.0" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="260.0" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">12:45</text>
+<line x1="410.0" y1="110" x2="410.0" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="410.0" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">13:00</text>
+<line x1="560.0" y1="110" x2="560.0" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="560.0" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">13:15</text>
+<line x1="710.0" y1="110" x2="710.0" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="710.0" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">13:30</text>
+<line x1="860.0" y1="110" x2="860.0" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="860.0" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">13:45</text>
+<line x1="1010.0" y1="110" x2="1010.0" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="1010.0" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">14:00</text>
+<line x1="1160.0" y1="110" x2="1160.0" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="1160.0" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">14:15</text>
+<line x1="1310.0" y1="110" x2="1310.0" y2="554" stroke="#d8d5ca" stroke-dasharray="3 4"/>
+<text x="1310.0" y="576" font-size="12" fill="#5e5d59" text-anchor="middle">14:30</text>
+<path d="M260.0 147.0 C300.0 147.0, 300.0 221.0, 340.0 221.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M340.0 221.0 C345.0 221.0, 345.0 221.0, 350.0 221.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M350.0 221.0 C390.0 221.0, 390.0 295.0, 430.0 295.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M430.0 295.0 C450.0 295.0, 450.0 295.0, 470.0 295.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M470.0 295.0 C600.0 295.0, 600.0 369.0, 730.0 369.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M730.0 369.0 C750.0 369.0, 750.0 369.0, 770.0 369.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M770.0 369.0 C830.0 369.0, 830.0 295.0, 890.0 295.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M890.0 295.0 C975.0 295.0, 975.0 369.0, 1060.0 369.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M1060.0 369.0 C1140.0 369.0, 1140.0 221.0, 1220.0 221.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M1220.0 221.0 C1240.0 221.0, 1240.0 517.0, 1260.0 517.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<path d="M1260.0 517.0 C1265.0 517.0, 1265.0 443.0, 1270.0 443.0" fill="none" stroke="#c96442" stroke-width="2" opacity="0.7"/>
+<circle cx="260.0" cy="147.0" r="7" fill="#8a3b1f" stroke="#fff" stroke-width="2"/>
+<text x="260.0" y="133.0" font-size="11.5" fill="#141413" text-anchor="middle">12:45 voice brief: messaging</text>
+<circle cx="340.0" cy="221.0" r="7" fill="#1f5f8b" stroke="#fff" stroke-width="2"/>
+<text x="340.0" y="247.0" font-size="11.5" fill="#141413" text-anchor="middle">12:53 plan /messaging/, WS-203</text>
+<circle cx="350.0" cy="221.0" r="7" fill="#1f5f8b" stroke="#fff" stroke-width="2"/>
+<text x="350.0" y="207.0" font-size="11.5" fill="#141413" text-anchor="middle">12:54 brief in iOS repo</text>
+<circle cx="430.0" cy="295.0" r="7" fill="#3f5a2a" stroke="#fff" stroke-width="2"/>
+<text x="430.0" y="321.0" font-size="11.5" fill="#141413" text-anchor="middle">13:02 WS-203 picked</text>
+<circle cx="470.0" cy="295.0" r="7" fill="#3f5a2a" stroke="#fff" stroke-width="2"/>
+<text x="470.0" y="281.0" font-size="11.5" fill="#141413" text-anchor="middle">13:06 iOS brief, prototype</text>
+<circle cx="730.0" cy="369.0" r="7" fill="#5e5d59" stroke="#fff" stroke-width="2"/>
+<text x="730.0" y="395.0" font-size="11.5" fill="#141413" text-anchor="middle">13:32 messaging v1 code</text>
+<circle cx="770.0" cy="369.0" r="7" fill="#5e5d59" stroke="#fff" stroke-width="2"/>
+<text x="770.0" y="355.0" font-size="11.5" fill="#141413" text-anchor="middle">13:36 fix: avatar clash</text>
+<circle cx="890.0" cy="295.0" r="7" fill="#3f5a2a" stroke="#fff" stroke-width="2"/>
+<text x="890.0" y="321.0" font-size="11.5" fill="#141413" text-anchor="middle">13:48 branches green</text>
+<circle cx="1060.0" cy="369.0" r="7" fill="#5e5d59" stroke="#fff" stroke-width="2"/>
+<text x="1060.0" y="355.0" font-size="11.5" fill="#141413" text-anchor="middle">14:05 merged to dev, v0.4.34</text>
+<circle cx="1220.0" cy="221.0" r="7" fill="#1f5f8b" stroke="#fff" stroke-width="2"/>
+<text x="1220.0" y="247.0" font-size="11.5" fill="#141413" text-anchor="middle">14:21 watch: ask review</text>
+<circle cx="1260.0" cy="517.0" r="7" fill="#c96442" stroke="#fff" stroke-width="2"/>
+<text x="1260.0" y="503.0" font-size="11.5" fill="#141413" text-anchor="middle">14:25 v0.4.34 on TestFlight</text>
+<circle cx="1270.0" cy="443.0" r="7" fill="#7a3e8a" stroke="#fff" stroke-width="2"/>
+<text x="1270.0" y="469.0" font-size="11.5" fill="#141413" text-anchor="middle">14:26 no blocker</text>
+<text x="30" y="608" font-size="12" fill="#5e5d59">Times UTC, 9 November 2026, from the commits in each repository. Each dot is a commit or a message; the line follows the work.</text>
+</svg>
