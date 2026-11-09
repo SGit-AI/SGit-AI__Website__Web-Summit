@@ -33,6 +33,13 @@ const left = () => fs.readdirSync(os.tmpdir()).filter(f => f.startsWith('abp-sbs
  // 3. the page, served, at two widths and both colour schemes
  const srv = spawn('node', [SBS, '--scenario', EX, '--model', 'stand-in', '--alt-model', 'stand-in', '--port', String(PORT)], { env, stdio: ['ignore', 'pipe', 'inherit'] })
  await new Promise(r => srv.stdout.once('data', r))
+ // another site's page may not start a pair (dev@PrompTugal.angelo's finding, dc2ca5c5): a cross-site POST carries its Origin
+ for (const origin of ['https://example.com', 'http://localhost.example:' + PORT, 'null']) {
+  const code = await new Promise(ok => require('http').request(U + '/start?model=main', { method: 'POST', headers: { origin } }, r => { r.resume(); ok(r.statusCode) }).on('error', () => ok(0)).end())
+  if (code !== 403) fail(`POST /start from ${origin}: ${code}, not 403`)
+ }
+ const idle = await (await fetch(U + '/live.json')).json()
+ if (idle.state !== 'idle') fail(`a refused POST started a pair: ${idle.state}`); else console.log('  POST /start from another site is refused (403), nothing started')
  const b = await chromium.launch()
  let n = 0
  for (const [w, h] of [[1280, 800], [390, 844]]) for (const scheme of ['dark', 'light']) {
