@@ -87,10 +87,10 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | Defined.ai | https://promptugal.news/companies/defined-ai/ | in review |
 | Delinea | https://promptugal.news/companies/delinea/ | in review |
 | Google Cloud | https://promptugal.news/companies/google-cloud/ | in review |
-| IBM | https://promptugal.news/companies/ibm/ | to do |
-| Kiggu | https://promptugal.news/companies/kiggu/ | to do |
-| LawVu | https://promptugal.news/companies/lawvu/ | to do |
-| ManageEngine | https://promptugal.news/companies/manageengine/ | to do |
+| IBM | https://promptugal.news/companies/ibm/ | in review |
+| Kiggu | https://promptugal.news/companies/kiggu/ | in review |
+| LawVu | https://promptugal.news/companies/lawvu/ | in review |
+| ManageEngine | https://promptugal.news/companies/manageengine/ | in review |
 | Neo | https://promptugal.news/companies/neo/ | to do |
 | Persona (website) | https://promptugal.news/companies/persona/ | to do |
 
