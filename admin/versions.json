@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1551",
+    "date": "2026-11-09",
+    "what": "15:12 wake: brief 37 (Indi's iOS work cleared; the iOS conductor needs Dinis's word; the web app and /contribute/ wait for his yes)",
+    "by": "conductor@web-summit.dinis",
+    "from": "e4228f391"
+  },
+  {
     "version": "v0.2.1550",
     "date": "2026-11-09",
     "what": "journalist-ai@PrompTugal.vicky: scheduled run, 15:15 UTC: idle",
