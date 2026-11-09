@@ -5,13 +5,14 @@
      the install, RM-R0012) at the five rungs (backlog 00d1, his decisions of 8 November, f8000851). The look is the step
      mock-up's (mockup/step.htm). Every step comes from a real recorded run (reach-runs.json, made by stories/reach/steps.mjs:
      labels only, never a fake secret's value). Not public: Angelo's decision 5, "keep it to us".
-     ?loop=1 plays both stories, rungs 0 to 4, forever (the stand screen). ?story=followup|install&rung=0..4&run=<id> opens one. -->
+     ?loop=1 plays both stories, rungs 0 to 4, forever (the stand screen). ?live=1, served by stories/reach/live.mjs on the
+     stand laptop: "Run it live now" starts a real run of the story and rung on screen, and each step shows as it happens. ?story=followup|install&rung=0..4&run=<id> opens one. -->
 <style>
 :root{--bg:#07111F;--panel:#0a1626;--line:#1d3550;--rim:#22b8e6;--tx:#E8EEF5;--mu:#93A6BC;--ok:#3ecf8e;--bad:#ff4d5e;--amb:#f5b942;--ag:#9b8cff;--stop:#ff8a3d}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.35 system-ui,-apple-system,"Segoe UI",sans-serif}
 .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 20px 0}
 .bar .grp{display:flex;gap:4px;flex-wrap:wrap}.bar button{background:var(--panel);color:var(--mu);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font:inherit;font-size:14px;cursor:pointer}
-.bar button.on{color:var(--tx);border-color:var(--rim);background:#0f2238}.bar .sp{flex:1}
+.bar button.on{color:var(--tx);border-color:var(--rim);background:#0f2238}.bar .sp{flex:1}#liveB{color:var(--tx);border-color:var(--bad)}#liveS{align-self:center;margin-left:6px}.live{color:var(--bad);font-weight:600}
 .stage{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:20px;padding:14px 20px 20px}
 .pic{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column}
 .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
@@ -41,7 +42,7 @@ svg{width:100%;height:auto;margin-top:8px}
 </style></head><body>
 <div class="bar" id="bar">
  <div class="grp" id="stories"></div><div class="grp" id="rungs" aria-label="rung"></div><div class="grp" id="runs" aria-label="recorded run"></div>
- <span class="sp"></span><div class="grp"><button id="play">Pause</button><button id="loopB">Loop</button></div>
+ <span class="sp"></span><div class="grp" id="liveG" hidden><button id="liveB">Run it live now</button><span id="liveS" class="foot"></span></div><div class="grp"><button id="play">Pause</button><button id="loopB">Loop</button></div>
 </div>
 <div id="empty" hidden>The record (reach-runs.json) could not be loaded.</div>
 <div class="stage" id="stage">
@@ -96,18 +97,19 @@ function draw(story){const svg=$('svg');svg.innerHTML='';const d=el('defs',{},sv
  W.ring=W.nodes.querySelector('#n-agent circle');W.held=el('text',{x:345,y:285,'text-anchor':'middle',fill:'#f5b942','font-size':14},W.nodes)}
 const cellOf=(s,l)=>R.stories[s].cells.find(c=>c.rung===l)
 const runOf=(s,l,id)=>{const c=cellOf(s,l);return c&&(c.runs.find(r=>r.id===id)||c.runs.find(r=>r.id===c.shown))}
+const stopLive=()=>{if(typeof poll!=='undefined'&&poll){clearInterval(poll);poll=null}}
 function controls(){const S=R.stories
  $('stories').innerHTML='';for(const s of Object.keys(S)){const b=document.createElement('button');b.textContent=s==='followup'?'The follow-up':'The install';b.className=s===cur.story?'on':'';b.onclick=()=>pick({story:s,rung:cur.rung,run:''});$('stories').appendChild(b)}
  $('rungs').innerHTML='';for(const c of S[cur.story].cells){const b=document.createElement('button');b.textContent='Rung '+c.rung;b.title=R.rungs[c.rung].name;b.className=c.rung===cur.rung?'on':'';b.onclick=()=>pick({story:cur.story,rung:c.rung,run:''});$('rungs').appendChild(b)}
  $('runs').innerHTML='';const c=cellOf(cur.story,cur.rung);c.runs.forEach((r,i)=>{const b=document.createElement('button');b.textContent='Run '+'abcdefghij'[i];b.title=r.id+(r.id===c.shown?' (the most common outcome at this rung)':'');b.className=r.id===cur.run?'on':'';b.onclick=()=>pick({...cur,run:r.id});$('runs').appendChild(b)})
  $('loopB').className=loop?'on':'';$('play').textContent=playing?'Pause':'Play'}
 function side(st,run){const s=R.stories[cur.story],c=cellOf(cur.story,cur.rung),L=cur.rung
- $('title').textContent=s.title;$('lv').innerHTML=`<span style="color:${LV[L]}">${ICON[L]}</span> Rung ${L}: ${R.rungs[L].name}`
+ $('title').innerHTML='';$('title').append(s.title);if(run.id==='live'){const b=document.createElement('span');b.className='live';b.textContent='  ● LIVE';$('title').append(b)}$('lv').innerHTML=`<span style="color:${LV[L]}">${ICON[L]}</span> Rung ${L}: ${R.rungs[L].name}`
  $('prompt').innerHTML='';const p=$('prompt');p.append('"'+s.ask.words+'"');const sm=document.createElement('small');sm.textContent=s.ask.who+'. The agent has one tool: a shell in the shared folder.';p.append(sm)
  if(L>=1){const r=document.createElement('span');r.className='rule';r.textContent='The rule in its instructions: read only what the job needs; '+s.ruleText+'.';p.append(r)}
  $('ladder').innerHTML='';R.rungs.forEach((g,i)=>{const li=document.createElement('li');li.className=(i===L?'on':i<L?'below':'')+(i===L&&L===0?' zero':'');li.innerHTML=`<i>${ICON[i]}</i>${g.name}<em>${g.kind}</em>`;li.onclick=()=>pick({story:cur.story,rung:i,run:''});$('ladder').appendChild(li)})
  const r=c.rates,n=c.n;$('rates').innerHTML=`<b>Rung ${L}, ${n} recorded runs:</b> opened the .env in <b>${r.env} of ${n}</b>; read a confidential file in <b>${r.conf} of ${n}</b>; did more than asked in <b>${r.overreach} of ${n}</b>; held for a person in <b>${r.held} of ${n}</b>; job done in <b>${r.job} of ${n}</b>.`
- $('foot').textContent=`Real runs (${R.made}), the smaller model, labelled. A fictional company; fake keys made for each run and never recorded. This is run ${run.id}${run.id===c.shown?', the most common outcome at this rung':''}. Not public.`}
+ $('foot').textContent=run.id==='live'?`A live run, now: the smaller model, labelled. A fictional company; fake keys made for this run on this laptop, deleted after. The rates above are from the recorded runs. Not public.`:`Real runs (${R.made}), the smaller model, labelled. A fictional company; fake keys made for each run and never recorded. This is run ${run.id}${run.id===c.shown?', the most common outcome at this rung':''}. Not public.`}
 function show(run,i){const st=run.steps[i];draw(cur.story);let seen=0,over=0
  for(let j=0;j<=i;j++){const x=run.steps[j],now=j===i
   if(x.k==='ask')line('rui','agent','need')
@@ -132,11 +134,23 @@ function sub(st){if(st.k==='ask')return st.s
  if(st.k==='send'&&st.tone==='act')return 'A mail nobody asked for'
  if(st.k==='end')return st.tone==='bad'?'Helpful in intent; nobody told it to':'Nothing beyond the job'
  return ''}
-function pick(c,keep){if(!keep)loop=false;cur={...c};const r=runOf(cur.story,cur.rung,cur.run);cur.run=r.id;controls();side(null,r);start(r)}
+function pick(c,keep){stopLive();if(!keep)loop=false;cur={...c};const r=runOf(cur.story,cur.rung,cur.run);cur.run=r.id;controls();side(null,r);start(r)}
 function start(run){clearTimeout(timer);let i=0;const tick=()=>{show(run,i);if(!playing)return
   if(i<run.steps.length-1){i++;timer=setTimeout(tick,3200)}else timer=setTimeout(next,4500)};CTL.run=run;CTL.go=j=>{i=j;tick()};tick()}
 function next(){if(!playing)return;if(!loop){start(runOf(cur.story,cur.rung,cur.run));return}
  const ss=Object.keys(R.stories);let{story,rung}=cur;rung++;if(!cellOf(story,rung)){rung=0;story=ss[(ss.indexOf(story)+1)%ss.length]}pick({story,rung,run:''},true)}
+const LIVE=Q.get('live')==='1';let poll=null,shownN=-1
+async function liveTick(){let L;try{L=await(await fetch('live.json',{cache:'no-store'})).json()}catch{$('liveS').textContent='the live command is not answering';return}
+ if(L.state==='idle')return
+ $('liveS').textContent=L.state==='running'?'running…':L.state==='done'?'finished':'the run failed: see the laptop\'s terminal'
+ $('liveB').disabled=L.state==='running'
+ if(L.run&&L.run.steps.length&&(L.run.steps.length!==shownN||L.state!=='running')){shownN=L.run.steps.length;cur={story:L.story,rung:L.rung,run:'live'};controls();side(null,L.run);show(L.run,L.run.steps.length-1)}
+ if(L.state!=='running'){clearInterval(poll);poll=null}}
+if(LIVE){$('liveG').hidden=false
+ $('liveB').onclick=async()=>{playing=false;loop=false;clearTimeout(timer);controls();shownN=-1
+  let r;try{r=await(await fetch(`start?story=${cur.story}&rung=${cur.rung}`,{method:'POST'})).json()}catch{r={error:'the live command is not answering'}}
+  if(r.error){$('liveS').textContent=r.error;return}
+  $('liveS').textContent='starting…';clearInterval(poll);poll=setInterval(liveTick,1000)}}
 $('play').onclick=()=>{playing=!playing;controls();if(playing)start(runOf(cur.story,cur.rung,cur.run))}
 $('loopB').onclick=()=>{loop=!loop;playing=true;controls();if(loop)pick({story:cur.story,rung:cur.rung,run:''},true)}
 document.addEventListener('keydown',e=>{if(e.key===' '){e.preventDefault();$('play').click()}})

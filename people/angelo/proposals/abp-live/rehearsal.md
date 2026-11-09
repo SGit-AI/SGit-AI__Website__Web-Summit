@@ -4,9 +4,9 @@ by: dev.abp@PrompTugal.angelo
 written: 2026-11-08
 for: Angelo and whoever stands with the demo; reviewed by dev@PrompTugal.angelo
 issue: backlog 00d1 and 0m
-status: "A checklist for the recorded player as it is on the site today. The live command is not in it: it waits on Angelo (the stand laptop, tier 3)."
+status: "Sections 1 to 6: the recorded player on the site today. Section 7 (9 November): the step view of the follow-up and the install, and the live run on the stand laptop in a clean environment, after Angelo's decisions of 8 November (f8000851). The laptop and its environment are his to set up (tier 3)."
 ---
-**What this covers.** The player that is on our site today, `player.htm`, in its two modes, with the runs recorded on 8 November: story 1 (the support desk) and story 4 (the coding agent), each at the four barriers, played by a larger and a smaller Claude model. It does not cover the reach scenarios (followup and install, storyboard sections 7 and 8): they are recorded as trials, but they are not in the player yet. That waits on Angelo's review of those sections.
+**What this covers.** The player that is on our site today, `player.htm`, in its two modes, with the runs recorded on 8 November: story 1 (the support desk) and story 4 (the coding agent), each at the four barriers, played by a larger and a smaller Claude model. The reach stories Angelo chose (the follow-up and the install, five rungs) are in the step view, `steps.htm`: section 7.
 
 The two addresses:
 - the loop, for a screen nobody touches: https://web-summit.sgit.ai/people/angelo/proposals/abp-live/player.htm?mode=loop
@@ -74,6 +74,30 @@ Do not say:
 
 ## 6. Still open (Angelo's call, through the desk)
 
-- Followup and install in the player (storyboard sections 7 and 8), and the five-rung ladder.
-- The live command on a stand laptop: his account, a clean environment, and the guard or hooks as the barriers (tier 3).
-- Anything public, and any overlap with abp@ or xray@web-summit.dinis.
+- Decided on 8 November (f8000851): the follow-up and the install, five rungs, live on his laptop in a clean environment with the guard (not hooks), the smaller model only, and kept to us until he has seen the final version. Built: section 7.
+- Still his: the step view's look for the stand, and rung 4 (storyboard section 9).
+
+## 7. The step view and the live run, on the stand laptop (9 November)
+
+**What it is.** `steps.htm` shows one story at one rung, step by step: the picture, a big bubble per step, the prompt, the ladder, and two counters (secrets and private data seen; done without asking). It plays 30 recorded real runs (storyboard section 9). On the laptop, `stories/reach/live.mjs` also lets a visitor press **Run it live now**: a real agent (the smaller model) does the job at the rung on screen, and each step appears as it happens. A run takes about 10 to 40 seconds. Claude Code reported under one cent per run in the 30 recordings.
+
+**Set up once, before the day (Angelo's, tier 3: his account and his laptop).**
+- [ ] A clean place to run it: a separate user account on the laptop, or at least a new folder and a terminal with no keys in its environment (`env | grep -i -E 'key|token|secret'` shows nothing). No mail, no password manager, no other projects in that account.
+- [ ] Node 22 or later (`node -v`), and Claude Code installed and logged in with Angelo's account (`claude --version`; `claude -p "say ok" --model haiku` answers "ok").
+- [ ] This repository's `dev`, once dev@ has reviewed the step view onto it: `git clone --depth 1 -b dev https://github.com/SGit-AI/SGit-AI__Website__Web-Summit`, then `cd` into it. Only `people/angelo/proposals/abp-live/` is used.
+- [ ] Nothing else installed or changed: no hooks, no MCP servers, no connectors. Each trial runs with no settings loaded and one tool, the practice shell, locked by `guard.mjs` (decision 3).
+
+**On the morning.**
+- [ ] Start it: `node people/angelo/proposals/abp-live/stories/reach/live.mjs`. It prints two addresses. Both are on this laptop only (127.0.0.1); nobody on the Wi-Fi can reach it.
+- [ ] Open `http://127.0.0.1:8770/?live=1` on the laptop's screen, full screen. Pick **The follow-up** and **Rung 0**, press **Run it live now**, and watch it finish. Then do rung 3. If both finish, it is ready.
+- [ ] Optional second screen: `http://127.0.0.1:8770/?loop=1` plays the recorded runs forever. The iPads play the recorded player from the site (sections 1 and 2); they cannot reach the laptop's live view.
+
+**With a visitor.**
+- [ ] Pick the story and the rung first, then press **Run it live now**. One run at a time; the button waits until it finishes. The title shows **● LIVE**, and the footer says it is a live run of the smaller model.
+- [ ] A good order: rung 0 (watch for the job scheduled as Rui, or the install), then rung 1 (the rule: usually it asks first), then rung 3 (capability: the confidential file is refused). The rates box shows how often each thing happened in the recordings, so one live run that differs is not a surprise: say "it does not happen every time; here is how often".
+- [ ] What to say: "a real agent, now, doing an ordinary job; the company and the keys are fake; the barriers are real and outside the agent". Not: that it shows every model, that rung 0 always over-reaches, or anything about RiskMandate's customers.
+
+**If it goes wrong.**
+- **"the live command is not answering":** the terminal was closed. Start it again (above) and reload.
+- **"the run failed":** look at the terminal. Most often Claude Code is logged out or offline: run `claude -p "say ok" --model haiku` there. Meanwhile press **Loop**: the recorded runs are the fallback (decision 3).
+- **Stopping:** Ctrl+C in the terminal. The last run's folder (its fake keys included) is in the system's temporary folder and is deleted when the command stops or the next run starts.
