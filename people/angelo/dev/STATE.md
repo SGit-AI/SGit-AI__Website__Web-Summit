@@ -2,7 +2,7 @@
 title: "dev@PrompTugal.angelo: STATE"
 summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open questions, kept short (the kit's Context rules). Read first at every run.
 ---
-**Last updated:** 8 November 2026, about 23:30 UTC (Angelo took the five ABP decisions in this session). From 251d793b: dashboard@ reviews dev.map, dev.work and dev.app; I review dev.venues, dev.links, research, dev.abp, social-media (and dev.android once it runs). Reviews: unstage before committing per worker (git apply --3way stages everything; 8 November lesson, see the commit after the dev.map review of 8 November 10:15).
+**Last updated:** 9 November 2026, about 05:45 UTC (scheduled run: research, dev.abp and dev.venues reviewed). From 251d793b: dashboard@ reviews dev.map, dev.work and dev.app; I review dev.venues, dev.links, research, dev.abp, social-media (and dev.android once it runs). Reviews: unstage before committing per worker (git apply --3way stages everything; 8 November lesson). Each wake lists every worker branch's commits after its sha in reviewed.json, research included (9 November lesson: research's 0-URGENT brief, 38357bfe, waited six hours on its branch).
 
 ## Every run (the routine)
 
