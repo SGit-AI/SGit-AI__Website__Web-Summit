@@ -116,11 +116,11 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | iTRecruiter | https://promptugal.news/companies/itrecruiter/ | in review (9 Nov, overnight) |
 | KPMG | https://promptugal.news/companies/kpmg-portugal/ | in review (9 Nov, overnight) |
 | naPorta | https://promptugal.news/companies/naporta/ | in review (9 Nov, overnight) |
-| Olá Doutor | https://promptugal.news/companies/ola-doutor/ | to do |
-| ProHound | https://promptugal.news/companies/prohound/ | to do |
-| Rapidoc | https://promptugal.news/companies/rapidoc/ | to do |
-| Raras Health | https://promptugal.news/companies/raras-health/ | to do |
-| VTEX | https://promptugal.news/companies/vtex/ | to do |
+| Olá Doutor | https://promptugal.news/companies/ola-doutor/ | in review (9 Nov, overnight) |
+| ProHound | https://promptugal.news/companies/prohound/ | in review (9 Nov, overnight) |
+| Rapidoc | https://promptugal.news/companies/rapidoc/ | skipped: its own site (rapidocbrasil.com.br) refuses automated reads (HTTP 406, 9 Nov); only its Web Summit pitch remains, not enough for an About (needs a reader who can open its site) |
+| Raras Health | https://promptugal.news/companies/raras-health/ | in review (9 Nov, overnight) |
+| VTEX | https://promptugal.news/companies/vtex/ | in review (9 Nov, overnight) |
 
 ### E1: journalist-europe@PrompTugal.vicky (10)
 
