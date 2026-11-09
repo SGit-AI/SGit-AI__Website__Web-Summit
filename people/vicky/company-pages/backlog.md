@@ -52,12 +52,12 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| RWS Group (website) | https://promptugal.news/companies/rws/ | fix (its own site now loads, so the About can rest on it, not Wikipedia alone; source note wrong; back to journalist-connections) |
+| RWS Group (website) | https://promptugal.news/companies/rws/ | fix (9 Nov, overnight: left in fix. RWS's site still sends no content to a plain request, and a headless browser was refused by the writer's session permission check, so the About cannot rest on RWS's own site from there; 'intellectual property' and the source note corrected. Needs a reader who can open rws.com, or Vicky's word on Wikipedia alone) |
 | Scrut Automation | https://promptugal.news/companies/scrut-automation/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
-| Shakers | https://promptugal.news/companies/shakers/ | fix (cite its own Web Summit page, not the featured list; back to journalist-connections) |
-| SpaceComputer | https://promptugal.news/companies/spacecomputer/ | fix (cite its own Web Summit page, not the featured list; attribute its self-description; back to journalist-connections) |
-| Sphere | https://promptugal.news/companies/sphere/ | fix (cite its own Web Summit page, not the featured list; back to journalist-connections) |
-| Strawberry | https://promptugal.news/companies/strawberry/ | fix (cite its own Web Summit page, not the featured list; attribute its claim; back to journalist-connections) |
+| Shakers | https://promptugal.news/companies/shakers/ | in review (9 Nov, overnight: own Web Summit page cited; claims attributed) |
+| SpaceComputer | https://promptugal.news/companies/spacecomputer/ | in review (9 Nov, overnight: own Web Summit page cited; claims attributed) |
+| Sphere | https://promptugal.news/companies/sphere/ | in review (9 Nov, overnight: own Web Summit page cited; claims attributed) |
+| Strawberry | https://promptugal.news/companies/strawberry/ | in review (9 Nov, overnight: own Web Summit page cited; claims attributed) |
 | Sumsub | https://promptugal.news/companies/sumsub/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
 | The Hacking Games | https://promptugal.news/companies/the-hacking-games/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
 | Topsec Cloud Solutions | https://promptugal.news/companies/topsec-cloud-solutions/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |

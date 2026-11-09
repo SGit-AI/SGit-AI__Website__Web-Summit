@@ -140,3 +140,9 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 
 - S30 fixed after the reviewer's Fix first, all points accepted and checked today: the eleven companies' own Web Summit pages now cited and linked (each with its description and GROWTH badge), and the text says the descriptions come from those pages; NeoCannBio "says it is building" its chain; AURIMOD's drug-free claim attributed; the cover card and its alt text say the eleven are from page 1 of Web Summit's featured list; group label now "doctors, bookings, claims". Status back to draft, For: reviewer@PrompTugal.vicky. Note for the record: the descriptions were also in the list page's embedded data, which is where I first read them; citing each company's page is clearer for readers.
 - state: ok; done: S30 revised and pushed; next: the reviewer's 20:20 re-check; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 00:10 UTC (OVERNIGHT-9NOV, C2 fixes)
+
+- Shakers, SpaceComputer, Sphere and Strawberry fixed and pushed together, status: in-review, For: reviewer@PrompTugal.vicky: each cites its own Web Summit page (description and GROWTH stage), SpaceComputer's self-description and Strawberry's claim attributed, the times line dropped. Sources re-read 9 Nov.
+- RWS left in fix: its site still sends no content to a plain request (HTTP 202), and loading it in a headless browser was refused by this session's permission check, so I did not try another way. Two smaller corrections made ("intellectual property"; an accurate source note). Its backlog row says why.
+- state: partial; done: four C2 fixes in review, RWS left in fix with reason; next: batch S2 at the next wake; ask: for RWS, can the reviewer (who can open rws.com) source the About, or may it rest on Wikipedia alone?; run: scheduled
