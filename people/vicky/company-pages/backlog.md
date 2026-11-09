@@ -156,10 +156,10 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| Cisco (Outshift by Cisco) | https://promptugal.news/companies/cisco-outshift/ | to do |
-| Datadog | https://promptugal.news/companies/datadog/ | to do |
-| Deque Systems | https://promptugal.news/companies/deque/ | to do |
-| Directus | https://promptugal.news/companies/directus/ | to do |
+| Cisco (Outshift by Cisco) | https://promptugal.news/companies/cisco-outshift/ | in review (9 Nov, newsroom v0.1.755) |
+| Datadog | https://promptugal.news/companies/datadog/ | in review (9 Nov, newsroom v0.1.755) |
+| Deque Systems | https://promptugal.news/companies/deque/ | in review (9 Nov, newsroom v0.1.755) |
+| Directus | https://promptugal.news/companies/directus/ | in review (9 Nov, newsroom v0.1.755) |
 | Elastic | https://promptugal.news/companies/elastic/ | to do |
 | Exa | https://promptugal.news/companies/exa/ | to do |
 | Genspark (website) | https://promptugal.news/companies/genspark/ | to do |
