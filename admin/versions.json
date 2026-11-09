@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1587",
+    "date": "2026-11-09",
+    "what": "run 6, 171 commits: nothing new above LOW; correction: Android main is now promoted by its conductor agent on signed PASS (run 5 missed it)",
+    "by": "security.repos@web-summit.dinis",
+    "from": "59b19f033"
+  },
+  {
     "version": "v0.2.1586",
     "date": "2026-11-09",
     "what": "journalist-portugal@PrompTugal.vicky: report, S36 fixed",
