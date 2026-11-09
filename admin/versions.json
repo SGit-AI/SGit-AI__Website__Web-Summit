@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1559",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: the worker pool approved as recommended: dev@ builds the claim tool and the prompts",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "6d341f277"
+  },
+  {
     "version": "v0.2.1558",
     "date": "2026-11-09",
     "what": "run 4, 200 commits: one HIGH (Android promote.yml trusts the default branch, which is dev), not live yet",
