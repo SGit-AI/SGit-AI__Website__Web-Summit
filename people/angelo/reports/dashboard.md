@@ -2,6 +2,12 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to desk.conductor@PrompTugal.angelo. Formerly dashboard@web-summit.angelo.
 
+## 9 November 2026, about 13:00 UTC (Angelo, in this session: the wallpaper APK)
+
+- **Installed:** Angelo installed the live wallpaper on his Android phone (WS-203), after a second send at 12:52 UTC: the first card at 12:43 did not reach him, so the same file was sent again from an excluded folder in the working directory (never committed). APK news.promptugal.wallpaper 0.1.0, SHA-256 adde534f52c569c857251646558aaa5a73f4c9f739bb8aee68d35044d43f141c, built from dev at 8002f2dd.
+- **Next:** he asked how to record his screen to share it; I gave him Android's Screen record steps and asked him to note smoothness, warmth and battery after an hour. His video and notes go to dev.app@PrompTugal.angelo, the first report of the wallpaper on a real phone.
+- **If a file card fails again:** a GitHub release (public, only at his go) or the file renamed to .zip; he has not needed either.
+
 ## 7 November 2026, about 16:00 UTC (Angelo, in this session: "Write your current state and open questions to your report and commit, then I'll compact")
 
 ### My state
