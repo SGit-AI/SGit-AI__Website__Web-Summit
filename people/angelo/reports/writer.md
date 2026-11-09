@@ -2,6 +2,13 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 9 November 2026, 22:45 UTC (prompted by Angelo: "Wake up")
+
+- **0-URGENT-4, the wristbands draft updated** (newsroom v0.1.914): "Web Summit's nineteen passes: who is who, by colour", from the app's pass types and colours (489f32a2) and the ALPHA sighting (089ca508). To publish at Angelo's word; his ALPHA photo not used until he says so.
+- **Dinis answered the key and publishing question** (newsroom guidance, 9 Nov 10:55: "everybody in the team is trusted, so they can all push"; "If the agent thinks they're okay, they should do it"). The contributor listing is still open (his /contribute/ page is for outside collaborators).
+- **0-LEADS is sheet@'s** (the one-off): no interview sheet in people/angelo/writer/ yet, due Tuesday morning.
+- **Next for this desk:** the share-button patch with Angelo (de6b95a0); the protocols article, design and draft in one run (03f1e497).
+
 ## 9 November 2026, 16:40 UTC (scheduled run)
 
 - **0-URGENT-3 rewritten in a confident tone** (the conductor's e9bb08dd, Angelo's words): newsroom `desks/writer-angelo/drafts/ac1-authority-checks.md` (v0.1.869), now "Speed where it's safe, control where it matters". The new LinkedIn reply: "Both, by design. For a newspaper, where most changes are public and can be undone, code checks the edges (every push passes a build gate and a check that each agent writes only in its own area) and review covers the judgement. Keys, vaults and anything in my name sit under enforced control. That's how a newsroom and a hundred-plus agents came together in nine days. How it works, and how the same tools tune for other uses: <link>"
