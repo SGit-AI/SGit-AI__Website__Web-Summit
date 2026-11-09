@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1611",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "07885f21c"
+  },
+  {
     "version": "v0.2.1610",
     "date": "2026-11-09",
     "what": "standing answers 29 (the newsroom pivot, agents in real work) and 30 (OVERNIGHT-10NOV, five live articles by morning)",
