@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1436",
+    "date": "2026-11-09",
+    "what": "ledger line for the overnight wake of 9 November",
+    "by": "prompter@web-summit.indi",
+    "from": "5adc2d18b"
+  },
+  {
     "version": "v0.2.1435",
     "date": "2026-11-09",
     "what": "infographic agent prompt; questions for Indi",
