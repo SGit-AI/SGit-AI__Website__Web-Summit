@@ -18,7 +18,7 @@
         const vars = new Set(), rules = [], names = t => { for (const m of t.matchAll(/--[\w-]+/g)) vars.add(m[0]) }
         if (!cssCache) {
             cssCache = []
-            for (const sh of doc.styleSheets) { let rs; try { rs = sh.cssRules } catch { continue } for (const r of rs) if (r.selectorText && /\.(tm-|tmf-|wv-|lv-work)/.test(r.selectorText)) cssCache.push(r.cssText) }
+            for (const sh of doc.styleSheets) { let rs; try { rs = sh.cssRules } catch { continue } for (const r of rs) if (r.selectorText && /\.(tm-|tmf-|wv-|wb-|wb\b|lv-work)/.test(r.selectorText)) cssCache.push(r.cssText) }
         }
         for (const r of cssCache) { rules.push(r); names(r) }
         names(svgText)

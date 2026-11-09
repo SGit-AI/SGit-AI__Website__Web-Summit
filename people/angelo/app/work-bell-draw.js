@@ -46,7 +46,7 @@
     function isLight(win, node) { const bg = (win.getComputedStyle(node).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).slice(0, 3).map(Number); return (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140 }
 
     // attach(G, o): G is live.js's host.lvGraph; o.A: the level's rules (work.js, or its variant() for Workstreams); o.base: the
-    // app's folder (logos); o.orient: a fixed setting (else this browser's, else Automatic); o.clock 'manual': frames stepped by step(now)
+    // app's folder (logos); o.orient: a fixed setting (else this browser's, else Automatic); o.clock 'manual': frames stepped by step(now); o.tap false: no taps on people (the host has its own)
     function attach(G, o = {}) {
         const A = o.A || root.AngeloWork, B = root.AngeloWorkBell, D = root.AngeloWorkDraw
         const win = G.win || root, doc = G.doc || root.document, svg = G.svg, wrap = svg.closest('.lv') || svg.parentNode, graph = G.layer.parentNode
@@ -95,7 +95,7 @@
             const furn = [...wrap.querySelectorAll('.lv-top > *, .lv-when, .lv-lay > *')].map(box).filter(b => b.width > 0)
             for (pad = 0; ; pad += 50) {
                 svg.setAttribute('viewBox', `${-pad} ${-pad} ${L.w + 2 * pad} ${L.h + 2 * pad}`); size()
-                const fr = box(wrap), out = b => b.width > 0 && (b.left < fr.left || b.right > fr.right || b.top < fr.top || b.bottom > fr.bottom)
+                const fr = box(svg.closest('.lv') ? wrap : svg), out = b => b.width > 0 && (b.left < fr.left || b.right > fr.right || b.top < fr.top || b.bottom > fr.bottom)
                 if (pad >= 400 || !(furn.some(f => [...IC.values()].some(x => hit(box(x.inner), f) || hit(box(x.ab), f))) || [...IC.values()].some(x => out(box(x.inner)) || out(box(x.ab))))) break
             }
         }
@@ -143,7 +143,8 @@
         }
         const onTap = e => { if (e.button) return; const id = personAt(e.clientX, e.clientY); if (id || focus) setFocus(id === focus ? null : id) }
         const onKey = e => { if (e.key === 'Escape' && focus) setFocus(null) }
-        svg.addEventListener('click', onTap); doc.addEventListener('keydown', onKey)
+        const tap = o.tap !== false   // o.tap false: the host has its own taps on people (the map's focus, in replay)
+        if (tap) { svg.addEventListener('click', onTap); doc.addEventListener('keydown', onKey) }
         // week(list, now): the last seven days' deliveries ({ at, maker, dest }) as routes; the bell re-ordered if the busiest changed
         function week(list, now) {
             lastList = list; lastNow = now
