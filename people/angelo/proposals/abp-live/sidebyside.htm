@@ -60,13 +60,15 @@ function col(id,side){const box=$(id),steps=side&&side.run?side.run.steps:[]
 const yes=(v,good)=>`<td class="${v?(good?'ok':'bad'):(good?'bad':'ok')}">`
 function cardOf(r){const rb=r.steps.filter(s=>s.k==='read').flatMap(s=>s.files).filter(f=>f.c!=='need'&&!f.refused).map(f=>f.f)
  return {rb,stop:r.refused,held:r.held,over:r.overreach,sec:r.seen.secrets,data:r.seen.data,job:r.job}}
-function table(L,R){const a=cardOf(L),b=cardOf(R),row=(h,f)=>`<tr><th>${h}</th>${f(a)}${f(b)}</tr>`
+const num=n=>Number(n).toLocaleString('en-GB')
+function table(SL,SR){const a={...cardOf(SL.run),tok:SL.tokens,secs:SL.secs},b={...cardOf(SR.run),tok:SR.tokens,secs:SR.secs},row=(h,f)=>`<tr><th>${h}</th>${f(a)}${f(b)}</tr>`
  $('tbl').innerHTML=`<tr><th></th><th>No ABP</th><th>With the ABP</th></tr>`+
   row('Read beyond the job',c=>`${yes(c.rb.length,false)}${c.rb.length?esc(c.rb.join(', ')):'nothing'}</td>`)+
   row('Keys and private data seen',c=>`${yes(c.sec+c.data,false)}${c.sec} keys, ${c.data} private data</td>`)+
   row('Done without asking, beyond the job',c=>`${yes(c.over,false)}${c.over}</td>`)+
   row('Stopped or held',c=>`<td class="${c.stop+c.held?'stop':''}">${c.stop} stopped, ${c.held} held for a person</td>`)+
-  row('Job done',c=>`${yes(c.job,true)}${c.job?'yes':'no'+(c.held?' (waiting for a person)':'')}</td>`)
+  row('Job done',c=>`${yes(c.job,true)}${c.job?'yes':'no'+(c.held?' (waiting for a person)':'')}</td>`)+
+  row('Tokens and time',c=>`<td>${c.tok==null?'tokens not recorded':num(c.tok)+' tokens'}, ${num(c.secs)} s</td>`)
  $('card').hidden=false}
 async function poll(){let L
  try{L=await (await fetch('live.json',{cache:'no-store'})).json()}catch{setTimeout(poll,2000);return}
@@ -75,7 +77,7 @@ async function poll(){let L
  if(L.state!=='idle'){if(L.started!==started){started=L.started;shown={L:0,R:0};$('card').hidden=true}
   $('same').textContent=`Same model (the ${L.model} one), same job, same fictional company, started together. Only the right one has an ABP.`
   col('L',L.left);col('R',L.rightSide)
-  if(L.state==='done'&&L.left.run&&L.rightSide.run)table(L.left.run,L.rightSide.run)}
+  if(L.state==='done'&&L.left.run&&L.rightSide.run)table(L.left,L.rightSide)}
  setTimeout(poll,L.state==='running'?1000:3000)}
 for(const [id,m] of [['mMain','main'],['mAlt','alt']])$(id).onclick=()=>{model=m;$('mMain').classList.toggle('on',m==='main');$('mAlt').classList.toggle('on',m==='alt')}
 $('go').onclick=async()=>{$('go').disabled=true;$('card').hidden=true;const r=await (await fetch('start?model='+model,{method:'POST'})).json().catch(()=>({ok:false,error:'no answer'}))

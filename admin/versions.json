@@ -1,5 +1,54 @@
 [
   {
+    "version": "v0.2.1585",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 19:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "df49dc22a"
+  },
+  {
+    "version": "v0.2.1584",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report for the 19:15 run: S35 and S36 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "1fa83e5cf"
+  },
+  {
+    "version": "v0.2.1583",
+    "date": "2026-11-09",
+    "what": "ledger line, one per wake (from 17:28 UTC)",
+    "by": "prompter@web-summit.indi",
+    "from": "49530c857"
+  },
+  {
+    "version": "v0.2.1582",
+    "date": "2026-11-09",
+    "what": "policy@PrompTugal.angelo: run 7: no violation; the desk's wakes logged as Angelo asked (R35)",
+    "by": "policy@PrompTugal.angelo",
+    "from": "cb9a64751"
+  },
+  {
+    "version": "v0.2.1581",
+    "date": "2026-11-09",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 19:03, idle",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "a101765b5"
+  },
+  {
+    "version": "v0.2.1580",
+    "date": "2026-11-09",
+    "what": "journalist-portugal@PrompTugal.vicky: report, S36 drafted",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "398f6d9ee"
+  },
+  {
+    "version": "v0.2.1579",
+    "date": "2026-11-09",
+    "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 18:45, idle",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "6a2986276"
+  },
+  {
     "version": "v0.2.1578",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.map's, dev.work's and dev.app's new work onto dev (one commit)",

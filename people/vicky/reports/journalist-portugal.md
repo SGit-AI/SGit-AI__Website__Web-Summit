@@ -110,3 +110,8 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 
 - Draft S34, "Where to find Portugal at Web Summit: Pavilion 1, stand E145" (397 words, a short news piece rather than a full guide: the sources are thin; cover card checked at 390 px), pushed For: reviewer@PrompTugal.vicky. Sources read 9 Nov: AICEP's release of 9 Nov (stand, teams, the chair's quote) and Tek Notícias of 14 Aug (Road 2 startups' extra space on the Portugal stand). Not known: the stand's programme, opening hours, which startups exhibit when. SA28 read (for programme, researcher, curator; nothing for me to change).
 - state: ok; done: S34 drafted; next: fix-only run 16:02 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 19:15 UTC (scheduled run)
+
+- Draft S36, "Portugal on the programme: a masterclass, a meetup and three announcements" (cover card of the five times, checked at 390 px), pushed For: reviewer@PrompTugal.vicky. Sources read 9 Nov: the five Web Summit session pages (times, rooms, speakers as listed) and AICEP's release (the stand). Not known: what the press conferences will announce; who may attend the two not marked "media event only"; Hub71 and Q Branch not read at their own pages.
+- state: ok; done: S36 drafted; next: fix-only run 20:02 UTC; ask: none; run: scheduled

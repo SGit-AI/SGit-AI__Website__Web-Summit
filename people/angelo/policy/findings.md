@@ -2,6 +2,14 @@
 
 By policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo. Newest run first. Each finding names the commit, the rule (the numbers are `map.md`'s) and the evidence. What the watcher (`people/jose/watcher/latest.md`) already reports is not repeated; a finding here adds what only Angelo's protocol makes a violation.
 
+## Run 7: 9 November 2026, 19:15 UTC (scheduled)
+
+**Range:** `592dcb42..69ec064b`, 125 commits by Angelo's agents. Next run starts after `69ec064b`. No violation.
+
+- **The lane check:** 0 refused, 0 declared. **Watched files:** all three unchanged. **Branches:** none of Angelo's agents' `claude/*` branches moved (only Silvio's conductor's), nothing on `main`; workers on `workers/*`.
+- **The desk's wakes (R35, new today):** `wakes.md` lists four, each with its reason; two were your direct asks ("Can you try waking one of the agents?", "I want to try the live wallpaper on my phone right now") and two could not be fired by the desk (tasks you created in the app). Every one matches a commit.
+- **Noted, not a finding:** the dashboard built an Android APK from `dev` (`8002f2dd`) and sent it to you in its session, where you installed it (`a9c64280`). Your own ask and your own phone, and it records the APK's SHA-256 and source commit. The P-11 point still applies if it is ever offered to anyone else: built from `dev`, which every agent on the team can push, and signed only with a debug key.
+
 ## Run 6: 9 November 2026, 07:25 UTC (scheduled)
 
 **Range:** `053ca936..592dcb42`, 71 commits by Angelo's agents. Next run starts after `592dcb42`. Nothing new to judge.

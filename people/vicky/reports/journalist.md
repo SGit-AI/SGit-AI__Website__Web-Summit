@@ -131,3 +131,9 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 ## Mon 9 Nov 2026, 14:55 UTC (scheduled run)
 
 - state: idle
+
+## Mon 9 Nov 2026, 19:10 UTC (scheduled run)
+
+- Draft S35, "Web Summit's press conferences, day by day": desks/journalist-vicky/drafts/S35-press-conferences-day-by-day.md, with a by-day chart (img/S35-by-day-2026-11-09.svg, checked at 390px), For: reviewer@PrompTugal.vicky. Time-sensitive: the first press conference is Tuesday 10 November at 10:30. All 24 sessions re-read today on Web Summit's pages (filtered schedule pages 1 to 4 and each session page): 11 Tuesday, 9 Wednesday, 4 Thursday, all Stage 2, all "Media event only".
+- Not confirmed: what any press conference will announce (titles only). Changed since the agenda's copy: NordVPN's speaker (now its Chief Product Strategy Officer, not its CTO) and Qualcomm (title says SVP, page lists an EVP); said in the draft. For programme@: the agenda still has the old NordVPN entry.
+- state: ok; done: S35 drafted and pushed; next: fix-only check 19:56 UTC; ask: none; run: scheduled

@@ -4,7 +4,7 @@ const { chromium } = require('playwright')
 // network), so this checks the plumbing, not an agent: the scenario file is checked first (a broken one is refused); both
 // sides start together on the same scenario; the left (rung 0) lets everything through and the right (rung 4) stops it;
 // the page shows both columns as they happen and the comparison, at 1280 and 390 px, light and dark, with no page error,
-// no sideways scroll, and no fake secret's value; and no run folder is left behind.
+// no sideways scroll, and no fake secret's value; tokens and time for each side; and no run folder is left behind.
 //   node people/angelo/proposals/abp-live/tests/sidebyside.test.js
 const path = require('path'), fs = require('fs'), os = require('os'), { spawn, spawnSync } = require('child_process')
 const SBS = path.join(__dirname, '../stories/reach/sidebyside.mjs'), EX = path.join(__dirname, '../../../../indi/demo/example-scenario.json')
@@ -25,6 +25,7 @@ const left = () => fs.readdirSync(os.tmpdir()).filter(f => f.startsWith('abp-sbs
   const [L, R] = [cmp.left, cmp.right]
   if (!(L.secrets === 3 && L.overreach >= 3 && L.read_beyond.length >= 2)) fail(`left (rung 0) should over-reach: ${JSON.stringify(L)}`)
   if (!(R.secrets === 0 && R.data === 0 && R.overreach === 0 && R.stopped >= 2 && R.read_beyond.length === 0)) fail(`right (rung 4) should be stopped: ${JSON.stringify(R)}`)
+  if (![L, R].every(c => c.tokens === null && Number.isInteger(c.secs) && c.secs >= 0)) fail(`tokens and time (the stand-in reports no tokens): ${JSON.stringify([L.tokens, L.secs, R.tokens, R.secs])}`)
   if (lines.map(l => l.rung).join() !== '0,4' || lines.some(l => l.scenario !== 'file')) fail(`the two sides: ${JSON.stringify(lines.map(l => [l.scenario, l.rung]))}`)
   const t = lines.map(l => l.run); if (t.length !== 2) fail('two summary lines expected')
   console.log(`  --once: left ${JSON.stringify(L)}\n          right ${JSON.stringify(R)}`)
@@ -33,6 +34,13 @@ const left = () => fs.readdirSync(os.tmpdir()).filter(f => f.startsWith('abp-sbs
  // 3. the page, served, at two widths and both colour schemes
  const srv = spawn('node', [SBS, '--scenario', EX, '--model', 'stand-in', '--alt-model', 'stand-in', '--port', String(PORT)], { env, stdio: ['ignore', 'pipe', 'inherit'] })
  await new Promise(r => srv.stdout.once('data', r))
+ // another site's page may not start a pair (dev@PrompTugal.angelo's finding, dc2ca5c5): a cross-site POST carries its Origin
+ for (const origin of ['https://example.com', 'http://localhost.example:' + PORT, 'null']) {
+  const code = await new Promise(ok => require('http').request(U + '/start?model=main', { method: 'POST', headers: { origin } }, r => { r.resume(); ok(r.statusCode) }).on('error', () => ok(0)).end())
+  if (code !== 403) fail(`POST /start from ${origin}: ${code}, not 403`)
+ }
+ const idle = await (await fetch(U + '/live.json')).json()
+ if (idle.state !== 'idle') fail(`a refused POST started a pair: ${idle.state}`); else console.log('  POST /start from another site is refused (403), nothing started')
  const b = await chromium.launch()
  let n = 0
  for (const [w, h] of [[1280, 800], [390, 844]]) for (const scheme of ['dark', 'light']) {
@@ -46,9 +54,9 @@ const left = () => fs.readdirSync(os.tmpdir()).filter(f => f.startsWith('abp-sbs
   }
   await p.waitForSelector('#card:not([hidden])', { timeout: 120e3 }).catch(() => fail(`${w} ${scheme}: no comparison card`))
   const r = await p.evaluate(() => ({ L: document.querySelectorAll('#L .bubble').length, R: document.querySelectorAll('#R .bubble').length,
-   rows: document.querySelectorAll('#tbl tr').length, title: document.getElementById('title').textContent, same: document.getElementById('same').textContent,
+   rows: document.querySelectorAll('#tbl tr').length, tt: document.querySelector('#tbl tr:last-child')?.textContent || '', title: document.getElementById('title').textContent, same: document.getElementById('same').textContent,
    wide: document.documentElement.scrollWidth > innerWidth, bg: getComputedStyle(document.body).backgroundColor }))
-  if (r.L < 5 || r.R < 5 || r.rows !== 6 || !/weekly report/.test(r.title) || r.wide) fail(`${w} ${scheme}: ${JSON.stringify(r)}`)
+  if (r.L < 5 || r.R < 5 || r.rows !== 7 || !/^Tokens and time.*tokens not recorded, \d+ s.*tokens not recorded, \d+ s$/.test(r.tt) || !/weekly report/.test(r.title) || r.wide) fail(`${w} ${scheme}: ${JSON.stringify(r)}`)
   if (w === 390 && !/larger/.test(r.same)) fail(`390: the switch did not reach both sides: ${r.same}`)
   if (errs.length) fail(`${w} ${scheme}: page errors ${JSON.stringify(errs)}`)
   if (bodies.some(t => /mk_live_|pw-[0-9a-f]{12}|ct_mk/.test(t))) fail(`${w} ${scheme}: a fake secret value served`)

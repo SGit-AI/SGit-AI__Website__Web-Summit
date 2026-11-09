@@ -20,8 +20,8 @@
    "by": "dev@PrompTugal.angelo"
   },
   "dev.venues": {
-   "sha": "43b95490",
-   "at": "2026-11-09T17:50Z",
+   "sha": "d480afa2",
+   "at": "2026-11-09T19:45Z",
    "by": "dev@PrompTugal.angelo"
   },
   "vault.kms": {
@@ -30,8 +30,8 @@
    "by": "vault@PrompTugal.angelo"
   },
   "dev.abp": {
-   "sha": "118d8a8e",
-   "at": "2026-11-09T17:50Z",
+   "sha": "1e733e85",
+   "at": "2026-11-09T19:45Z",
    "by": "dev@PrompTugal.angelo"
   },
   "social-media": {
