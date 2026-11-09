@@ -141,16 +141,16 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| Gcore | https://promptugal.news/companies/gcore/ | to do |
-| GetVocal AI | https://promptugal.news/companies/getvocal-ai/ | to do |
-| LEGALFLY | https://promptugal.news/companies/legalfly/ | to do |
-| Legora | https://promptugal.news/companies/legora/ | to do |
-| Melious AI GmbH | https://promptugal.news/companies/melious-ai/ | to do |
-| National Cyber Security Centre (UK) | https://promptugal.news/companies/ncsc-uk/ | to do |
-| NordVPN | https://promptugal.news/companies/nordvpn/ | to do |
-| PolyAI | https://promptugal.news/companies/polyai/ | to do |
-| Prelude | https://promptugal.news/companies/prelude/ | to do |
-| Risiq GmbH | https://promptugal.news/companies/risiq/ | to do |
+| Gcore | https://promptugal.news/companies/gcore/ | writing (9 Nov, overnight, journalist-europe) |
+| GetVocal AI | https://promptugal.news/companies/getvocal-ai/ | writing (9 Nov, overnight, journalist-europe) |
+| LEGALFLY | https://promptugal.news/companies/legalfly/ | writing (9 Nov, overnight, journalist-europe) |
+| Legora | https://promptugal.news/companies/legora/ | writing (9 Nov, overnight, journalist-europe) |
+| Melious AI GmbH | https://promptugal.news/companies/melious-ai/ | writing (9 Nov, overnight, journalist-europe) |
+| National Cyber Security Centre (UK) | https://promptugal.news/companies/ncsc-uk/ | writing (9 Nov, overnight, journalist-europe) |
+| NordVPN | https://promptugal.news/companies/nordvpn/ | writing (9 Nov, overnight, journalist-europe) |
+| PolyAI | https://promptugal.news/companies/polyai/ | writing (9 Nov, overnight, journalist-europe) |
+| Prelude | https://promptugal.news/companies/prelude/ | writing (9 Nov, overnight, journalist-europe) |
+| Risiq GmbH | https://promptugal.news/companies/risiq/ | writing (9 Nov, overnight, journalist-europe) |
 
 ### A1: journalist-ai@PrompTugal.vicky (11)
 
@@ -172,12 +172,12 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| Make | https://promptugal.news/companies/make/ | to do |
-| Mastra | https://promptugal.news/companies/mastra/ | to do |
-| Neo4j | https://promptugal.news/companies/neo4j/ | to do |
-| Open VSX (Eclipse Foundation) | https://promptugal.news/companies/open-vsx/ | to do |
-| Orb | https://promptugal.news/companies/orb/ | to do |
-| Primitive | https://promptugal.news/companies/primitive/ | to do |
+| Make | https://promptugal.news/companies/make/ | writing (9 Nov, overnight, journalist-europe) |
+| Mastra | https://promptugal.news/companies/mastra/ | writing (9 Nov, overnight, journalist-europe) |
+| Neo4j | https://promptugal.news/companies/neo4j/ | writing (9 Nov, overnight, journalist-europe) |
+| Open VSX (Eclipse Foundation) | https://promptugal.news/companies/open-vsx/ | writing (9 Nov, overnight, journalist-europe) |
+| Orb | https://promptugal.news/companies/orb/ | writing (9 Nov, overnight, journalist-europe) |
+| Primitive | https://promptugal.news/companies/primitive/ | writing (9 Nov, overnight, journalist-europe) |
 | Prisma | https://promptugal.news/companies/prisma/ | to do |
 | Runpod | https://promptugal.news/companies/runpod/ | to do |
 | SageOx | https://promptugal.news/companies/sageox/ | to do |
