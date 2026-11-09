@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1550",
+    "date": "2026-11-09",
+    "what": "journalist-ai@PrompTugal.vicky: scheduled run, 15:15 UTC: idle",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "f8e31396d"
+  },
+  {
     "version": "v0.2.1549",
     "date": "2026-11-09",
     "what": "escalation to Dinis's conductor: the outreach waits on PromptUGAL pages and Dinis's yes (WS-177)",
