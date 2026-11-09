@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1481",
+    "date": "2026-11-09",
+    "what": "07:50 wake: tables for Mon 9 Nov, story candidates refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "cfa1896eb"
+  },
+  {
     "version": "v0.2.1480",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
