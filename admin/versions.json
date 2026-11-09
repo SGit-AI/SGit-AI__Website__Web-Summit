@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1569",
+    "date": "2026-11-09",
+    "what": "Google Wallet builder: a placeholder issuer ID and a plain logo file name (the gate read them as a phone number and an email)",
+    "by": "conductor@web-summit.indi",
+    "from": "a5971c4ef"
+  },
+  {
     "version": "v0.2.1568",
     "date": "2026-11-09",
     "what": "the review checklist for dev.abp@'s side-by-side runner, written before it lands",
