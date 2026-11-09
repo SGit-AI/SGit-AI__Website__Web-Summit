@@ -127,8 +127,8 @@ Its prompt is `people/indi/prompts/stand-demo.md`. It:
 - If the left side behaves well, the screen says so. The point then is what it could reach, and that nothing stopped it.
 - No claim about the visitor's security. The simulation is "an agent like yours", not an audit.
 
-## 9. Open decisions for Indi
+## 9. Decided by Indi (9 November)
 
-1. Ask Angelo today to build on his engine?
-2. Sonnet 5.5 live, with an Opus 5.5 switch?
-3. Who builds `sidebyside.mjs`: your dev helper (recommended), or Angelo's dev.abp@?
+1. Ask Angelo today to build on his engine: **yes**, asked in `ask-angelo.md`.
+2. Models: **Sonnet 5.5 live on both sides, with a switch to Opus 5.5 on both sides.**
+3. The builder: **the conductor's recommendation.** dev.abp@PrompTugal.angelo builds `sidebyside.mjs` and the two-column view, because it built the engine and keeps one agent per job. dev@web-summit.indi builds the visitor side and reviews. If Angelo says no, dev@web-summit.indi builds it here, calling his files unchanged.
