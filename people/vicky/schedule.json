@@ -260,5 +260,85 @@
    "state": "none",
    "why": "on demand (Vicky, 7 Nov)"
   }
- ]
+ ],
+ "overnight_10nov": {
+  "about": "OVERNIGHT-10NOV one-off wakes (standing answer 30), created by the conductor at Vicky's word, 9 Nov 23:48 to 23:53 UTC; each fires once and disables itself; window 10 Nov 00:00 to 04:55 UTC. The researcher's pass was started by hand by Vicky (its wake was refused by a permission check).",
+  "wakes": [
+   [
+    "01:00",
+    "curator",
+    "trig_0112RXXXd8SWuKaEdbZEsbzm"
+   ],
+   [
+    "01:20",
+    "journalist-connections",
+    "trig_017ne3gtBJUL2uhykeCVGcKc"
+   ],
+   [
+    "01:26",
+    "journalist-ai",
+    "trig_01298Dxw1o4E83gMyoVXUcF7"
+   ],
+   [
+    "01:32",
+    "journalist",
+    "trig_01R7G3tnXEPEuPJ1ULjcBVJr"
+   ],
+   [
+    "02:15",
+    "reviewer",
+    "trig_01NyJQQ62ZUt5WQM5iaxfi16"
+   ],
+   [
+    "02:55",
+    "journalist-connections",
+    "trig_01JnffAtDBqQxBoZ7EgxewkR"
+   ],
+   [
+    "03:01",
+    "journalist-ai",
+    "trig_01NZ1CthX9ZvYaBM7j7wpehm"
+   ],
+   [
+    "03:07",
+    "journalist",
+    "trig_01RVrM623qcjZs7CTYX65MYS"
+   ],
+   [
+    "03:35",
+    "reviewer",
+    "trig_01CbSWtvwrThzE7iVjuG3kop"
+   ],
+   [
+    "04:00",
+    "journalist-connections",
+    "trig_01VQBnzjW5eCeGsE7ATgT5Kq"
+   ],
+   [
+    "04:06",
+    "journalist-ai",
+    "trig_01AY3ZJdAJjXK8UxrkrRk5cC"
+   ],
+   [
+    "04:12",
+    "journalist",
+    "trig_01YEA2J7LWXNyi6yMRiqbVAx"
+   ],
+   [
+    "04:30",
+    "reviewer",
+    "trig_01R4M1vBU4CvP2WHNixLB4oT"
+   ],
+   [
+    "00:50",
+    "conductor (handoff check)",
+    "trig_01LU8MWR2kVh6oSDi7NHVecF"
+   ],
+   [
+    "04:50",
+    "conductor (closing check)",
+    "trig_01Ts4nhbD3nqUWYfDa3Nt8Je"
+   ]
+  ]
+ }
 }

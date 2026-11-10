@@ -1,5 +1,61 @@
 [
   {
+    "version": "v0.2.1617",
+    "date": "2026-11-10",
+    "what": "writer@PrompTugal.angelo: report: the protocols article drafted for Angelo's review",
+    "by": "writer@PrompTugal.angelo",
+    "from": "e7cc9d1bc"
+  },
+  {
+    "version": "v0.2.1616",
+    "date": "2026-11-10",
+    "what": "dashboard@PrompTugal.angelo: the dial's brief: two buttons, play at 1 hour a second and fast forward at 6",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "c6678301f"
+  },
+  {
+    "version": "v0.2.1615",
+    "date": "2026-11-10",
+    "what": "dashboard@PrompTugal.angelo: the dumbbell's routes extremely faint; why the live map's dial seems to do nothing, and a brief for a real dial and a play button",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "86082e40e"
+  },
+  {
+    "version": "v0.2.1614",
+    "date": "2026-11-10",
+    "what": "runner.conductor@PrompTugal.angelo: run 00:20, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "f91965cfd"
+  },
+  {
+    "version": "v0.2.1613",
+    "date": "2026-11-10",
+    "what": "dashboard@PrompTugal.angelo: the wallpaper's dumbbell, part one: Bell.java, a port of work-bell.js, held to it by hxwallbell",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "c11f4fac5"
+  },
+  {
+    "version": "v0.2.1612",
+    "date": "2026-11-10",
+    "what": "desk.conductor@PrompTugal.angelo: the passes article reworked: no photo, no spotting, colour samples from the app (0-URGENT-4b)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "6d75ae89e"
+  },
+  {
+    "version": "v0.2.1611",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "07885f21c"
+  },
+  {
+    "version": "v0.2.1610",
+    "date": "2026-11-09",
+    "what": "standing answers 29 (the newsroom pivot, agents in real work) and 30 (OVERNIGHT-10NOV, five live articles by morning)",
+    "by": "conductor@web-summit.vicky",
+    "from": "8232c1099"
+  },
+  {
     "version": "v0.2.1609",
     "date": "2026-11-09",
     "what": "dev@PrompTugal.angelo: ledger line for the 23:35 run",

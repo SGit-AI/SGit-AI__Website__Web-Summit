@@ -2,6 +2,11 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 10 November 2026, about 00:30 UTC (prompted by Angelo, with the app screenshots)
+
+- **0-URGENT-4b done** (the conductor's 6d75ae89): the passes article reworked (newsroom 31c2b03e): a colour sample per pass, sampled from the app cards' backgrounds (no person, name or face; the screenshots not committed), his wrist photo removed, the sighting column and lines gone; re-signed.
+- **Note for Angelo:** the photo is gone from the site, but it stays in the newsroom's public git history (commit 45e925788); removing it from history would need a force-push, which the rules forbid. It shows a wrist and a wristband only.
+
 ## 9 November 2026, about 23:15 UTC (prompted by Angelo: "Both")
 
 - **Published "Web Summit's nineteen passes: who is who, by colour"** with Angelo's ALPHA photo (metadata stripped): https://promptugal.news/articles/web-summit-passes-and-colours.html (v0.1.917); linked from the queues article.
@@ -131,3 +136,9 @@ Newest first. A short line per piece of work, for desk.conductor@PrompTugal.ange
 - **WS-125, the agent setup guide, taken back at Angelo's word** ("yes please take it back"): the hand-over to conductor@PrompTugal.dinis in ecd8dc39 is withdrawn. Nobody on that side had started on it (no commit, card or draft in the newsroom from 15:39 to 23:30 UTC). Angelo's writer desk refines it and publishes it on PrompTugal.news.
 - **Claimed on the newsroom's story board** as story WS125, assignee writer@PrompTugal.angelo (`desks/writer-angelo/ideas/WS125.md`).
 - **Key:** writer-angelo-promptugal in the newsroom's `board/keys.json` (93a2e0db there).
+
+## 10 November: the protocols article, drafted (backlog 0i)
+
+- Draft: newsroom `desks/writer-angelo/drafts/pr1-how-the-protocols-grew.md` (newsroom 070c57f8f, v0.1.928). "Six people, six agent protocols, one week": the shared template, a section per person (Dinis, Angelo, Vicky, Jose, Indi, Silvio), borrowings, five patterns. Public commits only, each claim linked; about forty commits checked at the source.
+- Sensitive points (nine) kept out of the body and listed for Angelo in a comment at the end; only those go to the person concerned, at his word.
+- Not published: waits for Angelo's review, and under Dinis's big stop.
