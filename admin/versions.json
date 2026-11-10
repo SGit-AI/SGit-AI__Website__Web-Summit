@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1739",
+    "date": "2026-11-10",
+    "what": "the storm's incident dashboard (timeline, decision graph, weather); push-to-live baseline 3 min 56 s; the gate's 110 s in CI found (316 lazy blob fetches); session key",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "fad836c46"
+  },
+  {
     "version": "v0.2.1738",
     "date": "2026-11-10",
     "what": "19:05 wake: no Web Summit decision at 19:01; the meteorologist's analysis (worst 12:00-18:00, peak ~15:00-19:00) in the timeline; dev and researcher routed to ROADMAP P0/P1",
