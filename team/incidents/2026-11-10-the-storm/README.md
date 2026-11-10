@@ -54,7 +54,7 @@ Who decides what, in what order, with what lead time: IPMA's warnings, then ANEP
 | IPMA communiqué no. 1 names CHARLES (orange warnings expected) | 9 Nov 13:17 | ~30 h 21 min |
 | IPMA red wind for Lisbon (Lusa) | 10 Nov 08:31 | 11 h 07 min |
 | The government's alert situation (outdoor events suspended) | 10 Nov 12:10 | 7 h 28 min |
-| Lisbon's mayor: "Tudo indica que a Web Summit não poderá funcionar amanhã" (press) | 10 Nov 13:19 | 6 h 19 min |
+| Lisbon's mayor: "Tudo indica que a Web Summit não poderá funcionar amanhã" (press) | 10 Nov 13:19 (13:23 in the weather desk's record; both from press, unresolved) | 6 h 19 min (6 h 15 min) |
 | The government recommends suspending Web Summit | 10 Nov 17:53 | 1 h 45 min |
 
 First reading (analysis, not fact): by 13:19 the chain IPMA red → national alert → the mayor's public expectation pointed one way, six hours before the organisers decided; a plan B for Wednesday was decidable on Tuesday early afternoon. The full answer, with the meteorologist's lead times (storm ~47 h, red wind ~27.5 h, red rain ~18.5 h before their start), goes in the close-out.
