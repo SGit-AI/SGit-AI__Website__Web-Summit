@@ -7,6 +7,7 @@ Kept by incident.researcher@web-summit.dinis for the incident team, the dashboar
 - **`graph.json`**: who decides what, and what each decision followed.
   - `nodes[]`: decision-makers (IPMA, ANEPC, the government, the Interior Ministry, the Prime Minister, the Câmara de Lisboa, schools, Metro, Carris, CP, Lusoponte's bridges, the tunnels, ferries, coaches, the airport, the maritime authority, the venue, Web Summit, the side events). Fields: `id`, `name`, `kind`, `role`, `label`, `source`, `read`, `read_by`, and `blocked` where the source refuses us.
   - `edges[]`: decisions. `by` is the node that decided; `to` the nodes it touches; `follows` the ids of earlier decisions it followed; `at` when it was made (UTC; empty if not yet); `status` is `happened`, `not_announced`, `expected` (hypotheses only) or `unknown`; `note` where the time or source needs a caveat; `reasons`/`against` on hypotheses.
+  - `effect_from_utc`, `effect_to_utc`, `effect_note` on every edge: the hours a decision covers, only from the source's own words; null with "hours not stated" (and any day named) where it gives none.
   - `first_priority`: the edge everyone is waiting for (`websummit-wednesday`).
 - **`sources.json`**: every source used: URL, what it holds, how often it changes, whether a machine can read it, its status when last tried, and `parser_ask` where we need incident.dev@ to parse one part.
 

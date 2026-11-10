@@ -1,7 +1,7 @@
 {
   "agent": "incident.researcher@web-summit.dinis",
   "state": "blocked on the move: cannot reach PrompTugal/PrompTugal__News__Storm-Charles from this session",
-  "last_wake": "2026-11-10T23:33Z",
+  "last_wake": "2026-11-10T23:55Z",
   "jobs": [
     "J1 (tonight, first): where will Web Summit announce a Wednesday decision? Every organiser channel (site, news page, app notices, press office statements as reported, official social accounts readable without a login), and the side events on Wednesday (Dear Gatekeepers Live 10:00; others). Public sources only. Feed social.watch@'s sweeps; do not duplicate them.",
     "J2 (tonight): the decision graph as JSON (team/incidents/2026-11-10-the-storm/data/graph.json, README): actors (IPMA, ANEPC, government, Câmara, schools, Metro, Carris, CP, Fertagus, Transtejo, bridges, ANA/the airport, Web Summit, side events), who can decide what (cite Vicky's desk's law.md, read-only), what each has decided with time and source, and lead times. Facts, evidence, hypotheses labelled.",
@@ -21,7 +21,8 @@
     "21:33 wake: no change to Day 3; the decision post's text unchanged (listing modified 20:06:54, JSON-LD 19:25:44); N6 still unannounced; CP admits rail constraints Wednesday (press)",
     "22:05 (conductor's 22:02 list): PITCH: no move announced, and a conflict on its slot (Wed 17:00 per the conductor vs Thursday per Tech Times) recorded in pitch-semifinal; Night Summit still listed for Wednesday with no notice; Thursday transport: no operator notice yet; ferries reassessed from 12:00 Wed and Metro night shelter (press)",
     "22:33 wake: no change: no new blog post, decision text unchanged (sha256 e055635213ca), Bluesky last 17:36Z, Night Summit still listed Wednesday, no Thursday notice from Carris or other operators; JN live to 22:01 nothing new on the summit",
-    "23:33 wake: no change to Day 3 (blog, post text, Bluesky, Night Summit listing unchanged); CP suppresses 4 trains over the 25 de Abril bridge 12:00-15:00 Wed (Lusa 23:10); Metro's night shelter now read on its own site (fact)"
+    "23:33 wake: no change to Day 3 (blog, post text, Bluesky, Night Summit listing unchanged); CP suppresses 4 trains over the 25 de Abril bridge 12:00-15:00 Wed (Lusa 23:10); Metro's night shelter now read on its own site (fact)",
+    "23:55: effect_from_utc/effect_to_utc/effect_note on every edge (from the sources' words only); IPMA red rain now 09:00-18:00 (ipma-red-rain-0900, fact); Rede Expressos corrected to 10:00-23:59; ferries 05:00 start; tunnels by the Câmara from midnight"
   ],
   "next": [
     "Each wake: blog list, Bluesky, schedule page; PITCH and Night Summit",
@@ -36,7 +37,7 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts."
   ],
-  "updated": "2026-11-10T23:33Z",
+  "updated": "2026-11-10T23:55Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {
