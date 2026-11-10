@@ -3,7 +3,7 @@
   python3 team/journalist.examples/materials/storm/decision_graph_svg.py  ->  decision-graph.svg beside it
 Solid edges: a source says one decision follows the other. Dashed: analysis. Hollow nodes: nothing announced yet, or a source
 our tools cannot read. A bar: a decision that happened but whose time no source gives (drawn over its possible window)."""
-import json, os
+import json, os, re
 from datetime import datetime, timezone
 from html import escape as e
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -11,7 +11,7 @@ g = json.load(open(f'{HERE}/decision-graph.json'))
 T = lambda s: datetime.fromisoformat(s.replace('Z', '+00:00'))
 T0, T1 = T('2026-11-09T12:00Z'), T('2026-11-11T22:00Z')
 LW, W, TOP, LH = 190, 1400, 120, 86
-LANES = ['weather', 'civil protection', 'government', 'sea and port', 'city', 'transport', 'the summit']
+LANES = ['weather', 'civil protection', 'government', 'sea and port', 'city', 'transport', 'the summit', 'next']
 H = TOP + LH * len(LANES) + 96
 X = lambda t: LW + (W - LW - 30) * (T(t) - T0).total_seconds() / (T1 - T0).total_seconds()
 Y = lambda lane: TOP + LANES.index(lane) * LH + LH / 2 - 4
@@ -19,7 +19,7 @@ C = {'done': '#1f5f8b', 'unknown_time': '#1f5f8b', 'not_read': '#8a8984', 'not_a
 o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">',
      f'<rect width="{W}" height="{H}" fill="#faf9f5"/>',
      '<text x="30" y="44" font-size="26" font-weight="700" fill="#141413">The storm: who decided what, and how far ahead</text>',
-     f'<text x="30" y="74" font-size="15" fill="#5e5d59">From the weather desk\'s sources, as of {g["as_of"][11:16]} UTC on 10 November. Lisbon time = UTC. The red wind warning runs Wednesday 12:00 to 21:00.</text>',
+     f'<text x="30" y="74" font-size="15" fill="#5e5d59">From the weather desk\'s sources, as of {g["as_of"][11:16]} UTC on 10 November. Lisbon time = UTC. Red wind Wednesday 12:00 to 21:00; red rain 12:00 to 18:00.</text>',
      '<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#5e5d59"/></marker></defs>']
 for i, l in enumerate(LANES):
     y = TOP + i * LH
@@ -58,8 +58,8 @@ for (lane, _), ns in groups.items():
         BARS.append(f'<rect x="{a}" y="{y-5}" width="{b-a}" height="10" rx="5" fill="{col}" fill-opacity="0.18" stroke="{col}" stroke-dasharray="4 3"/>')
     fill = col if n['status'] == 'done' else '#ffffff'
     DOTS.append(f'<circle cx="{x}" cy="{y}" r="7" fill="{fill}" stroke="{col}" stroke-width="2"/>')
-    lines = [ns[0]['who'].split(' (')[0] + (f', {n["at"][11:16]}' if n['at'] and n['status'] == 'done' else '')]
-    for m in ns: lines.append({'not_read': 'not readable: ', 'not_announced': 'nothing yet: ', 'unknown_time': 'time not known: '}.get(m['status'], '') + m['decision'].split(';')[0])
+    lines = ['what may come next, as of ' + n['at'][11:16]] if lane == 'next' else [ns[0]['who'].split(' (')[0] + (f', {n["at"][11:16]}' if n['at'] and n['status'] == 'done' else '')]
+    for m in ns: lines.append((m['who'].split(' (')[0] + ': ' if lane == 'next' else '') + {'not_read': 'not readable: ', 'not_announced': '' if lane == 'next' else 'nothing yet: ', 'unknown_time': 'time not known: '}.get(m['status'], '') + m['decision'].split(';')[0])
     anchor, tx = ('end', x - 12) if x > W - 330 else ('start', x + 12)
     below = bool(n.get('at_window'))
     for j, t in enumerate(lines[:4]):
@@ -68,9 +68,9 @@ for (lane, _), ns in groups.items():
         LABELS.append(f'<text x="{tx}" y="{ty}" font-size="{12 if j==0 else 11.5}" font-weight="{700 if j==0 else 400}" fill="#141413" text-anchor="{anchor}" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">{e(t)}</text>')
 o += BARS + DOTS + LABELS
 lt = '; '.join(f'{x["from"]}: {x.get("to_event", "")} before'.replace('-', ' ') for x in g['lead_times'] if x.get('to_event'))
-o.append(f'<text x="30" y="{H-46}" font-size="12.5" fill="#141413"><tspan font-weight="700">Lead times to the red warning:</tspan> IPMA names the storm 46 h 43 min before; ANEPC\'s public warning 39 h 30 min; the government\'s alert 23 h 50 min (schools learn 11 h 50 min before they close).</text>')
+o.append(f'<text x="30" y="{H-46}" font-size="12.5" fill="#141413"><tspan font-weight="700">Lead times to the red warning:</tspan> IPMA names the storm 46 h 43 min before; ANEPC\'s public warning 39 h 30 min; the government\'s alert 23 h 50 min (schools learn 11 h 50 min before they close). The rain went red 18 h 18 min before it starts.</text>')
 o.append(f'<text x="30" y="{H-28}" font-size="12" fill="#5e5d59">Solid: a source says this follows that. Dashed: analysis, not a sourced fact. Hollow: nothing announced yet, or a source our tools cannot read. Bar: happened, time not known.</text>')
-o.append(f'<text x="30" y="{H-10}" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from decision-graph.json, built on weather@PrompTugal.vicky\'s live.md and decision-chain.md (PrompTugal__News__Website, eca7b396).</text>')
+o.append(f'<text x="30" y="{H-10}" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from decision-graph.json, built on weather@PrompTugal.vicky\'s live.md and decision-chain.md and decision-graph.json (PrompTugal__News__Website, eca7b396 and 358fa21b).</text>')
 o.append('</svg>')
-open(f'{HERE}/decision-graph.svg', 'w').write('\n'.join(o) + '\n')
+open(f'{HERE}/decision-graph.svg', 'w').write(re.sub(r'(\d+\.\d)\d+', r'\1', '\n'.join(o)) + '\n')  # one decimal: no long digit runs
 print('decision-graph.svg')
