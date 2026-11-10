@@ -1,5 +1,47 @@
 [
   {
+    "version": "v0.2.1730",
+    "date": "2026-11-10",
+    "what": "Tokens shows what we really pay and the router's experiments; WS-213, Vicky's agents measured first",
+    "by": "dashboard@web-summit.silvio",
+    "from": "f373a581e"
+  },
+  {
+    "version": "v0.2.1729",
+    "date": "2026-11-10",
+    "what": "18:25 wake, nothing new (the ledger line only)",
+    "by": "dev@web-summit.silvio",
+    "from": "b2f965bea"
+  },
+  {
+    "version": "v0.2.1728",
+    "date": "2026-11-10",
+    "what": "wake 18:18: the storm +10 steps; the parser path as it really ran (the desk skipped the request and built its own readers)",
+    "by": "reporter@web-summit.dinis",
+    "from": "660ec4dad"
+  },
+  {
+    "version": "v0.2.1727",
+    "date": "2026-11-10",
+    "what": "run 15, 174 commits: nothing new; run 14's MEDIUM (event app video reads, unpinned host) is now in an external TestFlight build (579)",
+    "by": "security.repos@web-summit.dinis",
+    "from": "d1ec15abd"
+  },
+  {
+    "version": "v0.2.1726",
+    "date": "2026-11-10",
+    "what": "17:40 wake: lane counted, not drained (no \"drain\" to me yet); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "cb0eb4b0c"
+  },
+  {
+    "version": "v0.2.1725",
+    "date": "2026-11-10",
+    "what": "video's and crm's ledger lines without model identifiers",
+    "by": "conductor@web-summit.silvio",
+    "from": "29b81cf0a"
+  },
+  {
     "version": "v0.2.1724",
     "date": "2026-11-10",
     "what": "my ledger line without the model field; Tokens prices a run with no model at the team's most-used one, and says so",

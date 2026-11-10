@@ -25,7 +25,11 @@
         ['DeepSeek V4.1 Flash (peak)', [0.3, 1.2, 0.3, 0.006], 'DeepSeek, list price at peak hours (off-peak is half)', 'https://api-docs.deepseek.com/quick_start/pricing'],
         ['GLM self-hosted, Revolut\'s figure', 'flat', 'Revolut\'s own reported $0.30 per million tokens on its own GPUs, every token alike', 'https://dealroom.co/news/169124-revolut-swaps-claude-code-for-a-chinese-open-weight-model-cutting-its-ai/']
     ]
-    const st = { rows: null, err: '', range: '7d', loading: false, table: false, read: null, files: 0 }
+    // what we really pay: the subscriptions, per month, as Dinis said on 10 November ("I run the Ultra, $200 a month; all
+    // of you are on about $70"), until each person confirms their own plan
+    const PLAN = { dinis: 200 }, PLAN_DEFAULT = 70, PLAN_NOTE = 'as said in the conversation of 10 November; each person to confirm'
+    const planOf = o => PLAN[o] || PLAN_DEFAULT
+    const st = { exps: [], rows: null, err: '', range: '7d', loading: false, table: false, read: null, files: 0 }
     const get = async (u, kind = 'json', ms = 15000) => { const c = new AbortController(), t = setTimeout(() => c.abort(), ms); try { const r = await fetch(u, { signal: c.signal, cache: 'no-cache' }); if (!r.ok) throw new Error('HTTP ' + r.status); return kind === 'json' ? await r.json() : await r.text() } finally { clearTimeout(t) } }
     const pool = async (items, n, fn) => { const out = []; let i = 0; await Promise.all(Array.from({ length: Math.min(n, items.length) }, async () => { while (i < items.length) { const k = i++; try { out[k] = await fn(items[k]) } catch { out[k] = null } } })); return out }
     const tok = x => ({ i: (x && x.input_tokens) || 0, o: (x && x.output_tokens) || 0, w: (x && x.cache_creation_input_tokens) || 0, r: (x && x.cache_read_input_tokens) || 0, calls: (x && x.calls) || 0, by: (x && x.by_model) || {} })
@@ -51,7 +55,7 @@
         try {
             const keep = (() => { try { const v = JSON.parse(localStorage.getItem('cc.live.tokens')); return v && Date.now() - v.at < 600000 ? v : null } catch { return null } })()
             let paths = keep && keep.paths
-            if (!paths) { const tr = await get(TREE); paths = (tr.tree || []).map(x => x.path).filter(p => /^people\/[a-z0-9-]+\/(accountant\/)?ledger\/[^/]+\.jsonl$/.test(p)); try { localStorage.setItem('cc.live.tokens', JSON.stringify({ at: Date.now(), paths })) } catch {} }
+            if (!paths) { const tr = await get(TREE); const all = (tr.tree || []).map(x => x.path); paths = all.filter(p => /^people\/[a-z0-9-]+\/(accountant\/)?ledger\/[^/]+\.jsonl$/.test(p)); paths.router = all.filter(p => /^people\/[a-z0-9-]+\/router\/experiments\.jsonl$/.test(p)); try { localStorage.setItem('cc.live.tokens', JSON.stringify({ at: Date.now(), paths, router: paths.router })) } catch {} } else paths.router = keep.router || []
             const texts = await pool(paths, 8, p => get(SITE + p.split('/').map(encodeURIComponent).join('/'), 'text'))
             const rows = []
             paths.forEach((p, k) => { const owner = p.split('/')[1], t = texts[k]; if (!t) return
@@ -60,6 +64,8 @@
                     for (const [m, c] of Object.entries(s.by)) all.by[m] = (all.by[m] || 0) + c
                     rows.push({ at: r.at, since: r.since || null, agent: String(r.agent || '').trim(), key: String(r.agent || '').trim().toLowerCase(), owner, task: String(r.task || '').slice(0, 160), t: all }) } })
             dedupe(rows)
+            const ex = await pool(paths.router || [], 4, p => get(SITE + p, 'text'))
+            st.exps = ex.flatMap((tx, k) => (tx || '').split('\n').map(l => { try { return JSON.parse(l) } catch { return null } }).filter(x => x && x.at).map(x => ({ ...x, owner: paths.router[k].split('/')[1] }))).sort((a, b) => String(b.at).localeCompare(String(a.at)))
             st.rows = rows; st.files = paths.length; st.read = new Date(); st.err = ''
         } catch (e) { st.err = 'The ledgers could not be read just now (' + ((e && e.message) || 'error') + '). GitHub allows 60 reads an hour per connection; try again in a minute.' }
         st.loading = false; paint()
@@ -106,7 +112,27 @@
 <div class="tk-tiles"><div><span>Estimated cost</span><b>${fmt$(cost)}</b><small>${esc(R[1].toLowerCase())}</small></div><div><span>Runs logged</span><b>${sess}</b><small>${by.size} agents</small></div><div><span>Tokens, without cache reads</span><b>${fmtT(sumFresh)}</b><small>input, output, cache writes</small></div><div><span>Cache reads</span><b>${fmtT(sumReads)}</b><small>re-reading the same context: cheap, but most of the volume</small></div></div></section>
 <div class="tk-grid"><section class="cc-card"><h3>The whole team, by day</h3>${chart1}<p class="tk-people">${perOwner.map(p => `<span style="--c:${SHIRT[p.o] || '#4FD1F5'}"><b>${esc(p.o)}</b> ${fmt$(p.cost)} · ${p.ag} agents · ${p.n} sessions</span>`).join('')}</p></section>
 <section class="cc-card"><h3>Each agent (the 15 that spend most)</h3>${top.length ? chart2 : '<p class="note">No session in this period.</p>'}</section></div>
-<section class="cc-card"><h3>The same work at other models' prices</h3><p class="note">${esc(R[1])}: what the tokens above would cost at each model's list price.</p>${chart3}</section>${table}`
+${paidView(rows, R, perOwner)}${routerView()}<section class="cc-card"><h3>The same work at other models' prices</h3><p class="note">${esc(R[1])}: what the tokens above would cost at each model's list price.</p>${chart3}</section>${table}`
+    }
+    function paidView(rows, R, perOwner) {
+        const t0 = Math.min(...st.rows.map(r => Date.parse(r.at))), days = R[2] === Infinity ? Math.max(1, (Date.now() - t0) / 864e5) : R[2] / 864e5
+        const P = perOwner.filter(p => p.n).map(p => ({ ...p, paid: planOf(p.o) * days / 30.4 })), mx = Math.max(1e-9, ...P.flatMap(p => [p.paid, p.cost]))
+        const tp = P.reduce((s, p) => s + p.paid, 0), tv = P.reduce((s, p) => s + p.cost, 0)
+        return `<section class="cc-card"><h3>What we really pay, and what it would cost at API prices</h3><p class="note">${esc(R[1])}. We pay subscriptions, not tokens: ${Object.entries(PLAN).map(([o, v]) => esc(o) + ' $' + v).join(', ')}, everyone else $${PLAN_DEFAULT} a month (${esc(PLAN_NOTE)}). The API value is the same work at list prices: it shows how much each plan returns, and how close it runs to its limit.</p>
+<div class="tk-tiles tk-tiles3"><div><span>We pay (the measured people)</span><b>${fmt$(tp)}</b><small>${esc(R[1].toLowerCase())}, pro rata</small></div><div><span>At API prices it would be</span><b>${fmt$(tv)}</b><small>the same tokens</small></div><div><span>Value per dollar paid</span><b>×${tp ? (tv / tp).toFixed(1) : '—'}</b><small>more than ×1 means the plan is the cheaper way</small></div></div>
+<div class="tk-hbars tk-paid">${P.map(p => `<div class="tk-pair"><span class="tk-name"><b style="color:${SHIRT[p.o] || '#4FD1F5'}">${esc(p.o)}</b> · ${p.ag} agents</span><span class="tk-two"><span class="tk-track" title="paid ${fmt$(p.paid)}"><i class="paid" style="width:${Math.max(1, p.paid / mx * 100)}%"></i></span><span class="tk-track" title="API value ${fmt$(p.cost)}"><i style="width:${Math.max(1, p.cost / mx * 100)}%;background:${SHIRT[p.o] || '#4FD1F5'}"></i></span></span><b>${fmt$(p.paid)} → ${fmt$(p.cost)}</b><small>×${(p.cost / Math.max(1e-9, p.paid)).toFixed(1)}</small></div>`).join('')}</div>
+<p class="tk-legend"><span><i style="--c:#8FA6C2"></i>what the plan costs</span><span><i style="--c:#2ED48C"></i>the same tokens at API prices (each person's colour)</span></p></section>`
+    }
+    function routerView() {
+        const E = st.exps
+        if (!E.length) return `<section class="cc-card"><h3>Router experiments: the same sub-tasks on open models</h3><p class="note">No experiments yet. A router agent runs low-risk sub-tasks on open models through OpenRouter, has a Claude model check each result, and logs every try (people/&lt;id&gt;/router/experiments.jsonl: task, kind, model, tokens, the real cost OpenRouter returns, the verdict). Each try appears here as soon as it is committed.</p></section>`
+        const ok = E.filter(x => x.verdict === 'pass').length, cost = E.reduce((s, x) => s + (+x.cost_usd || 0), 0)
+        const base = E.reduce((s, x) => s + (x.baseline_tokens ? costAt({ i: +x.baseline_tokens.in || 0, o: +x.baseline_tokens.out || 0, w: 0, r: 0 }, PRICE['claude-opus-5-5']) : 0), 0)
+        const byModel = new Map(); for (const x of E) { const m = String(x.model || '?'), y = byModel.get(m) || { n: 0, ok: 0, cost: 0 }; y.n++; if (x.verdict === 'pass') y.ok++; y.cost += +x.cost_usd || 0; byModel.set(m, y) }
+        return `<section class="cc-card"><h3>Router experiments: the same sub-tasks on open models</h3>
+<div class="tk-tiles"><div><span>Tries</span><b>${E.length}</b><small>${new Set(E.map(x => x.owner)).size} people</small></div><div><span>Passed the check</span><b>${Math.round(ok / E.length * 100)}%</b><small>${ok} of ${E.length}, checked by a Claude model</small></div><div><span>Real cost on OpenRouter</span><b>${fmt$(cost)}</b><small>as OpenRouter returned it</small></div><div><span>The same at Claude prices</span><b>${base ? fmt$(base) : '—'}</b><small>${base ? 'from each try\'s estimated baseline' + (cost ? ': ×' + (base / cost).toFixed(0) + ' dearer' : '') : 'no baseline logged yet'}</small></div></div>
+<div class="gr-table"><table><thead><tr><th>Model</th><th>Tries</th><th>Passed</th><th>Cost</th></tr></thead><tbody>${[...byModel.entries()].sort((a, b) => b[1].n - a[1].n).map(([m, y]) => `<tr><td>${esc(m)}</td><td>${y.n}</td><td>${y.ok} (${Math.round(y.ok / y.n * 100)}%)</td><td>${fmt$(y.cost)}</td></tr>`).join('')}</tbody></table></div>
+<div class="gr-table"><table><thead><tr><th>When</th><th>Task</th><th>Kind</th><th>Model</th><th>Tokens</th><th>Cost</th><th>Verdict</th></tr></thead><tbody>${E.slice(0, 20).map(x => `<tr><td>${esc(String(x.at).slice(5, 16).replace('T', ' '))}</td><td>${esc(String(x.task || '').slice(0, 80))}</td><td>${esc(x.kind || '')}</td><td>${esc(x.model || '')}</td><td>${x.tokens ? fmtT((+x.tokens.in || 0) + (+x.tokens.out || 0)) : '—'}</td><td>${fmt$(+x.cost_usd || 0)}</td><td class="v-${esc(x.verdict || '')}">${esc(x.verdict || '—')}</td></tr>`).join('')}</tbody></table></div></section>`
     }
     function paint() { const el = document.getElementById('tokens'); if (el) el.innerHTML = view() }
     document.addEventListener('click', e => { const t = e.target.closest && e.target.closest('[data-tk-range],[data-tk-table],[data-tk-reload]'); if (!t || !document.getElementById('tokens') || !document.getElementById('tokens').contains(t)) return

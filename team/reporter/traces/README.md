@@ -15,7 +15,7 @@ Every file has `id`, `size`, `title`, `input`, `output`, `status`, `duration`, `
 | [`medium-voice-brief-to-deck.json`](medium-voice-brief-to-deck.json) | medium | A voice brief to a deck: THE RESTART (02:40 UTC) to Dinis's 09:00 team briefing | 9 | voice brief, deck | in progress: the steps to the final deck are captured; the presentation at 09:00 has no evidence yet |
 | [`pt-news-newsroom-workflow.json`](pt-news-newsroom-workflow.json) | medium | WS-211: pt.news is about agents. A voice brief to one newsroom workflow, its infographic and a map spec | 6 | voice brief, live page | in progress: the infographic is live; the pt.news redesign waits on PrompTugal's team |
 | [`small-badge-photo-to-live-page.json`](small-badge-photo-to-live-page.json) | small | A picture: two badge photos to a live page, the map of 'the individual' | 6 | photo, live page | captured from the record; the page's next stages (unit, research, Kanban) are open under WS-210 |
-| [`storm-weather-desk.json`](storm-weather-desk.json) | large | The storm: a red wind warning to a dynamic weather desk, a decision chain and the work desk's first story (plus `decision_graph[]`, `lead_times`, `parser_workflow[]`) | 15 | raw official data, live pages | open: the story is happening; the parser workflow (Dinis's five stages) has not started in the record |
+| [`storm-weather-desk.json`](storm-weather-desk.json) | large | The storm: a red wind warning to a dynamic weather desk, a decision chain and the work desk's first story (plus `decision_graph[]`, `lead_times`, `parser_workflow[]`) | 25 | raw official data, live pages | open: the desk built its own connectors (stages 1, 2 and 4 in one agent), its plan for the page is written and the build asked; the UI is not yet |
 
 ## Cost
 

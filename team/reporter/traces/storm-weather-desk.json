@@ -19,9 +19,9 @@
       "https://github.com/PrompTugal/PrompTugal__News__Website/tree/dev/desks/weather-vicky"
     ]
   },
-  "status": "open: the story is happening; the parser workflow (Dinis's five stages) has not started in the record",
+  "status": "open: the desk built its own connectors (stages 1, 2 and 4 in one agent), its plan for the page is written and the build asked; the UI is not yet",
   "captured_by": "reporter@web-summit.dinis",
-  "captured_at": "2026-11-10T17:25Z",
+  "captured_at": "2026-11-10T18:25Z",
   "lanes": {
     "ours": "the team's agents and people (commits)",
     "theirs": "the authorities' decisions (the graph below), each from a public source the desk read"
@@ -380,7 +380,7 @@
     {
       "n": 13,
       "lane": "ours",
-      "at": "2026-11-10T17:15:00Z",
+      "at": "2026-11-10T17:10:00Z",
       "actor": {
         "name": "Dinis",
         "kind": "person"
@@ -400,7 +400,7 @@
           "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/683727f63d9d"
         }
       ],
-      "at_note": "about 17:15 and 17:25"
+      "at_note": "about 17:10, as the guidance and the brief now record it (corrected by the conductor, eae3aa2a on the team site)"
     },
     {
       "n": 14,
@@ -431,7 +431,7 @@
           "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/guidance/2026-11-10-the-storm-as-our-case-study.md"
         }
       ],
-      "at_note": "the commit (17:11) is before the memo's stated 'about 17:15'; the memo's time is approximate",
+      "at_note": "the commit (17:11) follows the memo (about 17:10)",
       "repo": "PrompTugal/PrompTugal__News__Website",
       "sha": "683727f6"
     },
@@ -460,28 +460,342 @@
       ],
       "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
       "sha": "ba536667"
+    },
+    {
+      "n": 16,
+      "lane": "ours",
+      "at": "2026-11-10T17:27:34Z",
+      "actor": {
+        "name": "reviewer@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "the government's declaration and ANEPC, verified 17:01 and 17:24; Vicky's word",
+      "out": "S41 updated with the alert situation",
+      "handoff": {
+        "to": "readers",
+        "via": "promptugal.news"
+      },
+      "kind": "update",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "50a0397e",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/50a0397eb29a"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "50a0397e",
+      "issue": "WS-14",
+      "evidence_note": "Vicky's yes recorded in the commit ('at Vicky's word'): a person's step folded into the agent's"
+    },
+    {
+      "n": 17,
+      "lane": "ours",
+      "at": "2026-11-10T17:43:51Z",
+      "actor": {
+        "name": "weather@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "IPMA at the 17:42 check; communiqué no. 2",
+      "out": "Lisbon's rain raised to red (Wed 12:00 to 18:00); the lead draft refreshed",
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky",
+        "via": "commit For:"
+      },
+      "kind": "detect",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "c0587177",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/c05871773026"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "c0587177",
+      "issue": "WS-14"
+    },
+    {
+      "n": 18,
+      "lane": "ours",
+      "at": "2026-11-10T17:45:13Z",
+      "actor": {
+        "name": "reviewer@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "the red rain, verified 17:43",
+      "out": "S41 updated: red rain; image and covers redrawn",
+      "handoff": {
+        "to": "readers",
+        "via": "promptugal.news"
+      },
+      "kind": "update",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "87af4984",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/87af4984b5f0"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "87af4984",
+      "issue": "WS-14",
+      "evidence_note": "about 3 minutes from detection to the live article"
+    },
+    {
+      "n": 19,
+      "lane": "ours",
+      "at": "2026-11-10T17:50:12Z",
+      "actor": {
+        "name": "conductor.B@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "Dinis's storm guidance",
+      "out": "the guidance relayed to the weather desk",
+      "handoff": {
+        "to": "weather@PrompTugal.vicky",
+        "via": "hand-over"
+      },
+      "kind": "relay",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "56ef6810",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/56ef68103a2b"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "56ef6810",
+      "issue": "WS-177"
+    },
+    {
+      "n": 20,
+      "lane": "ours",
+      "at": "2026-11-10T17:52:24Z",
+      "actor": {
+        "name": "weather@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "the raw sources in the source map (IPMA JSON, RSS, stations, LPPT, Carris Metropolitana, TTSL, the government's page, Web Summit)",
+      "out": "connectors: tools/watch.mjs, one small reader per source; snapshots in data/",
+      "handoff": {
+        "to": "conductor.B@PrompTugal.vicky",
+        "via": "commit For:"
+      },
+      "kind": "tool",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "78d3a0cd",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/78d3a0cd4275"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "78d3a0cd",
+      "issue": "WS-14",
+      "evidence_note": "the desk built its own readers, on the guidance; no request to a conductor, no architect's plan and no separate developer in the record. Stages 1, 2 and 4 of Dinis's path collapsed into one agent.",
+      "parser_stage": "1-2-4 collapsed"
+    },
+    {
+      "n": 21,
+      "lane": "ours",
+      "at": "2026-11-10T17:52:24Z",
+      "actor": {
+        "name": "weather@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "the guidance's focused view",
+      "out": "a proposal for one storm page on promptugal.news, as a markdown file (not a build)",
+      "handoff": {
+        "to": "conductor.B@PrompTugal.vicky",
+        "via": "commit For:"
+      },
+      "kind": "plan",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "cc99e9b2",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/cc99e9b2c410"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "cc99e9b2",
+      "issue": "WS-14",
+      "evidence_note": "the plan as a markdown file: Dinis's stage 3, written by the desk itself rather than an architect",
+      "parser_stage": "3"
+    },
+    {
+      "n": 22,
+      "lane": "ours",
+      "at": "2026-11-10T17:54:59Z",
+      "actor": {
+        "name": "weather@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "past storms (a historian sub-agent)",
+      "out": "history.md: past storms and their decision sequences, press labelled",
+      "handoff": {
+        "to": "conductor.B@PrompTugal.vicky",
+        "via": "commit For:"
+      },
+      "kind": "research",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "7e77588c",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/7e77588cd2eb"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "7e77588c",
+      "issue": "WS-14"
+    },
+    {
+      "n": 23,
+      "lane": "ours",
+      "at": "2026-11-10T17:59:15Z",
+      "actor": {
+        "name": "weather@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "the law's consolidated texts (checked 18:00); the decisions so far",
+      "out": "decision-graph.json (16 nodes, 11 edges, predictions as analysis), law.md, connector docs",
+      "handoff": {
+        "to": "conductor.B@PrompTugal.vicky",
+        "via": "commit For:"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "358fa21b",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/358fa21b5fc9"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-graph.json",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-graph.json"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "358fa21b",
+      "issue": "WS-14",
+      "evidence_note": "the desk's own JSON decision graph now supersedes the 9 nodes in this trace's decision_graph[]: read it at source"
+    },
+    {
+      "n": 24,
+      "lane": "ours",
+      "at": null,
+      "actor": {
+        "name": "Vicky",
+        "kind": "person"
+      },
+      "in": "the storm page proposal",
+      "out": "yes to the build (not yet to publication)",
+      "handoff": {
+        "to": "conductor.B@PrompTugal.vicky",
+        "via": "her word, recorded in d826acce"
+      },
+      "kind": "approval",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "d826acce",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/d826acce9027"
+        }
+      ],
+      "evidence_note": "time of the yes not in the record; before 18:13"
+    },
+    {
+      "n": 25,
+      "lane": "ours",
+      "at": "2026-11-10T18:13:57Z",
+      "actor": {
+        "name": "conductor.B@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "the proposal and Vicky's yes",
+      "out": "the storm page's first version asked of dev.graphs@ and designer@ as a preview",
+      "handoff": {
+        "to": "dev.graphs@PrompTugal.dinis, designer@PrompTugal.dinis",
+        "via": "commit For:"
+      },
+      "kind": "request",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "d826acce",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/d826acce9027"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "d826acce",
+      "issue": "WS-177",
+      "parser_stage": "4 (asked)"
     }
   ],
   "parser_workflow": [
     {
-      "stage": "1. a researcher hits an official source: raw JSON or a page where one small part matters (candidates in the record: IPMA warnings_www.json, of which only area LSB matters; the communiqué RSS; Lisbon city hall's pages, refused 403; Diário da República, a JavaScript app)",
-      "status": "not yet in the record (17:20 UTC)"
+      "stage": "1. a raw source",
+      "status": "done, many: IPMA warnings_www.json (one area of ~276 warnings matters), the communiqué RSS, the government's page",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/README.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/README.md"
+        }
+      ]
     },
     {
-      "stage": "2. it asks the conductor for a parser for just that part",
-      "status": "not yet in the record (17:20 UTC)"
+      "stage": "2. a request for a parser",
+      "status": "skipped: the desk built its readers itself on the guidance (78d3a0cd)",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "78d3a0cd",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/78d3a0cd4275"
+        }
+      ]
     },
     {
-      "stage": "3. an architect writes a plan as a markdown file",
-      "status": "not yet in the record (17:20 UTC)"
+      "stage": "3. the architect's plan as markdown",
+      "status": "done by the desk, for the storm page: a proposal (cc99e9b2)",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "cc99e9b2",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/cc99e9b2c410"
+        }
+      ]
     },
     {
-      "stage": "4. the developer implements it, the designer maps it",
-      "status": "not yet in the record (17:20 UTC)"
+      "stage": "4. the developer and the designer",
+      "status": "asked at 18:13 (dev.graphs@, designer@), Vicky's yes to build",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "d826acce",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/d826acce9027"
+        }
+      ]
     },
     {
-      "stage": "5. they check it, and a UI turns noise into signal",
-      "status": "not yet in the record (17:20 UTC)"
+      "stage": "5. checked; a UI that turns noise into signal",
+      "status": "not yet"
     }
   ],
   "decision_graph": [
@@ -682,5 +996,14 @@
     "weather@PrompTugal.vicky": "the source map, the live page, the decision chain",
     "conductor@web-summit.dinis": "routed Dinis's memos as guidance and briefs"
   },
-  "privacy": "public sources only; no contact details"
+  "privacy": "public sources only; no contact details",
+  "see_also": {
+    "note": "reporter.newsroom@PrompTugal.dinis (started about 17:40, Vicky's newsroom) keeps a step-by-step trace of the newsroom side of the storm. This trace keeps the cross-team view: Dinis's memos, the parser path, the decision graph and the lead times. Read both by sha; do not merge by hand.",
+    "trace": {
+      "type": "file",
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "path": "board/team/work-desk/traces/the-storm.json",
+      "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/team/work-desk/traces/the-storm.json"
+    }
+  }
 }
