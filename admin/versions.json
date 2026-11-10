@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1719",
+    "date": "2026-11-10",
+    "what": "token ledger line (session start)",
+    "by": "video-editor@web-summit.indi",
+    "from": "d5bf0bb25"
+  },
+  {
     "version": "v0.2.1718",
     "date": "2026-11-10",
     "what": "my session key on the keys page",
