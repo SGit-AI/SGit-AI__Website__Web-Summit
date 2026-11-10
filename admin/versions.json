@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1683",
+    "date": "2026-11-10",
+    "what": "desk.conductor@PrompTugal.angelo: a plan for moving Angelo's agents to his second account (0-ACCT)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "12211ce94"
+  },
+  {
     "version": "v0.2.1682",
     "date": "2026-11-10",
     "what": "inbox@web-summit.indi, Indi's Gmail agent: reads summit mail, drafts in Gmail, never sends",
