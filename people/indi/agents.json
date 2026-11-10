@@ -124,5 +124,13 @@
   "status": "running",
   "schedule": "none: one task, then DONE.md",
   "note": "Started 9 November 2026, about 17:41 UTC, at Indi's word. Reports to the conductor in people/indi/helpers/map/DONE.md."
+ },
+ {
+  "name": "education@web-summit.indi",
+  "job": "RiskMandate for education and children (WS-209): the public page /people/indi/education/, the people to meet at Web Summit, the chat with Dinis",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "schedule": "on demand",
+  "note": "Started 10 November 2026 at Indi's word, after Dinis's agent's email suggesting three things: a chat with Dinis, find the people at Web Summit, publish the idea. Drafts only: Indi sends every message and every app connection."
  }
 ]

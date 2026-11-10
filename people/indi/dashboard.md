@@ -13,6 +13,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 **Schedules: who wakes when** | schedules/index.html | Each of your helpers on one timeline, with what it does and when it runs.
 **Your card on your phone** | ../../card/index.html | The RiskMandate business card, ready for Apple Wallet. Open it in Safari on your iPhone.
 **Command centre** | app/index.html | Your tasks by topic, search, and Ask Claude. Use it to pick up a task or ask a question.
+**Safe AI for learning** | education/index.html | RiskMandate for schools and children: your brief, published so you can point people to it at Web Summit. The people to meet are in the task WS-209.
 **Companies we want to meet** | factory/index.html | One picture page per company: what it does, its risks from AI agents, and how RiskMandate helps. Check each before you use it.
 **Today's token report** | accountant/briefs/latest.pdf | What your agents cost today, how to spend less, and the decisions it needs from you. New every day at 5:30 pm.
 **The token guide** | accountant/guide/token-guide.png | One picture: how to get better answers for fewer tokens.
