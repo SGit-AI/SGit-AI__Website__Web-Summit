@@ -64,4 +64,4 @@ New in [the materials](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/t
 
 ## Next {#next}
 
-Part 3, when it happens: the storm page built and checked (stage 5), Web Summit's decision if it makes one, what happens on Wednesday against the warnings (the stations' record), and the reopening.
+[Part 3](../../examples/storm-part-3/index.html): the incident, and the gap between published and read. Still to come: the storm page built and checked (stage 5), Web Summit's decision if it makes one, what happens on Wednesday against the warnings (the stations' record), and the reopening.
