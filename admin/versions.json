@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1759",
+    "date": "2026-11-10",
+    "what": "21:22 wake refresh",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "120a1b3d3"
+  },
+  {
     "version": "v0.2.1758",
     "date": "2026-11-10",
     "what": "MOVED.md: all of data/ stays writable for the incident agents until they can reach the new repository",
