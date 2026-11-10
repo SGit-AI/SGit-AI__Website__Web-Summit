@@ -1,12 +1,12 @@
 {
   "about": "Where security.repos@web-summit.dinis stopped, per repository and branch: the last commit reviewed (the branch head when the run read it). The next run reviews every commit reachable from any branch and not from these. From the second run, every branch is listed, not only those active since the baseline.",
   "agent": "security.repos@web-summit.dinis",
-  "last_run": "2026-11-10T08:30Z",
+  "last_run": "2026-11-10T10:25Z",
   "baseline_from": "2026-11-08T11:00Z",
   "repos": {
     "SGit-AI/SGit-AI__Website__Web-Summit": {
       "branches": {
-        "dev": "56ccb4e4877284f051f50bb655e26aa9c59d868b",
+        "dev": "18bb63332ee4cad279f5c268aabcd279b2728cca",
         "claude/awesome-dirac-rp94os": "1cc9740af65206906617362b879004f6564e0e8d",
         "claude/beautiful-clarke-mqhept": "a88e8c65a2e854b41b5b2e2f7506bab1c53e2ddf",
         "claude/conductor-jose-setup-ogxaka": "ccfecefe90fb74e838fd1b0b0f89b40be179593d",
@@ -30,7 +30,7 @@
         "workers/dev.links": "1bd3382c6c7a89e52ef8b10006dfe4b7e40347c6",
         "workers/dev.map": "7820cc2ddadf667ce624cdf7dc5494a030b041ae",
         "workers/dev.venues": "1bf79af7c1155724a95fa93d2d759d2b5c9c47b1",
-        "workers/dev.work": "64cc90277e9aa5567f149d02ea5ffde5dc5013ba",
+        "workers/dev.work": "b3775713eb7dce0b3f3ff64e30f55e411fc13bab",
         "workers/research": "3a178e88e8f8a790a26b72659efb51b58a33dcf7",
         "workers/sheet": "ebbe82dc0f04208c7df1d6071e30cac43f839ba7",
         "workers/social-media": "639cef986ce474c9f6b31fe0533a95915b0333c8",
@@ -39,14 +39,14 @@
     },
     "PrompTugal/PrompTugal__News__Website": {
       "branches": {
-        "dev": "7608fe476413562bd3bf3eaf9043cd005be8544c",
+        "dev": "6784c9b6781450f8869e6e0b39443b2a6437da71",
         "claude/serene-keller-r1pzfc": "3affa4b4a3478ef40565a13154ffe10e0c55e8bc",
         "claude/sweet-heisenberg-m1vm71": "c9217130f27dae9a55e5a7080e644f286b31f73e",
         "main": "9629432a48d2514aa11d89172fb3173f4aedce90",
         "work/conductor-silvio": "e9ffd69b1fc3f1cf3aecbb1ee3474c57493ea465",
         "work/designer.experiments": "1177421a6cc6e53eff0b578a5b78ad2eaf1427ca",
-        "work/dev.data": "9b86a3f2cf39d89661d08f39cfa51b948433cab7",
-        "work/dev.graphs": "db543417d46674973cb58c7e733311db095b2d36",
+        "work/dev.data": "64c7b4933a773f5807e530edd73ff1327088d2b1",
+        "work/dev.graphs": "a69480da728f88683701d4b457ff3e5e7d418145",
         "work/dev.pages": "6b177b24d738ea31468eef64f5f457b72cb3ef43",
         "work/dev.portugal": "a1b6759c2e35335aaeef19d180e30d5f3123cae5",
         "work/dev.search": "938ab51070025f1221ecfe415dc1b8170b3a692e",

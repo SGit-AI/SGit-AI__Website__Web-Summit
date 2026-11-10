@@ -1,8 +1,8 @@
 {
  "about": "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
  "source": "https://github.com/PrompTugal/PrompTugal__News__Website",
- "commit": "c4f8fbaf",
- "read_at": "2026-11-10T09:42:00.510Z",
+ "commit": "1dfa4408",
+ "read_at": "2026-11-10T10:35:58.637Z",
  "days": 7,
  "agents": [
   {
@@ -22,9 +22,9 @@
    "short": "conductor",
    "family": "PrompTugal",
    "label": "PrompTugal's conductor",
-   "commits": 166,
+   "commits": 167,
    "first": "2026-11-06T00:03:31+00:00",
-   "last": "2026-11-10T09:00:59+00:00",
+   "last": "2026-11-10T09:43:26+00:00",
    "key": true
   },
   {
@@ -55,9 +55,9 @@
    "short": "conductor.b",
    "family": "PrompTugal",
    "label": "",
-   "commits": 86,
+   "commits": 87,
    "first": "2026-11-06T21:38:06+00:00",
-   "last": "2026-11-10T08:49:49+00:00",
+   "last": "2026-11-10T09:49:51+00:00",
    "key": true
   },
   {
@@ -88,9 +88,9 @@
    "short": "ontologist",
    "family": "PrompTugal",
    "label": "PrompTugal's ontologist",
-   "commits": 77,
+   "commits": 78,
    "first": "2026-11-06T00:07:41+00:00",
-   "last": "2026-11-10T08:25:29+00:00",
+   "last": "2026-11-10T10:23:53+00:00",
    "key": true
   },
   {
@@ -143,9 +143,9 @@
    "short": "security",
    "family": "PrompTugal",
    "label": "PrompTugal's security agent",
-   "commits": 50,
+   "commits": 51,
    "first": "2026-11-06T03:48:25+00:00",
-   "last": "2026-11-10T08:05:57+00:00",
+   "last": "2026-11-10T10:05:13+00:00",
    "key": true
   },
   {
@@ -165,9 +165,9 @@
    "short": "librarian",
    "family": "PrompTugal",
    "label": "PrompTugal's librarian",
-   "commits": 38,
+   "commits": 39,
    "first": "2026-11-06T03:52:31+00:00",
-   "last": "2026-11-10T07:00:49+00:00",
+   "last": "2026-11-10T10:00:17+00:00",
    "key": true
   },
   {
@@ -177,8 +177,8 @@
    "family": "web-summit",
    "label": "The team site's conductor",
    "commits": 37,
-   "first": "2026-11-05T18:59:32+00:00",
-   "last": "2026-11-10T09:14:00+00:00",
+   "first": "2026-11-05T23:58:39+00:00",
+   "last": "2026-11-10T10:13:12+00:00",
    "key": false
   },
   {
@@ -264,9 +264,9 @@
    "short": "accountant",
    "family": "PrompTugal",
    "label": "PrompTugal's accountant",
-   "commits": 25,
+   "commits": 26,
    "first": "2026-11-06T03:49:04+00:00",
-   "last": "2026-11-10T06:51:14+00:00",
+   "last": "2026-11-10T09:48:24+00:00",
    "key": true
   },
   {
@@ -380,17 +380,6 @@
    "key": false
   },
   {
-   "id": "curator@web-summit.vicky",
-   "person": "vicky",
-   "short": "curator",
-   "family": "web-summit",
-   "label": "The curator desk",
-   "commits": 10,
-   "first": "2026-11-05T12:37:22+00:00",
-   "last": "2026-11-06T07:47:39+00:00",
-   "key": false
-  },
-  {
    "id": "gamma-ray@web-summit.dinis",
    "person": "dinis",
    "short": "gamma-ray",
@@ -407,8 +396,8 @@
    "short": "journalist",
    "family": "web-summit",
    "label": "",
-   "commits": 9,
-   "first": "2026-11-05T19:45:53+00:00",
+   "commits": 8,
+   "first": "2026-11-05T20:18:24+00:00",
    "last": "2026-11-06T10:16:21+00:00",
    "key": false
   },
@@ -435,6 +424,17 @@
    "key": true
   },
   {
+   "id": "pt:silvio:jornal",
+   "person": "silvio",
+   "short": "jornal",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 5,
+   "first": "2026-11-10T01:48:34+00:00",
+   "last": "2026-11-10T10:10:03+00:00",
+   "key": true
+  },
+  {
    "id": "pt:angelo:dev.venues",
    "person": "angelo",
    "short": "dev.venues",
@@ -457,15 +457,15 @@
    "key": true
   },
   {
-   "id": "pt:silvio:jornal",
-   "person": "silvio",
-   "short": "jornal",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 4,
-   "first": "2026-11-10T01:48:34+00:00",
-   "last": "2026-11-10T08:10:43+00:00",
-   "key": true
+   "id": "curator@web-summit.vicky",
+   "person": "vicky",
+   "short": "curator",
+   "family": "web-summit",
+   "label": "The curator desk",
+   "commits": 5,
+   "first": "2026-11-05T19:46:18+00:00",
+   "last": "2026-11-06T07:47:39+00:00",
+   "key": false
   },
   {
    "id": "prompter@web-summit.indi",
@@ -520,17 +520,6 @@
    "commits": 2,
    "first": "2026-11-05T23:55:31+00:00",
    "last": "2026-11-06T00:25:10+00:00",
-   "key": false
-  },
-  {
-   "id": "designer@web-summit.vicky",
-   "person": "vicky",
-   "short": "designer",
-   "family": "web-summit",
-   "label": "",
-   "commits": 2,
-   "first": "2026-11-05T19:22:22+00:00",
-   "last": "2026-11-05T19:37:34+00:00",
    "key": false
   },
   {
@@ -597,7 +586,7 @@
   {
    "from": "conductor@web-summit.dinis",
    "to": "pt:dinis:conductor",
-   "n": 24
+   "n": 25
   },
   {
    "from": "pt:dinis:abp",
@@ -725,11 +714,6 @@
    "n": 8
   },
   {
-   "from": "journalist@web-summit.vicky",
-   "to": "newsroom@web-summit.dinis",
-   "n": 8
-  },
-  {
    "from": "pt:dinis:conductor",
    "to": "pt:dinis:conductor.b",
    "n": 7
@@ -747,6 +731,11 @@
   {
    "from": "pt:vicky:checker",
    "to": "pt:dinis:conductor",
+   "n": 7
+  },
+  {
+   "from": "journalist@web-summit.vicky",
+   "to": "newsroom@web-summit.dinis",
    "n": 7
   },
   {
@@ -790,9 +779,9 @@
    "n": 6
   },
   {
-   "from": "curator@web-summit.vicky",
-   "to": "newsroom@web-summit.dinis",
-   "n": 6
+   "from": "pt:silvio:jornal",
+   "to": "silvio",
+   "n": 5
   },
   {
    "from": "pt:angelo:writer",
@@ -833,11 +822,6 @@
    "from": "pt:dinis:synthetic",
    "to": "pt:dinis:dev",
    "n": 5
-  },
-  {
-   "from": "pt:silvio:jornal",
-   "to": "silvio",
-   "n": 4
   },
   {
    "from": "pt:dinis:conductor",
@@ -1135,6 +1119,11 @@
    "n": 2
   },
   {
+   "from": "curator@web-summit.vicky",
+   "to": "newsroom@web-summit.dinis",
+   "n": 2
+  },
+  {
    "from": "dev@web-summit.dinis",
    "to": "dinis",
    "n": 2
@@ -1142,16 +1131,6 @@
   {
    "from": "pt:dinis:ontologist",
    "to": "pt:dinis:dev",
-   "n": 2
-  },
-  {
-   "from": "conductor@web-summit.dinis",
-   "to": "newsroom@web-summit.dinis",
-   "n": 2
-  },
-  {
-   "from": "designer@web-summit.vicky",
-   "to": "vicky",
    "n": 2
   },
   {
@@ -1430,6 +1409,11 @@
    "n": 1
   },
   {
+   "from": "conductor@web-summit.dinis",
+   "to": "newsroom@web-summit.dinis",
+   "n": 1
+  },
+  {
    "from": "dev@web-summit.dinis",
    "to": "newsroom@web-summit.dinis",
    "n": 1
@@ -1442,16 +1426,6 @@
   {
    "from": "journalist-ai@web-summit.vicky",
    "to": "newsroom@web-summit.dinis",
-   "n": 1
-  },
-  {
-   "from": "conductor@web-summit.dinis",
-   "to": "newsroom-designer@web-summit.dinis",
-   "n": 1
-  },
-  {
-   "from": "conductor@web-summit.dinis",
-   "to": "conductor@web-summit.vicky",
    "n": 1
   }
  ],
@@ -2369,6 +2343,7 @@
    "crm@web-summit",
    "designer-2@PrompTugal",
    "designer@PrompTugal",
+   "designer@web-summit",
    "dev.data@PrompTugal",
    "dev.graphs@PrompTugal",
    "dev.pages@PrompTugal",
