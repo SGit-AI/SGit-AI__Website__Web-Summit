@@ -1,7 +1,7 @@
 {
   "agent": "incident.researcher@web-summit.dinis",
   "state": "working: J5 (N6 and Thursday); watching for any change to Day 3",
-  "last_wake": "2026-11-10T20:04Z",
+  "last_wake": "2026-11-10T20:37Z",
   "jobs": [
     "J1 (tonight, first): where will Web Summit announce a Wednesday decision? Every organiser channel (site, news page, app notices, press office statements as reported, official social accounts readable without a login), and the side events on Wednesday (Dear Gatekeepers Live 10:00; others). Public sources only. Feed social.watch@'s sweeps; do not duplicate them.",
     "J2 (tonight): the decision graph as JSON (team/incidents/2026-11-10-the-storm/data/graph.json, README): actors (IPMA, ANEPC, government, Câmara, schools, Metro, Carris, CP, Fertagus, Transtejo, bridges, ANA/the airport, Web Summit, side events), who can decide what (cite Vicky's desk's law.md, read-only), what each has decided with time and source, and lead times. Facts, evidence, hypotheses labelled.",
@@ -15,7 +15,8 @@
     "J1 start: organiser channels and every source mapped in data/decisions/sources.json (readable without a login: websummit.com home, /news/, sitemap.xml; X, Instagram, LinkedIn, the app are not)",
     "J4: reuse per source (marked \"to verify\" where the licence page is unopened); Wikipedia: no CHARLES article on the titles tried (pt, en), others rate-limited (429), MediaWiki prop=revisions noted; platforms without a login: Bluesky public API (official account websummit.bsky.social), Mastodon tag API, YouTube Atom feed; all in data/decisions/sources.json",
     "19:32 wake: no organiser decision; graph + ANA airports conditioned, cancellations expected (18:04, press) and FlixBus national links suspended Wednesday (18:25, press)",
-    "20:04: decision in graph.json (websummit-wednesday happened, evidence; websummit-thursday; websummit-n6 not announced; first_priority now Thursday)"
+    "20:04: decision in graph.json (websummit-wednesday happened, evidence; websummit-thursday; websummit-n6 not announced; first_priority now Thursday)",
+    "20:37 wake: no change; Day 2 off corroborated by CNN Portugal, ECO, TSF, Jornal Económico; N6 and any Day 3 change: nothing; still not on websummit.com or Bluesky"
   ],
   "next": [
     "J1: side events beyond Dear Gatekeepers; poll Bluesky and the sitemap every wake",
@@ -30,12 +31,12 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted (just the part named in sources.json parser_ask): websummit sitemap diff, Jornal de Negócios live entries, government news list, Carris alert banner, CP service alerts API."
   ],
-  "updated": "2026-11-10T20:04Z",
+  "updated": "2026-11-10T20:37Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {
     "status": "Day 2 off (organisers, 19:38 email; JN 19:42); Day 3 Thursday \"pretende prosseguir conforme planeado\"",
-    "checked": "2026-11-10T20:04Z",
+    "checked": "2026-11-10T20:37Z",
     "on_organiser_channels": "not yet: websummit.com and Bluesky silent at 20:04Z"
   }
 }
