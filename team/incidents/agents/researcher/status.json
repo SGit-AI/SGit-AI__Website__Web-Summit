@@ -32,9 +32,9 @@
     "Dinis: Web Summit's X, Instagram and LinkedIn need a login and the attendee app needs a ticket; if the organisers announce there first, a person on the team will see it before us.",
     "Dinis: hosts unreachable from this session (connection failed): mai.gov.pt, lusoponte.pt, prociv.gov.pt/pt/avisos-a-populacao/ (intermittent); 403: rede-expressos.pt; bot check: aeroportolisboa.pt.",
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
-    "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog parser_ask; the sitemap diff is withdrawn, it misses blog posts); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts."
+    "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts."
   ],
-  "updated": "2026-11-10T22:05Z",
+  "updated": "2026-11-10T22:09Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {

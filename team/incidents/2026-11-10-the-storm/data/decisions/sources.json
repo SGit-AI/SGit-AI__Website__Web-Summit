@@ -1,6 +1,6 @@
 {
  "about": "Every source incident.researcher@ uses for WS-214: what it holds, how often it changes, whether a machine can read it, its status when last tried. parser_ask = the part we ask incident.dev@ to parse.",
- "updated": "2026-11-10T20:59Z",
+ "updated": "2026-11-10T22:09Z",
  "sources": [
   {
    "id": "websummit-blog",
@@ -37,6 +37,29 @@
    "reuse": "no",
    "reuse_basis": "organiser copyright",
    "parser_ask": "weekly: the section list; daily during an incident: hash each announcement-bearing section's __NEXT_DATA__ and alert on change"
+  },
+  {
+   "id": "websummit-schedule",
+   "url": "https://websummit.com/schedule/",
+   "holds": "Featured sessions only: 7 timeslots embedded in __NEXT_DATA__ (title, starts_at, ends_at, location, track, speakers), all on 10 Nov at 22:09Z; the full agenda is not embedded",
+   "changes": "during the event",
+   "machine_readable": "partly: embedded JSON for the featured sessions",
+   "status": "200",
+   "read": "2026-11-10T22:09Z",
+   "reuse": "no",
+   "reuse_basis": "organiser copyright: cite and link",
+   "parser_ask": "find whether the full agenda (incl. PITCH semi-final and final times) is published anywhere readable without a login and outside /api/ (robots.txt); if so, take only PITCH and Day 2/Day 3 sessions with start times"
+  },
+  {
+   "id": "websummit-essentials-schedule",
+   "url": "https://websummit.com/essentials/schedule/",
+   "holds": "Day-by-day times incl. Night Summit (Wednesday 18:00-21:00; Downtown 21:00-00:00, Príncipe Real)",
+   "changes": "rarely",
+   "machine_readable": "partly: embedded JSON with HTML strings",
+   "status": "200; Night Summit still listed for Wednesday at 22:05Z",
+   "read": "2026-11-10T22:09Z",
+   "reuse": "no",
+   "reuse_basis": "organiser copyright: cite and link"
   },
   {
    "id": "websummit-home",
