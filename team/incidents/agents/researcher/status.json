@@ -1,7 +1,7 @@
 {
   "agent": "incident.researcher@web-summit.dinis",
   "state": "blocked on the move: cannot reach PrompTugal/PrompTugal__News__Storm-Charles from this session",
-  "last_wake": "2026-11-10T21:33Z",
+  "last_wake": "2026-11-10T22:05Z",
   "jobs": [
     "J1 (tonight, first): where will Web Summit announce a Wednesday decision? Every organiser channel (site, news page, app notices, press office statements as reported, official social accounts readable without a login), and the side events on Wednesday (Dear Gatekeepers Live 10:00; others). Public sources only. Feed social.watch@'s sweeps; do not duplicate them.",
     "J2 (tonight): the decision graph as JSON (team/incidents/2026-11-10-the-storm/data/graph.json, README): actors (IPMA, ANEPC, government, Câmara, schools, Metro, Carris, CP, Fertagus, Transtejo, bridges, ANA/the airport, Web Summit, side events), who can decide what (cite Vicky's desk's law.md, read-only), what each has decided with time and source, and lead times. Facts, evidence, hypotheses labelled.",
@@ -18,13 +18,13 @@
     "20:04: decision in graph.json (websummit-wednesday happened, evidence; websummit-thursday; websummit-n6 not announced; first_priority now Thursday)",
     "20:37 wake: no change; Day 2 off corroborated by CNN Portugal, ECO, TSF, Jornal Económico; N6 and any Day 3 change: nothing; still not on websummit.com or Bluesky",
     "20:59: websummit-wednesday and websummit-thursday moved to fact (organisers' page 19:09, found by incident.conductor@); sources.json: the blog list is the primary organiser channel, every site section mapped; the miss recorded in graph.json lessons",
-    "21:33 wake: no change to Day 3; the decision post's text unchanged (listing modified 20:06:54, JSON-LD 19:25:44); N6 still unannounced; CP admits rail constraints Wednesday (press)"
+    "21:33 wake: no change to Day 3; the decision post's text unchanged (listing modified 20:06:54, JSON-LD 19:25:44); N6 still unannounced; CP admits rail constraints Wednesday (press)",
+    "22:05 (conductor's 22:02 list): PITCH: no move announced, and a conflict on its slot (Wed 17:00 per the conductor vs Thursday per Tech Times) recorded in pitch-semifinal; Night Summit still listed for Wednesday with no notice; Thursday transport: no operator notice yet; ferries reassessed from 12:00 Wed and Metro night shelter (press)"
   ],
   "next": [
-    "J1: side events beyond Dear Gatekeepers; poll Bluesky and the sitemap every wake",
-    "J2: cite law.md for who can decide what; lead times per edge",
-    "J3: the team's own graph",
-    "J4: retry Wikipedia slowly; open IPMA's and the government's reuse terms"
+    "Each wake: blog list, Bluesky, schedule page; PITCH and Night Summit",
+    "Thursday transport from 06:00 Wed onwards as operators post",
+    "Dear Gatekeepers page is a JavaScript app: parser ask to incident.dev@ if it matters"
   ],
   "asks": [
     "Dinis: the incident moved to PrompTugal/PrompTugal__News__Storm-Charles (incident.conductor@, 21:15). Attaching it to this session with push access (add_repo) was refused by this session's permission check at 21:19Z, as add_repo for PrompTugal__News__Website was earlier. To let me work there: allow add_repo for that repository in this session (a permission rule for mcp__claude-code-remote__add_repo), or start a new researcher session with the repository attached. Until then: graph.json's 1 h 16 min fix is in this repo (9ef309f8) only, and my hourly wake stays pointed here (not changed to a repo I cannot reach).",
@@ -34,7 +34,7 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog parser_ask; the sitemap diff is withdrawn, it misses blog posts); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts."
   ],
-  "updated": "2026-11-10T21:33Z",
+  "updated": "2026-11-10T22:05Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {

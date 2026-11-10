@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-10T21:33Z",
+ "updated": "2026-11-10T22:05Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -240,6 +240,26 @@
    "label": "evidence",
    "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
    "read": "2026-11-10T19:32Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "pitch",
+   "name": "PITCH (Web Summit's startup competition)",
+   "kind": "organiser",
+   "role": "Web Summit decides when the semi-finals and final run.",
+   "label": "fact",
+   "source": "https://websummit.com/startups/pitch/",
+   "read": "2026-11-10T22:05Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "night-summit",
+   "name": "Night Summit (Web Summit's own evening events)",
+   "kind": "organiser",
+   "role": "Web Summit runs it; Wednesday 18:00-21:00 and Downtown 21:00-00:00 at Príncipe Real, per its essentials page.",
+   "label": "fact",
+   "source": "https://websummit.com/essentials/schedule/",
+   "read": "2026-11-10T22:05Z",
    "read_by": "incident.researcher@web-summit.dinis"
   }
  ],
@@ -764,6 +784,104 @@
     "Tuesday's roof leak at FIL (17:07) after one rainy day; Wednesday is red for rain and wind.",
     "Trains and flights may take time to recover on Thursday morning."
    ]
+  },
+  {
+   "id": "pitch-semifinal",
+   "by": "pitch",
+   "to": [],
+   "decision": "Where and when the PITCH semi-final runs after Wednesday's closure",
+   "at": "",
+   "status": "not_announced",
+   "follows": [
+    "websummit-wednesday"
+   ],
+   "label": "fact",
+   "source": "https://websummit.com/startups/pitch/",
+   "read": "2026-11-10T22:05Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Nothing on /startups/pitch/ (no schedule there at all), /startups/, /schedule/, the blog list or Bluesky at 22:05Z. Conflict on the original slot: incident.conductor@ has it on Wednesday 17:00 (source not given to us); Tech Times' preview (9 Nov) puts the semi-finals and final on Thursday 12 Nov. If Thursday, the closure may not move it. Where a move would appear: the blog list first (as on 10 Nov), then the schedule page and the app.",
+   "conflict": [
+    {
+     "claim": "semi-final Wednesday 17:00",
+     "by": "incident.conductor@web-summit.dinis"
+    },
+    {
+     "claim": "semi-finals and final on Thursday",
+     "source": "https://www.techtimes.com/articles/330276/20261109/web-summit-2026-opens-tonight-manus-ai-blocked-meta-beijing-takes-lisbon-stage.htm",
+     "label": "evidence"
+    }
+   ]
+  },
+  {
+   "id": "night-summit-wednesday",
+   "by": "night-summit",
+   "to": [],
+   "decision": "Night Summit on Wednesday (18:00-21:00; Downtown 21:00-00:00, Príncipe Real)",
+   "at": "",
+   "status": "not_announced",
+   "follows": [
+    "websummit-wednesday",
+    "gov-alert"
+   ],
+   "label": "fact",
+   "source": "https://websummit.com/essentials/schedule/",
+   "read": "2026-11-10T22:05Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Still listed for Wednesday on the essentials page at 22:05Z, with no notice. The organisers' 19:09 page says only that Day 2 will not take place. Wind is red until 21:00 Wednesday."
+  },
+  {
+   "id": "ttsl-wednesday",
+   "by": "ferries",
+   "to": [],
+   "decision": "Ferries to run on Wednesday morning, reassessed from 12:00",
+   "at": "2026-11-10",
+   "status": "happened",
+   "follows": [
+    "ipma-red-wind"
+   ],
+   "label": "evidence",
+   "source": "https://www.tsf.pt/sociedade/artigo/depressao-charles-condiciona-transportes-de-norte-a-sul-do-pais-saiba-com-o-que-contar/18146854",
+   "read": "2026-11-10T22:05Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "From a search summary of press reports; the article itself not yet opened."
+  },
+  {
+   "id": "metro-shelter",
+   "by": "metro",
+   "to": [],
+   "decision": "Some stations open overnight 10-11 and 11-12 Nov to shelter homeless people (contingency plan)",
+   "at": "2026-11-10",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://echoboomer.pt/metro-de-lisboa-abre-estacoes-proteger-sem-abrigo/",
+   "read": "2026-11-10T22:05Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "From a search summary; not opened."
+  },
+  {
+   "id": "transport-thursday",
+   "by": "metro",
+   "to": [],
+   "decision": "Thursday 12 Nov transport after the storm (Metro, Carris, CP, ferries, bridges)",
+   "at": "",
+   "status": "not_announced",
+   "follows": [
+    "ipma-red-wind"
+   ],
+   "label": "fact",
+   "source": "https://www.metrolisboa.pt/",
+   "read": "2026-11-10T22:05Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "also_by": [
+    "carris",
+    "cp",
+    "ferries",
+    "lusoponte"
+   ],
+   "note": "No operator notice for Thursday found at 22:05Z: metrolisboa.pt and carris.pt (no Thursday notice in HTML), cp.pt (JavaScript app), ttsl.pt, lusoponte.pt (unreachable); a web search found only Wednesday notices. Indirect: tax offices and customs reopen Thursday (Jornal de Negócios, via search)."
   }
  ],
  "lessons": [
