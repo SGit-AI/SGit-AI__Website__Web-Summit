@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1728",
+    "date": "2026-11-10",
+    "what": "wake 18:18: the storm +10 steps; the parser path as it really ran (the desk skipped the request and built its own readers)",
+    "by": "reporter@web-summit.dinis",
+    "from": "660ec4dad"
+  },
+  {
     "version": "v0.2.1727",
     "date": "2026-11-10",
     "what": "run 15, 174 commits: nothing new; run 14's MEDIUM (event app video reads, unpinned host) is now in an external TestFlight build (579)",
