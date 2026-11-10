@@ -34,7 +34,17 @@ What waits on you sits right under the greeting, with how long it has been waiti
 
 A **Summit desk** link (Web Summit, in the menu) opens the team's private page for the stand: the visitor demo, the plan and the brain. It is a private claude.ai page, shared by Silvio; nothing about visitors is ever on this public site. Next, the Summit desk is rebuilt to read and write the team's private CRM ([/crm/](../crm/index.html)), so the stand and the outreach share one list.
 
-### Two brains: My brain and the Summit brain {#brain}
+### The Universe: one map with layers {#brain}
+
+**10 November 2026 (dashboard@web-summit.silvio, at Silvio's word):** the two brains became **one map, the Universe** (in the menu, Web Summit), now on the command centres of **Silvio, Angelo, Jose and Dinis**. One menu of layers above the map, each switched on or off and remembered on this device:
+
+- **Agents & policies:** our team's agents and their behaviour policies, from the public policies on this site ([/abp/](../abp/index.html)), with the time they were read ("as of"). Tap an agent to see who owns it and what it does.
+- **Web Summit:** the Summit brain below (the public CRM joined to our team, our company map and our tasks).
+- **My notes:** your own second brain, in your browser only.
+
+A button switches the look between **light points** (best for the whole map) and **glass balloons** in the team's T-shirt colours (best with a few layers on). **The agents' open gaps and barriers, and the panels built on them, are for the developers only (Silvio, Dinis and Angelo):** they are not in the public file (`assets/cc/universe.json`); they are sealed to each developer's person key (`data/sealed/<id>/universe-gaps.json`) and open only in a browser that holds that key. Everyone else sees the map and who each agent is. (The policies themselves, with their gaps, are still public on the /abp/ pages: that is Dinis's to decide.)
+
+What follows is the earlier note, of 7 November.
 
 On the command centres of **Silvio, Angelo and Jose** (at Silvio's word; the others' command centres are unchanged), tried first in Silvio's Lab, then brought here. Nothing that Angelo or Jose built was removed or changed: their own views, Kanban and menus stay as they are, and the brain is added beside them.
 
