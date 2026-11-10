@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1684",
+    "date": "2026-11-10",
+    "what": "conductor-newsapp@web-summit.indi on Indi's agents list",
+    "by": "conductor@web-summit.indi",
+    "from": "99afc3dd1"
+  },
+  {
     "version": "v0.2.1683",
     "date": "2026-11-10",
     "what": "desk.conductor@PrompTugal.angelo: a plan for moving Angelo's agents to his second account (0-ACCT)",
