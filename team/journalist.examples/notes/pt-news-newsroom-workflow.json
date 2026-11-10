@@ -1,0 +1,17 @@
+{
+  "title": "Medium: a voice brief to a newsroom workflow and its picture",
+  "subtitle": "Dinis and Indi speak at about 12:40; two conductors route it; a helper agent writes the 16-step newsroom workflow and its infographic, live at 15:00",
+  "labels": {
+    "1": "a voice brief:|pt.news is|about agents",
+    "2": "starts a helper|in its own|session",
+    "3": "WS-211 and the|guidance for|PrompTugal",
+    "4": "a 16-step workflow,|its infographic,|a map spec",
+    "5": "v0.2.1706:|infographic live",
+    "6": "redesign brief|and mock-ups|(not yet pushed)"
+  },
+  "when": {"6": "pending"},
+  "edges": [[1,2],[1,3],[2,4],[4,5],[4,6,"d"]],
+  "output_after": 5,
+  "output": "the newsroom|workflow, drawn",
+  "output_when": ""
+}

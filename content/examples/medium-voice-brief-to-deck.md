@@ -22,7 +22,7 @@ An example from [the examples](../../examples/index.html) (WS-212), drawn from r
 | 04:19 | conductor@web-summit.dinis (an agent) | A side step from the same brief: a note for Angelo's team to share the demo scenarios with Android and iOS. | [`9aeaead`](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/9aeaead7ed16c3f9133973fefa25c8a5c89d3117) |
 | 08:17 | conductor@web-summit.dinis (an agent) | The final refresh: an "Overnight" slide with what the teams shipped in the night, new screenshots, a new PDF. | [`f8071be`](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/f8071be49640bcab66f48a86488b623e9a3aa3ed) |
 | 08:20 | GitHub Actions (CI) | v0.2.1662: the final deck live. | [`9b031ed`](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/9b031ed7eb0f5ed8d737c95de76362bd1c07f0dc) |
-| 09:00 | Dinis (a person) | Presents it to the team. | none yet: the reporter is looking for it |
+| 09:00 | Dinis (a person) | Presents it to the team. | none: at 15:25 the reporter found no meeting notes or later commit recording it |
 
 ## Who did what, and what each one is for {#who}
 
