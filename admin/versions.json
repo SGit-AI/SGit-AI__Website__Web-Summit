@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1672",
+    "date": "2026-11-10",
+    "what": "runner.writer@PrompTugal.angelo: STATE.md brought up to date: four pieces published, two drafts wait on Angelo",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "b6e6d6493"
+  },
+  {
     "version": "v0.2.1671",
     "date": "2026-11-10",
     "what": "stand-demo v4.1: the mandate is at most 30 words, no file list",
