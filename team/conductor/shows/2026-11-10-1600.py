@@ -2,12 +2,18 @@
 # Built by conductor@web-summit.dinis at Dinis's word (about 14:57 UTC). The investor is not named here (the comms protocol): their record is in the private CRM.
 # Claims for RiskMandate stay within riskmandate.ai and this site.
 S.clear()
-S.append(('cover', '''<div class="cover"><p class="kick">RiskMandate · Web Summit Lisbon 2026</p><h1>Give agents access. Not free rein.</h1><p class="big">A team of more than a hundred AI agents, run for nine days under Agent Behaviour Policies: what they delivered, what the policies caught, and how RiskMandate makes it possible.</p><p class="cap">Every number and scenario here is on the public record (git, the sites, the ABP pages), 10 November 2026. Links on the last slide.</p></div>'''))
+S.append(('cover', '''<div class="cover"><p class="kick">RiskMandate · Web Summit Lisbon 2026</p><h1>Give agents access. Not free rein.</h1><p class="big">For security teams: know exactly what every agent can do, what it was allowed to do, and what really stops it. Shown on our own team of more than a hundred agents.</p><p class="cap">Every number and scenario here is on the public record (git, the sites, the ABP pages), 10 November 2026. Links on the last slide.</p></div>'''))
 S.append(('The problem', '<h2>Agents now have reach. Who decided what they may do with it?</h2>' + items([
     '<b>Agents sit in Gmail, HR, payroll, the CRM and meeting apps,</b> with the same access their users have',
     '<b>Reach:</b> what an agent can actually do. <b>Mandate:</b> what the business authorised it to do. <b>The gap</b> between the two is the risk',
     '<b>Today the gap is invisible:</b> nobody can list each agent, its reach, its mandate and what really stops it',
     '<b>RiskMandate:</b> know their reach, define their mandate, control the gap (riskmandate.ai)'])))
+S.append(('For the security team', '<h2>A security must-have, not a compliance nice-to-have</h2>' + items([
+    '<b>Built for the security team,</b> the people who answer when an agent does something it should not',
+    '<b>Their questions, answered per agent:</b> what can it reach? what was it allowed to do? what actually stops it? what did it try?',
+    '<b>Evidence, not paperwork:</b> each barrier is labelled a rule, a review or a technical control, with the commit or log that shows it',
+    '<b>Enforced where security already works:</b> the gateway, proxy or IAM they run, or SHarness on the machine the agent runs on',
+    '<b>Compliance follows from it:</b> the same record answers the auditor and the insurer, as a by-product, not the product']) ))
 S.append(('RiskMandate', f'<h2>An Agent Behaviour Policy for every agent, enforced by the controls you already run</h2><div class="two">{shot("riskmandate-controls.jpg", "riskmandate.ai: one ABP per agent; your gateway allows, redacts, holds or blocks")}<div>' + items([
     '<b>The ABP</b> records each agent\'s reach, mandate, gap and the barrier that really stops it',
     '<b>Enforced</b> by your gateway, proxy or IAM, or SHarness, the open-source secure harness',
@@ -42,11 +48,12 @@ S.append(('How we work', f'<h2>How the agentic team delivers: a voice brief in, 
     '<b>Only the operator instructs;</b> agents draft, people send; humans can stop or restart any agent',
     '<b>Since 2 November:</b> two sites (4,716 and 3,070 commits), a new standard and its site, apps on TestFlight, interviews published from the summit floor',
     '<b>The big stop:</b> every team paused in minutes, realigned and restarted, a live test of control'])+'</div></div>'))
-S.append(('Why it matters', '<h2>Why this matters for security</h2>' + items([
-    '<b>Every company is about to run teams of agents.</b> We already do, at speed, and we can show where the risk sits and what controls it',
+S.append(('Why it matters', '<h2>Why security teams need this now</h2>' + items([
+    '<b>Every company is about to run teams of agents</b> with real reach. Security teams will be asked what each one can do, and today they cannot answer',
+    '<b>We already run such a team,</b> at speed, and show where the risk sits and what controls it',
     '<b>Our own team is the case study:</b> the scenarios, the failures and the fixes are public, each with its commit',
     '<b>An open approach:</b> the ABP model and SHarness are public; enforcement uses the controls customers already have',
-    '<b>Next:</b> from explorer to strict policies with hooks; the same records for customers\' agents; GAMMA-Ray scans of the agent products they buy'])))
+    '<b>Next:</b> design partnerships with security teams; from explorer to strict policies with hooks; GAMMA-Ray scans of the agent products they buy'])))
 S.append(('Live links', '<h2>See it live</h2>' + items([
     '<b>RiskMandate:</b> riskmandate.ai (the film, the six examples, "try it in five minutes")',
     '<b>Our ABPs:</b> web-summit.sgit.ai/abp/ · ABP in action: web-summit.sgit.ai/abp/in-action/',
