@@ -1383,6 +1383,21 @@
         "fingerprint": "sha256:4552874a3581ed53",
         "signing_fingerprint": "sha256:9cc65cb558c12cd6"
       }
+    },
+    {
+      "id": "gamma-ray-silvio",
+      "label": "gamma-ray@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's GAMMA-Ray agent (gamma-ray@web-summit.silvio): applies the draft GAMMA-Ray standard (gamma-ray.sgit.ai) to Silvio's side of the work, starting with Public scans of his own agents (WS-206). Never sends email or contacts anyone. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session, the tool's sha256 checked against the pin in admin/tools/seal.mjs) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-10",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA0OAkzgUdPGNDroKPe+aI\nYsEYpYo0A/7n+FiD6AaPCMwKX6mRaVV4T9AyEovG/Js+IfY4VWz91nJFSgsYVURQ\nbDvPAKyr5b1qAKKQeZkUl4W9yfHmNBrd+cs9Bw/zSgjuSu8pbO7smzX/3jXFRL7H\nx4zDyTBnsvl98qfn2T+wHdSXuB7eNSAA+lPPXke+9oMIbPQbmaxyDGg5NXJ2Ucp6\n9bUUZjDWD5aywPNopDD6nA6y3bwqT2/ReVE+ISUJd0Fssy2DflZ8Nc+zJ8SGKT6W\nMFqh3FL7RuDriLdJvzrw+f7Af6Y7+f1re7fFdqo1mONBJh9yxJKtz7js2VCuI94x\nmTnCDD2J4TbuOOYotDlV3ObJlNDI/AHAU+rrqzaT+kj3V0JDpMXUpYezCizUKan6\n+TZIjKARB89y6oedFDwEdivKbFCtEYA7wdBlZ8BE8zrMq8Seawbkp8gtorY8Wv6Z\nicw0olyCxHI0byuhi5eDr7TCjQyivrbOsowSFK2mpDTqXyBDjvK1rB+z/aBgFPMn\nDK9cyeAtP1Sxoyy61gbTMKV+4PS4bzZmLSUMrtfqA9Zy38o6iPH1qsnM92hT0sVY\nKDg+0wNaYVNUEA5TEZWS7yIrQJyktaS90VUn5QKvP0TvyMkEDst1V9dqgGlKB2to\nUAuXWeXQHov7OKzfdrE29zUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEDHvmJs/zK98jmsif/14hPfZPDmpV\nc6fRZGqeyxrvyvy4exVLMXxwYXBYxwME0VhvRqMbiAigjvoKaaNT651rcQ==\n-----END PUBLIC KEY-----\n",
+        "label": "gamma-ray@web-summit.silvio",
+        "fingerprint": "sha256:e768ad3ed46101f9",
+        "signing_fingerprint": "sha256:803b8881f3d47322"
+      }
     }
   ]
 }
