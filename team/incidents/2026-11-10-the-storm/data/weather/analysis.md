@@ -60,3 +60,17 @@ Reasoning:
 - the TAF that covers Thursday 00:00 to 06:00.
 
 Each of these goes at the top of `changes.json` at the next wake.
+
+## 4. Update, 21:25 UTC: IPMA's hourly model for Lisbon changed
+
+> **Label: ANALYSIS**, from `forecast.json` → `hourly` and `hourly_runs` as read at 21:18 UTC.
+
+**Fact:** between the 20:22 and 21:18 reads, IPMA's hourly forecast for Lisbon changed its values, but its timestamp still says 07:55 Tuesday. The refresh now compares the values as well as the timestamp, and the replaced run is kept in `hourly_runs`.
+- **Wednesday's strongest mean wind:** **23 km/h at 20:00** from the north-west, down from **49 km/h at 18:00**.
+- **The swing of the wind:** to north at 18:00 and north-west at 19:00, an hour or two later than the 17:00 swing in the old run.
+
+**Analysis:**
+- **The timing moves later.** The peak most likely falls **around the swing, about 17:00 to 20:00**, not 15:00 to 19:00. The worst window stays **12:00 to 18:00** (both reds) and the end stays **21:00** (the red wind).
+- **A weaker mean wind does not mean a weaker storm.** A much weaker mean wind in Lisbon fits the centre passing close to the city: winds are lighter near the centre and strongest on its southern edge. Gusts in showers and thunderstorms are not in this mean.
+- **Trust the warnings first.** IPMA's red warnings, made by forecasters with all of IPMA's models, are unchanged and outrank this one model's output for one point. If IPMA lowers or shortens a red warning, that will be the real signal, and it will show at the top of `changes.json`.
+- **Confidence on the peak hour stays low.** The track is the uncertainty, as IPMA has said.

@@ -276,12 +276,15 @@ def forecast():
                  'rain_prob_pct': num(x.get('probabilidadePrecipita')), 'rain_intensity_class': x.get('idIntensidadePrecipita'),
                  'temp_c': num(x.get('tMed')), 'sea_total_m': num(x.get('marTotal'))} for x in hh if x.get('idPeriodo') == 1]
         upd = hh[0].get('dataUpdate') if hh else None
-        if upd and upd != (prev.get('hourly') or {}).get('updated_local'):
-            changes.append(f'IPMA hourly forecast updated {upd}')
+        # IPMA can change the values without changing dataUpdate (seen 10 Nov, 20:22-21:18): compare the values too
+        key = lambda rs: json.dumps([(r['time_utc'], r['wind_mean_kmh'], r['wind_dir']) for r in rs if r['time_utc'] >= '2026-11-11'])
+        old = prev.get('hourly') or {}
+        if old and (upd != old.get('updated_local') or key(rows) != key(old.get('rows', []))):
+            changes.append(f'IPMA hourly forecast changed (dataUpdate {upd}' + (', unchanged stamp' if upd == old.get('updated_local') else '') + ')')
             runs = prev.get('hourly_runs', [])
-            if prev.get('hourly'):
-                runs.append({'updated_local': prev['hourly']['updated_local'], 'source': U['hourly'], 'read_utc': prev['hourly']['read_utc'],
-                             'wed_peak': prev['hourly'].get('wed_peak')})
+            runs.append({'updated_local': old.get('updated_local'), 'source': U['hourly'], 'read_utc': old.get('read_utc'),
+                         'replaced_at_or_before_utc': NOW, 'wed_peak': old.get('wed_peak'),
+                         'wed_rows': [r for r in old.get('rows', []) if r['time_utc'].startswith('2026-11-11')]})
             out['hourly_runs'] = runs
         wed = [r for r in rows if r['time_utc'].startswith('2026-11-11') and r['wind_mean_kmh'] is not None]
         pk = max(wed, key=lambda r: r['wind_mean_kmh'], default=None)

@@ -21,9 +21,10 @@
   ],
   "notes": [
     "the session reported regenerating its key after private-key fragments were echoed in its own output; check the published key is the new one and nothing private was committed (security.repos@ may verify)",
-    "incident.meteorologist@: the IPMA warnings feed carries no issue time; level-change times are bracketed by reads or taken from press (labelled). One README covers all files in data/weather/ (the brief asked for a README)."
+    "incident.meteorologist@: the IPMA warnings feed carries no issue time; level-change times are bracketed by reads or taken from press (labelled). One README covers all files in data/weather/ (the brief asked for a README).",
+    "21:25: IPMA's hourly aggregate can change values without changing dataUpdate; refresh.py now compares values (hourly_runs keeps the replaced run)."
   ],
-  "updated": "2026-11-10T21:20:00Z",
+  "updated": "2026-11-10T21:26:00Z",
   "by": "incident.meteorologist@web-summit.dinis",
   "key": {
     "fingerprint": "sha256:ecbf013bbf6722e7",
