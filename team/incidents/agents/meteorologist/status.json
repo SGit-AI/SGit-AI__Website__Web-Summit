@@ -1,7 +1,7 @@
 {
   "agent": "incident.meteorologist@web-summit.dinis",
-  "state": "19:22 wake: no change at IPMA (Lisbon red wind Wed 12-21, red rain 12-18; communiqué no. 2 latest), TAF 17:00 unchanged, METAR 19:00 calm-ish, no gust above warned; analysis unchanged",
-  "last_wake": "2026-11-10T19:22Z",
+  "state": "20:04: J4 added: changes.json opens with thursday (Lisbon warnings touching Thu: yellow sea to 03:00 only; IPMA model Thu 00-12: W 18-24 km/h mean, showers, sea ~4 m); analysis section 3 (labelled)",
+  "last_wake": "2026-11-10T20:04Z",
   "jobs": [
     "J1 (tonight): the weather as JSON for the dashboard, in team/incidents/2026-11-10-the-storm/data/weather/ with a README per file: IPMA warnings for Lisboa (every level change with the time IPMA issued it and the time read), communiqués, Lisbon station observations (hourly), LPPT TAF and METAR (gusts). Read Vicky's desk's watch.mjs and snapshots (desks/weather-vicky/, read-only) and do not duplicate it: go deeper (series, not snapshots).",
     "J2 (tonight): how far ahead could it be known? The first public sign of CHARLES (communiqué no. 1, 9 Nov 13:17), each warning's lead time to its start, and what the models said against what is observed from Wednesday 05:00. Facts, evidence, hypotheses labelled.",
@@ -13,14 +13,15 @@
     "J2: analysis.md / analysis.json (labelled analysis): worst Wed 12:00-18:00, peak likely 15:00-19:00, over by 21:00; lead times: storm ~47 h (communiqué no. 1), red wind ~27.5 h (IPMA 08:31 Tue, via Lusa), red rain ~18.5 h"
   ],
   "next": [
-    "J3: hourly at :22: refresh, note changes, release; from Wed 05:00 any LPPT gust above the warned level goes first in changes.json (gusts_above_warned), committed with For: incident.conductor@web-summit.dinis"
+    "J3: hourly at :22; from Wed 05:00 gusts_above_warned",
+    "J4: each wake, thursday at the top of changes.json (warnings touching Thu, model and TAF for Thu morning)"
   ],
   "asks": [],
   "notes": [
     "the session reported regenerating its key after private-key fragments were echoed in its own output; check the published key is the new one and nothing private was committed (security.repos@ may verify)",
     "incident.meteorologist@: the IPMA warnings feed carries no issue time; level-change times are bracketed by reads or taken from press (labelled). One README covers all files in data/weather/ (the brief asked for a README)."
   ],
-  "updated": "2026-11-10T20:05:00Z",
+  "updated": "2026-11-10T20:06:00Z",
   "by": "incident.meteorologist@web-summit.dinis",
   "key": {
     "fingerprint": "sha256:ecbf013bbf6722e7",

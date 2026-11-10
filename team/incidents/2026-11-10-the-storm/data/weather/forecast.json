@@ -2,8 +2,8 @@
  "about": "IPMA's own forecast for Lisbon (globalIdLocal 1110600): the 5-day daily forecast and the hourly model forecast (mean wind, no gusts). IPMA's wind classes: 1 weak, 2 moderate, 3 strong, 4 very strong.",
  "daily": {
   "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-  "read_utc": "2026-11-10T19:22:35Z",
-  "updated_local": "2026-11-10T18:31:02",
+  "read_utc": "2026-11-10T20:04:40Z",
+  "updated_local": "2026-11-10T19:31:03",
   "days": [
    {
     "precipitaProb": "100.0",
@@ -70,7 +70,7 @@
  "hourly_runs": [],
  "hourly": {
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-10T19:22:35Z",
+  "read_utc": "2026-11-10T20:04:40Z",
   "updated_local": "2026-11-10T07:55:56",
   "wed_peak": {
    "time_utc": "2026-11-11T18:00Z",

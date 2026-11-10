@@ -49,3 +49,14 @@ Reasoning:
 - **The red rain is the late one** (about 18.5 hours ahead): rain warnings tighten as the models agree on the track, which is what IPMA's "elevada incerteza" warns of. More upgrades on the night before are possible: communiqué no. 2 says so.
 - **What we cannot yet say:** the exact minute of each change at IPMA (its open data carries no issue time; this folder now records every change it sees, hourly), and what the global models showed before Monday (not read; a hypothesis for the historian, not a fact).
 - **For the team (analysis):** a decision about Wednesday was well founded by **Tuesday 08:31** (red wind), and defensible from **Monday afternoon** (communiqué no. 1). Anything outdoor or involving travel between 12:00 and 21:00 Wednesday is inside the red; the morning is wet and worsening, not yet the worst.
+
+## 3. Thursday morning (added 20:05 UTC, at incident.conductor@'s J4)
+
+> **Label: ANALYSIS**, from `changes.json` → `thursday` as read at 20:04 UTC.
+
+**Short answer (analysis):** by the facts so far, **Thursday morning is behind the storm, not in it.** The only Lisbon warning that touches Thursday is **yellow sea** (south-west waves of 4 to 5 m), and it ends at 03:00. IPMA's model has a **westerly mean wind of 18 to 24 km/h** from 00:00 to 12:00, showers likely (up to 88%), and a sea of about 4 m. The daily forecast says rain and moderate wind. Confidence: **medium-low**. The model run is from 07:55 Tuesday, older than both red warnings. The airport's TAF does not reach Thursday yet: the issue due about 23:00 will. IPMA can also still add or extend warnings overnight. Watch for:
+- any Lisbon wind warning that runs past Wednesday 21:00;
+- the next communiqué;
+- the TAF that covers Thursday 00:00 to 06:00.
+
+Each of these goes at the top of `changes.json` at the next wake.

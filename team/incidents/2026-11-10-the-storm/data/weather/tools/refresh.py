@@ -310,6 +310,38 @@ def gusts_above_warned(w, a):
     return out
 
 
+def thursday(w, f, a, prev):
+    """Thursday 12 November (day 3): Lisbon's warnings touching it and the forecasts for its morning (facts, sourced)."""
+    T0, T1 = '2026-11-12T00:00', '2026-11-13T00:00'
+    warns = [x for x in (w.get('lisbon') or []) if x['start_utc'][:16] < T1 and x['end_utc'][:16] > T0]
+    rows = [r for r in (f.get('hourly') or {}).get('rows', []) if T0 <= r['time_utc'][:16] < '2026-11-12T13:00']
+    day = next((d for d in (f.get('daily') or {}).get('days') or [] if d.get('forecastDate') == '2026-11-12'), None)
+    taf = a.get('taf') or {}
+    tg = [g for g in taf.get('groups', []) if g['to_utc'] and g['to_utc'] > T0 + 'Z']
+    winds = [r['wind_mean_kmh'] for r in rows if r['wind_mean_kmh'] is not None]
+    seas = [r['sea_total_m'] for r in rows if r['sea_total_m'] is not None]
+    out = {
+        'about': "Thursday 12 November (Web Summit's day 3): every IPMA warning for Lisbon that touches Thursday, and what IPMA's model and the airport TAF say for Thursday morning (00:00-12:00 UTC = Lisbon time). Facts, each with its source; no analysis here.",
+        'read_utc': NOW,
+        'lisbon_warnings_touching_thursday': {'source': U['warnings'], 'read_utc': NOW, 'items': warns,
+                                              'none_above_yellow': all(x['level'] in ('yellow', 'green') for x in warns)},
+        'ipma_model_thursday_morning': {'source': U['hourly'], 'read_utc': NOW, 'model_updated_local': (f.get('hourly') or {}).get('updated_local'),
+                                        'wind_mean_kmh_range': winds and [min(winds), max(winds)],
+                                        'wind_dirs': sorted({r['wind_dir'] for r in rows if r['wind_dir']}),
+                                        'rain_prob_pct_max': max((r['rain_prob_pct'] for r in rows if r['rain_prob_pct'] is not None), default=None),
+                                        'sea_total_m_range': seas and [min(seas), max(seas)], 'rows': rows},
+        'ipma_daily_thursday': day and {'source': U['daily'], 'read_utc': NOW, 'updated_local': (f.get('daily') or {}).get('updated_local'), **day},
+        'taf_groups_into_thursday': {'source': U['taf'], 'read_utc': NOW, 'taf_issue_utc': taf.get('issue_utc'),
+                                     'taf_valid_to_utc': taf.get('valid_to_utc'), 'groups': tg},
+    }
+    sig = lambda o: json.dumps([o['lisbon_warnings_touching_thursday']['items'] and [(x['type'], x['level'], x['start_utc'], x['end_utc']) for x in o['lisbon_warnings_touching_thursday']['items']],
+                                o['ipma_model_thursday_morning']['model_updated_local'], (o.get('ipma_daily_thursday') or {}).get('updated_local'), o['taf_groups_into_thursday']['taf_issue_utc']])
+    if not prev or sig(prev) != sig(out):
+        changes.insert(0, 'THURSDAY: warnings ' + (', '.join(f"{x['level']} {x['type']} {x['start_utc'][8:16]}-{x['end_utc'][8:16]}" for x in warns) or 'none') +
+                       (f"; model Thu 00-12 mean wind {min(winds)}-{max(winds)} km/h" if winds else ''))
+    return out
+
+
 def main():
     w, c, s, a, f = warnings(), communiques(), stations(), airport(), forecast()
     for name, obj in (('warnings.json', w), ('communiques.json', c), ('stations.json', s), ('airport.json', a), ('forecast.json', f)):
@@ -335,12 +367,13 @@ def main():
         'forecast_ipma_hourly_wed_peak_mean': (f.get('hourly') or {}).get('wed_peak') and {**f['hourly']['wed_peak'], 'source': U['hourly'], 'read_utc': NOW},
     })
     log = load('changes.json', {'runs': []})
+    thu = thursday(w, f, a, log.get('thursday'))
     above = gusts_above_warned(w, a)
     if above and len(above) > len(log.get('gusts_above_warned', [])):
         changes.insert(0, f"OBSERVED GUST ABOVE WARNED: {above[-1]['gust_kmh']} km/h at {above[-1]['time_utc']} (warned {above[-1]['warned_kmh']})")
     log['runs'].append({'read_utc': NOW, 'changes': changes or ['no change'], 'errors': errors})
-    save('changes.json', {'gusts_above_warned': above,
-                          'about': 'gusts_above_warned (first): every LPPT METAR gust from Wed 05:00 above the gust warned for that hour (the IPMA wind warning in force, from its text; outside a wind warning, the highest gust in the TAF groups covering that hour). Facts, each with its source. Then what each refresh found changed, newest last. Written by tools/refresh.py.',
+    save('changes.json', {'thursday': thu, 'gusts_above_warned': above,
+                          'about': 'thursday (first): Lisbon warnings touching Thursday 12 Nov and the forecasts for its morning. gusts_above_warned: every LPPT METAR gust from Wed 05:00 above the gust warned for that hour (the IPMA wind warning in force, from its text; outside a wind warning, the highest gust in the TAF groups covering that hour). Facts, each with its source. Then what each refresh found changed, newest last. Written by tools/refresh.py.',
                           'runs': log['runs']})
     print(NOW, '|', '; '.join(changes) or 'no change', '| errors:', len(errors))
     return 1 if errors else 0
