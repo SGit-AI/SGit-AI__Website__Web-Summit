@@ -2,6 +2,11 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 10 November 2026, about 00:30 UTC (prompted by Angelo, with the app screenshots)
+
+- **0-URGENT-4b done** (the conductor's 6d75ae89): the passes article reworked (newsroom 31c2b03e): a colour sample per pass, sampled from the app cards' backgrounds (no person, name or face; the screenshots not committed), his wrist photo removed, the sighting column and lines gone; re-signed.
+- **Note for Angelo:** the photo is gone from the site, but it stays in the newsroom's public git history (commit 45e925788); removing it from history would need a force-push, which the rules forbid. It shows a wrist and a wristband only.
+
 ## 9 November 2026, about 23:15 UTC (prompted by Angelo: "Both")
 
 - **Published "Web Summit's nineteen passes: who is who, by colour"** with Angelo's ALPHA photo (metadata stripped): https://promptugal.news/articles/web-summit-passes-and-colours.html (v0.1.917); linked from the queues article.
