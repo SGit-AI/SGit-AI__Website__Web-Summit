@@ -362,8 +362,11 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         Map<String, Integer> weights = BR == null ? new HashMap<>() : BR.weights;
         BL = Bell.layout(Bell.orient(orientPref, W, H), dests, weights, names);
         // the frame fitted in the screen below the top row, a margin of 40 units round it (work-bell-draw.js steps in the same way)
-        double pad = 40, availH = H - top - 8 * density, k = Math.min(W / (BL.w + 2 * pad), availH / (BL.h + 2 * pad));
-        fk = (float) k; fx0 = (float) ((W - (BL.w + 2 * pad) * k) / 2 + pad * k); fy0 = (float) (top + (availH - (BL.h + 2 * pad) * k) / 2 + pad * k);
+        // more compact and centred (Angelo, 10 November): at most 86% of the screen's width, centred on the screen itself unless
+        // that would run into the logos and LIVE at the top
+        double pad = 40, availH = H - top - 8 * density, k = Math.min(W * 0.86 / (BL.w + 2 * pad), availH / (BL.h + 2 * pad));
+        double fw = (BL.w + 2 * pad) * k, fh = (BL.h + 2 * pad) * k, fy = Math.max(top, (H - fh) / 2);
+        fk = (float) k; fx0 = (float) ((W - fw) / 2 + pad * k); fy0 = (float) (fy + pad * k);
         float k1 = fk;
         // the network's circle (.wb-net: the surface at .55, the action's line at .7)
         Paint nf = new Paint(Paint.ANTI_ALIAS_FLAG); nf.setColor(0xFF000000 | th.surface); nf.setAlpha((int) (255 * 0.55));
@@ -374,8 +377,10 @@ final class MapRenderer implements GLSurfaceView.Renderer {
             Graph.Node pn = g.byId.get(r.person); Bell.Place b = BL.places.get(r.dest); if (pn == null || b == null) continue;
             double[] a = netPlace(pn), c = Bell.route(BL.or, a[0], a[1], b);
             Path rp = new Path(); rp.moveTo(fx0 + (float) c[0] * k1, fy0 + (float) c[1] * k1); rp.cubicTo(fx0 + (float) c[2] * k1, fy0 + (float) c[3] * k1, fx0 + (float) c[4] * k1, fy0 + (float) c[5] * k1, fx0 + (float) c[6] * k1, fy0 + (float) c[7] * k1);
-            Paint rs = new Paint(Paint.ANTI_ALIAS_FLAG); rs.setStyle(Paint.Style.STROKE); rs.setStrokeCap(Paint.Cap.ROUND); rs.setStrokeWidth((float) Bell.width(r.n, BR.max) * k1);
-            rs.setColor(0xFF000000 | Work.strokeFor(pn.color, th.light)); rs.setAlpha((int) (255 * (th.light ? 0.14 : 0.1))); cv.drawPath(rp, rs);
+            // faint, but visible on a phone (Angelo, 10 November: "the arcs of the deliverables are not visible"): at least 1.5 dp wide,
+            // at .28 (.32 light), where the page's wide screen keeps .1
+            Paint rs = new Paint(Paint.ANTI_ALIAS_FLAG); rs.setStyle(Paint.Style.STROKE); rs.setStrokeCap(Paint.Cap.ROUND); rs.setStrokeWidth(Math.max(1.5f * density, (float) Bell.width(r.n, BR.max) * k1));
+            rs.setColor(0xFF000000 | Work.strokeFor(pn.color, th.light)); rs.setAlpha((int) (255 * (th.light ? 0.32 : 0.28))); cv.drawPath(rp, rs);
         }
         // the icons and their abbreviations: at least 24 px and 12 px on screen whatever the frame's size
         double font = Math.max(26, 12 * density / k1), sc = Math.max(1, 24 * density / k1 / 72); boolean stagger = font > 26 * 1.2;
