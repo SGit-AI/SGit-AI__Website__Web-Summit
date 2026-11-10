@@ -67,6 +67,7 @@
         const colourOf = person => A.strokeFor(resolve(win, wrap, G.col && G.col.get(person)) || '#9EB2C7', light)
         let pad = 0, padR = 0
         const sizeK = () => { const r = svg.getBoundingClientRect(); return r.width > 0 && L ? Math.min(r.width / (L.w + 2 * pad + padR), r.height / (L.h + 2 * pad)) : 0 }
+        const AB = B.abbrs(A.DESTS, A.DEST_NAMES)   // none twice (three workstreams began "Team")
         for (const d of A.DESTS) {
             const g = el(doc, 'g', { class: 'wb-ic wv-sq', 'data-dest': d }, icons)
             el(doc, 'title', {}, g).textContent = A.DEST_NAMES[d]
@@ -76,7 +77,7 @@
             if (logo) el(doc, 'image', { href: (o.base || '') + 'work-logos/' + logo[light ? 'light' : 'dark'], x: -24, y: -24, width: 48, height: 48 }, inner)
             else if (/^WS-\d+$/.test(d)) { const t = el(doc, 'text', { class: 'wv-ws', 'text-anchor': 'middle', y: 8 }, inner); t.textContent = d.slice(3) }
             else { const k = D.MARK[d] || 'doc'; el(doc, 'path', { class: 'wv-mark', 'data-mark': k, d: D.MARK_PATHS[k] || A.ICON_PATHS[k] || A.ICON_PATHS.doc, transform: 'scale(1.9)' }, inner) }
-            const ab = el(doc, 'text', { class: 'wb-ab' }, g); ab.textContent = B.ABBR[d] || B.abbrOf(d, A.DEST_NAMES[d])
+            const ab = el(doc, 'text', { class: 'wb-ab' }, g); ab.textContent = AB.get(d)
             IC.set(d, { g, inner, ab, lit: 0 })
         }
         // the frame for the setting and the screen's shape; the icons in their places and the network moved into its circle

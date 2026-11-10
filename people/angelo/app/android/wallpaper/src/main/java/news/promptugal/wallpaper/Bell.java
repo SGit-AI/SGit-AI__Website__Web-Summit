@@ -63,6 +63,7 @@ public final class Bell {
 
     /** The frame for an orientation: its size, the network's circle and each destination's place, facing (nx, ny) and abbreviation. */
     public static Layout layout(String or, List<String> dests, Map<String, Integer> weights, Map<String, String> names) {
+        Map<String, String> AB = abbrs(dests, names == null ? new HashMap<>() : names);
         List<String> order = ordered(dests, weights); int n = order.size(); double[] B = "left".equals(or) || "right".equals(or) ? WIDE : TALL;
         Layout L = new Layout(); L.or = or; double[] bx = box(or); L.w = bx[0]; L.h = bx[1]; L.order = String.join(",", order);
         for (int i = 0; i < n; i++) {
@@ -70,7 +71,7 @@ public final class Bell {
             double px = B[0] + B[2] * Math.cos(a), py = B[1] - B[2] * Math.sin(a);
             double[] q = turn(or, px, py), f = turnV(or, Math.cos(a), -Math.sin(a));
             Place p = new Place(); p.x = q[0]; p.y = q[1]; p.nx = f[0]; p.ny = f[1]; p.row = i % 2; p.quiet = weights.getOrDefault(d, 0) <= 0;
-            p.abbr = ABBR.containsKey(d) ? ABBR.get(d) : abbrOf(d, names == null ? null : names.get(d)); L.places.put(d, p);
+            p.abbr = AB.get(d); L.places.put(d, p);
         }
         double[] c = turn(or, NETX, NETY); L.netX = c[0]; L.netY = c[1]; L.netR = NETR;
         return L;
@@ -83,6 +84,33 @@ public final class Bell {
         double g = font * 0.35, ax = Math.abs(ox) > 1e-9 ? (half + w / 2 + g) / Math.abs(ox) : Double.POSITIVE_INFINITY, ay = Math.abs(oy) > 1e-9 ? (half + h / 2 + g) / Math.abs(oy) : Double.POSITIVE_INFINITY;
         double d = Math.min(ax, ay), cx = ox * d, cy = oy * d;
         return new double[] { cx, cy + font * 0.36, w, h, cx, cy };
+    }
+
+    /** work-bell.js's abbrs(): every destination's abbreviation, none twice; a shared one makes each take its next word that says
+     *  something, again until none is shared; with no word left, its number's last digits. */
+    public static Map<String, String> abbrs(List<String> dests, Map<String, String> names) {
+        Map<String, List<String>> words = new HashMap<>(); Map<String, Integer> at = new HashMap<>(); Map<String, String> out = new LinkedHashMap<>();
+        for (String d : dests) {
+            String nm = names.get(d), t = (nm == null ? d : nm).replaceFirst("^WS-\\d+\\s+", ""); List<String> w = new ArrayList<>();
+            if (t.matches("(?i)^other workstreams$") || "other".equals(d)) w.add("OTHR"); else for (String x : t.split("[^A-Za-z0-9]+")) if (!x.isEmpty() && !SMALL.contains(x.toLowerCase())) w.add(x);
+            words.put(d, w); at.put(d, 0);
+        }
+        for (String d : dests) out.put(d, pick(d, words, at, names));
+        for (int round = 0; round < 4; round++) {
+            Map<String, List<String>> by = new LinkedHashMap<>(); for (Map.Entry<String, String> e : out.entrySet()) by.computeIfAbsent(e.getValue(), k -> new ArrayList<>()).add(e.getKey());
+            boolean clash = false;
+            for (List<String> g : by.values()) if (g.size() > 1) { clash = true; for (String d : g) {
+                if (ABBR.containsKey(d)) continue; List<String> w = words.get(d);
+                if (at.get(d) < w.size() - 1) { at.put(d, at.get(d) + 1); out.put(d, pick(d, words, at, names)); }
+                else { Matcher m = Pattern.compile("(\\d+)$").matcher(d); String a = out.get(d); String v = (a.substring(0, Math.min(2, a.length())) + (m.find() ? m.group(1) : "")); out.put(d, v.length() > 4 ? v.substring(0, 4) : v); }
+            } }
+            if (!clash) break;
+        }
+        return out;
+    }
+    private static String pick(String d, Map<String, List<String>> words, Map<String, Integer> at, Map<String, String> names) {
+        if (ABBR.containsKey(d)) return ABBR.get(d); List<String> w = words.get(d);
+        if (w.isEmpty()) return abbrOf(d, names.get(d)); String x = w.get(Math.min(at.get(d), w.size() - 1)); return (x.length() > 4 ? x.substring(0, 4) : x).toUpperCase();
     }
 
     static final Set<String> SMALL = new HashSet<>(Arrays.asList("the", "a", "an", "of", "and", "for", "to", "in", "on", "our", "its", "with"));

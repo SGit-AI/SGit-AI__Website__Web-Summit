@@ -21,15 +21,16 @@ const APP = path.join(__dirname, '..'), W = path.join(APP, 'android/wallpaper')
   if (J.max !== R.max || J.routes.length !== R.routes.length) fail(`${level}: routes ${J.routes.length}/${J.max}, the page ${R.routes.length}/${R.max}`)
   R.routes.forEach((r, i) => { const j = J.routes[i] || []; if (j[0] !== r.person || j[1] !== r.dest || j[2] !== r.n || !near(j[3], B.width(r.n, R.max), 0.011)) fail(`${level}: route ${i} ${JSON.stringify(j)} vs ${JSON.stringify(r)}`) })
   for (const or of ['left', 'right', 'top', 'below']) {
-   const L = B.layout(or, A.DESTS, R.weights), j = J.layouts[or]
+   const L = B.layout(or, A.DESTS, R.weights, A.DEST_NAMES), j = J.layouts[or], AB = B.abbrs(A.DESTS, A.DEST_NAMES)
    if (!near(j.w, L.w) || !near(j.h, L.h) || !near(j.net[0], L.net.x) || !near(j.net[1], L.net.y) || !near(j.net[2], L.net.r)) fail(`${level} ${or}: frame ${JSON.stringify(j.net)} vs ${JSON.stringify(L.net)}`)
    if (j.order !== B.ordered(A.DESTS, R.weights).join()) fail(`${level} ${or}: order ${j.order}`)
    let bad = 0
-   for (const [d, p] of L.places) { const q = j.places[d], abbr = B.ABBR[d] || B.abbrOf(d, A.DEST_NAMES[d]); p.abbr = abbr
+   for (const [d, p] of L.places) { const q = j.places[d], abbr = AB.get(d); p.abbr = abbr
     const l1 = B.label(p, 36, 26, abbr.length, false), l2 = B.label(p, 36, 40, abbr.length, true), m = B.at(B.route(or, L.net, p), 0.37)
     if ((!q || !near(q.x, p.x) || !near(q.y, p.y) || !near(q.nx, p.nx, 1e-4) || !near(q.ny, p.ny, 1e-4) || q.row !== p.row || q.quiet !== p.quiet || q.abbr !== abbr || !near(q.l1[0], l1.x) || !near(q.l1[1], l1.y) || !near(q.l2[0], l2.x) || !near(q.l2[1], l2.y) || !near(q.mid[0], m.x) || !near(q.mid[1], m.y)) && bad++ < 3) console.log('   ', level, or, d, JSON.stringify(q), JSON.stringify({ x: p.x, y: p.y, abbr, l1, l2, m })) }
    if (bad) fail(`${level} ${or}: ${bad} places differ`)
   }
+  { const all = [...B.abbrs(A.DESTS, A.DEST_NAMES).values()]; if (new Set(all).size !== all.length) fail(`${level}: an abbreviation twice: ${all.join(' ')}`) }
   console.log(`${level}: ${R.routes.length} routes (max ${R.max}), four ends, ${A.DESTS.length} icons each: ${Object.values(J.layouts.top.places).map(p => p.abbr).join(' ')}`)
   if (level === 'deliverables') {
    if (JSON.stringify(J.orient) !== JSON.stringify([B.orient('auto', 390, 844), B.orient('auto', 1280, 800), B.orient('below', 1280, 800)])) fail('Automatic or a fixed end differs')
