@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1774",
+    "date": "2026-11-10",
+    "what": "next_read_utc on every weather file (the next :22 refresh); 23:53 refresh",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "69bad703a"
+  },
+  {
     "version": "v0.2.1773",
     "date": "2026-11-10",
     "what": "writer@PrompTugal.jose: Prompt W3: the storm batch (WS-208): posts/2026-11-11.md, no post drafted, all five items waiting on network access",
