@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1633",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 02:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "71a31c8e5"
+  },
+  {
     "version": "v0.2.1632",
     "date": "2026-11-10",
     "what": "reviewer@PrompTugal.vicky: report, OVERNIGHT-10NOV first review: S40 published, S37 to S39 Fix first",
