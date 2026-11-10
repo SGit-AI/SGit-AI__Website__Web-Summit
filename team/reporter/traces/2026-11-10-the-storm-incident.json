@@ -12,7 +12,7 @@
     "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/"
   },
   "captured_by": "reporter@web-summit.dinis",
-  "captured_at": "2026-11-10T20:25Z",
+  "captured_at": "2026-11-10T21:25Z",
   "rules": "Read Vicky's weather desk's public files only; never write to them. Public sources only; nothing on people's whereabouts or contact details.",
   "shape": {
     "event": "n, lane (outside|ours), kind (signal|decision|hand-off|not read), actor {name, kind: authority|person|agent}, what, published (UTC, the source's own time; null if not stated), read (UTC, when our team first read it), read_by, affects[] (the incident's 'could happen' items, README section 3), evidence[], note, handoff {to, via}",
@@ -1029,7 +1029,7 @@
         "kind": "authority"
       },
       "what": "Day 2, Wednesday 11 November, will not take place; the government 'formally advised' it (tidal flooding, public transport, high winds on external structures), after talks with the government, ANEPC and PSP; Day 3 aimed to go ahead as planned",
-      "published": "2026-11-10T19:38:00Z",
+      "published": "2026-11-10T19:09:00Z",
       "read": "2026-11-10T19:48:09Z",
       "read_by": "weather@PrompTugal.vicky (relaying the attendee email)",
       "evidence": [
@@ -1044,9 +1044,14 @@
           "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
           "path": "team/incidents/2026-11-10-the-storm/timeline.md",
           "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/timeline.md"
+        },
+        {
+          "type": "source",
+          "url": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+          "tier": "official"
         }
       ],
-      "note": "first in an email to attendees, no public URL: a person received it and passed it on (who is not in the record). Relayed by weather@ at 19:48 and conductor@web-summit.dinis at 19:52; on Web Summit's blog ('Important event update') by 19:59.",
+      "note": "CORRECTED 21:25: the first public word was Web Summit's own page at 19:09 (event below); the attendee email followed at 19:38. A person received the email and passed it on (who is not in the record); relayed by weather@ at 19:48 and conductor@web-summit.dinis at 19:52.",
       "affects": [
         1,
         3,
@@ -1056,7 +1061,8 @@
       "handoff": {
         "to": "reviewer@PrompTugal.vicky; the incident lead",
         "via": "commit For:; the conductor"
-      }
+      },
+      "published_note": "the organisers' own page (19:09:00, modified 19:25:44); the email at 19:38"
     },
     {
       "n": 36,
@@ -1186,10 +1192,10 @@
         "name": "Web Summit (websummit.com blog)",
         "kind": "authority"
       },
-      "what": "'Important event update' published on its own blog",
-      "published": null,
-      "read": "2026-11-10T19:59:00Z",
-      "read_by": "weather@PrompTugal.vicky",
+      "what": "'Important event update' on its own blog: Day 2 off, Day 3 aimed (published 19:09:00, modified 19:25:44)",
+      "published": "2026-11-10T19:09:00Z",
+      "read": "2026-11-10T20:58:00Z",
+      "read_by": "incident.conductor@web-summit.dinis (at source; found by social.watch@PrompTugal.dinis)",
       "evidence": [
         {
           "type": "commit",
@@ -1202,9 +1208,20 @@
           "repo": "PrompTugal/PrompTugal__News__Website",
           "sha": "98a4fdfb",
           "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/98a4fdfbbf46"
+        },
+        {
+          "type": "source",
+          "url": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+          "tier": "official"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "98021979",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/98021979d43b"
         }
       ],
-      "note": "still absent at 19:52 (the lead's check); the primary public source from here",
+      "note": "CORRECTED 21:25: published 19:09, before the email. weather@ saw the post listed at 19:59 (19003cce) without its own date; the incident team read the page itself at 20:58. Missed for 1 h 49 min: blog posts are not in sitemap.xml, which the watch read.",
       "affects": [
         1,
         6
@@ -1348,6 +1365,236 @@
       "affects": [
         6
       ]
+    },
+    {
+      "n": 46,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "DN, Observador, Euronews",
+        "kind": "press"
+      },
+      "what": "Thursday goes ahead 'if the weather allows' (DN 19:49); Observador 20:08; Euronews 20:30",
+      "published": "2026-11-10T19:49:00Z",
+      "read": "2026-11-10T21:02:00Z",
+      "read_by": "social.watch@ (sweep 3) via incident.conductor@",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "88f0c0c5",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/88f0c0c5b5da"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/timeline.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/timeline.md"
+        }
+      ],
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 47,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "incident.conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "The primary source is Web Summit's own page (19:09); lead times recomputed against it; the lesson recorded: watch every section of an organiser's site, not only its news list",
+      "published": "2026-11-10T20:59:02Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "98021979",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/98021979d43b"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "1c9221a0",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/1c9221a00a1e"
+        }
+      ],
+      "handoff": {
+        "to": "incident.dev@ (a connector), incident.researcher@ (the graph: evidence to fact)",
+        "via": "commit For:"
+      }
+    },
+    {
+      "n": 48,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.dev@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "J6: a watch over every section of websummit.com (all blog listings, every sitemap), robots.txt obeyed, every 2 minutes; each post's two dates named",
+      "published": "2026-11-10T21:13:23Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "716690a5",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/716690a55aad"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "56176d51",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/56176d518b8d"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "467bc0a3",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/467bc0a364a4"
+        }
+      ],
+      "note": "the connector the lesson asked for, built 14 minutes after it"
+    },
+    {
+      "n": 49,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.researcher@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Lead times corrected (recommendation to the organisers' page 1 h 16 min, not 5 h 16 min; alert to recommendation 5 h 43 min)",
+      "published": "2026-11-10T21:04:11Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "9ef309f8",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/9ef309f8da6b"
+        }
+      ]
+    },
+    {
+      "n": 50,
+      "lane": "ours",
+      "kind": "review",
+      "actor": {
+        "name": "security.repos@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "MEDIUM: websummit-poll.sh reset to dev and ran its code every 2 minutes; website text in commit subjects",
+      "published": "2026-11-10T21:15:13Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "70b8efee",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/70b8efeee493"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/security.repos/reports/2026-11-10T2130Z.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/security.repos/reports/2026-11-10T2130Z.md"
+        }
+      ],
+      "handoff": {
+        "to": "incident.dev@web-summit.dinis",
+        "via": "commit For:"
+      }
+    },
+    {
+      "n": 51,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.dev@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "The poll script pinned: no git in the loop, the code copied at start, alerts committed by the session",
+      "published": "2026-11-10T21:17:05Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "6260b8a3",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/6260b8a34f65"
+        }
+      ],
+      "note": "the MEDIUM answered 2 minutes after the report"
+    },
+    {
+      "n": 52,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "incident.conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "The incident moves to its own site and repository: storm-charles.promptugal.news (PrompTugal/PrompTugal__News__Storm-Charles, public); first push to served in 23 s; team/incidents/ frozen with a pointer",
+      "published": "2026-11-10T21:16:14Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "42fe929d",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/42fe929dae4c"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "e8973fff",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/e8973fffb039"
+        },
+        {
+          "type": "source",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles",
+          "tier": "repository"
+        }
+      ],
+      "note": "whose word moved it is not in the commit"
+    },
+    {
+      "n": 53,
+      "lane": "ours",
+      "kind": "blocked",
+      "actor": {
+        "name": "incident.meteorologist@ and incident.researcher@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Attaching PrompTugal__News__Storm-Charles to their sessions refused (add_repo); an ask for Dinis in their status files",
+      "published": "2026-11-10T21:18:23Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "797920c8",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/797920c82f1c"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "677d2ecf",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/677d2ecfbea9"
+        }
+      ],
+      "note": "the lead keeps weather/ and status files writable in the old folder until then (MOVED.md)"
     }
   ],
   "lead_times": [
@@ -1385,11 +1632,11 @@
     },
     {
       "signal": "Web Summit's decision (Day 2 off)",
-      "published": "2026-11-10T19:38Z",
-      "first_read_by_us": "2026-11-10T19:48Z",
-      "lag": "about 10 min (relayed from an email)",
-      "lead_over_wed_noon": "16 h 22 min",
-      "how_far_ahead": "signals that pointed at it: the storm named 30 h 21 min before (9 Nov 13:17); the government's alert 7 h 28 min before (12:10); the mayor's word 6 h 19 min before (13:19, or 6 h 15 min at 13:23); the PM's recommendation about 2 h 6 min before (17:32). Our team read each of them 10 min to 27 h 36 min after it appeared. The lead's README has the same figures as analysis."
+      "published": "2026-11-10T19:09Z (its own page); 19:38 (attendee email)",
+      "first_read_by_us": "2026-11-10T19:48Z (the email, relayed); the page itself 20:58",
+      "lag": "39 min to the relayed email; 1 h 49 min to the page",
+      "lead_over_wed_noon": "16 h 51 min",
+      "how_far_ahead": "against 19:09: the storm named 29 h 52 min before; the government's alert 6 h 59 min; the mayor's word 5 h 50 min (13:19); the recommendation 1 h 16 min (the lead's figures, corrected 21:04). The miss: the organisers' blog was not in the sitemap we watched."
     }
   ],
   "open_questions": [
@@ -1411,5 +1658,11 @@
       "accountant@PrompTugal.dinis"
     ]
   },
-  "note_on_overlap": "The lead's timeline.md and signals.json carry every signal for the incident site. This trace keeps the evidence chain (published vs first read, tiers, hand-offs, who acted) for the close-out question 'how far ahead could we have known'."
+  "note_on_overlap": "The lead's timeline.md and signals.json carry every signal for the incident site. This trace keeps the evidence chain (published vs first read, tiers, hand-offs, who acted) for the close-out question 'how far ahead could we have known'.",
+  "moved": {
+    "at": "2026-11-10T21:16Z",
+    "to": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles",
+    "site": "https://storm-charles.promptugal.news/",
+    "note": "this trace stays here (the reporter's folder) and reads the new repository from the next wake"
+  }
 }
