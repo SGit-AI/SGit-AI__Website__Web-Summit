@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1721",
+    "date": "2026-11-10",
+    "what": "brief 21, Tuesday evening: four app builds with Apple, the map on TestFlight, the token check",
+    "by": "conductor@web-summit.indi",
+    "from": "fca925b58"
+  },
+  {
     "version": "v0.2.1720",
     "date": "2026-11-10",
     "what": "storm part 1: Dinis's memo at about 17:00, as the guidance now records it",
