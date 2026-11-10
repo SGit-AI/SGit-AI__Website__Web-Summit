@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1754",
+    "date": "2026-11-10",
+    "what": "J6 follow-up: the watch's README (blog listings, why), status (releases 93 to 264 s), a post's year shown when it differs",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "467bc0a36"
+  },
+  {
     "version": "v0.2.1753",
     "date": "2026-11-10",
     "what": "J6: watch every section of websummit.com (all blog listings, every sitemap); the organiser's own post (19:09, modified 19:58) on the dashboard as a decision source",
