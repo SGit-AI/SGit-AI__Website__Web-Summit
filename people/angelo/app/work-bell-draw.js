@@ -17,12 +17,13 @@
 .lv.lv-bellview .lv-fill, .lv.lv-bellview .lv-rim { display: none; }
 .lv.lv-bellview .lv-svg { overflow: visible; }
 .wb-net { fill: var(--rm-surface, #0E2035); fill-opacity: .55; stroke: var(--rm-action, #1A8FB0); stroke-opacity: .7; stroke-width: 3; }
-.wb-route { fill: none; stroke-linecap: round; stroke-opacity: .45; mix-blend-mode: screen; transition: stroke-opacity .2s; }
-.wb-route.wb-dim { stroke-opacity: .08; }
-.wb-route.wb-agent { stroke-opacity: .75; stroke-dasharray: none; }
+/* the routes extremely faint (Angelo, 10 November: "the lines that go to the deliverables are too bright, they should be extremely faint"); the flights along them stay bright */
+.wb-route { fill: none; stroke-linecap: round; stroke-opacity: .1; mix-blend-mode: screen; transition: stroke-opacity .2s; }
+.wb-route.wb-dim { stroke-opacity: .03; }
+.wb-route.wb-agent { stroke-opacity: .3; stroke-dasharray: none; }
 .lv.lv-bellview .tm-p { cursor: pointer; }
 .lv.lv-bellview[data-focus] .tm-p:not(.wb-on) { opacity: .45; }
-:root[data-theme="light"] .wb-route { mix-blend-mode: multiply; stroke-opacity: .5; }
+:root[data-theme="light"] .wb-route { mix-blend-mode: multiply; stroke-opacity: .14; }
 .wb-ic rect { fill: var(--rm-surface, #0E2035); stroke: var(--rm-border, #294A64); stroke-width: 2.5; }
 .wb-ic .wv-mark { fill: none; stroke: var(--rm-text, #F7FAFC); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .wb-ic .wv-ws { font-family: var(--rm-font, system-ui, sans-serif); font-weight: 700; font-size: 24px; fill: var(--rm-text, #F7FAFC); }
