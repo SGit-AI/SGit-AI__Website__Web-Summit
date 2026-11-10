@@ -48,3 +48,7 @@ Silvio, minutes later: "mete os outros agentes a trabalhar durante a noite, não
   - the crm morning summary, which is about outreach;
   - jornal@ and editor@ PrompTugal, which Silvio left to Dinis's wish.
 - **About 51 scheduled wakes a day now (43 for the agents, 8 for the conductor)**, against about 89 before the stop.
+
+## Over (THE RESTART, 10 November about 02:40 UTC)
+
+jornal@ and editor@ PrompTugal back on at 04:52 UTC, at Silvio's "faz como o Dinis quer". Still paused: outreach (Dinis's park), inbox (Gmail needs re-authorising) and the crm morning summary.

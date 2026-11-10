@@ -1,8 +1,8 @@
 {
  "about": "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
  "source": "https://github.com/PrompTugal/PrompTugal__News__Website",
- "commit": "1192e38a",
- "read_at": "2026-11-10T04:36:09.407Z",
+ "commit": "71cb3500",
+ "read_at": "2026-11-10T05:35:54.541Z",
  "days": 7,
  "agents": [
   {
@@ -22,9 +22,9 @@
    "short": "conductor",
    "family": "PrompTugal",
    "label": "PrompTugal's conductor",
-   "commits": 159,
+   "commits": 160,
    "first": "2026-11-06T00:03:31+00:00",
-   "last": "2026-11-09T23:36:43+00:00",
+   "last": "2026-11-10T04:38:54+00:00",
    "key": true
   },
   {
@@ -61,6 +61,17 @@
    "key": true
   },
   {
+   "id": "pt:dinis:conductor.b",
+   "person": "dinis",
+   "short": "conductor.b",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 82,
+   "first": "2026-11-06T21:38:06+00:00",
+   "last": "2026-11-10T04:52:01+00:00",
+   "key": true
+  },
+  {
    "id": "pt:dinis:synthetic",
    "person": "dinis",
    "short": "synthetic",
@@ -69,17 +80,6 @@
    "commits": 82,
    "first": "2026-11-06T00:28:34+00:00",
    "last": "2026-11-08T00:46:24+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:dinis:conductor.b",
-   "person": "dinis",
-   "short": "conductor.b",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 81,
-   "first": "2026-11-06T21:38:06+00:00",
-   "last": "2026-11-10T02:49:55+00:00",
    "key": true
   },
   {
@@ -209,9 +209,9 @@
    "short": "conductor",
    "family": "web-summit",
    "label": "The team site's conductor",
-   "commits": 35,
+   "commits": 36,
    "first": "2026-11-04T12:12:16+00:00",
-   "last": "2026-11-10T04:12:36+00:00",
+   "last": "2026-11-10T05:13:25+00:00",
    "key": false
   },
   {
@@ -358,6 +358,17 @@
    "key": true
   },
   {
+   "id": "pt:vicky:programme",
+   "person": "vicky",
+   "short": "programme",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 11,
+   "first": "2026-11-06T10:28:37+00:00",
+   "last": "2026-11-10T05:10:09+00:00",
+   "key": true
+  },
+  {
    "id": "journalist-portugal@web-summit.vicky",
    "person": "vicky",
    "short": "journalist-portugal",
@@ -399,17 +410,6 @@
    "commits": 9,
    "first": "2026-11-09T23:50:35+00:00",
    "last": "2026-11-10T00:39:39+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:vicky:programme",
-   "person": "vicky",
-   "short": "programme",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 9,
-   "first": "2026-11-06T10:28:37+00:00",
-   "last": "2026-11-09T05:10:14+00:00",
    "key": true
   },
   {
@@ -512,6 +512,17 @@
    "key": false
   },
   {
+   "id": "pt:silvio:jornal",
+   "person": "silvio",
+   "short": "jornal",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 3,
+   "first": "2026-11-10T01:48:34+00:00",
+   "last": "2026-11-10T04:53:09+00:00",
+   "key": true
+  },
+  {
    "id": "pt:dinis:investors.packs",
    "person": "dinis",
    "short": "investors.packs",
@@ -520,17 +531,6 @@
    "commits": 3,
    "first": "2026-11-08T00:24:42+00:00",
    "last": "2026-11-08T00:24:43+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:silvio:jornal",
-   "person": "silvio",
-   "short": "jornal",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 2,
-   "first": "2026-11-10T01:48:34+00:00",
-   "last": "2026-11-10T04:33:56+00:00",
    "key": true
   },
   {
@@ -861,6 +861,11 @@
    "n": 6
   },
   {
+   "from": "pt:vicky:programme",
+   "to": "newsroom@web-summit.dinis",
+   "n": 5
+  },
+  {
    "from": "pt:vicky:curator",
    "to": "pt:vicky:journalist-connections",
    "n": 5
@@ -913,11 +918,6 @@
   {
    "from": "pt:vicky:checker",
    "to": "pt:angelo:writer",
-   "n": 4
-  },
-  {
-   "from": "pt:vicky:programme",
-   "to": "newsroom@web-summit.dinis",
    "n": 4
   },
   {
@@ -974,6 +974,11 @@
    "from": "newsroom@web-summit.dinis",
    "to": "conductor@web-summit.dinis",
    "n": 4
+  },
+  {
+   "from": "pt:silvio:jornal",
+   "to": "silvio",
+   "n": 3
   },
   {
    "from": "conductor@web-summit.dinis",
@@ -1054,11 +1059,6 @@
    "from": "newsroom@web-summit.dinis",
    "to": "newsroom-admin@web-summit.dinis",
    "n": 3
-  },
-  {
-   "from": "pt:silvio:jornal",
-   "to": "silvio",
-   "n": 2
   },
   {
    "from": "conductor@web-summit.dinis",
