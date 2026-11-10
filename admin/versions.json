@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1743",
+    "date": "2026-11-10",
+    "what": "19:42 wake: Web Summit watch (sitemap diff + Bluesky) for the Wednesday decision; the dashboard opens with \"Waiting for\", Bluesky read live",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "52e0a675e"
+  },
+  {
     "version": "v0.2.1742",
     "date": "2026-11-10",
     "what": "19:32 wake: no Web Summit decision; ANA expects cancellations, FlixBus suspends Wednesday (press)",
