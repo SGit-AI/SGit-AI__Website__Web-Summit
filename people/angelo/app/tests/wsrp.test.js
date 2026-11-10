@@ -14,7 +14,7 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     await p.goto(BASE + 'index.html#collab?map=1', { waitUntil: 'networkidle' }); await p.waitForSelector('[data-tmf-play]')
     const st = () => p.evaluate(() => ({ sw: [...document.querySelectorAll('[data-wv-sw] a')].map(a => a.textContent + ':' + a.getAttribute('aria-pressed')), sq: document.querySelectorAll('.tm-svg .wv-sq').length,
       vb: document.querySelector('.tm-svg').getAttribute('viewBox'), loaded: !!window.AngeloWorkReplay, fly: document.querySelectorAll('.tm-svg .wv-fly').length,
-      n: [...document.querySelectorAll('.tm-svg .wv-n')].filter(e => e.style.display !== 'none').length, over: document.documentElement.scrollWidth > innerWidth }))
+      n: [...document.querySelectorAll('.tm-svg .wv-n')].filter(e => e.style.display !== 'none').length, routes: document.querySelectorAll('.tm-svg .wb-route').length, over: document.documentElement.scrollWidth > innerWidth }))
     const ex = await st()
     if (ex.sw.join() !== 'Messages:true,Workstreams:false,Deliverables:false') fail(`${tag}: the switch on opening ${ex.sw.join()}`)
     if (ex.sq || ex.vb !== '0 0 1000 1000') fail(`${tag}: work drawn in Exchanges ${JSON.stringify(ex)}`)
@@ -27,7 +27,7 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     if (wk.sq !== 10) fail(`${tag}: ${wk.sq} squares in Work`)
     if (wk.vb === '0 0 1000 1000') fail(`${tag}: the map's frame was not opened for the rim`)
     if (wk.over) fail(`${tag}: the page scrolls sideways`)
-    // play the window from its start: icons fly, the squares count
+    // play the window from its start: icons fly, the routes are drawn (from 9 November the dumbbell, backlog 0c5: no counts)
     await p.$eval('[data-tmf-scrub]', s => { s.value = s.min; s.dispatchEvent(new Event('input')) })
     await p.click('[data-tmf-play]'); let maxFly = 0, shot = false
     { const th = await p.evaluate(() => { const on = document.querySelector('[data-wv-sw] .on'), off = document.querySelector('[data-wv-sw] a:not(.on)'), cs = e => getComputedStyle(e); return { theme: document.documentElement.dataset.theme, onBg: cs(on).backgroundColor, offBg: cs(off).backgroundColor, line: cs(on).textDecorationLine } })
@@ -36,7 +36,8 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     for (let i = 0; i < 40; i++) { await p.waitForTimeout(250); const s = await st(); maxFly = Math.max(maxFly, s.fly); if (s.fly && !shot) { await p.locator('section.tm').screenshot({ path: `${S}/wsrp-${tag}.png` }); shot = true } }
     const end = await st()
     if (!maxFly) fail(`${tag}: no icon flew in playback`)
-    if (!end.n) fail(`${tag}: no square counts after playback`)
+    if (!end.routes) fail(`${tag}: no routes after playback`)   // the dumbbell (backlog 0c5): routes, no counts
+    if (end.n) fail(`${tag}: a count is drawn`)
     if (!shot) await p.locator('section.tm').screenshot({ path: `${S}/wsrp-${tag}.png` })
     // the window changes, Work stays
     await p.selectOption('[data-tmf-w]', '72h'); await p.waitForSelector('[data-tmf-play]')
@@ -47,7 +48,7 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     const back = await st()
     if (back.sq || back.vb !== '0 0 1000 1000' || /r_ws/.test(await p.evaluate(() => location.hash))) fail(`${tag}: Work left behind after Exchanges ${JSON.stringify(back)}`)
     if (errs.length) fail(`${tag}: page errors: ` + errs.slice(0, 3).join(' | '))
-    out[tag] = { squares: wk.sq, maxFly, counted: end.n }
+    out[tag] = { squares: wk.sq, maxFly, routes: end.routes }
     await ctx.close()
   }
   console.log(JSON.stringify(out))

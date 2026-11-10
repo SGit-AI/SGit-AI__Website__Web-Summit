@@ -34,6 +34,10 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     if (!wk.inside) fail(`${tag}: an icon or its abbreviation leaves the map's frame`)
     if (wk.bell !== 10 || !wk.graph) fail(`${tag}: the playback does not draw the dumbbell ${JSON.stringify(wk)}`)
     if (wk.over) fail(`${tag}: the page scrolls sideways`)
+    // the people's names at least 12 px on screen though the network is shrunk into its circle (or twice their size)
+    { const ppl = await p.evaluate(() => [...document.querySelectorAll('.tm-svg .tm-p text')].map(t => { const r = t.getBoundingClientRect(), f = parseFloat(getComputedStyle(t).fontSize), m = t.getScreenCTM(); return { h: r.height, px: f * (m ? Math.hypot(m.a, m.b) : 1), f } }))
+      if (!ppl.length) fail(`${tag}: no people on the map`)
+      const small = ppl.filter(x => x.px < 11.5 && x.f < 29.5); if (small.length) fail(`${tag}: people's names under 12 px in the dumbbell ${JSON.stringify(small.slice(0, 3))}`) }
     // play the window from its start: icons fly, the squares count
     await p.$eval('[data-tmf-scrub]', s => { s.value = s.min; s.dispatchEvent(new Event('input')) })
     await p.click('[data-tmf-play]'); let maxFly = 0, shot = false
@@ -51,6 +55,12 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     await p.waitForFunction(() => document.querySelectorAll('.tm-svg .wv-sq').length === 10, null, { timeout: 8000 }).catch(() => null)
     const w72 = await st(), h72 = await p.evaluate(() => location.hash)
     if (!/r_work=1/.test(h72) || !/w=72h/.test(h72) || w72.sq !== 10) fail(`${tag}: Work lost on a change of window (${h72}, ${w72.sq} squares)`)
+    // the map's own focus (its f) carried into the dumbbell: a person tapped on the map, their agents' routes
+    { const pid = await p.evaluate(() => { const g = document.querySelector('.tm-svg .tm-p[data-tm-f]'); return g && g.dataset.tmF })
+      if (!pid) fail(`${tag}: no person on the map to focus`)
+      else { await p.evaluate(id => document.querySelector(`.tm-svg .tm-p[data-tm-f="${CSS.escape(id)}"]`).onclick(), pid)
+        const got = await p.waitForFunction(id => { const v = document.querySelector('.tm-svg'), w = v && (v.closest('.lv') || v.parentNode); return !!w && w.dataset.focus === id }, pid, { timeout: 8000 }).then(() => true).catch(() => false)
+        if (!got) fail(`${tag}: the map's focus on ${pid} is not passed to the dumbbell`) } }
     await p.click('[data-wv-sw] a:has-text("Messages")'); await p.waitForTimeout(700)
     const back = await st()
     if (back.sq || back.vb !== '0 0 1000 1000' || back.graph || !back.nodesTop || /r_work/.test(await p.evaluate(() => location.hash))) fail(`${tag}: Work left behind after Exchanges ${JSON.stringify(back)}`)

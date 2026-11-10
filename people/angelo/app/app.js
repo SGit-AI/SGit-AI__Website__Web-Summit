@@ -486,7 +486,7 @@ ${teamMap()}<section class="ak-tl" aria-label="Timeline"><div class="tm-top"><h3
                 const bar = host.querySelector('[data-tmf]'); if (bar) bar.insertAdjacentHTML('beforebegin', `<div class="tm-tabs" role="group" aria-label="What the playback shows" data-wv-sw>${chip('', 'Messages', 'Who wrote to whom')}${chip('ws', 'Workstreams', 'Each commit flying to the workstream (WS issue) it names')}${chip('work', 'Deliverables', 'What each agent and person made, travelling to where it went')}</div>`)
                 if (lvl) ['work.js', 'work-draw.js', 'work-bell.js', 'work-bell-draw.js', 'work-replay.js'].reduce((p, f) => p.then(() => window[{ 'work.js': 'AngeloWork', 'work-draw.js': 'AngeloWorkDraw', 'work-bell.js': 'AngeloWorkBell', 'work-bell-draw.js': 'AngeloWorkBellDraw', 'work-replay.js': 'AngeloWorkReplay' }[f]] || load(f)), Promise.resolve()).then(() => {
                     if (!svgEl.isConnected || drawCollab.wv) return
-                    drawCollab.wv = window.AngeloWorkReplay.mountMap(host, { svg: svgEl, pos: m.pos, col: m.col, rFrom: D.replay.from, t0: Math.round((Date.now() - Date.parse(D.replay.from)) / 6e4), base: new URL('./', here).href, ...(lvl === 'ws' ? { url: new URL('workstreams.json', here).href } : {}) })
+                    drawCollab.wv = window.AngeloWorkReplay.mountMap(host, { svg: svgEl, pos: m.pos, col: m.col, rFrom: D.replay.from, t0: Math.round((Date.now() - Date.parse(D.replay.from)) / 6e4), base: new URL('./', here).href, focus: m.focus, ...(lvl === 'ws' ? { url: new URL('workstreams.json', here).href } : {}) })
                 }).catch(() => null)
             }
             // "⤓ Download clip" on the playback bar (backlog 0f3, dev.work@PrompTugal.angelo, clip-button.js): a video of this playback

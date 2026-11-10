@@ -58,7 +58,7 @@
         const over = el(doc, 'g', { class: 'wb wb-over' }, svg)
         const netC = el(doc, 'circle', { class: 'wb-net' }, under), routesG = el(doc, 'g', { class: 'wb-routes' }, under)
         const icons = el(doc, 'g', { class: 'wb-icons' }, over), flights = el(doc, 'g', { class: 'wv-flights' }, over)
-        let focus = null, setting = o.orient || pref(), or = null, L = null, NM = null, weights = {}, R = { routes: [], weights: {}, max: 0 }, lastList = [], lastNow = 0
+        let PS = 1, focus = null, setting = o.orient || pref(), or = null, L = null, NM = null, weights = {}, R = { routes: [], weights: {}, max: 0 }, lastList = [], lastNow = 0
         const IC = new Map()
         // a graph node's place in the frame: live.js's own scale about the centre, then into the network's circle
         const placeOf = id => { const p = G.pos.get(id); if (!p || !NM) return null; return NM.map({ x: G.C + (p.x - G.C) * G.scale, y: G.C + (p.y - G.C) * G.scale }) }
@@ -109,6 +109,23 @@
                 const lb = B.label(p, ICON * s / 2, font, x.ab.textContent.length, font > ABBR_FONT * 1.2)   // straight out from the icon, away from the team; on a small screen every other one on the inner side, whichever end
                 x.ab.setAttribute('x', f1(lb.x)); x.ab.setAttribute('y', f1(lb.y)); x.ab.setAttribute('text-anchor', lb.anchor); x.ab.style.fontSize = f1(font) + 'px'
             }
+            // the people: the network is shrunk into its circle, so their nodes grow around their centres until their names are
+            // 12 px on screen, at most twice their size (the map's own r, y and font put back on destroy)
+            const q = k * NM.k * G.scale
+            PS = q > 0 ? Math.min(2, Math.max(1, MIN_PX / (15 * q))) : 1
+            for (const n of graph.querySelectorAll('.tm-p')) {
+                const c = n.querySelector('circle'), t = n.querySelector('text'); if (!c || !t) continue
+                if (!n.dataset.wbR) { n.dataset.wbR = c.getAttribute('r'); n.dataset.wbY = t.getAttribute('y'); n.dataset.wbF = parseFloat(win.getComputedStyle(t).fontSize) || 15 }
+                const cy = +c.getAttribute('cy'), y0 = +n.dataset.wbY
+                c.setAttribute('r', f1(+n.dataset.wbR * PS)); t.setAttribute('y', f1(cy + (y0 - cy) * PS)); t.style.fontSize = PS > 1 ? f1(+n.dataset.wbF * PS) + 'px' : ''
+            }
+        }
+        function unsizePeople() {
+            for (const n of graph.querySelectorAll('.tm-p')) {
+                if (!n.dataset.wbR) continue
+                const c = n.querySelector('circle'), t = n.querySelector('text'); if (c) c.setAttribute('r', n.dataset.wbR); if (t) { t.setAttribute('y', n.dataset.wbY); t.style.fontSize = '' }
+                delete n.dataset.wbR; delete n.dataset.wbY; delete n.dataset.wbF
+            }
         }
         // the routes by person; with a person tapped, that person's by agent (from each agent the graph draws, the rest from the
         // person) and everyone else's dimmed. Widths on the same scale either way.
@@ -129,7 +146,7 @@
         function personAt(cx, cy) {
             const m = svg.getScreenCTM(); if (!m || !NM) return null
             const pt = svg.createSVGPoint(); pt.x = cx; pt.y = cy; const q = pt.matrixTransform(m.inverse()), k = sizeK()
-            const reach = Math.max(26 * G.scale * NM.k * 1.3, k > 0 ? 22 / k : 0)
+            const reach = Math.max(26 * PS * G.scale * NM.k * 1.3, k > 0 ? 22 / k : 0)
             let best = null, bd = Infinity
             for (const [id, n] of G.pos) { if (n.kind !== 'p') continue; const p = placeOf(id), d = p ? Math.hypot(p.x - q.x, p.y - q.y) : Infinity; if (d < bd) { bd = d; best = id } }
             return bd <= reach ? best : null
@@ -194,7 +211,7 @@
             under.remove(); over.remove(); sel.remove(); live.length = 0
             if (vb0) svg.setAttribute('viewBox', vb0); if (par0) svg.setAttribute('preserveAspectRatio', par0); else svg.removeAttribute('preserveAspectRatio')
             if (tr0) graph.setAttribute('transform', tr0); else graph.removeAttribute('transform')
-            wrap.classList.remove('lv-bellview'); delete wrap.dataset.bell
+            unsizePeople(); wrap.classList.remove('lv-bellview'); delete wrap.dataset.bell
         }
         const setManual = on => { manual = !!on; if (manual && raf) { win.cancelAnimationFrame(raf); raf = 0 } else if (!manual && live.length) kick() }
         return { fly, counts() { }, step, destroy, week, inAir: () => live.length, light, manual: setManual, focus: id => { if (id !== undefined) setFocus(id); return focus }, orient: () => or, layout: () => L, routes: () => R, bell: true }
