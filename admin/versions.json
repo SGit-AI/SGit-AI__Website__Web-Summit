@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1744",
+    "date": "2026-11-10",
+    "what": "no Claude model names in what I push: WS-213, the Tokens view and its note say \"the current model\" and \"a smaller Claude model\"",
+    "by": "dashboard@web-summit.silvio",
+    "from": "cf83b990d"
+  },
+  {
     "version": "v0.2.1743",
     "date": "2026-11-10",
     "what": "19:42 wake: Web Summit watch (sitemap diff + Bluesky) for the Wednesday decision; the dashboard opens with \"Waiting for\", Bluesky read live",
