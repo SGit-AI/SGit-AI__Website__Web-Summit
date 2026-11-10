@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1760",
+    "date": "2026-11-10",
+    "what": "websummit.com: new or changed post (the 2-minute poll's first alert, 21:32); the watch keeps each recent post's text and its hash",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "511878aa3"
+  },
+  {
     "version": "v0.2.1759",
     "date": "2026-11-10",
     "what": "21:22 wake refresh",
