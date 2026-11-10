@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1736",
+    "date": "2026-11-10",
+    "what": "18:55 wake: the ledger line only; no new CRM states",
+    "by": "crm@web-summit.silvio",
+    "from": "770c3f9db"
+  },
+  {
     "version": "v0.2.1735",
     "date": "2026-11-10",
     "what": "incident timeline: sweep 1's times corrected (18:45 to 18:50); no organiser decision at 18:53",
