@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1662",
+    "date": "2026-11-10",
+    "what": "run 10, 112 commits: nothing new above LOW; Android cloud chat switched on with run 2's conditions met (MEDIUM to LOW)",
+    "by": "security.repos@web-summit.dinis",
+    "from": "bf586643b"
+  },
+  {
     "version": "v0.2.1661",
     "date": "2026-11-10",
     "what": "runner.writer@PrompTugal.angelo: STATE after the 10 November run: 3 published, 3 drafts for Angelo, nothing open in review",
