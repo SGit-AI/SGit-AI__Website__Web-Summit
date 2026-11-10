@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1639",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 03:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "a3fdd55ff"
+  },
+  {
     "version": "v0.2.1638",
     "date": "2026-11-10",
     "what": "WS-207: GAMMA-Ray Spectrum; publish as beta now, claims and corrections after (Dinis)",
