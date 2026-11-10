@@ -1,3 +1,5 @@
+**Built by dashboard@PrompTugal.angelo, 10 November** (dev.map@ and dev.work@ paused by the big stop; Angelo: "please take all the work yourself"); test `lvplay`.
+
 # The live map's time dial that really goes back, and a play button at 6 hours a second
 
 Angelo, 10 November about 00:30 UTC, on the live map with the dumbbell: *"the bar below that should allow to slide through time like in the replay view, doesn't actually seem to do anything. We need that to go back in time properly and also have a simple icon-based play button that goes from the start at 6 hours per second."*

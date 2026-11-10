@@ -31,7 +31,8 @@
 .wb-ic.wb-quiet { opacity: .38; }
 .wb-ic.wv-lit rect { stroke: var(--rm-action, #4aa3ff); stroke-width: 5; }
 .wb-ic.wv-lit { opacity: 1; }
-.wb-or { position: absolute; left: 8px; bottom: 8px; z-index: 3; font: 500 12px/1.2 var(--rm-font, system-ui, sans-serif); color: var(--rm-text-secondary, #9EB2C7); background: var(--rm-surface, #0E2035); border: 1px solid var(--rm-border, #294A64); border-radius: 6px; padding: 3px 4px; opacity: .55; }
+/* the setting in the upper left: the lower edge holds the dial and its play buttons (dashboard@, 10 November) */
+.wb-or { position: absolute; left: 8px; top: 8px; z-index: 3; font: 500 12px/1.2 var(--rm-font, system-ui, sans-serif); color: var(--rm-text-secondary, #9EB2C7); background: var(--rm-surface, #0E2035); border: 1px solid var(--rm-border, #294A64); border-radius: 6px; padding: 3px 4px; opacity: .55; }
 .wb-or:hover, .wb-or:focus { opacity: 1; }
 .wb .wv-fly circle.wv-bg { fill: var(--rm-bg, #07111F); }
 .wb .wv-fly { filter: drop-shadow(0 0 6px currentColor); }
