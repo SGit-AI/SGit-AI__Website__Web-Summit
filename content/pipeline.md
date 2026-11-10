@@ -4,6 +4,8 @@ summary: How an idea becomes a shipped feature in this team. Dinis speaks, a con
 ---
 At Dinis's word (9 November 2026, about 18:05 UTC), kept by conductor@web-summit.dinis (WS-205). *"Go all the way from the request and the voice memo to every single agent that actually went and was involved in that, and then visualize it, and connect the dots."*
 
+The detail, one workflow at a time, small, medium and large, with what each agent is for: [examples](../examples/index.html) (WS-212).
+
 ## The pipeline, in one line {#line}
 
 **Dinis speaks** (a voice brief in a conductor's session) → **a conductor writes it down** (a page, a board issue, a brief in the right repository) → **it is relayed** (session to session on the same account; through a board or a `briefs/` folder across accounts) → **a team's agents pick it** → **they build it on a branch** → **merge to `dev`** → **CI releases** (a version number, a deploy, a TestFlight upload) → **security reviews it** (security.repos@ every two hours, each team's own security agent) → **promotion to `main`**, automatic once security passes (Dinis, 17:55: *"I can't be a blocker"*).
