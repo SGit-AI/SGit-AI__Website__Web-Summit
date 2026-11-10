@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-10T20:37Z",
+ "updated": "2026-11-10T20:59Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -521,8 +521,8 @@
     "side-events",
     "venue"
    ],
-   "decision": "Day 2 (Wednesday 11 Nov) will not take place: \"O Governo português informou formalmente a Web Summit de que [...] o segundo dia da Web Summit não deverá realizar-se [...] A Web Summit respeitará, naturalmente, as orientações do Governo e, consequentemente, o segundo dia (quarta-feira, 11 de novembro) não terá lugar.\"",
-   "at": "2026-11-10T19:38Z",
+   "decision": "Day 2 (Wednesday 11 Nov) will not take place: \"Web Summit will of course respect the Government's direction, and accordingly, Day 2 (Wednesday, November 11th) will not take place.\" Reasons given: tidal flooding, severe disruption to public transport, high winds on external structures; after discussions with the government, ANEPC and PSP.",
+   "at": "2026-11-10T19:09Z",
    "status": "happened",
    "follows": [
     "gov-recommends-suspend",
@@ -530,12 +530,13 @@
     "ipma-red-wind",
     "websummit-assessing"
    ],
-   "label": "evidence",
-   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
-   "read": "2026-11-10T20:37Z",
+   "label": "fact",
+   "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+   "read": "2026-11-10T20:59Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "Organisers' email to attendees 19:38Z (relayed by Vicky's weather desk); statement to the press quoted by Jornal de Negócios live, entry 19:42. Reasons given: tidal flooding, severe public-transport disruption, high winds on external structures. Not on websummit.com (home, schedule, sitemap: no new URL) nor Bluesky websummit.bsky.social (last post 17:36Z) at 20:04Z and 20:37Z: evidence until it appears on an organiser channel we can read. Lead time: 5 h 45 min after the government's recommendation (17:53), 16 h 22 min before the red warnings start (12:00 Wed).",
+   "note": "Web Summit's own page \"Important event update\": datePublished 2026-11-10T19:09:00, dateModified 19:25:44 (the page's JSON-LD; Lisbon = UTC). Found first by incident.conductor@ (read 20:58Z); re-read at source by us at 20:59Z. The organisers' email followed at 19:38Z and the press at 19:42Z. We missed the page from 19:09 to 20:58: it is in the blog list (/blog/), not in sitemap.xml, and we watched only the sitemap, the home page and /news/. Lead time: 5 h 16 min after the government's recommendation (17:53), 16 h 51 min before the red warnings start (12:00 Wed).",
    "corroborated_by": [
+    "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
     "https://cnnportugal.iol.pt/tempestade-charles/web-summit/tempestade-charles-obriga-ao-cancelamento-da-web-summit-na-quarta-feira/20261110/6af3796cd34e9ce6f1b43dff",
     "https://eco.sapo.pt/2026/11/10/web-summit-vai-encerrar-esta-quarta-feira-devido-ao-mau-tempo/",
     "https://www.tsf.pt/sociedade/artigo/web-summit-suspende-programacao-na-quarta-feira/18146829",
@@ -692,17 +693,20 @@
     "venue",
     "side-events"
    ],
-   "decision": "Day 3 (Thursday 12 Nov) to proceed as planned: \"A Web Summit pretende prosseguir com o terceiro dia (quinta-feira, 12 de novembro) conforme planeado, após a passagem da tempestade Charles\", with further updates to follow",
-   "at": "2026-11-10T19:42Z",
+   "decision": "Day 3 (Thursday 12 Nov): \"Web Summit aims to proceed with Day 3 (Thursday, November 12) as planned, following the passing of Storm Charles. [...] provide further updates as soon as confirmed information becomes available.\"",
+   "at": "2026-11-10T19:09Z",
    "status": "happened",
    "follows": [
     "websummit-wednesday"
    ],
-   "label": "evidence",
-   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
-   "read": "2026-11-10T20:37Z",
+   "label": "fact",
+   "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+   "read": "2026-11-10T20:59Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "\"Pretende\" (aims): an intention, not a guarantee. RTP live reported the same at 19:46 (per comms/facts.md F9)."
+   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed.",
+   "corroborated_by": [
+    "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
+   ]
   },
   {
    "id": "websummit-n6",
@@ -718,9 +722,9 @@
    ],
    "label": "fact",
    "source": "https://websummit.com/startups/pitch/",
-   "read": "2026-11-10T20:37Z",
+   "read": "2026-11-10T20:59Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "Nothing on websummit.com (home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the Jornal de Negócios statement or a web search at 20:04Z. The organisers said they will contact those affected directly (RTP, 19:46, per facts.md F9). Re-checked 20:37Z (site, sitemap, Bluesky, live blog, web search across CNN Portugal, ECO, TSF, Jornal Económico): still nothing."
+   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z."
   },
   {
    "id": "side-events-wednesday",
@@ -761,5 +765,8 @@
     "Trains and flights may take time to recover on Thursday morning."
    ]
   }
+ ],
+ "lessons": [
+  "2026-11-10: the organisers' decision was on websummit.com from 19:09 in the blog, which is not in sitemap.xml; we watched the sitemap, home and /news/ and saw it only at 20:58 (via incident.conductor@). Now: the blog list (/blog/, its embedded JSON) is the organisers' primary channel, and every section of an organiser's site is mapped in sources.json."
  ]
 }
