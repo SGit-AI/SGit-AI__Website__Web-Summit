@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1637",
+    "date": "2026-11-10",
+    "what": "journalist@PrompTugal.vicky: report, OVERNIGHT-10NOV fix-only wake idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "53007930e"
+  },
+  {
     "version": "v0.2.1636",
     "date": "2026-11-10",
     "what": "journalist-ai@PrompTugal.vicky: OVERNIGHT-10NOV fix-only: S37 revised; report",
