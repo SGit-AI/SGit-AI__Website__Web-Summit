@@ -17,6 +17,7 @@ One file per day: `people/indi/social/<YYYY-MM-DD>.md`.
 | Sat 7 Nov | [2026-11-07.md](2026-11-07.md) | Three cards, three questions; find us Thu 12 | Sun 8, 18:00 |
 | Sun 8 Nov | [2026-11-08.md](2026-11-08.md) | Your AI has access. Does it have permission? Opening Night tonight; find us Thu 12 | Mon 9, 08:00 |
 | Mon 9 Nov | [2026-11-09.md](2026-11-09.md) | The demo is us: every agent has a published behaviour policy | Tue 10, 08:00 |
+| Tue 10 Nov | [2026-11-10.md](2026-11-10.md) | Tomorrow at our stand: the green card's line, run, buy or sell, the card on your phone | Wed 11, 08:00 |
 
 ## Posted (only when Indi says so)
 
@@ -29,6 +30,7 @@ One file per day: `people/indi/social/<YYYY-MM-DD>.md`.
 - **The business cards:** three audiences, three questions, colour-coded (7 Nov).
 - **Access versus permission:** the security card's question; payroll and mail examples (8 Nov).
 - **The demo is us:** our own agents' published policies (9 Nov).
+- **Tomorrow at our stand:** the green card's line; the three openers (10 Nov).
 
 ## Themes others already cover (do not repeat)
 
