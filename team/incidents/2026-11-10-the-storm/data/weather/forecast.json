@@ -2,7 +2,7 @@
  "about": "IPMA's own forecast for Lisbon (globalIdLocal 1110600): the 5-day daily forecast and the hourly model forecast (mean wind, no gusts). IPMA's wind classes: 1 weak, 2 moderate, 3 strong, 4 very strong.",
  "daily": {
   "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-  "read_utc": "2026-11-10T20:04:40Z",
+  "read_utc": "2026-11-10T20:22:38Z",
   "updated_local": "2026-11-10T19:31:03",
   "days": [
    {
@@ -70,7 +70,7 @@
  "hourly_runs": [],
  "hourly": {
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-10T20:04:40Z",
+  "read_utc": "2026-11-10T20:22:38Z",
   "updated_local": "2026-11-10T07:55:56",
   "wed_peak": {
    "time_utc": "2026-11-11T18:00Z",
@@ -79,7 +79,7 @@
    "rain_prob_pct": 90.0,
    "rain_intensity_class": 3,
    "temp_c": 18.7,
-   "sea_total_m": 4.8
+   "sea_total_m": 3.8
   },
   "rows": [
    {
@@ -188,7 +188,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 18.9,
-    "sea_total_m": 4.3
+    "sea_total_m": 4.2
    },
    {
     "time_utc": "2026-11-10T14:00Z",
@@ -206,7 +206,7 @@
     "rain_prob_pct": 100.0,
     "rain_intensity_class": 2,
     "temp_c": 19.6,
-    "sea_total_m": 4.2
+    "sea_total_m": 4.1
    },
    {
     "time_utc": "2026-11-10T16:00Z",
@@ -224,7 +224,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 17.9,
-    "sea_total_m": 4.1
+    "sea_total_m": 4.0
    },
    {
     "time_utc": "2026-11-10T18:00Z",
@@ -233,7 +233,7 @@
     "rain_prob_pct": 96.0,
     "rain_intensity_class": 2,
     "temp_c": 17.4,
-    "sea_total_m": 4.0
+    "sea_total_m": 3.9
    },
    {
     "time_utc": "2026-11-10T19:00Z",
@@ -242,7 +242,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 17.5,
-    "sea_total_m": 4.0
+    "sea_total_m": 3.9
    },
    {
     "time_utc": "2026-11-10T20:00Z",
@@ -251,7 +251,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.9,
-    "sea_total_m": 3.9
+    "sea_total_m": 3.8
    },
    {
     "time_utc": "2026-11-10T21:00Z",
@@ -260,7 +260,7 @@
     "rain_prob_pct": 86.0,
     "rain_intensity_class": 1,
     "temp_c": 18.1,
-    "sea_total_m": 3.9
+    "sea_total_m": 3.8
    },
    {
     "time_utc": "2026-11-10T22:00Z",
@@ -314,7 +314,7 @@
     "rain_prob_pct": 100.0,
     "rain_intensity_class": 2,
     "temp_c": 16.7,
-    "sea_total_m": 3.5
+    "sea_total_m": 3.6
    },
    {
     "time_utc": "2026-11-11T04:00Z",
@@ -350,7 +350,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 15.8,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.4
    },
    {
     "time_utc": "2026-11-11T08:00Z",
@@ -368,7 +368,7 @@
     "rain_prob_pct": 100.0,
     "rain_intensity_class": 3,
     "temp_c": 15.7,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.2
    },
    {
     "time_utc": "2026-11-11T10:00Z",
@@ -377,7 +377,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 3,
     "temp_c": 15.2,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.2
    },
    {
     "time_utc": "2026-11-11T11:00Z",
@@ -386,7 +386,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 3,
     "temp_c": 15.2,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.2
    },
    {
     "time_utc": "2026-11-11T12:00Z",
@@ -395,7 +395,7 @@
     "rain_prob_pct": 100.0,
     "rain_intensity_class": 3,
     "temp_c": 14.8,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.2
    },
    {
     "time_utc": "2026-11-11T13:00Z",
@@ -404,7 +404,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 3,
     "temp_c": 18.5,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.2
    },
    {
     "time_utc": "2026-11-11T14:00Z",
@@ -413,7 +413,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 3,
     "temp_c": 18.5,
-    "sea_total_m": 3.7
+    "sea_total_m": 3.3
    },
    {
     "time_utc": "2026-11-11T15:00Z",
@@ -422,7 +422,7 @@
     "rain_prob_pct": 100.0,
     "rain_intensity_class": 3,
     "temp_c": 18.5,
-    "sea_total_m": 4.5
+    "sea_total_m": 3.3
    },
    {
     "time_utc": "2026-11-11T16:00Z",
@@ -431,7 +431,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 3,
     "temp_c": 20.3,
-    "sea_total_m": 4.7
+    "sea_total_m": 3.4
    },
    {
     "time_utc": "2026-11-11T17:00Z",
@@ -440,7 +440,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 3,
     "temp_c": 18.5,
-    "sea_total_m": 4.7
+    "sea_total_m": 3.6
    },
    {
     "time_utc": "2026-11-11T18:00Z",
@@ -449,7 +449,7 @@
     "rain_prob_pct": 90.0,
     "rain_intensity_class": 3,
     "temp_c": 18.7,
-    "sea_total_m": 4.8
+    "sea_total_m": 3.8
    },
    {
     "time_utc": "2026-11-11T19:00Z",
@@ -458,7 +458,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": null,
     "temp_c": 17.9,
-    "sea_total_m": 4.7
+    "sea_total_m": 3.6
    },
    {
     "time_utc": "2026-11-11T20:00Z",
@@ -467,7 +467,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": null,
     "temp_c": 17.9,
-    "sea_total_m": 4.6
+    "sea_total_m": 3.4
    },
    {
     "time_utc": "2026-11-11T21:00Z",
@@ -476,7 +476,7 @@
     "rain_prob_pct": 31.0,
     "rain_intensity_class": null,
     "temp_c": 17.8,
-    "sea_total_m": 4.5
+    "sea_total_m": 3.4
    },
    {
     "time_utc": "2026-11-11T22:00Z",
@@ -485,7 +485,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.5,
-    "sea_total_m": 4.3
+    "sea_total_m": 3.3
    },
    {
     "time_utc": "2026-11-11T23:00Z",
@@ -494,7 +494,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.2,
-    "sea_total_m": 4.1
+    "sea_total_m": 3.3
    },
    {
     "time_utc": "2026-11-12T00:00Z",
@@ -503,7 +503,7 @@
     "rain_prob_pct": 80.0,
     "rain_intensity_class": 1,
     "temp_c": 17.1,
-    "sea_total_m": 4.0
+    "sea_total_m": 3.2
    },
    {
     "time_utc": "2026-11-12T01:00Z",
@@ -512,7 +512,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 16.9,
-    "sea_total_m": 3.9
+    "sea_total_m": 3.2
    },
    {
     "time_utc": "2026-11-12T02:00Z",
@@ -521,7 +521,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 16.9,
-    "sea_total_m": 3.8
+    "sea_total_m": 3.3
    },
    {
     "time_utc": "2026-11-12T03:00Z",
@@ -530,7 +530,7 @@
     "rain_prob_pct": 82.0,
     "rain_intensity_class": 1,
     "temp_c": 15.7,
-    "sea_total_m": 3.8
+    "sea_total_m": 3.3
    },
    {
     "time_utc": "2026-11-12T04:00Z",
@@ -539,7 +539,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 16.9,
-    "sea_total_m": 3.8
+    "sea_total_m": 3.4
    },
    {
     "time_utc": "2026-11-12T05:00Z",
@@ -548,7 +548,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.2,
-    "sea_total_m": 3.8
+    "sea_total_m": 3.4
    },
    {
     "time_utc": "2026-11-12T06:00Z",
@@ -557,7 +557,7 @@
     "rain_prob_pct": 88.0,
     "rain_intensity_class": 1,
     "temp_c": 16.7,
-    "sea_total_m": 3.8
+    "sea_total_m": 3.5
    },
    {
     "time_utc": "2026-11-12T07:00Z",
@@ -566,7 +566,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 16.7,
-    "sea_total_m": 3.8
+    "sea_total_m": 3.5
    },
    {
     "time_utc": "2026-11-12T08:00Z",
@@ -575,7 +575,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 16.8,
-    "sea_total_m": 3.9
+    "sea_total_m": 3.6
    },
    {
     "time_utc": "2026-11-12T09:00Z",
@@ -584,7 +584,7 @@
     "rain_prob_pct": 65.0,
     "rain_intensity_class": 2,
     "temp_c": 18.4,
-    "sea_total_m": 3.9
+    "sea_total_m": 3.6
    },
    {
     "time_utc": "2026-11-12T10:00Z",
@@ -593,7 +593,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 18.9,
-    "sea_total_m": 3.9
+    "sea_total_m": 3.6
    },
    {
     "time_utc": "2026-11-12T11:00Z",
@@ -602,7 +602,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 19.8,
-    "sea_total_m": 3.9
+    "sea_total_m": 3.6
    },
    {
     "time_utc": "2026-11-12T12:00Z",
@@ -611,7 +611,7 @@
     "rain_prob_pct": 88.0,
     "rain_intensity_class": 1,
     "temp_c": 21.1,
-    "sea_total_m": 3.8
+    "sea_total_m": 3.6
    },
    {
     "time_utc": "2026-11-12T13:00Z",
@@ -620,7 +620,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 19.4,
-    "sea_total_m": 3.8
+    "sea_total_m": 3.6
    },
    {
     "time_utc": "2026-11-12T14:00Z",
@@ -629,7 +629,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 20.3,
-    "sea_total_m": 3.7
+    "sea_total_m": 3.5
    },
    {
     "time_utc": "2026-11-12T15:00Z",
@@ -638,7 +638,7 @@
     "rain_prob_pct": 96.0,
     "rain_intensity_class": 1,
     "temp_c": 20.1,
-    "sea_total_m": 3.7
+    "sea_total_m": 3.5
    },
    {
     "time_utc": "2026-11-12T16:00Z",
@@ -647,7 +647,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 19.1,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.4
    },
    {
     "time_utc": "2026-11-12T17:00Z",
@@ -656,7 +656,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 18.2,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.4
    },
    {
     "time_utc": "2026-11-12T18:00Z",
@@ -665,7 +665,7 @@
     "rain_prob_pct": 67.0,
     "rain_intensity_class": 1,
     "temp_c": 17.4,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.4
    },
    {
     "time_utc": "2026-11-12T19:00Z",
@@ -674,7 +674,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.4,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.4
    },
    {
     "time_utc": "2026-11-12T20:00Z",
@@ -683,7 +683,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.5,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.4
    },
    {
     "time_utc": "2026-11-12T21:00Z",
@@ -692,7 +692,7 @@
     "rain_prob_pct": 37.0,
     "rain_intensity_class": 1,
     "temp_c": 17.7,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.3
    },
    {
     "time_utc": "2026-11-12T22:00Z",
@@ -701,7 +701,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.8,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.3
    },
    {
     "time_utc": "2026-11-12T23:00Z",
@@ -710,7 +710,7 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.7,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.3
    },
    {
     "time_utc": "2026-11-13T00:00Z",
@@ -719,7 +719,7 @@
     "rain_prob_pct": 63.0,
     "rain_intensity_class": 1,
     "temp_c": 17.0,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.3
    }
   ]
  }
