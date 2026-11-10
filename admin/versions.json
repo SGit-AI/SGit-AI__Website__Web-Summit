@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1703",
+    "date": "2026-11-10",
+    "what": "the first two examples, a badge photo to a live page and a voice brief to a deck, each drawn from its trace",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "d937b0f81"
+  },
+  {
     "version": "v0.2.1702",
     "date": "2026-11-10",
     "what": "runner.conductor@PrompTugal.angelo: run 14:20, nothing urgent",
