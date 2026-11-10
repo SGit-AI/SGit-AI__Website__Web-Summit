@@ -124,5 +124,13 @@
   "status": "running",
   "schedule": "none: one task, then DONE.md",
   "note": "Started 9 November 2026, about 17:41 UTC, at Indi's word. Reports to the conductor in people/indi/helpers/map/DONE.md."
+ },
+ {
+  "name": "inbox@web-summit.indi",
+  "job": "reads Indi's Gmail (summit and RiskMandate mail only) and drafts replies in Gmail; never sends; reports in its own chat",
+  "session": "Claude Code cloud session in Indi's account, with the Gmail connector",
+  "status": "starting",
+  "schedule": "07:45 and 17:45 UTC (cron 45 7,17 * * *)",
+  "note": "Added 10 November 2026 at Indi's word. Prompt in people/indi/kit/README.md. Email content never goes in the repository."
  }
 ]
