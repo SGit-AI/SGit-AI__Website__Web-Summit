@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1619",
+    "date": "2026-11-10",
+    "what": "dashboard@PrompTugal.angelo: the wallpaper's dumbbell drawn: the team in its circle, the routes faint, the icons and abbreviations, deliveries along the routes (0.5.0)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "7be75d008"
+  },
+  {
     "version": "v0.2.1618",
     "date": "2026-11-10",
     "what": "review: bring workers/dev.map's and dev.app's new work onto dev (one commit)",
