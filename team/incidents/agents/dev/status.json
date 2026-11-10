@@ -1,7 +1,7 @@
 {
   "agent": "incident.dev@web-summit.dinis",
-  "state": "blocked on the new repository (add_repo refused); the pinned 2-minute blog poll running in this session until ~23:25, alerts to incident.conductor@ by message",
-  "last_wake": "2026-11-10T21:20Z",
+  "state": "blocked on the new repository (add_repo refused; 'Dinis:' ask); the pinned 2-minute blog poll running until ~23:35 (one alert, 21:32, not a new decision); dashboard code waits for the new repository",
+  "last_wake": "2026-11-10T21:42Z",
   "jobs": [
     "J1 (tonight): measure, do not guess: why this repository's gate takes 110 s in CI (run 42879607949, validate step) against 7.8 s locally. Hypothesis in PIPELINE.md section 0. Report in status; change nothing in this repository's CI without the conductor's and Dinis's yes.",
     "J2 (tonight): the data lane prototype (PIPELINE.md section 4): a public vault for WS-214, one connector writing facts.json to it, one page under team/incidents/ reading it with the pinned sg-vault library; measure write-to-read latency end to end. Vault keys never committed; only a public read key, if Dinis agrees.",
@@ -40,7 +40,7 @@
     "incident.conductor@ and Dinis: a yes to drop `filter: blob:none` from the validate job's checkout in .github/workflows/deploy-pages.yml (one line). Expected: the gate step from ~90 s to ~20 s, about 70 s off every push (median 3 min 56 s to about 2 min 45 s). Not changed: CI is not mine to change without that yes",
     "Dinis: OPEN_ROUTER_KEY is already set in incident.dev@'s environment (one 20-token test call through llm.mjs at 20:48: ok, $0.0000038). Your yes still needed on the daily cap (LLM_DAILY_CAP_USD; 5 USD until you say) and on which sessions get the key"
   ],
-  "updated": "2026-11-10T21:40Z",
+  "updated": "2026-11-10T21:45Z",
   "by": "incident.dev@web-summit.dinis (done, next, asks, baseline); jobs by incident.conductor@web-summit.dinis",
   "baseline": {
     "what": "push to deployed on web-summit.sgit.ai (deploy-pages, push to dev): run created to run completed, as GitHub reports it",
@@ -92,8 +92,32 @@
         "by": "incident.dev@",
         "release_sh_to_live_s": 93,
         "note": "21:06, a quiet queue: the fastest so far"
+      },
+      {
+        "release": "v0.2.1755",
+        "release_sh_to_live_s": 136
+      },
+      {
+        "release": "v0.2.1757",
+        "release_sh_to_live_s": 94
+      },
+      {
+        "release": "v0.2.1758 (status only)",
+        "release_sh_to_live_s": ">412",
+        "note": "queued behind the release lock"
+      },
+      {
+        "release": "v0.2.1760",
+        "release_sh_to_live_s": 136
       }
-    ]
+    ],
+    "incident_dev_releases_tonight": {
+      "n": 11,
+      "median_s": 200,
+      "min_s": 93,
+      "queued_over_6_min": 3,
+      "note": "release.sh start to llms.txt serving the version; the new site measures 23 s push to served (v0.1.2)"
+    }
   },
   "notes": [
     "Seen while testing (not mine): the site's page-view append to dev.send.sgraph.ai answers 507 Insufficient Storage on every page load (19:44 UTC)",
