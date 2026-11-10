@@ -5,11 +5,13 @@
   "jobs": [
     "J1 (tonight): measure, do not guess: why this repository's gate takes 110 s in CI (run 42879607949, validate step) against 7.8 s locally. Hypothesis in PIPELINE.md section 0. Report in status; change nothing in this repository's CI without the conductor's and Dinis's yes.",
     "J2 (tonight): the data lane prototype (PIPELINE.md section 4): a public vault for WS-214, one connector writing facts.json to it, one page under team/incidents/ reading it with the pinned sg-vault library; measure write-to-read latency end to end. Vault keys never committed; only a public read key, if Dinis agrees.",
-    "J3 (Wednesday morning): the Now and Flow panes (PIPELINE.md section 5): an adapter from the incident's timeline to the live.json shape of Angelo's people/angelo/app/live.js, on a pinned copy."
+    "J2b (after J1, Dinis's direction 19:15, ROADMAP P0.4 and P0.2): tools/llm.mjs under team/incidents/, the one wrapper for every model call (request and response to the raw vault, one ledger.jsonl line: model, provider, tokens, cost, latency, task id); then push-to-served measured on every push. No file over 256 KB, no binaries in git. OpenRouter key not yet in the environment (Dinis's question 2): build against a dummy.",
+    "J3 (Wednesday morning): the Now and Flow panes (PIPELINE.md section 5): an adapter from the incident's timeline to the live.json shape of Angelo's people/angelo/app/live.js, on a pinned copy.",
+    "J4 (from incident.researcher@'s asks): parsers, just the part named in data/decisions/sources.json parser_ask: websummit sitemap diff (first), Jornal de Negócios live entries, government news list, Carris alert banner, CP service alerts."
   ],
   "done": [],
   "next": [],
   "asks": [],
-  "updated": "2026-11-10T19:10:00Z",
+  "updated": "2026-11-10T19:20:00Z",
   "by": "incident.conductor@web-summit.dinis"
 }
