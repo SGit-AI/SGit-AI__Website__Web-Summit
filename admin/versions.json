@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1750",
+    "date": "2026-11-10",
+    "what": "P0.4: llm.mjs, the one wrapper for model calls: raw to a store outside git, one content-free ledger line per call, a daily cap",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "cd9246b82"
+  },
+  {
     "version": "v0.2.1749",
     "date": "2026-11-10",
     "what": "20:37 wake: no change to Day 3; N6 still unannounced; Day 2 off corroborated by four outlets",
