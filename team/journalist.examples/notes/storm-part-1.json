@@ -1,0 +1,83 @@
+{
+  "title": "The storm, part 1: a red warning to a weather desk and a decision chain",
+  "subtitle": "Vicky's newsroom publishes S41 at 14:36; at Dinis's word a weather desk starts at 16:51 and maps who decides what by 17:02; the parser loop is still to come",
+  "col": 150,
+  "date": "10 November 2026",
+  "labels": {
+    "1": "S41 drafted:|the red warning",
+    "2": "yes: publish",
+    "3": "S41 published",
+    "4": "an hourly|watch",
+    "5": "updates|approved|in advance",
+    "6": "asks for a|weather agent",
+    "7": "starts|weather@",
+    "8": "IPMA read;|the live page",
+    "9": "sea, transport,|venue read",
+    "10": "the government's|alert; the|decision chain",
+    "11": "S43|commissioned",
+    "12": "the storm is|the case study",
+    "13": "guidance for|PrompTugal",
+    "14": "the parser loop|(expected, no|evidence yet)"
+  },
+  "when": {
+    "2": "before 14:36",
+    "6": "16:50 (about)",
+    "12": "about 17:05",
+    "14": "next"
+  },
+  "edges": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      10,
+      12
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      13,
+      14,
+      "d"
+    ]
+  ],
+  "output_after": 11,
+  "output": "S41 live; the|desk's page and|decision chain",
+  "output_when": "",
+  "from": "PrompTugal__News__Website's commits, written up as a trace in team/journalist.examples/materials/storm/workflow-trace.json"
+}

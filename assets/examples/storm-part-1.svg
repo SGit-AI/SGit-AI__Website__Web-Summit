@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2480 1120" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="2480" height="1120" fill="#faf9f5"/>
+<text x="30" y="44" font-size="26" font-weight="700" fill="#141413">The storm, part 1: a red warning to a weather desk and a decision chain</text>
+<text x="30" y="74" font-size="15" fill="#5e5d59">Vicky&#x27;s newsroom publishes S41 at 14:36; at Dinis&#x27;s word a weather desk starts at 16:51 and maps who decides what by 17:02; the parser loop is still to come</text>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#5e5d59"/></marker></defs>
+<rect x="20" y="112" width="2440" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="150" font-size="12" font-weight="700" fill="#1f5f8b">journalist@PrompTugal.vicky</text>
+<text x="34" y="170" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="204" width="2440" height="84" rx="10" fill="#8a3b1f" fill-opacity="0.10"/>
+<text x="34" y="242" font-size="14" font-weight="700" fill="#8a3b1f">Vicky</text>
+<text x="34" y="262" font-size="12" fill="#5e5d59">a person</text>
+<rect x="20" y="296" width="2440" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="334" font-size="12" font-weight="700" fill="#1f5f8b">reviewer@PrompTugal.vicky</text>
+<text x="34" y="354" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="388" width="2440" height="84" rx="10" fill="#8a3b1f" fill-opacity="0.10"/>
+<text x="34" y="426" font-size="14" font-weight="700" fill="#8a3b1f">Dinis</text>
+<text x="34" y="446" font-size="12" fill="#5e5d59">a person</text>
+<rect x="20" y="480" width="2440" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="518" font-size="12" font-weight="700" fill="#1f5f8b">conductor.B@PrompTugal.vicky</text>
+<text x="34" y="538" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="572" width="2440" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="610" font-size="14" font-weight="700" fill="#1f5f8b">weather@PrompTugal.vicky</text>
+<text x="34" y="630" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="664" width="2440" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="702" font-size="14" font-weight="700" fill="#1f5f8b">curator@PrompTugal.vicky</text>
+<text x="34" y="722" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="756" width="2440" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="794" font-size="12" font-weight="700" fill="#1f5f8b">conductor@web-summit.dinis</text>
+<text x="34" y="814" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="848" width="2440" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="886" font-size="12" font-weight="700" fill="#1f5f8b">the desk&#x27;s team (expected)</text>
+<text x="34" y="906" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="940" width="2440" height="84" rx="10" fill="#c96442" fill-opacity="0.10"/>
+<text x="34" y="978" font-size="14" font-weight="700" fill="#c96442">the output</text>
+<path d="M346,154.0 C357.0,154.0 357.0,246.0 368,246.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M496,246.0 C507.0,246.0 507.0,338.0 518,338.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M646,338.0 C657.0,338.0 657.0,154.0 668,154.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M796,154.0 C807.0,154.0 807.0,338.0 818,338.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1096,430.0 C1107.0,430.0 1107.0,522.0 1118,522.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1246,522.0 C1257.0,522.0 1257.0,614.0 1268,614.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1396,614.0 C1407.0,614.0 1407.0,614.0 1418,614.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1546,614.0 C1557.0,614.0 1557.0,614.0 1568,614.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1696,614.0 C1707.0,614.0 1707.0,706.0 1718,706.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1696,614.0 C1782.0,614.0 1782.0,430.0 1868,430.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1996,430.0 C2007.0,430.0 2007.0,798.0 2018,798.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M2146,798.0 C2157.0,798.0 2157.0,890.0 2168,890.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)" stroke-dasharray="4 4"/>
+<path d="M1846,706.0 H2308 V982.0 H2318" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="218" y="120" width="128" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="228" y="142" font-size="12.5" fill="#141413">S41 drafted:</text>
+<text x="228" y="159" font-size="12.5" fill="#141413">the red warning</text>
+<text x="282.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">14:31</text>
+<rect x="368" y="212" width="128" height="68" rx="8" fill="#ffffff" stroke="#8a3b1f" stroke-width="1.6"/>
+<text x="378" y="234" font-size="12.5" fill="#141413">yes: publish</text>
+<text x="432.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">before 14:36</text>
+<rect x="518" y="304" width="128" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="528" y="326" font-size="12.5" fill="#141413">S41 published</text>
+<text x="582.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">14:36</text>
+<rect x="668" y="120" width="128" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="678" y="142" font-size="12.5" fill="#141413">an hourly</text>
+<text x="678" y="159" font-size="12.5" fill="#141413">watch</text>
+<text x="732.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">15:10</text>
+<rect x="818" y="304" width="128" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="828" y="326" font-size="12.5" fill="#141413">updates</text>
+<text x="828" y="343" font-size="12.5" fill="#141413">approved</text>
+<text x="828" y="360" font-size="12.5" fill="#141413">in advance</text>
+<text x="882.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">15:23</text>
+<rect x="968" y="396" width="128" height="68" rx="8" fill="#ffffff" stroke="#8a3b1f" stroke-width="1.6"/>
+<text x="978" y="418" font-size="12.5" fill="#141413">asks for a</text>
+<text x="978" y="435" font-size="12.5" fill="#141413">weather agent</text>
+<text x="1032.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">16:50 (about)</text>
+<rect x="1118" y="488" width="128" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="1128" y="510" font-size="12.5" fill="#141413">starts</text>
+<text x="1128" y="527" font-size="12.5" fill="#141413">weather@</text>
+<text x="1182.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">16:51</text>
+<rect x="1268" y="580" width="128" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="1278" y="602" font-size="12.5" fill="#141413">IPMA read;</text>
+<text x="1278" y="619" font-size="12.5" fill="#141413">the live page</text>
+<text x="1332.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">16:55</text>
+<rect x="1418" y="580" width="128" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="1428" y="602" font-size="12.5" fill="#141413">sea, transport,</text>
+<text x="1428" y="619" font-size="12.5" fill="#141413">venue read</text>
+<text x="1482.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">16:59</text>
+<rect x="1568" y="580" width="128" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="1578" y="602" font-size="12.5" fill="#141413">the government&#x27;s</text>
+<text x="1578" y="619" font-size="12.5" fill="#141413">alert; the</text>
+<text x="1578" y="636" font-size="12.5" fill="#141413">decision chain</text>
+<text x="1632.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">17:02</text>
+<rect x="1718" y="672" width="128" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="1728" y="694" font-size="12.5" fill="#141413">S43</text>
+<text x="1728" y="711" font-size="12.5" fill="#141413">commissioned</text>
+<text x="1782.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">17:05</text>
+<rect x="1868" y="396" width="128" height="68" rx="8" fill="#ffffff" stroke="#8a3b1f" stroke-width="1.6"/>
+<text x="1878" y="418" font-size="12.5" fill="#141413">the storm is</text>
+<text x="1878" y="435" font-size="12.5" fill="#141413">the case study</text>
+<text x="1932.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">about 17:05</text>
+<rect x="2018" y="764" width="128" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="2028" y="786" font-size="12.5" fill="#141413">guidance for</text>
+<text x="2028" y="803" font-size="12.5" fill="#141413">PrompTugal</text>
+<text x="2082.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">17:06</text>
+<rect x="2168" y="856" width="128" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="2178" y="878" font-size="12.5" fill="#141413">the parser loop</text>
+<text x="2178" y="895" font-size="12.5" fill="#141413">(expected, no</text>
+<text x="2178" y="912" font-size="12.5" fill="#141413">evidence yet)</text>
+<text x="2232.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">next</text>
+<rect x="2318" y="948" width="128" height="68" rx="8" fill="#ffffff" stroke="#c96442" stroke-width="1.6"/>
+<text x="2328" y="970" font-size="12.5" fill="#141413">S41 live; the</text>
+<text x="2328" y="987" font-size="12.5" fill="#141413">desk&#x27;s page and</text>
+<text x="2328" y="1004" font-size="12.5" fill="#141413">decision chain</text>
+<text x="30" y="1088" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from PrompTugal__News__Website&#x27;s commits, written up as a trace in team/journalist.examples/materials/storm/workflow-trace.json.</text>
+<text x="30" y="1106" font-size="12" fill="#5e5d59">Dashed: a side step, or a step with no public evidence. Times UTC, 10 November 2026. Columns are steps, not to scale.</text>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 818" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1400" height="818" fill="#faf9f5"/>
+<text x="30" y="44" font-size="26" font-weight="700" fill="#141413">The storm: who decided what, and how far ahead</text>
+<text x="30" y="74" font-size="15" fill="#5e5d59">From the weather desk's sources, as of 17:04 UTC on 10 November. Lisbon time = UTC. The red wind warning runs Wednesday 12:00 to 21:00.</text>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#5e5d59"/></marker></defs>
+<rect x="20" y="120" width="1360" height="78" rx="10" fill="#5e5d59" fill-opacity="0.09"/>
+<text x="34" y="163.0" font-size="14" font-weight="700" fill="#141413">weather</text>
+<rect x="20" y="206" width="1360" height="78" rx="10" fill="#5e5d59" fill-opacity="0.05"/>
+<text x="34" y="249.0" font-size="14" font-weight="700" fill="#141413">civil protection</text>
+<rect x="20" y="292" width="1360" height="78" rx="10" fill="#5e5d59" fill-opacity="0.09"/>
+<text x="34" y="335.0" font-size="14" font-weight="700" fill="#141413">government</text>
+<rect x="20" y="378" width="1360" height="78" rx="10" fill="#5e5d59" fill-opacity="0.05"/>
+<text x="34" y="421.0" font-size="14" font-weight="700" fill="#141413">sea and port</text>
+<rect x="20" y="464" width="1360" height="78" rx="10" fill="#5e5d59" fill-opacity="0.09"/>
+<text x="34" y="507.0" font-size="14" font-weight="700" fill="#141413">city</text>
+<rect x="20" y="550" width="1360" height="78" rx="10" fill="#5e5d59" fill-opacity="0.05"/>
+<text x="34" y="593.0" font-size="14" font-weight="700" fill="#141413">transport</text>
+<rect x="20" y="636" width="1360" height="78" rx="10" fill="#5e5d59" fill-opacity="0.09"/>
+<text x="34" y="679.0" font-size="14" font-weight="700" fill="#141413">the summit</text>
+<rect x="1166.5517241379312" y="106" width="183.10344827586187" height="608" fill="#8a3b1f" fill-opacity="0.10"/>
+<text x="1258.103448275862" y="100" font-size="13" font-weight="700" fill="#8a3b1f" text-anchor="middle">red wind in Lisbon</text>
+<line x1="781.3563218390805" y1="106" x2="781.3563218390805" y2="714" stroke="#141413" stroke-dasharray="2 3"/><text x="781.3563218390805" y="100" font-size="12" fill="#141413" text-anchor="middle">as of 17:04</text>
+<line x1="190.0" y1="714" x2="190.0" y2="722" stroke="#5e5d59"/><text x="190.0" y="738" font-size="11.5" fill="#5e5d59" text-anchor="middle">Mon 12:00</text>
+<line x1="312.0689655172414" y1="714" x2="312.0689655172414" y2="722" stroke="#5e5d59"/><text x="312.0689655172414" y="738" font-size="11.5" fill="#5e5d59" text-anchor="middle">18:00</text>
+<line x1="434.1379310344828" y1="714" x2="434.1379310344828" y2="722" stroke="#5e5d59"/><text x="434.1379310344828" y="738" font-size="11.5" fill="#5e5d59" text-anchor="middle">Tue 00:00</text>
+<line x1="556.2068965517242" y1="714" x2="556.2068965517242" y2="722" stroke="#5e5d59"/><text x="556.2068965517242" y="738" font-size="11.5" fill="#5e5d59" text-anchor="middle">06:00</text>
+<line x1="678.2758620689656" y1="714" x2="678.2758620689656" y2="722" stroke="#5e5d59"/><text x="678.2758620689656" y="738" font-size="11.5" fill="#5e5d59" text-anchor="middle">12:00</text>
+<line x1="800.3448275862069" y1="714" x2="800.3448275862069" y2="722" stroke="#5e5d59"/><text x="800.3448275862069" y="738" font-size="11.5" fill="#5e5d59" text-anchor="middle">18:00</text>
+<line x1="922.4137931034483" y1="714" x2="922.4137931034483" y2="722" stroke="#5e5d59"/><text x="922.4137931034483" y="738" font-size="11.5" fill="#5e5d59" text-anchor="middle">Wed 00:00</text>
+<line x1="1044.4827586206898" y1="714" x2="1044.4827586206898" y2="722" stroke="#5e5d59"/><text x="1044.4827586206898" y="738" font-size="11.5" fill="#5e5d59" text-anchor="middle">06:00</text>
+<line x1="1166.5517241379312" y1="714" x2="1166.5517241379312" y2="722" stroke="#5e5d59"/><text x="1166.5517241379312" y="738" font-size="11.5" fill="#5e5d59" text-anchor="middle">12:00</text>
+<line x1="1288.6206896551723" y1="714" x2="1288.6206896551723" y2="722" stroke="#5e5d59"/><text x="1288.6206896551723" y="738" font-size="11.5" fill="#5e5d59" text-anchor="middle">18:00</text>
+<path d="M216.10919540229884,159.0 C344.875,159.0 344.875,159.0 465.64080459770116,159.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M216.10919540229884,159.0 C289.5201149425287,159.0 289.5201149425287,245.0 354.9310344827586,245.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)" stroke-dasharray="5 4"/>
+<path d="M473.64080459770116,159.0 C577.653735632184,159.0 577.653735632184,331.0 673.6666666666667,331.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M681.6666666666667,331.0 C738.5114942528736,331.0 738.5114942528736,503.0 787.3563218390805,503.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M473.64080459770116,159.0 C540.4396551724138,159.0 540.4396551724138,245.0 599.2385057471265,245.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)" stroke-dasharray="5 4"/>
+<path d="M473.64080459770116,159.0 C626.6508620689656,159.0 626.6508620689656,589.0 771.6609195402299,589.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M681.6666666666667,331.0 C729.9856321839081,331.0 729.9856321839081,675.0 770.3045977011494,675.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)" stroke-dasharray="5 4"/>
+<path d="M795.3563218390805,503.0 C786.8304597701149,503.0 786.8304597701149,675.0 770.3045977011494,675.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)" stroke-dasharray="5 4"/>
+<rect x="216.10919540229884" y="154.0" width="515.0632183908046" height="10" rx="5" fill="#1f5f8b" fill-opacity="0.18" stroke="#1f5f8b" stroke-dasharray="4 3"/>
+<rect x="434.1379310344828" y="240.0" width="346.2011494252873" height="10" rx="5" fill="#1f5f8b" fill-opacity="0.18" stroke="#1f5f8b" stroke-dasharray="4 3"/>
+<circle cx="216.10919540229884" cy="159.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
+<circle cx="362.9310344827586" cy="245.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
+<circle cx="473.64080459770116" cy="159.0" r="7" fill="#ffffff" stroke="#1f5f8b" stroke-width="2"/>
+<circle cx="681.6666666666667" cy="331.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
+<circle cx="683.3620689655172" cy="417.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
+<circle cx="607.2385057471265" cy="245.0" r="7" fill="#ffffff" stroke="#1f5f8b" stroke-width="2"/>
+<circle cx="795.3563218390805" cy="503.0" r="7" fill="#ffffff" stroke="#8a8984" stroke-width="2"/>
+<circle cx="779.6609195402299" cy="589.0" r="7" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
+<circle cx="778.3045977011494" cy="675.0" r="7" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
+<text x="228.10919540229884" y="155.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">IPMA, 13:17</text>
+<text x="228.10919540229884" y="169.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">names the low CHARLES</text>
+<text x="374.9310344827586" y="241.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">ANEPC, 20:30</text>
+<text x="374.9310344827586" y="255.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">public warning Aviso 21: gusts to 120 km/h, ...</text>
+<text x="485.64080459770116" y="181.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">IPMA</text>
+<text x="485.64080459770116" y="195.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">time not known: red wind warning for Lisbon,...</text>
+<text x="693.6666666666667" y="317.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">the government, 12:10</text>
+<text x="693.6666666666667" y="331.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">situação de alerta (alert situation) for all...</text>
+<text x="693.6666666666667" y="345.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">schools and non-essential public services cl...</text>
+<text x="693.6666666666667" y="359.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">outdoor events suspended, whatever their nat...</text>
+<text x="695.3620689655172" y="413.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">Autoridade Marítima Nacional and the Navy, 1...</text>
+<text x="695.3620689655172" y="427.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">sea warning: considerable worsening from Wed...</text>
+<text x="619.2385057471265" y="267.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">ANEPC</text>
+<text x="619.2385057471265" y="281.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">time not known: special readiness raised</text>
+<text x="807.3563218390805" y="499.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">Lisbon&#x27;s district and municipal civil-protec...</text>
+<text x="807.3563218390805" y="513.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">not readable: whether to activate Lisbon&#x27;s e...</text>
+<text x="791.6609195402299" y="585.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">Fertagus, Carris, Carris Metropolitana</text>
+<text x="791.6609195402299" y="599.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">nothing yet: possible disruption on Wednesday</text>
+<text x="790.3045977011494" y="671.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">Web Summit</text>
+<text x="790.3045977011494" y="685.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">nothing yet: any change to Wednesday&#x27;s progr...</text>
+<text x="30" y="772" font-size="12.5" fill="#141413"><tspan font-weight="700">Lead times to the red warning:</tspan> IPMA names the storm 46 h 43 min before; ANEPC's public warning 39 h 30 min; the government's alert 23 h 50 min (schools learn 11 h 50 min before they close).</text>
+<text x="30" y="790" font-size="12" fill="#5e5d59">Solid: a source says this follows that. Dashed: analysis, not a sourced fact. Hollow: nothing announced yet, or a source our tools cannot read. Bar: happened, time not known.</text>
+<text x="30" y="808" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from decision-graph.json, built on weather@PrompTugal.vicky's live.md and decision-chain.md (PrompTugal__News__Website, eca7b396).</text>
+</svg>

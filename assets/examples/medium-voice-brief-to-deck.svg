@@ -7,7 +7,7 @@
 <text x="34" y="150" font-size="14" font-weight="700" fill="#8a3b1f">Dinis</text>
 <text x="34" y="170" font-size="12" fill="#5e5d59">a person</text>
 <rect x="20" y="204" width="1870" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
-<text x="34" y="242" font-size="14" font-weight="700" fill="#1f5f8b">conductor@web-summit.dinis</text>
+<text x="34" y="242" font-size="12" font-weight="700" fill="#1f5f8b">conductor@web-summit.dinis</text>
 <text x="34" y="262" font-size="12" fill="#5e5d59">an agent</text>
 <rect x="20" y="296" width="1870" height="84" rx="10" fill="#5e5d59" fill-opacity="0.10"/>
 <text x="34" y="334" font-size="14" font-weight="700" fill="#5e5d59">GitHub Actions</text>
@@ -22,7 +22,7 @@
 <path d="M1372,246.0 C1383.0,246.0 1383.0,338.0 1394,338.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
 <path d="M1540,338.0 C1551.0,338.0 1551.0,154.0 1562,154.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
 <path d="M1036,338.0 C1047.0,338.0 1047.0,246.0 1058,246.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)" stroke-dasharray="4 4"/>
-<path d="M1540,338.0 C1635.0,338.0 1635.0,430.0 1730,430.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1540,338.0 H1720 V430.0 H1730" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
 <rect x="218" y="120" width="146" height="68" rx="8" fill="#ffffff" stroke="#8a3b1f" stroke-width="1.6"/>
 <text x="228" y="142" font-size="12.5" fill="#141413">a voice brief:</text>
 <text x="228" y="159" font-size="12.5" fill="#141413">THE RESTART</text>
@@ -65,6 +65,6 @@
 <text x="1740" y="418" font-size="12.5" fill="#141413">the 09:00 deck:</text>
 <text x="1740" y="435" font-size="12.5" fill="#141413">slides, PDF,</text>
 <text x="1740" y="452" font-size="12.5" fill="#141413">live since 08:20</text>
-<text x="30" y="536" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from reporter@web-summit.dinis's trace medium-voice-brief-to-deck (team/reporter/traces/).</text>
+<text x="30" y="536" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from reporter@web-summit.dinis&#x27;s trace medium-voice-brief-to-deck (team/reporter/traces/).</text>
 <text x="30" y="554" font-size="12" fill="#5e5d59">Dashed: a side step, or a step with no public evidence. Times UTC, 10 November 2026. Columns are steps, not to scale.</text>
 </svg>
