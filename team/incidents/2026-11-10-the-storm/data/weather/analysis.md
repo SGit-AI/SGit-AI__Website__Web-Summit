@@ -93,3 +93,27 @@ Each of these goes at the top of `changes.json` at the next wake.
 - **The two sources disagree on the peak hour**, so I am widening it back: **the peak most likely falls between 12:00 and 18:00**, inside the overlap of the two red warnings. I no longer narrow it to 17:00 to 20:00. **The worst window stays 12:00 to 18:00; it is over by 21:00** (red wind's end); the airport forecast is lighter from 18:00 to 20:00.
 - **A weaker forecast for the airport is not a downgrade of the warning.** IPMA's red warnings (gusts to 120, up to 140 km/h in exposed places) are unchanged as of 23:22. The airport is one point. Read together, the model and the TAF fit **a centre passing close to Lisbon**: strong south-easterlies before it, a lull and a swing as it passes, lighter westerlies after.
 - **Thursday (analysis): behind the storm, now with more confidence.** The TAF has **west 12 kt, no gusts, from 00:00 to 06:00 Thursday**. The model has mean wind of 16 to 24 km/h. The only Thursday warning is yellow sea to 03:00. Confidence: **medium**. It drops back to low if IPMA extends any warning past Wednesday 21:00.
+
+## 6. Update, 23:58 UTC: red rain from 09:00; IPMA's real issue times; a second model
+
+> **Label: ANALYSIS** on the facts below. Read at 23:51 UTC, from MeteoAlarm's CAP feed (`cap.json`), IPMA's open data (`warnings.json`) and met.no (`forecast.json` → `second_models`).
+
+**Facts:**
+- **IPMA moved Lisbon's red rain earlier, to Wednesday 09:00 to 18:00** (was 12:00). Orange rain now runs from 00:00 to 09:00 (was 05:00 to 12:00), and a yellow rain warning runs from Tuesday 21:24 to midnight. The CAP message carrying this was **sent at 21:23 UTC**.
+- **IPMA's open data lagged that by more than two hours.** My reads at 22:04, 22:23 and 23:22 still showed the old warnings; the 23:51 read showed the new ones. From now on the CAP feed is read every hour too, and its messages go to the top of `changes.json`.
+- **IPMA's real issue times (CAP `sent`)** replace the press and bracket times I used before:
+  - **red wind: Tuesday 07:18:40** (press said 08:31). It updated a wind message sent on Monday at 13:27:16, which is no longer in the feed, so its level is unknown.
+  - **red rain, first issued: Tuesday 16:30:01.**
+  - **orange sea: Tuesday 12:09:08.**
+- **Second model, met.no (updated 23:20 UTC):** mean wind of 16 to 28 km/h from the south-east through Wednesday, then **36 km/h at 18:00 as the wind swings north**. Its timing agrees with IPMA's latest run. It gives no gusts for this point. Open-Meteo refused with "daily limit exceeded" (429). That is a limit of the free service for our shared address, not this environment's network.
+
+**Analysis:**
+- **The worst window starts earlier: 09:00 to 18:00** for heavy rain (red), with **12:00 to 18:00 the core**, when both reds overlap. **The peak most likely falls between 12:00 and 18:00.** **It is over by 21:00.** The morning is no longer just "wet and worsening": from 09:00 it is red for rain, and orange from midnight.
+- **Lead times, revised with the issue times:**
+  - red wind about **28.7 h** ahead (was 27.5 h);
+  - red rain about **19.5 h** ahead for its first window;
+  - only **11.6 h** for its move to 09:00;
+  - the orange rain from midnight only **2.6 h** ahead.
+
+  The late changes are rain timing, as expected when the track tightens.
+- **For anyone deciding (analysis):** the open data and the site maps can trail IPMA by hours. The CAP feed is the earliest public source this desk has found for when IPMA issues a warning.

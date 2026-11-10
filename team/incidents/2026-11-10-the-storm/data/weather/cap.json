@@ -1,0 +1,283 @@
+{
+ "about": "IPMA's warnings for the Lisbon district as CAP messages (Common Alerting Protocol), read through MeteoAlarm's public feed. Unlike IPMA's open data, each message carries `sent_utc`, the time IPMA issued it, and `replaces`, the message it updates (with that one's sent time). Kept across reads; the feed drops superseded messages. Facts.",
+ "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+ "read_utc": "2026-11-10T23:51:47Z",
+ "lisbon_messages": [
+  {
+   "identifier": "2.49.0.0.620.0.PT.261105125809.PO-10-6141",
+   "sent_utc": "2026-11-05T12:58:09+00:00",
+   "msg_type": "Alert",
+   "event_pt": "Aviso Amarelo Precipitação",
+   "severity": "Moderate",
+   "onset_utc": "2026-11-06T15:00:00+00:00",
+   "expires_utc": "2026-11-07T00:00:00+00:00",
+   "description_pt": "Períodos de chuva ou aguaceiros, por vezes fortes e acompanhados de trovoada.",
+   "replaces": [],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261106181838.PO-10-6144",
+   "sent_utc": "2026-11-06T18:18:38+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Amarelo Precipitação",
+   "severity": "Moderate",
+   "onset_utc": "2026-11-06T15:00:00+00:00",
+   "expires_utc": "2026-11-06T18:19:00+00:00",
+   "description_pt": "Períodos de chuva ou aguaceiros, por vezes fortes e acompanhados de trovoada.",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261105125809.-PO-10-6141",
+     "sent_utc": "2026-11-05T12:58:09+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261107073544.PO-10-6148",
+   "sent_utc": "2026-11-07T07:35:44+00:00",
+   "msg_type": "Alert",
+   "event_pt": "Aviso Amarelo Precipitação",
+   "severity": "Moderate",
+   "onset_utc": "2026-11-08T18:00:00+00:00",
+   "expires_utc": "2026-11-09T06:00:00+00:00",
+   "description_pt": "Períodos de chuva, por vezes fortes e acompanhados de trovoada.",
+   "replaces": [],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261108011310.PO-01-1895",
+   "sent_utc": "2026-11-08T01:13:10+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Amarelo Vento",
+   "severity": "Moderate",
+   "onset_utc": "2026-11-08T18:00:00+00:00",
+   "expires_utc": "2026-11-09T06:00:00+00:00",
+   "description_pt": "Vento do quadrante sul com rajadas até 75 km/h.",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107170812.PO-01-1888",
+     "sent_utc": "2026-11-07T17:08:12+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-420",
+   "sent_utc": "2026-11-08T12:47:42+00:00",
+   "msg_type": "Alert",
+   "event_pt": "Aviso Amarelo Trovoada",
+   "severity": "Moderate",
+   "onset_utc": "2026-11-08T18:00:00+00:00",
+   "expires_utc": "2026-11-09T06:00:00+00:00",
+   "description_pt": "Condições favoráveis para ocorrência de fenómenos meteorológicos localizados, como: trovoada; precipitação localmente forte, com acumulação entre 10 a 20 mm em 1 h; rajadas entre 70 e 90 km/h.",
+   "replaces": [],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261108124742.PO-07-4500",
+   "sent_utc": "2026-11-08T12:47:42+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Amarelo Agitação Marítima",
+   "severity": "Moderate",
+   "onset_utc": "2026-11-09T18:00:00+00:00",
+   "expires_utc": "2026-11-11T06:00:00+00:00",
+   "description_pt": "Ondas do quadrante oeste com 4 a 5 metros.",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108070515.PO-07-4495",
+     "sent_utc": "2026-11-08T07:05:15+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-448",
+   "sent_utc": "2026-11-08T19:03:31+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Amarelo Trovoada",
+   "severity": "Moderate",
+   "onset_utc": "2026-11-09T21:00:00+00:00",
+   "expires_utc": "2026-11-10T15:00:00+00:00",
+   "description_pt": "Condições favoráveis para ocorrência de fenómenos meteorológicos localizados, como: trovoada; precipitação localmente forte, com acumulação entre 10 a 20 mm em 1 h; rajadas entre 70 e 90 km/h.",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-438",
+     "sent_utc": "2026-11-08T12:47:42+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6216",
+   "sent_utc": "2026-11-08T22:23:09+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Amarelo Precipitação",
+   "severity": "Moderate",
+   "onset_utc": "2026-11-09T21:00:00+00:00",
+   "expires_utc": "2026-11-10T18:00:00+00:00",
+   "description_pt": "Precipitação por vezes forte e acompanhada de trovoada.",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6195",
+     "sent_utc": "2026-11-08T19:03:31+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6246",
+   "sent_utc": "2026-11-09T21:58:57+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Amarelo Precipitação",
+   "severity": "Moderate",
+   "onset_utc": "2026-11-10T09:00:00+00:00",
+   "expires_utc": "2026-11-10T18:00:00+00:00",
+   "description_pt": "Precipitação por vezes forte e acompanhada de trovoada.",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6213",
+     "sent_utc": "2026-11-08T22:23:09+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6248",
+   "sent_utc": "2026-11-09T21:58:57+00:00",
+   "msg_type": "Alert",
+   "event_pt": "Aviso Amarelo Precipitação",
+   "severity": "Moderate",
+   "onset_utc": "2026-11-09T21:59:00+00:00",
+   "expires_utc": "2026-11-10T00:00:00+00:00",
+   "description_pt": "Precipitação por vezes forte e acompanhada de trovoada.",
+   "replaces": [],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6250",
+   "sent_utc": "2026-11-09T21:58:57+00:00",
+   "msg_type": "Alert",
+   "event_pt": "Aviso Laranja Precipitação",
+   "severity": "Severe",
+   "onset_utc": "2026-11-10T00:00:00+00:00",
+   "expires_utc": "2026-11-10T09:00:00+00:00",
+   "description_pt": "Precipitação por vezes forte e acompanhada de trovoada.",
+   "replaces": [],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110071840.PO-01-1915",
+   "sent_utc": "2026-11-10T07:18:40+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Vermelho Vento",
+   "severity": "Extreme",
+   "onset_utc": "2026-11-11T12:00:00+00:00",
+   "expires_utc": "2026-11-11T21:00:00+00:00",
+   "description_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109132716.PO-01-1906",
+     "sent_utc": "2026-11-09T13:27:16+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4518",
+   "sent_utc": "2026-11-10T07:18:40+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Amarelo Agitação Marítima",
+   "severity": "Moderate",
+   "onset_utc": "2026-11-11T21:00:00+00:00",
+   "expires_utc": "2026-11-12T03:00:00+00:00",
+   "description_pt": "Ondas de sudoeste com 4 a 5 metros.",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109191252.PO-07-4513",
+     "sent_utc": "2026-11-09T19:12:52+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110120908.PO-07-4525",
+   "sent_utc": "2026-11-10T12:09:08+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Agitação Marítima",
+   "severity": "Severe",
+   "onset_utc": "2026-11-11T12:00:00+00:00",
+   "expires_utc": "2026-11-11T21:00:00+00:00",
+   "description_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4517",
+     "sent_utc": "2026-11-10T07:18:40+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6288",
+   "sent_utc": "2026-11-10T21:23:00+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "severity": "Severe",
+   "onset_utc": "2026-11-11T00:00:00+00:00",
+   "expires_utc": "2026-11-11T09:00:00+00:00",
+   "description_pt": "Precipitação por vezes forte e persistente.",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6279",
+     "sent_utc": "2026-11-10T16:30:01+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6290",
+   "sent_utc": "2026-11-10T21:23:00+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Vermelho Precipitação",
+   "severity": "Extreme",
+   "onset_utc": "2026-11-11T09:00:00+00:00",
+   "expires_utc": "2026-11-11T18:00:00+00:00",
+   "description_pt": "Precipitação forte e persistente.",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6273",
+     "sent_utc": "2026-11-10T16:30:01+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6297",
+   "sent_utc": "2026-11-10T21:23:00+00:00",
+   "msg_type": "Alert",
+   "event_pt": "Aviso Amarelo Precipitação",
+   "severity": "Moderate",
+   "onset_utc": "2026-11-10T21:24:00+00:00",
+   "expires_utc": "2026-11-11T00:00:00+00:00",
+   "description_pt": "Precipitação por vezes forte e persistente.",
+   "replaces": [],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z"
+  }
+ ]
+}

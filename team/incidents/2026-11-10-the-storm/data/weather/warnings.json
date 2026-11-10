@@ -1,17 +1,17 @@
 {
  "about": "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). Warnings carry no issue time in IPMA's feed: an issue time comes from a read or from press, and says which.",
  "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
- "read_utc": "2026-11-10T23:22:52Z",
+ "read_utc": "2026-11-10T23:51:47Z",
  "lisbon_peak_level": "red",
  "lisbon": [
   {
    "type": "Agitação Marítima",
    "level": "yellow",
-   "start_utc": "2026-11-10T18:46:00Z",
+   "start_utc": "2026-11-10T21:24:00Z",
    "end_utc": "2026-11-11T06:00:00Z",
    "text_pt": "Ondas do quadrante oeste com 4 a 5 metros.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T23:22:52Z"
+   "read_utc": "2026-11-10T23:51:47Z"
   },
   {
    "type": "Agitação Marítima",
@@ -20,7 +20,7 @@
    "end_utc": "2026-11-11T21:00:00Z",
    "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T23:22:52Z"
+   "read_utc": "2026-11-10T23:51:47Z"
   },
   {
    "type": "Agitação Marítima",
@@ -29,25 +29,34 @@
    "end_utc": "2026-11-12T03:00:00Z",
    "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T23:22:52Z"
+   "read_utc": "2026-11-10T23:51:47Z"
+  },
+  {
+   "type": "Precipitação",
+   "level": "yellow",
+   "start_utc": "2026-11-10T21:24:00Z",
+   "end_utc": "2026-11-11T00:00:00Z",
+   "text_pt": "Precipitação por vezes forte e persistente.",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "read_utc": "2026-11-10T23:51:47Z"
   },
   {
    "type": "Precipitação",
    "level": "orange",
-   "start_utc": "2026-11-11T05:00:00Z",
-   "end_utc": "2026-11-11T12:00:00Z",
+   "start_utc": "2026-11-11T00:00:00Z",
+   "end_utc": "2026-11-11T09:00:00Z",
    "text_pt": "Precipitação por vezes forte e persistente.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T23:22:52Z"
+   "read_utc": "2026-11-10T23:51:47Z"
   },
   {
    "type": "Precipitação",
    "level": "red",
-   "start_utc": "2026-11-11T12:00:00Z",
+   "start_utc": "2026-11-11T09:00:00Z",
    "end_utc": "2026-11-11T18:00:00Z",
    "text_pt": "Precipitação forte e persistente.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T23:22:52Z"
+   "read_utc": "2026-11-10T23:51:47Z"
   },
   {
    "type": "Vento",
@@ -56,13 +65,21 @@
    "end_utc": "2026-11-11T21:00:00Z",
    "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T23:22:52Z"
+   "read_utc": "2026-11-10T23:51:47Z"
   }
  ],
  "red_and_orange_elsewhere": {
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-10T23:22:52Z",
+  "read_utc": "2026-11-10T23:51:47Z",
   "items": [
+   {
+    "area": "BJA",
+    "type": "Precipitação",
+    "level": "red",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T18:00:00Z",
+    "text_pt": "Precipitação por vezes forte e persistente."
+   },
    {
     "area": "BJA",
     "type": "Vento",
@@ -86,6 +103,14 @@
     "start_utc": "2026-11-11T12:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos."
+   },
+   {
+    "area": "FAR",
+    "type": "Precipitação",
+    "level": "red",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T18:00:00Z",
+    "text_pt": "Precipitação por vezes forte e persistente."
    },
    {
     "area": "FAR",
@@ -163,7 +188,7 @@
     "area": "STB",
     "type": "Precipitação",
     "level": "red",
-    "start_utc": "2026-11-11T12:00:00Z",
+    "start_utc": "2026-11-11T09:00:00Z",
     "end_utc": "2026-11-11T18:00:00Z",
     "text_pt": "Precipitação forte e persistente."
    },
@@ -195,7 +220,7 @@
     "area": "AVR",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T09:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Precipitação persistente, por vezes forte."
    },
@@ -203,7 +228,7 @@
     "area": "BGC",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T09:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Precipitação persistente, por vezes forte."
    },
@@ -219,15 +244,15 @@
     "area": "BJA",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T05:00:00Z",
-    "end_utc": "2026-11-11T18:00:00Z",
+    "start_utc": "2026-11-11T00:00:00Z",
+    "end_utc": "2026-11-11T09:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente."
    },
    {
     "area": "BRG",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T09:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Precipitação persistente, por vezes forte."
    },
@@ -235,7 +260,7 @@
     "area": "CBO",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T05:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T12:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente."
    },
@@ -251,7 +276,7 @@
     "area": "CBR",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T09:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Precipitação persistente, por vezes forte."
    },
@@ -267,7 +292,7 @@
     "area": "EVR",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T05:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T18:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente."
    },
@@ -283,15 +308,15 @@
     "area": "FAR",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T05:00:00Z",
-    "end_utc": "2026-11-11T18:00:00Z",
+    "start_utc": "2026-11-11T00:00:00Z",
+    "end_utc": "2026-11-11T09:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente."
    },
    {
     "area": "GDA",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T09:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Precipitação persistente, por vezes forte."
    },
@@ -307,7 +332,7 @@
     "area": "LRA",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T05:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T12:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente."
    },
@@ -387,7 +412,7 @@
     "area": "PTG",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T05:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T12:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente."
    },
@@ -395,7 +420,7 @@
     "area": "PTO",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T09:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Precipitação persistente, por vezes forte."
    },
@@ -411,15 +436,15 @@
     "area": "STB",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T05:00:00Z",
-    "end_utc": "2026-11-11T12:00:00Z",
+    "start_utc": "2026-11-11T00:00:00Z",
+    "end_utc": "2026-11-11T09:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente."
    },
    {
     "area": "STM",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T05:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T12:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente."
    },
@@ -427,7 +452,7 @@
     "area": "VCT",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T09:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Precipitação persistente, por vezes forte."
    },
@@ -435,7 +460,7 @@
     "area": "VIS",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T09:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Precipitação persistente, por vezes forte."
    },
@@ -443,7 +468,7 @@
     "area": "VRL",
     "type": "Precipitação",
     "level": "orange",
-    "start_utc": "2026-11-11T09:00:00Z",
+    "start_utc": "2026-11-11T03:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Precipitação persistente, por vezes forte."
    }
@@ -582,6 +607,114 @@
    ],
    "expired": [],
    "note": "compared with the read at 2026-11-10T19:22:35Z"
+  },
+  {
+   "read_utc": "2026-11-10T23:51:47Z",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "kind": "fact",
+   "added": [
+    [
+     "Agitação Marítima",
+     "yellow",
+     "2026-11-10T21:24:00Z",
+     "2026-11-11T06:00:00Z",
+     "Ondas do quadrante oeste com 4 a 5 metros."
+    ],
+    [
+     "Precipitação",
+     "orange",
+     "2026-11-11T00:00:00Z",
+     "2026-11-11T09:00:00Z",
+     "Precipitação por vezes forte e persistente."
+    ],
+    [
+     "Precipitação",
+     "red",
+     "2026-11-11T09:00:00Z",
+     "2026-11-11T18:00:00Z",
+     "Precipitação forte e persistente."
+    ],
+    [
+     "Precipitação",
+     "yellow",
+     "2026-11-10T21:24:00Z",
+     "2026-11-11T00:00:00Z",
+     "Precipitação por vezes forte e persistente."
+    ]
+   ],
+   "removed": [
+    [
+     "Agitação Marítima",
+     "yellow",
+     "2026-11-10T18:46:00Z",
+     "2026-11-11T06:00:00Z",
+     "Ondas do quadrante oeste com 4 a 5 metros."
+    ],
+    [
+     "Precipitação",
+     "orange",
+     "2026-11-11T05:00:00Z",
+     "2026-11-11T12:00:00Z",
+     "Precipitação por vezes forte e persistente."
+    ],
+    [
+     "Precipitação",
+     "red",
+     "2026-11-11T12:00:00Z",
+     "2026-11-11T18:00:00Z",
+     "Precipitação forte e persistente."
+    ]
+   ],
+   "expired": [],
+   "note": "compared with the read at 2026-11-10T23:22:52Z"
+  },
+  {
+   "at_utc": "2026-11-09T13:27:16Z",
+   "kind": "fact",
+   "event": "IPMA sends a wind warning message for Lisboa (CAP id ...PT.261109132716.PO-01-1906), the one the red wind later replaced; its level is not in the feed any more (superseded).",
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z",
+   "read_by": "incident.meteorologist@web-summit.dinis"
+  },
+  {
+   "at_utc": "2026-11-10T07:18:40Z",
+   "kind": "fact",
+   "event": "IPMA SENDS the RED wind warning for Lisboa, Wed 12:00-21:00 (CAP id ...PO-01-1915, an update of the 9 Nov 13:27:16 message). This is the issue time; press reported it from 08:31.",
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z",
+   "read_by": "incident.meteorologist@web-summit.dinis"
+  },
+  {
+   "at_utc": "2026-11-10T12:09:08Z",
+   "kind": "fact",
+   "event": "IPMA sends the ORANGE sea warning for Lisboa, Wed 12:00-21:00 (update of a 07:18:40 message).",
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z",
+   "read_by": "incident.meteorologist@web-summit.dinis"
+  },
+  {
+   "at_utc": "2026-11-10T16:30:01Z",
+   "kind": "fact",
+   "event": "IPMA sends the message that made Lisbon's rain RED (12:00-18:00): its sent time, as named in the 21:23 update's references. Open data showed it between 16:52 and 17:42.",
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z",
+   "read_by": "incident.meteorologist@web-summit.dinis"
+  },
+  {
+   "at_utc": "2026-11-10T21:23:00Z",
+   "kind": "fact",
+   "event": "IPMA sends updates for Lisboa: RED rain moved earlier to Wed 09:00-18:00 (was 12:00-18:00); ORANGE rain Wed 00:00-09:00 (was 05:00-12:00); YELLOW rain Tue 21:24-Wed 00:00.",
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-10T23:51:47Z",
+   "read_by": "incident.meteorologist@web-summit.dinis"
+  },
+  {
+   "at_utc": "between 2026-11-10T23:22:52Z and 23:51:47Z",
+   "kind": "fact",
+   "event": "IPMA's open data (warnings_www.json) first shows the 21:23 change: it lagged the CAP messages by at least 2 h (reads at 22:04, 22:23 and 23:22 still had the old rain warnings).",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "read_utc": "2026-11-10T23:51:47Z",
+   "read_by": "incident.meteorologist@web-summit.dinis"
   }
  ]
 }

@@ -23,6 +23,9 @@ U = {
     'hourly': 'https://api.ipma.pt/public-data/forecast/aggregate/1110600.json',
     'taf': 'https://aviationweather.gov/api/data/taf?ids=LPPT&format=json',
     'metar': 'https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json',
+    'cap': 'https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal',
+    'met_no': 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=38.72&lon=-9.14',
+    'open_meteo': 'https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12',
 }
 LISBON_STATIONS = {  # IPMA station ids in and next to Lisbon (from stations.json)
     '1200535': 'Lisboa (Geofísico)', '1210580': 'Lisboa, Relógio', '1210762': 'Lisboa, Tapada da Ajuda',
@@ -348,9 +351,74 @@ def thursday(w, f, a, prev):
     return out
 
 
+def cap():
+    """IPMA's warnings for Lisboa as CAP messages through MeteoAlarm: these carry the time IPMA SENT each one."""
+    prev = load('cap.json', {})
+    raw = get('cap')
+    if raw is None:
+        return prev
+    seen = {m['identifier']: m for m in prev.get('lisbon_messages', [])}
+    for x in json.loads(raw).get('warnings', []):
+        al = x.get('alert', {})
+        for i in al.get('info', []):
+            if not i.get('language', '').startswith('pt') or 'Lisboa' not in [z.get('areaDesc') for z in i.get('area', [])]:
+                continue
+            ident = al.get('identifier')
+            if ident in seen:
+                seen[ident]['last_seen_utc'] = NOW
+                continue
+            refs = [r.split(',') for r in (al.get('references') or '').split(' ') if r.count(',') == 2]
+            rec = {'identifier': ident, 'sent_utc': al.get('sent'), 'msg_type': al.get('msgType'), 'event_pt': i.get('event'),
+                   'severity': i.get('severity'), 'onset_utc': i.get('onset'), 'expires_utc': i.get('expires'),
+                   'description_pt': i.get('description'), 'replaces': [{'identifier': r[1], 'sent_utc': r[2]} for r in refs],
+                   'source': U['cap'], 'read_utc': NOW}
+            seen[ident] = rec
+            if prev and (rec['sent_utc'] or '') >= '2026-11-10':
+                changes.insert(0, f"IPMA CAP (MeteoAlarm) sent {rec['sent_utc'][11:19]}: {rec['event_pt']} {(rec['onset_utc'] or '')[8:16]}-{(rec['expires_utc'] or '')[8:16]}")
+    msgs = sorted(seen.values(), key=lambda m: (m['sent_utc'] or '', m['identifier']))
+    return {'about': "IPMA's warnings for the Lisbon district as CAP messages (Common Alerting Protocol), read through MeteoAlarm's public feed. Unlike IPMA's open data, each message carries `sent_utc`, the time IPMA issued it, and `replaces`, the message it updates (with that one's sent time). Kept across reads; the feed drops superseded messages. Facts.",
+            'source': U['cap'], 'read_utc': NOW, 'lisbon_messages': msgs}
+
+
+def second_models(prev):
+    """Other models for Lisbon (38.72N 9.14W), Wednesday and Thursday morning: each in its own block, never merged with IPMA."""
+    out = dict(prev or {})
+    raw = get('met_no')
+    if raw:
+        m = json.loads(raw)
+        rows = []
+        for t in m['properties']['timeseries']:
+            if not ('2026-11-11T00' <= t['time'][:13] <= '2026-11-12T12'):
+                continue
+            d = t['data']['instant']['details']
+            n1 = (t['data'].get('next_1_hours') or {}).get('details', {})
+            rows.append({'time_utc': t['time'][:16] + 'Z', 'wind_mean_kmh': d.get('wind_speed') is not None and round(d['wind_speed'] * 3.6, 1) or None,
+                         'gust_kmh': d.get('wind_speed_of_gust') is not None and round(d['wind_speed_of_gust'] * 3.6, 1) or None,
+                         'wind_from_deg': d.get('wind_from_direction'), 'rain_mm_next_1h': n1.get('precipitation_amount'),
+                         'pressure_hpa': d.get('air_pressure_at_sea_level')})
+        upd = m['properties']['meta'].get('updated_at')
+        if upd != (out.get('met_no') or {}).get('updated_utc'):
+            changes.append(f'met.no forecast updated {upd}')
+        out['met_no'] = {'name': 'MET Norway Locationforecast 2.0 (complete)', 'licence': 'NLOD 2.0 / CC BY 4.0, data from MET Norway',
+                         'source': U['met_no'], 'read_utc': NOW, 'updated_utc': upd, 'units': 'km/h (converted from m/s), mm, hPa', 'rows': rows}
+    raw = get('open_meteo')
+    if raw:
+        o = json.loads(raw)
+        h = o.get('hourly') or {}
+        rows = [{'time_utc': t + 'Z', 'wind_mean_kmh': w, 'gust_kmh': g, 'wind_from_deg': d, 'rain_mm': r}
+                for t, w, g, d, r in zip(h.get('time', []), h.get('wind_speed_10m', []), h.get('wind_gusts_10m', []), h.get('wind_direction_10m', []), h.get('precipitation', []))
+                if t <= '2026-11-12T12:00']
+        out['open_meteo'] = {'name': 'Open-Meteo (best match)', 'licence': 'CC BY 4.0, Open-Meteo.com', 'source': U['open_meteo'], 'read_utc': NOW, 'rows': rows}
+    elif 'open_meteo' not in out:
+        out['open_meteo'] = {'name': 'Open-Meteo (best match)', 'source': U['open_meteo'], 'read_utc': NOW, 'rows': [],
+                             'not_read': 'refused: see changes.json errors (429 daily limit on first try, 23:50 UTC)'}
+    return out
+
+
 def main():
-    w, c, s, a, f = warnings(), communiques(), stations(), airport(), forecast()
-    for name, obj in (('warnings.json', w), ('communiques.json', c), ('stations.json', s), ('airport.json', a), ('forecast.json', f)):
+    w, c, s, a, f, k = warnings(), communiques(), stations(), airport(), forecast(), cap()
+    f['second_models'] = second_models(f.get('second_models'))
+    for name, obj in (('warnings.json', w), ('communiques.json', c), ('stations.json', s), ('airport.json', a), ('forecast.json', f), ('cap.json', k)):
         if obj:
             save(name, obj)
     # gusts against the forecast, now
