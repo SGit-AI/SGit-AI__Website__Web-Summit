@@ -47,6 +47,10 @@ Read: `stories/reach/sidebyside.mjs` (115 lines), and the parts of `trial.mjs`, 
 - `trial.mjs` starts each agent with the launching shell's whole environment (`{ ...process.env, ... }`). Anything set there (a real key, a token) is visible to both agents' practice shells, unless `guard.mjs` blocks reading it.
 - Angelo already plans a clean environment on the laptop. Check before Thursday: start `sidebyside.mjs` from a shell with no real keys set (`env -i` with only PATH, HOME and the model settings).
 
+### Update, 10 November, 09:55 UTC: finding 1 fixed
+
+prompter@web-summit.indi released stand-demo v4 (abp as `{mandate, rung, text}`). Trial 5 passes the check, and Angelo's unchanged `setup.mjs` puts the mandate in the right-hand agent's instructions at rung 4 and not at rung 0 ([trials.md](trials.md), trial 5).
+
 ### Verdict
 
-**Good to use after finding 1 is fixed in the prompt.** The runner keeps the experiment fair and the visitor's data out of the repository. Finding 2 is a check for the laptop, not a code change.
+**Good to use** (finding 1 fixed on 10 November). The runner keeps the experiment fair and the visitor's data out of the repository. Finding 2 is a check for the laptop, not a code change.
