@@ -54,3 +54,15 @@ They are the natural partners in RiskMandate's story.
 6. **The company is told:** a short private note through the team's CRM: "here is how your agent reads on GAMMA-Ray; correct us". It also opens the conversation.
 7. **PrompTugal.news consumes it.** gamma-ray.sgit.ai publishes `scans.json` (company, solution, levels, the scan's URL, the vault id, the date). PrompTugal's company page shows a scan card that links to the original, and each interview article opens with the company's scan. **The data lives in GAMMA-Ray; PrompTugal links to it and never copies it.**
 8. **Corrections.** A company's correction lands in its vault with its date, the scan is re-run, and the change is visible.
+
+## Update, 10 November 2026 (Dinis): GAMMA-Ray Spectrum, and publish now
+
+- **The model is GAMMA-Ray Spectrum** (Dinis's document of 10 November, also given to gamma-ray@ to build):
+  - four dimensions, Autonomy, Reach, Control and Openness, at four levels each, every rung an achievement;
+  - a four-letter signature, a stage, badges and the standards constellation;
+  - two blind assessors, a deterministic scorer, a challenger, a gate, then a person.
+- **Publishing, at Dinis's word:** *"We can publish it. It's okay. This is all public information. It's like a normal publishing ... this now makes the companies look in a good way, and we're calling it beta."*
+  - Cards are published as **beta** as soon as they pass the gate.
+  - The company is told afterwards and invited to claim its card and add evidence. Corrections are dated and propagate.
+  - **No pre-publication review window and no lawyer before the first edition:** naming companies from public information is ordinary reporting.
+- **Cohorts:** the Portuguese agentic companies for *Spectrum PT #1* on PrompTugal.news, and the ten global agent products above as examples. The first sector is gamma-ray@'s and Dinis's call.
