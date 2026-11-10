@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-10T12:21Z",
+ "run": "2026-11-10T17:16Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,31 +12,31 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "a2a66ef",
-  "to": "f2c662e",
+  "from": "f2c662e",
+  "to": "e50a709",
   "branch": "dev"
  },
  "counts": {
-  "commits": 95,
-  "ci_releases": 34,
+  "commits": 80,
+  "ci_releases": 29,
   "watcher_own": 1,
-  "agents": 60,
+  "agents": 50,
   "no_agent_name": 0
  },
  "security": {
   "old_agent_last_review": "f4a9fbe, wake 11:51 on 7 November",
   "new_agent": "security.repos@web-summit.dinis, first run on 9 November (started about 10:55, committed 10:58, cb4e0b7): about 2,600 commits in six repositories, this one from b4d20ce (10:58 on 8 November) to f688309; no critical, high or medium finding; five low notes (team/security.repos/reports/2026-11-09T1110Z.md)",
   "gap_not_reviewed": "11:51 on 7 November to 10:58 on 8 November on dev, which includes 4219805 (the gate runs Angelo's lane check) and 084ebe7 (enforced), and f20d264 is older still",
-  "new_agent_later_runs": "runs 10 (0830Z, 112 commits: nothing new above low; the Android cloud model's medium drops to low) and 11 (1025Z, 76 commits: nothing found). Still open for Dinis: the iOS TestFlight high (run 9) and the Android release-secrets medium (run 5). None covers the gap below"
+  "new_agent_later_runs": "runs 12 (1230Z) and 13 (1435Z): nothing found in their verdicts, but run 13's addendum adds a low on this site's gate (the phone pattern in admin/tools/comms_check.mjs line 20 has no word boundary, so it can match digits inside commit ids; run 14's low 5); run 14 (1635Z): one new medium in the iOS app repository (the App Store event app gains a network host and the vault code, and its commit says so). Still open for Dinis: the iOS TestFlight high (run 9) and the Android release-secrets medium (run 5). None covers the gap below"
  },
  "by_person": {
-  "angelo": 27,
-  "indi": 16,
-  "jose": 8,
-  "dinis": 6,
-  "silvio": 3
+  "dinis": 19,
+  "angelo": 17,
+  "indi": 8,
+  "silvio": 5,
+  "jose": 1
  },
- "actions": "open A-06 (twenty-first run, dev only), A-21 (eleventh), A-14 (eighteenth), A-23 (tenth); closed A-25 (Indi's agents back from 07:28)",
+ "actions": "open A-06 (twenty-second run, dev only), A-21 (twelfth), A-14 (nineteenth), A-23 (eleventh)",
  "task_report": {
   "task": "people/jose/tasks/2026-11-07-watcher-a06-pointers.md",
   "status": "done: the conductor marked people/jose/tasks/2026-11-07-watcher-a06-pointers.md done; A-06 itself stays open for dev",
@@ -47,11 +47,11 @@
    "level": "medium",
    "what": "still open: about 23 hours of dev not reviewed by any security agent",
    "where": "security.repos@web-summit.dinis (cb4e0b7, report team/security.repos/reports/2026-11-09T1110Z.md): this repository from 10:58 on 8 November; no critical, high or medium finding",
-   "context": "dev from 11:51 on 7 November to 10:58 on 8 November, including the gate's lane check (4219805) and its enforcement (084ebe7). security.repos covers only commits since its last run (runs 10 and 11 today). For conductor@web-summit.dinis to point one run at that gap"
+   "context": "dev from 11:51 on 7 November to 10:58 on 8 November, including the gate's lane check (4219805) and its enforcement (084ebe7). security.repos covers only commits since its last run (runs 12 to 14 this afternoon). For conductor@web-summit.dinis to point one run at that gap"
   },
   {
    "level": "high",
-   "what": "still open, twenty-second run: contact-detail rule hits in a public page",
+   "what": "still open, twenty-third run: contact-detail rule hits in a public page",
    "where": "f20d264 content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
    "context": "older than the new security agent's window, so not covered by its review"
@@ -64,15 +64,8 @@
    "context": "unchanged"
   },
   {
-   "level": "low",
-   "what": "trailers that git does not read",
-   "where": "47f6517 and 83a91b9 (dashboard@web-summit.jose): Agent and Reviewed-by above the Co-Authored-By block; c8b96a0 (designer@web-summit.jose): Agent the same way",
-   "rule": "the commit convention (trailers)",
-   "context": "the lines are present, so a text check passes, but git's trailer parser misses them; for conductor@web-summit.jose to have those agents put every trailer in the last block. Found by the reviewer"
-  },
-  {
    "level": "note",
-   "what": "89 email-rule lines in 36 commits by the watcher's own scan (its address pattern on the added lines of every commit in the range)",
+   "what": "87 email-rule lines in 27 commits by the watcher's own scan (its address pattern on the added lines of every commit in the range)",
    "where": "agent names (web-summit, PrompTugal and the newsroom's), CI's versions rows and patch headers",
    "rule": "an email address",
    "context": "none is a person's contact detail by shape"
@@ -102,13 +95,9 @@
   }
  ],
  "reviewer_trailer": {
-  "jose_commits_checked": 8,
+  "jose_commits_checked": 1,
   "missing": [],
-  "misplaced": [
-   "47f6517",
-   "83a91b9",
-   "c8b96a0 (Agent only)"
-  ]
+  "note": "cf7827f's Agent and Reviewed-by are read by git as trailers"
  },
  "branches": {
   "main": "no new commit (last 81353d4)",
@@ -118,52 +107,10 @@
  },
  "commits_jose": [
   {
-   "sha": "47f6517",
-   "time": "2026-11-10T07:33:47Z",
-   "agent": "dashboard@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "75f3b34",
-   "time": "2026-11-10T07:38:11Z",
+   "sha": "cf7827f",
+   "time": "2026-11-10T12:29:12Z",
    "agent": "conductor@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "28f2b39",
-   "time": "2026-11-10T07:38:11Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "83a91b9",
-   "time": "2026-11-10T09:23:55Z",
-   "agent": "dashboard@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "3972d54",
-   "time": "2026-11-10T11:14:15Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "b4665f3",
-   "time": "2026-11-10T11:14:15Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "c8b96a0",
-   "time": "2026-11-10T11:23:16Z",
-   "agent": "designer@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "93deec1",
-   "time": "2026-11-10T11:42:56Z",
-   "agent": "vault@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass)"
   }
  ],
  "could_not_check": [
