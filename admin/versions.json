@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1627",
+    "date": "2026-11-10",
+    "what": "what each of Silvio's agents can reach, a proposal for Silvio to confirm (I23)",
+    "by": "gamma-ray@web-summit.silvio",
+    "from": "48564f677"
+  },
+  {
     "version": "v0.2.1626",
     "date": "2026-11-10",
     "what": "dashboard@PrompTugal.angelo: the live map's dial goes back properly, with play (1 hour a second) and fast forward (6 hours a second); the dumbbell follows it",
