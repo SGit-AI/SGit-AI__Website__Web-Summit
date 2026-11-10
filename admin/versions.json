@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1752",
+    "date": "2026-11-10",
+    "what": "Web Summit's decision is a fact (its own page, 19:09); the blog is the organisers' primary channel; the miss recorded",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "1c9221a00"
+  },
+  {
     "version": "v0.2.1751",
     "date": "2026-11-10",
     "what": "llm.mjs: the ledger stays out of git (curated vault, as ROADMAP P0.4 says), no model named in the code; the OpenRouter key is already set here (one 20-token call: ok)",
