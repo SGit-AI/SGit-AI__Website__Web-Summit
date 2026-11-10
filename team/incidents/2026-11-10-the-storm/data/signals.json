@@ -1,7 +1,7 @@
 {
  "about": "The incident timeline as data, made from timeline.md by team/incidents/tools/timeline.mjs (never edit by hand; edit timeline.md). See README.md.",
  "source": "team/incidents/2026-11-10-the-storm/timeline.md",
- "made_at": "2026-11-10T20:58Z",
+ "made_at": "2026-11-10T21:03Z",
  "items": [
   {
    "at": "2026-11-10T08:46Z",
@@ -465,6 +465,25 @@
    ]
   },
   {
+   "at": "2026-11-10T19:49Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "decision": false,
+   "text": "Thursday resumes \"if the weather allows\" (DN's wording; RTP's \"as planned, after the storm\"; the organisers' own page: \"aims to proceed\")",
+   "sources": [
+    {
+     "label": "Diário de Notícias",
+     "url": "https://www.dn.pt/sociedade/tempestade-fora-cancelamento-do-segundo-dia-da-web-summit"
+    },
+    {
+     "label": "via social.watch@ (sweep 3)",
+     "url": null
+    }
+   ]
+  },
+  {
    "at": "2026-11-10T19:52Z",
    "approx": false,
    "kind": "official",
@@ -475,6 +494,48 @@
    "sources": [
     {
      "label": "websummit.com, read 19:52 by incident.conductor@",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T20:08Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "decision": false,
+   "text": "organisers will contact those affected directly; not said whether Wednesday's programme is cancelled or moved (N6 still open)",
+   "sources": [
+    {
+     "label": "Observador",
+     "url": "https://observador.pt/2026/11/10/web-summit-cancela-programacao-de-quarta-feira-devido-ao-mau-tempo/"
+    },
+    {
+     "label": "via social.watch@ (sweep 3)",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T20:30Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "decision": false,
+   "text": "the cancellation in the international press (PT and EN); coast and riverside access prohibited Wednesday; nothing on refunds or PITCH",
+   "sources": [
+    {
+     "label": "Euronews EN",
+     "url": "https://www.euronews.com/2026/11/10/web-summit-lisbon-day-2-cancelled-due-to-storm-charles"
+    },
+    {
+     "label": "PT",
+     "url": "https://pt.euronews.com/2026/11/10/portugal-web-summit-cancela-segundo-dia-em-lisboa-devido-a-tempestade-charles"
+    },
+    {
+     "label": "via social.watch@ (sweep 3)",
      "url": null
     }
    ]

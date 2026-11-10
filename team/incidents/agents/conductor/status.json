@@ -1,7 +1,7 @@
 {
   "agent": "incident.conductor@web-summit.dinis",
   "state": "active: lead of WS-214 since 18:58; hourly wake at :02",
-  "last_wake": "2026-11-10T20:03:21Z",
+  "last_wake": "2026-11-10T21:02:51Z",
   "done": [
     "session key made (record sha256:fa135665c51ee284), public half in data/keys.json",
     "took the WS-214 lead; timeline newest first; decisions log updated",
@@ -10,7 +10,8 @@
     "ROADMAP.md from Dinis's direction (27d5ca7ae)",
     "19:05 wake: timeline (19:01 no organiser decision; the meteorologist's labelled analysis), decisions, dev J2b/J4 and researcher J4 routed",
     "19:52 to 20:00: the decision recorded (F8, F9), comms B, plan B for Thursday (proposed), lead times (analysis), service-piece material for Vicky's desk",
-    "20:03 wake: no new signals since sweep 2; jobs re-routed to Thursday and the open items"
+    "20:03 wake: no new signals since sweep 2; jobs re-routed to Thursday and the open items",
+    "20:58 to 21:05: the primary source (Web Summit's page, 19:09) recorded; lead times recomputed; sweep 3 in the timeline; the lesson in README"
   ],
   "next": [
     "each wake: pull dev, read social.watch@'s signals and Vicky's weather desk, update timeline and decisions, route work",
@@ -19,10 +20,10 @@
   "asks": [
     "Dinis: PrompTugal__News__Website is read here from its public clone (read-only); add_repo was refused by this session's permission check. Enough for reading; say if you want it attached.",
     "Dinis: the four decisions at the end of PIPELINE.md (repository name, version tag, two vaults, a deploy credential if seconds are needed for the shell)",
-    "Dinis: the five questions at the end of ROADMAP.md (repo and domain, the OpenRouter key and a daily cap, which roles become sessions, raw vault public or private, per-agency API keys)",
     "Dinis: no credentials for the weather desk conductor's inbox (conductor.B@PrompTugal.vicky); offers to Vicky's desk go in commits (For:) until a lane exists",
-    "Dinis: incident.dev@ proved why each push takes minutes: the validate job's blobless clone (filter: blob:none in .github/workflows/deploy-pages.yml) makes 316 lazy blob fetches (git blame and git show in people/angelo/app/data.mjs); the gate takes 2 min 35 s blobless against 3.6 s with a full clone. Dropping that one line saves ~70 s a push on this site. It changes the team site's CI, so it waits for your yes (or Angelo's data.mjs avoids blame in the build)."
+    "Dinis: incident.dev@ proved why each push takes minutes: the validate job's blobless clone (filter: blob:none in .github/workflows/deploy-pages.yml) makes 316 lazy blob fetches (git blame and git show in people/angelo/app/data.mjs); the gate takes 2 min 35 s blobless against 3.6 s with a full clone. Dropping that one line saves ~70 s a push on this site. It changes the team site's CI, so it waits for your yes (or Angelo's data.mjs avoids blame in the build).",
+    "Dinis: ROADMAP's questions: the OpenRouter key is already set in incident.dev@'s environment (one 20-token test call, 3a00a1b); still open: a daily spend cap, the repository (PrompTugal__News__Storm-Charles, storm-charles.promptugal.news, per your messages), which roles become sessions, raw vault private, API keys later"
   ],
-  "updated": "2026-11-10T20:05:00Z",
+  "updated": "2026-11-10T21:05:00Z",
   "by": "incident.conductor@web-summit.dinis"
 }
