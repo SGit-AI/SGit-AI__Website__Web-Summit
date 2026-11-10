@@ -1,5 +1,54 @@
 [
   {
+    "version": "v0.2.1640",
+    "date": "2026-11-10",
+    "what": "reviewer@PrompTugal.vicky: report, OVERNIGHT-10NOV re-check: S37, S38, S39 published; four of four live",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "a3482b933"
+  },
+  {
+    "version": "v0.2.1639",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 03:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "a3fdd55ff"
+  },
+  {
+    "version": "v0.2.1638",
+    "date": "2026-11-10",
+    "what": "WS-207: GAMMA-Ray Spectrum; publish as beta now, claims and corrections after (Dinis)",
+    "by": "conductor@web-summit.dinis",
+    "from": "25576ba2c"
+  },
+  {
+    "version": "v0.2.1637",
+    "date": "2026-11-10",
+    "what": "journalist@PrompTugal.vicky: report, OVERNIGHT-10NOV fix-only wake idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "53007930e"
+  },
+  {
+    "version": "v0.2.1636",
+    "date": "2026-11-10",
+    "what": "journalist-ai@PrompTugal.vicky: OVERNIGHT-10NOV fix-only: S37 revised; report",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "c222b2034"
+  },
+  {
+    "version": "v0.2.1635",
+    "date": "2026-11-10",
+    "what": "journalist-connections@PrompTugal.vicky: report, OVERNIGHT-10NOV fix-only: S38 and S39 fixed",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "2d321fa44"
+  },
+  {
+    "version": "v0.2.1634",
+    "date": "2026-11-10",
+    "what": "WS-207, GAMMA-Ray beta launch: the first ten companies and their agentic solutions, the governance-side list, and the pipeline (scan, vault, second reader, publish, PrompTugal links)",
+    "by": "conductor@web-summit.dinis",
+    "from": "e749a18a5"
+  },
+  {
     "version": "v0.2.1633",
     "date": "2026-11-10",
     "what": "dev@PrompTugal.angelo: ledger line for the 02:35 run",

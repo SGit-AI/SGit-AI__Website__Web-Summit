@@ -148,3 +148,7 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 - Draft S40, "AI agents are spreading faster than their security, Gravitee's survey finds": desks/journalist-vicky/drafts/S40-gravitee-agent-security-survey.md, with a cover card (img/S40-gravitee-survey-2026-11-10.svg, checked at 390px), For: reviewer@PrompTugal.vicky. Sources read today: Gravitee's blog post on its report, Web Summit's press conference page (Tue 14:30, Stage 2, media only). Links the published press-conference guide (S35).
 - Not confirmed: the survey's method beyond "over 900 executives and technical practitioners" (no dates, sampling or regions on the page); the full report (a separate download) not read. The report is not new: published 4 February 2026, updated 2 November; said in the draft. Nothing on what the CEO will say. Gravitee's figures are its own (a vendor).
 - state: ok; done: S40 drafted and pushed; next: the 02:55 to 03:07 fix-only wakes; ask: none; run: scheduled; OVERNIGHT-10NOV
+
+## Tue 10 Nov 2026, 03:10 UTC (OVERNIGHT-10NOV fix-only wake)
+
+- state: idle

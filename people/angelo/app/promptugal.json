@@ -1,8 +1,8 @@
 {
  "about": "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
  "source": "https://github.com/PrompTugal/PrompTugal__News__Website",
- "commit": "f844d42c",
- "read_at": "2026-11-10T02:36:21.039Z",
+ "commit": "3a780ca9",
+ "read_at": "2026-11-10T03:36:28.776Z",
  "days": 7,
  "agents": [
   {
@@ -44,9 +44,9 @@
    "short": "journalist",
    "family": "PrompTugal",
    "label": "PrompTugal's journalist",
-   "commits": 95,
+   "commits": 99,
    "first": "2026-11-06T00:06:05+00:00",
-   "last": "2026-11-10T02:34:49+00:00",
+   "last": "2026-11-10T03:03:52+00:00",
    "key": true
   },
   {
@@ -77,9 +77,9 @@
    "short": "conductor.b",
    "family": "PrompTugal",
    "label": "",
-   "commits": 80,
+   "commits": 81,
    "first": "2026-11-06T21:38:06+00:00",
-   "last": "2026-11-10T00:49:50+00:00",
+   "last": "2026-11-10T02:49:55+00:00",
    "key": true
   },
   {
@@ -160,6 +160,17 @@
    "key": true
   },
   {
+   "id": "pt:vicky:journalist-ai",
+   "person": "vicky",
+   "short": "journalist-ai",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 37,
+   "first": "2026-11-06T10:50:12+00:00",
+   "last": "2026-11-10T03:02:41+00:00",
+   "key": true
+  },
+  {
    "id": "pt:dinis:librarian",
    "person": "dinis",
    "short": "librarian",
@@ -190,17 +201,6 @@
    "commits": 37,
    "first": "2026-11-06T03:47:46+00:00",
    "last": "2026-11-08T00:16:01+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:vicky:journalist-ai",
-   "person": "vicky",
-   "short": "journalist-ai",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 36,
-   "first": "2026-11-06T10:50:12+00:00",
-   "last": "2026-11-10T01:29:47+00:00",
    "key": true
   },
   {
@@ -237,6 +237,17 @@
    "key": true
   },
   {
+   "id": "pt:vicky:journalist-connections",
+   "person": "vicky",
+   "short": "journalist-connections",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 27,
+   "first": "2026-11-06T10:51:35+00:00",
+   "last": "2026-11-10T02:56:15+00:00",
+   "key": true
+  },
+  {
    "id": "reviewer@web-summit.vicky",
    "person": "vicky",
    "short": "reviewer",
@@ -246,17 +257,6 @@
    "first": "2026-11-05T22:36:37+00:00",
    "last": "2026-11-06T10:15:47+00:00",
    "key": false
-  },
-  {
-   "id": "pt:vicky:journalist-connections",
-   "person": "vicky",
-   "short": "journalist-connections",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 26,
-   "first": "2026-11-06T10:51:35+00:00",
-   "last": "2026-11-10T01:24:31+00:00",
-   "key": true
   },
   {
    "id": "pt:dinis:accountant",
@@ -741,6 +741,11 @@
    "n": 15
   },
   {
+   "from": "pt:vicky:journalist-connections",
+   "to": "pt:vicky:reviewer",
+   "n": 14
+  },
+  {
    "from": "pt:vicky:reviewer",
    "to": "pt:vicky:journalist",
    "n": 14
@@ -749,11 +754,6 @@
    "from": "conductor@web-summit.dinis",
    "to": "pt:dinis:conductor.b",
    "n": 14
-  },
-  {
-   "from": "pt:vicky:journalist-connections",
-   "to": "pt:vicky:reviewer",
-   "n": 13
   },
   {
    "from": "pt:dinis:conductor.b",
@@ -781,14 +781,14 @@
    "n": 10
   },
   {
-   "from": "curator@web-summit.vicky",
-   "to": "newsroom@web-summit.dinis",
+   "from": "pt:vicky:journalist-ai",
+   "to": "pt:vicky:reviewer",
    "n": 9
   },
   {
-   "from": "pt:vicky:journalist-ai",
-   "to": "pt:vicky:reviewer",
-   "n": 8
+   "from": "curator@web-summit.vicky",
+   "to": "newsroom@web-summit.dinis",
+   "n": 9
   },
   {
    "from": "pt:angelo:writer",
