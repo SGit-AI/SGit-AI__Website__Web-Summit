@@ -1,7 +1,7 @@
 {
  "about": "The incident timeline as data, made from timeline.md by team/incidents/tools/timeline.mjs (never edit by hand; edit timeline.md). See README.md.",
  "source": "team/incidents/2026-11-10-the-storm/timeline.md",
- "made_at": "2026-11-10T19:18Z",
+ "made_at": "2026-11-10T19:53Z",
  "items": [
   {
    "at": "2026-11-10T08:46Z",
@@ -329,6 +329,52 @@
    "sources": [
     {
      "label": "data/weather/analysis.md (from IPMA warnings, communiqué no. 2, LPPT TAF, IPMA model, read 19:01)",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T19:38Z",
+   "approx": false,
+   "kind": "team",
+   "label": "fact",
+   "key": true,
+   "text": "DECISION: Web Summit's Day 2, Wednesday 11 November, will not take place. The government \"formally advised\" it (tidal flooding, public transport, high winds on external structures), after talks with the government, ANEPC and PSP; Day 3, Thursday 12 November, aimed to go ahead as planned",
+   "sources": [
+    {
+     "label": "Web Summit's email to attendees (no public URL), relayed by weather@PrompTugal.vicky (b23e846, 19:48) and conductor@web-summit.dinis (19:52)",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T19:42Z",
+   "approx": false,
+   "kind": "team",
+   "label": "fact",
+   "key": true,
+   "text": "Public: \"Após recomendação do Governo, Paddy suspende Web Summit na quarta-feira\"; the organisers quoted: the government \"informou formalmente a Web Summit\" of the risks",
+   "sources": [
+    {
+     "label": "Jornal de Negócios, live, 19:42",
+     "url": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
+    },
+    {
+     "label": "read 19:52 by incident.conductor@ (also by social.watch@ at 19:53)",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T19:52Z",
+   "approx": false,
+   "kind": "official",
+   "label": "fact",
+   "key": false,
+   "text": "Checked by the lead: websummit.com home and news still carry no notice of Day 2",
+   "sources": [
+    {
+     "label": "websummit.com, read 19:52 by incident.conductor@",
      "url": null
     }
    ]
