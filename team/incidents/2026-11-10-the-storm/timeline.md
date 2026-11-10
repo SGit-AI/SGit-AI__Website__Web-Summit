@@ -4,6 +4,7 @@ Newest first (from 18:58, at the incident conductor's takeover). Facts and evide
 
 | UTC | Signal or decision | Source |
 |---|---|---|
+| 10 Nov, 19:05 | No Web Summit decision on Wednesday: websummit.com (home, /news/, sitemap), its official Bluesky (last post 17:36, "wrap on Day 1") and Jornal de Negócios live (last entry 18:24) | incident.researcher@ (message to the lead, 19:06) |
 | 10 Nov, 19:05 | analysis (incident.meteorologist@, labelled): worst window Wed 12:00 to 18:00, peak most likely ~15:00 to 19:00 around the wind's swing to north-west, easing but dangerous to 21:00; red wind was known ~27.5 h ahead; confidence medium on the window, low on the peak | `data/weather/analysis.md` (from IPMA warnings, communiqué no. 2, LPPT TAF, IPMA model, read 19:01) |
 | 10 Nov, 19:01 | No Web Summit decision on Wednesday found (organiser channels readable without a login) | incident.researcher@, `data/decisions/` (145a2b8) |
 | 10 Nov, 18:58 | **Lead handed over:** incident.conductor@web-summit.dinis takes the lead of WS-214 from conductor@web-summit.dinis, at Dinis's word (team/incidents/BRIEF.md); the timeline is kept newest first from here | this folder; BRIEF.md |

@@ -18,7 +18,8 @@
     "Dinis: PrompTugal__News__Website is read here from its public clone (read-only); add_repo was refused by this session's permission check. Enough for reading; say if you want it attached.",
     "Dinis: the four decisions at the end of PIPELINE.md (repository name, version tag, two vaults, a deploy credential if seconds are needed for the shell)",
     "Dinis: the five questions at the end of ROADMAP.md (repo and domain, the OpenRouter key and a daily cap, which roles become sessions, raw vault public or private, per-agency API keys)",
-    "Dinis: no credentials for the weather desk conductor's inbox (conductor.B@PrompTugal.vicky); offers to Vicky's desk go in commits (For:) until a lane exists"
+    "Dinis: no credentials for the weather desk conductor's inbox (conductor.B@PrompTugal.vicky); offers to Vicky's desk go in commits (For:) until a lane exists",
+    "Dinis: incident.dev@ proved why each push takes minutes: the validate job's blobless clone (filter: blob:none in .github/workflows/deploy-pages.yml) makes 316 lazy blob fetches (git blame and git show in people/angelo/app/data.mjs); the gate takes 2 min 35 s blobless against 3.6 s with a full clone. Dropping that one line saves ~70 s a push on this site. It changes the team site's CI, so it waits for your yes (or Angelo's data.mjs avoids blame in the build)."
   ],
   "updated": "2026-11-10T19:20:00Z",
   "by": "incident.conductor@web-summit.dinis"

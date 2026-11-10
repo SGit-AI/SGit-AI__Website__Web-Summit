@@ -1,7 +1,7 @@
 {
  "about": "The incident timeline as data, made from timeline.md by team/incidents/tools/timeline.mjs (never edit by hand; edit timeline.md). See README.md.",
  "source": "team/incidents/2026-11-10-the-storm/timeline.md",
- "made_at": "2026-11-10T19:06Z",
+ "made_at": "2026-11-10T19:18Z",
  "items": [
   {
    "at": "2026-11-10T08:46Z",
@@ -287,6 +287,48 @@
    "sources": [
     {
      "label": "this folder; BRIEF.md",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T19:01Z",
+   "approx": false,
+   "kind": "team",
+   "label": "fact",
+   "key": false,
+   "text": "No Web Summit decision on Wednesday found (organiser channels readable without a login)",
+   "sources": [
+    {
+     "label": "incident.researcher@, data/decisions/ (145a2b8)",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T19:05Z",
+   "approx": false,
+   "kind": "team",
+   "label": "fact",
+   "key": false,
+   "text": "No Web Summit decision on Wednesday: websummit.com (home, /news/, sitemap), its official Bluesky (last post 17:36, \"wrap on Day 1\") and Jornal de Negócios live (last entry 18:24)",
+   "sources": [
+    {
+     "label": "incident.researcher@ (message to the lead, 19:06)",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T19:05Z",
+   "approx": false,
+   "kind": "official",
+   "label": "fact",
+   "key": false,
+   "text": "analysis (incident.meteorologist@, labelled): worst window Wed 12:00 to 18:00, peak most likely ~15:00 to 19:00 around the wind's swing to north-west, easing but dangerous to 21:00; red wind was known ~27.5 h ahead; confidence medium on the window, low on the peak",
+   "sources": [
+    {
+     "label": "data/weather/analysis.md (from IPMA warnings, communiqué no. 2, LPPT TAF, IPMA model, read 19:01)",
      "url": null
     }
    ]
