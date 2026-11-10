@@ -8,7 +8,8 @@
     "J2b (after J1, Dinis's direction 19:15, ROADMAP P0.4 and P0.2): tools/llm.mjs under team/incidents/, the one wrapper for every model call (request and response to the raw vault, one ledger.jsonl line: model, provider, tokens, cost, latency, task id); then push-to-served measured on every push. No file over 256 KB, no binaries in git. OpenRouter key not yet in the environment (Dinis's question 2): build against a dummy.",
     "J3 (Wednesday morning): the Now and Flow panes (PIPELINE.md section 5): an adapter from the incident's timeline to the live.json shape of Angelo's people/angelo/app/live.js, on a pinned copy.",
     "J4 (from incident.researcher@'s asks): parsers, just the part named in data/decisions/sources.json parser_ask: websummit sitemap diff (first), Jornal de Negócios live entries, government news list, Carris alert banner, CP service alerts.",
-    "J5 (20:03, now): the decision is out (Web Summit Day 2 off, 19:38; Thursday on, 19:46). Flip the dashboard's \"Waiting for\" to the decision, with its sources (timeline rows 19:38 to 19:52); turn the Web Summit watch to Thursday (any change to Day 3) and to the open items (Wednesday's talks, PITCH semi-final, side events, tickets). Then P0.4 ledger as before."
+    "J5 (20:03, now): the decision is out (Web Summit Day 2 off, 19:38; Thursday on, 19:46). Flip the dashboard's \"Waiting for\" to the decision, with its sources (timeline rows 19:38 to 19:52); turn the Web Summit watch to Thursday (any change to Day 3) and to the open items (Wednesday's talks, PITCH semi-final, side events, tickets). Then P0.4 ledger as before.",
+    "J6 (21:00, first): a connector that watches every section of websummit.com, not only the news list: the sitemap (all sub-sitemaps) and every /blog/<category>/ listing, alerting on any new URL or changed dateModified; the decision was at https://websummit.com/blog/web-summit/important-event-update-2026/ from 19:09 and we did not see it for 43 min. Also any organiser channel readable without a login."
   ],
   "done": [
     "19:00 session key: public half on data/keys.json (sha256:f47e68d810fb5b72, signing sha256:c956c55a2bd752d1), linked locally to sha256:db7f79fdd87e030a",
@@ -31,7 +32,7 @@
     "incident.conductor@ and Dinis: a yes to drop `filter: blob:none` from the validate job's checkout in .github/workflows/deploy-pages.yml (one line). Expected: the gate step from ~90 s to ~20 s, about 70 s off every push (median 3 min 56 s to about 2 min 45 s). Not changed: CI is not mine to change without that yes",
     "Dinis: OPEN_ROUTER_KEY is already set in incident.dev@'s environment (one 20-token test call through llm.mjs at 20:48: ok, $0.0000038). Your yes still needed on the daily cap (LLM_DAILY_CAP_USD; 5 USD until you say) and on which sessions get the key"
   ],
-  "updated": "2026-11-10T20:50Z",
+  "updated": "2026-11-10T21:00:00Z",
   "by": "incident.dev@web-summit.dinis (done, next, asks, baseline); jobs by incident.conductor@web-summit.dinis",
   "baseline": {
     "what": "push to deployed on web-summit.sgit.ai (deploy-pages, push to dev): run created to run completed, as GitHub reports it",

@@ -15,7 +15,7 @@ Facts as of 18:38 UTC (F1 to F7, N1 to N5 in facts.md). Short enough for a phone
 
 ## B. Web Summit has suspended Wednesday (SEND THIS ONE; filled 19:55 UTC from F8; a person sends)
 
-> **Storm update, Tuesday 20:00 (Lisbon time):** Web Summit has called off **Day 2, Wednesday**: the government formally advised it because of the storm (email to attendees, 19:38). [F8]
+> **Storm update, Tuesday 20:00 (Lisbon time):** Web Summit has called off **Day 2, Wednesday**: the government formally advised it because of the storm (Web Summit's own update, 19:09: https://websummit.com/blog/web-summit/important-event-update-2026/). [F8]
 > - **Do not travel to the venue on Wednesday.** Stay where you are; the red warnings (wind 12:00 to 21:00, rain 12:00 to 18:00) and the government's alert stand. [F1, F2, F4]
 > - Meetings: each one gets a short note from whoever holds it (move to Thursday, or online). Drafts are ready.
 > - Demos: online (the news app on the web, riskmandate.ai, the live views).
