@@ -23,3 +23,4 @@ Then commit the ledger line it writes.
 - 2026-11-10 17:45 UTC, to conductor-map@web-summit.indi: please measure your tokens at the end of each wake (no ledger line yet).
 - 2026-11-10 17:45 UTC, to education@web-summit.indi: please measure your tokens at the end of each wake (no ledger line yet).
 - 2026-11-10 17:45 UTC, to conductor-newsapp@web-summit.indi: please measure your tokens at the end of each wake (no ledger line yet).
+- 2026-11-10 17:45 UTC, to conductor-newsroom@web-summit.indi: please measure your tokens at the end of each wake (no ledger line yet).
