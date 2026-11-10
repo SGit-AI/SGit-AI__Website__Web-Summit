@@ -59,6 +59,7 @@
 .incident svg .mk { cursor: pointer; }
 .incident svg .mk:focus { outline: none; } .incident svg .mk:focus > :first-child { stroke: var(--focus); stroke-width: 3; }
 .inc-detail { min-height: 3.2em; margin: .5rem 0 0; padding: .6rem .8rem; border-left: 3px solid var(--line-2); background: var(--surface-2); font-size: .9rem; }
+.incident .lab { margin-right: .45em; }
 .inc-detail .lab { font-weight: 700; text-transform: uppercase; font-size: .72rem; letter-spacing: .08em; margin-right: .4em; }
 .lab.fact { color: var(--if); } .lab.evidence { color: var(--ie); } .lab.hypothesis { color: var(--ih); }
 .inc-graph .node rect { stroke-width: 2; }
@@ -84,6 +85,7 @@
 .inc-list { font-size: .88rem; }
 .inc-list td:first-child { white-space: nowrap; }
 .inc-err { color: var(--bad); }
+.inc-wait.done { border-color: var(--ok); }
 .inc-wait { border: 2px solid var(--bad); border-radius: 10px; padding: .8rem 1rem; margin: 1rem 0; background: var(--surface); }
 .inc-wait h2 { margin: 0 0 .3rem; font-size: 1.15rem; }
 .inc-wait .big { font-size: 1.05rem; font-weight: 700; }
@@ -295,24 +297,49 @@ ${wl ? `<div class="inc-detail"><span class="lab hypothesis">Analysis</span>by $
     // 0. what everyone waits for: the graph's first_priority decision, the organisers' own channels (the sitemap through the
     //    connector, watch/websummit.json; Bluesky read here, in the browser, every minute: its public API allows it, so no CI
     //    and no cache sit between a post and this page)
-    const WATCH = /weather|storm|tempest|wednesday|quarta|clos|suspend|cancel|postpon|safety|update|alert|aviso|programme change|venue/i
+    const WATCH = /weather|storm|tempest|wednesday|quarta|thursday|quinta|day [23]|dia [23]|clos|suspend|cancel|postpon|reschedul|safety|update|alert|aviso|programme|venue|pitch|ticket|refund|reembols|talk|speaker|stream|online|side event|night summit/i
     const BSKY = 'https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=websummit.bsky.social&limit=20&filter=posts_no_replies'
     let bsky = null, bskyAt = 0, bskyErr = ''
     async function readBsky() {
         try { const d = await get(BSKY, 9000); bsky = (d.feed || []).filter(f => !f.reason).slice(0, 5).map(f => ({ at: f.post.record.createdAt, text: f.post.record.text, url: 'https://bsky.app/profile/websummit.bsky.social/post/' + f.post.uri.split('/').pop() })); bskyErr = '' } catch (e) { bskyErr = String(e.message || e) }
         bskyAt = Date.now(); if (mount.querySelector('#inc-wait')) waiting()
     }
+    // the decision: the graph's first_priority edge once it has happened; until the researcher updates the graph, the lead's
+    // newest DECISION row in timeline.md about the same organiser (whichever is newer wins). Corroboration: the timeline's rows
+    // about Web Summit from 10 minutes before the decision on, each with its own label and source.
+    const OPEN = [['Day 3, Thursday 12 November', /thursday|quinta|day 3|dia 3/i], ["Wednesday's talks and speakers", /speaker|session|stage|livestream|stream|online|palestra|orador/i], ['The PITCH semi-final', /pitch/i], ['Side events', /side event|night summit|meetup|party|evento paralelo/i], ['Tickets and refunds', /ticket|refund|bilhete|reembols/i]]
     function waiting() {
-        const box = mount.querySelector('#inc-wait'), g = state.graph, w = state.watch
-        const e = g && g.edges.find(x => x.id === g.first_priority)
-        const decided = e && e.status === 'happened'
-        const posts = (bsky || []).map(p => `<li class="${WATCH.test(p.text) ? 'hit' : ''}">${day(T(p.at))} ${hm(T(p.at))} · <a href="${esc(p.url)}" rel="noopener">${esc(p.text.slice(0, 140))}</a></li>`).join('')
-        const alerts = ((w && w.alerts) || []).slice(-5).reverse().map(a => `<li class="hit">${esc(a.channel)} · first seen ${hm(T(a.first_seen))} · <a href="${esc(safe(a.url))}" rel="noopener">${esc(String(a.text).slice(0, 140))}</a></li>`).join('')
-        box.innerHTML = `<h2>${decided ? 'Decided' : 'Waiting for'}: ${e ? esc(e.decision) : 'the first-priority decision'}</h2>
-<p class="big">${e ? (decided ? `Decided at ${hm(T(e.at))} UTC` : 'Not announced') : '—'}${e && e.read ? ` <span class="meta">(graph read ${esc(String(e.read).slice(11, 16))} by ${esc(e.read_by || '')})</span>` : ''}</p>${e && e.note ? `<p class="meta">${esc(e.note)}</p>` : ''}
+        const box = mount.querySelector('#inc-wait'), g = state.graph, w = state.watch, items = (state.signals && state.signals.items) || []
+        const e = g && g.edges.find(x => x.id === g.first_priority), who = e ? e.by : 'websummit'
+        const name = g && g.nodes.find(n => n.id === who) ? g.nodes.find(n => n.id === who).name.replace(/\s*\(.*\)\s*$/, '') : 'the organisers'
+        // what the decider has decided: the graph's happened edges (newest first); a DECISION row in the timeline newer than all of them
+        // is shown too, marked "not in the graph yet"
+        const made = g ? g.edges.filter(x => x.by === who && x.status === 'happened' && x.label !== 'hypothesis' && Number.isFinite(T(x.at))).sort((x, y) => T(y.at) - T(x.at)) : []
+        const newest = made.length ? T(made[0].at) : 0
+        const rows = items.filter(i => i.decision && /web summit|organis/i.test(i.text) && T(i.at) > newest + 6e4)
+        const decided = [...rows.map(i => ({ at: i.at, label: i.label, text: i.text.replace(/^DECISION:\s*/, ''), src: srcHtml(i.sources), extra: ' <b>(timeline.md; not in the graph yet)</b>' })),
+            ...made.slice(0, 4).map(x => ({ at: x.at, label: x.label, text: x.decision, src: safe(x.source) ? `<a href="${esc(x.source)}" rel="noopener">source</a>` : 'no public source', extra: x.note ? ' · ' + esc(x.note) : '' }))]
+        const since = decided.length ? T(decided[decided.length > 1 ? decided.length - 2 : 0].at) - 6e5 : Infinity
+        const opens = g ? g.edges.filter(x => x.by === who && (x.status === 'not_announced' || x.status === 'unknown' || x.status === 'expected')) : []
+        const posts = (bsky || []).map(p => `<li class="${WATCH.test(p.text) && T(p.at) >= (decided.length ? since : 0) ? 'hit' : ''}">${day(T(p.at))} ${hm(T(p.at))} · <a href="${esc(p.url)}" rel="noopener">${esc(p.text.slice(0, 140))}</a></li>`).join('')
+        const alerts = ((w && w.alerts) || []).slice(-5).reverse().map(a => `<li class="hit">${esc(a.channel)}${a.kind ? ' (' + esc(a.kind) + ')' : ''} · first seen ${hm(T(a.first_seen))} · <a href="${esc(safe(a.url))}" rel="noopener">${esc(String(a.text).slice(0, 140))}</a></li>`).join('')
+        const pool = [...items, ...(bsky || []).map(p => ({ at: p.at, text: p.text, label: 'fact', sources: [{ label: 'Bluesky', url: p.url }] }))].filter(i => T(i.at) >= since)
+        const openHits = OPEN.map(([nm, rx]) => { const hit = pool.filter(i => rx.test(i.text)).sort((x, y) => T(x.at) - T(y.at)).slice(-1)[0]; return `<li>${esc(nm)}: ${hit ? `<span class="lab ${hit.label}">${LABEL[hit.label]}</span>${hm(T(hit.at))} ${esc(hit.text.slice(0, 160))} <span class="meta">(${srcHtml(hit.sources)})</span>` : '<span class="meta">nothing found yet</span>'}</li>` }).join('')
+        const lab = x => `<span class="lab ${x.label}">${LABEL[x.label] || esc(x.label)}</span>`
+        // the organiser's own site (J6): blog posts published or modified in the last 48 hours, newest change first; a primary source
+        const site = Object.values((w && w.blog && w.blog.posts) || {}).filter(p => Date.now() - Math.max(T(p.modified), T(p.date || 0)) < 48 * 3600e3).sort((a, b) => T(b.modified) - T(a.modified))
+        const siteHtml = w && w.blog ? `<h3>On websummit.com, the organiser's own site (read ${hm(T(w.read_at))} UTC)</h3><ul>${site.map(p => `<li><span class="lab fact">Fact</span><a href="${esc(safe(p.url))}" rel="noopener"><b>${esc(p.title)}</b></a> · published ${p.date ? day(T(p.date)) + (p.date.slice(0, 4) !== p.modified.slice(0, 4) ? ' ' + p.date.slice(0, 4) : '') + ' ' + hm(T(p.date)) : '?'}${p.modified !== p.date ? `, <b>modified ${day(T(p.modified))} ${hm(T(p.modified))}</b> <span class="meta">(listing's Post.modified)</span>` : ''}${p.page && p.page.date_modified && p.page.date_modified !== p.modified ? `; the page's own JSON-LD says modified <b>${hm(T(p.page.date_modified))}</b> <span class="meta">(read ${hm(T(p.page.read_at))})</span>` : ''} UTC <span class="meta">(${esc(p.category)}) ${esc(p.excerpt.slice(0, 220))}</span></li>`).join('') || '<li class="meta">no post published or changed in the last 48 hours</li>'}</ul>` : ''
+        const wait = e ? (e.status === 'happened'
+            ? `<h3>Now watching: ${esc(e.decision.replace(/:\s*".*$/, ''))}</h3><p>${lab(e)}announced ${hm(T(e.at))} UTC${e.label === 'evidence' ? ', reported, not yet on an organiser channel we can read' : ''}. ${e.note ? `<span class="meta">${esc(e.note)}</span>` : ''}</p>`
+            : `<h3>Waiting for: ${esc(e.decision)}</h3><p class="big">Not announced${e.read ? ` <span class="meta">(graph read ${esc(String(e.read).slice(11, 16))} by ${esc(e.read_by || '')})</span>` : ''}</p>${e.note ? `<p class="meta">${esc(e.note)}</p>` : ''}`) : ''
+        box.classList.toggle('done', decided.length > 0)
+        box.innerHTML = `${decided.length ? `<h2>${esc(name)} has decided</h2><ul>${decided.map(d => `<li>${lab(d)}<b>${day(T(d.at))} ${hm(T(d.at))} UTC</b> ${esc(d.text.slice(0, 260))} <span class="meta">(${d.src})${d.extra}</span></li>`).join('')}</ul>` : `<h2>Waiting for ${esc(name)}</h2>`}
+${siteHtml}
+${wait}
+<h3>Still open</h3><ul>${opens.map(x => `<li>${lab(x)}${esc(x.decision)} <span class="meta">(${esc(x.status.replace('_', ' '))}${x.read ? ', read ' + esc(String(x.read).slice(11, 16)) : ''})</span></li>`).join('')}${openHits}</ul>
 <div class="cols">
- <div><h3>Web Summit on Bluesky, read live ${bskyAt ? hm(bskyAt) + ' UTC' : '…'}</h3>${bskyErr ? `<p class="inc-err">${esc(bskyErr)}</p>` : `<ul>${posts || '<li>no posts read yet</li>'}</ul>`}<p class="meta">A post in red matches the watch words (weather, storm, Wednesday, closed, suspend, cancel, safety, update…): read it; a match is not a decision.</p></div>
- <div><h3>websummit.com's pages${w ? `, read ${hm(T(w.read_at))} UTC` : ''}</h3>${w ? `<p class="meta">${w.sitemap.count} pages in the sitemap; ${w.sitemap.added_this_read.length} new at the last read.</p><ul>${alerts || '<li>no alert: no new page or post matches the watch words</li>'}</ul>` : '<p class="meta">watch/websummit.json not read yet.</p>'}</div>
+ <div><h3>${esc(name)} on Bluesky, read live ${bskyAt ? hm(bskyAt) + ' UTC' : '…'}</h3>${bskyErr ? `<p class="inc-err">${esc(bskyErr)}</p>` : `<ul>${posts || '<li>no posts read yet</li>'}</ul>`}<p class="meta">A post in red${decided.length ? ' (newer than the decisions)' : ''} matches the watch words (Thursday, day 3, talks, PITCH, tickets, refund, side events, storm, cancel, update…): read it; a match is not a decision.</p></div>
+ <div><h3>websummit.com's alerts${w ? `, read ${hm(T(w.read_at))} UTC` : ''}</h3>${w ? `<p class="meta">${w.blog ? Object.keys(w.blog.posts || {}).length + ' blog posts in ' + (w.blog.listings || []).length + ' listings; ' : ''}${w.sitemap.count} pages in the sitemap; ${w.sitemap.added_this_read.length} new at the last read. An alert is a new post, a post whose "modified" changed, or a new page.</p><ul>${alerts || '<li>no alert: no new page or post matches the watch words</li>'}</ul>` : '<p class="meta">watch/websummit.json not read yet.</p>'}</div>
 </div>`
     }
     readBsky(); setInterval(() => { if (!document.hidden) readBsky() }, POLL_MS)

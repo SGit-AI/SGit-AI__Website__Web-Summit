@@ -6,21 +6,108 @@
  "note": "Reasoning from the facts in this folder; not IPMA's words. Times are UTC = Lisbon time (WET). See analysis.md for the reasons.",
  "wednesday_lisbon": {
   "deterioration_from_utc": "2026-11-11T05:00Z",
-  "worst_window_utc": ["2026-11-11T12:00Z", "2026-11-11T18:00Z"],
-  "likely_peak_utc": ["2026-11-11T15:00Z", "2026-11-11T19:00Z"],
+  "worst_window_utc": [
+   "2026-11-11T12:00Z",
+   "2026-11-11T18:00Z"
+  ],
+  "likely_peak_utc": [
+   "2026-11-11T15:00Z",
+   "2026-11-11T19:00Z"
+  ],
   "easing_from_utc": "2026-11-11T19:00Z",
   "ends_utc": "2026-11-11T21:00Z",
-  "confidence": {"window": "medium", "peak_hour_and_strength": "low"},
-  "why": ["red wind and red rain overlap 12:00-18:00 (warnings.json)", "TAF gust groups 09:00-18:00, PROB40 58 kt 10:00-18:00 (airport.json)", "IPMA hourly model: mean wind peak 45-49 km/h at 17:00-18:00 with the swing to NW (forecast.json, run of 07:55 Tue)", "communiqué no. 2: strongest gusts on the southern edge; track between Sines and Cabo Carvoeiro, highly uncertain (communiques.json)"]
+  "confidence": {
+   "window": "medium",
+   "peak_hour_and_strength": "low"
+  },
+  "why": [
+   "red wind and red rain overlap 12:00-18:00 (warnings.json)",
+   "TAF gust groups 09:00-18:00, PROB40 58 kt 10:00-18:00 (airport.json)",
+   "IPMA hourly model: mean wind peak 45-49 km/h at 17:00-18:00 with the swing to NW (forecast.json, run of 07:55 Tue)",
+   "communiqué no. 2: strongest gusts on the southern edge; track between Sines and Cabo Carvoeiro, highly uncertain (communiques.json)"
+  ]
  },
  "lead_times": [
-  {"warning": "storm named, orange expected, upgrade possible", "starts_utc": "2026-11-11T12:00Z", "first_signal_utc": "2026-11-09T13:17Z", "lead_hours": 46.7, "kind": "fact", "source": "IPMA communiqué no. 1"},
-  {"warning": "ANEPC Aviso 21", "starts_utc": "2026-11-11T12:00Z", "first_signal_utc": "2026-11-09T20:30Z", "lead_hours": 39.5, "kind": "fact", "source": "ANEPC"},
-  {"warning": "red wind 12:00-21:00", "starts_utc": "2026-11-11T12:00Z", "first_signal_utc": "2026-11-10T08:31Z", "lead_hours": 27.5, "kind": "press", "source": "Lusa via AWAY, 08:46 UTC"},
-  {"warning": "orange sea 12:00-21:00", "starts_utc": "2026-11-11T12:00Z", "first_signal_utc": "by 2026-11-10T14:23Z", "lead_hours_at_least": 21.6, "kind": "fact"},
-  {"warning": "orange rain 05:00-12:00", "starts_utc": "2026-11-11T05:00Z", "first_signal_utc": "by 2026-11-10T14:23Z", "lead_hours_at_least": 14.6, "kind": "fact"},
-  {"warning": "red rain 12:00-18:00", "starts_utc": "2026-11-11T12:00Z", "first_signal_utc": "between 2026-11-10T16:52Z and 17:42Z", "lead_hours": 18.5, "kind": "fact"},
-  {"warning": "yellow sea Wed 21:00-Thu 03:00", "starts_utc": "2026-11-11T21:00Z", "first_signal_utc": "by 2026-11-10T16:52Z", "lead_hours_at_least": 28.1, "kind": "fact"},
-  {"warning": "LPPT TAF gusts 48 kt (40% 58 kt)", "starts_utc": "2026-11-11T09:00Z", "first_signal_utc": "by 2026-11-10T15:23Z", "lead_hours_at_least": 17.6, "kind": "fact"}
+  {
+   "warning": "storm named, orange expected, upgrade possible",
+   "starts_utc": "2026-11-11T12:00Z",
+   "first_signal_utc": "2026-11-09T13:17Z",
+   "lead_hours": 46.7,
+   "kind": "fact",
+   "source": "IPMA communiqué no. 1"
+  },
+  {
+   "warning": "ANEPC Aviso 21",
+   "starts_utc": "2026-11-11T12:00Z",
+   "first_signal_utc": "2026-11-09T20:30Z",
+   "lead_hours": 39.5,
+   "kind": "fact",
+   "source": "ANEPC"
+  },
+  {
+   "warning": "red wind 12:00-21:00",
+   "starts_utc": "2026-11-11T12:00Z",
+   "first_signal_utc": "2026-11-10T08:31Z",
+   "lead_hours": 27.5,
+   "kind": "press",
+   "source": "Lusa via AWAY, 08:46 UTC"
+  },
+  {
+   "warning": "orange sea 12:00-21:00",
+   "starts_utc": "2026-11-11T12:00Z",
+   "first_signal_utc": "by 2026-11-10T14:23Z",
+   "lead_hours_at_least": 21.6,
+   "kind": "fact"
+  },
+  {
+   "warning": "orange rain 05:00-12:00",
+   "starts_utc": "2026-11-11T05:00Z",
+   "first_signal_utc": "by 2026-11-10T14:23Z",
+   "lead_hours_at_least": 14.6,
+   "kind": "fact"
+  },
+  {
+   "warning": "red rain 12:00-18:00",
+   "starts_utc": "2026-11-11T12:00Z",
+   "first_signal_utc": "between 2026-11-10T16:52Z and 17:42Z",
+   "lead_hours": 18.5,
+   "kind": "fact"
+  },
+  {
+   "warning": "yellow sea Wed 21:00-Thu 03:00",
+   "starts_utc": "2026-11-11T21:00Z",
+   "first_signal_utc": "by 2026-11-10T16:52Z",
+   "lead_hours_at_least": 28.1,
+   "kind": "fact"
+  },
+  {
+   "warning": "LPPT TAF gusts 48 kt (40% 58 kt)",
+   "starts_utc": "2026-11-11T09:00Z",
+   "first_signal_utc": "by 2026-11-10T15:23Z",
+   "lead_hours_at_least": 17.6,
+   "kind": "fact"
+  }
+ ],
+ "updates": [
+  {
+   "written_utc": "2026-11-10T21:25Z",
+   "label": "analysis",
+   "based_on_read_utc": "2026-11-10T21:18Z",
+   "fact": "IPMA hourly model for Lisbon changed values with the same 07:55 stamp: Wed peak mean 23 km/h at 20:00 NW (was 49 at 18:00); wind swing to N at 18:00, NW at 19:00 (was 17:00)",
+   "likely_peak_utc": [
+    "2026-11-11T17:00Z",
+    "2026-11-11T20:00Z"
+   ],
+   "worst_window_utc": [
+    "2026-11-11T12:00Z",
+    "2026-11-11T18:00Z"
+   ],
+   "ends_utc": "2026-11-11T21:00Z",
+   "confidence": {
+    "window": "medium",
+    "peak_hour_and_strength": "low"
+   },
+   "why": "the peak tracks the wind swing; lower mean wind fits the centre passing near Lisbon; IPMA's red warnings (unchanged) outrank one model at one point"
+  }
  ]
 }

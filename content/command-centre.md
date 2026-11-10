@@ -66,10 +66,11 @@ It reads again every five minutes while the map is open, and says "● LIVE, rea
   - The menu keeps the daily views: Overview, My tasks, Team board, Universe, GAMMA-Ray, Inbox and Ask Claude. **More** opens the rest and remembers whether it was open.
   - Views a person's own page adds, such as Angelo's Kanban, Team and the machine, Where and Summit days, stay where they were and stay visible.
   - Lists show the essentials: the number, the title and the due date. The **Details** switch in the top bar shows everything, and opening a task still shows all of it.
-- **The Universe on every command centre, in two views.**
+- **The Universe on every command centre, in three views.**
   - **Map** is the 3D map in light points. The glass balloons are gone.
   - **Circuit**, drawn after Silvio's reference images, shows each person's agents on a numbered bus, through their behaviour policy, barriers, the gate and the owner, to the resources their policies name. The selected agent's path is lit, its team glows in their T-shirt colour, and four panels sit below (run log, dispatch, the agent's policy, graph). **Play** walks through the agents.
   - The agents' open gaps and barriers are still shown to the developers only, with their key.
+  - **Talk** shows who talks to whom. An agent's commit with a `For:` trailer naming another agent or person is a message. Each line joins two of them: a thicker line means more messages, and a glowing line means one in the last 15 minutes. Tap a point to light only its conversations. It opens on **All read**, with every agent in the last commits. **● Now** keeps only the last 15 minutes, and **Last 1h** and **Last 3h** sit between them. It reads the last 300 commits on `dev` from GitHub every two minutes, and shows the last reading straight away. The agents talk asynchronously, through commits, not in a live chat. Four panels sit below: the messages, the busiest pairs, the tasks in play and the people.
 - **GAMMA-Ray on every command centre.**
   - It reads the draft standard live from gamma-ray.sgit.ai, with the same rules as its build/model.mjs, and shows the two example scans of our own agents and the person's own agents' scans, once they are published.
   - It has two views: a circuit (answers on an indicator bus, the level rules, the level held and the gap) and the freedom-by-governance grid.

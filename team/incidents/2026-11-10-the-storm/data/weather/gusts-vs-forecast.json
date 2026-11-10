@@ -1,19 +1,19 @@
 {
  "about": "The latest observed wind in Lisbon against what was forecast for that hour. Facts with sources; no analysis here (see analysis.md).",
- "read_utc": "2026-11-10T19:22:35Z",
+ "read_utc": "2026-11-10T21:22:40Z",
  "observed_airport_latest": {
-  "time_utc": "2026-11-10T19:00Z",
-  "raw": "METAR LPPT 101900Z 21010KT 9999 FEW008 BKN016 19/17 Q1008",
-  "wind_dir": 210,
-  "wind_kt": 10,
+  "time_utc": "2026-11-10T21:00Z",
+  "raw": "METAR LPPT 102100Z 20013KT 9999 SCT007 BKN010 19/18 Q1008 NOSIG",
+  "wind_dir": 200,
+  "wind_kt": 13,
   "gust_kt": null,
-  "wind_kmh": 19,
+  "wind_kmh": 24,
   "gust_kmh": null,
   "visibility": "6+",
   "weather": null,
   "pressure_hpa": 1008,
   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
-  "read_utc": "2026-11-10T19:07:26Z"
+  "read_utc": "2026-11-10T21:18:43Z"
  },
  "observed_airport_max_gust": {
   "kt": 36,
@@ -23,44 +23,44 @@
  },
  "observed_stations_latest_mean": [
   {
-   "kmh": 15.8,
-   "station": "Oeiras / Vila Fria (CMO)",
-   "time_utc": "2026-11-10T18:00Z",
+   "kmh": 17.6,
+   "station": "Lisboa, Relógio",
+   "time_utc": "2026-11-10T20:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T19:22:35Z"
+   "read_utc": "2026-11-10T21:22:40Z"
+  },
+  {
+   "kmh": 16.9,
+   "station": "Oeiras / Vila Fria (CMO)",
+   "time_utc": "2026-11-10T20:00Z",
+   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
+   "read_utc": "2026-11-10T21:22:40Z"
+  },
+  {
+   "kmh": 16.9,
+   "station": "Lisboa (Geofísico)",
+   "time_utc": "2026-11-10T20:00Z",
+   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
+   "read_utc": "2026-11-10T21:22:40Z"
   },
   {
    "kmh": 14.8,
-   "station": "Lisboa, Relógio",
-   "time_utc": "2026-11-10T18:00Z",
-   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T19:22:35Z"
-  },
-  {
-   "kmh": 14.4,
    "station": "Lisboa, Carnide (CML)",
-   "time_utc": "2026-11-10T18:00Z",
+   "time_utc": "2026-11-10T20:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T19:22:35Z"
+   "read_utc": "2026-11-10T21:22:40Z"
   },
   {
    "kmh": 13.3,
-   "station": "Lisboa (Geofísico)",
-   "time_utc": "2026-11-10T18:00Z",
+   "station": "Barreiro, Lavradio",
+   "time_utc": "2026-11-10T20:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T19:22:35Z"
-  },
-  {
-   "kmh": 10.1,
-   "station": "Lisboa, Amoreiras (LFCL)",
-   "time_utc": "2026-11-10T18:00Z",
-   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T19:22:35Z"
+   "read_utc": "2026-11-10T21:22:40Z"
   }
  ],
  "forecast_taf_groups_for_that_hour": {
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-10T19:22:35Z",
+  "read_utc": "2026-11-10T21:22:40Z",
   "groups": [
    {
     "change": "BASE",
@@ -86,17 +86,17 @@
   "end_utc": "2026-11-11T21:00:00Z",
   "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-10T19:22:35Z"
+  "read_utc": "2026-11-10T21:22:40Z"
  },
  "forecast_ipma_hourly_wed_peak_mean": {
-  "time_utc": "2026-11-11T18:00Z",
-  "wind_mean_kmh": 48.6,
+  "time_utc": "2026-11-11T20:00Z",
+  "wind_mean_kmh": 23.4,
   "wind_dir": "NW",
-  "rain_prob_pct": 90.0,
-  "rain_intensity_class": 3,
-  "temp_c": 18.7,
-  "sea_total_m": 4.8,
+  "rain_prob_pct": null,
+  "rain_intensity_class": null,
+  "temp_c": 17.3,
+  "sea_total_m": 3.4,
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-10T19:22:35Z"
+  "read_utc": "2026-11-10T21:22:40Z"
  }
 }

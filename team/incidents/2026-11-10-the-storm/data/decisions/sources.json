@@ -1,7 +1,43 @@
 {
  "about": "Every source incident.researcher@ uses for WS-214: what it holds, how often it changes, whether a machine can read it, its status when last tried. parser_ask = the part we ask incident.dev@ to parse.",
- "updated": "2026-11-10T19:32Z",
+ "updated": "2026-11-10T20:59Z",
  "sources": [
+  {
+   "id": "websummit-blog",
+   "url": "https://websummit.com/blog/",
+   "holds": "The organisers' blog list, newest first; announcements are posts here (props.pageProps.data.otherPosts.edges[].node {date, slug, title} in __NEXT_DATA__). The 19:09 decision is otherPosts[0].",
+   "changes": "on announcement",
+   "machine_readable": "yes: embedded JSON (__NEXT_DATA__) in server-rendered HTML; no login",
+   "status": "200",
+   "read": "2026-11-10T20:59Z",
+   "reuse": "no",
+   "reuse_basis": "organiser copyright: cite and link; quote briefly",
+   "parser_ask": "poll every 2 min: the post list (date, slug, title) as JSON; alert on any new slug; then fetch the post page and take props.pageProps.data.post.content and the JSON-LD datePublished/dateModified. /api/ is disallowed by robots.txt: do not use it."
+  },
+  {
+   "id": "websummit-update-2026",
+   "url": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+   "holds": "The organisers' decision: Day 2 off, Day 3 aims to proceed, \"will communicate directly with those impacted\"",
+   "changes": "modified once (19:09 published, 19:25:44 modified); watch dateModified",
+   "machine_readable": "yes: JSON-LD dates and __NEXT_DATA__ post.content",
+   "status": "200",
+   "read": "2026-11-10T20:59Z",
+   "reuse": "no",
+   "reuse_basis": "organiser copyright: cite and link; quote briefly",
+   "parser_ask": "poll dateModified every 5 min; diff post.content"
+  },
+  {
+   "id": "websummit-sections",
+   "url": "https://websummit.com/",
+   "holds": "Every top-level section linked from the home page (40, read 20:59Z): 2-for-1, 2-for-1-sale, accessibility-policy, ambassadors-programme, anti-harassment-policy, attendee-experience, attendees, blog, bring-your-team, careers, convince-your-boss, cookie-policy, developers, en, essentials, featured-attendees, hotels, investors, media, meetups, newsletter-signup, night-summit, partners, privacidade, privacy, reviews, schedule, speaker-application, speakers, startups, store, summaries, termos-e-condicoes, terms-and-conditions, tracks, venture, vip-experience, volunteers, women-in-tech, wp-media. Announcement-bearing: blog (primary), essentials (venue, schedule, app), schedule, night-summit, startups (PITCH), media.",
+   "changes": "rarely (structure)",
+   "machine_readable": "yes: hrefs in HTML",
+   "status": "200",
+   "read": "2026-11-10T20:59Z",
+   "reuse": "no",
+   "reuse_basis": "organiser copyright",
+   "parser_ask": "weekly: the section list; daily during an incident: hash each announcement-bearing section's __NEXT_DATA__ and alert on change"
+  },
   {
    "id": "websummit-home",
    "url": "https://websummit.com/",
@@ -19,8 +55,8 @@
    "holds": "Organiser news list",
    "changes": "on announcement",
    "machine_readable": "partly: HTML",
-   "status": "200",
-   "read": "2026-11-10T18:58Z",
+   "status": "200; did not show the 19:09 decision at 18:58 or 20:04 reads (list of selected news only)",
+   "read": "2026-11-10T20:59Z",
    "reuse": "no",
    "reuse_basis": "as above"
   },
@@ -30,9 +66,8 @@
    "holds": "Every page URL with lastmod: a new page (e.g. a weather update) shows here",
    "changes": "on every page change",
    "machine_readable": "yes: XML",
-   "status": "200 at 19:01Z; some entries carry the request time as lastmod, others a real one (e.g. a 2024 post \"A Web Summit update\", lastmod 2026-08-10): watch the URL set, not lastmod",
-   "read": "2026-11-10T19:32Z",
-   "parser_ask": "diff the <loc> set between reads; alert on any new URL matching weather|update|wednesday|safety|storm",
+   "status": "200; does NOT list blog posts (the 19:09 decision page was never in it): not a change signal for announcements",
+   "read": "2026-11-10T20:59Z",
    "reuse": "no",
    "reuse_basis": "as above"
   },

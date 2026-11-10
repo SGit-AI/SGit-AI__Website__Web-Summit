@@ -12,7 +12,7 @@ Refreshed hourly (at :22) with `python3 -I team/incidents/2026-11-10-the-storm/d
 | `airport.json` | Lisbon airport (LPPT): the current TAF decoded (kt and km/h), every TAF issue seen, every METAR seen with its gust, the maximum gust | [NOAA AWC API: TAF](https://aviationweather.gov/api/data/taf?ids=LPPT&format=json), [METAR](https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json) (IPMA issues both) |
 | `forecast.json` | IPMA's daily forecast for Lisbon and its hourly model forecast (mean wind, rain, sea); each new model run recorded in `hourly_runs` | [daily](https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json), [hourly](https://api.ipma.pt/public-data/forecast/aggregate/1110600.json) |
 | `gusts-vs-forecast.json` | The latest observed wind (airport gust, station means) beside what was forecast for that hour (TAF group, the red warning, the model's peak) | the above |
-| `changes.json` | **First: `gusts_above_warned`**, every airport gust from Wed 05:00 above the gust warned for that hour (the IPMA wind warning in force, else the TAF), each with its METAR; then what each refresh found changed | this tool |
+| `changes.json` | **First: `thursday`** (Lisbon warnings touching Thu 12 Nov; IPMA model, daily and TAF for Thursday morning); **then `gusts_above_warned`**, every airport gust from Wed 05:00 above the gust warned for that hour (the IPMA wind warning in force, else the TAF), each with its METAR; then what each refresh found changed | this tool |
 | `analysis.md`, `analysis.json` | **ANALYSIS:** when the worst arrives and ends on Wednesday; how far ahead each warning could be known | reasoning from the files |
 
 Notes:

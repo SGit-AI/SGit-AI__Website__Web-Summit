@@ -1,4 +1,4 @@
-# The one source (facts as of 19:56 UTC, 10 November 2026; weather facts as of 18:38)
+# The one source (facts as of 20:02 UTC, 10 November 2026; weather facts as of 18:38, Thursday's as of 19:22)
 
 Every communication draft in this folder is built from these facts and cites them by number. Sources: weather@PrompTugal.vicky's desk (`desks/weather-vicky/live.md`, last full check 18:36 to 18:38 UTC, and `decision-graph.json`), which reads the authorities at source. Lisbon time = UTC in November.
 
@@ -11,16 +11,16 @@ Every communication draft in this folder is built from these facts and cites the
 - **F5. The minister's appeal:** stay at home where possible and avoid unnecessary travel. An appeal, not an order. Government news note, read 17:01.
 - **F6. Transport: possible disruption, nothing suspended.** Fertagus and Carris warn of disruption on Wednesday (Carris's banner now reads "perturbações na circulação"); Carris Metropolitana has weather alerts to Wednesday 23:59; no suspension announced by Metro, Carris, Fertagus or the ferries. Operators' own notices, read 16:59 and 18:36.
 - **F9. Thursday: the organisers will hold Day 3 "conforme planeado, após a passagem da tempestade Charles" and will contact affected people directly** (RTP live, 19:46). DN (19:45) reports all Wednesday activities cancelled. Not yet stated anywhere we read: what happens to Wednesday's talks, the PITCH semi-final, side events and tickets (N6). IPMA, read 19:22: no wind or rain warning for Lisbon on Thursday; yellow sea to Thursday 03:00.
-- **F8 (supersedes F7). Web Summit: Day 2, Wednesday 11 November, will not take place.** The government "formally advised" it (tidal flooding, public transport, high winds on external structures), after talks with the government, ANEPC and PSP. Web Summit "aims to proceed with Day 3 (Thursday, November 12) as planned". Web Summit's email to attendees, 19:38 UTC (relayed by Vicky's weather desk); public on Jornal de Negócios's live blog, 19:42. Not on websummit.com at 19:52. Checked again by journalist.examples@ at 19:56: Jornal de Negócios's live page is headed "Web Summit suspensa na quarta-feira"; websummit.com's news page and Web Summit's Bluesky (last post 17:36, "That's a wrap on Day 1") still say nothing.
+- **F8 (supersedes F7). Web Summit: Day 2, Wednesday 11 November, will not take place.** The government "formally advised" it (tidal flooding, public transport, high winds on external structures), after talks with the government, ANEPC and PSP. Web Summit "aims to proceed with Day 3 (Thursday, November 12) as planned". **Primary: Web Summit's own page ["Important event update"](https://websummit.com/blog/web-summit/important-event-update-2026/), published 19:09 UTC (page data; modified 19:25), read at source 20:58.** Also its email to attendees, 19:38 (relayed by Vicky's weather desk), and Jornal de Negócios's live blog, 19:42. Checked again by journalist.examples@ at 19:56: Jornal de Negócios's live page is headed "Web Summit suspensa na quarta-feira"; websummit.com's news page and Web Summit's Bluesky (last post 17:36, "That's a wrap on Day 1") still say nothing.
 - **F7 (superseded at 19:38 by F8). Web Summit: no change to Wednesday's programme announced** (homepage and news, last read by the desk at 18:36). MEO Arena and FIL: no notice.
 
-## Not known (as of 19:56)
+## Not known (as of 20:02)
 
 - **N1.** (Moot since F8: Wednesday is off.)
 - **N2.** Lisbon city hall's own measures (its sites refuse our tools).
 - **N3.** Any transport suspension for Wednesday.
 - **N4.** (Answered by F8, 19:38.)
-- **N6.** Thursday, Day 3: Web Summit only *aims* to proceed. Not confirmed; nothing yet on its own public pages. Thursday's weather: as read by the incident at 19:01, a yellow sea warning to 03:00 only.
+- **N6.** What happens to Wednesday's talks, the PITCH semi-final, side events and tickets (as F9 says). Thursday itself: the organisers' word through the press (F9); still nothing on Web Summit's own site or Bluesky at 20:02.
 - **N5.** The reopening: when the measures end and who says so.
 
 ## History (analysis, labelled)

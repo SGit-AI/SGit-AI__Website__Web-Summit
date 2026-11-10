@@ -47,17 +47,19 @@
 Who decides what, in what order, with what lead time: IPMA's warnings, then ANEPC and the government's alert, then the Câmara and the schools, then transport operators, then Web Summit. Vicky's weather desk keeps the public graph (`desks/weather-vicky/decision-chain.md`, `history.md`). Here we keep **our** graph: each of the team's Wednesday commitments, and which outside decision would move it, with the time we should decide by. The question to answer afterwards: **how far ahead could we have known, and when was the right moment to decide?**
 
 
-**How far ahead could we have known? (ANALYSIS, first pass, 19:55 UTC; the decision was Web Summit's email at 19:38)**
+**How far ahead could we have known? (ANALYSIS; recomputed 21:00 UTC against the primary source: Web Summit's page published 19:09 UTC, not the 19:38 email)**
 
-| Earlier signal | UTC | Lead time to the decision |
+| Earlier signal | UTC | Lead time to the decision (19:09) |
 |---|---|---|
-| IPMA communiqué no. 1 names CHARLES (orange warnings expected) | 9 Nov 13:17 | ~30 h 21 min |
-| IPMA red wind for Lisbon (Lusa) | 10 Nov 08:31 | 11 h 07 min |
-| The government's alert situation (outdoor events suspended) | 10 Nov 12:10 | 7 h 28 min |
-| Lisbon's mayor: "Tudo indica que a Web Summit não poderá funcionar amanhã" (press) | 10 Nov 13:19 | 6 h 19 min |
-| The government recommends suspending Web Summit | 10 Nov 17:53 | 1 h 45 min |
+| IPMA communiqué no. 1 names CHARLES (orange warnings expected) | 9 Nov 13:17 | ~29 h 52 min |
+| IPMA red wind for Lisbon (Lusa) | 10 Nov 08:31 | 10 h 38 min |
+| The government's alert situation (outdoor events suspended) | 10 Nov 12:10 | 6 h 59 min |
+| Lisbon's mayor: "Tudo indica que a Web Summit não poderá funcionar amanhã" (press) | 10 Nov 13:19 (13:23 in the weather desk's record; both from press, unresolved) | 5 h 50 min (5 h 46 min) |
+| The government recommends suspending Web Summit | 10 Nov 17:53 | 1 h 16 min |
 
-First reading (analysis, not fact): by 13:19 the chain IPMA red → national alert → the mayor's public expectation pointed one way, six hours before the organisers decided; a plan B for Wednesday was decidable on Tuesday early afternoon. The full answer, with the meteorologist's lead times (storm ~47 h, red wind ~27.5 h, red rain ~18.5 h before their start), goes in the close-out.
+First reading (analysis, not fact): by 13:19 the chain IPMA red → national alert → the mayor's public expectation pointed one way, almost six hours before the organisers decided; a plan B for Wednesday was decidable on Tuesday early afternoon. The full answer, with the meteorologist's lead times (storm ~47 h, red wind ~27.5 h, red rain ~18.5 h before their start), goes in the close-out.
+
+**Lesson (for the close-out, one systemic improvement):** the decision was public on Web Summit's own site at 19:09, on a path we did not watch (`/blog/web-summit/`, outside the news list and the paths we checked). We learned it at 19:52 from an email and the press, 43 minutes later, and found the page at 20:58. Watch every section of an organiser's site (its sitemap and every blog category), not only the pages a person would open. Connector asked of incident.dev@ (J6).
 
 ## 5. Runbook assessment (the preparation spectrum)
 

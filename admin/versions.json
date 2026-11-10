@@ -1,5 +1,110 @@
 [
   {
+    "version": "v0.2.1759",
+    "date": "2026-11-10",
+    "what": "21:22 wake refresh",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "120a1b3d3"
+  },
+  {
+    "version": "v0.2.1758",
+    "date": "2026-11-10",
+    "what": "MOVED.md: all of data/ stays writable for the incident agents until they can reach the new repository",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "044532379"
+  },
+  {
+    "version": "v0.2.1757",
+    "date": "2026-11-10",
+    "what": "websummit-poll.sh pinned: no git in the loop, the code copied at start, alerts committed by the session (security.repos@'s MEDIUM, 2130Z)",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "6260b8a34"
+  },
+  {
+    "version": "v0.2.1756",
+    "date": "2026-11-10",
+    "what": "the incident moves to storm-charles.promptugal.news (PrompTugal__News__Storm-Charles), first push to served 23 s; team/incidents/ frozen with a pointer",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "42fe929da"
+  },
+  {
+    "version": "v0.2.1755",
+    "date": "2026-11-10",
+    "what": "the blog polled every 2 min (robots.txt obeyed); each post's two dates named (listing Post.modified 19:58, page JSON-LD 19:25); any new sitemap URL alerts once",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "56176d518"
+  },
+  {
+    "version": "v0.2.1754",
+    "date": "2026-11-10",
+    "what": "J6 follow-up: the watch's README (blog listings, why), status (releases 93 to 264 s), a post's year shown when it differs",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "467bc0a36"
+  },
+  {
+    "version": "v0.2.1753",
+    "date": "2026-11-10",
+    "what": "J6: watch every section of websummit.com (all blog listings, every sitemap); the organiser's own post (19:09, modified 19:58) on the dashboard as a decision source",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "716690a55"
+  },
+  {
+    "version": "v0.2.1752",
+    "date": "2026-11-10",
+    "what": "Web Summit's decision is a fact (its own page, 19:09); the blog is the organisers' primary channel; the miss recorded",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "1c9221a00"
+  },
+  {
+    "version": "v0.2.1751",
+    "date": "2026-11-10",
+    "what": "llm.mjs: the ledger stays out of git (curated vault, as ROADMAP P0.4 says), no model named in the code; the OpenRouter key is already set here (one 20-token call: ok)",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "3a00a1b2e"
+  },
+  {
+    "version": "v0.2.1750",
+    "date": "2026-11-10",
+    "what": "P0.4: llm.mjs, the one wrapper for model calls: raw to a store outside git, one content-free ledger line per call, a daily cap",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "cd9246b82"
+  },
+  {
+    "version": "v0.2.1749",
+    "date": "2026-11-10",
+    "what": "20:37 wake: no change to Day 3; N6 still unannounced; Day 2 off corroborated by four outlets",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "ce19f84b5"
+  },
+  {
+    "version": "v0.2.1748",
+    "date": "2026-11-10",
+    "what": "20:22 wake: no change at IPMA, communiqués or TAF; LPPT 24 km/h, no gust; analysis unchanged",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "0c7095d38"
+  },
+  {
+    "version": "v0.2.1747",
+    "date": "2026-11-10",
+    "what": "the panel follows the graph (Day 2 off and Thursday \"planned\", both evidence); relayed reports are evidence in the timeline data",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "cbe5e5928"
+  },
+  {
+    "version": "v0.2.1746",
+    "date": "2026-11-10",
+    "what": "Web Summit's Day 2 off (19:38) and Day 3 \"as planned\" in the graph; N6 not announced at 20:04",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "871c3f84c"
+  },
+  {
+    "version": "v0.2.1745",
+    "date": "2026-11-10",
+    "what": "20:03 wake: no new signals since sweep 2; the team re-routed to Thursday and the open items (talks, PITCH, side events, tickets)",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "faf9efbcb"
+  },
+  {
     "version": "v0.2.1744",
     "date": "2026-11-10",
     "what": "no Claude model names in what I push: WS-213, the Tokens view and its note say \"the current model\" and \"a smaller Claude model\"",
