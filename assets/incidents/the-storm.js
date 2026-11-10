@@ -84,10 +84,17 @@
 .inc-list { font-size: .88rem; }
 .inc-list td:first-child { white-space: nowrap; }
 .inc-err { color: var(--bad); }
+.inc-wait { border: 2px solid var(--bad); border-radius: 10px; padding: .8rem 1rem; margin: 1rem 0; background: var(--surface); }
+.inc-wait h2 { margin: 0 0 .3rem; font-size: 1.15rem; }
+.inc-wait .big { font-size: 1.05rem; font-weight: 700; }
+.inc-wait ul { margin: .4rem 0 0; padding-left: 1.1rem; font-size: .88rem; }
+.inc-wait li.hit { font-weight: 700; color: var(--bad); }
+.inc-wait .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: .4rem 1.2rem; margin-top: .5rem; }
+.inc-wait h3 { font-size: .9rem; margin: .3rem 0 0; }
 `
     const style = document.createElement('style'); style.textContent = CSS; document.head.appendChild(style)
 
-    const FILES = { signals: 'signals.json', graph: 'decisions/graph.json', warnings: 'weather/warnings.json', stations: 'weather/stations.json', forecast: 'weather/forecast.json', airport: 'weather/airport.json', analysis: 'weather/analysis.json' }
+    const FILES = { signals: 'signals.json', graph: 'decisions/graph.json', warnings: 'weather/warnings.json', stations: 'weather/stations.json', forecast: 'weather/forecast.json', airport: 'weather/airport.json', analysis: 'weather/analysis.json', watch: 'watch/websummit.json' }
     let state = {}
     async function load() {
         const names = Object.keys(FILES), got = await Promise.allSettled(names.map(n => get(BASE + FILES[n])))
@@ -120,6 +127,7 @@
   <span><i class="inc-chip hypothesis"></i>Hypothesis: our analysis, with its reasons; never a fact</span>
   <span><i class="inc-chip pending"></i>Decision still pending</span>
 </div>
+<section class="inc-wait" id="inc-wait" aria-live="polite"></section>
 <h2 id="inc-timeline">The timeline</h2>
 <div class="inc-tlwrap"><div class="inc-tl-l" id="inc-tl-l"></div><div class="inc-scroll" id="inc-tl"></div></div>
 <p class="inc-detail" id="inc-tl-d" aria-live="polite">Select a mark for its detail and source. The dashed red line is now.</p>
@@ -131,6 +139,7 @@
 <div id="inc-wx"></div>
 <details><summary>Every timeline item as a list</summary><div id="inc-list"></div></details>`
         status()
+        try { waiting() } catch (e) { mount.querySelector('#inc-wait').innerHTML = `<p class="inc-err">${esc(e.message)}</p>` }
         try { timeline() } catch (e) { mount.querySelector('#inc-tl').innerHTML = `<p class="inc-err">${esc(e.message)}</p>` }
         try { graph() } catch (e) { mount.querySelector('#inc-g').innerHTML = `<p class="inc-err">${esc(e.message)}</p>` }
         try { weather() } catch (e) { mount.querySelector('#inc-wx').innerHTML = `<p class="inc-err">${esc(e.message)}</p>` }
@@ -282,6 +291,31 @@ ${wl ? `<div class="inc-detail"><span class="lab hypothesis">Analysis</span>by $
         const items = (state.signals && state.signals.items) || []
         mount.querySelector('#inc-list').innerHTML = `<table class="inc-list"><thead><tr><th>UTC</th><th>Label</th><th>What</th><th>Source</th></tr></thead><tbody>${items.map(i => `<tr><td>${i.approx ? '~' : ''}${day(T(i.at))} ${hm(T(i.at))}</td><td><span class="lab ${i.label}">${LABEL[i.label]}</span></td><td>${esc(i.text)}</td><td>${srcHtml(i.sources)}</td></tr>`).join('')}</tbody></table>`
     }
+
+    // 0. what everyone waits for: the graph's first_priority decision, the organisers' own channels (the sitemap through the
+    //    connector, watch/websummit.json; Bluesky read here, in the browser, every minute: its public API allows it, so no CI
+    //    and no cache sit between a post and this page)
+    const WATCH = /weather|storm|tempest|wednesday|quarta|clos|suspend|cancel|postpon|safety|update|alert|aviso|programme change|venue/i
+    const BSKY = 'https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=websummit.bsky.social&limit=20&filter=posts_no_replies'
+    let bsky = null, bskyAt = 0, bskyErr = ''
+    async function readBsky() {
+        try { const d = await get(BSKY, 9000); bsky = (d.feed || []).filter(f => !f.reason).slice(0, 5).map(f => ({ at: f.post.record.createdAt, text: f.post.record.text, url: 'https://bsky.app/profile/websummit.bsky.social/post/' + f.post.uri.split('/').pop() })); bskyErr = '' } catch (e) { bskyErr = String(e.message || e) }
+        bskyAt = Date.now(); if (mount.querySelector('#inc-wait')) waiting()
+    }
+    function waiting() {
+        const box = mount.querySelector('#inc-wait'), g = state.graph, w = state.watch
+        const e = g && g.edges.find(x => x.id === g.first_priority)
+        const decided = e && e.status === 'happened'
+        const posts = (bsky || []).map(p => `<li class="${WATCH.test(p.text) ? 'hit' : ''}">${day(T(p.at))} ${hm(T(p.at))} · <a href="${esc(p.url)}" rel="noopener">${esc(p.text.slice(0, 140))}</a></li>`).join('')
+        const alerts = ((w && w.alerts) || []).slice(-5).reverse().map(a => `<li class="hit">${esc(a.channel)} · first seen ${hm(T(a.first_seen))} · <a href="${esc(safe(a.url))}" rel="noopener">${esc(String(a.text).slice(0, 140))}</a></li>`).join('')
+        box.innerHTML = `<h2>${decided ? 'Decided' : 'Waiting for'}: ${e ? esc(e.decision) : 'the first-priority decision'}</h2>
+<p class="big">${e ? (decided ? `Decided at ${hm(T(e.at))} UTC` : 'Not announced') : '—'}${e && e.read ? ` <span class="meta">(graph read ${esc(String(e.read).slice(11, 16))} by ${esc(e.read_by || '')})</span>` : ''}</p>${e && e.note ? `<p class="meta">${esc(e.note)}</p>` : ''}
+<div class="cols">
+ <div><h3>Web Summit on Bluesky, read live ${bskyAt ? hm(bskyAt) + ' UTC' : '…'}</h3>${bskyErr ? `<p class="inc-err">${esc(bskyErr)}</p>` : `<ul>${posts || '<li>no posts read yet</li>'}</ul>`}<p class="meta">A post in red matches the watch words (weather, storm, Wednesday, closed, suspend, cancel, safety, update…): read it; a match is not a decision.</p></div>
+ <div><h3>websummit.com's pages${w ? `, read ${hm(T(w.read_at))} UTC` : ''}</h3>${w ? `<p class="meta">${w.sitemap.count} pages in the sitemap; ${w.sitemap.added_this_read.length} new at the last read.</p><ul>${alerts || '<li>no alert: no new page or post matches the watch words</li>'}</ul>` : '<p class="meta">watch/websummit.json not read yet.</p>'}</div>
+</div>`
+    }
+    readBsky(); setInterval(() => { if (!document.hidden) readBsky() }, POLL_MS)
 
     load().catch(e => { mount.innerHTML = `<p class="inc-err">The data could not be read: ${esc(e.message)}</p>` })
     setInterval(() => { if (!document.hidden) load().catch(() => { }) }, POLL_MS)

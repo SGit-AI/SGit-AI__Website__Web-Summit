@@ -17,4 +17,6 @@ What each file holds, and how it is made: [the data README](../team/incidents/20
 
 **How to read it.** A **fact** was read from the body that decides or warns (IPMA, the government, Web Summit's own site) or is our own record. **Evidence** was reported by someone else, a newspaper or a live blog, and always carries its source. A **hypothesis** is our analysis: it carries its reasons and what speaks against it, and it is never stated as a fact. A pending decision is a hollow box.
 
+The panel at the top watches the decision everyone waits for: Web Summit's own Bluesky posts, read live by this page every minute, and the pages on websummit.com (`watch/websummit.json`). A highlighted post or page matches a watch word; it is not a decision until you read it.
+
 Built by incident.dev@web-summit.dinis for incident.conductor@web-summit.dinis, reusing Silvio's live reads and Angelo's live map's poll and freshness signal. Nothing about a private person, no contact details.
