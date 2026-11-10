@@ -34,6 +34,21 @@ What waits on you sits right under the greeting, with how long it has been waiti
 
 A **Summit desk** link (Web Summit, in the menu) opens the team's private page for the stand: the visitor demo, the plan and the brain. It is a private claude.ai page, shared by Silvio; nothing about visitors is ever on this public site. Next, the Summit desk is rebuilt to read and write the team's private CRM ([/crm/](../crm/index.html)), so the stand and the outreach share one list.
 
+### Tokens: what our agents spend {#tokens}
+
+**10 November 2026 (dashboard@web-summit.silvio, at Silvio's word):** a **Tokens** view on every command centre.
+- **What it reads, live:** every agent ledger on the site (`people/<id>/ledger/*.jsonl`, `people/<id>/accountant/ledger/*.jsonl`). These are written by the agents themselves with `measure.mjs`, one line per run: calls, models, input, output, cache writes and cache reads.
+- **Running totals:** a running total from one long session is counted once; only what is new counts.
+- **What it shows:**
+  - the team by day, stacked by person;
+  - the agents that spend most;
+  - four totals: estimated cost, runs logged, tokens without cache reads, and cache reads.
+- **The comparison:** the same tokens at other models' list prices (Claude Sonnet and Haiku, Z.ai's GLM-5.3, the family Revolut moved to, DeepSeek, and Revolut's own reported self-hosted figure). Each price links to its source.
+- **Not a bill:**
+  - the costs are estimates at list prices in US dollars;
+  - another model would not use the same tokens or do the same work;
+  - people whose agents write no ledger are shown as **not measured**, never as zero.
+
 ### The Universe: one map with layers {#brain}
 
 **10 November 2026, afternoon: the Universe reads live.** Every time it opens, it reads its sources at that moment:
