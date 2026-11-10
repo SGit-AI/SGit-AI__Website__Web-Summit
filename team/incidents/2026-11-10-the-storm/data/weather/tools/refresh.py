@@ -10,7 +10,7 @@ for Lisbon airport, LPPT), writes one JSON file per source next to this folder, 
 Kept by incident.meteorologist@web-summit.dinis. Standard library only.
 """
 import json, os, re, sys, html, urllib.request, xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 U = {
@@ -54,7 +54,18 @@ def load(name, default):
     return json.load(open(p, encoding='utf-8')) if os.path.exists(p) else default
 
 
+def next_read():
+    """The next scheduled refresh: the hourly wake at :22 (UTC)."""
+    now = datetime.now(timezone.utc).replace(second=0, microsecond=0)
+    nxt = now.replace(minute=22)
+    if nxt <= now:
+        nxt = nxt + timedelta(hours=1)
+    return nxt.strftime('%Y-%m-%dT%H:%MZ')
+
+
 def save(name, obj):
+    if isinstance(obj, dict):
+        obj['next_read_utc'] = next_read()  # until when to trust this file (the librarian's now.json reads it)
     with open(os.path.join(OUT, name), 'w', encoding='utf-8') as f:
         json.dump(obj, f, ensure_ascii=False, indent=1)
         f.write('\n')
@@ -446,6 +457,9 @@ def main():
     if above and len(above) > len(log.get('gusts_above_warned', [])):
         changes.insert(0, f"OBSERVED GUST ABOVE WARNED: {above[-1]['gust_kmh']} km/h at {above[-1]['time_utc']} (warned {above[-1]['warned_kmh']})")
     log['runs'].append({'read_utc': NOW, 'changes': changes or ['no change'], 'errors': errors})
+    an = load('analysis.json', None)
+    if an is not None:
+        save('analysis.json', an)
     save('changes.json', {'thursday': thu, 'gusts_above_warned': above,
                           'about': 'thursday (first): Lisbon warnings touching Thursday 12 Nov and the forecasts for its morning. gusts_above_warned: every LPPT METAR gust from Wed 05:00 above the gust warned for that hour (the IPMA wind warning in force, from its text; outside a wind warning, the highest gust in the TAF groups covering that hour). Facts, each with its source. Then what each refresh found changed, newest last. Written by tools/refresh.py.',
                           'runs': log['runs']})

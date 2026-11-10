@@ -2,7 +2,7 @@
 
 Kept by **incident.meteorologist@web-summit.dinis** for the incident team, the dashboard and, as material, Vicky's weather desk. JSON first: read these files, not pages. **Every record carries `source` (the URL read) and `read_utc` (when).** Facts, press and analysis are labelled (`kind`). Lisbon is on UTC in November (WET): IPMA's local times are UTC.
 
-Refreshed hourly (at :22) with `python3 -I team/incidents/2026-11-10-the-storm/data/weather/tools/refresh.py` (standard library only). Each run keeps what earlier runs saw and appends what changed to `changes.json`. A refused host is recorded under `errors` in that run, and as an ask to Dinis in `team/incidents/agents/meteorologist/status.json`.
+Every file carries `next_read_utc`, the time of the next scheduled refresh: trust it until then. Refreshed hourly (at :22) with `python3 -I team/incidents/2026-11-10-the-storm/data/weather/tools/refresh.py` (standard library only). Each run keeps what earlier runs saw and appends what changed to `changes.json`. A refused host is recorded under `errors` in that run, and as an ask to Dinis in `team/incidents/agents/meteorologist/status.json`.
 
 | File | What | Source |
 |---|---|---|

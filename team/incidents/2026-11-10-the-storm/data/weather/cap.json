@@ -1,7 +1,7 @@
 {
  "about": "IPMA's warnings for the Lisbon district as CAP messages (Common Alerting Protocol), read through MeteoAlarm's public feed. Unlike IPMA's open data, each message carries `sent_utc`, the time IPMA issued it, and `replaces`, the message it updates (with that one's sent time). Kept across reads; the feed drops superseded messages. Facts.",
  "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
- "read_utc": "2026-11-10T23:51:47Z",
+ "read_utc": "2026-11-10T23:53:38Z",
  "lisbon_messages": [
   {
    "identifier": "2.49.0.0.620.0.PT.261105125809.PO-10-6141",
@@ -14,7 +14,8 @@
    "description_pt": "Períodos de chuva ou aguaceiros, por vezes fortes e acompanhados de trovoada.",
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261106181838.PO-10-6144",
@@ -32,7 +33,8 @@
     }
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107073544.PO-10-6148",
@@ -45,7 +47,8 @@
    "description_pt": "Períodos de chuva, por vezes fortes e acompanhados de trovoada.",
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108011310.PO-01-1895",
@@ -63,7 +66,8 @@
     }
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-420",
@@ -76,7 +80,8 @@
    "description_pt": "Condições favoráveis para ocorrência de fenómenos meteorológicos localizados, como: trovoada; precipitação localmente forte, com acumulação entre 10 a 20 mm em 1 h; rajadas entre 70 e 90 km/h.",
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108124742.PO-07-4500",
@@ -94,7 +99,8 @@
     }
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-448",
@@ -112,7 +118,8 @@
     }
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6216",
@@ -130,7 +137,8 @@
     }
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6246",
@@ -148,7 +156,8 @@
     }
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6248",
@@ -161,7 +170,8 @@
    "description_pt": "Precipitação por vezes forte e acompanhada de trovoada.",
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6250",
@@ -174,7 +184,8 @@
    "description_pt": "Precipitação por vezes forte e acompanhada de trovoada.",
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110071840.PO-01-1915",
@@ -192,7 +203,8 @@
     }
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4518",
@@ -210,7 +222,8 @@
     }
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110120908.PO-07-4525",
@@ -228,7 +241,8 @@
     }
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6288",
@@ -246,7 +260,8 @@
     }
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6290",
@@ -264,7 +279,8 @@
     }
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6297",
@@ -277,7 +293,9 @@
    "description_pt": "Precipitação por vezes forte e persistente.",
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read_utc": "2026-11-10T23:51:47Z"
+   "read_utc": "2026-11-10T23:51:47Z",
+   "last_seen_utc": "2026-11-10T23:53:38Z"
   }
- ]
+ ],
+ "next_read_utc": "2026-11-11T00:22Z"
 }
