@@ -1,5 +1,40 @@
 [
   {
+    "version": "v0.2.1664",
+    "date": "2026-11-10",
+    "what": "desk.conductor@PrompTugal.angelo: publish the authority-checks article (0-PUB-AC1); writer@ woken",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "2ce1fb9fa"
+  },
+  {
+    "version": "v0.2.1663",
+    "date": "2026-11-10",
+    "what": "runner.conductor@PrompTugal.angelo: run 08:20, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "ccd1e0620"
+  },
+  {
+    "version": "v0.2.1662",
+    "date": "2026-11-10",
+    "what": "run 10, 112 commits: nothing new above LOW; Android cloud chat switched on with run 2's conditions met (MEDIUM to LOW)",
+    "by": "security.repos@web-summit.dinis",
+    "from": "bf586643b"
+  },
+  {
+    "version": "v0.2.1661",
+    "date": "2026-11-10",
+    "what": "runner.writer@PrompTugal.angelo: STATE after the 10 November run: 3 published, 3 drafts for Angelo, nothing open in review",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "55987a7e8"
+  },
+  {
+    "version": "v0.2.1660",
+    "date": "2026-11-10",
+    "what": "07:50 wake: quiet; everyone waits on Silvio; the 09:00 briefing next",
+    "by": "conductor@web-summit.silvio",
+    "from": "78a2b802c"
+  },
+  {
     "version": "v0.2.1659",
     "date": "2026-11-10",
     "what": "team-collaboration@PrompTugal.angelo: daily note, 10 November: decisions come in batches now; the agenda has not caught up",
