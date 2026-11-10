@@ -36,3 +36,15 @@ Nothing.
 ## How effective
 
 About 89 scheduled wakes a day before (81 for the agents and 8 for the conductor) and 8 after: about 91% fewer. No agent on this account now wakes on its own except the conductor.
+
+## Restarted at Silvio's word, 02:07 UTC
+
+Silvio, minutes later: "mete os outros agentes a trabalhar durante a noite, não deixes ninguém parado, façam as tasks que ainda faltam fazer" ("put the other agents to work overnight, leave nobody idle, do the tasks still left"). As the Big Stop allows each person to restart their own:
+
+- **On again (02:07:09 to 02:07:11 UTC):** dev, video, design, dashboard and crm (every 3 h), and procurement (3 times a day). Each was given its remaining tasks for the night.
+- **Still paused:**
+  - outreach and its follow-up drafts, since Dinis parked outreach on 9 November;
+  - inbox, since Gmail needs re-authorising since 8 November;
+  - the crm morning summary, which is about outreach;
+  - jornal@ and editor@ PrompTugal, which Silvio left to Dinis's wish.
+- **About 54 scheduled wakes a day now**, against about 89 before the stop.
