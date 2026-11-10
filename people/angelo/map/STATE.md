@@ -7,7 +7,7 @@ Twenty-sixth run, 9 November 2026 (22:19 to about 22:45 UTC). The desk briefed t
   - live3d.js: the steady flow drawn as a real exchange, a little smaller: a head of 34 at alpha 0.55 to 0.95 over its trip and a three-dot trail of 20, 16.5 and 13 at 0.6 of the head's alpha, fading; lit lines at min(1, op * 1.25), where they were op * 1.05.
   - live.js (2D, every layout): each flow dot gets a halo (r 10, as a real exchange's 14 is to its 7.5 dot), opacity 0.45 of the dot's 0.55 to 0.95; lit lines' stroke-opacity min(1, op * 1.25). The engine's own op (which 3D reads) is unchanged. The halo carries class "flow" too, so the six-hourly reload, which waits for no real exchange in flight, still sees only flow.
   - New test lvglow (2D halos and 0.94 lines, 3D four points a flow dot), at 1280 and 390 px, light and dark.
-  - The trail sizes follow the brief (20/16.5/13); the wallpaper's MapRenderer.java draws 16.5/13/9.5 (20 - j * 3.5, j from 1). For dashboard@: one of the two to match the other.
+  - The trail sizes follow the brief (20/16.5/13); dashboard@ matched the wallpaper to them (07264726, 0.4.4).
 
 ## Yesterday (runs 14 to 17)
 - 0c4 (6) RiskMandate's logo as big as PT's, 0c4 (4) the dial on the live view; 0c3 (1) phone playback 31 to 33-34 fps; 0c3 (6) the timeline collapsed; 0c0 dev.work@'s hook in live.js.
@@ -26,6 +26,7 @@ Twenty-sixth run, 9 November 2026 (22:19 to about 22:45 UTC). The desk briefed t
 - For policy@: my lane leaves out this STATE file (people/angelo/map/**); dashboard@'s review carries it onto dev.
 
 ## Last run
+Run 27, 10 November 00:14 to about 00:20 UTC: nothing from the desk, runner or dev@ For: dev.map@ since run 26; dashboard@'s b3baf51b brought run 26's glow (0c6) onto dev and its 07264726 matched the wallpaper's trail to 20/16.5/13, so the Done item's question is closed. The backlog's changes since are not mine; conductor@web-summit.dinis's big-stop report (4080019c) is material. pushed-by --last-touch checked the spec (e588f4b5, ANGELO). Ledger line only; unsigned run log.
 Run 26, 9 November 22:19 to about 22:45 UTC: the desk's 1ac23df8 (ANGELO) briefed 0c6, the glow; built (Done, above). pushed-by --last-touch checked the spec (e588f4b5, ANGELO).
 Run 25, 9 November 20:17 to about 20:30 UTC: nothing from the desk, runner or dev@ For: dev.map@ since run 24; only dashboard@'s review 1efbc49a (run 24 onto dev), which again asks the desk to brief the glow (b52ac2f0): still material until the desk does (Open, above). The backlog's change since (a3a00cfc, research@) is not mine. pushed-by --last-touch checked the spec (e588f4b5, ANGELO); a plain git log in this shallow clone gave the boundary b52ac2f0, as 1b2 warns. Ledger line only; unsigned run log.
 Run 24, 9 November 18:16 to about 18:25 UTC: nothing from the desk, runner or dev@ For: dev.map@ since run 23; dashboard@'s b52ac2f0 (the glow on all views) is material until the desk briefs it (Open, above); the backlog's changes since (research@, the wristbands article, the pool) are not mine. pushed-by --last-touch checked the spec (e588f4b5, ANGELO). Ledger line only; unsigned run log.

@@ -3,7 +3,9 @@
 Backlog 00a (dropped), 00a2, 0m and 14 (on hold). Short; the commits are the history.
 
 ## Last run
-2026-11-09 23:05 UTC. Spec checked with pushed-by.mjs --last-touch (e588f4b, riskmandate-angelo, ANGELO). For: me since 22:05: dashboard@'s 0726472 (wallpaper 0.4.4, versionCode 9; my 21:05 lines onto dev). Reviewed for the drawing contract: the steady flow's trail is now 23.5 - j * 3.5 (20, 16.5, 13) at fa * 0.6 * (1 - j / 4), head 34, the same expression as live3d.js:176 and glow/README.md item 1. hxappwall PASS, hxwallviews PASS, hxwallws PASS on dev 266685c. No finding. I built nothing (14 on hold).
+2026-11-10 00:05 UTC. Spec checked with pushed-by.mjs --last-touch (e588f4b, riskmandate-angelo, ANGELO). For: me since 23:05: only dashboard@'s 07885f2 (my 23:05 lines onto dev). Nothing in android/, live.js, live3d.js, desktop/ or board/WS-203 changed since. I built and reviewed nothing: every item waits on someone (below).
+
+For Angelo (material, not acted on): conductor@web-summit.dinis's 82eea75 (9 Nov 23:36), "THE BIG STOP": Dinis asks every conductor to pause their agents' scheduled wakes, unless critical, until the team realigns; "each person may restart their own". It is For: desk.conductor@ and conductor@web-summit.angelo, not from the desk, so I did not stop myself. My hourly wake (:05) has had no work since 9 Nov 11:35 (14 on hold, 00a2 and 0m waiting): pausing it costs nothing and saves 24 runs a day. Pause or keep?
 
 For the desk (material, low): two board files carry id WS-203: board/WS-203-android-apps-...md (ours, renumbered from WS-202 in e588f4b) and board/WS-203-team-messaging.md (conductor@web-summit.dinis's c2eca10a, picked by prompter@web-summit.indi). Commits saying "Issue: WS-203" now mean either. Suggest the desk asks the board's keeper which one moves to a fresh number.
 
