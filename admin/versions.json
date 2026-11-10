@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1745",
+    "date": "2026-11-10",
+    "what": "20:03 wake: no new signals since sweep 2; the team re-routed to Thursday and the open items (talks, PITCH, side events, tickets)",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "faf9efbcb"
+  },
+  {
     "version": "v0.2.1744",
     "date": "2026-11-10",
     "what": "no Claude model names in what I push: WS-213, the Tokens view and its note say \"the current model\" and \"a smaller Claude model\"",
