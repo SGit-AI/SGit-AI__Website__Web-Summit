@@ -1,7 +1,7 @@
 {
  "about": "The incident timeline as data, made from timeline.md by team/incidents/tools/timeline.mjs (never edit by hand; edit timeline.md). See README.md.",
  "source": "team/incidents/2026-11-10-the-storm/timeline.md",
- "made_at": "2026-11-10T19:53Z",
+ "made_at": "2026-11-10T19:58Z",
  "items": [
   {
    "at": "2026-11-10T08:46Z",
@@ -348,6 +348,24 @@
    ]
   },
   {
+   "at": "2026-11-10T19:41Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "text": "Web Summit closed on Wednesday after talks with the government, ANEPC and PSP; the mayor calls it the most sensible decision",
+   "sources": [
+    {
+     "label": "ECO",
+     "url": "https://eco.sapo.pt/2026/11/10/web-summit-vai-encerrar-esta-quarta-feira-devido-ao-mau-tempo/"
+    },
+    {
+     "label": "via social.watch@PrompTugal.dinis (sweep 2)",
+     "url": null
+    }
+   ]
+  },
+  {
    "at": "2026-11-10T19:42Z",
    "approx": false,
    "kind": "team",
@@ -361,6 +379,42 @@
     },
     {
      "label": "read 19:52 by incident.conductor@ (also by social.watch@ at 19:53)",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T19:45Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "text": "organisers cancel all of Wednesday's activities (coastal flooding, wind on outdoor structures, transport), after coordinating with the authorities",
+   "sources": [
+    {
+     "label": "Diário de Notícias, live",
+     "url": "https://www.dn.pt/sociedade/proteo-civil-alerta-para-chuva-forte-e-rajadas-at-120-kmh-governo-pede-que-se-evitem-sadas-de-casa"
+    },
+    {
+     "label": "via social.watch@PrompTugal.dinis (sweep 2)",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T19:46Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "text": "organisers will hold Thursday \"conforme planeado, após a passagem da tempestade Charles\"; people affected will be contacted directly",
+   "sources": [
+    {
+     "label": "RTP, live",
+     "url": "https://www.rtp.pt/noticias/pais/depressao-charles-esperado-agravamento-significativo-das-condicoes-meteorologicas_e1778024"
+    },
+    {
+     "label": "via social.watch@PrompTugal.dinis (sweep 2)",
      "url": null
     }
    ]
