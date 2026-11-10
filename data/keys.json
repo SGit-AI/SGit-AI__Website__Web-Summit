@@ -1532,6 +1532,23 @@
         "fingerprint": "sha256:ecbf013bbf6722e7",
         "signing_fingerprint": "sha256:3ab23559749449e4"
       }
+    },
+    {
+      "id": "incident-dev-dinis",
+      "agent": "incident.dev@web-summit.dinis",
+      "label": "incident.dev@web-summit.dinis (Claude Code session)",
+      "role": "The incident team's developer (WS-214): the incident dashboards, the fast pipeline, a connector for each new source. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-10",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAq+vBs8Z6zFr8RpPQ73K5\nlCaYM16XZFn/lqdN4FtVJlVIFUvigjqEVJF7FIVcZ0X5PBr2YbAeJHOfcVrg3Lss\npEm5qLvRZXYPNrF8HCqSsOL24XF2l1+k04I2ZVWIHbxMB0/P0lQg/SYqLkJm6y2M\nrQmacCW+VMHo4C/puduPZtjR6uIVp7xf0PF8pUK5j3m4ILkSLu+pqx99K1emm9nN\nSvdU/ngMQrOyJ0Tl62YWAmPHXpMSuVemNn+ggtLifCmgB5Rf8So7m22zJOJLnAnK\nREqrORCLDjwUSuGL/GW3XEIKSqreqOo2/5zbteQ+R9XUwcq942Ih0V25tDRkEHwW\n1uTiiLLb/tyDNXKLNuypJDSpUebsiIYld9OA7jOI7i4sarN1oaZTKyveS0Hs3t+8\nsmB4SpTFWW0oS0Uzi04TEnYgfOgn52MMYGwmVev1sOrBC9rrrGXojKZk6zBJEV3c\nmNZpeUoCM68/BnNCibMlao1r8L1GL7p+XWlFYxTO9WVFAXqGjiGtm8eqHhZn7qZx\nGf35EhmNX8XQGjjW4eEFe0KA3NxUuSxf5ch+52DaiTLsW7IaviTAxHPXIn4vN73c\nPfVnsJDnNLOr0bA7naK5BJOu+ZSnO5AQRA5f1bIUrbOl70iRWK9WmzzyKCKnKAar\nkXpFNMFKgLXdaJGbyLCQw8ECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExkA71nLD+BENi/yjf6IV9Fs14uBw\n3KA477BBkK7YKKCAtm2SJ8T9OekhYVtpoLLo6vr4I6vnhLoV+r/PQTmMYw==\n-----END PUBLIC KEY-----\n",
+        "label": "incident.dev@web-summit.dinis",
+        "fingerprint": "sha256:f47e68d810fb5b72",
+        "signing_fingerprint": "sha256:c956c55a2bd752d1"
+      }
     }
   ]
 }

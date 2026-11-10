@@ -1,0 +1,295 @@
+{
+ "about": "The incident timeline as data, made from timeline.md by team/incidents/tools/timeline.mjs (never edit by hand; edit timeline.md). See README.md.",
+ "source": "team/incidents/2026-11-10-the-storm/timeline.md",
+ "made_at": "2026-11-10T19:06Z",
+ "items": [
+  {
+   "at": "2026-11-10T08:46Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "text": "IPMA expects the storm earlier, Wednesday morning; Lisbon among the hardest hit; avoid unnecessary travel (Lusa)",
+   "sources": [
+    {
+     "label": "AWAY (IOL), via Lusa",
+     "url": "https://away.iol.pt/aviso-vermelho-ipma/vento/alerta-vermelho-ipma-admite-cenario-semelhante-ao-da-tempestade-kristin-e-aponta-lisboa-como-uma-das-regioes-mais-atingidas/20261110/6af2d9fd0cf2cb2507aa81b4"
+    },
+    {
+     "label": "via social.watch@PrompTugal.dinis",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T12:10Z",
+   "approx": false,
+   "kind": "official",
+   "label": "fact",
+   "key": false,
+   "text": "The government declares an alert situation for the mainland on Wednesday, 00:00 to 23:59: schools and non-essential public services close; outdoor events suspended",
+   "sources": [
+    {
+     "label": "portugal.gov.pt (page dated 12:10; S41 updated with it at 17:27), read by weather@",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T12:45Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "text": "Web Summit's organisers following the alerts with ANEPC and PSP; no sign yet of cancelling Wednesday",
+   "sources": [
+    {
+     "label": "Jornal de Negócios, live",
+     "url": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
+    },
+    {
+     "label": "via social.watch@PrompTugal.dinis",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T13:19Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": true,
+   "text": "Lisbon's mayor: \"Tudo indica que a Web Summit não poderá funcionar amanhã\"; the decision is the Interior Ministry's and the organisers'",
+   "sources": [
+    {
+     "label": "Jornal Económico",
+     "url": "https://jornaleconomico.sapo.pt/noticias/web-summit-fechada-na-quarta-feira-anuncia-autarquia-de-lisboa/"
+    },
+    {
+     "label": "via social.watch@PrompTugal.dinis",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T14:23Z",
+   "approx": false,
+   "kind": "official",
+   "label": "fact",
+   "key": false,
+   "text": "IPMA red warning for wind, Lisbon district, Wednesday 12:00 to 21:00 (first read by the newsroom)",
+   "sources": [
+    {
+     "label": "S41; desks/weather-vicky/live.md",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T14:25Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "text": "Web Summit in doubt; Tagus bridges limited to 60 km/h; Lisbon tunnels closed from midnight; Metro keeps running",
+   "sources": [
+    {
+     "label": "TEK Notícias",
+     "url": "https://tek.sapo.pt/noticias/ciencia/artigos/depressao-charles-web-summit-sob-duvida-pontes-do-tejo-com-limite-de-60-km-h-e-tuneis-de-lisboa-fechados/"
+    },
+    {
+     "label": "via social.watch@PrompTugal.dinis",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T15:19Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "text": "the storm leaves Web Summit with a thin audience",
+   "sources": [
+    {
+     "label": "Jornal de Negócios, live",
+     "url": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
+    },
+    {
+     "label": "via social.watch@PrompTugal.dinis",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T17:00Z",
+   "approx": true,
+   "kind": "team",
+   "label": "fact",
+   "key": false,
+   "text": "Dinis: the storm is our case study (a dynamic team, the decision graph)",
+   "sources": [
+    {
+     "label": "PrompTugal guidance 2026-11-10-the-storm-as-our-case-study.md",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T17:07Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "text": "water enters a pavilion between halls 4 and 5; participants leave early",
+   "sources": [
+    {
+     "label": "Jornal de Negócios, live",
+     "url": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
+    },
+    {
+     "label": "via social.watch@PrompTugal.dinis",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T17:42Z",
+   "approx": false,
+   "kind": "official",
+   "label": "fact",
+   "key": false,
+   "text": "IPMA raises Lisbon's rain warning to red, Wednesday 12:00 to 18:00",
+   "sources": [
+    {
+     "label": "IPMA open data, read by weather@",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T17:43Z",
+   "approx": false,
+   "kind": "official",
+   "label": "fact",
+   "key": false,
+   "text": "Web Summit: no change to Wednesday's programme announced on its homepage or news page",
+   "sources": [
+    {
+     "label": "websummit.com, read by weather@",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T17:53Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": true,
+   "text": "the government recommends suspending Web Summit on Wednesday; the decision rests with the organisers",
+   "sources": [
+    {
+     "label": "Jornal de Negócios, live",
+     "url": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
+    },
+    {
+     "label": "via social.watch@PrompTugal.dinis",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T18:06Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "text": "(unofficial) an attendee post says the event is \"most likely\" closed tomorrow; speculation, not an announcement",
+   "sources": [
+    {
+     "label": "Mastodon post",
+     "url": "https://mastodon.social/@nico42/117593473112494351"
+    },
+    {
+     "label": "via social.watch@PrompTugal.dinis",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T18:25Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "text": "no organiser statement after the government's recommendation (the live blog's last update read)",
+   "sources": [
+    {
+     "label": "Jornal de Negócios, live",
+     "url": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
+    },
+    {
+     "label": "via social.watch@PrompTugal.dinis",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T18:35Z",
+   "approx": true,
+   "kind": "team",
+   "label": "fact",
+   "key": true,
+   "text": "Incident declared (P1, run on account A) at Dinis's word",
+   "sources": [
+    {
+     "label": "this folder",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T18:36Z",
+   "approx": false,
+   "kind": "official",
+   "label": "fact",
+   "key": false,
+   "text": "Vicky's weather desk full check: IPMA's two red warnings for Lisbon unchanged since 17:42 (wind 12:00 to 21:00, rain 12:00 to 18:00); no Web Summit change",
+   "sources": [
+    {
+     "label": "desks/weather-vicky/live.md (snapshot data/2026-11-10T1836Z.json)",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T18:53Z",
+   "approx": false,
+   "kind": "signal",
+   "label": "evidence",
+   "key": false,
+   "text": "Organisers checked again: no decision on Wednesday; their last line is still \"assessing with ANEPC and PSP\"",
+   "sources": [
+    {
+     "label": "The Portugal News (updated 14:29), via social.watch@PrompTugal.dinis",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T18:58Z",
+   "approx": false,
+   "kind": "team",
+   "label": "fact",
+   "key": true,
+   "text": "Lead handed over: incident.conductor@web-summit.dinis takes the lead of WS-214 from conductor@web-summit.dinis, at Dinis's word (team/incidents/BRIEF.md); the timeline is kept newest first from here",
+   "sources": [
+    {
+     "label": "this folder; BRIEF.md",
+     "url": null
+    }
+   ]
+  }
+ ]
+}

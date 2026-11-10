@@ -1,7 +1,7 @@
 {
   "agent": "incident.dev@web-summit.dinis",
-  "state": "routed: first job sent 19:10 UTC",
-  "last_wake": null,
+  "state": "working: dashboard live (pending this release); J1 measured (cause found); J2 and J3 next",
+  "last_wake": "2026-11-10T19:20Z",
   "jobs": [
     "J1 (tonight): measure, do not guess: why this repository's gate takes 110 s in CI (run 42879607949, validate step) against 7.8 s locally. Hypothesis in PIPELINE.md section 0. Report in status; change nothing in this repository's CI without the conductor's and Dinis's yes.",
     "J2 (tonight): the data lane prototype (PIPELINE.md section 4): a public vault for WS-214, one connector writing facts.json to it, one page under team/incidents/ reading it with the pinned sg-vault library; measure write-to-read latency end to end. Vault keys never committed; only a public read key, if Dinis agrees.",
@@ -9,9 +9,38 @@
     "J3 (Wednesday morning): the Now and Flow panes (PIPELINE.md section 5): an adapter from the incident's timeline to the live.json shape of Angelo's people/angelo/app/live.js, on a pinned copy.",
     "J4 (from incident.researcher@'s asks): parsers, just the part named in data/decisions/sources.json parser_ask: websummit sitemap diff (first), Jornal de Negócios live entries, government news list, Carris alert banner, CP service alerts."
   ],
-  "done": [],
-  "next": [],
-  "asks": [],
-  "updated": "2026-11-10T19:20:00Z",
-  "by": "incident.conductor@web-summit.dinis"
+  "done": [
+    "19:00 session key: public half on data/keys.json (sha256:f47e68d810fb5b72, signing sha256:c956c55a2bd752d1), linked locally to sha256:db7f79fdd87e030a",
+    "The incident dashboard: /incidents/the-storm/ (content/incidents/the-storm.md, assets/incidents/the-storm.js): the timeline (warnings, the analysis's worst window, the warnings' history, every timeline.md row), the decision graph from decisions/graph.json (fact solid, evidence dashed, hypothesis dotted and italic with reasons and against, not-announced hollow, the awaited decision thick), the weather (observed mean wind at three stations and the airport's gusts against IPMA's model and the red window; warnings; the analysis labelled; five days). Reads the owners' JSON every minute, redraws only on change; no dependency; light, dark, phone checked in Chromium, no script errors",
+    "Connector team/incidents/tools/timeline.mjs: timeline.md's table -> data/signals.json (documented in data/README.md)",
+    "Build: a collection page may load assets/<dir>/<name>.js (front matter script:) and mount an incident (```incident <data dir>```)",
+    "J1 measured, cause found: in CI's blobless clone (filter: blob:none) the build makes 316 lazy blob fetches, one network round trip each: 240 from git blame on people/angelo/conductor/STATE.md and people/angelo/backlog.md (people/angelo/app/data.mjs:363), and one per old version of data/keys.json (data.mjs:285). Reproduced: the gate takes 3.6 s in a full clone and 2 min 35 s in a blobless one (GIT_TRACE2). The release job, a full clone, runs the same build and gate in 19 s"
+  ],
+  "next": [
+    "J2: the data lane prototype (a public vault for WS-214, one connector, write-to-read measured)",
+    "J3: the Now and Flow panes on a pinned copy of Angelo's live map",
+    "the researcher's parser asks (decisions/sources.json)"
+  ],
+  "asks": [
+    "incident.conductor@ and Dinis: a yes to drop `filter: blob:none` from the validate job's checkout in .github/workflows/deploy-pages.yml (one line). Expected: the gate step from ~90 s to ~20 s, about 70 s off every push (median 3 min 56 s to about 2 min 45 s). Not changed: CI is not mine to change without that yes"
+  ],
+  "updated": "2026-11-10T19:20Z",
+  "by": "incident.dev@web-summit.dinis (done, next, asks, baseline); jobs by incident.conductor@web-summit.dinis",
+  "baseline": {
+    "what": "push to deployed on web-summit.sgit.ai (deploy-pages, push to dev): run created to run completed, as GitHub reports it",
+    "sample": "19 successful push runs, 17:42 to 18:59 UTC, 10 November 2026 (runs 2741 to 2761; the 2 cancelled runs left out)",
+    "median_s": 236,
+    "median": "3 min 56 s",
+    "min": "2 min 54 s",
+    "p90": "7 min 42 s",
+    "max": "10 min 33 s",
+    "then_the_reader": "plus up to 10 minutes of Pages' edge cache (cache-control: max-age=600, read by incident.conductor@ at 18:59)",
+    "one_run_broken_down": {
+      "run": "42880214651 (2761, 3 min 21 s)",
+      "validate job": "98 s, of which the gate step 90 s",
+      "wait between jobs (concurrency: release)": "45 s",
+      "release job": "54 s: checkout 6 s, number + build + gate + commit + tag 19 s, upload 8 s, deploy 12 s"
+    },
+    "target": "the new incident site must beat 3 min 56 s (median) push to deployed; the data lane should not go through it at all (PIPELINE.md section 1)"
+  }
 }

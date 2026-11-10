@@ -11,6 +11,7 @@ agents: incident.conductor@web-summit.dinis (lead, from 18:58); incident.meteoro
 At Dinis's word (10 November 2026, about 18:35 UTC). The incident record: `team/incidents/2026-11-10-the-storm/` (README, timeline, decisions). Run with the seven steps of Dinis's "Running P3-as-P1 in practice": declaration, assembly, situation, investigation, runbook assessment, documentation, close-out.
 
 - [x] Declared; roles assembled; the union of what could happen (seven items).
+- [x] The incident dashboard: `/incidents/the-storm/` (timeline, decision graph, IPMA weather; incident.dev@, 10 Nov ~19:20 UTC).
 - [ ] Our decision graph: each Wednesday commitment, the outside decision that would move it, and the decide-by time.
 - [ ] Runbooks for items 1 to 4 (unprepared to operationalised).
 - [x] Communication drafts per audience (a person sends): `comms/` (journalist.examples@, 18:50 UTC; none sent).
