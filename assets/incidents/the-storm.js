@@ -310,23 +310,31 @@ ${wl ? `<div class="inc-detail"><span class="lab hypothesis">Analysis</span>by $
     const OPEN = [['Day 3, Thursday 12 November', /thursday|quinta|day 3|dia 3/i], ["Wednesday's talks and speakers", /speaker|session|stage|livestream|stream|online|palestra|orador/i], ['The PITCH semi-final', /pitch/i], ['Side events', /side event|night summit|meetup|party|evento paralelo/i], ['Tickets and refunds', /ticket|refund|bilhete|reembols/i]]
     function waiting() {
         const box = mount.querySelector('#inc-wait'), g = state.graph, w = state.watch, items = (state.signals && state.signals.items) || []
-        const e = g && g.edges.find(x => x.id === g.first_priority)
-        const fromGraph = e && e.status === 'happened' && e.at ? { at: e.at, text: e.decision, label: e.label, sources: [{ label: 'graph: ' + (e.read_by || ''), url: safe(e.source) || null }], via: 'decisions/graph.json' } : null
-        const row = items.filter(i => i.decision && /web summit|organis/i.test(i.text)).slice(-1)[0]
-        const fromTl = row ? { at: row.at, text: row.text, label: row.label, sources: row.sources, via: 'timeline.md' } : null
-        const dec = [fromGraph, fromTl].filter(Boolean).sort((x, y) => T(y.at) - T(x.at))[0]
-        const since = dec ? T(dec.at) - 6e5 : Infinity
-        const about = items.filter(i => T(i.at) >= since && i !== row && /web summit|organis|paddy|thursday|quinta/i.test(i.text))
-        const posts = (bsky || []).map(p => `<li class="${WATCH.test(p.text) && T(p.at) >= (dec ? since : 0) ? 'hit' : ''}">${day(T(p.at))} ${hm(T(p.at))} · <a href="${esc(p.url)}" rel="noopener">${esc(p.text.slice(0, 140))}</a></li>`).join('')
+        const e = g && g.edges.find(x => x.id === g.first_priority), who = e ? e.by : 'websummit'
+        const name = g && g.nodes.find(n => n.id === who) ? g.nodes.find(n => n.id === who).name.replace(/\s*\(.*\)\s*$/, '') : 'the organisers'
+        // what the decider has decided: the graph's happened edges (newest first); a DECISION row in the timeline newer than all of them
+        // is shown too, marked "not in the graph yet"
+        const made = g ? g.edges.filter(x => x.by === who && x.status === 'happened' && x.label !== 'hypothesis' && Number.isFinite(T(x.at))).sort((x, y) => T(y.at) - T(x.at)) : []
+        const newest = made.length ? T(made[0].at) : 0
+        const rows = items.filter(i => i.decision && /web summit|organis/i.test(i.text) && T(i.at) > newest + 6e4)
+        const decided = [...rows.map(i => ({ at: i.at, label: i.label, text: i.text.replace(/^DECISION:\s*/, ''), src: srcHtml(i.sources), extra: ' <b>(timeline.md; not in the graph yet)</b>' })),
+            ...made.slice(0, 4).map(x => ({ at: x.at, label: x.label, text: x.decision, src: safe(x.source) ? `<a href="${esc(x.source)}" rel="noopener">source</a>` : 'no public source', extra: x.note ? ' · ' + esc(x.note) : '' }))]
+        const since = decided.length ? T(decided[decided.length > 1 ? decided.length - 2 : 0].at) - 6e5 : Infinity
+        const opens = g ? g.edges.filter(x => x.by === who && (x.status === 'not_announced' || x.status === 'unknown' || x.status === 'expected')) : []
+        const posts = (bsky || []).map(p => `<li class="${WATCH.test(p.text) && T(p.at) >= (decided.length ? since : 0) ? 'hit' : ''}">${day(T(p.at))} ${hm(T(p.at))} · <a href="${esc(p.url)}" rel="noopener">${esc(p.text.slice(0, 140))}</a></li>`).join('')
         const alerts = ((w && w.alerts) || []).slice(-5).reverse().map(a => `<li class="hit">${esc(a.channel)} · first seen ${hm(T(a.first_seen))} · <a href="${esc(safe(a.url))}" rel="noopener">${esc(String(a.text).slice(0, 140))}</a></li>`).join('')
-        const openHits = OPEN.map(([name, rx]) => { const hit = [...about, ...(bsky || []).map(p => ({ at: p.at, text: p.text, label: 'fact', sources: [{ label: 'Bluesky', url: p.url }] }))].filter(i => rx.test(i.text) && T(i.at) >= since).slice(-1)[0]; return `<li>${esc(name)}: ${hit ? `<span class="lab ${hit.label}">${LABEL[hit.label]}</span>${hm(T(hit.at))} ${esc(hit.text.slice(0, 160))} <span class="meta">(${srcHtml(hit.sources)})</span>` : '<span class="meta">nothing yet</span>'}</li>` }).join('')
-        const head = dec
-            ? `<h2>Decided, ${day(T(dec.at))} ${hm(T(dec.at))} UTC</h2><p class="big"><span class="lab ${dec.label}">${LABEL[dec.label]}</span>${esc(dec.text.replace(/^DECISION:\s*/, ''))}</p><p class="meta">Source: ${srcHtml(dec.sources)} (from ${esc(dec.via)}).${fromGraph ? '' : ' The decision graph has not recorded it yet.'}</p>${about.length ? `<h3>Reported since</h3><ul>${about.map(i => `<li><span class="lab ${i.label}">${LABEL[i.label]}</span>${hm(T(i.at))} ${esc(i.text.slice(0, 170))} <span class="meta">(${srcHtml(i.sources)})</span></li>`).join('')}</ul>` : ''}<h3>Still open</h3><ul>${openHits}</ul>`
-            : `<h2>Waiting for: ${e ? esc(e.decision) : 'the first-priority decision'}</h2><p class="big">Not announced${e && e.read ? ` <span class="meta">(graph read ${esc(String(e.read).slice(11, 16))} by ${esc(e.read_by || '')})</span>` : ''}</p>${e && e.note ? `<p class="meta">${esc(e.note)}</p>` : ''}`
-        box.classList.toggle('done', !!dec)
-        box.innerHTML = `${head}
+        const pool = [...items, ...(bsky || []).map(p => ({ at: p.at, text: p.text, label: 'fact', sources: [{ label: 'Bluesky', url: p.url }] }))].filter(i => T(i.at) >= since)
+        const openHits = OPEN.map(([nm, rx]) => { const hit = pool.filter(i => rx.test(i.text)).sort((x, y) => T(x.at) - T(y.at)).slice(-1)[0]; return `<li>${esc(nm)}: ${hit ? `<span class="lab ${hit.label}">${LABEL[hit.label]}</span>${hm(T(hit.at))} ${esc(hit.text.slice(0, 160))} <span class="meta">(${srcHtml(hit.sources)})</span>` : '<span class="meta">nothing found yet</span>'}</li>` }).join('')
+        const lab = x => `<span class="lab ${x.label}">${LABEL[x.label] || esc(x.label)}</span>`
+        const wait = e ? (e.status === 'happened'
+            ? `<h3>Now watching: ${esc(e.decision.replace(/:\s*".*$/, ''))}</h3><p>${lab(e)}announced ${hm(T(e.at))} UTC${e.label === 'evidence' ? ', reported, not yet on an organiser channel we can read' : ''}. ${e.note ? `<span class="meta">${esc(e.note)}</span>` : ''}</p>`
+            : `<h3>Waiting for: ${esc(e.decision)}</h3><p class="big">Not announced${e.read ? ` <span class="meta">(graph read ${esc(String(e.read).slice(11, 16))} by ${esc(e.read_by || '')})</span>` : ''}</p>${e.note ? `<p class="meta">${esc(e.note)}</p>` : ''}`) : ''
+        box.classList.toggle('done', decided.length > 0)
+        box.innerHTML = `${decided.length ? `<h2>${esc(name)} has decided</h2><ul>${decided.map(d => `<li>${lab(d)}<b>${day(T(d.at))} ${hm(T(d.at))} UTC</b> ${esc(d.text.slice(0, 260))} <span class="meta">(${d.src})${d.extra}</span></li>`).join('')}</ul>` : `<h2>Waiting for ${esc(name)}</h2>`}
+${wait}
+<h3>Still open</h3><ul>${opens.map(x => `<li>${lab(x)}${esc(x.decision)} <span class="meta">(${esc(x.status.replace('_', ' '))}${x.read ? ', read ' + esc(String(x.read).slice(11, 16)) : ''})</span></li>`).join('')}${openHits}</ul>
 <div class="cols">
- <div><h3>Web Summit on Bluesky, read live ${bskyAt ? hm(bskyAt) + ' UTC' : '…'}</h3>${bskyErr ? `<p class="inc-err">${esc(bskyErr)}</p>` : `<ul>${posts || '<li>no posts read yet</li>'}</ul>`}<p class="meta">A post in red${dec ? ' (after the decision)' : ''} matches the watch words (Thursday, day 3, talks, PITCH, tickets, refund, side events, storm, cancel, update…): read it; a match is not a decision.</p></div>
+ <div><h3>${esc(name)} on Bluesky, read live ${bskyAt ? hm(bskyAt) + ' UTC' : '…'}</h3>${bskyErr ? `<p class="inc-err">${esc(bskyErr)}</p>` : `<ul>${posts || '<li>no posts read yet</li>'}</ul>`}<p class="meta">A post in red${decided.length ? ' (newer than the decisions)' : ''} matches the watch words (Thursday, day 3, talks, PITCH, tickets, refund, side events, storm, cancel, update…): read it; a match is not a decision.</p></div>
  <div><h3>websummit.com's pages${w ? `, read ${hm(T(w.read_at))} UTC` : ''}</h3>${w ? `<p class="meta">${w.sitemap.count} pages in the sitemap; ${w.sitemap.added_this_read.length} new at the last read.</p><ul>${alerts || '<li>no alert: no new page or post matches the watch words</li>'}</ul>` : '<p class="meta">watch/websummit.json not read yet.</p>'}</div>
 </div>`
     }
