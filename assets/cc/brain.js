@@ -1,3 +1,113 @@
+// The Universe, read live (dashboard@web-summit.silvio, 10 November 2026; Silvio: "everything must be in live data").
+// Every time the map opens it reads, from their sources, at that moment:
+//   - the team (web-summit.sgit.ai/data/team.json) and each person's agents (people/<id>/agents.json);
+//   - every Agent Behaviour Policy (the /abp/ pages' markdown twins): Reach, Mandate, Gap, Barriers, Licence to Operate,
+//     Provenance; barrier kinds by the curated mapping (security review F4), resources INFERRED from the Reach text;
+//   - the role policies (team/<role>/policy.json) and who agreed them;
+//   - each agent's latest commit (GitHub's API on the dev branch, the last 100 commits; if GitHub does not answer, none);
+//   - the Web Summit layer: the public CRM vault (data/crm.json's read key, the vault library this site pins), joined to
+//     the team, our company map (data/companies.json) and our open summit tasks (the person's data.json).
+// No session ids (F9), https links only (F8). The agents' gaps and barriers are kept only for a developer's view.
+// window.LiveUniverse = { agents({ dev }), summit({ dataUrl }) }: each resolves to the same shapes the map used before.
+(function () {
+    'use strict'
+    const SITE = 'https://web-summit.sgit.ai/', GH = 'https://api.github.com/repos/SGit-AI/SGit-AI__Website__Web-Summit/commits?sha=dev&per_page=100'
+    const get = async (u, kind = 'json', ms = 12000) => { const c = new AbortController(), t = setTimeout(() => c.abort(), ms); try { const r = await fetch(u, { signal: c.signal, cache: 'no-cache' }); if (!r.ok) throw new Error(u + ' HTTP ' + r.status); return kind === 'json' ? await r.json() : await r.text() } finally { clearTimeout(t) } }
+    const pool = async (items, n, fn) => { const out = new Array(items.length); let i = 0; await Promise.all(Array.from({ length: Math.min(n, items.length) }, async () => { while (i < items.length) { const k = i++; try { out[k] = await fn(items[k]) } catch { out[k] = null } } })); return out }
+    const norm = s => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+    const SESSION = /session_[A-Za-z0-9]+|cse_[A-Za-z0-9]+/g
+    const clean = (s, n = 240) => { s = String(s || '').replace(SESSION, '[a session]').replace(/\*\*|`/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\s*\{#[a-z0-9-]+\}\s*$/, '').trim(); return s.length <= n ? s : s.slice(0, n - 1).trimEnd() + '…' }
+    // the curated mapping of every distinct barrier kind in the ABPs (the same as the Lab's generator, 9 November)
+    const KIND = [[/^rule, kept by the agent; for `?main`?, technical since/, 'SPLIT'], [/^technical \(the connector cannot/, 'ENFORCED'], [/^technical, \*\*not yet set/, 'ADVISORY'], [/^technical, in CI/, 'PARTIAL'], [/^technical$/, 'PARTIAL'], [/^review, after the fact/, 'DETECTIVE'], [/^review, before the push, a sub-agent in the agent/, 'ADVISORY'], [/^review, inside the same session/, 'ADVISORY'], [/^rule, kept by the agent/, 'ADVISORY']]
+    const WHY = { ENFORCED: 'a platform setting the agent cannot change', PARTIAL: 'technical, but the agent can edit or bypass it (the gate runs in CI the agent can change)', DETECTIVE: 'after the fact: it finds, it does not prevent', ADVISORY: 'a rule the agent keeps itself' }
+    const kindOf = k => { k = String(k).trim(); for (const [rx, v] of KIND) if (rx.test(k)) return v; return 'ADVISORY' }
+    const RES = [['r-repo', 'The team site repository', /SGit-AI__Website__Web-Summit|the repository|this repository/], ['r-promptugal', 'PrompTugal repository', /PrompTugal__|PrompTugal repo/], ['r-actions', 'GitHub Actions (CI)', /Actions|CI job|deploy-pages/], ['r-sessions', 'Claude Code Remote (other sessions)', /Claude Code Remote|other sessions|scheduled task/], ['r-gmail', 'Gmail connector', /Gmail/], ['r-drive', 'Google Drive connector', /Drive/], ['r-calendar', 'Google Calendar connector', /Calendar/], ['r-vaults', 'SG/Send vaults', /vault|SG\/Send|SG_SEND/], ['r-openrouter', 'OpenRouter (model API)', /OpenRouter|OPENROUTER/], ['r-web', 'The public web', /public web|internet/]]
+    const section = (t, name) => { const m = t.match(new RegExp('^## ' + name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[^\\n]*\\n([\\s\\S]*?)(?=^## |(?![\\s\\S]))', 'm')); return m ? m[1] : '' }
+    const bullets = (txt, n = 8) => txt.split('\n').filter(l => /^\s*-\s+/.test(l)).map(l => clean(l.replace(/^\s*-\s+/, ''))).slice(0, n)
+    const table = txt => txt.split('\n').filter(l => l.trim().startsWith('|')).map(l => l.trim().replace(/^\||\|$/g, '').split('|').map(x => x.trim())).filter(c => c.length && !/^[-: ]*$/.test(c[0]) && c[0] !== 'Barrier' && c[0] !== '')
+    const safe = u => /^https:\/\//.test(String(u || '')) ? u : ''
+
+    async function agents(opts = {}) {
+        const dev = !!opts.dev
+        const team = (await get(SITE + 'data/team.json')).members || []
+        const humans = Object.fromEntries(team.filter(m => m.kind === 'human').map(m => [m.id, m.name]))
+        const notes = Object.entries(humans).map(([id, name]) => ({ id: 'p-' + id, type: 'person', title: name, links: [], src: 'data/team.json', status: 'REAL' }))
+        const A = new Map()
+        const lists = await pool(Object.keys(humans), 6, id => get(SITE + 'people/' + id + '/agents.json'))
+        Object.keys(humans).forEach((owner, k) => { const d = lists[k]; const lst = Array.isArray(d) ? d : (d && d.agents) || []
+            for (const a of lst) { const addr = a.name || ''; if (!addr || A.has(norm(addr))) continue
+                A.set(norm(addr), { id: 'a-' + norm(addr), type: 'agent', title: addr, owner, job: clean(a.job, 220), schedule: clean(a.schedule, 160), links: humans[owner] ? ['p-' + owner] : [], ilinks: [], src: `people/${owner}/agents.json`, status: 'REAL' }) } })
+        // the policies: every page the /abp/ index links to that has a Reach section
+        const idx = await get(SITE + 'abp/index.md', 'text'), slugs = [...new Set([...idx.matchAll(/\(([a-z0-9-]+)\/index\.html\)/g)].map(m => m[1]))]
+        const mds = await pool(slugs, 8, s => get(SITE + 'abp/' + s + '/index.md', 'text'))
+        const kinds = { ENFORCED: 0, PARTIAL: 0, DETECTIVE: 0, ADVISORY: 0 }, used = {}, policies = []; let open = 0, closed = 0
+        slugs.forEach((slug, k) => { const t = mds[k]; if (!t || !/^## Reach/m.test(t)) return
+            const m = t.match(/^# ABP:\s*(.+)$/m), addr = m ? m[1].trim() : slug, key = norm(addr), reach = section(t, 'Reach')
+            const gap = bullets(section(t, 'Gap'), 10).map(b => { const c = /^(Fixed|Closed)\b/.test(b) || /closed on/i.test(b); c ? closed++ : open++; return { text: b, open: !c } })
+            const bars = []; for (const c of table(section(t, 'Barriers'))) { if (c.length < 2) continue; const kd = kindOf(c[1])
+                if (kd === 'SPLIT') { bars.push({ text: 'main is protected on GitHub (since 6 November)', kind: 'ENFORCED', raw: clean(c[1], 120), why: WHY.ENFORCED }, { text: clean(c[0], 160), kind: 'ADVISORY', raw: clean(c[1], 120), why: 'for everything but main: ' + WHY.ADVISORY }); kinds.ENFORCED++; kinds.ADVISORY++ }
+                else { bars.push({ text: clean(c[0], 160), kind: kd, raw: clean(c[1], 120), why: WHY[kd] }); kinds[kd]++ } }
+            const lic = table(section(t, 'Licence to Operate')).filter(c => c.length >= 2 && c[0]).map(c => [clean(c[0], 40), clean(c[1], 160)])
+            const vm = section(t, 'Provenance').match(/(Version \d+[^.;(]*)/) || t.match(/(Draft \d+)/)
+            const ev = []; for (const [rid, , rx] of RES) { const mm = reach.match(new RegExp('[^.\\n]*(' + rx.source + ')[^.\\n]*')); if (mm) { ev.push({ to: rid, quote: clean(mm[0].replace(/^\s*-\s*/, ''), 200) }); used[rid] = (used[rid] || 0) + 1 } }
+            const pol = { id: 'abp-' + slug, type: 'policy', title: 'Policy: ' + addr, agent: addr, links: [], ilinks: ev.map(x => x.to), evidence: ev, src: 'abp/' + slug, url: SITE + 'abp/' + slug + '/index.html', status: 'ADVISORY', reach: bullets(reach, 6), mandate: bullets(section(t, 'Mandate'), 5), gap, barriers: bars, licence: lic, version: vm ? clean(vm[1], 60) : '', phase: 'Explorer phase: observes and recommends; blocks nothing.' }
+            if (!A.has(key)) { const mo = (addr.toLowerCase().match(/\.([a-z]+)/g) || []).map(x => x.slice(1)).find(x => humans[x]) || ''; A.set(key, { id: 'a-' + key, type: 'agent', title: addr, owner: mo, job: '', schedule: '', links: humans[mo] ? ['p-' + mo] : [], ilinks: [], src: pol.src, status: 'REAL' }) }
+            A.get(key).links.push(pol.id); A.get(key).policy = pol.id; policies.push(pol) })
+        for (const [rid, name] of RES) if (used[rid]) notes.push({ id: rid, type: 'resource', title: name, links: [], src: "named in the agents' Reach sections", status: 'REAL' })
+        // the latest commit of each agent: the last 100 commits on dev (GitHub), matched on "<agent>: "
+        let latest = []
+        try { const cs = await get(GH, 'json', 9000); const fmt = d => { const x = new Date(d); return x.toLocaleString('en-GB', { day: '2-digit', month: 'short', timeZone: 'UTC' }) + ' ' + x.toISOString().slice(11, 16) }
+            for (const a of A.values()) { const c = cs.find(c => String(c.commit && c.commit.message || '').startsWith(a.title + ':')); if (c) { a.latest = { hash: c.sha.slice(0, 8), at: fmt(c.commit.committer.date), subject: clean(c.commit.message.split('\n')[0].replace(/^[^:]+:\s*/, ''), 140), url: safe(c.html_url) || ('https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/' + c.sha.slice(0, 8)), t: c.commit.committer.date } } }
+            latest = [...A.values()].filter(a => a.latest).map(a => ({ ...a.latest, agent: a.title })).sort((x, y) => String(y.t).localeCompare(String(x.t))).slice(0, 8) } catch { }
+        // the role policies, and who agreed them
+        const ROLES = ['analyst', 'cartographer', 'conductor', 'curator', 'designer', 'researcher', 'security', 'writer']
+        const rp = (await pool(ROLES, 8, r => get(SITE + 'team/' + r + '/policy.json'))).filter(Boolean)
+        const byOwner = {}; for (const a of A.values()) if (a.owner) byOwner[a.owner] = (byOwner[a.owner] || 0) + 1
+        const stats = { agents: A.size, agents_with_policy: [...A.values()].filter(a => a.policy).length, policies: policies.length, role_policies: rp.length, role_policies_agreed: rp.filter(p => p.agreed_by).length, by_owner: Object.fromEntries(Object.entries(byOwner).sort((a, b) => b[1] - a[1])), latest }
+        if (dev) Object.assign(stats, { barriers: kinds, gaps_open: open, gaps_closed: closed })
+        else for (const p of policies) { delete p.gap; delete p.barriers }
+        return { about: "The Agent Universe, read live: the team's own agents in RiskMandate's model, from the site's own pages at this moment.", as_of: new Date().toISOString().slice(0, 16) + 'Z', live: true, stats, notes: [...notes, ...A.values(), ...policies] }
+    }
+
+    // ---- the Web Summit layer: the public CRM vault, read with its published key, joined to what we have ----
+    const VLIB = SITE + 'assets/vendor/sg-vault/2026-11-04/', VFILES = ['sg-send/sg-send-crypto.js', 'sg-send/sg-send.js', 'sg-vault/sg-vault-crypto.js', 'sg-vault/sg-vault-object-store.js', 'sg-vault/sg-vault-ref-manager.js', 'sg-vault/sg-vault-commit.js', 'sg-vault/sg-vault.js', 'sg-vault/sg-vault--file-ops.js', 'sg-vault/sg-vault--folder-ops.js', 'sg-vault/sg-vault--sync.js', 'sg-vault/sg-vault--history.js', 'sg-vault/sg-vault--branches.js']
+    const script = src => new Promise((ok, no) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = () => no(new Error(src)); document.head.appendChild(s) })
+    let VL = null; const vlib = () => VL || (VL = (async () => { if (!window.SGVault) for (const f of VFILES) await script(VLIB + f) })())
+    async function readVault(cfg) {
+        await vlib()
+        const c = await SGVaultCrypto.deriveReadOnlyCreds(cfg.vault_id, cfg.read_key.replace(/^sgit_public_read_/, ''))
+        const v = await SGVault.openReadOnly(new SGSend({ endpoint: cfg.endpoint }), c.vaultId, c.readKeyB64, c.refFileId)
+        const read = async file => { const parts = file.split('/'), name = parts.pop(); let p = ''; for (const part of parts) { p += '/' + part; if (v.needsLoading && v.needsLoading(p)) await v.loadSubTreeOnDemand(p) } return JSON.parse(new TextDecoder().decode(await v.getFile('/' + parts.join('/'), name))) }
+        const [N, E] = await Promise.all([read('graph/nodes.json'), read('graph/edges.json')])
+        return { N: Array.isArray(N) ? N : N.nodes, E: Array.isArray(E) ? E : E.edges }
+    }
+    const KS = { company: 'company', organisation: 'org', contact: 'speaker', session: 'session', summit: 'session', pitch: 'pitch', announcement: 'pitch', 'side-event': 'side', 'night-summit': 'side', festival: 'side', registration: 'hub', topic: 'hub', event: 'hub' }
+    const DAY = { '2026-11-09': 'Mon 9', '2026-11-10': 'Tue 10', '2026-11-11': 'Wed 11', '2026-11-12': 'Thu 12' }
+    async function summit(opts = {}) {
+        const crm = await get(SITE + 'data/crm.json'), cfg = { ...crm.public, endpoint: crm.endpoint }
+        const [{ N, E }, team, comp, data] = await Promise.all([readVault(cfg), get(SITE + 'data/team.json'), get(SITE + 'data/companies.json').catch(() => []), opts.dataUrl ? get(opts.dataUrl).catch(() => null) : Promise.resolve(null)])
+        const notes = [], byId = new Map()
+        for (const n of N) { const k = n.kind || n.type, t = KS[k] || 'note'; let b = []
+            if (k === 'company' || k === 'organisation') b = [n.what || '', [n.category, n.country, n.attending_as].filter(Boolean).join(' · ')]
+            else if (k === 'contact') b = [[n.role, n.organisation].filter(Boolean).join(', ')]
+            else if (['session', 'pitch', 'side'].includes(t) || k === 'registration') b = [[DAY[n.date] || n.date || '', (n.start || '') + (n.end ? '–' + n.end : ''), n.where || ''].filter(Boolean).join(' · ')]
+            const note = { id: n.id, kind: 'note', type: t, title: clean(n.label || n.id, 140), bullets: b.filter(Boolean).map(x => clean(x, 200)), tags: [k], links: [], url: safe(n.website), src: 'crm' }; notes.push(note); byId.set(n.id, note) }
+        for (const e of E) { const a = byId.get(e.from), z = byId.get(e.to); if (a && z && !a.links.includes(z.id)) a.links.push(z.id) }
+        const low = new Map(notes.filter(n => n.type === 'company' || n.type === 'org').map(n => [n.title.toLowerCase().split(' (')[0], n]))
+        const hub = { id: 'ours:riskmandate', kind: 'note', type: 'ours', title: 'RiskMandate at Web Summit 2026', bullets: ['Stand A1-30, 9 to 12 November, Lisbon', 'Give agents access. Not free rein.'], tags: ['ours'], links: byId.has('event:web-summit-lisbon-2026') ? ['event:web-summit-lisbon-2026'] : [], src: 'ours' }
+        notes.push(hub)
+        for (const m of (team.members || []).filter(m => m.kind === 'human')) notes.push({ id: 'ours:p-' + m.id, kind: 'note', type: 'person', title: m.name, bullets: [clean(m.role || m.summary || '', 160)].filter(Boolean), tags: ['team'], links: [hub.id], src: 'ours' })
+        for (const c of (Array.isArray(comp) ? comp : comp.companies || [])) { const m = low.get(String(c.name || '').toLowerCase().split(' (')[0]); if (m) { if (c.why_it_matters) m.bullets.push('Why it matters to us: ' + clean(c.why_it_matters, 200)); m.tags.push('on our map'); m.links.push(hub.id) } }
+        const people = new Set((team.members || []).filter(m => m.kind === 'human').map(m => m.id))
+        for (const i of ((data && data.issues) || []).filter(i => i.status !== 'done' && ['outreach', 'merch', 'riskmandate', 'pm', 'content'].includes(i.area))) {
+            const fo = (Array.isArray(i.for) ? i.for : String(i.for || '').split(/[,\s]+/)).map(x => String(x).toLowerCase()).filter(x => people.has(x)).map(x => 'ours:p-' + x)
+            notes.push({ id: 'ours:' + i.id, kind: 'note', type: 'issue', title: i.id + ' ' + clean(i.title, 120), bullets: [clean(i.body, 200)].filter(Boolean), tags: ['task', i.area], links: fo.length ? fo : [hub.id], src: 'ours' }) }
+        notes.live = true; notes.as_of = new Date().toISOString().slice(0, 16) + 'Z'
+        return notes
+    }
+    window.LiveUniverse = { agents, summit }
+})()
+;
 // The Universe (dashboard@web-summit.silvio, 10 November 2026), on the command centres of Silvio, Angelo, Jose and
 // Dinis: one 3D map with layers. "Agents & policies": our agents and their behaviour policies, from the public ABPs on
 // this site (universe.json beside this file, with its "as of"). "Web Summit": the public CRM of Web Summit 2026 joined
@@ -157,7 +267,16 @@ ${db ? '' : '<li><b>Web Summit</b>: the public CRM of Web Summit (companies, spe
     }
     const sizeOf = n => hudOn() ? (n.type === 'person' ? 13 : n.type === 'resource' ? 16 : n.type === 'ours' ? 18 : n.type === 'hub' ? 12 + Math.min(6, n.deg * 0.1) : n.type === 'policy' ? 6 : 8 + Math.min(9, n.deg * 0.9)) : n.type === 'resource' ? 24 : n.type === 'policy' ? 9 : (n.type === 'agent' && G.which === 'universe') ? 12 + Math.min(6, n.deg) : n.type === 'ours' ? 34 : n.type === 'hub' ? 27 + Math.min(12, n.deg * 0.28) : n.type === 'person' ? 23 + Math.min(7, n.deg * 0.18) : n.type === 'visitor' ? 20 : 11 + Math.min(9, n.deg * 1.0)
     let SUMMIT = null
-    const loadSummit = () => SUMMIT ? Promise.resolve(SUMMIT) : fetch(BASE + 'summit-brain.json').then(r => r.json()).then(x => (SUMMIT = x)).catch(() => (SUMMIT = []))
+    // live first (live-universe.js reads every source at this moment); the files beside this page only if a source does not answer
+    const LAB_DEV = false   // on the public site only a developer's own key shows the gaps
+    const dataLive = () => /(^|\.)web-summit\.sgit\.ai$/.test(location.hostname) ? new URL(((document.getElementById('cc') || {}).dataset || {}).src || 'data.json', location.href).href : 'https://web-summit.sgit.ai/people/silvio/app/data.json'
+    // the last live reading on this device opens the map at once; a new reading follows within seconds and replaces it
+    const keep = { get: k => { try { const v = JSON.parse(localStorage.getItem('cc.live.' + k)); return v && v.data ? v : null } catch { return null } }, set: (k, data) => { try { localStorage.setItem('cc.live.' + k, JSON.stringify({ at: Date.now(), data })) } catch {} } }
+    const redraw = () => { G.sig = ''; try { if (G.dock) { const lg = G.dock.querySelector('.bm-legend'); if (lg) lg.innerHTML = legend() } if (G.refresh) G.refresh(true); placePanels(); circuit() } catch (e) { console.warn('redraw', e) } }
+    const summitLive = () => (window.LiveUniverse ? window.LiveUniverse.summit({ dataUrl: dataLive() }) : Promise.reject(new Error('no live reader'))).then(x => { if (!x || !x.length) throw new Error('empty'); const a = Array.from(x); a.live = true; a.as_of = x.as_of; keep.set('summit', { notes: a, as_of: x.as_of }); return a })
+    const loadSummit = () => { if (SUMMIT) return Promise.resolve(SUMMIT); const k = keep.get('summit')
+        if (k) { SUMMIT = k.data.notes; SUMMIT.live = true; SUMMIT.as_of = k.data.as_of; summitLive().then(x => { const changed = x.length !== SUMMIT.length; SUMMIT = x; if (changed) redraw() }).catch(() => {}); return Promise.resolve(SUMMIT) }
+        return summitLive().then(x => (SUMMIT = x)).catch(e => { console.warn('summit live', e && e.message); return fetch(BASE + 'summit-brain.json').then(r => r.json()).then(x => (SUMMIT = x)) }).catch(() => (SUMMIT = [])) }
     let UNI = null
     // the agents' gaps and barriers: in the Lab they come with universe.json; on the public site they are sealed (see devGaps)
     const DEVS = ['silvio', 'dinis', 'angelo']
@@ -173,7 +292,18 @@ ${db ? '' : '<li><b>Web Summit</b>: the public CRM of Web Summit (companies, spe
         } catch (e) { console.warn('universe gaps', e && e.message) }
         return x
     }
-    const loadUniverse = () => UNI ? Promise.resolve(UNI) : fetch(BASE + 'universe.json').then(r => r.json()).then(x => { x.pown = {}; x.notes.forEach(n => { if (n.type === 'agent' && n.policy) x.pown[n.policy] = n.owner }); return devGaps(x) }).then(x => { x.dev = x.notes.some(n => n.type === 'policy' && Array.isArray(n.gap)) && !!(x.stats && x.stats.barriers); return (UNI = x) }).catch(() => (UNI = { notes: [], stats: null, as_of: '' }))
+    const isDev = async () => { const K = window.WSKeyring; if (!K) return LAB_DEV; try { await K.ready } catch {} return ['silvio', 'dinis', 'angelo'].includes(K.person) }
+    const prep = x => { x.pown = {}; x.notes.forEach(n => { if (n.type === 'agent' && n.policy) x.pown[n.policy] = n.owner }); x.dev = x.notes.some(n => n.type === 'policy' && Array.isArray(n.gap)) && !!(x.stats && x.stats.barriers); return x }
+    const sigU = x => JSON.stringify(x.notes.map(n => [n.id, n.links && n.links.length, n.latest && n.latest.hash, n.gap && n.gap.length]))
+    const uniLive = () => (window.LiveUniverse ? isDev().then(dev => window.LiveUniverse.agents({ dev })) : Promise.reject(new Error('no live reader'))).then(x => { prep(x); isDev().then(dev => { if (dev || !x.dev) keep.set('universe' + (dev ? '.dev' : ''), x) }); return x })
+    const loadUniverse = () => { if (UNI) return Promise.resolve(UNI)
+        return isDev().then(dev => { const k = keep.get('universe' + (dev ? '.dev' : ''))
+            if (k) { UNI = prep(k.data); uniLive().then(x => { const ch = sigU(x) !== sigU(UNI); UNI = x; ch ? redraw() : circuit() }).catch(() => {}); return UNI }
+            return uniLive().then(x => (UNI = x)).catch(e => { console.warn('universe live', e && e.message); return loadUniverseFile() }) }) }
+    // every 5 minutes, while the map is on the screen, read again; redraw only if something changed
+    setInterval(() => { if (!UNI || !UNI.live || !G.holder || !document.body.contains(G.holder)) return; const old = JSON.stringify(UNI.notes.map(n => [n.id, n.links && n.links.length, n.latest && n.latest.hash, n.gap && n.gap.length]))
+        uniLive().then(x => { if (sigU(x) === old) { UNI.as_of = x.as_of; circuit(); return } UNI = x; redraw() }).catch(() => {}) }, 300000)
+    const loadUniverseFile = () => fetch(BASE + 'universe.json').then(r => r.json()).then(x => { x.pown = {}; x.notes.forEach(n => { if (n.type === 'agent' && n.policy) x.pown[n.policy] = n.owner }); return devGaps(x) }).then(x => { x.dev = x.notes.some(n => n.type === 'policy' && Array.isArray(n.gap)) && !!(x.stats && x.stats.barriers); return (UNI = x) }).catch(() => (UNI = { notes: [], stats: null, as_of: '' }))
     const safeUrl = u => /^https:\/\//.test(String(u || '')) ? String(u) : ''
     const loadAll = () => Promise.all([loadUniverse(), loadSummit()])
     function layerNotes() {
@@ -413,7 +543,7 @@ ${db ? '' : '<li><b>Web Summit</b>: the public CRM of Web Summit (companies, spe
         const asof = String(UNI.as_of || '').slice(0, 16).replace('T', ' '), wires = (W1 + W2 + W3 + W4).split('<path').length - 1, nodesN = owners.length + 5 + rl.length + 4
         const k0 = agents.indexOf(sel), lat = (S.latest || []).slice(0, 12)
         const code = sp ? [...(sp.reach || []).slice(0, 4).map(x => ['reach', x]), ...(sp.mandate || []).slice(0, 4).map(x => ['mandate', x]), ...(dev && Array.isArray(sp.gap) ? sp.gap.filter(g => g.open).slice(0, 4).map(g => ['gap', g.text]) : []), ...lic.slice(0, 3).map(l => ['licence', l.join(': ')])] : []
-        box.innerHTML = `<div class="bc-strip"><span>GRAPH <b>universe</b></span><span>NODES <b>${nodesN}</b></span><span>WIRES <b>${wires}</b></span><span>AGENTS <b>${agents.length}</b></span><span>POLICIES <b class="y">${S.agents_with_policy || 0}</b></span><span>WITHOUT <b class="r">${agents.filter(a => !a.policy).length}</b></span>${dev ? `<span>OPEN GAPS <b class="r">${S.gaps_open || 0}</b></span>` : ''}<span>AS OF <b>${esc(asof)} UTC</b></span></div>
+        box.innerHTML = `<div class="bc-strip"><span>GRAPH <b>universe</b></span><span>NODES <b>${nodesN}</b></span><span>WIRES <b>${wires}</b></span><span>AGENTS <b>${agents.length}</b></span><span>POLICIES <b class="y">${S.agents_with_policy || 0}</b></span><span>WITHOUT <b class="r">${agents.filter(a => !a.policy).length}</b></span>${dev ? `<span>OPEN GAPS <b class="r">${S.gaps_open || 0}</b></span>` : ''}${UNI.live ? '<span class="live">● LIVE</span><span>READ <b>' + esc(asof.slice(11)) + ' UTC</b></span>' : '<span>AS OF <b>' + esc(asof) + ' UTC</b></span>'}</div>
 <div class="bc-stage"><div class="bc-title" style="--c:${col(sel && sel.owner)}"><div><b>${String(k0).padStart(2, '0')} ${esc(sel ? sel.title : '')}</b><small>${esc(ownerName)} · ${rs.length} resource${rs.length === 1 ? '' : 's'}${sp ? (dev ? ' · ' + openG(sp) + ' open gaps' : ' · a written policy') : ' · no policy yet'}</small></div><div class="bc-tools"><button type="button" class="bc-tour" data-bc-tour aria-pressed="${!!G.bcTour}">${G.bcTour ? '■ Stop' : '▶ Play'}</button><label class="sr" for="bc-pick">Pick an agent</label><select id="bc-pick" class="bc-pick">${agents.map(a => `<option value="${esc(a.id)}"${a.id === G.bcSel ? ' selected' : ''}>${esc(a.title)}</option>`).join('')}</select></div></div>
 <div class="bc-scroll"><svg class="bc-svg hot" viewBox="0 0 ${W} ${H}" role="img" aria-label="Each person's agents on the bus, through their behaviour policy, to the resources they reach; the selected agent's path is lit">${W1}${W3}${W2}${W4}${glints(W1 + W3 + W2 + W4)}${nodes}</svg></div></div>
 <div class="bc-panels"><section><h4>Run log <em>${lat.length} latest</em></h4><ol class="bc-log">${lat.map(c => `<li class="${sel && c.agent === sel.title ? 'on' : ''}"><span>${esc(String(c.at).slice(-5))}</span><i style="color:${col((String(c.agent || '').match(/\.([a-z]+)$/) || [])[1])}">${esc(cut(String(c.agent || '').split('@')[0], 12))}</i>${safeUrl(c.url) ? `<a href="${esc(safeUrl(c.url))}" target="_blank" rel="noopener">${esc(cut(String(c.subject).replace(/^[^:]+:\s*/, ''), 48))}</a>` : esc(cut(c.subject, 48))}</li>`).join('')}</ol></section>
@@ -500,7 +630,7 @@ ${rel.length ? `<p class="bm-rel">Related: ${rel.slice(0, 8).map(r => `<button t
         G.fg.d3Force('charge').strength(big ? -34 : -70); G.fg.d3Force('link').distance(l => (l.source.type === 'hub' || l.target.type === 'hub' || l.source.type === 'ours' || l.target.type === 'ours') ? (big ? 48 : 70) : (big ? 22 : 38))
         G.fitNext = !!force; G.fg.graphData(d); paint()
         const nmEl = G.holder.querySelector('.bm-name'); if (nmEl && G.which === 'all') nmEl.textContent = 'Universe'
-        const cnt = G.holder.querySelector('.bm-count'); if (cnt) cnt.textContent = G.which === 'all' ? `${d.nodes.length} points · ${d.links.length} links${UNI && UNI.as_of && G.layers.has('agents') ? ' · agents as of ' + String(UNI.as_of).slice(0, 16).replace('T', ' ') + ' UTC' : ''}` : G.which === 'universe' ? (UNI && UNI.notes.length ? `${d.nodes.length} nodes · ${d.links.length} links · as of ${String(UNI.as_of).slice(0, 16).replace('T', ' ')} UTC` : 'DATA UNAVAILABLE') : `${d.nodes.length} notes · ${d.links.length} links`
+        const cnt = G.holder.querySelector('.bm-count'); if (cnt) cnt.textContent = G.which === 'all' ? `${d.nodes.length} points · ${d.links.length} links${UNI && UNI.as_of && G.layers.has('agents') ? (UNI.live ? ' · live, read ' : ' · agents as of ') + String(UNI.as_of).slice(0, 16).replace('T', ' ') + ' UTC' : ''}` : G.which === 'universe' ? (UNI && UNI.notes.length ? `${d.nodes.length} nodes · ${d.links.length} links · as of ${String(UNI.as_of).slice(0, 16).replace('T', ' ')} UTC` : 'DATA UNAVAILABLE') : `${d.nodes.length} notes · ${d.links.length} links`
     }
     async function graph(el, b, opts) {
         G.opts = opts || {}

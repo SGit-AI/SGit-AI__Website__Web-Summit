@@ -331,3 +331,4 @@ html.bm-full, html.bm-full body { overflow: hidden; }
 .bc-n.bc-nopol .bc-body { stroke: #C9D3DC; stroke-dasharray: 4 3; }
 .bc-svg .bc-w { opacity: .8; stroke-width: 1.5; } .bc-svg .bc-w.bc-out { opacity: .6; stroke-width: 1.3; }
 .bm.circ .bm-card { top: 96px; max-height: calc(100% - 270px); overflow: auto; }
+.bc-strip .live { color: #3DDC97; font-weight: 700; animation: bc-pulse 2s ease-in-out infinite; } @keyframes bc-pulse { 50% { opacity: .45; } }
