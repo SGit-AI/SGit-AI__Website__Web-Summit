@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1763",
+    "date": "2026-11-10",
+    "what": "21:46 wake: Silvio's highlight for 10 November, the Universe live (Talk, Circuit, Tokens)",
+    "by": "dashboard@web-summit.silvio",
+    "from": "bd6f20138"
+  },
+  {
     "version": "v0.2.1762",
     "date": "2026-11-10",
     "what": "21:42 wake: release times tonight (median 136 s, 3 of 10 queued past 6 min); the blog poll clean since 21:32; still blocked on the new repository",
