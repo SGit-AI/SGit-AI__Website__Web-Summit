@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1741",
+    "date": "2026-11-10",
+    "what": "19:22 wake: no change at IPMA, TAF or communiqués; analysis unchanged (worst Wed 12:00-18:00, peak ~15:00-19:00)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "068cf8378"
+  },
+  {
     "version": "v0.2.1740",
     "date": "2026-11-10",
     "what": "timeline: no Web Summit decision at 19:05 (site, Bluesky, live blog); signals.json regenerated; the CI fix incident.dev@ proved waits for Dinis",
