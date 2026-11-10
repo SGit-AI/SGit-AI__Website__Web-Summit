@@ -1,0 +1,546 @@
+{
+ "about": "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). Warnings carry no issue time in IPMA's feed: an issue time comes from a read or from press, and says which.",
+ "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+ "read_utc": "2026-11-10T19:22:35Z",
+ "lisbon_peak_level": "red",
+ "lisbon": [
+  {
+   "type": "Agitação Marítima",
+   "level": "yellow",
+   "start_utc": "2026-11-10T16:31:00Z",
+   "end_utc": "2026-11-11T06:00:00Z",
+   "text_pt": "Ondas do quadrante oeste com 4 a 5 metros.",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "read_utc": "2026-11-10T19:22:35Z"
+  },
+  {
+   "type": "Agitação Marítima",
+   "level": "orange",
+   "start_utc": "2026-11-11T12:00:00Z",
+   "end_utc": "2026-11-11T21:00:00Z",
+   "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "read_utc": "2026-11-10T19:22:35Z"
+  },
+  {
+   "type": "Agitação Marítima",
+   "level": "yellow",
+   "start_utc": "2026-11-11T21:00:00Z",
+   "end_utc": "2026-11-12T03:00:00Z",
+   "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "read_utc": "2026-11-10T19:22:35Z"
+  },
+  {
+   "type": "Precipitação",
+   "level": "orange",
+   "start_utc": "2026-11-11T05:00:00Z",
+   "end_utc": "2026-11-11T12:00:00Z",
+   "text_pt": "Precipitação por vezes forte e persistente.",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "read_utc": "2026-11-10T19:22:35Z"
+  },
+  {
+   "type": "Precipitação",
+   "level": "red",
+   "start_utc": "2026-11-11T12:00:00Z",
+   "end_utc": "2026-11-11T18:00:00Z",
+   "text_pt": "Precipitação forte e persistente.",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "read_utc": "2026-11-10T19:22:35Z"
+  },
+  {
+   "type": "Vento",
+   "level": "red",
+   "start_utc": "2026-11-11T12:00:00Z",
+   "end_utc": "2026-11-11T21:00:00Z",
+   "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "read_utc": "2026-11-10T19:22:35Z"
+  }
+ ],
+ "red_and_orange_elsewhere": {
+  "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+  "read_utc": "2026-11-10T19:22:35Z",
+  "items": [
+   {
+    "area": "BJA",
+    "type": "Vento",
+    "level": "red",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos."
+   },
+   {
+    "area": "CBO",
+    "type": "Precipitação",
+    "level": "red",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T18:00:00Z",
+    "text_pt": "Precipitação forte e persistente."
+   },
+   {
+    "area": "EVR",
+    "type": "Vento",
+    "level": "red",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos."
+   },
+   {
+    "area": "FAR",
+    "type": "Vento",
+    "level": "red",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos."
+   },
+   {
+    "area": "LRA",
+    "type": "Precipitação",
+    "level": "red",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T18:00:00Z",
+    "text_pt": "Precipitação forte e persistente."
+   },
+   {
+    "area": "LRA",
+    "type": "Vento",
+    "level": "red",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos."
+   },
+   {
+    "area": "MCS",
+    "type": "Precipitação",
+    "level": "red",
+    "start_utc": "2026-11-10T21:00:00Z",
+    "end_utc": "2026-11-11T06:00:00Z",
+    "text_pt": "Chuva, por vezes forte e persistente."
+   },
+   {
+    "area": "MRM",
+    "type": "Precipitação",
+    "level": "red",
+    "start_utc": "2026-11-10T21:00:00Z",
+    "end_utc": "2026-11-11T06:00:00Z",
+    "text_pt": "Chuva, por vezes forte e persistente."
+   },
+   {
+    "area": "MRM",
+    "type": "Vento",
+    "level": "red",
+    "start_utc": "2026-11-11T00:00:00Z",
+    "end_utc": "2026-11-11T06:00:00Z",
+    "text_pt": "Rajadas até 140 km/h."
+   },
+   {
+    "area": "PTG",
+    "type": "Precipitação",
+    "level": "red",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T18:00:00Z",
+    "text_pt": "Precipitação forte e persistente."
+   },
+   {
+    "area": "PTG",
+    "type": "Vento",
+    "level": "red",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos."
+   },
+   {
+    "area": "STB",
+    "type": "Precipitação",
+    "level": "red",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T18:00:00Z",
+    "text_pt": "Precipitação forte e persistente."
+   },
+   {
+    "area": "STB",
+    "type": "Vento",
+    "level": "red",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos."
+   },
+   {
+    "area": "STM",
+    "type": "Precipitação",
+    "level": "red",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T18:00:00Z",
+    "text_pt": "Precipitação forte e persistente."
+   },
+   {
+    "area": "STM",
+    "type": "Vento",
+    "level": "red",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos."
+   },
+   {
+    "area": "AVR",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Precipitação persistente, por vezes forte."
+   },
+   {
+    "area": "BGC",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Precipitação persistente, por vezes forte."
+   },
+   {
+    "area": "BJA",
+    "type": "Agitação Marítima",
+    "level": "orange",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima."
+   },
+   {
+    "area": "BJA",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T05:00:00Z",
+    "end_utc": "2026-11-11T18:00:00Z",
+    "text_pt": "Precipitação por vezes forte e persistente."
+   },
+   {
+    "area": "BRG",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Precipitação persistente, por vezes forte."
+   },
+   {
+    "area": "CBO",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T05:00:00Z",
+    "end_utc": "2026-11-11T12:00:00Z",
+    "text_pt": "Precipitação por vezes forte e persistente."
+   },
+   {
+    "area": "CBO",
+    "type": "Vento",
+    "level": "orange",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Rajadas até 120 km/h."
+   },
+   {
+    "area": "CBR",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Precipitação persistente, por vezes forte."
+   },
+   {
+    "area": "CBR",
+    "type": "Vento",
+    "level": "orange",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Rajadas até 120 km/h."
+   },
+   {
+    "area": "EVR",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T05:00:00Z",
+    "end_utc": "2026-11-11T18:00:00Z",
+    "text_pt": "Precipitação por vezes forte e persistente."
+   },
+   {
+    "area": "FAR",
+    "type": "Agitação Marítima",
+    "level": "orange",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima."
+   },
+   {
+    "area": "FAR",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T05:00:00Z",
+    "end_utc": "2026-11-11T18:00:00Z",
+    "text_pt": "Precipitação por vezes forte e persistente."
+   },
+   {
+    "area": "GDA",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Precipitação persistente, por vezes forte."
+   },
+   {
+    "area": "GDA",
+    "type": "Vento",
+    "level": "orange",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Rajadas até 120 km/h."
+   },
+   {
+    "area": "LRA",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T05:00:00Z",
+    "end_utc": "2026-11-11T12:00:00Z",
+    "text_pt": "Precipitação por vezes forte e persistente."
+   },
+   {
+    "area": "MCN",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-10T21:00:00Z",
+    "end_utc": "2026-11-11T09:00:00Z",
+    "text_pt": "Chuva, por vezes forte e persistente."
+   },
+   {
+    "area": "MCN",
+    "type": "Vento",
+    "level": "orange",
+    "start_utc": "2026-11-10T21:00:00Z",
+    "end_utc": "2026-11-11T12:00:00Z",
+    "text_pt": "Rajadas até 100 km/h, em esepcial nos extremos leste e oeste."
+   },
+   {
+    "area": "MCS",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T06:00:00Z",
+    "end_utc": "2026-11-11T09:00:00Z",
+    "text_pt": "Chuva, por vezes forte e persistente."
+   },
+   {
+    "area": "MCS",
+    "type": "Vento",
+    "level": "orange",
+    "start_utc": "2026-11-10T21:00:00Z",
+    "end_utc": "2026-11-11T12:00:00Z",
+    "text_pt": "Rajadas até 100 km/h."
+   },
+   {
+    "area": "MPS",
+    "type": "Vento",
+    "level": "orange",
+    "start_utc": "2026-11-10T21:00:00Z",
+    "end_utc": "2026-11-11T12:00:00Z",
+    "text_pt": "Rajadas até 100 km/h."
+   },
+   {
+    "area": "MRM",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T06:00:00Z",
+    "end_utc": "2026-11-11T09:00:00Z",
+    "text_pt": "Chuva, por vezes forte e persistente."
+   },
+   {
+    "area": "MRM",
+    "type": "Vento",
+    "level": "orange",
+    "start_utc": "2026-11-10T21:00:00Z",
+    "end_utc": "2026-11-11T00:00:00Z",
+    "text_pt": "Rajadas até 130 km/h."
+   },
+   {
+    "area": "MRM",
+    "type": "Vento",
+    "level": "orange",
+    "start_utc": "2026-11-11T06:00:00Z",
+    "end_utc": "2026-11-11T12:00:00Z",
+    "text_pt": "Rajadas até 130 km/h."
+   },
+   {
+    "area": "PTG",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T05:00:00Z",
+    "end_utc": "2026-11-11T12:00:00Z",
+    "text_pt": "Precipitação por vezes forte e persistente."
+   },
+   {
+    "area": "PTO",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Precipitação persistente, por vezes forte."
+   },
+   {
+    "area": "STB",
+    "type": "Agitação Marítima",
+    "level": "orange",
+    "start_utc": "2026-11-11T12:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima."
+   },
+   {
+    "area": "STB",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T05:00:00Z",
+    "end_utc": "2026-11-11T12:00:00Z",
+    "text_pt": "Precipitação por vezes forte e persistente."
+   },
+   {
+    "area": "STM",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T05:00:00Z",
+    "end_utc": "2026-11-11T12:00:00Z",
+    "text_pt": "Precipitação por vezes forte e persistente."
+   },
+   {
+    "area": "VCT",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Precipitação persistente, por vezes forte."
+   },
+   {
+    "area": "VIS",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Precipitação persistente, por vezes forte."
+   },
+   {
+    "area": "VRL",
+    "type": "Precipitação",
+    "level": "orange",
+    "start_utc": "2026-11-11T09:00:00Z",
+    "end_utc": "2026-11-11T21:00:00Z",
+    "text_pt": "Precipitação persistente, por vezes forte."
+   }
+  ]
+ },
+ "history": [
+  {
+   "at_utc": "2026-11-09T13:17Z",
+   "kind": "fact",
+   "event": "IPMA communiqué no. 1 names the low CHARLES; says orange warnings will be issued for the mainland, an upgrade not ruled out; worse weather 'a partir do final da manhã do dia 11'.",
+   "source": "https://www.ipma.pt/pt/otempo/comunicados/",
+   "read_utc": "2026-11-10T16:53Z",
+   "read_by": "weather@PrompTugal.vicky (via https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md)"
+  },
+  {
+   "at_utc": "2026-11-09T20:30Z",
+   "kind": "fact",
+   "event": "ANEPC public warning Aviso 21 on CHARLES (gusts to 120 km/h; avoid unnecessary travel). Civil protection's, not IPMA's.",
+   "source": "https://prociv.gov.pt/pt/avisos-a-populacao/aviso-21-depressao-charles-agravamento-da-situacao-meteorologica-chuva-e-vento-forte-medidas-preventivas/",
+   "read_utc": "2026-11-10T17:01Z",
+   "read_by": "weather@PrompTugal.vicky (via https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md)"
+  },
+  {
+   "at_utc": "2026-11-10T08:31Z",
+   "kind": "press",
+   "event": "IPMA's warnings update 'divulgada às 08h31 de terça-feira': red wind for eight mainland districts on Wednesday; Lisbon red wind 12:00 to 21:00, gusts to 120 km/h, up to 140 km/h in the most exposed places (Lusa, as published by AWAY at 08:46 UTC). The first public time for Lisbon's red wind found so far.",
+   "source": "https://away.iol.pt/aviso-vermelho-ipma/vento/alerta-vermelho-ipma-admite-cenario-semelhante-ao-da-tempestade-kristin-e-aponta-lisboa-como-uma-das-regioes-mais-atingidas/20261110/6af2d9fd0cf2cb2507aa81b4",
+   "read_utc": "2026-11-10T19:00Z",
+   "read_by": "incident.meteorologist@web-summit.dinis"
+  },
+  {
+   "at_utc": "2026-11-10T12:10Z",
+   "kind": "fact",
+   "event": "The government's alert situation for the mainland on Wednesday cites IPMA: gusts that may reach 120 km/h and, if a sting jet forms, above 150 km/h.",
+   "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+   "read_utc": "2026-11-10T17:01Z",
+   "read_by": "weather@PrompTugal.vicky (via https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md)"
+  },
+  {
+   "at_utc": "2026-11-10T16:52Z",
+   "kind": "fact",
+   "event": "IPMA warnings read: Lisbon red wind Wed 12:00-21:00; rain orange Wed (05:00 onwards); sea orange Wed 12:00-21:00; a yellow sea warning added Wed 21:00-Thu 03:00.",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "read_utc": "2026-11-10T16:52Z",
+   "read_by": "weather@PrompTugal.vicky (via https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md)"
+  },
+  {
+   "at_utc": "2026-11-10T17:07Z",
+   "kind": "fact",
+   "event": "IPMA communiqué no. 2: worse weather on the mainland 'a partir do início da manhã do dia 11' (moved earlier from late morning); red and orange warnings issued; further upgrades not ruled out.",
+   "source": "https://www.ipma.pt/resources.www/rss/comunicados.xml",
+   "read_utc": "2026-11-10T19:01:07Z",
+   "read_by": "incident.meteorologist@web-summit.dinis"
+  },
+  {
+   "at_utc": "between 2026-11-10T16:52Z and 17:42Z",
+   "kind": "fact",
+   "event": "IPMA raises Lisbon rain to RED Wed 12:00-18:00 (orange now 05:00-12:00 only). First read at 17:42.",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "read_utc": "2026-11-10T17:42Z",
+   "read_by": "weather@PrompTugal.vicky (via https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md)"
+  },
+  {
+   "at_utc": "2026-11-10T19:01:07Z",
+   "kind": "fact",
+   "event": "first read by this desk: Lisbon's non-green warnings as in `lisbon`",
+   "state": [
+    [
+     "Agitação Marítima",
+     "orange",
+     "2026-11-11T12:00:00Z",
+     "2026-11-11T21:00:00Z",
+     "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima."
+    ],
+    [
+     "Agitação Marítima",
+     "yellow",
+     "2026-11-10T16:31:00Z",
+     "2026-11-11T06:00:00Z",
+     "Ondas do quadrante oeste com 4 a 5 metros."
+    ],
+    [
+     "Agitação Marítima",
+     "yellow",
+     "2026-11-11T21:00:00Z",
+     "2026-11-12T03:00:00Z",
+     "Ondas de sudoeste com 4 a 5 metros."
+    ],
+    [
+     "Precipitação",
+     "orange",
+     "2026-11-11T05:00:00Z",
+     "2026-11-11T12:00:00Z",
+     "Precipitação por vezes forte e persistente."
+    ],
+    [
+     "Precipitação",
+     "red",
+     "2026-11-11T12:00:00Z",
+     "2026-11-11T18:00:00Z",
+     "Precipitação forte e persistente."
+    ],
+    [
+     "Vento",
+     "red",
+     "2026-11-11T12:00:00Z",
+     "2026-11-11T21:00:00Z",
+     "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos."
+    ]
+   ],
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "read_utc": "2026-11-10T19:01:07Z",
+   "read_by": "incident.meteorologist@web-summit.dinis"
+  }
+ ]
+}

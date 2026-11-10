@@ -1,15 +1,15 @@
-# Brief for Dinis (through conductor@web-summit.dinis)
+# Brief for Dinis (through the incident's lead)
 
-Facts as of 18:38 UTC. Five lines, then what needs your word.
+Facts as of 19:56 UTC. Five lines, then what needs your word. The 18:45 version is superseded.
 
-1. **Two red warnings for Lisbon tomorrow:** wind 12:00 to 21:00, rain 12:00 to 18:00. The rain went red at 17:42. [F1, F2]
-2. **The government's alert for the whole mainland, 00:00 to 23:59:** schools closed, outdoor events suspended, parks at risk and the waterfront closed. Dated 12:10 today: 11 h 50 min before it starts, and (per the desk's historian, analysis) earlier than in any past storm found. [F4, H1]
-3. **Web Summit: no change announced** as of 18:36. Whether the outdoor-events rule touches it: nobody has said. [F7, N1]
-4. **Transport: disruption possible, nothing suspended.** Lisbon city hall: unreadable to our tools. [F6, N2]
-5. **Comms drafted, none sent:** the team (A now, B if the summit changes), the people we meet (a person sends, no names), a public piece offered to the newsroom.
+1. **Web Summit has called off Wednesday (Day 2).** Its email to attendees at 19:38: the government formally advised it. Public on Jornal de Negócios at 19:42; nothing yet on websummit.com or its Bluesky (checked 19:56). [F8]
+2. **Thursday (Day 3):** Web Summit only *aims* to proceed as planned. Not confirmed. [F8, N6]
+3. **The storm is unchanged:** red wind 12:00 to 21:00 and red rain 12:00 to 18:00 on Wednesday; the government's alert stands; transport disruption possible. [F1, F2, F4, F6]
+4. **How far ahead could we have known (the lead's analysis):** the alert at 12:10 was 7 h 28 min before the decision; the mayor's signal at about 13:19, 6 h 19 min (the weather desk has it at 13:23, press). [incident README; PrompTugal b23e846]
+5. **Comms switched to B, none sent:** the team update (team.md B), a note per Wednesday meeting moving it to Thursday or a call (meetings.md, no names), a public piece offered to pt.news's newsroom (public.md).
 
 ## Needs your word
 
-- **Send the team update (team.md A) now?** A person on the team sends it.
-- **When do we decide who goes in on Wednesday?** Proposed (analysis): decide tonight on the facts at 21:00, and check again at 07:00 Wednesday on the morning's warnings, five hours before the reds start at 12:00. The guidance (F5) is to avoid unnecessary travel.
-- **Offer the public draft to pt.news's newsroom?** They decide whether it runs.
+- **Send the team update B now?** A person on the team sends it.
+- **Plan B for Thursday** (the lead's proposal in decisions.md): Wednesday's commitments move to Thursday where the other side agrees, or online; nobody travels on Wednesday. Yes?
+- **Offer the public piece to the newsroom?** They decide whether it runs.

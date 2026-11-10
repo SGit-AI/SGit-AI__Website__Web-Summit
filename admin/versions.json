@@ -1,5 +1,82 @@
 [
   {
+    "version": "v0.2.1744",
+    "date": "2026-11-10",
+    "what": "no Claude model names in what I push: WS-213, the Tokens view and its note say \"the current model\" and \"a smaller Claude model\"",
+    "by": "dashboard@web-summit.silvio",
+    "from": "cf83b990d"
+  },
+  {
+    "version": "v0.2.1743",
+    "date": "2026-11-10",
+    "what": "19:42 wake: Web Summit watch (sitemap diff + Bluesky) for the Wednesday decision; the dashboard opens with \"Waiting for\", Bluesky read live",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "52e0a675e"
+  },
+  {
+    "version": "v0.2.1742",
+    "date": "2026-11-10",
+    "what": "19:32 wake: no Web Summit decision; ANA expects cancellations, FlixBus suspends Wednesday (press)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "fb10bc188"
+  },
+  {
+    "version": "v0.2.1741",
+    "date": "2026-11-10",
+    "what": "19:22 wake: no change at IPMA, TAF or communiqués; analysis unchanged (worst Wed 12:00-18:00, peak ~15:00-19:00)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "068cf8378"
+  },
+  {
+    "version": "v0.2.1740",
+    "date": "2026-11-10",
+    "what": "timeline: no Web Summit decision at 19:05 (site, Bluesky, live blog); signals.json regenerated; the CI fix incident.dev@ proved waits for Dinis",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "753b331f2"
+  },
+  {
+    "version": "v0.2.1739",
+    "date": "2026-11-10",
+    "what": "the storm's incident dashboard (timeline, decision graph, weather); push-to-live baseline 3 min 56 s; the gate's 110 s in CI found (316 lazy blob fetches); session key",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "fad836c46"
+  },
+  {
+    "version": "v0.2.1738",
+    "date": "2026-11-10",
+    "what": "19:05 wake: no Web Summit decision at 19:01; the meteorologist's analysis (worst 12:00-18:00, peak ~15:00-19:00) in the timeline; dev and researcher routed to ROADMAP P0/P1",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "2cc9609d1"
+  },
+  {
+    "version": "v0.2.1737",
+    "date": "2026-11-10",
+    "what": "ROADMAP.md, the incident site as a newsroom and a data source for agents, in priority order (Dinis's direction)",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "27d5ca7ae"
+  },
+  {
+    "version": "v0.2.1736",
+    "date": "2026-11-10",
+    "what": "18:55 wake: the ledger line only; no new CRM states",
+    "by": "crm@web-summit.silvio",
+    "from": "770c3f9db"
+  },
+  {
+    "version": "v0.2.1735",
+    "date": "2026-11-10",
+    "what": "incident timeline: sweep 1's times corrected (18:45 to 18:50); no organiser decision at 18:53",
+    "by": "conductor@web-summit.dinis",
+    "from": "9c49c0cbd"
+  },
+  {
+    "version": "v0.2.1734",
+    "date": "2026-11-10",
+    "what": "incident timeline: social.watch@'s signals; the government recommends suspending Web Summit on Wednesday (17:53)",
+    "by": "conductor@web-summit.dinis",
+    "from": "931d08da9"
+  },
+  {
     "version": "v0.2.1733",
     "date": "2026-11-10",
     "what": "the page-view lanes drained (5,000; the first since 5 November: the hourly runs counted only from 6 November 00:07, whatever the stored text said); a task for vault and crm: push what waits",

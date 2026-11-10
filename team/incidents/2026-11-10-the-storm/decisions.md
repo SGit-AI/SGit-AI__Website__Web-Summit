@@ -1,5 +1,14 @@
 # Decisions (simulate first: each decision is written here before anyone acts)
 
+Newest first.
+
 | UTC | Decision | By | Evidence | Status |
 |---|---|---|---|---|
+| 10 Nov, 20:00 | **Plan B updated: Thursday is on** (the organisers, as reported by RTP 19:46: Day 3 "conforme planeado"; affected people contacted directly), **subject to IPMA's warnings for Thursday** (as read 19:22: Lisbon has only a yellow sea warning to Thu 03:00; no wind or rain warning for Thursday). Wednesday's commitments move to Thursday where the other side agrees, or online; nobody travels Wednesday. Still open: Wednesday's talks, the PITCH semi-final, side events, tickets | incident.conductor@ (proposed) | F8, F9; warnings.json (read 19:22) | proposed, for Dinis (replaces the 19:55 row's "confirmed only after") |
+| 10 Nov, 19:55 | **Plan B for Thursday** (simulated here first; nobody acts until Dinis or the person holding each commitment says so): Wednesday's commitments (stand, RiskMandate demos, interviews, meetings) move to Thursday where the other side agrees, or online; nobody travels on Wednesday; Thursday's plan is confirmed only after the organisers' next update and IPMA's warnings for Thursday (yellow sea to 03:00 only, as read at 19:01) | incident.conductor@ (proposed) | F8; the organisers' email (Day 3 "aims to proceed"); warnings.json | proposed, for Dinis |
+| 10 Nov, 19:55 | Comms switch from A to **B**: team.md B filled from F8 (a person sends); meetings.md and public.md to follow from journalist.examples@ | incident.conductor@ | F8 | draft ready; none sent |
+| 10 Nov, 19:55 | Situation item 1 (Web Summit suspends Wednesday) has **happened**; incident stays P1 for Thursday (item 6) and the team's safety (item 7) | incident.conductor@ | the organisers' email 19:38; Jornal de Negócios 19:42 | done |
+| 10 Nov, 19:20 | The incident site's direction and priorities: ROADMAP.md (P0 tonight: the gate's size rule, speed per push, signal roles, the model ledger, first datasets) | Dinis (direction, in his session ~19:15); written by incident.conductor@ | his words, close to them, in ROADMAP.md | proposed; five questions to Dinis open |
+| 10 Nov, 19:05 | Route the incident team's first jobs: incident.meteorologist@ (the weather as JSON, how far ahead it could be known), incident.researcher@ (who decides what, the organisers' channels, Wednesday's decide-by times), incident.dev@ (CI speed measured; the data lane prototype) | incident.conductor@web-summit.dinis | BRIEF.md; PIPELINE.md | routed |
+| 10 Nov, 18:58 | incident.conductor@web-summit.dinis takes the lead of WS-214 from conductor@web-summit.dinis; the timeline is kept newest first; a Web Summit decision on Wednesday is told to conductor@web-summit.dinis at once | Dinis (BRIEF.md, ~19:00) | his word, relayed by conductor@web-summit.dinis | done |
 | 10 Nov, ~18:35 | Run the storm as a P1 incident on account A | Dinis | his word in his session | done |

@@ -66,3 +66,7 @@ Your agentic team, and what it needs from you. Started for: Daniela.
 - **My issues**
 
 Silvio's and Angelo's dashboards are already shaped by their own agents: [Silvio's](../people/silvio/index.html), [Angelo's](../people/angelo/index.html).
+
+## Incident dashboards {#incidents}
+
+When something outside moves the team's plans, the incident team (incident.conductor@web-summit.dinis and its agents) runs it as an incident and draws it live: the timeline, the decision graph (fact, evidence and hypothesis drawn differently) and the data behind it. All of them: [Incidents](../incidents/index.html). The first: [the storm on Wednesday 11 November](../incidents/the-storm/index.html) (WS-214).

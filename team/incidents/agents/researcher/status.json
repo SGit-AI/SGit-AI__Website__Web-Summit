@@ -1,0 +1,44 @@
+{
+  "agent": "incident.researcher@web-summit.dinis",
+  "state": "working: J1, J2 v1 and J4 published; watching Web Summit",
+  "last_wake": "2026-11-10T19:32Z",
+  "jobs": [
+    "J1 (tonight, first): where will Web Summit announce a Wednesday decision? Every organiser channel (site, news page, app notices, press office statements as reported, official social accounts readable without a login), and the side events on Wednesday (Dear Gatekeepers Live 10:00; others). Public sources only. Feed social.watch@'s sweeps; do not duplicate them.",
+    "J2 (tonight): the decision graph as JSON (team/incidents/2026-11-10-the-storm/data/graph.json, README): actors (IPMA, ANEPC, government, Câmara, schools, Metro, Carris, CP, Fertagus, Transtejo, bridges, ANA/the airport, Web Summit, side events), who can decide what (cite Vicky's desk's law.md, read-only), what each has decided with time and source, and lead times. Facts, evidence, hypotheses labelled.",
+    "J3: our own graph (README section 4): each team Wednesday commitment, the outside decision that would move it, the decide-by time. No names of people we meet; commitments by kind.",
+    "J4 (Dinis's direction 19:15, ROADMAP P1.7): in sources.json, reuse per source (yes / attribution / no: IPMA open data, EUMETSAT/Copernicus imagery, Wikipedia, each press outlet); Wikipedia articles on CHARLES (PT, EN) and their edit history via the MediaWiki API; which social platforms read without a login (Mastodon, Bluesky public API, YouTube). Public sources only; no profiles of private people."
+  ],
+  "done": [
+    "J2 v1: team/incidents/2026-11-10-the-storm/data/decisions/graph.json and README.md (in data/decisions/ as my start brief named it; J2 named data/graph.json: say if you want it moved)",
+    "J1 start: organiser channels and every source mapped in data/decisions/sources.json (readable without a login: websummit.com home, /news/, sitemap.xml; X, Instagram, LinkedIn, the app are not)",
+    "J4: reuse per source (marked \"to verify\" where the licence page is unopened); Wikipedia: no CHARLES article on the titles tried (pt, en), others rate-limited (429), MediaWiki prop=revisions noted; platforms without a login: Bluesky public API (official account websummit.bsky.social), Mastodon tag API, YouTube Atom feed; all in data/decisions/sources.json",
+    "19:32 wake: no organiser decision; graph + ANA airports conditioned, cancellations expected (18:04, press) and FlixBus national links suspended Wednesday (18:25, press)"
+  ],
+  "next": [
+    "J1: side events beyond Dear Gatekeepers; poll Bluesky and the sitemap every wake",
+    "J2: cite law.md for who can decide what; lead times per edge",
+    "J3: the team's own graph",
+    "J4: retry Wikipedia slowly; open IPMA's and the government's reuse terms"
+  ],
+  "asks": [
+    "Dinis: lisboa.pt and informacao.lisboa.pt refuse automated reads (403); the Câmara's own measures for Wednesday need a person to read them.",
+    "Dinis: Web Summit's X, Instagram and LinkedIn need a login and the attendee app needs a ticket; if the organisers announce there first, a person on the team will see it before us.",
+    "Dinis: hosts unreachable from this session (connection failed): mai.gov.pt, lusoponte.pt, prociv.gov.pt/pt/avisos-a-populacao/ (intermittent); 403: rede-expressos.pt; bot check: aeroportolisboa.pt.",
+    "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
+    "incident.dev@: parsers wanted (just the part named in sources.json parser_ask): websummit sitemap diff, Jornal de Negócios live entries, government news list, Carris alert banner, CP service alerts API."
+  ],
+  "updated": "2026-11-10T19:32Z",
+  "by": "incident.researcher@web-summit.dinis",
+  "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
+  "web_summit_wednesday": {
+    "status": "not announced",
+    "checked": "2026-11-10T19:32Z",
+    "where": [
+      "Bluesky websummit.bsky.social (last post 17:36Z)",
+      "websummit.com home",
+      "sitemap.xml (no new URL since 18:58Z)",
+      "Jornal de Negócios live (last entries 18:25)",
+      "web search"
+    ]
+  }
+}

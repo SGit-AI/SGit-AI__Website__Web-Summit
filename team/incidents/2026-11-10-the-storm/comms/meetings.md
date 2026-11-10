@@ -1,19 +1,23 @@
 # Draft for the people we are meeting on Wednesday (a person sends)
 
-No names here. Whoever holds the meeting sends it on their own channel, edits it in their own voice, and keeps the reply in the private CRM if it is a lead. Facts as of 18:38 UTC (facts.md).
+No names here. Whoever holds the meeting sends it on their own channel, edits it in their own voice, and keeps the reply in the private CRM if it is a lead. Facts as of 19:56 UTC (facts.md).
 
-## A. Now: confirm, and offer a way out
+## Send now: Wednesday is off, move to Thursday or a call (from F8)
 
-> Hi [name], looking forward to [Wednesday, time]. As you may have seen, Lisbon has red warnings for wind and rain tomorrow from midday, and the government has asked people to avoid unnecessary travel. Web Summit has not changed its programme so far.
+> Hi [name], as you may have heard, Web Summit has called off tomorrow, Wednesday, because of the storm, on the government's advice. They aim to go ahead with Thursday as planned.
 >
-> We're happy to keep the time, or to switch to a call, or to move to Thursday, whichever is easiest and safest for you. Just say which.
+> Shall we move our [meeting / demo / chat] to **Thursday** at [time], or do it as a **call** [tomorrow at the same time / when suits you]? Whatever is easiest for you. Stay safe tomorrow.
 
-## B. If Web Summit suspends or shortens Wednesday
+## If Thursday is also called off (not the case now: N6)
 
-> Hi [name], with Web Summit [suspending / shortening] Wednesday, shall we [do a call at the same time / meet on Thursday at (time)]? Whatever works for you. Stay safe.
+> Hi [name], with Thursday off as well, could we do it as a call instead? Here are a few times: [times]. Sorry not to meet in person.
 
 ## Rules
 
-- Never imply the summit is closed before Web Summit says so (N4).
+- Say "aim" for Thursday until Web Summit confirms it (N6).
 - No advice beyond the authorities' (F5 is an appeal, not an order).
-- One message per person; no group sends.
+- One message per person; no group sends. Nobody named here.
+
+## Superseded
+
+Version A (confirm, and offer a way out), written at 18:45 when nothing had been announced, is withdrawn by F8.

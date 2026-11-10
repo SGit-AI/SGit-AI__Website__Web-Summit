@@ -1,6 +1,6 @@
 # Draft for the team (WhatsApp; a person sends)
 
-Facts as of 18:38 UTC (F1 to F7, N1 to N5 in facts.md). Short enough for a phone. Two versions: send A now; B replaces it if Web Summit changes Wednesday.
+Facts as of 18:38 UTC (F1 to F7, N1 to N5 in facts.md). Short enough for a phone. Two versions. **From 19:55 UTC, B replaces A** (Web Summit suspended Wednesday, F8).
 
 ## A. Now (no change announced by Web Summit)
 
@@ -13,12 +13,13 @@ Facts as of 18:38 UTC (F1 to F7, N1 to N5 in facts.md). Short enough for a phone
 > - **Safety first:** nobody travels against the guidance. Who goes in tomorrow is decided tonight; until then, plan nothing that depends on travelling.
 > - Plan B for every Wednesday commitment (stand, demos, meetings, interviews) is being prepared. Next update this evening, or sooner if anything changes.
 
-## B. If Web Summit suspends or shortens Wednesday
+## B. Web Summit has suspended Wednesday (SEND THIS ONE; filled 19:55 UTC from F8; a person sends)
 
-> **Storm update:** Web Summit has [suspended / shortened] Wednesday: [what it said, with the time]. [new fact]
-> - **Do not travel to the venue.** Stay where you are.
-> - Meetings: each one gets a short note from whoever holds it (move online, or to Thursday). Drafts are ready.
+> **Storm update, Tuesday 19:55 (Lisbon time):** Web Summit has called off **Day 2, Wednesday**: the government formally advised it because of the storm (email to attendees, 19:38). **Web Summit aims to hold Day 3, Thursday, as planned.** [F8]
+> - **Do not travel to the venue on Wednesday.** Stay where you are; the red warnings (wind 12:00 to 21:00, rain 12:00 to 18:00) and the government's alert stand. [F1, F2, F4]
+> - Meetings: each one gets a short note from whoever holds it (move to Thursday, or online). Drafts are ready.
 > - Demos: online (the news app on the web, riskmandate.ai, the live views).
-> - Next update by [time].
+> - **Thursday is on**, the organisers say (RTP, 19:46); they will contact affected people directly. No IPMA wind or rain warning for Lisbon on Thursday as of 19:22. [F9]
+> - Still unknown: Wednesday's talks, the PITCH semi-final, side events. Next update by 21:00.
 
 Fill the square brackets only from a new fact in facts.md.

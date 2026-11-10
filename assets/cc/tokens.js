@@ -12,13 +12,12 @@
     const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c])
     const SHIRT = { dinis: '#7D879E', nimay: '#4F7BFF', angelo: '#2ED48C', jose: '#FF8A3D', vicky: '#A877FF', silvio: '#FF3347', indi: '#FFD23F', daniela: '#E86FB0', sarah: '#4FD1F5' }
     // list prices, USD per million tokens: [input, output, cache write (5 min), cache read]
-    const PRICE = {
-        'claude-opus-5-5': [4, 20, 5, 0.20], 'claude-sonnet-5-5': [2, 10, 2.5, 0.10], 'claude-fable-5-1': [10, 50, 12.5, 0.25], 'claude-haiku-5-5': [0.5, 2.5, 0.625, 0.05]
-    }
+    // the current model's list price, and two smaller Claude tiers (claude.com/pricing, 10 November): [input, output, cache write, cache read]
+    const NOW = [4, 20, 5, 0.20], MID = [2, 10, 2.5, 0.10], SMALL = [0.5, 2.5, 0.625, 0.05]
     const ALT = [
-        ['What we pay now', null, 'Each session at its own model\'s list price (mostly Opus 5.5)', 'https://claude.com/pricing'],
-        ['Claude Sonnet 5.5', [2, 10, 2.5, 0.10], 'Anthropic, list price', 'https://claude.com/pricing'],
-        ['Claude Haiku 5.5', [0.5, 2.5, 0.625, 0.05], 'Anthropic, list price for prompts over 100K tokens', 'https://claude.com/pricing'],
+        ['What we pay now', null, 'Every run at the current model\'s list price', 'https://claude.com/pricing'],
+        ['A mid-size Claude model', MID, 'Anthropic, list price', 'https://claude.com/pricing'],
+        ['A small Claude model', SMALL, 'Anthropic, list price for prompts over 100K tokens', 'https://claude.com/pricing'],
         ['GLM-5.3 (Z.ai API)', [1.4, 4.4, 1.4, 0.26], 'Z.ai, list price; the model family Revolut moved to', 'https://docs.z.ai/guides/overview/pricing'],
         ['GLM-5.3 Flash (Z.ai API)', [0.15, 0.5, 0.15, 0.03], 'Z.ai, list price', 'https://docs.z.ai/guides/overview/pricing'],
         ['DeepSeek V4 Pro (peak)', [1.32, 3.96, 1.32, 0.044], 'DeepSeek, list price at peak hours (off-peak is half)', 'https://api-docs.deepseek.com/quick_start/pricing'],
@@ -35,7 +34,7 @@
     const tok = x => ({ i: (x && x.input_tokens) || 0, o: (x && x.output_tokens) || 0, w: (x && x.cache_creation_input_tokens) || 0, r: (x && x.cache_read_input_tokens) || 0, calls: (x && x.calls) || 0, by: (x && x.by_model) || {} })
     // a session's cost at its own models (tokens split by each model's share of calls), or at one alternative price
     const costAt = (t, p) => (t.i * p[0] + t.o * p[1] + t.w * p[2] + t.r * p[3]) / 1e6
-    const ownCost = t => { const ms = Object.entries(t.by).filter(([m]) => PRICE[m]); const n = ms.reduce((s, [, c]) => s + c, 0); if (!n) return costAt(t, PRICE['claude-opus-5-5']); return ms.reduce((s, [m, c]) => s + costAt(t, PRICE[m]) * c / n, 0) }
+    const ownCost = t => costAt(t, NOW)
     const altCost = (t, a) => a === 'flat' ? (t.i + t.o + t.w + t.r) * 0.30 / 1e6 : a ? costAt(t, a) : ownCost(t)
 
     // measure.mjs without --since counts the WHOLE session so far: an agent that logs every hour from one long session
@@ -107,7 +106,7 @@
         const sumFresh = sum(rows, fresh), sumReads = sum(rows, r => r.t.r)
         const table = st.table ? `<div class="gr-table"><table><thead><tr><th>Agent</th><th>Person</th><th>Sessions</th><th>Calls</th><th>Tokens (no cache reads)</th><th>Cache reads</th><th>Estimated cost</th></tr></thead><tbody>${agents.map(a => `<tr><td>${esc(a.agent)}</td><td>${esc(a.owner)}</td><td>${a.n}</td><td>${a.calls}</td><td>${fmtT(a.fresh)}</td><td>${fmtT(a.reads)}</td><td>${fmt$(a.cost)}</td></tr>`).join('')}</tbody></table></div>` : ''
         return `<section class="cc-card tk-head"><h2>Tokens: what our agents spend</h2><p class="gr-warn">Measured by each agent itself (measure.mjs, one line per run; a running total from one long session counts only what is new); costs are estimates at list prices in US dollars, not a bill.</p>
-<p class="note">Read live at ${esc(st.read.toISOString().slice(11, 16))} UTC from ${st.files} ledgers on the team site. ${(() => { const nm = [...new Set(rows.filter(r => !Object.keys(r.t.by || {}).length).map(r => r.owner))]; return nm.length ? 'Runs that do not record their model (' + nm.map(esc).join(', ') + ') are priced at the team\'s most-used model. ' : '' })()}${unmeasured.length ? 'Not measured yet: <b>' + unmeasured.map(esc).join(', ') + '</b> (their agents write no ledger, so they show nothing here, not zero).' : ''}</p>
+<p class="note">Read live at ${esc(st.read.toISOString().slice(11, 16))} UTC from ${st.files} ledgers on the team site. Every run is priced at the current model's list price (runs on smaller models cost less). ${unmeasured.length ? 'Not measured yet: <b>' + unmeasured.map(esc).join(', ') + '</b> (their agents write no ledger, so they show nothing here, not zero).' : ''}</p>
 <div class="tk-seg" role="group" aria-label="Period">${RANGES.map(([k, l]) => `<button type="button" data-tk-range="${k}" aria-pressed="${st.range === k}">${l}</button>`).join('')}<button type="button" data-tk-table aria-pressed="${st.table}">Table</button><button type="button" data-tk-reload>Read again</button></div>
 <div class="tk-tiles"><div><span>Estimated cost</span><b>${fmt$(cost)}</b><small>${esc(R[1].toLowerCase())}</small></div><div><span>Runs logged</span><b>${sess}</b><small>${by.size} agents</small></div><div><span>Tokens, without cache reads</span><b>${fmtT(sumFresh)}</b><small>input, output, cache writes</small></div><div><span>Cache reads</span><b>${fmtT(sumReads)}</b><small>re-reading the same context: cheap, but most of the volume</small></div></div></section>
 <div class="tk-grid"><section class="cc-card"><h3>The whole team, by day</h3>${chart1}<p class="tk-people">${perOwner.map(p => `<span style="--c:${SHIRT[p.o] || '#4FD1F5'}"><b>${esc(p.o)}</b> ${fmt$(p.cost)} · ${p.ag} agents · ${p.n} sessions</span>`).join('')}</p></section>
@@ -127,7 +126,7 @@ ${paidView(rows, R, perOwner)}${routerView()}<section class="cc-card"><h3>The sa
         const E = st.exps
         if (!E.length) return `<section class="cc-card"><h3>Router experiments: the same sub-tasks on open models</h3><p class="note">No experiments yet. A router agent runs low-risk sub-tasks on open models through OpenRouter, has a Claude model check each result, and logs every try (people/&lt;id&gt;/router/experiments.jsonl: task, kind, model, tokens, the real cost OpenRouter returns, the verdict). Each try appears here as soon as it is committed.</p></section>`
         const ok = E.filter(x => x.verdict === 'pass').length, cost = E.reduce((s, x) => s + (+x.cost_usd || 0), 0)
-        const base = E.reduce((s, x) => s + (x.baseline_tokens ? costAt({ i: +x.baseline_tokens.in || 0, o: +x.baseline_tokens.out || 0, w: 0, r: 0 }, PRICE['claude-opus-5-5']) : 0), 0)
+        const base = E.reduce((s, x) => s + (x.baseline_tokens ? costAt({ i: +x.baseline_tokens.in || 0, o: +x.baseline_tokens.out || 0, w: 0, r: 0 }, NOW) : 0), 0)
         const byModel = new Map(); for (const x of E) { const m = String(x.model || '?'), y = byModel.get(m) || { n: 0, ok: 0, cost: 0 }; y.n++; if (x.verdict === 'pass') y.ok++; y.cost += +x.cost_usd || 0; byModel.set(m, y) }
         return `<section class="cc-card"><h3>Router experiments: the same sub-tasks on open models</h3>
 <div class="tk-tiles"><div><span>Tries</span><b>${E.length}</b><small>${new Set(E.map(x => x.owner)).size} people</small></div><div><span>Passed the check</span><b>${Math.round(ok / E.length * 100)}%</b><small>${ok} of ${E.length}, checked by a Claude model</small></div><div><span>Real cost on OpenRouter</span><b>${fmt$(cost)}</b><small>as OpenRouter returned it</small></div><div><span>The same at Claude prices</span><b>${base ? fmt$(base) : '—'}</b><small>${base ? 'from each try\'s estimated baseline' + (cost ? ': ×' + (base / cost).toFixed(0) + ' dearer' : '') : 'no baseline logged yet'}</small></div></div>
@@ -139,5 +138,5 @@ ${paidView(rows, R, perOwner)}${routerView()}<section class="cc-card"><h3>The sa
         if (t.dataset.tkRange) st.range = t.dataset.tkRange; else if ('tkTable' in t.dataset) st.table = !st.table; else { st.rows = null; try { localStorage.removeItem('cc.live.tokens') } catch {} ; load() } paint() })
     const X = window.CC_EXTRA = window.CC_EXTRA || { views: {} }; X.views = X.views || {}
     X.views.tokens = { label: 'Tokens', icon: 'reports', render: () => '<div id="tokens"></div>', after: () => { paint(); if (!st.rows) load() } }
-    window.CCTokens = { ownCost, altCost, PRICE, ALT }
+    window.CCTokens = { ownCost, altCost, NOW, ALT }
 })()
