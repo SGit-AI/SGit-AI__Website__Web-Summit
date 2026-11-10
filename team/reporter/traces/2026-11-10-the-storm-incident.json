@@ -1,0 +1,484 @@
+{
+  "id": "2026-11-10-the-storm-incident",
+  "schema": "ws-incident-trace/1",
+  "issue": "WS-214",
+  "severity": "P1 (run as P3-as-P1)",
+  "status": "open",
+  "title": "Incident: the storm on Wednesday 11 November, run as P1 on account A",
+  "folder": {
+    "type": "file",
+    "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+    "path": "team/incidents/2026-11-10-the-storm/",
+    "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/"
+  },
+  "captured_by": "reporter@web-summit.dinis",
+  "captured_at": "2026-11-10T18:50Z",
+  "rules": "Read Vicky's weather desk's public files only; never write to them. Public sources only; nothing on people's whereabouts or contact details.",
+  "shape": {
+    "event": "n, lane (outside|ours), kind (signal|decision|hand-off|not read), actor {name, kind: authority|person|agent}, what, published (UTC, the source's own time; null if not stated), read (UTC, when our team first read it), read_by, affects[] (the incident's 'could happen' items, README section 3), evidence[], note, handoff {to, via}",
+    "could_happen": {
+      "1": "Web Summit suspends or shortens Wednesday",
+      "2": "transport stops or thins",
+      "3": "the venue opens but people do not come",
+      "4": "power or network fails at the venue",
+      "5": "side events and meetups move or cancel",
+      "6": "Thursday changes too",
+      "7": "a person on the team is at risk"
+    }
+  },
+  "events": [
+    {
+      "n": 1,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA",
+        "kind": "authority"
+      },
+      "what": "Communiqué no. 1 names the low CHARLES; orange warnings to come, an upgrade not ruled out",
+      "published": "2026-11-09T13:17:00Z",
+      "read": "2026-11-10T16:53:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://www.ipma.pt/pt/otempo/comunicados/"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "affects": [
+        1,
+        2,
+        6,
+        7
+      ]
+    },
+    {
+      "n": 2,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "ANEPC",
+        "kind": "authority"
+      },
+      "what": "Aviso 21 to the population on CHARLES (gusts to 120 km/h; avoid unnecessary travel)",
+      "published": "2026-11-09T20:30:00Z",
+      "read": "2026-11-10T17:01:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://prociv.gov.pt/pt/avisos-a-populacao/"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "affects": [
+        2,
+        7
+      ]
+    },
+    {
+      "n": 3,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "Government (Internal Administration; Education co-signing)",
+        "kind": "authority"
+      },
+      "what": "Situação de alerta, mainland, Wed 00:00 to 23:59: (a) schools and non-essential public services close; (b) outdoor events suspended; (c) to (e) parks, structures, shoreline",
+      "published": "2026-11-10T12:10:00Z",
+      "read": "2026-11-10T17:01:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "f360b4bc",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/f360b4bca2d6"
+        }
+      ],
+      "note": "the page's own date is 12:10 UTC; the incident's timeline.md gives '~17:27', which is when S41 was updated with it (50a0397e)",
+      "affects": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "n": 4,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA",
+        "kind": "authority"
+      },
+      "what": "Red wind warning, Lisbon district, Wed 12:00 to 21:00 (red in eight districts)",
+      "published": null,
+      "read": "2026-11-10T14:23:00Z",
+      "read_by": "journalist@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "c8820e0e",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/c8820e0e4d35"
+        }
+      ],
+      "note": "issue time not in the record",
+      "affects": [
+        1,
+        2,
+        4,
+        7
+      ]
+    },
+    {
+      "n": 5,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA (via TAF, LPPT)",
+        "kind": "authority"
+      },
+      "what": "Airport forecast: gusts to 48 kt at times Wed 09:00 to 18:00, 40% chance of 58 kt with thunderstorms",
+      "published": "2026-11-10T15:23:00Z",
+      "read": "2026-11-10T16:54:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "affects": [
+        2,
+        6
+      ]
+    },
+    {
+      "n": 6,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "Transport operators (Fertagus, Carris Metropolitana, Transtejo/Soflusa, Metro)",
+        "kind": "authority"
+      },
+      "what": "Possible disruption on Wednesday (Fertagus, Carris Metropolitana: 4 weather notices to Wed 23:59); a ferry route restricted on Tuesday; Metro no notice; no suspension",
+      "published": null,
+      "read": "2026-11-10T16:59:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 7,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "Web Summit, MEO Arena, FIL",
+        "kind": "authority"
+      },
+      "what": "No notice about the weather or Wednesday's programme",
+      "published": null,
+      "read": "2026-11-10T16:55:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "note": "checked again 17:43 and 18:36: no change",
+      "affects": [
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "n": 8,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "ANEPC",
+        "kind": "authority"
+      },
+      "what": "Special readiness raised; public SMS warning about Wednesday",
+      "published": "2026-11-10",
+      "read": "2026-11-10T17:01:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://prociv.gov.pt/pt/noticias/depressao-charles-anepc-avisa-populacao-por-sms/"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "note": "time not stated",
+      "affects": [
+        7
+      ]
+    },
+    {
+      "n": 9,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA",
+        "kind": "authority"
+      },
+      "what": "Communiqué no. 2: worse from early morning Wednesday (no. 1 said late morning); red and orange warnings issued; track still highly uncertain",
+      "published": "2026-11-10T17:07:58Z",
+      "read": "2026-11-10T17:42:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "affects": [
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "n": 10,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA",
+        "kind": "authority"
+      },
+      "what": "Rain raised to red, Lisbon, Wed 12:00 to 18:00",
+      "published": null,
+      "read": "2026-11-10T17:42:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "c0587177",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/c05871773026"
+        }
+      ],
+      "note": "changed between the 16:52 and 17:42 reads; the incident's timeline.md says '~17:45', which is S41's update (87af4984)",
+      "affects": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "n": 11,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "Carris",
+        "kind": "authority"
+      },
+      "what": "Homepage banner: 'perturbações na circulação' (service disruption), updating as it changes",
+      "published": null,
+      "read": "2026-11-10T18:37:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "872717be",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/872717bed3fd"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 12,
+      "lane": "outside",
+      "kind": "not read",
+      "actor": {
+        "name": "Câmara Municipal de Lisboa and its civil protection",
+        "kind": "authority"
+      },
+      "what": "The city's own measures (a page titled 'Situação de Alerta: medidas excecionais em Lisboa' is listed by search)",
+      "published": null,
+      "read": null,
+      "read_by": "weather@PrompTugal.vicky (refused, 403)",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        }
+      ],
+      "note": "the gap in the decision graph: the city's decision is the link between the government and the venue",
+      "affects": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "n": 13,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "what": "Run the storm as a P1 incident on account A only (P3-as-P1)",
+      "published": "2026-11-10T18:35:00Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/decisions.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/decisions.md"
+        }
+      ],
+      "handoff": {
+        "to": "conductor@web-summit.dinis",
+        "via": "voice, in his session"
+      }
+    },
+    {
+      "n": 14,
+      "lane": "ours",
+      "kind": "hand-off",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Incident declared: WS-214, the incident folder (README, timeline, decisions), the roles (lead, reporter, journalist, signals, security, cost), the union of seven things that could happen",
+      "published": "2026-11-10T18:40:03Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "dedace17",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/dedace176673"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "board/WS-214-incident-the-storm-on-wednesday.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-214-incident-the-storm-on-wednesday.md"
+        }
+      ],
+      "handoff": {
+        "to": "reporter@, journalist.examples@, social.watch@, security.repos@web-summit.dinis; accountant@PrompTugal.dinis",
+        "via": "commit For:; a session message to the reporter (18:40)"
+      }
+    },
+    {
+      "n": 15,
+      "lane": "ours",
+      "kind": "hand-off",
+      "actor": {
+        "name": "reporter@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "This trace opened; two times in timeline.md flagged for the lead",
+      "published": "2026-11-10T18:50:00Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [],
+      "note": "this commit",
+      "handoff": {
+        "to": "conductor@web-summit.dinis (lead); journalist.examples@web-summit.dinis",
+        "via": "commit For:"
+      }
+    }
+  ],
+  "lead_times": [
+    {
+      "signal": "the storm named (IPMA no. 1)",
+      "published": "2026-11-09T13:17Z",
+      "before_wed_window": "about 46 h 43 min before Wednesday 12:00",
+      "first_read_by_us": "2026-11-10T16:53Z",
+      "lag": "about 27 h 36 min"
+    },
+    {
+      "signal": "the government's alert (schools, outdoor events)",
+      "published": "2026-11-10T12:10Z",
+      "before_wed_window": "11 h 50 min before Wednesday 00:00",
+      "first_read_by_us": "2026-11-10T17:01Z",
+      "lag": "about 4 h 51 min"
+    },
+    {
+      "signal": "the incident declared",
+      "at": "2026-11-10T18:35Z",
+      "after_alert": "about 6 h 25 min after the government's alert; about 29 h after the storm was named"
+    }
+  ],
+  "open_questions": [
+    "Web Summit's decision, and when (nothing at 18:36)",
+    "the Câmara's own measures (unread, 403)",
+    "Metro, CP and the airport (not machine-readable)",
+    "whether measure (b) touches any part of the summit: no source says either way"
+  ]
+}
