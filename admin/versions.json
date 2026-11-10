@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1737",
+    "date": "2026-11-10",
+    "what": "ROADMAP.md, the incident site as a newsroom and a data source for agents, in priority order (Dinis's direction)",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "27d5ca7ae"
+  },
+  {
     "version": "v0.2.1736",
     "date": "2026-11-10",
     "what": "18:55 wake: the ledger line only; no new CRM states",
