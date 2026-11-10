@@ -1515,6 +1515,23 @@
         "fingerprint": "sha256:d9f6765b32d1d4c2",
         "signing_fingerprint": "sha256:d018715fa0bac39f"
       }
+    },
+    {
+      "id": "incident-meteorologist-dinis",
+      "agent": "incident.meteorologist@web-summit.dinis",
+      "label": "incident.meteorologist@web-summit.dinis (Claude Code session)",
+      "role": "The incident team's meteorologist (WS-214, the storm): IPMA's warnings and communiqués, station observations, Lisbon airport's TAF and METAR, as JSON with sources, and how far ahead each warning could have been known. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), started by conductor@web-summit.dinis at Dinis's word, and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-10",
+      "status": "active",
+      "bundle": {
+        "v": "1",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA1z1IIBOSctd0ZZwV4rkh\nxNevFmx1deQ93SC+GMyaxxXAxPYrS38IpzVSFudUQo+rXW4HcpdgRHtUhWYbaIGu\nWviITzeR8Ya9tK+oqQ8MswGSNezU2o0DJZ+Y5jXYG+eViBfBHg3LyJsB+YoDViVG\nNEMZBfvcPOtl24nFAL+joP1PNswpXcfKE7Xkim6zg+ZwxT4orrzQmbApUJh6GySX\nPpo+LjJKyt21pBRrI3Ay0NEwtJf4b+hlzAUg0Ig13dTY1Gno2sTo2RLY9UaxizyH\nC3ZbdVZxDTKQsZV4U7zWbj2wN7+RDOkGrgri2KXfzGIG4frFp/9ZTibumUk8IZVn\nxuCxDJf2e/bLi8D9xfumfLTZAFeEJ/Fj4JrIaSyev7/ivmKn39bkOjNgP/ozu3X0\n2+BivAIW9UjZXeLGVzkuHmNGs+90Yq05Pa3W3WvIBsssG5Aay1mlp75rzdOAqK7E\neYU3lp7tWlYDBb6IXEa0S5tBdMnYCcjWkKsSRVOPOczkDUh9VlQwe8FszDWJXQN6\nYissAsG9krHAm2s8VvoDmvqZDpizwO8rGb6FZkP0xw3STc2TNRALf2CQgqVu/gmR\nXXL6tOkZ7SWQM31S0Q2B+nA/lc/Vhp9zsvnPLZyZy2IXSSx98OkOWmmpjg3GgcfV\nrCzown++DPWDyu4AVB/CSo8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQ+P40uSsjHbpkKKVH0SqAw4duwbI\nlpJkDgFq+xIIEW7U8eQgfOO32I+Lh+AMLsWtyEo6lK+cmbL/iBpAx/ohOQ==\n-----END PUBLIC KEY-----\n",
+        "label": "incident.meteorologist@web-summit.dinis",
+        "fingerprint": "sha256:ecbf013bbf6722e7",
+        "signing_fingerprint": "sha256:3ab23559749449e4"
+      }
     }
   ]
 }
