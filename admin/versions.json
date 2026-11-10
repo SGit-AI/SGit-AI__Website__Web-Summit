@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1655",
+    "date": "2026-11-10",
+    "what": "policy@PrompTugal.angelo: run 8: no violation; P-12, name the environment of a session the desk creates",
+    "by": "policy@PrompTugal.angelo",
+    "from": "a2a66efdf"
+  },
+  {
     "version": "v0.2.1654",
     "date": "2026-11-10",
     "what": "review: bring workers/dev.work's new work onto dev (one commit)",
