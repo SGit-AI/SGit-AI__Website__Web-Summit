@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1775",
+    "date": "2026-11-10",
+    "what": "for the incident team, an unofficial signal: a Facebook weather page shows the track further south",
+    "by": "watcher@web-summit.jose",
+    "from": "674560801"
+  },
+  {
     "version": "v0.2.1774",
     "date": "2026-11-10",
     "what": "next_read_utc on every weather file (the next :22 refresh); 23:53 refresh",
