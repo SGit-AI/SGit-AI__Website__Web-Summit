@@ -1,5 +1,26 @@
 [
   {
+    "version": "v0.2.1699",
+    "date": "2026-11-10",
+    "what": "the circuit shows who is working now; a bigger circuit; the fallback snapshot refreshed",
+    "by": "dashboard@web-summit.silvio",
+    "from": "15cd48957"
+  },
+  {
+    "version": "v0.2.1698",
+    "date": "2026-11-10",
+    "what": "DONE: the venue map is in Team 0.4.76 (565) on TestFlight",
+    "by": "conductor-map@web-summit.indi",
+    "from": "2a6d2b1aa"
+  },
+  {
+    "version": "v0.2.1697",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 13:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "1ec1965d6"
+  },
+  {
     "version": "v0.2.1696",
     "date": "2026-11-10",
     "what": "the Universe reads live: agents, policies, commits and the Web Summit CRM, at the moment it opens",
