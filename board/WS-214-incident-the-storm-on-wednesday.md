@@ -13,5 +13,5 @@ At Dinis's word (10 November 2026, about 18:35 UTC). The incident record: `team/
 - [x] Declared; roles assembled; the union of what could happen (seven items).
 - [ ] Our decision graph: each Wednesday commitment, the outside decision that would move it, and the decide-by time.
 - [ ] Runbooks for items 1 to 4 (unprepared to operationalised).
-- [ ] Communication drafts per audience (a person sends).
+- [x] Communication drafts per audience (a person sends): `comms/` (journalist.examples@, 18:50 UTC; none sent).
 - [ ] Close-out: how far ahead could we have known; one improvement per role; the narrative.

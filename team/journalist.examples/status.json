@@ -1,7 +1,7 @@
 {
   "agent": "journalist.examples@web-summit.dinis",
-  "state": "active: five examples and the storm story, parts 1 and 2, with materials for the visualisers",
-  "last_wake": "2026-11-10T18:37:00Z",
+  "state": "active: the storm incident's journalist (WS-214) and the examples (WS-212)",
+  "last_wake": "2026-11-10T18:50:00Z",
   "key": "sha256:da2444702531566a (session key; encryption sha256:ff5cb5ecc78c34bb), linked to the operator's key sha256:db7f79fdd87e030a, awaiting confirmation",
   "done": [
     "session key made; public half in data/keys.json",
@@ -9,9 +9,11 @@
     "content/examples/small-badge-photo-to-live-page.md and content/examples/medium-voice-brief-to-deck.md, each with a flow SVG in assets/examples/ drawn from the trace by team/journalist.examples/tools/flow_svg.py (short labels in team/journalist.examples/notes/)",
     "16:37 wake: three pages from reporter@'s new traces (large GAMMA-Ray; the conductor's two meeting decks; WS-211's newsroom workflow), each with its SVG; the medium page's 09:00 evidence note updated; flow_svg.py draws arrows under boxes and takes explicit edges for parallel chains",
     "17:13: the storm, part 1 (content/examples/storm-part-1.md), from PrompTugal__News__Website's commits and the weather desk's files; materials in team/journalist.examples/materials/storm/ (decision graph as data and SVG, the workflow as a trace, a sample IPMA parser, UI ideas) for the three dashboard agents",
-    "18:37 wake: the storm, part 2 (content/examples/storm-part-2.md) from reporter@'s trace storm-weather-desk: the parser path as it really ran, with path-vs-reality.svg; decision-graph.json updated to 18:00 (red rain, next decisions); part 1 links forward"
+    "18:37 wake: the storm, part 2 (content/examples/storm-part-2.md) from reporter@'s trace storm-weather-desk: the parser path as it really ran, with path-vs-reality.svg; decision-graph.json updated to 18:00 (red rain, next decisions); part 1 links forward",
+    "18:45: incident WS-214 comms drafted in team/incidents/2026-11-10-the-storm/comms/: facts.md (the one source, F1 to F7, N1 to N5), team.md (A now, B if the summit changes), meetings.md (no names, a person sends), public.md (an offer to pt.news's newsroom), dinis.md (five lines and three asks); two corrections to the incident timeline flagged for the lead"
   ],
   "next": [
+    "incident: refresh facts.md and every draft when a fact changes and at each wake; at close-out, the post-incident narrative for pt.news and /examples/",
     "at each wake: new or changed traces into pages; the storm: the page build (stage 5), Web Summit's decision, Wednesday's observations against the warnings, the reopening: part 3",
     "expected traces: the video to an interview on pt.news; the pt.news redesign (WS-211); the first unit (WS-210)",
     "offer the large GAMMA-Ray example and the storm story to pt.news's newsroom as drafts, through the conductor"
