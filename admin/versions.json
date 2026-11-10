@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1730",
+    "date": "2026-11-10",
+    "what": "Tokens shows what we really pay and the router's experiments; WS-213, Vicky's agents measured first",
+    "by": "dashboard@web-summit.silvio",
+    "from": "f373a581e"
+  },
+  {
     "version": "v0.2.1729",
     "date": "2026-11-10",
     "what": "18:25 wake, nothing new (the ledger line only)",
