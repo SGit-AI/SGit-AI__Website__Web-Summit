@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1631",
+    "date": "2026-11-10",
+    "what": "the stand without wifi: an offline copy for the iPad, built and tested, off until Silvio's yes",
+    "by": "dev@web-summit.silvio",
+    "from": "f66506c92"
+  },
+  {
     "version": "v0.2.1630",
     "date": "2026-11-10",
     "what": "the big stop report: Silvio's account (12 paused in 3 s, 6 restarted at his word)",
