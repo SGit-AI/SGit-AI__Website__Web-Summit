@@ -1,5 +1,6 @@
 {
- "about": "What each refresh found changed, newest last. Written by tools/refresh.py.",
+ "gusts_above_warned": [],
+ "about": "gusts_above_warned (first): every LPPT METAR gust from Wed 05:00 above the gust warned for that hour (the IPMA wind warning in force, from its text; outside a wind warning, the highest gust in the TAF groups covering that hour). Facts, each with its source. Then what each refresh found changed, newest last. Written by tools/refresh.py.",
  "runs": [
   {
    "read_utc": "2026-11-10T19:01:07Z",
@@ -10,6 +11,13 @@
     "new LPPT TAF 10T17:00: TAF LPPT 101700Z 1018/1124 23013KT 9999 ...",
     "LPPT METAR 18:30: 15 km/h",
     "IPMA hourly forecast updated 2026-11-10T07:55:56"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-10T19:07:26Z",
+   "changes": [
+    "LPPT METAR 19:00: 19 km/h"
    ],
    "errors": []
   }

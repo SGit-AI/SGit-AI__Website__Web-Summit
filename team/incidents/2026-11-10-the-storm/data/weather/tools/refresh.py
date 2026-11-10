@@ -289,6 +289,27 @@ def forecast():
     return out
 
 
+def gusts_above_warned(w, a):
+    """METAR gusts from Wed 05:00 above the gust warned for that hour (facts; no analysis)."""
+    out, wind = [], [x for x in (w.get('lisbon') or []) if x['type'] == 'Vento']
+    groups = (a.get('taf') or {}).get('groups') or []
+    for m in a.get('metars') or []:
+        if m['time_utc'] < '2026-11-11T05:00Z' or not m.get('gust_kmh'):
+            continue
+        t = m['time_utc'][:16]
+        warn = next((x for x in wind if x['start_utc'][:16] <= t < x['end_utc'][:16]), None)
+        if warn:
+            nums = [int(n) for n in re.findall(r'(\d+) km/h', warn['text_pt'])]
+            warned, by = (min(nums) if nums else None), f"IPMA {warn['level']} wind warning: {warn['text_pt']}"
+        else:
+            g = [x['gust_kmh'] for x in groups if x['gust_kmh'] and x['from_utc'] and x['from_utc'] <= t < x['to_utc']]
+            warned, by = (max(g) if g else None), 'no IPMA wind warning in force; highest TAF gust for that hour'
+        if warned and m['gust_kmh'] > warned:
+            out.append({'time_utc': m['time_utc'], 'gust_kmh': m['gust_kmh'], 'gust_kt': m['gust_kt'], 'warned_kmh': warned,
+                        'warned_by': by, 'metar': m['raw'], 'source': m['source'], 'read_utc': m['read_utc']})
+    return out
+
+
 def main():
     w, c, s, a, f = warnings(), communiques(), stations(), airport(), forecast()
     for name, obj in (('warnings.json', w), ('communiques.json', c), ('stations.json', s), ('airport.json', a), ('forecast.json', f)):
@@ -313,9 +334,14 @@ def main():
         'forecast_ipma_red_wind_warning': wind and {'gusts_kmh': '120, up to 140 in the most exposed places', **wind},
         'forecast_ipma_hourly_wed_peak_mean': (f.get('hourly') or {}).get('wed_peak') and {**f['hourly']['wed_peak'], 'source': U['hourly'], 'read_utc': NOW},
     })
-    log = load('changes.json', {'about': 'What each refresh found changed, newest last. Written by tools/refresh.py.', 'runs': []})
+    log = load('changes.json', {'runs': []})
+    above = gusts_above_warned(w, a)
+    if above and len(above) > len(log.get('gusts_above_warned', [])):
+        changes.insert(0, f"OBSERVED GUST ABOVE WARNED: {above[-1]['gust_kmh']} km/h at {above[-1]['time_utc']} (warned {above[-1]['warned_kmh']})")
     log['runs'].append({'read_utc': NOW, 'changes': changes or ['no change'], 'errors': errors})
-    save('changes.json', log)
+    save('changes.json', {'gusts_above_warned': above,
+                          'about': 'gusts_above_warned (first): every LPPT METAR gust from Wed 05:00 above the gust warned for that hour (the IPMA wind warning in force, from its text; outside a wind warning, the highest gust in the TAF groups covering that hour). Facts, each with its source. Then what each refresh found changed, newest last. Written by tools/refresh.py.',
+                          'runs': log['runs']})
     print(NOW, '|', '; '.join(changes) or 'no change', '| errors:', len(errors))
     return 1 if errors else 0
 

@@ -1,7 +1,7 @@
 {
  "about": "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). Warnings carry no issue time in IPMA's feed: an issue time comes from a read or from press, and says which.",
  "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
- "read_utc": "2026-11-10T19:01:07Z",
+ "read_utc": "2026-11-10T19:07:26Z",
  "lisbon_peak_level": "red",
  "lisbon": [
   {
@@ -11,7 +11,7 @@
    "end_utc": "2026-11-11T06:00:00Z",
    "text_pt": "Ondas do quadrante oeste com 4 a 5 metros.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T19:01:07Z"
+   "read_utc": "2026-11-10T19:07:26Z"
   },
   {
    "type": "Agitação Marítima",
@@ -20,7 +20,7 @@
    "end_utc": "2026-11-11T21:00:00Z",
    "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T19:01:07Z"
+   "read_utc": "2026-11-10T19:07:26Z"
   },
   {
    "type": "Agitação Marítima",
@@ -29,7 +29,7 @@
    "end_utc": "2026-11-12T03:00:00Z",
    "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T19:01:07Z"
+   "read_utc": "2026-11-10T19:07:26Z"
   },
   {
    "type": "Precipitação",
@@ -38,7 +38,7 @@
    "end_utc": "2026-11-11T12:00:00Z",
    "text_pt": "Precipitação por vezes forte e persistente.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T19:01:07Z"
+   "read_utc": "2026-11-10T19:07:26Z"
   },
   {
    "type": "Precipitação",
@@ -47,7 +47,7 @@
    "end_utc": "2026-11-11T18:00:00Z",
    "text_pt": "Precipitação forte e persistente.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T19:01:07Z"
+   "read_utc": "2026-11-10T19:07:26Z"
   },
   {
    "type": "Vento",
@@ -56,12 +56,12 @@
    "end_utc": "2026-11-11T21:00:00Z",
    "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T19:01:07Z"
+   "read_utc": "2026-11-10T19:07:26Z"
   }
  ],
  "red_and_orange_elsewhere": {
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-10T19:01:07Z",
+  "read_utc": "2026-11-10T19:07:26Z",
   "items": [
    {
     "area": "BJA",
