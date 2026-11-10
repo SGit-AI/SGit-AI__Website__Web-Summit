@@ -1,10 +1,10 @@
 {
  "thursday": {
   "about": "Thursday 12 November (Web Summit's day 3): every IPMA warning for Lisbon that touches Thursday, and what IPMA's model and the airport TAF say for Thursday morning (00:00-12:00 UTC = Lisbon time). Facts, each with its source; no analysis here.",
-  "read_utc": "2026-11-10T20:22:38Z",
+  "read_utc": "2026-11-10T21:18:43Z",
   "lisbon_warnings_touching_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-10T20:22:38Z",
+   "read_utc": "2026-11-10T21:18:43Z",
    "items": [
     {
      "type": "Agitação Marítima",
@@ -13,23 +13,23 @@
      "end_utc": "2026-11-12T03:00:00Z",
      "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
      "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-     "read_utc": "2026-11-10T20:22:38Z"
+     "read_utc": "2026-11-10T21:18:43Z"
     }
    ],
    "none_above_yellow": true
   },
   "ipma_model_thursday_morning": {
    "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-   "read_utc": "2026-11-10T20:22:38Z",
+   "read_utc": "2026-11-10T21:18:43Z",
    "model_updated_local": "2026-11-10T07:55:56",
    "wind_mean_kmh_range": [
-    18.0,
-    23.8
+    16.2,
+    24.1
    ],
    "wind_dirs": [
     "W"
    ],
-   "rain_prob_pct_max": 88.0,
+   "rain_prob_pct_max": 90.0,
    "sea_total_m_range": [
     3.2,
     3.6
@@ -37,117 +37,117 @@
    "rows": [
     {
      "time_utc": "2026-11-12T00:00Z",
-     "wind_mean_kmh": 18.7,
+     "wind_mean_kmh": 16.2,
      "wind_dir": "W",
-     "rain_prob_pct": 80.0,
+     "rain_prob_pct": 55.0,
      "rain_intensity_class": 1,
-     "temp_c": 17.1,
+     "temp_c": 16.6,
      "sea_total_m": 3.2
     },
     {
      "time_utc": "2026-11-12T01:00Z",
-     "wind_mean_kmh": 21.2,
+     "wind_mean_kmh": 16.9,
      "wind_dir": "W",
      "rain_prob_pct": null,
-     "rain_intensity_class": 1,
+     "rain_intensity_class": 2,
      "temp_c": 16.9,
      "sea_total_m": 3.2
     },
     {
      "time_utc": "2026-11-12T02:00Z",
-     "wind_mean_kmh": 22.0,
-     "wind_dir": "W",
-     "rain_prob_pct": null,
-     "rain_intensity_class": 1,
-     "temp_c": 16.9,
-     "sea_total_m": 3.3
-    },
-    {
-     "time_utc": "2026-11-12T03:00Z",
-     "wind_mean_kmh": 22.7,
-     "wind_dir": "W",
-     "rain_prob_pct": 82.0,
-     "rain_intensity_class": 1,
-     "temp_c": 15.7,
-     "sea_total_m": 3.3
-    },
-    {
-     "time_utc": "2026-11-12T04:00Z",
-     "wind_mean_kmh": 21.2,
-     "wind_dir": "W",
-     "rain_prob_pct": null,
-     "rain_intensity_class": 1,
-     "temp_c": 16.9,
-     "sea_total_m": 3.4
-    },
-    {
-     "time_utc": "2026-11-12T05:00Z",
-     "wind_mean_kmh": 21.6,
-     "wind_dir": "W",
-     "rain_prob_pct": null,
-     "rain_intensity_class": 1,
-     "temp_c": 17.2,
-     "sea_total_m": 3.4
-    },
-    {
-     "time_utc": "2026-11-12T06:00Z",
-     "wind_mean_kmh": 20.5,
-     "wind_dir": "W",
-     "rain_prob_pct": 88.0,
-     "rain_intensity_class": 1,
-     "temp_c": 16.7,
-     "sea_total_m": 3.5
-    },
-    {
-     "time_utc": "2026-11-12T07:00Z",
-     "wind_mean_kmh": 19.1,
-     "wind_dir": "W",
-     "rain_prob_pct": null,
-     "rain_intensity_class": 2,
-     "temp_c": 16.7,
-     "sea_total_m": 3.5
-    },
-    {
-     "time_utc": "2026-11-12T08:00Z",
      "wind_mean_kmh": 18.0,
      "wind_dir": "W",
      "rain_prob_pct": null,
      "rain_intensity_class": 2,
-     "temp_c": 16.8,
+     "temp_c": 16.1,
+     "sea_total_m": 3.3
+    },
+    {
+     "time_utc": "2026-11-12T03:00Z",
+     "wind_mean_kmh": 20.9,
+     "wind_dir": "W",
+     "rain_prob_pct": 88.0,
+     "rain_intensity_class": 2,
+     "temp_c": 16.4,
+     "sea_total_m": 3.3
+    },
+    {
+     "time_utc": "2026-11-12T04:00Z",
+     "wind_mean_kmh": 19.8,
+     "wind_dir": "W",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 1,
+     "temp_c": 16.6,
+     "sea_total_m": 3.4
+    },
+    {
+     "time_utc": "2026-11-12T05:00Z",
+     "wind_mean_kmh": 18.7,
+     "wind_dir": "W",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 1,
+     "temp_c": 16.4,
+     "sea_total_m": 3.4
+    },
+    {
+     "time_utc": "2026-11-12T06:00Z",
+     "wind_mean_kmh": 18.4,
+     "wind_dir": "W",
+     "rain_prob_pct": 84.0,
+     "rain_intensity_class": 1,
+     "temp_c": 16.4,
+     "sea_total_m": 3.5
+    },
+    {
+     "time_utc": "2026-11-12T07:00Z",
+     "wind_mean_kmh": 17.3,
+     "wind_dir": "W",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 1,
+     "temp_c": 15.3,
+     "sea_total_m": 3.5
+    },
+    {
+     "time_utc": "2026-11-12T08:00Z",
+     "wind_mean_kmh": 17.6,
+     "wind_dir": "W",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 1,
+     "temp_c": 16.3,
      "sea_total_m": 3.6
     },
     {
      "time_utc": "2026-11-12T09:00Z",
-     "wind_mean_kmh": 19.4,
+     "wind_mean_kmh": 17.3,
      "wind_dir": "W",
-     "rain_prob_pct": 65.0,
-     "rain_intensity_class": 2,
-     "temp_c": 18.4,
+     "rain_prob_pct": 67.0,
+     "rain_intensity_class": 1,
+     "temp_c": 17.6,
      "sea_total_m": 3.6
     },
     {
      "time_utc": "2026-11-12T10:00Z",
-     "wind_mean_kmh": 19.1,
+     "wind_mean_kmh": 18.0,
      "wind_dir": "W",
      "rain_prob_pct": null,
-     "rain_intensity_class": 2,
-     "temp_c": 18.9,
+     "rain_intensity_class": 1,
+     "temp_c": 19.0,
      "sea_total_m": 3.6
     },
     {
      "time_utc": "2026-11-12T11:00Z",
-     "wind_mean_kmh": 19.4,
+     "wind_mean_kmh": 22.0,
      "wind_dir": "W",
      "rain_prob_pct": null,
-     "rain_intensity_class": 2,
-     "temp_c": 19.8,
+     "rain_intensity_class": 1,
+     "temp_c": 19.6,
      "sea_total_m": 3.6
     },
     {
      "time_utc": "2026-11-12T12:00Z",
-     "wind_mean_kmh": 23.8,
+     "wind_mean_kmh": 24.1,
      "wind_dir": "W",
-     "rain_prob_pct": 88.0,
+     "rain_prob_pct": 90.0,
      "rain_intensity_class": 1,
      "temp_c": 21.1,
      "sea_total_m": 3.6
@@ -156,10 +156,10 @@
   },
   "ipma_daily_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-   "read_utc": "2026-11-10T20:22:38Z",
-   "updated_local": "2026-11-10T19:31:03",
+   "read_utc": "2026-11-10T21:18:43Z",
+   "updated_local": "2026-11-10T20:31:02",
    "precipitaProb": "100.0",
-   "tMin": "15.7",
+   "tMin": "15.3",
    "tMax": "21.1",
    "predWindDir": "W",
    "idWeatherType": 7,
@@ -171,7 +171,7 @@
   },
   "taf_groups_into_thursday": {
    "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-   "read_utc": "2026-11-10T20:22:38Z",
+   "read_utc": "2026-11-10T21:18:43Z",
    "taf_issue_utc": "2026-11-10T17:00Z",
    "taf_valid_to_utc": "2026-11-12T00:00Z",
    "groups": []
@@ -220,6 +220,15 @@
    "read_utc": "2026-11-10T20:22:38Z",
    "changes": [
     "LPPT METAR 20:00: 24 km/h"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-10T21:18:43Z",
+   "changes": [
+    "THURSDAY: warnings yellow Agitação Marítima 11T21:00-12T03:00; model Thu 00-12 mean wind 16.2-24.1 km/h",
+    "stations to 20:00: top mean wind 17.6 km/h at Lisboa, Relógio",
+    "LPPT METAR 21:00: 24 km/h"
    ],
    "errors": []
   }
