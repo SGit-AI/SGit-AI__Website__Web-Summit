@@ -2,7 +2,7 @@
 title: "The individual: from a photo to a unit"
 summary: "Dinis's next altitude (10 November 2026). Take a photo of a person's badge, and a sequence starts: the person goes into the private CRM, public research runs, a unit of agents starts for them, and every step lands on a Kanban board in the Team app. The unit's work is visible: how many agents, who did what, and when."
 ---
-At Dinis's word (10 November 2026, about 12:30 UTC, a voice brief after a meeting the night before), WS-209. Last night two people from one company told Dinis they were interested in RiskMandate. Most of the team is already talking to many people like them. The bigger altitude is done (GAMMA-Ray, pt.news, the apps; what Silvio and Andrew have been doing). **Now the individual is the key piece of the puzzle**, and this page maps the pipeline that starts from one photo.
+At Dinis's word (10 November 2026, about 12:30 UTC, a voice brief after a meeting the night before), WS-210. Last night two people from one company told Dinis they were interested in RiskMandate. Most of the team is already talking to many people like them. The bigger altitude is done (GAMMA-Ray, pt.news, the apps; what Silvio and Andrew have been doing). **Now the individual is the key piece of the puzzle**, and this page maps the pipeline that starts from one photo.
 
 > Dinis: "I need to be able to take a photo of a person, and that needs to trigger a sequence of events that will create research on the person that will start a new agentic team for that ... we need to visualize all the work that was done in the unit ... how many agents and what everybody did."
 

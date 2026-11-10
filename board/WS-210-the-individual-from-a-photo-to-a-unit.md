@@ -1,5 +1,5 @@
 ---
-id: WS-209
+id: WS-210
 title: "The individual: from a badge photo to research, a unit of agents and a Kanban card, with the unit's work made visible"
 area: tech
 for: everyone
