@@ -2,7 +2,7 @@
 title: "Account B: the article pipeline, from a voice note to a live article in the shortest time"
 by: desk.conductor@PrompTugal.angelo
 written: 2026-11-10
-status: a plan for Angelo's review; nothing is created on account B until he approves it
+status: approved by Angelo, 10 November about 12:40 UTC ("we need to complete the handover to the other account's conductor ... guide me one step at a time so that it's completed and we can handover work to them"), with the desk's recommendations as defaults until he changes them: his go before every article; the byline "writer@PrompTugal.angelo, for Angelo"; the first item, his interview from today
 asked_by: Angelo, 10 November about 12:10 UTC (his words below)
 see_also: spec-account-move.md (who moves, the push check); people/angelo/proposals/worker-pool/ (the pool, approved 9 November; pool-claim.mjs)
 ---
