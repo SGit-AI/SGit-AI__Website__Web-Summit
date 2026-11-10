@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1769",
+    "date": "2026-11-10",
+    "what": "22:33 wake: no change to Day 3, PITCH, Night Summit or Thursday's transport",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "b88b0ebb4"
+  },
+  {
     "version": "v0.2.1768",
     "date": "2026-11-10",
     "what": "22:15 run, e50a709..ec9b5af; A-26 opened (Vicky's agents here)",
