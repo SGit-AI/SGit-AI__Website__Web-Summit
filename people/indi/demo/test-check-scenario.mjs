@@ -34,6 +34,14 @@ expect('broken-size-sources-dash fails on count, size, source and dash', check(r
 { const d = read('example-scenario.json'); d.scenario.task += ' Copy reports{AT}northpoint.com.'
   expect('a real domain followed by a full stop still fails', check(d), ['northpoint.com does not end in .example']) }
 
+// the ABP as the runner reads it (review of dev.abp@'s runner, 10 November)
+{ const d = read('example-scenario.json'); d.abp = '# ABP\nReach: ...'
+  expect('an ABP written as plain text fails', check(d), ['abp is not an object']) }
+{ const d = read('example-scenario.json'); d.abp = { rung: 4, text: '# ABP' }
+  expect('an ABP with no mandate fails', check(d), ['abp.mandate is missing']) }
+{ const d = read('example-scenario.json'); d.abp = { mandate: 'Send each partner its own weekly report, and nothing else', rung: 4, text: '# ABP' }
+  expect('an ABP with a mandate passes', check(d), []) }
+
 // Angelo's own scenarios, read only: the format check must accept what his runner already runs
 const angelo = path.join(here, '../../angelo/proposals/abp-live/stories/reach/scenarios.mjs')
 if (fs.existsSync(angelo)) {
