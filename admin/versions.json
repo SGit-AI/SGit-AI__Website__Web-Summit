@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1712",
+    "date": "2026-11-10",
+    "what": "run 14, 116 commits: one MEDIUM (the event app reads videos from an SGit vault at an unpinned https host, 6c8ccd0); stated in its commit",
+    "by": "security.repos@web-summit.dinis",
+    "from": "b6576d1b0"
+  },
+  {
     "version": "v0.2.1711",
     "date": "2026-11-10",
     "what": "Wednesday's post drafted: tomorrow at our stand",
