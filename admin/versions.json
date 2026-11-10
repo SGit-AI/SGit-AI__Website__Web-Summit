@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1735",
+    "date": "2026-11-10",
+    "what": "incident timeline: sweep 1's times corrected (18:45 to 18:50); no organiser decision at 18:53",
+    "by": "conductor@web-summit.dinis",
+    "from": "9c49c0cbd"
+  },
+  {
     "version": "v0.2.1734",
     "date": "2026-11-10",
     "what": "incident timeline: social.watch@'s signals; the government recommends suspending Web Summit on Wednesday (17:53)",
