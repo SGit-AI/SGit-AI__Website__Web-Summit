@@ -10,8 +10,8 @@ Angelo, 10 November about 00:30 UTC, on the live map with the dumbbell: *"the ba
 ## What to build (drawing and time only; the data and the engine's rules stay)
 
 - **Drag back = see that moment at once,** as the replay does: the graph, the counts and (on Workstreams and Deliverables) the dumbbell's routes as they were then, its seven days ending at that moment, the date line saying when. While paused, nothing moves except the steady flow.
-- **A play button:** an icon (▶ / ❚❚, no text), at the dial's left. Pressed: from **the start of what live.json holds** (2 November), time runs at **6 hours a second**; exchanges and deliveries fly as they happen in that time, the dial's thumb and the date line move with it, the routes' widths follow the week ending at the moment shown. Pressed again: pause where it is. At the end it reaches live and stops. **Live** returns at once.
-- **Speed:** 6 hours a second (21,600 times real time), fixed, as asked; 48 hours a minute of data take about 8 seconds a day.
+- **Play buttons** (below: two speeds): an icon (▶ / ❚❚, no text), at the dial's left. Pressed: from **the start of what live.json holds** (2 November), time runs at **6 hours a second**; exchanges and deliveries fly as they happen in that time, the dial's thumb and the date line move with it, the routes' widths follow the week ending at the moment shown. Pressed again: pause where it is. At the end it reaches live and stops. **Live** returns at once.
+- **Two speeds, two icons** (Angelo, about 00:40: *"It could actually have a single play for the slow 1h / sec and the FF symbol for the 6h/sec"*): **▶ play at 1 hour a second**, **⏩ fast forward at 6 hours a second**. Pressing either while it runs switches speed; pressing the running one again pauses (its icon shows ❚❚ while it runs).
 - **Phones:** the button at least 44 px; the dial usable with a thumb.
 - **Tests:** the dial dragged back changes what is drawn (lit lines, the date line, the dumbbell's routes); play advances the date line about 6 hours a second; Live returns to now.
 
