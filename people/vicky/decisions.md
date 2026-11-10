@@ -123,6 +123,7 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **02:55, 03:01, 03:07 and 04:00, 04:06, 04:12 writers' fix-only runs:** revise any batch draft the reviewer marked Fix first; silent if nothing to fix.
     - **04:50 conductor:** check every one-off wake fired and is disabled, record what is live and what is blocked, and tell Vicky the live URLs and any remaining blockers.
     - No company pages (standing answer 24), no Gmail, nothing private. Every report line ends with the P3 status block and says "OVERNIGHT-10NOV".
+    - **Closed 10 Nov, 04:50 UTC:** four articles live, all four commissioned (the curator found four viable of six candidates): S40 Gravitee (summit), S37 Teamworks (AI), S38 Glovo and GetVocal, S39 WPP (Connections); every one-off wake fired and none is left enabled (the researcher's pass was started by hand). Not commissioned: Terrapinn (no outcome figures, one vendor source) and the Klarna backup (2024, not a Web Summit participant); gaps routed to the researcher. Researcher and curator applied SA29 (each changed its own task's prompt).
 
 ## Updates for agents
 
