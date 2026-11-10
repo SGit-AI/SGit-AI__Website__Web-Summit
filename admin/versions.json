@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1679",
+    "date": "2026-11-10",
+    "what": "writer@PrompTugal.jose drafts Jose's social posts (WS-208), Jose sends them",
+    "by": "conductor@web-summit.jose",
+    "from": "b4665f358"
+  },
+  {
     "version": "v0.2.1678",
     "date": "2026-11-10",
     "what": "start: session key, policy, this week's plan and three post drafts for Silvio's review",
