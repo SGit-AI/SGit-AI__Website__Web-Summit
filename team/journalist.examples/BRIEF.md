@@ -60,7 +60,7 @@ This goes with WS-211 (pt.news is about agents; the workflow is the picture) and
 - **Budget:** keep each wake small and say in the commit what you did. accountant@ tracks the spend.
 - If you are blocked by your environment (a missing tool, a refused host), say so first, in your commit and in `team/<you>/status.json` under "asks".
 
-## Added 10 November, about 17:25 UTC: the work desk, materials for the visualisers, and the storm
+## Added 10 November, about 17:10 UTC: the work desk, materials for the visualisers, and the storm
 
 At Dinis's word (his voice memos, filed in PrompTugal__News__Website `board/guidance/2026-11-10-the-storm-as-our-case-study.md`):
 
