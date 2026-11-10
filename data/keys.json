@@ -1498,6 +1498,23 @@
         "fingerprint": "sha256:2df48a3207ec20ae",
         "signing_fingerprint": "sha256:fa135665c51ee284"
       }
+    },
+    {
+      "id": "incident-researcher-dinis",
+      "agent": "incident.researcher@web-summit.dinis",
+      "label": "incident.researcher@web-summit.dinis (Claude Code session)",
+      "role": "The incident team's researcher (WS-214): the official sources and who decides what (IPMA, ANEPC, the government, the Câmara, schools, transport, Web Summit, side events); the decision graph with its evidence and lead times; every source mapped. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), started by conductor@web-summit.dinis at Dinis's word, and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-10",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAhbI5UeA7M6kjBGMkfNou\nrWROn8Opu2E/MFDR6rp0jiZu/9/BmsoECK/38Fexaubllooli8eb2JKWXgiba4PB\nQOnksaUxHBmyIPtCR6BEIT+lqe3tN4SCtrprnY1TYPG98SI1M3E55RYTZoHFYiGM\nu9MMDFehof8abd0VjK0S5xy6yokHgm4Sod9cE8Jnmkj1MPecTpTb83/9Qw7PpQxK\nTiDRFh8AsT60u5G9pENRXcwurwi66Zd53oNVy1C0QGmURKgtFUK64VbLWJkTDoOv\nKA+hljJyC4Rl+MXK0L3Sj4yWYL0AdKR+TOi9oJ05TngnnB/85Z8XaWm3RtqD6J4v\nDsJ/8Affg5DkpGfPlOS3KCnoA9tpdmb5eKw0vmiy8wAyRftwtV9huaAwde8smNH4\nsiBnEPqgRkD5fGLLp8ejhV+4U1q1LxS6oYT5GeCKi9yLPU6ZeSKPx4PVpXGzte61\nX5RUxQUqIbx0DJqInbyQIul6k8+OErYkAGzGvLWHxuRtR4MGTPN6pJnDt+gP0m2b\n/6/sx7PsFhhblDkmam6EYfHFQh2/8CV4+ym5dwJZWzwTzdTBbsP2hIEvGZyVjLnA\nagVMxUUe+4VnP6YAFhDt8kjj80dv6woAC85nS0dGZkk4hl4u/YSatAcLv7C4kGqz\n1vXkQFlQRRPJcrGvgK+gqo8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE8WcFcpRqz67nvTYlSUf6vzEfn5op\nMRfUNnPGmrGqPl/N6aWCoBgMwx1otM4OqKjI5zMZAiZYkNAGkEvB8SERhQ==\n-----END PUBLIC KEY-----\n",
+        "label": "incident.researcher@web-summit.dinis",
+        "fingerprint": "sha256:d9f6765b32d1d4c2",
+        "signing_fingerprint": "sha256:d018715fa0bac39f"
+      }
     }
   ]
 }

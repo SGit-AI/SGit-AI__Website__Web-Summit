@@ -1,0 +1,293 @@
+{
+ "about": "Every source incident.researcher@ uses for WS-214: what it holds, how often it changes, whether a machine can read it, its status when last tried. parser_ask = the part we ask incident.dev@ to parse.",
+ "updated": "2026-11-10T19:00Z",
+ "sources": [
+  {
+   "id": "websummit-home",
+   "url": "https://websummit.com/",
+   "holds": "Organiser home page; any notice about the programme",
+   "changes": "on announcement",
+   "machine_readable": "partly: server-rendered HTML (Next.js, __NEXT_DATA__ embedded)",
+   "status": "200",
+   "read": "2026-11-10T18:58Z"
+  },
+  {
+   "id": "websummit-news",
+   "url": "https://websummit.com/news/",
+   "holds": "Organiser news list",
+   "changes": "on announcement",
+   "machine_readable": "partly: HTML",
+   "status": "200",
+   "read": "2026-11-10T18:58Z"
+  },
+  {
+   "id": "websummit-sitemap",
+   "url": "https://websummit.com/sitemap.xml",
+   "holds": "Every page URL with lastmod: a new page (e.g. a weather update) shows here",
+   "changes": "on every page change",
+   "machine_readable": "yes: XML",
+   "status": "200 at 19:01Z; some entries carry the request time as lastmod, others a real one (e.g. a 2024 post \"A Web Summit update\", lastmod 2026-08-10): watch the URL set, not lastmod",
+   "read": "2026-11-10T19:01Z",
+   "parser_ask": "diff the <loc> set between reads; alert on any new URL matching weather|update|wednesday|safety|storm"
+  },
+  {
+   "id": "websummit-x",
+   "url": "https://x.com/WebSummit",
+   "holds": "Organiser posts on X",
+   "changes": "minutes",
+   "machine_readable": "no: login wall (JavaScript shell)",
+   "status": "200, no content",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "websummit-instagram",
+   "url": "https://www.instagram.com/websummit/",
+   "holds": "Organiser posts on Instagram",
+   "changes": "hours",
+   "machine_readable": "no: login wall",
+   "status": "200, no content",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "websummit-linkedin",
+   "url": "https://www.linkedin.com/company/web-summit/",
+   "holds": "Organiser posts on LinkedIn",
+   "changes": "hours",
+   "machine_readable": "no",
+   "status": "403",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "websummit-bluesky",
+   "url": "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=websummit.com",
+   "holds": "Organiser posts on Bluesky, if that is its handle",
+   "changes": "minutes",
+   "machine_readable": "yes: JSON API",
+   "status": "400 InvalidRequest: handle websummit.com not found; real handle unknown",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "websummit-app",
+   "url": "https://websummit.com/essentials/app/",
+   "holds": "The attendee app (push notices)",
+   "changes": "minutes",
+   "machine_readable": "no: needs a ticket login",
+   "status": "not tried",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "jn-live",
+   "url": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "holds": "Press live blog: organiser, government, city, transport statements, timestamped (HHhMM, Lisbon = UTC)",
+   "changes": "minutes",
+   "machine_readable": "partly: HTML entries with times",
+   "status": "200 (last entry 18:24)",
+   "read": "2026-11-10T18:58Z",
+   "parser_ask": "entries as JSON {time, author, title, text}; alert on Web Summit mentions"
+  },
+  {
+   "id": "ipma-warnings",
+   "url": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "holds": "All warnings by area (LSB = Lisbon), level, type, start, end, text",
+   "changes": "on issue (several times a day)",
+   "machine_readable": "yes: JSON",
+   "status": "200",
+   "read": "2026-11-10T18:59Z",
+   "note": "No issue time in the JSON; the meteorologist owns this source."
+  },
+  {
+   "id": "ipma-communiques",
+   "url": "https://www.ipma.pt/resources.www/rss/comunicados.xml",
+   "holds": "Special communiqués (CHARLES no. 2, 17:07:58)",
+   "changes": "on issue",
+   "machine_readable": "yes: RSS",
+   "status": "200",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "gov-alert",
+   "url": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+   "holds": "The alert declaration and its measures",
+   "changes": "once, or on amendment",
+   "machine_readable": "partly: HTML",
+   "status": "200",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "gov-news",
+   "url": "https://www.portugal.gov.pt/pt/gc25/comunicacao/noticias",
+   "holds": "Government news list (a new declaration or recommendation)",
+   "changes": "hours",
+   "machine_readable": "partly: HTML; list items not matched in a plain-text read",
+   "status": "200",
+   "read": "2026-11-10T18:58Z",
+   "parser_ask": "news list as JSON {date, title, url}"
+  },
+  {
+   "id": "anepc-news",
+   "url": "https://prociv.gov.pt/pt/noticias/",
+   "holds": "ANEPC news and communiqués (10.11 \"Depressão Charles | Medidas Preventivas\")",
+   "changes": "hours",
+   "machine_readable": "partly: HTML",
+   "status": "200",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "anepc-avisos",
+   "url": "https://prociv.gov.pt/pt/avisos-a-populacao/",
+   "holds": "Public warnings (Aviso 21)",
+   "changes": "on issue",
+   "machine_readable": "partly: HTML",
+   "status": "connection failed (000) at 18:58Z; 200 for weather@ at 16:57Z",
+   "read": "2026-11-10T18:58Z"
+  },
+  {
+   "id": "mai",
+   "url": "https://www.mai.gov.pt/",
+   "holds": "Interior Ministry statements",
+   "changes": "hours",
+   "machine_readable": "unknown",
+   "status": "connection failed (000)",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "lisboa",
+   "url": "https://www.lisboa.pt/",
+   "holds": "City of Lisbon: municipal measures, tunnels, gardens",
+   "changes": "hours",
+   "machine_readable": "no",
+   "status": "403 (bot block)",
+   "read": "2026-11-10T18:58Z",
+   "note": "A person must read it; we do not get round a bot check."
+  },
+  {
+   "id": "lisboa-informacao",
+   "url": "https://informacao.lisboa.pt/",
+   "holds": "City news (\"Situação de Alerta: medidas excecionais em Lisboa\")",
+   "changes": "hours",
+   "machine_readable": "no",
+   "status": "403",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "metro",
+   "url": "https://www.metrolisboa.pt/",
+   "holds": "Metro service notices",
+   "changes": "minutes when disrupted",
+   "machine_readable": "partly: HTML; no notice found",
+   "status": "200",
+   "read": "2026-11-10T18:58Z"
+  },
+  {
+   "id": "carris",
+   "url": "https://www.carris.pt/",
+   "holds": "Bus and tram notices (\"Alerta: perturbações na circulação\")",
+   "changes": "minutes when disrupted",
+   "machine_readable": "partly: HTML banner",
+   "status": "200",
+   "read": "2026-11-10T18:58Z",
+   "parser_ask": "the alert banner and its linked list of changes as JSON"
+  },
+  {
+   "id": "cp",
+   "url": "https://www.cp.pt/",
+   "holds": "Train notices",
+   "changes": "minutes when disrupted",
+   "machine_readable": "no: JavaScript app (3 KB shell)",
+   "status": "200 shell",
+   "read": "2026-11-10T18:58Z",
+   "parser_ask": "find the JSON API the app calls for service alerts; read only the alerts"
+  },
+  {
+   "id": "ttsl",
+   "url": "https://www.ttsl.pt/",
+   "holds": "Tagus ferry notices",
+   "changes": "minutes when disrupted",
+   "machine_readable": "partly: HTML; no storm notice matched",
+   "status": "200",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "lusoponte",
+   "url": "https://www.lusoponte.pt/",
+   "holds": "Bridge restrictions",
+   "changes": "on change",
+   "machine_readable": "unknown",
+   "status": "connection failed (000)",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "rede-expressos",
+   "url": "https://www.rede-expressos.pt/",
+   "holds": "Coach suspensions",
+   "changes": "on change",
+   "machine_readable": "no",
+   "status": "403",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "airport",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "holds": "Official airport notices and flights",
+   "changes": "minutes",
+   "machine_readable": "no: bot check (212-byte page)",
+   "status": "200, empty",
+   "read": "2026-11-10T18:59Z",
+   "note": "lisbon-airport.com is an unofficial site: not used. The meteorologist reads METAR/TAF."
+  },
+  {
+   "id": "fil",
+   "url": "https://www.fil.pt/",
+   "holds": "Venue (FIL) notices",
+   "changes": "on change",
+   "machine_readable": "partly: HTML",
+   "status": "200",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "meo-arena",
+   "url": "https://www.meoarena.pt/",
+   "holds": "Venue (MEO Arena) notices",
+   "changes": "on change",
+   "machine_readable": "partly: HTML",
+   "status": "200",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "dgeste",
+   "url": "https://www.dgeste.mec.pt/",
+   "holds": "Schools administration notices",
+   "changes": "on change",
+   "machine_readable": "partly: HTML",
+   "status": "200",
+   "read": "2026-11-10T18:59Z"
+  },
+  {
+   "id": "amn",
+   "url": "https://www.amn.pt/Media/Paginas/DetalheNoticia.aspx?nid=7101",
+   "holds": "Maritime warnings",
+   "changes": "on issue",
+   "machine_readable": "partly: HTML",
+   "status": "read by weather@ 16:55Z; not read by us",
+   "read": "2026-11-10T16:55Z"
+  },
+  {
+   "id": "vicky-desk",
+   "url": "https://raw.githubusercontent.com/PrompTugal/PrompTugal__News__Website/dev/desks/weather-vicky/decision-graph.json",
+   "holds": "Vicky's weather desk: decision chain, graph, history, law, live (material, read-only)",
+   "changes": "minutes",
+   "machine_readable": "yes: raw GitHub (markdown and JSON)",
+   "status": "200",
+   "read": "2026-11-10T18:58Z"
+  },
+  {
+   "id": "social-watch",
+   "url": "https://raw.githubusercontent.com/PrompTugal/PrompTugal__News__Website/dev/board/team/social.watch/signals/2026-11-11-the-storm.md",
+   "holds": "social.watch@'s signals for the storm",
+   "changes": "per sweep",
+   "machine_readable": "partly: markdown tables",
+   "status": "200",
+   "read": "2026-11-10T18:58Z"
+  }
+ ]
+}
