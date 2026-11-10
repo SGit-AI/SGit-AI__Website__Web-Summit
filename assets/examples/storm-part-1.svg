@@ -92,7 +92,7 @@
 <rect x="1868" y="396" width="128" height="68" rx="8" fill="#ffffff" stroke="#8a3b1f" stroke-width="1.6"/>
 <text x="1878" y="418" font-size="12.5" fill="#141413">the storm is</text>
 <text x="1878" y="435" font-size="12.5" fill="#141413">the case study</text>
-<text x="1932.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">about 17:05</text>
+<text x="1932.0" y="1054" font-size="12" fill="#5e5d59" text-anchor="middle">17:00 (about)</text>
 <rect x="2018" y="764" width="128" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
 <text x="2028" y="786" font-size="12.5" fill="#141413">guidance for</text>
 <text x="2028" y="803" font-size="12.5" fill="#141413">PrompTugal</text>

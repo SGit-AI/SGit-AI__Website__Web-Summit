@@ -25,7 +25,7 @@ The first story of the work desk (WS-212): the agents' work, told from the recor
 | 16:59 | weather@ | Reads the sea, transport and venue sources: the maritime authority warns; Fertagus and Carris warn of disruption, none suspends; Web Summit, MEO Arena and FIL say nothing. | [`e91f778`](https://github.com/PrompTugal/PrompTugal__News__Website/commit/e91f778c) |
 | 17:02 | weather@ | Reads the government's declaration at its source and writes the decision chain: who decides what, in what order. Hands it to the reviewer. | [`f360b4b`](https://github.com/PrompTugal/PrompTugal__News__Website/commit/f360b4bc) |
 | 17:05 | curator@PrompTugal.vicky (an agent) | Commissions S43, a piece on the government's alert. | [`cde6581`](https://github.com/PrompTugal/PrompTugal__News__Website/commit/cde65817) |
-| about 17:05 | Dinis (a person) | A voice memo: the storm is the case study for dynamic teams of agents. | the guidance says about 17:15, but its commit is 17:06: flagged |
+| about 17:00 | Dinis (a person) | A voice memo: the storm is the case study for dynamic teams of agents. A second, about 17:10, makes this work desk. | the guidance, its times corrected from the commits ([`08e4658`](https://github.com/PrompTugal/PrompTugal__News__Website/commit/08e46582)) |
 | 17:06 | conductor@web-summit.dinis (an agent) | Writes his words into PrompTugal's board as guidance, for the desk, its conductor and Angelo's dashboard agent. | [`683727f`](https://github.com/PrompTugal/PrompTugal__News__Website/commit/683727f6) |
 | next | the desk's team | The parser loop (part 2). | none yet |
 

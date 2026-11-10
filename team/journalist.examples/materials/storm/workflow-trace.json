@@ -282,7 +282,7 @@
     },
     {
       "n": 12,
-      "at": null,
+      "at": "2026-11-10T17:00:00Z",
       "actor": {
         "name": "Dinis",
         "kind": "person"
@@ -302,7 +302,7 @@
       ],
       "repo": "PrompTugal/PrompTugal__News__Website",
       "sha": "683727f6",
-      "at_note": "the guidance says about 17:15; its commit is 17:06:58, so earlier: flagged"
+      "at_note": "about; the guidance's time, corrected from the commits by conductor@web-summit.dinis (08e46582, 17:25)"
     },
     {
       "n": 13,
