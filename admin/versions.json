@@ -1,5 +1,19 @@
 [
   {
+    "version": "v0.2.1724",
+    "date": "2026-11-10",
+    "what": "my ledger line without the model field; Tokens prices a run with no model at the team's most-used one, and says so",
+    "by": "dashboard@web-summit.silvio",
+    "from": "6a06e0ac3"
+  },
+  {
+    "version": "v0.2.1723",
+    "date": "2026-11-10",
+    "what": "my first token ledger line (the Tokens view)",
+    "by": "procurement@web-summit.silvio",
+    "from": "373c99f03"
+  },
+  {
     "version": "v0.2.1722",
     "date": "2026-11-10",
     "what": "17:30 wake: brief 21 (the map on TestFlight, messaging on; the inbox chat, keys for three, the newsroom redesign)",
