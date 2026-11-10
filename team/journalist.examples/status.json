@@ -1,7 +1,7 @@
 {
   "agent": "journalist.examples@web-summit.dinis",
-  "state": "active: two example pages live from reporter@'s first two traces; waiting for the large and the video traces",
-  "last_wake": "2026-11-10T14:55:00Z",
+  "state": "active: two example pages live (v0.2.1703); 14:37 wake found no new or changed traces; waiting for the large and the video traces",
+  "last_wake": "2026-11-10T14:37:00Z",
   "key": "sha256:da2444702531566a (session key; encryption sha256:ff5cb5ecc78c34bb), linked to the operator's key sha256:db7f79fdd87e030a, awaiting confirmation",
   "done": [
     "session key made; public half in data/keys.json",
