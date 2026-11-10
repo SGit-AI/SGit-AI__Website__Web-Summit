@@ -22,7 +22,7 @@
   "privacy": "The investor at the second meeting is not named (their record is in the private CRM); the deck's own header says so.",
   "status": "captured to live; the meetings themselves have no evidence yet",
   "captured_by": "reporter@web-summit.dinis",
-  "captured_at": "2026-11-10T15:25Z",
+  "captured_at": "2026-11-10T16:30Z",
   "duration": {
     "deck_1": "about 14:35 to 14:50:25, about 15 minutes, voice to live (v0.2.1705)",
     "deck_2": "about 14:57 to 15:10:39, about 14 minutes, voice to live (v0.2.1707)"
@@ -225,6 +225,62 @@
     },
     {
       "n": 8,
+      "at": "2026-11-10T15:27:47Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "deck 2, before the meeting",
+      "out": "deck 2 v2: RiskMandate leads with security teams, a must-have, compliance as a by-product; new PDF",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "f02ce25c",
+      "issue": "WS-212",
+      "for": [
+        "dinis"
+      ],
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "f02ce25c",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/f02ce25c3d115a52dfbea43e467372e6724d8383"
+        }
+      ],
+      "evidence_note": "what prompted v2 (Dinis's word or the conductor's own pass) is not in the commit"
+    },
+    {
+      "n": 9,
+      "at": "2026-11-10T15:30:50Z",
+      "actor": {
+        "name": "GitHub Actions (deploy-pages.yml)",
+        "kind": "ci"
+      },
+      "in": "dev including f02ce25c",
+      "out": "v0.2.1709: deck 2 v2 live",
+      "handoff": {
+        "to": "Dinis",
+        "via": "web-summit.sgit.ai"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "890b4d6b",
+      "kind": "release",
+      "evidence": [
+        {
+          "type": "version",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "890b4d6b",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/890b4d6b6da5d542aade8bbeaabec1ef1dd238c7",
+          "version": "v0.2.1709"
+        }
+      ]
+    },
+    {
+      "n": 10,
       "at": null,
       "at_note": "about 15:15 and about 15:30 (scheduled)",
       "actor": {

@@ -3,6 +3,7 @@
 /pipeline/'s case-study graphics. One lane per actor, one column per step (time is printed, not scaled: the
 gaps in these flows run from seconds to hours). Short labels come from the journalist's notes file
 (team/journalist.examples/notes/<id>.json: title, subtitle, labels {n: "line1|line2"}, side [n], output).
+  Optional in notes: col (column width), edges [[from, to, "dashed"?]] to draw parallel chains instead of one.
   python3 team/journalist.examples/tools/flow_svg.py <id>   ->  assets/examples/<id>.svg
 """
 import json, sys, os
@@ -20,7 +21,7 @@ for s in steps:
     if k not in lanes: lanes.append(k)
 lanes.append(('the output', 'out'))
 side = set(notes.get('side', []))
-LW, CW, LH, TOP = 210, 168, 92, 112
+LW, CW, LH, TOP = 210, notes.get('col', 168), 92, 112
 W = max(1400, LW + CW * (len(steps) + 1) + 20)
 H = TOP + LH * len(lanes) + 88
 o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">',
@@ -35,6 +36,7 @@ for i, (name, kind) in enumerate(lanes):
     o.append(f'<rect x="20" y="{y}" width="{W-40}" height="{LH-8}" rx="10" fill="{COL[kind]}" fill-opacity="0.10"/>')
     o.append(f'<text x="34" y="{y+38}" font-size="14" font-weight="700" fill="{COL[kind]}">{e(short)}</text>')
     if label: o.append(f'<text x="34" y="{y+58}" font-size="12" fill="#5e5d59">{label}</text>')
+MARK = len(o); ARR = []
 def box(col, lane, lines, kind, dashed=False, when=''):
     x = LW + col * CW + 8; y = TOP + lane * LH + 8; w = CW - 22; h = LH - 24
     d = ' stroke-dasharray="5 4"' if dashed else ''
@@ -60,13 +62,17 @@ def arrow(a, b, dashed=False):
     x1, y1 = a[0] + a[2], a[1] + a[3] / 2; x2, y2 = b[0], b[1] + b[3] / 2
     d = ' stroke-dasharray="4 4"' if dashed else ''
     mx = (x1 + x2) / 2
-    o.append(f'<path d="M{x1},{y1} C{mx},{y1} {mx},{y2} {x2},{y2}" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"{d}/>')
-for a, b in zip(chain, chain[1:]): arrow(a, b)
-for n in side:
-    prev = max(m for m in main if m < n); arrow(pos[prev], pos[n], dashed=True)
+    ARR.append(f'<path d="M{x1},{y1} C{mx},{y1} {mx},{y2} {x2},{y2}" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"{d}/>')
+if 'edges' in notes:
+    for a, b, *k in notes['edges']: arrow(pos[a], pos[b], dashed=bool(k))
+else:
+    for a, b in zip(chain, chain[1:]): arrow(a, b)
+    for n in side:
+        prev = max(m for m in main if m < n); arrow(pos[prev], pos[n], dashed=True)
 arrow(chain_end, out)
+o[MARK:MARK] = ARR  # arrows under the boxes
 o.append(f'<text x="30" y="{H-32}" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from reporter@web-summit.dinis\'s trace {e(tid)} (team/reporter/traces/).</text>')
-o.append(f'<text x="30" y="{H-14}" font-size="12" fill="#5e5d59">Dashed: a side step, or a step with no public evidence. Times UTC, 10 November 2026. Columns are steps, not to scale.</text>')
+o.append(f'<text x="30" y="{H-14}" font-size="12" fill="#5e5d59">Dashed: a side step, or a step with no public evidence. Times UTC, {e(notes.get("date", "10 November 2026"))}. Columns are steps, not to scale.</text>')
 o.append('</svg>')
 os.makedirs(f'{ROOT}/assets/examples', exist_ok=True)
 open(f'{ROOT}/assets/examples/{tid}.svg', 'w').write('\n'.join(o) + '\n')
