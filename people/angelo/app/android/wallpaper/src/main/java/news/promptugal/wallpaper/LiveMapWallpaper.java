@@ -41,6 +41,12 @@ public class LiveMapWallpaper extends WallpaperService {
     // the view, chosen in SettingsActivity (Angelo, 9 November: "choosing the view as in the website"); kept on the phone
     static final String PREFS = "view", LAYOUT = "layout", THEME = "theme", LEVEL = "level";
     static String layout(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(LAYOUT, "3d"); }
+    /** The layout the graph is built in: the chosen one, but flat under a level's dumbbell, whose routes leave from the people's
+     *  places (the 3D ball turns them away; the page's dumbbell is flat too): the People ring then. */
+    static String drawnLayout(Context c) { String L = layout(c); return !"messages".equals(level(c)) && "3d".equals(L) ? "ring" : L; }
+    static final String ORIENT = "orient";
+    /** Where the team sits in the dumbbell: auto (by the screen's shape), top, below, left, right. */
+    static String orient(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(ORIENT, "auto"); }
     /** The level: "messages" (the exchanges alone, as before), "workstreams" (the WS issues' squares and their flights too) or
      *  "deliverables" (what was made and where it went: deliveries.json's ten destinations). */
     static String level(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(LEVEL, "messages"); }
@@ -79,7 +85,7 @@ public class LiveMapWallpaper extends WallpaperService {
             view = new GLSurfaceView(LiveMapWallpaper.this) { @Override public SurfaceHolder getHolder() { return MapEngine.this.getSurfaceHolder(); } };
             view.setEGLContextClientVersion(2); view.setPreserveEGLContextOnPause(true);
             renderer = new MapRenderer(this, getResources().getDisplayMetrics().density);
-            renderer.still = isPreview();
+            renderer.still = isPreview(); renderer.orientPref = orient(LiveMapWallpaper.this);
             view.setRenderer(renderer); view.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
         }
 
@@ -94,9 +100,9 @@ public class LiveMapWallpaper extends WallpaperService {
                 view.onResume(); ui.post(tick); net.post(() -> rebuild(false)); net.post(poll); } else view.onPause();
         }
         // a new choice in the settings, or the phone's dark mode changed while hidden (checked as it shows again)
-        @Override public void onSharedPreferenceChanged(SharedPreferences p, String key) { if (net != null) { net.post(() -> rebuild(true)); if (LEVEL.equals(key) && visible) net.post(this::fetch); } }
+        @Override public void onSharedPreferenceChanged(SharedPreferences p, String key) { if (renderer != null) renderer.orientPref = orient(LiveMapWallpaper.this); if (net != null) { net.post(() -> rebuild(true)); if (LEVEL.equals(key) && visible) net.post(this::fetch); } }
         private void rebuild(boolean force) {
-            Object d = data; if (d == null) return; Graph g = graph; String L = layout(LiveMapWallpaper.this); Graph.Theme th = theme(LiveMapWallpaper.this);
+            Object d = data; if (d == null) return; Graph g = graph; String L = drawnLayout(LiveMapWallpaper.this); Graph.Theme th = theme(LiveMapWallpaper.this);
             if (!force && g != null && g.isFor(L, th)) return;
             try { graph = Graph.fromData(d, L, th); } catch (Exception e) { Log.w("LiveMap", "view rebuild failed", e); }
             levelFrom(workFile);
@@ -133,7 +139,7 @@ public class LiveMapWallpaper extends WallpaperService {
         }
         @Override public List<Work.Row> takeWorkRows() { List<Work.Row> r = workRows; workRows = null; return r; }
         @Override public Bitmap[] logos(boolean light) { return light && logosLight != null ? logosLight : logos; }
-        private Graph build(Object d) { data = d; return Graph.fromData(d, layout(LiveMapWallpaper.this), theme(LiveMapWallpaper.this)); }
+        private Graph build(Object d) { data = d; return Graph.fromData(d, drawnLayout(LiveMapWallpaper.this), theme(LiveMapWallpaper.this)); }
 
         // ---- the data, on the network thread
         private void loadCached() {

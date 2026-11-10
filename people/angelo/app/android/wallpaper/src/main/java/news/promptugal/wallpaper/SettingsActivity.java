@@ -22,10 +22,12 @@ public class SettingsActivity extends Activity {
     // the layouts the wallpaper offers, in the site's own words (live.js's LAYOUTS, and the 3D button)
     static final String[][] LAYOUTS = { { "3d", "3D", "The team as a turning ball" }, { "ring", "People ring", "Each person with their agents beside them" },
             { "agents", "Agents ring", "The people outside, their agents in one ring inside" } };
+    // the dumbbell's ends (spec-dumbbell.md: "orientation is a setting"), as work-bell.js names them
+    static final String[][] ORIENTS = { { "auto", "Automatic", "On top when the screen stands upright, on the left when it lies" }, { "top", "Team on top", "" }, { "below", "Team below", "" }, { "left", "Team on the left", "" }, { "right", "Team on the right", "" } };
     static final String[][] THEMES = { { "dark", "Dark" }, { "light", "Light" }, { "system", "Follow the phone" } };
     // the levels, as the site's switch names them (live.js and work.js): the exchanges, and the workstreams they serve
-    static final String[][] LEVELS = { { "messages", "Messages", "Who wrote to whom, as it happens" }, { "workstreams", "Workstreams", "The busiest WS issues on the rim, each commit flying to its own" },
-            { "deliverables", "Deliverables", "What was made and where it went: PT News, the site, research and more" } };
+    static final String[][] LEVELS = { { "messages", "Messages", "Who wrote to whom, as it happens" }, { "workstreams", "Workstreams", "The team at one end, the busiest WS issues at the other, each commit flying along its route" },
+            { "deliverables", "Deliverables", "The team at one end, where its work went at the other: PT News, the site, research and more" } };
 
     @Override protected void onCreate(Bundle b) {
         super.onCreate(b);
@@ -51,13 +53,19 @@ public class SettingsActivity extends Activity {
         vg.setOnCheckedChangeListener((g, id) -> { int i = id - 300; if (i >= 0 && i < LEVELS.length) prefs.edit().putString(LiveMapWallpaper.LEVEL, LEVELS[i][0]).apply(); });
         col.addView(vg);
 
+        col.addView(heading("The team's place (Workstreams and Deliverables)", pad));
+        RadioGroup og = new RadioGroup(this); og.setSaveEnabled(false); String O = LiveMapWallpaper.orient(this);
+        for (int i = 0; i < ORIENTS.length; i++) og.addView(option(400 + i, ORIENTS[i][1] + (ORIENTS[i][2].isEmpty() ? "" : "\n" + ORIENTS[i][2]), ORIENTS[i][0].equals(O), d));
+        og.setOnCheckedChangeListener((g, id) -> { int i = id - 400; if (i >= 0 && i < ORIENTS.length) prefs.edit().putString(LiveMapWallpaper.ORIENT, ORIENTS[i][0]).apply(); });
+        col.addView(og);
+
         col.addView(heading("Theme", pad));
         RadioGroup tg = new RadioGroup(this); tg.setSaveEnabled(false); String T = LiveMapWallpaper.themeChoice(this);
         for (int i = 0; i < THEMES.length; i++) tg.addView(option(200 + i, THEMES[i][1], THEMES[i][0].equals(T), d));
         tg.setOnCheckedChangeListener((g, id) -> { int i = id - 200; if (i >= 0 && i < THEMES.length) prefs.edit().putString(LiveMapWallpaper.THEME, THEMES[i][0]).apply(); });
         col.addView(tg);
 
-        TextView soon = text("Coming next: the Agents and their work layout.", 13, Graph.MUTED); soon.setPadding(0, pad, 0, pad / 2);
+        TextView soon = text("Under a level, the team is drawn flat (the People ring or Agents ring), as on the website.", 13, Graph.MUTED); soon.setPadding(0, pad, 0, pad / 2);
         col.addView(soon);
         Button done = new Button(this); done.setText("Done"); done.setOnClickListener(v -> finish()); col.addView(done);
 

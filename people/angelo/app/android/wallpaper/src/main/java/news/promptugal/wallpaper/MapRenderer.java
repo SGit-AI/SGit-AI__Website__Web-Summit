@@ -46,7 +46,21 @@ final class MapRenderer implements GLSurfaceView.Renderer {
     // 690 KB a frame for today's 684 lines); and every shader variable is looked up once, not on every draw
     private final int[] vbo = new int[6];   // base lines: position, colour, alpha; spokes: position, colour, alpha
     private final Map<Integer, Map<String, Integer>> loc = new HashMap<>();   // program, then name (a literal: no key built per call)
-    private final float[] v4 = new float[4], o4 = new float[4]; private String overlayKey = "";
+    private final float[] v4 = new float[4], o4 = new float[4];
+    // the dumbbell (spec-dumbbell.md; Bell.java, held to work-bell.js by hxwallbell): on Workstreams and Deliverables the network
+    // is drawn, flat, in its circle at the team's end, through a viewport the size of that circle; the routes, the circle and the
+    // icons are in the overlay; the deliveries fly along the routes. orientPref: the setting (Automatic, top, below, left, right).
+    volatile String orientPref = "auto";
+    private Bell.Layout BL; private Bell.Routes BR; private List<Work.Row> bellRows; private int vx = 0, vy = 0, vw = 1, vh = 1, bellLitTex = 0; private float bellLitPx = 0;
+    private boolean bell() { return wk != null; }
+    // the view the graph is drawn in: the whole screen, or (the dumbbell) the network's circle; exact: the page's 1000 units fill it
+    private void setView(int x, int y, int w, int h, boolean flat, boolean exact) {
+        vx = x; vy = y; vw = Math.max(1, w); vh = Math.max(1, h); GLES20.glViewport(vx, vy, vw, vh);
+        Matrix.perspectiveM(P, 0, (float) Graph.FOV, (float) vw / vh, 10, 8000);
+        scale = (float) (vh / (2 * Math.tan(Math.toRadians(Graph.FOV / 2))));
+        double dist = flat ? scale * 1000 / (Math.min(vw, vh) * (exact ? 1 : 0.98)) : Graph.DIST * Math.max(1, 0.7 / ((double) vw / vh));
+        Matrix.setLookAtM(V, 0, 0, 0, (float) dist, 0, 0, 0, 0, 1, 0);
+    } private String overlayKey = "";
     // the level (Workstreams): its rows, the frame's geometry for its squares, the flights' textures by colour
     private Work wk; private float fx0, fy0, fk; private int litTex = 0; private float litPx = 0;
     private final Map<String, int[]> iconTex = new HashMap<>(); private final Map<Integer, Integer> dotTex = new HashMap<>();
@@ -63,25 +77,19 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         progLn = program(Shaders.VS_LN, Shaders.FS_LN); progTx = program(Shaders.VS_TX, Shaders.FS_TX);
         for (int k = 0; k < 4; k++) progPt[k] = program(Shaders.VS_PTS, Shaders.fsPts(k));
         built = null; overlayTex = 0; labelTex.clear(); loc.clear(); java.util.Arrays.fill(vbo, 0);
-        iconTex.clear(); dotTex.clear(); litTex = 0;   // a new context: the old textures and buffers are gone with it
+        iconTex.clear(); dotTex.clear(); litTex = 0; bellLitTex = 0;   // a new context: the old textures and buffers are gone with it
         GLES20.glDisable(GLES20.GL_DEPTH_TEST); GLES20.glEnable(GLES20.GL_BLEND);
         float[] range = new float[2]; GLES20.glGetFloatv(GLES20.GL_ALIASED_LINE_WIDTH_RANGE, range, 0);
         lineW = Math.max(1, Math.min(range[1], density * 0.75f));
     }
 
     @Override public void onSurfaceChanged(GL10 unused, int w, int h) {
-        W = Math.max(1, w); H = Math.max(1, h); GLES20.glViewport(0, 0, W, H);
-        Matrix.perspectiveM(P, 0, (float) Graph.FOV, (float) W / H, 10, 8000);
-        scale = (float) (H / (2 * Math.tan(Math.toRadians(Graph.FOV / 2))));
-        camera(cur != null && cur.flat);
+        W = Math.max(1, w); H = Math.max(1, h); setView(0, 0, W, H, cur != null && cur.flat, false);
         if (overlayTex != 0) { GLES20.glDeleteTextures(1, new int[] { overlayTex }, 0); overlayTex = 0; }
     }
     // the 3D ball: a phone stands upright, so the camera backs off until the ball fits the width (the page's view is about
     // square). Flat: face on, the page's 1000-unit square exactly on the hexagon drawn by overlay() (side = 98% of the width)
-    private void camera(boolean flat) {
-        double dist = flat ? scale * 1000 / (Math.min(W, H) * 0.98) : Graph.DIST * Math.max(1, 0.7 / ((double) W / H));
-        Matrix.setLookAtM(V, 0, 0, 0, (float) dist, 0, 0, 0, 0, 1, 0);
-    }
+    private void camera(boolean flat) { setView(0, 0, W, H, flat, false); }
 
     @Override public void onDrawFrame(GL10 unused) {
         double t0 = SystemClock.uptimeMillis(), dt = lastT > 0 ? Math.min(250, t0 - lastT) : 16; lastT = t0;
@@ -91,8 +99,9 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         Graph.Theme th = cur != null ? cur.theme : Graph.DARK; int c = th.bg;
         GLES20.glClearColor(((c >> 16) & 255) / 255f, ((c >> 8) & 255) / 255f, (c & 255) / 255f, 1); GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
         Work nw = src.work(); if (nw != wk) { if (nw != null) nw.takeOver(wk); wk = nw; }
-        List<Work.Row> rows = src.takeWorkRows(); if (rows != null && wk != null) wk.read(rows, System.currentTimeMillis(), t0);
-        String key = (th.light ? "L" : "D") + (wk == null ? "" : wk.level + counts(wk));
+        List<Work.Row> rows = src.takeWorkRows(); if (rows != null && wk != null) { wk.read(rows, System.currentTimeMillis(), t0); bellRows = rows; BR = null; }
+        if (bell() && BR == null && bellRows != null && cur != null) BR = Bell.routes(bellRows, System.currentTimeMillis(), people(cur));
+        String key = (th.light ? "L" : "D") + (wk == null ? "" : wk.level + (BR == null ? "" : routesKey(BR)) + Bell.orient(orientPref, W, H));
         if (overlayTex != 0 && (overlayTheme != th || !key.equals(overlayKey))) { GLES20.glDeleteTextures(1, new int[] { overlayTex }, 0); overlayTex = 0; }
         if (overlayTex == 0) { overlayTheme = th; overlayKey = key; overlayTex = texture(overlay(th)); dropLevelTextures(); }
         normal(); drawTex(overlayTex, -1, -1, 1, 1, 1);
@@ -100,6 +109,9 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         List<Graph.Event> evs = src.takeEvents(); if (evs != null) { lastEvs = evs; cur.read(evs, System.currentTimeMillis(), t0); }
         Graph g = cur; g.step(t0, dt);
         if (g != built) build(g);
+        boolean inBell = bell() && BL != null && g.flat;
+        if (inBell) { int side = Math.round(2 * (float) BL.netR * fk), cx = Math.round(fx0 + (float) BL.netX * fk), cy = Math.round(fy0 + (float) BL.netY * fk); setView(cx - side / 2, H - cy - side / 2, side, side, true, true); }
+        else if (vw != W || vh != H || vx != 0 || vy != 0) setView(0, 0, W, H, g.flat, false);
         if (g.flat) Matrix.setIdentityM(Mm, 0);   // the page's 2D map does not turn
         else {
             if (!still) ry += 2 * Math.PI / (1000 * Graph.TURN_S) * dt;
@@ -146,15 +158,16 @@ final class MapRenderer implements GLSurfaceView.Renderer {
             for (int j = 0; j <= Graph.TRAIL; j++) { g.curve(a, f.to, Math.max(0, f.u - j * 0.025), tmp); dot(k++, a, j > 0 ? 26 - j * 3.5 : 48, j > 0 ? 0.65 * (1 - j / (double) (Graph.TRAIL + 1)) : 1); }
         }
         glow(light); points(1, dPos, dCol, dSz, dAl, k);
-        if (wk != null) { wk.step(t0); normal(); drawLevel(g, th, t0); }
+        if (wk != null && !inBell) { wk.step(t0); normal(); drawLevel(g, th, t0); }
         // the people's names, where they now are
         normal(); float[] v = v4, o = o4;
         for (int i = 0; i < labelNodes.size(); i++) {
             Graph.Node n = labelNodes.get(i); int[] t = labelTex.get(i);
             v[0] = (float) n.x; v[1] = (float) n.y; v[2] = (float) n.z; v[3] = 1; Matrix.multiplyMV(o, 0, MV, 0, v, 0); Matrix.multiplyMV(v, 0, P, 0, o, 0);
-            if (v[3] <= 0) continue; float x = v[0] / v[3], y = v[1] / v[3], hw = t[1] / (float) W, hh = t[2] / (float) H;
+            if (v[3] <= 0) continue; float x = v[0] / v[3], y = v[1] / v[3], hw = t[1] / (float) vw, hh = t[2] / (float) vh;
             drawTex(t[0], x - hw, y - hh, x + hw, y + hh, 1);
         }
+        if (inBell) { GLES20.glViewport(0, 0, W, H); wk.step(t0); normal(); drawBell(g, th, t0); vx = -1; }   // the flights over the whole screen; the next frame sets its view again
         frames++;
     }
 
@@ -250,9 +263,9 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         float side = Math.min(W, H) * 0.98f, x0 = (W - side) / 2, y0 = (H - side) / 2, k = side / 1000f;
         Path hex = new Path(); float[][] pts = { { 250, 67 }, { 750, 67 }, { 1000, 500 }, { 750, 933 }, { 250, 933 }, { 0, 500 } };
         hex.moveTo(x0 + pts[0][0] * k, y0 + pts[0][1] * k); for (int i = 1; i < 6; i++) hex.lineTo(x0 + pts[i][0] * k, y0 + pts[i][1] * k); hex.close();
-        Paint fill = new Paint(Paint.ANTI_ALIAS_FLAG); fill.setColor(0xFF000000 | th.surface); fill.setAlpha((int) (255 * 0.55)); cv.drawPath(hex, fill);
+        Paint fill = new Paint(Paint.ANTI_ALIAS_FLAG); fill.setColor(0xFF000000 | th.surface); fill.setAlpha((int) (255 * 0.55)); if (!bell()) cv.drawPath(hex, fill);
         Paint rim = new Paint(Paint.ANTI_ALIAS_FLAG); rim.setStyle(Paint.Style.STROKE); rim.setStrokeJoin(Paint.Join.ROUND); rim.setStrokeWidth(3 * k); rim.setColor(0xFF000000 | th.action); rim.setAlpha((int) (255 * 0.8));
-        rim.setShadowLayer(7 * k * 2, 0, 0, 0xFF000000 | th.action); cv.drawPath(hex, rim);
+        rim.setShadowLayer(7 * k * 2, 0, 0, 0xFF000000 | th.action); if (!bell()) cv.drawPath(hex, rim);
         fx0 = x0; fy0 = y0; fk = k;
         // the top row: the two logos, then LIVE, centred, 7.6% down the hexagon
         Bitmap[] logos = src.logos(th.light); float ls = Math.max(16 * density, Math.min(66 * density, side * 0.072f)), gap = Math.max(6 * density, side * 0.018f), ty = y0 + side * 0.076f;
@@ -266,7 +279,8 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         Paint ps = new Paint(live); ps.setStyle(Paint.Style.STROKE); ps.setStrokeWidth(Math.max(1, density)); cv.drawRoundRect(pill, pillH, pillH, ps);
         float dr = live.getTextSize() * 0.31f; Paint dp = new Paint(live); dp.setShadowLayer(dr * 2.2f, 0, 0, 0xFF000000 | th.live); cv.drawCircle(x + live.getTextSize() * 0.5f + dr, py + pillH / 2, dr, dp);
         cv.drawText("LIVE", x + live.getTextSize() * 0.5f + dr * 2 + live.getTextSize() * 0.45f, py + pillH / 2 + live.getTextSize() * 0.36f, live);
-        if (wk != null) {   // the furniture the pills keep off: the top row, in the page's units
+        if (bell()) bellOverlay(cv, th, ty + ls + gap);
+        else if (wk != null) {   // the furniture the pills keep off: the top row, in the page's units
             List<double[]> avoid = new ArrayList<>(); float rx = (W - rowW) / 2;
             avoid.add(new double[] { (rx - x0) / k - 6, (ty - y0) / k - 6, rowW / k + 12, ls / k + 12 });
             levelOverlay(cv, th, k, x0, y0, avoid);
@@ -314,10 +328,73 @@ final class MapRenderer implements GLSurfaceView.Renderer {
             txt.setTextSize((float) font * k); cv.drawText(p.text, pr.centerX(), pr.centerY() + (float) font * k * 0.36f, txt);
         }
     }
+    // ---- the dumbbell: the circle, the routes and the icons into the overlay; the frame fitted below the logos and LIVE
+    private static java.util.Set<String> people(Graph g) { java.util.Set<String> p = new java.util.HashSet<>(); for (Graph.Node n : g.nodes) if ("p".equals(n.kind)) p.add(n.id); return p; }
+    private static String routesKey(Bell.Routes R) { StringBuilder b = new StringBuilder(); for (Bell.Route r : R.routes) b.append(r.person).append(r.dest).append(r.n).append(';'); return b.toString(); }
+    // a graph node's place in the frame (work-bell.js's netMap): the network's circle holds the page's 1000-unit square
+    private double[] netPlace(Graph.Node n) { double k = BL.netR / 500.0; return new double[] { BL.netX + n.x * k, BL.netY - n.y * k }; }
+    private void bellOverlay(Canvas cv, Graph.Theme th, float top) {
+        Graph g = cur; if (g == null) return;
+        List<String> dests = new ArrayList<>(); Map<String, String> names = new HashMap<>(); for (Work.Dest d : wk.dests) { dests.add(d.id); names.put(d.id, d.name); }
+        Map<String, Integer> weights = BR == null ? new HashMap<>() : BR.weights;
+        BL = Bell.layout(Bell.orient(orientPref, W, H), dests, weights, names);
+        // the frame fitted in the screen below the top row, a margin of 40 units round it (work-bell-draw.js steps in the same way)
+        double pad = 40, availH = H - top - 8 * density, k = Math.min(W / (BL.w + 2 * pad), availH / (BL.h + 2 * pad));
+        fk = (float) k; fx0 = (float) ((W - (BL.w + 2 * pad) * k) / 2 + pad * k); fy0 = (float) (top + (availH - (BL.h + 2 * pad) * k) / 2 + pad * k);
+        float k1 = fk;
+        // the network's circle (.wb-net: the surface at .55, the action's line at .7)
+        Paint nf = new Paint(Paint.ANTI_ALIAS_FLAG); nf.setColor(0xFF000000 | th.surface); nf.setAlpha((int) (255 * 0.55));
+        Paint ns = new Paint(Paint.ANTI_ALIAS_FLAG); ns.setStyle(Paint.Style.STROKE); ns.setStrokeWidth(3 * k1); ns.setColor(0xFF000000 | th.action); ns.setAlpha((int) (255 * 0.7));
+        float ncx = fx0 + (float) BL.netX * k1, ncy = fy0 + (float) BL.netY * k1, nr = (float) BL.netR * k1; cv.drawCircle(ncx, ncy, nr, nf); cv.drawCircle(ncx, ncy, nr, ns);
+        // the routes, extremely faint (Angelo, 10 November), in each person's colour, as wide as the week
+        if (BR != null) for (Bell.Route r : BR.routes) {
+            Graph.Node pn = g.byId.get(r.person); Bell.Place b = BL.places.get(r.dest); if (pn == null || b == null) continue;
+            double[] a = netPlace(pn), c = Bell.route(BL.or, a[0], a[1], b);
+            Path rp = new Path(); rp.moveTo(fx0 + (float) c[0] * k1, fy0 + (float) c[1] * k1); rp.cubicTo(fx0 + (float) c[2] * k1, fy0 + (float) c[3] * k1, fx0 + (float) c[4] * k1, fy0 + (float) c[5] * k1, fx0 + (float) c[6] * k1, fy0 + (float) c[7] * k1);
+            Paint rs = new Paint(Paint.ANTI_ALIAS_FLAG); rs.setStyle(Paint.Style.STROKE); rs.setStrokeCap(Paint.Cap.ROUND); rs.setStrokeWidth((float) Bell.width(r.n, BR.max) * k1);
+            rs.setColor(0xFF000000 | Work.strokeFor(pn.color, th.light)); rs.setAlpha((int) (255 * (th.light ? 0.14 : 0.1))); cv.drawPath(rp, rs);
+        }
+        // the icons and their abbreviations: at least 24 px and 12 px on screen whatever the frame's size
+        double font = Math.max(26, 12 * density / k1), sc = Math.max(1, 24 * density / k1 / 72); boolean stagger = font > 26 * 1.2;
+        Paint fill = new Paint(Paint.ANTI_ALIAS_FLAG); fill.setColor(0xFF000000 | th.surface);
+        Paint line = new Paint(Paint.ANTI_ALIAS_FLAG); line.setStyle(Paint.Style.STROKE); line.setColor(0xFF000000 | th.border); line.setStrokeWidth((float) (2.5 * sc) * k1);
+        Paint mark = new Paint(Paint.ANTI_ALIAS_FLAG); mark.setStyle(Paint.Style.STROKE); mark.setColor(0xFF000000 | th.text); mark.setStrokeWidth((float) (2 * sc) * k1); mark.setStrokeCap(Paint.Cap.ROUND); mark.setStrokeJoin(Paint.Join.ROUND);
+        Paint num = new Paint(Paint.ANTI_ALIAS_FLAG); num.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD)); num.setColor(0xFF000000 | th.text); num.setTextAlign(Paint.Align.CENTER); num.setTextSize((float) (24 * sc) * k1);
+        Paint ab = new Paint(Paint.ANTI_ALIAS_FLAG); ab.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD)); ab.setColor(0xFF000000 | th.secondary); ab.setTextAlign(Paint.Align.CENTER); ab.setTextSize((float) font * k1); ab.setLetterSpacing(0.06f);
+        for (Work.Dest d : wk.dests) {
+            Bell.Place p = BL.places.get(d.id); if (p == null) continue;
+            int save = cv.saveLayerAlpha(null, p.quiet ? (int) (255 * 0.38) : 255);
+            float cx = fx0 + (float) p.x * k1, cy = fy0 + (float) p.y * k1, h = (float) (36 * sc) * k1, rr = (float) (14 * sc) * k1;
+            RectF q = new RectF(cx - h, cy - h, cx + h, cy + h); cv.drawRoundRect(q, rr, rr, fill); cv.drawRoundRect(q, rr, rr, line);
+            Bitmap lg = d.logo ? src.destLogo(d.id, th.light) : null; float lh = (float) (24 * sc) * k1;
+            if (!d.mark.isEmpty()) cv.drawText(d.mark, cx, cy + (float) (8 * sc) * k1, num);
+            else if (lg != null) cv.drawBitmap(lg, null, new RectF(cx - lh, cy - lh, cx + lh, cy + lh), new Paint(Paint.FILTER_BITMAP_FLAG | Paint.ANTI_ALIAS_FLAG));
+            else cv.drawPath(svgPath(Work.markPath(d.id), (float) (1.9 * sc) * k1, cx, cy), mark);
+            double[] lb = Bell.label(p, 36 * sc, font, p.abbr.length(), stagger);
+            cv.drawText(p.abbr, cx + (float) lb[0] * k1, cy + (float) lb[1] * k1, ab);
+            cv.restoreToCount(save);
+        }
+    }
+    /** The deliveries along their routes (work-bell-draw.js's step): from the maker's node (else its person's), eased over 3 s,
+     *  the icon lighting its destination for 0.9 s when it lands. */
+    private void drawBell(Graph g, Graph.Theme th, double now) {
+        if (BL == null) return; double[] p = lp; float icon = (float) (72 * Math.max(1, 24 * density / fk / 72)) * fk;
+        if (bellLitTex == 0) { int side = Math.max(4, Math.round(icon + 10)); Bitmap b = Bitmap.createBitmap(side, side, Bitmap.Config.ARGB_8888); Paint pl = new Paint(Paint.ANTI_ALIAS_FLAG); pl.setStyle(Paint.Style.STROKE); pl.setStrokeWidth(5 * fk * icon / 72f / fk); pl.setColor(0xFF000000 | th.action); float r = 14 * icon / 72f; new Canvas(b).drawRoundRect(new RectF(5, 5, side - 5, side - 5), r, r, pl); bellLitPx = side; bellLitTex = texture(b); }
+        for (Work.Dest d : wk.dests) { Bell.Place q = BL.places.get(d.id); if (q != null && d.litUntil > now) { float hw = bellLitPx / W, hh = bellLitPx / H; drawTex(bellLitTex, nx(q.x) - hw, ny(q.y) - hh, nx(q.x) + hw, ny(q.y) + hh, 1); } }
+        for (Work.Flight f : wk.inAir) {
+            Graph.Node from = Work.origin(g, f.maker); Bell.Place b = BL.places.get(f.dest); if (from == null || b == null) continue;
+            double u = (now - f.t0) / Work.FLIGHT_MS; if (u < 0 || u >= 1) continue;
+            double[] a = netPlace(from), c = Bell.route(BL.or, a[0], a[1], b); Bell.at(c, Work.ease(u), p);
+            Graph.Node pn = g.byId.get(Bell.personOf(f.maker)); int stroke = Work.strokeFor((pn != null ? pn : from).color, th.light);
+            int[] t = icon(f.icon, stroke, f.n, th); float hw = t[1] / (float) W, hh = t[2] / (float) H;
+            drawTex(t[0], nx(p[0]) - hw, ny(p[1]) - hh, nx(p[0]) + hw, ny(p[1]) + hh, 1);
+        }
+    }
     private void dropLevelTextures() {
         for (int[] t : iconTex.values()) GLES20.glDeleteTextures(1, new int[] { t[0] }, 0); iconTex.clear();
         for (int t : dotTex.values()) GLES20.glDeleteTextures(1, new int[] { t }, 0); dotTex.clear();
         if (litTex != 0) { GLES20.glDeleteTextures(1, new int[] { litTex }, 0); litTex = 0; }
+        if (bellLitTex != 0) { GLES20.glDeleteTextures(1, new int[] { bellLitTex }, 0); bellLitTex = 0; }
     }
     // a frame point (the page's 1000 units) to the screen's -1..1
     private final double[] lp = new double[2];
