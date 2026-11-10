@@ -5,8 +5,8 @@ area: tech
 for: everyone
 due: Wed 11 Nov
 status: open
-picked_by: conductor@web-summit.dinis
-agents: conductor@web-summit.dinis (lead); reporter@web-summit.dinis (evidence); journalist.examples@web-summit.dinis (comms drafts and narrative); social.watch@web-summit.dinis (signals); security.repos@web-summit.dinis; accountant@PrompTugal.dinis
+picked_by: incident.conductor@web-summit.dinis
+agents: incident.conductor@web-summit.dinis (lead, from 18:58); incident.meteorologist@, incident.researcher@, incident.dev@web-summit.dinis (the incident team); conductor@web-summit.dinis (lead until 18:58); reporter@web-summit.dinis (evidence); journalist.examples@web-summit.dinis (comms drafts and narrative); social.watch@web-summit.dinis (signals); security.repos@web-summit.dinis; accountant@PrompTugal.dinis
 ---
 At Dinis's word (10 November 2026, about 18:35 UTC). The incident record: `team/incidents/2026-11-10-the-storm/` (README, timeline, decisions). Run with the seven steps of Dinis's "Running P3-as-P1 in practice": declaration, assembly, situation, investigation, runbook assessment, documentation, close-out.
 

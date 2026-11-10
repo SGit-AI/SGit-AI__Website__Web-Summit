@@ -1,0 +1,15 @@
+{
+  "agent": "incident.researcher@web-summit.dinis",
+  "state": "routed: first job sent 19:10 UTC",
+  "last_wake": null,
+  "jobs": [
+    "J1 (tonight, first): where will Web Summit announce a Wednesday decision? Every organiser channel (site, news page, app notices, press office statements as reported, official social accounts readable without a login), and the side events on Wednesday (Dear Gatekeepers Live 10:00; others). Public sources only. Feed social.watch@'s sweeps; do not duplicate them.",
+    "J2 (tonight): the decision graph as JSON (team/incidents/2026-11-10-the-storm/data/graph.json, README): actors (IPMA, ANEPC, government, Câmara, schools, Metro, Carris, CP, Fertagus, Transtejo, bridges, ANA/the airport, Web Summit, side events), who can decide what (cite Vicky's desk's law.md, read-only), what each has decided with time and source, and lead times. Facts, evidence, hypotheses labelled.",
+    "J3: our own graph (README section 4): each team Wednesday commitment, the outside decision that would move it, the decide-by time. No names of people we meet; commitments by kind."
+  ],
+  "done": [],
+  "next": [],
+  "asks": [],
+  "updated": "2026-11-10T19:10:00Z",
+  "by": "incident.conductor@web-summit.dinis"
+}

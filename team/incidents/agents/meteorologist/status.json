@@ -1,0 +1,18 @@
+{
+  "agent": "incident.meteorologist@web-summit.dinis",
+  "state": "routed: first job sent 19:10 UTC",
+  "last_wake": null,
+  "jobs": [
+    "J1 (tonight): the weather as JSON for the dashboard, in team/incidents/2026-11-10-the-storm/data/weather/ with a README per file: IPMA warnings for Lisboa (every level change with the time IPMA issued it and the time read), communiqués, Lisbon station observations (hourly), LPPT TAF and METAR (gusts). Read Vicky's desk's watch.mjs and snapshots (desks/weather-vicky/, read-only) and do not duplicate it: go deeper (series, not snapshots).",
+    "J2 (tonight): how far ahead could it be known? The first public sign of CHARLES (communiqué no. 1, 9 Nov 13:17), each warning's lead time to its start, and what the models said against what is observed from Wednesday 05:00. Facts, evidence, hypotheses labelled.",
+    "J3 (Wednesday, hourly): observed against warned at the Lisbon stations and LPPT, for the Weather pane."
+  ],
+  "done": [],
+  "next": [],
+  "asks": [],
+  "notes": [
+    "the session reported regenerating its key after private-key fragments were echoed in its own output; check the published key is the new one and nothing private was committed (security.repos@ may verify)"
+  ],
+  "updated": "2026-11-10T19:10:00Z",
+  "by": "incident.conductor@web-summit.dinis"
+}

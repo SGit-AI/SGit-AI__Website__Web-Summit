@@ -1481,6 +1481,23 @@
         "fingerprint": "sha256:35df8b5f8b1f9ae0",
         "signing_fingerprint": "sha256:12da1f206e511a5d"
       }
+    },
+    {
+      "id": "incident-conductor-dinis",
+      "agent": "incident.conductor@web-summit.dinis",
+      "label": "incident.conductor@web-summit.dinis (Claude Code session)",
+      "role": "Dinis's incident conductor: runs the incident team (team/incidents/) and leads the WS-214 incident, the storm on Wednesday. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-10",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAjX8yVfp2zlV09UGtiEp4\n8uxNFizVdncezG1QseJxIW/79akC7GTXby43LnIaxYXhrr9W/ZSYJmM5fpOm3HNR\ne17v4bJrcCqQaZ680PdPlYo45bRN3ae0h9plkLJBl/Fm+o88WAOpbQDz92d89/to\nc/erwYNChg0bZjJ5SBHUPDWhHd/htBLQ3+LYv4NODeKL0iwEyROQOdwlhfZgkVOW\nwrkFJFlSxfKkLLGf/LDA9sKQM97PFysItJkA+wF+hYE8X0MUsy7MU+UZEAQ/6r44\n9ab4dg4v5c+IUwpSCA3MlNf6fXgf8Z2HcNZvkBqwqX91/nMToJ6thq5EpToQACtA\nNKz7vQEDWBMoRpi15vDpyDr2ENUJEjyqELS4koDAHpew23hO1wv/W3MC0ZWccdYS\nuZFigo9En7ULjzEudW4GeOHEho9C2+1iDro88yd078IcBrFt81r/cMa8V1/c0m0t\noCwmn5lTcKJJLwofWxPSx4Q/X2tLp1onXeb4k+pbKapBbvAMlN+W5+WJRtwawskH\n+xHONEC7N2YJ3TCREschq4YUIXJGgnV8k3dI/x6ULOdPyU6+9M6l9Y28mxGloNBj\nNfmboHN9R23qosSnNwYKX+KR+z2kOWwDKPp4TweQdl3b+53sy0oAzeXnDncBiCUP\nJmd0NpSobLKcsaVe2+4iSS8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGhvqGZ13Sev77k6kxXvqp3B5VaWc\nlu5AeQaZdP3Si+f3Yo9PgnMXILUiJCXUHR3avqSA0spUUgBZnA1nUrhDYQ==\n-----END PUBLIC KEY-----\n",
+        "label": "incident.conductor@web-summit.dinis",
+        "fingerprint": "sha256:2df48a3207ec20ae",
+        "signing_fingerprint": "sha256:fa135665c51ee284"
+      }
     }
   ]
 }

@@ -15,13 +15,13 @@
 
 - **What happened:** IPMA's red warnings for the Lisbon district on Wednesday 11 November: wind from 12:00 to 21:00, rain from 12:00 to 18:00. The government declared an alert situation for the whole mainland, 00:00 to 23:59: schools and non-essential public services close, and outdoor events are suspended. As of 17:43 UTC, Web Summit had announced no change to Wednesday's programme. Sources and times: `desks/weather-vicky/live.md` and S41 on promptugal.news.
 - **Why it is a P1 for us:** Wednesday is the team's main day at the summit (the stand, the RiskMandate demos, interviews, meetings). **P3-as-P1:** we analyse the whole union of what could happen, not only what has happened.
-- **Severity, as run:** P1. **Status:** open. **Lead:** conductor@web-summit.dinis. **Owner:** Dinis.
+- **Severity, as run:** P1. **Status:** open. **Lead:** incident.conductor@web-summit.dinis (from 18:58, taken over from conductor@web-summit.dinis at Dinis's word). **Owner:** Dinis.
 
 ## 2. Assembly (account A only)
 
 | Role | Agent | In this incident |
 |---|---|---|
-| Lead | conductor@web-summit.dinis | runs the steps, the timeline, the decisions log, the comms to Dinis |
+| Lead | incident.conductor@web-summit.dinis (from 18:58; conductor@web-summit.dinis before) | runs the steps, the timeline, the decisions log, the comms to Dinis; routes the incident team (meteorologist, researcher, dev: `team/incidents/agents/`) |
 | Reporter (on the ground) | reporter@web-summit.dinis | the evidence trace of the incident: each signal, decision and hand-off, as it happens (`traces/2026-11-10-the-storm-incident.json`) |
 | Journalist | journalist.examples@web-summit.dinis | the communication drafts per audience, and the post-incident narrative |
 | Signals | social.watch@PrompTugal.dinis (confirmed by Dinis, ~18:42; writes in PrompTugal__News__Website, the lead copies into the timeline) | what people at the summit are saying: closures, transport, side events |

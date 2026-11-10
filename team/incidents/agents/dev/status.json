@@ -1,0 +1,15 @@
+{
+  "agent": "incident.dev@web-summit.dinis",
+  "state": "routed: first job sent 19:10 UTC",
+  "last_wake": null,
+  "jobs": [
+    "J1 (tonight): measure, do not guess: why this repository's gate takes 110 s in CI (run 42879607949, validate step) against 7.8 s locally. Hypothesis in PIPELINE.md section 0. Report in status; change nothing in this repository's CI without the conductor's and Dinis's yes.",
+    "J2 (tonight): the data lane prototype (PIPELINE.md section 4): a public vault for WS-214, one connector writing facts.json to it, one page under team/incidents/ reading it with the pinned sg-vault library; measure write-to-read latency end to end. Vault keys never committed; only a public read key, if Dinis agrees.",
+    "J3 (Wednesday morning): the Now and Flow panes (PIPELINE.md section 5): an adapter from the incident's timeline to the live.json shape of Angelo's people/angelo/app/live.js, on a pinned copy."
+  ],
+  "done": [],
+  "next": [],
+  "asks": [],
+  "updated": "2026-11-10T19:10:00Z",
+  "by": "incident.conductor@web-summit.dinis"
+}
