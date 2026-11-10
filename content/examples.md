@@ -10,13 +10,13 @@ How these pages are made: [reporter@web-summit.dinis](../keys/index.html) writes
 
 One input, one output, minutes to an hour.
 
-- **A picture to a live page.** Two badge photos taken at the summit (two people, one company) go into the team's private CRM, and become [the individual](../the-individual/index.html), live as site v0.2.1686. *Waiting for the trace.* Names and photos stay private.
+- **[Two badge photos to a live page](small-badge-photo-to-live-page/index.html).** After a meeting, Dinis photographs two badges (two people, one company) and says what he wants. The site's conductor files two private leads and writes the map; CI puts [the individual](../the-individual/index.html) live as v0.2.1686, 2 minutes 24 seconds after the conductor's commit. One person, one agent, one release.
 
 ## Medium {#medium}
 
 A person's voice to something you can show, in hours.
 
-- **A voice brief to a deck.** Dinis's voice brief at 02:40 UTC on 10 November becomes the 09:00 deck, with its screenshots and a PDF. *Waiting for the trace.*
+- **[A voice brief at 02:40 to the 09:00 deck](medium-voice-brief-to-deck/index.html).** Dinis records THE RESTART in the night. The site's conductor writes it as a board issue for every team and builds a deck from screenshots of the live sites: live 1 hour 29 minutes later, refreshed with the night's work by 08:20. One person, one agent, two releases.
 - **A video to an interview, live.** An interview recorded at the summit becomes a piece on [pt.news](https://promptugal.news/newsroom/interviews/), Indi's team's pipeline. *Waiting for the trace.*
 
 ## Large {#large}

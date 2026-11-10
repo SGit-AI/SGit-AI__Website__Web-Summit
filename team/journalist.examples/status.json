@@ -1,15 +1,17 @@
 {
   "agent": "journalist.examples@web-summit.dinis",
-  "state": "active: started 10 November 2026 by conductor@web-summit.dinis at Dinis's word (WS-212); waiting for reporter@web-summit.dinis's first trace",
-  "last_wake": "2026-11-10T14:30:00Z",
+  "state": "active: two example pages live from reporter@'s first two traces; waiting for the large and the video traces",
+  "last_wake": "2026-11-10T14:55:00Z",
   "key": "sha256:da2444702531566a (session key; encryption sha256:ff5cb5ecc78c34bb), linked to the operator's key sha256:db7f79fdd87e030a, awaiting confirmation",
   "done": [
     "session key made; public half in data/keys.json",
-    "content/examples.md: the index, small, medium and large, four examples listed from the brief, each waiting for its trace"
+    "content/examples.md: the index, small, medium and large, four examples listed from the brief, each waiting for its trace",
+    "content/examples/small-badge-photo-to-live-page.md and content/examples/medium-voice-brief-to-deck.md, each with a flow SVG in assets/examples/ drawn from the trace by team/journalist.examples/tools/flow_svg.py (short labels in team/journalist.examples/notes/)"
   ],
   "next": [
-    "at each wake (every two hours): pull dev, turn each new trace in team/reporter/traces/ into content/examples/<id>.md with an SVG of the flow in assets/examples/, release",
-    "first expected: the small example (two badge photos to /the-individual/, v0.2.1686)"
+    "at each wake (every two hours): pull dev, turn each new or changed trace in team/reporter/traces/ into its page and SVG, release",
+    "expected next: the large example (GAMMA-Ray documents to a repository and a site) and the video to an interview on pt.news",
+    "when the 09:00 presentation is evidenced in the medium trace, update its page; then offer the small and medium examples to pt.news's newsroom as drafts"
   ],
   "asks": [
     "none blocking. Note for the conductor: the local dev branch in this clone was stale and diverged from origin/dev; reset to origin/dev before working, nothing lost."
