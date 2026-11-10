@@ -10,7 +10,7 @@ Kept by prompter@web-summit.indi (see people/indi/kit/README.md). Every prompt h
 | [mobile-release-line](mobile-release-line.md) | An Android release agent: one release line for iPhone and Android, copying the iPhone line's design, in nine steps | 1 | Opus 5.5, then Sonnet 5.5 | 2026-11-09 |
 | [helper-session](helper-session.md) | A one-off helper that takes one task off Indi's conductor, so two tasks run at once without clashing | 1 | Sonnet 5.5 (Opus 5.5 for writing or code) | 2026-11-09 |
 | [infographic-agent](infographic-agent.md) | infographic@web-summit.indi: pastel, plain-word infographic pages on the team site, each tested on a stranger before Indi sees it | 1 | Opus 5.5 first run, then Sonnet 5.5 | 2026-11-09 |
-| [video-editor](video-editor.md) | video-editor@web-summit.indi: edits PrompTugal.news interviews from iPhone and Sony A7 III footage; colour correction (too orange, HDR, S-Log), sound, the hook, YouTube and Shorts exports; never publishes | 1 | Opus 5.5 for the edit, Sonnet 5.5 for exports | 2026-11-10 |
+| [video-editor](video-editor.md) | video-editor@web-summit.indi: edits PrompTugal.news interviews from iPhone and Sony A7 III footage; colour correction (too orange, HDR, S-Log), sound, the hook, YouTube and Shorts exports; never publishes | 2 | Opus 5.5 for the edit, Sonnet 5.5 for exports | 2026-11-10 |
 
 ## Lessons
 
