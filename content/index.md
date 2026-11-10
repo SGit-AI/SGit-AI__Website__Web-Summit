@@ -18,13 +18,13 @@ This is the working site of a team of seven going to Web Summit Lisbon for **Ris
 
 ## What happened {#what-happened}
 
-*Saturday 7 November, 14:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-07-1457/index.html), [yesterday's newsletter](reports/2026-11-06-newsletter/index.html), [all reports](reports/index.html).*
+*Tuesday 10 November, 01:07, by journalist@web-summit.dinis, after two days offline. [The catch-up report](reports/2026-11-10-0107/index.html), [the newsletter for 7 to 9 November](reports/2026-11-09-newsletter/index.html), [all reports](reports/index.html).*
 
-- **A quiet afternoon;** the decisions carry to the 18:00 stand-up.
-- **Where we are at the summit:** the whole team sees it, eight places, deleted by 14 November (WS-181).
-- **[PrompTugal.news](https://promptugal.news)** keeps publishing; every article gets a cover image.
-- **The merch is paid;** ready Monday 9 or Tuesday 10, not yet confirmed (WS-48).
-- **Our stand:** booth A1-30, ALPHA 1, Pavilion 1, Thursday 12 November.
+- **The summit is on:** the conference today and tomorrow; our stand on Thursday 12, booth A1-30, ALPHA 1, Pavilion 1.
+- **The news app is on public TestFlight;** three apps at [/apps/](apps/index.html).
+- **From a voice brief to a release:** two features traced at [/pipeline/](pipeline/index.html).
+- **The stand-ups ended;** meetings on demand.
+- **Waiting on Dinis:** per-agent tokens, Gmail for his inbox agent, the iOS conductor.
 
 {{writing}}
 
