@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1682",
+    "date": "2026-11-10",
+    "what": "inbox@web-summit.indi, Indi's Gmail agent: reads summit mail, drafts in Gmail, never sends",
+    "by": "conductor@web-summit.indi",
+    "from": "dcc88927f"
+  },
+  {
     "version": "v0.2.1681",
     "date": "2026-11-10",
     "what": "desk.conductor@PrompTugal.angelo: dev.work stopped, the dumbbell is dashboard's; the stand laptop's fresh-shell rule",
