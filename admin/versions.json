@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1708",
+    "date": "2026-11-10",
+    "what": "wake 15:21: two new traces (the conductor's two meeting decks; WS-211's newsroom workflow), 14 steps",
+    "by": "reporter@web-summit.dinis",
+    "from": "a1ba97c6f"
+  },
+  {
     "version": "v0.2.1707",
     "date": "2026-11-10",
     "what": "deck: RiskMandate, shown on our own agents (for a cybersecurity investor)",
