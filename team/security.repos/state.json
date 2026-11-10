@@ -1,12 +1,12 @@
 {
   "about": "Where security.repos@web-summit.dinis stopped, per repository and branch: the last commit reviewed (the branch head when the run read it). The next run reviews every commit reachable from any branch and not from these. From the second run, every branch is listed, not only those active since the baseline.",
   "agent": "security.repos@web-summit.dinis",
-  "last_run": "2026-11-10T14:35Z",
+  "last_run": "2026-11-10T16:35Z",
   "baseline_from": "2026-11-08T11:00Z",
   "repos": {
     "SGit-AI/SGit-AI__Website__Web-Summit": {
       "branches": {
-        "dev": "e02519b8:1aec4cf6:c0bd6046:7308328c:b1f1b4f8",
+        "dev": "7aebea6f:3b68148c:67707168:161cf902:a212eb1c",
         "claude/awesome-dirac-rp94os": "1cc9740a:f6520690:6617362b:879004f6:564e0e8d",
         "claude/beautiful-clarke-mqhept": "a88e8c65:a2e854b4:1b5b2e2f:7506bab1:c53e2ddf",
         "claude/conductor-jose-setup-ogxaka": "ccfecefe:90fb74e8:38fd1b0b:0f89b40b:e179593d",
@@ -31,7 +31,7 @@
         "workers/dev.links": "1bd3382c:6c7a89e5:2ef8b100:06dfe4b7:e40347c6",
         "workers/dev.map": "7820cc2d:dadf667c:e624cdf7:dc5494a0:30b041ae",
         "workers/dev.venues": "1bf79af7:c1155724:a95fa93d:2d759d2b:5c9c47b1",
-        "workers/dev.work": "a1b77334:8ae35921:6f920f37:d8d11f82:23a89678",
+        "workers/dev.work": "bab4573c:672eb552:3e57d2dd:257c083e:16de6151",
         "workers/research": "3a178e88:e8f8a790:a26b7265:9efb51b5:8a33dcf7",
         "workers/sheet": "ebbe82dc:0f04208c:7df1d607:1e30cac4:3f839ba7",
         "workers/social-media": "639cef98:6ce474c9:f6b31fe0:533a9591:5b0333c8",
@@ -40,20 +40,21 @@
     },
     "PrompTugal/PrompTugal__News__Website": {
       "branches": {
-        "dev": "ac5e095f:7945f3b9:69e57a9b:7862d238:d1385592",
+        "dev": "0f44fa39:88970f42:a7988ddf:36632846:12564d55",
         "claude/eager-euler-x3k3vm": "6bec1c34:72cbdc31:3d6b5c7c:a2142cee:7f9434b7",
         "claude/serene-keller-r1pzfc": "3affa4b4:a3478ef4:0565a131:54ffe10e:0c55e8bc",
         "claude/sweet-heisenberg-m1vm71": "c9217130:f27dae9a:55e5a708:0e644f28:6b31f73e",
         "main": "9629432a:48d2514a:a11d8917:2fb3173f:4aedce90",
         "work/conductor-silvio": "e9ffd69b:1fc3f1cf:3aecbb1e:e3474c57:493ea465",
         "work/designer.experiments": "1177421a:6cc6e53e:ff0b578a:5b78ad2e:af1427ca",
-        "work/dev.data": "69aeca6f:93f0ba4b:ee24536e:a9d604f5:a0363424",
-        "work/dev.graphs": "73e3c16d:5aa69b30:fcc726e8:e06216fd:e06f3aeb",
+        "work/dev.data": "4889fe6c:5792a91a:29b258d3:d3777801:a1502692",
+        "work/dev.graphs": "ec55e60c:ae6dcfb9:b2685aea:cd29e5e1:76a0f235",
         "work/dev.pages": "6b177b24:d738ea31:468eef64:f5f457b7:2cb3ef43",
         "work/dev.portugal": "a1b6759c:2e35335a:aeef19d1:80e30d5f:3123cae5",
         "work/dev.search": "938ab510:70025f12:21ecfe41:5dc1b817:0b3a692e",
         "work/dev.verify": "56ed3c82:8adf8857:e4b2a852:d92f8a20:975fb0aa",
         "work/investors.packs": "6b61e944:20daa2ef:0e0f58b2:113d3e2a:d0044a74",
+        "work/newsroom.indi": "0b7bf217:e885bc01:69562b5c:244c4cd6:e08717a4",
         "work/writer-angelo": "ccd77f7b:e2b8279c:63c6860e:9e537efd:1c75b91f"
       }
     },
@@ -84,14 +85,14 @@
     },
     "PrompTugal/PrompTugal__App__iOS": {
       "branches": {
-        "dev": "421d0090:99951765:fa5df8cb:ad7a4e69:f4882ff6",
+        "dev": "6fc75c3f:435de500:799c79b3:d871359e:f997e164",
         "claude/serene-edison-22z0xn": "38f17268:b7830bbf:185a2fa3:e48f2c2a:bc15b766",
         "conductor/self-hosted-trial": "3e960dff:1c15a152:d9a081d8:d30c4849:5673e3d8",
         "main": "2bd40e27:f2212a91:66916ad1:8cc558b7:5106feda",
         "night/collab": "54cc5687:5f97721a:0100fc2d:074e9951:4b5b3d8a",
         "night/design": "89b17e80:a2340370:688afc06:b757207c:7a415f32",
         "night/editor": "e7cfc2c8:ee595710:31887c72:17df4b8f:9525be40",
-        "night/newsapp-redesign": "42d2962a:38842754:a8505541:37d8ffed:2ce0c6fc",
+        "night/newsapp-redesign": "0620af4d:73b6e6a7:31c63846:735f08c9:28712b6f",
         "night/platform": "8dfacdec:c3507a7c:45525826:7d78ec8e:898e416f",
         "night/release": "8f95a01a:88f94c1c:889e5bff:486ef4e0:1ee34e8f",
         "night/team": "768cae22:3558b913:a228a1c1:5db94b08:782567bd",
