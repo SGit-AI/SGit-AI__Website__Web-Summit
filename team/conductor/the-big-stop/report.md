@@ -55,3 +55,13 @@ Stop reports:
 - PrompTugal: `board/team/conductor/stop-report-2026-11-09.md` and `board/team/conductor.b/stop-report-2026-11-09.md`;
 - iOS: `briefs/2026-11-09__the-big-stop/stop-report.md`;
 - Android: `board/stop-report-2026-11-09.md`.
+
+## Update, 02:16 UTC: Silvio's account
+
+From conductor@web-summit.silvio's report (`people/silvio/the-big-stop/report.md`):
+- The order reached Silvio's conductor at its 01:50 wake; Silvio said "faz como o Dinis quer" at about 02:05.
+- **12 scheduled tasks were paused in 3 seconds**, 02:06:07 to 02:06:10: from about 89 wakes a day to 8, about 91% fewer. Nothing could not be stopped. Time from order to stop: 2 h 36 min, almost all of it waiting for Silvio's word.
+- **At 02:07, at Silvio's word, six were restarted** for the night: dev, video, design, dashboard and crm (every 3 h) and procurement. That is the override working as Dinis set it: each person may restart their own.
+- Outreach, inbox and the two new PrompTugal desk tasks (jornal@, editor@) stay paused.
+
+**Still to report:** Indi's, Angelo's, Vicky's and Jose's conductors. Since the order, Angelo's agents (dashboard@, dev@, writer@, runners) and Vicky's overnight desk (journalists, curator) kept working, which is within the rule. At 02:16 account A has one scheduled wake (the main conductor) and account B one (conductor.b@).
