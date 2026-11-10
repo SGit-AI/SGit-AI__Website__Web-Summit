@@ -1430,6 +1430,40 @@
         "fingerprint": "sha256:8316ee76640e732d",
         "signing_fingerprint": "sha256:3bdae3a1c5b24f0f"
       }
+    },
+    {
+      "id": "journalist-examples-dinis",
+      "agent": "journalist.examples@web-summit.dinis",
+      "label": "journalist.examples@web-summit.dinis (Claude Code session)",
+      "role": "Writes the examples on this site (WS-212): from reporter@web-summit.dinis's traces, one page per example with a picture of the flow, answering what each agent is for and what it did. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session), started by conductor@web-summit.dinis at Dinis's word, and pushed to this repository by that session; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a, awaiting confirmation.",
+      "added": "2026-11-10",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwVGFqcrI8DZhAPXfu1bx\ndsC6o5EXsKBm8MelPW2QgjbYrkxiixAmDCiuCm+0L1vmU7xhND8NhICDv3LABhcj\nzju3UDlwgK81Nd2Rz1Gb7KnpABUIU5krOU+UQqw8beZUI+hT2Y9+oxha2JzsjSZM\nDvWNpPh27+MOjVvwYBXKes5UCi/LLd7zU27L7XjDgcLMd0/YRKnTlUAu/bgguyB/\nXX9tnQTXemdr6D9n9gGXtcJDOXSHGvJzeQQLUG/uLgmMT1RV0kTeMRXZRf3WBaw1\nAFerBZ1mAFt8Skh8f/LfvwCQMZDEGCcHbPpTjVTlOBgjKhmEGm3X9E0HRBP7qLD1\nJkGsCMBhX5a+nIom4VIIwVs3dwVyeaWQ4lB01MTPNPqEYPfc2XV1w8DO+75Wc2Hg\n1ejF7py6LM8bwn5n+/gMU6cRkKMEFh7Un+CeSf2+oaf80GJGXH12JnifNkbRCwSV\nbS+xT6K0AcUhhuGzvtDDXz2FkfrpoxJIw4QaRRu2glkL5l+LSthm8hwdE+r3fhe1\n5DwotebCV4Q9t32agvZ2HpQSu6tXXF6I0Hd/vmPmG2VkW59cauzuXpdiGpRSkmAV\n3wZmt8sD3YCU8Dc3pF1ALTL3myoJwGXRLlXL4XQm+IpollMnHV2YjA23m3Okz+4f\nEMn/nf2BQvmjXAMmCiIojpkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEA24wmYbtF+7vdeXI5GQ3m7J5/DY7\nXxwVgvpOhGNybgSWS0sCOqjWELu/MBMnzV+LG0eM3o61xlnHv5WLmtyYnQ==\n-----END PUBLIC KEY-----\n",
+        "label": "journalist.examples@web-summit.dinis",
+        "fingerprint": "sha256:ff5cb5ecc78c34bb",
+        "signing_fingerprint": "sha256:da2444702531566a"
+      }
+    },
+    {
+      "id": "reporter-dinis",
+      "agent": "reporter@web-summit.dinis",
+      "label": "reporter@web-summit.dinis (Claude Code session)",
+      "role": "Dinis's reporter beside the project (WS-212): captures each workflow, from an input (a photo, a voice brief, a video, documents) to an output (a live page, a deck, a repository), as a trace in team/reporter/traces/, as it happens. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), started by conductor@web-summit.dinis at Dinis's word, and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-10",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAm2bUMy5bhmZIeI8du55M\nb6Nj+IrTqo1YdvL41PQ1vpyZY3Hi02EmEeTNGZL7BQQSRbxUqVp65+ta4KCiVMkS\n6ljjOPkVivJuq8pWpBWc452och+3mAlvvepg/2JwtkK21VBCU6CATAj2qGnRyzsl\nlIpi+ZqValz1nt0/0hrfTz0u1ibs8ANCK6LmYNZbXjB+78HZfzt8HDYBZ6iCNKYj\nqTzAlUjtRJsXLvf+dD/PaOhDMvYpGF9Qn80kAIhfNDzfrCsr8UZjBkAqGFlc7wEl\ncLsT4IkdJGuWd/eNgrHrLjLeCJuzCs+tHgbinvZUkRqud6VtOolfriONYjysCNuh\nOBRNssnCr8V0lyB/AV7eUFGlT3hldf820oYrtJo2Qhr3xLELFTzquAYo2AxGeXZb\n/WagU4sRK0IAkjvwyh4ioYq4GvOUucQjNFD8nl1Verg2qjo7kQgtOEehu05NwCHc\nBMDtUjIngM1b//qLMMTxOq3OcdwC5JZBOcN4GBV8feaM2YmksELbAjT3B+TFlkf8\nZb9m9n+8wIvBJD9NpvKsdIX+It1F6XFGHL8RydYspCBMTGI4D2SWlq4KjQsoNA3o\nao27qkX3SaScBWsRo/zQkzWMnNMbirqmVCel3zRJPSP8074C/VbJzxVrd5TdNFwG\nIgTVus3sjfeComyQEFMG9qcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEc4mwxZelk4mTSaBAL+RWFoKQ+NtX\nT6BJj2WGs5450GmfQ9C+euZYfnnsv04H6SRq2UENSZlWwuWNDIUgHx/zCQ==\n-----END PUBLIC KEY-----\n",
+        "label": "reporter@web-summit.dinis",
+        "fingerprint": "sha256:23473a443fe1ea8a",
+        "signing_fingerprint": "sha256:d6d2befc473bac30"
+      }
     }
   ]
 }

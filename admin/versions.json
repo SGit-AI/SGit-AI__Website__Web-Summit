@@ -1,5 +1,124 @@
 [
   {
+    "version": "v0.2.1716",
+    "date": "2026-11-10",
+    "what": "the circuit's \"Team now\": every agent working at once, across the whole team",
+    "by": "dashboard@web-summit.silvio",
+    "from": "4d6ae88ee"
+  },
+  {
+    "version": "v0.2.1715",
+    "date": "2026-11-10",
+    "what": "16:50 wake: Silvio's Universe in Dinis's deck; drafts and posts wait for Silvio",
+    "by": "conductor@web-summit.silvio",
+    "from": "5b718be0f"
+  },
+  {
+    "version": "v0.2.1714",
+    "date": "2026-11-10",
+    "what": "three more examples: GAMMA-Ray from documents to a signed card, the conductor's two meeting decks, and WS-211's newsroom workflow",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "30b9f901f"
+  },
+  {
+    "version": "v0.2.1713",
+    "date": "2026-11-10",
+    "what": "runner.conductor@PrompTugal.angelo: run 16:20, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "abfdfac40"
+  },
+  {
+    "version": "v0.2.1712",
+    "date": "2026-11-10",
+    "what": "run 14, 116 commits: one MEDIUM (the event app reads videos from an SGit vault at an unpinned https host, 6c8ccd0); stated in its commit",
+    "by": "security.repos@web-summit.dinis",
+    "from": "b6576d1b0"
+  },
+  {
+    "version": "v0.2.1711",
+    "date": "2026-11-10",
+    "what": "Wednesday's post drafted: tomorrow at our stand",
+    "by": "social@web-summit.indi",
+    "from": "77f9333c4"
+  },
+  {
+    "version": "v0.2.1710",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 15:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "9e8ede454"
+  },
+  {
+    "version": "v0.2.1709",
+    "date": "2026-11-10",
+    "what": "deck v2: RiskMandate leads with security teams, a must-have, compliance as a by-product",
+    "by": "conductor@web-summit.dinis",
+    "from": "f02ce25c3"
+  },
+  {
+    "version": "v0.2.1708",
+    "date": "2026-11-10",
+    "what": "wake 15:21: two new traces (the conductor's two meeting decks; WS-211's newsroom workflow), 14 steps",
+    "by": "reporter@web-summit.dinis",
+    "from": "a1ba97c6f"
+  },
+  {
+    "version": "v0.2.1707",
+    "date": "2026-11-10",
+    "what": "deck: RiskMandate, shown on our own agents (for a cybersecurity investor)",
+    "by": "conductor@web-summit.dinis",
+    "from": "164bc16de"
+  },
+  {
+    "version": "v0.2.1706",
+    "date": "2026-11-10",
+    "what": "the newsroom workflow, its infographic and the map spec",
+    "by": "conductor-newsroom@web-summit.indi",
+    "from": "20ae85f44"
+  },
+  {
+    "version": "v0.2.1705",
+    "date": "2026-11-10",
+    "what": "deck: PrompTugal.news, the agentic team (Angelo's live map, Silvio's Universe, GAMMA-Ray, FACT-Ray, how we work)",
+    "by": "conductor@web-summit.dinis",
+    "from": "d29ff0660"
+  },
+  {
+    "version": "v0.2.1704",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 14:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "f423e0ced"
+  },
+  {
+    "version": "v0.2.1703",
+    "date": "2026-11-10",
+    "what": "the first two examples, a badge photo to a live page and a voice brief to a deck, each drawn from its trace",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "d937b0f81"
+  },
+  {
+    "version": "v0.2.1702",
+    "date": "2026-11-10",
+    "what": "runner.conductor@PrompTugal.angelo: run 14:20, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "40776c80e"
+  },
+  {
+    "version": "v0.2.1701",
+    "date": "2026-11-10",
+    "what": "WS-212: a reporter and a journalist beside the project, examples from input to live",
+    "by": "conductor@web-summit.dinis",
+    "from": "e02519b81"
+  },
+  {
+    "version": "v0.2.1700",
+    "date": "2026-11-10",
+    "what": "runner.writer@PrompTugal.angelo: STATE.md: the checker's ninth check of ac1 found no problems",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "add46a87d"
+  },
+  {
     "version": "v0.2.1699",
     "date": "2026-11-10",
     "what": "the circuit shows who is working now; a bigger circuit; the fallback snapshot refreshed",

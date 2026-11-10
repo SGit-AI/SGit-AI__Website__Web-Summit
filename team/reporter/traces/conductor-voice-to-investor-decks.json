@@ -1,0 +1,309 @@
+{
+  "id": "conductor-voice-to-investor-decks",
+  "size": "small",
+  "schema": "ws-trace/1",
+  "shape": {
+    "step": "n, at (UTC, ISO 8601), at_note, actor {name, kind: person|agent|ci}, in, out, handoff {to, via}, repo, sha, issue, brief, for[], kind, evidence[] (commit|version|url|file); evidence: [] with evidence_note when the record holds none",
+    "graph": "each commit step also gives /pipeline/'s graph row {at, repo, sha, agent, issue, for[], kind} (WS-205)"
+  },
+  "title": "The conductor's own work: two spoken asks to two meeting decks in under 15 minutes each",
+  "input": {
+    "kind": "voice brief",
+    "what": "Dinis, about 14:35 and about 14:57 UTC on 10 November: a deck for each of two meetings that afternoon"
+  },
+  "output": {
+    "kind": "deck",
+    "what": "two decks with screenshots and PDFs",
+    "urls": [
+      "https://web-summit.sgit.ai/meetings/2026-11-10-1500/show/",
+      "https://web-summit.sgit.ai/meetings/2026-11-10-1600/show/"
+    ]
+  },
+  "privacy": "The investor at the second meeting is not named (their record is in the private CRM); the deck's own header says so.",
+  "status": "captured to live; the meetings themselves have no evidence yet",
+  "captured_by": "reporter@web-summit.dinis",
+  "captured_at": "2026-11-10T16:30Z",
+  "duration": {
+    "deck_1": "about 14:35 to 14:50:25, about 15 minutes, voice to live (v0.2.1705)",
+    "deck_2": "about 14:57 to 15:10:39, about 14 minutes, voice to live (v0.2.1707)"
+  },
+  "steps": [
+    {
+      "n": 1,
+      "at": "2026-11-10T14:35:00Z",
+      "at_note": "about; from the deck's own header (team/conductor/shows/2026-11-10-1500.py)",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "a meeting at about 15:15 with investors and partners",
+      "out": "a spoken ask: a deck on PrompTugal.news, the agentic team, with the best of Angelo's and Silvio's live views",
+      "handoff": {
+        "to": "conductor@web-summit.dinis",
+        "via": "voice, in the conductor's session"
+      },
+      "kind": "voice brief",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/conductor/shows/2026-11-10-1500.py",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/conductor/shows/2026-11-10-1500.py"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "at": "2026-11-10T14:45:45Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the ask; the live sites (Angelo's live map, Silvio's Universe, GAMMA-Ray, FACT-Ray, pt.news)",
+      "out": "deck 2026-11-10-1500: slides, 11 screenshots, deck.pdf",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "e1a626e6",
+      "issue": "WS-212",
+      "for": [
+        "dinis"
+      ],
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "e1a626e6",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/e1a626e6af8d59454b0c0f01b9ff0fc4bc92a626"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "at": "2026-11-10T14:46:17Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the deck",
+      "out": "a tick on WS-212 linking it",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "d29ff066",
+      "issue": "WS-212",
+      "for": [
+        "dinis"
+      ],
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "d29ff066",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/d29ff066029008981eda0c072ce85b9ac2214bed"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "at": "2026-11-10T14:50:25Z",
+      "actor": {
+        "name": "GitHub Actions (deploy-pages.yml)",
+        "kind": "ci"
+      },
+      "in": "dev including e1a626e6 and d29ff066",
+      "out": "v0.2.1705: deck 1 live",
+      "handoff": {
+        "to": "Dinis",
+        "via": "web-summit.sgit.ai"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "28c91c35",
+      "kind": "release",
+      "evidence": [
+        {
+          "type": "version",
+          "version": "v0.2.1705",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "28c91c35",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/28c91c351307d6f01ac33519882173466d856fd8"
+        },
+        {
+          "type": "url",
+          "url": "https://web-summit.sgit.ai/meetings/2026-11-10-1500/show/"
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "at": "2026-11-10T14:57:00Z",
+      "at_note": "about; from the deck's own header",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "a meeting at about 15:30 with a cybersecurity investor",
+      "out": "a spoken ask: RiskMandate, shown on our own agents",
+      "handoff": {
+        "to": "conductor@web-summit.dinis",
+        "via": "voice, in the conductor's session"
+      },
+      "kind": "voice brief",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/conductor/shows/2026-11-10-1600.py",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/conductor/shows/2026-11-10-1600.py"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "at": "2026-11-10T15:01:24Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the ask; riskmandate.ai, the ABP pages, the live views (reusing six of deck 1's screenshots)",
+      "out": "deck 2026-11-10-1600: slides, 14 screenshots, deck.pdf; WS-212 ticked",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "164bc16d",
+      "issue": "WS-212",
+      "for": [
+        "dinis"
+      ],
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "164bc16d",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/164bc16de3561cea93c92b4e091ff463eb362dfa"
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "at": "2026-11-10T15:10:39Z",
+      "actor": {
+        "name": "GitHub Actions (deploy-pages.yml)",
+        "kind": "ci"
+      },
+      "in": "dev including 164bc16d",
+      "out": "v0.2.1707: deck 2 live",
+      "handoff": {
+        "to": "Dinis",
+        "via": "web-summit.sgit.ai"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "d3c5f361",
+      "kind": "release",
+      "evidence": [
+        {
+          "type": "version",
+          "version": "v0.2.1707",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "d3c5f361",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/d3c5f36106f72ab512ce7fbf0eab1bbf891ad8e2"
+        },
+        {
+          "type": "url",
+          "url": "https://web-summit.sgit.ai/meetings/2026-11-10-1600/show/"
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "at": "2026-11-10T15:27:47Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "deck 2, before the meeting",
+      "out": "deck 2 v2: RiskMandate leads with security teams, a must-have, compliance as a by-product; new PDF",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "f02ce25c",
+      "issue": "WS-212",
+      "for": [
+        "dinis"
+      ],
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "f02ce25c",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/f02ce25c3d115a52dfbea43e467372e6724d8383"
+        }
+      ],
+      "evidence_note": "what prompted v2 (Dinis's word or the conductor's own pass) is not in the commit"
+    },
+    {
+      "n": 9,
+      "at": "2026-11-10T15:30:50Z",
+      "actor": {
+        "name": "GitHub Actions (deploy-pages.yml)",
+        "kind": "ci"
+      },
+      "in": "dev including f02ce25c",
+      "out": "v0.2.1709: deck 2 v2 live",
+      "handoff": {
+        "to": "Dinis",
+        "via": "web-summit.sgit.ai"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "890b4d6b",
+      "kind": "release",
+      "evidence": [
+        {
+          "type": "version",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "890b4d6b",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/890b4d6b6da5d542aade8bbeaabec1ef1dd238c7",
+          "version": "v0.2.1709"
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "at": null,
+      "at_note": "about 15:15 and about 15:30 (scheduled)",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "the decks",
+      "out": "the two meetings",
+      "handoff": {
+        "to": "investors and partners",
+        "via": "the meetings"
+      },
+      "kind": "presentation",
+      "evidence": [],
+      "evidence_note": "none; meetings are private (comms protocol). An outcome, if public, would come through the conductor."
+    }
+  ],
+  "people_acted": [
+    "Dinis: two spoken asks; the meetings"
+  ],
+  "agents_acted": {
+    "conductor@web-summit.dinis": "picked the right screenshots from the team's live views, wrote the slides, made the PDFs, kept the investor unnamed",
+    "GitHub Actions": "versioned and deployed"
+  },
+  "note": "Deck 1's release ran ~4 minutes after the push; deck 2's ran ~9 minutes after, behind another release (v0.2.1706). The 15:00 and 16:00 ids name the deck files, not the meeting times."
+}

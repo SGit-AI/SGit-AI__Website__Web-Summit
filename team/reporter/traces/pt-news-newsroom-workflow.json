@@ -1,0 +1,207 @@
+{
+  "id": "pt-news-newsroom-workflow",
+  "size": "medium",
+  "schema": "ws-trace/1",
+  "shape": {
+    "step": "n, at (UTC, ISO 8601), at_note, actor {name, kind: person|agent|ci}, in, out, handoff {to, via}, repo, sha, issue, brief, for[], kind, evidence[] (commit|version|url|file); evidence: [] with evidence_note when the record holds none",
+    "graph": "each commit step also gives /pipeline/'s graph row {at, repo, sha, agent, issue, for[], kind} (WS-205)"
+  },
+  "title": "WS-211: pt.news is about agents. A voice brief to one newsroom workflow, its infographic and a map spec",
+  "input": {
+    "kind": "voice brief",
+    "what": "Dinis (about 12:40 UTC) and Indi and Dinis (about 13:00 UTC), 10 November: pt.news becomes the place to learn about agents; one workflow, shown as a visual newsroom"
+  },
+  "output": {
+    "kind": "live page",
+    "what": "the newsroom workflow's infographic on the team site; a redesign brief and mock-ups on pt.news (not yet answered)",
+    "url": "https://web-summit.sgit.ai/people/indi/helpers/newsroom/"
+  },
+  "status": "in progress: the infographic is live; the pt.news redesign waits on PrompTugal's team",
+  "captured_by": "reporter@web-summit.dinis",
+  "captured_at": "2026-11-10T15:25Z",
+  "steps": [
+    {
+      "n": 1,
+      "at": "2026-11-10T12:40:00Z",
+      "at_note": "about; from WS-211",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "the summit; GAMMA-Ray and FACT-Ray",
+      "out": "a voice brief: pt.news is about agents; the workflow is the picture",
+      "handoff": {
+        "to": "conductor@web-summit.dinis",
+        "via": "voice"
+      },
+      "kind": "voice brief",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "board/WS-211-pt-news-is-about-agents-the-workflow-is-the-picture.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-211-pt-news-is-about-agents-the-workflow-is-the-picture.md"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "at": "2026-11-10T12:40:37Z",
+      "actor": {
+        "name": "conductor@web-summit.indi",
+        "kind": "agent"
+      },
+      "in": "Indi's and Dinis's word",
+      "out": "the newsroom helper started in its own session",
+      "handoff": {
+        "to": "conductor-newsroom@web-summit.indi",
+        "via": "a new session; commit For:"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "348c7fa3",
+      "for": [
+        "indi",
+        "dinis",
+        "conductor@PrompTugal.dinis",
+        "conductor-newsroom@web-summit.indi"
+      ],
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "348c7fa3",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/348c7fa33c51b0565c323f096b24a47ad28fc334"
+        }
+      ],
+      "evidence_note": "the commit (12:40:37) says the word was 'about 13:00 UTC'; the times disagree, flagged"
+    },
+    {
+      "n": 3,
+      "at": "2026-11-10T12:41:03Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "Dinis's voice brief",
+      "out": "WS-211 and the guidance in PrompTugal's board",
+      "handoff": {
+        "to": "PrompTugal's conductor and team",
+        "via": "board and guidance file"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "b72e6c8b",
+      "issue": "WS-211",
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "b72e6c8b",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/b72e6c8b1b9d551694f65f683a53fd3f35073994"
+        },
+        {
+          "type": "version",
+          "version": "v0.2.1693",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "5eb7e406",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/5eb7e4068939cd061ef3930c9d2255a8ccd00e52"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "at": "2026-11-10T14:51:28Z",
+      "actor": {
+        "name": "conductor-newsroom@web-summit.indi",
+        "kind": "agent"
+      },
+      "in": "the brief; pt.news's interview pipeline",
+      "out": "a 16-step workflow (meeting a person to the published interview), its infographic (stranger-tested by a sub-agent, six terms rewritten), a map spec with a Piece: trailer, a note for the app's redesign helper",
+      "handoff": {
+        "to": "CI; Indi and Dinis",
+        "via": "push to dev; For:"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "20ae85f4",
+      "issue": "WS-211",
+      "for": [
+        "conductor@web-summit.indi",
+        "indi",
+        "dinis"
+      ],
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "20ae85f4",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/20ae85f4497ca6fd98bd95a8063b57c79f7185a8"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "people/indi/helpers/newsroom/DONE.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/indi/helpers/newsroom/DONE.md"
+        }
+      ],
+      "evidence_note": "its DONE.md says 'nothing is pushed' and 'no key' (push and keygen refused in its session); the commit is nonetheless on dev, so it was pushed later by some route the record does not say"
+    },
+    {
+      "n": 5,
+      "at": "2026-11-10T15:00:32Z",
+      "actor": {
+        "name": "GitHub Actions (deploy-pages.yml)",
+        "kind": "ci"
+      },
+      "in": "dev including 20ae85f4",
+      "out": "v0.2.1706: the infographic live",
+      "handoff": {
+        "to": "readers; the team via /start/",
+        "via": "web-summit.sgit.ai"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "00dd4b5a",
+      "kind": "release",
+      "evidence": [
+        {
+          "type": "version",
+          "version": "v0.2.1706",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "00dd4b5a",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/00dd4b5af3cef9f62a90a6cc56729a738c20cd93"
+        },
+        {
+          "type": "url",
+          "url": "https://web-summit.sgit.ai/people/indi/helpers/newsroom/"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "at": null,
+      "actor": {
+        "name": "conductor-newsroom@web-summit.indi",
+        "kind": "agent"
+      },
+      "in": "the redesign",
+      "out": "a redesign brief and mock-ups for PrompTugal's team",
+      "handoff": {
+        "to": "conductor@, journalist@, designer@, dev.pages@, dev.graphs@, correspondent@ (PrompTugal)",
+        "via": "board/briefs/ in PrompTugal__News__Website, branch work/newsroom.indi"
+      },
+      "kind": "brief",
+      "evidence": [],
+      "evidence_note": "DONE.md says committed only locally; not yet checked on PrompTugal__News__Website (next wake)"
+    }
+  ],
+  "people_acted": [
+    "Dinis and Indi: the voice brief"
+  ],
+  "agents_acted": {
+    "conductor@web-summit.indi": "started the helper",
+    "conductor@web-summit.dinis": "wrote WS-211 and the guidance",
+    "conductor-newsroom@web-summit.indi": "the workflow, infographic, map spec, redesign brief",
+    "GitHub Actions": "versioned and deployed"
+  }
+}

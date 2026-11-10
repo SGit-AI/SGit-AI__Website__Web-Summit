@@ -1,0 +1,209 @@
+{
+  "id": "small-badge-photo-to-live-page",
+  "size": "small",
+  "schema": "ws-trace/1",
+  "shape": {
+    "step": "n, at (UTC, ISO 8601), at_note, actor {name, kind: person|agent|ci}, in, out, handoff {to, via}, repo, sha, issue, brief, for[], kind, evidence[] (commit|version|url|file); evidence: [] with evidence_note when the record holds none",
+    "graph": "each commit step also gives /pipeline/'s graph row {at, repo, sha, agent, issue, for[], kind} (WS-205)"
+  },
+  "title": "A picture: two badge photos to a live page, the map of 'the individual'",
+  "input": {
+    "kind": "photo",
+    "what": "two badge photos taken by Dinis after a meeting the night before: two people, one company, interested in RiskMandate"
+  },
+  "output": {
+    "kind": "live page",
+    "what": "/the-individual/ live in v0.2.1686",
+    "url": "https://web-summit.sgit.ai/the-individual/"
+  },
+  "privacy": "Names, photos and the company stay in the private CRM (ws-team-crm-private). This trace says only 'two people, one company'. The reporter did not read the private CRM.",
+  "status": "captured from the record; the page's next stages (unit, research, Kanban) are open under WS-210",
+  "captured_by": "reporter@web-summit.dinis",
+  "captured_at": "2026-11-10T14:30Z",
+  "duration": {
+    "from": "before 2026-11-10T12:02Z (time of the photos not in the record)",
+    "to": "2026-11-10T12:04:51Z",
+    "note": "the release commit is at 12:04:51; the page's own text and WS-210 say 'about 12:30 UTC' for Dinis's word, which the commits contradict (the page was committed at 12:02:27). The reporter follows the commits and flags the gap for the conductor."
+  },
+  "steps": [
+    {
+      "n": 1,
+      "at": null,
+      "at_note": "the night of 9 November (the meeting) and the morning of 10 November (the photos); no timestamp in the record",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "a meeting: two people, one company, interested in RiskMandate",
+      "out": "two badge photos",
+      "handoff": {
+        "to": "conductor@web-summit.dinis",
+        "via": "photos sent by hand into the conductor's session"
+      },
+      "kind": "capture",
+      "evidence": [],
+      "evidence_note": "no public evidence; the page says 'the first two leads were filed this way, 10 November' (content/the-individual.md, 'What exists')"
+    },
+    {
+      "n": 2,
+      "at": null,
+      "at_note": "before 12:02 UTC",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "the photos, and the idea",
+      "out": "a voice brief: 'I need to be able to take a photo of a person, and that needs to trigger a sequence of events...'",
+      "handoff": {
+        "to": "conductor@web-summit.dinis",
+        "via": "voice, in the conductor's session"
+      },
+      "kind": "voice brief",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "content/the-individual.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/content/the-individual.md"
+        }
+      ],
+      "evidence_note": "quoted on the page; no Brief: id was given for this one"
+    },
+    {
+      "n": 3,
+      "at": null,
+      "at_note": "before 12:02 UTC; WS-210's checklist marks it done",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "two badge photos",
+      "out": "two leads in the private CRM, stage Captured (read from the badge by the conductor)",
+      "handoff": {
+        "to": "the private CRM (ws-team-crm-private)",
+        "via": "a sealed vault commit"
+      },
+      "kind": "file in CRM",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "board/WS-210-the-individual-from-a-photo-to-a-unit.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-210-the-individual-from-a-photo-to-a-unit.md"
+        }
+      ],
+      "evidence_note": "private; the board's tick is the only public evidence, the vault commit was not read"
+    },
+    {
+      "n": 4,
+      "at": "2026-11-10T12:02:27Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the voice brief",
+      "out": "the map content/the-individual.md (the 7-stage pipeline, the Kanban board, the unit made visible, what stays private) and board issue WS-209",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "8c20e10d",
+      "issue": "WS-209",
+      "brief": null,
+      "for": [
+        "conductor@web-summit.indi",
+        "dev@web-summit.angelo",
+        "accountant@PrompTugal.dinis"
+      ],
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "8c20e10d",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/8c20e10d149f94f895cfef37b7d726fa161ca70f"
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "at": "2026-11-10T12:04:51Z",
+      "actor": {
+        "name": "GitHub Actions (deploy-pages.yml)",
+        "kind": "ci"
+      },
+      "in": "dev at 8c20e10",
+      "out": "v0.2.1686 built, gated, tagged and deployed: /the-individual/ live",
+      "handoff": {
+        "to": "readers, and the team named in For:",
+        "via": "web-summit.sgit.ai"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "4eb85679",
+      "kind": "release",
+      "evidence": [
+        {
+          "type": "version",
+          "version": "v0.2.1686",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "4eb85679",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/4eb856797b9c49c1b27c1bebd12623a30071fa0f"
+        },
+        {
+          "type": "url",
+          "url": "https://web-summit.sgit.ai/the-individual/"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "at": "2026-11-10T12:17:37Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "a clash: WS-209 was already Indi's education issue",
+      "out": "the issue renumbered WS-210",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "dbf505e4",
+      "issue": "WS-210",
+      "for": [
+        "conductor@web-summit.indi"
+      ],
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "dbf505e4",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/dbf505e4378bc5a56043a8f0d7e1ed39a917a2e1"
+        },
+        {
+          "type": "version",
+          "version": "v0.2.1688",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "f2c662e3",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/f2c662e3bbeb66c34e792eaa6310b8e78eb2c888"
+        }
+      ]
+    }
+  ],
+  "people_acted": [
+    "Dinis: met them, took the photos, gave the voice brief"
+  ],
+  "agents_acted": {
+    "conductor@web-summit.dinis": "read the badges, filed the leads in the private CRM, wrote the map and the board issue",
+    "GitHub Actions": "versioned, gated and deployed the site"
+  },
+  "open": [
+    "the unit schema and Unit: trailer",
+    "research for the first unit",
+    "the camera button and Kanban view",
+    "the per-unit view and cost"
+  ]
+}

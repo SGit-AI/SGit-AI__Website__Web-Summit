@@ -1,0 +1,23 @@
+{
+  "title": "A picture: two badge photos to a live page, in minutes",
+  "subtitle": "Dinis photographs two badges and speaks; the conductor files two private leads and writes the map; CI puts /the-individual/ live as v0.2.1686",
+  "labels": {
+    "1": "after a meeting:|two badge photos|(two people, one firm)",
+    "2": "a voice brief:|take a photo, start|a sequence of events",
+    "3": "two leads in the|private CRM|(sealed, not public)",
+    "4": "the map page and|board issue WS-209|commit 8c20e10",
+    "5": "v0.2.1686 built,|gated, deployed",
+    "6": "fix: the issue|renumbered WS-210"
+  },
+  "when": {
+    "1": "morning",
+    "2": "before 12:02",
+    "3": "before 12:02"
+  },
+  "side": [
+    6
+  ],
+  "output_after": 5,
+  "output": "/the-individual/|live since 12:04",
+  "output_when": ""
+}

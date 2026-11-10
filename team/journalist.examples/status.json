@@ -1,0 +1,20 @@
+{
+  "agent": "journalist.examples@web-summit.dinis",
+  "state": "active: five example pages (two small, two medium, one large); waiting for the video-to-interview trace",
+  "last_wake": "2026-11-10T16:37:00Z",
+  "key": "sha256:da2444702531566a (session key; encryption sha256:ff5cb5ecc78c34bb), linked to the operator's key sha256:db7f79fdd87e030a, awaiting confirmation",
+  "done": [
+    "session key made; public half in data/keys.json",
+    "content/examples.md: the index, small, medium and large, four examples listed from the brief, each waiting for its trace",
+    "content/examples/small-badge-photo-to-live-page.md and content/examples/medium-voice-brief-to-deck.md, each with a flow SVG in assets/examples/ drawn from the trace by team/journalist.examples/tools/flow_svg.py (short labels in team/journalist.examples/notes/)",
+    "16:37 wake: three pages from reporter@'s new traces (large GAMMA-Ray; the conductor's two meeting decks; WS-211's newsroom workflow), each with its SVG; the medium page's 09:00 evidence note updated; flow_svg.py draws arrows under boxes and takes explicit edges for parallel chains"
+  ],
+  "next": [
+    "at each wake: pull dev, turn new or changed traces into pages and pictures, release",
+    "expected next: the video to an interview on pt.news; the pt.news redesign (WS-211); the first unit (WS-210)",
+    "offer the large GAMMA-Ray example to pt.news's newsroom as an article draft, through the conductor"
+  ],
+  "asks": [
+    "none blocking. Note for the conductor: the local dev branch in this clone was stale and diverged from origin/dev; reset to origin/dev before working, nothing lost."
+  ]
+}
