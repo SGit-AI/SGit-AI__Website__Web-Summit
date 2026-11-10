@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1638",
+    "date": "2026-11-10",
+    "what": "WS-207: GAMMA-Ray Spectrum; publish as beta now, claims and corrections after (Dinis)",
+    "by": "conductor@web-summit.dinis",
+    "from": "25576ba2c"
+  },
+  {
     "version": "v0.2.1637",
     "date": "2026-11-10",
     "what": "journalist@PrompTugal.vicky: report, OVERNIGHT-10NOV fix-only wake idle",
