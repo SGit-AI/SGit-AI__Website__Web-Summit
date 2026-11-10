@@ -1,0 +1,34 @@
+/* GAMMA-Ray in the Lab (10 November) */
+#gamma .gr-head h2 { margin: 0 0 4px; }
+.gr-warn { margin: 0 0 6px; padding: 6px 10px; border-radius: 6px; background: #F5B94222; border: 1px solid #F5B94266; color: #F5C542; font-weight: 600; font-size: 13px; }
+html.cc-on[data-theme="light"] .gr-warn { color: #8A5A00; background: #FFF2CC; border-color: #E8C26A; }
+.gr-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 14px; margin: 14px 0; }
+@media (max-width: 1100px) { .gr-grid { grid-template-columns: 1fr; } }
+.gq { display: block; width: 100%; height: auto; }
+.gq text { font-family: ui-monospace, Menlo, monospace; fill: currentColor; }
+.gq .gq-ax { font-size: 10.5px; opacity: .75; } .gq .gq-t { font-size: 11px; opacity: .6; }
+.gq .gq-held { fill: rgba(61, 220, 151, .10); stroke: rgba(127, 151, 168, .25); } .gq .gq-gap { fill: rgba(255, 92, 122, .07); stroke: rgba(127, 151, 168, .25); }
+.gq .gq-gapline { stroke: #FF5C7A; stroke-width: 2.5; stroke-dasharray: 6 5; } .gq .gq-heldpt { fill: #3DDC97; }
+.gq-pt { cursor: pointer; } .gq-pt circle { fill: #4FD1F5; stroke: #E6F7FF; stroke-width: 1.5; } .gq-pt text { font-size: 11px; font-weight: 700; fill: #021018; }
+.gq-pt.on circle, .gq-pt:hover circle, .gq-pt:focus circle { fill: #F5C542; } .gq-pt:focus { outline: none; }
+.gq-key { font-size: 12px; opacity: .8; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+.gq-key i { display: inline-block; width: 14px; height: 10px; vertical-align: middle; margin-right: 4px; } .gq-key .k-held { background: rgba(61, 220, 151, .35); } .gq-key .k-gap { background: rgba(255, 92, 122, .3); } .gq-key .k-line { height: 0; border-top: 2px dashed #FF5C7A; }
+.gr-table { overflow-x: auto; } .gr-table table { width: 100%; border-collapse: collapse; font-size: 13px; } .gr-table th, .gr-table td { text-align: left; padding: 8px; border-bottom: 1px solid var(--rm-border, #223); vertical-align: top; }
+.gr-table tr.on td { background: rgba(79, 209, 245, .08); } .gr-table small { display: block; opacity: .65; } .gr-table ol { margin: 0; padding-left: 18px; }
+.gr-name { background: none; border: 0; padding: 0; color: inherit; font: inherit; font-weight: 700; cursor: pointer; text-align: left; } .gr-name:hover { text-decoration: underline; }
+.gr-gap { display: inline-block; min-width: 22px; text-align: center; border-radius: 4px; padding: 1px 6px; } .gr-gap.g0 { background: #3DDC9733; } .gr-gap.g1 { background: #F5C54233; } .gr-gap.g2, .gr-gap.g3 { background: #FF5C7A33; }
+.gr-detail { max-height: 640px; overflow: auto; } .gr-detail h3 { margin: 0 0 4px; } .gr-detail .ok { color: #3DDC97; } .gr-detail .warn { color: #FF5C7A; }
+.gr-q h4 { margin: 12px 0 4px; font-size: 13px; } .gr-q ul { margin: 0; padding: 0; list-style: none; } .gr-q li { padding: 5px 0; border-bottom: 1px dashed var(--rm-border, #223); font-size: 12.5px; }
+.gr-q li small { display: block; opacity: .65; } .gr-q li.no { opacity: .8; } .gr-ans { display: block; margin-top: 2px; } .gr-ne { margin-left: 6px; font-size: 11px; padding: 1px 6px; border-radius: 4px; background: rgba(127, 151, 168, .2); }
+.gr-axis { font: 600 10px/1 ui-monospace, Menlo, monospace; text-transform: uppercase; padding: 2px 5px; border-radius: 3px; background: rgba(79, 209, 245, .2); } .gr-axis.governance { background: rgba(255, 138, 92, .25); }
+.gr-detail header { display: block !important; } .gr-detail header p { margin: 4px 0; }
+
+/* GAMMA-Ray as a circuit, like the Universe's (10 November, night) */
+.gr-switch { display: inline-flex; gap: 2px; margin: 14px 0 10px; padding: 3px; border-radius: 8px; border: 1px solid var(--rm-border, #223); }
+.gr-switch button { min-height: 32px; padding: 0 14px; border: 0; border-radius: 6px; background: transparent; color: inherit; font: 600 12.5px/1 var(--rm-font, inherit); cursor: pointer; } .gr-switch button[aria-pressed="true"] { background: #F5E14A; color: #021018; }
+.gr-circwrap { padding: 0 !important; overflow: hidden; margin-bottom: 14px; }
+.gr-circ.bm-circuit { position: static; inset: auto; z-index: auto; overflow: visible; border-radius: inherit; }
+.gr-circ .bc-n[data-gr] { cursor: pointer; } .gr-circ .bc-n[data-gr]:hover .bc-body { stroke: #4FD1F5; }
+.bc-svg .bc-box.on { fill: #3DDC97; stroke: #3DDC97; }
+.bc-strip .r { color: #FF5C7A; font-weight: 700; }
+.bc-svg .bc-w.claim { stroke: #F5C542 !important; opacity: .55; stroke-dasharray: 3 4; }
