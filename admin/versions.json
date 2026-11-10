@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1640",
+    "date": "2026-11-10",
+    "what": "reviewer@PrompTugal.vicky: report, OVERNIGHT-10NOV re-check: S37, S38, S39 published; four of four live",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "a3482b933"
+  },
+  {
     "version": "v0.2.1639",
     "date": "2026-11-10",
     "what": "dev@PrompTugal.angelo: ledger line for the 03:35 run",
