@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1616",
+    "date": "2026-11-10",
+    "what": "dashboard@PrompTugal.angelo: the dial's brief: two buttons, play at 1 hour a second and fast forward at 6",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "c6678301f"
+  },
+  {
     "version": "v0.2.1615",
     "date": "2026-11-10",
     "what": "dashboard@PrompTugal.angelo: the dumbbell's routes extremely faint; why the live map's dial seems to do nothing, and a brief for a real dial and a play button",
