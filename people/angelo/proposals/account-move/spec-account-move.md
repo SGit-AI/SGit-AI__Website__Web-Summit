@@ -2,13 +2,32 @@
 title: "Moving Angelo's agents to his second account: which ones, and the hand-over"
 by: desk.conductor@PrompTugal.angelo
 written: 2026-11-10
-status: a plan for Angelo's review; nothing moves until he says which wave and sets up the account
+status: a plan for Angelo's review, revised at his word the same morning (the pool on B, named by the phonetic alphabet); nothing moves until he answers its questions and sets up the account
 asked_by: Angelo, 10 November about 11:40 UTC ("I have a new account where I can transfer workload to, like other in the team have done, can you get updates and prepare a handover process for me?")
 model: Dinis's account move (PrompTugal newsroom, board/the-account-move.md and board/guidance/2026-11-06-account-b.md, 6 November)
 ---
 # Moving Angelo's agents to account B
 
 **Why.** To spread the load across two subscriptions, as Dinis did on 6 November. His first wave halved the load on his main account without slowing any agent or lowering its model.
+
+## Angelo's direction (10 November, about 11:50 UTC)
+
+*"In the new account we should lean in to the on-demand, single-session, worker agents approach."* Then: *"Let's give the worker agents names following the expanded alphabet of alpha bravo charlie etc."*
+
+So account B does **not** take the old workstream agents one by one. It is where **the worker pool** (approved 9 November, people/angelo/proposals/worker-pool/) is born:
+- **Generic workers**, each a fresh single session per run. No workstream, no key, no memory but the repository.
+- **Each run**, a worker takes the highest backlog item nobody holds (`pool-claim.mjs`, which already accepts any `<name>@PrompTugal.angelo`), works it, leaves its state with the item, and ends.
+- **Named by the phonetic alphabet:** `alpha@PrompTugal.angelo`, `bravo@`, `charlie@`, `delta@`, `echo@`, `foxtrot@`, and on through `zulu@` as the pool grows. They replace the pool spec's `worker.1@` to `worker.4@`.
+- **Three to skip, to avoid confusion:** **india** (Indi is a person on the team), **xray** (RiskMandate X-ray) and **alpha** (a Web Summit pass type). *Recommendation: skip india and xray; keep alpha, which reads clearly as the first worker.*
+- **On demand:** a worker that finds nothing it may take ends at once, cheaply. Two ways to run them on B:
+  - **(a)** each worker's task has a slow fallback (every two hours, staggered) **plus** Angelo's Run now when something is urgent;
+  - **(b)** no schedule: Run now only.
+
+  The desk cannot fire tasks on B, so with (b) nothing moves unless Angelo taps. *Recommendation: (a).*
+- **The old workstream agents** on this account (dev.map@, dev.work@, dev.app@, dev.venues@, dev.links@, dev.abp@, research@, social-media@, vault.kms@) are **retired as the pool takes their rows**. The pool spec's section 7 gives the order: paused first, archived later, never moved.
+- **Specialists stay where they are.** The desk, runner.conductor@, dev@ and dashboard@ (the reviewers), the writer (with Angelo), and vault@ and crm@ (sealed tokens). The workers' rows name dev@ or dashboard@ as Reviewer.
+
+The list and waves below are the general rule, kept for the long sessions (wave 2). For the fresh-session work, the pool replaces wave 1.
 
 ## What decides who can move
 
@@ -69,6 +88,8 @@ As CLAUDE.md's hand-over and Dinis's plan:
 
 ## Questions for Angelo
 
-1. Which **GitHub login** will account B use?
-2. **Wave 1 now** (dev.abp, research, runner.writer; the other workers recreated paused), wave 2 after it runs clean?
-3. **The worker pool on B** instead of the old workers?
+1. Which **GitHub login** will account B use? (The push check, above.)
+2. **How many workers to start:** *recommendation: four, alpha, bravo, charlie and delta, three on the larger model and delta on the smaller; more when the backlog needs it.*
+3. **Names to skip:** india and xray, as recommended? Or the full alphabet?
+4. **Run (a)**, a slow fallback plus Run now, or **(b)**, Run now only?
+5. **The first rows for the pool**, after the restart: the RiskMandate demos (dev.abp@'s work: more scenarios, the shared scenario file for the apps, the approve button), research@'s rows and the map's remaining items. Each row gets its Files, Brief, Reviewer, Model and Done when (pool spec section 3) before a worker may take it.
