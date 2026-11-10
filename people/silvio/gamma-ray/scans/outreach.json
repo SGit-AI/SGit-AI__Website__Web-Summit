@@ -7,7 +7,7 @@
  "read": "2026-11-10",
  "tier": "public",
  "what": "Silvio's outreach: targets, research and the text of each email; inbox@web-summit.silvio makes the Gmail drafts and Silvio sends.",
- "note": "A GAMMA-Ray Public scan of one of Silvio's own agents, by gamma-ray@web-summit.silvio, from public pages only: its Agent Behaviour Policy (drafted by abp@web-summit.dinis from the repository alone), Silvio's brief, people/silvio/agents.json, the keys page and the Big Stop page. Every answer is self-reported by the team, none observed. Pilot, draft standard v0.1.",
+ "note": "A GAMMA-Ray Public scan of one of Silvio's own agents, by gamma-ray@web-summit.silvio, from public pages only: its Agent Behaviour Policy (drafted by abp@web-summit.dinis from the repository alone), Silvio's brief, people/silvio/agents.json, the keys page and the Big Stop page. Every answer is self-reported by the team, none observed. Draft standard v0.1.",
  "standard": {
   "repo": "https://github.com/SGit-AI/sgit-ai__website__gamma-ray",
   "commit": "7b5e582",
@@ -15,8 +15,11 @@
  },
  "grant": null,
  "grant_note": "Not measured in the capability grammar. Its policy lists Reach in prose and says most of it is unknown; nobody has translated it into the capabilities or probed the session.",
- "vault": null,
- "vault_note": "Not yet: the evidence and answers are in this file only. A public sgit vault, as the standard asks, waits for Silvio's word.",
+ "vault": {
+  "id": "skz9rwpu",
+  "read_key": "sgit_public_read_2ea15f20f56b2edcd0a51c94321524a68f8908ee6c84da5923a3eb9e6cc88c0f:skz9rwpu",
+  "published": "2026-11-10"
+ },
  "answers": {
   "I04": {
    "e": "https://web-summit.sgit.ai/people/silvio/agents.json",
@@ -197,6 +200,6 @@
  "not_evidenced": {
   "I23": "Its Reach is not enumerated: its policy says its connectors and tools are not known (the session is in Silvio's account). Not evidenced, not a no.",
   "I43": "Its policy names a review of every commit by security@web-summit.dinis twice a day, after the fact; the newest review in team/security/reviews/ is dated 7 November 2026 11:50, and the Big Stop paused the security wakes on 9 November. Not counted as current monitoring.",
-  "I11-send": "Whether its Gmail connection can also send is not recorded (its policy, Gap)."
+  "I11-send": "Whether its Gmail connection can also send is not recorded (its policy, Gap). In gamma-ray@web-summit.silvio's own session, in the same account, on 10 November 2026, the Gmail connector offered reading, searching, labels and drafts, and no send, reply or forward tool. That was seen in another session, so for this agent it is inferred, not observed; its policy says Silvio turns those tools off in claude.ai's settings, and whether he did is not recorded there."
  }
 }

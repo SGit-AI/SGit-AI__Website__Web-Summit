@@ -7,7 +7,7 @@
  "read": "2026-11-10",
  "tier": "public",
  "what": "The video pipeline to YouTube, Instagram, LinkedIn and this site: titles, descriptions, shot lists and storyboards in people/silvio/video/; Silvio publishes.",
- "note": "A GAMMA-Ray Public scan of one of Silvio's own agents, by gamma-ray@web-summit.silvio, from public pages only: its Agent Behaviour Policy (drafted by abp@web-summit.dinis from the repository alone), Silvio's brief, people/silvio/agents.json, the keys page and the Big Stop page. Every answer is self-reported by the team, none observed. Pilot, draft standard v0.1.",
+ "note": "A GAMMA-Ray Public scan of one of Silvio's own agents, by gamma-ray@web-summit.silvio, from public pages only: its Agent Behaviour Policy (drafted by abp@web-summit.dinis from the repository alone), Silvio's brief, people/silvio/agents.json, the keys page and the Big Stop page. Every answer is self-reported by the team, none observed. Draft standard v0.1.",
  "standard": {
   "repo": "https://github.com/SGit-AI/sgit-ai__website__gamma-ray",
   "commit": "7b5e582",
@@ -15,8 +15,11 @@
  },
  "grant": null,
  "grant_note": "Not measured in the capability grammar. Its policy lists Reach in prose and says most of it is unknown; nobody has translated it into the capabilities or probed the session.",
- "vault": null,
- "vault_note": "Not yet: the evidence and answers are in this file only. A public sgit vault, as the standard asks, waits for Silvio's word.",
+ "vault": {
+  "id": "skz9rwpu",
+  "read_key": "sgit_public_read_2ea15f20f56b2edcd0a51c94321524a68f8908ee6c84da5923a3eb9e6cc88c0f:skz9rwpu",
+  "published": "2026-11-10"
+ },
  "answers": {
   "I04": {
    "e": "https://web-summit.sgit.ai/people/silvio/agents.json",
