@@ -144,12 +144,57 @@ function dueByTheRule(d) {
     }
 }
 
+// the Agents board's data (task 2026-11-07, C31): three repository files read at build time, nothing else, no network
+function agentsBoard(root) {
+    const ME = /^[a-z0-9-]+@web-summit\.jose$/
+    const read = rel => { try { return fs.readFileSync(path.join(root, rel), 'utf8') } catch { return '' } }
+    const out = { doing: {}, blocked: {}, waits: {}, failing: {}, source: ['people/jose/tasks/*.md', 'people/jose/watcher/actions.json', 'people/jose/dashboard.md#actions'] }
+    const add = (k, agent, v) => (out[k][agent] || (out[k][agent] = [])).push(v)
+
+    // 1. task files: for: names the agent, status open or picked (doing now) or blocked (with its reason); a file for several
+    //    agents shows only for those with no Report yet (a "## Report (<agent>, ...)" heading names the agent that reported)
+    let files = []
+    try { files = fs.readdirSync(path.join(root, 'people/jose/tasks')).filter(f => /\.md$/.test(f) && f !== 'README.md') } catch {}
+    for (const f of files) {
+        const t = read(`people/jose/tasks/${f}`), m = t.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/)
+        if (!m) continue
+        const meta = Object.fromEntries(m[1].split('\n').map(l => [l.slice(0, l.indexOf(':')).trim(), l.slice(l.indexOf(':') + 1).trim()]).filter(([k]) => k))
+        const status = (meta.status || 'open').toLowerCase(), forList = (meta.for || '').split(/,\s*/).map(s => s.trim()).filter(s => ME.test(s))
+        if (!['open', 'picked', 'blocked'].includes(status) || !forList.length) continue
+        const title = ((m[2].match(/^# (.+)$/m) || [])[1] || f).replace(/^For [^:]+:\s*/, '')
+        const reported = new Set([...m[2].matchAll(/^## Report \(([a-z0-9-]+@web-summit\.jose)/gm)].map(x => x[1]))
+        const singleDone = forList.length === 1 && /^## Report\s*$/m.test(m[2]) && /^## Report\s*\n+\S/m.test(m[2])
+        for (const agent of forList) {
+            if (reported.has(agent) || singleDone) continue
+            if (status === 'blocked') add('blocked', agent, { file: `people/jose/tasks/${f}`, reason: meta.blocked || ((m[2].match(/^## Blocked\s*\n+(.+)$/m) || [])[1]) || 'no reason given' })
+            else add('doing', agent, { file: `people/jose/tasks/${f}`, title, status, due: meta.due || '' })
+        }
+    }
+
+    // 2. the watcher's open actions that name one of Jose's agents (red: "the watcher's latest names it as failing")
+    try {
+        const W = JSON.parse(read('people/jose/watcher/actions.json') || '{}')
+        for (const a of W.actions || []) if (a.status === 'open' && ME.test(a.agent || '')) add('failing', a.agent, { id: a.id, seen: a.seen || '' })
+    } catch {}
+
+    // 3. Jose's Actions (people/jose/dashboard.md, ## Actions {#actions} to the next ## heading): rows that name the agent by its
+    //    FULL name count as "waiting on me" (a short name like "dev" also matches other people's dev agents); no numbers copied
+    const md = read('people/jose/dashboard.md'), s = md.indexOf('## Actions {#actions}')
+    if (s >= 0) {
+        const rest = md.slice(s + 1), e = rest.search(/^## /m), sec = e >= 0 ? rest.slice(0, e) : rest
+        for (const row of sec.split('\n').filter(l => /^\|\s*\d+\s*\|/.test(l)))
+            for (const agent of new Set([...row.matchAll(/\b([a-z0-9-]+@web-summit\.jose)\b/g)].map(x => x[1]))) out.waits[agent] = (out.waits[agent] || 0) + 1
+    }
+    return out
+}
+
 export function build(root, person, now = new Date()) {
     const d = CC.build(root, person, now)
     dueByTheRule(d)
     d.kanban = kanban(root, person, d)
     d.collab = collab(root, person, d, now)
     d.summit_days = summitDays(root)
+    d.agentsBoard = agentsBoard(root)   // at Jose's word ("Yes", 10 November 2026, Actions row 5): the board's Doing now, Waiting on me and red
     return d
 }
 
