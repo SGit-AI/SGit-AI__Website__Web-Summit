@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1726",
+    "date": "2026-11-10",
+    "what": "17:40 wake: lane counted, not drained (no \"drain\" to me yet); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "cb0eb4b0c"
+  },
+  {
     "version": "v0.2.1725",
     "date": "2026-11-10",
     "what": "video's and crm's ledger lines without model identifiers",
