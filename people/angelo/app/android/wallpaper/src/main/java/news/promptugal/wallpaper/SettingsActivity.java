@@ -37,7 +37,9 @@ public class SettingsActivity extends Activity {
         col.setBackgroundColor(0xFF000000 | Graph.BG);
         TextView h = text("Choose the view", 24, Graph.TEXT); h.setTypeface(Typeface.DEFAULT_BOLD);
         TextView p = text("As on the website's live map. The wallpaper redraws as soon as you choose.", 15, Graph.MUTED); p.setPadding(0, pad / 3, 0, pad / 2);
-        col.addView(h); col.addView(p);
+        // which build this phone runs, and what it offers (Angelo, 10 November: "make sure the version is displayed in the settings")
+        TextView ver = text(LiveMapWallpaper.version(this) + " \u00b7 views: 3D, People ring, Agents ring; levels: Messages, Workstreams and Deliverables as a dumbbell", 13, Graph.MUTED); ver.setPadding(0, 0, 0, pad / 2);
+        col.addView(h); col.addView(p); col.addView(ver);
 
         col.addView(heading("Layout", pad));
         // each choice its own id across both groups (layouts from 100, themes from 200), and no saved state: the screen is

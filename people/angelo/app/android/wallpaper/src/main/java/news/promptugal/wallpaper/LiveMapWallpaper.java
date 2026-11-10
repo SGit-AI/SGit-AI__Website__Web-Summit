@@ -40,6 +40,11 @@ public class LiveMapWallpaper extends WallpaperService {
     static void confirm(String url) { String t = pending.remove(url); if (t != null) etags.put(url, t); }
     // the view, chosen in SettingsActivity (Angelo, 9 November: "choosing the view as in the website"); kept on the phone
     static final String PREFS = "view", LAYOUT = "layout", THEME = "theme", LEVEL = "level";
+    /** "Version 0.5.0 (10)", from the installed package itself, so the phone says which build it runs (Angelo, 10 November). */
+    static String version(Context c) {
+        try { android.content.pm.PackageInfo i = c.getPackageManager().getPackageInfo(c.getPackageName(), 0); return "Version " + i.versionName + " (" + i.versionCode + ")"; }
+        catch (Exception e) { return "Version unknown"; }
+    }
     static String layout(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(LAYOUT, "3d"); }
     /** The layout the graph is built in: the chosen one, but flat under a level's dumbbell, whose routes leave from the people's
      *  places (the 3D ball turns them away; the page's dumbbell is flat too): the People ring then. */
