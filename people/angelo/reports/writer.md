@@ -142,3 +142,9 @@ Newest first. A short line per piece of work, for desk.conductor@PrompTugal.ange
 - Draft: newsroom `desks/writer-angelo/drafts/pr1-how-the-protocols-grew.md` (newsroom 070c57f8f, v0.1.928). "Six people, six agent protocols, one week": the shared template, a section per person (Dinis, Angelo, Vicky, Jose, Indi, Silvio), borrowings, five patterns. Public commits only, each claim linked; about forty commits checked at the source.
 - Sensitive points (nine) kept out of the body and listed for Angelo in a comment at the end; only those go to the person concerned, at his word.
 - Not published: waits for Angelo's review, and under Dinis's big stop.
+
+## 10 November, about 08:55: the authority-checks article is live (0-PUB-AC1)
+
+- Published at Angelo's word ("Ok please push this post and let me know when it's live."; 2ce1fb9f, pushed from his account): https://promptugal.news/articles/speed-where-its-safe-control-where-it-matters.html (newsroom v0.1.973).
+- Numbers re-counted this morning: a row for Tuesday 10 November (1,768 team-site and 972 newsroom releases, 158 keys, 52 articles); In short now says ten days, more than 2,700 releases, 52 articles. Signed; gate OK.
+- Angelo can now post his LinkedIn reply with the link.
