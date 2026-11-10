@@ -1,7 +1,7 @@
 {
   "schema": "web-summit.sgit.ai/angelo-lanes/v1",
   "about": "Where each of Angelo's agents may write, from its ABP (content/abp/<agent>-web-summit-angelo.md, Mandate, Deployment scope) and Angelo's protocol (people/angelo/kit/README.md#protocol). Kept by policy@web-summit.angelo; read by people/angelo/policy/audit.mjs. A write outside these paths is not always a violation (tier 2 allows small changes the owner asked for, said so in the commit), but every one is listed and judged in findings.md.",
-  "updated": "2026-11-07",
+  "updated": "2026-11-10",
   "enforce": true,
   "enforce_about": "Turned on by policy@PrompTugal.angelo on 8 November 2026 at 07:30 UTC: since the check went in (42198055, 7 November 22:17), every outside write by Angelo's agents was declared (5 of 5) and none was refused; the one earlier refusal (d89d2576) predates the check. From now on release.sh and CI refuse an undeclared write outside a lane.",
   "common": [
@@ -195,6 +195,25 @@
       "aliases": [],
       "branch": "workers/dev.work",
       "source": "a worker on workers/dev.work; its work reaches dev only through its reviewer's commit; lane to be read from its ABP"
+    },
+    "conductor.b@PrompTugal.angelo": {
+      "writes": [
+        "people/angelo/**"
+      ],
+      "aliases": [],
+      "source": "people/angelo/proposals/account-move/spec-pipeline-b.md (approved by Angelo, 10 November about 12:40 UTC): account B's conductor; and Angelo's word of 10 November about 17:15 UTC giving it main control"
+    },
+    "alpha.large.worker@PrompTugal.angelo": {
+      "writes": [
+        "people/angelo/pipeline/**"
+      ],
+      "aliases": [
+        "bravo.large.worker@PrompTugal.angelo",
+        "charlie.large.worker@PrompTugal.angelo",
+        "delta.small.worker@PrompTugal.angelo",
+        "echo.small.worker@PrompTugal.angelo"
+      ],
+      "source": "people/angelo/proposals/account-move/spec-pipeline-b.md (approved by Angelo, 10 November about 12:40 UTC): the five pipeline workers on account B, one entry for all five; here only people/angelo/pipeline/<id>/; the publish role's newsroom writes are in the other repository, not checked by this gate"
     }
   },
   "everyone": {
