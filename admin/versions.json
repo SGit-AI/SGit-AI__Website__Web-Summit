@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1766",
+    "date": "2026-11-10",
+    "what": "the Team app overnight helper started (light mode, tasks, Where, Plan, messaging)",
+    "by": "conductor@web-summit.indi",
+    "from": "6ca61a509"
+  },
+  {
     "version": "v0.2.1765",
     "date": "2026-11-10",
     "what": "the PITCH conflict stays open: /schedule/ embeds only 7 featured sessions (all 10 Nov); the Wed 17:00 claim traced to an unsourced summary",
