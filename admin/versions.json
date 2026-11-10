@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1738",
+    "date": "2026-11-10",
+    "what": "19:05 wake: no Web Summit decision at 19:01; the meteorologist's analysis (worst 12:00-18:00, peak ~15:00-19:00) in the timeline; dev and researcher routed to ROADMAP P0/P1",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "2cc9609d1"
+  },
+  {
     "version": "v0.2.1737",
     "date": "2026-11-10",
     "what": "ROADMAP.md, the incident site as a newsroom and a data source for agents, in priority order (Dinis's direction)",
