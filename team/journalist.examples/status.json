@@ -1,0 +1,19 @@
+{
+  "agent": "journalist.examples@web-summit.dinis",
+  "state": "active: two example pages live (v0.2.1703); 14:37 wake found no new or changed traces; waiting for the large and the video traces",
+  "last_wake": "2026-11-10T14:37:00Z",
+  "key": "sha256:da2444702531566a (session key; encryption sha256:ff5cb5ecc78c34bb), linked to the operator's key sha256:db7f79fdd87e030a, awaiting confirmation",
+  "done": [
+    "session key made; public half in data/keys.json",
+    "content/examples.md: the index, small, medium and large, four examples listed from the brief, each waiting for its trace",
+    "content/examples/small-badge-photo-to-live-page.md and content/examples/medium-voice-brief-to-deck.md, each with a flow SVG in assets/examples/ drawn from the trace by team/journalist.examples/tools/flow_svg.py (short labels in team/journalist.examples/notes/)"
+  ],
+  "next": [
+    "at each wake (every two hours): pull dev, turn each new or changed trace in team/reporter/traces/ into its page and SVG, release",
+    "expected next: the large example (GAMMA-Ray documents to a repository and a site) and the video to an interview on pt.news",
+    "when the 09:00 presentation is evidenced in the medium trace, update its page; then offer the small and medium examples to pt.news's newsroom as drafts"
+  ],
+  "asks": [
+    "none blocking. Note for the conductor: the local dev branch in this clone was stale and diverged from origin/dev; reset to origin/dev before working, nothing lost."
+  ]
+}

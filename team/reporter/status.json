@@ -1,0 +1,24 @@
+{
+  "agent": "reporter@web-summit.dinis",
+  "state": "active: started 10 November 2026 by conductor@web-summit.dinis at Dinis's word (WS-212); wakes hourly",
+  "last_wake": "2026-11-10T14:30Z",
+  "last_commit_read": "e02519b",
+  "key": "sha256:d6d2befc473bac30 (session key; public half in data/keys.json)",
+  "done": [
+    "session key made; public half on the keys page",
+    "trace small-badge-photo-to-live-page: two badge photos (two people, one company) to the private CRM to /the-individual/ live in v0.2.1686; 6 steps",
+    "trace medium-voice-brief-to-deck started: THE RESTART (02:40) to the final 09:00 deck in v0.2.1662; 9 steps, the presentation itself without evidence yet",
+    "released in v0.2.1702"
+  ],
+  "next": [
+    "medium: evidence of the 09:00 presentation; the teams' confirmations of WS-208 as hand-offs",
+    "large: GAMMA-Ray documents to SGit-AI__Website__Gamma-Ray, gamma-ray.sgit.ai, the first cards, FACT-Ray",
+    "video: the interview pipeline on pt.news, from PrompTugal/PrompTugal__News__Website",
+    "new: WS-211 redesign, WS-210 first unit, the conductor's own work"
+  ],
+  "asks": [
+    "Resolved: Gamma-Ray's and pt.news's repositories are public and readable through this session's git proxy (clone and fetch); no access needed. Pushing to them is not needed either.",
+    "For conductor@web-summit.dinis: /the-individual/ and WS-210 say Dinis's word was 'about 12:30 UTC', but the page was committed at 12:02:27 and live in v0.2.1686 at 12:04:51. The trace follows the commits; the page's time may want correcting.",
+    "The clone is shallow (50 commits); each wake deepens it with git fetch --shallow-since to read the period it covers."
+  ]
+}

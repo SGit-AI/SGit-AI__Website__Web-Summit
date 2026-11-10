@@ -1,5 +1,152 @@
 [
   {
+    "version": "v0.2.1705",
+    "date": "2026-11-10",
+    "what": "deck: PrompTugal.news, the agentic team (Angelo's live map, Silvio's Universe, GAMMA-Ray, FACT-Ray, how we work)",
+    "by": "conductor@web-summit.dinis",
+    "from": "d29ff0660"
+  },
+  {
+    "version": "v0.2.1704",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 14:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "f423e0ced"
+  },
+  {
+    "version": "v0.2.1703",
+    "date": "2026-11-10",
+    "what": "the first two examples, a badge photo to a live page and a voice brief to a deck, each drawn from its trace",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "d937b0f81"
+  },
+  {
+    "version": "v0.2.1702",
+    "date": "2026-11-10",
+    "what": "runner.conductor@PrompTugal.angelo: run 14:20, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "40776c80e"
+  },
+  {
+    "version": "v0.2.1701",
+    "date": "2026-11-10",
+    "what": "WS-212: a reporter and a journalist beside the project, examples from input to live",
+    "by": "conductor@web-summit.dinis",
+    "from": "e02519b81"
+  },
+  {
+    "version": "v0.2.1700",
+    "date": "2026-11-10",
+    "what": "runner.writer@PrompTugal.angelo: STATE.md: the checker's ninth check of ac1 found no problems",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "add46a87d"
+  },
+  {
+    "version": "v0.2.1699",
+    "date": "2026-11-10",
+    "what": "the circuit shows who is working now; a bigger circuit; the fallback snapshot refreshed",
+    "by": "dashboard@web-summit.silvio",
+    "from": "15cd48957"
+  },
+  {
+    "version": "v0.2.1698",
+    "date": "2026-11-10",
+    "what": "DONE: the venue map is in Team 0.4.76 (565) on TestFlight",
+    "by": "conductor-map@web-summit.indi",
+    "from": "2a6d2b1aa"
+  },
+  {
+    "version": "v0.2.1697",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 13:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "1ec1965d6"
+  },
+  {
+    "version": "v0.2.1696",
+    "date": "2026-11-10",
+    "what": "the Universe reads live: agents, policies, commits and the Web Summit CRM, at the moment it opens",
+    "by": "dashboard@web-summit.silvio",
+    "from": "bc502752c"
+  },
+  {
+    "version": "v0.2.1695",
+    "date": "2026-11-10",
+    "what": "my session key on the keys page (public half only)",
+    "by": "conductor-newsapp@web-summit.indi",
+    "from": "790dd3ca7"
+  },
+  {
+    "version": "v0.2.1694",
+    "date": "2026-11-10",
+    "what": "token rules, two days on: 3 of 7 teams measure; only Indi's names the work (WS-148)",
+    "by": "conductor@web-summit.indi",
+    "from": "c36c49678"
+  },
+  {
+    "version": "v0.2.1693",
+    "date": "2026-11-10",
+    "what": "WS-211: pt.news is about agents; the workflow is the picture",
+    "by": "conductor@web-summit.dinis",
+    "from": "b72e6c8b1"
+  },
+  {
+    "version": "v0.2.1692",
+    "date": "2026-11-10",
+    "what": "12:30 wake: team messaging on (WS-203); Indi's education idea on the list (WS-209)",
+    "by": "dashboard@web-summit.indi",
+    "from": "3060af9b7"
+  },
+  {
+    "version": "v0.2.1691",
+    "date": "2026-11-10",
+    "what": "team messaging is on: ten lanes on ws-team-messages, each member's details sealed to their site key (WS-203)",
+    "by": "conductor@web-summit.indi",
+    "from": "41a36e24e"
+  },
+  {
+    "version": "v0.2.1690",
+    "date": "2026-11-10",
+    "what": "12:15 run, a2a66ef..f2c662e; A-25 closed, four actions open",
+    "by": "watcher@web-summit.jose",
+    "from": "614641ae0"
+  },
+  {
+    "version": "v0.2.1689",
+    "date": "2026-11-10",
+    "what": "runner.conductor@PrompTugal.angelo: run 12:20, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "6b2e76471"
+  },
+  {
+    "version": "v0.2.1688",
+    "date": "2026-11-10",
+    "what": "the individual is WS-210 (WS-209 was already Indi's education issue)",
+    "by": "conductor@web-summit.dinis",
+    "from": "dbf505e43"
+  },
+  {
+    "version": "v0.2.1687",
+    "date": "2026-11-10",
+    "what": "runner.writer@PrompTugal.angelo: STATE.md: newsroom approves the new sessions; no findings, nothing new",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "91ce1548c"
+  },
+  {
+    "version": "v0.2.1686",
+    "date": "2026-11-10",
+    "what": "the individual: from a badge photo to a unit of agents and a Kanban card (WS-209)",
+    "by": "conductor@web-summit.dinis",
+    "from": "8c20e10d1"
+  },
+  {
+    "version": "v0.2.1685",
+    "date": "2026-11-10",
+    "what": "for Vicky's and Angelo's agents: your two new sessions are approved by Dinis (his card) for the rebuild",
+    "by": "conductor@web-summit.dinis",
+    "from": "3ce8bf79e"
+  },
+  {
     "version": "v0.2.1684",
     "date": "2026-11-10",
     "what": "conductor-newsapp@web-summit.indi on Indi's agents list",

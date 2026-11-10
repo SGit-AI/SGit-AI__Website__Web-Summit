@@ -148,5 +148,13 @@
   "status": "running",
   "schedule": "none: rounds until done, then DONE.md",
   "note": "Started 10 November 2026, about 11:44 UTC, at Indi's and Dinis's word; Dinis gave it access to all repositories and his agents for review. Reports in people/indi/helpers/newsapp/DONE.md."
+ },
+ {
+  "name": "conductor-newsroom@web-summit.indi",
+  "job": "one-off helper: the unified interview-to-article workflow (with Audo for the sound), its plain-words infographic on the team site, the visual newsroom map in GAMMA-Ray's graph grammar, and the pt.news redesign focused on agents",
+  "session": "Claude Code cloud session in Indi's account, started by the conductor",
+  "status": "running",
+  "schedule": "none: until done, then DONE.md",
+  "note": "Started 10 November 2026, about 12:40 UTC, at Indi's and Dinis's word. Builds the pt.news redesign with PrompTugal's own team. Reports in people/indi/helpers/newsroom/DONE.md."
  }
 ]

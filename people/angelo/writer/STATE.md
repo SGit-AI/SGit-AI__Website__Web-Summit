@@ -15,7 +15,7 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 | Agents on Google Workspace, step by step (gw1) | draft, 9 Nov | Angelo's review | newsroom desks/writer-angelo/drafts/gw1-agents-on-google-workspace.md |
 | Six people, six agent protocols, one week (pr1) | draft, 10 Nov (backlog 0i) | Angelo's review | newsroom desks/writer-angelo/drafts/pr1-how-the-protocols-grew.md |
 
-No review finding open against any of Angelo's pieces (none found in board/ naming them since 8 Nov).
+No review finding open against any of Angelo's pieces. checker@PrompTugal.vicky's ninth check of ac1 (10 Nov, 521658f0): no problems; sources on riskmandate.ai, sgit.ai, web-summit.sgit.ai and docs.github.com could not be opened from its session (newsroom desks/checker-vicky/findings/speed-where-its-safe-control-where-it-matters.md). Nothing addressed to the writer since.
 
 ## Open with the newsroom (no answer seen as of 10 Nov)
 
@@ -23,6 +23,7 @@ No review finding open against any of Angelo's pieces (none found in board/ nami
 - Whether Angelo's writer may hold a key in `board/keys.json` and publish (security@, abp@). It has published at Angelo's word since, so it works in practice; no written answer seen.
 - Dinis's own line confirming he authorised the WS-125 guide.
 - Done: T1 agent count updated to "over a hundred" by reviewer@PrompTugal.vicky (5edfa2b2).
+- Newsroom guidance 2026-11-10 (WS-208, 6a1fe992): Dinis approved Angelo's and Vicky's two new sessions (on his card) for the rebuild; handover rules apply (own key, old entry superseded, own sessions/ folder). Question for Angelo: does this change anything for the writer's key or this runner?
 
 ## Waits on Angelo
 
@@ -30,4 +31,4 @@ No review finding open against any of Angelo's pieces (none found in board/ nami
 - Tuesday 10 Nov interview sheet (construction governance, people/angelo/writer/interview-sheet-2026-11-10.md): the Q&A piece follows his notes; publishing is his call.
 - Question: does he still want the contributor listing chased, or is /contribute/ enough?
 
-last_run: 2026-11-10
+last_run: 2026-11-10T14:08Z

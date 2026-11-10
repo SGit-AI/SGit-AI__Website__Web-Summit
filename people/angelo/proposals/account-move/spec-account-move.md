@@ -10,6 +10,8 @@ model: Dinis's account move (PrompTugal newsroom, board/the-account-move.md and 
 
 **Why.** To spread the load across two subscriptions, as Dinis did on 6 November. His first wave halved the load on his main account without slowing any agent or lowering its model.
 
+**Superseded in part, 10 November about 12:10 UTC:** account B's design is now `spec-pipeline-b.md` (its own conductor, five workers named alpha.large.worker to echo.small.worker, the article pipeline). This file keeps who moves and the push check.
+
 ## Angelo's direction (10 November, about 11:50 UTC)
 
 *"In the new account we should lean in to the on-demand, single-session, worker agents approach."* Then: *"Let's give the worker agents names following the expanded alphabet of alpha bravo charlie etc."*

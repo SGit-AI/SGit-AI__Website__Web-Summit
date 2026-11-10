@@ -29,6 +29,7 @@ summary: The one page for the Web Summit 2026 team. Find your name, open your br
 - **Thursday (5 Nov): the targets.** Who we should be talking to, then the big outreach on Thursday and Friday.
 - **By Saturday (7 Nov): the plan.** Who we meet, who is booked, who is excited to meet us, who can connect the dots, and a detailed schedule for each of us.
 - **10 to 12 Nov: the summit.** Our stand day is Thursday 12.
+- **Interviews for PrompTugal.news:** [how an interview gets from a handshake to a published article](../people/indi/helpers/newsroom/index.html), step by step, with who does what.
 
 ## Get connected: the workflow {#levels}
 

@@ -331,3 +331,14 @@ html.bm-full, html.bm-full body { overflow: hidden; }
 .bc-n.bc-nopol .bc-body { stroke: #C9D3DC; stroke-dasharray: 4 3; }
 .bc-svg .bc-w { opacity: .8; stroke-width: 1.5; } .bc-svg .bc-w.bc-out { opacity: .6; stroke-width: 1.3; }
 .bm.circ .bm-card { top: 96px; max-height: calc(100% - 270px); overflow: auto; }
+.bc-strip .live { color: #3DDC97; font-weight: 700; animation: bc-pulse 2s ease-in-out infinite; } @keyframes bc-pulse { 50% { opacity: .45; } }
+
+/* who is working now (10 November) */
+.bc-tick.now circle { stroke: #3DDC97; stroke-width: 2.4; r: 4.6; animation: bc-now 1.6s ease-in-out infinite; }
+@keyframes bc-now { 50% { stroke-opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .bc-tick.now circle { animation: none; } }
+.bc-strip .now { color: #3DDC97; } .bc-strip .now b { color: #3DDC97; } .bc-strip .now small { color: #6F8A9C; font-size: 10px; }
+/* a bigger circuit */
+.bm.circ { height: max(600px, calc(100vh - 96px)); }
+.bm-circuit .bc-panels { height: 132px; } .bm-circuit .bc-panels section { height: 132px; }
+.bm-circuit .bc-title { padding: 3px 12px; }
