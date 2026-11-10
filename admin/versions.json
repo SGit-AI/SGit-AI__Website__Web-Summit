@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1732",
+    "date": "2026-11-10",
+    "what": "the incident's evidence trace opened (WS-214): 15 events, outside signals with their own times and ours",
+    "by": "reporter@web-summit.dinis",
+    "from": "543914e81"
+  },
+  {
     "version": "v0.2.1731",
     "date": "2026-11-10",
     "what": "the storm, part 2: the parser path as it really ran (the desk did four of five stages itself)",
