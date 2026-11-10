@@ -85,7 +85,7 @@ void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 
         // the lit layer: a slot per pair the first time it moves, its brightness written only when it changes
         const lit = new T.BufferGeometry(), lpos = buf(lit, 'position', MAXPAIRS * SEG * 2, 3), lcol = buf(lit, 'col', MAXPAIRS * SEG * 2, 3), lal = buf(lit, 'alpha', MAXPAIRS * SEG * 2, 1)
         lit.setDrawRange(0, 0); const litObj = new T.LineSegments(lit, mat(VS_LN, FS_LN, light ? T.NormalBlending : T.AdditiveBlending)); litObj.frustumCulled = false; world.add(litObj)
-        const slots = new Map(), GS = SEG + 1
+        const slots = new Map(), GS = SEG + 1, cometPrev = new Set(), cometKey = new Map()
         const glow = new T.BufferGeometry(), gpos = buf(glow, 'position', MAXPAIRS * GS, 3), gcol = buf(glow, 'col', MAXPAIRS * GS, 3), gsz = buf(glow, 'size', MAXPAIRS * GS, 1), gal = buf(glow, 'alpha', MAXPAIRS * GS, 1)
         glow.setDrawRange(0, 0); const glowMat = mat(VS_PTS, FS_PTS(3), light ? T.NormalBlending : T.AdditiveBlending), glowObj = new T.Points(glow, glowMat); glowObj.frustumCulled = false; world.add(glowObj)
         const writeSlot = (key, s, colours) => { const [f, t] = key.split('|'), a = P(f), b = P(t), c = colours && rgb(a.color), p = {}, q = {}
@@ -160,6 +160,15 @@ void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 
             // the lines lit by the engine, as bright as in 2D; at min(1, op * 1.25) (backlog 0c6, Angelo, 9 November: "Can we have the glowy
             // version all the time?"), so a line lit by the steady flow (op 0.75) glows nearly as much as one lit by a real exchange (0.95)
             if (st.lines) { let ch = false; for (const [k, e] of st.lines) { const v = +e.op || 0; if (v === e.op3) continue; const s = slotOf(k); if (s < 0) continue; e.op3 = v; const a = Math.min(1, v * 1.25), ga = a * (light ? 0.22 : 0.3); for (let j = s * SEG * 2, n = j + SEG * 2; j < n; j++) lal.setX(j, a); for (let j = s * GS, n = j + GS; j < n; j++) gal.setX(j, ga); ch = true } if (ch) lal.needsUpdate = gal.needsUpdate = true }
+            // arcs light only around a moving dot (Angelo, 10 November): each dot lights the quarter of its arc just behind it, brightest
+            // at the dot; the segments it lit last frame go back to the line's own (faint, fading) value first
+            if (st.lines && st.fly) {
+                for (const s of cometPrev) { const e = cometKey.get(s), v = e ? Math.min(1, (+e.op || 0) * 1.25) : 0; for (let j = s * SEG * 2, n = j + SEG * 2; j < n; j++) lal.setX(j, v) }
+                cometPrev.clear()
+                for (const f of st.fly) { const key = f.from + '|' + f.to, s = slotOf(key); if (s < 0 || f.u == null) continue; cometKey.set(s, st.lines.get(key)); cometPrev.add(s)
+                    for (let k = 0; k < SEG; k++) { const d = f.u - (k + 0.5) / SEG; if (d < 0 || d > 0.28) continue; const c = (f.flow ? 0.6 : 1) * (1 - d / 0.28), j = (s * SEG + k) * 2; if (c > lal.getX(j)) { lal.setX(j, c); lal.setX(j + 1, c) } } }
+                lal.needsUpdate = true
+            }
             // the nodes: busy ones larger and whiter, all breathing gently with the team's activity
             const br = st.breath || 0, now = st.now || t0
             for (let i = 0; i < nN; i++) { const n = live[i], h = st.hot && st.hot.has(n.id), c = ncols[i], b = 1 + br * Math.sin(now / 1400 + i * 1.7)
