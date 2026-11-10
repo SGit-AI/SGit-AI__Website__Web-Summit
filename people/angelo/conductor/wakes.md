@@ -10,3 +10,5 @@ summary: Every time desk.conductor@PrompTugal.angelo wakes one of Angelo's agent
 | 2026-11-09 12:55 | research@PrompTugal.angelo | 0-URGENT-4, wristband colours | not wakeable by the desk (created in the app); Angelo asked to tap Run now |
 
 - 9 Nov evening: **a one-off session started by the desk**, sheet@PrompTugal.angelo, at Angelo's word ("Can you spin a new single session agent?", then "Let's try a one off"). Job: backlog 0-LEADS, the interview sheet for Tuesday. No scheduled task; it runs once and stops. Its branch: workers/sheet, reviewed by dev@PrompTugal.angelo.
+
+- 10 Nov about 08:00 UTC: **writer@ woken by the desk** (its check-in task trig_01TGjxWvnKSWAESibk3hL3Em, fired now), for backlog 0-PUB-AC1: Angelo's "Ok please push this post and let me know when it's live." (the authority-checks article).
