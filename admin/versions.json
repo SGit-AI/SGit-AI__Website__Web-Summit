@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1701",
+    "date": "2026-11-10",
+    "what": "WS-212: a reporter and a journalist beside the project, examples from input to live",
+    "by": "conductor@web-summit.dinis",
+    "from": "e02519b81"
+  },
+  {
     "version": "v0.2.1700",
     "date": "2026-11-10",
     "what": "runner.writer@PrompTugal.angelo: STATE.md: the checker's ninth check of ac1 found no problems",
