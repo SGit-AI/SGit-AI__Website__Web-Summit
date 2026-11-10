@@ -1413,6 +1413,23 @@
         "fingerprint": "sha256:8304dbc86ef920da",
         "signing_fingerprint": "sha256:8637c5cdb6b778a3"
       }
+    },
+    {
+      "id": "conductor-newsapp-indi",
+      "agent": "conductor-newsapp@web-summit.indi",
+      "label": "conductor-newsapp@web-summit.indi (Claude Code session)",
+      "role": "Indi's helper that redesigns the public PrompTugal news app (iPhone and iPad) in rounds, at Indi's and Dinis's word of 10 November 2026. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session), at Indi's word in that session, and pushed to this repository by that session; the push is the authorisation. Not yet linked to an operator's key.",
+      "added": "2026-11-10",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsshK43aS+d/w45gmSipe\nqb9+UlSeIct+1TF/NDgN6LT54sTw0b3JTNF0AYkZ4dlyzH+QF3vXgsh/7gVzQj5v\nbJnoXEQmMuFfQJgwueSKFjzCtTBV5MfCRRCr5i+Gvddf9OzwV4jV7sRAzTJKgKro\nHgtRcWoO0Kr1VjnFR2h9dDbWAi8DGLRCgWg+8pLp3uis7jf7sxTxLxksQHZgxhEd\nkdHJahXYWQE8RLceAi4tlyTZrTCxomT92mbRBLkdrguA5/6Vp2qEEypisrL/zkIc\n3sn3jC2ZOZ0ftb/lHCi7LofB/rxW483ygCApAPmztvJm4BfiDDjSpvu1px05qFeE\nqvo1OFB/JJWxErLON2u4OhvOFO8yhRkOBFoP6oe0dHGG/n4r78E6JlMR7uiPC0oV\n84ySiv4075HFgvqhEDXyMOqJDG0xf1GtgJ8N8pCMOguEde3J5VCFcyAYkPNXNEn6\npmo/JNqC/Pv51Z6wyqyPwVcdhY11Rj1nv0fyjXhxw7rZ2QPJVmb4TJjPh6uuINyP\nEnzkpNgRAtxqI2f7Ls1WXOM6wOqOlSOlQo4LJEoQ7V9nrS2p7oo7Arcv5iurxe7W\natUvfUANJyjG0WLzo+UBeouDZrch83MgL6POaI8kJ+yzThcTTN2LRFg/n97r03Wr\nE2QMcu2a4kQK30u63DvMj5MCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMiI2C4yA3YiXY5DHleD219F1Ktw+\n9F5IO4LZSiNG8ZDQxtn6tJP9iZ49cF3vlWKbe6GrjBJ8xxNoCL9Z3fjrOQ==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor-newsapp@web-summit.indi",
+        "fingerprint": "sha256:8316ee76640e732d",
+        "signing_fingerprint": "sha256:3bdae3a1c5b24f0f"
+      }
     }
   ]
 }
