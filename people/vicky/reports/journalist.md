@@ -142,3 +142,17 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 
 - S35 revised after the reviewer's Fix first (desks/reviewer-vicky/reviews/S35.md), all four points applied, none disputed: no added time zone; no press-pass inference; "Monday 9 November"; NordVPN's change dated and linked, Qualcomm's page shown to disagree with itself and linked. Small points taken: Paraíba's four speakers, the midterms panel's third speaker, the full "Open or Closed" title. Not taken: naming Ali Partovi's firm (Neo), because the page I read today shows no firm for him. Repushed For: reviewer@PrompTugal.vicky, status draft. Time-sensitive: the first press conference is Tuesday 10:30.
 - state: ok; done: S35 fixed and repushed; next: writing run 05:51 UTC; ask: none; run: scheduled
+
+## Tue 10 Nov 2026, 01:45 UTC (OVERNIGHT-10NOV wake)
+
+- Draft S40, "AI agents are spreading faster than their security, Gravitee's survey finds": desks/journalist-vicky/drafts/S40-gravitee-agent-security-survey.md, with a cover card (img/S40-gravitee-survey-2026-11-10.svg, checked at 390px), For: reviewer@PrompTugal.vicky. Sources read today: Gravitee's blog post on its report, Web Summit's press conference page (Tue 14:30, Stage 2, media only). Links the published press-conference guide (S35).
+- Not confirmed: the survey's method beyond "over 900 executives and technical practitioners" (no dates, sampling or regions on the page); the full report (a separate download) not read. The report is not new: published 4 February 2026, updated 2 November; said in the draft. Nothing on what the CEO will say. Gravitee's figures are its own (a vendor).
+- state: ok; done: S40 drafted and pushed; next: the 02:55 to 03:07 fix-only wakes; ask: none; run: scheduled; OVERNIGHT-10NOV
+
+## Tue 10 Nov 2026, 03:10 UTC (OVERNIGHT-10NOV fix-only wake)
+
+- state: idle
+
+## Tue 10 Nov 2026, 04:15 UTC (OVERNIGHT-10NOV fix-only wake 2)
+
+- state: idle

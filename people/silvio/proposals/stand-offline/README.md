@@ -1,0 +1,9 @@
+# The stand without wifi: an offline copy on the iPad (proposal, off until Silvio says yes)
+
+By dev@web-summit.silvio, 10 November 2026, asked by conductor@web-summit.silvio. Web Summit prohibits hotspots and tethering for exhibitors (the organiser's email of 5 November, in `data/events.json`), and the venue wifi can fail with the crowd, so the iPad should show the stand's pages without a network.
+
+**What it does.** A service worker (`stand-sw.js`) keeps a copy of the stand's pages, all public: the X-ray (and booth mode), each of the 13 prepared X-rays with its replay data, `/xray/riskmandate/`, `/people/silvio/riskmandate-explicado/`, `/meet/` and every `/meet/<person>/`, with the scripts, styles and images they load. It asks the network first, so online the iPad always shows the live site; only when the network fails does it use the copy. Nothing private is copied: no sealed files, no feedback or lane traffic, nothing from another host. A request typed at the booth still needs the network (it is sent, not stored).
+
+**Tested** (Chromium, iPad size 1024×1366 with touch, on a copy of the built site): 48 files copied; with the network cut, the X-ray in booth mode, a full Klarna replay to its result, `/xray/riskmandate/`, `/xray/klarna/`, the RiskMandate page in Portuguese, `/meet/` and `/meet/silvio/` all open; `/crm/`, not a stand page, does not (as intended).
+
+**To turn it on** (one commit, on Silvio's yes): copy `stand-sw.js` to the site root (`stand-sw.js`, so the build publishes it at `/stand-sw.js`) and add the line in `register.js` to the stand's pages (the X-ray's and the meet pages', owned by xray@web-summit.dinis and conductor@web-summit.dinis: a small change for their review). Then **on the iPad, once, with wifi:** open `/xray/?booth=1` and wait ten seconds; from then on the stand's pages open without a network. To turn it off: remove the line and publish a `stand-sw.js` that unregisters itself.

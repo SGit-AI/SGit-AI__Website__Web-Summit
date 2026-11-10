@@ -1010,3 +1010,28 @@ html.cc-on[data-theme="light"] .cc-askfab { color: #4C1D95; } html.cc-on[data-th
   .kb-col { max-height: none; }
   .kb-tools { width: 100%; } .kb-q { flex: 1; width: auto; }
 }
+/* ---- a cleaner command centre (dashboard@web-summit.silvio, 10 November) ---- */
+/* A cleaner command centre (Silvio, 10 November): a smaller menu with only what is used every day ("More" opens the
+   rest), and lists that show the essentials; details appear when you open a task, or when you turn "Details" on. */
+:root { --rm-sidebar-width: 216px; }
+.cc-side { padding: 12px 10px; gap: 10px; }
+.cc-side .cc-me { padding: 6px 8px; } 
+.cc-nav a { min-height: 36px; padding: 0 10px; font-size: 13.5px; gap: 10px; }
+.cc-nav .grp { font-size: 10px; letter-spacing: .1em; }
+.cc-ngrp { margin-top: 6px; }
+.cc-navmore > summary { list-style: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding: 6px 10px; border-radius: 8px; }
+.cc-navmore > summary::-webkit-details-marker { display: none; }
+.cc-navmore > summary::after { content: '▸'; font-size: 11px; opacity: .6; margin-left: 6px; } .cc-navmore[open] > summary::after { content: '▾'; }
+.cc-navmore > summary:hover { background: var(--rm-hover, rgba(255,255,255,.05)); }
+.cc-navn { margin-left: auto; font: 600 10.5px/1 var(--rm-font); opacity: .55; }
+.cc-side .foot { font-size: 11px; padding: 6px 8px; }
+/* the lists: the essentials only, unless "Details" is on */
+html:not(.cc-details) .cc-task .meta, html:not(.cc-details) .cc-task .dw { display: none; }
+html:not(.cc-details) .cc-task { min-height: 0; padding-top: 9px; padding-bottom: 9px; }
+html:not(.cc-details) .cc-task .t { font-size: 14px; }
+html:not(.cc-details) .cc-src { display: none; }
+.cc-task .st-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+.cc-detailsbtn { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 9px; border: 1px solid var(--rm-border); background: transparent; color: inherit; font: 600 12.5px/1 var(--rm-font); cursor: pointer; }
+.cc-detailsbtn[aria-pressed="true"] { background: var(--rm-action, #2BB673); border-color: var(--rm-action, #2BB673); color: #fff; }
+@media (max-width: 767px) { .cc-detailsbtn .lbl { display: none; } }
+html:not(.cc-details) .cc-hint { display: none; }

@@ -1,13 +1,107 @@
 [
-  {"name": "conductor@web-summit.silvio", "job": "conducts Silvio's agents and keeps people/silvio/", "session": "Claude Code cloud session in Silvio's account", "status": "running", "schedule": "on demand"},
-  {"name": "procurement@web-summit.silvio", "job": "what the team buys (the merch print order, WS-48): finds suppliers, drafts every message for Silvio to send, keeps /procurement/, /print-order/ and the sign-off tool; keeps Silvio's dashboard below the built block (WS-94)", "session": "Claude Code cloud session in Silvio's account", "status": "running", "schedule": "dashboard at 07:30, 12:30 and 17:30 UTC; its printer mail checks ended 5 November (Silvio's word, WS-172): the mailbox is inbox@web-summit.silvio's only"},
-  {"name": "dev@web-summit.silvio", "job": "the team CRM's features (WS-172) and the site's tools; key dev-silvio. Until 7 November the dashboard session also signed with this name (people/silvio/corrections/2026-11-07-dev-and-dashboard.md)", "session": "Claude Code cloud session in Silvio's account", "status": "running", "schedule": "on demand"},
-  {"name": "dashboard@web-summit.silvio", "job": "Silvio's command centre (people/silvio/app/), his dashboard and its links; signed as dev@web-summit.silvio until 7 November (people/silvio/corrections/2026-11-07-dev-and-dashboard.md)", "session": "Claude Code cloud session in Silvio's account", "status": "running", "schedule": "on demand"},
-  {"name": "sgit@web-summit.silvio", "job": "Silvio's vault and its key (WS-120)", "session": "Claude Code cloud session in Silvio's account", "status": "running", "schedule": "on demand"},
-  {"name": "outreach@web-summit.silvio", "job": "targets, messages and follow-ups: writes the text of each email; inbox@web-summit.silvio makes the Gmail drafts, Silvio sends; meetings at the stand (WS-24, WS-25, WS-26, WS-28)", "session": "Claude Code cloud session in Silvio's account", "status": "running", "schedule": "on demand; its mail checks ended 5 November (Silvio's word, WS-172): the mailbox is inbox@web-summit.silvio's only"},
-  {"name": "local@web-summit.silvio", "job": "Algarve options: printers, ads, prices, lead times", "session": "not started", "status": "planned", "schedule": "not declared yet"},
-  {"name": "video@web-summit.silvio", "job": "the video pipeline to YouTube, Instagram, LinkedIn and this site (WS-40, WS-52, WS-71, WS-72, WS-75): drafts titles, descriptions, the pipeline, the loop's shot list and storyboards in people/silvio/video/; Silvio publishes (started 5 November 2026, session key sha256:c963fa81145aa6eb)", "session": "Claude Code cloud session in Silvio's account", "status": "running", "schedule": "on demand"},
-  {"name": "inbox@web-summit.silvio", "job": "the only agent with Silvio's mailbox: reads it and writes drafts, never sends (Silvio sends by hand); each outreach email an action in the team CRM (WS-172). Policy: people/silvio/policies/inbox.md", "session": "Claude Code cloud session in Silvio's account", "status": "running", "schedule": "mail check every 2 hours (minute 15, UTC): outreach replies and printer replies, reply-drafts and follow-up drafts, meetings in Silvio's calendar without invitations; one-shots 6 Nov 06:30 UTC (morning run), 9 Nov 07:30 UTC (follow-up 1), 11 Nov 08:30 UTC (follow-up 2); took over the mailbox jobs of outreach and procurement on 5 November 2026, session key sha256:bd86955cd9aaffe8"},
-  {"name": "crm@web-summit.silvio", "job": "keeps Silvio's outreach in the team CRM (WS-170, WS-172): a company record with public facts and sources for each of the 50 targets, the 50 buyers and the 38 not at Web Summit in the public CRM; one action per company (state, next step, due) sealed to Silvio and Dinis in the private CRM, learnt from outreach@ and inbox@web-summit.silvio's commits, never from the mailbox; a short morning summary for Silvio in Portuguese. Sends nothing, contacts no one (started 5 November 2026, session key sha256:e374ba62fb5a5c36, crm-silvio in data/keys.json)", "session": "Claude Code cloud session in Silvio's account", "status": "running", "schedule": "on demand; a morning summary for Silvio each day"},
-  {"name": "design@web-summit.silvio", "job": "design work for PromptUGAL, the Web Summit Edition, at Silvio's request: follows the brand in admin/brand/promptugal/ and newsroom@web-summit.dinis's rules for the site; sends nothing, contacts no one (started 6 November 2026 at Silvio's word, session key sha256:57328b9cc2f7bb1d, design-silvio in data/keys.json; named in the PromptUGAL namespace once Dinis says yes to it, WS-177)", "session": "Claude Code cloud session in Silvio's account", "status": "running", "schedule": "on demand"}
+  {
+    "name": "conductor@web-summit.silvio",
+    "job": "conducts Silvio's agents and keeps people/silvio/",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "running",
+    "schedule": "every 3 hours"
+  },
+  {
+    "name": "procurement@web-summit.silvio",
+    "job": "what the team buys (the merch print order, WS-48): finds suppliers, drafts every message for Silvio to send, keeps /procurement/, /print-order/ and the sign-off tool; keeps Silvio's dashboard below the built block (WS-94)",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "running",
+    "schedule": "dashboard at 07:30, 12:30 and 17:30 UTC; its printer mail checks ended 5 November (Silvio's word, WS-172): the mailbox is inbox@web-summit.silvio's only"
+  },
+  {
+    "name": "dev@web-summit.silvio",
+    "job": "the team CRM's features (WS-172) and the site's tools; key dev-silvio. Until 7 November the dashboard session also signed with this name (people/silvio/corrections/2026-11-07-dev-and-dashboard.md)",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "running",
+    "schedule": "on demand"
+  },
+  {
+    "name": "dashboard@web-summit.silvio",
+    "job": "Silvio's command centre (people/silvio/app/), his dashboard and its links; signed as dev@web-summit.silvio until 7 November (people/silvio/corrections/2026-11-07-dev-and-dashboard.md)",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "running",
+    "schedule": "on demand"
+  },
+  {
+    "name": "sgit@web-summit.silvio",
+    "job": "Silvio's vault and its key (WS-120)",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "running",
+    "schedule": "on demand"
+  },
+  {
+    "name": "outreach@web-summit.silvio",
+    "job": "targets, messages and follow-ups: writes the text of each email; inbox@web-summit.silvio makes the Gmail drafts, Silvio sends; meetings at the stand (WS-24, WS-25, WS-26, WS-28)",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "running",
+    "schedule": "on demand; its mail checks ended 5 November (Silvio's word, WS-172): the mailbox is inbox@web-summit.silvio's only"
+  },
+  {
+    "name": "local@web-summit.silvio",
+    "job": "Algarve options: printers, ads, prices, lead times",
+    "session": "not started",
+    "status": "planned",
+    "schedule": "not declared yet"
+  },
+  {
+    "name": "video@web-summit.silvio",
+    "job": "the video pipeline to YouTube, Instagram, LinkedIn and this site (WS-40, WS-52, WS-71, WS-72, WS-75): drafts titles, descriptions, the pipeline, the loop's shot list and storyboards in people/silvio/video/; Silvio publishes (started 5 November 2026, session key sha256:c963fa81145aa6eb)",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "running",
+    "schedule": "on demand"
+  },
+  {
+    "name": "inbox@web-summit.silvio",
+    "job": "the only agent with Silvio's mailbox: reads it and writes drafts, never sends (Silvio sends by hand); each outreach email an action in the team CRM (WS-172). Policy: people/silvio/policies/inbox.md",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "running",
+    "schedule": "mail check every 2 hours (minute 15, UTC): outreach replies and printer replies, reply-drafts and follow-up drafts, meetings in Silvio's calendar without invitations; one-shots 6 Nov 06:30 UTC (morning run), 9 Nov 07:30 UTC (follow-up 1), 11 Nov 08:30 UTC (follow-up 2); took over the mailbox jobs of outreach and procurement on 5 November 2026, session key sha256:bd86955cd9aaffe8"
+  },
+  {
+    "name": "crm@web-summit.silvio",
+    "job": "keeps Silvio's outreach in the team CRM (WS-170, WS-172): a company record with public facts and sources for each of the 50 targets, the 50 buyers and the 38 not at Web Summit in the public CRM; one action per company (state, next step, due) sealed to Silvio and Dinis in the private CRM, learnt from outreach@ and inbox@web-summit.silvio's commits, never from the mailbox; a short morning summary for Silvio in Portuguese. Sends nothing, contacts no one (started 5 November 2026, session key sha256:e374ba62fb5a5c36, crm-silvio in data/keys.json)",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "running",
+    "schedule": "on demand; a morning summary for Silvio each day"
+  },
+  {
+    "name": "design@web-summit.silvio",
+    "job": "design work for PromptUGAL, the Web Summit Edition, at Silvio's request: follows the brand in admin/brand/promptugal/ and newsroom@web-summit.dinis's rules for the site; sends nothing, contacts no one (started 6 November 2026 at Silvio's word, session key sha256:57328b9cc2f7bb1d, design-silvio in data/keys.json; named in the PromptUGAL namespace once Dinis says yes to it, WS-177)",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "running",
+    "schedule": "on demand"
+  },
+  {
+    "name": "gamma-ray@web-summit.silvio",
+    "job": "GAMMA-Ray Public scans of Silvio's own agents, with the draft standard at gamma-ray.sgit.ai (WS-206): people/silvio/gamma-ray/; sends nothing, contacts no one (started 10 November 2026 at Silvio's word, session key sha256:e768ad3ed46101f9, gamma-ray-silvio in data/keys.json)",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "running",
+    "schedule": "on demand"
+  },
+  {
+    "name": "vault@web-summit.silvio",
+    "job": "keeps Silvio's sgit vaults (the videos vault) and their audits",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "idle",
+    "schedule": "on demand"
+  },
+  {
+    "name": "jornal@PrompTugal.silvio",
+    "job": "scouts important public stories with licensed photos for PrompTugal.news; candidates only, never publishes (desks/jornal-silvio/ in the PrompTugal repository)",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "paused (the Big Stop, at Silvio's word)",
+    "schedule": "every 2 h, 08:00 to 22:00 Lisbon, when on"
+  },
+  {
+    "name": "editor@PrompTugal.silvio",
+    "job": "filters the scout's candidates and drafts articles for PrompTugal.news; publishes only at Silvio's own yes",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "paused (the Big Stop, at Silvio's word)",
+    "schedule": "twice a day, when on"
+  }
 ]

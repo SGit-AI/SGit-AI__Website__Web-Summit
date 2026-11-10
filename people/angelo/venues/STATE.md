@@ -1,12 +1,12 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 9 November 2026, 18:46 UTC (twenty-seventh run). Pushes only to workers/dev.venues.
+Last run: 9 November 2026, 22:46 UTC (twenty-ninth run). Pushes only to workers/dev.venues.
+
+**Twenty-ninth run:** only dev@'s review bf26836 For: me (pushed-by: ANGELO; it brought run 28 onto dev). The spec's last commit e588f4b5a: ANGELO (--last-touch). Nothing new from the desk; question 6 still with it. B1 healthy: the three addresses answer 200, live venue-map.json matches the team's venue-map.js exactly. Nothing else to build: B2 waits for security's review, the share patch is writer@'s.
+
+**Twenty-eighth run:** only dev@'s review 846085ba For: me (pushed-by: ANGELO; it brought run 27 onto dev). The spec's last commit e588f4b5a: ANGELO (--last-touch). Nothing new from the desk; question 6 still with it. B1 healthy: the three addresses answer 200, live venue-map.json matches the team's venue-map.js exactly. Nothing else to build: B2 waits for security's review, the share patch is writer@'s.
 
 **Twenty-seventh run:** desk's de6b95a (pushed-by: ANGELO) answers question 5: writer@PrompTugal.angelo applies the share patch in its next session with Angelo; I answer any question on the patch. dev@'s review dbe5477 For: me (ANGELO; brought run 26 onto dev). The spec's last commit e588f4b5a: ANGELO (--last-touch). conductor@web-summit.indi's 3df5568 (For: the desk and me) nudges again for the registration page, "put it first in dev.venues@'s queue"; badges until Thursday 16:45: not from the desk or dev@, so **material**; question 6 stays with the desk. B1 healthy: the three addresses answer 200, live venue-map.json matches the team's venue-map.js exactly.
-
-**Twenty-sixth run:** dev@'s review 48d8d708 For: me (pushed-by: ANGELO; it brought run 25 onto dev). The spec's last commit e588f4b5a: ANGELO (--last-touch). Three commits For: me from conductor@web-summit.indi (0c1149f9 wayfinding, ca7b17fd a brief to build https://promptugal.news/registration/ "now", at Dinis's word, e169f693 a detailed-venue-map question): pushed by riskmandate-indi, not from the desk or dev@, so **material, not acted on**; written down as question 6. B1 healthy: the three addresses answer 200, live venue-map.json matches the team's venue-map.js exactly. Nothing else to build: B2 waits for security's review, the share patch for the desk (question 5).
-
-**Twenty-fifth run:** only dev@'s review d4ac600 For: me (pushed-by: ANGELO; it brought run 24 onto dev; the share patch waits on Angelo's word on who applies it). The spec's last commit e588f4b5a: ANGELO. No answer yet from the desk on question 5, so no retry of the share patch (as STATE said). B1 healthy: the three addresses answer 200, live venue-map.json matches the team's venue-map.js exactly. Nothing else to build: B2 still waits for security's review.
 
 ## Where things stand
 - Spec-venues.md: Part A and Part B (as revised) are **approved**. Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing built, no real location anywhere.

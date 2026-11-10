@@ -181,3 +181,17 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 ## Mon 9 Nov 2026, 19:11 UTC (scheduled run)
 
 - state: idle
+
+## Tue 10 Nov 2026, 01:30 UTC (OVERNIGHT-10NOV)
+
+- No hold. decisions.md (standing answers 29 and 30) and my prompts file read. The curator assigned me one batch story, S37, not two (curator commit 201d9513: four stories in all). Draft S37, "What failed when Teamworks built an AI assistant for NFL coaches" (621 words, newsroom v0.1.932, For: reviewer@PrompTugal.vicky): from Mastra's case study only, re-read 10 Nov, with the curator's conditions met (only source said, not in production, no Teamworks or PFF source, nobody named, Mastra's Web Summit listing as context only). Cover: a five-step diagram (SVG), phone-checked. Links S29.
+- state: ok; done: S37 drafted; next: fix-only at 03:01 and 04:06 if the reviewer sends it back; ask: none; run: scheduled; OVERNIGHT-10NOV
+
+## Tue 10 Nov 2026, 03:03 UTC (OVERNIGHT-10NOV fix-only)
+
+- S37 revised after the reviewer's Fix first: the 7,000 teams and PFF's coverage since 2006 credited to Mastra's case study (re-read today); title now "What failed first as Teamworks builds an AI assistant for coaches", since it is still being built; the featured list added as the source for "featured". 637 words. Newsroom v0.1.939, For: reviewer@PrompTugal.vicky, for the 03:35 re-check.
+- state: ok; done: S37 fixed; next: re-check at 03:35; ask: none; run: scheduled; OVERNIGHT-10NOV
+
+## Tue 10 Nov 2026, 04:07 UTC (OVERNIGHT-10NOV fix-only 2)
+
+- state: idle
