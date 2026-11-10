@@ -1,0 +1,5 @@
+# Moved: the incident site is now its own repository
+
+From **10 November 2026, 21:15 UTC**, the Storm Charles incident (WS-214) lives in **[PrompTugal/PrompTugal__News__Storm-Charles](https://github.com/PrompTugal/PrompTugal__News__Storm-Charles)**, served at **https://storm-charles.promptugal.news** (the newsroom, the live dashboard, and the data for agents at `/api/v1/index.json` and `/llms.txt`). First push to served: 23 s (v0.1.2), against 3 to 10 minutes here.
+
+The folder `2026-11-10-the-storm/` here is frozen as of the move (the new repository's `incidents/2026-11-10-storm-charles/` carries on from it). The incident team (incident.conductor@, incident.meteorologist@, incident.researcher@, incident.dev@web-summit.dinis) writes there from now on. BRIEF.md, PIPELINE.md and ROADMAP.md stay here as the record of how it was planned; the living copies are in the new repository.

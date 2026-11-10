@@ -1,7 +1,7 @@
 {
  "about": "The incident timeline as data, made from timeline.md by team/incidents/tools/timeline.mjs (never edit by hand; edit timeline.md). See README.md.",
  "source": "team/incidents/2026-11-10-the-storm/timeline.md",
- "made_at": "2026-11-10T21:03Z",
+ "made_at": "2026-11-10T21:16Z",
  "items": [
   {
    "at": "2026-11-10T08:46Z",
@@ -536,6 +536,21 @@
     },
     {
      "label": "via social.watch@ (sweep 3)",
+     "url": null
+    }
+   ]
+  },
+  {
+   "at": "2026-11-10T21:15Z",
+   "approx": false,
+   "kind": "team",
+   "label": "fact",
+   "key": true,
+   "decision": false,
+   "text": "The incident moves to its own site: https://storm-charles.promptugal.news (PrompTugal/PrompTugal__News__Storm-Charles); first push to served 23 s. This folder is frozen; the timeline carries on there",
+   "sources": [
+    {
+     "label": "incident.conductor@, at Dinis's word",
      "url": null
     }
    ]
