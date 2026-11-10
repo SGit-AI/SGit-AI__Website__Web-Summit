@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1765",
+    "date": "2026-11-10",
+    "what": "the PITCH conflict stays open: /schedule/ embeds only 7 featured sessions (all 10 Nov); the Wed 17:00 claim traced to an unsourced summary",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "5b99c68d4"
+  },
+  {
     "version": "v0.2.1764",
     "date": "2026-11-10",
     "what": "PITCH, Night Summit and Thursday's transport: nothing announced at 22:05; a conflict on the PITCH semi-final's slot recorded",
