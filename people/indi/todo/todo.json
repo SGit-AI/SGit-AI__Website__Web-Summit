@@ -1,6 +1,6 @@
 {
  "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by dashboard@web-summit.indi at each run, from 4 November at Indi's word (first written by synthetic@web-summit.indi from the board, Indi's briefs 1 to 8 and that day's git log).",
- "written": "2026-11-09T17:40Z",
+ "written": "2026-11-10T11:50Z",
  "done_for_indi": {
   "WS-01": "Done: you are at L4 (people/indi/onboarding.json).",
   "WS-02": "Done: you are at L4.",
@@ -26,7 +26,7 @@
   "WS-59": "builder@ drafted a policy for each of Daniela's agents: review them, then agree them with Daniela and Angelo.",
   "WS-125": "builder@ drafted the setup guide overnight: review it, then send Angelo the outline.",
   "WS-06": "Tell your dashboard agent what you want first and what you never read.",
-  "WS-112": "Tell your conductor 'acknowledge' for briefs 1 to 19. It means 'I have read them'.",
+  "WS-112": "Tell your conductor 'acknowledge' for briefs 1 to 20. It means 'I have read them'.",
   "WS-109": "NOT DONE YET (your word, 6 Nov). Plan the demo for no wifi: the venue does not allow phone hotspots. Ask your helpers for a copy that runs on the laptop, or a recording.",
   "WS-20": "Agree the landing page with Nimay and Angelo.",
   "WS-26": "factory@ drafted outreach targets overnight: review them, then agree your share with Silvio. New on Saturday: Silvio has taken KPMG, Startup Portugal and Feedzai, so pick yours from the rest.",
@@ -41,27 +41,33 @@
   "WS-60": "Daniela's website and learning environment, with Angelo.",
   "WS-121": "Start your vault agent; the SG/Send access token is in your environment already.",
   "WS-148": "Ask Dinis in person today, in one sentence, to confirm the token rules (how your helpers save on cost) for the whole team. Stand-ups now only happen when someone calls one.",
-  "WS-137": "Angelo said yes to all three questions: his helper builds the side-by-side demo by Tuesday. Your dev helper has its review checklist ready.",
+  "WS-137": "Angelo said yes to the Opus 5.5 switch in the demo (off by default). His helper builds the side-by-side demo for Wednesday's rehearsal.",
   "WS-155": "Picking this up today (your word, 6 Nov): check the cards, round 4, at https://web-summit.sgit.ai/cards/#r4. Say if Dinis's designer's 4:18 am redesign covers your designer's fixes.",
   "WS-166": "Still not done: scan your key's QR code with each phone and iPad you carry at the summit.",
-  "WS-170": "Still waiting on Dinis (checked Monday 5:30 pm): your GitHub name is not in the team list yet.",
+  "WS-170": "Still waiting on Dinis (checked Tuesday midday): your GitHub name is not in the team list yet.",
   "WS-171": "Not built yet when checked at 14:30 UTC on 6 Nov: it is due today. Ask factory@'s chat for the first page, then read it and say if it makes sense.",
   "WS-177": "Still to run: paste your conductor's prompt into your synthetic helper's chat. Your accountant suggests the cheaper Sonnet or Haiku models for it. The outreach emails wait on reviews this weekend.",
   "WS-168": "Vicky reviewed the 'lead to article' page: the six steps work, keep the title. She suggests doing interviews on the spot at the stand. Read her note and say if you want that.",
-  "WS-203": "Say who sets up team messaging. Your conductor suggests your messaging helper: it already holds the key and messaging is its job."
+  "WS-203": "Your conductor asks: may it set up team messaging itself, this morning? Your messaging helper has not woken since 5 November. Your conductor suggests yes."
  },
  "other": [
   {
    "group": "Waiting on you",
    "title": "Add the RiskMandate card to your Apple Wallet, and share the link",
-   "detail": "Open web-summit.sgit.ai/card/ in Safari on your iPhone, tap Add to Apple Wallet, then Add. Share the link with the team tonight.",
+   "detail": "The summit is open. Open web-summit.sgit.ai/card/ in Safari on your iPhone, tap Add to Apple Wallet, then Add, and share the link with the team.",
    "source": "brief 19"
   },
   {
    "group": "Waiting on you",
-   "title": "The venue map in the Team app: Apple Maps, yes or no",
-   "detail": "Your conductor suggests Apple Maps with our own drawing, after the first days of the summit. It is free and already in the app.",
-   "source": "brief 19"
+   "title": "Venue map in the Team app: yes to merge it?",
+   "detail": "Your map helper built it and every test passed on iPhone and iPad. With your yes, the next test version goes out through TestFlight (Apple's test channel). Your conductor suggests yes.",
+   "source": "brief 20"
+  },
+  {
+   "group": "Waiting on you",
+   "title": "The registration page: build it on the team site now?",
+   "detail": "Angelo's venues helper has not picked it up, even after a nudge. The airport desk closes at 3 pm today; the venue desk runs to Thursday 4:45 pm. Your conductor suggests yes, now.",
+   "source": "brief 20"
   },
   {
    "group": "Your agents",
@@ -137,9 +143,9 @@
   },
   {
    "group": "Waiting on you",
-   "title": "Say 'acknowledge' for briefs 1 to 19",
+   "title": "Say 'acknowledge' for briefs 1 to 20",
    "detail": "Tell your conductor. It means you have read them, so the next brief starts from what is new.",
-   "source": "brief 19"
+   "source": "brief 20"
   },
   {
    "group": "Waiting on others",

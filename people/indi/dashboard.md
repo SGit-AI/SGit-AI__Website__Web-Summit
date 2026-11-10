@@ -21,7 +21,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** opening night at 6 pm. Put the RiskMandate card in your Apple Wallet (open the card page in Safari on your iPhone) and share the link with the team. Angelo said yes to the side-by-side demo, ready by Tuesday. Your key on each phone and iPad is still not done. Everything else is on [your to-do list](todo/index.html).
+**Right now:** day one of the summit. Three yes-or-no answers for your conductor: merge the venue map into the Team app, let it set up team messaging, and build the registration page today (the airport desk closes at 3 pm). Your key on each phone and iPad is still not done. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 
