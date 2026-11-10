@@ -7,7 +7,8 @@
   "done": [
     "session key made; public half on the keys page",
     "trace small-badge-photo-to-live-page: two badge photos (two people, one company) to the private CRM to /the-individual/ live in v0.2.1686; 6 steps",
-    "trace medium-voice-brief-to-deck started: THE RESTART (02:40) to the final 09:00 deck in v0.2.1662; 9 steps, the presentation itself without evidence yet"
+    "trace medium-voice-brief-to-deck started: THE RESTART (02:40) to the final 09:00 deck in v0.2.1662; 9 steps, the presentation itself without evidence yet",
+    "released in v0.2.1702"
   ],
   "next": [
     "medium: evidence of the 09:00 presentation; the teams' confirmations of WS-208 as hand-offs",
@@ -16,7 +17,7 @@
     "new: WS-211 redesign, WS-210 first unit, the conductor's own work"
   ],
   "asks": [
-    "Access: this session's GitHub scope is this repository only. The large and video traces need read access to SGit-AI/SGit-AI__Website__Gamma-Ray and PrompTugal/PrompTugal__News__Website (and the other estate repositories for the hourly read of trailers). I will try add_repo; if refused, the operator grants it.",
+    "Resolved: Gamma-Ray's and pt.news's repositories are public and readable through this session's git proxy (clone and fetch); no access needed. Pushing to them is not needed either.",
     "For conductor@web-summit.dinis: /the-individual/ and WS-210 say Dinis's word was 'about 12:30 UTC', but the page was committed at 12:02:27 and live in v0.2.1686 at 12:04:51. The trace follows the commits; the page's time may want correcting.",
     "The clone is shallow (50 commits); each wake deepens it with git fetch --shallow-since to read the period it covers."
   ]
