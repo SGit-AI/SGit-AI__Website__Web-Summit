@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-10T19:07Z",
+ "updated": "2026-11-10T19:32Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -11,7 +11,8 @@
   "happened": "announced",
   "not_announced": "due but nothing announced at the time read",
   "expected": "a hypothesis about a decision to come",
-  "unknown": "cannot tell: the source is unreadable or not yet read"
+  "unknown": "cannot tell: the source is unreadable or not yet read",
+  "superseded": "replaced by a later edge"
  },
  "first_priority": "websummit-wednesday",
  "nodes": [
@@ -230,6 +231,16 @@
    "source": "https://raw.githubusercontent.com/PrompTugal/PrompTugal__News__Website/dev/desks/weather-vicky/decision-chain.md",
    "read": "2026-11-10T16:59Z",
    "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)"
+  },
+  {
+   "id": "flixbus",
+   "name": "FlixBus",
+   "kind": "transport",
+   "role": "Intercity coaches.",
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T19:32Z",
+   "read_by": "incident.researcher@web-summit.dinis"
   }
  ],
  "edges": [
@@ -521,9 +532,9 @@
    ],
    "label": "fact",
    "source": "https://websummit.com/",
-   "read": "2026-11-10T19:05Z",
+   "read": "2026-11-10T19:32Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "No notice on websummit.com home, /news/ or sitemap (19:01Z); none on the official Bluesky account (last post 17:36Z); Jornal de Negócios live last entry 18:24 has none."
+   "note": "19:32Z: nothing on websummit.com (home, sitemap: no new URL since 18:58Z), nothing on Bluesky websummit.bsky.social (last post 17:36Z), Jornal de Negócios live (last entries 18:25) and a web search show no organiser decision."
   },
   {
    "id": "websummit-suspends-h",
@@ -590,7 +601,7 @@
    "to": [],
    "decision": "Flight operations on Wednesday",
    "at": "",
-   "status": "unknown",
+   "status": "superseded",
    "follows": [
     "ipma-red-wind"
    ],
@@ -598,7 +609,7 @@
    "source": "https://www.aeroportolisboa.pt/pt/lis/home",
    "read": "2026-11-10T18:59Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "No readable notice: the official site returns a bot check."
+   "note": "No readable notice: the official site returns a bot check. Superseded by ana-conditioned (press, 18:04Z)."
   },
   {
    "id": "cp-ops",
@@ -634,6 +645,38 @@
     "carris",
     "carris-metropolitana"
    ]
+  },
+  {
+   "id": "ana-conditioned",
+   "by": "airport",
+   "to": [],
+   "decision": "ANA: operations at Lisbon, Faro and Madeira airports conditioned on 11 Nov; cancellations expected",
+   "at": "2026-11-10T18:04Z",
+   "status": "happened",
+   "follows": [
+    "ipma-red-wind"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T19:32Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Press report of an ANA statement; the official airport site is behind a bot check."
+  },
+  {
+   "id": "flixbus-suspends",
+   "by": "flixbus",
+   "to": [],
+   "decision": "FlixBus suspends all national links in Portugal on Wednesday 11 Nov",
+   "at": "2026-11-10T18:25Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T19:32Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "\"at\" is the live-blog entry time."
   }
  ]
 }

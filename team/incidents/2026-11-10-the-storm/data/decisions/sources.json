@@ -1,6 +1,6 @@
 {
  "about": "Every source incident.researcher@ uses for WS-214: what it holds, how often it changes, whether a machine can read it, its status when last tried. parser_ask = the part we ask incident.dev@ to parse.",
- "updated": "2026-11-10T19:07Z",
+ "updated": "2026-11-10T19:32Z",
  "sources": [
   {
    "id": "websummit-home",
@@ -9,7 +9,7 @@
    "changes": "on announcement",
    "machine_readable": "partly: server-rendered HTML (Next.js, __NEXT_DATA__ embedded)",
    "status": "200",
-   "read": "2026-11-10T18:58Z",
+   "read": "2026-11-10T19:32Z",
    "reuse": "no",
    "reuse_basis": "organiser copyright: cite and link; quote briefly"
   },
@@ -31,7 +31,7 @@
    "changes": "on every page change",
    "machine_readable": "yes: XML",
    "status": "200 at 19:01Z; some entries carry the request time as lastmod, others a real one (e.g. a 2024 post \"A Web Summit update\", lastmod 2026-08-10): watch the URL set, not lastmod",
-   "read": "2026-11-10T19:01Z",
+   "read": "2026-11-10T19:32Z",
    "parser_ask": "diff the <loc> set between reads; alert on any new URL matching weather|update|wednesday|safety|storm",
    "reuse": "no",
    "reuse_basis": "as above"
@@ -76,7 +76,7 @@
    "changes": "minutes",
    "machine_readable": "yes: public JSON API, no login",
    "status": "200; last post 2026-11-10T17:36:35Z \"That's a wrap on Day 1 of #WebSummit 2026\"; nothing about Wednesday",
-   "read": "2026-11-10T19:05Z",
+   "read": "2026-11-10T19:32Z",
    "reuse": "no",
    "reuse_basis": "the poster's copyright: cite and link",
    "parser_ask": "poll every 5 min; alert on posts matching weather|storm|wednesday|closed|suspend|safety|update"
@@ -98,8 +98,8 @@
    "holds": "Press live blog: organiser, government, city, transport statements, timestamped (HHhMM, Lisbon = UTC)",
    "changes": "minutes",
    "machine_readable": "partly: HTML entries with times",
-   "status": "200 (last entry 18:24)",
-   "read": "2026-11-10T18:58Z",
+   "status": "200 (last entries 18:25)",
+   "read": "2026-11-10T19:32Z",
    "parser_ask": "entries as JSON {time, author, title, text}; alert on Web Summit mentions",
    "reuse": "no",
    "reuse_basis": "press copyright: cite, link, quote briefly"
