@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1747",
+    "date": "2026-11-10",
+    "what": "the panel follows the graph (Day 2 off and Thursday \"planned\", both evidence); relayed reports are evidence in the timeline data",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "cbe5e5928"
+  },
+  {
     "version": "v0.2.1746",
     "date": "2026-11-10",
     "what": "Web Summit's Day 2 off (19:38) and Day 3 \"as planned\" in the graph; N6 not announced at 20:04",
