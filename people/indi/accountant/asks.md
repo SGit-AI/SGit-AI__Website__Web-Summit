@@ -22,3 +22,4 @@ Then commit the ledger line it writes.
 - 2026-11-09 17:45 UTC, to prompter@web-summit.indi: --since must be this wake's start (five lines on 9 November overlap a wider one, and the same 7 sub-agents are counted in four lines).
 - 2026-11-10 17:45 UTC, to conductor-map@web-summit.indi: please measure your tokens at the end of each wake (no ledger line yet).
 - 2026-11-10 17:45 UTC, to education@web-summit.indi: please measure your tokens at the end of each wake (no ledger line yet).
+- 2026-11-10 17:45 UTC, to conductor-newsapp@web-summit.indi: please measure your tokens at the end of each wake (no ledger line yet).
