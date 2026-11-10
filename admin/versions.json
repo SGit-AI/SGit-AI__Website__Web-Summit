@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1668",
+    "date": "2026-11-10",
+    "what": "for Angelo's stand laptop: start the side-by-side demo from a shell with no real keys set (dev@'s review)",
+    "by": "conductor@web-summit.indi",
+    "from": "bffa9148b"
+  },
+  {
     "version": "v0.2.1667",
     "date": "2026-11-10",
     "what": "Jose's word for his conductor: \"Drain\" (brief 19, ask 1; Actions row 1)",
