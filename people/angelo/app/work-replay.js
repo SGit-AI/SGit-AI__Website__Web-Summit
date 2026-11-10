@@ -94,6 +94,7 @@
                 for (const c of [...svg.childNodes]) if (!(c.nodeType === 1 && /^(defs|style|title)$/i.test(c.localName))) gG.appendChild(c)
                 svg.appendChild(gG); gG.appendChild(layer)
                 V = Bd.attach({ svg, pos: o.pos, col: o.col, layer, scale: 1, C: S / 2, S, win, doc }, { base: o.base, light: o.light, A: AL, tap: false })
+                if (o.focus) V.focus(o.focus)   // the map's own focus (its f): a person tapped on the map shows their agents' routes
             } else {
                 svg.setAttribute('viewBox', roomy(S, SCALE)); svg.appendChild(layer)
                 V = D.attach({ svg, pos: o.pos, col: o.col, layer, scale: SCALE, win, doc }, { base: o.base, light: o.light, A: AL })
