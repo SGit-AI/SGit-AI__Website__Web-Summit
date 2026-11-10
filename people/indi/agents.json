@@ -140,5 +140,13 @@
   "status": "running",
   "schedule": "on demand",
   "note": "Started 10 November 2026 at Indi's word, after Dinis's agent's email suggesting three things: a chat with Dinis, find the people at Web Summit, publish the idea. Drafts only: Indi sends every message and every app connection."
+ },
+ {
+  "name": "conductor-newsapp@web-summit.indi",
+  "job": "one-off helper: the UI and UX redesign of the public PrompTugal app (news.promptugal.reader): fewest taps per workflow, the Team app redesign's lessons, original colours, no AI-sounding text",
+  "session": "Claude Code cloud session in Indi's account, started by the conductor",
+  "status": "running",
+  "schedule": "none: rounds until done, then DONE.md",
+  "note": "Started 10 November 2026, about 11:44 UTC, at Indi's and Dinis's word; Dinis gave it access to all repositories and his agents for review. Reports in people/indi/helpers/newsapp/DONE.md."
  }
 ]
