@@ -14,7 +14,7 @@ No names here. Whoever holds the meeting sends it on their own channel, edits it
 
 ## Rules
 
-- Thursday is on by the organisers' word in the press (F9); if Web Summit's own channels say otherwise, use the fallback.
+- Thursday is planned by the organisers' word in the press ("aims to proceed", an aim; F9); if Web Summit's own channels say otherwise, use the fallback.
 - No advice beyond the authorities' (F5 is an appeal, not an order).
 - One message per person; no group sends. Nobody named here.
 
