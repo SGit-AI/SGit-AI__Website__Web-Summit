@@ -1,7 +1,7 @@
 {
   "agent": "journalist.examples@web-summit.dinis",
   "state": "active: the storm incident's journalist (WS-214) and the examples (WS-212)",
-  "last_wake": "2026-11-10T19:58:00Z",
+  "last_wake": "2026-11-10T21:40:00Z",
   "key": "sha256:da2444702531566a (session key; encryption sha256:ff5cb5ecc78c34bb), linked to the operator's key sha256:db7f79fdd87e030a, awaiting confirmation",
   "done": [
     "session key made; public half in data/keys.json",
@@ -11,7 +11,8 @@
     "17:13: the storm, part 1 (content/examples/storm-part-1.md), from PrompTugal__News__Website's commits and the weather desk's files; materials in team/journalist.examples/materials/storm/ (decision graph as data and SVG, the workflow as a trace, a sample IPMA parser, UI ideas) for the three dashboard agents",
     "18:37 wake: the storm, part 2 (content/examples/storm-part-2.md) from reporter@'s trace storm-weather-desk: the parser path as it really ran, with path-vs-reality.svg; decision-graph.json updated to 18:00 (red rain, next decisions); part 1 links forward",
     "18:45: incident WS-214 comms drafted in team/incidents/2026-11-10-the-storm/comms/: facts.md (the one source, F1 to F7, N1 to N5), team.md (A now, B if the summit changes), meetings.md (no names, a person sends), public.md (an offer to pt.news's newsroom), dinis.md (five lines and three asks); two corrections to the incident timeline flagged for the lead",
-    "19:58: F8 (Web Summit calls off Wednesday) checked at source (Jornal de Negócios; websummit.com and its Bluesky silent at 19:56); team.md B checked (Thursday is an aim); meetings.md, public.md, dinis.md refreshed from F8; facts.md: N1 moot, N4 answered, N6 Thursday added"
+    "19:58: F8 (Web Summit calls off Wednesday) checked at source (Jornal de Negócios; websummit.com and its Bluesky silent at 19:56); team.md B checked (Thursday is an aim); meetings.md, public.md, dinis.md refreshed from F8; facts.md: N1 moot, N4 answered, N6 Thursday added",
+    "21:34 wake: comms corrected (Web Summit's own page at 19:09, which I had called silent at 19:56 and 20:02; Thursday an aim, not 'on'); the storm, part 3 (content/examples/storm-part-3.md) from reporter@'s incident trace, with the published-versus-read chart (materials/storm/lag.svg)"
   ],
   "next": [
     "incident: refresh facts.md and every draft when a fact changes and at each wake; at close-out, the post-incident narrative for pt.news and /examples/",

@@ -33,6 +33,7 @@ Longer stories, told as they happen, with materials for the visualisers.
 
 - **[The storm, part 1: a red warning, a weather desk, and who decides what](storm-part-1/index.html).** A red wind warning for Lisbon on the summit's third day. Vicky's newsroom publishes it; at Dinis's word a weather desk starts and, in about twelve minutes, maps who decides what. The schools' closure was decided 11 hours 50 minutes ahead, by the government. 
 - **[The storm, part 2: the parser path, as it really ran](storm-part-2/index.html).** Dinis described five hands, from a raw source to a UI. The weather desk did four of them itself in nine minutes (its own readers for eight sources, the plan, a historian, the law), then asked a developer and a designer for the page. It also caught the rain going red: in the article three minutes later.
+- **[The storm, part 3: an incident team, and the gap between published and read](storm-part-3/index.html).** Dinis runs the storm as an incident; within an hour a team of agents is reading the weather as data and watching the organisers. Web Summit calls off Wednesday at 19:09; we read it at 19:48, because its page sat where we were not looking. The finding: for every signal, the gap between published and read. Open until the close-out.
 
 ## Next {#next}
 

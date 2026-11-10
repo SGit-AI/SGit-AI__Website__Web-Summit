@@ -1,5 +1,33 @@
 [
   {
+    "version": "v0.2.1763",
+    "date": "2026-11-10",
+    "what": "21:46 wake: Silvio's highlight for 10 November, the Universe live (Talk, Circuit, Tokens)",
+    "by": "dashboard@web-summit.silvio",
+    "from": "bd6f20138"
+  },
+  {
+    "version": "v0.2.1762",
+    "date": "2026-11-10",
+    "what": "21:42 wake: release times tonight (median 136 s, 3 of 10 queued past 6 min); the blog poll clean since 21:32; still blocked on the new repository",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "ae022c82e"
+  },
+  {
+    "version": "v0.2.1761",
+    "date": "2026-11-10",
+    "what": "the storm, part 3 (the incident, published against read), and the comms corrected: Web Summit's page was up at 19:09",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "c8a47ae45"
+  },
+  {
+    "version": "v0.2.1760",
+    "date": "2026-11-10",
+    "what": "websummit.com: new or changed post (the 2-minute poll's first alert, 21:32); the watch keeps each recent post's text and its hash",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "511878aa3"
+  },
+  {
     "version": "v0.2.1759",
     "date": "2026-11-10",
     "what": "21:22 wake refresh",

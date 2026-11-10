@@ -21,6 +21,7 @@
 // Usage: node team/incidents/tools/websummit.mjs <incident dir> [--quick]
 import fs from 'node:fs'
 import path from 'node:path'
+import crypto from 'node:crypto'
 
 const dir = process.argv[2], QUICK = process.argv.includes('--quick')
 if (!dir) { console.error('usage: websummit.mjs <incident dir>'); process.exit(2) }
@@ -76,7 +77,10 @@ try {
         const nd = h.match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/); if (!nd) throw new Error(u + ': no __NEXT_DATA__ (the page changed?)')
         const walk = o => { if (Array.isArray(o)) return o.forEach(walk); if (!o || typeof o !== 'object') return
             if (o.__typename === 'Post' && o.slug && o.modified) { const cat = (o.category && o.category.slug) || 'blog', url = `${SITE}/blog/${cat}/${o.slug}/`
-                found[url] = { url, title: String(o.title || '').slice(0, 200), category: cat, date: o.date ? o.date.slice(0, 16) + 'Z' : null, modified: o.modified.slice(0, 16) + 'Z', excerpt: String(o.excerpt || '').replace(/<[^>]+>/g, '').replace(/&hellip;/g, '…').replace(/&[a-z#0-9]+;/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 300) } }
+                const rec = { url, title: String(o.title || '').slice(0, 200), category: cat, date: o.date ? o.date.slice(0, 16) + 'Z' : null, modified: o.modified.slice(0, 16) + 'Z', excerpt: String(o.excerpt || '').replace(/<[^>]+>/g, '').replace(/&hellip;/g, '…').replace(/&[a-z#0-9]+;/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 300) }
+                // listings disagree (21:33: /blog/ said 20:06, /blog/web-summit/ still 19:58, a cached copy): keep the newest, and each listing's value
+                const prev = found[url], by = { ...(prev ? prev.modified_by_listing : {}), [u]: rec.modified }
+                found[url] = { ...rec, modified: prev && prev.modified > rec.modified ? prev.modified : rec.modified, modified_by_listing: by } }
             for (const k in o) walk(o[k]) }
         walk(JSON.parse(nd[1]))
     }
@@ -91,7 +95,8 @@ try {
     }
     const merged = { ...oldBlog }
     for (const [url, p] of Object.entries(found)) {
-        const was = oldBlog[url], kind = !was ? (firstBlog ? (Math.max(Date.parse(p.date || 0), Date.parse(p.modified)) >= posts36 ? 'recent' : '') : 'new') : (was.modified !== p.modified ? 'modified' : '')
+        const was = oldBlog[url], kind = !was ? (firstBlog ? (Math.max(Date.parse(p.date || 0), Date.parse(p.modified)) >= posts36 ? 'recent' : '') : 'new') : (p.modified > was.modified ? 'modified' : '')
+        if (was && was.modified > p.modified) p.modified = was.modified   // a cached listing with an older value never moves it back
         merged[url] = { ...p, modified_field: 'listing __NEXT_DATA__ Post.modified', read_at: now, first_seen: was ? was.first_seen : now, ...(was && was.page ? { page: was.page } : {}) }
         const key = url + '#' + p.modified
         if (kind && !seen.has(key)) { const a = { first_seen: now, channel: 'blog', kind, url, title: p.title, at: p.date, modified: p.modified, text: `${p.title}: ${p.excerpt}`, label: 'fact' }; alerts.push(a); fresh.push(a); seen.add(key) }
@@ -100,9 +105,15 @@ try {
     const h48 = Date.now() - 48 * 3600e3
     for (const [url, p] of Object.entries(merged)) {
         if (Math.max(Date.parse(p.date || 0), Date.parse(p.modified)) < h48) continue
-        const was = oldBlog[url]; if (was && was.page && was.modified === p.modified && QUICK) continue
+        const was = oldBlog[url]; if (was && was.page && was.page.text_sha256 && was.modified === p.modified && QUICK) continue
         try { const h = await get(url, 'text'), pub = (h.match(/"datePublished":"([^"]+)"/) || [])[1], mod = (h.match(/"dateModified":"([^"]+)"/) || [])[1]
-            p.page = { field: 'post page JSON-LD datePublished / dateModified', date_published: pub ? pub.slice(0, 16) + 'Z' : null, date_modified: mod ? mod.slice(0, 16) + 'Z' : null, read_at: now } } catch (e) { errors.push(String(e.message || e)) }
+            // the post's own words (its __NEXT_DATA__ post.content, tags stripped) and their hash, so a change of text is seen even
+            // when the dates say nothing (21:32: Post.modified moved to 20:06 and we could not tell what had changed)
+            let text = null; const nd = h.match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/)
+            try { const c = nd && JSON.parse(nd[1]).props.pageProps.data.post.content; if (c) text = c.replace(/<[^>]+>/g, ' ').replace(/&#8217;|&rsquo;/g, '’').replace(/&amp;/g, '&').replace(/&[a-z#0-9]+;/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 4000) } catch { }
+            const sha = text ? crypto.createHash('sha256').update(text).digest('hex').slice(0, 16) : null, before = was && was.page && was.page.text_sha256
+            if (sha && before && sha !== before && !seen.has(url + '#text#' + sha)) { const al = { first_seen: now, channel: 'blog', kind: 'text_changed', url, title: p.title, at: p.date, modified: p.modified, text_sha256: sha, text_before_sha256: before, text: `${p.title}: ${text.slice(0, 300)}`, label: 'fact' }; alerts.push(al); fresh.push(al); seen.add(url + '#text#' + sha) }
+            p.page = { field: 'post page JSON-LD datePublished / dateModified; text from __NEXT_DATA__ post.content', date_published: pub ? pub.slice(0, 16) + 'Z' : null, date_modified: mod ? mod.slice(0, 16) + 'Z' : null, read_at: now, text, text_sha256: sha } } catch (e) { errors.push(String(e.message || e)) }
     }
     blog = { listings: read, posts: merged }
 } catch (e) { errors.push(String(e.message || e)) }

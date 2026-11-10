@@ -1,14 +1,14 @@
 # Draft for the people we are meeting on Wednesday (a person sends)
 
-No names here. Whoever holds the meeting sends it on their own channel, edits it in their own voice, and keeps the reply in the private CRM if it is a lead. Facts as of 20:02 UTC (facts.md).
+No names here. Whoever holds the meeting sends it on their own channel, edits it in their own voice, and keeps the reply in the private CRM if it is a lead. Facts as of 21:40 UTC (facts.md).
 
 ## Send now: Wednesday is off, move to Thursday or a call (from F8)
 
-> Hi [name], as you may have heard, Web Summit has called off tomorrow, Wednesday, because of the storm, on the government's advice. They say Thursday goes ahead as planned.
+> Hi [name], as you may have heard, Web Summit has called off tomorrow, Wednesday, because of the storm, on the government's advice. They aim to go ahead with Thursday as planned.
 >
 > Shall we move our [meeting / demo / chat] to **Thursday** at [time], or do it as a **call** [tomorrow at the same time / when suits you]? Whatever is easiest for you. Stay safe tomorrow.
 
-## If Thursday is also called off (not the case now: F9)
+## If Thursday is also called off (not the case now: F8, F9)
 
 > Hi [name], with Thursday off as well, could we do it as a call instead? Here are a few times: [times]. Sorry not to meet in person.
 
