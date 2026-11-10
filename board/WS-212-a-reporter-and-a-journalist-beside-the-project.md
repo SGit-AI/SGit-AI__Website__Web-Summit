@@ -11,7 +11,7 @@ agents: reporter@web-summit.dinis (the traces, as it happens); journalist.exampl
 At Dinis's word (10 November 2026, about 13:30 UTC). The big picture works. People now want to know what each dot, each agent, is for. So go to the detail: small, medium and large examples, documented as they happen and drawn per workflow. The brief: `team/reporter/BRIEF.md`. Goes with WS-210 and WS-211.
 
 - [x] The brief; both agents started.
-- [x] A deck for Dinis's meeting (10 November, 15:15 UTC): [PrompTugal.news, the agentic team](../meetings/2026-11-10-1500/show/index.html), with Angelo's live map and Silvio's Universe.
+- [x] A deck for Dinis's meeting (10 November, 15:15 UTC): [PrompTugal.news, the agentic team](../meetings/2026-11-10-1500/show/index.html), with Angelo's live map and Silvio's Universe; and [RiskMandate, shown on our own agents](../meetings/2026-11-10-1600/show/index.html), for a cybersecurity investor.
 - [ ] Traces for the first four examples (a picture, a voice brief, documents to a repository, a video to an interview).
 - [ ] /examples/ with the first pages and their pictures.
 - [ ] Each trace readable by the live graph and pt.news's visual newsroom.
