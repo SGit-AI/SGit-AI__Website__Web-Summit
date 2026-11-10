@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1691",
+    "date": "2026-11-10",
+    "what": "team messaging is on: ten lanes on ws-team-messages, each member's details sealed to their site key (WS-203)",
+    "by": "conductor@web-summit.indi",
+    "from": "41a36e24e"
+  },
+  {
     "version": "v0.2.1690",
     "date": "2026-11-10",
     "what": "12:15 run, a2a66ef..f2c662e; A-25 closed, four actions open",
