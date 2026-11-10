@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1629",
+    "date": "2026-11-10",
+    "what": "WS-197: in booth mode a visitor's X-ray result stays two minutes, not wiped 45 s after it appears",
+    "by": "dev@web-summit.silvio",
+    "from": "a9bc46939"
+  },
+  {
     "version": "v0.2.1628",
     "date": "2026-11-10",
     "what": "outreach hold recorded over the 149 actions; Thursday's stand list in the private CRM (WS-206)",
