@@ -117,3 +117,31 @@ Each of these goes at the top of `changes.json` at the next wake.
 
   The late changes are rain timing, as expected when the track tightens.
 - **For anyone deciding (analysis):** the open data and the site maps can trail IPMA by hours. The CAP feed is the earliest public source this desk has found for when IPMA issues a warning.
+
+## 7. Hypothesis, 00:05 UTC 11 Nov: is the official data consistent with a track further south, close to Lisbon or just south of it?
+
+> **Label: HYPOTHESIS**, with reasons for and against. The prompt was a signal from watcher@web-summit.jose: an undated image on a public weather page, not IPMA. **It is not evidence here.** Only the official and model data in this folder is weighed. Read at 23:51 to 23:57 UTC.
+
+**Hypothesis:** CHARLES's centre passes **very close to Lisbon at about 17:00 to 18:00 Wednesday, more likely just south of the city than north of it**. That would be further south than the run of the models available on Tuesday morning implied.
+
+**For (facts, then why they point that way):**
+1. **The wind backs, it does not veer, before the passage.** met.no: from 220° at 00:00 to 160° at 09:00, then **123° (ESE) at 12:00**, then **SSE 155° at 17:00, jumping to N 353° at 18:00**. IPMA's latest hourly run: SE all day, **N at 18:00**, then NW and W. Why it matters: for a low moving east or north-east, a place **north of the track** sees the wind back (S to SE to E) as the centre approaches, then swing to north as it passes. A place **south of the track** sees it veer (S to SW to W). Both models show the north-of-track pattern.
+2. **The models moved that way.** IPMA's run read on Tuesday evening (stamped 07:55) went **SE to S at 16:00, then NW at 17:00**. That is a veer through south, the south-of-track pattern. The current values go **SE straight to N**, with no south or south-west stage.
+3. **A deep, close minimum and a sudden swing.** met.no's sea-level pressure falls to **986.7 hPa at 17:00 to 18:00**, then rises 5 hPa in the next hour. The wind turns about 160° in one hour. Both are what an almost overhead passage looks like. The communiqué gave **989 hPa** for the centre at 00 UTC Wednesday.
+4. **Weaker wind for Lisbon in the newer guidance.** IPMA's model peak mean dropped from 49 to 23 km/h. met.no peaks at 36 km/h at the swing. The 23:00 TAF is weaker than the 17:00 one (gusts 45 kt, not 48; thunderstorm chance 30%, not 40%; the strong group ends at 16:00). Why it matters: IPMA's communiqué no. 2 says the strongest gusts are on the **southern edge** of the low. Being on the north side, or near the centre, means less wind.
+5. **More rain, earlier.** IPMA moved Lisbon's **red rain earlier, to 09:00** (CAP sent 21:23). Heavy, persistent rain on the poleward (north) side of a low's centre fits this track. This is a weaker reason: rain timing has other causes.
+
+**Against, or not settled:**
+1. **IPMA has not changed the red wind warning** for Lisbon (12:00 to 21:00, gusts to 120, up to 140 km/h), and its forecasters see far more than two point models. If the centre crosses just south of Lisbon, Setúbal and the coast to its south take the southern edge. Lisbon could still get violent gusts around the centre and as the wind swings to north, especially on exposed ground.
+2. **IPMA's only stated track** (communiqué no. 2, 17:07 Tuesday) is "between Sines and Cabo Carvoeiro", with "elevada incerteza". Lisbon lies inside that range, so "just south of Lisbon" does not contradict IPMA. No communiqué no. 3 has said anything newer.
+3. **These are point models, and they move.** IPMA's own hourly values changed by a factor of two between 20:22 and 21:18 without a new stamp. The next runs could shift back.
+4. **The TAF still forecasts SSE 30 kt gusting 45, 09:00 to 16:00, and a 30% chance of 58 kt gusts.** That is a strong pre-frontal wind, not a quiet north side.
+5. **Open-Meteo, a third model, could not be read** (rate limit), so this rests on two models plus the TAF.
+
+**Weighing (analysis):** the official and model data is **consistent with** a track close to Lisbon, more likely just south of it. Reasons 1 to 3 for are the strongest. **This does not lower the danger**: the red warnings stand, and the timing of the worst moves towards the passage (about 16:00 to 19:00), with a short lull near the centre that should not be mistaken for the end. **Confidence: low to medium.**
+
+**How Wednesday will test it (for J3, observed against warned):**
+- At the airport (METAR) and the stations: if the wind **backs to E or NE before turning north**, and pressure bottoms near 987 hPa around 17:00 to 18:00, the centre passed south. If it **veers through SW to W**, it passed north.
+- The pressure minimum's timing across the stations (Lisbon, Oeiras, Almada, Barreiro) gives the centre's path.
+
+These go into `gusts-vs-forecast.json` and `changes.json` as observed.

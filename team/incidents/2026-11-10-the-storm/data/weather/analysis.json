@@ -190,6 +190,30 @@
     }
    ],
    "why": "rain red now from 09:00 widens the worst window; the wind red (12:00-21:00) is unchanged; second model met.no also puts the wind swing at 18:00 (N), mean 36 km/h"
+  },
+  {
+   "written_utc": "2026-11-11T00:05Z",
+   "label": "hypothesis",
+   "based_on_read_utc": "2026-11-10T23:57Z",
+   "hypothesis": "CHARLES's centre passes very close to Lisbon about 17:00-18:00 Wed, more likely just south of it (further south than the Tuesday-morning guidance)",
+   "for": [
+    "met.no and IPMA's current run: wind backs to SE/ESE then swings to N at 18:00 (north-of-track pattern); no S/SW stage",
+    "IPMA's earlier values veered SE-S-NW (south-of-track pattern): the guidance moved",
+    "met.no MSLP minimum 986.7 hPa at 17-18Z, +5 hPa in the next hour; ~160 deg swing in 1 h: near-overhead passage",
+    "weaker wind in newer guidance (IPMA mean 49->23 km/h; 23:00 TAF weaker) while the strongest gusts are on the southern edge (communiqué no. 2)",
+    "red rain moved earlier to 09:00 (weaker reason)"
+   ],
+   "against": [
+    "IPMA's red wind warning for Lisbon unchanged",
+    "IPMA's stated track 'between Sines and Cabo Carvoeiro' already includes Lisbon; no communiqué no. 3",
+    "point models move (IPMA's values halved under one stamp)",
+    "TAF still SSE 30G45KT 09-16, PROB30 58 kt",
+    "Open-Meteo not read (rate limit)"
+   ],
+   "weighing": "consistent with a track close to and just south of Lisbon; does not lower the danger; worst timing towards the passage ~16:00-19:00 with a possible lull near the centre",
+   "confidence": "low to medium",
+   "test_on_wednesday": "wind backing to E/NE before N and pressure minimum ~987 hPa at 17-18Z at LPPT and stations = centre south; veering through SW/W = centre north",
+   "prompt_not_evidence": "watcher@web-summit.jose's signal (an undated image on a non-IPMA public page) prompted the question; not used as evidence"
   }
  ],
  "next_read_utc": "2026-11-11T00:22Z"
