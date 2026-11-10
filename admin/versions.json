@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1758",
+    "date": "2026-11-10",
+    "what": "MOVED.md: all of data/ stays writable for the incident agents until they can reach the new repository",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "044532379"
+  },
+  {
     "version": "v0.2.1757",
     "date": "2026-11-10",
     "what": "websummit-poll.sh pinned: no git in the loop, the code copied at start, alerts committed by the session (security.repos@'s MEDIUM, 2130Z)",
