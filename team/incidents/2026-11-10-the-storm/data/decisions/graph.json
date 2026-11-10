@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-10T19:32Z",
+ "updated": "2026-11-10T20:04Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -14,7 +14,7 @@
   "unknown": "cannot tell: the source is unreadable or not yet read",
   "superseded": "replaced by a later edge"
  },
- "first_priority": "websummit-wednesday",
+ "first_priority": "websummit-thursday",
  "nodes": [
   {
    "id": "ipma",
@@ -521,20 +521,20 @@
     "side-events",
     "venue"
    ],
-   "decision": "Wednesday 11 Nov: run, change or suspend",
-   "at": "",
-   "status": "not_announced",
+   "decision": "Day 2 (Wednesday 11 Nov) will not take place: \"O Governo português informou formalmente a Web Summit de que [...] o segundo dia da Web Summit não deverá realizar-se [...] A Web Summit respeitará, naturalmente, as orientações do Governo e, consequentemente, o segundo dia (quarta-feira, 11 de novembro) não terá lugar.\"",
+   "at": "2026-11-10T19:38Z",
+   "status": "happened",
    "follows": [
     "gov-recommends-suspend",
     "gov-alert",
     "ipma-red-wind",
     "websummit-assessing"
    ],
-   "label": "fact",
-   "source": "https://websummit.com/",
-   "read": "2026-11-10T19:32Z",
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T20:04Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "19:32Z: nothing on websummit.com (home, sitemap: no new URL since 18:58Z), nothing on Bluesky websummit.bsky.social (last post 17:36Z), Jornal de Negócios live (last entries 18:25) and a web search show no organiser decision."
+   "note": "Organisers' email to attendees 19:38Z (relayed by Vicky's weather desk); statement to the press quoted by Jornal de Negócios live, entry 19:42. Reasons given: tidal flooding, severe public-transport disruption, high winds on external structures. Not on websummit.com (home, schedule, sitemap: no new URL) nor Bluesky websummit.bsky.social (last post 17:36Z) at 20:04Z: evidence until it appears on an organiser channel we can read. Lead time: 5 h 45 min after the government's recommendation (17:53), 16 h 22 min before the red warnings start (12:00 Wed)."
   },
   {
    "id": "websummit-suspends-h",
@@ -542,7 +542,7 @@
    "to": [],
    "decision": "HYPOTHESIS: the organisers suspend or shorten Wednesday",
    "at": "",
-   "status": "expected",
+   "status": "superseded",
    "follows": [
     "gov-recommends-suspend"
    ],
@@ -558,7 +558,8 @@
    "against": [
     "The halls are indoors; measure (b) names outdoor events only.",
     "The organisers said only \"assessing\" (12:45Z)."
-   ]
+   ],
+   "note": "Confirmed by websummit-wednesday (19:38Z)."
   },
   {
    "id": "side-events-follow-h",
@@ -677,6 +678,82 @@
    "read": "2026-11-10T19:32Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "note": "\"at\" is the live-blog entry time."
+  },
+  {
+   "id": "websummit-thursday",
+   "by": "websummit",
+   "to": [
+    "venue",
+    "side-events"
+   ],
+   "decision": "Day 3 (Thursday 12 Nov) to proceed as planned: \"A Web Summit pretende prosseguir com o terceiro dia (quinta-feira, 12 de novembro) conforme planeado, após a passagem da tempestade Charles\", with further updates to follow",
+   "at": "2026-11-10T19:42Z",
+   "status": "happened",
+   "follows": [
+    "websummit-wednesday"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T20:04Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "\"Pretende\" (aims): an intention, not a guarantee. RTP live reported the same at 19:46 (per comms/facts.md F9)."
+  },
+  {
+   "id": "websummit-n6",
+   "by": "websummit",
+   "to": [
+    "side-events"
+   ],
+   "decision": "What happens to Wednesday's talks and speakers, the PITCH semi-final, side events and tickets",
+   "at": "",
+   "status": "not_announced",
+   "follows": [
+    "websummit-wednesday"
+   ],
+   "label": "fact",
+   "source": "https://websummit.com/startups/pitch/",
+   "read": "2026-11-10T20:04Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Nothing on websummit.com (home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the Jornal de Negócios statement or a web search at 20:04Z. The organisers said they will contact those affected directly (RTP, 19:46, per facts.md F9)."
+  },
+  {
+   "id": "side-events-wednesday",
+   "by": "side-events",
+   "to": [],
+   "decision": "Dear Gatekeepers Live (Wed 10:00, MEO Arena studio): no notice on its page",
+   "at": "",
+   "status": "not_announced",
+   "follows": [
+    "websummit-wednesday"
+   ],
+   "label": "fact",
+   "source": "https://powerhouse.indvstryclvb.com/websummit",
+   "read": "2026-11-10T20:04Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "The page returns almost no text to our tools (47 characters): a JavaScript app."
+  },
+  {
+   "id": "websummit-thursday-change-h",
+   "by": "websummit",
+   "to": [],
+   "decision": "HYPOTHESIS: Thursday holds unless storm damage at the venue or transport recovery says otherwise",
+   "at": "",
+   "status": "expected",
+   "follows": [
+    "websummit-thursday"
+   ],
+   "label": "hypothesis",
+   "source": "",
+   "read": "2026-11-10T20:04Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "reasons": [
+    "IPMA (read 19:22 by the meteorologist): no wind or rain warning for Lisbon on Thursday; the red window ends 21:00 Wednesday.",
+    "The organisers said \"pretende\" and will keep monitoring."
+   ],
+   "against": [
+    "Tuesday's roof leak at FIL (17:07) after one rainy day; Wednesday is red for rain and wind.",
+    "Trains and flights may take time to recover on Thursday morning."
+   ]
   }
  ]
 }
