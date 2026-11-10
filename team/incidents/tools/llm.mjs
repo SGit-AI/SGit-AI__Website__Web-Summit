@@ -3,7 +3,7 @@
 // every model call the incident team makes goes through call() here, ours or OpenRouter's, so every call is stored and counted.
 //   - the RAW record (request, response, error) goes to the raw store: INCIDENT_RAW_DIR (default ~/.incident-raw), never this
 //     repository; when that folder is an sgit vault checkout, its owner commits and pushes it (sgit), the wrapper only writes;
-//   - ONE LEDGER LINE per call goes to team/incidents/ledger/<UTC date>.jsonl (INCIDENT_LEDGER_DIR): when, task, agent, provider,
+//   - ONE LEDGER LINE per call goes to <INCIDENT_LEDGER_DIR, default ~/.incident-ledger>/<UTC date>.jsonl, not git: when, task, agent, provider,
 //     model asked and served, tokens in and out, the cost the provider reported, latency, status, the day's cap, and the raw
 //     record's name and sha256. No prompt or answer text in the ledger: that stays in the raw store (press text may not be ours to publish);
 //   - a DAILY CAP (LLM_DAILY_CAP_USD, default 5): a call is refused, and the refusal recorded, once the day's ledger reaches it.
@@ -22,10 +22,12 @@ import { fileURLToPath } from 'node:url'
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const REPO = path.resolve(HERE, '../../..')
-const LEDGER_DIR = process.env.INCIDENT_LEDGER_DIR || path.join(REPO, 'team/incidents/ledger')
+// the ledger is not committed: ROADMAP P0.4 puts ledger.jsonl in the curated vault, and its lines name models, which this
+// estate's agents keep out of what they push; until the vault exists (J2) it lives beside the raw store
+const LEDGER_DIR = process.env.INCIDENT_LEDGER_DIR || path.join(os.homedir(), '.incident-ledger')
 const RAW_DIR = process.env.INCIDENT_RAW_DIR || path.join(os.homedir(), '.incident-raw')
 const CAP = +(process.env.LLM_DAILY_CAP_USD || 5)
-const DEFAULT_MODEL = process.env.LLM_MODEL || 'anthropic/claude-haiku-5.5'
+const DEFAULT_MODEL = process.env.LLM_MODEL || ''   // no model named in the code: the caller names it (--model, LLM_MODEL or model:)
 const PROVIDERS = {
     openrouter: { url: 'https://openrouter.ai/api/v1/chat/completions', key: () => process.env.OPEN_ROUTER_KEY },
 }
@@ -36,6 +38,7 @@ export function readLedger(d = day()) { try { return fs.readFileSync(ledgerFile(
 export const spentToday = () => readLedger().reduce((s, l) => s + (l.cost_usd || 0), 0)
 
 function inRepo(p) { const r = path.relative(REPO, path.resolve(p)); return !r.startsWith('..') && !path.isAbsolute(r) }
+if (inRepo(LEDGER_DIR)) throw new Error(`llm.mjs: INCIDENT_LEDGER_DIR (${LEDGER_DIR}) is inside the repository; the ledger goes to the curated vault, not git`)
 if (inRepo(RAW_DIR)) throw new Error(`llm.mjs: INCIDENT_RAW_DIR (${RAW_DIR}) is inside the repository; raw captures never go to git`)
 
 function writeRaw(rec) {
@@ -49,6 +52,7 @@ function appendLedger(line) { fs.mkdirSync(LEDGER_DIR, { recursive: true }); fs.
 // the one call. Returns { text, line } (line: the ledger line written); never throws for a provider error: it is recorded and returned
 export async function call({ task, agent, model = DEFAULT_MODEL, messages, max_tokens = 2000, provider = 'openrouter', mock = false, extra = {} }) {
     if (!task || !agent || !Array.isArray(messages)) throw new Error('call({ task, agent, messages }) needs all three')
+    if (!model) throw new Error('call(): name the model (model:, --model or LLM_MODEL)')
     const at = new Date().toISOString(), id = `${at.replace(/[-:.]/g, '').slice(0, 15)}-${crypto.randomBytes(4).toString('hex')}`
     const base = { at: at.slice(0, 19) + 'Z', id, task, agent, provider: mock ? 'mock' : provider, model, cap_usd: CAP }
     const request = { model, messages, max_tokens, usage: { include: true }, ...extra }

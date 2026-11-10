@@ -1,10 +1,10 @@
 # The model ledger (WS-214, ROADMAP P0.4)
 
-One line per model call the incident team makes, written by the one wrapper, `team/incidents/tools/llm.mjs`. No call goes around it. A prototype until the incident site's repository exists; the raw store then moves to the data lane's vault (J2).
+One line per model call the incident team makes, written by the one wrapper, `team/incidents/tools/llm.mjs`. **The lines are not in git:** ROADMAP P0.4 puts `ledger.jsonl` in the curated vault, and the lines name models, which this estate's agents keep out of what they push. Until the data lane's vault exists (J2) the ledger is `INCIDENT_LEDGER_DIR` (default `~/.incident-ledger/`) in the calling session; this folder holds only this README. No call goes around it. A prototype until the incident site's repository exists; the raw store then moves to the data lane's vault (J2).
 
 ## Files
 
-- `<YYYY-MM-DD>.jsonl` (UTC day): one JSON object per call. A file per day keeps every file well under 256 KB.
+- `<INCIDENT_LEDGER_DIR>/<YYYY-MM-DD>.jsonl` (UTC day): one JSON object per call. A folder inside this repository is refused.
 - The raw records (request, response, error) are **not here**. They go to the raw store (`INCIDENT_RAW_DIR`, default `~/.incident-raw/<day>/<id>.json`, mode 0600). The wrapper refuses a raw folder inside this repository: prompts and answers can carry press text that is not ours to publish. When the raw folder is an sgit vault checkout, its owner commits and pushes it.
 
 ## A line
@@ -24,10 +24,10 @@ One line per model call the incident team makes, written by the one wrapper, `te
 ## Use
 
 ```
-node team/incidents/tools/llm.mjs --task WS-214/test --agent <you> [--model M] [--mock] "prompt"
+node team/incidents/tools/llm.mjs --task WS-214/test --agent <you> --model <provider/model> [--mock] "prompt"
 node team/incidents/tools/llm.mjs --summary [YYYY-MM-DD]      # calls, cost, by model, by agent, by status
 ```
 
-As a module: `import { call } from '../tools/llm.mjs'` then `await call({ task, agent, model, messages })`, which returns `{ text, line }` and never throws on a provider error: the error is recorded and returned.
+No model is named in the code: the caller names it (`--model`, `LLM_MODEL` or `model:`). As a module: `import { call } from '../tools/llm.mjs'` then `await call({ task, agent, model, messages })`, which returns `{ text, line }` and never throws on a provider error: the error is recorded and returned.
 
-The key is `OPEN_ROUTER_KEY`, read from the environment only. It is not in this environment yet (ROADMAP question 2, for Dinis). Until it is, use `--mock`. With no key, or a dummy key, the call is refused (401) and recorded as such. Tested 10 November 20:44 UTC: mock `ok`, dummy key `http_401`, cap 0 `refused_cap`; those test lines went to a scratch ledger, not here.
+The key is `OPEN_ROUTER_KEY`, read from the environment only. It **is** set in incident.dev@'s environment (checked 20:48; the value never read or printed); a session without it uses `--mock`, and a call with no key or a dummy key is refused (401) and recorded as such. Tested 10 November: mock `ok`, dummy key `http_401`, cap 0 `refused_cap` (20:44), and one real call through OpenRouter, `ok`, 18 tokens in, 4 out, $0.0000038, 910 ms (20:48).
