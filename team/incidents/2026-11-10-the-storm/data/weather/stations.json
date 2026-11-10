@@ -2,7 +2,7 @@
  "about": "IPMA's hourly station observations in and next to Lisbon, kept across reads (the feed holds 24 hours). Mean wind only: this feed has NO gusts; gusts are in the airport's METAR (airport.json).",
  "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
  "stations_source": "https://api.ipma.pt/open-data/observation/meteorology/stations/stations.json",
- "read_utc": "2026-11-10T22:03:49Z",
+ "read_utc": "2026-11-10T22:23:18Z",
  "latest_hour_utc": "2026-11-10T21:00Z",
  "stations": [
   {
@@ -13,7 +13,7 @@
     -9.14972222
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T22:03:49Z",
+   "read_utc": "2026-11-10T22:23:18Z",
    "latest": {
     "time_utc": "2026-11-10T21:00Z",
     "wind_mean_kmh": 16.2,
@@ -282,7 +282,7 @@
     -9.1254
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T22:03:49Z",
+   "read_utc": "2026-11-10T22:23:18Z",
    "latest": {
     "time_utc": "2026-11-10T21:00Z",
     "wind_mean_kmh": 14.8,
@@ -533,7 +533,7 @@
     -9.182825
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T22:03:49Z",
+   "read_utc": "2026-11-10T22:23:18Z",
    "latest": {
     "time_utc": "2026-11-10T21:00Z",
     "wind_mean_kmh": 10.4,
@@ -802,7 +802,7 @@
     -9.1649
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T22:03:49Z",
+   "read_utc": "2026-11-10T22:23:18Z",
    "latest": {
     "time_utc": "2026-11-10T21:00Z",
     "wind_mean_kmh": 11.5,
@@ -1071,7 +1071,7 @@
     -9.1855
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T22:03:49Z",
+   "read_utc": "2026-11-10T22:23:18Z",
    "latest": {
     "time_utc": "2026-11-10T21:00Z",
     "wind_mean_kmh": 10.8,
@@ -1340,7 +1340,7 @@
     -9.2939255
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T22:03:49Z",
+   "read_utc": "2026-11-10T22:23:18Z",
    "latest": {
     "time_utc": "2026-11-10T21:00Z",
     "wind_mean_kmh": null,
@@ -1609,7 +1609,7 @@
     -9.212804
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T22:03:49Z",
+   "read_utc": "2026-11-10T22:23:18Z",
    "latest": {
     "time_utc": "2026-11-10T21:00Z",
     "wind_mean_kmh": 10.8,
@@ -1797,7 +1797,7 @@
     -9.04766111
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T22:03:49Z",
+   "read_utc": "2026-11-10T22:23:18Z",
    "latest": {
     "time_utc": "2026-11-10T21:00Z",
     "wind_mean_kmh": 10.1,
