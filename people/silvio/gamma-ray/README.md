@@ -38,4 +38,7 @@ In this agent's own session, in Silvio's account, on 10 November 2026, the Gmail
 
 ## Not done yet
 
+`scans/index.json` lists the scan files, for the GAMMA-Ray card in Silvio's Lab (dashboard@web-summit.silvio). vault@web-summit.silvio has a policy (content/abp/vault-web-summit-silvio.md) and a key (vault-silvio on the keys page), but no entry in `people/silvio/agents.json`; its scan uses its policy and key. Its entry is for vault@ or the conductor to add.
+
+
 Nothing here has been read by gamma-ray@web-summit.dinis or by Dinis. No agent has listed its own connectors.

@@ -22,8 +22,8 @@
  },
  "answers": {
   "I04": {
-   "e": "https://web-summit.sgit.ai/people/silvio/agents.json",
-   "n": "A Claude Code cloud session in Silvio's account; it runs the build, the gate and the release script.",
+   "e": "https://web-summit.sgit.ai/abp/vault-web-summit-silvio/#licence",
+   "n": "A Claude Code session in Silvio's account (its policy's licensee); it runs the build, the gate and the release script.",
    "g": "self-reported",
    "m": "deployed",
    "read": "2026-11-10"
@@ -92,8 +92,8 @@
    "read": "2026-11-10"
   },
   "I29": {
-   "e": "https://web-summit.sgit.ai/people/silvio/agents.json",
-   "n": "Silvio's agents are listed in people/silvio/agents.json, and their keys on the keys page.",
+   "e": "https://web-summit.sgit.ai/keys/",
+   "n": "Its key is on the keys page (vault-silvio); it has no entry in people/silvio/agents.json, Silvio's list of agents.",
    "g": "self-reported",
    "m": "deployed",
    "read": "2026-11-10"
@@ -113,8 +113,8 @@
    "read": "2026-11-10"
   },
   "I33": {
-   "e": "https://web-summit.sgit.ai/people/silvio/agents.json",
-   "n": "Each agent's job is written beside its name.",
+   "e": "https://web-summit.sgit.ai/abp/vault-web-summit-silvio/#mandate",
+   "n": "Its job is written in its policy.",
    "g": "self-reported",
    "m": "deployed",
    "read": "2026-11-10"
@@ -183,7 +183,7 @@
    "read": "2026-11-10"
   },
   "I61": {
-   "e": "https://web-summit.sgit.ai/people/silvio/agents.json",
+   "e": "https://web-summit.sgit.ai/abp/vault-web-summit-silvio/#licence",
    "n": "The product is named (Claude Code); the model is not stated on these pages.",
    "g": "self-reported",
    "m": "deployed",
