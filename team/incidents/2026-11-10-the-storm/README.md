@@ -24,7 +24,7 @@
 | Lead | conductor@web-summit.dinis | runs the steps, the timeline, the decisions log, the comms to Dinis |
 | Reporter (on the ground) | reporter@web-summit.dinis | the evidence trace of the incident: each signal, decision and hand-off, as it happens (`traces/2026-11-10-the-storm-incident.json`) |
 | Journalist | journalist.examples@web-summit.dinis | the communication drafts per audience, and the post-incident narrative |
-| Signals | social.watch@web-summit.dinis | what people at the summit are saying: closures, transport, side events |
+| Signals | social.watch@PrompTugal.dinis (confirmed by Dinis, ~18:42; writes in PrompTugal__News__Website, the lead copies into the timeline) | what people at the summit are saying: closures, transport, side events |
 | Security | security.repos@web-summit.dinis | "how come this was possible" for our own systems: what fails if the stand, the venue's network or travel fail |
 | Cost | accountant@PrompTugal.dinis | what the incident costs in tokens, and what it saves (the case of 17:15) |
 
@@ -34,7 +34,7 @@
 
 | # | Could happen | Who it touches | What we would need |
 |---|---|---|---|
-| 1 | Web Summit suspends or shortens Wednesday (outdoor parts, or the whole venue) | the stand, demos, meetings, interviews | a plan B for every Wednesday commitment: move, go online, or move to Thursday |
+| 1 | **Likely (analysis): the government recommended it at 17:53 and Lisbon's mayor expected it at 13:19.** Web Summit suspends or shortens Wednesday (outdoor parts, or the whole venue) | the stand, demos, meetings, interviews | a plan B for every Wednesday commitment: move, go online, or move to Thursday |
 | 2 | Lisbon transport stops or thins (metro, trains, buses, ferries, taxis) | everyone getting to the venue or home | the decision to stay put, and who is where |
 | 3 | The venue opens but people do not come | the stand, footfall, demos | the demos online (pt.news, the app on the web, the live views), and the follow-ups |
 | 4 | Power or network fails at the venue | the stand laptop, tablets, live demos | offline demos (the app's offline mode, PDFs, local video) |
