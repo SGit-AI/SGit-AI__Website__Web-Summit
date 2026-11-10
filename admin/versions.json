@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1757",
+    "date": "2026-11-10",
+    "what": "websummit-poll.sh pinned: no git in the loop, the code copied at start, alerts committed by the session (security.repos@'s MEDIUM, 2130Z)",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "6260b8a34"
+  },
+  {
     "version": "v0.2.1756",
     "date": "2026-11-10",
     "what": "the incident moves to storm-charles.promptugal.news (PrompTugal__News__Storm-Charles), first push to served 23 s; team/incidents/ frozen with a pointer",
