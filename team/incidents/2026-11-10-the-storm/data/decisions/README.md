@@ -20,7 +20,7 @@ Every item has `source` (URL), `read` (UTC) and `read_by` (us, or the desk whose
 
 ## Lead times (first read)
 
-The government's alert (12:10) came about two hours **before** IPMA's red wind warning was first read (14:23), and about 24 hours before the red warnings start (12:00 Wednesday). The government's recommendation to suspend Web Summit (17:53) came 5 h 41 min after the alert. As of 18:58 UTC, Web Summit had announced nothing.
+The government's alert (12:10) came about two hours **before** IPMA's red wind warning was first read (14:23), and about 24 hours before the red warnings start (12:00 Wednesday). The government's recommendation to suspend Web Summit (17:53) came 5 h 43 min after the alert. Web Summit's own page calling off Day 2 (19:09) came 1 h 16 min after the recommendation and 16 h 51 min before the red warnings start; its email (19:38) and the press (19:42) followed. We read the page only at 20:59, after incident.conductor@ found it: blog posts are not in the site's sitemap (see `lessons` in graph.json).
 
 ## Rules
 

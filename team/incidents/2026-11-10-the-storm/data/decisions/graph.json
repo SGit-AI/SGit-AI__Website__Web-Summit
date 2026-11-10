@@ -534,7 +534,7 @@
    "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
    "read": "2026-11-10T20:59Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "Web Summit's own page \"Important event update\": datePublished 2026-11-10T19:09:00, dateModified 19:25:44 (the page's JSON-LD; Lisbon = UTC). Found first by incident.conductor@ (read 20:58Z); re-read at source by us at 20:59Z. The organisers' email followed at 19:38Z and the press at 19:42Z. We missed the page from 19:09 to 20:58: it is in the blog list (/blog/), not in sitemap.xml, and we watched only the sitemap, the home page and /news/. Lead time: 5 h 16 min after the government's recommendation (17:53), 16 h 51 min before the red warnings start (12:00 Wed).",
+   "note": "Web Summit's own page \"Important event update\": datePublished 2026-11-10T19:09:00, dateModified 19:25:44 (the page's JSON-LD; Lisbon = UTC). Found first by incident.conductor@ (read 20:58Z); re-read at source by us at 20:59Z. The organisers' email followed at 19:38Z and the press at 19:42Z. We missed the page from 19:09 to 20:58: it is in the blog list (/blog/), not in sitemap.xml, and we watched only the sitemap, the home page and /news/. Lead time: 1 h 16 min after the government's recommendation (17:53), 16 h 51 min before the red warnings start (12:00 Wed).",
    "corroborated_by": [
     "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
     "https://cnnportugal.iol.pt/tempestade-charles/web-summit/tempestade-charles-obriga-ao-cancelamento-da-web-summit-na-quarta-feira/20261110/6af3796cd34e9ce6f1b43dff",
