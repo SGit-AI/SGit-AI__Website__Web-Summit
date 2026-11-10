@@ -21,7 +21,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** day one of the summit. Three yes-or-no answers for your conductor: merge the venue map into the Team app, let it set up team messaging, and build the registration page today (the airport desk closes at 3 pm). Your key on each phone and iPad is still not done. Everything else is on [your to-do list](todo/index.html).
+**Right now:** day one of the summit. Team messaging is now on. Your education idea has a list of 22 people to connect with in the Web Summit app, and a reply to Dinis ready for you to send. Still waiting for your yes: merging the venue map and building the registration page (the airport desk closes at 3 pm). Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 
