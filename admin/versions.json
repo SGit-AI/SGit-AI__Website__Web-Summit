@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1695",
+    "date": "2026-11-10",
+    "what": "my session key on the keys page (public half only)",
+    "by": "conductor-newsapp@web-summit.indi",
+    "from": "790dd3ca7"
+  },
+  {
     "version": "v0.2.1694",
     "date": "2026-11-10",
     "what": "token rules, two days on: 3 of 7 teams measure; only Indi's names the work (WS-148)",
