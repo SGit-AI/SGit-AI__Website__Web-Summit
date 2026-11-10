@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1776",
+    "date": "2026-11-10",
+    "what": "sent_utc on each warning in warnings.json (lisbon and elsewhere), from the CAP message matching area, type, level and window; null where none matches",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "8caa00d45"
+  },
+  {
     "version": "v0.2.1775",
     "date": "2026-11-10",
     "what": "for the incident team, an unofficial signal: a Facebook weather page shows the track further south",
