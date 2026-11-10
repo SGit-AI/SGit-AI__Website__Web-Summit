@@ -159,7 +159,7 @@ def communiques():
                'valid_from_utc': m and m.group(1).replace(' ', 'T') + 'Z', 'valid_to_utc': m and m.group(2).replace(' ', 'T') + 'Z',
                'link': (it.findtext('link') or '').strip(), 'text_pt': text, 'source': U['communiques'], 'read_utc': NOW}
         if title not in seen:
-            changes.append('New IPMA communiqué: ' + title)
+            changes.insert(0, 'NEW IPMA COMMUNIQUÉ: ' + title)
             seen[title] = rec
         elif seen[title]['text_pt'] != text:
             changes.append('IPMA communiqué text changed: ' + title)
@@ -340,6 +340,9 @@ def thursday(w, f, a, prev):
     sig = lambda o: json.dumps([o['lisbon_warnings_touching_thursday']['items'] and [(x['type'], x['level'], x['start_utc'], x['end_utc']) for x in o['lisbon_warnings_touching_thursday']['items']],
                                 o['ipma_model_thursday_morning']['model_updated_local'], (o.get('ipma_daily_thursday') or {}).get('updated_local'), o['taf_groups_into_thursday']['taf_issue_utc']])
     if not prev or sig(prev) != sig(out):
+        tq = out['taf_groups_into_thursday']
+        if tq['groups'] and (not prev or not prev['taf_groups_into_thursday']['groups']):
+            changes.insert(0, f"FIRST TAF COVERING THURSDAY: issued {tq['taf_issue_utc']}, valid to {tq['taf_valid_to_utc']}")
         changes.insert(0, 'THURSDAY: warnings ' + (', '.join(f"{x['level']} {x['type']} {x['start_utc'][8:16]}-{x['end_utc'][8:16]}" for x in warns) or 'none') +
                        (f"; model Thu 00-12 mean wind {min(winds)}-{max(winds)} km/h" if winds else ''))
     return out

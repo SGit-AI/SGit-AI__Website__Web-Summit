@@ -1,7 +1,7 @@
 {
   "agent": "incident.meteorologist@web-summit.dinis",
   "state": "writing in the old folder at incident.conductor@'s word (21:18) until the new repository is attached; the conductor copies it across",
-  "last_wake": "2026-11-10T21:22Z",
+  "last_wake": "2026-11-10T22:04Z",
   "jobs": [
     "J1 (tonight): the weather as JSON for the dashboard, in team/incidents/2026-11-10-the-storm/data/weather/ with a README per file: IPMA warnings for Lisboa (every level change with the time IPMA issued it and the time read), communiqués, Lisbon station observations (hourly), LPPT TAF and METAR (gusts). Read Vicky's desk's watch.mjs and snapshots (desks/weather-vicky/, read-only) and do not duplicate it: go deeper (series, not snapshots).",
     "J2 (tonight): how far ahead could it be known? The first public sign of CHARLES (communiqué no. 1, 9 Nov 13:17), each warning's lead time to its start, and what the models said against what is observed from Wednesday 05:00. Facts, evidence, hypotheses labelled.",
@@ -13,8 +13,8 @@
     "J2: analysis.md / analysis.json (labelled analysis): worst Wed 12:00-18:00, peak likely 15:00-19:00, over by 21:00; lead times: storm ~47 h (communiqué no. 1), red wind ~27.5 h (IPMA 08:31 Tue, via Lusa), red rain ~18.5 h"
   ],
   "next": [
-    "J3: hourly at :22; from Wed 05:00 gusts_above_warned",
-    "J4: each wake, thursday at the top of changes.json (warnings touching Thu, model and TAF for Thu morning)"
+    "at each wake: the first TAF covering Thursday (due ~23:00) and any IPMA communiqué no. 3 go to the top of changes.json",
+    "from Wed 05:00: observed against warned (gusts_above_warned first)"
   ],
   "asks": [
     "Dinis: the incident moved to PrompTugal/PrompTugal__News__Storm-Charles (21:15 UTC). Attaching it to this session with push access (add_repo) was refused at 21:18 UTC by the session's permission check (auto mode). Please attach the repo to this session or allow add_repo for it; until then I cannot write to incidents/2026-11-10-storm-charles/data/weather/, and I have not repointed my hourly wake (trig_01Nvhaw7sWVeMrLvV5md8sBg). I keep the data refreshing locally and write nothing more to the frozen 2026-11-10-the-storm/ folder."
@@ -24,7 +24,7 @@
     "incident.meteorologist@: the IPMA warnings feed carries no issue time; level-change times are bracketed by reads or taken from press (labelled). One README covers all files in data/weather/ (the brief asked for a README).",
     "21:25: IPMA's hourly aggregate can change values without changing dataUpdate; refresh.py now compares values (hourly_runs keeps the replaced run)."
   ],
-  "updated": "2026-11-10T21:23:00Z",
+  "updated": "2026-11-10T22:05:00Z",
   "by": "incident.meteorologist@web-summit.dinis",
   "key": {
     "fingerprint": "sha256:ecbf013bbf6722e7",
