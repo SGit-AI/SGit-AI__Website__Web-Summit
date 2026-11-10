@@ -1,0 +1,58 @@
+{
+  "number": 20,
+  "date": "10 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Summit day two: Dinis's restart gives you social and channels; confirm or swap",
+  "when": "10 November 2026, 07:26 UTC (scheduled wake; since brief 19, 17:20 UTC yesterday)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Overnight Dinis stopped every agent (THE BIG STOP, committed 23:36) and restarted them (THE RESTART, committed 04:02) with one theme: pt.news becomes the agentic edition, measured by GAMMA-Ray, which WS-208 says launches 'tomorrow' (written at 04:02), with WS-206 still at 'design first'. Your piece is social and channels: the GAMMA-Ray launch posts, and each published card and interview shared with the company tagged. He asks each person to confirm or swap, through their conductor. None of your agents ran during the stop (none wakes at night); I wrote the stop report he asked for. Page views are still lost: the lanes are full and no drain yet.",
+  "stats": [
+    {"n": "1", "label": "piece for you: social and channels (WS-208), confirm or swap"},
+    {"n": "0", "label": "of your agents running during THE BIG STOP (none wakes at night)"},
+    {"n": "5,000", "label": "page views waiting, all lanes full: new views lost"},
+    {"n": "$33", "label": "your agents' tokens on 9 November (about 44M), down from $61"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "📣 Confirm or swap your piece: social and channels (WS-208)",
+      "detail": "Dinis's restart gives you the GAMMA-Ray launch posts, and each published card and interview shared with the company tagged. His social.watch agent (04:19) maps what others publish hourly, with your channels named. None of your agents posts today; a person posts (the newsroom's outreach-desk rule: 'sends an email or posts: a person does'; and Dinis's decisions of 10:55, item 4, outreach parked). Say 'confirm' and I answer his conductor; or name a swap.",
+      "options": ["confirm", "swap for something else"],
+      "recommend": "Confirm: it suits the stand, and your writer can draft the posts for you to send."
+    },
+    {
+      "id": "2",
+      "ask": "✍️ Who drafts your posts?",
+      "detail": "No agent of yours does social today. Options: your writer (writer@PrompTugal.jose) drafts each post in a new session from the published card or interview; or a new social agent of yours (like Indi's social@); or you write them. A person always sends.",
+      "options": ["the writer drafts", "start a social agent", "I write them"],
+      "recommend": "The writer drafts, one session per batch; no new agent during the summit."
+    },
+    {
+      "id": "3",
+      "ask": "🔑 Still open: the token (\"drain\" or a fresh conductor)",
+      "detail": "Unchanged since yesterday (Actions row 1, with vault's passphrase).",
+      "options": ["drain", "fresh conductor"],
+      "recommend": "Whenever you have three minutes."
+    }
+  ],
+  "you_asked": [],
+  "sections": [
+    {
+      "title": "Overnight, from Dinis",
+      "items": [
+        "23:24: GAMMA-Ray, an agentic maturity scan beside RiskMandate X-ray (WS-206).",
+        "23:36: THE BIG STOP: stop all work unless critical, one conductor per account, a stop report each. My report: people/jose/stop-report-2026-11-09.md.",
+        "04:02: THE RESTART (WS-208): restart and accelerate; every team on the agentic theme; Indi the apps and interviews, Angelo the RiskMandate demos, Silvio X-ray at the stand, Vicky the journalism desks, you social and channels.",
+        "04:19: social.watch, the summit coverage map, hourly, with your channels in it."
+      ]
+    },
+    {
+      "title": "The accountant: 9 November",
+      "items": [
+        "About 44M tokens, 4.8M of them not cache reads, about $33 (8 November: 104M, about $61). The costliest: the watcher ($17.01), your conductor ($6.74), vault ($4.83), the designer ($4.36). The watcher still on Opus. No line from dev, the helper, the dashboard, automation, crm or the writer: they found nothing to do."
+      ]
+    }
+  ],
+  "next": ["12:20: your answer to Dinis on WS-208, if you give it; the hourly counts."],
+  "sources": ["82eea75f, 63794d60, 37ad1b1a, 22b8126c (conductor@web-summit.dinis)", "board/WS-208-the-restart.md", "people/jose/accountant/ledger/", "telemetry_drain.py --dry (07:26)"]
+}
