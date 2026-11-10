@@ -74,3 +74,22 @@ Each of these goes at the top of `changes.json` at the next wake.
 - **A weaker mean wind does not mean a weaker storm.** A much weaker mean wind in Lisbon fits the centre passing close to the city: winds are lighter near the centre and strongest on its southern edge. Gusts in showers and thunderstorms are not in this mean.
 - **Trust the warnings first.** IPMA's red warnings, made by forecasters with all of IPMA's models, are unchanged and outrank this one model's output for one point. If IPMA lowers or shortens a red warning, that will be the real signal, and it will show at the top of `changes.json`.
 - **Confidence on the peak hour stays low.** The track is the uncertainty, as IPMA has said.
+
+## 5. Update, 23:25 UTC: the airport TAF that covers Thursday (issued 23:00)
+
+> **Label: ANALYSIS**, from `airport.json` as read at 23:22 UTC.
+
+**Fact:** the new TAF for Lisbon airport (`TAF LPPT 102300Z 1100/1206`) is weaker than the 17:00 issue:
+
+| Group (Wed, UTC) | 17:00 issue | 23:00 issue |
+|---|---|---|
+| Wind becoming, 07:00 to 09:00 | S 25 kt gusting 38 (46 / 70 km/h) | SSE 17 kt gusting 27 (31 / 50 km/h) |
+| At times, from 09:00 | S 35 kt gusting 48 (65 / 89 km/h), to 18:00 | SSE 30 kt gusting 45 (56 / 83 km/h), **to 16:00**, with heavy rain, visibility 2 km |
+| Thunderstorm chance, 10:00 to 18:00 | **40%**: 42 kt gusting 58 (78 / 107 km/h) | **30%**: 43 kt gusting 58 (80 / 107 km/h) |
+| After | nothing later forecast | **becoming W 12 kt (22 km/h), 18:00 to 20:00**; Thursday 00:00 to 06:00 W 12 kt, no gusts |
+
+**Analysis:**
+- **At the airport, the strongest wind moves earlier.** The TAF puts it **09:00 to 16:00**, from the south-south-east, ahead of the centre. A 30% chance of thunderstorm gusts near 107 km/h lasts to 18:00. After the wind swings west (18:00 to 20:00) it is light. IPMA's hourly model puts its strongest mean wind later (around 19:00 to 20:00, north-west).
+- **The two sources disagree on the peak hour**, so I am widening it back: **the peak most likely falls between 12:00 and 18:00**, inside the overlap of the two red warnings. I no longer narrow it to 17:00 to 20:00. **The worst window stays 12:00 to 18:00; it is over by 21:00** (red wind's end); the airport forecast is lighter from 18:00 to 20:00.
+- **A weaker forecast for the airport is not a downgrade of the warning.** IPMA's red warnings (gusts to 120, up to 140 km/h in exposed places) are unchanged as of 23:22. The airport is one point. Read together, the model and the TAF fit **a centre passing close to Lisbon**: strong south-easterlies before it, a lull and a swing as it passes, lighter westerlies after.
+- **Thursday (analysis): behind the storm, now with more confidence.** The TAF has **west 12 kt, no gusts, from 00:00 to 06:00 Thursday**. The model has mean wind of 16 to 24 km/h. The only Thursday warning is yellow sea to 03:00. Confidence: **medium**. It drops back to low if IPMA extends any warning past Wednesday 21:00.

@@ -108,6 +108,31 @@
     "peak_hour_and_strength": "low"
    },
    "why": "the peak tracks the wind swing; lower mean wind fits the centre passing near Lisbon; IPMA's red warnings (unchanged) outrank one model at one point"
+  },
+  {
+   "written_utc": "2026-11-10T23:25Z",
+   "label": "analysis",
+   "based_on_read_utc": "2026-11-10T23:22Z",
+   "fact": "TAF LPPT 102300Z weaker than 101700Z: BECMG 07-09 16017G27KT; TEMPO 09-16 16030G45KT +RA; PROB30 (was 40) TEMPO 10-18 18043G58KT +TSRA; BECMG 18-20 26012KT; Thu 00-06 W 12 kt no gusts",
+   "likely_peak_utc": [
+    "2026-11-11T12:00Z",
+    "2026-11-11T18:00Z"
+   ],
+   "worst_window_utc": [
+    "2026-11-11T12:00Z",
+    "2026-11-11T18:00Z"
+   ],
+   "ends_utc": "2026-11-11T21:00Z",
+   "confidence": {
+    "window": "medium",
+    "peak_hour_and_strength": "low"
+   },
+   "thursday_morning": {
+    "view": "behind the storm",
+    "confidence": "medium",
+    "why": "TAF W 12 kt no gusts 00-06; model 16-24 km/h mean; only yellow sea to 03:00"
+   },
+   "why": "TAF peak 09-16 (ahead of the centre) vs model peak 19-20 (behind it): peak widened back to the red overlap; red warnings unchanged and outrank one point"
   }
  ]
 }

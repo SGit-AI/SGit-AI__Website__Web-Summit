@@ -1,22 +1,22 @@
 {
  "about": "IPMA's aeronautical forecast (TAF) and observations (METAR) for Lisbon airport (LPPT), read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport, 8 km north of the centre; not a public warning.",
- "read_utc": "2026-11-10T22:23:18Z",
+ "read_utc": "2026-11-10T23:22:52Z",
  "taf": {
-  "issue_utc": "2026-11-10T17:00Z",
-  "raw": "TAF LPPT 101700Z 1018/1124 23013KT 9999 BKN025 TEMPO 1018/1024 4000 RA BR SCT004 BKN008 FEW018TCU BECMG 1100/1102 SCT006 BKN012 TEMPO 1102/1118 3000 RADZ BR SCT002 BKN004 FEW018CB BECMG 1107/1109 18025G38KT TEMPO 1109/1118 18035G48KT PROB40 TEMPO 1110/1118 18042G58KT 1200 +TSRA SCT015CB",
-  "valid_from_utc": "2026-11-10T18:00Z",
-  "valid_to_utc": "2026-11-12T00:00Z",
+  "issue_utc": "2026-11-10T23:00Z",
+  "raw": "TAF LPPT 102300Z 1100/1206 21015KT 9999 SCT008 BKN015 TEMPO 1100/1109 4000 RA BR SCT004 BKN008 FEW018CB BECMG 1107/1109 16017G27KT TEMPO 1109/1116 16030G45KT 2000 +RA BR SCT002 BKN004 FEW016CB PROB30 TEMPO 1110/1118 18043G58KT 1200 +TSRA SCT015CB BECMG 1118/1120 26012KT BKN020",
+  "valid_from_utc": "2026-11-11T00:00Z",
+  "valid_to_utc": "2026-11-12T06:00Z",
   "groups": [
    {
     "change": "BASE",
     "prob": null,
-    "from_utc": "2026-11-10T18:00Z",
-    "to_utc": "2026-11-11T00:00Z",
+    "from_utc": "2026-11-11T00:00Z",
+    "to_utc": "2026-11-11T07:00Z",
     "becoming_by_utc": null,
-    "wind_dir": 230,
-    "wind_kt": 13,
+    "wind_dir": 210,
+    "wind_kt": 15,
     "gust_kt": null,
-    "wind_kmh": 24,
+    "wind_kmh": 28,
     "gust_kmh": null,
     "visibility": "6+",
     "weather": null
@@ -24,8 +24,8 @@
    {
     "change": "TEMPO",
     "prob": null,
-    "from_utc": "2026-11-10T18:00Z",
-    "to_utc": "2026-11-11T00:00Z",
+    "from_utc": "2026-11-11T00:00Z",
+    "to_utc": "2026-11-11T09:00Z",
     "becoming_by_utc": null,
     "wind_dir": null,
     "wind_kt": null,
@@ -38,42 +38,14 @@
    {
     "change": "BECMG",
     "prob": null,
-    "from_utc": "2026-11-11T00:00Z",
-    "to_utc": "2026-11-11T07:00Z",
-    "becoming_by_utc": "2026-11-11T02:00Z",
-    "wind_dir": 230,
-    "wind_kt": 13,
-    "gust_kt": null,
-    "wind_kmh": 24,
-    "gust_kmh": null,
-    "visibility": "6+",
-    "weather": null
-   },
-   {
-    "change": "TEMPO",
-    "prob": null,
-    "from_utc": "2026-11-11T02:00Z",
-    "to_utc": "2026-11-11T18:00Z",
-    "becoming_by_utc": null,
-    "wind_dir": null,
-    "wind_kt": null,
-    "gust_kt": null,
-    "wind_kmh": null,
-    "gust_kmh": null,
-    "visibility": 1.86,
-    "weather": "RA DZ BR"
-   },
-   {
-    "change": "BECMG",
-    "prob": null,
     "from_utc": "2026-11-11T07:00Z",
-    "to_utc": "2026-11-12T00:00Z",
+    "to_utc": "2026-11-11T18:00Z",
     "becoming_by_utc": "2026-11-11T09:00Z",
-    "wind_dir": 180,
-    "wind_kt": 25,
-    "gust_kt": 38,
-    "wind_kmh": 46,
-    "gust_kmh": 70,
+    "wind_dir": 160,
+    "wind_kt": 17,
+    "gust_kt": 27,
+    "wind_kmh": 31,
+    "gust_kmh": 50,
     "visibility": "6+",
     "weather": null
    },
@@ -81,33 +53,47 @@
     "change": "TEMPO",
     "prob": null,
     "from_utc": "2026-11-11T09:00Z",
-    "to_utc": "2026-11-11T18:00Z",
+    "to_utc": "2026-11-11T16:00Z",
     "becoming_by_utc": null,
-    "wind_dir": 180,
-    "wind_kt": 35,
-    "gust_kt": 48,
-    "wind_kmh": 65,
-    "gust_kmh": 89,
-    "visibility": "",
-    "weather": null
+    "wind_dir": 160,
+    "wind_kt": 30,
+    "gust_kt": 45,
+    "wind_kmh": 56,
+    "gust_kmh": 83,
+    "visibility": 1.24,
+    "weather": "+RA BR"
    },
    {
     "change": "TEMPO",
-    "prob": 40,
+    "prob": 30,
     "from_utc": "2026-11-11T10:00Z",
     "to_utc": "2026-11-11T18:00Z",
     "becoming_by_utc": null,
     "wind_dir": 180,
-    "wind_kt": 42,
+    "wind_kt": 43,
     "gust_kt": 58,
-    "wind_kmh": 78,
+    "wind_kmh": 80,
     "gust_kmh": 107,
     "visibility": 0.75,
     "weather": "+TSRA"
+   },
+   {
+    "change": "BECMG",
+    "prob": null,
+    "from_utc": "2026-11-11T18:00Z",
+    "to_utc": "2026-11-12T06:00Z",
+    "becoming_by_utc": "2026-11-11T20:00Z",
+    "wind_dir": 260,
+    "wind_kt": 12,
+    "gust_kt": null,
+    "wind_kmh": 22,
+    "gust_kmh": null,
+    "visibility": "6+",
+    "weather": null
    }
   ],
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-10T22:23:18Z"
+  "read_utc": "2026-11-10T23:22:52Z"
  },
  "taf_history": [
   {
@@ -122,6 +108,12 @@
    "raw": "TAF LPPT 101700Z 1018/1124 23013KT 9999 BKN025 TEMPO 1018/1024 4000 RA BR SCT004 BKN008 FEW018TCU BECMG 1100/1102 SCT006 BKN012 TEMPO 1102/1118 3000 RADZ BR SCT002 BKN004 FEW018CB BECMG 1107/1109 18025G38KT TEMPO 1109/1118 18035G48KT PROB40 TEMPO 1110/1118 18042G58KT 1200 +TSRA SCT015CB",
    "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
    "read_utc": "2026-11-10T19:01:07Z"
+  },
+  {
+   "issue_utc": "2026-11-10T23:00Z",
+   "raw": "TAF LPPT 102300Z 1100/1206 21015KT 9999 SCT008 BKN015 TEMPO 1100/1109 4000 RA BR SCT004 BKN008 FEW018CB BECMG 1107/1109 16017G27KT TEMPO 1109/1116 16030G45KT 2000 +RA BR SCT002 BKN004 FEW016CB PROB30 TEMPO 1110/1118 18043G58KT 1200 +TSRA SCT015CB BECMG 1118/1120 26012KT BKN020",
+   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
+   "read_utc": "2026-11-10T23:22:52Z"
   }
  ],
  "metars": [
@@ -1048,6 +1040,34 @@
    "pressure_hpa": 1008,
    "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
    "read_utc": "2026-11-10T22:23:18Z"
+  },
+  {
+   "time_utc": "2026-11-10T22:30Z",
+   "raw": "METAR LPPT 102230Z COR 20013KT 9999 SCT006 FEW018TCU 19/18 Q1008 NOSIG",
+   "wind_dir": 200,
+   "wind_kt": 13,
+   "gust_kt": null,
+   "wind_kmh": 24,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": null,
+   "pressure_hpa": 1008,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
+   "read_utc": "2026-11-10T23:22:52Z"
+  },
+  {
+   "time_utc": "2026-11-10T23:00Z",
+   "raw": "METAR LPPT 102300Z 22014KT 9999 -SHRA SCT006 BKN011 FEW018CB 19/17 Q1008 NOSIG",
+   "wind_dir": 220,
+   "wind_kt": 14,
+   "gust_kt": null,
+   "wind_kmh": 26,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": "-SHRA",
+   "pressure_hpa": 1008,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
+   "read_utc": "2026-11-10T23:22:52Z"
   }
  ],
  "max_gust": {
