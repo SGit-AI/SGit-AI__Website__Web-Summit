@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1746",
+    "date": "2026-11-10",
+    "what": "Web Summit's Day 2 off (19:38) and Day 3 \"as planned\" in the graph; N6 not announced at 20:04",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "871c3f84c"
+  },
+  {
     "version": "v0.2.1745",
     "date": "2026-11-10",
     "what": "20:03 wake: no new signals since sweep 2; the team re-routed to Thursday and the open items (talks, PITCH, side events, tickets)",
