@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1618",
+    "date": "2026-11-10",
+    "what": "review: bring workers/dev.map's and dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "d88895eeb"
+  },
+  {
     "version": "v0.2.1617",
     "date": "2026-11-10",
     "what": "writer@PrompTugal.angelo: report: the protocols article drafted for Angelo's review",
