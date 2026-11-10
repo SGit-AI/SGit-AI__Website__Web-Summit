@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1643",
+    "date": "2026-11-10",
+    "what": "journalist@PrompTugal.vicky: report, OVERNIGHT-10NOV fix-only wake 2 idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "43cfe4c22"
+  },
+  {
     "version": "v0.2.1642",
     "date": "2026-11-10",
     "what": "journalist-ai@PrompTugal.vicky: OVERNIGHT-10NOV fix-only 2, 04:07 UTC: idle",
