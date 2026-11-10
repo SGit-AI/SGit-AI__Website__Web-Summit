@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1677",
+    "date": "2026-11-10",
+    "what": "LinkedIn draft: invite people to test the PrompTugal app (TestFlight public link)",
+    "by": "conductor@web-summit.indi",
+    "from": "f0fe94c78"
+  },
+  {
     "version": "v0.2.1676",
     "date": "2026-11-10",
     "what": "review: bring workers/dev.work's new work onto dev (one commit)",
