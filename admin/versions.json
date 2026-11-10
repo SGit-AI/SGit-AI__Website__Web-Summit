@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1727",
+    "date": "2026-11-10",
+    "what": "run 15, 174 commits: nothing new; run 14's MEDIUM (event app video reads, unpinned host) is now in an external TestFlight build (579)",
+    "by": "security.repos@web-summit.dinis",
+    "from": "d1ec15abd"
+  },
+  {
     "version": "v0.2.1726",
     "date": "2026-11-10",
     "what": "17:40 wake: lane counted, not drained (no \"drain\" to me yet); feedback-count.json refreshed",
