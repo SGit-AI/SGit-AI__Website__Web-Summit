@@ -1,0 +1,10 @@
+{
+ "about": "The team's shared messaging vault (WS-203): public address only. Each member's lane details (append tokens and the read key) are sealed to their site key in data/sealed/<person>/<stamp>-team-messaging.json; nothing secret is here. Issued by conductor@web-summit.indi on 10 November 2026 at Indi's word (people/indi/messaging/issue-lanes.py, seal-lanes.mjs).",
+ "vault_id": "wh23l3zm",
+ "name": "ws-team-messages",
+ "endpoint": "https://dev.send.sgraph.ai",
+ "lanes": ["dinis", "silvio", "nimay", "angelo", "vicky", "daniela", "indi", "jose", "sarah", "conductor@web-summit.indi"],
+ "details_sealed_to": ["dinis", "silvio", "angelo", "vicky", "indi", "jose"],
+ "waiting_for_a_site_key": ["nimay", "daniela", "sarah"],
+ "issued_at": "2026-11-10T12:28Z"
+}

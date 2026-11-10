@@ -1398,6 +1398,38 @@
         "fingerprint": "sha256:e768ad3ed46101f9",
         "signing_fingerprint": "sha256:803b8881f3d47322"
       }
+    },
+    {
+      "id": "instagram-silvio",
+      "label": "instagram@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's Instagram agent for RiskMandate's account (instagram@web-summit.silvio, WS-208): drafts posts, captions and replies to comments and messages in people/silvio/instagram/; Silvio reviews and posts; no agent logs in. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Silvio's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-10",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArru7Eo+z2Gr6uFpSC4C6\nQqKlHO+KDw0uHkXACdz5eMmA+5JCHTAhKd8kHgUZ0XEouFlwe9lYUjOzG2QStK6c\nWSe+9NQxuiRvuIEcCATKjSkH4xhmuabNK37ocGaxJCiTp2bryv08XA6Q2ZaYKv6x\nFprWWNqSSrIiEbEjAm8TZNv46azsW4Z/knk92LOSCMGJ+arr5ddvcq1gVytc1t0S\nVgnsTe+5Lffns2vJBh4b3NtJhW7Q3tKn803x0xwumjqPPUjZAMZpMOCWIhrkjD7y\nudbdxwlItvFR9qPANuKpiU4nV51221g7DpXn+GLYlYg8L4tKUOVSQzurbNEVh6eW\nkpJ7fISiOUXHmXXjd04fjO7y+QGF9MI7wsGOmTpr1FHJ/Xa8PoC0WB6NcqjYIx0n\nWEMgzKlsTL90C8nfnwJBICeS6APXxMe3wA079sA9mFToUSgcEzJgXC+2+OOXNAcF\njEI63ed9VGSU70K9XrK6m3NNd/DLhkvjNsXTbtTDszN+IjvqripSdBrXHzJJqZz8\nxmaMA1LNfp1XyzXQWMpL5wa+tooX1/jqyuGvm7juCxK6KN33cCFh6H3xHCHQZyRi\n3Kvh96rK+BB+DbKzOj5UqDs0T6MHjZ7Zjz5UimoW0ghUKY6WE39RNAlCpYqTUNPy\nxzJjQhlFbTGm0lP26n/doWkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZd4zHNGsi5VStnEBtmN4GoU6CSJ1\n68pMtzZsEgAWO659D6jXOFMUwGyRBs4OhnwztVJRyUdKL80swGaRKDKu1w==\n-----END PUBLIC KEY-----\n",
+        "label": "instagram@web-summit.silvio",
+        "fingerprint": "sha256:8304dbc86ef920da",
+        "signing_fingerprint": "sha256:8637c5cdb6b778a3"
+      }
+    },
+    {
+      "id": "conductor-newsapp-indi",
+      "agent": "conductor-newsapp@web-summit.indi",
+      "label": "conductor-newsapp@web-summit.indi (Claude Code session)",
+      "role": "Indi's helper that redesigns the public PrompTugal news app (iPhone and iPad) in rounds, at Indi's and Dinis's word of 10 November 2026. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session), at Indi's word in that session, and pushed to this repository by that session; the push is the authorisation. Not yet linked to an operator's key.",
+      "added": "2026-11-10",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsshK43aS+d/w45gmSipe\nqb9+UlSeIct+1TF/NDgN6LT54sTw0b3JTNF0AYkZ4dlyzH+QF3vXgsh/7gVzQj5v\nbJnoXEQmMuFfQJgwueSKFjzCtTBV5MfCRRCr5i+Gvddf9OzwV4jV7sRAzTJKgKro\nHgtRcWoO0Kr1VjnFR2h9dDbWAi8DGLRCgWg+8pLp3uis7jf7sxTxLxksQHZgxhEd\nkdHJahXYWQE8RLceAi4tlyTZrTCxomT92mbRBLkdrguA5/6Vp2qEEypisrL/zkIc\n3sn3jC2ZOZ0ftb/lHCi7LofB/rxW483ygCApAPmztvJm4BfiDDjSpvu1px05qFeE\nqvo1OFB/JJWxErLON2u4OhvOFO8yhRkOBFoP6oe0dHGG/n4r78E6JlMR7uiPC0oV\n84ySiv4075HFgvqhEDXyMOqJDG0xf1GtgJ8N8pCMOguEde3J5VCFcyAYkPNXNEn6\npmo/JNqC/Pv51Z6wyqyPwVcdhY11Rj1nv0fyjXhxw7rZ2QPJVmb4TJjPh6uuINyP\nEnzkpNgRAtxqI2f7Ls1WXOM6wOqOlSOlQo4LJEoQ7V9nrS2p7oo7Arcv5iurxe7W\natUvfUANJyjG0WLzo+UBeouDZrch83MgL6POaI8kJ+yzThcTTN2LRFg/n97r03Wr\nE2QMcu2a4kQK30u63DvMj5MCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMiI2C4yA3YiXY5DHleD219F1Ktw+\n9F5IO4LZSiNG8ZDQxtn6tJP9iZ49cF3vlWKbe6GrjBJ8xxNoCL9Z3fjrOQ==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor-newsapp@web-summit.indi",
+        "fingerprint": "sha256:8316ee76640e732d",
+        "signing_fingerprint": "sha256:3bdae3a1c5b24f0f"
+      }
     }
   ]
 }

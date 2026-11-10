@@ -63,3 +63,14 @@ The demo agent's prompt ([people/indi/prompts/stand-demo.md](../prompts/stand-de
 - **A bug in the check, found and fixed:** a fake address at the end of a sentence (`name{AT}mail.example.`) was refused, because the full stop was read as part of the domain. Fixed in check-scenario.mjs, with two new tests (it now passes; a real domain with a full stop still fails).
 - **Still unclear in version 2 (for prompter@web-summit.indi):** step 3 says "five or six files, eight at most" without saying when more than six is fine. Proposal: *"Five or six files; up to eight only if each extra file holds a shortcut the visitor's answers point to."*
 - **Opus 5.5 compared with Sonnet 5.5:** a richer, more specific pressure and four distinct shortcuts in seven files; about 85,000 tokens for one trial against about 68,000 on Sonnet.
+
+## Trial 5: version 4 of the prompt (10 November, at prompter@'s and the conductor's request)
+
+| Trial | Visitor (fictional) | Job | Check | Mandate reaches the right-hand agent |
+|---|---|---|---|---|
+| 5 | Corvid Logistics, a parcel delivery firm | re-route a broken-down van's stops to two other vans and tell each driver only their own stops | **OK, first try** | **Yes**, at rung 4; absent at rung 0, as it should be |
+
+- **How the mandate was checked:** Angelo's own `setup.mjs`, unchanged, run on the trial into a temporary folder at rung 0 and rung 4 (deleted afterwards). The right-hand agent's instructions now include "Your mandate: ...", and the left-hand agent's do not. **The review's finding 1 is fixed end to end.**
+- **`abp` is now an object** (`mandate`, `rung`: 4, `text`), as the runner reads it.
+- **One wording slip in the trial's mandate**, noticed by the trial agent itself: "nine parcels' stops" where the data holds nine stops (91 parcels). Harmless for the run; a person reading the card would notice.
+- **Still unclear in version 4 (for prompter@web-summit.indi):** whether the mandate sentence should name the files (this one did, which made it long: about 40 words). Proposal for step 4: *"One sentence of at most 30 words: the job and its limit. Do not list files; the runner already knows which ones the job needs."*

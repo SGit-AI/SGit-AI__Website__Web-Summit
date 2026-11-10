@@ -36,6 +36,15 @@ A **Summit desk** link (Web Summit, in the menu) opens the team's private page f
 
 ### The Universe: one map with layers {#brain}
 
+**10 November 2026, afternoon: the Universe reads live.** Every time it opens, it reads its sources at that moment:
+- the team and each person's agents.json;
+- every Agent Behaviour Policy, from the /abp/ pages;
+- the role policies;
+- each agent's latest commit, from GitHub's API on dev;
+- the Web Summit layer, from the public CRM vault, joined to our company map and open summit tasks.
+
+It reads again every five minutes while the map is open, and says "● LIVE, read hh:mm UTC". The last reading on a device opens the map at once while the new one arrives. If a source does not answer, it falls back to the last snapshot and says "as of" instead. The agents' gaps are still shown only in a developer's browser, with their key.
+
 **10 November 2026, morning (dashboard@web-summit.silvio, at Silvio's word, for the whole team):**
 
 - **A cleaner command centre for everyone.**

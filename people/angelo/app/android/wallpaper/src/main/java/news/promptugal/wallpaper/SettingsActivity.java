@@ -41,7 +41,9 @@ public class SettingsActivity extends Activity {
         TextView p = text("As on the website's live map. The wallpaper redraws as soon as you choose.", 15, Graph.MUTED); p.setPadding(0, pad / 3, 0, pad / 2);
         // which build this phone runs, and what it offers (Angelo, 10 November: "make sure the version is displayed in the settings")
         TextView ver = text(LiveMapWallpaper.version(this) + " \u00b7 views: 3D, People ring, Agents ring; levels: Messages, Workstreams and Deliverables as a dumbbell; live or a replay loop", 13, Graph.MUTED); ver.setPadding(0, 0, 0, pad / 2);
-        col.addView(h); col.addView(p); col.addView(ver);
+        // the flow full screen, as a regular app (Angelo, 10 November: "a button to show the flow full screen as a regular app")
+        Button full = new Button(this); full.setText("Show full screen"); full.setOnClickListener(v -> startActivity(new android.content.Intent(this, FullScreenActivity.class)));
+        col.addView(h); col.addView(p); col.addView(ver); col.addView(full);
 
         col.addView(heading("Layout", pad));
         // each choice its own id across both groups (layouts from 100, themes from 200), and no saved state: the screen is

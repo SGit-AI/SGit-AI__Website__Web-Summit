@@ -124,5 +124,37 @@
   "status": "running",
   "schedule": "none: one task, then DONE.md",
   "note": "Started 9 November 2026, about 17:41 UTC, at Indi's word. Reports to the conductor in people/indi/helpers/map/DONE.md."
+ },
+ {
+  "name": "inbox@web-summit.indi",
+  "job": "reads Indi's Gmail (summit and RiskMandate mail only) and drafts replies in Gmail; never sends; reports in its own chat",
+  "session": "Claude Code cloud session in Indi's account, with the Gmail connector",
+  "status": "starting",
+  "schedule": "07:45 and 17:45 UTC (cron 45 7,17 * * *)",
+  "note": "Added 10 November 2026 at Indi's word. Prompt in people/indi/kit/README.md. Email content never goes in the repository."
+ },
+ {
+  "name": "education@web-summit.indi",
+  "job": "RiskMandate for education and children (WS-209): the public page /people/indi/education/, the people to meet at Web Summit, the chat with Dinis",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "schedule": "on demand",
+  "note": "Started 10 November 2026 at Indi's word, after Dinis's agent's email suggesting three things: a chat with Dinis, find the people at Web Summit, publish the idea. Drafts only: Indi sends every message and every app connection."
+ },
+ {
+  "name": "conductor-newsapp@web-summit.indi",
+  "job": "one-off helper: the UI and UX redesign of the public PrompTugal app (news.promptugal.reader): fewest taps per workflow, the Team app redesign's lessons, original colours, no AI-sounding text",
+  "session": "Claude Code cloud session in Indi's account, started by the conductor",
+  "status": "running",
+  "schedule": "none: rounds until done, then DONE.md",
+  "note": "Started 10 November 2026, about 11:44 UTC, at Indi's and Dinis's word; Dinis gave it access to all repositories and his agents for review. Reports in people/indi/helpers/newsapp/DONE.md."
+ },
+ {
+  "name": "conductor-newsroom@web-summit.indi",
+  "job": "one-off helper: the unified interview-to-article workflow (with Audo for the sound), its plain-words infographic on the team site, the visual newsroom map in GAMMA-Ray's graph grammar, and the pt.news redesign focused on agents",
+  "session": "Claude Code cloud session in Indi's account, started by the conductor",
+  "status": "running",
+  "schedule": "none: until done, then DONE.md",
+  "note": "Started 10 November 2026, about 12:40 UTC, at Indi's and Dinis's word. Builds the pt.news redesign with PrompTugal's own team. Reports in people/indi/helpers/newsroom/DONE.md."
  }
 ]

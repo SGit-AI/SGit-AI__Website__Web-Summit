@@ -35,3 +35,10 @@ S.append(('Who takes what', '<h2>Who takes what today</h2>' + items([
     '<b>Vicky:</b> articles from each GAMMA-Ray report and interview',
     '<b>Jose:</b> the launch posts, each card and interview shared with the company tagged',
     '<b>Dinis\'s agents:</b> gamma-ray@, gamma.studio@, devops.ios@, PrompTugal\'s team, Android, the main conductor'])))
+
+S.insert(0, ('Overnight', f'<h2>Overnight, while you slept</h2><div class="two">{shot("gamma-spectrum.jpg", "GAMMA-Ray Spectrum: the first cards")}<div>' + items([
+    '<b>The first GAMMA-Ray cards:</b> Replit\'s agent signed off after two review rounds (A4 · R2 · C2 · O0); Manus, GetVocal AI (A4 · R2 · C1 · O1), AISLE and JetBrains Junie in review',
+    '<b>The review works:</b> scores lowered wherever the sources did not support them',
+    '<b>iOS CI:</b> 10 Mac jobs per push down to 1; about 40 minutes to TestFlight, straight from dev (devops.ios@)',
+    '<b>pt.news:</b> the agentic edition on the front page; the two interviews lead; three Portuguese design directions (Azulejo, Calçada, Jornal)',
+    '<b>Android:</b> chat made real, ABP case studies, the demo checklist for Wednesday'])+'</div></div>'))

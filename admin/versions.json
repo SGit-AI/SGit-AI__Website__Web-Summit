@@ -1,5 +1,341 @@
 [
   {
+    "version": "v0.2.1696",
+    "date": "2026-11-10",
+    "what": "the Universe reads live: agents, policies, commits and the Web Summit CRM, at the moment it opens",
+    "by": "dashboard@web-summit.silvio",
+    "from": "bc502752c"
+  },
+  {
+    "version": "v0.2.1695",
+    "date": "2026-11-10",
+    "what": "my session key on the keys page (public half only)",
+    "by": "conductor-newsapp@web-summit.indi",
+    "from": "790dd3ca7"
+  },
+  {
+    "version": "v0.2.1694",
+    "date": "2026-11-10",
+    "what": "token rules, two days on: 3 of 7 teams measure; only Indi's names the work (WS-148)",
+    "by": "conductor@web-summit.indi",
+    "from": "c36c49678"
+  },
+  {
+    "version": "v0.2.1693",
+    "date": "2026-11-10",
+    "what": "WS-211: pt.news is about agents; the workflow is the picture",
+    "by": "conductor@web-summit.dinis",
+    "from": "b72e6c8b1"
+  },
+  {
+    "version": "v0.2.1692",
+    "date": "2026-11-10",
+    "what": "12:30 wake: team messaging on (WS-203); Indi's education idea on the list (WS-209)",
+    "by": "dashboard@web-summit.indi",
+    "from": "3060af9b7"
+  },
+  {
+    "version": "v0.2.1691",
+    "date": "2026-11-10",
+    "what": "team messaging is on: ten lanes on ws-team-messages, each member's details sealed to their site key (WS-203)",
+    "by": "conductor@web-summit.indi",
+    "from": "41a36e24e"
+  },
+  {
+    "version": "v0.2.1690",
+    "date": "2026-11-10",
+    "what": "12:15 run, a2a66ef..f2c662e; A-25 closed, four actions open",
+    "by": "watcher@web-summit.jose",
+    "from": "614641ae0"
+  },
+  {
+    "version": "v0.2.1689",
+    "date": "2026-11-10",
+    "what": "runner.conductor@PrompTugal.angelo: run 12:20, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "6b2e76471"
+  },
+  {
+    "version": "v0.2.1688",
+    "date": "2026-11-10",
+    "what": "the individual is WS-210 (WS-209 was already Indi's education issue)",
+    "by": "conductor@web-summit.dinis",
+    "from": "dbf505e43"
+  },
+  {
+    "version": "v0.2.1687",
+    "date": "2026-11-10",
+    "what": "runner.writer@PrompTugal.angelo: STATE.md: newsroom approves the new sessions; no findings, nothing new",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "91ce1548c"
+  },
+  {
+    "version": "v0.2.1686",
+    "date": "2026-11-10",
+    "what": "the individual: from a badge photo to a unit of agents and a Kanban card (WS-209)",
+    "by": "conductor@web-summit.dinis",
+    "from": "8c20e10d1"
+  },
+  {
+    "version": "v0.2.1685",
+    "date": "2026-11-10",
+    "what": "for Vicky's and Angelo's agents: your two new sessions are approved by Dinis (his card) for the rebuild",
+    "by": "conductor@web-summit.dinis",
+    "from": "3ce8bf79e"
+  },
+  {
+    "version": "v0.2.1684",
+    "date": "2026-11-10",
+    "what": "conductor-newsapp@web-summit.indi on Indi's agents list",
+    "by": "conductor@web-summit.indi",
+    "from": "99afc3dd1"
+  },
+  {
+    "version": "v0.2.1683",
+    "date": "2026-11-10",
+    "what": "desk.conductor@PrompTugal.angelo: a plan for moving Angelo's agents to his second account (0-ACCT)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "12211ce94"
+  },
+  {
+    "version": "v0.2.1682",
+    "date": "2026-11-10",
+    "what": "inbox@web-summit.indi, Indi's Gmail agent: reads summit mail, drafts in Gmail, never sends",
+    "by": "conductor@web-summit.indi",
+    "from": "dcc88927f"
+  },
+  {
+    "version": "v0.2.1681",
+    "date": "2026-11-10",
+    "what": "desk.conductor@PrompTugal.angelo: dev.work stopped, the dumbbell is dashboard's; the stand laptop's fresh-shell rule",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "9ef229ec0"
+  },
+  {
+    "version": "v0.2.1680",
+    "date": "2026-11-10",
+    "what": "the Agents board's data, applied at Jose's word (\"Yes\", Actions row 5): Doing now, Waiting on me and red on his board",
+    "by": "designer@web-summit.jose",
+    "from": "c8b96a098"
+  },
+  {
+    "version": "v0.2.1679",
+    "date": "2026-11-10",
+    "what": "writer@PrompTugal.jose drafts Jose's social posts (WS-208), Jose sends them",
+    "by": "conductor@web-summit.jose",
+    "from": "b4665f358"
+  },
+  {
+    "version": "v0.2.1678",
+    "date": "2026-11-10",
+    "what": "start: session key, policy, this week's plan and three post drafts for Silvio's review",
+    "by": "instagram@web-summit.silvio",
+    "from": "c879dd880"
+  },
+  {
+    "version": "v0.2.1677",
+    "date": "2026-11-10",
+    "what": "LinkedIn draft: invite people to test the PrompTugal app (TestFlight public link)",
+    "by": "conductor@web-summit.indi",
+    "from": "f0fe94c78"
+  },
+  {
+    "version": "v0.2.1676",
+    "date": "2026-11-10",
+    "what": "review: bring workers/dev.work's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "3fffff79f"
+  },
+  {
+    "version": "v0.2.1675",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 10:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "992a31b2b"
+  },
+  {
+    "version": "v0.2.1674",
+    "date": "2026-11-10",
+    "what": "runner.conductor@PrompTugal.angelo: run 10:20, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "331f13d3b"
+  },
+  {
+    "version": "v0.2.1673",
+    "date": "2026-11-10",
+    "what": "run 11, 76 commits: nothing found (run 9's HIGH still open)",
+    "by": "security.repos@web-summit.dinis",
+    "from": "ce0605852"
+  },
+  {
+    "version": "v0.2.1672",
+    "date": "2026-11-10",
+    "what": "runner.writer@PrompTugal.angelo: STATE.md brought up to date: four pieces published, two drafts wait on Angelo",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "b6e6d6493"
+  },
+  {
+    "version": "v0.2.1671",
+    "date": "2026-11-10",
+    "what": "stand-demo v4.1: the mandate is at most 30 words, no file list",
+    "by": "prompter@web-summit.indi",
+    "from": "3e8b25de6"
+  },
+  {
+    "version": "v0.2.1670",
+    "date": "2026-11-10",
+    "what": "token ledger line (v4 trial)",
+    "by": "dev@web-summit.indi",
+    "from": "9e8030b71"
+  },
+  {
+    "version": "v0.2.1669",
+    "date": "2026-11-10",
+    "what": "stand-demo v4: abp is {mandate, rung, text}, so the runner's ABP side gets its mandate",
+    "by": "prompter@web-summit.indi",
+    "from": "b71364ae7"
+  },
+  {
+    "version": "v0.2.1668",
+    "date": "2026-11-10",
+    "what": "for Angelo's stand laptop: start the side-by-side demo from a shell with no real keys set (dev@'s review)",
+    "by": "conductor@web-summit.indi",
+    "from": "bffa9148b"
+  },
+  {
+    "version": "v0.2.1667",
+    "date": "2026-11-10",
+    "what": "Jose's word for his conductor: \"Drain\" (brief 19, ask 1; Actions row 1)",
+    "by": "dashboard@web-summit.jose",
+    "from": "83a91b9ea"
+  },
+  {
+    "version": "v0.2.1666",
+    "date": "2026-11-10",
+    "what": "dashboard@PrompTugal.angelo: the live map: the slider plays the exchanges it passes, the graph grows as it did, arcs light only around their moving dot",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "0d21487d7"
+  },
+  {
+    "version": "v0.2.1665",
+    "date": "2026-11-10",
+    "what": "writer@PrompTugal.angelo: report: the authority-checks article is live",
+    "by": "writer@PrompTugal.angelo",
+    "from": "27a1e1b24"
+  },
+  {
+    "version": "v0.2.1664",
+    "date": "2026-11-10",
+    "what": "desk.conductor@PrompTugal.angelo: publish the authority-checks article (0-PUB-AC1); writer@ woken",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "2ce1fb9fa"
+  },
+  {
+    "version": "v0.2.1663",
+    "date": "2026-11-10",
+    "what": "runner.conductor@PrompTugal.angelo: run 08:20, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "ccd1e0620"
+  },
+  {
+    "version": "v0.2.1662",
+    "date": "2026-11-10",
+    "what": "run 10, 112 commits: nothing new above LOW; Android cloud chat switched on with run 2's conditions met (MEDIUM to LOW)",
+    "by": "security.repos@web-summit.dinis",
+    "from": "bf586643b"
+  },
+  {
+    "version": "v0.2.1661",
+    "date": "2026-11-10",
+    "what": "runner.writer@PrompTugal.angelo: STATE after the 10 November run: 3 published, 3 drafts for Angelo, nothing open in review",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "55987a7e8"
+  },
+  {
+    "version": "v0.2.1660",
+    "date": "2026-11-10",
+    "what": "07:50 wake: quiet; everyone waits on Silvio; the 09:00 briefing next",
+    "by": "conductor@web-summit.silvio",
+    "from": "78a2b802c"
+  },
+  {
+    "version": "v0.2.1659",
+    "date": "2026-11-10",
+    "what": "team-collaboration@PrompTugal.angelo: daily note, 10 November: decisions come in batches now; the agenda has not caught up",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "e5855da3e"
+  },
+  {
+    "version": "v0.2.1658",
+    "date": "2026-11-10",
+    "what": "07:20 wake, summit day two: brief 20 to Jose (his restart piece, social and channels: confirm or swap; who drafts the posts; the token)",
+    "by": "conductor@web-summit.jose",
+    "from": "28f2b3902"
+  },
+  {
+    "version": "v0.2.1657",
+    "date": "2026-11-10",
+    "what": "07:30 wake: Jose's piece at THE RESTART (WS-208, social and channels) as a lane, to confirm or swap through his conductor",
+    "by": "dashboard@web-summit.jose",
+    "from": "47f65174f"
+  },
+  {
+    "version": "v0.2.1656",
+    "date": "2026-11-10",
+    "what": "07:15 run, eccb465..a2a66ef; the big stop and THE RESTART; A-25 opened",
+    "by": "watcher@web-summit.jose",
+    "from": "35c878542"
+  },
+  {
+    "version": "v0.2.1655",
+    "date": "2026-11-10",
+    "what": "policy@PrompTugal.angelo: run 8: no violation; P-12, name the environment of a session the desk creates",
+    "by": "policy@PrompTugal.angelo",
+    "from": "a2a66efdf"
+  },
+  {
+    "version": "v0.2.1654",
+    "date": "2026-11-10",
+    "what": "review: bring workers/dev.work's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "88457dc2f"
+  },
+  {
+    "version": "v0.2.1653",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 06:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "84dd64ac2"
+  },
+  {
+    "version": "v0.2.1652",
+    "date": "2026-11-10",
+    "what": "runner.conductor@PrompTugal.angelo: run 06:20, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "8f0489b39"
+  },
+  {
+    "version": "v0.2.1651",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 05:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "18c2f8d3e"
+  },
+  {
+    "version": "v0.2.1650",
+    "date": "2026-11-10",
+    "what": "programme@PrompTugal.vicky: 05:00 run: agenda live, applied SA28 (agenda changes line), shortlist re-checked",
+    "by": "programme@PrompTugal.vicky",
+    "from": "188746b70"
+  },
+  {
+    "version": "v0.2.1649",
+    "date": "2026-11-10",
+    "what": "04:50 wake: THE RESTART; jornal and editor back on; the night's work of Silvio's agents",
+    "by": "conductor@web-summit.silvio",
+    "from": "a367560ca"
+  },
+  {
     "version": "v0.2.1648",
     "date": "2026-11-10",
     "what": "a cleaner command centre for everyone, the Universe as map or circuit, and GAMMA-Ray",

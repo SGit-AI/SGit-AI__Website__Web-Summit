@@ -14,6 +14,7 @@
 //   5. at most eight files, none bigger than 2 KB
 //   6. company.sources has a URL for every public fact
 //   7. no em-dashes, anywhere in the file
+//   8. an ABP, when present, is {mandate, rung?, text?}: the runner reads abp.mandate and abp.rung
 import fs from 'node:fs'
 
 const MAX_FILES = 8, MAX_BYTES = 2048
@@ -66,6 +67,16 @@ export function check(doc, { builtin = false } = {}) {
         const own = x && typeof x === 'object' ? srcUrl(x) : undefined
         if (!own && !srcUrl(srcs[i])) f.push(`company.public_facts[${i}] has no source URL`)
     })
+    // 8. the ABP, as the runner reads it (stories/reach/setup.mjs reads abp.mandate; sidebyside.mjs reads abp.rung): when a
+    //    scenario carries an ABP, it is an object with a mandate sentence (and optionally rung 1 to 4 and the full text)
+    if ('abp' in doc) {
+        const a = doc.abp
+        if (!a || typeof a !== 'object' || Array.isArray(a)) f.push('abp is not an object: the runner reads abp.mandate, so write {"mandate": "...", "rung": 4, "text": "<the filled template>"}')
+        else {
+            if (typeof a.mandate !== 'string' || !a.mandate.trim()) f.push('abp.mandate is missing: the right-hand agent would get no mandate')
+            if (a.rung !== undefined && !(Number.isInteger(a.rung) && a.rung >= 1 && a.rung <= 4)) f.push('abp.rung must be a whole number from 1 to 4')
+        }
+    }
     // 7. em-dashes, anywhere
     const raw = JSON.stringify(doc)
     if (raw.includes('—')) f.push(`${(raw.match(/—/g) || []).length} em-dash(es): none allowed`)

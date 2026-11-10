@@ -1,0 +1,64 @@
+{
+  "number": 20,
+  "date": "10 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Day one: the venue map is ready, and three yes-or-no answers move things on",
+  "when": "10 November 2026, 07:25 UTC (scheduled wake; since brief 19, 17:25 UTC on 9 November)",
+  "by": "conductor@web-summit.indi",
+  "headline": "The summit is open. The venue map for the Team app is built and tested, waiting only for your yes to go to TestFlight. Angelo said yes to the Opus 5.5 switch in the demo. Two things have stalled: team messaging and the registration page. Nothing is decided here.",
+  "stats": [
+    {"n": "1", "label": "yes from you puts the venue map on your iPhone"},
+    {"n": "4 of 4", "label": "yes from Angelo to your demo asks (Opus 5.5 switch, off by default)"},
+    {"n": "0", "label": "messaging lanes issued so far: your messaging helper has not woken"},
+    {"n": "15:00", "label": "today: the airport's registration desk closes for good"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Merge the venue map into the Team app?",
+      "detail": "Your map helper built it and every test passed on iPhone and iPad. It waits for your yes. Then the next build goes to TestFlight. Dinis's conductor says builds keep going to TestFlight through the summit.",
+      "options": ["yes, merge it", "let me see it first"],
+      "recommend": "Yes: it is reviewed, tested and private by design."
+    },
+    {
+      "id": "2",
+      "ask": "Team messaging: I do it now?",
+      "detail": "Your messaging helper has not woken since 5 November, so no lanes exist yet. Dinis's conductor has now sealed the vault's key to me as well.",
+      "options": ["yes, you do it", "wait for the messaging helper"],
+      "recommend": "Yes, I do it this morning, so messaging works on day one."
+    },
+    {
+      "id": "3",
+      "ask": "The registration page: build it on the team site now?",
+      "detail": "Angelo's venues helper has not picked it up, after the brief and a nudge. The airport desk closes at 15:00 today; the venue desk runs to Thursday 16:45.",
+      "options": ["yes, a helper builds it on the team site now", "keep waiting for Angelo's helper"],
+      "recommend": "Yes, now, on the team site; PrompTugal.news can take it over later."
+    }
+  ],
+  "you_asked": [
+    {"at": "9 Nov, evening", "said": "Outsource the map to another agent; option B", "done": "Built and tested by conductor-map@web-summit.indi; waits for your yes to merge.", "where": "people/indi/helpers/map/DONE.md", "status": "your decision"},
+    {"at": "9 Nov, evening", "said": "Give my key to my dashboard agent", "done": "Sealed to its key and sent to its session.", "where": "its session", "status": "done"},
+    {"at": "9 Nov, evening", "said": "Use my messaging agent", "done": "Task sent; it has not woken yet.", "where": "WS-203", "status": "stalled"},
+    {"at": "9 Nov, evening", "said": "Ask Angelo (Opus switch); retire the old key; nudge Angelo's desk", "done": "Angelo: yes, off by default. The old key is retired. The nudge is not acted on yet.", "where": "people/indi/demo/ask-angelo.md", "status": "mostly done"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened since brief 19",
+      "items": [
+        "The venue map: a file of our own drawing (public), a Map screen in the Team app's Where tab, tests green on iPhone and iPad (8a6a32a).",
+        "Dinis's security agent reviewed the Team app's redesign: no finding (0136742).",
+        "Dinis's conductor: your iOS work goes to TestFlight from dev through the summit; get the team on internal TestFlight (4727bb1).",
+        "Your accounts inbox: your accountant's report for 9 November filed; two messages that were not valid reports dropped unread."
+      ]
+    }
+  ],
+  "next": [
+    "Today: Angelo's developer helper builds the side-by-side demo runner; yours reviews it.",
+    "Today 12:45: I check how many helpers follow the token rules.",
+    "Wednesday 11: demo rehearsal, three made-up visitors."
+  ],
+  "sources": [
+    "git log since 17:45 UTC on 9 November: 8a6a32af, 826bb44a, 4727bb1d, 0136742d",
+    "people/indi/helpers/map/DONE.md; drain.py at 07:27 UTC (3 pending, 1 written, 2 dropped)"
+  ]
+}
