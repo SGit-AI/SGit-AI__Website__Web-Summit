@@ -70,7 +70,7 @@ Checked frame by frame on 7 November 2026, at Silvio's word ("everything with er
 - **Reach, Mandate, Gap:** frames show "AUTHORIZED MANDAT ZONE", "ENTEIPRISE NETWORK" and a risk record with invented figures (a risk level, dollar amounts, 2025 dates).
 - **RiskMandate Stories: fifty new agents:** on the "Same agent. Different Reach." slide, the "REACH" label sits over the title and the circle runs through the subtitle.
 
-So the titles, descriptions and hashtags drafted for them here are withdrawn (they stay in git history, commit 0c6b4417, for when the films are fixed at the source). The clean videos are in the vault `ws-team-videos` (h9in5em4, `people/silvio/vaults.json`): the stand loop in six languages and the 30-second film.
+**Fixed on 10 November** (PIPELINE.md says how): Reach, Mandate, Gap as an 18-second clean cut, and the stories film with its slide redrawn; both in the vault for Silvio's yes. Until then, the titles, descriptions and hashtags drafted for them here stay withdrawn (they stay in git history, commit 0c6b4417, for when the films are fixed at the source). The clean videos are in the vault `ws-team-videos` (h9in5em4, `people/silvio/vaults.json`): the stand loop in six languages and the 30-second film.
 
 ## After posting
 
