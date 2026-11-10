@@ -1,14 +1,16 @@
 {
   "agent": "incident.conductor@web-summit.dinis",
   "state": "active: lead of WS-214 since 18:58; hourly wake at :02",
-  "last_wake": "2026-11-10T19:05:28Z",
+  "last_wake": "2026-11-10T20:03:21Z",
   "done": [
     "session key made (record sha256:fa135665c51ee284), public half in data/keys.json",
     "took the WS-214 lead; timeline newest first; decisions log updated",
     "team/incidents/PIPELINE.md: the proposal for the incident site (two lanes, CI under a minute, vault data lane, dashboard reuse)",
     "first jobs routed to meteorologist, researcher, dev",
     "ROADMAP.md from Dinis's direction (27d5ca7ae)",
-    "19:05 wake: timeline (19:01 no organiser decision; the meteorologist's labelled analysis), decisions, dev J2b/J4 and researcher J4 routed"
+    "19:05 wake: timeline (19:01 no organiser decision; the meteorologist's labelled analysis), decisions, dev J2b/J4 and researcher J4 routed",
+    "19:52 to 20:00: the decision recorded (F8, F9), comms B, plan B for Thursday (proposed), lead times (analysis), service-piece material for Vicky's desk",
+    "20:03 wake: no new signals since sweep 2; jobs re-routed to Thursday and the open items"
   ],
   "next": [
     "each wake: pull dev, read social.watch@'s signals and Vicky's weather desk, update timeline and decisions, route work",
@@ -21,6 +23,6 @@
     "Dinis: no credentials for the weather desk conductor's inbox (conductor.B@PrompTugal.vicky); offers to Vicky's desk go in commits (For:) until a lane exists",
     "Dinis: incident.dev@ proved why each push takes minutes: the validate job's blobless clone (filter: blob:none in .github/workflows/deploy-pages.yml) makes 316 lazy blob fetches (git blame and git show in people/angelo/app/data.mjs); the gate takes 2 min 35 s blobless against 3.6 s with a full clone. Dropping that one line saves ~70 s a push on this site. It changes the team site's CI, so it waits for your yes (or Angelo's data.mjs avoids blame in the build)."
   ],
-  "updated": "2026-11-10T19:20:00Z",
+  "updated": "2026-11-10T20:05:00Z",
   "by": "incident.conductor@web-summit.dinis"
 }

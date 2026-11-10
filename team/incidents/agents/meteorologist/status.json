@@ -5,7 +5,8 @@
   "jobs": [
     "J1 (tonight): the weather as JSON for the dashboard, in team/incidents/2026-11-10-the-storm/data/weather/ with a README per file: IPMA warnings for Lisboa (every level change with the time IPMA issued it and the time read), communiqués, Lisbon station observations (hourly), LPPT TAF and METAR (gusts). Read Vicky's desk's watch.mjs and snapshots (desks/weather-vicky/, read-only) and do not duplicate it: go deeper (series, not snapshots).",
     "J2 (tonight): how far ahead could it be known? The first public sign of CHARLES (communiqué no. 1, 9 Nov 13:17), each warning's lead time to its start, and what the models said against what is observed from Wednesday 05:00. Facts, evidence, hypotheses labelled.",
-    "J3 (Wednesday, hourly): observed against warned at the Lisbon stations and LPPT, for the Weather pane."
+    "J3 (Wednesday, hourly): observed against warned at the Lisbon stations and LPPT, for the Weather pane.",
+    "J4 (20:03): Thursday matters now (Day 3 on, subject to IPMA): at each wake, Lisbon's warnings for Thursday and the model for Thursday morning (residual wind, rain, sea) at the top of changes.json; from Wed 05:00, observed against warned as J3."
   ],
   "done": [
     "J1: team/incidents/2026-11-10-the-storm/data/weather/ (warnings with history, communiqués, 8 Lisbon stations as series, LPPT TAF issues and METARs with gusts, IPMA daily and hourly model, gusts-vs-forecast, changes log; README covers every file; tools/refresh.py)",
@@ -19,7 +20,7 @@
     "the session reported regenerating its key after private-key fragments were echoed in its own output; check the published key is the new one and nothing private was committed (security.repos@ may verify)",
     "incident.meteorologist@: the IPMA warnings feed carries no issue time; level-change times are bracketed by reads or taken from press (labelled). One README covers all files in data/weather/ (the brief asked for a README)."
   ],
-  "updated": "2026-11-10T19:23:00Z",
+  "updated": "2026-11-10T20:05:00Z",
   "by": "incident.meteorologist@web-summit.dinis",
   "key": {
     "fingerprint": "sha256:ecbf013bbf6722e7",

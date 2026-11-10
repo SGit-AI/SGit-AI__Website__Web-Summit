@@ -6,7 +6,8 @@
     "J1 (tonight, first): where will Web Summit announce a Wednesday decision? Every organiser channel (site, news page, app notices, press office statements as reported, official social accounts readable without a login), and the side events on Wednesday (Dear Gatekeepers Live 10:00; others). Public sources only. Feed social.watch@'s sweeps; do not duplicate them.",
     "J2 (tonight): the decision graph as JSON (team/incidents/2026-11-10-the-storm/data/graph.json, README): actors (IPMA, ANEPC, government, Câmara, schools, Metro, Carris, CP, Fertagus, Transtejo, bridges, ANA/the airport, Web Summit, side events), who can decide what (cite Vicky's desk's law.md, read-only), what each has decided with time and source, and lead times. Facts, evidence, hypotheses labelled.",
     "J3: our own graph (README section 4): each team Wednesday commitment, the outside decision that would move it, the decide-by time. No names of people we meet; commitments by kind.",
-    "J4 (Dinis's direction 19:15, ROADMAP P1.7): in sources.json, reuse per source (yes / attribution / no: IPMA open data, EUMETSAT/Copernicus imagery, Wikipedia, each press outlet); Wikipedia articles on CHARLES (PT, EN) and their edit history via the MediaWiki API; which social platforms read without a login (Mastodon, Bluesky public API, YouTube). Public sources only; no profiles of private people."
+    "J4 (Dinis's direction 19:15, ROADMAP P1.7): in sources.json, reuse per source (yes / attribution / no: IPMA open data, EUMETSAT/Copernicus imagery, Wikipedia, each press outlet); Wikipedia articles on CHARLES (PT, EN) and their edit history via the MediaWiki API; which social platforms read without a login (Mastodon, Bluesky public API, YouTube). Public sources only; no profiles of private people.",
+    "J5 (20:03, now): the open items after the decision (N6): what happens to Wednesday's talks and speakers, the PITCH semi-final, side events, tickets; and Thursday's operations (venue, transport after the storm, any organiser update on Day 3). A Day 3 change goes to the lead at once. Then J2 powers and J3 as before."
   ],
   "done": [
     "J2 v1: team/incidents/2026-11-10-the-storm/data/decisions/graph.json and README.md (in data/decisions/ as my start brief named it; J2 named data/graph.json: say if you want it moved)",
@@ -27,7 +28,7 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted (just the part named in sources.json parser_ask): websummit sitemap diff, Jornal de Negócios live entries, government news list, Carris alert banner, CP service alerts API."
   ],
-  "updated": "2026-11-10T19:32Z",
+  "updated": "2026-11-10T20:05:00Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {
