@@ -47,4 +47,4 @@ Silvio, minutes later: "mete os outros agentes a trabalhar durante a noite, não
   - inbox, since Gmail needs re-authorising since 8 November;
   - the crm morning summary, which is about outreach;
   - jornal@ and editor@ PrompTugal, which Silvio left to Dinis's wish.
-- **About 54 scheduled wakes a day now**, against about 89 before the stop.
+- **About 51 scheduled wakes a day now (43 for the agents, 8 for the conductor)**, against about 89 before the stop.
