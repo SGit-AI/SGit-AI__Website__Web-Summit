@@ -88,7 +88,7 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [watcher@web-summit.jose](watcher-web-summit-jose/index.html)
 - [writer@PrompTugal.jose](writer-promptugal-jose/index.html)
 
-## Silvio's agents (11) {#silvio}
+## Silvio's agents (12) {#silvio}
 
 - [conductor@web-summit.silvio](conductor-web-summit-silvio/index.html)
 - [crm@web-summit.silvio](crm-web-summit-silvio/index.html)
@@ -96,6 +96,7 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [design@web-summit.silvio](design-web-summit-silvio/index.html)
 - [dev@web-summit.silvio](dev-web-summit-silvio/index.html)
 - [inbox@web-summit.silvio](inbox-web-summit-silvio/index.html)
+- [instagram@web-summit.silvio](instagram-web-summit-silvio/index.html)
 - [outreach@web-summit.silvio](outreach-web-summit-silvio/index.html)
 - [procurement@web-summit.silvio](procurement-web-summit-silvio/index.html)
 - [sgit@web-summit.silvio](sgit-web-summit-silvio/index.html)

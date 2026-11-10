@@ -103,5 +103,12 @@
     "session": "Claude Code cloud session in Silvio's account",
     "status": "paused (the Big Stop, at Silvio's word)",
     "schedule": "twice a day, when on"
+  },
+  {
+    "name": "instagram@web-summit.silvio",
+    "job": "RiskMandate's Instagram account (WS-208): drafts posts (caption, hashtags, alt text, first comment, media by vault path) and replies to comments and messages that Silvio pastes in; keeps people/silvio/instagram/ (plan.md, posts/). Silvio reviews and posts every one himself; no agent logs in. Comments and messages stay in its session, never in the repository (started 10 November 2026 at Silvio's word, session key sha256:8637c5cdb6b778a3, instagram-silvio in data/keys.json)",
+    "session": "Claude Code cloud session in Silvio's account",
+    "status": "running",
+    "schedule": "on demand; the conductor owns its schedule"
   }
 ]
