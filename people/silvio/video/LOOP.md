@@ -39,7 +39,7 @@ For the iMac when the screen should play everything, not one film on repeat. **O
 
 **In Portuguese:** films 2 to 7 and 12 have a PT file beside the EN one (same folder, the PT name); 1 is in six languages; 8 to 11 are EN only. A PT pass has the same order and length.
 
-**A short pass (2:41)** when people are queuing: 1, 2, 3, 6, 12 (67 + 56 + 19 + 19 + 37 s = 198 s; with 9 instead of 12, 191 s).
+**A short pass (3:18)** when people are queuing: 1, 2, 3, 6, 12 (67 + 56 + 19 + 19 + 37 s = 198 s; with 9 instead of 12, 191 s, 3:11).
 
 **Not in the playlist:** the two films that were on hold (Reach, Mandate, Gap; RiskMandate Stories: fifty new agents), fixed on 10 November and in the vault for Silvio's yes; the 24 X-ray company videos (waiting for Dinis's OK).
 
