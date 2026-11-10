@@ -342,3 +342,11 @@ html.bm-full, html.bm-full body { overflow: hidden; }
 .bm.circ { height: max(600px, calc(100vh - 96px)); }
 .bm-circuit .bc-panels { height: 132px; } .bm-circuit .bc-panels section { height: 132px; }
 .bm-circuit .bc-title { padding: 3px 12px; }
+
+/* team now: every agent working at once (10 November) */
+.bc-svg .bc-w.live { stroke: #3DDC97 !important; stroke-width: 2.6; opacity: 1; filter: drop-shadow(0 0 4px rgba(61,220,151,.8)); }
+.bc-svg .bc-glint.live { stroke: #E9FFF4; stroke-width: 2.6; stroke-dasharray: 5 40; opacity: 1; filter: drop-shadow(0 0 3px #3DDC97); }
+.bc-teambtn { border-color: #3DDC97; color: #3DDC97; } .bc-teambtn[aria-pressed="true"] { background: #3DDC97; color: #021018; }
+.bc-tn { color: #3DDC97 !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 70vw; display: block; }
+.bc-log li { grid-template-columns: 56px 100px minmax(0, 1fr) !important; } .bc-log li span, .bc-log li i { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bm-circuit .bc-title { flex-wrap: nowrap; } .bm-circuit .bc-title > div:first-child { min-width: 0; flex: 1 1 auto; } .bc-tn { max-width: 100%; }
