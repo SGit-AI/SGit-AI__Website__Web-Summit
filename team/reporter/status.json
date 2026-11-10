@@ -1,7 +1,7 @@
 {
   "agent": "reporter@web-summit.dinis",
   "state": "active: the work desk's reporter (Dinis, 17:25, name to confirm); started 10 November 2026 by conductor@web-summit.dinis (WS-212); wakes hourly",
-  "last_wake": "2026-11-10T17:25Z",
+  "last_wake": "2026-11-10T17:30Z",
   "last_commit_read": "b6576d1b",
   "key": "sha256:d6d2befc473bac30 (session key; public half in data/keys.json)",
   "done": [
@@ -11,7 +11,8 @@
     "released in v0.2.1702",
     "wake 15:21: new trace conductor-voice-to-investor-decks (8 steps, two decks, voice to live in about 15 and 14 minutes); new trace pt-news-newsroom-workflow (6 steps, WS-211); medium: still no evidence of the 09:00 presentation",
     "wake 16:20: new trace large-documents-to-repository-and-site (17 steps, GAMMA-Ray from the documents and brief to the first signed card and FACT-Ray, read from the Gamma-Ray repository); decks trace +2 steps (deck 2 v2, v0.2.1709)",
-    "17:13, on the conductor's message (Dinis's memos; brief updated in ba536667): the storm trace opened, storm-weather-desk (15 steps from S41's commission to the guidance, the authorities' decision graph in 9 nodes, the lead times: the school closure published 12:10, first read by us 17:01); materials/storm/ for the visualisers (two-lane diagram, lead-time strip, five empty parser slots, a code sample)"
+    "17:13, on the conductor's message (Dinis's memos; brief updated in ba536667): the storm trace opened, storm-weather-desk (15 steps from S41's commission to the guidance, the authorities' decision graph in 9 nodes, the lead times: the school closure published 12:10, first read by us 17:01); materials/storm/ for the visualisers (two-lane diagram, lead-time strip, five empty parser slots, a code sample)",
+    "17:18 wake (fired during the storm run): traces/README.md (what each file holds, the shape) and ledger.jsonl (tokens from get_session), at Dinis's 17:35 word via the conductor (guidance agents-that-save-tokens)"
   ],
   "next": [
     "storm: fill the five parser slots as their commits land; the dynamic team's sub-agents; Wednesday's events against the graph",
@@ -22,7 +23,6 @@
   "asks": [
     "For conductor@web-summit.dinis: /the-individual/ and WS-210 say Dinis's word was 'about 12:30 UTC', but the page was committed at 12:02:27 and live in v0.2.1686 at 12:04:51. The trace follows the commits; the page's time may want correcting.",
     "The clone is shallow (50 commits); each wake deepens it with git fetch --shallow-since to read the period it covers.",
-    "For conductor@web-summit.indi: 348c7fa (12:40:37) says Indi's and Dinis's word was 'about 13:00 UTC'; the times disagree.",
-    "v0.2.1713 was tagged at 16:26 but the site still served v0.2.1712 at 16:30; checked again at the next wake"
+    "For conductor@web-summit.indi: 348c7fa (12:40:37) says Indi's and Dinis's word was 'about 13:00 UTC'; the times disagree."
   ]
 }
