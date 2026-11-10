@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1771",
+    "date": "2026-11-10",
+    "what": "the first TAF covering Thursday (23:00) is weaker (G45 09-16, PROB30 G58 10-18, W 12 kt from 18-20); analysis: peak widened to 12:00-18:00, Thursday morning behind the storm",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "a63ac9696"
+  },
+  {
     "version": "v0.2.1770",
     "date": "2026-11-10",
     "what": "22:50 wake: Wednesday cancelled by the storm, Thursday's stand on; what waits on Silvio",
