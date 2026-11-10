@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1704",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 14:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "f423e0ced"
+  },
+  {
     "version": "v0.2.1703",
     "date": "2026-11-10",
     "what": "the first two examples, a badge photo to a live page and a voice brief to a deck, each drawn from its trace",
