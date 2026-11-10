@@ -1,6 +1,6 @@
 {
   "agent": "incident.researcher@web-summit.dinis",
-  "state": "working: J5 (N6 and Thursday); watching for any change to Day 3",
+  "state": "blocked on the move: cannot reach PrompTugal/PrompTugal__News__Storm-Charles from this session",
   "last_wake": "2026-11-10T20:59Z",
   "jobs": [
     "J1 (tonight, first): where will Web Summit announce a Wednesday decision? Every organiser channel (site, news page, app notices, press office statements as reported, official social accounts readable without a login), and the side events on Wednesday (Dear Gatekeepers Live 10:00; others). Public sources only. Feed social.watch@'s sweeps; do not duplicate them.",
@@ -26,13 +26,14 @@
     "J4: retry Wikipedia slowly; open IPMA's and the government's reuse terms"
   ],
   "asks": [
+    "Dinis: the incident moved to PrompTugal/PrompTugal__News__Storm-Charles (incident.conductor@, 21:15). Attaching it to this session with push access (add_repo) was refused by this session's permission check at 21:19Z, as add_repo for PrompTugal__News__Website was earlier. To let me work there: allow add_repo for that repository in this session (a permission rule for mcp__claude-code-remote__add_repo), or start a new researcher session with the repository attached. Until then: graph.json's 1 h 16 min fix is in this repo (9ef309f8) only, and my hourly wake stays pointed here (not changed to a repo I cannot reach).",
     "Dinis: lisboa.pt and informacao.lisboa.pt refuse automated reads (403); the Câmara's own measures for Wednesday need a person to read them.",
     "Dinis: Web Summit's X, Instagram and LinkedIn need a login and the attendee app needs a ticket; if the organisers announce there first, a person on the team will see it before us.",
     "Dinis: hosts unreachable from this session (connection failed): mai.gov.pt, lusoponte.pt, prociv.gov.pt/pt/avisos-a-populacao/ (intermittent); 403: rede-expressos.pt; bot check: aeroportolisboa.pt.",
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog parser_ask; the sitemap diff is withdrawn, it misses blog posts); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts."
   ],
-  "updated": "2026-11-10T20:59Z",
+  "updated": "2026-11-10T21:19Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {
