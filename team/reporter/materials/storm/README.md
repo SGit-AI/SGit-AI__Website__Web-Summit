@@ -42,13 +42,19 @@ Circles are a person acting. Boxes are agents. Dotted lines are "we read it", an
 
 UI idea: one horizontal bar per signal, from "published" to "first read". The bar is red while nobody on the team has read the source. Under it, a second bar from "first read" to "published by us". This shows where a new source watcher, the connector Dinis asked for, would have saved hours. Here it is the government's news page, which was outside the S41 watch.
 
-## 3. The parser workflow: five slots, still empty
+## 3. The parser workflow: what really happened (18:25 UTC)
 
-Dinis's five stages: a raw source, a request for a parser, the architect's plan, the developer and the designer, then the UI. None has happened in the record yet. Draw them as five empty slots that fill as the commits land, each with its commit, agent and time (`parser_workflow[]` in the trace). Sources in the record that could be the first ones:
+Dinis's five stages, against the record (`parser_workflow[]` in the trace):
 
-- `api.ipma.pt/open-data/forecast/warnings/warnings_www.json`: all of Portugal's warnings in one array, of which one area (`idAreaAviso: "LSB"`) matters;
-- IPMA's communiqué RSS;
-- the government's news page (HTML; the measures are five lettered lines in a long page).
+| Stage | What happened | Evidence |
+|---|---|---|
+| 1. a raw source | many: IPMA's `warnings_www.json` (one area, `idAreaAviso: "LSB"`, of all of Portugal's warnings), the communiqué RSS, the government's page | the desk's README source map |
+| 2. a request for a parser | **skipped**: weather@ built its own readers, one per source, on the guidance | `78d3a0cd` (17:52) |
+| 3. the plan as markdown | written by the desk itself, for the storm page, not by an architect | `cc99e9b2` (17:52) |
+| 4. developer and designer | asked at 18:13 (dev.graphs@, designer@), after Vicky's yes to build | `d826acce` (18:13) |
+| 5. checked; the UI | not yet | |
+
+What this shows: a capable desk agent does stages 1, 2 and 4 itself, in one commit, about 40 minutes after the guidance. The hand-off to the specialists comes only for the public page. Draw stage 2 as a skipped slot, not an empty one.
 
 ## 4. A code sample: read the trace into nodes and edges
 
