@@ -47,3 +47,17 @@ He agreed to stop everything but the critical, with one exception in his words: 
 - **Before:** about 210 scheduled wakes a day.
 - **While the dumbbell is finished:** about 60 a day (runner.conductor 12, dev.work 24, dashboard 24), **about 70% fewer**.
 - **After:** about 12 a day, **about 94% fewer**. On-demand sessions, writer@ with Angelo and research@ once, come on top.
+
+## What actually happened (checked 10 November, 07:40 UTC)
+
+- **Angelo paused 8 tasks in the app, 00:22 to 00:23 UTC:** dev.map, dev.app, dev.venues, dev.links, dev.abp, research, social-media and vault.kms.
+- **runner.conductor:** every two hours from 00:20 (it ran at 02:21, 04:21 and 06:22).
+- **Still enabled during the stop**, so it woke on schedule:
+  - **dev@:** hourly; three runs in the window, each only refreshing the live-graph snapshot and its ledger line.
+  - **runner.writer@:** one run, 02:06; state only, it noted the photo fix.
+  - **dev.work@:** hourly; it built nothing and asked whether it was stopped.
+  - **No output in the window:** crm@, helper@, policy@, vault@, team-collaboration@ (two) and the writer's check-in. Their next wakes fell after the restart.
+- **The exception worked:**
+  - dashboard@ finished the dumbbell on the page and the wallpaper at Angelo's word (00:30 to 02:49), with faint routes, a working dial, and play and fast-forward;
+  - writer@, with Angelo, took his photo off the passes article and drafted the protocols article.
+- **The stop ended** with THE RESTART (WS-208, Dinis, about 02:40 UTC). Effective time about two hours; the scheduled wakes in the window were about 12, against about 18 before.

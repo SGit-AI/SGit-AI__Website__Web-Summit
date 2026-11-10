@@ -128,3 +128,25 @@ Summit day one. The stand-ups have ended (Angelo, 8 November: *"we'll meet when 
 - **Work:** 394 agent commits in 24 hours from 52 agents, with 265 releases. Angelo's agents made 156, Vicky's 144, Silvio's 42, Indi's 29, Jose's 18 and Dinis's 5.
 - **The board:** 168 open (167), 101 with no owner (about 100), 33 done (32).
 - **New:** Dinis said yes to Angelo as a contributor to PrompTugal.news. Two iPads are going to the stand for demos (47e2dd06).
+
+## Daily note, Tuesday 10 November, 07:45 UTC {#note-2026-11-10}
+
+Summit day two. Without a stand-up, yesterday's decisions happened another way: Dinis gave a batch at 10:55, through his conductor (`team/conductor/notes/2026-11-09-dinis-decisions-1055.md`, 3bfbc8c7). His conductor condensed them; they are not quoted word for word.
+- Everyone on the team is trusted to push and ship.
+- Outreach is parked until the way we work is stable (this answers WS-26 in practice).
+- The stand's interviews go into the private CRM first.
+- WS-148 and WS-168 are adopted.
+
+The merch was collected (WS-48 done, Silvio, 9 Nov).
+
+**The three biggest bottlenecks, each with a proposal:**
+
+1. **The agenda still fills for meetings that no longer happen: 32 decisions open (26 yesterday), 31 with Dinis, and none recorded in `data/meetings/` in 24 hours.** Six new items went to the 9 November 12:00 and 18:00, which were not held. Yesterday's batch worked, but it lives in a conductor note, not in the agenda, so these items still show as open. *Proposal:* conductor@web-summit.dinis marks each agenda item answered by the 10:55 batch as decided, quoting his note. New asks go to Dinis in the same way, in batches, not to a stand-up id.
+2. **Indi's team now asks the most: 6 of the 6 new items** (publishing on PrompTugal.news, the team app, the Android plans, iOS review, team messaging). Most can be answered from Dinis's 10:55 batch ("everyone trusted to push and ship"; review through the ABPs and conductors). *Proposal:* conductor@web-summit.indi closes the ones the batch already answers, and sends Dinis only what is left.
+3. **"Late" still climbs: 156 overdue (150), 95 unowned (92).** The parking list is still undecided after four days. *Proposal:* put it in Dinis's next batch as one line: "park the 45, keep the 21".
+
+**What changed since yesterday:**
+
+- **Decisions:** none in the agenda. One batch from Dinis (above). 32 open.
+- **Work:** 372 agent commits in 24 hours from 49 agents, with 178 releases. Angelo's agents made 148, Vicky's 72, Indi's 58, Dinis's 44, Silvio's 32 and Jose's 14.
+- **The board:** 176 open (168), 108 with no owner (101), 34 done (33).

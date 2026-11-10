@@ -1,0 +1,293 @@
+{
+ "v": 1,
+ "person": "indi",
+ "accountant": "accountant@web-summit.indi",
+ "period": {
+  "from": "2026-11-09T00:00:00Z",
+  "to": "2026-11-10T00:00:00Z"
+ },
+ "agents": [
+  {
+   "agent": "accountant@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-09T17:39:10.028Z",
+     "task": "WS-148: wake 6, brief 6, prompter window ask",
+     "issue": "WS-148",
+     "quality": "pass",
+     "input": 17,
+     "output": 10797,
+     "cache_write": 191079,
+     "cache_read": 1934289,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  },
+  {
+   "agent": "dashboard@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-09T07:32:43.918Z",
+     "task": "the dashboard and to-do list from brief 18",
+     "issue": "",
+     "quality": "pass",
+     "input": 8,
+     "output": 2535,
+     "cache_write": 223809,
+     "cache_read": 869745,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T12:33:30.725Z",
+     "task": "the dashboard and to-do list, Monday midday",
+     "issue": "",
+     "quality": "pass",
+     "input": 7,
+     "output": 2044,
+     "cache_write": 231147,
+     "cache_read": 893462,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T17:33:03.216Z",
+     "task": "the dashboard and to-do list, opening night",
+     "issue": "",
+     "quality": "pass",
+     "input": 8,
+     "output": 2385,
+     "cache_write": 238460,
+     "cache_read": 914559,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  },
+  {
+   "agent": "dev@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-09T09:39:26.539Z",
+     "task": "WS-137: factory pages for GetVocal AI, PolyAI, Legora",
+     "issue": "WS-137",
+     "quality": "pass",
+     "input": 11,
+     "output": 5881,
+     "cache_write": 307489,
+     "cache_read": 1824992,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T13:10:36.865Z",
+     "task": "WS-137 demo: check-scenario.mjs, tests, three stand-demo prompt trials",
+     "issue": "WS-137",
+     "quality": "pass",
+     "input": 50,
+     "output": 21512,
+     "cache_write": 352414,
+     "cache_read": 9672877,
+     "subagent_tokens": 220524,
+     "models": [
+      "claude-opus-5-5",
+      "claude-sonnet-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T15:38:13.516Z",
+     "task": "WS-137: wake, Angelo not yet answered; his agents' notes read",
+     "issue": "WS-137",
+     "quality": "pass",
+     "input": 9,
+     "output": 1630,
+     "cache_write": 369517,
+     "cache_read": 1731150,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  },
+  {
+   "agent": "prompter@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-09T00:02:29.819Z",
+     "task": "setup: key published, library ready",
+     "issue": "",
+     "quality": "pass",
+     "input": 19,
+     "output": 3581,
+     "cache_write": 16540,
+     "cache_read": 920852,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T00:40:34.175Z",
+     "task": "overnight 9 Nov: WS-182 FAQ, WS-181 team app brief, WS-177 release line, helpers, infographic agent",
+     "issue": "WS-182",
+     "quality": "pass",
+     "input": 156,
+     "output": 81192,
+     "cache_write": 158202,
+     "cache_read": 16236927,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T08:16:39.523Z",
+     "task": "WS-181, WS-182: Indi's answers recorded, two stand-up items for Dinis",
+     "issue": "WS-181",
+     "quality": "pass",
+     "input": 10,
+     "output": 4050,
+     "cache_write": 258962,
+     "cache_read": 1288033,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T10:37:20.946Z",
+     "task": "WS-177, WS-182: answers 6-10, developer card, FAQ helper",
+     "issue": "WS-177",
+     "quality": "pass",
+     "input": 10,
+     "output": 7370,
+     "cache_write": 269709,
+     "cache_read": 1321930,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T10:46:22.420Z",
+     "task": "WS-181: five Team app drafts in today's look; brief v3; answers 6-10",
+     "issue": "WS-181",
+     "quality": "pass",
+     "input": 32,
+     "output": 32007,
+     "cache_write": 300326,
+     "cache_read": 5005019,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T12:05:24.649Z",
+     "task": "WS-181: Team app v3, 7 synthetic users, brief v4",
+     "issue": "WS-181",
+     "quality": "pass",
+     "input": 76,
+     "output": 54919,
+     "cache_write": 383279,
+     "cache_read": 13320265,
+     "subagent_tokens": 500082,
+     "models": [
+      "claude-opus-5-5",
+      "claude-sonnet-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T12:22:55.545Z",
+     "task": "WS-181: tasks by day, notifications, Live Activities, chat and calls research, brief v5",
+     "issue": "WS-181",
+     "quality": "pass",
+     "input": 98,
+     "output": 76355,
+     "cache_write": 412577,
+     "cache_read": 18286761,
+     "subagent_tokens": 500082,
+     "models": [
+      "claude-opus-5-5",
+      "claude-sonnet-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T12:53:55.631Z",
+     "task": "WS-181: brief v6, who gets Still late",
+     "issue": "WS-181",
+     "quality": "pass",
+     "input": 8,
+     "output": 2991,
+     "cache_write": 10756,
+     "cache_read": 1886748,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T13:12:33.992Z",
+     "task": "WS-203: messaging formats, agents' tool, tests, prototype Messages, iOS brief",
+     "issue": "WS-203",
+     "quality": "pass",
+     "input": 166,
+     "output": 129885,
+     "cache_write": 494770,
+     "cache_read": 34981855,
+     "subagent_tokens": 500082,
+     "models": [
+      "claude-opus-5-5",
+      "claude-sonnet-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T13:50:57.813Z",
+     "task": "WS-203, WS-181: iOS messaging v1 and redesign stage 1 on night branches, both green",
+     "issue": "WS-203",
+     "quality": "pass",
+     "input": 398,
+     "output": 226424,
+     "cache_write": 648006,
+     "cache_read": 97820184,
+     "subagent_tokens": 500082,
+     "models": [
+      "claude-opus-5-5",
+      "claude-sonnet-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-09T14:25:25.299Z",
+     "task": "WS-203, WS-181: iOS messaging v1 and redesign stage 1 merged to dev, TestFlight v0.4.34",
+     "issue": "WS-203",
+     "quality": "pass",
+     "input": 72,
+     "output": 18882,
+     "cache_write": 28178,
+     "cache_read": 18639346,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "prompter: 5 of 11 lines overlap a wider window; count each stretch once",
+ "received": {
+  "lane": "accountant-indi",
+  "at": "2026-11-10T0727Z"
+ }
+}

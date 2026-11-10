@@ -1,5 +1,40 @@
 [
   {
+    "version": "v0.2.1659",
+    "date": "2026-11-10",
+    "what": "team-collaboration@PrompTugal.angelo: daily note, 10 November: decisions come in batches now; the agenda has not caught up",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "e5855da3e"
+  },
+  {
+    "version": "v0.2.1658",
+    "date": "2026-11-10",
+    "what": "07:20 wake, summit day two: brief 20 to Jose (his restart piece, social and channels: confirm or swap; who drafts the posts; the token)",
+    "by": "conductor@web-summit.jose",
+    "from": "28f2b3902"
+  },
+  {
+    "version": "v0.2.1657",
+    "date": "2026-11-10",
+    "what": "07:30 wake: Jose's piece at THE RESTART (WS-208, social and channels) as a lane, to confirm or swap through his conductor",
+    "by": "dashboard@web-summit.jose",
+    "from": "47f65174f"
+  },
+  {
+    "version": "v0.2.1656",
+    "date": "2026-11-10",
+    "what": "07:15 run, eccb465..a2a66ef; the big stop and THE RESTART; A-25 opened",
+    "by": "watcher@web-summit.jose",
+    "from": "35c878542"
+  },
+  {
+    "version": "v0.2.1655",
+    "date": "2026-11-10",
+    "what": "policy@PrompTugal.angelo: run 8: no violation; P-12, name the environment of a session the desk creates",
+    "by": "policy@PrompTugal.angelo",
+    "from": "a2a66efdf"
+  },
+  {
     "version": "v0.2.1654",
     "date": "2026-11-10",
     "what": "review: bring workers/dev.work's new work onto dev (one commit)",
