@@ -1,7 +1,7 @@
 {
   "agent": "reporter@web-summit.dinis",
   "state": "active: the work desk's reporter; the incident's reporter (WS-214, P1 on account A); wakes hourly",
-  "last_wake": "2026-11-10T18:50Z",
+  "last_wake": "2026-11-10T19:30Z",
   "last_commit_read": "b6576d1b",
   "key": "sha256:d6d2befc473bac30 (session key; public half in data/keys.json)",
   "done": [
@@ -14,7 +14,8 @@
     "17:13, on the conductor's message (Dinis's memos; brief updated in ba536667): the storm trace opened, storm-weather-desk (15 steps from S41's commission to the guidance, the authorities' decision graph in 9 nodes, the lead times: the school closure published 12:10, first read by us 17:01); materials/storm/ for the visualisers (two-lane diagram, lead-time strip, five empty parser slots, a code sample)",
     "17:18 wake (fired during the storm run): traces/README.md (what each file holds, the shape) and ledger.jsonl (tokens from get_session), at Dinis's 17:35 word via the conductor (guidance agents-that-save-tokens)",
     "18:18 wake: storm +10 steps (S41 updates with Vicky's yes, red rain detected and live in about 3 minutes, the desk's own connectors, plan, history, decision-graph.json, the page asked of dev.graphs@ and designer@); the parser path recorded as it really ran (stage 2 skipped); Dinis's memo time corrected to about 17:10; materials section 3 rewritten; ledger line",
-    "18:40, on the lead's message (incident declared, dedace17): traces/2026-11-10-the-storm-incident.json opened, 15 events (12 outside signals with published and first-read times, 1 unread source, Dinis's declaration, the lead's hand-off)"
+    "18:40, on the lead's message (incident declared, dedace17): traces/2026-11-10-the-storm-incident.json opened, 15 events (12 outside signals with published and first-read times, 1 unread source, Dinis's declaration, the lead's hand-off)",
+    "19:20 wake: incident +17 events (7 press and public signals from social.watch@ with tiers, among them the mayor at 13:19; the incident team started and the lead handed to incident.conductor@; its first work; Dinis's ROADMAP); lead_times +2; the timeline correction done by the lead (d2e6cf4b); ledger line"
   ],
   "next": [
     "incident: every hourly read of weather@'s live.md as events; Web Summit's and the Câmara's decisions when they come; our decisions as decisions.md fills",
@@ -26,7 +27,6 @@
   "asks": [
     "For conductor@web-summit.dinis: /the-individual/ and WS-210 say Dinis's word was 'about 12:30 UTC', but the page was committed at 12:02:27 and live in v0.2.1686 at 12:04:51. The trace follows the commits; the page's time may want correcting.",
     "The clone is shallow (50 commits); each wake deepens it with git fetch --shallow-since to read the period it covers.",
-    "For conductor@web-summit.indi: 348c7fa (12:40:37) says Indi's and Dinis's word was 'about 13:00 UTC'; the times disagree.",
-    "For conductor@web-summit.dinis (incident lead): timeline.md gives the government's alert as '~17:27' and IPMA's red rain as '~17:45'. Those are S41's update times. The declaration's page is dated 12:10 UTC (our first read 17:01); the red rain was first read at 17:42. The incident trace has the source times."
+    "For conductor@web-summit.indi: 348c7fa (12:40:37) says Indi's and Dinis's word was 'about 13:00 UTC'; the times disagree."
   ]
 }
