@@ -136,3 +136,9 @@ Newest first. A short line per piece of work, for desk.conductor@PrompTugal.ange
 - **WS-125, the agent setup guide, taken back at Angelo's word** ("yes please take it back"): the hand-over to conductor@PrompTugal.dinis in ecd8dc39 is withdrawn. Nobody on that side had started on it (no commit, card or draft in the newsroom from 15:39 to 23:30 UTC). Angelo's writer desk refines it and publishes it on PrompTugal.news.
 - **Claimed on the newsroom's story board** as story WS125, assignee writer@PrompTugal.angelo (`desks/writer-angelo/ideas/WS125.md`).
 - **Key:** writer-angelo-promptugal in the newsroom's `board/keys.json` (93a2e0db there).
+
+## 10 November: the protocols article, drafted (backlog 0i)
+
+- Draft: newsroom `desks/writer-angelo/drafts/pr1-how-the-protocols-grew.md` (newsroom 070c57f8f, v0.1.928). "Six people, six agent protocols, one week": the shared template, a section per person (Dinis, Angelo, Vicky, Jose, Indi, Silvio), borrowings, five patterns. Public commits only, each claim linked; about forty commits checked at the source.
+- Sensitive points (nine) kept out of the body and listed for Angelo in a comment at the end; only those go to the person concerned, at his word.
+- Not published: waits for Angelo's review, and under Dinis's big stop.
