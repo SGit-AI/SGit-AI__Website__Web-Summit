@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-09T22:20Z",
+ "run": "2026-11-10T07:25Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,32 +12,32 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "489f32a",
-  "to": "eccb465",
+  "from": "eccb465",
+  "to": "a2a66ef",
   "branch": "dev"
  },
  "counts": {
-  "commits": 125,
-  "ci_releases": 33,
+  "commits": 168,
+  "ci_releases": 55,
   "watcher_own": 1,
-  "agents": 91,
+  "agents": 112,
   "no_agent_name": 0
  },
  "security": {
   "old_agent_last_review": "f4a9fbe, wake 11:51 on 7 November",
   "new_agent": "security.repos@web-summit.dinis, first run on 9 November (started about 10:55, committed 10:58, cb4e0b7): about 2,600 commits in six repositories, this one from b4d20ce (10:58 on 8 November) to f688309; no critical, high or medium finding; five low notes (team/security.repos/reports/2026-11-09T1110Z.md)",
   "gap_not_reviewed": "11:51 on 7 November to 10:58 on 8 November on dev, which includes 4219805 (the gate runs Angelo's lane check) and 084ebe7 (enforced), and f20d264 is older still",
-  "new_agent_later_runs": "runs 5 to 7 (reports 2026-11-09T1835Z, T2035Z, T2230Z) and a requested review (T1845Z-ios-redesign-where): run 4's high in the Android app is fixed; two mediums open in the app repositories (the iOS App Store Connect key is a repository secret; the Android release secrets are reachable from dev); for Dinis. Each run covers only commits since the last; none covers the gap below"
+  "new_agent_later_runs": "runs 8 (0430Z, 322 commits: nothing above low; a raw session list in history, 82eea75, already reduced to counts) and 9 (0635Z): one HIGH in the iOS app repository (every green push to dev signs and uploads to TestFlight from dev's editable workflow, holding the distribution certificate and the App Store Connect key); the Android release-secrets medium is still open; for Dinis. None covers the gap below"
  },
  "by_person": {
-  "angelo": 40,
-  "indi": 16,
-  "vicky": 16,
-  "dinis": 9,
-  "silvio": 6,
-  "jose": 4
+  "angelo": 56,
+  "dinis": 19,
+  "vicky": 19,
+  "silvio": 18,
+  "indi": 0,
+  "jose": 0
  },
- "actions": "open A-06 (nineteenth run, dev only), A-21 (ninth), A-14 (sixteenth), A-23 (eighth); closed A-24 (procurement@web-summit.silvio committed at 21:13)",
+ "actions": "open A-06 (twentieth run, dev only), A-21 (tenth), A-14 (seventeenth), A-23 (ninth), new A-25 (Indi's agents, quiet since 17:48)",
  "task_report": {
   "task": "people/jose/tasks/2026-11-07-watcher-a06-pointers.md",
   "status": "done: the conductor marked people/jose/tasks/2026-11-07-watcher-a06-pointers.md done; A-06 itself stays open for dev",
@@ -52,7 +52,7 @@
   },
   {
    "level": "high",
-   "what": "still open, twentieth run: contact-detail rule hits in a public page",
+   "what": "still open, twenty-first run: contact-detail rule hits in a public page",
    "where": "f20d264 content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
    "context": "older than the new security agent's window, so not covered by its review"
@@ -65,18 +65,18 @@
    "context": "unchanged"
   },
   {
-   "level": "low",
-   "what": "a security report briefly named an address on a webmail domain; it stays in history",
-   "where": "dc3d4f6 (security.repos@web-summit.dinis) team/security.repos/reports/2026-11-09T1835Z.md line 67",
-   "rule": "an email address (a webmail domain)",
-   "context": "by the report's own line, a gate test's fixture address; the same agent replaced it with its kind in df82bdc 33 seconds later, probably in the same push. Corrected at the reviewer's note (the first draft said 16 minutes and an npm author)"
+   "level": "note",
+   "what": "email-rule matches in the big stop's session list are agent names",
+   "where": "82eea75 (conductor@web-summit.dinis) team/conductor/the-big-stop/before-sessions-account-a.json",
+   "rule": "an email address",
+   "context": "by shape, all agent role names (web-summit, PrompTugal, php.newsroom, promptugal.ai and its .dinis form); no person's address. security.repos run 8 lists the raw session list as low, already reduced to counts"
   },
   {
    "level": "note",
-   "what": "email-rule matches that are not contact details, by shape",
-   "where": "3074991 team/designer/wallet/make-google-pass.py line 37 (an image file name with a scale suffix); the rest are agent names (PrompTugal-style and web-summit), CI's versions rows and patch headers",
+   "what": "265 email-rule lines in 86 commits by the watcher's own scan (its address pattern on the added lines of every commit in the range)",
+   "where": "agent names, CI's versions rows, patch headers and the session list above",
    "rule": "an email address",
-   "context": "168 lines in 59 commits by the watcher's own scan (its address pattern on the added lines of every commit in the range). Also checked: 78ee309 (conductor@web-summit.jose) names SG_SEND_PASSPHRASE but holds no value"
+   "context": "none is a person's contact detail by shape"
   }
  ],
  "open_from_earlier_runs": [
@@ -103,7 +103,7 @@
   }
  ],
  "reviewer_trailer": {
-  "jose_commits_checked": 4,
+  "jose_commits_checked": 0,
   "missing": []
  },
  "branches": {
@@ -112,36 +112,12 @@
   "claude/optimistic-feynman-7pkot9": "unchanged, dc306d7",
   "claude/nifty-bell-f1rkca": "merges only"
  },
- "commits_jose": [
-  {
-   "sha": "ddff8fa",
-   "time": "2026-11-09T17:26:48Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "4f4cc16",
-   "time": "2026-11-09T17:42:31Z",
-   "agent": "vault@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass)"
-  },
-  {
-   "sha": "f499379",
-   "time": "2026-11-09T21:09:31Z",
-   "agent": "vault@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "78ee309",
-   "time": "2026-11-09T21:26:07Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  }
- ],
+ "commits_jose": [],
  "could_not_check": [
   "scheduled tasks in other people's accounts",
   "the agents' run logs in the public vault aym98gsm (no sgit client yet: Jose to install it)",
   "work done in other repositories (the newsroom)",
   "Dinis's account, so whether his scheduled tasks fired"
- ]
+ ],
+ "context": "THE BIG STOP (Dinis, 23:30 on 9 November, 82eea75) asked every conductor to pause its agents unless the work was critical (gamma-ray@web-summit.dinis kept working); THE RESTART (WS-208, about 02:40 on 10 November) restarts every team on one theme (agentic, GAMMA-Ray); each person decides what their own agents restart. Jose's piece: social and channels (the GAMMA-Ray launch posts, each published card and interview shared with the company tagged)"
 }
