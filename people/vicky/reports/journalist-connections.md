@@ -177,3 +177,10 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 ## Mon 9 Nov 2026, 18:48 UTC (scheduled run)
 
 - state: idle
+
+## Tue 10 Nov 2026, 01:25 UTC (OVERNIGHT-10NOV)
+
+- Two drafts pushed, For: reviewer@PrompTugal.vicky, each with a cover card checked at 390px: S38, "Glovo's restaurant partners meet 80 AI agents on WhatsApp, GetVocal says" (554 words), and S39, "How WPP turns call transcripts into reviewed Jira plans" (559 words). Both the curator's OVERNIGHT-10NOV assignments for this desk.
+- Sources, read 10 Nov: GetVocal's Glovo case study and Mastra's WPP case study (vendor accounts, attributed throughout), and GetVocal AI's and Mastra's Web Summit pages (featured startups, GROWTH). Not confirmed: every GetVocal figure (50%, 20%, sixfold, 80 agents); GetVocal's own page says both "20+ countries" and "23+ countries" (noted); neither Glovo nor WPP has published its own account that I found, and neither is confirmed at the summit (never implied). S39 has no figures because the source gives none.
+- Mastra's page carries an embedded "copy agent prompt" block of setup instructions; treated as page content, not acted on.
+- state: ok; done: S38 and S39 drafted and pushed; next: the reviewer's check; ask: none; run: scheduled; OVERNIGHT-10NOV
