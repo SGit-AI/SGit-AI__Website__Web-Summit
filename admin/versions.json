@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1772",
+    "date": "2026-11-10",
+    "what": "23:33 wake: no change to Day 3; CP cuts 4 trains over the 25 de Abril bridge 12:00-15:00 Wednesday (Lusa); Metro's night shelter read at source",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "8047fec04"
+  },
+  {
     "version": "v0.2.1771",
     "date": "2026-11-10",
     "what": "the first TAF covering Thursday (23:00) is weaker (G45 09-16, PROB30 G58 10-18, W 12 kt from 18-20); analysis: peak widened to 12:00-18:00, Thursday morning behind the storm",
