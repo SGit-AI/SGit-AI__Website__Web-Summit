@@ -32,6 +32,8 @@ The `.worker` part makes a worker plain in every commit, on the map and in the l
 
 ## How the desk and conductor.b@ work together
 
+**Changed, 10 Nov about 17:15 UTC** (Angelo: "Since this account has very little token left, we should also already switch main control to the other conductor."): conductor.b@ has **main control from its first run**. It keeps the backlog and Angelo's digests. The desk is on standby, and its hand-over is people/angelo/conductor-b/HANDOVER.md. What follows held before that change.
+
 - **While account A has tokens**, the desk commands. It writes each item, or each instruction for the workers, in a commit For: conductor.b@PrompTugal.angelo; conductor.b@ acts on it if pushed-by says ANGELO. conductor.b@ reports back For: desk.conductor@PrompTugal.angelo. The desk never messages its session.
 - **Angelo talks to conductor.b@ directly** for a note or an article: that is the fastest path, and his word in that session is enough.
 - **When account A runs out**, conductor.b@ takes over the backlog's routing for the pool. Angelo's digest then comes from conductor.b@, in the desk's usual format. The desk, back on tokens, picks up from conductor.b@'s STATE.
