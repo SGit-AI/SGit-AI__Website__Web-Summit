@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1687",
+    "date": "2026-11-10",
+    "what": "runner.writer@PrompTugal.angelo: STATE.md: newsroom approves the new sessions; no findings, nothing new",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "91ce1548c"
+  },
+  {
     "version": "v0.2.1686",
     "date": "2026-11-10",
     "what": "the individual: from a badge photo to a unit of agents and a Kanban card (WS-209)",
