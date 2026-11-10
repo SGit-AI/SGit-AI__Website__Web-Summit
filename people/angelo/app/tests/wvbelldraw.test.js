@@ -5,7 +5,7 @@ const S = process.argv[2] || require('os').tmpdir(), BASE = 'http://127.0.0.1:87
 // on the left on the desktop and on top on the phone; ten icons, each with its abbreviation (3 to 4 letters, at least 12 px on
 // screen) and its full name as its title, inside the view, none overlapping another; the network inside its circle (every
 // person's node inside it); routes from people to destinations, none to an unknown one, widths from the last seven days; no
-// count anywhere. A tap on a person shows their agents' own routes and dims the rest; a second tap, or Escape, undoes it. The setting (lower left) moves the team below, to the right, and back to Automatic, and is remembered. Then,
+// count anywhere; on a phone, nothing in the part of the floating Ask Claude button's column it can reach at some scroll, in every setting. A tap on a person shows their agents' own routes and dims the rest; a second tap, or Escape, undoes it. The setting (lower left) moves the team below, to the right, and back to Automatic, and is remembered. Then,
 // on the graph directly (clock stepped by hand): deliveries from deliveries.json fly along their routes as typed icons in their
 // makers' colours, land on their icons and light them; destroy() gives live.js its graph back as it was. No page error.
 const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
@@ -27,7 +27,8 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
         const people = q('.tm-p circle').map(c => { const b = c.getBoundingClientRect(); return Math.hypot((b.left + b.right) / 2 - nc.x, (b.top + b.bottom) / 2 - nc.y) - nc.r })
         const routes = q('.wb-route').map(e => ({ d: e.dataset.dest, w: +e.getAttribute('stroke-width'), s: e.getAttribute('stroke') }))
         const texts = q('.wb text').map(t => t.textContent)
-        return { bell: wrap.dataset.bell, fr: { l: fr.left, t: fr.top, r: fr.right, b: fr.bottom }, ics, nc, people, routes, texts, sel: !!document.querySelector('.wb-or'), rimShown: getComputedStyle(document.querySelector('.lv-rim')).display !== 'none' }
+        const fe = document.querySelector('.cc-askfab'), fb = fe && fe.getBoundingClientRect(), fab = fb && fb.width && fb.left < fr.right && fb.right > fr.left ? { l: fb.left, t: fr.top + Math.max(0, fb.top - (fr.top + scrollY)) } : null
+        return { fab, bell: wrap.dataset.bell, fr: { l: fr.left, t: fr.top, r: fr.right, b: fr.bottom }, ics, nc, people, routes, texts, sel: !!document.querySelector('.wb-or'), rimShown: getComputedStyle(document.querySelector('.lv-rim')).display !== 'none' }
       })
       const want = n === 'desktop' ? 'left' : 'top'
       if (r.bell !== want) fail(`${tag} ${lvl}: Automatic gave ${r.bell}, not ${want}`)
@@ -42,6 +43,10 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
       // no icon on another, no abbreviation on another icon or abbreviation (the text's own box, a pixel's slack)
       const hit = (a, c) => a.l + 1 < c.r && c.l + 1 < a.r && a.t + 1 < c.b && c.t + 1 < a.b
       for (const x of r.ics) for (const y of r.ics) if (x !== y && (hit(x.ic, y.ic) || hit(x.lb, y.ic) || hit(x.lb, y.lb))) fail(`${tag} ${lvl}: ${x.d} and ${y.d} overlap`)
+      // the floating Ask Claude button (fixed to the window's lower right; the map scrolls under it): no icon or abbreviation in the
+      // part of its column it can reach at some scroll (dashboard@'s note 3 in 96e5de79: on a phone it covered RSCH and LNKD)
+      if (r.fab) for (const i of r.ics) for (const b of [i.ic, i.lb]) if (b.r > r.fab.l && b.b > r.fab.t) fail(`${tag} ${lvl}: ${i.d} can lie under the Ask Claude button`)
+      if (n === 'phone' && !r.fab) fail(`${tag} ${lvl}: no Ask Claude button to keep clear of`)
       if (!r.people.length || r.people.some(x => x > 0)) fail(`${tag} ${lvl}: a person outside the network's circle (${r.people.map(x => x.toFixed(0))})`)
       if (lvl === 'work' && !r.routes.length) fail(`${tag} ${lvl}: no routes`)
       const ds = new Set(r.ics.map(i => i.d)); if (r.routes.some(x => !ds.has(x.d) || !(x.w > 0))) fail(`${tag} ${lvl}: a route to nowhere or with no width`)
@@ -51,7 +56,7 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
       if (lvl === 'work') {
         // tap a person (the spec, question 2): their agents' own routes, everyone else's dimmed; tap again, or Escape, for everyone
         const who = await p.evaluate(() => { const c = {}; for (const e of document.querySelectorAll('.wb-route')) c[e.dataset.person] = (c[e.dataset.person] || 0) + 1; return Object.entries(c).sort((a, b) => b[1] - a[1])[0] })
-        const at = who && await p.evaluate(id => { const G = document.querySelector('.lv').parentNode.lvGraph, n = G.pos.get(id), c = [...document.querySelectorAll('.tm-p circle')].find(c => Math.abs(+c.getAttribute('cx') - n.x) < 0.2 && Math.abs(+c.getAttribute('cy') - n.y) < 0.2); if (!c) return null; const b = c.getBoundingClientRect(); return { x: (b.left + b.right) / 2, y: (b.top + b.bottom) / 2 } }, who[0])
+        const at = who && await p.evaluate(id => { const G = document.querySelector('.lv').parentNode.lvGraph, n = G.pos.get(id), c = [...document.querySelectorAll('.tm-p circle')].find(c => Math.abs(+c.getAttribute('cx') - n.x) < 0.2 && Math.abs(+c.getAttribute('cy') - n.y) < 0.2); if (!c) return null; c.scrollIntoView({ block: 'center', behavior: 'instant' }); const b = c.getBoundingClientRect(); return { x: (b.left + b.right) / 2, y: (b.top + b.bottom) / 2 } }, who[0])
         if (!at) fail(`${tag}: no person to tap`)
         else {
           const seen = () => p.evaluate(id => { const q = s => [...document.querySelectorAll(s)]; return { focus: document.querySelector('.lv.lv-bellview').dataset.focus || null, agent: q('.wb-route.wb-agent').filter(e => e.dataset.person === id).length, agentOther: q('.wb-route.wb-agent').filter(e => e.dataset.person !== id).length, fromOk: q('.wb-route.wb-agent').every(e => e.dataset.from), mineByPerson: q('.wb-route:not(.wb-agent)').filter(e => e.dataset.person === id).length, others: q('.wb-route:not(.wb-agent)').length, dim: q('.wb-route.wb-dim').length, on: q('.tm-p.wb-on').length } }, who[0])
@@ -65,7 +70,8 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
         }
         for (const [o, side] of [['below', 'b'], ['right', 'r'], ['top', 't'], ['left', 'l']]) {
           await p.selectOption('.wb-or', o); await p.waitForTimeout(150)
-          const s = await p.evaluate(() => { const w = document.querySelector('.lv.lv-bellview'), f = w.getBoundingClientRect(), c = document.querySelector('.wb-net').getBoundingClientRect(), ic = [...document.querySelectorAll('.wb-ic rect')].map(e => e.getBoundingClientRect()); return { bell: w.dataset.bell, cx: (c.left + c.right) / 2 - (f.left + f.right) / 2, cy: (c.top + c.bottom) / 2 - (f.top + f.bottom) / 2, ix: ic.reduce((s, b) => s + (b.left + b.right) / 2, 0) / ic.length - (f.left + f.right) / 2, iy: ic.reduce((s, b) => s + (b.top + b.bottom) / 2, 0) / ic.length - (f.top + f.bottom) / 2 } })
+          const s = await p.evaluate(() => { const w = document.querySelector('.lv.lv-bellview'), f = w.getBoundingClientRect(), c = document.querySelector('.wb-net').getBoundingClientRect(), ic = [...document.querySelectorAll('.wb-ic rect')].map(e => e.getBoundingClientRect()); return { bell: w.dataset.bell, cx: (c.left + c.right) / 2 - (f.left + f.right) / 2, cy: (c.top + c.bottom) / 2 - (f.top + f.bottom) / 2, ix: ic.reduce((s, b) => s + (b.left + b.right) / 2, 0) / ic.length - (f.left + f.right) / 2, iy: ic.reduce((s, b) => s + (b.top + b.bottom) / 2, 0) / ic.length - (f.top + f.bottom) / 2, fab: (() => { const fe = document.querySelector('.cc-askfab'), fb = fe && fe.getBoundingClientRect(); if (!fb || !fb.width || fb.left >= f.right) return null; const top = f.top + Math.max(0, fb.top - (f.top + scrollY)); return [...document.querySelectorAll('.wb-ic')].filter(g => [g.querySelector('rect'), g.querySelector('.wb-ab')].some(e => { const b = e.getBoundingClientRect(); return b.right > fb.left && b.bottom > top })).map(g => g.dataset.dest).join() || null })() } })
+          if (n === 'phone' && s.fab) fail(`${tag}: the setting "${o}" puts ${s.fab} under the Ask Claude button`)
           const ok = s.bell === o && ({ b: s.cy > 0 && s.iy < 0, t: s.cy < 0 && s.iy > 0, l: s.cx < 0 && s.ix > 0, r: s.cx > 0 && s.ix < 0 })[side]
           if (!ok) fail(`${tag}: the setting "${o}" gave ${JSON.stringify(s)}`)
           if (theme === 'dark' && o === 'below' && n === 'phone') await p.screenshot({ path: path.join(S, `wvbell-${n}-below.png`) })

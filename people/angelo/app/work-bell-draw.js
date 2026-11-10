@@ -64,8 +64,8 @@
         // a graph node's place in the frame: live.js's own scale about the centre, then into the network's circle
         const placeOf = id => { const p = G.pos.get(id); if (!p || !NM) return null; return NM.map({ x: G.C + (p.x - G.C) * G.scale, y: G.C + (p.y - G.C) * G.scale }) }
         const colourOf = person => A.strokeFor(resolve(win, wrap, G.col && G.col.get(person)) || '#9EB2C7', light)
-        let pad = 0
-        const sizeK = () => { const r = svg.getBoundingClientRect(); return r.width > 0 && L ? Math.min(r.width / (L.w + 2 * pad), r.height / (L.h + 2 * pad)) : 0 }
+        let pad = 0, padR = 0
+        const sizeK = () => { const r = svg.getBoundingClientRect(); return r.width > 0 && L ? Math.min(r.width / (L.w + 2 * pad + padR), r.height / (L.h + 2 * pad)) : 0 }
         for (const d of A.DESTS) {
             const g = el(doc, 'g', { class: 'wb-ic wv-sq', 'data-dest': d }, icons)
             el(doc, 'title', {}, g).textContent = A.DEST_NAMES[d]
@@ -94,10 +94,22 @@
         const box = e => e.getBoundingClientRect(), hit = (a, b) => a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom
         function fit() {
             const furn = [...wrap.querySelectorAll('.lv-top > *, .lv-when, .lv-lay > *')].map(box).filter(b => b.width > 0)
-            for (pad = 0; ; pad += 50) {
-                svg.setAttribute('viewBox', `${-pad} ${-pad} ${L.w + 2 * pad} ${L.h + 2 * pad}`); size()
+            // the app's floating Ask Claude button is fixed to the window's lower right and the map scrolls under it: on a phone it
+            // stands in the frame's right-hand column, over every part of the frame it can reach at some scroll (from the frame's
+            // top as the page opens, at scroll 0, down to its foot). That part is kept clear by a margin on the right only, so the
+            // drawing moves left, not just smaller (the abbreviations keep their 12 px however small it is): dashboard@'s note 3 in
+            // 96e5de79, as work-draw.js's clearLow did for the rim
+            const fab = doc.querySelector('.cc-askfab'), fb = fab && box(fab), fw = box(wrap)
+            const zone = fb && fb.width > 0 && fb.left < fw.right && fb.right > fw.left && fw.height > 0
+                ? { left: fb.left - 6, right: fw.right + 1e4, top: fw.top + Math.max(0, fb.top - (fw.top + (win.scrollY || 0))) - 6, bottom: fw.bottom + 1e4 } : null
+            const onFab = () => zone && [...IC.values()].some(x => hit(box(x.inner), zone) || hit(box(x.ab), zone))
+            for (pad = 0, padR = 0; ; ) {
+                svg.setAttribute('viewBox', `${-pad} ${-pad} ${L.w + 2 * pad + padR} ${L.h + 2 * pad}`); size()
                 const fr = box(svg.closest('.lv') ? wrap : svg), out = b => b.width > 0 && (b.left < fr.left || b.right > fr.right || b.top < fr.top || b.bottom > fr.bottom)
-                if (pad >= 400 || !(furn.some(f => [...IC.values()].some(x => hit(box(x.inner), f) || hit(box(x.ab), f))) || [...IC.values()].some(x => out(box(x.inner)) || out(box(x.ab))))) break
+                const bad = furn.some(f => [...IC.values()].some(x => hit(box(x.inner), f) || hit(box(x.ab), f))) || [...IC.values()].some(x => out(box(x.inner)) || out(box(x.ab)))
+                if (bad && pad < 400) pad += 50
+                else if (onFab() && padR < 600) padR += 50
+                else break
             }
         }
         // the icons' size and the abbreviations' text: at least 12 px on screen whatever the frame's size
