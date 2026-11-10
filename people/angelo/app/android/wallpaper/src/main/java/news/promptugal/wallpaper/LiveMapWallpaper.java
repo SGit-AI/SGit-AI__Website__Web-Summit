@@ -49,7 +49,9 @@ public class LiveMapWallpaper extends WallpaperService {
     /** The layout the graph is built in: the chosen one, but flat under a level's dumbbell, whose routes leave from the people's
      *  places (the 3D ball turns them away; the page's dumbbell is flat too): the People ring then. */
     static String drawnLayout(Context c) { String L = layout(c); return !"messages".equals(level(c)) && "3d".equals(L) ? "ring" : L; }
-    static final String ORIENT = "orient";
+    static final String ORIENT = "orient", PLAYBACK = "playback";
+    /** live, play (a replay at 1 hour a second) or ff (6 hours a second), in a loop. */
+    static String playback(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(PLAYBACK, "live"); }
     /** Where the team sits in the dumbbell: auto (by the screen's shape), top, below, left, right. */
     static String orient(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(ORIENT, "auto"); }
     /** The level: "messages" (the exchanges alone, as before), "workstreams" (the WS issues' squares and their flights too) or
@@ -90,7 +92,7 @@ public class LiveMapWallpaper extends WallpaperService {
             view = new GLSurfaceView(LiveMapWallpaper.this) { @Override public SurfaceHolder getHolder() { return MapEngine.this.getSurfaceHolder(); } };
             view.setEGLContextClientVersion(2); view.setPreserveEGLContextOnPause(true);
             renderer = new MapRenderer(this, getResources().getDisplayMetrics().density);
-            renderer.still = isPreview(); renderer.orientPref = orient(LiveMapWallpaper.this);
+            renderer.still = isPreview(); renderer.orientPref = orient(LiveMapWallpaper.this); renderer.playback = playback(LiveMapWallpaper.this);
             view.setRenderer(renderer); view.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
         }
 
@@ -105,7 +107,7 @@ public class LiveMapWallpaper extends WallpaperService {
                 view.onResume(); ui.post(tick); net.post(() -> rebuild(false)); net.post(poll); } else view.onPause();
         }
         // a new choice in the settings, or the phone's dark mode changed while hidden (checked as it shows again)
-        @Override public void onSharedPreferenceChanged(SharedPreferences p, String key) { if (renderer != null) renderer.orientPref = orient(LiveMapWallpaper.this); if (net != null) { net.post(() -> rebuild(true)); if (LEVEL.equals(key) && visible) net.post(this::fetch); } }
+        @Override public void onSharedPreferenceChanged(SharedPreferences p, String key) { if (renderer != null) { renderer.orientPref = orient(LiveMapWallpaper.this); renderer.playback = playback(LiveMapWallpaper.this); } if (net != null) { net.post(() -> rebuild(true)); if (LEVEL.equals(key) && visible) net.post(this::fetch); } }
         private void rebuild(boolean force) {
             Object d = data; if (d == null) return; Graph g = graph; String L = drawnLayout(LiveMapWallpaper.this); Graph.Theme th = theme(LiveMapWallpaper.this);
             if (!force && g != null && g.isFor(L, th)) return;

@@ -51,6 +51,12 @@ final class MapRenderer implements GLSurfaceView.Renderer {
     // is drawn, flat, in its circle at the team's end, through a viewport the size of that circle; the routes, the circle and the
     // icons are in the overlay; the deliveries fly along the routes. orientPref: the setting (Automatic, top, below, left, right).
     volatile String orientPref = "auto";
+    // the replay (Angelo, 10 November: "Maybe it's just a setting that makes the wallpaper run in a loop with a nice fading in and
+    // fading out at the edges"): "live", "play" (1 hour a second) or "ff" (6 hours a second), from the first exchange live.json
+    // holds to now, again and again; the screen fades to its background over the last 1.5 s and back over the first 1.5 s
+    volatile String playback = "live";
+    private double rT = 0, rStart = 0, rEnd = 0, rTally = 0, rRoutes = 0; private String rMode = "live", whenText = ""; private int whenTex = 0, fadeTex = 0, fadeTexColor = -1; private int[] whenSize = { 0, 0 };
+    static final double FADE_MS = 1500;
     private Bell.Layout BL; private Bell.Routes BR; private List<Work.Row> bellRows; private int vx = 0, vy = 0, vw = 1, vh = 1, bellLitTex = 0; private float bellLitPx = 0;
     private boolean bell() { return wk != null; }
     // the view the graph is drawn in: the whole screen, or (the dumbbell) the network's circle; exact: the page's 1000 units fill it
@@ -77,7 +83,7 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         progLn = program(Shaders.VS_LN, Shaders.FS_LN); progTx = program(Shaders.VS_TX, Shaders.FS_TX);
         for (int k = 0; k < 4; k++) progPt[k] = program(Shaders.VS_PTS, Shaders.fsPts(k));
         built = null; overlayTex = 0; labelTex.clear(); loc.clear(); java.util.Arrays.fill(vbo, 0);
-        iconTex.clear(); dotTex.clear(); litTex = 0; bellLitTex = 0;   // a new context: the old textures and buffers are gone with it
+        iconTex.clear(); dotTex.clear(); litTex = 0; bellLitTex = 0; whenTex = 0; fadeTex = 0;   // a new context: the old textures and buffers are gone with it
         GLES20.glDisable(GLES20.GL_DEPTH_TEST); GLES20.glEnable(GLES20.GL_BLEND);
         float[] range = new float[2]; GLES20.glGetFloatv(GLES20.GL_ALIASED_LINE_WIDTH_RANGE, range, 0);
         lineW = Math.max(1, Math.min(range[1], density * 0.75f));
@@ -106,7 +112,23 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         if (overlayTex == 0) { overlayTheme = th; overlayKey = key; overlayTex = texture(overlay(th)); dropLevelTextures(); }
         normal(); drawTex(overlayTex, -1, -1, 1, 1, 1);
         if (cur == null) return;
-        List<Graph.Event> evs = src.takeEvents(); if (evs != null) { lastEvs = evs; cur.read(evs, System.currentTimeMillis(), t0); }
+        String mode = playback; boolean replaying = !"live".equals(mode) && lastEvs != null && !lastEvs.isEmpty();
+        List<Graph.Event> evs = src.takeEvents(); if (evs != null) { lastEvs = evs; if (!replaying) cur.read(evs, System.currentTimeMillis(), t0); }
+        if (!mode.equals(rMode)) {   // a change of playback: a replay starts from the beginning; live picks up from now
+            cur.clearQueue(); rT = 0; rMode = mode; if (wk != null) wk.inAir.clear();
+            if ("live".equals(mode) && lastEvs != null) { cur.read(lastEvs, System.currentTimeMillis(), t0); BR = null; }
+        }
+        double fade = 1;
+        if (replaying) {
+            double speed = "ff".equals(mode) ? 6 * 3600 : 3600, wall = System.currentTimeMillis();   // virtual ms per real ms
+            if (rT == 0 || rT >= rEnd) { rStart = lastEvs.get(0).ms; rEnd = wall - Graph.DELAY_MS; rT = rStart; rTally = 0; rRoutes = 0; cur.tallyAt(lastEvs, rT); }
+            double prev = rT; rT = Math.min(rEnd, rT + dt * speed);
+            cur.replay(lastEvs, prev, rT, t0);
+            if (wk != null && bellRows != null) wk.flyWindow(bellRows, prev, rT, t0);
+            if (t0 - rTally > 1000) { rTally = t0; cur.tallyAt(lastEvs, rT); }
+            if (bell() && bellRows != null && t0 - rRoutes > 4000) { rRoutes = t0; BR = Bell.routes(bellRows, rT, people(cur)); }   // the week ending at the moment shown
+            fade = Math.max(0, Math.min(1, Math.min((rT - rStart) / speed / FADE_MS, (rEnd - rT) / speed / FADE_MS)));
+        }
         Graph g = cur; g.step(t0, dt);
         if (g != built) build(g);
         boolean inBell = bell() && BL != null && g.flat;
@@ -168,6 +190,7 @@ final class MapRenderer implements GLSurfaceView.Renderer {
             drawTex(t[0], x - hw, y - hh, x + hw, y + hh, 1);
         }
         if (inBell) { GLES20.glViewport(0, 0, W, H); wk.step(t0); normal(); drawBell(g, th, t0); vx = -1; }   // the flights over the whole screen; the next frame sets its view again
+        if (replaying) { if (!inBell) GLES20.glViewport(0, 0, W, H); drawWhen(th); vx = -1; if (fade < 1) drawFade(th, 1 - fade); }
         frames++;
     }
 
@@ -398,6 +421,25 @@ final class MapRenderer implements GLSurfaceView.Renderer {
     }
     // a frame point (the page's 1000 units) to the screen's -1..1
     private final double[] lp = new double[2];
+    // the replayed moment at the foot of the screen, as the page's date line ("Sun 8 Nov, 14:00 UTC"), redrawn when the hour changes
+    private void drawWhen(Graph.Theme th) {
+        java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("EEE d MMM, HH:00 'UTC'", java.util.Locale.UK); f.setTimeZone(java.util.TimeZone.getTimeZone("UTC"));
+        String t = f.format(new java.util.Date((long) rT));
+        if (!t.equals(whenText) || whenTex == 0) {
+            if (whenTex != 0) GLES20.glDeleteTextures(1, new int[] { whenTex }, 0);
+            Paint p = new Paint(Paint.ANTI_ALIAS_FLAG); p.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD)); p.setTextSize(14 * density); p.setColor(0xFF000000 | th.text); p.setShadowLayer(4 * density, 0, 0, 0xFF000000 | th.bg);
+            String s = ("ff".equals(rMode) ? "\u23E9 " : "\u25B6 ") + t; int w = (int) Math.ceil(p.measureText(s) + 16 * density), h = (int) Math.ceil(28 * density);
+            Bitmap b = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888); new Canvas(b).drawText(s, 8 * density, h / 2f + 5 * density, p);
+            whenTex = texture(b); whenText = t; whenSize = new int[] { w, h };
+        }
+        float hw = whenSize[0] / (float) W, hh = whenSize[1] / (float) H, y = -1 + (24 * density) / H * 2 + hh;
+        normal(); drawTex(whenTex, -hw, y - hh, hw, y + hh, 1);
+    }
+    // the loop's edges: the whole picture fades to the page's background and back (a full-screen veil, alpha a)
+    private void drawFade(Graph.Theme th, double a) {
+        if (fadeTex == 0 || fadeTexColor != th.bg) { if (fadeTex != 0) GLES20.glDeleteTextures(1, new int[] { fadeTex }, 0); Bitmap b = Bitmap.createBitmap(2, 2, Bitmap.Config.ARGB_8888); b.eraseColor(0xFF000000 | th.bg); fadeTex = texture(b); fadeTexColor = th.bg; }
+        normal(); drawTex(fadeTex, -1, -1, 1, 1, (float) a);
+    }
     private float nx(double fx) { return (fx0 + (float) fx * fk) / W * 2 - 1; }
     private float ny(double fy) { return 1 - (fy0 + (float) fy * fk) / H * 2; }
     /** The flights: each leaves its maker's node (where it now is on screen) for its square, eased over 3 s, its trail behind it
