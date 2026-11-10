@@ -50,6 +50,9 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     if (!end.routes) fail(`${tag}: no routes after playback`)
     if (end.n) fail(`${tag}: a count is drawn`)
     if (!shot) await p.locator('section.tm').screenshot({ path: `${S}/wvrp-${tag}.png` })
+    // the map alone too: the section's screenshot is taller than the window, so the app's sticky header covers its top (the
+    // topmost icon looked cut in 6205071c's review; it is inside the frame, as `inside` checks)
+    await p.locator('.tm-svg').screenshot({ path: `${S}/wvrp-${tag}-map.png` })
     // the window changes, Work stays
     await p.selectOption('[data-tmf-w]', '72h'); await p.waitForSelector('[data-tmf-play]')
     await p.waitForFunction(() => document.querySelectorAll('.tm-svg .wv-sq').length === 10, null, { timeout: 8000 }).catch(() => null)
