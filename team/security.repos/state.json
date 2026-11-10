@@ -1,15 +1,16 @@
 {
   "about": "Where security.repos@web-summit.dinis stopped, per repository and branch: the last commit reviewed (the branch head when the run read it). The next run reviews every commit reachable from any branch and not from these. From the second run, every branch is listed, not only those active since the baseline.",
   "agent": "security.repos@web-summit.dinis",
-  "last_run": "2026-11-10T10:25Z",
+  "last_run": "2026-11-10T12:30Z",
   "baseline_from": "2026-11-08T11:00Z",
   "repos": {
     "SGit-AI/SGit-AI__Website__Web-Summit": {
       "branches": {
-        "dev": "18bb63332ee4cad279f5c268aabcd279b2728cca",
+        "dev": "dbf505e4378bc5a56043a8f0d7e1ed39a917a2e1",
         "claude/awesome-dirac-rp94os": "1cc9740af65206906617362b879004f6564e0e8d",
         "claude/beautiful-clarke-mqhept": "a88e8c65a2e854b41b5b2e2f7506bab1c53e2ddf",
         "claude/conductor-jose-setup-ogxaka": "ccfecefe90fb74e838fd1b0b0f89b40be179593d",
+        "claude/eloquent-carson-czkw2z": "add3b2805cedd56f47540c242748145d2b26119e",
         "claude/epic-johnson-nid58i": "47aa51fdd1a2d706ddebcf14d7c91db04490e9b8",
         "claude/fervent-fermi-wvb0sd": "7eeb148b705cdbce0f22dbfecd99fda6ee3fad52",
         "claude/funny-mayer-7jpij1": "a05fc24ea44253e584cebfc65730d845dfa87974",
@@ -30,7 +31,7 @@
         "workers/dev.links": "1bd3382c6c7a89e52ef8b10006dfe4b7e40347c6",
         "workers/dev.map": "7820cc2ddadf667ce624cdf7dc5494a030b041ae",
         "workers/dev.venues": "1bf79af7c1155724a95fa93d2d759d2b5c9c47b1",
-        "workers/dev.work": "b3775713eb7dce0b3f3ff64e30f55e411fc13bab",
+        "workers/dev.work": "a1b773348ae359216f920f37d8d11f8223a89678",
         "workers/research": "3a178e88e8f8a790a26b72659efb51b58a33dcf7",
         "workers/sheet": "ebbe82dc0f04208c7df1d6071e30cac43f839ba7",
         "workers/social-media": "639cef986ce474c9f6b31fe0533a95915b0333c8",
@@ -39,14 +40,15 @@
     },
     "PrompTugal/PrompTugal__News__Website": {
       "branches": {
-        "dev": "6784c9b6781450f8869e6e0b39443b2a6437da71",
+        "dev": "97f587c911cf4369246ecd71f0ba6db53fce0ea3",
+        "claude/eager-euler-x3k3vm": "6bec1c3472cbdc313d6b5c7ca2142cee7f9434b7",
         "claude/serene-keller-r1pzfc": "3affa4b4a3478ef40565a13154ffe10e0c55e8bc",
         "claude/sweet-heisenberg-m1vm71": "c9217130f27dae9a55e5a7080e644f286b31f73e",
         "main": "9629432a48d2514aa11d89172fb3173f4aedce90",
         "work/conductor-silvio": "e9ffd69b1fc3f1cf3aecbb1ee3474c57493ea465",
         "work/designer.experiments": "1177421a6cc6e53eff0b578a5b78ad2eaf1427ca",
-        "work/dev.data": "64c7b4933a773f5807e530edd73ff1327088d2b1",
-        "work/dev.graphs": "a69480da728f88683701d4b457ff3e5e7d418145",
+        "work/dev.data": "e803e9f7250cf7e56cb335b970e7bc40da9b4376",
+        "work/dev.graphs": "0e3b45e37e0677ea71fd2e5e90026b761305480e",
         "work/dev.pages": "6b177b24d738ea31468eef64f5f457b72cb3ef43",
         "work/dev.portugal": "a1b6759c2e35335aaeef19d180e30d5f3123cae5",
         "work/dev.search": "938ab51070025f1221ecfe415dc1b8170b3a692e",
@@ -82,13 +84,14 @@
     },
     "PrompTugal/PrompTugal__App__iOS": {
       "branches": {
-        "dev": "6312b5e82316c003903b35d39e9b0deb8688cefd",
+        "dev": "a483a020a7bbc4281b9033429dadbcd83dd9891d",
         "claude/serene-edison-22z0xn": "38f17268b7830bbf185a2fa3e48f2c2abc15b766",
         "conductor/self-hosted-trial": "3e960dff1c15a152d9a081d8d30c48495673e3d8",
         "main": "2bd40e27f2212a9166916ad18cc558b75106feda",
         "night/collab": "54cc56875f97721a0100fc2d074e99514b5b3d8a",
         "night/design": "89b17e80a2340370688afc06b757207c7a415f32",
         "night/editor": "e7cfc2c8ee59571031887c7217df4b8f9525be40",
+        "night/newsapp-redesign": "fc0ddaa60aee0d88d60062719b3a39178e171514",
         "night/platform": "8dfacdecc3507a7c455258267d78ec8e898e416f",
         "night/release": "8f95a01a88f94c1c889e5bff486ef4e01ee34e8f",
         "night/team": "768cae223558b913a228a1c15db94b08782567bd",
