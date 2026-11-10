@@ -1,8 +1,8 @@
 {
  "about": "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
  "source": "https://github.com/PrompTugal/PrompTugal__News__Website",
- "commit": "f05a13f5",
- "read_at": "2026-11-10T01:37:24.941Z",
+ "commit": "f844d42c",
+ "read_at": "2026-11-10T02:36:21.039Z",
  "days": 7,
  "agents": [
   {
@@ -33,9 +33,9 @@
    "short": "reviewer",
    "family": "PrompTugal",
    "label": "",
-   "commits": 121,
+   "commits": 124,
    "first": "2026-11-06T10:20:27+00:00",
-   "last": "2026-11-09T21:58:39+00:00",
+   "last": "2026-11-10T02:27:47+00:00",
    "key": true
   },
   {
@@ -44,9 +44,9 @@
    "short": "journalist",
    "family": "PrompTugal",
    "label": "PrompTugal's journalist",
-   "commits": 93,
+   "commits": 95,
    "first": "2026-11-06T00:06:05+00:00",
-   "last": "2026-11-09T22:27:52+00:00",
+   "last": "2026-11-10T02:34:49+00:00",
    "key": true
   },
   {
@@ -556,6 +556,17 @@
    "key": false
   },
   {
+   "id": "pt:silvio:jornal",
+   "person": "silvio",
+   "short": "jornal",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 1,
+   "first": "2026-11-10T01:48:34+00:00",
+   "last": "2026-11-10T01:48:34+00:00",
+   "key": true
+  },
+  {
    "id": "pt:dinis:designer.experiments",
    "person": "dinis",
    "short": "designer.experiments",
@@ -675,6 +686,11 @@
    "n": 22
   },
   {
+   "from": "pt:vicky:reviewer",
+   "to": "pt:vicky:journalist-ai",
+   "n": 21
+  },
+  {
    "from": "pt:dinis:conductor.b",
    "to": "pt:dinis:conductor",
    "n": 21
@@ -690,11 +706,6 @@
    "n": 20
   },
   {
-   "from": "pt:vicky:reviewer",
-   "to": "pt:vicky:journalist-ai",
-   "n": 20
-  },
-  {
    "from": "pt:dinis:ontologist",
    "to": "pt:dinis:conductor",
    "n": 19
@@ -703,6 +714,11 @@
    "from": "pt:vicky:reviewer",
    "to": "pt:dinis:journalist",
    "n": 18
+  },
+  {
+   "from": "pt:vicky:reviewer",
+   "to": "pt:vicky:journalist-connections",
+   "n": 17
   },
   {
    "from": "pt:dinis:synthetic",
@@ -715,11 +731,6 @@
    "n": 17
   },
   {
-   "from": "pt:vicky:reviewer",
-   "to": "pt:vicky:journalist-connections",
-   "n": 16
-  },
-  {
    "from": "pt:vicky:journalist-ai",
    "to": "pt:dinis:journalist",
    "n": 16
@@ -728,6 +739,11 @@
    "from": "pt:vicky:reviewer",
    "to": "pt:vicky:journalist-portugal",
    "n": 15
+  },
+  {
+   "from": "pt:vicky:reviewer",
+   "to": "pt:vicky:journalist",
+   "n": 14
   },
   {
    "from": "conductor@web-summit.dinis",
@@ -743,11 +759,6 @@
    "from": "pt:dinis:conductor.b",
    "to": "pt:dinis:accountant",
    "n": 13
-  },
-  {
-   "from": "pt:vicky:reviewer",
-   "to": "pt:vicky:journalist",
-   "n": 12
   },
   {
    "from": "pt:dinis:observability",
@@ -1223,6 +1234,11 @@
    "from": "newsroom-designer@web-summit.dinis",
    "to": "newsroom@web-summit.dinis",
    "n": 2
+  },
+  {
+   "from": "pt:silvio:jornal",
+   "to": "silvio",
+   "n": 1
   },
   {
    "from": "pt:dinis:conductor",
@@ -2019,6 +2035,11 @@
   [
    "2026-11-09T23:50:35+00:00",
    "gamma-ray@web-summit.dinis",
+   "published"
+  ],
+  [
+   "2026-11-10T01:48:34+00:00",
+   "pt:silvio:jornal",
    "published"
   ]
  ],

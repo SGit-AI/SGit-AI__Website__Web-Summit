@@ -31,7 +31,8 @@
 .wb-ic.wb-quiet { opacity: .38; }
 .wb-ic.wv-lit rect { stroke: var(--rm-action, #4aa3ff); stroke-width: 5; }
 .wb-ic.wv-lit { opacity: 1; }
-.wb-or { position: absolute; left: 8px; bottom: 8px; z-index: 3; font: 500 12px/1.2 var(--rm-font, system-ui, sans-serif); color: var(--rm-text-secondary, #9EB2C7); background: var(--rm-surface, #0E2035); border: 1px solid var(--rm-border, #294A64); border-radius: 6px; padding: 3px 4px; opacity: .55; }
+/* the setting in the upper left: the lower edge holds the dial and its play buttons (dashboard@, 10 November) */
+.wb-or { position: absolute; left: 8px; top: 8px; z-index: 3; font: 500 12px/1.2 var(--rm-font, system-ui, sans-serif); color: var(--rm-text-secondary, #9EB2C7); background: var(--rm-surface, #0E2035); border: 1px solid var(--rm-border, #294A64); border-radius: 6px; padding: 3px 4px; opacity: .55; }
 .wb-or:hover, .wb-or:focus { opacity: 1; }
 .wb .wv-fly circle.wv-bg { fill: var(--rm-bg, #07111F); }
 .wb .wv-fly { filter: drop-shadow(0 0 6px currentColor); }
@@ -66,6 +67,7 @@
         const colourOf = person => A.strokeFor(resolve(win, wrap, G.col && G.col.get(person)) || '#9EB2C7', light)
         let pad = 0, padR = 0
         const sizeK = () => { const r = svg.getBoundingClientRect(); return r.width > 0 && L ? Math.min(r.width / (L.w + 2 * pad + padR), r.height / (L.h + 2 * pad)) : 0 }
+        const AB = B.abbrs(A.DESTS, A.DEST_NAMES)   // none twice (three workstreams began "Team")
         for (const d of A.DESTS) {
             const g = el(doc, 'g', { class: 'wb-ic wv-sq', 'data-dest': d }, icons)
             el(doc, 'title', {}, g).textContent = A.DEST_NAMES[d]
@@ -75,7 +77,7 @@
             if (logo) el(doc, 'image', { href: (o.base || '') + 'work-logos/' + logo[light ? 'light' : 'dark'], x: -24, y: -24, width: 48, height: 48 }, inner)
             else if (/^WS-\d+$/.test(d)) { const t = el(doc, 'text', { class: 'wv-ws', 'text-anchor': 'middle', y: 8 }, inner); t.textContent = d.slice(3) }
             else { const k = D.MARK[d] || 'doc'; el(doc, 'path', { class: 'wv-mark', 'data-mark': k, d: D.MARK_PATHS[k] || A.ICON_PATHS[k] || A.ICON_PATHS.doc, transform: 'scale(1.9)' }, inner) }
-            const ab = el(doc, 'text', { class: 'wb-ab' }, g); ab.textContent = B.ABBR[d] || B.abbrOf(d, A.DEST_NAMES[d])
+            const ab = el(doc, 'text', { class: 'wb-ab' }, g); ab.textContent = AB.get(d)
             IC.set(d, { g, inner, ab, lit: 0 })
         }
         // the frame for the setting and the screen's shape; the icons in their places and the network moved into its circle

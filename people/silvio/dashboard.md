@@ -34,7 +34,7 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 - **outreach@web-summit.silvio:** world 1 (hospitality, tourism, the Algarve): a strong PromptUGAL page per company with newsroom@web-summit.dinis, then the first emails leading with that page ([the four worlds](outreach/worlds.md)).
 - **inbox@web-summit.silvio:** the **only** agent with my mailbox (WS-172), drafts only, I send; moves company emails into the private CRM as EML (WS-173).
 - **video@web-summit.silvio:** my videos vault (WS-174 done), the stand loop in six languages, titles and descriptions (WS-71), four storyboards (WS-75).
-- **dev@web-summit.silvio:** the CRM's features (WS-172); has the private CRM's key and waits for my go before writing to it. The X-ray booth requests (WS-194): [what was requested and what is ready](../../xray/status/index.html).
+- **dev@web-summit.silvio:** the CRM's features (WS-172); has the private CRM's key and waits for my go before writing to it. The X-ray booth requests (WS-194): [what was requested and what is ready](../../xray/status/index.html). Proposed, off until I say yes: [the stand without wifi](proposals/stand-offline/README.md).
 - **crm@web-summit.silvio:** my companies in the team CRM.
 - **procurement@web-summit.silvio:** the merch: [/procurement/](../../procurement/index.html), [/impressao/](../../impressao/index.html), the sign-off tool.
 - **vault@web-summit.silvio:** my first vault, [Silvio on RiskMandate](../../vaults/index.html) (WS-120 done).

@@ -506,7 +506,9 @@ ${INDEX.length ? `<div class="xr-chips" role="group" aria-label="Already X-rayed
                     rs.textContent = r.status === 'queued' ? `Requested (${r.id}). Our X-ray agent runs it at its next wake; come back to this page later.` : `Not sent: ${r.why || r.status}.`
                 })
             }
-            if (onRunEnd) onRunEnd()
+            // booth: the idle timer ran from the visitor's Enter, so it wiped the result about 45 s after it appeared (WS-197,
+            // dev@web-summit.silvio, 10 November): a visitor's result now gets two full minutes from when it shows
+            if (onRunEnd) onRunEnd(); else arm(120000)
         } })
     }
     const bindChip = b => b.addEventListener('click', () => { const s = INDEX.find(q => q.slug === b.dataset.slug); if (s) { input.value = s.subject; go(s.subject) } })
@@ -525,7 +527,7 @@ ${INDEX.length ? `<div class="xr-chips" role="group" aria-label="Already X-rayed
         arm()
     }
     function stopAttract() { if (!attract) return; attract = false; clearTimeout(typeT); onRunEnd = null; stage.classList.remove('attract'); reset(false) }
-    function arm() { clearTimeout(idleT); if (booth && !attract) idleT = setTimeout(startAttract, 60000) }
+    function arm(ms) { clearTimeout(idleT); if (booth && !attract) idleT = setTimeout(startAttract, typeof ms === 'number' ? ms : 60000) }   // also an input listener: an event is not a delay
     function startAttract() {
         if (!booth || busy || !prepared.length) return arm()
         attract = true; stage.classList.add('attract'); reset(false)

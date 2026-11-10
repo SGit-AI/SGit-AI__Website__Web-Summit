@@ -1,5 +1,61 @@
 [
   {
+    "version": "v0.2.1633",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 02:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "71a31c8e5"
+  },
+  {
+    "version": "v0.2.1632",
+    "date": "2026-11-10",
+    "what": "reviewer@PrompTugal.vicky: report, OVERNIGHT-10NOV first review: S40 published, S37 to S39 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "06dd51ebc"
+  },
+  {
+    "version": "v0.2.1631",
+    "date": "2026-11-10",
+    "what": "the stand without wifi: an offline copy for the iPad, built and tested, off until Silvio's yes",
+    "by": "dev@web-summit.silvio",
+    "from": "f66506c92"
+  },
+  {
+    "version": "v0.2.1630",
+    "date": "2026-11-10",
+    "what": "the big stop report: Silvio's account (12 paused in 3 s, 6 restarted at his word)",
+    "by": "conductor@web-summit.dinis",
+    "from": "5a03f1864"
+  },
+  {
+    "version": "v0.2.1629",
+    "date": "2026-11-10",
+    "what": "WS-197: in booth mode a visitor's X-ray result stays two minutes, not wiped 45 s after it appears",
+    "by": "dev@web-summit.silvio",
+    "from": "a9bc46939"
+  },
+  {
+    "version": "v0.2.1628",
+    "date": "2026-11-10",
+    "what": "outreach hold recorded over the 149 actions; Thursday's stand list in the private CRM (WS-206)",
+    "by": "crm@web-summit.silvio",
+    "from": "3cbc6281c"
+  },
+  {
+    "version": "v0.2.1627",
+    "date": "2026-11-10",
+    "what": "what each of Silvio's agents can reach, a proposal for Silvio to confirm (I23)",
+    "by": "gamma-ray@web-summit.silvio",
+    "from": "48564f677"
+  },
+  {
+    "version": "v0.2.1626",
+    "date": "2026-11-10",
+    "what": "dashboard@PrompTugal.angelo: the live map's dial goes back properly, with play (1 hour a second) and fast forward (6 hours a second); the dumbbell follows it",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "00bbd96d9"
+  },
+  {
     "version": "v0.2.1625",
     "date": "2026-11-10",
     "what": "journalist@PrompTugal.vicky: report, OVERNIGHT-10NOV: S40 drafted",

@@ -18,14 +18,25 @@
         const seen = new Set(), past = []            // keys already shown; every delivery known, for the counts and the routes: { at, dest, maker }
         const timers = new Set()
         const later = (fn, ms) => { const t = win.setTimeout(() => { timers.delete(t); if (alive) fn() }, Math.max(0, ms)); timers.add(t) }
-        const recount = () => { if (!V || !A) return; const now = Date.now(), c = Object.fromEntries(A.DESTS.map(d => [d, 0])); for (const d of past) if (d.at > now - DAY && d.at <= now - (d.news ? 0 : delay)) c[d.dest]++; V.counts(c); if (V.week) V.week(past.filter(d => d.at <= now - (d.news ? 0 : delay)), now) }
+        // the dial (Angelo, 10 November: the live map's slider, play and fast forward): while it looks back, the routes are the week
+        // ending at the moment shown and the deliveries it passes fly at once; the live ones wait until it is back
+        let looking = 0
+        const onTime = e => {
+            const d = e.detail || {}; looking = d.back ? d.moment : 0
+            if (!V || !A) return
+            if (!looking) { recount(); return }
+            if (V.week) V.week(past.filter(x => x.at <= looking), looking)
+            if (d.prev != null && d.rate) { const passed = past.filter(x => x.at > d.prev && x.at <= looking); if (passed.length) V.fly(A.merge(passed.map(x => ({ min: Math.floor(x.at / 6e4), dest: x.dest, icon: x.icon || 'doc', maker: x.maker, sha: x.key || '' }))), win.performance.now()) }
+        }
+        host.addEventListener('lv-time', onTime)
+        const recount = () => { if (!V || !A) return; if (looking) return; const now = Date.now(), c = Object.fromEntries(A.DESTS.map(d => [d, 0])); for (const d of past) if (d.at > now - DAY && d.at <= now - (d.news ? 0 : delay)) c[d.dest]++; V.counts(c); if (V.week) V.week(past.filter(d => d.at <= now - (d.news ? 0 : delay)), now) }
         // a batch of new deliveries ({ at, maker, icon, dest, key }): merged by minute and destination, each flying at at + delay
         // (one that reached us later than that flies at once, a beat apart)
         function play(list, now, lag) {
-            const fresh = list.filter(d => !seen.has(d.key)); for (const d of fresh) { seen.add(d.key); past.push({ at: d.at, dest: d.dest, maker: d.maker, news: !lag }) }
+            const fresh = list.filter(d => !seen.has(d.key)); for (const d of fresh) { seen.add(d.key); past.push({ at: d.at, dest: d.dest, maker: d.maker, icon: d.icon, key: d.key, news: !lag }) }
             const M = A.merge(fresh.map(d => ({ min: Math.floor(d.at / 6e4), dest: d.dest, icon: d.icon, maker: d.maker, sha: d.key })))
             let late = 0
-            for (const m of M) { const due = m.min * 6e4 + lag - now; later(() => { if (V) { V.fly([m], win.performance.now()); recount() } }, due > 0 ? due : 350 * late++) }
+            for (const m of M) { const due = m.min * 6e4 + lag - now; later(() => { if (V && !looking) { V.fly([m], win.performance.now()); recount() } }, due > 0 ? due : 350 * late++) }
         }
         const rowsOf = W => { const from = Date.parse(W.from); return A.unpack(W).map(d => ({ at: from + d.min * 6e4, maker: d.maker, icon: d.icon, dest: d.dest, key: (d.repo || '') + ':' + d.sha + ':' + d.dest })) }
         async function read(first) {
@@ -34,7 +45,7 @@
                 const W = await r.json()
                 if (!A) { A = root.AngeloWork.variant(W.dests || [], W.names || {}); if (host.lvGraph) attach(host.lvGraph) }
                 const list = rowsOf(W), now = Date.now()
-                if (first) for (const d of list) if (d.at <= now - delay) { seen.add(d.key); past.push({ at: d.at, dest: d.dest, maker: d.maker }) }
+                if (first) for (const d of list) if (d.at <= now - delay) { seen.add(d.key); past.push({ at: d.at, dest: d.dest, maker: d.maker, icon: d.icon, key: d.key }) }
                 play(list, now, delay); recount()
             } catch { }
             if (alive) timer = win.setTimeout(() => read(false), every)
@@ -61,7 +72,7 @@
                 play(news.map(d => ({ ...d, key: 'news|' + d.key })), Date.now(), 0); recount()
             },
             onError: why => say(why) })
-        return { destroy() { alive = false; win.clearTimeout(timer); for (const t of timers) win.clearTimeout(t); timers.clear(); if (newsPoll) newsPoll.stop(); host.removeEventListener('lv-graph', onGraph); if (V) V.destroy(); V = null; say('') }, view: () => V }
+        return { destroy() { alive = false; win.clearTimeout(timer); for (const t of timers) win.clearTimeout(t); timers.clear(); if (newsPoll) newsPoll.stop(); host.removeEventListener('lv-graph', onGraph); host.removeEventListener('lv-time', onTime); if (V) V.destroy(); V = null; say('') }, view: () => V }
     }
     root.AngeloWorkLive = { mount }
 })(typeof self !== 'undefined' ? self : this)

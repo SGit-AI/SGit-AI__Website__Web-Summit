@@ -85,6 +85,10 @@
 .lv-dial input { flex: 1 1 auto; min-width: 0; margin: 0; height: clamp(14px, 4cqmin, 24px); accent-color: var(--rm-action, #4aa3ff); cursor: pointer; }
 .lv-dial button { font: 700 clamp(8px, 1.9cqmin, 13px)/1 var(--rm-font, system-ui, sans-serif); letter-spacing: .08em; color: var(--rm-red, #ff4d5e); background: var(--rm-surface, #0E2035); border: 1px solid currentColor; border-radius: 999px; padding: .3em .6em; cursor: pointer; white-space: nowrap; }
 .lv-dial button[hidden] { display: none; }
+/* play and fast forward (Angelo, 10 November: "a single play for the slow 1h / sec and the FF symbol for the 6h/sec"): icons only */
+.lv-dial .lv-play { color: var(--rm-text, #F7FAFC); border-color: var(--rm-border, #294A64); min-width: clamp(26px, 6cqmin, 40px); min-height: clamp(26px, 6cqmin, 40px); padding: 0; font-size: clamp(11px, 2.6cqmin, 17px); letter-spacing: 0; }
+.lv-dial .lv-play[aria-pressed="true"] { color: var(--rm-action-ink, #04121F); background: var(--rm-action, #05BFE9); border-color: var(--rm-action, #05BFE9); }
+.lv-dial .lv-play:focus-visible { outline: 2px solid var(--rm-focus, #FFD166); outline-offset: 2px; }
 .lv-live.past { color: var(--rm-text-muted, #9EB2C7); animation: none; }
 .lv-live.past i { animation: none; box-shadow: none; }
 .lv-when.past { color: var(--rm-text, #fff); }
@@ -210,8 +214,8 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
         if (!o.bare) hex.appendChild(lay)   // display mode has no controls: its layout comes from the address or the device
         // the time dial (0c4 (4)): minutes behind live, from live.json's first moment (its from) (set once it is read) to 0; not in display mode
         const dial = doc.createElement('div'); dial.className = 'lv-dial'; dial.setAttribute('data-lv-dial', '')
-        dial.innerHTML = `<input type="range" data-lv-dial-r min="-2880" max="0" step="1" value="0" aria-label="Time: drag back to see an earlier moment" title="Drag back in time; Live to return"><button type="button" data-lv-golive hidden title="Back to live">● LIVE</button>`
-        const dialR = dial.querySelector('input'), goLive = dial.querySelector('button')
+        dial.innerHTML = `<button type="button" class="lv-play" data-lv-play="3600" aria-pressed="false" title="Play from the start, 1 hour a second" aria-label="Play, 1 hour a second">▶</button><button type="button" class="lv-play" data-lv-play="21600" aria-pressed="false" title="Fast forward from the start, 6 hours a second" aria-label="Fast forward, 6 hours a second">⏩</button><input type="range" data-lv-dial-r min="-2880" max="0" step="1" value="0" aria-label="Time: drag back to see an earlier moment" title="Drag back in time; Live to return"><button type="button" data-lv-golive hidden title="Back to live">● LIVE</button>`
+        const dialR = dial.querySelector('input'), goLive = dial.querySelector('[data-lv-golive]'), playBtns = [...dial.querySelectorAll('[data-lv-play]')]
         if (!o.bare) hex.appendChild(dial)
         // the moment on screen: now, less the fixed delay, in the viewer's own time zone
         // a small pop-out (the hexagon under 300 px) gets the short form: the day and the time, without the weekday and the zone
@@ -219,6 +223,9 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
         const fmtL = F({ weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }), fmtS = F({ day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
         let whenAt = '', narrow = false, wAt = -1e9
         let back = 0, drag = null   // how far the dial is behind live, in ms (0: live); while it is dragged, where it is
+        // playing (Angelo, 10 November): rate virtual ms per real ms (3600: 1 hour a second; 21600: 6 hours), 0 when not playing;
+        // moment: the moment shown while playing; the exchanges between frames' moments play at once, the flow weighed as it was then
+        let rate = 0, moment = 0, sentAt = 0, sentMoment = 0, tallyAt = 0
         const ago = ms => { const m = Math.round(ms / 6e4); return m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${String(m % 60).padStart(2, '0')} min` }
         const paintWhen = () => { const b = drag == null ? back : drag, t = Date.now() - DELAY_MS - b, d = new Date(t), m = Math.floor(t / 6e4)
             const n0 = Date.now(); if (n0 - wAt > 1000) { wAt = n0; const w = hex.clientWidth; if (w) narrow = w < 300; top.classList.toggle('lv-on-dark', !light()) }   // the pop-out's styles arrive late, and the theme can change
@@ -272,6 +279,7 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
             raf = 0; if (!alive || !host.isConnected) return
             const now = ts, dt = Math.min(250, last ? now - last : 16); last = now
             while (queue.length && queue[0].at <= now) play(queue.shift().ev, now)
+            if (rate) playStep(now, dt)
             paintWhen()
             // never stops: the flow's rate follows the last hour against the 48-hour average, and breathes slowly
             debt += FLOW_BASE * (0.6 + 0.4 * Math.min(2, act)) * (1 + 0.2 * Math.sin(now / 9000)) * dt / 1000
@@ -351,13 +359,38 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
             dialR.value = String(-Math.round(back / 6e4)); goLive.hidden = !back; dial.classList.toggle('past', !!back); wrap.classList.toggle('lv-past', !!back)
             dialR.setAttribute('aria-valuetext', back ? `${ago(back)} before live` : 'Live')
             if (host.lvGraph) host.lvGraph.back = back
-            host.dispatchEvent(new win.CustomEvent('lv-time', { detail: { back, delay: DELAY_MS } }))   // for the work view, to follow the dial
+            tell(null)   // for the work view, to follow the dial: { back, delay, moment, prev (null: a jump), rate }
             paintWhen(); paintDot()
+        }
+        // see the moment at once (Angelo, 10 November: "We need that to go back in time properly"): the twenty minutes before it
+        // played over a second and a half, so the lines that were busy then light up, and the flow is weighed as it was
+        const flash = disp => { const t = win.performance.now(), win20 = allEvs.filter(e => e.ms > disp - 20 * 6e4 && e.ms <= disp); win20.forEach((e, i) => queue.push({ ev: e, at: t + 1500 * i / Math.max(1, win20.length) })); queue.sort((x, y) => x.at - y.at); kick() }
+        // the played clock: the moment moves rate times real time; every exchange it passes plays at once (at most 60 a frame,
+        // so a busy hour at 6 hours a second does not stall the page); at now, the dial is back to live
+        const tell = (prev) => host.dispatchEvent(new win.CustomEvent('lv-time', { detail: { back, delay: DELAY_MS, moment: Date.now() - DELAY_MS - back, prev, rate } }))
+        function playStep(now, dt) {
+            const prev = moment, end = Date.now() - DELAY_MS; moment = Math.min(end, moment + dt * rate)
+            let n = 0; for (const e of allEvs) { if (e.ms > moment) break; if (e.ms > prev && n++ < 60) play(e, now) }
+            back = Math.max(0, end - moment)
+            if (now - tallyAt > 600) { tallyAt = now; tally(allEvs, moment) }
+            if (now - sentAt > 250 || moment >= end) { sentAt = now; tell(sentMoment); sentMoment = moment; dialR.value = String(-Math.round(back / 6e4)); dialR.setAttribute('aria-valuetext', `${ago(back)} before live`) }
+            if (moment >= end) { setRate(0); setBack(0) }
+        }
+        function setRate(r) {
+            rate = r; for (const b of playBtns) { const on = rate && +b.dataset.lvPlay === rate; b.setAttribute('aria-pressed', String(!!on)); b.textContent = on ? '❚❚' : (+b.dataset.lvPlay === 3600 ? '▶' : '⏩') }
+            dial.classList.toggle('playing', !!rate)
+        }
+        for (const b of playBtns) b.onclick = () => {
+            const r = +b.dataset.lvPlay
+            if (rate === r) { setRate(0); return }                       // the running one again: pause where it is
+            if (!rate) { const end = Date.now() - DELAY_MS; moment = back ? end - back : (fromMs || end); if (!back) setBack(Math.max(1, end - moment)) }   // from the start, or from the moment the dial shows
+            queue.length = 0; for (let i = fly.length - 1; i >= 0; i--) if (!fly[i].flow) { fly[i].dot.remove(); if (fly[i].halo) fly[i].halo.remove(); fly.splice(i, 1) }
+            sentMoment = moment; tallyAt = 0; setRate(r); kick()
         }
         // while dragging only the moment at the foot follows; on release the graph goes there
         dialR.addEventListener('input', () => { drag = -(+dialR.value) * 6e4; paintWhen() })
-        dialR.addEventListener('change', () => { drag = null; setBack(-(+dialR.value) * 6e4) })
-        goLive.onclick = () => setBack(0)
+        dialR.addEventListener('change', () => { drag = null; const ms = -(+dialR.value) * 6e4; if (rate) { moment = Date.now() - DELAY_MS - ms; sentMoment = moment; tallyAt = 0 } setBack(ms); if (!rate && ms) flash(Date.now() - DELAY_MS - ms) })
+        goLive.onclick = () => { setRate(0); setBack(0) }
         host.lvGraph.back = 0; host.lvGraph.setBack = ms => setBack(ms)
         // back from sleep or lost Wi-Fi: read at once instead of waiting for the next tick (a failed read is simply tried again)
         const again = () => { if (!alive || win.document.visibilityState === 'hidden') return; win.clearTimeout(timer); read(false) }

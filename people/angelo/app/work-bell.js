@@ -49,13 +49,13 @@
 
     // layout(or, dests, weights): { or, w, h, net: { x, y, r }, places: Map(dest -> { x, y, nx, ny, quiet, abbr }) }; nx, ny: the
     // way the icon faces (towards the team), so a route arrives square on
-    function layout(or, dests, weights = {}) {
-        const order = ordered(dests, weights), n = order.length, P = new Map(), BELL = BELLS[or === 'left' || or === 'right' ? 'wide' : 'tall']
+    function layout(or, dests, weights = {}, names) {
+        const AB = abbrs(dests, names || {}), order = ordered(dests, weights), n = order.length, P = new Map(), BELL = BELLS[or === 'left' || or === 'right' ? 'wide' : 'tall']
         order.forEach((d, i) => {
             const t = n > 1 ? i / (n - 1) * 2 - 1 : 0, a = Math.PI + t * BELL.span           // from the upper end round to the lower
             const p = { x: BELL.x + BELL.r * Math.cos(a), y: BELL.y - BELL.r * Math.sin(a) }
             const q = turn(or, p), f = turnV(or, { x: Math.cos(a), y: -Math.sin(a) })   // from the bell's centre out: towards the team
-            P.set(d, { x: q.x, y: q.y, nx: f.x, ny: f.y, row: i % 2, quiet: !(weights[d] > 0), abbr: ABBR[d] || abbrOf(d) })
+            P.set(d, { x: q.x, y: q.y, nx: f.x, ny: f.y, row: i % 2, quiet: !(weights[d] > 0), abbr: AB.get(d) })
         })
         const c = turn(or, NET)
         return { or, ...box(or), net: { x: c.x, y: c.y, r: NET.r }, places: P }
@@ -76,6 +76,22 @@
     // a workstream's abbreviation (the spec: "the issue's first word"), cut to four letters; anything else, its first four letters
     // (its first word that says something: "The", "A", "An", "Of" and the like are skipped); the rest of the workstreams, OTHR
     const SMALL = new Set(['the', 'a', 'an', 'of', 'and', 'for', 'to', 'in', 'on', 'our', 'its', 'with'])
+    // abbrs(dests, names): every destination's abbreviation, none twice (dashboard@, 10 November: three workstreams began "Team"
+    // and the bell showed TEAM three times). An abbreviation shared by two or more makes each of them take its next word that says
+    // something ("Team coordination" COOR, "Team messaging" MESS, "The team CRM" CRM), again until none is shared; with no word
+    // left, its number's last digits. Returns a Map(dest -> abbreviation).
+    function abbrs(dests, names = {}) {
+        const words = new Map(dests.map(d => { const t = String(names[d] || d).replace(/^WS-\d+\s+/, ''); return [d, /^other workstreams$/i.test(t) || d === 'other' ? ['OTHR'] : t.split(/[^A-Za-z0-9]+/).filter(x => x && !SMALL.has(x.toLowerCase()))] }))
+        const at = new Map(dests.map(d => [d, 0])), out = new Map()
+        const pick = d => ABBR[d] || (() => { const w = words.get(d), i = at.get(d); return w.length ? (w[Math.min(i, w.length - 1)]).slice(0, 4).toUpperCase() : abbrOf(d, names[d]) })()
+        for (const d of dests) out.set(d, pick(d))
+        for (let round = 0; round < 4; round++) {
+            const by = new Map(); for (const [d, a] of out) by.set(a, (by.get(a) || []).concat(d))
+            const clash = [...by.values()].filter(g => g.length > 1); if (!clash.length) break
+            for (const g of clash) for (const d of g) { if (ABBR[d]) continue; const w = words.get(d); if (at.get(d) < w.length - 1) at.set(d, at.get(d) + 1); else { const m = String(d).match(/(\d+)$/); out.set(d, (out.get(d).slice(0, 2) + (m ? m[1] : '')).slice(0, 4)); continue } out.set(d, pick(d)) }
+        }
+        return out
+    }
     function abbrOf(d, name) {
         const t = String(name || d).replace(/^WS-\d+\s+/, ''); if (/^other workstreams$/i.test(t) || d === 'other') return 'OTHR'
         const ws = t.split(/[^A-Za-z0-9]+/).filter(Boolean), w = ws.find(x => !SMALL.has(x.toLowerCase())) || ws[0] || String(d)
@@ -131,5 +147,5 @@
     // net, so a graph point p lands at net + (p - C) * k
     function netMap(L, C = 500, S = 1000) { const k = L.net.r / (S / 2); return { k, tx: L.net.x - C * k, ty: L.net.y - C * k, map: p => ({ x: L.net.x + (p.x - C) * k, y: L.net.y + (p.y - C) * k }) } }
 
-    return { ORIENTS, ORIENT_NAMES, ABBR, WEEK, orient, turn, box, ordered, layout, label, abbrOf, personOf, routes, agentRoutes, width, route, at, svgPath, netMap }
+    return { ORIENTS, ORIENT_NAMES, ABBR, WEEK, orient, turn, box, ordered, layout, label, abbrOf, abbrs, personOf, routes, agentRoutes, width, route, at, svgPath, netMap }
 })
