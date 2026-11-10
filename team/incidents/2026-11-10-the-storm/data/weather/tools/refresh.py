@@ -37,6 +37,19 @@ RANK = {'green': 0, 'yellow': 1, 'orange': 2, 'red': 3}
 KT = 1.852
 NOW = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 changes, errors = [], []
+CAP_INDEX = {}  # (areaDesc, type_pt, level, onset 'YYYY-MM-DDTHH:MM', expires) -> [sent_utc, ...], from the latest CAP read
+AREA_CAP = {'AVR': 'Aveiro', 'BJA': 'Beja', 'BRG': 'Braga', 'BGC': 'Bragança', 'CBO': 'Castelo Branco', 'CBR': 'Coimbra',
+            'EVR': 'Évora', 'FAR': 'Faro', 'GDA': 'Guarda', 'LRA': 'Leiria', 'LSB': 'Lisboa', 'PTG': 'Portalegre', 'PTO': 'Porto',
+            'STM': 'Santarém', 'STB': 'Setúbal', 'VCT': 'Viana do Castelo', 'VRL': 'Vila Real', 'VIS': 'Viseu',
+            'ACE': 'Açores - Grupo Central', 'AOC': 'Açores - Grupo Ocidental', 'AOR': 'Açores - Grupo Oriental',
+            'MCN': 'Madeira - Costa Norte', 'MCS': 'Madeira - Costa Sul', 'MPS': 'Madeira - Porto Santo', 'MRM': 'Madeira - Regiões Montanhosas'}
+CAP_LEVEL = {'Amarelo': 'yellow', 'Laranja': 'orange', 'Vermelho': 'red', 'Verde': 'green'}
+
+
+def sent_for(area, typ, level, start, end):
+    """The CAP sent time of the message matching this warning exactly (area, type, level, window), else None. Never a guess."""
+    hits = CAP_INDEX.get((AREA_CAP.get(area), typ, level, start[:16], end[:16]), [])
+    return max(hits) if hits else None
 
 
 def get(key):
@@ -124,9 +137,13 @@ def warnings():
                            '; '.join(f"{a[1]} {a[0]} {a[2][8:16]}-{a[3][8:16]}" for a in new) + ')')
         if expired:
             changes.append(f"{len(expired)} Lisbon warning(s) expired")
+    for x in lsb:
+        x['sent_utc'] = sent_for('LSB', x['type'], x['level'], x['start_utc'], x['end_utc'])
+    for x in elsewhere:
+        x['sent_utc'] = sent_for(x['area'], x['type'], x['level'], x['start_utc'], x['end_utc'])
     peak = max((RANK[w['level']] for w in lsb), default=0)
     return {
-        'about': "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). Warnings carry no issue time in IPMA's feed: an issue time comes from a read or from press, and says which.",
+        'about': "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). IPMA's open data carries no issue time: `sent_utc` is the sent time of the CAP message (MeteoAlarm, cap.json) matching the warning's area, type, level and window exactly, or null where none matches (never guessed).",
         'source': src, 'read_utc': t, 'lisbon_peak_level': [k for k, v in RANK.items() if v == peak][0],
         'lisbon': lsb, 'red_and_orange_elsewhere': {'source': src, 'read_utc': t, 'items': elsewhere},
         'history': history,
@@ -372,7 +389,14 @@ def cap():
     for x in json.loads(raw).get('warnings', []):
         al = x.get('alert', {})
         for i in al.get('info', []):
-            if not i.get('language', '').startswith('pt') or 'Lisboa' not in [z.get('areaDesc') for z in i.get('area', [])]:
+            if not i.get('language', '').startswith('pt'):
+                continue
+            m = re.match(r'Aviso (\w+) (.+)$', i.get('event') or '')
+            if m and al.get('sent') and i.get('onset') and i.get('expires'):
+                for z in i.get('area', []):
+                    k = (z.get('areaDesc'), m.group(2), CAP_LEVEL.get(m.group(1)), i['onset'][:16], i['expires'][:16])
+                    CAP_INDEX.setdefault(k, []).append(datetime.fromisoformat(al['sent']).astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
+            if 'Lisboa' not in [z.get('areaDesc') for z in i.get('area', [])]:
                 continue
             ident = al.get('identifier')
             if ident in seen:
@@ -427,7 +451,8 @@ def second_models(prev):
 
 
 def main():
-    w, c, s, a, f, k = warnings(), communiques(), stations(), airport(), forecast(), cap()
+    k = cap()  # first: warnings() takes each warning's issue time (sent_utc) from it
+    w, c, s, a, f = warnings(), communiques(), stations(), airport(), forecast()
     f['second_models'] = second_models(f.get('second_models'))
     for name, obj in (('warnings.json', w), ('communiques.json', c), ('stations.json', s), ('airport.json', a), ('forecast.json', f), ('cap.json', k)):
         if obj:
