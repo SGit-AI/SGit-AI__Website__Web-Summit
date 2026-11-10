@@ -1,6 +1,6 @@
 // Backlog 0c6, the live graph glowing all the time (Angelo, 9 November: "Can we have the glowy version all the time? Ideally on all
 // views."; people/angelo/proposals/live-map/glow/README.md). In a quiet spell (no real exchange), with only the steady flow:
-// 2D (#live): every flow dot carries its halo, as a real exchange's does, and the lines it lights reach min(1, 0.75 * 1.25) = 0.94,
+// 2D (#live): every flow dot carries its halo and a tail, as a real exchange's does (lines themselves faint since 10 November),
 // never above 1; 3D (#live?d3=1): each flow dot is drawn as a head and a three-dot trail (four points per flow dot, none of them a
 // real exchange's), and the picture moves. At 1280 and 390 px, light and dark.
 const { chromium } = require('playwright');
@@ -29,7 +29,10 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
   if (!(minDots > 0) || f2.bright) fail(`${n} ${scheme}: no quiet flow in 2D ${JSON.stringify(f2)}`)
   if (mism) fail(`${n} ${scheme}: a flow dot without its halo in 2D (${mism} samples)`)
   if (!(f2.haloOp > 0.2)) fail(`${n} ${scheme}: the flow's halo is not lit (${f2.haloOp})`)
-  if (!(maxOp >= 0.9 && maxOp <= 1)) fail(`${n} ${scheme}: a line lit by the flow should reach 0.94 in 2D, not ${maxOp}`)
+  // Angelo, 10 November, over the 9 November glow: "the arcs between the agents tend to stay lighted up, they should always appear and
+  // disappear around a moving dot then gradually fade away": a line itself stays a faint trace (at most 0.3); the light is the dot's tail
+  if (!(maxOp <= 0.31)) fail(`${n} ${scheme}: a whole line lit to ${maxOp}; the tails carry the light now`)
+  if (!(await p.evaluate(() => document.querySelectorAll('.lv-tail').length))) fail(`${n} ${scheme}: no tail behind the dots`)
   if (!per.length || !per.some(x => x > 0) || odd) fail(`${n} ${scheme}: the 3D flow is not drawn as a head and three trail dots ${JSON.stringify(per)}`)
   if (shotA.equals(shotB)) fail(`${n} ${scheme}: the 3D picture does not move`)
   if (errs.length) fail(`${n} ${scheme}: errors ${errs.join(' | ')}`)

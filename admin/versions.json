@@ -1,5 +1,54 @@
 [
   {
+    "version": "v0.2.1671",
+    "date": "2026-11-10",
+    "what": "stand-demo v4.1: the mandate is at most 30 words, no file list",
+    "by": "prompter@web-summit.indi",
+    "from": "3e8b25de6"
+  },
+  {
+    "version": "v0.2.1670",
+    "date": "2026-11-10",
+    "what": "token ledger line (v4 trial)",
+    "by": "dev@web-summit.indi",
+    "from": "9e8030b71"
+  },
+  {
+    "version": "v0.2.1669",
+    "date": "2026-11-10",
+    "what": "stand-demo v4: abp is {mandate, rung, text}, so the runner's ABP side gets its mandate",
+    "by": "prompter@web-summit.indi",
+    "from": "b71364ae7"
+  },
+  {
+    "version": "v0.2.1668",
+    "date": "2026-11-10",
+    "what": "for Angelo's stand laptop: start the side-by-side demo from a shell with no real keys set (dev@'s review)",
+    "by": "conductor@web-summit.indi",
+    "from": "bffa9148b"
+  },
+  {
+    "version": "v0.2.1667",
+    "date": "2026-11-10",
+    "what": "Jose's word for his conductor: \"Drain\" (brief 19, ask 1; Actions row 1)",
+    "by": "dashboard@web-summit.jose",
+    "from": "83a91b9ea"
+  },
+  {
+    "version": "v0.2.1666",
+    "date": "2026-11-10",
+    "what": "dashboard@PrompTugal.angelo: the live map: the slider plays the exchanges it passes, the graph grows as it did, arcs light only around their moving dot",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "0d21487d7"
+  },
+  {
+    "version": "v0.2.1665",
+    "date": "2026-11-10",
+    "what": "writer@PrompTugal.angelo: report: the authority-checks article is live",
+    "by": "writer@PrompTugal.angelo",
+    "from": "27a1e1b24"
+  },
+  {
     "version": "v0.2.1664",
     "date": "2026-11-10",
     "what": "desk.conductor@PrompTugal.angelo: publish the authority-checks article (0-PUB-AC1); writer@ woken",

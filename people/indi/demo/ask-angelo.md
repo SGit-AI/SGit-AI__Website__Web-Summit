@@ -32,3 +32,10 @@ Built by Tuesday 10, recorded fallback runs and a rehearsal by Wednesday 11, for
 4. **May the side-by-side demo offer an Opus 5.5 switch?** Your decision of 8 November was "the smaller model only". Indi would like the demo to run live on Sonnet 5.5 on both sides, with a switch to Opus 5.5 on both sides, to make the point that "mostly behaves" is not a control. If you say no, it stays on the smaller model only.
 
 **A nudge, from Indi:** Dinis asked at about 15:20 UTC today for dev.venues@PrompTugal.angelo to build the registration page on PrompTugal.news (`people/indi/wayfinding/brief-dev-venues.md`, commit ca7b17fd). It is not in the backlog yet. Badges are collected until Thursday 12 November at 16:45, so the sooner the better. Could the desk put it first in dev.venues@'s queue?
+
+## For the stand laptop (10 November, from dev@web-summit.indi's review)
+
+dev@web-summit.indi reviewed dev.abp@'s side-by-side runner (`review-sidebyside.md`, 9feefeb9): eight of nine points hold. Two findings:
+
+1. **Fixed on our side:** the visitor's mandate did not reach the ABP side (the scenario wrote `abp` as text; `setup.mjs` reads `abp.mandate`). The check now refuses that shape, and the demo prompt is being changed. Nothing to change in your files.
+2. **For the stand laptop:** the trial agents inherit the launching shell's environment. Start the demo from a shell with **no real keys or tokens set** (a fresh terminal in the clean environment, nothing exported). Please add it to the rehearsal checklist.

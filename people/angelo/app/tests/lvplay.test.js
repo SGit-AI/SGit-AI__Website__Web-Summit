@@ -20,7 +20,9 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
   // (1) fast forward
   await p.click('[data-lv-play="21600"]'); await p.waitForTimeout(400); const a = await shown(); await p.waitForTimeout(2000); const c = await shown()
   const hours = (c - a) / 36e5
-  if (!(a < from + 6 * 36e5)) fail(`${n}: ⏩ did not start near the beginning (${new Date(a).toISOString()})`)
+  // the beginning is the first exchange on record (replay-events.json, since dashboard@'s 10 November change), not live.json's from
+  const RE = require('../replay-events.json'), first = Date.parse(RE.from) + Math.min(...RE.events.filter(e => e[1] >= 0).map(e => e[0])) * 6e4
+  if (!(a >= first - 36e5 && a < first + 6 * 36e5)) fail(`${n}: ⏩ did not start near the first exchange on record (${new Date(a).toISOString()}, first ${new Date(first).toISOString()})`)
   if (!(hours > 8 && hours < 16)) fail(`${n}: ⏩ ran ${hours.toFixed(1)} hours in 2 s, not about 12`)
   const pressed = await p.getAttribute('[data-lv-play="21600"]', 'aria-pressed'); if (pressed !== 'true') fail(`${n}: ⏩ not shown as running`)
   // (2) the dumbbell follows
@@ -35,9 +37,20 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
   await p.click('[data-lv-golive]'); await p.waitForTimeout(500); const live = await shown()
   if (Date.now() - live > 10 * 6e4) fail(`${n}: LIVE did not return to now`)
   if (await p.$eval('[data-lv-play="3600"]', e => e.getAttribute('aria-pressed')) !== 'false') fail(`${n}: still playing after LIVE`)
+  // (6) the graph grows as it did: played from the start, fewer agents are shown than live; arcs light only around dots (tails)
+  await p.click('[data-lv-play="21600"]'); await p.waitForTimeout(1500)
+  const early = await p.evaluate(() => [...document.querySelectorAll('.tm-a')].filter(g => g.style.opacity !== '0').length), allA = await p.evaluate(() => document.querySelectorAll('.tm-a').length)
+  if (!(early < allA)) fail(`${n}: near the start ${early} of ${allA} agents shown: the graph does not grow`)
+  const tails = await p.evaluate(() => document.querySelectorAll('.lv-tail').length); if (!tails) fail(`${n}: no tail behind the dots`)
+  await p.click('[data-lv-golive]'); await p.waitForTimeout(600)
+  const liveA = await p.evaluate(() => [...document.querySelectorAll('.tm-a')].filter(g => g.style.opacity !== '0').length); if (liveA !== allA) fail(`${n}: live again, ${liveA} of ${allA} agents shown`)
+  console.log(`${n}: agents near the start ${early} of ${allA}, tails ${tails}`)
   // (5) dragged back: lines light at once
   await p.goto(U + '#live', { waitUntil: 'networkidle' }); await p.waitForSelector('[data-lv-dial-r]'); await p.waitForTimeout(1500)
   const busy = L.events.map(e => from + e[0] * 6e4).sort((x, y) => x - y), mid = busy[Math.floor(busy.length / 2)], back = Math.round((Date.now() - 4 * 6e4 - mid) / 6e4) - 5
+  // (7) dragging plays what the thumb passes: several steps over a busy stretch, dots on the graph while still dragging
+  const dots = await p.$eval('[data-lv-dial-r]', (r, v) => { for (let k = 0; k < 6; k++) { r.value = String(-(v + 60 * (6 - k))); r.dispatchEvent(new Event('input')) } return document.querySelectorAll('.lv-pulses circle:not(.halo)').length }, back)
+  if (!dots) fail(`${n}: dragging played nothing`)
   await p.$eval('[data-lv-dial-r]', (r, v) => { r.value = String(-v); r.dispatchEvent(new Event('input')); r.dispatchEvent(new Event('change')) }, back)
   await p.waitForTimeout(900)
   const lit = await p.evaluate(() => [...document.querySelectorAll('.lv-links path.lit, .lv-pulses circle')].length)
