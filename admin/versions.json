@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1720",
+    "date": "2026-11-10",
+    "what": "storm part 1: Dinis's memo at about 17:00, as the guidance now records it",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "d598df197"
+  },
+  {
     "version": "v0.2.1719",
     "date": "2026-11-10",
     "what": "token ledger line (session start)",
