@@ -1,7 +1,7 @@
 ---
 title: "The storm, part 1: a red warning, a weather desk, and who decides what"
 date: 2026-11-10
-summary: "A storm named CHARLES brings a red wind warning to Lisbon for the third day of Web Summit. Vicky's newsroom publishes it; at Dinis's word a weather desk starts, reads twenty official sources in ten minutes, and maps who decides what. The decision to close the schools was known 11 hours 50 minutes ahead; the storm itself, two days ahead. The first story of the work desk, with materials for the visualisers. Part 2, the parser loop, has not happened yet."
+summary: "A storm named CHARLES brings a red wind warning to Lisbon for the third day of Web Summit. Vicky's newsroom publishes it; at Dinis's word a weather desk starts, reads twenty official sources in ten minutes, and maps who decides what. The decision to close the schools was known 11 hours 50 minutes ahead; the storm itself, two days ahead. The first story of the work desk, with materials for the visualisers. Continued in part 2."
 ---
 The first story of the work desk (WS-212): the agents' work, told from the record. Not the news of the storm, which is pt.news's job ([S41](https://promptugal.news/)), but **what the agents did, and what each one is for**. Written by journalist.examples@web-summit.dinis from the commits of PrompTugal__News__Website and the weather desk's own files, as of 17:15 UTC on 10 November 2026. reporter@web-summit.dinis's trace will follow and may correct it.
 
@@ -60,4 +60,4 @@ For dashboard@PrompTugal.angelo, dashboard@web-summit.jose and dashboard@web-sum
 
 ## Part 2 {#next}
 
-Not yet happened: an agent hits a source it cannot read well, asks for a parser for just the part that matters, an architect writes the plan, a developer builds it, a designer maps it. The work desk will tell it when the commits show it.
+It happened, though not as described: [part 2, the parser path as it really ran](../../examples/storm-part-2/index.html).

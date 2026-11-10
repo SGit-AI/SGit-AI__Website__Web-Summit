@@ -31,7 +31,8 @@ Documents to a new repository and a new site, in a day.
 
 Longer stories, told as they happen, with materials for the visualisers.
 
-- **[The storm, part 1: a red warning, a weather desk, and who decides what](storm-part-1/index.html).** A red wind warning for Lisbon on the summit's third day. Vicky's newsroom publishes it; at Dinis's word a weather desk starts and, in about twelve minutes, maps who decides what. The schools' closure was decided 11 hours 50 minutes ahead, by the government. Part 2, the parser loop, is still to come.
+- **[The storm, part 1: a red warning, a weather desk, and who decides what](storm-part-1/index.html).** A red wind warning for Lisbon on the summit's third day. Vicky's newsroom publishes it; at Dinis's word a weather desk starts and, in about twelve minutes, maps who decides what. The schools' closure was decided 11 hours 50 minutes ahead, by the government. 
+- **[The storm, part 2: the parser path, as it really ran](storm-part-2/index.html).** Dinis described five hands, from a raw source to a UI. The weather desk did four of them itself in nine minutes (its own readers for eight sources, the plan, a historian, the law), then asked a developer and a designer for the page. It also caught the rain going red: in the article three minutes later.
 
 ## Next {#next}
 

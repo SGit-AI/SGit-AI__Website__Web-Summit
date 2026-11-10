@@ -2,47 +2,281 @@
   "schema": "ws-decision-graph/0.1",
   "story": "the storm (CHARLES, Lisbon, Wednesday 11 November 2026)",
   "made_by": "journalist.examples@web-summit.dinis",
-  "from": "weather@PrompTugal.vicky's desk (PrompTugal/PrompTugal__News__Website desks/weather-vicky/, live.md and decision-chain.md at eca7b396, read 17:10 UTC 10 Nov); every node cites the desk's source and the time the desk read it",
-  "as_of": "2026-11-10T17:04Z",
-  "event": {"what": "IPMA red wind warning in force for Lisbon district", "from": "2026-11-11T12:00Z", "to": "2026-11-11T21:00Z", "note": "Lisbon time = UTC in November"},
-  "status_values": {"done": "happened, with a source", "not_read": "the decision exists or may exist but the source refused our tools", "not_announced": "the source was read and says nothing yet", "unknown_time": "happened, but no source gives the time"},
+  "from": "weather@PrompTugal.vicky's desk (PrompTugal/PrompTugal__News__Website desks/weather-vicky/, live.md and decision-chain.md at eca7b396, read 17:10 UTC 10 Nov); every node cites the desk's source and the time the desk read it; updated at 18:40 UTC from the desk's own decision-graph.json (358fa21b, updated 18:00Z), which supersedes this file: read it at source, desks/weather-vicky/decision-graph.json",
+  "as_of": "2026-11-10T18:00Z",
+  "event": {
+    "what": "IPMA red wind warning in force for Lisbon district",
+    "from": "2026-11-11T12:00Z",
+    "to": "2026-11-11T21:00Z",
+    "note": "Lisbon time = UTC in November"
+  },
+  "status_values": {
+    "done": "happened, with a source",
+    "not_read": "the decision exists or may exist but the source refused our tools",
+    "not_announced": "the source was read and says nothing yet",
+    "unknown_time": "happened, but no source gives the time"
+  },
   "nodes": [
-    {"id": "ipma-communique", "who": "IPMA", "lane": "weather", "decision": "names the low CHARLES; says orange warnings will follow, an upgrade not ruled out", "at": "2026-11-09T13:17Z", "status": "done", "source": "https://www.ipma.pt/pt/otempo/comunicados/", "read": "2026-11-10T16:53Z"},
-    {"id": "anepc-aviso-21", "who": "ANEPC", "lane": "civil protection", "decision": "public warning Aviso 21: gusts to 120 km/h, avoid unnecessary travel", "at": "2026-11-09T20:30Z", "status": "done", "source": "https://prociv.gov.pt/pt/avisos-a-populacao/", "read": "2026-11-10T17:01Z"},
-    {"id": "ipma-red", "who": "IPMA", "lane": "weather", "decision": "red wind warning for Lisbon, Wed 12:00 to 21:00 (and seven more mainland districts)", "at": null, "at_window": ["2026-11-09T13:17Z", "2026-11-10T14:36Z"], "status": "unknown_time", "note": "the upgrade came after the communiqué; S41 reported it red when it was published at 14:36 on 10 Nov", "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json", "read": "2026-11-10T16:52Z"},
-    {"id": "gov-alert", "who": "the government (nine ministers, led by Internal Administration)", "lane": "government", "decision": "situação de alerta (alert situation) for all of mainland Portugal, 00:00 to 23:59 on 11 Nov", "at": "2026-11-10T12:10Z", "at_note": "the page's date", "status": "done", "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1", "read": "2026-11-10T17:01Z"},
-    {"id": "schools-closed", "who": "the government (measure a; co-signed by the Minister of Education)", "lane": "government", "decision": "schools and non-essential public services close on Wednesday", "at": "2026-11-10T12:10Z", "status": "done", "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1", "read": "2026-11-10T17:01Z", "note": "no separate Ministry of Education notice found"},
-    {"id": "outdoor-events", "who": "the government (measure b)", "lane": "government", "decision": "outdoor events suspended, whatever their nature", "at": "2026-11-10T12:10Z", "status": "done", "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1", "read": "2026-11-10T17:01Z"},
-    {"id": "amn-sea", "who": "Autoridade Marítima Nacional and the Navy", "lane": "sea and port", "decision": "sea warning: considerable worsening from Wed 06:00", "at": "2026-11-10T12:15Z", "status": "done", "source": "https://www.amn.pt/Media/Paginas/DetalheNoticia.aspx?nid=7101", "read": "2026-11-10T16:58Z"},
-    {"id": "anepc-readiness", "who": "ANEPC", "lane": "civil protection", "decision": "special readiness raised; SMS to the public about Wednesday", "at": null, "at_window": ["2026-11-10T00:00Z", "2026-11-10T17:01Z"], "status": "unknown_time", "source": "https://prociv.gov.pt/pt/noticias/depressao-charles-anepc-avisa-populacao-por-sms/", "read": "2026-11-10T17:01Z"},
-    {"id": "lisbon-commission", "who": "Lisbon's district and municipal civil-protection commissions; Câmara de Lisboa", "lane": "city", "decision": "whether to activate Lisbon's emergency plan; the city's own measures", "at": null, "status": "not_read", "note": "activated by the declaration (point 4); lisboa.pt refuses automated reads (403)", "source": "https://www.lisboa.pt"},
-    {"id": "transport", "who": "Fertagus, Carris, Carris Metropolitana", "lane": "transport", "decision": "possible disruption on Wednesday; no suspension", "at": "2026-11-10T16:59Z", "at_note": "time read", "status": "not_announced", "source": "https://api.carrismetropolitana.pt/v2/alerts", "read": "2026-11-10T16:59Z"},
-    {"id": "web-summit", "who": "Web Summit (and MEO Arena, FIL)", "lane": "the summit", "decision": "any change to Wednesday's programme", "at": "2026-11-10T16:55Z", "at_note": "time read", "status": "not_announced", "source": "https://websummit.com/blog/news/", "read": "2026-11-10T16:55Z"}
+    {
+      "id": "ipma-communique",
+      "who": "IPMA",
+      "lane": "weather",
+      "decision": "names the low CHARLES; says orange warnings will follow, an upgrade not ruled out",
+      "at": "2026-11-09T13:17Z",
+      "status": "done",
+      "source": "https://www.ipma.pt/pt/otempo/comunicados/",
+      "read": "2026-11-10T16:53Z"
+    },
+    {
+      "id": "anepc-aviso-21",
+      "who": "ANEPC",
+      "lane": "civil protection",
+      "decision": "public warning Aviso 21: gusts to 120 km/h, avoid unnecessary travel",
+      "at": "2026-11-09T20:30Z",
+      "status": "done",
+      "source": "https://prociv.gov.pt/pt/avisos-a-populacao/",
+      "read": "2026-11-10T17:01Z"
+    },
+    {
+      "id": "ipma-red",
+      "who": "IPMA",
+      "lane": "weather",
+      "decision": "red wind warning for Lisbon, Wed 12:00 to 21:00 (and seven more mainland districts)",
+      "at": null,
+      "at_window": [
+        "2026-11-09T13:17Z",
+        "2026-11-10T14:14Z"
+      ],
+      "status": "unknown_time",
+      "note": "IPMA's feed does not publish the issue time; the newsroom first saw it red at 14:14 on 10 Nov (the desk's graph)",
+      "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+      "read": "2026-11-10T16:52Z"
+    },
+    {
+      "id": "ipma-red-rain",
+      "who": "IPMA",
+      "lane": "weather",
+      "decision": "rain raised to red for Lisbon, Wed 12:00 to 18:00; communiqué no. 2",
+      "at": "2026-11-10T17:42Z",
+      "at_note": "first seen at the desk's 17:42 check; communiqué no. 2 at 17:07",
+      "status": "done",
+      "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+      "read": "2026-11-10T17:42Z"
+    },
+    {
+      "id": "gov-alert",
+      "who": "the government (nine ministers, led by Internal Administration)",
+      "lane": "government",
+      "decision": "situação de alerta (alert situation) for all of mainland Portugal, 00:00 to 23:59 on 11 Nov",
+      "at": "2026-11-10T12:10Z",
+      "at_note": "the page's date",
+      "status": "done",
+      "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+      "read": "2026-11-10T17:01Z"
+    },
+    {
+      "id": "schools-closed",
+      "who": "the government (measure a; co-signed by the Minister of Education)",
+      "lane": "government",
+      "decision": "schools and non-essential public services close on Wednesday",
+      "at": "2026-11-10T12:10Z",
+      "status": "done",
+      "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+      "read": "2026-11-10T17:01Z",
+      "note": "no separate Ministry of Education notice found"
+    },
+    {
+      "id": "outdoor-events",
+      "who": "the government (measure b)",
+      "lane": "government",
+      "decision": "outdoor events suspended, whatever their nature",
+      "at": "2026-11-10T12:10Z",
+      "status": "done",
+      "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+      "read": "2026-11-10T17:01Z"
+    },
+    {
+      "id": "amn-sea",
+      "who": "Autoridade Marítima Nacional and the Navy",
+      "lane": "sea and port",
+      "decision": "sea warning: considerable worsening from Wed 06:00",
+      "at": "2026-11-10T12:15Z",
+      "status": "done",
+      "source": "https://www.amn.pt/Media/Paginas/DetalheNoticia.aspx?nid=7101",
+      "read": "2026-11-10T16:58Z"
+    },
+    {
+      "id": "anepc-readiness",
+      "who": "ANEPC",
+      "lane": "civil protection",
+      "decision": "special readiness raised; SMS to the public about Wednesday",
+      "at": null,
+      "at_window": [
+        "2026-11-10T00:00Z",
+        "2026-11-10T17:01Z"
+      ],
+      "status": "unknown_time",
+      "source": "https://prociv.gov.pt/pt/noticias/depressao-charles-anepc-avisa-populacao-por-sms/",
+      "read": "2026-11-10T17:01Z"
+    },
+    {
+      "id": "lisbon-commission",
+      "who": "Lisbon's district and municipal civil-protection commissions; Câmara de Lisboa",
+      "lane": "city",
+      "decision": "whether to activate Lisbon's emergency plan; the city's own measures",
+      "at": null,
+      "status": "not_read",
+      "note": "activated by the declaration (point 4); lisboa.pt refuses automated reads (403)",
+      "source": "https://www.lisboa.pt"
+    },
+    {
+      "id": "transport",
+      "who": "Fertagus, Carris, Carris Metropolitana",
+      "lane": "transport",
+      "decision": "possible disruption on Wednesday; no suspension",
+      "at": "2026-11-10T16:59Z",
+      "at_note": "time read",
+      "status": "not_announced",
+      "source": "https://api.carrismetropolitana.pt/v2/alerts",
+      "read": "2026-11-10T16:59Z"
+    },
+    {
+      "id": "web-summit",
+      "who": "Web Summit (and MEO Arena, FIL)",
+      "lane": "the summit",
+      "decision": "any change to Wednesday's programme",
+      "at": "2026-11-10T16:55Z",
+      "at_note": "time read",
+      "status": "not_announced",
+      "source": "https://websummit.com/blog/news/",
+      "read": "2026-11-10T16:55Z"
+    },
+    {
+      "id": "escalation",
+      "who": "the government",
+      "lane": "next",
+      "decision": "contingency or calamity (Lei 27/2006 arts. 16, 19)",
+      "at": "2026-11-10T18:00Z",
+      "at_note": "time read",
+      "status": "not_announced",
+      "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/",
+      "read": "2026-11-10T18:00Z"
+    },
+    {
+      "id": "reopening",
+      "who": "the government, the city, the operators, Web Summit",
+      "lane": "next",
+      "decision": "the end of the measures and the reopening on Thursday 12 Nov",
+      "at": "2026-11-10T18:00Z",
+      "at_note": "time read",
+      "status": "not_announced",
+      "source": "desks/weather-vicky/decision-graph.json",
+      "read": "2026-11-10T18:00Z"
+    }
   ],
   "edges": [
-    {"from": "ipma-communique", "to": "ipma-red", "kind": "sourced", "why": "the communiqué said warnings would follow and an upgrade was not ruled out"},
-    {"from": "ipma-communique", "to": "anepc-aviso-21", "kind": "analysis", "why": "Aviso 21 repeats IPMA's figures seven hours later"},
-    {"from": "ipma-red", "to": "gov-alert", "kind": "sourced", "why": "the declaration cites IPMA's gusts"},
-    {"from": "gov-alert", "to": "schools-closed", "kind": "sourced", "why": "measure (a)"},
-    {"from": "gov-alert", "to": "outdoor-events", "kind": "sourced", "why": "measure (b)"},
-    {"from": "gov-alert", "to": "lisbon-commission", "kind": "sourced", "why": "point 4 activates the coordination centres and commissions"},
-    {"from": "ipma-red", "to": "anepc-readiness", "kind": "analysis", "why": "readiness follows the warnings; no source gives the order"},
-    {"from": "ipma-red", "to": "transport", "kind": "sourced", "why": "Fertagus's notice names the red alert"},
-    {"from": "outdoor-events", "to": "web-summit", "kind": "analysis", "why": "no source says whether measure (b) touches any part of the summit; the main halls are indoors"},
-    {"from": "lisbon-commission", "to": "web-summit", "kind": "analysis", "why": "an organiser would likely follow the authorities' and the venue's guidance"}
+    {
+      "from": "ipma-communique",
+      "to": "ipma-red",
+      "kind": "sourced",
+      "why": "the communiqué said warnings would follow and an upgrade was not ruled out"
+    },
+    {
+      "from": "ipma-communique",
+      "to": "anepc-aviso-21",
+      "kind": "analysis",
+      "why": "Aviso 21 repeats IPMA's figures seven hours later"
+    },
+    {
+      "from": "ipma-red",
+      "to": "gov-alert",
+      "kind": "sourced",
+      "why": "the declaration cites IPMA's gusts"
+    },
+    {
+      "from": "gov-alert",
+      "to": "schools-closed",
+      "kind": "sourced",
+      "why": "measure (a)"
+    },
+    {
+      "from": "gov-alert",
+      "to": "outdoor-events",
+      "kind": "sourced",
+      "why": "measure (b)"
+    },
+    {
+      "from": "gov-alert",
+      "to": "lisbon-commission",
+      "kind": "sourced",
+      "why": "point 4 activates the coordination centres and commissions"
+    },
+    {
+      "from": "ipma-red",
+      "to": "anepc-readiness",
+      "kind": "analysis",
+      "why": "readiness follows the warnings; no source gives the order"
+    },
+    {
+      "from": "ipma-red",
+      "to": "transport",
+      "kind": "sourced",
+      "why": "Fertagus's notice names the red alert"
+    },
+    {
+      "from": "outdoor-events",
+      "to": "web-summit",
+      "kind": "analysis",
+      "why": "no source says whether measure (b) touches any part of the summit; the main halls are indoors"
+    },
+    {
+      "from": "lisbon-commission",
+      "to": "web-summit",
+      "kind": "analysis",
+      "why": "an organiser would likely follow the authorities' and the venue's guidance"
+    },
+    {
+      "from": "ipma-red-rain",
+      "to": "escalation",
+      "kind": "analysis",
+      "why": "a second red warning raises the stakes; history: Kristin's calamity came after impact, backdated (the desk's history.md, press)"
+    }
   ],
   "lead_times": [
-    {"from": "ipma-communique", "to_event": "46 h 43 min", "note": "the first public signal, from 9 Nov 13:17 to the red warning's start"},
-    {"from": "anepc-aviso-21", "to_event": "39 h 30 min"},
-    {"from": "gov-alert", "to_event": "23 h 50 min", "to_alert_start": "11 h 50 min", "note": "schools learnt at 12:10 on Tuesday that they close at midnight"},
-    {"from": "amn-sea", "to_sea_worsening": "17 h 45 min"}
+    {
+      "from": "ipma-communique",
+      "to_event": "46 h 43 min",
+      "note": "the first public signal, from 9 Nov 13:17 to the red warning's start"
+    },
+    {
+      "from": "anepc-aviso-21",
+      "to_event": "39 h 30 min"
+    },
+    {
+      "from": "gov-alert",
+      "to_event": "23 h 50 min",
+      "to_alert_start": "11 h 50 min",
+      "note": "schools learnt at 12:10 on Tuesday that they close at midnight"
+    },
+    {
+      "from": "amn-sea",
+      "to_sea_worsening": "17 h 45 min"
+    },
+    {
+      "from": "ipma-red-rain",
+      "to_event": "18 h 18 min",
+      "note": "first seen 17:42 on Tuesday, to the red rain's start at 12:00 on Wednesday"
+    }
   ],
   "open": [
-    "when IPMA raised Lisbon to red (not in the record read)",
     "Lisbon's own measures (city sites refuse our tools)",
     "Web Summit's decision, if any, and when",
     "the reopening: when is it decided, by whom",
-    "history: past red wind warnings for Lisbon and what closed then (the desk's historian, proposed)",
-    "the probability of the event at each point: not in any source read; to be labelled as analysis if added"
-  ]
+    "the probability of the event at each point: not in any source read; to be labelled as analysis if added",
+    "the reopening (Thursday): by whom, when"
+  ],
+  "history": {
+    "source": "desks/weather-vicky/history.md (the desk's historian sub-agent; press labelled)",
+    "finding_analysis": "in every past case found (Kristin and Leonardo, 2026; Lisbon floods, 2022; Martinho, 2025; Elsa, 2019; Leslie, 2018), the government's declaration came after the storm hit, and closures were decided locally on the morning; for CHARLES the government closed schools a day ahead. 'A first' is the historian's claim to re-check, not a fact."
+  }
 }

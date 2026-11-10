@@ -3,10 +3,10 @@
 /pipeline/'s case-study graphics. One lane per actor, one column per step (time is printed, not scaled: the
 gaps in these flows run from seconds to hours). Short labels come from the journalist's notes file
 (team/journalist.examples/notes/<id>.json: title, subtitle, labels {n: "line1|line2"}, side [n], output).
-  Optional in notes: col (column width), edges [[from, to, "dashed"?]] to draw parallel chains instead of one.
+  Optional in notes: steps [n...] (draw only these), col (column width), edges [[from, to, "dashed"?]] to draw parallel chains instead of one.
   python3 team/journalist.examples/tools/flow_svg.py <id> [trace.json]   ->  assets/examples/<id>.svg
 """
-import json, sys, os
+import json, sys, os, re
 from html import escape as e
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -14,7 +14,7 @@ tid = sys.argv[1]
 trace = json.load(open(sys.argv[2] if len(sys.argv) > 2 else f'{ROOT}/team/reporter/traces/{tid}.json'))
 notes = json.load(open(f'{ROOT}/team/journalist.examples/notes/{tid}.json'))
 COL = {'person': '#8a3b1f', 'agent': '#1f5f8b', 'ci': '#5e5d59', 'out': '#c96442'}
-steps = trace['steps']
+steps = [s for s in trace['steps'] if not notes.get('steps') or s['n'] in notes['steps']]
 lanes = []
 for s in steps:
     k = (s['actor']['name'], s['actor']['kind'])
@@ -76,5 +76,5 @@ o.append(f'<text x="30" y="{H-32}" font-size="12" fill="#5e5d59">Drawn by journa
 o.append(f'<text x="30" y="{H-14}" font-size="12" fill="#5e5d59">Dashed: a side step, or a step with no public evidence. Times UTC, {e(notes.get("date", "10 November 2026"))}. Columns are steps, not to scale.</text>')
 o.append('</svg>')
 os.makedirs(f'{ROOT}/assets/examples', exist_ok=True)
-open(f'{ROOT}/assets/examples/{tid}.svg', 'w').write('\n'.join(o) + '\n')
+open(f'{ROOT}/assets/examples/{tid}.svg', 'w').write(re.sub(r'(\d+\.\d)\d+', r'\1', '\n'.join(o)) + '\n')  # one decimal: no long digit runs
 print(f'assets/examples/{tid}.svg')
