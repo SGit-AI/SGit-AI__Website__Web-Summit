@@ -1,12 +1,12 @@
 {
   "about": "Where security.repos@web-summit.dinis stopped, per repository and branch: the last commit reviewed (the branch head when the run read it). The next run reviews every commit reachable from any branch and not from these. From the second run, every branch is listed, not only those active since the baseline.",
   "agent": "security.repos@web-summit.dinis",
-  "last_run": "2026-11-10T18:30Z",
+  "last_run": "2026-11-10T20:30Z",
   "baseline_from": "2026-11-08T11:00Z",
   "repos": {
     "SGit-AI/SGit-AI__Website__Web-Summit": {
       "branches": {
-        "dev": "c929e800:3efd1c7f:90a48c65:404377b3:b119e01a",
+        "dev": "cbe5e592:81f41a83:95524a40:86803141:ca242e3c",
         "claude/awesome-dirac-rp94os": "1cc9740a:f6520690:6617362b:879004f6:564e0e8d",
         "claude/beautiful-clarke-mqhept": "a88e8c65:a2e854b4:1b5b2e2f:7506bab1:c53e2ddf",
         "claude/conductor-jose-setup-ogxaka": "ccfecefe:90fb74e8:38fd1b0b:0f89b40b:e179593d",
@@ -17,7 +17,7 @@
         "claude/hopeful-rubin-3zcktn": "451159b3:dce814eb:ce158db7:68f8f7b7:9b2a9fbe",
         "claude/modest-brahmagupta-37bfva": "60e4404e:43c38faa:28846c2e:c1eaf535:b0dcb11c",
         "claude/modest-lamport-v1ejmm": "166b6650:1b590251:32aae019:e6946550:73cab8f1",
-        "claude/nifty-bell-f1rkca": "9d6754f6:e7fd2e53:527e59b3:39c5d936:e4e1ae1c",
+        "claude/nifty-bell-f1rkca": "fe8b75ef:854fb87e:0523d301:744b7a70:0b29f0ac",
         "claude/nifty-knuth-cnyek0": "359a829d:401c847b:468b04e0:8b63391a:77511427",
         "claude/optimistic-feynman-7pkot9": "dc306d7a:08898d1d:79bc0544:0601138f:ad218353",
         "claude/relaxed-hypatia-eo624i": "63e25ecf:ce5cecb5:2d2d4c81:7683af82:eb7b3ec8",
@@ -40,16 +40,16 @@
     },
     "PrompTugal/PrompTugal__News__Website": {
       "branches": {
-        "dev": "d826acce:90279271:c607dbdb:564e7070:5eef0e74",
+        "dev": "ff17d004:46ebf74e:e6b7889e:6e241dce:42f45e71",
         "claude/eager-euler-x3k3vm": "6bec1c34:72cbdc31:3d6b5c7c:a2142cee:7f9434b7",
         "claude/serene-keller-r1pzfc": "3affa4b4:a3478ef4:0565a131:54ffe10e:0c55e8bc",
         "claude/sweet-heisenberg-m1vm71": "c9217130:f27dae9a:55e5a708:0e644f28:6b31f73e",
         "main": "9629432a:48d2514a:a11d8917:2fb3173f:4aedce90",
         "work/conductor-silvio": "e9ffd69b:1fc3f1cf:3aecbb1e:e3474c57:493ea465",
         "work/designer.experiments": "1177421a:6cc6e53e:ff0b578a:5b78ad2e:af1427ca",
-        "work/dev.data": "5b5fc511:19a18186:075a1d3f:e959a469:d6d9680a",
-        "work/dev.graphs": "148e8963:674edbd9:57ac2275:368b8442:e8e74360",
-        "work/dev.pages": "6b177b24:d738ea31:468eef64:f5f457b7:2cb3ef43",
+        "work/dev.data": "13492ebc:c3b725f4:18b2a9aa:ce5bc834:09ee96cc",
+        "work/dev.graphs": "d59bcbef:3cfd15db:96d7fb94:0e40c941:be556a89",
+        "work/dev.pages": "c1b9349f:f65f882c:84decfdb:ab2f44c8:0868e8f4",
         "work/dev.portugal": "a1b6759c:2e35335a:aeef19d1:80e30d5f:3123cae5",
         "work/dev.search": "938ab510:70025f12:21ecfe41:5dc1b817:0b3a692e",
         "work/dev.verify": "56ed3c82:8adf8857:e4b2a852:d92f8a20:975fb0aa",
