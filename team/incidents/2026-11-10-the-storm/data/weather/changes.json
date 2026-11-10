@@ -20,6 +20,13 @@
     "LPPT METAR 19:00: 19 km/h"
    ],
    "errors": []
+  },
+  {
+   "read_utc": "2026-11-10T19:22:35Z",
+   "changes": [
+    "no change"
+   ],
+   "errors": []
   }
  ]
 }

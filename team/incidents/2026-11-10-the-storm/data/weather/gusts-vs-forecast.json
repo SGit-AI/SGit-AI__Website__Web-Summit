@@ -1,6 +1,6 @@
 {
  "about": "The latest observed wind in Lisbon against what was forecast for that hour. Facts with sources; no analysis here (see analysis.md).",
- "read_utc": "2026-11-10T19:07:26Z",
+ "read_utc": "2026-11-10T19:22:35Z",
  "observed_airport_latest": {
   "time_utc": "2026-11-10T19:00Z",
   "raw": "METAR LPPT 101900Z 21010KT 9999 FEW008 BKN016 19/17 Q1008",
@@ -27,40 +27,40 @@
    "station": "Oeiras / Vila Fria (CMO)",
    "time_utc": "2026-11-10T18:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T19:07:26Z"
+   "read_utc": "2026-11-10T19:22:35Z"
   },
   {
    "kmh": 14.8,
    "station": "Lisboa, Relógio",
    "time_utc": "2026-11-10T18:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T19:07:26Z"
+   "read_utc": "2026-11-10T19:22:35Z"
   },
   {
    "kmh": 14.4,
    "station": "Lisboa, Carnide (CML)",
    "time_utc": "2026-11-10T18:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T19:07:26Z"
+   "read_utc": "2026-11-10T19:22:35Z"
   },
   {
    "kmh": 13.3,
    "station": "Lisboa (Geofísico)",
    "time_utc": "2026-11-10T18:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T19:07:26Z"
+   "read_utc": "2026-11-10T19:22:35Z"
   },
   {
    "kmh": 10.1,
    "station": "Lisboa, Amoreiras (LFCL)",
    "time_utc": "2026-11-10T18:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-10T19:07:26Z"
+   "read_utc": "2026-11-10T19:22:35Z"
   }
  ],
  "forecast_taf_groups_for_that_hour": {
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-10T19:07:26Z",
+  "read_utc": "2026-11-10T19:22:35Z",
   "groups": [
    {
     "change": "BASE",
@@ -86,7 +86,7 @@
   "end_utc": "2026-11-11T21:00:00Z",
   "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-10T19:07:26Z"
+  "read_utc": "2026-11-10T19:22:35Z"
  },
  "forecast_ipma_hourly_wed_peak_mean": {
   "time_utc": "2026-11-11T18:00Z",
@@ -97,6 +97,6 @@
   "temp_c": 18.7,
   "sea_total_m": 4.8,
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-10T19:07:26Z"
+  "read_utc": "2026-11-10T19:22:35Z"
  }
 }
