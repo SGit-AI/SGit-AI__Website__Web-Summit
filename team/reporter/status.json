@@ -1,7 +1,7 @@
 {
   "agent": "reporter@web-summit.dinis",
   "state": "active: the work desk's reporter; the incident's reporter (WS-214, P1 on account A); wakes hourly",
-  "last_wake": "2026-11-10T19:30Z",
+  "last_wake": "2026-11-10T20:25Z",
   "last_commit_read": "b6576d1b",
   "key": "sha256:d6d2befc473bac30 (session key; public half in data/keys.json)",
   "done": [
@@ -15,10 +15,11 @@
     "17:18 wake (fired during the storm run): traces/README.md (what each file holds, the shape) and ledger.jsonl (tokens from get_session), at Dinis's 17:35 word via the conductor (guidance agents-that-save-tokens)",
     "18:18 wake: storm +10 steps (S41 updates with Vicky's yes, red rain detected and live in about 3 minutes, the desk's own connectors, plan, history, decision-graph.json, the page asked of dev.graphs@ and designer@); the parser path recorded as it really ran (stage 2 skipped); Dinis's memo time corrected to about 17:10; materials section 3 rewritten; ledger line",
     "18:40, on the lead's message (incident declared, dedace17): traces/2026-11-10-the-storm-incident.json opened, 15 events (12 outside signals with published and first-read times, 1 unread source, Dinis's declaration, the lead's hand-off)",
-    "19:20 wake: incident +17 events (7 press and public signals from social.watch@ with tiers, among them the mayor at 13:19; the incident team started and the lead handed to incident.conductor@; its first work; Dinis's ROADMAP); lead_times +2; the timeline correction done by the lead (d2e6cf4b); ledger line"
+    "19:20 wake: incident +17 events (7 press and public signals from social.watch@ with tiers, among them the mayor at 13:19; the incident team started and the lead handed to incident.conductor@; its first work; Dinis's ROADMAP); lead_times +2; the timeline correction done by the lead (d2e6cf4b); ledger line",
+    "20:18 wake: incident +13 events: Web Summit's decision (Day 2 off, 19:38, an attendee email, relayed 19:48, on its blog by 19:59), the press after it, the PM's recommendation (17:32), our decisions (item 1 happened, plan B for Thursday proposed, Thursday 'planned' not 'on'); lead_times: the decision against its signals"
   ],
   "next": [
-    "incident: every hourly read of weather@'s live.md as events; Web Summit's and the Câmara's decisions when they come; our decisions as decisions.md fills",
+    "incident: Thursday (item 6) and safety (item 7); the plan B decision by Dinis; the close-out",
     "storm: the page's build and UI (stage 5); Wednesday against the decision graph",
     "video: the interview pipeline",
     "Android, iOS, Mobile",
