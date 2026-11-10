@@ -120,12 +120,12 @@ ${db ? '' : '<li><b>Web Summit</b>: the public CRM of Web Summit (companies, spe
     }
     const HUDC = { person: '#DFF6FF', agent: '#4FD1F5', policy: '#8FB4FF', resource: '#C8F4FF' }
     const styleSaved = () => { try { return localStorage.getItem('cc.brain.style') === 'glass' ? 'glass' : 'hud' } catch { return 'hud' } }
-    const hudOn = () => (G.which === 'universe' || G.which === 'all') && (G.style || (G.style = styleSaved())) !== 'glass'
+    const hudOn = () => G.which === 'universe' || G.which === 'all'
     const STY_LBL = () => (G.style || styleSaved()) === 'glass' ? 'Light points' : 'Balloons'
     const hudCol = n => n.type === 'agent' ? (SHIRT[n.n && n.n.owner] || '#4FD1F5') : n.type === 'policy' ? (SHIRT[UNI && UNI.pown[n.id]] || '#8FB4FF') : (HUDC[n.type] || COL[n.type] || '#4FD1F5')
     function setHud() {
         const on = hudOn(); if (G.holder) { G.holder.classList.toggle('hud', on); G.holder.classList.toggle('uni', G.which === 'all') }
-        const sb = G.dock && G.dock.querySelector('[data-bm="style"]'); if (sb) { sb.hidden = !(G.which === 'all' || G.which === 'universe'); sb.querySelector('.lbl').textContent = STY_LBL(); sb.setAttribute('aria-pressed', String(!on)) }
+        const sb = G.dock && G.dock.querySelector('[data-bm="style"]'); if (sb) { sb.hidden = true; sb.querySelector('.lbl').textContent = STY_LBL(); sb.setAttribute('aria-pressed', String(!on)) }
         if (G.fg) G.fg.backgroundColor(on ? '#020509' : '#03040C')
         ;(G.decoAll || []).forEach(o => { if (o !== G.stars) o.visible = !on }); if (G.stars) G.stars.material.opacity = on ? 0.35 : 0.8
     }
@@ -232,13 +232,13 @@ ${db ? '' : '<li><b>Web Summit</b>: the public CRM of Web Summit (companies, spe
     const who = () => { const n = (document.querySelector('.cc-me b') || {}).textContent || ''; return n ? n.split(' ')[0] + "'s brain" : 'My brain' }
     function shell() {
         const h = document.createElement('div'); h.className = 'bm'
-        h.innerHTML = `<div class="bm-canvas" aria-label="A 3D map of the brain: drag to turn, pinch or scroll to zoom, tap a point to open the note"></div><div class="bm-vignette" aria-hidden="true"></div><div class="bm-labels" aria-hidden="true"></div>
+        h.innerHTML = `<div class="bm-circuit" hidden></div><div class="bm-canvas" aria-label="A 3D map of the brain: drag to turn, pinch or scroll to zoom, tap a point to open the note"></div><div class="bm-vignette" aria-hidden="true"></div><div class="bm-labels" aria-hidden="true"></div>
 <div class="bm-top"><div class="bm-title"><b class="bm-name">${G.which === 'all' ? 'Universe' : G.which === 'summit' ? 'Summit brain' : esc(who())}</b><span class="bm-count"></span></div><div class="bm-which" role="group" aria-label="Which brain"><button type="button" data-bm-which="mine" aria-pressed="true">My brain</button><button type="button" data-bm-which="summit" aria-pressed="false">Summit brain</button><button type="button" data-bm-which="universe" aria-pressed="false">Agent Universe</button></div><label class="sr" for="bm-q">Find in the map</label><input id="bm-q" class="bm-q" type="search" placeholder="Find…" autocomplete="off"></div>
 <div class="bm-card" hidden></div><div class="bm-hud" aria-hidden="true"><i class="hx"></i><i class="hy"></i><i class="hc"></i><i class="hf tl"></i><i class="hf tr"></i><i class="hf bl"></i><i class="hf br"></i><div class="hleg"></div><p class="hlog">agent universe :: ready</p></div>
 <button type="button" class="bm-exit" data-bm="cinema" aria-label="Leave cinema">✕</button>
 <div class="bm-msg" hidden></div>`
         G.dock = document.createElement('div'); G.dock.className = 'bm-dock'
-        G.dock.innerHTML = `<div class="bm-legend" role="group" aria-label="Show or hide a kind">${legend()}</div><div class="bm-bar" role="group" aria-label="The map"><button type="button" class="bm-btn play" data-bm="demo">▶ Play demo</button><button type="button" class="bm-btn bm-fullbtn" data-bm="full" aria-pressed="false" title="Full screen">${FULL_ICO(false)}<span class="lbl">Full screen</span></button><button type="button" class="bm-btn bm-stylebtn" data-bm="style" aria-pressed="false" title="Switch the look: light points or glass balloons"><span class="lbl">${STY_LBL()}</span></button><button type="button" class="bm-btn" data-bm="cinema">Cinema</button><button type="button" class="bm-btn" data-bm="reset">Reset</button></div>`
+        G.dock.innerHTML = `<div class="bm-legend" role="group" aria-label="Show or hide a kind">${legend()}</div><div class="bm-bar" role="group" aria-label="The map"><button type="button" class="bm-btn play" data-bm="demo">▶ Play demo</button><button type="button" class="bm-btn bm-fullbtn" data-bm="full" aria-pressed="false" title="Full screen">${FULL_ICO(false)}<span class="lbl">Full screen</span></button><button type="button" class="bm-btn bm-viewbtn" data-bm="view" aria-pressed="false" title="Switch the Universe between the 3D map and the circuit"><span class="lbl">Circuit</span></button><button type="button" class="bm-btn bm-stylebtn" data-bm="style" aria-pressed="false" title="Switch the look: light points or glass balloons"><span class="lbl">${STY_LBL()}</span></button><button type="button" class="bm-btn" data-bm="cinema">Cinema</button><button type="button" class="bm-btn" data-bm="reset">Reset</button></div>`
         const onClick = e => {
             const t = e.target.closest('[data-bm],[data-bm-type],[data-bm-go],[data-bm-open],[data-bm-which],[data-bm-layer]'); if (!t) return
             if (t.dataset.bmLayer) { const k = t.dataset.bmLayer; G.layers.has(k) ? G.layers.delete(k) : G.layers.add(k); if (!G.stand) try { localStorage.setItem('cc.brain.layers', JSON.stringify([...G.layers])) } catch {} ; stopDemo(); card(null); G.hot.clear(); G.hotLinks.clear(); G.dock.querySelector('.bm-legend').innerHTML = legend(); placePanels(); G.refresh(true); setTimeout(() => { if (G.fg) { G.fg.zoomToFit(1000, 30); fitRing() } }, 2500); return }
@@ -249,6 +249,7 @@ ${db ? '' : '<li><b>Web Summit</b>: the public CRM of Web Summit (companies, spe
             else if (t.dataset.bmGo) { const n = G.fg.graphData().nodes.find(x => x.id === t.dataset.bmGo); if (n) focus(n) }
             else if (t.dataset.bmOpen) { G.opts.open && G.opts.open(t.dataset.bmOpen) }
             else if (t.dataset.bm === 'demo') G.demo ? stopDemo() : demo()
+            else if (t.dataset.bm === 'view') { G.view = circOn() ? 'map' : 'circuit'; try { localStorage.setItem('cc.brain.view', G.view) } catch {} ; stopDemo(); card(null); circuit(); if (!circOn() && G.fg) setTimeout(() => { G.fg.zoomToFit(800, 30); fitRing() }, 300) }
             else if (t.dataset.bm === 'style') { G.style = hudOn() ? 'glass' : 'hud'; try { localStorage.setItem('cc.brain.style', G.style) } catch {} ; G.refresh(true) }
             else if (t.dataset.bm === 'cinema') cinema()
             else if (t.dataset.bm === 'full') full()
@@ -334,11 +335,104 @@ ${db ? '' : '<li><b>Web Summit</b>: the public CRM of Web Summit (companies, spe
         const grid = `<div class="u-grid">${ag.map(x => `<i title="${esc(x.title)}" style="background:${SHIRT[x.owner] || '#4FD1F5'};opacity:${x.policy ? 1 : .3}${G.sel && (x.id === G.sel || x.policy === G.sel) ? ';outline:2px solid #fff' : ''}"></i>`).join('')}</div><p class="u-sub">${S.agents_with_policy} with a policy · ${S.agents - S.agents_with_policy} without</p>`
         // 05 agent log; 06 open gaps of the selected agent
         const log = `<ul class="u-log">${(S.latest || []).slice(0, 7).map(c => `<li><span>${esc(c.at)}</span> ${safeUrl(c.url) ? `<a href="${esc(safeUrl(c.url))}" target="_blank" rel="noopener">${esc(c.hash)}</a>` : esc(c.hash)} <b>${esc(c.agent)}</b> ${esc(c.subject)}</li>`).join('')}</ul>`
-        const gaps = P ? `<ul class="u-gaps">${P.gap.slice(0, 6).map(g => `<li class="${g.open ? '' : 'u-closed'}"><i>${g.open ? '▲' : '✓'}</i>${esc(g.text.length > 120 ? g.text.slice(0, 119) + '…' : g.text)}</li>`).join('')}</ul>` : ''
+        const gaps = P ? `<ul class="u-gaps">${P.gap.slice(0, 6).map(g => `<li class="${g.open ? '' : 'u-closed'}"><i>${g.open ? '▲' : '✓'}</i>${esc(g.text.length > 120 ? g.text.slice(0, 119) + '…' : g.text)}</li>`).join('')}</ul>` : '<p class="u-src">This agent has no behaviour policy yet, so none of its gaps is written down. Pick another agent on the map.</p>'
         G.panels.innerHTML = frame('01', 'Policy tree', 'the agent · its sections', tree, 'c1') + frame('02', 'Reach vs mandate', A ? esc(A.title) : '', rvm, 'c2 wide')
             + frame('03', 'Barriers', 'enforced share', dial, 'c3') + frame('04', 'Agents', 'one square each', grid, 'c4') + frame('05', 'Agent log', 'as of ' + esc(asof), log, 'c5') + frame('06', 'Open gaps', A ? esc(A.title) : '', gaps, 'c6')
         if (G.uhead.nextElementSibling !== host) host.before(G.uhead)
         if (G.panels.previousElementSibling !== host) host.after(G.panels)
+    }
+    // ---------- the circuit view of the Universe ----------
+    const viewSaved = () => { try { return localStorage.getItem('cc.brain.view') === 'circuit' ? 'circuit' : 'map' } catch { return 'map' } }
+    const circOn = () => (G.which === 'all' || G.which === 'universe') && (G.view || (G.view = viewSaved())) === 'circuit'
+    const glints = w => (w.match(/<path[^>]*class="bc-w[^"]*\b(?:sel|team|hold)\b[^"]*"[^>]*\/>/g) || []).map((x, k) => x.replace(/class="bc-w([^"]*)"/, (m, c) => `class="bc-glint${/\bsel\b/.test(c) ? ' sel' : ''}" style="animation-delay:-${(k * 0.37) % 2.4}s"`).replace(/ style="stroke:[^"]*"(?= style)/, '')).join('')
+    function circuit() {
+        const box = G.holder && G.holder.querySelector('.bm-circuit'); if (!box) return
+        const on = circOn(); G.holder.classList.toggle('circ', on); box.hidden = !on
+        const vb = G.dock && G.dock.querySelector('[data-bm="view"]'); if (vb) { vb.hidden = !(G.which === 'all' || G.which === 'universe'); vb.querySelector('.lbl').textContent = on ? 'Map' : 'Circuit'; vb.setAttribute('aria-pressed', String(on)) }
+        try { if (G.fg) on ? G.fg.pauseAnimation() : G.fg.resumeAnimation() } catch {}
+        if (!on) return
+        if (!UNI || !UNI.notes.length) { box.innerHTML = '<p class="bc-msg">Opening the Universe…</p>'; return }
+        if (G.which === 'all' && !G.layers.has('agents')) { box.innerHTML = '<p class="bc-msg">Switch on <b>Agents &amp; policies</b> to see the circuit.</p>'; return }
+        const N = UNI.notes, S = UNI.stats || {}, byId = new Map(N.map(n => [n.id, n])), dev = !!UNI.dev && !G.stand
+        const owners = Object.keys(S.by_owner || {}), col = o => SHIRT[o] || '#4FD1F5', cut = (s, n) => (s = String(s == null ? '' : s)).length > n ? s.slice(0, n - 1) + '…' : s
+        const agents = owners.flatMap(o => N.filter(n => n.type === 'agent' && n.owner === o).sort((a, b) => a.title.localeCompare(b.title)))
+        const res = N.filter(n => n.type === 'resource'), polOf = a => a.policy ? byId.get(a.policy) : null, sched = a => /cron|every|hourly|daily|each (day|morning|evening)|\d\d:\d\d|\d+ \*|wake/i.test(a.schedule || '')
+        const me = ((document.querySelector('.cc-me b') || {}).textContent || '').split(' ')[0].toLowerCase()
+        if (!G.bcSel || !byId.get(G.bcSel)) G.bcSel = (agents.find(a => a.owner === me && /^conductor@/.test(a.title)) || agents.find(a => a.owner === me && a.policy) || agents.find(a => a.policy) || agents[0] || {}).id
+        const sel = byId.get(G.bcSel), sp = sel && polOf(sel), reachOf = a => { const p = polOf(a); return ((p && p.ilinks) || []).filter(r => byId.has(r)) }
+        const W = 1400, H = 700, BX = 292, BT = 24, BB = H - 24, step = (BB - BT) / Math.max(1, agents.length - 1)
+        const tick = new Map(agents.map((a, k) => [a.id, BT + k * step]))
+        const tx = (x, y, s, cls, anchor) => `<text x="${x}" y="${y}" class="${cls}"${anchor ? ` text-anchor="${anchor}"` : ''}>${esc(s)}</text>`
+        // a node card: a coloured header and typed rows, each with a port on both sides
+        const node = (x, y, w, head, hc, rows, cls = '') => { let s = `<g class="bc-n ${cls}"><rect x="${x}" y="${y}" width="${w}" height="${22 + rows.length * 17 + 6}" rx="3" class="bc-body"/><rect x="${x}" y="${y}" width="${w}" height="18" rx="3" style="fill:${hc}"/>${tx(x + 8, y + 13, head, 'bc-ht')}`
+            rows.forEach((r, k) => { const ry = y + 22 + k * 17 + 11; s += `<circle cx="${x}" cy="${ry - 4}" r="2.6" class="bc-port"/><circle cx="${x + w}" cy="${ry - 4}" r="2.6" class="bc-port" style="fill:${r[2] || '#7F97A8'}"/>${r[3] ? `<rect x="${x + 8}" y="${ry - 9}" width="22" height="7" rx="1" style="fill:${r[3]}"/>${tx(x + 36, ry, r[0], 'bc-t')}` : r[4] ? `<rect x="${x + 8}" y="${ry - 9}" width="8" height="8" class="bc-box"/>${tx(x + 22, ry, r[0], 'bc-t')}` : tx(x + 8, ry, r[0], 'bc-t')}${tx(x + w - 8, ry, r[1], 'bc-v', 'end')}` })
+            return s + '</g>' }
+        const portY = (y, k) => y + 22 + k * 17 + 7
+        let W1 = '', W2 = '', W3 = '', W4 = '', nodes = ''
+        // column A: the people
+        const PY = owners.map((o, k) => 8 + k * Math.floor((H - 12) / Math.max(1, owners.length)))
+        owners.forEach((o, k) => { const as = agents.filter(a => a.owner === o), withP = as.filter(a => a.policy).length, last = as.map(a => a.latest).filter(Boolean).sort((a, b) => String(b.at).localeCompare(String(a.at)))[0]
+            nodes += node(20, PY[k], 200, ((byId.get('p-' + o) || {}).title || o).split(' ')[0].toLowerCase(), col(o), [['agents', String(as.length)], ['with a policy', String(withP), withP === as.length ? '#3DDC97' : '#F5C542'], ['on a schedule', String(as.filter(sched).length), , , true], ['latest', last ? cut(last.at, 13) : '—']])
+            for (const a of as) { const ty = tick.get(a.id), sy = portY(PY[k], 0), on = a.id === G.bcSel
+                W1 += `<path data-a="${esc(a.id)}" class="bc-w${on ? ' sel' : sel && a.owner === sel.owner ? ' team' : ''}" style="stroke:${col(o)}" d="M220 ${sy} C 262 ${sy}, 252 ${ty}, ${BX} ${ty}"/>` } })
+        // the bus: one numbered line per agent
+        nodes += `<g class="bc-bus"><rect x="${BX - 6}" y="${BT - 14}" width="12" height="${BB - BT + 28}" rx="3"/>${agents.map((a, k) => `<g class="bc-tick${a.id === G.bcSel ? ' sel' : ''}" data-bc="${esc(a.id)}" role="button" tabindex="0" aria-label="${esc(a.title)}"><title>${esc(a.title)}</title><circle cx="${BX}" cy="${tick.get(a.id)}" r="${a.id === G.bcSel ? 4.5 : 2.6}" style="fill:${a.policy ? col(a.owner) : 'transparent'};${a.policy ? '' : 'stroke:#E6EEF5;stroke-width:1.4'}"/>${k % 5 === 0 ? tx(BX - 12, tick.get(a.id) + 3, String(k).padStart(2, '0'), 'bc-num', 'end') : ''}</g>`).join('')}${tx(BX + 4, BB + 22, 'agent bus', 'bc-m')}</g>`
+        // column B: the policy, its barriers, the gate, the owner, and the agents without one
+        const tot = k => agents.reduce((n, a) => { const p = polOf(a); return n + ((p && Array.isArray(p[k])) ? p[k].length : 0) }, 0)
+        const one = k => sp && Array.isArray(sp[k]) ? sp[k].length : 0, openG = p => p && Array.isArray(p.gap) ? p.gap.filter(g => g.open).length : 0
+        const B = S.barriers || null, bt = B ? (B.ENFORCED + B.PARTIAL + B.DETECTIVE + B.ADVISORY) || 1 : 1, kinds = sp && Array.isArray(sp.barriers) ? sp.barriers.reduce((m, b) => (m[b.kind] = (m[b.kind] || 0) + 1, m), {}) : {}
+        const NB = { x: 560, w: 230 }, Y = { abp: 8, bar: 150, gate: 280, own: 395, nop: 510 }
+        nodes += node(NB.x, Y.abp, NB.w, 'behaviour policy · ABP', '#FF5FA8', [['reach', sp ? String(one('reach')) : '—', '#FF5FA8'], ['mandate', sp ? String(one('mandate')) : '—', '#FF5FA8'], ['gap', dev && sp ? openG(sp) + ' open' : sp ? 'developers' : '—', '#FF5C7A', '#FF5C7A'], ['barriers', dev && sp ? String(one('barriers')) : sp ? 'developers' : '—', '#F5C542'], ['licence', sp ? String(one('licence')) : '—', '#3DDC97', , true], ['version', sp ? cut(String(sp.version || '').replace(/^Version /i, 'v'), 14) : 'none', '#7F97A8']])
+        nodes += node(NB.x, Y.bar, NB.w, 'barriers · what really stops it', '#F5C542', dev ? [['enforced', String(kinds.ENFORCED || 0), '#3DDC97', '#3DDC97'], ['partial', String(kinds.PARTIAL || 0), '#F5C542'], ['detective', String(kinds.DETECTIVE || 0), '#4FD1F5'], ['advisory', String(kinds.ADVISORY || 0), '#7F97A8'], ['all policies · enforced', B ? Math.round(B.ENFORCED / bt * 100) + '%' : '—', '#3DDC97']] : [['for the developers only', ''], ['(sealed to their keys)', '']])
+        nodes += node(NB.x, Y.gate, NB.w, 'gate · Explorer phase', '#FF8A5C', [['observes', 'yes', '#3DDC97', , true], ['recommends', 'yes', '#3DDC97', , true], ['blocks', 'nothing yet', '#FF5C7A', , true], ['role policies agreed', (S.role_policies_agreed || 0) + '/' + (S.role_policies || 0), '#F5C542']])
+        const lic = sp && Array.isArray(sp.licence) ? sp.licence : [], ownerName = sel ? ((byId.get('p-' + sel.owner) || {}).title || sel.owner) : ''
+        nodes += node(NB.x, Y.own, NB.w, 'human · owner', '#F4C6FF', [['owner', cut(ownerName, 18), col(sel && sel.owner)], ['authority', cut(((lic.find(l => /authority/i.test(l[0])) || [])[1] || '—').split(',')[0], 18)], ['accountable', cut(((lic.find(l => /accountable/i.test(l[0])) || [])[1] || '—').split(',')[0], 18)], ['schedule', sel && sched(sel) ? 'scheduled' : 'on demand', , , true]])
+        nodes += node(NB.x, Y.nop, NB.w, 'no policy yet', '#C9D3DC', [['agents', String(agents.filter(a => !a.policy).length), '#C9D3DC'], ['gap', 'not written down', '#C9D3DC']], 'bc-nopol')
+        for (const a of agents) { const ty = tick.get(a.id), on = a.id === G.bcSel, p = polOf(a)
+            const tyB = p ? portY(Y.abp, Math.floor((agents.indexOf(a) / agents.length) * 6)) : portY(Y.nop, 0)
+            W2 += `<path data-a="${esc(a.id)}" class="bc-w${on ? ' sel' : sel && a.owner === sel.owner ? ' team' : ''}${p ? '' : ' hold'}" style="stroke:${p ? col(a.owner) : '#C9D3DC'}" d="M${BX} ${ty} C ${BX + 160} ${ty}, ${NB.x - 140} ${tyB}, ${NB.x} ${tyB}"/>` }
+        if (sp) W2 += `<path class="bc-w sel" d="M${NB.x + NB.w} ${portY(Y.abp, 3)} C ${NB.x + NB.w + 40} ${portY(Y.abp, 3)}, ${NB.x + NB.w + 40} ${portY(Y.bar, 0)}, ${NB.x + NB.w} ${portY(Y.bar, 0)}"/><path class="bc-w sel" d="M${NB.x} ${portY(Y.bar, 3)} C ${NB.x - 40} ${portY(Y.bar, 3)}, ${NB.x - 40} ${portY(Y.gate, 0)}, ${NB.x} ${portY(Y.gate, 0)}"/><path class="bc-w sel" d="M${NB.x + NB.w} ${portY(Y.gate, 2)} C ${NB.x + NB.w + 40} ${portY(Y.gate, 2)}, ${NB.x + NB.w + 40} ${portY(Y.own, 0)}, ${NB.x + NB.w} ${portY(Y.own, 0)}"/>`
+        // column C: the resources the policies say the agents reach
+        const reach = new Map(res.map(r => [r.id, agents.filter(a => reachOf(a).includes(r.id))])), rl = res.slice().sort((a, b) => reach.get(b.id).length - reach.get(a.id).length)
+        const RX = 880, RW = 220, RY = rl.map((r, k) => 8 + k * Math.floor((H - 12) / Math.max(1, rl.length)))
+        rl.forEach((r, k) => { const as = reach.get(r.id), selHit = sel && as.includes(sel)
+            nodes += node(RX, RY[k], RW, cut(r.title.toLowerCase(), 30), selHit ? '#F5E14A' : '#4FA8FF', [['agents reach it · owners', as.length + ' · ' + new Set(as.map(a => a.owner)).size, '#4FA8FF']], selHit ? 'hit' : '')
+            as.forEach((a, m) => { const on = a.id === G.bcSel, sy = portY(Y.abp, 0) + ((agents.indexOf(a) / agents.length) * 100), ty = portY(RY[k], 0) + (m / Math.max(1, as.length - 1)) * 14
+                W3 += `<path data-a="${esc(a.id)}" class="bc-w bc-out${on ? ' sel' : sel && a.owner === sel.owner ? ' team' : ''}" style="stroke:${col(a.owner)}" d="M${NB.x + NB.w} ${sy} C ${NB.x + NB.w + 60} ${sy}, ${RX - 60} ${ty}, ${RX} ${ty}"/>` }) })
+        // column D: what it adds up to, for the selected agent
+        const DX = 1160, DW = 225, rs = sel ? reachOf(sel) : []
+        nodes += node(DX, 8, DW, 'result · reach', '#3EE6C1', rs.length ? rs.slice(0, 6).map(r => [cut((byId.get(r) || {}).title || r, 24), '', '#3EE6C1', , true]) : [['no resource named', '']])
+        nodes += node(DX, 160, DW, 'result · gaps', '#FF8A5C', dev ? [['open', sp ? String(openG(sp)) : '—', '#FF5C7A', '#FF5C7A'], ['closed', sp ? String(sp.gap.length - openG(sp)) : '—', '#3DDC97'], ['all agents · open', String(S.gaps_open || 0), '#FF5C7A'], ['all agents · closed', String(S.gaps_closed || 0), '#3DDC97']] : [['for the developers only', ''], ['(sealed to their keys)', '']])
+        const lt = sel && sel.latest
+        nodes += node(DX, 290, DW, 'result · latest commit', '#B39DFF', lt ? [['commit', cut(lt.hash, 10), '#B39DFF'], ['when', cut(lt.at, 16)], ['what', '']] : [['no commit found', '']])
+        if (lt) nodes += `<foreignObject x="${DX + 8}" y="${290 + 22 + 3 * 17}" width="${DW - 16}" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="bc-fo">${safeUrl(lt.url) ? `<a href="${esc(safeUrl(lt.url))}" target="_blank" rel="noopener">${esc(cut(lt.subject, 110))}</a>` : esc(cut(lt.subject, 110))}</div></foreignObject>`
+        nodes += node(DX, 440, DW, 'human · approve', '#FFC1E3', [['who approves', cut(ownerName.split(' ')[0] || '—', 16), col(sel && sel.owner)], ['agreed by the person', sp && sp.status === 'AGREED' ? 'yes' : 'not yet', '#F5C542', , true], ['phase', 'explorer', '#7F97A8']])
+        rl.forEach((r, k) => { if (sel && reach.get(r.id).includes(sel)) W4 += `<path class="bc-w sel" d="M${RX + RW} ${portY(RY[k], 0)} C ${RX + RW + 30} ${portY(RY[k], 0)}, ${DX - 30} ${portY(8, rs.indexOf(r.id))}, ${DX} ${portY(8, Math.min(5, rs.indexOf(r.id)))}"/>` })
+        W4 += `<path class="bc-w sel" d="M${NB.x + NB.w} ${portY(Y.abp, 2)} C ${NB.x + NB.w + 200} ${portY(Y.abp, 2)}, ${DX - 200} ${portY(160, 0)}, ${DX} ${portY(160, 0)}"/><path class="bc-w sel" d="M${NB.x + NB.w} ${portY(Y.own, 0)} C ${NB.x + NB.w + 200} ${portY(Y.own, 0)}, ${DX - 200} ${portY(440, 0)}, ${DX} ${portY(440, 0)}"/>`
+        // the header strip, the title, the panels
+        const asof = String(UNI.as_of || '').slice(0, 16).replace('T', ' '), wires = (W1 + W2 + W3 + W4).split('<path').length - 1, nodesN = owners.length + 5 + rl.length + 4
+        const k0 = agents.indexOf(sel), lat = (S.latest || []).slice(0, 12)
+        const code = sp ? [...(sp.reach || []).slice(0, 4).map(x => ['reach', x]), ...(sp.mandate || []).slice(0, 4).map(x => ['mandate', x]), ...(dev && Array.isArray(sp.gap) ? sp.gap.filter(g => g.open).slice(0, 4).map(g => ['gap', g.text]) : []), ...lic.slice(0, 3).map(l => ['licence', l.join(': ')])] : []
+        box.innerHTML = `<div class="bc-strip"><span>GRAPH <b>universe</b></span><span>NODES <b>${nodesN}</b></span><span>WIRES <b>${wires}</b></span><span>AGENTS <b>${agents.length}</b></span><span>POLICIES <b class="y">${S.agents_with_policy || 0}</b></span><span>WITHOUT <b class="r">${agents.filter(a => !a.policy).length}</b></span>${dev ? `<span>OPEN GAPS <b class="r">${S.gaps_open || 0}</b></span>` : ''}<span>AS OF <b>${esc(asof)} UTC</b></span></div>
+<div class="bc-stage"><div class="bc-title" style="--c:${col(sel && sel.owner)}"><div><b>${String(k0).padStart(2, '0')} ${esc(sel ? sel.title : '')}</b><small>${esc(ownerName)} · ${rs.length} resource${rs.length === 1 ? '' : 's'}${sp ? (dev ? ' · ' + openG(sp) + ' open gaps' : ' · a written policy') : ' · no policy yet'}</small></div><div class="bc-tools"><button type="button" class="bc-tour" data-bc-tour aria-pressed="${!!G.bcTour}">${G.bcTour ? '■ Stop' : '▶ Play'}</button><label class="sr" for="bc-pick">Pick an agent</label><select id="bc-pick" class="bc-pick">${agents.map(a => `<option value="${esc(a.id)}"${a.id === G.bcSel ? ' selected' : ''}>${esc(a.title)}</option>`).join('')}</select></div></div>
+<div class="bc-scroll"><svg class="bc-svg hot" viewBox="0 0 ${W} ${H}" role="img" aria-label="Each person's agents on the bus, through their behaviour policy, to the resources they reach; the selected agent's path is lit">${W1}${W3}${W2}${W4}${glints(W1 + W3 + W2 + W4)}${nodes}</svg></div></div>
+<div class="bc-panels"><section><h4>Run log <em>${lat.length} latest</em></h4><ol class="bc-log">${lat.map(c => `<li class="${sel && c.agent === sel.title ? 'on' : ''}"><span>${esc(String(c.at).slice(-5))}</span><i style="color:${col((String(c.agent || '').match(/\.([a-z]+)$/) || [])[1])}">${esc(cut(String(c.agent || '').split('@')[0], 12))}</i>${safeUrl(c.url) ? `<a href="${esc(safeUrl(c.url))}" target="_blank" rel="noopener">${esc(cut(String(c.subject).replace(/^[^:]+:\s*/, ''), 48))}</a>` : esc(cut(c.subject, 48))}</li>`).join('')}</ol></section>
+<section><h4>Dispatch <em>${owners.length} people</em></h4>${owners.map(o => { const as = agents.filter(a => a.owner === o), w = Math.round(as.length / Math.max(1, ...owners.map(x => agents.filter(a => a.owner === x).length)) * 14), pct = Math.round(as.filter(a => a.policy).length / Math.max(1, as.length) * 100); return `<p class="bc-disp"><span style="color:${col(o)}">${esc(((byId.get('p-' + o) || {}).title || o).split(' ')[0].toLowerCase())}</span><b style="color:${col(o)}">${'#'.repeat(w)}<i>${'·'.repeat(14 - w)}</i></b><em>${pct}%</em><small>${as.filter(sched).length} sched</small></p>` }).join('')}<p class="bc-note">agents per person · % with a policy · on a schedule</p></section>
+<section class="bc-code"><h4>${esc(sel ? sel.title.split('@')[0] : '')}.abp <em>${sp ? esc(cut(sp.version || '', 22)) : 'no policy'}</em></h4><ol>${code.length ? code.map(([k, v], n) => `<li><span>${String(n + 1).padStart(2, '0')}</span><b class="k-${k}">${k}</b> ${esc(cut(v, 80))}</li>`).join('') : '<li><span>01</span>No behaviour policy is written for this agent yet.</li>'}</ol>${sp && safeUrl(sp.url) ? `<a class="bc-read" href="${esc(safeUrl(sp.url))}" target="_blank" rel="noopener">read the whole policy</a>` : ''}</section>
+<section><h4>Graph <em>as of ${esc(asof.slice(11))}</em></h4><dl class="bc-dl"><div><dt>nodes</dt><dd>${nodesN}</dd></div><div><dt>wires</dt><dd>${wires}</dd></div><div><dt>agents</dt><dd>${agents.length}</dd></div><div><dt>with a policy</dt><dd class="y">${S.agents_with_policy || 0}</dd></div><div><dt>resources</dt><dd>${res.length}</dd></div><div><dt>role policies agreed</dt><dd class="r">${S.role_policies_agreed || 0}/${S.role_policies || 0}</dd></div>${dev && B ? `<div><dt>enforced barriers</dt><dd>${Math.round(B.ENFORCED / bt * 100)}%</dd></div><div><dt>open gaps</dt><dd class="r">${S.gaps_open || 0}</dd></div>` : ''}</dl><p class="bc-big">${S.agents_with_policy || 0}<small>/${agents.length}</small></p><p class="bc-note">agents with a written policy · blocks nothing yet (Explorer)</p></section></div>`
+    }
+    // hover a row: its wires light up; tap: the agent's card (public, or with its gaps for a developer)
+    const bcHot = id => { const svg = G.holder && G.holder.querySelector('.bc-svg'); if (!svg) return; svg.classList.toggle('hot', !!id); svg.querySelectorAll('.bc-w.on, .bc-row.on').forEach(x => x.classList.remove('on')); if (id) svg.querySelectorAll(`[data-a="${CSS.escape(id)}"], [data-bc="${CSS.escape(id)}"]`).forEach(x => x.classList.add('on')) }
+    document.addEventListener('mouseover', e => { const r = e.target.closest && e.target.closest('.bc-row'); if (r && G.holder && G.holder.contains(r)) bcHot(r.dataset.bc); else if (e.target.closest && e.target.closest('.bc-svg') && !G.bcSel) bcHot(null) })
+    document.addEventListener('click', e => { const b = e.target.closest && e.target.closest('[data-bc-tour]'); if (b && G.holder && G.holder.contains(b)) bcTour(!G.bcTour) })
+    document.addEventListener('keydown', e => { const tk = e.target && e.target.closest && e.target.closest('.bc-tick'); if (tk && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); tk.dispatchEvent(new MouseEvent('click', { bubbles: true })) } })
+    document.addEventListener('change', e => { if (e.target && e.target.id === 'bc-pick' && G.holder && G.holder.contains(e.target)) { if (G.bcTour) { clearInterval(G.bcTour); G.bcTour = 0 } G.bcSel = e.target.value; circuit() } })
+    document.addEventListener('click', e => { const tk = e.target.closest && e.target.closest('.bc-tick'); if (tk && G.holder && G.holder.contains(tk) && UNI) { if (G.bcTour) { clearInterval(G.bcTour); G.bcTour = 0 } G.bcSel = tk.dataset.bc; circuit(); const a = UNI.notes.find(n => n.id === G.bcSel); if (a) card({ id: a.id, title: a.title, type: 'agent', deg: 0, n: { ...a, __layer: 'agents' } }); return } })
+    document.addEventListener('click', e => { const r = e.target.closest && e.target.closest('.bc-row'); if (!r || !G.holder || !G.holder.contains(r) || !UNI) return; const a = UNI.notes.find(n => n.id === r.dataset.bc); if (!a) return; G.bcSel = a.id; bcHot(a.id); card({ id: a.id, title: a.title, type: 'agent', deg: 0, n: { ...a, __layer: 'agents' } }) })
+    function bcTour(on) {
+        clearInterval(G.bcTour); G.bcTour = 0
+        if (on && UNI) { const ids = UNI.notes.filter(n => n.type === 'agent' && n.policy).map(n => n.id); let k = Math.max(0, ids.indexOf(G.bcSel)); G.bcTour = setInterval(() => { if (!circOn() || !document.body.contains(G.holder)) return bcTour(false); k = (k + 1) % ids.length; G.bcSel = ids[k]; circuit() }, 3500) }
+        circuit()
     }
     function card(n) {
         const c = G.holder.querySelector('.bm-card'); if (!n) { c.hidden = true; return }
@@ -401,7 +495,7 @@ ${rel.length ? `<p class="bm-rel">Related: ${rel.slice(0, 8).map(r => `<button t
         G.deco = { core, halo, ring }
     }
     G.refresh = force => {
-        if (!G.fg) return; setHud(); const s = sigOf(); if (!force && s === G.sig) return; G.sig = s
+        if (!G.fg) return; setHud(); circuit(); const s = sigOf(); if (!force && s === G.sig) return; G.sig = s
         const d = data(), big = G.which === 'summit' || G.which === 'universe'
         G.fg.d3Force('charge').strength(big ? -34 : -70); G.fg.d3Force('link').distance(l => (l.source.type === 'hub' || l.target.type === 'hub' || l.source.type === 'ours' || l.target.type === 'ours') ? (big ? 48 : 70) : (big ? 22 : 38))
         G.fitNext = !!force; G.fg.graphData(d); paint()

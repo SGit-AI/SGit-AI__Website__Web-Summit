@@ -1,12 +1,12 @@
 {
   "about": "Where security.repos@web-summit.dinis stopped, per repository and branch: the last commit reviewed (the branch head when the run read it). The next run reviews every commit reachable from any branch and not from these. From the second run, every branch is listed, not only those active since the baseline.",
   "agent": "security.repos@web-summit.dinis",
-  "last_run": "2026-11-09T22:30Z",
+  "last_run": "2026-11-10T04:30Z",
   "baseline_from": "2026-11-08T11:00Z",
   "repos": {
     "SGit-AI/SGit-AI__Website__Web-Summit": {
       "branches": {
-        "dev": "906306e47b342caf05a9dd6ae1adb1a8ecb8a710",
+        "dev": "43cfe4c22b2cd67df37500ff2852506528d99993",
         "claude/awesome-dirac-rp94os": "1cc9740af65206906617362b879004f6564e0e8d",
         "claude/beautiful-clarke-mqhept": "a88e8c65a2e854b41b5b2e2f7506bab1c53e2ddf",
         "claude/conductor-jose-setup-ogxaka": "ccfecefe90fb74e838fd1b0b0f89b40be179593d",
@@ -25,28 +25,29 @@
         "claude/web-summit-helper-setup-v3whh6": "a7ce18d89847f906365ff22848cb1cf1e2521a41",
         "claude/wonderful-archimedes-e5vx9e": "f8e1b0f60636d819a7a67cd83c3160927e488631",
         "main": "81353d4559f18c8eaccc915f54f6c521961a3dda",
-        "workers/dev.abp": "1e733e853ae60b811764540b99d390253f9e070b",
-        "workers/dev.app": "63fac34475a125c2e334a2560b6bf8a19a5fdae3",
+        "workers/dev.abp": "1c15f6aa28d462b1b7990953eb700d6a3e27052a",
+        "workers/dev.app": "8114482bd12547e1a6e1242386fae6fd63b344a9",
         "workers/dev.links": "1bd3382c6c7a89e52ef8b10006dfe4b7e40347c6",
-        "workers/dev.map": "3717c2d79f5ce4e24772dd9fa13a8d94ad1b0369",
-        "workers/dev.venues": "12092f1e21acd6484453b3414892db7a1a2fee71",
-        "workers/dev.work": "d4fa4fb5dd2274cdd4c4b73230fb8f795ab24906",
+        "workers/dev.map": "7820cc2ddadf667ce624cdf7dc5494a030b041ae",
+        "workers/dev.venues": "1bf79af7c1155724a95fa93d2d759d2b5c9c47b1",
+        "workers/dev.work": "64dc7cce5a0dedc603779d4ce73e94bf719cead7",
         "workers/research": "3a178e88e8f8a790a26b72659efb51b58a33dcf7",
+        "workers/sheet": "ebbe82dc0f04208c7df1d6071e30cac43f839ba7",
         "workers/social-media": "639cef986ce474c9f6b31fe0533a95915b0333c8",
-        "workers/vault.kms": "fdcac08a0ddcb0b8ea0f9c8e0140c1a8f96da610"
+        "workers/vault.kms": "dc77a9206509102e37a8ae812ed1bb53fa71d422"
       }
     },
     "PrompTugal/PrompTugal__News__Website": {
       "branches": {
-        "dev": "daae06bacd7101b216a4dcb1b67729c0492b9c4e",
+        "dev": "f8213649b35b821debf0130c43f3be4f1a682b64",
         "claude/serene-keller-r1pzfc": "3affa4b4a3478ef40565a13154ffe10e0c55e8bc",
         "claude/sweet-heisenberg-m1vm71": "c9217130f27dae9a55e5a7080e644f286b31f73e",
         "main": "9629432a48d2514aa11d89172fb3173f4aedce90",
         "work/conductor-silvio": "e9ffd69b1fc3f1cf3aecbb1ee3474c57493ea465",
         "work/designer.experiments": "1177421a6cc6e53eff0b578a5b78ad2eaf1427ca",
-        "work/dev.data": "4f012c1a17634363974d79fdcc2624d7dd05b1c1",
-        "work/dev.graphs": "a61c85618cca27d3ce8c75988be95ecc4c39c3dd",
-        "work/dev.pages": "be9942ca5381970b5381fd728b75edb068d03eb8",
+        "work/dev.data": "f22d89f7ac3962d4d0973d0a8a7c47511a57a47f",
+        "work/dev.graphs": "e055397fe53a58ad9f5ea50fc513ac441f13c2f4",
+        "work/dev.pages": "6b177b24d738ea31468eef64f5f457b72cb3ef43",
         "work/dev.portugal": "a1b6759c2e35335aaeef19d180e30d5f3123cae5",
         "work/dev.search": "938ab51070025f1221ecfe415dc1b8170b3a692e",
         "work/dev.verify": "56ed3c828adf8857e4b2a852d92f8a20975fb0aa",
@@ -56,7 +57,7 @@
     },
     "PrompTugal/PrompTugal__App__Android": {
       "branches": {
-        "dev": "4de30ec6791db524fe70281fac0a3f150de9ca5b",
+        "dev": "4f8362e985e4d17c852fbc57c4f151b3a0869550",
         "main": "4de30ec6791db524fe70281fac0a3f150de9ca5b",
         "promote/0b21eef10c73": "0b21eef10c7326b79fa6b2499e7d5e5deed22388",
         "work/app": "f4a73c6dd10fea8c85b012a25871e32a46aefe83",
@@ -71,17 +72,17 @@
         "work/dev.site": "124cd4e588e339251c9f635c681e34eb573c386f",
         "work/dev.stand": "b49d3d11ebcfad94d4aae8a7c75ce0d758881351",
         "work/devices": "117f6a8da7274f5f53d8a7744527d24626a3e906",
-        "work/editor": "a34a546869c336d8fab67e94deccd76303e79780",
+        "work/editor": "0571816a7ea624a43e99fb64ad266bc7906a17cb",
         "work/eval": "9bcd6709d8c0446eb0859428a42b08586c53dd46",
-        "work/play": "dbf311e00e46bd4e87411080d55d88560be23b35",
+        "work/play": "5cd1afbf53f7d0d2de160954ff80d217bc0001d4",
         "work/qa": "48ba7fafe5b031c5ebc4de1cb2942f09a6a87b0a",
         "work/release": "fdfebded8b14e791cc04477608f905f8e72ff24d",
-        "work/security": "727aeb1ba6ba594b0cec8dcaf9c6546c7e8c165f"
+        "work/security": "d19e342cfcc5a0b7960a0205b4a8d50e56eef67b"
       }
     },
     "PrompTugal/PrompTugal__App__iOS": {
       "branches": {
-        "dev": "3a4fe3f754d2790f8ac88527d7834e8caf828995",
+        "dev": "9a02cac5ad65e66e4ea8eca925175a17cc69db82",
         "claude/serene-edison-22z0xn": "38f17268b7830bbf185a2fa3e48f2c2abc15b766",
         "conductor/self-hosted-trial": "3e960dff1c15a152d9a081d8d30c48495673e3d8",
         "main": "2bd40e27f2212a9166916ad18cc558b75106feda",
@@ -119,7 +120,7 @@
         "split/review": "85b373b60c0a1037dd82b1fd9f5807a262f9531e",
         "split/schedule-rules": "fdf910ecaa048b4e0b11878877988d8e5a8043f8",
         "split/team": "48f812792b06022d77e1a87e6bf26cbd622a6031",
-        "split/testflight": "e1293f58bb12cf2fc579b4bbdaaa4aa447862d02",
+        "split/testflight": "0a0844ade3a88b242781a186f7b1b9cea0ba523e",
         "split/ux": "22b2c6ff5330bcb2798d66682555325fa7ca5e22",
         "split/vault": "9e61110c6c3a27eb57f6012773a108a7b64d9659",
         "split/venues": "50ea690427f2a4fc64e3e50aae947c6ef1e0568f"
@@ -127,7 +128,7 @@
     },
     "PrompTugal/PrompTugal__App__Mobile": {
       "branches": {
-        "dev": "74332868eac3471bc3e98083b08595cf4b1aa0dc",
+        "dev": "7f59d91123bae5612e83bf79b6de9e8ee76c0656",
         "main": "9b48685df5efa3b0d506c3191265ef7677f42184"
       }
     },
@@ -136,11 +137,9 @@
       "note": "The same repository as PrompTugal/PrompTugal__News__Website (GitHub redirects the old name; identical refs on 9 Nov 2026): reviewed once, under that name."
     }
   },
-  "stopped": {
+  "history": {
     "at": "2026-11-09T23:40Z",
-    "why": "The big stop (Dinis, 9 Nov about 23:30 UTC, relayed by conductor@web-summit.dinis): all agents stop unless critical until the team realigns. The two-hourly review was paused at 23:35 UTC.",
-    "last_reviewed": "Run 7 (22:30 UTC): every branch head listed under repos is the last commit reviewed. dev heads: SGit-AI__Website__Web-Summit 906306e4, PrompTugal__News__Website daae06ba, PrompTugal__App__Android 4de30ec6, PrompTugal__App__iOS 3a4fe3f7, PrompTugal__App__Mobile 74332868",
-    "open": "Run 5 MEDIUM 1 (iOS App Store Connect key a repository secret), run 5 MEDIUM 2 (Android release Environment secrets reachable from dev), run 6 LOW 1 (Dinis to confirm the Android conductor agents may push main).",
-    "restart": "Dinis can restart this agent; the next run reviews from these heads."
+    "resumed": "2026-11-10T04:14Z, at the scheduled wake, after WS-208 (THE RESTART, at Dinis's word 02:40 UTC: 'THE BIG STOP is over')",
+    "why": "The big stop (Dinis, 9 Nov about 23:30 UTC, relayed by conductor@web-summit.dinis): all agents stop unless critical until the team realigns. The two-hourly review was paused at 23:35 UTC."
   }
 }

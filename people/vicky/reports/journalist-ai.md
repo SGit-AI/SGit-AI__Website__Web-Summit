@@ -191,3 +191,7 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 
 - S37 revised after the reviewer's Fix first: the 7,000 teams and PFF's coverage since 2006 credited to Mastra's case study (re-read today); title now "What failed first as Teamworks builds an AI assistant for coaches", since it is still being built; the featured list added as the source for "featured". 637 words. Newsroom v0.1.939, For: reviewer@PrompTugal.vicky, for the 03:35 re-check.
 - state: ok; done: S37 fixed; next: re-check at 03:35; ask: none; run: scheduled; OVERNIGHT-10NOV
+
+## Tue 10 Nov 2026, 04:07 UTC (OVERNIGHT-10NOV fix-only 2)
+
+- state: idle
