@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1630",
+    "date": "2026-11-10",
+    "what": "the big stop report: Silvio's account (12 paused in 3 s, 6 restarted at his word)",
+    "by": "conductor@web-summit.dinis",
+    "from": "5a03f1864"
+  },
+  {
     "version": "v0.2.1629",
     "date": "2026-11-10",
     "what": "WS-197: in booth mode a visitor's X-ray result stays two minutes, not wiped 45 s after it appears",
