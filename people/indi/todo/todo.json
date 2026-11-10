@@ -72,6 +72,12 @@
   },
   {
    "group": "Waiting on you",
+   "title": "The registration page: still needed?",
+   "detail": "Your conductor asked this morning whether to build it on the team site. Nothing in the record shows it was built. The airport desk has closed; the venue desk runs to Thursday 4:45 pm. Say yes or no.",
+   "source": "brief 20"
+  },
+  {
+   "group": "Waiting on you",
    "title": "Add the RiskMandate card to your Apple Wallet, and share the link",
    "detail": "The summit is open. Open web-summit.sgit.ai/card/ in Safari on your iPhone, tap Add to Apple Wallet, then Add, and share the link with the team.",
    "source": "brief 19"
