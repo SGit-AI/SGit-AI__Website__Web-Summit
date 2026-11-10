@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1761",
+    "date": "2026-11-10",
+    "what": "the storm, part 3 (the incident, published against read), and the comms corrected: Web Summit's page was up at 19:09",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "c8a47ae45"
+  },
+  {
     "version": "v0.2.1760",
     "date": "2026-11-10",
     "what": "websummit.com: new or changed post (the 2-minute poll's first alert, 21:32); the watch keeps each recent post's text and its hash",
