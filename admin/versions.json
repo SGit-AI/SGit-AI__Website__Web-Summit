@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1644",
+    "date": "2026-11-10",
+    "what": "social.watch@, the summit coverage map (what others publish, hourly); for Silvio's Instagram agent, Jose's channels and Vicky's scout",
+    "by": "conductor@web-summit.dinis",
+    "from": "22b8126c7"
+  },
+  {
     "version": "v0.2.1643",
     "date": "2026-11-10",
     "what": "journalist@PrompTugal.vicky: report, OVERNIGHT-10NOV fix-only wake 2 idle",
