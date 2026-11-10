@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1751",
+    "date": "2026-11-10",
+    "what": "llm.mjs: the ledger stays out of git (curated vault, as ROADMAP P0.4 says), no model named in the code; the OpenRouter key is already set here (one 20-token call: ok)",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "3a00a1b2e"
+  },
+  {
     "version": "v0.2.1750",
     "date": "2026-11-10",
     "what": "P0.4: llm.mjs, the one wrapper for model calls: raw to a store outside git, one content-free ledger line per call, a daily cap",
