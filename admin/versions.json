@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1734",
+    "date": "2026-11-10",
+    "what": "incident timeline: social.watch@'s signals; the government recommends suspending Web Summit on Wednesday (17:53)",
+    "by": "conductor@web-summit.dinis",
+    "from": "931d08da9"
+  },
+  {
     "version": "v0.2.1733",
     "date": "2026-11-10",
     "what": "the page-view lanes drained (5,000; the first since 5 November: the hourly runs counted only from 6 November 00:07, whatever the stored text said); a task for vault and crm: push what waits",
