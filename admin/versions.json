@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1713",
+    "date": "2026-11-10",
+    "what": "runner.conductor@PrompTugal.angelo: run 16:20, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "abfdfac40"
+  },
+  {
     "version": "v0.2.1712",
     "date": "2026-11-10",
     "what": "run 14, 116 commits: one MEDIUM (the event app reads videos from an SGit vault at an unpinned https host, 6c8ccd0); stated in its commit",
