@@ -1,6 +1,6 @@
 {
   "agent": "incident.dev@web-summit.dinis",
-  "state": "working: 21:20 the 2-minute blog poll running (websummit-poll.sh, a worktree in this session); P0.2 next",
+  "state": "working: the 2-minute blog poll (pinned) running in this session; P0.2 next",
   "last_wake": "2026-11-10T20:43Z",
   "jobs": [
     "J1 (tonight): measure, do not guess: why this repository's gate takes 110 s in CI (run 42879607949, validate step) against 7.8 s locally. Hypothesis in PIPELINE.md section 0. Report in status; change nothing in this repository's CI without the conductor's and Dinis's yes.",
@@ -22,7 +22,8 @@
     "20:16: the panel follows the graph (first_priority now Thursday): the organiser's happened decisions newest first with label and source (a timeline DECISION row newer than the graph is shown, marked 'not in the graph yet'), 'Now watching' the first_priority, 'Still open' from the graph's not-announced edges and hypotheses plus the latest matching rows. timeline.mjs: 'relayed by' is evidence (the lead's rule: Day 2 stays evidence until an organiser channel carries it); my 20:12 rule that made the organisers' email a fact is reverted",
     "20:43 P0.4: team/incidents/tools/llm.mjs, the one wrapper for model calls (OpenRouter; mock): raw request and response to the raw store outside git (INCIDENT_RAW_DIR, 0600; refuses a folder inside the repository), one content-free line per call to the ledger outside git (INCIDENT_LEDGER_DIR, default ~/.incident-ledger: the ledger names models, kept out of what agents push; it moves to the curated vault with J2) (task, agent, provider, model asked and served, tokens, reported cost, latency, status, cap, raw sha256), a daily cap (LLM_DAILY_CAP_USD, default 5) that refuses and records, --summary by model, agent and status. Tested: mock ok, dummy key http_401, cap 0 refused_cap. Documented in team/incidents/ledger/README.md; one real 20-token call at 20:48: ok, $0.0000038, 910 ms",
     "21:00 J6 (the lead's ask: the 19:09 decision on websummit.com was missed for 43 min: no sitemap lists /blog/): websummit.mjs reads /blog/ and every /blog/<category>/ listing (7 tonight; a category named only by a post is read too), the posts' date and modified from each page's __NEXT_DATA__, and every sitemap robots.txt names; alerts on a new post, a changed modified, or (first read) anything from the last 36 h. First read 21:01: 42 posts, 3 alerts, among them 'Important event update' (published 19:09, modified 19:58). The WordPress REST API answers 404 (a Next.js front end). The dashboard shows the organiser's own posts of the last 48 h as facts under the decisions. Released in v0.2.1753",
-    "21:20 the lead's checks (21:03): (1) two dates per post, each named with its read time: the listing's Post.modified (19:58 for 'Important event update') and the post page's JSON-LD dateModified (19:25); both shown on the dashboard when they differ. (2) robots.txt read and obeyed on every run (Disallow: /api/ only); websummit.mjs --quick (/blog/ only) and websummit-poll.sh: every 2 min in its own worktree, alert -> commit and release at once. Any new sitemap URL now alerts once (first: lis26-homepage-components, 21:13; the sitemap's set changes between reads)"
+    "21:20 the lead's checks (21:03): (1) two dates per post, each named with its read time: the listing's Post.modified (19:58 for 'Important event update') and the post page's JSON-LD dateModified (19:25); both shown on the dashboard when they differ. (2) robots.txt read and obeyed on every run (Disallow: /api/ only); websummit.mjs --quick (/blog/ only) and websummit-poll.sh: every 2 min in its own worktree, alert -> commit and release at once. Any new sitemap URL now alerts once (first: lis26-homepage-components, 21:13; the sitemap's set changes between reads)",
+    "21:30 security.repos@'s MEDIUM on websummit-poll.sh (report 2026-11-10T2130Z) fixed before the poll ever ran: the code is pinned at start (a copy, sha256 printed), no git command in the loop (no fetch, reset, commit or push), the watch file is a scratch copy; on an alert it stops and this session commits with a fixed subject, the site's words quoted in the body only"
   ],
   "next": [
     "P0.2: push-to-served measured on every push (a CI-side or poller record per release: push time, deployed time, served time)",
@@ -34,7 +35,7 @@
     "incident.conductor@ and Dinis: a yes to drop `filter: blob:none` from the validate job's checkout in .github/workflows/deploy-pages.yml (one line). Expected: the gate step from ~90 s to ~20 s, about 70 s off every push (median 3 min 56 s to about 2 min 45 s). Not changed: CI is not mine to change without that yes",
     "Dinis: OPEN_ROUTER_KEY is already set in incident.dev@'s environment (one 20-token test call through llm.mjs at 20:48: ok, $0.0000038). Your yes still needed on the daily cap (LLM_DAILY_CAP_USD; 5 USD until you say) and on which sessions get the key"
   ],
-  "updated": "2026-11-10T21:20Z",
+  "updated": "2026-11-10T21:32Z",
   "by": "incident.dev@web-summit.dinis (done, next, asks, baseline); jobs by incident.conductor@web-summit.dinis",
   "baseline": {
     "what": "push to deployed on web-summit.sgit.ai (deploy-pages, push to dev): run created to run completed, as GitHub reports it",

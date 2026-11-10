@@ -1,32 +1,26 @@
 #!/usr/bin/env bash
-# The 2-minute blog poll (incident.dev@web-summit.dinis, 10 November 2026, WS-214; incident.researcher@'s ask via the lead, 21:03):
-# websummit.mjs --quick (/blog/ only, robots.txt obeyed) every INTERVAL seconds, in its own git worktree so it never touches a
-# working checkout. A read with no alert is discarded (nothing committed); on an alert (exit 3) it runs one full read (the post
-# page's own dates), commits the watch file and releases it, prints ALERT and exits, so the session that started it is woken
-# and tells the lead. It runs only while the session that started it lives (a session's background task stops after 2 hours
-# at most): that session starts it again on each wake.
-# Usage: team/incidents/tools/websummit-poll.sh <worktree> <agent> [interval seconds, 120] [minutes to run, 115]
+# The 2-minute blog poll (incident.dev@web-summit.dinis, 10 November 2026, WS-214; incident.researcher@'s ask via the lead, 21:03).
+# Rewritten at 21:30 after security.repos@'s MEDIUM (report 2026-11-10T2130Z): the first version reset a worktree to dev every
+# loop and ran whatever websummit.mjs was there (unreviewed code, run within 2 minutes, in a session that can push), and put the
+# website's text into commit subjects. Now:
+#   - PINNED: websummit.mjs is copied once, at start, from the checkout the session chose, and that copy (its sha256 printed)
+#     is the only code the loop runs; no git command runs in the loop: no fetch, no reset, no commit, no push;
+#   - it reads /blog/ only (--quick; robots.txt obeyed) into a scratch copy of the watch file, never the repository's;
+#   - on an alert (exit 3) it prints the alert and stops; the session that started it is woken, reads the alert as data, and
+#     commits the watch file itself, with a fixed subject ("websummit.com: new or changed post") and the site's words only in the
+#     body, quoted. Bounded: it stops after <minutes> (default 115) and is started again on the session's next wake.
+# Usage: team/incidents/tools/websummit-poll.sh <repo checkout> <scratch dir> [interval seconds, 120] [minutes, 115]
 set -u
-WT=$1; AGENT=$2; IV=${3:-120}; END=$(( $(date +%s) + ${4:-115} * 60 ))
-F=team/incidents/2026-11-10-the-storm/data/watch/websummit.json
-cd "$WT" || exit 2
-LAST=$(mktemp)
+REPO=$1; SCR=$2; IV=${3:-120}; END=$(( $(date +%s) + ${4:-115} * 60 ))
+INC=team/incidents/2026-11-10-the-storm
+mkdir -p "$SCR/bin" "$SCR/inc/data/watch" || exit 2
+cp "$REPO/team/incidents/tools/websummit.mjs" "$SCR/bin/websummit.mjs" || exit 2
+cp "$REPO/$INC/data/watch/websummit.json" "$SCR/inc/data/watch/websummit.json" || exit 2
+echo "pinned websummit.mjs sha256 $(sha256sum "$SCR/bin/websummit.mjs" | cut -c1-16) from $(git -C "$REPO" rev-parse --short HEAD); scratch $SCR/inc"
 while [ "$(date +%s)" -lt "$END" ]; do
-  git checkout -q -- "$F" 2>/dev/null
-  git fetch -q origin dev && git reset -q --hard origin/dev
-  node team/incidents/tools/websummit.mjs team/incidents/2026-11-10-the-storm --quick > $LAST 2>&1; rc=$?
-  echo "$(date -u +%H:%M:%S) rc=$rc $(head -1 $LAST | sed 's/.*json: //')"
-  if [ "$rc" -eq 3 ]; then
-    node team/incidents/tools/websummit.mjs team/incidents/2026-11-10-the-storm > /dev/null 2>&1
-    what=$(grep -m1 '^ALERT' $LAST | cut -c1-120)
-    git add "$F" && git commit -q -m "$AGENT: websummit.com alert: ${what#ALERT }" -m "The 2-minute blog poll (team/incidents/tools/websummit-poll.sh) found it; the full read added the post page's own dates.
-
-Agent: $AGENT
-Issue: WS-214
-For: incident.conductor@web-summit.dinis
-For: incident.researcher@web-summit.dinis" && AGENT="$AGENT" admin/tools/release.sh | tail -1
-    cat $LAST; echo "ALERT $(date -u +%H:%M:%S)"; exit 3
-  fi
+  out=$(node "$SCR/bin/websummit.mjs" "$SCR/inc" --quick 2>&1); rc=$?
+  echo "$(date -u +%H:%M:%S) rc=$rc $(printf '%s\n' "$out" | head -1 | sed 's/.*json: //')"
+  if [ "$rc" -eq 3 ]; then printf '%s\n' "$out"; echo "ALERT $(date -u +%H:%M:%S): the watch file with the alert is $SCR/inc/data/watch/websummit.json"; exit 3; fi
   sleep "$IV"
 done
 echo "poll ended $(date -u +%H:%M:%S) (time limit); start it again"
