@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-10T19:00Z",
+ "updated": "2026-11-10T19:07Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -210,6 +210,26 @@
    "source": "https://powerhouse.indvstryclvb.com/websummit",
    "read": "2026-11-10T18:45Z",
    "read_by": "social.watch@PrompTugal.dinis (board/team/social.watch/signals/2026-11-11-the-storm.md)"
+  },
+  {
+   "id": "fertagus",
+   "name": "Fertagus (trains across the 25 de Abril bridge)",
+   "kind": "transport",
+   "role": "Train service Setúbal–Lisbon.",
+   "label": "evidence",
+   "source": "https://raw.githubusercontent.com/PrompTugal/PrompTugal__News__Website/dev/desks/weather-vicky/decision-chain.md",
+   "read": "2026-11-10T16:59Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)"
+  },
+  {
+   "id": "carris-metropolitana",
+   "name": "Carris Metropolitana",
+   "kind": "transport",
+   "role": "Metropolitan-area buses.",
+   "label": "evidence",
+   "source": "https://raw.githubusercontent.com/PrompTugal/PrompTugal__News__Website/dev/desks/weather-vicky/decision-chain.md",
+   "read": "2026-11-10T16:59Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)"
   }
  ],
  "edges": [
@@ -501,9 +521,9 @@
    ],
    "label": "fact",
    "source": "https://websummit.com/",
-   "read": "2026-11-10T18:58Z",
+   "read": "2026-11-10T19:05Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "No notice on websummit.com home, /news/ or sitemap (lastmod 18:58:03Z); Jornal de Negócios live last entry 18:24 has none."
+   "note": "No notice on websummit.com home, /news/ or sitemap (19:01Z); none on the official Bluesky account (last post 17:36Z); Jornal de Negócios live last entry 18:24 has none."
   },
   {
    "id": "websummit-suspends-h",
@@ -595,6 +615,25 @@
    "read": "2026-11-10T18:58Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "note": "JavaScript app; nothing in HTML."
+  },
+  {
+   "id": "operators-possible-disruption",
+   "by": "fertagus",
+   "to": [],
+   "decision": "Possible disruption on Wednesday announced by Fertagus, Carris and Carris Metropolitana; no suspension announced (as of 16:59Z)",
+   "at": "2026-11-10",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://raw.githubusercontent.com/PrompTugal/PrompTugal__News__Website/dev/desks/weather-vicky/decision-chain.md",
+   "read": "2026-11-10T16:59Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)",
+   "also_by": [
+    "carris",
+    "carris-metropolitana"
+   ]
   }
  ]
 }
