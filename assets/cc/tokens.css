@@ -18,3 +18,10 @@
 .tk-hrow b { text-align: right; } .tk-hrow small { opacity: .65; text-align: right; }
 .tk-cmp .tk-track i { background: #8FA6C2; } .tk-cmp .tk-hrow.now .tk-track i { background: var(--rm-action, #2BB673); } .tk-cmp .tk-hrow.now { font-weight: 700; }
 @media (max-width: 600px) { .tk-hrow { grid-template-columns: minmax(90px, 40%) 1fr 56px; } .tk-hrow small { display: none; } }
+
+.tk-tiles3 { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 12px; }
+.tk-pair { display: grid; grid-template-columns: minmax(120px, 24%) 1fr 150px 50px; gap: 8px; align-items: center; font-size: 12.5px; margin: 4px 0; }
+.tk-two { display: grid; gap: 3px; } .tk-two .tk-track { height: 8px; } .tk-paid i.paid { background: #8FA6C2; }
+.tk-pair b { text-align: right; font-weight: 600; } .tk-pair small { text-align: right; opacity: .7; }
+td.v-pass { color: #3DDC97; } td.v-fail { color: #FF5C7A; } td.v-partial { color: #F5C542; }
+@media (max-width: 600px) { .tk-pair { grid-template-columns: minmax(80px, 30%) 1fr 92px; } .tk-pair small { display: none; } .tk-tiles3 { grid-template-columns: 1fr; } }
