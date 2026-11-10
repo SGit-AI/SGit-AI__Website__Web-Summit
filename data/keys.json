@@ -1398,6 +1398,21 @@
         "fingerprint": "sha256:e768ad3ed46101f9",
         "signing_fingerprint": "sha256:803b8881f3d47322"
       }
+    },
+    {
+      "id": "instagram-silvio",
+      "label": "instagram@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's Instagram agent for RiskMandate's account (instagram@web-summit.silvio, WS-208): drafts posts, captions and replies to comments and messages in people/silvio/instagram/; Silvio reviews and posts; no agent logs in. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Silvio's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-10",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArru7Eo+z2Gr6uFpSC4C6\nQqKlHO+KDw0uHkXACdz5eMmA+5JCHTAhKd8kHgUZ0XEouFlwe9lYUjOzG2QStK6c\nWSe+9NQxuiRvuIEcCATKjSkH4xhmuabNK37ocGaxJCiTp2bryv08XA6Q2ZaYKv6x\nFprWWNqSSrIiEbEjAm8TZNv46azsW4Z/knk92LOSCMGJ+arr5ddvcq1gVytc1t0S\nVgnsTe+5Lffns2vJBh4b3NtJhW7Q3tKn803x0xwumjqPPUjZAMZpMOCWIhrkjD7y\nudbdxwlItvFR9qPANuKpiU4nV51221g7DpXn+GLYlYg8L4tKUOVSQzurbNEVh6eW\nkpJ7fISiOUXHmXXjd04fjO7y+QGF9MI7wsGOmTpr1FHJ/Xa8PoC0WB6NcqjYIx0n\nWEMgzKlsTL90C8nfnwJBICeS6APXxMe3wA079sA9mFToUSgcEzJgXC+2+OOXNAcF\njEI63ed9VGSU70K9XrK6m3NNd/DLhkvjNsXTbtTDszN+IjvqripSdBrXHzJJqZz8\nxmaMA1LNfp1XyzXQWMpL5wa+tooX1/jqyuGvm7juCxK6KN33cCFh6H3xHCHQZyRi\n3Kvh96rK+BB+DbKzOj5UqDs0T6MHjZ7Zjz5UimoW0ghUKY6WE39RNAlCpYqTUNPy\nxzJjQhlFbTGm0lP26n/doWkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZd4zHNGsi5VStnEBtmN4GoU6CSJ1\n68pMtzZsEgAWO659D6jXOFMUwGyRBs4OhnwztVJRyUdKL80swGaRKDKu1w==\n-----END PUBLIC KEY-----\n",
+        "label": "instagram@web-summit.silvio",
+        "fingerprint": "sha256:8304dbc86ef920da",
+        "signing_fingerprint": "sha256:8637c5cdb6b778a3"
+      }
     }
   ]
 }

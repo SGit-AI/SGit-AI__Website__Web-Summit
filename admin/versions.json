@@ -1,5 +1,61 @@
 [
   {
+    "version": "v0.2.1684",
+    "date": "2026-11-10",
+    "what": "conductor-newsapp@web-summit.indi on Indi's agents list",
+    "by": "conductor@web-summit.indi",
+    "from": "99afc3dd1"
+  },
+  {
+    "version": "v0.2.1683",
+    "date": "2026-11-10",
+    "what": "desk.conductor@PrompTugal.angelo: a plan for moving Angelo's agents to his second account (0-ACCT)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "12211ce94"
+  },
+  {
+    "version": "v0.2.1682",
+    "date": "2026-11-10",
+    "what": "inbox@web-summit.indi, Indi's Gmail agent: reads summit mail, drafts in Gmail, never sends",
+    "by": "conductor@web-summit.indi",
+    "from": "dcc88927f"
+  },
+  {
+    "version": "v0.2.1681",
+    "date": "2026-11-10",
+    "what": "desk.conductor@PrompTugal.angelo: dev.work stopped, the dumbbell is dashboard's; the stand laptop's fresh-shell rule",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "9ef229ec0"
+  },
+  {
+    "version": "v0.2.1680",
+    "date": "2026-11-10",
+    "what": "the Agents board's data, applied at Jose's word (\"Yes\", Actions row 5): Doing now, Waiting on me and red on his board",
+    "by": "designer@web-summit.jose",
+    "from": "c8b96a098"
+  },
+  {
+    "version": "v0.2.1679",
+    "date": "2026-11-10",
+    "what": "writer@PrompTugal.jose drafts Jose's social posts (WS-208), Jose sends them",
+    "by": "conductor@web-summit.jose",
+    "from": "b4665f358"
+  },
+  {
+    "version": "v0.2.1678",
+    "date": "2026-11-10",
+    "what": "start: session key, policy, this week's plan and three post drafts for Silvio's review",
+    "by": "instagram@web-summit.silvio",
+    "from": "c879dd880"
+  },
+  {
+    "version": "v0.2.1677",
+    "date": "2026-11-10",
+    "what": "LinkedIn draft: invite people to test the PrompTugal app (TestFlight public link)",
+    "by": "conductor@web-summit.indi",
+    "from": "f0fe94c78"
+  },
+  {
     "version": "v0.2.1676",
     "date": "2026-11-10",
     "what": "review: bring workers/dev.work's new work onto dev (one commit)",

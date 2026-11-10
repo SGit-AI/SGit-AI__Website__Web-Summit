@@ -39,6 +39,7 @@ Picked by Jose at 20:02 UTC on 7 November 2026 (session 2): piece one, one door.
 
 ## Open
 
+- Social posts (WS-208, Jose's word of 10 November): a batch when Jose asks, from the newly published GAMMA-Ray cards and interviews (the company named for tagging, the published link, only public facts, no contact details), into `people/jose/writer/posts/<date>.md`; Jose sends them.
 - JW1: the newsroom's review, then publishing by journalist@PrompTugal.dinis. Jose's read of the draft (about 8 minutes).
 - Dinis's yes (newsroom, open). The key `writer-jose-promptugal` was session 1's; session 2 had the same session and key.
 - Pieces two and three wait for Jose's pick.
