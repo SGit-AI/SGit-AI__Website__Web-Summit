@@ -1,36 +1,33 @@
 # Watcher: latest run
 
-**Run:** 2026-11-10 07:25 UTC (the 07:15 wake), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
+**Run:** 2026-11-10 12:21 UTC (the 12:15 wake), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
 
-**Range:** `dev` from `eccb465` to `a2a66ef`.
-
-## The night
-
-At 23:30 on 9 November Dinis called **the big stop**: every conductor was asked to pause its agents unless the work was critical (gamma-ray kept working) (`82eea75`, `team/conductor/the-big-stop/`). At about 02:40 he lifted it with **THE RESTART** (`board/WS-208-the-restart.md`). Every team now works on one theme, agentic AI, measured by GAMMA-Ray, and each person decides what their own agents restart. **Jose's piece is social and channels:** the GAMMA-Ray launch posts, and each published card and interview shared with the company tagged. Dinis briefs the team at 09:00.
+**Range:** `dev` from `a2a66ef` to `f2c662e`.
 
 ## Who committed
 
-168 commits: 55 CI releases (counted), 1 by the watcher itself, none without an agent name, and 112 by agents: Angelo 56, Dinis 19, Vicky 19, Silvio 18. None by Indi's or Jose's agents.
+95 commits: 34 CI releases (counted), 1 by the watcher itself, none without an agent name, and 60 by agents: Angelo 27, Indi 16, Jose 8, Dinis 6, Silvio 3.
 
 ## What to look at
 
-1. **Medium, still open: about 23 hours of `dev` have not been reviewed by any security agent.** The gap runs from 11:51 on 7 November to 10:58 on 8 November. It includes the gate's lane check (`4219805`) and its enforcement (`084ebe7`). `security.repos` resumed after the restart (runs 8 and 9), but each run covers only the commits since its last, so none reaches the gap. For Dinis's conductor: point one run at it.
-2. **High, open for the twenty-first run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address".
+1. **Medium, still open: about 23 hours of `dev` have not been reviewed by any security agent.** The gap runs from 11:51 on 7 November to 10:58 on 8 November. It includes the gate's lane check (`4219805`) and its enforcement (`084ebe7`). `security.repos` ran twice this morning (runs 10 and 11), but each run covers only the commits since its last. For Dinis's conductor: point one run at the gap.
+2. **High, open for the twenty-second run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address".
 3. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`), `board/WS-26-*` line 16.
-4. **For Dinis, from his security agent (run 9):** one high in the iOS app repository. Every green push to its `dev` signs the apps and uploads them to TestFlight from `dev`'s own editable workflow, which holds the distribution certificate and the App Store Connect key. The Android release-secrets medium is still open.
-5. **Note:** the big stop's session list (`team/conductor/the-big-stop/before-sessions-account-a.json`, `82eea75`) matches the email rule many times. By shape these are all agent role names, with no person's address. Dinis's security agent lists the raw list as low; it has since been reduced to counts.
+4. **Low, for Jose's conductor:** in the dashboard commits `47f6517` and `83a91b9`, the `Agent:` and `Reviewed-by:` lines sit above the `Co-Authored-By` block, so git does not read them as trailers. In the designer commit `c8b96a0`, `Agent:` is missed the same way. The lines are there, but a check that reads git trailers misses them. Those agents should put every trailer in the last block.
+5. **For Dinis, still open from his security agent:** the iOS TestFlight high (run 9) and the Android release-secrets medium (run 5). Run 10 found nothing new above low; run 11 found nothing.
 
 ## Open actions
 
-1. **A-06, twentieth run: only dev is left.** Its task still runs the 3 November text at 09:30 and 15:30. For you: paste its pointer and set it to every two hours, 07:30 to 21:30.
-2. **A-21, tenth run (with A-14, seventeenth): Dinis's older agents.** First his account outage, then the big stop, explain most of the quiet. After the restart some of them may be retired rather than stopped. Still quiet: dev (about 104 hours), the old security agent, sgit, pulse and project-manager (67), designer (64), xray (58), dashboard, abp and mentor (35), investors (21). For his conductor: say which are retired, so I can close them.
-3. **A-23, ninth run: inbox@web-summit.silvio**, about 61 hours. Silvio's conductor restarted at 04:52; for it to restart this agent too, or say it is retired.
-4. **New, A-25: Indi's agents**, no commit since 19:23 yesterday (prompter; conductor-map at 18:06), about 12 hours. That is before the big stop, so the stop doesn't explain all of it. Silvio's and Vicky's conductors restarted at about 04:50. For Indi's conductor: restart for WS-208, or say they are paused on purpose.
+1. **A-06, twenty-first run: only dev is left.** Its task still runs the 3 November text at 09:30 and 15:30; it fired at 09:39 and succeeded. For you: paste its pointer and set it to every two hours, 07:30 to 21:30.
+2. **A-21, eleventh run (with A-14, eighteenth): Dinis's older agents.** His conductor is active (last 12:17), but there is no word yet on which of these THE RESTART retired. Still quiet: dev (about 109 hours), the old security agent, sgit, pulse and project-manager (72), designer (69), xray (63), dashboard, abp and mentor (40), investors (25), journalist (11).
+3. **A-23, tenth run: inbox@web-summit.silvio**, about 66 hours. Silvio's conductor is active (last 10:54).
+4. **Closed: A-25.** Indi's agents were back from 07:28, three minutes after the run that opened it (conductor@web-summit.indi, `8d985bd`), and made 16 commits in this range.
 
 ## The checks
 
-- **Jose's agents:** no commits in this range. Their tasks have no slots between 22:00 and 07:00. The conductor's 07:20 wake had not fired by 07:25; the watcher's own 07:15 wake fired at 07:23, so the scheduler is running late this morning. To be re-checked at 12:15.
-- **Email rule:** 265 lines in 86 commits by the watcher's own scan (its address pattern on the added lines of every commit in the range). They are agent names, CI's version rows, patch headers and the session list above. None is a person's contact detail by shape.
+- **Jose's agents:** 8 commits (conductor 4, dashboard 2, designer, vault), every one with `Reviewed-by`. All their scheduled tasks fired and succeeded. This morning's 07:20 conductor wake fired late but did run (it committed at 07:38).
+- **Email rule:** 89 lines in 36 commits by the watcher's own scan (its address pattern on the added lines of every commit in the range). They are agent names, CI's version rows and patch headers. None is a person's contact detail by shape.
+- **The kit:** changed only in the writer's section (Jose's social posts for WS-208); the watcher's steps are unchanged.
 - **Other branches:** nothing new on `main`.
 - **The Sonnet trial for the watcher has not started:** this run ran on Opus (its ledger line).
 
