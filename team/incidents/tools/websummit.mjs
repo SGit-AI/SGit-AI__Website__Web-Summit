@@ -13,7 +13,8 @@ import path from 'node:path'
 
 const dir = process.argv[2]
 if (!dir) { console.error('usage: websummit.mjs <incident dir>'); process.exit(2) }
-const WATCH = /weather|storm|tempest|wednesday|quarta|clos|suspend|cancel|postpon|safety|update|alert|aviso|programme change|venue/i
+// after the Wednesday decision (19:38): also Day 3 and the open items (talks, PITCH, side events, tickets), at the lead's word (J5)
+const WATCH = /weather|storm|tempest|wednesday|quarta|thursday|quinta|day [23]|dia [23]|clos|suspend|cancel|postpon|reschedul|safety|update|alert|aviso|programme|venue|pitch|ticket|refund|reembols|talk|speaker|stream|online|side event|night summit/i
 const SITEMAP = 'https://websummit.com/sitemap.xml'
 const BSKY = 'https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=websummit.bsky.social&limit=20&filter=posts_no_replies'
 const get = async (u, kind) => { const c = new AbortController(), t = setTimeout(() => c.abort(), 20000); try { const r = await fetch(u, { signal: c.signal, headers: { 'user-agent': 'incident-dashboard (public read)' } }); if (!r.ok) throw new Error(`${u}: HTTP ${r.status}`); return kind === 'json' ? r.json() : r.text() } finally { clearTimeout(t) } }
@@ -35,14 +36,16 @@ try {
 
 // Bluesky: the organisers' own posts
 let posts = (old.bluesky && old.bluesky.posts) || []
+// only posts newer than the newest post of the last read can raise an alert (the first read only sets the mark), as with the sitemap
+const mark = posts.reduce((m, p) => p.at > m ? p.at : m, '')
 try {
     const d = await get(BSKY, 'json')
     posts = (d.feed || []).filter(f => !f.reason).slice(0, 10).map(f => { const p = f.post, id = p.uri.split('/').pop(); return { at: p.record.createdAt.slice(0, 16) + 'Z', text: p.record.text, url: `https://bsky.app/profile/websummit.bsky.social/post/${id}`, match: WATCH.test(p.record.text) } })
-    for (const p of posts) if (p.match && !seen.has(p.url)) { const a = { first_seen: now, channel: 'bluesky', url: p.url, at: p.at, text: p.text, label: 'fact' }; alerts.push(a); fresh.push(a); seen.add(p.url) }
+    for (const p of posts) if (mark && p.at > mark && p.match && !seen.has(p.url)) { const a = { first_seen: now, channel: 'bluesky', url: p.url, at: p.at, text: p.text, label: 'fact' }; alerts.push(a); fresh.push(a); seen.add(p.url) }
 } catch (e) { errors.push(String(e.message || e)) }
 
 const out = {
-    about: "Web Summit's own channels, watched for a decision on Wednesday 11 November: the sitemap's URL set and the organisers' Bluesky posts. Written by team/incidents/tools/websummit.mjs (see ../README.md). An alert is a keyword match on the organiser's own channel: read it before you act; a match is not a decision.",
+    about: "Web Summit's own channels, watched for its decisions (Wednesday 11 November: off, 19:38; now Day 3 and the open items: talks, PITCH, side events, tickets): the sitemap's URL set and the organisers' Bluesky posts. Written by team/incidents/tools/websummit.mjs (see ../README.md). An alert is a keyword match on the organiser's own channel: read it before you act; a match is not a decision.",
     read_at: now, watch: WATCH.source,
     sitemap: { source: SITEMAP, count: Object.keys(urls).length, added_this_read: added, urls },
     bluesky: { source: BSKY, posts },

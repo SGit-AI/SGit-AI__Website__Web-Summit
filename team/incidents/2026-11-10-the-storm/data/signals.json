@@ -1,7 +1,7 @@
 {
  "about": "The incident timeline as data, made from timeline.md by team/incidents/tools/timeline.mjs (never edit by hand; edit timeline.md). See README.md.",
  "source": "team/incidents/2026-11-10-the-storm/timeline.md",
- "made_at": "2026-11-10T19:58Z",
+ "made_at": "2026-11-10T20:04Z",
  "items": [
   {
    "at": "2026-11-10T08:46Z",
@@ -9,6 +9,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": false,
+   "decision": false,
    "text": "IPMA expects the storm earlier, Wednesday morning; Lisbon among the hardest hit; avoid unnecessary travel (Lusa)",
    "sources": [
     {
@@ -27,6 +28,7 @@
    "kind": "official",
    "label": "fact",
    "key": false,
+   "decision": false,
    "text": "The government declares an alert situation for the mainland on Wednesday, 00:00 to 23:59: schools and non-essential public services close; outdoor events suspended",
    "sources": [
     {
@@ -41,6 +43,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": false,
+   "decision": false,
    "text": "Web Summit's organisers following the alerts with ANEPC and PSP; no sign yet of cancelling Wednesday",
    "sources": [
     {
@@ -59,6 +62,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": true,
+   "decision": false,
    "text": "Lisbon's mayor: \"Tudo indica que a Web Summit não poderá funcionar amanhã\"; the decision is the Interior Ministry's and the organisers'",
    "sources": [
     {
@@ -77,6 +81,7 @@
    "kind": "official",
    "label": "fact",
    "key": false,
+   "decision": false,
    "text": "IPMA red warning for wind, Lisbon district, Wednesday 12:00 to 21:00 (first read by the newsroom)",
    "sources": [
     {
@@ -91,6 +96,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": false,
+   "decision": false,
    "text": "Web Summit in doubt; Tagus bridges limited to 60 km/h; Lisbon tunnels closed from midnight; Metro keeps running",
    "sources": [
     {
@@ -109,6 +115,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": false,
+   "decision": false,
    "text": "the storm leaves Web Summit with a thin audience",
    "sources": [
     {
@@ -127,6 +134,7 @@
    "kind": "team",
    "label": "fact",
    "key": false,
+   "decision": false,
    "text": "Dinis: the storm is our case study (a dynamic team, the decision graph)",
    "sources": [
     {
@@ -141,6 +149,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": false,
+   "decision": false,
    "text": "water enters a pavilion between halls 4 and 5; participants leave early",
    "sources": [
     {
@@ -159,6 +168,7 @@
    "kind": "official",
    "label": "fact",
    "key": false,
+   "decision": false,
    "text": "IPMA raises Lisbon's rain warning to red, Wednesday 12:00 to 18:00",
    "sources": [
     {
@@ -173,6 +183,7 @@
    "kind": "official",
    "label": "fact",
    "key": false,
+   "decision": false,
    "text": "Web Summit: no change to Wednesday's programme announced on its homepage or news page",
    "sources": [
     {
@@ -187,6 +198,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": true,
+   "decision": false,
    "text": "the government recommends suspending Web Summit on Wednesday; the decision rests with the organisers",
    "sources": [
     {
@@ -205,6 +217,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": false,
+   "decision": false,
    "text": "(unofficial) an attendee post says the event is \"most likely\" closed tomorrow; speculation, not an announcement",
    "sources": [
     {
@@ -223,6 +236,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": false,
+   "decision": false,
    "text": "no organiser statement after the government's recommendation (the live blog's last update read)",
    "sources": [
     {
@@ -241,6 +255,7 @@
    "kind": "team",
    "label": "fact",
    "key": true,
+   "decision": false,
    "text": "Incident declared (P1, run on account A) at Dinis's word",
    "sources": [
     {
@@ -255,6 +270,7 @@
    "kind": "official",
    "label": "fact",
    "key": false,
+   "decision": false,
    "text": "Vicky's weather desk full check: IPMA's two red warnings for Lisbon unchanged since 17:42 (wind 12:00 to 21:00, rain 12:00 to 18:00); no Web Summit change",
    "sources": [
     {
@@ -269,6 +285,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": false,
+   "decision": false,
    "text": "Organisers checked again: no decision on Wednesday; their last line is still \"assessing with ANEPC and PSP\"",
    "sources": [
     {
@@ -283,6 +300,7 @@
    "kind": "team",
    "label": "fact",
    "key": true,
+   "decision": false,
    "text": "Lead handed over: incident.conductor@web-summit.dinis takes the lead of WS-214 from conductor@web-summit.dinis, at Dinis's word (team/incidents/BRIEF.md); the timeline is kept newest first from here",
    "sources": [
     {
@@ -297,6 +315,7 @@
    "kind": "team",
    "label": "fact",
    "key": false,
+   "decision": false,
    "text": "No Web Summit decision on Wednesday found (organiser channels readable without a login)",
    "sources": [
     {
@@ -311,6 +330,7 @@
    "kind": "team",
    "label": "fact",
    "key": false,
+   "decision": false,
    "text": "No Web Summit decision on Wednesday: websummit.com (home, /news/, sitemap), its official Bluesky (last post 17:36, \"wrap on Day 1\") and Jornal de Negócios live (last entry 18:24)",
    "sources": [
     {
@@ -325,6 +345,7 @@
    "kind": "official",
    "label": "fact",
    "key": false,
+   "decision": false,
    "text": "analysis (incident.meteorologist@, labelled): worst window Wed 12:00 to 18:00, peak most likely ~15:00 to 19:00 around the wind's swing to north-west, easing but dangerous to 21:00; red wind was known ~27.5 h ahead; confidence medium on the window, low on the peak",
    "sources": [
     {
@@ -336,9 +357,10 @@
   {
    "at": "2026-11-10T19:38Z",
    "approx": false,
-   "kind": "team",
+   "kind": "official",
    "label": "fact",
    "key": true,
+   "decision": true,
    "text": "DECISION: Web Summit's Day 2, Wednesday 11 November, will not take place. The government \"formally advised\" it (tidal flooding, public transport, high winds on external structures), after talks with the government, ANEPC and PSP; Day 3, Thursday 12 November, aimed to go ahead as planned",
    "sources": [
     {
@@ -353,6 +375,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": false,
+   "decision": false,
    "text": "Web Summit closed on Wednesday after talks with the government, ANEPC and PSP; the mayor calls it the most sensible decision",
    "sources": [
     {
@@ -368,9 +391,10 @@
   {
    "at": "2026-11-10T19:42Z",
    "approx": false,
-   "kind": "team",
-   "label": "fact",
+   "kind": "signal",
+   "label": "evidence",
    "key": true,
+   "decision": false,
    "text": "Public: \"Após recomendação do Governo, Paddy suspende Web Summit na quarta-feira\"; the organisers quoted: the government \"informou formalmente a Web Summit\" of the risks",
    "sources": [
     {
@@ -389,6 +413,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": false,
+   "decision": false,
    "text": "organisers cancel all of Wednesday's activities (coastal flooding, wind on outdoor structures, transport), after coordinating with the authorities",
    "sources": [
     {
@@ -407,6 +432,7 @@
    "kind": "signal",
    "label": "evidence",
    "key": false,
+   "decision": false,
    "text": "organisers will hold Thursday \"conforme planeado, após a passagem da tempestade Charles\"; people affected will be contacted directly",
    "sources": [
     {
@@ -425,6 +451,7 @@
    "kind": "official",
    "label": "fact",
    "key": false,
+   "decision": false,
    "text": "Checked by the lead: websummit.com home and news still carry no notice of Day 2",
    "sources": [
     {

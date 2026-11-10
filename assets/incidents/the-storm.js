@@ -59,6 +59,7 @@
 .incident svg .mk { cursor: pointer; }
 .incident svg .mk:focus { outline: none; } .incident svg .mk:focus > :first-child { stroke: var(--focus); stroke-width: 3; }
 .inc-detail { min-height: 3.2em; margin: .5rem 0 0; padding: .6rem .8rem; border-left: 3px solid var(--line-2); background: var(--surface-2); font-size: .9rem; }
+.incident .lab { margin-right: .45em; }
 .inc-detail .lab { font-weight: 700; text-transform: uppercase; font-size: .72rem; letter-spacing: .08em; margin-right: .4em; }
 .lab.fact { color: var(--if); } .lab.evidence { color: var(--ie); } .lab.hypothesis { color: var(--ih); }
 .inc-graph .node rect { stroke-width: 2; }
@@ -84,6 +85,7 @@
 .inc-list { font-size: .88rem; }
 .inc-list td:first-child { white-space: nowrap; }
 .inc-err { color: var(--bad); }
+.inc-wait.done { border-color: var(--ok); }
 .inc-wait { border: 2px solid var(--bad); border-radius: 10px; padding: .8rem 1rem; margin: 1rem 0; background: var(--surface); }
 .inc-wait h2 { margin: 0 0 .3rem; font-size: 1.15rem; }
 .inc-wait .big { font-size: 1.05rem; font-weight: 700; }
@@ -295,23 +297,36 @@ ${wl ? `<div class="inc-detail"><span class="lab hypothesis">Analysis</span>by $
     // 0. what everyone waits for: the graph's first_priority decision, the organisers' own channels (the sitemap through the
     //    connector, watch/websummit.json; Bluesky read here, in the browser, every minute: its public API allows it, so no CI
     //    and no cache sit between a post and this page)
-    const WATCH = /weather|storm|tempest|wednesday|quarta|clos|suspend|cancel|postpon|safety|update|alert|aviso|programme change|venue/i
+    const WATCH = /weather|storm|tempest|wednesday|quarta|thursday|quinta|day [23]|dia [23]|clos|suspend|cancel|postpon|reschedul|safety|update|alert|aviso|programme|venue|pitch|ticket|refund|reembols|talk|speaker|stream|online|side event|night summit/i
     const BSKY = 'https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=websummit.bsky.social&limit=20&filter=posts_no_replies'
     let bsky = null, bskyAt = 0, bskyErr = ''
     async function readBsky() {
         try { const d = await get(BSKY, 9000); bsky = (d.feed || []).filter(f => !f.reason).slice(0, 5).map(f => ({ at: f.post.record.createdAt, text: f.post.record.text, url: 'https://bsky.app/profile/websummit.bsky.social/post/' + f.post.uri.split('/').pop() })); bskyErr = '' } catch (e) { bskyErr = String(e.message || e) }
         bskyAt = Date.now(); if (mount.querySelector('#inc-wait')) waiting()
     }
+    // the decision: the graph's first_priority edge once it has happened; until the researcher updates the graph, the lead's
+    // newest DECISION row in timeline.md about the same organiser (whichever is newer wins). Corroboration: the timeline's rows
+    // about Web Summit from 10 minutes before the decision on, each with its own label and source.
+    const OPEN = [['Day 3, Thursday 12 November', /thursday|quinta|day 3|dia 3/i], ["Wednesday's talks and speakers", /speaker|session|stage|livestream|stream|online|palestra|orador/i], ['The PITCH semi-final', /pitch/i], ['Side events', /side event|night summit|meetup|party|evento paralelo/i], ['Tickets and refunds', /ticket|refund|bilhete|reembols/i]]
     function waiting() {
-        const box = mount.querySelector('#inc-wait'), g = state.graph, w = state.watch
+        const box = mount.querySelector('#inc-wait'), g = state.graph, w = state.watch, items = (state.signals && state.signals.items) || []
         const e = g && g.edges.find(x => x.id === g.first_priority)
-        const decided = e && e.status === 'happened'
-        const posts = (bsky || []).map(p => `<li class="${WATCH.test(p.text) ? 'hit' : ''}">${day(T(p.at))} ${hm(T(p.at))} · <a href="${esc(p.url)}" rel="noopener">${esc(p.text.slice(0, 140))}</a></li>`).join('')
+        const fromGraph = e && e.status === 'happened' && e.at ? { at: e.at, text: e.decision, label: e.label, sources: [{ label: 'graph: ' + (e.read_by || ''), url: safe(e.source) || null }], via: 'decisions/graph.json' } : null
+        const row = items.filter(i => i.decision && /web summit|organis/i.test(i.text)).slice(-1)[0]
+        const fromTl = row ? { at: row.at, text: row.text, label: row.label, sources: row.sources, via: 'timeline.md' } : null
+        const dec = [fromGraph, fromTl].filter(Boolean).sort((x, y) => T(y.at) - T(x.at))[0]
+        const since = dec ? T(dec.at) - 6e5 : Infinity
+        const about = items.filter(i => T(i.at) >= since && i !== row && /web summit|organis|paddy|thursday|quinta/i.test(i.text))
+        const posts = (bsky || []).map(p => `<li class="${WATCH.test(p.text) && T(p.at) >= (dec ? since : 0) ? 'hit' : ''}">${day(T(p.at))} ${hm(T(p.at))} · <a href="${esc(p.url)}" rel="noopener">${esc(p.text.slice(0, 140))}</a></li>`).join('')
         const alerts = ((w && w.alerts) || []).slice(-5).reverse().map(a => `<li class="hit">${esc(a.channel)} · first seen ${hm(T(a.first_seen))} · <a href="${esc(safe(a.url))}" rel="noopener">${esc(String(a.text).slice(0, 140))}</a></li>`).join('')
-        box.innerHTML = `<h2>${decided ? 'Decided' : 'Waiting for'}: ${e ? esc(e.decision) : 'the first-priority decision'}</h2>
-<p class="big">${e ? (decided ? `Decided at ${hm(T(e.at))} UTC` : 'Not announced') : '—'}${e && e.read ? ` <span class="meta">(graph read ${esc(String(e.read).slice(11, 16))} by ${esc(e.read_by || '')})</span>` : ''}</p>${e && e.note ? `<p class="meta">${esc(e.note)}</p>` : ''}
+        const openHits = OPEN.map(([name, rx]) => { const hit = [...about, ...(bsky || []).map(p => ({ at: p.at, text: p.text, label: 'fact', sources: [{ label: 'Bluesky', url: p.url }] }))].filter(i => rx.test(i.text) && T(i.at) >= since).slice(-1)[0]; return `<li>${esc(name)}: ${hit ? `<span class="lab ${hit.label}">${LABEL[hit.label]}</span>${hm(T(hit.at))} ${esc(hit.text.slice(0, 160))} <span class="meta">(${srcHtml(hit.sources)})</span>` : '<span class="meta">nothing yet</span>'}</li>` }).join('')
+        const head = dec
+            ? `<h2>Decided, ${day(T(dec.at))} ${hm(T(dec.at))} UTC</h2><p class="big"><span class="lab ${dec.label}">${LABEL[dec.label]}</span>${esc(dec.text.replace(/^DECISION:\s*/, ''))}</p><p class="meta">Source: ${srcHtml(dec.sources)} (from ${esc(dec.via)}).${fromGraph ? '' : ' The decision graph has not recorded it yet.'}</p>${about.length ? `<h3>Reported since</h3><ul>${about.map(i => `<li><span class="lab ${i.label}">${LABEL[i.label]}</span>${hm(T(i.at))} ${esc(i.text.slice(0, 170))} <span class="meta">(${srcHtml(i.sources)})</span></li>`).join('')}</ul>` : ''}<h3>Still open</h3><ul>${openHits}</ul>`
+            : `<h2>Waiting for: ${e ? esc(e.decision) : 'the first-priority decision'}</h2><p class="big">Not announced${e && e.read ? ` <span class="meta">(graph read ${esc(String(e.read).slice(11, 16))} by ${esc(e.read_by || '')})</span>` : ''}</p>${e && e.note ? `<p class="meta">${esc(e.note)}</p>` : ''}`
+        box.classList.toggle('done', !!dec)
+        box.innerHTML = `${head}
 <div class="cols">
- <div><h3>Web Summit on Bluesky, read live ${bskyAt ? hm(bskyAt) + ' UTC' : '…'}</h3>${bskyErr ? `<p class="inc-err">${esc(bskyErr)}</p>` : `<ul>${posts || '<li>no posts read yet</li>'}</ul>`}<p class="meta">A post in red matches the watch words (weather, storm, Wednesday, closed, suspend, cancel, safety, update…): read it; a match is not a decision.</p></div>
+ <div><h3>Web Summit on Bluesky, read live ${bskyAt ? hm(bskyAt) + ' UTC' : '…'}</h3>${bskyErr ? `<p class="inc-err">${esc(bskyErr)}</p>` : `<ul>${posts || '<li>no posts read yet</li>'}</ul>`}<p class="meta">A post in red${dec ? ' (after the decision)' : ''} matches the watch words (Thursday, day 3, talks, PITCH, tickets, refund, side events, storm, cancel, update…): read it; a match is not a decision.</p></div>
  <div><h3>websummit.com's pages${w ? `, read ${hm(T(w.read_at))} UTC` : ''}</h3>${w ? `<p class="meta">${w.sitemap.count} pages in the sitemap; ${w.sitemap.added_this_read.length} new at the last read.</p><ul>${alerts || '<li>no alert: no new page or post matches the watch words</li>'}</ul>` : '<p class="meta">watch/websummit.json not read yet.</p>'}</div>
 </div>`
     }

@@ -36,8 +36,8 @@ A connector reads just the part of a source that matters, and is listed here.
 
 `{ about, read_at, watch, sitemap: { source, count, added_this_read: [url], urls: { url: first_seen } }, bluesky: { source, posts: [{ at, text, url, match }] }, alerts: [{ first_seen, channel, url, text, at?, label }], errors: [] }`
 
-- An **alert** is a new sitemap URL or an own post whose text matches `watch` (weather, storm, Wednesday/quarta, clos-, suspend, cancel, postpon-, safety, update, alert/aviso, venue). It is a fact that the organiser published it; **a match is not a decision**: read it.
-- The first read records the URL set and raises no sitemap alert. `alerts` keeps every alert ever raised, with `first_seen`.
+- An **alert** is a new sitemap URL or an own post whose text matches `watch` (since 20:04 also Thursday/quinta, day 2 and 3, PITCH, tickets, refunds, talks, speakers, streams, side events: the open items after the Wednesday decision). It is a fact that the organiser published it; **a match is not a decision**: read it.
+- The first read records the URL set and the newest post and raises no alert; after that only a new URL, or a post newer than the last read's newest, can raise one. `alerts` keeps every alert ever raised, with `first_seen`.
 - The dashboard also reads Bluesky **live in the browser** every minute (its public API allows any origin), so a post shows on the page without waiting for this file, CI or Pages' cache. The sitemap has no such header, so it needs this connector.
 
 The weather connectors are the meteorologist's own (`weather/tools/refresh.py`). The researcher's parser asks (`decisions/sources.json`, `parser_ask`) are next.

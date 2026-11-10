@@ -1,7 +1,7 @@
 {
- "about": "Web Summit's own channels, watched for a decision on Wednesday 11 November: the sitemap's URL set and the organisers' Bluesky posts. Written by team/incidents/tools/websummit.mjs (see ../README.md). An alert is a keyword match on the organiser's own channel: read it before you act; a match is not a decision.",
- "read_at": "2026-11-10T19:43Z",
- "watch": "weather|storm|tempest|wednesday|quarta|clos|suspend|cancel|postpon|safety|update|alert|aviso|programme change|venue",
+ "about": "Web Summit's own channels, watched for its decisions (Wednesday 11 November: off, 19:38; now Day 3 and the open items: talks, PITCH, side events, tickets): the sitemap's URL set and the organisers' Bluesky posts. Written by team/incidents/tools/websummit.mjs (see ../README.md). An alert is a keyword match on the organiser's own channel: read it before you act; a match is not a decision.",
+ "read_at": "2026-11-10T20:05Z",
+ "watch": "weather|storm|tempest|wednesday|quarta|thursday|quinta|day [23]|dia [23]|clos|suspend|cancel|postpon|reschedul|safety|update|alert|aviso|programme|venue|pitch|ticket|refund|reembols|talk|speaker|stream|online|side event|night summit",
  "sitemap": {
   "source": "https://websummit.com/sitemap.xml",
   "count": 151,
@@ -173,7 +173,7 @@
     "at": "2026-11-10T16:00Z",
     "text": "Who's ready for Night Summit? 🤩",
     "url": "https://bsky.app/profile/websummit.bsky.social/post/3mzxsrisvg32n",
-    "match": false
+    "match": true
    },
    {
     "at": "2026-11-10T15:00Z",

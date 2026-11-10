@@ -1,7 +1,7 @@
 {
   "agent": "incident.dev@web-summit.dinis",
-  "state": "working: 19:42 wake: Web Summit watch (sitemap + Bluesky) built and on the dashboard; P0.4 the model ledger next",
-  "last_wake": "2026-11-10T19:42Z",
+  "state": "working: 20:04 J5 done (the panel shows the decision; the watch on Day 3 and the open items); P0.4 the model ledger next",
+  "last_wake": "2026-11-10T20:04Z",
   "jobs": [
     "J1 (tonight): measure, do not guess: why this repository's gate takes 110 s in CI (run 42879607949, validate step) against 7.8 s locally. Hypothesis in PIPELINE.md section 0. Report in status; change nothing in this repository's CI without the conductor's and Dinis's yes.",
     "J2 (tonight): the data lane prototype (PIPELINE.md section 4): a public vault for WS-214, one connector writing facts.json to it, one page under team/incidents/ reading it with the pinned sg-vault library; measure write-to-read latency end to end. Vault keys never committed; only a public read key, if Dinis agrees.",
@@ -16,7 +16,8 @@
     "Connector team/incidents/tools/timeline.mjs: timeline.md's table -> data/signals.json (documented in data/README.md)",
     "Build: a collection page may load assets/<dir>/<name>.js (front matter script:) and mount an incident (```incident <data dir>```)",
     "J1 measured, cause found: in CI's blobless clone (filter: blob:none) the build makes 316 lazy blob fetches, one network round trip each: 240 from git blame on people/angelo/conductor/STATE.md and people/angelo/backlog.md (people/angelo/app/data.mjs:363), and one per old version of data/keys.json (data.mjs:285). Reproduced: the gate takes 3.6 s in a full clone and 2 min 35 s in a blobless one (GIT_TRACE2). The release job, a full clone, runs the same build and gate in 19 s",
-    "19:42 wake: team/incidents/tools/websummit.mjs (the researcher's asks websummit-sitemap and websummit-bluesky): the sitemap's URL set diffed between reads, the organisers' own Bluesky posts, keyword alerts that only accumulate -> data/watch/websummit.json, exit 3 on a new alert. The dashboard opens with a 'Waiting for' panel: the graph's first_priority decision, Bluesky read live in the browser every minute (no CI or cache in the path), and the sitemap watch"
+    "19:42 wake: team/incidents/tools/websummit.mjs (the researcher's asks websummit-sitemap and websummit-bluesky): the sitemap's URL set diffed between reads, the organisers' own Bluesky posts, keyword alerts that only accumulate -> data/watch/websummit.json, exit 3 on a new alert. The dashboard opens with a 'Waiting for' panel: the graph's first_priority decision, Bluesky read live in the browser every minute (no CI or cache in the path), and the sitemap watch",
+    "20:04 J5 (incident.conductor@'s routing): the dashboard's panel flips to 'Decided' from the data: the graph's first_priority edge once it has happened, else the lead's newest DECISION row in timeline.md (newest wins); the decision with its source, every row reported since with its label and source, and 'Still open': Day 3, Wednesday's talks, the PITCH semi-final, side events, tickets and refunds, each with the latest matching row or post. The Web Summit watch's words now cover Day 3 and those items; Bluesky alerts only for posts newer than the last read (the first try alerted on a 16:00 post). timeline.mjs: rows with a press link are evidence (19:42 Jornal de Negócios was 'team'), \"Web Summit's email\" is the organiser's own channel (fact), and DECISION rows carry decision: true"
   ],
   "next": [
     "P0.4: team/incidents/tools/llm.mjs, the model ledger (dummy key until the OpenRouter key is set)",
@@ -27,7 +28,7 @@
   "asks": [
     "incident.conductor@ and Dinis: a yes to drop `filter: blob:none` from the validate job's checkout in .github/workflows/deploy-pages.yml (one line). Expected: the gate step from ~90 s to ~20 s, about 70 s off every push (median 3 min 56 s to about 2 min 45 s). Not changed: CI is not mine to change without that yes"
   ],
-  "updated": "2026-11-10T20:05:00Z",
+  "updated": "2026-11-10T20:12Z",
   "by": "incident.dev@web-summit.dinis (done, next, asks, baseline); jobs by incident.conductor@web-summit.dinis",
   "baseline": {
     "what": "push to deployed on web-summit.sgit.ai (deploy-pages, push to dev): run created to run completed, as GitHub reports it",
@@ -51,6 +52,12 @@
         "by": "incident.dev@",
         "release_sh_to_live_s": 317,
         "note": "release.sh started (rebase, local gate, push) to llms.txt serving the version; ~19:12 to ~19:17 UTC"
+      },
+      {
+        "release": "v0.2.1743",
+        "by": "incident.dev@",
+        "release_sh_to_live_s": 234,
+        "note": "19:42 wake; release.sh start to llms.txt serving the version"
       }
     ]
   },
