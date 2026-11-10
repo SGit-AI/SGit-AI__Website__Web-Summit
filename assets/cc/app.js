@@ -225,7 +225,7 @@ ${cols.length > 1 ? `<nav class="kb-jump" aria-label="Columns">${cols.map(c => `
     const VIEWS = [
         ['home', 'Overview', 'home'], ['tasks', 'My tasks', 'tasks'], ['streams', 'Workstreams', 'streams'], ['board', 'Team board', 'board'],
         ['waiting', 'Decisions', 'wait'], ['agents', 'My agents', 'agents'], ['inbox', 'Inbox', 'inbox'], ['calendar', 'Calendar', 'cal'],
-        ['ask', 'Ask Claude', 'claude'], ...Object.entries(XV).map(([id, x]) => [id, x.label, x.icon || 'flag']), ...(window.CC_BRAIN ? [['brain', 'My brain', 'brain']] : []), ['reports', 'Reports', 'reports'], ['settings', 'Settings', 'settings'],
+        ['ask', 'Ask Claude', 'claude'], ...Object.entries(XV).map(([id, x]) => [id, x.label, x.icon || 'flag']), ...(window.CC_BRAIN ? [['brain', 'Universe', 'brain']] : []), ['reports', 'Reports', 'reports'], ['settings', 'Settings', 'settings'],
     ]
     const counts = () => {
         const o = openNamed(), u = o.map(urgency)
@@ -887,10 +887,10 @@ ${groups.map(([g, l]) => `<section class="cc-linkgrp"><h3>${esc(g)}</h3><div cla
     const stars = () => store.get('stars', [])
     const toggleStar = id => { const s = stars(); store.set('stars', s.includes(id) ? s.filter(x => x !== id) : [...s, id]) }
     const hhmm = s => { const m = String(s || '').match(/(\d{1,2}):(\d{2})/); return m ? m[1].padStart(2, '0') + ':' + m[2] : '' }
-    const NEWS_ = () => window.CC_BRAIN ? '2026-11-07-brain' : '2026-11-07-calm'
+    const NEWS_ = () => window.CC_BRAIN ? '2026-11-10-universe' : '2026-11-07-calm'
     const newsCard = () => store.get('news', '') === NEWS_() ? '' : `<section class="cc-card cc-news" aria-labelledby="h-news"><header><span class="hic" aria-hidden="true">${ico('bell', '')}</span><h2 id="h-news">What's new in your command centre</h2><button class="more" type="button" data-news-close>Got it ✕</button></header>
 <ul class="cc-newslist">
-${window.CC_BRAIN ? `<li><b>🧠 Two brains</b> (My brain, in the menu): your own second brain, and the <b>Summit brain</b>: everyone at Web Summit from the public CRM (companies, speakers, sessions, pitches, side events) joined to our team, our company map and our tasks, as a 3D map. Each of us is a balloon in our T-shirt colour. <b>Full screen</b> fills the screen and keeps everything at hand; <b>Cinema</b> is for the stand.</li>` : ''}<li><b>🧭 A calmer command centre</b>: the menu is grouped by colour (Work, Web Summit, Connect, More), the type is smaller and the pages are lighter. The bar of names is gone: <b>tap your name</b> (top left) to open anyone's command centre.</li>
+${window.CC_BRAIN ? `<li><b>🌌 One Universe</b> (Universe, in the menu): one 3D map with layers you switch on and off: <b>Agents &amp; policies</b> (our agents and their behaviour policies), <b>Web Summit</b> (the public CRM joined to our team and tasks) and <b>My notes</b> (your second brain, in this browser only). A button switches between light points and glass balloons. The agents' open gaps are shown only to the developers, with their own key.</li>` : ''}<li><b>🧭 A calmer command centre</b>: the menu is grouped by colour (Work, Web Summit, Connect, More), the type is smaller and the pages are lighter. The bar of names is gone: <b>tap your name</b> (top left) to open anyone's command centre.</li>
 <li><b>🗂️ Kanban</b>: the board button in the top bar opens every task as cards; drag a card to change its status (or use ⋯), group by date, person or area. Tap it again to go back.</li>
 <li><b>⚖️ Decisions first</b>: what waits on you sits right under the greeting.</li>
 <li><b>🎙️ Ask Claude</b> is the round button at the bottom right; tap it to type or speak.</li>
@@ -1057,12 +1057,12 @@ ${list.length ? `<div class="cc-rows">${list.map(sessRow).join('')}</div>` : emp
     matchMedia('(prefers-color-scheme: light)').addEventListener?.('change', () => { if (store.get('theme', 'dark') === 'system') { applyTheme(); render() } })
 
     // the brain (My brain + Summit brain) on the command centres of Silvio, Angelo and Jose (dashboard@web-summit.silvio, 7 November)
-    const BRAIN_FOR = ['silvio', 'angelo', 'jose'], ENGINE = (document.currentScript && document.currentScript.src) || ''
+    const BRAIN_FOR = ['silvio', 'angelo', 'jose', 'dinis'], ENGINE = (document.currentScript && document.currentScript.src) || ''
     const brainFor = id => {
         if (window.CC_BRAIN || !BRAIN_FOR.includes(id) || !ENGINE) return Promise.resolve()
         const base = ENGINE.replace(/[^/]*$/, ''), css = document.createElement('link'); css.rel = 'stylesheet'; css.href = base + 'brain.css'; document.head.appendChild(css)
         return new Promise(ok => { const s = document.createElement('script'); s.src = base + 'brain.js'; s.onload = s.onerror = () => ok(); document.head.appendChild(s) })
-            .then(() => { if (window.CC_BRAIN && !VIEWS.some(v => v[0] === 'brain')) VIEWS.splice(VIEWS.findIndex(v => v[0] === 'ask') + 1, 0, ['brain', 'My brain', 'brain']) })
+            .then(() => { if (window.CC_BRAIN && !VIEWS.some(v => v[0] === 'brain')) VIEWS.splice(VIEWS.findIndex(v => v[0] === 'ask') + 1, 0, ['brain', 'Universe', 'brain']) })
     }
     fetch(root.dataset.src || 'data.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json() }).then(d => { (d.issues || []).forEach(i => { if (/^in.progress$/i.test(i.status)) i.status = 'picked' }); D = d; ME = d.person.id; FIRST = (d.person.name || ME).split(' ')[0]; D.connectors = d.connectors || {}; Object.assign(PROMPTS, d.prompts || {}); brainFor(ME).then(render) })
         .catch(e => { html.classList.remove('cc-on'); root.innerHTML = `<p class="note">The command centre could not load its data (${esc(e.message)}); the summary below is the same data as text.</p>` })
