@@ -1,0 +1,305 @@
+{
+ "number": 7,
+ "date": "2026-11-10",
+ "kicker": "Web Summit 2026 · token accountant",
+ "title": "Brief 7: the fresh-session fix, and my own cost",
+ "when": "10 November 2026, 17:45 UTC (window: since brief 6, 9 November 17:39 UTC)",
+ "by": "accountant@web-summit.indi",
+ "headline": "1,899,841 fresh tokens from Indi's agents; the fresh session tried for dashboard failed only because it had no repository, and video-editor's fresh-session wake cost 12,676, so A6 with the full prompt saves about 1.3 million a day.",
+ "stats": [
+  {
+   "n": "1,899,841",
+   "label": "tokens today (fresh, Indi's agents)"
+  },
+  {
+   "n": "66,739,623",
+   "label": "cache reads today (Indi's agents)"
+  },
+  {
+   "n": "5 of 17",
+   "label": "agents measured of agents running"
+  },
+  {
+   "n": "~1.3 million",
+   "label": "fresh saving per day from A6 (estimate from measured wakes)"
+  }
+ ],
+ "for_you": [
+  {
+   "id": "A6",
+   "ask": "Fresh sessions, fixed: fire the full prompt, not the short wake line (dashboard, dev, me; prompter per task)?",
+   "detail": "Dashboard's 07:30 fresh-session wake could not push: no repository (c4a33942). Old: the task fires 'Scheduled wake: ... Pull dev, ...' alone. New: the agent's full kit prompt (add_repo with push, clone dev, session key), then the wake line. Dashboard 205,992 a wake (99% re-loading), dev 312,472 (97%); video-editor's fresh wake 12,676. Saving about 1.3 million a day (estimate).",
+   "options": [
+    "Yes, conductor sets all four",
+    "Dashboard first, then the rest",
+    "No"
+   ],
+   "recommend": "Yes, conductor sets all four"
+  },
+  {
+   "id": "A8",
+   "ask": "My own schedule: the weekly check says my use is above the savings?",
+   "detail": "4 to 9 November: 901,212 fresh tokens over six wakes; confirmed savings 0 (nothing applied yet).",
+   "options": [
+    "Fresh session and brief only on new numbers",
+    "Every other day",
+    "Keep daily"
+   ],
+   "recommend": "Fresh session and brief only on new numbers"
+  },
+  {
+   "id": "A7",
+   "ask": "Test dashboard's wake on Sonnet 5.5 (brief 6)?",
+   "detail": "Once, under 200,000 tokens. A4 also open.",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "recommend": "Yes"
+  }
+ ],
+ "you_asked": [],
+ "sections": [
+  {
+   "title": "1. Ledger",
+   "table": {
+    "head": [
+     "Agent",
+     "Wakes",
+     "Fresh input",
+     "Output",
+     "Cache write",
+     "Cache read",
+     "Sub-agent tokens",
+     "Per wake (trend)",
+     "Pass rate"
+    ],
+    "rows": [
+     [
+      "dev@indi",
+      "3",
+      "47",
+      "25,374",
+      "829,948",
+      "9,587,285",
+      "82,046",
+      "312,472 (down from 426,346)",
+      "3/3"
+     ],
+     [
+      "dashboard@indi",
+      "3",
+      "28",
+      "7,768",
+      "610,181",
+      "4,528,044",
+      "0",
+      "205,992 (down from 233,468)",
+      "3/3"
+     ],
+     [
+      "accountant@indi",
+      "1",
+      "17",
+      "10,797",
+      "191,079",
+      "1,934,289",
+      "0",
+      "201,893 (up from 185,510)",
+      "1/1"
+     ],
+     [
+      "prompter@indi",
+      "2",
+      "150",
+      "53,881",
+      "75,849",
+      "49,856,737",
+      "0",
+      "64,940 (down from 379,520)",
+      "2/2"
+     ],
+     [
+      "video-editor@indi",
+      "1",
+      "15",
+      "2,756",
+      "9,905",
+      "640,953",
+      "0",
+      "12,676 (new, fresh session)",
+      "0/1 (n/a)"
+     ],
+     [
+      "11 other agents",
+      "0",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "2. Biggest three savings",
+   "items": [
+    "Re-loading (A6): dashboard and dev spend 97 to 99% of fresh tokens re-loading old context; a fresh session's first wake costs about 12,676.",
+    "Prompter's context: 828,096 and 870,830 tokens carried on every call; 49.9 million cache reads in two wakes. A new session per task.",
+    "My own wakes: 95% re-loading, 201,893 fresh for one brief. A8."
+   ]
+  },
+  {
+   "title": "3. Model tests run",
+   "text": "None: A7 open."
+  },
+  {
+   "title": "4. Agents not yet measuring",
+   "text": "Asked today: conductor-map, education, conductor-newsapp, conductor-newsroom. Told to their conductor: conductor, designer, messaging, factory, builder, ux, journalist, social."
+  },
+  {
+   "title": "5. Data notes and 6. My own use",
+   "text": "Counted by tally.py (each stretch once). journalist@web-summit.dinis writes into Indi's folder (746,581 fresh, one wake): not in Indi's totals. Inbox report sent. My use: brief 8."
+  }
+ ],
+ "next": [
+  "11 November: brief 8, or a one-line note if A8 is yes and nothing new."
+ ],
+ "sources": [
+  "people/indi/accountant/ledger/ (all files, via tally.py)",
+  "people/indi/agents.json",
+  "git log since brief 6"
+ ],
+ "friendly": {
+  "title": "Your agents' token use, 10 November",
+  "summary": "Someone tried a fresh session for dashboard this morning. It failed only because the new session had no access to the repository. The fix is simple: start fresh sessions with the full set-up instructions. A brand-new session's run costs about 12,700 tokens, against about 206,000 now.",
+  "numbers": [
+   {
+    "n": "1.9 million",
+    "label": "Fresh tokens today",
+    "explain": "Your five reporting agents."
+   },
+   {
+    "n": "12,676",
+    "label": "A fresh session's run",
+    "explain": "video-editor's first run, in a brand-new session."
+   },
+   {
+    "n": "205,992",
+    "label": "A dashboard run now",
+    "explain": "99% of it re-loading old conversation."
+   },
+   {
+    "n": "~1.3 million",
+    "label": "Saving per day (A6)",
+    "explain": "Estimate from these measured runs."
+   }
+  ],
+  "agents": [
+   {
+    "name": "dev, dashboard, prompter, video-editor, accountant",
+    "state": "report",
+    "on": true
+   },
+   {
+    "name": "12 others",
+    "state": "asked, not yet",
+    "on": false
+   }
+  ],
+  "bars_title": "Fresh tokens per run",
+  "bars": [
+   {
+    "label": "dev",
+    "value": 312472,
+    "shown": "312,472"
+   },
+   {
+    "label": "dashboard",
+    "value": 205992,
+    "shown": "205,992"
+   },
+   {
+    "label": "me (accountant)",
+    "value": 201893,
+    "shown": "201,893"
+   },
+   {
+    "label": "prompter",
+    "value": 64940,
+    "shown": "64,940"
+   },
+   {
+    "label": "video-editor (fresh)",
+    "value": 12676,
+    "shown": "12,676"
+   }
+  ],
+  "bars_note": "The bottom bar is what a fresh session costs. The others carry their whole history.",
+  "savings": [
+   {
+    "title": "Fresh sessions, done right",
+    "plain": "Start each run in a new session with the full set-up instructions, so it can reach the repository.",
+    "evidence": "Dashboard's try failed on access only."
+   },
+   {
+    "title": "Prompter: new session per task",
+    "plain": "It carries about 850,000 tokens on every step now.",
+    "evidence": "49.9 million re-read in two runs."
+   },
+   {
+    "title": "Me: run lighter",
+    "plain": "I cost more than I have saved so far. A fresh session and briefs only on new numbers fix that (A8).",
+    "evidence": "901,212 tokens in six runs; 0 saved yet."
+   }
+  ],
+  "decisions": [
+   {
+    "id": "A6",
+    "question": "Fresh sessions with the full set-up instructions, for dashboard, dev, prompter and me?",
+    "plain": "Your conductor sets it up. About 1.3 million tokens a day saved.",
+    "options": [
+     "Yes, all four",
+     "Dashboard first",
+     "No"
+    ],
+    "recommend": "Yes, all four"
+   },
+   {
+    "id": "A8",
+    "question": "Run me lighter?",
+    "plain": "A fresh session each day, and a full brief only when there are new numbers.",
+    "options": [
+     "Yes",
+     "Every other day",
+     "Keep daily"
+    ],
+    "recommend": "Yes"
+   },
+   {
+    "id": "A7",
+    "question": "Test dashboard's run on Sonnet 5.5?",
+    "plain": "Once, under 200,000 tokens.",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "recommend": "Yes"
+   }
+  ],
+  "glossary": [
+   [
+    "Fresh session",
+    "a new conversation for each run: it starts small."
+   ],
+   [
+    "Re-loading",
+    "a long session writing its whole history back into memory."
+   ]
+  ],
+  "next": "11 November at 17:30 UTC."
+ }
+}
