@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1676",
+    "date": "2026-11-10",
+    "what": "review: bring workers/dev.work's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "3fffff79f"
+  },
+  {
     "version": "v0.2.1675",
     "date": "2026-11-10",
     "what": "dev@PrompTugal.angelo: ledger line for the 10:35 run",
