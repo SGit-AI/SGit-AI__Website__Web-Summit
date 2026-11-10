@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1612",
+    "date": "2026-11-10",
+    "what": "desk.conductor@PrompTugal.angelo: the passes article reworked: no photo, no spotting, colour samples from the app (0-URGENT-4b)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "6d75ae89e"
+  },
+  {
     "version": "v0.2.1611",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
