@@ -112,7 +112,20 @@
         const cs = await commits()
         return cs.map(c => { const msg = String(c.commit && c.commit.message || ''), m = msg.match(/^([A-Za-z0-9._-]+@[A-Za-z0-9._-]+):\s*(.*)/); return { agent: m ? m[1] : '', subject: clean((m ? m[2] : msg).split('\n')[0], 140), at: c.commit.committer.date, hash: c.sha.slice(0, 8), url: safe(c.html_url) } }).filter(x => x.agent)
     }
-    window.LiveUniverse = { agents, summit, activity }
+    // who talks to whom: up to 300 commits on dev (3 reads, shared for two minutes), each with its sender, "For:" and "Issue:"
+    let TK = null
+    async function talk() {
+        if (TK && Date.now() - TK.at < 110000) return TK.data
+        const pages = await Promise.all([commits(), ...[2, 3].map(n => get(GH + '&page=' + n, 'json', 9000).catch(() => []))])
+        const seen = new Set(), out = []
+        for (const c of pages.flat()) { if (!c || !c.sha || seen.has(c.sha)) continue; seen.add(c.sha); const msg = String(c.commit && c.commit.message || '')
+            const m = msg.match(/^([A-Za-z0-9._-]+@[A-Za-z0-9._-]+):\s*(.*)/); if (!m) continue
+            const to = [...new Set([...msg.matchAll(/^For:\s*([A-Za-z0-9._@-]+)/gm)].map(x => x[1]).filter(x => x !== m[1]))]
+            const issues = [...new Set([...msg.matchAll(/^Issue:\s*(WS-\d+)/gm)].map(x => x[1]))]
+            out.push({ at: c.commit.committer.date, from: m[1], to, issues, subject: clean(m[2].split('\n')[0], 140), hash: c.sha.slice(0, 8), url: safe(c.html_url) }) }
+        TK = { at: Date.now(), data: out }; return out
+    }
+    window.LiveUniverse = { agents, summit, activity, talk }
 })()
 ;
 // The Universe (dashboard@web-summit.silvio, 10 November 2026), on the command centres of Silvio, Angelo, Jose and
@@ -375,7 +388,7 @@ ${db ? '' : '<li><b>Web Summit</b>: the public CRM of Web Summit (companies, spe
 <button type="button" class="bm-exit" data-bm="cinema" aria-label="Leave cinema">✕</button>
 <div class="bm-msg" hidden></div>`
         G.dock = document.createElement('div'); G.dock.className = 'bm-dock'
-        G.dock.innerHTML = `<div class="bm-legend" role="group" aria-label="Show or hide a kind">${legend()}</div><div class="bm-bar" role="group" aria-label="The map"><button type="button" class="bm-btn play" data-bm="demo">▶ Play demo</button><button type="button" class="bm-btn bm-fullbtn" data-bm="full" aria-pressed="false" title="Full screen">${FULL_ICO(false)}<span class="lbl">Full screen</span></button><button type="button" class="bm-btn bm-viewbtn" data-bm="view" aria-pressed="false" title="Switch the Universe between the 3D map and the circuit"><span class="lbl">Circuit</span></button><button type="button" class="bm-btn bm-stylebtn" data-bm="style" aria-pressed="false" title="Switch the look: light points or glass balloons"><span class="lbl">${STY_LBL()}</span></button><button type="button" class="bm-btn" data-bm="cinema">Cinema</button><button type="button" class="bm-btn" data-bm="reset">Reset</button></div>`
+        G.dock.innerHTML = `<div class="bm-legend" role="group" aria-label="Show or hide a kind">${legend()}</div><div class="bm-bar" role="group" aria-label="The map"><button type="button" class="bm-btn play" data-bm="demo">▶ Play demo</button><button type="button" class="bm-btn bm-fullbtn" data-bm="full" aria-pressed="false" title="Full screen">${FULL_ICO(false)}<span class="lbl">Full screen</span></button><span class="bm-views" role="group" aria-label="The Universe as">${[['map', 'Map'], ['circuit', 'Circuit'], ['talk', 'Talk']].map(([v, l]) => `<button type="button" class="bm-btn bm-viewbtn" data-bm="view" data-v="${v}" aria-pressed="false" title="${v === 'talk' ? 'Who talks to whom: the agents\' messages to each other, live' : v === 'circuit' ? 'Each agent through its policy to what it reaches' : 'The 3D map'}"><span class="lbl">${l}</span></button>`).join('')}</span><button type="button" class="bm-btn bm-stylebtn" data-bm="style" aria-pressed="false" title="Switch the look: light points or glass balloons"><span class="lbl">${STY_LBL()}</span></button><button type="button" class="bm-btn" data-bm="cinema">Cinema</button><button type="button" class="bm-btn" data-bm="reset">Reset</button></div>`
         const onClick = e => {
             const t = e.target.closest('[data-bm],[data-bm-type],[data-bm-go],[data-bm-open],[data-bm-which],[data-bm-layer]'); if (!t) return
             if (t.dataset.bmLayer) { const k = t.dataset.bmLayer; G.layers.has(k) ? G.layers.delete(k) : G.layers.add(k); if (!G.stand) try { localStorage.setItem('cc.brain.layers', JSON.stringify([...G.layers])) } catch {} ; stopDemo(); card(null); G.hot.clear(); G.hotLinks.clear(); G.dock.querySelector('.bm-legend').innerHTML = legend(); placePanels(); G.refresh(true); setTimeout(() => { if (G.fg) { G.fg.zoomToFit(1000, 30); fitRing() } }, 2500); return }
@@ -386,7 +399,7 @@ ${db ? '' : '<li><b>Web Summit</b>: the public CRM of Web Summit (companies, spe
             else if (t.dataset.bmGo) { const n = G.fg.graphData().nodes.find(x => x.id === t.dataset.bmGo); if (n) focus(n) }
             else if (t.dataset.bmOpen) { G.opts.open && G.opts.open(t.dataset.bmOpen) }
             else if (t.dataset.bm === 'demo') G.demo ? stopDemo() : demo()
-            else if (t.dataset.bm === 'view') { G.view = circOn() ? 'map' : 'circuit'; try { localStorage.setItem('cc.brain.view', G.view) } catch {} ; stopDemo(); card(null); circuit(); if (!circOn() && G.fg) setTimeout(() => { G.fg.zoomToFit(800, 30); fitRing() }, 300) }
+            else if (t.dataset.bm === 'view') { G.view = t.dataset.v || (circOn() ? 'map' : 'circuit'); try { localStorage.setItem('cc.brain.view', G.view) } catch {} ; stopDemo(); card(null); circuit(); if (!circOn() && G.fg) setTimeout(() => { G.fg.zoomToFit(800, 30); fitRing() }, 300) }
             else if (t.dataset.bm === 'style') { G.style = hudOn() ? 'glass' : 'hud'; try { localStorage.setItem('cc.brain.style', G.style) } catch {} ; G.refresh(true) }
             else if (t.dataset.bm === 'cinema') cinema()
             else if (t.dataset.bm === 'full') full()
@@ -479,16 +492,17 @@ ${db ? '' : '<li><b>Web Summit</b>: the public CRM of Web Summit (companies, spe
         if (G.panels.previousElementSibling !== host) host.after(G.panels)
     }
     // ---------- the circuit view of the Universe ----------
-    const viewSaved = () => { try { return localStorage.getItem('cc.brain.view') === 'circuit' ? 'circuit' : 'map' } catch { return 'map' } }
-    const circOn = () => (G.which === 'all' || G.which === 'universe') && (G.view || (G.view = viewSaved())) === 'circuit'
+    const viewSaved = () => { try { const v = localStorage.getItem('cc.brain.view'); return v === 'circuit' || v === 'talk' ? v : 'map' } catch { return 'map' } }
+    const circOn = () => (G.which === 'all' || G.which === 'universe') && (G.view || (G.view = viewSaved())) !== 'map'
     const glints = w => (w.match(/<path[^>]*class="bc-w[^"]*\b(?:sel|team|hold|live)\b[^"]*"[^>]*\/>/g) || []).map((x, k) => x.replace(/class="bc-w([^"]*)"/, (m, c) => `class="bc-glint${/\bsel\b/.test(c) ? ' sel' : /\blive\b/.test(c) ? ' live' : ''}" style="animation-delay:-${(k * 0.37) % 2.4}s"`).replace(/ style="stroke:[^"]*"(?= style)/, '')).join('')
     function circuit() {
         const box = G.holder && G.holder.querySelector('.bm-circuit'); if (!box) return
         const on = circOn(); G.holder.classList.toggle('circ', on); box.hidden = !on
-        const vb = G.dock && G.dock.querySelector('[data-bm="view"]'); if (vb) { vb.hidden = !(G.which === 'all' || G.which === 'universe'); vb.querySelector('.lbl').textContent = on ? 'Map' : 'Circuit'; vb.setAttribute('aria-pressed', String(on)) }
+        const vg = G.dock && G.dock.querySelector('.bm-views'); if (vg) { vg.hidden = !(G.which === 'all' || G.which === 'universe'); vg.querySelectorAll('[data-v]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === (G.view || 'map')))) }
         try { if (G.fg) on ? G.fg.pauseAnimation() : G.fg.resumeAnimation() } catch {}
         if (!on) return
         if (!UNI || !UNI.notes.length) { box.innerHTML = '<p class="bc-msg">Opening the Universe…</p>'; return }
+        if (G.view === 'talk') return talk(box)
         if (G.which === 'all' && !G.layers.has('agents')) { box.innerHTML = '<p class="bc-msg">Switch on <b>Agents &amp; policies</b> to see the circuit.</p>'; return }
         const N = UNI.notes, S = UNI.stats || {}, byId = new Map(N.map(n => [n.id, n])), dev = !!UNI.dev && !G.stand
         const owners = Object.keys(S.by_owner || {}), col = o => SHIRT[o] || '#4FD1F5', cut = (s, n) => (s = String(s == null ? '' : s)).length > n ? s.slice(0, n - 1) + '…' : s
@@ -580,6 +594,50 @@ ${db ? '' : '<li><b>Web Summit</b>: the public CRM of Web Summit (companies, spe
         if (on && UNI) { const ids = UNI.notes.filter(n => n.type === 'agent' && n.policy).map(n => n.id); let k = Math.max(0, ids.indexOf(G.bcSel)); G.bcTour = setInterval(() => { if (!circOn() || !document.body.contains(G.holder)) return bcTour(false); k = (k + 1) % ids.length; G.bcSel = ids[k]; circuit() }, 3500) }
         circuit()
     }
+    // ---------- Talk: who talks to whom (commits "For:" each other), live ----------
+    G.talk = null; G.talkAt = 0; G.talkWin = (() => { try { return localStorage.getItem('cc.talk.win2') || 'all' } catch { return 'all' } })(); G.talkSel = ''
+    const talkLoad = () => { if (!window.LiveUniverse || !window.LiveUniverse.talk || Date.now() - G.talkAt < 110000) return; G.talkAt = Date.now(); if (!G.talk) try { const c = JSON.parse(localStorage.getItem('cc.live.talk') || 'null'); if (c && Array.isArray(c.data) && c.data.length) { G.talk = c.data; G.talkRead = new Date(c.at) } } catch {}
+        window.LiveUniverse.talk().then(x => { G.talk = x; G.talkSnap = false; G.talkErr = false; G.talkRead = new Date(); try { localStorage.setItem('cc.live.talk', JSON.stringify({ at: Date.now(), data: x })) } catch {} if (circOn() && G.view === 'talk') circuit() }).catch(() => (G.talk ? Promise.resolve() : typeof LAB_DEV !== 'undefined' && LAB_DEV ? fetch('talk-snapshot.json').then(r => r.json()).then(x => { G.talk = x; G.talkSnap = true; G.talkRead = new Date(x[0].at) }) : Promise.reject()).catch(() => { G.talkErr = true }).then(() => { if (circOn() && G.view === 'talk') circuit() })) }
+    setInterval(() => { if (G.holder && document.body.contains(G.holder) && circOn() && G.view === 'talk') talkLoad() }, 120000)
+    function talk(box) {
+        talkLoad()
+        const NOW = G.talkSnap && G.talk && G.talk[0] ? Date.parse(G.talk[0].at) : Date.now()
+        if (!G.talk) { box.innerHTML = `<p class="bc-msg">${G.talkErr ? 'GitHub did not answer just now (it allows 60 reads an hour per connection). Trying again in two minutes.' : 'Reading who talks to whom…'}</p>`; return }
+        const WIN = { '15m': 9e5, '1h': 36e5, '3h': 3 * 36e5, all: Infinity }, since = NOW - (WIN[G.talkWin] || WIN.all)
+        const msgs = G.talk.filter(m => Date.parse(m.at) >= since && m.to.length)
+        const ownerOf = id => { const m = String(id).toLowerCase().match(/@[a-z0-9.-]*\.([a-z0-9-]+)$/); return m ? m[1] : String(id).toLowerCase() }
+        const short = id => String(id).includes('@') ? String(id).split('@')[0] : String(id)
+        const col = o => SHIRT[o] || '#4FD1F5', cut = (s, n) => (s = String(s || '')).length > n ? s.slice(0, n - 1) + '…' : s
+        const ago = iso => { const m = Math.max(0, Math.round((NOW - Date.parse(iso)) / 60000)); return m < 60 ? m + ' min' : Math.round(m / 60) + ' h' }
+        // the people and agents in the conversation, round an ellipse, grouped by person
+        const ids = new Map(); for (const m of msgs) for (const x of [m.from, ...m.to]) { const k = x.toLowerCase(); const y = ids.get(k) || { id: x, k, out: 0, inn: 0 }; if (x === m.from) y.out++; else y.inn++; ids.set(k, y) }
+        const nodes = [...ids.values()].sort((a, b) => ownerOf(a.k).localeCompare(ownerOf(b.k)) || (b.out + b.inn) - (a.out + a.inn))
+        const W = 1400, H = 700, CX = 700, CY = 350, RX = 520, RY = 200, pos = new Map()
+        nodes.forEach((n, k) => { const a = -Math.PI / 2 + (k / Math.max(1, nodes.length)) * Math.PI * 2; pos.set(n.k, { x: CX + RX * Math.cos(a), y: CY + RY * Math.sin(a), a }) })
+        const pair = new Map(); for (const m of msgs) for (const to of m.to) { const key = m.from.toLowerCase() + '>' + to.toLowerCase(), y = pair.get(key) || { from: m.from, to, n: 0, last: m.at, issues: new Set() }; y.n++; if (m.at > y.last) y.last = m.at; m.issues.forEach(i => y.issues.add(i)); pair.set(key, y) }
+        const sel = G.talkSel, hot = p => !sel || p.from.toLowerCase() === sel || p.to.toLowerCase() === sel
+        let edges = ''
+        for (const p of pair.values()) { const a = pos.get(p.from.toLowerCase()), b = pos.get(p.to.toLowerCase()); if (!a || !b) continue
+            const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, qx = mx + (CX - mx) * 0.55, qy = my + (CY - my) * 0.55, fresh = NOW - Date.parse(p.last) < 15 * 60000
+            edges += `<path class="tl-e${fresh ? ' fresh' : ''}${hot(p) ? '' : ' dim'}" style="stroke:${col(ownerOf(p.from.toLowerCase()))};stroke-width:${(1.2 + Math.log2(1 + p.n) * 1.3).toFixed(1)}" d="M${a.x.toFixed(1)} ${a.y.toFixed(1)} Q ${qx.toFixed(1)} ${qy.toFixed(1)} ${b.x.toFixed(1)} ${b.y.toFixed(1)}"><title>${esc(short(p.from))} → ${esc(short(p.to))}: ${p.n} message${p.n === 1 ? '' : 's'}${p.issues.size ? ' · ' + [...p.issues].join(', ') : ''} · last ${ago(p.last)} ago</title></path>`
+            if (fresh && hot(p)) edges += `<path class="bc-glint live" d="M${a.x.toFixed(1)} ${a.y.toFixed(1)} Q ${qx.toFixed(1)} ${qy.toFixed(1)} ${b.x.toFixed(1)} ${b.y.toFixed(1)}"/>` }
+        const dots = nodes.map(n => { const p = pos.get(n.k), o = ownerOf(n.k), human = !n.k.includes('@'), right = Math.cos(p.a) >= 0, r = human ? 9 : 4 + Math.min(7, Math.sqrt(n.out + n.inn) * 1.4), on = sel === n.k
+            const lx = p.x + Math.cos(p.a) * (r + 5), ly = p.y + Math.sin(p.a) * (r + 5), deg = p.a * 180 / Math.PI, rot = (right ? deg : deg + 180).toFixed(1)
+            return `<g class="tl-n${on ? ' on' : ''}${sel && !on && ![...pair.values()].some(q => (q.from.toLowerCase() === sel && q.to.toLowerCase() === n.k) || (q.to.toLowerCase() === sel && q.from.toLowerCase() === n.k)) ? ' dim' : ''}" data-tl="${esc(n.k)}" role="button" tabindex="0"><title>${esc(n.id)}: ${n.out} sent, ${n.inn} received</title><circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${r.toFixed(1)}" style="fill:${col(o)}${human ? ';stroke:#fff;stroke-width:2' : ''}"/><text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" dy="4" transform="rotate(${rot} ${lx.toFixed(1)} ${ly.toFixed(1)})" text-anchor="${right ? 'start' : 'end'}" class="tl-l${human ? ' h' : ''}">${esc(cut(human ? n.id : short(n.id) + '.' + o, 20))}</text></g>` }).join('')
+        const owners = [...new Set(nodes.map(n => ownerOf(n.k)))]
+        const feed = msgs.filter(m => !sel || m.from.toLowerCase() === sel || m.to.some(x => x.toLowerCase() === sel)).slice(0, 16)
+        const tasks = new Map(); for (const m of msgs) for (const i of m.issues) { const y = tasks.get(i) || { n: 0, who: new Set() }; y.n++; y.who.add(m.from); m.to.forEach(x => y.who.add(x)); tasks.set(i, y) }
+        const pairs = [...pair.values()].sort((a, b) => b.n - a.n).slice(0, 9)
+        box.innerHTML = `<div class="bc-strip"><span>TALK</span><span>MESSAGES <b>${msgs.length}</b></span><span>TALKING <b>${nodes.length}</b></span><span>PAIRS <b>${pair.size}</b></span><span>TASKS <b>${tasks.size}</b></span>${G.talkSnap ? '<span>AS OF <b>' : '<span class="live">● LIVE</span><span>READ <b>'}${esc(G.talkRead.toISOString().slice(11, 16))} UTC</b></span><span>WINDOW <b>${G.talkWin === 'all' ? 'last ' + G.talk.length + ' commits' : G.talkWin === '15m' ? 'now: last 15 min' : 'last ' + G.talkWin}</b></span></div>
+<div class="bc-stage"><div class="bc-title" style="--c:#4FD1F5"><div><b>${sel ? esc(cut(sel, 40)).toUpperCase() : 'WHO TALKS TO WHOM'}</b><small>${sel ? 'its messages lit · tap again to see everyone' : 'an agent’s commit "For:" another is a message · thicker = more · glowing = in the last 15 minutes'}</small></div><div class="bc-tools">${['15m', '1h', '3h', 'all'].map(w => `<button type="button" class="bc-tour" data-tl-win="${w}" aria-pressed="${G.talkWin === w}">${w === 'all' ? 'All read' : w === '15m' ? '● Now' : 'Last ' + w}</button>`).join('')}</div></div>
+<div class="bc-scroll"><svg class="bc-svg tl-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Who talks to whom: each line is messages from one agent to another">${msgs.length ? edges + dots : `<text x="${CX}" y="${CY}" text-anchor="middle" class="tl-l">${G.talkWin === '15m' ? 'Nobody has sent a message in the last 15 minutes. Try Last 1h or All read.' : 'No messages between agents in this window.'}</text>`}</svg></div></div>
+<div class="bc-panels tl-panels"><section><h4>Messages <em>${G.talkSnap ? 'as of' : 'live'}</em></h4><ol class="bc-log">${feed.map(m => `<li><span>${esc(ago(m.at))}</span><i style="color:${col(ownerOf(m.from.toLowerCase()))}">${esc(cut(short(m.from), 14))} → ${esc(cut(m.to.map(short).join(', '), 18))}</i>${m.url ? `<a href="${esc(m.url)}" target="_blank" rel="noopener">${esc((m.issues[0] ? m.issues[0] + ' · ' : '') + m.subject)}</a>` : esc(m.subject)}</li>`).join('')}</ol></section>
+<section><h4>Busiest pairs</h4>${pairs.map(p => `<p class="bc-disp"><span style="color:${col(ownerOf(p.from.toLowerCase()))}">${esc(cut(short(p.from), 12))}</span><b>→ ${esc(cut(short(p.to), 14))}</b><em>${p.n}</em><small>${esc(ago(p.last))}</small></p>`).join('')}</section>
+<section><h4>Tasks in play <em>${tasks.size}</em></h4>${[...tasks.entries()].sort((a, b) => b[1].n - a[1].n).slice(0, 9).map(([i, y]) => `<p class="bc-disp"><span>${esc(i)}</span><b>${y.who.size} agents</b><em>${y.n}</em><small>msgs</small></p>`).join('') || '<p class="bc-note">No task named in these messages.</p>'}</section>
+<section><h4>People</h4>${owners.map(o => `<p class="bc-disp"><span style="color:${col(o)}">${esc(o)}</span><b>${nodes.filter(n => ownerOf(n.k) === o).length} talking</b><em>${msgs.filter(m => ownerOf(m.from.toLowerCase()) === o).length}</em><small>sent</small></p>`).join('')}<p class="bc-note">Agents talk through commits: asynchronous, not a live chat. Read every 2 minutes.</p></section></div>`
+    }
+    document.addEventListener('click', e => { const w = e.target.closest && e.target.closest('[data-tl-win]'); if (w && G.holder && G.holder.contains(w)) { G.talkWin = w.dataset.tlWin; try { localStorage.setItem('cc.talk.win2', G.talkWin) } catch {} ; circuit(); return }
+        const n = e.target.closest && e.target.closest('.tl-n'); if (n && G.holder && G.holder.contains(n)) { G.talkSel = G.talkSel === n.dataset.tl ? '' : n.dataset.tl; circuit() } })
     function card(n) {
         const c = G.holder.querySelector('.bm-card'); if (!n) { c.hidden = true; return }
         if (UNI && (G.which === 'universe' || (G.which === 'all' && n.n.__layer === 'agents'))) { c.innerHTML = G.stand || !UNI.dev ? standCard(n) : uCard(n); c.hidden = false; if (n.type === 'agent' || n.type === 'policy') { G.sel = n.id; placePanels() } return }

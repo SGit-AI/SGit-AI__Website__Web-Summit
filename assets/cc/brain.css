@@ -350,3 +350,13 @@ html.bm-full, html.bm-full body { overflow: hidden; }
 .bc-tn { color: #3DDC97 !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 70vw; display: block; }
 .bc-log li { grid-template-columns: 56px 100px minmax(0, 1fr) !important; } .bc-log li span, .bc-log li i { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bm-circuit .bc-title { flex-wrap: nowrap; } .bm-circuit .bc-title > div:first-child { min-width: 0; flex: 1 1 auto; } .bc-tn { max-width: 100%; }
+
+/* Talk: who talks to whom (10 November) */
+.bm-views { display: inline-flex; gap: 2px; } .bm-views[hidden] { display: none; } .bm-views .bm-btn[aria-pressed="true"] { background: rgba(79,209,245,.9); color: #021018; }
+.tl-svg .tl-e { fill: none; opacity: .55; stroke-linecap: round; } .tl-svg .tl-e.fresh { opacity: 1; filter: drop-shadow(0 0 3px currentColor); } .tl-svg .tl-e.dim { opacity: .07; }
+.tl-svg .tl-n { cursor: pointer; } .tl-svg .tl-n.dim { opacity: .25; } .tl-svg .tl-n.on circle { stroke: #F5E14A; stroke-width: 3; }
+.tl-svg .tl-l { font: 500 11px ui-monospace, Menlo, monospace; fill: #CFE3F0; pointer-events: none; } .tl-svg .tl-n.on .tl-l { fill: #F5E14A; }
+
+.tl-panels .bc-disp { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) 30px 44px; } .tl-panels .bc-disp > * { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.tl-panels .bc-log li > * { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.tl-svg .tl-l.h { font-weight: 700; fill: #fff; }
