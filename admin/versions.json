@@ -1,5 +1,40 @@
 [
   {
+    "version": "v0.2.1710",
+    "date": "2026-11-10",
+    "what": "dev@PrompTugal.angelo: ledger line for the 15:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "9e8ede454"
+  },
+  {
+    "version": "v0.2.1709",
+    "date": "2026-11-10",
+    "what": "deck v2: RiskMandate leads with security teams, a must-have, compliance as a by-product",
+    "by": "conductor@web-summit.dinis",
+    "from": "f02ce25c3"
+  },
+  {
+    "version": "v0.2.1708",
+    "date": "2026-11-10",
+    "what": "wake 15:21: two new traces (the conductor's two meeting decks; WS-211's newsroom workflow), 14 steps",
+    "by": "reporter@web-summit.dinis",
+    "from": "a1ba97c6f"
+  },
+  {
+    "version": "v0.2.1707",
+    "date": "2026-11-10",
+    "what": "deck: RiskMandate, shown on our own agents (for a cybersecurity investor)",
+    "by": "conductor@web-summit.dinis",
+    "from": "164bc16de"
+  },
+  {
+    "version": "v0.2.1706",
+    "date": "2026-11-10",
+    "what": "the newsroom workflow, its infographic and the map spec",
+    "by": "conductor-newsroom@web-summit.indi",
+    "from": "20ae85f44"
+  },
+  {
     "version": "v0.2.1705",
     "date": "2026-11-10",
     "what": "deck: PrompTugal.news, the agentic team (Angelo's live map, Silvio's Universe, GAMMA-Ray, FACT-Ray, how we work)",
