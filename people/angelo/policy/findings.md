@@ -2,6 +2,18 @@
 
 By policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo. Newest run first. Each finding names the commit, the rule (the numbers are `map.md`'s) and the evidence. What the watcher (`people/jose/watcher/latest.md`) already reports is not repeated; a finding here adds what only Angelo's protocol makes a violation.
 
+## Run 8: 10 November 2026, 07:25 UTC (scheduled)
+
+**Range:** `69ec064b..335f7f28`, 77 commits by Angelo's agents. Next run starts after `335f7f28`. No violation.
+
+- **The lane check:** 0 refused, 0 declared. **Watched files:** all three unchanged. **Branches:** the three `claude/*` branches that moved are Silvio's agents'; nothing on `main`.
+- **A session created by the desk (R12, R35):** `b32f3cda`, 9 November 22:26: sheet@PrompTugal.angelo, a one-off session for the interview sheet, at your words "Can you spin a new single session agent?" and "Let's try a one off". Your protocol allows it when you ask for that specific action, and it is logged in `wakes.md`; it pushes only to `workers/sheet`.
+
+### P-12 (low, for Angelo) which environment did sheet@ run in?
+
+- A session the desk creates starts in the desk's own cloud environment unless another is named, and the commit names none. Your rule R22 says a secret lives only in the environment of the one agent it belongs to, and agents without a secret share the no-secrets one.
+- **Recommendation:** whenever the desk creates a session, its commit names the environment (the shared no-secrets one for a worker like sheet@). If the desk's environment holds a secret, a one-off session there can read it.
+
 ## Run 7: 9 November 2026, 19:15 UTC (scheduled)
 
 **Range:** `592dcb42..69ec064b`, 125 commits by Angelo's agents. Next run starts after `69ec064b`. No violation.
