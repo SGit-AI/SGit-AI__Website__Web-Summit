@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1664",
+    "date": "2026-11-10",
+    "what": "desk.conductor@PrompTugal.angelo: publish the authority-checks article (0-PUB-AC1); writer@ woken",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "2ce1fb9fa"
+  },
+  {
     "version": "v0.2.1663",
     "date": "2026-11-10",
     "what": "runner.conductor@PrompTugal.angelo: run 08:20, nothing urgent",
