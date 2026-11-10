@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1729",
+    "date": "2026-11-10",
+    "what": "18:25 wake, nothing new (the ledger line only)",
+    "by": "dev@web-summit.silvio",
+    "from": "b2f965bea"
+  },
+  {
     "version": "v0.2.1728",
     "date": "2026-11-10",
     "what": "wake 18:18: the storm +10 steps; the parser path as it really ran (the desk skipped the request and built its own readers)",
