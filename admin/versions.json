@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1692",
+    "date": "2026-11-10",
+    "what": "12:30 wake: team messaging on (WS-203); Indi's education idea on the list (WS-209)",
+    "by": "dashboard@web-summit.indi",
+    "from": "3060af9b7"
+  },
+  {
     "version": "v0.2.1691",
     "date": "2026-11-10",
     "what": "team messaging is on: ten lanes on ws-team-messages, each member's details sealed to their site key (WS-203)",
