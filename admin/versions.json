@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1753",
+    "date": "2026-11-10",
+    "what": "J6: watch every section of websummit.com (all blog listings, every sitemap); the organiser's own post (19:09, modified 19:58) on the dashboard as a decision source",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "716690a55"
+  },
+  {
     "version": "v0.2.1752",
     "date": "2026-11-10",
     "what": "Web Summit's decision is a fact (its own page, 19:09); the blog is the organisers' primary channel; the miss recorded",
