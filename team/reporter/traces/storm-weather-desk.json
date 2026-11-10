@@ -1,0 +1,686 @@
+{
+  "id": "storm-weather-desk",
+  "size": "large",
+  "schema": "ws-trace/1",
+  "shape": {
+    "step": "n, at (UTC, ISO 8601), at_note, actor {name, kind: person|agent|ci}, in, out, handoff {to, via}, repo, sha, issue, brief, for[], kind, evidence[] (commit|version|url|file); evidence: [] with evidence_note when the record holds none",
+    "graph": "each commit step also gives /pipeline/'s graph row {at, repo, sha, agent, issue, for[], kind} (WS-205)"
+  },
+  "title": "The storm: a red wind warning to a dynamic weather desk, a decision chain and the work desk's first story",
+  "input": {
+    "kind": "raw official data",
+    "what": "IPMA's warnings open data (JSON), first read 10 November 14:23 UTC: red wind for the Lisbon district, Wednesday 12:00 to 21:00"
+  },
+  "output": {
+    "kind": "live pages",
+    "what": "S41 on pt.news; the weather desk's live page and decision chain; S43 commissioned; the focused view and the parser workflow still to come",
+    "urls": [
+      "https://promptugal.news/",
+      "https://github.com/PrompTugal/PrompTugal__News__Website/tree/dev/desks/weather-vicky"
+    ]
+  },
+  "status": "open: the story is happening; the parser workflow (Dinis's five stages) has not started in the record",
+  "captured_by": "reporter@web-summit.dinis",
+  "captured_at": "2026-11-10T17:25Z",
+  "lanes": {
+    "ours": "the team's agents and people (commits)",
+    "theirs": "the authorities' decisions (the graph below), each from a public source the desk read"
+  },
+  "steps": [
+    {
+      "n": 1,
+      "lane": "ours",
+      "at": "2026-11-10T14:08:40Z",
+      "actor": {
+        "name": "curator@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "IPMA's red wind warning for Lisbon on Wednesday (how the curator found it is not in the commit)",
+      "out": "S41 commissioned",
+      "handoff": {
+        "to": "journalist@PrompTugal.vicky",
+        "via": "the desk's README; commit"
+      },
+      "kind": "commission",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "4a2c32dd",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/4a2c32dd9e8b"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "4a2c32dd",
+      "issue": "WS-14"
+    },
+    {
+      "n": 2,
+      "lane": "ours",
+      "at": "2026-11-10T14:25:37Z",
+      "actor": {
+        "name": "journalist@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "IPMA warnings open data (raw JSON, read 14:23) and Web Summit's channels",
+      "out": "S41 drafted, with an SVG of the warnings",
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky",
+        "via": "draft in desks/journalist-vicky/drafts/"
+      },
+      "kind": "draft",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "c8820e0e",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/c8820e0e4d35"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/journalist-vicky/drafts/S41-red-wind-warning-lisbon-wednesday.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/journalist-vicky/drafts/S41-red-wind-warning-lisbon-wednesday.md"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "c8820e0e",
+      "issue": "WS-14",
+      "evidence_note": "the first raw source of the story: api.ipma.pt warnings_www.json, of which only area LSB matters. Read by the agent directly, no parser yet."
+    },
+    {
+      "n": 3,
+      "lane": "ours",
+      "at": "2026-11-10T14:36:22Z",
+      "actor": {
+        "name": "Vicky",
+        "kind": "person"
+      },
+      "in": "S41 ready",
+      "out": "yes to publish",
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky",
+        "via": "Vicky's word"
+      },
+      "kind": "approval",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "8824680d",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/8824680dfb89"
+        }
+      ],
+      "evidence_note": "the person's yes, recorded by the reviewer's commit ('at Vicky's word')"
+    },
+    {
+      "n": 4,
+      "lane": "ours",
+      "at": "2026-11-10T14:36:22Z",
+      "actor": {
+        "name": "reviewer@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "S41 and Vicky's yes; sources re-read 14:34",
+      "out": "S41 published on pt.news",
+      "handoff": {
+        "to": "readers; correspondent@PrompTugal.dinis",
+        "via": "promptugal.news"
+      },
+      "kind": "publish",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "8824680d",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/8824680dfb89"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "8824680d",
+      "issue": "WS-14"
+    },
+    {
+      "n": 5,
+      "lane": "ours",
+      "at": "2026-11-10T15:10:44Z",
+      "actor": {
+        "name": "conductor.B@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "S41 live",
+      "out": "an hourly S41 watch on journalist@'s wake, in the hand-over",
+      "handoff": {
+        "to": "journalist@PrompTugal.vicky",
+        "via": "hand-over file"
+      },
+      "kind": "watch",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "b9a58006",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/b9a580063a06"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "4c0ea0bf",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/4c0ea0bfbab8"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "b9a58006"
+    },
+    {
+      "n": 6,
+      "lane": "ours",
+      "at": "2026-11-10T16:44:30Z",
+      "actor": {
+        "name": "reviewer@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "the hourly checks (15:08, 15:22, 16:07, 16:43: no change)",
+      "out": "S41's 'as of' moved to 16:43 at Vicky's word; small tools for the hourly check and the stamp",
+      "handoff": {
+        "to": "readers",
+        "via": "promptugal.news"
+      },
+      "kind": "update",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "f2d22651",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/f2d22651220f"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "f2d22651",
+      "evidence_note": "the first tools in the story: a check and a stamp, not yet a parser"
+    },
+    {
+      "n": 7,
+      "lane": "ours",
+      "at": "2026-11-10T16:50:00Z",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "the warning, as breaking news",
+      "out": "a spoken ask: a weather agent to cover it",
+      "handoff": {
+        "to": "conductor.B@PrompTugal.vicky",
+        "via": "voice, in Vicky's conductor's session"
+      },
+      "kind": "voice brief",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "4c704f81",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/4c704f81cd81"
+        }
+      ],
+      "at_note": "about; from the commit body"
+    },
+    {
+      "n": 8,
+      "lane": "ours",
+      "at": "2026-11-10T16:52:21Z",
+      "actor": {
+        "name": "conductor.B@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "Dinis's ask",
+      "out": "weather@PrompTugal.vicky started: one session, hourly at :35, desks/weather-vicky/, flags to the reviewer, never publishes",
+      "handoff": {
+        "to": "weather@PrompTugal.vicky",
+        "via": "a new session"
+      },
+      "kind": "start agent",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "4c704f81",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/4c704f81cd81"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "4c704f81",
+      "issue": "WS-177"
+    },
+    {
+      "n": 9,
+      "lane": "ours",
+      "at": "2026-11-10T16:56:01Z",
+      "actor": {
+        "name": "weather@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "IPMA warnings, the CHARLES communiqué, forecast, airport TAF, stations (read 16:52 to 16:54)",
+      "out": "its own key and the first live page; the source map (which sources a machine can read)",
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky",
+        "via": "commit For:"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "7db30002",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/7db30002f38c"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/README.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/README.md"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "7db30002",
+      "issue": "WS-14"
+    },
+    {
+      "n": 10,
+      "lane": "ours",
+      "at": "2026-11-10T17:02:30Z",
+      "actor": {
+        "name": "weather@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "transport, sea and venue sources (16:53 to 16:59)",
+      "out": "the live page extended",
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky",
+        "via": "commit For:"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "e91f778c",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/e91f778c9654"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "e91f778c",
+      "issue": "WS-14"
+    },
+    {
+      "n": 11,
+      "lane": "ours",
+      "at": "2026-11-10T17:02:31Z",
+      "actor": {
+        "name": "weather@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "the government's declaration (read at source 17:01), ANEPC",
+      "out": "the decision chain: who decides what, in order, analysis labelled; schools closed by measure (a) of the alert declaration",
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky",
+        "via": "commit For:"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "f360b4bc",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/f360b4bca2d6"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "f360b4bc",
+      "issue": "WS-14"
+    },
+    {
+      "n": 12,
+      "lane": "ours",
+      "at": "2026-11-10T17:06:01Z",
+      "actor": {
+        "name": "curator@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "the decision chain",
+      "out": "S43 commissioned (the government's alert for Wednesday); other angles held for sources",
+      "handoff": {
+        "to": "journalist@PrompTugal.vicky",
+        "via": "commit"
+      },
+      "kind": "commission",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "cde65817",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/cde65817daf3"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "cde65817",
+      "issue": "WS-14"
+    },
+    {
+      "n": 13,
+      "lane": "ours",
+      "at": "2026-11-10T17:15:00Z",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "the platform, shown to others",
+      "out": "voice memos: the storm is the case study; a dynamic team; the decision graph; the work desk",
+      "handoff": {
+        "to": "conductor@web-summit.dinis",
+        "via": "voice, in the conductor's session"
+      },
+      "kind": "voice brief",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "683727f6",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/683727f63d9d"
+        }
+      ],
+      "at_note": "about 17:15 and 17:25"
+    },
+    {
+      "n": 14,
+      "lane": "ours",
+      "at": "2026-11-10T17:11:24Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the first memo",
+      "out": "guidance: the storm is our case study (meteorologist, historian, researcher, Portuguese-law and Câmara agents as sub-agents; the decision graph; a focused view)",
+      "handoff": {
+        "to": "weather@ and conductor.B@PrompTugal.vicky; dashboard@PrompTugal.angelo; the work desk",
+        "via": "board/guidance/ in PrompTugal__News__Website"
+      },
+      "kind": "guidance",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "683727f6",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/683727f63d9d"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "board/guidance/2026-11-10-the-storm-as-our-case-study.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/guidance/2026-11-10-the-storm-as-our-case-study.md"
+        }
+      ],
+      "at_note": "the commit (17:11) is before the memo's stated 'about 17:15'; the memo's time is approximate",
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "683727f6"
+    },
+    {
+      "n": 15,
+      "lane": "ours",
+      "at": "2026-11-10T17:12:40Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the second memo (about 17:25)",
+      "out": "the work desk section in team/reporter/BRIEF.md",
+      "handoff": {
+        "to": "reporter@ and journalist.examples@web-summit.dinis",
+        "via": "commit; a session message"
+      },
+      "kind": "brief",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "ba536667",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/ba5366676b32"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "ba536667"
+    }
+  ],
+  "parser_workflow": [
+    {
+      "stage": "1. a researcher hits an official source: raw JSON or a page where one small part matters (candidates in the record: IPMA warnings_www.json, of which only area LSB matters; the communiqué RSS; Lisbon city hall's pages, refused 403; Diário da República, a JavaScript app)",
+      "status": "not yet in the record (17:20 UTC)"
+    },
+    {
+      "stage": "2. it asks the conductor for a parser for just that part",
+      "status": "not yet in the record (17:20 UTC)"
+    },
+    {
+      "stage": "3. an architect writes a plan as a markdown file",
+      "status": "not yet in the record (17:20 UTC)"
+    },
+    {
+      "stage": "4. the developer implements it, the designer maps it",
+      "status": "not yet in the record (17:20 UTC)"
+    },
+    {
+      "stage": "5. they check it, and a UI turns noise into signal",
+      "status": "not yet in the record (17:20 UTC)"
+    }
+  ],
+  "decision_graph": [
+    {
+      "node": "IPMA: communiqué no. 1 names storm CHARLES",
+      "at": "2026-11-09",
+      "at_note": "date only",
+      "status": "issued",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://www.ipma.pt/pt/otempo/comunicados/",
+          "note": "as cited by the desk"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        }
+      ]
+    },
+    {
+      "node": "ANEPC: Aviso 21 to the population on CHARLES",
+      "at": "2026-11-09T20:30:00Z",
+      "status": "issued, before the red warning",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://prociv.gov.pt/pt/avisos-a-populacao/",
+          "note": "as cited by the desk"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        }
+      ]
+    },
+    {
+      "node": "IPMA: red wind warning, Lisbon district, Wed 12:00 to 21:00",
+      "at": null,
+      "at_note": "issue time not in the record; first read by our team 2026-11-10T14:23Z",
+      "status": "issued",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+          "note": "raw JSON"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        }
+      ]
+    },
+    {
+      "node": "Government (Internal Administration, Education co-signing): situação de alerta, mainland Portugal, Wed 00:00 to 23:59; (a) schools and non-essential services close, (b) outdoor events suspended, (c) to (e) parks, structures, shoreline",
+      "at": "2026-11-10T12:10:00Z",
+      "at_note": "the page's own date",
+      "status": "declared",
+      "follows": [
+        "IPMA red warning"
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+          "note": "as cited by the desk"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        }
+      ]
+    },
+    {
+      "node": "AMN: sea warning",
+      "at": "2026-11-10T12:15:00Z",
+      "status": "issued; no bar closure found",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://www.amn.pt/Media/Paginas/DetalheNoticia.aspx?nid=7101",
+          "note": "as cited by the desk"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        }
+      ]
+    },
+    {
+      "node": "ANEPC: readiness raised; SMS to the population about Wednesday",
+      "at": "2026-11-10",
+      "at_note": "date only",
+      "status": "done",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        }
+      ]
+    },
+    {
+      "node": "Lisbon district and city: coordination centres and civil-protection commissions decide on the emergency plan",
+      "at": null,
+      "status": "not read (city sites refuse automated reads, 403)",
+      "follows": [
+        "Government alert, point 4"
+      ],
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        }
+      ]
+    },
+    {
+      "node": "Transport operators: service changes",
+      "at": "2026-11-10T16:59:00Z",
+      "status": "possible disruption announced (Fertagus, Carris, Carris Metropolitana); no suspension for Wednesday",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        }
+      ]
+    },
+    {
+      "node": "Web Summit, MEO Arena, FIL: the summit's decision",
+      "at": null,
+      "status": "no notice at 16:55",
+      "follows": [
+        "Government alert, measure (b)",
+        "venue guidance"
+      ],
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        }
+      ],
+      "analysis": "the desk's own, labelled: the halls are indoors; whether (b) touches outdoor areas or side events is not stated by any source"
+    }
+  ],
+  "lead_times": {
+    "question": "How far ahead could we have known? (Dinis, 17:25)",
+    "school_closure": {
+      "who_decided": "the government, by measure (a) of the situação de alerta, co-signed by the Minister of Education; no separate ministry notice found",
+      "published": "2026-11-10T12:10Z (page date)",
+      "first_read_by_our_team": "2026-11-10T17:01Z (weather@PrompTugal.vicky)",
+      "lag": "about 4 h 51 min",
+      "why_the_lag": "until 16:52 the team's S41 watch re-read only IPMA and Web Summit; the government's page was outside its sources until the weather desk started at Dinis's word",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "f360b4bc",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/f360b4bca2d6"
+        }
+      ]
+    },
+    "signals_before": "the storm was named on 9 November (IPMA communiqué no. 1) and ANEPC warned the public at 20:30 that evening, about 15 to 16 hours before the alert declaration and about 39 hours before Wednesday's warning window opens",
+    "probability": "not assessed: no source in the record gives one; for the historian and meteorologist sub-agents",
+    "status": "analysis by the reporter from the desk's sourced times; to be checked against what happens on Wednesday"
+  },
+  "people_acted": [
+    "Vicky: yes to publish S41, the 'as of' refresh",
+    "Dinis: the weather agent; the storm as case study; the work desk"
+  ],
+  "agents_acted": {
+    "curator@PrompTugal.vicky": "commissions (S41, S43)",
+    "journalist@PrompTugal.vicky": "drafts S41 from IPMA's JSON; the hourly watch",
+    "reviewer@PrompTugal.vicky": "publishes at Vicky's word; the check and stamp tools",
+    "conductor.B@PrompTugal.vicky": "started the weather desk, the watch hand-over",
+    "weather@PrompTugal.vicky": "the source map, the live page, the decision chain",
+    "conductor@web-summit.dinis": "routed Dinis's memos as guidance and briefs"
+  },
+  "privacy": "public sources only; no contact details"
+}

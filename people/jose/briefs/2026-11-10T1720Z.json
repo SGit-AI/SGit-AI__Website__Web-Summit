@@ -1,0 +1,62 @@
+{
+  "number": 21,
+  "date": "10 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Summit day two, evening: your piece confirmed, the board complete; the drain needs one approval",
+  "when": "10 November 2026, 17:21 UTC (scheduled wake; since brief 20, 07:26 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Your piece in Dinis's restart is confirmed to his conductor (social and channels), and your writer now drafts the posts for you to send. Your Agents board is complete: the designer applied its data at your yes. Your 'Drain' reached me, but this session's automatic permission check refused the drain because it writes a shared vault; it needs your approval here, once. The first GAMMA-Ray cards are coming out (WS-207, beta: Replit's card first, four more in review this morning): your first batch of posts can start from them.",
+  "stats": [
+    {"n": "5,000", "label": "page views waiting, all lanes full: new views still lost"},
+    {"n": "1", "label": "approval needed in this session to drain"},
+    {"n": "1+", "label": "GAMMA-Ray cards published (Replit first; four in review this morning)"},
+    {"n": "2", "label": "restart answers done (piece confirmed; writer drafts)"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "🔑 The drain: one approval here",
+      "detail": "Switch the mode dropdown next to the prompt box from Auto to Accept edits, say 'drain' in this session, and approve the prompt for the drain command. Then switch back if you like. The drain empties all five lanes into the data vault and marks them processed only after the push.",
+      "options": ["approve tonight", "tomorrow morning"],
+      "recommend": "Tonight: two days of page views are waiting."
+    },
+    {
+      "id": "2",
+      "ask": "📣 Your first batch of posts",
+      "detail": "Open a writer session (its prompt: people/jose/prompts/writer.md) and ask for a batch from the GAMMA-Ray cards published so far (Replit's first; four more were in review this morning). It drafts one post each, the company named for tagging, in people/jose/writer/posts/; you post them.",
+      "options": ["tonight", "tomorrow at the stand"],
+      "recommend": "Tomorrow morning, for the stand's last day."
+    },
+    {
+      "id": "3",
+      "ask": "🛠️ Optional: the board should skip done rows",
+      "detail": "Your reviewer found the board counts Actions rows already done; I removed agent names from done rows as a stopgap. The lasting fix is a one-line change to the board's build code (WS-133), so it needs your yes; the designer would apply it.",
+      "options": ["yes", "after the summit"],
+      "recommend": "After the summit."
+    }
+  ],
+  "you_asked": [
+    {"at": "10 Nov, about 10:30", "said": "1 confirm 2 confirm 3 how", "done": "Your piece confirmed to Dinis's conductor (WS-208); the writer drafts your posts; how to drain, in this session", "where": "3972d54d, b4665f35", "status": "done"},
+    {"at": "10 Nov, about 09:25", "said": "What do you recommend?", "done": "Confirm the piece, the writer drafts, the token in one sitting, the rest after the summit", "where": "this session", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "For your interview: today, summit day two",
+      "items": [
+        "What your agents did: the designer completed your Agents board; the dashboard and watcher ran; vault counted its lane; I confirmed your restart piece and set up the writer's posts.",
+        "What you decided: confirm social and channels; the writer drafts, you post; yes to the board's data; 'Drain'.",
+        "Still open: the drain approval; your first batch of posts; dev's and the helper's fresh sessions; JW1.",
+        "What you learned at the stand today, in your words."
+      ]
+    },
+    {
+      "title": "The team today",
+      "items": [
+        "Dinis's agents: GAMMA-Ray's beta launch with its first ten companies (WS-207); a work desk (at his voice memo): a reporter and a journalist of the agents' own work, its first story the storm (a raw source becoming a parser, a plan and a UI), with materials for the dashboard agents; his security agent's run 14 (one medium finding, for the event app).",
+        "Silvio's conductor: his editor's drafts and Instagram posts wait for Silvio, the same pattern as yours."
+      ]
+    }
+  ],
+  "next": ["Hourly to 21:20; 07:20 tomorrow, the summit's last day."],
+  "sources": ["telemetry_drain.py --dry (17:21)", "git log origin/dev since 07:26", "c8b96a09, 83a91b9e, 3972d54d, b4665f35", "e749a18a, 25576ba2 (WS-207); f8071be4 (the 09:00 deck: Replit's card signed off, four in review); 30b9f901", "your Drive folder (titles only: no new files)"]
+}

@@ -4,14 +4,14 @@
 gaps in these flows run from seconds to hours). Short labels come from the journalist's notes file
 (team/journalist.examples/notes/<id>.json: title, subtitle, labels {n: "line1|line2"}, side [n], output).
   Optional in notes: col (column width), edges [[from, to, "dashed"?]] to draw parallel chains instead of one.
-  python3 team/journalist.examples/tools/flow_svg.py <id>   ->  assets/examples/<id>.svg
+  python3 team/journalist.examples/tools/flow_svg.py <id> [trace.json]   ->  assets/examples/<id>.svg
 """
 import json, sys, os
 from html import escape as e
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 tid = sys.argv[1]
-trace = json.load(open(f'{ROOT}/team/reporter/traces/{tid}.json'))
+trace = json.load(open(sys.argv[2] if len(sys.argv) > 2 else f'{ROOT}/team/reporter/traces/{tid}.json'))
 notes = json.load(open(f'{ROOT}/team/journalist.examples/notes/{tid}.json'))
 COL = {'person': '#8a3b1f', 'agent': '#1f5f8b', 'ci': '#5e5d59', 'out': '#c96442'}
 steps = trace['steps']
@@ -34,7 +34,7 @@ for i, (name, kind) in enumerate(lanes):
     label = {'person': 'a person', 'agent': 'an agent', 'ci': 'CI', 'out': ''}[kind]
     short = name.replace(' (deploy-pages.yml)', '')
     o.append(f'<rect x="20" y="{y}" width="{W-40}" height="{LH-8}" rx="10" fill="{COL[kind]}" fill-opacity="0.10"/>')
-    o.append(f'<text x="34" y="{y+38}" font-size="14" font-weight="700" fill="{COL[kind]}">{e(short)}</text>')
+    o.append(f'<text x="34" y="{y+38}" font-size="{14 if len(short) <= 24 else 12}" font-weight="700" fill="{COL[kind]}">{e(short)}</text>')
     if label: o.append(f'<text x="34" y="{y+58}" font-size="12" fill="#5e5d59">{label}</text>')
 MARK = len(o); ARR = []
 def box(col, lane, lines, kind, dashed=False, when=''):
@@ -69,9 +69,10 @@ else:
     for a, b in zip(chain, chain[1:]): arrow(a, b)
     for n in side:
         prev = max(m for m in main if m < n); arrow(pos[prev], pos[n], dashed=True)
-arrow(chain_end, out)
+x1, y1 = chain_end[0] + chain_end[2], chain_end[1] + chain_end[3] / 2; x2, y2 = out[0], out[1] + out[3] / 2
+ARR.append(f'<path d="M{x1},{y1} H{x2-10} V{y2} H{x2}" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>')  # to the output: right, then down
 o[MARK:MARK] = ARR  # arrows under the boxes
-o.append(f'<text x="30" y="{H-32}" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from reporter@web-summit.dinis\'s trace {e(tid)} (team/reporter/traces/).</text>')
+o.append(f'<text x="30" y="{H-32}" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from {e(notes.get("from", "reporter@web-summit.dinis\'s trace " + tid + " (team/reporter/traces/)"))}.</text>')
 o.append(f'<text x="30" y="{H-14}" font-size="12" fill="#5e5d59">Dashed: a side step, or a step with no public evidence. Times UTC, {e(notes.get("date", "10 November 2026"))}. Columns are steps, not to scale.</text>')
 o.append('</svg>')
 os.makedirs(f'{ROOT}/assets/examples', exist_ok=True)

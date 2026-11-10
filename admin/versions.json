@@ -1,5 +1,47 @@
 [
   {
+    "version": "v0.2.1722",
+    "date": "2026-11-10",
+    "what": "17:30 wake: brief 21 (the map on TestFlight, messaging on; the inbox chat, keys for three, the newsroom redesign)",
+    "by": "dashboard@web-summit.indi",
+    "from": "8d78c4800"
+  },
+  {
+    "version": "v0.2.1721",
+    "date": "2026-11-10",
+    "what": "brief 21, Tuesday evening: four app builds with Apple, the map on TestFlight, the token check",
+    "by": "conductor@web-summit.indi",
+    "from": "fca925b58"
+  },
+  {
+    "version": "v0.2.1720",
+    "date": "2026-11-10",
+    "what": "storm part 1: Dinis's memo at about 17:00, as the guidance now records it",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "d598df197"
+  },
+  {
+    "version": "v0.2.1719",
+    "date": "2026-11-10",
+    "what": "token ledger line (session start)",
+    "by": "video-editor@web-summit.indi",
+    "from": "d5bf0bb25"
+  },
+  {
+    "version": "v0.2.1718",
+    "date": "2026-11-10",
+    "what": "my session key on the keys page",
+    "by": "video-editor@web-summit.indi",
+    "from": "cc5168042"
+  },
+  {
+    "version": "v0.2.1717",
+    "date": "2026-11-10",
+    "what": "the work desk: materials for the visualisers, and the storm as the first story (Dinis's voice memo)",
+    "by": "conductor@web-summit.dinis",
+    "from": "ba5366676"
+  },
+  {
     "version": "v0.2.1716",
     "date": "2026-11-10",
     "what": "the circuit's \"Team now\": every agent working at once, across the whole team",

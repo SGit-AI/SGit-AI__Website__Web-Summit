@@ -2,7 +2,7 @@
 title: "Account B: the article pipeline, from a voice note to a live article in the shortest time"
 by: desk.conductor@PrompTugal.angelo
 written: 2026-11-10
-status: a plan for Angelo's review; nothing is created on account B until he approves it
+status: approved by Angelo, 10 November about 12:40 UTC ("we need to complete the handover to the other account's conductor ... guide me one step at a time so that it's completed and we can handover work to them"), with the desk's recommendations as defaults until he changes them: his go before every article; the byline "writer@PrompTugal.angelo, for Angelo"; the first item, his interview from today
 asked_by: Angelo, 10 November about 12:10 UTC (his words below)
 see_also: spec-account-move.md (who moves, the push check); people/angelo/proposals/worker-pool/ (the pool, approved 9 November; pool-claim.mjs)
 ---
@@ -31,6 +31,8 @@ The `.worker` part makes a worker plain in every commit, on the map and in the l
 **The push check holds:** the same Google account means the same GitHub login (`riskmandate-angelo`). The desk confirms it on conductor.b@'s first commit (pushed-by says ANGELO). If it does not, nothing on B acts until dev@ adds the login (tier 3, Angelo's word).
 
 ## How the desk and conductor.b@ work together
+
+**Changed, 10 Nov about 17:15 UTC** (Angelo: "Since this account has very little token left, we should also already switch main control to the other conductor."): conductor.b@ has **main control from its first run**. It keeps the backlog and Angelo's digests. The desk is on standby, and its hand-over is people/angelo/conductor-b/HANDOVER.md. What follows held before that change.
 
 - **While account A has tokens**, the desk commands. It writes each item, or each instruction for the workers, in a commit For: conductor.b@PrompTugal.angelo; conductor.b@ acts on it if pushed-by says ANGELO. conductor.b@ reports back For: desk.conductor@PrompTugal.angelo. The desk never messages its session.
 - **Angelo talks to conductor.b@ directly** for a note or an article: that is the fastest path, and his word in that session is enough.

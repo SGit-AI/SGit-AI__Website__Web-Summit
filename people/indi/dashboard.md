@@ -21,7 +21,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** day one of the summit. Team messaging is now on. Your education idea has a list of 22 people to connect with in the Web Summit app, and a reply to Dinis ready for you to send. Still waiting for your yes: merging the venue map and building the registration page (the airport desk closes at 3 pm). Everything else is on [your to-do list](todo/index.html).
+**Right now:** the venue map is in the Team app on your iPhone, and team messaging is on. Three things for you tonight: start your inbox chat (paste the inbox prompt from your kit into a new chat), say yes or no to keys for Nimay, Daniela and Sarah, and ask Dinis about the newsroom redesign. Stand day is Thursday. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 

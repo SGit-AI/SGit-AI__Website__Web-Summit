@@ -27,6 +27,12 @@ Documents to a new repository and a new site, in a day.
 
 - **[Two documents to a new repository, a site and the first signed card](large-documents-to-repository-and-site/index.html).** Dinis hands over two documents and a spoken brief at about 23:20. The conductor starts one agent, gamma-ray@, which checks the documents against their sources, builds a standard and [a site](https://gamma-ray.sgit.ai/), then starts its own team to draft, review and sign cards. The first signed card is live 9 hours 25 minutes later; FACT-Ray at 11 hours. One person, six agents.
 
+## Stories of the work desk {#stories}
+
+Longer stories, told as they happen, with materials for the visualisers.
+
+- **[The storm, part 1: a red warning, a weather desk, and who decides what](storm-part-1/index.html).** A red wind warning for Lisbon on the summit's third day. Vicky's newsroom publishes it; at Dinis's word a weather desk starts and, in about twelve minutes, maps who decides what. The schools' closure was decided 11 hours 50 minutes ahead, by the government. Part 2, the parser loop, is still to come.
+
 ## Next {#next}
 
 As they happen: a video to an interview on pt.news, the pt.news redesign (WS-211), and the first unit for a person met at the summit (WS-210). Each example, when it is good enough, is offered to pt.news's newsroom as an article draft; the newsroom decides what it publishes.

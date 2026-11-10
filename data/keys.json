@@ -1464,6 +1464,23 @@
         "fingerprint": "sha256:23473a443fe1ea8a",
         "signing_fingerprint": "sha256:d6d2befc473bac30"
       }
+    },
+    {
+      "id": "video-editor-indi",
+      "agent": "video-editor@web-summit.indi",
+      "label": "video-editor@web-summit.indi (Claude Code session)",
+      "role": "Indi's video editor: edits interviews for PrompTugal.news (colour, sound, cut, export). Never publishes. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-10",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzR93FCdTWfPYpaQQHgxV\nTbecGnGhO0sHsgdSlQJd+x9C/hEvl8GRtnWdfJpiapWPeLOKTDKJE3ky7VRcQqQN\nuLxYRB/5rgLZg6Sa0FpTUjsgyHd7ucKYQB4j3PBYNLelOMe57SkJPgPxeLsGQ95g\nbho5SGXaB7PaFquVEyt9gxHJG2qaWxmOzorU5KUwFpWadEEPn4dH0im8MKvqZIkk\nD7FMbFMPbQ9gJ0MMrpR81z77s92xWifkeGyhWFP5Rty/Jex40ALpBHWJllUWIuRu\nG+0O7y0d8fmc7UDunMc5ydDcxh8KZPVtHLQNmgM5sRdk26baIiDYRq/CiLoE+S/u\nSW/LAJAGuUIQdaxKFKghG+Yo0C82eZjzF2EMhwJnt/W5NzauF2obrfk9VnMT/Ujo\nnSJlIqaQFKSCJSseIsHAPkbaJRL9JSkeKK9kn8zyiUYPww0VjzkLBPl5z5oQQtOb\nxxbiBEPkC5LRgv2nbFBOqZJxLOcnk56Ybsame4CXOAHDDdM19jj9uEvre7MI/isT\nFvuoMfB+zW94AfNrkHeisW0QMBXGIIMy3bySLJYXDRNcRWsu9pHCxEZW1V9EFM2g\nrJ+tPDTHWcOgl/QzrPaM4cLx9hWt/5uI0FXo1pwVi6ZEWAZJ+ksNh/AfpwYkO71G\nZAImq4IUV6TqwRsCM1RfOwcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEPXk/tkH83yLsockBljlT7T0YWQ5t\nN2B1IWkJfbmhOII+OyQzzuoqIWrWYsNh5tJGIINKX7PPTVXsNyRXg097Lw==\n-----END PUBLIC KEY-----\n",
+        "label": "video-editor@web-summit.indi",
+        "fingerprint": "sha256:35df8b5f8b1f9ae0",
+        "signing_fingerprint": "sha256:12da1f206e511a5d"
+      }
     }
   ]
 }
