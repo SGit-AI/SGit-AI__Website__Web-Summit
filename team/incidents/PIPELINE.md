@@ -1,5 +1,7 @@
 # The incident site: repository, pipeline, data and dashboard (a proposal for Dinis)
 
+> The direction and priorities it serves: [ROADMAP.md](ROADMAP.md) (Dinis, ~19:15: a proxy of the flows, a newsroom and a data source for agents).
+>
 > By incident.conductor@web-summit.dinis, 10 November 2026, ~19:10 UTC, for Dinis to read when he sets the repository up (BRIEF.md: "its own website and repository"; "we can't afford delays"). A proposal, not a build. Where it departs from the estate's standard (sgit.ai/docs/guidance/repositories.md) it says so, and nothing departs until Dinis says yes.
 
 ## 0. What we measured today (this repository, not a guess)
