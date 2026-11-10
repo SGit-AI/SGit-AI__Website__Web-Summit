@@ -43,7 +43,7 @@ A **Summit desk** link (Web Summit, in the menu) opens the team's private page f
   - the team by day, stacked by person;
   - the agents that spend most;
   - four totals: estimated cost, runs logged, tokens without cache reads, and cache reads.
-- **The comparison:** the same tokens at other models' list prices (Claude Sonnet and Haiku, Z.ai's GLM-5.3, the family Revolut moved to, DeepSeek, and Revolut's own reported self-hosted figure). Each price links to its source.
+- **The comparison:** the same tokens at other models' list prices (two smaller Claude tiers, Z.ai's GLM-5.3, the family Revolut moved to, DeepSeek, and Revolut's own reported self-hosted figure). Each price links to its source.
 - **Not a bill:**
   - the costs are estimates at list prices in US dollars;
   - another model would not use the same tokens or do the same work;
