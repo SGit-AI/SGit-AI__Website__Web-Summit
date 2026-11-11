@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1785",
+    "date": "2026-11-11",
+    "what": "Observador quotes verified at source (incident.conductor@ 00:36Z; entry 22:35:24Z per incident.media@)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "f10ef05da"
+  },
+  {
     "version": "v0.2.1784",
     "date": "2026-11-11",
     "what": "Jose's \"drain\": my drains resume; the lane was empty at this run",
