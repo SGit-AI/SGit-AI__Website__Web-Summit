@@ -34,6 +34,7 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 - 2026-11-11 18:5x: wake routine trig_01Sp6G7mUcG4f97btiJRmgK4 set by conductor.b@ (a9199ce, pushed-by ANGELO; Angelo: "Go on all three, 2 hours is fine"): workers fire it last; below tier 3 the lead decides by default, recorded.
 - 2026-11-11 19:0x, on the manual dry run: "I don't think manually passing prompts is actually that significant, I know I can do it and it's not the workflow that we're interested in."
 - 2026-11-11, after the lead proposed outgoing packets in the Fringe's format (no person passing prompts): "Yes, go ahead with the outgoing packet".
+- 2026-11-11 19:1x, standing rule for workers: "If one of the workers is not needed anymore, can you remove it from my list? We should never have stranded workers, if their work is interrupted, we should retire them. This way I can keep an eye on what's going on. Any worker I see should always be actively running, there should never be stopped workers around except for brief moments while their pm is busy." At every wake: any worker session that is idle, blocked, failed or interrupted is checked, its commits logged, and archived at once; its claim released.
 
 ## Open questions for Angelo
 (none open)
