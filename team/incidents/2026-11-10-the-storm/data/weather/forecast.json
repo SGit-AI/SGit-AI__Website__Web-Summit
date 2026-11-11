@@ -2,7 +2,7 @@
  "about": "IPMA's own forecast for Lisbon (globalIdLocal 1110600): the 5-day daily forecast and the hourly model forecast (mean wind, no gusts). IPMA's wind classes: 1 weak, 2 moderate, 3 strong, 4 very strong.",
  "daily": {
   "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-  "read_utc": "2026-11-11T00:00:36Z",
+  "read_utc": "2026-11-11T00:23:21Z",
   "updated_local": "2026-11-10T23:31:02",
   "days": [
    {
@@ -301,12 +301,245 @@
      "sea_total_m": 3.3
     }
    ]
+  },
+  {
+   "updated_local": "2026-11-10T07:55:56",
+   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
+   "read_utc": "2026-11-11T00:00:36Z",
+   "replaced_at_or_before_utc": "2026-11-11T00:23:21Z",
+   "wed_peak": {
+    "time_utc": "2026-11-11T20:00Z",
+    "wind_mean_kmh": 23.4,
+    "wind_dir": "NW",
+    "rain_prob_pct": null,
+    "rain_intensity_class": null,
+    "temp_c": 17.3,
+    "sea_total_m": 3.4
+   },
+   "wed_rows": [
+    {
+     "time_utc": "2026-11-11T00:00Z",
+     "wind_mean_kmh": 17.6,
+     "wind_dir": "SW",
+     "rain_prob_pct": 100.0,
+     "rain_intensity_class": 2,
+     "temp_c": 17.4,
+     "sea_total_m": 3.7
+    },
+    {
+     "time_utc": "2026-11-11T01:00Z",
+     "wind_mean_kmh": 17.6,
+     "wind_dir": "S",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 2,
+     "temp_c": 16.6,
+     "sea_total_m": 3.6
+    },
+    {
+     "time_utc": "2026-11-11T02:00Z",
+     "wind_mean_kmh": 15.1,
+     "wind_dir": "S",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 2,
+     "temp_c": 16.8,
+     "sea_total_m": 3.6
+    },
+    {
+     "time_utc": "2026-11-11T03:00Z",
+     "wind_mean_kmh": 17.6,
+     "wind_dir": "SW",
+     "rain_prob_pct": 100.0,
+     "rain_intensity_class": 2,
+     "temp_c": 16.9,
+     "sea_total_m": 3.6
+    },
+    {
+     "time_utc": "2026-11-11T04:00Z",
+     "wind_mean_kmh": 12.2,
+     "wind_dir": "S",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 2,
+     "temp_c": 16.6,
+     "sea_total_m": 3.5
+    },
+    {
+     "time_utc": "2026-11-11T05:00Z",
+     "wind_mean_kmh": 11.2,
+     "wind_dir": "S",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 2,
+     "temp_c": 16.1,
+     "sea_total_m": 3.5
+    },
+    {
+     "time_utc": "2026-11-11T06:00Z",
+     "wind_mean_kmh": 13.7,
+     "wind_dir": "S",
+     "rain_prob_pct": 100.0,
+     "rain_intensity_class": 3,
+     "temp_c": 16.4,
+     "sea_total_m": 3.4
+    },
+    {
+     "time_utc": "2026-11-11T07:00Z",
+     "wind_mean_kmh": 15.5,
+     "wind_dir": "S",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 2,
+     "temp_c": 15.6,
+     "sea_total_m": 3.4
+    },
+    {
+     "time_utc": "2026-11-11T08:00Z",
+     "wind_mean_kmh": 11.2,
+     "wind_dir": "S",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 2,
+     "temp_c": 15.3,
+     "sea_total_m": 3.3
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "wind_mean_kmh": 13.3,
+     "wind_dir": "SE",
+     "rain_prob_pct": 100.0,
+     "rain_intensity_class": 3,
+     "temp_c": 15.1,
+     "sea_total_m": 3.2
+    },
+    {
+     "time_utc": "2026-11-11T10:00Z",
+     "wind_mean_kmh": 16.9,
+     "wind_dir": "S",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 3,
+     "temp_c": 15.1,
+     "sea_total_m": 3.2
+    },
+    {
+     "time_utc": "2026-11-11T11:00Z",
+     "wind_mean_kmh": 16.9,
+     "wind_dir": "SE",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 3,
+     "temp_c": 15.2,
+     "sea_total_m": 3.2
+    },
+    {
+     "time_utc": "2026-11-11T12:00Z",
+     "wind_mean_kmh": 17.6,
+     "wind_dir": "SE",
+     "rain_prob_pct": 100.0,
+     "rain_intensity_class": 3,
+     "temp_c": 14.6,
+     "sea_total_m": 3.2
+    },
+    {
+     "time_utc": "2026-11-11T13:00Z",
+     "wind_mean_kmh": 19.4,
+     "wind_dir": "SE",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 3,
+     "temp_c": 17.0,
+     "sea_total_m": 3.2
+    },
+    {
+     "time_utc": "2026-11-11T14:00Z",
+     "wind_mean_kmh": 21.2,
+     "wind_dir": "SE",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 3,
+     "temp_c": 17.0,
+     "sea_total_m": 3.3
+    },
+    {
+     "time_utc": "2026-11-11T15:00Z",
+     "wind_mean_kmh": 14.0,
+     "wind_dir": "SE",
+     "rain_prob_pct": 100.0,
+     "rain_intensity_class": 3,
+     "temp_c": 17.2,
+     "sea_total_m": 3.3
+    },
+    {
+     "time_utc": "2026-11-11T16:00Z",
+     "wind_mean_kmh": 13.3,
+     "wind_dir": "SE",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 1,
+     "temp_c": 17.8,
+     "sea_total_m": 3.4
+    },
+    {
+     "time_utc": "2026-11-11T17:00Z",
+     "wind_mean_kmh": 18.7,
+     "wind_dir": "SE",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 1,
+     "temp_c": 17.9,
+     "sea_total_m": 3.6
+    },
+    {
+     "time_utc": "2026-11-11T18:00Z",
+     "wind_mean_kmh": 16.6,
+     "wind_dir": "N",
+     "rain_prob_pct": 90.0,
+     "rain_intensity_class": 1,
+     "temp_c": 18.4,
+     "sea_total_m": 3.8
+    },
+    {
+     "time_utc": "2026-11-11T19:00Z",
+     "wind_mean_kmh": 20.5,
+     "wind_dir": "NW",
+     "rain_prob_pct": null,
+     "rain_intensity_class": null,
+     "temp_c": 17.9,
+     "sea_total_m": 3.6
+    },
+    {
+     "time_utc": "2026-11-11T20:00Z",
+     "wind_mean_kmh": 23.4,
+     "wind_dir": "NW",
+     "rain_prob_pct": null,
+     "rain_intensity_class": null,
+     "temp_c": 17.3,
+     "sea_total_m": 3.4
+    },
+    {
+     "time_utc": "2026-11-11T21:00Z",
+     "wind_mean_kmh": 19.4,
+     "wind_dir": "NW",
+     "rain_prob_pct": 24.0,
+     "rain_intensity_class": null,
+     "temp_c": 17.1,
+     "sea_total_m": 3.4
+    },
+    {
+     "time_utc": "2026-11-11T22:00Z",
+     "wind_mean_kmh": 17.3,
+     "wind_dir": "W",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 1,
+     "temp_c": 17.3,
+     "sea_total_m": 3.3
+    },
+    {
+     "time_utc": "2026-11-11T23:00Z",
+     "wind_mean_kmh": 16.6,
+     "wind_dir": "W",
+     "rain_prob_pct": null,
+     "rain_intensity_class": 1,
+     "temp_c": 16.8,
+     "sea_total_m": 3.3
+    }
+   ]
   }
  ],
  "hourly": {
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-11T00:00:36Z",
-  "updated_local": "2026-11-10T07:55:56",
+  "read_utc": "2026-11-11T00:23:21Z",
+  "updated_local": "2026-11-10T19:56:03",
   "wed_peak": {
    "time_utc": "2026-11-11T20:00Z",
    "wind_mean_kmh": 23.4,
@@ -317,204 +550,6 @@
    "sea_total_m": 3.4
   },
   "rows": [
-   {
-    "time_utc": "2026-11-10T02:00Z",
-    "wind_mean_kmh": 24.8,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 3,
-    "temp_c": 17.6,
-    "sea_total_m": 4.5
-   },
-   {
-    "time_utc": "2026-11-10T03:00Z",
-    "wind_mean_kmh": 26.6,
-    "wind_dir": "SW",
-    "rain_prob_pct": 100.0,
-    "rain_intensity_class": 3,
-    "temp_c": 17.9,
-    "sea_total_m": 4.6
-   },
-   {
-    "time_utc": "2026-11-10T04:00Z",
-    "wind_mean_kmh": 27.0,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 2,
-    "temp_c": 17.6,
-    "sea_total_m": 4.6
-   },
-   {
-    "time_utc": "2026-11-10T05:00Z",
-    "wind_mean_kmh": 21.6,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 2,
-    "temp_c": 17.6,
-    "sea_total_m": 4.5
-   },
-   {
-    "time_utc": "2026-11-10T06:00Z",
-    "wind_mean_kmh": 19.1,
-    "wind_dir": "SW",
-    "rain_prob_pct": 96.0,
-    "rain_intensity_class": 2,
-    "temp_c": 17.4,
-    "sea_total_m": 4.5
-   },
-   {
-    "time_utc": "2026-11-10T07:00Z",
-    "wind_mean_kmh": 16.6,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 2,
-    "temp_c": 17.5,
-    "sea_total_m": 4.3
-   },
-   {
-    "time_utc": "2026-11-10T08:00Z",
-    "wind_mean_kmh": 15.5,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 2,
-    "temp_c": 17.4,
-    "sea_total_m": 4.3
-   },
-   {
-    "time_utc": "2026-11-10T09:00Z",
-    "wind_mean_kmh": 19.8,
-    "wind_dir": "SW",
-    "rain_prob_pct": 100.0,
-    "rain_intensity_class": 2,
-    "temp_c": 17.8,
-    "sea_total_m": 4.2
-   },
-   {
-    "time_utc": "2026-11-10T10:00Z",
-    "wind_mean_kmh": 20.9,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 3,
-    "temp_c": 17.9,
-    "sea_total_m": 4.2
-   },
-   {
-    "time_utc": "2026-11-10T11:00Z",
-    "wind_mean_kmh": 26.3,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 2,
-    "temp_c": 18.7,
-    "sea_total_m": 4.2
-   },
-   {
-    "time_utc": "2026-11-10T12:00Z",
-    "wind_mean_kmh": 26.6,
-    "wind_dir": "SW",
-    "rain_prob_pct": 100.0,
-    "rain_intensity_class": 2,
-    "temp_c": 18.5,
-    "sea_total_m": 4.2
-   },
-   {
-    "time_utc": "2026-11-10T13:00Z",
-    "wind_mean_kmh": 29.5,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 2,
-    "temp_c": 18.9,
-    "sea_total_m": 4.2
-   },
-   {
-    "time_utc": "2026-11-10T14:00Z",
-    "wind_mean_kmh": 29.2,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 3,
-    "temp_c": 19.5,
-    "sea_total_m": 4.2
-   },
-   {
-    "time_utc": "2026-11-10T15:00Z",
-    "wind_mean_kmh": 29.2,
-    "wind_dir": "SW",
-    "rain_prob_pct": 100.0,
-    "rain_intensity_class": 3,
-    "temp_c": 20.1,
-    "sea_total_m": 4.1
-   },
-   {
-    "time_utc": "2026-11-10T16:00Z",
-    "wind_mean_kmh": 25.9,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": null,
-    "temp_c": 20.0,
-    "sea_total_m": 4.1
-   },
-   {
-    "time_utc": "2026-11-10T17:00Z",
-    "wind_mean_kmh": 22.3,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": null,
-    "temp_c": 19.5,
-    "sea_total_m": 4.0
-   },
-   {
-    "time_utc": "2026-11-10T18:00Z",
-    "wind_mean_kmh": 20.9,
-    "wind_dir": "SW",
-    "rain_prob_pct": 33.0,
-    "rain_intensity_class": null,
-    "temp_c": 18.5,
-    "sea_total_m": 3.9
-   },
-   {
-    "time_utc": "2026-11-10T19:00Z",
-    "wind_mean_kmh": 19.1,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 1,
-    "temp_c": 18.4,
-    "sea_total_m": 3.9
-   },
-   {
-    "time_utc": "2026-11-10T20:00Z",
-    "wind_mean_kmh": 18.7,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 1,
-    "temp_c": 17.7,
-    "sea_total_m": 3.8
-   },
-   {
-    "time_utc": "2026-11-10T21:00Z",
-    "wind_mean_kmh": 18.4,
-    "wind_dir": "SW",
-    "rain_prob_pct": 92.0,
-    "rain_intensity_class": 1,
-    "temp_c": 18.0,
-    "sea_total_m": 3.8
-   },
-   {
-    "time_utc": "2026-11-10T22:00Z",
-    "wind_mean_kmh": 15.8,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 2,
-    "temp_c": 17.9,
-    "sea_total_m": 3.8
-   },
-   {
-    "time_utc": "2026-11-10T23:00Z",
-    "wind_mean_kmh": 20.9,
-    "wind_dir": "SW",
-    "rain_prob_pct": null,
-    "rain_intensity_class": 2,
-    "temp_c": 17.9,
-    "sea_total_m": 3.8
-   },
    {
     "time_utc": "2026-11-11T00:00Z",
     "wind_mean_kmh": 17.6,
@@ -963,7 +998,7 @@
    "name": "MET Norway Locationforecast 2.0 (complete)",
    "licence": "NLOD 2.0 / CC BY 4.0, data from MET Norway",
    "source": "https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=38.72&lon=-9.14",
-   "read_utc": "2026-11-11T00:00:36Z",
+   "read_utc": "2026-11-11T00:23:21Z",
    "updated_utc": "2026-11-10T23:20:44Z",
    "units": "km/h (converted from m/s), mm, hPa",
    "rows": [
@@ -1269,7 +1304,7 @@
    "name": "Open-Meteo (best match)",
    "licence": "CC BY 4.0, Open-Meteo.com",
    "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
-   "read_utc": "2026-11-11T00:00:36Z",
+   "read_utc": "2026-11-11T00:23:21Z",
    "rows": [
     {
      "time_utc": "2026-11-11T00:00Z",
@@ -1533,5 +1568,5 @@
    ]
   }
  },
- "next_read_utc": "2026-11-11T00:22Z"
+ "next_read_utc": "2026-11-11T01:22Z"
 }
