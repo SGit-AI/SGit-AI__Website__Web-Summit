@@ -1,7 +1,7 @@
 {
  "entity": "port",
  "about": "Every decision in graph.json about port: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:30Z",
+ "updated": "2026-11-11T08:41Z",
  "decisions": [
   {
    "edge": "apram-cruises",
@@ -31,6 +31,17 @@
    "read": "2026-11-11T02:30Z",
    "label": "fact",
    "state": "limited"
+  },
+  {
+   "edge": "amn-bars-closed",
+   "decision": "18 sea bars closed at 07:30 (mainland); sea worsening until 12:00 Thursday",
+   "decided_by": "Autoridade Marítima Nacional / harbour masters",
+   "published_utc": "2026-11-11T08:06Z",
+   "effect_to_utc": "2026-11-12T12:00Z",
+   "address": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T08:41Z",
+   "label": "evidence",
+   "state": "closed"
   }
  ],
  "open": []
