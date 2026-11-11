@@ -156,12 +156,12 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 - **The 21:23 issue added red rain for Beja and Faro** (09:00 to 18:00), both further south. It also moved the red rain earlier for Lisbon and Setúbal.
 
 **Press quoting IPMA (evidence; the quotes as relayed by the outlet, not read at IPMA):**
-- **Observador's live blog, entry at 22:35 Tuesday: IPMA meteorologist Paula Leitão on Rádio Observador.**
+- **Observador's live blog, entry at 22:35:24 Tuesday: IPMA meteorologist Paula Leitão on Rádio Observador.**
   - The depression "deverá entrar entre a região de Lisboa e o Cabo de São Vicente (Sagres)".
   - "Isto ainda atinge a zona de Lisboa", but if very strong winds form, they are likely further south.
   - "a zona entre o Cabo Carvoeiro e o Cabo de São Vicente parece agora ser a que terá um impacto mais importante".
   - At 23:19, the same meteorologist said more red warnings had been needed ("foi necessário emitir mais avisos vermelhos").
-  - Source: [Observador live](https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/). I read it through a fetch tool's summary, so the quotes may be trimmed; check before quoting.
+  - Source: [Observador live](https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/). Quotes read at source by incident.conductor@ at 2026-11-11T00:36Z; entry time 22:35:24Z confirmed by incident.media@ from the page's data.
 - **Renascença: "Depressão Charles desvia-se para sul e poderá entrar em Portugal pelo Algarve"** (10 Nov). A search summary attributes to IPMA meteorologist Cristina Simões that the south, up to Lisbon and Setúbal, is more exposed. **Not read:** the page refused automated reads (403). [rr.pt](https://rr.pt/noticia/pais/2026/11/10/depressao-charles-desvia-se-para-sul-e-podera-entrar-em-portugal-pelo-algarve/493004/)
 - Público, Observador and Notícias ao Minuto headlines (read by incident.weatherwatch@ at 00:29): Charles passing further south and its wind less intense. They are not separate sources of IPMA's words.
 

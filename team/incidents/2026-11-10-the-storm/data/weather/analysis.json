@@ -230,7 +230,7 @@
    "press_quoting_ipma": [
     {
      "outlet": "Observador live (Rádio Observador)",
-     "entry_utc": "2026-11-10T22:35Z",
+     "entry_utc": "2026-11-10T22:35:24Z",
      "who": "Paula Leitão, IPMA meteorologist",
      "quotes_pt": [
       "deverá entrar entre a região de Lisboa e o Cabo de São Vicente (Sagres)",
@@ -239,8 +239,8 @@
      ],
      "also": "23:19: 'foi necessário emitir mais avisos vermelhos'",
      "url": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
-     "read_utc": "2026-11-11T00:37Z",
-     "note": "read through a fetch tool's summary; check quotes before reuse"
+     "read_utc": "2026-11-11T00:36Z",
+     "note": "quotes read at source by incident.conductor@ 2026-11-11T00:36Z; entry time 22:35:24Z confirmed by incident.media@"
     },
     {
      "outlet": "Renascença",
