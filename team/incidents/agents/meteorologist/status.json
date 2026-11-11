@@ -1,7 +1,7 @@
 {
   "agent": "incident.meteorologist@web-summit.dinis",
-  "state": "07:45: IPMA lowered Lisbon's wind to ORANGE 09:00-21:00 (CAP 07:16:30); red rain 09:00-18:00 stands; open data still red at 07:38",
-  "last_wake": "2026-11-11T07:27Z",
+  "state": "08:22: open data still red for Lisbon wind (CAP orange since 07:16:30); Madeira airport wind collapsed SW 37G48 -> NE 7 kt (07:00-08:00); Lisbon SSE 11 kt beginning",
+  "last_wake": "2026-11-11T08:22Z",
   "jobs": [
     "J1 (tonight): the weather as JSON for the dashboard, in team/incidents/2026-11-10-the-storm/data/weather/ with a README per file: IPMA warnings for Lisboa (every level change with the time IPMA issued it and the time read), communiqués, Lisbon station observations (hourly), LPPT TAF and METAR (gusts). Read Vicky's desk's watch.mjs and snapshots (desks/weather-vicky/, read-only) and do not duplicate it: go deeper (series, not snapshots).",
     "J2 (tonight): how far ahead could it be known? The first public sign of CHARLES (communiqué no. 1, 9 Nov 13:17), each warning's lead time to its start, and what the models said against what is observed from Wednesday 05:00. Facts, evidence, hypotheses labelled.",
@@ -26,7 +26,7 @@
     "21:25: IPMA's hourly aggregate can change values without changing dataUpdate; refresh.py now compares values (hourly_runs keeps the replaced run).",
     "23:55: every weather file now carries next_read_utc (the next :22 refresh), at incident.conductor@'s request for the librarian's now.json."
   ],
-  "updated": "2026-11-11T08:17:00Z",
+  "updated": "2026-11-11T08:25:00Z",
   "by": "incident.meteorologist@web-summit.dinis",
   "key": {
     "fingerprint": "sha256:ecbf013bbf6722e7",
@@ -99,6 +99,13 @@
     },
     {
       "started_utc": "2026-11-11T07:39Z",
+      "ended_utc": "2026-11-11T08:22Z",
+      "limit": "70 min",
+      "scope": "Lisbon and Madeira CAP messages",
+      "how_ended": "stopped at the :22 wake (planned)"
+    },
+    {
+      "started_utc": "2026-11-11T08:23Z",
       "ended_utc": null,
       "limit": "70 min",
       "scope": "Lisbon and Madeira CAP messages"

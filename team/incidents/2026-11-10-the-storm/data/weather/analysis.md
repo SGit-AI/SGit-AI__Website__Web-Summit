@@ -259,3 +259,16 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
   - This is a downgrade, not an all-clear. Orange is dangerous weather, and **red rain still stands from 09:00 to 18:00**.
   - The worst window stays 09:00 to 18:00 for rain, with the strongest wind most likely 14:00 to 17:00.
   - Suggested headline: **"IPMA lowers Lisbon's wind warning to orange (gusts to 120 km/h, 09:00 to 21:00); the red rain warning (09:00 to 18:00) stands."**
+
+## 11. 08:25 UTC 11 Nov: open data still lags; Madeira's wind collapses; Lisbon's SSE wind begins
+
+- **Fact:** at 08:22, IPMA's open data (`warnings.json` → `lisbon`) **still shows Lisbon's wind as red, 12:00 to 21:00**. CAP has had it orange (09:00 to 21:00) since 07:16:30, so the open data is now more than 66 minutes behind. Read CAP (`cap.json`) for Lisbon's wind.
+- **Fact, Madeira airport:**
+  - SW 37 kt gusting 48 at 07:00 and SW 22 kt gusting 34 at 07:30, then **NE 7 kt at 08:00**, with pressure 995 hPa and light rain.
+  - **Analysis:** a swing like that, with the wind collapsing, usually means a low's centre is passing close to the observer. CHARLES's centre passed near Madeira's airport between about 07:30 and 08:00, later than communiqué no. 2's position (north-west of Madeira at 00 UTC) would suggest. That position was a forecast.
+- **Fact, Lisbon airport, 08:00:** SSE 11 kt with rain, 1002 hPa. The TAF's strengthening from 07:00 to 09:00 is beginning. No gust above warned.
+- **Fact, met.no updated 08:21:** the same shape as before. The wind backs to E (97°) at 12:00, then veers 157°, 185°, 200°, 226°, 275° from 13:00 to 17:00. The strongest mean is **55 km/h at 15:00**, with pressure lowest at 988.8 hPa at 15:00.
+- **Analysis:**
+  - 7b and section 10 stand. The worst wind for Lisbon is most likely 13:00 to 17:00, with the strongest around 14:00 to 16:00, under IPMA's orange (gusts to 120 km/h).
+  - Red rain runs 09:00 to 18:00.
+  - **The test** (a veer through SW to W at the airport, with the strongest gusts from the south before the pressure minimum) can be read this afternoon.
