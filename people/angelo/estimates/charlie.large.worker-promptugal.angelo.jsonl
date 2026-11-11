@@ -1,0 +1,2 @@
+{"event":"start","at":"2026-11-11T12:08Z","agent":"charlie.large.worker@PrompTugal.angelo","item":"b2-flow-reuse","what":"research: what the per-deliverable flow view can reuse, smallest first version","est_effort_min":45,"est_elapsed_min":50,"confidence":"medium"}
+{"event":"done","at":"2026-11-11T12:11Z","agent":"charlie.large.worker@PrompTugal.angelo","item":"b2-flow-reuse","effort_min":3,"elapsed_min":3,"runs":1,"note":"faster than 45: the brief named every source; outside repositories read from shallow clones"}
