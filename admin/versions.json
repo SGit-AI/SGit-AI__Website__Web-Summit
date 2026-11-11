@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1777",
+    "date": "2026-11-10",
+    "what": "hypothesis (analysis.md section 7): official and model data consistent with a track close to and just south of Lisbon ~17-18:00 Wed; reasons for and against; how Wednesday will test it",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "d6e8aace1"
+  },
+  {
     "version": "v0.2.1776",
     "date": "2026-11-10",
     "what": "sent_utc on each warning in warnings.json (lisbon and elsewhere), from the CAP message matching area, type, level and window; null where none matches",
