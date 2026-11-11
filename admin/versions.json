@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1956",
+    "date": "2026-11-11",
+    "what": "VISÃO GERAL in the new look (Silvio's go on the mock)",
+    "by": "dashboard@web-summit.silvio",
+    "from": "f5d71ac59"
+  },
+  {
     "version": "v0.2.1955",
     "date": "2026-11-11",
     "what": "X-Ray, the team phrase (Dinis's choice) opens the demo key",
