@@ -16,7 +16,7 @@ status: done, for the lead's read
 
 **Recommendation.** Use Sonnet 5.5 through OpenRouter for build, check, spec and research workers: it is right, fast, and only about 40% dearer here than the cheap model. Keep cheap models (DeepSeek V3.2) for work a script then checks (digest gathering, counting), never for a step whose output is trusted as it stands. Try Haiku 5.5 (0.10/0.50 USD per million) for the small slots before any non-Anthropic model.
 
-**Platform cost for the wrapper:** one Bash call that starts `claude -p` and waits; the model tokens of the worker itself are all on OpenRouter. This build step's own session cost is in its ledger line, in people/angelo/ledger/.
+**Platform cost for the wrapper:** one Bash call that starts `claude -p` and waits; the model tokens of the worker itself are all on OpenRouter. For scale, this whole build session (Opus, doing the research too) used 28 calls, 93,284 tokens without cache reads and 3.17 M cache reads (measure.mjs, its ledger line in people/angelo/ledger/); a lead that only starts the worker and commits its files would need a few calls.
 
 **The recipe** a lead would use (tested; the proxy injects the OpenRouter key, so the token is a placeholder):
 
