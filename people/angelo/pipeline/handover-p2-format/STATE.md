@@ -6,4 +6,5 @@
 - Q1 (tier 3): first receiving account: Angelo's own other account, pushing as riskmandate-angelo (recommended: pushed-by and review stay simple), or Dinis's conductors?
 - Q2 (tier 3): granting another person's GitHub login write to this repository is an admin act (Angelo's); GitHub cannot limit it to pool/*. Recommend: not for package 1.
 - Q3 (tier 3): policy@PrompTugal.angelo to accept Run-on: commits pushed from another login. Recommend: ask before any package goes to Dinis's side.
+- Log: agent-log sent unsigned (no session key, as the role says); ledger line appended.
 - Q4: which slot name (golf is in lanes.json, not on QUEUE.md's "may run now"). Recommend golf, or the lead's choice.
