@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T16:35Z",
+ "updated": "2026-11-11T16:41Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -2634,7 +2634,7 @@
    "to": [],
    "decision": "No red warning left for Lisbon: yellow rain and orange wind 15:06 to 18:00; orange sea to 21:00, then yellow to 03:00 Thursday",
    "at": "2026-11-11T15:06Z",
-   "status": "happened",
+   "status": "superseded",
    "follows": [
     "ipma-cut-1233"
    ],
@@ -2649,7 +2649,7 @@
    "state_note": "a warning",
    "scope": null,
    "area": "lisbon",
-   "note": "Read at source 16:33Z. \"at\" is the new startTime (15:06), likely the reissue time; the CAP send time not read by us (see incident.meteorologist@'s cap.json). Red rain was due to end at 15:00 (ipma-cut-1233)."
+   "note": "Read at source 16:33Z. \"at\" is the new startTime (15:06), likely the reissue time; the CAP send time not read by us (see incident.meteorologist@'s cap.json). Red rain was due to end at 15:00 (ipma-cut-1233). CORRECTION 16:41Z: our 16:33 read of IPMA's open data was stale for wind: CAP 15:55:03 had already ended the orange wind at 15:56 (ipma-cut-1555). The open data read at 16:40 shows only yellow rain 15:56-18:00 and the sea warnings."
   },
   {
    "id": "a1-vialonga",
@@ -2676,6 +2676,32 @@
    },
    "area": "lisbon",
    "note": "GNR via CNN Portugal live 15:58."
+  },
+  {
+   "id": "ipma-cut-1555",
+   "by": "ipma",
+   "to": [],
+   "decision": "IPMA ends Lisbon's orange wind warning at 15:56; yellow rain to 18:00 remains; orange sea to 21:00, then yellow to 03:00 Thursday. Faro lowered too: no red left on the mainland",
+   "at": "2026-11-11T15:55Z",
+   "status": "happened",
+   "follows": [
+    "ipma-lisbon-1506"
+   ],
+   "label": "fact",
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read": "2026-11-11T16:41Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "also": [
+    "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json"
+   ],
+   "effect_from_utc": "2026-11-11T15:56Z",
+   "effect_to_utc": "2026-11-11T18:00Z",
+   "effect_note": "wind warning expires 15:56 (CAP); yellow rain 15:56-18:00 (IPMA JSON)",
+   "state": null,
+   "state_note": "a warning",
+   "scope": null,
+   "area": "lisbon",
+   "note": "CAP message 2.49.0.0.620.0.PT.261111155503.PO-01-1945, sent 2026-11-11T15:55:03Z, Update, Severe wind expires 15:56 (incident.meteorologist@'s cap.json, read 16:22:55Z; IPMA's <references> carry a stray \"-\", normalised in identifier_norm). IPMA's open data agreed by 16:40Z (our read; the conductor: IPMA's page at 16:24). Red anywhere in the open data at 16:40Z: see note in status."
   }
  ],
  "lessons": [

@@ -56,7 +56,8 @@
     "13:36 wake: no change to Day 3; IPMA cut Lisbon (CAP 12:33): red rain to 15:00 then yellow, orange wind to 18:00 (fact; open data stale); bridges 60/80 km/h (Lusoponte via press); Lisbon 144 occurrences to 12:00; ANEPC 530 to 12:00, impact shifting south; primary tries run 12: none published",
     "14:35 wake: no change to Day 3; IPMA open data now matches the 12:33 cut; CP urban: Campolide–Alcântara Terra suppressed (press); Madeira 285 to 13:10 (press); primary tries run 13: none published",
     "15:36 wake: no change to Day 3; MAI: alert ends at midnight, normality expected Thursday (press 14:44); PSP: all Lisbon tunnels closed (15:24); IP: 8 roads restricted at 14:00; IPMA Lisbon now yellow rain 15-18, orange wind to 18; primary tries run 14: none published",
-    "16:35 wake: no change to Day 3; IPMA: no red left for Lisbon (yellow rain, orange wind 15:06-18:00; fact); A1 Vialonga restricted from 15:00 (GNR via press); ANEPC briefing due 19:00; primary tries run 15: none published"
+    "16:35 wake: no change to Day 3; IPMA: no red left for Lisbon (yellow rain, orange wind 15:06-18:00; fact); A1 Vialonga restricted from 15:00 (GNR via press); ANEPC briefing due 19:00; primary tries run 15: none published",
+    "16:41: ipma-cut-1555 (fact, CAP 15:55:03): Lisbon's orange wind ended 15:56; corrected ipma-lisbon-1506 (our 16:33 open-data read was stale for wind)"
   ],
   "next": [
     "Find the press live blogs for 11 Nov (Observador's 10 Nov blog stopped at 01:03; Jornal de Negócios at 00:09)",
@@ -74,7 +75,7 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts. New: ANEPC's occurrences portal (prociv.gov.pt/pt/ocorrencias/: the JSON it loads, counts only); CNN Portugal live JSON-LD."
   ],
-  "updated": "2026-11-11T16:35Z",
+  "updated": "2026-11-11T16:41Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {
