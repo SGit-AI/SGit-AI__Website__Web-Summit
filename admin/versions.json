@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1893",
+    "date": "2026-11-11",
+    "what": "the \"Add your key\" box no longer opens on every page (Silvio, with Dinis's yes)",
+    "by": "dashboard@web-summit.silvio",
+    "from": "6cd194b18"
+  },
+  {
     "version": "v0.2.1892",
     "date": "2026-11-11",
     "what": "16:35 wake: no red left for Lisbon (IPMA, 15:06); A1 restricted at Vialonga; no change to Day 3",
