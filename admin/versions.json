@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1781",
+    "date": "2026-11-11",
+    "what": "00:23 wake refresh",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "049343ed7"
+  },
+  {
     "version": "v0.2.1780",
     "date": "2026-11-11",
     "what": "wake 00:18: the incident +11 events, 2 corrected; IPMA's red wind was issued at 07:18, 7 h before we first read it",
