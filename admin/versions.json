@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1897",
+    "date": "2026-11-11",
+    "what": "Gravity v0.1.0, the universe visualization as a library (Dinis's brief); Universo ✦ now runs on it",
+    "by": "dashboard@web-summit.silvio",
+    "from": "57f63a46c"
+  },
+  {
     "version": "v0.2.1896",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: the handover survey recorded; project handover-market opened for its PM; the hourly digest paused",
