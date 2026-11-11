@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1841",
+    "date": "2026-11-11",
+    "what": "10:34 wake: 208 flights cancelled at Lisbon by 09:20 (ANA site via the press); only Faro still red for wind; no change to Day 3",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "555e00c85"
+  },
+  {
     "version": "v0.2.1840",
     "date": "2026-11-11",
     "what": "WS-215: Lisbon Fringe",
