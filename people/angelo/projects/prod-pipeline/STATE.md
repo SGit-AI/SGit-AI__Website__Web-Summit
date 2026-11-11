@@ -31,6 +31,10 @@ The feature: every Tech Fringe page says how it was made, in one line at its foo
 - **Angelo, 11 Nov:** "Where does this budget come from? I've not set any budget to be honest." It came from conductor.b@'s intake (94dfabc, BRIEF.md and the lead's start prompt), not from him; the lead had taken it as his. Budget removed from BRIEF.md; his "as long as we have usage let's go to town" stands. A3 started (see runs.md).
 - **Waiting on Angelo:** (b) who builds it in the Fringe repository (tier 3). (c) who in the team gets the draft (tier 3). (d) share the shape with conductor.fringe@ before any build (A1's Q1, recommended).
 
+## Angelo's question, 11 Nov about 20:00 UTC
+- Angelo: "I'm really unclear on what data we're actually tracking because those flows in the 4 screenshots don't add up at first glance." Asked for page link, commits, timestamps, who, from inception to now.
+- Checked against the Fringe's git (dev at its tip, read only): the traces mix two kinds of commit: (1) commits about the page itself (DISTRICT 909: b096ccb 17:50 researcher.1.fringe@PrompTugal.jose; the home page's own builder admin/build/home.mjs: 9 commits 14:02 to 18:52, design.1 x8, design.4 x1) and (2) commits to shared files that rebuild every page (the home trace's 135 steps are every commit to 18 shared build and data files, by 21 agents). A4's DISTRICT 909 trace also missed two commits that name the event (dd871ad 17:57 ontologist.1.fringe@PrompTugal.dinis, graph data; 698898b 18:56 conductor.fringe@PrompTugal.indi, communities.json). Lead's finding: what counts as a step of a page was never defined; that is the decision before any more design.
+
 ## Spend
 - Worker runs: A1 3.95 USD, A2 3.60 USD (platform, API-equivalent); plus A3 2.29, A4 4.02, A5 4.11 USD; total 17.97 USD. No budget (Angelo); recorded, not gated.
 - Sub-agents of the lead: none.
