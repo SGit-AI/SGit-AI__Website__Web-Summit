@@ -6,7 +6,7 @@ status: "draft for Angelo's read"
 ---
 # Queue
 
-conductor.b@ keeps this file; nobody else edits it. An item's step is not typed by hand: it is derived from which files exist in `people/angelo/pipeline/<id>/` on pool/<id> (as the newsroom's board/the-story-pipeline.md does).
+conductor.b@ keeps this file; nobody else edits it. An item's step is not typed by hand: it is derived from which files exist in `people/angelo/pipeline/<id>/` on pool/<id> (as the newsroom's newsroom: board/the-story-pipeline.md does).
 
 ## Slots
 

@@ -21,7 +21,7 @@ description: Use when a step must decide or make how something looks: a page, a 
 - team/designer/ROLE.md and team/designer/designer-brief.md
 - newsroom: design/brand/ (the brand and its guide) and design/README.md (the visual direction)
 - people/angelo/app/ (our command centre and live map: the look to keep for Angelo's views)
-- Lisbon Fringe: work/09-design.md (the Fringe's look, Sarah's lane): follow it there, never redesign it
+- Lisbon Fringe: fringe: work/09-design.md (the Fringe's look, Sarah's lane): follow it there, never redesign it
 
 ## Done
 - [ ] The form matches the message (the list above), and the options were shown before the build.

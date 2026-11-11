@@ -15,7 +15,7 @@ description: How a conductor of Angelo's (conductor.b@, a lead, conductor.fringe
 1. Pull dev in every repository the conductor works in.
 2. Its own STATE.md (open, waiting on, decided) and the backlog's items for Angelo.
 3. Its people: runs.md (who is running, what finished, cost), each lead's STATE.md and ASKS.md on its branch, each item's STATE.md.
-4. The team: commits since the last digest that name Angelo or his conductors in For:; Dinis's "New from Dinis" (the newsroom's board/guidance/README.md); the board items For: everyone; the swarm projects he is in (for example the Fringe's team/<id>/status.json).
+4. The team: commits since the last digest that name Angelo or his conductors in For:; Dinis's "New from Dinis" (the newsroom's newsroom: board/guidance/README.md); the board items For: everyone; the swarm projects he is in (for example the Fringe's team/<id>/status.json).
 5. Anything due by a date someone else set (the summit, a demo).
 A wide sweep goes to a sub-agent or a worker, logged in a commit like any other run. **The digest worker** (digest.b@, hourly; ROLES.md) does this gathering ahead of time into pool/ops-digest's digest.md: start from it, and add only what came after it.
 
