@@ -26,7 +26,7 @@
     "21:25: IPMA's hourly aggregate can change values without changing dataUpdate; refresh.py now compares values (hourly_runs keeps the replaced run).",
     "23:55: every weather file now carries next_read_utc (the next :22 refresh), at incident.conductor@'s request for the librarian's now.json."
   ],
-  "updated": "2026-11-11T07:45:00Z",
+  "updated": "2026-11-11T08:17:00Z",
   "by": "incident.meteorologist@web-summit.dinis",
   "key": {
     "fingerprint": "sha256:ecbf013bbf6722e7",
@@ -104,5 +104,11 @@
       "scope": "Lisbon and Madeira CAP messages"
     }
   ],
-  "cap_poll_about": "5-minute CAP poll in this session (no model in the loop): restarted at every :22 wake with a 70-minute limit so exactly one runs; it wakes the meteorologist only on a new Lisbon or Madeira CAP message. Gaps between runs are visible here. Earlier run: 23:54 to 00:00 (stopped to add read logging)."
+  "cap_poll_about": "5-minute CAP poll in this session (no model in the loop): restarted at every :22 wake with a 70-minute limit so exactly one runs; it wakes the meteorologist only on a new Lisbon or Madeira CAP message. Gaps between runs are visible here. Earlier run: 23:54 to 00:00 (stopped to add read logging).",
+  "cap_feed_delay_0716": {
+    "fact": "IPMA's CAP message sent 07:16:30 was absent from MeteoAlarm's feed at the reads 07:19:06, 07:24:07, 07:27:14 (hourly refresh), 07:27:50 and 07:32:52, and present at 07:37:53: the feed carried it 16 to 21 minutes after IPMA's sent time. The poll was running throughout (run 06:38:50-07:27:05, then 07:27:49 onwards; a 44 s hand-over gap at the wake).",
+    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+    "read_utc": "2026-11-11T08:16Z"
+  },
+  "cap_poll_how_long": "Each run reads every ~5 min and lasts until the next :22 wake stops it (about 60 min), its 70-minute limit, a new message, or a container restart (two so far: about 01:40 and 06:26-06:38). Runs are listed in cap_poll_runs."
 }
