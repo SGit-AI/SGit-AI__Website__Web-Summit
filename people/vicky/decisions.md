@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **39** P6 pin only in each prompts file (Vicky accepts the push risk); tool fixes, then the dashboard test round trip, then her go.
 - **38** dev@'s current key on the team site; vault A sealed to it before SA33-TOOLS.
 - **37** the storm page, S41 and the curator handed over to the team reviewer@, dev@ and curator.
 - **36** P6 approved with security@'s changes, in steps; not in force until Vicky says go.
@@ -200,6 +201,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 38. **dev@'s current key on the team site, then vault A sealed to it** (Vicky, 11 Nov, about 19:50 UTC, in this window: "vault@ cannot seal vault A to dev@ because the team site still lists dev@'s old key. When dev@ finishes the signature check, have it add its current key dev-vicky-promptugal-c to the team site's data/keys.json by its own commit, then ask vault@ to seal vault A to it. Tell me when that is done, so I can paste Apply SA33-TOOLS in dev@'s window.")
     - dev@ adds dev-vicky-promptugal-c (signing sha256:beac4728d9e041b1) to data/keys.json by its own commit and marks dev-vicky-promptugal superseded; vault@ checks it with seal.mjs and seals vault A (wyt9jdeo) to it. One-off wakes at her word: dev@ 19:53, vault@ 20:10; the conductor checks at 20:25 and tells Vicky. SA33-TOOLS starts only when Vicky pastes it in dev@'s window.
 
+39. **P6: the simpler pin, security@'s tool fixes, then the test round trip** (Vicky, 11 Nov, about 20:08 UTC, in this window: "For P6 I choose the simpler version. Pin your fingerprint only in each agent's prompts file. I will not paste it in each window, and I accept that anyone who can push could in theory change it. Record this as my decision. Still have dev@ make security@'s three fixes from people/vicky/reviews/security-p6-step1.md, by a one-off wake at my word, then run the signed test round trip with dashboard and tell me before I say go. No rush, it can finish after Thursday.")
+    - **Vicky's decision on security@'s finding 5:** the conductor's signing fingerprint (conductor-vicky-2, sha256:9c16424f1889540d) is pinned only in each agent's prompts file, not in task prompts or each window. She accepts the risk security@ named: anyone who can push to dev could in theory change a pin.
+    - **Steps:** dev@ makes fixes 1 to 3 (one-off wake 20:35, update SA39-FIX); the conductor then pins the fingerprint in every prompts file (step 2) and runs one signed test round trip with dashboard@, with the extra refusals security@ listed (an unsigned copy, a renamed copy, the task pointed at a second agent, a pointer with extra text), and tells Vicky the result before she says go. Not before Friday 13 Nov. **P6 as it stands stays in force until she says go.**
+    - Security@'s finding 9 answered: the words quoted in standing answer 36 are Vicky's, given in the conductor's window.
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -269,6 +275,9 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA36-SIGN, the signature check** (Vicky, 11 Nov, about 19:35 UTC: "dev@ builds the signature check first"). For: dev.
 > Build `people/vicky/tools/tasks.mjs` as step 1 of `people/vicky/plans/2026-11-11-p6-signed-messaging.md` says (verify against a pinned fingerprint, expiry, done-file check, `--no-expiry` for decisions.md, `check-pointer`, `lint`), with tests for a good, a forged, an expired and an already-done file. Node only, no dependencies, no network; it must be safe to publish (standing answer 35). Commit it on the team site For: security@web-summit.vicky and For: conductor@web-summit.vicky, and confirm "applied SA36-SIGN". Do not send or receive any session message.
 
+**SA39-FIX, the three tool fixes** (Vicky, 11 Nov, about 20:08 UTC). For: dev.
+> Make fixes 1 to 3 from people/vicky/reviews/security-p6-step1.md in people/vicky/tools/tasks.mjs, with a test for each, For: security@web-summit.vicky, and confirm "applied SA39-FIX".
+
 Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - P10, P17, P22, P27: vault, designer.
 - SA16: vault, designer, inbox.
@@ -279,7 +288,7 @@ Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - SA27 (added 9 Nov, 11:25; changed 13:40): inbox. (vault applied it at 11:35.)
 - SA28 (added 9 Nov, 14:15): programme, researcher, curator.
 - RULES-11NOV: all 18 confirmed by 20:00 on 11 Nov (people/vicky/confirmations.json).
-- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: done (programme, 11 Nov). SA35-WS: curator, journalist-portugal, reviewer. SA36-SIGN: dev.
+- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: done (programme, 11 Nov). SA35-WS: curator, journalist-portugal, reviewer. SA36-SIGN: done (dev, 19:44). SA39-FIX: dev.
 - SA29: applied by researcher and curator (10 Nov); "SA29 used" at their first regular runs still to report.
 
 Removed on 9 Nov once done or confirmed: SA13, SA15, SA18, SA19B, SA19C, SA22, SA25, PILOT-REPLIT, TRIAGE-REPLIT and OVERNIGHT-9NOV (closed at 04:40, people/vicky/company-pages/backlog.md).
