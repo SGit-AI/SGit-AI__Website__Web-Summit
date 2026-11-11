@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1823",
+    "date": "2026-11-11",
+    "what": "07:27 wake refresh; CAP poll restarted",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "e5c968b82"
+  },
+  {
     "version": "v0.2.1822",
     "date": "2026-11-11",
     "what": "07:15 run, ec9b5af..40f041b; A-27 opened (Angelo's agents here); trailer low raised again",
