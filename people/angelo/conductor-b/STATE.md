@@ -17,7 +17,7 @@ summary: Account B's conductor. Main control of Angelo's backlog from 10 Novembe
 ## Waiting on
 
 - Angelo: his read of ROLES.md; the interview notes; what Dinis said at 09:00; whether to tell Jose's conductor about the follow links.
-- The push check on this session's first commit (pushed-by.mjs <sha> must say ANGELO).
+- (done) The push check: this session's first commit 7acabbef6 (live in v0.2.1835) was pushed by riskmandate-angelo; pushed-by says ANGELO.
 
 ## Workers
 
