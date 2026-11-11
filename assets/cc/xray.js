@@ -313,7 +313,7 @@
         G.addEventListener('click', open); G.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open() } }) }
 
     // ---------- the world: sub-menu and the three pages ----------
-    const CSS = `html.cc-shell .cc-xray { display: grid; gap: 0; position: relative; isolation: isolate; } .cc-xray > *:not(.xr-sky) { position: relative; z-index: 1; }
+    const CSS = `html.cc-shell .cc-xray { display: grid; gap: 0; position: relative; isolation: isolate; } .cc-xray > *:not(.xr-sky) { position: relative; z-index: 1; } .cc-xray > .xr-top { z-index: 20; } .cc-xray > .xr-sub { z-index: 21; }
 .xr-sky { position: fixed; inset: 0; z-index: 0; pointer-events: none; display: block; background: radial-gradient(1300px 900px at 22% 40%, #0F3A35 0%, #0A2522 38%, #061412 68%, #040D0C 100%); }
 .cc-xray .xr-top { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; max-width: 1440px; margin: 12px auto 0; padding: 0 16px; width: 100%; box-sizing: border-box; font-family: "Barlow Semi Condensed", "Arial Narrow", sans-serif; color: #EAF6F3; }
 .cc-xray .xr-qw { position: relative; width: min(400px, 100%); } .cc-xray .xr-ow { position: relative; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
