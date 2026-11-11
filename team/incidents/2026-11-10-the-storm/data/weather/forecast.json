@@ -2,7 +2,7 @@
  "about": "IPMA's own forecast for Lisbon (globalIdLocal 1110600): the 5-day daily forecast and the hourly model forecast (mean wind, no gusts). IPMA's wind classes: 1 weak, 2 moderate, 3 strong, 4 very strong.",
  "daily": {
   "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-  "read_utc": "2026-11-11T22:59:31Z",
+  "read_utc": "2026-11-11T23:23:31Z",
   "updated_local": "2026-11-11T22:31:02",
   "days": [
    {
@@ -1257,7 +1257,7 @@
  ],
  "hourly": {
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-11T22:59:31Z",
+  "read_utc": "2026-11-11T23:23:31Z",
   "updated_local": "2026-11-11T07:56:49",
   "wed_peak": {
    "time_utc": "2026-11-11T14:00Z",
@@ -2257,18 +2257,10 @@
    "name": "MET Norway Locationforecast 2.0 (complete)",
    "licence": "NLOD 2.0 / CC BY 4.0, data from MET Norway",
    "source": "https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=38.72&lon=-9.14",
-   "read_utc": "2026-11-11T22:59:31Z",
-   "updated_utc": "2026-11-11T19:20:30Z",
+   "read_utc": "2026-11-11T23:23:31Z",
+   "updated_utc": "2026-11-11T19:19:42Z",
    "units": "km/h (converted from m/s), mm, hPa",
    "rows": [
-    {
-     "time_utc": "2026-11-11T22:00Z",
-     "wind_mean_kmh": 20.2,
-     "gust_kmh": null,
-     "wind_from_deg": 269.0,
-     "rain_mm_next_1h": 0.0,
-     "pressure_hpa": 998.3
-    },
     {
      "time_utc": "2026-11-11T23:00Z",
      "wind_mean_kmh": 19.4,
@@ -2387,7 +2379,7 @@
    "name": "Open-Meteo (best match)",
    "licence": "CC BY 4.0, Open-Meteo.com",
    "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
-   "read_utc": "2026-11-11T22:59:31Z",
+   "read_utc": "2026-11-11T23:23:31Z",
    "rows": [
     {
      "time_utc": "2026-11-11T00:00Z",
@@ -2651,7 +2643,7 @@
    ]
   }
  },
- "next_read_utc": "2026-11-11T23:22Z",
+ "next_read_utc": "2026-11-12T00:22Z",
  "code_tables": {
   "weather_type": "https://api.ipma.pt/open-data/weather-type-classe.json",
   "wind_speed_class": "https://api.ipma.pt/open-data/wind-speed-daily-classe.json",

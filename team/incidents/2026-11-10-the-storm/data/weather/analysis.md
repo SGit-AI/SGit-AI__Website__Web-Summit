@@ -491,3 +491,12 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (read 22:22:59–22:23:24 UTC): IPMA's open data has dropped the expired orange sea warning; Lisbon now shows only yellow sea, 21:00–Thursday 03:00. LPPT 21:30 26011KT Q0998; 22:00 27009KT, no gust, Q0998. No new CAP batch of any kind since 19:17:31 (reads every 5 min to 22:19:01). No new communiqué. LPPT TAF 17:00 unchanged (the next routine one is due about 23:00).
 
 **Analysis (high):** no change.
+
+## 31. 23:25 UTC 11 Nov: the Thursday TAF
+
+**Facts** (read 23:23:06–23:23:31 UTC):
+- **New LPPT TAF, issued 23:00, valid Thursday 00:00 to Friday 06:00:** 25012KT, visibility 10 km or more; TEMPO through the whole period: rain, visibility 4000 m, cloud base 1200 ft, CB possible; TEMPO Thursday 06:00–18:00: 25017G27KT (gusts about 50 km/h). That is lighter than the 17:00 TAF had for Thursday (23017G27KT from 10:00, same gusts) and similar in strength.
+- LPPT METARs: 22:30 27008KT with a light rain shower, Q0999; 23:00 24007KT Q0999, no gust.
+- Lisbon: only yellow sea, 21:00–Thursday 03:00. The CAP batch of 22:43:28 (yellow rain for Thursday in six northern districts) has nothing for Lisboa. No newer batch (reads every 5 min to 23:20:20). No new communiqué.
+
+**Analysis (high), Thursday for Lisbon (J4):** showers at times, WSW wind about 22 km/h, gusts about 50 km/h at times by day. No wind or rain warning for Lisboa. IPMA's rain warnings for Thursday are in the north, so Lisbon may get the edge of that rain, but nothing points to a hazard for Lisbon.
