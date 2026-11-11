@@ -43,3 +43,10 @@ Today agents follow an entry if its commit title and Agent line name the conduct
 ## Closed: the gate's article signature check
 
 security@ noted that the gate's check 8 only checks that an article's `.sig` names a signer. Vicky, 11 Nov about 19:50 UTC: "No need to raise the gate items with the team site owners. Close it." Closed; nobody raises it.
+
+## Changes after security@'s step-1 review (`people/vicky/reviews/security-p6-step1.md`)
+
+- **The pin (finding 5), Vicky's decision, 11 Nov about 20:08 UTC:** "Pin your fingerprint only in each agent's prompts file. I will not paste it in each window, and I accept that anyone who can push could in theory change it." Step 2 pins it only there (standing answer 39). The signed decisions.md uses the same pin.
+- **Tool fixes 1 to 3** (dev@, SA39-FIX): verify refuses an id that is not the file name; `--for` is required for task files; lint accepts the team's agent names.
+- **Step 3 tests (finding 7):** besides the unsigned copy, a renamed copy of the signed task, the task pointed at a second agent, and a pointer with extra text, each refused and logged by the agent.
+- **Timing:** not before Friday 13 Nov; the conductor tells Vicky the result before she says go.

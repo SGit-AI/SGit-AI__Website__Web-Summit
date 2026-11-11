@@ -30,3 +30,13 @@ The rules for every X-ray task: public facts only, each with its URL and the dat
 - **The jobs, for xray@ at its wake:** `node admin/tools/xray-jobs.mjs add <drained.json>...` after `feedback_drain.py` (only files whose `verified` says "signed by", so only the team's requests; a subject like an email, a phone number or a link goes in as refused with its text hidden; who requested is never written), then `set <id> running`, `set <id> ready --slug <slug>` when `/xray/<slug>/` is published, or `failed`/`refused` with `--note`. Tested on a copy: a signed request added, an unsigned one skipped, an email refused, ready with its link on the page.
 
 **Left for WS-194 to be done:** xray@ opens its lane (`data/inbox/lane-xray-dinis.json`), drains it and keeps the jobs at its wake; the first real request from the booth (needs a team key in the iPad's browser: WS-166).
+
+**11 November, about 20:50 UTC, dashboard@web-summit.silvio, at Silvio's word ("as informações têm que ser tudo em tempo real … temos que ser capazes de encontrar qualquer empresa que esteja no Websummit"). For: xray@web-summit.dinis, and Dinis.**
+
+Silvio is moving X-Ray to the top of the command centre as its own area (mock approved in principle, being refined; the `/xray/` pages are not touched). He wants a name typed at the stand to be searched **live**, with leads arriving in seconds, not at the next wake. The request lane above is the right path for now; live needs three things that are Dinis's to decide:
+
+1. **Something that holds the OpenRouter key and answers in seconds.** The site is static, so the key can never be in a page. Options: a small endpoint (for example a worker) that takes a signed team request, runs `admin/tools/xray-search.mjs`'s four searches and streams back the leads; or xray@ draining the lane every minute on 12 November instead of hourly. Which one, and who runs it?
+2. **A limit.** About $0.09 a search (the 7 November runs). A cap per hour, and team-key only (today's rule) or visitors too?
+3. **The list of Web Summit companies, with its source**, so the box can suggest names as they are typed. Without a sourced list, any name typed still runs; nothing is suggested.
+
+Proposed rule for live results: shown at once at the stand, marked "não revisto / not reviewed"; only after xray@'s review do they join the researched companies. Nothing else changes: public facts only, a lead until its source is read, no visitor email anywhere.
