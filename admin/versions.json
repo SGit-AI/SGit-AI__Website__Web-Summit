@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1922",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: dry-run prompt: a ledger path the contact check read as an address, reworded",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "98cb53ee1"
+  },
+  {
     "version": "v0.2.1921",
     "date": "2026-11-11",
     "what": "confirmed RULES-11NOV; key kept; the rules in my scheduled prompt",
