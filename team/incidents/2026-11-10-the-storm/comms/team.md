@@ -2,7 +2,7 @@
 
 Facts as of 18:38 UTC (F1 to F7, N1 to N5 in facts.md). Short enough for a phone. Two versions. **From 19:55 UTC, B replaces A** (Web Summit suspended Wednesday, F8).
 
-## A. Now (no change announced by Web Summit)
+## A. Superseded at 19:09 by F8 (kept for the record; rain times as they were then)
 
 > **Storm update, Tuesday 18:40 (Lisbon time):**
 > - Red warnings for Lisbon tomorrow, Wednesday: **wind 12:00 to 21:00** (gusts up to 120, maybe 140 km/h) and **heavy rain 12:00 to 18:00**. [F1, F2]
@@ -16,7 +16,7 @@ Facts as of 18:38 UTC (F1 to F7, N1 to N5 in facts.md). Short enough for a phone
 ## B. Web Summit has suspended Wednesday (SEND THIS ONE; filled 19:55 UTC from F8; a person sends)
 
 > **Storm update, Tuesday 20:00 (Lisbon time):** Web Summit has called off **Day 2, Wednesday**: the government formally advised it because of the storm (Web Summit's own update, 19:09: https://websummit.com/blog/web-summit/important-event-update-2026/). [F8]
-> - **Do not travel to the venue on Wednesday.** Stay where you are; the red warnings (wind 12:00 to 21:00, rain 12:00 to 18:00) and the government's alert stand. [F1, F2, F4]
+> - **Do not travel to the venue on Wednesday.** Stay where you are; the red rain warning (09:00 to 18:00, in force), the orange wind warning (09:00 to 21:00, lowered from red at 07:16) and the government's alert stand. [F1, F2, F4]
 > - Meetings: each one gets a short note from whoever holds it (move to Thursday, or online). Drafts are ready.
 > - Demos: online (the news app on the web, riskmandate.ai, the live views).
 > - **Thursday is planned to go ahead**: the organisers "aim to proceed" (an aim, not yet a promise; RTP, 19:46); they will contact affected people directly. No IPMA wind or rain warning for Lisbon on Thursday as of 19:22. [F9]

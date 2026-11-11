@@ -10,7 +10,7 @@ for Lisbon airport, LPPT), writes one JSON file per source next to this folder, 
 Kept by incident.meteorologist@web-summit.dinis. Standard library only.
 """
 import json, os, re, sys, html, urllib.request, xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 U = {
@@ -23,6 +23,12 @@ U = {
     'hourly': 'https://api.ipma.pt/public-data/forecast/aggregate/1110600.json',
     'taf': 'https://aviationweather.gov/api/data/taf?ids=LPPT&format=json',
     'metar': 'https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json',
+    'cap': 'https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal',
+    'wx_types': 'https://api.ipma.pt/open-data/weather-type-classe.json',
+    'wind_classes': 'https://api.ipma.pt/open-data/wind-speed-daily-classe.json',
+    'prec_classes': 'https://api.ipma.pt/open-data/precipitation-classe.json',
+    'met_no': 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=38.72&lon=-9.14',
+    'open_meteo': 'https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12',
 }
 LISBON_STATIONS = {  # IPMA station ids in and next to Lisbon (from stations.json)
     '1200535': 'Lisboa (Geofísico)', '1210580': 'Lisboa, Relógio', '1210762': 'Lisboa, Tapada da Ajuda',
@@ -34,6 +40,57 @@ RANK = {'green': 0, 'yellow': 1, 'orange': 2, 'red': 3}
 KT = 1.852
 NOW = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 changes, errors = [], []
+CAP_INDEX = {}  # (areaDesc, type_pt, level, onset 'YYYY-MM-DDTHH:MM', expires) -> [sent_utc, ...], from the latest CAP read
+AREA_CAP = {'AVR': 'Aveiro', 'BJA': 'Beja', 'BRG': 'Braga', 'BGC': 'Bragança', 'CBO': 'Castelo Branco', 'CBR': 'Coimbra',
+            'EVR': 'Évora', 'FAR': 'Faro', 'GDA': 'Guarda', 'LRA': 'Leiria', 'LSB': 'Lisboa', 'PTG': 'Portalegre', 'PTO': 'Porto',
+            'STM': 'Santarém', 'STB': 'Setúbal', 'VCT': 'Viana do Castelo', 'VRL': 'Vila Real', 'VIS': 'Viseu',
+            'ACE': 'Açores - Grupo Central', 'AOC': 'Açores - Grupo Ocidental', 'AOR': 'Açores - Grupo Oriental',
+            'MCN': 'Madeira - Costa Norte', 'MCS': 'Madeira - Costa Sul', 'MPS': 'Madeira - Porto Santo', 'MRM': 'Madeira - Regiões Montanhosas'}
+OTHER_SEEN, OTHER_IN_FEED = {}, set()
+PT_EN = {}  # IPMA's own English for a warning text, from the en-GB info beside the pt-PT one in the same CAP message
+OUR_EN = {  # our translations, used only where IPMA's CAP gives no English for that exact text (figures unchanged)
+    'Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.': 'Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.',
+    'Precipitação forte e persistente.': 'Heavy and persistent rain.',
+    'Precipitação por vezes forte e persistente.': 'Rain, at times heavy, and persistent.',
+    'Precipitação persistente, por vezes forte.': 'Persistent rain, at times heavy.',
+    'Precipitação por vezes forte e acompanhada de trovoada.': 'Rain, at times heavy, with thunderstorms.',
+    'Chuva, por vezes forte e persistente.': 'Rain, at times heavy, and persistent.',
+    'Aguaceiros, por vezes fortes': 'Showers, at times heavy',
+    'Ondas de sudoeste com 4 a 5 metros.': 'South-westerly waves of 4 to 5 metres.',
+    'Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.': 'South-westerly waves of 5 to 7 metres, possibly reaching 13 metres maximum height.',
+    'Ondas do quadrante oeste com 4 a 5 metros.': 'Westerly waves of 4 to 5 metres.',
+    'Rajadas até 100 km/h.': 'Gusts up to 100 km/h.', 'Rajadas até 120 km/h.': 'Gusts up to 120 km/h.',
+    'Rajadas até 130 km/h.': 'Gusts up to 130 km/h.', 'Rajadas até 140 km/h.': 'Gusts up to 140 km/h.',
+    'Rajadas até 100 km/h, em esepcial nos extremos leste e oeste.': 'Gusts up to 100 km/h, especially at the eastern and western ends.',
+    'Vento do quadrante sul com rajadas até 75 km/h.': 'Southerly wind with gusts up to 75 km/h.',
+}
+
+
+def en_for(pt):
+    """(text_en, text_en_by): IPMA's own English from CAP if it exists for this exact text, else ours, else None."""
+    if not pt:
+        return None, None
+    nums = lambda t: sorted(re.findall(r'\d+', t))
+    # qualifiers in the Portuguese that IPMA's English must keep: (pt marker, English words that carry it)
+    QUAL = [('por vezes', ('sometimes', 'at times', 'occasionally')), ('podendo', ('possibl', 'may', 'could', 'can reach')),
+            ('persistente', ('persist',)), ('trovoada', ('thunder',)), ('forte', ('heavy', 'strong', 'intense')),
+            ('locais mais expostos', ('exposed',))]
+    lost = lambda pt_, en_: [q for q, ens in QUAL if q in pt_.lower() and not any(e in en_.lower() for e in ens)]
+    if pt in PT_EN and nums(PT_EN[pt]) == nums(pt) and not lost(pt, PT_EN[pt]):
+        return PT_EN[pt], 'IPMA (its en-GB text in the CAP message, MeteoAlarm feed)'
+    if pt in PT_EN and pt in OUR_EN:  # IPMA's English changes the figures or drops a qualifier: ours, and IPMA's noted beside it
+        why = 'does not carry the same figures' if nums(PT_EN[pt]) != nums(pt) else 'drops ' + ', '.join(f"'{q}'" for q in lost(pt, PT_EN[pt]))
+        return OUR_EN[pt], f"incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, '{PT_EN[pt]}', {why})"
+    if pt in OUR_EN:
+        return OUR_EN[pt], 'incident.meteorologist@web-summit.dinis (our translation; figures unchanged)'
+    return None, 'not translated yet'
+CAP_LEVEL = {'Amarelo': 'yellow', 'Laranja': 'orange', 'Vermelho': 'red', 'Verde': 'green'}
+
+
+def sent_for(area, typ, level, start, end):
+    """The CAP sent time of the message matching this warning exactly (area, type, level, window), else None. Never a guess."""
+    hits = CAP_INDEX.get((AREA_CAP.get(area), typ, level, start[:16], end[:16]), [])
+    return max(hits) if hits else None
 
 
 def get(key):
@@ -51,7 +108,18 @@ def load(name, default):
     return json.load(open(p, encoding='utf-8')) if os.path.exists(p) else default
 
 
+def next_read():
+    """The next scheduled refresh: the hourly wake at :22 (UTC)."""
+    now = datetime.now(timezone.utc).replace(second=0, microsecond=0)
+    nxt = now.replace(minute=22)
+    if nxt <= now:
+        nxt = nxt + timedelta(hours=1)
+    return nxt.strftime('%Y-%m-%dT%H:%MZ')
+
+
 def save(name, obj):
+    if isinstance(obj, dict):
+        obj['next_read_utc'] = next_read()  # until when to trust this file (the librarian's now.json reads it)
     with open(os.path.join(OUT, name), 'w', encoding='utf-8') as f:
         json.dump(obj, f, ensure_ascii=False, indent=1)
         f.write('\n')
@@ -110,9 +178,15 @@ def warnings():
                            '; '.join(f"{a[1]} {a[0]} {a[2][8:16]}-{a[3][8:16]}" for a in new) + ')')
         if expired:
             changes.append(f"{len(expired)} Lisbon warning(s) expired")
+    for x in lsb:
+        x['sent_utc'] = sent_for('LSB', x['type'], x['level'], x['start_utc'], x['end_utc'])
+        x['text_en'], x['text_en_by'] = en_for(x['text_pt'])
+    for x in elsewhere:
+        x['sent_utc'] = sent_for(x['area'], x['type'], x['level'], x['start_utc'], x['end_utc'])
+        x['text_en'], x['text_en_by'] = en_for(x['text_pt'])
     peak = max((RANK[w['level']] for w in lsb), default=0)
     return {
-        'about': "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). Warnings carry no issue time in IPMA's feed: an issue time comes from a read or from press, and says which.",
+        'about': "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). IPMA's open data carries no issue time: `sent_utc` is the sent time of the CAP message (MeteoAlarm, cap.json) matching the warning's area, type, level and window exactly, or null where none matches (never guessed).",
         'source': src, 'read_utc': t, 'lisbon_peak_level': [k for k, v in RANK.items() if v == peak][0],
         'lisbon': lsb, 'red_and_orange_elsewhere': {'source': src, 'read_utc': t, 'items': elsewhere},
         'history': history,
@@ -159,7 +233,7 @@ def communiques():
                'valid_from_utc': m and m.group(1).replace(' ', 'T') + 'Z', 'valid_to_utc': m and m.group(2).replace(' ', 'T') + 'Z',
                'link': (it.findtext('link') or '').strip(), 'text_pt': text, 'source': U['communiques'], 'read_utc': NOW}
         if title not in seen:
-            changes.append('New IPMA communiqué: ' + title)
+            changes.insert(0, 'NEW IPMA COMMUNIQUÉ: ' + title)
             seen[title] = rec
         elif seen[title]['text_pt'] != text:
             changes.append('IPMA communiqué text changed: ' + title)
@@ -218,9 +292,13 @@ def stations():
 
 
 # ---------------------------------------------------------------- airport
-def airport():
-    prev = load('airport.json', {})
-    traw, mraw = get('taf'), get('metar')
+def airport(icao='LPPT', fname='airport.json'):
+    prev = load(fname, {})
+    if icao != 'LPPT':
+        U['taf_' + icao] = f'https://aviationweather.gov/api/data/taf?ids={icao}&format=json'
+        U['metar_' + icao] = f'https://aviationweather.gov/api/data/metar?ids={icao}&hours=30&format=json'
+    tk, mk = ('taf', 'metar') if icao == 'LPPT' else ('taf_' + icao, 'metar_' + icao)
+    traw, mraw = get(tk), get(mk)
     tafs = {t['issue_utc']: t for t in prev.get('taf_history', [])}
     taf = prev.get('taf')
     if traw:
@@ -232,9 +310,9 @@ def airport():
                        'gust_kmh': kmh(g.get('wgst')), 'visibility': g.get('visib'), 'weather': g.get('wxString')}
                       for g in t.get('fcsts', [])]
             taf = {'issue_utc': t['issueTime'][:16] + 'Z', 'raw': t['rawTAF'], 'valid_from_utc': utc(t.get('validTimeFrom')),
-                   'valid_to_utc': utc(t.get('validTimeTo')), 'groups': groups, 'source': U['taf'], 'read_utc': NOW}
+                   'valid_to_utc': utc(t.get('validTimeTo')), 'groups': groups, 'source': U[tk], 'read_utc': NOW}
             if taf['issue_utc'] not in tafs:
-                changes.append(f"new LPPT TAF {taf['issue_utc'][8:16]}: " + taf['raw'][:40] + '...')
+                changes.append(f"new {icao} TAF {taf['issue_utc'][8:16]}: " + taf['raw'][:40] + '...')
                 tafs[taf['issue_utc']] = {k: taf[k] for k in ('issue_utc', 'raw', 'source', 'read_utc')}
     mets = {m['time_utc']: m for m in prev.get('metars', [])}
     if mraw:
@@ -244,19 +322,20 @@ def airport():
                 mets[tm] = {'time_utc': tm, 'raw': m['rawOb'], 'wind_dir': m.get('wdir'), 'wind_kt': m.get('wspd'),
                             'gust_kt': m.get('wgst'), 'wind_kmh': kmh(m.get('wspd')), 'gust_kmh': kmh(m.get('wgst')),
                             'visibility': m.get('visib'), 'weather': m.get('wxString'), 'pressure_hpa': m.get('altim'),
-                            'source': U['metar'], 'read_utc': NOW}
+                            'source': U[mk], 'read_utc': NOW}
     metars = [mets[k] for k in sorted(mets)]
     gusts = [m for m in metars if m['gust_kt']]
     mx = max(gusts, key=lambda m: m['gust_kt'], default=None)
     if metars and metars[-1]['time_utc'] != (prev.get('metars') or [{}])[-1].get('time_utc'):
         last = metars[-1]
-        changes.append(f"LPPT METAR {last['time_utc'][11:16]}: {last['wind_kmh']} km/h" + (f" gust {last['gust_kmh']}" if last['gust_kt'] else ''))
+        changes.append(f"{icao} METAR {last['time_utc'][11:16]}: {last['wind_kmh']} km/h" + (f" gust {last['gust_kmh']}" if last['gust_kt'] else ''))
     # earlier issues seen by the newsroom before this desk began
-    if 'TAF_AMD_101523Z' not in json.dumps(list(tafs.values())):
+    if icao == 'LPPT' and 'TAF_AMD_101523Z' not in json.dumps(list(tafs.values())):
         tafs['2026-11-10T15:23Z'] = {'issue_utc': '2026-11-10T15:23Z', 'id': 'TAF_AMD_101523Z',
                                      'summary_en': 'Wind S becoming 25 kt G38 (about 70 km/h) Wed 07-09 UTC; TEMPO 35 kt G48 (89 km/h) 09-18 UTC; PROB40 TEMPO 42 kt G58 (107 km/h) +TSRA 10-18 UTC.',
                                      'source': 'https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md', 'read_utc': '2026-11-10T16:54Z'}
-    return {'about': "IPMA's aeronautical forecast (TAF) and observations (METAR) for Lisbon airport (LPPT), read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport, 8 km north of the centre; not a public warning.",
+    place = 'Lisbon airport (LPPT), 8 km north of the centre' if icao == 'LPPT' else 'Madeira airport (LPMA, Santa Cruz, on the south-east coast)'
+    return {'about': f"IPMA's aeronautical forecast (TAF) and observations (METAR) for {place}, read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport; not a public warning.", 'icao': icao,
             'read_utc': NOW, 'taf': taf, 'taf_history': [tafs[k] for k in sorted(tafs)],
             'metars': metars, 'max_gust': mx and {'kt': mx['gust_kt'], 'kmh': mx['gust_kmh'], 'time_utc': mx['time_utc'], 'source': mx['source']}}
 
@@ -266,15 +345,39 @@ def forecast():
     prev = load('forecast.json', {})
     d, h = get('daily'), get('hourly')
     out = dict(prev)
+    tables = {}
+    for key, idk, pk, ek in (('wx_types', 'idWeatherType', 'descWeatherTypePT', 'descWeatherTypeEN'),
+                             ('wind_classes', 'classWindSpeed', 'descClassWindSpeedDailyPT', 'descClassWindSpeedDailyEN'),
+                             ('prec_classes', 'classPrecInt', 'descClassPrecIntPT', 'descClassPrecIntEN')):
+        r = get(key)
+        if r:
+            tables[key] = {str(e[idk]): {'pt': e[pk], 'en': e[ek]} for e in json.loads(r)['data']}
+    dec = lambda key, v: (tables.get(key) or {}).get(str(v)) if v is not None else None
     out['about'] = "IPMA's own forecast for Lisbon (globalIdLocal 1110600): the 5-day daily forecast and the hourly model forecast (mean wind, no gusts). IPMA's wind classes: 1 weak, 2 moderate, 3 strong, 4 very strong."
     if d:
         dd = json.loads(d)
-        out['daily'] = {'source': U['daily'], 'read_utc': NOW, 'updated_local': dd.get('dataUpdate'), 'days': dd.get('data')}
+        days = dd.get('data') or []
+        for d_ in days:
+            for key, field in (('wx_types', 'idWeatherType'), ('wind_classes', 'classWindSpeed'), ('prec_classes', 'classPrecInt')):
+                v = dec(key, d_.get(field))
+                if v:
+                    d_[field + '_pt'], d_[field + '_en'], d_[field + '_source'] = v['pt'], v['en'], U[key]
+        out['daily'] = {'source': U['daily'], 'read_utc': NOW, 'updated_local': dd.get('dataUpdate'), 'days': days}
     if h:
         hh = json.loads(h)
         rows = [{'time_utc': x['dataPrev'][:16] + 'Z', 'wind_mean_kmh': num(x.get('ffVento')), 'wind_dir': x.get('ddVento'),
                  'rain_prob_pct': num(x.get('probabilidadePrecipita')), 'rain_intensity_class': x.get('idIntensidadePrecipita'),
-                 'temp_c': num(x.get('tMed')), 'sea_total_m': num(x.get('marTotal'))} for x in hh if x.get('idPeriodo') == 1]
+                 'temp_c': num(x.get('tMed')), 'sea_total_m': num(x.get('marTotal')),
+                 'weather_type_id': x.get('idTipoTempo')} for x in hh if x.get('idPeriodo') == 1]
+        for r_ in rows:
+            v = dec('wx_types', r_['weather_type_id'])
+            if v:
+                r_['weather_type_pt'], r_['weather_type_en'] = v['pt'], v['en']
+            v = dec('prec_classes', r_['rain_intensity_class'])
+            if v:
+                r_['rain_intensity_pt'], r_['rain_intensity_en'] = v['pt'], v['en']
+        out['code_tables'] = {'weather_type': U['wx_types'], 'wind_speed_class': U['wind_classes'], 'precipitation_intensity_class': U['prec_classes'],
+                              'note': "Decoded with IPMA's own id tables. The hourly feed's idIntensidadePrecipita (rain_intensity_class) is decoded with precipitation-classe.json, assumed the same scale as the daily classPrecInt; IPMA does not say so. idTipoTempo (weather_type_id) uses weather-type-classe.json."}
         upd = hh[0].get('dataUpdate') if hh else None
         # IPMA can change the values without changing dataUpdate (seen 10 Nov, 20:22-21:18): compare the values too
         key = lambda rs: json.dumps([(r['time_utc'], r['wind_mean_kmh'], r['wind_dir']) for r in rs if r['time_utc'] >= '2026-11-11'])
@@ -340,14 +443,190 @@ def thursday(w, f, a, prev):
     sig = lambda o: json.dumps([o['lisbon_warnings_touching_thursday']['items'] and [(x['type'], x['level'], x['start_utc'], x['end_utc']) for x in o['lisbon_warnings_touching_thursday']['items']],
                                 o['ipma_model_thursday_morning']['model_updated_local'], (o.get('ipma_daily_thursday') or {}).get('updated_local'), o['taf_groups_into_thursday']['taf_issue_utc']])
     if not prev or sig(prev) != sig(out):
+        tq = out['taf_groups_into_thursday']
+        if tq['groups'] and (not prev or not prev['taf_groups_into_thursday']['groups']):
+            changes.insert(0, f"FIRST TAF COVERING THURSDAY: issued {tq['taf_issue_utc']}, valid to {tq['taf_valid_to_utc']}")
         changes.insert(0, 'THURSDAY: warnings ' + (', '.join(f"{x['level']} {x['type']} {x['start_utc'][8:16]}-{x['end_utc'][8:16]}" for x in warns) or 'none') +
                        (f"; model Thu 00-12 mean wind {min(winds)}-{max(winds)} km/h" if winds else ''))
     return out
 
 
+def cap():
+    """IPMA's warnings for Lisboa as CAP messages through MeteoAlarm: these carry the time IPMA SENT each one."""
+    prev = load('cap.json', {})
+    raw = get('cap')
+    if raw is None:
+        return prev
+    seen = {m['identifier']: m for m in prev.get('lisbon_messages', [])}  # every message once seen is kept, never dropped
+    OTHER_SEEN.clear(); OTHER_IN_FEED.clear()
+    for m_ in prev.get('other_messages', []):
+        OTHER_SEEN[m_['identifier'] + '|' + ','.join(m_['areas'])] = m_
+    in_feed = set()
+    for x in json.loads(raw).get('warnings', []):
+        al = x.get('alert', {})
+        infos = al.get('info', [])
+        pt_ = next((i.get('description') for i in infos if i.get('language', '').startswith('pt')), None)
+        en_ = next((i.get('description') for i in infos if i.get('language', '').startswith('en')), None)
+        if pt_ and en_:
+            PT_EN[pt_] = en_
+        for i in infos:
+            if not i.get('language', '').startswith('pt'):
+                continue
+            m = re.match(r'Aviso (\w+) (.+)$', i.get('event') or '')
+            if m and al.get('sent') and i.get('onset') and i.get('expires'):
+                for z in i.get('area', []):
+                    k = (z.get('areaDesc'), m.group(2), CAP_LEVEL.get(m.group(1)), i['onset'][:16], i['expires'][:16])
+                    CAP_INDEX.setdefault(k, []).append(datetime.fromisoformat(al['sent']).astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
+            areas = [z.get('areaDesc') for z in i.get('area', [])]
+            if 'Lisboa' not in areas:
+                if m and (CAP_LEVEL.get(m.group(1)) == 'red' or any(a_.startswith('Madeira') for a_ in areas)):
+                    oid = al.get('identifier') + '|' + ','.join(areas)
+                    OTHER_SEEN.setdefault(oid, {'identifier': al.get('identifier'), 'areas': areas, 'sent_utc': al.get('sent'), 'msg_type': al.get('msgType'),
+                                                'event_pt': i.get('event'), 'onset_utc': i.get('onset'), 'expires_utc': i.get('expires'),
+                                                'replaces': [{'identifier': r.split(',')[1], 'sent_utc': r.split(',')[2]} for r in (al.get('references') or '').split(' ') if r.count(',') == 2],
+                                                'source': U['cap'], 'read_utc': NOW})
+                    OTHER_IN_FEED.add(oid)
+                continue
+            ident = al.get('identifier')
+            in_feed.add(ident)
+            if ident in seen:
+                seen[ident]['last_seen_utc'] = NOW
+                seen[ident].pop('left_feed_utc', None)
+                seen[ident].pop('status', None)
+                continue
+            refs = [r.split(',') for r in (al.get('references') or '').split(' ') if r.count(',') == 2]
+            rec = {'identifier': ident, 'sent_utc': al.get('sent'), 'msg_type': al.get('msgType'), 'event_pt': i.get('event'),
+                   'severity': i.get('severity'), 'onset_utc': i.get('onset'), 'expires_utc': i.get('expires'),
+                   'description_pt': i.get('description'), 'replaces': [{'identifier': r[1], 'sent_utc': r[2]} for r in refs],
+                   'source': U['cap'], 'read_utc': NOW}
+            seen[ident] = rec
+            if prev and (rec['sent_utc'] or '') >= '2026-11-10':
+                changes.insert(0, f"IPMA CAP (MeteoAlarm) sent {rec['sent_utc'][11:19]}: {rec['event_pt']} {(rec['onset_utc'] or '')[8:16]}-{(rec['expires_utc'] or '')[8:16]}")
+    for ident, m in seen.items():
+        if ident not in in_feed and 'left_feed_utc' not in m:
+            m['left_feed_utc'] = NOW
+            m['status'] = f'left the feed at {NOW} (time read)'
+    msgs = sorted(seen.values(), key=lambda m: (m['sent_utc'] or '', m['identifier']))
+    for oid, m_ in OTHER_SEEN.items():
+        if oid in OTHER_IN_FEED:
+            m_.pop('left_feed_utc', None); m_.pop('status', None); m_['last_seen_utc'] = NOW
+        elif 'left_feed_utc' not in m_:
+            m_['left_feed_utc'] = NOW; m_['status'] = f'left the feed at {NOW} (time read)'
+    others = sorted(OTHER_SEEN.values(), key=lambda m: (m['sent_utc'] or '', m['identifier']))
+    for m_ in msgs:
+        if m_.get('description_pt'):
+            m_['text_en'], m_['text_en_by'] = en_for(m_['description_pt'])
+    reads = prev.get('reads_utc', [])
+    log = os.environ.get('CAP_POLL_LOG')  # the session's 5-minute poll writes its read times here
+    if log and os.path.exists(log):
+        reads += [l.strip() for l in open(log) if l.strip()]
+    reads = sorted(set(reads + [NOW]))
+    disclaimer = ('Time delays between this website and the www.meteoalarm.org website are possible. For the most up-to-date awareness '
+                  'information as published by the participating National Meteorological and Hydrological Services, please refer to www.meteoalarm.org.')
+    return {'about': f"IPMA's warnings for the Lisbon district as CAP messages (Common Alerting Protocol), read through MeteoAlarm's public feed (https://www.meteoalarm.org). A dated record, not a live feed: read {NOW}. MeteoAlarm: \"{disclaimer}\" Unlike IPMA's open data, each message carries `sent_utc`, the time IPMA issued it, and `replaces`, the message it updates (with that one's sent time). Every message once seen is kept; one no longer in the feed is marked `left_feed_utc` (the time read). Messages that left the feed before this desk's first read (10 Nov 23:51) were never seen. Facts.",
+            'terms': {'source': 'https://www.meteoalarm.org', 'feed': U['cap'], 'disclaimer': disclaimer,
+                      'record': f'a dated record, not a live feed (read {NOW})', 'publisher_of_the_warnings': 'IPMA (Instituto Português do Mar e da Atmosfera), via MeteoAlarm'},
+            'source': U['cap'], 'read_utc': NOW, 'reads_utc': reads, 'lisbon_messages': msgs,
+            'other_messages_about': 'Beyond Lisbon: every CAP message for a Madeira area, and every red message for any district, kept once seen (from 11 Nov 01:50 UTC; earlier ones that had left the feed were never seen).',
+            'other_messages': others}
+
+
+def second_models(prev):
+    """Other models for Lisbon (38.72N 9.14W), Wednesday and Thursday morning: each in its own block, never merged with IPMA."""
+    out = dict(prev or {})
+    raw = get('met_no')
+    if raw:
+        m = json.loads(raw)
+        rows = []
+        for t in m['properties']['timeseries']:
+            if not ('2026-11-11T00' <= t['time'][:13] <= '2026-11-12T12'):
+                continue
+            d = t['data']['instant']['details']
+            n1 = (t['data'].get('next_1_hours') or {}).get('details', {})
+            rows.append({'time_utc': t['time'][:16] + 'Z', 'wind_mean_kmh': d.get('wind_speed') is not None and round(d['wind_speed'] * 3.6, 1) or None,
+                         'gust_kmh': d.get('wind_speed_of_gust') is not None and round(d['wind_speed_of_gust'] * 3.6, 1) or None,
+                         'wind_from_deg': d.get('wind_from_direction'), 'rain_mm_next_1h': n1.get('precipitation_amount'),
+                         'pressure_hpa': d.get('air_pressure_at_sea_level')})
+        upd = m['properties']['meta'].get('updated_at')
+        if upd != (out.get('met_no') or {}).get('updated_utc'):
+            changes.append(f'met.no forecast updated {upd}')
+        out['met_no'] = {'name': 'MET Norway Locationforecast 2.0 (complete)', 'licence': 'NLOD 2.0 / CC BY 4.0, data from MET Norway',
+                         'source': U['met_no'], 'read_utc': NOW, 'updated_utc': upd, 'units': 'km/h (converted from m/s), mm, hPa', 'rows': rows}
+    raw = get('open_meteo')
+    if raw:
+        o = json.loads(raw)
+        h = o.get('hourly') or {}
+        rows = [{'time_utc': t + 'Z', 'wind_mean_kmh': w, 'gust_kmh': g, 'wind_from_deg': d, 'rain_mm': r}
+                for t, w, g, d, r in zip(h.get('time', []), h.get('wind_speed_10m', []), h.get('wind_gusts_10m', []), h.get('wind_direction_10m', []), h.get('precipitation', []))
+                if t <= '2026-11-12T12:00']
+        out['open_meteo'] = {'name': 'Open-Meteo (best match)', 'licence': 'CC BY 4.0, Open-Meteo.com', 'source': U['open_meteo'], 'read_utc': NOW, 'rows': rows}
+    elif 'open_meteo' not in out:
+        out['open_meteo'] = {'name': 'Open-Meteo (best match)', 'source': U['open_meteo'], 'read_utc': NOW, 'rows': [],
+                             'not_read': 'refused: see changes.json errors (429 daily limit on first try, 23:50 UTC)'}
+    return out
+
+
+HOUR_LABEL = {
+    'convention': 'not documented',
+    'ipma_says': "IPMA's API documentation gives the key only as 'data/hora da observação' and precAcumulada as 'valor acumulado da hora (mm)'; it does not say whether a label is the hour starting or the hour ending at that time, nor the time zone.",
+    'source': 'https://api.ipma.pt/', 'read_utc': '2026-11-11T01:55Z',
+    'our_inference': {'label': 'analysis', 'reading': 'hour ENDING at the label, in UTC',
+                      'why': ["the feed's newest key is the last full hour (e.g. 18:00 present at 18:58, 19:00 absent)",
+                              "DN Madeira's 133.9 mm 'in 6 h by 22:00' at Chão do Areeiro equals the sum of the values labelled 17:00 to 22:00 at station 1210973, which is the hour-ending reading",
+                              'hour ending is the usual synoptic convention']},
+}
+
+
+def madeira(fname='madeira.json', pick=None, about=None):
+    """IPMA's stations for a region (default Madeira): hourly rain and mean wind, kept across reads, and each station's largest 6-hour rain."""
+    prev = load(fname, {})
+    raw, meta = get('obs'), get('stations')
+    if raw is None or meta is None:
+        return prev
+    obs = json.loads(raw)
+    names = {str(f['properties']['idEstacao']): (f['properties']['localEstacao'], f['geometry']['coordinates'][::-1]) for f in json.loads(meta)}
+    ids = [k for k, (n, _) in names.items() if (pick(k, n) if pick else (n.startswith('Madeira') or 'Funchal' in n or 'Porto Santo' in n))]
+    keep = {s_['id']: {r['time_utc']: r for r in s_['hourly']} for s_ in prev.get('stations', [])}
+    out = []
+    for sid in ids:
+        rows = keep.get(sid, {})
+        for hour in sorted(obs):
+            o = (obs[hour] or {}).get(sid)
+            if o:
+                rows[hour + 'Z'] = {'time_utc': hour + 'Z', 'rain_mm': num(o.get('precAcumulada')), 'wind_mean_kmh': num(o.get('intensidadeVentoKM')), 'wind_dir': DIRS.get(o.get('idDireccVento'))}
+        hourly = [rows[k] for k in sorted(rows)]
+        if not hourly:
+            continue
+        best = None
+        for i in range(len(hourly)):
+            win = hourly[max(0, i - 5):i + 1]
+            # six consecutive hourly values (hours labelled h-5 .. h): the 6 h ending at hour h
+            if len(win) == 6 and all(r['rain_mm'] is not None for r in win):
+                t = round(sum(r['rain_mm'] for r in win), 1)
+                if best is None or t > best['mm']:
+                    best = {'mm': t, 'hours_labelled': [win[0]['time_utc'], win[-1]['time_utc']]}
+        out.append({'id': sid, 'name': names[sid][0], 'lat_lon': names[sid][1], 'source': U['obs'], 'read_utc': NOW, 'max_6h_rain': best, 'hourly': hourly})
+    out.sort(key=lambda s_: -((s_['max_6h_rain'] or {}).get('mm') or 0))
+    top = out[0] if out else None
+    region = 'Madeira' if fname == 'madeira.json' else 'Lisbon'
+    if top and top['max_6h_rain'] and top['max_6h_rain'] != ((prev.get('stations') or [{}])[0].get('max_6h_rain')):
+        changes.append(f"{region}: largest 6 h rain {top['max_6h_rain']['mm']} mm at {top['name']} (hours {top['max_6h_rain']['hours_labelled'][0][8:13]}-{top['max_6h_rain']['hours_labelled'][1][8:13]})")
+    return {'about': about or "IPMA's hourly station observations in Madeira (rain in mm per hour, mean wind), kept across reads (the feed holds 24 hours), sorted by each station's largest rain over six consecutive hourly values. Facts.",
+            'hour_label': HOUR_LABEL, 'source': U['obs'], 'stations_source': U['stations'], 'read_utc': NOW, 'stations': out,
+            **{k_: prev[k_] for k_ in ('earlier_warnings', 'station_warning_areas', 'observed_gusts') if k_ in prev}}
+
+
 def main():
+    k = cap()  # first: warnings() takes each warning's issue time (sent_utc) from it
     w, c, s, a, f = warnings(), communiques(), stations(), airport(), forecast()
-    for name, obj in (('warnings.json', w), ('communiques.json', c), ('stations.json', s), ('airport.json', a), ('forecast.json', f)):
+    f['second_models'] = second_models(f.get('second_models'))
+    am = airport('LPMA', 'airport-madeira.json')
+    if am:
+        save('airport-madeira.json', am)
+    mad = madeira()
+    lis = madeira('lisbon-rain.json', lambda k, n: k in LISBON_STATIONS,
+                  "IPMA's hourly station observations at Lisbon's stations (the same eight as stations.json), in madeira.json's shape: rain in mm per hour and mean wind, kept across reads, sorted by each station's largest rain over six consecutive hourly values. For the warned-against-observed card from Wed 09:00 (red rain 09:00-18:00). Facts.")
+    for name, obj in (('warnings.json', w), ('communiques.json', c), ('stations.json', s), ('airport.json', a), ('forecast.json', f), ('cap.json', k), ('madeira.json', mad), ('lisbon-rain.json', lis)):
         if obj:
             save(name, obj)
     # gusts against the forecast, now
@@ -375,6 +654,9 @@ def main():
     if above and len(above) > len(log.get('gusts_above_warned', [])):
         changes.insert(0, f"OBSERVED GUST ABOVE WARNED: {above[-1]['gust_kmh']} km/h at {above[-1]['time_utc']} (warned {above[-1]['warned_kmh']})")
     log['runs'].append({'read_utc': NOW, 'changes': changes or ['no change'], 'errors': errors})
+    an = load('analysis.json', None)
+    if an is not None:
+        save('analysis.json', an)
     save('changes.json', {'thursday': thu, 'gusts_above_warned': above,
                           'about': 'thursday (first): Lisbon warnings touching Thursday 12 Nov and the forecasts for its morning. gusts_above_warned: every LPPT METAR gust from Wed 05:00 above the gust warned for that hour (the IPMA wind warning in force, from its text; outside a wind warning, the highest gust in the TAF groups covering that hour). Facts, each with its source. Then what each refresh found changed, newest last. Written by tools/refresh.py.',
                           'runs': log['runs']})

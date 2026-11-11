@@ -1,0 +1,32 @@
+{
+  "for": "the conductor's 07:20 brief of 11 November 2026 (its accountant section; the conductor commits it)",
+  "day": "2026-11-10 (UTC)",
+  "source": "people/jose/accountant/ledger/*.jsonl, lines stamped 2026-11-10; session and sub-agents added together. Dollars are estimates at the rates used in earlier briefs, not a bill.",
+  "section": {
+    "title": "The accountant: 10 November",
+    "items": [
+      "About 47.4M tokens, 3.4M of them not cache reads, about $28 (9 November: 43.8M, 4.8M, about $33). The costliest: your conductor ($11.41, 5 wakes), the watcher ($5.52), vault ($5.20), the dashboard ($2.98). Every wake reported quality pass.",
+      "The watcher fell from $17.01 to $5.52 on the same Opus model: fewer cache writes (0.66M against 2.61M), not a switch. Its Sonnet change has still not been made.",
+      "Advice: the watcher to Sonnet first (4 routine wakes, all pass); vault to Sonnet (both wakes were counts, 0.46M cache writes each; it drains again from 11 November, aebc7387); the dashboard and your writer to Sonnet; your conductor stays on Opus (Dinis's direction), but its sub-agents (this accountant, the reviewer) can run on Sonnet. You decide, and change the model in each agent's session.",
+      "No line on 10 November from dev, the helper, automation or crm: they committed nothing that day."
+    ]
+  },
+  "rows": [
+    {"agent": "conductor", "wakes": 5, "calls": 74, "models": {"claude-opus-5-5": 69, "claude-sonnet-5-5": 5}, "total": 27329073, "total_without_cache_reads": 988038, "cache_read_share": 0.964, "usd_estimate": 11.41, "quality": "5 pass"},
+    {"agent": "watcher", "wakes": 4, "calls": 37, "models": {"claude-opus-5-5": 37}, "total": 7460721, "total_without_cache_reads": 692963, "cache_read_share": 0.907, "usd_estimate": 5.52, "quality": "4 pass"},
+    {"agent": "vault", "wakes": 2, "calls": 7, "models": {"claude-opus-5-5": 7}, "total": 3538325, "total_without_cache_reads": 915049, "cache_read_share": 0.741, "usd_estimate": 5.20, "quality": "2 pass"},
+    {"agent": "designer", "wakes": 1, "calls": 5, "models": {"claude-opus-5-5": 5}, "total": 3604544, "total_without_cache_reads": 7748, "cache_read_share": 0.998, "usd_estimate": 0.84, "quality": "1 pass"},
+    {"agent": "dashboard", "wakes": 1, "calls": 6, "models": {"claude-opus-5-5": 6}, "total": 3135192, "total_without_cache_reads": 476783, "cache_read_share": 0.848, "usd_estimate": 2.98, "quality": "1 pass"},
+    {"agent": "writer (PrompTugal)", "wakes": 1, "calls": 12, "models": {"claude-opus-5-5": 7, "claude-haiku-5-5": 5}, "total": 2301283, "total_without_cache_reads": 298046, "cache_read_share": 0.870, "usd_estimate": 2.11, "quality": "1 pass"}
+  ],
+  "trend_total_tokens": {"2026-11-06": 91782974, "2026-11-07": 104353086, "2026-11-08": 103628139, "2026-11-09": 43802994, "2026-11-10": 47369138},
+  "no_line": ["dev", "helper", "automation", "crm"],
+  "recommendations": [
+    {"agent": "watcher", "model": "Sonnet", "why": "routine diff reading, 4 wakes all pass, still on Opus", "watch": "that it still opens and closes A-items (A-25, A-26 this day) as before"},
+    {"agent": "vault", "model": "Sonnet", "why": "both wakes were counts; lowest cache-read share (74%), 0.46M cache writes per wake", "watch": "the count file matches the next drain"},
+    {"agent": "dashboard", "model": "Sonnet", "why": "one routine edit, pass", "watch": "the reviewer's next note on its page"},
+    {"agent": "writer", "model": "Sonnet", "why": "drafts only, already uses Haiku sub-agents, pass", "watch": "Jose's edits to its drafts"},
+    {"agent": "conductor", "model": "Opus (stays)", "why": "Dinis's direction; its sub-agents can run on Sonnet", "watch": "n/a"},
+    {"agent": "designer", "model": "no change yet", "why": "one cheap wake ($0.84, 99.8% cache reads)", "watch": "its next designing wake"}
+  ]
+}

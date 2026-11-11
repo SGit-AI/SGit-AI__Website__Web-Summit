@@ -2,11 +2,24 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the Actions section, the only list of what waits on him, is kept by his conductor (conductor@web-summit.jose); the rest, from the builder template, by his dashboard agent (dashboard@web-summit.jose): what happened, and what Jose and Jose's agents are doing.
 ---
-**Updated Tue 10 Nov, 07:35 UTC by `dashboard@web-summit.jose`; next update 12:30 UTC.** Since 5 November (your rule, C19: "You are my only door"), [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest of the page (your lanes, your agents, your issues) by your dashboard agent. [Your command centre](app/index.html) is becoming your first view (it is on your Actions).
+**Last changed Wed 11 Nov, 01:30 UTC by `dashboard@web-summit.jose`; checked at every wake (07:30, 12:30, 17:30 UTC) and changed only when something did.** [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest by your dashboard agent. Your agents, live: [the Agents board](app/index.html#home).
+
+## Stand day, Thursday 12 November {#stand}
+
+Pointers for the stand, not a second list: what to do and when is in [Actions](#actions).
+
+| For | Open |
+|---|---|
+| **Hack the Agent** (attacked, then governed) | [the app](https://agent-defense-arena.lovable.app/) · [run sheet](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/demos/hack-the-agent.md) · [QR code](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/qr/hack-the-agent.png) |
+| **ReachCheck** | [the app](https://reach-check-agent.lovable.app/) · [run sheet](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/demos/reachcheck.md) · [QR code](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/qr/reachcheck.png) |
+| **No internet at the stand** | the venue bans hotspots and tethering for exhibitors, so keep a screen recording of each demo on your phone; check both apps on your phone first (WS-108) |
+| **Your social posts** (WS-208) | drafted by your writer agent for you to check and send: [today's batch](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/writer/posts/2026-11-11.md) (the storm posts, and the GAMMA-Ray card posts at its end) |
+| **Agent security conversations** | [the message](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-15-the-riskmandate-message-one-paragraph-three-open.md) (WS-15) · [the targets](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-26-the-big-outreach-50-targets-for-thursday-and-fri.md) (WS-26) |
+| **Your meet page and the stand-ups** | [meet Jose](../../meet/jose/index.html) · [the stand-ups](../../meetings/index.html) |
 
 ## Actions {#actions}
 
-*Kept by `conductor@web-summit.jose` from 5 November, at your word (C19): the only list of what waits on you. Your agents send their asks to your conductor, which adds them here with a due time and how long each takes. Updated Tue 10 Nov, 17:20 UTC (trimmed at your word, C41); the details are in [brief 21](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-10T1720Z.pdf), [brief 20](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-10T0720Z.pdf), [brief 19](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-09T1720Z.pdf), [brief 18](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-09T0720Z.pdf), [brief 17](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-08T1720Z.pdf), [brief 16](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-08T0720Z.pdf), [brief 15](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-07T1720Z.pdf), [brief 14](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-07T0720Z.pdf), [brief 13](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-06T1720Z.pdf), [brief 12](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-06T1225Z.pdf) and [brief 11](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-06T0745Z.pdf).*
+*Kept by `conductor@web-summit.jose` from 5 November, at your word (C19): the only list of what waits on you. Your agents send their asks to your conductor, which adds them here with a due time and how long each takes. Updated Wed 11 Nov, 07:30 UTC (trimmed at your word, C41); the details are in [brief 22](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-11T0720Z.pdf), [brief 21](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-10T1720Z.pdf), [brief 20](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-10T0720Z.pdf), [brief 19](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-09T1720Z.pdf), [brief 18](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-09T0720Z.pdf), [brief 17](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-08T1720Z.pdf), [brief 16](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-08T0720Z.pdf), [brief 15](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-07T1720Z.pdf), [brief 14](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-07T0720Z.pdf), [brief 13](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-06T1720Z.pdf), [brief 12](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-06T1225Z.pdf) and [brief 11](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-06T0745Z.pdf).*
 
 ### Today {#today}
 
@@ -14,7 +27,9 @@ summary: The page Jose reads first. The top is built for Jose; the Actions secti
 |---|---|---|---|---|
 | 32 | **Done: you confirmed your piece in Dinis's restart, social and channels** (10 Nov, WS-208; your conductor told conductor@web-summit.dinis); your writer drafts the posts in batches, you send them | [WS-208](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-208-the-restart.md) | Done, 10 Nov | - |
 | 0 | **Re-save dev@web-summit.jose's wake pointer with its new time** (every two hours, 07:30 to 21:30, `30 7-21/2 * * *`): the only one left (the conductor, helper, vault, watcher, designer, automation and the dashboard are saved; your watcher, 22:15). The trial (C30) starts once it is saved, counted from the first full day after; best done with dev's fresh session (row 30) | [the text](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/schedules.md#paste) | Today | 2 min |
-| 1 | **The agents' token: Dinis's decision of 9 Nov, 10:55 (WS-170, 3bfbc8c7), and it is now in the team's WhatsApp group (his conductor, 13:40, c2fec20f) and each person takes it from there for their agents.** Take it from the group and put it in the cloud environment your conductor's session runs in (and vault's and crm's, if you want them to push) as `SG_SEND_ACCESS_TOKEN`, replacing the value there now (your own token; the environment's settings, never in a chat, commit or message), then tell your conductor "drain" (you did, 10 Nov 09:22; this session's permission check refused the drain, so switch the mode to Accept edits, say "drain" here and approve the prompt): it cannot tell the two values apart, so it only counts until you say so (your word, C41). vault@web-summit.jose and crm@web-summit.jose can then push with it too (their vault pushes wait since WS-170). In vault's environment, set `SG_SEND_PASSPHRASE` at the same time (its hardening step 3; it asked at 21:09 to fold it in here, f4993798). All five page-view lanes are full since overnight (5,000 at 21:20), so views are being lost until then | [Dinis's decisions](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/conductor/notes/2026-11-09-dinis-decisions-1055.md) · [WS-170](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-170-the-team-crm.md) | Today | 3 min |
+| 1 | **The agents' token for vault and crm: say "the token is set" to each, or to your conductor** (Dinis's decision of 9 Nov, WS-170; the token is in the team's WhatsApp group). Your conductor's own drains work since 10 Nov (hourly; 12 views at 07:27 today, 7,486 in all). crm@web-summit.jose has 31 of your connections in the private CRM, committed in its session but not pushed (6 vault commits waiting, 3102e178): the variable is set in its environment, but it will not push until you say you set it. vault@web-summit.jose already has your word (its drains resumed at 00:47, aebc7387); it waits only on `SG_SEND_PASSPHRASE` in its environment (its hardening step 3, f4993798). Values only in the environment's settings, never in a chat, commit or message | [crm's report](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/tasks/2026-11-11-crm-connections.md) · [vault and crm task](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/tasks/2026-11-10-vault-crm-push.md) | Today | 3 min |
+| 33 | **Allow the company sites in crm's environment** (network settings, allowed domains): crm could not open any of the eleven companies' sites you own (proxy 403 or not resolved), so none is in `data/companies.json` yet. Optional, for the writer (its storm batch is drafted): meteologix.com, view.eumetsat.int and sat24.com (219dba1b). If you know them, also give crm the websites of LLM API, Attune, Oryksa and PE and Growth | [crm's report](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/tasks/2026-11-11-crm-connections.md) | Today | 5 min |
+| 34 | **Your agents' `Agent:` lines that git does not read** (your watcher, second report): in 8 of 12 commits a blank line sits between `Agent:` and `Co-Authored-By`, so git misses the trailer. The fix is one sentence in the kit's shared section ("every trailer in the last block"), which your conductor may not edit (C39): say "add it" and it does, at your word | [the watcher](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md) | When you choose | 1 min |
 | 2 | **Switch watcher@web-summit.jose to Sonnet in its own session**, the one-day trial (C30): its scheduled task's new pointer is saved (13:11), but the task names no model, so it runs on its session's model, and its last ledger line (12:15) shows Opus only; the accountant compares it once it runs on Sonnet | the watcher's session | With the re-save | 2 min |
 | 31 | **Which app for your agents (Dinis, WS-199, 650bffa0):** the event app, the team app or the RiskMandate app; tell your conductor and it answers Dinis's conductor in a commit | [/apps/](https://web-summit.sgit.ai/apps/) | When you choose | 1 min |
 | 4 | **Done: your designer has its own schedule** (8 Nov 13:38, f9e60c05: 10:40 and 16:40 UTC); it takes its Agents board task file (C31) at its wakes | [its task](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/tasks/2026-11-07-designer-agents-board.md) | Done, 8 Nov 13:38 | - |
@@ -70,9 +85,9 @@ What you lead, in your words (4 November): *"technical conversations on agent se
 |---|---|---|---|
 | **Agent security conversations** | WS-15 (the message), WS-26 (the targets, Thursday and Friday) | you | Nimay, Indi, Dinis, Silvio |
 | **The live demos: attacked, then governed** | WS-18, WS-108 (your two apps: run sheets and QR codes ready, your phone check left), WS-109 | you, conductor@web-summit.jose | Dinis, Nimay, Angelo |
-| **Voice and language agents** | WS-61 (the voice memo loop, Sat 7 Nov) | nobody yet | anyone |
-| **Social and channels** (Dinis's piece for you at THE RESTART, 10 November, WS-208: yours to confirm or swap, through your conductor) | WS-208 (the GAMMA-Ray launch posts; each published card and interview shared with the company tagged), WS-175 (your channels in the private CRM) | you; crm@web-summit.jose drafts the channels area, a person posts | Dinis, Vicky (the articles), Silvio (the stand) |
-| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (both picked; the feedback count is published by your vault agent, and the n8n flow reads it, checked at your automation agent's 16:10 wake), WS-37 (page views), WS-120 (a vault-to-vault lane with Angelo: works both ways, each side has verified the other's signed message, 5c6ddde3 and 309a77ce), WS-154, WS-160, WS-41 (your pulse over time, from your own check-ins: [your pulse view](pulse/index.html), built by your dev agent at 15:43) | dev@, automation@, vault@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
+| **Voice and language agents** | WS-61 (the voice memo loop; its date, 7 November, has passed) | nobody yet | anyone |
+| **Social and channels** (Dinis's piece for you at THE RESTART, WS-208; you confirmed it on 10 November) | WS-208 (the GAMMA-Ray launch posts; each published card and interview shared with the company tagged), WS-207 (the first ten companies), WS-175 (your channels in the private CRM) | you send; writer@PrompTugal.jose drafts the posts, crm@web-summit.jose the channels area | Dinis, Vicky (the articles), Silvio (the stand) |
+| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (the feedback count, [live](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/lanes/feedback-count.json)), WS-37 (page views), WS-120 (the vault lane with Angelo, both ways), WS-154, WS-160, WS-41 ([your pulse view](pulse/index.html)) | dev@, automation@, vault@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
 
 Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault@web-summit.jose`.
 
@@ -83,16 +98,35 @@ Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault
 
 Your agents, one row each (last run, doing now, waiting on you, a light): [the Agents board, at the top of your command centre](app/index.html#home).
 
+## My pulse {#pulse}
+
+```pulse jose
+```
+
 ## My issues {#issues}
+
+**This week** (the summit and your lanes; their status is on each issue):
+
+- [WS-108](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-108-jose-s-two-apps-as-the-stand-demos.md): your two apps as the stand demos
+- [WS-18](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-18-the-demos-we-run-at-the-summit.md): the demos we run at the summit
+- [WS-109](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-109-the-grant-not-the-prompt-as-the-one-demo.md): "the grant, not the prompt" as the one demo
+- [WS-208](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-208-the-restart.md): THE RESTART: your piece, social and channels
+- [WS-207](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-207-gamma-ray-first-ten.md): GAMMA-Ray launch: the first ten companies
+- [WS-15](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-15-the-riskmandate-message-one-paragraph-three-open.md): the RiskMandate message
+- [WS-26](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-26-the-big-outreach-50-targets-for-thursday-and-fri.md): the big outreach: the targets
+- [WS-61](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-61-try-the-voice-memo-to-follow-up-loop-once.md): the voice memo loop (your voice lane)
+
+:::details All the issues that name you
 
 The pool you share with Angelo: [the technical board](../../briefs/index.html#issues) (area tech).
 
 ```issues jose
 ```
 
+:::
+
 ## The machine {#machine}
 
-[The agents at work](../../wakes/index.html) · [the ABPs](../../abp/index.html) · [everything on the team](../../team/everything/index.html) · [the setup leaderboard](../../team/setup/index.html) · [the CI runs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/actions) · every brief: [people/jose/briefs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/briefs) · messages for you: commits with `For: jose` in [the log on dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commits/dev)
+**Your agents' own records:** [watcher's latest run](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md) · [its open actions](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/actions.json) · [token ledgers](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/accountant/ledger) · [task files](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/tasks) · [every brief](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/briefs) · [the reviewer's records](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/reviewer/reviews)
 
-```onboarding jose
-```
+**The team's:** [the agents at work](../../wakes/index.html) · [the ABPs](../../abp/index.html) · [everything on the team](../../team/everything/index.html) · [the setup leaderboard](../../team/setup/index.html) · [the CI runs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/actions) · messages for you: commits with `For: jose` in [the log on dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commits/dev)

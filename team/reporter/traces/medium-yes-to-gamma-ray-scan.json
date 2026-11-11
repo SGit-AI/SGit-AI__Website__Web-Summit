@@ -1,0 +1,316 @@
+{
+  "id": "medium-yes-to-gamma-ray-scan",
+  "size": "medium",
+  "schema": "ws-trace/1",
+  "shape": {
+    "step": "n, at (UTC, ISO 8601), at_note, actor {name, kind: person|agent|ci}, in, out, handoff {to, via}, repo, sha, issue, brief, for[], kind, evidence[] (commit|version|url|file); evidence: [] with evidence_note when the record holds none",
+    "graph": "each commit step also gives /pipeline/'s graph row {at, repo, sha, agent, issue, for[], kind} (WS-205)"
+  },
+  "title": "A one-word yes to a published GAMMA-Ray scan of 13 agents (Jose's team)",
+  "summary": [
+    "Jose asks what GAMMA-Ray is; his conductor recommends a pilot scan of his 13 agents.",
+    "Jose says 'Do it'; a scan sub-agent scores all 13 with the standard's own scorer.",
+    "A reviewer re-scores and asks for two fixes before anything is public.",
+    "CI publishes it in v0.2.1733, about 47 minutes after the question.",
+    "Three of the person's four steps were said in chat and leave no commit."
+  ],
+  "input": {
+    "kind": "question and a yes",
+    "what": "a person's question and a one-word yes, in his conductor's session"
+  },
+  "output": {
+    "kind": "live page",
+    "what": "a self-reported GAMMA-Ray pilot scan of Jose's 13 agents",
+    "url": "https://web-summit.sgit.ai/people/jose/gamma-ray/"
+  },
+  "status": "done",
+  "source": "offered by conductor@web-summit.jose at Jose's word (c75eff6f); times marked 'about' are from that conductor's session, not commits",
+  "captured_by": "reporter@web-summit.dinis",
+  "captured_at": "2026-11-11T03:25Z",
+  "duration": {
+    "from": "2026-11-10T18:05Z (about)",
+    "to": "2026-11-10T18:52Z",
+    "note": "about 47 minutes question to live"
+  },
+  "steps": [
+    {
+      "n": 1,
+      "at": "2026-11-10T18:05:00Z",
+      "actor": {
+        "name": "Jose",
+        "kind": "person"
+      },
+      "in": "curiosity",
+      "out": "asks what GAMMA-Ray is and whether anyone else has used it",
+      "handoff": {
+        "to": "conductor@web-summit.jose",
+        "via": "his conductor's session"
+      },
+      "kind": "question",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "people/jose/examples/2026-11-10-gamma-ray-scan.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/examples/2026-11-10-gamma-ray-scan.md"
+        }
+      ],
+      "at_note": "about",
+      "evidence_note": "said in chat; no commit"
+    },
+    {
+      "n": 2,
+      "at": "2026-11-10T18:10:00Z",
+      "actor": {
+        "name": "conductor@web-summit.jose",
+        "kind": "agent"
+      },
+      "in": "the question; Silvio's scans of his own agents",
+      "out": "a recommendation: a pilot scan of Jose's agents, with cost and caveats",
+      "handoff": {
+        "to": "Jose",
+        "via": "his session"
+      },
+      "kind": "recommendation",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "people/jose/examples/2026-11-10-gamma-ray-scan.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/examples/2026-11-10-gamma-ray-scan.md"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "60c8d1ae",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/60c8d1ae2971"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "05a9ed42",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/05a9ed42b37b"
+        }
+      ],
+      "at_note": "about"
+    },
+    {
+      "n": 3,
+      "at": "2026-11-10T18:20:00Z",
+      "actor": {
+        "name": "Jose",
+        "kind": "person"
+      },
+      "in": "the recommendation",
+      "out": "yes: 'Do it'",
+      "handoff": {
+        "to": "conductor@web-summit.jose",
+        "via": "his session"
+      },
+      "kind": "approval",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "people/jose/examples/2026-11-10-gamma-ray-scan.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/examples/2026-11-10-gamma-ray-scan.md"
+        }
+      ],
+      "at_note": "about",
+      "evidence_note": "said in chat; no commit"
+    },
+    {
+      "n": 4,
+      "at": "2026-11-10T18:25:00Z",
+      "actor": {
+        "name": "conductor@web-summit.jose",
+        "kind": "agent"
+      },
+      "in": "the yes",
+      "out": "the standard fetched (Gamma-Ray repository at 2638987); a scan sub-agent started with Silvio's method and Jose's rules",
+      "handoff": {
+        "to": "a scan sub-agent",
+        "via": "sub-agent"
+      },
+      "kind": "start agent",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "people/jose/examples/2026-11-10-gamma-ray-scan.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/examples/2026-11-10-gamma-ray-scan.md"
+        }
+      ],
+      "at_note": "about"
+    },
+    {
+      "n": 5,
+      "at": "2026-11-10T18:40:00Z",
+      "actor": {
+        "name": "a scan sub-agent of conductor@web-summit.jose",
+        "kind": "agent"
+      },
+      "in": "public files in people/jose/",
+      "out": "13 scans, levels from the standard's own score(), never typed",
+      "handoff": {
+        "to": "conductor@web-summit.jose",
+        "via": "files"
+      },
+      "kind": "work",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "people/jose/gamma-ray/scans/",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/gamma-ray/scans/"
+        }
+      ],
+      "at_note": "about 18:25 to 18:40"
+    },
+    {
+      "n": 6,
+      "at": "2026-11-10T18:50:00Z",
+      "actor": {
+        "name": "reviewer@web-summit.jose",
+        "kind": "agent"
+      },
+      "in": "the 13 scans",
+      "out": "re-scored, sources spot-checked: pass with notes, two fixes",
+      "handoff": {
+        "to": "conductor@web-summit.jose",
+        "via": "review file"
+      },
+      "kind": "review",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "people/jose/reviewer/reviews/2026-11-10-1850-conductor.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/reviewer/reviews/2026-11-10-1850-conductor.md"
+        }
+      ],
+      "at_note": "about"
+    },
+    {
+      "n": 7,
+      "at": "2026-11-10T18:51:27Z",
+      "actor": {
+        "name": "conductor@web-summit.jose",
+        "kind": "agent"
+      },
+      "in": "the review",
+      "out": "the fixes applied; committed with the Reviewed-by trailer",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "dd238c94",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/dd238c945313"
+        }
+      ],
+      "evidence_note": "authored 18:46 before the review, amended 18:51 with the fixes",
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "dd238c94"
+    },
+    {
+      "n": 8,
+      "at": "2026-11-10T18:52:00Z",
+      "actor": {
+        "name": "GitHub Actions (deploy-pages.yml)",
+        "kind": "ci"
+      },
+      "in": "dev including dd238c94",
+      "out": "v0.2.1733: the scan live at people/jose/gamma-ray/",
+      "handoff": {
+        "to": "readers; Jose",
+        "via": "web-summit.sgit.ai"
+      },
+      "kind": "release",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "people/jose/examples/2026-11-10-gamma-ray-scan.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/examples/2026-11-10-gamma-ray-scan.md"
+        },
+        {
+          "type": "version",
+          "version": "v0.2.1733",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "5cf6c05e"
+        }
+      ],
+      "at_note": "as Jose's conductor records it"
+    },
+    {
+      "n": 9,
+      "at": "2026-11-10T18:55:00Z",
+      "actor": {
+        "name": "conductor@web-summit.jose",
+        "kind": "agent"
+      },
+      "in": "the live scan",
+      "out": "a report to Jose: the table, what it means, what would raise governance",
+      "handoff": {
+        "to": "Jose",
+        "via": "his session"
+      },
+      "kind": "report",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "people/jose/examples/2026-11-10-gamma-ray-scan.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/examples/2026-11-10-gamma-ray-scan.md"
+        }
+      ],
+      "at_note": "about",
+      "evidence_note": "said in chat; no commit"
+    },
+    {
+      "n": 10,
+      "at": "2026-11-11T01:41:03Z",
+      "actor": {
+        "name": "conductor@web-summit.jose",
+        "kind": "agent"
+      },
+      "in": "Jose's word: 'send the example'",
+      "out": "this example, in the step shape, for the work desk",
+      "handoff": {
+        "to": "reporter@ and journalist.examples@web-summit.dinis",
+        "via": "commit For:"
+      },
+      "kind": "hand-off",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "c75eff6f",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/c75eff6f468d"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "people/jose/examples/2026-11-10-gamma-ray-scan.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/examples/2026-11-10-gamma-ray-scan.md"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "c75eff6f"
+    }
+  ],
+  "people_acted": [
+    "Jose: asked, said yes, read the report"
+  ],
+  "agents_acted": {
+    "conductor@web-summit.jose": "recommended, started the scan, applied the review, reported",
+    "a scan sub-agent": "13 scans with the standard's scorer",
+    "reviewer@web-summit.jose": "re-scored before publication",
+    "GitHub Actions": "released"
+  }
+}

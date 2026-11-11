@@ -1,0 +1,162 @@
+{
+ "entity": "metro",
+ "about": "Every decision in graph.json about metro: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
+ "updated": "2026-11-11T09:30Z",
+ "decisions": [
+  {
+   "edge": "metro-runs",
+   "decision": "Metro to run on Wednesday (announced by the mayor)",
+   "decided_by": "Metropolitano de Lisboa",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "address": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "also": [],
+   "read": "2026-11-10T18:58Z",
+   "label": "evidence",
+   "note": "Said by the mayor, not read on metrolisboa.pt (no notice found in its HTML at 18:58Z).",
+   "scope": {
+    "extent": "whole",
+    "parts": null
+   }
+  },
+  {
+   "edge": "metro-shelter",
+   "decision": "Contingency plan for homeless people: Amadora Este, Santa Apolónia, Marquês de Pombal, Moscavide and Interface das Olaias stations open on the nights of 10-11 and 11-12 November",
+   "decided_by": "Metropolitano de Lisboa",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated: \"durante as noites de 10 para 11 e de 11 para 12 de novembro\"",
+   "address": "https://www.metrolisboa.pt/",
+   "also": [],
+   "read": "2026-11-10T23:33Z",
+   "label": "fact",
+   "note": "Read on Metro's own home page banner at 23:33Z (was evidence from a search summary at 22:05Z).",
+   "scope": {
+    "extent": "part",
+    "parts": "five stations at night: Amadora Este, Santa Apolónia, Marquês de Pombal, Moscavide, Olaias"
+   }
+  },
+  {
+   "edge": "transport-thursday",
+   "decision": "Thursday 12 Nov transport after the storm (Metro, Carris, CP, ferries, bridges)",
+   "decided_by": "Metropolitano de Lisboa",
+   "status": "not_announced",
+   "announced_utc": null,
+   "published_utc": null,
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "no decision with an effect window",
+   "address": "https://www.metrolisboa.pt/",
+   "also": [],
+   "read": "2026-11-11T00:33Z",
+   "label": "fact",
+   "note": "No operator notice for Thursday found at 22:05Z: metrolisboa.pt and carris.pt (no Thursday notice in HTML), cp.pt (JavaScript app), ttsl.pt, lusoponte.pt (unreachable); a web search found only Wednesday notices. Indirect: tax offices and customs reopen Thursday (Jornal de Negócios, via search).",
+   "scope": {
+    "extent": "unknown",
+    "parts": null
+   }
+  },
+  {
+   "edge": "metro-shelter",
+   "decision": "Metro opens several stations to shelter homeless people",
+   "decided_by": "Metropolitano de Lisboa",
+   "published_utc": "2026-11-10T19:13Z",
+   "address": "https://www.metrolisboa.pt/",
+   "also": [
+    "https://www.lusa.pt/article/48104497",
+    "https://bsky.app/profile/lusa.pt/post/3mzy5jqibue2d"
+   ],
+   "read": "2026-11-11T02:42Z",
+   "label": "fact",
+   "state": "running",
+   "note": "Fact at source: metrolisboa.pt banner (read 23:33Z) names Amadora Este, Santa Apolónia, Marquês de Pombal, Moscavide and Olaias, nights of 10-11 and 11-12 Nov. Lusa 19:13 corroborates.",
+   "scope": {
+    "extent": "part",
+    "parts": "five stations at night: Amadora Este, Santa Apolónia, Marquês de Pombal, Moscavide, Olaias"
+   }
+  }
+ ],
+ "open": [
+  "No Metro notice on metrolisboa.pt about Wednesday's service (read 23:33Z); \"Metro runs\" is the mayor's word in the press."
+ ],
+ "tries": [
+  {
+   "at": "2026-11-11T02:19Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 333396,
+   "result": "answered; no notice found about Wednesday's service (the only storm item is the night-shelter banner)",
+   "excerpt": [],
+   "corrected": "a first pattern matched the cookie banner (\"funcionamento\"); corrected by hand at 02:24Z"
+  },
+  {
+   "at": "2026-11-11T03:33Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 333388,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T04:33Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 517782,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T05:32Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 517779,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T06:33Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 517788,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T07:33Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 517775,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T08:39Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 517782,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T09:33Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 517788,
+   "result": "answered; no notice found",
+   "excerpt": []
+  }
+ ],
+ "tries_summary": {
+  "https://www.metrolisboa.pt/": {
+   "tries": 8,
+   "published_found": false
+  }
+ }
+}

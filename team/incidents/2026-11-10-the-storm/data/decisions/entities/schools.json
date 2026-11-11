@@ -1,0 +1,85 @@
+{
+ "entity": "schools",
+ "about": "Every decision in graph.json about schools: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
+ "updated": "2026-11-11T09:30Z",
+ "decisions": [
+  {
+   "edge": "gov-alert",
+   "decision": "Schools close on Wednesday: measure (a) of the alert declaration (\"encerramento dos estabelecimentos de ensino\")",
+   "decided_by": "Government of Portugal (Council of Ministers)",
+   "status": "happened",
+   "announced_utc": "2026-11-10T09:17Z",
+   "published_utc": "2026-11-10T12:10Z",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": "2026-11-11T23:59Z",
+   "effect_note": "\"entre as 00h00 e as 23h59 de 11 de novembro\" (the declaration)",
+   "address": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+   "also": [],
+   "read": "2026-11-11T01:00Z",
+   "label": "fact",
+   "note": "Announced at about 09:17 (minister, ANEPC press conference); the declaration published at 12:10 on portugal.gov.pt. Before 01:00Z on 11 Nov this edge carried only 12:10 (the page time), which put the announcement 3 h late (question raised by incident.conductor@ from incident.media@'s live entries). In force from 00:00 (Lusa, 00:09).",
+   "scope": {
+    "extent": "whole",
+    "parts": "mainland Portugal; measures (a) to (e)"
+   }
+  },
+  {
+   "edge": "schools-close",
+   "decision": "Schools closed on Wednesday",
+   "decided_by": "Schools (Ministry of Education)",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10T12:10Z",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": "2026-11-11T23:59Z",
+   "effect_note": "measure (a) of the alert declaration, whose period is 00:00 to 23:59 on 11 Nov",
+   "address": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+   "also": [],
+   "read": "2026-11-10T16:55Z",
+   "label": "fact",
+   "note": "",
+   "scope": {
+    "extent": "whole",
+    "parts": "all schools (public, private, social, incl. crèches) and non-essential public services, mainland"
+   }
+  },
+  {
+   "edge": "madeira-schools",
+   "decision": "Madeira schools closed on Wednesday morning, reopening from 13:00",
+   "decided_by": "Serviço Regional de Proteção Civil (Madeira)",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10T11:26Z",
+   "effect_from_utc": null,
+   "effect_to_utc": "2026-11-11T13:00Z",
+   "effect_note": "hours not stated for the start (\"durante a manhã\"); end \"a partir das 13h de dia 11 de novembro\"",
+   "address": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "also": [],
+   "read": "2026-11-11T01:35Z",
+   "label": "evidence",
+   "note": "Announced at a regional press conference by the president of the regional civil protection service (Observador 12:11:17, JSON-LD); DNOTICIAS headline 11:26 \"Escolas da Madeira encerradas na manhã de quarta-feira até às 13 horas\" (a search summary attributes it to the regional government). Most critical hours given as 21:00 to 06:00 (IPMA Madeira at the same conference).",
+   "scope": {
+    "extent": "whole",
+    "parts": "Madeira schools, morning only (reopen 13:00)"
+   }
+  },
+  {
+   "edge": "gov-alert (legal text)",
+   "decision": "Despacho n.º 13773-A/2026, 2(a): \"Encerramento de estabelecimentos de ensino dos setores público, privado e social, incluindo creches e pré-escolar, e de serviços públicos não essenciais\"",
+   "decided_by": "the Government (Presidência do Conselho de Ministros and nine ministries)",
+   "status": "happened",
+   "published_utc": "2026-11-10",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": "2026-11-11T23:59Z",
+   "address": "https://diariodarepublica.pt/dr/detalhe/despacho/13773-a-2026-1193823993",
+   "read": "2026-11-11T02:30Z",
+   "label": "fact",
+   "state": "closed",
+   "scope": {
+    "extent": "whole",
+    "parts": "mainland Portugal; measures (a) to (e)"
+   }
+  }
+ ],
+ "open": []
+}

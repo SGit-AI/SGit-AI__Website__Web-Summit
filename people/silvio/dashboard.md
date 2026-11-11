@@ -170,6 +170,16 @@ Counts only, never names: the people and companies stay in my own CRM (my brief'
 
 ## Decisions {#decisions}
 
+**Waiting on me now** (11 November, from conductor@web-summit.silvio's note of 10 November, 22:50 UTC, `people/silvio/orchestration/2026-11-10.md`):
+
+- **The storm (Charles), WS-214:** Web Summit cancelled all of Wednesday 11 November. Thursday 12 November, the day of our stand (A1-30), goes ahead as planned. Not yet known: what happens to Wednesday's talks, PITCH and side events.
+- **My yes on the router** (the open-model experiments, WS-213).
+- **dev's iPad offline mode:** the stand without wifi, built and tested; my go.
+- **video's two films.**
+- **The key on the iPad.**
+- **The editor's three drafts.**
+- **Dashboard (Universe):** the barriers dial as a speedometer, and a "15 without a policy" list you can click; my yes to build them in the Lab.
+
 **Still open,** what my agents cannot decide (check-in of 7 November, 07:20 UTC).
 
 1. ~~**Me:** send the printer the pickup confirmation; is the merch ready Monday 9 or Tuesday 10?~~ Done: collected on 9 November.

@@ -1,0 +1,60 @@
+{
+ "entity": "port",
+ "about": "Every decision in graph.json about port: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
+ "updated": "2026-11-11T09:30Z",
+ "decisions": [
+  {
+   "edge": "apram-cruises",
+   "decision": "Three cruise calls at Funchal for Wednesday cancelled (Iona, Le Dumont d'Urville, Vasco da Gama)",
+   "decided_by": "APRAM (Administração dos Portos da Madeira)",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10T12:33Z",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, Wednesday",
+   "address": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "also": [],
+   "read": "2026-11-11T01:35Z",
+   "label": "evidence",
+   "note": "APRAM via Observador live 12:33:37 (JSON-LD). The ships cancelled; APRAM reported it.",
+   "scope": {
+    "extent": "part",
+    "parts": "three cruise calls at Funchal"
+   }
+  },
+  {
+   "edge": "capitania-aviso-53",
+   "decision": "Harbour master's Aviso n.º 53/2026 (9 to 11 Nov): precautions for the maritime community; relays the then yellow warnings",
+   "decided_by": "Capitania do Porto de Lisboa",
+   "status": "happened",
+   "published_utc": "2026-11-09T14:07Z",
+   "effect_from_utc": "2026-11-09T18:00Z",
+   "effect_to_utc": "2026-11-11T06:00Z",
+   "address": "https://www.amn.pt/DGAM/Capitanias/Lisboa/Documentos_AMN/Aviso%20n%C2%BA%2053_2026_Agravamento%20condi%C3%A7%C3%B5es%20meteo%2009-11NOV_signed.pdf",
+   "read": "2026-11-11T02:30Z",
+   "label": "fact",
+   "state": "limited",
+   "scope": {
+    "extent": "whole",
+    "parts": "Lisbon and Setúbal maritime regions: precautions only"
+   }
+  },
+  {
+   "edge": "amn-bars-closed",
+   "decision": "18 sea bars closed at 07:30 (mainland); sea worsening until 12:00 Thursday",
+   "decided_by": "Autoridade Marítima Nacional / harbour masters",
+   "published_utc": "2026-11-11T08:06Z",
+   "effect_to_utc": "2026-11-12T12:00Z",
+   "address": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T08:41Z",
+   "label": "evidence",
+   "state": "closed",
+   "scope": {
+    "extent": "part",
+    "parts": "18 sea bars (which not stated)"
+   }
+  }
+ ],
+ "open": []
+}

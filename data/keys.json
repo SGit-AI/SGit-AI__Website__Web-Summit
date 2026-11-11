@@ -1549,6 +1549,23 @@
         "fingerprint": "sha256:f47e68d810fb5b72",
         "signing_fingerprint": "sha256:c956c55a2bd752d1"
       }
+    },
+    {
+      "id": "conductor-b-angelo",
+      "agent": "conductor.b@PrompTugal.angelo",
+      "label": "conductor.b@PrompTugal.angelo (Claude Code session)",
+      "role": "Angelo's account-B conductor: a long session Angelo talks to; runs the article pipeline (people/angelo/proposals/account-move/spec-pipeline-b.md), starts and routes the pool workers, and holds main control of Angelo's backlog from 10 November 2026. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 10 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), at Angelo's word in that session, and pushed to this repository by that session; the push is the authorisation. Not yet linked to an operator's key.",
+      "added": "2026-11-10",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAseqzjQ6Ojngt0ED8Q74u\ngHEGQIl24j2cZFWciHHAFSiYexmWbAUkCRvLDjnYNyq0HLFXA4J/O/JGcZrQIZdM\nR+fFmCfI32UXx/5jQrLOzN5Me7d8eFb2FwGcqW9kJMIxmBHjkqXhBOIEp7V1494i\nSTwYPjZY6FCnCi6J6XcZRTo9M2wcgY6Ad1zO66RF1KsB4MkUvt+tH8cs9eLbU24x\nKnJrk5qYPzyqoN387HM8eIm9zyId+XxNyKg9QJS4h8NNyGa4RtjaTA1HMGh3GRdo\n29iYasb8SH6umBmhWR6fen2WR28+03Wy7ma2wKv6RV0oEnsVIHmy2ZICTzeozKRb\nkjhjpjsu4C5yITnM0FEOEtmf0zYb8y7hiATnveiNRfJGHK4RCYXmRR1xixwHxwjs\nxFQuc5/FKngT7LTh1fKTTPvWM4qG3/SUrYa8U3U2RkEg1jtsTomtlH+8Ys+sEeNR\nVEtXg698TCB5CqKEGZmdWd3TTkK76wEtVDJe/10mANorpXLXQHaaprJDLoZq3RXZ\n0ozUYbwcxPwt7w4Vs4pbgCagq7S+T/q9opHFMKxhpA9AQqUOiqO1lkwp0M6V9Dwi\nYqWIXKAgz/ctfk3Cgws3JqmZGVembzSavcBcooRMgAxyFmmWJgFi8P/Q0zGBEpB7\n6vQBySbootTBTVHi2OMSyJ0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdUELtTplfUqe4YpZJCwsDzUMkmde\nZh+TtsBs4sCrd9xVpIPley6dhlMjXAvJS6vgAwV310feD60xb4BGwRunOQ==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.b@PrompTugal.angelo",
+        "fingerprint": "sha256:e662d76812739fbd",
+        "signing_fingerprint": "sha256:813a640bff3c423d"
+      }
     }
   ]
 }

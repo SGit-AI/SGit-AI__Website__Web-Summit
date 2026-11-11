@@ -21,7 +21,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** the venue map is in the Team app on your iPhone, and team messaging is on. Three things for you tonight: start your inbox chat (paste the inbox prompt from your kit into a new chat), say yes or no to keys for Nimay, Daniela and Sarah, and ask Dinis about the newsroom redesign. Stand day is Thursday. Everything else is on [your to-do list](todo/index.html).
+**Right now:** today's summit is called off (Storm Charles). Thursday goes ahead and is the only summit day left. First, unblock the Team app helper: reply 'Yes, attach the repositories and push' in the chat '2 · teamapp'. Then rehearse the stand demo with Angelo this morning, before the wind warning at midday. And start your inbox chat. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 

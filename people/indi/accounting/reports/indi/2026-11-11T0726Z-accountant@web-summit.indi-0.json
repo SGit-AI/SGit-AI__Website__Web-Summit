@@ -1,0 +1,168 @@
+{
+ "v": 1,
+ "person": "indi",
+ "accountant": "accountant@web-summit.indi",
+ "period": {
+  "from": "2026-11-10T00:00:00Z",
+  "to": "2026-11-11T00:00:00Z"
+ },
+ "agents": [
+  {
+   "agent": "accountant@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-10T17:44:13.654Z",
+     "task": "WS-148: wake 7, brief 7, tally.py, four asks",
+     "issue": "WS-148",
+     "quality": "pass",
+     "input": 18,
+     "output": 11575,
+     "cache_write": 210662,
+     "cache_read": 2349381,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  },
+  {
+   "agent": "dashboard@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-10T11:44:18.859Z",
+     "task": "brief 20 into the to-do list and dashboard (the fresh-session wake could not push)",
+     "issue": "",
+     "quality": "pass",
+     "input": 13,
+     "output": 3786,
+     "cache_write": 296199,
+     "cache_read": 1989728,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-10T12:33:58.074Z",
+     "task": "WS-203 on, WS-209 into the to-do list",
+     "issue": "WS-203",
+     "quality": "pass",
+     "input": 7,
+     "output": 1742,
+     "cache_write": 4400,
+     "cache_read": 1409433,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-10T17:32:47.567Z",
+     "task": "brief 21 into the to-do list and dashboard",
+     "issue": "",
+     "quality": "pass",
+     "input": 8,
+     "output": 2240,
+     "cache_write": 309582,
+     "cache_read": 1128883,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  },
+  {
+   "agent": "dev@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-10T09:44:05.248Z",
+     "task": "WS-137: review of dev.abp@'s side-by-side runner; check-scenario abp rule",
+     "issue": "WS-137",
+     "quality": "pass",
+     "input": 23,
+     "output": 8487,
+     "cache_write": 398329,
+     "cache_read": 4901372,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-10T09:49:36.921Z",
+     "task": "WS-137: stand-demo v4 trial, mandate verified end to end",
+     "issue": "WS-137",
+     "quality": "pass",
+     "input": 9,
+     "output": 3810,
+     "cache_write": 4922,
+     "cache_read": 1812253,
+     "subagent_tokens": 82046,
+     "models": [
+      "claude-opus-5-5",
+      "claude-sonnet-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-10T17:19:22.604Z",
+     "task": "video-editor@web-summit.indi prompt, tested",
+     "issue": "",
+     "quality": "pass",
+     "input": 15,
+     "output": 13077,
+     "cache_write": 426697,
+     "cache_read": 2873660,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  },
+  {
+   "agent": "prompter@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-10T09:48:11.940Z",
+     "task": "WS-137: stand-demo v4 (abp as mandate, rung, text) and the example",
+     "issue": "WS-137",
+     "quality": "pass",
+     "input": 8,
+     "output": 2223,
+     "cache_write": 3867,
+     "cache_read": 3483321,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  },
+  {
+   "agent": "video-editor@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-10T17:25:35.221Z",
+     "task": "session start: own key made and published; no footage yet",
+     "issue": "",
+     "quality": "n/a",
+     "input": 15,
+     "output": 2756,
+     "cache_write": 9905,
+     "cache_read": 640953,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Indi's agents only; journalist@web-summit.dinis writes into Indi's ledger folder and is left out",
+ "received": {
+  "lane": "accountant-indi",
+  "at": "2026-11-11T0726Z"
+ }
+}

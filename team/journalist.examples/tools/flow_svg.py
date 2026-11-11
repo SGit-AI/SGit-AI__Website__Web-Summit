@@ -76,5 +76,5 @@ o.append(f'<text x="30" y="{H-32}" font-size="12" fill="#5e5d59">Drawn by journa
 o.append(f'<text x="30" y="{H-14}" font-size="12" fill="#5e5d59">Dashed: a side step, or a step with no public evidence. Times UTC, {e(notes.get("date", "10 November 2026"))}. Columns are steps, not to scale.</text>')
 o.append('</svg>')
 os.makedirs(f'{ROOT}/assets/examples', exist_ok=True)
-open(f'{ROOT}/assets/examples/{tid}.svg', 'w').write(re.sub(r'(\d+\.\d)\d+', r'\1', '\n'.join(o)) + '\n')  # one decimal: no long digit runs
+open(f'{ROOT}/assets/examples/{tid}.svg', 'w').write(re.sub(r'(?<![\d.v])(\d+\.\d)\d{3,}(?![\d.])', r'\1', '\n'.join(o)) + '\n')  # coordinates to one decimal (never inside a version like v0.2.1733)
 print(f'assets/examples/{tid}.svg')

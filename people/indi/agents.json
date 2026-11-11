@@ -156,5 +156,13 @@
   "status": "running",
   "schedule": "none: until done, then DONE.md",
   "note": "Started 10 November 2026, about 12:40 UTC, at Indi's and Dinis's word. Builds the pt.news redesign with PrompTugal's own team. Reports in people/indi/helpers/newsroom/DONE.md."
+ },
+ {
+  "name": "conductor-teamapp@web-summit.indi",
+  "job": "overnight helper (10 to 11 November): the Team app's light mode, ticked-off tasks with an animation, a bigger venue-map button and place details in Where, every Web Summit event in Plan with location and category pills, no app-switcher cover, and one-tap messaging",
+  "session": "Claude Code cloud session in Indi's account, started by the conductor",
+  "status": "running",
+  "schedule": "none: overnight, then DONE.md",
+  "note": "Started 10 November 2026, about 22:14 UTC, at Indi's and Dinis's word; budget about 1.5 million tokens. Reports in people/indi/helpers/teamapp/DONE.md."
  }
 ]

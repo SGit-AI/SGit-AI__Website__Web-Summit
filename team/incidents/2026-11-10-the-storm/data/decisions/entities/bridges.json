@@ -1,0 +1,107 @@
+{
+ "entity": "bridges",
+ "about": "Every decision in graph.json about bridges: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
+ "updated": "2026-11-11T09:30Z",
+ "decisions": [
+  {
+   "edge": "bridges-60",
+   "decision": "25 de Abril and Vasco da Gama bridges limited to 60 km/h",
+   "decided_by": "Lusoponte (25 de Abril and Vasco da Gama bridges)",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10T14:48Z",
+   "effect_from_utc": null,
+   "effect_to_utc": "2026-11-10T22:29Z",
+   "effect_note": "hours not stated: \"encontra-se reduzida\" (in force from the announcement, 14:48 Tuesday); end not stated",
+   "address": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "also": [],
+   "read": "2026-11-10T18:58Z",
+   "label": "evidence",
+   "note": "",
+   "state": "limited",
+   "scope": {
+    "extent": "whole",
+    "parts": "both bridges: 25 de Abril and Vasco da Gama (speed limit 60 km/h)"
+   }
+  },
+  {
+   "edge": "bridges-lifted",
+   "decision": "Restrictions lifted on both bridges by 22:29 Tuesday",
+   "decided_by": "not stated (Lusoponte operates the bridges)",
+   "published_utc": "2026-11-10T22:29Z",
+   "effect_from_utc": "2026-11-10T22:29Z",
+   "effect_to_utc": null,
+   "address": "https://www.lusa.pt/article/48105410",
+   "also": [
+    "https://bsky.app/profile/lusa.pt/post/3mzyiilo7ik2a"
+   ],
+   "read": "2026-11-11T02:42Z",
+   "label": "evidence",
+   "state": "running",
+   "note": "Lusa headline; full text for subscribers. The 14:48 limit and the 22:29 lifting are a sequence, not a conflict.",
+   "scope": {
+    "extent": "whole",
+    "parts": "both bridges"
+   }
+  }
+ ],
+ "open": [
+  "Lusoponte's own site did not answer (lusoponte.pt, connection failed 18:59Z); the 60 km/h limit is Lusoponte's announcement as reported (Jornal de Negócios 14:48). No primary address found yet."
+ ],
+ "tries": [
+  {
+   "at": "2026-11-11T02:19Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T03:33Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T04:33Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T05:32Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T06:33Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T07:33Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T08:39Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T09:33Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  }
+ ],
+ "tries_summary": {
+  "https://www.lusoponte.pt/": {
+   "tries": 8,
+   "published_found": false
+  }
+ }
+}

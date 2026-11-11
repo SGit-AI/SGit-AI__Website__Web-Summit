@@ -1,0 +1,83 @@
+{
+  "title": "Medium: a one-word yes to a published GAMMA-Ray scan of 13 agents",
+  "subtitle": "Jose asks and says yes; his conductor, a scan sub-agent and a reviewer do the rest; CI publishes it about 47 minutes after the question",
+  "col": 160,
+  "date": "10 to 11 November 2026",
+  "steps": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "labels": {
+    "1": "asks: what is|GAMMA-Ray?|(in chat)",
+    "2": "recommends a|pilot scan, with|cost and caveats",
+    "3": "yes: \"Do it\"|(in chat)",
+    "4": "fetches the|standard; starts|a scan sub-agent",
+    "5": "13 scans, levels|from the standard's|own scorer",
+    "6": "re-scores all 13:|pass, with|two fixes",
+    "7": "fixes applied;|committed with|the review",
+    "8": "v0.2.1733:|the scan live",
+    "9": "reports to Jose|(in chat)",
+    "10": "the example,|offered to the|work desk"
+  },
+  "when": {
+    "1": "18:05 (about)",
+    "2": "18:10 (about)",
+    "3": "18:20 (about)",
+    "4": "18:25 (about)",
+    "5": "18:40 (about)",
+    "6": "18:50 (about)",
+    "8": "18:52",
+    "9": "18:55 (about)",
+    "10": "01:41 (11 Nov)"
+  },
+  "edges": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      10,
+      "d"
+    ]
+  ],
+  "output_after": 8,
+  "output": "Jose's 13 agents,|scanned and|published",
+  "output_when": ""
+}

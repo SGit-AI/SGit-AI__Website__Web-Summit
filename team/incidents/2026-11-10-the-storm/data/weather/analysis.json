@@ -108,6 +108,300 @@
     "peak_hour_and_strength": "low"
    },
    "why": "the peak tracks the wind swing; lower mean wind fits the centre passing near Lisbon; IPMA's red warnings (unchanged) outrank one model at one point"
+  },
+  {
+   "written_utc": "2026-11-10T23:25Z",
+   "label": "analysis",
+   "based_on_read_utc": "2026-11-10T23:22Z",
+   "fact": "TAF LPPT 102300Z weaker than 101700Z: BECMG 07-09 16017G27KT; TEMPO 09-16 16030G45KT +RA; PROB30 (was 40) TEMPO 10-18 18043G58KT +TSRA; BECMG 18-20 26012KT; Thu 00-06 W 12 kt no gusts",
+   "likely_peak_utc": [
+    "2026-11-11T12:00Z",
+    "2026-11-11T18:00Z"
+   ],
+   "worst_window_utc": [
+    "2026-11-11T12:00Z",
+    "2026-11-11T18:00Z"
+   ],
+   "ends_utc": "2026-11-11T21:00Z",
+   "confidence": {
+    "window": "medium",
+    "peak_hour_and_strength": "low"
+   },
+   "thursday_morning": {
+    "view": "behind the storm",
+    "confidence": "medium",
+    "why": "TAF W 12 kt no gusts 00-06; model 16-24 km/h mean; only yellow sea to 03:00"
+   },
+   "why": "TAF peak 09-16 (ahead of the centre) vs model peak 19-20 (behind it): peak widened back to the red overlap; red warnings unchanged and outrank one point"
+  },
+  {
+   "written_utc": "2026-11-10T23:58Z",
+   "label": "analysis",
+   "based_on_read_utc": "2026-11-10T23:51:47Z",
+   "fact": "IPMA (CAP sent 21:23) moved Lisbon's red rain to Wed 09:00-18:00 and orange rain to 00:00-09:00; CAP sent times: red wind 07:18:40 Tue, red rain first 16:30:01 Tue; open data lagged CAP by 2 h+",
+   "worst_window_utc": [
+    "2026-11-11T09:00Z",
+    "2026-11-11T18:00Z"
+   ],
+   "likely_peak_utc": [
+    "2026-11-11T12:00Z",
+    "2026-11-11T18:00Z"
+   ],
+   "ends_utc": "2026-11-11T21:00Z",
+   "confidence": {
+    "window": "medium",
+    "peak_hour_and_strength": "low"
+   },
+   "lead_times_revised": [
+    {
+     "warning": "red wind 12:00-21:00",
+     "sent_utc": "2026-11-10T07:18:40Z",
+     "starts_utc": "2026-11-11T12:00Z",
+     "lead_hours": 28.7,
+     "kind": "fact (CAP)"
+    },
+    {
+     "warning": "red rain (first, 12:00-18:00)",
+     "sent_utc": "2026-11-10T16:30:01Z",
+     "starts_utc": "2026-11-11T12:00Z",
+     "lead_hours": 19.5,
+     "kind": "fact (CAP)"
+    },
+    {
+     "warning": "red rain moved to 09:00",
+     "sent_utc": "2026-11-10T21:23:00Z",
+     "starts_utc": "2026-11-11T09:00Z",
+     "lead_hours": 11.6,
+     "kind": "fact (CAP)"
+    },
+    {
+     "warning": "orange rain moved to 00:00",
+     "sent_utc": "2026-11-10T21:23:00Z",
+     "starts_utc": "2026-11-11T00:00Z",
+     "lead_hours": 2.6,
+     "kind": "fact (CAP)"
+    },
+    {
+     "warning": "orange sea 12:00-21:00",
+     "sent_utc": "2026-11-10T12:09:08Z",
+     "starts_utc": "2026-11-11T12:00Z",
+     "lead_hours": 23.8,
+     "kind": "fact (CAP)"
+    }
+   ],
+   "why": "rain red now from 09:00 widens the worst window; the wind red (12:00-21:00) is unchanged; second model met.no also puts the wind swing at 18:00 (N), mean 36 km/h"
+  },
+  {
+   "written_utc": "2026-11-11T00:05Z",
+   "label": "hypothesis",
+   "based_on_read_utc": "2026-11-10T23:57Z",
+   "hypothesis": "CHARLES's centre passes very close to Lisbon about 17:00-18:00 Wed, more likely just south of it (further south than the Tuesday-morning guidance)",
+   "for": [
+    "met.no and IPMA's current run: wind backs to SE/ESE then swings to N at 18:00 (north-of-track pattern); no S/SW stage",
+    "IPMA's earlier values veered SE-S-NW (south-of-track pattern): the guidance moved",
+    "met.no MSLP minimum 986.7 hPa at 17-18Z, +5 hPa in the next hour; ~160 deg swing in 1 h: near-overhead passage",
+    "weaker wind in newer guidance (IPMA mean 49->23 km/h; 23:00 TAF weaker) while the strongest gusts are on the southern edge (communiqué no. 2)",
+    "red rain moved earlier to 09:00 (weaker reason)"
+   ],
+   "against": [
+    "IPMA's red wind warning for Lisbon unchanged",
+    "IPMA's stated track 'between Sines and Cabo Carvoeiro' already includes Lisbon; no communiqué no. 3",
+    "point models move (IPMA's values halved under one stamp)",
+    "TAF still SSE 30G45KT 09-16, PROB30 58 kt",
+    "Open-Meteo not read (rate limit)"
+   ],
+   "weighing": "consistent with a track close to and just south of Lisbon; does not lower the danger; worst timing towards the passage ~16:00-19:00 with a possible lull near the centre",
+   "confidence": "low to medium",
+   "test_on_wednesday": "wind backing to E/NE before N and pressure minimum ~987 hPa at 17-18Z at LPPT and stations = centre south; veering through SW/W = centre north",
+   "prompt_not_evidence": "watcher@web-summit.jose's signal (an undated image on a non-IPMA public page) prompted the question; not used as evidence"
+  },
+  {
+   "written_utc": "2026-11-11T00:40Z",
+   "label": "evidence then analysis",
+   "official_facts": {
+    "communique_no3": false,
+    "rss_built_local": "2026-11-11 00:08:32",
+    "lisbon_cap_after_21_23": false,
+    "downgrade_or_window_change": false,
+    "cap_21_23": "new red rain Beja, Faro 09-18; red rain earlier (09-18) Lisboa, Setúbal",
+    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+    "read_utc": "2026-11-11T00:35Z"
+   },
+   "press_quoting_ipma": [
+    {
+     "outlet": "Observador live (Rádio Observador)",
+     "entry_utc": "2026-11-10T22:35:24Z",
+     "who": "Paula Leitão, IPMA meteorologist",
+     "quotes_pt": [
+      "deverá entrar entre a região de Lisboa e o Cabo de São Vicente (Sagres)",
+      "Isto ainda atinge a zona de Lisboa",
+      "a zona entre o Cabo Carvoeiro e o Cabo de São Vicente parece agora ser a que terá um impacto mais importante"
+     ],
+     "also": "23:19: 'foi necessário emitir mais avisos vermelhos'",
+     "url": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+     "read_utc": "2026-11-11T00:36Z",
+     "note": "quotes read at source by incident.conductor@ 2026-11-11T00:36Z; entry time 22:35:24Z confirmed by incident.media@"
+    },
+    {
+     "outlet": "Renascença",
+     "who": "Cristina Simões, IPMA meteorologist (per a search summary)",
+     "claim": "the south up to Lisbon and Setúbal more exposed; may enter through the Algarve",
+     "url": "https://rr.pt/noticia/pais/2026/11/10/depressao-charles-desvia-se-para-sul-e-podera-entrar-em-portugal-pelo-algarve/493004/",
+     "read_utc": null,
+     "note": "not read: 403 to automated reads"
+    }
+   ],
+   "hypothesis_confidence": "medium (was low to medium)",
+   "headline_guidance": "IPMA's forecasters expect the strongest winds south of Lisbon; Lisbon's red warnings stand (until a CAP update says otherwise)"
+  },
+  {
+   "written_utc": "2026-11-11T01:55Z",
+   "label": "fact and hypothesis",
+   "madeira_rain_fact": {
+    "station": "1210973 Madeira, Areeiro",
+    "mm_6h": 133.9,
+    "hours_labelled": [
+     "2026-11-10T17:00Z",
+     "2026-11-10T22:00Z"
+    ],
+    "later_max_6h_mm": 230.5,
+    "later_hours_labelled": [
+     "2026-11-10T20:00Z",
+     "2026-11-11T01:00Z"
+    ],
+    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
+    "read_utc": "2026-11-11T01:46Z",
+    "lead": "incident.wikipedia@ (pt Wikipedia citing DN Madeira), verified at IPMA"
+   },
+   "origin": {
+    "label": "hypothesis",
+    "established": [
+     {
+      "utc": "2026-11-02T11:38Z",
+      "fact": "NHC: low expected to form along a weakening front NE of the Bahamas; 7-day 20%"
+     },
+     {
+      "utc": "2026-11-04T11:49Z",
+      "fact": "NHC: 7-day formation chance 50%"
+     },
+     {
+      "utc": "2026-11-06T11:37Z",
+      "fact": "NHC labels it AL94; to be absorbed by a new non-tropical low to its east"
+     },
+     {
+      "utc": "2026-11-07T23:21Z",
+      "fact": "NHC last mention: merges with a frontal system in a day or two"
+     },
+     {
+      "utc": "2026-11-08T05:16Z",
+      "fact": "NHC drops it"
+     },
+     {
+      "utc": "2026-11-09T13:17Z",
+      "fact": "IPMA names CHARLES (communiqué no. 1); no origin stated"
+     }
+    ],
+    "source": "https://www.nhc.noaa.gov/archive/text/TWOAT/2026/",
+    "read_utc": "2026-11-11T01:50Z",
+    "hypothesis": "the new non-tropical low that absorbed AL94 is, or became part of, CHARLES",
+    "for": [
+     "timing (absorption 'early next week' = 9-10 Nov)",
+     "eastward track towards 34N 21W",
+     "non-tropical, frontal"
+    ],
+    "against": [
+     "no source says so; NHC never names the absorbing low; IPMA gives no origin; Wikipedia's editor's note says sources don't state it",
+     "several lows coexist in the subtropical Atlantic"
+    ],
+    "status": "not established",
+    "wikipedia_date_note": "NHC labels AL94 on 6 Nov 11:37Z, not 7 Nov",
+    "lead_time_meaning": "if true, a precursor ~9 days ahead (2 Nov) and an invest ~5 days ahead (6 Nov): weak signals, not warnings; first impact signal for Portugal stays IPMA no. 1 (~47 h)"
+   }
+  },
+  {
+   "written_utc": "2026-11-11T02:35Z",
+   "label": "hypothesis re-weighed",
+   "supersedes": "2026-11-11T00:05Z and 00:40Z versions (kept above)",
+   "inputs_changed": {
+    "met_no_run": "2026-11-11T01:19:09Z",
+    "met_no": "backs to 118 deg at 12:00 then veers 140-180-200-232-283 deg (13-17:00); peak mean 56.5-58.3 km/h at 14-15:00 from S-SSW; MSLP min 987.7 hPa at 15:00; no swing to N",
+    "ipma_hourly": "unchanged (19:56 run): SE all day, N at 18:00, NW after",
+    "taf_2300": "SSE 30G45KT 09-16, PROB30 S 43G58KT 10-18, BECMG W 12 kt 18-20 (a veer through S to W)",
+    "ipma_forecasters_radio": "entry between the Lisbon region and Cabo de São Vicente; biggest impact Cabo Carvoeiro to Cabo de São Vicente; still reaches Lisbon"
+   },
+   "weighing": "newest model (met.no 01:19) and TAF show the south-of-track pattern (centre passing just north of Lisbon ~15:00, Lisbon on the stronger southern edge); IPMA's older hourly run and its forecasters' words lean the other way: the side is unsettled",
+   "hypothesis_just_south": {
+    "confidence": "low (was medium)"
+   },
+   "stands": "centre passes very close to Lisbon between ~15:00 and 18:00 (confidence medium)",
+   "worst_window_utc": [
+    "2026-11-11T12:00Z",
+    "2026-11-11T18:00Z"
+   ],
+   "likely_peak_utc": [
+    "2026-11-11T14:00Z",
+    "2026-11-11T17:00Z"
+   ],
+   "ends_utc": "2026-11-11T21:00Z",
+   "headline_guidance": "'less wind for Lisbon' is not supported; say the models disagree on which side the centre passes, and IPMA's red warnings for Lisbon stand",
+   "test_on_wednesday": "LPPT veer through SW to W with strongest S gusts before the pressure minimum = centre passed north; back through E to N = passed south"
+  },
+  {
+   "written_utc": "2026-11-11T07:45Z",
+   "label": "fact then analysis",
+   "fact": "IPMA CAP 07:16:30: Lisbon wind lowered RED -> ORANGE, now Wed 09:00-21:00, gusts to 120 km/h (the 'podendo atingir 140 km/h' clause is gone); Setúbal the same; red rain 09:00-18:00 unchanged",
+   "lead_time": "sent 1 h 44 min before the new orange begins (09:00) and 4 h 44 min before the red would have begun (12:00)",
+   "analysis": "consistent with IPMA's forecasters' 22:35 words (the worst further south) and with 7b's unsettled side: IPMA now judges Lisbon's gusts at up to 120 km/h, not 140; the wind window starts earlier (09:00) and still ends at 21:00. Not a 'storm is over': orange means dangerous weather; red rain still stands 09:00-18:00.",
+   "worst_window_utc": [
+    "2026-11-11T09:00Z",
+    "2026-11-11T18:00Z"
+   ],
+   "likely_peak_utc": [
+    "2026-11-11T14:00Z",
+    "2026-11-11T17:00Z"
+   ],
+   "ends_utc": "2026-11-11T21:00Z",
+   "headline_guidance": "IPMA lowers Lisbon's wind warning to orange (gusts to 120 km/h, 09:00-21:00); the red rain warning (09:00-18:00) stands"
+  },
+  {
+   "written_utc": "2026-11-11T09:25Z",
+   "label": "analysis",
+   "based_on_read_utc": "2026-11-11T09:22Z",
+   "fact": "IPMA hourly run 07:56: E lull 11.5 km/h at 13:00, S 40 km/h at 14:00, SW 35 at 15:00, then W/NW; met.no 09:19: veer 157-226 deg 13-16:00, 55 km/h at 15:00, MSLP min 988.8 at 15:00; LPPT 09:00 SSE 11 kt, no gust",
+   "weighing": "both models now veer through S-SW to W: centre passing close to and just north of Lisbon ~13:00-15:00",
+   "side": {
+    "view": "just north",
+    "confidence": "medium"
+   },
+   "likely_peak_utc": [
+    "2026-11-11T14:00Z",
+    "2026-11-11T16:00Z"
+   ],
+   "lull_note": "a lull ~12:00-13:00 precedes the strongest wind; not the end",
+   "worst_window_utc": [
+    "2026-11-11T09:00Z",
+    "2026-11-11T18:00Z"
+   ],
+   "ends_utc": "2026-11-11T21:00Z"
+  },
+  {
+   "written_utc": "2026-11-11T09:50Z",
+   "label": "facts then analysis",
+   "question": "press: Charles divides into two centres and weakens (attributed to IPMA)",
+   "ipma_written": "nothing: no communiqué no. 3 (rss 09:08); no. 2 speaks of one centre; CAP texts carry no description; IPMA's hourly model has no pressure field",
+   "observations": {
+    "LPMA": "pressure min 991 hPa 06:30; wind SW 37G48KT 07:00 -> NE 7 kt 08:00 -> N 19-22 kt 09:00-09:30; pressure rising to 996-997",
+    "LPPT": "1005 hPa 04:00 -> 1000 hPa 09:30, SSE 11-12 kt",
+    "LPFR": "1007 -> 1003",
+    "LPBJ": "1006 -> 1004",
+    "met_no": "single Lisbon minimum 988.8 hPa at 15:00",
+    "source": "https://aviationweather.gov/api/data/metar",
+    "read_utc": "2026-11-11T09:45Z"
+   },
+   "analysis": "one centre would need ~140-160 km/h to pass Madeira (06:30-08:00) and Lisbon (13-15:00), 966 km apart; no. 2 had it NW of Madeira at 00 UTC: Madeira's swing most likely a separate feature; consistent with 'two centres' (not proven); weakening consistent with IPMA's downgrade",
+   "two_centres_confidence": "medium (observations and distance; not IPMA in writing)",
+   "section_12": "stands: centre close to and just north of Lisbon ~13-15:00, strongest wind 14-16:00"
   }
- ]
+ ],
+ "next_read_utc": "2026-11-11T10:22Z"
 }

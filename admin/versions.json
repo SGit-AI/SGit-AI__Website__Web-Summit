@@ -1,5 +1,523 @@
 [
   {
+    "version": "v0.2.1837",
+    "date": "2026-11-11",
+    "what": "09:50 wake: decisions first: what waits on Silvio now (the storm, Thursday's stand on, six yeses), from his conductor's 22:50 note",
+    "by": "dashboard@web-summit.silvio",
+    "from": "a1b2596a3"
+  },
+  {
+    "version": "v0.2.1836",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: the push check: account B pushes as riskmandate-angelo (ANGELO)",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "7a3886ab5"
+  },
+  {
+    "version": "v0.2.1835",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: first run: session key, STATE, runs log, the pipeline's role prompts for Angelo's read",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "7acabbef6"
+  },
+  {
+    "version": "v0.2.1834",
+    "date": "2026-11-11",
+    "what": "WS-41 step 1 closed: no effect, 2 check-ins before and after (4 to 11 November)",
+    "by": "dev@web-summit.jose",
+    "from": "dcbfb2d39"
+  },
+  {
+    "version": "v0.2.1833",
+    "date": "2026-11-11",
+    "what": "scope on every decision (whole, part with which routes or places, unknown), so the front page stops inferring it",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "18bc9e89c"
+  },
+  {
+    "version": "v0.2.1832",
+    "date": "2026-11-11",
+    "what": "09:22 wake: IPMA's new hourly run now veers through S-SW like met.no: centre just north of Lisbon ~13-15:00; strongest wind 14-16:00 after a 12-13:00 lull (analysis 12)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "34e095854"
+  },
+  {
+    "version": "v0.2.1831",
+    "date": "2026-11-11",
+    "what": "wake 09:18: the incident +7 events; IPMA lowered Lisbon's wind to orange at 07:16, before the red began",
+    "by": "reporter@web-summit.dinis",
+    "from": "481535948"
+  },
+  {
+    "version": "v0.2.1830",
+    "date": "2026-11-11",
+    "what": "run 21, 286 commits: nothing found",
+    "by": "security.repos@web-summit.dinis",
+    "from": "5a38d3abb"
+  },
+  {
+    "version": "v0.2.1829",
+    "date": "2026-11-11",
+    "what": "warnings.json refreshed: open data now orange for Lisbon wind 09:00-21:00 (lagged CAP by 66-87 min)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "7baba27a0"
+  },
+  {
+    "version": "v0.2.1828",
+    "date": "2026-11-11",
+    "what": "08:41 wake: IPMA lowered Lisbon's wind red -> orange (CAP 07:16); red rain stands; 18 sea bars closed (AMN, press); no change to Day 3",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "b9cf8a2fb"
+  },
+  {
+    "version": "v0.2.1827",
+    "date": "2026-11-11",
+    "what": "08:22 wake: open data still red for Lisbon wind 66 min after CAP's orange; Madeira airport wind collapses (centre passing ~07:30-08:00); met.no 08:21 same shape; analysis 11",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "e9596c8f8"
+  },
+  {
+    "version": "v0.2.1826",
+    "date": "2026-11-11",
+    "what": "the 07:16:30 downgrade reached MeteoAlarm's feed 16-21 min after IPMA sent it; the poll ran throughout (status)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "2fc21883b"
+  },
+  {
+    "version": "v0.2.1825",
+    "date": "2026-11-11",
+    "what": "IPMA lowers Lisbon's wind warning RED -> ORANGE (09:00-21:00, gusts to 120 km/h; CAP sent 07:16:30); red rain 09:00-18:00 stands; open data still red at 07:38",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "287ae82e3"
+  },
+  {
+    "version": "v0.2.1824",
+    "date": "2026-11-11",
+    "what": "07:35 wake: no change to Day 3; Funchal centre closed, 16 Madeira flights cancelled, counts (Madeira 162, mainland 66 at 03:30), Porto Santo power cuts (press)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "75315a2f2"
+  },
+  {
+    "version": "v0.2.1823",
+    "date": "2026-11-11",
+    "what": "07:27 wake refresh; CAP poll restarted",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "e5c968b82"
+  },
+  {
+    "version": "v0.2.1822",
+    "date": "2026-11-11",
+    "what": "07:15 run, ec9b5af..40f041b; A-27 opened (Angelo's agents here); trailer low raised again",
+    "by": "watcher@web-summit.jose",
+    "from": "0a5610d58"
+  },
+  {
+    "version": "v0.2.1821",
+    "date": "2026-11-11",
+    "what": "CAP poll restarted 06:38 after a container restart (gap logged)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "65cafedbd"
+  },
+  {
+    "version": "v0.2.1820",
+    "date": "2026-11-11",
+    "what": "06:35 wake: no change to Day 3; three Lisbon tunnels still open after midnight (Observador); a ferry route suspended; Barreiro buses limited",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "e1ed79420"
+  },
+  {
+    "version": "v0.2.1819",
+    "date": "2026-11-11",
+    "what": "06:25 wake refresh; CAP poll restarted",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "fa6608b1f"
+  },
+  {
+    "version": "v0.2.1818",
+    "date": "2026-11-11",
+    "what": "wake 06:22: the incident +8 events; the first decision to stop (the hold on websummit.com, 05:25)",
+    "by": "reporter@web-summit.dinis",
+    "from": "36c7b9b62"
+  },
+  {
+    "version": "v0.2.1817",
+    "date": "2026-11-11",
+    "what": "the websummit.com poll stopped (05:27, the lead's interim hold on Web Summit's Terms 48.2 and 52.1); its record; three questions for Dinis",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "eacd2b5ea"
+  },
+  {
+    "version": "v0.2.1816",
+    "date": "2026-11-11",
+    "what": "05:33 wake: no change to Day 3 (Bluesky and press; websummit.com on hold); IPMA unchanged; primary pages tried (4th)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "aeb6b5b0e"
+  },
+  {
+    "version": "v0.2.1815",
+    "date": "2026-11-11",
+    "what": "hold on websummit.com noted (its Terms 48.2, 52.1): Web Summit's pages marked \"not read since 05:25 (terms)\"; parser asks withdrawn",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "1b047e54b"
+  },
+  {
+    "version": "v0.2.1814",
+    "date": "2026-11-11",
+    "what": "05:22 wake: new LPPT TAF (strong SSE G45KT now to 18:00); observed against warned begins (no gust above warned); CAP poll restarted",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "68b2214e3"
+  },
+  {
+    "version": "v0.2.1813",
+    "date": "2026-11-11",
+    "what": "04:33 wake: no change to Day 3; IPMA unchanged; primary pages tried (3rd), none published",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "14f2951cc"
+  },
+  {
+    "version": "v0.2.1812",
+    "date": "2026-11-11",
+    "what": "04:23 wake refresh; CAP poll restarted",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "82222dd9c"
+  },
+  {
+    "version": "v0.2.1811",
+    "date": "2026-11-11",
+    "what": "area on every decision edge (lisbon, mainland, madeira, porto-santo, national)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "f9c3ff52f"
+  },
+  {
+    "version": "v0.2.1810",
+    "date": "2026-11-11",
+    "what": "Madeira's 71 occurrences to 02:00 (SRPC's press platform via DN Madeira: evidence); Porto Santo's measures not found at source; entities/madeira.json",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "db56ba5f7"
+  },
+  {
+    "version": "v0.2.1809",
+    "date": "2026-11-11",
+    "what": "Jose's example (a one-word yes to a GAMMA-Ray scan of 13 agents), and the pictures' version numbers restored",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "04de7c9fb"
+  },
+  {
+    "version": "v0.2.1808",
+    "date": "2026-11-11",
+    "what": "03:33 wake: no change to Day 3; primary pages tried again (none published)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "870f9c5af"
+  },
+  {
+    "version": "v0.2.1807",
+    "date": "2026-11-11",
+    "what": "03:23 wake refresh; token measure refused by the session's permission check (Dinis: ask in status)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "14f538c16"
+  },
+  {
+    "version": "v0.2.1806",
+    "date": "2026-11-11",
+    "what": "wake 03:18: Jose's example as a trace (10 steps); the incident +8 events (AEMET named the storm 3 h before IPMA)",
+    "by": "reporter@web-summit.dinis",
+    "from": "20946e8c3"
+  },
+  {
+    "version": "v0.2.1805",
+    "date": "2026-11-11",
+    "what": "run 19, 578 commits: one MEDIUM (Storm-Charles publishes vault read keys by rewriting sgit's private prefix to public, past its gate)",
+    "by": "security.repos@web-summit.dinis",
+    "from": "516b76f6a"
+  },
+  {
+    "version": "v0.2.1804",
+    "date": "2026-11-11",
+    "what": "token measure refused by this session's permission check; an ask for Dinis in status",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "1cd102d08"
+  },
+  {
+    "version": "v0.2.1803",
+    "date": "2026-11-11",
+    "what": "bridges limited at 14:48, lifted by 22:29 (a sequence, not a conflict); AEMET named Charles at 10:20 on 9 Nov; social posts filed by service; Madeira SRPC",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "5c2756355"
+  },
+  {
+    "version": "v0.2.1802",
+    "date": "2026-11-11",
+    "what": "text_en: where IPMA's English drops a qualifier the Portuguese has (por vezes, podendo, persistente, trovoada, forte, locais mais expostos), ours, with the reason in text_en_by",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "f3d5ed8f6"
+  },
+  {
+    "version": "v0.2.1801",
+    "date": "2026-11-11",
+    "what": "the alert's legal text read at source (Despacho n.º 13773-A/2026, DR 2nd series); the harbour master's Aviso 53/2026; four leads not established",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "928937bf9"
+  },
+  {
+    "version": "v0.2.1800",
+    "date": "2026-11-11",
+    "what": "02:22 wake refresh",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "24806a8eb"
+  },
+  {
+    "version": "v0.2.1799",
+    "date": "2026-11-11",
+    "what": "every timeline row without an address now has one (or the reason); one file per service and place, with exact addresses",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "36155b772"
+  },
+  {
+    "version": "v0.2.1798",
+    "date": "2026-11-11",
+    "what": "madeira.json earlier_warnings: no MRM/MCS rain warning for Tue 12:00-21:00 in the 23:50 CAP snapshot or DN Madeira (8 Nov); red rain from 21:00 sent 06:14:54 Tue; not proof of absence",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "3cc8773b0"
+  },
+  {
+    "version": "v0.2.1797",
+    "date": "2026-11-11",
+    "what": "lisbon-rain.json (Lisbon's stations in madeira.json's shape, for the rain card from 09:00); hour_label in both: IPMA does not document start or end (inference, labelled: hour ending, UTC)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "fb524c2c9"
+  },
+  {
+    "version": "v0.2.1796",
+    "date": "2026-11-11",
+    "what": "Madeira's rain verified at IPMA (Areeiro 133.9 mm in 6 h to 22:00; 230.5 mm to 01:00), madeira.json; cap.json other_messages (Madeira and every red district); CHARLES's origin as a hypothesis from NHC's archived outlooks (AL94 from 6 Nov; not established)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "8c822f847"
+  },
+  {
+    "version": "v0.2.1795",
+    "date": "2026-11-11",
+    "what": "Wikipedia's leads checked at source: AEMET, GNR, MMP, TAP, courts and the Ministry of Justice added; APA's 101 municipalities and TAP's 10 Madeira flights not established",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "952e4cfd1"
+  },
+  {
+    "version": "v0.2.1794",
+    "date": "2026-11-11",
+    "what": "for the reporter beside the project (WS-212): Jose's example, from a one-word yes to a published GAMMA-Ray scan of 13 agents",
+    "by": "conductor@web-summit.jose",
+    "from": "c75eff6f4"
+  },
+  {
+    "version": "v0.2.1793",
+    "date": "2026-11-11",
+    "what": "01:36 wake: no change to Day 3",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "6fa509d82"
+  },
+  {
+    "version": "v0.2.1792",
+    "date": "2026-11-11",
+    "what": "Madeira's decisions in the graph (red warnings, schools to 13:00, airport, cruise calls); RTP's new live-blog address in the source map",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "1103ab29d"
+  },
+  {
+    "version": "v0.2.1791",
+    "date": "2026-11-11",
+    "what": "Jose's CRM connections task reached my session, not crm@'s; nothing done, reported to the conductor",
+    "by": "vault@web-summit.jose",
+    "from": "2c8bf9adb"
+  },
+  {
+    "version": "v0.2.1790",
+    "date": "2026-11-11",
+    "what": "Jose's dashboard cleaned for the summit: a stand-day block, the lanes and issues brought up to date, his agents' records linked; asks for the conductor and the designer",
+    "by": "dashboard@web-summit.jose",
+    "from": "a7993ba84"
+  },
+  {
+    "version": "v0.2.1789",
+    "date": "2026-11-11",
+    "what": "Jose owns 1Password; a task for his crm agent: his Web Summit connections into the private CRM, and eleven more companies he owns",
+    "by": "conductor@web-summit.jose",
+    "from": "35195c033"
+  },
+  {
+    "version": "v0.2.1788",
+    "date": "2026-11-11",
+    "what": "writer@PrompTugal.jose: Prompt W4: GAMMA-Ray card posts, drafts only: a share post, 12 card comments and an X thread; Codacy and Automaise held; the launch article waiting",
+    "by": "writer@PrompTugal.jose",
+    "from": "eb9629bc5"
+  },
+  {
+    "version": "v0.2.1787",
+    "date": "2026-11-11",
+    "what": "IPMA's own send times from CAP: red wind 07:18, red rain 16:30 then 09:00-18:00 at 21:23; lead times against the first red (rain, 09:00)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "d6ce188f3"
+  },
+  {
+    "version": "v0.2.1786",
+    "date": "2026-11-11",
+    "what": "the alert was announced at ~09:17 (minister, ANEPC press conference), published 12:10; red wind in the press by 08:05: lead-time line corrected",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "e6c8556ea"
+  },
+  {
+    "version": "v0.2.1785",
+    "date": "2026-11-11",
+    "what": "Observador quotes verified at source (incident.conductor@ 00:36Z; entry 22:35:24Z per incident.media@)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "f10ef05da"
+  },
+  {
+    "version": "v0.2.1784",
+    "date": "2026-11-11",
+    "what": "Jose's \"drain\": my drains resume; the lane was empty at this run",
+    "by": "vault@web-summit.jose",
+    "from": "aebc73876"
+  },
+  {
+    "version": "v0.2.1783",
+    "date": "2026-11-11",
+    "what": "IPMA's own issue times (red wind 07:18, red rain 16:30) and the red rain from 09:00, in the story, the pictures and the comms",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "2fe3ceb49"
+  },
+  {
+    "version": "v0.2.1782",
+    "date": "2026-11-11",
+    "what": "00:33 wake: no change to Day 3; the alert in force since 00:00; IPMA unchanged",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "090f4db6f"
+  },
+  {
+    "version": "v0.2.1781",
+    "date": "2026-11-11",
+    "what": "00:23 wake refresh",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "049343ed7"
+  },
+  {
+    "version": "v0.2.1780",
+    "date": "2026-11-11",
+    "what": "wake 00:18: the incident +11 events, 2 corrected; IPMA's red wind was issued at 07:18, 7 h before we first read it",
+    "by": "reporter@web-summit.dinis",
+    "from": "f43f96dbf"
+  },
+  {
+    "version": "v0.2.1779",
+    "date": "2026-11-11",
+    "what": "debrief of the news app redesign (rounds 1 to 6, builds 556 to 587)",
+    "by": "conductor-newsapp@web-summit.indi",
+    "from": "600f86642"
+  },
+  {
+    "version": "v0.2.1778",
+    "date": "2026-11-11",
+    "what": "cap.json keeps every message once seen (left_feed_utc when it leaves); MeteoAlarm terms and disclaimer verbatim; a dated record, with every read time (hourly and the 5-minute poll)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "8b70ee044"
+  },
+  {
+    "version": "v0.2.1777",
+    "date": "2026-11-10",
+    "what": "hypothesis (analysis.md section 7): official and model data consistent with a track close to and just south of Lisbon ~17-18:00 Wed; reasons for and against; how Wednesday will test it",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "d6e8aace1"
+  },
+  {
+    "version": "v0.2.1776",
+    "date": "2026-11-10",
+    "what": "sent_utc on each warning in warnings.json (lisbon and elsewhere), from the CAP message matching area, type, level and window; null where none matches",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "8caa00d45"
+  },
+  {
+    "version": "v0.2.1775",
+    "date": "2026-11-10",
+    "what": "for the incident team, an unofficial signal: a Facebook weather page shows the track further south",
+    "by": "watcher@web-summit.jose",
+    "from": "674560801"
+  },
+  {
+    "version": "v0.2.1774",
+    "date": "2026-11-10",
+    "what": "next_read_utc on every weather file (the next :22 refresh); 23:53 refresh",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "69bad703a"
+  },
+  {
+    "version": "v0.2.1773",
+    "date": "2026-11-10",
+    "what": "writer@PrompTugal.jose: Prompt W3: the storm batch (WS-208): posts/2026-11-11.md, no post drafted, all five items waiting on network access",
+    "by": "writer@PrompTugal.jose",
+    "from": "57636ac48"
+  },
+  {
+    "version": "v0.2.1772",
+    "date": "2026-11-10",
+    "what": "23:33 wake: no change to Day 3; CP cuts 4 trains over the 25 de Abril bridge 12:00-15:00 Wednesday (Lusa); Metro's night shelter read at source",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "8047fec04"
+  },
+  {
+    "version": "v0.2.1771",
+    "date": "2026-11-10",
+    "what": "the first TAF covering Thursday (23:00) is weaker (G45 09-16, PROB30 G58 10-18, W 12 kt from 18-20); analysis: peak widened to 12:00-18:00, Thursday morning behind the storm",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "a63ac9696"
+  },
+  {
+    "version": "v0.2.1770",
+    "date": "2026-11-10",
+    "what": "22:50 wake: Wednesday cancelled by the storm, Thursday's stand on; what waits on Silvio",
+    "by": "conductor@web-summit.silvio",
+    "from": "2e11a7bce"
+  },
+  {
+    "version": "v0.2.1769",
+    "date": "2026-11-10",
+    "what": "22:33 wake: no change to Day 3, PITCH, Night Summit or Thursday's transport",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "b88b0ebb4"
+  },
+  {
+    "version": "v0.2.1768",
+    "date": "2026-11-10",
+    "what": "22:15 run, e50a709..ec9b5af; A-26 opened (Vicky's agents here)",
+    "by": "watcher@web-summit.jose",
+    "from": "1f711ff30"
+  },
+  {
+    "version": "v0.2.1767",
+    "date": "2026-11-10",
+    "what": "22:23 wake refresh",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "1b4b692b4"
+  },
+  {
+    "version": "v0.2.1766",
+    "date": "2026-11-10",
+    "what": "the Team app overnight helper started (light mode, tasks, Where, Plan, messaging)",
+    "by": "conductor@web-summit.indi",
+    "from": "6ca61a509"
+  },
+  {
+    "version": "v0.2.1765",
+    "date": "2026-11-10",
+    "what": "the PITCH conflict stays open: /schedule/ embeds only 7 featured sessions (all 10 Nov); the Wed 17:00 claim traced to an unsourced summary",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "5b99c68d4"
+  },
+  {
+    "version": "v0.2.1764",
+    "date": "2026-11-10",
+    "what": "PITCH, Night Summit and Thursday's transport: nothing announced at 22:05; a conflict on the PITCH semi-final's slot recorded",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "e15fe1a62"
+  },
+  {
     "version": "v0.2.1763",
     "date": "2026-11-10",
     "what": "21:46 wake: Silvio's highlight for 10 November, the Universe live (Talk, Circuit, Tokens)",

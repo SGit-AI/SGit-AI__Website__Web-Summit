@@ -1,0 +1,140 @@
+{
+ "entity": "cp",
+ "about": "Every decision in graph.json about cp: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
+ "updated": "2026-11-11T09:30Z",
+ "decisions": [
+  {
+   "edge": "cp-ops",
+   "decision": "CP admits constraints on rail services on Wednesday",
+   "decided_by": "CP (Comboios de Portugal) and Infraestruturas de Portugal",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": null,
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; Jornal Económico: disruption expected on 10 and 11 Nov",
+   "address": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "also": [],
+   "read": "2026-11-10T21:33Z",
+   "label": "evidence",
+   "note": "Press summary (Jornal de Negócios live, 19:45 and 21:31 entries); not on cp.pt, a JavaScript app.",
+   "scope": {
+    "extent": "unknown",
+    "parts": "\"constrangimentos\": which lines not stated"
+   }
+  },
+  {
+   "edge": "cp-fertagus-bridge",
+   "decision": "CP suppresses four trains crossing the 25 de Abril bridge in the most critical window (12:00 to 15:00 forecast: heavy rain, strong wind)",
+   "decided_by": "CP (Comboios de Portugal) and Infraestruturas de Portugal",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10T23:10Z",
+   "effect_from_utc": "2026-11-11T12:00Z",
+   "effect_to_utc": "2026-11-11T15:00Z",
+   "effect_note": "CP: trains in \"o intervalo horário identificado como mais crítico\", forecast \"entre as 12:00 e as 15:00\"; the article also says \"entre o período da manhã e início da tarde\"",
+   "address": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "also": [],
+   "read": "2026-11-10T23:33Z",
+   "label": "evidence",
+   "note": "Lusa, quoting a CP statement; Jornal de Negócios live entry 23:10. Not read on cp.pt (JavaScript app).",
+   "scope": {
+    "extent": "part",
+    "parts": "four trains crossing the 25 de Abril bridge, 12:00–15:00"
+   }
+  },
+  {
+   "edge": "cp-ops",
+   "decision": "CP admits constraints on train services on Tuesday and Wednesday",
+   "decided_by": "CP",
+   "published_utc": "2026-11-10T17:25Z",
+   "address": "https://www.lusa.pt/article/48103814",
+   "also": [
+    "https://bsky.app/profile/lusa.pt/post/3mzxxj2c65v2t"
+   ],
+   "read": "2026-11-11T02:42Z",
+   "label": "evidence",
+   "state": "limited",
+   "note": "Lusa headline and Bluesky post 17:25; cp.pt is a JavaScript app.",
+   "scope": {
+    "extent": "unknown",
+    "parts": "\"constrangimentos\": which lines not stated"
+   }
+  }
+ ],
+ "open": [
+  "cp.pt is a JavaScript app; CP's statements read via Lusa only."
+ ],
+ "tries": [
+  {
+   "at": "2026-11-11T02:19Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T03:33Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T04:33Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T05:32Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T06:33Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T07:33Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T08:39Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T09:33Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  }
+ ],
+ "tries_summary": {
+  "https://www.cp.pt/": {
+   "tries": 8,
+   "published_found": false
+  }
+ }
+}

@@ -1,0 +1,71 @@
+{
+  "number": 23,
+  "date": "11 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Wednesday, no summit: what happened overnight, and the one thing that is stuck",
+  "when": "11 November 2026, 07:25 UTC (scheduled wake; since brief 22, 18:45 UTC on 10 November)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Web Summit called off today because of Storm Charles; Thursday goes ahead. Overnight the PrompTugal app got its last two rounds and all five builds are with Apple. The Team app's overnight work is written but stuck: its chat needs your yes to push. Nothing is decided here.",
+  "stats": [
+    {"n": "5", "label": "PrompTugal app builds with Apple's review (556 to 587)"},
+    {"n": "1", "label": "tap now to pick a talk and add it to your calendar (was 3)"},
+    {"n": "0", "label": "Team app changes on TestFlight yet: waiting for your yes"},
+    {"n": "Thu 12", "label": "our stand day, between Booths A1-30"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Unblock the Team app helper (1 minute)",
+      "detail": "Open the chat '2 · teamapp' and reply: 'Yes, attach the repositories and push'. Tap Allow if asked. Its work (light mode, ticked-off tasks, Where details, Plan with pills, no app-switcher cover, one-tap messaging) then goes to TestFlight in about an hour.",
+      "options": ["doing it now", "later today"],
+      "recommend": "Now, so the Team app is ready for Thursday."
+    },
+    {
+      "id": "2",
+      "ask": "Start your inbox chat",
+      "detail": "Still waiting from yesterday: a new Claude Code session you start yourself, with the inbox prompt from your kit. Tell me and I add the schedule.",
+      "options": ["now", "later"],
+      "recommend": "Today, while there is no summit."
+    },
+    {
+      "id": "3",
+      "ask": "Use the free day to rehearse the stand demo",
+      "detail": "Three made-up visitors through the demo helper and Angelo's side-by-side runner, with a recorded backup. Thursday is the only summit day left.",
+      "options": ["this morning", "this afternoon"],
+      "recommend": "This morning, with Angelo, before the red wind warning from midday."
+    }
+  ],
+  "you_asked": [
+    {"at": "10 Nov, evening", "said": "Team app: light mode, ticked-off tasks, Where details, Plan with all events and pills, no recent-apps cover, messaging", "done": "Written by the overnight helper in its chat; not pushed, because the chat refused to push without your yes.", "where": "chat '2 · teamapp'", "status": "waiting on you"},
+    {"at": "10 Nov, evening", "said": "The storm note in the app", "done": "In build 587: a notice on Now from promptugal.news, and Wednesday's sessions left out. The newsroom can change it with no app release.", "where": "the PrompTugal app, Now", "status": "with Apple"},
+    {"at": "10 Nov", "said": "Redesign the PrompTugal app", "done": "Six rounds, five builds with Apple. Light mode by default, articles in the app, interviews with transcripts, one tap to pick a talk.", "where": "people/indi/helpers/newsapp/DONE.md", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. Overnight",
+      "items": [
+        "Web Summit confirmed: 'Day 2 (Wednesday, November 11th) will not take place'; Thursday 12 November as planned (websummit.com, read 22:25 UTC).",
+        "PrompTugal app build 587: light mode, articles drawn in the app, interviews with Article and Transcript pills, the storm notice. Submitted to Apple and in the external group at 00:20 UTC.",
+        "Taps saved: open a talk from Now, 1 (was not possible); pick a talk and add to calendar, 1 (was 3); open the venue map, 1 (was 3 and a scroll).",
+        "Your new video editor helper did its first interview's colour and sound pass.",
+        "Your accounts inbox: one report filed."
+      ]
+    },
+    {
+      "title": "2. Stuck",
+      "items": [
+        "The Team app helper stopped at 22:27 UTC waiting for your yes to push. Its changes exist only in its chat's copy of the code.",
+        "The newsroom helper's site redesign brief still waits for PrompTugal's team (or Dinis) to say yes."
+      ]
+    }
+  ],
+  "next": [
+    "Today: no summit; Storm Charles, red wind warning from midday to 21:00, red rain warning 12:00 to 18:00. Follow IPMA and civil protection.",
+    "Thursday 12: our stand day.",
+    "Today 12:20: my next wake."
+  ],
+  "sources": [
+    "people/indi/helpers/newsapp/DONE.md (1bd179be); the teamapp chat's status at 07:25 UTC",
+    "websummit.com/blog/web-summit/important-event-update-2026/ (read by conductor-newsapp@, 22:25 UTC)"
+  ]
+}

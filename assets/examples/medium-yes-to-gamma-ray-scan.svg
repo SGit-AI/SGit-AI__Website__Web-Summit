@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1990 752" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1990" height="752" fill="#faf9f5"/>
+<text x="30" y="44" font-size="26" font-weight="700" fill="#141413">Medium: a one-word yes to a published GAMMA-Ray scan of 13 agents</text>
+<text x="30" y="74" font-size="15" fill="#5e5d59">Jose asks and says yes; his conductor, a scan sub-agent and a reviewer do the rest; CI publishes it about 47 minutes after the question</text>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#5e5d59"/></marker></defs>
+<rect x="20" y="112" width="1950" height="84" rx="10" fill="#8a3b1f" fill-opacity="0.10"/>
+<text x="34" y="150" font-size="14" font-weight="700" fill="#8a3b1f">Jose</text>
+<text x="34" y="170" font-size="12" fill="#5e5d59">a person</text>
+<rect x="20" y="204" width="1950" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="242" font-size="12" font-weight="700" fill="#1f5f8b">conductor@web-summit.jose</text>
+<text x="34" y="262" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="296" width="1950" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="334" font-size="12" font-weight="700" fill="#1f5f8b">a scan sub-agent of conductor@web-summit.jose</text>
+<text x="34" y="354" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="388" width="1950" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="426" font-size="14" font-weight="700" fill="#1f5f8b">reviewer@web-summit.jose</text>
+<text x="34" y="446" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="480" width="1950" height="84" rx="10" fill="#5e5d59" fill-opacity="0.10"/>
+<text x="34" y="518" font-size="14" font-weight="700" fill="#5e5d59">GitHub Actions</text>
+<text x="34" y="538" font-size="12" fill="#5e5d59">CI</text>
+<rect x="20" y="572" width="1950" height="84" rx="10" fill="#c96442" fill-opacity="0.10"/>
+<text x="34" y="610" font-size="14" font-weight="700" fill="#c96442">the output</text>
+<path d="M356,154.0 C367.0,154.0 367.0,246.0 378,246.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M516,246.0 C527.0,246.0 527.0,154.0 538,154.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M676,154.0 C687.0,154.0 687.0,246.0 698,246.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M836,246.0 C847.0,246.0 847.0,338.0 858,338.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M996,338.0 C1007.0,338.0 1007.0,430.0 1018,430.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1156,430.0 C1167.0,430.0 1167.0,246.0 1178,246.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1316,246.0 C1327.0,246.0 1327.0,522.0 1338,522.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1476,522.0 C1487.0,522.0 1487.0,246.0 1498,246.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1636,246.0 C1647.0,246.0 1647.0,246.0 1658,246.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)" stroke-dasharray="4 4"/>
+<path d="M1476,522.0 H1808 V614.0 H1818" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="218" y="120" width="138" height="68" rx="8" fill="#ffffff" stroke="#8a3b1f" stroke-width="1.6"/>
+<text x="228" y="142" font-size="12.5" fill="#141413">asks: what is</text>
+<text x="228" y="159" font-size="12.5" fill="#141413">GAMMA-Ray?</text>
+<text x="228" y="176" font-size="12.5" fill="#141413">(in chat)</text>
+<text x="287.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">18:05 (about)</text>
+<rect x="378" y="212" width="138" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="388" y="234" font-size="12.5" fill="#141413">recommends a</text>
+<text x="388" y="251" font-size="12.5" fill="#141413">pilot scan, with</text>
+<text x="388" y="268" font-size="12.5" fill="#141413">cost and caveats</text>
+<text x="447.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">18:10 (about)</text>
+<rect x="538" y="120" width="138" height="68" rx="8" fill="#ffffff" stroke="#8a3b1f" stroke-width="1.6"/>
+<text x="548" y="142" font-size="12.5" fill="#141413">yes: &quot;Do it&quot;</text>
+<text x="548" y="159" font-size="12.5" fill="#141413">(in chat)</text>
+<text x="607.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">18:20 (about)</text>
+<rect x="698" y="212" width="138" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="708" y="234" font-size="12.5" fill="#141413">fetches the</text>
+<text x="708" y="251" font-size="12.5" fill="#141413">standard; starts</text>
+<text x="708" y="268" font-size="12.5" fill="#141413">a scan sub-agent</text>
+<text x="767.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">18:25 (about)</text>
+<rect x="858" y="304" width="138" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="868" y="326" font-size="12.5" fill="#141413">13 scans, levels</text>
+<text x="868" y="343" font-size="12.5" fill="#141413">from the standard&#x27;s</text>
+<text x="868" y="360" font-size="12.5" fill="#141413">own scorer</text>
+<text x="927.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">18:40 (about)</text>
+<rect x="1018" y="396" width="138" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="1028" y="418" font-size="12.5" fill="#141413">re-scores all 13:</text>
+<text x="1028" y="435" font-size="12.5" fill="#141413">pass, with</text>
+<text x="1028" y="452" font-size="12.5" fill="#141413">two fixes</text>
+<text x="1087.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">18:50 (about)</text>
+<rect x="1178" y="212" width="138" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="1188" y="234" font-size="12.5" fill="#141413">fixes applied;</text>
+<text x="1188" y="251" font-size="12.5" fill="#141413">committed with</text>
+<text x="1188" y="268" font-size="12.5" fill="#141413">the review</text>
+<text x="1247.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">18:51</text>
+<rect x="1338" y="488" width="138" height="68" rx="8" fill="#ffffff" stroke="#5e5d59" stroke-width="1.6"/>
+<text x="1348" y="510" font-size="12.5" fill="#141413">v0.2.1733:</text>
+<text x="1348" y="527" font-size="12.5" fill="#141413">the scan live</text>
+<text x="1407.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">18:52</text>
+<rect x="1498" y="212" width="138" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="1508" y="234" font-size="12.5" fill="#141413">reports to Jose</text>
+<text x="1508" y="251" font-size="12.5" fill="#141413">(in chat)</text>
+<text x="1567.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">18:55 (about)</text>
+<rect x="1658" y="212" width="138" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="1668" y="234" font-size="12.5" fill="#141413">the example,</text>
+<text x="1668" y="251" font-size="12.5" fill="#141413">offered to the</text>
+<text x="1668" y="268" font-size="12.5" fill="#141413">work desk</text>
+<text x="1727.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">01:41</text>
+<rect x="1818" y="580" width="138" height="68" rx="8" fill="#ffffff" stroke="#c96442" stroke-width="1.6"/>
+<text x="1828" y="602" font-size="12.5" fill="#141413">Jose&#x27;s 13 agents,</text>
+<text x="1828" y="619" font-size="12.5" fill="#141413">scanned and</text>
+<text x="1828" y="636" font-size="12.5" fill="#141413">published</text>
+<text x="30" y="720" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from reporter@web-summit.dinis&#x27;s trace medium-yes-to-gamma-ray-scan (team/reporter/traces/).</text>
+<text x="30" y="738" font-size="12" fill="#5e5d59">Dashed: a side step, or a step with no public evidence. Times UTC, 10 to 11 November 2026. Columns are steps, not to scale.</text>
+</svg>
