@@ -1,8 +1,8 @@
 # riskmandate-android-demo: state
 
-For the digest: lead started; plan written, the spec worker starting (read only); waiting on Angelo for writing to the Android app's repository; cost so far $0 in workers (the lead's own session not yet measured).
+For the digest: Angelo said yes to writing and publishing in the Android repo; spec and build workers running, check and publish next; cost so far $0 in workers (the lead's own session not yet measured).
 
-Lead: riskmandate-android-demo.pm@PrompTugal.angelo. Branch: project/riskmandate-android-demo. Wake routine: not yet in BRIEF.md (conductor.b@ adds it).
+Lead: riskmandate-android-demo.pm@PrompTugal.angelo. Branch: project/riskmandate-android-demo. Wake routine: trig_01GnGftTuQdk1LM63LnvaDtn (BRIEF.md on dev).
 
 ## Goal (BRIEF.md)
 One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (https://web-summit.sgit.ai/people/silvio/app/index.html#xray) full screen, kept awake, recovering from lost connection, with a staff exit; screenshots and build steps in build.md; Angelo looks before it reaches a stand device.
@@ -24,13 +24,15 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 
 ## Steps
 1. **Spec** (large, read only; may start now): spec/brief.md. Ends "ready for Angelo's read".
-2. **Design** (large, after the spec): the menu entry, the staff exit and the offline screen; mocks at phone and tablet size.
-3. **Build** (large, after Angelo's yes to writing in the Android repository): on the branch he approves; build.md with the build, screenshots, how to undo.
-4. **Check** (large, another slot): reads the build cold; then Angelo looks before any device.
+2. **Design**: folded into the build to go fast (decided by default, Angelo can reverse): it follows the app's existing site feature; the check reviews the screenshots.
+3. **Build** (large, started at Angelo's go, in parallel with the spec): build/brief.md: on the branch he approves; build.md with the build, screenshots, how to undo.
+4. **Check and publish** (large, another slot, after the build): check/brief.md; on PASS pushes onto the Android repo's dev.
 
 ## Waiting on Angelo (tier 3)
-1. Writing to PrompTugal/PrompTugal__App__Android: a branch of its own there (recommended) or a pull request, For: conductor.android@promptugal.ai. The build waits; the spec and design do not.
-2. Later: installing a build on stand devices; signing (debug-signed vs the app's release key).
+1. Installing a build on stand devices by hand, and anything on a store; signing keys. (Pushing to the Android repo's dev makes its CI build and send the build to its Firebase testers: that is inside Angelo's "publish".)
+
+## Decided by Angelo
+- 11 Nov about 21:30 UTC, to point 1 (writing to the Android repository): "You're authorized to write there and publish the changes as soon as they're ready. Use as many workers as you need to go fast." So: build on branch angelo/riskmandate-xray-demo there; a check worker reviews it cold and, on PASS, pushes it onto that repository's dev (its own rule: "Everybody pushes to dev"), which builds and distributes 0.1.<run> through its CI.
 
 ## Decided by default (Angelo can reverse)
 - 11 Nov: spec first, read only, on slot alpha (large); started 21:15 UTC (runs.md).
