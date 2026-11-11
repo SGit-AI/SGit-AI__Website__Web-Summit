@@ -23,7 +23,8 @@
     "22:33 wake: no change: no new blog post, decision text unchanged (sha256 e055635213ca), Bluesky last 17:36Z, Night Summit still listed Wednesday, no Thursday notice from Carris or other operators; JN live to 22:01 nothing new on the summit",
     "23:33 wake: no change to Day 3 (blog, post text, Bluesky, Night Summit listing unchanged); CP suppresses 4 trains over the 25 de Abril bridge 12:00-15:00 Wed (Lusa 23:10); Metro's night shelter now read on its own site (fact)",
     "23:55: effect_from_utc/effect_to_utc/effect_note on every edge (from the sources' words only); IPMA red rain now 09:00-18:00 (ipma-red-rain-0900, fact); Rede Expressos corrected to 10:00-23:59; ferries 05:00 start; tunnels by the Câmara from midnight",
-    "00:33 wake: no change to Day 3 (blog, post text, Bluesky, Night Summit listing unchanged); IPMA Lisbon unchanged (red rain 09-18, red wind 12-21); the alert in force since 00:00"
+    "00:33 wake: no change to Day 3 (blog, post text, Bluesky, Night Summit listing unchanged); IPMA Lisbon unchanged (red rain 09-18, red wind 12-21); the alert in force since 00:00",
+    "01:00: gov-alert now has announced_utc 09:17 (minister at ANEPC's press conference; DN 09:14, Observador 09:17, Negócios 09:35) and published_utc 12:10 (portugal.gov.pt); ipma-red-wind moved to 08:05 (DN); the README's \"alert before the red warning\" corrected (it was after, by about 1 h 12 min); new edge mai-websummit-indoor (09:30)"
   ],
   "next": [
     "Each wake: blog list, Bluesky, schedule page; PITCH and Night Summit",
@@ -38,7 +39,7 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts."
   ],
-  "updated": "2026-11-11T00:33Z",
+  "updated": "2026-11-11T01:00Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {

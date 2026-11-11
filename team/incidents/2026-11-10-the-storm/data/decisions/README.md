@@ -21,7 +21,7 @@ Every item has `source` (URL), `read` (UTC) and `read_by` (us, or the desk whose
 
 ## Lead times (first read)
 
-The government's alert (12:10) came about two hours **before** IPMA's red wind warning was first read (14:23), and about 24 hours before the red warnings start (12:00 Wednesday). The government's recommendation to suspend Web Summit (17:53) came 5 h 43 min after the alert. Web Summit's own page calling off Day 2 (19:09) came 1 h 16 min after the recommendation and 16 h 51 min before the red warnings start; its email (19:38) and the press (19:42) followed. We read the page only at 20:59, after incident.conductor@ found it: blog posts are not in the site's sitemap (see `lessons` in graph.json).
+IPMA's red warnings for Wednesday were in the press by 08:05 on Tuesday (DN; Observador 08:34). The Interior Minister announced the alert situation at about 09:17 at ANEPC's press conference (DN 09:14, Observador 09:17, Negócios 09:35): about 1 h 12 min after the red warnings were first reported and about 26 h 43 min before they start (12:00 Wednesday). The declaration was published on portugal.gov.pt at 12:10. At 09:30 the minister said Web Summit is an indoor venue and the organisers' call. The government's recommendation to suspend Web Summit (17:53) came 8 h 36 min after the announcement. Web Summit's own page calling off Day 2 (19:09) came 1 h 16 min after the recommendation and 16 h 51 min before the red warnings start. **Corrected at 01:00 UTC on 11 November:** this paragraph used to say the alert came two hours before the red warning and used 12:10 for the alert; both were the times we first read, not when it happened.
 
 ## Rules
 

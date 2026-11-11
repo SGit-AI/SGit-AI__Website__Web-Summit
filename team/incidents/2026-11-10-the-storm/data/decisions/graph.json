@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T00:33Z",
+ "updated": "2026-11-11T01:00Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -333,7 +333,7 @@
     "venue"
    ],
    "decision": "Alert situation for all of mainland Portugal, 11 Nov 00:00 to 23:59: (a) schools and non-essential public services close; (b) outdoor events suspended, whatever their nature; (c) no access to high-risk parks; (d) temporary structures secured; (e) no access to shoreline and flood areas; activates coordination centres and civil-protection commissions",
-   "at": "2026-11-10T12:10Z",
+   "at": "2026-11-10T09:17Z",
    "status": "happened",
    "follows": [
     "ipma-communique-1",
@@ -341,12 +341,43 @@
    ],
    "label": "fact",
    "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
-   "read": "2026-11-10T18:59Z",
+   "read": "2026-11-11T01:00Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "Declared before the red warnings were issued (red wind first read 14:23Z). Page dated 12:10 (Lisbon = UTC in November). 00:33Z: in force since 00:00 (Lusa via Jornal de Negócios live, 00:09).",
+   "note": "Announced at about 09:17 (minister, ANEPC press conference); the declaration published at 12:10 on portugal.gov.pt. Before 01:00Z on 11 Nov this edge carried only 12:10 (the page time), which put the announcement 3 h late (question raised by incident.conductor@ from incident.media@'s live entries). In force from 00:00 (Lusa, 00:09).",
    "effect_from_utc": "2026-11-11T00:00Z",
    "effect_to_utc": "2026-11-11T23:59Z",
-   "effect_note": "\"entre as 00h00 e as 23h59 de 11 de novembro\" (the declaration)"
+   "effect_note": "\"entre as 00h00 e as 23h59 de 11 de novembro\" (the declaration)",
+   "announced_utc": {
+    "at": "2026-11-10T09:17Z",
+    "label": "evidence",
+    "by": "the Minister of Internal Administration, Luís Neves, at ANEPC's press conference (announced for 08:30)",
+    "words": "\"o Governo decidiu declarar situação de alerta\"; \"Escolas e serviços públicos não essenciais serão encerrados\"",
+    "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+    "source_time": "Observador live entry, JSON-LD liveBlogUpdate.datePublished 2026-11-10T09:17:23Z",
+    "corroborated_by": [
+     {
+      "url": "https://www.dn.pt/sociedade/governo-decreta-situao-de-alerta-montenegro-avisa-que-devemos-passar-horas-difceis-amanh",
+      "at": "2026-11-10T09:14:29Z",
+      "title": "Escolas e serviços públicos não essenciais serão encerrados amanhã. \"Vai ser grave\", avisa ministro"
+     },
+     {
+      "url": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+      "at": "2026-11-10T09:35Z",
+      "title": "Escolas e serviços públicos encerrados amanhã devido ao mau tempo, anuncia MAI"
+     }
+    ],
+    "via": "https://storm-charles.promptugal.news/research/media/live-entries.json",
+    "read": "2026-11-11T01:00Z",
+    "note": "The minute is the earliest press entry (DN 09:14:29); the conference began about 08:30 (Observador 08:13 trailer) and IPMA was speaking by 09:08. The exact minute he spoke is not established."
+   },
+   "published_utc": {
+    "at": "2026-11-10T12:10Z",
+    "label": "fact",
+    "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+    "source_time": "the page prints \"2026-11-10 às 12h10\"; no other time on it",
+    "read": "2026-11-11T01:00Z",
+    "note": "The formal declaration with its measures (a) to (e). Observador carried \"Governo declara situação de alerta\" with the measures at 10:57:31, before the page time; whether the text was out earlier elsewhere (e.g. a press release) is not established."
+   }
   },
   {
    "id": "schools-close",
@@ -374,19 +405,23 @@
     "websummit"
    ],
    "decision": "Red wind warning, Lisbon district, 11 Nov 12:00 to 21:00 (gusts to 120, up to 140 km/h)",
-   "at": "2026-11-10T14:23Z",
+   "at": "2026-11-10T08:05Z",
    "status": "happened",
    "follows": [
     "ipma-communique-1"
    ],
    "label": "fact",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read": "2026-11-10T18:59Z",
+   "read": "2026-11-11T01:00Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "\"at\" is the first time the newsroom read it, not IPMA's issue time (the JSON carries no issue time).",
+   "note": "\"at\" moved from 14:23 (the newsroom's first read, not IPMA's issue) to the earliest press entry: DN live, 08:05:24 (JSON-LD), \"Distritos de Setúbal, Santarém, Lisboa, Leiria e Portalegre sob aviso vermelho para vento forte e chuva\"; Observador 08:34:33, \"IPMA coloca oito distritos sob aviso vermelho na quarta-feira [...] O aviso começa às 12h00\". IPMA's own issue time is still not established (the warnings JSON carries none).",
    "effect_from_utc": "2026-11-11T12:00Z",
    "effect_to_utc": "2026-11-11T21:00Z",
-   "effect_note": "IPMA warnings JSON startTime/endTime"
+   "effect_note": "IPMA warnings JSON startTime/endTime",
+   "corroborated_by": [
+    "https://www.dn.pt/sociedade/governo-decreta-situao-de-alerta-montenegro-avisa-que-devemos-passar-horas-difceis-amanh",
+    "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/"
+   ]
   },
   {
    "id": "ipma-red-rain",
@@ -1027,6 +1062,27 @@
    "effect_to_utc": "2026-11-11T18:00Z",
    "effect_note": "IPMA warnings JSON startTime/endTime",
    "note": "\"at\" 21:23 is the CAP message time reported by incident.conductor@ (read at source 23:53Z); the warnings JSON read by us at 23:54Z shows red rain 09:00-18:00 and the yellow starting 21:24."
+  },
+  {
+   "id": "mai-websummit-indoor",
+   "by": "mai",
+   "to": [
+    "websummit"
+   ],
+   "decision": "The Interior Minister: \"a Web Summit é um local fechado\"; if the organisers decide to keep the event, they may",
+   "at": "2026-11-10T09:30Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:00Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "note": "Observador live entry 09:30:25 (JSON-LD), questioned by journalists at the press conference. 8 h 23 min later the government recommended suspending Wednesday (17:53)."
   }
  ],
  "lessons": [
