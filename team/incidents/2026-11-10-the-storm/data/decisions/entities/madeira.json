@@ -1,0 +1,102 @@
+{
+ "entity": "madeira",
+ "about": "Every decision and official count we hold about Madeira (generated from graph.json by incident.researcher@web-summit.dinis).",
+ "updated": "2026-11-11T03:56Z",
+ "decisions": [
+  {
+   "edge": "ipma-madeira-red",
+   "decision": "Red warnings for Madeira's south coast and mountains: rain from 21:00 Tuesday to 06:00 Wednesday; wind gusts to 140 km/h from 00:00",
+   "decided_by": "IPMA (Instituto Português do Mar e da Atmosfera)",
+   "published_utc": "2026-11-10T07:24Z",
+   "effect_from_utc": "2026-11-10T21:00Z",
+   "effect_to_utc": "2026-11-11T06:00Z",
+   "address": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-11T01:35Z",
+   "label": "evidence",
+   "state": null,
+   "note": "Lusa via Jornal de Negócios live 00:09 (hours); DNOTICIAS listing headline 10 Nov 07:24, \"IPMA coloca costa Sul e zonas montanhosas da Madeira sob aviso vermelho\". IPMA's send time not read by us (the meteorologist's CAP file covers Lisbon)."
+  },
+  {
+   "edge": "madeira-schools",
+   "decision": "Madeira schools closed on Wednesday morning, reopening from 13:00",
+   "decided_by": "Serviço Regional de Proteção Civil (Madeira)",
+   "published_utc": "2026-11-10T11:26Z",
+   "effect_from_utc": null,
+   "effect_to_utc": "2026-11-11T13:00Z",
+   "address": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:35Z",
+   "label": "evidence",
+   "state": "closed",
+   "note": "Announced at a regional press conference by the president of the regional civil protection service (Observador 12:11:17, JSON-LD); DNOTICIAS headline 11:26 \"Escolas da Madeira encerradas na manhã de quarta-feira até às 13 horas\" (a search summary attributes it to the regional government). Most critical hours given as 21:00 to 06:00 (IPMA Madeira at the same conference)."
+  },
+  {
+   "edge": "madeira-airport-conditioned",
+   "decision": "ANA: operations at Madeira airport conditioned on 11 Nov; cancellations expected",
+   "decided_by": "Madeira airport (ANA) and airlines",
+   "published_utc": "2026-11-10T18:04Z",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "address": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-11T01:35Z",
+   "label": "evidence",
+   "state": "limited",
+   "note": "Same ANA statement as ana-conditioned (Lisbon, Faro, Madeira)."
+  },
+  {
+   "edge": "apram-cruises",
+   "decision": "Three cruise calls at Funchal for Wednesday cancelled (Iona, Le Dumont d'Urville, Vasco da Gama)",
+   "decided_by": "APRAM (Administração dos Portos da Madeira)",
+   "published_utc": "2026-11-10T12:33Z",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "address": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:35Z",
+   "label": "evidence",
+   "state": "suspended",
+   "note": "APRAM via Observador live 12:33:37 (JSON-LD). The ships cancelled; APRAM reported it."
+  },
+  {
+   "edge": "srpc-madeira-measures",
+   "decision": "\"Situação meteorológica adversa — Depressão Charles: medidas preventivas\"; the page lists the warnings in force by area (e.g. north coast: rain 21:00 Tue to 06:00 Wed, then 06:00 to 09:00; wind 21:00 Tue to 12:00 Wed; sea 09:00 to 21:00 Wed; south coast rain 21:00 to 06:00)",
+   "decided_by": "Serviço Regional de Proteção Civil (Madeira)",
+   "published_utc": "2026-11-10T15:27Z",
+   "effect_from_utc": "2026-11-10T21:00Z",
+   "effect_to_utc": "2026-11-11T21:00Z",
+   "address": "https://www.procivmadeira.pt/pt/10-noticias/2158-situacao-meteorologica-adversa-depressao-charles-medidas-preventivas.html",
+   "read": "2026-11-11T02:42Z",
+   "label": "fact",
+   "state": "limited",
+   "note": "SRPC's own page, dateCreated 2026-11-10T15:27:01Z (Madeira = UTC in November). No official count of occurrences on it; \"14 occurrences in the first hour of red\" is DNOTICIAS (press, 22:00)."
+  },
+  {
+   "edge": "srpc-madeira-count-0200",
+   "decision": "Occurrence count, Madeira: 71 since 20:00 Tuesday, as at 02:00 Wednesday (22 floodings, 13 mass movements/landslides, 7 fallen trees; Machico 20, Santa Cruz 18, Câmara de Lobos 10, Funchal 10, Ponta do Sol 4, Calheta 3, Porto Santo 1, Ribeira Brava 1, Santana 1, 3 unassigned; 193 responder deployments, 72 vehicle mobilisations)",
+   "decided_by": "Serviço Regional de Proteção Civil (Madeira)",
+   "published_utc": "2026-11-11T02:00Z",
+   "effect_from_utc": "2026-11-10T20:00Z",
+   "effect_to_utc": "2026-11-11T02:00Z",
+   "address": "https://sapo.pt/artigo/depressao-charles-soma-71-ocorrencias-ate-as-2h00-na-madeira-6af3d1068caa48e7be3971db",
+   "read": "2026-11-11T03:56Z",
+   "label": "evidence",
+   "state": null,
+   "note": "DN Madeira (by Rúben Santos) via SAPO, published 02:10:06Z, modified 02:29:08Z: \"segundo a mais recente actualização da plataforma de informação à comunicação social da Protecção Civil Regional, consultada pelas 2h00\". The count is SRPC's, but read through its press-information platform, which is not public. SRPC's public site (procivmadeira.pt news list, read 03:51Z) carries no count: its latest items are the measures page (2158, 10 Nov 15:27) and Aviso 17/2026 (2157, created 6 Nov 11:31). Earlier counts in the press: 14 (DNOTICIAS 22:00), 26 to 22:30, 38, 42 (Funchal Notícias). \"Fallen trees 7\" per the article; the Wikipedia lead matches."
+  },
+  {
+   "edge": "madeira-gov-visit",
+   "decision": "The regional president, Miguel Albuquerque, at SRPC at about 23:00 Tuesday; appeals to follow civil protection's advice",
+   "decided_by": "Governo Regional da Madeira",
+   "published_utc": "2026-11-10T23:00Z",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "address": "https://funchalnoticias.net/2026/11/11/miguel-albuquerque-acompanha-resposta-a-depressao-charles-e-apela-a-prevencao/",
+   "read": "2026-11-11T03:56Z",
+   "label": "evidence",
+   "state": null,
+   "note": "Funchal Notícias, published 00:52:44Z, citing his Facebook post (not opened)."
+  }
+ ],
+ "open": [
+  "SRPC publishes its counts to a press platform, not on procivmadeira.pt: no count read at the body (03:51Z).",
+  "Porto Santo's municipal measures (civil protection centre, coastal accesses, harbour): no notice found on cm-portosanto.pt or apram.pt (03:51Z)."
+ ]
+}

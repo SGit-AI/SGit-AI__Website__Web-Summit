@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T03:33Z",
+ "updated": "2026-11-11T03:56Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -1587,6 +1587,50 @@
    "state_note": "preventive measures",
    "region": "Madeira",
    "note": "SRPC's own page, dateCreated 2026-11-10T15:27:01Z (Madeira = UTC in November). No official count of occurrences on it; \"14 occurrences in the first hour of red\" is DNOTICIAS (press, 22:00)."
+  },
+  {
+   "id": "srpc-madeira-count-0200",
+   "by": "madeira-prociv",
+   "to": [],
+   "decision": "Occurrence count, Madeira: 71 since 20:00 Tuesday, as at 02:00 Wednesday (22 floodings, 13 mass movements/landslides, 7 fallen trees; Machico 20, Santa Cruz 18, Câmara de Lobos 10, Funchal 10, Ponta do Sol 4, Calheta 3, Porto Santo 1, Ribeira Brava 1, Santana 1, 3 unassigned; 193 responder deployments, 72 vehicle mobilisations)",
+   "at": "2026-11-11T02:00Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "evidence",
+   "source": "https://sapo.pt/artigo/depressao-charles-soma-71-ocorrencias-ate-as-2h00-na-madeira-6af3d1068caa48e7be3971db",
+   "read": "2026-11-11T03:56Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-10T20:00Z",
+   "effect_to_utc": "2026-11-11T02:00Z",
+   "effect_note": "the count's window as stated: \"desde as 20 horas de terça-feira ... consultada pelas 2h00\"",
+   "state": null,
+   "state_note": "a count, not a service decision",
+   "region": "Madeira",
+   "note": "DN Madeira (by Rúben Santos) via SAPO, published 02:10:06Z, modified 02:29:08Z: \"segundo a mais recente actualização da plataforma de informação à comunicação social da Protecção Civil Regional, consultada pelas 2h00\". The count is SRPC's, but read through its press-information platform, which is not public. SRPC's public site (procivmadeira.pt news list, read 03:51Z) carries no count: its latest items are the measures page (2158, 10 Nov 15:27) and Aviso 17/2026 (2157, created 6 Nov 11:31). Earlier counts in the press: 14 (DNOTICIAS 22:00), 26 to 22:30, 38, 42 (Funchal Notícias). \"Fallen trees 7\" per the article; the Wikipedia lead matches."
+  },
+  {
+   "id": "madeira-gov-visit",
+   "by": "madeira-gov",
+   "to": [],
+   "decision": "The regional president, Miguel Albuquerque, at SRPC at about 23:00 Tuesday; appeals to follow civil protection's advice",
+   "at": "2026-11-10T23:00Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "evidence",
+   "source": "https://funchalnoticias.net/2026/11/11/miguel-albuquerque-acompanha-resposta-a-depressao-charles-e-apela-a-prevencao/",
+   "read": "2026-11-11T03:56Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "a statement, not a service decision",
+   "region": "Madeira",
+   "note": "Funchal Notícias, published 00:52:44Z, citing his Facebook post (not opened)."
   }
  ],
  "lessons": [
@@ -1627,6 +1671,12 @@
    "address_seen": "https://pt.usembassy.gov/weather-alert-storms-bruna-and-charles-and-start-of-the-rainy-season-in-portugal/",
    "status": "403 to our read at 02:27Z: not added",
    "read": "2026-11-11T02:30Z"
+  },
+  {
+   "from": "incident.wikipedia@ / SAPO headline via incident.conductor@ (03:51Z)",
+   "claim": "Porto Santo: power failures; municipal civil protection centre activated, coastal accesses closed, harbour operations suspended (the mayor)",
+   "status": "not found at source: cm-portosanto.pt home (read 03:51Z) and apram.pt (03:51Z) carry no notice; in the 02:00 count Porto Santo has one occurrence. Not added.",
+   "read": "2026-11-11T03:56Z"
   }
  ],
  "state_values": [
