@@ -1,14 +1,14 @@
 {
- "about": "IPMA's warnings for the Lisbon district as CAP messages (Common Alerting Protocol), read through MeteoAlarm's public feed (https://www.meteoalarm.org). A dated record, not a live feed: read 2026-11-11T19:23:58Z. MeteoAlarm: \"Time delays between this website and the www.meteoalarm.org website are possible. For the most up-to-date awareness information as published by the participating National Meteorological and Hydrological Services, please refer to www.meteoalarm.org.\" Unlike IPMA's open data, each message carries `sent_utc`, the time IPMA issued it, and `replaces`, the message it updates (with that one's sent time). Every message once seen is kept; one no longer in the feed is marked `left_feed_utc` (the time read). Messages that left the feed before this desk's first read (10 Nov 23:51) were never seen. Facts.",
+ "about": "IPMA's warnings for the Lisbon district as CAP messages (Common Alerting Protocol), read through MeteoAlarm's public feed (https://www.meteoalarm.org). A dated record, not a live feed: read 2026-11-11T19:27:46Z. MeteoAlarm: \"Time delays between this website and the www.meteoalarm.org website are possible. For the most up-to-date awareness information as published by the participating National Meteorological and Hydrological Services, please refer to www.meteoalarm.org.\" Unlike IPMA's open data, each message carries `sent_utc`, the time IPMA issued it, and `replaces`, the message it updates (with that one's sent time). Every message once seen is kept; one no longer in the feed is marked `left_feed_utc` (the time read). Messages that left the feed before this desk's first read (10 Nov 23:51) were never seen. Facts.",
  "terms": {
   "source": "https://www.meteoalarm.org",
   "feed": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
   "disclaimer": "Time delays between this website and the www.meteoalarm.org website are possible. For the most up-to-date awareness information as published by the participating National Meteorological and Hydrological Services, please refer to www.meteoalarm.org.",
-  "record": "a dated record, not a live feed (read 2026-11-11T19:23:58Z)",
+  "record": "a dated record, not a live feed (read 2026-11-11T19:27:46Z)",
   "publisher_of_the_warnings": "IPMA (Instituto Português do Mar e da Atmosfera), via MeteoAlarm"
  },
  "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
- "read_utc": "2026-11-11T19:23:58Z",
+ "read_utc": "2026-11-11T19:27:46Z",
  "reads_utc": [
   "2026-11-10T23:51:47Z",
   "2026-11-10T23:53:38Z",
@@ -298,7 +298,10 @@
   "2026-11-11T19:14:15Z",
   "2026-11-11T19:19:17Z",
   "2026-11-11T19:23:26Z",
-  "2026-11-11T19:23:58Z"
+  "2026-11-11T19:23:58Z",
+  "2026-11-11T19:24:38Z",
+  "2026-11-11T19:27:32Z",
+  "2026-11-11T19:27:46Z"
  ],
  "lisbon_messages": [
   {
@@ -338,7 +341,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "Periods of rain or showers, sometimes heavy and accompanied by thunderstorms.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -354,7 +357,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "Periods of rain, sometimes heavy and accompanied by thunderstorms.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -377,7 +380,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "Wind from the southern quadrant with gusts of up to 75 km/h.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -393,7 +396,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "Favorable conditions for the occurrence of localized weather phenomena, such as: thunderstorms; locally heavy precipitation, with accumulations of 10 to 20 mm in 1 hour; wind gusts between 70 and 90 km/h.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -416,7 +419,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "Western waves up to 4 to 5 meters.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -439,7 +442,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "Favorable conditions for the occurrence of localized weather phenomena, such as: thunderstorms; locally heavy precipitation, with accumulations of 10 to 20 mm in 1 hour; wind gusts between 70 and 90 km/h.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -462,7 +465,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "Rain, sometimes heavy and with thunderstorms.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -485,7 +488,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "Rain, sometimes heavy and with thunderstorms.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -501,7 +504,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "Rain, sometimes heavy and with thunderstorms.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -517,7 +520,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "Rain, sometimes heavy and with thunderstorms.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -565,7 +568,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "SW waves 4 to 5 metres.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -588,7 +591,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -611,7 +614,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "Rain, at times heavy, and persistent.",
    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
   },
@@ -652,7 +655,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z",
+   "last_seen_utc": "2026-11-11T19:27:46Z",
    "text_en": "Rain, at times heavy, and persistent.",
    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
   },
@@ -702,7 +705,7 @@
    "read_utc": "2026-11-11T12:47:23Z",
    "text_en": "Gusts up to 90 km/h, possibly reaching 110 km/h in the most exposed places.",
    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 90-110 km/h.', drops 'podendo', 'locais mais expostos')",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261111123313.PO-10-6327",
@@ -725,7 +728,7 @@
    "read_utc": "2026-11-11T12:47:23Z",
    "text_en": "Strong and persistent precipitation.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261111123313.PO-10-6329",
@@ -741,7 +744,7 @@
    "read_utc": "2026-11-11T12:47:23Z",
    "text_en": "Rain, at times heavy.",
    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent precipitation.', drops 'por vezes')",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1945",
@@ -764,7 +767,2868 @@
    "read_utc": "2026-11-11T16:09:31Z",
    "text_en": "Gusts up to 90 km/h, possibly reaching 110 km/h in the most exposed places.",
    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 90-110 km/h.', drops 'podendo', 'locais mais expostos')",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  }
+ ],
+ "feed_batches_about": "Every CAP message in the feed, any level and district, grouped by the time IPMA sent it (from 11 Nov 19:30 UTC; batches that had left the feed by then were not seen). messages are keyed identifier|area. Use this to see every batch; lisbon_messages and other_messages carry the detail.",
+ "feed_batches": [
+  {
+   "sent_utc": "2026-11-06T07:14:43+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261106071443.MD-10-1215",
+     "area": "Madeira - Costa Sul",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-07T09:00:00+00:00",
+     "expires_utc": "2026-11-07T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261105192447.MD-10-1208",
+       "identifier_norm": "2.49.0.0.620.0.PT.261105192447.MD-10-1208",
+       "sent_utc": "2026-11-05T19:24:47+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261106071443.MD-10-1214",
+     "area": "Madeira - Regiões Montanhosas",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-07T09:00:00+00:00",
+     "expires_utc": "2026-11-07T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261105192447.MD-10-1207",
+       "identifier_norm": "2.49.0.0.620.0.PT.261105192447.MD-10-1207",
+       "sent_utc": "2026-11-05T19:24:47+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-06T17:53:14+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261106175314.AZ-10-666",
+     "area": "Açores - Grupo Oriental",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-06T18:00:00+00:00",
+     "expires_utc": "2026-11-07T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261105122746.AZ-10-665",
+       "identifier_norm": "2.49.0.0.620.0.PT.261105122746.AZ-10-665",
+       "sent_utc": "2026-11-05T12:27:46+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-06T18:18:38+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261106181838.PO-10-6143",
+     "area": "Leiria",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-06T15:00:00+00:00",
+     "expires_utc": "2026-11-06T18:19:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261105125809.-PO-10-6140",
+       "identifier_norm": "2.49.0.0.620.0.PT.261105125809.PO-10-6140",
+       "sent_utc": "2026-11-05T12:58:09+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261106181838.PO-10-6144",
+     "area": "Lisboa",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-06T15:00:00+00:00",
+     "expires_utc": "2026-11-06T18:19:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261105125809.-PO-10-6141",
+       "identifier_norm": "2.49.0.0.620.0.PT.261105125809.PO-10-6141",
+       "sent_utc": "2026-11-05T12:58:09+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261106181838.PO-10-6145",
+     "area": "Setúbal",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-06T15:00:00+00:00",
+     "expires_utc": "2026-11-06T18:19:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261105125809.-PO-10-6142",
+       "identifier_norm": "2.49.0.0.620.0.PT.261105125809.PO-10-6142",
+       "sent_utc": "2026-11-05T12:58:09+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-06T20:02:11+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261106200211.AZ-01-478",
+     "area": "Açores - Grupo Central",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-08T06:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261106200211.AZ-07-511",
+     "area": "Açores - Grupo Central",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-08T12:00:00+00:00",
+     "expires_utc": "2026-11-09T00:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261106200211.AZ-01-477",
+     "area": "Açores - Grupo Ocidental",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-08T06:00:00+00:00",
+     "expires_utc": "2026-11-08T21:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261106200211.AZ-01-479",
+     "area": "Açores - Grupo Oriental",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-08T12:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261106200211.AZ-07-512",
+     "area": "Açores - Grupo Oriental",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-08T15:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-07T07:28:30+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107072830.MD-01-651",
+     "area": "Madeira - Costa Norte",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-08T09:00:00+00:00",
+     "expires_utc": "2026-11-08T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261106071443.MD-01-647",
+       "identifier_norm": "2.49.0.0.620.0.PT.261106071443.MD-01-647",
+       "sent_utc": "2026-11-06T07:14:43+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107072830.MD-10-1216",
+     "area": "Madeira - Costa Norte",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-08T12:00:00+00:00",
+     "expires_utc": "2026-11-08T18:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107072830.MD-01-652",
+     "area": "Madeira - Costa Sul",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-08T09:00:00+00:00",
+     "expires_utc": "2026-11-08T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261106071443.MD-01-648",
+       "identifier_norm": "2.49.0.0.620.0.PT.261106071443.MD-01-648",
+       "sent_utc": "2026-11-06T07:14:43+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107072830.MD-10-1218",
+     "area": "Madeira - Costa Sul",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-08T12:00:00+00:00",
+     "expires_utc": "2026-11-08T18:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107072830.MD-01-653",
+     "area": "Madeira - Porto Santo",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-08T09:00:00+00:00",
+     "expires_utc": "2026-11-08T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261106071443.MD-01-649",
+       "identifier_norm": "2.49.0.0.620.0.PT.261106071443.MD-01-649",
+       "sent_utc": "2026-11-06T07:14:43+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107072830.MD-10-1219",
+     "area": "Madeira - Porto Santo",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-08T12:00:00+00:00",
+     "expires_utc": "2026-11-08T18:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107072830.MD-01-654",
+     "area": "Madeira - Regiões Montanhosas",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-08T09:00:00+00:00",
+     "expires_utc": "2026-11-08T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261106071443.MD-01-650",
+       "identifier_norm": "2.49.0.0.620.0.PT.261106071443.MD-01-650",
+       "sent_utc": "2026-11-06T07:14:43+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107072830.MD-10-1217",
+     "area": "Madeira - Regiões Montanhosas",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-08T12:00:00+00:00",
+     "expires_utc": "2026-11-08T18:00:00+00:00",
+     "replaces": []
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-07T07:35:44+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107073544.PO-07-4488",
+     "area": "Faro",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-08T12:00:00+00:00",
+     "expires_utc": "2026-11-08T21:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107073544.PO-10-6148",
+     "area": "Lisboa",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107073544.PO-10-6151",
+     "area": "Portalegre",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107073544.PO-10-6150",
+     "area": "Santarém",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107073544.PO-10-6149",
+     "area": "Setúbal",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107073544.PO-10-6152",
+     "area": "Évora",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-07T07:48:16+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107074816.AZ-10-667",
+     "area": "Açores - Grupo Central",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-07T08:00:00+00:00",
+     "expires_utc": "2026-11-07T22:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107074816.AZ-10-668",
+     "area": "Açores - Grupo Oriental",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-07T09:00:00+00:00",
+     "expires_utc": "2026-11-07T22:00:00+00:00",
+     "replaces": []
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-07T17:08:12+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107170812.PO-10-6154",
+     "area": "Coimbra",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261107170812.PO-10-6155",
+     "area": "Leiria",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-08T01:13:10+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108011310.PO-01-1893",
+     "area": "Beja",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107170812.PO-01-1890",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107170812.PO-01-1890",
+       "sent_utc": "2026-11-07T17:08:12+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108011310.PO-01-1894",
+     "area": "Faro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107170812.PO-01-1891",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107170812.PO-01-1891",
+       "sent_utc": "2026-11-07T17:08:12+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108011310.PO-01-1892",
+     "area": "Leiria",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107170812.PO-01-1887",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107170812.PO-01-1887",
+       "sent_utc": "2026-11-07T17:08:12+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108011310.PO-01-1895",
+     "area": "Lisboa",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107170812.PO-01-1888",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107170812.PO-01-1888",
+       "sent_utc": "2026-11-07T17:08:12+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108011310.PO-01-1896",
+     "area": "Setúbal",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107170812.PO-01-1889",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107170812.PO-01-1889",
+       "sent_utc": "2026-11-07T17:08:12+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-08T12:23:32+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108122332.MD-07-917",
+     "area": "Madeira - Costa Norte",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-10T00:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107072830.MD-07-916",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107072830.MD-07-916",
+       "sent_utc": "2026-11-07T07:28:30+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108122332.MD-07-918",
+     "area": "Madeira - Costa Sul",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-08T12:24:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261106195231.MD-07-915",
+       "identifier_norm": "2.49.0.0.620.0.PT.261106195231.MD-07-915",
+       "sent_utc": "2026-11-06T19:52:31+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108122332.MD-07-919",
+     "area": "Madeira - Porto Santo",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-09T12:00:00+00:00",
+     "expires_utc": "2026-11-10T00:00:00+00:00",
+     "replaces": []
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-08T12:47:42+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-415",
+     "area": "Aveiro",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-07-4504",
+     "area": "Aveiro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-09T18:00:00+00:00",
+     "expires_utc": "2026-11-11T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107170812.PO-07-4492",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107170812.PO-07-4492",
+       "sent_utc": "2026-11-07T17:08:12+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6175",
+     "area": "Aveiro",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-425",
+     "area": "Beja",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-08T15:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-07-4507",
+     "area": "Beja",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-11T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108070515.PO-07-4497",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108070515.PO-07-4497",
+       "sent_utc": "2026-11-08T07:05:15+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6167",
+     "area": "Beja",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-08T15:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107073544.PO-10-6146",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107073544.PO-10-6146",
+       "sent_utc": "2026-11-07T07:35:44+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-01-1898",
+     "area": "Braga",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T21:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-410",
+     "area": "Braga",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-428",
+     "area": "Braga",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T18:00:00+00:00",
+     "expires_utc": "2026-11-10T12:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-07-4502",
+     "area": "Braga",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-09T18:00:00+00:00",
+     "expires_utc": "2026-11-11T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107170812.PO-07-4490",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107170812.PO-07-4490",
+       "sent_utc": "2026-11-07T17:08:12+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6170",
+     "area": "Braga",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-418",
+     "area": "Bragança",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T09:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6176",
+     "area": "Bragança",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T09:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-416",
+     "area": "Coimbra",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-07-4505",
+     "area": "Coimbra",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-09T18:00:00+00:00",
+     "expires_utc": "2026-11-11T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107170812.PO-07-4493",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107170812.PO-07-4493",
+       "sent_utc": "2026-11-07T17:08:12+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-426",
+     "area": "Faro",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-08T15:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-07-4508",
+     "area": "Faro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-11T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108070515.PO-07-4498",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108070515.PO-07-4498",
+       "sent_utc": "2026-11-08T07:05:15+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6168",
+     "area": "Faro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-08T15:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107073544.PO-10-6147",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107073544.PO-10-6147",
+       "sent_utc": "2026-11-07T07:35:44+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-417",
+     "area": "Leiria",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-07-4499",
+     "area": "Leiria",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-09T18:00:00+00:00",
+     "expires_utc": "2026-11-11T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108070515.PO-07-4494",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108070515.PO-07-4494",
+       "sent_utc": "2026-11-08T07:05:15+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-420",
+     "area": "Lisboa",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-07-4500",
+     "area": "Lisboa",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-09T18:00:00+00:00",
+     "expires_utc": "2026-11-11T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108070515.PO-07-4495",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108070515.PO-07-4495",
+       "sent_utc": "2026-11-08T07:05:15+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-423",
+     "area": "Portalegre",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-411",
+     "area": "Porto",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-429",
+     "area": "Porto",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T18:00:00+00:00",
+     "expires_utc": "2026-11-10T12:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-07-4503",
+     "area": "Porto",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-09T18:00:00+00:00",
+     "expires_utc": "2026-11-11T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107170812.PO-07-4491",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107170812.PO-07-4491",
+       "sent_utc": "2026-11-07T17:08:12+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6171",
+     "area": "Porto",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-422",
+     "area": "Santarém",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-421",
+     "area": "Setúbal",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-07-4506",
+     "area": "Setúbal",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-11T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108070515.PO-07-4496",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108070515.PO-07-4496",
+       "sent_utc": "2026-11-08T07:05:15+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-01-1897",
+     "area": "Viana do Castelo",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T21:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-409",
+     "area": "Viana do Castelo",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-427",
+     "area": "Viana do Castelo",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T18:00:00+00:00",
+     "expires_utc": "2026-11-10T12:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-07-4501",
+     "area": "Viana do Castelo",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-09T18:00:00+00:00",
+     "expires_utc": "2026-11-11T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107170812.PO-07-4489",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107170812.PO-07-4489",
+       "sent_utc": "2026-11-07T17:08:12+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6169",
+     "area": "Viana do Castelo",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-412",
+     "area": "Vila Real",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-430",
+     "area": "Vila Real",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T18:00:00+00:00",
+     "expires_utc": "2026-11-10T12:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6172",
+     "area": "Vila Real",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-413",
+     "area": "Viseu",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6173",
+     "area": "Viseu",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-424",
+     "area": "Évora",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-08T18:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-08T19:03:31+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-450",
+     "area": "Aveiro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T12:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-434",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-03-434",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-441",
+     "area": "Castelo Branco",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-08T21:00:00+00:00",
+     "expires_utc": "2026-11-09T09:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-419",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-03-419",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-447",
+     "area": "Castelo Branco",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-433",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-03-433",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6184",
+     "area": "Castelo Branco",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-08T21:00:00+00:00",
+     "expires_utc": "2026-11-09T00:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261107073544.PO-10-6153",
+       "identifier_norm": "2.49.0.0.620.0.PT.261107073544.PO-10-6153",
+       "sent_utc": "2026-11-07T07:35:44+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6185",
+     "area": "Castelo Branco",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6187",
+     "area": "Castelo Branco",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T06:00:00+00:00",
+     "expires_utc": "2026-11-09T09:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-443",
+     "area": "Coimbra",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T15:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-435",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-03-435",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-440",
+     "area": "Guarda",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T09:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-414",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-03-414",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-446",
+     "area": "Guarda",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-432",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-03-432",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6183",
+     "area": "Guarda",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-09T00:00:00+00:00",
+     "expires_utc": "2026-11-09T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6174",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-10-6174",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6186",
+     "area": "Guarda",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T06:00:00+00:00",
+     "expires_utc": "2026-11-09T09:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6192",
+     "area": "Guarda",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108070515.PO-10-6161",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108070515.PO-10-6161",
+       "sent_utc": "2026-11-08T07:05:15+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-444",
+     "area": "Leiria",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T15:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-436",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-03-436",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-448",
+     "area": "Lisboa",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T15:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-438",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-03-438",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-445",
+     "area": "Santarém",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T15:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-437",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-03-437",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-449",
+     "area": "Setúbal",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T15:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-439",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-03-439",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108190331.PO-03-442",
+     "area": "Viseu",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T15:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-03-431",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-03-431",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-08T22:23:09+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6212",
+     "area": "Aveiro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T15:00:00+00:00",
+     "expires_utc": "2026-11-10T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6194",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108190331.PO-10-6194",
+       "sent_utc": "2026-11-08T19:03:31+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6207",
+     "area": "Braga",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T15:00:00+00:00",
+     "expires_utc": "2026-11-10T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6178",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-10-6178",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6211",
+     "area": "Coimbra",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T15:00:00+00:00",
+     "expires_utc": "2026-11-10T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6189",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108190331.PO-10-6189",
+       "sent_utc": "2026-11-08T19:03:31+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6216",
+     "area": "Lisboa",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6195",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108190331.PO-10-6195",
+       "sent_utc": "2026-11-08T19:03:31+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6208",
+     "area": "Porto",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T15:00:00+00:00",
+     "expires_utc": "2026-11-10T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6179",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-10-6179",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6217",
+     "area": "Setúbal",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6196",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108190331.PO-10-6196",
+       "sent_utc": "2026-11-08T19:03:31+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6206",
+     "area": "Viana do Castelo",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T15:00:00+00:00",
+     "expires_utc": "2026-11-10T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6177",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-10-6177",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6209",
+     "area": "Vila Real",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T15:00:00+00:00",
+     "expires_utc": "2026-11-10T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6180",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108124742.PO-10-6180",
+       "sent_utc": "2026-11-08T12:47:42+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6210",
+     "area": "Viseu",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T15:00:00+00:00",
+     "expires_utc": "2026-11-10T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6188",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108190331.PO-10-6188",
+       "sent_utc": "2026-11-08T19:03:31+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-09T13:27:16+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109132716.PO-01-1910",
+     "area": "Aveiro",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6244",
+     "area": "Aveiro",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T09:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6219",
+     "area": "Castelo Branco",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T00:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6193",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108190331.PO-10-6193",
+       "sent_utc": "2026-11-08T19:03:31+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6220",
+     "area": "Castelo Branco",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-10T00:00:00+00:00",
+     "expires_utc": "2026-11-10T09:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6245",
+     "area": "Coimbra",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T09:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6243",
+     "area": "Guarda",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T09:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6222",
+     "area": "Portalegre",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-10T00:00:00+00:00",
+     "expires_utc": "2026-11-10T09:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6218",
+     "area": "Santarém",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T21:00:00+00:00",
+     "expires_utc": "2026-11-10T00:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6215",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108222309.PO-10-6215",
+       "sent_utc": "2026-11-08T22:23:09+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6221",
+     "area": "Santarém",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-10T00:00:00+00:00",
+     "expires_utc": "2026-11-10T09:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109132716.PO-01-1908",
+     "area": "Viseu",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6223",
+     "area": "Évora",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-10T00:00:00+00:00",
+     "expires_utc": "2026-11-10T09:00:00+00:00",
+     "replaces": []
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-09T14:05:35+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109140535.MD-01-663",
+     "area": "Madeira - Costa Sul",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Vento",
+     "onset_utc": "2026-11-10T21:00:00+00:00",
+     "expires_utc": "2026-11-11T12:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108184614.MD-01-660",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108184614.MD-01-660",
+       "sent_utc": "2026-11-08T18:46:14+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109140535.MD-01-664",
+     "area": "Madeira - Porto Santo",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Vento",
+     "onset_utc": "2026-11-10T21:00:00+00:00",
+     "expires_utc": "2026-11-11T12:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108184614.MD-01-661",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108184614.MD-01-661",
+       "sent_utc": "2026-11-08T18:46:14+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-09T21:58:57+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6251",
+     "area": "Bragança",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T21:59:00+00:00",
+     "expires_utc": "2026-11-10T03:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6252",
+     "area": "Faro",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-10T06:00:00+00:00",
+     "expires_utc": "2026-11-10T18:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6246",
+     "area": "Lisboa",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-10T09:00:00+00:00",
+     "expires_utc": "2026-11-10T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6213",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108222309.PO-10-6213",
+       "sent_utc": "2026-11-08T22:23:09+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6248",
+     "area": "Lisboa",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-09T21:59:00+00:00",
+     "expires_utc": "2026-11-10T00:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6250",
+     "area": "Lisboa",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-10T00:00:00+00:00",
+     "expires_utc": "2026-11-10T09:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6247",
+     "area": "Setúbal",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-10T09:00:00+00:00",
+     "expires_utc": "2026-11-10T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108222309.PO-10-6214",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108222309.PO-10-6214",
+       "sent_utc": "2026-11-08T22:23:09+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6249",
+     "area": "Setúbal",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-09T21:59:00+00:00",
+     "expires_utc": "2026-11-10T09:00:00+00:00",
+     "replaces": []
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-10T06:14:54+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110061454.MD-01-669",
+     "area": "Madeira - Costa Norte",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Vento",
+     "onset_utc": "2026-11-10T21:00:00+00:00",
+     "expires_utc": "2026-11-11T12:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261108184614.MD-01-659",
+       "identifier_norm": "2.49.0.0.620.0.PT.261108184614.MD-01-659",
+       "sent_utc": "2026-11-08T18:46:14+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110061454.MD-07-924",
+     "area": "Madeira - Costa Norte",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-11T09:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1232",
+     "area": "Madeira - Costa Sul",
+     "msg_type": "Update",
+     "event_pt": "Aviso Vermelho Precipitação",
+     "onset_utc": "2026-11-10T21:00:00+00:00",
+     "expires_utc": "2026-11-11T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109140535.MD-10-1229",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109140535.MD-10-1229",
+       "sent_utc": "2026-11-09T14:05:35+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1235",
+     "area": "Madeira - Costa Sul",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-11T06:00:00+00:00",
+     "expires_utc": "2026-11-11T09:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110061454.MD-07-925",
+     "area": "Madeira - Porto Santo",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-11T09:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110061454.MD-01-666",
+     "area": "Madeira - Regiões Montanhosas",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Vento",
+     "onset_utc": "2026-11-10T21:00:00+00:00",
+     "expires_utc": "2026-11-11T00:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109140535.MD-01-665",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109140535.MD-01-665",
+       "sent_utc": "2026-11-09T14:05:35+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110061454.MD-01-667",
+     "area": "Madeira - Regiões Montanhosas",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Laranja Vento",
+     "onset_utc": "2026-11-11T06:00:00+00:00",
+     "expires_utc": "2026-11-11T12:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110061454.MD-01-668",
+     "area": "Madeira - Regiões Montanhosas",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Vermelho Vento",
+     "onset_utc": "2026-11-11T00:00:00+00:00",
+     "expires_utc": "2026-11-11T06:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1231",
+     "area": "Madeira - Regiões Montanhosas",
+     "msg_type": "Update",
+     "event_pt": "Aviso Vermelho Precipitação",
+     "onset_utc": "2026-11-10T21:00:00+00:00",
+     "expires_utc": "2026-11-11T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109140535.MD-10-1228",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109140535.MD-10-1228",
+       "sent_utc": "2026-11-09T14:05:35+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1234",
+     "area": "Madeira - Regiões Montanhosas",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-11T06:00:00+00:00",
+     "expires_utc": "2026-11-11T09:00:00+00:00",
+     "replaces": []
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-10T07:18:40+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4520",
+     "area": "Beja",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-11T21:00:00+00:00",
+     "expires_utc": "2026-11-12T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109191252.PO-07-4515",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109191252.PO-07-4515",
+       "sent_utc": "2026-11-09T19:12:52+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4521",
+     "area": "Faro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-11T21:00:00+00:00",
+     "expires_utc": "2026-11-12T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109191252.PO-07-4516",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109191252.PO-07-4516",
+       "sent_utc": "2026-11-09T19:12:52+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4518",
+     "area": "Lisboa",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-11T21:00:00+00:00",
+     "expires_utc": "2026-11-12T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109191252.PO-07-4513",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109191252.PO-07-4513",
+       "sent_utc": "2026-11-09T19:12:52+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4519",
+     "area": "Setúbal",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-11T21:00:00+00:00",
+     "expires_utc": "2026-11-12T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109191252.PO-07-4514",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109191252.PO-07-4514",
+       "sent_utc": "2026-11-09T19:12:52+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-10T12:03:41+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110120341.MD-07-926",
+     "area": "Madeira - Costa Sul",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Agitação Marítima",
+     "onset_utc": "2026-11-11T00:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110061454.MD-07-923",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110061454.MD-07-923",
+       "sent_utc": "2026-11-10T06:14:54+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-10T12:09:08+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110120908.PO-07-4527",
+     "area": "Beja",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Agitação Marítima",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4523",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110071840.PO-07-4523",
+       "sent_utc": "2026-11-10T07:18:40+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110120908.PO-07-4528",
+     "area": "Faro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Agitação Marítima",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4524",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110071840.PO-07-4524",
+       "sent_utc": "2026-11-10T07:18:40+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110120908.PO-07-4525",
+     "area": "Lisboa",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Agitação Marítima",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4517",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110071840.PO-07-4517",
+       "sent_utc": "2026-11-10T07:18:40+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110120908.PO-07-4526",
+     "area": "Setúbal",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Agitação Marítima",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4522",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110071840.PO-07-4522",
+       "sent_utc": "2026-11-10T07:18:40+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-10T18:45:40+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110184540.PO-10-6286",
+     "area": "Beja",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-10T18:46:00+00:00",
+     "expires_utc": "2026-11-11T00:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110184540.PO-10-6283",
+     "area": "Castelo Branco",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-10T09:00:00+00:00",
+     "expires_utc": "2026-11-10T18:46:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109132716.-PO-10-6221",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109132716.PO-10-6221",
+       "sent_utc": "2026-11-09T13:27:16+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110184540.PO-10-6287",
+     "area": "Faro",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-10T18:46:00+00:00",
+     "expires_utc": "2026-11-11T00:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110184540.PO-10-6285",
+     "area": "Portalegre",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-10T09:00:00+00:00",
+     "expires_utc": "2026-11-10T18:46:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109132716.-PO-10-6223",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109132716.PO-10-6223",
+       "sent_utc": "2026-11-09T13:27:16+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110184540.PO-10-6284",
+     "area": "Santarém",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-10T09:00:00+00:00",
+     "expires_utc": "2026-11-10T18:46:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109132716.-PO-10-6222",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109132716.PO-10-6222",
+       "sent_utc": "2026-11-09T13:27:16+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-10T20:52:39+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110205239.MD-10-1237",
+     "area": "Madeira - Costa Norte",
+     "msg_type": "Update",
+     "event_pt": "Aviso Vermelho Precipitação",
+     "onset_utc": "2026-11-10T21:00:00+00:00",
+     "expires_utc": "2026-11-11T06:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1230",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110061454.MD-10-1230",
+       "sent_utc": "2026-11-10T06:14:54+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110205239.MD-10-1238",
+     "area": "Madeira - Costa Norte",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-11T06:00:00+00:00",
+     "expires_utc": "2026-11-11T09:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110205239.MD-10-1236",
+     "area": "Madeira - Porto Santo",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-10T21:00:00+00:00",
+     "expires_utc": "2026-11-11T09:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1233",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110061454.MD-10-1233",
+       "sent_utc": "2026-11-10T06:14:54+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-10T21:23:00+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6292",
+     "area": "Beja",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-11T00:00:00+00:00",
+     "expires_utc": "2026-11-11T09:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110071840.PO-10-6269",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110071840.PO-10-6269",
+       "sent_utc": "2026-11-10T07:18:40+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6308",
+     "area": "Castelo Branco",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-11T03:00:00+00:00",
+     "expires_utc": "2026-11-11T12:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6277",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110163001.PO-10-6277",
+       "sent_utc": "2026-11-10T16:30:01+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6293",
+     "area": "Faro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-11T00:00:00+00:00",
+     "expires_utc": "2026-11-11T09:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110071840.PO-10-6270",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110071840.PO-10-6270",
+       "sent_utc": "2026-11-10T07:18:40+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6309",
+     "area": "Leiria",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-11T03:00:00+00:00",
+     "expires_utc": "2026-11-11T12:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6278",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110163001.PO-10-6278",
+       "sent_utc": "2026-11-10T16:30:01+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6288",
+     "area": "Lisboa",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-11T00:00:00+00:00",
+     "expires_utc": "2026-11-11T09:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6279",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110163001.PO-10-6279",
+       "sent_utc": "2026-11-10T16:30:01+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6297",
+     "area": "Lisboa",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-10T21:24:00+00:00",
+     "expires_utc": "2026-11-11T00:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6311",
+     "area": "Portalegre",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-11T03:00:00+00:00",
+     "expires_utc": "2026-11-11T12:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6282",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110163001.PO-10-6282",
+       "sent_utc": "2026-11-10T16:30:01+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6310",
+     "area": "Santarém",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-11T03:00:00+00:00",
+     "expires_utc": "2026-11-11T12:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6281",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110163001.PO-10-6281",
+       "sent_utc": "2026-11-10T16:30:01+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6289",
+     "area": "Setúbal",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Precipitação",
+     "onset_utc": "2026-11-11T00:00:00+00:00",
+     "expires_utc": "2026-11-11T09:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6280",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110163001.PO-10-6280",
+       "sent_utc": "2026-11-10T16:30:01+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6298",
+     "area": "Setúbal",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-10T21:24:00+00:00",
+     "expires_utc": "2026-11-11T00:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6296",
+     "area": "Évora",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-10T21:24:00+00:00",
+     "expires_utc": "2026-11-11T03:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6224",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109132716.PO-10-6224",
+       "sent_utc": "2026-11-09T13:27:16+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-11T07:16:30+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111071630.PO-01-1926",
+     "area": "Castelo Branco",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110071840.PO-01-1923",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110071840.PO-01-1923",
+       "sent_utc": "2026-11-10T07:18:40+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111071630.PO-01-1927",
+     "area": "Coimbra",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110071840.PO-01-1924",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110071840.PO-01-1924",
+       "sent_utc": "2026-11-10T07:18:40+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111071630.PO-03-451",
+     "area": "Faro",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Trovoada",
+     "onset_utc": "2026-11-11T09:00:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111071630.PO-01-1925",
+     "area": "Guarda",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110071840.PO-01-1922",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110071840.PO-01-1922",
+       "sent_utc": "2026-11-10T07:18:40+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111071630.PO-01-1930",
+     "area": "Portalegre",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110071840.PO-01-1917",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110071840.PO-01-1917",
+       "sent_utc": "2026-11-10T07:18:40+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111071630.PO-01-1931",
+     "area": "Évora",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110071840.PO-01-1918",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110071840.PO-01-1918",
+       "sent_utc": "2026-11-10T07:18:40+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-11T12:18:03+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-01-1936",
+     "area": "Aveiro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T12:19:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109132716.-PO-01-1910",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109132716.PO-01-1910",
+       "sent_utc": "2026-11-09T13:27:16+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6320",
+     "area": "Aveiro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T12:19:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6306",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110212300.PO-10-6306",
+       "sent_utc": "2026-11-10T21:23:00+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6314",
+     "area": "Braga",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T12:19:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6300",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110212300.PO-10-6300",
+       "sent_utc": "2026-11-10T21:23:00+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6317",
+     "area": "Bragança",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T12:19:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6303",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110212300.PO-10-6303",
+       "sent_utc": "2026-11-10T21:23:00+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-01-1938",
+     "area": "Coimbra",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T12:19:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111071630.-PO-01-1927",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111071630.PO-01-1927",
+       "sent_utc": "2026-11-11T07:16:30+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6321",
+     "area": "Coimbra",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T12:19:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6307",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110212300.PO-10-6307",
+       "sent_utc": "2026-11-10T21:23:00+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-01-1937",
+     "area": "Guarda",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T12:19:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111071630.-PO-01-1925",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111071630.PO-01-1925",
+       "sent_utc": "2026-11-11T07:16:30+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6319",
+     "area": "Guarda",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T12:19:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6305",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110212300.PO-10-6305",
+       "sent_utc": "2026-11-10T21:23:00+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6315",
+     "area": "Porto",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T12:19:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6301",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110212300.PO-10-6301",
+       "sent_utc": "2026-11-10T21:23:00+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6313",
+     "area": "Viana do Castelo",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T12:19:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6299",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110212300.PO-10-6299",
+       "sent_utc": "2026-11-10T21:23:00+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6316",
+     "area": "Vila Real",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T12:19:00+00:00",
+     "expires_utc": "2026-11-11T21:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6302",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110212300.PO-10-6302",
+       "sent_utc": "2026-11-10T21:23:00+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-01-1935",
+     "area": "Viseu",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T12:19:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261109132716.-PO-01-1908",
+       "identifier_norm": "2.49.0.0.620.0.PT.261109132716.PO-01-1908",
+       "sent_utc": "2026-11-09T13:27:16+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6318",
+     "area": "Viseu",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T12:19:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6304",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110212300.PO-10-6304",
+       "sent_utc": "2026-11-10T21:23:00+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-11T12:33:13+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111123313.PO-01-1941",
+     "area": "Beja",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Vento",
+     "onset_utc": "2026-11-11T12:34:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111071630.PO-01-1934",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111071630.PO-01-1934",
+       "sent_utc": "2026-11-11T07:16:30+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111123313.PO-01-1942",
+     "area": "Leiria",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:34:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111071630.PO-01-1928",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111071630.PO-01-1928",
+       "sent_utc": "2026-11-11T07:16:30+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111123313.PO-01-1939",
+     "area": "Lisboa",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Vento",
+     "onset_utc": "2026-11-11T12:34:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111071630.PO-01-1932",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111071630.PO-01-1932",
+       "sent_utc": "2026-11-11T07:16:30+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111123313.PO-10-6327",
+     "area": "Lisboa",
+     "msg_type": "Update",
+     "event_pt": "Aviso Vermelho Precipitação",
+     "onset_utc": "2026-11-11T12:34:00+00:00",
+     "expires_utc": "2026-11-11T15:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6290",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110212300.PO-10-6290",
+       "sent_utc": "2026-11-10T21:23:00+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111123313.PO-10-6329",
+     "area": "Lisboa",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T15:00:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": []
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111123313.PO-01-1943",
+     "area": "Santarém",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:34:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111071630.PO-01-1929",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111071630.PO-01-1929",
+       "sent_utc": "2026-11-11T07:16:30+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111123313.PO-01-1940",
+     "area": "Setúbal",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Vento",
+     "onset_utc": "2026-11-11T12:34:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111071630.PO-01-1933",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111071630.PO-01-1933",
+       "sent_utc": "2026-11-11T07:16:30+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111123313.PO-10-6328",
+     "area": "Setúbal",
+     "msg_type": "Update",
+     "event_pt": "Aviso Vermelho Precipitação",
+     "onset_utc": "2026-11-11T12:34:00+00:00",
+     "expires_utc": "2026-11-11T15:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6291",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110212300.PO-10-6291",
+       "sent_utc": "2026-11-10T21:23:00+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111123313.PO-10-6330",
+     "area": "Setúbal",
+     "msg_type": "Alert",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T15:00:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": []
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-11T15:05:38+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111150538.PO-10-6332",
+     "area": "Leiria",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T15:06:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6323",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111121803.PO-10-6323",
+       "sent_utc": "2026-11-11T12:18:03+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111150538.PO-10-6331",
+     "area": "Santarém",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T15:06:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6275",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110163001.PO-10-6275",
+       "sent_utc": "2026-11-10T16:30:01+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-11T15:55:03+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1952",
+     "area": "Beja",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T15:56:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111123313.-PO-01-1941",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111123313.PO-01-1941",
+       "sent_utc": "2026-11-11T12:33:13+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-10-6337",
+     "area": "Beja",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T15:56:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6325",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111121803.PO-10-6325",
+       "sent_utc": "2026-11-11T12:18:03+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1949",
+     "area": "Castelo Branco",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T15:56:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111071630.-PO-01-1926",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111071630.PO-01-1926",
+       "sent_utc": "2026-11-11T07:16:30+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-10-6334",
+     "area": "Castelo Branco",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T15:56:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6322",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111121803.PO-10-6322",
+       "sent_utc": "2026-11-11T12:18:03+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1944",
+     "area": "Faro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Vento",
+     "onset_utc": "2026-11-11T15:56:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110071840.PO-01-1921",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110071840.PO-01-1921",
+       "sent_utc": "2026-11-10T07:18:40+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-10-6333",
+     "area": "Faro",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T15:56:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6326",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111121803.PO-10-6326",
+       "sent_utc": "2026-11-11T12:18:03+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1947",
+     "area": "Leiria",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T15:56:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111123313.-PO-01-1942",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111123313.PO-01-1942",
+       "sent_utc": "2026-11-11T12:33:13+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1945",
+     "area": "Lisboa",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T15:56:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111123313.-PO-01-1939",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111123313.PO-01-1939",
+       "sent_utc": "2026-11-11T12:33:13+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1950",
+     "area": "Portalegre",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T15:56:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111071630.-PO-01-1930",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111071630.PO-01-1930",
+       "sent_utc": "2026-11-11T07:16:30+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-10-6335",
+     "area": "Portalegre",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T15:56:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6324",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111121803.PO-10-6324",
+       "sent_utc": "2026-11-11T12:18:03+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1948",
+     "area": "Santarém",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T15:56:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111123313.-PO-01-1943",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111123313.PO-01-1943",
+       "sent_utc": "2026-11-11T12:33:13+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1946",
+     "area": "Setúbal",
+     "msg_type": "Update",
+     "event_pt": "Aviso Laranja Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T15:56:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111123313.-PO-01-1940",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111123313.PO-01-1940",
+       "sent_utc": "2026-11-11T12:33:13+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1951",
+     "area": "Évora",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Vento",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T15:56:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111071630.-PO-01-1931",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111071630.PO-01-1931",
+       "sent_utc": "2026-11-11T07:16:30+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111155503.PO-10-6336",
+     "area": "Évora",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T15:56:00+00:00",
+     "expires_utc": "2026-11-11T18:00:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6312",
+       "identifier_norm": "2.49.0.0.620.0.PT.261110212300.PO-10-6312",
+       "sent_utc": "2026-11-10T21:23:00+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
+  },
+  {
+   "sent_utc": "2026-11-11T19:17:31+00:00",
+   "first_read_utc": "2026-11-11T19:27:32Z",
+   "messages": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111191731.PO-10-6339",
+     "area": "Bragança",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T19:18:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111121803.-PO-10-6317",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111121803.PO-10-6317",
+       "sent_utc": "2026-11-11T12:18:03+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111191731.PO-10-6340",
+     "area": "Guarda",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T19:18:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111121803.-PO-10-6319",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111121803.PO-10-6319",
+       "sent_utc": "2026-11-11T12:18:03+00:00"
+      }
+     ]
+    },
+    {
+     "identifier": "2.49.0.0.620.0.PT.261111191731.PO-10-6338",
+     "area": "Vila Real",
+     "msg_type": "Update",
+     "event_pt": "Aviso Amarelo Precipitação",
+     "onset_utc": "2026-11-11T12:00:00+00:00",
+     "expires_utc": "2026-11-11T19:18:00+00:00",
+     "replaces": [
+      {
+       "identifier": "2.49.0.0.620.0.PT.261111121803.-PO-10-6316",
+       "identifier_norm": "2.49.0.0.620.0.PT.261111121803.PO-10-6316",
+       "sent_utc": "2026-11-11T12:18:03+00:00"
+      }
+     ]
+    }
+   ],
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   }
  ],
  "references_note": "Each 'replaces' entry keeps IPMA's <references> identifier verbatim. From the batch sent 11 Nov 15:55:03 IPMA's references carry a stray '-' (e.g. '…PT.261111123313.-PO-01-1939' for the message '…PT.261111123313.PO-01-1939'), in the CAP itself as MeteoAlarm serves it (checked 16:15:54 UTC), not from our parser. 'identifier_norm' removes it; 'matches_known_message' says whether the normalised identifier is a message we hold. Match on identifier_norm, or on sent_utc.",
@@ -790,7 +3654,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261106071443.MD-10-1215",
@@ -812,7 +3676,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-01-651",
@@ -834,7 +3698,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-01-652",
@@ -856,7 +3720,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-01-653",
@@ -878,7 +3742,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-01-654",
@@ -900,7 +3764,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-10-1216",
@@ -915,7 +3779,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-10-1217",
@@ -930,7 +3794,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-10-1218",
@@ -945,7 +3809,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-10-1219",
@@ -960,7 +3824,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108122332.MD-07-917",
@@ -982,7 +3846,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108122332.MD-07-918",
@@ -1004,7 +3868,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108122332.MD-07-919",
@@ -1019,7 +3883,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6183",
@@ -1041,7 +3905,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6185",
@@ -1056,7 +3920,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6220",
@@ -1071,7 +3935,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6221",
@@ -1086,7 +3950,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6222",
@@ -1101,7 +3965,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6223",
@@ -1116,7 +3980,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261109140535.MD-01-663",
@@ -1138,7 +4002,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261109140535.MD-01-664",
@@ -1160,7 +4024,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6249",
@@ -1175,7 +4039,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-01-666",
@@ -1197,7 +4061,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-01-667",
@@ -1212,7 +4076,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-01-668",
@@ -1227,7 +4091,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-01-669",
@@ -1249,7 +4113,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-07-924",
@@ -1264,7 +4128,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-07-925",
@@ -1279,7 +4143,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1231",
@@ -1301,7 +4165,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1232",
@@ -1323,7 +4187,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1234",
@@ -1338,7 +4202,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1235",
@@ -1353,7 +4217,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110071840.PO-01-1914",
@@ -1543,7 +4407,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110120908.PO-07-4526",
@@ -1565,7 +4429,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110120908.PO-07-4527",
@@ -1587,7 +4451,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110120908.PO-07-4528",
@@ -1609,7 +4473,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6271",
@@ -1699,7 +4563,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110205239.MD-10-1237",
@@ -1721,7 +4585,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110205239.MD-10-1238",
@@ -1736,7 +4600,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6289",
@@ -1758,7 +4622,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6291",
@@ -1804,7 +4668,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6293",
@@ -1826,7 +4690,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6294",
@@ -1882,7 +4746,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6309",
@@ -1904,7 +4768,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6310",
@@ -1926,7 +4790,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6311",
@@ -1948,7 +4812,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:35:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6312",
@@ -2162,7 +5026,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:47:23Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261111123313.PO-01-1941",
@@ -2184,7 +5048,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:47:23Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261111123313.PO-10-6328",
@@ -2206,7 +5070,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T12:47:23Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1944",
@@ -2228,7 +5092,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T16:09:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1946",
@@ -2250,7 +5114,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T16:09:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261111155503.PO-01-1952",
@@ -2272,7 +5136,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T16:09:31Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   }
  ],
  "next_read_utc": "2026-11-11T20:22Z"

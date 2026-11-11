@@ -2,7 +2,7 @@
  "about": "IPMA's communiqués (special weather information) from its RSS feed, kept across reads; earthquake notices left out.",
  "source": "https://www.ipma.pt/resources.www/rss/comunicados.xml",
  "feed_built_local": "2026-11-11 19:08:32",
- "read_utc": "2026-11-11T19:23:58Z",
+ "read_utc": "2026-11-11T19:27:46Z",
  "items": [
   {
    "title": "Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3",
@@ -16,7 +16,7 @@
    "read_utc": "2026-11-11T12:49:05Z",
    "note": "Read from IPMA's communiqués page; not in the RSS feed when read. Time labels read as UTC (Lisbon is UTC in November).",
    "first_read_utc": "2026-11-11T12:28:46Z",
-   "last_seen_utc": "2026-11-11T19:23:58Z"
+   "last_seen_utc": "2026-11-11T19:27:46Z"
   },
   {
    "title": "Chuva, vento e agitação marítima - Depressão CHARLES - Continente e Madeira - Comunicado nº2",

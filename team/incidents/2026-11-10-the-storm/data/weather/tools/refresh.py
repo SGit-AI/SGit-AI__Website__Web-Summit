@@ -496,6 +496,23 @@ def cap():
     for m_ in prev.get('other_messages', []):
         OTHER_SEEN[m_['identifier'] + '|' + ','.join(m_['areas'])] = m_
     in_feed = set()
+    batches = {b['sent_utc']: dict(b, messages={m['identifier'] + '|' + (m['area'] or ''): m for m in b['messages']}) for b in prev.get('feed_batches', [])}
+    for x in json.loads(raw).get('warnings', []):  # every message, any level and district: one row per sent time
+        al = x.get('alert', {})
+        sent = al.get('sent')
+        if not sent:
+            continue
+        b = batches.setdefault(sent, {'sent_utc': sent, 'first_read_utc': NOW, 'messages': {}})
+        for i in al.get('info', []):
+            if not i.get('language', '').startswith('pt'):
+                continue
+            for z in i.get('area', []):
+                b['messages'][al.get('identifier') + '|' + (z.get('areaDesc') or '')] = {
+                    'identifier': al.get('identifier'), 'area': z.get('areaDesc'), 'msg_type': al.get('msgType'), 'event_pt': i.get('event'),
+                    'onset_utc': i.get('onset'), 'expires_utc': i.get('expires'),
+                    'replaces': [{'identifier': r.split(',')[1], 'identifier_norm': re.sub(r'\.-(?=PO-)', '.', r.split(',')[1]), 'sent_utc': r.split(',')[2]}
+                                 for r in (al.get('references') or '').split(' ') if r.count(',') == 2]}
+        b['last_seen_utc'] = NOW
     for x in json.loads(raw).get('warnings', []):
         al = x.get('alert', {})
         infos = al.get('info', [])
@@ -566,6 +583,8 @@ def cap():
             'terms': {'source': 'https://www.meteoalarm.org', 'feed': U['cap'], 'disclaimer': disclaimer,
                       'record': f'a dated record, not a live feed (read {NOW})', 'publisher_of_the_warnings': 'IPMA (Instituto Português do Mar e da Atmosfera), via MeteoAlarm'},
             'source': U['cap'], 'read_utc': NOW, 'reads_utc': reads, 'lisbon_messages': msgs,
+            'feed_batches_about': 'Every CAP message in the feed, any level and district, grouped by the time IPMA sent it (from 11 Nov 19:30 UTC; batches that had left the feed by then were not seen). messages are keyed identifier|area. Use this to see every batch; lisbon_messages and other_messages carry the detail.',
+            'feed_batches': sorted([dict(b, messages=sorted(b['messages'].values(), key=lambda m: (m['area'] or '', m['identifier']))) for b in batches.values()], key=lambda b: b['sent_utc']),
             'references_note': "Each 'replaces' entry keeps IPMA's <references> identifier verbatim. From the batch sent 11 Nov 15:55:03 IPMA's references carry a stray '-' (e.g. '…PT.261111123313.-PO-01-1939' for the message '…PT.261111123313.PO-01-1939'), in the CAP itself as MeteoAlarm serves it (checked 16:15:54 UTC), not from our parser. 'identifier_norm' removes it; 'matches_known_message' says whether the normalised identifier is a message we hold. Match on identifier_norm, or on sent_utc.",
             'other_messages_about': 'Beyond Lisbon: every CAP message for a Madeira area, and every red message for any district, kept once seen (from 11 Nov 01:50 UTC; earlier ones that had left the feed were never seen); orange messages for any district kept as well from 11 Nov 12:36 UTC (earlier orange ones were not kept).',
             'other_messages': others}
