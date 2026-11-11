@@ -12,7 +12,9 @@
     const me = document.currentScript, ver = ((me && me.src) || '').match(/\?v=([^&#]+)/)
     if (!document.querySelector('link[href*="assets/abp-make.css"]')) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = `${up}assets/abp-make.css${ver ? '?v=' + ver[1] : ''}`; document.head.appendChild(l) }
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
-    const clipW = (s, n) => { s = String(s || '').trim(); if (s.length <= n) return s; const c = s.slice(0, n); return c.slice(0, Math.max(c.lastIndexOf(' '), n - 20)).replace(/[,;:(]+$/, '') + '…' }
+    // shorten to a whole phrase where one ends early enough (a colon, a semicolon, a comma or a bracket), else to a whole
+    // word; never mid-word (WS-191: the prefilled answers from the X-ray were cut mid-sentence)
+    const clipW = (s, n) => { s = String(s || '').trim(); if (s.length <= n) return s; const c = s.slice(0, n + 1); const at = bs => Math.max(...bs.map(b => c.lastIndexOf(b))), i = at([': ', '; ', ' (']) > n * .3 ? at([': ', '; ', ' (']) : at([', ']); const shut = t => (t.split('(').length > t.split(')').length && t.lastIndexOf(' (') > 0 ? t.slice(0, t.lastIndexOf(' (')) : t); if (i > n * .4) return shut(s.slice(0, i)).replace(/[\s,;:(]+$/, ''); const w = c.lastIndexOf(' '); return shut(s.slice(0, w > 0 ? w : n)).replace(/(\s+(and|or|the|a|an|of|to|in|on|for|with|by|from|its|their|into|which|that|who|at|as|is|are))+$/i, '').replace(/[\s,;:(]+$/, '') + '…' }
     const sentence = s => { s = String(s || '').trim(); return s && !/[.!?…]$/.test(s) ? s + '.' : s }
     const fine = matchMedia('(pointer: fine)')
     const P = new URLSearchParams(location.search)
@@ -68,7 +70,7 @@
         if (uc && (uc.reach || []).length) {
             d[2] = uc.reach.map(r => r.what).join('\n')
             const inGap = [...new Set((uc.gap || []).flatMap(g => g.reach || []))].map(id => (uc.reach || []).find(r => r.id === id)).filter(Boolean)
-            if (inGap.length) d[4] = inGap.slice(0, 3).map(r => `Anything that uses: ${clipW(r.what, 55)}`).join('\n') + '\nAnything sent outside the team'
+            if (inGap.length) d[4] = inGap.slice(0, 3).map(r => `Anything that uses: ${clipW(r.what, 90)}`).join('\n') + '\nAnything sent outside the team'
         }
         return d
     }

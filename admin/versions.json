@@ -1,5 +1,19 @@
 [
   {
+    "version": "v0.2.1940",
+    "date": "2026-11-11",
+    "what": "standing answer 39: P6 pin only in each prompts file (Vicky's decision, risk accepted); dev@'s three tool fixes; then the dashboard test round trip",
+    "by": "conductor@web-summit.vicky",
+    "from": "39af48020"
+  },
+  {
+    "version": "v0.2.1939",
+    "date": "2026-11-11",
+    "what": "journalist-ai@PrompTugal.vicky: scheduled run, 20:03 UTC: idle",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "1bb3a1d8a"
+  },
+  {
     "version": "v0.2.1938",
     "date": "2026-11-11",
     "what": "reviewer@PrompTugal.vicky: report: S41 updated (only Lisbon's sea warning remains); storm page needs no change",
