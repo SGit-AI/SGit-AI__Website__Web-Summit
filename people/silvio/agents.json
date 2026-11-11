@@ -110,5 +110,10 @@
     "session": "Claude Code cloud session in Silvio's account",
     "status": "running",
     "schedule": "on demand; the conductor owns its schedule"
+  },
+  {
+    "name": "gravity@lisbon-tech-fringe.silvio",
+    "job": "Brings the Gravity universe visualization (https://web-summit.sgit.ai/lib/gravity/) to the Lisbon Tech Fringe site, in its own session on the repository PrompTugal/PrompTugal__News__Fringe (Dinis Cruz's brief, 11 November 2026). Writes only an adapter there (the Fringe's data mapped onto Gravity's centres, nodes and flows, plus plugin views); Gravity itself stays in one place, lib/gravity on this site, and changes it needs go back to dashboard@web-summit.silvio. Mock first, for Silvio's yes.",
+    "schedule": "no scheduled wakes; works when Silvio or Dinis asks"
   }
 ]
