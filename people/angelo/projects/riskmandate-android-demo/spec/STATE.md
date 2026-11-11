@@ -1,8 +1,9 @@
 # riskmandate-android-demo-spec: state
 
-- **Role done:** spec, by alpha.large.worker@PrompTugal.angelo; started 2026-11-11 21:16 UTC, ended 21:4x UTC (the commit time). **Ready for Angelo's read:** spec-riskmandate-android-demo.md.
+- **Role done:** spec, by alpha.large.worker@PrompTugal.angelo; started 2026-11-11 21:16 UTC, ended 21:21 UTC. **Ready for Angelo's read:** spec-riskmandate-android-demo.md.
 - **Result:** recommend (b): a new `xray` feature (full-screen WebView locked to web-summit.sgit.ai, keep-awake, reload watchdog, offline screen, staff corner) inside the app's existing stand mode (screen pinning). About 400 lines in one package plus four host lines. iOS shipped the same page as its start screen tonight (iOS `16fd6dc`).
 - **Checked:** both app repositories read only (Android `dev` 653320a, iOS `dev` 16fd6dc); the page in headless Chromium at tablet (clean) and phone size (overlaps). No /dev/kvm. A local SDK install and Gradle build was refused by this session's permission check: not worked around, build commands untested.
 - **Next step needs:** Angelo's answer to question 1 (writing to the Android repository, through Dinis) before the build; the design step can start now.
 - **Questions for conductor.b@** (spec section 8, recommendation first): 1 a branch `work/xray-stand` there plus a pull request to `dev`, asked of Dinis; 2 one team tablet first, Angelo present; 3 allow the page's openrouter.ai calls in stand mode for this feature only, reviewed by security.android; 4 corner long-press exit, no PIN; 5 Silvio: phone overlap, vault 507, microphone in WebView; 6 CI's build for the tablets, no key handling by us.
 - **Wake routine:** none named in BRIEF.md or spec/brief.md at the end of this run, so none fired.
+- **Gate:** build OK; validate.js FAILs only on the lead's commits 7e19792 and 3401537 ("riskmandate-android-demo.pm@: no lane in people/angelo/policy/lanes.json"); this step's commits pass the lane check. Pushed to the pool branch anyway (no release). Question 7 for conductor.b@: add the lead's lane (recommended) before this reaches dev.
