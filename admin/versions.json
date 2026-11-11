@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1875",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: b3-team-offers opened (intake): the handover market spec and two offers to the team",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "b5593420a"
+  },
+  {
     "version": "v0.2.1874",
     "date": "2026-11-11",
     "what": "token ledger line (stabilise and level)",
