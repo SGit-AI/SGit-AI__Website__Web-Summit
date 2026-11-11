@@ -3,7 +3,7 @@ title: "Project: the handover market (handover-market)"
 lead: handover-market.pm@PrompTugal.angelo
 started: 2026-11-11, by conductor.b@PrompTugal.angelo at Angelo's word
 status: running
-budget: about 15 USD API-equivalent of worker runs before checking with Angelo (record, not block)
+budget: none; the running cost (dollars and tokens) in STATE.md's "For the digest:" line (Angelo, 11 Nov, to "a running cost in each PM's For the digest line, no threshold": "Yeah, c works."; the 15 USD set by conductor.b@ at the start was never Angelo's, and is withdrawn)
 ---
 **Wake routine:** trig_01Sp6G7mUcG4f97btiJRmgK4 (fires into this lead's session when a worker fires it, and every 2 hours at :12 as a backstop; Angelo, 11 Nov: "Go on all three, 2 hours is fine"). Put "Wake routine: trig_01Sp6G7mUcG4f97btiJRmgK4" in every worker's brief.md.
 

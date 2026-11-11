@@ -1,5 +1,145 @@
 [
   {
+    "version": "v0.2.1932",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: network-views.pm@ started, with its wake routine",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "b59b01ae7"
+  },
+  {
+    "version": "v0.2.1931",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: project network-views opened for its PM, network-views.pm@",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "aa8f579f9"
+  },
+  {
+    "version": "v0.2.1930",
+    "date": "2026-11-11",
+    "what": "the new look everywhere: GAMMA-Ray circuit, GRAVITY's own world, the top bar (option C), as Silvio approved",
+    "by": "dashboard@web-summit.silvio",
+    "from": "92a078b7d"
+  },
+  {
+    "version": "v0.2.1929",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: the market overlap: Angelo coordinates conductor.fringe@ and handover-market.pm@ himself",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "f10831375"
+  },
+  {
+    "version": "v0.2.1928",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: the two team offers parked",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "0cd42f39d"
+  },
+  {
+    "version": "v0.2.1927",
+    "date": "2026-11-11",
+    "what": "P6 approved by Vicky with my changes; recorded for the conductor",
+    "by": "security@web-summit.vicky",
+    "from": "513e5b4ca"
+  },
+  {
+    "version": "v0.2.1926",
+    "date": "2026-11-11",
+    "what": "19:36 wake: ANEPC 1,630 occurrences, \"muito menos grave do que o previsto\"; PM: worst practically over; ~400 flights cancelled; no change to Day 3",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "bae912562"
+  },
+  {
+    "version": "v0.2.1925",
+    "date": "2026-11-11",
+    "what": "confirmed RULES-11NOV; key kept (vault-vicky)",
+    "by": "vault@web-summit.vicky",
+    "from": "e0fca9ea0"
+  },
+  {
+    "version": "v0.2.1924",
+    "date": "2026-11-11",
+    "what": "P6 messaging review; my prompts file; my report with the RULES-11NOV confirmation",
+    "by": "security@web-summit.vicky",
+    "from": "dd0110b56"
+  },
+  {
+    "version": "v0.2.1923",
+    "date": "2026-11-11",
+    "what": "dev@PrompTugal.vicky: confirmed RULES-11NOV; key dev-vicky-promptugal-c",
+    "by": "dev@PrompTugal.vicky",
+    "from": "1bb510508"
+  },
+  {
+    "version": "v0.2.1922",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: dry-run prompt: a ledger path the contact check read as an address, reworded",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "98cb53ee1"
+  },
+  {
+    "version": "v0.2.1921",
+    "date": "2026-11-11",
+    "what": "confirmed RULES-11NOV; key kept; the rules in my scheduled prompt",
+    "by": "logistics@web-summit.vicky",
+    "from": "eb8b8c49d"
+  },
+  {
+    "version": "v0.2.1920",
+    "date": "2026-11-11",
+    "what": "checker@PrompTugal.vicky: confirmed RULES-11NOV; fresh key checker-vicky-promptugal-c",
+    "by": "checker@PrompTugal.vicky",
+    "from": "ebd5a6c92"
+  },
+  {
+    "version": "v0.2.1919",
+    "date": "2026-11-11",
+    "what": "standing answer 34: Thursday's hourly summit lane; the internal journalist is the summit journalist after the summit; the two-way messaging draft; security@ start kit for tonight",
+    "by": "conductor@web-summit.vicky",
+    "from": "c5d266ac7"
+  },
+  {
+    "version": "v0.2.1918",
+    "date": "2026-11-11",
+    "what": "journalist@PrompTugal.vicky: confirmed RULES-11NOV; new key journalist-vicky-promptugal-c",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "02a9e42b6"
+  },
+  {
+    "version": "v0.2.1917",
+    "date": "2026-11-11",
+    "what": "journalist-ai@PrompTugal.vicky: confirmed RULES-11NOV; fresh key journalist-ai-vicky-promptugal-2; report",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "1947dc7e2"
+  },
+  {
+    "version": "v0.2.1916",
+    "date": "2026-11-11",
+    "what": "journalist-portugal@PrompTugal.vicky: confirmed RULES-11NOV; fresh key journalist-portugal-vicky-promptugal-c",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "7f453b749"
+  },
+  {
+    "version": "v0.2.1915",
+    "date": "2026-11-11",
+    "what": "curator@PrompTugal.vicky: RULES-11NOV confirmed (no machine reads), fresh key, scheduled prompt carries the rules",
+    "by": "curator@PrompTugal.vicky",
+    "from": "18f08dd7e"
+  },
+  {
+    "version": "v0.2.1914",
+    "date": "2026-11-11",
+    "what": "confirmed RULES-11NOV; new session key researcher-vicky-3; task prompt updated, still disabled",
+    "by": "researcher@web-summit.vicky",
+    "from": "578e2e9d2"
+  },
+  {
+    "version": "v0.2.1913",
+    "date": "2026-11-11",
+    "what": "R-PUB-1 on the team account; programme enabled only after SA33-PROGRAMME; vault B also with Vicky's copy",
+    "by": "conductor@web-summit.vicky",
+    "from": "2975764fd"
+  },
+  {
     "version": "v0.2.1912",
     "date": "2026-11-11",
     "what": "SA33-VAULTS: vault B's key only to the conductor, as Vicky said",

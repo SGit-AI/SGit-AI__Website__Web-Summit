@@ -96,3 +96,8 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 ## Mon 9 Nov 2026, 19:06 UTC (scheduled run)
 
 - state: idle
+
+## Wed 11 Nov 2026, 19:18 UTC (RULES-11NOV confirmation wake)
+
+- confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: my scratchpad's saved Web Summit pages and their text extracts from the company batches (E1, the overnight batch and the PITCH session check), their URL lists and digests, the saved Luma event page from S11, and five helper scripts written to parse Web Summit's page data (sum.py, sess.py, nd.py, app.py, pitch.py) and the company-file writer built on those sources (cw.py); nothing in either repository changed (existing published files stay, rule 3); key: journalist-europe-vicky-promptugal-c (signing sha256:c0f5ab57ec129c61), added by my own commit in the newsroom's board/keys.json, journalist-europe-vicky-promptugal-b marked superseded at 2026-11-11T19:13Z; lane to be re-issued by conductor@PrompTugal.dinis.
+- Both my scheduled tasks now carry the rules (writing trig_01KRJSLJ46fntBKdqukvLoKx: the RULES-11NOV section word for word; fix-only trig_01A87nPnVKv8jMhzDzwi5eYU: rules 1 to 6 word for word); both stay disabled. Ten older scheduled wakes (10 Nov 06:03 to 11 Nov 07:08) reached this session only at 19:12 today, after the session restarted; not run, as they were stale and my tasks are now disabled. No hold. state: ok; done: RULES-11NOV confirmed, new key; next: nothing until the conductor or Vicky gives me work; ask: none; run: scheduled

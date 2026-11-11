@@ -16,7 +16,7 @@ description: Use when leading a project for Angelo: own its goal, plan and progr
 - **Angelo's time is the scarce one:** talk to him in formats/conductor.md (snapshot, then one point at a time, a recommendation each); summaries, not files.
 - **A "For the digest:" line** at the top of STATE.md: one line on where the project stands and what it needs from Angelo, for conductor.b@'s digest.
 - **Memory is the project's STATE.md:** what is done, next, waiting, decided (his words quoted); short enough to restart from.
-- **Budget:** keep the project's cost in view (ledger lines of its steps); raise it before it runs over.
+- **Cost, no budget** (Angelo, 11 Nov, to "a running cost in each PM's For the digest line, no threshold": "Yeah, c works."): no threshold; your "For the digest:" line ends with the project's running cost so far, in dollars and tokens (the platform's cost per worker session, from runs.md).
 
 ## Done (each exchange)
 - [ ] STATE.md current; every decision quoted and committed.

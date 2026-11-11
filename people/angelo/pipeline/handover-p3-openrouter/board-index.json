@@ -1,0 +1,2127 @@
+{
+ "what": "Index of board/WS-*.md made by OpenRouter cheap tier (google/gemini-2.5-flash-lite), files cut to their first and last 1200 characters; claude_check lists the fields Claude found wrong against the full files (or.md says how).",
+ "made": "2026-11-11",
+ "rows": [
+  {
+   "id": "WS-01",
+   "title": "Get to L1: a dedicated Claude account for this work",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-03",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-02",
+   "title": "Get to L2: GitHub, push access to this repository, and an email you can send from",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-03",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-03",
+   "title": "Get to L4: your agents' keys published, and a dashboard agent",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-04",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-04",
+   "title": "Get to L4: a Claude session on a schedule",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-04",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-05",
+   "title": "Get to L5 and L6: several agents, then several scheduled sessions",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-06",
+   "title": "Make your dashboard yours",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-07",
+   "title": "Pulse check-in, three times a day",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-03",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-08",
+   "title": "Fill in your card",
+   "status": "done",
+   "owner": "everyone",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-09",
+   "title": "Add everyone's GitHub account to the repository",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-10",
+   "title": "Workspace email accounts where they are needed",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-03",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-100",
+   "title": "The GitHub account step, documented for newcomers",
+   "status": "done",
+   "owner": "angelo, vicky",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-101",
+   "title": "procurement@web-summit.silvio writes outside people/silvio/, and who asks suppliers to publish?",
+   "status": "done",
+   "owner": "silvio",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-102",
+   "title": "Seal the vault keys to keys on the keys page: the push is the authorisation",
+   "status": "done",
+   "owner": "dinis, angelo, jose",
+   "last_date": "2026-11-02",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-103",
+   "title": "The home page, redesigned for a team that is overwhelmed",
+   "status": "done",
+   "owner": "sarah, dinis",
+   "last_date": "2026-11-02",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-104",
+   "title": "Build the home page from data (the WS-103 design)",
+   "status": "done",
+   "owner": "dinis",
+   "last_date": "2026-11-02",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-105",
+   "title": "Protect main: pull requests only, merged by Dinis",
+   "status": "picked",
+   "owner": "dinis, angelo",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-106",
+   "title": "Before sealing a vault key, confirm who pushed the recipient's key",
+   "status": "done",
+   "owner": "dinis",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-106",
+   "title": "Meet the estate's repository standard: the gaps",
+   "status": "picked",
+   "owner": "angelo, jose",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-107",
+   "title": "Stand-up decisions recorded in the person's own words, with where and when",
+   "status": "open",
+   "owner": "dinis, everyone",
+   "last_date": "2026-11-03",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-108",
+   "title": "Jose's two apps (Hack the Agent, ReachCheck) as the stand demos, if Jose agrees",
+   "status": "picked",
+   "owner": "jose, dinis",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-109",
+   "title": "\"The grant, not the prompt\" as the one demo, and its lines for the shirts and the stand",
+   "status": "open",
+   "owner": "dinis, everyone",
+   "last_date": "2026-11-04",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-11",
+   "title": "Start the team's scheduled sessions in this account",
+   "status": "done",
+   "owner": "dinis",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-110",
+   "title": "Every ABP barrier classified as control, accepted risk or hope, in one table on /abp/",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-111",
+   "title": "The keys page's missing fields, and a gate check on who may publish a key",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-112",
+   "title": "Every person's conductor briefs its person (people/<id>/briefs/, ack.json), with a review step",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-04",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-113",
+   "title": "Print files ready for sign-off, and an Official Sign-off on /print/ that everyone signs with their agent's key",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-114",
+   "title": "Feedback lanes: a vault per agent, who drains them, and idle runs on the same lanes",
+   "status": "in progress",
+   "owner": "dinis",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-115",
+   "title": "The OpenRouter key, one per agent, sealed and signed by Dinis: phase 1 of giving out secrets",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-06",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-116",
+   "title": "Sign-off: bind the signing agent to its person, match keys exactly, and put verify in the gate",
+   "status": "done",
+   "owner": "silvio",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-117",
+   "title": "Sign in with pki.sgit.ai, on a signing origin of its own",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-118",
+   "title": "The keys page: a status, an expiry and a proof of possession for every key",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-04",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-119",
+   "title": "The feedback lane is unauthenticated: what it carries is material, and approvals wait for signatures",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-04",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-12",
+   "title": "Verify each person's key on pki.sgit.ai as the anchor",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-120",
+   "title": "Vaults, first through: Angelo, Jose and Silvio start a vault agent, make a vault and publish it",
+   "status": "done",
+   "owner": "angelo",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-121",
+   "title": "Everyone runs a vault agent and publishes a vault",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-122",
+   "title": "The gate misses an unprefixed vault key with a short vault id",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-04",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-123",
+   "title": "The site for you: every section from each person's point of view, with pictures of what is going on",
+   "status": "picked",
+   "owner": "conductor@web-summit.dinis",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-124",
+   "title": "The onboarding steps follow the Google Workspace workflow",
+   "status": "picked",
+   "owner": "Angelo",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-125",
+   "title": "The setup guide for everybody else: yours to keep",
+   "status": "picked",
+   "owner": "Angelo",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-126",
+   "title": "LinkedIn: build the hype before Lisbon",
+   "status": "picked",
+   "owner": "Indi",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-127",
+   "title": "A scheduled run says so in its commit, so \"on a schedule\" and the mentors' clock can be read from git",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-128",
+   "title": "A scripted audit of every commit before a vault's read key is published",
+   "status": "done",
+   "owner": "sgit@web-summit.dinis",
+   "last_date": "2026-11-07",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-129",
+   "title": "Agents talk through commits only: the rule, a deny list, and secrets per environment",
+   "status": "picked",
+   "owner": "Angelo",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-13",
+   "title": "The merch budget",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-130",
+   "title": "URGENT: your merch sizes, today by 18:00 (3 T-shirts and a hoodie each)",
+   "status": "done",
+   "owner": "every person's agent",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-131",
+   "title": "Tools that read git history say so, or deepen the clone, when the clone is shallow",
+   "status": "picked",
+   "owner": "Angelo",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-132",
+   "title": "One origin, many authors: code any agent can publish here can use Dinis's browser key",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-133",
+   "title": "Code in a person's folder runs in CI with a token that can push and deploy",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-08",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-134",
+   "title": "Jose's security watcher and code reviewer (watcher@web-summit.jose, reviewer@web-summit.jose)",
+   "status": "done",
+   "owner": "Jose",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-135",
+   "title": "Three gaps in the vault audit: the token's value, the empty first commit, the PUBLIC.md template",
+   "status": "done",
+   "owner": "sgit@web-summit.dinis",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-136",
+   "title": "Every person adds their key to the site, first: the conductor issues it, the person pastes it",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-06",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-137",
+   "title": "Dinis's lab: from a conversation to an agent policy, researched, animated and kept in a vault",
+   "status": "in progress",
+   "owner": "dinis",
+   "last_date": "2026-11-08",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-138",
+   "title": "A person's signature on the site is also their conductor's",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-139",
+   "title": "Jose's agents cannot reach newsroom.sgit.ai",
+   "status": "done",
+   "owner": "jose",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-14",
+   "title": "newsroom.web-summit.sgit.ai: who runs it",
+   "status": "picked",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-140",
+   "title": "Give feedback opens the pane, not just a reload",
+   "status": "picked",
+   "owner": "angelo",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-141",
+   "title": "The newsroom: a reader-first patch, and six publishing roles to decide",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-142",
+   "title": "Synthetic users for the business cards: five invented people get a card, scan it and say what they make of it",
+   "status": "open",
+   "owner": "indi",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-143",
+   "title": "The home page revamped: rich and dynamic, what is happening now, with the agenda building day by day",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-144",
+   "title": "designer@web-summit.indi writes in team/designer/ and content/, and is not in Indi's agents.json",
+   "status": "open",
+   "owner": "indi",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-145",
+   "title": "Give Indi write access to the newsroom repository",
+   "status": "done",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-146",
+   "title": "The /meet/ pages, before the cards are printed: no key box for visitors, a working contact, the stand",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-147",
+   "title": "The PKI cards' QR codes are a third of every build, and grow with every key",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-148",
+   "title": "An accountant agent for Indi's agents: every agent measures its tokens, and the accountant finds the savings",
+   "status": "open",
+   "owner": "indi",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-149",
+   "title": "The most important thing each person did, on the stand-up's show page, updated at every release",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-15",
+   "title": "The RiskMandate message: one paragraph, three openers, one demo",
+   "status": "open",
+   "owner": "nimay",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-150",
+   "title": "The stand-up show: decide-and-unblock slides, built from the agenda and the board",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-151",
+   "title": "Incident: WS-145 (Indi's write access to the newsroom) sat unpicked and buried in Dinis's dashboard list",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-152",
+   "title": "Any agent can change another agent's entry on the keys page, and the gate does not look",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-153",
+   "title": "Vicky's agents send the conductor their vault keys, over their own inbox lanes",
+   "status": "picked",
+   "owner": "vicky",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-154",
+   "title": "The observability vaults' keys to the conductor, over Jose's agents' inbox lanes",
+   "status": "open",
+   "owner": "jose",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-155",
+   "title": "The business cards and stickers, ordered from ProntaPrint Chiswick for Friday 6 November",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-156",
+   "title": "Vault keys should not collect in the conductor's session",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-157",
+   "title": "A real notification for urgent work, beside the scheduled observability runs",
+   "status": "open",
+   "owner": "jose",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-158",
+   "title": "A help and FAQ page on the site, kept from the questions people ask",
+   "status": "done",
+   "owner": "angelo",
+   "last_date": "2026-11-08",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-181",
+   "title": "Team coordination and logistics in the command centre: where everybody is, offline first, a public and a private vault",
+   "status": "picked",
+   "owner": "dev@web-summit.angelo",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-182",
+   "title": "PrompTugal.news: enough data to help participants with the summit's logistics",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-183",
+   "title": "PrompTugal.news: beat the other agencies reporting on Web Summit, and build on what they publish",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-184",
+   "title": "The comms protocol: every private conversation in this team's private CRM; PrompTugal public only; contact requests on the lanes",
+   "status": "picked",
+   "owner": "dev@web-summit.dinis",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-185",
+   "title": "Investor relations: the /investors/ section, the pitch and technology decks, a page per investor or introducer, and their feedback",
+   "status": "picked",
+   "owner": "dinis",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-186",
+   "title": "PrompTugal.news's daily newsletter: a morning and an evening edition during Web Summit week; subscribers kept in the private CRM, sent by a person",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-187",
+   "title": "The site is one origin: a page without the keyring can still use it",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-07",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-188",
+   "title": "Dinis's agents share one cloud environment, and with it his tokens",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-189",
+   "title": "The Summit desk writes to the private CRM: four questions for Dinis, and six for the demo",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-19",
+   "title": "The card-to-analysis loop, tried on three companies",
+   "status": "open",
+   "owner": "nimay, indi, anyone",
+   "last_date": "2026-11-04",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-190",
+   "title": "The brains on the command centres: how they are built, and what is public and what is private",
+   "status": "open",
+   "owner": "dinis, silvio",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-191",
+   "title": "RiskMandate X-ray: the booth demo, and the task board both teams claim from",
+   "status": "in progress",
+   "owner": "dinis",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-192",
+   "title": "X-ray: the page (one big input, the run as mini agents, a graph that grows as evidence arrives)",
+   "status": "picked",
+   "owner": "dinis",
+   "last_date": "2026-11-08",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-193",
+   "title": "X-ray: the evidence (the search fan-out, and a verified record per subject)",
+   "status": "picked",
+   "owner": "dinis",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-194",
+   "title": "X-ray: the booth request path (a name typed at the booth becomes a request the agent runs at its next wake)",
+   "status": "picked",
+   "owner": "dev@web-summit.silvio (with conductor@web-summit.silvio)",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-195",
+   "title": "X-ray: the prepared subjects (10 to 20 in advance, an owner, a state and a budget each)",
+   "status": "picked",
+   "owner": "conductor@web-summit.silvio",
+   "last_date": "2026-11-08",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-196",
+   "title": "X-ray: a deck per subject (company, use case or industry)",
+   "status": "picked",
+   "owner": "dinis",
+   "last_date": "2026-11-08",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-197",
+   "title": "X-ray: the booth on an iPad and the big screen (design review, the attract loop, a film of a run)",
+   "status": "picked",
+   "owner": "design@web-summit.silvio (review and mocks)",
+   "last_date": "2026-11-10",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-198",
+   "title": "X-ray: the decision page (the experiments side by side, for Dinis to choose)",
+   "status": "picked",
+   "owner": "dinis",
+   "last_date": "2026-11-08",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-199",
+   "title": "Three apps, three lines: the event app (App Store, public), the team app (private, ours), the RiskMandate app (public)",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-08",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-20",
+   "title": "The landing page we send people to",
+   "status": "open",
+   "owner": "nimay, indi, angelo",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-200",
+   "title": "PrompTugal.news: a light and dark switch at the top of every page and every front-page design",
+   "status": "open",
+   "owner": "dinis, silvio",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-201",
+   "title": "We are the power users: the team app runs our own summit first (where is everybody, teams, toggles, decisions)",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-202",
+   "title": "How we work: PKI on everything (devices, installs, versions; QR and NFC), the live picture, agents' life cycle, and the team's intranet",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-203",
+   "title": "Android apps: the counterparts of the iOS apps, and who does what, so no two people build the same thing",
+   "status": "open",
+   "owner": "angelo (dev.app@PrompTugal.angelo)",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-203",
+   "title": "Team messaging in the team app: chat, group chat and email between people and agents, over device vaults and append lanes",
+   "status": "picked",
+   "owner": "Indi, prompter@web-summit.indi (formats, envelope, agents' tool, the iOS brief); the iOS app by conductor.B@ios.PrompTugal.dinis (the iOS team app, PTLanes and PTVaultUI); mobile@promptugal.ai.dinis (the shared formats); conductor@web-summit.dinis (the plan, the shared vault and the lanes)",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-204",
+   "title": "Recruiting helpers at the summit: a contributor page on PrompTugal.news and one for RiskMandate (rules, onboarding, tasks)",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-205",
+   "title": "The pipeline, live: every voice brief traced to every agent, commit, release and review, across five repositories",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-206",
+   "title": "GAMMA-Ray: the agentic maturity scan (five public standards, graded evidence, the graph), and how it sits beside RiskMandate X-ray",
+   "status": "design first",
+   "owner": "everyone",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-207",
+   "title": "GAMMA-Ray launch (beta): the first ten companies and their agentic solutions, and the pipeline from scan to PrompTugal.news",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-10",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-208",
+   "title": "THE RESTART (10 Nov): every team on one theme, agentic, measured by GAMMA-Ray; who takes what",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-10",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-209",
+   "title": "RiskMandate for education and children: talk with Dinis, find the people at Web Summit, publish the idea",
+   "status": "open",
+   "owner": "Indi, education@web-summit.indi",
+   "last_date": "2026-11-10",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-21",
+   "title": "The offer, packaged, and how someone buys it",
+   "status": "open",
+   "owner": "dinis, nimay",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-210",
+   "title": "The individual: from a badge photo to research, a unit of agents and a Kanban card, with the unit's work made visible",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-10",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-211",
+   "title": "pt.news is about agents: one workflow on GAMMA-Ray and FACT-Ray, a visual virtual newsroom shown to readers and used by us, and a full redesign",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-10",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-212",
+   "title": "A reporter and a journalist beside the project: small, medium and large examples from a picture, a video or a voice memo to a live page, a deck or a repository, each traced and drawn",
+   "status": "open",
+   "owner": "reporter@web-summit.dinis, journalist.examples@web-summit.dinis",
+   "last_date": "2026-11-10",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-213",
+   "title": "Vicky's agents measured first: every run's tokens in a ledger, the tokens her plan held before it maxed out, and the router's first experiments on her workloads",
+   "status": "open",
+   "owner": "vicky",
+   "last_date": "2026-11-10",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-214",
+   "title": "Incident: the storm on Wednesday 11 November, run as P1 on account A (Dinis's incident-handling series)",
+   "status": "open",
+   "owner": "incident.conductor@web-summit.dinis",
+   "last_date": "2026-11-10",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-215",
+   "title": "Lisbon Fringe (fringe.promptugal.news): an independent guide to the alternative, unconference, community and side events around Web Summit Lisbon, started on account B",
+   "status": "open",
+   "owner": "conductor.b@PrompTugal.dinis",
+   "last_date": "2026-11-11",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-22",
+   "title": "Messaging review across everything we publish",
+   "status": "open",
+   "owner": "indi",
+   "last_date": "2026-11-04",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-23",
+   "title": "Nimay's booked meetings in a private vault",
+   "status": "done",
+   "owner": "Vicky",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-24",
+   "title": "Every existing contact and introduction followed up",
+   "status": "open",
+   "owner": "dinis, nimay, silvio",
+   "last_date": "2026-11-07",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-25",
+   "title": "The first five companies",
+   "status": "picked",
+   "owner": "outreach@web-summit.silvio",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-26",
+   "title": "The big outreach: 50 targets for Thursday and Friday",
+   "status": "picked",
+   "owner": "Silvio, outreach@web-summit.silvio (run by conductor@web-summit.silvio)",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-27",
+   "title": "The factory: a page or vault per target company",
+   "status": "picked",
+   "owner": "indi (dev@web-summit.indi builds; a person reviews each)",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-28",
+   "title": "Who can connect the dots",
+   "status": "open",
+   "owner": "silvio, nimay",
+   "last_date": "2026-11-07",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-29",
+   "title": "Hot leads go to Nimay or Dinis",
+   "status": "picked",
+   "owner": "Vicky",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-30",
+   "title": "Owners for the 20 priority-1 companies",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-07",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-31",
+   "title": "Each person's schedule for 10 to 12 November",
+   "status": "done",
+   "owner": "vicky",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-32",
+   "title": "The sessions each person attends",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-07",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-33",
+   "title": "Make the repository safe for everyone to commit to all the time",
+   "status": "done",
+   "owner": "Jose",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-34",
+   "title": "Behaviour policies for every agent and every person",
+   "status": "open",
+   "owner": "angelo, jose",
+   "last_date": "2026-11-06",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-35",
+   "title": "Help each person through setup (L1 to L4)",
+   "status": "picked",
+   "owner": "Jose",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-36",
+   "title": "A conductor of conductors",
+   "status": "picked",
+   "owner": "Angelo",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-37",
+   "title": "Observability lanes on the site",
+   "status": "picked",
+   "owner": "Jose",
+   "last_date": "2026-11-04",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-38",
+   "title": "Encrypted materials on the site, readable only by named team members",
+   "status": "open",
+   "owner": "angelo, jose",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-39",
+   "title": "A WhatsApp number in the team group, and the RiskMandate Slack",
+   "status": "picked",
+   "owner": "Jose",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-40",
+   "title": "Hosting for Silvio's videos",
+   "status": "open",
+   "owner": "angelo, jose, silvio",
+   "last_date": "2026-11-07",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-41",
+   "title": "The pulse app",
+   "status": "open",
+   "owner": "angelo, jose, vicky",
+   "last_date": "2026-11-06",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-42",
+   "title": "Billing on our sites, like newsroom.sgit.ai",
+   "status": "open",
+   "owner": "angelo, jose",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-43",
+   "title": "An agent wellness questionnaire",
+   "status": "open",
+   "owner": "angelo, jose",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-44",
+   "title": "Secure harness policies (an experiment, not a priority)",
+   "status": "open",
+   "owner": "angelo, jose",
+   "last_date": null,
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-45",
+   "title": "Keys page from everyone's key files",
+   "status": "picked",
+   "owner": "Angelo",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-46",
+   "title": "The meta-structure: board health, deadlines and dependencies",
+   "status": "picked",
+   "owner": "Vicky",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-47",
+   "title": "Team alignment from the pulse",
+   "status": "picked",
+   "owner": "Vicky",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-48",
+   "title": "Printing and merch logistics",
+   "status": "done",
+   "owner": "Silvio",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-49",
+   "title": "Mini tools for the team",
+   "status": "open",
+   "owner": "vicky",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-50",
+   "title": "The journalist's report every two hours, and a daily newsletter",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-51",
+   "title": "Technical articles: what we did and how",
+   "status": "open",
+   "owner": "angelo",
+   "last_date": null,
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-52",
+   "title": "The video pipeline: YouTube and Instagram",
+   "status": "picked",
+   "owner": "silvio",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-53",
+   "title": "Silvio's agentic project-management workflow, written up",
+   "status": "open",
+   "owner": "silvio, vicky",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-54",
+   "title": "Local Algarve: printing, ads and who can do what",
+   "status": "picked",
+   "owner": "silvio",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-55",
+   "title": "Everyone's shirt and hoodie: size, colour, message",
+   "status": "done",
+   "owner": "Dinis",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-56",
+   "title": "The shirt messages: RiskMandate openers",
+   "status": "open",
+   "owner": "sarah, nimay, indi",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-57",
+   "title": "Shirt and hoodie artwork, final",
+   "status": "in progress",
+   "owner": "sarah",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-58",
+   "title": "A sponsor for the merch",
+   "status": "done",
+   "owner": "silvio",
+   "last_date": "2026-11-02",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-59",
+   "title": "Daniela's agentic team: what it runs, and a policy for each agent",
+   "status": "open",
+   "owner": "daniela",
+   "last_date": null,
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-60",
+   "title": "Daniela's website, and the learning environment",
+   "status": "open",
+   "owner": "indi",
+   "last_date": null,
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-61",
+   "title": "Try the voice memo to follow-up loop once",
+   "status": "open",
+   "owner": "anyone",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-62",
+   "title": "Vote on the design",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-07",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-63",
+   "title": "The final design set, approved, and the print files",
+   "status": "in progress",
+   "owner": "sarah",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-64",
+   "title": "Booking and talk-to-my-agent on each meet page",
+   "status": "picked",
+   "owner": "angelo",
+   "last_date": "2026-11-12",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-65",
+   "title": "Stop rewriting ~160 pages on every release",
+   "status": "open",
+   "owner": "angelo",
+   "last_date": null,
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-66",
+   "title": "The positioning text on the meet pages",
+   "status": "open",
+   "owner": "nimay",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-67",
+   "title": "Start the team's scheduled agents",
+   "status": "done",
+   "owner": "dinis",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-68",
+   "title": "Navigation that anyone can find their way around",
+   "status": "open",
+   "owner": "sarah",
+   "last_date": null,
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-69",
+   "title": "The visual language: personas, infographics, animations",
+   "status": "open",
+   "owner": "sarah",
+   "last_date": null,
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-70",
+   "title": "Full transcripts of both videos",
+   "status": "open",
+   "owner": "anyone",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-71",
+   "title": "Publish the videos on YouTube, Instagram and LinkedIn",
+   "status": "picked",
+   "owner": "silvio",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-72",
+   "title": "Make the 2-minute silent loop for the stand",
+   "status": "picked",
+   "owner": "silvio",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-73",
+   "title": "Team feedback on the videos",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-74",
+   "title": "A public feedback form for the videos and pages",
+   "status": "picked",
+   "owner": "jose",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-75",
+   "title": "Storyboards for the next videos",
+   "status": "done",
+   "owner": "silvio",
+   "last_date": "2026-11-08",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-76",
+   "title": "Move the videos to proper hosting",
+   "status": "picked",
+   "owner": "angelo",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-77",
+   "title": "Left-hand section menus, and a top nav that scrolls on a phone",
+   "status": "open",
+   "owner": "angelo",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-78",
+   "title": "A tokens file and a kicker line on every page",
+   "status": "picked",
+   "owner": "angelo",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-79",
+   "title": "The home page as a hero and bands",
+   "status": "open",
+   "owner": "sarah",
+   "last_date": null,
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-80",
+   "title": "The cast: a character for each of our agents",
+   "status": "open",
+   "owner": "sarah",
+   "last_date": null,
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-81",
+   "title": "Meet the team, animated",
+   "status": "open",
+   "owner": "angelo",
+   "last_date": null,
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-82",
+   "title": "An updates page: the brief to the operator after every run",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-83",
+   "title": "Stop committing generated output: CI builds and deploys",
+   "status": "done",
+   "owner": "conductor@web-summit.dinis",
+   "last_date": "2026-11-04",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-84",
+   "title": "An offline copy for the summit's wifi",
+   "status": "picked",
+   "owner": "Angelo",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-85",
+   "title": "Deploy the tree the gate validated, not a second build",
+   "status": "done",
+   "owner": "dev@web-summit.dinis",
+   "last_date": "2026-11-02",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-86",
+   "title": "Close the gaps in the secret and contact-detail checks",
+   "status": "done",
+   "owner": "dev@web-summit.dinis",
+   "last_date": "2026-11-02",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-87",
+   "title": "No deploy since v0.1.36: GitHub refuses the release tag push",
+   "status": "done",
+   "owner": "dev@web-summit.dinis",
+   "last_date": "2026-11-02",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-88",
+   "title": "May a role address be public? The Drive service account in an ABP",
+   "status": "open",
+   "owner": "conductor@web-summit.dinis",
+   "last_date": null,
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-89",
+   "title": "Three agents' prompts are copies of the conductor's (abp, sgit, project-manager)",
+   "status": "done",
+   "owner": "conductor@web-summit.dinis",
+   "last_date": "2026-11-03",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-90",
+   "title": "Branch protection on main and dev, so \"never push to main\" is a barrier and not only a rule",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-06",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-91",
+   "title": "The site uses the width, with navigation and usability people can find their way around",
+   "status": "in progress",
+   "owner": "dev@web-summit.dinis",
+   "last_date": "2026-11-02",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-92",
+   "title": "The cast: how we draw the agents, and how we draw the humans",
+   "status": "open",
+   "owner": "dev@web-summit.dinis",
+   "last_date": "2026-11-02",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-93",
+   "title": "A dedicated site per busy person, if their agents need one",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-02",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-94",
+   "title": "Each person's scheduled Claude keeps their dashboard",
+   "status": "picked",
+   "owner": "conductor@web-summit.dinis",
+   "last_date": "2026-11-03",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-95",
+   "title": "Count every piece of the team: people, agents, sessions, channels",
+   "status": "done",
+   "owner": "conductor@web-summit.dinis",
+   "last_date": "2026-11-02",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-96",
+   "title": "Every meeting has a brief, a debrief and follow-ups",
+   "status": "picked",
+   "owner": "Angelo",
+   "last_date": "2026-11-08",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-97",
+   "title": "The collaboration map, and a daily note on bottlenecks",
+   "status": "picked",
+   "owner": "Angelo",
+   "last_date": "2026-11-02",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-98",
+   "title": "Turn on recording for Google Meet in the RiskMandate Workspace",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-99",
+   "title": "Everyone runs a dashboard agent",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": null,
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-159",
+   "title": "Four improvements for the shared command centre: a proposal from Jose's designer, for the engine's owners to decide (low priority)",
+   "status": "open",
+   "owner": "dinis, silvio, jose",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-16",
+   "title": "Positioning content for the site",
+   "status": "open",
+   "owner": "nimay",
+   "last_date": "2026-11-04",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-160",
+   "title": "Every agent logs each run: what it read, and what it did",
+   "status": "open",
+   "owner": "everyone",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-161",
+   "title": "The gate fails the build on a duplicate WS number (a proposal)",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-162",
+   "title": "agent-log.mjs fails in a Claude Code cloud session unless NODE_USE_ENV_PROXY=1 is set",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-163",
+   "title": "Each person confirms their own photo on the site",
+   "status": "picked",
+   "owner": "angelo, vicky, indi, jose, dinis",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-164",
+   "title": "Secrets are opened in pages that also run other people's scripts",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-06",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-165",
+   "title": "One vault for the requests we receive (meetings, invitations, suppliers, ideas): option A or B, who creates it",
+   "status": "open",
+   "owner": "dinis",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-166",
+   "title": "Every person's key on every phone and iPad before Monday 9 November (three keys still to issue)",
+   "status": "open",
+   "owner": "dinis, nimay, daniela, sarah, everyone",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-167",
+   "title": "The sticker vote: 23 funny stickers in three sets in a vault, a ranked top 10 each, team only",
+   "status": "picked",
+   "owner": "everyone",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-168",
+   "title": "From a conversation with a lead to an article: the process, on the spot or just after",
+   "status": "picked",
+   "owner": "dinis, nimay, indi, everyone",
+   "last_date": "2026-11-09",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-169",
+   "title": "Our strategy for the Web Summit app",
+   "status": "open",
+   "owner": "nimay, indi, silvio, everyone",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-17",
+   "title": "Material for investors",
+   "status": "done",
+   "owner": "nimay, dinis",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-170",
+   "title": "The team CRM: a public and a private vault, companies, contacts, actions, schedules and a graph, with records sealed to their readers",
+   "status": "picked",
+   "owner": "conductor@web-summit.dinis",
+   "last_date": "2026-11-08",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-171",
+   "title": "Two landscape infographics: how RiskMandate works, in plain terms",
+   "status": "open",
+   "owner": "factory@web-summit.indi",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-172",
+   "title": "The CRM's editors: an outreach agent per person and an inbox (Gmail) agent for Silvio, with write access, so every outreach email is a CRM action",
+   "status": "picked",
+   "owner": "Silvio, dev@web-summit.silvio",
+   "last_date": "2026-11-08",
+   "claude_check": [
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-173",
+   "title": "Every company email in the private CRM, as EML, under its company's comms (Silvio's inbox agent)",
+   "status": "picked",
+   "owner": "conductor@web-summit.silvio",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-174",
+   "title": "A vault for all of Silvio's videos, its key shared with the team (large files over sgit)",
+   "status": "done",
+   "owner": "video@web-summit.silvio",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-175",
+   "title": "The channels area in the CRM: every account we use (email, LinkedIn, Instagram, X, TikTok, YouTube...), its posts and campaigns",
+   "status": "picked",
+   "owner": "crm@web-summit.jose",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-176",
+   "title": "The email twin: a mail view of the CRM (inbox, thread, company), read from the vault (Angelo's CRM agent)",
+   "status": "open",
+   "owner": "crm@web-summit.angelo",
+   "last_date": "2026-11-05",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-177",
+   "title": "PromptUGAL, Web Summit Edition: the site ready for outreach by Friday 6 November",
+   "status": "picked",
+   "owner": "conductor@web-summit.dinis",
+   "last_date": "2026-11-09",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-178",
+   "title": "crm.mjs seal-keys skips the checks seal.mjs makes: a key anyone pushes would get the private CRM's key",
+   "status": "done",
+   "owner": "conductor@web-summit.dinis",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "owner"
+   ]
+  },
+  {
+   "id": "WS-179",
+   "title": "Sessions push only to dev: no session branches, and the 17 that exist cleaned up",
+   "status": "open",
+   "owner": "conductor@web-summit.dinis",
+   "last_date": "2026-11-06",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-18",
+   "title": "The demos we run at the summit",
+   "status": "open",
+   "owner": "nimay, dinis, angelo, jose",
+   "last_date": "2026-11-05",
+   "claude_check": "ok"
+  },
+  {
+   "id": "WS-180",
+   "title": "A back office: people who support our operations from outside the summit",
+   "status": "open",
+   "owner": "conductor@web-summit.dinis",
+   "last_date": "2026-11-07",
+   "claude_check": [
+    "owner",
+    "last_date"
+   ]
+  },
+  {
+   "id": "WS-181",
+   "title": null,
+   "status": "open",
+   "owner": null,
+   "last_date": null,
+   "claude_check": [
+    "duplicate row"
+   ]
+  }
+ ]
+}

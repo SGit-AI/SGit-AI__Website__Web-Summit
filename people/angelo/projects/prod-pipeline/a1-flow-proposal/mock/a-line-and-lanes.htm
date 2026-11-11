@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Option A: one line, two sizes</title><link rel="stylesheet" href="mock.css"></head>
+<body><main>
+<p class="k">a1-flow-proposal · mock A (recommended)</p>
+<h1>One line, two sizes</h1>
+<p class="note">The strip at the foot of every page is the summary; the trace page is the same line opened into lanes. Same stations, same shapes, same colours, one JSON. Static mock: the data are real, the drawing is by hand.</p>
+
+<h2>1. The foot of an event page (Wexio, done)</h2>
+<div class="frame"><div class="fake"></div><div class="fake"></div><div class="fake s"></div>
+<section class="strip" aria-label="How this page was made">
+<p class="head"><span class="k">How this page was made</span><br><b>From the organiser's page to this page in 46 min</b> <span class="facts">· 3 people · 15 agents · 38 commits · 17 deploys</span></p>
+<ol class="line">
+<li class="st human ask"><span class="dot"></span><span class="lab">Dinis asks</span><span class="t">≤10:27</span></li>
+<li class="st read quiet"><span class="dot"></span><span class="lab">Read</span><span class="t">10:57</span></li>
+<li class="st agent l2"><span class="dot"></span><span class="lab">Entry</span><span class="t">10:58</span></li>
+<li class="st read quiet l1"><span class="dot"></span><span class="lab">Re-read</span><span class="t">11:23</span></li>
+<li class="st human quiet l2"><span class="dot"></span><span class="lab">Dinis</span><span class="t">11:37</span></li>
+<li class="st agent l2"><span class="dot"></span><span class="lab">Updated</span><span class="t">11:41</span></li>
+<li class="st agent l1"><span class="dot"></span><span class="lab">Page built</span><span class="t">11:42</span></li>
+<li class="st live"><span class="dot"></span><span class="lab">Live</span><span class="t">11:42</span></li>
+<li class="st burst quiet"><span class="dot"></span><span class="lab"><span class="sh">26 commits</span><span class="lg">26 commits by 10 agents</span></span><span class="t">11:54</span></li>
+<li class="st out l1"><span class="dot"></span><span class="lab">5 failed</span><span class="t">11:58</span></li>
+<li class="st now afterout"><span class="dot"></span><span class="lab">Now</span><span class="t">12:03</span></li>
+</ol>
+<p class="foot"><a href="#page">See every step</a> · from the git record, with evidence · trace taken 12:05</p>
+</section></div>
+
+<h2>2. The same strip while work runs (this item, a1-flow-proposal, now)</h2>
+<p class="note">A new last station: who is working, since when, and the line beyond the last step marching. It stops when the run ends or the page is rebuilt with no open run.</p>
+<section class="strip" aria-label="How this page is being made">
+<p class="head"><span class="k">How this page is being made</span><br><b>Working now: design, since 17:09</b> <span class="facts">· 1 person · 2 agents · 4 commits so far</span></p>
+<ol class="line">
+<li class="st human ask"><span class="dot"></span><span class="lab">Angelo asks</span><span class="t">≤12:40</span></li>
+<li class="st agent"><span class="dot"></span><span class="lab">Asked</span><span class="t">12:40</span></li>
+<li class="st agent l1"><span class="dot"></span><span class="lab">+ phones</span><span class="t">12:44</span></li>
+<li class="st agent quiet"><span class="dot"></span><span class="lab">Brief</span><span class="t">17:05</span></li>
+<li class="st run"><span class="dot"></span><span class="lab"><span class="sh">charlie</span><span class="lg">charlie, design</span></span><span class="t">17:09 →</span></li>
+</ol>
+<p class="foot"><a href="#page">See every step</a> · running: an open run in runs.md, checked 17:14</p>
+</section>
+
+<h2 id="page">3. The trace page: the line opened (b0-library, done)</h2>
+<p class="head"><b>From the intake to live in 34 min</b> <span class="facts">· 1 person · 2 agents · 4 commits · 2 releases · 83,330 tokens measured</span></p>
+<div class="bar"><span class="btn on">Lanes: by kind</span><span class="btn">by agent</span><span class="btn">▶ Replay</span>
+<span class="key"><span><i style="background:var(--terracotta)"></i>person</span><span><i style="background:var(--brand)"></i>lead</span><span><i style="background:var(--river)"></i>worker</span><span><i style="background:var(--ok)"></i>CI, live</span><span><i style="border:1px dashed var(--rule-2)"></i>not in the record</span><span><i style="background:var(--tram)"></i>a station on the strip</span></span></div>
+<div class="axis"><div></div><div><span style="--x:0%">10:50</span><span style="--x:22.2%">11:00</span><span style="--x:44.4%">11:10</span><span style="--x:66.6%">11:20</span><span style="--x:88.8%">11:30</span></div></div>
+<div class="lanes replay">
+ <div class="hand" aria-hidden="true"><svg viewBox="0 0 100 416" preserveAspectRatio="none"><g fill="none" stroke="var(--ink-2)" stroke-width="2.5" vector-effect="non-scaling-stroke">
+  <path d="M9 80 L12 116" vector-effect="non-scaling-stroke"/><path d="M31 150 L43 220" vector-effect="non-scaling-stroke"/><path d="M55 240 L80 150" vector-effect="non-scaling-stroke"/><path d="M94 186 L94 324" vector-effect="non-scaling-stroke"/></g></svg></div>
+ <div class="lane"><h3>People</h3><ol class="track">
+  <li class="step p g star" style="--x:0%;--w:11%;--i:0"><b>Angelo: "Yes to all three"</b><span class="m">≤10:55 · <span class="ln">person · </span>no time in the record</span></li></ol></div>
+ <div class="lane"><h3>Lead</h3><ol class="track">
+  <li class="step l star" style="--x:11.1%;--w:22.2%;--i:1"><b>conductor.b@: intake, opens b0</b><span class="m">10:55 to 11:05 · <span class="ln">lead · </span>fd3bed8 · tokens: not measured</span></li>
+  <li class="step l star end" style="--x:80%;--w:6%;--i:4"><b>conductor.b@: review, onto dev</b><span class="m">11:26 · <span class="ln">lead · </span>5c6f4c8</span></li></ol></div>
+ <div class="lane"><h3>Workers</h3><ol class="track">
+  <li class="step w star" style="--x:42.2%;--w:8.9%;--i:3"><b>alpha: spec, 3 commits</b><span class="m">11:09 to 11:13 · <span class="ln">worker, large slot · </span>6 min (est. 45) · 83,330 tokens</span></li></ol></div>
+ <div class="lane"><h3>CI and live</h3><ol class="track">
+  <li class="step d" style="--x:40%;--w:4%;--i:2"><b>v0.2.1845</b><span class="m">11:08 · <span class="ln">CI · </span>1e1cd20</span></li>
+  <li class="step d star end" style="--x:86.7%;--w:6%;--i:5"><b>★ Live, v0.2.1849</b><span class="m">11:29 · <span class="ln">CI · </span>first release holding 5c6f4c8</span></li></ol></div>
+</div>
+<p class="note">Desktop: lanes, time left to right, a line at each hand-off. Phone (below 760 px): the same steps as one list in time order, the lane as a coloured edge. Tap a step: who, slot, minutes, tokens, evidence. Gaps (dashed) say what the record lacks.</p>
+</main></body></html>

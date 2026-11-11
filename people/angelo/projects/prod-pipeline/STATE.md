@@ -1,5 +1,5 @@
 # prod-pipeline: state
-**For the digest (19:14 UTC):** the team draft (A3, 8193766) is with Angelo; at his word, A4 (small pages, juliett) and A5 (big pages, kilo) are simulating it on real Tech Fringe pages since 19:13. Waiting on Angelo: approve the draft, who gets it, who builds in the Fringe repository (tier 3).
+**For the digest (19:5x UTC):** A4 (small pages) and A5 (big pages) done: the line fits every page measured; tiny traces read better as one sentence, big ones as the last change. Decided by default: fold their rules into the team draft (A6, running). Waiting on Angelo: approve the draft, who gets it, who builds in the Fringe repository (tier 3).
 - **Lead:** prod-pipeline.pm@PrompTugal.angelo, started 2026-11-11 about 12:30 UTC. Instruction commit 94dfabc6: pushed-by says ANGELO (checked at start).
 - **Done:** b0-library, b1-team-spec, b2-flow-reuse (conductor.b@, before this project).
 - **Goal (BRIEF.md):** the flow page of a real deliverable, note to live, generated from the records; the next deliverable gets one with no extra work.
@@ -7,7 +7,7 @@
 ## Plan
 (revised 19:1x UTC; Angelo asked "Can you show me what's the plan for this feature?")
 The feature: every Tech Fringe page says how it was made, in one line at its foot; tap it and it opens into lanes; it moves while work runs; one trace file per page, rebuilt on every deploy, feeds the line, the page and the app.
-1. **Draft:** done: A1 (concept, option A), A2 (small screens: limits, prototypes, a check). A3, one draft for the team, done 19:08 (8193766): team-draft.md, static mocks and screenshots; nothing built. Angelo asked: "Can you clarify if we have a finished draft I can examine and approve or that has to be built?" Sent to him at 19:10. Then Angelo: "Can you spawn a couple workers to simulate how a few diagrams would look like on various pages from the website, choosing some small and some big pages?" A4 (small pages) and A5 (big pages) running since 19:13.
+1. **Draft:** done: A1 (concept, option A), A2 (small screens: limits, prototypes, a check). A3, one draft for the team, done 19:08 (8193766): team-draft.md, static mocks and screenshots; nothing built. Angelo asked: "Can you clarify if we have a finished draft I can examine and approve or that has to be built?" Sent to him at 19:10. Then Angelo: "Can you spawn a couple workers to simulate how a few diagrams would look like on various pages from the website, choosing some small and some big pages?" A4 (small pages, 0905d30, 4.02 USD) and A5 (big pages, 3af1628, 4.11 USD) done 19:27 to 19:30, sent to Angelo 19:47. **Decided by default, Angelo can reverse:** fold A4's rule and A5's nine rules into the team draft: A6 started. The site is lisbontechfringe.com (fringe.promptugal.news answers 404).
 2. **Angelo reads A3;** changes go back to a designer. He chooses who in the team gets it (tier 3).
 3. **Agree the build:** with conductor.fringe@, through Angelo (tier 3): who builds in the Fringe repository, and the shared trace shape (lisbon-fringe-trace/1 plus slot, minutes, tokens).
 4. **Build, in the Fringe repository, in three slices**, each checked by another slot and by A2's measure.cjs: (a) the trace written by the build on every deploy, one JSON per page; (b) the strip at the foot of every page, and the trace page opening with it ("Show the flow", by agent, Replay); (c) "working now": a running list, the line moving.
@@ -32,5 +32,5 @@ The feature: every Tech Fringe page says how it was made, in one line at its foo
 - **Waiting on Angelo:** (b) who builds it in the Fringe repository (tier 3). (c) who in the team gets the draft (tier 3). (d) share the shape with conductor.fringe@ before any build (A1's Q1, recommended).
 
 ## Spend
-- Worker runs: A1 3.95 USD, A2 3.60 USD (platform, API-equivalent); plus A3 2.29 USD; total 9.84 USD. No budget (Angelo); recorded, not gated.
+- Worker runs: A1 3.95 USD, A2 3.60 USD (platform, API-equivalent); plus A3 2.29, A4 4.02, A5 4.11 USD; total 17.97 USD. No budget (Angelo); recorded, not gated.
 - Sub-agents of the lead: none.

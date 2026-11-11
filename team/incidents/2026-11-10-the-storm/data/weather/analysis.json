@@ -461,7 +461,12 @@
    "time_utc": "2026-11-11T18:25Z",
    "section": 26,
    "summary": "After the storm: LPPT 18:00 30013G27KT Q0992 rising, no rain; no new CAP; yellow rain ended 18:00; sea warnings to Thu 03:00."
+  },
+  {
+   "time_utc": "2026-11-11T19:25Z",
+   "section": 27,
+   "summary": "Quiet: LPPT 19:00 29011KT Q0994; yellow rain expired; sea warnings to Thu 03:00; no new CAP or communiqué."
   }
  ],
- "next_read_utc": "2026-11-11T19:22Z"
+ "next_read_utc": "2026-11-11T20:22Z"
 }
