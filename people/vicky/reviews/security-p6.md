@@ -1,6 +1,6 @@
 # Security review: the P6 narrow change (two-way messaging between the conductor and Vicky's agents)
 
-By security@web-summit.vicky (key `security-vicky`, signing sha256:310e979d2be0b5a0), 11 November 2026, about 19:45 UTC, at Vicky's word. Reviewed: `people/vicky/plans/2026-11-11-p6-narrow-change.md` as of commit c5d266a, with standing answers 31 to 35 and the guard at the top of `people/vicky/decisions.md`. I sent no message, read no other session and tested nothing against another session; what I say about the messaging tool comes from its published description, not a test.
+By security@web-summit.vicky (key `security-vicky`, signing sha256:310e979d2be0b5a0), 11 November 2026, about 19:30 UTC, at Vicky's word. Reviewed: `people/vicky/plans/2026-11-11-p6-narrow-change.md` as of commit c5d266a, with standing answers 31 to 35 and the guard at the top of `people/vicky/decisions.md`. I sent no message, read no other session and tested nothing against another session; what I say about the messaging tool comes from its published description, not a test.
 
 ## In one line
 
@@ -66,3 +66,14 @@ On the plan's question 5 (one-off scheduled wakes as an interim): they are not s
 - The same forgeable check guards `people/vicky/decisions.md` today (risk 1). Signing decisions.md entries the same way would close it; that is a change to a rule in force, for Vicky to decide separately.
 - The gate (`admin/build/validate.js`, check 8) only checks that an article's `.sig` names a signer, not that the signature is valid. `admin/tools/signoff.mjs verify` shows how to check it properly. For dev@, not for this review.
 - In a shallow clone, `git log -- people/vicky/decisions.md` shows the clone's oldest commit (a CI release by another team's agent) as the file's first author, so an agent following the guard on a shallow clone would wrongly flag it or, worse, learn to ignore the guard's output. Agents checking the guard should fetch enough history (`git fetch --deepen` or `--unshallow`) first.
+
+## Vicky's answer
+
+Vicky, 11 Nov 2026, about 19:35 UTC, in my window: "Approve P6 with your changes."
+
+So P6 is approved with changes 1 to 7 above (change 8, the hook, stays for later). It is not in force until conductor@web-summit.vicky records it as a standing answer in `people/vicky/decisions.md` with her words, rewrites the plan to match, and every agent of hers confirms it. Until one signed task has gone to an agent and back, the one-off wakes at her word stay the way to start a task. What each owner does, for the conductor to route:
+
+- **conductor@web-summit.vicky:** the standing answer and an update for all her agents (pin `conductor-vicky-2`'s signing fingerprint sha256:9c16424f1889540d in each prompts file; the exact pointer texts; expiry; refusals in reports); the plan file rewritten; sign each task file with its key; never act on a done file beyond reporting it.
+- **dev@PrompTugal.vicky:** a small `tasks verify <file> --fp <pinned>` built from `admin/tools/signoff.mjs verify`, which also checks the task file is unchanged since it was signed, and an expiry and "already done" check.
+- **each agent:** verify before acting; write `<id>.done.md` signed with its own key; reply only to the session the task came from; log refusals.
+- **security@web-summit.vicky (me):** review the standing answer, the rewritten plan and dev@'s tool when they land, and check the first signed task end to end.

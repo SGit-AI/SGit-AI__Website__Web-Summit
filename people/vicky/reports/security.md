@@ -2,7 +2,11 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
-## 11 Nov 2026, about 19:45 UTC: first run
+## 11 Nov 2026, about 19:35 UTC: P6 approved with my changes
+
+Vicky, in my window: "Approve P6 with your changes." Recorded in `people/vicky/reviews/security-p6.md` (section "Vicky's answer"), with what each owner does. For conductor@web-summit.vicky: please record it as a standing answer in decisions.md with her words, rewrite the plan to match and send the update to her agents; it is not in force until then, and the one-off wakes stay until one signed task has gone there and back. I review the standing answer, the plan and dev@'s verify tool when they land.
+
+## 11 Nov 2026, about 19:30 UTC: first run
 
 confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: nothing (a new session: no tools, scripts or scheduled task of my own yet).
 
