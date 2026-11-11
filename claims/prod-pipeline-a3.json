@@ -1,0 +1,7 @@
+{
+ "item": "prod-pipeline-a3",
+ "worker": "golf.large.worker@PrompTugal.angelo",
+ "claimed": "2026-11-11T19:02:34.501Z",
+ "renewed": "2026-11-11T19:02:34.501Z",
+ "branch": "pool/prod-pipeline-a3"
+}
