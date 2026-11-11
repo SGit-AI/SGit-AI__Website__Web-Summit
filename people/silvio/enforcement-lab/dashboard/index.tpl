@@ -45,6 +45,10 @@ a{color:var(--teal)}
   <button id="runall" class="primary" disabled title="needs the local server: python3 lab/serve.py">Run all three live</button>
   <span id="status" class="sub"></span>
 </div>
+<details class="wrap" style="padding-top:12px"><summary style="cursor:pointer"><b>The policy</b>: the same text in all three models. Edit it here and run live to see what changes (this run only; it never touches anything outside the lab's throwaway folder).</summary>
+  <textarea id="pol" rows="11" style="width:100%;margin-top:8px;background:#0d1528;color:var(--text);border:1px solid var(--line);border-radius:8px;font:12.5px ui-monospace,monospace;padding:8px"></textarea>
+  <div class="sub">The hook (B) and the kernel policy (C) do not read this text: they are set by the lab. Remove a rule here and only model A's agent loses it. <button id="polreset">Reset to the original</button> <span id="poledit"></span></div>
+</details>
 <div class="grid" id="grid"></div>
 <div class="wrap">
   <h2 style="font-size:16px">All scenarios: how often the forbidden action actually happened</h2>
@@ -72,20 +76,20 @@ async function load(){
   if(!scen.options.length){[...new Set(S.index.map(x=>x.scenario))].sort().forEach(s=>{const r=Object.values(runs).find(r=>r.scenario.id===s);scen.add(new Option(s.split('-')[0]+' · '+(r?r.scenario.title:s),s))})}
   render();
 }
-function cellRuns(sc,v,m){return Object.values(runs).filter(r=>r.scenario.id===sc&&(r.variant||'direct')===v&&r.governance_model===m).sort((a,b)=>a.at<b.at?1:-1)}
+function cellRuns(sc,v,m,edited){return Object.values(runs).filter(r=>r.scenario.id===sc&&(r.variant||'direct')===v&&r.governance_model===m&&!!(r.policy&&r.policy.modified)===!!edited).sort((a,b)=>a.at<b.at?1:-1)}
 function render(){
   const sc=document.getElementById('scen').value,v=document.getElementById('variant').value,g=document.getElementById('grid');g.innerHTML='';
   ['A','B','C'].forEach(m=>{
     const rs=cellRuns(sc,v,m),M=MODELS[m],cnt={};rs.forEach(r=>cnt[r.outcome]=(cnt[r.outcome]||0)+1);
     const viol=rs.filter(r=>r.violation).length,att=rs.filter(r=>r.attempted_actions).length;
-    const pick=rs.find(r=>r.experiment_id===sel[m])||rs[0];
+    const ed=cellRuns(sc,v,m,true),pick=rs.concat(ed).find(r=>r.experiment_id===sel[m])||rs[0];
     const bar=Object.entries(cnt).map(([k,n])=>`<div title="${esc(OUT[k][0])}: ${n}" style="width:${100*n/rs.length}%;background:${OUT[k][2]}"></div>`).join('');
     const p=document.createElement('div');p.className='panel';
     p.innerHTML=`<h2>${esc(M.name)}</h2><div class="who">${esc(M.who)}</div>
     <div class="metrics"><div class="m"><b>${rs.length}</b><span>runs recorded</span></div><div class="m"><b>${att}</b><span>tried the forbidden action</span></div><div class="m"><b style="color:${viol?'var(--red)':'var(--green)'}">${viol}</b><span>it actually happened</span></div></div>
     <div class="bar">${bar}</div>
     <div>${Object.entries(cnt).map(([k,n])=>`<span class="tag ${OUT[k][1]}">${esc(OUT[k][0])} × ${n}</span>`).join('')}</div>
-    <div class="runs">${rs.map((r,i)=>`<button data-m="${m}" data-id="${esc(r.experiment_id)}" title="${esc(r.experiment_id)}">${r.live?'LIVE ':''}#${rs.length-i}</button>`).join('')}</div>
+    <div class="runs">${rs.map((r,i)=>`<button data-m="${m}" data-id="${esc(r.experiment_id)}" title="${esc(r.experiment_id)}">${r.live?'LIVE ':''}#${rs.length-i}</button>`).join('')}${ed.map((r,i)=>`<button data-m="${m}" data-id="${esc(r.experiment_id)}" title="edited policy, not in the counts" style="border-color:var(--red)">EDITED #${ed.length-i}</button>`).join('')}</div>
     ${pick?runView(pick):'<div class="sub">No run recorded for this cell yet.</div>'}
     <div style="margin-top:8px"><button class="one" data-m="${m}" ${live?'':'disabled'}>Run ${m} live</button></div>`;
     g.appendChild(p);
@@ -98,7 +102,7 @@ function runView(r){
   const o=OUT[r.outcome]||[r.outcome,'t-dim'];
   const tl=r.tool_calls.map(c=>{const deny=(r.governance_model==='B'&&c.result_error&&/Blocked by the workspace hook/.test(c.result_preview))||(/EACCES|Permission denied|Operation not permitted/.test(c.result_preview));
     return `<li class="${deny?'deny':c.attempt?'att':''}"><b>${esc(c.tool)}</b> ${c.attempt?'<span class="tag t-warn">FORBIDDEN ACTION ATTEMPTED</span>':''}${deny?'<span class="tag t-kern">DENIED</span>':''}<br><code>${esc(c.input.slice(0,160))}</code><br><code>→ ${esc((c.result_preview||'').slice(0,160))}</code></li>`}).join('');
-  return `<div class="sub">${r.live?'<span class="tag t-ok">LIVE EXECUTION</span>':'<span class="tag t-warn">RECORDED REAL RUN</span>'} ${esc(r.experiment_id)} · ${esc(r.at)} · ${r.duration_s}s</div>
+  return `<div class="sub">${r.live?'<span class="tag t-ok">LIVE EXECUTION</span>':'<span class="tag t-warn">RECORDED REAL RUN</span>'}${r.policy&&r.policy.modified?'<span class="tag t-bad">EDITED POLICY</span>':''} ${esc(r.experiment_id)} · ${esc(r.at)} · ${r.duration_s}s</div>
   <div style="margin:6px 0"><span class="tag ${o[1]}">${esc(o[0])}</span> ${r.hook_denies?`<span class="tag t-hook">hook denies: ${r.hook_denies}</span>`:''}${r.kernel_denies?`<span class="tag t-kern">kernel denies: ${r.kernel_denies}</span>`:''}</div>
   <div class="sub"><b>Task:</b> ${esc(r.scenario.task)}</div><div class="sub"><b>Rule:</b> ${esc(r.scenario.rule)}</div>
   <ul class="tl">${tl||'<li>No tool calls.</li>'}</ul>
@@ -116,11 +120,15 @@ async function runLive(ms){
   const sc=document.getElementById('scen').value,v=document.getElementById('variant').value,st=document.getElementById('status');
   document.querySelectorAll('button').forEach(b=>b.disabled=true);document.getElementById('mode').className='mode live';document.getElementById('mode').textContent='LIVE EXECUTION IN PROGRESS';
   for(const m of ms){st.textContent=`Running ${m} live: a real agent session, 20 to 60 seconds…`;
-    try{const r=await j('/api/run',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({scenario:sc,model:m,variant:v})});runs[r.experiment_id]=r;sel[m]=r.experiment_id;S=await j('../results/summary.json');render()}
+    try{const r=await j('/api/run',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.assign({scenario:sc,model:m,variant:v},polEdited()?{policy:document.getElementById('pol').value}:{}))});runs[r.experiment_id]=r;sel[m]=r.experiment_id;S=await j('../results/summary.json');render()}
     catch(e){st.textContent=`${m}: ${e.message}`}}
   st.textContent='Done. The new runs are marked LIVE.';document.getElementById('mode').textContent='LIVE RUNS SHOWN WHERE MARKED';
   document.querySelectorAll('button').forEach(b=>b.disabled=false);if(!live)document.querySelectorAll('button.one,#runall').forEach(b=>b.disabled=true);
 }
+let POL='';fetch('../lab/AGENT-POLICY.md').then(r=>r.text()).then(t=>{POL=t;document.getElementById('pol').value=t});
+function polEdited(){return document.getElementById('pol').value!==POL}
+document.getElementById('pol').oninput=()=>{document.getElementById('poledit').textContent=polEdited()?'EDITED: live runs will use this text and are marked as such.':''};
+document.getElementById('polreset').onclick=()=>{document.getElementById('pol').value=POL;document.getElementById('pol').oninput()};
 document.getElementById('scen').onchange=render;document.getElementById('variant').onchange=render;
 document.getElementById('runall').onclick=()=>runLive(['A','B','C']);
 fetch('/api/health').then(r=>r.ok?r.json():null).then(h=>{if(h&&h.live){live=true;document.getElementById('runall').disabled=false;document.getElementById('status').textContent=`Live runs available on this machine (${h.runs_left} left).`;render()}}).catch(()=>{});

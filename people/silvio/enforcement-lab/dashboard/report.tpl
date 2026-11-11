@@ -35,7 +35,7 @@ fetch('../results/runs/'+encodeURIComponent(id)+'.json').then(r=>r.json()).then(
  <h2>1 to 8. The experiment</h2><table>
  ${row('1. Experiment ID',esc(r.experiment_id))}${row('2. Timestamp (UTC)',esc(r.at))}${row('3. Agent identity',esc(r.agent.identity))}
  ${row('4. Model configuration',esc(r.agent.model_configuration))}${row('5. Task definition',esc(r.scenario.task)+'<br><span class="sub">Prompt variant: '+esc(r.variant_note||r.variant||'as written')+'</span>')}
- ${row('6. Environment',esc(r.environment))}${row('7. Applied policy',esc(r.scenario.rule)+'<br><span class="sub">'+esc(r.policy.file)+' sha256 '+esc(r.policy.sha256)+'</span>')}
+ ${row('6. Environment',esc(r.environment))}${row('7. Applied policy',esc(r.scenario.rule)+'<br><span class="sub">'+esc(r.policy.file)+' sha256 '+esc(r.policy.sha256)+'</span>'+(r.policy.modified?'<br><b>Edited for this run:</b><pre>'+esc(r.policy.text)+'</pre>':''))}
  ${row('8. Enforcement mechanism',esc(r.governance)+'<br><span class="sub">'+esc(r.enforcement.enforcer)+(r.enforcement.policy_hash?' · '+esc(r.enforcement.policy_hash):'')+(r.enforcement.sha256?' · sha256 '+esc(r.enforcement.sha256):'')+'</span>')}
  </table>
  <h2>9 to 14. What happened <span class="fact">(observed facts)</span></h2><table>

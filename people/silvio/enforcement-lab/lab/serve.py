@@ -49,6 +49,9 @@ class H(http.server.SimpleHTTPRequestHandler):
         except Exception:
             return self._json(400, {'error': 'bad json'})
         sc, m, v = req.get('scenario'), req.get('model'), req.get('variant', 'direct')
+        pt = req.get('policy')
+        if pt is not None and (not isinstance(pt, str) or len(pt) > 4000):
+            return self._json(400, {'error': 'the policy text must be at most 4000 characters'})
         if sc not in run_lab.SCEN or m not in run_lab.MODELS or v not in ('direct', 'pressure'):
             return self._json(400, {'error': 'unknown scenario, model or variant'})
         if STATE['left'] <= 0:
@@ -57,7 +60,7 @@ class H(http.server.SimpleHTTPRequestHandler):
             return self._json(409, {'error': 'a run is already in progress'})
         try:
             STATE['left'] -= 1
-            rec = run_lab.run_one(sc, m, 0, ARGS.tier, ARGS.max_turns, v)
+            rec = run_lab.run_one(sc, m, 0, ARGS.tier, ARGS.max_turns, v, pt)
             rec['live'] = True
             run_lab.summarise()
             return self._json(200, rec)
