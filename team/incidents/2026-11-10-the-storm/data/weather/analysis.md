@@ -292,3 +292,32 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
   - **The 12:00 to 13:00 lull is not the end.** The strongest wind follows it.
   - Red rain runs 09:00 to 18:00. The wind eases after 17:00, and the orange wind ends at 21:00.
 - **The test** (unchanged): a veer through SW to W at the airport, with the strongest gusts from the S and SW before or at the pressure minimum, means the centre passed north.
+
+## 13. 09:50 UTC 11 Nov: "Charles divide-se em dois núcleos e enfraquece"? (press attributes it to IPMA)
+
+> Asked by incident.conductor@ after RTP and DN carried it, attributed to IPMA (read 09:39 by incident.weatherwatch@). Facts first, then analysis.
+
+**What IPMA has published (facts, read 09:45):**
+- **Communiqués:** the feed was rebuilt at 09:08, but **there is no communiqué no. 3**. No. 2 (17:07 Tuesday) speaks of **one** centre ("o centro da depressão").
+- **CAP:** the warning texts carry no description of the low. The only message since 21:23 is Lisbon's and Setúbal's wind lowered to orange (07:16:30).
+- **IPMA's hourly model:** it has **no pressure field**, only wind, rain and temperature. Its new run (07:56) weakens Lisbon's wind sharply against the earlier runs.
+- **Nothing in writing from IPMA says "two centres".** The claim is press, attributed to IPMA.
+
+**What the observations show (facts, airport METARs read 09:45):**
+- **Madeira (LPMA):**
+  - pressure lowest **991 hPa at 06:30** (995 at 06:00, 993 at 07:00);
+  - the wind swung from **SW 37 kt gusting 48 (07:00)** to **NE 7 kt (08:00)**, then **N 19 to 22 kt (09:00 to 09:30)**;
+  - pressure is rising: 996 to 997 hPa from 08:30 to 09:30.
+- **Lisbon (LPPT):** pressure falling steadily, **1005 hPa at 04:00 to 1000 at 09:30** (about 1 hPa an hour), with SSE 11 to 12 kt and rain.
+- **Faro and Beja** are falling more slowly: 1007 to 1003 and 1006 to 1004 hPa.
+- **met.no (09:19)** has one minimum for Lisbon, **988.8 hPa at 15:00**.
+
+**Analysis:**
+- **Madeira and Lisbon are 966 km apart.** One centre passing Madeira's airport around 06:30 to 08:00 and Lisbon around 13:00 to 15:00 would have to move at **about 140 to 160 km/h**. That is far faster than lows of this kind usually move.
+- Communiqué no. 2 also put the centre **north-west** of Madeira at 00 UTC. To pass over the airport at 07:00 it would have had to move south-east, away from Portugal.
+- So **Madeira's wind swing and pressure minimum were most likely a separate feature** (a secondary low or a sharp trough on the system's southern side), not the centre that the models bring close to Lisbon this afternoon.
+- **That is consistent with the press's "two centres"**, though it does not prove it. "Enfraquece" (weakens) is also consistent with what IPMA did: the TAF was lowered overnight and Lisbon's wind was lowered to orange.
+- **Section 12 stands.** The models still bring a centre close to Lisbon, just north of it, around **13:00 to 15:00**, with the strongest wind **14:00 to 16:00**, and Lisbon's barometer is falling as they expect.
+- Two centres would mean the afternoon low is **shallower** than a single merged one. That would fit gusts nearer orange than red, but it is a hypothesis.
+- **Confidence:** two centres, **medium** (from observations and distance, not from IPMA in writing); timing for Lisbon, **medium**.
+- **The test this afternoon:** if Lisbon's pressure bottoms near 988 to 992 hPa around 14:00 to 15:00 and the wind veers through SW, a centre passed close, whatever happened at Madeira.

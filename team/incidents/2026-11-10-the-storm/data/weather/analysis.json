@@ -383,6 +383,24 @@
     "2026-11-11T18:00Z"
    ],
    "ends_utc": "2026-11-11T21:00Z"
+  },
+  {
+   "written_utc": "2026-11-11T09:50Z",
+   "label": "facts then analysis",
+   "question": "press: Charles divides into two centres and weakens (attributed to IPMA)",
+   "ipma_written": "nothing: no communiqué no. 3 (rss 09:08); no. 2 speaks of one centre; CAP texts carry no description; IPMA's hourly model has no pressure field",
+   "observations": {
+    "LPMA": "pressure min 991 hPa 06:30; wind SW 37G48KT 07:00 -> NE 7 kt 08:00 -> N 19-22 kt 09:00-09:30; pressure rising to 996-997",
+    "LPPT": "1005 hPa 04:00 -> 1000 hPa 09:30, SSE 11-12 kt",
+    "LPFR": "1007 -> 1003",
+    "LPBJ": "1006 -> 1004",
+    "met_no": "single Lisbon minimum 988.8 hPa at 15:00",
+    "source": "https://aviationweather.gov/api/data/metar",
+    "read_utc": "2026-11-11T09:45Z"
+   },
+   "analysis": "one centre would need ~140-160 km/h to pass Madeira (06:30-08:00) and Lisbon (13-15:00), 966 km apart; no. 2 had it NW of Madeira at 00 UTC: Madeira's swing most likely a separate feature; consistent with 'two centres' (not proven); weakening consistent with IPMA's downgrade",
+   "two_centres_confidence": "medium (observations and distance; not IPMA in writing)",
+   "section_12": "stands: centre close to and just north of Lisbon ~13-15:00, strongest wind 14-16:00"
   }
  ],
  "next_read_utc": "2026-11-11T10:22Z"
