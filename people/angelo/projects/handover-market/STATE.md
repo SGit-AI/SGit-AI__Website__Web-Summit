@@ -14,10 +14,10 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 | 5 | AWS (Bedrock or Lambda) | AWS | an account, a budget | cloud account and money |
 
 ## Steps
-- **1a handover-p1-relay** (relay, large): read p1/p2, run one here, draft the unsigned result and the write-back checklist. Brief: steps/handover-p1-relay/brief.md. Running.
+- **1a handover-p1-relay**: done 17:03 (pool/handover-p1-relay 11db0db, 1.30 USD). Packet p1 (place 12 board items at an altitude) answered here, 12/12 valid, unsigned; all signatures verify; agrees with architect.1 on 3 of 10. Write-back via conductor.fringe@PrompTugal.angelo (its Fringe lane allows tasks/*/result-*.json); push access to the Fringe is Dinis's, else a pull request. Shown to Angelo next.
 - 1b write-back (signed, to the Fringe): go in principle (2026-11-11 17:0x); the drafted result and exact steps go to Angelo before any push.
-- **2a handover-p2-format** (spec, large): proposed formats/handover.md and one real package. Brief: steps/handover-p2-format/brief.md. Running in parallel (independent).
-- 2b dry run on Angelo's own other Claude account (his go, 2026-11-11): after 2a, Angelo starts one session there with package-1; result on a pool/ branch; we review and record. Then 2c: the same package to Dinis's conductors (first contact, shown to Angelo).
+- **2a handover-p2-format**: done 17:03 (pool/handover-p2-format 27d8dd5, 1.45 USD). handover.md (proposed format) and package-1.md (check every path the pipeline library names).
+- 2b dry run on Angelo's own other Claude account (his go, 2026-11-11): ready. Brief steps/handover-x1-paths/brief.md (1936f83), paste block dry-run-prompt.md, slot golf claimed 17:2x (lapses after two hours unless renewed); Angelo starts one session there with package-1; result on a pool/ branch; we review and record. Then 2c: the same package to Dinis's conductors (first contact, shown to Angelo).
 - **3a handover-p3-openrouter** (build, large), running from 17:20. 3 OpenRouter (Angelo's go, 2026-11-11): key saved 17:1x as a network secret for openrouter.ai on env PrompTugal News shared; Dinis's key saved as this environment's network secret for openrouter.ai (Angelo enters it in the secure form); then one worker runs one small task through the cheap tier and has Claude check it, recorded with cost.
 - 4 and 5: each waits for Angelo's go (see table).
 
