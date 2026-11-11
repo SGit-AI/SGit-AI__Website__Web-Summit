@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1932",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: network-views.pm@ started, with its wake routine",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "b59b01ae7"
+  },
+  {
     "version": "v0.2.1931",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: project network-views opened for its PM, network-views.pm@",
