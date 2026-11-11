@@ -1,10 +1,10 @@
 {
  "thursday": {
   "about": "Thursday 12 November (Web Summit's day 3): every IPMA warning for Lisbon that touches Thursday, and what IPMA's model and the airport TAF say for Thursday morning (00:00-12:00 UTC = Lisbon time). Facts, each with its source; no analysis here.",
-  "read_utc": "2026-11-11T06:25:17Z",
+  "read_utc": "2026-11-11T07:27:14Z",
   "lisbon_warnings_touching_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T06:25:17Z",
+   "read_utc": "2026-11-11T07:27:14Z",
    "items": [
     {
      "type": "Agitação Marítima",
@@ -13,7 +13,7 @@
      "end_utc": "2026-11-12T03:00:00Z",
      "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
      "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-     "read_utc": "2026-11-11T06:25:17Z",
+     "read_utc": "2026-11-11T07:27:14Z",
      "sent_utc": "2026-11-10T07:18:40Z",
      "text_en": "SW waves 4 to 5 metres.",
      "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
@@ -23,7 +23,7 @@
   },
   "ipma_model_thursday_morning": {
    "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-   "read_utc": "2026-11-11T06:25:17Z",
+   "read_utc": "2026-11-11T07:27:14Z",
    "model_updated_local": "2026-11-10T19:56:03",
    "wind_mean_kmh_range": [
     16.2,
@@ -224,8 +224,8 @@
   },
   "ipma_daily_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-   "read_utc": "2026-11-11T06:25:17Z",
-   "updated_local": "2026-11-11T05:31:02",
+   "read_utc": "2026-11-11T07:27:14Z",
+   "updated_local": "2026-11-11T06:31:02",
    "precipitaProb": "100.0",
    "tMin": "15.3",
    "tMax": "21.1",
@@ -248,7 +248,7 @@
   },
   "taf_groups_into_thursday": {
    "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-   "read_utc": "2026-11-11T06:25:17Z",
+   "read_utc": "2026-11-11T07:27:14Z",
    "taf_issue_utc": "2026-11-11T05:00Z",
    "taf_valid_to_utc": "2026-11-12T12:00Z",
    "groups": [
@@ -527,7 +527,26 @@
     "LPMA METAR 06:00: 54 km/h"
    ],
    "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T07:27:14Z",
+   "changes": [
+    "THURSDAY: warnings yellow Agitação Marítima 11T21:00-12T03:00; model Thu 00-12 mean wind 16.2-24.1 km/h",
+    "1 Lisbon warning(s) expired",
+    "stations to 06:00: top mean wind 9.7 km/h at Lisboa, Carnide (CML)",
+    "LPPT METAR 07:00: 9 km/h",
+    "met.no forecast updated 2026-11-11T05:19:20Z",
+    "LPMA METAR 07:00: 69 km/h gust 89",
+    "Madeira: largest 6 h rain 249.5 mm at Madeira, Areeiro (hours 11T01-11T06)"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-11T07:27:14Z",
+     "error": "<urlopen error [Errno 104] Connection reset by peer>"
+    }
+   ]
   }
  ],
- "next_read_utc": "2026-11-11T07:22Z"
+ "next_read_utc": "2026-11-11T08:22Z"
 }

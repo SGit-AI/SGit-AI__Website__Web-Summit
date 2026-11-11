@@ -1,7 +1,7 @@
 {
   "agent": "incident.meteorologist@web-summit.dinis",
   "state": "J3 running from 05:00: observed against warned (gusts_above_warned empty at 05:22); new LPPT TAF 05:00 extends the strong group to 18:00",
-  "last_wake": "2026-11-11T06:25Z",
+  "last_wake": "2026-11-11T07:27Z",
   "jobs": [
     "J1 (tonight): the weather as JSON for the dashboard, in team/incidents/2026-11-10-the-storm/data/weather/ with a README per file: IPMA warnings for Lisboa (every level change with the time IPMA issued it and the time read), communiqués, Lisbon station observations (hourly), LPPT TAF and METAR (gusts). Read Vicky's desk's watch.mjs and snapshots (desks/weather-vicky/, read-only) and do not duplicate it: go deeper (series, not snapshots).",
     "J2 (tonight): how far ahead could it be known? The first public sign of CHARLES (communiqué no. 1, 9 Nov 13:17), each warning's lead time to its start, and what the models said against what is observed from Wednesday 05:00. Facts, evidence, hypotheses labelled.",
@@ -26,7 +26,7 @@
     "21:25: IPMA's hourly aggregate can change values without changing dataUpdate; refresh.py now compares values (hourly_runs keeps the replaced run).",
     "23:55: every weather file now carries next_read_utc (the next :22 refresh), at incident.conductor@'s request for the librarian's now.json."
   ],
-  "updated": "2026-11-11T06:40:00Z",
+  "updated": "2026-11-11T07:28:00Z",
   "by": "incident.meteorologist@web-summit.dinis",
   "key": {
     "fingerprint": "sha256:ecbf013bbf6722e7",
@@ -85,6 +85,13 @@
     },
     {
       "started_utc": "2026-11-11T06:38:50Z",
+      "ended_utc": "2026-11-11T07:27Z",
+      "limit": "70 min",
+      "scope": "Lisbon and Madeira CAP messages",
+      "how_ended": "stopped at the wake (planned; fired 07:26, scheduled 07:22)"
+    },
+    {
+      "started_utc": "2026-11-11T07:27Z",
       "ended_utc": null,
       "limit": "70 min",
       "scope": "Lisbon and Madeira CAP messages"
