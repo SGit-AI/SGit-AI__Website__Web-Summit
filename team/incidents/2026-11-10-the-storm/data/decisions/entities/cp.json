@@ -25,7 +25,7 @@
   },
   {
    "edge": "cp-fertagus-bridge",
-   "decision": "CP suppresses four trains crossing the 25 de Abril bridge in the most critical window (12:00 to 15:00 forecast: heavy rain, strong wind)",
+   "decision": "CP suppresses four trains crossing the 25 de Abril bridge in what it calls the most critical window; CP says "as previsões meteorológicas para o período entre as 12:00 e as 15:00" point to heavy rain and strong wind (CP does not name the forecaster)",
    "decided_by": "CP (Comboios de Portugal) and Infraestruturas de Portugal",
    "status": "happened",
    "announced_utc": null,
