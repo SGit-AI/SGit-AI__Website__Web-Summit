@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1907",
+    "date": "2026-11-11",
+    "what": "18:22 wake: after the storm, NW wind, pressure rising, no rain; no new CAP; analysis 26",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "3576ea82b"
+  },
+  {
     "version": "v0.2.1906",
     "date": "2026-11-11",
     "what": "wake 18:18: the incident +9 events; the storm passed just north of Lisbon, the 10% case",
