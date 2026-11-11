@@ -1,5 +1,5 @@
 # prod-pipeline: state
-**For the digest (19:5x UTC):** A4 (small pages) and A5 (big pages) done: the line fits every page measured; tiny traces read better as one sentence, big ones as the last change. Decided by default: fold their rules into the team draft (A6, running). Waiting on Angelo: approve the draft, who gets it, who builds in the Fringe repository (tier 3).
+**For the digest (19:55 UTC):** A4 (small pages) and A5 (big pages) done: the line fits every page measured; tiny traces read better as one sentence, big ones as the last change. Decided by default: fold their rules into the team draft (A6, running). Waiting on Angelo: approve the draft, who gets it, who builds in the Fringe repository (tier 3). Running cost: 17.97 USD, 913,262 tokens without cache reads (A1 to A5; ledger lines and platform).
 - **Lead:** prod-pipeline.pm@PrompTugal.angelo, started 2026-11-11 about 12:30 UTC. Instruction commit 94dfabc6: pushed-by says ANGELO (checked at start).
 - **Done:** b0-library, b1-team-spec, b2-flow-reuse (conductor.b@, before this project).
 - **Goal (BRIEF.md):** the flow page of a real deliverable, note to live, generated from the records; the next deliverable gets one with no extra work.

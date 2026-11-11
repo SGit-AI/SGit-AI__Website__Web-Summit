@@ -24,12 +24,8 @@ Angelo sees, on our own site, the flow of a real deliverable from his note to li
 - people/angelo/proposals/account-move/spec-pipeline-b.md (the article pipeline and its target times).
 
 ## Budget
-<<<<<<< HEAD
-None. Angelo, 11 Nov 18:5x, in the lead's session: "Where does this budget come from? I've not set any budget to be honest." The 10 USD figure was conductor.b@'s, written at intake (94dfabc), not Angelo's. His standing word (ROLES.md tenet 5): "we don't need to put ceilings, as long as we have usage let's go to town." Spend is recorded per run in runs.md, never a gate.
-=======
 None. The running cost (dollars and tokens) goes in STATE.md's "For the digest:" line (Angelo, 11 Nov, to "a running cost in each PM's For the digest line, no threshold": "Yeah, c works."; the 10 USD set by conductor.b@ at the start was never Angelo's, and is withdrawn).
 Also, in the lead's session: None. Angelo, 11 Nov 18:5x, in the lead's session: "Where does this budget come from? I've not set any budget to be honest." The 10 USD figure was conductor.b@'s, written at intake (94dfabc), not Angelo's. His standing word (ROLES.md tenet 5): "we don't need to put ceilings, as long as we have usage let's go to town." Spend is recorded per run in runs.md, never a gate.
->>>>>>> origin/dev
 
 ## Angelo's change, 11 November (after the lead's first points)
 *"Let's focus on the Tech Fringe (it's the new name coming up), so we can build it its repo and the we can move it later if we want to expand it. But this is only the first step of something bigger for the stand and the demo screens."*
