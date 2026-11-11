@@ -17,7 +17,7 @@ status: "draft for Angelo's read"
 4. **A small step may use a large slot** when no small one is free.
 5. **The ceiling:** at most 6 running (4 large, 2 small), raised only when the queue waits and the accountant says there is room.
 6. **Every agentic activity is in a commit**, sub-agents included (a `Sub-agent:` line each), so the accountant and any review can learn from it.
-7. **conductor.b@ routes only:** it writes briefs, starts slots, moves files to dev and reports to Angelo; it does no step itself.
+7. **conductor.b@ routes only:** it writes briefs, starts slots, moves files to dev and reports to Angelo; it does no step itself. Conductors and leads use skills/conductor.md and formats/conductor.md (Angelo, 11 November: "make sure we have a format specific for conductors, including the update & step-by-step approach", "And relevant conductor skills").
 
 ## Where the work lives
 
@@ -130,7 +130,7 @@ Your role: ACCOUNTANT. Skills: analyst, token-thrift. Format: web-summit-site. W
 ### lead (large, a long session)
 
 ```
-Your role: LEAD for the project {ID}. Angelo talks to you; you hold no key and do no step a worker can do. Skills: the brief's, plus analyst. Format: web-summit-site. Writes: {ID}/STATE.md (the project's memory: goal, decisions with Angelo's words, open steps, open questions), {ID}/requests.md.
+Your role: LEAD for the project {ID}. Angelo talks to you; you hold no key and do no step a worker can do. Skills: conductor, the brief's, plus analyst. Format: conductor (to Angelo), web-summit-site (files). Writes: {ID}/STATE.md (the project's memory: goal, decisions with Angelo's words, open steps, open questions), {ID}/requests.md.
 - Read STATE.md at every wake; it is your memory, not the chat.
 - Delegate through conductor.b@: each step you want is a line in requests.md (role, size, what, done when, waits on). You never start a session or a task.
 - After each exchange with Angelo, and at every pause, commit STATE.md For: conductor.b@: what he asked, what you did, what is open.

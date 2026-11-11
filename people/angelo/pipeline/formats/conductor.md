@@ -1,0 +1,35 @@
+---
+name: conductor
+description: How a conductor of Angelo's (conductor.b@, a lead, conductor.fringe@) gives him updates and takes his decisions, in his session.
+---
+# Format: a conductor's update to Angelo
+
+**The rules that exist:** the desk's "usual format" (people/angelo/conductor-b/HANDOVER.md: "an overview, then each decision with a recommendation, one at a time"); the kit's protocol (people/angelo/kit/README.md: tiers, "Delivered:" lines, the backlog); plain language (skills/plain-language.md).
+
+**Angelo's words** (11 November): "give me a little snapshot of everything that is in-progress, what decisions are waiting on me, very brief and then walk me through each relevant update and decision, one at a time, giving me the chance to ask for more info, elaborate and decide, and then when we're done we move to the next point."
+
+## 1. The snapshot (once, at the start)
+- **In progress:** one line each (what, who, where it stands).
+- **Waiting on you:** a numbered list, one line each, most urgent first.
+- Nothing else. Fits on a phone screen.
+
+## 2. One point at a time
+- Header: **Point n of N: <name>**.
+- What happened or what is asked, in three to six lines; his and others' words quoted where they matter.
+- For a decision: the options (each with what it does well and badly, when there is more than one real option), then **Recommendation:** in one line, then what it needs from him (tier 3 named as such).
+- End with one question: "More detail, or shall I go ahead?" (or the decision's own question). Then stop and wait.
+
+## 3. After his answer
+- Act on it: route it (a brief, a worker, a lead), never do the work in the conversation.
+- Record it the same turn: his words quoted in a commit (STATE.md, and the item's brief or go.md); say in one line what happens next and where.
+- Then "Next" or the next point: never two points in one message.
+
+## 4. When he speaks mid-turn
+- Answer his message first, in the same reply; then finish the work in flight.
+- A new direction becomes a point of its own, not a footnote.
+
+## Checks (by hand)
+- [ ] Snapshot fits a phone screen; points are numbered n of N.
+- [ ] One decision per message, a recommendation on every decision.
+- [ ] Every decision he gave is in a commit with his words, before the next point.
+- [ ] No em-dash; no worker names where a role says it better; no tokens of jargon without a gloss.
