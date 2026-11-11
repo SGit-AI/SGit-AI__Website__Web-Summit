@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T09:30Z",
+ "updated": "2026-11-11T09:34Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -1124,7 +1124,7 @@
    "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
    "corroborated_by": [
     "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
    ],
@@ -1156,7 +1156,7 @@
    "source": "https://websummit.com/startups/pitch/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "no decision with an effect window",
@@ -1409,7 +1409,7 @@
    ],
    "label": "fact",
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read": "2026-11-11T08:41Z",
+   "read": "2026-11-11T09:34Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": "2026-11-11T09:00Z",
    "effect_to_utc": "2026-11-11T18:00Z",
@@ -2034,7 +2034,7 @@
    ],
    "label": "fact",
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read": "2026-11-11T08:41Z",
+   "read": "2026-11-11T09:34Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "also": [
     "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json"
@@ -2046,7 +2046,10 @@
    "state_note": "a warning, not a service decision",
    "area": "lisbon",
    "note": "CAP message sent 2026-11-11T07:16:30Z, severity Severe (orange), onset 09:00, expires 21:00 (incident.meteorologist@'s cap.json, commit 287ae82e). IPMA's open data showed it by 08:40Z (still red at 07:38 per the meteorologist). At 08:40Z red remains in 9 districts for rain (incl. Lisbon) and in Faro for wind. Day 2 had been called off partly for \"the impact of high winds on external structures\" (organisers, 19:09 Tue): we record the downgrade, not a judgement.",
-   "scope": null
+   "scope": null,
+   "corroborated_by": [
+    "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2 (08:39:39Z: Lisboa, Setúbal and Beja leave red for wind)"
+   ]
   },
   {
    "id": "amn-bars-closed",
@@ -2098,6 +2101,29 @@
    "area": "mainland",
    "note": "CNN Portugal live 08:26:01Z, ANEPC's situation briefing. (03:30: 66 per the portal; the two counts are from different windows or methods: not reconciled.)",
    "scope": null
+  },
+  {
+   "id": "srpc-madeira-count-0859",
+   "by": "madeira-prociv",
+   "to": [],
+   "decision": "Occurrence count, Madeira: 205 so far; 542 responders, 216 means",
+   "at": "2026-11-11T08:59Z",
+   "status": "happened",
+   "follows": [
+    "srpc-madeira-count-0650"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T09:34Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "count to the time reported",
+   "state": null,
+   "state_note": "a count",
+   "scope": null,
+   "area": "madeira",
+   "note": "CNN Portugal live 08:59:12Z, \"segundo os dados disponibilizados\" (SRPC's press platform, not public)."
   }
  ],
  "lessons": [
