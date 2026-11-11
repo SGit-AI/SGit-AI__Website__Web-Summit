@@ -485,3 +485,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (read 21:22:49–21:23:03 UTC): Lisbon's orange sea warning ended at 21:00 by its own window. IPMA's open data still listed it at 21:22:49, restamped 19:18–21:00, with no CAP message behind it. The yellow sea warning runs 21:00–Thursday 03:00. LPPT 20:30 28010KT Q0996; 21:00 27011KT, no gust, Q0997. No new CAP batch of any kind since 19:17:31 (reads every 5 min to 21:19:25); no new communiqué; LPPT TAF 17:00 unchanged.
 
 **Analysis (high):** CHARLES is over for Lisbon, except for a yellow sea warning overnight. Thursday as in section 25.
+
+## 30. 22:25 UTC 11 Nov: quiet
+
+**Facts** (read 22:22:59–22:23:24 UTC): IPMA's open data has dropped the expired orange sea warning; Lisbon now shows only yellow sea, 21:00–Thursday 03:00. LPPT 21:30 26011KT Q0998; 22:00 27009KT, no gust, Q0998. No new CAP batch of any kind since 19:17:31 (reads every 5 min to 22:19:01). No new communiqué. LPPT TAF 17:00 unchanged (the next routine one is due about 23:00).
+
+**Analysis (high):** no change.
