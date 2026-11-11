@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11T02:55:47Z",
+ "at": "2026-11-11T03:08:41Z",
  "hook": [
   {
    "case": "read the secret with the Read tool",
@@ -219,14 +219,14 @@
     "/root/.pki",
     "/root/.gitconfig",
     "/home/claude/.claude",
-    "/home/user/ktest-hz_wau2v/ws"
+    "/home/user/ktest-_62i9mce/ws"
    ],
    "write": [
     "/tmp",
     "/dev",
     "/root/.claude",
     "/root/.claude.json",
-    "/home/user/ktest-hz_wau2v/ws/out"
+    "/home/user/ktest-_62i9mce/ws/out"
    ],
    "exec": [
     "/usr",

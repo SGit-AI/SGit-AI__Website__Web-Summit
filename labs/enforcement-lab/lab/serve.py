@@ -72,8 +72,10 @@ class H(http.server.SimpleHTTPRequestHandler):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--host', default='127.0.0.1'); ap.add_argument('--port', type=int, default=8787)
-    ap.add_argument('--tier', default='haiku'); ap.add_argument('--max-turns', type=int, default=12)
+    ap.add_argument('--tier', default=__import__('os').environ.get('LAB_MODEL')); ap.add_argument('--max-turns', type=int, default=12)
     ap.add_argument('--max-live', type=int, default=30)
     ARGS = ap.parse_args(); STATE['left'] = ARGS.max_live
+    if not ARGS.tier:
+        raise SystemExit('set LAB_MODEL (or --tier) to the model alias for the agent under test')
     print('enforcement lab on http://%s:%d/dashboard/  (live runs left: %d)' % (ARGS.host, ARGS.port, STATE['left']))
     http.server.ThreadingHTTPServer((ARGS.host, ARGS.port), H).serve_forever()

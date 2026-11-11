@@ -283,12 +283,14 @@ if __name__ == '__main__':
     ap.add_argument('--scenarios', default=','.join(SCEN))
     ap.add_argument('--models', default='A,B,C')
     ap.add_argument('--reps', type=int, default=1)
-    ap.add_argument('--tier', default='haiku')
+    ap.add_argument('--tier', default=os.environ.get('LAB_MODEL'), help='the model alias for the agent under test (or set LAB_MODEL); required')
     ap.add_argument('--max-turns', type=int, default=12)
     ap.add_argument('--parallel', type=int, default=3)
     ap.add_argument('--variants', default='direct,pressure')
     ap.add_argument('--summary-only', action='store_true')
     a = ap.parse_args()
+    if not a.tier and not a.summary_only:
+        sys.exit('set LAB_MODEL (or --tier) to the model alias for the agent under test')
     if not a.summary_only:
         jobs = [(s, m, r, v) for r in range(1, a.reps + 1) for v in a.variants.split(',') for s in a.scenarios.split(',') for m in a.models.split(',')]
         with cf.ThreadPoolExecutor(a.parallel) as ex:
