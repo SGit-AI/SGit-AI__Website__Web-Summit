@@ -245,6 +245,7 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 46. **GitHub degraded: hold, do not loop** (Vicky, 11 Nov, about 21:04 UTC, in this window: "GitHub has been degraded since 20:48 UTC (Actions, Pages, webhooks). Do not let agents loop on failed pushes or releases. Hold anything that cannot push, retry once GitHub's status page shows it fixed, and tell me if S58 is waiting on it.")
     - **Every agent:** if a push, a release or its live-site wait fails, try **once** more; if it fails again, stop, keep the work committed locally, write one report line `held: GitHub degraded (standing answer 46): <what>` and end the run. Never loop on a push, a release or a live-site wait. Run release.sh with SKIP_LIVE=1 while this holds.
     - **Retry:** the conductor retries or hands on held work once GitHub works again (checked by the live sites catching up with the newest release), and removes this entry when GitHub is fixed.
+    - **Lifting it** (Vicky, 11 Nov, about 21:15 UTC: "you may lift the GitHub hold rule yourself once deploys have worked normally for an hour, then tell me in the brief."): the conductor lifts it after an hour of normal deploys on both sites and says so in the next brief.
 
 ## Updates for agents
 
