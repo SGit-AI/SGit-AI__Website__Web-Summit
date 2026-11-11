@@ -1,4 +1,5 @@
 # prod-pipeline: state
+**For the digest (18:55 UTC):** A1 and A2 done and closed (7.55 USD of the 10 USD budget). Decided by default: option A. Waiting on Angelo: the budget for A3 (the one team draft), and A2's red lane check on dev's way in.
 - **Lead:** prod-pipeline.pm@PrompTugal.angelo, started 2026-11-11 about 12:30 UTC. Instruction commit 94dfabc6: pushed-by says ANGELO (checked at start).
 - **Done:** b0-library, b1-team-spec, b2-flow-reuse (conductor.b@, before this project).
 - **Goal (BRIEF.md):** the flow page of a real deliverable, note to live, generated from the records; the next deliverable gets one with no extra work.
@@ -21,6 +22,12 @@ Plan (revised at Angelo's word, 11 Nov: Tech Fringe first, a draft before anythi
 - **Started 17:06 UTC:** A1 on charlie.large (design, session_01Xp7gj2bPg7BSn5BnGJ2siJ), A2 on foxtrot.large (build as prototype, session_01Xp7gj6hV9PqWCwwdRuDUJA); briefs in a1-flow-proposal/brief.md and a2-small-screens/brief.md; runs.md logs the sessions. Results on pool/a1-flow-proposal and pool/a2-small-screens, for conductor.b@ to review onto dev.
 - **Gap for conductor.b@:** pushed-by.mjs reads dev's pushes only, so it cannot vouch for a lead's commit on project/*. The workers check the lead's instruction commit through GitHub's activity API for refs/heads/project/prod-pipeline instead (all pushes there so far by riskmandate-angelo). Recommend a --ref option in pushed-by.mjs.
 - **Open:** (a) building in the Fringe repository later means conductor.fringe@'s repo; its dev also has commits by conductor.fringe@PrompTugal.dinis (251b5c9), so Dinis's agents work there too: who builds there is for Angelo. (b) "the team" for the draft: who, decided by Angelo after he reads it. (c) b2's questions 1 and 3 folded into A1 (drawing: reuse the Fringe's, borrow the newsroom's ideas; cost: tokens until money can be read).
+## Wake 18:53 UTC (the wake routine trig_01MqHQ7CWqSnu5JGwYRpkQg5 at 18:12, and Angelo: "Wake up")
+- New rules read on dev, a9199ce (pushed-by: ANGELO): PMs are never blocked; below tier 3 decide by default; workers fire the wake routine. Dev merged into this branch (BRIEF.md keeps the wake routine and the prior-art copy, prior-art/fringe-6b079db/, 2e01c12, ANGELO).
+- A1 closed: 991ae24, gate OK, 3.95 USD. A2 closed: 91d6bff, 3.60 USD; **its gate is red**: the lane check refuses its 15 files because my brief put worker files in people/angelo/projects/prod-pipeline/, outside the workers' lane (people/angelo/pipeline/**). A1 declared its files with Outside: lines; A2 did not. My error, not the worker's. Fix when brought to dev: the review commit carries an Outside: line per file (brief 13d19c7c5, Angelo's "Start A1 and A2 yourself").
+- **Decided by default, Angelo can reverse:** (1) option A, "one line, two sizes" (A1's recommendation; Angelo was shown it at 17:2x and had not answered). (2) Worker files from now on in people/angelo/pipeline/<id>/, the lane they have; no lane change asked. (3) A2's limits fold into A1 as one draft for the team (A2's own recommendation).
+- **Waiting on Angelo:** (a) budget: A3 (one team draft, design, large, about 3.5 USD) would take the project to about 11 USD, over the 10 USD budget; money is his to raise, so A3 is written (ASKS.md) but not started. (b) who builds it in the Fringe repository (tier 3). (c) who in the team gets the draft (tier 3). (d) share the shape with conductor.fringe@ before any build (A1's Q1, recommended).
+
 ## Spend
-- Worker runs: A2 188,518 tokens without cache reads (ledger); A1 ledger line pending. Dollars from the platform when conductor.b@ records them.
+- Worker runs: A1 3.95 USD, A2 3.60 USD (platform, API-equivalent); total 7.55 of about 10 USD.
 - Sub-agents of the lead: none.
