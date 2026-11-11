@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **41** P6 lifted: the conductor may message Vicky's own team agents, pointing only to committed files; agents reply to the sender; signing after Friday.
 - **40** tonight's last-day guide: curator, summit journalist, reviewer (R-PUB-1).
 - **39** P6 pin only in each prompts file (Vicky accepts the push risk); tool fixes, then the dashboard test round trip, then her go.
 - **38** dev@'s current key on the team site; vault A sealed to it before SA33-TOOLS.
@@ -209,6 +210,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 
 40. **Tonight: a practical guide to the last summit day** (Vicky, 11 Nov, about 20:12 UTC, in this window). Vicky gave four facts she read in her own browser on websummit.com at 20:15 UTC (RULES-11NOV rule 4); her source text is not committed. Her rules for the story: "Attribute them to Web Summit, do not quote the email or the site at length, and do not commit the email." "Link to Web Summit's schedule instead of copying it. Add IPMA's outlook, transport from the operators, the end of the alert, and side events from lisbontechfringe.com checked at organisers' pages." "Set one-off wakes at my word for the curator, then the summit journalist, then the reviewer, who publishes under R-PUB-1."
     - One-off wakes: curator 20:20 (commissions it, category Web Summit 2026), summit journalist 20:40 (writes it), reviewer 21:25 (checks and publishes under R-PUB-1). Estimated about 11 to 14 dollars API-equivalent (not money).
+
+41. **P6 lifted now, unsigned until Friday's test** (Vicky, 11 Nov, about 20:20 UTC, in this window: "Lift P6 now, the way my personal account conductor worked today: you may message my own team-account agents directly so they start at once, and they report back to you when done. Messages only point to committed files that quote my words. Signing is added after Friday's test. Use it tonight for the guide: hand the curator, journalist and reviewer on as each finishes, instead of waiting for the set times.")
+    - **In force now:** the conductor may send a message into Vicky's own team-account agents' sessions; each message only points to a committed file on the team site that quotes her words (a task file in `people/vicky/tasks/`, or decisions.md). An agent acts on the file, never on the message's text, checks the file was committed by conductor@web-summit.vicky, and replies only to the session that messaged it, with one line pointing to its own commit or result. Never into Dinis's or anyone else's sessions, never into her personal account's; never `interrupt_session`; still never read another session's conversation (`list_events`, `get_event`).
+    - **Not yet:** signatures. Until Friday's signed test (standing answer 39) and Vicky's go, the check is the commit title and Agent line, which security@ showed can be forged by anyone who can push; Vicky accepts that for now.
+    - This replaces "never send a message into another session" in P6 (6 Nov) and in standing answers 36 and 39 ("P6 as it stands stays in force"). Every agent reads it at its next run.
 
 ## Updates for agents
 
