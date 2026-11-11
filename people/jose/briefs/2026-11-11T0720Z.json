@@ -1,0 +1,117 @@
+{
+  "number": 22,
+  "date": "11 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Summit day two (off), morning: your example is live; crm needs one word and its network",
+  "when": "11 November 2026, 07:26 UTC (scheduled wake; since brief 21, 10 Nov 17:21 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Your GAMMA-Ray scan example, sent at your word, is now one of Dinis's published examples (/examples/medium-yes-to-gamma-ray-scan/). crm put 31 of your connections in the private CRM overnight but has not pushed them: it waits for you to say the token is set in its environment. It could not add any of your eleven companies, because its network policy blocks their sites. Your writer drafted the storm batch overnight (its waiting list is empty), and vault's drains resumed at your word. The page views drain every hour now: 12 this morning, 7,486 in all. Wednesday is off; Web Summit aims to hold Thursday as planned (its own update, read by your writer, 468f2460).",
+  "stats": [
+    {
+      "n": "31",
+      "label": "of your connections in the private CRM, not yet pushed"
+    },
+    {
+      "n": "0 of 11",
+      "label": "of your companies added (crm's network blocked)"
+    },
+    {
+      "n": "7,486",
+      "label": "page views drained in all (12 this morning)"
+    },
+    {
+      "n": "1",
+      "label": "example of yours published by Dinis's journalist"
+    }
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "🔑 Tell crm the token is set",
+      "detail": "crm has 6 vault commits waiting, including your 31 connections. The variable is in its environment, but your rule says it pushes only once you confirm you set it. Say 'the token is set' in crm's session, or tell me and I write it into its task file. Vault already has your word (its drains resumed at 00:47); it only waits on SG_SEND_PASSPHRASE.",
+      "options": [
+        "confirm now",
+        "after the stand"
+      ],
+      "recommend": "Now: it takes one line, and the CRM is useful at the stand today."
+    },
+    {
+      "id": "2",
+      "ask": "🌐 Allow the company sites for crm",
+      "detail": "In crm's environment network settings, add the eleven companies' domains. If you know the websites of LLM API, Attune, Oryksa and PE and Growth, give them to crm. Optional, for the writer: meteologix.com, view.eumetsat.int and sat24.com, if you want it to read them (219dba1b).",
+      "options": [
+        "allow now",
+        "skip the companies"
+      ],
+      "recommend": "Allow them: the companies.json entries are what the board and the cards read."
+    },
+    {
+      "id": "3",
+      "ask": "🧾 Optional: one sentence in the kit for trailers",
+      "detail": "Your watcher found that in 8 of your agents' 12 commits, git cannot read the Agent: line because a blank line separates it from the other trailers. The fix is one sentence in the kit's shared section ('every trailer in the last block'). I may not edit that section without your word (C39).",
+      "options": [
+        "add it",
+        "leave it"
+      ],
+      "recommend": "Add it: it costs nothing and makes the counts right."
+    }
+  ],
+  "you_asked": [
+    {
+      "at": "11 Nov, about 01:30",
+      "said": "send the example",
+      "done": "Your GAMMA-Ray scan example sent to Dinis's reporter (WS-212); the reviewer passed it with notes, three fixes applied; his journalist published it at 03:40",
+      "where": "c75eff6f, 04de7c9f",
+      "status": "done"
+    },
+    {
+      "at": "10 Nov, evening",
+      "said": "crm and own them: go, both",
+      "done": "Task file for crm: your connections in the private CRM (31 done, local) and your eleven companies (blocked by the network)",
+      "where": "people/jose/tasks/2026-11-11-crm-connections.md, 3102e178",
+      "status": "waiting on you (asks 1 and 2)"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Your agents overnight",
+      "items": [
+        "crm: 31 of your connections in the private CRM (the six teammates left out; emails only in the private vault), not pushed; none of the eleven companies added (3102e178).",
+        "writer: the storm batch drafted at your W3 (468f2460, 1377d57f: four posts plus the storm page's; its waiting list is empty); your two extra weather sites added to its ask (219dba1b).",
+        "vault: your 'drain' reached it; its drains resume (aebc7387, 00:47; the lane was empty).",
+        "watcher: ran at 07:15; all your agents' scheduled tasks fired and succeeded; every commit carries a review line.",
+        "conductor: your example sent (c75eff6f); page views drained hourly, 12 at 07:27."
+      ]
+    },
+    {
+      "title": "The team",
+      "items": [
+        "Dinis's incident agents worked through the night on the storm: Wednesday is off and Web Summit aims to hold Thursday as planned (its own update), subject to IPMA. They stopped polling websummit.com at 05:27 because of its terms.",
+        "Angelo's agents have not committed here since 21:07. His desk moved them to a second account, which has not committed here yet (the watcher's A-27). Thursday's RiskMandate demos are Angelo's piece.",
+        "Dinis's security agent found one new medium issue, in the Storm-Charles repository."
+      ]
+    },
+    {
+      "title": "Tokens on 10 November (the accountant)",
+      "items": [
+        "47.4M tokens in all, 3.4M of them not cache reads, about $28 (9 November: 43.8M, about $33). Every wake passed.",
+        "Your conductor about $11.41, the watcher $5.52, vault $5.20, the dashboard $2.98, the writer $2.11, the designer $0.84. No line from dev, the helper, automation or crm.",
+        "Recommendation 1: switch the watcher to Sonnet (Actions row 2; it still runs on Opus).",
+        "Recommendation 2: vault to Sonnet.",
+        "Recommendation 3: your conductor stays on Opus (Dinis's direction), but its sub-agents, the accountant and the reviewer, can run on Sonnet. The dashboard and the writer suit Sonnet too. Your word decides; nothing changes until after the summit unless you say so."
+      ]
+    }
+  ],
+  "next": [
+    "Hourly to 21:20, draining each time; the evening brief at 17:20 with your 'today' list."
+  ],
+  "sources": [
+    "git log origin/dev since brief 21 (17:21), including 468f2460, 1377d57f, 219dba1b, aebc7387",
+    "people/jose/watcher/latest.md (07:17)",
+    "people/jose/tasks/2026-11-11-crm-connections.md (crm's report), 3102e178",
+    "04de7c9f, 20946e8c (WS-212)",
+    "telemetry_drain.py (07:27)",
+    "your Drive folder (titles only: no new files)",
+    "people/jose/accountant/reports/2026-11-10.json"
+  ]
+}
