@@ -243,3 +243,19 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 - **Fact:** met.no's 05:19 update repeats its 01:19 values: strongest mean 58 km/h from 200° at 15:00, pressure bottoming at 987.7 hPa.
 - **Fact, Lisbon now (05:00):** the airport has 4 kt from 200° with light rain and 1004 hPa; no gusts so far. Since 05:00, `changes.json` → `gusts_above_warned` lists any airport gust above the warned level. It is empty.
 - **Analysis:** the airport forecast lengthening the strong wind to 18:00 fits the 12:00 to 18:00 worst window and the 14:00 to 17:00 peak (7b). Nothing changes in the conclusions; IPMA's red warnings for Lisbon stand.
+
+## 10. 07:45 UTC 11 Nov: IPMA lowers Lisbon's wind warning from red to orange
+
+- **Fact:** IPMA sent a CAP message at **07:16:30 UTC** lowering Lisbon's wind warning: **"Aviso Laranja Vento", Wednesday 09:00 to 21:00, "Rajadas até 120 km/h"**.
+  - It is an Update replacing the red message sent Tuesday 07:18:40 (PO-01-1915), which had 12:00 to 21:00 and "podendo atingir 140 km/h nos locais mais expostos".
+  - **Setúbal was lowered the same way, at the same time.**
+  - **Red rain (09:00 to 18:00) is unchanged.**
+  - The 5-minute poll caught it at 07:37:53. **IPMA's open data still showed red wind at 07:38**, so CAP led again.
+  - Source: [MeteoAlarm CAP feed](https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal); kept in `cap.json`, and in `warnings.json` → `history` and `cap_leads_open_data`.
+- **Lead time (fact):** sent 1 h 44 min before the orange begins (09:00), and 4 h 44 min before the red would have begun (12:00).
+- **Analysis:**
+  - IPMA now judges Lisbon's gusts at **up to 120 km/h**, with no 140. That fits its forecasters' radio words at 22:35 (the worst further south).
+  - The wind window **opens earlier (09:00)** and **still closes at 21:00**.
+  - This is a downgrade, not an all-clear. Orange is dangerous weather, and **red rain still stands from 09:00 to 18:00**.
+  - The worst window stays 09:00 to 18:00 for rain, with the strongest wind most likely 14:00 to 17:00.
+  - Suggested headline: **"IPMA lowers Lisbon's wind warning to orange (gusts to 120 km/h, 09:00 to 21:00); the red rain warning (09:00 to 18:00) stands."**

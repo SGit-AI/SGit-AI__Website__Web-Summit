@@ -345,6 +345,23 @@
    "ends_utc": "2026-11-11T21:00Z",
    "headline_guidance": "'less wind for Lisbon' is not supported; say the models disagree on which side the centre passes, and IPMA's red warnings for Lisbon stand",
    "test_on_wednesday": "LPPT veer through SW to W with strongest S gusts before the pressure minimum = centre passed north; back through E to N = passed south"
+  },
+  {
+   "written_utc": "2026-11-11T07:45Z",
+   "label": "fact then analysis",
+   "fact": "IPMA CAP 07:16:30: Lisbon wind lowered RED -> ORANGE, now Wed 09:00-21:00, gusts to 120 km/h (the 'podendo atingir 140 km/h' clause is gone); Setúbal the same; red rain 09:00-18:00 unchanged",
+   "lead_time": "sent 1 h 44 min before the new orange begins (09:00) and 4 h 44 min before the red would have begun (12:00)",
+   "analysis": "consistent with IPMA's forecasters' 22:35 words (the worst further south) and with 7b's unsettled side: IPMA now judges Lisbon's gusts at up to 120 km/h, not 140; the wind window starts earlier (09:00) and still ends at 21:00. Not a 'storm is over': orange means dangerous weather; red rain still stands 09:00-18:00.",
+   "worst_window_utc": [
+    "2026-11-11T09:00Z",
+    "2026-11-11T18:00Z"
+   ],
+   "likely_peak_utc": [
+    "2026-11-11T14:00Z",
+    "2026-11-11T17:00Z"
+   ],
+   "ends_utc": "2026-11-11T21:00Z",
+   "headline_guidance": "IPMA lowers Lisbon's wind warning to orange (gusts to 120 km/h, 09:00-21:00); the red rain warning (09:00-18:00) stands"
   }
  ],
  "next_read_utc": "2026-11-11T08:22Z"

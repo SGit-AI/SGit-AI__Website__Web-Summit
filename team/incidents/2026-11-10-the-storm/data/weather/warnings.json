@@ -1,7 +1,7 @@
 {
  "about": "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). IPMA's open data carries no issue time: `sent_utc` is the sent time of the CAP message (MeteoAlarm, cap.json) matching the warning's area, type, level and window exactly, or null where none matches (never guessed).",
  "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
- "read_utc": "2026-11-11T07:27:14Z",
+ "read_utc": "2026-11-11T07:38:35Z",
  "lisbon_peak_level": "red",
  "lisbon": [
   {
@@ -11,7 +11,7 @@
    "end_utc": "2026-11-11T21:00:00Z",
    "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T07:27:14Z",
+   "read_utc": "2026-11-11T07:38:35Z",
    "sent_utc": "2026-11-10T12:09:08Z",
    "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
@@ -23,7 +23,7 @@
    "end_utc": "2026-11-12T03:00:00Z",
    "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T07:27:14Z",
+   "read_utc": "2026-11-11T07:38:35Z",
    "sent_utc": "2026-11-10T07:18:40Z",
    "text_en": "SW waves 4 to 5 metres.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
@@ -35,7 +35,7 @@
    "end_utc": "2026-11-11T09:00:00Z",
    "text_pt": "Precipitação por vezes forte e persistente.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T07:27:14Z",
+   "read_utc": "2026-11-11T07:38:35Z",
    "sent_utc": "2026-11-10T21:23:00Z",
    "text_en": "Rain, at times heavy, and persistent.",
    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
@@ -47,7 +47,7 @@
    "end_utc": "2026-11-11T18:00:00Z",
    "text_pt": "Precipitação forte e persistente.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T07:27:14Z",
+   "read_utc": "2026-11-11T07:38:35Z",
    "sent_utc": "2026-11-10T21:23:00Z",
    "text_en": "Strong and persistent precipitation.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
@@ -59,15 +59,15 @@
    "end_utc": "2026-11-11T21:00:00Z",
    "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T07:27:14Z",
-   "sent_utc": "2026-11-10T07:18:40Z",
+   "read_utc": "2026-11-11T07:38:35Z",
+   "sent_utc": null,
    "text_en": "Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.",
    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 140 km/h.', does not carry the same figures)"
   }
  ],
  "red_and_orange_elsewhere": {
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-11T07:27:14Z",
+  "read_utc": "2026-11-11T07:38:35Z",
   "items": [
    {
     "area": "BJA",
@@ -87,7 +87,7 @@
     "start_utc": "2026-11-11T09:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
-    "sent_utc": "2026-11-10T07:18:40Z",
+    "sent_utc": null,
     "text_en": "Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.",
     "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 140 km/h.', does not carry the same figures)"
    },
@@ -109,7 +109,7 @@
     "start_utc": "2026-11-11T12:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
-    "sent_utc": "2026-11-10T07:18:40Z",
+    "sent_utc": null,
     "text_en": "Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.",
     "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 140 km/h.', does not carry the same figures)"
    },
@@ -153,7 +153,7 @@
     "start_utc": "2026-11-11T12:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
-    "sent_utc": "2026-11-10T07:18:40Z",
+    "sent_utc": null,
     "text_en": "Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.",
     "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 140 km/h.', does not carry the same figures)"
    },
@@ -175,7 +175,7 @@
     "start_utc": "2026-11-11T12:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
-    "sent_utc": "2026-11-10T07:18:40Z",
+    "sent_utc": null,
     "text_en": "Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.",
     "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 140 km/h.', does not carry the same figures)"
    },
@@ -197,7 +197,7 @@
     "start_utc": "2026-11-11T09:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
-    "sent_utc": "2026-11-10T07:18:40Z",
+    "sent_utc": null,
     "text_en": "Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.",
     "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 140 km/h.', does not carry the same figures)"
    },
@@ -219,7 +219,7 @@
     "start_utc": "2026-11-11T12:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
-    "sent_utc": "2026-11-10T07:18:40Z",
+    "sent_utc": null,
     "text_en": "Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.",
     "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 140 km/h.', does not carry the same figures)"
    },
@@ -296,7 +296,7 @@
     "start_utc": "2026-11-11T12:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Rajadas até 120 km/h.",
-    "sent_utc": "2026-11-10T07:18:40Z",
+    "sent_utc": null,
     "text_en": "Wind gusts up to 120 km/h.",
     "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
    },
@@ -318,7 +318,7 @@
     "start_utc": "2026-11-11T12:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Rajadas até 120 km/h.",
-    "sent_utc": "2026-11-10T07:18:40Z",
+    "sent_utc": null,
     "text_en": "Wind gusts up to 120 km/h.",
     "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
    },
@@ -373,7 +373,7 @@
     "start_utc": "2026-11-11T12:00:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Rajadas até 120 km/h.",
-    "sent_utc": "2026-11-10T07:18:40Z",
+    "sent_utc": null,
     "text_en": "Wind gusts up to 120 km/h.",
     "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
    },
@@ -841,7 +841,21 @@
     ]
    ],
    "note": "compared with the read at 2026-11-11T06:25:17Z"
+  },
+  {
+   "at_utc": "2026-11-11T07:16:30Z",
+   "kind": "fact",
+   "event": "IPMA LOWERS Lisbon's wind warning from RED to ORANGE: 'Aviso Laranja Vento', Wed 09:00-21:00, 'Rajadas até 120 km/h' (CAP Update replacing the red message PO-01-1915 sent 10 Nov 07:18:40). Setúbal lowered the same way at the same time. Red rain 09:00-18:00 unchanged. IPMA's open data still showed red wind at 07:38.",
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T07:38Z",
+   "read_by": "incident.meteorologist@web-summit.dinis (5-minute CAP poll, 07:37:53)"
   }
  ],
- "next_read_utc": "2026-11-11T08:22Z"
+ "next_read_utc": "2026-11-11T08:22Z",
+ "cap_leads_open_data": {
+  "note": "At this read IPMA's CAP (cap.json) has Lisbon's wind at ORANGE 09:00-21:00 (sent 07:16:30), while the open data in `lisbon` still says RED 12:00-21:00. CAP is IPMA's later word; the open data lagged CAP by 2 h+ on 10 Nov.",
+  "cap_sent_utc": "2026-11-11T07:16:30Z",
+  "read_utc": "2026-11-11T07:38Z",
+  "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal"
+ }
 }
