@@ -50,5 +50,5 @@
 ## A6: the team draft, version 2 (started 2026-11-11 19:48, session_01Xp7gj3T5setN3YtbMbiDEo)
 - Decided by default, Angelo can reverse: fold A4's small-page rule and A5's nine big-page rules into A3's draft before the team sees it (both workers recommend it). Design, large, lima.large; brief a6-team-draft-v2/brief.md; writes people/angelo/pipeline/prod-pipeline-a6/.
 
-## A7: every commit and interaction behind a page (asked 2026-11-11 20:1x)
+## A7: every commit and interaction behind a page (started 2026-11-11 20:03, session_01Xp7gj4LrcGjJ5Jh2Ydr3eS)
 - Angelo: "I would like to see each and every commit (and other interactions?) that have contributed to get the page to the current state, let's leave the template changes to their own pages." Build (a read-only tool and its traces), large, mike.large; brief a7-full-traces/brief.md; writes people/angelo/pipeline/prod-pipeline-a7/. Six pages: DISTRICT 909, Storm Summit, /me/, /tip/, home, programme.
