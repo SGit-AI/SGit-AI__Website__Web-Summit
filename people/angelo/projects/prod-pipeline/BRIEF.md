@@ -22,3 +22,10 @@ Angelo sees, on our own site, the flow of a real deliverable from his note to li
 
 ## Budget
 Record, not block: about 10 USD API-equivalent of worker runs before checking with Angelo.
+
+## Angelo's change, 11 November (after the lead's first points)
+*"Let's focus on the Tech Fringe (it's the new name coming up), so we can build it its repo and the we can move it later if we want to expand it. But this is only the first step of something bigger for the stand and the demo screens."*
+*"Agreed on making a proposal so that both the page that is already there and the little piece in each page align and draw from the same concept and design. Ideally the diagram is updated each time a page is updated, so it's always up-to-date and even shows an in-progress gif when work is actually in progress. It would be nice to have this diagram always available in each and every page of the website, desktop and phone, and the app that will come soon."*
+*"But before we do anything we need to get to a good draft to share with the team."*
+
+So, until Angelo says otherwise: the flow view is built for the Tech Fringe (today PrompTugal/PrompTugal__News__Fringe, "Lisbon Fringe"), on its existing trace page (/traces/<event_id>/, f6dbece) and its strip (admin/build/trace-strip.mjs, 438f9f5); the first deliverable is **a proposal draft for the team**, not a build. "Done when" above now reads: the team has the draft Angelo approved; building waits for his next word.

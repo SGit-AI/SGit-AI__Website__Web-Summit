@@ -3,17 +3,21 @@
 - **Done:** b0-library, b1-team-spec, b2-flow-reuse (conductor.b@, before this project).
 - **Goal (BRIEF.md):** the flow page of a real deliverable, note to live, generated from the records; the next deliverable gets one with no extra work.
 
-## Plan (first)
-1. **Angelo's three answers** (from b2): copy the newsroom's drawing (no ask to dev.graphs@); its own page first; tokens only.
-2. **Compare notes with the Fringe, read only** (one small research step): tracer.fringe@'s trace (893d4e6) and designer.fringe@'s swim lanes (f6dbece), set against ws-trace/1 and our records; a shared trace shape proposed for Angelo to agree. Nothing changed or copied there.
-3. **Fill the record gaps** (tier 1, asked of conductor.b@): `note_at` in brief.md, a ledger line per intake and review, live found by ancestry.
-4. **Design, then build:** one design step (the flow page of b0-library, phone and desktop), Angelo's pick, then a build step (generator plus page in people/angelo/), then a check by another slot.
-5. **Prove "no extra work":** the next real deliverable gets its page from the generator; Angelo sees both on our site.
+## Plan
+Plan (revised at Angelo's word, 11 Nov: Tech Fringe first, a draft before anything):
+1. **A1: the proposal draft** (design, large): one concept for the Fringe's trace page and its strip, live and in progress, on every page and the app; one data shape that our records fill too.
+2. **Angelo reads it**; changes go back to the designer; he decides who in the team gets it.
+3. **Then, at his word:** agree with conductor.fringe@ (through Angelo) who builds it in the Fringe repository; a check by another slot.
+4. **Fill our record gaps** (note_at, intake and review ledger lines) so our deliverables fit the same shape.
+5. **Later:** the stand and the demo screens.
 
 ## Open
 - Points to Angelo: b2's questions 1 to 3, then the plan.
 - Fringe repository: Angelo, 11 Nov: "Clone the repository PrompTugal/PrompTugal__News__Fringe into this session." Cloned read only (public, anonymous git read; nothing attached) at /home/user/promptugal/promptugal__news__fringe, dev at 6b079db. Read: team/angelo/traces/README.md (lisbon-fringe-trace/1, method), admin/build/trace-page.mjs header (f6dbece: swim lanes by kind of actor, time left to right, hand-offs only on shared evidence, idle folds, no JS for layout).
-- Angelo's direction under discussion, 11 Nov: "I think we should integrate Dinis's idea with the work conductor.fringe has progressed on the draft horizontal sequence diagram." Not yet confirmed as a decision.
+- Angelo's direction, 11 Nov: "I think we should integrate Dinis's idea with the work conductor.fringe has progressed on the draft horizontal sequence diagram."
+- **Decided (Angelo, 11 Nov), quoted in full in BRIEF.md:** "Let's focus on the Tech Fringe (it's the new name coming up), so we can build it its repo"; "a proposal so that both the page that is already there and the little piece in each page align and draw from the same concept and design"; updated on every page update, "an in-progress gif when work is actually in progress", on "each and every page of the website, desktop and phone, and the app that will come soon"; "the first step of something bigger for the stand and the demo screens"; "before we do anything we need to get to a good draft to share with the team."
+- **Asked:** A1 (ASKS.md), the flow view proposal, design, large. Waiting for conductor.b@ to start it.
+- **Open:** (a) building in the Fringe repository later means conductor.fringe@'s repo; its dev also has commits by conductor.fringe@PrompTugal.dinis (251b5c9), so Dinis's agents work there too: who builds there is for Angelo. (b) "the team" for the draft: who, decided by Angelo after he reads it. (c) b2's questions 1 and 3 folded into A1 (drawing: reuse the Fringe's, borrow the newsroom's ideas; cost: tokens until money can be read).
 ## Spend
 - Worker runs: none yet (0 of about 10 USD).
 - Sub-agents of the lead: none.
