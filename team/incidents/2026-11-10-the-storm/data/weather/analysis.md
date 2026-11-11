@@ -272,3 +272,23 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
   - 7b and section 10 stand. The worst wind for Lisbon is most likely 13:00 to 17:00, with the strongest around 14:00 to 16:00, under IPMA's orange (gusts to 120 km/h).
   - Red rain runs 09:00 to 18:00.
   - **The test** (a veer through SW to W at the airport, with the strongest gusts from the south before the pressure minimum) can be read this afternoon.
+
+## 12. 09:25 UTC 11 Nov: the two models now agree; the strongest wind for Lisbon is about 14:00 to 16:00
+
+- **Fact: IPMA's hourly model has a new run (07:56).** Mean wind for Lisbon:
+  - SE then E, 17 to 18 km/h, from 10:00 to 12:00;
+  - a **lull of 11.5 km/h at 13:00 (E)**;
+  - then **40 km/h from the S at 14:00** and **35 km/h from the SW at 15:00**;
+  - then W and NW, 21 to 25 km/h, from 16:00 to 20:00.
+  - The old run (19:56) had SE all day, N at 18:00 and a peak of 23 km/h at 20:00.
+- **Fact: met.no (updated 09:19)** keeps its shape: E (97°) at 12:00; then 157°, 185°, 200° and 226° from 13:00 to 16:00; strongest **55 km/h at 15:00**; pressure lowest at 988.8 hPa at 15:00.
+- **Fact, observed:**
+  - **Lisbon airport, 09:00:** SSE 11 kt, rain and mist, visibility 3 km, 1001 hPa; no gust so far, none above warned.
+  - **Lisbon's stations:** 2 to 8 mm an hour, rising, in the hours labelled 06:00 to 08:00 (`lisbon-rain.json`); the red rain began at 09:00.
+- **Analysis:**
+  - **Both models now show the same pattern.** The wind backs to east before midday, there is a lull around 12:00 to 13:00, then it **veers through south and south-west to west**, strongest from the south and south-west at 14:00 to 15:00.
+  - That is the pattern for the centre passing **close to Lisbon and just north of it, around 13:00 to 15:00**, with Lisbon on the stronger southern side for a few hours. This settles 7b's open question for the guidance: the side is now **"just north", medium confidence**. Observations this afternoon will decide it.
+  - **The strongest wind most likely comes 14:00 to 16:00** (narrowed from 14:00 to 17:00). IPMA's orange warning (gusts to 120 km/h) covers it.
+  - **The 12:00 to 13:00 lull is not the end.** The strongest wind follows it.
+  - Red rain runs 09:00 to 18:00. The wind eases after 17:00, and the orange wind ends at 21:00.
+- **The test** (unchanged): a veer through SW to W at the airport, with the strongest gusts from the S and SW before or at the pressure minimum, means the centre passed north.
