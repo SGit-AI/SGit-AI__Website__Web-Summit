@@ -334,7 +334,42 @@ ${cols.length > 1 ? `<nav class="kb-jump" aria-label="Columns">${cols.map(c => `
 
     // ---------- views ----------
     const V = {}
+    // VISÃO GERAL in the clean shell's look (Silvio's go on the mock, 11 November 2026, dashboard@web-summit.silvio): a slim
+    // greeting with glass pearl counters, then three columns of glass boxes, each with its own colour on the outline only.
+    // Same data and the same buttons (data-kpi, data-new, data-go, data-issue, data-star, data-set) as the classic home.
+    function homeShell() {
+        const c = counts(), PT_DAYS = { '2026-11-09': 'Seg 9', '2026-11-10': 'Ter 10', '2026-11-11': 'Qua 11', '2026-11-12': 'Qui 12' }
+        const h = new Date().getHours(), hi = h >= 5 && h < 12 ? 'Bom dia' : h >= 12 && h < 20 ? 'Boa tarde' : 'Boa noite'
+        const E = D.event || { sessions: [], side_events: [] }, day = S.evDay || (EV_DAYS.find(([d]) => d === localDay()) || EV_DAYS[1])[0]
+        const sess = (E.sessions || []).filter(x => x.day === day).sort((a, b) => hhmm(a.time).localeCompare(hhmm(b.time)))
+        const side = (E.side_events || []).filter(x => String(x.date || '').startsWith(day)), mine = stars(), starred = sess.filter(x => mine.includes(x.id))
+        const due = openNamed().filter(i => i.due_at && localDay(new Date(i.due_at)) === day)
+        const plan = [...(D.standups ? D.standups.times_utc : ['13:00', '18:00']).map(t => [t, 'Team stand-up', '#A58BFF', 'Traz as «Decisões que preciso»']),
+            ...(day === '2026-11-09' ? [['18:00', 'Opening night, Centre Stage', '#FBE2AE', 'depois Night Summit, 20:00 a 23:00']] : []),
+            ...starred.map(x => [hhmm(x.time), '★ ' + x.title, '#FBE2AE', x.stage || '']), ...side.map(x => [hhmm(x.date) || '—', x.title, '#FF7FB0', x.place || '']),
+            ...due.map(i => [/T23:59/.test(i.due_at) ? 'fim' : fmtTime(i.due_at), i.id + ' · ' + i.title, '#FF4D6D', 'prazo'])].sort((a, b) => a[0].localeCompare(b[0]))
+        const nowHM = new Date().toTimeString().slice(0, 5), nextI = day === localDay() ? plan.findIndex(p => p[0] >= nowHM) : -1
+        const onlyMine = S.evMine && starred.length, list = onlyMine ? starred : sess
+        const decs = D.decisions.filter(x => (x.who || '').toLowerCase() === FIRST.toLowerCase()), urg = urgentTop().slice(0, 5)
+        const late = i => { const u = urgency(i); return i.due_at && u.k === 'overdue' ? rel(i.due_at).replace(/ (ago|late)$/, '').replace(/^in /, '') + ' de atraso' : i.due ? esc(i.due) : '' }
+        const box = (col, title, n, more, inner) => `<section class="hx-box" style="--c:${col}"><h2>${title}${n != null ? ` <span class="n">${n}</span>` : ''}${more ? `<button class="more" type="button" data-go="${more[0]}">${more[1]} ›</button>` : ''}</h2><div class="hx-body">${inner}</div></section>`
+        const pearls = [['open', c.open, 'Tarefas', '#4FD1F5'], ['soon', c.soon, 'Em 72 h', '#F2B544'], ['overdue', c.overdue, 'Atrasadas', '#FF4D6D'], ['picked', c.picked, 'Em curso', '#43D9C6'], ['waiting', c.waiting, 'À espera', '#A58BFF'], ['done', c.done, 'Feitas', '#3DDC97']]
+        const dateLine = new Date().toLocaleDateString('pt-PT', { weekday: 'long', day: 'numeric', month: 'long' })
+        return `<section class="hx-hi"><div><h1>${hi}, <em>${esc(FIRST)}</em>.</h1><span class="sub">${esc(dateLine.charAt(0).toUpperCase() + dateLine.slice(1))} · Web Summit Lisboa${decs.length ? ` · ${decs.length} ${decs.length === 1 ? 'decisão' : 'decisões'} à tua espera` : ''}</span></div>
+<div class="hx-pearls">${pearls.map(([k, n, l, col]) => `<button class="hx-pearl" type="button" data-kpi="${k}" style="--c:${col}"><i>${n}</i><span>${l}</span></button>`).join('')}</div><button class="hx-gold" type="button" data-new>+ Nova tarefa</button></section>
+<div class="hx-grid"><div class="hx-col">
+${box('#FF7FB0', 'O meu dia', plan.length, ['calendar', 'Calendário'], `<div class="hx-days" role="group" aria-label="Dia">${EV_DAYS.map(([d, l]) => `<button type="button" data-set="evDay" data-val="${d}" aria-pressed="${d === day}">${esc(PT_DAYS[d] || l)}</button>`).join('')}</div>${plan.length ? `<div class="hx-tl">${plan.map(([w, what, col, sub], i) => `<div class="hx-ev${i === nextI ? ' now' : ''}" style="--c:${col}"><time>${esc(w)}</time><i></i><div><b>${esc(what)}</b>${sub ? `<small>${esc(sub)}</small>` : ''}</div></div>`).join('')}</div>` : '<p class="hx-none">Nada marcado ainda.</p>'}`)}
+${decs.length ? box('#A58BFF', 'Decisões à tua espera', decs.length, ['waiting', 'Todas'], decs.slice(0, 5).map(x => `<div class="hx-row" style="--t:#A58BFF"><b>${esc(x.what)}</b><small>${x.issue ? esc(x.issue) + ' · ' : ''}à espera há ${esc(ago(x.since).replace(' ago', ''))}</small></div>`).join('')) : ''}
+</div><div class="hx-col">
+${box('#4FD1F5', 'Sessões do dia', sess.length, null, `<div class="hx-filt"><button class="hx-chip" type="button" data-set="evMine" data-val="${S.evMine ? '' : '1'}" aria-pressed="${!!onlyMine}"${starred.length ? '' : ' disabled'}>Só as minhas ★ ${starred.length}</button><span>Toca na ☆ para juntar ao teu dia (fica neste aparelho).</span></div>${list.length ? `<div class="hx-ses">${list.map(x => `<div class="hx-s"><time>${esc(hhmm(x.time))}</time><div><b>${esc(x.title)}</b><small>${esc(x.stage || '')}${x.speakers && x.speakers.length ? ' · ' + esc(x.speakers.slice(0, 2).map(y => y.name + (y.org ? ' (' + y.org + ')' : '')).join(', ')) : ''}</small></div><button class="hx-star" type="button" data-star="${esc(x.id)}" aria-pressed="${mine.includes(x.id)}" aria-label="Juntar ao meu dia">${mine.includes(x.id) ? '★' : '☆'}</button></div>`).join('')}</div>` : '<p class="hx-none">Nenhuma sessão neste dia.</p>'}<p class="hx-src">Do programa oficial (websummit.com, lido a ${esc(E.read_on || '')}); horas de Lisboa.</p>`)}
+</div><div class="hx-col hx-c3">
+${box('#FF4D6D', 'Mais urgentes', c.open, ['tasks', 'Todas'], urg.length ? urg.map(i => `<button class="hx-row" type="button" data-issue="${esc(i.id)}" style="--t:${urgency(i).k === 'overdue' ? '#FF4D6D' : '#F2B544'}"><b>${esc(i.id)} · ${esc(i.title)}</b><small>${i.picked_by ? 'Em curso · ' + esc(i.picked_by.split('@')[0]) + '@' : 'Ninguém pegou'}</small>${late(i) ? `<em>${late(i)}</em>` : ''}</button>`).join('') : '<p class="hx-none">Nada em aberto para ti.</p>')}
+${box('#D9B26E', 'Frentes de trabalho', null, ['streams', 'Todas'], `<div class="hx-ws">${D.workstreams.map(w => { const l = D.issues.filter(i => i.stream === w.id), d = l.filter(i => i.status === 'done').length, nx = l.find(i => i.status !== 'done'); return `<div><span>${esc(w.name)}${nx ? ` <small>· próximo ${esc(nx.id)}</small>` : ''}</span><b>${d} / ${l.length}</b><u><i style="width:${l.length ? Math.round(d / l.length * 100) : 0}%"></i></u></div>` }).join('')}</div>`)}
+${box('#43D9C6', 'A equipa agora', null, ['stand', 'Universo'], D.activity.length ? `<div class="hx-act">${D.activity.slice(0, 6).map(a => { const ag = a.agent || 'sem assinatura', [n, d] = ag.split('@'); return `<p><time>${esc(new Date(a.at).toTimeString().slice(0, 5))}</time><span><b>${esc(n)}</b>${d ? '@' + esc(d) : ''} · ${esc(a.subject.replace(/^[a-z0-9.-]+@[a-z0-9.-]+: /i, '').slice(0, 90))}</span></p>` }).join('')}</div>` : '<p class="hx-none">Sem commits nas últimas 48 horas.</p>')}
+</div></div>${srcLine()}`
+    }
     V.home = () => {
+        if (document.documentElement.classList.contains('cc-shell')) return homeShell()
         const c = counts(), o = byUrgency(openNamed()).slice(0, 6)
         const greet = greeting()
         const toSummit = Math.max(0, Math.ceil((new Date(D.summit.opening) - Date.now()) / 864e5))
