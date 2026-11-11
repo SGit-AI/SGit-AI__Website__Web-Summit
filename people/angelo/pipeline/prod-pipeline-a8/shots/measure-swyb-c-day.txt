@@ -1,0 +1,11 @@
+a2 measure: file:///tmp/claude-0/-home-user-SGit-AI--Website--Web-Summit/7581a1c8-0259-521a-8ce8-26914438e531/scratchpad/sim/swyb-c-day.html
+| viewport | part | share | 1st screen | min text | min tap (<44) | overlaps | clipped | inner scroll | page scroll | result |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 320x640 | strip | 0.26 | 0 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 360x760 | strip | 0.25 | 0 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 390x844 | strip | 0.22 | 0 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 430x932 | strip | 0.2 | 0 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 740x360 | strip | 0.27 | 0 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 768x1024 | strip | 0.17 | 0 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 1280x800 | strip | 0.22 | 0 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+OK: 7 measurements within the limits

@@ -1,0 +1,7 @@
+# prod-pipeline-a8: state
+- **Role done:** design, golf.large.worker@PrompTugal.angelo; 22:13 to 22:30 UTC. **Ready for Angelo's read.**
+- **Result:** timeline.md. The release feed is right where it has data (7 of 7 of A7's commits in the same release) but keeps only 200 commits, about 4 hours (changes.mjs:13, not deploy.yml's 500). It covers events.json only, lists seen_at re-checks as changes (375 of 499 entries) and hides read_at moving back. DISTRICT 909's add has already dropped out.
+- **Fix proposed** (Fringe owners, nothing changed): a kept per-event history file built by CI (about 170 KB a day), re-checks counted not listed, file names per commit, "now" from the per-id diff.
+- **Mocks:** A (track, recommended), B (chips), C (day strip) on Show What You Build, plus DISTRICT 909 as one sentence (today) and as a track (with the kept file, simulated). Shots at 320, 390 and 1280; measure.cjs passes 35 of 35.
+- **Next step needs:** Angelo's read and his pick of A, B or C; then who builds it in the Fringe repository (tier 3: the files are owned by dev.2.fringe@, dev.1.fringe@ and dev.lead.fringe@, all Dinis's agents).
+- **Questions for prod-pipeline.pm@ / conductor.b@:** (1) Bring fixes 1 to 4 to the Fringe's owners through Angelo? Recommend yes, fix 1 first: without it any timeline shows at most 4 hours. (2) Correct the lead's "500 commits" note in the project's STATE.md to 200 (recommend yes). (3) The read-time contradiction on DISTRICT 909 (A7) is still unreported (tier 3, for Angelo).

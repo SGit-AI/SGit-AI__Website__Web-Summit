@@ -1,0 +1,65 @@
+/* prod-pipeline-a8 (golf.large.worker@PrompTugal.angelo): the little timeline, three options. Uses only the Fringe's tokens
+   (admin/build/tokens.css: --brand, --ok, --live, --ink-3, --hair, --panel, --focus); fallbacks are the same values. */
+.ph{--b:var(--brand,#1f4fa8);--g:var(--ok,#006600);--r:var(--live,#c52830);--m:var(--ink-3,#595c64);--h:var(--hair,#d9d2c1);
+  margin:28px 0 8px;padding:14px 14px 10px;border:1px solid var(--h);border-top:4px solid var(--b);background:var(--panel,#fffdf8);
+  border-radius:6px;font:14px/1.35 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink,#121317);max-width:100%;box-sizing:border-box;overflow:hidden}
+.ph *{box-sizing:border-box}
+.ph-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:-6px 0 0}
+.ph-top a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:var(--b)}
+.ph-one{display:block;min-height:44px;color:inherit;text-decoration:none;font-size:15px;line-height:1.35;margin:0 0 4px}
+.ph-one u{color:var(--b);text-underline-offset:2px}
+.ph-k{margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--m);font-weight:600}
+.ph-h{margin:2px 0 6px;font-size:17px;line-height:1.3;font-weight:700}
+.ph-h b{color:var(--b)}
+.ph-f{margin:2px 0 4px;font-size:12px;color:var(--m);display:flex;flex-wrap:wrap;align-items:center;gap:0 6px}
+.ph a:focus-visible{outline:3px solid var(--focus,#ffbf1f);outline-offset:2px}
+
+/* A: the track. Time runs left to right from the first mark to now; changes are big dots, re-checks small rings. */
+.ph-track{position:relative;height:74px;margin:4px 18px 0}
+.ph-rail{position:absolute;left:0;right:0;top:21px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--h),var(--b));
+  transform-origin:left;animation:ph-grow .7s cubic-bezier(.2,.7,.2,1) both}
+.ph-rail.lead{background:repeating-linear-gradient(90deg,var(--h) 0 6px,transparent 6px 10px);right:auto;width:9%;animation:none}
+.ph-m{position:absolute;top:0;width:44px;height:44px;margin-left:-22px;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.ph-m i{display:block;width:12px;height:12px;border-radius:50%;border:3px solid var(--m);background:var(--panel,#fff);animation:ph-pop .35s ease-out both}
+.ph-m.changed i{width:22px;height:22px;border:0;background:var(--b);box-shadow:0 0 0 3px var(--panel,#fff)}
+.ph-m.added i{width:24px;height:24px;border:0;background:var(--g);box-shadow:0 0 0 3px var(--panel,#fff);clip-path:polygon(50% 0,63% 35%,100% 38%,71% 61%,80% 100%,50% 78%,20% 100%,29% 61%,0 38%,37% 35%)}
+.ph-m.removed i{width:20px;height:20px;border:0;background:var(--r);transform:rotate(45deg)}
+.ph-m.now i{background:var(--r);border-color:var(--r);width:16px;height:16px}
+.ph-m.now::after{content:"";position:absolute;inset:6px;border-radius:50%;border:3px solid var(--r);animation:ph-pulse 1.6s ease-out infinite}
+.ph-l{position:absolute;top:46px;transform:translateX(-50%);font-size:12px;line-height:1.2;white-space:nowrap;color:var(--m);text-align:center}
+.ph-l strong{display:block;color:var(--ink,#121317);font-weight:600}
+.ph-l.end{transform:translateX(-100%);text-align:right}.ph-l.start{transform:none;text-align:left}
+.ph-key{display:inline-flex;flex-wrap:wrap;gap:4px 12px;margin-right:12px}.ph-key b{font-weight:400}
+.ph-key i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--b);margin-right:5px;vertical-align:-1px}
+.ph-key .rc i{background:none;border:2px solid var(--m)}.ph-key .ad i{background:var(--g)}.ph-key .nw i{background:var(--r)}
+.ph-live{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:10px;background:var(--live-soft,#f8e4df);color:var(--r);font-size:12px;font-weight:700;vertical-align:2px}
+.ph-live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--r);margin-right:5px;animation:ph-blink 1.2s infinite}
+@keyframes ph-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes ph-pop{0%{transform:scale(0)}70%{transform:scale(1.25)}100%{transform:scale(1)}}
+@keyframes ph-pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.6);opacity:0}}
+@keyframes ph-blink{50%{opacity:.25}}
+
+/* B: release chips, newest first, wrapping (no line). */
+.ph-chips{display:flex;gap:6px;margin:4px 0 6px;padding:0 0 4px;list-style:none;overflow-x:auto}
+.ph-chips li{flex:none}
+.ph-chips a{display:flex;flex-direction:column;justify-content:center;min-height:44px;min-width:44px;padding:4px 10px;border-radius:6px;
+  border:1px solid var(--h);text-decoration:none;color:var(--ink,#121317);font-size:12px;line-height:1.25;animation:ph-pop .35s ease-out both}
+.ph-chips a strong{font-size:13px}
+.ph-chips .changed a{border-color:var(--b);background:var(--brand-soft,#e6ecf7)}
+.ph-chips .rechecked a{color:var(--m)}
+.ph-chips .now a{border-color:var(--r);background:var(--live-soft,#f8e4df)}
+
+/* C: the day strip: one cell per hour, coloured by what happened in it. */
+.ph-day{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;margin:6px 0 6px}
+.ph-day>:nth-child(-n+6){display:none}
+.ph-day a,.ph-day span{display:flex;align-items:flex-end;justify-content:center;min-height:44px;border-radius:4px;background:var(--paper-2,#ece7db);
+  font-size:12px;color:var(--m);text-decoration:none;padding-bottom:2px;animation:ph-pop .35s ease-out both}
+.ph-day .rechecked{background:#c9d4ea;color:var(--ink,#121317)}
+.ph-day .changed{background:var(--b);color:#fff;font-weight:700}
+.ph-day .now{box-shadow:inset 0 0 0 3px var(--r)}
+@media (min-width:760px){.ph{padding:18px 22px 12px}.ph-h{font-size:19px}.ph-day{grid-template-columns:repeat(12,1fr)}.ph-day>:nth-child(-n+6){display:flex}}
+@media (max-width:359px){.ph-h{font-size:15px}.ph-f{display:none}.ph-day{grid-template-columns:repeat(5,1fr)}.ph-day>:nth-child(7){display:none}}
+@media (max-height:500px) and (min-width:600px){.ph{display:grid;grid-template-columns:42% 1fr;column-gap:20px;margin-top:16px;padding:10px 16px 6px}
+ .ph-top,.ph-h,.ph-one{grid-column:1}.ph-h{font-size:15px;margin:0}.ph-track,.ph-chips,.ph-day{grid-column:2;grid-row:1/3;align-self:center}.ph-f{display:none}
+ .ph:has(.ph-one){display:block}.ph-one{font-size:14px}.ph-day{grid-template-columns:repeat(6,1fr)}.ph-day>:nth-child(-n+6){display:none}}
+@media (prefers-reduced-motion:reduce){.ph *,.ph *::before,.ph *::after{animation:none!important}}

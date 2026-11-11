@@ -1,0 +1,91 @@
+{
+ "source": "https://lisbontechfringe.com/api/v1/releases.json",
+ "feed_version": "v0.1.631",
+ "built_at": "2026-11-11T22:11:49Z",
+ "feed_oldest_commit": "2026-11-11T18:16:33Z",
+ "releases": 112,
+ "commits": 200,
+ "pages": {
+  "district-909": {
+   "event_id": "2026-11-11-district-909-back-where-it-all-started",
+   "page": "https://lisbontechfringe.com/e/2026-11-11-district-909-back-where-it-all-started/",
+   "marks": [
+    {
+     "version": "v0.1.501",
+     "t": "2026-11-11T19:23:21Z",
+     "kind": "rechecked",
+     "fields": [],
+     "by": [
+      "researcher.2.fringe"
+     ],
+     "url": "https://lisbontechfringe.com/changes/v0.1.501/"
+    }
+   ],
+   "working_now": false,
+   "activity_names_it": false
+  },
+  "show-what-you-build": {
+   "event_id": "2026-11-12-show-what-you-build",
+   "page": "https://lisbontechfringe.com/e/2026-11-12-show-what-you-build/",
+   "marks": [
+    {
+     "version": "v0.1.491",
+     "t": "2026-11-11T19:13:40Z",
+     "kind": "changed",
+     "fields": [
+      "check"
+     ],
+     "by": [
+      "grafana.1.fringe",
+      "researcher.2.fringe"
+     ],
+     "url": "https://lisbontechfringe.com/changes/v0.1.491/"
+    },
+    {
+     "version": "v0.1.501",
+     "t": "2026-11-11T19:23:21Z",
+     "kind": "changed",
+     "fields": [
+      "ical_uid"
+     ],
+     "by": [
+      "researcher.2.fringe"
+     ],
+     "url": "https://lisbontechfringe.com/changes/v0.1.501/"
+    },
+    {
+     "version": "v0.1.548",
+     "t": "2026-11-11T20:11:42Z",
+     "kind": "rechecked",
+     "fields": [],
+     "by": [
+      "researcher.2.fringe"
+     ],
+     "url": "https://lisbontechfringe.com/changes/v0.1.548/"
+    },
+    {
+     "version": "v0.1.594",
+     "t": "2026-11-11T21:11:50Z",
+     "kind": "rechecked",
+     "fields": [],
+     "by": [
+      "researcher.2.fringe"
+     ],
+     "url": "https://lisbontechfringe.com/changes/v0.1.594/"
+    },
+    {
+     "version": "v0.1.631",
+     "t": "2026-11-11T22:11:25Z",
+     "kind": "rechecked",
+     "fields": [],
+     "by": [
+      "researcher.2.fringe"
+     ],
+     "url": "https://lisbontechfringe.com/changes/v0.1.631/"
+    }
+   ],
+   "working_now": true,
+   "activity_names_it": false
+  }
+ }
+}

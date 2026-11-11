@@ -1,0 +1,1339 @@
+{
+ "feed_version": "v0.1.631",
+ "releases": 112,
+ "commits": 200,
+ "oldest_commit": "2026-11-11T18:16:33Z",
+ "newest": "2026-11-11T22:11:25Z",
+ "pages": {
+  "district-909": {
+   "a7_commit_steps": 7,
+   "a7_in_window": 5,
+   "rows": [
+    {
+     "t": "17:50",
+     "sha": "b096ccb",
+     "who": "researcher.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.422",
+     "what": "DISTRICT 909 (22:00, Rive Rouge) added from its Luma page; guide list "
+    },
+    {
+     "t": "17:57",
+     "sha": "dd871ad",
+     "who": "ontologist.1.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.431",
+     "what": "work/42: supersede, never delete: retired event ids keep a page"
+    },
+    {
+     "t": "18:22",
+     "sha": "ae5dfa9",
+     "who": "researcher.1.fringe",
+     "role": "related",
+     "in_window": true,
+     "release": "v0.1.444",
+     "live_in": "v0.1.444",
+     "what": "wake 18:20: DISTRICT 909 served; 3 online events to come; events.json "
+    },
+    {
+     "t": "18:35",
+     "sha": "93f9301",
+     "who": "outreach.1.fringe",
+     "role": "related",
+     "in_window": true,
+     "release": "v0.1.455",
+     "live_in": "v0.1.455",
+     "what": "wake 18:35: quiet; tracker 76 organisers; status"
+    },
+    {
+     "t": "18:56",
+     "sha": "698898b",
+     "who": "conductor.fringe",
+     "role": "related",
+     "in_window": true,
+     "release": "v0.1.466",
+     "live_in": "v0.1.466",
+     "what": "wake: communities in step with events.json (106); status"
+    },
+    {
+     "t": "18:57",
+     "sha": "ab0c35a",
+     "who": "researcher.1.fringe",
+     "role": "related",
+     "in_window": true,
+     "release": "v0.1.470",
+     "live_in": "v0.1.470",
+     "what": "wake 18:57: 2 online events to come; no organiser answer yet; status"
+    },
+    {
+     "t": "19:23",
+     "sha": "33587a6",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": true,
+     "release": "v0.1.501",
+     "live_in": "v0.1.501",
+     "what": "read_at means re-checked, seen_at added and read_at set back; ical_uid"
+    }
+   ],
+   "release_marks": [
+    {
+     "after_a7": false,
+     "version": "v0.1.444",
+     "t": "18:22",
+     "what": "names it: ae5dfa9",
+     "agents": [
+      "researcher.1.fringe"
+     ]
+    },
+    {
+     "after_a7": false,
+     "version": "v0.1.501",
+     "t": "19:23",
+     "what": "changed: seen_at",
+     "agents": [
+      "conductor.fringe",
+      "researcher.2.fringe",
+      "architect.1.fringe"
+     ]
+    }
+   ]
+  },
+  "storm-summit": {
+   "a7_commit_steps": 15,
+   "a7_in_window": 0,
+   "rows": [
+    {
+     "t": "13:36",
+     "sha": "064a9a1",
+     "who": "conductor.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.197",
+     "what": "work/41 /tip/: paste a tip, research it, list it, draft the organiser'"
+    },
+    {
+     "t": "13:37",
+     "sha": "0f23d54",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.200",
+     "what": "add Storm Summit (stormsummit.app), online Wed 11 Nov 08:30, from the "
+    },
+    {
+     "t": "13:42",
+     "sha": "ba1f497",
+     "who": "researcher.2.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.207",
+     "what": "status: tips lane drained (0 tips), next steps"
+    },
+    {
+     "t": "13:54",
+     "sha": "d4ae8e8",
+     "who": "conductor.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.217",
+     "what": "wake: communities refreshed (102, 49 calendars), status; ABP question "
+    },
+    {
+     "t": "13:57",
+     "sha": "9f3ceef",
+     "who": "observability.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.220",
+     "what": "counts 13:57 UTC"
+    },
+    {
+     "t": "14:01",
+     "sha": "aefea2d",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.227",
+     "what": "work/44 done: cost, in_lisbon, personas, umbrella on all events; field"
+    },
+    {
+     "t": "14:03",
+     "sha": "28e88c5",
+     "who": "capture.1.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.235",
+     "what": "work/45: covers also from organisers' own sites; Meetup/Eventbrite/Par"
+    },
+    {
+     "t": "14:17",
+     "sha": "28b4a6b",
+     "who": "researcher.1.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.257",
+     "what": "wake 14:16: 9 online events still to come, note 1 ready, status"
+    },
+    {
+     "t": "14:26",
+     "sha": "e2f585a",
+     "who": "dev.2.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.268",
+     "what": "wake: second-opinion run, models ledger, status"
+    },
+    {
+     "t": "14:26",
+     "sha": "249c105",
+     "who": "outreach.1.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.268",
+     "what": "organiser note approved by Dinis (brief 15): note and tracker updated"
+    },
+    {
+     "t": "14:28",
+     "sha": "19e56ea",
+     "who": "observability.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.271",
+     "what": "counts 14:28 UTC"
+    },
+    {
+     "t": "14:29",
+     "sha": "15edf50",
+     "who": "observability.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.272",
+     "what": "a tab with 40+ views counts as a crawler, not a reader"
+    },
+    {
+     "t": "15:24",
+     "sha": "3fd2391",
+     "who": "conductor.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.308",
+     "what": "work/13 seventh pass: data lint of 177 events, no contact details"
+    },
+    {
+     "t": "17:21",
+     "sha": "c05bfcf",
+     "who": "dev.2.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.394",
+     "what": "second-opinion: Luma events compared with the public iCal data, no pag"
+    },
+    {
+     "t": "17:57",
+     "sha": "dd871ad",
+     "who": "ontologist.1.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.431",
+     "what": "work/42: supersede, never delete: retired event ids keep a page"
+    }
+   ],
+   "release_marks": []
+  },
+  "me": {
+   "a7_commit_steps": 5,
+   "a7_in_window": 0,
+   "rows": [
+    {
+     "t": "11:37",
+     "sha": "73cb424",
+     "who": "conductor.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.23",
+     "what": "work/19 comms layer: an inbox vault for every agent, tested end to end"
+    },
+    {
+     "t": "11:51",
+     "sha": "467db90",
+     "who": "conductor.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.33",
+     "what": "brief 4 (full throttle): ROLES.md, the design board, work/25 to 28"
+    },
+    {
+     "t": "11:58",
+     "sha": "88d0003",
+     "who": "dev.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.65",
+     "what": "work/26 /me/ (key and passkey in the browser) and the message-the-lead"
+    },
+    {
+     "t": "12:03",
+     "sha": "0aa5ca4",
+     "who": "dev.1.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.69",
+     "what": "work/25 health and outreach sections (brief 6); work/26 done pending l"
+    },
+    {
+     "t": "13:39",
+     "sha": "191bd96",
+     "who": "dev.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.201",
+     "what": "work/41 /tip/ first version: sealed paste box, tips status API, drain "
+    }
+   ],
+   "release_marks": []
+  },
+  "tip": {
+   "a7_commit_steps": 7,
+   "a7_in_window": 0,
+   "rows": [
+    {
+     "t": "13:26",
+     "sha": "a0253eb",
+     "who": "conductor.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.165",
+     "what": "wake 13:2x: captures held for privacy; creds re-sealed to Dinis; 7 inb"
+    },
+    {
+     "t": "13:36",
+     "sha": "064a9a1",
+     "who": "conductor.fringe",
+     "role": "related",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.197",
+     "what": "work/41 /tip/: paste a tip, research it, list it, draft the organiser'"
+    },
+    {
+     "t": "13:39",
+     "sha": "191bd96",
+     "who": "dev.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.201",
+     "what": "work/41 /tip/ first version: sealed paste box, tips status API, drain "
+    },
+    {
+     "t": "13:41",
+     "sha": "2e3c308",
+     "who": "conductor.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.203",
+     "what": "the tips lane (work/41): data/inboxes/lane-tips.json, sealed to resear"
+    },
+    {
+     "t": "13:43",
+     "sha": "34e8a64",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.210",
+     "what": "tip-a97f86b4 received (dev.2's lane test, no event)"
+    },
+    {
+     "t": "14:01",
+     "sha": "00a6e45",
+     "who": "dev.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.227",
+     "what": "work/46 give-us-the-intel box on home and every event page, WhatsApp s"
+    },
+    {
+     "t": "14:55",
+     "sha": "1608aef",
+     "who": "design.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.291",
+     "what": "D36 Tell us link on every event page, event pre-filled on /tip/ (close"
+    }
+   ],
+   "release_marks": [
+    {
+     "after_a7": true,
+     "version": "v0.1.608",
+     "t": "21:23",
+     "what": "names it: 0204c36",
+     "agents": [
+      "conductor.fringe",
+      "capture.1.fringe",
+      "outreach.1.fringe",
+      "usability.1.fringe",
+      "design.3.fringe",
+      "design.4.fringe",
+      "ontologist.1.fringe",
+      "design.1.fringe",
+      "dev.2.fringe",
+      "conductor.fringe"
+     ]
+    }
+   ]
+  },
+  "home": {
+   "a7_commit_steps": 46,
+   "a7_in_window": 3,
+   "rows": [
+    {
+     "t": "10:49",
+     "sha": "6d8b29b",
+     "who": "researcher.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.8",
+     "what": "data/events.json, the 21 seed events re-read at their public pages (wo"
+    },
+    {
+     "t": "10:53",
+     "sha": "48efab3",
+     "who": "researcher.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.8",
+     "what": "30 new events from Luma's public calendars, work/03 notes, sources.md"
+    },
+    {
+     "t": "10:54",
+     "sha": "b8de457",
+     "who": "researcher.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.8",
+     "what": "merge dev; data/events.json follows the v1 contract (50 events)"
+    },
+    {
+     "t": "10:58",
+     "sha": "66ab1f3",
+     "who": "researcher.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.11",
+     "what": "19 more events (69), from the PTW, Unicorn Factory and Canopy calendar"
+    },
+    {
+     "t": "11:25",
+     "sha": "cb97fa3",
+     "who": "researcher.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.25",
+     "what": "the Uncon is WET SUMMIT Lisbon (work/03 done); 61 events re-read; 70 e"
+    },
+    {
+     "t": "11:41",
+     "sha": "e97903d",
+     "who": "conductor.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.28",
+     "what": "PTW Palace sessions re-read at source (work/24 first case)"
+    },
+    {
+     "t": "11:56",
+     "sha": "ac6b57a",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.50",
+     "what": "work/24 wake 1: 61 events re-read, 94 added (164), Kuma H2H online"
+    },
+    {
+     "t": "12:16",
+     "sha": "437ee4b",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.80",
+     "what": "work/24 wake 2: 156 re-read, Agents Are Ready postponed to Thu, 7 new "
+    },
+    {
+     "t": "12:40",
+     "sha": "45e52fc",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.109",
+     "what": "work/10 claimed: lane \"business\" on 49 founders', investors' and partn"
+    },
+    {
+     "t": "12:42",
+     "sha": "6502ff1",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.114",
+     "what": "size (major/community) on every event; documented in api/v1"
+    },
+    {
+     "t": "12:49",
+     "sha": "b5d2178",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.125",
+     "what": "second-opinion times: travel tech start stays 17:00, life-with-artific"
+    },
+    {
+     "t": "12:55",
+     "sha": "e9a3981",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.142",
+     "what": "second-opinion worth_a_look: Yorkseed salon on, AI Engineers lunch not"
+    },
+    {
+     "t": "13:18",
+     "sha": "b84d64b",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.161",
+     "what": "work/24 wake 4: 131 re-read, Eventbrite read (+6, 177 events), lane re"
+    },
+    {
+     "t": "13:27",
+     "sha": "0896640",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.168",
+     "what": "remove the 6 Eventbrite events (terms forbid automated reading); one r"
+    },
+    {
+     "t": "13:34",
+     "sha": "32bbc63",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.194",
+     "what": "neighbourhood field on 47 events where the public page names the area;"
+    },
+    {
+     "t": "13:37",
+     "sha": "0f23d54",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.200",
+     "what": "add Storm Summit (stormsummit.app), online Wed 11 Nov 08:30, from the "
+    },
+    {
+     "t": "14:01",
+     "sha": "aefea2d",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.227",
+     "what": "work/44 done: cost, in_lisbon, personas, umbrella on all events; field"
+    },
+    {
+     "t": "14:02",
+     "sha": "7bfe5f3",
+     "who": "design.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.229",
+     "what": "D28 the new home page: today in Lisbon, role chips, now strip, visual "
+    },
+    {
+     "t": "14:03",
+     "sha": "64bc57c",
+     "who": "capture.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.232",
+     "what": "work/45: covers vault, covers.mjs, data/event-images.json (62 of today"
+    },
+    {
+     "t": "14:03",
+     "sha": "36340f6",
+     "who": "design.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.232",
+     "what": "chips under 3 events fold into Elsewhere in Lisbon (home, programme); "
+    },
+    {
+     "t": "14:03",
+     "sha": "28e88c5",
+     "who": "capture.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.235",
+     "what": "work/45: covers also from organisers' own sites; Meetup/Eventbrite/Par"
+    },
+    {
+     "t": "14:04",
+     "sha": "45810a5",
+     "who": "design.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.237",
+     "what": "D28 home uses design.2's now strip (Now, Next hour, Tonight)"
+    },
+    {
+     "t": "14:08",
+     "sha": "1b7122c",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.249",
+     "what": "staaake: organiser set to an independent organiser (finding 10), not c"
+    },
+    {
+     "t": "14:08",
+     "sha": "9d6de18",
+     "who": "design.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.249",
+     "what": "D28 home: the city map, role filter drives the dots, card fields link "
+    },
+    {
+     "t": "14:15",
+     "sha": "24adb2d",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.256",
+     "what": "work/24 wake 14:15: 131 re-read, Enchant Afterparty added, Side Events"
+    },
+    {
+     "t": "14:39",
+     "sha": "ceac351",
+     "who": "researcher.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.279",
+     "what": "Soir\u00e9e is in person per its Luma page (was online); notes checked at s"
+    },
+    {
+     "t": "14:43",
+     "sha": "d501143",
+     "who": "researcher.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.280",
+     "what": "two new online events from the guides (WonderLead in Tech, ideaic.io);"
+    },
+    {
+     "t": "14:54",
+     "sha": "7fb5313",
+     "who": "design.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.288",
+     "what": "home cards take cover pictures from event-images.json (event_id, publi"
+    },
+    {
+     "t": "15:14",
+     "sha": "f131859",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.300",
+     "what": "work/24 wake 15:15: 134 re-read, 2 new from the Luma calendars (175 ev"
+    },
+    {
+     "t": "15:23",
+     "sha": "34c0b63",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.307",
+     "what": "privacy: withhold the venue where the organiser's page hides it (3), c"
+    },
+    {
+     "t": "15:28",
+     "sha": "545c9a9",
+     "who": "capture.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.321",
+     "what": "work/27, work/45: 15:25 run's pointers, covers (68), status"
+    },
+    {
+     "t": "16:14",
+     "sha": "b74280a",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.347",
+     "what": "work/24 wake 16:13: 161 re-read, 1 new from the Luma calendars (176 ev"
+    },
+    {
+     "t": "16:23",
+     "sha": "2909dcb",
+     "who": "conductor.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.351",
+     "what": "Luma hold (work/49): its terms forbid downloading or republishing its "
+    },
+    {
+     "t": "16:24",
+     "sha": "7ff0f76",
+     "who": "design.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.355",
+     "what": "home cards without pictures: organiser initials, kind and time tiles ("
+    },
+    {
+     "t": "16:26",
+     "sha": "1c63783",
+     "who": "capture.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.361",
+     "what": "work/27, work/45: Luma out: vaults deleted, hosts hard-blocked, pointe"
+    },
+    {
+     "t": "16:54",
+     "sha": "0963e71",
+     "who": "design.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.383",
+     "what": "D37 home: Online and Cancelled-or-moved one tap away, list folded (227"
+    },
+    {
+     "t": "17:12",
+     "sha": "cec6310",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.389",
+     "what": "wake 17:12 (iCal only): feeds refreshed, Valois cost corrected to EUR "
+    },
+    {
+     "t": "17:17",
+     "sha": "510868b",
+     "who": "researcher.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.392",
+     "what": "Cisco 17:30 is online per its Luma page (was in person); PTW's calenda"
+    },
+    {
+     "t": "17:23",
+     "sha": "f44f7c4",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.400",
+     "what": "AltaIR Capital: unknown/evidence (page no longer shows the cancellatio"
+    },
+    {
+     "t": "17:23",
+     "sha": "9b0fa3e",
+     "who": "design.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.400",
+     "what": "D38 design B's counts line on the home (on now, within the hour, onlin"
+    },
+    {
+     "t": "17:24",
+     "sha": "ebfb686",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.403",
+     "what": "ical_uid on 121 Luma events; status check counts a vanished notice as "
+    },
+    {
+     "t": "17:50",
+     "sha": "b096ccb",
+     "who": "researcher.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.422",
+     "what": "DISTRICT 909 (22:00, Rive Rouge) added from its Luma page; guide list "
+    },
+    {
+     "t": "18:11",
+     "sha": "5bb00e0",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.439",
+     "what": "wake 18:11 (iCal only): feeds refreshed, one dropped entry noted"
+    },
+    {
+     "t": "18:52",
+     "sha": "eec15c4",
+     "who": "design.4.fringe",
+     "role": "contributed",
+     "in_window": true,
+     "release": "v0.1.463",
+     "live_in": "v0.1.463",
+     "what": "D39 Online now and next, earlier folded; D40 the counts agree (home.mj"
+    },
+    {
+     "t": "19:13",
+     "sha": "ffe1588",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": true,
+     "release": "v0.1.491",
+     "live_in": "v0.1.491",
+     "what": "wake 19:13 (iCal only): Side Events Guide IRL unknown (page gone), end"
+    },
+    {
+     "t": "19:23",
+     "sha": "33587a6",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": true,
+     "release": "v0.1.501",
+     "live_in": "v0.1.501",
+     "what": "read_at means re-checked, seen_at added and read_at set back; ical_uid"
+    }
+   ],
+   "release_marks": [
+    {
+     "after_a7": false,
+     "version": "v0.1.491",
+     "t": "19:13",
+     "what": "events +0 -0 ~2",
+     "agents": [
+      "researcher.2.fringe",
+      "grafana.1.fringe"
+     ]
+    },
+    {
+     "after_a7": false,
+     "version": "v0.1.501",
+     "t": "19:23",
+     "what": "events +0 -0 ~171",
+     "agents": [
+      "conductor.fringe",
+      "researcher.2.fringe",
+      "architect.1.fringe"
+     ]
+    },
+    {
+     "after_a7": true,
+     "version": "v0.1.548",
+     "t": "20:11",
+     "what": "events +0 -0 ~110",
+     "agents": [
+      "researcher.2.fringe"
+     ]
+    },
+    {
+     "after_a7": true,
+     "version": "v0.1.594",
+     "t": "21:11",
+     "what": "events +0 -0 ~108",
+     "agents": [
+      "researcher.2.fringe"
+     ]
+    },
+    {
+     "after_a7": true,
+     "version": "v0.1.631",
+     "t": "22:11",
+     "what": "events +0 -0 ~108",
+     "agents": [
+      "researcher.2.fringe"
+     ]
+    }
+   ]
+  },
+  "programme": {
+   "a7_commit_steps": 35,
+   "a7_in_window": 2,
+   "rows": [
+    {
+     "t": "10:49",
+     "sha": "6d8b29b",
+     "who": "researcher.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.8",
+     "what": "data/events.json, the 21 seed events re-read at their public pages (wo"
+    },
+    {
+     "t": "10:53",
+     "sha": "48efab3",
+     "who": "researcher.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.8",
+     "what": "30 new events from Luma's public calendars, work/03 notes, sources.md"
+    },
+    {
+     "t": "10:54",
+     "sha": "b8de457",
+     "who": "researcher.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.8",
+     "what": "merge dev; data/events.json follows the v1 contract (50 events)"
+    },
+    {
+     "t": "10:58",
+     "sha": "66ab1f3",
+     "who": "researcher.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.11",
+     "what": "19 more events (69), from the PTW, Unicorn Factory and Canopy calendar"
+    },
+    {
+     "t": "11:25",
+     "sha": "cb97fa3",
+     "who": "researcher.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.25",
+     "what": "the Uncon is WET SUMMIT Lisbon (work/03 done); 61 events re-read; 70 e"
+    },
+    {
+     "t": "11:41",
+     "sha": "e97903d",
+     "who": "conductor.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.28",
+     "what": "PTW Palace sessions re-read at source (work/24 first case)"
+    },
+    {
+     "t": "11:56",
+     "sha": "ac6b57a",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.50",
+     "what": "work/24 wake 1: 61 events re-read, 94 added (164), Kuma H2H online"
+    },
+    {
+     "t": "12:16",
+     "sha": "437ee4b",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.80",
+     "what": "work/24 wake 2: 156 re-read, Agents Are Ready postponed to Thu, 7 new "
+    },
+    {
+     "t": "12:38",
+     "sha": "e9f40e7",
+     "who": "design.3.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.103",
+     "what": "/programme/: the week by day, place and kind (D17)"
+    },
+    {
+     "t": "12:40",
+     "sha": "45e52fc",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.109",
+     "what": "work/10 claimed: lane \"business\" on 49 founders', investors' and partn"
+    },
+    {
+     "t": "12:42",
+     "sha": "6502ff1",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.114",
+     "what": "size (major/community) on every event; documented in api/v1"
+    },
+    {
+     "t": "12:43",
+     "sha": "20c7a5d",
+     "who": "design.3.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.117",
+     "what": "D18 big events as a slim strip, small events as a dense list (home and"
+    },
+    {
+     "t": "12:49",
+     "sha": "b5d2178",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.125",
+     "what": "second-opinion times: travel tech start stays 17:00, life-with-artific"
+    },
+    {
+     "t": "12:55",
+     "sha": "e9a3981",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.142",
+     "what": "second-opinion worth_a_look: Yorkseed salon on, AI Engineers lunch not"
+    },
+    {
+     "t": "13:18",
+     "sha": "b84d64b",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.161",
+     "what": "work/24 wake 4: 131 re-read, Eventbrite read (+6, 177 events), lane re"
+    },
+    {
+     "t": "13:27",
+     "sha": "0896640",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.168",
+     "what": "remove the 6 Eventbrite events (terms forbid automated reading); one r"
+    },
+    {
+     "t": "13:34",
+     "sha": "32bbc63",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.194",
+     "what": "neighbourhood field on 47 events where the public page names the area;"
+    },
+    {
+     "t": "13:37",
+     "sha": "0f23d54",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.200",
+     "what": "add Storm Summit (stormsummit.app), online Wed 11 Nov 08:30, from the "
+    },
+    {
+     "t": "14:01",
+     "sha": "aefea2d",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.227",
+     "what": "work/44 done: cost, in_lisbon, personas, umbrella on all events; field"
+    },
+    {
+     "t": "14:03",
+     "sha": "36340f6",
+     "who": "design.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.232",
+     "what": "chips under 3 events fold into Elsewhere in Lisbon (home, programme); "
+    },
+    {
+     "t": "14:08",
+     "sha": "1b7122c",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.249",
+     "what": "staaake: organiser set to an independent organiser (finding 10), not c"
+    },
+    {
+     "t": "14:15",
+     "sha": "24adb2d",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.256",
+     "what": "work/24 wake 14:15: 131 re-read, Enchant Afterparty added, Side Events"
+    },
+    {
+     "t": "14:39",
+     "sha": "ceac351",
+     "who": "researcher.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.279",
+     "what": "Soir\u00e9e is in person per its Luma page (was online); notes checked at s"
+    },
+    {
+     "t": "14:43",
+     "sha": "d501143",
+     "who": "researcher.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.280",
+     "what": "two new online events from the guides (WonderLead in Tech, ideaic.io);"
+    },
+    {
+     "t": "15:14",
+     "sha": "f131859",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.300",
+     "what": "work/24 wake 15:15: 134 re-read, 2 new from the Luma calendars (175 ev"
+    },
+    {
+     "t": "15:23",
+     "sha": "34c0b63",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.307",
+     "what": "privacy: withhold the venue where the organiser's page hides it (3), c"
+    },
+    {
+     "t": "16:14",
+     "sha": "b74280a",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.347",
+     "what": "work/24 wake 16:13: 161 re-read, 1 new from the Luma calendars (176 ev"
+    },
+    {
+     "t": "17:12",
+     "sha": "cec6310",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.389",
+     "what": "wake 17:12 (iCal only): feeds refreshed, Valois cost corrected to EUR "
+    },
+    {
+     "t": "17:17",
+     "sha": "510868b",
+     "who": "researcher.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.392",
+     "what": "Cisco 17:30 is online per its Luma page (was in person); PTW's calenda"
+    },
+    {
+     "t": "17:23",
+     "sha": "f44f7c4",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.400",
+     "what": "AltaIR Capital: unknown/evidence (page no longer shows the cancellatio"
+    },
+    {
+     "t": "17:24",
+     "sha": "ebfb686",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.403",
+     "what": "ical_uid on 121 Luma events; status check counts a vanished notice as "
+    },
+    {
+     "t": "17:50",
+     "sha": "b096ccb",
+     "who": "researcher.1.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.422",
+     "what": "DISTRICT 909 (22:00, Rive Rouge) added from its Luma page; guide list "
+    },
+    {
+     "t": "18:11",
+     "sha": "5bb00e0",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": false,
+     "release": null,
+     "live_in": "v0.1.439",
+     "what": "wake 18:11 (iCal only): feeds refreshed, one dropped entry noted"
+    },
+    {
+     "t": "19:13",
+     "sha": "ffe1588",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": true,
+     "release": "v0.1.491",
+     "live_in": "v0.1.491",
+     "what": "wake 19:13 (iCal only): Side Events Guide IRL unknown (page gone), end"
+    },
+    {
+     "t": "19:23",
+     "sha": "33587a6",
+     "who": "researcher.2.fringe",
+     "role": "contributed",
+     "in_window": true,
+     "release": "v0.1.501",
+     "live_in": "v0.1.501",
+     "what": "read_at means re-checked, seen_at added and read_at set back; ical_uid"
+    }
+   ],
+   "release_marks": [
+    {
+     "after_a7": false,
+     "version": "v0.1.491",
+     "t": "19:13",
+     "what": "events +0 -0 ~2",
+     "agents": [
+      "researcher.2.fringe",
+      "grafana.1.fringe"
+     ]
+    },
+    {
+     "after_a7": false,
+     "version": "v0.1.501",
+     "t": "19:23",
+     "what": "events +0 -0 ~171",
+     "agents": [
+      "conductor.fringe",
+      "researcher.2.fringe",
+      "architect.1.fringe"
+     ]
+    },
+    {
+     "after_a7": true,
+     "version": "v0.1.548",
+     "t": "20:11",
+     "what": "events +0 -0 ~110",
+     "agents": [
+      "researcher.2.fringe"
+     ]
+    },
+    {
+     "after_a7": true,
+     "version": "v0.1.594",
+     "t": "21:11",
+     "what": "events +0 -0 ~108",
+     "agents": [
+      "researcher.2.fringe"
+     ]
+    },
+    {
+     "after_a7": true,
+     "version": "v0.1.631",
+     "t": "22:11",
+     "what": "events +0 -0 ~108",
+     "agents": [
+      "researcher.2.fringe"
+     ]
+    }
+   ]
+  }
+ }
+}

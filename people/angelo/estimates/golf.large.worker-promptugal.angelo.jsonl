@@ -1,0 +1,2 @@
+{"event":"start","at":"2026-11-11T22:17Z","agent":"golf.large.worker@PrompTugal.angelo","item":"prod-pipeline-a8","what":"design: reliability of the Fringe release data against A7, the fix for its window, and a small eye-catching timeline mock","est_effort_min":75,"est_elapsed_min":80,"confidence":"medium"}
+{"event":"done","at":"2026-11-11T22:25Z","agent":"golf.large.worker@PrompTugal.angelo","item":"prod-pipeline-a8","effort_min":18,"elapsed_min":18,"runs":1,"note":"faster than estimated: the feed and A7's data were small and clean"}
