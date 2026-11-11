@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1881",
+    "date": "2026-11-11",
+    "what": "review: bring pool/b3-team-offers's new work onto dev (one commit): the handover market spec and the two offers; offer 1 explains crafts and skills",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "1816cf1bf"
+  },
+  {
     "version": "v0.2.1880",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: account B hit its 5-hour limit; b3 restarted; the scheduled runs made no commit",
