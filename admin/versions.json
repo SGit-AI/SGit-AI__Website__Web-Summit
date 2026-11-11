@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1786",
+    "date": "2026-11-11",
+    "what": "the alert was announced at ~09:17 (minister, ANEPC press conference), published 12:10; red wind in the press by 08:05: lead-time line corrected",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "e6c8556ea"
+  },
+  {
     "version": "v0.2.1785",
     "date": "2026-11-11",
     "what": "Observador quotes verified at source (incident.conductor@ 00:36Z; entry 22:35:24Z per incident.media@)",
