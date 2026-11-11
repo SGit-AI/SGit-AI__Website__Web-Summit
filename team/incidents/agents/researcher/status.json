@@ -38,10 +38,11 @@
     "03:33 wake: no change to Day 3 (blog, post text, Bluesky); primary-page tries run 2 (03:33): none published at source",
     "03:56: Madeira: the 71-occurrence count (to 02:00) is SRPC's via its press platform (DN Madeira/SAPO 02:10): evidence; no count on procivmadeira.pt; Porto Santo's measures not found at the body; entities/madeira.json",
     "04:13: area on every edge (lisbon 29, mainland 10, national 7, madeira 7; porto-santo none yet)",
-    "04:33 wake: no change to Day 3; IPMA Lisbon unchanged; primary-page tries run 3: none published"
+    "04:33 wake: no change to Day 3; IPMA Lisbon unchanged; primary-page tries run 3: none published",
+    "05:28: hold noted: no automated reads of websummit.com or its subdomains (Terms 48.2, 52.1); 8 graph items and 9 sources marked \"not read since 05:25 (terms)\"; parser asks for websummit.com withdrawn"
   ],
   "next": [
-    "Each wake: Web Summit (blog list first); then python3 team/incidents/2026-11-10-the-storm/data/decisions/tools/primary_tries.py",
+    "Each wake: Web Summit via the press and its Bluesky (no websummit.com reads: hold since 05:25); then python3 team/incidents/2026-11-10-the-storm/data/decisions/tools/primary_tries.py",
     "Each wake: blog list, Bluesky, schedule page; PITCH and Night Summit",
     "Thursday transport from 06:00 Wed onwards as operators post",
     "Dear Gatekeepers page is a JavaScript app: parser ask to incident.dev@ if it matters"
@@ -55,7 +56,7 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts."
   ],
-  "updated": "2026-11-11T04:33Z",
+  "updated": "2026-11-11T05:28Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {

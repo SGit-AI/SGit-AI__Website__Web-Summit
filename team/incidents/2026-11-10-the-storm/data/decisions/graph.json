@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T04:33Z",
+ "updated": "2026-11-11T05:28Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -200,7 +200,8 @@
    "label": "fact",
    "source": "https://websummit.com/",
    "read": "2026-11-10T18:58Z",
-   "read_by": "incident.researcher@web-summit.dinis"
+   "read_by": "incident.researcher@web-summit.dinis",
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
   },
   {
    "id": "side-events",
@@ -250,7 +251,8 @@
    "label": "fact",
    "source": "https://websummit.com/startups/pitch/",
    "read": "2026-11-10T22:05Z",
-   "read_by": "incident.researcher@web-summit.dinis"
+   "read_by": "incident.researcher@web-summit.dinis",
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
   },
   {
    "id": "night-summit",
@@ -260,7 +262,8 @@
    "label": "fact",
    "source": "https://websummit.com/essentials/schedule/",
    "read": "2026-11-10T22:05Z",
-   "read_by": "incident.researcher@web-summit.dinis"
+   "read_by": "incident.researcher@web-summit.dinis",
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
   },
   {
    "id": "madeira-gov",
@@ -830,7 +833,8 @@
    "effect_note": "hours not stated; the source names the day: \"Day 2 (Wednesday, November 11th)\"",
    "state": "closed",
    "state_note": null,
-   "area": "lisbon"
+   "area": "lisbon",
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
   },
   {
    "id": "websummit-suspends-h",
@@ -1049,7 +1053,8 @@
    "effect_note": "hours not stated; the source names the day: \"Day 3 (Thursday, November 12)\"",
    "state": "running",
    "state_note": "\"aims to proceed as planned\"",
-   "area": "lisbon"
+   "area": "lisbon",
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
   },
   {
    "id": "websummit-n6",
@@ -1073,7 +1078,8 @@
    "effect_note": "no decision with an effect window",
    "state": "not_announced",
    "state_note": null,
-   "area": "lisbon"
+   "area": "lisbon",
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
   },
   {
    "id": "side-events-wednesday",
@@ -1158,7 +1164,8 @@
    "effect_note": "no decision with an effect window",
    "state": "not_announced",
    "state_note": null,
-   "area": "lisbon"
+   "area": "lisbon",
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
   },
   {
    "id": "night-summit-wednesday",
@@ -1181,7 +1188,8 @@
    "effect_note": "no decision with an effect window",
    "state": "not_announced",
    "state_note": null,
-   "area": "lisbon"
+   "area": "lisbon",
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
   },
   {
    "id": "ttsl-wednesday",
@@ -1746,5 +1754,10 @@
   "porto-santo",
   "national"
  ],
- "area_note": "Where the decision applies. national = mainland and the islands, or a body whose decision is not limited to one place (IPMA's communiqués, AEMET, TAP, the courts, ANA's three airports). ana-conditioned covers Lisbon, Faro and Madeira (national); madeira-airport-conditioned is its Madeira part."
+ "area_note": "Where the decision applies. national = mainland and the islands, or a body whose decision is not limited to one place (IPMA's communiqués, AEMET, TAP, the courts, ANA's three airports). ana-conditioned covers Lisbon, Faro and Madeira (national); madeira-airport-conditioned is its Madeira part.",
+ "websummit_hold": {
+  "since": "2026-11-11T05:25Z",
+  "note": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
+  "watch_instead": "the press, Web Summit's public social accounts where readable without a login and within those platforms' terms, the authorities"
+ }
 }

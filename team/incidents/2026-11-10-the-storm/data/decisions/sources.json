@@ -1,6 +1,6 @@
 {
  "about": "Every source incident.researcher@ uses for WS-214: what it holds, how often it changes, whether a machine can read it, its status when last tried. parser_ask = the part we ask incident.dev@ to parse.",
- "updated": "2026-11-11T02:30Z",
+ "updated": "2026-11-11T05:28Z",
  "sources": [
   {
    "id": "websummit-blog",
@@ -8,11 +8,10 @@
    "holds": "The organisers' blog list, newest first; announcements are posts here (props.pageProps.data.otherPosts.edges[].node {date, slug, title} in __NEXT_DATA__). The 19:09 decision is otherPosts[0].",
    "changes": "on announcement",
    "machine_readable": "yes: embedded JSON (__NEXT_DATA__) in server-rendered HTML; no login",
-   "status": "200",
+   "status": "HOLD: not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
    "read": "2026-11-10T20:59Z",
    "reuse": "no",
-   "reuse_basis": "organiser copyright: cite and link; quote briefly",
-   "parser_ask": "poll every 2 min: the post list (date, slug, title) as JSON; alert on any new slug; then fetch the post page and take props.pageProps.data.post.content and the JSON-LD datePublished/dateModified. /api/ is disallowed by robots.txt: do not use it."
+   "reuse_basis": "organiser copyright: cite and link; quote briefly"
   },
   {
    "id": "websummit-update-2026",
@@ -20,11 +19,10 @@
    "holds": "The organisers' decision: Day 2 off, Day 3 aims to proceed, \"will communicate directly with those impacted\"",
    "changes": "modified once (19:09 published, 19:25:44 modified); watch dateModified",
    "machine_readable": "yes: JSON-LD dates and __NEXT_DATA__ post.content",
-   "status": "200",
+   "status": "HOLD: not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
    "read": "2026-11-10T20:59Z",
    "reuse": "no",
-   "reuse_basis": "organiser copyright: cite and link; quote briefly",
-   "parser_ask": "poll dateModified every 5 min; diff post.content"
+   "reuse_basis": "organiser copyright: cite and link; quote briefly"
   },
   {
    "id": "websummit-sections",
@@ -32,11 +30,10 @@
    "holds": "Every top-level section linked from the home page (40, read 20:59Z): 2-for-1, 2-for-1-sale, accessibility-policy, ambassadors-programme, anti-harassment-policy, attendee-experience, attendees, blog, bring-your-team, careers, convince-your-boss, cookie-policy, developers, en, essentials, featured-attendees, hotels, investors, media, meetups, newsletter-signup, night-summit, partners, privacidade, privacy, reviews, schedule, speaker-application, speakers, startups, store, summaries, termos-e-condicoes, terms-and-conditions, tracks, venture, vip-experience, volunteers, women-in-tech, wp-media. Announcement-bearing: blog (primary), essentials (venue, schedule, app), schedule, night-summit, startups (PITCH), media.",
    "changes": "rarely (structure)",
    "machine_readable": "yes: hrefs in HTML",
-   "status": "200",
+   "status": "HOLD: not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
    "read": "2026-11-10T20:59Z",
    "reuse": "no",
-   "reuse_basis": "organiser copyright",
-   "parser_ask": "weekly: the section list; daily during an incident: hash each announcement-bearing section's __NEXT_DATA__ and alert on change"
+   "reuse_basis": "organiser copyright"
   },
   {
    "id": "websummit-schedule",
@@ -44,11 +41,10 @@
    "holds": "Featured sessions only: 7 timeslots embedded in __NEXT_DATA__ (title, starts_at, ends_at, location, track, speakers), all on 10 Nov at 22:09Z; the full agenda is not embedded",
    "changes": "during the event",
    "machine_readable": "partly: embedded JSON for the featured sessions",
-   "status": "200",
+   "status": "HOLD: not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
    "read": "2026-11-10T22:09Z",
    "reuse": "no",
-   "reuse_basis": "organiser copyright: cite and link",
-   "parser_ask": "find whether the full agenda (incl. PITCH semi-final and final times) is published anywhere readable without a login and outside /api/ (robots.txt); if so, take only PITCH and Day 2/Day 3 sessions with start times"
+   "reuse_basis": "organiser copyright: cite and link"
   },
   {
    "id": "websummit-essentials-schedule",
@@ -56,7 +52,7 @@
    "holds": "Day-by-day times incl. Night Summit (Wednesday 18:00-21:00; Downtown 21:00-00:00, Príncipe Real)",
    "changes": "rarely",
    "machine_readable": "partly: embedded JSON with HTML strings",
-   "status": "200; Night Summit still listed for Wednesday at 22:05Z",
+   "status": "HOLD: not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
    "read": "2026-11-10T22:09Z",
    "reuse": "no",
    "reuse_basis": "organiser copyright: cite and link"
@@ -67,7 +63,7 @@
    "holds": "Organiser home page; any notice about the programme",
    "changes": "on announcement",
    "machine_readable": "partly: server-rendered HTML (Next.js, __NEXT_DATA__ embedded)",
-   "status": "200",
+   "status": "HOLD: not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
    "read": "2026-11-10T19:32Z",
    "reuse": "no",
    "reuse_basis": "organiser copyright: cite and link; quote briefly"
@@ -78,7 +74,7 @@
    "holds": "Organiser news list",
    "changes": "on announcement",
    "machine_readable": "partly: HTML",
-   "status": "200; did not show the 19:09 decision at 18:58 or 20:04 reads (list of selected news only)",
+   "status": "HOLD: not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
    "read": "2026-11-10T20:59Z",
    "reuse": "no",
    "reuse_basis": "as above"
@@ -89,7 +85,7 @@
    "holds": "Every page URL with lastmod: a new page (e.g. a weather update) shows here",
    "changes": "on every page change",
    "machine_readable": "yes: XML",
-   "status": "200; does NOT list blog posts (the 19:09 decision page was never in it): not a change signal for announcements",
+   "status": "HOLD: not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
    "read": "2026-11-10T20:59Z",
    "reuse": "no",
    "reuse_basis": "as above"
@@ -145,7 +141,7 @@
    "holds": "The attendee app (push notices)",
    "changes": "minutes",
    "machine_readable": "no: needs a ticket login",
-   "status": "not tried",
+   "status": "HOLD: not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
    "read": "2026-11-10T18:59Z",
    "reuse": "no",
    "reuse_basis": "ticket-holders only"
