@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1872",
+    "date": "2026-11-11",
+    "what": "TAP's own site alert for 10 and 11 Nov (fact, published 10 Nov 09:00), checked at source",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "b811ac3bb"
+  },
+  {
     "version": "v0.2.1871",
     "date": "2026-11-11",
     "what": "a prompt for appdev@web-summit.indi, Indi's app developer",
