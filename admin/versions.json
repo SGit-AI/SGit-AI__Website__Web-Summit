@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1938",
+    "date": "2026-11-11",
+    "what": "reviewer@PrompTugal.vicky: report: S41 updated (only Lisbon's sea warning remains); storm page needs no change",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "7f976b78c"
+  },
+  {
     "version": "v0.2.1937",
     "date": "2026-11-11",
     "what": "dev@PrompTugal.vicky: report: the key commit is c282c5ec (the id changed when release.sh rebased it)",
