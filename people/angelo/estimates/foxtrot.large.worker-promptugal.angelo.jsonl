@@ -1,0 +1,2 @@
+{"event":"start","at":"2026-11-11T17:08Z","agent":"foxtrot.large.worker@PrompTugal.angelo","item":"a2-small-screens","what":"build: measure the Fringe trace strip and page on small screens, propose limits, prototype, leave a check","est_effort_min":70,"est_elapsed_min":80,"confidence":"medium"}
+{"event":"done","at":"2026-11-11T17:15Z","agent":"foxtrot.large.worker@PrompTugal.angelo","item":"a2-small-screens","effort_min":40,"elapsed_min":40,"runs":1,"note":"faster than estimated; measured the live page instead of a local Fringe build (refused)"}

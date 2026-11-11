@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A2 prototype: the strip on small screens</title>
+<!-- foxtrot.large.worker@PrompTugal.angelo, a2-small-screens (prototype, not live). Colours from the Fringe's admin/build/tokens.css.
+     The strip under an article: at most a third of the screen, text 12 px or more, every tap target 44 px or more.
+     What gives way first: the kicker, then the times, then the lower-scored stations (container queries); on a short
+     landscape screen the heading and the line sit side by side. -->
+<style>
+:root{--paper:#f6f3ec;--panel:#fffdf8;--ink:#121317;--ink-3:#595c64;--hair:#d9d2c1;--brand:#1f4fa8;--red:#c52830;--green:#006600;--warn:#8a5200;--teal:#1f7f7f;--gold:#f2b705;--focus:#ffbf1f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#15161a;--panel:#1d1f24;--ink:#f0ede6;--ink-3:#b4b1aa;--hair:#3a3c42;--brand:#8db0f5;--red:#f08a8a;--green:#7fd08f;--teal:#6fc9c9}}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:16px}
+h1{font:700 26px/1.2 Georgia,serif;margin:8px 0}
+.fs{container-type:inline-size;background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:10px 12px;margin:24px 0}
+.fs-k{font:700 12px/1.2 system-ui;letter-spacing:.08em;text-transform:uppercase;color:#b4532d;margin:0}
+.fs-h{font:700 16px/1.3 Georgia,serif;margin:2px 0 4px}
+.fs-h span{font:400 13px system-ui;color:var(--ink-3)}
+.fs-line{list-style:none;margin:0;padding:0;display:flex;justify-content:space-between;position:relative}
+.fs-line::before{content:"";position:absolute;left:22px;right:22px;top:21px;border-top:4px dotted var(--brand)}
+.fs-line li{flex:1 1 0;min-width:44px;display:flex;justify-content:center;position:relative}
+.fs-line a{display:flex;flex-direction:column;align-items:center;min-width:44px;min-height:44px;padding:0 2px;color:var(--ink);text-decoration:none;text-align:center}
+.fs-line a:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.fs-d{width:20px;height:20px;margin:11px 0 4px;border-radius:50%;background:var(--panel);border:4px solid var(--brand)}
+.s-ask .fs-d{border-color:#b4532d;border-style:dashed}.s-read .fs-d{border-color:var(--teal);border-radius:3px;transform:rotate(45deg)}
+.s-live .fs-d{background:var(--gold);border-color:var(--gold)}.s-fail .fs-d{background:var(--red);border-color:var(--red);border-radius:3px;transform:rotate(45deg)}
+.s-now .fs-d{background:var(--green);border-color:var(--green)}
+[data-flow-label]{font:600 12px/1.2 system-ui}.fs-t{font:12px/1.3 ui-monospace,monospace;color:var(--ink-3)}
+.s-fail [data-flow-label],.s-fail .fs-t{color:var(--red)}
+.fs-f{margin:4px 0 0;font-size:13px;color:var(--ink-3)}
+.fs-f a{display:inline-flex;align-items:center;min-height:44px;color:var(--brand);font-weight:600}
+/* what gives way first */
+@container (max-width:420px){.fs-k{display:none}.lv3{display:none}}
+@container (max-width:340px){.fs-t{display:none}.lv2{display:none}}
+@container (min-width:600px){.fs-h{font-size:18px}}
+@media (max-height:420px) and (orientation:landscape){
+  .fs{display:grid;grid-template-columns:2fr 3fr;column-gap:12px;align-items:center;padding:6px 10px}
+  .fs-k,.fs-t,.fs-h span{display:none}.fs-h{grid-row:1;margin:0;font-size:15px}.fs-f{grid-row:2;margin:0}.fs-line{grid-column:2;grid-row:1/3}
+}
+</style></head><body><main>
+<h1>PTW Classroom: Deep Work x Wexio</h1>
+<p>An article on the Tech Fringe ends here; the strip below shows how the page was made.</p>
+<section class="fs" data-flow="strip" aria-labelledby="fs-h">
+ <p class="fs-k">How this page was made</p>
+ <h2 class="fs-h" id="fs-h">From the organiser's page to this page in 46 min <span>· 15 agents · 38 commits</span></h2>
+ <ol class="fs-line">
+  <li class="s-ask"><a href="#s-2"><span class="fs-d"></span><span data-flow-label>Asked</span><span class="fs-t">10:27</span></a></li>
+  <li class="s-read"><a href="#s-7"><span class="fs-d"></span><span data-flow-label>Read</span><span class="fs-t">10:57</span></a></li>
+  <li class="lv3"><a href="#s-8"><span class="fs-d"></span><span data-flow-label>Entry</span><span class="fs-t">10:58</span></a></li>
+  <li class="s-live"><a href="#s-27"><span class="fs-d"></span><span data-flow-label>Live</span><span class="fs-t">11:42</span></a></li>
+  <li class="s-fail lv2"><a href="#s-71"><span class="fs-d"></span><span data-flow-label>5 failed</span><span class="fs-t">11:58</span></a></li>
+  <li class="s-now"><a href="#s-76"><span class="fs-d"></span><span data-flow-label>Now</span><span class="fs-t">12:03</span></a></li>
+ </ol>
+ <p class="fs-f"><a href="plot.htm">See every step</a> · from the git record</p>
+</section>
+</main></body></html>
