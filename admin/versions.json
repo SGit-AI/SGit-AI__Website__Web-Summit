@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1815",
+    "date": "2026-11-11",
+    "what": "hold on websummit.com noted (its Terms 48.2, 52.1): Web Summit's pages marked \"not read since 05:25 (terms)\"; parser asks withdrawn",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "1b047e54b"
+  },
+  {
     "version": "v0.2.1814",
     "date": "2026-11-11",
     "what": "05:22 wake: new LPPT TAF (strong SSE G45KT now to 18:00); observed against warned begins (no gust above warned); CAP poll restarted",
