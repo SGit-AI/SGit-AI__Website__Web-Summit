@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **43** from Friday: researcher and curator twice a day, journalists and reviewer on demand through the conductor; dashboard and checker daily.
 - **42** no signing: P6 lifted for good (pointer messages to Vicky's own agents, reports back); signing shelved, tasks.mjs kept.
 - **41** P6 lifted (now without signing, standing answer 42).
 - **40** tonight's last-day guide: curator, summit journalist, reviewer (R-PUB-1).
@@ -221,6 +222,13 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **In force:** standing answer 41's messaging, without signing, for good: the conductor messages Vicky's own team-account agents; each message only points to a committed file on the team site that quotes her words; agents act on the file, check it was committed by conductor@web-summit.vicky, and report back to the conductor when done. Only her agents; private work (the CRM, the shortlist, mail, vault contents, anything a public file may not hold) only through the agent's own window, never a task file. Still never read another session's conversation, never `interrupt_session`.
     - **Cancelled:** dev@'s 20:35 fix wake (update SA39-FIX withdrawn) and Friday's signed test; both tasks disabled, not deleted. Standing answers 36 and 39's signing steps and the signed decisions.md are shelved. `people/vicky/tools/tasks.mjs` stays as it is, unused, in case Vicky wants signing later.
 
+43. **The pipeline runs on demand from Friday 13 November** (Vicky, 11 Nov, about 20:35 UTC, in this window: "Apply the new on-demand way from Friday, but with two fixed rounds a day for researcher and curator, not four. Pick the two times. Journalists and reviewer run only when there is work, and you run the whole loop at once when I send something urgent. Dashboard and checker daily. Keep Thursday's summit lane as it is. On Friday also plan a fresh session for yourself to make hand-offs cheaper.")
+    - **Fixed:** researcher 07:15 and 15:15 UTC; curator 07:35 and 15:35; dashboard 07:50; checker 10:00; the conductor's brief 08:45 and relay 20:45.
+    - **On demand:** the five journalists and the reviewer run only when the conductor points them to a task file in `people/vicky/tasks/` (how: `people/vicky/tasks/README.md`); each reports back to the conductor when done. pm and scout on demand through the conductor; logistics and programme paused.
+    - **Urgent:** when Vicky sends the conductor something urgent, it commits a task file with her words and runs curator, journalist and reviewer at once.
+    - **Switched off from Friday 06:30 UTC** (disabled, not deleted): the journalists' writing tasks, the fix-only tasks, the reviewer's two tasks, dashboard's 17:45 run, pm's and scout's tasks, logistics and programme, the conductor's midday check, and the two THU-SUMMIT tasks. Thursday's summit lane is unchanged.
+    - **A fresh conductor session:** planned on Friday (hand-over note, start kit for Vicky to start it; agent creation stays with her).
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -292,6 +300,9 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 
 **SA39-FIX** withdrawn (Vicky, 11 Nov about 20:22 UTC, standing answer 42): no tool fixes.
 
+**SA43-ONDEMAND, report back and run only when pointed** (Vicky, 11 Nov, about 20:35 UTC). For: curator, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+> From Friday 13 Nov (standing answer 43, `people/vicky/tasks/README.md`): curator, after each fixed run, message the conductor's session with what you commissioned (or none). Journalists and reviewer: you run only when the conductor points you to a task file; when done, reply to the conductor with your commit or result. Your scheduled tasks are disabled by the conductor on Friday morning. Put this in your prompts file and confirm "applied SA43-ONDEMAND" at your next run.
+
 Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - P10, P17, P22, P27: vault, designer.
 - SA16: vault, designer, inbox.
@@ -302,7 +313,7 @@ Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - SA27 (added 9 Nov, 11:25; changed 13:40): inbox. (vault applied it at 11:35.)
 - SA28 (added 9 Nov, 14:15): programme, researcher, curator.
 - RULES-11NOV: all 18 confirmed by 20:00 on 11 Nov (people/vicky/confirmations.json).
-- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: done (programme, 11 Nov). SA35-WS: curator, journalist-portugal, reviewer. SA36-SIGN: done (dev, 19:44). SA39-FIX: withdrawn.
+- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: done (programme, 11 Nov). SA35-WS: curator, journalist-portugal, reviewer. SA36-SIGN: done (dev, 19:44). SA39-FIX: withdrawn. SA43-ONDEMAND: curator, five journalists, reviewer.
 - SA29: applied by researcher and curator (10 Nov); "SA29 used" at their first regular runs still to report.
 
 Removed on 9 Nov once done or confirmed: SA13, SA15, SA18, SA19B, SA19C, SA22, SA25, PILOT-REPLIT, TRIAGE-REPLIT and OVERNIGHT-9NOV (closed at 04:40, people/vicky/company-pages/backlog.md).
