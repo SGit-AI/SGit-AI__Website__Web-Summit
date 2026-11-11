@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T12:35Z",
+ "updated": "2026-11-11T12:37Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -741,7 +741,7 @@
    ],
    "scope": {
     "extent": "whole",
-    "parts": "all Lisbon road tunnels (announced); three on Av. da República observed open after midnight"
+    "parts": "all Lisbon road tunnels, parks, gardens and cultural facilities (announced); three tunnels on Av. da República observed open after midnight"
    }
   },
   {
