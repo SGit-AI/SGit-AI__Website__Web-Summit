@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1822",
+    "date": "2026-11-11",
+    "what": "07:15 run, ec9b5af..40f041b; A-27 opened (Angelo's agents here); trailer low raised again",
+    "by": "watcher@web-summit.jose",
+    "from": "0a5610d58"
+  },
+  {
     "version": "v0.2.1821",
     "date": "2026-11-11",
     "what": "CAP poll restarted 06:38 after a container restart (gap logged)",
