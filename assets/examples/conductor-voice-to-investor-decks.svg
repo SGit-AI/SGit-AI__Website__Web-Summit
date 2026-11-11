@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2078 568" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="2078" height="568" fill="#faf9f5"/>
+<text x="30" y="44" font-size="26" font-weight="700" fill="#141413">Small: two spoken asks to two meeting decks, about 15 minutes each</text>
+<text x="30" y="74" font-size="15" fill="#5e5d59">Dinis asks for a deck before each of two meetings; the conductor picks screenshots of the team&#x27;s live views, writes the slides and a PDF; CI puts each live</text>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#5e5d59"/></marker></defs>
+<rect x="20" y="112" width="2038" height="84" rx="10" fill="#8a3b1f" fill-opacity="0.10"/>
+<text x="34" y="150" font-size="14" font-weight="700" fill="#8a3b1f">Dinis</text>
+<text x="34" y="170" font-size="12" fill="#5e5d59">a person</text>
+<rect x="20" y="204" width="2038" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="242" font-size="12" font-weight="700" fill="#1f5f8b">conductor@web-summit.dinis</text>
+<text x="34" y="262" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="296" width="2038" height="84" rx="10" fill="#5e5d59" fill-opacity="0.10"/>
+<text x="34" y="334" font-size="14" font-weight="700" fill="#5e5d59">GitHub Actions</text>
+<text x="34" y="354" font-size="12" fill="#5e5d59">CI</text>
+<rect x="20" y="388" width="2038" height="84" rx="10" fill="#c96442" fill-opacity="0.10"/>
+<text x="34" y="426" font-size="14" font-weight="700" fill="#c96442">the output</text>
+<path d="M364,154.0 C375.0,154.0 375.0,246.0 386,246.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M532,246.0 C543.0,246.0 543.0,246.0 554,246.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M700,246.0 C711.0,246.0 711.0,338.0 722,338.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1036,154.0 C1047.0,154.0 1047.0,246.0 1058,246.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1204,246.0 C1215.0,246.0 1215.0,338.0 1226,338.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1372,338.0 C1383.0,338.0 1383.0,246.0 1394,246.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M1540,246.0 C1551.0,246.0 1551.0,338.0 1562,338.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M868,338.0 C1299.0,338.0 1299.0,154.0 1730,154.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)" stroke-dasharray="4 4"/>
+<path d="M1708,338.0 C1719.0,338.0 1719.0,154.0 1730,154.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)" stroke-dasharray="4 4"/>
+<path d="M1708,338.0 H1888 V430.0 H1898" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="218" y="120" width="146" height="68" rx="8" fill="#ffffff" stroke="#8a3b1f" stroke-width="1.6"/>
+<text x="228" y="142" font-size="12.5" fill="#141413">ask 1: a deck on</text>
+<text x="228" y="159" font-size="12.5" fill="#141413">PrompTugal.news</text>
+<text x="228" y="176" font-size="12.5" fill="#141413">and the team</text>
+<text x="291.0" y="502" font-size="12" fill="#5e5d59" text-anchor="middle">14:35 (about)</text>
+<rect x="386" y="212" width="146" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="396" y="234" font-size="12.5" fill="#141413">deck 1: slides,</text>
+<text x="396" y="251" font-size="12.5" fill="#141413">11 screenshots,</text>
+<text x="396" y="268" font-size="12.5" fill="#141413">a PDF</text>
+<text x="459.0" y="502" font-size="12" fill="#5e5d59" text-anchor="middle">14:45</text>
+<rect x="554" y="212" width="146" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="564" y="234" font-size="12.5" fill="#141413">linked from</text>
+<text x="564" y="251" font-size="12.5" fill="#141413">the board</text>
+<text x="627.0" y="502" font-size="12" fill="#5e5d59" text-anchor="middle">14:46</text>
+<rect x="722" y="304" width="146" height="68" rx="8" fill="#ffffff" stroke="#5e5d59" stroke-width="1.6"/>
+<text x="732" y="326" font-size="12.5" fill="#141413">v0.2.1:</text>
+<text x="732" y="343" font-size="12.5" fill="#141413">deck 1 live</text>
+<text x="795.0" y="502" font-size="12" fill="#5e5d59" text-anchor="middle">14:50</text>
+<rect x="890" y="120" width="146" height="68" rx="8" fill="#ffffff" stroke="#8a3b1f" stroke-width="1.6"/>
+<text x="900" y="142" font-size="12.5" fill="#141413">ask 2: RiskMandate,</text>
+<text x="900" y="159" font-size="12.5" fill="#141413">shown on our</text>
+<text x="900" y="176" font-size="12.5" fill="#141413">own agents</text>
+<text x="963.0" y="502" font-size="12" fill="#5e5d59" text-anchor="middle">14:57 (about)</text>
+<rect x="1058" y="212" width="146" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="1068" y="234" font-size="12.5" fill="#141413">deck 2: slides,</text>
+<text x="1068" y="251" font-size="12.5" fill="#141413">14 screenshots,</text>
+<text x="1068" y="268" font-size="12.5" fill="#141413">a PDF</text>
+<text x="1131.0" y="502" font-size="12" fill="#5e5d59" text-anchor="middle">15:01</text>
+<rect x="1226" y="304" width="146" height="68" rx="8" fill="#ffffff" stroke="#5e5d59" stroke-width="1.6"/>
+<text x="1236" y="326" font-size="12.5" fill="#141413">v0.2.1:</text>
+<text x="1236" y="343" font-size="12.5" fill="#141413">deck 2 live</text>
+<text x="1299.0" y="502" font-size="12" fill="#5e5d59" text-anchor="middle">15:10</text>
+<rect x="1394" y="212" width="146" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="1404" y="234" font-size="12.5" fill="#141413">deck 2 v2: security</text>
+<text x="1404" y="251" font-size="12.5" fill="#141413">teams first</text>
+<text x="1467.0" y="502" font-size="12" fill="#5e5d59" text-anchor="middle">15:27</text>
+<rect x="1562" y="304" width="146" height="68" rx="8" fill="#ffffff" stroke="#5e5d59" stroke-width="1.6"/>
+<text x="1572" y="326" font-size="12.5" fill="#141413">v0.2.1:</text>
+<text x="1572" y="343" font-size="12.5" fill="#141413">deck 2 v2 live</text>
+<text x="1635.0" y="502" font-size="12" fill="#5e5d59" text-anchor="middle">15:30</text>
+<rect x="1730" y="120" width="146" height="68" rx="8" fill="#ffffff" stroke="#8a3b1f" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="1740" y="142" font-size="12.5" fill="#141413">the two meetings</text>
+<text x="1740" y="159" font-size="12.5" fill="#141413">(private)</text>
+<text x="1803.0" y="502" font-size="12" fill="#5e5d59" text-anchor="middle">15:15, 15:30</text>
+<rect x="1898" y="396" width="146" height="68" rx="8" fill="#ffffff" stroke="#c96442" stroke-width="1.6"/>
+<text x="1908" y="418" font-size="12.5" fill="#141413">two decks</text>
+<text x="1908" y="435" font-size="12.5" fill="#141413">with PDFs</text>
+<text x="30" y="536" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from reporter@web-summit.dinis&#x27;s trace conductor-voice-to-investor-decks (team/reporter/traces/).</text>
+<text x="30" y="554" font-size="12" fill="#5e5d59">Dashed: a side step, or a step with no public evidence. Times UTC, 10 November 2026. Columns are steps, not to scale.</text>
+</svg>

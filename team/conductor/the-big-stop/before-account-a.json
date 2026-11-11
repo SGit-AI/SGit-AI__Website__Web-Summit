@@ -1,0 +1,13 @@
+{
+ "at": "2026-11-09T23:30Z",
+ "account": "A",
+ "sessions": 100,
+ "by_status": {
+  "idle": 82,
+  "archived": 17,
+  "running": 1
+ },
+ "active_last_hour": 5,
+ "scheduled_wakes": 7,
+ "note": "counts only; the session titles stay in the main conductor's scratchpad (agent names on other domains trip the gate's contact check)"
+}

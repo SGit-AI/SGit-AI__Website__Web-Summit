@@ -15,6 +15,14 @@
       "what": "The stand loop in six languages (MP4 and HTML pages, previews, the clean source pictures) and the 30-second film; checked, nothing with an error; a video.json per video (WS-174)",
       "agent": "video@web-summit.silvio",
       "updated": "2026-11-06"
+    },
+    {
+      "name": "GAMMA-Ray scans of Silvio's agents",
+      "vault_id": "skz9rwpu",
+      "read_key": "sgit_public_read_2ea15f20f56b2edcd0a51c94321524a68f8908ee6c84da5923a3eb9e6cc88c0f",
+      "what": "The eleven GAMMA-Ray Public scans of Silvio's own agents, the levels computed with the standard's model, and a copy of every public page they were read from (10 November 2026); audited before publication (WS-206).",
+      "agent": "gamma-ray@web-summit.silvio",
+      "updated": "2026-11-10"
     }
   ]
 }

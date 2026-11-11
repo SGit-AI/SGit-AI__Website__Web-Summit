@@ -1,0 +1,563 @@
+{
+  "id": "large-documents-to-repository-and-site",
+  "size": "large",
+  "schema": "ws-trace/1",
+  "shape": {
+    "step": "n, at (UTC, ISO 8601), at_note, actor {name, kind: person|agent|ci}, in, out, handoff {to, via}, repo, sha, issue, brief, for[], kind, evidence[] (commit|version|url|file); evidence: [] with evidence_note when the record holds none",
+    "graph": "each commit step also gives /pipeline/'s graph row {at, repo, sha, agent, issue, for[], kind} (WS-205)"
+  },
+  "title": "Documents to a new repository and site: GAMMA-Ray, from two documents and a spoken brief to gamma-ray.sgit.ai, the first signed card and FACT-Ray",
+  "input": {
+    "kind": "documents and voice",
+    "what": "two documents made with a research assistant (five standards; a concept note) and Dinis's spoken brief, 9 November about 23:20 UTC",
+    "brief": "brief:2026-11-09T2330Z-gamma-ray"
+  },
+  "output": {
+    "kind": "repository and site",
+    "what": "SGit-AI/SGit-AI__Website__Gamma-Ray, gamma-ray.sgit.ai, the first signed card (Replit Agent) and FACT-Ray",
+    "url": "https://gamma-ray.sgit.ai/",
+    "repo": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray"
+  },
+  "status": "captured to FACT-Ray (10:20); the site goes on (v0.0.44 at 10:20; about 250 commits by 16:20)",
+  "captured_by": "reporter@web-summit.dinis",
+  "captured_at": "2026-11-10T16:30Z",
+  "duration": {
+    "brief_to_first_site": "about 1 h 20 min (23:20 to v0.0.1 at 00:39)",
+    "brief_to_first_signed_card_live": "about 9 h 25 min (to v0.0.36 at 08:44)",
+    "brief_to_fact_ray": "about 11 h (to v0.0.44 at 10:20)",
+    "note": "through the night, with THE BIG STOP (23:36 to 02:40) in between; gamma-ray@ kept working on its own repository"
+  },
+  "steps": [
+    {
+      "n": 1,
+      "at": "2026-11-09T23:20:00Z",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "two documents made with a research assistant (a selection of five standards; a concept note), and the opening night",
+      "out": "a spoken brief: map agents with five existing standards, measurable, with RiskMandate's lens",
+      "handoff": {
+        "to": "conductor@web-summit.dinis",
+        "via": "voice, in the conductor's session"
+      },
+      "kind": "voice brief",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "path": "BRIEF.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/blob/dev/BRIEF.md"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "path": "BRIEF-CORRECTIONS.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/blob/dev/BRIEF-CORRECTIONS.md"
+        }
+      ],
+      "at_note": "about; from the Brief: id (23:30) and WS-206 at 23:24",
+      "brief": "brief:2026-11-09T2330Z-gamma-ray"
+    },
+    {
+      "n": 2,
+      "at": "2026-11-09T23:24:39Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the brief",
+      "out": "WS-206: GAMMA-Ray beside RiskMandate X-ray; interviews framed by each company's scan",
+      "handoff": {
+        "to": "the team",
+        "via": "commit, board"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "37ad1b1a",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/37ad1b1a0ff7f9ea47bfceea488aee2d78852718"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "37ad1b1a",
+      "issue": "WS-206"
+    },
+    {
+      "n": 3,
+      "at": "2026-11-09T23:25:38Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "WS-206",
+      "out": "gamma-ray@web-summit.dinis started for Dinis; the PrompTugal build on hold",
+      "handoff": {
+        "to": "gamma-ray@web-summit.dinis",
+        "via": "a new session"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "9e6756ae",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/9e6756aef3ca6a78a8b0cd9a16606d2ccc132a90"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "9e6756ae",
+      "issue": "WS-206"
+    },
+    {
+      "n": 4,
+      "at": "2026-11-10T00:20:00Z",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "the plan",
+      "out": "a new empty repository, SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "handoff": {
+        "to": "gamma-ray@web-summit.dinis",
+        "via": "GitHub (the initial commit, authored by Dinis, committed by GitHub)"
+      },
+      "kind": "repository",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "816bab1f",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/816bab1f32e1bff474fa8e6df1399bd63b17b101"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "816bab1f"
+    },
+    {
+      "n": 5,
+      "at": "2026-11-10T00:39:02Z",
+      "actor": {
+        "name": "gamma-ray@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the brief and the two documents, read against their sources",
+      "out": "draft 0.1: nine instruments cut into 286 provisions, 69 indicators, two ladders, two scans of our own agents in public vaults, the build, the gate and CI",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "842d904b",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/842d904b3c442ee356076c8dd7b95b3465526f33"
+        },
+        {
+          "type": "version",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "b04d9ea9",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/b04d9ea9bd5025d81625fb353bb69f47a2c81cc7",
+          "version": "v0.0.1"
+        },
+        {
+          "type": "url",
+          "url": "https://gamma-ray.sgit.ai/"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "842d904b",
+      "brief": "brief:2026-11-09T2330Z-gamma-ray"
+    },
+    {
+      "n": 6,
+      "at": "2026-11-10T01:11:11Z",
+      "actor": {
+        "name": "gamma-ray@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "Dinis's word: RiskMandate's reach and mandate",
+      "out": "RiskMandate becomes the lens (mandate, grant, delta); three product examples",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "f04b4fa8",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/f04b4fa8a4a986d6b73825a16b006eb7b48c9d0e"
+        },
+        {
+          "type": "version",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "7b5e5826",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/7b5e5826badeed5cf90bd4fb2d4d59fdf63694e2",
+          "version": "v0.0.2"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "f04b4fa8",
+      "brief": "brief:2026-11-09T2330Z-gamma-ray"
+    },
+    {
+      "n": 7,
+      "at": "2026-11-10T02:46:22Z",
+      "actor": {
+        "name": "gamma-ray@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "an outside review; Dinis's launch brief (brief:2026-11-10T0230Z-gamma-ray-launch, WS-207)",
+      "out": "standard 0.2 beta: evidence that counts, products by configuration, a beta banner; the documents' errors recorded in BRIEF-CORRECTIONS.md",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "86dc6047",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/86dc6047ea3d5b1c6b0578c21198ec52ce2181ba"
+        },
+        {
+          "type": "version",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "0859342d",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/0859342dce85c4c2e5320834378a45777326df37",
+          "version": "v0.0.3"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "e749a18a",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/e749a18a51e6f8236056ccc4692af84ba508a62d"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "86dc6047"
+    },
+    {
+      "n": 8,
+      "at": "2026-11-10T03:36:23Z",
+      "actor": {
+        "name": "gamma-ray@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "Dinis: agents, from outside, and positive",
+      "out": "Spectrum 0.1 beta: the public card (Autonomy, Reach, Control, Openness), sixteen rules as data, a scorer, five cards",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "be9faaba",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/be9faaba56290125f7c80f5f293dd7a56dc285dc"
+        },
+        {
+          "type": "version",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "eafe5c3e",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/eafe5c3e9d40104c505ac6fb30bbe52a8c90f69f",
+          "version": "v0.0.4"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "be9faaba"
+    },
+    {
+      "n": 9,
+      "at": "2026-11-10T04:05:46Z",
+      "actor": {
+        "name": "gamma-ray@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "THE RESTART (brief:2026-11-10T0240Z-restart)",
+      "out": "a team and its workflow: gamma.studio@ (cards), gamma.review@ (review rounds), gamma.approve@ (sign-off in the gate), gamma.editor@, gamma.design@, gamma.graphs@",
+      "handoff": {
+        "to": "the gamma.* agents",
+        "via": "the team's files; commits"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "e7aa10e8",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/e7aa10e86a1be82a8f27f9d39e75ee1cd4a2d330"
+        },
+        {
+          "type": "version",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "e6034954",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/e603495473a7e7456b968b4d785d720bb79589a5",
+          "version": "v0.0.6"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "e7aa10e8"
+    },
+    {
+      "n": 10,
+      "at": "2026-11-10T04:24:30Z",
+      "actor": {
+        "name": "gamma.studio@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "Replit Agent's public sources",
+      "out": "a draft card for Replit Agent (A4 R2 C2 O0), its vault, report, article and a note to Replit",
+      "handoff": {
+        "to": "gamma.review@web-summit.dinis",
+        "via": "commit"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "6575a234",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/6575a234786a070a59a9d052cc4ef5ef124f126e"
+        },
+        {
+          "type": "version",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "9b2dd852",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/9b2dd852411541a648e2d661e775177384233456",
+          "version": "v0.0.14"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "6575a234"
+    },
+    {
+      "n": 11,
+      "at": "2026-11-10T05:08:51Z",
+      "actor": {
+        "name": "gamma.review@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the draft card",
+      "out": "round one of review",
+      "handoff": {
+        "to": "gamma.studio@web-summit.dinis",
+        "via": "commit"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "82bf912a",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/82bf912aa459faf60f11bbdc4f1e232c98dc7742"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "82bf912a"
+    },
+    {
+      "n": 12,
+      "at": "2026-11-10T05:44:44Z",
+      "actor": {
+        "name": "gamma.studio@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "round one",
+      "out": "answers: a source swapped, an indicator re-sourced, notes",
+      "handoff": {
+        "to": "gamma.review@web-summit.dinis",
+        "via": "commit"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "e2cf406a",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/e2cf406a637bc5f0e8e30fe4e1a3fe5370f6e276"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "e2cf406a"
+    },
+    {
+      "n": 13,
+      "at": "2026-11-10T06:11:09Z",
+      "actor": {
+        "name": "gamma.review@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the answers",
+      "out": "round two of review",
+      "handoff": {
+        "to": "gamma.approve@web-summit.dinis",
+        "via": "commit"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "52c138c7",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/52c138c73532169e47495ab10279d6bc2325c35e"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "52c138c7"
+    },
+    {
+      "n": 14,
+      "at": "2026-11-10T07:09:36Z",
+      "actor": {
+        "name": "gamma.approve@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "two rounds",
+      "out": "Replit's card sent back, reasons in approvals (and gamma-ray@ changed the rule: the last round must pass, 9fd015d)",
+      "handoff": {
+        "to": "gamma.studio@web-summit.dinis",
+        "via": "commit"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "2701d8f7",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/2701d8f724f84d88b229e96eb49562f63bc3769b"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "9fd015da",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/9fd015da44f157e32b21315fa3c1d4eb65be035f"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "2701d8f7"
+    },
+    {
+      "n": 15,
+      "at": "2026-11-10T08:08:42Z",
+      "actor": {
+        "name": "gamma.approve@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the card under the corrected rule",
+      "out": "sign-off: the first GAMMA-Ray card",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev; the gate checks the sign-off"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "ade3c6ea",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/ade3c6ea6b8b761a2565d08208d46ebd5b9435b8"
+        },
+        {
+          "type": "version",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "ed15cf9d",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/ed15cf9dd565ac30ae5f3217110681a9fb5e9da1",
+          "version": "v0.0.34"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "ade3c6ea"
+    },
+    {
+      "n": 16,
+      "at": "2026-11-10T08:44:26Z",
+      "actor": {
+        "name": "gamma.studio@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the signed card",
+      "out": "Replit live: the first public card",
+      "handoff": {
+        "to": "readers; the 09:00 deck ('Overnight' slide)",
+        "via": "gamma-ray.sgit.ai"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "d4b05f60",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/d4b05f60712c9854a3c350838667e8afa9638c6d"
+        },
+        {
+          "type": "version",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "0b7b6c1d",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/0b7b6c1d4d3e",
+          "version": "v0.0.36"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "d4b05f60"
+    },
+    {
+      "n": 17,
+      "at": "2026-11-10T10:20:08Z",
+      "actor": {
+        "name": "gamma-ray@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "Dinis's second brief",
+      "out": "FACT-Ray inside the site: trust on every card, a page per provision",
+      "handoff": {
+        "to": "readers; pt.news (WS-211)",
+        "via": "gamma-ray.sgit.ai"
+      },
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "64c846ae",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/64c846ae68e210198f7d8d4e085369d255ba4f28"
+        },
+        {
+          "type": "version",
+          "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+          "sha": "ce97b389",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Gamma-Ray/commit/ce97b389bd4239812a6005f87fc0abe32e5ea244",
+          "version": "v0.0.44"
+        },
+        {
+          "type": "url",
+          "url": "https://gamma-ray.sgit.ai/fact-ray/"
+        }
+      ],
+      "repo": "SGit-AI/SGit-AI__Website__Gamma-Ray",
+      "sha": "64c846ae",
+      "evidence_note": "the second brief's own time is not in this commit; the brief text is in BRIEF.md"
+    }
+  ],
+  "people_acted": [
+    "Dinis: the documents (made with a research assistant), the spoken briefs, the new repository on GitHub"
+  ],
+  "agents_acted": {
+    "conductor@web-summit.dinis": "WS-206, started gamma-ray@",
+    "gamma-ray@web-summit.dinis": "read the documents against their sources, corrected them, wrote the standard, the site and the gate, set up the team",
+    "gamma.studio@": "draft cards from public sources",
+    "gamma.review@": "review rounds",
+    "gamma.approve@": "sends back or signs off, checked by the gate",
+    "GitHub Actions": "versions every push (v0.0.1 to v0.0.44 in 10 hours)"
+  },
+  "note": "Most of this repository's commits carry Brief:, which makes the chain exact: 28 commits name brief:2026-11-09T2330Z-gamma-ray and 47 name brief:2026-11-10T0240Z-restart."
+}

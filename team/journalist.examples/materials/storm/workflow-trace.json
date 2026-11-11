@@ -1,0 +1,347 @@
+{
+  "id": "storm-part-1",
+  "size": "large",
+  "schema": "ws-trace/1",
+  "title": "The storm, part 1: from a red warning to a weather desk and a decision chain",
+  "input": {
+    "kind": "an official warning",
+    "what": "IPMA's red wind warning for Lisbon, Wednesday 11 November 12:00 to 21:00"
+  },
+  "output": {
+    "kind": "live pages",
+    "what": "S41 on pt.news, kept current; the weather desk's live page and decision chain",
+    "url": "https://promptugal.news/"
+  },
+  "captured_by": "journalist.examples@web-summit.dinis",
+  "captured_at": "2026-11-10T17:15Z",
+  "note": "Written by the journalist from PrompTugal/PrompTugal__News__Website's commits (shallow history to 1500 commits), ahead of reporter@'s trace; the reporter may replace it.",
+  "steps": [
+    {
+      "n": 1,
+      "at": "2026-11-10T14:31:02Z",
+      "actor": {
+        "name": "journalist@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "IPMA's red wind warning for Lisbon",
+      "out": "S41 drafted; its run summary",
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "20c54206",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/20c54206"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "20c54206",
+      "issue": "WS-14"
+    },
+    {
+      "n": 2,
+      "at": null,
+      "actor": {
+        "name": "Vicky",
+        "kind": "person"
+      },
+      "in": "S41, Ready",
+      "out": "yes: publish",
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "8824680d",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/8824680d"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "8824680d",
+      "at_note": "before 14:36; the commit says 'at Vicky's word'"
+    },
+    {
+      "n": 3,
+      "at": "2026-11-10T14:36:22Z",
+      "actor": {
+        "name": "reviewer@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "S41; IPMA and Web Summit re-read at 14:34",
+      "out": "S41 published: the red wind warning, the event's status kept to one dated line",
+      "handoff": {
+        "to": "readers"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "8824680d",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/8824680d"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "8824680d",
+      "issue": "WS-14"
+    },
+    {
+      "n": 4,
+      "at": "2026-11-10T15:10:01Z",
+      "actor": {
+        "name": "journalist@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "S41",
+      "out": "an hourly watch: S41 checked, no change",
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "4c0ea0bf",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/4c0ea0bf"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "4c0ea0bf",
+      "issue": "WS-14"
+    },
+    {
+      "n": 5,
+      "at": "2026-11-10T15:23:09Z",
+      "actor": {
+        "name": "reviewer@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "Vicky's standing approval",
+      "out": "updates to S41 approved in advance (S41 only)",
+      "handoff": {
+        "to": "journalist@PrompTugal.vicky"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "2bf973d8",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/2bf973d8"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "2bf973d8",
+      "issue": "WS-14"
+    },
+    {
+      "n": 6,
+      "at": null,
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "the red warning",
+      "out": "asks for a weather agent: cover it as breaking news",
+      "handoff": {
+        "to": "conductor.B@PrompTugal.vicky"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "4c704f81",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/4c704f81"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "4c704f81",
+      "at_note": "about 16:50, from the commit body"
+    },
+    {
+      "n": 7,
+      "at": "2026-11-10T16:51:42Z",
+      "actor": {
+        "name": "conductor.B@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "Dinis's ask",
+      "out": "weather@PrompTugal.vicky started: one session, hourly, its own desk folder, never publishes",
+      "handoff": {
+        "to": "weather@PrompTugal.vicky"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "4c704f81",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/4c704f81"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "4c704f81",
+      "issue": "WS-177"
+    },
+    {
+      "n": 8,
+      "at": "2026-11-10T16:55:49Z",
+      "actor": {
+        "name": "weather@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "IPMA's warnings, communiqué, forecast, airport TAF, stations",
+      "out": "its key; the live page; red wind in eight districts",
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "7db30002",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/7db30002"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "7db30002",
+      "issue": "WS-14"
+    },
+    {
+      "n": 9,
+      "at": "2026-11-10T16:59:41Z",
+      "actor": {
+        "name": "weather@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "the sea, transport and venue sources",
+      "out": "AMN warns; Fertagus and Carris warn, none suspends; Web Summit: no notice",
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "e91f778c",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/e91f778c"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "e91f778c",
+      "issue": "WS-14"
+    },
+    {
+      "n": 10,
+      "at": "2026-11-10T17:02:29Z",
+      "actor": {
+        "name": "weather@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "the government's and ANEPC's pages",
+      "out": "the alert situation read at source; the decision chain",
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "f360b4bc",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/f360b4bc"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "f360b4bc",
+      "issue": "WS-14"
+    },
+    {
+      "n": 11,
+      "at": "2026-11-10T17:05:24Z",
+      "actor": {
+        "name": "curator@PrompTugal.vicky",
+        "kind": "agent"
+      },
+      "in": "the desk's findings",
+      "out": "S43 commissioned: the government's alert for Wednesday",
+      "handoff": {
+        "to": "journalist@PrompTugal.vicky"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "cde65817",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/cde65817"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "cde65817",
+      "issue": "WS-14"
+    },
+    {
+      "n": 12,
+      "at": "2026-11-10T17:00:00Z",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "the desk's work, shown",
+      "out": "a voice memo: the storm is the case study",
+      "handoff": {
+        "to": "conductor@web-summit.dinis"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "683727f6",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/683727f6"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "683727f6",
+      "at_note": "about; the guidance's time, corrected from the commits by conductor@web-summit.dinis (08e46582, 17:25)"
+    },
+    {
+      "n": 13,
+      "at": "2026-11-10T17:06:58Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the voice memo",
+      "out": "guidance in PrompTugal's board: a dynamic team, the decision graph, a focused view",
+      "handoff": {
+        "to": "weather@PrompTugal.vicky, conductor.B@PrompTugal.vicky, dashboard@PrompTugal.angelo"
+      },
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "683727f6",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/683727f6"
+        }
+      ],
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "sha": "683727f6",
+      "issue": "WS-211"
+    },
+    {
+      "n": 14,
+      "at": null,
+      "actor": {
+        "name": "the desk's team (expected)",
+        "kind": "agent"
+      },
+      "in": "an unreadable source",
+      "out": "a request for a parser, an architect's plan, a developer's tool, a designer's map, a UI",
+      "handoff": {
+        "to": "the visualisers"
+      },
+      "evidence": [],
+      "evidence_note": "not yet happened at 17:15 UTC: no request, plan or tool in the record. The sample parser in this folder shows the shape."
+    }
+  ]
+}

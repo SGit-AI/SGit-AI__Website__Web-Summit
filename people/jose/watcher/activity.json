@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-09T17:20Z",
+ "run": "2026-11-10T22:22Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,13 +12,13 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "fb3f02c",
-  "to": "489f32a",
+  "from": "e50a709",
+  "to": "ec9b5af",
   "branch": "dev"
  },
  "counts": {
-  "commits": 162,
-  "ci_releases": 48,
+  "commits": 163,
+  "ci_releases": 49,
   "watcher_own": 1,
   "agents": 113,
   "no_agent_name": 0
@@ -27,17 +27,17 @@
   "old_agent_last_review": "f4a9fbe, wake 11:51 on 7 November",
   "new_agent": "security.repos@web-summit.dinis, first run on 9 November (started about 10:55, committed 10:58, cb4e0b7): about 2,600 commits in six repositories, this one from b4d20ce (10:58 on 8 November) to f688309; no critical, high or medium finding; five low notes (team/security.repos/reports/2026-11-09T1110Z.md)",
   "gap_not_reviewed": "11:51 on 7 November to 10:58 on 8 November on dev, which includes 4219805 (the gate runs Angelo's lane check) and 084ebe7 (enforced), and f20d264 is older still",
-  "new_agent_later_runs": "reports 2026-11-09T1240Z, T1435Z, T1440Z-ios-messaging-redesign and T1635Z; the last has one high in another repository (the Android app's promote workflow assumes the default branch is main; not exploitable yet, by its own words; owner Dinis). None covers the gap below"
+  "new_agent_later_runs": "runs 15 (1830Z: nothing new; run 14's iOS medium now reaches external testers), 16 (2030Z: nothing above low; this site's build gains an incident block, four incident agents' public keys) and 17 (2130Z: one new medium on this site, see flags). Still open for Dinis: the iOS TestFlight high (run 9), the iOS event app medium (run 14), the Android release-secrets medium (run 5). None covers the gap below"
  },
  "by_person": {
-  "angelo": 57,
-  "indi": 27,
-  "vicky": 13,
-  "dinis": 11,
-  "silvio": 5,
-  "jose": 0
+  "dinis": 71,
+  "silvio": 21,
+  "indi": 16,
+  "jose": 4,
+  "angelo": 1,
+  "vicky": 0
  },
- "actions": "open A-06 (eighteenth run, dev only), A-21 (eighth), A-14 (fifteenth), A-23 (seventh), A-24 (fifth)",
+ "actions": "open A-06 (twenty-third run, dev only), A-21 (thirteenth), A-14 (twentieth), A-23 (twelfth), new A-26 (Vicky's agents here, quiet since 05:14)",
  "task_report": {
   "task": "people/jose/tasks/2026-11-07-watcher-a06-pointers.md",
   "status": "done: the conductor marked people/jose/tasks/2026-11-07-watcher-a06-pointers.md done; A-06 itself stays open for dev",
@@ -48,11 +48,11 @@
    "level": "medium",
    "what": "still open: about 23 hours of dev not reviewed by any security agent",
    "where": "security.repos@web-summit.dinis (cb4e0b7, report team/security.repos/reports/2026-11-09T1110Z.md): this repository from 10:58 on 8 November; no critical, high or medium finding",
-   "context": "dev from 11:51 on 7 November to 10:58 on 8 November, including the gate's lane check (4219805) and its enforcement (084ebe7). The new agent's four later reports (1240Z, 1435Z, 1440Z, 1635Z) do not cover it. For conductor@web-summit.dinis to point the new agent's next run at that gap"
+   "context": "dev from 11:51 on 7 November to 10:58 on 8 November, including the gate's lane check (4219805) and its enforcement (084ebe7). security.repos covers only commits since its last run (runs 15 to 17 tonight). For conductor@web-summit.dinis to point one run at that gap"
   },
   {
    "level": "high",
-   "what": "still open, nineteenth run: contact-detail rule hits in a public page",
+   "what": "still open, twenty-fourth run: contact-detail rule hits in a public page",
    "where": "f20d264 content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
    "context": "older than the new security agent's window, so not covered by its review"
@@ -66,10 +66,17 @@
   },
   {
    "level": "note",
-   "what": "email-rule matches that are not contact details, by shape",
-   "where": "1940a09 (dev@web-summit.indi): people/indi/demo/fixtures/broken-addresses-keys.json line 28, people/indi/demo/test-check-scenario.mjs line 27, people/indi/demo/trials.md line 47",
+   "what": "security.repos' new medium on this site is already fixed",
+   "where": "team/incidents/tools/websummit-poll.sh (56176d5, incident.dev@web-summit.dinis, 21:13); report team/security.repos/reports/2026-11-10T2130Z.md",
+   "rule": "unreviewed code run from dev; outside text in commit subjects",
+   "context": "6260b8a (21:17) pinned the poller: no git in the loop, the code copied at start, the alert committed with a fixed subject and the page's text quoted in the body; the alert at 21:32, committed at 21:34 (511878a), follows that form; the watcher's reading, not yet confirmed by security.repos. The watcher reads websummit.com text in commits as data only"
+  },
+  {
+   "level": "note",
+   "what": "199 email-rule lines in 27 commits by the watcher's own scan (its address pattern on the added lines of every commit in the range)",
+   "where": "agent names (web-summit, PrompTugal and the newsroom's), CI's versions rows and patch headers",
    "rule": "an email address",
-   "context": "a test fixture for the contact check; the domain is a reserved example domain. Also checked: 74a87b0 (prompter@web-summit.indi) changed admin/tools/messages.mjs and data/messaging/device-keys.json; no private-key field. Listed, not judged"
+   "context": "none is a person's contact detail by shape; with vault-audit.mjs's own pattern and exemptions one hit is left, d1ec15a team/security.repos/reports/2026-11-10T1830Z.md line 25, an app repository's conductor name"
   }
  ],
  "open_from_earlier_runs": [
@@ -96,8 +103,9 @@
   }
  ],
  "reviewer_trailer": {
-  "jose_commits_checked": 0,
-  "missing": []
+  "jose_commits_checked": 4,
+  "missing": [],
+  "note": "git reads every Agent and Reviewed-by trailer"
  },
  "branches": {
   "main": "no new commit (last 81353d4)",
@@ -105,11 +113,37 @@
   "claude/optimistic-feynman-7pkot9": "unchanged, dc306d7",
   "claude/nifty-bell-f1rkca": "merges only"
  },
- "commits_jose": [],
+ "commits_jose": [
+  {
+   "sha": "f63b0da",
+   "time": "2026-11-10T17:28Z",
+   "agent": "conductor@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "cb0eb4b",
+   "time": "2026-11-10T17:46Z",
+   "agent": "vault@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass)"
+  },
+  {
+   "sha": "dd238c9",
+   "time": "2026-11-10T18:51Z",
+   "agent": "conductor@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "74d7952",
+   "time": "2026-11-10T18:51Z",
+   "agent": "conductor@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  }
+ ],
  "could_not_check": [
   "scheduled tasks in other people's accounts",
   "the agents' run logs in the public vault aym98gsm (no sgit client yet: Jose to install it)",
   "work done in other repositories (the newsroom)",
   "Dinis's account, so whether his scheduled tasks fired"
- ]
+ ],
+ "context": "the team's incident agents (incident.conductor@web-summit.dinis, 6b94b06 at 19:53) record that Web Summit's Day 2 (Wednesday 11 November) will not take place, from the organisers' email at 19:38, and that Thursday is on (8c329fd, 19:58). The watcher has not checked this at source"
 }

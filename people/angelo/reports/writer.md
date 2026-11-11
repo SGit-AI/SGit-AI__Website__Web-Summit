@@ -2,6 +2,24 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 10 November 2026, about 00:30 UTC (prompted by Angelo, with the app screenshots)
+
+- **0-URGENT-4b done** (the conductor's 6d75ae89): the passes article reworked (newsroom 31c2b03e): a colour sample per pass, sampled from the app cards' backgrounds (no person, name or face; the screenshots not committed), his wrist photo removed, the sighting column and lines gone; re-signed.
+- **Note for Angelo:** the photo is gone from the site, but it stays in the newsroom's public git history (commit 45e925788); removing it from history would need a force-push, which the rules forbid. It shows a wrist and a wristband only.
+
+## 9 November 2026, about 23:15 UTC (prompted by Angelo: "Both")
+
+- **Published "Web Summit's nineteen passes: who is who, by colour"** with Angelo's ALPHA photo (metadata stripped): https://promptugal.news/articles/web-summit-passes-and-colours.html (v0.1.917); linked from the queues article.
+- **The share button is live** on every public page of PrompTugal.news (v0.1.918): dev.venues@'s patch (de6b95a0), plus the writer's fix for the gate (markup as markdown; the schema's entry), tested at 1280 and 390 px. For: dev@PrompTugal.dinis, with what it changes and how to undo it.
+- **Next:** the protocols article (0i), design and draft in one run.
+
+## 9 November 2026, 22:45 UTC (prompted by Angelo: "Wake up")
+
+- **0-URGENT-4, the wristbands draft updated** (newsroom v0.1.914): "Web Summit's nineteen passes: who is who, by colour", from the app's pass types and colours (489f32a2) and the ALPHA sighting (089ca508). To publish at Angelo's word; his ALPHA photo not used until he says so.
+- **Dinis answered the key and publishing question** (newsroom guidance, 9 Nov 10:55: "everybody in the team is trusted, so they can all push"; "If the agent thinks they're okay, they should do it"). The contributor listing is still open (his /contribute/ page is for outside collaborators).
+- **0-LEADS is sheet@'s** (the one-off): no interview sheet in people/angelo/writer/ yet, due Tuesday morning.
+- **Next for this desk:** the share-button patch with Angelo (de6b95a0); the protocols article, design and draft in one run (03f1e497).
+
 ## 9 November 2026, 16:40 UTC (scheduled run)
 
 - **0-URGENT-3 rewritten in a confident tone** (the conductor's e9bb08dd, Angelo's words): newsroom `desks/writer-angelo/drafts/ac1-authority-checks.md` (v0.1.869), now "Speed where it's safe, control where it matters". The new LinkedIn reply: "Both, by design. For a newspaper, where most changes are public and can be undone, code checks the edges (every push passes a build gate and a check that each agent writes only in its own area) and review covers the judgement. Keys, vaults and anything in my name sit under enforced control. That's how a newsroom and a hundred-plus agents came together in nine days. How it works, and how the same tools tune for other uses: <link>"
@@ -118,3 +136,15 @@ Newest first. A short line per piece of work, for desk.conductor@PrompTugal.ange
 - **WS-125, the agent setup guide, taken back at Angelo's word** ("yes please take it back"): the hand-over to conductor@PrompTugal.dinis in ecd8dc39 is withdrawn. Nobody on that side had started on it (no commit, card or draft in the newsroom from 15:39 to 23:30 UTC). Angelo's writer desk refines it and publishes it on PrompTugal.news.
 - **Claimed on the newsroom's story board** as story WS125, assignee writer@PrompTugal.angelo (`desks/writer-angelo/ideas/WS125.md`).
 - **Key:** writer-angelo-promptugal in the newsroom's `board/keys.json` (93a2e0db there).
+
+## 10 November: the protocols article, drafted (backlog 0i)
+
+- Draft: newsroom `desks/writer-angelo/drafts/pr1-how-the-protocols-grew.md` (newsroom 070c57f8f, v0.1.928). "Six people, six agent protocols, one week": the shared template, a section per person (Dinis, Angelo, Vicky, Jose, Indi, Silvio), borrowings, five patterns. Public commits only, each claim linked; about forty commits checked at the source.
+- Sensitive points (nine) kept out of the body and listed for Angelo in a comment at the end; only those go to the person concerned, at his word.
+- Not published: waits for Angelo's review, and under Dinis's big stop.
+
+## 10 November, about 08:55: the authority-checks article is live (0-PUB-AC1)
+
+- Published at Angelo's word ("Ok please push this post and let me know when it's live."; 2ce1fb9f, pushed from his account): https://promptugal.news/articles/speed-where-its-safe-control-where-it-matters.html (newsroom v0.1.973).
+- Numbers re-counted this morning: a row for Tuesday 10 November (1,768 team-site and 972 newsroom releases, 158 keys, 52 articles); In short now says ten days, more than 2,700 releases, 52 articles. Signed; gate OK.
+- Angelo can now post his LinkedIn reply with the link.

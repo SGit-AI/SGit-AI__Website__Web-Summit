@@ -1,0 +1,30 @@
+{
+ "number": 39,
+ "date": "2026-11-09",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "Apple approved the public TestFlight link; the clash fixes, 21 languages and the iPad model are in the release queue",
+ "when": "Monday 9 November 2026, 21:16 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "Beta App Review approved the news app (0.4.24, build 205) at 20:48: the public TestFlight link works, so anyone can install it now. The App Store listing itself still waits for review. In the release queue on iOS: the clash fixes, busy and free picks, split my time and the shared rules (v0.4.51 and v0.4.52), and the 21 cultures with the globe button and English by default. The RiskMandate app on TestFlight has Apple's on-device model in a Workbench (0.4.48). The web app has 21 cultures. /contribute/ has its words and the sign-ups lane; the page is being built. All five conductors check in hourly; security found nothing above low.",
+ "stats": [
+  {"n": "approved", "label": "public TestFlight link (news app 0.4.24)"},
+  {"n": "21", "label": "cultures, in the web app and coming in iOS"},
+  {"n": "5 of 5", "label": "conductors on the rota"},
+  {"n": "41", "label": "team-site commits since 18:15"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "Share the public TestFlight link", "detail": "It now serves build 205. Put it in the team WhatsApp group and the collaborators' group; Andrew can install it tonight. The newer builds (clash fixes, languages) reach the link after Apple reviews them; the web app at promptugal.news /app/ has them first.", "options": ["share now", "wait for the newer build"], "recommend": "Share now: the summit opens."},
+  {"id": "2", "ask": "Still in your hands", "detail": "Android: main as default branch, Environment promote limited to main, the Play credential. OpenRouter: the top-up dev.verify@ waits on.", "options": ["tomorrow morning"], "recommend": "Tomorrow morning."}
+ ],
+ "you_asked": [
+  {"at": "9 Nov, ~19:25", "said": "add all those languages and cultures ... very visible ... default always back to English", "done": "21 cultures (SG/Send's 16 plus zh-Hans, ja, ko, hi, ar); a globe button with English first; en-GB default.", "where": "web app live; iOS in the release queue", "status": "shipping"},
+  {"at": "9 Nov, ~20:20", "said": "Yes: build /contribute/ and the collaborators' wall now", "done": "Routed to account B; the sign-ups lane live (board/lanes/signups.json), drained hourly into the private CRM.", "where": "promptugal.news/contribute/", "status": "being built"}
+ ],
+ "team": [
+  {"id": "iOS", "status": "active", "doing": "public TestFlight approved; clash fixes and languages in the queue; the venue map next"},
+  {"id": "Indi", "status": "active", "doing": "team messaging and the Team app redesign on TestFlight internal"},
+  {"id": "PrompTugal", "status": "active", "doing": "21 cultures in /app/; /contribute/"}
+ ],
+ "next": ["Hourly one-line wakes through the night; Tuesday 09:12 brief 40, the first conference day."],
+ "sources": ["the conductors' watch lines at 20:37, 20:52, 21:03", "security.repos@ run 6 (59b19f03)", "feedback_drain on the sign-ups and conductor lanes at 21:15"]
+}

@@ -1,6 +1,6 @@
 # The Agents board: the addition to `data.mjs`, for Jose's yes
 
-By `designer@web-summit.jose`, 8 November 2026, for the task `people/jose/tasks/2026-11-07-designer-agents-board.md` (C31, C33). **Not applied.** `people/jose/app/data.mjs` is code the build runs (WS-133), so it waits on Jose's yes on his Actions list. Once he says yes, it applies in minutes.
+By `designer@web-summit.jose`, 8 November 2026, for the task `people/jose/tasks/2026-11-07-designer-agents-board.md` (C31, C33). **Applied on 10 November 2026, 11:19 UTC, at Jose's word ("Yes", Actions row 5).** Before that it was not applied: `people/jose/app/data.mjs` is code the build runs (WS-133), so it waits on Jose's yes on his Actions list. Once he says yes, it applies in minutes.
 
 ## What it adds
 

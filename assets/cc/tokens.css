@@ -1,0 +1,27 @@
+/* Tokens (10 November) */
+#tokens .tk-head h2 { margin: 0 0 6px; }
+.tk-seg { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 3px; border-radius: 8px; border: 1px solid var(--rm-border, #223); margin: 6px 0 12px; }
+.tk-seg button { min-height: 32px; padding: 0 12px; border: 0; border-radius: 6px; background: transparent; color: inherit; font: 600 12.5px/1 var(--rm-font, inherit); cursor: pointer; }
+.tk-seg button[aria-pressed="true"] { background: var(--rm-action, #2BB673); color: #fff; }
+.tk-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.tk-tiles div { padding: 12px 14px; border-radius: 10px; border: 1px solid var(--rm-border, #223); }
+.tk-tiles span { display: block; font-size: 12px; opacity: .7; } .tk-tiles b { display: block; font: 700 26px/1.2 var(--rm-font, inherit); margin: 4px 0 2px; } .tk-tiles small { font-size: 11.5px; opacity: .6; }
+.tk-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; margin: 14px 0; }
+@media (max-width: 1100px) { .tk-grid { grid-template-columns: 1fr; } .tk-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tk-svg { display: block; width: 100%; height: auto; } .tk-svg text { fill: currentColor; font: 11px var(--rm-font, sans-serif); } .tk-svg .tk-ax { opacity: .6; } .tk-svg .tk-v { font-weight: 700; font-size: 11.5px; }
+.tk-svg .tk-base { stroke: currentColor; opacity: .25; } .tk-day rect:hover { filter: brightness(1.2); }
+.tk-legend, .tk-people { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; margin: 6px 0 0; }
+.tk-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; background: var(--c); margin-right: 6px; vertical-align: -1px; }
+.tk-people span { border-left: 3px solid var(--c); padding-left: 6px; }
+.tk-hbars { display: grid; gap: 5px; } .tk-hrow { display: grid; grid-template-columns: minmax(120px, 34%) 1fr 62px 58px; gap: 8px; align-items: center; font-size: 12.5px; }
+.tk-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .tk-track { height: 12px; border-radius: 3px; background: rgba(127, 151, 168, .14); overflow: hidden; } .tk-track i { display: block; height: 100%; border-radius: 0 4px 4px 0; }
+.tk-hrow b { text-align: right; } .tk-hrow small { opacity: .65; text-align: right; }
+.tk-cmp .tk-track i { background: #8FA6C2; } .tk-cmp .tk-hrow.now .tk-track i { background: var(--rm-action, #2BB673); } .tk-cmp .tk-hrow.now { font-weight: 700; }
+@media (max-width: 600px) { .tk-hrow { grid-template-columns: minmax(90px, 40%) 1fr 56px; } .tk-hrow small { display: none; } }
+
+.tk-tiles3 { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 12px; }
+.tk-pair { display: grid; grid-template-columns: minmax(120px, 24%) 1fr 150px 50px; gap: 8px; align-items: center; font-size: 12.5px; margin: 4px 0; }
+.tk-two { display: grid; gap: 3px; } .tk-two .tk-track { height: 8px; } .tk-paid i.paid { background: #8FA6C2; }
+.tk-pair b { text-align: right; font-weight: 600; } .tk-pair small { text-align: right; opacity: .7; }
+td.v-pass { color: #3DDC97; } td.v-fail { color: #FF5C7A; } td.v-partial { color: #F5C542; }
+@media (max-width: 600px) { .tk-pair { grid-template-columns: minmax(80px, 30%) 1fr 92px; } .tk-pair small { display: none; } .tk-tiles3 { grid-template-columns: 1fr; } }

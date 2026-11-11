@@ -227,4 +227,9 @@ public final class Work {
     /** Carries the counts and what has been seen over to the same level rebuilt (a change of layout or theme). */
     public void takeOver(Work old) { if (old == null || !old.level.equals(level)) return; seen.addAll(old.seen); past.addAll(old.past); firstRead = old.firstRead; for (Dest d : dests) { Dest o = old.byId.get(d.id); if (o != null) d.count = o.count; } }
     public int pending() { return queue.size(); }
+    /** The replay: every delivery between moments t0 (excluded) and t1 taking off now (merged by minute and destination); the live queue dropped. */
+    public void flyWindow(List<Row> rows, double t0, double t1, double now) {
+        queue.clear(); List<Row> in = new ArrayList<>(); for (Row r : rows) if (r.at > t0 && r.at <= t1) in.add(r);
+        for (Flight f : merge(in)) { f.t0 = now; inAir.add(f); }
+    }
 }

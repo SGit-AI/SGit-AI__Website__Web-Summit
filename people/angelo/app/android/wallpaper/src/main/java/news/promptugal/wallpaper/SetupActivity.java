@@ -28,7 +28,9 @@ public class SetupActivity extends Activity {
         go.setOnClickListener(v -> open());
         Button view = new Button(this); view.setText("Choose the view");   // the same screen as the wallpaper picker's Settings
         view.setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
-        col.addView(h); col.addView(p); col.addView(go); col.addView(view);
+        TextView ver = new TextView(this); ver.setText(LiveMapWallpaper.version(this)); ver.setTextColor(0xFF000000 | Graph.MUTED); ver.setTextSize(13); ver.setGravity(Gravity.CENTER); ver.setPadding(0, pad, 0, 0);
+        Button full = new Button(this); full.setText("Show full screen"); full.setOnClickListener(v -> startActivity(new Intent(this, FullScreenActivity.class)));
+        col.addView(h); col.addView(p); col.addView(go); col.addView(view); col.addView(full); col.addView(ver);
         setContentView(col);
     }
 

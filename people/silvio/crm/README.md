@@ -69,3 +69,8 @@ From outreach's 4acb1035: the 16 wave-C buyer actions are now `drafted` (text in
 ## 9 November, 01:00 UTC: wave D written
 
 From outreach's 77072f6d: the 11 wave-D actions (CrowdStrike and 10 non-Portuguese priority-1 buyers) are `drafted` (text in `people/silvio/outreach/wave-d-emails.md`, not yet Gmail drafts), due 11 November. CrowdStrike and Serpro have a PromptUGAL page; nine need one first. Pushed.
+
+## 10 November, 02:20 UTC: the hold recorded; Thursday's stand list
+
+- **The hold.** Dinis parked all outreach on 9 November at 10:55 UTC (`team/conductor/notes/2026-11-09-dinis-decisions-1055.md`, point 4; outreach's ccf33046). One sealed record in the private CRM (`actions/2026-11-09-silvio-outreach-parked`) now covers all 149 of Silvio's outreach actions: their waves and due dates are suspended, not deleted, and stay the order for when the hold lifts.
+- **Thursday's stand list (WS-206).** `schedules/2026-11-12/silvio-stand-list`, sealed to silvio and dinis: the 13 companies in Silvio's X-ray queue as expected (Booking.com, Amex GBT and Feedzai with their Thursday sessions), their X-ray state, no GAMMA-Ray scan yet. "Met" is empty: nothing in the repository names a company Silvio's team has met; Silvio or his agents tell this agent, and they go in, contact details in the private CRM only.

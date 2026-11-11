@@ -1,0 +1,21 @@
+{
+  "title": "A voice brief to a deck: THE RESTART to the 09:00 briefing",
+  "subtitle": "Dinis speaks at about 02:40; the conductor writes the plan and builds a deck with screenshots and a PDF; CI puts it live at 04:08, refreshed at 08:20",
+  "labels": {
+    "1": "a voice brief:|THE RESTART",
+    "2": "WS-208: one theme,|who takes what",
+    "3": "deck v1: slides,|ten screenshots,|a PDF",
+    "4": "the deck linked|from WS-208",
+    "5": "v0.2.1642:|deck v1 live",
+    "6": "side: a note for|Angelo's team",
+    "7": "final refresh:|an Overnight slide,|new PDF",
+    "8": "v0.2.1662:|final deck live",
+    "9": "presents it|(no evidence yet)"
+  },
+  "side": [
+    6
+  ],
+  "output_after": 8,
+  "output": "the 09:00 deck:|slides, PDF,|live since 08:20",
+  "output_when": ""
+}

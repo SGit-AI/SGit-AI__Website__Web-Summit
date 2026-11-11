@@ -1,0 +1,97 @@
+{
+  "number": 22,
+  "date": "10 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Your to-do list before Thursday: from your dashboard and your chats",
+  "when": "10 November 2026, 18:45 UTC (at Dinis's word: a brief on Indi's tasks)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Everything waiting on you, in one place: five things to do before Thursday, six chats waiting for a one-word answer, and three yes-or-no questions for me. Old items you can drop are listed last. Nothing is decided here.",
+  "stats": [
+    {"n": "5", "label": "things to do before the stand on Thursday"},
+    {"n": "6", "label": "chats waiting for a short answer"},
+    {"n": "3", "label": "yes-or-no questions for your conductor"},
+    {"n": "12", "label": "old chats from 4 to 6 November that can be archived"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Start your inbox chat (2 minutes)",
+      "detail": "Start a new Claude Code session yourself, paste the inbox prompt from your kit, and tell me. Chats I start cannot see your Gmail.",
+      "options": ["now", "tonight"],
+      "recommend": "Now, so drafts are ready on Wednesday morning."
+    },
+    {
+      "id": "2",
+      "ask": "Get your phone ready for Thursday",
+      "detail": "Scan your key's QR code on each phone and iPad you carry (WS-166). Add the RiskMandate card to Wallet (web-summit.sgit.ai/card/). Update the Team app and the PrompTugal app in TestFlight.",
+      "options": ["done", "doing it now"],
+      "recommend": "Do it tonight: five minutes."
+    },
+    {
+      "id": "3",
+      "ask": "Rehearse the stand demo on Wednesday, with no wifi",
+      "detail": "Three made-up visitors through the demo helper and Angelo's side-by-side runner, each in under 6 minutes, and a recorded backup in case the hall's network fails (WS-109, WS-137).",
+      "options": ["Wednesday morning", "Wednesday afternoon"],
+      "recommend": "Wednesday morning, with Angelo and his laptop."
+    }
+  ],
+  "you_asked": [],
+  "sections": [
+    {
+      "title": "1. Before Thursday (do these)",
+      "items": [
+        "Inbox chat: start it, then tell your conductor.",
+        "Phone: key on every device (WS-166), the card in Wallet, both apps updated from TestFlight.",
+        "Demo: rehearse on Wednesday, three made-up visitors, offline backup ready (WS-109, WS-137).",
+        "LinkedIn: Wednesday's post is drafted, 'tomorrow at our stand'. Read it, post it, add your reshare line (WS-126).",
+        "Education idea: pick a time to talk with Dinis before Thursday, and look at the list of 22 education and child-safety people (WS-209)."
+      ]
+    },
+    {
+      "title": "2. Chats waiting for a short answer from you",
+      "items": [
+        "'Video editor for PrompTugal.news' (you started it at 17:23): which camera did you use: iPhone, Sony, or both?",
+        "'2 · newsapp' (the app redesign): A, wrap up now and write DONE.md, or B, one more round first.",
+        "'1 · dashboard': is the registration page still needed for Thursday? Your conductor suggests no: the airport desk has closed and the venue desk is in Pavilhao de Portugal until 16:45 on Thursday.",
+        "'2 · social': five answers: save the PrompTugal post (yes), keep or drop 'first project built with ABPs', the go-ahead and owner for WS-169, log its token use (yes), and links of posts already out.",
+        "'1 · accountant': A6, fresh sessions for dashboard, dev and accountant; A8, a lighter run on quiet days. Your conductor suggests yes to both: they save tokens.",
+        "'2 · messaging': its question is out of date: team messaging is already on. Tell it 'WS-203 is done, nothing to do'."
+      ]
+    },
+    {
+      "title": "3. Yes or no, for your conductor",
+      "items": [
+        "Make site keys for Nimay, Daniela and Sarah, so they get their messaging details (you show them a QR code)?",
+        "Ask Dinis to say yes to the newsroom redesign brief (pt.news about agents) for PrompTugal's team?",
+        "Fix the one missing line that breaks the iOS repository's website deploy, or leave it to Dinis's conductor?"
+      ]
+    },
+    {
+      "title": "4. On your dashboard, still open but not urgent",
+      "items": [
+        "WS-15: read the RiskMandate message draft and agree it with Nimay.",
+        "WS-19, WS-22, WS-26, WS-27, WS-59, WS-125: your helpers' drafts from the 4 November night, waiting for your review. One sitting of an hour covers them.",
+        "WS-141: which title goes next to your name on PrompTugal's editorial board.",
+        "WS-168: Vicky suggests doing interviews on the spot at the stand: say if you want that.",
+        "Say 'acknowledge' for briefs 1 to 22, so the next brief starts from what is new (WS-112)."
+      ]
+    },
+    {
+      "title": "5. You can drop these (say 'drop them' and your dashboard clears them)",
+      "items": [
+        "Superseded: WS-62 (the round-2 vote), the two-conductors item (settled on 4 November), the card decisions of round 3 (the cards are printed), the run-2 vault key note, 'start the vault agent' (not needed for the summit), the About-me words (done on 5 November).",
+        "Twelve old chats from 4 to 6 November are still open and waiting (ux, builder, factory, synthetic, designer, recruiter, three reference chats, the first conductor setup, prompter-faq, the shirt messages). Your conductor can archive them."
+      ]
+    }
+  ],
+  "next": [
+    "Wednesday 11: demo rehearsal; Apple reviews the PrompTugal app builds; the red wind warning in Lisbon from midday.",
+    "Thursday 12: our stand day, between Booths A1-30.",
+    "Wednesday 07:20: my next brief."
+  ],
+  "sources": [
+    "people/indi/todo/todo.json (written 17:40 UTC by dashboard@web-summit.indi)",
+    "the waiting messages of Indi's chats at 18:40 UTC (list of sessions)",
+    "briefs 20 and 21"
+  ]
+}

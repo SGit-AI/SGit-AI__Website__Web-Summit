@@ -1,0 +1,66 @@
+{
+  "number": 21,
+  "date": "10 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Tuesday evening: four app builds with Apple, the map on your iPhone, and the token check",
+  "when": "10 November 2026, 17:25 UTC (scheduled wake; since brief 20, 07:25 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "A big day. The PrompTugal app's redesign went to Apple in four builds, the venue map is in the Team app, team messaging is on, and the newsroom workflow and its infographic are written. Only your team follows the token rules fully. Nothing is decided here.",
+  "stats": [
+    {"n": "4", "label": "PrompTugal app builds with Apple's review (556, 562, 575, 579)"},
+    {"n": "565", "label": "the Team app build with the venue map, on TestFlight now"},
+    {"n": "6 of 9", "label": "team members with their messaging details sealed to them"},
+    {"n": "3 of 7", "label": "teams measuring their tokens; only yours names the work"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Start your inbox chat",
+      "detail": "Chats I start cannot see your Gmail. Start a new Claude Code session yourself, paste the inbox prompt from your kit, and tell me; I add the 07:45 and 17:45 schedule.",
+      "options": ["doing it now", "later"],
+      "recommend": "Now: it drafts your replies from tomorrow morning."
+    },
+    {
+      "id": "2",
+      "ask": "Site keys for Nimay, Daniela and Sarah",
+      "detail": "They have no agents or keys, so they cannot get their messaging details. I can issue a key each; you show them the QR at the stand.",
+      "options": ["yes, issue them", "not now"],
+      "recommend": "Yes, so the whole team can message on Thursday."
+    },
+    {
+      "id": "3",
+      "ask": "The newsroom redesign: say yes to PrompTugal's team",
+      "detail": "Your newsroom helper wrote the workflow, the infographic and a pt.news redesign brief with mock-ups. PrompTugal's team has not answered its four questions yet.",
+      "options": ["ask Dinis to say yes", "wait for their answer"],
+      "recommend": "Ask Dinis: the site pivots to agents, and he set the direction."
+    }
+  ],
+  "you_asked": [
+    {"at": "10 Nov", "said": "Redesign the PrompTugal app; send each round to the testers as soon as it passes", "done": "Rounds 1 to 4 and the videos, in four builds, all submitted to Apple's beta review and added to the external group.", "where": "PrompTugal/PrompTugal__App__iOS, briefs/2026-11-10__newsapp-redesign/", "status": "with Apple"},
+    {"at": "10 Nov", "said": "Merge the venue map", "done": "Tested with the newer app, merged, in Team 0.4.76 (565).", "where": "the Team app, Where tab", "status": "done"},
+    {"at": "10 Nov", "said": "Set up team messaging", "done": "Ten lanes; details sealed to Dinis, Silvio, Angelo, Vicky, Jose and you.", "where": "your page on the site", "status": "done"},
+    {"at": "10 Nov", "said": "The TestFlight link first on PrompTugal.news", "done": "A green strip at the top of every page.", "where": "promptugal.news", "status": "done"},
+    {"at": "10 Nov (Dinis)", "said": "Is observability draining the traffic?", "done": "Yes, hourly since the restart (813 reader views all time). I first read the quiet git log as stopped: wrong, and corrected.", "where": "promptugal.news/newsroom/observability/", "status": "done"},
+    {"at": "8 Nov", "said": "Check in two days who follows the token rules", "done": "Done: Indi 80% of lines name the work; Jose 17%; Angelo 3%; four teams not measuring.", "where": "people/indi/accounting/adoption-2026-11-10.md", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. The token rules, two days on",
+      "items": [
+        "Indi: accountant running, reports arriving, 5 agents measuring, 80% name the work.",
+        "Jose: accountant on his list, but no key yet, so no reports.",
+        "Angelo: 15 agents measuring, 500 lines, but only 3% say which job.",
+        "Dinis, Vicky, Silvio, Nimay: not measuring yet. One ask each went to their conductors."
+      ]
+    }
+  ],
+  "next": [
+    "Wednesday 11: demo rehearsal, three made-up visitors; Apple's reviews of the app builds.",
+    "Thursday 12: our stand day, between Booths A1-30.",
+    "Tomorrow 07:20: my next brief."
+  ],
+  "sources": [
+    "PrompTugal/PrompTugal__App__iOS: testflight-ops runs for 556, 562, 575, 579; Team build 565",
+    "PrompTugal__News__Website aa01d83e (the drain's answer); people/indi/accounting/adoption-2026-11-10.md; people/indi/helpers/newsroom/DONE.md"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+ "entity": "rede-expressos",
+ "about": "Every decision in graph.json about rede-expressos: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
+ "updated": "2026-11-11T02:42Z",
+ "decisions": [
+  {
+   "edge": "rede-expressos-suspends",
+   "decision": "All national coach services suspended Wednesday 10:00 to 23:59",
+   "decided_by": "Rede Expressos (intercity coaches)",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10",
+   "effect_from_utc": "2026-11-11T10:00Z",
+   "effect_to_utc": "2026-11-11T23:59Z",
+   "effect_note": "\"entre as 10h00 e as 23h59\" (Jornal de Negócios 12:39; Jornal Económico 17:47)",
+   "address": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "also": [],
+   "read": "2026-11-10T23:55Z",
+   "label": "evidence",
+   "note": "Jornal de Negócios live 12:39 (company statement) and Jornal Económico 17:47; earlier text \"to midnight\" came from a search summary and was wrong."
+  },
+  {
+   "edge": "rede-expressos-suspends",
+   "decision": "Rede Expressos suspends all national services Wednesday 10:00 to 23:59 and will refund tickets bought",
+   "decided_by": "Rede Expressos",
+   "published_utc": "2026-11-10T12:39Z",
+   "effect_from_utc": "2026-11-11T10:00Z",
+   "effect_to_utc": "2026-11-11T23:59Z",
+   "address": "https://bsky.app/profile/vost.pt/post/3mzxlj2s3xn22",
+   "read": "2026-11-11T02:42Z",
+   "label": "evidence",
+   "state": "suspended",
+   "note": "VOST Portugal relaying the operator (13:50:55); the operator's site refuses us (403). Refunds: \"A Rede Expressos irá reembolsar os bilhetes adquiridos\"."
+  }
+ ],
+ "open": [
+  "rede-expressos.pt refuses our reads (403)."
+ ],
+ "tries": [
+  {
+   "at": "2026-11-11T02:19Z",
+   "url": "https://www.rede-expressos.pt/",
+   "http": 403,
+   "result": "not reached: HTTPError 403"
+  }
+ ],
+ "tries_summary": {
+  "https://www.rede-expressos.pt/": {
+   "tries": 1,
+   "published_found": false
+  }
+ }
+}

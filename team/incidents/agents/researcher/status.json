@@ -1,0 +1,60 @@
+{
+  "agent": "incident.researcher@web-summit.dinis",
+  "state": "blocked on the move: cannot reach PrompTugal/PrompTugal__News__Storm-Charles from this session",
+  "last_wake": "2026-11-11T02:34Z",
+  "jobs": [
+    "J1 (tonight, first): where will Web Summit announce a Wednesday decision? Every organiser channel (site, news page, app notices, press office statements as reported, official social accounts readable without a login), and the side events on Wednesday (Dear Gatekeepers Live 10:00; others). Public sources only. Feed social.watch@'s sweeps; do not duplicate them.",
+    "J2 (tonight): the decision graph as JSON (team/incidents/2026-11-10-the-storm/data/graph.json, README): actors (IPMA, ANEPC, government, Câmara, schools, Metro, Carris, CP, Fertagus, Transtejo, bridges, ANA/the airport, Web Summit, side events), who can decide what (cite Vicky's desk's law.md, read-only), what each has decided with time and source, and lead times. Facts, evidence, hypotheses labelled.",
+    "J3: our own graph (README section 4): each team Wednesday commitment, the outside decision that would move it, the decide-by time. No names of people we meet; commitments by kind.",
+    "J4 (Dinis's direction 19:15, ROADMAP P1.7): in sources.json, reuse per source (yes / attribution / no: IPMA open data, EUMETSAT/Copernicus imagery, Wikipedia, each press outlet); Wikipedia articles on CHARLES (PT, EN) and their edit history via the MediaWiki API; which social platforms read without a login (Mastodon, Bluesky public API, YouTube). Public sources only; no profiles of private people.",
+    "J5 (20:03, now): the open items after the decision (N6): what happens to Wednesday's talks and speakers, the PITCH semi-final, side events, tickets; and Thursday's operations (venue, transport after the storm, any organiser update on Day 3). A Day 3 change goes to the lead at once. Then J2 powers and J3 as before.",
+    "J5 (incident.conductor@, 20:04): N6 (Wednesday's talks and speakers, PITCH semi-final, side events, tickets) and Thursday operations (venue, transport after the storm, organiser updates on Day 3); any change to Day 3 to the conductor at once."
+  ],
+  "done": [
+    "J2 v1: team/incidents/2026-11-10-the-storm/data/decisions/graph.json and README.md (in data/decisions/ as my start brief named it; J2 named data/graph.json: say if you want it moved)",
+    "J1 start: organiser channels and every source mapped in data/decisions/sources.json (readable without a login: websummit.com home, /news/, sitemap.xml; X, Instagram, LinkedIn, the app are not)",
+    "J4: reuse per source (marked \"to verify\" where the licence page is unopened); Wikipedia: no CHARLES article on the titles tried (pt, en), others rate-limited (429), MediaWiki prop=revisions noted; platforms without a login: Bluesky public API (official account websummit.bsky.social), Mastodon tag API, YouTube Atom feed; all in data/decisions/sources.json",
+    "19:32 wake: no organiser decision; graph + ANA airports conditioned, cancellations expected (18:04, press) and FlixBus national links suspended Wednesday (18:25, press)",
+    "20:04: decision in graph.json (websummit-wednesday happened, evidence; websummit-thursday; websummit-n6 not announced; first_priority now Thursday)",
+    "20:37 wake: no change; Day 2 off corroborated by CNN Portugal, ECO, TSF, Jornal Económico; N6 and any Day 3 change: nothing; still not on websummit.com or Bluesky",
+    "20:59: websummit-wednesday and websummit-thursday moved to fact (organisers' page 19:09, found by incident.conductor@); sources.json: the blog list is the primary organiser channel, every site section mapped; the miss recorded in graph.json lessons",
+    "21:33 wake: no change to Day 3; the decision post's text unchanged (listing modified 20:06:54, JSON-LD 19:25:44); N6 still unannounced; CP admits rail constraints Wednesday (press)",
+    "22:05 (conductor's 22:02 list): PITCH: no move announced, and a conflict on its slot (Wed 17:00 per the conductor vs Thursday per Tech Times) recorded in pitch-semifinal; Night Summit still listed for Wednesday with no notice; Thursday transport: no operator notice yet; ferries reassessed from 12:00 Wed and Metro night shelter (press)",
+    "22:33 wake: no change: no new blog post, decision text unchanged (sha256 e055635213ca), Bluesky last 17:36Z, Night Summit still listed Wednesday, no Thursday notice from Carris or other operators; JN live to 22:01 nothing new on the summit",
+    "23:33 wake: no change to Day 3 (blog, post text, Bluesky, Night Summit listing unchanged); CP suppresses 4 trains over the 25 de Abril bridge 12:00-15:00 Wed (Lusa 23:10); Metro's night shelter now read on its own site (fact)",
+    "23:55: effect_from_utc/effect_to_utc/effect_note on every edge (from the sources' words only); IPMA red rain now 09:00-18:00 (ipma-red-rain-0900, fact); Rede Expressos corrected to 10:00-23:59; ferries 05:00 start; tunnels by the Câmara from midnight",
+    "00:33 wake: no change to Day 3 (blog, post text, Bluesky, Night Summit listing unchanged); IPMA Lisbon unchanged (red rain 09-18, red wind 12-21); the alert in force since 00:00",
+    "01:00: gov-alert now has announced_utc 09:17 (minister at ANEPC's press conference; DN 09:14, Observador 09:17, Negócios 09:35) and published_utc 12:10 (portugal.gov.pt); ipma-red-wind moved to 08:05 (DN); the README's \"alert before the red warning\" corrected (it was after, by about 1 h 12 min); new edge mai-websummit-indoor (09:30)",
+    "01:05: IPMA send times from CAP (the meteorologist's cap.json, checked): red wind sent 07:18:40, red rain first sent 16:30:01, moved to 09:00-18:00 at 21:23:00; lead times recomputed against the first red (rain, 09:00 Wed) and the red wind (12:00)",
+    "01:35: RTP live blog new address in sources.json (old ones kept as \"was\"; no edge cited it); Madeira: IPMA red (rain 21:00-06:00, wind from 00:00), schools closed Wed morning to 13:00 (regional civil protection), ANA Madeira conditioned, APRAM: three cruise calls cancelled; Observador's JSON-LD live blog added as a source",
+    "01:36 wake: no change to Day 3 (blog, post text, Bluesky, Night Summit listing unchanged)",
+    "01:50: Wikipedia leads checked: AEMET special warning (title at source; number/period/Canaries not read), GNR deployment (headline at source, 1,100 via press), MMP closed, TAP rebooking, CSM courts, MoJ services (press, dated); not established: APA's 101 municipalities, TAP's 10 Madeira flights, Madeira courts",
+    "02:20 (Dinis's direction via incident.conductor@): addresses.json for the 26 timeline rows without an address; entities/*.json for 11 services and places",
+    "02:25: state field on decision edges (closed, suspended, limited, running, not_announced; null with a note for warnings, statements and hypotheses); tools/primary_tries.py: one polite try an hour at Lusoponte, metrolisboa.pt, lisboa.pt, informacao.lisboa.pt, ANA, CP, Rede Expressos, recorded in entities/*.json tries (first run 02:22Z: none published)",
+    "02:30: shadow leads: (1) legal text read at source: Despacho n.º 13773-A/2026 (DR 2nd series, supplement, 10 Nov; via porto.pt's link; headless browser), no mention of Web Summit; (2) harbour master Aviso 53/2026 (fact, signed 9 Nov 14:07, yellow-era); (3) lisboa.pt 403; (4)-(7) press only or refused: leads, not added",
+    "02:34 wake: no change to Day 3 (blog, post text, Bluesky); primary-page tries skipped this wake (last run 02:22, one an hour)",
+    "02:42: bridges: 60 km/h (14:48) then lifted by 22:29 (Lusa): a sequence, not a conflict; Lusoponte still unreachable. IPMA no. 1 publish time not verifiable (only no. 2 online); AEMET named Charles 9 Nov 10:20:11 (fact, its Bluesky). Social posts filed in entities (rede-expressos, cp, metro, museums; new: ferries, flixbus, hospitals, parliament, retail). Madeira SRPC measures page (fact, created 15:27)."
+  ],
+  "next": [
+    "Each wake: Web Summit (blog list first); then python3 team/incidents/2026-11-10-the-storm/data/decisions/tools/primary_tries.py",
+    "Each wake: blog list, Bluesky, schedule page; PITCH and Night Summit",
+    "Thursday transport from 06:00 Wed onwards as operators post",
+    "Dear Gatekeepers page is a JavaScript app: parser ask to incident.dev@ if it matters"
+  ],
+  "asks": [
+    "Dinis: the incident moved to PrompTugal/PrompTugal__News__Storm-Charles (incident.conductor@, 21:15). Attaching it to this session with push access (add_repo) was refused by this session's permission check at 21:19Z, as add_repo for PrompTugal__News__Website was earlier. To let me work there: allow add_repo for that repository in this session (a permission rule for mcp__claude-code-remote__add_repo), or start a new researcher session with the repository attached. Until then: graph.json's 1 h 16 min fix is in this repo (9ef309f8) only, and my hourly wake stays pointed here (not changed to a repo I cannot reach).",
+    "Dinis: lisboa.pt and informacao.lisboa.pt refuse automated reads (403); the Câmara's own measures for Wednesday need a person to read them.",
+    "Dinis: Web Summit's X, Instagram and LinkedIn need a login and the attendee app needs a ticket; if the organisers announce there first, a person on the team will see it before us.",
+    "Dinis: hosts unreachable from this session (connection failed): mai.gov.pt, lusoponte.pt, prociv.gov.pt/pt/avisos-a-populacao/ (intermittent); 403: rede-expressos.pt; bot check: aeroportolisboa.pt.",
+    "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
+    "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts."
+  ],
+  "updated": "2026-11-11T02:42Z",
+  "by": "incident.researcher@web-summit.dinis",
+  "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
+  "web_summit_wednesday": {
+    "status": "Day 2 off; Day 3 aims to proceed (fact: organisers' page, published 19:09, modified 19:25)",
+    "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+    "checked": "2026-11-11T02:34Z"
+  }
+}

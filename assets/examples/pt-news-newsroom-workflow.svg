@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1406 752" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1406" height="752" fill="#faf9f5"/>
+<text x="30" y="44" font-size="26" font-weight="700" fill="#141413">Medium: a voice brief to a newsroom workflow and its picture</text>
+<text x="30" y="74" font-size="15" fill="#5e5d59">Dinis and Indi speak at about 12:40; two conductors route it; a helper agent writes the 16-step newsroom workflow and its infographic, live at 15:00</text>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#5e5d59"/></marker></defs>
+<rect x="20" y="112" width="1366" height="84" rx="10" fill="#8a3b1f" fill-opacity="0.10"/>
+<text x="34" y="150" font-size="14" font-weight="700" fill="#8a3b1f">Dinis</text>
+<text x="34" y="170" font-size="12" fill="#5e5d59">a person</text>
+<rect x="20" y="204" width="1366" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="242" font-size="12" font-weight="700" fill="#1f5f8b">conductor@web-summit.indi</text>
+<text x="34" y="262" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="296" width="1366" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="334" font-size="12" font-weight="700" fill="#1f5f8b">conductor@web-summit.dinis</text>
+<text x="34" y="354" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="388" width="1366" height="84" rx="10" fill="#1f5f8b" fill-opacity="0.10"/>
+<text x="34" y="426" font-size="12" font-weight="700" fill="#1f5f8b">conductor-newsroom@web-summit.indi</text>
+<text x="34" y="446" font-size="12" fill="#5e5d59">an agent</text>
+<rect x="20" y="480" width="1366" height="84" rx="10" fill="#5e5d59" fill-opacity="0.10"/>
+<text x="34" y="518" font-size="14" font-weight="700" fill="#5e5d59">GitHub Actions</text>
+<text x="34" y="538" font-size="12" fill="#5e5d59">CI</text>
+<rect x="20" y="572" width="1366" height="84" rx="10" fill="#c96442" fill-opacity="0.10"/>
+<text x="34" y="610" font-size="14" font-weight="700" fill="#c96442">the output</text>
+<path d="M364,154.0 C375.0,154.0 375.0,246.0 386,246.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M364,154.0 C459.0,154.0 459.0,338.0 554,338.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M532,246.0 C627.0,246.0 627.0,430.0 722,430.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M868,430.0 C879.0,430.0 879.0,522.0 890,522.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M868,430.0 C963.0,430.0 963.0,430.0 1058,430.0" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)" stroke-dasharray="4 4"/>
+<path d="M1036,522.0 H1216 V614.0 H1226" fill="none" stroke="#5e5d59" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="218" y="120" width="146" height="68" rx="8" fill="#ffffff" stroke="#8a3b1f" stroke-width="1.6"/>
+<text x="228" y="142" font-size="12.5" fill="#141413">a voice brief:</text>
+<text x="228" y="159" font-size="12.5" fill="#141413">pt.news is</text>
+<text x="228" y="176" font-size="12.5" fill="#141413">about agents</text>
+<text x="291.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">12:40 (about)</text>
+<rect x="386" y="212" width="146" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="396" y="234" font-size="12.5" fill="#141413">starts a helper</text>
+<text x="396" y="251" font-size="12.5" fill="#141413">in its own</text>
+<text x="396" y="268" font-size="12.5" fill="#141413">session</text>
+<text x="459.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">12:40</text>
+<rect x="554" y="304" width="146" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="564" y="326" font-size="12.5" fill="#141413">WS-211 and the</text>
+<text x="564" y="343" font-size="12.5" fill="#141413">guidance for</text>
+<text x="564" y="360" font-size="12.5" fill="#141413">PrompTugal</text>
+<text x="627.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">12:41</text>
+<rect x="722" y="396" width="146" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6"/>
+<text x="732" y="418" font-size="12.5" fill="#141413">a 16-step workflow,</text>
+<text x="732" y="435" font-size="12.5" fill="#141413">its infographic,</text>
+<text x="732" y="452" font-size="12.5" fill="#141413">a map spec</text>
+<text x="795.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">14:51</text>
+<rect x="890" y="488" width="146" height="68" rx="8" fill="#ffffff" stroke="#5e5d59" stroke-width="1.6"/>
+<text x="900" y="510" font-size="12.5" fill="#141413">v0.2.1:</text>
+<text x="900" y="527" font-size="12.5" fill="#141413">infographic live</text>
+<text x="963.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">15:00</text>
+<rect x="1058" y="396" width="146" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="1068" y="418" font-size="12.5" fill="#141413">redesign brief</text>
+<text x="1068" y="435" font-size="12.5" fill="#141413">and mock-ups</text>
+<text x="1068" y="452" font-size="12.5" fill="#141413">(not yet pushed)</text>
+<text x="1131.0" y="686" font-size="12" fill="#5e5d59" text-anchor="middle">pending</text>
+<rect x="1226" y="580" width="146" height="68" rx="8" fill="#ffffff" stroke="#c96442" stroke-width="1.6"/>
+<text x="1236" y="602" font-size="12.5" fill="#141413">the newsroom</text>
+<text x="1236" y="619" font-size="12.5" fill="#141413">workflow, drawn</text>
+<text x="30" y="720" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from reporter@web-summit.dinis&#x27;s trace pt-news-newsroom-workflow (team/reporter/traces/).</text>
+<text x="30" y="738" font-size="12" fill="#5e5d59">Dashed: a side step, or a step with no public evidence. Times UTC, 10 November 2026. Columns are steps, not to scale.</text>
+</svg>

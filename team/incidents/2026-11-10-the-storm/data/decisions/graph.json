@@ -1,0 +1,1639 @@
+{
+ "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
+ "updated": "2026-11-11T02:42Z",
+ "updated_by": "incident.researcher@web-summit.dinis",
+ "labels": {
+  "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
+  "evidence": "reported by a secondary source (press, a person's account of a statement) or a primary page we could not read; true until a primary source says otherwise",
+  "hypothesis": "our reasoning; carries reasons (and against); never stated as fact"
+ },
+ "status_values": {
+  "happened": "announced",
+  "not_announced": "due but nothing announced at the time read",
+  "expected": "a hypothesis about a decision to come",
+  "unknown": "cannot tell: the source is unreadable or not yet read",
+  "superseded": "replaced by a later edge"
+ },
+ "first_priority": "websummit-thursday",
+ "nodes": [
+  {
+   "id": "ipma",
+   "name": "IPMA (Instituto Português do Mar e da Atmosfera)",
+   "kind": "authority",
+   "role": "Issues weather warnings by district and type (green to red) and special communiqués.",
+   "label": "fact",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "read": "2026-11-10T18:59Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "anepc",
+   "name": "ANEPC (Autoridade Nacional de Emergência e Proteção Civil)",
+   "kind": "authority",
+   "role": "Special alerts to the civil-protection system (responders) and warnings to the public (written avisos, SMS).",
+   "label": "fact",
+   "source": "https://prociv.gov.pt/pt/prevencao-e-preparacao/monitorizacao-alerta-e-aviso/alerta/",
+   "read": "2026-11-10T16:57Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)"
+  },
+  {
+   "id": "government",
+   "name": "Government of Portugal (Council of Ministers)",
+   "kind": "government",
+   "role": "Declares alert, contingency or calamity under the civil-protection framework law (Lei 27/2006) and sets exceptional measures.",
+   "label": "fact",
+   "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+   "read": "2026-11-10T18:59Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "mai",
+   "name": "Ministry of Internal Administration (MAI)",
+   "kind": "government",
+   "role": "Leads the alert declaration; named by Lisbon's mayor as deciding on Web Summit together with the organisers.",
+   "label": "evidence",
+   "source": "https://jornaleconomico.sapo.pt/noticias/web-summit-fechada-na-quarta-feira-anuncia-autarquia-de-lisboa/",
+   "read": "2026-11-10T18:45Z",
+   "read_by": "social.watch@PrompTugal.dinis (board/team/social.watch/signals/2026-11-11-the-storm.md)",
+   "blocked": "mai.gov.pt: connection reset (18:59Z)"
+  },
+  {
+   "id": "pm",
+   "name": "Prime Minister",
+   "kind": "government",
+   "role": "Spoke for the government on the recommendation to suspend Web Summit.",
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T18:58Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "camara-lisboa",
+   "name": "Câmara Municipal de Lisboa (mayor, municipal civil protection)",
+   "kind": "municipality",
+   "role": "Municipal civil-protection service and commission; decides on the municipal emergency plan, gardens, municipal services; announces city transport status.",
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T18:58Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "blocked": "lisboa.pt and informacao.lisboa.pt: 403 to automated reads (18:58Z, 18:59Z)"
+  },
+  {
+   "id": "schools",
+   "name": "Schools (Ministry of Education)",
+   "kind": "service",
+   "role": "Closed by measure (a) of the alert declaration, co-signed by the Minister of Education.",
+   "label": "fact",
+   "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+   "read": "2026-11-10T16:55Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)"
+  },
+  {
+   "id": "metro",
+   "name": "Metropolitano de Lisboa",
+   "kind": "transport",
+   "role": "Runs Lisbon's metro (serves the venue at Oriente).",
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T18:58Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "carris",
+   "name": "Carris",
+   "kind": "transport",
+   "role": "Lisbon buses and trams.",
+   "label": "fact",
+   "source": "https://www.carris.pt/",
+   "read": "2026-11-10T18:58Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "cp",
+   "name": "CP (Comboios de Portugal) and Infraestruturas de Portugal",
+   "kind": "transport",
+   "role": "Trains (Oriente station serves the venue).",
+   "label": "fact",
+   "source": "https://www.cp.pt/",
+   "read": "2026-11-10T18:58Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "blocked": "cp.pt is a JavaScript app: 3 KB shell, no notices in HTML"
+  },
+  {
+   "id": "lusoponte",
+   "name": "Lusoponte (25 de Abril and Vasco da Gama bridges)",
+   "kind": "transport",
+   "role": "Sets bridge traffic restrictions.",
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T18:58Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "blocked": "lusoponte.pt: no connection (18:59Z)"
+  },
+  {
+   "id": "tunnels",
+   "name": "Lisbon road tunnels (city)",
+   "kind": "transport",
+   "role": "Tunnels closed from midnight by the city.",
+   "label": "evidence",
+   "source": "https://tek.sapo.pt/noticias/ciencia/artigos/depressao-charles-web-summit-sob-duvida-pontes-do-tejo-com-limite-de-60-km-h-e-tuneis-de-lisboa-fechados/",
+   "read": "2026-11-10T18:45Z",
+   "read_by": "social.watch@PrompTugal.dinis (board/team/social.watch/signals/2026-11-11-the-storm.md)"
+  },
+  {
+   "id": "ferries",
+   "name": "Transtejo Soflusa (Tagus ferries)",
+   "kind": "transport",
+   "role": "River crossings.",
+   "label": "evidence",
+   "source": "https://www.ttsl.pt/",
+   "read": "2026-11-10T18:59Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "rede-expressos",
+   "name": "Rede Expressos (intercity coaches)",
+   "kind": "transport",
+   "role": "Intercity coach network.",
+   "label": "evidence",
+   "source": "https://www.cmjornal.pt/sociedade/detalhe/chuva-vento-forte-e-agitacao-maritima-mau-tempo-deixa-pais-em-alerta",
+   "read": "2026-11-10T19:00Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "blocked": "rede-expressos.pt: 403 (18:59Z)"
+  },
+  {
+   "id": "airport",
+   "name": "Lisbon airport (ANA, Humberto Delgado) and airlines",
+   "kind": "transport",
+   "role": "Flight operations; each airline decides its own cancellations.",
+   "label": "fact",
+   "source": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "read": "2026-11-10T18:59Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "blocked": "aeroportolisboa.pt returns a 212-byte page (bot check); lisbon-airport.com is not the official site"
+  },
+  {
+   "id": "amn",
+   "name": "Autoridade Marítima Nacional and the Port of Lisbon",
+   "kind": "authority",
+   "role": "Sea warnings; harbour masters close or restrict the bar.",
+   "label": "evidence",
+   "source": "https://www.amn.pt/Media/Paginas/DetalheNoticia.aspx?nid=7101",
+   "read": "2026-11-10T16:55Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)"
+  },
+  {
+   "id": "venue",
+   "name": "Venue operators: MEO Arena and FIL",
+   "kind": "venue",
+   "role": "Run the halls; their own safety decisions.",
+   "label": "fact",
+   "source": "https://www.fil.pt/",
+   "read": "2026-11-10T18:59Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "websummit",
+   "name": "Web Summit (the organisers)",
+   "kind": "organiser",
+   "role": "Decides whether Wednesday's programme runs, changes or is suspended.",
+   "label": "fact",
+   "source": "https://websummit.com/",
+   "read": "2026-11-10T18:58Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "side-events",
+   "name": "Side events on Wednesday (e.g. Dear Gatekeepers Live, MEO Arena studio; Night Summit)",
+   "kind": "organiser",
+   "role": "Each organiser decides its own event.",
+   "label": "evidence",
+   "source": "https://powerhouse.indvstryclvb.com/websummit",
+   "read": "2026-11-10T18:45Z",
+   "read_by": "social.watch@PrompTugal.dinis (board/team/social.watch/signals/2026-11-11-the-storm.md)"
+  },
+  {
+   "id": "fertagus",
+   "name": "Fertagus (trains across the 25 de Abril bridge)",
+   "kind": "transport",
+   "role": "Train service Setúbal–Lisbon.",
+   "label": "evidence",
+   "source": "https://raw.githubusercontent.com/PrompTugal/PrompTugal__News__Website/dev/desks/weather-vicky/decision-chain.md",
+   "read": "2026-11-10T16:59Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)"
+  },
+  {
+   "id": "carris-metropolitana",
+   "name": "Carris Metropolitana",
+   "kind": "transport",
+   "role": "Metropolitan-area buses.",
+   "label": "evidence",
+   "source": "https://raw.githubusercontent.com/PrompTugal/PrompTugal__News__Website/dev/desks/weather-vicky/decision-chain.md",
+   "read": "2026-11-10T16:59Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)"
+  },
+  {
+   "id": "flixbus",
+   "name": "FlixBus",
+   "kind": "transport",
+   "role": "Intercity coaches.",
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T19:32Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "pitch",
+   "name": "PITCH (Web Summit's startup competition)",
+   "kind": "organiser",
+   "role": "Web Summit decides when the semi-finals and final run.",
+   "label": "fact",
+   "source": "https://websummit.com/startups/pitch/",
+   "read": "2026-11-10T22:05Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "night-summit",
+   "name": "Night Summit (Web Summit's own evening events)",
+   "kind": "organiser",
+   "role": "Web Summit runs it; Wednesday 18:00-21:00 and Downtown 21:00-00:00 at Príncipe Real, per its essentials page.",
+   "label": "fact",
+   "source": "https://websummit.com/essentials/schedule/",
+   "read": "2026-11-10T22:05Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "madeira-gov",
+   "name": "Governo Regional da Madeira",
+   "kind": "government",
+   "role": "Regional executive; decides regional measures (schools, trails, services).",
+   "label": "evidence",
+   "source": "https://dnoticias.pt/2026/11/10/512441-charles-ja-soma-14-ocorrencias-na-madeira",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "region": "Madeira"
+  },
+  {
+   "id": "madeira-prociv",
+   "name": "Serviço Regional de Proteção Civil (Madeira)",
+   "kind": "authority",
+   "role": "Regional civil protection.",
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "region": "Madeira"
+  },
+  {
+   "id": "madeira-airport",
+   "name": "Madeira airport (ANA) and airlines",
+   "kind": "transport",
+   "role": "Flight operations at Funchal (and Porto Santo).",
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "region": "Madeira"
+  },
+  {
+   "id": "apram",
+   "name": "APRAM (Administração dos Portos da Madeira)",
+   "kind": "transport",
+   "role": "Madeira's ports; cruise calls.",
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "region": "Madeira"
+  },
+  {
+   "id": "aemet",
+   "name": "AEMET (Spain's meteorological agency)",
+   "kind": "authority",
+   "role": "Spain's warnings, incl. the Canary Islands.",
+   "label": "fact",
+   "source": "https://www.aemet.es/es/eltiempo/prediccion/avisos",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "gnr",
+   "name": "GNR (Guarda Nacional Republicana)",
+   "kind": "authority",
+   "role": "National gendarmerie: readiness and patrols outside the cities.",
+   "label": "fact",
+   "source": "https://www.gnr.pt/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "mmp",
+   "name": "Museus e Monumentos de Portugal (MMP)",
+   "kind": "service",
+   "role": "Runs the state museums and monuments.",
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "blocked": "museusemonumentos.pt is a 9 KB JavaScript shell"
+  },
+  {
+   "id": "tap",
+   "name": "TAP Air Portugal",
+   "kind": "transport",
+   "role": "Airline; its own cancellations and rebooking.",
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "blocked": "flytap.com flight-information path 404 to our read"
+  },
+  {
+   "id": "csm",
+   "name": "Conselho Superior da Magistratura (courts)",
+   "kind": "authority",
+   "role": "Judges' governing body; court closures.",
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "mj",
+   "name": "Ministry of Justice",
+   "kind": "government",
+   "role": "Registries, forensic medicine; recommends court closures (DGAJ).",
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "capitania-lisboa",
+   "name": "Capitania do Porto de Lisboa (harbour master, Autoridade Marítima Nacional)",
+   "kind": "authority",
+   "role": "Port of Lisbon and the Tagus: notices to the maritime community; bar closures.",
+   "label": "fact",
+   "source": "https://www.amn.pt/DGAM/Capitanias/Lisboa/Documentos_AMN/Aviso%20n%C2%BA%2053_2026_Agravamento%20condi%C3%A7%C3%B5es%20meteo%2009-11NOV_signed.pdf",
+   "read": "2026-11-11T02:30Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  }
+ ],
+ "edges": [
+  {
+   "id": "ipma-communique-1",
+   "by": "ipma",
+   "to": [
+    "anepc",
+    "government"
+   ],
+   "decision": "Names the low CHARLES (communiqué no. 1); orange warnings to follow, upgrade not ruled out",
+   "at": "2026-11-09T13:17Z",
+   "status": "happened",
+   "follows": [],
+   "label": "fact",
+   "source": "https://www.ipma.pt/pt/otempo/comunicados/",
+   "read": "2026-11-10T16:53Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
+   "note": " 02:42Z: not verifiable at source: IPMA's communiqués page and RSS now carry only no. 2 (valid from 17:07 on 10 Nov), so no. 1's own publish time cannot be read; 13:17 is weather@'s reading of the page on 10 Nov. AEMET posted \"Nombrada la borrasca Charles\" on Bluesky at 2026-11-09T10:20:11Z (aemet-names-charles). IPMA's communiqué no. 2 says \"CHARLES é o nome atribuído pelo Instituto Português do Mar e da Atmosfera\". Whether IPMA's naming was public before 13:17 is not established."
+  },
+  {
+   "id": "anepc-aviso-21",
+   "by": "anepc",
+   "to": [],
+   "decision": "Public warning Aviso 21: gusts to 120 km/h, avoid unnecessary travel",
+   "at": "2026-11-09T20:30Z",
+   "status": "happened",
+   "follows": [
+    "ipma-communique-1"
+   ],
+   "label": "fact",
+   "source": "https://prociv.gov.pt/pt/avisos-a-populacao/",
+   "read": "2026-11-10T16:57Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "anepc-readiness",
+   "by": "anepc",
+   "to": [
+    "camara-lisboa"
+   ],
+   "decision": "Raises special readiness of the civil-protection system; SMS to the population about Wednesday",
+   "at": "2026-11-10",
+   "status": "happened",
+   "follows": [
+    "ipma-communique-1"
+   ],
+   "label": "fact",
+   "source": "https://prociv.gov.pt/pt/noticias/depressao-charles-anepc-avisa-populacao-por-sms/",
+   "read": "2026-11-10T16:57Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)",
+   "note": "Colour of the readiness level not stated on the pages read.",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "gov-alert",
+   "by": "government",
+   "to": [
+    "schools",
+    "camara-lisboa",
+    "websummit",
+    "side-events",
+    "venue"
+   ],
+   "decision": "Alert situation for all of mainland Portugal, 11 Nov 00:00 to 23:59: (a) schools and non-essential public services close; (b) outdoor events suspended, whatever their nature; (c) no access to high-risk parks; (d) temporary structures secured; (e) no access to shoreline and flood areas; activates coordination centres and civil-protection commissions",
+   "at": "2026-11-10T09:17Z",
+   "status": "happened",
+   "follows": [
+    "ipma-communique-1",
+    "anepc-readiness"
+   ],
+   "label": "fact",
+   "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+   "read": "2026-11-11T01:00Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Announced at about 09:17 (minister, ANEPC press conference); the declaration published at 12:10 on portugal.gov.pt. Before 01:00Z on 11 Nov this edge carried only 12:10 (the page time), which put the announcement 3 h late (question raised by incident.conductor@ from incident.media@'s live entries). In force from 00:00 (Lusa, 00:09). Legal text: Despacho n.º 13773-A/2026 (Diário da República, 2nd series, supplement, 10 Nov), read at source 02:28Z. It names no event: Web Summit is not mentioned; outdoor events are suspended by 2(b).",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": "2026-11-11T23:59Z",
+   "effect_note": "\"entre as 00h00 e as 23h59 de 11 de novembro\" (the declaration)",
+   "announced_utc": {
+    "at": "2026-11-10T09:17Z",
+    "label": "evidence",
+    "by": "the Minister of Internal Administration, Luís Neves, at ANEPC's press conference (announced for 08:30)",
+    "words": "\"o Governo decidiu declarar situação de alerta\"; \"Escolas e serviços públicos não essenciais serão encerrados\"",
+    "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+    "source_time": "Observador live entry, JSON-LD liveBlogUpdate.datePublished 2026-11-10T09:17:23Z",
+    "corroborated_by": [
+     {
+      "url": "https://www.dn.pt/sociedade/governo-decreta-situao-de-alerta-montenegro-avisa-que-devemos-passar-horas-difceis-amanh",
+      "at": "2026-11-10T09:14:29Z",
+      "title": "Escolas e serviços públicos não essenciais serão encerrados amanhã. \"Vai ser grave\", avisa ministro"
+     },
+     {
+      "url": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+      "at": "2026-11-10T09:35Z",
+      "title": "Escolas e serviços públicos encerrados amanhã devido ao mau tempo, anuncia MAI"
+     }
+    ],
+    "via": "https://storm-charles.promptugal.news/research/media/live-entries.json",
+    "read": "2026-11-11T01:00Z",
+    "note": "The minute is the earliest press entry (DN 09:14:29); the conference began about 08:30 (Observador 08:13 trailer) and IPMA was speaking by 09:08. The exact minute he spoke is not established. About 1 h 59 min after IPMA sent the red wind warning (07:18:40, CAP)."
+   },
+   "published_utc": {
+    "at": "2026-11-10T12:10Z",
+    "label": "fact",
+    "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+    "source_time": "the page prints \"2026-11-10 às 12h10\"; no other time on it",
+    "read": "2026-11-11T01:00Z",
+    "note": "The formal declaration with its measures (a) to (e). Observador carried \"Governo declara situação de alerta\" with the measures at 10:57:31, before the page time; whether the text was out earlier elsewhere (e.g. a press release) is not established."
+   },
+   "state": "limited",
+   "state_note": "the alert itself limits (measures a to e); schools: see schools-close",
+   "legal_text": {
+    "title": "Despacho n.º 13773-A/2026, de 10 de novembro",
+    "publication": "Diário da República n.º 218/2026, Suplemento, Série II de 2026-11-10",
+    "issuers": "Presidência do Conselho de Ministros and nine ministries (Defesa Nacional, Infraestruturas e Habitação, Administração Interna, Educação, Saúde, Trabalho, Ambiente e Energia, Cultura, Agricultura e Mar)",
+    "legal_basis": "Lei de Bases da Proteção Civil (Lei n.º 27/2006), art. 8(6), 9(1) and 14",
+    "period": "\"entre as 00h00 do dia 11 de novembro de 2026 e as 23h59 do dia 11 de novembro de 2026\"",
+    "measures": "2(a) schools (public, private, social, incl. crèches) and non-essential public services closed; 2(b) \"Suspensão dos eventos ao ar livre, independentemente da sua natureza\"; 2(c) parks and woods at risk closed; 2(d) temporary structures secured; 2(e) shoreline and flood areas closed; 3 readiness (fire brigades, GNR, PSP, health, foresters, telecoms and energy, volunteer firefighters' absences)",
+    "mentions_web_summit": false,
+    "address": "https://diariodarepublica.pt/dr/detalhe/despacho/13773-a-2026-1193823993",
+    "found_via": "porto.pt notice linking it (https://www.porto.pt/pt/noticia/equipamentos-encerrados-e-servicos-essenciais-assegurados-a-chegada-da-depressao-charles); the address was a lead from incident.shadow@'s leads.json",
+    "read": "2026-11-11T02:30Z",
+    "read_how": "a headless browser (the site is a JavaScript app; plain requests get a 2 KB shell)",
+    "label": "fact"
+   }
+  },
+  {
+   "id": "schools-close",
+   "by": "schools",
+   "to": [],
+   "decision": "Schools closed on Wednesday",
+   "at": "2026-11-10T12:10Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "fact",
+   "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+   "read": "2026-11-10T16:55Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": "2026-11-11T23:59Z",
+   "effect_note": "measure (a) of the alert declaration, whose period is 00:00 to 23:59 on 11 Nov",
+   "state": "closed",
+   "state_note": null
+  },
+  {
+   "id": "ipma-red-wind",
+   "by": "ipma",
+   "to": [
+    "government",
+    "websummit"
+   ],
+   "decision": "Red wind warning, Lisbon district, 11 Nov 12:00 to 21:00 (gusts to 120, up to 140 km/h)",
+   "at": "2026-11-10T07:18Z",
+   "status": "happened",
+   "follows": [
+    "ipma-communique-1"
+   ],
+   "label": "fact",
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read": "2026-11-11T01:05Z",
+   "read_by": "incident.meteorologist@web-summit.dinis (CAP via MeteoAlarm), checked by us",
+   "note": "IPMA's CAP message 2.49.0.0.620.0.PT.261110071840.PO-01-1915, sent_utc 2026-11-10T07:18:40Z, severity Extreme, onset 11 Nov 12:00, expires 21:00; replaces the wind message sent 2026-11-09T13:27:16Z. Via team/incidents/2026-11-10-the-storm/data/weather/cap.json (incident.meteorologist@, read 2026-11-11T00:23:21Z). First press report: DN live 08:05:24 (Observador 08:34:33). Earlier this edge carried 14:23 (the newsroom's first read) and then 08:05 (the first press report).",
+   "effect_from_utc": "2026-11-11T12:00Z",
+   "effect_to_utc": "2026-11-11T21:00Z",
+   "effect_note": "IPMA warnings JSON startTime/endTime",
+   "corroborated_by": [
+    "https://www.dn.pt/sociedade/governo-decreta-situao-de-alerta-montenegro-avisa-que-devemos-passar-horas-difceis-amanh",
+    "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/"
+   ],
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "ipma-red-rain",
+   "by": "ipma",
+   "to": [],
+   "decision": "Rain raised to red, Lisbon district, 11 Nov 12:00 to 18:00 (orange 05:00 to 12:00); sea orange 12:00 to 21:00",
+   "at": "2026-11-10T16:30Z",
+   "status": "superseded",
+   "follows": [
+    "ipma-red-wind"
+   ],
+   "label": "fact",
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read": "2026-11-11T01:05Z",
+   "read_by": "incident.meteorologist@web-summit.dinis (CAP via MeteoAlarm), checked by us",
+   "note": "Red rain first sent at 2026-11-10T16:30:01Z (CAP 2.49.0.0.620.0.PT.261110163001.PO-10-6273), 12:00 to 18:00; superseded by ipma-red-rain-0900. Via team/incidents/2026-11-10-the-storm/data/weather/cap.json (incident.meteorologist@, read 2026-11-11T00:23:21Z). Earlier this edge carried 17:42 (weather@'s first read).",
+   "effect_from_utc": "2026-11-11T12:00Z",
+   "effect_to_utc": "2026-11-11T18:00Z",
+   "effect_note": "IPMA warnings JSON as read 18:59Z; superseded by ipma-red-rain-0900",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "ipma-communique-2",
+   "by": "ipma",
+   "to": [],
+   "decision": "Communiqué no. 2: rain, wind and sea agitation, Depressão CHARLES, mainland and Madeira",
+   "at": "2026-11-10T17:07Z",
+   "status": "happened",
+   "follows": [
+    "ipma-red-wind"
+   ],
+   "label": "fact",
+   "source": "https://www.ipma.pt/resources.www/rss/comunicados.xml",
+   "read": "2026-11-10T18:59Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "websummit-assessing",
+   "by": "websummit",
+   "to": [
+    "anepc"
+   ],
+   "decision": "Organisers: aware of the warnings, assessing with ANEPC and PSP, update to follow; no sign yet of cancelling Wednesday",
+   "at": "2026-11-10T12:45Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T18:58Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Press report of an organiser statement; not found on websummit.com.",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "mayor-expects-closure",
+   "by": "camara-lisboa",
+   "to": [
+    "websummit",
+    "mai"
+   ],
+   "decision": "Mayor: \"Tudo indica que a Web Summit não poderá funcionar amanhã\"; the decision is the Interior Ministry's and the organisers'",
+   "at": "2026-11-10T13:19Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://jornaleconomico.sapo.pt/noticias/web-summit-fechada-na-quarta-feira-anuncia-autarquia-de-lisboa/",
+   "read": "2026-11-10T18:45Z",
+   "read_by": "social.watch@PrompTugal.dinis (board/team/social.watch/signals/2026-11-11-the-storm.md)",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "tunnels-close",
+   "by": "camara-lisboa",
+   "to": [],
+   "decision": "All Lisbon road tunnels closed from midnight; parks, gardens and cultural facilities too (the mayor, after meeting civil protection)",
+   "at": "2026-11-10T13:16Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T23:55Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "\"at\" is the article time.",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": null,
+   "effect_note": "\"a partir da meia-noite\" (the mayor, Jornal de Negócios 13:16); end not stated. The same entry adds parks, gardens and cultural facilities closed from midnight.",
+   "state": "closed",
+   "state_note": null
+  },
+  {
+   "id": "bridges-60",
+   "by": "lusoponte",
+   "to": [],
+   "decision": "25 de Abril and Vasco da Gama bridges limited to 60 km/h",
+   "at": "2026-11-10T14:48Z",
+   "status": "happened",
+   "follows": [
+    "ipma-red-wind"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T18:58Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": "2026-11-10T22:29Z",
+   "effect_note": "in force from the announcement (14:48 Tuesday); lifted by 22:29 per Lusa (bridges-lifted)",
+   "state": "limited",
+   "state_note": null,
+   "note": " Not a conflict but a sequence: Lusa at 22:29 reports the restrictions lifted (bridges-lifted)."
+  },
+  {
+   "id": "metro-runs",
+   "by": "metro",
+   "to": [],
+   "decision": "Metro to run on Wednesday (announced by the mayor)",
+   "at": "2026-11-10",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T18:58Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Said by the mayor, not read on metrolisboa.pt (no notice found in its HTML at 18:58Z).",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": "running",
+   "state_note": "the mayor's word (press); not on metrolisboa.pt"
+  },
+  {
+   "id": "carris-runs-watched",
+   "by": "carris",
+   "to": [],
+   "decision": "Carris to run, buses followed \"minute by minute\" from the operations centre (mayor); carris.pt banner \"Alerta: perturbações na circulação\"",
+   "at": "2026-11-10",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "fact",
+   "source": "https://www.carris.pt/",
+   "read": "2026-11-10T18:58Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; Jornal Económico: \"ao longo do dia\"",
+   "state": "running",
+   "state_note": null
+  },
+  {
+   "id": "rede-expressos-suspends",
+   "by": "rede-expressos",
+   "to": [],
+   "decision": "All national coach services suspended Wednesday 10:00 to 23:59",
+   "at": "2026-11-10",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T23:55Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Jornal de Negócios live 12:39 (company statement) and Jornal Económico 17:47; earlier text \"to midnight\" came from a search summary and was wrong.",
+   "effect_from_utc": "2026-11-11T10:00Z",
+   "effect_to_utc": "2026-11-11T23:59Z",
+   "effect_note": "\"entre as 10h00 e as 23h59\" (Jornal de Negócios 12:39; Jornal Económico 17:47)",
+   "state": "suspended",
+   "state_note": null
+  },
+  {
+   "id": "gov-recommends-suspend",
+   "by": "pm",
+   "to": [
+    "websummit"
+   ],
+   "decision": "Government recommends suspending Web Summit on Wednesday; the decision rests with the organisers (\"Já emitimos a nossa recomendação de que os trabalhos desse evento possam suspender-se\")",
+   "at": "2026-11-10T17:53Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert",
+    "ipma-red-rain",
+    "mayor-expects-closure"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T18:58Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "websummit-wednesday",
+   "by": "websummit",
+   "to": [
+    "side-events",
+    "venue"
+   ],
+   "decision": "Day 2 (Wednesday 11 Nov) will not take place: \"Web Summit will of course respect the Government's direction, and accordingly, Day 2 (Wednesday, November 11th) will not take place.\" Reasons given: tidal flooding, severe disruption to public transport, high winds on external structures; after discussions with the government, ANEPC and PSP.",
+   "at": "2026-11-10T19:09Z",
+   "status": "happened",
+   "follows": [
+    "gov-recommends-suspend",
+    "gov-alert",
+    "ipma-red-wind",
+    "websummit-assessing"
+   ],
+   "label": "fact",
+   "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+   "read": "2026-11-10T20:59Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Web Summit's own page \"Important event update\": datePublished 2026-11-10T19:09:00, dateModified 19:25:44 (the page's JSON-LD; Lisbon = UTC). Found first by incident.conductor@ (read 20:58Z); re-read at source by us at 20:59Z. The organisers' email followed at 19:38Z and the press at 19:42Z. We missed the page from 19:09 to 20:58: it is in the blog list (/blog/), not in sitemap.xml, and we watched only the sitemap, the home page and /news/. Lead time: 1 h 16 min after the government's recommendation (17:53), 16 h 51 min before the red warnings start (12:00 Wed). 21:33Z: the blog listing gives Post.modified 20:06:54 (19:58 when incident.dev@ read it); the page's JSON-LD is still 19:25:44 and post.content is unchanged since our 20:59Z read (sha256 e055635213ca, 1060 characters): listing metadata moved, the text did not. \"Formally advised\": no legal text found for it. The despacho does not name Web Summit; the advice is in the organisers' own words (19:09 page) and the Prime Minister's recommendation (17:53, press).",
+   "corroborated_by": [
+    "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+    "https://cnnportugal.iol.pt/tempestade-charles/web-summit/tempestade-charles-obriga-ao-cancelamento-da-web-summit-na-quarta-feira/20261110/6af3796cd34e9ce6f1b43dff",
+    "https://eco.sapo.pt/2026/11/10/web-summit-vai-encerrar-esta-quarta-feira-devido-ao-mau-tempo/",
+    "https://www.tsf.pt/sociedade/artigo/web-summit-suspende-programacao-na-quarta-feira/18146829",
+    "https://jornaleconomico.sapo.pt/noticias/oficial-web-summit-cancelada-para-quarta-feira/"
+   ],
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day: \"Day 2 (Wednesday, November 11th)\"",
+   "state": "closed",
+   "state_note": null
+  },
+  {
+   "id": "websummit-suspends-h",
+   "by": "websummit",
+   "to": [],
+   "decision": "HYPOTHESIS: the organisers suspend or shorten Wednesday",
+   "at": "",
+   "status": "superseded",
+   "follows": [
+    "gov-recommends-suspend"
+   ],
+   "label": "hypothesis",
+   "source": "",
+   "read": "2026-11-10T19:00Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "reasons": [
+    "The government recommended it (17:53Z) and the mayor expected it (13:19Z).",
+    "Outdoor events are suspended by the alert; red wind from 12:00 overlaps the whole programme day.",
+    "Tuesday: water in a pavilion (17:07Z) and a thin audience (15:19Z)."
+   ],
+   "against": [
+    "The halls are indoors; measure (b) names outdoor events only.",
+    "The organisers said only \"assessing\" (12:45Z)."
+   ],
+   "note": "Confirmed by websummit-wednesday (19:38Z).",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "no decision with an effect window",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "side-events-follow-h",
+   "by": "side-events",
+   "to": [],
+   "decision": "HYPOTHESIS: side events at the venue follow the organisers' decision; outdoor ones are suspended by measure (b)",
+   "at": "",
+   "status": "expected",
+   "follows": [
+    "websummit-wednesday",
+    "gov-alert"
+   ],
+   "label": "hypothesis",
+   "source": "",
+   "read": "2026-11-10T19:00Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "reasons": [
+    "Measure (b) covers outdoor events whatever their nature."
+   ],
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "no decision with an effect window",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "camara-plan",
+   "by": "camara-lisboa",
+   "to": [],
+   "decision": "Municipal emergency plan activation and the city's own measures (\"Situação de Alerta: medidas excecionais em Lisboa\")",
+   "at": "",
+   "status": "unknown",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://informacao.lisboa.pt/",
+   "read": "2026-11-10T18:59Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Page title seen in search by weather@; site refuses automated reads (403). A person must read it. 02:28Z: https://www.lisboa.pt/cidade-informa/como-circulo/alteracoes-a-circulacao (a lead from leads.json) also refuses us (403).",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "no decision with an effect window",
+   "state": "not_announced",
+   "state_note": null
+  },
+  {
+   "id": "airport-ops",
+   "by": "airport",
+   "to": [],
+   "decision": "Flight operations on Wednesday",
+   "at": "",
+   "status": "superseded",
+   "follows": [
+    "ipma-red-wind"
+   ],
+   "label": "fact",
+   "source": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "read": "2026-11-10T18:59Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "No readable notice: the official site returns a bot check. Superseded by ana-conditioned (press, 18:04Z).",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": "not_announced",
+   "state_note": null
+  },
+  {
+   "id": "cp-ops",
+   "by": "cp",
+   "to": [],
+   "decision": "CP admits constraints on rail services on Wednesday",
+   "at": "",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T21:33Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Press summary (Jornal de Negócios live, 19:45 and 21:31 entries); not on cp.pt, a JavaScript app.",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; Jornal Económico: disruption expected on 10 and 11 Nov",
+   "state": "limited",
+   "state_note": "\"constrangimentos\""
+  },
+  {
+   "id": "operators-possible-disruption",
+   "by": "fertagus",
+   "to": [],
+   "decision": "Possible disruption on Wednesday announced by Fertagus, Carris and Carris Metropolitana; no suspension announced (as of 16:59Z)",
+   "at": "2026-11-10",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://raw.githubusercontent.com/PrompTugal/PrompTugal__News__Website/dev/desks/weather-vicky/decision-chain.md",
+   "read": "2026-11-10T16:59Z",
+   "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)",
+   "also_by": [
+    "carris",
+    "carris-metropolitana"
+   ],
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": "limited",
+   "state_note": "possible disruption announced; no suspension"
+  },
+  {
+   "id": "ana-conditioned",
+   "by": "airport",
+   "to": [],
+   "decision": "ANA: operations at Lisbon, Faro and Madeira airports conditioned on 11 Nov; cancellations expected",
+   "at": "2026-11-10T18:04Z",
+   "status": "happened",
+   "follows": [
+    "ipma-red-wind"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T19:32Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Press report of an ANA statement; the official airport site is behind a bot check.",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, 11 November",
+   "state": "limited",
+   "state_note": null
+  },
+  {
+   "id": "flixbus-suspends",
+   "by": "flixbus",
+   "to": [],
+   "decision": "FlixBus suspends all national links in Portugal on Wednesday 11 Nov",
+   "at": "2026-11-10T18:25Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T19:32Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "\"at\" is the live-blog entry time.",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated: \"começa de madrugada e prolonga-se até ao final do dia\"",
+   "state": "suspended",
+   "state_note": null
+  },
+  {
+   "id": "websummit-thursday",
+   "by": "websummit",
+   "to": [
+    "venue",
+    "side-events"
+   ],
+   "decision": "Day 3 (Thursday 12 Nov): \"Web Summit aims to proceed with Day 3 (Thursday, November 12) as planned, following the passing of Storm Charles. [...] provide further updates as soon as confirmed information becomes available.\"",
+   "at": "2026-11-10T19:09Z",
+   "status": "happened",
+   "follows": [
+    "websummit-wednesday"
+   ],
+   "label": "fact",
+   "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+   "read": "2026-11-11T02:34Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed.",
+   "corroborated_by": [
+    "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
+   ],
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day: \"Day 3 (Thursday, November 12)\"",
+   "state": "running",
+   "state_note": "\"aims to proceed as planned\""
+  },
+  {
+   "id": "websummit-n6",
+   "by": "websummit",
+   "to": [
+    "side-events"
+   ],
+   "decision": "What happens to Wednesday's talks and speakers, the PITCH semi-final, side events and tickets",
+   "at": "",
+   "status": "not_announced",
+   "follows": [
+    "websummit-wednesday"
+   ],
+   "label": "fact",
+   "source": "https://websummit.com/startups/pitch/",
+   "read": "2026-11-11T02:34Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31).",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "no decision with an effect window",
+   "state": "not_announced",
+   "state_note": null
+  },
+  {
+   "id": "side-events-wednesday",
+   "by": "side-events",
+   "to": [],
+   "decision": "Dear Gatekeepers Live (Wed 10:00, MEO Arena studio): no notice on its page",
+   "at": "",
+   "status": "not_announced",
+   "follows": [
+    "websummit-wednesday"
+   ],
+   "label": "fact",
+   "source": "https://powerhouse.indvstryclvb.com/websummit",
+   "read": "2026-11-10T20:04Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "The page returns almost no text to our tools (47 characters): a JavaScript app.",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "no decision with an effect window",
+   "state": "not_announced",
+   "state_note": null
+  },
+  {
+   "id": "websummit-thursday-change-h",
+   "by": "websummit",
+   "to": [],
+   "decision": "HYPOTHESIS: Thursday holds unless storm damage at the venue or transport recovery says otherwise",
+   "at": "",
+   "status": "expected",
+   "follows": [
+    "websummit-thursday"
+   ],
+   "label": "hypothesis",
+   "source": "",
+   "read": "2026-11-10T20:04Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "reasons": [
+    "IPMA (read 19:22 by the meteorologist): no wind or rain warning for Lisbon on Thursday; the red window ends 21:00 Wednesday.",
+    "The organisers said \"pretende\" and will keep monitoring."
+   ],
+   "against": [
+    "Tuesday's roof leak at FIL (17:07) after one rainy day; Wednesday is red for rain and wind.",
+    "Trains and flights may take time to recover on Thursday morning."
+   ],
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "no decision with an effect window",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "pitch-semifinal",
+   "by": "pitch",
+   "to": [],
+   "decision": "Where and when the PITCH semi-final runs after Wednesday's closure",
+   "at": "",
+   "status": "not_announced",
+   "follows": [
+    "websummit-wednesday"
+   ],
+   "label": "fact",
+   "source": "https://websummit.com/startups/pitch/",
+   "read": "2026-11-11T02:34Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Nothing on /startups/pitch/ (no schedule there at all), /startups/, /schedule/, the blog list or Bluesky at 22:05Z. Conflict on the original slot: incident.conductor@ has it on Wednesday 17:00 (source not given to us); Tech Times' preview (9 Nov) puts the semi-finals and final on Thursday 12 Nov. If Thursday, the closure may not move it. Where a move would appear: the blog list first (as on 10 Nov), then the schedule page and the app. 22:09Z: /schedule/ embeds only 7 featured sessions, all on 10 Nov, none PITCH: it cannot settle the slot. The full agenda (the app, or the API the schedule page calls) is not readable without a login or is under /api/, which robots.txt disallows. Conflict stays open until a Web Summit page settles it.",
+   "conflict": [
+    {
+     "claim": "semi-final Wednesday 17:00",
+     "by": "social.watch@PrompTugal.dinis (21:53 summary, no source given; relayed by incident.conductor@)",
+     "label": "evidence (unsourced)"
+    },
+    {
+     "claim": "semi-finals and final on Thursday",
+     "source": "https://www.techtimes.com/articles/330276/20261109/web-summit-2026-opens-tonight-manus-ai-blocked-meta-beijing-takes-lisbon-stage.htm",
+     "label": "evidence"
+    }
+   ],
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "no decision with an effect window",
+   "state": "not_announced",
+   "state_note": null
+  },
+  {
+   "id": "night-summit-wednesday",
+   "by": "night-summit",
+   "to": [],
+   "decision": "Night Summit on Wednesday (18:00-21:00; Downtown 21:00-00:00, Príncipe Real)",
+   "at": "",
+   "status": "not_announced",
+   "follows": [
+    "websummit-wednesday",
+    "gov-alert"
+   ],
+   "label": "fact",
+   "source": "https://websummit.com/essentials/schedule/",
+   "read": "2026-11-11T01:36Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Still listed for Wednesday on the essentials page at 22:05Z, with no notice. The organisers' 19:09 page says only that Day 2 will not take place. Wind is red until 21:00 Wednesday.",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "no decision with an effect window",
+   "state": "not_announced",
+   "state_note": null
+  },
+  {
+   "id": "ttsl-wednesday",
+   "by": "ferries",
+   "to": [],
+   "decision": "Ferries start at 05:00 as usual on Wednesday; reassessed from 12:00 (the latter from a search summary)",
+   "at": "2026-11-10",
+   "status": "happened",
+   "follows": [
+    "ipma-red-wind"
+   ],
+   "label": "evidence",
+   "source": "https://jornaleconomico.sapo.pt/noticias/cp-e-carris-circulam-mas-alertam-para-perturbacoes-e-rede-de-expressos-para/",
+   "read": "2026-11-10T23:55Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "From a search summary of press reports; the article itself not yet opened.",
+   "effect_from_utc": "2026-11-11T05:00Z",
+   "effect_to_utc": null,
+   "effect_note": "Jornal Económico: \"a operação terá início às 05h00, como habitual\"; the reassessment from 12:00 is from a search summary of TSF (not opened); end not stated",
+   "state": "running",
+   "state_note": "from 05:00 as usual; reassessed from 12:00 (search summary)"
+  },
+  {
+   "id": "metro-shelter",
+   "by": "metro",
+   "to": [],
+   "decision": "Contingency plan for homeless people: Amadora Este, Santa Apolónia, Marquês de Pombal, Moscavide and Interface das Olaias stations open on the nights of 10-11 and 11-12 November",
+   "at": "2026-11-10",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "fact",
+   "source": "https://www.metrolisboa.pt/",
+   "read": "2026-11-10T23:33Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Read on Metro's own home page banner at 23:33Z (was evidence from a search summary at 22:05Z).",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated: \"durante as noites de 10 para 11 e de 11 para 12 de novembro\"",
+   "state": "running",
+   "state_note": "stations open overnight for homeless people"
+  },
+  {
+   "id": "transport-thursday",
+   "by": "metro",
+   "to": [],
+   "decision": "Thursday 12 Nov transport after the storm (Metro, Carris, CP, ferries, bridges)",
+   "at": "",
+   "status": "not_announced",
+   "follows": [
+    "ipma-red-wind"
+   ],
+   "label": "fact",
+   "source": "https://www.metrolisboa.pt/",
+   "read": "2026-11-11T00:33Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "also_by": [
+    "carris",
+    "cp",
+    "ferries",
+    "lusoponte"
+   ],
+   "note": "No operator notice for Thursday found at 22:05Z: metrolisboa.pt and carris.pt (no Thursday notice in HTML), cp.pt (JavaScript app), ttsl.pt, lusoponte.pt (unreachable); a web search found only Wednesday notices. Indirect: tax offices and customs reopen Thursday (Jornal de Negócios, via search).",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "no decision with an effect window",
+   "state": "not_announced",
+   "state_note": null
+  },
+  {
+   "id": "cp-fertagus-bridge",
+   "by": "cp",
+   "to": [],
+   "decision": "CP suppresses four trains crossing the 25 de Abril bridge in the most critical window (12:00 to 15:00 forecast: heavy rain, strong wind)",
+   "at": "2026-11-10T23:10Z",
+   "status": "happened",
+   "follows": [
+    "ipma-red-wind",
+    "ipma-red-rain"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-10T23:33Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "note": "Lusa, quoting a CP statement; Jornal de Negócios live entry 23:10. Not read on cp.pt (JavaScript app).",
+   "effect_from_utc": "2026-11-11T12:00Z",
+   "effect_to_utc": "2026-11-11T15:00Z",
+   "effect_note": "CP: trains in \"o intervalo horário identificado como mais crítico\", forecast \"entre as 12:00 e as 15:00\"; the article also says \"entre o período da manhã e início da tarde\"",
+   "state": "suspended",
+   "state_note": "four trains suppressed 12:00-15:00; the rest of the line not stated"
+  },
+  {
+   "id": "ipma-red-rain-0900",
+   "by": "ipma",
+   "to": [
+    "government",
+    "websummit"
+   ],
+   "decision": "Red rain warning for the Lisbon district brought forward to 11 Nov 09:00 to 18:00 (orange 00:00 to 09:00; yellow from 21:24 Tuesday)",
+   "at": "2026-11-10T21:23Z",
+   "status": "happened",
+   "follows": [
+    "ipma-red-rain"
+   ],
+   "label": "fact",
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read": "2026-11-11T01:05Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T09:00Z",
+   "effect_to_utc": "2026-11-11T18:00Z",
+   "effect_note": "IPMA warnings JSON startTime/endTime",
+   "note": "CAP 2.49.0.0.620.0.PT.261110212300.PO-10-6290, sent_utc 2026-11-10T21:23:00Z, severity Extreme, onset 11 Nov 09:00, expires 18:00; replaces 2.49.0.0.620.0.PT.261110163001.PO-10-6273 (sent 16:30:01). The orange before it (PO-10-6288) runs 00:00-09:00. Via team/incidents/2026-11-10-the-storm/data/weather/cap.json (incident.meteorologist@, read 2026-11-11T00:23:21Z); IPMA warnings JSON read by us 23:54Z agrees.",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "mai-websummit-indoor",
+   "by": "mai",
+   "to": [
+    "websummit"
+   ],
+   "decision": "The Interior Minister: \"a Web Summit é um local fechado\"; if the organisers decide to keep the event, they may",
+   "at": "2026-11-10T09:30Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:00Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "note": "Observador live entry 09:30:25 (JSON-LD), questioned by journalists at the press conference. 8 h 23 min later the government recommended suspending Wednesday (17:53).",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "ipma-madeira-red",
+   "by": "ipma",
+   "to": [],
+   "decision": "Red warnings for Madeira's south coast and mountains: rain from 21:00 Tuesday to 06:00 Wednesday; wind gusts to 140 km/h from 00:00",
+   "at": "2026-11-10T07:24Z",
+   "status": "happened",
+   "follows": [],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-10T21:00Z",
+   "effect_to_utc": "2026-11-11T06:00Z",
+   "effect_note": "rain 21:00 Tue to 06:00 Wed (Lusa); wind \"a partir das 00:00\", end not stated in that text",
+   "note": "Lusa via Jornal de Negócios live 00:09 (hours); DNOTICIAS listing headline 10 Nov 07:24, \"IPMA coloca costa Sul e zonas montanhosas da Madeira sob aviso vermelho\". IPMA's send time not read by us (the meteorologist's CAP file covers Lisbon).",
+   "region": "Madeira",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "madeira-schools",
+   "by": "madeira-prociv",
+   "to": [],
+   "decision": "Madeira schools closed on Wednesday morning, reopening from 13:00",
+   "at": "2026-11-10T11:26Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": "2026-11-11T13:00Z",
+   "effect_note": "hours not stated for the start (\"durante a manhã\"); end \"a partir das 13h de dia 11 de novembro\"",
+   "note": "Announced at a regional press conference by the president of the regional civil protection service (Observador 12:11:17, JSON-LD); DNOTICIAS headline 11:26 \"Escolas da Madeira encerradas na manhã de quarta-feira até às 13 horas\" (a search summary attributes it to the regional government). Most critical hours given as 21:00 to 06:00 (IPMA Madeira at the same conference).",
+   "region": "Madeira",
+   "state": "closed",
+   "state_note": null
+  },
+  {
+   "id": "madeira-airport-conditioned",
+   "by": "madeira-airport",
+   "to": [],
+   "decision": "ANA: operations at Madeira airport conditioned on 11 Nov; cancellations expected",
+   "at": "2026-11-10T18:04Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, 11 November",
+   "note": "Same ANA statement as ana-conditioned (Lisbon, Faro, Madeira).",
+   "region": "Madeira",
+   "state": "limited",
+   "state_note": null
+  },
+  {
+   "id": "apram-cruises",
+   "by": "apram",
+   "to": [],
+   "decision": "Three cruise calls at Funchal for Wednesday cancelled (Iona, Le Dumont d'Urville, Vasco da Gama)",
+   "at": "2026-11-10T12:33Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, Wednesday",
+   "note": "APRAM via Observador live 12:33:37 (JSON-LD). The ships cancelled; APRAM reported it.",
+   "region": "Madeira",
+   "state": "suspended",
+   "state_note": "three cruise calls cancelled (the ships' decision, reported by APRAM)"
+  },
+  {
+   "id": "aemet-special",
+   "by": "aemet",
+   "to": [],
+   "decision": "AEMET special warning in force: \"Aviso especial. Lluvias fuertes y persistentes, rachas muy fuertes y temporal marítimo\" (Peninsula and Balearics; Canary Islands warnings shown for Wed 11 to Fri 13)",
+   "at": "",
+   "status": "happened",
+   "follows": [],
+   "label": "fact",
+   "source": "https://www.aemet.es/es/eltiempo/prediccion/avisos",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "note": "Title read on AEMET's own warnings page at 01:46Z. Its number (38/2026 per Wikipedia), its period (10 to 12 Nov per Wikipedia) and the Canary Islands' wind alert from 18:00 on 10 Nov were NOT read at source (the details are a map and a JavaScript view).",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "gnr-readiness",
+   "by": "gnr",
+   "to": [],
+   "decision": "GNR reinforces its operational deployment: 1,100 personnel on standby, Emergency Protection and Relief Unit (UEPS) highlighted, more patrols",
+   "at": "2026-11-10T18:17Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "note": "GNR's own site lists \"10-11-2026 Depressão Charles – GNR reforça dispositivo operacional\" (read 01:45Z; the article page reset our connection). The figure 1,100 is from Observador's 18:17:26 entry quoting the GNR communiqué.",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+  },
+  {
+   "id": "mmp-closed",
+   "by": "mmp",
+   "to": [],
+   "decision": "State museums and monuments closed on Wednesday; tickets can be changed or refunded",
+   "at": "2026-11-10T14:08Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, Wednesday",
+   "note": "Observador 14:08:23 quoting MMP's online message. At 19:21 Observador adds Lisbon's 25 municipal cultural venues (EGEAC) closed.",
+   "state": "closed",
+   "state_note": null
+  },
+  {
+   "id": "tap-adjusts",
+   "by": "tap",
+   "to": [],
+   "decision": "TAP adjusts operations; passengers with tickets for travel up to 11 Nov may rebook without penalty to flights up to 17 Nov",
+   "at": "2026-11-10T16:09Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "note": "Observador 16:09:04. \"TAP cancelling 10 Madeira flights\" (Wikipedia) is NOT established: Observador 19:47:28 says only that several TAP Funchal flights were affected on Wednesday, from ANA's site.",
+   "state": "limited",
+   "state_note": "rebooking offered; cancellations not stated by TAP"
+  },
+  {
+   "id": "csm-courts",
+   "by": "csm",
+   "to": [],
+   "decision": "Court presidents may close courts fully or partly on Wednesday; urgent acts must go ahead",
+   "at": "2026-11-10T12:51Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, Wednesday",
+   "note": "CSM vice-president's despacho, via Lusa (Observador 12:51:24, 14:32:02). National, not Madeira-specific: \"Madeira's courts closed\" (Wikipedia) NOT established. csm.org.pt answered (01:45Z) with no matching notice on its home page.",
+   "state": "limited",
+   "state_note": "closure left to each court"
+  },
+  {
+   "id": "mj-services",
+   "by": "mj",
+   "to": [],
+   "decision": "Registries, industrial property and forensic medicine services closed (telework where possible); DGAJ recommends court closures",
+   "at": "2026-11-10T17:43Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; Wednesday",
+   "note": "Observador 17:43:17, \"Na sequência da declaração de situação de alerta\".",
+   "state": "closed",
+   "state_note": null
+  },
+  {
+   "id": "capitania-aviso-53",
+   "by": "capitania-lisboa",
+   "to": [
+    "ferries"
+   ],
+   "decision": "Aviso n.º 53/2026, \"Agravamento de condições meteorológicas, 09 a 11 de novembro de 2026\": relays IPMA's then yellow sea and wind warnings for the Lisbon and Setúbal regions and asks the maritime community and shoreline users to take precautions",
+   "at": "2026-11-09T14:07Z",
+   "status": "happened",
+   "follows": [
+    "ipma-communique-1"
+   ],
+   "label": "fact",
+   "source": "https://www.amn.pt/DGAM/Capitanias/Lisboa/Documentos_AMN/Aviso%20n%C2%BA%2053_2026_Agravamento%20condi%C3%A7%C3%B5es%20meteo%2009-11NOV_signed.pdf",
+   "read": "2026-11-11T02:30Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-09T18:00Z",
+   "effect_to_utc": "2026-11-11T06:00Z",
+   "effect_note": "Lisbon region sea warning \"entre as 18h00 do dia 09 de novembro e as 06h00 do dia 11 de novembro\"; Setúbal wind 12:00-18:00 on 11 Nov",
+   "state": "limited",
+   "state_note": "precautions; no bar closure",
+   "note": "Signed 2026-11-09T14:07:38Z (PDF signature; created 14:05:49). PDF sha256 ce7849c00de2087c… (first 16 hex). It predates the red and orange warnings of 10 Nov; no later notice (no. 54 or after) found yet. A lead from leads.json."
+  },
+  {
+   "id": "bridges-lifted",
+   "by": "lusoponte",
+   "to": [],
+   "decision": "Traffic without restrictions again on the Vasco da Gama and 25 de Abril bridges (\"Circulação já sem restrições\")",
+   "at": "2026-11-10T22:29Z",
+   "status": "happened",
+   "follows": [
+    "bridges-60"
+   ],
+   "label": "evidence",
+   "source": "https://www.lusa.pt/article/48105410",
+   "read": "2026-11-11T02:42Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "also": [
+    "https://bsky.app/profile/lusa.pt/post/3mzyiilo7ik2a"
+   ],
+   "effect_from_utc": "2026-11-10T22:29Z",
+   "effect_to_utc": null,
+   "effect_note": "hours not stated beyond the report time; whether a limit returns on Wednesday is not stated",
+   "state": "running",
+   "state_note": "as of 22:29 Tuesday",
+   "note": "Lusa headline (article dated 10-11-2026 22:29; full text for subscribers only); Lusa's Bluesky post 22:29:36. Lusoponte's own site still unreachable (lusoponte.pt, no connection); Infraestruturas de Portugal not checked. Who lifted it is not stated in what we read: Lusoponte as the bridges' operator is assumed by the edge's \"by\", not read."
+  },
+  {
+   "id": "aemet-names-charles",
+   "by": "aemet",
+   "to": [],
+   "decision": "\"Nombrada la borrasca Charles\": a storm of subtropical origin, very adverse rain, wind and sea on Wednesday and, less, Thursday; a special warning to follow",
+   "at": "2026-11-09T10:20Z",
+   "status": "happened",
+   "follows": [],
+   "label": "fact",
+   "source": "https://bsky.app/profile/aemet.es/post/3mzupbdp5422l",
+   "read": "2026-11-11T02:42Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names Wednesday and Thursday",
+   "state": null,
+   "state_note": "a warning, not a service decision",
+   "note": "AEMET's own Bluesky account; createdAt 2026-11-09T10:20:11.685Z (read through the public API). 2 h 57 min before 13:17, the time we hold for IPMA's communiqué no. 1."
+  },
+  {
+   "id": "srpc-madeira-measures",
+   "by": "madeira-prociv",
+   "to": [],
+   "decision": "\"Situação meteorológica adversa — Depressão Charles: medidas preventivas\"; the page lists the warnings in force by area (e.g. north coast: rain 21:00 Tue to 06:00 Wed, then 06:00 to 09:00; wind 21:00 Tue to 12:00 Wed; sea 09:00 to 21:00 Wed; south coast rain 21:00 to 06:00)",
+   "at": "2026-11-10T15:27Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "fact",
+   "source": "https://www.procivmadeira.pt/pt/10-noticias/2158-situacao-meteorologica-adversa-depressao-charles-medidas-preventivas.html",
+   "read": "2026-11-11T02:42Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-10T21:00Z",
+   "effect_to_utc": "2026-11-11T21:00Z",
+   "effect_note": "the span of the warnings the page lists (by area and type); levels by area are on the page",
+   "state": "limited",
+   "state_note": "preventive measures",
+   "region": "Madeira",
+   "note": "SRPC's own page, dateCreated 2026-11-10T15:27:01Z (Madeira = UTC in November). No official count of occurrences on it; \"14 occurrences in the first hour of red\" is DNOTICIAS (press, 22:00)."
+  }
+ ],
+ "lessons": [
+  "2026-11-10: the organisers' decision was on websummit.com from 19:09 in the blog, which is not in sitemap.xml; we watched the sitemap, home and /news/ and saw it only at 20:58 (via incident.conductor@). Now: the blog list (/blog/, its embedded JSON) is the organisers' primary channel, and every section of an organiser's site is mapped in sources.json."
+ ],
+ "effect_fields": "effect_from_utc / effect_to_utc: the hours the decision covers, UTC (Lisbon = UTC in November), only from the source's own words; null where the source gives none, with effect_note \"hours not stated\" and any day it names.",
+ "leads": [
+  {
+   "from": "incident.wikipedia@ via incident.conductor@ (01:45Z)",
+   "claim": "APA names 101 mainland municipalities at higher flood risk (pt Wikipedia cites RTP Antena 1)",
+   "status": "not found at source: apambiente.pt home and /destaques at 01:45Z show no such notice (its 10 Nov item is a cancelled online session); not added to the graph; 02:30Z: the press address is Expresso (see the lead below); APA itself still not found",
+   "read": "2026-11-11T01:50Z"
+  },
+  {
+   "from": "incident.shadow@ leads.json (02:27Z)",
+   "claim": "at least 40 flights cancelled",
+   "address_seen": "https://24noticias.sapo.pt/atualidade/artigos/pelo-menos-40-voos-cancelados-em-todo-o-pais",
+   "status": "press only; no ANA or airline notice read (ANA's site shows a bot page): not added",
+   "read": "2026-11-11T02:30Z"
+  },
+  {
+   "from": "incident.shadow@ leads.json",
+   "claim": "UEFA cancels six games in Portugal on Wednesday",
+   "address_seen": "https://en.as.com/soccer/storm-charles-forces-champions-league-cancellation-f202611-n/",
+   "status": "press only (AS, updated 10 Nov 16:19 EST = 21:19Z, says \"Uefa has taken the decision to cancel six games set to take place in Portugal on Wednesday\"; which competition is not clear); uefa.com did not answer (HTTP/2 error, 02:28Z): not added",
+   "read": "2026-11-11T02:30Z"
+  },
+  {
+   "from": "incident.shadow@ leads.json",
+   "claim": "more than 100 municipalities at risk of urban flooding (the APA claim)",
+   "address_seen": "https://expresso.pt/tempestades/2026-11-10-portugal-em-alerta-tempestade-charles-pode-provocar-cheias-urbanas-em-mais-de-100-municipios-e-bruna-nao-vai-embora-4a4f2eb0",
+   "status": "press only; APA's own notice still not found: not added",
+   "read": "2026-11-11T02:30Z"
+  },
+  {
+   "from": "incident.shadow@ leads.json",
+   "claim": "US Embassy weather alert on Storms Bruna and Charles",
+   "address_seen": "https://pt.usembassy.gov/weather-alert-storms-bruna-and-charles-and-start-of-the-rainy-season-in-portugal/",
+   "status": "403 to our read at 02:27Z: not added",
+   "read": "2026-11-11T02:30Z"
+  }
+ ],
+ "state_values": [
+  "closed",
+  "suspended",
+  "limited",
+  "running",
+  "not_announced"
+ ]
+}

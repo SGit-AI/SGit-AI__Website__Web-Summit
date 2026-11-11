@@ -1,0 +1,15 @@
+{
+  "v": "ws-ecies-1",
+  "to": "silvio",
+  "key": "sha256:c790b809522386ef",
+  "by": "gamma-ray@web-summit.silvio",
+  "at": "2026-11-10T01:37:57Z",
+  "epk": {
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "uUBgWgXPDVKm7Y522baIu906TXrAER4KibGq_gdgT38",
+    "y": "4QoEH7fzxHLlJIr_RgmvEeStHHjHixXPzRsooFLon2M"
+  },
+  "iv": "EdIkzyQzm3Syg91a",
+  "ct": "h78Buar+6rR8Ola78L271IQ7n4F4kbEJ5c/sBuTtxK7+eP80UTmZNyRqHXZ5T3TBX+MmjN6n574SjExNkL1M3Xzu3xg5mO1CBIfaIlZKiThq2WLK6zPtyw0qGjmkpuoh7I0DxWyd0vf36pPVom4KmfyuP7QHX8zAQM2H/yKs8HMHLOCvWWWwsm+M95BW8GE2AfwujumL3eqRwuW7bcePeeF1J7ThFMPyhQVmfN47QEDcvzKl9c5VTKiOjfRpHcfjmu/6xipz32cso5Tjl2V6MfsHGC4e+nZNtfquvHOKrcHDABmrPKgMlvBjrUrrGeY+vY0XSF/GZtxWS3EKJS0QR79CkaGqt0ro8V6Uyo8fOJVRuc+j78AahEEgbt1gHKoKRIJ+8ySbJAF1Eww4by0yiRP1F3mCK9FAEGhgJiT8/jKSVw=="
+}

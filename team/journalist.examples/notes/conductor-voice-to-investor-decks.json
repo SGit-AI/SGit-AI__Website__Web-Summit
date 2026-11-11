@@ -1,0 +1,21 @@
+{
+  "title": "Small: two spoken asks to two meeting decks, about 15 minutes each",
+  "subtitle": "Dinis asks for a deck before each of two meetings; the conductor picks screenshots of the team's live views, writes the slides and a PDF; CI puts each live",
+  "labels": {
+    "1": "ask 1: a deck on|PrompTugal.news|and the team",
+    "2": "deck 1: slides,|11 screenshots,|a PDF",
+    "3": "linked from|the board",
+    "4": "v0.2.1705:|deck 1 live",
+    "5": "ask 2: RiskMandate,|shown on our|own agents",
+    "6": "deck 2: slides,|14 screenshots,|a PDF",
+    "7": "v0.2.1707:|deck 2 live",
+    "8": "deck 2 v2: security|teams first",
+    "9": "v0.2.1709:|deck 2 v2 live",
+    "10": "the two meetings|(private)"
+  },
+  "when": {"10": "15:15, 15:30"},
+  "edges": [[1,2],[2,3],[3,4],[5,6],[6,7],[7,8],[8,9],[4,10,"d"],[9,10,"d"]],
+  "output_after": 9,
+  "output": "two decks|with PDFs",
+  "output_when": ""
+}

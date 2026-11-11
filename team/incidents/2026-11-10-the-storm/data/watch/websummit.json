@@ -1,0 +1,936 @@
+{
+ "about": "Web Summit's own channels, watched for its decisions (Wednesday 11 November: off, 19:38; now Day 3 and the open items: talks, PITCH, side events, tickets): the blog's listings (polled every 2 minutes, --quick), the sitemaps' URL set and the organisers' Bluesky posts. Written by team/incidents/tools/websummit.mjs (see ../README.md). An alert is a keyword match on the organiser's own channel: read it before you act; a match is not a decision.",
+ "read_at": "2026-11-10T21:34Z",
+ "read_mode": "full",
+ "robots_disallow": [
+  "/api/"
+ ],
+ "watch": "weather|storm|tempest|wednesday|quarta|thursday|quinta|day [23]|dia [23]|clos|suspend|cancel|postpon|reschedul|safety|update|alert|aviso|programme|venue|pitch|ticket|refund|reembols|talk|speaker|stream|online|side event|night summit",
+ "sitemap": {
+  "source": "https://websummit.com/sitemap.xml",
+  "count": 152,
+  "in_last_read": 151,
+  "added_this_read": [
+   "https://websummit.com/lis26-live/"
+  ],
+  "urls": {
+   "https://websummit.com/": "2026-11-10T19:43Z",
+   "https://websummit.com/acast/": "2026-11-10T19:43Z",
+   "https://websummit.com/tickets/group-offer-tickets/": "2026-11-10T19:43Z",
+   "https://websummit.com/web-summit-2027/": "2026-11-10T19:43Z",
+   "https://websummit.com/hotels/": "2026-11-10T19:43Z",
+   "https://websummit.com/partners/event-partners-2026/": "2026-11-10T19:43Z",
+   "https://websummit.com/night-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/featured-attendees/": "2026-11-10T19:43Z",
+   "https://websummit.com/vip-experience/": "2026-11-10T19:43Z",
+   "https://websummit.com/masterclasses/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/cybersecurity-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/servey-vista-test/": "2026-11-10T19:43Z",
+   "https://websummit.com/state-of-the-industry-survey/": "2026-11-10T19:43Z",
+   "https://websummit.com/startups/pitch-retrospective/": "2026-11-10T19:43Z",
+   "https://websummit.com/brand-hub/": "2026-11-10T19:43Z",
+   "https://websummit.com/developers/": "2026-11-10T19:43Z",
+   "https://websummit.com/ticket-guide/": "2026-11-10T19:43Z",
+   "https://websummit.com/bring-your-team/": "2026-11-10T19:43Z",
+   "https://websummit.com/lis26-homepage-components/": "2026-11-10T21:12Z",
+   "https://websummit.com/attendee-experience/": "2026-11-10T19:43Z",
+   "https://websummit.com/creator-programme/": "2026-11-10T19:43Z",
+   "https://websummit.com/investors/lp-investors/": "2026-11-10T19:43Z",
+   "https://websummit.com/web-summit-scholars/": "2026-11-10T19:43Z",
+   "https://websummit.com/startups/ibm-sports-tech-startup-prize-competition-at-web-summit-lisbon/": "2026-11-10T19:43Z",
+   "https://websummit.com/essentials/": "2026-11-10T19:43Z",
+   "https://websummit.com/essentials/the-city/": "2026-11-10T19:43Z",
+   "https://websummit.com/essentials/schedule/": "2026-11-10T19:43Z",
+   "https://websummit.com/essentials/app/": "2026-11-10T19:43Z",
+   "https://websummit.com/essentials/registration/": "2026-11-10T19:43Z",
+   "https://websummit.com/essentials/venue/": "2026-11-10T19:43Z",
+   "https://websummit.com/essentials/tickets/": "2026-11-10T19:43Z",
+   "https://websummit.com/media/media-partners/": "2026-11-10T19:43Z",
+   "https://websummit.com/2-for-1-sale/": "2026-11-10T19:43Z",
+   "https://websummit.com/web-summit-2026/": "2026-11-10T19:43Z",
+   "https://websummit.com/price-increase-incentive-terms-and-conditions/": "2026-11-10T19:43Z",
+   "https://websummit.com/reviews/": "2026-11-10T19:43Z",
+   "https://websummit.com/ambassadors-programme/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/health-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/venture-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/energy-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/schedule/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/saas-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/new-media-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/policy-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/commerce-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/corporate-innovation-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/future-of-work-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/developer-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/growth-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/sport-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/moneyconf/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/ai-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/marketing-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/tracks/creative-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/engineering-leaders/": "2026-11-10T19:43Z",
+   "https://websummit.com/marketing-leaders/": "2026-11-10T19:43Z",
+   "https://websummit.com/what-to-expect/": "2026-11-10T19:43Z",
+   "https://websummit.com/2-for-1/": "2026-11-10T19:43Z",
+   "https://websummit.com/investors/": "2026-11-10T19:43Z",
+   "https://websummit.com/meetups/": "2026-11-10T19:43Z",
+   "https://websummit.com/contact/": "2026-11-10T19:43Z",
+   "https://websummit.com/loyalty-programme/loyalty-programme-terms-and-conditions/": "2026-11-10T19:43Z",
+   "https://websummit.com/irish-startup-network/": "2026-11-10T19:43Z",
+   "https://websummit.com/spotlight/": "2026-11-10T19:43Z",
+   "https://websummit.com/tickets/startups/": "2026-11-10T19:43Z",
+   "https://websummit.com/tickets/investors/": "2026-11-10T19:43Z",
+   "https://websummit.com/tickets/group-offers/": "2026-11-10T19:43Z",
+   "https://websummit.com/tickets/attendees/": "2026-11-10T19:43Z",
+   "https://websummit.com/tickets/": "2026-11-10T19:43Z",
+   "https://websummit.com/privacidade/": "2026-11-10T19:43Z",
+   "https://websummit.com/termos-e-condicoes/": "2026-11-10T19:43Z",
+   "https://websummit.com/women-in-tech/": "2026-11-10T19:43Z",
+   "https://websummit.com/volunteer-waiver/": "2026-11-10T19:43Z",
+   "https://websummit.com/volunteers/": "2026-11-10T19:43Z",
+   "https://websummit.com/content-guidelines/": "2026-11-10T19:43Z",
+   "https://websummit.com/accessibility-policy/": "2026-11-10T19:43Z",
+   "https://websummit.com/privacy-policy/": "2026-11-10T19:43Z",
+   "https://websummit.com/anti-harassment-policy/": "2026-11-10T19:43Z",
+   "https://websummit.com/terms-and-conditions/": "2026-11-10T19:43Z",
+   "https://websummit.com/careers/": "2026-11-10T19:43Z",
+   "https://websummit.com/app/": "2026-11-10T19:43Z",
+   "https://websummit.com/newsletter-signup/": "2026-11-10T19:43Z",
+   "https://websummit.com/venture/": "2026-11-10T19:43Z",
+   "https://websummit.com/media/media-accreditation-policy/": "2026-11-10T19:43Z",
+   "https://websummit.com/media/": "2026-11-10T19:43Z",
+   "https://websummit.com/investor-accreditation-policy/": "2026-11-10T19:43Z",
+   "https://websummit.com/startups/impact-startups/": "2026-11-10T19:43Z",
+   "https://websummit.com/startups/startup-journey/": "2026-11-10T19:43Z",
+   "https://websummit.com/startups/featured-startups/": "2026-11-10T19:43Z",
+   "https://websummit.com/startups/": "2026-11-10T19:43Z",
+   "https://websummit.com/partners/event-partners/": "2026-11-10T19:43Z",
+   "https://websummit.com/startups/mentor-hours/": "2026-11-10T19:43Z",
+   "https://websummit.com/partners/": "2026-11-10T19:43Z",
+   "https://websummit.com/speaker-application/": "2026-11-10T19:43Z",
+   "https://websummit.com/startups/startup-showcase/": "2026-11-10T19:43Z",
+   "https://websummit.com/startups/40-words/": "2026-11-10T19:43Z",
+   "https://websummit.com/startups/pitch/": "2026-11-10T19:43Z",
+   "https://websummit.com/speakers/": "2026-11-10T19:43Z",
+   "https://websummit.com/discover-lisbon/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/news/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/marketing/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/startups-investors/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/partners/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/how-to/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/web-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/portugal/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/news/web-summit-2026-record-number-of-investors/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/news/record-investors-at-web-summit-2025-bucking-industry-trends/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/marketing/creator-programme-web-summit-2026/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/news/women-are-leading-in-tech-so-why-are-so-many-considering-leaving/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/startups-investors/how-we-select-our-startups/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/news/web-summits-first-state-of-the-industry-survey-finds-tech-torn-on-ai/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/partners/case-study-replit-web-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/how-to/lisbon-public-transport-hotels-accomodation-2022-tech-event/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/partners/case-study-ibm-web-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/partners/case-study-linkedin-web-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/news/qatar-doha-microsoft-space-x-trevor-noah/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/web-summit/financial-report-2022/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/web-summit/a-web-summit-update/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/portugal/portugal-tech-startups-unicorns-cinema/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/web-summit/web-summit-2023-numbers/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/web-summit/a-letter-from-web-summits-new-ceo-katherine-maher/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/web-summit/apology-from-paddy-cosgrave-ceo/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/startups-investors/web-summit-x-crunchbase-funding-report-2025-ai-takes-top-spot-as-startups-raise-715-5m-after-web-summit/": "2026-11-10T19:43Z",
+   "https://websummit.com/blog/web-summit/web-summit-spotlight-lands-in-paraiba/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/ai-doom-or-boom/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/when-ai-leaves-the-screen/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/what-comes-after-the-blue-wave/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/building-the-operating-system-for-modern-sport/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/building-a-star-trek-vision/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/surviving-the-ai-shift-medias-new-reality-2/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/surviving-the-ai-shift-medias-new-reality/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/ai-and-the-human-at-300km-h/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/making-useful-intelligence-accessible-to-everyone/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/opening-remarks-30/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/regulating-big-tech/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/taking-the-flying-car-from-sci-fi-to-reality/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/next-generation-banking-with-global-ambition/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/the-agentic-internet-who-controls-the-web/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/ai-your-new-news-editor/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/the-ai-paradox-smarter-models-disappointing-results/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/the-open-source-advantage/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/when-ai-builds-itself/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/breakout-startups-2/": "2026-11-10T19:43Z",
+   "https://websummit.com/summaries/lis26/opening-remarks-29/": "2026-11-10T19:43Z",
+   "https://websummit.com/support/": "2026-11-10T19:43Z",
+   "https://websummit.com/graphql/": "2026-11-10T19:43Z",
+   "https://websummit.com/crunchbase-funding-report/": "2026-11-10T19:43Z",
+   "https://websummit.com/lis26-live/": "2026-11-10T21:34Z"
+  }
+ },
+ "blog": {
+  "source": "https://websummit.com/blog/ and every /blog/<category>/ (their __NEXT_DATA__)",
+  "listings": [
+   "https://websummit.com/blog/",
+   "https://websummit.com/blog/impact/",
+   "https://websummit.com/blog/marketing/",
+   "https://websummit.com/blog/news/",
+   "https://websummit.com/blog/partners/",
+   "https://websummit.com/blog/startups-investors/",
+   "https://websummit.com/blog/web-summit/"
+  ],
+  "posts": {
+   "https://websummit.com/blog/news/web-summit-2026-record-number-of-investors/": {
+    "url": "https://websummit.com/blog/news/web-summit-2026-record-number-of-investors/",
+    "title": "Web Summit 2026: Record number of investors at its most international event yet",
+    "category": "news",
+    "date": "2026-11-10T10:00Z",
+    "modified": "2026-11-10T10:29Z",
+    "excerpt": "Web Summit 2026 is bringing the world to Lisbon, with 70,003 attendees from 164 countries, making this its most international edition yet. The event has also broken its investor attendance record for the second consecutive year, welcoming 1,943 investors. The tickets to the 2026 edition of Web Summi",
+    "modified_by_listing": {
+     "/blog/": "2026-11-10T10:29Z",
+     "/blog/news/": "2026-11-10T10:29Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z",
+    "page": {
+     "field": "post page JSON-LD datePublished / dateModified; text from __NEXT_DATA__ post.content",
+     "date_published": "2026-11-10T10:00Z",
+     "date_modified": "2026-11-10T10:29Z",
+     "read_at": "2026-11-10T21:34Z",
+     "text": "Web Summit 2026 is bringing the world to Lisbon, with 70,003 attendees from 164 countries, making this its most international edition yet. The event has also broken its investor attendance record for the second consecutive year, welcoming 1,943 investors. The tickets to the 2026 edition of Web Summit, in Lisbon, sold out last week, closing at 70,003 following strong demand for exhibition space from partners. More than 10,000 startups will attend Web Summit, while the sold-out exhibition floor will feature 3,052 companies from 110 countries, alongside major partners from some of the world’s largest technology giants, Apple, Meta, Google, and Intel. Windows into the world Web Summit has always been a window into the future, and that future is being built in countries outside of the United States. Governments from Brazil, China, Qatar, Poland, Hungary, Lithuania, Slovenia, South Korea, and more are sending trade delegations to promote their domestic tech talent and expand global trade links. “Welcome to the most global Web Summit ever. We are joined by attendees from 164 countries, more than ever before”, said Web Summit founder and CEO Paddy Cosgrave at Opening Night. “Brazil, like every country in the global south, continues to grow its presence here and that growth is reflected in this Web Summit… more startups are coming from São Paulo than Paris.” “This year has, without a doubt, the most important lineup of technology speakers we ever had. And they are all from China. Because Chinese companies are building more of our shared Future than companies from anywhere else. And we should open our eyes to that future”, continued Web Summit founder and CEO Paddy Cosgrave. Web Summit 2026’s opening night featured dancing humanoid robots from Chinese company AgiBot and flying car technology from Xpeng AeroHT. Speaking on Web Summit’s host country, Web Summit CEO also highlighted the record number of Portuguese startups: “This year we have the largest number of Portuguese startups at Web Summit ever. This speaks to the amazing rise of Portugal over the last 10 years”, said Paddy Cosgrave. Despite a challenging fundraising environment for many early-stage companies in Europe, startups are showing up in force at Web Summit 2026. Portugal and Ireland are seeing record participation, with 350 Portuguese startups and 115 Irish startups, the highest number from Ireland since Web Summit moved to Lisbon. The Web Summit effect on Portugal The impact of hosting Web Summit in Lisbon goes well beyond the four days of the event. A new report by EY found that Web Summit has contributed nearly €2.5 billion to the Portuguese economy over the past decade, around €250 million a year. The report also highlighted the lasting benefits for Portuguese startups exhibiting at the event, which were more likely to grow their revenue and create jobs. Since Web Summit first came to Lisbon in 2016, the number of Portuguese startups has doubled, while their combined annual turnover has grown from €1.23 billion to €2.85 billion. Record number of investors The record investor turnout includes Accel, Bessemer Venture Partners, BlackRock, TPG, Union Square Ventures, Index Ventures, Amino Capital, Atomico, the Qatar Investment Authority and Tencent. New data from PitchBook highlights the global reach of investors attending Web Summit 2026. Investors attending Web Summit have participated in 60% of global VC deal value and 73% of US VC deal value in 2026, based on data through September 30. China shares glimpse into the future China’s growing influence in AI and robotics will be a major theme at Web Summit 2026, which brings together 960 speakers from around the world, including tech leaders from China, Europe and the US. The event will welcome its largest-ever Chinese delegation, with speakers including Unitree, one of China’s leading humanoid robotics companies, represented by co-founder Li Chen ; Tencent’s chief investment and strategy officer (EMEA) Ling Ge ; Xiaomi CM",
+     "text_sha256": "c5bbc12af86a4867"
+    }
+   },
+   "https://websummit.com/blog/web-summit/important-event-update-2026/": {
+    "url": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+    "title": "Important event update",
+    "category": "web-summit",
+    "date": "2026-11-10T19:09Z",
+    "modified": "2026-11-10T20:06Z",
+    "excerpt": "The Government of Portugal has formally advised Web Summit that, due to the risks posed by Storm Charles, including tidal flooding, severe disruption to public transport and the impact of high winds on external structures, Day 2 of Web Summit should not take place. This follows discussions with the ",
+    "modified_by_listing": {
+     "/blog/": "2026-11-10T20:06Z",
+     "/blog/web-summit/": "2026-11-10T20:06Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z",
+    "page": {
+     "field": "post page JSON-LD datePublished / dateModified; text from __NEXT_DATA__ post.content",
+     "date_published": "2026-11-10T19:09Z",
+     "date_modified": "2026-11-10T19:25Z",
+     "read_at": "2026-11-10T21:34Z",
+     "text": "The Government of Portugal has formally advised Web Summit that, due to the risks posed by Storm Charles, including tidal flooding, severe disruption to public transport and the impact of high winds on external structures, Day 2 of Web Summit should not take place. This follows discussions with the Portuguese Government, the National Emergency and Civil Protection Authority (ANEPC), and the Public Security Police (PSP). Web Summit will of course respect the Government’s direction, and accordingly, Day 2 (Wednesday, November 11th) will not take place. The safety and security of our attendees, staff and contractors is always our absolute priority. Web Summit aims to proceed with Day 3 (Thursday, November 12) as planned, following the passing of Storm Charles. We will continue to work closely with the relevant authorities and emergency services, monitor conditions and provide further updates as soon as confirmed information becomes available. Web Summit will communicate directly with those impacted.",
+     "text_sha256": "e4a668940d3985e0"
+    }
+   },
+   "https://websummit.com/blog/news/women-are-leading-in-tech-so-why-are-so-many-considering-leaving/": {
+    "url": "https://websummit.com/blog/news/women-are-leading-in-tech-so-why-are-so-many-considering-leaving/",
+    "title": "Women are leading in tech. So why are so many considering leaving? ",
+    "category": "news",
+    "date": "2026-10-27T10:45Z",
+    "modified": "2026-10-26T16:35Z",
+    "excerpt": "Web Summit s annual Gender in Tech report shows that women are firmly part of the tech landscape, including in leadership, but bias and balancing family and career remain major challenges.Now in its seventh year, Web Summit’s annual Gender in Tech report draws on the experiences of its global women ",
+    "modified_by_listing": {
+     "/blog/": "2026-10-26T16:35Z",
+     "/blog/news/": "2026-10-26T16:35Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/news/web-summits-first-state-of-the-industry-survey-finds-tech-torn-on-ai/": {
+    "url": "https://websummit.com/blog/news/web-summits-first-state-of-the-industry-survey-finds-tech-torn-on-ai/",
+    "title": "Web Summit’s first state of the industry survey finds tech torn on AI",
+    "category": "news",
+    "date": "2026-10-22T10:45Z",
+    "modified": "2026-10-22T11:53Z",
+    "excerpt": "Optimistic, sharper and busier. Most feel good about AI, with 55% saying it strengthens their thinking. Yet 60% report an increased workload, and 42% expect smaller teams.",
+    "modified_by_listing": {
+     "/blog/": "2026-10-22T11:53Z",
+     "/blog/news/": "2026-10-22T11:53Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/marketing/creator-programme-web-summit-2026/": {
+    "url": "https://websummit.com/blog/marketing/creator-programme-web-summit-2026/",
+    "title": "Unveiling the creators joining us at Web Summit 2026",
+    "category": "marketing",
+    "date": "2026-10-21T09:58Z",
+    "modified": "2026-11-06T10:26Z",
+    "excerpt": "From November 9-12, 2026, over 70,000 tech leaders, founders, and investors will gather at Web Summit Lisbon. Embedded within this network is the Web Summit Creator Programme, built to bridge the gap between top-tier digital creators and the global tech ecosystem.",
+    "modified_by_listing": {
+     "/blog/": "2026-11-06T10:26Z",
+     "/blog/marketing/": "2026-11-06T10:26Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/startups-investors/how-we-select-our-startups/": {
+    "url": "https://websummit.com/blog/startups-investors/how-we-select-our-startups/",
+    "title": "How we select our startups",
+    "category": "startups-investors",
+    "date": "2026-09-16T09:00Z",
+    "modified": "2026-10-23T11:49Z",
+    "excerpt": "All the best startups from a broad range of industries will be invited to exhibit at our events. Find out how we select the startups that join us at our events around the world.",
+    "modified_by_listing": {
+     "/blog/": "2026-10-23T11:49Z",
+     "/blog/startups-investors/": "2026-10-23T11:49Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/web-summit/web-summit-spotlight-lands-in-paraiba/": {
+    "url": "https://websummit.com/blog/web-summit/web-summit-spotlight-lands-in-paraiba/",
+    "title": "Web Summit Spotlight lands in Paraíba",
+    "category": "web-summit",
+    "date": "2026-03-26T12:04Z",
+    "modified": "2026-08-04T12:05Z",
+    "excerpt": "On March 20, Web Summit hosted its inaugural Spotlight event in Latin America, bringing together the technology community of Northeast Brazil in João Pessoa. Web Summit Spotlight is a new initiative designed to bring a special focus to emerging technology hubs around the world. Paraíba, Brazil, was ",
+    "modified_by_listing": {
+     "/blog/": "2026-08-04T12:05Z",
+     "/blog/web-summit/": "2026-08-04T12:05Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/partners/case-study-replit-web-summit/": {
+    "url": "https://websummit.com/blog/partners/case-study-replit-web-summit/",
+    "title": "Replit: “Web Summit helps us grow our brand and mindshare in Europe”",
+    "category": "partners",
+    "date": "2026-03-25T15:29Z",
+    "modified": "2026-10-07T08:14Z",
+    "excerpt": "Replit s partnership with Web Summit connected the agentic software creation platform with a thriving ecosystem of users and potential adopters, strengthening their position as industry leaders. Enter vibe coding: a term that s democratizing app creation for everyone, regardless of technical backgro",
+    "modified_by_listing": {
+     "/blog/": "2026-10-07T08:14Z",
+     "/blog/partners/": "2026-10-07T08:14Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/marketing/meet-the-creators-joining-us-at-web-summit-2025/": {
+    "url": "https://websummit.com/blog/marketing/meet-the-creators-joining-us-at-web-summit-2025/",
+    "title": "Meet the creators joining us at Web Summit 2025",
+    "category": "marketing",
+    "date": "2025-10-30T14:35Z",
+    "modified": "2026-08-04T11:52Z",
+    "excerpt": "We re excited to announce the Web Summit Creator Programme for Lisbon 2025. This programme is all about bringing emerging online talent, people who are building new communities and sharing unique content, directly into the Web Summit experience.",
+    "modified_by_listing": {
+     "/blog/marketing/": "2026-08-04T11:52Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/marketing/marketing-road-map/": {
+    "url": "https://websummit.com/blog/marketing/marketing-road-map/",
+    "title": "Your guide to marketing at Web Summit 2024",
+    "category": "marketing",
+    "date": "2024-09-04T08:45Z",
+    "modified": "2024-09-04T08:50Z",
+    "excerpt": "Check out our step-by-step guide to all things marketing at Web Summit this November. Hoping to get the most out of your experience at our event? Search no further. We’ve curated a tailored roadmap to guide you through each day of Web Summit. Web Summit mobile app The best way to prepare for Web Sum",
+    "modified_by_listing": {
+     "/blog/marketing/": "2024-09-04T08:50Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/marketing/twitch-community-social-media-ai/": {
+    "url": "https://websummit.com/blog/marketing/twitch-community-social-media-ai/",
+    "title": "‘Social’ media is anything but – and AI will make it worse",
+    "category": "marketing",
+    "date": "2023-10-30T07:13Z",
+    "modified": "2024-03-12T12:21Z",
+    "excerpt": "The word “community” is often thrown around in the marketing and social media world, with little regard for what it actually means or what an actual online community might look like. Community is not a group of people brought together by a shared, fleeting enthusiasm for a product or service, but ra",
+    "modified_by_listing": {
+     "/blog/marketing/": "2024-03-12T12:21Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/marketing/timing-product-launch-innovation-beatles-google-glass/": {
+    "url": "https://websummit.com/blog/marketing/timing-product-launch-innovation-beatles-google-glass/",
+    "title": "What makes for a successful product launch?",
+    "category": "marketing",
+    "date": "2023-09-20T11:50Z",
+    "modified": "2024-03-12T10:36Z",
+    "excerpt": "Creative thinking alone doesn’t guarantee success according to Alain Sylvain, CEO of strategy firm SYLVAIN. Pour enough money into R D and it will lead to lucrative new products, right? Wrong. “Creativity is important, but timing, I argue, is more important than creativity,” said Alain, who contends",
+    "modified_by_listing": {
+     "/blog/marketing/": "2024-03-12T10:36Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/marketing/tiktok-charli-dixie-damelio-brands-footwear-genz-sustainability/": {
+    "url": "https://websummit.com/blog/marketing/tiktok-charli-dixie-damelio-brands-footwear-genz-sustainability/",
+    "title": "Inside D’Amelio Brands: Using TikTok clout to fuel a consumer empire",
+    "category": "marketing",
+    "date": "2023-09-05T08:27Z",
+    "modified": "2024-03-12T10:49Z",
+    "excerpt": "Is TikTok fame fleeting or can viral videos translate into an authentic brand with paying customers? Marc D’Amelio thinks the latter is true. Marc rocketed to fame managing the careers of teen influencer daughters, Charli and Dixie. They have a reality TV show starring the entire family but now Marc",
+    "modified_by_listing": {
+     "/blog/marketing/": "2024-03-12T10:49Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/marketing/hootsuite-social-media-marketing-strategy-tips-2023/": {
+    "url": "https://websummit.com/blog/marketing/hootsuite-social-media-marketing-strategy-tips-2023/",
+    "title": "4 tips to boost your social media strategy",
+    "category": "marketing",
+    "date": "2023-08-23T15:00Z",
+    "modified": "2024-03-12T10:52Z",
+    "excerpt": "Brands can cut through social media noise by implementing these four key strategies, according to Hootsuite’s CEO. In 2023, an algorithmically controlled social media landscape poses challenges for brands hoping to connect with overstimulated audiences while fighting for attention alongside viral da",
+    "modified_by_listing": {
+     "/blog/marketing/": "2024-03-12T10:52Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/news/record-investors-at-web-summit-2025-bucking-industry-trends/": {
+    "url": "https://websummit.com/blog/news/record-investors-at-web-summit-2025-bucking-industry-trends/",
+    "title": "Record investors at Web Summit 2025, bucking industry trends",
+    "category": "news",
+    "date": "2025-11-13T16:53Z",
+    "modified": "2026-11-10T10:24Z",
+    "excerpt": "Web Summit 2025 is welcoming 71,386 attendees this week, including CEOs, government and trade delegations, global media, and more startups and investors than ever before. Below we present Web Summit 2025, by the numbers: Key takeaways Ten years ago it already felt like the world was changing fast, b",
+    "modified_by_listing": {
+     "/blog/news/": "2026-11-10T10:24Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z",
+    "page": {
+     "field": "post page JSON-LD datePublished / dateModified; text from __NEXT_DATA__ post.content",
+     "date_published": "2025-11-13T16:53Z",
+     "date_modified": "2026-11-10T10:24Z",
+     "read_at": "2026-11-10T21:34Z",
+     "text": "Web Summit 2025 is welcoming 71,386 attendees this week, including CEOs, government and trade delegations, global media, and more startups and investors than ever before. Below we present Web Summit 2025, by the numbers: Key takeaways Web Summit 2025 joins 71,386 attendees from 157 countries. 1,857 investors are joining Web Summit 2025 from 86 countries, a 74% surge from last year’s 1,066. It is the largest number ever to attend the event. 2,725 startups, from 108 countries, will be exhibiting, with AI and machine learning emerging as the top industry. Notably, 40% of startups are women-founded. ⁠⁠Nearly 200 startups raised funding post-event: According to Crunchbase, nearly 200 startups from Web Summit’s 2024 Startup Programme secured post-event investment, with total funding reaching $715.5 million. You can read more about it here . 869 speakers join Web Summit’s stages this year , with Opening Night featuring leaders shaping the future of tech, business and culture, including the most followed person on TikTok Khaby Lame; Lovable, Co-founder and CEO Anton Osika; entrepreneur and tennis legend Maria Sharapova. 1,519 publishers, CEOs, editors and reporters, from outlets including The New York Times, The Wall Street Journal, CNBC, The Economist, Der Spiegel, Le Monde, Axios, CGTN, Globo, Sapo, Renascença, Valor Económico, RTP and Euronews are joining Web Summit to explore new technologies and ideas shaping the future. 268 government delegation s are joining from 82 countries, including Portugal, Spain, Poland, Brazil, Angola, Germany, the US, Canada, Ireland, Austria, Japan, China, Belgium, India, Mexico, Qatar, Australia, and more. 400 curated meetups are underway , helping attendees make meaningful connections, from women in tech and backend developers to ai innovators, to a giant Jenga session. Partners exhibiting at Web Summit include IBM, Visa, Qualcomm, Alibaba Cloud, Revolut People, KPMG, Replit, Huawei, and LinkedIn. Ten years ago it already felt like the world was changing fast, but it’s nothing compared to how fast the world is changing today , said Web Summit CEO Paddy Cosgrave on Web Summit’s Opening Night. It’s been 10 years since a tiny three person startup called Revolut showed up at Web Summit. Today Revolut is Europe’s most valuable private tech company.” “I’ve no doubt that there’s another Revolut at Web Summit, maybe several. Two or three people with a tiny stand and a huge idea. I hope you all take the opportunity to meet our more than 2,500 startups who are exhibiting over the coming three days , he continued. More investors than ever A record 1,857 investors are set to attend Web Summit 2025, the highest in the event’s history and a 74% surge from last year’s 1,066. The growth underscores the global appetite for meaningful connections and in-person deal-making at an event that will showcase the ideas from 2,725 startups from 108 countries. This year’s investor community includes partners from some of the most influential funds in venture capital, including QED Investors, Accel, Amino and Indico. AI emerges as the most represented industry A record 2,725 startups from 108 countries will exhibit on the show floor, with AI and machine learning emerging as the top industry, representing nearly one-fifth of all exhibiting startups. SaaS, healthtech and wellness, fintech, and sustainability complete the top five sectors. Notably, 40% of startups are women-founded , in line with Web Summit’s efforts to increase visibility for women across the global tech ecosystem. 869 speakers will be discussing the future of tech Toto Wolff, Team Principal, CEO & Co-owner of Mercedes-AMG Petronas Formula One Team; Maria Sharapova, tennis champion and entrepreneur; Alex Schultz, Chief Marketing Officer at Meta, and Cristiano Amon President & CEO of Qualcomm, a global leader in wireless technology and semiconductors are amongst the leaders in technology, business, sports and entertainment that will be taking to the stage to disc",
+     "text_sha256": "efe2a64a192f18e8"
+    }
+   },
+   "https://websummit.com/blog/news/qatar-doha-microsoft-space-x-trevor-noah/": {
+    "url": "https://websummit.com/blog/news/qatar-doha-microsoft-space-x-trevor-noah/",
+    "title": "Here’s what you missed at Web Summit Qatar 2024",
+    "category": "news",
+    "date": "2024-03-01T12:21Z",
+    "modified": "2026-08-10T13:45Z",
+    "excerpt": "Did you miss out on Web Summit Qatar 2024? Here’s a roundup of just some of the highlights from our inaugural event in Doha. Our first event in the Middle East saw more than 1,000 startups joining us from more than 81 countries around the world, and was the largest ever gathering of international st",
+    "modified_by_listing": {
+     "/blog/news/": "2026-08-10T13:45Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/news/web-summit-2024/": {
+    "url": "https://websummit.com/blog/news/web-summit-2024/",
+    "title": "Looking forward to seeing you at Web Summit 2024!",
+    "category": "news",
+    "date": "2023-11-16T17:00Z",
+    "modified": "2023-11-16T17:00Z",
+    "excerpt": "Web Summit returns to Lisbon’s Altice Arena from November 11-14, 2024. We can’t wait to meet you there. It was another historic year for Web Summit, our flagship event, which saw more than 2,600 startups showcasing their business ideas to 70,000-plus attendees, tech experts, investors and world-clas",
+    "modified_by_listing": {
+     "/blog/news/": "2023-11-16T17:00Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/news/katherine-maher-web-summit-ceo-opening-night-speech/": {
+    "url": "https://websummit.com/blog/news/katherine-maher-web-summit-ceo-opening-night-speech/",
+    "title": "Katherine Maher: Web Summit’s role ‘more urgent now than ever’",
+    "category": "news",
+    "date": "2023-11-13T15:24Z",
+    "modified": "2023-11-13T15:24Z",
+    "excerpt": "Web Summit, above all, is a space for “critical conversations about technology, society and innovation,” said Katherine Maher, in her first event address as the company’s new CEO. Speaking to an enthusiastic Opening Night crowd, Katherine said that Web Summit will continue to be a place that “brings",
+    "modified_by_listing": {
+     "/blog/news/": "2023-11-13T15:24Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/partners/case-study-linkedin-web-summit/": {
+    "url": "https://websummit.com/blog/partners/case-study-linkedin-web-summit/",
+    "title": "LinkedIn: “Web Summit help us to engage directly with decision-makers”",
+    "category": "partners",
+    "date": "2026-03-24T16:53Z",
+    "modified": "2026-09-30T09:40Z",
+    "excerpt": "LinkedIn’s participation at Web Summit enabled them to capture over 900 leads, surpassing their expectations by 30%. The event served as a strategic hub to solidify connections across the European market. Web Summit allows us to engage directly with decision-makers and show them exactly how our plat",
+    "modified_by_listing": {
+     "/blog/partners/": "2026-09-30T09:40Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/partners/case-study-revolut-web-summit/": {
+    "url": "https://websummit.com/blog/partners/case-study-revolut-web-summit/",
+    "title": "Revolut: “Web Summit is undoubtedly a milestone in our history”",
+    "category": "partners",
+    "date": "2026-01-21T14:28Z",
+    "modified": "2026-02-13T10:58Z",
+    "excerpt": "Revolut s growth from a small startup to a full-scale European bank is one of the fintech industry s biggest success stories. Web Summit served as the ideal launching pad for this remarkable journey. “In those early days, our primary goal was to gain exposure, generate word-of-mouth buzz, and achiev",
+    "modified_by_listing": {
+     "/blog/partners/": "2026-02-13T10:58Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/partners/case-study-ibm-web-summit/": {
+    "url": "https://websummit.com/blog/partners/case-study-ibm-web-summit/",
+    "title": "IBM: “Web Summit is where business becomes real”",
+    "category": "partners",
+    "date": "2026-01-05T15:54Z",
+    "modified": "2026-09-30T09:40Z",
+    "excerpt": "For more than five years, Web Summit has been a key moment for the IBM team to connect directly with over 70,000 attendees, including startups, governments, and industry leaders. “Web Summit is a reference point in the technology world, and in the startup world, and it s a place where we can show wh",
+    "modified_by_listing": {
+     "/blog/partners/": "2026-09-30T09:40Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/partners/mobilize-survey-wall-web-summit/": {
+    "url": "https://websummit.com/blog/partners/mobilize-survey-wall-web-summit/",
+    "title": "What does a car provide? Convenience, freedom and more",
+    "category": "partners",
+    "date": "2023-12-12T09:34Z",
+    "modified": "2024-03-12T12:15Z",
+    "excerpt": "Web Summit event partner Mobilize asked attendees their thoughts on automobiles and how they affect our daily lives. Web Summit 2023 united more than 70,000 attendees from 153 countries in Lisbon. This year, a lot of the event buzz centred around artificial intelligence, how to engage audiences and ",
+    "modified_by_listing": {
+     "/blog/partners/": "2024-03-12T12:15Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/partners/nato-diana-ai-security-technology-survey/": {
+    "url": "https://websummit.com/blog/partners/nato-diana-ai-security-technology-survey/",
+    "title": "40.5% of Web Summit attendees say AI impacts collective security",
+    "category": "partners",
+    "date": "2023-12-07T15:30Z",
+    "modified": "2024-03-12T10:29Z",
+    "excerpt": "We’re wrapped on Web Summit 2023. Now’s the time to discover what our partners, NATO DIANA, learned from their survey of our attendees. In early November, more than 70,000 people converged on Lisbon for Web Summit 2023. While there, they discussed some of the biggest questions facing society and the",
+    "modified_by_listing": {
+     "/blog/partners/": "2024-03-12T10:29Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/impact/community-partners-environment-climate-change/": {
+    "url": "https://websummit.com/blog/impact/community-partners-environment-climate-change/",
+    "title": "Meet 4 of our environment-focused community partners",
+    "category": "impact",
+    "date": "2023-11-01T09:11Z",
+    "modified": "2024-03-12T11:19Z",
+    "excerpt": "Meet four of our community partners that are tackling climate change by equipping their communities with the tools to change the world. At Web Summit, we strive to support companies that prioritise community building – and making the world a better place. As our events gather thousands of leaders, v",
+    "modified_by_listing": {
+     "/blog/impact/": "2024-03-12T11:19Z",
+     "/blog/partners/": "2024-03-12T11:19Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/startups-investors/startups-success-networking-investment-pitch/": {
+    "url": "https://websummit.com/blog/startups-investors/startups-success-networking-investment-pitch/",
+    "title": "6 tips to help your startup thrive at Web Summit",
+    "category": "startups-investors",
+    "date": "2024-08-15T09:51Z",
+    "modified": "2024-10-30T16:47Z",
+    "excerpt": "Want to make the most of our event? Here are some top tips from a few of our most successful startups. Web Summit provides a huge opportunity for new and established startups to develop their businesses. The question is how best to capitalise on this opportunity. In our ongoing series of Startup Suc",
+    "modified_by_listing": {
+     "/blog/startups-investors/": "2024-10-30T16:47Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/startups-investors/ai-funding-assistant-granter-wins-web-summit-2025-pitch/": {
+    "url": "https://websummit.com/blog/startups-investors/ai-funding-assistant-granter-wins-web-summit-2025-pitch/",
+    "title": "AI funding assistant Granter wins Web Summit 2025 PITCH",
+    "category": "startups-investors",
+    "date": "2025-11-13T15:55Z",
+    "modified": "2026-08-04T11:51Z",
+    "excerpt": "Portugal-based Granter won the top prize at the Web Summit 2025 PITCH competition. Out of 2,725 startups, 105 advanced to the three-day contest, and Granter ultimately impressed the judges the most. The company offers an AI-powered grant assistant that helps businesses find the best funding opportun",
+    "modified_by_listing": {
+     "/blog/startups-investors/": "2026-08-04T11:51Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/startups-investors/web-summit-x-crunchbase-funding-report-2025-ai-takes-top-spot-as-startups-raise-715-5m-after-web-summit/": {
+    "url": "https://websummit.com/blog/startups-investors/web-summit-x-crunchbase-funding-report-2025-ai-takes-top-spot-as-startups-raise-715-5m-after-web-summit/",
+    "title": "Web Summit x Crunchbase report 2025: AI takes top spot as startups raise $715.5M after Web Summit",
+    "category": "startups-investors",
+    "date": "2025-11-10T15:38Z",
+    "modified": "2026-08-06T11:00Z",
+    "excerpt": "Today, Web Summit, the world’s leading technology events company, in partnership with Crunchbase, released the Web Summit x Crunchbase 2025 Funding Report, an annual analysis of how funding moves across the global startup ecosystem after companies participate in Web Summit. The report, powered by Cr",
+    "modified_by_listing": {
+     "/blog/startups-investors/": "2026-08-06T11:00Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/startups-investors/web-summit-spotlight-comes-to-tashkent-meet-the-uzbek-startups-shaping-the-future/": {
+    "url": "https://websummit.com/blog/startups-investors/web-summit-spotlight-comes-to-tashkent-meet-the-uzbek-startups-shaping-the-future/",
+    "title": "Web Summit Spotlight comes to Tashkent: Meet the Uzbek startups shaping the future",
+    "category": "startups-investors",
+    "date": "2025-09-25T09:19Z",
+    "modified": "2026-08-04T11:53Z",
+    "excerpt": "For the first time in Central Asia, Web Summit is turning its spotlight to a nation rapidly developing its innovation ecosystem: Uzbekistan. Following Runway events in Ljubljana, Rio, and Berlin earlier this year, on September 27, 2025, we’re bringing our community to Tashkent to connect, learn, and",
+    "modified_by_listing": {
+     "/blog/startups-investors/": "2026-08-04T11:53Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/startups-investors/porto-edutech-startup-intuitivo-wins-web-summit-pitch-competition/": {
+    "url": "https://websummit.com/blog/startups-investors/porto-edutech-startup-intuitivo-wins-web-summit-pitch-competition/",
+    "title": "Porto edutech startup Intuitivo wins Web Summit PITCH Competition ",
+    "category": "startups-investors",
+    "date": "2024-11-14T15:42Z",
+    "modified": "2024-11-19T13:22Z",
+    "excerpt": "Intuitivo CEO João Guimarães received the PITCH trophy on Web Summit’s Centre Stage after winning the final round of judging by Seven Seven Six Founding Partner Katelin Holloway, Race Capital General Partner Edith Yeung, and Coelius Capital Founder Zach Coelius. The Porto-based startup won in the fi",
+    "modified_by_listing": {
+     "/blog/startups-investors/": "2024-11-19T13:22Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/startups-investors/crunchbase-funding-report/": {
+    "url": "https://websummit.com/blog/startups-investors/crunchbase-funding-report/",
+    "title": "Web Summit x Crunchbase funding report 2024",
+    "category": "startups-investors",
+    "date": "2024-10-30T14:42Z",
+    "modified": "2025-11-10T17:28Z",
+    "excerpt": "$60 billion raised, with cleantech leading the funding race among startups",
+    "modified_by_listing": {
+     "/blog/startups-investors/": "2025-11-10T17:28Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/startups-investors/platma-investment-startups-no-code/": {
+    "url": "https://websummit.com/blog/startups-investors/platma-investment-startups-no-code/",
+    "title": "How Platma harnessed the Web Summit app to expand its investor network",
+    "category": "startups-investors",
+    "date": "2024-10-01T08:58Z",
+    "modified": "2024-10-30T15:14Z",
+    "excerpt": "As part of our series exploring successful startup stories from our events, we spoke with Yaroslav Kologryvov, co-founder and chief business development officer at Platma. Platma is an all-in-one no-code development platform that offers a simplified English coding system, as well as ready-made templ",
+    "modified_by_listing": {
+     "/blog/startups-investors/": "2024-10-30T15:14Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/web-summit/web-summit-2024-hosts-sold-out-event-with-record-breaking-71528-attendees/": {
+    "url": "https://websummit.com/blog/web-summit/web-summit-2024-hosts-sold-out-event-with-record-breaking-71528-attendees/",
+    "title": "Web Summit 2024 hosts sold out event with record breaking 71,528 attendees",
+    "category": "web-summit",
+    "date": "2024-11-12T11:07Z",
+    "modified": "2026-08-04T11:54Z",
+    "excerpt": "Web Summit 2024 is welcoming 71,528 attendees this week, including CEOs, startups, investors, trade delegations, media and more. The sold-out event floor will see more than 3,000 companies exhibiting, with AI emerging as the most represented industry. Key takeaways: The sold-out event floor at Web S",
+    "modified_by_listing": {
+     "/blog/web-summit/": "2026-08-04T11:54Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/web-summit/geoffrey-hinton-ai-maria-sharapova-boeing-tiktok-onlyfans-collision-toronto/": {
+    "url": "https://websummit.com/blog/web-summit/geoffrey-hinton-ai-maria-sharapova-boeing-tiktok-onlyfans-collision-toronto/",
+    "title": "Here’s what you missed at Collision 2024",
+    "category": "web-summit",
+    "date": "2024-06-20T21:10Z",
+    "modified": "2026-08-04T11:55Z",
+    "excerpt": "Take a look at some of the highlights from our last event in Toronto as we begin our new journey: Web Summit Vancouver 2025.",
+    "modified_by_listing": {
+     "/blog/web-summit/": "2026-08-04T11:55Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/web-summit/web-summit-vancouver-collision-toronto/": {
+    "url": "https://websummit.com/blog/web-summit/web-summit-vancouver-collision-toronto/",
+    "title": "Web Summit Vancouver to succeed Collision in 2025",
+    "category": "web-summit",
+    "date": "2024-06-12T18:35Z",
+    "modified": "2026-08-04T11:56Z",
+    "excerpt": "Web Summit is launching a new event in Vancouver. The first Web Summit in North America, which will take place in Vancouver, Canada in May 2025, represents a new era for Web Summit.",
+    "modified_by_listing": {
+     "/blog/web-summit/": "2026-08-04T11:56Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/web-summit/web-summit-rio-2024-what-you-missed/": {
+    "url": "https://websummit.com/blog/web-summit/web-summit-rio-2024-what-you-missed/",
+    "title": "Here’s what you missed at Web Summit Rio 2024",
+    "category": "web-summit",
+    "date": "2024-04-19T09:41Z",
+    "modified": "2026-08-04T11:56Z",
+    "excerpt": "Take a look at some of the highlights from Web Summit Rio 2024, where AI, climate, fintech and more took centre stage.",
+    "modified_by_listing": {
+     "/blog/web-summit/": "2026-08-04T11:56Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/web-summit/impact-environment-dei-startups-partnerships/": {
+    "url": "https://websummit.com/blog/web-summit/impact-environment-dei-startups-partnerships/",
+    "title": "Web Summit reaffirms commitment to Impact ",
+    "category": "web-summit",
+    "date": "2024-04-11T14:15Z",
+    "modified": "2026-08-04T11:40Z",
+    "excerpt": "New all-women steering committee to oversee Impact initiatives across startups, partnerships and investors programmes. Web Summit strives to empower its team and community to work towards a more sustainable future through its impact programme which is dedicated to contributing to the 17 United Natio",
+    "modified_by_listing": {
+     "/blog/web-summit/": "2026-08-04T11:40Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/impact/how-web-summit-helped-unlock-280-million-in-charitable-pledges/": {
+    "url": "https://websummit.com/blog/impact/how-web-summit-helped-unlock-280-million-in-charitable-pledges/",
+    "title": "How Web Summit helped unlock $280 million in charitable pledges",
+    "category": "impact",
+    "date": "2025-05-13T15:42Z",
+    "modified": "2026-08-04T11:53Z",
+    "excerpt": "At Web Summit, we’re in the business of bringing people together. Sometimes, those meetings spark more than business deals they lead to real, lasting impact. Take Founders Pledge, one of our long-standing Impact partners. Over the past few years, they’ve connected with hundreds of mission-driven ent",
+    "modified_by_listing": {
+     "/blog/impact/": "2026-08-04T11:53Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/impact/community-partner-programme-lse-generate-indigenous-friends-association/": {
+    "url": "https://websummit.com/blog/impact/community-partner-programme-lse-generate-indigenous-friends-association/",
+    "title": "Everything you need to know about our community partner programme",
+    "category": "impact",
+    "date": "2024-08-13T09:30Z",
+    "modified": "2024-08-12T13:25Z",
+    "excerpt": "Applications for our community partner programme are now open. Learn more about our previous partners and how you can get involved at Web Summit Lisbon 2024. All of our events are defined by our commitment to diversity, equity and inclusion. Our community partners are an integral part of what makes ",
+    "modified_by_listing": {
+     "/blog/impact/": "2024-08-12T13:25Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/impact/environment-guide-content-talks-speakers-web-summit-lisbon-2023/": {
+    "url": "https://websummit.com/blog/impact/environment-guide-content-talks-speakers-web-summit-lisbon-2023/",
+    "title": "Your guide to all things environment at Web Summit",
+    "category": "impact",
+    "date": "2023-11-07T15:09Z",
+    "modified": "2024-03-12T10:31Z",
+    "excerpt": "Check out our stop-by-stop guide to environment and climate-related content at Web Summit this November to maximise your experience across the three days. With so many insightful talks, masterclasses and Q As to choose from, it can be difficult to plan a comprehensive event schedule – one that inclu",
+    "modified_by_listing": {
+     "/blog/impact/": "2024-03-12T10:31Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/impact/ai-climate-tech-resilience-ecuador/": {
+    "url": "https://websummit.com/blog/impact/ai-climate-tech-resilience-ecuador/",
+    "title": "How to harness the power of AI to build climate resilience",
+    "category": "impact",
+    "date": "2023-10-30T07:00Z",
+    "modified": "2024-03-12T11:18Z",
+    "excerpt": "There are a lot of fears about AI and killer robots, but what if AI is more safety-net than Skynet when it comes to climate change? In this episode of the Next Stage podcast, join ClimateAI co-founder and CTO Max Evans in conversation with former Bell Media weather anchor and co-host Michelle Jobin,",
+    "modified_by_listing": {
+     "/blog/impact/": "2024-03-12T11:18Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/impact/sustainable-renewable-energy-aws-healing-the-planet/": {
+    "url": "https://websummit.com/blog/impact/sustainable-renewable-energy-aws-healing-the-planet/",
+    "title": "Say ‘no’ to sustainable virtue-signalling",
+    "category": "impact",
+    "date": "2023-07-31T09:00Z",
+    "modified": "2024-03-12T10:53Z",
+    "excerpt": "From renewable energy and superhero sandwiches, to healing our planet with fresh thinkers, we have learned the importance of creating a cleaner future for the next generation. Collision 2023 marked an historic year for us. Our Toronto event gathered more than 36,000 attendees from 118 countries to c",
+    "modified_by_listing": {
+     "/blog/impact/": "2024-03-12T10:53Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   },
+   "https://websummit.com/blog/impact/investing-green-energy-tech-latam/": {
+    "url": "https://websummit.com/blog/impact/investing-green-energy-tech-latam/",
+    "title": "Unicorns? The next green energy startup will be a dragon",
+    "category": "impact",
+    "date": "2023-06-01T16:27Z",
+    "modified": "2024-03-12T11:27Z",
+    "excerpt": "What are the most important areas in green energy right now? Head of Wind Ventures Brian Walsh discusses decarbonisation, solar and wind energy, energy storage, and unlocking value pools through intelligence and technology. Brian also predicts the emergence of a “dragon” in climate tech – a company ",
+    "modified_by_listing": {
+     "/blog/impact/": "2024-03-12T11:27Z"
+    },
+    "modified_field": "listing __NEXT_DATA__ Post.modified",
+    "read_at": "2026-11-10T21:34Z",
+    "first_seen": "2026-11-10T21:01Z"
+   }
+  }
+ },
+ "bluesky": {
+  "source": "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=websummit.bsky.social&limit=20&filter=posts_no_replies",
+  "posts": [
+   {
+    "at": "2026-11-10T17:36Z",
+    "text": "That's a wrap on Day 1 of #WebSummit 2026 🇵🇹",
+    "url": "https://bsky.app/profile/websummit.bsky.social/post/3mzxy4lxhit2j",
+    "match": false
+   },
+   {
+    "at": "2026-11-10T16:00Z",
+    "text": "Who's ready for Night Summit? 🤩",
+    "url": "https://bsky.app/profile/websummit.bsky.social/post/3mzxsrisvg32n",
+    "match": true
+   },
+   {
+    "at": "2026-11-10T15:00Z",
+    "text": "\"In Europe, it's very important for our citizens that they can trust these technologies.\" 🇪🇺\n\nHenna Virkkunen of the European Commission spoke at #WebSummit about balancing innovation with the protection of citizens.",
+    "url": "https://bsky.app/profile/websummit.bsky.social/post/3mzxpgei2al2j",
+    "match": false
+   },
+   {
+    "at": "2026-11-10T14:01Z",
+    "text": "Did you know AI is now helping us skip animal trials in medicine? 🧬\n\nRichard Socher took the #WebSummit stage to share how Parallel Bio’s AI-generated organoids have been FDA-approved to test drug toxicity without using animals. It's a beautiful example of how AI can save lives.",
+    "url": "https://bsky.app/profile/websummit.bsky.social/post/3mzxm3edvh72r",
+    "match": false
+   },
+   {
+    "at": "2026-11-10T13:11Z",
+    "text": "The numbers are in for #WebSummit 2026 🥳\n\nWeb Summit opened on Monday, November 9, drawing 70,003 attendees, 3,052 exhibiting companies, and 1,943 investors.",
+    "url": "https://bsky.app/profile/websummit.bsky.social/post/3mzxjdahrof2w",
+    "match": false
+   },
+   {
+    "at": "2026-11-10T12:00Z",
+    "text": "Will AI agents become your next target audience? 🤖💼\n\nAt #WebSummit, Anton Osika of Lovable breaks down how AI agents will soon make buying decisions for their \"human overlords,\" and why human storytelling will still be the key to making a sale.",
+    "url": "https://bsky.app/profile/websummit.bsky.social/post/3mzxfdt5itp2z",
+    "match": false
+   },
+   {
+    "at": "2026-11-10T09:00Z",
+    "text": "Olá, Lisboa 🇵🇹 Welcome to day one of #WebSummit!",
+    "url": "https://bsky.app/profile/websummit.bsky.social/post/3mzx3bgmitm2z",
+    "match": false
+   },
+   {
+    "at": "2026-11-09T20:30Z",
+    "text": "#WebSummit is officially live! 🇵🇹\n\nSee you all tomorrow for Day 1.",
+    "url": "https://bsky.app/profile/websummit.bsky.social/post/3mzvrdzhxos2k",
+    "match": false
+   },
+   {
+    "at": "2026-11-09T19:30Z",
+    "text": "\"Difference and diversity is the mother of innovation.\"\n\nSpeaking on stage at #WebSummit, Mayor of Lisbon Carlos Moedas reminds us that the solution to our biggest challenges often comes from connecting with those who see the world completely differently.",
+    "url": "https://bsky.app/profile/websummit.bsky.social/post/3mzvnzetlki2k",
+    "match": false
+   },
+   {
+    "at": "2026-11-09T18:56Z",
+    "text": "Is the new Silicon Valley in the Global East? 🤔 \n\nWeb Summit CEO & Founder Paddy Cosgrave takes the stage at #WebSummit to share why the next generation of superstars in AI, energy, and robotics are coming out of China, not California.",
+    "url": "https://bsky.app/profile/websummit.bsky.social/post/3mzvm4xefm42k",
+    "match": false
+   }
+  ]
+ },
+ "alerts": [
+  {
+   "first_seen": "2026-11-10T21:01Z",
+   "channel": "blog",
+   "kind": "recent",
+   "url": "https://websummit.com/blog/news/web-summit-2026-record-number-of-investors/",
+   "title": "Web Summit 2026: Record number of investors at its most international event yet",
+   "at": "2026-11-10T10:00Z",
+   "modified": "2026-11-10T10:29Z",
+   "text": "Web Summit 2026: Record number of investors at its most international event yet: Web Summit 2026 is bringing the world to Lisbon, with 70,003 attendees from 164 countries, making this its most international edition yet. The event has also broken its investor attendance record for the second consecutive year, welcoming 1,943 investors. The tickets to the 2026 edition of Web Summi",
+   "label": "fact"
+  },
+  {
+   "first_seen": "2026-11-10T21:01Z",
+   "channel": "blog",
+   "kind": "recent",
+   "url": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+   "title": "Important event update",
+   "at": "2026-11-10T19:09Z",
+   "modified": "2026-11-10T19:58Z",
+   "text": "Important event update: The Government of Portugal has formally advised Web Summit that, due to the risks posed by Storm Charles, including tidal flooding, severe disruption to public transport and the impact of high winds on external structures, Day 2 of Web Summit should not take place. This follows discussions with the ",
+   "label": "fact"
+  },
+  {
+   "first_seen": "2026-11-10T21:01Z",
+   "channel": "blog",
+   "kind": "recent",
+   "url": "https://websummit.com/blog/news/record-investors-at-web-summit-2025-bucking-industry-trends/",
+   "title": "Record investors at Web Summit 2025, bucking industry trends",
+   "at": "2025-11-13T16:53Z",
+   "modified": "2026-11-10T10:24Z",
+   "text": "Record investors at Web Summit 2025, bucking industry trends: Web Summit 2025 is welcoming 71,386 attendees this week, including CEOs, government and trade delegations, global media, and more startups and investors than ever before. Below we present Web Summit 2025, by the numbers: Key takeaways Ten years ago it already felt like the world was changing fast, b",
+   "label": "fact"
+  },
+  {
+   "first_seen": "2026-11-10T21:12Z",
+   "channel": "sitemap",
+   "kind": "new",
+   "match": false,
+   "url": "https://websummit.com/lis26-homepage-components/",
+   "text": "new page on websummit.com: https://websummit.com/lis26-homepage-components/",
+   "label": "fact"
+  },
+  {
+   "first_seen": "2026-11-10T21:34Z",
+   "channel": "sitemap",
+   "kind": "new",
+   "match": false,
+   "url": "https://websummit.com/lis26-live/",
+   "text": "new page on websummit.com: https://websummit.com/lis26-live/",
+   "label": "fact"
+  },
+  {
+   "first_seen": "2026-11-10T21:34Z",
+   "channel": "blog",
+   "kind": "modified",
+   "url": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+   "title": "Important event update",
+   "at": "2026-11-10T19:09Z",
+   "modified": "2026-11-10T20:06Z",
+   "text": "Important event update: The Government of Portugal has formally advised Web Summit that, due to the risks posed by Storm Charles, including tidal flooding, severe disruption to public transport and the impact of high winds on external structures, Day 2 of Web Summit should not take place. This follows discussions with the ",
+   "label": "fact"
+  }
+ ],
+ "errors": []
+}

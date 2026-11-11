@@ -160,6 +160,14 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push(xrayIndexHtml(XRAY))
+        } else if (/^```incident [a-z0-9/.-]+\s*$/.test(l)) {
+            // an incident dashboard (WS-214, incident.dev@web-summit.dinis): a mount for assets/incidents/<name>.js (front matter
+            // script: incidents/<name>), which reads the incident's data folder (the path, from the repository's root)
+            const dir = l.slice(12).trim().replace(/\/+$/, '')
+            if (dir.includes('..') || !fs.existsSync(path.join(ROOT, dir))) throw new Error(`incident block: no folder ${dir}`)
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push(`<div class="incident" id="incident" data-dir="${esc(dir)}/"><p class="meta">The dashboard needs JavaScript: it reads the incident's data (<a href="../../${esc(dir)}/README.md">${esc(dir)}/</a>) and draws it here.</p></div>`)
         } else if (/^```sticker-vote\s*$/.test(l)) {
             // the team's sticker vote (WS-167, conductor@web-summit.dinis): a mount for assets/stickers-vote.js, which the
             // page loads through its front matter (script: stickers-vote); without JavaScript it says so
@@ -519,12 +527,16 @@ const expandIssues =(body, up = '../') => { UP = up; return body
 // collections: every folder under content/ except articles is a section: content/<dir>/<slug>.md -> <dir>/<slug>/index.html,
 // newest first on <dir>/index.html (unless content/<dir>.md writes that page itself). Front matter: title, summary, optional date.
 // The journalist's reports (content/reports/) and the ABPs (content/abp/) live here; a new folder needs no build change.
-const COLLECTIONS = { reports: 'The reports: what happened, every two hours', abp: 'Agent Behaviour Policies: one for each of our agents' }
+const COLLECTIONS = { reports: 'The reports: what happened, every two hours', incidents: 'Incidents: the live dashboards', abp: 'Agent Behaviour Policies: one for each of our agents' }
 for (const dir of fs.readdirSync(path.join(ROOT, 'content'), { withFileTypes: true }).filter(d => d.isDirectory() && d.name !== 'articles').map(d => d.name).sort()) {
     const items = fs.readdirSync(path.join(ROOT, 'content', dir)).filter(f => f.endsWith('.md')).sort().reverse().map(f => {
         const { meta, body: rawBody } = parse(fs.readFileSync(path.join(ROOT, 'content', dir, f), 'utf8'))
         const slug = f.replace(/\.md$/, ''), rel = `${dir}/${slug}/index.html`, title = meta.title || slug, body = expandIssues(rawBody, '../../')
-        write(rel, page({ rel, title, description: meta.summary || title, body: render(body).replace(/href="\.\.\/(?!\.\.)/g, 'href="../../'), mdTwin: twinPath(rel) }))
+        // an optional page script (WS-214): front matter script: <dir>/<name> names assets/<dir>/<name>.js
+        if (meta.script && !/^[a-z0-9-]+(\/[a-z0-9-]+)?$/.test(meta.script)) throw new Error(`content/${dir}/${f}: script must name a file in assets/ ([a-z0-9-], one folder at most)`)
+        if (meta.script && !fs.existsSync(path.join(ROOT, 'assets', meta.script + '.js'))) throw new Error(`content/${dir}/${f}: no assets/${meta.script}.js`)
+        const head = meta.script ? `<script src="../../assets/${meta.script}.js?v=${VERSION}" defer></script>` : ''
+        write(rel, page({ rel, title, description: meta.summary || title, head, body: render(body).replace(/href="\.\.\/(?!\.\.)/g, 'href="../../'), mdTwin: twinPath(rel) }))
         pages.push({ rel, title, description: meta.summary || title })
         twin(rel, title, meta.summary || title, body)
         return { slug, title, summary: meta.summary || '', date: meta.date || '' }

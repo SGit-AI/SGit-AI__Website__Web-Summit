@@ -1,0 +1,319 @@
+{
+  "id": "medium-voice-brief-to-deck",
+  "size": "medium",
+  "schema": "ws-trace/1",
+  "shape": {
+    "step": "n, at (UTC, ISO 8601), at_note, actor {name, kind: person|agent|ci}, in, out, handoff {to, via}, repo, sha, issue, brief, for[], kind, evidence[] (commit|version|url|file); evidence: [] with evidence_note when the record holds none",
+    "graph": "each commit step also gives /pipeline/'s graph row {at, repo, sha, agent, issue, for[], kind} (WS-205)"
+  },
+  "title": "A voice brief to a deck: THE RESTART (02:40 UTC) to Dinis's 09:00 team briefing",
+  "input": {
+    "kind": "voice brief",
+    "what": "Dinis, about 02:40 UTC on 10 November: THE BIG STOP is over, restart and accelerate, every team on one theme (agentic, GAMMA-Ray)",
+    "brief": "brief:2026-11-10T0240Z-restart"
+  },
+  "output": {
+    "kind": "deck",
+    "what": "the 09:00 team briefing: slides, screenshots and a PDF",
+    "url": "https://web-summit.sgit.ai/meetings/2026-11-10-0900/show/",
+    "files": [
+      "team/conductor/shows/2026-11-10-0900.py",
+      "team/conductor/shows/2026-11-10-0900.show",
+      "assets/shows/2026-11-10-0900/deck.pdf"
+    ]
+  },
+  "status": "in progress: the steps to the final deck are captured; the presentation at 09:00 has no evidence yet",
+  "captured_by": "reporter@web-summit.dinis",
+  "captured_at": "2026-11-10T14:30Z",
+  "duration": {
+    "from": "2026-11-10T02:40Z (about)",
+    "to": "2026-11-10T08:20:11Z",
+    "note": "5 h 40 min from the voice brief to the final deck live (v0.2.1662); the first deck was live 1 h 29 min after the brief (v0.2.1642). The deck's own header says 'updated hourly until 09:00'; the record shows two updates (v1 and the final refresh)."
+  },
+  "steps": [
+    {
+      "n": 1,
+      "at": "2026-11-10T02:40:00Z",
+      "at_note": "about; from the commit body of 63794d6 and the Brief: id",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "the big stop (the night of 9 to 10 November)",
+      "out": "a voice brief: THE RESTART",
+      "handoff": {
+        "to": "conductor@web-summit.dinis",
+        "via": "voice, in the conductor's session"
+      },
+      "brief": "brief:2026-11-10T0240Z-restart",
+      "kind": "voice brief",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "63794d60",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/63794d60a6148af9b67c0ac710a8fcac7222a4b6",
+          "note": "the body quotes the brief's time"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "at": "2026-11-10T04:02:31Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the voice brief",
+      "out": "WS-208, THE RESTART: one theme, who takes what; each person confirms their piece",
+      "handoff": {
+        "to": "the team's conductors",
+        "via": "commit For: lines"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "63794d60",
+      "issue": "WS-208",
+      "brief": "brief:2026-11-10T0240Z-restart",
+      "for": [
+        "dinis",
+        "conductor@web-summit.indi",
+        "conductor@web-summit.silvio",
+        "conductor@web-summit.angelo",
+        "conductor@web-summit.vicky",
+        "conductor@web-summit.jose",
+        "desk.conductor@PrompTugal.angelo",
+        "prompter@web-summit.indi"
+      ],
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "63794d60",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/63794d60a6148af9b67c0ac710a8fcac7222a4b6"
+        },
+        {
+          "type": "version",
+          "version": "v0.2.1641",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "ebf0e6b9",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/ebf0e6b939d236e1da05274dda4ce88a7e703d9e"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "board/WS-208-the-restart.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-208-the-restart.md"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "at": "2026-11-10T04:05:30Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "WS-208 and the live sites",
+      "out": "the deck v1: the slide source (.py), the slides (.show), ten screenshots and deck.pdf",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "aed5d61b",
+      "brief": "brief:2026-11-10T0240Z-restart",
+      "for": [
+        "dinis"
+      ],
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "aed5d61b",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/aed5d61ba87842a800f4e499f747556b1bb269ad"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/conductor/tools/show_deck.py",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/conductor/tools/show_deck.py"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/conductor/tools/deck_pdf.cjs",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/conductor/tools/deck_pdf.cjs"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "at": "2026-11-10T04:06:13Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the deck v1",
+      "out": "the deck linked from WS-208",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "e97f26d2",
+      "brief": "brief:2026-11-10T0240Z-restart",
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "e97f26d2",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/e97f26d218a5a7fdfc654f841eaabf62d7729d06"
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "at": "2026-11-10T04:08:54Z",
+      "actor": {
+        "name": "GitHub Actions (deploy-pages.yml)",
+        "kind": "ci"
+      },
+      "in": "dev including aed5d61 and e97f26d",
+      "out": "v0.2.1642: the deck v1 live (the release is named after the tip commit, another agent's)",
+      "handoff": {
+        "to": "Dinis and the team",
+        "via": "web-summit.sgit.ai"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "7b8d7908",
+      "kind": "release",
+      "evidence": [
+        {
+          "type": "version",
+          "version": "v0.2.1642",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "7b8d7908",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/7b8d79087b1d4c6da388dd17fd3f445c1591aa3e"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "at": "2026-11-10T04:19:21Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the restart's demo piece",
+      "out": "a note for Angelo's team: share the ABP demo scenarios with Android and iOS",
+      "handoff": {
+        "to": "Angelo's team",
+        "via": "commit"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "9aeaead7",
+      "brief": "brief:2026-11-10T0240Z-restart",
+      "kind": "commit",
+      "branch": "side: same brief, not the deck",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "9aeaead7",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/9aeaead7ed16c3f9133973fefa25c8a5c89d3117"
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "at": "2026-11-10T08:17:32Z",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "in": "the night's work across the teams",
+      "out": "the final refresh: an 'Overnight' slide (the first GAMMA-Ray cards, iOS CI on one Mac, the agentic edition, three Portuguese design directions), new screenshots, a new PDF",
+      "handoff": {
+        "to": "CI",
+        "via": "push to dev"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "f8071be4",
+      "brief": "brief:2026-11-10T0240Z-restart",
+      "for": [
+        "dinis"
+      ],
+      "kind": "commit",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "f8071be4",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/f8071be49640bcab66f48a86488b623e9a3aa3ed"
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "at": "2026-11-10T08:20:11Z",
+      "actor": {
+        "name": "GitHub Actions (deploy-pages.yml)",
+        "kind": "ci"
+      },
+      "in": "dev including f8071be",
+      "out": "v0.2.1662: the final deck live",
+      "handoff": {
+        "to": "Dinis",
+        "via": "web-summit.sgit.ai"
+      },
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "sha": "9b031ed7",
+      "kind": "release",
+      "evidence": [
+        {
+          "type": "version",
+          "version": "v0.2.1662",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "9b031ed7",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/9b031ed7eb0f5ed8d737c95de76362bd1c07f0dc"
+        },
+        {
+          "type": "url",
+          "url": "https://web-summit.sgit.ai/meetings/2026-11-10-0900/show/"
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "at": "2026-11-10T09:00:00Z",
+      "at_note": "scheduled",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "in": "the deck",
+      "out": "the 09:00 team briefing, presented",
+      "handoff": {
+        "to": "the team",
+        "via": "the meeting"
+      },
+      "kind": "presentation",
+      "evidence": [],
+      "evidence_note": "none at 15:25: no meeting notes or later commit records the 09:00 briefing itself; 2a64852 (desk.conductor@PrompTugal.angelo, 08:49) refers to 'after Dinis's 09:00'"
+    }
+  ],
+  "people_acted": [
+    "Dinis: the voice brief; the presentation"
+  ],
+  "agents_acted": {
+    "conductor@web-summit.dinis": "turned the brief into a board issue, a deck with screenshots and a PDF, and refreshed it with the night's work",
+    "GitHub Actions": "versioned and deployed each step"
+  },
+  "open": [
+    "evidence of the 09:00 presentation",
+    "the teams' confirmations of their pieces (WS-208), as hand-offs"
+  ]
+}

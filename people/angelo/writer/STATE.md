@@ -8,17 +8,27 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS-125) | published 6 Nov (222e196e); checker@PrompTugal.vicky closed the second check's findings, nothing open (8 Nov) | nothing | https://promptugal.news/articles/agent-setup-guide.html |
-| Web Summit wristbands: where the queues are short, and when (WQ1) | published 9 Nov (e63f9a51); checker's seventh check: clean | nothing | https://promptugal.news/articles/web-summit-wristband-queues.html |
-| Speed or control: tuning a team of a hundred agents (AC1) | draft, for Angelo's review (9 Nov, 9e5845ee); rewritten in a confident tone after his note (cf8f10b3, 16:37), now "Speed where it's safe, control where it matters" | Angelo's review | desks/writer-angelo/drafts/ac1-authority-checks.md in the newsroom |
-| Your Web Summit wristband and badge: what they're for, and who is who (WC1) | draft, for Angelo's review (9 Nov, 5471b887) | Angelo's colours | desks/writer-angelo/drafts/wc1-wristband-and-badge.md in the newsroom |
-| Agents on Google Workspace, step by step (GW1) | draft, for Angelo's review (9 Nov, 0841dda8) | Angelo's review | desks/writer-angelo/drafts/gw1-agents-on-google-workspace.md in the newsroom |
+| The agent setup guide (WS-125) | published 6 Nov; corrected and re-signed 7 Nov after checker@PrompTugal.vicky and dev@/policy@ reviews; interactive version linked | nothing | https://promptugal.news/articles/agent-setup-guide.html |
+| Web Summit wristbands: where the queues are short (wq1) | published 9 Nov | nothing | https://promptugal.news/articles/web-summit-wristband-queues.html |
+| Web Summit's nineteen passes: who is who, by colour (wc1) | published 9 Nov, reworked 10 Nov (colour sample per pass, no photo); checker@PrompTugal.vicky's seventh check (00e5ee51): clean | nothing | https://promptugal.news/articles/web-summit-passes-and-colours.html |
+| Speed where it's safe, control where it matters (ac1) | published 10 Nov at Angelo's word (2ce1fb9f); numbers re-counted | Angelo: his LinkedIn reply with the link | https://promptugal.news/articles/speed-where-its-safe-control-where-it-matters.html |
+| Agents on Google Workspace, step by step (gw1) | draft, 9 Nov | Angelo's review | newsroom desks/writer-angelo/drafts/gw1-agents-on-google-workspace.md |
+| Six people, six agent protocols, one week (pr1) | draft, 10 Nov (backlog 0i) | Angelo's review | newsroom desks/writer-angelo/drafts/pr1-how-the-protocols-grew.md |
 
-## Open with the newsroom
+No review finding open against any of Angelo's pieces. checker@PrompTugal.vicky's ninth check of ac1 (10 Nov, 521658f0): no problems; sources on riskmandate.ai, sgit.ai, web-summit.sgit.ai and docs.github.com could not be opened from its session (newsroom desks/checker-vicky/findings/speed-where-its-safe-control-where-it-matters.md). Nothing addressed to the writer since.
 
-- A correction found for the published setup guide (WS-125), reported by the writer (bc04ea7); no newsroom change seen yet.
+## Open with the newsroom (no answer seen as of 10 Nov)
 
-- Whether Angelo's pieces can carry his byline; whether he owns the technical notes section; whether he is an outreach sender (2219eb22, ecd8dc39): no answer seen in the newsroom commits.
-- Security S30 (Angelo's agents ship code to dev without dev@'s review): decided 9 Nov 10:55; open: a key for dev.venues@ (board/team/security/findings.md).
+- Whether Angelo is listed as a technical content contributor on the board page (ask 7 Nov, reminded 8 Nov). Related: Dinis opened a /contribute/ page (WS-204, 9 Nov), which may be the route.
+- Whether Angelo's writer may hold a key in `board/keys.json` and publish (security@, abp@). It has published at Angelo's word since, so it works in practice; no written answer seen.
+- Dinis's own line confirming he authorised the WS-125 guide.
+- Done: T1 agent count updated to "over a hundred" by reviewer@PrompTugal.vicky (5edfa2b2).
+- Newsroom guidance 2026-11-10 (WS-208, 6a1fe992): Dinis approved Angelo's and Vicky's two new sessions (on his card) for the rebuild; handover rules apply (own key, old entry superseded, own sessions/ folder). Question for Angelo: does this change anything for the writer's key or this runner?
 
-last_run: 2026-11-09 18:15 UTC
+## Waits on Angelo
+
+- Review of gw1 and pr1 drafts.
+- Tuesday 10 Nov interview sheet (construction governance, people/angelo/writer/interview-sheet-2026-11-10.md): the Q&A piece follows his notes; publishing is his call.
+- Question: does he still want the contributor listing chased, or is /contribute/ enough?
+
+last_run: 2026-11-10T14:08Z

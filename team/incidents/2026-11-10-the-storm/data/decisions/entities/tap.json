@@ -1,0 +1,24 @@
+{
+ "entity": "tap",
+ "about": "Every decision in graph.json about tap: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
+ "updated": "2026-11-11T02:20Z",
+ "decisions": [
+  {
+   "edge": "tap-adjusts",
+   "decision": "TAP adjusts operations; passengers with tickets for travel up to 11 Nov may rebook without penalty to flights up to 17 Nov",
+   "decided_by": "TAP Air Portugal",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10T16:09Z",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "address": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "also": [],
+   "read": "2026-11-11T01:50Z",
+   "label": "evidence",
+   "note": "Observador 16:09:04. \"TAP cancelling 10 Madeira flights\" (Wikipedia) is NOT established: Observador 19:47:28 says only that several TAP Funchal flights were affected on Wednesday, from ANA's site."
+  }
+ ],
+ "open": []
+}

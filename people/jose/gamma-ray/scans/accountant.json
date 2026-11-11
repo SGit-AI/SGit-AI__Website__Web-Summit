@@ -1,0 +1,176 @@
+{
+ "id": "accountant-web-summit-jose",
+ "name": "accountant@web-summit.jose",
+ "operator": "Jose (RiskMandate's Web Summit 2026 team), within the team's rules (Dinis Cruz, operator)",
+ "ours": true,
+ "kind": "deployment",
+ "read": "2026-11-10",
+ "tier": "public",
+ "what": "Token accounting: a sub-agent of the conductor's 07:20 wake that reads only the ledgers each of Jose's agents writes for its own session, and recommends a model per agent in Jose's brief; it changes no model itself. A sub-agent: no session of its own.",
+ "note": "A GAMMA-Ray Public pilot scan of one of Jose's own agents, by conductor@web-summit.jose for Jose, from public pages of this repository only: its Agent Behaviour Policy (drafted by abp@web-summit.dinis from the repository alone), people/jose/agents.json, Jose's kit (people/jose/kit/README.md), the watcher's, the reviewer's and the accountant's files, the one-door task files, the keys page and the agents' commits. Every answer is self-reported by the team, none observed or measured. Draft standard 0.2 beta.",
+ "standard": {
+  "repo": "https://github.com/SGit-AI/sgit-ai__website__gamma-ray",
+  "commit": "2638987",
+  "version": "draft 0.2 beta (data/levels.json), site v0.0.116"
+ },
+ "grant": null,
+ "grant_note": "Not measured in the capability grammar. Its policy lists Reach in prose and says most of it is unknown; nobody has translated it into the capabilities or probed the session.",
+ "vault": null,
+ "vault_note": "Not done yet: unlike Silvio's scans, these are not yet in a public sgit vault, so there is no read key.",
+ "answers": {
+  "I04": {
+   "e": "https://web-summit.sgit.ai/people/jose/agents.json",
+   "n": "A sub-agent inside conductor@web-summit.jose's Claude Code cloud session, with that session's Reach (its ABP).",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I07": {
+   "e": "https://web-summit.sgit.ai/people/jose/accountant/ROLE.md",
+   "n": "It reads the ledgers and recommends a model per agent in Jose's brief; Jose decides and changes the model in each session; it changes no model or prompt itself.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I14": {
+   "e": "https://web-summit.sgit.ai/people/jose/tasks/README.md",
+   "n": "Jose's agents talk through commits (subject with the sender's name, trailers Agent: and For:) and through the one-door task files, whose format is written down.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I20": {
+   "e": "https://web-summit.sgit.ai/abp/accountant-web-summit-jose/#mandate",
+   "n": "Its business task and deployment scope are written in its Agent Behaviour Policy and its ROLE.md.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I21": {
+   "e": "https://web-summit.sgit.ai/abp/accountant-web-summit-jose/#mandate",
+   "n": "Its write paths and its rules are defined; its connectors and tools are not listed (the policy says they are not known).",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I22": {
+   "e": "https://web-summit.sgit.ai/abp/accountant-web-summit-jose/#gap",
+   "n": "A limit is documented: it shares the conductor's session and Reach.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I29": {
+   "e": "https://web-summit.sgit.ai/people/jose/agents.json",
+   "n": "Jose's agents are listed in people/jose/agents.json, and their keys on the keys page.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I30": {
+   "e": "https://web-summit.sgit.ai/abp/accountant-web-summit-jose/#licence",
+   "n": "Accountable owner: Jose.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I32": {
+   "e": "https://web-summit.sgit.ai/abp/accountant-web-summit-jose/#licence",
+   "n": "Jose is the accountable owner, within the team's rules; Dinis Cruz is the operator.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I33": {
+   "e": "https://web-summit.sgit.ai/people/jose/agents.json",
+   "n": "Each agent's job is written beside its name.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I34": {
+   "e": "https://web-summit.sgit.ai/abp/accountant-web-summit-jose/",
+   "n": "Its Agent Behaviour Policy is published, with the rules from Jose's brief.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I37": {
+   "e": "https://web-summit.sgit.ai/people/jose/agents.json",
+   "n": "Started at Jose's word, recorded with the date in people/jose/agents.json.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I38": {
+   "e": "https://web-summit.sgit.ai/brief-jose/#rules",
+   "n": "Never send: it drafts and a person sends every message.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I39": {
+   "e": "https://web-summit.sgit.ai/people/jose/reviewer/hold.json",
+   "n": "A hold file stops the pushes of any of Jose's agents (a rule they keep, not a lock); its scheduled task can be turned off by Jose. At the stop of 9 November nothing of Jose's was running (his stop report).",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I40": {
+   "e": "https://web-summit.sgit.ai/people/jose/kit/README.md",
+   "n": "What waits on Jose, and any hold, goes to the conductor, which puts it on the Actions section of Jose's dashboard (one door, C19).",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I41": {
+   "e": "https://web-summit.sgit.ai/people/jose/reviewer/ROLE.md",
+   "n": "Its output is a section of the conductor's committed brief; its token use is inside the conductor's ledger. It has no run log of its own.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I45": {
+   "e": "https://web-summit.sgit.ai/abp/accountant-web-summit-jose/#barriers",
+   "n": "Since 6 November main is protected on GitHub (the policy read protected: true; the rule's details not read): a limit outside its reach. dev is not protected.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I47": {
+   "e": "https://web-summit.sgit.ai/abp/accountant-web-summit-jose/#barriers",
+   "n": "Most limits are rules kept by the agent: never send, write only its paths in people/jose/ (and the board where its prompt says), never push to main, the reviewer before every push.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I48": {
+   "e": "https://web-summit.sgit.ai/abp/accountant-web-summit-jose/#barriers",
+   "n": "Gate check 15 (comms_check.mjs) refuses a contact detail or a key shape in people/ and board/; it runs in CI, which the agent's push can also change. ",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I61": {
+   "e": "https://web-summit.sgit.ai/people/jose/agents.json",
+   "n": "The product is named (Claude Code); its model use is counted inside the ledger of the session it runs in, not on its own.",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  },
+  "I68": {
+   "e": "https://web-summit.sgit.ai/people/jose/accountant/ROLE.md",
+   "n": "It is the cycle: once a day it reads the ledgers and recommends a model per agent; Jose keeps or reverts (the C30 trial).",
+   "g": "self-reported",
+   "m": "deployed",
+   "read": "2026-11-10"
+  }
+ },
+ "not_evidenced": {
+  "I23": "Its Reach is not enumerated: its policy says its connectors and tools are not known (the session is in Jose's account). Not evidenced, not a no.",
+  "I11": "Its connectors are not listed in any public page.",
+  "I43": "No monitoring of the accountant itself is recorded: it has no commits of its own, and its output is a section of the conductor's brief. Not evidenced, not a no.",
+  "I26": "It has no key of its own: it is a sub-agent and signs nothing; it uses the session of the agent it runs in.",
+  "I49": "Its Gap is stated in its policy, but in standard 0.2 the delta (I49) is read only from a measured mandate and grant, and neither is measured."
+ }
+}

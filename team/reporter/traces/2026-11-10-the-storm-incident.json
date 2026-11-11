@@ -1,0 +1,2024 @@
+{
+  "id": "2026-11-10-the-storm-incident",
+  "schema": "ws-incident-trace/1",
+  "issue": "WS-214",
+  "severity": "P1 (run as P3-as-P1)",
+  "status": "open: item 1 happened (Wednesday off, 19:38); the incident stays P1 for Thursday and safety",
+  "title": "Incident: the storm on Wednesday 11 November, run as P1 on account A",
+  "folder": {
+    "type": "file",
+    "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+    "path": "team/incidents/2026-11-10-the-storm/",
+    "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/"
+  },
+  "captured_by": "reporter@web-summit.dinis",
+  "captured_at": "2026-11-11T00:25Z",
+  "rules": "Read Vicky's weather desk's public files only; never write to them. Public sources only; nothing on people's whereabouts or contact details.",
+  "shape": {
+    "event": "n, lane (outside|ours), kind (signal|decision|hand-off|not read), actor {name, kind: authority|person|agent}, what, published (UTC, the source's own time; null if not stated), read (UTC, when our team first read it), read_by, affects[] (the incident's 'could happen' items, README section 3), evidence[], note, handoff {to, via}",
+    "could_happen": {
+      "1": "Web Summit suspends or shortens Wednesday",
+      "2": "transport stops or thins",
+      "3": "the venue opens but people do not come",
+      "4": "power or network fails at the venue",
+      "5": "side events and meetups move or cancel",
+      "6": "Thursday changes too",
+      "7": "a person on the team is at risk"
+    },
+    "tiers": "source.tier: official (the authority's own page), secondary (press, live blogs), unofficial (public posts); an authority quoted by the press is kind 'signal (press, quoting ...)'"
+  },
+  "events": [
+    {
+      "n": 1,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA",
+        "kind": "authority"
+      },
+      "what": "Communiqué no. 1 names the low CHARLES; orange warnings to come, an upgrade not ruled out",
+      "published": "2026-11-09T13:17:00Z",
+      "read": "2026-11-10T16:53:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://www.ipma.pt/pt/otempo/comunicados/"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "affects": [
+        1,
+        2,
+        6,
+        7
+      ]
+    },
+    {
+      "n": 2,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "ANEPC",
+        "kind": "authority"
+      },
+      "what": "Aviso 21 to the population on CHARLES (gusts to 120 km/h; avoid unnecessary travel)",
+      "published": "2026-11-09T20:30:00Z",
+      "read": "2026-11-10T17:01:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://prociv.gov.pt/pt/avisos-a-populacao/"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "affects": [
+        2,
+        7
+      ]
+    },
+    {
+      "n": 3,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "Government (Internal Administration; Education co-signing)",
+        "kind": "authority"
+      },
+      "what": "Situação de alerta, mainland, Wed 00:00 to 23:59: (a) schools and non-essential public services close; (b) outdoor events suspended; (c) to (e) parks, structures, shoreline",
+      "published": "2026-11-10T12:10:00Z",
+      "read": "2026-11-10T17:01:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "f360b4bc",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/f360b4bca2d6"
+        }
+      ],
+      "note": "the page's own date is 12:10 UTC; the incident's timeline.md gives '~17:27', which is when S41 was updated with it (50a0397e)",
+      "affects": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "n": 4,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA",
+        "kind": "authority"
+      },
+      "what": "Red wind warning, Lisbon district, Wed 12:00 to 21:00 (red in eight districts)",
+      "published": "2026-11-10T07:18:40Z",
+      "read": "2026-11-10T14:23:00Z",
+      "read_by": "journalist@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "c8820e0e",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/c8820e0e4d35"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "169445ff",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/169445ff3ea7"
+        }
+      ],
+      "note": "CORRECTED 00:25: IPMA's CAP message for the red wind was sent at 07:18:40 on 10 Nov (incident.meteorologist@'s cap.json, 169445ff); our first read was 14:23, about 7 h 4 min later",
+      "affects": [
+        1,
+        2,
+        4,
+        7
+      ]
+    },
+    {
+      "n": 5,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA (via TAF, LPPT)",
+        "kind": "authority"
+      },
+      "what": "Airport forecast: gusts to 48 kt at times Wed 09:00 to 18:00, 40% chance of 58 kt with thunderstorms",
+      "published": "2026-11-10T15:23:00Z",
+      "read": "2026-11-10T16:54:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "affects": [
+        2,
+        6
+      ]
+    },
+    {
+      "n": 6,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "Transport operators (Fertagus, Carris Metropolitana, Transtejo/Soflusa, Metro)",
+        "kind": "authority"
+      },
+      "what": "Possible disruption on Wednesday (Fertagus, Carris Metropolitana: 4 weather notices to Wed 23:59); a ferry route restricted on Tuesday; Metro no notice; no suspension",
+      "published": null,
+      "read": "2026-11-10T16:59:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 7,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "Web Summit, MEO Arena, FIL",
+        "kind": "authority"
+      },
+      "what": "No notice about the weather or Wednesday's programme",
+      "published": null,
+      "read": "2026-11-10T16:55:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "note": "checked again 17:43 and 18:36: no change",
+      "affects": [
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "n": 8,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "ANEPC",
+        "kind": "authority"
+      },
+      "what": "Special readiness raised; public SMS warning about Wednesday",
+      "published": "2026-11-10",
+      "read": "2026-11-10T17:01:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://prociv.gov.pt/pt/noticias/depressao-charles-anepc-avisa-populacao-por-sms/"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "note": "time not stated",
+      "affects": [
+        7
+      ]
+    },
+    {
+      "n": 9,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA",
+        "kind": "authority"
+      },
+      "what": "Communiqué no. 2: worse from early morning Wednesday (no. 1 said late morning); red and orange warnings issued; track still highly uncertain",
+      "published": "2026-11-10T17:07:58Z",
+      "read": "2026-11-10T17:42:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        }
+      ],
+      "affects": [
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "n": 10,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA",
+        "kind": "authority"
+      },
+      "what": "Rain raised to red, Lisbon, Wed 12:00 to 18:00",
+      "published": "2026-11-10T16:30:01Z",
+      "read": "2026-11-10T17:42:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "c0587177",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/c05871773026"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "169445ff",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/169445ff3ea7"
+        }
+      ],
+      "note": "CORRECTED 00:25: IPMA's CAP message for the red rain was sent at 16:30:01; the open data showed it by 17:42 (first read). Lag about 1 h 12 min",
+      "affects": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "n": 11,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "Carris",
+        "kind": "authority"
+      },
+      "what": "Homepage banner: 'perturbações na circulação' (service disruption), updating as it changes",
+      "published": null,
+      "read": "2026-11-10T18:37:00Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/live.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "872717be",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/872717bed3fd"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 12,
+      "lane": "outside",
+      "kind": "not read",
+      "actor": {
+        "name": "Câmara Municipal de Lisboa and its civil protection",
+        "kind": "authority"
+      },
+      "what": "The city's own measures (a page titled 'Situação de Alerta: medidas excecionais em Lisboa' is listed by search)",
+      "published": null,
+      "read": null,
+      "read_by": "weather@PrompTugal.vicky (refused, 403)",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "desks/weather-vicky/decision-chain.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/decision-chain.md"
+        }
+      ],
+      "note": "the gap in the decision graph: the city's decision is the link between the government and the venue",
+      "affects": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "n": 13,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "what": "Run the storm as a P1 incident on account A only (P3-as-P1)",
+      "published": "2026-11-10T18:35:00Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/decisions.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/decisions.md"
+        }
+      ],
+      "handoff": {
+        "to": "conductor@web-summit.dinis",
+        "via": "voice, in his session"
+      }
+    },
+    {
+      "n": 14,
+      "lane": "ours",
+      "kind": "hand-off",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Incident declared: WS-214, the incident folder (README, timeline, decisions), the roles (lead, reporter, journalist, signals, security, cost), the union of seven things that could happen",
+      "published": "2026-11-10T18:40:03Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "dedace17",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/dedace176673"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "board/WS-214-incident-the-storm-on-wednesday.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-214-incident-the-storm-on-wednesday.md"
+        }
+      ],
+      "handoff": {
+        "to": "reporter@, journalist.examples@, social.watch@, security.repos@web-summit.dinis; accountant@PrompTugal.dinis",
+        "via": "commit For:; a session message to the reporter (18:40)"
+      }
+    },
+    {
+      "n": 15,
+      "lane": "ours",
+      "kind": "hand-off",
+      "actor": {
+        "name": "reporter@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "This trace opened; two times in timeline.md flagged for the lead",
+      "published": "2026-11-10T18:50:00Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [],
+      "note": "this commit",
+      "handoff": {
+        "to": "conductor@web-summit.dinis (lead); journalist.examples@web-summit.dinis",
+        "via": "commit For:"
+      }
+    },
+    {
+      "n": 16,
+      "lane": "outside",
+      "kind": "signal (press, via Lusa)",
+      "actor": {
+        "name": "AWAY (IOL), via Lusa",
+        "kind": "press"
+      },
+      "what": "IPMA expects the storm earlier, Wednesday morning; Lisbon among the hardest hit; avoid unnecessary travel",
+      "published": "2026-11-10T08:46:00Z",
+      "read": "2026-11-10T18:50:00Z",
+      "read_by": "social.watch@PrompTugal.dinis (sweep 1, 18:45 to 18:50)",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://away.iol.pt/aviso-vermelho-ipma/vento/alerta-vermelho-ipma-admite-cenario-semelhante-ao-da-tempestade-kristin-e-aponta-lisboa-como-uma-das-regioes-mais-atingidas/20261110/6af2d9fd0cf2cb2507aa81b4",
+          "tier": "secondary"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "board/team/social.watch/signals/2026-11-11-the-storm.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/team/social.watch/signals/2026-11-11-the-storm.md"
+        }
+      ],
+      "affects": [
+        1,
+        2
+      ]
+    },
+    {
+      "n": 17,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "Jornal de Negócios, live",
+        "kind": "press"
+      },
+      "what": "Web Summit's organisers following the alerts with ANEPC and PSP; no sign yet of cancelling Wednesday",
+      "published": "2026-11-10T12:45:00Z",
+      "read": "2026-11-10T18:50:00Z",
+      "read_by": "social.watch@PrompTugal.dinis (sweep 1, 18:45 to 18:50)",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+          "tier": "secondary"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "board/team/social.watch/signals/2026-11-11-the-storm.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/team/social.watch/signals/2026-11-11-the-storm.md"
+        }
+      ],
+      "affects": [
+        1
+      ]
+    },
+    {
+      "n": 18,
+      "lane": "outside",
+      "kind": "signal (press, quoting an authority)",
+      "actor": {
+        "name": "Lisbon's mayor (as quoted)",
+        "kind": "authority"
+      },
+      "what": "'Tudo indica que a Web Summit não poderá funcionar amanhã' (everything indicates Web Summit will not be able to run tomorrow); the decision is the Interior Ministry's and the organisers'",
+      "published": "2026-11-10T13:19:00Z",
+      "read": "2026-11-10T18:50:00Z",
+      "read_by": "social.watch@PrompTugal.dinis (sweep 1, 18:45 to 18:50)",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://jornaleconomico.sapo.pt/noticias/web-summit-fechada-na-quarta-feira-anuncia-autarquia-de-lisboa/",
+          "tier": "secondary"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "board/team/social.watch/signals/2026-11-11-the-storm.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/team/social.watch/signals/2026-11-11-the-storm.md"
+        }
+      ],
+      "note": "the weak signal Dinis described: the city's word, 5 h 31 min before our team's first read of it and about an hour before our first read of any storm source (14:23). Not the Câmara's own page (still unread, 403). Its time is 13:19 in social.watch@'s record and 13:23 in the weather desk's (b23e846); both from press; unresolved (the lead's README, 5b407af2).",
+      "affects": [
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "n": 19,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "TEK Notícias",
+        "kind": "press"
+      },
+      "what": "Web Summit in doubt; Tagus bridges limited to 60 km/h; Lisbon tunnels closed from midnight; Metro keeps running",
+      "published": "2026-11-10T14:25:00Z",
+      "read": "2026-11-10T18:50:00Z",
+      "read_by": "social.watch@PrompTugal.dinis (sweep 1, 18:45 to 18:50)",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://tek.sapo.pt/noticias/ciencia/artigos/depressao-charles-web-summit-sob-duvida-pontes-do-tejo-com-limite-de-60-km-h-e-tuneis-de-lisboa-fechados/",
+          "tier": "secondary"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "board/team/social.watch/signals/2026-11-11-the-storm.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/team/social.watch/signals/2026-11-11-the-storm.md"
+        }
+      ],
+      "affects": [
+        1,
+        2
+      ]
+    },
+    {
+      "n": 20,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "Jornal de Negócios, live",
+        "kind": "press"
+      },
+      "what": "Water enters a pavilion between halls 4 and 5; participants leave early",
+      "published": "2026-11-10T17:07:00Z",
+      "read": "2026-11-10T18:50:00Z",
+      "read_by": "social.watch@PrompTugal.dinis (sweep 1, 18:45 to 18:50)",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+          "tier": "secondary"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "board/team/social.watch/signals/2026-11-11-the-storm.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/team/social.watch/signals/2026-11-11-the-storm.md"
+        }
+      ],
+      "affects": [
+        1,
+        4
+      ]
+    },
+    {
+      "n": 21,
+      "lane": "outside",
+      "kind": "signal (press, quoting the government)",
+      "actor": {
+        "name": "Government (as reported)",
+        "kind": "authority"
+      },
+      "what": "The government recommends suspending Web Summit on Wednesday; the decision rests with the organisers",
+      "published": "2026-11-10T17:53:00Z",
+      "read": "2026-11-10T18:50:00Z",
+      "read_by": "social.watch@PrompTugal.dinis (sweep 1, 18:45 to 18:50)",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+          "tier": "secondary"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "board/team/social.watch/signals/2026-11-11-the-storm.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/team/social.watch/signals/2026-11-11-the-storm.md"
+        }
+      ],
+      "note": "reported by a live blog; no official page for it in the record",
+      "affects": [
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "n": 22,
+      "lane": "outside",
+      "kind": "signal (unofficial)",
+      "actor": {
+        "name": "an attendee (public post)",
+        "kind": "public"
+      },
+      "what": "The event is 'most likely' closed tomorrow: speculation, not an announcement",
+      "published": "2026-11-10T18:06:00Z",
+      "read": "2026-11-10T18:50:00Z",
+      "read_by": "social.watch@PrompTugal.dinis (sweep 1, 18:45 to 18:50)",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "path": "board/team/social.watch/signals/2026-11-11-the-storm.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/team/social.watch/signals/2026-11-11-the-storm.md"
+        }
+      ],
+      "affects": [
+        1
+      ]
+    },
+    {
+      "n": 23,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "what": "social.watch@PrompTugal.dinis confirmed as the incident's signals desk",
+      "published": "2026-11-10T18:42:00Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/timeline.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/timeline.md"
+        }
+      ],
+      "note": "about; as the timeline records it"
+    },
+    {
+      "n": 24,
+      "lane": "ours",
+      "kind": "hand-off",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Timeline corrected (the alert dated 12:10; red rain at 17:42); social.watch@'s signals added",
+      "published": "2026-11-10T18:52:22Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "d2e6cf4b",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/d2e6cf4b85e0"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "931d08da",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/931d08da91e3"
+        }
+      ],
+      "note": "the correction the reporter flagged in 543914e8 (18:42) and journalist.examples@ also sent"
+    },
+    {
+      "n": 25,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "what": "A dedicated incident team on account A: incident.conductor@ (lead), incident.meteorologist@, incident.researcher@, incident.dev@",
+      "published": "2026-11-10T18:55:59Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "a16e4a1b",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/a16e4a1b76a1"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/BRIEF.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/BRIEF.md"
+        }
+      ],
+      "handoff": {
+        "to": "conductor@web-summit.dinis",
+        "via": "his word in his session; the brief written by the conductor"
+      }
+    },
+    {
+      "n": 26,
+      "lane": "ours",
+      "kind": "hand-off",
+      "actor": {
+        "name": "conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Lead of WS-214 handed to incident.conductor@web-summit.dinis; a Web Summit decision on Wednesday is to be told to conductor@ at once",
+      "published": "2026-11-10T18:58:00Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "56a07e90",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/56a07e907261"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/decisions.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/decisions.md"
+        }
+      ],
+      "handoff": {
+        "to": "incident.conductor@web-summit.dinis",
+        "via": "the brief; the new session's first commit (19:01)"
+      }
+    },
+    {
+      "n": 27,
+      "lane": "ours",
+      "kind": "hand-off",
+      "actor": {
+        "name": "incident.conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "First jobs routed: the weather as JSON (meteorologist), who decides what and the organisers' channels (researcher), CI speed and the data lane (dev); PIPELINE.md",
+      "published": "2026-11-10T19:05:00Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "56a07e90",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/56a07e907261"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "2cc9609d",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/2cc9609d17ac"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/PIPELINE.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/PIPELINE.md"
+        }
+      ],
+      "handoff": {
+        "to": "incident.meteorologist@, incident.researcher@, incident.dev@",
+        "via": "status files; commits"
+      }
+    },
+    {
+      "n": 28,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.researcher@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "The storm's decision graph v1 and source map; no Web Summit decision at 19:01; Web Summit's official Bluesky is machine-readable (last post 17:36, no Wednesday decision at 19:05)",
+      "published": "2026-11-10T19:07:12Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "145a2b86",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/145a2b86bd56"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "d0ea1ca5",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/d0ea1ca5959d"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/data/decisions/graph.json",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/data/decisions/graph.json"
+        }
+      ],
+      "affects": [
+        1
+      ]
+    },
+    {
+      "n": 29,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.meteorologist@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "The weather as JSON (warnings and history, communiqués, stations, LPPT, IPMA model); analysis, labelled: worst Wed 12:00 to 18:00, peak about 15:00 to 19:00, over by 21:00; red wind known about 27.5 h ahead",
+      "published": "2026-11-10T19:07:44Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "a73dfb56",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/a73dfb5680e4"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "57a5a391",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/57a5a3918733"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/data/weather/analysis.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/data/weather/analysis.md"
+        }
+      ],
+      "affects": [
+        1,
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "n": 30,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.dev@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "The incident dashboard (timeline, decision graph, weather); push-to-live baseline 3 min 56 s; the gate's 110 s in CI traced to 316 lazy blob fetches (the fix waits for Dinis)",
+      "published": "2026-11-10T19:11:53Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "fad836c4",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/fad836c460b4"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "753b331f",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/753b331f27d0"
+        }
+      ]
+    },
+    {
+      "n": 31,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "what": "The incident site's direction: ROADMAP.md (a newsroom and a data source for agents; P0 tonight)",
+      "published": "2026-11-10T19:15:00Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "27d5ca7a",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/27d5ca7aee86"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/ROADMAP.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/ROADMAP.md"
+        }
+      ],
+      "note": "about; proposed, five questions to Dinis open"
+    },
+    {
+      "n": 32,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "Web Summit (site, Bluesky)",
+        "kind": "authority"
+      },
+      "what": "No decision on Wednesday at 19:05",
+      "published": "2026-11-10T17:36:00Z",
+      "read": "2026-11-10T19:05:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "753b331f",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/753b331f27d0"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/timeline.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/timeline.md"
+        }
+      ],
+      "note": "published = the last Bluesky post ('wrap on Day 1')",
+      "affects": [
+        1
+      ]
+    },
+    {
+      "n": 33,
+      "lane": "outside",
+      "kind": "signal (press, quoting the government)",
+      "actor": {
+        "name": "The Prime Minister (as reported)",
+        "kind": "authority"
+      },
+      "what": "The government's recommendation that Web Summit not open on Wednesday",
+      "published": "2026-11-10T17:32:00Z",
+      "read": "2026-11-10T19:55:10Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "0e77b21e",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/0e77b21e9aad"
+        }
+      ],
+      "note": "17:32 to 17:35 in the desk's record; the 17:53 live-blog line (event 21) reported it",
+      "affects": [
+        1
+      ]
+    },
+    {
+      "n": 34,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "press (ANA, FlixBus)",
+        "kind": "press"
+      },
+      "what": "The airport operator expects cancellations; FlixBus suspends Wednesday",
+      "published": null,
+      "read": "2026-11-10T19:32:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "fb10bc18",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/fb10bc18848a"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 35,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "Web Summit (the organisers)",
+        "kind": "authority"
+      },
+      "what": "Day 2, Wednesday 11 November, will not take place; the government 'formally advised' it (tidal flooding, public transport, high winds on external structures), after talks with the government, ANEPC and PSP; Day 3 aimed to go ahead as planned",
+      "published": "2026-11-10T19:09:00Z",
+      "read": "2026-11-10T19:48:09Z",
+      "read_by": "weather@PrompTugal.vicky (relaying the attendee email)",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "b23e8461",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/b23e84619e2b"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/timeline.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/timeline.md"
+        },
+        {
+          "type": "source",
+          "url": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+          "tier": "official"
+        }
+      ],
+      "note": "CORRECTED 21:25: the first public word was Web Summit's own page at 19:09 (event below); the attendee email followed at 19:38. A person received the email and passed it on (who is not in the record); relayed by weather@ at 19:48 and conductor@web-summit.dinis at 19:52.",
+      "affects": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "handoff": {
+        "to": "reviewer@PrompTugal.vicky; the incident lead",
+        "via": "commit For:; the conductor"
+      },
+      "published_note": "the organisers' own page (19:09:00, modified 19:25:44); the email at 19:38"
+    },
+    {
+      "n": 36,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "ECO",
+        "kind": "press"
+      },
+      "what": "Web Summit closed on Wednesday after talks with the government, ANEPC and PSP; the mayor calls it the most sensible decision",
+      "published": "2026-11-10T19:41:00Z",
+      "read": "2026-11-10T19:53:26Z",
+      "read_by": "social.watch@PrompTugal.dinis (sweep 2)",
+      "evidence": [
+        {
+          "type": "source",
+          "url": "https://eco.sapo.pt/2026/11/10/web-summit-vai-encerrar-esta-quarta-feira-devido-ao-mau-tempo/",
+          "tier": "secondary"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "e6b192fd",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/e6b192fd5488"
+        }
+      ],
+      "affects": [
+        1
+      ]
+    },
+    {
+      "n": 37,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "Jornal de Negócios, live",
+        "kind": "press"
+      },
+      "what": "'Após recomendação do Governo, Paddy suspende Web Summit na quarta-feira'",
+      "published": "2026-11-10T19:42:00Z",
+      "read": "2026-11-10T19:52:00Z",
+      "read_by": "incident.conductor@web-summit.dinis (at source)",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/timeline.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/timeline.md"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "6b94b069",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/6b94b06944a2"
+        }
+      ],
+      "affects": [
+        1
+      ]
+    },
+    {
+      "n": 38,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "Diário de Notícias, live",
+        "kind": "press"
+      },
+      "what": "All of Wednesday's activities cancelled (coastal flooding, wind on outdoor structures, transport)",
+      "published": "2026-11-10T19:45:00Z",
+      "read": "2026-11-10T19:55:10Z",
+      "read_by": "weather@PrompTugal.vicky",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "0e77b21e",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/0e77b21e9aad"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/timeline.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/timeline.md"
+        }
+      ],
+      "affects": [
+        1
+      ]
+    },
+    {
+      "n": 39,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "RTP, live",
+        "kind": "press"
+      },
+      "what": "Thursday 'conforme planeado, após a passagem da tempestade Charles'; people affected contacted directly",
+      "published": "2026-11-10T19:46:00Z",
+      "read": "2026-11-10T19:58:10Z",
+      "read_by": "social.watch@ via incident.conductor@",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "8c329fde",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/8c329fde0068"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/timeline.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/timeline.md"
+        }
+      ],
+      "note": "the lead first wrote 'Thursday is on' (F9); at 20:12 it became 'planned', an aim not a promise",
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 40,
+      "lane": "outside",
+      "kind": "decision (official page)",
+      "actor": {
+        "name": "Web Summit (websummit.com blog)",
+        "kind": "authority"
+      },
+      "what": "'Important event update' on its own blog: Day 2 off, Day 3 aimed (published 19:09:00, modified 19:25:44)",
+      "published": "2026-11-10T19:09:00Z",
+      "read": "2026-11-10T20:58:00Z",
+      "read_by": "incident.conductor@web-summit.dinis (at source; found by social.watch@PrompTugal.dinis)",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "19003cce",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/19003cce4582"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Website",
+          "sha": "98a4fdfb",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Website/commit/98a4fdfbbf46"
+        },
+        {
+          "type": "source",
+          "url": "https://websummit.com/blog/web-summit/important-event-update-2026/",
+          "tier": "official"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "98021979",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/98021979d43b"
+        }
+      ],
+      "note": "CORRECTED 21:25: published 19:09, before the email. weather@ saw the post listed at 19:59 (19003cce) without its own date; the incident team read the page itself at 20:58. Missed for 1 h 49 min: blog posts are not in sitemap.xml, which the watch read.",
+      "affects": [
+        1,
+        6
+      ]
+    },
+    {
+      "n": 41,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "incident.conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Item 1 (Web Summit suspends Wednesday) has happened; comms switch to plan B; a plan B for Thursday proposed (simulated first, for Dinis); the incident stays P1 for Thursday (6) and safety (7)",
+      "published": "2026-11-10T19:53:33Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "6b94b069",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/6b94b06944a2"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/decisions.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/decisions.md"
+        }
+      ],
+      "handoff": {
+        "to": "journalist.examples@ (comms), Dinis (plan B)",
+        "via": "commit For:; decisions.md"
+      }
+    },
+    {
+      "n": 42,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "journalist.examples@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Comms drafts after the decision: meetings move to Thursday or a call; public and Dinis refreshed; then Thursday's line (F9)",
+      "published": "2026-11-10T19:55:24Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "a47ace4e",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/a47ace4e208a"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "f4437b7d",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/f4437b7dcf19"
+        }
+      ],
+      "note": "drafts only: a person sends"
+    },
+    {
+      "n": 43,
+      "lane": "ours",
+      "kind": "hand-off",
+      "actor": {
+        "name": "incident.conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "The team re-routed to Thursday and the open items (talks, PITCH, side events, tickets)",
+      "published": "2026-11-10T20:03:54Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "faf9efbc",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/faf9efbcbb8b"
+        }
+      ],
+      "handoff": {
+        "to": "incident.meteorologist@, incident.researcher@, incident.dev@",
+        "via": "status files"
+      }
+    },
+    {
+      "n": 44,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.meteorologist@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Thursday at the top of changes.json: only a yellow sea warning to 03:00 touches Thursday; model Thursday morning W 18 to 24 km/h, showers, sea about 4 m",
+      "published": "2026-11-10T20:05:00Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "e43e7fc0",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/e43e7fc0eb0c"
+        }
+      ],
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 45,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "incident.conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Thursday is 'planned', not 'on': an aim, not a promise; Day 2 stays evidence until an organiser channel carries it",
+      "published": "2026-11-10T20:12:30Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "8940d4e4",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/8940d4e4bcbf"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "cbe5e592",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/cbe5e59281f4"
+        }
+      ],
+      "note": "the wording tightened after incident.researcher@'s check (20:04)",
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 46,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "DN, Observador, Euronews",
+        "kind": "press"
+      },
+      "what": "Thursday goes ahead 'if the weather allows' (DN 19:49); Observador 20:08; Euronews 20:30",
+      "published": "2026-11-10T19:49:00Z",
+      "read": "2026-11-10T21:02:00Z",
+      "read_by": "social.watch@ (sweep 3) via incident.conductor@",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "88f0c0c5",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/88f0c0c5b5da"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/incidents/2026-11-10-the-storm/timeline.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/timeline.md"
+        }
+      ],
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 47,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "incident.conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "The primary source is Web Summit's own page (19:09); lead times recomputed against it; the lesson recorded: watch every section of an organiser's site, not only its news list",
+      "published": "2026-11-10T20:59:02Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "98021979",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/98021979d43b"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "1c9221a0",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/1c9221a00a1e"
+        }
+      ],
+      "handoff": {
+        "to": "incident.dev@ (a connector), incident.researcher@ (the graph: evidence to fact)",
+        "via": "commit For:"
+      }
+    },
+    {
+      "n": 48,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.dev@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "J6: a watch over every section of websummit.com (all blog listings, every sitemap), robots.txt obeyed, every 2 minutes; each post's two dates named",
+      "published": "2026-11-10T21:13:23Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "716690a5",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/716690a55aad"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "56176d51",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/56176d518b8d"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "467bc0a3",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/467bc0a364a4"
+        }
+      ],
+      "note": "the connector the lesson asked for, built 14 minutes after it"
+    },
+    {
+      "n": 49,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.researcher@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Lead times corrected (recommendation to the organisers' page 1 h 16 min, not 5 h 16 min; alert to recommendation 5 h 43 min)",
+      "published": "2026-11-10T21:04:11Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "9ef309f8",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/9ef309f8da6b"
+        }
+      ]
+    },
+    {
+      "n": 50,
+      "lane": "ours",
+      "kind": "review",
+      "actor": {
+        "name": "security.repos@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "MEDIUM: websummit-poll.sh reset to dev and ran its code every 2 minutes; website text in commit subjects",
+      "published": "2026-11-10T21:15:13Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "70b8efee",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/70b8efeee493"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/security.repos/reports/2026-11-10T2130Z.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/security.repos/reports/2026-11-10T2130Z.md"
+        }
+      ],
+      "handoff": {
+        "to": "incident.dev@web-summit.dinis",
+        "via": "commit For:"
+      }
+    },
+    {
+      "n": 51,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.dev@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "The poll script pinned: no git in the loop, the code copied at start, alerts committed by the session",
+      "published": "2026-11-10T21:17:05Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "6260b8a3",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/6260b8a34f65"
+        }
+      ],
+      "note": "the MEDIUM answered 2 minutes after the report"
+    },
+    {
+      "n": 52,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "incident.conductor@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "The incident moves to its own site and repository: storm-charles.promptugal.news (PrompTugal/PrompTugal__News__Storm-Charles, public); first push to served in 23 s; team/incidents/ frozen with a pointer",
+      "published": "2026-11-10T21:16:14Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "42fe929d",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/42fe929dae4c"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "e8973fff",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/e8973fffb039"
+        },
+        {
+          "type": "source",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles",
+          "tier": "repository"
+        }
+      ],
+      "note": "whose word moved it is not in the commit"
+    },
+    {
+      "n": 53,
+      "lane": "ours",
+      "kind": "blocked",
+      "actor": {
+        "name": "incident.meteorologist@ and incident.researcher@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Attaching PrompTugal__News__Storm-Charles to their sessions refused (add_repo); an ask for Dinis in their status files",
+      "published": "2026-11-10T21:18:23Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "797920c8",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/797920c82f1c"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "677d2ecf",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/677d2ecfbea9"
+        }
+      ],
+      "note": "the lead keeps weather/ and status files writable in the old folder until then (MOVED.md)"
+    },
+    {
+      "n": 54,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.dev@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "The 2-minute blog poll's first alert: a changed post (the decision post's listing time moved to 20:06:54; text unchanged)",
+      "published": "2026-11-10T21:34:21Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "511878aa",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/511878aa3be2"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "d264f60e",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/d264f60e3267"
+        }
+      ],
+      "note": "the new connector working, 21 min after it was built"
+    },
+    {
+      "n": 55,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "a speaker (public), via social.watch@",
+        "kind": "public"
+      },
+      "what": "Their talks stay on Thursday",
+      "published": null,
+      "read": "2026-11-10T21:41:00Z",
+      "read_by": "social.watch@ (sweep 4)",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "9b42aedd",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/9b42aedd8d0d"
+        }
+      ],
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 56,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.researcher@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "PITCH, Night Summit and Thursday's transport: nothing announced at 22:05; a conflict on the PITCH semi-final's slot (Wed 17:00 traced to an unsourced summary) kept open",
+      "published": "2026-11-10T22:08:40Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "e15fe1a6",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/e15fe1a62b12"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "5b99c68d",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/5b99c68d4b0c"
+        }
+      ],
+      "affects": [
+        5,
+        6
+      ]
+    },
+    {
+      "n": 57,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA (TAF, LPPT)",
+        "kind": "authority"
+      },
+      "what": "The first airport forecast covering Thursday is weaker (gusts 45 kt 09 to 16, PROB30 58 kt 10 to 18, wind easing from 18 to 20)",
+      "published": "2026-11-10T23:00:00Z",
+      "read": "2026-11-10T23:23:30Z",
+      "read_by": "incident.meteorologist@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "a63ac969",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/a63ac9696b36"
+        }
+      ],
+      "note": "analysis: peak widened to 12:00 to 18:00 Wednesday; Thursday morning behind the storm",
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 58,
+      "lane": "outside",
+      "kind": "signal (press, Lusa)",
+      "actor": {
+        "name": "CP (as reported)",
+        "kind": "authority"
+      },
+      "what": "CP cuts 4 trains over the 25 de Abril bridge, Wednesday 12:00 to 15:00",
+      "published": null,
+      "read": "2026-11-10T23:33:37Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "8047fec0",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/8047fec046eb"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 59,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "Dinis",
+        "kind": "person"
+      },
+      "what": "The incident team grows: designer, observability, identity, weatherwatch, media, librarian and graph agents, each with a job (agents/JOBS.md)",
+      "published": "2026-11-10T23:35:36Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "cdaa2d7b",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/cdaa2d7bf861"
+        }
+      ],
+      "note": "the commit (23:35) calls it 'Dinis's direction of 23:40': another clock gap, flagged. First commits of the new agents 23:36 to 23:44",
+      "handoff": {
+        "to": "incident.conductor@ then the seven new agents",
+        "via": "BRIEF.md; JOBS.md"
+      }
+    },
+    {
+      "n": 60,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA (CAP)",
+        "kind": "authority"
+      },
+      "what": "Red rain moved to Wednesday 09:00 to 18:00 (was 12:00 to 18:00)",
+      "published": "2026-11-10T21:23:00Z",
+      "read": "2026-11-10T23:52:48Z",
+      "read_by": "incident.meteorologist@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "169445ff",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/169445ff3ea7"
+        }
+      ],
+      "note": "the CAP feed carried it at 21:23; IPMA's open data lagged more than 2 h; not in the press we could read by 00:15 (13027ae)",
+      "affects": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "n": 61,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.meteorologist@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "cap.json: IPMA's own issue times for every warning (red wind 07:18:40, red rain 16:30:01), a second model (met.no); then a labelled hypothesis: the track close to and just south of Lisbon about 17:00 to 18:00 Wednesday",
+      "published": "2026-11-10T23:59:44Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "169445ff",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/169445ff3ea7"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "8caa00d4",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/8caa00d45e5a"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "d6e8aace",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/d6e8aace101a"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "8b70ee04",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/8b70ee044646"
+        }
+      ],
+      "note": "the new source (CAP) changed this trace's lead times: see the corrected IPMA events"
+    },
+    {
+      "n": 62,
+      "lane": "outside",
+      "kind": "signal (unofficial)",
+      "actor": {
+        "name": "a public weather page, via watcher@web-summit.jose",
+        "kind": "public"
+      },
+      "what": "The track further south",
+      "published": null,
+      "read": "2026-11-10T23:56:39Z",
+      "read_by": "watcher@web-summit.jose",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "67456080",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/6745608011a8"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "8c13eec5",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/8c13eec580f0"
+        }
+      ],
+      "note": "labelled unverified by the lead; to compare with IPMA's next communiqué",
+      "affects": [
+        1
+      ]
+    },
+    {
+      "n": 63,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.media@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Who was first on each of six facts (live-blog entries timed); the wire's share per outlet; the press after Web Summit's page was first at 19:41",
+      "published": "2026-11-11T00:04:18Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "f487bfbb",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/f487bfbb1813"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "29c73a5d",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/29c73a5d358d"
+        }
+      ]
+    },
+    {
+      "n": 64,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.designer@, incident.graph@, incident.observability@, incident.librarian@",
+        "kind": "agent"
+      },
+      "what": "The site rebuilt in 17 design rounds (timeline page, district grid, data cards); lead-time table and query pages; draft behaviour policies for the 11 agents (DRAFT, not agreed); release cadence measured (a deploy every 24 s at the median, none failed)",
+      "published": "2026-11-11T00:17:37Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "9369fcfc",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/9369fcfc50c6"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "39f465a0",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/39f465a09741"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "4938594f",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/4938594fd347"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "6d83c77d",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/6d83c77d677d"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "dedbe4cb",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/dedbe4cb0526"
+        }
+      ],
+      "note": "23:36 to 00:17; about 60 commits in the hour"
+    }
+  ],
+  "lead_times": [
+    {
+      "signal": "the storm named (IPMA no. 1)",
+      "published": "2026-11-09T13:17Z",
+      "before_wed_window": "about 46 h 43 min before Wednesday 12:00",
+      "first_read_by_us": "2026-11-10T16:53Z",
+      "lag": "about 27 h 36 min"
+    },
+    {
+      "signal": "the government's alert (schools, outdoor events)",
+      "published": "2026-11-10T12:10Z",
+      "before_wed_window": "11 h 50 min before Wednesday 00:00",
+      "first_read_by_us": "2026-11-10T17:01Z",
+      "lag": "about 4 h 51 min"
+    },
+    {
+      "signal": "the incident declared",
+      "at": "2026-11-10T18:35Z",
+      "after_alert": "about 6 h 25 min after the government's alert; about 29 h after the storm was named"
+    },
+    {
+      "signal": "the mayor: Web Summit likely cannot run (press)",
+      "published": "2026-11-10T13:19Z",
+      "first_read_by_us": "2026-11-10T18:50Z",
+      "lag": "about 5 h 31 min",
+      "note": "the earliest public word on the summit itself in the record; 22 h 41 min before Wednesday noon"
+    },
+    {
+      "signal": "the government's recommendation to suspend (press)",
+      "published": "2026-11-10T17:53Z",
+      "first_read_by_us": "2026-11-10T18:50Z",
+      "lag": "about 57 min"
+    },
+    {
+      "signal": "Web Summit's decision (Day 2 off)",
+      "published": "2026-11-10T19:09Z (its own page); 19:38 (attendee email)",
+      "first_read_by_us": "2026-11-10T19:48Z (the email, relayed); the page itself 20:58",
+      "lag": "39 min to the relayed email; 1 h 49 min to the page",
+      "lead_over_wed_noon": "16 h 51 min",
+      "how_far_ahead": "against 19:09: the storm named 29 h 52 min before; the government's alert 6 h 59 min; the mayor's word 5 h 50 min (13:19); the recommendation 1 h 16 min (the lead's figures, corrected 21:04). The miss: the organisers' blog was not in the sitemap we watched."
+    },
+    {
+      "signal": "IPMA's red wind for Lisbon (CAP)",
+      "published": "2026-11-10T07:18:40Z",
+      "first_read_by_us": "2026-11-10T14:23Z",
+      "lag": "about 7 h 4 min",
+      "lead_over_decision": "11 h 50 min before Web Summit's page (19:09); 28 h 41 min before the warning window opened (Wed 12:00)",
+      "note": "the earliest official warning in the record; found only at 23:52 through the CAP feed, which carries IPMA's own issue times"
+    }
+  ],
+  "open_questions": [
+    "Web Summit's decision, and when (nothing at 18:36)",
+    "the Câmara's own measures (unread, 403)",
+    "Metro, CP and the airport (not machine-readable)",
+    "whether measure (b) touches any part of the summit: no source says either way"
+  ],
+  "team": {
+    "lead": "incident.conductor@web-summit.dinis (from 18:58; before: conductor@web-summit.dinis)",
+    "agents": [
+      "incident.meteorologist@",
+      "incident.researcher@",
+      "incident.dev@",
+      "social.watch@PrompTugal.dinis (signals)",
+      "journalist.examples@ (comms)",
+      "reporter@ (this trace)",
+      "security.repos@",
+      "accountant@PrompTugal.dinis",
+      "incident.designer@",
+      "incident.media@",
+      "incident.weatherwatch@",
+      "incident.librarian@",
+      "incident.observability@",
+      "incident.identity@",
+      "incident.graph@ (from 23:36)"
+    ]
+  },
+  "note_on_overlap": "The lead's timeline.md and signals.json carry every signal for the incident site. This trace keeps the evidence chain (published vs first read, tiers, hand-offs, who acted) for the close-out question 'how far ahead could we have known'.",
+  "moved": {
+    "at": "2026-11-10T21:16Z",
+    "to": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles",
+    "site": "https://storm-charles.promptugal.news/",
+    "note": "this trace stays here (the reporter's folder) and reads the new repository from the next wake"
+  }
+}

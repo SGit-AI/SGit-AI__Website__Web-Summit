@@ -1,0 +1,71 @@
+{
+  "title": "The storm, part 2: the parser path, as it really ran",
+  "subtitle": "Dinis's path had five hands; the weather desk did four of them itself, in nine minutes, then asked a developer and a designer for the page",
+  "col": 160,
+  "date": "10 November 2026",
+  "steps": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ],
+  "labels": {
+    "16": "S41 updated:|the alert|situation",
+    "17": "17:42 check:|rain raised|to red",
+    "18": "S41 updated:|red rain,|3 min later",
+    "19": "the guidance|relayed to|the desk",
+    "20": "connectors: one|reader per source|(watch.mjs)",
+    "21": "the plan as|markdown: one|storm page",
+    "22": "history.md:|past storms|(historian)",
+    "23": "decision-graph|.json and|law.md",
+    "24": "yes to|the build",
+    "25": "asks dev.graphs@|and designer@|for the page"
+  },
+  "when": {
+    "24": "before 18:13"
+  },
+  "edges": [
+    [
+      16,
+      17
+    ],
+    [
+      17,
+      18
+    ],
+    [
+      19,
+      20
+    ],
+    [
+      20,
+      21
+    ],
+    [
+      21,
+      22
+    ],
+    [
+      22,
+      23
+    ],
+    [
+      23,
+      24
+    ],
+    [
+      24,
+      25
+    ]
+  ],
+  "output_after": 25,
+  "output": "the storm page:|asked; the UI|not yet built",
+  "output_when": "",
+  "from": "reporter@web-summit.dinis's trace storm-weather-desk (steps 16 to 25)"
+}

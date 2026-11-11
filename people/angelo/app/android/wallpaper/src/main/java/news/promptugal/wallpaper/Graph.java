@@ -252,6 +252,19 @@ public final class Graph {
      * Opening, nothing older than the delay is replayed; afterwards each new exchange plays at its real moment, DELAY_MS behind.
      */
     public void read(List<Event> evs, double wallMs, double now) {
+        tally(evs, wallMs);
+        boolean firstEver = seen.isEmpty(); double disp = wallMs - DELAY_MS; int late = 0;
+        readQueue(evs, firstEver, disp, now, late);
+    }
+    // ---------------------------------------------------------------- the replay (Angelo, 10 November: "a way to make the play and
+    // ff buttons work for the live wallpaper ... run in a loop"): the moment shown is t, not now; the engine's rules are the same
+    /** The flow weighed as it was at moment t: only the exchanges that had happened by then. */
+    public void tallyAt(List<Event> evs, double t) { List<Event> past = new ArrayList<>(); for (Event e : evs) if (e.ms <= t) past.add(e); tally(past, t); }
+    /** Every exchange between moments t0 (excluded) and t1 played now, as the live engine plays one at its moment. */
+    public void replay(List<Event> evs, double t0, double t1, double now) { for (Event e : evs) if (e.ms > t0 && e.ms <= t1) play(e, now); }
+    /** The live queue dropped (a replay starts, or ends and live takes over again). */
+    public void clearQueue() { queue.clear(); }
+    private void tally(List<Event> evs, double wallMs) {
         // tally: how busy each pair has been, events weighted by their age (half-life HALF_LIFE_H hours)
         Map<String, Pair> m = new LinkedHashMap<>(); int hour = 0;
         for (Event e : evs) {
@@ -265,7 +278,8 @@ public final class Graph {
         breath = 0.035 + 0.035 * Math.min(2, act);
         Set<Node> r = new HashSet<>(); for (Event e : evs) if (wallMs - e.ms < 2 * 36e5) { Node n = nodeOf(e.agent); if (n != null) r.add(n); }
         ran = r;
-        boolean firstEver = seen.isEmpty(); double disp = wallMs - DELAY_MS; int late = 0;
+    }
+    private void readQueue(List<Event> evs, boolean firstEver, double disp, double now, int late) {
         for (Event e : evs) {
             if (!seen.add(e.sha)) continue;
             if (firstEver && e.ms <= disp) continue;

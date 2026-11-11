@@ -34,7 +34,57 @@ What waits on you sits right under the greeting, with how long it has been waiti
 
 A **Summit desk** link (Web Summit, in the menu) opens the team's private page for the stand: the visitor demo, the plan and the brain. It is a private claude.ai page, shared by Silvio; nothing about visitors is ever on this public site. Next, the Summit desk is rebuilt to read and write the team's private CRM ([/crm/](../crm/index.html)), so the stand and the outreach share one list.
 
-### Two brains: My brain and the Summit brain {#brain}
+### Tokens: what our agents spend {#tokens}
+
+**10 November 2026 (dashboard@web-summit.silvio, at Silvio's word):** a **Tokens** view on every command centre.
+- **What it reads, live:** every agent ledger on the site (`people/<id>/ledger/*.jsonl`, `people/<id>/accountant/ledger/*.jsonl`). These are written by the agents themselves with `measure.mjs`, one line per run: calls, models, input, output, cache writes and cache reads.
+- **Running totals:** a running total from one long session is counted once; only what is new counts.
+- **What it shows:**
+  - the team by day, stacked by person;
+  - the agents that spend most;
+  - four totals: estimated cost, runs logged, tokens without cache reads, and cache reads.
+- **The comparison:** the same tokens at other models' list prices (two smaller Claude tiers, Z.ai's GLM-5.3, the family Revolut moved to, DeepSeek, and Revolut's own reported self-hosted figure). Each price links to its source.
+- **Not a bill:**
+  - the costs are estimates at list prices in US dollars;
+  - another model would not use the same tokens or do the same work;
+  - people whose agents write no ledger are shown as **not measured**, never as zero.
+
+### The Universe: one map with layers {#brain}
+
+**10 November 2026, afternoon: the Universe reads live.** Every time it opens, it reads its sources at that moment:
+- the team and each person's agents.json;
+- every Agent Behaviour Policy, from the /abp/ pages;
+- the role policies;
+- each agent's latest commit, from GitHub's API on dev;
+- the Web Summit layer, from the public CRM vault, joined to our company map and open summit tasks.
+
+It reads again every five minutes while the map is open, and says "● LIVE, read hh:mm UTC". The last reading on a device opens the map at once while the new one arrives. If a source does not answer, it falls back to the last snapshot and says "as of" instead. The agents' gaps are still shown only in a developer's browser, with their key.
+
+**10 November 2026, morning (dashboard@web-summit.silvio, at Silvio's word, for the whole team):**
+
+- **A cleaner command centre for everyone.**
+  - The menu keeps the daily views: Overview, My tasks, Team board, Universe, GAMMA-Ray, Inbox and Ask Claude. **More** opens the rest and remembers whether it was open.
+  - Views a person's own page adds, such as Angelo's Kanban, Team and the machine, Where and Summit days, stay where they were and stay visible.
+  - Lists show the essentials: the number, the title and the due date. The **Details** switch in the top bar shows everything, and opening a task still shows all of it.
+- **The Universe on every command centre, in three views.**
+  - **Map** is the 3D map in light points. The glass balloons are gone.
+  - **Circuit**, drawn after Silvio's reference images, shows each person's agents on a numbered bus, through their behaviour policy, barriers, the gate and the owner, to the resources their policies name. The selected agent's path is lit, its team glows in their T-shirt colour, and four panels sit below (run log, dispatch, the agent's policy, graph). **Play** walks through the agents.
+  - The agents' open gaps and barriers are still shown to the developers only, with their key.
+  - **Talk** shows who talks to whom. An agent's commit with a `For:` trailer naming another agent or person is a message. Each line joins two of them: a thicker line means more messages, and a glowing line means one in the last 15 minutes. Tap a point to light only its conversations. It opens on **All read**, with every agent in the last commits. **● Now** keeps only the last 15 minutes, and **Last 1h** and **Last 3h** sit between them. It reads the last 300 commits on `dev` from GitHub every two minutes, and shows the last reading straight away. The agents talk asynchronously, through commits, not in a live chat. Four panels sit below: the messages, the busiest pairs, the tasks in play and the people.
+- **GAMMA-Ray on every command centre.**
+  - It reads the draft standard live from gamma-ray.sgit.ai, with the same rules as its build/model.mjs, and shows the two example scans of our own agents and the person's own agents' scans, once they are published.
+  - It has two views: a circuit (answers on an indicator bus, the level rules, the level held and the gap) and the freedom-by-governance grid.
+  - It says plainly that the standard is a draft not yet reviewed, and that "not evidenced" is never a "no".
+
+**10 November 2026 (dashboard@web-summit.silvio, at Silvio's word):** the two brains became **one map, the Universe** (in the menu, Web Summit), now on the command centres of **Silvio, Angelo, Jose and Dinis**. One menu of layers above the map, each switched on or off and remembered on this device:
+
+- **Agents & policies:** our team's agents and their behaviour policies, from the public policies on this site ([/abp/](../abp/index.html)), with the time they were read ("as of"). Tap an agent to see who owns it and what it does.
+- **Web Summit:** the Summit brain below (the public CRM joined to our team, our company map and our tasks).
+- **My notes:** your own second brain, in your browser only.
+
+A button switches the look between **light points** (best for the whole map) and **glass balloons** in the team's T-shirt colours (best with a few layers on). **The agents' open gaps and barriers, and the panels built on them, are for the developers only (Silvio, Dinis and Angelo):** they are not in the public file (`assets/cc/universe.json`); they are sealed to each developer's person key (`data/sealed/<id>/universe-gaps.json`) and open only in a browser that holds that key. Everyone else sees the map and who each agent is. (The policies themselves, with their gaps, are still public on the /abp/ pages: that is Dinis's to decide.)
+
+What follows is the earlier note, of 7 November.
 
 On the command centres of **Silvio, Angelo and Jose** (at Silvio's word; the others' command centres are unchanged), tried first in Silvio's Lab, then brought here. Nothing that Angelo or Jose built was removed or changed: their own views, Kanban and menus stay as they are, and the brain is added beside them.
 

@@ -1,0 +1,74 @@
+{
+ "entity": "airport",
+ "about": "Every decision in graph.json about airport: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
+ "updated": "2026-11-11T02:20Z",
+ "decisions": [
+  {
+   "edge": "ana-conditioned",
+   "decision": "ANA: operations at Lisbon, Faro and Madeira airports conditioned on 11 Nov; cancellations expected",
+   "decided_by": "Lisbon airport (ANA, Humberto Delgado) and airlines",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10T18:04Z",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, 11 November",
+   "address": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "also": [],
+   "read": "2026-11-10T19:32Z",
+   "label": "evidence",
+   "note": "Press report of an ANA statement; the official airport site is behind a bot check."
+  },
+  {
+   "edge": "madeira-airport-conditioned",
+   "decision": "ANA: operations at Madeira airport conditioned on 11 Nov; cancellations expected",
+   "decided_by": "Madeira airport (ANA) and airlines",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10T18:04Z",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, 11 November",
+   "address": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "also": [],
+   "read": "2026-11-11T01:35Z",
+   "label": "evidence",
+   "note": "Same ANA statement as ana-conditioned (Lisbon, Faro, Madeira)."
+  },
+  {
+   "edge": "airport-ops",
+   "decision": "Flight operations on Wednesday",
+   "decided_by": "Lisbon airport (ANA, Humberto Delgado) and airlines",
+   "status": "superseded",
+   "announced_utc": null,
+   "published_utc": null,
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "address": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "also": [],
+   "read": "2026-11-10T18:59Z",
+   "label": "fact",
+   "note": "No readable notice: the official site returns a bot check. Superseded by ana-conditioned (press, 18:04Z)."
+  }
+ ],
+ "open": [
+  "ANA's statement read in the press only; aeroportolisboa.pt shows a bot check."
+ ],
+ "tries": [
+  {
+   "at": "2026-11-11T02:19Z",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "http": 200,
+   "bytes": 212,
+   "result": "answered; no notice found",
+   "excerpt": []
+  }
+ ],
+ "tries_summary": {
+  "https://www.aeroportolisboa.pt/pt/lis/home": {
+   "tries": 1,
+   "published_found": false
+  }
+ }
+}
