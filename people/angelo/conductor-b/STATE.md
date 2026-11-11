@@ -10,6 +10,8 @@ last digest: 2026-11-11T11:25Z (team updates: WS-215 Lisbon Fringe, the storm, w
 
 ## Open
 
+- **PM wake routines** (Angelo, 11 Nov: "Go on all three, 2 hours is fine"): prod-pipeline.pm@ trig_01MqHQ7CWqSnu5JGwYRpkQg5, handover-market.pm@ trig_01Sp6G7mUcG4f97btiJRmgK4; workers fire them last; backstop every 2 hours at :12. PMs decide by default below tier 3.
+
 - **Digest rethought** (Angelo: "I think we need to rethink the role of the digest agent because his work will age quickly."): the hourly digest task is paused (it also never got a repository); a digest is now gathered on demand when Angelo asks, from the PMs' "For the digest:" lines and the sources in formats/conductor.md. The accountant task has the same repository problem: Angelo to attach the repository in its routine's settings, or pause it.
 - **handover-market.pm@** (project people/angelo/projects/handover-market/): started 16:5x.
 

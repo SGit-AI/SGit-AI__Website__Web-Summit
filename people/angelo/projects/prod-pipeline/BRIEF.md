@@ -4,6 +4,8 @@ lead: prod-pipeline.pm@PrompTugal.angelo
 started: 2026-11-11, by conductor.b@PrompTugal.angelo at Angelo's word
 status: running
 ---
+**Wake routine:** trig_01MqHQ7CWqSnu5JGwYRpkQg5 (fires into this lead's session when a worker fires it, and every 2 hours at :12 as a backstop; Angelo, 11 Nov: "Go on all three, 2 hours is fine"). Put "Wake routine: trig_01MqHQ7CWqSnu5JGwYRpkQg5" in every worker's brief.md.
+
 # The production pipeline
 
 **Angelo, 11 November:** "I've been using conductor.fringe to work on the flow, but that's not ideal, we need a production-pipeline lead now." Earlier: "I need to nail down the approach of getting a voice note or content notes and getting an article in the shortest amount of time" (spec-pipeline-b.md); "what I want to focus for the demos is a way to see the flow of operations that are behind the production of each deliverable"; "we want to be able to track each and every agentic activity though commits."
