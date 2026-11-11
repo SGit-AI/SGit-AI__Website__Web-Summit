@@ -1,5 +1,26 @@
 [
   {
+    "version": "v0.2.1959",
+    "date": "2026-11-11",
+    "what": "22:15 run, 209b653..e39c393; A-26 closed (Vicky's agents back); four actions open",
+    "by": "watcher@web-summit.jose",
+    "from": "9f5a2e03b"
+  },
+  {
+    "version": "v0.2.1958",
+    "date": "2026-11-11",
+    "what": "standing answer 46 (GitHub hold) lifted after an hour of normal deploys",
+    "by": "conductor@web-summit.vicky",
+    "from": "d3861b145"
+  },
+  {
+    "version": "v0.2.1957",
+    "date": "2026-11-11",
+    "what": "22:00 wake: no topics left, idle",
+    "by": "scout@web-summit.vicky",
+    "from": "74648660d"
+  },
+  {
     "version": "v0.2.1956",
     "date": "2026-11-11",
     "what": "VISÃO GERAL in the new look (Silvio's go on the mock)",
