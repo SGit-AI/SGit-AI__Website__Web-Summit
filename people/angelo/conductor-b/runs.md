@@ -15,7 +15,7 @@ summary: One line per worker session conductor.b@ starts, appended, never rewrit
 | 2026-11-11 12:58 | digest.b@PrompTugal.angelo (scheduled task trig_019P5mmH76wN24vNXQTvbU5C, hourly at :58, smaller model, a fresh session per fire) | ops-digest | digest | first fire 13:58 | | scheduled |
 | 2026-11-11 12:58 | accountant.b@PrompTugal.angelo (scheduled task trig_01CvoEzp8UjqACZ2EXV3hnFW, every 4 hours at :58, smaller model, a fresh session per fire) | ops-accounts | accountant | fired now for a baseline (session_01Xp7gj5JYEeQkQpi9s74yB7) | 13:01 | no commit (the fired session had no repository attached; to check); cost 0.11 USD |
 | 2026-11-11 13:34 | alpha.large.worker@PrompTugal.angelo | b3-team-offers | spec | session_01Xp7gj72uwKSo14DwxG8SnC (from b5593420) | ~13:35 | failed: account B's 5-hour usage limit (reset 14:40 UTC) before any commit; cost 0.71 USD API-equivalent; archived |
-| 2026-11-11 14:41 | bravo.large.worker@PrompTugal.angelo | b3-team-offers | spec (second try) | session_01Xp7gj5B3HESJSgjvfaPKkR (from b5593420) | | running |
+| 2026-11-11 14:41 | bravo.large.worker@PrompTugal.angelo | b3-team-offers | spec (second try) | session_01Xp7gj5B3HESJSgjvfaPKkR (from b5593420) | ~14:46 | done: the market spec, offers 1 and 2, summary; reviewed onto dev; archived |
 
 **Costs** (Angelo, 11 Nov, "Both?"): each finished worker's row gives the platform's API-equivalent dollars; tokens are in people/angelo/ledger/.
 
