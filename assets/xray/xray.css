@@ -439,3 +439,32 @@ details.xp-tech > summary { font-size: 1.05em; }
 .xr-tech-notes { color: var(--xr-ink2); font-size: .92em; max-width: 46em; }
 .xr-tech-notes a { color: var(--xr-cyan); }
 .xp-ours { font-size: .7em; font-weight: 500; opacity: .85; }
+
+/* ---------- the stand view (conductor@web-summit.indi, 11 November 2026, WS-191): read from a metre away in a few
+   seconds. The name, three big cards side by side (stacked on a phone), one line each; the gap the strongest colour ---------- */
+.xr-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.xr-stage.xr-home .xr-hero { min-height: min(46vh, 420px); }
+.xr-result:has(.xs-name) { padding: clamp(14px, 2vw, 28px); }
+.xs-name { font: 800 clamp(2.2rem, 4.4vw, 4rem)/1.05 var(--sans); letter-spacing: -.02em; margin: 0 0 .25em; color: var(--xr-ink); border: 0; }
+.xs-cases.xp-cases { margin: 0 0 .4em; gap: .4em; }
+.xs-cases .xp-tab { min-height: 36px; padding: .3em .85em; font-size: .82em; }
+.xs-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1em; margin: 2.3em 0 .6em; text-align: left; }
+.xs-card { --xs-c: #60a5fa; position: relative; border-radius: 20px; padding: .7em .9em .9em; background: #0b1530; border: 2px solid #2c3d63; border-top: 10px solid var(--xs-c); }
+.xs-card h3 { margin: 0 0 .25em; font: 800 clamp(1rem, 1.5vw, 1.4rem)/1.2 var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--xs-c); border: 0; }
+.xs-card > p:not(.xs-ours) { margin: 0; font: 700 clamp(1.6rem, 2.6vw, 2.5rem)/1.18 var(--sans); color: var(--xr-ink); letter-spacing: -.01em; }
+.xs-reach { --xs-c: #60a5fa; } .xs-asked { --xs-c: #2dd4bf; }
+.xs-gap { --xs-c: #fb7185; background: linear-gradient(180deg, #4c0f24, #2a0a1a); border-color: #fb7185; box-shadow: 0 0 40px #fb718544; }
+.xs-gap > p:not(.xs-ours) { color: #fff; }
+.xs-ours { position: absolute; bottom: calc(100% + 12px); left: .2em; margin: 0 0 .3em; font: 600 1em var(--sans); color: var(--xr-ink2); }
+.xs-src { margin: .3em 0 0; font-size: .85em; }
+.xs-go { margin: .8em 0 0; }
+.xs-abp.xr-btn { font-size: clamp(1.2rem, 2vw, 1.8rem); padding: .7em 1.6em; border-radius: 18px; box-shadow: 0 0 30px #2dd4bf55; }
+.xr-stage.booth .xs-card > p:not(.xs-ours) { font-size: clamp(1.8rem, 3vw, 3.4rem); }
+@media (max-width: 760px) {
+    .xs-cards { grid-template-columns: 1fr; gap: .7em; margin-top: 2.2em; }
+    .xs-asked { margin-top: 1.5em; }
+    .xs-card { padding: .5em .8em .7em; border-top-width: 8px; }
+    .xs-cases .xp-tab { min-height: 32px; font-size: .75em; padding: .25em .7em; }
+    .xs-card > p:not(.xs-ours) { font-size: 1.5rem; }
+    .xs-name { font-size: 2.2rem; }
+}

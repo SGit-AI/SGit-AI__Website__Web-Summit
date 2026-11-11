@@ -33,6 +33,8 @@
 
     // ---------- data ----------
     const INDEX = (() => { try { return JSON.parse((document.getElementById('xray-index') || {}).textContent || '[]') } catch { return [] } })()
+    // the stand view's three short lines per situation (data/xray-stand.json, conductor@web-summit.indi, WS-191)
+    const STAND = (() => { try { return JSON.parse((document.getElementById('xray-stand') || {}).textContent || '{}') } catch { return {} } })()
     const cache = new Map()
     const load = slug => cache.get(slug) || (cache.set(slug, fetch(`${up}data/xray/${encodeURIComponent(slug)}/xray.json`).then(r => { if (!r.ok) throw new Error(r.status); return r.json() })), cache.get(slug))
     const norm = s => String(s || '').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '')
@@ -325,6 +327,20 @@
             + `<p class="xp-label">RiskMandate calls these three things reach, mandate and gap.</p>`
     }
 
+    // ---------- the stand view (conductor@web-summit.indi, 11 November 2026, WS-191, at Indi's word: "too much text ... bigger
+    // and much less"): read from a metre away in five to ten seconds. Three big cards, one line of at most 8 words each,
+    // from data/xray-stand.json; a situation with no line there shows the start of its own text ----------
+    const firstWords = t => { const w = unIll(t).replace(/[:;(].*$/, '').split(/\s+/).filter(Boolean); return w.slice(0, 8).join(' ').replace(/[,.]$/, '') + (w.length > 8 ? '…' : '') }
+    function standHtml(x, u) {
+        const l = ((STAND[x.slug] || {})[u.id]) || {}
+        const reach = l.reach || (u.reach && u.reach[0] ? firstWords(u.reach[0].what) : 'Nothing found in what we read')
+        const asked = l.asked || (u.mandate && u.mandate[0] ? firstWords(u.mandate[0].what) : 'No limits written down yet')
+        const gap = l.gap || (u.gap && u.gap[0] ? firstWords(u.gap[0].what) : 'No clear gap in what we read')
+        return `<div class="xs-cards"><section class="xs-card xs-reach"><h3>Can reach</h3><p>${esc(reach)}</p></section>`
+            + `<section class="xs-card xs-asked"><p class="xs-ours">Our example:</p><h3>Was asked to</h3><p>${esc(asked)}</p></section>`
+            + `<section class="xs-card xs-gap"><h3>The gap</h3><p>${esc(gap)}</p></section></div>`
+    }
+
     // ---------- the replay of a run (or the dispatch alone, for a name that is not X-rayed yet) ----------
     function replay({ netSvg, graph, log, name, x, onDone }) {
         const real = x && x.run && (x.run.agents || []).length ? x.run.agents : null
@@ -476,12 +492,12 @@
     // ---------- /xray/: the input, the chips, the run, booth mode ----------
     const prepared = INDEX.filter(s => s.status === 'prepared')
     mount.innerHTML = `<section class="xr-stage xr-home" aria-label="RiskMandate X-ray">${stageTop('<button type="button" class="xr-btn ghost xr-booth-btn" aria-pressed="false">Booth mode</button>')}
-<div class="xr-hero"><form class="xr-ask" role="search" autocomplete="off"><label for="xr-q" class="xr-q-label">Type the name of a company</label>
+<div class="xr-hero"><form class="xr-ask" role="search" autocomplete="off"><label for="xr-q" class="xr-q-label xr-sr">Type the name of a company</label>
 <div class="xr-q-row"><span class="xr-q-scan" aria-hidden="true"></span><input id="xr-q" name="q" type="text" placeholder="for example, Booking.com" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" maxlength="80"><button type="submit" class="xr-go">Show me</button></div></form>
-${INDEX.length ? `<p class="xr-cap xr-chips-cap">Or tap one we have already looked at:</p><div class="xr-chips" role="group" aria-label="Companies we have already looked at">${INDEX.map(s => `<button type="button" class="xr-chip" data-slug="${esc(s.slug)}"><b>${esc(s.subject)}</b>${s.status !== 'prepared' ? `<span>${esc(s.status)}</span>` : ''}</button>`).join('')}</div>` : ''}
-<p class="xr-cap">Nothing you type is kept. If your company is not on the list, ask us at the stand.</p></div>
+${INDEX.length ? `<div class="xr-chips" role="group" aria-label="Companies we have already looked at">${INDEX.map(s => `<button type="button" class="xr-chip" data-slug="${esc(s.slug)}"><b>${esc(s.subject)}</b>${s.status !== 'prepared' ? `<span>${esc(s.status)}</span>` : ''}</button>`).join('')}</div>` : ''}
+</div>
 <div class="xr-run" hidden><div class="xr-result" hidden></div><p class="xr-again-row"><button type="button" class="xr-btn ghost xr-again">← Look at another company</button></p></div>
-<details class="xr-tech"><summary>For the technically minded</summary><div class="xr-tech-run" hidden><div class="xr-tech-extra"></div>${runHtml}</div><div class="xr-tech-notes"></div></details></section>`
+<details class="xr-tech"><summary>More detail</summary><div class="xr-tech-run" hidden><div class="xr-tech-extra"></div>${runHtml}</div><div class="xr-tech-notes"><p>Nothing you type is kept. If your company is not on the list, ask us at the stand.</p></div></details></section>`
     const S = sel => mount.querySelector(sel)
     const stage = S('.xr-stage'), input = S('#xr-q'), runEl = S('.xr-run'), hero = S('.xr-hero'), result = S('.xr-result'), tech = S('.xr-tech')
     let T = null, busy = false, pending = null
@@ -518,17 +534,29 @@ ${INDEX.length ? `<p class="xr-cap xr-chips-cap">Or tap one we have already look
             if (ok) {
                 const ucs = x.use_cases || [], gaps = ucs.reduce((k, u) => k + (u.gap || []).length, 0), reach = ucs.reduce((k, u) => k + (u.reach || []).length, 0)
                 const full = `${up}xray/${slug}/index.html`
-                result.innerHTML = `<h2 class="xr-h">${esc(x.subject)}</h2><p class="xr-tag">We read what ${esc(x.subject)} and others say in public about ${esc(x.subject)}'s AI helpers. We did not test its systems.${ucs.length > 1 ? ' Pick a situation:' : ''}</p>
-${ucs.length > 1 ? `<div class="xp-cases" role="group" aria-label="Situations">${ucs.map((u, i) => `<button type="button" class="xp-tab" data-i="${i}" aria-pressed="${i ? 'false' : 'true'}">${esc(u.name)}</button>`).join('')}</div>` : ''}<div class="xp-body"></div>
-<div class="xr-abp"><a class="xr-btn" href="${up}abp-make/index.html?x=${slug}">Make an ABP for one of these agents →</a><p class="xr-cap">An ABP (Agent Behaviour Policy) is a short written policy for one AI helper: what it may do, and what it may not. Start from one of these helpers, then make it fit your own.</p><div class="xr-chips">${ucs.map(u => { const ag = (x.agents || []).find(a => a.id === u.agent); return `<a class="xr-chip" href="${up}abp-make/index.html?x=${slug}&amp;uc=${encodeURIComponent(u.id)}"><b>${esc(ag ? ag.name.replace(/\s*\([^)]*\)\s*$/, '') : u.name)}</b><span>${esc(u.name)}</span></a>` }).join('')}</div></div>
+                result.innerHTML = `<h2 class="xs-name">${esc(x.subject)}</h2>
+${ucs.length > 1 ? `<div class="xp-cases xs-cases" role="group" aria-label="Situations">${ucs.map((u, i) => `<button type="button" class="xp-tab" data-i="${i}" aria-pressed="${i ? 'false' : 'true'}">${esc(u.name)}</button>`).join('')}</div>` : ''}<div class="xs-body"></div>
+<p class="xs-src"><a href="${full}">Sources</a></p><p class="xs-go"><a class="xr-btn xs-abp" href="${up}abp-make/index.html?x=${slug}">Make your ABP in 2 minutes</a></p>`
+                const stand = result.querySelector('.xs-body'), abp = result.querySelector('.xs-abp'), srcA = result.querySelector('.xs-src a')
+                // the detailed view, one tap away under "More detail"
+                const detail = `<p class="xr-tag">We read what ${esc(x.subject)} and others say in public about ${esc(x.subject)}'s AI helpers. We did not test its systems.</p><div class="xp-body"></div>
+<div class="xr-abp"><p class="xr-cap">An ABP (Agent Behaviour Policy) is a short written policy for one AI helper: what it may do, and what it may not. Start from one of these helpers, then make it fit your own.</p><div class="xr-chips">${ucs.map(u => { const ag = (x.agents || []).find(a => a.id === u.agent); return `<a class="xr-chip" href="${up}abp-make/index.html?x=${slug}&amp;uc=${encodeURIComponent(u.id)}"><b>${esc(ag ? ag.name.replace(/\s*\([^)]*\)\s*$/, '') : u.name)}</b><span>${esc(u.name)}</span></a>` }).join('')}</div></div>
 <p class="xr-links"><a class="xr-btn ghost" href="${full}">Everything we found about ${esc(x.subject)}</a></p>`
-                const body = result.querySelector('.xp-body')
-                const show = i => { const u = ucs[i]; if (!u) return; const ag = (x.agents || []).find(a => a.id === u.agent); body.innerHTML = `<p class="xp-case">The situation: <b>${esc(u.name)}</b>. The helper: <b>${esc(ag ? ag.name : '')}</b>.</p>${plainHtml(x, u, `${full}#uc-${encodeURIComponent(u.id)}`)}`; result.querySelectorAll('.xp-tab').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.i === i))) }
+                const show = i => {
+                    const u = ucs[i]; if (!u) return
+                    const ag = (x.agents || []).find(a => a.id === u.agent), uc = encodeURIComponent(u.id)
+                    stand.innerHTML = standHtml(x, u)
+                    abp.href = `${up}abp-make/index.html?x=${slug}&uc=${uc}`
+                    srcA.href = `${full}#uc-${uc}`
+                    const body = S('.xr-tech-extra .xp-body')
+                    if (body) body.innerHTML = `<p class="xp-case">The situation: <b>${esc(u.name)}</b>. The helper: <b>${esc(ag ? ag.name : '')}</b>.</p>${plainHtml(x, u, `${full}#uc-${uc}`)}`
+                    result.querySelectorAll('.xp-tab').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.i === i)))
+                }
                 result.querySelectorAll('.xp-tab').forEach(b => b.addEventListener('click', () => show(+b.dataset.i)))
-                show(0)
-                S('.xr-tech-extra').innerHTML = `<ul class="xr-stats"><li><b>${(x.agents || []).length}</b>AI agents</li><li><b>${ucs.length}</b>use cases</li><li><b>${reach}</b>things they can reach</li><li class="gap"><b>${gaps}</b>in the gap</li><li><b>${(x.sources || []).length}</b>sources read</li>${typeof (x.run || {}).cost_usd === 'number' ? `<li><b>${money(x.run.cost_usd)}</b>run cost</li>` : ''}</ul>
+                S('.xr-tech-extra').innerHTML = `${detail}<ul class="xr-stats"><li><b>${(x.agents || []).length}</b>AI agents</li><li><b>${ucs.length}</b>use cases</li><li><b>${reach}</b>things they can reach</li><li class="gap"><b>${gaps}</b>in the gap</li><li><b>${(x.sources || []).length}</b>sources read</li>${typeof (x.run || {}).cost_usd === 'number' ? `<li><b>${money(x.run.cost_usd)}</b>run cost</li>` : ''}</ul>
 <p class="xr-cap">Four AI search agents looked for leads. An orchestrator sent them the name; a collector kept the sources we read in a vault. What a model says is a lead; only facts whose sources we read reach the page. The animation below replays that run.</p>
-<p class="xr-links"><a class="xr-btn ghost" href="${up}xray/${slug}/deck/index.html">Open the deck</a><a class="xr-btn ghost" href="${up}xray/${slug}/run/index.html">How this X-ray was made</a><a class="xr-btn ghost" href="${up}xray/how/index.html">How every X-ray is made</a></p>`
+<p class="xr-links"><a class="xr-btn ghost" href="${up}xray/${slug}/deck/index.html">Open the deck</a><a class="xr-btn ghost" href="${up}xray/${slug}/run/index.html">How this X-ray was made</a><a class="xr-btn ghost" href="${up}xray/how/index.html">What we read and why</a></p>`
+                show(0)
             } else {
                 result.innerHTML = `<h2 class="xr-h">${esc(q)}</h2><p class="xr-tag">We have not looked at this one yet. A team member can ask for it, and it will be ready later.</p><p class="xr-links"><button type="button" class="xr-btn xr-request">Ask us to look at ${esc(clip(q, 40))}</button></p><p class="xr-cap xr-req-status" role="status">${hit && hit.status !== 'prepared' ? `${esc(hit.subject)} is ${esc(hit.status)}, not ready yet. ` : ''}Nothing is sent until you press the button. Only a company name, never a person's name or an email.${prepared.length ? ' Or try one that is ready:' : ''}</p>${prepared.length ? `<div class="xr-chips">${prepared.map(s => `<button type="button" class="xr-chip" data-slug="${esc(s.slug)}"><b>${esc(s.subject)}</b></button>`).join('')}</div>` : ''}`
                 result.querySelectorAll('.xr-chip').forEach(bindChip)
@@ -541,6 +569,8 @@ ${ucs.length > 1 ? `<div class="xp-cases" role="group" aria-label="Situations">$
                     rs.textContent = r.status === 'queued' ? `Asked (${r.id}). We will look at it soon; come back to this page later.` : `Not sent: ${r.why || r.status}.`
                 })
             }
+            // scroll once the result is drawn: before, the page was too short to scroll and the stand view sat half below the fold
+            stage.scrollIntoView({ block: 'start', behavior: 'auto' })
             // booth: the idle timer ran from the visitor's Enter, so it wiped the result about 45 s after it appeared (WS-197,
             // dev@web-summit.silvio, 10 November): a visitor's result now gets two full minutes from when it shows
             if (onRunEnd) onRunEnd(); else arm(120000)
@@ -569,7 +599,7 @@ ${ucs.length > 1 ? `<div class="xp-cases" role="group" aria-label="Situations">$
         const s = prepared[attractI++ % prepared.length]
         let k = 0
         const type = () => { if (!attract) return; input.value = s.subject.slice(0, ++k); if (k < s.subject.length) typeT = setTimeout(type, 110); else typeT = setTimeout(() => attract && go(s.subject), 500) }
-        onRunEnd = () => { typeT = setTimeout(() => { if (attract) startAttract() }, 15000) }
+        onRunEnd = () => { typeT = setTimeout(() => { if (attract) startAttract() }, 12000) }   // the stand view, held 12 s (WS-191)
         typeT = setTimeout(type, 600)
     }
     const touched = e => { if (attract && !(e.target.closest && e.target.closest('.xr-booth-btn'))) { stopAttract(); input.focus({ preventScroll: true }) } arm() }
