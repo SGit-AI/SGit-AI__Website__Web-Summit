@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Option C: phases</title><link rel="stylesheet" href="mock.css">
+<style>
+.ph{display:flex;gap:4px;margin-top:var(--s3);list-style:none;padding:0}
+.ph li{flex:1;min-width:0;border-top:8px solid var(--brand);padding-top:6px;font-size:12px;line-height:1.25}
+.ph li b{display:block;font-size:13px}.ph li span{font:11px var(--mono);color:var(--ink-3)}
+.ph .p0{border-color:var(--terracotta)}.ph .p1{border-color:var(--river)}.ph .p3{border-color:var(--live)}.ph .p4{border-color:var(--tram)}
+.ph .todo{border-top-style:dashed;border-color:var(--rule-2);color:var(--ink-3)}
+.ph .doing{border-color:var(--ok)}
+@media (prefers-reduced-motion:no-preference){.ph .doing{animation:fade 1.6s ease-in-out infinite}@keyframes fade{50%{border-color:var(--ok-soft)}}}
+.ch{border-left:4px solid var(--brand);padding:2px 0 2px var(--s3);margin:var(--s3) 0}
+.ch h3{font:600 15px var(--sans);margin:0}.ch p{margin:2px 0;font-size:14px}.ch .m{font:12px var(--mono);color:var(--ink-3)}
+@media (min-width:760px){.chs{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s3)}}
+</style></head>
+<body><main>
+<p class="k">a1-flow-proposal · mock C</p>
+<h1>Phases</h1>
+<p class="note">The work told as five phases that every deliverable shares: asked, found, made, checked, live. The strip is a five-part bar; the page is five chapters.</p>
+<div class="frame"><div class="fake"></div><div class="fake s"></div>
+<section class="strip"><p class="head"><span class="k">How this page was made</span><br><b>Asked to live in 46 min</b> <span class="facts">· 3 people · 15 agents</span></p>
+<ol class="ph">
+<li class="p0"><b>Asked</b><span>≤10:27 · Dinis</span></li>
+<li class="p1"><b>Found</b><span>10:57 · 4 reads</span></li>
+<li><b>Made</b><span>10:58 · 38 commits</span></li>
+<li class="p3"><b>Checked</b><span>5 deploys failed</span></li>
+<li class="p4"><b>Live ★</b><span>11:42 · v0.1.29</span></li></ol></section></div>
+<h2>Running (b0-library at 11:11)</h2>
+<section class="strip"><p class="head"><b>Being made: spec, since 11:09</b></p>
+<ol class="ph"><li class="p0"><b>Asked</b><span>≤10:55</span></li><li class="p1"><b>Found</b><span>10:55 intake</span></li><li class="doing"><b>Made</b><span>alpha · running</span></li><li class="todo"><b>Checked</b><span>next</span></li><li class="todo"><b>Live</b><span>next</span></li></ol></section>
+<h2>The page: five chapters (b0-library)</h2>
+<div class="chs">
+<div class="ch" style="border-color:var(--terracotta)"><h3>Asked</h3><p>Angelo: "Yes to all three".</p><p class="m">no time in the record</p></div>
+<div class="ch" style="border-color:var(--river)"><h3>Found</h3><p>conductor.b@ opens the item.</p><p class="m">10:55 to 11:05 · fd3bed8</p></div>
+<div class="ch"><h3>Made</h3><p>alpha writes the spec, 3 commits.</p><p class="m">11:09 to 11:13 · 83,330 tokens</p></div>
+<div class="ch" style="border-color:var(--live)"><h3>Checked</h3><p>conductor.b@ reviews, brings onto dev.</p><p class="m">11:26 · 5c6f4c8</p></div>
+<div class="ch" style="border-color:var(--tram)"><h3>Live</h3><p>v0.2.1849.</p><p class="m">11:29</p></div>
+</div>
+<p class="note">Weakness: the phase of a step is a guess (is a design commit "made" or "checked"?), the Fringe trace has no phase field, and the hand-offs between agents disappear.</p>
+</main></body></html>
