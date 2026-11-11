@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1803",
+    "date": "2026-11-11",
+    "what": "bridges limited at 14:48, lifted by 22:29 (a sequence, not a conflict); AEMET named Charles at 10:20 on 9 Nov; social posts filed by service; Madeira SRPC",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "5c2756355"
+  },
+  {
     "version": "v0.2.1802",
     "date": "2026-11-11",
     "what": "text_en: where IPMA's English drops a qualifier the Portuguese has (por vezes, podendo, persistente, trovoada, forte, locais mais expostos), ours, with the reason in text_en_by",
