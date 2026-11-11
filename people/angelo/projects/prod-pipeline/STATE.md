@@ -1,5 +1,5 @@
 # prod-pipeline: state
-**For the digest (19:0x UTC):** no budget (Angelo: "I've not set any budget to be honest"); A3, the one team draft on option A, started on golf.large. Waiting on Angelo: who builds in the Fringe repository, who gets the draft (both tier 3).
+**For the digest (19:03 UTC):** no budget (Angelo: "I've not set any budget to be honest"); A3, the one team draft on option A, running on golf.large since 19:03 (session_01Xp7gj6BNR2G9X2CwX56QZb). Waiting on Angelo: who builds in the Fringe repository, who gets the draft (both tier 3).
 - **Lead:** prod-pipeline.pm@PrompTugal.angelo, started 2026-11-11 about 12:30 UTC. Instruction commit 94dfabc6: pushed-by says ANGELO (checked at start).
 - **Done:** b0-library, b1-team-spec, b2-flow-reuse (conductor.b@, before this project).
 - **Goal (BRIEF.md):** the flow page of a real deliverable, note to live, generated from the records; the next deliverable gets one with no extra work.

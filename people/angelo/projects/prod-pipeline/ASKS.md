@@ -34,7 +34,7 @@
 - **Not:** no change in the Fringe repository; no message to any agent or person; nothing published.
 - **Done when:** findings.md, shots/ and test/ are on pool/a2-small-screens, the check runs with one command and its output is in findings.md, the gate prints OK, and STATE.md says "ready for Angelo's read".
 
-## A3: one draft for the team (written 2026-11-11 18:55; started 19:0x on golf.large: no budget, Angelo)
+## A3: one draft for the team (written 2026-11-11 18:55; started 19:03 on golf.large: no budget, Angelo)
 - **Role:** design (large), not charlie or foxtrot (they made A1 and A2; a fresh eye merges them). Brief: people/angelo/projects/prod-pipeline/a3-team-draft/brief.md (the lead's folder). Writes: people/angelo/pipeline/prod-pipeline-a3/ (inside the workers' lane), branch pool/prod-pipeline-a3.
 - **Wake routine:** trig_01MqHQ7CWqSnu5JGwYRpkQg5
 - **Reads:** A1 (pool/a1-flow-proposal, 991ae24: proposal.md, mock/), A2 (pool/a2-small-screens, 91d6bff: findings.md, proto/, shots/), the project's BRIEF.md (Angelo's words), the prior-art copy (prior-art/fringe-6b079db/).
