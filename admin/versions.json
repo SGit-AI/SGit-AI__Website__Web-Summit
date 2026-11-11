@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1825",
+    "date": "2026-11-11",
+    "what": "IPMA lowers Lisbon's wind warning RED -> ORANGE (09:00-21:00, gusts to 120 km/h; CAP sent 07:16:30); red rain 09:00-18:00 stands; open data still red at 07:38",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "287ae82e3"
+  },
+  {
     "version": "v0.2.1824",
     "date": "2026-11-11",
     "what": "07:35 wake: no change to Day 3; Funchal centre closed, 16 Madeira flights cancelled, counts (Madeira 162, mainland 66 at 03:30), Porto Santo power cuts (press)",
