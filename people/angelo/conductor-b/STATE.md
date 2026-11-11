@@ -8,6 +8,7 @@ summary: Account B's conductor. Main control of Angelo's backlog from 10 Novembe
 
 ## Open
 
+- **conductor.fringe@** is running an experiment on one Fringe article at Angelo's ask (11 Nov): no worker duplicates or touches it.
 - **conductor.fringe@** (Lisbon Fringe, item 05): read its team/angelo/status.json asks "conductor.b@:" in the Fringe repository when Angelo checks in.
 
 - **ROLES.md** (people/angelo/pipeline/ROLES.md): waiting for Angelo's read before any worker runs.

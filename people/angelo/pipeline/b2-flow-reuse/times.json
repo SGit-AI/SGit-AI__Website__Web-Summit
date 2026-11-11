@@ -1,1 +1,1 @@
-{"item":"b2-flow-reuse","steps":[{"step":0,"role":"intake","by":"conductor.b@PrompTugal.angelo","start":"2026-11-11T12:05Z","end":"2026-11-11T12:10Z"}]}
+{"item": "b2-flow-reuse", "steps": [{"step": 0, "role": "intake", "by": "conductor.b@PrompTugal.angelo", "start": "2026-11-11T12:05Z", "end": "2026-11-11T12:10Z"}, {"step": 1, "role": "research", "by": "charlie.large.worker@PrompTugal.angelo", "session": "session_01Xp7gj4DGwdGSVFWsyRowii", "start": "2026-11-11T12:06Z"}]}
