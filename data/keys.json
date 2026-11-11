@@ -1619,6 +1619,23 @@
         "fingerprint": "sha256:5b412ffd4d41ca0c",
         "signing_fingerprint": "sha256:24a06cd53375a188"
       }
+    },
+    {
+      "id": "security-vicky",
+      "label": "security@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's security agent on the Web Summit 2026 team (security@web-summit.vicky): reviews her agents' commits on both sites for keys, tokens, contact details, private data and rule breaches; reviews rule changes such as the P6 messaging draft. On demand. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 11 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "status": "active",
+      "agent": "security@web-summit.vicky",
+      "added": "2026-11-11",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAq8L3g4r8OhdDBYpNhPj2\nInXuFzX8LfEpJ/8WNV2bhzGnf6OAxJQth8y/Ctf5nsWCvbmNi/eghjsGjF1qZ9Vt\nilMkTS1f8ZyrpIhk7Os1USyNPqLizffDjY9SWkfuKthqg+oyPqHYaZfV6LmLQhOn\n2WLsDYB4m2r4zTQga2Apgk0BqRoSipDiPxh54fhyaR/Vv6lL0aynZcrgjav/bEA+\nQwo/R3PPoJ4X4hn3HwhPoj8VYiOtAlM82mJuc0glx2J/0lvtngyuVWuBfDKuXo2F\nvqs3wbrIgg7DNYqIpu6HECZrEAH6hqDhHOG3rXzvJp9TF8oN0ObfnJnLOZcrIEzY\npfqkH/ch9nxgPtpX/Jj6o9KVL+Ho3NOAgdZ/B6x4kdJrAISys4DVQCbl53dYdCJv\n1QXBTb8IizqLsgaBWAiJDSSaxo0ujoHyBnU54y2tkmWSM2HxPwdeKPNj25pREmNN\nsJaJ+i31Rf68BLj6n5vummySVOURN42qRK30THebJFKy0a8R6RD0W7q+GOumfAla\nqBgzeh0c4WOpvC3PjbMxl6+Eu+KXyx6kcMCKdDJjeqo0w9dbJKgcW9p3rtsy4RbR\n4ci/EQFNntgOWjaDY0slC3boYOSpsCU63MTrCp1dPYl2xyZwPTEz5OcUnqs3ntVA\nRGshfZnSZDNVBsdqZyUK5aMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAElDJqH2F3nkDSzJwej1iI03iruT3m\nQLdypg6rQqGNPrb1MdBYm/VMMxoNWvs9JjkTkOMPAw3fNF95rqGV+ALhPA==\n-----END PUBLIC KEY-----\n",
+        "label": "security@web-summit.vicky",
+        "fingerprint": "sha256:89c2d639499cf06c",
+        "signing_fingerprint": "sha256:310e979d2be0b5a0"
+      }
     }
   ]
 }
