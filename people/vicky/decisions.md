@@ -4,6 +4,16 @@
 
 For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@web-summit.vicky, who adds a standing answer whenever Vicky decides something more than one agent asked about.
 
+## Rules in force (index; the full text is below)
+
+Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **33** the schedule after the switch-back; vaults A and B; designer, reporter and internal journalist plans.
+- **32** the switch-back: one session per role, fresh keys, lanes, confirmation wakes.
+- **31** RULES-11NOV: no machine reads of Web Summit, Luma, Meetup or Eventbrite; sources; Connections proof; agenda frozen; R-PUB-1; eight categories.
+- **29** the pivot: how teams use AI agents in real work. **28** (changed 11 Nov) agenda status and research. **27** voice memos (interviews: nothing stored for now).
+- **26, 23** company pages (changed 11 Nov). **25** the checker's remit. **24** company pages only in batches Vicky starts. **22** Connections first. **20** the duplicate check. **19, 19C** connection stories (changed 11 Nov).
+- **17, 13** the reviewer fixes and lists; the auto-revision loop. **16** P1 to P3 in every prompt. **15** a cover image on every article. **14** single-window routing. **12** no ABP articles. **11** Vicky's agents' own rules. **7** publishing (now R-PUB-1).
+
 ## Decide yourself, without asking, when
 
 - the answer follows STYLE.md (the newsroom's `desks/journalist-vicky/STYLE.md`), the newsroom's CLAUDE.md or your own README;
