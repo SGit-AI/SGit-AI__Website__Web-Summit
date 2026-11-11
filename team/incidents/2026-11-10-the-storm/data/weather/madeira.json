@@ -17,7 +17,7 @@
  },
  "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
  "stations_source": "https://api.ipma.pt/open-data/observation/meteorology/stations/stations.json",
- "read_utc": "2026-11-11T02:20:50Z",
+ "read_utc": "2026-11-11T02:22:46Z",
  "stations": [
   {
    "id": "1210973",
@@ -27,7 +27,7 @@
     -16.91666667
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 230.5,
     "hours_labelled": [
@@ -190,7 +190,7 @@
     -16.816822
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 124.4,
     "hours_labelled": [
@@ -353,7 +353,7 @@
     -16.928271
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 123.9,
     "hours_labelled": [
@@ -516,7 +516,7 @@
     -16.903955
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 116.7,
     "hours_labelled": [
@@ -679,7 +679,7 @@
     -17.044722
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 116.6,
     "hours_labelled": [
@@ -842,7 +842,7 @@
     -16.906944
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 83.6,
     "hours_labelled": [
@@ -1005,7 +1005,7 @@
     -17.26321389
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 40.3,
     "hours_labelled": [
@@ -1168,7 +1168,7 @@
     -16.8864166
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 39.0,
     "hours_labelled": [
@@ -1331,7 +1331,7 @@
     -17.171373
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 37.7,
     "hours_labelled": [
@@ -1494,7 +1494,7 @@
     -17.01503611
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 34.0,
     "hours_labelled": [
@@ -1657,7 +1657,7 @@
     -16.888
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 32.6,
     "hours_labelled": [
@@ -1820,7 +1820,7 @@
     -16.706
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 31.9,
     "hours_labelled": [
@@ -1983,7 +1983,7 @@
     -16.86575
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 29.2,
     "hours_labelled": [
@@ -2146,7 +2146,7 @@
     -16.906219
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 21.7,
     "hours_labelled": [
@@ -2309,7 +2309,7 @@
     -16.935592
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 19.1,
     "hours_labelled": [
@@ -2472,7 +2472,7 @@
     -16.34868
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:20:50Z",
+   "read_utc": "2026-11-11T02:22:46Z",
    "max_6h_rain": {
     "mm": 15.4,
     "hours_labelled": [
@@ -2691,5 +2691,5 @@
   "lead_time_note": "The red rain (21:00 Tue-06:00 Wed) was sent at 06:14:54 Tue, about 15 h ahead. The rain that fell in the hours labelled 20:00 and 21:00 (93.3 mm at Areeiro, read as hour ending) fell outside any window in the messages we hold.",
   "card_wording": "outside any window in the messages we hold (not 'unwarned')"
  },
- "next_read_utc": "2026-11-11T02:22Z"
+ "next_read_utc": "2026-11-11T03:22Z"
 }
