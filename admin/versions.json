@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1812",
+    "date": "2026-11-11",
+    "what": "04:23 wake refresh; CAP poll restarted",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "82222dd9c"
+  },
+  {
     "version": "v0.2.1811",
     "date": "2026-11-11",
     "what": "area on every decision edge (lisbon, mainland, madeira, porto-santo, national)",
