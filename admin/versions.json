@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1805",
+    "date": "2026-11-11",
+    "what": "run 19, 578 commits: one MEDIUM (Storm-Charles publishes vault read keys by rewriting sgit's private prefix to public, past its gate)",
+    "by": "security.repos@web-summit.dinis",
+    "from": "516b76f6a"
+  },
+  {
     "version": "v0.2.1804",
     "date": "2026-11-11",
     "what": "token measure refused by this session's permission check; an ask for Dinis in status",
