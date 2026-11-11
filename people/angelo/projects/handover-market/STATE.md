@@ -15,7 +15,7 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 
 ## Steps
 - **1a handover-p1-relay**: done 17:03 (pool/handover-p1-relay 11db0db, 1.30 USD). Packet p1 (place 12 board items at an altitude) answered here, 12/12 valid, unsigned; all signatures verify; agrees with architect.1 on 3 of 10. Write-back via conductor.fringe@PrompTugal.angelo (its Fringe lane allows tasks/*/result-*.json); push access to the Fringe is Dinis's, else a pull request. Shown to Angelo next.
-- 1b write-back (signed, to the Fringe): go in principle (2026-11-11 17:0x); the drafted result and exact steps go to Angelo before any push.
+- **1b handover-p1-writeback**: prepare the signed reply and the PR text (brief steps/handover-p1-writeback/brief.md); nothing pushed to the Fringe until Angelo looks. Go in principle (2026-11-11 17:0x); the drafted result and exact steps go to Angelo before any push.
 - **2a handover-p2-format**: done 17:03 (pool/handover-p2-format 27d8dd5, 1.45 USD). handover.md (proposed format) and package-1.md (check every path the pipeline library names).
 - 2b dry run on Angelo's own other Claude account (his go, 2026-11-11): ready. Brief steps/handover-x1-paths/brief.md (1936f83), paste block dry-run-prompt.md, slot golf claimed 17:2x (lapses after two hours unless renewed); Angelo starts one session there with package-1; result on a pool/ branch; we review and record. Then 2c: the same package to Dinis's conductors (first contact, shown to Angelo).
 - **3a handover-p3-openrouter** (build, large), running from 17:20. 3 OpenRouter (Angelo's go, 2026-11-11): key saved 17:1x as a network secret for openrouter.ai on env PrompTugal News shared; Dinis's key saved as this environment's network secret for openrouter.ai (Angelo enters it in the secure form); then one worker runs one small task through the cheap tier and has Claude check it, recorded with cost.
@@ -27,6 +27,7 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 - 2026-11-11, on pattern 1's write-back to the Fringe (session key, its public half published, signed result pushed): "Yes, go ahead in principle, show me before pushing".
 - 2026-11-11, on pattern 2's first target (own other account vs Dinis's agents): "Yes, dry run on my other account first".
 - 2026-11-11, on pattern 3: "Since we're about to end tokens here, we definitely need the capability of handing over stuff to other accounts. Let's try the OpenRouter route, and we're allowed to use Dinis's key as that's an investment dedicated to this project."
+- 2026-11-11, after the signed reply via conductor.fringe@ (re-run with the Fringe's tool, pull request, shown before opening) was recommended: "Let's reply to Dinis's request." Step 1b-prep started; the PR is shown to Angelo before it is opened.
 
 ## Open questions for Angelo
 (none open)
