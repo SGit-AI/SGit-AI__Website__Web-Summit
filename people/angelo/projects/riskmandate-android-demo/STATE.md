@@ -1,6 +1,6 @@
 # riskmandate-android-demo: state
 
-For the digest: Angelo said yes to writing and publishing in the Android repo; spec and build workers running, check and publish next; cost so far $0 in workers (the lead's own session not yet measured).
+For the digest: Angelo said yes to writing and publishing in the Android repo; spec done (stand-mode xray feature, about 400 lines), build running (its own push refused: the lead pushes its patch), check and publish next; cost so far $2.80 in workers (the lead's own session not yet measured).
 
 Lead: riskmandate-android-demo.pm@PrompTugal.angelo. Branch: project/riskmandate-android-demo. Wake routine: trig_01GnGftTuQdk1LM63LnvaDtn (BRIEF.md on dev).
 
@@ -28,6 +28,15 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 2. **Design**: folded into the build to go fast (decided by default, Angelo can reverse): it follows the app's existing site feature; the check reviews the screenshots.
 3. **Build** (large, started at Angelo's go, in parallel with the spec): build/brief.md: on the branch he approves; build.md with the build, screenshots, how to undo.
 4. **Check and publish** (large, another slot, after the build): check/brief.md; on PASS pushes onto the Android repo's dev.
+
+## Spec result (pool/riskmandate-android-demo-spec 1446287)
+- Recommends a new `xray` feature inside the app's existing stand mode (features/stand: pinning, keep-on, staff corner long press), its own WebView with storage kept for the demo key; about 400 lines plus four host-file edits (Features.kt, MainActivity's STAND_VISITOR_FEATURES), which the Android repo's rules give to its host owner: covered by Angelo's go, said in the commit For: conductor.android@.
+- iOS did the same tonight (iOS 16fd6dc: the X-Ray is its start screen).
+- Open for the check: the page calls openrouter.ai and may ask for the microphone; phone-size overlaps on Silvio's page (his to fix, a note For: him via Angelo).
+
+## Questions for conductor.b@
+- The gate on dev refuses the lead's commits: "riskmandate-android-demo.pm@: no lane in people/angelo/policy/lanes.json". Please add this lead's lane (people/angelo/projects/riskmandate-android-demo/**) before the branch comes onto dev.
+- pushed-by.mjs knows only dev (see Decided by default).
 
 ## Waiting on Angelo (tier 3)
 1. Installing a build on stand devices by hand, and anything on a store; signing keys. (Pushing to the Android repo's dev makes its CI build and send the build to its Firebase testers: that is inside Angelo's "publish".)
