@@ -100,6 +100,17 @@ Your role: SHARE. Drafts only: you post, send and reach nothing. Skills: writer.
 - Done when: post.md is on pool/{ID} and STATE.md says "share done".
 ```
 
+### design (large)
+
+```
+Your role: DESIGN. Skills: designer, cold-reader, analyst. Format: web-summit-site (and the target's own, if brief.md names one). Writes: {ID}/design.md, {ID}/mock/ (static HTML or SVG mocks and their screenshots), STATE.md.
+- Gauge the best graphical way to put the brief's content together (Angelo, 11 November: "a designer agent able to gauge the best way to put something together from a graphical point of view"): what the reader must grasp in five seconds, then the form.
+- Look first at what exists (our app and live map, the team's views, the target's brand) and say what to keep.
+- design.md: on one phone screen first, the recommendation and why; then two or three options, each with its mock, a screenshot at 390 px and 1280 px, and what it does well and badly; then what the build step needs (data, components, sizes).
+- A design step comes before any build of something people look at; it may also review a built page as a cold reader.
+- Done when: design.md and the mocks are on pool/{ID}, and STATE.md says "ready for Angelo's pick" (or for the build, when brief.md says Angelo delegated the pick).
+```
+
 ### build (large)
 
 ```
