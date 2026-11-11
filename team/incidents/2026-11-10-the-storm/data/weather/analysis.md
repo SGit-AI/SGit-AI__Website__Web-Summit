@@ -367,3 +367,11 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Hazard (medium):** the rain is now the story: 11–18 mm in one hour across the city, under a red warning to 18:00. Wind so far is far below IPMA's orange (gusts to 120 km/h).
 
 **Test:** the pressure minimum (now 994 and falling) and the turn: through N to NW means the centre passed south; through S to SW means north.
+
+## 17. 12:30 UTC 11 Nov: IPMA communiqué no. 3: two centres, less deepening, weaker wind
+
+**Fact** (IPMA communiqués page https://www.ipma.pt/opencms/pt/otempo/comunicados/index.jsp, read 12:28:13 UTC; edited 12:16:26, valid 12:07–23:59; it is not in IPMA's RSS feed, which no longer carries no. 2 either). Our translation of the substance: CHARLES passed north of Madeira and **split into two distinct low-pressure centres, unlike the models' first forecasts**. As it nears the mainland this means **less deepening and so less wind than yesterday's forecast**. Rain persistent and at times heavy continues, moving from south-west to north-east. Wind strengthens in the South, gusts about **70–90 km/h**, especially on the coast, up to **110 km/h** on the most exposed coast and hills. "Os avisos meteorológicos foram ajustados tendo em conta as atualizações dos modelos numéricos."
+
+**Fact:** at 12:28:46 neither IPMA's open data nor the MeteoAlarm CAP feed shows a Lisbon warning change after 07:16:30 (wind lowered to orange, gusts to 120 km/h). Lisbon still reads red rain 09:00–18:00, orange wind 09:00–21:00 and orange sea 12:00–21:00. "Ajustados" may refer to that 07:16 change; if a new change follows the communiqué, MeteoAlarm has carried IPMA's changes 16–21 min late before, so the 5-minute poll should see it by about 12:40.
+
+**Analysis (medium-high):** the communiqué settles section 13 in writing: two centres, as the press reported. It also agrees with what Lisbon is seeing: no gust all morning and wind at the airport under 30 km/h. IPMA's own number, 70–90 km/h in the South, sits below Lisbon's orange threshold (gusts to 120 km/h) and near the airport's TAF (gusts about 65 km/h at times, a 30% chance of about 100 km/h). Rain stays the main hazard. Section 16's track (centre over or south of Lisbon) is not contradicted; the communiqué does not say where the centres go.

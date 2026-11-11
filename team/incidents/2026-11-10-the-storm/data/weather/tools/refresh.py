@@ -17,6 +17,7 @@ U = {
     'warnings': 'https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json',
     'areas': 'https://api.ipma.pt/open-data/distrits-islands.json',
     'communiques': 'https://www.ipma.pt/resources.www/rss/comunicados.xml',
+    'communiques_page': 'https://www.ipma.pt/opencms/pt/otempo/comunicados/index.jsp',
     'obs': 'https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json',
     'stations': 'https://api.ipma.pt/open-data/observation/meteorology/stations/stations.json',
     'daily': 'https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json',
@@ -241,6 +242,30 @@ def communiques():
             seen[title] = rec
         else:
             seen[title]['last_seen_utc'] = NOW
+    page = get('communiques_page')
+    if page:
+        if isinstance(page, bytes):
+            page = page.decode('utf-8', 'replace')
+        t = html.unescape(re.sub(r'\s+', ' ', re.sub('<[^>]+>', ' ', re.sub(r'(?s)<script.*?</script>|<style.*?</style>', '', page))))
+        for m in re.finditer(r'Comunicado válido entre (\S+ \S+) e (\S+ \S+) Assunto: (.*?Comunicado nº\s?\d+) (.*?) Data de edição: (\S+ \S+)', t):
+            title = m.group(3).strip()
+            if 'CHARLES' not in title:
+                continue
+            body = m.group(4).strip()
+            rec = {'title': title, 'issued_utc': m.group(5).replace(' ', 'T') + 'Z', 'edited_utc': m.group(5).replace(' ', 'T') + 'Z',
+                   'valid_from_utc': m.group(1).replace(' ', 'T') + 'Z', 'valid_to_utc': m.group(2).replace(' ', 'T') + 'Z',
+                   'link': U['communiques_page'], 'text_pt': body, 'source': U['communiques_page'], 'read_utc': NOW,
+                   'note': "Read from IPMA's communiqués page; not in the RSS feed when read. Time labels read as UTC (Lisbon is UTC in November)."}
+            if title not in seen:
+                changes.insert(0, 'NEW IPMA COMMUNIQUÉ: ' + title)
+                rec['first_read_utc'] = NOW
+                seen[title] = rec
+            elif seen[title]['text_pt'] != body:
+                changes.append('IPMA communiqué text changed: ' + title)
+                rec['first_read_utc'] = seen[title].get('first_read_utc', seen[title]['read_utc'])
+                seen[title] = rec
+            else:
+                seen[title]['last_seen_utc'] = NOW
     items = sorted(seen.values(), key=lambda c: c['issued_utc'], reverse=True)
     earlier = prev.get('not_in_feed') or [{
         'title': 'Depressão CHARLES - Comunicado nº1', 'issued_utc': '2026-11-09T13:17Z', 'valid_to_utc': '2026-11-11T23:59Z',

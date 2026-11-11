@@ -1,6 +1,6 @@
 {
  "about": "The latest observed wind in Lisbon against what was forecast for that hour. Facts with sources; no analysis here (see analysis.md).",
- "read_utc": "2026-11-11T12:23:12Z",
+ "read_utc": "2026-11-11T12:28:46Z",
  "observed_airport_latest": {
   "time_utc": "2026-11-11T12:00Z",
   "raw": "METAR LPPT 111200Z 08015KT 2500 +RA BR FEW001 BKN004 16/16 Q0994 BECMG 14015KT",
@@ -27,40 +27,40 @@
    "station": "Oeiras / Vila Fria (CMO)",
    "time_utc": "2026-11-11T11:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T12:23:12Z"
+   "read_utc": "2026-11-11T12:28:46Z"
   },
   {
    "kmh": 22.3,
    "station": "Lisboa, Carnide (CML)",
    "time_utc": "2026-11-11T11:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T12:23:12Z"
+   "read_utc": "2026-11-11T12:28:46Z"
   },
   {
    "kmh": 21.6,
    "station": "Barreiro, Lavradio",
    "time_utc": "2026-11-11T11:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T12:23:12Z"
+   "read_utc": "2026-11-11T12:28:46Z"
   },
   {
    "kmh": 17.3,
    "station": "Lisboa, Relógio",
    "time_utc": "2026-11-11T11:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T12:23:12Z"
+   "read_utc": "2026-11-11T12:28:46Z"
   },
   {
    "kmh": 16.9,
    "station": "Almada, P.Rainha",
    "time_utc": "2026-11-11T10:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T12:23:12Z"
+   "read_utc": "2026-11-11T12:28:46Z"
   }
  ],
  "forecast_taf_groups_for_that_hour": {
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-11T12:23:12Z",
+  "read_utc": "2026-11-11T12:28:46Z",
   "groups": [
    {
     "change": "BASE",
@@ -121,7 +121,7 @@
   "rain_intensity_pt": "Forte",
   "rain_intensity_en": "Strong",
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-11T12:23:12Z"
+  "read_utc": "2026-11-11T12:28:46Z"
  },
  "next_read_utc": "2026-11-11T13:22Z"
 }
