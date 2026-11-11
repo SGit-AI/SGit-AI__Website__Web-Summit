@@ -838,8 +838,8 @@
     },
     {
       "node": "IPMA: red wind warning, Lisbon district, Wed 12:00 to 21:00",
-      "at": null,
-      "at_note": "issue time not in the record; first read by our team 2026-11-10T14:23Z",
+      "at": "2026-11-10T07:18:40Z",
+      "at_note": "IPMA's CAP issue time, found by incident.meteorologist@ at 23:52 (cap.json); first read by our team 14:23",
       "status": "issued",
       "evidence": [
         {

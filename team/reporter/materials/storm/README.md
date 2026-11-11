@@ -36,7 +36,7 @@ Circles are a person acting. Boxes are agents. Dotted lines are "we read it", an
 |---|---|---|---|
 | IPMA names storm CHARLES | 9 Nov (date only) | not in our record | |
 | ANEPC Aviso 21 to the population | 9 Nov 20:30 | 10 Nov ~17:00 (desk) | about 20 h 30 min |
-| IPMA red wind for Lisbon, Wednesday | not in the record | 10 Nov 14:23 | unknown |
+| IPMA red wind for Lisbon, Wednesday | 10 Nov 07:18 (its CAP message, found at 23:52) | 10 Nov 14:23 | about 7 h 4 min |
 | Government alert: schools close, outdoor events suspended | 10 Nov 12:10 | 10 Nov 17:01 | about 4 h 51 min |
 | Web Summit's own decision | none at 16:55 | | |
 

@@ -1,7 +1,7 @@
 {
   "agent": "reporter@web-summit.dinis",
   "state": "active: the work desk's reporter; the incident's reporter (WS-214, P1 on account A); wakes hourly",
-  "last_wake": "2026-11-10T21:25Z",
+  "last_wake": "2026-11-11T00:25Z",
   "last_commit_read": "b6576d1b",
   "key": "sha256:d6d2befc473bac30 (session key; public half in data/keys.json)",
   "done": [
@@ -17,7 +17,8 @@
     "18:40, on the lead's message (incident declared, dedace17): traces/2026-11-10-the-storm-incident.json opened, 15 events (12 outside signals with published and first-read times, 1 unread source, Dinis's declaration, the lead's hand-off)",
     "19:20 wake: incident +17 events (7 press and public signals from social.watch@ with tiers, among them the mayor at 13:19; the incident team started and the lead handed to incident.conductor@; its first work; Dinis's ROADMAP); lead_times +2; the timeline correction done by the lead (d2e6cf4b); ledger line",
     "20:18 wake: incident +13 events: Web Summit's decision (Day 2 off, 19:38, an attendee email, relayed 19:48, on its blog by 19:59), the press after it, the PM's recommendation (17:32), our decisions (item 1 happened, plan B for Thursday proposed, Thursday 'planned' not 'on'); lead_times: the decision against its signals",
-    "21:18 wake: incident +8 events and 2 corrected (Web Summit's own page at 19:09 was the first public word, 29 min before the email; we read the page at 20:58, missed for 1 h 49 min because blog posts are not in the sitemap); the connector built for it; security's MEDIUM and its fix; the incident moved to PrompTugal__News__Storm-Charles (public; readable by this session)"
+    "21:18 wake: incident +8 events and 2 corrected (Web Summit's own page at 19:09 was the first public word, 29 min before the email; we read the page at 20:58, missed for 1 h 49 min because blog posts are not in the sitemap); the connector built for it; security's MEDIUM and its fix; the incident moved to PrompTugal__News__Storm-Charles (public; readable by this session)",
+    "00:18 wake (the 22:18 and 23:18 wakes did not reach this session): incident +11 events and 2 corrected, read from the team site and PrompTugal__News__Storm-Charles: IPMA's CAP issue times (red wind 07:18:40, red rain 16:30:01, red rain moved to 09:00 at 21:23), CP's train cuts, Thursday's weaker TAF, the team grown by seven agents at Dinis's direction, the site rebuilt; the red wind's lead time corrected in the storm trace and materials too"
   ],
   "next": [
     "incident: read PrompTugal__News__Storm-Charles from the next wake; Thursday and safety; the close-out",
@@ -29,6 +30,7 @@
   "asks": [
     "For conductor@web-summit.dinis: /the-individual/ and WS-210 say Dinis's word was 'about 12:30 UTC', but the page was committed at 12:02:27 and live in v0.2.1686 at 12:04:51. The trace follows the commits; the page's time may want correcting.",
     "The clone is shallow (50 commits); each wake deepens it with git fetch --shallow-since to read the period it covers.",
-    "For conductor@web-summit.indi: 348c7fa (12:40:37) says Indi's and Dinis's word was 'about 13:00 UTC'; the times disagree."
+    "For conductor@web-summit.indi: 348c7fa (12:40:37) says Indi's and Dinis's word was 'about 13:00 UTC'; the times disagree.",
+    "The hourly wakes at 22:18 and 23:18 did not reach this session (the 00:18 one did); the record was read back from the commits, so nothing is lost, but the traces were 3 hours behind."
   ]
 }
