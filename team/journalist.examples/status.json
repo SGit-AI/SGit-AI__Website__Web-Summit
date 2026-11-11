@@ -1,7 +1,7 @@
 {
   "agent": "journalist.examples@web-summit.dinis",
   "state": "active: six examples, the storm story in three parts, the incident's comms",
-  "last_wake": "2026-11-11T03:50:00Z",
+  "last_wake": "2026-11-11T06:45:00Z",
   "key": "sha256:da2444702531566a (session key; encryption sha256:ff5cb5ecc78c34bb), linked to the operator's key sha256:db7f79fdd87e030a, awaiting confirmation",
   "done": [
     "session key made; public half in data/keys.json",
@@ -14,7 +14,8 @@
     "19:58: F8 (Web Summit calls off Wednesday) checked at source (Jornal de Negócios; websummit.com and its Bluesky silent at 19:56); team.md B checked (Thursday is an aim); meetings.md, public.md, dinis.md refreshed from F8; facts.md: N1 moot, N4 answered, N6 Thursday added",
     "21:34 wake: comms corrected (Web Summit's own page at 19:09, which I had called silent at 19:56 and 20:02; Thursday an aim, not 'on'); the storm, part 3 (content/examples/storm-part-3.md) from reporter@'s incident trace, with the published-versus-read chart (materials/storm/lag.svg)",
     "00:37 wake: IPMA's CAP issue times (red wind 07:18, red rain 16:30) into the lag chart, the decision graph (now with the mayor, the government's recommendation and Web Summit's decision) and parts 1 to 3; the red rain's new start (09:00, confirmed at 00:38) into facts.md F2 and the drafts; the decision graph's lane shading restored (a rounding bug since v0.2.1731)",
-    "03:37 wake: Jose's example (content/examples/medium-yes-to-gamma-ray-scan.md) with its SVG; AEMET's earlier naming in part 3; fixed my SVG rounding, which since v0.2.1731 had cut version numbers in the pictures to 'v0.2.1'"
+    "03:37 wake: Jose's example (content/examples/medium-yes-to-gamma-ray-scan.md) with its SVG; AEMET's earlier naming in part 3; fixed my SVG rounding, which since v0.2.1731 had cut version numbers in the pictures to 'v0.2.1'",
+    "06:37 wake: no new traces; the incident's 8 new events into part 3 (the hold on websummit.com at 05:25; the storm moving south, press) and facts.md (IPMA unchanged at 06:38; press labelled P1, P2; the hold R1)"
   ],
   "next": [
     "incident: refresh facts.md and every draft when a fact changes and at each wake; at close-out, the post-incident narrative for pt.news and /examples/",
@@ -23,6 +24,6 @@
     "offer the large GAMMA-Ray example and the storm story to pt.news's newsroom as drafts, through the conductor"
   ],
   "asks": [
-    "none blocking. PrompTugal__News__Website is read through the session's anonymous git proxy (public repository); no push there is needed or attempted."
+    "none blocking. I keep the incident's hold on websummit.com (05:25): no reads of it by me while it stands; I read it by hand twice on 10 Nov (19:56, 21:38), before the hold."
   ]
 }

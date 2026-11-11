@@ -1,11 +1,11 @@
-# The one source (facts as of 00:40 UTC, 11 November 2026; IPMA's warnings as of 00:38, Thursday's as of 19:22)
+# The one source (facts as of 06:40 UTC, 11 November 2026; IPMA's warnings as of 06:38)
 
 Every communication draft in this folder is built from these facts and cites them by number. Sources: weather@PrompTugal.vicky's desk (`desks/weather-vicky/live.md`, last full check 18:36 to 18:38 UTC, and `decision-graph.json`), which reads the authorities at source. Lisbon time = UTC in November.
 
 ## Known
 
-- **F1. Red wind, Lisbon district, Wednesday 11 Nov, 12:00 to 21:00.** Gusts up to 120 km/h, possibly 140 km/h in the most exposed places. Issued by IPMA at 07:18 on 10 Nov (CAP); unchanged in IPMA's open data at 00:38 on 11 Nov.
-- **F2. Red rain, Lisbon district, Wednesday 09:00 to 18:00** (orange from 00:00 to 09:00). Moved earlier from 12:00 by IPMA at 21:23 (its CAP feed, read by incident.meteorologist@ at 23:52); confirmed in IPMA's open data by journalist.examples@ at 00:38 on 11 Nov. The red rain was first issued at 16:30 (CAP) and first read by us at 17:42.
+- **F1. Red wind, Lisbon district, Wednesday 11 Nov, 12:00 to 21:00.** Gusts up to 120 km/h, possibly 140 km/h in the most exposed places. Issued by IPMA at 07:18 on 10 Nov (CAP); unchanged in IPMA's open data at 00:38 and 06:38 on 11 Nov.
+- **F2. Red rain, Lisbon district, Wednesday 09:00 to 18:00** (orange from 00:00 to 09:00). Moved earlier from 12:00 by IPMA at 21:23 (its CAP feed, read by incident.meteorologist@ at 23:52); confirmed in IPMA's open data by journalist.examples@ at 00:38 and again at 06:38 on 11 Nov. The red rain was first issued at 16:30 (CAP) and first read by us at 17:42.
 - **F3. Orange sea warning, Wednesday 12:00 to 21:00**: waves of 5 to 7 m, up to 13 m. The maritime authority warns of a considerable worsening at sea from Wednesday 06:00. IPMA, read 17:42; AMN, read 16:58.
 - **F4. The government's alert situation for all of mainland Portugal, Wednesday 00:00 to 23:59** (page dated 12:10 on 10 Nov, read 17:01). Its measures: (a) schools and non-essential public services close; (b) outdoor events suspended, whatever their nature; (c) no access to parks and woods at high risk of falling trees; (d) temporary structures secured or removed; (e) no access to the shoreline, riverside and flood-prone areas.
 - **F5. The minister's appeal:** stay at home where possible and avoid unnecessary travel. An appeal, not an order. Government news note, read 17:01.
@@ -22,6 +22,15 @@ Every communication draft in this folder is built from these facts and cites the
 - **N4.** (Answered by F8, 19:38.)
 - **N6.** What happens to Wednesday's talks, the PITCH semi-final, side events and tickets (as F9 says). Thursday itself: Web Summit "aims to proceed", an aim, not a promise (its own update, F8; RTP, F9). Correction: journalist.examples@ wrote at 19:56 and 20:02 that websummit.com was silent; Web Summit's own update had been published at 19:09, in a section of the site we were not reading (found by the lead at 20:58; confirmed by journalist.examples@ at 21:38: datePublished 19:09, dateModified 19:25). A re-listing at 21:32 changed nothing.
 - **N5.** The reopening: when the measures end and who says so.
+
+## Press, labelled (not facts for the drafts until an authority says so)
+
+- **P1.** Público, Observador and Notícias ao Minuto (00:29) and RTP (03:28, title only): the storm passes further south than forecast, with weaker wind in Lisbon. IPMA's warnings for Lisbon were unchanged at 06:38. Do not soften any draft on this.
+- **P2.** IPMA's airport forecast (TAF, 05:00): strong wind at times 09:00 to 18:00, gusts to 83 km/h, a 30% chance of about 107 km/h from 10:00. An aviation forecast, not a public warning.
+
+## Our own reads
+
+- **R1.** Since 05:25 every automated read of websummit.com is on hold, by the incident lead's decision after reading Web Summit's Terms (48.2, 52.1), for Dinis to confirm or undo. Facts about Web Summit after 05:25 come only from other sources, or from a person.
 
 ## History (analysis, labelled)
 
