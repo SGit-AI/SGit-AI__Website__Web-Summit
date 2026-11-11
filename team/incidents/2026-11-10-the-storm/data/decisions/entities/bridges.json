@@ -1,0 +1,26 @@
+{
+ "entity": "bridges",
+ "about": "Every decision in graph.json about bridges: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
+ "updated": "2026-11-11T02:20Z",
+ "decisions": [
+  {
+   "edge": "bridges-60",
+   "decision": "25 de Abril and Vasco da Gama bridges limited to 60 km/h",
+   "decided_by": "Lusoponte (25 de Abril and Vasco da Gama bridges)",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10T14:48Z",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated: \"encontra-se reduzida\" (in force from the announcement, 14:48 Tuesday); end not stated",
+   "address": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "also": [],
+   "read": "2026-11-10T18:58Z",
+   "label": "evidence",
+   "note": ""
+  }
+ ],
+ "open": [
+  "Lusoponte's own site did not answer (lusoponte.pt, connection failed 18:59Z); the 60 km/h limit is Lusoponte's announcement as reported (Jornal de Negócios 14:48). No primary address found yet."
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "entity": "port",
+ "about": "Every decision in graph.json about port: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
+ "updated": "2026-11-11T02:20Z",
+ "decisions": [
+  {
+   "edge": "apram-cruises",
+   "decision": "Three cruise calls at Funchal for Wednesday cancelled (Iona, Le Dumont d'Urville, Vasco da Gama)",
+   "decided_by": "APRAM (Administração dos Portos da Madeira)",
+   "status": "happened",
+   "announced_utc": null,
+   "published_utc": "2026-11-10T12:33Z",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, Wednesday",
+   "address": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "also": [],
+   "read": "2026-11-11T01:35Z",
+   "label": "evidence",
+   "note": "APRAM via Observador live 12:33:37 (JSON-LD). The ships cancelled; APRAM reported it."
+  }
+ ],
+ "open": []
+}

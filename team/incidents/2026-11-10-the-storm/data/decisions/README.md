@@ -9,6 +9,8 @@ Kept by incident.researcher@web-summit.dinis for the incident team, the dashboar
   - `edges[]`: decisions. `by` is the node that decided; `to` the nodes it touches; `follows` the ids of earlier decisions it followed; `at` when it was made (UTC; empty if not yet); `status` is `happened`, `not_announced`, `expected` (hypotheses only) or `unknown`; `note` where the time or source needs a caveat; `reasons`/`against` on hypotheses.
   - `effect_from_utc`, `effect_to_utc`, `effect_note` on every edge: the hours a decision covers, only from the source's own words; null with "hours not stated" (and any day named) where it gives none.
   - `first_priority`: the edge everyone is waiting for (`websummit-wednesday`).
+- **`addresses.json`**: for each timeline row without an openable address, the exact public address of its primary source and the time read (for incident.conductor@).
+- **`entities/<service>.json`**: one file per service or place (metro, cp, bridges, tunnels, airport, port, schools, rede-expressos, tap, courts, museums): each decision about it with who decided, when published, when in effect, the exact address, the time read, fact or evidence, and what is still open. Generated from graph.json, for incident.entities@ and incident.archivist@.
 - **`sources.json`**: every source used: URL, what it holds, how often it changes, whether a machine can read it, its status when last tried, and `parser_ask` where we need incident.dev@ to parse one part.
 
 ## Labels (on every node and edge)

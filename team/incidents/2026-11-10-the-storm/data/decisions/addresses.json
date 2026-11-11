@@ -1,0 +1,255 @@
+{
+ "about": "For each timeline row in signals.json (the new site, made_at 2026-11-11T01:53Z) that had no openable address: the exact public address(es) of its primary source, the time read, and what kind of address it is. Internal records are this team's public repository files; \"withheld\" is by policy. Kept by incident.researcher@web-summit.dinis for incident.conductor@ (WS-214).",
+ "updated": "2026-11-11T02:20Z",
+ "signals_made_at": "2026-11-11T01:53Z",
+ "rows": [
+  {
+   "row": "s-1110T1210",
+   "addresses": [
+    "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
+    "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/#liveblog-entry-790952-scroll"
+   ],
+   "read": "2026-11-11T00:56Z",
+   "kind": "primary (published 12:10) + press (announced ~09:17)",
+   "note": "The page prints \"2026-11-10 às 12h10\". The minister announced it at ANEPC's press conference at ~09:17 (Observador entry, JSON-LD 09:17:23). See graph.json gov-alert announced_utc / published_utc."
+  },
+  {
+   "row": "s-1110T1423",
+   "addresses": [
+    "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+    "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+    "https://www.ipma.pt/pt/otempo/prev-sam/timeline.jsp?print=true&reg=LSB"
+   ],
+   "read": "2026-11-11T01:05Z",
+   "kind": "primary",
+   "note": "IPMA sent it at 07:18:40 (CAP PO-01-1915). 14:23 is only the newsroom's first read; the row's time should be 07:18 (graph.json ipma-red-wind). The warnings JSON is live (it shows the current state, not history)."
+  },
+  {
+   "row": "s-1110T1700",
+   "addresses": [
+    "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/guidance/2026-11-10-the-storm-as-our-case-study.md"
+   ],
+   "read": "2026-11-11T02:15Z",
+   "kind": "internal record (public repository)",
+   "note": ""
+  },
+  {
+   "row": "s-1110T1742",
+   "addresses": [
+    "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+    "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json"
+   ],
+   "read": "2026-11-11T01:05Z",
+   "kind": "primary",
+   "note": "IPMA sent it at 16:30:01 (CAP PO-10-6273); moved to 09:00-18:00 at 21:23:00 (PO-10-6290)."
+  },
+  {
+   "row": "s-1110T1743",
+   "addresses": [
+    "https://websummit.com/",
+    "https://websummit.com/news/"
+   ],
+   "read": "2026-11-10T18:58Z",
+   "kind": "primary (a negative finding)",
+   "note": "Read by weather@ 17:43 and by us 18:58. The organisers' decision appeared at https://websummit.com/blog/web-summit/important-event-update-2026/ at 19:09; it was not on these two pages."
+  },
+  {
+   "row": "s-1110T1806",
+   "addresses": [],
+   "read": null,
+   "kind": "withheld",
+   "note": "No address given by policy: a private person's post (no private people here)."
+  },
+  {
+   "row": "s-1110T1835",
+   "addresses": [
+    "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/README.md"
+   ],
+   "read": "2026-11-11T02:15Z",
+   "kind": "internal record (public repository)",
+   "note": ""
+  },
+  {
+   "row": "s-1110T1836",
+   "addresses": [
+    "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md"
+   ],
+   "read": "2026-11-11T02:15Z",
+   "kind": "internal record (public repository); its primary is https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "note": ""
+  },
+  {
+   "row": "s-1110T1853",
+   "addresses": [],
+   "read": null,
+   "kind": "no public address found",
+   "note": "The Portugal News article \"updated 14:29\" is cited by social.watch@ without an address. Looked in: social.watch@'s signals file (PrompTugal__News__Website board/team/social.watch/signals/2026-11-11-the-storm.md), this repository. The organisers' \"assessing with ANEPC and PSP\" line has a timed press address: https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/ (entry 11:47:37, the organisers' answer to Observador)."
+  },
+  {
+   "row": "s-1110T1858",
+   "addresses": [
+    "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/BRIEF.md"
+   ],
+   "read": "2026-11-11T02:15Z",
+   "kind": "internal record (public repository)",
+   "note": ""
+  },
+  {
+   "row": "s-1110T1901",
+   "addresses": [
+    "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/145a2b86/team/incidents/2026-11-10-the-storm/data/decisions/graph.json",
+    "https://websummit.com/",
+    "https://websummit.com/news/",
+    "https://websummit.com/sitemap.xml"
+   ],
+   "read": "2026-11-10T19:01Z",
+   "kind": "internal record + primary channels read (negative finding)",
+   "note": "We missed https://websummit.com/blog/web-summit/important-event-update-2026/ (blog posts are not in the sitemap)."
+  },
+  {
+   "row": "s-1110T1905",
+   "addresses": [
+    "https://websummit.com/",
+    "https://websummit.com/news/",
+    "https://websummit.com/sitemap.xml",
+    "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=websummit.bsky.social&limit=10"
+   ],
+   "read": "2026-11-10T19:05Z",
+   "kind": "primary channels read (negative finding)",
+   "note": "19:05 is before the organisers' page (19:09): this negative finding was true when written."
+  },
+  {
+   "row": "s-1110T1905b",
+   "addresses": [
+    "https://storm-charles.promptugal.news/incidents/2026-11-10-storm-charles/data/weather/analysis.md"
+   ],
+   "read": "2026-11-11T02:15Z",
+   "kind": "internal analysis",
+   "note": ""
+  },
+  {
+   "row": "s-1110T1938",
+   "addresses": [
+    "https://websummit.com/blog/web-summit/important-event-update-2026/",
+    "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
+   ],
+   "read": "2026-11-10T20:59Z",
+   "kind": "primary (fact) + press",
+   "note": "The organisers' own page, published 19:09:00, modified 19:25:44 (JSON-LD), carries the \"formally advised\" text: \"The Government of Portugal has formally advised Web Summit that [...] Day 2 of Web Summit should not take place.\" The email (19:38) has no public address; the press followed at 19:42. The row should be a fact at 19:09 (graph.json websummit-wednesday)."
+  },
+  {
+   "row": "s-1110T1952",
+   "addresses": [
+    "https://websummit.com/",
+    "https://websummit.com/news/",
+    "https://websummit.com/blog/web-summit/important-event-update-2026/"
+   ],
+   "read": "2026-11-10T19:52Z",
+   "kind": "primary",
+   "note": ""
+  },
+  {
+   "row": "s-1110T2115",
+   "addresses": [
+    "https://storm-charles.promptugal.news/"
+   ],
+   "read": "2026-11-11T02:15Z",
+   "kind": "the site itself",
+   "note": ""
+  },
+  {
+   "row": "s-1110T2118",
+   "addresses": [
+    "https://storm-charles.promptugal.news/incidents/2026-11-10-storm-charles/data/weather/analysis.md"
+   ],
+   "read": "2026-11-11T02:15Z",
+   "kind": "internal analysis",
+   "note": ""
+  },
+  {
+   "row": "s-1110T2132",
+   "addresses": [
+    "https://websummit.com/blog/",
+    "https://websummit.com/blog/web-summit/important-event-update-2026/",
+    "https://storm-charles.promptugal.news/incidents/2026-11-10-storm-charles/data/watch/websummit.json"
+   ],
+   "read": "2026-11-11T01:36Z",
+   "kind": "primary",
+   "note": "Listing Post.modified 20:06:54; the page's JSON-LD dateModified 19:25:44; text sha256 e055635213ca unchanged at 01:36Z."
+  },
+  {
+   "row": "s-1110T2153",
+   "addresses": [
+    "https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/team/social.watch/signals/2026-11-11-the-storm.md",
+    "https://websummit.com/blog/",
+    "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=websummit.bsky.social&limit=10"
+   ],
+   "read": "2026-11-10T22:05Z",
+   "kind": "internal record + primary channels read (negative finding)",
+   "note": ""
+  },
+  {
+   "row": "s-1110T2323",
+   "addresses": [
+    "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json"
+   ],
+   "read": null,
+   "kind": "primary (as read by incident.meteorologist@)",
+   "note": "The endpoint named in data/weather/airport.json; not read by us."
+  },
+  {
+   "row": "s-1110T2324",
+   "addresses": [
+    "https://storm-charles.promptugal.news/incidents/2026-11-10-storm-charles/data/weather/analysis.md"
+   ],
+   "read": "2026-11-11T02:15Z",
+   "kind": "internal analysis",
+   "note": ""
+  },
+  {
+   "row": "s-1110T2350",
+   "addresses": [
+    "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/e7b7deb5/people/jose/watcher/signals/2026-11-10-storm-track.md"
+   ],
+   "read": null,
+   "kind": "internal record (public repository)",
+   "note": "The Facebook page it points at is not opened by us and is not public without a login."
+  },
+  {
+   "row": "s-1110T2354",
+   "addresses": [
+    "https://storm-charles.promptugal.news/incidents/2026-11-10-storm-charles/data/weather/analysis.md"
+   ],
+   "read": "2026-11-11T02:15Z",
+   "kind": "internal analysis",
+   "note": ""
+  },
+  {
+   "row": "s-1110T2358",
+   "addresses": [
+    "https://storm-charles.promptugal.news/research/media/coverage.json"
+   ],
+   "read": "2026-11-11T02:15Z",
+   "kind": "internal analysis",
+   "note": ""
+  },
+  {
+   "row": "s-1111T0000",
+   "addresses": [
+    "https://storm-charles.promptugal.news/incidents/2026-11-10-storm-charles/data/weather/analysis.md"
+   ],
+   "read": "2026-11-11T02:15Z",
+   "kind": "internal analysis",
+   "note": ""
+  },
+  {
+   "row": "s-1111T0015",
+   "addresses": [
+    "https://storm-charles.promptugal.news/research/media/first-on-each-fact.json"
+   ],
+   "read": "2026-11-11T02:15Z",
+   "kind": "internal analysis",
+   "note": ""
+  }
+ ]
+}
