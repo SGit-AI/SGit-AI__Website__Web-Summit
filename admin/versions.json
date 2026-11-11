@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1826",
+    "date": "2026-11-11",
+    "what": "the 07:16:30 downgrade reached MeteoAlarm's feed 16-21 min after IPMA sent it; the poll ran throughout (status)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "2fc21883b"
+  },
+  {
     "version": "v0.2.1825",
     "date": "2026-11-11",
     "what": "IPMA lowers Lisbon's wind warning RED -> ORANGE (09:00-21:00, gusts to 120 km/h; CAP sent 07:16:30); red rain 09:00-18:00 stands; open data still red at 07:38",
