@@ -464,3 +464,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (read 18:22:58–18:23:17 UTC): LPPT 17:30 30012KT Q0991; 18:00 30013G27KT (gusts 50 km/h), visibility 10 km or more, Q0992, rising. IPMA stations, hour labelled 17:00: no rain; wind NW or W, means 15–25 km/h. No new CAP since 15:55:03 (poll every 5 min to 18:19:21); no new communiqué. Lisbon's yellow rain warning ran to 18:00; orange sea to 21:00 and yellow sea 21:00–Thursday 03:00 remain.
 
 **Analysis (high):** the 18:00 gust of 50 km/h is the TAF's forecast for 18:00–21:00 (TEMPO 27 kt), under no warning. Nothing in the data points to a second peak for Lisbon tonight. Thursday as in section 25: showers, SW gusts about 50 km/h from 10:00.
+
+## 27. 19:25 UTC 11 Nov: quiet
+
+**Facts** (read 19:23:26–19:23:58 UTC): LPPT 18:30 29013KT Q0993; 19:00 29011KT, no gust, Q0994. The highest station mean in the hour labelled 18:00 was 29.9 km/h, at Relógio. Lisbon's yellow rain warning has expired; orange sea to 21:00 and yellow sea 21:00–Thursday 03:00 remain. No new CAP since 15:55:03, no new communiqué, LPPT TAF 17:00 unchanged.
+
+**Analysis (high):** nothing changes from section 26.
