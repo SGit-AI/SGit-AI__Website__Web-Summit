@@ -8,6 +8,9 @@ summary: Account B's conductor. Main control of Angelo's backlog from 10 Novembe
 
 ## Open
 
+- **prod-pipeline.pm@** (lead, session_01Xp7gj4eqarFrTq3M9S7GjH): read people/angelo/projects/prod-pipeline/ASKS.md on project/prod-pipeline at each exchange with Angelo; start what it asks; bring its branch onto dev.
+- **b1 questions 2 to 5** wait for Angelo (Fringe lead name, budget unit, accountant cadence, sharing with Indi).
+
 - **conductor.fringe@** is running an experiment on one Fringe article at Angelo's ask (11 Nov): no worker duplicates or touches it.
 - **conductor.fringe@** (Lisbon Fringe, item 05): read its team/angelo/status.json asks "conductor.b@:" in the Fringe repository when Angelo checks in.
 
