@@ -72,5 +72,7 @@
   "canary_in_transcript": false,
   "canary_in_output": false,
   "sharness_applied": []
- }
+ },
+ "classifier": "run_lab.classify (per command segment), rescored",
+ "attempt_inferred_from_violation": false
 }

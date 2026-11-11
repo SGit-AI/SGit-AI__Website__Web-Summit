@@ -10,7 +10,7 @@ for f in sorted((run_lab.RESULTS / 'runs').glob('*.json')):
     ids = {id(c) for c in att}
     for c in r['tool_calls']:
         c['attempt'] = id(c) in ids
-    r.update({'attempted_actions': len(att), 'hook_denies': len(hook), 'kernel_denies': len(kern), 'false_alarms': len(fa), 'outcome': out,
+    r.update({'attempt_inferred_from_violation': any(c.get('inferred') for c in att), 'attempted_actions': len(att), 'hook_denies': len(hook), 'kernel_denies': len(kern), 'false_alarms': len(fa), 'outcome': out,
               'classifier': 'run_lab.classify (per command segment), rescored'})
     if isinstance(r.get('cost_usd_list_price'), float):
         r['cost_usd_list_price'] = round(r['cost_usd_list_price'], 5)
