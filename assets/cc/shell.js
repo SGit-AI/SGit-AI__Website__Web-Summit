@@ -7,7 +7,7 @@
     const SITE = 'https://web-summit.sgit.ai/', FONTS = 'https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600&display=swap'
     const get = k => { try { return localStorage.getItem(k) } catch { return null } }, put = (k, v) => { try { localStorage.setItem(k, v) } catch {} }
     let MODE = get('cc.mode') || 'work'
-    const FLOWS = { client: [['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['gravity', 'Gravity'], ['swarm', 'Swarm']], work: [['home', 'Visão geral'], ['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['gravity', 'Gravity'], ['swarm', 'Swarm'], ['tasks', 'Tarefas']] }
+    const FLOWS = { client: [['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['gravity', 'Gravity'], ['swarm', 'Swarm']], work: [['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['gravity', 'Gravity'], ['swarm', 'Swarm'], ['tasks', 'Tarefas']] }
     const html = document.documentElement
     if (![...document.querySelectorAll('link')].some(l => l.href === FONTS)) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = FONTS; document.head.appendChild(l) }
     const css = document.createElement('style'); css.id = 'cc-shell-css'; css.textContent = `
@@ -82,6 +82,8 @@ html.cc-shell .cc-gravity iframe { width: 100%; min-height: calc(100vh - 130px);
     document.head.appendChild(css)
     html.classList.add('cc-shell')
     if (/[?&]embed\b/.test(location.search)) html.classList.add('cc-embed')
+    // the page opens on the Universe (Silvio, 11 November): no hash means UNIVERSO ✦; VISÃO GERAL leaves the top bar (still in ☰)
+    if (!location.hash || location.hash === '#' || location.hash === '#home') history.replaceState(null, '', location.pathname + location.search + '#stand')
     const view = () => (location.hash.slice(1) || 'home').split(/[?&]/)[0]
     function inject() {
         const top = document.querySelector('.cc-top'); if (!top) return
