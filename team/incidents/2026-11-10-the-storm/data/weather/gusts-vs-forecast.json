@@ -1,6 +1,6 @@
 {
  "about": "The latest observed wind in Lisbon against what was forecast for that hour. Facts with sources; no analysis here (see analysis.md).",
- "read_utc": "2026-11-11T02:34:56Z",
+ "read_utc": "2026-11-11T02:38:08Z",
  "observed_airport_latest": {
   "time_utc": "2026-11-11T02:30Z",
   "raw": "METAR LPPT 110230Z 19008KT 9999 SCT004 FEW018TCU 17/17 Q1006 NOSIG",
@@ -24,43 +24,43 @@
  "observed_stations_latest_mean": [
   {
    "kmh": 11.9,
-   "station": "Lisboa, Carnide (CML)",
-   "time_utc": "2026-11-11T01:00Z",
-   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z"
-  },
-  {
-   "kmh": 10.4,
-   "station": "Oeiras / Vila Fria (CMO)",
-   "time_utc": "2026-11-11T01:00Z",
-   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z"
-  },
-  {
-   "kmh": 10.4,
    "station": "Barreiro, Lavradio",
-   "time_utc": "2026-11-11T01:00Z",
+   "time_utc": "2026-11-11T02:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z"
+   "read_utc": "2026-11-11T02:38:08Z"
   },
   {
-   "kmh": 9.4,
+   "kmh": 8.6,
    "station": "Lisboa, Relógio",
-   "time_utc": "2026-11-11T01:00Z",
+   "time_utc": "2026-11-11T02:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z"
+   "read_utc": "2026-11-11T02:38:08Z"
   },
   {
-   "kmh": 9.4,
+   "kmh": 6.5,
    "station": "Lisboa (Geofísico)",
-   "time_utc": "2026-11-11T01:00Z",
+   "time_utc": "2026-11-11T02:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z"
+   "read_utc": "2026-11-11T02:38:08Z"
+  },
+  {
+   "kmh": 5.8,
+   "station": "Oeiras / Vila Fria (CMO)",
+   "time_utc": "2026-11-11T02:00Z",
+   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
+   "read_utc": "2026-11-11T02:38:08Z"
+  },
+  {
+   "kmh": 5.8,
+   "station": "Lisboa, Carnide (CML)",
+   "time_utc": "2026-11-11T02:00Z",
+   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
+   "read_utc": "2026-11-11T02:38:08Z"
   }
  ],
  "forecast_taf_groups_for_that_hour": {
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-11T02:34:56Z",
+  "read_utc": "2026-11-11T02:38:08Z",
   "groups": [
    {
     "change": "BASE",
@@ -86,7 +86,7 @@
   "end_utc": "2026-11-11T21:00:00Z",
   "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-11T02:34:56Z",
+  "read_utc": "2026-11-11T02:38:08Z",
   "sent_utc": "2026-11-10T07:18:40Z",
   "text_en": "Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.",
   "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 140 km/h.', does not carry the same figures)"
@@ -103,7 +103,7 @@
   "weather_type_pt": "Céu muito nublado ou encoberto",
   "weather_type_en": "Cloudy ",
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-11T02:34:56Z"
+  "read_utc": "2026-11-11T02:38:08Z"
  },
  "next_read_utc": "2026-11-11T03:22Z"
 }

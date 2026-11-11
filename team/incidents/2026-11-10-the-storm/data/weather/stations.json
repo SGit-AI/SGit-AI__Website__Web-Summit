@@ -2,8 +2,8 @@
  "about": "IPMA's hourly station observations in and next to Lisbon, kept across reads (the feed holds 24 hours). Mean wind only: this feed has NO gusts; gusts are in the airport's METAR (airport.json).",
  "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
  "stations_source": "https://api.ipma.pt/open-data/observation/meteorology/stations/stations.json",
- "read_utc": "2026-11-11T02:34:56Z",
- "latest_hour_utc": "2026-11-11T01:00Z",
+ "read_utc": "2026-11-11T02:38:08Z",
+ "latest_hour_utc": "2026-11-11T02:00Z",
  "stations": [
   {
    "id": "1200535",
@@ -13,14 +13,14 @@
     -9.14972222
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z",
+   "read_utc": "2026-11-11T02:38:08Z",
    "latest": {
-    "time_utc": "2026-11-11T01:00Z",
-    "wind_mean_kmh": 9.4,
-    "wind_dir": "W",
-    "rain_mm": 0.0,
-    "temp_c": 17.2,
-    "pressure_hpa": 1007.3,
+    "time_utc": "2026-11-11T02:00Z",
+    "wind_mean_kmh": 6.5,
+    "wind_dir": "S",
+    "rain_mm": null,
+    "temp_c": 16.6,
+    "pressure_hpa": 1006.5,
     "humidity_pct": 100.0
    },
    "max_wind_mean": {
@@ -294,7 +294,7 @@
      "time_utc": "2026-11-11T00:00Z",
      "wind_mean_kmh": 17.3,
      "wind_dir": "SW",
-     "rain_mm": 0.0,
+     "rain_mm": null,
      "temp_c": 18.5,
      "pressure_hpa": 1007.6,
      "humidity_pct": 100.0
@@ -303,9 +303,18 @@
      "time_utc": "2026-11-11T01:00Z",
      "wind_mean_kmh": 9.4,
      "wind_dir": "W",
-     "rain_mm": 0.0,
+     "rain_mm": null,
      "temp_c": 17.2,
      "pressure_hpa": 1007.3,
+     "humidity_pct": 100.0
+    },
+    {
+     "time_utc": "2026-11-11T02:00Z",
+     "wind_mean_kmh": 6.5,
+     "wind_dir": "S",
+     "rain_mm": null,
+     "temp_c": 16.6,
+     "pressure_hpa": 1006.5,
      "humidity_pct": 100.0
     }
    ]
@@ -318,13 +327,13 @@
     -9.1254
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z",
+   "read_utc": "2026-11-11T02:38:08Z",
    "latest": {
-    "time_utc": "2026-11-11T01:00Z",
-    "wind_mean_kmh": 9.4,
-    "wind_dir": "SW",
-    "rain_mm": 11.8,
-    "temp_c": 15.9,
+    "time_utc": "2026-11-11T02:00Z",
+    "wind_mean_kmh": 8.6,
+    "wind_dir": "S",
+    "rain_mm": 0.2,
+    "temp_c": 16.1,
     "pressure_hpa": null,
     "humidity_pct": 99.0
    },
@@ -332,7 +341,7 @@
     "kmh": 42.8,
     "time_utc": "2026-11-10T04:00Z"
    },
-   "rain_sum_mm_hours_kept": 73.6,
+   "rain_sum_mm_hours_kept": 73.8,
    "hourly": [
     {
      "time_utc": "2026-11-09T19:00Z",
@@ -594,6 +603,15 @@
      "temp_c": 15.9,
      "pressure_hpa": null,
      "humidity_pct": 99.0
+    },
+    {
+     "time_utc": "2026-11-11T02:00Z",
+     "wind_mean_kmh": 8.6,
+     "wind_dir": "S",
+     "rain_mm": 0.2,
+     "temp_c": 16.1,
+     "pressure_hpa": null,
+     "humidity_pct": 99.0
     }
    ]
   },
@@ -605,13 +623,13 @@
     -9.182825
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z",
+   "read_utc": "2026-11-11T02:38:08Z",
    "latest": {
-    "time_utc": "2026-11-11T01:00Z",
-    "wind_mean_kmh": 4.7,
-    "wind_dir": "W",
-    "rain_mm": 8.6,
-    "temp_c": 16.7,
+    "time_utc": "2026-11-11T02:00Z",
+    "wind_mean_kmh": 2.5,
+    "wind_dir": "SE",
+    "rain_mm": 0.3,
+    "temp_c": 16.5,
     "pressure_hpa": null,
     "humidity_pct": 100.0
    },
@@ -619,7 +637,7 @@
     "kmh": 23.8,
     "time_utc": "2026-11-10T13:00Z"
    },
-   "rain_sum_mm_hours_kept": 100.1,
+   "rain_sum_mm_hours_kept": 100.4,
    "hourly": [
     {
      "time_utc": "2026-11-09T19:00Z",
@@ -899,6 +917,15 @@
      "temp_c": 16.7,
      "pressure_hpa": null,
      "humidity_pct": 100.0
+    },
+    {
+     "time_utc": "2026-11-11T02:00Z",
+     "wind_mean_kmh": 2.5,
+     "wind_dir": "SE",
+     "rain_mm": 0.3,
+     "temp_c": 16.5,
+     "pressure_hpa": null,
+     "humidity_pct": 100.0
     }
    ]
   },
@@ -910,13 +937,13 @@
     -9.1649
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z",
+   "read_utc": "2026-11-11T02:38:08Z",
    "latest": {
-    "time_utc": "2026-11-11T01:00Z",
+    "time_utc": "2026-11-11T02:00Z",
     "wind_mean_kmh": 4.7,
-    "wind_dir": "W",
-    "rain_mm": 6.4,
-    "temp_c": 16.5,
+    "wind_dir": "S",
+    "rain_mm": 0.2,
+    "temp_c": 16.1,
     "pressure_hpa": null,
     "humidity_pct": 100.0
    },
@@ -924,7 +951,7 @@
     "kmh": 25.2,
     "time_utc": "2026-11-10T04:00Z"
    },
-   "rain_sum_mm_hours_kept": 73.3,
+   "rain_sum_mm_hours_kept": 73.5,
    "hourly": [
     {
      "time_utc": "2026-11-09T19:00Z",
@@ -1204,6 +1231,15 @@
      "temp_c": 16.5,
      "pressure_hpa": null,
      "humidity_pct": 100.0
+    },
+    {
+     "time_utc": "2026-11-11T02:00Z",
+     "wind_mean_kmh": 4.7,
+     "wind_dir": "S",
+     "rain_mm": 0.2,
+     "temp_c": 16.1,
+     "pressure_hpa": null,
+     "humidity_pct": 100.0
     }
    ]
   },
@@ -1215,15 +1251,15 @@
     -9.1855
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z",
+   "read_utc": "2026-11-11T02:38:08Z",
    "latest": {
-    "time_utc": "2026-11-11T01:00Z",
-    "wind_mean_kmh": 11.9,
+    "time_utc": "2026-11-11T02:00Z",
+    "wind_mean_kmh": 5.8,
     "wind_dir": "SW",
-    "rain_mm": 1.5,
-    "temp_c": 16.3,
-    "pressure_hpa": 1006.8,
-    "humidity_pct": 97.0
+    "rain_mm": 0.0,
+    "temp_c": 16.6,
+    "pressure_hpa": 1005.9,
+    "humidity_pct": 98.0
    },
    "max_wind_mean": {
     "kmh": 29.9,
@@ -1509,6 +1545,15 @@
      "temp_c": 16.3,
      "pressure_hpa": 1006.8,
      "humidity_pct": 97.0
+    },
+    {
+     "time_utc": "2026-11-11T02:00Z",
+     "wind_mean_kmh": 5.8,
+     "wind_dir": "SW",
+     "rain_mm": 0.0,
+     "temp_c": 16.6,
+     "pressure_hpa": 1005.9,
+     "humidity_pct": 98.0
     }
    ]
   },
@@ -1520,14 +1565,14 @@
     -9.2939255
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z",
+   "read_utc": "2026-11-11T02:38:08Z",
    "latest": {
-    "time_utc": "2026-11-11T01:00Z",
-    "wind_mean_kmh": 10.4,
-    "wind_dir": "W",
-    "rain_mm": 0.4,
-    "temp_c": 16.2,
-    "pressure_hpa": 1006.8,
+    "time_utc": "2026-11-11T02:00Z",
+    "wind_mean_kmh": 5.8,
+    "wind_dir": "S",
+    "rain_mm": 0.0,
+    "temp_c": 16.6,
+    "pressure_hpa": 1006.0,
     "humidity_pct": 100.0
    },
    "max_wind_mean": {
@@ -1814,6 +1859,15 @@
      "temp_c": 16.2,
      "pressure_hpa": 1006.8,
      "humidity_pct": 100.0
+    },
+    {
+     "time_utc": "2026-11-11T02:00Z",
+     "wind_mean_kmh": 5.8,
+     "wind_dir": "S",
+     "rain_mm": 0.0,
+     "temp_c": 16.6,
+     "pressure_hpa": 1006.0,
+     "humidity_pct": 100.0
     }
    ]
   },
@@ -1825,7 +1879,7 @@
     -9.212804
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z",
+   "read_utc": "2026-11-11T02:38:08Z",
    "latest": {
     "time_utc": "2026-11-10T22:00Z",
     "wind_mean_kmh": null,
@@ -2022,21 +2076,21 @@
     -9.04766111
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T02:34:56Z",
+   "read_utc": "2026-11-11T02:38:08Z",
    "latest": {
-    "time_utc": "2026-11-11T01:00Z",
-    "wind_mean_kmh": 10.4,
-    "wind_dir": "W",
-    "rain_mm": 0.0,
-    "temp_c": 19.7,
+    "time_utc": "2026-11-11T02:00Z",
+    "wind_mean_kmh": 11.9,
+    "wind_dir": "S",
+    "rain_mm": 2.8,
+    "temp_c": 18.8,
     "pressure_hpa": null,
-    "humidity_pct": 92.0
+    "humidity_pct": 94.0
    },
    "max_wind_mean": {
     "kmh": 24.8,
     "time_utc": "2026-11-09T23:00Z"
    },
-   "rain_sum_mm_hours_kept": 52.2,
+   "rain_sum_mm_hours_kept": 55.0,
    "hourly": [
     {
      "time_utc": "2026-11-09T19:00Z",
@@ -2316,6 +2370,15 @@
      "temp_c": 19.7,
      "pressure_hpa": null,
      "humidity_pct": 92.0
+    },
+    {
+     "time_utc": "2026-11-11T02:00Z",
+     "wind_mean_kmh": 11.9,
+     "wind_dir": "S",
+     "rain_mm": 2.8,
+     "temp_c": 18.8,
+     "pressure_hpa": null,
+     "humidity_pct": 94.0
     }
    ]
   }

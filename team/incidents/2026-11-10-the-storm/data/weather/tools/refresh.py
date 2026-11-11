@@ -292,9 +292,13 @@ def stations():
 
 
 # ---------------------------------------------------------------- airport
-def airport():
-    prev = load('airport.json', {})
-    traw, mraw = get('taf'), get('metar')
+def airport(icao='LPPT', fname='airport.json'):
+    prev = load(fname, {})
+    if icao != 'LPPT':
+        U['taf_' + icao] = f'https://aviationweather.gov/api/data/taf?ids={icao}&format=json'
+        U['metar_' + icao] = f'https://aviationweather.gov/api/data/metar?ids={icao}&hours=30&format=json'
+    tk, mk = ('taf', 'metar') if icao == 'LPPT' else ('taf_' + icao, 'metar_' + icao)
+    traw, mraw = get(tk), get(mk)
     tafs = {t['issue_utc']: t for t in prev.get('taf_history', [])}
     taf = prev.get('taf')
     if traw:
@@ -306,9 +310,9 @@ def airport():
                        'gust_kmh': kmh(g.get('wgst')), 'visibility': g.get('visib'), 'weather': g.get('wxString')}
                       for g in t.get('fcsts', [])]
             taf = {'issue_utc': t['issueTime'][:16] + 'Z', 'raw': t['rawTAF'], 'valid_from_utc': utc(t.get('validTimeFrom')),
-                   'valid_to_utc': utc(t.get('validTimeTo')), 'groups': groups, 'source': U['taf'], 'read_utc': NOW}
+                   'valid_to_utc': utc(t.get('validTimeTo')), 'groups': groups, 'source': U[tk], 'read_utc': NOW}
             if taf['issue_utc'] not in tafs:
-                changes.append(f"new LPPT TAF {taf['issue_utc'][8:16]}: " + taf['raw'][:40] + '...')
+                changes.append(f"new {icao} TAF {taf['issue_utc'][8:16]}: " + taf['raw'][:40] + '...')
                 tafs[taf['issue_utc']] = {k: taf[k] for k in ('issue_utc', 'raw', 'source', 'read_utc')}
     mets = {m['time_utc']: m for m in prev.get('metars', [])}
     if mraw:
@@ -318,19 +322,20 @@ def airport():
                 mets[tm] = {'time_utc': tm, 'raw': m['rawOb'], 'wind_dir': m.get('wdir'), 'wind_kt': m.get('wspd'),
                             'gust_kt': m.get('wgst'), 'wind_kmh': kmh(m.get('wspd')), 'gust_kmh': kmh(m.get('wgst')),
                             'visibility': m.get('visib'), 'weather': m.get('wxString'), 'pressure_hpa': m.get('altim'),
-                            'source': U['metar'], 'read_utc': NOW}
+                            'source': U[mk], 'read_utc': NOW}
     metars = [mets[k] for k in sorted(mets)]
     gusts = [m for m in metars if m['gust_kt']]
     mx = max(gusts, key=lambda m: m['gust_kt'], default=None)
     if metars and metars[-1]['time_utc'] != (prev.get('metars') or [{}])[-1].get('time_utc'):
         last = metars[-1]
-        changes.append(f"LPPT METAR {last['time_utc'][11:16]}: {last['wind_kmh']} km/h" + (f" gust {last['gust_kmh']}" if last['gust_kt'] else ''))
+        changes.append(f"{icao} METAR {last['time_utc'][11:16]}: {last['wind_kmh']} km/h" + (f" gust {last['gust_kmh']}" if last['gust_kt'] else ''))
     # earlier issues seen by the newsroom before this desk began
-    if 'TAF_AMD_101523Z' not in json.dumps(list(tafs.values())):
+    if icao == 'LPPT' and 'TAF_AMD_101523Z' not in json.dumps(list(tafs.values())):
         tafs['2026-11-10T15:23Z'] = {'issue_utc': '2026-11-10T15:23Z', 'id': 'TAF_AMD_101523Z',
                                      'summary_en': 'Wind S becoming 25 kt G38 (about 70 km/h) Wed 07-09 UTC; TEMPO 35 kt G48 (89 km/h) 09-18 UTC; PROB40 TEMPO 42 kt G58 (107 km/h) +TSRA 10-18 UTC.',
                                      'source': 'https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/weather-vicky/live.md', 'read_utc': '2026-11-10T16:54Z'}
-    return {'about': "IPMA's aeronautical forecast (TAF) and observations (METAR) for Lisbon airport (LPPT), read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport, 8 km north of the centre; not a public warning.",
+    place = 'Lisbon airport (LPPT), 8 km north of the centre' if icao == 'LPPT' else 'Madeira airport (LPMA, Santa Cruz, on the south-east coast)'
+    return {'about': f"IPMA's aeronautical forecast (TAF) and observations (METAR) for {place}, read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport; not a public warning.", 'icao': icao,
             'read_utc': NOW, 'taf': taf, 'taf_history': [tafs[k] for k in sorted(tafs)],
             'metars': metars, 'max_gust': mx and {'kt': mx['gust_kt'], 'kmh': mx['gust_kmh'], 'time_utc': mx['time_utc'], 'source': mx['source']}}
 
@@ -615,6 +620,9 @@ def main():
     k = cap()  # first: warnings() takes each warning's issue time (sent_utc) from it
     w, c, s, a, f = warnings(), communiques(), stations(), airport(), forecast()
     f['second_models'] = second_models(f.get('second_models'))
+    am = airport('LPMA', 'airport-madeira.json')
+    if am:
+        save('airport-madeira.json', am)
     mad = madeira()
     lis = madeira('lisbon-rain.json', lambda k, n: k in LISBON_STATIONS,
                   "IPMA's hourly station observations at Lisbon's stations (the same eight as stations.json), in madeira.json's shape: rain in mm per hour and mean wind, kept across reads, sorted by each station's largest rain over six consecutive hourly values. For the warned-against-observed card from Wed 09:00 (red rain 09:00-18:00). Facts.")

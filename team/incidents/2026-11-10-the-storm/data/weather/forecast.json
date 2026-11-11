@@ -2,8 +2,8 @@
  "about": "IPMA's own forecast for Lisbon (globalIdLocal 1110600): the 5-day daily forecast and the hourly model forecast (mean wind, no gusts). IPMA's wind classes: 1 weak, 2 moderate, 3 strong, 4 very strong.",
  "daily": {
   "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-  "read_utc": "2026-11-11T02:34:56Z",
-  "updated_local": "2026-11-11T01:31:02",
+  "read_utc": "2026-11-11T02:38:08Z",
+  "updated_local": "2026-11-11T02:31:02",
   "days": [
    {
     "precipitaProb": "100.0",
@@ -583,7 +583,7 @@
  ],
  "hourly": {
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-11T02:34:56Z",
+  "read_utc": "2026-11-11T02:38:08Z",
   "updated_local": "2026-11-10T19:56:03",
   "wed_peak": {
    "time_utc": "2026-11-11T20:00Z",
@@ -1285,7 +1285,7 @@
    "name": "MET Norway Locationforecast 2.0 (complete)",
    "licence": "NLOD 2.0 / CC BY 4.0, data from MET Norway",
    "source": "https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=38.72&lon=-9.14",
-   "read_utc": "2026-11-11T02:34:56Z",
+   "read_utc": "2026-11-11T02:38:08Z",
    "updated_utc": "2026-11-11T01:19:09Z",
    "units": "km/h (converted from m/s), mm, hPa",
    "rows": [
@@ -1575,7 +1575,7 @@
    "name": "Open-Meteo (best match)",
    "licence": "CC BY 4.0, Open-Meteo.com",
    "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
-   "read_utc": "2026-11-11T02:34:56Z",
+   "read_utc": "2026-11-11T02:38:08Z",
    "rows": [
     {
      "time_utc": "2026-11-11T00:00Z",
