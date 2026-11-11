@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1824",
+    "date": "2026-11-11",
+    "what": "07:35 wake: no change to Day 3; Funchal centre closed, 16 Madeira flights cancelled, counts (Madeira 162, mainland 66 at 03:30), Porto Santo power cuts (press)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "75315a2f2"
+  },
+  {
     "version": "v0.2.1823",
     "date": "2026-11-11",
     "what": "07:27 wake refresh; CAP poll restarted",
