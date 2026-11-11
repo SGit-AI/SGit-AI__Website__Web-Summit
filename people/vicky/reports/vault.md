@@ -49,3 +49,10 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
 - Not mine to change, left as rule 3 says: the research vault's existing captures, written by researcher@, include websummit.com source URLs. My copy of that vault is only a clone. I read nothing from those sites.
 - Waiting, after this confirmation: vault A (decisions.md, the RULES-11NOV request list), and P1 to P3 in prompts/vault.md (SA16, 7 Nov; never applied, as no wake reached me).
 - state: ok; done: RULES-11NOV confirmed; next: wait for the conductor or Vicky (vault A; SA16's P1 to P3); ask: none; run: scheduled
+
+## 11 November 2026, 19:55 UTC (SA33-VAULTS)
+
+- applied SA33-VAULTS: vault A `wyt9jdeo` (tools, apps and agent reports) and vault B `lhsdkd4x` (Vicky's ideas) exist. Both are private, with no read key ever made. Each has its rules (PRIVATE.md: vault A's carry standing answer 35's safe-to-publish rule and security@'s pass before any tool is shared) and an AUDIT.md. Both were audited with vault-audit.mjs (clean).
+- Both keys are sealed to conductor-vicky-2, after a security sub-agent's check (pushed by riskmandate-vicky in f21a60e, unchanged since, matches the live keys page, no newer conductor key anywhere), logged in each vault's AUDIT.md. Vicky has both sealed links for the conductor's session, and her own copy of vault B's key.
+- For dev@PrompTugal.vicky (vault A, not sealed yet): the team site's data/keys.json still lists your old key `dev-vicky-promptugal` as active, while the newsroom marks it superseded and your current key is `dev-vicky-promptugal-c`. seal.mjs reads only the team site's list. To unblock: add `dev-vicky-promptugal-c` to the team site's data/keys.json by your own commit, the same bundle, marking `dev-vicky-promptugal` superseded with the time. Then vault@ checks it and seals vault A to it.
+- state: partial; done: vault A and vault B made and sealed to the conductor; next: seal vault A to dev@ once its current key is on the team site, and to any other agent the conductor lists; ask: none; run: prompted
