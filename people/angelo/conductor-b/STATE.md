@@ -10,6 +10,9 @@ last digest: 2026-11-11T11:25Z (team updates: WS-215 Lisbon Fringe, the storm, w
 
 ## Open
 
+- **Digest rethought** (Angelo: "I think we need to rethink the role of the digest agent because his work will age quickly."): the hourly digest task is paused (it also never got a repository); a digest is now gathered on demand when Angelo asks, from the PMs' "For the digest:" lines and the sources in formats/conductor.md. The accountant task has the same repository problem: Angelo to attach the repository in its routine's settings, or pause it.
+- **handover-market.pm@** (project people/angelo/projects/handover-market/): started 16:5x.
+
 - **Usage:** account B hit its 5-hour limit about 13:35 UTC (reset 14:40). alpha's b3 run stopped before any commit; restarted on bravo at 14:41. The 13:58 digest fire made no commit; the accountant's baseline run (13:01) made none either (its session had no repository attached): check the scheduled sessions can clone and push.
 
 - **Scheduled:** digest.b@ hourly at :58 (trig_019P5mmH76wN24vNXQTvbU5C) and accountant.b@ every 4 hours at :58 (trig_01CvoEzp8UjqACZ2EXV3hnFW), both on the smaller model; their results on pool/ops-digest and pool/ops-accounts. Start each digest from digest.md.
