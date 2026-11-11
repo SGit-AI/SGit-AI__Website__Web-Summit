@@ -6,7 +6,7 @@ summary: Account B's conductor. Main control of Angelo's backlog from 10 Novembe
 
 **Role:** account B's conductor, a long session Angelo talks to; main control (the desk, desk.conductor@PrompTugal.angelo, is on standby). Runs the article pipeline (people/angelo/proposals/account-move/spec-pipeline-b.md) and routes the backlog (people/angelo/backlog.md). Key: conductor-b-angelo in data/keys.json (session key, sha256:e662d76812739fbd; signing sha256:813a640bff3c423d).
 
-last digest: 2026-11-11T11:25Z (team updates: WS-215 Lisbon Fringe, the storm, websummit.com hold); open point: b1 question 4 of 5 (accountant cadence), then 5.
+last digest: 2026-11-11T20:10Z; earlier 2026-11-11T11:25Z (team updates: WS-215 Lisbon Fringe, the storm, websummit.com hold); open point: b1 question 4 of 5 (accountant cadence), then 5.
 
 ## Before compaction (11 Nov, about 17:35 UTC): open with Angelo, in order
 1. **Offers 1 and 2: PARKED** (Angelo, 11 Nov: "Let's park the offers, as we're now working with conductor.fringe@ on an article on the website to clarify how to model agentic semantics and at the same time working on the offers market experiments with Dinis."). Was: offer 1 (people/angelo/pipeline/b3-team-offers/offer-1-our-approach.md, with crafts and skills): send, with the picture page https://web-summit.sgit.ai/people/angelo/pipeline/how-it-works/ as its first link? Recommended yes: one board item for everyone and a commit For: each person's conductor. Offer 2 waits until the capacity board and claim tool exist (handover-market.pm@'s project).
@@ -20,6 +20,9 @@ last digest: 2026-11-11T11:25Z (team updates: WS-215 Lisbon Fringe, the storm, w
 Route only; never build. Workers: session-less, 20 slots (10 large, 10 small), prompt = preamble + craft + skills + format + name (people/angelo/pipeline/ROLES.md); never a large step on a small slot; no ceiling while usage lasts. Projects: one PM each (<project>.pm@), who starts its own workers and is woken by them through its routine (2-hour backstop), deciding by default below tier 3. Every agentic activity in a commit (runs.md, ledgers, costs in dollars and tokens). Review each branch onto dev, archive finished sessions. Talk to Angelo in formats/conductor.md (snapshot, then one point at a time). When usage runs short: hand over (the handover market, project handover-market).
 
 ## Open
+
+- **riskmandate-android-demo.pm@** (session_01Xp7gj4A4EGPjvb7sQeBEBJ, wake trig_01GnGftTuQdk1LM63LnvaDtn, backstop :12 every 2 hours): Silvio's X-ray demo page (https://web-summit.sgit.ai/people/silvio/app/index.html#xray) as a full-screen menu entry in the RiskMandate Android app, started 21:12 at Angelo's word. Writing to PrompTugal/PrompTugal__App__Android waits for his word (tier 3); the spec is read-only meanwhile.
+- **Handover split** (Angelo, 21:3x: "Agree, go ahead"): conductor.fringe@ owns the live packet exchange with Dinis's agents (done 20:28 to 20:32, Fringe 155113b, 606564c); handover-market.pm@ drops its p1 reply and p2 and moves to the capacity board, offer/claim/lapse between accounts, Ollama, AWS (its BRIEF, "Scope changed").
 
 - **network-views.pm@** (session_01Xp7gj49w3HhKrhT64Gp1c1, wake trig_01D39RAzsMdheFWbiBWjttdi): new views of the agent network beside the old ones, started 19:44; Angelo: "Go ahead with the new pm." (relayed to it through its wake routine at 19:49). A first routine was created by mistake bound to conductor.b@'s own session and was deleted at once (trig_01HmFPSdVxxrswJsBuN4adPh).
 

@@ -473,3 +473,15 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (read 19:23:26–19:23:58 UTC): LPPT 18:30 29013KT Q0993; 19:00 29011KT, no gust, Q0994. The highest station mean in the hour labelled 18:00 was 29.9 km/h, at Relógio. Lisbon's yellow rain warning has expired; orange sea to 21:00 and yellow sea 21:00–Thursday 03:00 remain. No new CAP since 15:55:03, no new communiqué, LPPT TAF 17:00 unchanged.
 
 **Analysis (high):** nothing changes from section 26.
+
+## 28. 20:25 UTC 11 Nov: quiet
+
+**Facts** (read 20:22:47–20:23:08 UTC): LPPT 19:30 28011KT Q0995; 20:00 28009KT Q0996, no gust. Station means up to 29.2 km/h (Relógio, hour labelled 19:00). No new CAP batch of any kind since 19:17:31 (the poll now watches every district; reads every 5 min to 20:19:07). No new communiqué. LPPT TAF 17:00 unchanged. IPMA's open data shows Lisbon's orange sea as 19:09–21:00: only the start time has been restamped (it was 15:56), with no CAP message behind it, so it is not a new warning. Yellow sea 21:00–Thursday 03:00.
+
+**Analysis (high):** no change from section 26. The last of Lisbon's storm warnings, orange sea, ends at 21:00.
+
+## 29. 21:25 UTC 11 Nov: the last storm warning has ended
+
+**Facts** (read 21:22:49–21:23:03 UTC): Lisbon's orange sea warning ended at 21:00 by its own window. IPMA's open data still listed it at 21:22:49, restamped 19:18–21:00, with no CAP message behind it. The yellow sea warning runs 21:00–Thursday 03:00. LPPT 20:30 28010KT Q0996; 21:00 27011KT, no gust, Q0997. No new CAP batch of any kind since 19:17:31 (reads every 5 min to 21:19:25); no new communiqué; LPPT TAF 17:00 unchanged.
+
+**Analysis (high):** CHARLES is over for Lisbon, except for a yellow sea warning overnight. Thursday as in section 25.

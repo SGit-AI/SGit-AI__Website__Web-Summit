@@ -9,7 +9,7 @@ script: xray
 ```xray
 ```
 
-:::details For the technically minded
+:::details More detail
 
 - **The search.** An orchestrator sends the name to four search agents (Perplexity, OpenAI, Gemini and OpenRouter web search). A collector gathers what they find into a vault, and the graph grows as the evidence arrives.
 - **A model's claim is a lead, not a fact.** We read the sources. Only facts whose sources we read reach the page, each with its link and the date read. Every lead is listed as confirmed, not found or unverified.
@@ -19,7 +19,7 @@ script: xray
 
 A name we have not looked at yet is not searched from this page. A team member can ask for it (WS-194). Nothing you type is kept or sent unless you press that button.
 
-How each X-ray is made, step by step, with what every run cost: [How it works](how/index.html). Each company's page links to the story of its own run.
+How each X-ray is made, step by step, with what every run cost: [What we read and why](how/index.html). Each company's page links to the story of its own run.
 
 Booth mode, for the screen on the stand: [?booth=1](index.html?booth=1).
 

@@ -7,10 +7,21 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
-- **39** P6 pin only in each prompts file (Vicky accepts the push risk); tool fixes, then the dashboard test round trip, then her go.
+- **50** the main image directly under "The story", caption under it; published articles moved on Friday, dates kept.
+- **49** step 2 approved (About check, curator evidence; agenda not re-sourced), from Friday; lisbontechfringe.com (Indi's app) counts as another source for events, as a pointer.
+- **48** takedown step 2: data another source confirms stays, re-cited; Dinis's agents' data follows his conductor; Vicky's desks' checks proposed first.
+- **47** takedown step 1: the 13 A-group articles and S44, S47, S49 withdrawn (notice "Withdrawn on 11 November 2026."); S58 the front-page lead first; derived data waits for Dinis.
+- **46** lifted 11 Nov 22:10 UTC (deploys normal on both sites since 21:05); no longer in force.
+- **45** S44 dropped; checker findings kept open for a browser check; the Web Summit takedown is planned, nothing comes down until Vicky says yes.
+- **44** each agent's model (people/vicky/models.json).
+- **43** from Friday: researcher and curator twice a day, journalists and reviewer on demand through the conductor; dashboard and checker daily.
+- **42** no signing: P6 lifted for good (pointer messages to Vicky's own agents, reports back); signing shelved, tasks.mjs kept.
+- **41** P6 lifted (now without signing, standing answer 42).
+- **40** tonight's last-day guide: curator, summit journalist, reviewer (R-PUB-1).
+- **39** (shelved by 42) P6 pin and signed test.
 - **38** dev@'s current key on the team site; vault A sealed to it before SA33-TOOLS.
 - **37** the storm page, S41 and the curator handed over to the team reviewer@, dev@ and curator.
-- **36** P6 approved with security@'s changes, in steps; not in force until Vicky says go.
+- **36** (signing shelved by 42) P6 signed-messaging plan.
 - **35** Web Summit news to journalist-portugal after the summit; hand-over messages in For Vicky when due; tools in vault A safe to publish.
 - **34** Thursday's hourly summit lane; the internal journalist is the summit journalist after the summit; the two-way messaging draft.
 - **33** the schedule after the switch-back; vaults A and B; designer, reporter and internal journalist plans.
@@ -206,6 +217,59 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Steps:** dev@ makes fixes 1 to 3 (one-off wake 20:35, update SA39-FIX); the conductor then pins the fingerprint in every prompts file (step 2) and runs one signed test round trip with dashboard@, with the extra refusals security@ listed (an unsigned copy, a renamed copy, the task pointed at a second agent, a pointer with extra text), and tells Vicky the result before she says go. Not before Friday 13 Nov. **P6 as it stands stays in force until she says go.**
     - Security@'s finding 9 answered: the words quoted in standing answer 36 are Vicky's, given in the conductor's window.
 
+40. **Tonight: a practical guide to the last summit day** (Vicky, 11 Nov, about 20:12 UTC, in this window). Vicky gave four facts she read in her own browser on websummit.com at 20:15 UTC (RULES-11NOV rule 4); her source text is not committed. Her rules for the story: "Attribute them to Web Summit, do not quote the email or the site at length, and do not commit the email." "Link to Web Summit's schedule instead of copying it. Add IPMA's outlook, transport from the operators, the end of the alert, and side events from lisbontechfringe.com checked at organisers' pages." "Set one-off wakes at my word for the curator, then the summit journalist, then the reviewer, who publishes under R-PUB-1."
+    - One-off wakes: curator 20:20 (commissions it, category Web Summit 2026), summit journalist 20:40 (writes it), reviewer 21:25 (checks and publishes under R-PUB-1). Estimated about 11 to 14 dollars API-equivalent (not money).
+
+41. **P6 lifted now, unsigned until Friday's test** (Vicky, 11 Nov, about 20:20 UTC, in this window: "Lift P6 now, the way my personal account conductor worked today: you may message my own team-account agents directly so they start at once, and they report back to you when done. Messages only point to committed files that quote my words. Signing is added after Friday's test. Use it tonight for the guide: hand the curator, journalist and reviewer on as each finishes, instead of waiting for the set times.")
+    - **In force now:** the conductor may send a message into Vicky's own team-account agents' sessions; each message only points to a committed file on the team site that quotes her words (a task file in `people/vicky/tasks/`, or decisions.md). An agent acts on the file, never on the message's text, checks the file was committed by conductor@web-summit.vicky, and replies only to the session that messaged it, with one line pointing to its own commit or result. Never into Dinis's or anyone else's sessions, never into her personal account's; never `interrupt_session`; still never read another session's conversation (`list_events`, `get_event`).
+    - **Not yet:** signatures. Until Friday's signed test (standing answer 39) and Vicky's go, the check is the commit title and Agent line, which security@ showed can be forged by anyone who can push; Vicky accepts that for now.
+    - This replaces "never send a message into another session" in P6 (6 Nov) and in standing answers 36 and 39 ("P6 as it stands stays in force"). Every agent reads it at its next run.
+
+42. **No signing: P6 lifted as the personal account worked** (Vicky, 11 Nov, about 20:22 UTC, in this window: "Change of decision: no signing. Lift P6 now and work the way my personal account conductor did today. You may message my own team-account agents directly so they start at once, and they report back to you when done. Keep the basics: only my agents, messages point to committed files that quote my words, private work only through the agent's own window. Cancel dev@'s 20:35 fix wake and Friday's signed test. Keep tasks.mjs as it is in case I want signing later. Record this as my decision.")
+    - **In force:** standing answer 41's messaging, without signing, for good: the conductor messages Vicky's own team-account agents; each message only points to a committed file on the team site that quotes her words; agents act on the file, check it was committed by conductor@web-summit.vicky, and report back to the conductor when done. Only her agents; private work (the CRM, the shortlist, mail, vault contents, anything a public file may not hold) only through the agent's own window, never a task file. Still never read another session's conversation, never `interrupt_session`.
+    - **Cancelled:** dev@'s 20:35 fix wake (update SA39-FIX withdrawn) and Friday's signed test; both tasks disabled, not deleted. Standing answers 36 and 39's signing steps and the signed decisions.md are shelved. `people/vicky/tools/tasks.mjs` stays as it is, unused, in case Vicky wants signing later.
+
+43. **The pipeline runs on demand from Friday 13 November** (Vicky, 11 Nov, about 20:35 UTC, in this window: "Apply the new on-demand way from Friday, but with two fixed rounds a day for researcher and curator, not four. Pick the two times. Journalists and reviewer run only when there is work, and you run the whole loop at once when I send something urgent. Dashboard and checker daily. Keep Thursday's summit lane as it is. On Friday also plan a fresh session for yourself to make hand-offs cheaper.")
+    - **Fixed:** researcher 07:15 and 15:15 UTC; curator 07:35 and 15:35; dashboard 07:50; checker 10:00; the conductor's brief 08:45 and relay 20:45.
+    - **On demand:** the five journalists and the reviewer run only when the conductor points them to a task file in `people/vicky/tasks/` (how: `people/vicky/tasks/README.md`); each reports back to the conductor when done. pm and scout on demand through the conductor; logistics and programme paused.
+    - **Urgent:** when Vicky sends the conductor something urgent, it commits a task file with her words and runs curator, journalist and reviewer at once.
+    - **Switched off from Friday 06:30 UTC** (disabled, not deleted): the journalists' writing tasks, the fix-only tasks, the reviewer's two tasks, dashboard's 17:45 run, pm's and scout's tasks, logistics and programme, the conductor's midday check, and the two THU-SUMMIT tasks. Thursday's summit lane is unchanged.
+    - **A fresh conductor session:** planned on Friday (hand-over note, start kit for Vicky to start it; agent creation stays with her).
+
+44. **Each agent's model** (Vicky, 11 Nov, about 20:50 UTC, in this window: "I switched models in the windows, but not exactly as you recommended. Connections and checker stay on Opus, and dashboard stays on Sonnet. Please read each session's current model, record the final list as my decision, and check after each agent's next run that it used the new model. The summit journalist switches to Sonnet on Friday.")
+    - **Opus:** reviewer, security, conductor, vault, dev, journalist-connections, checker, the summit journalist until Friday, logistics and programme (both paused). **Sonnet:** researcher, curator, journalist-portugal, journalist-europe, journalist-ai, dashboard, pm, scout, designer, inbox, synthetic; the summit journalist from Friday 13 Nov.
+    - The list and what each session showed are in `people/vicky/models.json`. At 20:50 UTC journalist-connections and the checker showed Sonnet, not Opus: Vicky to check their windows. The conductor checks after each agent's next run which model served it (usage records only) and reports in the brief.
+
+45. **S44 dropped; the checker's old findings kept open; the Web Summit takedown planned; two models** (Vicky, 11 Nov, about 20:55 UTC, in this window).
+    - **S44** (her words: "Drop S44 (Wednesday is over)."): the reviewer sets S44 to dropped, at Vicky's word.
+    - **The checker** (her words: "The checker keeps its four old findings open and marks them for a browser check."): WK1, BR4, S3 and S11 stay open; when an article changes, the point is marked "not checkable by machine (RULES-11NOV)" for a person's browser check, never closed for that reason.
+    - **Web Summit data off the live sites** (her words: "Dinis says take all data scraped from Web Summit's site, and the articles built from it, off the live sites. Do not delete or change anything in GitHub or in any vault, they stay as they are. Only what is shown on promptugal.news and the team site comes down. List each article with its title and link, split into built from scraped data and only quoting Web Summit's statements with a link, and wait for my yes before taking any offline. For the derived data, the homepage and company pages, tell their owners that Dinis has approved this. Make sure no page breaks, and show me the plan before you start."): the conductor makes the list and the plan; **nothing comes down until Vicky says yes**.
+    - **Models** (her words: "Connections and checker: back on Opus"): recorded in `people/vicky/models.json`; Vicky switches them in their windows.
+
+46. **Lifted, 11 Nov about 22:10 UTC, no longer in force** (both sites deployed every release normally from 21:05 to 22:06: team site to v0.2.1957, promptugal.news to v0.1.1311; no agent reported held work). Kept for the record: **GitHub degraded: hold, do not loop** (Vicky, 11 Nov, about 21:04 UTC, in this window: "GitHub has been degraded since 20:48 UTC (Actions, Pages, webhooks). Do not let agents loop on failed pushes or releases. Hold anything that cannot push, retry once GitHub's status page shows it fixed, and tell me if S58 is waiting on it.")
+    - **Every agent:** if a push, a release or its live-site wait fails, try **once** more; if it fails again, stop, keep the work committed locally, write one report line `held: GitHub degraded (standing answer 46): <what>` and end the run. Never loop on a push, a release or a live-site wait. Run release.sh with SKIP_LIVE=1 while this holds.
+    - **Retry:** the conductor retries or hands on held work once GitHub works again (checked by the live sites catching up with the newest release), and removes this entry when GitHub is fixed.
+    - **Lifting it** (Vicky, 11 Nov, about 21:15 UTC: "you may lift the GitHub hold rule yourself once deploys have worked normally for an hour, then tell me in the brief."): the conductor lifts it after an hour of normal deploys on both sites and says so in the next brief.
+
+47. **Web Summit takedown, step 1: the A-group articles** (Vicky, 11 Nov, about 21:20 UTC, in this window: "Yes to the articles: the A group and S44, S47 and S49 come down, the unclear ones stay. Make S58 the front-page lead before S54 comes down. The notice must say only "Withdrawn on 11 November 2026." Web Summit did not ask us, so do not say "at the organiser's request". For the derived data, company pages and agenda, wait until Dinis confirms the scope in the group, then I tell you. Tell the owners once it is agreed.")
+    - **Comes down now** (the list in `people/vicky/plans/2026-11-11-web-summit-takedown.md`, group A): the 13 articles and the story pages S44, S47 and S49, each replaced at the same address by the notice "Withdrawn on 11 November 2026." (nothing else), noindex, and left out of the articles index, the front page, search, the sitemap and llms.txt; their raw .md twins left out of the deploy. No article, data file, desk file or vault is changed or deleted. The 8 unclear articles and the B group stay.
+    - **First:** S58 (thursday-last-day-guide) becomes the front-page lead, before S54 comes down.
+    - **Waits for Dinis's scope in the group, then Vicky's word:** the derived data, company pages and agenda.
+    - **Who:** dev@PrompTugal.vicky, on the newsroom, under standing answer 10, telling the owners in its commits For: dev@PrompTugal.dinis (the build), correspondent@PrompTugal.dinis (the front page) and journalist@PrompTugal.dinis (three of the articles are its). Standing answer 46 (GitHub hold) applies.
+
+48. **Takedown step 2: keep what another source confirms** (Vicky, 11 Nov, about 21:30 UTC, in this window: "Dinis confirmed, with a twist: remove only data we have not also found from other sources. Data confirmed by another source, such as a company's own site, press or an official body, stays, cited to that source instead of Web Summit. Dinis is sending his conductor the details. For data owned by his agents, follow his conductor and do not change their files. For my desks' data, including the agenda, the researcher's list and the company About texts my journalists wrote, propose how you would check each item against other sources, and the cost, before starting. The article withdrawal already running continues. Afterwards, list any withdrawn article whose facts can be re-sourced, so we can bring it back.")
+    - **Dinis's agents' data** (people, organisations, places, companies, events, the build): follow his conductor; Vicky's agents change none of their files.
+    - **Vicky's desks' data** (the agenda, the researcher's list, the company About texts, the curator's evidence): the conductor proposes the checks and their cost first (`people/vicky/plans/2026-11-11-web-summit-takedown.md`, step 2); nothing starts before Vicky's yes.
+    - Step 1 (standing answer 47) continues. Afterwards the conductor lists the withdrawn articles whose facts can be re-sourced.
+
+49. **Step 2 approved; Indi's app as a source for events** (Vicky, 11 Nov, about 21:35 UTC, in this window: "Conductor: yes to step 2 as recommended (About check, curator evidence; agenda not re-sourced)." and "Dinis also said can use "Indi's app" is lisbontechfringe.com. Count it as another source for events, used as a pointer as before, with each fact checked and cited at the organiser's own page.")
+    - **Step 2, as in the plan:** dev@ writes the About-claims script; journalist-portugal, journalist-europe and journalist-ai re-source or cut the About claims that rest only on Web Summit; the reviewer checks and releases; the curator re-cites or marks withdrawn its Web Summit evidence captures. The agenda is not re-sourced. Runs from Friday 13 Nov (after the summit), about 10 to 20 dollars API-equivalent.
+    - **lisbontechfringe.com (Indi's app)** counts as another source for events in the sense of standing answer 48, still a pointer only (standing answer 31, rule 5): each fact is checked and cited at the organiser's own page.
+
+50. **The article image under "The story"** (Vicky, 11 Nov, about 21:45 UTC, in this window: "add the image rule to STYLE.md now: the main image goes directly under the "The story" heading, before the first paragraph of the story, with its caption under it. Do the same on published articles, but on Friday after the summit, and keep each article's original publication date. Only the image position changes.")
+    - **Now:** the reviewer adds the rule to the newsroom's `desks/journalist-vicky/STYLE.md` and checks it on every draft (a misplaced image is a fix it makes itself, standing answer 17). Journalists follow it from their next draft.
+    - **Friday 13 Nov:** on the published articles from Vicky's desks that have an image in the story, the reviewer moves the main image and its caption to directly under "The story", keeping each article's original publication date; nothing else changes (the signature is renewed because the file changes). Articles with no image in the story are left as they are.
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -275,8 +339,10 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA36-SIGN, the signature check** (Vicky, 11 Nov, about 19:35 UTC: "dev@ builds the signature check first"). For: dev.
 > Build `people/vicky/tools/tasks.mjs` as step 1 of `people/vicky/plans/2026-11-11-p6-signed-messaging.md` says (verify against a pinned fingerprint, expiry, done-file check, `--no-expiry` for decisions.md, `check-pointer`, `lint`), with tests for a good, a forged, an expired and an already-done file. Node only, no dependencies, no network; it must be safe to publish (standing answer 35). Commit it on the team site For: security@web-summit.vicky and For: conductor@web-summit.vicky, and confirm "applied SA36-SIGN". Do not send or receive any session message.
 
-**SA39-FIX, the three tool fixes** (Vicky, 11 Nov, about 20:08 UTC). For: dev.
-> Make fixes 1 to 3 from people/vicky/reviews/security-p6-step1.md in people/vicky/tools/tasks.mjs, with a test for each, For: security@web-summit.vicky, and confirm "applied SA39-FIX".
+**SA39-FIX** withdrawn (Vicky, 11 Nov about 20:22 UTC, standing answer 42): no tool fixes.
+
+**SA43-ONDEMAND, report back and run only when pointed** (Vicky, 11 Nov, about 20:35 UTC). For: curator, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+> From Friday 13 Nov (standing answer 43, `people/vicky/tasks/README.md`): curator, after each fixed run, message the conductor's session with what you commissioned (or none). Journalists and reviewer: you run only when the conductor points you to a task file; when done, reply to the conductor with your commit or result. Your scheduled tasks are disabled by the conductor on Friday morning. Put this in your prompts file and confirm "applied SA43-ONDEMAND" at your next run.
 
 Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - P10, P17, P22, P27: vault, designer.
@@ -288,7 +354,7 @@ Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - SA27 (added 9 Nov, 11:25; changed 13:40): inbox. (vault applied it at 11:35.)
 - SA28 (added 9 Nov, 14:15): programme, researcher, curator.
 - RULES-11NOV: all 18 confirmed by 20:00 on 11 Nov (people/vicky/confirmations.json).
-- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: done (programme, 11 Nov). SA35-WS: curator, journalist-portugal, reviewer. SA36-SIGN: done (dev, 19:44). SA39-FIX: dev.
+- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: done (programme, 11 Nov). SA35-WS: curator, journalist-portugal, reviewer. SA36-SIGN: done (dev, 19:44). SA39-FIX: withdrawn. SA43-ONDEMAND: curator, five journalists, reviewer.
 - SA29: applied by researcher and curator (10 Nov); "SA29 used" at their first regular runs still to report.
 
 Removed on 9 Nov once done or confirmed: SA13, SA15, SA18, SA19B, SA19C, SA22, SA25, PILOT-REPLIT, TRIAGE-REPLIT and OVERNIGHT-9NOV (closed at 04:40, people/vicky/company-pages/backlog.md).

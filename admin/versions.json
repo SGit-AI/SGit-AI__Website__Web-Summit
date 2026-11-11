@@ -1,5 +1,124 @@
 [
   {
+    "version": "v0.2.1957",
+    "date": "2026-11-11",
+    "what": "22:00 wake: no topics left, idle",
+    "by": "scout@web-summit.vicky",
+    "from": "74648660d"
+  },
+  {
+    "version": "v0.2.1956",
+    "date": "2026-11-11",
+    "what": "VISÃO GERAL in the new look (Silvio's go on the mock)",
+    "by": "dashboard@web-summit.silvio",
+    "from": "f5d71ac59"
+  },
+  {
+    "version": "v0.2.1955",
+    "date": "2026-11-11",
+    "what": "X-Ray, the team phrase (Dinis's choice) opens the demo key",
+    "by": "dashboard@web-summit.silvio",
+    "from": "486e835da"
+  },
+  {
+    "version": "v0.2.1954",
+    "date": "2026-11-11",
+    "what": "standing answer 50: the main image directly under 'The story'; STYLE.md now, published articles on Friday with their dates kept",
+    "by": "conductor@web-summit.vicky",
+    "from": "018bb3f86"
+  },
+  {
+    "version": "v0.2.1953",
+    "date": "2026-11-11",
+    "what": "21:37 wake: the post-incident narrative drafted (to finish after the close-out); facts to 21:37",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "f1fde211b"
+  },
+  {
+    "version": "v0.2.1952",
+    "date": "2026-11-11",
+    "what": "21:35 wake: no change to Day 3; no new Lisbon decisions",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "1d25a0892"
+  },
+  {
+    "version": "v0.2.1951",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: handover-market's scope: the live packet exchange is conductor.fringe@'s",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "eecd6092b"
+  },
+  {
+    "version": "v0.2.1950",
+    "date": "2026-11-11",
+    "what": "standing answer 49: step 2 approved, from Friday; lisbontechfringe.com (Indi's app) as a source for events; task files for the About check and the curator's evidence",
+    "by": "conductor@web-summit.vicky",
+    "from": "aae33f22e"
+  },
+  {
+    "version": "v0.2.1949",
+    "date": "2026-11-11",
+    "what": "standing answer 48: takedown step 2 (keep what another source confirms); proposal and cost for Vicky's desks' data; nothing started",
+    "by": "conductor@web-summit.vicky",
+    "from": "3288dfd13"
+  },
+  {
+    "version": "v0.2.1948",
+    "date": "2026-11-11",
+    "what": "X-Ray, open the demo key on a new device with three words",
+    "by": "dashboard@web-summit.silvio",
+    "from": "e9915f52d"
+  },
+  {
+    "version": "v0.2.1947",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: riskmandate-android-demo.pm@ started, with its wake routine",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "5f59e5025"
+  },
+  {
+    "version": "v0.2.1946",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: project riskmandate-android-demo opened for its PM",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "364071b5d"
+  },
+  {
+    "version": "v0.2.1945",
+    "date": "2026-11-11",
+    "what": "standing answer 47: takedown step 1 (13 A-group articles and S44, S47, S49; notice 'Withdrawn on 11 November 2026.'; S58 the lead first); task file for dev@",
+    "by": "conductor@web-summit.vicky",
+    "from": "1ba8badca"
+  },
+  {
+    "version": "v0.2.1944",
+    "date": "2026-11-11",
+    "what": "WS-194, X-RAY is live in the command centre (note for Dinis, at his ask)",
+    "by": "dashboard@web-summit.silvio",
+    "from": "cc7bcf0bc"
+  },
+  {
+    "version": "v0.2.1943",
+    "date": "2026-11-11",
+    "what": "reviewer@PrompTugal.vicky: report: S58, the last-day guide, published under R-PUB-1",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "26e969dc9"
+  },
+  {
+    "version": "v0.2.1942",
+    "date": "2026-11-11",
+    "what": "standing answer 45: S44 dropped; checker's four findings kept open for a browser check; the Web Summit takedown planned (nothing comes down before Vicky's yes); researcher's model verified",
+    "by": "conductor@web-summit.vicky",
+    "from": "1cb38c8b9"
+  },
+  {
+    "version": "v0.2.1941",
+    "date": "2026-11-11",
+    "what": "one refresh at Vicky's word: tables rebuilt for Wed 11 Nov (WS-213 first), story candidates refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "9f5166174"
+  },
+  {
     "version": "v0.2.1940",
     "date": "2026-11-11",
     "what": "standing answer 39: P6 pin only in each prompts file (Vicky's decision, risk accepted); dev@'s three tool fixes; then the dashboard test round trip",
