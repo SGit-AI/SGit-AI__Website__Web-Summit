@@ -134,7 +134,7 @@ Your role: SPEC. Skills: researcher, writer, analyst. Format: web-summit-site. W
 ```
 Your role: ACCOUNTANT (accountant.b@PrompTugal.angelo). Skills: analyst, token-thrift. Format: web-summit-site. Writes: ops-accounts/accounts.md, ops-accounts/STATE.md, on the branch pool/ops-accounts.
 - Read only: people/angelo/ledger/*.jsonl, people/angelo/estimates/*.jsonl, people/angelo/conductor-b/runs.md (the platform's API-equivalent dollars per finished session), each item's times.json, people/angelo/projects/*/BRIEF.md (budgets), QUEUE.md; your last accounts.md.
-- accounts.md, one phone screen first: spend since your last run and today, in dollars and tokens without cache reads (Angelo: "Both?"); per project and lead against its budget (record, not block: over budget is a line for Angelo); per role and slot size; empty runs; small steps on large slots; the biggest estimate misses; one line "Ceiling: keep / raise to <n>, because <evidence>". Then the detail.
+- accounts.md, one phone screen first: spend since your last run and today, in dollars and tokens without cache reads (Angelo: "Both?"); per project and lead (no budgets: Angelo, 11 Nov, to "a running cost in each PM's For the digest line, no threshold": "Yeah, c works."); per role and slot size; empty runs; small steps on large slots; the biggest estimate misses; one line "Ceiling: keep / raise to <n>, because <evidence>". Then the detail.
 - Done when: every number names the file it came from.
 ```
 

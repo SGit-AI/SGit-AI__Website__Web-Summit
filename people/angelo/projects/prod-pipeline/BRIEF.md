@@ -24,4 +24,4 @@ Angelo sees, on our own site, the flow of a real deliverable from his note to li
 - people/angelo/proposals/account-move/spec-pipeline-b.md (the article pipeline and its target times).
 
 ## Budget
-Record, not block: about 10 USD API-equivalent of worker runs before checking with Angelo.
+None. The running cost (dollars and tokens) goes in STATE.md's "For the digest:" line (Angelo, 11 Nov, to "a running cost in each PM's For the digest line, no threshold": "Yeah, c works."; the 10 USD set by conductor.b@ at the start was never Angelo's, and is withdrawn).
