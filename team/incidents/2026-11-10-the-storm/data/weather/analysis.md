@@ -236,3 +236,10 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
   - **IPMA's site news:** nothing on CHARLES; the newest item is 10 Nov 08:00, unrelated.
 - **The bulletin (press, read 03:32):** [the page](https://www.rtp.pt/noticias/noticiario-antena1/3h-ipma-depressao-charles-vai-atingir-mais-o-sul-do-pais_a1_1778305) carries the title and an audio file only. It credits the bulletin to Pedro Guilherme; his role is not stated. There is no text, no named IPMA speaker and no words about Lisbon to quote.
 - **7b unchanged:** the title matches what IPMA's forecasters said on radio at 22:35 (the worst further south). It adds no new IPMA fact, and Lisbon's red warnings stand.
+
+## 9. 05:25 UTC 11 Nov: new Lisbon TAF; observed against warned begins
+
+- **Fact:** `TAF LPPT 110500Z` keeps the 23:00 picture, but the **strong group now runs to 18:00 (was 16:00)**: at times SSE 30 kt gusting 45 (83 km/h), 09:00 to 18:00. It keeps a 30% chance of SSE 43 kt gusting 58 (107 km/h) in thunderstorms, 10:00 to 18:00, then becomes W 12 kt from 18:00 to 20:00.
+- **Fact:** met.no's 05:19 update repeats its 01:19 values: strongest mean 58 km/h from 200° at 15:00, pressure bottoming at 987.7 hPa.
+- **Fact, Lisbon now (05:00):** the airport has 4 kt from 200° with light rain and 1004 hPa; no gusts so far. Since 05:00, `changes.json` → `gusts_above_warned` lists any airport gust above the warned level. It is empty.
+- **Analysis:** the airport forecast lengthening the strong wind to 18:00 fits the 12:00 to 18:00 worst window and the 14:00 to 17:00 peak (7b). Nothing changes in the conclusions; IPMA's red warnings for Lisbon stand.
