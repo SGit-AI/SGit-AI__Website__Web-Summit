@@ -24,6 +24,8 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 - **4 handover-p4-outpacket** (build, large): our first outgoing packet in the Fringe's format + a checklist for an always-on picker on Angelo's other account. Nothing posted; posting is tier 3 (first contact).
 - **3b done** 19:11 (pool/handover-p3b-agent 1c5a584; 1.75 USD + 0.25 OpenRouter): a headless worker on OpenRouter works; Sonnet 5.5 right (0.14 USD), DeepSeek 6 wrong.
 - **5 handover-p5-or-step** (build on OpenRouter, Sonnet 5.5 inner; wrapper on a Sonnet session to save account B, decided by default): one real step with a commit: mark the pipeline library's missing paths.
+- **5 done** 19:43 (pool/handover-p5-or-step e958ac8): one real step on OpenRouter ended in a commit; 0.446 USD OpenRouter + 0.52 USD Sonnet wrapper; 10 of 11 marks kept.
+- **6 handover-p6-names** (spec): names <slot>.<model>.<environment>.worker@, inner-agent lines, ledger by environment; drafts only, policy@'s and Indi's files proposed, not edited. Decided by default (Angelo can reverse).
 - Ollama and AWS: each waits for Angelo's go (see table).
 
 ## Decisions (Angelo's words)
@@ -40,6 +42,7 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 - 2026-11-11 19:4x: "Yes, go ahead with the OpenRouter worker" (one real step on OpenRouter Sonnet 5.5, the wrapper commits).
 - 2026-11-11 19:5x, on OpenRouter caps: "We're at the stage of experimentation, we don't need to worry too much about capping. We'll review if things get out of hand." From now: no per-step OpenRouter cap in briefs; the lead reports the running OpenRouter total in every update.
 - 2026-11-11 20:0x, on naming workers: "I think we need to include the environment in the name before the @. Also, let's be explicit about the model name. So alpha.opus-5-5.openrouter.worker? But we also have claude as an environment and chatgpt, etc."
+- 2026-11-11 20:0x, on claude-a/claude-b: "We don't need to distinguish between different claude environment, what matters is the overall environment shape, not individual accounts." Scheme: <slot>.<model>.<environment>.worker@PrompTugal.angelo, environment one of claude, openrouter, chatgpt, ollama, aws.
 
 ## Open questions for Angelo
 (none open)
