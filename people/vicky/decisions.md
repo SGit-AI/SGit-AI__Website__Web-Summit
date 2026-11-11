@@ -7,6 +7,8 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **49** step 2 approved (About check, curator evidence; agenda not re-sourced), from Friday; lisbontechfringe.com (Indi's app) counts as another source for events, as a pointer.
+- **48** takedown step 2: data another source confirms stays, re-cited; Dinis's agents' data follows his conductor; Vicky's desks' checks proposed first.
 - **47** takedown step 1: the 13 A-group articles and S44, S47, S49 withdrawn (notice "Withdrawn on 11 November 2026."); S58 the front-page lead first; derived data waits for Dinis.
 - **46** GitHub degraded: one retry, then hold and report; never loop; SKIP_LIVE=1.
 - **45** S44 dropped; checker findings kept open for a browser check; the Web Summit takedown is planned, nothing comes down until Vicky says yes.
@@ -253,6 +255,15 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **First:** S58 (thursday-last-day-guide) becomes the front-page lead, before S54 comes down.
     - **Waits for Dinis's scope in the group, then Vicky's word:** the derived data, company pages and agenda.
     - **Who:** dev@PrompTugal.vicky, on the newsroom, under standing answer 10, telling the owners in its commits For: dev@PrompTugal.dinis (the build), correspondent@PrompTugal.dinis (the front page) and journalist@PrompTugal.dinis (three of the articles are its). Standing answer 46 (GitHub hold) applies.
+
+48. **Takedown step 2: keep what another source confirms** (Vicky, 11 Nov, about 21:30 UTC, in this window: "Dinis confirmed, with a twist: remove only data we have not also found from other sources. Data confirmed by another source, such as a company's own site, press or an official body, stays, cited to that source instead of Web Summit. Dinis is sending his conductor the details. For data owned by his agents, follow his conductor and do not change their files. For my desks' data, including the agenda, the researcher's list and the company About texts my journalists wrote, propose how you would check each item against other sources, and the cost, before starting. The article withdrawal already running continues. Afterwards, list any withdrawn article whose facts can be re-sourced, so we can bring it back.")
+    - **Dinis's agents' data** (people, organisations, places, companies, events, the build): follow his conductor; Vicky's agents change none of their files.
+    - **Vicky's desks' data** (the agenda, the researcher's list, the company About texts, the curator's evidence): the conductor proposes the checks and their cost first (`people/vicky/plans/2026-11-11-web-summit-takedown.md`, step 2); nothing starts before Vicky's yes.
+    - Step 1 (standing answer 47) continues. Afterwards the conductor lists the withdrawn articles whose facts can be re-sourced.
+
+49. **Step 2 approved; Indi's app as a source for events** (Vicky, 11 Nov, about 21:35 UTC, in this window: "Conductor: yes to step 2 as recommended (About check, curator evidence; agenda not re-sourced)." and "Dinis also said can use "Indi's app" is lisbontechfringe.com. Count it as another source for events, used as a pointer as before, with each fact checked and cited at the organiser's own page.")
+    - **Step 2, as in the plan:** dev@ writes the About-claims script; journalist-portugal, journalist-europe and journalist-ai re-source or cut the About claims that rest only on Web Summit; the reviewer checks and releases; the curator re-cites or marks withdrawn its Web Summit evidence captures. The agenda is not re-sourced. Runs from Friday 13 Nov (after the summit), about 10 to 20 dollars API-equivalent.
+    - **lisbontechfringe.com (Indi's app)** counts as another source for events in the sense of standing answer 48, still a pointer only (standing answer 31, rule 5): each fact is checked and cited at the organiser's own page.
 
 ## Updates for agents
 

@@ -1,5 +1,40 @@
 [
   {
+    "version": "v0.2.1953",
+    "date": "2026-11-11",
+    "what": "21:37 wake: the post-incident narrative drafted (to finish after the close-out); facts to 21:37",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "f1fde211b"
+  },
+  {
+    "version": "v0.2.1952",
+    "date": "2026-11-11",
+    "what": "21:35 wake: no change to Day 3; no new Lisbon decisions",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "1d25a0892"
+  },
+  {
+    "version": "v0.2.1951",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: handover-market's scope: the live packet exchange is conductor.fringe@'s",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "eecd6092b"
+  },
+  {
+    "version": "v0.2.1950",
+    "date": "2026-11-11",
+    "what": "standing answer 49: step 2 approved, from Friday; lisbontechfringe.com (Indi's app) as a source for events; task files for the About check and the curator's evidence",
+    "by": "conductor@web-summit.vicky",
+    "from": "aae33f22e"
+  },
+  {
+    "version": "v0.2.1949",
+    "date": "2026-11-11",
+    "what": "standing answer 48: takedown step 2 (keep what another source confirms); proposal and cost for Vicky's desks' data; nothing started",
+    "by": "conductor@web-summit.vicky",
+    "from": "3288dfd13"
+  },
+  {
     "version": "v0.2.1948",
     "date": "2026-11-11",
     "what": "X-Ray, open the demo key on a new device with three words",

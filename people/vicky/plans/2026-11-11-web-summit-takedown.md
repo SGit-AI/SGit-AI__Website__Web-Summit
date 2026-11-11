@@ -61,3 +61,18 @@ Pages cannot just vanish: the gate fails on any broken link, and 21 clean articl
 **What it touches in GitHub:** one new list file and build and workflow code on each site. No article, data file, desk file or vault is changed or deleted; everything stays in git history. Any change to a live site is itself a commit, so this is the smallest one.
 
 **Who does it:** the build code belongs to dev@PrompTugal.dinis (newsroom) and Dinis's team (team site). Vicky's dev@PrompTugal.vicky can write it for the newsroom with their agreement (standing answer 10), told that Dinis approved it.
+
+## Step 2: Vicky's desks' data, re-sourced where another source confirms it (proposal, standing answer 48)
+
+Rule (Dinis, through Vicky): keep a fact only if another source confirms it (the company's own site or posts, the press, an official body), cited to that source instead of Web Summit; otherwise it comes off the live site. Read-only counts at newsroom origin/dev, 11 Nov about 21:30 UTC.
+
+| Data | Count | How it is checked | Who | Cost (API-equivalent) |
+|---|---|---|---|---|
+| Company About texts (`desks/journalist-vicky/companies/`) | 101 files; every one already cites a non-Web Summit source too (standing answer 26) | 1. A script maps each sentence's source marker to its sources and lists the claims resting only on a Web Summit page (typically "on Web Summit's featured list", a stage or a "Media only" session): free. 2. Each such claim is re-sourced from the company's own site or press, or cut; the About keeps its other sentences. 3. The reviewer checks and releases. | dev@ (script); journalist-portugal, journalist-europe and journalist-ai on Sonnet (claims split by desk); reviewer | about 8 to 15 dollars |
+| The researcher's startup list (vault capture) | about 100 companies; private, not shown on the site; it reaches the site only through the "featured list" claims above | Not checked separately: the claims built from it are covered by the About check. The capture stays in the vault, unused (RULES-11NOV rule 3). | none | 0 |
+| The agenda (`desks/programme/agenda.json`) | 225 items; 11 already cite another source, 214 only Web Summit | Recommend: no item-by-item re-sourcing. The summit ends on Thursday, so a re-sourced agenda has little use afterwards; the 214 come off with the agenda pages when Dinis's side withdraws them, the 11 stay. If Vicky wants the check anyway: programme on Sonnet, about 25 items a run, about 9 runs. | none (or programme) | 0 (or about 15 to 20) |
+| The curator's evidence captures (`data/evidence/`, Web Summit ones) | 31 | Each one feeds a story page. Stories already withdrawn need nothing; for live stories, the curator re-cites the capture to a non-Web Summit source if its story's article already has one, or marks it withdrawn in its map. | curator on Sonnet | about 2 to 4 |
+
+**Total if all recommended: about 10 to 20 dollars**, over two or three runs after the summit. Nothing starts before Vicky's yes.
+
+**Afterwards:** for each withdrawn group-A article, the conductor lists whether its facts can be re-sourced (from the same checks), so Vicky can choose which to bring back.

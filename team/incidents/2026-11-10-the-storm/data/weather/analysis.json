@@ -471,7 +471,12 @@
    "time_utc": "2026-11-11T20:25Z",
    "section": 28,
    "summary": "Quiet: LPPT 20:00 28009KT Q0996; no new CAP batch since 19:17:31; orange sea start restamped in open data (19:09), not a new warning; ends 21:00."
+  },
+  {
+   "time_utc": "2026-11-11T21:25Z",
+   "section": 29,
+   "summary": "Orange sea ended 21:00 (open data still listed it at 21:22, restamped); yellow sea to Thu 03:00; LPPT 21:00 27011KT Q0997; no new CAP batch since 19:17:31."
   }
  ],
- "next_read_utc": "2026-11-11T21:22Z"
+ "next_read_utc": "2026-11-11T22:22Z"
 }

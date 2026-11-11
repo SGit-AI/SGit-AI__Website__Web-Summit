@@ -7,7 +7,7 @@
     const SITE = 'https://web-summit.sgit.ai/', FONTS = 'https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600&display=swap'
     const get = k => { try { return localStorage.getItem(k) } catch { return null } }, put = (k, v) => { try { localStorage.setItem(k, v) } catch {} }
     let MODE = get('cc.mode') || 'work'
-    const FLOWS = { client: [['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['gravity', 'Gravity']], work: [['home', 'Visão geral'], ['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['gravity', 'Gravity'], ['tasks', 'Tarefas']] }
+    const FLOWS = { client: [['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['gravity', 'Gravity'], ['swarm', 'Swarm']], work: [['home', 'Visão geral'], ['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['gravity', 'Gravity'], ['swarm', 'Swarm'], ['tasks', 'Tarefas']] }
     const html = document.documentElement
     if (![...document.querySelectorAll('link')].some(l => l.href === FONTS)) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = FONTS; document.head.appendChild(l) }
     const css = document.createElement('style'); css.id = 'cc-shell-css'; css.textContent = `
@@ -111,7 +111,7 @@ html.cc-shell .cc-gravity iframe { width: 100%; min-height: calc(100vh - 130px);
         const m = e.target.closest && e.target.closest('[data-mode]'); if (m) { MODE = m.dataset.mode; put('cc.mode', MODE); inject(); if (!FLOWS[MODE].some(f => f[0] === view())) location.hash = '#' + FLOWS[MODE][0][0]; return }
         if (e.target.closest && e.target.closest('.cc-side a')) html.classList.remove('cc-drawer') })
     addEventListener('keydown', e => { if (e.key === 'Escape') html.classList.remove('cc-drawer') })
-    const markView = () => html.classList.toggle('cc-v-stand', view() === 'stand' || view() === 'xray'); markView()
+    const markView = () => html.classList.toggle('cc-v-stand', view() === 'stand' || view() === 'xray' || view() === 'swarm'); markView()
     addEventListener('hashchange', () => { markView(); html.classList.remove('cc-drawer'); const cv = document.getElementById('cc-view'); if (cv) { cv.classList.remove('cc-zin'); void cv.offsetWidth; cv.classList.add('cc-zin') } setTimeout(inject, 30) })
     new MutationObserver(() => { const top = document.querySelector('.cc-top'); if (top && (!top.querySelector('.cc-flow') || !top.querySelector('.cc-burger'))) inject() }).observe(document.body, { childList: true, subtree: true })
     inject()
@@ -138,5 +138,9 @@ html.cc-shell .cc-gravity iframe { width: 100%; min-height: calc(100vh - 130px);
     }
     const gpaint = () => { const h = document.getElementById('cc-gravity'); if (!h) return; h.innerHTML = `<nav class="gv-sub" aria-label="Gravity">${GSUB.map(([k, l]) => `<button type="button" data-gsub="${k}" ${k === gsub ? 'aria-current="page"' : ''}>${l}</button>`).join('')}</nav><div class="gv-body">${GP[gsub]()}</div>` }
     document.addEventListener('click', e => { const b = e.target.closest && e.target.closest('[data-gsub]'); if (b) { gsub = b.dataset.gsub; gpaint(); const v = document.getElementById('cc-view'); if (v) { v.classList.remove('cc-zin'); void v.offsetWidth; v.classList.add('cc-zin') } } })
+    // SWARM: PrompTugal's swarm, shown inside the command centre (Silvio, 11 November), with a way out to its own window
+    const SWARM = 'https://swarm.promptugal.news/'
+    if (!document.getElementById('cc-swarm-css')) { const st = document.createElement('style'); st.id = 'cc-swarm-css'; st.textContent = `.cc-swarm { display: grid; grid-template-rows: auto 1fr; min-height: calc(100vh - 64px); } .cc-swarm .bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 6px 16px; font: 600 11.5px "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: 1.3px; text-transform: uppercase; color: #8EADA8; border-bottom: 1px solid rgba(150,230,215,.14); } .cc-swarm .bar a { color: #FBE2AE; text-decoration: none; } .cc-swarm iframe { width: 100%; height: calc(100vh - 100px); border: 0; background: #04100F; display: block; }`; document.head.appendChild(st) }
+    X.views.swarm = { label: 'Swarm', icon: 'brain', render: () => `<section class="cc-swarm"><div class="bar"><span>Swarm · swarm.promptugal.news</span><a href="${SWARM}" target="_blank" rel="noopener">Abrir numa janela ↗</a></div><iframe src="${SWARM}" title="Swarm (PrompTugal)" loading="lazy" referrerpolicy="no-referrer"></iframe></section>` }
     X.views.gravity = { label: 'Gravity', icon: 'brain', render: () => '<section class="cc-gravity" id="cc-gravity"></section>', after: gpaint }
 })()

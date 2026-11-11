@@ -22,7 +22,7 @@ Route only; never build. Workers: session-less, 20 slots (10 large, 10 small), p
 ## Open
 
 - **riskmandate-android-demo.pm@** (session_01Xp7gj4A4EGPjvb7sQeBEBJ, wake trig_01GnGftTuQdk1LM63LnvaDtn, backstop :12 every 2 hours): Silvio's X-ray demo page (https://web-summit.sgit.ai/people/silvio/app/index.html#xray) as a full-screen menu entry in the RiskMandate Android app, started 21:12 at Angelo's word. Writing to PrompTugal/PrompTugal__App__Android waits for his word (tier 3); the spec is read-only meanwhile.
-- **Dinis's packet p2** (Fringe tasks/2026-11-11-p2-cut-items-into-loops, for conductor.fringe@ "or any environment"): nobody has taken it; recommended to handover-market.pm@ like p1, asked of Angelo 20:2x.
+- **Handover split** (Angelo, 21:3x: "Agree, go ahead"): conductor.fringe@ owns the live packet exchange with Dinis's agents (done 20:28 to 20:32, Fringe 155113b, 606564c); handover-market.pm@ drops its p1 reply and p2 and moves to the capacity board, offer/claim/lapse between accounts, Ollama, AWS (its BRIEF, "Scope changed").
 
 - **network-views.pm@** (session_01Xp7gj49w3HhKrhT64Gp1c1, wake trig_01D39RAzsMdheFWbiBWjttdi): new views of the agent network beside the old ones, started 19:44; Angelo: "Go ahead with the new pm." (relayed to it through its wake routine at 19:49). A first routine was created by mistake bound to conductor.b@'s own session and was deleted at once (trig_01HmFPSdVxxrswJsBuN4adPh).
 
