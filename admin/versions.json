@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1948",
+    "date": "2026-11-11",
+    "what": "X-Ray, open the demo key on a new device with three words",
+    "by": "dashboard@web-summit.silvio",
+    "from": "e9915f52d"
+  },
+  {
     "version": "v0.2.1947",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: riskmandate-android-demo.pm@ started, with its wake routine",
