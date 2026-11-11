@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1835",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: first run: session key, STATE, runs log, the pipeline's role prompts for Angelo's read",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "7acabbef6"
+  },
+  {
     "version": "v0.2.1834",
     "date": "2026-11-11",
     "what": "WS-41 step 1 closed: no effect, 2 check-ins before and after (4 to 11 November)",
