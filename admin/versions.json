@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1964",
+    "date": "2026-11-11",
+    "what": "X-Ray, each search shows the run and the reach (Silvio's mock, approved)",
+    "by": "dashboard@web-summit.silvio",
+    "from": "682cf8742"
+  },
+  {
     "version": "v0.2.1963",
     "date": "2026-11-11",
     "what": "23:22 wake: LPPT TAF 23:00 for Thursday (showers, gusts ~50 km/h by day); Lisbon only yellow sea to 03:00; analysis 31",
