@@ -1,5 +1,7 @@
 # Three repurposing hand-overs (prepared, not started)
 
+Vicky, 11 Nov about 19:30 UTC: the messages stay here; the conductor gives each in the For Vicky list on the day it is due, naming the window to paste it in. Due: designer once it has confirmed RULES-11NOV (designer window); programme to reporter on Saturday 14 Nov (programme window); summit journalist to internal journalist on Friday 13 Nov after its last summit run (journalist window).
+
 At Vicky's word (11 Nov 2026, about 19:00 UTC: "Prepare three repurposing hand-overs: designer, programme to reporter after Friday, synthetic to internal journalist." Changed 11 Nov about 19:20 UTC: the internal journalist is the summit journalist, after the summit. Not weather@. Each starts only at my word."). Each is the same session with a new role: the agent writes a debrief of its old role in `people/vicky/handover/<old short name>-<date>.md`, then takes the new prompt below. The conductor then updates agents.json, the prompts README and schedule.json.
 
 ## 1. designer: cover graphics on request

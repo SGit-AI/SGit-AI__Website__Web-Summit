@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **35** Web Summit news to journalist-portugal after the summit; hand-over messages in For Vicky when due; tools in vault A safe to publish.
 - **34** Thursday's hourly summit lane; the internal journalist is the summit journalist after the summit; the two-way messaging draft.
 - **33** the schedule after the switch-back; vaults A and B; designer, reporter and internal journalist plans.
 - **32** the switch-back: one session per role, fresh keys, lanes, confirmation wakes.
@@ -178,6 +179,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **security@web-summit.vicky:** Vicky starts it tonight herself, from `people/vicky/plans/2026-11-11-start-kit-security.md`.
     - **The messaging draft** (her words: "When I give you a task, you wake the right agent of mine at once. It does the work, then tells you it is done, and you report to me. So it needs both directions: you to my agents, and my agents back to you, each message only pointing to a committed file. Notes and requests to other people's agents stay as now, through inbox lanes, commits addressed to them and shared boards."): `people/vicky/plans/2026-11-11-p6-narrow-change.md`, for security@ to review. Not in force.
 
+35. **After the summit: Web Summit news, hand-over messages, and safe tools** (Vicky, 11 Nov, about 19:30 UTC, in this window).
+    - **Web Summit news after the summit** (her words: "After the summit, any further Web Summit news goes to journalist-portugal, filed under the Web Summit 2026 category."): from Friday 13 Nov, the curator commissions any Web Summit story for journalist-portugal@PrompTugal.vicky, category "Web Summit 2026"; the reviewer checks that category; standing answer 31's sources rules still apply.
+    - **Hand-over messages** (her words: "For the repurposing hand-overs, just keep the paste-in messages in the plans file. When each one is due, give it to me in For Vicky with the window to paste it in."): the messages stay in `people/vicky/plans/2026-11-11-repurposing-handovers.md`; the conductor gives each in the For Vicky list on the day it is due, naming the window.
+    - **Safe tools in vault A** (her words: "everything in them must be safe to make public later, in case Dinis wants to publish them. No keys, tokens, contact details, CRM, interview shortlist, mail, vault contents or prompt text. Tools show only public data, such as agent names, rule IDs, confirmation status and schedule times."): added to SA33-TOOLS below; security@web-summit.vicky checks each tool against it before its key is shared with anyone.
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -236,10 +242,13 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 > After your RULES-11NOV confirmation: create vault A (tools, apps and agent reports; its key sealed to the agents the conductor lists in its request, starting with dev@PrompTugal.vicky and the conductor) and vault B (Vicky's ideas; its key sealed to conductor-vicky-2 and Vicky's own copy (Vicky, 11 Nov about 19:05 UTC: "Vault B also gets my own copy."), to no one else), each audited as usual; read keys never published. Confirm "applied SA33-VAULTS" with the vault ids.
 
 **SA33-TOOLS, the confirmations board and the schedule checker** (Vicky, 11 Nov, about 19:00 UTC: "dev@ builds the confirmations board and the schedule checker into vault A."). For: dev.
-> After your RULES-11NOV confirmation and once vault A exists: build two small apps into vault A, no external reads: (1) a confirmations board from people/vicky/decisions.md's updates and the agents' reports (who applied what, with dates), (2) a schedule checker comparing people/vicky/schedule.json with what the conductor records from the account. Your security review comes from security@web-summit.vicky once it runs. Confirm "applied SA33-TOOLS".
+> After your RULES-11NOV confirmation and once vault A exists: build two small apps into vault A, no external reads: (1) a confirmations board from people/vicky/decisions.md's updates and the agents' reports (who applied what, with dates), (2) a schedule checker comparing people/vicky/schedule.json with what the conductor records from the account. Safe to publish (standing answer 35, Vicky, 11 Nov about 19:30 UTC): "everything in them must be safe to make public later, in case Dinis wants to publish them. No keys, tokens, contact details, CRM, interview shortlist, mail, vault contents or prompt text. Tools show only public data, such as agent names, rule IDs, confirmation status and schedule times." Session ids and task ids count as private too: leave them out. When a tool is ready, commit For: security@web-summit.vicky; security@ checks it against this rule, and its key is shared with no one until security@ has passed it. Confirm "applied SA33-TOOLS".
 
 **SA33-PROGRAMME, Thursday side events** (Vicky, 11 Nov, about 19:00 UTC). For: programme.
 > Your Thursday 07:00 run (your task's only run now) does side events only, as standing answer 33 says; put this in your task's prompt in place of the agenda step, keep the shortlist step, and confirm "applied SA33-PROGRAMME".
+
+**SA35-WS, Web Summit news after the summit** (Vicky, 11 Nov, about 19:30 UTC). For: curator, journalist-portugal, reviewer.
+> From Friday 13 Nov: any further Web Summit news is commissioned for journalist-portugal, category "Web Summit 2026" (standing answer 35); the reviewer checks the category. Put it in your prompts file and confirm "applied SA35-WS".
 
 Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - P10, P17, P22, P27: vault, designer.
@@ -251,7 +260,7 @@ Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - SA27 (added 9 Nov, 11:25; changed 13:40): inbox. (vault applied it at 11:35.)
 - SA28 (added 9 Nov, 14:15): programme, researcher, curator.
 - RULES-11NOV (added 11 Nov, 19:00): all 17 returning agents, and designer.
-- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: programme.
+- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: programme. SA35-WS: curator, journalist-portugal, reviewer.
 - SA29 (added 9 Nov, 23:50): researcher, curator (and "SA29 used" at the first regular run).
 
 Removed on 9 Nov once done or confirmed: SA13, SA15, SA18, SA19B, SA19C, SA22, SA25, PILOT-REPLIT, TRIAGE-REPLIT and OVERNIGHT-9NOV (closed at 04:40, people/vicky/company-pages/backlog.md).
