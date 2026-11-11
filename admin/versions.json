@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1816",
+    "date": "2026-11-11",
+    "what": "05:33 wake: no change to Day 3 (Bluesky and press; websummit.com on hold); IPMA unchanged; primary pages tried (4th)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "aeb6b5b0e"
+  },
+  {
     "version": "v0.2.1815",
     "date": "2026-11-11",
     "what": "hold on websummit.com noted (its Terms 48.2, 52.1): Web Summit's pages marked \"not read since 05:25 (terms)\"; parser asks withdrawn",
