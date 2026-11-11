@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1898",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: PMs never blocked: wake routines fired by their workers, a 2-hour backstop, decide by default below tier 3",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "a9199ce47"
+  },
+  {
     "version": "v0.2.1897",
     "date": "2026-11-11",
     "what": "Gravity v0.1.0, the universe visualization as a library (Dinis's brief); Universo ✦ now runs on it",
