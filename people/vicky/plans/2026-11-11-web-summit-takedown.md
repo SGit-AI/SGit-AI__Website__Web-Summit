@@ -1,3 +1,5 @@
+> **Vicky's decision, 11 Nov about 21:20 UTC (standing answer 47):** group A and S44, S47, S49 come down now; the unclear ones and group B stay; S58 becomes the front-page lead first; the derived data, company pages and agenda wait for Dinis's scope in the group.
+
 # Plan: Web Summit-derived content off the live sites (for Vicky's yes)
 
 At Vicky's word (11 Nov 2026, about 20:55 UTC, standing answer 45), relaying Dinis: "take all data scraped from Web Summit's site, and the articles built from it, off the live sites. Do not delete or change anything in GitHub or in any vault, they stay as they are. Only what is shown on promptugal.news and the team site comes down." **Nothing is taken down until Vicky says yes.** Inventory read-only at newsroom a5519dde and team site 41ab579f (11 Nov, about 21:00 UTC).
@@ -52,7 +54,7 @@ S58 ([thursday-last-day-guide](https://promptugal.news/articles/thursday-last-da
 Pages cannot just vanish: the gate fails on any broken link, and 21 clean articles link to company, organisation or event pages. Proposed:
 
 1. **A withdrawn list**, one new file per site (newsroom `data/site/withdrawn.json`; team site an equivalent), naming the articles and entity types to withdraw.
-2. **The build shows a short notice at the same address** ("Withdrawn on 11 November 2026 at the organiser's request", noindex), leaves it out of the articles index, front page, search, sitemap and llms.txt, and empties the home blocks fed by the agenda. Every link still resolves, so the gate stays green.
+2. **The build shows a short notice at the same address** ("Withdrawn on 11 November 2026.", nothing else; Vicky, 11 Nov about 21:20 UTC: Web Summit did not ask us; noindex), leaves it out of the articles index, front page, search, sitemap and llms.txt, and empties the home blocks fed by the agenda. Every link still resolves, so the gate stays green.
 3. **Raw files** (the JSON under /data/ and /desks/, the API, the .md twins) are left out of the deploy with exclude lines in each site's deploy workflow.
 4. **The front page** gets a new lead (correspondent@PrompTugal.dinis) before S54 comes down.
 
