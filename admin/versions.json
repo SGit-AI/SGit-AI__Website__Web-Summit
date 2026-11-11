@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1849",
+    "date": "2026-11-11",
+    "what": "11:20 wake: Lisbon Fringe (WS-215) in Jose's Actions: start his fringe conductor if he joins, lane the channels",
+    "by": "conductor@web-summit.jose",
+    "from": "8eebb24bb"
+  },
+  {
     "version": "v0.2.1848",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: Lisbon Fringe (WS-215): conductor.fringe@PrompTugal.angelo started for Angelo, item 05 the graph",
