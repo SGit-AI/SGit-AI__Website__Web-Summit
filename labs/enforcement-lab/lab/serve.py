@@ -37,7 +37,7 @@ class H(http.server.SimpleHTTPRequestHandler):
         # the pages are kept as .tpl so the site's gate does not treat them as site pages; this server is how they are opened
         if self.path.split('?')[0] in ('/', '/dashboard', '/dashboard/'):
             return self._page('index.tpl')
-        if self.path.split('?')[0] == '/dashboard/report':
+        if self.path.split('?')[0] in ('/dashboard/report', '/report'):
             return self._page('report.tpl')
         return super().do_GET()
 
