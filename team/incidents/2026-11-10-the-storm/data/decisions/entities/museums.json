@@ -1,7 +1,7 @@
 {
  "entity": "museums",
  "about": "Every decision in graph.json about museums: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:20Z",
+ "updated": "2026-11-11T02:42Z",
  "decisions": [
   {
    "edge": "mmp-closed",
@@ -18,6 +18,20 @@
    "read": "2026-11-11T01:50Z",
    "label": "evidence",
    "note": "Observador 14:08:23 quoting MMP's online message. At 19:21 Observador adds Lisbon's 25 municipal cultural venues (EGEAC) closed."
+  },
+  {
+   "edge": "mmp-closed",
+   "decision": "National museums and monuments closed on Wednesday",
+   "decided_by": "Museus e Monumentos de Portugal",
+   "published_utc": "2026-11-10T14:23Z",
+   "address": "https://www.lusa.pt/article/48102151",
+   "also": [
+    "https://bsky.app/profile/lusa.pt/post/3mzxndvb57t2q"
+   ],
+   "read": "2026-11-11T02:42Z",
+   "label": "evidence",
+   "state": "closed",
+   "note": "Lusa 14:23; Observador 14:08 quoting MMP's online message."
   }
  ],
  "open": []

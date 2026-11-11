@@ -32,7 +32,8 @@
     "02:20 (Dinis's direction via incident.conductor@): addresses.json for the 26 timeline rows without an address; entities/*.json for 11 services and places",
     "02:25: state field on decision edges (closed, suspended, limited, running, not_announced; null with a note for warnings, statements and hypotheses); tools/primary_tries.py: one polite try an hour at Lusoponte, metrolisboa.pt, lisboa.pt, informacao.lisboa.pt, ANA, CP, Rede Expressos, recorded in entities/*.json tries (first run 02:22Z: none published)",
     "02:30: shadow leads: (1) legal text read at source: Despacho n.º 13773-A/2026 (DR 2nd series, supplement, 10 Nov; via porto.pt's link; headless browser), no mention of Web Summit; (2) harbour master Aviso 53/2026 (fact, signed 9 Nov 14:07, yellow-era); (3) lisboa.pt 403; (4)-(7) press only or refused: leads, not added",
-    "02:34 wake: no change to Day 3 (blog, post text, Bluesky); primary-page tries skipped this wake (last run 02:22, one an hour)"
+    "02:34 wake: no change to Day 3 (blog, post text, Bluesky); primary-page tries skipped this wake (last run 02:22, one an hour)",
+    "02:42: bridges: 60 km/h (14:48) then lifted by 22:29 (Lusa): a sequence, not a conflict; Lusoponte still unreachable. IPMA no. 1 publish time not verifiable (only no. 2 online); AEMET named Charles 9 Nov 10:20:11 (fact, its Bluesky). Social posts filed in entities (rede-expressos, cp, metro, museums; new: ferries, flixbus, hospitals, parliament, retail). Madeira SRPC measures page (fact, created 15:27)."
   ],
   "next": [
     "Each wake: Web Summit (blog list first); then python3 team/incidents/2026-11-10-the-storm/data/decisions/tools/primary_tries.py",
@@ -48,7 +49,7 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts."
   ],
-  "updated": "2026-11-11T02:34Z",
+  "updated": "2026-11-11T02:42Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {

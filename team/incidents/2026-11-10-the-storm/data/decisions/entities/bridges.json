@@ -1,7 +1,7 @@
 {
  "entity": "bridges",
  "about": "Every decision in graph.json about bridges: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:20Z",
+ "updated": "2026-11-11T02:42Z",
  "decisions": [
   {
    "edge": "bridges-60",
@@ -11,13 +11,30 @@
    "announced_utc": null,
    "published_utc": "2026-11-10T14:48Z",
    "effect_from_utc": null,
-   "effect_to_utc": null,
+   "effect_to_utc": "2026-11-10T22:29Z",
    "effect_note": "hours not stated: \"encontra-se reduzida\" (in force from the announcement, 14:48 Tuesday); end not stated",
    "address": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
    "also": [],
    "read": "2026-11-10T18:58Z",
    "label": "evidence",
-   "note": ""
+   "note": "",
+   "state": "limited"
+  },
+  {
+   "edge": "bridges-lifted",
+   "decision": "Restrictions lifted on both bridges by 22:29 Tuesday",
+   "decided_by": "not stated (Lusoponte operates the bridges)",
+   "published_utc": "2026-11-10T22:29Z",
+   "effect_from_utc": "2026-11-10T22:29Z",
+   "effect_to_utc": null,
+   "address": "https://www.lusa.pt/article/48105410",
+   "also": [
+    "https://bsky.app/profile/lusa.pt/post/3mzyiilo7ik2a"
+   ],
+   "read": "2026-11-11T02:42Z",
+   "label": "evidence",
+   "state": "running",
+   "note": "Lusa headline; full text for subscribers. The 14:48 limit and the 22:29 lifting are a sequence, not a conflict."
   }
  ],
  "open": [

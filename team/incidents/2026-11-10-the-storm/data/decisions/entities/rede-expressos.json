@@ -1,7 +1,7 @@
 {
  "entity": "rede-expressos",
  "about": "Every decision in graph.json about rede-expressos: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:20Z",
+ "updated": "2026-11-11T02:42Z",
  "decisions": [
   {
    "edge": "rede-expressos-suspends",
@@ -18,6 +18,19 @@
    "read": "2026-11-10T23:55Z",
    "label": "evidence",
    "note": "Jornal de Negócios live 12:39 (company statement) and Jornal Económico 17:47; earlier text \"to midnight\" came from a search summary and was wrong."
+  },
+  {
+   "edge": "rede-expressos-suspends",
+   "decision": "Rede Expressos suspends all national services Wednesday 10:00 to 23:59 and will refund tickets bought",
+   "decided_by": "Rede Expressos",
+   "published_utc": "2026-11-10T12:39Z",
+   "effect_from_utc": "2026-11-11T10:00Z",
+   "effect_to_utc": "2026-11-11T23:59Z",
+   "address": "https://bsky.app/profile/vost.pt/post/3mzxlj2s3xn22",
+   "read": "2026-11-11T02:42Z",
+   "label": "evidence",
+   "state": "suspended",
+   "note": "VOST Portugal relaying the operator (13:50:55); the operator's site refuses us (403). Refunds: \"A Rede Expressos irá reembolsar os bilhetes adquiridos\"."
   }
  ],
  "open": [

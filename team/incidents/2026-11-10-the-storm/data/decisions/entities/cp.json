@@ -1,7 +1,7 @@
 {
  "entity": "cp",
  "about": "Every decision in graph.json about cp: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:20Z",
+ "updated": "2026-11-11T02:42Z",
  "decisions": [
   {
    "edge": "cp-ops",
@@ -34,6 +34,20 @@
    "read": "2026-11-10T23:33Z",
    "label": "evidence",
    "note": "Lusa, quoting a CP statement; Jornal de Negócios live entry 23:10. Not read on cp.pt (JavaScript app)."
+  },
+  {
+   "edge": "cp-ops",
+   "decision": "CP admits constraints on train services on Tuesday and Wednesday",
+   "decided_by": "CP",
+   "published_utc": "2026-11-10T17:25Z",
+   "address": "https://www.lusa.pt/article/48103814",
+   "also": [
+    "https://bsky.app/profile/lusa.pt/post/3mzxxj2c65v2t"
+   ],
+   "read": "2026-11-11T02:42Z",
+   "label": "evidence",
+   "state": "limited",
+   "note": "Lusa headline and Bluesky post 17:25; cp.pt is a JavaScript app."
   }
  ],
  "open": [

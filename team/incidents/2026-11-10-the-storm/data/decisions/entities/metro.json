@@ -1,7 +1,7 @@
 {
  "entity": "metro",
  "about": "Every decision in graph.json about metro: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:20Z",
+ "updated": "2026-11-11T02:42Z",
  "decisions": [
   {
    "edge": "metro-runs",
@@ -50,6 +50,21 @@
    "read": "2026-11-11T00:33Z",
    "label": "fact",
    "note": "No operator notice for Thursday found at 22:05Z: metrolisboa.pt and carris.pt (no Thursday notice in HTML), cp.pt (JavaScript app), ttsl.pt, lusoponte.pt (unreachable); a web search found only Wednesday notices. Indirect: tax offices and customs reopen Thursday (Jornal de Negócios, via search)."
+  },
+  {
+   "edge": "metro-shelter",
+   "decision": "Metro opens several stations to shelter homeless people",
+   "decided_by": "Metropolitano de Lisboa",
+   "published_utc": "2026-11-10T19:13Z",
+   "address": "https://www.metrolisboa.pt/",
+   "also": [
+    "https://www.lusa.pt/article/48104497",
+    "https://bsky.app/profile/lusa.pt/post/3mzy5jqibue2d"
+   ],
+   "read": "2026-11-11T02:42Z",
+   "label": "fact",
+   "state": "running",
+   "note": "Fact at source: metrolisboa.pt banner (read 23:33Z) names Amadora Este, Santa Apolónia, Marquês de Pombal, Moscavide and Olaias, nights of 10-11 and 11-12 Nov. Lusa 19:13 corroborates."
   }
  ],
  "open": [

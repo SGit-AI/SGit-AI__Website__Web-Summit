@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T02:34Z",
+ "updated": "2026-11-11T02:42Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -399,7 +399,8 @@
    "effect_to_utc": null,
    "effect_note": "hours not stated",
    "state": null,
-   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
+   "note": " 02:42Z: not verifiable at source: IPMA's communiqués page and RSS now carry only no. 2 (valid from 17:07 on 10 Nov), so no. 1's own publish time cannot be read; 13:17 is weather@'s reading of the page on 10 Nov. AEMET posted \"Nombrada la borrasca Charles\" on Bluesky at 2026-11-09T10:20:11Z (aemet-names-charles). IPMA's communiqué no. 2 says \"CHARLES é o nome atribuído pelo Instituto Português do Mar e da Atmosfera\". Whether IPMA's naming was public before 13:17 is not established."
   },
   {
    "id": "anepc-aviso-21",
@@ -688,10 +689,11 @@
    "read": "2026-11-10T18:58Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": null,
-   "effect_to_utc": null,
-   "effect_note": "hours not stated: \"encontra-se reduzida\" (in force from the announcement, 14:48 Tuesday); end not stated",
+   "effect_to_utc": "2026-11-10T22:29Z",
+   "effect_note": "in force from the announcement (14:48 Tuesday); lifted by 22:29 per Lusa (bridges-lifted)",
    "state": "limited",
-   "state_note": null
+   "state_note": null,
+   "note": " Not a conflict but a sequence: Lusa at 22:29 reports the restrictions lifted (bridges-lifted)."
   },
   {
    "id": "metro-runs",
@@ -1520,6 +1522,71 @@
    "state": "limited",
    "state_note": "precautions; no bar closure",
    "note": "Signed 2026-11-09T14:07:38Z (PDF signature; created 14:05:49). PDF sha256 ce7849c00de2087c… (first 16 hex). It predates the red and orange warnings of 10 Nov; no later notice (no. 54 or after) found yet. A lead from leads.json."
+  },
+  {
+   "id": "bridges-lifted",
+   "by": "lusoponte",
+   "to": [],
+   "decision": "Traffic without restrictions again on the Vasco da Gama and 25 de Abril bridges (\"Circulação já sem restrições\")",
+   "at": "2026-11-10T22:29Z",
+   "status": "happened",
+   "follows": [
+    "bridges-60"
+   ],
+   "label": "evidence",
+   "source": "https://www.lusa.pt/article/48105410",
+   "read": "2026-11-11T02:42Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "also": [
+    "https://bsky.app/profile/lusa.pt/post/3mzyiilo7ik2a"
+   ],
+   "effect_from_utc": "2026-11-10T22:29Z",
+   "effect_to_utc": null,
+   "effect_note": "hours not stated beyond the report time; whether a limit returns on Wednesday is not stated",
+   "state": "running",
+   "state_note": "as of 22:29 Tuesday",
+   "note": "Lusa headline (article dated 10-11-2026 22:29; full text for subscribers only); Lusa's Bluesky post 22:29:36. Lusoponte's own site still unreachable (lusoponte.pt, no connection); Infraestruturas de Portugal not checked. Who lifted it is not stated in what we read: Lusoponte as the bridges' operator is assumed by the edge's \"by\", not read."
+  },
+  {
+   "id": "aemet-names-charles",
+   "by": "aemet",
+   "to": [],
+   "decision": "\"Nombrada la borrasca Charles\": a storm of subtropical origin, very adverse rain, wind and sea on Wednesday and, less, Thursday; a special warning to follow",
+   "at": "2026-11-09T10:20Z",
+   "status": "happened",
+   "follows": [],
+   "label": "fact",
+   "source": "https://bsky.app/profile/aemet.es/post/3mzupbdp5422l",
+   "read": "2026-11-11T02:42Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names Wednesday and Thursday",
+   "state": null,
+   "state_note": "a warning, not a service decision",
+   "note": "AEMET's own Bluesky account; createdAt 2026-11-09T10:20:11.685Z (read through the public API). 2 h 57 min before 13:17, the time we hold for IPMA's communiqué no. 1."
+  },
+  {
+   "id": "srpc-madeira-measures",
+   "by": "madeira-prociv",
+   "to": [],
+   "decision": "\"Situação meteorológica adversa — Depressão Charles: medidas preventivas\"; the page lists the warnings in force by area (e.g. north coast: rain 21:00 Tue to 06:00 Wed, then 06:00 to 09:00; wind 21:00 Tue to 12:00 Wed; sea 09:00 to 21:00 Wed; south coast rain 21:00 to 06:00)",
+   "at": "2026-11-10T15:27Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "fact",
+   "source": "https://www.procivmadeira.pt/pt/10-noticias/2158-situacao-meteorologica-adversa-depressao-charles-medidas-preventivas.html",
+   "read": "2026-11-11T02:42Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-10T21:00Z",
+   "effect_to_utc": "2026-11-11T21:00Z",
+   "effect_note": "the span of the warnings the page lists (by area and type); levels by area are on the page",
+   "state": "limited",
+   "state_note": "preventive measures",
+   "region": "Madeira",
+   "note": "SRPC's own page, dateCreated 2026-11-10T15:27:01Z (Madeira = UTC in November). No official count of occurrences on it; \"14 occurrences in the first hour of red\" is DNOTICIAS (press, 22:00)."
   }
  ],
  "lessons": [
