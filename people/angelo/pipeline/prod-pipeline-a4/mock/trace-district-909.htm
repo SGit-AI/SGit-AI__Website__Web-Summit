@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A4 sim: how /e/2026-11-11-district-909-back-where-it-all-started/ was made</title><link rel="stylesheet" href="flow.css">
+<!-- juliett.large.worker@PrompTugal.angelo, prod-pipeline-a4 (simulation, static, not live). A3's trace page (pool/prod-pipeline-a3, 8193766, mock/trace.htm) unchanged except its data:
+     the strip and the steps come from data/district-909.trace.json, built from the Fringe's git record only. -->
+</head><body><main>
+<h1>How this page was made</h1>
+<p class="dek">Every step behind /e/2026-11-11-district-909-back-where-it-all-started/ on the Tech Fringe, from the git record (an A4 simulation).</p>
+<section class="fs" data-flow="strip" aria-labelledby="fs-h-district-909">
+ <p class="fs-k">How this page was made</p>
+ <h2 class="fs-h" id="fs-h-district-909">From the organisers' page to the site in 2 min <span>· 1 person · 1 agent · 1 commit</span></h2>
+ <ol class="fs-line">
+  <li class="s-ask"><a href="#s-1"><span class="fs-d"></span><span data-flow-label>Asked</span><span class="fs-t">no time</span></a></li>
+  <li class="s-read"><a href="#s-2"><span class="fs-d"></span><span data-flow-label>Read</span><span class="fs-t">17:49</span></a></li>
+  <li class="lv3"><a href="#s-3"><span class="fs-d"></span><span data-flow-label>Entry</span><span class="fs-t">17:50</span></a></li>
+  <li class="s-live"><a href="#s-4"><span class="fs-d"></span><span data-flow-label>Live</span><span class="fs-t">v.422</span></a></li>
+  <li class="quiet lv4"><a href="#s-5"><span class="fs-d"></span><span data-flow-label>3 template</span><span class="fs-t">19:03</span></a></li>
+  <li class="s-now"><a href="#s-6"><span class="fs-d"></span><span data-flow-label>Now</span><span class="fs-t">19:12</span></a></li>
+ </ol>
+ <p class="fs-f"><a href="#fp-h">See every step</a> · from the git record · taken 19:18</p>
+</section>
+<section class="fp" data-flow="plot" aria-labelledby="fp-h">
+ <div class="fp-top"><h2 id="fp-h">6 steps, 5 lanes, 17:49 to 19:12</h2>
+  <div class="fp-btns"><button class="btn opt" type="button" aria-pressed="false" id="by">By agent</button><button class="btn opt" type="button" id="rp">&#9654; Replay</button><button class="btn" type="button" aria-expanded="false" aria-controls="sc" id="tg">Show the flow</button></div></div>
+ <ul class="ov" aria-label="Steps per lane; ringed marks are the strip's stations"></ul>
+ <div class="sc" id="sc" tabindex="0" aria-label="The flow, step by step; scrolls sideways"><div class="grid"></div></div>
+ <p class="fp-note">One mark per step; ringed in yellow: the strip's stations; dashed: no time in the record.</p>
+</section>
+</main>
+<script>
+const LANES=['People','Source','Research','Lead','Build','CI'];
+const S=[[1,0,"17:49","human",1],[2,1,"17:49","source-read",0],[3,2,"17:50","agent",0],[4,5,"17:50","deploy",1],[5,4,"19:03","agent",0],[6,5,"19:12","deploy",0]];
+const STN=new Set([1,2,3,4,5,6]);
+const min=(t)=>+t.slice(0,2)*60+ +t.slice(3), t0=min(S[0][2]), t1=min(S[S.length-1][2]);
+const sec=document.querySelector('.fp'), ov=sec.querySelector('.ov'), grid=sec.querySelector('.grid'), tg=document.getElementById('tg');
+ov.innerHTML=LANES.map((l,i)=>{const st=S.filter(s=>s[1]===i);return '<li class="k'+i+'"><span data-flow-label>'+l+'</span><span class="bar" aria-hidden="true">'+st.map(s=>'<i class="'+(STN.has(s[0])?'st':'')+'" style="left:'+((min(s[2])-t0)/(t1-t0)*100).toFixed(1)+'%"></i>').join('')+'</span><span class="n">'+st.length+'</span></li>'}).join('');
+let last=-9, prev=null; const ax=S.map((s,c)=>{const m=min(s[2]), gap=prev!==null&&m-prev>5; const show=(gap||m!==prev)&&c-last>=3; prev=m; if(!show) return '<span class="cell"></span>'; last=c; return '<span class="cell'+(gap?' gap':'')+'"><span data-flow-label>'+s[2]+'</span></span>'});
+grid.innerHTML='<div class="ax"><span class="ln"></span>'+ax.join('')+'</div>'+LANES.map((l,i)=>'<div class="row k'+i+'"><span class="ln" data-flow-label>'+l+'</span>'+S.map((s,c)=>'<span class="cell">'+(s[1]===i?'<a id="s-'+s[0]+'" href="#s-'+s[0]+'" style="--i:'+c+'" class="'+(s[4]?'u ':'')+(s[3]==='ci'?'ci ':s[3]==='deploy'?'dep ':'')+(STN.has(s[0])?'st':'')+'" aria-label="'+s[2]+' UTC, '+s[3]+', step '+s[0]+(STN.has(s[0])?', a station on the strip':'')+'"></a>':'')+'</span>').join('')+'</div>').join('');
+const set=(o)=>{sec.classList.toggle('open',o);tg.setAttribute('aria-expanded',o);tg.textContent=o?'Overview':'Show the flow'};
+tg.addEventListener('click',()=>set(!sec.classList.contains('open')));
+document.getElementById('by').addEventListener('click',(e)=>e.target.setAttribute('aria-pressed',e.target.getAttribute('aria-pressed')!=='true'));
+document.getElementById('rp').addEventListener('click',()=>{grid.classList.remove('replay');void grid.offsetWidth;grid.classList.add('replay')});
+if(location.hash==='#open'||/^#s-/.test(location.hash)) set(true);
+</script></body></html>

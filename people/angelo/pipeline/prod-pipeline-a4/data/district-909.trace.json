@@ -1,0 +1,151 @@
+{
+ "about": "How /e/2026-11-11-district-909-back-where-it-all-started/ on the Tech Fringe was made: every step the Fringe's git record shows, a simulation input for prod-pipeline-a4, not the Fringe's own trace",
+ "event_id": "2026-11-11-district-909-back-where-it-all-started",
+ "page": "https://lisbontechfringe.com/e/2026-11-11-district-909-back-where-it-all-started/",
+ "page_kind": "event page, one research pass",
+ "page_source": "data/events.json (one entry)",
+ "built_by": "the Tech Fringe swarm (PrompTugal/PrompTugal__News__Fringe)",
+ "traced_by": "juliett.large.worker@PrompTugal.angelo (prod-pipeline-a4, design)",
+ "traced_at": "2026-11-11T19:18:41Z",
+ "repo_head": "4508879",
+ "generator": "prod-pipeline-a4 gen.py: read-only git log, show and tag on a clone of the Fringe dev branch; no Fringe code run",
+ "shape": "lisbon-fringe-trace/1 plus A3's optional fields (stations, lane, folded, version)",
+ "privacy": "no private person named; the person who passed a link is \"a team member\"; session ids are the public trailers",
+ "item": "prod-pipeline-a4",
+ "headline": "From the organisers' page to the site in 2 min",
+ "headline_sub": "1 person · 1 agent · 1 commit",
+ "stations": [
+  {
+   "n": 1,
+   "lvl": 1,
+   "label": "Asked"
+  },
+  {
+   "n": 2,
+   "lvl": 1,
+   "label": "Read"
+  },
+  {
+   "n": 3,
+   "lvl": 3,
+   "label": "Entry"
+  },
+  {
+   "n": 4,
+   "lvl": 1,
+   "label": "Live"
+  },
+  {
+   "n": 5,
+   "lvl": 4,
+   "label": "3 template"
+  },
+  {
+   "n": 6,
+   "lvl": 1,
+   "label": "Now"
+  }
+ ],
+ "steps": [
+  {
+   "t": "unknown",
+   "before": "2026-11-11T17:49:00Z",
+   "kind": "human",
+   "who": "a team member",
+   "what": "passed on the organisers' Luma link",
+   "evidence": [
+    "b096ccb (commit body: \"From the link ... passed on\")"
+   ],
+   "label": "fact",
+   "lane": "People",
+   "n": 1
+  },
+  {
+   "t": "2026-11-11T17:49:00Z",
+   "kind": "source-read",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "read the organisers' Luma page once (read_at)",
+   "evidence": [
+    "https://luma.com/cgkr0awt",
+    "data/events.json read_at at b096ccb"
+   ],
+   "label": "fact",
+   "lane": "Source",
+   "n": 2
+  },
+  {
+   "t": "2026-11-11T17:50:43Z",
+   "kind": "agent",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "session": "session_01CqQLDA9LBMzBQKGsJmLFUS",
+   "model": "Fable 5.2",
+   "what": "added the entry: 22:00 to 05:30, Rive Rouge, EUR 10",
+   "evidence": [
+    "b096ccb"
+   ],
+   "work_item": null,
+   "label": "fact",
+   "on_dev": "b096ccb",
+   "published_by": "v0.1.422",
+   "lane": "Research",
+   "committed": "2026-11-11T17:50:44Z",
+   "n": 3
+  },
+  {
+   "t": "unknown",
+   "after": "2026-11-11T17:50:49Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "live as v0.1.422 (the first version tag holding b096ccb)",
+   "evidence": [
+    "tag v0.1.422 at c702d08"
+   ],
+   "label": "fact",
+   "lane": "CI",
+   "version": "v0.1.422",
+   "n": 4
+  },
+  {
+   "t": "2026-11-11T19:03:19Z",
+   "kind": "agent",
+   "who": "several (the site template)",
+   "what": "the shared template of this page changed 3 times since (event-pages.mjs, build.mjs, cards.mjs, identity.mjs, ...)",
+   "evidence": [
+    "f2c1ed0..b6303b1"
+   ],
+   "label": "fact",
+   "lane": "Build",
+   "folded": 3,
+   "first": "2026-11-11T17:53:18Z",
+   "n": 5
+  },
+  {
+   "t": "2026-11-11T19:12:37Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "the newest version in the record: v0.1.489",
+   "evidence": [
+    "tag v0.1.489 at df341b5"
+   ],
+   "label": "fact",
+   "lane": "CI",
+   "version": "v0.1.489",
+   "n": 6
+  }
+ ],
+ "gaps": [
+  "deploy times: git holds the version tag, not the deploy run's end; GitHub's run list was not read (out of this step's reach), so each deploy step has t unknown and the time of the tagged commit as 'after'",
+  "the page's template changes are folded into one step (folded: N); each is a commit to a shared build file, not to this page",
+  "the person's ask has no time in the record; 'before' is the first commit that names it",
+  "sub-agents behind any commit: none named in the trailers; not visible to git"
+ ],
+ "totals": {
+  "steps": 6,
+  "steps_unfolded": 8,
+  "agents": 1,
+  "people": 1,
+  "commits": 1,
+  "first": "2026-11-11T17:49:00Z",
+  "last": "2026-11-11T19:12:37Z"
+ }
+}

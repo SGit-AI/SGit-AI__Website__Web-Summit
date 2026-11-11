@@ -1,0 +1,177 @@
+{
+ "about": "How /me/ on the Tech Fringe was made: every step the Fringe's git record shows, a simulation input for prod-pipeline-a4, not the Fringe's own trace",
+ "event_id": null,
+ "page": "https://lisbontechfringe.com/me/",
+ "page_kind": "small static page, one build",
+ "page_source": "admin/build/me.mjs",
+ "built_by": "the Tech Fringe swarm (PrompTugal/PrompTugal__News__Fringe)",
+ "traced_by": "juliett.large.worker@PrompTugal.angelo (prod-pipeline-a4, design)",
+ "traced_at": "2026-11-11T19:18:41Z",
+ "repo_head": "4508879",
+ "generator": "prod-pipeline-a4 gen.py: read-only git log, show and tag on a clone of the Fringe dev branch; no Fringe code run",
+ "shape": "lisbon-fringe-trace/1 plus A3's optional fields (stations, lane, folded, version)",
+ "privacy": "no private person named; the person who passed a link is \"a team member\"; session ids are the public trailers",
+ "item": "prod-pipeline-a4",
+ "headline": "From Dinis's brief to live in 12 min",
+ "headline_sub": "1 person · 2 agents · 3 commits",
+ "stations": [
+  {
+   "n": 1,
+   "lvl": 1,
+   "label": "Dinis"
+  },
+  {
+   "n": 2,
+   "lvl": 1,
+   "label": "Task"
+  },
+  {
+   "n": 3,
+   "lvl": 1,
+   "label": "Built"
+  },
+  {
+   "n": 4,
+   "lvl": 1,
+   "label": "Live"
+  },
+  {
+   "n": 5,
+   "lvl": 4,
+   "label": "Checked"
+  },
+  {
+   "n": 6,
+   "lvl": 4,
+   "label": "50 template"
+  },
+  {
+   "n": 7,
+   "lvl": 2,
+   "label": "Now"
+  }
+ ],
+ "steps": [
+  {
+   "t": "2026-11-11T11:50:00Z",
+   "kind": "human",
+   "who": "Dinis",
+   "what": "brief 4, \"full throttle\": \"Give me a key that I can then put on the website ...\"",
+   "evidence": [
+    "briefs/2026-11-11-1150-full-throttle.md (received:)",
+    "work/26-dinis-key-and-talk.md"
+   ],
+   "label": "fact",
+   "lane": "People",
+   "n": 1
+  },
+  {
+   "t": "2026-11-11T11:51:39Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwCFpT9ihNBcQFxkomq",
+   "model": "Opus 5.5",
+   "what": "wrote work/26, the task for /me/",
+   "evidence": [
+    "467db90"
+   ],
+   "work_item": "work/26",
+   "label": "fact",
+   "on_dev": "467db90",
+   "published_by": "v0.1.33",
+   "lane": "Lead",
+   "n": 2
+  },
+  {
+   "t": "2026-11-11T11:58:38Z",
+   "kind": "agent",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+   "model": "Sonnet 5.5",
+   "what": "built /me/: a key and a passkey in the browser",
+   "evidence": [
+    "88d0003"
+   ],
+   "work_item": "work/26",
+   "label": "fact",
+   "on_dev": "88d0003",
+   "published_by": "v0.1.65",
+   "lane": "Build",
+   "committed": "2026-11-11T11:58:39Z",
+   "n": 3
+  },
+  {
+   "t": "unknown",
+   "after": "2026-11-11T12:02:25Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "live as v0.1.65 (the first version tag holding 88d0003)",
+   "evidence": [
+    "tag v0.1.65 at 2f42a7a"
+   ],
+   "label": "fact",
+   "lane": "CI",
+   "version": "v0.1.65",
+   "n": 4
+  },
+  {
+   "t": "2026-11-11T12:03:08Z",
+   "kind": "agent",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+   "model": "Sonnet 5.5",
+   "what": "work/26 marked done, pending a live check",
+   "evidence": [
+    "0aa5ca4"
+   ],
+   "work_item": "work/26",
+   "label": "fact",
+   "on_dev": "0aa5ca4",
+   "published_by": "v0.1.69",
+   "lane": "Build",
+   "committed": "2026-11-11T12:03:09Z",
+   "n": 5
+  },
+  {
+   "t": "2026-11-11T19:03:19Z",
+   "kind": "agent",
+   "who": "several (the site template)",
+   "what": "the shared template of this page changed 50 times since (build.mjs, tokens.css, identity.mjs, ...)",
+   "evidence": [
+    "132fccf..b6303b1"
+   ],
+   "label": "fact",
+   "lane": "Build",
+   "folded": 50,
+   "first": "2026-11-11T11:58:38Z",
+   "n": 6
+  },
+  {
+   "t": "2026-11-11T19:12:37Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "the newest version in the record: v0.1.489",
+   "evidence": [
+    "tag v0.1.489 at df341b5"
+   ],
+   "label": "fact",
+   "lane": "CI",
+   "version": "v0.1.489",
+   "n": 7
+  }
+ ],
+ "gaps": [
+  "deploy times: git holds the version tag, not the deploy run's end; GitHub's run list was not read (out of this step's reach), so each deploy step has t unknown and the time of the tagged commit as 'after'",
+  "the page's template changes are folded into one step (folded: N); each is a commit to a shared build file, not to this page",
+  "sub-agents behind any commit: none named in the trailers; not visible to git"
+ ],
+ "totals": {
+  "steps": 7,
+  "steps_unfolded": 56,
+  "agents": 2,
+  "people": 1,
+  "commits": 3,
+  "first": "2026-11-11T11:50:00Z",
+  "last": "2026-11-11T19:12:37Z"
+ }
+}

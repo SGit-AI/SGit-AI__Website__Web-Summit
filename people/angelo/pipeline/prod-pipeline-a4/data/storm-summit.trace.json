@@ -1,0 +1,174 @@
+{
+ "about": "How /e/2026-11-11-storm-summit-stormsummit-app/ on the Tech Fringe was made: every step the Fringe's git record shows, a simulation input for prod-pipeline-a4, not the Fringe's own trace",
+ "event_id": "2026-11-11-storm-summit-stormsummit-app",
+ "page": "https://lisbontechfringe.com/e/2026-11-11-storm-summit-stormsummit-app/",
+ "page_kind": "event page, one research pass and one field pass",
+ "page_source": "data/events.json (one entry)",
+ "built_by": "the Tech Fringe swarm (PrompTugal/PrompTugal__News__Fringe)",
+ "traced_by": "juliett.large.worker@PrompTugal.angelo (prod-pipeline-a4, design)",
+ "traced_at": "2026-11-11T19:18:41Z",
+ "repo_head": "4508879",
+ "generator": "prod-pipeline-a4 gen.py: read-only git log, show and tag on a clone of the Fringe dev branch; no Fringe code run",
+ "shape": "lisbon-fringe-trace/1 plus A3's optional fields (stations, lane, folded, version)",
+ "privacy": "no private person named; the person who passed a link is \"a team member\"; session ids are the public trailers",
+ "item": "prod-pipeline-a4",
+ "headline": "From the organiser's page to the site in 1 min",
+ "headline_sub": "1 agent · 2 commits · no ask in the record",
+ "stations": [
+  {
+   "n": 1,
+   "lvl": 1,
+   "label": "Read"
+  },
+  {
+   "n": 2,
+   "lvl": 3,
+   "label": "Entry"
+  },
+  {
+   "n": 3,
+   "lvl": 1,
+   "label": "Live"
+  },
+  {
+   "n": 4,
+   "lvl": 2,
+   "label": "Fields"
+  },
+  {
+   "n": 5,
+   "lvl": 4,
+   "label": "Live"
+  },
+  {
+   "n": 6,
+   "lvl": 4,
+   "label": "26 template"
+  },
+  {
+   "n": 7,
+   "lvl": 1,
+   "label": "Now"
+  }
+ ],
+ "steps": [
+  {
+   "t": "2026-11-11T13:37:00Z",
+   "kind": "source-read",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "read the organiser's public page (read_at)",
+   "evidence": [
+    "https://stormsummit.app/",
+    "data/events.json read_at at 0f23d54"
+   ],
+   "label": "fact",
+   "lane": "Source",
+   "n": 1
+  },
+  {
+   "t": "2026-11-11T13:37:28Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Sonnet 5.5",
+   "what": "added the entry: online, Wed 11 Nov 08:30",
+   "evidence": [
+    "0f23d54"
+   ],
+   "work_item": null,
+   "label": "fact",
+   "on_dev": "0f23d54",
+   "published_by": "v0.1.200",
+   "lane": "Research",
+   "n": 2
+  },
+  {
+   "t": "unknown",
+   "after": "2026-11-11T13:38:06Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "live as v0.1.200 (the first version tag holding 0f23d54)",
+   "evidence": [
+    "tag v0.1.200 at 2d0a671"
+   ],
+   "label": "fact",
+   "lane": "CI",
+   "version": "v0.1.200",
+   "n": 3
+  },
+  {
+   "t": "2026-11-11T14:01:21Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Sonnet 5.5",
+   "what": "work/44: cost, in_lisbon and personas set on every event, this one included",
+   "evidence": [
+    "aefea2d"
+   ],
+   "work_item": "work/44",
+   "label": "fact",
+   "on_dev": "aefea2d",
+   "published_by": "v0.1.227",
+   "lane": "Research",
+   "committed": "2026-11-11T14:01:22Z",
+   "n": 4
+  },
+  {
+   "t": "unknown",
+   "after": "2026-11-11T14:01:41Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "live as v0.1.227 (the first version tag holding aefea2d)",
+   "evidence": [
+    "tag v0.1.227 at 870502c"
+   ],
+   "label": "fact",
+   "lane": "CI",
+   "version": "v0.1.227",
+   "n": 5
+  },
+  {
+   "t": "2026-11-11T19:03:19Z",
+   "kind": "agent",
+   "who": "several (the site template)",
+   "what": "the shared template of this page changed 26 times since (event-pages.mjs, build.mjs, cards.mjs, identity.mjs, ...)",
+   "evidence": [
+    "191bd96..b6303b1"
+   ],
+   "label": "fact",
+   "lane": "Build",
+   "folded": 26,
+   "first": "2026-11-11T13:39:10Z",
+   "n": 6
+  },
+  {
+   "t": "2026-11-11T19:12:37Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "the newest version in the record: v0.1.489",
+   "evidence": [
+    "tag v0.1.489 at df341b5"
+   ],
+   "label": "fact",
+   "lane": "CI",
+   "version": "v0.1.489",
+   "n": 7
+  }
+ ],
+ "gaps": [
+  "deploy times: git holds the version tag, not the deploy run's end; GitHub's run list was not read (out of this step's reach), so each deploy step has t unknown and the time of the tagged commit as 'after'",
+  "the page's template changes are folded into one step (folded: N); each is a commit to a shared build file, not to this page",
+  "no ask in the record: the researcher found the event on its own wake; nothing names who asked",
+  "sub-agents behind any commit: none named in the trailers; not visible to git"
+ ],
+ "totals": {
+  "steps": 7,
+  "steps_unfolded": 32,
+  "agents": 1,
+  "people": 0,
+  "commits": 2,
+  "first": "2026-11-11T13:37:00Z",
+  "last": "2026-11-11T19:12:37Z"
+ }
+}

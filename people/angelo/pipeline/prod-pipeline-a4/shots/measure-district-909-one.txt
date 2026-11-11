@@ -1,0 +1,11 @@
+a2 measure: sim/district-909-one.html
+| viewport | part | share | 1st screen | min text | min tap (<44) | overlaps | clipped | inner scroll | page scroll | result |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 320x640 | strip | 0.25 | 0 | 13 | 44 (0/1) | 0 | 0 | no | no | ok |
+| 360x760 | strip | 0.21 | 0 | 13 | 44 (0/1) | 0 | 0 | no | no | ok |
+| 390x844 | strip | 0.19 | 0 | 13 | 44 (0/1) | 0 | 0 | no | no | ok |
+| 430x932 | strip | 0.15 | 0 | 13 | 44 (0/1) | 0 | 0 | no | no | ok |
+| 740x360 | strip | 0.27 | 0 | 13 | 44 (0/1) | 0 | 0 | no | no | ok |
+| 768x1024 | strip | 0.12 | 0 | 12 | 44 (0/1) | 0 | 0 | no | no | ok |
+| 1280x800 | strip | 0.16 | 0 | 12 | 44 (0/1) | 0 | 0 | no | no | ok |
+OK: 7 measurements within the limits

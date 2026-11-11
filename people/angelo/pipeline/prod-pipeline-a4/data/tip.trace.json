@@ -1,0 +1,234 @@
+{
+ "about": "How /tip/ on the Tech Fringe was made: every step the Fringe's git record shows, a simulation input for prod-pipeline-a4, not the Fringe's own trace",
+ "event_id": null,
+ "page": "https://lisbontechfringe.com/tip/",
+ "page_kind": "small static page, three changes",
+ "page_source": "admin/build/tip.mjs",
+ "built_by": "the Tech Fringe swarm (PrompTugal/PrompTugal__News__Fringe)",
+ "traced_by": "juliett.large.worker@PrompTugal.angelo (prod-pipeline-a4, design)",
+ "traced_at": "2026-11-11T19:18:41Z",
+ "repo_head": "4508879",
+ "generator": "prod-pipeline-a4 gen.py: read-only git log, show and tag on a clone of the Fringe dev branch; no Fringe code run",
+ "shape": "lisbon-fringe-trace/1 plus A3's optional fields (stations, lane, folded, version)",
+ "privacy": "no private person named; the person who passed a link is \"a team member\"; session ids are the public trailers",
+ "item": "prod-pipeline-a4",
+ "headline": "From the task to live in 3 min",
+ "headline_sub": "1 person · 3 agents · 4 commits",
+ "stations": [
+  {
+   "n": 1,
+   "lvl": 1,
+   "label": "Dinis"
+  },
+  {
+   "n": 2,
+   "lvl": 1,
+   "label": "Task"
+  },
+  {
+   "n": 3,
+   "lvl": 1,
+   "label": "Built"
+  },
+  {
+   "n": 4,
+   "lvl": 1,
+   "label": "Live"
+  },
+  {
+   "n": 5,
+   "lvl": 4,
+   "label": "Intel box"
+  },
+  {
+   "n": 7,
+   "lvl": 3,
+   "label": "Tell us"
+  },
+  {
+   "n": 8,
+   "lvl": 4,
+   "label": "Live"
+  },
+  {
+   "n": 9,
+   "lvl": 4,
+   "label": "21 template"
+  },
+  {
+   "n": 10,
+   "lvl": 2,
+   "label": "Now"
+  }
+ ],
+ "steps": [
+  {
+   "t": "unknown",
+   "before": "2026-11-11T13:36:52Z",
+   "kind": "human",
+   "who": "Dinis",
+   "what": "asked for a tip box (the task names \"Dinis, 13:36 UTC\")",
+   "evidence": [
+    "064a9a1 (subject)"
+   ],
+   "label": "fact",
+   "lane": "People",
+   "n": 1
+  },
+  {
+   "t": "2026-11-11T13:36:52Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwCFpT9ihNBcQFxkomq",
+   "model": "Opus 5.5",
+   "what": "wrote work/41, the task for /tip/",
+   "evidence": [
+    "064a9a1"
+   ],
+   "work_item": "work/41",
+   "label": "fact",
+   "on_dev": "064a9a1",
+   "published_by": "v0.1.197",
+   "lane": "Lead",
+   "n": 2
+  },
+  {
+   "t": "2026-11-11T13:39:10Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Sonnet 5.5",
+   "what": "built /tip/: a sealed paste box and a status API",
+   "evidence": [
+    "191bd96"
+   ],
+   "work_item": "work/41",
+   "label": "fact",
+   "on_dev": "191bd96",
+   "published_by": "v0.1.201",
+   "lane": "Build",
+   "committed": "2026-11-11T13:39:11Z",
+   "n": 3
+  },
+  {
+   "t": "unknown",
+   "after": "2026-11-11T13:39:11Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "live as v0.1.201 (the first version tag holding 191bd96)",
+   "evidence": [
+    "tag v0.1.201 at 191bd96"
+   ],
+   "label": "fact",
+   "lane": "CI",
+   "version": "v0.1.201",
+   "n": 4
+  },
+  {
+   "t": "2026-11-11T14:01:30Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Sonnet 5.5",
+   "what": "work/46: the give-us-the-intel box links here",
+   "evidence": [
+    "00a6e45"
+   ],
+   "work_item": "work/46",
+   "label": "fact",
+   "on_dev": "00a6e45",
+   "published_by": "v0.1.227",
+   "lane": "Build",
+   "committed": "2026-11-11T14:01:31Z",
+   "n": 5
+  },
+  {
+   "t": "unknown",
+   "after": "2026-11-11T14:01:41Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "live as v0.1.227 (the first version tag holding 00a6e45)",
+   "evidence": [
+    "tag v0.1.227 at 870502c"
+   ],
+   "label": "fact",
+   "lane": "CI",
+   "version": "v0.1.227",
+   "n": 6
+  },
+  {
+   "t": "2026-11-11T14:55:08Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Sonnet 5.5",
+   "what": "D36: a \"Tell us\" link on every event page, prefilled here",
+   "evidence": [
+    "1608aef"
+   ],
+   "work_item": "D36",
+   "label": "fact",
+   "on_dev": "1608aef",
+   "published_by": "v0.1.291",
+   "lane": "Build",
+   "committed": "2026-11-11T14:55:10Z",
+   "n": 7
+  },
+  {
+   "t": "unknown",
+   "after": "2026-11-11T14:55:10Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "live as v0.1.291 (the first version tag holding 1608aef)",
+   "evidence": [
+    "tag v0.1.291 at 1608aef"
+   ],
+   "label": "fact",
+   "lane": "CI",
+   "version": "v0.1.291",
+   "n": 8
+  },
+  {
+   "t": "2026-11-11T19:03:19Z",
+   "kind": "agent",
+   "who": "several (the site template)",
+   "what": "the shared template of this page changed 21 times since (build.mjs, tokens.css, identity.mjs, ...)",
+   "evidence": [
+    "08183a1..b6303b1"
+   ],
+   "label": "fact",
+   "lane": "Build",
+   "folded": 21,
+   "first": "2026-11-11T13:44:07Z",
+   "n": 9
+  },
+  {
+   "t": "2026-11-11T19:12:37Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "the newest version in the record: v0.1.489",
+   "evidence": [
+    "tag v0.1.489 at df341b5"
+   ],
+   "label": "fact",
+   "lane": "CI",
+   "version": "v0.1.489",
+   "n": 10
+  }
+ ],
+ "gaps": [
+  "deploy times: git holds the version tag, not the deploy run's end; GitHub's run list was not read (out of this step's reach), so each deploy step has t unknown and the time of the tagged commit as 'after'",
+  "the page's template changes are folded into one step (folded: N); each is a commit to a shared build file, not to this page",
+  "the person's ask has no time in the record; 'before' is the first commit that names it",
+  "sub-agents behind any commit: none named in the trailers; not visible to git"
+ ],
+ "totals": {
+  "steps": 10,
+  "steps_unfolded": 30,
+  "agents": 3,
+  "people": 1,
+  "commits": 4,
+  "first": "2026-11-11T13:36:52Z",
+  "last": "2026-11-11T19:12:37Z"
+ }
+}
