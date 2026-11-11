@@ -18,6 +18,7 @@ One input, one output, minutes to an hour.
 A person's voice to something you can show, in hours.
 
 - **[A voice brief at 02:40 to the 09:00 deck](medium-voice-brief-to-deck/index.html).** Dinis records THE RESTART in the night. The site's conductor writes it as a board issue for every team and builds a deck from screenshots of the live sites: live 1 hour 29 minutes later, refreshed with the night's work by 08:20. One person, one agent, two releases.
+- **[A one-word yes to a published GAMMA-Ray scan of 13 agents](medium-yes-to-gamma-ray-scan/index.html).** Jose's team. Jose asks what GAMMA-Ray is and says "Do it"; his conductor, a scan sub-agent and a reviewer agent do the rest, and the scan is live about 47 minutes after the question. Three of his four acts were said in chat and left no commit.
 - **[A voice brief to a newsroom workflow](pt-news-newsroom-workflow/index.html).** Dinis and Indi say pt.news should be the place to learn about agents. Two conductors route it; a helper agent writes a 16-step newsroom workflow and tests its infographic on a stranger. Live 2 hours 20 minutes later. Two people, three agents.
 - **A video to an interview, live.** An interview recorded at the summit becomes a piece on [pt.news](https://promptugal.news/newsroom/interviews/), Indi's team's pipeline. *Waiting for the trace.*
 

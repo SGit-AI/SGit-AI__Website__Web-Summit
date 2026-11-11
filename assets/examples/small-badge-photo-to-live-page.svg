@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1406 568" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
 <rect width="1406" height="568" fill="#faf9f5"/>
 <text x="30" y="44" font-size="26" font-weight="700" fill="#141413">A picture: two badge photos to a live page, in minutes</text>
-<text x="30" y="74" font-size="15" fill="#5e5d59">Dinis photographs two badges and speaks; the conductor files two private leads and writes the map; CI puts /the-individual/ live as v0.2.1</text>
+<text x="30" y="74" font-size="15" fill="#5e5d59">Dinis photographs two badges and speaks; the conductor files two private leads and writes the map; CI puts /the-individual/ live as v0.2.1686</text>
 <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#5e5d59"/></marker></defs>
 <rect x="20" y="112" width="1366" height="84" rx="10" fill="#8a3b1f" fill-opacity="0.10"/>
 <text x="34" y="150" font-size="14" font-weight="700" fill="#8a3b1f">Dinis</text>
@@ -41,7 +41,7 @@
 <text x="732" y="268" font-size="12.5" fill="#141413">commit 8c20e10</text>
 <text x="795.0" y="502" font-size="12" fill="#5e5d59" text-anchor="middle">12:02</text>
 <rect x="890" y="304" width="146" height="68" rx="8" fill="#ffffff" stroke="#5e5d59" stroke-width="1.6"/>
-<text x="900" y="326" font-size="12.5" fill="#141413">v0.2.1 built,</text>
+<text x="900" y="326" font-size="12.5" fill="#141413">v0.2.1686 built,</text>
 <text x="900" y="343" font-size="12.5" fill="#141413">gated, deployed</text>
 <text x="963.0" y="502" font-size="12" fill="#5e5d59" text-anchor="middle">12:04</text>
 <rect x="1058" y="212" width="146" height="68" rx="8" fill="#ffffff" stroke="#1f5f8b" stroke-width="1.6" stroke-dasharray="5 4"/>

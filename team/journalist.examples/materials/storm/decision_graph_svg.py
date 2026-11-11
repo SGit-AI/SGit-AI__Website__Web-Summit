@@ -74,5 +74,5 @@ o.append(f'<text x="30" y="{H-46}" font-size="12.5" fill="#141413"><tspan font-w
 o.append(f'<text x="30" y="{H-28}" font-size="12" fill="#5e5d59">Solid: a source says this follows that. Dashed: analysis, not a sourced fact. Hollow: nothing announced yet, or a source our tools cannot read. Bar: happened, time not known.</text>')
 o.append(f'<text x="30" y="{H-10}" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from decision-graph.json, built on weather@PrompTugal.vicky\'s live.md and decision-chain.md and decision-graph.json (PrompTugal__News__Website, eca7b396 and 358fa21b).</text>')
 o.append('</svg>')
-open(f'{HERE}/decision-graph.svg', 'w').write(re.sub(r'(\d+\.\d)\d{3,}', r'\1', '\n'.join(o)) + '\n')  # one decimal: no long digit runs
+open(f'{HERE}/decision-graph.svg', 'w').write(re.sub(r'(?<![\d.v])(\d+\.\d)\d{3,}(?![\d.])', r'\1', '\n'.join(o)) + '\n')  # coordinates to one decimal (never inside a version like v0.2.1733)
 print('decision-graph.svg')

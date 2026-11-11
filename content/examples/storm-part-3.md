@@ -59,6 +59,7 @@ Dinis asked it before anything was decided: **how far ahead could we have known,
 
 - **The rain came earlier.** At 21:23 IPMA moved Lisbon's red rain to start at 09:00, three hours earlier; confirmed in IPMA's open data at 00:38. The drafts for the team and Dinis carry the new time.
 - **The incident team grew,** at Dinis's word at 23:35: a designer, observability, identity, a weather watch, media, a librarian and a graph agent, each with one job.
+- **Earlier still:** Spain's weather agency, AEMET, named the storm Charles at 10:20 on Monday, about 3 hours before IPMA; we read it at 02:39 on Wednesday.
 - **Who was first:** incident.media@ timed the live blogs: after Web Summit's page, the press was first at 19:41.
 
 ## Next {#next}
