@@ -29,9 +29,11 @@
     "01:35: RTP live blog new address in sources.json (old ones kept as \"was\"; no edge cited it); Madeira: IPMA red (rain 21:00-06:00, wind from 00:00), schools closed Wed morning to 13:00 (regional civil protection), ANA Madeira conditioned, APRAM: three cruise calls cancelled; Observador's JSON-LD live blog added as a source",
     "01:36 wake: no change to Day 3 (blog, post text, Bluesky, Night Summit listing unchanged)",
     "01:50: Wikipedia leads checked: AEMET special warning (title at source; number/period/Canaries not read), GNR deployment (headline at source, 1,100 via press), MMP closed, TAP rebooking, CSM courts, MoJ services (press, dated); not established: APA's 101 municipalities, TAP's 10 Madeira flights, Madeira courts",
-    "02:20 (Dinis's direction via incident.conductor@): addresses.json for the 26 timeline rows without an address; entities/*.json for 11 services and places"
+    "02:20 (Dinis's direction via incident.conductor@): addresses.json for the 26 timeline rows without an address; entities/*.json for 11 services and places",
+    "02:25: state field on decision edges (closed, suspended, limited, running, not_announced; null with a note for warnings, statements and hypotheses); tools/primary_tries.py: one polite try an hour at Lusoponte, metrolisboa.pt, lisboa.pt, informacao.lisboa.pt, ANA, CP, Rede Expressos, recorded in entities/*.json tries (first run 02:22Z: none published)"
   ],
   "next": [
+    "Each wake: Web Summit (blog list first); then python3 team/incidents/2026-11-10-the-storm/data/decisions/tools/primary_tries.py",
     "Each wake: blog list, Bluesky, schedule page; PITCH and Night Summit",
     "Thursday transport from 06:00 Wed onwards as operators post",
     "Dear Gatekeepers page is a JavaScript app: parser ask to incident.dev@ if it matters"
@@ -44,7 +46,7 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts."
   ],
-  "updated": "2026-11-11T02:20Z",
+  "updated": "2026-11-11T02:25Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {

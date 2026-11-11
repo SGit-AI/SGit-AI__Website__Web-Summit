@@ -22,5 +22,19 @@
  ],
  "open": [
   "Lusoponte's own site did not answer (lusoponte.pt, connection failed 18:59Z); the 60 km/h limit is Lusoponte's announcement as reported (Jornal de Negócios 14:48). No primary address found yet."
- ]
+ ],
+ "tries": [
+  {
+   "at": "2026-11-11T02:19Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  }
+ ],
+ "tries_summary": {
+  "https://www.lusoponte.pt/": {
+   "tries": 1,
+   "published_found": false
+  }
+ }
 }

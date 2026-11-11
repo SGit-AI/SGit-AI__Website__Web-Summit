@@ -22,5 +22,29 @@
  ],
  "open": [
   "Announced by the mayor (press, 13:16); lisboa.pt refuses our reads (403): no primary address read."
- ]
+ ],
+ "tries": [
+  {
+   "at": "2026-11-11T02:19Z",
+   "url": "https://www.lisboa.pt/",
+   "http": 403,
+   "result": "not reached: HTTPError 403"
+  },
+  {
+   "at": "2026-11-11T02:19Z",
+   "url": "https://informacao.lisboa.pt/",
+   "http": 403,
+   "result": "not reached: HTTPError 403"
+  }
+ ],
+ "tries_summary": {
+  "https://informacao.lisboa.pt/": {
+   "tries": 1,
+   "published_found": false
+  },
+  "https://www.lisboa.pt/": {
+   "tries": 1,
+   "published_found": false
+  }
+ }
 }

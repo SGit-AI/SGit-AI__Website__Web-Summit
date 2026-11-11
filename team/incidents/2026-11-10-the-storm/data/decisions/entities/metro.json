@@ -54,5 +54,22 @@
  ],
  "open": [
   "No Metro notice on metrolisboa.pt about Wednesday's service (read 23:33Z); \"Metro runs\" is the mayor's word in the press."
- ]
+ ],
+ "tries": [
+  {
+   "at": "2026-11-11T02:19Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 333396,
+   "result": "answered; no notice found about Wednesday's service (the only storm item is the night-shelter banner)",
+   "excerpt": [],
+   "corrected": "a first pattern matched the cookie banner (\"funcionamento\"); corrected by hand at 02:24Z"
+  }
+ ],
+ "tries_summary": {
+  "https://www.metrolisboa.pt/": {
+   "tries": 1,
+   "published_found": false
+  }
+ }
 }

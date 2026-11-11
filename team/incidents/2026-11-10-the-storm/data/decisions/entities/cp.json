@@ -38,5 +38,21 @@
  ],
  "open": [
   "cp.pt is a JavaScript app; CP's statements read via Lusa only."
- ]
+ ],
+ "tries": [
+  {
+   "at": "2026-11-11T02:19Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  }
+ ],
+ "tries_summary": {
+  "https://www.cp.pt/": {
+   "tries": 1,
+   "published_found": false
+  }
+ }
 }

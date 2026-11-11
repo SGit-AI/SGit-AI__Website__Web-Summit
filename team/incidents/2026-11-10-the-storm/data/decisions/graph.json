@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T01:50Z",
+ "updated": "2026-11-11T02:25Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -387,7 +387,9 @@
    "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated"
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "anepc-aviso-21",
@@ -405,7 +407,9 @@
    "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated"
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "anepc-readiness",
@@ -426,7 +430,9 @@
    "note": "Colour of the readiness level not stated on the pages read.",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated"
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "gov-alert",
@@ -483,7 +489,9 @@
     "source_time": "the page prints \"2026-11-10 às 12h10\"; no other time on it",
     "read": "2026-11-11T01:00Z",
     "note": "The formal declaration with its measures (a) to (e). Observador carried \"Governo declara situação de alerta\" with the measures at 10:57:31, before the page time; whether the text was out earlier elsewhere (e.g. a press release) is not established."
-   }
+   },
+   "state": "limited",
+   "state_note": "the alert itself limits (measures a to e); schools: see schools-close"
   },
   {
    "id": "schools-close",
@@ -501,7 +509,9 @@
    "read_by": "weather@PrompTugal.vicky (desks/weather-vicky/, PrompTugal__News__Website)",
    "effect_from_utc": "2026-11-11T00:00Z",
    "effect_to_utc": "2026-11-11T23:59Z",
-   "effect_note": "measure (a) of the alert declaration, whose period is 00:00 to 23:59 on 11 Nov"
+   "effect_note": "measure (a) of the alert declaration, whose period is 00:00 to 23:59 on 11 Nov",
+   "state": "closed",
+   "state_note": null
   },
   {
    "id": "ipma-red-wind",
@@ -527,7 +537,9 @@
    "corroborated_by": [
     "https://www.dn.pt/sociedade/governo-decreta-situao-de-alerta-montenegro-avisa-que-devemos-passar-horas-difceis-amanh",
     "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/"
-   ]
+   ],
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "ipma-red-rain",
@@ -546,7 +558,9 @@
    "note": "Red rain first sent at 2026-11-10T16:30:01Z (CAP 2.49.0.0.620.0.PT.261110163001.PO-10-6273), 12:00 to 18:00; superseded by ipma-red-rain-0900. Via team/incidents/2026-11-10-the-storm/data/weather/cap.json (incident.meteorologist@, read 2026-11-11T00:23:21Z). Earlier this edge carried 17:42 (weather@'s first read).",
    "effect_from_utc": "2026-11-11T12:00Z",
    "effect_to_utc": "2026-11-11T18:00Z",
-   "effect_note": "IPMA warnings JSON as read 18:59Z; superseded by ipma-red-rain-0900"
+   "effect_note": "IPMA warnings JSON as read 18:59Z; superseded by ipma-red-rain-0900",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "ipma-communique-2",
@@ -564,7 +578,9 @@
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated"
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "websummit-assessing",
@@ -585,7 +601,9 @@
    "note": "Press report of an organiser statement; not found on websummit.com.",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated"
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "mayor-expects-closure",
@@ -606,7 +624,9 @@
    "read_by": "social.watch@PrompTugal.dinis (board/team/social.watch/signals/2026-11-11-the-storm.md)",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated"
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "tunnels-close",
@@ -625,7 +645,9 @@
    "note": "\"at\" is the article time.",
    "effect_from_utc": "2026-11-11T00:00Z",
    "effect_to_utc": null,
-   "effect_note": "\"a partir da meia-noite\" (the mayor, Jornal de Negócios 13:16); end not stated. The same entry adds parks, gardens and cultural facilities closed from midnight."
+   "effect_note": "\"a partir da meia-noite\" (the mayor, Jornal de Negócios 13:16); end not stated. The same entry adds parks, gardens and cultural facilities closed from midnight.",
+   "state": "closed",
+   "state_note": null
   },
   {
    "id": "bridges-60",
@@ -643,7 +665,9 @@
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated: \"encontra-se reduzida\" (in force from the announcement, 14:48 Tuesday); end not stated"
+   "effect_note": "hours not stated: \"encontra-se reduzida\" (in force from the announcement, 14:48 Tuesday); end not stated",
+   "state": "limited",
+   "state_note": null
   },
   {
    "id": "metro-runs",
@@ -662,7 +686,9 @@
    "note": "Said by the mayor, not read on metrolisboa.pt (no notice found in its HTML at 18:58Z).",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated"
+   "effect_note": "hours not stated",
+   "state": "running",
+   "state_note": "the mayor's word (press); not on metrolisboa.pt"
   },
   {
    "id": "carris-runs-watched",
@@ -680,7 +706,9 @@
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated; Jornal Económico: \"ao longo do dia\""
+   "effect_note": "hours not stated; Jornal Económico: \"ao longo do dia\"",
+   "state": "running",
+   "state_note": null
   },
   {
    "id": "rede-expressos-suspends",
@@ -699,7 +727,9 @@
    "note": "Jornal de Negócios live 12:39 (company statement) and Jornal Económico 17:47; earlier text \"to midnight\" came from a search summary and was wrong.",
    "effect_from_utc": "2026-11-11T10:00Z",
    "effect_to_utc": "2026-11-11T23:59Z",
-   "effect_note": "\"entre as 10h00 e as 23h59\" (Jornal de Negócios 12:39; Jornal Económico 17:47)"
+   "effect_note": "\"entre as 10h00 e as 23h59\" (Jornal de Negócios 12:39; Jornal Económico 17:47)",
+   "state": "suspended",
+   "state_note": null
   },
   {
    "id": "gov-recommends-suspend",
@@ -721,7 +751,9 @@
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated"
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "websummit-wednesday",
@@ -753,7 +785,9 @@
    ],
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated; the source names the day: \"Day 2 (Wednesday, November 11th)\""
+   "effect_note": "hours not stated; the source names the day: \"Day 2 (Wednesday, November 11th)\"",
+   "state": "closed",
+   "state_note": null
   },
   {
    "id": "websummit-suspends-h",
@@ -781,7 +815,9 @@
    "note": "Confirmed by websummit-wednesday (19:38Z).",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "no decision with an effect window"
+   "effect_note": "no decision with an effect window",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "side-events-follow-h",
@@ -803,7 +839,9 @@
    ],
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "no decision with an effect window"
+   "effect_note": "no decision with an effect window",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "camara-plan",
@@ -822,7 +860,9 @@
    "note": "Page title seen in search by weather@; site refuses automated reads (403). A person must read it.",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "no decision with an effect window"
+   "effect_note": "no decision with an effect window",
+   "state": "not_announced",
+   "state_note": null
   },
   {
    "id": "airport-ops",
@@ -841,7 +881,9 @@
    "note": "No readable notice: the official site returns a bot check. Superseded by ana-conditioned (press, 18:04Z).",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated"
+   "effect_note": "hours not stated",
+   "state": "not_announced",
+   "state_note": null
   },
   {
    "id": "cp-ops",
@@ -860,7 +902,9 @@
    "note": "Press summary (Jornal de Negócios live, 19:45 and 21:31 entries); not on cp.pt, a JavaScript app.",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated; Jornal Económico: disruption expected on 10 and 11 Nov"
+   "effect_note": "hours not stated; Jornal Económico: disruption expected on 10 and 11 Nov",
+   "state": "limited",
+   "state_note": "\"constrangimentos\""
   },
   {
    "id": "operators-possible-disruption",
@@ -882,7 +926,9 @@
    ],
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated"
+   "effect_note": "hours not stated",
+   "state": "limited",
+   "state_note": "possible disruption announced; no suspension"
   },
   {
    "id": "ana-conditioned",
@@ -901,7 +947,9 @@
    "note": "Press report of an ANA statement; the official airport site is behind a bot check.",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated; the source names the day, 11 November"
+   "effect_note": "hours not stated; the source names the day, 11 November",
+   "state": "limited",
+   "state_note": null
   },
   {
    "id": "flixbus-suspends",
@@ -920,7 +968,9 @@
    "note": "\"at\" is the live-blog entry time.",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated: \"começa de madrugada e prolonga-se até ao final do dia\""
+   "effect_note": "hours not stated: \"começa de madrugada e prolonga-se até ao final do dia\"",
+   "state": "suspended",
+   "state_note": null
   },
   {
    "id": "websummit-thursday",
@@ -945,7 +995,9 @@
    ],
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated; the source names the day: \"Day 3 (Thursday, November 12)\""
+   "effect_note": "hours not stated; the source names the day: \"Day 3 (Thursday, November 12)\"",
+   "state": "running",
+   "state_note": "\"aims to proceed as planned\""
   },
   {
    "id": "websummit-n6",
@@ -966,7 +1018,9 @@
    "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31).",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "no decision with an effect window"
+   "effect_note": "no decision with an effect window",
+   "state": "not_announced",
+   "state_note": null
   },
   {
    "id": "side-events-wednesday",
@@ -985,7 +1039,9 @@
    "note": "The page returns almost no text to our tools (47 characters): a JavaScript app.",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "no decision with an effect window"
+   "effect_note": "no decision with an effect window",
+   "state": "not_announced",
+   "state_note": null
   },
   {
    "id": "websummit-thursday-change-h",
@@ -1011,7 +1067,9 @@
    ],
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "no decision with an effect window"
+   "effect_note": "no decision with an effect window",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "pitch-semifinal",
@@ -1042,7 +1100,9 @@
    ],
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "no decision with an effect window"
+   "effect_note": "no decision with an effect window",
+   "state": "not_announced",
+   "state_note": null
   },
   {
    "id": "night-summit-wednesday",
@@ -1062,7 +1122,9 @@
    "note": "Still listed for Wednesday on the essentials page at 22:05Z, with no notice. The organisers' 19:09 page says only that Day 2 will not take place. Wind is red until 21:00 Wednesday.",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "no decision with an effect window"
+   "effect_note": "no decision with an effect window",
+   "state": "not_announced",
+   "state_note": null
   },
   {
    "id": "ttsl-wednesday",
@@ -1081,7 +1143,9 @@
    "note": "From a search summary of press reports; the article itself not yet opened.",
    "effect_from_utc": "2026-11-11T05:00Z",
    "effect_to_utc": null,
-   "effect_note": "Jornal Económico: \"a operação terá início às 05h00, como habitual\"; the reassessment from 12:00 is from a search summary of TSF (not opened); end not stated"
+   "effect_note": "Jornal Económico: \"a operação terá início às 05h00, como habitual\"; the reassessment from 12:00 is from a search summary of TSF (not opened); end not stated",
+   "state": "running",
+   "state_note": "from 05:00 as usual; reassessed from 12:00 (search summary)"
   },
   {
    "id": "metro-shelter",
@@ -1100,7 +1164,9 @@
    "note": "Read on Metro's own home page banner at 23:33Z (was evidence from a search summary at 22:05Z).",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "hours not stated: \"durante as noites de 10 para 11 e de 11 para 12 de novembro\""
+   "effect_note": "hours not stated: \"durante as noites de 10 para 11 e de 11 para 12 de novembro\"",
+   "state": "running",
+   "state_note": "stations open overnight for homeless people"
   },
   {
    "id": "transport-thursday",
@@ -1125,7 +1191,9 @@
    "note": "No operator notice for Thursday found at 22:05Z: metrolisboa.pt and carris.pt (no Thursday notice in HTML), cp.pt (JavaScript app), ttsl.pt, lusoponte.pt (unreachable); a web search found only Wednesday notices. Indirect: tax offices and customs reopen Thursday (Jornal de Negócios, via search).",
    "effect_from_utc": null,
    "effect_to_utc": null,
-   "effect_note": "no decision with an effect window"
+   "effect_note": "no decision with an effect window",
+   "state": "not_announced",
+   "state_note": null
   },
   {
    "id": "cp-fertagus-bridge",
@@ -1145,7 +1213,9 @@
    "note": "Lusa, quoting a CP statement; Jornal de Negócios live entry 23:10. Not read on cp.pt (JavaScript app).",
    "effect_from_utc": "2026-11-11T12:00Z",
    "effect_to_utc": "2026-11-11T15:00Z",
-   "effect_note": "CP: trains in \"o intervalo horário identificado como mais crítico\", forecast \"entre as 12:00 e as 15:00\"; the article also says \"entre o período da manhã e início da tarde\""
+   "effect_note": "CP: trains in \"o intervalo horário identificado como mais crítico\", forecast \"entre as 12:00 e as 15:00\"; the article also says \"entre o período da manhã e início da tarde\"",
+   "state": "suspended",
+   "state_note": "four trains suppressed 12:00-15:00; the rest of the line not stated"
   },
   {
    "id": "ipma-red-rain-0900",
@@ -1167,7 +1237,9 @@
    "effect_from_utc": "2026-11-11T09:00Z",
    "effect_to_utc": "2026-11-11T18:00Z",
    "effect_note": "IPMA warnings JSON startTime/endTime",
-   "note": "CAP 2.49.0.0.620.0.PT.261110212300.PO-10-6290, sent_utc 2026-11-10T21:23:00Z, severity Extreme, onset 11 Nov 09:00, expires 18:00; replaces 2.49.0.0.620.0.PT.261110163001.PO-10-6273 (sent 16:30:01). The orange before it (PO-10-6288) runs 00:00-09:00. Via team/incidents/2026-11-10-the-storm/data/weather/cap.json (incident.meteorologist@, read 2026-11-11T00:23:21Z); IPMA warnings JSON read by us 23:54Z agrees."
+   "note": "CAP 2.49.0.0.620.0.PT.261110212300.PO-10-6290, sent_utc 2026-11-10T21:23:00Z, severity Extreme, onset 11 Nov 09:00, expires 18:00; replaces 2.49.0.0.620.0.PT.261110163001.PO-10-6273 (sent 16:30:01). The orange before it (PO-10-6288) runs 00:00-09:00. Via team/incidents/2026-11-10-the-storm/data/weather/cap.json (incident.meteorologist@, read 2026-11-11T00:23:21Z); IPMA warnings JSON read by us 23:54Z agrees.",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "mai-websummit-indoor",
@@ -1188,7 +1260,9 @@
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "hours not stated",
-   "note": "Observador live entry 09:30:25 (JSON-LD), questioned by journalists at the press conference. 8 h 23 min later the government recommended suspending Wednesday (17:53)."
+   "note": "Observador live entry 09:30:25 (JSON-LD), questioned by journalists at the press conference. 8 h 23 min later the government recommended suspending Wednesday (17:53).",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "ipma-madeira-red",
@@ -1206,7 +1280,9 @@
    "effect_to_utc": "2026-11-11T06:00Z",
    "effect_note": "rain 21:00 Tue to 06:00 Wed (Lusa); wind \"a partir das 00:00\", end not stated in that text",
    "note": "Lusa via Jornal de Negócios live 00:09 (hours); DNOTICIAS listing headline 10 Nov 07:24, \"IPMA coloca costa Sul e zonas montanhosas da Madeira sob aviso vermelho\". IPMA's send time not read by us (the meteorologist's CAP file covers Lisbon).",
-   "region": "Madeira"
+   "region": "Madeira",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "madeira-schools",
@@ -1226,7 +1302,9 @@
    "effect_to_utc": "2026-11-11T13:00Z",
    "effect_note": "hours not stated for the start (\"durante a manhã\"); end \"a partir das 13h de dia 11 de novembro\"",
    "note": "Announced at a regional press conference by the president of the regional civil protection service (Observador 12:11:17, JSON-LD); DNOTICIAS headline 11:26 \"Escolas da Madeira encerradas na manhã de quarta-feira até às 13 horas\" (a search summary attributes it to the regional government). Most critical hours given as 21:00 to 06:00 (IPMA Madeira at the same conference).",
-   "region": "Madeira"
+   "region": "Madeira",
+   "state": "closed",
+   "state_note": null
   },
   {
    "id": "madeira-airport-conditioned",
@@ -1246,7 +1324,9 @@
    "effect_to_utc": null,
    "effect_note": "hours not stated; the source names the day, 11 November",
    "note": "Same ANA statement as ana-conditioned (Lisbon, Faro, Madeira).",
-   "region": "Madeira"
+   "region": "Madeira",
+   "state": "limited",
+   "state_note": null
   },
   {
    "id": "apram-cruises",
@@ -1266,7 +1346,9 @@
    "effect_to_utc": null,
    "effect_note": "hours not stated; the source names the day, Wednesday",
    "note": "APRAM via Observador live 12:33:37 (JSON-LD). The ships cancelled; APRAM reported it.",
-   "region": "Madeira"
+   "region": "Madeira",
+   "state": "suspended",
+   "state_note": "three cruise calls cancelled (the ships' decision, reported by APRAM)"
   },
   {
    "id": "aemet-special",
@@ -1283,7 +1365,9 @@
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "hours not stated",
-   "note": "Title read on AEMET's own warnings page at 01:46Z. Its number (38/2026 per Wikipedia), its period (10 to 12 Nov per Wikipedia) and the Canary Islands' wind alert from 18:00 on 10 Nov were NOT read at source (the details are a map and a JavaScript view)."
+   "note": "Title read on AEMET's own warnings page at 01:46Z. Its number (38/2026 per Wikipedia), its period (10 to 12 Nov per Wikipedia) and the Canary Islands' wind alert from 18:00 on 10 Nov were NOT read at source (the details are a map and a JavaScript view).",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "gnr-readiness",
@@ -1302,7 +1386,9 @@
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "hours not stated",
-   "note": "GNR's own site lists \"10-11-2026 Depressão Charles – GNR reforça dispositivo operacional\" (read 01:45Z; the article page reset our connection). The figure 1,100 is from Observador's 18:17:26 entry quoting the GNR communiqué."
+   "note": "GNR's own site lists \"10-11-2026 Depressão Charles – GNR reforça dispositivo operacional\" (read 01:45Z; the article page reset our connection). The figure 1,100 is from Observador's 18:17:26 entry quoting the GNR communiqué.",
+   "state": null,
+   "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state"
   },
   {
    "id": "mmp-closed",
@@ -1321,7 +1407,9 @@
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "hours not stated; the source names the day, Wednesday",
-   "note": "Observador 14:08:23 quoting MMP's online message. At 19:21 Observador adds Lisbon's 25 municipal cultural venues (EGEAC) closed."
+   "note": "Observador 14:08:23 quoting MMP's online message. At 19:21 Observador adds Lisbon's 25 municipal cultural venues (EGEAC) closed.",
+   "state": "closed",
+   "state_note": null
   },
   {
    "id": "tap-adjusts",
@@ -1340,7 +1428,9 @@
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "hours not stated",
-   "note": "Observador 16:09:04. \"TAP cancelling 10 Madeira flights\" (Wikipedia) is NOT established: Observador 19:47:28 says only that several TAP Funchal flights were affected on Wednesday, from ANA's site."
+   "note": "Observador 16:09:04. \"TAP cancelling 10 Madeira flights\" (Wikipedia) is NOT established: Observador 19:47:28 says only that several TAP Funchal flights were affected on Wednesday, from ANA's site.",
+   "state": "limited",
+   "state_note": "rebooking offered; cancellations not stated by TAP"
   },
   {
    "id": "csm-courts",
@@ -1359,7 +1449,9 @@
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "hours not stated; the source names the day, Wednesday",
-   "note": "CSM vice-president's despacho, via Lusa (Observador 12:51:24, 14:32:02). National, not Madeira-specific: \"Madeira's courts closed\" (Wikipedia) NOT established. csm.org.pt answered (01:45Z) with no matching notice on its home page."
+   "note": "CSM vice-president's despacho, via Lusa (Observador 12:51:24, 14:32:02). National, not Madeira-specific: \"Madeira's courts closed\" (Wikipedia) NOT established. csm.org.pt answered (01:45Z) with no matching notice on its home page.",
+   "state": "limited",
+   "state_note": "closure left to each court"
   },
   {
    "id": "mj-services",
@@ -1378,7 +1470,9 @@
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "hours not stated; Wednesday",
-   "note": "Observador 17:43:17, \"Na sequência da declaração de situação de alerta\"."
+   "note": "Observador 17:43:17, \"Na sequência da declaração de situação de alerta\".",
+   "state": "closed",
+   "state_note": null
   }
  ],
  "lessons": [
@@ -1392,5 +1486,12 @@
    "status": "not found at source: apambiente.pt home and /destaques at 01:45Z show no such notice (its 10 Nov item is a cancelled online session); not added to the graph",
    "read": "2026-11-11T01:50Z"
   }
+ ],
+ "state_values": [
+  "closed",
+  "suspended",
+  "limited",
+  "running",
+  "not_announced"
  ]
 }

@@ -54,5 +54,21 @@
  ],
  "open": [
   "ANA's statement read in the press only; aeroportolisboa.pt shows a bot check."
- ]
+ ],
+ "tries": [
+  {
+   "at": "2026-11-11T02:19Z",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "http": 200,
+   "bytes": 212,
+   "result": "answered; no notice found",
+   "excerpt": []
+  }
+ ],
+ "tries_summary": {
+  "https://www.aeroportolisboa.pt/pt/lis/home": {
+   "tries": 1,
+   "published_found": false
+  }
+ }
 }
