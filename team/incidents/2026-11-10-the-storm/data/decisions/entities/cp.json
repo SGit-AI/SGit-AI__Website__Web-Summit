@@ -242,11 +242,19 @@
    "bytes": 3306,
    "result": "answered; no notice found",
    "excerpt": []
+  },
+  {
+   "at": "2026-11-11T21:34Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
   }
  ],
  "tries_summary": {
   "https://www.cp.pt/": {
-   "tries": 19,
+   "tries": 20,
    "published_found": false
   }
  }
