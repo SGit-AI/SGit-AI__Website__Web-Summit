@@ -1,6 +1,6 @@
 {
  "about": "Every source incident.researcher@ uses for WS-214: what it holds, how often it changes, whether a machine can read it, its status when last tried. parser_ask = the part we ask incident.dev@ to parse.",
- "updated": "2026-11-11T01:35Z",
+ "updated": "2026-11-11T02:30Z",
  "sources": [
   {
    "id": "websummit-blog",
@@ -493,6 +493,29 @@
    "reuse": "no",
    "reuse_basis": "press copyright: cite, link, quote briefly",
    "parser_ask": "liveBlogUpdate entries as JSON {datePublished, headline, articleBody}; this is the best-timed press source we have"
+  },
+  {
+   "id": "dre-despacho-13773-a",
+   "url": "https://diariodarepublica.pt/dr/detalhe/despacho/13773-a-2026-1193823993",
+   "holds": "The alert declaration's legal text (Despacho n.º 13773-A/2026, DR n.º 218/2026, Suplemento, 2nd series, 10 Nov)",
+   "changes": "never (official journal)",
+   "machine_readable": "only with a browser: JavaScript app, 2 KB shell to plain requests",
+   "status": "200; text read with a headless browser",
+   "read": "2026-11-11T02:30Z",
+   "reuse": "yes",
+   "reuse_basis": "official legal text (Diário da República)"
+  },
+  {
+   "id": "amn-capitania-lisboa",
+   "url": "https://www.amn.pt/DGAM/Capitanias/Lisboa/",
+   "holds": "The Lisbon harbour master's notices (PDF avisos, e.g. no. 53/2026)",
+   "changes": "on issue",
+   "machine_readable": "yes: signed PDFs",
+   "status": "200 (aviso 53 PDF)",
+   "read": "2026-11-11T02:30Z",
+   "reuse": "attribution",
+   "reuse_basis": "official notice; to verify",
+   "parser_ask": "list new aviso PDFs for Lisbon (the documents folder) and extract number, signature time and period"
   }
  ],
  "platforms_without_login": {

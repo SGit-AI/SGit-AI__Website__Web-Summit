@@ -1,7 +1,7 @@
 {
  "entity": "port",
  "about": "Every decision in graph.json about port: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:20Z",
+ "updated": "2026-11-11T02:30Z",
  "decisions": [
   {
    "edge": "apram-cruises",
@@ -18,6 +18,19 @@
    "read": "2026-11-11T01:35Z",
    "label": "evidence",
    "note": "APRAM via Observador live 12:33:37 (JSON-LD). The ships cancelled; APRAM reported it."
+  },
+  {
+   "edge": "capitania-aviso-53",
+   "decision": "Harbour master's Aviso n.º 53/2026 (9 to 11 Nov): precautions for the maritime community; relays the then yellow warnings",
+   "decided_by": "Capitania do Porto de Lisboa",
+   "status": "happened",
+   "published_utc": "2026-11-09T14:07Z",
+   "effect_from_utc": "2026-11-09T18:00Z",
+   "effect_to_utc": "2026-11-11T06:00Z",
+   "address": "https://www.amn.pt/DGAM/Capitanias/Lisboa/Documentos_AMN/Aviso%20n%C2%BA%2053_2026_Agravamento%20condi%C3%A7%C3%B5es%20meteo%2009-11NOV_signed.pdf",
+   "read": "2026-11-11T02:30Z",
+   "label": "fact",
+   "state": "limited"
   }
  ],
  "open": []

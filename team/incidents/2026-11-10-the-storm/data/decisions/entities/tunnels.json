@@ -35,6 +35,12 @@
    "url": "https://informacao.lisboa.pt/",
    "http": 403,
    "result": "not reached: HTTPError 403"
+  },
+  {
+   "at": "2026-11-11T02:28Z",
+   "url": "https://www.lisboa.pt/cidade-informa/como-circulo/alteracoes-a-circulacao",
+   "http": 403,
+   "result": "not reached: HTTPError 403"
   }
  ],
  "tries_summary": {

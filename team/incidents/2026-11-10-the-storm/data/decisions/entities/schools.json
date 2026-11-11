@@ -1,7 +1,7 @@
 {
  "entity": "schools",
  "about": "Every decision in graph.json about schools: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:20Z",
+ "updated": "2026-11-11T02:30Z",
  "decisions": [
   {
    "edge": "gov-alert",
@@ -50,6 +50,19 @@
    "read": "2026-11-11T01:35Z",
    "label": "evidence",
    "note": "Announced at a regional press conference by the president of the regional civil protection service (Observador 12:11:17, JSON-LD); DNOTICIAS headline 11:26 \"Escolas da Madeira encerradas na manhã de quarta-feira até às 13 horas\" (a search summary attributes it to the regional government). Most critical hours given as 21:00 to 06:00 (IPMA Madeira at the same conference)."
+  },
+  {
+   "edge": "gov-alert (legal text)",
+   "decision": "Despacho n.º 13773-A/2026, 2(a): \"Encerramento de estabelecimentos de ensino dos setores público, privado e social, incluindo creches e pré-escolar, e de serviços públicos não essenciais\"",
+   "decided_by": "the Government (Presidência do Conselho de Ministros and nine ministries)",
+   "status": "happened",
+   "published_utc": "2026-11-10",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": "2026-11-11T23:59Z",
+   "address": "https://diariodarepublica.pt/dr/detalhe/despacho/13773-a-2026-1193823993",
+   "read": "2026-11-11T02:30Z",
+   "label": "fact",
+   "state": "closed"
   }
  ],
  "open": []
