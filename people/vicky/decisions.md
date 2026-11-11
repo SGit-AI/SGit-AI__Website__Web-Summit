@@ -7,12 +7,13 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
-- **41** P6 lifted: the conductor may message Vicky's own team agents, pointing only to committed files; agents reply to the sender; signing after Friday.
+- **42** no signing: P6 lifted for good (pointer messages to Vicky's own agents, reports back); signing shelved, tasks.mjs kept.
+- **41** P6 lifted (now without signing, standing answer 42).
 - **40** tonight's last-day guide: curator, summit journalist, reviewer (R-PUB-1).
-- **39** P6 pin only in each prompts file (Vicky accepts the push risk); tool fixes, then the dashboard test round trip, then her go.
+- **39** (shelved by 42) P6 pin and signed test.
 - **38** dev@'s current key on the team site; vault A sealed to it before SA33-TOOLS.
 - **37** the storm page, S41 and the curator handed over to the team reviewer@, dev@ and curator.
-- **36** P6 approved with security@'s changes, in steps; not in force until Vicky says go.
+- **36** (signing shelved by 42) P6 signed-messaging plan.
 - **35** Web Summit news to journalist-portugal after the summit; hand-over messages in For Vicky when due; tools in vault A safe to publish.
 - **34** Thursday's hourly summit lane; the internal journalist is the summit journalist after the summit; the two-way messaging draft.
 - **33** the schedule after the switch-back; vaults A and B; designer, reporter and internal journalist plans.
@@ -216,6 +217,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Not yet:** signatures. Until Friday's signed test (standing answer 39) and Vicky's go, the check is the commit title and Agent line, which security@ showed can be forged by anyone who can push; Vicky accepts that for now.
     - This replaces "never send a message into another session" in P6 (6 Nov) and in standing answers 36 and 39 ("P6 as it stands stays in force"). Every agent reads it at its next run.
 
+42. **No signing: P6 lifted as the personal account worked** (Vicky, 11 Nov, about 20:22 UTC, in this window: "Change of decision: no signing. Lift P6 now and work the way my personal account conductor did today. You may message my own team-account agents directly so they start at once, and they report back to you when done. Keep the basics: only my agents, messages point to committed files that quote my words, private work only through the agent's own window. Cancel dev@'s 20:35 fix wake and Friday's signed test. Keep tasks.mjs as it is in case I want signing later. Record this as my decision.")
+    - **In force:** standing answer 41's messaging, without signing, for good: the conductor messages Vicky's own team-account agents; each message only points to a committed file on the team site that quotes her words; agents act on the file, check it was committed by conductor@web-summit.vicky, and report back to the conductor when done. Only her agents; private work (the CRM, the shortlist, mail, vault contents, anything a public file may not hold) only through the agent's own window, never a task file. Still never read another session's conversation, never `interrupt_session`.
+    - **Cancelled:** dev@'s 20:35 fix wake (update SA39-FIX withdrawn) and Friday's signed test; both tasks disabled, not deleted. Standing answers 36 and 39's signing steps and the signed decisions.md are shelved. `people/vicky/tools/tasks.mjs` stays as it is, unused, in case Vicky wants signing later.
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -285,8 +290,7 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA36-SIGN, the signature check** (Vicky, 11 Nov, about 19:35 UTC: "dev@ builds the signature check first"). For: dev.
 > Build `people/vicky/tools/tasks.mjs` as step 1 of `people/vicky/plans/2026-11-11-p6-signed-messaging.md` says (verify against a pinned fingerprint, expiry, done-file check, `--no-expiry` for decisions.md, `check-pointer`, `lint`), with tests for a good, a forged, an expired and an already-done file. Node only, no dependencies, no network; it must be safe to publish (standing answer 35). Commit it on the team site For: security@web-summit.vicky and For: conductor@web-summit.vicky, and confirm "applied SA36-SIGN". Do not send or receive any session message.
 
-**SA39-FIX, the three tool fixes** (Vicky, 11 Nov, about 20:08 UTC). For: dev.
-> Make fixes 1 to 3 from people/vicky/reviews/security-p6-step1.md in people/vicky/tools/tasks.mjs, with a test for each, For: security@web-summit.vicky, and confirm "applied SA39-FIX".
+**SA39-FIX** withdrawn (Vicky, 11 Nov about 20:22 UTC, standing answer 42): no tool fixes.
 
 Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - P10, P17, P22, P27: vault, designer.
@@ -298,7 +302,7 @@ Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - SA27 (added 9 Nov, 11:25; changed 13:40): inbox. (vault applied it at 11:35.)
 - SA28 (added 9 Nov, 14:15): programme, researcher, curator.
 - RULES-11NOV: all 18 confirmed by 20:00 on 11 Nov (people/vicky/confirmations.json).
-- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: done (programme, 11 Nov). SA35-WS: curator, journalist-portugal, reviewer. SA36-SIGN: done (dev, 19:44). SA39-FIX: dev.
+- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: done (programme, 11 Nov). SA35-WS: curator, journalist-portugal, reviewer. SA36-SIGN: done (dev, 19:44). SA39-FIX: withdrawn.
 - SA29: applied by researcher and curator (10 Nov); "SA29 used" at their first regular runs still to report.
 
 Removed on 9 Nov once done or confirmed: SA13, SA15, SA18, SA19B, SA19C, SA22, SA25, PILOT-REPLIT, TRIAGE-REPLIT and OVERNIGHT-9NOV (closed at 04:40, people/vicky/company-pages/backlog.md).
