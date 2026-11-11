@@ -16,6 +16,7 @@ Angelo sees, on our own site, the flow of a real deliverable from his note to li
 
 ## Start from
 - people/angelo/pipeline/b2-flow-reuse/research.md: build on the newsroom's piece drawing (promptugal.news/newsroom/pieces/, dev.graphs@PrompTugal.dinis), fed by our own records in the reporter's ws-trace/1 shape; first version: b0-library. Its three questions for Angelo are yours to bring him.
+- **A frozen copy of the Fringe flow drafts** is in people/angelo/projects/prod-pipeline/prior-art/fringe-6b079db/ (README lists each file and its maker); build on it there once the Fringe ends.
 - Lisbon Fringe (read only; PrompTugal/PrompTugal__News__Fringe): Angelo had conductor.fringe@ work on the flow there: tracer.fringe@'s trace of one event page (77 steps, 893d4e6) and designer.fringe@'s draft swim lanes at /traces/<event_id>/ (f6dbece). Build on them; never change or duplicate them; agree the shared format through Angelo.
 - people/angelo/pipeline/ (ROLES.md, QUEUE.md, skills/, formats/), people/angelo/conductor-b/runs.md, each item's times.json, people/angelo/ledger/.
 - people/angelo/proposals/account-move/spec-pipeline-b.md (the article pipeline and its target times).
