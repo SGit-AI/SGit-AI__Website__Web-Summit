@@ -421,3 +421,13 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Analysis (medium; revises section 16):** a sudden turn to south with a jump in wind and temperature is the warm air on the southern side of the low, or its front, reaching Lisbon. With the pressure still falling (989), the centre is still to the west or north-west. On the test in sections 16 and 20 (the wind turning through S to SW means the centre passes north), **the centre now looks more likely to pass just north of Lisbon, as section 12 said**. Section 16's reading of the morning's backing wind (centre to the south) does not hold: the backing came as the low approached, not as it passed. Lisbon is now in the strongest-wind part of the storm. The wind should stay strong from S to SW, then turn W–NW once the pressure starts rising (TAF: 290° from 16:00–18:00).
 
 **Hazard now (medium-high):** gusts of 74 km/h observed, more possible in the next two hours inside IPMA's orange (to 90, 110 exposed); rain still heavy (20–26 mm an hour at two stations) under the red to 15:00.
+
+## 22. 15:25 UTC 11 Nov: the rain eases, the wind stays SW and strong, pressure bottoms at 989
+
+**Facts** (airport.json, lisbon-rain.json, read 15:22:56–15:23:13 UTC):
+- LPPT METARs: 14:30 21025KT, rain easing (RERA), visibility 8000 m, Q0989, wind shear R20; 15:00 21022G33KT (gusts 61 km/h), visibility 10 km or more, 19/18, **Q0989 for the third half hour running**, wind shear R20 still reported. The highest LPPT gust in the window stays 40 kt (74 km/h) at 14:00. TAF 11:00 still not amended.
+- IPMA stations, hour labelled 14:00: rain **1.2–6.8 mm** (from 12–26 mm the hour before); wind turned to **SW** at every station but Carnide and Barreiro (S), with the day's strongest means: **Oeiras 41.0 km/h**, Relógio 34.2, Carnide 32.8, Geofísico 31.3.
+- 6-hour totals: **Relógio 74.0 mm (hours 09:00–14:00)**, Oeiras 73.4, Geofísico 64.7, Tapada 58.1, Carnide 52.2.
+- Warnings unchanged since the 12:33:13 CAP: red rain ended 15:00, yellow rain to 18:00, orange wind to 18:00 (90, 110 exposed), orange sea to 21:00, yellow sea to 03:00. No new CAP message (poll every 5 min to 15:20:19); no new communiqué.
+
+**Analysis (medium-high):** the pressure has stopped falling at 989 hPa and the wind sits at SW: the centre is passing just north of Lisbon now, as section 21 said, and the heavy rain has gone with the front, as IPMA's red-to-15:00 said. What is left: strong SW wind (gusts 60–75 km/h at the airport) until the pressure rises and the wind turns W–NW, which the TAF puts at 16:00–18:00; then lighter. Rain: showers, inside the yellow. The worst of Wednesday in Lisbon was **12:00–14:30 for rain (12–26 mm an hour) and 14:00–15:00 so far for wind**.
