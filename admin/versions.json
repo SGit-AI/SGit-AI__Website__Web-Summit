@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1808",
+    "date": "2026-11-11",
+    "what": "03:33 wake: no change to Day 3; primary pages tried again (none published)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "870f9c5af"
+  },
+  {
     "version": "v0.2.1807",
     "date": "2026-11-11",
     "what": "03:23 wake refresh; token measure refused by the session's permission check (Dinis: ask in status)",
