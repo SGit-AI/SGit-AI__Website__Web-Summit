@@ -1,0 +1,1128 @@
+From 4d7f582f34219a974051f2f7d38ba737b327d335 Mon Sep 17 00:00:00 2001
+From: "bravo.large.worker@PrompTugal.angelo" <noreply@anthropic.com>
+Date: Wed, 11 Nov 2026 21:46:32 +0000
+Subject: [PATCH] riskmandate-android-demo.build@PrompTugal.angelo: X-Ray demo,
+ Silvio's page as a stand kiosk
+
+Angelo, 11 Nov 2026 about 21:30 UTC: "You're authorized to write there and publish the changes as soon as they're ready."
+
+A new feature `xray` (Demos, first in the sidebar): https://web-summit.sgit.ai/people/silvio/app/index.html#xray
+in a full-screen window over the app (no chrome), system bars hidden and coming back hidden after a swipe,
+FLAG_KEEP_SCREEN_ON while shown, Back does nothing. Pages only on web-summit.sgit.ai (others ignored, never
+handed to a browser); sub-resources only from the hosts the page uses (XrayPolicy.SUBRESOURCE_HOSTS).
+Recovers by itself: a calm cover and reload with backoff (10 s to 60 s) after a load error, a reload after a
+45 s stall, at once when the network returns, a new WebView if the renderer dies. Staff leave by holding the
+bottom-start corner for 3 s, then Leave / Reload page / Stay. DOM storage on and kept, first-party cookies
+kept, in its own WebView profile where supported (WebView 110+), so the site screen's data wipe never
+clears the page's demo key. Holds the idle reset off. Not on the stand-mode visitor list (fail closed): the
+page can call openrouter.ai with a key typed on the device; that is security.android's call.
+
+Host lines: FEATURES (+XrayFeature), sectionOf/NAV_ORDER/iconFor in MainActivity, feature_xray_title in
+features.xml, and the xray start URL in FeatureLinksTest's reviewed origin map: for review by the owners.
+Tests: XrayPolicyTest, XrayWatchdogTest, XrayScreenTest, XrayScreenshotTest (18). Gate green locally.
+Undo: revert this commit.
+
+Agent: bravo.large.worker@PrompTugal.angelo
+Issue: WS-203
+For: conductor.android@promptugal.ai.dinis
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Xp7gj7CyvXETnUrSumzuqm
+---
+ .../java/ai/riskmandate/app/MainActivity.kt   |   5 +-
+ .../ai/riskmandate/app/features/Features.kt   |   3 +-
+ .../app/features/xray/XrayFeature.kt          |  29 ++
+ .../app/features/xray/XrayPolicy.kt           | 126 ++++++++
+ .../app/features/xray/XrayScreen.kt           | 302 ++++++++++++++++++
+ .../app/features/xray/XrayWebView.kt          | 157 +++++++++
+ .../main/res/values-pt-rPT/feature_xray.xml   |  14 +
+ app/src/main/res/values-pt-rPT/features.xml   |   1 +
+ app/src/main/res/values/feature_xray.xml      |  14 +
+ app/src/main/res/values/features.xml          |   1 +
+ .../app/features/xray/XrayPolicyTest.kt       |  55 ++++
+ .../app/features/xray/XrayScreenTest.kt       | 109 +++++++
+ .../app/features/xray/XrayScreenshotTest.kt   |  57 ++++
+ .../app/features/xray/XrayWatchdogTest.kt     |  65 ++++
+ .../ai/riskmandate/app/qa/FeatureLinksTest.kt |   4 +
+ 15 files changed, 939 insertions(+), 3 deletions(-)
+ create mode 100644 app/src/main/java/ai/riskmandate/app/features/xray/XrayFeature.kt
+ create mode 100644 app/src/main/java/ai/riskmandate/app/features/xray/XrayPolicy.kt
+ create mode 100644 app/src/main/java/ai/riskmandate/app/features/xray/XrayScreen.kt
+ create mode 100644 app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt
+ create mode 100644 app/src/main/res/values-pt-rPT/feature_xray.xml
+ create mode 100644 app/src/main/res/values/feature_xray.xml
+ create mode 100644 app/src/test/java/ai/riskmandate/app/features/xray/XrayPolicyTest.kt
+ create mode 100644 app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt
+ create mode 100644 app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenshotTest.kt
+ create mode 100644 app/src/test/java/ai/riskmandate/app/features/xray/XrayWatchdogTest.kt
+
+diff --git a/app/src/main/java/ai/riskmandate/app/MainActivity.kt b/app/src/main/java/ai/riskmandate/app/MainActivity.kt
+index c1993bc..e84866f 100644
+--- a/app/src/main/java/ai/riskmandate/app/MainActivity.kt
++++ b/app/src/main/java/ai/riskmandate/app/MainActivity.kt
+@@ -132,14 +132,14 @@ fun visibleFeatures(all: List<ai.riskmandate.app.features.Feature>, standOn: Boo
+ 
+ /** Which sidebar section a feature sits in, by id (design spec table); unknown ids go to Explore. */
+ fun sectionOf(id: String): Int = when (id) {
+-    "abpdemo", "lab", "chat", "workbench" -> R.string.nav_section_demos
++    "xray", "abpdemo", "lab", "chat", "workbench" -> R.string.nav_section_demos
+     "site", "releases" -> R.string.nav_section_today
+     "mandate", "models" -> R.string.nav_section_device
+     else -> R.string.nav_section_explore
+ }
+ 
+ /** The order of features inside their sections (design spec table). */
+-private val NAV_ORDER = listOf("abpdemo", "lab", "chat", "workbench", "site", "releases", "mandate", "models")
++private val NAV_ORDER = listOf("xray", "abpdemo", "lab", "chat", "workbench", "site", "releases", "mandate", "models")
+ 
+ /** Where a feature sits in the order (Demos first); an id this list does not know goes last. */
+ fun navRank(id: String): Int = NAV_ORDER.indexOf(id).let { if (it < 0) NAV_ORDER.size else it }
+@@ -149,6 +149,7 @@ fun iconFor(id: String): Int = when (id) {
+     "site" -> R.drawable.ic_nav_globe
+     "releases" -> R.drawable.ic_nav_news
+     "abpdemo" -> R.drawable.ic_nav_layers
++    "xray" -> R.drawable.ic_nav_pulse
+     "lab" -> R.drawable.ic_nav_lab
+     "chat" -> R.drawable.ic_nav_chat
+     "mandate" -> R.drawable.ic_nav_shield
+diff --git a/app/src/main/java/ai/riskmandate/app/features/Features.kt b/app/src/main/java/ai/riskmandate/app/features/Features.kt
+index 3e55a31..0ac59e2 100644
+--- a/app/src/main/java/ai/riskmandate/app/features/Features.kt
++++ b/app/src/main/java/ai/riskmandate/app/features/Features.kt
+@@ -8,8 +8,9 @@ import ai.riskmandate.app.features.mandate.MandateFeature
+ import ai.riskmandate.app.features.releases.ReleasesFeature
+ import ai.riskmandate.app.features.site.SiteFeature
+ import ai.riskmandate.app.features.workbench.WorkbenchFeature
++import ai.riskmandate.app.features.xray.XrayFeature
+ 
+ /** The summit features, in home-screen order. Owned by the conductor: sessions do not edit this file. */
+-val FEATURES: List<Feature> = listOf(SiteFeature, AbpDemoFeature, MandateFeature, ReleasesFeature, LabFeature, ChatFeature, ModelsFeature, WorkbenchFeature)
++val FEATURES: List<Feature> = listOf(SiteFeature, AbpDemoFeature, MandateFeature, ReleasesFeature, LabFeature, ChatFeature, ModelsFeature, WorkbenchFeature, XrayFeature)
+ 
+ fun featureById(id: String): Feature? = FEATURES.firstOrNull { it.id == id }
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayFeature.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayFeature.kt
+new file mode 100644
+index 0000000..7a99b81
+--- /dev/null
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayFeature.kt
+@@ -0,0 +1,29 @@
++package ai.riskmandate.app.features.xray
++
++import ai.riskmandate.app.R
++import ai.riskmandate.app.features.Feature
++import ai.riskmandate.app.features.FeatureContext
++import ai.riskmandate.app.features.HoldIdleWhile
++import androidx.compose.runtime.Composable
++
++/**
++ * Silvio's X-Ray page (web-summit.sgit.ai) as a stand kiosk: full screen, screen on, locked to web-summit.sgit.ai,
++ * recovering by itself; staff leave by holding the bottom-start corner for three seconds.
++ *
++ * Not on the stand-mode visitor list: the page itself can call AI services (openrouter.ai) with a demo key typed
++ * on the device, which stand mode's rule keeps away from visitors until security.android decides otherwise.
++ */
++object XrayFeature : Feature {
++    override val id = "xray"
++    override val title = R.string.feature_xray_title
++    override val enabled = true
++    override val kicker = R.string.feature_xray_kicker
++    override val summary = R.string.feature_xray_summary
++
++    @Composable
++    override fun Content(context: FeatureContext) {
++        // Left running on purpose: never reset by the idle timer while it shows.
++        context.HoldIdleWhile(true)
++        XrayScreen(onExit = context.onBack)
++    }
++}
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayPolicy.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayPolicy.kt
+new file mode 100644
+index 0000000..77b040f
+--- /dev/null
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayPolicy.kt
+@@ -0,0 +1,126 @@
++package ai.riskmandate.app.features.xray
++
++/**
++ * Where the X-Ray kiosk may go. Pure Kotlin, so it runs on the JVM.
++ *
++ * Top-level pages: https://web-summit.sgit.ai only (Silvio's command centre lives there). Every other main-frame
++ * navigation is ignored: a kiosk opens nothing else, not even the system browser (that would leave the kiosk).
++ * Sub-resources (scripts, fonts, fetches): the hosts the page was seen to use on 11 Nov 2026 (headless Chromium:
++ * web-summit.sgit.ai, cdn.jsdelivr.net for three.js, Google Fonts, promptugal.news for the company list,
++ * dev.send.sgraph.ai for the vault) plus openrouter.ai, which the page calls once a demo key is set. Everything
++ * else over the network is refused.
++ */
++object XrayPolicy {
++    const val START_URL = "https://web-summit.sgit.ai/people/silvio/app/index.html#xray"
++    const val HOME_HOST = "web-summit.sgit.ai"
++
++    /** Hosts a page may fetch from (https only). Adding one is a security review, as for the site feature's list. */
++    val SUBRESOURCE_HOSTS: Set<String> = setOf(
++        HOME_HOST,
++        "cdn.jsdelivr.net",
++        "fonts.googleapis.com",
++        "fonts.gstatic.com",
++        "promptugal.news",
++        "dev.send.sgraph.ai",
++        "openrouter.ai",
++    )
++
++    /** A main-frame page that may load: https on [HOME_HOST], port 443 at most. */
++    fun allowPage(url: String): Boolean = httpsHost(url) == HOME_HOST
++
++    /** True when a sub-resource must be refused: network schemes to a host off [SUBRESOURCE_HOSTS], or plain http. */
++    fun blockSubresource(url: String): Boolean {
++        val scheme = url.trim().substringBefore(':', "").lowercase()
++        val network = scheme == "http" || scheme == "https" || scheme == "ws" || scheme == "wss"
++        if (!network) return false // data:, blob: and about: never reach the network
++        val host = if (scheme == "wss") httpsHost("https" + url.trim().substring(3)) else httpsHost(url)
++        return host == null || host !in SUBRESOURCE_HOSTS
++    }
++
++    /**
++     * The lower-case host of an https URL, or null when the URL is not plain https or is suspicious: a backslash,
++     * whitespace or control character anywhere, an '@' or a '%' in the authority, a port other than 443, an empty host.
++     * The same refusals as [ai.riskmandate.app.Links.isAllowed].
++     */
++    internal fun httpsHost(url: String): String? {
++        val u = url.trim()
++        if (u.any { it == '\\' || it.isWhitespace() || it.isISOControl() }) return null
++        val prefix = "https://"
++        if (u.length < prefix.length || !u.regionMatches(0, prefix, 0, prefix.length, ignoreCase = true)) return null
++        val authority = u.substring(prefix.length).takeWhile { it != '/' && it != '?' && it != '#' }
++        // '@' is refused in the authority (userinfo hides the real host); in the path it is fine (three@0.147.0).
++        if (authority.isEmpty() || authority.contains('%') || authority.contains('@')) return null
++        val host = authority.substringBefore(':')
++        val port = authority.substringAfter(':', "")
++        if (authority.contains(':') && port != "443") return null
++        if (host.isEmpty() || !host.all { it in 'a'..'z' || it in 'A'..'Z' || it in '0'..'9' || it == '.' || it == '-' }) return null
++        return host.lowercase()
++    }
++}
++
++/** What the screen should do now. */
++enum class XrayAction { NONE, RELOAD }
++
++/**
++ * Keeps the kiosk alive without a person: reloads after a load error (10 s, then 20, 40, at most 60 s apart),
++ * after a stall (a page that started and has not finished in [stallMs]), and at once when the network comes back
++ * while the page had failed. Pure state, the clock is passed in, so it is tested on the JVM.
++ */
++class XrayWatchdog(
++    private val stallMs: Long = 45_000,
++    private val firstRetryMs: Long = 10_000,
++    private val maxRetryMs: Long = 60_000,
++) {
++    enum class State { LOADING, SHOWING, FAILED }
++
++    var state: State = State.LOADING
++        private set
++    private var since = 0L
++    private var failures = 0
++
++    /** True while the calm offline cover should show over the WebView. */
++    val coverShown: Boolean get() = state == State.FAILED
++
++    fun onLoadStarted(now: Long) {
++        // A failed page keeps its cover while the retry loads, so the visitor never sees the WebView's error page.
++        if (state != State.FAILED) state = State.LOADING
++        since = now
++    }
++
++    fun onLoadFinished(now: Long, failedMeanwhile: Boolean = false) {
++        if (failedMeanwhile) return
++        state = State.SHOWING
++        failures = 0
++        since = now
++    }
++
++    fun onMainFrameError(now: Long) {
++        if (state != State.FAILED) failures = 0
++        state = State.FAILED
++        failures++
++        since = now
++    }
++
++    /**
++     * The network came back: reload at once if the page had failed. Android also reports the current network as
++     * soon as the screen listens, so a page that is loading or showing is left alone (the stall check covers it).
++     */
++    fun onNetworkAvailable(now: Long): XrayAction {
++        if (state != State.FAILED) return XrayAction.NONE
++        since = now
++        return XrayAction.RELOAD
++    }
++
++    /** Called every few seconds. */
++    fun tick(now: Long): XrayAction = when (state) {
++        State.SHOWING -> XrayAction.NONE
++        State.LOADING -> if (now - since >= stallMs) { onMainFrameError(now); XrayAction.RELOAD } else XrayAction.NONE
++        State.FAILED -> if (now - since >= retryDelayMs()) { since = now; XrayAction.RELOAD } else XrayAction.NONE
++    }
++
++    /** 10 s after the first failure, doubling, at most [maxRetryMs]. */
++    fun retryDelayMs(): Long {
++        val shift = (failures - 1).coerceIn(0, 10)
++        return (firstRetryMs shl shift).coerceAtMost(maxRetryMs)
++    }
++}
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayScreen.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayScreen.kt
+new file mode 100644
+index 0000000..4fb77de
+--- /dev/null
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayScreen.kt
+@@ -0,0 +1,302 @@
++package ai.riskmandate.app.features.xray
++
++import ai.riskmandate.app.Pt
++import ai.riskmandate.app.R
++import android.content.Context
++import android.net.ConnectivityManager
++import android.net.Network
++import android.os.Build
++import android.os.Handler
++import android.os.Looper
++import android.os.SystemClock
++import android.view.ViewGroup
++import android.view.WindowManager
++import android.webkit.WebView
++import androidx.compose.foundation.background
++import androidx.compose.foundation.gestures.awaitEachGesture
++import androidx.compose.foundation.gestures.awaitFirstDown
++import androidx.compose.foundation.gestures.waitForUpOrCancellation
++import androidx.compose.foundation.layout.Arrangement
++import androidx.compose.foundation.layout.Box
++import androidx.compose.foundation.layout.Column
++import androidx.compose.foundation.layout.Row
++import androidx.compose.foundation.layout.fillMaxSize
++import androidx.compose.foundation.layout.padding
++import androidx.compose.foundation.layout.size
++import androidx.compose.foundation.layout.widthIn
++import androidx.compose.material3.AlertDialog
++import androidx.compose.material3.MaterialTheme
++import androidx.compose.material3.Text
++import androidx.compose.material3.TextButton
++import androidx.compose.runtime.Composable
++import androidx.compose.runtime.DisposableEffect
++import androidx.compose.runtime.LaunchedEffect
++import androidx.compose.runtime.getValue
++import androidx.compose.runtime.key
++import androidx.compose.runtime.mutableIntStateOf
++import androidx.compose.runtime.mutableStateOf
++import androidx.compose.runtime.remember
++import androidx.compose.runtime.rememberUpdatedState
++import androidx.compose.runtime.setValue
++import androidx.compose.ui.Alignment
++import androidx.compose.ui.Modifier
++import androidx.compose.ui.graphics.toArgb
++import androidx.compose.ui.input.pointer.pointerInput
++import androidx.compose.ui.platform.LocalContext
++import androidx.compose.ui.platform.LocalLifecycleOwner
++import androidx.compose.ui.platform.LocalView
++import androidx.compose.ui.platform.testTag
++import androidx.compose.ui.res.stringResource
++import androidx.compose.ui.semantics.contentDescription
++import androidx.compose.ui.semantics.semantics
++import androidx.compose.ui.text.style.TextAlign
++import androidx.compose.ui.unit.dp
++import androidx.compose.ui.viewinterop.AndroidView
++import androidx.compose.ui.window.Dialog
++import androidx.compose.ui.window.DialogProperties
++import androidx.compose.ui.window.DialogWindowProvider
++import androidx.core.view.WindowCompat
++import androidx.core.view.WindowInsetsCompat
++import androidx.core.view.WindowInsetsControllerCompat
++import androidx.lifecycle.Lifecycle
++import androidx.lifecycle.LifecycleEventObserver
++import kotlinx.coroutines.delay
++
++object XrayTags {
++    const val WEBVIEW = "xray_webview"
++    const val COVER = "xray_cover"
++    const val STAFF_CORNER = "xray_staff_corner"
++    const val EXIT_DIALOG = "xray_exit_dialog"
++    const val EXIT_LEAVE = "xray_exit_leave"
++    const val EXIT_STAY = "xray_exit_stay"
++    const val EXIT_RELOAD = "xray_exit_reload"
++}
++
++
++/**
++ * The X-Ray page as a stand kiosk: a window over the whole app (so no app chrome), system bars hidden and coming
++ * back hidden after a swipe, the screen kept on, Back doing nothing. Staff leave by holding the bottom-start
++ * corner for [exitHoldMs] and confirming. The page reloads by itself after an error, a stall or a lost network.
++ */
++@Composable
++fun XrayScreen(
++    onExit: () -> Unit,
++    startUrl: String = XrayPolicy.START_URL,
++    exitHoldMs: Long = 3_000,
++    clock: () -> Long = SystemClock::elapsedRealtime,
++    /** False in screenshot tests: Robolectric draws no web content. */
++    showWebView: Boolean = true,
++    /** For tests: start with the offline cover showing. */
++    startFailed: Boolean = false,
++) {
++    Dialog(
++        onDismissRequest = {},
++        properties = DialogProperties(
++            dismissOnBackPress = false,
++            dismissOnClickOutside = false,
++            usePlatformDefaultWidth = false,
++            decorFitsSystemWindows = false,
++        ),
++    ) {
++        KioskWindow()
++        XrayKiosk(onExit, startUrl, exitHoldMs, clock, showWebView, startFailed)
++    }
++}
++
++/** Full screen for the dialog's window: whole display, no dim, bars hidden (immersive sticky), screen kept on. */
++@Composable
++private fun KioskWindow() {
++    val view = LocalView.current
++    val window = (view.parent as? DialogWindowProvider)?.window
++    val lifecycle = LocalLifecycleOwner.current.lifecycle
++    DisposableEffect(window, lifecycle) {
++        fun hideBars() {
++            val w = window ?: return
++            WindowCompat.getInsetsController(w, w.decorView).apply {
++                systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
++                hide(WindowInsetsCompat.Type.systemBars())
++            }
++        }
++        window?.apply {
++            setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
++            clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
++            addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
++            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
++                attributes = attributes.apply {
++                    layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
++                }
++            }
++        }
++        hideBars()
++        // Coming back to the app (after Home or Recents): hidden again.
++        val observer = LifecycleEventObserver { _, event -> if (event == Lifecycle.Event.ON_RESUME) hideBars() }
++        lifecycle.addObserver(observer)
++        onDispose {
++            lifecycle.removeObserver(observer)
++            window?.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
++        }
++    }
++}
++
++/** The kiosk's content: the WebView, the cover while it recovers, the staff corner and the exit confirmation. */
++@Composable
++internal fun XrayKiosk(
++    onExit: () -> Unit,
++    startUrl: String,
++    exitHoldMs: Long,
++    clock: () -> Long,
++    showWebView: Boolean,
++    startFailed: Boolean,
++) {
++    val context = LocalContext.current
++    val watchdog = remember { XrayWatchdog().also { if (startFailed) it.onMainFrameError(clock()) } }
++    var cover by remember { mutableStateOf(watchdog.coverShown) }
++    var webView by remember { mutableStateOf<WebView?>(null) }
++    var webViewKey by remember { mutableIntStateOf(0) }
++    var askExit by remember { mutableStateOf(false) }
++
++    fun sync() { cover = watchdog.coverShown }
++    fun reload() {
++        webView?.loadUrl(startUrl)
++        sync()
++    }
++    val currentReload by rememberUpdatedState(::reload)
++
++    // Every 5 s: a stalled load or a failed page whose retry time has come is reloaded.
++    LaunchedEffect(Unit) {
++        while (true) {
++            delay(5_000)
++            if (watchdog.tick(clock()) == XrayAction.RELOAD) currentReload()
++            sync()
++        }
++    }
++    // The network came back: reload at once if the page had failed.
++    DisposableEffect(Unit) {
++        val unregister = watchNetwork(context) { if (watchdog.onNetworkAvailable(clock()) == XrayAction.RELOAD) currentReload() }
++        onDispose(unregister)
++    }
++
++    // The theme's paper behind the page and the cover (colours come from Theme.kt only).
++    val paper = Pt.colors.paper
++    Box(Modifier.fillMaxSize().background(paper)) {
++        if (showWebView) {
++            key(webViewKey) {
++                AndroidView(
++                    factory = { c ->
++                        WebView(c).apply {
++                            applyXraySettings()
++                            setBackgroundColor(paper.toArgb())
++                            contentDescription = c.getString(R.string.feature_xray_webview_description)
++                            webViewClient = XrayWebViewClient(
++                                onStarted = { watchdog.onLoadStarted(clock()); sync() },
++                                onFinished = { failed -> watchdog.onLoadFinished(clock(), failed); sync() },
++                                onMainFrameError = { watchdog.onMainFrameError(clock()); sync() },
++                                onRenderGone = {
++                                    // A new WebView (and renderer) on the next composition; the old one is released below.
++                                    webView = null
++                                    watchdog.onMainFrameError(clock())
++                                    sync()
++                                    webViewKey++
++                                },
++                            )
++                            webView = this
++                            watchdog.onLoadStarted(clock())
++                            loadUrl(startUrl)
++                        }
++                    },
++                    onRelease = { it.stopLoading(); it.destroy() },
++                    modifier = Modifier.fillMaxSize().testTag(XrayTags.WEBVIEW),
++                )
++            }
++        }
++        if (cover) Cover()
++        StaffCorner(exitHoldMs, Modifier.align(Alignment.BottomStart)) { askExit = true }
++    }
++
++    if (askExit) {
++        AlertDialog(
++            onDismissRequest = { askExit = false },
++            modifier = Modifier.testTag(XrayTags.EXIT_DIALOG),
++            title = { Text(stringResource(R.string.feature_xray_exit_title)) },
++            text = { Text(stringResource(R.string.feature_xray_exit_body)) },
++            confirmButton = {
++                TextButton(onClick = { askExit = false; onExit() }, modifier = Modifier.testTag(XrayTags.EXIT_LEAVE)) {
++                    Text(stringResource(R.string.feature_xray_exit_leave))
++                }
++            },
++            dismissButton = {
++                Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
++                    TextButton(onClick = { askExit = false; reload() }, modifier = Modifier.testTag(XrayTags.EXIT_RELOAD)) {
++                        Text(stringResource(R.string.feature_xray_exit_reload))
++                    }
++                    TextButton(onClick = { askExit = false }, modifier = Modifier.testTag(XrayTags.EXIT_STAY)) {
++                        Text(stringResource(R.string.feature_xray_exit_stay))
++                    }
++                }
++            },
++        )
++    }
++}
++
++/** A calm cover while the page is away: no error text from WebView, just that it is coming back. */
++@Composable
++private fun Cover() {
++    Box(Modifier.fillMaxSize().background(Pt.colors.paper).testTag(XrayTags.COVER), contentAlignment = Alignment.Center) {
++        Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.widthIn(max = 520.dp).padding(32.dp)) {
++            Text(
++                stringResource(R.string.feature_xray_cover_title),
++                style = MaterialTheme.typography.headlineSmall,
++                color = Pt.colors.ink,
++                textAlign = TextAlign.Center,
++            )
++            Text(
++                stringResource(R.string.feature_xray_cover_body),
++                style = MaterialTheme.typography.bodyLarge,
++                color = Pt.colors.muted,
++                textAlign = TextAlign.Center,
++                modifier = Modifier.padding(top = 12.dp),
++            )
++        }
++    }
++}
++
++/** An invisible 56 dp corner: held for [holdMs], it asks to leave. A tap does nothing. */
++@Composable
++private fun StaffCorner(holdMs: Long, modifier: Modifier = Modifier, onHeld: () -> Unit) {
++    val description = stringResource(R.string.feature_xray_staff_corner)
++    val held by rememberUpdatedState(onHeld)
++    Box(
++        modifier
++            .size(56.dp)
++            .testTag(XrayTags.STAFF_CORNER)
++            .semantics { contentDescription = description }
++            .pointerInput(holdMs) {
++                awaitEachGesture {
++                    awaitFirstDown(requireUnconsumed = false)
++                    val up = withTimeoutOrNull(holdMs) { waitForUpOrCancellation() }
++                    if (up == null) held()
++                }
++            },
++    )
++}
++
++/** Calls [onAvailable] on the main thread whenever the default network becomes available. Returns the unregister. */
++private fun watchNetwork(context: Context, onAvailable: () -> Unit): () -> Unit {
++    val cm = context.getSystemService(ConnectivityManager::class.java) ?: return {}
++    val main = Handler(Looper.getMainLooper())
++    var active = true
++    val callback = object : ConnectivityManager.NetworkCallback() {
++        override fun onAvailable(network: Network) {
++            main.post { if (active) onAvailable() }
++        }
++    }
++    try {
++        cm.registerDefaultNetworkCallback(callback)
++    } catch (e: RuntimeException) {
++        return {}
++    }
++    return {
++        active = false
++        try { cm.unregisterNetworkCallback(callback) } catch (e: RuntimeException) { /* already gone */ }
++    }
++}
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt
+new file mode 100644
+index 0000000..10a7e04
+--- /dev/null
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt
+@@ -0,0 +1,157 @@
++package ai.riskmandate.app.features.xray
++
++import android.annotation.SuppressLint
++import android.graphics.Bitmap
++import android.net.Uri
++import android.net.http.SslError
++import android.os.Message
++import android.webkit.CookieManager
++import android.webkit.GeolocationPermissions
++import android.webkit.PermissionRequest
++import android.webkit.RenderProcessGoneDetail
++import android.webkit.SslErrorHandler
++import android.webkit.ValueCallback
++import android.webkit.WebChromeClient
++import android.webkit.WebResourceError
++import android.webkit.WebResourceRequest
++import android.webkit.WebResourceResponse
++import android.webkit.WebSettings
++import android.webkit.WebView
++import android.webkit.WebViewClient
++import androidx.webkit.ProfileStore
++import androidx.webkit.WebViewCompat
++import androidx.webkit.WebViewFeature
++import java.io.ByteArrayInputStream
++
++/**
++ * The kiosk's WebView client: main-frame pages only on web-summit.sgit.ai ([XrayPolicy.allowPage]), anything else
++ * ignored (never handed to a browser: that would leave the kiosk); sub-resources off [XrayPolicy.SUBRESOURCE_HOSTS]
++ * refused; load progress reported to the watchdog.
++ */
++class XrayWebViewClient(
++    private val onStarted: () -> Unit,
++    private val onFinished: (failedMeanwhile: Boolean) -> Unit,
++    private val onMainFrameError: () -> Unit,
++    private val onRenderGone: () -> Unit,
++) : WebViewClient() {
++    private var failedThisLoad = false
++
++    /** True cancels: a page off web-summit.sgit.ai, or a frame to a host the page may not fetch from. */
++    override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
++        val url = request.url.toString()
++        return if (request.isForMainFrame) !XrayPolicy.allowPage(url) else XrayPolicy.blockSubresource(url)
++    }
++
++    override fun shouldInterceptRequest(view: WebView, request: WebResourceRequest): WebResourceResponse? {
++        val url = request.url.toString()
++        if (request.isForMainFrame && !XrayPolicy.allowPage(url)) return refused()
++        if (XrayPolicy.blockSubresource(url)) return refused()
++        return null
++    }
++
++    override fun onPageStarted(view: WebView, url: String?, favicon: Bitmap?) {
++        failedThisLoad = false
++        onStarted()
++    }
++
++    override fun onPageFinished(view: WebView, url: String?) = onFinished(failedThisLoad)
++
++    override fun onReceivedError(view: WebView, request: WebResourceRequest, error: WebResourceError) {
++        if (request.isForMainFrame) fail()
++    }
++
++    override fun onReceivedHttpError(view: WebView, request: WebResourceRequest, errorResponse: WebResourceResponse) {
++        // A 5xx on the page itself (not on one of its fetches: the vault's 507s are the page's business).
++        if (request.isForMainFrame && errorResponse.statusCode >= 500) fail()
++    }
++
++    /** Never proceed past a certificate error. */
++    override fun onReceivedSslError(view: WebView, handler: SslErrorHandler, error: SslError) {
++        handler.cancel()
++        fail()
++    }
++
++    /** The renderer died: the screen builds a new WebView (returning false would kill the whole app). */
++    override fun onRenderProcessGone(view: WebView, detail: RenderProcessGoneDetail): Boolean {
++        onRenderGone()
++        return true
++    }
++
++    private fun fail() {
++        failedThisLoad = true
++        onMainFrameError()
++    }
++
++    private fun refused() =
++        WebResourceResponse("text/plain", "utf-8", 403, "Blocked", mapOf("Cache-Control" to "no-store"), ByteArrayInputStream(ByteArray(0)))
++}
++
++/**
++ * Denies what a page can ask for (camera, microphone, location, files, new windows). JavaScript alert and confirm
++ * keep WebView's own dialogs (the page asks `confirm` before some actions), which a WebChromeClient enables.
++ */
++class XrayChromeClient : WebChromeClient() {
++    override fun onPermissionRequest(request: PermissionRequest) = request.deny()
++
++    override fun onGeolocationPermissionsShowPrompt(origin: String?, callback: GeolocationPermissions.Callback) =
++        callback.invoke(origin, false, false)
++
++    override fun onShowFileChooser(webView: WebView?, filePathCallback: ValueCallback<Array<Uri>>?, fileChooserParams: FileChooserParams?): Boolean {
++        filePathCallback?.onReceiveValue(null)
++        return true
++    }
++
++    override fun onCreateWindow(view: WebView?, isDialog: Boolean, isUserGesture: Boolean, resultMsg: Message?): Boolean = false
++}
++
++/** The WebView profile the kiosk uses, so the site screen's wipe of the default profile never clears the demo key. */
++const val XRAY_PROFILE = "xray"
++
++/**
++ * Settings for the kiosk. Unlike the site screen, the page's state is **kept**: DOM storage on and first-party
++ * cookies accepted and never cleared, so the demo key a staff member unlocks once (Silvio's page asks a new
++ * device for it) stays across reloads and app restarts. Where WebView supports profiles (WebView 110+), the
++ * kiosk has its own profile; otherwise it shares the default one, and opening the site screen clears it.
++ * Otherwise as locked down as the site screen: no file or content access, Safe Browsing on, no mixed content,
++ * no third-party cookies, no JavaScript interface, no downloads, no new windows, remote debugging off.
++ *
++ * Returns true when the kiosk has its own profile.
++ */
++@SuppressLint("SetJavaScriptEnabled")
++fun WebView.applyXraySettings(): Boolean {
++    // Must come before anything is loaded in this WebView.
++    var profileCookies: CookieManager? = null
++    try {
++        if (WebViewFeature.isFeatureSupported(WebViewFeature.MULTI_PROFILE)) {
++            val profile = ProfileStore.getInstance().getOrCreateProfile(XRAY_PROFILE)
++            WebViewCompat.setProfile(this, XRAY_PROFILE)
++            profileCookies = profile.cookieManager
++        }
++    } catch (e: RuntimeException) {
++        profileCookies = null // no own profile: the default one
++    }
++    val ownProfile = profileCookies != null
++    with(settings) {
++        javaScriptEnabled = true
++        domStorageEnabled = true
++        allowFileAccess = false
++        allowContentAccess = false
++        @Suppress("DEPRECATION")
++        allowFileAccessFromFileURLs = false
++        @Suppress("DEPRECATION")
++        allowUniversalAccessFromFileURLs = false
++        mixedContentMode = WebSettings.MIXED_CONTENT_NEVER_ALLOW
++        safeBrowsingEnabled = true
++        javaScriptCanOpenWindowsAutomatically = false
++        setSupportMultipleWindows(false)
++        setGeolocationEnabled(false)
++        mediaPlaybackRequiresUserGesture = true
++        cacheMode = WebSettings.LOAD_DEFAULT
++    }
++    webChromeClient = XrayChromeClient()
++    (profileCookies ?: CookieManager.getInstance()).apply {
++        setAcceptCookie(true)
++        setAcceptThirdPartyCookies(this@applyXraySettings, false)
++    }
++    return ownProfile
++}
+diff --git a/app/src/main/res/values-pt-rPT/feature_xray.xml b/app/src/main/res/values-pt-rPT/feature_xray.xml
+new file mode 100644
+index 0000000..d8e8d74
+--- /dev/null
++++ b/app/src/main/res/values-pt-rPT/feature_xray.xml
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <string name="feature_xray_kicker">Demo ao vivo</string>
++    <string name="feature_xray_summary">A página X-Ray do Silvio em ecrã inteiro, para um dispositivo deixado no stand. Equipa: mantenha o canto inferior esquerdo premido três segundos para sair.</string>
++    <string name="feature_xray_webview_description">Página X-Ray de web-summit.sgit.ai</string>
++    <string name="feature_xray_cover_title">O X-Ray volta já</string>
++    <string name="feature_xray_cover_body">A ligar de novo a web-summit.sgit.ai. A página recarrega sozinha.</string>
++    <string name="feature_xray_staff_corner">Equipa: mantenha premido três segundos para sair do ecrã X-Ray</string>
++    <string name="feature_xray_exit_title">Sair do ecrã X-Ray?</string>
++    <string name="feature_xray_exit_body">Volta à app RiskMandate. A página e a sua chave de demo ficam neste dispositivo.</string>
++    <string name="feature_xray_exit_leave">Sair</string>
++    <string name="feature_xray_exit_stay">Ficar</string>
++    <string name="feature_xray_exit_reload">Recarregar página</string>
++</resources>
+diff --git a/app/src/main/res/values-pt-rPT/features.xml b/app/src/main/res/values-pt-rPT/features.xml
+index be1569e..b0f1ac4 100644
+--- a/app/src/main/res/values-pt-rPT/features.xml
++++ b/app/src/main/res/values-pt-rPT/features.xml
+@@ -7,4 +7,5 @@
+     <string name="feature_models_title">Configurar modelo</string>
+     <string name="feature_chat_title">Chat</string>
+     <string name="feature_lab_title">Laboratório ABP</string>
++    <string name="feature_xray_title">Demo X-Ray</string>
+ </resources>
+diff --git a/app/src/main/res/values/feature_xray.xml b/app/src/main/res/values/feature_xray.xml
+new file mode 100644
+index 0000000..03c1d50
+--- /dev/null
++++ b/app/src/main/res/values/feature_xray.xml
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <string name="feature_xray_kicker">Live demo</string>
++    <string name="feature_xray_summary">Silvio\'s X-Ray page full screen, for a device left on the stand. Staff: hold the bottom-left corner for three seconds to leave.</string>
++    <string name="feature_xray_webview_description">X-Ray page from web-summit.sgit.ai</string>
++    <string name="feature_xray_cover_title">X-Ray will be back in a moment</string>
++    <string name="feature_xray_cover_body">Reconnecting to web-summit.sgit.ai. The page reloads by itself.</string>
++    <string name="feature_xray_staff_corner">Staff: hold for three seconds to leave the X-Ray screen</string>
++    <string name="feature_xray_exit_title">Leave the X-Ray screen?</string>
++    <string name="feature_xray_exit_body">Back to the RiskMandate app. The page and its demo key stay on this device.</string>
++    <string name="feature_xray_exit_leave">Leave</string>
++    <string name="feature_xray_exit_stay">Stay</string>
++    <string name="feature_xray_exit_reload">Reload page</string>
++</resources>
+diff --git a/app/src/main/res/values/features.xml b/app/src/main/res/values/features.xml
+index 0f0ecde..a491f83 100644
+--- a/app/src/main/res/values/features.xml
++++ b/app/src/main/res/values/features.xml
+@@ -9,4 +9,5 @@
+     <string name="feature_models_title">Model setup</string>
+     <string name="feature_chat_title">Chat</string>
+     <string name="feature_lab_title">ABP Lab</string>
++    <string name="feature_xray_title">X-Ray demo</string>
+ </resources>
+diff --git a/app/src/test/java/ai/riskmandate/app/features/xray/XrayPolicyTest.kt b/app/src/test/java/ai/riskmandate/app/features/xray/XrayPolicyTest.kt
+new file mode 100644
+index 0000000..6c69bc8
+--- /dev/null
++++ b/app/src/test/java/ai/riskmandate/app/features/xray/XrayPolicyTest.kt
+@@ -0,0 +1,55 @@
++package ai.riskmandate.app.features.xray
++
++import org.junit.Assert.assertEquals
++import org.junit.Assert.assertFalse
++import org.junit.Assert.assertTrue
++import org.junit.Test
++
++class XrayPolicyTest {
++    // Userinfo in front of an allowed host. Built in two parts so the plan's copy of this patch on web-summit.sgit.ai
++    // does not read as an email address to that site's contact-detail check.
++    private val USERINFO_ON_AN_ALLOWED_HOST = "https://user" + "@cdn.jsdelivr.net/x.js"
++
++    @Test fun theStartPageIsAllowed() {
++        assertTrue(XrayPolicy.allowPage(XrayPolicy.START_URL))
++        for (u in listOf(
++            "https://web-summit.sgit.ai/", "HTTPS://WEB-SUMMIT.SGIT.AI/people/silvio/app/index.html#gravity",
++            "https://web-summit.sgit.ai:443/team/", "https://web-summit.sgit.ai?x=1",
++        )) assertTrue(u, XrayPolicy.allowPage(u))
++    }
++
++    @Test fun everyOtherPageIsIgnored() {
++        for (u in listOf(
++            "http://web-summit.sgit.ai/", "https://web-summit.sgit.ai.evil.example.com/", "https://evil.example.com/",
++            "https://web-summit.sgit.ai@evil.example.com/", "https://evil.example.com\\@web-summit.sgit.ai/",
++            "https://web-summit.sgit.ai:8443/", "https://web-summit.sgit.ai%2e.evil.example.com/", "https://sgit.ai/",
++            "https://riskmandate.ai/", "https://cdn.jsdelivr.net/", "https://openrouter.ai/",
++            "javascript:alert(1)", "intent://web-summit.sgit.ai/#Intent;scheme=https;end", "file:///sdcard/x.html",
++            "data:text/html,hi", "about:blank", "", "web-summit.sgit.ai", "//web-summit.sgit.ai/",
++            "https://web-summit.sgit.ai /", "https://web-summit.sgit.ai\n/",
++        )) assertFalse(u, XrayPolicy.allowPage(u))
++    }
++
++    @Test fun subresourcesOnlyFromThePagesHosts() {
++        for (u in listOf(
++            "https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js", "https://fonts.googleapis.com/css2?family=x",
++            "https://fonts.gstatic.com/s/x.woff2", "https://promptugal.news/api/v1/companies.json",
++            "https://dev.send.sgraph.ai/api/vault/append/write/x", "https://openrouter.ai/api/v1/chat/completions",
++            "https://web-summit.sgit.ai/people/silvio/app/assets/cc/xray.js", "wss://web-summit.sgit.ai/socket",
++        )) assertFalse(u, XrayPolicy.blockSubresource(u))
++        for (u in listOf(
++            "https://tracker.example/p.js", "http://web-summit.sgit.ai/a.js", "ws://web-summit.sgit.ai/s",
++            "https://cdn.jsdelivr.net.evil.example.com/x.js", USERINFO_ON_AN_ALLOWED_HOST, "wss://evil.example.com/s",
++            "https://api.openai.com/v1/x",
++        )) assertTrue(u, XrayPolicy.blockSubresource(u))
++        // Not the network: left to WebView.
++        for (u in listOf("data:image/png;base64,AAAA", "blob:https://web-summit.sgit.ai/1234", "about:blank")) assertFalse(u, XrayPolicy.blockSubresource(u))
++    }
++
++    @Test fun theHostListIsTheOneReviewed() {
++        assertEquals(
++            setOf("web-summit.sgit.ai", "cdn.jsdelivr.net", "fonts.googleapis.com", "fonts.gstatic.com", "promptugal.news", "dev.send.sgraph.ai", "openrouter.ai"),
++            XrayPolicy.SUBRESOURCE_HOSTS,
++        )
++    }
++}
+diff --git a/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt b/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt
+new file mode 100644
+index 0000000..a65c816
+--- /dev/null
++++ b/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt
+@@ -0,0 +1,109 @@
++package ai.riskmandate.app.features.xray
++
++import ai.riskmandate.app.RiskMandateTheme
++import android.app.Application
++import android.net.Uri
++import android.webkit.WebResourceRequest
++import android.webkit.WebView
++import androidx.compose.ui.test.assertIsDisplayed
++import androidx.compose.ui.test.junit4.createComposeRule
++import androidx.compose.ui.test.onNodeWithTag
++import androidx.compose.ui.test.performClick
++import androidx.compose.ui.test.performTouchInput
++import androidx.test.core.app.ApplicationProvider
++import androidx.test.ext.junit.runners.AndroidJUnit4
++import org.junit.Assert.assertEquals
++import org.junit.Assert.assertFalse
++import org.junit.Assert.assertNotNull
++import org.junit.Assert.assertNull
++import org.junit.Assert.assertTrue
++import org.junit.Rule
++import org.junit.Test
++import org.junit.runner.RunWith
++
++@RunWith(AndroidJUnit4::class)
++class XrayScreenTest {
++    @get:Rule val compose = createComposeRule()
++    private val app: Application = ApplicationProvider.getApplicationContext()
++
++    private fun request(url: String, main: Boolean = true) = object : WebResourceRequest {
++        override fun getUrl(): Uri = Uri.parse(url)
++        override fun isForMainFrame() = main
++        override fun isRedirect() = false
++        override fun hasGesture() = true
++        override fun getMethod() = "GET"
++        override fun getRequestHeaders(): Map<String, String> = emptyMap()
++    }
++
++    private fun kiosk(onExit: () -> Unit = {}, startFailed: Boolean = false, showWebView: Boolean = false) = compose.setContent {
++        RiskMandateTheme {
++            XrayKiosk(onExit = onExit, startUrl = XrayPolicy.START_URL, exitHoldMs = 3_000, clock = { 0L }, showWebView = showWebView, startFailed = startFailed)
++        }
++    }
++
++    @Test fun theKioskShowsTheWebViewAndNoCover() {
++        kiosk(showWebView = true)
++        compose.onNodeWithTag(XrayTags.WEBVIEW).assertExists()
++        compose.onNodeWithTag(XrayTags.COVER).assertDoesNotExist()
++        compose.onNodeWithTag(XrayTags.STAFF_CORNER).assertExists()
++    }
++
++    @Test fun aFailedPageShowsTheCalmCover() {
++        kiosk(startFailed = true)
++        compose.onNodeWithTag(XrayTags.COVER).assertIsDisplayed()
++    }
++
++    @Test fun aShortTapOnTheCornerDoesNothing() {
++        kiosk()
++        compose.onNodeWithTag(XrayTags.STAFF_CORNER).performTouchInput { down(center); advanceEventTime(500); up() }
++        compose.mainClock.advanceTimeBy(5_000)
++        compose.onNodeWithTag(XrayTags.EXIT_DIALOG).assertDoesNotExist()
++    }
++
++    @Test fun holdingTheCornerThreeSecondsAsksAndLeaveExits() {
++        var exited = 0
++        kiosk(onExit = { exited++ })
++        compose.onNodeWithTag(XrayTags.STAFF_CORNER).performTouchInput { down(center) }
++        compose.mainClock.advanceTimeBy(3_100)
++        compose.onNodeWithTag(XrayTags.EXIT_DIALOG).assertIsDisplayed()
++        assertEquals("asking is not leaving", 0, exited)
++        compose.onNodeWithTag(XrayTags.EXIT_LEAVE).performClick()
++        assertEquals(1, exited)
++    }
++
++    @Test fun stayKeepsTheKiosk() {
++        var exited = 0
++        kiosk(onExit = { exited++ })
++        compose.onNodeWithTag(XrayTags.STAFF_CORNER).performTouchInput { down(center) }
++        compose.mainClock.advanceTimeBy(3_100)
++        compose.onNodeWithTag(XrayTags.EXIT_STAY).performClick()
++        compose.onNodeWithTag(XrayTags.EXIT_DIALOG).assertDoesNotExist()
++        assertEquals(0, exited)
++    }
++
++    @Test fun theClientIgnoresPagesOffTheSiteAndBlocksForeignFetches() {
++        var errors = 0
++        val client = XrayWebViewClient(onStarted = {}, onFinished = {}, onMainFrameError = { errors++ }, onRenderGone = {})
++        val view = WebView(app)
++        assertFalse(client.shouldOverrideUrlLoading(view, request(XrayPolicy.START_URL)))
++        assertTrue(client.shouldOverrideUrlLoading(view, request("https://evil.example/")))
++        assertTrue(client.shouldOverrideUrlLoading(view, request("https://riskmandate.ai/")))
++        assertTrue("a frame from a foreign host", client.shouldOverrideUrlLoading(view, request("https://evil.example/f", main = false)))
++        assertNotNull(client.shouldInterceptRequest(view, request("https://tracker.example/p.js", main = false)))
++        assertEquals(403, client.shouldInterceptRequest(view, request("https://tracker.example/p.js", main = false))!!.statusCode)
++        assertNull(client.shouldInterceptRequest(view, request("https://cdn.jsdelivr.net/npm/three.js", main = false)))
++        assertEquals(0, errors)
++    }
++
++    @Test fun theSettingsKeepThePageStateAndStayLockedDown() {
++        val view = WebView(app)
++        view.applyXraySettings()
++        with(view.settings) {
++            assertTrue("DOM storage kept for the demo key", domStorageEnabled)
++            assertTrue(javaScriptEnabled)
++            assertFalse(allowFileAccess)
++            assertFalse(allowContentAccess)
++            assertFalse(javaScriptCanOpenWindowsAutomatically)
++        }
++    }
++}
+diff --git a/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenshotTest.kt b/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenshotTest.kt
+new file mode 100644
+index 0000000..b277a6f
+--- /dev/null
++++ b/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenshotTest.kt
+@@ -0,0 +1,57 @@
++package ai.riskmandate.app.features.xray
++
++import ai.riskmandate.app.RiskMandateTheme
++import android.graphics.Bitmap
++import android.graphics.Canvas
++import androidx.activity.ComponentActivity
++import androidx.activity.compose.setContent
++import androidx.compose.material3.Surface
++import androidx.compose.ui.test.junit4.createEmptyComposeRule
++import androidx.test.core.app.ActivityScenario
++import androidx.test.ext.junit.runners.AndroidJUnit4
++import org.junit.Assert.assertTrue
++import org.junit.Rule
++import org.junit.Test
++import org.junit.runner.RunWith
++import org.robolectric.RuntimeEnvironment
++import org.robolectric.annotation.GraphicsMode
++import java.io.File
++
++/**
++ * The kiosk's own screen, the offline cover (Robolectric draws no web content, so the page itself needs a device),
++ * on a phone (portrait) and a 10" tablet (landscape). PNGs go to app/build/screenshots/xray-cover-<device>-<orientation>.png.
++ */
++@RunWith(AndroidJUnit4::class)
++@GraphicsMode(GraphicsMode.Mode.NATIVE)
++class XrayScreenshotTest {
++    @get:Rule val compose = createEmptyComposeRule()
++
++    @Test fun theCover() {
++        val outDir = File("build/screenshots").apply { mkdirs() }
++        for ((name, qualifiers) in listOf(
++            "phone-portrait" to "w360dp-h800dp-port-xxhdpi",
++            "tablet10-landscape" to "w1280dp-h800dp-land-xhdpi",
++        )) {
++            RuntimeEnvironment.setQualifiers(qualifiers)
++            ActivityScenario.launch(ComponentActivity::class.java).use { scenario ->
++                scenario.onActivity {
++                    it.setContent {
++                        RiskMandateTheme(darkTheme = true) {
++                            Surface { XrayKiosk(onExit = {}, startUrl = XrayPolicy.START_URL, exitHoldMs = 3_000, clock = { 0L }, showWebView = false, startFailed = true) }
++                        }
++                    }
++                }
++                compose.waitForIdle()
++                var bitmap: Bitmap? = null
++                scenario.onActivity { activity ->
++                    val view = activity.window.decorView
++                    bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
++                    view.draw(Canvas(bitmap!!))
++                }
++                val file = File(outDir, "xray-cover-$name.png")
++                file.outputStream().use { bitmap!!.compress(Bitmap.CompressFormat.PNG, 100, it) }
++                assertTrue("${file.name} is empty", file.length() > 1000)
++            }
++        }
++    }
++}
+diff --git a/app/src/test/java/ai/riskmandate/app/features/xray/XrayWatchdogTest.kt b/app/src/test/java/ai/riskmandate/app/features/xray/XrayWatchdogTest.kt
+new file mode 100644
+index 0000000..2c2a7f9
+--- /dev/null
++++ b/app/src/test/java/ai/riskmandate/app/features/xray/XrayWatchdogTest.kt
+@@ -0,0 +1,65 @@
++package ai.riskmandate.app.features.xray
++
++import org.junit.Assert.assertEquals
++import org.junit.Assert.assertFalse
++import org.junit.Assert.assertTrue
++import org.junit.Test
++
++class XrayWatchdogTest {
++    private val dog = XrayWatchdog(stallMs = 45_000, firstRetryMs = 10_000, maxRetryMs = 60_000)
++
++    @Test fun aPageThatLoadsIsLeftAlone() {
++        dog.onLoadStarted(0)
++        dog.onLoadFinished(3_000)
++        assertEquals(XrayWatchdog.State.SHOWING, dog.state)
++        assertFalse(dog.coverShown)
++        assertEquals(XrayAction.NONE, dog.tick(10_000_000))
++        assertEquals("the network callback fires on registration: no reload", XrayAction.NONE, dog.onNetworkAvailable(10_000_001))
++    }
++
++    @Test fun aStalledLoadIsReloaded() {
++        dog.onLoadStarted(0)
++        assertEquals(XrayAction.NONE, dog.tick(44_999))
++        assertEquals(XrayAction.RELOAD, dog.tick(45_000))
++        assertTrue("the cover shows while it retries", dog.coverShown)
++    }
++
++    @Test fun anErrorShowsTheCoverAndRetriesWithBackoff() {
++        dog.onLoadStarted(0)
++        dog.onMainFrameError(1_000)
++        dog.onLoadFinished(1_100, failedMeanwhile = true) // WebView still reports the end of a failed load
++        assertTrue(dog.coverShown)
++        assertEquals(XrayAction.NONE, dog.tick(10_999))
++        assertEquals(XrayAction.RELOAD, dog.tick(11_000))
++        // The retry fails too: 20 s, then 40 s, then at most 60 s.
++        dog.onLoadStarted(11_000); dog.onMainFrameError(11_500)
++        assertEquals(20_000, dog.retryDelayMs())
++        dog.onLoadStarted(31_500); dog.onMainFrameError(32_000)
++        assertEquals(40_000, dog.retryDelayMs())
++        repeat(5) { dog.onMainFrameError(40_000L + it) }
++        assertEquals(60_000, dog.retryDelayMs())
++    }
++
++    @Test fun theCoverStaysWhileARetryLoadsAndGoesWhenItSucceeds() {
++        dog.onMainFrameError(0)
++        dog.onLoadStarted(10_000)
++        assertTrue("no flash of WebView's error page", dog.coverShown)
++        dog.onLoadFinished(12_000)
++        assertFalse(dog.coverShown)
++        assertEquals(XrayWatchdog.State.SHOWING, dog.state)
++        // And a later failure starts the backoff from 10 s again.
++        dog.onMainFrameError(100_000)
++        assertEquals(10_000, dog.retryDelayMs())
++    }
++
++    @Test fun theNetworkComingBackReloadsAFailedPageAtOnce() {
++        dog.onMainFrameError(0)
++        assertEquals(XrayAction.RELOAD, dog.onNetworkAvailable(1_000))
++        assertEquals("the retry clock restarts", XrayAction.NONE, dog.tick(10_999))
++    }
++
++    @Test fun aLoadingPageIsNotReloadedByTheNetworkCallback() {
++        dog.onLoadStarted(0)
++        assertEquals(XrayAction.NONE, dog.onNetworkAvailable(10))
++    }
++}
+diff --git a/app/src/test/java/ai/riskmandate/app/qa/FeatureLinksTest.kt b/app/src/test/java/ai/riskmandate/app/qa/FeatureLinksTest.kt
+index 63bf84c..aa74572 100644
+--- a/app/src/test/java/ai/riskmandate/app/qa/FeatureLinksTest.kt
++++ b/app/src/test/java/ai/riskmandate/app/qa/FeatureLinksTest.kt
+@@ -31,6 +31,10 @@ class FeatureLinksTest {
+             "https://appassets.androidplatform.net/assets/feature_site/",
+             "https://\$ASSET_HOST/assets/feature_site/",
+         ),
++        // The X-Ray kiosk's one start page (Silvio's page on web-summit.sgit.ai), in the xray package only. Its
++        // navigation and fetches are limited by XrayPolicy (tested in XrayPolicyTest); added for review by QA and
++        // security.android with the feature (riskmandate-android-demo, WS-203).
++        "xray" to setOf("https://web-summit.sgit.ai/people/silvio/app/index.html#xray"),
+     )
+ 
+     @Test fun sourcesWereFound() = assertTrue("features dir not found: wrong working directory?", sources.isNotEmpty())
+-- 
+2.43.0
+

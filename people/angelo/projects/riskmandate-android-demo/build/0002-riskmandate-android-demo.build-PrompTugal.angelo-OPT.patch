@@ -1,0 +1,70 @@
+From f89f0726e4f876a91482ee803366f681a4e60f5a Mon Sep 17 00:00:00 2001
+From: "bravo.large.worker@PrompTugal.angelo" <noreply@anthropic.com>
+Date: Wed, 11 Nov 2026 21:48:09 +0000
+Subject: [PATCH] riskmandate-android-demo.build@PrompTugal.angelo: OPTIONAL,
+ X-Ray demo in stand mode (needs a decision first)
+
+Angelo, 11 Nov 2026 about 21:30 UTC: "You're authorized to write there and publish the changes as soon as they're ready."
+
+NOT to apply until Angelo (and security.android, whose rule it changes) say yes: adds `xray` to
+STAND_VISITOR_FEATURES so stand mode's screen pinning keeps visitors in the kiosk. The X-Ray page can send
+company names to openrouter.ai with a demo key typed on the device, while the app's own rule keeps the cloud
+off in stand mode (spec question 3). One test added. Undo: revert this commit.
+
+Agent: bravo.large.worker@PrompTugal.angelo
+Issue: WS-203
+For: conductor.android@promptugal.ai.dinis
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Xp7gj7CyvXETnUrSumzuqm
+---
+ app/src/main/java/ai/riskmandate/app/MainActivity.kt         | 2 +-
+ .../java/ai/riskmandate/app/features/xray/XrayFeature.kt     | 5 +++--
+ app/src/test/java/ai/riskmandate/app/StandVisibilityTest.kt  | 2 ++
+ 3 files changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/app/src/main/java/ai/riskmandate/app/MainActivity.kt b/app/src/main/java/ai/riskmandate/app/MainActivity.kt
+index e84866f..8bc9bd5 100644
+--- a/app/src/main/java/ai/riskmandate/app/MainActivity.kt
++++ b/app/src/main/java/ai/riskmandate/app/MainActivity.kt
+@@ -121,7 +121,7 @@ fun cloudIsOn(keySet: Boolean, switchOn: Boolean, standOn: Boolean): Boolean = k
+  * Workbench, Models), is hidden while stand mode is on, **even when its owner has switched it on**; a new feature is
+  * hidden in stand mode until it is added here on purpose (fail closed). Outside stand mode `enabled` decides alone.
+  */
+-private val STAND_VISITOR_FEATURES = setOf("site", "abpdemo", "mandate", "releases")
++private val STAND_VISITOR_FEATURES = setOf("site", "abpdemo", "mandate", "releases", "xray")
+ 
+ /** Whether the feature may be shown (Home, sidebar, its route) given stand mode. Not about `enabled`. */
+ fun featureVisible(id: String, standOn: Boolean): Boolean = !standOn || id in STAND_VISITOR_FEATURES
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayFeature.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayFeature.kt
+index 7a99b81..b92de68 100644
+--- a/app/src/main/java/ai/riskmandate/app/features/xray/XrayFeature.kt
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayFeature.kt
+@@ -10,8 +10,9 @@ import androidx.compose.runtime.Composable
+  * Silvio's X-Ray page (web-summit.sgit.ai) as a stand kiosk: full screen, screen on, locked to web-summit.sgit.ai,
+  * recovering by itself; staff leave by holding the bottom-start corner for three seconds.
+  *
+- * Not on the stand-mode visitor list: the page itself can call AI services (openrouter.ai) with a demo key typed
+- * on the device, which stand mode's rule keeps away from visitors until security.android decides otherwise.
++ * On the stand-mode visitor list, so stand mode's screen pinning keeps visitors in it. The page itself can call
++ * AI services (openrouter.ai) with a demo key typed on the device: accepted for this feature by a person's decision
++ * recorded with this change, not by the app's own cloud switch (which stays off in stand mode).
+  */
+ object XrayFeature : Feature {
+     override val id = "xray"
+diff --git a/app/src/test/java/ai/riskmandate/app/StandVisibilityTest.kt b/app/src/test/java/ai/riskmandate/app/StandVisibilityTest.kt
+index fae5fbc..bab7444 100644
+--- a/app/src/test/java/ai/riskmandate/app/StandVisibilityTest.kt
++++ b/app/src/test/java/ai/riskmandate/app/StandVisibilityTest.kt
+@@ -51,6 +51,8 @@ class StandVisibilityTest {
+         for (f in FEATURES.filter { it.usesCloud }) assertFalse("${f.id} uses the cloud", f.id in inStand)
+     }
+ 
++    @Test fun theXrayKioskShowsInStandMode() = assertTrue(featureVisible("xray", standOn = true))
++
+     @Test fun aRestoredRouteToAnLlmFeatureGoesHomeInStandMode() {
+         // featureVisible gates the route's feature, so resolveRoute sees no enabled feature for it.
+         assertEquals(Routes.HOME, resolveRoute("chat", standOn = true, featureEnabled = featureVisible("chat", true)))
+-- 
+2.43.0
+
