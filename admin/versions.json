@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1873",
+    "date": "2026-11-11",
+    "what": "IP's rail alert read at source (restrictions, speed limits in high-risk areas), paraphrased under IP's terms",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "df56501ee"
+  },
+  {
     "version": "v0.2.1872",
     "date": "2026-11-11",
     "what": "TAP's own site alert for 10 and 11 Nov (fact, published 10 Nov 09:00), checked at source",
