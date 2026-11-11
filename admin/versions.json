@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1855",
+    "date": "2026-11-11",
+    "what": "CP's 12:00-15:00 forecast attributed to CP's own statement, not left to read as ours",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "2b10bfc57"
+  },
+  {
     "version": "v0.2.1854",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: bravo started on b1-team-spec (spec)",
