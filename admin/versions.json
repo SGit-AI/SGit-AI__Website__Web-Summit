@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1792",
+    "date": "2026-11-11",
+    "what": "Madeira's decisions in the graph (red warnings, schools to 13:00, airport, cruise calls); RTP's new live-blog address in the source map",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "1103ab29d"
+  },
+  {
     "version": "v0.2.1791",
     "date": "2026-11-11",
     "what": "Jose's CRM connections task reached my session, not crm@'s; nothing done, reported to the conductor",
