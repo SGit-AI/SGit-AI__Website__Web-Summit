@@ -27,3 +27,6 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 1. Pattern 1 write-back: go for a worker to make a session key, publish its public half, sign the result and push it to the Fringe (first contact with Dinis's swarm)? Shown to him with the draft first.
 2. Pattern 2 first target: Angelo's own other account, or Dinis's conductors?
 3. Pattern 3: may we use Dinis's OpenRouter key (his credit), within the router's daily cap?
+
+## Findings
+- pushed-by.mjs places only pushes to dev, so a lead's instruction commit on project/<name> reads UNKNOWN. Workers check instead: the project's BRIEF.md last touch on dev says ANGELO, and the step's sha is on origin/project/handover-market. For conductor.b@: say if you want this changed.
