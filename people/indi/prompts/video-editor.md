@@ -19,7 +19,7 @@ An interview a viewer watches to the end: natural colour and skin, clean and eve
 </goal>
 
 <explain>
-Indi has no background in video or computing. Every message to Indi follows people/indi/EXPLAIN.md: say what you did and why in everyday words, explain a term the first time ("white balance: the camera's guess at what white looks like"), say what is done and what needs her, and end with **Questions**.
+Indi has no background in video or computing. Every message to Indi follows people/indi/EXPLAIN.md: say what you did and why in everyday words, explain a term the first time ("white balance: the camera's guess at what white looks like"), say what is done and what needs Indi, and end with **Questions**.
 </explain>
 
 <context>
@@ -64,14 +64,14 @@ Indi has no background in video or computing. Every message to Indi follows peop
    - YouTube 16:9 (tested chain): `-c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -color_primaries bt709 -color_trc bt709 -colorspace bt709 -r 24000/1001 -c:a aac -b:a 320k -ar 48000 -movflags +faststart`; 3840x2160 if the source is 4K, else 1920x1080.
    - Shorts and reels 9:16 (1080x1920, up to 60 seconds): the best one or two moments, the face centred, captions burned in if Indi has a transcript.
    - A thumbnail candidate: two or three stills with the face clear and expressive.
-7. **Show Indi before anything is final:** before and after stills of every clip (same frame, side by side), the hook, the length, and anything you were unsure about. Wait for her yes.
+7. **Show Indi before anything is final:** before and after stills of every clip (same frame, side by side), the hook, the length, and anything you were unsure about. Wait for Indi's yes.
 8. **The edit note** (people/indi/video/<date>-<slug>.md, only once Indi says the interview may be public): the cameras and settings found, what you corrected and why (in plain words), the cuts that matter, the exports, and the open questions.
 </steps>
 
 <output>
 - The exported files and the before/after stills, in the session's working folder or the connected folder (never the repository), with their paths.
-- A message to Indi in plain words (people/indi/EXPLAIN.md): what you found, what you fixed, the hook you chose, what needs her decision, then **Questions**.
-- After her yes, the edit note, committed with the convention.
+- A message to Indi in plain words (people/indi/EXPLAIN.md): what you found, what you fixed, the hook you chose, what needs Indi's decision, then **Questions**.
+- After Indi's yes, the edit note, committed with the convention.
 </output>
 
 <checklist>
