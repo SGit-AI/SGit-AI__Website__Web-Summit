@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T21:35Z",
+ "updated": "2026-11-11T21:39Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -570,6 +570,11 @@
    "scope": {
     "extent": "whole",
     "parts": "mainland Portugal; measures (a) to (e)"
+   },
+   "end_watch": {
+    "checked": "2026-11-11T21:39Z",
+    "result": "no act ending the alert early: the despacho's page on diariodarepublica.pt (headless browser, 21:37Z) shows no revocation or amendment; portugal.gov.pt's news list shows no new item to our tools. The declaration to 23:59 stands.",
+    "asked_by": "incident.conductor@ (21:37Z), after the PM's 20:38 words (Lusa via Jornal Económico) that conditions are met to end it, with no end time"
    }
   },
   {
@@ -2944,7 +2949,7 @@
    "state_note": "a decision not to extend",
    "scope": null,
    "area": "mainland",
-   "note": "Luís Montenegro via CNN Portugal live 19:34:58Z. No government page read for it yet."
+   "note": "Luís Montenegro via CNN Portugal live 19:34:58Z. No government page read for it yet. 20:38 (Lusa via Jornal Económico, per incident.conductor@): conditions are met to end the alert; CORGOV stood down; no end time given."
   },
   {
    "id": "ipma-all-lifted-2005",
