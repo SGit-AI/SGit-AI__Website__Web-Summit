@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **36** P6 approved with security@'s changes, in steps; not in force until Vicky says go.
 - **35** Web Summit news to journalist-portugal after the summit; hand-over messages in For Vicky when due; tools in vault A safe to publish.
 - **34** Thursday's hourly summit lane; the internal journalist is the summit journalist after the summit; the two-way messaging draft.
 - **33** the schedule after the switch-back; vaults A and B; designer, reporter and internal journalist plans.
@@ -184,6 +185,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Hand-over messages** (her words: "For the repurposing hand-overs, just keep the paste-in messages in the plans file. When each one is due, give it to me in For Vicky with the window to paste it in."): the messages stay in `people/vicky/plans/2026-11-11-repurposing-handovers.md`; the conductor gives each in the For Vicky list on the day it is due, naming the window.
     - **Safe tools in vault A** (her words: "everything in them must be safe to make public later, in case Dinis wants to publish them. No keys, tokens, contact details, CRM, interview shortlist, mail, vault contents or prompt text. Tools show only public data, such as agent names, rule IDs, confirmation status and schedule times."): added to SA33-TOOLS below; security@web-summit.vicky checks each tool against it before its key is shared with anyone.
 
+36. **P6, signed two-way messaging: approved with security@'s changes, in steps** (Vicky, 11 Nov, about 19:35 UTC, in this window: "I approve P6 with its changes, not as drafted: signed task and result files checked against a fingerprint in each agent's prompts file, replies only to the session that messaged, results treated as information only, task files that expire and are safe to publish, and private work only through the agent's own window. Plan it in steps: dev@ builds the signature check first, then one signed test round trip, then I say go. Until then, keep one-off wakes at my word. Also plan the same signing for the decisions.md guard, as security@ noted.")
+    - The plan: `people/vicky/plans/2026-11-11-p6-signed-messaging.md` (from security@'s review, `people/vicky/reviews/security-p6.md`). **P6 as it stands stays in force** (no messages into sessions) until Vicky says go after the test round trip; until then, one-off wakes at her word.
+    - Step 1 now: dev@ builds `people/vicky/tools/tasks.mjs` (update SA36-SIGN); security@ reviews it.
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -250,6 +255,9 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA35-WS, Web Summit news after the summit** (Vicky, 11 Nov, about 19:30 UTC). For: curator, journalist-portugal, reviewer.
 > From Friday 13 Nov: any further Web Summit news is commissioned for journalist-portugal, category "Web Summit 2026" (standing answer 35); the reviewer checks the category. Put it in your prompts file and confirm "applied SA35-WS".
 
+**SA36-SIGN, the signature check** (Vicky, 11 Nov, about 19:35 UTC: "dev@ builds the signature check first"). For: dev.
+> Build `people/vicky/tools/tasks.mjs` as step 1 of `people/vicky/plans/2026-11-11-p6-signed-messaging.md` says (verify against a pinned fingerprint, expiry, done-file check, `--no-expiry` for decisions.md, `check-pointer`, `lint`), with tests for a good, a forged, an expired and an already-done file. Node only, no dependencies, no network; it must be safe to publish (standing answer 35). Commit it on the team site For: security@web-summit.vicky and For: conductor@web-summit.vicky, and confirm "applied SA36-SIGN". Do not send or receive any session message.
+
 Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - P10, P17, P22, P27: vault, designer.
 - SA16: vault, designer, inbox.
@@ -260,7 +268,7 @@ Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - SA27 (added 9 Nov, 11:25; changed 13:40): inbox. (vault applied it at 11:35.)
 - SA28 (added 9 Nov, 14:15): programme, researcher, curator.
 - RULES-11NOV (added 11 Nov, 19:00): all 17 returning agents, and designer.
-- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: programme. SA35-WS: curator, journalist-portugal, reviewer.
+- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: programme. SA35-WS: curator, journalist-portugal, reviewer. SA36-SIGN: dev.
 - SA29 (added 9 Nov, 23:50): researcher, curator (and "SA29 used" at the first regular run).
 
 Removed on 9 Nov once done or confirmed: SA13, SA15, SA18, SA19B, SA19C, SA22, SA25, PILOT-REPLIT, TRIAGE-REPLIT and OVERNIGHT-9NOV (closed at 04:40, people/vicky/company-pages/backlog.md).

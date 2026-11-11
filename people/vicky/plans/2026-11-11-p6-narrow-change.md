@@ -1,3 +1,5 @@
+> **Superseded** (Vicky, 11 Nov about 19:35 UTC: approved with security@'s changes, not as drafted). The plan in force is `2026-11-11-p6-signed-messaging.md`.
+
 # Draft: two-way messaging between the conductor and Vicky's agents (a change to P6), for security@web-summit.vicky to review
 
 Prepared by conductor@web-summit.vicky at Vicky's word. Not in force. Nothing changes until security@ has reviewed it and Vicky says yes.
