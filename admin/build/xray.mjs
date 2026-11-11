@@ -14,6 +14,23 @@ const KINDS = { company: 'a company', 'use-case': 'a use case', industry: 'an in
 export const RM_WORDS = { path: 'never in the request path: read-only by design', does: 'measures what your agents can actually reach, evidences the controls that contain them, prices the exposure, and produces that record' }
 const okUrl = u => /^https?:\/\//i.test(String(u || ''))
 
+// The plain reading of one use case, for the stand (conductor@web-summit.indi, 11 November 2026, WS-191, at Indi's
+// word: "understandable by someone that has no experience in CS or AI, and explained in lay terms"): three blocks, in
+// this order, each with why it matters and its sources. assets/xray.js writes the same blocks on /xray/ (plainHtml).
+const hostOf = u => { try { return new URL(u).hostname.replace(/^www\./, '') } catch { return '' } }
+const unIll = t => { t = String(t || '').replace(/^Illustrative:\s*/i, '').trim(); return t.charAt(0).toUpperCase() + t.slice(1) }
+export function plainBlocks(x, u, more) {
+    const SRC = Object.fromEntries((x.sources || []).map(r => [r.id, r]))
+    const srcLine = ids => { const by = new Map(); for (const id of ids) { const r = SRC[id], h = r && okUrl(r.url) && hostOf(r.url); if (!h) continue; if (!by.has(h)) by.set(h, []); if (!by.get(h).includes(r.url)) by.get(h).push(r.url) } const l = [...by].map(([h, us]) => us.length === 1 ? `<a href="${esc(us[0])}" rel="noopener">${esc(h)}</a>` : `${esc(h)} (pages ${us.map((u, i) => `<a href="${esc(u)}" rel="noopener">${i + 1}</a>`).join(', ')})`); return l.length ? `<p class="xp-src">${by.size > 1 || l[0].includes('(pages') ? 'Sources' : 'Source'}: ${l.join('; ')}</p>` : '' }
+    const reach = u.reach || [], asked = u.mandate || [], gap = u.gap || []
+    const gapSrc = [...new Set(gap.flatMap(g => (g.reach || []).flatMap(id => ((reach.find(r => r.id === id) || {}).sources || []))))]
+    return `<div class="xp-blocks">`
+        + `<section class="xp-block xp-reach"><h3>What its AI helpers can reach</h3><p class="xp-why">Why it matters: the more a helper can reach, the more harm one mistake can do.</p><ul>${reach.map(r => `<li>${esc(r.what)}</li>`).join('') || '<li>Nothing found in what we read.</li>'}</ul>${srcLine([...new Set(reach.flatMap(r => r.sources || []))])}</section>`
+        + `<section class="xp-block xp-asked"><h3>What they were asked to do <span class="xp-ours">(our example)</span></h3><p class="xp-why">Why it matters: these are the limits a careful company would set. They are our example: the company has not published its own.</p><ul>${asked.map(m => `<li>${esc(unIll(m.what))}</li>`).join('') || '<li>No limits written down yet.</li>'}</ul><p class="xp-src">Source: our own example, not the company's rules.${more ? ` <a href="${more}">How we chose them</a>` : ''}</p></section>`
+        + `<section class="xp-block xp-gap"><h3>The gap</h3><p class="xp-why">Why it matters: this is where a helper could do something nobody agreed to.</p><ul>${gap.map(g => `<li>${esc(g.what)}</li>`).join('') || '<li>No gap found in what we read.</li>'}</ul>${srcLine(gapSrc)}</section>`
+        + `</div><p class="xp-label">RiskMandate calls these three things reach, mandate and gap.</p>`
+}
+
 // every subject, read once: [{ slug, subject, kind, tagline, status, read_on, x }]
 export function loadXray(ROOT) {
     const dir = path.join(ROOT, 'data/xray')
@@ -27,6 +44,18 @@ export function loadXray(ROOT) {
     }
     out.sort((a, b) => (a.status === 'prepared' ? 0 : 1) - (b.status === 'prepared' ? 0 : 1) || a.subject.localeCompare(b.subject))
     // searches with no X-ray (experiments): named on /xray/how/, never counted in its totals
+    // the stand view's three short lines per situation (data/xray-stand.json, conductor@web-summit.indi, WS-191): at most
+    // 8 words each; a situation with no line falls back to the start of its own text in assets/xray.js
+    const sf = path.join(ROOT, 'data/xray-stand.json')
+    out.stand = {}
+    if (fs.existsSync(sf)) {
+        let st; try { st = JSON.parse(fs.readFileSync(sf, 'utf8')) } catch (e) { throw new Error(`data/xray-stand.json: ${e.message}`) }
+        for (const [slug, ucs] of Object.entries(st.companies || {})) for (const [uc, l] of Object.entries(ucs)) for (const k of ['reach', 'asked', 'gap']) {
+            const v = String((l || {})[k] || '')
+            if (!v || v.split(/\s+/).length > 8 || v.includes('\u2014')) throw new Error(`data/xray-stand.json: ${slug} ${uc} ${k} must be 1 to 8 words, with no em-dash`)
+        }
+        out.stand = st.companies || {}
+    }
     out.experiments = fs.readdirSync(dir).filter(n => /^[a-z0-9-]+$/.test(n) && !fs.existsSync(path.join(dir, n, 'xray.json'))).map(n => loadSearch(ROOT, n)).filter(Boolean).map(r => r.subject || r.slug)
     return out
 }
@@ -38,7 +67,7 @@ export function xrayIndexHtml(list) {
     const json = JSON.stringify(list.map(indexRow)).replace(/</g, '\\u003c')
     return `<div class="xray" id="xray" data-mode="home"><p class="meta xr-nojs">The scanner (the input, the replay of each run and the graph) needs JavaScript. Every X-ray below is a plain page that reads without it.</p>`
         + (list.length ? `<ul class="xr-list">${list.map(s => `<li><a href="@@/xray/${s.slug}/index.html"><b>${esc(s.subject)}</b></a> <span class="meta">${esc(KINDS[s.kind] || s.kind)}, ${esc(s.status)}${s.read_on ? `, read ${esc(s.read_on)}` : ''}</span><br>${esc(s.tagline)} <a class="meta" href="@@/xray/${s.slug}/deck/index.html">the deck</a></li>`).join('')}</ul>` : '<p>No subject has been X-rayed yet.</p>')
-        + `<script type="application/json" id="xray-index">${json}</script></div>`
+        + `<script type="application/json" id="xray-index">${json}</script><script type="application/json" id="xray-stand">${JSON.stringify(list.stand || {}).replace(/</g, '\\u003c')}</script></div>`
 }
 export const xrayIndexMd = list => list.length ? list.map(s => `- [${s.subject}](${s.slug}/index.md) (${KINDS[s.kind] || s.kind}, ${s.status}${s.read_on ? `, read ${s.read_on}` : ''}): ${s.tagline} Deck: [${s.slug}/deck/index.md](${s.slug}/deck/index.md).`).join('\n') : 'No subject has been X-rayed yet.'
 
@@ -58,6 +87,14 @@ export function buildXray({ list, write, page, twin, pages, VERSION }) {
 
         // ---------- the HTML page ----------
         const h = []
+        const abpHref = u => `../../abp-make/index.html?x=${encodeURIComponent(s.slug)}&amp;uc=${encodeURIComponent(u.id)}`
+        const situation = (u, n) => `<p class="xp-case">${n ? '' : 'One situation we looked at: '}<b>${esc(u.name)}</b>. The helper: <b>${esc(agentName(u.agent))}</b>.</p>${plainBlocks(x, u, `#uc-${esc(u.id)}`)}<p><a class="xp-abp" href="${abpHref(u)}">Make an ABP (Agent Behaviour Policy) for this helper →</a></p>`
+        h.push(`<p class="xp-intro">What ${esc(s.subject)}'s AI helpers can do, what they were asked to do, and where the two do not match. All from what ${esc(s.subject)} and others say in public; we did not test its systems.</p>`)
+        if (s.tagline) h.push(`<p class="xp-what"><b>${esc(s.subject)} in one line:</b> ${esc(s.tagline)}</p>`)
+        if (ucs[0]) h.push(situation(ucs[0], 0))
+        for (const u of ucs.slice(1)) h.push(`<details class="fold xp-more"><summary>Another situation: ${esc(u.name)}</summary>${situation(u, 1)}</details>`)
+        h.push(`<p><a href="../index.html">Look at another company</a></p>`)
+        h.push(`<details class="fold xp-tech" id="technical"><summary>For the technically minded</summary>`)
         h.push(`<p class="meta">${esc(KINDS[s.kind] || s.kind)} · ${esc(s.status)}${x.read_on ? ` · sources read on ${esc(x.read_on)}` : ''} · <a href="deck/index.html">the deck</a> · <a href="run/index.html">how this X-ray was made</a> · <a href="../index.html">X-ray another name</a></p><p class="xr-runlink"><a class="xr-btn" href="run/index.html">What happened: how this X-ray was made →</a></p>`)
         h.push(`<div class="xray" id="xray" data-mode="subject" data-slug="${esc(s.slug)}"><p class="meta xr-nojs">With JavaScript, the graph of this X-ray and a player for each use case's simulation are drawn here. Everything they show is written out below.</p></div>`)
         h.push(`<h2 id="what">What it does</h2><p>${esc((x.what_it_does || {}).text || 'Not yet written.')} ${cite((x.what_it_does || {}).sources)}</p>`)
@@ -76,6 +113,7 @@ export function buildXray({ list, write, page, twin, pages, VERSION }) {
         h.push(`<h2 id="leads">Leads: what the models claimed, and what we found</h2>${(x.leads || []).length ? `<div class="scroll"><table class="xr-t"><tr><th>Model</th><th>Claim</th><th>Status</th><th>Source</th></tr>${x.leads.map(l => `<tr><td>${esc(l.model)}</td><td>${esc(l.claim)}</td><td><span class="xr-st xr-st-${esc(l.status)}">${esc(l.status)}</span></td><td>${l.source ? cite([l.source]) : ''}</td></tr>`).join('')}</table></div>` : '<p>None recorded.</p>'}`)
         h.push(`<h2 id="questions">The questions we would ask</h2><p class="meta">We have not asked them yet.</p>${(x.questions || []).length ? `<ol>${x.questions.map(q => `<li>${esc(q)}</li>`).join('')}</ol>` : '<p>None yet.</p>'}`)
         h.push(`<h2 id="sources">Sources</h2><ol class="xr-sources">${(x.sources || []).map(r => `<li id="src-${esc(r.id)}"><b>${esc(r.id)}</b> ${okUrl(r.url) ? `<a href="${esc(r.url)}">${esc(r.title || r.url)}</a>` : esc(r.title || r.url)}${r.publisher ? `, ${esc(r.publisher)}` : ''} <span class="meta">(${esc(r.kind || 'other')}${r.read_on ? `, read ${esc(r.read_on)}` : ''})</span><br><span class="meta">${esc(r.url)}</span></li>`).join('')}</ol>`)
+        h.push(`</details>`)
         h.push(`<p class="meta">X-rayed by RiskMandate, which ${esc(RM_WORDS.does)} (riskmandate.ai/llms.txt). The mandates are illustrative. Built by xray@web-summit.dinis from <a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/data/xray/${esc(s.slug)}/xray.json">data/xray/${esc(s.slug)}/xray.json</a>.</p>`)
         write(rel, page({ rel, title, description, body: h.join('\n'), mdTwin: rel.replace(/\.html$/, '.md'), head: `<link rel="stylesheet" href="../../assets/xray/xray.css?v=${VERSION}"><script src="../../assets/xray.js?v=${VERSION}" defer></script>` }))
         pages.push({ rel, title, description })
@@ -83,6 +121,10 @@ export function buildXray({ list, write, page, twin, pages, VERSION }) {
         // ---------- the markdown twin ----------
         const m = []
         m.push(`${KINDS[s.kind] || s.kind}, ${s.status}${x.read_on ? `, sources read on ${x.read_on}` : ''}. The deck: [deck/index.md](deck/index.md).`)
+        const mdSrc = ids => { const l = [...new Set((ids || []).map(id => SRC[id] && okUrl(SRC[id].url) ? SRC[id].url : '').filter(Boolean))]; return l.length ? `\n\nSources: ${l.map(u2 => `<${u2}>`).join(', ')}` : '' }
+        m.push(`What ${s.subject}'s AI helpers can do, what they were asked to do, and where the two do not match. All from what ${s.subject} and others say in public; we did not test its systems.${s.tagline ? `\n\n**${s.subject} in one line:** ${s.tagline}` : ''}`)
+        for (const u of ucs) m.push(`## Situation: ${u.name}\n\nThe helper: ${agentName(u.agent)}.\n\n### What its AI helpers can reach\n\nWhy it matters: the more a helper can reach, the more harm one mistake can do.\n\n${(u.reach || []).map(r => `- ${r.what}`).join('\n')}${mdSrc((u.reach || []).flatMap(r => r.sources || []))}\n\n### What they were asked to do (our example)\n\nWhy it matters: these are the limits a careful company would set. They are our example: the company has not published its own.\n\n${(u.mandate || []).map(q => `- ${unIll(q.what)}`).join('\n')}\n\nSource: our own example of sensible limits, not the company's rules.\n\n### The gap\n\nWhy it matters: this is where a helper could do something nobody agreed to.\n\n${(u.gap || []).map(g => `- ${g.what}`).join('\n')}${mdSrc((u.gap || []).flatMap(g => (g.reach || []).flatMap(id => ((reachOf(u, id) || {}).sources || []))))}`)
+        m.push(`RiskMandate calls these three things reach, mandate and gap.\n\n## For the technically minded`)
         m.push(`## What it does\n\n${(x.what_it_does || {}).text || 'Not yet written.'}${citeMd((x.what_it_does || {}).sources)}`)
         m.push(`## Its AI agents\n\n${agents.map(a => `### ${a.name}\n\n${a.what || ''}${citeMd(a.sources)}\n\n${(a.actions || []).map(t => `- ${t}`).join('\n')}`).join('\n\n') || 'None found.'}`)
         m.push(`## Use cases: reach, mandate and gap\n\n${ucs.map(u => `### ${u.name}\n\nThe agent: ${agentName(u.agent)}. Who uses it: ${u.who || ''}.\n\nReach:\n\n${(u.reach || []).map(r => `- ${r.what} (${r.kind})${citeMd(r.sources)}`).join('\n')}\n\nMandate (illustrative):\n\n${(u.mandate || []).map(x => `- ${x.what}`).join('\n') || '- none stated'}\n\nGap:\n\n${(u.gap || []).map(g => `- ${g.what}`).join('\n') || '- none found'}\n\nControls:\n\n${(u.controls || []).map(c => `- ${c.what}${citeMd(c.sources)}`).join('\n') || '- none found'}\n\nSimulation:\n\n${(u.simulation || []).map((st, i) => `${i + 1}. ${st.action}: ${st.in_mandate ? 'inside the mandate' : 'outside the mandate, in the gap'}${st.note ? `. What RiskMandate's record shows: ${st.note}` : ''}`).join('\n')}`).join('\n\n')}`)

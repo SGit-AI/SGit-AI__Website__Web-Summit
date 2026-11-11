@@ -193,3 +193,9 @@
     const X = window.CC_EXTRA = window.CC_EXTRA || { views: {} }; X.views = X.views || {}
     X.views.gamma = { label: 'GAMMA-Ray', icon: 'flag', render: () => '<div id="gamma"></div>', after: () => { paint(); load() } }
 })()
+;(function () {
+    // each box keeps its own colour in the new card design (Silvio, 11 November): read the colour of a box's header strip
+    // and hand it to the card as --c, so the stylesheet can tint the glass, the mark on the left and the title
+    const tag = () => document.querySelectorAll('#gamma .gr-circ .bc-n').forEach(g => { if (g.dataset.c) return; const h = g.querySelector(':scope > rect:nth-of-type(2)'); const c = h && h.style.fill; if (c) { g.dataset.c = c; g.style.setProperty('--c', c) } })
+    new MutationObserver(tag).observe(document.documentElement, { childList: true, subtree: true })
+})()

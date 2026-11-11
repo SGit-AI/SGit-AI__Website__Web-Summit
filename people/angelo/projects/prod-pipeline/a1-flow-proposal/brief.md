@@ -1,0 +1,32 @@
+---
+title: "A1: the flow view proposal, a draft for the team (asked 2026-11-11)"
+item: a1-flow-proposal
+project: prod-pipeline
+by: prod-pipeline.pm@PrompTugal.angelo (intake, from ASKS.md)
+written: 2026-11-11
+role: design
+size: large
+go: "Angelo, 11 Nov, in the lead's session: \"Start A1 and A2 yourself, as ROLES.md's lead role now says\" (ROLES.md lead role: 21a8214, pushed by riskmandate-angelo)"
+---
+# a1-flow-proposal
+
+The project's brief, with Angelo's words: people/angelo/projects/prod-pipeline/BRIEF.md (section "Angelo's change, 11 November").
+Your folder is people/angelo/projects/prod-pipeline/a1-flow-proposal/ (where the library says people/angelo/pipeline/{ID}/, read this folder).
+
+- **Role:** design (large). Never the slot that builds it later.
+- **Skills:** designer, cold-reader, analyst (+ always-on: privacy, plain-language, token-thrift, trace).
+- **Format:** web-summit-site for the files; the Tech Fringe's own look (its tokens.css) for the mocks.
+- **Instruction:** Angelo's words in people/angelo/projects/prod-pipeline/BRIEF.md, section "Angelo's change, 11 November", quoted there.
+- **Reads (material, read only; change nothing there):** PrompTugal/PrompTugal__News__Fringe on dev (public, clone read only): team/angelo/traces/README.md and the Wexio trace (893d4e6), admin/build/trace-page.mjs (f6dbece, the full page /traces/<event_id>/), admin/build/trace-strip.mjs (438f9f5, the one-line strip), admin/tools/trace-event.mjs, team/angelo/status.json and runs.md. The newsroom's lanes and Replay (https://promptugal.news/newsroom/pieces/, assets/newsroom/flow.js in PrompTugal/PrompTugal__News__Website). people/angelo/pipeline/b2-flow-reuse/research.md. Our records for one real example: people/angelo/pipeline/b0-library/ (times.json, its commits on pool/b0-library), people/angelo/ledger/, people/angelo/estimates/.
+- **Writes:** people/angelo/projects/prod-pipeline/a1-flow-proposal/ only: proposal.md, mock/ (static HTML or SVG, and screenshots at 390 px and 1280 px), STATE.md. Branch pool/a1-flow-proposal.
+- **Brief:** one concept, two sizes, kept live:
+  1. The page and the strip draw from the same concept and design (Angelo: "align and draw from the same concept and design"): say what each keeps from the Fringe drafts and what it takes from the newsroom's (one lane per agent as an option, Replay, a hand-off arrow), and what changes in either.
+  2. Always up to date: the trace is regenerated on every page update (in the build or the deploy), with no hand step; say where the hand steps of today's method (people's steps, sub-agents) come from instead, or how they show as gaps.
+  3. In progress: when work on a page is running, the diagram shows it moving (Angelo: "an in-progress gif"). Say what signal tells "running" (an open branch, a run without an end, status.json, a CI run in progress), how fresh it can be on a static site, and the cost of each.
+  4. Everywhere: the strip at the foot of every page, phone and desktop, and how the coming app would take the same data (one JSON per page, its URL).
+  5. One data shape: lisbon-fringe-trace/1 plus what is missing (slot, minutes, tokens per step; live moment), so our records (b0-library) can fill it too. Mock both the Wexio trace and b0-library in it.
+  6. Small and portrait screens: A2 (below) does this as its own task, in parallel. If A2's result is on pool/a2-small-screens when you write, take its limits and show them in your mocks; if not, leave a short section pointing to A2.
+  7. Bigger later, named only: the stand and the demo screens (a wall view of work in progress). Out of scope to design now; a paragraph on what this concept gives them.
+- **proposal.md:** first one phone screen a team member can read cold (the idea, one picture, what changes, what it needs); then the options with mocks; then the data shape; then open questions with a recommendation each. No em-dash. No contact detail; private people by role.
+- **Not:** no change in the Fringe repository or to its agents' files; no message to any agent or person; no build; no automated reading of websummit.com.
+- **Done when:** proposal.md and the mocks are on pool/a1-flow-proposal, every claim about existing code names its file and commit, the gate prints OK, and STATE.md says "ready for Angelo's read". Angelo reads it, then decides who in the team gets it.

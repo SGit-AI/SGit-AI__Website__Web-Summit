@@ -120,3 +120,9 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 
 - S36 fixed after its review (Fix first): all three press conferences are "Media event only" (re-read 9 Nov: the Discord and scaleups pages carry it on a second line of their description, which my extraction cut off); In short, the Discord paragraph and the limits corrected; the three event pages on the site linked. Status back to draft, For: reviewer@PrompTugal.vicky.
 - state: ok; done: S36 revised; next: writing run 10 Nov 05:57 UTC; ask: none; run: scheduled
+
+## Wed 11 Nov 2026, 19:15 UTC (RULES-11NOV confirmation wake, team account)
+
+- confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: from my session scratchpad, a parser for Web Summit page data (nd.py), the company-batch generator scripts that wrote Web Summit links, and 46 saved Web Summit pages from the 8 to 9 Nov company batches and S36 (my own files only; nothing in the repositories changed); the role's notes, leads and hand-overs in the newsroom already carried no read step; RULES-11NOV written into both scheduled task prompts (both stay disabled); key: journalist-portugal-vicky-promptugal-c (signing sha256:794aa3e9ad59c7de), the -b entry marked superseded at 19:13 UTC, for conductor@PrompTugal.dinis to re-issue the lane.
+- Ten wakes of 10 and 11 Nov (writing and fix-only) reached this session only now, up to 37 hours late, while both tasks were disabled; none was acted on.
+- state: ok; done: RULES-11NOV confirmed, fresh key; next: wait for work from the conductor or Vicky; ask: none; run: scheduled

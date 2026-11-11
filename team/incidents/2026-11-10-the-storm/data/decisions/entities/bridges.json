@@ -1,7 +1,7 @@
 {
  "entity": "bridges",
  "about": "Every decision in graph.json about bridges: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T13:36Z",
+ "updated": "2026-11-11T20:44Z",
  "decisions": [
   {
    "edge": "bridges-60",
@@ -72,6 +72,16 @@
     "extent": "whole",
     "parts": "both bridges"
    }
+  },
+  {
+   "edge": "bridges-normal-wed",
+   "decision": "Both bridges back to usual limits (120 and 70 km/h) late afternoon",
+   "decided_by": "Lusoponte",
+   "published_utc": "2026-11-11T20:21Z",
+   "address": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T20:44Z",
+   "label": "evidence",
+   "state": "running"
   }
  ],
  "open": [
@@ -167,11 +177,41 @@
    "url": "https://www.lusoponte.pt/",
    "http": null,
    "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T17:40Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T18:33Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T19:33Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T20:33Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T21:34Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
   }
  ],
  "tries_summary": {
   "https://www.lusoponte.pt/": {
-   "tries": 15,
+   "tries": 20,
    "published_found": false
   }
  }

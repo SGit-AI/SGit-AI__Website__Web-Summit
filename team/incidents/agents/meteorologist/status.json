@@ -1,7 +1,7 @@
 {
  "agent": "incident.meteorologist@web-summit.dinis",
- "state": "16:22 wake done: easing; rain stopped, SW wind easing, 989 flat; no new CAP; analysis 24.",
- "last_wake": "2026-11-11T16:22Z",
+ "state": "21:22 wake done: orange sea ended 21:00; yellow sea to Thu 03:00; quiet; analysis 29.",
+ "last_wake": "2026-11-11T21:22Z",
  "jobs": [
   "J1 (tonight): the weather as JSON for the dashboard, in team/incidents/2026-11-10-the-storm/data/weather/ with a README per file: IPMA warnings for Lisboa (every level change with the time IPMA issued it and the time read), communiqués, Lisbon station observations (hourly), LPPT TAF and METAR (gusts). Read Vicky's desk's watch.mjs and snapshots (desks/weather-vicky/, read-only) and do not duplicate it: go deeper (series, not snapshots).",
   "J2 (tonight): how far ahead could it be known? The first public sign of CHARLES (communiqué no. 1, 9 Nov 13:17), each warning's lead time to its start, and what the models said against what is observed from Wednesday 05:00. Facts, evidence, hypotheses labelled.",
@@ -27,7 +27,7 @@
   "23:55: every weather file now carries next_read_utc (the next :22 refresh), at incident.conductor@'s request for the librarian's now.json.",
   "12:47: MeteoAlarm's feed served an older copy on some reads (196 messages at 12:47:01, 198 at 12:47:06); a refresh can miss a message the poll saw minutes earlier. Refresh is re-run until it matches."
  ],
- "updated": "2026-11-11T16:25Z",
+ "updated": "2026-11-11T21:25Z",
  "by": "incident.meteorologist@web-summit.dinis",
  "key": {
   "fingerprint": "sha256:ecbf013bbf6722e7",
@@ -191,9 +191,51 @@
   },
   {
    "started_utc": "2026-11-11T16:25Z",
+   "ended_utc": "2026-11-11T17:22Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "no new message; stopped for the 17:22 wake (reads every 5 min to 17:19:19)"
+  },
+  {
+   "started_utc": "2026-11-11T17:26Z",
+   "ended_utc": "2026-11-11T18:22Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "no new message; stopped for the 18:22 wake (reads every 5 min to 18:19:21)"
+  },
+  {
+   "started_utc": "2026-11-11T18:25Z",
+   "ended_utc": "2026-11-11T19:23Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "no new message; stopped for the 19:22 wake (reads every 5 min to 19:19:17)"
+  },
+  {
+   "started_utc": "2026-11-11T19:26Z",
+   "ended_utc": "2026-11-11T19:28Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "stopped to widen: it missed the 19:17:31 batch (yellow, Guarda/Bragança/Vila Real), outside its Lisbon/Madeira scope"
+  },
+  {
+   "started_utc": "2026-11-11T19:30Z",
+   "ended_utc": "2026-11-11T20:22Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages, and any new batch for any district (sent time not in cap.json feed_batches)",
+   "result": "no new batch; stopped for the 20:22 wake (reads every 5 min to 20:19:07)"
+  },
+  {
+   "started_utc": "2026-11-11T20:25Z",
+   "ended_utc": "2026-11-11T21:22Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages, and any new batch for any district",
+   "result": "no new batch; stopped for the 21:22 wake (reads every 5 min to 21:19:25)"
+  },
+  {
+   "started_utc": "2026-11-11T21:25Z",
    "ended_utc": null,
    "limit": "70 min",
-   "scope": "Lisbon and Madeira CAP messages"
+   "scope": "Lisbon and Madeira CAP messages, and any new batch for any district"
   }
  ],
  "cap_poll_about": "5-minute CAP poll in this session (no model in the loop): restarted at every :22 wake with a 70-minute limit so exactly one runs; it wakes the meteorologist only on a new Lisbon or Madeira CAP message. Gaps between runs are visible here. Earlier run: 23:54 to 00:00 (stopped to add read logging).",

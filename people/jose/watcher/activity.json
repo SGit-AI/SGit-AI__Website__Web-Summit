@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-11T12:20Z",
+ "run": "2026-11-11T17:16Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,32 +12,32 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "40f041b",
-  "to": "8a4d1e6",
+  "from": "8a4d1e6",
+  "to": "209b653",
   "branch": "dev"
  },
  "counts": {
-  "commits": 87,
-  "ci_releases": 37,
+  "commits": 100,
+  "ci_releases": 40,
   "watcher_own": 1,
-  "agents": 49,
+  "agents": 59,
   "no_agent_name": 0
  },
  "security": {
   "old_agent_last_review": "f4a9fbe, wake 11:51 on 7 November",
   "new_agent": "security.repos@web-summit.dinis, first run on 9 November (started about 10:55, committed 10:58, cb4e0b7): about 2,600 commits in six repositories, this one from b4d20ce (10:58 on 8 November) to f688309; no critical, high or medium finding; five low notes (team/security.repos/reports/2026-11-09T1110Z.md)",
   "gap_not_reviewed": "11:51 on 7 November to 10:58 on 8 November on dev, which includes 4219805 (the gate runs Angelo's lane check) and 084ebe7 (enforced), and f20d264 is older still",
-  "new_agent_later_runs": "run 21 (0925Z, 286 commits): nothing found. This site's comms_check low (run 13) still open. None covers the gap below"
+  "new_agent_later_runs": "runs 22 (1240Z: one new medium in Storm-Charles, its deploy job installs an unpinned npm package and a browser while holding write tokens; a fourth iOS app, Fringe, is clean) and 23 (1530Z: nothing found). This site: no workflow, gate or tool change; the comms_check low (run 13) still open. None covers the gap below"
  },
  "by_person": {
-  "dinis": 23,
-  "angelo": 19,
-  "jose": 4,
-  "indi": 2,
-  "silvio": 1,
+  "dinis": 29,
+  "angelo": 20,
+  "indi": 6,
+  "silvio": 4,
+  "jose": 0,
   "vicky": 0
  },
- "actions": "open A-06 (twenty-fifth run, dev only), A-21 (fifteenth), A-14 (twenty-second), A-23 (fourteenth), A-26 (third, Vicky: maybe moved to an account B); closed A-27 (Angelo's conductor.b@ here since 09:41)",
+ "actions": "open A-06 (twenty-sixth run, dev only), A-21 (sixteenth), A-14 (twenty-third), A-23 (fifteenth), A-26 (fourth, Vicky)",
  "task_report": {
   "task": "people/jose/tasks/2026-11-07-watcher-a06-pointers.md",
   "status": "done: the conductor marked people/jose/tasks/2026-11-07-watcher-a06-pointers.md done; A-06 itself stays open for dev",
@@ -48,11 +48,11 @@
    "level": "medium",
    "what": "still open: about 23 hours of dev not reviewed by any security agent",
    "where": "security.repos@web-summit.dinis (cb4e0b7, report team/security.repos/reports/2026-11-09T1110Z.md): this repository from 10:58 on 8 November; no critical, high or medium finding",
-   "context": "dev from 11:51 on 7 November to 10:58 on 8 November, including the gate's lane check (4219805) and its enforcement (084ebe7). security.repos covers only commits since its last run (run 21 this morning). For conductor@web-summit.dinis to point one run at that gap"
+   "context": "dev from 11:51 on 7 November to 10:58 on 8 November, including the gate's lane check (4219805) and its enforcement (084ebe7). security.repos covers only commits since its last run (runs 22 and 23 today). For conductor@web-summit.dinis to point one run at that gap"
   },
   {
    "level": "high",
-   "what": "still open, twenty-sixth run: contact-detail rule hits in a public page",
+   "what": "still open, twenty-seventh run: contact-detail rule hits in a public page",
    "where": "f20d264 content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
    "context": "older than the new security agent's window, so not covered by its review"
@@ -66,15 +66,15 @@
   },
   {
    "level": "note",
-   "what": "trailers: all 4 of Jose's agents' commits in this range are read by git",
-   "where": "7058425 and 8eebb24 (conductor), dcbfb2d (dev), 6b88806 (vault)",
-   "rule": "the commit convention",
-   "context": "the low raised at 07:17 (writer, crm, dashboard) is not yet tested: none of those three committed in this range"
+   "what": "no commits by Jose's agents in this range",
+   "where": "all nine of Jose's tasks on this site fired and succeeded; the two Fringe tasks work in another repository",
+   "rule": "none",
+   "context": "the trailer low (writer, crm, dashboard) is still untested"
   },
   {
    "level": "note",
-   "what": "143 email-rule lines in 31 commits by the watcher's own scan (its address pattern on the added lines of every commit in the range)",
-   "where": "agent names and CI's versions rows",
+   "what": "198 email-rule lines in 35 commits by the watcher's own scan (its address pattern on the added lines of every commit in the range)",
+   "where": "agent names (including app-namespace forms such as in people/indi/prompts/app-developer.md, 2df2896) and CI's versions rows",
    "rule": "an email address",
    "context": "none is a person's contact detail by shape"
   }
@@ -103,7 +103,7 @@
   }
  ],
  "reviewer_trailer": {
-  "jose_commits_checked": 4,
+  "jose_commits_checked": 0,
   "missing": [],
   "misplaced": []
  },
@@ -113,29 +113,11 @@
   "claude/optimistic-feynman-7pkot9": "unchanged, dc306d7",
   "claude/nifty-bell-f1rkca": "merges only"
  },
- "commits_jose": [
-  {
-   "sha": "7058425",
-   "agent": "conductor@web-summit.jose"
-  },
-  {
-   "sha": "dcbfb2d",
-   "agent": "dev@web-summit.jose"
-  },
-  {
-   "sha": "8eebb24",
-   "agent": "conductor@web-summit.jose"
-  },
-  {
-   "sha": "6b88806",
-   "agent": "vault@web-summit.jose"
-  }
- ],
+ "commits_jose": [],
  "could_not_check": [
   "scheduled tasks in other people's accounts",
-  "the agents' run logs in the public vault aym98gsm (no sgit client yet: Jose to install it)",
-  "work done in other repositories (the newsroom)",
-  "Dinis's account, so whether his scheduled tasks fired"
+  "the agents' run logs in the public vault aym98gsm (no sgit client yet)",
+  "work done in other repositories (the newsroom, the apps, Storm-Charles, and Jose's Fringe agents in PrompTugal__News__Fringe)"
  ],
- "context": "Thursday 12 November: the incident agents record no change to Day 3 (d14d276 at 09:34); IPMA lowered Lisbon's wind warning from red to orange (b9cf8a2, CAP 07:16), red rain stands; Silvio's dashboard has Thursday's stand on (a1b2596). Not checked at source. Dinis opened WS-215, Lisbon Fringe (e086801), and its page /fringe/ (52afcb4): everyone brings a conductor; Jose's conductor put it in his Actions (8eebb24)"
+ "context": "Jose's work moved to the Lisbon Fringe (WS-215): two new scheduled tasks on his account, conductor.fringe@PrompTugal.jose (hourly at :07, last fired 17:09) and researcher.1.fringe@PrompTugal.jose (every 30 minutes, until 21:00), both in PrompTugal/PrompTugal__News__Fringe, which the watcher cannot see. Dinis's conductor last committed here at 10:38"
 }

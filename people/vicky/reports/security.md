@@ -1,0 +1,34 @@
+# security@web-summit.vicky: reports
+
+Newest first. Each finding names its commit. URGENT only where it matters.
+
+## 11 Nov 2026, about 20:00 UTC: P6 step 1 reviewed (tasks.mjs, standing answer 36, the signed-messaging plan)
+
+Review: `people/vicky/reviews/security-p6-step1.md`. **Not ready for step 2 yet.** The signature check itself is right (a real pki-agent signature verifies; a changed file or a forged keys entry is refused). Fixes first:
+
+- For dev@PrompTugal.vicky (08d89c57): a signed task copied under a new name passes as a new task; `--for` is optional, so a task passes for any agent; `lint` refuses every real task file (agent names look like email addresses).
+- For conductor@web-summit.vicky (76705907): the pinned fingerprint lives only in repository files that anyone with push can change; it must also be in each agent's scheduled task prompt and given by Vicky in its window, and a pin change must come the same way. Add the extra negative tests to step 3.
+- Standing answer 36 is in order (conductor's commit, Vicky's words with their time; P6 as it stands stays in force). Vicky to confirm the longer quote it gives as hers.
+
+No keys, tokens, contact details or private data in the three files. Nothing URGENT; no hold recommended.
+
+## 11 Nov 2026, about 19:35 UTC: P6 approved with my changes
+
+Vicky, in my window: "Approve P6 with your changes." Recorded in `people/vicky/reviews/security-p6.md` (section "Vicky's answer"), with what each owner does. For conductor@web-summit.vicky: please record it as a standing answer in decisions.md with her words, rewrite the plan to match and send the update to her agents; it is not in force until then, and the one-off wakes stay until one signed task has gone there and back. I review the standing answer, the plan and dev@'s verify tool when they land.
+
+## 11 Nov 2026, about 19:30 UTC: first run
+
+confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: nothing (a new session: no tools, scripts or scheduled task of my own yet).
+
+- **Key:** made in this session; public half added as `security-vicky` in `data/keys.json` by my own commit (signing sha256:310e979d2be0b5a0). Linked locally to the operator's key; not submitted to pki.sgit.ai.
+- **Prompts file:** `people/vicky/prompts/security.md`, Vicky's message word for word with RULES-11NOV at its top.
+- **First task done:** the P6 review, `people/vicky/reviews/security-p6.md`. Recommendation: yes to P6 only with its changes 1 to 7; the commit-trailer author check in step 4 can be forged by any agent that can push to dev, so task files must be signed by the conductor's key and checked against a pinned fingerprint.
+
+### Findings
+
+1. **The decisions.md guard can be forged** (not URGENT; no forgery seen). The guard trusts the commit title and `Agent:` line, which any committer writes. Checked the commits to `people/vicky/decisions.md` since 10 Nov: all carry the conductor's title and Agent line except 38d21c7, which is only the oldest commit of my shallow clone (a CI release), not a real change to the file. Fix proposed in the P6 review (signatures), for Vicky to decide.
+2. **Session ids are public in commit trailers** (not URGENT). Every commit made from Claude Code ends with a `Claude-Session:` line; the conductor's session id is in 8 commits on dev (for example 1d8aa10, c5d266a). No rule is broken today; it makes P6's limit 6 ineffective as written. Ids are not repeated in this report.
+
+No keys, tokens, contact details or private data looked for beyond these files yet: the full commit review of Vicky's agents on both sites is the next task, when Vicky asks or after the next change to rules, keys or vaults.
+
+Question for Vicky (with my recommendation): approve P6 with the changes in my review (recommended), as drafted, or not at all?

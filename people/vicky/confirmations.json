@@ -1,0 +1,115 @@
+{
+ "about": "RULES-11NOV confirmations (standing answer 31), from each agent's own report line on the team site; kept by conductor@web-summit.vicky (Vicky, 11 Nov: confirmations as data). Public data only: names, times, what each removed from its own files, key ids.",
+ "rule": "RULES-11NOV",
+ "checked": "2026-11-11T20:03Z",
+ "agents": [
+  {
+   "agent": "researcher",
+   "confirmed": "2026-11-11 19:02 UTC",
+   "removed": "two scratchpad scripts that parsed Web Summit pages (the startups page and session pages), my scratchpad's cached copies of websummit.com pages and its read-only clone of the newsroom's agenda, and fr",
+   "key": "new id researcher-vicky-3 (sha256:5a26d5df16607a41, record sha256:be762e9b3ed45443"
+  },
+  {
+   "agent": "curator",
+   "confirmed": "2026-11-11 19:02 UTC",
+   "removed": "the clause in my scheduled prompt that had me re-read agenda items' Web Summit source pages (now rule 7) and three scratch copies of the README",
+   "key": "curator-vicky-3-promptugal (newsroom board/keys.json"
+  },
+  {
+   "agent": "programme",
+   "confirmed": "2026-11-11 19:05 UTC",
+   "removed": "see report",
+   "key": "see report"
+  },
+  {
+   "agent": "journalist",
+   "confirmed": "2026-11-11 19:20 UTC",
+   "removed": "from this session's own scratch space, two Web Summit page parsers (wsapp.py, wstext.py), the saved lists of Web Summit addresses (company, session and schedule pages) and about 90 saved copies of Web",
+   "key": "journalist-vicky-promptugal-c (signing sha256:962def922dc5c2b7, newsroom board/keys.json"
+  },
+  {
+   "agent": "journalist-portugal",
+   "confirmed": "2026-11-11 19:15 UTC",
+   "removed": "from my session scratchpad, a parser for Web Summit page data (nd.py), the company-batch generator scripts that wrote Web Summit links, and 46 saved Web Summit pages from the 8 to 9 Nov company batche",
+   "key": "journalist-portugal-vicky-promptugal-c (signing sha256:794aa3e9ad59c7de"
+  },
+  {
+   "agent": "journalist-europe",
+   "confirmed": "2026-11-11 19:18 UTC",
+   "removed": "my scratchpad's saved Web Summit pages and their text extracts from the company batches (E1, the overnight batch and the PITCH session check), their URL lists and digests, the saved Luma event page fr",
+   "key": "journalist-europe-vicky-promptugal-c (signing sha256:c0f5ab57ec129c61"
+  },
+  {
+   "agent": "journalist-ai",
+   "confirmed": "2026-11-11 19:18 UTC",
+   "removed": "from this session's scratchpad, the fetch script I used for Web Summit pages (grab.py), three parsers of saved Web Summit page data (fs.py, fs8.py, fs9.py), a list of Web Summit session URLs, and 37 s",
+   "key": "journalist-ai-vicky-promptugal-2 (signing sha256:d4da9c136ca67397, encryption sha256:b8c3958efddef919"
+  },
+  {
+   "agent": "journalist-connections",
+   "confirmed": "2026-11-11 19:20 UTC",
+   "removed": "145 saved files in this session's scratchpads (cached copies of pages fetched from websummit.com, and the URL lists sess.txt, urls.txt and ap.txt that drove those fetches for the company batches and S",
+   "key": "journalist-connections-vicky-promptugal-c (signing sha256:913e64060343b6a4"
+  },
+  {
+   "agent": "reviewer",
+   "confirmed": "2026-11-11 19:30 UTC",
+   "removed": "154 scratch files and 21 scratch work folders holding scripts that read websummit.com pages with Playwright or curl and saved copies of those pages (fact-check and company-batch workspaces of 6 to 10 ",
+   "key": "reviewer-vicky-promptugal-3 (record sha256:9bdecdbf857ccf8b"
+  },
+  {
+   "agent": "checker",
+   "confirmed": "2026-11-11 19:25 UTC",
+   "removed": "four of my own scripts that read websummit.com or luma.com (chk.py, pw.js, pw4.js, pw6.js), the Web Summit and Luma pages they had saved, and my helpers' scratch folders (one held a copy of the team s",
+   "key": "checker-vicky-promptugal-c (signing sha256:2e79ecce7c759339"
+  },
+  {
+   "agent": "dev",
+   "confirmed": "2026-11-11 19:25 UTC",
+   "removed": "nothing that read those sites (my code on both sites, desks/dev-vicky/ and my saved test scripts hold none",
+   "key": "dev-vicky-promptugal-c (newsroom board/keys.json, v0.1.1294"
+  },
+  {
+   "agent": "pm",
+   "confirmed": "2026-11-11 19:23 UTC",
+   "removed": "nothing (none found)",
+   "key": "kept pm-vicky (sha256:07a943a2df85b09a, still in this session"
+  },
+  {
+   "agent": "logistics",
+   "confirmed": "2026-11-11 19:30 UTC",
+   "removed": "nothing (none of my files, scripts or prompts read those sites",
+   "key": "kept logistics-vicky (signing sha256:76c04cc90fcb6d1d"
+  },
+  {
+   "agent": "dashboard",
+   "confirmed": "2026-11-11",
+   "removed": "see report",
+   "key": "see report"
+  },
+  {
+   "agent": "scout",
+   "confirmed": "2026-11-11 19:32 UTC",
+   "removed": "nothing (no tool, script, note or saved file of mine reads those sites",
+   "key": "kept scout-vicky (signing sha256:cd04300999022a77, still in this session, no \"-b\" entry"
+  },
+  {
+   "agent": "vault",
+   "confirmed": "2026-11-11 19:35 UTC",
+   "removed": "nothing (none found: my scratchpad scripts, my vault tools and apps, my notes, reports and prompts file, ~/.sg-send/tools, and this one-off wake's prompt",
+   "key": "kept vault-vicky (encryption sha256:7a94165343647f9e, signing sha256:7039652f756f7269"
+  },
+  {
+   "agent": "inbox",
+   "confirmed": "2026-11-11 18:45 UTC",
+   "removed": "nothing (the only matches are the rules themselves",
+   "key": "kept inbox-vicky (still works, so the CRM vault key sealed to it stays valid, no reseal needed"
+  },
+  {
+   "agent": "designer",
+   "confirmed": "2026-11-11 19:40 UTC",
+   "removed": "nothing (my desk desks/designer-vicky/, my logo generator in this session's scratch area and my key files hold no reads of those sites: the generator reads only the site's own fonts",
+   "key": "kept designer-vicky-promptugal (record sha256:228de9dce8c49784, still in this session, no \"-b\" entry"
+  }
+ ]
+}

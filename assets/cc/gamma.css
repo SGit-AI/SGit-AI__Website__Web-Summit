@@ -32,3 +32,59 @@ html.cc-on[data-theme="light"] .gr-warn { color: #8A5A00; background: #FFF2CC; b
 .bc-svg .bc-box.on { fill: #3DDC97; stroke: #3DDC97; }
 .bc-strip .r { color: #FF5C7A; font-weight: 700; }
 .bc-svg .bc-w.claim { stroke: #F5C542 !important; opacity: .55; stroke-dasharray: 3 4; }
+
+/* 11 November (Silvio): the same circuit, in the look of the Universe ✦ and the clean command centre:
+   one font, the deep teal background, glass boxes with the circuit's colours kept as glowing headers,
+   pearls for ports and ticks, soft gold wires that glow, glass panels. Same structure, same live data. */
+.gr-circwrap { border: 1px solid rgba(150,230,215,.16) !important; border-radius: 18px !important; background: transparent !important; box-shadow: 0 30px 70px rgba(0,0,0,.45); }
+.gr-circ.bm-circuit { background: radial-gradient(900px 600px at 30% 45%, #0E3330 0%, transparent 62%), radial-gradient(700px 500px at 85% 30%, #0B2826 0%, transparent 60%), #04100F; color: #EAF6F3; font-family: "Barlow Semi Condensed", "Arial Narrow", sans-serif; }
+.gr-circ .bc-strip, .gr-circ .bc-title, .gr-circ .bc-panels, .gr-circ .bc-panels * { font-family: "Barlow Semi Condensed", "Arial Narrow", sans-serif; }
+.gr-circ .bc-code, .gr-circ .bc-code * { font-family: ui-monospace, "JetBrains Mono", Menlo, monospace; }
+.gr-circ .bc-strip { font: 600 13px "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: 1.6px; text-transform: uppercase; color: #8EADA8; border-bottom: 1px solid rgba(150,230,215,.12); }
+.gr-circ .bc-strip b { color: #EAF6F3; } .gr-circ .bc-strip .r { color: #FF6F8A; }
+.gr-circ .bc-title b { font: 600 22px "Barlow Condensed", sans-serif; letter-spacing: .6px; } .gr-circ .bc-title small { font: 400 15px "Barlow Semi Condensed", sans-serif; color: #F2B544; }
+.gr-circ .bc-tour { font: 600 13px "Barlow Condensed", sans-serif; letter-spacing: 1.4px; text-transform: uppercase; border-radius: 999px; padding: 7px 16px; background: linear-gradient(180deg, #FBE2AE, #D9B26E); color: #10170F; border: 0; box-shadow: 0 0 20px rgba(217,178,110,.4); }
+.gr-circ .bc-svg { background-image: none; }
+.gr-circ .bc-svg text { font-family: "Barlow Semi Condensed", "Arial Narrow", sans-serif; fill: #DCEBE8; font-size: 12px; }
+.gr-circ .bc-svg .bc-ht { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 600; letter-spacing: .8px; text-transform: uppercase; fill: #04100F; font-size: 11.5px; }
+.gr-circ .bc-svg .bc-m { fill: #8EADA8; letter-spacing: 1px; text-transform: uppercase; font-size: 10.5px; }
+.gr-circ .bc-svg .bc-body { fill: rgba(16,44,44,.78); stroke: rgba(150,230,215,.16); stroke-width: 1; rx: 8px; filter: drop-shadow(0 6px 14px rgba(0,0,0,.45)); }
+.gr-circ .bc-svg .bc-n rect:not(.bc-body):not(.bc-box) { rx: 8px; opacity: .92; }
+.gr-circ .bc-n[data-gr]:hover .bc-body { stroke: #FBE2AE; }
+.gr-circ .bc-n.hit .bc-body { stroke: #F3E6C6; stroke-width: 2; filter: drop-shadow(0 0 14px rgba(243,230,198,.35)); }
+.gr-circ .bc-svg .bc-port { r: 3.4px; filter: drop-shadow(0 0 4px currentColor); }
+.gr-circ .bc-svg .bc-port:not([style]) { fill: #D9B26E; }
+.gr-circ .bc-svg .bc-box { rx: 4px; fill: rgba(255,255,255,.06); stroke: rgba(150,230,215,.3); }
+.gr-circ .bc-svg .bc-box.on { fill: #3DDC97; stroke: none; filter: drop-shadow(0 0 4px #3DDC97); }
+.gr-circ .bc-svg .bc-w { stroke-width: 1.1; opacity: .38; filter: drop-shadow(0 0 2px rgba(251,226,174,.35)); }
+.gr-circ .bc-svg.hot .bc-w { opacity: .06; } .gr-circ .bc-svg.hot .bc-w.on, .gr-circ .bc-svg .bc-w.sel { opacity: .95; stroke-width: 1.8; filter: drop-shadow(0 0 5px rgba(251,226,174,.7)); }
+.gr-circ .bc-svg .bc-glint { filter: drop-shadow(0 0 6px #FFF2D2); }
+.gr-circ .bc-svg .bc-bus rect, .gr-circ .bc-svg rect.bc-bus { fill: rgba(251,226,174,.08); stroke: rgba(251,226,174,.3); rx: 7px; }
+.gr-circ .bc-panels { gap: 12px; padding: 14px; border-top: 0; background: transparent; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.gr-circ .bc-panels section { border: 1px solid rgba(150,230,215,.14) !important; border-radius: 14px; background: rgba(14,40,40,.55); padding: 14px; font-size: 14px; }
+.gr-circ .bc-panels h4 { font: 600 12px "Barlow Condensed", sans-serif; letter-spacing: 1.6px; color: #43D9C6; }
+.gr-circ .bc-panels h4 em, .gr-circ .bc-panels h4 span { color: #F2B544; font-style: normal; }
+@media (max-width: 1100px) { .gr-circ .bc-panels { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+html.cc-shell #gamma .gr-head h2 { font: 600 30px "Barlow Condensed", sans-serif; letter-spacing: .4px; }
+html.cc-shell .gr-switch { border-radius: 999px; padding: 4px; border-color: rgba(150,230,215,.25); }
+html.cc-shell .gr-switch button { border-radius: 999px; font: 600 13px "Barlow Condensed", sans-serif; letter-spacing: 1.4px; text-transform: uppercase; }
+html.cc-shell .gr-switch button[aria-pressed="true"] { background: linear-gradient(180deg, #FBE2AE, #D9B26E); color: #10170F; }
+/* the newer card design (Silvio, 11 November): no coloured header strips; glass cards with a small coloured mark on the left, like the Team fan's cards */
+.gr-circ .bc-svg .bc-n > rect:nth-of-type(2):not(.bc-box) { width: 3px; height: 24px; rx: 1.5px; opacity: 1; transform: translate(-1px, 4px); filter: drop-shadow(0 0 5px rgba(255,255,255,.35)); }
+.gr-circ .bc-svg .bc-ht { fill: #A9C2BE; font-size: 11px; letter-spacing: 1.4px; }
+.gr-circ .bc-svg .bc-n[data-gr] .bc-ht { fill: #EAF6F3; text-transform: none; letter-spacing: .2px; font-family: "Barlow Semi Condensed", "Arial Narrow", sans-serif; font-weight: 500; font-size: 13.5px; }
+.gr-circ .bc-svg .bc-n[data-gr] .bc-t, .gr-circ .bc-svg .bc-n[data-gr] .bc-v { fill: #8EADA8; font-size: 11.5px; }
+.gr-circ .bc-svg .bc-body { fill: rgba(18,48,48,.82); }
+.gr-circ .bc-n.hit .bc-body { fill: rgba(70,62,40,.85); stroke: #F3E6C6; stroke-width: 2; }
+.gr-circ .bc-n.hit .bc-ht { fill: #FFF3D6 !important; }
+/* each box in its own colour, in the Team fan's card shape */
+.gr-circ .bc-svg .bc-n[data-c] .bc-body { fill: color-mix(in srgb, var(--c) 16%, rgba(10,30,30,.92)); stroke: color-mix(in srgb, var(--c) 45%, transparent); stroke-width: 1.2; }
+.gr-circ .bc-svg .bc-n[data-c] > rect:nth-of-type(2):not(.bc-box) { width: 4px; height: 26px; transform: translate(-2px, 6px); fill: var(--c) !important; filter: drop-shadow(0 0 7px var(--c)); }
+.gr-circ .bc-svg .bc-n[data-c] .bc-ht { fill: var(--c); }
+.gr-circ .bc-svg .bc-n[data-gr][data-c] .bc-ht { fill: color-mix(in srgb, var(--c) 55%, #FFFFFF); }
+.gr-circ .bc-n.hit[data-c] .bc-body { fill: color-mix(in srgb, var(--c) 26%, rgba(30,28,18,.9)); stroke: #F3E6C6; stroke-width: 2.2; filter: drop-shadow(0 0 16px color-mix(in srgb, var(--c) 50%, transparent)); }
+/* only the outline in the box's colour; the card itself stays the Team fan's dark glass (Silvio) */
+.gr-circ .bc-svg .bc-n[data-c] .bc-body { fill: rgba(12,32,32,.9); stroke: var(--c); stroke-opacity: .75; stroke-width: 1.3; filter: drop-shadow(0 8px 18px rgba(0,0,0,.5)) drop-shadow(0 0 5px color-mix(in srgb, var(--c) 35%, transparent)); }
+.gr-circ .bc-svg .bc-n[data-c] .bc-ht { fill: #C9D6D3; }
+.gr-circ .bc-svg .bc-n[data-gr][data-c] .bc-ht { fill: #EAF6F3; }
+.gr-circ .bc-n.hit[data-c] .bc-body { fill: rgba(40,36,24,.92); stroke: #F3E6C6; stroke-opacity: 1; stroke-width: 2.2; }

@@ -179,3 +179,11 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 
 - Web Summit confirmation: candidates 1 to 4 via the vendor only (GetVocal, Mastra); 5 directly (Gravitee's session). Standing answer 19 for Connections rests on the vendor's participation, not the customer's.
 - state: ok; done: OVERNIGHT-10NOV pass, 5 candidates plus 1 backup, 7 captures, SA29 applied; next: 05:15 run, "SA29 used"; ask: none; run: prompted
+
+## Wed 11 Nov 2026, 19:02 UTC (RULES-11NOV confirmation wake; no normal work)
+
+- confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: two scratchpad scripts that parsed Web Summit pages (the startups page and session pages), my scratchpad's cached copies of websummit.com pages and its read-only clone of the newsroom's agenda, and from my scheduled task's prompt the websummit.com/blog source, the agenda.json read and "a public Web Summit source confirms" (now rule 6); the vault captures are left as they are (rule 3); key: new id researcher-vicky-3 (sha256:5a26d5df16607a41, record sha256:be762e9b3ed45443), researcher-vicky-2 marked superseded at 19:03 UTC, because the role has a "-b" entry (researcher-b-promptugal) in the newsroom's board/keys.json, which is the conductor's to mark, not mine.
+- Not done while this session's worker was down (10 Nov 05:15 to 11 Nov 10:16): the 10 Nov 05:15 run stopped part way, with no capture and no push; the six runs after it were never carried out. They are not being replayed: RULES-11NOV changed what they would read. The research vault key is still held in this session, so the new key needs no reseal for me to keep working; a reseal to researcher-vicky-3 is only needed if this session ends.
+- state: ok; done: RULES-11NOV confirmed, new key, task prompt updated (still disabled); next: nothing until the conductor or Vicky gives work; ask: none; run: scheduled
+
+- model check (conductor's task, 11 Nov): ran at 20:39 UTC; state: idle; run: prompted

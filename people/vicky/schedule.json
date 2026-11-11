@@ -1,11 +1,11 @@
 {
  "about": "Every scheduled task of Vicky's agents, one row per task (UTC). Kept by conductor@web-summit.vicky (scout's P4, accepted by Vicky on 6 Nov 2026), checked against the account's scheduled tasks in each 08:30 brief. Changes to tasks are Vicky's; the conductor changes one only at her word (as for the Web Summit timetable, 7 Nov).",
- "checked": "2026-11-09T08:45Z",
+ "checked": "2026-11-11T20:03Z",
  "tasks": [
   {
    "agent": "conductor@web-summit.vicky",
    "task": "the morning brief",
-   "cron_utc": "30 8 * * *",
+   "cron_utc": "45 8 * * *",
    "task_id": "trig_016G4zCbDfCSU5A7mcAy3wq4",
    "state": "enabled",
    "since": "4 Nov 2026",
@@ -56,7 +56,7 @@
   {
    "agent": "logistics@web-summit.vicky",
    "task": "merch and print run",
-   "cron_utc": "10 8,17 * * *",
+   "cron_utc": "10 8 * * *",
    "task_id": "trig_018ka28onyKY92kBp6xmV9Ym",
    "state": "enabled",
    "since": "3 Nov 2026",
@@ -65,7 +65,7 @@
   {
    "agent": "researcher@web-summit.vicky",
    "task": "research run",
-   "cron_utc": "15 5,10,14,18 * * *",
+   "cron_utc": "15 7,11,15,19 * * *",
    "task_id": "trig_01KV2FctiUnh6ratBLVcsfSj",
    "state": "enabled",
    "since": "4 Nov 2026",
@@ -74,7 +74,7 @@
   {
    "agent": "curator@PrompTugal.vicky",
    "task": "curator run",
-   "cron_utc": "30 5,10,14,18 * * *",
+   "cron_utc": "35 7,11,15,19 * * *",
    "task_id": "trig_01QqwpxE9hhp5rwuxSS9D9ZF",
    "state": "enabled",
    "since": "6 Nov 2026 (new session)",
@@ -83,7 +83,7 @@
   {
    "agent": "programme@PrompTugal.vicky",
    "task": "daily run",
-   "cron_utc": "0 5 * * *",
+   "cron_utc": "0 7 12 11 *",
    "task_id": "trig_01RhHHq7KU16JfguhbU1d7HU",
    "state": "enabled",
    "since": "4 Nov 2026",
@@ -92,7 +92,7 @@
   {
    "agent": "journalist@PrompTugal.vicky",
    "task": "scheduled run",
-   "cron_utc": "51 5,10,14,18 * * *",
+   "cron_utc": "53 7-19 * * *",
    "task_id": "trig_01SpLzX33tb8C82iAaPMBy3d",
    "state": "enabled",
    "since": "6 Nov 2026",
@@ -101,7 +101,7 @@
   {
    "agent": "journalist-portugal@PrompTugal.vicky",
    "task": "scheduled run",
-   "cron_utc": "57 5,10,14,18 * * *",
+   "cron_utc": "56 7,11,15,19 * * *",
    "task_id": "trig_01R4SDnvm1qg6LrQVcmCRPaH",
    "state": "enabled",
    "since": "6 Nov 2026",
@@ -110,7 +110,7 @@
   {
    "agent": "journalist-europe@PrompTugal.vicky",
    "task": "twice-daily run",
-   "cron_utc": "3 6,11,15,19 * * *",
+   "cron_utc": "59 7,11,15,19 * * *",
    "task_id": "trig_01KRJSLJ46fntBKdqukvLoKx",
    "state": "enabled",
    "since": "6 Nov 2026",
@@ -119,7 +119,7 @@
   {
    "agent": "journalist-ai@PrompTugal.vicky",
    "task": "scheduled run",
-   "cron_utc": "9 6,11,15,19 * * *",
+   "cron_utc": "2 8,12,16,20 * * *",
    "task_id": "trig_014T4B2EkggPSUDazhhJZ1Gf",
    "state": "enabled",
    "since": "6 Nov 2026",
@@ -128,7 +128,7 @@
   {
    "agent": "journalist-connections@PrompTugal.vicky",
    "task": "scheduled run",
-   "cron_utc": "45 5,10,14,18 * * *",
+   "cron_utc": "50 7,11,15,19 * * *",
    "task_id": "trig_01RqSqjPAC6WuwNmTbjKFzwa",
    "state": "enabled",
    "since": "6 Nov 2026",
@@ -137,7 +137,7 @@
   {
    "agent": "reviewer@PrompTugal.vicky",
    "task": "first review",
-   "cron_utc": "15 6,11,15,19 * * *",
+   "cron_utc": "20 8,12,16,20 * * *",
    "task_id": "trig_01JzwYcUkMpfFThdm1mbeGgs",
    "state": "enabled",
    "since": "6 Nov 2026 (new session)",
@@ -146,7 +146,7 @@
   {
    "agent": "checker@PrompTugal.vicky",
    "task": "checker run",
-   "cron_utc": "48 9,17 * * *",
+   "cron_utc": "0 10,18 * * *",
    "task_id": "trig_01Fn672SH89TL4RcvCvEMQUA",
    "state": "enabled",
    "since": "6 Nov 2026",
@@ -166,7 +166,7 @@
    "task": "the 17:30 newsroom check",
    "cron_utc": "30 17 * * *",
    "task_id": "trig_01JBMeid4ogSPQwGi4EehQaN",
-   "state": "enabled",
+   "state": "disabled",
    "since": "7 Nov 2026",
    "at_whose_word": "Vicky (7 Nov): a lightweight check; silent unless actionable. Kept at 17:30 in the Web Summit timetable (after the reviewer's 16:20 re-check)",
    "session": "the new conductor session, from 9 Nov 2026 about 11:05 UTC (hand-over, P17)",
@@ -189,7 +189,7 @@
    "task": "fix-only follow-up",
    "cron_utc": "56 6,11,15,19 * * *",
    "task_id": "trig_01ENwR7p1ggLZHK2RcyBPTud",
-   "state": "enabled",
+   "state": "disabled",
    "since": "7 Nov 2026",
    "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; created in the agent's own session by the conductor at Vicky's word, 7 Nov about 23:00 (SCHED-WS); reordered at Vicky's word, 8 Nov about 12:45 (connections first, standing answer 22), set by the conductor"
   },
@@ -198,7 +198,7 @@
    "task": "fix-only follow-up",
    "cron_utc": "2 7,12,16,20 * * *",
    "task_id": "trig_015W8aURM2zEyH9Sd9gJvzNx",
-   "state": "enabled",
+   "state": "disabled",
    "since": "7 Nov 2026",
    "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; created in the agent's own session by the conductor at Vicky's word, 7 Nov about 23:00 (SCHED-WS); reordered at Vicky's word, 8 Nov about 12:45 (connections first, standing answer 22), set by the conductor"
   },
@@ -207,7 +207,7 @@
    "task": "fix-only follow-up",
    "cron_utc": "8 7,12,16,20 * * *",
    "task_id": "trig_01A87nPnVKv8jMhzDzwi5eYU",
-   "state": "enabled",
+   "state": "disabled",
    "since": "7 Nov 2026",
    "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; created in the agent's own session by the conductor at Vicky's word, 7 Nov about 23:00 (SCHED-WS); reordered at Vicky's word, 8 Nov about 12:45 (connections first, standing answer 22), set by the conductor"
   },
@@ -216,7 +216,7 @@
    "task": "fix-only follow-up",
    "cron_utc": "14 7,12,16,20 * * *",
    "task_id": "trig_01FpXptzb91YorA9vNLuwjUu",
-   "state": "enabled",
+   "state": "disabled",
    "since": "7 Nov 2026",
    "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; created in the agent's own session by the conductor at Vicky's word, 7 Nov about 23:00 (SCHED-WS); reordered at Vicky's word, 8 Nov about 12:45 (connections first, standing answer 22), set by the conductor"
   },
@@ -225,7 +225,7 @@
    "task": "fix-only follow-up",
    "cron_utc": "50 6,11,15,19 * * *",
    "task_id": "trig_014fa4xbTLFyrXdfF4pzv8KD",
-   "state": "enabled",
+   "state": "disabled",
    "since": "7 Nov 2026",
    "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; created in the agent's own session by the conductor at Vicky's word, 7 Nov about 23:00 (SCHED-WS); reordered at Vicky's word, 8 Nov about 12:45 (connections first, standing answer 22), set by the conductor"
   },
@@ -234,7 +234,7 @@
    "task": "re-check",
    "cron_utc": "20 7,12,16,20 * * *",
    "task_id": "trig_01YQwEh2Z2UAjZX6vkrBqdNj",
-   "state": "enabled",
+   "state": "disabled",
    "since": "7 Nov 2026",
    "at_whose_word": "Vicky (7 Nov, about 23:00): a second reviewer task, created in the reviewer's session by the conductor; looks first at drafts revised after a Fix first, applies standing answer 17"
   }
@@ -338,6 +338,114 @@
     "04:50",
     "conductor (closing check)",
     "trig_01Ts4nhbD3nqUWYfDa3Nt8Je"
+   ]
+  ]
+ },
+ "rules_11nov": {
+  "about": "RULES-11NOV confirmation-only one-off wakes (standing answers 31 and 32), created by the conductor at Vicky's word, 11 Nov 18:45 UTC; each fires once and disables itself. Every recurring task stays disabled until Vicky agrees a new schedule.",
+  "wakes": [
+   [
+    "19:00",
+    "researcher",
+    "trig_01LD1to2WhyhgzjdgNwrcL19"
+   ],
+   [
+    "19:02",
+    "curator",
+    "trig_01Nbkf1862CvRWPSaETkcxoi"
+   ],
+   [
+    "19:04",
+    "programme",
+    "trig_015PXrQn8ZJoripsrgDjA3eq"
+   ],
+   [
+    "19:06",
+    "journalist",
+    "trig_015XatEgtb9HsaS3c43Bjcg6"
+   ],
+   [
+    "19:08",
+    "journalist-portugal",
+    "trig_01MrFV7JVsuJXrbcDPjnb9fW"
+   ],
+   [
+    "19:10",
+    "journalist-europe",
+    "trig_01N4nNStaaXoK9aiAcTaKgbd"
+   ],
+   [
+    "19:12",
+    "journalist-ai",
+    "trig_011zYvTPMr7d6RXTmrNLJYoE"
+   ],
+   [
+    "19:14",
+    "journalist-connections",
+    "trig_01SQCCkymzQidk41PGHdSv9D"
+   ],
+   [
+    "19:16",
+    "reviewer",
+    "trig_01RuLE17WcSBYeQF9NDJNDsr"
+   ],
+   [
+    "19:18",
+    "checker",
+    "trig_01BzuVQty6mupLuV1VhYo6Ur"
+   ],
+   [
+    "19:20",
+    "dev (newsroom)",
+    "trig_01CogwvqDvzcYazbmuncxJwo"
+   ],
+   [
+    "19:22",
+    "pm",
+    "trig_01EriatqdosgDNjGYVKcMgTs"
+   ],
+   [
+    "19:24",
+    "logistics",
+    "trig_01SrLMvQ7F9mkKmHpDX65rrT"
+   ],
+   [
+    "19:26",
+    "dashboard",
+    "trig_01FpKdG2bGG9gDEfMZdhk4cw"
+   ],
+   [
+    "19:28",
+    "scout",
+    "trig_01GyD294T9XFVYvdYEQLmP2h"
+   ],
+   [
+    "19:30",
+    "vault",
+    "trig_01Fv7TdqKnW9tsbu2kw9wbCT"
+   ],
+   [
+    "19:32",
+    "inbox",
+    "trig_01U6Mf6WCAsRL2in5Zwp7MNf"
+   ],
+   [
+    "20:00",
+    "conductor (confirmation check)",
+    "trig_01CgHiMwhPratHCAXLrcN8xk"
+   ]
+  ]
+ },
+ "thu_summit": {
+  "about": "THU-SUMMIT (standing answer 34): Thursday 12 Nov only; disabled by the conductor on Friday.",
+  "tasks": [
+   [
+    "curator summit-only, :35 past 08-10, 12-14, 16-18",
+    "trig_01B3ocK2QwGecPfERmdVADuC"
+   ],
+   [
+    "reviewer extra, 10:20 14:20 18:20",
+    "trig_01EZ2w2cqt1rMxaNKoECYiUo"
    ]
   ]
  }

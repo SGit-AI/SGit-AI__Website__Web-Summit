@@ -451,7 +451,32 @@
    "time_utc": "2026-11-11T16:25Z",
    "section": 24,
    "summary": "Easing: rain 0-1.2 mm in hour 15:00; wind SW, means to 37 km/h; Q0989 flat since 14:00; turn to W-NW still to come; no new CAP since 15:55:03; open data still lagging on wind."
+  },
+  {
+   "time_utc": "2026-11-11T17:25Z",
+   "section": 25,
+   "summary": "LPPT veered 210 to 290 by 17:00 (29011G23KT), pressure rising 989 to 991, temperature down 2 C: centre passed just north, closest about 14:30-16:30 (high). Open data caught up (orange wind gone). TAF 17:00: Thursday showers, SW gusts ~50 km/h 10-18:00; no Thursday wind/rain warning for Lisboa."
+  },
+  {
+   "time_utc": "2026-11-11T18:25Z",
+   "section": 26,
+   "summary": "After the storm: LPPT 18:00 30013G27KT Q0992 rising, no rain; no new CAP; yellow rain ended 18:00; sea warnings to Thu 03:00."
+  },
+  {
+   "time_utc": "2026-11-11T19:25Z",
+   "section": 27,
+   "summary": "Quiet: LPPT 19:00 29011KT Q0994; yellow rain expired; sea warnings to Thu 03:00; no new CAP or communiqué."
+  },
+  {
+   "time_utc": "2026-11-11T20:25Z",
+   "section": 28,
+   "summary": "Quiet: LPPT 20:00 28009KT Q0996; no new CAP batch since 19:17:31; orange sea start restamped in open data (19:09), not a new warning; ends 21:00."
+  },
+  {
+   "time_utc": "2026-11-11T21:25Z",
+   "section": 29,
+   "summary": "Orange sea ended 21:00 (open data still listed it at 21:22, restamped); yellow sea to Thu 03:00; LPPT 21:00 27011KT Q0997; no new CAP batch since 19:17:31."
   }
  ],
- "next_read_utc": "2026-11-11T17:22Z"
+ "next_read_utc": "2026-11-11T22:22Z"
 }

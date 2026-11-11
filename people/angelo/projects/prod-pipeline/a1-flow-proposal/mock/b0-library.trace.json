@@ -1,0 +1,25 @@
+{
+  "shape": "lisbon-fringe-trace/1 + flow (a1-flow-proposal mock: the added fields are marked in proposal.md)",
+  "item": "b0-library",
+  "page": "people/angelo/pipeline/b0-library/",
+  "about": "Mock: our pipeline item b0-library in the proposed shape, from times.json, the commits, the ledger and the estimates. Hand-made for the proposal; a generator would write it.",
+  "generated_at": "2026-11-11T17:14:00Z",
+  "generated_by": "by hand (mock); proposed: the build, on every deploy",
+  "live": { "state": "idle", "checked_at": "2026-11-11T17:14:00Z", "signal": "no open run for b0-library in people/angelo/conductor-b/runs.md" },
+  "steps": [
+    { "n": 1, "t": "unknown", "before": "2026-11-11T10:55:00Z", "kind": "human", "who": "Angelo", "what": "\"Yes to all three\": the go for the prompt library", "evidence": ["people/angelo/pipeline/b0-library/brief.md"], "label": "fact", "source": "hand", "handoff_to": 2 },
+    { "n": 2, "t": "2026-11-11T10:55:00Z", "end": "2026-11-11T11:05:32Z", "minutes": 10, "kind": "agent", "who": "conductor.b@PrompTugal.angelo", "role": "intake", "slot": "desk", "what": "intake: b0-library opened for alpha", "evidence": ["fd3bed8", "people/angelo/pipeline/b0-library/times.json"], "tokens": null, "label": "fact", "source": "times.json (start), git (end)", "handoff_to": 4 },
+    { "n": 3, "t": "2026-11-11T11:08:22Z", "kind": "deploy", "who": "GitHub Actions", "what": "release v0.2.1845 holds the intake", "version": "v0.2.1845", "evidence": ["1e1cd20"], "label": "fact", "source": "git" },
+    { "n": 4, "t": "2026-11-11T11:09:00Z", "end": "2026-11-11T11:13:47Z", "minutes": 5, "effort_min": 6, "estimate_min": 45, "kind": "agent", "who": "alpha.large.worker@PrompTugal.angelo", "role": "spec", "slot": "large", "session": "session_01Xp7gj5LcFzmQaB7VZ9ucuy", "what": "the prompt library: ROLES.md, skills, formats, queue (3 commits)", "evidence": ["2f2766c", "8ee334c", "5b409d4"], "tokens": { "total_without_cache_reads": 83330, "source": "people/angelo/ledger/ (alpha, 11:13 line)" }, "label": "fact", "source": "times.json, git, ledger, estimates", "handoff_to": 5 },
+    { "n": 5, "t": "2026-11-11T11:26:06Z", "kind": "agent", "who": "conductor.b@PrompTugal.angelo", "role": "review", "slot": "desk", "what": "review: brings pool/b0-library onto dev in one commit", "evidence": ["5c6f4c8"], "tokens": null, "label": "fact", "source": "git", "handoff_to": 6 },
+    { "n": 6, "t": "2026-11-11T11:29:00Z", "kind": "deploy", "who": "GitHub Actions", "what": "live: v0.2.1849 is the first release holding 5c6f4c8", "version": "v0.2.1849", "evidence": ["admin/versions.json", "people/angelo/pipeline/b2-flow-reuse/research.md"], "label": "fact", "source": "git ancestry" }
+  ],
+  "stations": [ { "n": 1, "lvl": 0 }, { "n": 2, "lvl": 0 }, { "n": 4, "lvl": 0 }, { "n": 5, "lvl": 0 }, { "n": 6, "lvl": 0, "live": true }, { "n": 3, "lvl": 1 } ],
+  "gaps": [
+    "Angelo's go has no time: brief.md quotes it, the session holds the time.",
+    "Intake and review have no tokens of their own: conductor.b@'s ledger line covers a whole session.",
+    "times.json puts the review at 11:30 to 11:35; its commit 5c6f4c8 is 11:26. The commit time is used.",
+    "The live time is from b2-flow-reuse/research.md; versions.json holds the date only."
+  ],
+  "totals": { "first_step": "2026-11-11T10:55:00Z", "page_first_live": "2026-11-11T11:29:00Z (v0.2.1849)", "minutes_to_live": 34, "humans": 1, "agents": 2, "commits": 4, "deploys": 2, "tokens_measured": 83330 }
+}

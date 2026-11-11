@@ -572,6 +572,23 @@
         "label": "researcher@web-summit.vicky",
         "fingerprint": "sha256:31fb7a64de9a7606",
         "signing_fingerprint": "sha256:cf8c30d9ca05502a"
+      },
+      "status": "superseded: 11 November 2026, 19:03 UTC (standing answer 32, the switch-back; the role had a -b entry in the newsroom)",
+      "replaced_by": "researcher-vicky-3"
+    },
+    {
+      "id": "researcher-vicky-3",
+      "label": "researcher@web-summit.vicky (Claude Code session, third key)",
+      "role": "Vicky's research desk for the Web Summit 2026 newsroom (researcher@web-summit.vicky), same session as researcher-vicky-2, a fresh session key made on 11 November 2026 under standing answer 32 (the switch-back to the team account). Replaces researcher-vicky-2. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 11 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-11",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxikUz50hGoRZc4zSP5qR\n5rsn5Wyf7FY5RIGPAf1Ogb2QIqWa21ULE5bLhuIKaI+RrTXLqDH88kch6jYjyJkv\nHIqSm1uPW4Uk4b0gjMeCa3WFbEohlyCI7f2nrfZ95WcmVYigy5P+dSkeCyjjKKmV\nU3UgHjQSkUAlGpJ3PhTpXI0cCmTNAPBeYmhxphN2EmpOyOeVqsr24eJM7rI5Rk8d\nP3OrxHNT4DWp94aIeKlwYhiwG8WQQkrRqoP/Vob6ADJ8XMhChsUEGw46cz7OEaS7\n8wZC7Rr26uDtxfiP5wF9F+PhENetoT8/ZnCI14z0NI/vUrvlBUcXHXCkFiEbP07O\ndbpTbHhB9aAy8dGIA6cF6Uvtn39lwtVoKBrRBZi52/Xq9Ij8obcgcxv/zq4MZXBV\ngGoHVhJYxObeL9klFkyZLgq/BsMGBWVjgMGxaMGB/sufPpyuBnwk5lLeZxMR8/Qk\nYHBGl2+UlrJrof55UOss+vFnsObHX3uTydz9MsTDLvW6Yvx5ZV5qJklj/DX0J/m1\na3G4TbqPsLIrHTKTfgvC0RNjYi9nEIGnziMQIlwVQ8IUSaCHFwM7ho1NkX855WUs\nIwXZ58Dh7LgoG4spC8JQDN4qttRH8ph2IS4+EYUSROFw7NUJ7SYVNfwO+69wnAE+\nA9zq/1yFBZgXNAVWUv6gMaMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEspfRI9DuqbhKTyNX3DeijuiUInfg\nmMMllV2SaqNe305cqX8d+1LS9bt+REtmbZwifB8Pt6UkuJqV7XPW/NtYIA==\n-----END PUBLIC KEY-----\n",
+        "label": "researcher@web-summit.vicky",
+        "fingerprint": "sha256:5a26d5df16607a41",
+        "signing_fingerprint": "sha256:be762e9b3ed45443"
       }
     },
     {
@@ -1317,7 +1334,9 @@
         "fingerprint": "sha256:17d714aaca07c3e7",
         "signing_fingerprint": "sha256:5795e1959875387e"
       },
-      "status": "active"
+      "status": "superseded",
+      "superseded_at": "2026-11-11T19:54Z",
+      "superseded_by": "dev-vicky-promptugal-c"
     },
     {
       "id": "synthetic-vicky",
@@ -1602,6 +1621,41 @@
         "fingerprint": "sha256:5b412ffd4d41ca0c",
         "signing_fingerprint": "sha256:24a06cd53375a188"
       }
+    },
+    {
+      "id": "security-vicky",
+      "label": "security@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's security agent on the Web Summit 2026 team (security@web-summit.vicky): reviews her agents' commits on both sites for keys, tokens, contact details, private data and rule breaches; reviews rule changes such as the P6 messaging draft. On demand. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 11 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "status": "active",
+      "agent": "security@web-summit.vicky",
+      "added": "2026-11-11",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAq8L3g4r8OhdDBYpNhPj2\nInXuFzX8LfEpJ/8WNV2bhzGnf6OAxJQth8y/Ctf5nsWCvbmNi/eghjsGjF1qZ9Vt\nilMkTS1f8ZyrpIhk7Os1USyNPqLizffDjY9SWkfuKthqg+oyPqHYaZfV6LmLQhOn\n2WLsDYB4m2r4zTQga2Apgk0BqRoSipDiPxh54fhyaR/Vv6lL0aynZcrgjav/bEA+\nQwo/R3PPoJ4X4hn3HwhPoj8VYiOtAlM82mJuc0glx2J/0lvtngyuVWuBfDKuXo2F\nvqs3wbrIgg7DNYqIpu6HECZrEAH6hqDhHOG3rXzvJp9TF8oN0ObfnJnLOZcrIEzY\npfqkH/ch9nxgPtpX/Jj6o9KVL+Ho3NOAgdZ/B6x4kdJrAISys4DVQCbl53dYdCJv\n1QXBTb8IizqLsgaBWAiJDSSaxo0ujoHyBnU54y2tkmWSM2HxPwdeKPNj25pREmNN\nsJaJ+i31Rf68BLj6n5vummySVOURN42qRK30THebJFKy0a8R6RD0W7q+GOumfAla\nqBgzeh0c4WOpvC3PjbMxl6+Eu+KXyx6kcMCKdDJjeqo0w9dbJKgcW9p3rtsy4RbR\n4ci/EQFNntgOWjaDY0slC3boYOSpsCU63MTrCp1dPYl2xyZwPTEz5OcUnqs3ntVA\nRGshfZnSZDNVBsdqZyUK5aMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAElDJqH2F3nkDSzJwej1iI03iruT3m\nQLdypg6rQqGNPrb1MdBYm/VMMxoNWvs9JjkTkOMPAw3fNF95rqGV+ALhPA==\n-----END PUBLIC KEY-----\n",
+        "label": "security@web-summit.vicky",
+        "fingerprint": "sha256:89c2d639499cf06c",
+        "signing_fingerprint": "sha256:310e979d2be0b5a0"
+      }
+    },
+    {
+      "id": "dev-vicky-promptugal-c",
+      "agent": "dev@PrompTugal.vicky",
+      "label": "dev@PrompTugal.vicky (Claude Code session, team account)",
+      "role": "Vicky Wang's developer (dev@PrompTugal.vicky): changes to the newsroom site and to Vicky's pages and tools on this site, when Vicky asks. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on the team account on 11 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), first published as dev-vicky-promptugal-c in the newsroom's board/keys.json; the same public halves, entered here by that session at Vicky's word (standing answer 38 in people/vicky/decisions.md, 11 Nov about 19:50 UTC), so vault A can be sealed to it. It replaces dev-vicky-promptugal. Not linked to an operator's key or confirmed on pki.sgit.ai. The private halves stay in the session (~/.sg-send, outside this repository); the push of this entry is the authorisation.",
+      "added": "2026-11-11T19:54Z",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlb+X7GXqjvn2I7w1MZzl\nPvpC9p/m8hIdk1IpNst2LIOt1kls+3NuOaL3ydPPXp/GyhYTB0TFpGaa3N+wn9Ax\nt/9ZtkdkMmRyRN5bKuY7nm3tWZtMHRenIyM6JVL8oYpReYPwFWZA5COCYXy0Xbpa\nzO33cTWXyvDLN/PtIh/X1U3OtfVU6FldoqWBZjIAx2nmffkO1F/uT30Lgn6M+0Ik\n2YRhXpurzaMR4Nnak9aXzQLI0bY7ZhlTu3QlqjH5gH4lu6jwHLiIuLm3oWcILNp+\nRTfS48he5HYdTc2T+29BC4iEHyrlJZXc58H2arFpHw7YbJTVB3UCgVlqFTF9X+3O\nD6LhXzbbfKjvF/mxgATqWVBhkKbKemUCqrHM6cpQf6saCssM2aqAzkj2m6PNmGF4\nHRDso4hfOsS5IV8EC2sZOFD39u6F3hHWn+1k4yYzS8B+baL51eKINzAALvUx3xWo\nHPj2oCCXzah1xPJ7urcwZpV2ue2ESI5qpf1rh+dRIfzt5hdelPxI224sblTD5bTu\nKXky/iJSSPPaM5gMonEocZdU/RE9GnWsUTtqG2i5DzbOTuTzTTEVAT4RHK+9FGnY\nrvVMw5ddWuRYEgY54Fv0LVByn3ysxGbBsG+KU8cuLyJG3zpxu49HTH2684Gl4+KN\nykDxxsOSUnxu/xkZjPRRrjUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGY0eViP2YxcvcgV7cr9ncPOO6bTh\nSVSLEkT+vJsVWs37/kmMgT5y2Vlo6pXliXcYSxytartGQaZXnRS1oHM2NA==\n-----END PUBLIC KEY-----\n",
+        "label": "dev@PrompTugal.vicky",
+        "fingerprint": "sha256:6fe728601c6d089f",
+        "signing_fingerprint": "sha256:beac4728d9e041b1"
+      },
+      "status": "active",
+      "replaces": "dev-vicky-promptugal"
     }
   ]
 }

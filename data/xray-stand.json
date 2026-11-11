@@ -1,0 +1,74 @@
+{
+  "about": "The X-ray's stand view (/xray/): for each company and each of its situations, three short lines a visitor can read from a metre away in a few seconds. Each line is at most 8 words and says no more than that situation's data/xray/<slug>/xray.json (reach, mandate, gap). The 'asked' line is our example, not the company's own rules.",
+  "by": "conductor@web-summit.indi",
+  "for": "indi",
+  "issue": "WS-191",
+  "updated": "2026-11-11",
+  "companies": {
+    "amex-gbt": {
+      "u1": { "reach": "Your calendar, your login, real bookings", "asked": "Book trips you confirmed, within travel policy", "gap": "It can act as you, not just book" },
+      "u2": { "reach": "Your account, invoices and booked travel", "asked": "Answer questions; trip changes need a person", "gap": "A help chat can also change trips" },
+      "u3": { "reach": "Hotel rates from every client's spend", "asked": "Prepare one client's hotel data and requests", "gap": "One client's work draws on all clients' data" }
+    },
+    "atlassian": {
+      "u1": { "reach": "Every ticket and document you can open", "asked": "Sort your tickets; keep data inside", "gap": "Hidden text in a file sent data out" },
+      "u2": { "reach": "Everything its builder can see and change", "asked": "Suggest triage notes in one Jira space", "gap": "It acts as its builder, with nobody approving" },
+      "u3": { "reach": "Your Atlassian data, sent to other tools", "asked": "Look up customers; copy nothing out", "gap": "Data that leaves loses Atlassian's protections" }
+    },
+    "booking-com": {
+      "u1": { "reach": "Guest messages, bookings and the property's inbox", "asked": "Suggest replies; the property approves each one", "gap": "Unclear what it sends without the property's approval" },
+      "u2": { "reach": "Your booking, and cancelling it by phone", "asked": "Cancel only after a clear yes", "gap": "Unclear how it checks who is calling" },
+      "u3": { "reach": "Your travel history, prices and one-tap booking", "asked": "Suggest stays; you confirm every booking", "gap": "Unclear what reaches the outside AI model" }
+    },
+    "cloudflare": {
+      "u1": { "reach": "Long prompts in a shared memory pool", "asked": "Answers built only from your own request", "gap": "Some answers held other customers' data" },
+      "u2": { "reach": "The whole Cloudflare API: DNS, security, everything", "asked": "Add one DNS record for one site", "gap": "One broad grant opens every product" },
+      "u3": { "reach": "Logged-in browsers, user accounts and payments", "asked": "Answer customers; big payments need a person", "gap": "It can pay unless approval is switched on" }
+    },
+    "feedzai": {
+      "u1": { "reach": "Customers' AI agents log in and move money", "asked": "Pay named bills, up to a limit", "gap": "Banks can't yet tell good agents from bad" },
+      "u2": { "reach": "Fraud alerts, rules and suspicious activity reports", "asked": "Read alerts and draft; people decide", "gap": "Unclear what it does on its own" },
+      "u3": { "reach": "Feedzai's data, through the bank's own agents", "asked": "Read one queue and write notes only", "gap": "Not yet clear how tightly each is limited" }
+    },
+    "fidelidade": {
+      "u1": { "reach": "Claim forms, customer messages and reimbursements", "asked": "Read the form; a person decides", "gap": "Unclear where a person checks replies" },
+      "u2": { "reach": "Callers' voices, policy records and call routing", "asked": "Check the caller, then route the call", "gap": "Unclear what happens if voice checks fail" },
+      "u3": { "reach": "Company know-how feeding every other AI system", "asked": "Answer staff from checked content, with sources", "gap": "One wrong entry spreads to every AI system" }
+    },
+    "klarna": {
+      "u1": { "reach": "Refunds, disputes and your payment plans, by chat", "asked": "Routine errands; hard cases go to people", "gap": "Unclear when hard cases reach a person" },
+      "u2": { "reach": "Your shopping habits, and buying on credit", "asked": "Help compare products; you decide to buy", "gap": "Advice leads straight to buying, maybe on credit" },
+      "u3": { "reach": "Answers from across Klarna's internal systems", "asked": "Answer staff only from what they may see", "gap": "Unclear how it respects each person's access" }
+    },
+    "manus-ai": {
+      "u1": { "reach": "Web pages, your Gmail and its own server", "asked": "Summarise the page you chose, nothing else", "gap": "A page's hidden text could reach your Gmail" },
+      "u2": { "reach": "Your email and every account you linked", "asked": "Read email as text; run nothing from it", "gap": "One email could reach every linked account" },
+      "u3": { "reach": "Every site you are logged into, as you", "asked": "Draft LinkedIn replies; send nothing", "gap": "Once allowed, it can use every login" }
+    },
+    "primitive": {
+      "u1": { "reach": "All the organisation's email, plus payment keys", "asked": "Answer questions sent to one address", "gap": "Its key opens the whole organisation's mail" },
+      "u2": { "reach": "Every message in the organisation, and sending", "asked": "Summarise and draft; send only when approved", "gap": "Nothing in the grant separates draft from send" },
+      "u3": { "reach": "Its own new inbox, made without a person", "asked": "Use only the address the operator gave", "gap": "It can make an inbox nobody knows about" }
+    },
+    "replit": {
+      "u3": { "reach": "The live database, from the test workspace", "asked": "Freeze: no changes without permission", "gap": "The freeze was a request, not a lock" },
+      "u1": { "reach": "Code, your connected apps and Stripe payments", "asked": "Test payments only until the owner says go", "gap": "Connected apps open far more than needed" },
+      "u2": { "reach": "Databases, secret keys and company data", "asked": "Build a read-only dashboard; never show secrets", "gap": "Its connections can write, not just read" }
+    },
+    "riskmandate": {
+      "u1": { "reach": "The whole mailbox, and sending as you", "asked": "Find one message and draft; never send", "gap": "It can send, though it was never asked" },
+      "u2": { "reach": "Customer records, bulk exports and deals", "asked": "Export at most 500 contacts, with approval", "gap": "It can export and delete beyond the limits" },
+      "u3": { "reach": "The live site, keys and its own transcript", "asked": "Publish the site; never touch secrets", "gap": "Keys pasted in chat were within its reach" }
+    },
+    "salesforce": {
+      "u1": { "reach": "Web leads, account data and Slack", "asked": "Help with the newest lead, nothing more", "gap": "A poisoned web form could steer the agent" },
+      "u2": { "reach": "Orders, refunds and customer records", "asked": "Refunds within policy; the rest to people", "gap": "Each new action widens what it can reach" },
+      "u3": { "reach": "Card disputes, credits and merchants", "asked": "Big credits wait for a person", "gap": "It can issue credits before a person looks" }
+    },
+    "sgit": {
+      "u1": { "reach": "Vault keys, and who it hands them to", "asked": "Seal keys only to the trusted owner", "gap": "Once delivered, the key sits in plain text" },
+      "u2": { "reach": "Every file in the shared vault", "asked": "Work only in its own folder", "gap": "It can widen its view to any folder" },
+      "u3": { "reach": "Its inbox, its keys and its own site", "asked": "Act only on known kinds of request", "gap": "A verified sender is not always right" }
+    }
+  }
+}

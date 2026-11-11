@@ -41,3 +41,25 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
 - Checked first: `seal.mjs --check inbox-vicky` shows both fingerprints as Vicky gave them, pushed by riskmandate-vicky in 714a214 and unchanged since, matching the live keys page. The seal also passed `--fingerprint`, which Vicky confirmed from inbox@'s session. SA27 was added by conductor@'s own commit (8dcdec1a), pushed by riskmandate-vicky. A separate security sub-agent agreed, and the decision is logged in the vault's own AUDIT.md.
 - For Vicky to decide: the vault's PRIVATE.md rule 4 allows only public facts about each person, "nothing from a private conversation", and rule 6 names only programme@ as an owner. Interview recordings and transcripts under SA27 need those rules updated, or a separate vault for recordings.
 - For inbox@: before using the key, add the vault's rules to your prompts file. Nothing from the vault goes into a Gmail draft, the CRM, a report or a commit message.
+
+## 11 November 2026, 19:35 UTC (one-off confirmation wake, RULES-11NOV)
+
+- No HOLD.md. Read decisions.md (standing answers 31 and 32: commits 2414b15, bbe5613, 865821f and c5d266a, each by conductor@web-summit.vicky and pushed by riskmandate-vicky) and the RULES-11NOV section at the top of prompts/vault.md.
+- confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: nothing (none found: my scratchpad scripts, my vault tools and apps, my notes, reports and prompts file, ~/.sg-send/tools, and this one-off wake's prompt; I have no recurring task); key: kept vault-vicky (encryption sha256:7a94165343647f9e, signing sha256:7039652f756f7269), which still signs. There is no "-b" entry for it, so nothing needs a reseal on my side.
+- Not mine to change, left as rule 3 says: the research vault's existing captures, written by researcher@, include websummit.com source URLs. My copy of that vault is only a clone. I read nothing from those sites.
+- Waiting, after this confirmation: vault A (decisions.md, the RULES-11NOV request list), and P1 to P3 in prompts/vault.md (SA16, 7 Nov; never applied, as no wake reached me).
+- state: ok; done: RULES-11NOV confirmed; next: wait for the conductor or Vicky (vault A; SA16's P1 to P3); ask: none; run: scheduled
+
+## 11 November 2026, 19:55 UTC (SA33-VAULTS)
+
+- applied SA33-VAULTS: vault A `wyt9jdeo` (tools, apps and agent reports) and vault B `lhsdkd4x` (Vicky's ideas) exist. Both are private, with no read key ever made. Each has its rules (PRIVATE.md: vault A's carry standing answer 35's safe-to-publish rule and security@'s pass before any tool is shared) and an AUDIT.md. Both were audited with vault-audit.mjs (clean).
+- Both keys are sealed to conductor-vicky-2, after a security sub-agent's check (pushed by riskmandate-vicky in f21a60e, unchanged since, matches the live keys page, no newer conductor key anywhere), logged in each vault's AUDIT.md. Vicky has both sealed links for the conductor's session, and her own copy of vault B's key.
+- For dev@PrompTugal.vicky (vault A, not sealed yet): the team site's data/keys.json still lists your old key `dev-vicky-promptugal` as active, while the newsroom marks it superseded and your current key is `dev-vicky-promptugal-c`. seal.mjs reads only the team site's list. To unblock: add `dev-vicky-promptugal-c` to the team site's data/keys.json by your own commit, the same bundle, marking `dev-vicky-promptugal` superseded with the time. Then vault@ checks it and seals vault A to it.
+- state: partial; done: vault A and vault B made and sealed to the conductor; next: seal vault A to dev@ once its current key is on the team site, and to any other agent the conductor lists; ask: none; run: prompted
+
+## 11 November 2026, 20:15 UTC (one-off wake, SA38-SEAL)
+
+- applied SA38-SEAL: vault A `wyt9jdeo`'s key is sealed to dev@PrompTugal.vicky's current key `dev-vicky-promptugal-c` (signing sha256:beac4728d9e041b1). Vicky has the sealed text link for dev@'s session; it expires in 2 days.
+- Checked first: standing answer 38 is conductor@'s commit 89278cad3, pushed by riskmandate-vicky. `seal.mjs --check dev-vicky-promptugal-c` shows the key added by dev@'s own commit c282c5e, pushed by riskmandate-vicky, unchanged since, matching the live keys page. It is identical to the newsroom's entry, the old `dev-vicky-promptugal` is superseded, and no newer dev@ key exists. A security sub-agent agreed, logged in vault A's AUDIT.md (vault-audit.mjs clean).
+- Vault A is now sealed to the conductor (conductor-vicky-2) and dev@. Its rules: tools are safe to publish later, and none is shared until security@ passes it.
+- state: ok; done: vault A sealed to dev@; next: wait for the conductor or Vicky (any other agent the conductor lists for vault A); ask: none; run: scheduled

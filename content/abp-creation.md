@@ -4,6 +4,8 @@ summary: How to get an Agent Behaviour Policy for one of your agents without wri
 ---
 How to get an Agent Behaviour Policy for one of your agents without writing it yourself. The ABP maker asks you a few questions, then drafts the policy for Dinis's ABP author to review.
 
+At the RiskMandate stand, the same ten questions make a draft in about two minutes, suggested from a company's X-ray: [Make your ABP](../abp-make/index.html).
+
 ## What an ABP is {#what}
 
 An Agent Behaviour Policy (ABP) says what one agent can do, what it was asked to do, and what stops it doing the rest. Every agent on the team has one: see [the ABPs](../abp/index.html).

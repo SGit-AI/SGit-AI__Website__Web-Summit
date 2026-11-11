@@ -191,3 +191,16 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Tables rebuilt (board, pm@'s 07:40 note, brief of 9 Nov 08:45, the 9 Nov agendas). Off "Needs me": the lead-to-article decision (Vicky's review is recorded, 2d972ba7, and Dinis adopted WS-168 at 10:55, 3bfbc8c7) and the guide's token step (Dinis settled tokens via the team, same note). Still open for Vicky: the parking yes or no (Angelo's note: still undecided) and the 5 Nov newsroom record line. WS-168 is off the follow-ups; WS-177 notes that outreach is parked.
 - Story candidates refreshed: 30 stories, 68 sources, all links (desks/curator/README.md). Vault, Office link and folds unchanged.
 - state: ok; done: tables and stories refreshed; next: 07:50 wake on 10 Nov (the summit's first day); ask: none; run: scheduled
+
+## Wed 11 Nov 2026, 19:35 UTC (the RULES-11NOV confirmation wake)
+
+- confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: nothing; key: kept sha256:f8b55e84eb929fca (record sha256:43dc954426dcc0f1; entry dashboard-vicky-2, still works, no "-b" twin). Read standing answers 31 and 32 (conductor commits 2414b150 and bbe56132, pushed by riskmandate-vicky); no HOLD.md. The rules are now at the end of my prompts file's section 2 and in both of my scheduled tasks' prompts, which stay disabled.
+- Not run: three wakes queued while the session was idle (10 Nov 07:50 and 17:45, 11 Nov 07:50), because standing answer 31 rule 11 allows no normal work before this confirmation. So the dashboard tables and stories were last rebuilt on Mon 9 Nov 17:55.
+- state: ok; done: confirmed RULES-11NOV, rules put into the prompts file and both tasks; next: stop until the conductor or Vicky gives work; ask: one refresh of the dashboard tables and story candidates now, before Vicky reviews it on Thursday? (I recommend yes; scheduled tasks stay disabled until she agrees a schedule); run: scheduled
+
+## Wed 11 Nov 2026, 20:30 UTC (one refresh, at Vicky's word)
+
+- One normal run, as Vicky asked at about 20:08 UTC ("Wake dashboard for one refresh now"). Read decisions.md (39af4802; six new conductor commits, each with the Agent: line, pushed by riskmandate-vicky); no HOLD.md; session key present; RULES-11NOV kept (my only reads: the two repositories and the curator's README on raw.githubusercontent.com). Nothing new was for the dashboard; the P6 round trip waits for Vicky's go (SA36 and SA39).
+- Tables rebuilt from the board, as pm@'s board-health note is stale (last run 9 Nov; its wakes were missed). New first row of "Needs me": WS-213 (for Vicky, due today): which of her workloads Silvio's router may test on cheaper models, and the optional smaller-model test. Still open for her: the parking yes or no (still undecided on 10 Nov, team-collaboration) and the 5 Nov newsroom record line. Added to the follow-ups: WS-201 and WS-208 (everyone, due today, no owner); WS-199 is overdue.
+- Story candidates refreshed: 51 stories, 104 sources, all links (desks/curator/README.md, up from 30 on 9 Nov).
+- state: ok; done: one refresh of the tables and stories; next: wait for the conductor or Vicky (regular runs stay 07:50 and 17:45 UTC); ask: your choice of workloads for the router on WS-213; run: prompted

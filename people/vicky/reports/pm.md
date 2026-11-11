@@ -102,3 +102,10 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 ## 9 November 2026, 17:40 UTC (wake)
 
 state: idle
+
+## 11 November 2026, 19:23 UTC (one-off confirmation wake, RULES-11NOV)
+
+- Missed wakes: 10 Nov 07:40 and 17:40, and 11 Nov 07:40, were delivered only now (this session was not running); none was run.
+- No HOLD.md. Read decisions.md (standing answers 31 and 32) and the RULES-11NOV section of prompts/pm.md. The rules are now in my scheduled task's prompt too, and the task stays disabled; prompts/pm.md matches it.
+- confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: nothing (none found); key: kept pm-vicky (sha256:07a943a2df85b09a, still in this session)
+- state: ok; done: RULES-11NOV confirmed; next: wait for the conductor or Vicky; ask: none; run: scheduled
