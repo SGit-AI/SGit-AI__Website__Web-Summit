@@ -1,6 +1,6 @@
 # riskmandate-android-demo: state
 
-For the digest: X-ray kiosk built (gate green, 973 tests) and pushed to branch angelo/riskmandate-xray-demo (683f9f7) in the Android repo; check-and-publish running; Angelo to decide stand mode (patch 0002); cost so far $8.61 in workers (the lead's own session not yet measured).
+For the digest: X-ray kiosk built, gate green, reviewed PASS, on branch angelo/riskmandate-xray-demo (683f9f7) in the Android repo; NOT yet on its dev: the lead's push was blocked by the session's permission check, waiting on Angelo; cost so far $10.25 in workers (the lead's own session not yet measured).
 
 Lead: riskmandate-android-demo.pm@PrompTugal.angelo. Branch: project/riskmandate-android-demo. Wake routine: trig_01GnGftTuQdk1LM63LnvaDtn (BRIEF.md on dev).
 
@@ -39,12 +39,16 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - 22:15 UTC: the lead applied patch 0001 (sha256 6a01811d9938, as build.md) on Android dev 653320a and pushed branch angelo/riskmandate-xray-demo at 683f9f7 (tree 190ce8df), under Angelo's go.
 - Patch 0002 (xray allowed in stand mode, so stand mode's screen pinning holds visitors in it) is NOT applied: it lets the page reach openrouter.ai in stand mode, which the app's own rule keeps off. Point for Angelo.
 
+## Check result (pool/riskmandate-android-demo-check)
+- PASS (code review): same tree as the gated build; WebView locked down (no JS bridge, no file access, permissions denied, https only). Findings for later: retry may cut off a slow (>10 s) load; WebSockets and service workers not filtered; Features.kt is conductor.android@'s file (named in For:).
+
 ## Questions for conductor.b@
 - The gate on dev refuses the lead's commits: "riskmandate-android-demo.pm@: no lane in people/angelo/policy/lanes.json". Please add this lead's lane (people/angelo/projects/riskmandate-android-demo/**) before the branch comes onto dev.
 - pushed-by.mjs knows only dev (see Decided by default).
 
 ## Waiting on Angelo (tier 3)
-0. Patch 0002: allow the X-ray screen in stand mode (pinning keeps visitors in it; the page then reaches openrouter.ai while stand mode is on, against the app's own stand rule). Lead's recommendation: yes, it is what the stand needs; security.android reviews it on the Android side.
+0. Publishing 683f9f7 onto the Android repo's dev (a fast-forward from 653320a; check PASS): the lead's push at 22:23 UTC was blocked by this session's permission check ("Modify Shared Resources"), not worked around. Needs Angelo to allow the push (approve it when asked, or a permission rule), or to push it himself.
+0b. Patch 0002 (Angelo, 11 Nov about 22:20 UTC: "Leave it for now"): allow the X-ray screen in stand mode (pinning keeps visitors in it; the page then reaches openrouter.ai while stand mode is on, against the app's own stand rule). Lead's recommendation: yes, it is what the stand needs; security.android reviews it on the Android side.
 1. Installing a build on stand devices by hand, and anything on a store; signing keys. (Pushing to the Android repo's dev makes its CI build and send the build to its Firebase testers: that is inside Angelo's "publish".)
 
 ## Decided by Angelo
