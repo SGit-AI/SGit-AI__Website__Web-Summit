@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1937",
+    "date": "2026-11-11",
+    "what": "dev@PrompTugal.vicky: report: the key commit is c282c5ec (the id changed when release.sh rebased it)",
+    "by": "dev@PrompTugal.vicky",
+    "from": "3cf976d06"
+  },
+  {
     "version": "v0.2.1936",
     "date": "2026-11-11",
     "what": "vault A and vault B keys received and opened (kept in the session, never in the repository)",
