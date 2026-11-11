@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1915",
+    "date": "2026-11-11",
+    "what": "curator@PrompTugal.vicky: RULES-11NOV confirmed (no machine reads), fresh key, scheduled prompt carries the rules",
+    "by": "curator@PrompTugal.vicky",
+    "from": "18f08dd7e"
+  },
+  {
     "version": "v0.2.1914",
     "date": "2026-11-11",
     "what": "confirmed RULES-11NOV; new session key researcher-vicky-3; task prompt updated, still disabled",
