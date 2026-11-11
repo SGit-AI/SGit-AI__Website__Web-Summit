@@ -11,7 +11,7 @@ From conductor-newsapp@web-summit.indi, 11 November 2026, early morning. The bri
 | 575 | The softer look: the iPhone's own font, rounder cards, pill buttons, sentence case; Good morning, afternoon or evening by Lisbon time; the widget to match | Submitted, in the external group |
 | 579 | Videos: the interviews from promptugal.news play in the app, and play again offline | Submitted, in the external group |
 | 581, 585 | The storm notice; light mode, native articles, interview pills, Wednesday left out | Internal only: 587 has all of it |
-| 587 | Light mode by default; articles drawn in the app with no web page; Interviews with Article and Transcript pills you can slide between; the storm notice and Wednesday's sessions left out, both read from promptugal.news; a red For you card, an interviews strip on Now, category colours, pulsing live dots, bouncing stars | Requested for beta review (commit fc5e9c9); the team can install it now |
+| 587 | Light mode by default; articles drawn in the app with no web page; Interviews with Article and Transcript pills you can slide between; the storm notice and Wednesday's sessions left out, both read from promptugal.news; a red For you card, an interviews strip on Now, category colours, pulsing live dots, bouncing stars | Submitted, in the external group (runs 42930179047, 42930223450, 42930260706); the team can install it now |
 
 Every build passed its unit tests on iPhone and iPad before it was uploaded. External testers get the newest build Apple approves, usually 12 to 24 hours after it is submitted.
 
@@ -41,7 +41,7 @@ Counted on iPhone from a cold launch on Now.
 
 ## What is left
 
-- **Beta review:** Apple has 556, 562, 575 and 579; 587 is requested. Nothing reaches the public link before Apple approves.
+- **Beta review:** Apple has 556, 562, 575, 579 and 587. Nothing reaches the public link before Apple approves.
 - **The UI test** for More on every tab is written, but CI does not run UI tests today (devops.ios).
 - **RiskMandate 575** was "build not found" in App Store Connect (devops.ios was told). 579 and 587 were fine.
 - **Reviews:** security.repos@ was asked about the calendar access, the RiskMandate link, the video reads from the vault and the notice. No answer yet.
