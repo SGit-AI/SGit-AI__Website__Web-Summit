@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T01:36Z",
+ "updated": "2026-11-11T01:50Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -305,6 +305,68 @@
    "read": "2026-11-11T01:35Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "region": "Madeira"
+  },
+  {
+   "id": "aemet",
+   "name": "AEMET (Spain's meteorological agency)",
+   "kind": "authority",
+   "role": "Spain's warnings, incl. the Canary Islands.",
+   "label": "fact",
+   "source": "https://www.aemet.es/es/eltiempo/prediccion/avisos",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "gnr",
+   "name": "GNR (Guarda Nacional Republicana)",
+   "kind": "authority",
+   "role": "National gendarmerie: readiness and patrols outside the cities.",
+   "label": "fact",
+   "source": "https://www.gnr.pt/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "mmp",
+   "name": "Museus e Monumentos de Portugal (MMP)",
+   "kind": "service",
+   "role": "Runs the state museums and monuments.",
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "blocked": "museusemonumentos.pt is a 9 KB JavaScript shell"
+  },
+  {
+   "id": "tap",
+   "name": "TAP Air Portugal",
+   "kind": "transport",
+   "role": "Airline; its own cancellations and rebooking.",
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "blocked": "flytap.com flight-information path 404 to our read"
+  },
+  {
+   "id": "csm",
+   "name": "Conselho Superior da Magistratura (courts)",
+   "kind": "authority",
+   "role": "Judges' governing body; court closures.",
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "mj",
+   "name": "Ministry of Justice",
+   "kind": "government",
+   "role": "Registries, forensic medicine; recommends court closures (DGAJ).",
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis"
   }
  ],
  "edges": [
@@ -1205,10 +1267,130 @@
    "effect_note": "hours not stated; the source names the day, Wednesday",
    "note": "APRAM via Observador live 12:33:37 (JSON-LD). The ships cancelled; APRAM reported it.",
    "region": "Madeira"
+  },
+  {
+   "id": "aemet-special",
+   "by": "aemet",
+   "to": [],
+   "decision": "AEMET special warning in force: \"Aviso especial. Lluvias fuertes y persistentes, rachas muy fuertes y temporal marítimo\" (Peninsula and Balearics; Canary Islands warnings shown for Wed 11 to Fri 13)",
+   "at": "",
+   "status": "happened",
+   "follows": [],
+   "label": "fact",
+   "source": "https://www.aemet.es/es/eltiempo/prediccion/avisos",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "note": "Title read on AEMET's own warnings page at 01:46Z. Its number (38/2026 per Wikipedia), its period (10 to 12 Nov per Wikipedia) and the Canary Islands' wind alert from 18:00 on 10 Nov were NOT read at source (the details are a map and a JavaScript view)."
+  },
+  {
+   "id": "gnr-readiness",
+   "by": "gnr",
+   "to": [],
+   "decision": "GNR reinforces its operational deployment: 1,100 personnel on standby, Emergency Protection and Relief Unit (UEPS) highlighted, more patrols",
+   "at": "2026-11-10T18:17Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "note": "GNR's own site lists \"10-11-2026 Depressão Charles – GNR reforça dispositivo operacional\" (read 01:45Z; the article page reset our connection). The figure 1,100 is from Observador's 18:17:26 entry quoting the GNR communiqué."
+  },
+  {
+   "id": "mmp-closed",
+   "by": "mmp",
+   "to": [],
+   "decision": "State museums and monuments closed on Wednesday; tickets can be changed or refunded",
+   "at": "2026-11-10T14:08Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, Wednesday",
+   "note": "Observador 14:08:23 quoting MMP's online message. At 19:21 Observador adds Lisbon's 25 municipal cultural venues (EGEAC) closed."
+  },
+  {
+   "id": "tap-adjusts",
+   "by": "tap",
+   "to": [],
+   "decision": "TAP adjusts operations; passengers with tickets for travel up to 11 Nov may rebook without penalty to flights up to 17 Nov",
+   "at": "2026-11-10T16:09Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "note": "Observador 16:09:04. \"TAP cancelling 10 Madeira flights\" (Wikipedia) is NOT established: Observador 19:47:28 says only that several TAP Funchal flights were affected on Wednesday, from ANA's site."
+  },
+  {
+   "id": "csm-courts",
+   "by": "csm",
+   "to": [],
+   "decision": "Court presidents may close courts fully or partly on Wednesday; urgent acts must go ahead",
+   "at": "2026-11-10T12:51Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, Wednesday",
+   "note": "CSM vice-president's despacho, via Lusa (Observador 12:51:24, 14:32:02). National, not Madeira-specific: \"Madeira's courts closed\" (Wikipedia) NOT established. csm.org.pt answered (01:45Z) with no matching notice on its home page."
+  },
+  {
+   "id": "mj-services",
+   "by": "mj",
+   "to": [],
+   "decision": "Registries, industrial property and forensic medicine services closed (telework where possible); DGAJ recommends court closures",
+   "at": "2026-11-10T17:43Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:50Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; Wednesday",
+   "note": "Observador 17:43:17, \"Na sequência da declaração de situação de alerta\"."
   }
  ],
  "lessons": [
   "2026-11-10: the organisers' decision was on websummit.com from 19:09 in the blog, which is not in sitemap.xml; we watched the sitemap, home and /news/ and saw it only at 20:58 (via incident.conductor@). Now: the blog list (/blog/, its embedded JSON) is the organisers' primary channel, and every section of an organiser's site is mapped in sources.json."
  ],
- "effect_fields": "effect_from_utc / effect_to_utc: the hours the decision covers, UTC (Lisbon = UTC in November), only from the source's own words; null where the source gives none, with effect_note \"hours not stated\" and any day it names."
+ "effect_fields": "effect_from_utc / effect_to_utc: the hours the decision covers, UTC (Lisbon = UTC in November), only from the source's own words; null where the source gives none, with effect_note \"hours not stated\" and any day it names.",
+ "leads": [
+  {
+   "from": "incident.wikipedia@ via incident.conductor@ (01:45Z)",
+   "claim": "APA names 101 mainland municipalities at higher flood risk (pt Wikipedia cites RTP Antena 1)",
+   "status": "not found at source: apambiente.pt home and /destaques at 01:45Z show no such notice (its 10 Nov item is a cancelled online session); not added to the graph",
+   "read": "2026-11-11T01:50Z"
+  }
+ ]
 }
