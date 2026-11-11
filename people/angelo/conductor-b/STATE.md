@@ -28,6 +28,7 @@ summary: Account B's conductor. Main control of Angelo's backlog from 10 Novembe
 - **Lanes open for all twenty** by policy@ (36a2a0d0, pushed-by ANGELO), named in full.
 - **Lisbon Fringe (WS-215, Dinis, due Thu 12 Nov):** "Go ahead, I think I already have access." conductor.b@ started conductor.fringe@PrompTugal.angelo (its own session, its own key, hourly wake to Friday, item 05 the graph), with Angelo's rules added: every activity in commits (team/angelo/runs.md in the Fringe repository), no extra sessions (asks to conductor.b@ in its status.json), tier 3 to Angelo.
 - **No automated reading of websummit.com** (Dinis's incident lead, 05:25, Web Summit's Terms 48.2, 52.1): for every worker prompt and the researcher skill.
+- **The prompt library approved** ("That's A LOT of text to read. Let's assume it's fine and will refine as we go."): in use from now; corrections go in each skill's Lessons. A rendered page for the library was offered and not taken.
 
 ## Waiting on
 

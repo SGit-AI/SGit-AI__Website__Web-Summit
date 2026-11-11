@@ -5,7 +5,7 @@ written: 2026-11-11
 for: Angelo, to read before any worker runs on it
 spec: people/angelo/proposals/account-move/spec-pipeline-b.md (approved by Angelo, 10 November; last touched by 1a2b941d4, pushed by riskmandate-angelo)
 brief: people/angelo/pipeline/b0-library/brief.md (Angelo's go, 11 November, "Yes to all three")
-status: "draft for Angelo's read"
+status: "approved by Angelo, 11 November (\"That's A LOT of text to read. Let's assume it's fine and will refine as we go.\"): in use; refined through each run's Lessons"
 ---
 # The prompt library
 
