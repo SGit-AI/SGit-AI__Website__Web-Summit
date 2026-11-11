@@ -60,6 +60,7 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - Check 2: PASS for build 2. Findings: (1) downloads open the browser without a tap (XrayScreen.kt:185); (2) Back during the page's own full screen also leaves the app's full screen; (3) multi-file inputs get one file; (4) rotation reloads the page (since build 1; lock the stand's orientation); (5) any script the page loads can read the demo key, as in Chrome (accepted).
 - Lead pushed 5badada onto the Android repo's dev (fast-forward from 683f9f7), 23:38 UTC, under Angelo's go ("publish the changes as soon as they're ready"; "push it" for build 1).
 - Build 3 diagnosis (Chromium with touch, phone and tablet sizes): the menu (a class clash in the page's app.css, and the drawer hidden under 768 px), the white band (html's off-white background below a shorter body) and no English switch on X-Ray (xray.js hides the switch, mounts Gravity with lang 'pt') are all in Silvio's page, the same in Chrome. Lag: mostly the page's weight (X-Ray about 10,000 animated SVG nodes, Universo about 3 fps in software rendering); a small app patch (offscreen pre-raster, renderer priority important), not compiled.
+- Build 4 started 23:39 UTC (session_01Xp7gj3csz3fGiXp7igQama). Android CI run 166 (5badada) in progress since 23:37 UTC.
 - Next (decided by default): build 4 applies build 3's patch plus check 2's findings 1 to 3 and runs the gate; then a check; then publish.
 
 ## Check result (pool/riskmandate-android-demo-check)
