@@ -1,0 +1,89 @@
+{
+ "duration_api_ms": 574398,
+ "stop_reason": "end_turn",
+ "session_id": "41872222-cb4e-4641-9d85-56895899a938",
+ "total_cost_usd": 0.861089,
+ "usage": {
+  "input_tokens": 45700,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 649728,
+  "output_tokens": 12309,
+  "output_tokens_details": {
+   "thinking_tokens": 5118
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 0,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "",
+  "iterations": [],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "deepseek/deepseek-v3.2": {
+   "inputTokens": 45700,
+   "outputTokens": 12309,
+   "cacheReadInputTokens": 649728,
+   "cacheCreationInputTokens": 0,
+   "webSearchRequests": 0,
+   "costUSD": 0.861089,
+   "contextWindow": 200000,
+   "maxOutputTokens": 32000,
+   "thinkingTokens": 5118,
+   "cacheCreationEphemeral5mInputTokens": 0,
+   "cacheCreationEphemeral1hInputTokens": 0,
+   "canonicalModel": "deepseek/deepseek-v3.2",
+   "provider": "firstParty",
+   "costBasis": "unknown"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "safety_stops": 0,
+ "is_error": false,
+ "num_turns": 23,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I have analyzed all the files in `people/angelo/pipeline/` and identified every file path mentioned in `ROLES.md`, `QUEUE.md`, `skills/*.md`, and `formats/*.md`. The results have been written to `paths.json` at the repository root.\n\n**Summary:**\n- **Total file paths found:** 100\n- **File paths that exist:** 47\n- **File paths that don't exist:** 53 (including placeholders like `{ID}` and external references)\n\nThe `paths.json` file contains a complete list with each path's existence status and which source files reference it. Here are the first few entries as examples:\n\n```json\n{\n  \"count\": 100,\n  \"paths\": [\n    {\n      \"path\": \"admin/build/build.mjs\",\n      \"exists\": true,\n      \"named_in\": [\"ROLES.md\", \"skills/software-engineer.md\", \"formats/web-summit-site.md\"]\n    },\n    {\n      \"path\": \"admin/build/validate.js\",\n      \"exists\": true,\n      \"named_in\": [\"ROLES.md\", \"skills/software-engineer.md\", \"skills/researcher.md\", \"formats/web-summit-site.md\"]\n    }\n    // ... 98 more entries\n  ]\n}\n```\n\nThe analysis includes both concrete paths (like `people/angelo/kit/README.md`) and template paths with placeholders (like `{ID}/STATE.md`). Placeholder paths are marked as non-existent since they require specific values to be valid file paths.\n\n**Count: 100**",
+ "ttft_ms": 18657,
+ "type": "result",
+ "duration_ms": 575812,
+ "uuid": "4988dd6f-5603-4c06-a63c-ed21aaacc736",
+ "ttft_stream_ms": 3051,
+ "time_to_request_ms": 527,
+ "first_content_frame_ms": 3051,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

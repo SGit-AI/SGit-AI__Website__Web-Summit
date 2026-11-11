@@ -1,0 +1,17 @@
+{
+ "run_count": 100,
+ "run_paths": 100,
+ "check_paths": 106,
+ "in_both": 71,
+ "only_run": 29,
+ "only_check": 35,
+ "exists_agree_in_both": "67/71",
+ "exists_claims_wrong_on_disk": [
+  "formats",
+  "formats/conductor.md",
+  "skills",
+  "skills/conductor.md",
+  "skills/plain-language.md",
+  "skills/token-thrift.md"
+ ]
+}

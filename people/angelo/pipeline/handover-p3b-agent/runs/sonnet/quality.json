@@ -1,0 +1,10 @@
+{
+ "run_count": 68,
+ "run_paths": 68,
+ "check_paths": 106,
+ "in_both": 63,
+ "only_run": 5,
+ "only_check": 43,
+ "exists_agree_in_both": "63/63",
+ "exists_claims_wrong_on_disk": []
+}

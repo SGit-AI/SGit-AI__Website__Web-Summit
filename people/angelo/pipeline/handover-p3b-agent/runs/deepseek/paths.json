@@ -1,0 +1,734 @@
+{
+  "count": 100,
+  "paths": [
+    {
+      "path": "admin/build/build.mjs",
+      "exists": true,
+      "named_in": [
+        "ROLES.md",
+        "skills/software-engineer.md",
+        "formats/web-summit-site.md"
+      ]
+    },
+    {
+      "path": "admin/build/validate.js",
+      "exists": true,
+      "named_in": [
+        "ROLES.md",
+        "skills/software-engineer.md",
+        "skills/researcher.md",
+        "formats/web-summit-site.md"
+      ]
+    },
+    {
+      "path": "admin/tools/agent-log.mjs",
+      "exists": true,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "admin/tools/seal.mjs",
+      "exists": true,
+      "named_in": [
+        "ROLES.md",
+        "skills/security.md"
+      ]
+    },
+    {
+      "path": "articles/<slug>.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "articles/<slug>.md.sig",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "board/",
+      "exists": true,
+      "named_in": [
+        "skills/software-engineer.md"
+      ]
+    },
+    {
+      "path": "board/guidance/README.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md",
+        "formats/conductor.md"
+      ]
+    },
+    {
+      "path": "board/keys.json",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "board/the-passes.md",
+      "exists": false,
+      "named_in": [
+        "skills/editor.md"
+      ]
+    },
+    {
+      "path": "board/the-story-pipeline.md",
+      "exists": false,
+      "named_in": [
+        "QUEUE.md"
+      ]
+    },
+    {
+      "path": "content/",
+      "exists": true,
+      "named_in": [
+        "skills/software-engineer.md"
+      ]
+    },
+    {
+      "path": "content/abp/in-action.md",
+      "exists": true,
+      "named_in": [
+        "skills/editor.md"
+      ]
+    },
+    {
+      "path": "content/abp/token-efficiency.md",
+      "exists": true,
+      "named_in": [
+        "skills/analyst.md",
+        "skills/token-thrift.md"
+      ]
+    },
+    {
+      "path": "content/articles/<slug>.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "content/brief/05-interviews.md",
+      "exists": false,
+      "named_in": [
+        "skills/privacy.md"
+      ]
+    },
+    {
+      "path": "data/",
+      "exists": true,
+      "named_in": [
+        "skills/software-engineer.md"
+      ]
+    },
+    {
+      "path": "data/keys.json",
+      "exists": true,
+      "named_in": [
+        "skills/conductor.md"
+      ]
+    },
+    {
+      "path": "design/README.md",
+      "exists": false,
+      "named_in": [
+        "skills/designer.md"
+      ]
+    },
+    {
+      "path": "design/brand/",
+      "exists": false,
+      "named_in": [
+        "skills/designer.md"
+      ]
+    },
+    {
+      "path": "desks/checker-vicky/publish-workflow.md",
+      "exists": false,
+      "named_in": [
+        "formats/promptugal-news.md"
+      ]
+    },
+    {
+      "path": "desks/journalist-vicky/STYLE.md",
+      "exists": false,
+      "named_in": [
+        "formats/promptugal-news.md"
+      ]
+    },
+    {
+      "path": "desks/reviewer-vicky/README.md",
+      "exists": false,
+      "named_in": [
+        "skills/editor.md"
+      ]
+    },
+    {
+      "path": "desks/writer-angelo/",
+      "exists": false,
+      "named_in": [
+        "formats/promptugal-news.md"
+      ]
+    },
+    {
+      "path": "formats/",
+      "exists": false,
+      "named_in": [
+        "ROLES.md",
+        "skills/writer.md"
+      ]
+    },
+    {
+      "path": "formats/conductor.md",
+      "exists": false,
+      "named_in": [
+        "skills/project-manager.md",
+        "skills/conductor.md",
+        "ROLES.md",
+        "skills/README.md"
+      ]
+    },
+    {
+      "path": "formats/handover.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "newsroom/build/build.mjs",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "newsroom/build/validate.js",
+      "exists": false,
+      "named_in": [
+        "ROLES.md",
+        "formats/promptugal-news.md",
+        "skills/writer.md"
+      ]
+    },
+    {
+      "path": "newsroom/tools/release.sh",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "ops-accounts/STATE.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "ops-accounts/accounts.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "ops-digest/STATE.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "ops-digest/digest.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "origin/pool/{ID}",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/",
+      "exists": true,
+      "named_in": [
+        "skills/software-engineer.md"
+      ]
+    },
+    {
+      "path": "people/angelo/",
+      "exists": true,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/app/",
+      "exists": true,
+      "named_in": [
+        "skills/designer.md"
+      ]
+    },
+    {
+      "path": "people/angelo/conductor-b/HANDOVER.md",
+      "exists": true,
+      "named_in": [
+        "formats/conductor.md"
+      ]
+    },
+    {
+      "path": "people/angelo/conductor-b/STATE.md",
+      "exists": true,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/conductor-b/research/2026-11-11-skills-survey.md",
+      "exists": true,
+      "named_in": [
+        "skills/researcher.md"
+      ]
+    },
+    {
+      "path": "people/angelo/conductor-b/runs.md",
+      "exists": true,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/estimates/*.jsonl",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/estimates/<{SLOT}",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/estimates/README.md",
+      "exists": true,
+      "named_in": [
+        "skills/analyst.md",
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/kit/README.md",
+      "exists": true,
+      "named_in": [
+        "ROLES.md",
+        "skills/security.md",
+        "skills/conductor.md",
+        "formats/web-summit-site.md",
+        "formats/conductor.md"
+      ]
+    },
+    {
+      "path": "people/angelo/ledger/*.jsonl",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/ledger/{SLOT}.jsonl",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/pipeline/ROLES.md",
+      "exists": true,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/pipeline/b0-library/brief.md",
+      "exists": true,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/pipeline/formats/{FORMAT}.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/pipeline/skills/",
+      "exists": true,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/pipeline/{ID}/",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/pipeline/{ID}/STATE.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/pipeline/{ID}/brief.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/policy/lanes.json",
+      "exists": true,
+      "named_in": [
+        "skills/security.md"
+      ]
+    },
+    {
+      "path": "people/angelo/projects/*/BRIEF.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/proposals/account-move/spec-pipeline-b.md",
+      "exists": true,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/proposals/social/README.md",
+      "exists": true,
+      "named_in": [
+        "formats/linkedin.md"
+      ]
+    },
+    {
+      "path": "people/angelo/tools/pool-claim.mjs",
+      "exists": true,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "people/angelo/tools/pushed-by.mjs",
+      "exists": true,
+      "named_in": [
+        "ROLES.md",
+        "skills/software-engineer.md"
+      ]
+    },
+    {
+      "path": "people/indi/EXPLAIN.md",
+      "exists": true,
+      "named_in": [
+        "skills/cold-reader.md",
+        "skills/writer.md",
+        "skills/plain-language.md"
+      ]
+    },
+    {
+      "path": "people/indi/accountant/measure.mjs",
+      "exists": true,
+      "named_in": [
+        "skills/analyst.md",
+        "ROLES.md",
+        "skills/token-thrift.md"
+      ]
+    },
+    {
+      "path": "people/indi/accounting/PROTOCOL.md",
+      "exists": true,
+      "named_in": [
+        "skills/analyst.md"
+      ]
+    },
+    {
+      "path": "people/indi/social/README.md",
+      "exists": true,
+      "named_in": [
+        "formats/linkedin.md"
+      ]
+    },
+    {
+      "path": "people/jose/reviewer/ROLE.md",
+      "exists": true,
+      "named_in": [
+        "skills/editor.md"
+      ]
+    },
+    {
+      "path": "people/silvio/video/PUBLISH.md",
+      "exists": true,
+      "named_in": [
+        "formats/linkedin.md"
+      ]
+    },
+    {
+      "path": "pool/<id>",
+      "exists": false,
+      "named_in": [
+        "skills/trace.md",
+        "QUEUE.md",
+        "formats/web-summit-site.md",
+        "formats/trace.md"
+      ]
+    },
+    {
+      "path": "pool/ops-accounts",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "pool/ops-digest",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "pool/ops-digest's",
+      "exists": false,
+      "named_in": [
+        "formats/conductor.md"
+      ]
+    },
+    {
+      "path": "pool/{ID}",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "skills/",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "skills/conductor.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "skills/plain-language.md",
+      "exists": false,
+      "named_in": [
+        "formats/conductor.md"
+      ]
+    },
+    {
+      "path": "skills/token-thrift.md",
+      "exists": false,
+      "named_in": [
+        "skills/conductor.md"
+      ]
+    },
+    {
+      "path": "team/<id>/status.json",
+      "exists": false,
+      "named_in": [
+        "formats/conductor.md"
+      ]
+    },
+    {
+      "path": "team/analyst/ROLE.md",
+      "exists": true,
+      "named_in": [
+        "skills/analyst.md"
+      ]
+    },
+    {
+      "path": "team/angelo/status.json",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "team/designer/ROLE.md",
+      "exists": true,
+      "named_in": [
+        "skills/designer.md"
+      ]
+    },
+    {
+      "path": "team/designer/designer-brief.md",
+      "exists": true,
+      "named_in": [
+        "skills/designer.md"
+      ]
+    },
+    {
+      "path": "team/reporter/BRIEF.md",
+      "exists": true,
+      "named_in": [
+        "formats/trace.md",
+        "skills/trace.md"
+      ]
+    },
+    {
+      "path": "team/reporter/traces/storm-weather-desk.json",
+      "exists": true,
+      "named_in": [
+        "formats/trace.md",
+        "skills/trace.md"
+      ]
+    },
+    {
+      "path": "team/researcher/ROLE.md",
+      "exists": true,
+      "named_in": [
+        "skills/researcher.md"
+      ]
+    },
+    {
+      "path": "team/security/ROLE.md",
+      "exists": true,
+      "named_in": [
+        "skills/security.md"
+      ]
+    },
+    {
+      "path": "team/writer/ROLE.md",
+      "exists": true,
+      "named_in": [
+        "skills/writer.md"
+      ]
+    },
+    {
+      "path": "work/09-design.md",
+      "exists": false,
+      "named_in": [
+        "skills/designer.md"
+      ]
+    },
+    {
+      "path": "ws-trace/1",
+      "exists": false,
+      "named_in": [
+        "formats/trace.md"
+      ]
+    },
+    {
+      "path": "{ID}/STATE.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "{ID}/build.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "{ID}/check.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "{ID}/design.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "{ID}/draft.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "{ID}/go.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "{ID}/mock/",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "{ID}/post.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "{ID}/publish.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "{ID}/requests.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "{ID}/research.md",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    },
+    {
+      "path": "{ID}/x",
+      "exists": false,
+      "named_in": [
+        "ROLES.md"
+      ]
+    }
+  ]
+}

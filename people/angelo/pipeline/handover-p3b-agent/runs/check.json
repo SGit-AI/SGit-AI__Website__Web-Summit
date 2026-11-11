@@ -1,0 +1,815 @@
+{
+ "count": 106,
+ "existing": 42,
+ "missing": 48,
+ "patterns": 16,
+ "paths": [
+  {
+   "path": "ASKS.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "skills/project-manager.md",
+    "formats/conductor.md"
+   ]
+  },
+  {
+   "path": "BRIEF.md",
+   "exists": true,
+   "from": [
+    "ROLES.md",
+    "skills/project-manager.md"
+   ]
+  },
+  {
+   "path": "CLAUDE.md",
+   "exists": true,
+   "from": [
+    "ROLES.md",
+    "skills/software-engineer.md",
+    "formats/web-summit-site.md"
+   ]
+  },
+  {
+   "path": "PrompTugal/PrompTugal__News__Fringe",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "PrompTugal/PrompTugal__News__Website",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "skills/README.md"
+   ]
+  },
+  {
+   "path": "QUEUE.md",
+   "exists": true,
+   "from": [
+    "ROLES.md",
+    "skills/conductor.md"
+   ]
+  },
+  {
+   "path": "ROLES.md",
+   "exists": true,
+   "from": [
+    "skills/README.md",
+    "skills/conductor.md",
+    "skills/project-manager.md",
+    "formats/conductor.md"
+   ]
+  },
+  {
+   "path": "SGit-AI/SGit-AI__Website__Web-Summit",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "SKILL.md",
+   "exists": false,
+   "from": [
+    "skills/README.md"
+   ]
+  },
+  {
+   "path": "STATE.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "skills/conductor.md",
+    "skills/editor.md",
+    "skills/project-manager.md",
+    "skills/security.md",
+    "skills/trace.md",
+    "formats/conductor.md"
+   ]
+  },
+  {
+   "path": "accounts.md",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "admin/build/build.mjs",
+   "exists": true,
+   "from": [
+    "ROLES.md",
+    "skills/software-engineer.md",
+    "formats/web-summit-site.md"
+   ]
+  },
+  {
+   "path": "admin/build/validate.js",
+   "exists": true,
+   "from": [
+    "ROLES.md",
+    "skills/researcher.md",
+    "skills/software-engineer.md",
+    "formats/web-summit-site.md"
+   ]
+  },
+  {
+   "path": "admin/tools/agent-log.mjs",
+   "exists": true,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "admin/tools/seal.mjs",
+   "exists": true,
+   "from": [
+    "ROLES.md",
+    "skills/security.md"
+   ]
+  },
+  {
+   "path": "articles/<slug>.md",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "articles/<slug>.md.sig",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "board/guidance/README.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "formats/conductor.md"
+   ]
+  },
+  {
+   "path": "board/keys.json",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "board/the-passes.md",
+   "exists": false,
+   "from": [
+    "skills/editor.md"
+   ]
+  },
+  {
+   "path": "board/the-story-pipeline.md",
+   "exists": false,
+   "from": [
+    "QUEUE.md"
+   ]
+  },
+  {
+   "path": "brief.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "QUEUE.md",
+    "skills/conductor.md",
+    "skills/privacy.md"
+   ]
+  },
+  {
+   "path": "build.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "QUEUE.md"
+   ]
+  },
+  {
+   "path": "check.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "QUEUE.md"
+   ]
+  },
+  {
+   "path": "claude/*",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "conductor.md",
+   "exists": false,
+   "from": [
+    "skills/README.md"
+   ]
+  },
+  {
+   "path": "content/abp/in-action.md",
+   "exists": true,
+   "from": [
+    "skills/editor.md"
+   ]
+  },
+  {
+   "path": "content/abp/token-efficiency.md",
+   "exists": true,
+   "from": [
+    "skills/analyst.md",
+    "skills/token-thrift.md"
+   ]
+  },
+  {
+   "path": "content/articles/<slug>.md",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "content/brief/05-interviews.md",
+   "exists": false,
+   "from": [
+    "skills/privacy.md"
+   ]
+  },
+  {
+   "path": "data/keys.json",
+   "exists": true,
+   "from": [
+    "skills/conductor.md"
+   ]
+  },
+  {
+   "path": "design.md",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "design/README.md",
+   "exists": false,
+   "from": [
+    "skills/designer.md"
+   ]
+  },
+  {
+   "path": "desks/checker-vicky/publish-workflow.md",
+   "exists": false,
+   "from": [
+    "formats/promptugal-news.md"
+   ]
+  },
+  {
+   "path": "desks/journalist-vicky/STYLE.md",
+   "exists": false,
+   "from": [
+    "formats/promptugal-news.md"
+   ]
+  },
+  {
+   "path": "desks/reviewer-vicky/README.md",
+   "exists": false,
+   "from": [
+    "skills/editor.md"
+   ]
+  },
+  {
+   "path": "desks/writer",
+   "exists": false,
+   "from": [
+    "formats/promptugal-news.md"
+   ]
+  },
+  {
+   "path": "digest.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "formats/conductor.md"
+   ]
+  },
+  {
+   "path": "draft.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "QUEUE.md"
+   ]
+  },
+  {
+   "path": "formats/conductor.md",
+   "exists": true,
+   "from": [
+    "ROLES.md",
+    "skills/README.md",
+    "skills/conductor.md",
+    "skills/project-manager.md"
+   ]
+  },
+  {
+   "path": "formats/handover.md",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "go.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "QUEUE.md",
+    "formats/conductor.md"
+   ]
+  },
+  {
+   "path": "lanes.json",
+   "exists": false,
+   "from": [
+    "QUEUE.md"
+   ]
+  },
+  {
+   "path": "newsroom/build/build.mjs",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "newsroom/build/validate.js",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "skills/writer.md",
+    "formats/promptugal-news.md"
+   ]
+  },
+  {
+   "path": "newsroom/tools/release.sh",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "ops-accounts/STATE.md",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "ops-accounts/accounts.md",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "ops-digest/STATE.md",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "ops-digest/digest.md",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "origin/pool/{ID}",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/conductor-b/HANDOVER.md",
+   "exists": true,
+   "from": [
+    "formats/conductor.md"
+   ]
+  },
+  {
+   "path": "people/angelo/conductor-b/STATE.md",
+   "exists": true,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/conductor-b/research/2026-11-11-skills-survey.md",
+   "exists": true,
+   "from": [
+    "skills/researcher.md"
+   ]
+  },
+  {
+   "path": "people/angelo/conductor-b/runs.md",
+   "exists": true,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/estimates/*.jsonl",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/estimates/<{SLOT}",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/estimates/README.md",
+   "exists": true,
+   "from": [
+    "ROLES.md",
+    "skills/analyst.md"
+   ]
+  },
+  {
+   "path": "people/angelo/kit/README.md",
+   "exists": true,
+   "from": [
+    "ROLES.md",
+    "skills/conductor.md",
+    "skills/security.md",
+    "formats/conductor.md",
+    "formats/web-summit-site.md"
+   ]
+  },
+  {
+   "path": "people/angelo/ledger/*.jsonl",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/ledger/{SLOT}.jsonl",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/pipeline/<id",
+   "exists": "pattern",
+   "from": [
+    "QUEUE.md"
+   ]
+  },
+  {
+   "path": "people/angelo/pipeline/ROLES.md",
+   "exists": true,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/pipeline/b0-library/brief.md",
+   "exists": true,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/pipeline/formats/{FORMAT}.md",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/pipeline/{ID",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/policy/lanes.json",
+   "exists": true,
+   "from": [
+    "skills/security.md"
+   ]
+  },
+  {
+   "path": "people/angelo/proposals/account-move/spec-pipeline-b.md",
+   "exists": true,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/proposals/social/README.md",
+   "exists": true,
+   "from": [
+    "formats/linkedin.md"
+   ]
+  },
+  {
+   "path": "people/angelo/tools/pool-claim.mjs",
+   "exists": true,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "people/angelo/tools/pushed-by.mjs",
+   "exists": true,
+   "from": [
+    "ROLES.md",
+    "skills/software-engineer.md"
+   ]
+  },
+  {
+   "path": "people/indi/EXPLAIN.md",
+   "exists": true,
+   "from": [
+    "skills/cold-reader.md",
+    "skills/plain-language.md",
+    "skills/writer.md"
+   ]
+  },
+  {
+   "path": "people/indi/accountant/measure.mjs",
+   "exists": true,
+   "from": [
+    "ROLES.md",
+    "skills/analyst.md",
+    "skills/token-thrift.md"
+   ]
+  },
+  {
+   "path": "people/indi/accounting/PROTOCOL.md",
+   "exists": true,
+   "from": [
+    "skills/analyst.md"
+   ]
+  },
+  {
+   "path": "people/indi/social/README.md",
+   "exists": true,
+   "from": [
+    "formats/linkedin.md"
+   ]
+  },
+  {
+   "path": "people/jose/reviewer/ROLE.md",
+   "exists": true,
+   "from": [
+    "skills/editor.md"
+   ]
+  },
+  {
+   "path": "people/silvio/video/PUBLISH.md",
+   "exists": true,
+   "from": [
+    "formats/linkedin.md"
+   ]
+  },
+  {
+   "path": "pki-agent.mjs",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "skills/security.md"
+   ]
+  },
+  {
+   "path": "pool-claim.mjs",
+   "exists": false,
+   "from": [
+    "skills/project-manager.md"
+   ]
+  },
+  {
+   "path": "pool/<id>",
+   "exists": "pattern",
+   "from": [
+    "QUEUE.md",
+    "skills/trace.md",
+    "formats/trace.md",
+    "formats/web-summit-site.md"
+   ]
+  },
+  {
+   "path": "pool/ops-accounts",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "pool/ops-digest",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "formats/conductor.md"
+   ]
+  },
+  {
+   "path": "pool/{ID}",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "post.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "QUEUE.md"
+   ]
+  },
+  {
+   "path": "project/*",
+   "exists": "pattern",
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "publish.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "QUEUE.md",
+    "formats/linkedin.md"
+   ]
+  },
+  {
+   "path": "release.sh",
+   "exists": false,
+   "from": [
+    "skills/conductor.md"
+   ]
+  },
+  {
+   "path": "research.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "QUEUE.md"
+   ]
+  },
+  {
+   "path": "runs.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "skills/conductor.md",
+    "skills/project-manager.md",
+    "formats/conductor.md"
+   ]
+  },
+  {
+   "path": "skills/conductor.md",
+   "exists": true,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "skills/plain-language.md",
+   "exists": true,
+   "from": [
+    "formats/conductor.md"
+   ]
+  },
+  {
+   "path": "skills/token-thrift.md",
+   "exists": true,
+   "from": [
+    "skills/conductor.md"
+   ]
+  },
+  {
+   "path": "sources.md",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "QUEUE.md",
+    "skills/writer.md"
+   ]
+  },
+  {
+   "path": "team/<id",
+   "exists": "pattern",
+   "from": [
+    "formats/conductor.md"
+   ]
+  },
+  {
+   "path": "team/analyst/ROLE.md",
+   "exists": true,
+   "from": [
+    "skills/analyst.md"
+   ]
+  },
+  {
+   "path": "team/angelo/status.json",
+   "exists": false,
+   "from": [
+    "ROLES.md"
+   ]
+  },
+  {
+   "path": "team/designer/ROLE.md",
+   "exists": true,
+   "from": [
+    "skills/designer.md"
+   ]
+  },
+  {
+   "path": "team/designer/designer-brief.md",
+   "exists": true,
+   "from": [
+    "skills/designer.md"
+   ]
+  },
+  {
+   "path": "team/reporter/BRIEF.md",
+   "exists": true,
+   "from": [
+    "skills/trace.md",
+    "formats/trace.md"
+   ]
+  },
+  {
+   "path": "team/reporter/traces/storm-weather-desk.json",
+   "exists": true,
+   "from": [
+    "skills/trace.md",
+    "formats/trace.md"
+   ]
+  },
+  {
+   "path": "team/researcher/ROLE.md",
+   "exists": true,
+   "from": [
+    "skills/researcher.md"
+   ]
+  },
+  {
+   "path": "team/security/ROLE.md",
+   "exists": true,
+   "from": [
+    "skills/security.md"
+   ]
+  },
+  {
+   "path": "team/writer/ROLE.md",
+   "exists": true,
+   "from": [
+    "skills/writer.md"
+   ]
+  },
+  {
+   "path": "times.json",
+   "exists": false,
+   "from": [
+    "ROLES.md",
+    "skills/conductor.md"
+   ]
+  },
+  {
+   "path": "work/09-design.md",
+   "exists": false,
+   "from": [
+    "skills/designer.md"
+   ]
+  },
+  {
+   "path": "ws-trace/1",
+   "exists": false,
+   "from": [
+    "formats/trace.md"
+   ]
+  }
+ ]
+}
