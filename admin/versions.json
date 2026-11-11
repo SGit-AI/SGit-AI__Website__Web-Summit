@@ -1,5 +1,19 @@
 [
   {
+    "version": "v0.2.1892",
+    "date": "2026-11-11",
+    "what": "16:35 wake: no red left for Lisbon (IPMA, 15:06); A1 restricted at Vialonga; no change to Day 3",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "362819fde"
+  },
+  {
+    "version": "v0.2.1891",
+    "date": "2026-11-11",
+    "what": "16:22 wake: easing, rain stopped, SW wind easing, 989 hPa flat; no new CAP; analysis 24",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "dcda98e2c"
+  },
+  {
     "version": "v0.2.1890",
     "date": "2026-11-11",
     "what": "Universo ✦, every graph in one place, in the new look, for everyone",

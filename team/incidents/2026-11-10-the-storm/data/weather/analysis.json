@@ -446,7 +446,12 @@
    "time_utc": "2026-11-11T16:10Z",
    "section": 23,
    "summary": "IPMA CAP 15:55:03 ends Lisbon orange wind at 15:56 (was 18:00); Setúbal and Beja the same; Faro orange wind 15:56-18:00. Lisbon keeps yellow rain to 18:00 and orange/yellow sea. LPPT TAF AMD 14:36. Peak passed: rain 12:00-14:30, wind 14:00-15:30."
+  },
+  {
+   "time_utc": "2026-11-11T16:25Z",
+   "section": 24,
+   "summary": "Easing: rain 0-1.2 mm in hour 15:00; wind SW, means to 37 km/h; Q0989 flat since 14:00; turn to W-NW still to come; no new CAP since 15:55:03; open data still lagging on wind."
   }
  ],
- "next_read_utc": "2026-11-11T16:22Z"
+ "next_read_utc": "2026-11-11T17:22Z"
 }
