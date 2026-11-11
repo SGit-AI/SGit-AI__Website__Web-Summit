@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1787",
+    "date": "2026-11-11",
+    "what": "IPMA's own send times from CAP: red wind 07:18, red rain 16:30 then 09:00-18:00 at 21:23; lead times against the first red (rain, 09:00)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "d6ce188f3"
+  },
+  {
     "version": "v0.2.1786",
     "date": "2026-11-11",
     "what": "the alert was announced at ~09:17 (minister, ANEPC press conference), published 12:10; red wind in the press by 08:05: lead-time line corrected",
