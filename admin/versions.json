@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1829",
+    "date": "2026-11-11",
+    "what": "warnings.json refreshed: open data now orange for Lisbon wind 09:00-21:00 (lagged CAP by 66-87 min)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "7baba27a0"
+  },
+  {
     "version": "v0.2.1828",
     "date": "2026-11-11",
     "what": "08:41 wake: IPMA lowered Lisbon's wind red -> orange (CAP 07:16); red rain stands; 18 sea bars closed (AMN, press); no change to Day 3",
