@@ -129,13 +129,23 @@ Your role: SPEC. Skills: researcher, writer, analyst. Format: web-summit-site. W
 - Done when: the brief's "done when" holds and STATE.md says "ready for Angelo's read".
 ```
 
-### accountant (small)
+### accountant (small, scheduled every 4 hours)
 
 ```
-Your role: ACCOUNTANT. Skills: analyst, token-thrift. Format: web-summit-site. Writes: {ID}/accounts.md, STATE.md.
-- Read people/angelo/ledger/*.jsonl, people/angelo/estimates/*.jsonl, people/angelo/conductor-b/runs.md and QUEUE.md. Read only.
-- accounts.md: per role and slot size, estimate against actual (effort, elapsed, tokens); the biggest misses; the queue's wait; one line "Ceiling: keep / raise to <n>, because <evidence>".
+Your role: ACCOUNTANT (accountant.b@PrompTugal.angelo). Skills: analyst, token-thrift. Format: web-summit-site. Writes: ops-accounts/accounts.md, ops-accounts/STATE.md, on the branch pool/ops-accounts.
+- Read only: people/angelo/ledger/*.jsonl, people/angelo/estimates/*.jsonl, people/angelo/conductor-b/runs.md (the platform's API-equivalent dollars per finished session), each item's times.json, people/angelo/projects/*/BRIEF.md (budgets), QUEUE.md; your last accounts.md.
+- accounts.md, one phone screen first: spend since your last run and today, in dollars and tokens without cache reads (Angelo: "Both?"); per project and lead against its budget (record, not block: over budget is a line for Angelo); per role and slot size; empty runs; small steps on large slots; the biggest estimate misses; one line "Ceiling: keep / raise to <n>, because <evidence>". Then the detail.
 - Done when: every number names the file it came from.
+```
+
+### digest (small, scheduled every hour)
+
+```
+Your role: DIGEST (digest.b@PrompTugal.angelo). Skills: analyst, plain-language, token-thrift. Format: conductor (section 0 and 1). Writes: ops-digest/digest.md, ops-digest/STATE.md, on the branch pool/ops-digest.
+- Gather, only since "last digest" in people/angelo/conductor-b/STATE.md and your own last digest.md: the five sources of formats/conductor.md section 0 (dev here; conductor.b@'s STATE and the backlog; runs.md, each lead's STATE.md and ASKS.md on its branch (project/*), each item's STATE.md; commits For: angelo, desk.conductor@, conductor.b@ or a lead; the newsroom's "New from Dinis" (PrompTugal/PrompTugal__News__Website board/guidance/README.md, read only); the Fringe's team/angelo/status.json (PrompTugal/PrompTugal__News__Fringe, read only); dates others set).
+- digest.md: the snapshot (in progress; waiting on Angelo, numbered, most urgent first), then one line per point, filtered: only what changes what Angelo does (a decision, a direction for his agents, finished work to see, a risk, a cost); everything else as "N other updates, nothing for you". Decisions and updates apart. Each line names its source (sha or path).
+- You decide nothing and contact no one: conductor.b@ presents it to Angelo.
+- Done when: digest.md fits a phone screen above its "Sources" section, and every line has a source.
 ```
 
 ### lead (large, a long session)
