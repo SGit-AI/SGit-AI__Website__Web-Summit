@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A5 simulation: the trace page for https://lisbontechfringe.com/programme/, with the rules</title><link rel="stylesheet" href="flow.css">
+<!-- kilo.large.worker@PrompTugal.angelo, prod-pipeline-a5 (design simulation, static, not live). A3's trace page (8193766)
+     filled from programme.trace.json (111 steps, Fringe dev at 0ce6010). With the rules of sim.md: window = the last change (at most 60 min), columns folded by minute, at most 7 agent lanes then "others". -->
+<style>.fp-note a{display:inline-flex;align-items:center;min-height:44px;color:var(--brand);font-weight:600}.cell a b{position:absolute;font:600 12px/1 var(--mono);color:var(--ink);transform:translate(9px,-9px)}.cell a{position:relative}</style>
+</head><body><main>
+<h1>How this page was made</h1>
+<p class="dek">Every step behind https://lisbontechfringe.com/programme/, from the git record.</p>
+<section class="fs" data-flow="strip" aria-labelledby="fs-h"><p class="fs-k">How this page was made</p><h2 class="fs-h" id="fs-h">Last change: 10 min <span>· 2 commits · 2 agents</span></h2><ol class="fs-line"><li class="s-ask"><a href="#s-110"><span class="fs-d"></span><span data-flow-label>Started</span><span class="fs-t">19:03</span></a></li><li class="quiet"><a href="#s-110"><span class="fs-d"></span><span data-flow-label>architect.1</span><span class="fs-t">19:03</span></a></li><li class="lv3 quiet"><a href="#s-111"><span class="fs-d"></span><span data-flow-label>researcher.2</span><span class="fs-t">19:13</span></a></li><li class="s-live"><a href="#s-111"><span class="fs-d"></span><span data-flow-label>Live</span><span class="fs-t">19:13</span></a></li><li class="s-now"><a href="#s-111"><span class="fs-d"></span><span data-flow-label>Now</span><span class="fs-t">19:26</span></a></li></ol><p class="fs-f"><a href="">See every step</a> · 3 changes, 111 commits, 19 agents since 10:42</p></section>
+<section class="fp" data-flow="plot" aria-labelledby="fp-h">
+ <div class="fp-top"><h2 id="fp-h">The last change: 2 steps, 2 agents, 19:03 to 19:13</h2>
+  <div class="fp-btns"><button class="btn opt" type="button" aria-pressed="false" id="by">By agent</button><button class="btn opt" type="button" id="rp">&#9654; Replay</button><button class="btn" type="button" aria-expanded="false" aria-controls="sc" id="tg">Show the flow</button></div></div>
+ <ul class="ov" aria-label="Steps per lane; ringed marks are the strip's stations"></ul>
+ <div class="sc" id="sc" tabindex="0" aria-label="The flow, step by step; scrolls sideways"><div class="grid"></div></div>
+ <p class="fp-note">One mark per minute and lane (a number: several steps); ringed in yellow: the strip's stations.</p><p class="fp-note">Whole history: 111 steps, 19 agents, 3 changes since 10:42. <a href="#all">Show all changes</a></p>
+</section>
+</main>
+<script>
+const LANES=["People","Source","Research","Lead","Build","CI"], AG=["dev","researcher","conductor·angelo","observability","conductor·dinis","dev.lead","design.3","design.4","dev.1","dev.2","researcher.2","design.1","conductor·indi","design.2","capture.1","designer","architect.1","ontologist.1","researcher.1"], BYA=[16,10], CAP=7, FOLD=true;
+const S=[[110,3,"19:03","agent",16],[111,1,"19:13","agent",10]];
+const STN=new Set([110,111]);
+const mn=(t)=>+t.slice(0,2)*60+ +t.slice(3), t0=mn(S[0][2]), t1=Math.max(mn(S[S.length-1][2]),t0+1);
+const sec=document.querySelector('.fp'), ov=sec.querySelector('.ov'), grid=sec.querySelector('.grid'), tg=document.getElementById('tg'), by=document.getElementById('by');
+function rows(agent){ if(!agent) return LANES.map((l,i)=>({l,f:(s)=>s[1]===i,k:'k'+i}));
+  const top=BYA.slice(0,CAP), r=top.map((a,i)=>({l:AG[a],f:(s)=>s[4]===a,k:'k'+(i%5+1)}));
+  if(BYA.length>CAP) r.push({l:'+'+(BYA.length-CAP)+' more',f:(s)=>!top.includes(s[4]),k:'k0'}); return r; }
+function draw(agent){ const R=rows(agent);
+  ov.innerHTML=R.map((r)=>{const st=S.filter(r.f);return '<li class="'+r.k+'"><span data-flow-label>'+r.l+'</span><span class="bar" aria-hidden="true">'+st.map(s=>'<i class="'+(STN.has(s[0])?'st':'')+'" style="left:'+((mn(s[2])-t0)/(t1-t0)*100).toFixed(1)+'%"></i>').join('')+'</span><span class="n">'+st.length+'</span></li>'}).join('');
+  // columns: one per step (as drawn) or one per minute (folded)
+  const cols=[]; S.forEach((s)=>{const c=cols[cols.length-1]; if(FOLD&&c&&c.t===s[2]) c.s.push(s); else cols.push({t:s[2],s:[s]})});
+  let last=-9, prev=null; const ax=cols.map((c,i)=>{const m=mn(c.t), gap=prev!==null&&m-prev>5; const show=(gap||m!==prev)&&i-last>=3; prev=m; if(!show) return '<span class="cell"></span>'; last=i; return '<span class="cell'+(gap?' gap':'')+'"><span data-flow-label>'+c.t+'</span></span>'});
+  grid.innerHTML='<div class="ax"><span class="ln"></span>'+ax.join('')+'</div>'+R.map((r)=>'<div class="row '+r.k+'"><span class="ln" data-flow-label>'+r.l+'</span>'+cols.map((c,i)=>{const h=c.s.filter(r.f); if(!h.length) return '<span class="cell"></span>'; const s=h[0], st=h.some(x=>STN.has(x[0]));
+    return '<span class="cell"><a id="s-'+s[0]+'" href="#s-'+s[0]+'" style="--i:'+i+'" class="'+(s[3]==='ci'?'ci ':s[3]==='deploy'?'dep ':'')+(st?'st':'')+'" aria-label="'+c.t+' UTC, '+h.length+' step'+(h.length>1?'s':'')+', '+r.l+'">'+(h.length>1?'<b>'+h.length+'</b>':'')+'</a></span>'}).join('')+'</div>').join('');
+  grid.dataset.cols=cols.length; grid.dataset.rows=R.length; }
+draw(false);
+const set=(o)=>{sec.classList.toggle('open',o);tg.setAttribute('aria-expanded',o);tg.textContent=o?'Overview':'Show the flow'};
+tg.addEventListener('click',()=>set(!sec.classList.contains('open')));
+by.addEventListener('click',()=>{const p=by.getAttribute('aria-pressed')!=='true';by.setAttribute('aria-pressed',p);draw(p)});
+document.getElementById('rp').addEventListener('click',()=>{grid.classList.remove('replay');void grid.offsetWidth;grid.classList.add('replay')});
+if(/^#(open|agent|s-)/.test(location.hash)) set(true);
+if(location.hash==='#agent'){by.setAttribute('aria-pressed','true');draw(true)}
+</script></body></html>

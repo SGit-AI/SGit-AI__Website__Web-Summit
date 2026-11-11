@@ -1,0 +1,1914 @@
+{
+ "about": "How the home page of the Lisbon Tech Fringe (/) came to be: every commit to the files it is built from, from the git record only.",
+ "page_id": "home",
+ "page": "https://lisbontechfringe.com/",
+ "traced_by": "kilo.large.worker@PrompTugal.angelo (prod-pipeline-a5, a simulation)",
+ "traced_at": "2026-11-11T19:26:40Z",
+ "repo": "PrompTugal/PrompTugal__News__Fringe",
+ "repo_head": "0ce6010",
+ "generator": "people/angelo/pipeline/prod-pipeline-a5/mock/make-trace.mjs",
+ "shape": "lisbon-fringe-trace/1",
+ "sources": [
+  "admin/build/build.mjs",
+  "admin/build/tokens.css",
+  "admin/build/identity.mjs",
+  "admin/build/validate.mjs",
+  ".github/workflows/deploy.yml",
+  "admin/series.txt",
+  "admin/build/home.mjs",
+  "admin/build/cards.mjs",
+  "admin/build/nowstrip.mjs",
+  "admin/build/graph-model.mjs",
+  "admin/build/graph.mjs",
+  "admin/build/city-map.mjs",
+  "admin/build/event-pages.mjs",
+  "admin/build/live.mjs",
+  "admin/build/tip.mjs",
+  "data/events.json",
+  "data/communities.json",
+  "data/places.json"
+ ],
+ "privacy": "Names are the agents named in public commits and the public author of the first commit; no private person; no contact detail.",
+ "steps": [
+  {
+   "n": 1,
+   "t": "2026-11-11T10:42:12Z",
+   "kind": "agent",
+   "who": "dev.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: the join page and a Pages build from dev",
+   "evidence": [
+    "fcecd88"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBuse9ub7C5zboJbMs",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 2,
+   "t": "2026-11-11T10:44:29Z",
+   "kind": "agent",
+   "who": "dev.fringe@PrompTugal.dinis",
+   "what": "changed .github/workflows/deploy.yml, admin/build/build.mjs, admin/build/validate.mjs, admin/series.txt: work/01, the storm site's pipeline: one-job deploy, the gate, release.sh, CI owns the version",
+   "evidence": [
+    "cd048de"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBuse9ub7C5zboJbMs",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 3,
+   "t": "2026-11-11T10:45:03Z",
+   "kind": "agent",
+   "who": "dev.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: api/v1/README.md, the events.json contract (stable within v1), served with the API",
+   "evidence": [
+    "0f2475f"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBuse9ub7C5zboJbMs",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 4,
+   "t": "2026-11-11T10:49:31Z",
+   "kind": "agent",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: data/events.json, the 21 seed events re-read at their public pages (work/02)",
+   "evidence": [
+    "6d8b29b"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwDtKvyL1hzQTwazVi3",
+   "model": "Claude Opus 5.5",
+   "data": true
+  },
+  {
+   "n": 5,
+   "t": "2026-11-11T10:49:54Z",
+   "kind": "agent",
+   "who": "dev.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: work/07, the storm block read live from storm-charles.promptugal.news/api/v1/",
+   "evidence": [
+    "c631977"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBuse9ub7C5zboJbMs",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 6,
+   "t": "2026-11-11T10:53:32Z",
+   "kind": "agent",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: 30 new events from Luma's public calendars, work/03 notes, sources.md",
+   "evidence": [
+    "48efab3"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwDtKvyL1hzQTwazVi3",
+   "model": "Claude Opus 5.5",
+   "data": true
+  },
+  {
+   "n": 7,
+   "t": "2026-11-11T10:56:22Z",
+   "kind": "agent",
+   "who": "dev.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: phone fix: URLs in an event's place, join and storm note become short https links; cards wrap",
+   "evidence": [
+    "9f65b89"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBuse9ub7C5zboJbMs",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 8,
+   "t": "2026-11-11T10:58:29Z",
+   "kind": "agent",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: 19 more events (69), from the PTW, Unicorn Factory and Canopy calendars",
+   "evidence": [
+    "66ab1f3"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwDtKvyL1hzQTwazVi3",
+   "model": "Claude Opus 5.5",
+   "data": true
+  },
+  {
+   "n": 9,
+   "t": "2026-11-11T11:27:29Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.angelo",
+   "what": "changed admin/build/build.mjs, admin/build/graph.mjs: work/05 the fringe graph: /graph/ and /api/v1/graph.json",
+   "evidence": [
+    "d2ae4ca"
+   ],
+   "label": "fact",
+   "session": "session_01Xp7gj33JtyMMidyp2h5NBS",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 10,
+   "t": "2026-11-11T11:38:46Z",
+   "kind": "agent",
+   "who": "observability.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: the sender on every page, the fringe's vaults, /traffic/",
+   "evidence": [
+    "c4ed9a4"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:38:47Z",
+   "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 11,
+   "t": "2026-11-11T11:25:31Z",
+   "kind": "agent",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: the Uncon is WET SUMMIT Lisbon (work/03 done); 61 events re-read; 70 events",
+   "evidence": [
+    "cb97fa3"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:40:09Z",
+   "session": "session_01Kw9UwDtKvyL1hzQTwazVi3",
+   "model": "Claude Opus 5.5",
+   "data": true
+  },
+  {
+   "n": 12,
+   "t": "2026-11-11T11:41:56Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: PTW Palace sessions re-read at source (work/24 first case)",
+   "evidence": [
+    "e97903d"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCFpT9ihNBcQFxkomq",
+   "model": "Claude Opus 5.5",
+   "data": true
+  },
+  {
+   "n": 13,
+   "t": "2026-11-11T11:42:24Z",
+   "kind": "agent",
+   "who": "dev.lead.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/event-pages.mjs: work/22: a page for every event at /e/<id>/",
+   "evidence": [
+    "3aa8d6c"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:42:26Z",
+   "session": "session_01Kw9UwCFpT9ihNBcQFxkomq",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 14,
+   "t": "2026-11-11T11:54:24Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/cards.mjs, admin/build/event-pages.mjs: D3 event cards (status chip, time, area, organiser) on the home page",
+   "evidence": [
+    "57f9442"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:54:25Z",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 15,
+   "t": "2026-11-11T11:54:50Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/event-pages.mjs: D4 event page look: organiser showcase, chips, related as cards",
+   "evidence": [
+    "85f6e97"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 16,
+   "t": "2026-11-11T11:54:30Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/event-pages.mjs, admin/build/graph.mjs, admin/build/tokens.css: D8: one set of design-E tokens (tokens.css), dark mode, type scale",
+   "evidence": [
+    "373b650"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:54:55Z",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 17,
+   "t": "2026-11-11T11:55:08Z",
+   "kind": "agent",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: work/25 the swarm dashboard (/dashboard/, /api/v1/swarm.json), key and status",
+   "evidence": [
+    "b7d0bc9"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:55:24Z",
+   "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 18,
+   "t": "2026-11-11T11:54:37Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: work/16 /now/ and the on-now block on the home page Agent: dev.2.fringe@PrompTugal.dinis Issue: WS-215 For: ",
+   "evidence": [
+    "7aadada"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:55:32Z",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 19,
+   "t": "2026-11-11T11:55:45Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D5: one navigation on every page, current page marked, no JS",
+   "evidence": [
+    "36f7df6"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 20,
+   "t": "2026-11-11T11:55:47Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D11 /how/ (how this is made), in the nav and on the home page",
+   "evidence": [
+    "596428c"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:56:02Z",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 21,
+   "t": "2026-11-11T11:56:09Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: work/24 wake 1: 61 events re-read, 94 added (164), Kuma H2H online",
+   "evidence": [
+    "ac6b57a"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 22,
+   "t": "2026-11-11T11:56:14Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D1 the first screen (hero, count, on now or next)",
+   "evidence": [
+    "b03a8c0"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:56:31Z",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 23,
+   "t": "2026-11-11T11:56:41Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D1 button anchor after rebase",
+   "evidence": [
+    "724e802"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 24,
+   "t": "2026-11-11T11:57:12Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D10 PrompTugal bar on every page; D1 tagline per brief 5",
+   "evidence": [
+    "365d844"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 25,
+   "t": "2026-11-11T11:57:12Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.indi",
+   "what": "changed admin/build/build.mjs, data/communities.json: work/04: data/communities.json (75, 23 calendars re-read) and /api/v1/communities.json, with its contract and generator",
+   "evidence": [
+    "9e7d263"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:57:18Z",
+   "session": "session_01SZXKK9aBakmkfmRPBZ8v6H",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 26,
+   "t": "2026-11-11T11:56:52Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/identity.mjs, admin/build/tokens.css: D9: Lisbon identity: palette tokens, wordmark, azulejo pattern, hero",
+   "evidence": [
+    "4b978ab"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:57:33Z",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 27,
+   "t": "2026-11-11T11:57:30Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/event-pages.mjs: work/23 /organisers/ (draft offer), data/organisers.json, event pages link organisers; work/16 done Agent: dev.2.fringe@PrompTugal.dinis Issue: WS-215 For: ",
+   "evidence": [
+    "749df75"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:57:59Z",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 28,
+   "t": "2026-11-11T11:57:58Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/event-pages.mjs: event pages: set the organisers table (fix)",
+   "evidence": [
+    "00148b8"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:57:59Z",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 29,
+   "t": "2026-11-11T11:58:35Z",
+   "kind": "agent",
+   "who": "design.2.fringe@PrompTugal.dinis",
+   "what": "changed .github/workflows/deploy.yml, admin/build/build.mjs, admin/build/event-pages.mjs, admin/build/validate.mjs: D2 share card: og tags on every page, card rendered in CI from a template",
+   "evidence": [
+    "c129f8d"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwFEfLVDYsXegWLnJUi",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 30,
+   "t": "2026-11-11T11:58:38Z",
+   "kind": "agent",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: work/26 /me/ (key and passkey in the browser) and the message-the-lead box",
+   "evidence": [
+    "88d0003"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:58:39Z",
+   "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 31,
+   "t": "2026-11-11T11:58:38Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "changed .github/workflows/deploy.yml, admin/build/build.mjs, admin/build/validate.mjs: work/15 /changes/ and /api/v1/changes.json from git",
+   "evidence": [
+    "132fccf"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T11:58:46Z",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 32,
+   "t": "2026-11-11T12:02:06Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "changed .github/workflows/deploy.yml: FIX deploy.yml (my summary step was invalid YAML and failed runs 60 to 63); work/20 llm.mjs",
+   "evidence": [
+    "537d766"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 33,
+   "t": "2026-11-11T12:02:25Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "changed .github/workflows/deploy.yml: FIX deploy.yml again: a colon in design.2's step name was invalid YAML (every run since 60 failed)",
+   "evidence": [
+    "2f42a7a"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 34,
+   "t": "2026-11-11T12:02:47Z",
+   "kind": "agent",
+   "who": "capture.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: work/27 claimed: capture tool, /evolution/ page, key (pointers wait on the gate)",
+   "evidence": [
+    "43e929d"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:02:48Z",
+   "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 35,
+   "t": "2026-11-11T12:03:41Z",
+   "kind": "agent",
+   "who": "design.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/event-pages.mjs: D15 Share button on every event page (navigator.share, else copy link)",
+   "evidence": [
+    "e0c72fb"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwFEfLVDYsXegWLnJUi",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 36,
+   "t": "2026-11-11T12:05:04Z",
+   "kind": "agent",
+   "who": "design.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D6 showroom strip under the events; D15 done",
+   "evidence": [
+    "a3aec5f"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:05:09Z",
+   "session": "session_01Kw9UwFEfLVDYsXegWLnJUi",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 37,
+   "t": "2026-11-11T12:16:10Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: work/24 wake 2: 156 re-read, Agents Are Ready postponed to Thu, 7 new from calendars (171)",
+   "evidence": [
+    "437ee4b"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 38,
+   "t": "2026-11-11T12:19:54Z",
+   "kind": "agent",
+   "who": "designer.fringe@PrompTugal.angelo",
+   "what": "changed admin/build/build.mjs: draft trace visual: /traces/<event_id>/, the Wexio page's 77 steps as swim lanes",
+   "evidence": [
+    "f6dbece"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:19:55Z",
+   "session": "session_01Xp7gj33JtyMMidyp2h5NBS",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 39,
+   "t": "2026-11-11T12:21:12Z",
+   "kind": "agent",
+   "who": "design.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D13 Now, Tonight, Online, Tomorrow jump chips; today split in parts; past events folded",
+   "evidence": [
+    "3dc1651"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwFEfLVDYsXegWLnJUi",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 40,
+   "t": "2026-11-11T12:25:26Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D14 a 404 that helps",
+   "evidence": [
+    "b4796f9"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:25:51Z",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 41,
+   "t": "2026-11-11T12:30:23Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.angelo",
+   "what": "changed admin/build/build.mjs, admin/build/graph.mjs: wake: the graph takes work/04's checked communities",
+   "evidence": [
+    "6b079db"
+   ],
+   "label": "fact",
+   "session": "session_01Xp7gj33JtyMMidyp2h5NBS",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 42,
+   "t": "2026-11-11T12:38:45Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/cards.mjs: /programme/: the week by day, place and kind (D17)",
+   "evidence": [
+    "e9f40e7"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 43,
+   "t": "2026-11-11T12:40:59Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: work/10 claimed: lane \"business\" on 49 founders', investors' and partners' meetups",
+   "evidence": [
+    "45e52fc"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 44,
+   "t": "2026-11-11T12:42:46Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: size (major/community) on every event; documented in api/v1",
+   "evidence": [
+    "6502ff1"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 45,
+   "t": "2026-11-11T12:42:58Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/event-pages.mjs, admin/build/identity.mjs: D21 Lisbon Tech Week: rename, compact one-line header",
+   "evidence": [
+    "4ff41b2"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:42:59Z",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 46,
+   "t": "2026-11-11T12:43:36Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D18 big events as a slim strip, small events as a dense list (home and programme)",
+   "evidence": [
+    "20c7a5d"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 47,
+   "t": "2026-11-11T12:43:24Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/identity.mjs, admin/build/tokens.css: D20 taste pass: compact header, one-line band, small type, WhatsApp line",
+   "evidence": [
+    "ab2cd6a"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:43:46Z",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 48,
+   "t": "2026-11-11T12:43:52Z",
+   "kind": "agent",
+   "who": "design.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D19 the now timeline at the top of the home page; share card says Lisbon Tech Week",
+   "evidence": [
+    "07a3a0f"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:44:09Z",
+   "session": "session_01Kw9UwFEfLVDYsXegWLnJUi",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 49,
+   "t": "2026-11-11T12:44:21Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/event-pages.mjs: D4 calmer event page: smaller organiser block, compact facts, related as dense rows",
+   "evidence": [
+    "95e9727"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:44:22Z",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 50,
+   "t": "2026-11-11T12:46:57Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/graph.mjs: D7 /graph/ reads at a glance on a phone; D19 closed",
+   "evidence": [
+    "d6705aa"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 51,
+   "t": "2026-11-11T12:49:31Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: second-opinion times: travel tech start stays 17:00, life-with-artificials uncertain by an hour (Copenhagen time zone), Aubay still 404",
+   "evidence": [
+    "b5d2178"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 52,
+   "t": "2026-11-11T12:51:24Z",
+   "kind": "agent",
+   "who": "design.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D18 /now/ opens with the live timeline (24 h), Now marked current",
+   "evidence": [
+    "55f0c8f"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:51:25Z",
+   "session": "session_01Kw9UwFEfLVDYsXegWLnJUi",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 53,
+   "t": "2026-11-11T12:51:23Z",
+   "kind": "agent",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/validate.mjs: work/30 admin/site.json origin drives every absolute URL; domain steps and redirect plan",
+   "evidence": [
+    "1f7135b"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:51:33Z",
+   "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 54,
+   "t": "2026-11-11T12:51:23Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/event-pages.mjs, admin/build/identity.mjs: D21 Lisbon Tech Fringe: name, PT.news stamp, Newsreader wordmark, favicon",
+   "evidence": [
+    "037ba4a"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:51:46Z",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 55,
+   "t": "2026-11-11T12:52:00Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/identity.mjs, admin/build/tokens.css: D22 first push: brand v2.0 tokens, pt.news fonts linked, numbered kickers, green rules",
+   "evidence": [
+    "05dd532"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:52:50Z",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 56,
+   "t": "2026-11-11T12:54:41Z",
+   "kind": "agent",
+   "who": "graph.fringe@PrompTugal.angelo",
+   "what": "changed admin/build/graph.mjs: work/32: what the things are and how they join, and the outreach layer on /graph/",
+   "evidence": [
+    "af1072f"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:54:42Z",
+   "session": "session_01Xp7gj33JtyMMidyp2h5NBS",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 57,
+   "t": "2026-11-11T12:55:19Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: second-opinion worth_a_look: Yorkseed salon on, AI Engineers lunch not moved, Elevon night confirmed moved to Thursday",
+   "evidence": [
+    "e9a3981"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:55:20Z",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 58,
+   "t": "2026-11-11T12:55:33Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.indi",
+   "what": "changed admin/build/build.mjs, data/communities.json: work/04 done: /communities/ (100 groups, 50 calendars re-read), communities.json refreshed from 171 events",
+   "evidence": [
+    "9c1894c"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T12:55:34Z",
+   "session": "session_01SZXKK9aBakmkfmRPBZ8v6H",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 59,
+   "t": "2026-11-11T12:58:20Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/identity.mjs: independence line in the page column; chips and count folded into the timeline, duplicate On-now cards removed",
+   "evidence": [
+    "b7abb14"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 60,
+   "t": "2026-11-11T13:07:32Z",
+   "kind": "agent",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: brief 10: /api/v1/activity.json (commits, deploys, agents in 15 min and 1 h) and the dashboard line",
+   "evidence": [
+    "5c44305"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:07:33Z",
+   "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 61,
+   "t": "2026-11-11T13:08:42Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/live.mjs: D23 the swarm, live: commits, pushes, agents in 15 min and 1 h",
+   "evidence": [
+    "538cd4b"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:08:44Z",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 62,
+   "t": "2026-11-11T13:11:02Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/live.mjs: D23 one-line live ticker under the header on every page",
+   "evidence": [
+    "02ae517"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 63,
+   "t": "2026-11-11T13:11:17Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/identity.mjs: home: count on one line, nav scroll cue, timeline and big events side by side from 1100 px",
+   "evidence": [
+    "1a0cbf6"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:11:19Z",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 64,
+   "t": "2026-11-11T13:18:36Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: work/24 wake 4: 131 re-read, Eventbrite read (+6, 177 events), lane retagged",
+   "evidence": [
+    "b84d64b"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 65,
+   "t": "2026-11-11T13:25:11Z",
+   "kind": "agent",
+   "who": "an agent (no name in the commit)",
+   "what": "changed data/places.json: work/researcher.fringe squashed (2def435)",
+   "evidence": [
+    "8c73701"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:26:18Z",
+   "session": "session_01Kw9UwCFpT9ihNBcQFxkomq",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 66,
+   "t": "2026-11-11T13:27:22Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: remove the 6 Eventbrite events (terms forbid automated reading); one rule for unknown applied (99 events on/evidence)",
+   "evidence": [
+    "0896640"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:27:23Z",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 67,
+   "t": "2026-11-11T13:31:08Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/identity.mjs: D27 baseline: reduced-motion and pause rules (lab check D9); status",
+   "evidence": [
+    "3bbad7d"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:31:09Z",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 68,
+   "t": "2026-11-11T13:32:20Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D24 design A, the programme (first cut at /designs/a/)",
+   "evidence": [
+    "8d3ce0a"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 69,
+   "t": "2026-11-11T13:33:26Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "changed .github/workflows/deploy.yml, admin/build/build.mjs: work/37 releases: /changes/<version>/, /api/v1/releases.json, per-release JSON with the events diff; no null versions",
+   "evidence": [
+    "af88b76"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:33:27Z",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 70,
+   "t": "2026-11-11T13:33:45Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D26 design C preview at /designs/c/ (same contract as design A)",
+   "evidence": [
+    "7dc011d"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 71,
+   "t": "2026-11-11T13:33:16Z",
+   "kind": "agent",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "what": "changed .github/workflows/deploy.yml, admin/build/build.mjs: work/35 the design lab: /designs/, /?design=<id>, the Design pill and vote, CI pictures, stub module",
+   "evidence": [
+    "4581186"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:33:49Z",
+   "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 72,
+   "t": "2026-11-11T13:34:58Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: neighbourhood field on 47 events where the public page names the area; documented in api/v1",
+   "evidence": [
+    "32bbc63"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:35:04Z",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 73,
+   "t": "2026-11-11T13:35:14Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: events updated time from the clock (was typed ahead)",
+   "evidence": [
+    "b4fa068"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 74,
+   "t": "2026-11-11T13:37:28Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: add Storm Summit (stormsummit.app), online Wed 11 Nov 08:30, from the organiser's public page",
+   "evidence": [
+    "0f23d54"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 75,
+   "t": "2026-11-11T13:39:10Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/tip.mjs: work/41 /tip/ first version: sealed paste box, tips status API, drain shows tip id and priority",
+   "evidence": [
+    "191bd96"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:39:11Z",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 76,
+   "t": "2026-11-11T13:42:26Z",
+   "kind": "agent",
+   "who": "architect.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/validate.mjs: work/39 ABPs per agent, observe-only hooks, the gate warns",
+   "evidence": [
+    "d2ee726"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:42:27Z",
+   "session": "session_01Kw9UwEQqEzzggNTF6rxqSR",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 77,
+   "t": "2026-11-11T13:44:07Z",
+   "kind": "agent",
+   "who": "architect.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: work/40 CONTRIBUTING.md and /guidance/; /abp/ and the map's JSON",
+   "evidence": [
+    "08183a1"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:44:16Z",
+   "session": "session_01Kw9UwEQqEzzggNTF6rxqSR",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 78,
+   "t": "2026-11-11T13:54:47Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.indi",
+   "what": "changed data/communities.json: wake: communities refreshed (102, 49 calendars), status; ABP question to Indi",
+   "evidence": [
+    "d4ae8e8"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T13:54:48Z",
+   "session": "session_01SZXKK9aBakmkfmRPBZ8v6H",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 79,
+   "t": "2026-11-11T13:54:54Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D24 design A into the lab frame (meta, dark, keyboard)",
+   "evidence": [
+    "f70c5b8"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 80,
+   "t": "2026-11-11T14:01:16Z",
+   "kind": "agent",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: work/43 /data/: SQL in the browser over events.json and the graph (sql.js, pinned and hash-checked)",
+   "evidence": [
+    "a6cf6b4"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:01:17Z",
+   "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 81,
+   "t": "2026-11-11T14:01:21Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: work/44 done: cost, in_lisbon, personas, umbrella on all events; fields documented",
+   "evidence": [
+    "aefea2d"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:01:22Z",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 82,
+   "t": "2026-11-11T14:01:30Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/event-pages.mjs, admin/build/tip.mjs: work/46 give-us-the-intel box on home and every event page, WhatsApp share with ?via, tip counts on the dashboard",
+   "evidence": [
+    "00a6e45"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:01:31Z",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 83,
+   "t": "2026-11-11T14:01:40Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/city-map.mjs: D28 city-map.mjs: a dot per event today on a schematic Lisbon (drop-in for the home page)",
+   "evidence": [
+    "870502c"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:01:41Z",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 84,
+   "t": "2026-11-11T14:01:36Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/identity.mjs: D30 /storm/ as its own section; D31 The agentic team in the nav with a sub-row",
+   "evidence": [
+    "adbfcee"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:01:51Z",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 85,
+   "t": "2026-11-11T14:02:08Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/home.mjs: D28 the new home page: today in Lisbon, role chips, now strip, visual cards (first version)",
+   "evidence": [
+    "7bfe5f3"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:02:15Z",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 86,
+   "t": "2026-11-11T14:02:48Z",
+   "kind": "agent",
+   "who": "design.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: D29 My day: stars on every event, a personal timeline at /my/ (clashes, gaps, remove, ?my= link), kept in localStorage",
+   "evidence": [
+    "0fbff35"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:02:56Z",
+   "session": "session_01Kw9UwFEfLVDYsXegWLnJUi",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 87,
+   "t": "2026-11-11T14:03:14Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/home.mjs: chips under 3 events fold into Elsewhere in Lisbon (home, programme); organiser links on home cards",
+   "evidence": [
+    "36340f6"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:03:16Z",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 88,
+   "t": "2026-11-11T14:04:10Z",
+   "kind": "agent",
+   "who": "ontologist.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/graph-model.mjs: work/42 slice 1: the semantic graph, organisers as stars, Portugal Tech Week as an umbrella",
+   "evidence": [
+    "fc1304b"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:04:11Z",
+   "session": "session_01Kw9UwCdAbJSk1oD7XCtVqj",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 89,
+   "t": "2026-11-11T14:04:14Z",
+   "kind": "agent",
+   "who": "design.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/nowstrip.mjs: D28 the Now, next hour, tonight strip as a module for the new home (nowstrip.mjs)",
+   "evidence": [
+    "58c8990"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:04:15Z",
+   "session": "session_01Kw9UwFEfLVDYsXegWLnJUi",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 90,
+   "t": "2026-11-11T14:04:49Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/home.mjs: D28 home uses design.2's now strip (Now, Next hour, Tonight)",
+   "evidence": [
+    "45810a5"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:04:51Z",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 91,
+   "t": "2026-11-11T14:06:40Z",
+   "kind": "agent",
+   "who": "ontologist.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/event-pages.mjs, admin/build/graph-model.mjs: work/42 slice 2: platforms as entities, every event page linked into the graph",
+   "evidence": [
+    "c62ab00"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCdAbJSk1oD7XCtVqj",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 92,
+   "t": "2026-11-11T14:08:06Z",
+   "kind": "agent",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: work/43 /data/: examples that return rows, row count and runtime, links from the team section and /how/",
+   "evidence": [
+    "455d983"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 93,
+   "t": "2026-11-11T14:08:44Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: work/47 /models/ and /api/v1/models.json: every model experiment, 8B vs 70B, router tiers, ledger counts",
+   "evidence": [
+    "031b28b"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:08:45Z",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 94,
+   "t": "2026-11-11T14:08:50Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: staaake: organiser set to an independent organiser (finding 10), not clearly an organisation",
+   "evidence": [
+    "1b7122c"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:08:51Z",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 95,
+   "t": "2026-11-11T14:08:51Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/home.mjs: D28 home: the city map, role filter drives the dots, card fields link to entity pages",
+   "evidence": [
+    "9d6de18"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:08:55Z",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 96,
+   "t": "2026-11-11T14:08:46Z",
+   "kind": "agent",
+   "who": "ontologist.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/graph-model.mjs: work/42: hold staaake out of the graph until confirmed an organisation",
+   "evidence": [
+    "c413bac"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:08:58Z",
+   "session": "session_01Kw9UwCdAbJSk1oD7XCtVqj",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 97,
+   "t": "2026-11-11T14:15:49Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: work/24 wake 14:15: 131 re-read, Enchant Afterparty added, Side Events Guide IRL now 404",
+   "evidence": [
+    "24adb2d"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 98,
+   "t": "2026-11-11T14:19:00Z",
+   "kind": "agent",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "what": "changed data/places.json: work/17: places.json, 12 places, 10 with map coordinates",
+   "evidence": [
+    "4fdcfa0"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:22:57Z",
+   "session": "session_01Kw9UwDtKvyL1hzQTwazVi3",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 99,
+   "t": "2026-11-11T14:24:26Z",
+   "kind": "agent",
+   "who": "architect.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: work/48 /agentic-team/where-agents-run/, data/runtimes.json, doc v0.2",
+   "evidence": [
+    "c28ed5d"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:24:27Z",
+   "session": "session_01Kw9UwEQqEzzggNTF6rxqSR",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 100,
+   "t": "2026-11-11T14:39:01Z",
+   "kind": "agent",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "changed data/events.json: Soirée is in person per its Luma page (was online); notes checked at source",
+   "evidence": [
+    "ceac351"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:39:02Z",
+   "session": "session_01CqQLDA9LBMzBQKGsJmLFUS",
+   "model": "Claude Fable 5.2",
+   "data": true
+  },
+  {
+   "n": 101,
+   "t": "2026-11-11T14:43:31Z",
+   "kind": "agent",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "changed data/events.json: two new online events from the guides (WonderLead in Tech, ideaic.io); guides read",
+   "evidence": [
+    "d501143"
+   ],
+   "label": "fact",
+   "session": "session_01CqQLDA9LBMzBQKGsJmLFUS",
+   "model": "Claude Fable 5.2",
+   "data": true
+  },
+  {
+   "n": 102,
+   "t": "2026-11-11T14:45:32Z",
+   "kind": "agent",
+   "who": "architect.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: the operating model (Dinis, in its session): ladder, access, OS; three slides and a page",
+   "evidence": [
+    "a477106"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:45:55Z",
+   "session": "session_01Kw9UwEQqEzzggNTF6rxqSR",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 103,
+   "t": "2026-11-11T14:47:22Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/identity.mjs: D35 right tab on every page, 404 offers Now and Send a tip, scroll hint on the tab row",
+   "evidence": [
+    "d1dad4c"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 104,
+   "t": "2026-11-11T14:54:25Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/home.mjs: home cards take cover pictures from event-images.json (event_id, public url only); claim D36",
+   "evidence": [
+    "7fb5313"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 105,
+   "t": "2026-11-11T14:55:08Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/event-pages.mjs, admin/build/tip.mjs: D36 Tell us link on every event page, event pre-filled on /tip/ (closes D16)",
+   "evidence": [
+    "1608aef"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:55:10Z",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 106,
+   "t": "2026-11-11T14:58:18Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.indi",
+   "what": "changed data/communities.json: communities refreshed (103, 49 calendars); staaake held out (security finding 10); unmatched calendars by event id only",
+   "evidence": [
+    "fc84447"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:58:19Z",
+   "session": "session_01SZXKK9aBakmkfmRPBZ8v6H",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 107,
+   "t": "2026-11-11T14:58:34Z",
+   "kind": "agent",
+   "who": "ontologist.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/graph-model.mjs: work/42: organiser noise cut: today in Lisbon first, stars, the rest folded",
+   "evidence": [
+    "fee99bf"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T14:58:35Z",
+   "session": "session_01Kw9UwCdAbJSk1oD7XCtVqj",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 108,
+   "t": "2026-11-11T15:14:41Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: work/24 wake 15:15: 134 re-read, 2 new from the Luma calendars (175 events)",
+   "evidence": [
+    "f131859"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T15:14:42Z",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 109,
+   "t": "2026-11-11T15:23:40Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: privacy: withhold the venue where the organiser's page hides it (3), correct the wrong 'shows only the city' note (60)",
+   "evidence": [
+    "34c0b63"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T15:23:41Z",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 110,
+   "t": "2026-11-11T15:31:22Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.angelo",
+   "what": "changed admin/build/graph.mjs: wake 15:30: /graph/ community dots open their organiser pages (/o/, work/42)",
+   "evidence": [
+    "05cf5e1"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T15:31:23Z",
+   "session": "session_01Xp7gj33JtyMMidyp2h5NBS",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 111,
+   "t": "2026-11-11T15:43:00Z",
+   "kind": "agent",
+   "who": "architect.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: article: the altitudes of execution (what we built, measured and got wrong)",
+   "evidence": [
+    "4a122c3"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwEQqEzzggNTF6rxqSR",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 112,
+   "t": "2026-11-11T15:46:56Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/identity.mjs: D27 closed: design D is the live home; audit against L1 to L14; 44 px hit areas for header links",
+   "evidence": [
+    "9d7ed69"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 113,
+   "t": "2026-11-11T15:53:29Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.indi",
+   "what": "changed data/communities.json: wake: communities refreshed (103, 49 calendars); status: work/50 waits on Indi",
+   "evidence": [
+    "f666665"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T15:53:30Z",
+   "session": "session_01SZXKK9aBakmkfmRPBZ8v6H",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 114,
+   "t": "2026-11-11T15:57:37Z",
+   "kind": "agent",
+   "who": "ontologist.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/graph-model.mjs: work/42: sessions: Lisbon Community Week's agenda, /s/ pages, event pages list them",
+   "evidence": [
+    "7cfe511"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCdAbJSk1oD7XCtVqj",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 115,
+   "t": "2026-11-11T16:14:21Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: work/24 wake 16:13: 161 re-read, 1 new from the Luma calendars (176 events)",
+   "evidence": [
+    "b74280a"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 116,
+   "t": "2026-11-11T16:24:36Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/home.mjs: home cards without pictures: organiser initials, kind and time tiles (Luma terms, work/49)",
+   "evidence": [
+    "7ff0f76"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T16:24:37Z",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 117,
+   "t": "2026-11-11T16:49:45Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.indi",
+   "what": "changed data/communities.json: the Luma rule: communities tool stops reading Luma by machine; quoted Luma text removed; links kept with their sources",
+   "evidence": [
+    "9ab2db7"
+   ],
+   "label": "fact",
+   "session": "session_01SZXKK9aBakmkfmRPBZ8v6H",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 118,
+   "t": "2026-11-11T16:54:43Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/home.mjs: D37 home: Online and Cancelled-or-moved one tap away, list folded (22763 to 8939 px)",
+   "evidence": [
+    "0963e71"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T16:54:45Z",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 119,
+   "t": "2026-11-11T16:57:50Z",
+   "kind": "agent",
+   "who": "ontologist.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/graph-model.mjs: work/42: verbs read both ways (fractal semantic graphs); Valois agenda today",
+   "evidence": [
+    "863f8bb"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCdAbJSk1oD7XCtVqj",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 120,
+   "t": "2026-11-11T17:12:38Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: wake 17:12 (iCal only): feeds refreshed, Valois cost corrected to EUR 40 at the door",
+   "evidence": [
+    "cec6310"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 121,
+   "t": "2026-11-11T17:17:20Z",
+   "kind": "agent",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "changed data/events.json: Cisco 17:30 is online per its Luma page (was in person); PTW's calendar for today compared",
+   "evidence": [
+    "510868b"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T17:17:21Z",
+   "session": "session_01CqQLDA9LBMzBQKGsJmLFUS",
+   "model": "Claude Fable 5.2",
+   "data": true
+  },
+  {
+   "n": 122,
+   "t": "2026-11-11T17:23:05Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs, admin/build/event-pages.mjs: quiet \"status last read at the organiser's page\" line on home, /now/ and every event page; README: communities what is null",
+   "evidence": [
+    "afe56b0"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T17:23:06Z",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 123,
+   "t": "2026-11-11T17:23:31Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: AltaIR Capital: unknown/evidence (page no longer shows the cancellation); other cancelled/moved entries re-confirmed",
+   "evidence": [
+    "f44f7c4"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T17:23:32Z",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 124,
+   "t": "2026-11-11T17:23:40Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/home.mjs: D38 design B's counts line on the home (on now, within the hour, online, cancelled)",
+   "evidence": [
+    "9b0fa3e"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T17:23:41Z",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 125,
+   "t": "2026-11-11T17:24:38Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: ical_uid on 121 Luma events; status check counts a vanished notice as a change; ASCII id for one event",
+   "evidence": [
+    "ebfb686"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T17:24:39Z",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 126,
+   "t": "2026-11-11T17:30:59Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.angelo",
+   "what": "changed admin/build/graph.mjs, admin/build/tokens.css: wake 17:29: festivals on /graph/ (Portugal Tech Week as an umbrella, work/42)",
+   "evidence": [
+    "9a44247"
+   ],
+   "label": "fact",
+   "session": "session_01Xp7gj33JtyMMidyp2h5NBS",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 127,
+   "t": "2026-11-11T17:50:35Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.indi",
+   "what": "changed data/communities.json: wake: communities in step with events.json; status",
+   "evidence": [
+    "07913af"
+   ],
+   "label": "fact",
+   "session": "session_01SZXKK9aBakmkfmRPBZ8v6H",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 128,
+   "t": "2026-11-11T17:50:43Z",
+   "kind": "agent",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "changed data/events.json: DISTRICT 909 (22:00, Rive Rouge) added from its Luma page; guide list compared; status",
+   "evidence": [
+    "b096ccb"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T17:50:44Z",
+   "session": "session_01CqQLDA9LBMzBQKGsJmLFUS",
+   "model": "Claude Fable 5.2",
+   "data": true
+  },
+  {
+   "n": 129,
+   "t": "2026-11-11T17:53:18Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/tokens.css: tokens: --t-festival follows the brand red in dark; checked Angelo's edit",
+   "evidence": [
+    "f2c1ed0"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 130,
+   "t": "2026-11-11T17:54:35Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: /universe/ serves the Fringe universe (Gravity adapter), linked from the team nav and /graph/",
+   "evidence": [
+    "d3fd314"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T17:54:36Z",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 131,
+   "t": "2026-11-11T18:11:46Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: wake 18:11 (iCal only): feeds refreshed, one dropped entry noted",
+   "evidence": [
+    "5bb00e0"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  },
+  {
+   "n": 132,
+   "t": "2026-11-11T18:52:26Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/home.mjs: D39 Online now and next, earlier folded; D40 the counts agree (home.mjs)",
+   "evidence": [
+    "eec15c4"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5"
+  },
+  {
+   "n": 133,
+   "t": "2026-11-11T18:56:33Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.indi",
+   "what": "changed data/communities.json: wake: communities in step with events.json (106); status",
+   "evidence": [
+    "698898b"
+   ],
+   "label": "fact",
+   "session": "session_01SZXKK9aBakmkfmRPBZ8v6H",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 134,
+   "t": "2026-11-11T19:03:19Z",
+   "kind": "agent",
+   "who": "architect.1.fringe@PrompTugal.dinis",
+   "what": "changed admin/build/build.mjs: every agentic run as a Gravity universe (/agentic-team/universe/)",
+   "evidence": [
+    "b6303b1"
+   ],
+   "label": "fact",
+   "committed": "2026-11-11T19:03:20Z",
+   "session": "session_01Kw9UwEQqEzzggNTF6rxqSR",
+   "model": "Claude Opus 5.5"
+  },
+  {
+   "n": 135,
+   "t": "2026-11-11T19:13:27Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "changed data/events.json: wake 19:13 (iCal only): Side Events Guide IRL unknown (page gone), end-time note, feeds refreshed",
+   "evidence": [
+    "ffe1588"
+   ],
+   "label": "fact",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "data": true
+  }
+ ],
+ "gaps": [
+  "CI and deploy runs: not in git. The Fringe numbers versions by run (v0.1.<run>); this trace has no ci or deploy steps and no published_by, so \"live\" is the time of the last commit plus an unmeasured deploy (about 1 min on the Wexio trace).",
+  "People's words (Dinis's briefs, KICKOFF.md, a tip): not in these files' history; added by hand in the real trace.",
+  "Sub-agents behind a commit: git sees only the committing agent.",
+  "The page is rebuilt from the whole repository: a commit to a file not listed in sources can still change it (a shared helper, a data file read at build). The list is the page's direct inputs, read from build.mjs imports."
+ ],
+ "totals": {
+  "steps": 135,
+  "agents": 20,
+  "people": 0,
+  "data_commits": 31,
+  "first": "2026-11-11T10:42:12Z",
+  "last": "2026-11-11T19:13:27Z",
+  "sessions": 17
+ }
+}

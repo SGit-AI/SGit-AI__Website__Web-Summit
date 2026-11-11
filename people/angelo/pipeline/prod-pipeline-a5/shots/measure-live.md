@@ -1,0 +1,29 @@
+| page | strip | viewport | page height (screens) | strip share | min text | min tap (<44) | overlaps | clipped | page scroll | result |
+|---|---|---|---|---|---|---|---|---|---|---|
+| home | asis | 320x640 | 16.8 | 0.29 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| home | rules | 320x640 | 16.8 | 0.29 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| home | running | 320x640 | 16.8 | 0.32 | 12 | 44 (0/4) | 0 | 0 | no | ok |
+| home | asis | 390x844 | 11.9 | 0.24 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| home | rules | 390x844 | 11.9 | 0.24 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| home | running | 390x844 | 11.9 | 0.26 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| home | asis | 1280x800 | 7.3 | 0.25 | 12 | 44 (0/8) | 0 | 0 | no | ok |
+| home | rules | 1280x800 | 7.3 | 0.25 | 12 | 44 (0/7) | 0 | 0 | no | ok |
+| home | running | 1280x800 | 7.3 | 0.25 | 12 | 44 (0/7) | 0 | 0 | no | ok |
+| home | asis | 740x360 | 18 | 0.3 | 12 | 44 (0/8) | 0 | 0 | no | ok |
+| home | rules | 740x360 | 18 | 0.3 | 12 | 44 (0/7) | 0 | 0 | no | ok |
+| home | running | 740x360 | 18 | 0.3 | 12 | 44 (0/7) | 0 | 0 | no | ok |
+| programme | asis | 320x640 | 39.4 | 0.29 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| programme | rules | 320x640 | 39.4 | 0.29 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| programme | asis | 390x844 | 23.6 | 0.24 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| programme | rules | 390x844 | 23.6 | 0.24 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| programme | asis | 1280x800 | 15.6 | 0.25 | 12 | 44 (0/8) | 0 | 0 | no | ok |
+| programme | rules | 1280x800 | 15.6 | 0.25 | 12 | 44 (0/6) | 0 | 0 | no | ok |
+| graph | asis | 320x640 | 15.6 | 0.29 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| graph | rules | 320x640 | 15.6 | 0.29 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| graph | asis | 390x844 | 11.6 | 0.24 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| graph | rules | 390x844 | 11.6 | 0.24 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| graph | asis | 1280x800 | 12.2 | 0.25 | 12 | 44 (0/8) | 0 | 0 | no | ok |
+| graph | rules | 1280x800 | 12.2 | 0.25 | 12 | 44 (0/7) | 0 | 0 | no | ok |
+| wexio | asis | 320x640 | 5.2 | 0.29 | 12 | 44 (0/5) | 0 | 0 | no | ok |
+| wexio | asis | 390x844 | 3.4 | 0.24 | 12 | 44 (0/6) | 0 | 0 | no | ok |
+| wexio | asis | 1280x800 | 3 | 0.25 | 12 | 44 (0/10) | 0 | 0 | no | ok |

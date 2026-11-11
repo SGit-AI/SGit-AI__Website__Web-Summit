@@ -1,0 +1,18 @@
+a2 measure: file:///home/user/SGit-AI__Website__Web-Summit/people/angelo/pipeline/prod-pipeline-a5/mock/trace-home.htm#agent
+| viewport | part | share | 1st screen | min text | min tap (<44) | overlaps | clipped | inner scroll | page scroll | result |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 320x640 | strip | 0.29 | 0.29 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 320x640 | plot | 0.56 | 0.47 | 12 | 44 (0/138) | 0 | 0 | yes | no | ok |
+| 360x760 | strip | 0.22 | 0.22 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 360x760 | plot | 0.56 | 0.56 | 12 | 44 (0/138) | 0 | 0 | yes | no | ok |
+| 390x844 | strip | 0.2 | 0.2 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 390x844 | plot | 0.57 | 0.57 | 12 | 44 (0/138) | 0 | 0 | yes | no | ok |
+| 430x932 | strip | 0.19 | 0.19 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 430x932 | plot | 0.57 | 0.57 | 12 | 44 (0/138) | 0 | 0 | yes | no | ok |
+| 740x360 | strip | 0.27 | 0.27 | 12 | 44 (0/6) | 0 | 0 | no | no | ok |
+| 740x360 | plot | 0.43 | 0.43 | 12 | 44 (0/138) | 0 | 0 | yes | no | ok |
+| 768x1024 | strip | 0.17 | 0.17 | 12 | 44 (0/8) | 0 | 0 | no | no | ok |
+| 768x1024 | plot | 0.55 | 0.55 | 12 | 44 (0/138) | 0 | 0 | yes | no | ok |
+| 1280x800 | strip | 0.22 | 0.22 | 12 | 44 (0/8) | 0 | 0 | no | no | ok |
+| 1280x800 | plot | 0.54 | 0.54 | 12 | 44 (0/138) | 0 | 0 | yes | no | ok |
+OK: 14 measurements within the limits
