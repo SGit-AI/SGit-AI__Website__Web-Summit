@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1850",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: the conductor's format (the update, step by step) and the conductor skill",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "4c7ed5f84"
+  },
+  {
     "version": "v0.2.1849",
     "date": "2026-11-11",
     "what": "11:20 wake: Lisbon Fringe (WS-215) in Jose's Actions: start his fringe conductor if he joins, lane the channels",
