@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1797",
+    "date": "2026-11-11",
+    "what": "lisbon-rain.json (Lisbon's stations in madeira.json's shape, for the rain card from 09:00); hour_label in both: IPMA does not document start or end (inference, labelled: hour ending, UTC)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "fb524c2c9"
+  },
+  {
     "version": "v0.2.1796",
     "date": "2026-11-11",
     "what": "Madeira's rain verified at IPMA (Areeiro 133.9 mm in 6 h to 22:00; 230.5 mm to 01:00), madeira.json; cap.json other_messages (Madeira and every red district); CHARLES's origin as a hypothesis from NHC's archived outlooks (AL94 from 6 Nov; not established)",
