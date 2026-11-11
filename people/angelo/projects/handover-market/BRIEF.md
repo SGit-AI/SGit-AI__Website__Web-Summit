@@ -25,3 +25,9 @@ For each pattern in turn: one real task handed over, run elsewhere, returned, ch
 
 ## Tier 3, Angelo's own word each time
 Sending offers to people or their agents (offer 2 waits for his go on the wording); using another person's key or credit (OpenRouter is Dinis's); reaching Angelo's own computer (the Ollama: through Remote Control, Angelo connects it); any cloud account or money (AWS); lanes (policy@).
+
+## Scope changed (11 Nov, about 21:35 UTC)
+**Angelo:** "Handover experiments have been handled by conductor.fringe, can you check?" and, on conductor.b@'s recommendation, "Agree, go ahead".
+- **conductor.fringe@PrompTugal.angelo owns the live packet exchange with Dinis's agents** in the Fringe repository: between 20:28 and 20:32 UTC it ran Dinis's conductor's P3 and P4 (10/10 valid, 155113b) and Dinis's conductor ran ours, P3 and P5 (606564c, 1c86ceb); Dinis's Elastic view shows them. Dinis's MVPs 1 and 2 (run our packets, send one back) are done there.
+- **Dropped here:** the signed reply to packet p1 (step 1b) and packet p2; nothing of this project goes to the Fringe's tasks/.
+- **This project now does what nobody has done yet:** the capacity board (every session updates it; Angelo: "let's each have each session update the board"); offer, claim and lapse of work between accounts; a run on the local Ollama (through Remote Control, tier 3 for the computer); AWS (tier 3: account, money). The OpenRouter results (steps 3a, 3b, 5) stay as the "outside Claude" pattern; the names (step 6) stay with policy@'s lane check and Angelo's word.
