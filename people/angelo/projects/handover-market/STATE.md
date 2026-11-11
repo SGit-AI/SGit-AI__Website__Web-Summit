@@ -1,4 +1,4 @@
-For the digest: no worker running; total 10.6 USD platform + 0.35 USD OpenRouter; a whole worker runs on OpenRouter (Sonnet 5.5, 0.14 USD, correct); the signed reply to Dinis's packet and our first outgoing packet are ready for Angelo's look; both need Dinis's side (a pull request; a lane for conductor.fringe@).
+For the digest: no worker running; 11.9 USD platform + 0.80 OpenRouter; waiting on Angelo: (1) closed-set worker names in policy@'s lane check (his "no wildcards" rule), (2) the signed reply to Dinis's packet, (3) our first outgoing packet; (2) and (3) need Dinis's side.
 For the digest: plan written; pattern 1 (Fringe packet relay) and the handover format running as workers; Angelo's go in principle for pattern 1's write-back, shown to him before any push; pattern 2 dry run on Angelo's own other account first (his go); pattern 3 (OpenRouter, Dinis's key) approved by Angelo as urgent: account B's usage is running out; key to be saved as a network secret for openrouter.ai.
 
 Lead: handover-market.pm@PrompTugal.angelo. Branch project/handover-market. Brief: BRIEF.md (opened by 20fe15f6, pushed-by ANGELO, checked 2026-11-11).
@@ -26,6 +26,7 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 - **5 handover-p5-or-step** (build on OpenRouter, Sonnet 5.5 inner; wrapper on a Sonnet session to save account B, decided by default): one real step with a commit: mark the pipeline library's missing paths.
 - **5 done** 19:43 (pool/handover-p5-or-step e958ac8): one real step on OpenRouter ended in a commit; 0.446 USD OpenRouter + 0.52 USD Sonnet wrapper; 10 of 11 marks kept.
 - **6 handover-p6-names** (spec): names <slot>.<model>.<environment>.worker@, inner-agent lines, ledger by environment; drafts only, policy@'s and Indi's files proposed, not edited. Decided by default (Angelo can reverse).
+- **6 done** 20:07 (pool/handover-p6-names 188fede; 0.78 USD Sonnet): names scheme, ROLES diff, lanes and ledger proposals. lane-check.mjs matches names exactly, enforce on: new names need policy@'s change first. Recommend closed sets (slots x models x environments), which needs Angelo's word on his "no wildcards" rule.
 - Ollama and AWS: each waits for Angelo's go (see table).
 
 ## Decisions (Angelo's words)
