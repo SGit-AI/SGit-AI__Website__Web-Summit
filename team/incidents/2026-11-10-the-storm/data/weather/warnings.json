@@ -1,7 +1,7 @@
 {
  "about": "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). IPMA's open data carries no issue time: `sent_utc` is the sent time of the CAP message (MeteoAlarm, cap.json) matching the warning's area, type, level and window exactly, or null where none matches (never guessed).",
  "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
- "read_utc": "2026-11-11T02:22:46Z",
+ "read_utc": "2026-11-11T02:34:56Z",
  "lisbon_peak_level": "red",
  "lisbon": [
   {
@@ -11,7 +11,7 @@
    "end_utc": "2026-11-11T06:00:00Z",
    "text_pt": "Ondas do quadrante oeste com 4 a 5 metros.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T02:22:46Z",
+   "read_utc": "2026-11-11T02:34:56Z",
    "sent_utc": null,
    "text_en": "Western waves up to 4 to 5 meters.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
@@ -23,7 +23,7 @@
    "end_utc": "2026-11-11T21:00:00Z",
    "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T02:22:46Z",
+   "read_utc": "2026-11-11T02:34:56Z",
    "sent_utc": "2026-11-10T12:09:08Z",
    "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
@@ -35,7 +35,7 @@
    "end_utc": "2026-11-12T03:00:00Z",
    "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T02:22:46Z",
+   "read_utc": "2026-11-11T02:34:56Z",
    "sent_utc": "2026-11-10T07:18:40Z",
    "text_en": "SW waves 4 to 5 metres.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
@@ -47,10 +47,10 @@
    "end_utc": "2026-11-11T09:00:00Z",
    "text_pt": "Precipitação por vezes forte e persistente.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T02:22:46Z",
+   "read_utc": "2026-11-11T02:34:56Z",
    "sent_utc": "2026-11-10T21:23:00Z",
-   "text_en": "Strong and persistent rain.",
-   "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+   "text_en": "Rain, at times heavy, and persistent.",
+   "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
   },
   {
    "type": "Precipitação",
@@ -59,7 +59,7 @@
    "end_utc": "2026-11-11T18:00:00Z",
    "text_pt": "Precipitação forte e persistente.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T02:22:46Z",
+   "read_utc": "2026-11-11T02:34:56Z",
    "sent_utc": "2026-11-10T21:23:00Z",
    "text_en": "Strong and persistent precipitation.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
@@ -71,7 +71,7 @@
    "end_utc": "2026-11-11T21:00:00Z",
    "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T02:22:46Z",
+   "read_utc": "2026-11-11T02:34:56Z",
    "sent_utc": "2026-11-10T07:18:40Z",
    "text_en": "Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.",
    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 140 km/h.', does not carry the same figures)"
@@ -79,7 +79,7 @@
  ],
  "red_and_orange_elsewhere": {
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-11T02:22:46Z",
+  "read_utc": "2026-11-11T02:34:56Z",
   "items": [
    {
     "area": "BJA",
@@ -89,8 +89,8 @@
     "end_utc": "2026-11-11T18:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente.",
     "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Strong and persistent rain.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+    "text_en": "Rain, at times heavy, and persistent.",
+    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
    },
    {
     "area": "BJA",
@@ -133,8 +133,8 @@
     "end_utc": "2026-11-11T18:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente.",
     "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Strong and persistent rain.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+    "text_en": "Rain, at times heavy, and persistent.",
+    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
    },
    {
     "area": "FAR",
@@ -320,8 +320,8 @@
     "end_utc": "2026-11-11T09:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente.",
     "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Strong and persistent rain.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+    "text_en": "Rain, at times heavy, and persistent.",
+    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
    },
    {
     "area": "BRG",
@@ -342,8 +342,8 @@
     "end_utc": "2026-11-11T12:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente.",
     "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Strong and persistent rain.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+    "text_en": "Rain, at times heavy, and persistent.",
+    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
    },
    {
     "area": "CBO",
@@ -386,8 +386,8 @@
     "end_utc": "2026-11-11T18:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente.",
     "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Strong and persistent rain.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+    "text_en": "Rain, at times heavy, and persistent.",
+    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
    },
    {
     "area": "FAR",
@@ -408,8 +408,8 @@
     "end_utc": "2026-11-11T09:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente.",
     "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Strong and persistent rain.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+    "text_en": "Rain, at times heavy, and persistent.",
+    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
    },
    {
     "area": "GDA",
@@ -441,8 +441,8 @@
     "end_utc": "2026-11-11T12:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente.",
     "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Strong and persistent rain.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+    "text_en": "Rain, at times heavy, and persistent.",
+    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
    },
    {
     "area": "MCN",
@@ -452,8 +452,8 @@
     "end_utc": "2026-11-11T09:00:00Z",
     "text_pt": "Aguaceiros, por vezes fortes",
     "sent_utc": "2026-11-10T20:52:39Z",
-    "text_en": "Heavy showers",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+    "text_en": "Showers, at times heavy",
+    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Heavy showers', drops 'por vezes')"
    },
    {
     "area": "MCN",
@@ -540,8 +540,8 @@
     "end_utc": "2026-11-11T12:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente.",
     "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Strong and persistent rain.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+    "text_en": "Rain, at times heavy, and persistent.",
+    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
    },
    {
     "area": "PTO",
@@ -573,8 +573,8 @@
     "end_utc": "2026-11-11T09:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente.",
     "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Strong and persistent rain.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+    "text_en": "Rain, at times heavy, and persistent.",
+    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
    },
    {
     "area": "STM",
@@ -584,8 +584,8 @@
     "end_utc": "2026-11-11T12:00:00Z",
     "text_pt": "Precipitação por vezes forte e persistente.",
     "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Strong and persistent rain.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+    "text_en": "Rain, at times heavy, and persistent.",
+    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
    },
    {
     "area": "VCT",

@@ -71,10 +71,16 @@ def en_for(pt):
     if not pt:
         return None, None
     nums = lambda t: sorted(re.findall(r'\d+', t))
-    if pt in PT_EN and nums(PT_EN[pt]) == nums(pt):
+    # qualifiers in the Portuguese that IPMA's English must keep: (pt marker, English words that carry it)
+    QUAL = [('por vezes', ('sometimes', 'at times', 'occasionally')), ('podendo', ('possibl', 'may', 'could', 'can reach')),
+            ('persistente', ('persist',)), ('trovoada', ('thunder',)), ('forte', ('heavy', 'strong', 'intense')),
+            ('locais mais expostos', ('exposed',))]
+    lost = lambda pt_, en_: [q for q, ens in QUAL if q in pt_.lower() and not any(e in en_.lower() for e in ens)]
+    if pt in PT_EN and nums(PT_EN[pt]) == nums(pt) and not lost(pt, PT_EN[pt]):
         return PT_EN[pt], 'IPMA (its en-GB text in the CAP message, MeteoAlarm feed)'
-    if pt in PT_EN and pt in OUR_EN:  # IPMA's English changes the figures: ours, and IPMA's noted beside it
-        return OUR_EN[pt], f"incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, '{PT_EN[pt]}', does not carry the same figures)"
+    if pt in PT_EN and pt in OUR_EN:  # IPMA's English changes the figures or drops a qualifier: ours, and IPMA's noted beside it
+        why = 'does not carry the same figures' if nums(PT_EN[pt]) != nums(pt) else 'drops ' + ', '.join(f"'{q}'" for q in lost(pt, PT_EN[pt]))
+        return OUR_EN[pt], f"incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, '{PT_EN[pt]}', {why})"
     if pt in OUR_EN:
         return OUR_EN[pt], 'incident.meteorologist@web-summit.dinis (our translation; figures unchanged)'
     return None, 'not translated yet'
