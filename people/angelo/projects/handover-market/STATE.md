@@ -18,7 +18,7 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 - 1b write-back (signed, to the Fringe): go in principle (2026-11-11 17:0x); the drafted result and exact steps go to Angelo before any push.
 - **2a handover-p2-format** (spec, large): proposed formats/handover.md and one real package. Brief: steps/handover-p2-format/brief.md. Running in parallel (independent).
 - 2b dry run on Angelo's own other Claude account (his go, 2026-11-11): after 2a, Angelo starts one session there with package-1; result on a pool/ branch; we review and record. Then 2c: the same package to Dinis's conductors (first contact, shown to Angelo).
-- 3 OpenRouter (Angelo's go, 2026-11-11): Dinis's key saved as this environment's network secret for openrouter.ai (Angelo enters it in the secure form); then one worker runs one small task through the cheap tier and has Claude check it, recorded with cost.
+- **3a handover-p3-openrouter** (build, large), running from 17:20. 3 OpenRouter (Angelo's go, 2026-11-11): key saved 17:1x as a network secret for openrouter.ai on env PrompTugal News shared; Dinis's key saved as this environment's network secret for openrouter.ai (Angelo enters it in the secure form); then one worker runs one small task through the cheap tier and has Claude check it, recorded with cost.
 - 4 and 5: each waits for Angelo's go (see table).
 
 ## Decisions (Angelo's words)
