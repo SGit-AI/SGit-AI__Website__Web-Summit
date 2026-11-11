@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1878",
+    "date": "2026-11-11",
+    "what": "14:22 wake: LPPT 14:00 S 29G40KT (74 km/h, window max) with wind shear; Oeiras 26.2 mm in an hour; analysis 21: centre now likely just north",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "c7eb77d04"
+  },
+  {
     "version": "v0.2.1877",
     "date": "2026-11-11",
     "what": "ANA's own newsroom read at source: airport figures at 11:00 are now a fact (figures and link, per ANA's terms)",
