@@ -1,0 +1,301 @@
+From 929b0c0a5d01155c855bfbeaede5f36cf680c9b2 Mon Sep 17 00:00:00 2001
+From: "riskmandate-android-demo.build" <noreply@anthropic.com>
+Date: Wed, 11 Nov 2026 23:58:07 +0000
+Subject: [PATCH 2/2] riskmandate-android-demo.build@PrompTugal.angelo: X-Ray:
+ downloads only on a tap, Back ends only the page's full screen, multi-file
+ inputs
+
+Check 2's findings 1 to 3 on build 2 (5badada), on top of build 3's lag patch:
+- A download opens outside only when a person touched the WebView in the
+  last 2 s (XrayPolicy.downloadOpensOutside, WebView.watchTouches); one a
+  script or a frame starts by itself is ignored.
+- Back during the page's own full screen ends only that, as in Chrome
+  (XrayView.back); otherwise it leaves full screen as before.
+- An <input multiple> asks the system picker for several files
+  (fileChooserIntent adds EXTRA_ALLOW_MULTIPLE).
+- Build 3's settings test: Robolectric keeps neither offscreenPreRaster nor
+  the renderer priority, so the pre-raster assertion is dropped (setting
+  kept; a device check) and the priority call is recorded by a subclass.
+
+Gate: testDebugUnitTest lintDebug assembleRelease bundleRelease, 984 tests,
+0 failures; no lint finding in xray.
+
+Agent: alpha.large.worker@PrompTugal.angelo
+Role: build
+Item: riskmandate-android-demo-build4
+For: riskmandate-android-demo.pm@PrompTugal.angelo
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Xp7gj3csz3fGiXp7igQama
+---
+ .../app/features/xray/XrayPolicy.kt           | 24 +++++++++
+ .../app/features/xray/XrayScreen.kt           | 18 +++++--
+ .../app/features/xray/XrayWebView.kt          | 20 +++++++
+ .../app/features/xray/XrayPolicyTest.kt       | 14 +++++
+ .../app/features/xray/XrayScreenTest.kt       | 53 +++++++++++++++++--
+ .../app/features/xray/XrayViewTest.kt         | 15 ++++++
+ 6 files changed, 136 insertions(+), 8 deletions(-)
+
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayPolicy.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayPolicy.kt
+index 9c0b1fc..7b3a31f 100644
+--- a/app/src/main/java/ai/riskmandate/app/features/xray/XrayPolicy.kt
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayPolicy.kt
+@@ -30,6 +30,19 @@ object XrayPolicy {
+         else -> Nav.IGNORE
+     }
+ 
++    /** How long after a person touched the page a download may still open outside (check 2, finding 1). */
++    const val DOWNLOAD_TAP_WINDOW_MS = 2_000L
++
++    /**
++     * A download (WebView's download listener has no gesture flag): it opens outside only as a tapped link would
++     * ([navigation] with a tap), and only when a person touched the page in the last [DOWNLOAD_TAP_WINDOW_MS].
++     * One a script or a frame starts by itself is ignored. [lastTouchAt] is null when the page was never touched.
++     */
++    fun downloadOpensOutside(url: String, lastTouchAt: Long?, now: Long): Boolean {
++        val tapped = lastTouchAt != null && now - lastTouchAt in 0..DOWNLOAD_TAP_WINDOW_MS
++        return navigation(url, hasGesture = tapped) == Nav.OPEN_OUTSIDE
++    }
++
+     /** True when a sub-resource must be refused: plain http or ws, or a TLS URL with a suspicious authority. */
+     fun blockSubresource(url: String): Boolean {
+         val scheme = url.trim().substringBefore(':', "").lowercase()
+@@ -143,6 +156,17 @@ data class XrayView(val fullScreen: Boolean = true, val pageFullScreen: Boolean
+     /** The toggle (or Back while full screen): in and out. Leaving also ends the page's own full screen. */
+     fun toggled(): XrayView = if (fullScreen) XrayView(fullScreen = false) else copy(fullScreen = true)
+ 
++    /**
++     * Back while full screen. During the page's own full screen it ends only that, as Chrome's Back does (check 2,
++     * finding 2): the app's full screen stays unless the page had brought us there from the window. Otherwise it
++     * leaves full screen, as the toggle does.
++     */
++    fun back(): XrayView = when {
++        pageFullScreen -> pageExited()
++        fullScreen -> toggled()
++        else -> this // in the window, Back belongs to the app's frame
++    }
++
+     /** True when leaving now must tell WebView the page's full screen is over. */
+     val leavingEndsPageFullScreen: Boolean get() = fullScreen && pageFullScreen
+ 
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayScreen.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayScreen.kt
+index 2ff9351..7b810a8 100644
+--- a/app/src/main/java/ai/riskmandate/app/features/xray/XrayScreen.kt
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayScreen.kt
+@@ -94,7 +94,7 @@ const val XRAY_TOGGLE_SHOWN_MS = 4_000L
+  * Silvio's X-Ray page in an embedded browser (Android System WebView, which is Chromium), in two ways:
+  * - **full screen** (the start): a window over the whole app, system bars hidden (immersive sticky), the screen kept
+  *   on; a small Exit full screen tab on the start edge, half way down, that fades after [XRAY_TOGGLE_SHOWN_MS] and returns on a
+- *   tap; Back also leaves full screen. The page's own full-screen button works too.
++ *   tap; Back also leaves full screen. The page's own full-screen button works too; during it, Back ends only that.
+  * - **in the app**: inside the app's frame (its top bar or sidebar, its Back to the menu), with a small bar above
+  *   the page: Reload and Full screen.
+  * The same WebView moves between the two, so the page keeps its place. It reloads by itself after an error, a stall
+@@ -125,6 +125,11 @@ fun XrayScreen(
+         pageViewCallback = null
+         cb?.onCustomViewHidden()
+     }
++    fun back() {
++        val ending = view.pageFullScreen
++        view = view.back()
++        if (ending) endPageFullScreen()
++    }
+     fun toggle() {
+         val ending = view.leavingEndsPageFullScreen
+         view = view.toggled()
+@@ -160,7 +165,7 @@ fun XrayScreen(
+                     pendingFiles?.onReceiveValue(null)
+                     pendingFiles = cb
+                     try {
+-                        filePicker.launch(params.createIntent())
++                        filePicker.launch(fileChooserIntent(params))
+                     } catch (e: ActivityNotFoundException) {
+                         pendingFiles = null
+                         cb.onReceiveValue(null)
+@@ -181,8 +186,11 @@ fun XrayScreen(
+                 },
+                 onOutside = { url -> openOutside(context, url) },
+             )
+-            // A download link to https opens outside (the browser downloads it); blob: exports need a JS bridge, which this screen never has.
+-            setDownloadListener { url, _, _, _, _ -> if (XrayPolicy.navigation(url, hasGesture = true) == XrayPolicy.Nav.OPEN_OUTSIDE) openOutside(context, url) }
++            // A download link to https a person tapped opens outside (the browser downloads it); one started by a script
++            // or a frame is ignored. blob: exports need a JS bridge, which this screen never has.
++            var lastTouch: Long? = null
++            watchTouches { lastTouch = clock() }
++            setDownloadListener { url, _, _, _, _ -> if (XrayPolicy.downloadOpensOutside(url, lastTouch, clock())) openOutside(context, url) }
+             watchdog.onLoadStarted(clock())
+             loadUrl(startUrl)
+         }
+@@ -212,7 +220,7 @@ fun XrayScreen(
+ 
+     if (view.fullScreen) {
+         Dialog(
+-            onDismissRequest = { toggle() }, // Back leaves full screen
++            onDismissRequest = { back() }, // Back: ends the page's own full screen if on, else leaves full screen
+             properties = DialogProperties(
+                 dismissOnBackPress = true,
+                 dismissOnClickOutside = false,
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt
+index d76acf4..8c3a812 100644
+--- a/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt
+@@ -1,10 +1,12 @@
+ package ai.riskmandate.app.features.xray
+ 
+ import android.annotation.SuppressLint
++import android.content.Intent
+ import android.graphics.Bitmap
+ import android.net.Uri
+ import android.net.http.SslError
+ import android.os.Message
++import android.view.MotionEvent
+ import android.view.View
+ import android.webkit.CookieManager
+ import android.webkit.GeolocationPermissions
+@@ -126,6 +128,24 @@ class XrayChromeClient(
+     override fun onCreateWindow(view: WebView?, isDialog: Boolean, isUserGesture: Boolean, resultMsg: Message?): Boolean = false
+ }
+ 
++/**
++ * The system picker's intent for a file input. WebView's [WebChromeClient.FileChooserParams.createIntent] leaves out
++ * [Intent.EXTRA_ALLOW_MULTIPLE], so an `<input multiple>` would get one file; it is added here (check 2, finding 3).
++ */
++internal fun fileChooserIntent(params: WebChromeClient.FileChooserParams): Intent = params.createIntent().apply {
++    if (params.mode == WebChromeClient.FileChooserParams.MODE_OPEN_MULTIPLE) putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
++}
++
++/**
++ * Calls [onDown] each time a finger first touches the WebView, without taking the touch (the page gets it, and
++ * WebView does its own click handling and accessibility). Lets the screen tell a person's download from a script's.
++ */
++@SuppressLint("ClickableViewAccessibility") // watches only, never consumes: the WebView's own click handling stands
++internal fun WebView.watchTouches(onDown: () -> Unit) = setOnTouchListener { _, e ->
++    if (e.actionMasked == MotionEvent.ACTION_DOWN) onDown()
++    false
++}
++
+ /** The WebView profile the kiosk uses, so the site screen's wipe of the default profile never clears the demo key. */
+ const val XRAY_PROFILE = "xray"
+ 
+diff --git a/app/src/test/java/ai/riskmandate/app/features/xray/XrayPolicyTest.kt b/app/src/test/java/ai/riskmandate/app/features/xray/XrayPolicyTest.kt
+index 67d3398..b0b5fb1 100644
+--- a/app/src/test/java/ai/riskmandate/app/features/xray/XrayPolicyTest.kt
++++ b/app/src/test/java/ai/riskmandate/app/features/xray/XrayPolicyTest.kt
+@@ -60,4 +60,18 @@ class XrayPolicyTest {
+         assertFalse(XrayPolicy.mayAskForMedia("https://evil.example.com/"))
+         assertFalse(XrayPolicy.mayAskForMedia("http://web-summit.sgit.ai/"))
+     }
++
++    @Test fun aDownloadOpensOutsideOnlyJustAfterATouch() {
++        val file = "https://example.com/report.pdf"
++        val w = XrayPolicy.DOWNLOAD_TAP_WINDOW_MS
++        assertTrue(XrayPolicy.downloadOpensOutside(file, lastTouchAt = 10_000, now = 10_000))
++        assertTrue(XrayPolicy.downloadOpensOutside(file, lastTouchAt = 10_000, now = 10_000 + w))
++        // A script or a frame started it: never touched, or touched too long ago.
++        assertFalse(XrayPolicy.downloadOpensOutside(file, lastTouchAt = null, now = 10_000))
++        assertFalse(XrayPolicy.downloadOpensOutside(file, lastTouchAt = 10_000, now = 10_001 + w))
++        assertFalse("a clock that went back is no touch", XrayPolicy.downloadOpensOutside(file, lastTouchAt = 10_000, now = 9_000))
++        // Even just after a touch, only what a tapped link may open.
++        for (u in listOf("http://example.com/x.pdf", "intent://x#Intent;end", "javascript:alert(1)", "file:///sdcard/x", XrayPolicy.START_URL))
++            assertFalse(u, XrayPolicy.downloadOpensOutside(u, lastTouchAt = 10_000, now = 10_000))
++    }
+ }
+diff --git a/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt b/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt
+index 26f3b98..61e669d 100644
+--- a/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt
++++ b/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt
+@@ -2,7 +2,11 @@ package ai.riskmandate.app.features.xray
+ 
+ import ai.riskmandate.app.RiskMandateTheme
+ import android.app.Application
++import android.content.Intent
+ import android.net.Uri
++import android.os.SystemClock
++import android.view.MotionEvent
++import android.webkit.WebChromeClient
+ import android.webkit.WebResourceRequest
+ import android.webkit.WebView
+ import androidx.compose.foundation.layout.Box
+@@ -115,9 +119,52 @@ class XrayScreenTest {
+             assertFalse(allowFileAccess)
+             assertFalse(allowContentAccess)
+             assertFalse(javaScriptCanOpenWindowsAutomatically)
+-            assertTrue("rastered ahead, less lag", offscreenPreRaster)
++            // offscreenPreRaster is set too; Robolectric's WebSettings does not keep it, so it is checked on a device.
+         }
+-        assertEquals("the renderer keeps the app's priority", WebView.RENDERER_PRIORITY_IMPORTANT, view.rendererRequestedPriority)
+-        assertFalse(view.rendererPriorityWaivedWhenNotVisible)
++    }
++
++    @Test fun theRendererKeepsTheAppsPriority() {
++        // Robolectric's WebView does not keep the renderer priority, so the call itself is recorded.
++        var asked: Pair<Int, Boolean>? = null
++        val view = object : WebView(app) {
++            override fun setRendererPriorityPolicy(priority: Int, waivedWhenNotVisible: Boolean) {
++                asked = priority to waivedWhenNotVisible
++                super.setRendererPriorityPolicy(priority, waivedWhenNotVisible)
++            }
++        }
++        view.applyXraySettings()
++        assertEquals("important, and not lowered when briefly not visible", WebView.RENDERER_PRIORITY_IMPORTANT to false, asked)
++    }
++
++    private fun fileParams(mode: Int) = object : WebChromeClient.FileChooserParams() {
++        override fun getMode() = mode
++        override fun getAcceptTypes() = arrayOf("*/*")
++        override fun isCaptureEnabled() = false
++        override fun getTitle(): CharSequence? = null
++        override fun getFilenameHint(): String? = null
++        override fun createIntent() = Intent(Intent.ACTION_GET_CONTENT).addCategory(Intent.CATEGORY_OPENABLE).setType("*/*")
++    }
++
++    @Test fun aMultipleFileInputAsksThePickerForSeveralFiles() {
++        val many = fileChooserIntent(fileParams(WebChromeClient.FileChooserParams.MODE_OPEN_MULTIPLE))
++        assertTrue(many.getBooleanExtra(Intent.EXTRA_ALLOW_MULTIPLE, false))
++        assertEquals(Intent.ACTION_GET_CONTENT, many.action)
++        val one = fileChooserIntent(fileParams(WebChromeClient.FileChooserParams.MODE_OPEN))
++        assertFalse(one.hasExtra(Intent.EXTRA_ALLOW_MULTIPLE))
++    }
++
++    @Test fun theWebViewReportsEachTouchOnce() {
++        val view = WebView(app)
++        var downs = 0
++        view.watchTouches { downs++ }
++        fun touch(action: Int): Boolean {
++            val t = SystemClock.uptimeMillis()
++            val e = MotionEvent.obtain(t, t, action, 10f, 10f, 0)
++            return view.dispatchTouchEvent(e).also { e.recycle() }
++        }
++        touch(MotionEvent.ACTION_DOWN)
++        touch(MotionEvent.ACTION_MOVE)
++        touch(MotionEvent.ACTION_UP)
++        assertEquals("one touch, counted once", 1, downs)
+     }
+ }
+diff --git a/app/src/test/java/ai/riskmandate/app/features/xray/XrayViewTest.kt b/app/src/test/java/ai/riskmandate/app/features/xray/XrayViewTest.kt
+index 564c99e..8c1c61c 100644
+--- a/app/src/test/java/ai/riskmandate/app/features/xray/XrayViewTest.kt
++++ b/app/src/test/java/ai/riskmandate/app/features/xray/XrayViewTest.kt
+@@ -36,4 +36,19 @@ class XrayViewTest {
+         assertEquals(XrayView(fullScreen = false), out.pageExited())
+         assertFalse(XrayView().leavingEndsPageFullScreen)
+     }
++
++    @Test fun backDuringThePagesFullScreenEndsOnlyThat() {
++        // Started full screen, then the page's own button: Back ends the page's full screen, the app's stays (as Chrome).
++        val page = XrayView().pageEntered()
++        assertEquals(XrayView(fullScreen = true), page.back())
++        // WebView then reports the page left full screen: nothing more changes.
++        assertEquals(XrayView(fullScreen = true), page.back().pageExited())
++        // The page's button from the window: Back returns to the window, where the page had been.
++        assertEquals(XrayView(fullScreen = false), XrayView(fullScreen = false).pageEntered().back())
++    }
++
++    @Test fun backInTheAppsFullScreenLeavesItAndInTheWindowDoesNothingHere() {
++        assertEquals(XrayView(fullScreen = false), XrayView().back())
++        assertEquals(XrayView(fullScreen = false), XrayView(fullScreen = false).back())
++    }
+ }
+-- 
+2.43.0
+

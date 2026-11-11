@@ -1,0 +1,75 @@
+From 6a7275d026366a3129bf7aee2dcb9d20f83a6f9b Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Wed, 11 Nov 2026 23:35:17 +0000
+Subject: [PATCH 1/2] riskmandate-android-demo.build@PrompTugal.angelo: X-Ray
+ WebView rastered ahead, renderer at important priority
+
+Angelo, 11 Nov about 23:05 UTC, on 0.1.165: "There's also a quite evident lag in processing the
+graphical elements of the dashboard, not sure if that can't be helped or there is a fix?"
+
+Our part of the rendering path: offscreen pre-raster on, renderer priority important (not waived
+when briefly not visible). Hardware acceleration was already on (no opt-out in the manifest), and no
+Compose layer with alpha sits over the WebView (only the 28x64 dp exit tab fades). The rest of the
+lag is the page's own weight (about 10,000 DOM nodes on X-Ray, six backdrop blurs): build3/build.md.
+His other findings (the menu, the white band, the language) are in the page, not the app; Swarm
+empty was 0.1.165's host list, fixed in 5badada.
+
+Not run in this session (Gradle on the clone was refused by the session's permission check):
+./gradlew testDebugUnitTest lintDebug assembleRelease bundleRelease. The check step runs it.
+
+Agent: riskmandate-android-demo.build@PrompTugal.angelo
+Issue: WS-203
+For: conductor.android@promptugal.ai.dinis, security.android@promptugal.ai.dinis
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Xp7gj3N3kzRnqNywe1xFq5
+---
+ .../java/ai/riskmandate/app/features/xray/XrayWebView.kt | 9 ++++++++-
+ .../ai/riskmandate/app/features/xray/XrayScreenTest.kt   | 3 +++
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt
+index 6dcc6fb..d76acf4 100644
+--- a/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt
+@@ -135,7 +135,8 @@ const val XRAY_PROFILE = "xray"
+  * device for it) stays across reloads and app restarts. Where WebView supports profiles (WebView 110+), the
+  * kiosk has its own profile; otherwise it shares the default one, and opening the site screen clears it.
+  * Otherwise as the site screen: no file:// or content:// access from the page, Safe Browsing on, no mixed content,
+- * no third-party cookies, no JavaScript interface, no second window, remote debugging off. The caller sets the
++ * no third-party cookies, no JavaScript interface, no second window, remote debugging off. For less lag, the page
++ * is rastered ahead (offscreen pre-raster) and its renderer has an important priority. The caller sets the
+  * chrome client ([XrayChromeClient]) and the download listener.
+  *
+  * Returns true when the kiosk has its own profile.
+@@ -170,7 +171,13 @@ fun WebView.applyXraySettings(): Boolean {
+         setGeolocationEnabled(false)
+         mediaPlaybackRequiresUserGesture = true
+         cacheMode = WebSettings.LOAD_DEFAULT
++        // Less lag on the stand (Angelo, 11 Nov): the page is rastered ahead, so its animated SVG and moving
++        // panels draw without waiting for tiles. Costs some memory; one page, one WebView.
++        offscreenPreRaster = true
+     }
++    // The page is the screen: its renderer keeps the app's priority, and is not lowered when the WebView
++    // is briefly not visible (moving between full screen and the window).
++    setRendererPriorityPolicy(WebView.RENDERER_PRIORITY_IMPORTANT, false)
+     (profileCookies ?: CookieManager.getInstance()).apply {
+         setAcceptCookie(true)
+         setAcceptThirdPartyCookies(this@applyXraySettings, false)
+diff --git a/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt b/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt
+index 0aac8c7..26f3b98 100644
+--- a/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt
++++ b/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt
+@@ -115,6 +115,9 @@ class XrayScreenTest {
+             assertFalse(allowFileAccess)
+             assertFalse(allowContentAccess)
+             assertFalse(javaScriptCanOpenWindowsAutomatically)
++            assertTrue("rastered ahead, less lag", offscreenPreRaster)
+         }
++        assertEquals("the renderer keeps the app's priority", WebView.RENDERER_PRIORITY_IMPORTANT, view.rendererRequestedPriority)
++        assertFalse(view.rendererPriorityWaivedWhenNotVisible)
+     }
+ }
+-- 
+2.43.0
+
