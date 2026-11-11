@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1833",
+    "date": "2026-11-11",
+    "what": "scope on every decision (whole, part with which routes or places, unknown), so the front page stops inferring it",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "18bc9e89c"
+  },
+  {
     "version": "v0.2.1832",
     "date": "2026-11-11",
     "what": "09:22 wake: IPMA's new hourly run now veers through S-SW like met.no: centre just north of Lisbon ~13-15:00; strongest wind 14-16:00 after a 12-13:00 lull (analysis 12)",
