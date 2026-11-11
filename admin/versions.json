@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1830",
+    "date": "2026-11-11",
+    "what": "run 21, 286 commits: nothing found",
+    "by": "security.repos@web-summit.dinis",
+    "from": "5a38d3abb"
+  },
+  {
     "version": "v0.2.1829",
     "date": "2026-11-11",
     "what": "warnings.json refreshed: open data now orange for Lisbon wind 09:00-21:00 (lagged CAP by 66-87 min)",
