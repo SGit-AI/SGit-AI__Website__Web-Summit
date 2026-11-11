@@ -12,8 +12,8 @@
 
 ## Open
 - Points to Angelo: b2's questions 1 to 3, then the plan.
-- I could not open the Fringe repository: attaching it to this session was refused by its permission check (12:3x UTC). So far I read it only through b2's research (it saw 893d4e6, not f6dbece). The comparison is a worker step (plan 2) unless Angelo allows it here.
-
+- Fringe repository: Angelo, 11 Nov: "Clone the repository PrompTugal/PrompTugal__News__Fringe into this session." Cloned read only (public, anonymous git read; nothing attached) at /home/user/promptugal/promptugal__news__fringe, dev at 6b079db. Read: team/angelo/traces/README.md (lisbon-fringe-trace/1, method), admin/build/trace-page.mjs header (f6dbece: swim lanes by kind of actor, time left to right, hand-offs only on shared evidence, idle folds, no JS for layout).
+- Angelo's direction under discussion, 11 Nov: "I think we should integrate Dinis's idea with the work conductor.fringe has progressed on the draft horizontal sequence diagram." Not yet confirmed as a decision.
 ## Spend
 - Worker runs: none yet (0 of about 10 USD).
 - Sub-agents of the lead: none.
