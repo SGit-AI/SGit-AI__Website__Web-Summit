@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1870",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: the digest and accountant schedules created (tier 3, Angelo's word)",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "bc75d104f"
+  },
+  {
     "version": "v0.2.1869",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: b1 answer 4: accountant every 4 hours, digest every hour, scheduled; the digest role; the digest filter",
