@@ -12,7 +12,7 @@
     "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/"
   },
   "captured_by": "reporter@web-summit.dinis",
-  "captured_at": "2026-11-11T18:25Z",
+  "captured_at": "2026-11-11T21:25Z",
   "rules": "Read Vicky's weather desk's public files only; never write to them. Public sources only; nothing on people's whereabouts or contact details.",
   "shape": {
     "event": "n, lane (outside|ours), kind (signal|decision|hand-off|not read), actor {name, kind: authority|person|agent}, what, published (UTC, the source's own time; null if not stated), read (UTC, when our team first read it), read_by, affects[] (the incident's 'could happen' items, README section 3), evidence[], note, handoff {to, via}",
@@ -3401,6 +3401,237 @@
         6,
         7
       ]
+    },
+    {
+      "n": 118,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "Lusoponte (at source)",
+        "kind": "authority"
+      },
+      "what": "Both bridges back to normal: usual limits restored, motorcycles and high-sided vehicles may cross",
+      "published": "2026-11-11T17:30:00Z",
+      "read": "2026-11-11T18:44:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "affects": [
+        2,
+        6
+      ]
+    },
+    {
+      "n": 119,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "Transtejo/Soflusa (at source)",
+        "kind": "authority"
+      },
+      "what": "Trafaria to Porto Brandão to Belém back to normal, vehicles and passengers",
+      "published": "2026-11-11T19:01:00Z",
+      "read": "2026-11-11T19:07:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "affects": [
+        2,
+        6
+      ]
+    },
+    {
+      "n": 120,
+      "lane": "outside",
+      "kind": "signal (press, quoting the PM)",
+      "actor": {
+        "name": "Prime Minister (as reported)",
+        "kind": "authority"
+      },
+      "what": "The moments of greatest difficulty 'praticamente superados' (practically over)",
+      "published": "2026-11-11T19:25:00Z",
+      "read": "2026-11-11T19:35:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "bae91256",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/bae9125622f1"
+        }
+      ],
+      "note": "about 3 h 30 min after IPMA ended Lisbon's last wind warning (15:55); 4 h 8 min after the Interior Minister's 'the most serious period is at the door'",
+      "affects": [
+        6,
+        7
+      ]
+    },
+    {
+      "n": 121,
+      "lane": "outside",
+      "kind": "signal (press, relaying ANEPC's briefing)",
+      "actor": {
+        "name": "ANEPC (as relayed)",
+        "kind": "authority"
+      },
+      "what": "1,630 occurrences on the mainland since 00:00, 781 of them floods, most in Greater Lisbon, Setúbal and the Algarve; one person assisted, four removed from their homes; 'muito menos grave do que o previsto' (much less serious than forecast); about 400 flights cancelled",
+      "published": "2026-11-11T19:13:00Z",
+      "read": "2026-11-11T20:03:00Z",
+      "read_by": "incident team",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "bae91256",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/bae9125622f1"
+        }
+      ],
+      "note": "the outcome against the decision graph: the measures held; the summit's Day 2 closure was made on a red wind that IPMA lowered to orange at 07:16 and ended early at 15:56",
+      "affects": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "n": 122,
+      "lane": "outside",
+      "kind": "signal (press, Lusa)",
+      "actor": {
+        "name": "IPMA (as reported)",
+        "kind": "authority"
+      },
+      "what": "IPMA says the prevention measures matched the forecasts",
+      "published": "2026-11-11T19:34:00Z",
+      "read": "2026-11-11T19:46:00Z",
+      "read_by": "incident team",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ]
+    },
+    {
+      "n": 123,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "CP (at source)",
+        "kind": "authority"
+      },
+      "what": "The Douro line running again; the Beira Baixa still interrupted (landslip)",
+      "published": "2026-11-11T19:40:00Z",
+      "read": "2026-11-11T20:43:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 124,
+      "lane": "outside",
+      "kind": "signal (press, quoting the PM)",
+      "actor": {
+        "name": "Government (as reported)",
+        "kind": "authority"
+      },
+      "what": "The alert situation not extended: it ends at 23:59 as declared; all rain and wind warnings lifted",
+      "published": null,
+      "read": "2026-11-11T20:34:25Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "13f86289",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/13f86289a074"
+        }
+      ],
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 125,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA",
+        "kind": "authority"
+      },
+      "what": "Lisbon's orange sea warning ended at 21:00; yellow sea only, to 03:00 Thursday",
+      "published": "2026-11-11T21:00:00Z",
+      "read": "2026-11-11T21:00:00Z",
+      "read_by": "incident.meteorologist@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "note": "the incident's own close plan asks for nothing above green; it is not met until 03:00 (incident.journalist@, 3676f5a0 in the storm repository)",
+      "affects": [
+        6,
+        7
+      ]
+    },
+    {
+      "n": 126,
+      "lane": "ours",
+      "kind": "note",
+      "actor": {
+        "name": "incident.journalist@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "The close trigger: not before the 03:47 Thursday read",
+      "published": "2026-11-11T21:14:07Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "60037c7d",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/60037c7d3b34"
+        }
+      ]
     }
   ],
   "lead_times": [
@@ -3515,5 +3746,59 @@
       "path": "reporter/traces/index.json",
       "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/reporter/traces/index.json"
     }
+  },
+  "close_out_draft": {
+    "as_of": "2026-11-11T21:25Z",
+    "status": "draft by the reporter; the lead closes the incident",
+    "what_happened": [
+      "Storm Charles passed just north of Lisbon about 16:30 to 17:00 on Wednesday; the airport's highest gust was 74 km/h (14:00), below IPMA's orange threshold.",
+      "The government's alert held for all of Wednesday; schools closed; 1,630 occurrences on the mainland, mostly floods; no deaths reported in the sources read.",
+      "Web Summit called off Day 2 (its own page 19:09 Tuesday) on the government's formal advice; Day 3 reported reopening, with a press conference at 11:00 Thursday."
+    ],
+    "how_far_ahead_could_we_have_known": [
+      {
+        "signal": "AEMET names the storm",
+        "at": "2026-11-09T10:20Z",
+        "before_wed_noon": "49 h 40 min"
+      },
+      {
+        "signal": "IPMA communiqué no. 1",
+        "at": "2026-11-09T13:17Z",
+        "before_wed_noon": "46 h 43 min",
+        "our_first_read": "27 h 36 min later"
+      },
+      {
+        "signal": "IPMA red wind for Lisbon (CAP)",
+        "at": "2026-11-10T07:18:40Z",
+        "before_web_summit_decision": "11 h 50 min",
+        "our_first_read": "7 h 4 min later (press had it at 08:05)"
+      },
+      {
+        "signal": "the government's alert (schools, outdoor events)",
+        "at": "2026-11-10T12:10Z",
+        "before_web_summit_decision": "6 h 59 min",
+        "our_first_read": "4 h 51 min later"
+      },
+      {
+        "signal": "Lisbon's mayor: the summit likely cannot run (press)",
+        "at": "2026-11-10T13:19Z (or 13:23)",
+        "before_web_summit_decision": "5 h 50 min",
+        "our_first_read": "5 h 31 min later"
+      },
+      {
+        "signal": "Web Summit's own decision page",
+        "at": "2026-11-10T19:09Z",
+        "our_first_read": "39 min (the email, relayed) and 1 h 49 min (the page itself)"
+      }
+    ],
+    "what_got_faster": [
+      "Once the CAP connector existed (23:52 Tuesday), IPMA's changes reached us in 13 to 22 minutes (07:16, 12:33, 15:55), against 66 to 88 minutes through its open data and 2 h 23 min through the press."
+    ],
+    "the_misses": [
+      "the government's page and the mayor's word were outside the first watch (Tuesday 12:10 to 17:01)",
+      "Web Summit's blog was not in the sitemap the watch read (1 h 49 min)",
+      "the press repeatedly reported IPMA's state of one or two hours before"
+    ],
+    "the_probability_question": "the 12:01 ensemble gave the track 10% north, 41% near, 49% south; it passed just north. No source in the record put a probability on the summit's closure."
   }
 }
