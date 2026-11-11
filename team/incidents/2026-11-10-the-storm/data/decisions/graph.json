@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T01:05Z",
+ "updated": "2026-11-11T01:35Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -261,6 +261,50 @@
    "source": "https://websummit.com/essentials/schedule/",
    "read": "2026-11-10T22:05Z",
    "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "madeira-gov",
+   "name": "Governo Regional da Madeira",
+   "kind": "government",
+   "role": "Regional executive; decides regional measures (schools, trails, services).",
+   "label": "evidence",
+   "source": "https://dnoticias.pt/2026/11/10/512441-charles-ja-soma-14-ocorrencias-na-madeira",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "region": "Madeira"
+  },
+  {
+   "id": "madeira-prociv",
+   "name": "Serviço Regional de Proteção Civil (Madeira)",
+   "kind": "authority",
+   "role": "Regional civil protection.",
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "region": "Madeira"
+  },
+  {
+   "id": "madeira-airport",
+   "name": "Madeira airport (ANA) and airlines",
+   "kind": "transport",
+   "role": "Flight operations at Funchal (and Porto Santo).",
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "region": "Madeira"
+  },
+  {
+   "id": "apram",
+   "name": "APRAM (Administração dos Portos da Madeira)",
+   "kind": "transport",
+   "role": "Madeira's ports; cruise calls.",
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "region": "Madeira"
   }
  ],
  "edges": [
@@ -1083,6 +1127,84 @@
    "effect_to_utc": null,
    "effect_note": "hours not stated",
    "note": "Observador live entry 09:30:25 (JSON-LD), questioned by journalists at the press conference. 8 h 23 min later the government recommended suspending Wednesday (17:53)."
+  },
+  {
+   "id": "ipma-madeira-red",
+   "by": "ipma",
+   "to": [],
+   "decision": "Red warnings for Madeira's south coast and mountains: rain from 21:00 Tuesday to 06:00 Wednesday; wind gusts to 140 km/h from 00:00",
+   "at": "2026-11-10T07:24Z",
+   "status": "happened",
+   "follows": [],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-10T21:00Z",
+   "effect_to_utc": "2026-11-11T06:00Z",
+   "effect_note": "rain 21:00 Tue to 06:00 Wed (Lusa); wind \"a partir das 00:00\", end not stated in that text",
+   "note": "Lusa via Jornal de Negócios live 00:09 (hours); DNOTICIAS listing headline 10 Nov 07:24, \"IPMA coloca costa Sul e zonas montanhosas da Madeira sob aviso vermelho\". IPMA's send time not read by us (the meteorologist's CAP file covers Lisbon).",
+   "region": "Madeira"
+  },
+  {
+   "id": "madeira-schools",
+   "by": "madeira-prociv",
+   "to": [],
+   "decision": "Madeira schools closed on Wednesday morning, reopening from 13:00",
+   "at": "2026-11-10T11:26Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": "2026-11-11T13:00Z",
+   "effect_note": "hours not stated for the start (\"durante a manhã\"); end \"a partir das 13h de dia 11 de novembro\"",
+   "note": "Announced at a regional press conference by the president of the regional civil protection service (Observador 12:11:17, JSON-LD); DNOTICIAS headline 11:26 \"Escolas da Madeira encerradas na manhã de quarta-feira até às 13 horas\" (a search summary attributes it to the regional government). Most critical hours given as 21:00 to 06:00 (IPMA Madeira at the same conference).",
+   "region": "Madeira"
+  },
+  {
+   "id": "madeira-airport-conditioned",
+   "by": "madeira-airport",
+   "to": [],
+   "decision": "ANA: operations at Madeira airport conditioned on 11 Nov; cancellations expected",
+   "at": "2026-11-10T18:04Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "evidence",
+   "source": "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, 11 November",
+   "note": "Same ANA statement as ana-conditioned (Lisbon, Faro, Madeira).",
+   "region": "Madeira"
+  },
+  {
+   "id": "apram-cruises",
+   "by": "apram",
+   "to": [],
+   "decision": "Three cruise calls at Funchal for Wednesday cancelled (Iona, Le Dumont d'Urville, Vasco da Gama)",
+   "at": "2026-11-10T12:33Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "evidence",
+   "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "read": "2026-11-11T01:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names the day, Wednesday",
+   "note": "APRAM via Observador live 12:33:37 (JSON-LD). The ships cancelled; APRAM reported it.",
+   "region": "Madeira"
   }
  ],
  "lessons": [

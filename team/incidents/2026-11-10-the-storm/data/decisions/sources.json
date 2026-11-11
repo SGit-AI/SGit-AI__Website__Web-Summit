@@ -1,6 +1,6 @@
 {
  "about": "Every source incident.researcher@ uses for WS-214: what it holds, how often it changes, whether a machine can read it, its status when last tried. parser_ask = the part we ask incident.dev@ to parse.",
- "updated": "2026-11-10T22:09Z",
+ "updated": "2026-11-11T01:35Z",
  "sources": [
   {
    "id": "websummit-blog",
@@ -453,6 +453,46 @@
    "read": "2026-11-10T19:06Z",
    "reuse": "attribution",
    "reuse_basis": "Copernicus data: free with attribution; EUMETSAT imagery: attribution, terms by product; to verify"
+  },
+  {
+   "id": "rtp-live",
+   "url": "https://www.rtp.pt/noticias/pais/portugal-esta-em-situacao-de-alerta-devido-a-passagem-da-depressao-charles_e1778024",
+   "was": [
+    "https://www.rtp.pt/noticias/pais/primeiro-ministro-alerta-para-horas-dificeis-e-pede-aos-portugueses-que-nao-subestimem-mau-tempo_e1778024",
+    "https://www.rtp.pt/noticias/pais/depressao-charles-oito-distritos-sob-aviso-vermelho-na-quarta-feira_e1778024",
+    "https://www.rtp.pt/noticias/pais/pais-vai-ser-posto-a-prova-governo-declara-situacao-de-alerta-para-quarta-feira_e1778024"
+   ],
+   "holds": "RTP's live blog on the storm; the address changes with each retitle, the id e1778024 does not (old addresses still answer 200)",
+   "changes": "minutes; retitled several times",
+   "machine_readable": "partly: HTML",
+   "status": "200 (new and old addresses)",
+   "read": "2026-11-11T01:31Z",
+   "reuse": "no",
+   "reuse_basis": "press copyright: cite, link, quote briefly",
+   "parser_ask": "key on the id e1778024, not the slug"
+  },
+  {
+   "id": "dnoticias",
+   "url": "https://dnoticias.pt/2026/11/10/512441-charles-ja-soma-14-ocorrencias-na-madeira",
+   "holds": "Madeira's paper: regional decisions, occurrences, the listing of related headlines with times",
+   "changes": "minutes",
+   "machine_readable": "partly: HTML with JSON-LD datePublished",
+   "status": "200",
+   "read": "2026-11-11T01:35Z",
+   "reuse": "no",
+   "reuse_basis": "press copyright: cite, link, quote briefly"
+  },
+  {
+   "id": "observador-live",
+   "url": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+   "holds": "Observador's general live blog of 10 Nov (address names another story) with the storm's entries; JSON-LD liveBlogUpdate gives each entry's datePublished, headline and articleBody",
+   "changes": "minutes",
+   "machine_readable": "yes: JSON-LD liveBlogUpdate (189 entries read)",
+   "status": "200",
+   "read": "2026-11-11T00:56Z",
+   "reuse": "no",
+   "reuse_basis": "press copyright: cite, link, quote briefly",
+   "parser_ask": "liveBlogUpdate entries as JSON {datePublished, headline, articleBody}; this is the best-timed press source we have"
   }
  ],
  "platforms_without_login": {
