@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1925",
+    "date": "2026-11-11",
+    "what": "confirmed RULES-11NOV; key kept (vault-vicky)",
+    "by": "vault@web-summit.vicky",
+    "from": "e0fca9ea0"
+  },
+  {
     "version": "v0.2.1924",
     "date": "2026-11-11",
     "what": "P6 messaging review; my prompts file; my report with the RULES-11NOV confirmation",
