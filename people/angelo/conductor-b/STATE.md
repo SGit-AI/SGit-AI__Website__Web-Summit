@@ -21,9 +21,10 @@ summary: Account B's conductor. Main control of Angelo's backlog from 10 Novembe
 - **Every agentic activity in commits** ("we want to be able to track each and every agentic activity though commits"): an in-session sub-agent gets its runs.md line, its result and its ledger line in one commit.
 - Workers are session-less slots; the prompt (role + skills + format) is the agent; conductor.b@ routes only and stays reactive.
 
+- **Yes to all three** (11 Nov): at most 6 running at once (4 large, 2 small) to start; a small task may use a large slot when no small one is free; go on b0-library.
+
 ## Waiting on
 
-- Angelo: a ceiling on workers running at once (recommended 6: 4 large, 2 small); whether a small task may use a large slot when no small one is free (recommended yes); his go on b0-library.
 - policy@: the fifteen new names in the workers' lane.
 
 - Angelo: his read of ROLES.md; the interview notes; what Dinis said at 09:00; whether to tell Jose's conductor about the follow links.
