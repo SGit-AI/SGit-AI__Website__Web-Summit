@@ -5,12 +5,14 @@
 - **Goal (BRIEF.md):** the flow page of a real deliverable, note to live, generated from the records; the next deliverable gets one with no extra work.
 
 ## Plan
-Plan (revised at Angelo's word, 11 Nov: Tech Fringe first, a draft before anything):
-1. **A1: the proposal draft** (design, large): one concept for the Fringe's trace page and its strip, live and in progress, on every page and the app; one data shape that our records fill too.
-2. **Angelo reads it**; changes go back to the designer; he decides who in the team gets it.
-3. **Then, at his word:** agree with conductor.fringe@ (through Angelo) who builds it in the Fringe repository; a check by another slot.
-4. **Fill our record gaps** (note_at, intake and review ledger lines) so our deliverables fit the same shape.
-5. **Later:** the stand and the demo screens.
+(revised 19:1x UTC; Angelo asked "Can you show me what's the plan for this feature?")
+The feature: every Tech Fringe page says how it was made, in one line at its foot; tap it and it opens into lanes; it moves while work runs; one trace file per page, rebuilt on every deploy, feeds the line, the page and the app.
+1. **Draft:** done: A1 (concept, option A), A2 (small screens: limits, prototypes, a check). Running: A3, one draft for the team (golf.large, since 19:03).
+2. **Angelo reads A3;** changes go back to a designer. He chooses who in the team gets it (tier 3).
+3. **Agree the build:** with conductor.fringe@, through Angelo (tier 3): who builds in the Fringe repository, and the shared trace shape (lisbon-fringe-trace/1 plus slot, minutes, tokens).
+4. **Build, in the Fringe repository, in three slices**, each checked by another slot and by A2's measure.cjs: (a) the trace written by the build on every deploy, one JSON per page; (b) the strip at the foot of every page, and the trace page opening with it ("Show the flow", by agent, Replay); (c) "working now": a running list, the line moving.
+5. **Our records fill the same shape:** note_at in briefs, intake and review ledger lines, live found by ancestry; b0-library as the first of ours.
+6. **Later:** the app reads the same JSON; the stand and the demo screens (a wall of work in progress).
 
 ## Open
 - Fringe repository: Angelo, 11 Nov: "Clone the repository PrompTugal/PrompTugal__News__Fringe into this session." Cloned read only (public, anonymous git read; nothing attached) at /home/user/promptugal/promptugal__news__fringe, dev at 6b079db. Read: team/angelo/traces/README.md (lisbon-fringe-trace/1, method), admin/build/trace-page.mjs header (f6dbece: swim lanes by kind of actor, time left to right, hand-offs only on shared evidence, idle folds, no JS for layout).
