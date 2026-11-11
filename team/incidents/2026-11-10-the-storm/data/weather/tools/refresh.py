@@ -533,7 +533,8 @@ def madeira(fname='madeira.json', pick=None, about=None):
     if top and top['max_6h_rain'] and top['max_6h_rain'] != ((prev.get('stations') or [{}])[0].get('max_6h_rain')):
         changes.append(f"{region}: largest 6 h rain {top['max_6h_rain']['mm']} mm at {top['name']} (hours {top['max_6h_rain']['hours_labelled'][0][8:13]}-{top['max_6h_rain']['hours_labelled'][1][8:13]})")
     return {'about': about or "IPMA's hourly station observations in Madeira (rain in mm per hour, mean wind), kept across reads (the feed holds 24 hours), sorted by each station's largest rain over six consecutive hourly values. Facts.",
-            'hour_label': HOUR_LABEL, 'source': U['obs'], 'stations_source': U['stations'], 'read_utc': NOW, 'stations': out}
+            'hour_label': HOUR_LABEL, 'source': U['obs'], 'stations_source': U['stations'], 'read_utc': NOW, 'stations': out,
+            **({'earlier_warnings': prev['earlier_warnings']} if 'earlier_warnings' in prev else {})}
 
 
 def main():

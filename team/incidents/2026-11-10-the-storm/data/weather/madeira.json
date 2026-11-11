@@ -2628,5 +2628,68 @@
    ]
   }
  ],
- "next_read_utc": "2026-11-11T02:22Z"
+ "next_read_utc": "2026-11-11T02:22Z",
+ "earlier_warnings": {
+  "question": "What rain warning covered Madeira's mountain areas (MRM) and south coast (MCS) on Tuesday 10 Nov, 12:00 to 21:00 UTC?",
+  "answer": "No rain warning for MRM or MCS covering Tue 12:00-21:00 was found, in either the CAP snapshot or the press. This is not proof that none was ever issued: the CAP feed drops superseded messages, and the 9 Nov 14:05:35 messages that the red rain replaced are not in it.",
+  "items": [
+   {
+    "kind": "primary",
+    "what": "MeteoAlarm CAP feed snapshot read 2026-11-10T23:50Z (saved by this desk at the time, before cap.json kept Madeira). Every Madeira rain message in it, MRM and MCS:",
+    "messages": [
+     {
+      "areas": [
+       "Madeira - Regiões Montanhosas",
+       "Madeira - Costa Sul"
+      ],
+      "event_pt": "Aviso Vermelho Precipitação",
+      "onset_utc": "2026-11-10T21:00Z",
+      "expires_utc": "2026-11-11T06:00Z",
+      "sent_utc": "2026-11-10T06:14:54Z",
+      "msg_type": "Update",
+      "replaces_sent_utc": "2026-11-09T14:05:35Z",
+      "replaces_level": "not in the feed (superseded)"
+     },
+     {
+      "areas": [
+       "Madeira - Regiões Montanhosas",
+       "Madeira - Costa Sul"
+      ],
+      "event_pt": "Aviso Laranja Precipitação",
+      "onset_utc": "2026-11-11T06:00Z",
+      "expires_utc": "2026-11-11T09:00Z",
+      "sent_utc": "2026-11-10T06:14:54Z",
+      "msg_type": "Alert"
+     }
+    ],
+    "finding": "No MRM or MCS rain message has a window touching Tue 10 Nov 12:00-21:00. The feed still held expired messages (e.g. yellow rain 7 Nov 09:00-18:00, sent 6 Nov 07:14:43), so a non-superseded afternoon warning would probably have shown.",
+    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+    "read_utc": "2026-11-10T23:50Z"
+   },
+   {
+    "kind": "press",
+    "what": "DN Madeira (dnoticias.pt), dated 8 Nov 2026 (time not given): 'IPMA emite novos avisos de mau tempo para terça e quarta-feira'. Yellow rain for Madeira and Porto Santo 'a partir das 21 horas de terça-feira', 'até ao meio-dia' Wednesday; yellow wind 21:00 Tue to 10:00 Wed (mountains to 95 km/h).",
+    "finding": "As of 8 Nov, the warning began at 21:00 Tuesday; nothing for Tuesday afternoon.",
+    "source": "https://www.dnoticias.pt/2026/11/8/512117-ipma-emite-novos-avisos-de-mau-tempo-para-terca-e-quarta-feira/",
+    "read_utc": "2026-11-11T02:00Z",
+    "note": "read through a fetch tool summary; evidence only"
+   },
+   {
+    "kind": "primary",
+    "what": "IPMA warnings open data (warnings_www.json)",
+    "finding": "not found: it holds only current and future warnings, no past entries",
+    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+    "read_utc": "2026-11-11T01:58Z"
+   },
+   {
+    "kind": "primary",
+    "what": "MeteoAlarm archive",
+    "finding": "not found: no public archive endpoint found; the feed is current plus retained unsuperseded messages",
+    "source": "https://www.meteoalarm.org",
+    "read_utc": "2026-11-11T02:00Z"
+   }
+  ],
+  "lead_time_note": "The red rain (21:00 Tue-06:00 Wed) was sent at 06:14:54 Tue, about 15 h ahead. The rain that fell in the hours labelled 20:00 and 21:00 (93.3 mm at Areeiro, read as hour ending) fell outside any window in the messages we hold.",
+  "card_wording": "outside any window in the messages we hold (not 'unwarned')"
+ }
 }
