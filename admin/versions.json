@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1821",
+    "date": "2026-11-11",
+    "what": "CAP poll restarted 06:38 after a container restart (gap logged)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "65cafedbd"
+  },
+  {
     "version": "v0.2.1820",
     "date": "2026-11-11",
     "what": "06:35 wake: no change to Day 3; three Lisbon tunnels still open after midnight (Observador); a ferry route suspended; Barreiro buses limited",
