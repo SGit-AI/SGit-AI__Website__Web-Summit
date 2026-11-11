@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1858",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: a design role in the prompt library, and a sharper designer skill",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "7c4ba05ad"
+  },
+  {
     "version": "v0.2.1857",
     "date": "2026-11-11",
     "what": "review: bring pool/b1-team-spec's new work onto dev (one commit): the lead lifecycle and accountant.b@, spec and summary",
