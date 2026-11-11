@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-10T22:22Z",
+ "run": "2026-11-11T07:17Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,32 +12,32 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "e50a709",
-  "to": "ec9b5af",
+  "from": "ec9b5af",
+  "to": "40f041b",
   "branch": "dev"
  },
  "counts": {
-  "commits": 163,
-  "ci_releases": 49,
-  "watcher_own": 1,
-  "agents": 113,
+  "commits": 132,
+  "ci_releases": 55,
+  "watcher_own": 3,
+  "agents": 74,
   "no_agent_name": 0
  },
  "security": {
   "old_agent_last_review": "f4a9fbe, wake 11:51 on 7 November",
   "new_agent": "security.repos@web-summit.dinis, first run on 9 November (started about 10:55, committed 10:58, cb4e0b7): about 2,600 commits in six repositories, this one from b4d20ce (10:58 on 8 November) to f688309; no critical, high or medium finding; five low notes (team/security.repos/reports/2026-11-09T1110Z.md)",
   "gap_not_reviewed": "11:51 on 7 November to 10:58 on 8 November on dev, which includes 4219805 (the gate runs Angelo's lane check) and 084ebe7 (enforced), and f20d264 is older still",
-  "new_agent_later_runs": "runs 15 (1830Z: nothing new; run 14's iOS medium now reaches external testers), 16 (2030Z: nothing above low; this site's build gains an incident block, four incident agents' public keys) and 17 (2130Z: one new medium on this site, see flags). Still open for Dinis: the iOS TestFlight high (run 9), the iOS event app medium (run 14), the Android release-secrets medium (run 5). None covers the gap below"
+  "new_agent_later_runs": "runs 18 (0035Z: nothing new above low; run 17's medium confirmed fixed in 6260b8a; the new Storm-Charles repository reviewed as a baseline), 19 (0335Z: one new medium in Storm-Charles, vault read keys published by relabelling a private prefix as public; for Dinis) and 20 (0635Z: nothing new). This site's comms_check low (run 13) still open. None covers the gap below"
  },
  "by_person": {
-  "dinis": 71,
-  "silvio": 21,
-  "indi": 16,
-  "jose": 4,
-  "angelo": 1,
+  "dinis": 58,
+  "jose": 12,
+  "indi": 3,
+  "silvio": 1,
+  "angelo": 0,
   "vicky": 0
  },
- "actions": "open A-06 (twenty-third run, dev only), A-21 (thirteenth), A-14 (twentieth), A-23 (twelfth), new A-26 (Vicky's agents here, quiet since 05:14)",
+ "actions": "open A-06 (twenty-fourth run, dev only), A-21 (fourteenth), A-14 (twenty-first), A-23 (thirteenth), A-26 (second, Vicky), new A-27 (Angelo's agents here, quiet since 21:07: a planned move to account B, its conductor not yet seen here)",
  "task_report": {
   "task": "people/jose/tasks/2026-11-07-watcher-a06-pointers.md",
   "status": "done: the conductor marked people/jose/tasks/2026-11-07-watcher-a06-pointers.md done; A-06 itself stays open for dev",
@@ -48,11 +48,11 @@
    "level": "medium",
    "what": "still open: about 23 hours of dev not reviewed by any security agent",
    "where": "security.repos@web-summit.dinis (cb4e0b7, report team/security.repos/reports/2026-11-09T1110Z.md): this repository from 10:58 on 8 November; no critical, high or medium finding",
-   "context": "dev from 11:51 on 7 November to 10:58 on 8 November, including the gate's lane check (4219805) and its enforcement (084ebe7). security.repos covers only commits since its last run (runs 15 to 17 tonight). For conductor@web-summit.dinis to point one run at that gap"
+   "context": "dev from 11:51 on 7 November to 10:58 on 8 November, including the gate's lane check (4219805) and its enforcement (084ebe7). security.repos covers only commits since its last run (runs 18 to 20 overnight). For conductor@web-summit.dinis to point one run at that gap"
   },
   {
    "level": "high",
-   "what": "still open, twenty-fourth run: contact-detail rule hits in a public page",
+   "what": "still open, twenty-fifth run: contact-detail rule hits in a public page",
    "where": "f20d264 content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
    "context": "older than the new security agent's window, so not covered by its review"
@@ -65,11 +65,11 @@
    "context": "unchanged"
   },
   {
-   "level": "note",
-   "what": "security.repos' new medium on this site is already fixed",
-   "where": "team/incidents/tools/websummit-poll.sh (56176d5, incident.dev@web-summit.dinis, 21:13); report team/security.repos/reports/2026-11-10T2130Z.md",
-   "rule": "unreviewed code run from dev; outside text in commit subjects",
-   "context": "6260b8a (21:17) pinned the poller: no git in the loop, the code copied at start, the alert committed with a fixed subject and the page's text quoted in the body; the alert at 21:32, committed at 21:34 (511878a), follows that form; the watcher's reading, not yet confirmed by security.repos. The watcher reads websummit.com text in commits as data only"
+   "level": "low",
+   "what": "second report: trailers that git does not read, now in three of Jose's agents (writer, crm, dashboard)",
+   "where": "a7993ba (dashboard: Agent and Reviewed-by); the writer@PrompTugal.jose commits 57636ac, eb6d853, 468f246, 219dba1, 1377d57, eb9629b and crm 3102e17 (Agent)",
+   "rule": "the commit convention (trailers in the last block)",
+   "context": "every line is present in the text, but sits above a blank line before Co-Authored-By, so git's trailer parser misses it; first reported at 12:21 on 10 November for dashboard and designer. For conductor@web-summit.jose: one line in the kit's shared section (every trailer in the last block) would fix all of them"
   },
   {
    "level": "note",
@@ -103,9 +103,12 @@
   }
  ],
  "reviewer_trailer": {
-  "jose_commits_checked": 4,
+  "jose_commits_checked": 12,
   "missing": [],
-  "note": "git reads every Agent and Reviewed-by trailer"
+  "misplaced": [
+   "a7993ba (Agent, Reviewed-by)",
+   "57636ac, eb6d853, 468f246, 219dba1, 1377d57, eb9629b, 3102e17 (Agent)"
+  ]
  },
  "branches": {
   "main": "no new commit (last 81353d4)",
@@ -115,28 +118,52 @@
  },
  "commits_jose": [
   {
-   "sha": "f63b0da",
-   "time": "2026-11-10T17:28Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+   "sha": "57636ac",
+   "agent": "writer@PrompTugal.jose"
   },
   {
-   "sha": "cb0eb4b",
-   "time": "2026-11-10T17:46Z",
-   "agent": "vault@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass)"
+   "sha": "eb6d853",
+   "agent": "writer@PrompTugal.jose"
   },
   {
-   "sha": "dd238c9",
-   "time": "2026-11-10T18:51Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+   "sha": "468f246",
+   "agent": "writer@PrompTugal.jose"
   },
   {
-   "sha": "74d7952",
-   "time": "2026-11-10T18:51Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+   "sha": "aebc738",
+   "agent": "vault@web-summit.jose"
+  },
+  {
+   "sha": "219dba1",
+   "agent": "writer@PrompTugal.jose"
+  },
+  {
+   "sha": "1377d57",
+   "agent": "writer@PrompTugal.jose"
+  },
+  {
+   "sha": "eb9629b",
+   "agent": "writer@PrompTugal.jose"
+  },
+  {
+   "sha": "35195c0",
+   "agent": "conductor@web-summit.jose"
+  },
+  {
+   "sha": "a7993ba",
+   "agent": "dashboard@web-summit.jose"
+  },
+  {
+   "sha": "2c8bf9a",
+   "agent": "vault@web-summit.jose"
+  },
+  {
+   "sha": "c75eff6",
+   "agent": "conductor@web-summit.jose"
+  },
+  {
+   "sha": "3102e17",
+   "agent": "crm@web-summit.jose"
   }
  ],
  "could_not_check": [
@@ -145,5 +172,5 @@
   "work done in other repositories (the newsroom)",
   "Dinis's account, so whether his scheduled tasks fired"
  ],
- "context": "the team's incident agents (incident.conductor@web-summit.dinis, 6b94b06 at 19:53) record that Web Summit's Day 2 (Wednesday 11 November) will not take place, from the organisers' email at 19:38, and that Thursday is on (8c329fd, 19:58). The watcher has not checked this at source"
+ "context": "Wednesday 11 November: Web Summit's Day 2 called off by the incident agents' record (6b94b06, 8c329fd: the organisers' email at 19:38 on 10 November), not checked at source; Thursday aimed as planned, subject to the organisers and IPMA. At Jose's word the watcher sent the incident team (6745608) and Dinis (e7b7deb) an unofficial storm-track signal (people/jose/watcher/signals/2026-11-10-storm-track.md). journalist.examples@web-summit.dinis logged 'the storm moving south' at 06:37 (ec62f9b) with IPMA's Lisbon warnings unchanged at 06:38; whether the signal prompted it is not known"
 }

@@ -2,7 +2,7 @@
  "schema": "web-summit.sgit.ai/watcher-actions/v1",
  "by": "watcher@web-summit.jose",
  "about": "At Jose's word (5 November 2026): every time an agent looks stopped or late, the watcher opens an action here with what it found and what it recommends, addressed to Jose's conductor and to the agent's owner's conductor in its commit (For:). Every run re-checks each open action: closed when the agent commits again or its scheduled task is seen to fire; still open after two runs, it is raised again at the top of the commit. The watcher only reports and recommends; it never changes an agent, a task or a session (WS-129). An action's 'opened' is the run that first flagged the agent (12:15), before the loop existed.",
- "updated": "2026-11-10T22:22Z",
+ "updated": "2026-11-11T07:17Z",
  "actions": [
   {
    "id": "A-2026-11-05-01",
@@ -90,11 +90,11 @@
    ],
    "status": "open",
    "opened": "2026-11-05T14:22Z",
-   "runs_open": 23,
-   "seen": "at 22:22 on 10 November: only dev is left (the 3 November text, 30 9,15; fired at 15:34 and succeeded)",
+   "runs_open": 24,
+   "seen": "at 07:17 on 11 November: only dev is left (the 3 November text, 30 9,15; last fired 15:34 on 10 November and succeeded)",
    "likely_cause": "the tasks were made before the kit changed; the agents re-read the kit at each wake, so they may follow it anyway, but the stored prompts disagree",
    "recommend": "Jose: paste the pointer into the dev task and set it to 30 7-21/2",
-   "raised": "open twenty-three runs, one agent left: raised",
+   "raised": "open twenty-four runs, one agent left: raised",
    "per_agent": {
     "conductor": "done: pointer pasted, time every hour 07:20 to 21:20 (20 7-21)",
     "dev": "open: still the 3 November text; time 30 9,15, not every two hours 07:30 to 21:30",
@@ -236,11 +236,11 @@
    ],
    "status": "open",
    "opened": "2026-11-06T07:15Z",
-   "runs_open": 20,
-   "seen": "no commit since 23:53 on 5 November, about 119 hours",
+   "runs_open": 21,
+   "seen": "no commit since 23:53 on 5 November, about 127 hours",
    "likely_cause": "unknown; its mandate is a refactoring pass every wake, so a quiet wake is unusual; not confirmed (Dinis's account)",
    "recommend": "conductor@web-summit.dinis: check its 00:40 to 09:40 wakes",
-   "raised": "open twenty runs; part of A-21"
+   "raised": "open twenty-one runs; part of A-21"
   },
   {
    "id": "A-2026-11-06-15",
@@ -358,11 +358,11 @@
    ],
    "status": "open",
    "opened": "2026-11-07T22:15Z",
-   "runs_open": 13,
-   "seen": "Dinis's conductor (last 18:55) and his new incident agents and security.repos are active. Still quiet, with no word that THE RESTART retired them: dev (about 119 hours), the old security agent, sgit, pulse and project-manager (82), designer (79), xray (73), dashboard, abp and mentor (50), investors (35), journalist (21)",
+   "runs_open": 14,
+   "seen": "Dinis's incident agents and security.repos commit through the night; his conductor last 18:55. Still quiet, with no word that THE RESTART retired them: dev (about 127 hours), the old security agent, sgit, pulse and project-manager (about 90), designer (88), xray (81), dashboard, abp and mentor (59), investors (44), journalist (30)",
    "likely_cause": "first an account outage (about 27 hours, by his conductor's words), then the big stop; after THE RESTART some of these agents may be retired rather than stopped",
    "recommend": "conductor@web-summit.dinis: say which of these agents are retired by THE RESTART, so the watcher can close them, and restart the rest",
-   "raised": "open thirteen runs: raised"
+   "raised": "open fourteen runs: raised"
   },
   {
    "id": "A-2026-11-08-22",
@@ -392,11 +392,11 @@
    ],
    "status": "open",
    "opened": "2026-11-08T07:15Z",
-   "runs_open": 12,
-   "seen": "no commit since 18:16 on 7 November, about 76 hours; Silvio's agents are active (last 21:46)",
+   "runs_open": 13,
+   "seen": "no commit since 18:16 on 7 November, about 85 hours",
    "likely_cause": "night mail checks with nothing to commit, as with A-12 and A-20",
    "recommend": "conductor@web-summit.silvio: restart it with the others, or say it is retired",
-   "raised": "open twelve runs: raised"
+   "raised": "open thirteen runs: raised"
   },
   {
    "id": "A-2026-11-08-24",
@@ -443,10 +443,28 @@
    ],
    "status": "open",
    "opened": "2026-11-10T22:22Z",
-   "runs_open": 1,
-   "seen": "no commit by any of Vicky's agents here since 05:14 on 10 November (programme@PrompTugal.vicky; conductor@web-summit.vicky 04:51), about 17 hours, after 19 commits in the morning range",
+   "runs_open": 2,
+   "seen": "no commit by Vicky's agents here since 05:14 on 10 November, about 26 hours",
    "likely_cause": "probably working in another repository: the incident conductor's 19:53 commit cites weather@PrompTugal.vicky relaying the organisers' email at 19:38 (b23e846, not in this repository). Not confirmed",
-   "recommend": "conductor@web-summit.vicky: confirm the agents are working in the newsroom, or restart them; WS-213 (Silvio's dashboard) also waits on Vicky"
+   "recommend": "conductor@web-summit.vicky: confirm the agents are working in the newsroom, or restart them; WS-213 (Silvio's dashboard) also waits on Vicky",
+   "raised": "open two runs: raised"
+  },
+  {
+   "id": "A-2026-11-11-27",
+   "agent": "Angelo's agents (in this repository)",
+   "owner": "angelo",
+   "to": [
+    "conductor@web-summit.jose",
+    "desk.conductor@PrompTugal.angelo",
+    "runner.conductor@PrompTugal.angelo",
+    "conductor.b@PrompTugal.angelo"
+   ],
+   "status": "open",
+   "opened": "2026-11-11T07:17Z",
+   "runs_open": 1,
+   "seen": "no commit by Angelo's agents here since 21:07 on 10 November (policy@PrompTugal.angelo), about 10 hours; the night before, runner.conductor@PrompTugal.angelo committed every two hours (22:22, 04:20)",
+   "likely_cause": "a planned move: desk.conductor@PrompTugal.angelo stopped every scheduled agent on account A at 17:10 on 10 November (6697f31) and handed main control to conductor.b@ (1a2b941); account B is the worker pool's home (c9c7398, 446bc1f). conductor.b@ has not committed in this repository yet",
+   "recommend": "Angelo's conductor (conductor.b@ or desk.conductor@): say where account B's agents commit, so the watcher can follow them; the RiskMandate demos for Thursday are Angelo's piece (WS-208)"
   }
  ],
  "could_not_check": [
