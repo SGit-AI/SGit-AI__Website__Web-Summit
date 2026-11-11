@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T14:35Z",
+ "updated": "2026-11-11T15:36Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -747,6 +747,13 @@
      "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
      "label": "evidence",
      "read": "2026-11-11T11:35Z"
+    },
+    {
+     "at": "2026-11-11T15:24Z",
+     "what": "PSP: all Lisbon tunnels closed (\"Os túneis [de Lisboa] estão todos encerrados\"); main roads around Lisbon restricted (Eixo Norte-Sul, IC19, A8, Av. Infante D. Henrique), none fully cut",
+     "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+     "label": "evidence",
+     "read": "2026-11-11T15:36Z"
     }
    ],
    "scope": {
@@ -1152,7 +1159,7 @@
    "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 13:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 14:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 13:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 14:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 15:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
    "corroborated_by": [
     "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
    ],
@@ -1184,7 +1191,7 @@
    "source": "https://websummit.com/startups/pitch/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 13:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 14:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 13:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 14:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 15:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "no decision with an effect window",
@@ -2571,6 +2578,55 @@
    "scope": null,
    "area": "madeira",
    "note": "CNN Portugal live 14:04:00Z citing \"a plataforma do SRPC\" (the press platform, not public)."
+  },
+  {
+   "id": "mai-alert-ends-midnight",
+   "by": "mai",
+   "to": [],
+   "decision": "The Interior Minister: the alert situation ends at midnight as planned; the government expects the country to return to normal on Thursday, with repair work; the government's crisis centre (CorGov, coordinated by the Prime Minister) meets after the Council of Ministers",
+   "at": "2026-11-11T14:44Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T15:36Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": "2026-11-11T23:59Z",
+   "effect_note": "the alert ends at midnight (despacho: 23:59)",
+   "state": null,
+   "state_note": "a statement",
+   "scope": null,
+   "area": "mainland",
+   "note": "CNN Portugal live 14:44:00Z (to journalists after the Council of Ministers at São Bento, from 09:30). Consistent with the despacho's period (to 23:59 on 11 Nov). An expectation, not a decision about Thursday's services."
+  },
+  {
+   "id": "ip-roads-1400",
+   "by": "ip",
+   "to": [],
+   "decision": "Eight roads restricted at 14:00 (Lisbon, Setúbal, Portalegre, Guarda), incl. the Eixo Norte-Sul (IP7) at the Av. de Ceuta access, EN6 in Oeiras and EN1 in the Lisbon district",
+   "at": "2026-11-11T14:00Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T15:36Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": "limited",
+   "state_note": null,
+   "scope": {
+    "extent": "part",
+    "parts": "eight roads; in Lisbon district IP7 at Av. de Ceuta (km 10.4), EN6 Oeiras (km 2.94-3.0), EN1"
+   },
+   "area": "mainland",
+   "note": "IP's situation point at 14:00 via CNN Portugal live 15:19 (Lusa). IP's own site not read for this (its terms: paraphrase only)."
   }
  ],
  "lessons": [
