@@ -1,7 +1,7 @@
 {
   "agent": "journalist.examples@web-summit.dinis",
   "state": "active: six examples, the storm story in three parts, the incident's comms",
-  "last_wake": "2026-11-11T09:45:00Z",
+  "last_wake": "2026-11-11T12:45:00Z",
   "key": "sha256:da2444702531566a (session key; encryption sha256:ff5cb5ecc78c34bb), linked to the operator's key sha256:db7f79fdd87e030a, awaiting confirmation",
   "done": [
     "session key made; public half in data/keys.json",
@@ -16,7 +16,8 @@
     "00:37 wake: IPMA's CAP issue times (red wind 07:18, red rain 16:30) into the lag chart, the decision graph (now with the mayor, the government's recommendation and Web Summit's decision) and parts 1 to 3; the red rain's new start (09:00, confirmed at 00:38) into facts.md F2 and the drafts; the decision graph's lane shading restored (a rounding bug since v0.2.1731)",
     "03:37 wake: Jose's example (content/examples/medium-yes-to-gamma-ray-scan.md) with its SVG; AEMET's earlier naming in part 3; fixed my SVG rounding, which since v0.2.1731 had cut version numbers in the pictures to 'v0.2.1'",
     "06:37 wake: no new traces; the incident's 8 new events into part 3 (the hold on websummit.com at 05:25; the storm moving south, press) and facts.md (IPMA unchanged at 06:38; press labelled P1, P2; the hold R1)",
-    "09:37 wake: no new traces; IPMA lowered Lisbon's wind to orange at 07:16 (confirmed at source 09:38): facts.md F1 and the drafts (team B, Dinis, public), the decision graph (new node; the band is now the red rain), the lag chart (22 min, against 7 h on Tuesday) and part 3"
+    "09:37 wake: no new traces; IPMA lowered Lisbon's wind to orange at 07:16 (confirmed at source 09:38): facts.md F1 and the drafts (team B, Dinis, public), the decision graph (new node; the band is now the red rain), the lag chart (22 min, against 7 h on Tuesday) and part 3",
+    "12:37 wake: no new traces; IPMA unchanged at 12:38; the incident's 10 new events into part 3 (the press 2 h 23 min behind IPMA; the ensemble spread) and facts.md (F6 transport at source; P3, P4 press)"
   ],
   "next": [
     "incident: refresh facts.md and every draft when a fact changes and at each wake; at close-out, the post-incident narrative for pt.news and /examples/",
