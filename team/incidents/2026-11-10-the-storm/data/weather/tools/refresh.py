@@ -53,6 +53,8 @@ OUR_EN = {  # our translations, used only where IPMA's CAP gives no English for 
     'Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.': 'Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.',
     'Precipitação forte e persistente.': 'Heavy and persistent rain.',
     'Precipitação por vezes forte e persistente.': 'Rain, at times heavy, and persistent.',
+    'Rajadas até 90 km/h, podendo atingir 110 km/h nos locais mais expostos.': 'Gusts up to 90 km/h, possibly reaching 110 km/h in the most exposed places.',
+    'Precipitação por vezes forte.': 'Rain, at times heavy.',
     'Precipitação persistente, por vezes forte.': 'Persistent rain, at times heavy.',
     'Precipitação por vezes forte e acompanhada de trovoada.': 'Rain, at times heavy, with thunderstorms.',
     'Chuva, por vezes forte e persistente.': 'Rain, at times heavy, and persistent.',
@@ -216,6 +218,13 @@ def seed_history():
 
 
 # ---------------------------------------------------------------- communiqués
+def _same(t):
+    """The substance of a communiqué for comparison: the RSS and the page format the same text differently."""
+    t = re.split(r'(?i)comunicado n[ºo°]\s?\d+', t or '', maxsplit=1)[-1]  # the RSS copy starts with a header and the title
+    t = t.split('Para mais detalhes')[0]  # the links and edit stamp after it differ between the two copies
+    return re.sub(r'\W+', '', t).lower()
+
+
 def communiques():
     prev = load('communiques.json', {})
     raw = get('communiques')
@@ -236,7 +245,7 @@ def communiques():
         if title not in seen:
             changes.insert(0, 'NEW IPMA COMMUNIQUÉ: ' + title)
             seen[title] = rec
-        elif seen[title]['text_pt'] != text:
+        elif _same(seen[title]['text_pt']) != _same(text):
             changes.append('IPMA communiqué text changed: ' + title)
             rec['first_read_utc'] = seen[title].get('first_read_utc', seen[title]['read_utc'])
             seen[title] = rec
@@ -260,7 +269,7 @@ def communiques():
                 changes.insert(0, 'NEW IPMA COMMUNIQUÉ: ' + title)
                 rec['first_read_utc'] = NOW
                 seen[title] = rec
-            elif seen[title]['text_pt'] != body:
+            elif _same(seen[title]['text_pt']) != _same(body):
                 changes.append('IPMA communiqué text changed: ' + title)
                 rec['first_read_utc'] = seen[title].get('first_read_utc', seen[title]['read_utc'])
                 seen[title] = rec

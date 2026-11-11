@@ -1,7 +1,7 @@
 {
  "about": "IPMA's aeronautical forecast (TAF) and observations (METAR) for Lisbon airport (LPPT), 8 km north of the centre, read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport; not a public warning.",
  "icao": "LPPT",
- "read_utc": "2026-11-11T12:35:31Z",
+ "read_utc": "2026-11-11T12:49:59Z",
  "taf": {
   "issue_utc": "2026-11-11T11:00Z",
   "raw": "TAF LPPT 111100Z 1112/1218 14015KT 4000 RADZ BR SCT004 BKN008 TEMPO 1112/1116 14020G35KT 2000 RA BR SCT002 BKN004 FEW016CB PROB30 TEMPO 1112/1116 14040G55KT 1200 +TSRA SCT015CB BECMG 1116/1118 29012KT 9999 NSW SCT020 TEMPO 1118/1121 29017G27KT TEMPO 1200/1218 4000 SHRA BKN018 FEW020CB BECMG 1200/1202 23013KT",
@@ -108,7 +108,7 @@
    }
   ],
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-11T12:35:31Z"
+  "read_utc": "2026-11-11T12:49:59Z"
  },
  "taf_history": [
   {

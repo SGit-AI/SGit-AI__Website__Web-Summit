@@ -421,6 +421,11 @@
    "time_utc": "2026-11-11T12:36Z",
    "section": 18,
    "summary": "IPMA CAP batch sent 12:18:03: rain red to orange 12:19-18:00 for Castelo Branco, Leiria, Portalegre, Beja; Faro red rain kept; nothing for Lisboa (red rain 09-18 and orange wind stand). Open data not yet updated at 12:35:31."
+  },
+  {
+   "time_utc": "2026-11-11T12:50Z",
+   "section": 19,
+   "summary": "IPMA CAP sent 12:33:13: Lisbon red rain cut to 12:34-15:00 then yellow 15:00-18:00; orange wind cut to 12:34-18:00 with gusts up to 90 km/h, 110 exposed (was 120, to 21:00). Setúbal same; Beja orange wind to 18:00. Open data not yet updated at 12:49:59."
   }
  ],
  "next_read_utc": "2026-11-11T13:22Z"

@@ -387,3 +387,14 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 - The 5-minute poll watches Lisbon and Madeira only, so it did not flag this batch. From this read on, cap.json also keeps orange messages for every district.
 
 **Analysis (medium):** IPMA lowered red rain only inland and in Beja, and kept it where the rain is falling now (Faro, and Lisbon, which had 11–18 mm in the last hour). Lisbon's red rain warning still stands, and so does its orange wind, although IPMA's own figure for the South (70–90 km/h) is now below Lisbon's threshold. A further Lisbon change this afternoon is possible; that is a judgement, not a statement from IPMA.
+
+## 19. 12:50 UTC 11 Nov: IPMA cuts Lisbon's warnings (CAP sent 12:33:13)
+
+**Facts** (MeteoAlarm CAP feed, cap.json lisbon_messages; the 5-minute poll first saw the batch at 12:46:20; a read at 12:46:37 still got the older copy of the feed, which served 196 messages at 12:47:01 and 198 at 12:47:06, so reads can lag by a few minutes):
+- **Rain: red shortened to 12:34–15:00** ("Precipitação forte e persistente"), replacing the red 09:00–18:00 sent 10 Nov 21:23:00; then **yellow 15:00–18:00** ("Precipitação por vezes forte", our translation: rain, at times heavy), a new alert.
+- **Wind: orange, now 12:34–18:00** (was to 21:00), and its text lowered: **"Rajadas até 90 km/h, podendo atingir 110 km/h nos locais mais expostos"** (our translation: gusts up to 90 km/h, possibly reaching 110 km/h in the most exposed places), replacing the 07:16:30 message (gusts to 120 km/h).
+- Same batch: Setúbal red rain 12:34–15:00 and orange wind 12:34–18:00; Beja orange wind 12:34–18:00.
+- Sea warnings (orange 12:00–21:00, yellow 21:00–03:00) had no message in the batch, so they stand.
+- MeteoAlarm carried it 13 min after it was sent at the latest (poll read 12:41:18 did not have it; 12:46:20 did). IPMA's open data (warnings_www.json) did not show it at 12:49:59; warnings.json still holds the old windows until it does.
+
+**Analysis (medium-high):** IPMA has now put in its warnings what communiqué no. 3 said: weaker wind, rain easing from mid-afternoon. For Lisbon the worst is now bounded at **15:00 for the heavy rain and 18:00 for the wind**, three hours earlier than this morning's warnings. Its new wind figure (90, 110 exposed) matches what the airport's TAF has said since 10:08 (gusts about 65 km/h at times, a 30% chance of about 100). Observed so far: no gust above warned; wind at the airport under 30 km/h at 12:30.

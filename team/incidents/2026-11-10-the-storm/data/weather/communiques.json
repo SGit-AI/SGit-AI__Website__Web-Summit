@@ -1,8 +1,8 @@
 {
  "about": "IPMA's communiqués (special weather information) from its RSS feed, kept across reads; earthquake notices left out.",
  "source": "https://www.ipma.pt/resources.www/rss/comunicados.xml",
- "feed_built_local": "2026-11-11 12:08:32",
- "read_utc": "2026-11-11T12:35:31Z",
+ "feed_built_local": "2026-11-11 12:38:32",
+ "read_utc": "2026-11-11T12:49:59Z",
  "items": [
   {
    "title": "Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3",
@@ -13,10 +13,10 @@
    "link": "https://www.ipma.pt/opencms/pt/otempo/comunicados/index.jsp",
    "text_pt": "CHARLES é o nome atribuído pelo Instituto Português do Mar e da Atmosfera a uma depressão que passou a norte do arquipélago da Madeira e se dividiu em dois núcleos de baixa pressão distintos, diferente do previsto inicialmente nos modelos numéricos. Essa alteração influenciará a sua evolução nas próximas horas, em que se aproximará do território do continente, resultando numa diminuição do cavamento da depressão, e consequentemente da intensidade do vento, face à previsão do dia de ontem. Ainda assim, nas próximas horas em Portugal continental prevê-se a continuação de chuva persistente e por vezes forte, a evoluir de sudoeste para nordeste. O vento irá intensificar na região Sul, com rajadas da ordem de 70 a 90 km/h, em especial no litoral, sendo que em pontos mais expostos da faixa costeira e serras poderão atingir 110 km/h. Os avisos meteorológicos foram ajustados tendo em conta as atualizações dos modelos numéricos. O IPMA continuará a monitorizar a evolução da depressão CHARLES através dos vários meios de observação disponíveis, incluindo satélite e radar, e atualizará os avisos meteorológicos em conformidade. Para mais detalhes sobre a previsão meteorológica dos próximos dias consultar: http://www.ipma.pt/pt/otempo/prev.descritiva/ http://www.ipma.pt/pt/otempo/prev.significativa/ Para mais detalhes sobre os avisos meteorológicos emitidos consultar: http://www.ipma.pt/pt/otempo/prev-sam/",
    "source": "https://www.ipma.pt/opencms/pt/otempo/comunicados/index.jsp",
-   "read_utc": "2026-11-11T12:28:46Z",
+   "read_utc": "2026-11-11T12:49:05Z",
    "note": "Read from IPMA's communiqués page; not in the RSS feed when read. Time labels read as UTC (Lisbon is UTC in November).",
    "first_read_utc": "2026-11-11T12:28:46Z",
-   "last_seen_utc": "2026-11-11T12:35:31Z"
+   "last_seen_utc": "2026-11-11T12:49:59Z"
   },
   {
    "title": "Chuva, vento e agitação marítima - Depressão CHARLES - Continente e Madeira - Comunicado nº2",
