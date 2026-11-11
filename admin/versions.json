@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1845",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: b0-library opened (step 0): the prompt library, skills, formats and queue, for alpha",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "fd3bed899"
+  },
+  {
     "version": "v0.2.1844",
     "date": "2026-11-11",
     "what": "policy@PrompTugal.angelo: the pipeline workers' lane opened to twenty named slots (fifteen new aliases, no wildcard)",
