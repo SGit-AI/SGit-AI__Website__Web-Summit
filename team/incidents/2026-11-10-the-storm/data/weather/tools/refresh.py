@@ -385,7 +385,8 @@ def cap():
     raw = get('cap')
     if raw is None:
         return prev
-    seen = {m['identifier']: m for m in prev.get('lisbon_messages', [])}
+    seen = {m['identifier']: m for m in prev.get('lisbon_messages', [])}  # every message once seen is kept, never dropped
+    in_feed = set()
     for x in json.loads(raw).get('warnings', []):
         al = x.get('alert', {})
         for i in al.get('info', []):
@@ -399,8 +400,11 @@ def cap():
             if 'Lisboa' not in [z.get('areaDesc') for z in i.get('area', [])]:
                 continue
             ident = al.get('identifier')
+            in_feed.add(ident)
             if ident in seen:
                 seen[ident]['last_seen_utc'] = NOW
+                seen[ident].pop('left_feed_utc', None)
+                seen[ident].pop('status', None)
                 continue
             refs = [r.split(',') for r in (al.get('references') or '').split(' ') if r.count(',') == 2]
             rec = {'identifier': ident, 'sent_utc': al.get('sent'), 'msg_type': al.get('msgType'), 'event_pt': i.get('event'),
@@ -410,9 +414,22 @@ def cap():
             seen[ident] = rec
             if prev and (rec['sent_utc'] or '') >= '2026-11-10':
                 changes.insert(0, f"IPMA CAP (MeteoAlarm) sent {rec['sent_utc'][11:19]}: {rec['event_pt']} {(rec['onset_utc'] or '')[8:16]}-{(rec['expires_utc'] or '')[8:16]}")
+    for ident, m in seen.items():
+        if ident not in in_feed and 'left_feed_utc' not in m:
+            m['left_feed_utc'] = NOW
+            m['status'] = f'left the feed at {NOW} (time read)'
     msgs = sorted(seen.values(), key=lambda m: (m['sent_utc'] or '', m['identifier']))
-    return {'about': "IPMA's warnings for the Lisbon district as CAP messages (Common Alerting Protocol), read through MeteoAlarm's public feed. Unlike IPMA's open data, each message carries `sent_utc`, the time IPMA issued it, and `replaces`, the message it updates (with that one's sent time). Kept across reads; the feed drops superseded messages. Facts.",
-            'source': U['cap'], 'read_utc': NOW, 'lisbon_messages': msgs}
+    reads = prev.get('reads_utc', [])
+    log = os.environ.get('CAP_POLL_LOG')  # the session's 5-minute poll writes its read times here
+    if log and os.path.exists(log):
+        reads += [l.strip() for l in open(log) if l.strip()]
+    reads = sorted(set(reads + [NOW]))
+    disclaimer = ('Time delays between this website and the www.meteoalarm.org website are possible. For the most up-to-date awareness '
+                  'information as published by the participating National Meteorological and Hydrological Services, please refer to www.meteoalarm.org.')
+    return {'about': f"IPMA's warnings for the Lisbon district as CAP messages (Common Alerting Protocol), read through MeteoAlarm's public feed (https://www.meteoalarm.org). A dated record, not a live feed: read {NOW}. MeteoAlarm: \"{disclaimer}\" Unlike IPMA's open data, each message carries `sent_utc`, the time IPMA issued it, and `replaces`, the message it updates (with that one's sent time). Every message once seen is kept; one no longer in the feed is marked `left_feed_utc` (the time read). Messages that left the feed before this desk's first read (10 Nov 23:51) were never seen. Facts.",
+            'terms': {'source': 'https://www.meteoalarm.org', 'feed': U['cap'], 'disclaimer': disclaimer,
+                      'record': f'a dated record, not a live feed (read {NOW})', 'publisher_of_the_warnings': 'IPMA (Instituto Português do Mar e da Atmosfera), via MeteoAlarm'},
+            'source': U['cap'], 'read_utc': NOW, 'reads_utc': reads, 'lisbon_messages': msgs}
 
 
 def second_models(prev):
