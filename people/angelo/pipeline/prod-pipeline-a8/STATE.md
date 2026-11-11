@@ -1,5 +1,5 @@
 # prod-pipeline-a8: state
-- **Role done:** design, golf.large.worker@PrompTugal.angelo; 22:13 to 22:30 UTC. **Ready for Angelo's read.**
+- **Role done:** design, golf.large.worker@PrompTugal.angelo; 22:13 to 22:27 UTC. **Ready for Angelo's read.**
 - **Result:** timeline.md. The release feed is right where it has data (7 of 7 of A7's commits in the same release) but keeps only 200 commits, about 4 hours (changes.mjs:13, not deploy.yml's 500). It covers events.json only, lists seen_at re-checks as changes (375 of 499 entries) and hides read_at moving back. DISTRICT 909's add has already dropped out.
 - **Fix proposed** (Fringe owners, nothing changed): a kept per-event history file built by CI (about 170 KB a day), re-checks counted not listed, file names per commit, "now" from the per-id diff.
 - **Mocks:** A (track, recommended), B (chips), C (day strip) on Show What You Build, plus DISTRICT 909 as one sentence (today) and as a track (with the kept file, simulated). Shots at 320, 390 and 1280; measure.cjs passes 35 of 35.
