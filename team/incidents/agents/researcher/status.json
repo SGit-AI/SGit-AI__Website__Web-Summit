@@ -33,7 +33,8 @@
     "02:25: state field on decision edges (closed, suspended, limited, running, not_announced; null with a note for warnings, statements and hypotheses); tools/primary_tries.py: one polite try an hour at Lusoponte, metrolisboa.pt, lisboa.pt, informacao.lisboa.pt, ANA, CP, Rede Expressos, recorded in entities/*.json tries (first run 02:22Z: none published)",
     "02:30: shadow leads: (1) legal text read at source: Despacho n.º 13773-A/2026 (DR 2nd series, supplement, 10 Nov; via porto.pt's link; headless browser), no mention of Web Summit; (2) harbour master Aviso 53/2026 (fact, signed 9 Nov 14:07, yellow-era); (3) lisboa.pt 403; (4)-(7) press only or refused: leads, not added",
     "02:34 wake: no change to Day 3 (blog, post text, Bluesky); primary-page tries skipped this wake (last run 02:22, one an hour)",
-    "02:42: bridges: 60 km/h (14:48) then lifted by 22:29 (Lusa): a sequence, not a conflict; Lusoponte still unreachable. IPMA no. 1 publish time not verifiable (only no. 2 online); AEMET named Charles 9 Nov 10:20:11 (fact, its Bluesky). Social posts filed in entities (rede-expressos, cp, metro, museums; new: ferries, flixbus, hospitals, parliament, retail). Madeira SRPC measures page (fact, created 15:27)."
+    "02:42: bridges: 60 km/h (14:48) then lifted by 22:29 (Lusa): a sequence, not a conflict; Lusoponte still unreachable. IPMA no. 1 publish time not verifiable (only no. 2 online); AEMET named Charles 9 Nov 10:20:11 (fact, its Bluesky). Social posts filed in entities (rede-expressos, cp, metro, museums; new: ferries, flixbus, hospitals, parliament, retail). Madeira SRPC measures page (fact, created 15:27).",
+    "03:02: token measure not run: refused by the permission check; no tokens.jsonl written"
   ],
   "next": [
     "Each wake: Web Summit (blog list first); then python3 team/incidents/2026-11-10-the-storm/data/decisions/tools/primary_tries.py",
@@ -42,6 +43,7 @@
     "Dear Gatekeepers page is a JavaScript app: parser ask to incident.dev@ if it matters"
   ],
   "asks": [
+    "Dinis: the token measure (incident.accountant@'s tools/accounts-measure.mjs, from storm-charles.promptugal.news, sha256 b1297c3c…, read in full: local transcript only, no network, prints numbers) was refused by this session's permission check at 03:01Z (\"Unauthorized Access\"). Not worked around. To measure this session: allow it here, or measure it from outside the session.",
     "Dinis: the incident moved to PrompTugal/PrompTugal__News__Storm-Charles (incident.conductor@, 21:15). Attaching it to this session with push access (add_repo) was refused by this session's permission check at 21:19Z, as add_repo for PrompTugal__News__Website was earlier. To let me work there: allow add_repo for that repository in this session (a permission rule for mcp__claude-code-remote__add_repo), or start a new researcher session with the repository attached. Until then: graph.json's 1 h 16 min fix is in this repo (9ef309f8) only, and my hourly wake stays pointed here (not changed to a repo I cannot reach).",
     "Dinis: lisboa.pt and informacao.lisboa.pt refuse automated reads (403); the Câmara's own measures for Wednesday need a person to read them.",
     "Dinis: Web Summit's X, Instagram and LinkedIn need a login and the attendee app needs a ticket; if the organisers announce there first, a person on the team will see it before us.",
@@ -49,7 +51,7 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts."
   ],
-  "updated": "2026-11-11T02:42Z",
+  "updated": "2026-11-11T03:02Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {
