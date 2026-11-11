@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **45** S44 dropped; checker findings kept open for a browser check; the Web Summit takedown is planned, nothing comes down until Vicky says yes.
 - **44** each agent's model (people/vicky/models.json).
 - **43** from Friday: researcher and curator twice a day, journalists and reviewer on demand through the conductor; dashboard and checker daily.
 - **42** no signing: P6 lifted for good (pointer messages to Vicky's own agents, reports back); signing shelved, tasks.mjs kept.
@@ -233,6 +234,12 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 44. **Each agent's model** (Vicky, 11 Nov, about 20:50 UTC, in this window: "I switched models in the windows, but not exactly as you recommended. Connections and checker stay on Opus, and dashboard stays on Sonnet. Please read each session's current model, record the final list as my decision, and check after each agent's next run that it used the new model. The summit journalist switches to Sonnet on Friday.")
     - **Opus:** reviewer, security, conductor, vault, dev, journalist-connections, checker, the summit journalist until Friday, logistics and programme (both paused). **Sonnet:** researcher, curator, journalist-portugal, journalist-europe, journalist-ai, dashboard, pm, scout, designer, inbox, synthetic; the summit journalist from Friday 13 Nov.
     - The list and what each session showed are in `people/vicky/models.json`. At 20:50 UTC journalist-connections and the checker showed Sonnet, not Opus: Vicky to check their windows. The conductor checks after each agent's next run which model served it (usage records only) and reports in the brief.
+
+45. **S44 dropped; the checker's old findings kept open; the Web Summit takedown planned; two models** (Vicky, 11 Nov, about 20:55 UTC, in this window).
+    - **S44** (her words: "Drop S44 (Wednesday is over)."): the reviewer sets S44 to dropped, at Vicky's word.
+    - **The checker** (her words: "The checker keeps its four old findings open and marks them for a browser check."): WK1, BR4, S3 and S11 stay open; when an article changes, the point is marked "not checkable by machine (RULES-11NOV)" for a person's browser check, never closed for that reason.
+    - **Web Summit data off the live sites** (her words: "Dinis says take all data scraped from Web Summit's site, and the articles built from it, off the live sites. Do not delete or change anything in GitHub or in any vault, they stay as they are. Only what is shown on promptugal.news and the team site comes down. List each article with its title and link, split into built from scraped data and only quoting Web Summit's statements with a link, and wait for my yes before taking any offline. For the derived data, the homepage and company pages, tell their owners that Dinis has approved this. Make sure no page breaks, and show me the plan before you start."): the conductor makes the list and the plan; **nothing comes down until Vicky says yes**.
+    - **Models** (her words: "Connections and checker: back on Opus"): recorded in `people/vicky/models.json`; Vicky switches them in their windows.
 
 ## Updates for agents
 
