@@ -1,1 +1,1 @@
-{"item":"b1-team-spec","steps":[{"step":0,"role":"intake","by":"conductor.b@PrompTugal.angelo","start":"2026-11-11T11:55Z","end":"2026-11-11T12:00Z"}]}
+{"item": "b1-team-spec", "steps": [{"step": 0, "role": "intake", "by": "conductor.b@PrompTugal.angelo", "start": "2026-11-11T11:55Z", "end": "2026-11-11T12:00Z"}, {"step": 1, "role": "spec", "by": "bravo.large.worker@PrompTugal.angelo", "session": "session_01Xp7gj348WHqUtmBB2ugPy4", "start": "2026-11-11T11:56Z"}]}
