@@ -458,3 +458,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 - Warnings: no new CAP since 15:55:03. IPMA's open data dropped the orange wind by 17:22:38 (about 1 h 25 min after the CAP ended it) and now matches cap.json: yellow rain to 18:00, orange sea to 21:00, yellow sea 21:00–Thursday 03:00.
 
 **Analysis (high):** the wind veered through S and SW to WNW with rising pressure and falling temperature: the centre passed north of Lisbon, and the cold side has arrived. This settles sections 12, 16 and 21: **the centre passed just north, closest about 14:30–16:30**. For Lisbon the storm is over except for the sea (orange to 21:00) and passing showers. **Thursday (J4):** showers at times, SW wind with gusts about 50 km/h from 10:00 (TAF), no wind or rain warning for Lisboa so far; yellow sea until 03:00.
+
+## 26. 18:25 UTC 11 Nov: after the storm
+
+**Facts** (read 18:22:58–18:23:17 UTC): LPPT 17:30 30012KT Q0991; 18:00 30013G27KT (gusts 50 km/h), visibility 10 km or more, Q0992, rising. IPMA stations, hour labelled 17:00: no rain; wind NW or W, means 15–25 km/h. No new CAP since 15:55:03 (poll every 5 min to 18:19:21); no new communiqué. Lisbon's yellow rain warning ran to 18:00; orange sea to 21:00 and yellow sea 21:00–Thursday 03:00 remain.
+
+**Analysis (high):** the 18:00 gust of 50 km/h is the TAF's forecast for 18:00–21:00 (TEMPO 27 kt), under no warning. Nothing in the data points to a second peak for Lisbon tonight. Thursday as in section 25: showers, SW gusts about 50 km/h from 10:00.

@@ -456,7 +456,12 @@
    "time_utc": "2026-11-11T17:25Z",
    "section": 25,
    "summary": "LPPT veered 210 to 290 by 17:00 (29011G23KT), pressure rising 989 to 991, temperature down 2 C: centre passed just north, closest about 14:30-16:30 (high). Open data caught up (orange wind gone). TAF 17:00: Thursday showers, SW gusts ~50 km/h 10-18:00; no Thursday wind/rain warning for Lisboa."
+  },
+  {
+   "time_utc": "2026-11-11T18:25Z",
+   "section": 26,
+   "summary": "After the storm: LPPT 18:00 30013G27KT Q0992 rising, no rain; no new CAP; yellow rain ended 18:00; sea warnings to Thu 03:00."
   }
  ],
- "next_read_utc": "2026-11-11T18:22Z"
+ "next_read_utc": "2026-11-11T19:22Z"
 }
