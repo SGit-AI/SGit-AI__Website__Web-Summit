@@ -44,6 +44,18 @@ export function loadXray(ROOT) {
     }
     out.sort((a, b) => (a.status === 'prepared' ? 0 : 1) - (b.status === 'prepared' ? 0 : 1) || a.subject.localeCompare(b.subject))
     // searches with no X-ray (experiments): named on /xray/how/, never counted in its totals
+    // the stand view's three short lines per situation (data/xray-stand.json, conductor@web-summit.indi, WS-191): at most
+    // 8 words each; a situation with no line falls back to the start of its own text in assets/xray.js
+    const sf = path.join(ROOT, 'data/xray-stand.json')
+    out.stand = {}
+    if (fs.existsSync(sf)) {
+        let st; try { st = JSON.parse(fs.readFileSync(sf, 'utf8')) } catch (e) { throw new Error(`data/xray-stand.json: ${e.message}`) }
+        for (const [slug, ucs] of Object.entries(st.companies || {})) for (const [uc, l] of Object.entries(ucs)) for (const k of ['reach', 'asked', 'gap']) {
+            const v = String((l || {})[k] || '')
+            if (!v || v.split(/\s+/).length > 8 || v.includes('\u2014')) throw new Error(`data/xray-stand.json: ${slug} ${uc} ${k} must be 1 to 8 words, with no em-dash`)
+        }
+        out.stand = st.companies || {}
+    }
     out.experiments = fs.readdirSync(dir).filter(n => /^[a-z0-9-]+$/.test(n) && !fs.existsSync(path.join(dir, n, 'xray.json'))).map(n => loadSearch(ROOT, n)).filter(Boolean).map(r => r.subject || r.slug)
     return out
 }
@@ -55,7 +67,7 @@ export function xrayIndexHtml(list) {
     const json = JSON.stringify(list.map(indexRow)).replace(/</g, '\\u003c')
     return `<div class="xray" id="xray" data-mode="home"><p class="meta xr-nojs">The scanner (the input, the replay of each run and the graph) needs JavaScript. Every X-ray below is a plain page that reads without it.</p>`
         + (list.length ? `<ul class="xr-list">${list.map(s => `<li><a href="@@/xray/${s.slug}/index.html"><b>${esc(s.subject)}</b></a> <span class="meta">${esc(KINDS[s.kind] || s.kind)}, ${esc(s.status)}${s.read_on ? `, read ${esc(s.read_on)}` : ''}</span><br>${esc(s.tagline)} <a class="meta" href="@@/xray/${s.slug}/deck/index.html">the deck</a></li>`).join('')}</ul>` : '<p>No subject has been X-rayed yet.</p>')
-        + `<script type="application/json" id="xray-index">${json}</script></div>`
+        + `<script type="application/json" id="xray-index">${json}</script><script type="application/json" id="xray-stand">${JSON.stringify(list.stand || {}).replace(/</g, '\\u003c')}</script></div>`
 }
 export const xrayIndexMd = list => list.length ? list.map(s => `- [${s.subject}](${s.slug}/index.md) (${KINDS[s.kind] || s.kind}, ${s.status}${s.read_on ? `, read ${s.read_on}` : ''}): ${s.tagline} Deck: [${s.slug}/deck/index.md](${s.slug}/deck/index.md).`).join('\n') : 'No subject has been X-rayed yet.'
 

@@ -7,7 +7,7 @@
     const SITE = 'https://web-summit.sgit.ai/', FONTS = 'https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600&display=swap'
     const get = k => { try { return localStorage.getItem(k) } catch { return null } }, put = (k, v) => { try { localStorage.setItem(k, v) } catch {} }
     let MODE = get('cc.mode') || 'work'
-    const FLOWS = { client: [['stand', 'Universo ✦'], ['gravity', 'Gravity']], work: [['home', 'Visão geral'], ['stand', 'Universo ✦'], ['gravity', 'Gravity'], ['tasks', 'Tarefas']] }
+    const FLOWS = { client: [['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['gravity', 'Gravity']], work: [['home', 'Visão geral'], ['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['gravity', 'Gravity'], ['tasks', 'Tarefas']] }
     const html = document.documentElement
     if (![...document.querySelectorAll('link')].some(l => l.href === FONTS)) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = FONTS; document.head.appendChild(l) }
     const css = document.createElement('style'); css.id = 'cc-shell-css'; css.textContent = `
@@ -111,7 +111,7 @@ html.cc-shell .cc-gravity iframe { width: 100%; min-height: calc(100vh - 130px);
         const m = e.target.closest && e.target.closest('[data-mode]'); if (m) { MODE = m.dataset.mode; put('cc.mode', MODE); inject(); if (!FLOWS[MODE].some(f => f[0] === view())) location.hash = '#' + FLOWS[MODE][0][0]; return }
         if (e.target.closest && e.target.closest('.cc-side a')) html.classList.remove('cc-drawer') })
     addEventListener('keydown', e => { if (e.key === 'Escape') html.classList.remove('cc-drawer') })
-    const markView = () => html.classList.toggle('cc-v-stand', view() === 'stand'); markView()
+    const markView = () => html.classList.toggle('cc-v-stand', view() === 'stand' || view() === 'xray'); markView()
     addEventListener('hashchange', () => { markView(); html.classList.remove('cc-drawer'); const cv = document.getElementById('cc-view'); if (cv) { cv.classList.remove('cc-zin'); void cv.offsetWidth; cv.classList.add('cc-zin') } setTimeout(inject, 30) })
     new MutationObserver(() => { const top = document.querySelector('.cc-top'); if (top && (!top.querySelector('.cc-flow') || !top.querySelector('.cc-burger'))) inject() }).observe(document.body, { childList: true, subtree: true })
     inject()

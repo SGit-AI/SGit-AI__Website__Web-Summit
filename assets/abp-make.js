@@ -15,6 +15,22 @@
     // shorten to a whole phrase where one ends early enough (a colon, a semicolon, a comma or a bracket), else to a whole
     // word; never mid-word (WS-191: the prefilled answers from the X-ray were cut mid-sentence)
     const clipW = (s, n) => { s = String(s || '').trim(); if (s.length <= n) return s; const c = s.slice(0, n + 1); const at = bs => Math.max(...bs.map(b => c.lastIndexOf(b))), i = at([': ', '; ', ' (']) > n * .3 ? at([': ', '; ', ' (']) : at([', ']); const shut = t => (t.split('(').length > t.split(')').length && t.lastIndexOf(' (') > 0 ? t.slice(0, t.lastIndexOf(' (')) : t); if (i > n * .4) return shut(s.slice(0, i)).replace(/[\s,;:(]+$/, ''); const w = c.lastIndexOf(' '); return shut(s.slice(0, w > 0 ? w : n)).replace(/(\s+(and|or|the|a|an|of|to|in|on|for|with|by|from|its|their|into|which|that|who|at|as|is|are))+$/i, '').replace(/[\s,;:(]+$/, '') + '…' }
+    // a short plain version of an X-ray line for a prefilled answer or a one-line summary (WS-34, at Indi's word: "much
+    // more simple"): no brackets, no paths, commands or flags, the phrase before a colon or semicolon, at most n words
+    const STOPW = /^(and|or|the|a|an|of|to|in|on|for|with|by|from|its|their|into|which|that|who|at|as|is|are|than|but|so|only|not)$/i
+    const plain = (t, n) => {
+        const x = String(t || '').replace(/^Illustrative:\s*/i, '').replace(/^As [^:]{3,60}:\s*/i, '').replace(/\s*\([^)]*\)/g, '').replace(/[`"]/g, '').trim()
+        const words = seg => seg.split(/\s+/).filter(t => t && !/[\/~_=<>{}]|^--?\w|^\w+\.\w+|\(\)$|^\$/.test(t))
+        // the first phrase (before a colon, semicolon or dash) with at least two plain words, else the whole text
+        let w = x.split(/:\s|;\s|\s[-–]\s/).map(words).find(ws => ws.length >= 2) || words(x)
+        if (w.length > n) {
+            const c = w.slice(0, n).findIndex((t, i) => i >= 2 && /,$/.test(t))   // a comma early enough ends the phrase
+            const r = w.slice(0, n + 1).findIndex((t, i) => i >= 2 && /^(that|which|who|where|whose|when)$/i.test(t))   // so does "that ..."
+            w = c >= 0 ? w.slice(0, c + 1) : r >= 0 ? w.slice(0, r) : w.slice(0, n)
+            while (w.length > 1 && STOPW.test(w[w.length - 1].replace(/[,.;:]$/, ''))) w.pop()
+        }
+        const out = w.join(' ').replace(/[,;:.\s]+$/, ''); return out.charAt(0).toUpperCase() + out.slice(1)
+    }
     const sentence = s => { s = String(s || '').trim(); return s && !/[.!?…]$/.test(s) ? s + '.' : s }
     const fine = matchMedia('(pointer: fine)')
     const P = new URLSearchParams(location.search)
@@ -52,25 +68,29 @@
     const STEPS = [{ t: 'Your agent', qs: [0, 1, 5, 8] }, { t: 'What it can do', qs: [2, 6] }, { t: 'What stops it', qs: [3, 4, 7, 9] }]
 
     // ---------- state: in memory only ----------
-    const S = { phase: 'pick', x: null, slug: '', uc: null, agent: null, def: [], ans: [], pos: 0, step: 0, index: null }
-    const fresh = () => Object.assign(S, { phase: 'pick', x: null, slug: '', uc: null, agent: null, def: [], ans: [], pos: 0, step: 0 })
+    const S = { phase: 'pick', x: null, slug: '', uc: null, agent: null, def: [], full: [], ans: [], pos: 0, step: 0, index: null, open: new Set() }
+    const fresh = () => Object.assign(S, { phase: 'pick', x: null, slug: '', uc: null, agent: null, def: [], full: [], ans: [], pos: 0, step: 0, open: new Set() })
 
     const loadX = slug => fetch(`${up}data/xray/${encodeURIComponent(slug)}/xray.json`).then(r => { if (!r.ok) throw new Error(r.status); return r.json() })
     // the X-rayed subjects, from the X-ray page's own index (one source of truth: admin/build/xray.mjs writes it)
     const loadIndex = () => S.index || (S.index = fetch(`${up}xray/index.html`).then(r => r.ok ? r.text() : '').then(h => { const m = h.match(/<script type="application\/json" id="xray-index">([\s\S]*?)<\/script>/); return m ? JSON.parse(m[1]).filter(s => s.status === 'prepared') : [] }).catch(() => []))
 
     const cleanName = n => String(n || '').replace(/\s*\([^)]*\)\s*$/, '').trim()
+    // the suggested answers: short and plain (at most 15 words each); the X-ray's full text is kept in S.full, shown one
+    // tap away under the answer and in the ABP's detail
     function defaults() {
         const x = S.x, uc = S.uc, ag = S.agent
-        const d = Q.map(q => SAFE[q.k])
+        const d = Q.map(q => SAFE[q.k]); S.full = Q.map(() => null)
         if (x && ag) {
             d[0] = `${cleanName(ag.name)}, at ${x.subject}`
-            d[1] = sentence(clipW((ag.actions || [])[0] || String(ag.what || '').split(/(?<=\.)\s/)[0], 170))
+            const t = (ag.actions || [])[0] || String(ag.what || '').split(/(?<=\.)\s/)[0]
+            d[1] = sentence(plain(t, 15)); if (d[1] !== sentence(t)) S.full[1] = [t]
         } else if (x) d[0] = `Our agent, at ${x.subject}`
         if (uc && (uc.reach || []).length) {
-            d[2] = uc.reach.map(r => r.what).join('\n')
+            const k = Math.min(3, uc.reach.length), per = Math.floor(15 / k)
+            d[2] = uc.reach.slice(0, k).map(r => plain(r.what, per)).join('\n'); S.full[2] = uc.reach.map(r => r.what)
             const inGap = [...new Set((uc.gap || []).flatMap(g => g.reach || []))].map(id => (uc.reach || []).find(r => r.id === id)).filter(Boolean)
-            if (inGap.length) d[4] = inGap.slice(0, 3).map(r => `Anything that uses: ${clipW(r.what, 90)}`).join('\n') + '\nAnything sent outside the team'
+            if (inGap.length) { d[4] = inGap.slice(0, 2).map(r => `Using ${plain(r.what, 4).replace(/^\w/, c => c.toLowerCase())}`).join('\n') + '\nAnything sent outside the team'; S.full[4] = inGap.map(r => r.what) }
         }
         return d
     }
@@ -89,7 +109,7 @@
         if (!owner && x) owner = x.subject
         const ownerS = owner ? `${owner}'s` : 'Its owner\'s'
         const fromX = !!(x && uc && a(2) === S.def[2])
-        const reach = isNot(a(2)) ? [{ t: 'Not known yet', unknown: true }] : items(a(2)).map(t => ({ t, unknown: /not (known|sure)|unknown/i.test(t) }))
+        const reach = isNot(a(2)) ? [{ t: 'Not known yet', unknown: true }] : (fromX ? uc.reach.map(r => r.what) : items(a(2))).map(t => ({ t, unknown: /not (known|sure)|unknown/i.test(t) }))
         const never = isNot(a(3)) ? [] : items(a(3)), yes = isNot(a(4)) ? [] : items(a(4)), ro = isNot(a(6)) ? [] : items(a(6)), ev = isNot(a(9)) ? [] : items(a(9))
         const gaps = []
         if (fromX) for (const g of uc.gap || []) gaps.push(g.what)
@@ -117,12 +137,14 @@
         ]
         const src = [`The interview at the RiskMandate stand, ${TODAY}`]
         if (x) src.push(`The RiskMandate X-ray of ${x.subject} (${HOST}xray/${x.slug}/), public sources read on ${x.read_on || 'the X-ray date'}`)
+        const reachShort = reach[0].unknown && reach.length === 1 ? 'Not known yet' : `${plain(reach[0].t, 6)}${reach.length > 1 ? `, and ${reach.length - 1} more` : ''}`
         return {
             title: `ABP: ${name}`, banner: 'Draft, made at the RiskMandate stand, not in force.',
+            line1: `Draft for ${owner || 'your company'}, made at the RiskMandate stand. Not in force.`,
             sections: [
                 { id: 'head', blocks: [{ p: `${ownerS} agent, in RiskMandate's terms: Reach, Mandate, Gap, Barriers. Draft 1, made with the ABP maker at the RiskMandate stand, Web Summit Lisbon, ${TODAY}.` }] },
-                { id: 'reach', h: 'Reach: what it can access or affect', blocks: [{ ul: reach.map(r => r.t) }, { p: `How known: ${fromX ? `from the RiskMandate X-ray of ${x.subject}, public sources read on ${x.read_on || 'the X-ray date'}` : `stated at the stand on ${TODAY}`}. Not measured yet.` }] },
-                { id: 'mandate', h: 'Mandate: what was authorised', blocks: [{ dl: [
+                { id: 'reach', t: 'Reach', short: reachShort, h: 'Reach: what it can access or affect', blocks: [{ ul: reach.map(r => r.t) }, { p: `How known: ${fromX ? `from the RiskMandate X-ray of ${x.subject}, public sources read on ${x.read_on || 'the X-ray date'}` : `stated at the stand on ${TODAY}`}. Not measured yet.` }] },
+                { id: 'mandate', t: 'Mandate', short: isNot(a(1)) ? 'Not stated yet' : plain(a(1), 9), h: 'Mandate: what was authorised', blocks: [{ dl: [
                     ['Business task', isNot(a(1)) ? 'Not stated yet' : sentence(a(1))],
                     ['Deployment scope', owner ? `${owner}, for the task above` : 'The task above'],
                     ['Never', never.length ? never : ['Not stated yet']],
@@ -131,9 +153,9 @@
                     ['Read, never acted on', ro.length ? ro : ['Not stated yet']],
                     ['Authorised by', 'Not named yet (an open question)'],
                 ] }] },
-                { id: 'gap', h: 'Gap: what it can reach beyond its authority', blocks: [{ ul: gaps.length ? gaps : ['No gap named yet. Name one thing it can reach that it should not use on its own.'] }] },
-                { id: 'barriers', h: 'Barriers: what stands in the way', blocks: [{ table: { head: ['Barrier', 'Kind', 'Evidence'], rows: barriers } }, { h3: 'Open questions' }, { ul: open }] },
-                { id: 'licence', h: 'Licence to Operate', blocks: [{ table: { head: ['', ''], rows: [
+                { id: 'gap', t: 'Gap', short: !gaps.length ? 'None named yet' : gaps.length === 1 ? plain(gaps[0], 9) : `${gaps.length} things it can reach beyond its job`, h: 'Gap: what it can reach beyond its authority', blocks: [{ ul: gaps.length ? gaps : ['No gap named yet. Name one thing it can reach that it should not use on its own.'] }] },
+                { id: 'barriers', t: 'Barriers', short: `${barriers.length} barriers, ${open.length} open questions`, h: 'Barriers: what stands in the way', blocks: [{ table: { head: ['Barrier', 'Kind', 'Evidence'], rows: barriers } }, { h3: 'Open questions' }, { ul: open }] },
+                { id: 'licence', t: 'Licence', short: 'Proposed: 90 days, owner to be named', h: 'Licence to Operate', blocks: [{ table: { head: ['', ''], rows: [
                     ['Authority', owner ? `${owner}, the deployer` : 'The deployer (not named yet)'],
                     ['Accountable owner', `A named person${owner ? ` at ${owner}` : ''} (to be named)`],
                     ['Licensee', name],
@@ -141,8 +163,8 @@
                     ['Validity', 'Not set. Proposed: 90 days from approval'],
                     ['Review', 'Every 90 days, and after any action outside the Mandate'],
                 ] } }] },
-                { id: 'rules', h: 'Rules it is checked against', blocks: [{ ol: rules }, ...(ev.length ? [{ p: `Evidence that it behaved: ${ev.join('; ').replace(/\.$/, '')}.` }] : [])] },
-                { id: 'provenance', h: 'Provenance', blocks: [{ dl: [
+                { id: 'rules', t: 'Rules', short: `${rules.length} rules, each one checkable`, h: 'Rules it is checked against', blocks: [{ ol: rules }, ...(ev.length ? [{ p: `Evidence that it behaved: ${ev.join('; ').replace(/\.$/, '')}.` }] : [])] },
+                { id: 'provenance', t: 'Provenance', short: `Draft 1, ${TODAY}, made at the stand`, h: 'Provenance', blocks: [{ dl: [
                     ['Owner', owner || 'Not named yet'],
                     ['Drafted by', "The ABP maker's ten questions (abp-maker@web-summit.indi), answered at the RiskMandate stand"],
                     ['Sources', src],
@@ -162,7 +184,9 @@
         : b.dl ? b.dl.map(([k, v]) => Array.isArray(v) ? (v.length > 1 ? `- **${k}:**\n${v.map(t => `  - ${t}`).join('\n')}` : `- **${k}:** ${v[0]}`) : `- **${k}:** ${v}`).join('\n')
         : b.table ? [`| ${b.table.head.map(h => h || ' ').join(' | ')} |`, `|${b.table.head.map(() => '---').join('|')}|`, ...b.table.rows.map(r => `| ${r.map(cell).join(' | ')} |`)].join('\n') : ''
     const toMd = m => [`# ${m.title}`, `> ${m.banner}`, ...m.sections.map(s => [s.h ? `## ${s.h}` : '', ...s.blocks.map(blockMd)].filter(Boolean).join('\n\n'))].join('\n\n') + '\n'
-    const docHtml = (m, pend) => `<p class="abpm-banner">${esc(m.banner)}</p><h1 class="abpm-dtitle">${esc(m.title)}</h1>${m.sections.map(s => `<section class="abpm-sec${pend && pend(s.id) ? ' pending' : ''}" data-sec="${s.id}">${secHtml(s)}</section>`).join('')}`
+    // the ABP on screen: the title, one line, then each section as a subtitle with one short line, its detail folded away
+    // (tap to open); printing opens them all
+    const docHtml = (m, pend) => `<h1 class="abpm-dtitle">${esc(m.title)}</h1><p class="abpm-line1" data-sec="head">${esc(m.line1)}</p>${m.sections.filter(s => s.h).map(s => `<details class="abpm-sec${pend && pend(s.id) ? ' pending' : ''}" data-sec="${s.id}"${S.open.has(s.id) ? ' open' : ''}><summary><b>${esc(s.t)}</b><span>${esc(s.short)}</span></summary><div class="abpm-secb">${s.blocks.map(blockHtml).join('')}</div></details>`).join('')}`
 
     // ---------- Refine with Claude: a link that carries the maker's prompt and the answers (no iframe: claude.ai refuses framing) ----------
     function claudeUrl() {
@@ -202,14 +226,20 @@ Please:
     const root = document.createElement('div'); root.id = 'abpm'; root.className = `abpm abpm-${DESIGN}`
     main.prepend(root); main.appendChild(notes)
     const PRIV = '<p class="abpm-priv">Nothing you type is stored or sent anywhere. It stays on this screen until you press Start again.</p>'
+    const INFO = '<details class="abpm-i"><summary aria-label="About this page">i</summary><div><p>Enter to go on. Shift+Enter for a new line.</p><p>Nothing you type is stored or sent anywhere. It stays on this screen until you press Start again.</p></div></details>'
 
-    const titleBar = () => `<div class="abpm-bar"><div class="abpm-brand"><b>Make your ABP</b><span>${S.x ? `From the X-ray of <b>${esc(S.x.subject)}</b>${S.agent ? ` · ${esc(cleanName(S.agent.name))}` : ''}` : 'An Agent Behaviour Policy, in ten questions'}</span></div><div class="abpm-bar-acts">${S.phase !== 'pick' && S.x ? '<button type="button" class="abpm-link" data-act="change">Change agent</button>' : ''}${S.phase !== 'pick' ? '<button type="button" class="abpm-link" data-act="restart">Start again</button>' : ''}</div></div>`
+    const titleBar = () => `<div class="abpm-bar"><div class="abpm-brand"><b>Make your ABP</b><span>${S.x ? `From the X-ray of <b>${esc(S.x.subject)}</b>${S.agent ? ` · ${esc(cleanName(S.agent.name))}` : ''}` : 'An Agent Behaviour Policy, in ten questions'}</span></div><div class="abpm-bar-acts">${S.phase !== 'pick' && S.x ? '<button type="button" class="abpm-link" data-act="change">Change agent</button>' : ''}${S.phase !== 'pick' ? '<button type="button" class="abpm-link" data-act="restart">Start again</button>' : ''}${INFO}</div></div>`
     const dots = () => `<ol class="abpm-dots" aria-label="Progress">${ORDER.map((qi, p) => `<li><button type="button" data-go="${p}" class="${p < S.pos || S.phase === 'done' ? 'did' : ''}${p === S.pos && S.phase === 'ask' ? ' now' : ''}" aria-label="Question ${p + 1}: ${esc(Q[qi].q)}"${p === S.pos && S.phase === 'ask' ? ' aria-current="step"' : ''}>${p + 1}</button></li>`).join('')}</ol>`
-    const srcNote = i => S.ans[i] === S.def[i] && S.def[i] ? (S.x && ((i <= 1 && S.agent) || (i === 2 && S.uc && S.def[2] !== SAFE.reach) || (i === 4 && S.def[4] !== SAFE.yes)) ? `Suggested from ${esc(S.x.subject)}'s X-ray. Keep it or change it.` : 'A safe default. Keep it or change it.') : S.def[i] ? '<button type="button" class="abpm-link" data-act="usedef">Put the suggestion back</button>' : ''
+    const srcNote = i => {
+        if (!(S.ans[i] === S.def[i] && S.def[i])) return S.def[i] ? '<button type="button" class="abpm-link" data-act="usedef">Put the suggestion back</button>' : ''
+        const fromX = S.x && ((i <= 1 && S.agent) || (i === 2 && S.uc && S.def[2] !== SAFE.reach) || (i === 4 && S.def[4] !== SAFE.yes))
+        const say = fromX ? `Suggested from ${esc(S.x.subject)}'s X-ray. Keep it or change it.` : 'A safe default. Keep it or change it.'
+        return S.full[i] && fromX ? `<details class="abpm-full"><summary>${say} <u>Full text</u></summary><ul>${S.full[i].map(t => `<li>${esc(t)}</li>`).join('')}</ul></details>` : say
+    }
     const field = (i, label) => `<div class="abpm-q" data-q="${i}"><p class="abpm-qn">${label}</p><label class="abpm-qt" for="abpm-f${i}">${esc(Q[i].q)}</label>
 <textarea id="abpm-f${i}" class="abpm-f" data-i="${i}" rows="${Math.min(6, Math.max(1, String(S.ans[i] || '').split('\n').length))}" autocomplete="off" autocapitalize="sentences" spellcheck="true" placeholder="${esc(Q[i].hint || '')}">${esc(S.ans[i] || '')}</textarea>
 <p class="abpm-src" data-src="${i}">${srcNote(i)}</p></div>`
-    const navBtns = (back, next) => `<div class="abpm-nav"><button type="button" class="abpm-btn ghost" data-act="back"${back ? '' : ' disabled'}>← Back</button><button type="button" class="abpm-btn ghost" data-act="skip">Not sure, skip</button><button type="button" class="abpm-btn" data-act="next">${next}</button></div><p class="abpm-keys">Enter to go on · Shift+Enter for a new line</p>`
+    const navBtns = (back, next) => `<div class="abpm-nav"><button type="button" class="abpm-btn ghost" data-act="back"${back ? '' : ' disabled'}>← Back</button><button type="button" class="abpm-btn ghost" data-act="skip">Not sure, skip</button><button type="button" class="abpm-btn" data-act="next">${next}</button></div>`
     const doneActs = () => `<div class="abpm-done-acts"><button type="button" class="abpm-btn" data-act="print">Print or save as PDF</button><button type="button" class="abpm-btn ghost" data-act="copy">Copy as Markdown</button><a class="abpm-btn ghost" data-act="claude" href="${esc(claudeUrl())}" target="_blank" rel="noopener">Refine with Claude ↗</a></div><p class="abpm-status" role="status"></p>`
 
     // which sections are still to come (dimmed while the interview has not reached them)
@@ -232,8 +262,8 @@ Please:
     function renderA() {
         const qi = ORDER[S.pos], done = S.phase === 'done'
         root.innerHTML = `${titleBar()}${dots()}<div class="abpm-grid"><section class="abpm-card" aria-live="polite">${done
-            ? `<p class="abpm-qn">All ten answered</p><h2 class="abpm-qt">Your draft ABP is ready.</h2><p class="abpm-lede">Print it, save it as a PDF, or copy it. Refine it with Claude to go further. It is a draft and not in force.</p>${doneActs()}<div class="abpm-nav"><button type="button" class="abpm-btn ghost" data-act="back">← Change an answer</button></div>`
-            : field(qi, `Question ${S.pos + 1} of 10`) + navBtns(S.pos > 0, S.pos === 9 ? 'Finish ✓' : 'Next →')}${PRIV}</section>
+            ? `<p class="abpm-qn">All ten answered</p><h2 class="abpm-qt">Your draft ABP is ready.</h2><p class="abpm-lede">Print it, save it or copy it. A draft, not in force.</p>${doneActs()}<div class="abpm-nav"><button type="button" class="abpm-btn ghost" data-act="back">← Change an answer</button></div>`
+            : field(qi, `Question ${S.pos + 1} of 10`) + navBtns(S.pos > 0, S.pos === 9 ? 'Finish ✓' : 'Next →')}</section>
 <aside class="abpm-side" aria-label="Your ABP, as it builds"><div class="abpm-doc">${docHtml(model(), pending)}</div></aside></div>`
         after(done ? null : `#abpm-f${qi}`)
         hot(qi)
@@ -241,7 +271,7 @@ Please:
     function hot(qi) {
         const side = root.querySelector('.abpm-side'), doc = root.querySelector('.abpm-doc'); if (!doc || S.phase !== 'ask') return
         const sec = doc.querySelector(`[data-sec="${SEC_OF[qi]}"]`); if (!sec) return
-        sec.classList.add('hot')
+        sec.classList.add('hot'); if (sec.tagName === 'DETAILS') sec.open = true
         if (side && side.scrollHeight > side.clientHeight + 4) side.scrollTo({ top: Math.max(0, sec.offsetTop - 12), behavior: 'auto' })
     }
     // b: Builder: the document itself, each section with its questions inline
@@ -275,12 +305,12 @@ Please:
         root.innerHTML = `${titleBar()}<section class="abpm-card abpm-pick"><p class="abpm-qn">Loading…</p></section>`
         if (S.x) {
             const ucs = S.x.use_cases || []
-            root.querySelector('.abpm-pick').innerHTML = `<p class="abpm-qn">${esc(S.x.subject)}</p><h2 class="abpm-qt">Which agent should the ABP be for?</h2><div class="abpm-choices">${ucs.map(u => { const ag = (S.x.agents || []).find(a => a.id === u.agent); return `<button type="button" class="abpm-choice" data-uc="${esc(u.id)}"><b>${esc(cleanName(ag ? ag.name : u.name))}</b><span>${esc(u.name)}</span><i>${(u.gap || []).length} in the gap</i></button>` }).join('')}<button type="button" class="abpm-choice ghost" data-own="1"><b>Another agent</b><span>Start from the safe defaults</span></button></div>${PRIV}`
+            root.querySelector('.abpm-pick').innerHTML = `<p class="abpm-qn">${esc(S.x.subject)}</p><h2 class="abpm-qt">Which agent should the ABP be for?</h2><div class="abpm-choices">${ucs.map(u => { const ag = (S.x.agents || []).find(a => a.id === u.agent); return `<button type="button" class="abpm-choice" data-uc="${esc(u.id)}"><b>${esc(cleanName(ag ? ag.name : u.name))}</b><span>${esc(u.name)}</span><i>${(u.gap || []).length} in the gap</i></button>` }).join('')}<button type="button" class="abpm-choice ghost" data-own="1"><b>Another agent</b><span>Start from the safe defaults</span></button></div>`
             return
         }
         const idx = await loadIndex()
         if (S.phase !== 'pick' || S.x) return
-        root.querySelector('.abpm-pick').innerHTML = `<h2 class="abpm-qt">Which company's agent?</h2><p class="abpm-lede">Pick a company we have X-rayed and the answers are suggested from its X-ray. Or start from the safe defaults.</p><div class="abpm-choices">${idx.map(s => `<button type="button" class="abpm-choice" data-x="${esc(s.slug)}"><b>${esc(s.subject)}</b><span>${esc(s.kind || '')}</span></button>`).join('')}<button type="button" class="abpm-choice ghost" data-own="1"><b>My own agent</b><span>No X-ray: start from the safe defaults</span></button></div><p class="abpm-lede"><a href="${up}xray/index.html">X-ray a company first →</a></p>${PRIV}`
+        root.querySelector('.abpm-pick').innerHTML = `<h2 class="abpm-qt">Which company's agent?</h2><p class="abpm-lede">Pick a company we have X-rayed and the answers are suggested from its X-ray. Or start from the safe defaults.</p><div class="abpm-choices">${idx.map(s => `<button type="button" class="abpm-choice" data-x="${esc(s.slug)}"><b>${esc(s.subject)}</b><span>${esc(s.kind || '')}</span></button>`).join('')}<button type="button" class="abpm-choice ghost" data-own="1"><b>My own agent</b><span>No X-ray: start from the safe defaults</span></button></div><p class="abpm-lede"><a href="${up}xray/index.html">X-ray a company first →</a></p>`
     }
 
     function setUrl() {
@@ -335,6 +365,7 @@ Please:
         }
     })
     root.addEventListener('click', e => {
+        const sm = e.target.closest('.abpm-sec > summary'); if (sm) { const d = sm.parentElement; if (d.open) S.open.delete(d.dataset.sec); else S.open.add(d.dataset.sec); return }
         const b = e.target.closest('button, a'); if (!b || !root.contains(b)) return
         const act = b.dataset.act
         if (b.dataset.go != null) return go(+b.dataset.go)
@@ -352,8 +383,9 @@ Please:
         if (act === 'copy') return copyMd(b)
         if (act === 'claude') b.href = claudeUrl()   // the newest answers, then the link opens as usual
     })
-    addEventListener('beforeprint', () => document.body.classList.add('abpm-print'))
-    addEventListener('afterprint', () => document.body.classList.remove('abpm-print'))
+    let shut = []
+    addEventListener('beforeprint', () => { document.body.classList.add('abpm-print'); shut = [...root.querySelectorAll('details.abpm-sec:not([open])')]; shut.forEach(d => { d.open = true }) })
+    addEventListener('afterprint', () => { document.body.classList.remove('abpm-print'); shut.forEach(d => { d.open = false }); shut = [] })
     // coming back with the Back button must not show the last visitor's answers
     addEventListener('pageshow', e => { if (e.persisted) restart() })
 

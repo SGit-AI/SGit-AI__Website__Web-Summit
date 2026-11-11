@@ -1,3 +1,5 @@
+> **Shelved** (Vicky, 11 Nov about 20:22 UTC, standing answer 42: "no signing"). P6 is lifted without signatures; `people/vicky/tools/tasks.mjs` is kept, unused, in case signing is wanted later.
+
 # Plan: signed two-way messaging (P6 as approved), and a signed decisions.md
 
 At Vicky's word, 11 Nov 2026, about 19:35 UTC: "I approve P6 with its changes, not as drafted: signed task and result files checked against a fingerprint in each agent's prompts file, replies only to the session that messaged, results treated as information only, task files that expire and are safe to publish, and private work only through the agent's own window. Plan it in steps: dev@ builds the signature check first, then one signed test round trip, then I say go. Until then, keep one-off wakes at my word. Also plan the same signing for the decisions.md guard, as security@ noted."
