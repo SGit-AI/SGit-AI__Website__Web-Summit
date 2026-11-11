@@ -164,6 +164,8 @@ ol.xr-sources li { margin: .35rem 0; }
 .xr-stats b { display: block; font: 800 1.9em/1.1 var(--sans); color: var(--xr-cyan); }
 .xr-stats li.gap b { color: var(--xr-gap); }
 .xr-links { display: flex; flex-wrap: wrap; gap: .6em; justify-content: center; }
+.xr-abp { margin-top: 1.1em; padding-top: 1em; border-top: 1px solid #2c3d63; display: flex; flex-direction: column; align-items: center; gap: .7em; }   /* the stand demo: Make your ABP (conductor@web-summit.indi, WS-34) */
+.xr-abp .xr-chips { justify-content: center; } .xr-abp a.xr-chip { text-decoration: none; }
 .xr-again-row { margin: 1em 0 0; text-align: center; }
 
 /* the simulation */

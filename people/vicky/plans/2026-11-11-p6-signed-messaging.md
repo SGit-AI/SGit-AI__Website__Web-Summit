@@ -40,6 +40,6 @@ Today agents follow an entry if its commit title and Agent line name the conduct
 3. **History:** agents fetch enough history before any git-log guard check (`git fetch --deepen=200`), since a shallow clone shows the wrong first author (security@'s note).
 4. **Rollout:** dev@ adds `--no-expiry` in step 1; the conductor signs the current file once; the pin and the check go into every prompts file in the same decisions.md entry as P6's step 2; the old title-and-Agent-line guard stays as a second check.
 
-## Also noted for dev@ (security@, not part of P6)
+## Closed: the gate's article signature check
 
-The gate's check 8 only checks that an article's `.sig` names a signer, not that it is valid; `admin/tools/signoff.mjs verify` shows how to check it properly. That gate belongs to the team site's owners: dev@ raises it with them in a commit, it does not change it.
+security@ noted that the gate's check 8 only checks that an article's `.sig` names a signer. Vicky, 11 Nov about 19:50 UTC: "No need to raise the gate items with the team site owners. Close it." Closed; nobody raises it.

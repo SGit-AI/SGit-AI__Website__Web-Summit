@@ -10,7 +10,7 @@ last digest: 2026-11-11T11:25Z (team updates: WS-215 Lisbon Fringe, the storm, w
 
 ## Before compaction (11 Nov, about 17:35 UTC): open with Angelo, in order
 1. **Offers 1 and 2: PARKED** (Angelo, 11 Nov: "Let's park the offers, as we're now working with conductor.fringe@ on an article on the website to clarify how to model agentic semantics and at the same time working on the offers market experiments with Dinis."). Was: offer 1 (people/angelo/pipeline/b3-team-offers/offer-1-our-approach.md, with crafts and skills): send, with the picture page https://web-summit.sgit.ai/people/angelo/pipeline/how-it-works/ as its first link? Recommended yes: one board item for everyone and a commit For: each person's conductor. Offer 2 waits until the capacity board and claim tool exist (handover-market.pm@'s project).
-2. **The accountant routine** (trig_01CvoEzp8UjqACZ2EXV3hnFW) has no repository: Angelo attaches SGit-AI/SGit-AI__Website__Web-Summit in its routine settings, or conductor.b@ pauses it. The hourly digest (trig_019P5mmH76wN24vNXQTvbU5C) is paused; digests are gathered on demand.
+2. **(still open)** **The accountant routine** (trig_01CvoEzp8UjqACZ2EXV3hnFW) has no repository: Angelo attaches SGit-AI/SGit-AI__Website__Web-Summit in its routine settings, or conductor.b@ pauses it. The hourly digest (trig_019P5mmH76wN24vNXQTvbU5C) is paused; digests are gathered on demand.
 3. **b1's last question:** share the accountant's reports with Indi's conductor? Recommended: not now.
 4. **Leads waiting on him:** prod-pipeline.pm@ (asked "shall I take A?"; its next wake should decide by default); handover-market.pm@ (said it would show a pull request: tell it no pull requests, push to its branch); conductor.fringe@ (which of Dinis's four altitudes MVPs; an OpenRouter key for MVP 1 is Dinis's credit, tier 3).
 5. **Usage:** the percentage from Angelo's usage page, to calibrate account B's window against today's spend (about 64 USD by 17:22; the window resets 19:40 UTC).
@@ -20,6 +20,8 @@ last digest: 2026-11-11T11:25Z (team updates: WS-215 Lisbon Fringe, the storm, w
 Route only; never build. Workers: session-less, 20 slots (10 large, 10 small), prompt = preamble + craft + skills + format + name (people/angelo/pipeline/ROLES.md); never a large step on a small slot; no ceiling while usage lasts. Projects: one PM each (<project>.pm@), who starts its own workers and is woken by them through its routine (2-hour backstop), deciding by default below tier 3. Every agentic activity in a commit (runs.md, ledgers, costs in dollars and tokens). Review each branch onto dev, archive finished sessions. Talk to Angelo in formats/conductor.md (snapshot, then one point at a time). When usage runs short: hand over (the handover market, project handover-market).
 
 ## Open
+
+- **network-views.pm@** (session_01Xp7gj49w3HhKrhT64Gp1c1, wake trig_01D39RAzsMdheFWbiBWjttdi): new views of the agent network beside the old ones, started 19:44; Angelo: "Go ahead with the new pm." (relayed to it through its wake routine at 19:49). A first routine was created by mistake bound to conductor.b@'s own session and was deleted at once (trig_01HmFPSdVxxrswJsBuN4adPh).
 
 - **With conductor.fringe@ (Angelo directly):** an article on the Fringe site on how to model agentic semantics; the offers-market experiments with Dinis. conductor.b@ does not duplicate either. The overlap with handover-market.pm@ (its pattern 1 is a reply to Dinis's packet) stays: Angelo coordinates the two himself (11 Nov, to split, merge or leave both: "c").
 

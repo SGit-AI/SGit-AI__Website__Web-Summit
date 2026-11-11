@@ -1061,20 +1061,23 @@ ${list.length ? `<div class="cc-rows">${list.map(sessRow).join('')}</div>` : emp
     matchMedia('(prefers-color-scheme: light)').addEventListener?.('change', () => { if (store.get('theme', 'dark') === 'system') { applyTheme(); render() } })
 
     // the brain (My brain + Summit brain) on the command centres of Silvio, Angelo and Jose (dashboard@web-summit.silvio, 7 November)
-    const ENGINE = (document.currentScript && document.currentScript.src) || ''
+    const ENGINE = (document.currentScript && document.currentScript.src) || ''; let ENGV = (ENGINE.match(/\?v=[^&#]+/) || [''])[0]
     const brainFor = id => {
         if (window.CC_BRAIN || !id || !ENGINE) return Promise.resolve()
         window.CC_ME = id; window.CC_FIRST = FIRST
-        const base = ENGINE.replace(/[^/]*$/, ''), css = document.createElement('link'); css.rel = 'stylesheet'; css.href = base + 'brain.css'; document.head.appendChild(css)
-        return new Promise(ok => { const s = document.createElement('script'); s.src = base + 'brain.js'; s.onload = s.onerror = () => ok(); document.head.appendChild(s) })
+        const base = ENGINE.replace(/[^/]*$/, ''), css = document.createElement('link'); css.rel = 'stylesheet'; css.href = base + 'brain.css' + ENGV; document.head.appendChild(css)
+        // the site's version on every file this loads, so a release reaches every browser at once (not after its cache expires)
+        if (!ENGV) { const tag = [...document.scripts].map(s => s.src).find(u => /[?&]v=v?\d+\.\d+\.\d+/.test(u)); if (tag) ENGV = '?v=' + tag.match(/[?&]v=(v?\d+\.\d+\.\d+)/)[1] }
+        const ver = Promise.resolve()
+        return ver.then(() => new Promise(ok => { const s = document.createElement('script'); s.src = base + 'brain.js' + ENGV; s.onload = s.onerror = () => ok(); document.head.appendChild(s) }))
             .then(() => { if (window.CC_BRAIN && !VIEWS.some(v => v[0] === 'brain')) VIEWS.splice(VIEWS.findIndex(v => v[0] === 'ask') + 1, 0, ['brain', 'Universe', 'brain']) })
-            .then(() => new Promise(ok => { const css2 = document.createElement('link'); css2.rel = 'stylesheet'; css2.href = base + 'gamma.css'; document.head.appendChild(css2); const s = document.createElement('script'); s.src = base + 'gamma.js'; s.onload = s.onerror = () => ok(); document.head.appendChild(s) }))
+            .then(() => new Promise(ok => { const css2 = document.createElement('link'); css2.rel = 'stylesheet'; css2.href = base + 'gamma.css' + ENGV; document.head.appendChild(css2); const s = document.createElement('script'); s.src = base + 'gamma.js' + ENGV; s.onload = s.onerror = () => ok(); document.head.appendChild(s) }))
             .then(() => { const g = window.CC_EXTRA && window.CC_EXTRA.views && window.CC_EXTRA.views.gamma; if (g && !VIEWS.some(v => v[0] === 'gamma')) { XV.gamma = g; V.gamma = () => g.render(); VIEWS.splice(VIEWS.findIndex(v => v[0] === 'brain') + 1, 0, ['gamma', 'GAMMA-Ray', 'flag']) } })
-            .then(() => new Promise(ok => { const css3 = document.createElement('link'); css3.rel = 'stylesheet'; css3.href = base + 'tokens.css'; document.head.appendChild(css3); const s = document.createElement('script'); s.src = base + 'tokens.js'; s.onload = s.onerror = () => ok(); document.head.appendChild(s) }))
+            .then(() => new Promise(ok => { const css3 = document.createElement('link'); css3.rel = 'stylesheet'; css3.href = base + 'tokens.css' + ENGV; document.head.appendChild(css3); const s = document.createElement('script'); s.src = base + 'tokens.js' + ENGV; s.onload = s.onerror = () => ok(); document.head.appendChild(s) }))
             .then(() => { const tk = window.CC_EXTRA && window.CC_EXTRA.views && window.CC_EXTRA.views.tokens; if (tk && !VIEWS.some(v => v[0] === 'tokens')) { XV.tokens = tk; V.tokens = () => tk.render(); VIEWS.splice(VIEWS.findIndex(v => v[0] === 'gamma') + 1, 0, ['tokens', 'Tokens', 'reports']) } })
-            .then(() => new Promise(ok => { const s = document.createElement('script'); s.src = base + 'stand.js'; s.onload = s.onerror = () => ok(); document.head.appendChild(s) }))
+            .then(() => new Promise(ok => { const s = document.createElement('script'); s.src = base + 'stand.js' + ENGV; s.onload = s.onerror = () => ok(); document.head.appendChild(s) }))
             .then(() => { const st = window.CC_EXTRA && window.CC_EXTRA.views && window.CC_EXTRA.views.stand; if (st && !VIEWS.some(v => v[0] === 'stand')) { XV.stand = st; V.stand = () => st.render(); VIEWS.splice(VIEWS.findIndex(v => v[0] === 'brain'), 0, ['stand', 'Universo ✦', 'brain']) } })
-            .then(() => new Promise(ok => { const s = document.createElement('script'); s.src = base + 'shell.js'; s.onload = s.onerror = () => ok(); document.head.appendChild(s) }))
+            .then(() => new Promise(ok => { const s = document.createElement('script'); s.src = base + 'shell.js' + ENGV; s.onload = s.onerror = () => ok(); document.head.appendChild(s) }))
             .then(() => { const gv = window.CC_EXTRA && window.CC_EXTRA.views && window.CC_EXTRA.views.gravity; if (gv && !VIEWS.some(v => v[0] === 'gravity')) { XV.gravity = gv; V.gravity = () => gv.render(); VIEWS.splice(VIEWS.findIndex(v => v[0] === 'stand') + 1, 0, ['gravity', 'Gravity', 'brain']) } })
     }
     fetch(root.dataset.src || 'data.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json() }).then(d => { (d.issues || []).forEach(i => { if (/^in.progress$/i.test(i.status)) i.status = 'picked' }); D = d; ME = d.person.id; FIRST = (d.person.name || ME).split(' ')[0]; D.connectors = d.connectors || {}; Object.assign(PROMPTS, d.prompts || {}); brainFor(ME).then(render) })
