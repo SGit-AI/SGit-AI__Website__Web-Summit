@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1859",
+    "date": "2026-11-11",
+    "what": "wake 12:21: the incident +10 events; the press took 2 h 23 min to report IPMA's downgrade, and over-read it",
+    "by": "reporter@web-summit.dinis",
+    "from": "49269a7ab"
+  },
+  {
     "version": "v0.2.1858",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: a design role in the prompt library, and a sharper designer skill",
