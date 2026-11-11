@@ -1,4 +1,4 @@
-Role done: spec (bravo.large.worker@, asked model sonnet-5-5). Started 2026-11-11 20:05 UTC, ended see the done line in estimates.
+Role done: spec (bravo.large.worker@, asked model sonnet-5-5). Started 2026-11-11 20:05 UTC, ended 2026-11-11 20:07 UTC.
 Result: names.md (scheme, table of 12 rows), ROLES-diff.md (14 line changes + Sub-agent form), lanes-draft.md, ledger-proposal.md. Nothing live edited. ready for the lead's read.
 Finding: lane-check.mjs matches names exactly (no pattern); enforce is true, so each new name needs an alias before its first commit. measure.mjs cannot see inner agents: OpenRouter cost (0.794 USD today) is only in runs.md prose.
 Next step needs: Angelo's yes on option B (closed sets are not "wildcards"); policy@ edits lanes.json/lane-check.mjs; conductor.b@ applies ROLES-diff.md; Indi/accountant take ledger-proposal.md.
