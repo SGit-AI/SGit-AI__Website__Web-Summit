@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1877",
+    "date": "2026-11-11",
+    "what": "ANA's own newsroom read at source: airport figures at 11:00 are now a fact (figures and link, per ANA's terms)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "10dc6012f"
+  },
+  {
     "version": "v0.2.1876",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: alpha started on b3-team-offers (spec)",
