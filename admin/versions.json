@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1868",
+    "date": "2026-11-11",
+    "what": "IPMA cuts Lisbon warnings (CAP 12:33:13): red rain to 15:00 then yellow; orange wind to 18:00, gusts to 90 km/h; analysis 19",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "393305038"
+  },
+  {
     "version": "v0.2.1867",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: what a digest request is, in the conductor format",
