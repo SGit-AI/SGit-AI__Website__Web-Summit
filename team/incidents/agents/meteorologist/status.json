@@ -1,6 +1,6 @@
 {
  "agent": "incident.meteorologist@web-summit.dinis",
- "state": "22:22 wake done: quiet; only yellow sea to Thu 03:00; analysis 30.",
+ "state": "23:00: CAP batch 22:43:28: yellow rain for Thursday in the north (Aveiro, Braga, Porto, Viana do Castelo, Vila Real, Viseu); nothing for Lisboa.",
  "last_wake": "2026-11-11T22:23Z",
  "jobs": [
   "J1 (tonight): the weather as JSON for the dashboard, in team/incidents/2026-11-10-the-storm/data/weather/ with a README per file: IPMA warnings for Lisboa (every level change with the time IPMA issued it and the time read), communiqués, Lisbon station observations (hourly), LPPT TAF and METAR (gusts). Read Vicky's desk's watch.mjs and snapshots (desks/weather-vicky/, read-only) and do not duplicate it: go deeper (series, not snapshots).",
@@ -27,7 +27,7 @@
   "23:55: every weather file now carries next_read_utc (the next :22 refresh), at incident.conductor@'s request for the librarian's now.json.",
   "12:47: MeteoAlarm's feed served an older copy on some reads (196 messages at 12:47:01, 198 at 12:47:06); a refresh can miss a message the poll saw minutes earlier. Refresh is re-run until it matches."
  ],
- "updated": "2026-11-11T22:25Z",
+ "updated": "2026-11-11T23:01Z",
  "by": "incident.meteorologist@web-summit.dinis",
  "key": {
   "fingerprint": "sha256:ecbf013bbf6722e7",
@@ -240,6 +240,13 @@
   },
   {
    "started_utc": "2026-11-11T22:25Z",
+   "ended_utc": "2026-11-11T22:59:19Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages, and any new batch for any district",
+   "result": "new batch elsewhere: sent 22:43:28, nine yellow-rain alerts for Thursday in the north; nothing for Lisboa or Madeira; conductor told at once"
+  },
+  {
+   "started_utc": "2026-11-11T23:01Z",
    "ended_utc": null,
    "limit": "70 min",
    "scope": "Lisbon and Madeira CAP messages, and any new batch for any district"

@@ -1,7 +1,7 @@
 {
  "about": "IPMA's aeronautical forecast (TAF) and observations (METAR) for Lisbon airport (LPPT), 8 km north of the centre, read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport; not a public warning.",
  "icao": "LPPT",
- "read_utc": "2026-11-11T22:23:24Z",
+ "read_utc": "2026-11-11T22:59:31Z",
  "taf": {
   "issue_utc": "2026-11-11T17:00Z",
   "raw": "TAF LPPT 111700Z 1118/1224 29013KT 9999 SCT020 TEMPO 1200/1218 4000 SHRA BKN018 FEW020CB BECMG 1200/1202 23013KT TEMPO 1210/1218 23017G27KT",
@@ -66,7 +66,7 @@
    }
   ],
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-11T22:23:24Z"
+  "read_utc": "2026-11-11T22:59:31Z"
  },
  "taf_history": [
   {
@@ -1715,6 +1715,20 @@
    "pressure_hpa": 998,
    "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
    "read_utc": "2026-11-11T22:22:59Z"
+  },
+  {
+   "time_utc": "2026-11-11T22:30Z",
+   "raw": "METAR LPPT 112230Z 27008KT 230V310 9999 -SHRA FEW014 17/15 Q0999 NOSIG",
+   "wind_dir": 270,
+   "wind_kt": 8,
+   "gust_kt": null,
+   "wind_kmh": 15,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": "-SHRA",
+   "pressure_hpa": 999,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
+   "read_utc": "2026-11-11T22:59:31Z"
   }
  ],
  "max_gust": {

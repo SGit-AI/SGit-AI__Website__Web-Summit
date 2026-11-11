@@ -1,10 +1,10 @@
 {
  "thursday": {
   "about": "Thursday 12 November (Web Summit's day 3): every IPMA warning for Lisbon that touches Thursday, and what IPMA's model and the airport TAF say for Thursday morning (00:00-12:00 UTC = Lisbon time). Facts, each with its source; no analysis here.",
-  "read_utc": "2026-11-11T22:23:24Z",
+  "read_utc": "2026-11-11T22:59:31Z",
   "lisbon_warnings_touching_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T22:23:24Z",
+   "read_utc": "2026-11-11T22:59:31Z",
    "items": [
     {
      "type": "Agitação Marítima",
@@ -13,7 +13,7 @@
      "end_utc": "2026-11-12T03:00:00Z",
      "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
      "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-     "read_utc": "2026-11-11T22:23:24Z",
+     "read_utc": "2026-11-11T22:59:31Z",
      "sent_utc": "2026-11-10T07:18:40Z",
      "text_en": "SW waves 4 to 5 metres.",
      "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
@@ -23,7 +23,7 @@
   },
   "ipma_model_thursday_morning": {
    "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-   "read_utc": "2026-11-11T22:23:24Z",
+   "read_utc": "2026-11-11T22:59:31Z",
    "model_updated_local": "2026-11-11T07:56:49",
    "wind_mean_kmh_range": [
     15.1,
@@ -224,8 +224,8 @@
   },
   "ipma_daily_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-   "read_utc": "2026-11-11T22:23:24Z",
-   "updated_local": "2026-11-11T21:31:02",
+   "read_utc": "2026-11-11T22:59:31Z",
+   "updated_local": "2026-11-11T22:31:02",
    "precipitaProb": "100.0",
    "tMin": "15.8",
    "tMax": "20.5",
@@ -248,7 +248,7 @@
   },
   "taf_groups_into_thursday": {
    "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-   "read_utc": "2026-11-11T22:23:24Z",
+   "read_utc": "2026-11-11T22:59:31Z",
    "taf_issue_utc": "2026-11-11T17:00Z",
    "taf_valid_to_utc": "2026-11-13T00:00Z",
    "groups": [
@@ -1027,6 +1027,16 @@
    "read_utc": "2026-11-11T22:23:24Z",
    "changes": [
     "no change"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T22:59:31Z",
+   "changes": [
+    "THURSDAY: warnings yellow Agitação Marítima 11T21:00-12T03:00; model Thu 00-12 mean wind 15.1-22.0 km/h",
+    "stations to 22:00: top mean wind 20.9 km/h at Lisboa, Relógio",
+    "LPPT METAR 22:30: 15 km/h",
+    "LPMA METAR 22:30: 11 km/h"
    ],
    "errors": []
   }
