@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1819",
+    "date": "2026-11-11",
+    "what": "06:25 wake refresh; CAP poll restarted",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "fa6608b1f"
+  },
+  {
     "version": "v0.2.1818",
     "date": "2026-11-11",
     "what": "wake 06:22: the incident +8 events; the first decision to stop (the hold on websummit.com, 05:25)",
