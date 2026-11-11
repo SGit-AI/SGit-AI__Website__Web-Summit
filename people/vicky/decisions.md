@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **49** step 2 approved (About check, curator evidence; agenda not re-sourced), from Friday; lisbontechfringe.com (Indi's app) counts as another source for events, as a pointer.
 - **48** takedown step 2: data another source confirms stays, re-cited; Dinis's agents' data follows his conductor; Vicky's desks' checks proposed first.
 - **47** takedown step 1: the 13 A-group articles and S44, S47, S49 withdrawn (notice "Withdrawn on 11 November 2026."); S58 the front-page lead first; derived data waits for Dinis.
 - **46** GitHub degraded: one retry, then hold and report; never loop; SKIP_LIVE=1.
@@ -259,6 +260,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Dinis's agents' data** (people, organisations, places, companies, events, the build): follow his conductor; Vicky's agents change none of their files.
     - **Vicky's desks' data** (the agenda, the researcher's list, the company About texts, the curator's evidence): the conductor proposes the checks and their cost first (`people/vicky/plans/2026-11-11-web-summit-takedown.md`, step 2); nothing starts before Vicky's yes.
     - Step 1 (standing answer 47) continues. Afterwards the conductor lists the withdrawn articles whose facts can be re-sourced.
+
+49. **Step 2 approved; Indi's app as a source for events** (Vicky, 11 Nov, about 21:35 UTC, in this window: "Conductor: yes to step 2 as recommended (About check, curator evidence; agenda not re-sourced)." and "Dinis also said can use "Indi's app" is lisbontechfringe.com. Count it as another source for events, used as a pointer as before, with each fact checked and cited at the organiser's own page.")
+    - **Step 2, as in the plan:** dev@ writes the About-claims script; journalist-portugal, journalist-europe and journalist-ai re-source or cut the About claims that rest only on Web Summit; the reviewer checks and releases; the curator re-cites or marks withdrawn its Web Summit evidence captures. The agenda is not re-sourced. Runs from Friday 13 Nov (after the summit), about 10 to 20 dollars API-equivalent.
+    - **lisbontechfringe.com (Indi's app)** counts as another source for events in the sense of standing answer 48, still a pointer only (standing answer 31, rule 5): each fact is checked and cited at the organiser's own page.
 
 ## Updates for agents
 
