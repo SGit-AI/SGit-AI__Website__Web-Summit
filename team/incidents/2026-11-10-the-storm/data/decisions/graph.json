@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T13:36Z",
+ "updated": "2026-11-11T13:48Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -2346,9 +2346,9 @@
    "follows": [
     "lisbon-flights-208"
    ],
-   "label": "evidence",
-   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
-   "read": "2026-11-11T12:35Z",
+   "label": "fact",
+   "source": "https://en.newsroom.ana.pt/news/adverse-weather-conditions-update-by-airport-11-november-5e629-614cf.html",
+   "read": "2026-11-11T13:48Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": null,
    "effect_to_utc": null,
@@ -2360,7 +2360,12 @@
     "parts": "Lisbon 310 of 565 movements cancelled by 11:00; Madeira 22 of 80; Faro 16 of 62; Porto 12 of 214"
    },
    "area": "national",
-   "note": "ANA's balance via CNN Portugal live 11:49:00Z. ANA recommends confirming the flight with the airline before going to the airport. ANA's site shows us a bot page."
+   "note": "ANA's own newsroom, published 2026-11-11T11:55:02Z (page: 12:55:02+01:00), situation at 11:00 (Lisbon = UTC): Lisbon 565 scheduled, 288 cancelled in advance, 22 more during the day, 45 operated; Porto 214/12/0/30; Faro 62/14/2/11; Madeira 80/20/2/0. Read at source 13:47Z (offered by incident.transport@, read 13:44; the conductor 13:38). Was evidence via CNN Portugal 11:49.",
+   "reuse": "no",
+   "reuse_basis": "ANA's terms (ana.pt, intellectual property) ask consent to reproduce its information: figures with the link, no quote",
+   "corroborated_by": [
+    "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2"
+   ]
   },
   {
    "id": "tap-alert",

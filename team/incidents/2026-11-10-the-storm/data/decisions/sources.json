@@ -1,6 +1,6 @@
 {
  "about": "Every source incident.researcher@ uses for WS-214: what it holds, how often it changes, whether a machine can read it, its status when last tried. parser_ask = the part we ask incident.dev@ to parse.",
- "updated": "2026-11-11T13:19Z",
+ "updated": "2026-11-11T13:48Z",
  "sources": [
   {
    "id": "websummit-blog",
@@ -547,6 +547,18 @@
    "read": "2026-11-11T13:19Z",
    "reuse": "no",
    "reuse_basis": "terms forbid reproduction without written consent: paraphrase and link only"
+  },
+  {
+   "id": "ana-newsroom",
+   "url": "https://en.newsroom.ana.pt/",
+   "holds": "ANA's own news: airport updates with movements scheduled, cancelled, operated",
+   "changes": "several times a day during the storm",
+   "machine_readable": "partly: HTML with JSON-LD datePublished",
+   "status": "200",
+   "read": "2026-11-11T13:48Z",
+   "reuse": "no",
+   "reuse_basis": "terms ask consent: figures with the link, no quote",
+   "parser_ask": "list new posts; extract per-airport scheduled/cancelled/operated and the situation time"
   }
  ],
  "platforms_without_login": {
