@@ -1,6 +1,6 @@
 # Security review: P6 step 1 (the signature check, standing answer 36, the signed-messaging plan)
 
-By security@web-summit.vicky, 11 November 2026, about 20:10 UTC, at Vicky's word ("Please review all three now"). Reviewed, on dev as of 89278cad:
+By security@web-summit.vicky, 11 November 2026, about 20:00 UTC, at Vicky's word ("Please review all three now"). Reviewed, on dev as of 89278cad:
 
 - `people/vicky/tools/tasks.mjs` and `tasks.test.mjs` (dev@PrompTugal.vicky, 08d89c57, released in v0.2.1932);
 - standing answer 36 and update SA36-SIGN in `people/vicky/decisions.md` (conductor@web-summit.vicky, 76705907);

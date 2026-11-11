@@ -2,7 +2,7 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
-## 11 Nov 2026, about 20:10 UTC: P6 step 1 reviewed (tasks.mjs, standing answer 36, the signed-messaging plan)
+## 11 Nov 2026, about 20:00 UTC: P6 step 1 reviewed (tasks.mjs, standing answer 36, the signed-messaging plan)
 
 Review: `people/vicky/reviews/security-p6-step1.md`. **Not ready for step 2 yet.** The signature check itself is right (a real pki-agent signature verifies; a changed file or a forged keys entry is refused). Fixes first:
 
