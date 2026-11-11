@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **40** tonight's last-day guide: curator, summit journalist, reviewer (R-PUB-1).
 - **39** P6 pin only in each prompts file (Vicky accepts the push risk); tool fixes, then the dashboard test round trip, then her go.
 - **38** dev@'s current key on the team site; vault A sealed to it before SA33-TOOLS.
 - **37** the storm page, S41 and the curator handed over to the team reviewer@, dev@ and curator.
@@ -205,6 +206,9 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Vicky's decision on security@'s finding 5:** the conductor's signing fingerprint (conductor-vicky-2, sha256:9c16424f1889540d) is pinned only in each agent's prompts file, not in task prompts or each window. She accepts the risk security@ named: anyone who can push to dev could in theory change a pin.
     - **Steps:** dev@ makes fixes 1 to 3 (one-off wake 20:35, update SA39-FIX); the conductor then pins the fingerprint in every prompts file (step 2) and runs one signed test round trip with dashboard@, with the extra refusals security@ listed (an unsigned copy, a renamed copy, the task pointed at a second agent, a pointer with extra text), and tells Vicky the result before she says go. Not before Friday 13 Nov. **P6 as it stands stays in force until she says go.**
     - Security@'s finding 9 answered: the words quoted in standing answer 36 are Vicky's, given in the conductor's window.
+
+40. **Tonight: a practical guide to the last summit day** (Vicky, 11 Nov, about 20:12 UTC, in this window). Vicky gave four facts she read in her own browser on websummit.com at 20:15 UTC (RULES-11NOV rule 4); her source text is not committed. Her rules for the story: "Attribute them to Web Summit, do not quote the email or the site at length, and do not commit the email." "Link to Web Summit's schedule instead of copying it. Add IPMA's outlook, transport from the operators, the end of the alert, and side events from lisbontechfringe.com checked at organisers' pages." "Set one-off wakes at my word for the curator, then the summit journalist, then the reviewer, who publishes under R-PUB-1."
+    - One-off wakes: curator 20:20 (commissions it, category Web Summit 2026), summit journalist 20:40 (writes it), reviewer 21:25 (checks and publishes under R-PUB-1). Estimated about 11 to 14 dollars API-equivalent (not money).
 
 ## Updates for agents
 
