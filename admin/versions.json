@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1782",
+    "date": "2026-11-11",
+    "what": "00:33 wake: no change to Day 3; the alert in force since 00:00; IPMA unchanged",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "090f4db6f"
+  },
+  {
     "version": "v0.2.1781",
     "date": "2026-11-11",
     "what": "00:23 wake refresh",
