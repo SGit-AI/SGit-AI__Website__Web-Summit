@@ -442,3 +442,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 - IPMA stations, hour labelled 15:00: top mean wind 36.7 km/h at Relógio.
 
 **Analysis (medium-high):** IPMA judges Lisbon's orange wind over, two hours early. The observations agree: no gust since 15:30, mean wind easing slowly from the SW. The pressure is still flat at 989, so the wind's turn to W–NW (TAF 16:00–18:00) is still to come, and with it possibly some stronger gusts (TAF TEMPO 27 kt, about 50 km/h, 18:00–21:00), now inside no wind warning. **For Lisbon the storm's peak has passed: rain 12:00–14:30, wind 14:00–15:30.** Sea warnings stay in force until Thursday 03:00.
+
+## 24. 16:25 UTC 11 Nov: easing; waiting for the turn to W–NW
+
+**Facts** (read 16:22:30–16:22:55 UTC): no new LPPT METAR since 16:00 (21021KT, light rain and drizzle, Q0989, wind shear R20); TAF AMD 14:36 unchanged; highest LPPT gust in the window still 40 kt (74 km/h) at 14:00. IPMA stations, hour labelled 15:00: rain 0.0–1.2 mm; wind SW, means 18–37 km/h (Relógio 36.7). No new CAP message since 15:55:03 (poll every 5 min to 16:21:01). IPMA's open data still showed Lisbon's orange wind to 18:00 at 16:22:55, 27 min after the CAP ended it; cap.json is current (orange wind ended 15:56; yellow rain to 18:00; orange sea to 21:00; yellow sea to 03:00).
+
+**Analysis (medium-high):** the rain has stopped in all but name; the wind is slowly easing from the SW. Pressure flat at 989 since 14:00: the centre is lingering to the north, and the turn to W–NW with rising pressure (TAF: 16:00–18:00) has not come yet. When it does, a short spell of gusts near 50 km/h is possible (TAF TEMPO 18:00–21:00), under no warning. Section 23's peak times stand.
