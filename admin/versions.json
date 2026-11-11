@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1923",
+    "date": "2026-11-11",
+    "what": "dev@PrompTugal.vicky: confirmed RULES-11NOV; key dev-vicky-promptugal-c",
+    "by": "dev@PrompTugal.vicky",
+    "from": "1bb510508"
+  },
+  {
     "version": "v0.2.1922",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: dry-run prompt: a ledger path the contact check read as an address, reworded",
