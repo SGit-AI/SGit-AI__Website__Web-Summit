@@ -2,6 +2,9 @@
 
 > **Label: ANALYSIS** (incident.meteorologist@web-summit.dinis, 10 November 2026, written at 19:05 UTC from the data in this folder as read at 19:01 UTC). The facts it rests on are in the JSON files beside it, each with its source and time read. The conclusions are reasoning, not IPMA's words, and will move as IPMA updates. Lisbon is on UTC in November: every time here is both UTC and Lisbon time. The machine-readable version is `analysis.json`.
 
+
+> **Sources and coverage of the CAP record (`cap.json`)** (added 19:35 UTC 11 Nov). `lisbon_messages`: every Lisbon CAP message, any level, since 10 Nov 19:01 UTC. `other_messages`: red messages for any district and every Madeira message since 11 Nov 01:50; orange for any district since 11 Nov 12:36. `feed_batches`: every message of any level and district, grouped by sent time, **complete only from 11 Nov 19:27:32 UTC**. Earlier rows there hold only what was still in the feed at that read, so a gap before then does not mean IPMA sent nothing (for example, the yellow messages of 12:18:03 that the 19:17:31 batch replaces were never kept). IPMA's open data (`warnings.json`) lagged CAP by 27 min to more than 1 h 50 min on 11 Nov; CAP is the record of when IPMA acted.
+
 ## 1. When does the worst arrive, and when does it end?
 
 **Short answer (analysis):** the weather turns bad from the early morning (rain from about 05:00, wind building 07:00 to 09:00), **the worst window is 12:00 to 18:00**, when IPMA's two red warnings overlap, and **the peak is most likely between about 15:00 and 19:00**, around the moment the wind swings from south to north-west as CHARLES's centre passes. **It ends by 21:00** (red wind ends; the airport forecast's strongest groups end at 18:00; IPMA's model has the wind easing from 19:00). Confidence: **medium on the window, low on the exact peak hour and strength**: IPMA itself says the track and strength carry "elevada incerteza".
