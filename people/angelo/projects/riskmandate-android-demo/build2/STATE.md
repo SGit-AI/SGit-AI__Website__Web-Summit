@@ -1,0 +1,7 @@
+**build2 (build, alpha.large.worker@):** done, 11 Nov 22:54 to 23:20 UTC. Result: the X-Ray screen as a full embedded browser (any host over TLS, the page's own full-screen button, file picker, tapped links out to the browser), full screen at start with an Exit tab on the left edge (fades, returns on a tap) and Reload / Full screen above the page in the app's window. Android gate green locally (978 tests, lint, APK, AAB). Button table, before and after, in build.md.
+**Push refused** (add_repo push, this session's permission check): patch `0001-...-X-R.patch` here, on Android dev 683f9f7, `git am` gives the tested tree a8aa9b5.
+**Next step needs:** the lead pushes it to `angelo/riskmandate-xray-browser` (commands in build.md), then the check step and a real device (list in build.md).
+**Questions for conductor.b@ (recommendation first):**
+1. Site gate on this branch: 14 "no lane" failures for riskmandate-android-demo.pm@'s own commits (lanes.json has no entry for it); my commit passes (gate OK over its range). Recommend: policy@ adds the pm's lane before these files go to dev.
+2. Microphone/camera: not granted; the page never asks (its voice is Web Speech, absent in WebView); granting needs a manifest permission. Recommend: leave off unless Silvio's page moves to getUserMedia, then security.android reviews.
+3. Trusted Web Activity (real Chrome, needs assetlinks.json on web-summit.sgit.ai): recommend not now; build.md lists gains and losses.
