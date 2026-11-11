@@ -278,9 +278,9 @@ Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - SA26: reviewer, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, dev.
 - SA27 (added 9 Nov, 11:25; changed 13:40): inbox. (vault applied it at 11:35.)
 - SA28 (added 9 Nov, 14:15): programme, researcher, curator.
-- RULES-11NOV (added 11 Nov, 19:00): all 17 returning agents, and designer.
-- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: programme. SA35-WS: curator, journalist-portugal, reviewer. SA36-SIGN: dev.
-- SA29 (added 9 Nov, 23:50): researcher, curator (and "SA29 used" at the first regular run).
+- RULES-11NOV: all 18 confirmed by 20:00 on 11 Nov (people/vicky/confirmations.json).
+- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: done (programme, 11 Nov). SA35-WS: curator, journalist-portugal, reviewer. SA36-SIGN: dev.
+- SA29: applied by researcher and curator (10 Nov); "SA29 used" at their first regular runs still to report.
 
 Removed on 9 Nov once done or confirmed: SA13, SA15, SA18, SA19B, SA19C, SA22, SA25, PILOT-REPLIT, TRIAGE-REPLIT and OVERNIGHT-9NOV (closed at 04:40, people/vicky/company-pages/backlog.md).
 
