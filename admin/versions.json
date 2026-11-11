@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1801",
+    "date": "2026-11-11",
+    "what": "the alert's legal text read at source (Despacho n.º 13773-A/2026, DR 2nd series); the harbour master's Aviso 53/2026; four leads not established",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "928937bf9"
+  },
+  {
     "version": "v0.2.1800",
     "date": "2026-11-11",
     "what": "02:22 wake refresh",
