@@ -39,6 +39,7 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 - 2026-11-11 19:1x, standing rule for workers: "If one of the workers is not needed anymore, can you remove it from my list? We should never have stranded workers, if their work is interrupted, we should retire them. This way I can keep an eye on what's going on. Any worker I see should always be actively running, there should never be stopped workers around except for brief moments while their pm is busy." At every wake: any worker session that is idle, blocked, failed or interrupted is checked, its commits logged, and archived at once; its claim released.
 - 2026-11-11 19:4x: "Yes, go ahead with the OpenRouter worker" (one real step on OpenRouter Sonnet 5.5, the wrapper commits).
 - 2026-11-11 19:5x, on OpenRouter caps: "We're at the stage of experimentation, we don't need to worry too much about capping. We'll review if things get out of hand." From now: no per-step OpenRouter cap in briefs; the lead reports the running OpenRouter total in every update.
+- 2026-11-11 20:0x, on naming workers: "I think we need to include the environment in the name before the @. Also, let's be explicit about the model name. So alpha.opus-5-5.openrouter.worker? But we also have claude as an environment and chatgpt, etc."
 
 ## Open questions for Angelo
 (none open)
