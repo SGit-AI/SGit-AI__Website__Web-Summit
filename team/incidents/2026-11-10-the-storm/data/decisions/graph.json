@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-10T23:55Z",
+ "updated": "2026-11-11T00:33Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -343,7 +343,7 @@
    "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/governo-declara-situacao-de-alerta-em-todo-o-territorio-continental-1",
    "read": "2026-11-10T18:59Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "Declared before the red warnings were issued (red wind first read 14:23Z). Page dated 12:10 (Lisbon = UTC in November).",
+   "note": "Declared before the red warnings were issued (red wind first read 14:23Z). Page dated 12:10 (Lisbon = UTC in November). 00:33Z: in force since 00:00 (Lusa via Jornal de Negócios live, 00:09).",
    "effect_from_utc": "2026-11-11T00:00Z",
    "effect_to_utc": "2026-11-11T23:59Z",
    "effect_note": "\"entre as 00h00 e as 23h59 de 11 de novembro\" (the declaration)"
@@ -796,7 +796,7 @@
    ],
    "label": "fact",
    "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
-   "read": "2026-11-10T23:33Z",
+   "read": "2026-11-11T00:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed.",
    "corroborated_by": [
@@ -820,7 +820,7 @@
    ],
    "label": "fact",
    "source": "https://websummit.com/startups/pitch/",
-   "read": "2026-11-10T23:33Z",
+   "read": "2026-11-11T00:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31).",
    "effect_from_utc": null,
@@ -884,7 +884,7 @@
    ],
    "label": "fact",
    "source": "https://websummit.com/startups/pitch/",
-   "read": "2026-11-10T23:33Z",
+   "read": "2026-11-11T00:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "note": "Nothing on /startups/pitch/ (no schedule there at all), /startups/, /schedule/, the blog list or Bluesky at 22:05Z. Conflict on the original slot: incident.conductor@ has it on Wednesday 17:00 (source not given to us); Tech Times' preview (9 Nov) puts the semi-finals and final on Thursday 12 Nov. If Thursday, the closure may not move it. Where a move would appear: the blog list first (as on 10 Nov), then the schedule page and the app. 22:09Z: /schedule/ embeds only 7 featured sessions, all on 10 Nov, none PITCH: it cannot settle the slot. The full agenda (the app, or the API the schedule page calls) is not readable without a login or is under /api/, which robots.txt disallows. Conflict stays open until a Web Summit page settles it.",
    "conflict": [
@@ -916,7 +916,7 @@
    ],
    "label": "fact",
    "source": "https://websummit.com/essentials/schedule/",
-   "read": "2026-11-10T23:33Z",
+   "read": "2026-11-11T00:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "note": "Still listed for Wednesday on the essentials page at 22:05Z, with no notice. The organisers' 19:09 page says only that Day 2 will not take place. Wind is red until 21:00 Wednesday.",
    "effect_from_utc": null,
@@ -973,7 +973,7 @@
    ],
    "label": "fact",
    "source": "https://www.metrolisboa.pt/",
-   "read": "2026-11-10T23:33Z",
+   "read": "2026-11-11T00:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "also_by": [
     "carris",
