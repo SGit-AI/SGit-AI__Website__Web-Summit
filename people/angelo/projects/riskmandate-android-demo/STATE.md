@@ -11,6 +11,7 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - PrompTugal/PrompTugal__App__Android exists, run by conductor.android@promptugal.ai for Dinis; dev builds like 0.1.78; first on-device chat (Gemma 4) on the team's tablet (board WS-203, 9 Nov).
 - WS-203's row "The RiskMandate app (demos, videos)" is open: nobody has claimed it. Whether the repository has a RiskMandate module yet is unknown.
 - Angelo, 11 Nov: "Clone the repository PrompTugal/PrompTugal__App__Android into this session." Done: it is public, cloned read only (shallow, dev at 653320a) at /home/user/promptugal/promptugal__app__android; no push access. The spec worker reads it in its own session too.
+- Angelo, 11 Nov about 21:25 UTC: "You should be able to push in that repo." The repository is now attached to the lead's session with push access (clone at /home/user/promptugal__app__android; a dry-run push of a branch was accepted). The lead still builds nothing there itself: workers do, and the lead can push a fallback patch if a worker's push is refused.
 
 ## Options for the entry (the spec weighs them; lead's working view)
 - (a) A WebView screen in kiosk style: immersive full screen, keep screen on, reload on lost connection and a stall watchdog, locked to the page's origin, a hidden staff exit (corner long press plus PIN). **Lead's lean.**
