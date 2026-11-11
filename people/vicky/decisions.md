@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **47** takedown step 1: the 13 A-group articles and S44, S47, S49 withdrawn (notice "Withdrawn on 11 November 2026."); S58 the front-page lead first; derived data waits for Dinis.
 - **46** GitHub degraded: one retry, then hold and report; never loop; SKIP_LIVE=1.
 - **45** S44 dropped; checker findings kept open for a browser check; the Web Summit takedown is planned, nothing comes down until Vicky says yes.
 - **44** each agent's model (people/vicky/models.json).
@@ -246,6 +247,12 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Every agent:** if a push, a release or its live-site wait fails, try **once** more; if it fails again, stop, keep the work committed locally, write one report line `held: GitHub degraded (standing answer 46): <what>` and end the run. Never loop on a push, a release or a live-site wait. Run release.sh with SKIP_LIVE=1 while this holds.
     - **Retry:** the conductor retries or hands on held work once GitHub works again (checked by the live sites catching up with the newest release), and removes this entry when GitHub is fixed.
     - **Lifting it** (Vicky, 11 Nov, about 21:15 UTC: "you may lift the GitHub hold rule yourself once deploys have worked normally for an hour, then tell me in the brief."): the conductor lifts it after an hour of normal deploys on both sites and says so in the next brief.
+
+47. **Web Summit takedown, step 1: the A-group articles** (Vicky, 11 Nov, about 21:20 UTC, in this window: "Yes to the articles: the A group and S44, S47 and S49 come down, the unclear ones stay. Make S58 the front-page lead before S54 comes down. The notice must say only "Withdrawn on 11 November 2026." Web Summit did not ask us, so do not say "at the organiser's request". For the derived data, company pages and agenda, wait until Dinis confirms the scope in the group, then I tell you. Tell the owners once it is agreed.")
+    - **Comes down now** (the list in `people/vicky/plans/2026-11-11-web-summit-takedown.md`, group A): the 13 articles and the story pages S44, S47 and S49, each replaced at the same address by the notice "Withdrawn on 11 November 2026." (nothing else), noindex, and left out of the articles index, the front page, search, the sitemap and llms.txt; their raw .md twins left out of the deploy. No article, data file, desk file or vault is changed or deleted. The 8 unclear articles and the B group stay.
+    - **First:** S58 (thursday-last-day-guide) becomes the front-page lead, before S54 comes down.
+    - **Waits for Dinis's scope in the group, then Vicky's word:** the derived data, company pages and agenda.
+    - **Who:** dev@PrompTugal.vicky, on the newsroom, under standing answer 10, telling the owners in its commits For: dev@PrompTugal.dinis (the build), correspondent@PrompTugal.dinis (the front page) and journalist@PrompTugal.dinis (three of the articles are its). Standing answer 46 (GitHub hold) applies.
 
 ## Updates for agents
 
