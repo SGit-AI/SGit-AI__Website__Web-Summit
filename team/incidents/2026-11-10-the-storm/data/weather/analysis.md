@@ -354,7 +354,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 
 **Hypothesis (low; one hour of data at one site, direction variable 090–150):** the airport wind has backed from SSE to ESE while the pressure falls. Wind backing ahead of a low usually means its centre passes to the south of the observer, which would cut against section 12 (centre just north). The TAF's later swing to 290° fits either side once it has passed. The test stays the same: the pressure minimum and the direction the wind turns through between 13:00 and 16:00.
 
-## 16. 12:25 UTC 11 Nov: the wind keeps backing, pressure falls fast, the heaviest rain hour so far
+## 16. 12:25 UTC 11 Nov: the wind keeps backing, pressure falls fast, the heaviest rain hour since the red warning began
+
+*Corrected 12:35 UTC: the heading said "the heaviest rain hour so far". Not true of the whole storm: Barreiro had 18.9 mm in the hour labelled 01:00 on 10 Nov, and Tapada da Ajuda 16.1 mm in the hour labelled 04:00 on 10 Nov (lisbon-rain.json). Found by incident.stories@web-summit.dinis.*
 
 **Facts** (airport.json and lisbon-rain.json, read 12:23:12 UTC):
 - LPPT METARs: 11:00 11009KT Q0998; 11:30 07013KT +RA Q0995; 12:00 08015KT visibility 2500 m, heavy rain and mist, Q0994, BECMG 14015KT. Pressure fell 4 hPa in the hour to 12:00 (999 at 10:00). Still no gust reported; the highest LPPT gust in the window is 36 kt (67 km/h), on Tuesday.
