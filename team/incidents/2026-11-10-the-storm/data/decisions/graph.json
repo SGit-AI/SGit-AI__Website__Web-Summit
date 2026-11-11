@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T12:37Z",
+ "updated": "2026-11-11T13:16Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -2351,6 +2351,32 @@
    },
    "area": "national",
    "note": "ANA's balance via CNN Portugal live 11:49:00Z. ANA recommends confirming the flight with the airline before going to the airport. ANA's site shows us a bot page."
+  },
+  {
+   "id": "tap-alert",
+   "by": "tap",
+   "to": [],
+   "decision": "TAP's site alert: \"Dias 10 e 11 de novembro - Condições meteorológicas adversas em todo o território português\" (criticality medium)",
+   "at": "2026-11-10T09:00Z",
+   "status": "happened",
+   "follows": [
+    "ipma-red-wind"
+   ],
+   "label": "fact",
+   "source": "https://www.flytap.com/pt-pt",
+   "read": "2026-11-11T13:16Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names 10 and 11 November",
+   "state": "limited",
+   "state_note": "an alert to passengers; no cancellation count on TAP's site",
+   "scope": {
+    "extent": "whole",
+    "parts": "all TAP passengers travelling in Portugal on 10 and 11 Nov"
+   },
+   "area": "national",
+   "note": "Read at source 13:15Z in the page's embedded data (alerts[0]: id portugal-meteo-conditions, publishDate 2026-11-10T09:00:00.000Z); the alert body text is not in the page. Offered by incident.transport@ (13:14Z), checked by us. TAP's rebooking offer (tap-adjusts) is press only."
   }
  ],
  "lessons": [
