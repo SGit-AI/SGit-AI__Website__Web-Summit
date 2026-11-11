@@ -1,0 +1,153 @@
+{
+ "about": "Vicky's agents' models (standing answer 44). 'decided' is Vicky's decision (11 Nov about 20:50 UTC); 'session' is what each session showed at 20:50 UTC (usage record only). 'verified' is filled after the agent's next run, from the model that served it.",
+ "read": "2026-11-11T20:50Z",
+ "agents": [
+  {
+   "agent": "pm",
+   "decided": "sonnet",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "logistics",
+   "decided": "opus",
+   "session": "opus",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "dashboard",
+   "decided": "sonnet",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "researcher",
+   "decided": "sonnet",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "curator",
+   "decided": "sonnet",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "programme",
+   "decided": "opus",
+   "session": "opus",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "journalist",
+   "decided": "opus (Sonnet from Fri 13 Nov)",
+   "session": "opus",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "journalist-portugal",
+   "decided": "sonnet",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "journalist-europe",
+   "decided": "sonnet",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "journalist-ai",
+   "decided": "sonnet",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "journalist-connections",
+   "decided": "opus",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": true
+  },
+  {
+   "agent": "reviewer",
+   "decided": "opus",
+   "session": "opus",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "checker",
+   "decided": "opus",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": true
+  },
+  {
+   "agent": "scout",
+   "decided": "sonnet",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "dev",
+   "decided": "opus",
+   "session": "opus",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "synthetic",
+   "decided": "sonnet",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "inbox",
+   "decided": "sonnet",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "vault",
+   "decided": "opus",
+   "session": "opus",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "designer",
+   "decided": "sonnet",
+   "session": "sonnet",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "security",
+   "decided": "opus",
+   "session": "opus",
+   "verified": null,
+   "mismatch": false
+  },
+  {
+   "agent": "conductor",
+   "decided": "opus",
+   "session": "opus",
+   "verified": null,
+   "mismatch": false
+  }
+ ]
+}

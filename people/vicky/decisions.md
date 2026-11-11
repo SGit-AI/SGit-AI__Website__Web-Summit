@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **44** each agent's model (people/vicky/models.json).
 - **43** from Friday: researcher and curator twice a day, journalists and reviewer on demand through the conductor; dashboard and checker daily.
 - **42** no signing: P6 lifted for good (pointer messages to Vicky's own agents, reports back); signing shelved, tasks.mjs kept.
 - **41** P6 lifted (now without signing, standing answer 42).
@@ -228,6 +229,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Urgent:** when Vicky sends the conductor something urgent, it commits a task file with her words and runs curator, journalist and reviewer at once.
     - **Switched off from Friday 06:30 UTC** (disabled, not deleted): the journalists' writing tasks, the fix-only tasks, the reviewer's two tasks, dashboard's 17:45 run, pm's and scout's tasks, logistics and programme, the conductor's midday check, and the two THU-SUMMIT tasks. Thursday's summit lane is unchanged.
     - **A fresh conductor session:** planned on Friday (hand-over note, start kit for Vicky to start it; agent creation stays with her).
+
+44. **Each agent's model** (Vicky, 11 Nov, about 20:50 UTC, in this window: "I switched models in the windows, but not exactly as you recommended. Connections and checker stay on Opus, and dashboard stays on Sonnet. Please read each session's current model, record the final list as my decision, and check after each agent's next run that it used the new model. The summit journalist switches to Sonnet on Friday.")
+    - **Opus:** reviewer, security, conductor, vault, dev, journalist-connections, checker, the summit journalist until Friday, logistics and programme (both paused). **Sonnet:** researcher, curator, journalist-portugal, journalist-europe, journalist-ai, dashboard, pm, scout, designer, inbox, synthetic; the summit journalist from Friday 13 Nov.
+    - The list and what each session showed are in `people/vicky/models.json`. At 20:50 UTC journalist-connections and the checker showed Sonnet, not Opus: Vicky to check their windows. The conductor checks after each agent's next run which model served it (usage records only) and reports in the brief.
 
 ## Updates for agents
 
