@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1962",
+    "date": "2026-11-11",
+    "what": "CAP batch 22:43:28: yellow rain for Thursday in the north; nothing for Lisboa",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "4e06071a0"
+  },
+  {
     "version": "v0.2.1961",
     "date": "2026-11-11",
     "what": "22:34 wake: no change to Day 3; no early end of the alert; no press-check leads",
