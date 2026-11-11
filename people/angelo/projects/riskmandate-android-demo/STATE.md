@@ -52,7 +52,7 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 
 ## Decided by default (Angelo can reverse)
 - 11 Nov: spec first, read only, on slot alpha (large); started 21:15 UTC (runs.md).
-- 11 Nov: the check (charlie, large) started at about 22:17 UTC; publishes onto the Android repo's dev on PASS.
+- 11 Nov: the check (charlie, large) started at 22:14 UTC (session_01Xp7gj4dqK2qoiNTZykBbFJ); publishes onto the Android repo's dev on PASS.
 - 11 Nov: build on slot bravo (large), started 21:20 UTC in parallel with the spec; the check (charlie) starts when the build ends.
 - 11 Nov: the worker's instruction check. pushed-by.mjs knows only pushes to dev, so a lead's brief on project/ reads UNKNOWN; the worker checks instead that 364071b5 (pushed by ANGELO) is an ancestor of the brief's commit. Question for conductor.b@: should pushed-by.mjs learn project/ branches?
 
