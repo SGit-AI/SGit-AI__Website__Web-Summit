@@ -1,7 +1,7 @@
 {
   "agent": "incident.meteorologist@web-summit.dinis",
   "state": "23:58: red rain moved to 09:00-18:00 (IPMA CAP sent 21:23; open data lagged 2 h+); CAP feed added (cap.json, issue times: red wind 07:18:40, red rain 16:30:01); met.no second model in forecast.json second_models; analysis section 6",
-  "last_wake": "2026-11-11T02:22Z",
+  "last_wake": "2026-11-11T03:23Z",
   "jobs": [
     "J1 (tonight): the weather as JSON for the dashboard, in team/incidents/2026-11-10-the-storm/data/weather/ with a README per file: IPMA warnings for Lisboa (every level change with the time IPMA issued it and the time read), communiqués, Lisbon station observations (hourly), LPPT TAF and METAR (gusts). Read Vicky's desk's watch.mjs and snapshots (desks/weather-vicky/, read-only) and do not duplicate it: go deeper (series, not snapshots).",
     "J2 (tonight): how far ahead could it be known? The first public sign of CHARLES (communiqué no. 1, 9 Nov 13:17), each warning's lead time to its start, and what the models said against what is observed from Wednesday 05:00. Facts, evidence, hypotheses labelled.",
@@ -17,7 +17,8 @@
     "from Wed 05:00: observed against warned (gusts_above_warned first)"
   ],
   "asks": [
-    "Dinis: the incident moved to PrompTugal/PrompTugal__News__Storm-Charles (21:15 UTC). Attaching it to this session with push access (add_repo) was refused at 21:18 UTC by the session's permission check (auto mode). Please attach the repo to this session or allow add_repo for it; until then I cannot write to incidents/2026-11-10-storm-charles/data/weather/, and I have not repointed my hourly wake (trig_01Nvhaw7sWVeMrLvV5md8sBg). I keep the data refreshing locally and write nothing more to the frozen 2026-11-10-the-storm/ folder."
+    "Dinis: the incident moved to PrompTugal/PrompTugal__News__Storm-Charles (21:15 UTC). Attaching it to this session with push access (add_repo) was refused at 21:18 UTC by the session's permission check (auto mode). Please attach the repo to this session or allow add_repo for it; until then I cannot write to incidents/2026-11-10-storm-charles/data/weather/, and I have not repointed my hourly wake (trig_01Nvhaw7sWVeMrLvV5md8sBg). I keep the data refreshing locally and write nothing more to the frozen 2026-11-10-the-storm/ folder.",
+    "Dinis: running tools/accounts-measure.mjs (incident.accountant@'s token measure, reads this session's own transcript) was refused at 03:23 UTC by this session's permission check (auto mode). Allow it for this session, or the accountant measures without me; tokens.jsonl is not written."
   ],
   "notes": [
     "the session reported regenerating its key after private-key fragments were echoed in its own output; check the published key is the new one and nothing private was committed (security.repos@ may verify)",
@@ -25,7 +26,7 @@
     "21:25: IPMA's hourly aggregate can change values without changing dataUpdate; refresh.py now compares values (hourly_runs keeps the replaced run).",
     "23:55: every weather file now carries next_read_utc (the next :22 refresh), at incident.conductor@'s request for the librarian's now.json."
   ],
-  "updated": "2026-11-11T02:23:00Z",
+  "updated": "2026-11-11T03:24:00Z",
   "by": "incident.meteorologist@web-summit.dinis",
   "key": {
     "fingerprint": "sha256:ecbf013bbf6722e7",
