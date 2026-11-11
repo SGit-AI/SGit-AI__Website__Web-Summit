@@ -340,5 +340,100 @@
     "trig_01Ts4nhbD3nqUWYfDa3Nt8Je"
    ]
   ]
+ },
+ "rules_11nov": {
+  "about": "RULES-11NOV confirmation-only one-off wakes (standing answers 31 and 32), created by the conductor at Vicky's word, 11 Nov 18:45 UTC; each fires once and disables itself. Every recurring task stays disabled until Vicky agrees a new schedule.",
+  "wakes": [
+   [
+    "19:00",
+    "researcher",
+    "trig_01LD1to2WhyhgzjdgNwrcL19"
+   ],
+   [
+    "19:02",
+    "curator",
+    "trig_01Nbkf1862CvRWPSaETkcxoi"
+   ],
+   [
+    "19:04",
+    "programme",
+    "trig_015PXrQn8ZJoripsrgDjA3eq"
+   ],
+   [
+    "19:06",
+    "journalist",
+    "trig_015XatEgtb9HsaS3c43Bjcg6"
+   ],
+   [
+    "19:08",
+    "journalist-portugal",
+    "trig_01MrFV7JVsuJXrbcDPjnb9fW"
+   ],
+   [
+    "19:10",
+    "journalist-europe",
+    "trig_01N4nNStaaXoK9aiAcTaKgbd"
+   ],
+   [
+    "19:12",
+    "journalist-ai",
+    "trig_011zYvTPMr7d6RXTmrNLJYoE"
+   ],
+   [
+    "19:14",
+    "journalist-connections",
+    "trig_01SQCCkymzQidk41PGHdSv9D"
+   ],
+   [
+    "19:16",
+    "reviewer",
+    "trig_01RuLE17WcSBYeQF9NDJNDsr"
+   ],
+   [
+    "19:18",
+    "checker",
+    "trig_01BzuVQty6mupLuV1VhYo6Ur"
+   ],
+   [
+    "19:20",
+    "dev (newsroom)",
+    "trig_01CogwvqDvzcYazbmuncxJwo"
+   ],
+   [
+    "19:22",
+    "pm",
+    "trig_01EriatqdosgDNjGYVKcMgTs"
+   ],
+   [
+    "19:24",
+    "logistics",
+    "trig_01SrLMvQ7F9mkKmHpDX65rrT"
+   ],
+   [
+    "19:26",
+    "dashboard",
+    "trig_01FpKdG2bGG9gDEfMZdhk4cw"
+   ],
+   [
+    "19:28",
+    "scout",
+    "trig_01GyD294T9XFVYvdYEQLmP2h"
+   ],
+   [
+    "19:30",
+    "vault",
+    "trig_01Fv7TdqKnW9tsbu2kw9wbCT"
+   ],
+   [
+    "19:32",
+    "inbox",
+    "trig_01U6Mf6WCAsRL2in5Zwp7MNf"
+   ],
+   [
+    "20:00",
+    "conductor (confirmation check)",
+    "trig_01CgHiMwhPratHCAXLrcN8xk"
+   ]
+  ]
  }
 }

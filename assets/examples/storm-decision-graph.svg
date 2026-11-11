@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 904" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
 <rect width="1400" height="904" fill="#faf9f5"/>
 <text x="30" y="44" font-size="26" font-weight="700" fill="#141413">The storm: who decided what, and how far ahead</text>
-<text x="30" y="74" font-size="15" fill="#5e5d59">From the weather desk's sources, as of 09:38 UTC on 11 November. Lisbon time = UTC. Red rain Wednesday 09:00 to 18:00; wind lowered to orange at 07:16.</text>
+<text x="30" y="74" font-size="15" fill="#5e5d59">From the weather desk's sources, as of 18:37 UTC on 11 November. Lisbon time = UTC. Red rain Wednesday 09:00, ended 15:00; wind orange from 07:16, ended 15:56; sea warnings to 03:00.</text>
 <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#5e5d59"/></marker></defs>
 <rect x="20" y="120" width="1360" height="78" rx="10" fill="#5e5d59" fill-opacity="0.09"/>
 <text x="34" y="163.0" font-size="14" font-weight="700" fill="#141413">weather</text>
@@ -19,9 +19,9 @@
 <text x="34" y="679.0" font-size="14" font-weight="700" fill="#141413">the summit</text>
 <rect x="20" y="722" width="1360" height="78" rx="10" fill="#5e5d59" fill-opacity="0.05"/>
 <text x="34" y="765.0" font-size="14" font-weight="700" fill="#141413">next</text>
-<rect x="1105.5" y="106" width="183.1" height="694" fill="#8a3b1f" fill-opacity="0.10"/>
-<text x="1124.4" y="100" font-size="13" font-weight="700" fill="#8a3b1f" text-anchor="start">red rain in Lisbon</text>
-<line x1="1118.4" y1="106" x2="1118.4" y2="800" stroke="#141413" stroke-dasharray="2 3"/><text x="1113.4" y="100" font-size="12" fill="#141413" text-anchor="end">as of 09:38</text>
+<rect x="1105.5" y="106" width="122.0" height="694" fill="#8a3b1f" fill-opacity="0.10"/>
+<text x="1166.5" y="100" font-size="13" font-weight="700" fill="#8a3b1f" text-anchor="middle">red rain in Lisbon</text>
+<line x1="1301.1" y1="106" x2="1301.1" y2="800" stroke="#141413" stroke-dasharray="2 3"/><text x="1306.1" y="100" font-size="12" fill="#141413" text-anchor="start">as of 18:37</text>
 <line x1="190.0" y1="800" x2="190.0" y2="808" stroke="#5e5d59"/><text x="190.0" y="824" font-size="11.5" fill="#5e5d59" text-anchor="middle">Mon 12:00</text>
 <line x1="312.0" y1="800" x2="312.0" y2="808" stroke="#5e5d59"/><text x="312.0" y="824" font-size="11.5" fill="#5e5d59" text-anchor="middle">18:00</text>
 <line x1="434.1" y1="800" x2="434.1" y2="808" stroke="#5e5d59"/><text x="434.1" y="824" font-size="11.5" fill="#5e5d59" text-anchor="middle">Tue 00:00</text>
@@ -43,6 +43,10 @@
 <path d="M797.9,331.0 C810.8,331.0 810.8,675.0 815.7,675.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)"/>
 <path d="M705.0,503.0 C764.4,503.0 764.4,675.0 815.7,675.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)" stroke-dasharray="5 4"/>
 <path d="M582.6,159.0 C826.4,159.0 826.4,159.0 1062.2,159.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M1070.2,159.0 C1123.9,159.0 1123.9,159.0 1169.7,159.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M823.7,675.0 C998.0,675.0 998.0,675.0 1164.3,675.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M1177.7,159.0 C1200.2,159.0 1200.2,331.0 1214.8,331.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)" stroke-dasharray="5 4"/>
+<path d="M1177.7,159.0 C1211.9,159.0 1211.9,159.0 1238.2,159.0" fill="none" stroke="#5e5d59" stroke-width="1.4" marker-end="url(#a)"/>
 <rect x="434.1" y="240.0" width="346.2" height="10" rx="5" fill="#1f5f8b" fill-opacity="0.18" stroke="#1f5f8b" stroke-dasharray="4 3"/>
 <text x="228.1" y="155.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">IPMA, 13:17</text>
 <text x="228.1" y="169.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">names the low CHARLES</text>
@@ -51,9 +55,13 @@
 <text x="594.6" y="155.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">IPMA, 07:18</text>
 <text x="594.6" y="169.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">red wind, Wed 12:00 to 21:00</text>
 <text x="781.8" y="181.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">IPMA, 16:30</text>
-<text x="781.8" y="195.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">red rain, Wed 09:00 to 18:00</text>
+<text x="781.8" y="195.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">red rain, Wed 09:00 (to 15:00)</text>
 <text x="1058.2" y="155.0" font-size="12" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">IPMA, 07:16</text>
 <text x="1058.2" y="169.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">wind lowered to orange</text>
+<text x="1165.7" y="155.0" font-size="12" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">IPMA, 12:33</text>
+<text x="1165.7" y="169.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">shortened</text>
+<text x="1234.2" y="181.0" font-size="12" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">IPMA, 15:55</text>
+<text x="1234.2" y="195.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">wind warning ended</text>
 <text x="717.0" y="499.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">Lisbon&#x27;s mayor, 13:19</text>
 <text x="717.0" y="513.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">the summit likely cannot run</text>
 <text x="809.9" y="353.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">the government, 17:53</text>
@@ -70,14 +78,19 @@
 <text x="925.2" y="599.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">nothing yet: disruption; CP cuts 4 trains (press)</text>
 <text x="835.7" y="671.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">Web Summit, 19:09</text>
 <text x="835.7" y="685.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">Day 2 off; Day 3 an aim</text>
-<text x="812.3" y="747.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">what may come next, as of 18:00</text>
-<text x="812.3" y="761.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">the government: contingency or calamity</text>
-<text x="812.3" y="775.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">the government, the city, the operators, Web Summit: reo...</text>
+<text x="812.3" y="757.0" font-size="12" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">what may come next, as of 18:00</text>
+<text x="812.3" y="771.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">the government: contingency or calamity: not declared</text>
+<text x="1160.3" y="697.0" font-size="12" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">Web Summit, 12:17</text>
+<text x="1160.3" y="711.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">Thursday on (as reported)</text>
+<text x="1210.8" y="327.0" font-size="12" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">the government, 14:46</text>
+<text x="1210.8" y="341.0" font-size="11.5" font-weight="400" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">alert ends today</text>
 <circle cx="216.1" cy="159.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
 <circle cx="362.9" cy="245.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
 <circle cx="582.6" cy="159.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
 <circle cx="769.8" cy="159.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
 <circle cx="1070.2" cy="159.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
+<circle cx="1177.7" cy="159.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
+<circle cx="1246.2" cy="159.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
 <circle cx="705.0" cy="503.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
 <circle cx="797.9" cy="331.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
 <circle cx="681.6" cy="331.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
@@ -87,6 +100,8 @@
 <circle cx="913.2" cy="589.0" r="7" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
 <circle cx="823.7" cy="675.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
 <circle cx="800.3" cy="761.0" r="7" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
+<circle cx="1172.3" cy="675.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
+<circle cx="1222.8" cy="331.0" r="7" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="2"/>
 <text x="30" y="858" font-size="12.5" fill="#141413"><tspan font-weight="700">Lead times to the red wind, as issued:</tspan> IPMA names the storm 46 h 43 min before; issues the red wind 28 h 41 min before; ANEPC's public warning 39 h 30 min; the government's alert 23 h 50 min. </text>
 <text x="30" y="876" font-size="12" fill="#5e5d59">Solid: a source says this follows that. Dashed: analysis, not a sourced fact. Hollow: nothing announced yet, or a source our tools cannot read. Bar: happened, time not known.</text>
 <text x="30" y="894" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from decision-graph.json, built on weather@PrompTugal.vicky's live.md and decision-chain.md and decision-graph.json (PrompTugal__News__Website, eca7b396 and 358fa21b).</text>

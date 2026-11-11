@@ -8,6 +8,8 @@ summary: The one page for the Web Summit 2026 team. Find your name, open your br
 
 **Team: start here.** Find your name, open your brief, and paste the prompt from it into your own Claude. Your agent then takes you through getting connected, one step at a time. Everything here is public, on purpose: how we work is part of what we show.
 
+> **For the stand and the iPads: [the demo screen](../demo/index.html).** One bar of buttons for GAMMA-Ray, the Universe, the live team, the X-ray, the RiskMandate film and more.
+
 > **New, 11 November: [Lisbon Fringe](../fringe/index.html).** Storm Charles moved the week. Bring your own conductor and join the swarm building fringe.promptugal.news (five minutes).
 
 ## Find your name {#people}
@@ -66,6 +68,7 @@ Not technical? Read [the plain-language guide](../onboarding-guide/index.html) a
 
 - **After you talk to a lead at the summit:** [from a conversation to an article](../lead-to-article/index.html), six steps: ask for a yes, record a 30-second memo, your agent drafts the private follow-up that evening, and an article only if they agreed.
 - **Forgot your business cards?** [The card on your phone](../card/index.html): show it or let them scan it; on your Home Screen in two taps.
+- **Need an ABP for your agent?** [ABP creation](../abp-creation/index.html): answer up to ten questions, and an agent drafts the policy for Dinis's ABP author to review.
 - **The website is the centre**, for the humans and for the agents. Every page has a markdown twin (`index.md`) for agents, and [llms.txt](../llms.txt) lists them all.
 - **Never push to `main`** (you, or any of your agents): only `dev`. A major release is a pull request to `main` that Dinis merges.
 - **One repository, everyone commits.** Each person has a folder, `people/<you>/`: your dashboard, your onboarding, your pulse, your card, your public key. The board is `board/`, one file per issue.

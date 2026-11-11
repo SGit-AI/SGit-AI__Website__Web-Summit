@@ -167,11 +167,67 @@
    "bytes": 486018,
    "result": "answered; no notice found",
    "excerpt": []
+  },
+  {
+   "at": "2026-11-11T12:32Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 538039,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T13:33Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 538045,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T14:33Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 538039,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T15:33Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 538039,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T16:33Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 332370,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T17:40Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 538038,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T18:33Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 538038,
+   "result": "answered; no notice found",
+   "excerpt": []
   }
  ],
  "tries_summary": {
   "https://www.metrolisboa.pt/": {
-   "tries": 10,
+   "tries": 17,
    "published_found": false
   }
  }

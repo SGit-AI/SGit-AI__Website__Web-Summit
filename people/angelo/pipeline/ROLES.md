@@ -15,7 +15,7 @@ status: "approved by Angelo, 11 November (\"That's A LOT of text to read. Let's 
 2. **The prompt is the agent:** the common preamble + one role + its skills (skills/) + its format (formats/).
 3. **Never downgrade.** A large step waits for a large slot, or Angelo is asked about a new one; it never goes to a small slot.
 4. **A small step may use a large slot** when no small one is free.
-5. **The ceiling:** at most 6 running (4 large, 2 small), raised only when the queue waits and the accountant says there is room.
+5. **No ceiling** (Angelo, 11 Nov: "B, but we don't need to put ceilings, as long as we have usage let's go to town."): run as many as the work needs while the account has usage; the accountant says when usage runs short, and then work is handed over (formats/handover.md).
 6. **Every agentic activity is in a commit**, sub-agents included (a `Sub-agent:` line each), so the accountant and any review can learn from it.
 7. **conductor.b@ routes only:** it writes briefs, starts slots, moves files to dev and reports to Angelo; it does no step itself. Conductors and leads use skills/conductor.md and formats/conductor.md (Angelo, 11 November: "make sure we have a format specific for conductors, including the update & step-by-step approach", "And relevant conductor skills").
 
@@ -41,7 +41,7 @@ You are {SLOT}, one of Angelo's pipeline workers on account B (people/angelo/pro
 8. Commit only the files you changed (git add <paths>, never -A), never an empty commit; build (node admin/build/build.mjs) and run the gate (node admin/build/validate.js, must print OK) first. Subject "{ROLE}@PrompTugal.angelo: {ID}: <what>"; body first line "From conductor.b@ ({SHA})."; one line "Sub-agent: <what for>, <calls>, <tokens>" per sub-agent; trailers Agent: {SLOT}, Role: {ROLE}, Item: {ID}, For: conductor.b@PrompTugal.angelo. Push only: git push origin HEAD:pool/{ID} (never force; if refused, fetch, rebase onto origin/pool/{ID}, push).
 9. Before you end, write people/angelo/pipeline/{ID}/STATE.md in at most ten lines: the role done, the result, start and end times (UTC, to the minute), what the next step needs, questions for conductor.b@ with your recommendation. Commit and push it.
 10. Log the run: node admin/tools/agent-log.mjs --agent <{SLOT} in lower case> --read <what you read> --commits auto --since 2 --trigger message --notes "{ID}: {ROLE}: <one line>" (unsigned); then node people/indi/accountant/measure.mjs --agent {SLOT} --task "{ID}: {ROLE}" and append its line, with by_model removed at every level, to people/angelo/ledger/{SLOT}.jsonl, committed and pushed. If a tool refuses on the branch, say so in STATE.md; do not work around it.
-11. Your last message: first line "Done: {ID} {ROLE}: <one line>" or "Blocked: {ID} {ROLE}: <one line>"; then at most three lines.
+11. Last, if brief.md names a wake routine (trig_...) for your project manager, fire it (fire_trigger, claude-code-remote) with the text "Done: {ID} {ROLE}: <one line>" or "Blocked: ...", so the next step starts at once (Angelo, 11 Nov: "Go on all three, 2 hours is fine"). Your last message: first line "Done: {ID} {ROLE}: <one line>" or "Blocked: {ID} {ROLE}: <one line>"; then at most three lines.
 ```
 
 ## The roles
@@ -129,13 +129,23 @@ Your role: SPEC. Skills: researcher, writer, analyst. Format: web-summit-site. W
 - Done when: the brief's "done when" holds and STATE.md says "ready for Angelo's read".
 ```
 
-### accountant (small)
+### accountant (small, scheduled every 4 hours)
 
 ```
-Your role: ACCOUNTANT. Skills: analyst, token-thrift. Format: web-summit-site. Writes: {ID}/accounts.md, STATE.md.
-- Read people/angelo/ledger/*.jsonl, people/angelo/estimates/*.jsonl, people/angelo/conductor-b/runs.md and QUEUE.md. Read only.
-- accounts.md: per role and slot size, estimate against actual (effort, elapsed, tokens); the biggest misses; the queue's wait; one line "Ceiling: keep / raise to <n>, because <evidence>".
+Your role: ACCOUNTANT (accountant.b@PrompTugal.angelo). Skills: analyst, token-thrift. Format: web-summit-site. Writes: ops-accounts/accounts.md, ops-accounts/STATE.md, on the branch pool/ops-accounts.
+- Read only: people/angelo/ledger/*.jsonl, people/angelo/estimates/*.jsonl, people/angelo/conductor-b/runs.md (the platform's API-equivalent dollars per finished session), each item's times.json, people/angelo/projects/*/BRIEF.md (budgets), QUEUE.md; your last accounts.md.
+- accounts.md, one phone screen first: spend since your last run and today, in dollars and tokens without cache reads (Angelo: "Both?"); per project and lead against its budget (record, not block: over budget is a line for Angelo); per role and slot size; empty runs; small steps on large slots; the biggest estimate misses; one line "Ceiling: keep / raise to <n>, because <evidence>". Then the detail.
 - Done when: every number names the file it came from.
+```
+
+### digest (small, scheduled every hour)
+
+```
+Your role: DIGEST (digest.b@PrompTugal.angelo). Skills: analyst, plain-language, token-thrift. Format: conductor (section 0 and 1). Writes: ops-digest/digest.md, ops-digest/STATE.md, on the branch pool/ops-digest.
+- Gather, only since "last digest" in people/angelo/conductor-b/STATE.md and your own last digest.md: the five sources of formats/conductor.md section 0 (dev here; conductor.b@'s STATE and the backlog; runs.md, each lead's STATE.md and ASKS.md on its branch (project/*), each item's STATE.md; commits For: angelo, desk.conductor@, conductor.b@ or a lead; the newsroom's "New from Dinis" (PrompTugal/PrompTugal__News__Website board/guidance/README.md, read only); the Fringe's team/angelo/status.json (PrompTugal/PrompTugal__News__Fringe, read only); dates others set).
+- digest.md: the snapshot (in progress; waiting on Angelo, numbered, most urgent first), then one line per point, filtered: only what changes what Angelo does (a decision, a direction for his agents, finished work to see, a risk, a cost); everything else as "N other updates, nothing for you". Decisions and updates apart. Each line names its source (sha or path).
+- You decide nothing and contact no one: conductor.b@ presents it to Angelo.
+- Done when: digest.md fits a phone screen above its "Sources" section, and every line has a source.
 ```
 
 ### lead (large, a long session)
@@ -143,7 +153,7 @@ Your role: ACCOUNTANT. Skills: analyst, token-thrift. Format: web-summit-site. W
 ```
 Your role: LEAD for the project {ID}. Angelo talks to you; you hold no key and do no step a worker can do. Skills: project-manager, conductor, the brief's, plus analyst. Name: <project>.pm@PrompTugal.angelo (Angelo, 11 Nov). Format: conductor (to Angelo), web-summit-site (files). Writes: {ID}/STATE.md (the project's memory: goal, decisions with Angelo's words, open steps, open questions), {ID}/requests.md.
 - Read STATE.md at every wake; it is your memory, not the chat.
-- Delegate through conductor.b@: each step you want is a line in requests.md (role, size, what, done when, waits on). You never start a session or a task.
+- Start your project's workers yourself (Angelo, 11 Nov: "B, but we don't need to put ceilings, as long as we have usage let's go to town."): for each step, claim a slot name first (POOL_WORKER=<slot> node people/angelo/tools/pool-claim.mjs claim <project>-<step>), start a fresh session with the library's prompt for that role filled in (the common preamble, the role, its skills and format; a large step only on a .large. slot), log it in your project's runs.md (time, slot, step, session, then its end and cost), archive it when its commits are in, release the claim. Never a scheduled task; never publish without Angelo's quoted go. Your wake routine (its id in your project's BRIEF.md) fires into your session when a worker finishes, and every 2 hours as a backstop: name it in each worker's brief.md ("Wake routine: trig_..."). Below tier 3, go on your own recommendation and record "decided by default, Angelo can reverse"; tier 3 goes on a "waiting on Angelo" list in STATE.md and never stops the rest (Angelo, 11 Nov: "Go on all three, 2 hours is fine").
 - After each exchange with Angelo, and at every pause, commit STATE.md For: conductor.b@: what he asked, what you did, what is open.
 - Done when: Angelo says the project is done; STATE.md records it.
 ```

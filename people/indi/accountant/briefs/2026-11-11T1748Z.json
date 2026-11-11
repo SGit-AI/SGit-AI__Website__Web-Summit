@@ -1,0 +1,307 @@
+{
+ "number": 8,
+ "date": "2026-11-11",
+ "kicker": "Web Summit 2026 · token accountant",
+ "title": "Brief 8: cache reads are now most of the cost",
+ "when": "11 November 2026, 17:48 UTC (window: since brief 7, 10 November 17:44 UTC)",
+ "by": "accountant@web-summit.indi",
+ "headline": "2,427,824 fresh tokens and 114 million cache reads; weighted at a tenth, cache reads are 82% of today's cost, and the biggest saving is splitting conductor-newsapp's one overnight session (100.5 million cache reads) into a session per round.",
+ "stats": [
+  {
+   "n": "2,427,824",
+   "label": "tokens today (fresh, Indi's agents)"
+  },
+  {
+   "n": "114,304,027",
+   "label": "cache reads today"
+  },
+  {
+   "n": "5 of 18",
+   "label": "agents measured of agents running"
+  },
+  {
+   "n": "13,858,226",
+   "label": "weighted cost today (fresh + cache reads at a tenth)"
+  }
+ ],
+ "for_you": [
+  {
+   "id": "A9",
+   "ask": "Overnight helpers (newsapp, teamapp): a new session for each round?",
+   "detail": "conductor-newsapp ran six rounds in one session overnight: 1,203,440 fresh, 100,491,022 cache reads (weighted 11,252,542, the week's largest). Old: all rounds in one session. New: each round ends with a commit and a ledger line; the next starts in a new session from the repository. Saving: about half its cache reads, near 50 million a night (estimate).",
+   "options": [
+    "Yes, both helpers",
+    "newsapp first",
+    "No"
+   ],
+   "recommend": "Yes, both helpers"
+  },
+  {
+   "id": "A6",
+   "ask": "Fresh sessions with the full kit prompt for dashboard, dev, prompter and me (brief 7)?",
+   "detail": "dashboard: 327,129 fresh a wake, 99% re-loading. A fresh first wake: 12,676.",
+   "options": [
+    "Yes, all four",
+    "Dashboard first",
+    "No"
+   ],
+   "recommend": "Yes, all four"
+  },
+  {
+   "id": "A8",
+   "ask": "Run me lighter (brief 7)?",
+   "detail": "Seven wakes: 1,123,467 fresh; savings 0, nothing applied. A7 and A4 also open.",
+   "options": [
+    "Fresh session, brief only on new numbers",
+    "Every other day",
+    "Keep daily"
+   ],
+   "recommend": "Fresh session, brief only on new numbers"
+  }
+ ],
+ "you_asked": [],
+ "sections": [
+  {
+   "title": "1. Ledger",
+   "table": {
+    "head": [
+     "Agent",
+     "Wakes",
+     "Fresh input",
+     "Output",
+     "Cache write",
+     "Cache read",
+     "Sub-agent tokens",
+     "Per wake (trend)",
+     "Pass rate"
+    ],
+    "rows": [
+     [
+      "conductor-newsapp",
+      "1",
+      "586",
+      "208,981",
+      "993,873",
+      "100,491,022",
+      "0",
+      "1,203,440 (new)",
+      "1/1"
+     ],
+     [
+      "dashboard",
+      "2",
+      "17",
+      "4,623",
+      "649,618",
+      "2,717,722",
+      "0",
+      "327,129 (up from 205,992)",
+      "2/2"
+     ],
+     [
+      "video-editor",
+      "2",
+      "117",
+      "23,393",
+      "310,929",
+      "6,104,528",
+      "0",
+      "167,220 (up from 12,676)",
+      "2/2"
+     ],
+     [
+      "accountant",
+      "1",
+      "18",
+      "11,575",
+      "210,662",
+      "2,349,381",
+      "0",
+      "222,255 (up from 201,893)",
+      "1/1"
+     ],
+     [
+      "prompter",
+      "1",
+      "6",
+      "6,364",
+      "7,062",
+      "2,641,374",
+      "0",
+      "13,432 (down from 64,940)",
+      "1/1"
+     ],
+     [
+      "13 others",
+      "0",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "2. Biggest three savings",
+   "items": [
+    "Overnight marathon (A9): conductor-newsapp, 100.5 million cache reads in one session; weighted 11.3 million, 81% of today's weighted cost.",
+    "Re-loading (A6): dashboard 99% of fresh tokens re-loading; video-editor's second wake already 93%, as its session ages.",
+    "Prompter's context: 880,458 tokens carried per call, for a 13,432-token task. A new session per task (A6)."
+   ]
+  },
+  {
+   "title": "3. Model tests run",
+   "text": "None: A7 open."
+  },
+  {
+   "title": "4. Agents not yet measuring",
+   "text": "Asked today: conductor-teamapp. Ran without a line: conductor (3 commits), social (1)."
+  },
+  {
+   "title": "5. Data notes and 6. My own use",
+   "text": "Weighted = fresh + cache reads at a tenth. Correction: my wake 7 was 222,255 fresh, not 207,813 as its commit said. Inbox report sent. This wake: brief 9."
+  }
+ ],
+ "next": [
+  "12 November: brief 9, and the first night of A9 if yes."
+ ],
+ "sources": [
+  "people/indi/accountant/ledger/ (all files, via tally.py)",
+  "people/indi/agents.json",
+  "git log since brief 7"
+ ],
+ "friendly": {
+  "title": "Your agents' token use, 11 November",
+  "summary": "One overnight helper ran six rounds in a single session and re-read 100 million tokens. Re-reading is cheap per token, but at that size it is now most of the cost. A new session per round (A9) would cut about half.",
+  "numbers": [
+   {
+    "n": "2.4 million",
+    "label": "Fresh tokens today",
+    "explain": "Five reporting agents."
+   },
+   {
+    "n": "114 million",
+    "label": "Cache reads today",
+    "explain": "Re-reading old context. 100 million is one overnight session."
+   },
+   {
+    "n": "82%",
+    "label": "Share of cost from re-reading",
+    "explain": "Counting each re-read at a tenth of a fresh token."
+   },
+   {
+    "n": "~50 million",
+    "label": "Re-reads saved per night (A9)",
+    "explain": "My estimate, measured on the next night."
+   }
+  ],
+  "agents": [
+   {
+    "name": "newsapp, dashboard, video-editor, prompter, accountant",
+    "state": "report",
+    "on": true
+   },
+   {
+    "name": "13 others",
+    "state": "asked, not yet",
+    "on": false
+   }
+  ],
+  "bars_title": "Weighted cost today (fresh + re-reads at a tenth)",
+  "bars": [
+   {
+    "label": "conductor-newsapp",
+    "value": 11252542,
+    "shown": "11.3 million"
+   },
+   {
+    "label": "video-editor",
+    "value": 944891,
+    "shown": "0.94 million"
+   },
+   {
+    "label": "dashboard",
+    "value": 926030,
+    "shown": "0.93 million"
+   },
+   {
+    "label": "accountant",
+    "value": 457193,
+    "shown": "0.46 million"
+   },
+   {
+    "label": "prompter",
+    "value": 277569,
+    "shown": "0.28 million"
+   }
+  ],
+  "bars_note": "One overnight session cost more than four times all the others together.",
+  "savings": [
+   {
+    "title": "New session per round",
+    "plain": "The overnight helper should save its work and start fresh after each round.",
+    "evidence": "100.5 million re-reads in one session."
+   },
+   {
+    "title": "Fresh sessions for daily runs",
+    "plain": "Dashboard spent 99% of its tokens re-loading old conversation.",
+    "evidence": "327,129 per run, up from 205,992."
+   },
+   {
+    "title": "Run me lighter",
+    "plain": "I still cost more than I have saved, as nothing is applied yet.",
+    "evidence": "1.12 million tokens over seven runs."
+   }
+  ],
+  "decisions": [
+   {
+    "id": "A9",
+    "question": "A new session for each overnight round?",
+    "plain": "For the news app and Team app helpers. About 50 million re-reads saved a night.",
+    "options": [
+     "Yes, both",
+     "News app first",
+     "No"
+    ],
+    "recommend": "Yes, both"
+   },
+   {
+    "id": "A6",
+    "question": "Fresh sessions for daily runs?",
+    "plain": "Dashboard, dev, prompter and me, with the full set-up instructions.",
+    "options": [
+     "Yes, all four",
+     "Dashboard first",
+     "No"
+    ],
+    "recommend": "Yes, all four"
+   },
+   {
+    "id": "A8",
+    "question": "Run me lighter?",
+    "plain": "A fresh session, and a full brief only on new numbers.",
+    "options": [
+     "Yes",
+     "Every other day",
+     "Keep daily"
+    ],
+    "recommend": "Yes"
+   }
+  ],
+  "glossary": [
+   [
+    "Cache reads",
+    "old context read again at every step; a tenth of the cost each, but huge in long sessions."
+   ],
+   [
+    "Weighted cost",
+    "fresh tokens plus cache reads at a tenth."
+   ]
+  ],
+  "next": "12 November at 17:30 UTC."
+ }
+}

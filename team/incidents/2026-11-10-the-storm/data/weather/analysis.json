@@ -410,8 +410,58 @@
   {
    "time_utc": "2026-11-11T12:25Z",
    "section": 16,
-   "summary": "LPPT wind backed to ENE (080) and pressure fell 4 hPa in an hour to 994; heaviest rain hour yet (11-18 mm in the hour labelled 11:00); centre now likely over or just south of Lisbon (medium), revising section 12"
+   "summary": "LPPT wind backed to ENE (080) and pressure fell 4 hPa in an hour to 994; heaviest rain hour since the red warning began (11-18 mm in the hour labelled 11:00; corrected 12:35 from \"yet\": Barreiro 18.9 mm at 01:00 on 10 Nov); centre now likely over or just south of Lisbon (medium), revising section 12"
+  },
+  {
+   "time_utc": "2026-11-11T12:30Z",
+   "section": 17,
+   "summary": "IPMA communiqué no. 3 (edited 12:16:26): split into two centres, less deepening, weaker wind; gusts 70-90 km/h in the South, 110 on exposed coast; warnings 'ajustados'. No Lisbon warning change after 07:16:30 in open data or CAP at 12:28:46."
+  },
+  {
+   "time_utc": "2026-11-11T12:36Z",
+   "section": 18,
+   "summary": "IPMA CAP batch sent 12:18:03: rain red to orange 12:19-18:00 for Castelo Branco, Leiria, Portalegre, Beja; Faro red rain kept; nothing for Lisboa (red rain 09-18 and orange wind stand). Open data not yet updated at 12:35:31."
+  },
+  {
+   "time_utc": "2026-11-11T12:50Z",
+   "section": 19,
+   "summary": "IPMA CAP sent 12:33:13: Lisbon red rain cut to 12:34-15:00 then yellow 15:00-18:00; orange wind cut to 12:34-18:00 with gusts up to 90 km/h, 110 exposed (was 120, to 21:00). Setúbal same; Beja orange wind to 18:00. Open data not yet updated at 12:49:59."
+  },
+  {
+   "time_utc": "2026-11-11T13:25Z",
+   "section": 20,
+   "summary": "LPPT 13:00 10011KT +RA vis 1500 Q0991, falling, no gust; Relógio 18.7 mm in hour 12:00 and 57.7 mm in 6 h (largest 6 h at our Lisbon stations in the window); centre not yet past, closest more likely 14-16:00; IPMA open data still stale 51 min after CAP 12:33:13."
+  },
+  {
+   "time_utc": "2026-11-11T14:25Z",
+   "section": 21,
+   "summary": "LPPT 14:00 19029G40KT (74 km/h, highest in the window, below warned 90/110), wind shear R20, +2 C, Q0989 still falling: warm sector arriving, centre now more likely to pass just north (revises 16, back to 12). Oeiras 26.2 mm in hour 13:00 (heaviest hour in the window), 73.4 mm in 6 h. IPMA open data caught up with CAP 12:33:13 after 1 h 50 min; orange sea now 12:34-21:00."
+  },
+  {
+   "time_utc": "2026-11-11T15:25Z",
+   "section": 22,
+   "summary": "Rain eased to 1-7 mm in hour 14:00; wind SW, station means up to 41 km/h; LPPT 15:00 21022G33KT, Q0989 steady for 1 h: centre passing just north now; Relógio 74.0 mm in 6 h; worst rain 12:00-14:30, worst wind from 14:00, turning W-NW 16-18:00 per TAF."
+  },
+  {
+   "time_utc": "2026-11-11T16:10Z",
+   "section": 23,
+   "summary": "IPMA CAP 15:55:03 ends Lisbon orange wind at 15:56 (was 18:00); Setúbal and Beja the same; Faro orange wind 15:56-18:00. Lisbon keeps yellow rain to 18:00 and orange/yellow sea. LPPT TAF AMD 14:36. Peak passed: rain 12:00-14:30, wind 14:00-15:30."
+  },
+  {
+   "time_utc": "2026-11-11T16:25Z",
+   "section": 24,
+   "summary": "Easing: rain 0-1.2 mm in hour 15:00; wind SW, means to 37 km/h; Q0989 flat since 14:00; turn to W-NW still to come; no new CAP since 15:55:03; open data still lagging on wind."
+  },
+  {
+   "time_utc": "2026-11-11T17:25Z",
+   "section": 25,
+   "summary": "LPPT veered 210 to 290 by 17:00 (29011G23KT), pressure rising 989 to 991, temperature down 2 C: centre passed just north, closest about 14:30-16:30 (high). Open data caught up (orange wind gone). TAF 17:00: Thursday showers, SW gusts ~50 km/h 10-18:00; no Thursday wind/rain warning for Lisboa."
+  },
+  {
+   "time_utc": "2026-11-11T18:25Z",
+   "section": 26,
+   "summary": "After the storm: LPPT 18:00 30013G27KT Q0992 rising, no rain; no new CAP; yellow rain ended 18:00; sea warnings to Thu 03:00."
   }
  ],
- "next_read_utc": "2026-11-11T13:22Z"
+ "next_read_utc": "2026-11-11T19:22Z"
 }

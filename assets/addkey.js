@@ -1,4 +1,4 @@
-// "Add your key", big, on every page, for everyone, until this browser holds one (Dinis, 4 November 2026: "that button
+// "Add your key": was big, on every page, for everyone, until this browser holds one; since 11 November it opens only with ?addkey (Dinis, 4 November 2026: "that button
 // needs to be really big ... for everybody ... until this is done, something is really missing"). Three ways in, all
 // working on an iPhone: tap the link your conductor gave you (it opens the site with the key), paste it (one tap on
 // "Paste my key"), or choose the file it came in. A QR image works where the browser can read QR codes (BarcodeDetector).
@@ -10,6 +10,9 @@
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
     KR.ready.then(() => {
         if (KR.person) return
+        // 11 November 2026 (Silvio, with Dinis's yes): the big box no longer opens on every page. A key link still adds the
+        // key (assets/keyring.js reads #key=); the box opens only when asked for, with ?addkey in the address.
+        if (!/[?&]addkey\b/.test(location.search)) return
         // never for a visitor: /meet/ is where a card's QR lands (WS-146, synthetic@web-summit.indi's finding)
         if (/\/meet\//.test(location.pathname)) return
         const main = document.getElementById('main'); if (!main) return

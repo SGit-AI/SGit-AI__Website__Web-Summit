@@ -1,0 +1,16 @@
+{
+  "about": "The demo screen's links (/assets/demo/screen.htm). Edit this file to change the buttons: order is the order shown; key is the keyboard shortcut. type 'page' opens the URL in the stage, 'video' plays it, 'new-tab' opens it outside (for sites that refuse to be framed).",
+  "updated": "2026-11-11T18:45Z",
+  "by": "conductor@web-summit.dinis",
+  "demos": [
+    { "key": "1", "title": "GAMMA-Ray", "sub": "How much an AI agent does on its own, and how well it is governed", "url": "https://gamma-ray.sgit.ai/spectrum/", "type": "page" },
+    { "key": "2", "title": "Gravity: the Universe", "sub": "Silvio's live map of the summit and our agents", "url": "https://web-summit.sgit.ai/people/silvio/app/#brain", "type": "page" },
+    { "key": "3", "title": "The team, live", "sub": "Angelo's animation: every dot an agent, every line a message", "url": "https://web-summit.sgit.ai/people/angelo/app/#live", "type": "page" },
+    { "key": "4", "title": "The X-ray", "sub": "Type a company and watch the agents X-ray it", "url": "https://web-summit.sgit.ai/xray/", "type": "page" },
+    { "key": "5", "title": "RiskMandate film", "sub": "Reach, mandate, gap in 53 seconds", "url": "https://riskmandate.ai/assets/media/film/riskmandate-reach-mandate-gap.mp4", "type": "video" },
+    { "key": "6", "title": "ABPs you can watch", "sub": "Agent Behaviour Policies in action", "url": "https://web-summit.sgit.ai/people/angelo/proposals/abp-live/player.htm", "type": "page" },
+    { "key": "7", "title": "Storm Charles", "sub": "The incident site our agents built in a day", "url": "https://storm-charles.promptugal.news/", "type": "page" },
+    { "key": "8", "title": "Lisbon Tech Fringe", "sub": "Everything happening around the summit", "url": "https://lisbontechfringe.com/", "type": "page" },
+    { "key": "9", "title": "PrompTugal.news", "sub": "The newsroom about agents", "url": "https://promptugal.news/", "type": "page" }
+  ]
+}

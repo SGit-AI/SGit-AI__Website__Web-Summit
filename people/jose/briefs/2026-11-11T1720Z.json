@@ -1,0 +1,92 @@
+{
+  "number": 23,
+  "date": "11 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Summit day two (off), evening: you joined Lisbon Fringe; crm and dev still wait on you",
+  "when": "11 November 2026, 17:22 UTC (scheduled wake; since brief 22, 07:26 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "You joined Dinis's Lisbon Fringe this afternoon: your fringe conductor runs hourly until Friday on your lane, the channels. It is now in your agents list. On this site your agents were quiet after the morning: dev closed WS-41 step 1 with no effect, and vault drains again at each wake. Three things still wait on you: crm's token word, crm's company sites, and dev's schedule. Page views: 34 drained this evening, 7,559 in all. By the incident agents' record, Lisbon's red warnings ended early and Thursday is reported as reopening (not checked at source).",
+  "stats": [
+    {"n": "1", "label": "new agent: your fringe conductor, hourly to Friday"},
+    {"n": "3", "label": "asks still waiting on you (crm's word, crm's sites, dev's schedule)"},
+    {"n": "7,559", "label": "page views drained in all (34 this evening)"},
+    {"n": "9 of 9", "label": "of your scheduled tasks fired and succeeded today (your watcher)"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "🔑 crm: 'the token is set', and its company sites",
+      "detail": "crm still holds your 31 connections in 6 unpushed vault commits, and none of your eleven companies is added. Say 'the token is set' in its session (or to me), and allow the eleven companies' domains in its environment's network settings.",
+      "options": ["tonight", "tomorrow at the stand"],
+      "recommend": "Tonight: the CRM is most useful on Thursday at the stand."
+    },
+    {
+      "id": "2",
+      "ask": "⏱️ dev's schedule",
+      "detail": "Your dev agent still runs the 3 November text twice a day (09:30, 15:30). Re-save its scheduled task with the pointer (people/jose/schedules.md#paste), every two hours (30 7-21/2 * * *), or hourly (30 7-21 * * *) after a fresh session. Tell me which.",
+      "options": ["two hours", "hourly, fresh session", "after the summit"],
+      "recommend": "After the summit, with a fresh session: dev has no task waiting this week."
+    },
+    {
+      "id": "3",
+      "ask": "🔐 vault: its passphrase, and its kit text",
+      "detail": "Put SG_SEND_PASSPHRASE in vault's environment (2 minutes). Say 'update vault's kit to drain' if you want its written steps to match what it already does on your 'drain'.",
+      "options": ["both", "passphrase only", "later"],
+      "recommend": "Both; neither blocks anything this week."
+    }
+  ],
+  "you_asked": [
+    {
+      "at": "11 Nov, afternoon",
+      "said": "why only every 2 hours dev? why not every hour?",
+      "done": "Every hour is fine; the only cost is tokens, small in a fresh session; the cron for each",
+      "where": "this session",
+      "status": "waiting on you (ask 2)"
+    },
+    {
+      "at": "11 Nov, afternoon",
+      "said": "what to do here? (your watcher's 12:15 report)",
+      "done": "Only A-06 is yours (dev's schedule); the steps to re-save it",
+      "where": "this session",
+      "status": "waiting on you (ask 2)"
+    },
+    {
+      "at": "11 Nov, afternoon",
+      "said": "(vault's 11:40 report)",
+      "done": "Its kit change needs your word (C30, C39); its passphrase is yours; the push task stays open until crm pushes",
+      "where": "this session",
+      "status": "waiting on you (ask 3)"
+    }
+  ],
+  "sections": [
+    {
+      "title": "For your interview: today, the summit's day off",
+      "items": [
+        "What your agents did: crm put 31 connections in the private CRM (not pushed); vault drained again; dev closed WS-41 step 1 (no effect: 2 check-ins before and after); your example went live on Dinis's examples page; I kept your Actions and drained the page views every hour.",
+        "What you decided: to join Lisbon Fringe, with your own fringe conductor on the channels; dev hourly is open.",
+        "Still open: crm's token word and sites; dev's schedule; vault's passphrase and kit text.",
+        "What you learned today, in your words."
+      ]
+    },
+    {
+      "title": "The team today",
+      "items": [
+        "Storm Charles: Wednesday off; IPMA lowered Lisbon's wind to orange at 07:16, and the red rain ended at 15:00; Thursday reported reopening (Dinis's incident agents, not checked at source).",
+        "Dinis opened Lisbon Fringe (WS-215), a guide to the side events built by one conductor per person.",
+        "Angelo's agents moved to his second account and work there in a pool of worker sessions; Silvio's dashboard built 'Universo', every graph in one place, and a new agent for the Fringe; Indi's social agent drafted Thursday's post.",
+        "Dinis's security agent: one new medium issue in Storm-Charles's deploy job; nothing in your files."
+      ]
+    }
+  ],
+  "next": [
+    "Hourly to 21:20; the morning brief at 07:20 on Thursday, with the accountant's report."
+  ],
+  "sources": [
+    "git log origin/dev since 07:26",
+    "people/jose/watcher/latest.md (17:16)",
+    "your scheduled tasks (the list, 17:22)",
+    "dcbfb2d3, 6b88806a, 04de7c9f, 3102e178, e0868018",
+    "telemetry_drain.py (17:22)",
+    "your Drive folder (titles only: no new files)"
+  ]
+}

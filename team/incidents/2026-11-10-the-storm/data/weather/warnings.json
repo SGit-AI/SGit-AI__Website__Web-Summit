@@ -1,18 +1,18 @@
 {
  "about": "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). IPMA's open data carries no issue time: `sent_utc` is the sent time of the CAP message (MeteoAlarm, cap.json) matching the warning's area, type, level and window exactly, or null where none matches (never guessed).",
  "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
- "read_utc": "2026-11-11T12:23:12Z",
- "lisbon_peak_level": "red",
+ "read_utc": "2026-11-11T18:23:17Z",
+ "lisbon_peak_level": "orange",
  "lisbon": [
   {
    "type": "Agitação Marítima",
    "level": "orange",
-   "start_utc": "2026-11-11T12:00:00Z",
+   "start_utc": "2026-11-11T15:56:00Z",
    "end_utc": "2026-11-11T21:00:00Z",
    "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T12:23:12Z",
-   "sent_utc": "2026-11-10T12:09:08Z",
+   "read_utc": "2026-11-11T18:23:17Z",
+   "sent_utc": null,
    "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -23,379 +23,70 @@
    "end_utc": "2026-11-12T03:00:00Z",
    "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T12:23:12Z",
+   "read_utc": "2026-11-11T18:23:17Z",
    "sent_utc": "2026-11-10T07:18:40Z",
    "text_en": "SW waves 4 to 5 metres.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
   {
    "type": "Precipitação",
-   "level": "red",
-   "start_utc": "2026-11-11T09:00:00Z",
+   "level": "yellow",
+   "start_utc": "2026-11-11T15:56:00Z",
    "end_utc": "2026-11-11T18:00:00Z",
-   "text_pt": "Precipitação forte e persistente.",
+   "text_pt": "Precipitação por vezes forte.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T12:23:12Z",
-   "sent_utc": "2026-11-10T21:23:00Z",
-   "text_en": "Strong and persistent precipitation.",
-   "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-  },
-  {
-   "type": "Vento",
-   "level": "orange",
-   "start_utc": "2026-11-11T09:00:00Z",
-   "end_utc": "2026-11-11T21:00:00Z",
-   "text_pt": "Rajadas até 120 km/h.",
-   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T12:23:12Z",
-   "sent_utc": "2026-11-11T07:16:30Z",
-   "text_en": "Wind gusts up to 120 km/h.",
-   "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+   "read_utc": "2026-11-11T18:23:17Z",
+   "sent_utc": null,
+   "text_en": "Rain, at times heavy.",
+   "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent precipitation.', drops 'por vezes')"
   }
  ],
  "red_and_orange_elsewhere": {
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-11T12:23:12Z",
+  "read_utc": "2026-11-11T18:23:17Z",
   "items": [
    {
     "area": "BJA",
-    "type": "Precipitação",
-    "level": "red",
-    "start_utc": "2026-11-11T09:00:00Z",
-    "end_utc": "2026-11-11T18:00:00Z",
-    "text_pt": "Precipitação por vezes forte e persistente.",
-    "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Rain, at times heavy, and persistent.",
-    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
-   },
-   {
-    "area": "CBO",
-    "type": "Precipitação",
-    "level": "red",
-    "start_utc": "2026-11-11T12:00:00Z",
-    "end_utc": "2026-11-11T18:00:00Z",
-    "text_pt": "Precipitação forte e persistente.",
-    "sent_utc": "2026-11-10T16:30:01Z",
-    "text_en": "Strong and persistent precipitation.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "FAR",
-    "type": "Precipitação",
-    "level": "red",
-    "start_utc": "2026-11-11T09:00:00Z",
-    "end_utc": "2026-11-11T18:00:00Z",
-    "text_pt": "Precipitação por vezes forte e persistente.",
-    "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Rain, at times heavy, and persistent.",
-    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
-   },
-   {
-    "area": "FAR",
-    "type": "Vento",
-    "level": "red",
-    "start_utc": "2026-11-11T09:00:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
-    "sent_utc": "2026-11-10T07:18:40Z",
-    "text_en": "Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.",
-    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 140 km/h.', does not carry the same figures)"
-   },
-   {
-    "area": "LRA",
-    "type": "Precipitação",
-    "level": "red",
-    "start_utc": "2026-11-11T12:00:00Z",
-    "end_utc": "2026-11-11T18:00:00Z",
-    "text_pt": "Precipitação forte e persistente.",
-    "sent_utc": "2026-11-10T16:30:01Z",
-    "text_en": "Strong and persistent precipitation.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "PTG",
-    "type": "Precipitação",
-    "level": "red",
-    "start_utc": "2026-11-11T12:00:00Z",
-    "end_utc": "2026-11-11T18:00:00Z",
-    "text_pt": "Precipitação forte e persistente.",
-    "sent_utc": "2026-11-10T16:30:01Z",
-    "text_en": "Strong and persistent precipitation.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "STB",
-    "type": "Precipitação",
-    "level": "red",
-    "start_utc": "2026-11-11T09:00:00Z",
-    "end_utc": "2026-11-11T18:00:00Z",
-    "text_pt": "Precipitação forte e persistente.",
-    "sent_utc": "2026-11-10T21:23:00Z",
-    "text_en": "Strong and persistent precipitation.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "STM",
-    "type": "Precipitação",
-    "level": "red",
-    "start_utc": "2026-11-11T12:00:00Z",
-    "end_utc": "2026-11-11T18:00:00Z",
-    "text_pt": "Precipitação forte e persistente.",
-    "sent_utc": "2026-11-10T16:30:01Z",
-    "text_en": "Strong and persistent precipitation.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "AVR",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Precipitação persistente, por vezes forte.",
-    "sent_utc": null,
-    "text_en": "Persistent rainfall, sometimes heavy.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "BGC",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Precipitação persistente, por vezes forte.",
-    "sent_utc": null,
-    "text_en": "Persistent rainfall, sometimes heavy.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "BJA",
     "type": "Agitação Marítima",
     "level": "orange",
-    "start_utc": "2026-11-11T12:00:00Z",
+    "start_utc": "2026-11-11T15:56:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
-    "sent_utc": "2026-11-10T12:09:08Z",
+    "sent_utc": null,
     "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
     "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "BJA",
-    "type": "Vento",
-    "level": "orange",
-    "start_utc": "2026-11-11T09:00:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Rajadas até 120 km/h.",
-    "sent_utc": "2026-11-11T07:16:30Z",
-    "text_en": "Wind gusts up to 120 km/h.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "BRG",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Precipitação persistente, por vezes forte.",
-    "sent_utc": null,
-    "text_en": "Persistent rainfall, sometimes heavy.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "CBO",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T12:00:00Z",
-    "text_pt": "Precipitação por vezes forte e persistente.",
-    "sent_utc": null,
-    "text_en": "Rain, at times heavy, and persistent.",
-    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
-   },
-   {
-    "area": "CBR",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Precipitação persistente, por vezes forte.",
-    "sent_utc": null,
-    "text_en": "Persistent rainfall, sometimes heavy.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "EVR",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T18:00:00Z",
-    "text_pt": "Precipitação por vezes forte e persistente.",
-    "sent_utc": null,
-    "text_en": "Rain, at times heavy, and persistent.",
-    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
    },
    {
     "area": "FAR",
     "type": "Agitação Marítima",
     "level": "orange",
-    "start_utc": "2026-11-11T12:00:00Z",
+    "start_utc": "2026-11-11T15:56:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
-    "sent_utc": "2026-11-10T12:09:08Z",
+    "sent_utc": null,
     "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
     "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
    },
    {
-    "area": "GDA",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Precipitação persistente, por vezes forte.",
-    "sent_utc": null,
-    "text_en": "Persistent rainfall, sometimes heavy.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "LRA",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T12:00:00Z",
-    "text_pt": "Precipitação por vezes forte e persistente.",
-    "sent_utc": null,
-    "text_en": "Rain, at times heavy, and persistent.",
-    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
-   },
-   {
-    "area": "MCN",
+    "area": "FAR",
     "type": "Vento",
     "level": "orange",
-    "start_utc": "2026-11-11T07:33:00Z",
-    "end_utc": "2026-11-11T12:00:00Z",
-    "text_pt": "Rajadas até 100 km/h, em esepcial nos extremos leste e oeste.",
-    "sent_utc": null,
-    "text_en": "Wind gusts of up to 100 km/h, specially in west and east.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "MCS",
-    "type": "Vento",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:33:00Z",
-    "end_utc": "2026-11-11T12:00:00Z",
-    "text_pt": "Rajadas até 100 km/h.",
-    "sent_utc": null,
-    "text_en": "Wind gusts of up to 100 km/h.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "MPS",
-    "type": "Vento",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:33:00Z",
-    "end_utc": "2026-11-11T12:00:00Z",
-    "text_pt": "Rajadas até 100 km/h.",
-    "sent_utc": null,
-    "text_en": "Wind gusts of up to 100 km/h.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "MRM",
-    "type": "Vento",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:33:00Z",
-    "end_utc": "2026-11-11T12:00:00Z",
-    "text_pt": "Rajadas até 130 km/h.",
-    "sent_utc": null,
-    "text_en": "Windgusts up to 130 km/h.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "PTG",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T12:00:00Z",
-    "text_pt": "Precipitação por vezes forte e persistente.",
-    "sent_utc": null,
-    "text_en": "Rain, at times heavy, and persistent.",
-    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
-   },
-   {
-    "area": "PTO",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Precipitação persistente, por vezes forte.",
-    "sent_utc": null,
-    "text_en": "Persistent rainfall, sometimes heavy.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
+    "start_utc": "2026-11-11T15:56:00Z",
+    "end_utc": "2026-11-11T18:00:00Z",
+    "text_pt": "Rajadas até 90 km/h, podendo atingir 110 km/h nos locais mais expostos.",
+    "sent_utc": "2026-11-11T15:55:03Z",
+    "text_en": "Gusts up to 90 km/h, possibly reaching 110 km/h in the most exposed places.",
+    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 90-110 km/h.', drops 'podendo', 'locais mais expostos')"
    },
    {
     "area": "STB",
     "type": "Agitação Marítima",
     "level": "orange",
-    "start_utc": "2026-11-11T12:00:00Z",
+    "start_utc": "2026-11-11T15:56:00Z",
     "end_utc": "2026-11-11T21:00:00Z",
     "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
-    "sent_utc": "2026-11-10T12:09:08Z",
+    "sent_utc": null,
     "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "STB",
-    "type": "Vento",
-    "level": "orange",
-    "start_utc": "2026-11-11T09:00:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Rajadas até 120 km/h.",
-    "sent_utc": "2026-11-11T07:16:30Z",
-    "text_en": "Wind gusts up to 120 km/h.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "STM",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T12:00:00Z",
-    "text_pt": "Precipitação por vezes forte e persistente.",
-    "sent_utc": null,
-    "text_en": "Rain, at times heavy, and persistent.",
-    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
-   },
-   {
-    "area": "VCT",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Precipitação persistente, por vezes forte.",
-    "sent_utc": null,
-    "text_en": "Persistent rainfall, sometimes heavy.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "VIS",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Precipitação persistente, por vezes forte.",
-    "sent_utc": null,
-    "text_en": "Persistent rainfall, sometimes heavy.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "VRL",
-    "type": "Precipitação",
-    "level": "orange",
-    "start_utc": "2026-11-11T07:17:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Precipitação persistente, por vezes forte.",
-    "sent_utc": null,
-    "text_en": "Persistent rainfall, sometimes heavy.",
     "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
    }
   ]
@@ -747,7 +438,174 @@
     ]
    ],
    "note": "compared with the read at 2026-11-11T09:22:47Z"
+  },
+  {
+   "read_utc": "2026-11-11T14:23:25Z",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "kind": "fact",
+   "added": [
+    [
+     "Agitação Marítima",
+     "orange",
+     "2026-11-11T12:34:00Z",
+     "2026-11-11T21:00:00Z",
+     "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima."
+    ],
+    [
+     "Precipitação",
+     "red",
+     "2026-11-11T12:34:00Z",
+     "2026-11-11T15:00:00Z",
+     "Precipitação forte e persistente."
+    ],
+    [
+     "Precipitação",
+     "yellow",
+     "2026-11-11T15:00:00Z",
+     "2026-11-11T18:00:00Z",
+     "Precipitação por vezes forte."
+    ],
+    [
+     "Vento",
+     "orange",
+     "2026-11-11T12:34:00Z",
+     "2026-11-11T18:00:00Z",
+     "Rajadas até 90 km/h, podendo atingir 110 km/h nos locais mais expostos."
+    ]
+   ],
+   "removed": [
+    [
+     "Agitação Marítima",
+     "orange",
+     "2026-11-11T12:00:00Z",
+     "2026-11-11T21:00:00Z",
+     "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima."
+    ],
+    [
+     "Precipitação",
+     "red",
+     "2026-11-11T09:00:00Z",
+     "2026-11-11T18:00:00Z",
+     "Precipitação forte e persistente."
+    ],
+    [
+     "Vento",
+     "orange",
+     "2026-11-11T09:00:00Z",
+     "2026-11-11T21:00:00Z",
+     "Rajadas até 120 km/h."
+    ]
+   ],
+   "expired": [],
+   "note": "compared with the read at 2026-11-11T13:24:33Z"
+  },
+  {
+   "read_utc": "2026-11-11T16:09:31Z",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "kind": "fact",
+   "added": [
+    [
+     "Agitação Marítima",
+     "orange",
+     "2026-11-11T15:06:00Z",
+     "2026-11-11T21:00:00Z",
+     "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima."
+    ],
+    [
+     "Precipitação",
+     "yellow",
+     "2026-11-11T15:06:00Z",
+     "2026-11-11T18:00:00Z",
+     "Precipitação por vezes forte."
+    ],
+    [
+     "Vento",
+     "orange",
+     "2026-11-11T15:06:00Z",
+     "2026-11-11T18:00:00Z",
+     "Rajadas até 90 km/h, podendo atingir 110 km/h nos locais mais expostos."
+    ]
+   ],
+   "removed": [
+    [
+     "Agitação Marítima",
+     "orange",
+     "2026-11-11T12:34:00Z",
+     "2026-11-11T21:00:00Z",
+     "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima."
+    ],
+    [
+     "Precipitação",
+     "yellow",
+     "2026-11-11T15:00:00Z",
+     "2026-11-11T18:00:00Z",
+     "Precipitação por vezes forte."
+    ],
+    [
+     "Vento",
+     "orange",
+     "2026-11-11T12:34:00Z",
+     "2026-11-11T18:00:00Z",
+     "Rajadas até 90 km/h, podendo atingir 110 km/h nos locais mais expostos."
+    ]
+   ],
+   "expired": [
+    [
+     "Precipitação",
+     "red",
+     "2026-11-11T12:34:00Z",
+     "2026-11-11T15:00:00Z",
+     "Precipitação forte e persistente."
+    ]
+   ],
+   "note": "compared with the read at 2026-11-11T15:23:13Z"
+  },
+  {
+   "read_utc": "2026-11-11T17:22:38Z",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "kind": "fact",
+   "added": [
+    [
+     "Agitação Marítima",
+     "orange",
+     "2026-11-11T15:56:00Z",
+     "2026-11-11T21:00:00Z",
+     "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima."
+    ],
+    [
+     "Precipitação",
+     "yellow",
+     "2026-11-11T15:56:00Z",
+     "2026-11-11T18:00:00Z",
+     "Precipitação por vezes forte."
+    ]
+   ],
+   "removed": [
+    [
+     "Agitação Marítima",
+     "orange",
+     "2026-11-11T15:06:00Z",
+     "2026-11-11T21:00:00Z",
+     "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima."
+    ],
+    [
+     "Precipitação",
+     "yellow",
+     "2026-11-11T15:06:00Z",
+     "2026-11-11T18:00:00Z",
+     "Precipitação por vezes forte."
+    ],
+    [
+     "Vento",
+     "orange",
+     "2026-11-11T15:06:00Z",
+     "2026-11-11T18:00:00Z",
+     "Rajadas até 90 km/h, podendo atingir 110 km/h nos locais mais expostos."
+    ]
+   ],
+   "expired": [],
+   "note": "compared with the read at 2026-11-11T16:22:55Z"
   }
  ],
- "next_read_utc": "2026-11-11T13:22Z"
+ "next_read_utc": "2026-11-11T19:22Z"
 }

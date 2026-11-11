@@ -4,6 +4,7 @@ Kept by prompter@web-summit.indi (see people/indi/kit/README.md). Every prompt h
 
 | Prompt | For | Version | Model | Date |
 |---|---|---|---|---|
+| [app-developer](app-developer.md) | appdev@web-summit.indi: Indi's app developer for the PrompTugal iPhone and iPad apps (Team app first): keeps the detail, makes it easy, ships through night branch, green CI, dev and TestFlight | 1 | Opus 5.5 | 2026-11-11 |
 | [stand-demo](stand-demo.md) | demo@web-summit.indi at the stand: a visitor's company as a safe simulation, run side by side with and without an ABP (WS-137) | 4.1 | Fable 5.1 or Opus 5.5 | 2026-11-09 |
 | [team-messaging-ios](team-messaging-ios.md) | The iOS team app's conductor: team messaging v1 (chat and email, sealed end to end, over the vaults), built to the tested formats | 1 | Opus 5.5 lead, Sonnet 5.5 screens | 2026-11-09 |
 | [team-app-redesign](team-app-redesign.md) | Dinis's iOS lead session: rebuild the Team app as five tabs (Now, Where, Plan, Tasks, More), in seven checked stages | 7 | Opus 5.5 lead, Sonnet 5.5 workers | 2026-11-09 |

@@ -1,7 +1,7 @@
 {
  "agent": "incident.meteorologist@web-summit.dinis",
- "state": "12:22 wake done: LPPT wind backed to ENE, 994 hPa falling 4 hPa/h; heaviest rain hour yet (11-18 mm); centre likely over or south of Lisbon (analysis 16, medium); no gust above warned; warnings unchanged.",
- "last_wake": "2026-11-11T12:23Z",
+ "state": "18:22 wake done: after the storm; NW wind, pressure rising, no rain; sea warnings to Thu 03:00; analysis 26.",
+ "last_wake": "2026-11-11T18:22Z",
  "jobs": [
   "J1 (tonight): the weather as JSON for the dashboard, in team/incidents/2026-11-10-the-storm/data/weather/ with a README per file: IPMA warnings for Lisboa (every level change with the time IPMA issued it and the time read), communiqués, Lisbon station observations (hourly), LPPT TAF and METAR (gusts). Read Vicky's desk's watch.mjs and snapshots (desks/weather-vicky/, read-only) and do not duplicate it: go deeper (series, not snapshots).",
   "J2 (tonight): how far ahead could it be known? The first public sign of CHARLES (communiqué no. 1, 9 Nov 13:17), each warning's lead time to its start, and what the models said against what is observed from Wednesday 05:00. Facts, evidence, hypotheses labelled.",
@@ -24,9 +24,10 @@
   "the session reported regenerating its key after private-key fragments were echoed in its own output; check the published key is the new one and nothing private was committed (security.repos@ may verify)",
   "incident.meteorologist@: the IPMA warnings feed carries no issue time; level-change times are bracketed by reads or taken from press (labelled). One README covers all files in data/weather/ (the brief asked for a README).",
   "21:25: IPMA's hourly aggregate can change values without changing dataUpdate; refresh.py now compares values (hourly_runs keeps the replaced run).",
-  "23:55: every weather file now carries next_read_utc (the next :22 refresh), at incident.conductor@'s request for the librarian's now.json."
+  "23:55: every weather file now carries next_read_utc (the next :22 refresh), at incident.conductor@'s request for the librarian's now.json.",
+  "12:47: MeteoAlarm's feed served an older copy on some reads (196 messages at 12:47:01, 198 at 12:47:06); a refresh can miss a message the poll saw minutes earlier. Refresh is re-run until it matches."
  ],
- "updated": "2026-11-11T12:27Z",
+ "updated": "2026-11-11T18:25Z",
  "by": "incident.meteorologist@web-summit.dinis",
  "key": {
   "fingerprint": "sha256:ecbf013bbf6722e7",
@@ -134,6 +135,76 @@
   },
   {
    "started_utc": "2026-11-11T12:27Z",
+   "ended_utc": "2026-11-11T12:28Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "stopped for an out-of-hours read (communiqué no. 3)"
+  },
+  {
+   "started_utc": "2026-11-11T12:32Z",
+   "ended_utc": "2026-11-11T12:34Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "stopped for an out-of-hours read (CAP batch 12:18:03, which it did not flag: no Lisbon or Madeira message)"
+  },
+  {
+   "started_utc": "2026-11-11T12:38Z",
+   "ended_utc": "2026-11-11T12:46:20Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "NEW Lisbon CAP sent 12:33:13 (red rain to 15:00, yellow 15-18; orange wind to 18:00, gusts to 90/110); conductor told at once"
+  },
+  {
+   "started_utc": "2026-11-11T12:52Z",
+   "ended_utc": "2026-11-11T13:24Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "no new message; stopped for the 13:22 wake (reads every 5 min to 13:20:58)"
+  },
+  {
+   "started_utc": "2026-11-11T13:27Z",
+   "ended_utc": "2026-11-11T14:23Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "no new message; stopped for the 14:22 wake (reads every 5 min to 14:20:45)"
+  },
+  {
+   "started_utc": "2026-11-11T14:27Z",
+   "ended_utc": "2026-11-11T15:22Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "no new message; stopped for the 15:22 wake (reads every 5 min to 15:20:19)"
+  },
+  {
+   "started_utc": "2026-11-11T15:26Z",
+   "ended_utc": "2026-11-11T16:09:15Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "NEW Lisbon CAP sent 15:55:03 (orange wind ends 15:56); conductor told at once"
+  },
+  {
+   "started_utc": "2026-11-11T16:12Z",
+   "ended_utc": "2026-11-11T16:22Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "no new message; stopped for the 16:22 wake (reads every 5 min to 16:21:01)"
+  },
+  {
+   "started_utc": "2026-11-11T16:25Z",
+   "ended_utc": "2026-11-11T17:22Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "no new message; stopped for the 17:22 wake (reads every 5 min to 17:19:19)"
+  },
+  {
+   "started_utc": "2026-11-11T17:26Z",
+   "ended_utc": "2026-11-11T18:22Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "no new message; stopped for the 18:22 wake (reads every 5 min to 18:19:21)"
+  },
+  {
+   "started_utc": "2026-11-11T18:25Z",
    "ended_utc": null,
    "limit": "70 min",
    "scope": "Lisbon and Madeira CAP messages"

@@ -1,7 +1,7 @@
 {
  "entity": "airport",
  "about": "Every decision in graph.json about airport: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T10:34Z",
+ "updated": "2026-11-11T13:48Z",
  "decisions": [
   {
    "edge": "ana-conditioned",
@@ -72,10 +72,25 @@
     "extent": "part",
     "parts": "208 at Lisbon, 14 at Faro"
    }
+  },
+  {
+   "edge": "ana-movements-1100",
+   "decision": "At 11:00: Lisbon 288 of 565 cancelled in advance (+22 during operation, 45 flown)",
+   "decided_by": "ANA (balance)",
+   "published_utc": "2026-11-11T11:55Z",
+   "address": "https://en.newsroom.ana.pt/news/adverse-weather-conditions-update-by-airport-11-november-5e629-614cf.html",
+   "read": "2026-11-11T13:48Z",
+   "label": "fact",
+   "state": "limited",
+   "scope": {
+    "extent": "part",
+    "parts": "Lisbon 310 of 565 movements cancelled by 11:00"
+   },
+   "reuse": "no"
   }
  ],
  "open": [
-  "ANA's statement read in the press only; aeroportolisboa.pt shows a bot check."
+  "ANA's newsroom (en.newsroom.ana.pt) answers; aeroportolisboa.pt still shows a bot page. ANA's figures: link and numbers only (its terms)."
  ],
  "tries": [
   {
@@ -157,12 +172,75 @@
    "bytes": 212,
    "result": "answered; no notice found",
    "excerpt": []
+  },
+  {
+   "at": "2026-11-11T12:32Z",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "http": 200,
+   "bytes": 212,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T13:33Z",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "http": 200,
+   "bytes": 212,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T14:33Z",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "http": 200,
+   "bytes": 212,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T15:33Z",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "http": 200,
+   "bytes": 212,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T16:33Z",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "http": 200,
+   "bytes": 212,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T17:40Z",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "http": 200,
+   "bytes": 212,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T18:33Z",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "http": 200,
+   "bytes": 212,
+   "result": "answered; no notice found",
+   "excerpt": []
   }
  ],
  "tries_summary": {
   "https://www.aeroportolisboa.pt/pt/lis/home": {
-   "tries": 10,
+   "tries": 17,
    "published_found": false
   }
- }
+ },
+ "sources": [
+  {
+   "url": "https://en.newsroom.ana.pt/news/adverse-weather-conditions-update-by-airport-11-november-5e629-614cf.html",
+   "read": "2026-11-11T13:48Z",
+   "kind": "primary (ANA newsroom)"
+  }
+ ]
 }

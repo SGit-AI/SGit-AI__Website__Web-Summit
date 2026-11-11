@@ -1,5 +1,355 @@
 [
   {
+    "version": "v0.2.1911",
+    "date": "2026-11-11",
+    "what": "RULES-11NOV confirmation wakes recorded (17 agents, 19:00 to 19:32 UTC, and my check at 20:00)",
+    "by": "conductor@web-summit.vicky",
+    "from": "d71792720"
+  },
+  {
+    "version": "v0.2.1910",
+    "date": "2026-11-11",
+    "what": "RULES-11NOV to every returning agent; the switch-back (standing answers 31 and 32); SA19, SA19C, SA23, SA26 and SA28 rewritten",
+    "by": "conductor@web-summit.vicky",
+    "from": "2414b1506"
+  },
+  {
+    "version": "v0.2.1909",
+    "date": "2026-11-11",
+    "what": "18:37 wake: Lisbon's warnings over except the sea; the storm passed north, the 10% case; comms D",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "6afcb8ec2"
+  },
+  {
+    "version": "v0.2.1908",
+    "date": "2026-11-11",
+    "what": "18:35 wake: no red anywhere; Lisbon down to sea warnings; Funchal port expected operational Thursday; no change to Day 3",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "830ee6748"
+  },
+  {
+    "version": "v0.2.1907",
+    "date": "2026-11-11",
+    "what": "18:22 wake: after the storm, NW wind, pressure rising, no rain; no new CAP; analysis 26",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "3576ea82b"
+  },
+  {
+    "version": "v0.2.1906",
+    "date": "2026-11-11",
+    "what": "wake 18:18: the incident +9 events; the storm passed just north of Lisbon, the 10% case",
+    "by": "reporter@web-summit.dinis",
+    "from": "be7168279"
+  },
+  {
+    "version": "v0.2.1905",
+    "date": "2026-11-11",
+    "what": "run 24, 364 commits: nothing found",
+    "by": "security.repos@web-summit.dinis",
+    "from": "115810d21"
+  },
+  {
+    "version": "v0.2.1904",
+    "date": "2026-11-11",
+    "what": "17:40 wake: lane drained (empty); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "f0f67f428"
+  },
+  {
+    "version": "v0.2.1903",
+    "date": "2026-11-11",
+    "what": "17:42 wake: no red anywhere (IPMA; press conflict recorded); Lisbon 275 occurrences to 16:30; Madeira trails closed Thursday; no change to Day 3",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "11b9fbce9"
+  },
+  {
+    "version": "v0.2.1902",
+    "date": "2026-11-11",
+    "what": "17:30 wake: Lisbon Fringe as one of Jose's lanes (WS-215)",
+    "by": "dashboard@web-summit.jose",
+    "from": "189f9ad61"
+  },
+  {
+    "version": "v0.2.1901",
+    "date": "2026-11-11",
+    "what": "17:20 wake: brief 23 to Jose (he joined Lisbon Fringe; crm, dev and vault wait on him); his fringe conductor in agents.json",
+    "by": "conductor@web-summit.jose",
+    "from": "0810b4b33"
+  },
+  {
+    "version": "v0.2.1900",
+    "date": "2026-11-11",
+    "what": "17:22 wake: wind turned WNW, pressure rising: centre passed just north; TAF 17:00 covers Thursday; analysis 25",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "b0e0bc81b"
+  },
+  {
+    "version": "v0.2.1899",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: usage at 17:22 UTC, by session",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "6d4d25f39"
+  },
+  {
+    "version": "v0.2.1898",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: PMs never blocked: wake routines fired by their workers, a 2-hour backstop, decide by default below tier 3",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "a9199ce47"
+  },
+  {
+    "version": "v0.2.1897",
+    "date": "2026-11-11",
+    "what": "Gravity v0.1.0, the universe visualization as a library (Dinis's brief); Universo ✦ now runs on it",
+    "by": "dashboard@web-summit.silvio",
+    "from": "57f63a46c"
+  },
+  {
+    "version": "v0.2.1896",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: the handover survey recorded; project handover-market opened for its PM; the hourly digest paused",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "20fe15f67"
+  },
+  {
+    "version": "v0.2.1895",
+    "date": "2026-11-11",
+    "what": "\"o período mais grave está à porta\": said by 15:17 at the end of the Council of Ministers, before IPMA's 15:55 message",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "1ee0968a2"
+  },
+  {
+    "version": "v0.2.1894",
+    "date": "2026-11-11",
+    "what": "ipma-cut-1555: Lisbon's orange wind ended at 15:56 (CAP 15:55:03); my 16:35 edge corrected (stale open data)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "e48a20885"
+  },
+  {
+    "version": "v0.2.1893",
+    "date": "2026-11-11",
+    "what": "the \"Add your key\" box no longer opens on every page (Silvio, with Dinis's yes)",
+    "by": "dashboard@web-summit.silvio",
+    "from": "6cd194b18"
+  },
+  {
+    "version": "v0.2.1892",
+    "date": "2026-11-11",
+    "what": "16:35 wake: no red left for Lisbon (IPMA, 15:06); A1 restricted at Vialonga; no change to Day 3",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "362819fde"
+  },
+  {
+    "version": "v0.2.1891",
+    "date": "2026-11-11",
+    "what": "16:22 wake: easing, rain stopped, SW wind easing, 989 hPa flat; no new CAP; analysis 24",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "dcda98e2c"
+  },
+  {
+    "version": "v0.2.1890",
+    "date": "2026-11-11",
+    "what": "Universo ✦, every graph in one place, in the new look, for everyone",
+    "by": "dashboard@web-summit.silvio",
+    "from": "edc126416"
+  },
+  {
+    "version": "v0.2.1889",
+    "date": "2026-11-11",
+    "what": "IPMA ends Lisbon's orange wind at 15:56 (CAP 15:55:03); LPPT TAF AMD 14:36; analysis 23: Lisbon's peak has passed",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "ac494e9d2"
+  },
+  {
+    "version": "v0.2.1888",
+    "date": "2026-11-11",
+    "what": "Thursday's post drafted in two versions, after Storm Charles",
+    "by": "social@web-summit.indi",
+    "from": "527e3acfb"
+  },
+  {
+    "version": "v0.2.1887",
+    "date": "2026-11-11",
+    "what": "15:37 wake: Lisbon's reds end early, Thursday reported on; comms C (send-now) and the pictures follow",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "a54ee066e"
+  },
+  {
+    "version": "v0.2.1886",
+    "date": "2026-11-11",
+    "what": "review: bring pool/b4-how-it-works's new work onto dev (one commit): how Angelo's pipeline works, in eight pictures",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "dc58b4b1a"
+  },
+  {
+    "version": "v0.2.1885",
+    "date": "2026-11-11",
+    "what": "15:22 wake: rain eased, wind SW strong, 989 hPa steady (centre passing just north); Relógio 74.0 mm in 6 h; analysis 22",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "d957e62bc"
+  },
+  {
+    "version": "v0.2.1884",
+    "date": "2026-11-11",
+    "what": "wake 15:19: the incident +11 events; Lisbon's red rain ended at 15:00, Thursday reported reopening",
+    "by": "reporter@web-summit.dinis",
+    "from": "b4d228645"
+  },
+  {
+    "version": "v0.2.1883",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: charlie started on b4-how-it-works (design + build)",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "47ba06c90"
+  },
+  {
+    "version": "v0.2.1882",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: b4-how-it-works opened (intake): the whole workflow, explained visually",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "762167dbe"
+  },
+  {
+    "version": "v0.2.1881",
+    "date": "2026-11-11",
+    "what": "review: bring pool/b3-team-offers's new work onto dev (one commit): the handover market spec and the two offers; offer 1 explains crafts and skills",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "1816cf1bf"
+  },
+  {
+    "version": "v0.2.1880",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: account B hit its 5-hour limit; b3 restarted; the scheduled runs made no commit",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "b3a3034a1"
+  },
+  {
+    "version": "v0.2.1879",
+    "date": "2026-11-11",
+    "what": "ABP maker prompt and ABP creation page",
+    "by": "conductor-abpmaker@web-summit.indi",
+    "from": "9f7f4a994"
+  },
+  {
+    "version": "v0.2.1878",
+    "date": "2026-11-11",
+    "what": "14:22 wake: LPPT 14:00 S 29G40KT (74 km/h, window max) with wind shear; Oeiras 26.2 mm in an hour; analysis 21: centre now likely just north",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "c7eb77d04"
+  },
+  {
+    "version": "v0.2.1877",
+    "date": "2026-11-11",
+    "what": "ANA's own newsroom read at source: airport figures at 11:00 are now a fact (figures and link, per ANA's terms)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "10dc6012f"
+  },
+  {
+    "version": "v0.2.1876",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: alpha started on b3-team-offers (spec)",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "b39e4689a"
+  },
+  {
+    "version": "v0.2.1875",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: b3-team-offers opened (intake): the handover market spec and two offers to the team",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "b5593420a"
+  },
+  {
+    "version": "v0.2.1874",
+    "date": "2026-11-11",
+    "what": "token ledger line (stabilise and level)",
+    "by": "video-editor@web-summit.indi",
+    "from": "bfa6e794b"
+  },
+  {
+    "version": "v0.2.1873",
+    "date": "2026-11-11",
+    "what": "IP's rail alert read at source (restrictions, speed limits in high-risk areas), paraphrased under IP's terms",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "df56501ee"
+  },
+  {
+    "version": "v0.2.1872",
+    "date": "2026-11-11",
+    "what": "TAP's own site alert for 10 and 11 Nov (fact, published 10 Nov 09:00), checked at source",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "b811ac3bb"
+  },
+  {
+    "version": "v0.2.1871",
+    "date": "2026-11-11",
+    "what": "a prompt for appdev@web-summit.indi, Indi's app developer",
+    "by": "prompter@web-summit.indi",
+    "from": "2df28968c"
+  },
+  {
+    "version": "v0.2.1870",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: the digest and accountant schedules created (tier 3, Angelo's word)",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "bc75d104f"
+  },
+  {
+    "version": "v0.2.1869",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: b1 answer 4: accountant every 4 hours, digest every hour, scheduled; the digest role; the digest filter",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "5dd6c25c2"
+  },
+  {
+    "version": "v0.2.1868",
+    "date": "2026-11-11",
+    "what": "IPMA cuts Lisbon warnings (CAP 12:33:13): red rain to 15:00 then yellow; orange wind to 18:00, gusts to 90 km/h; analysis 19",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "393305038"
+  },
+  {
+    "version": "v0.2.1867",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: what a digest request is, in the conductor format",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "340cad08c"
+  },
+  {
+    "version": "v0.2.1866",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: b1 answer 3: budgets count dollars and tokens; worker costs in runs.md",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "d1ddf8409"
+  },
+  {
+    "version": "v0.2.1865",
+    "date": "2026-11-11",
+    "what": "IPMA CAP batch 12:18:03: rain red to orange in Castelo Branco, Leiria, Portalegre, Beja; Faro red kept; nothing for Lisboa; cap.json keeps orange messages; analysis 18",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "854f1bc06"
+  },
+  {
+    "version": "v0.2.1864",
+    "date": "2026-11-11",
+    "what": "12:35 wake: ANA at 11:00, Lisbon 310 of 565 movements cancelled; no change to Day 3",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "9860952cc"
+  },
+  {
+    "version": "v0.2.1863",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: keep the Fringe's flow drafts: a frozen copy in prod-pipeline's prior art",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "2e01c1205"
+  },
+  {
+    "version": "v0.2.1862",
+    "date": "2026-11-11",
+    "what": "IPMA communiqué no. 3 (12:16:26): two centres, weaker wind, gusts 70-90 km/h South; no Lisbon warning change in CAP or open data at 12:28; refresh reads IPMA's communiqués page",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "b5af06f1f"
+  },
+  {
     "version": "v0.2.1861",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: project prod-pipeline opened, its lead prod-pipeline.pm@; leads are <project>.pm@; a project-manager skill",

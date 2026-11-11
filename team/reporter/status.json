@@ -1,8 +1,8 @@
 {
   "agent": "reporter@web-summit.dinis",
   "state": "active: the work desk's reporter; the incident's reporter (WS-214, P1 on account A); wakes hourly",
-  "last_wake": "2026-11-11T12:30Z",
-  "last_commit_read": "e178ba97",
+  "last_wake": "2026-11-11T18:25Z",
+  "last_commit_read": "dc03f2bd",
   "key": "sha256:d6d2befc473bac30 (session key; public half in data/keys.json)",
   "done": [
     "session key made; public half on the keys page",
@@ -22,10 +22,12 @@
     "03:18 wake (01:18 and 02:18 did not reach this session): new trace medium-yes-to-gamma-ray-scan (10 steps, Jose's example, c75eff6f); incident +8 events (AEMET named the storm at 10:20 on 9 Nov, 2 h 57 min before IPMA; the alert's legal text names no event; harbour master Aviso 53; bridges; Madeira's gusts; the hypothesis re-weighed; security's MEDIUM on vault read keys; the team at about 30 agents); see_also incident.reporter@'s six traces in the storm repository",
     "06:22 wake (04:18 and 05:18 did not reach this session): incident +8 events: the press on the red wind at 08:05 Tuesday (6 h 18 min before our first read); the track further south in the press (00:29); Web Summit's schedule still listing Wednesday; the first occurrence counts; the 05:00 TAF; the lead's interim hold on websummit.com under its terms (05:25, a decision without Dinis); the engines' account out of credit",
     "09:18 wake (07:18 and 08:18 did not reach this session): incident +7 events: IPMA lowered Lisbon's wind red to orange at 07:16:30 (read 22 min later through the CAP feed; the open data 66 to 88 min late), 4 h 44 min before the red would have begun; Madeira's reds ended, its centre passed about 07:30 to 08:00; cars submerged near the venue (press); 18 sea bars closed; red rain in force from 09:00",
-    "12:21 wake (10:18 and 11:18 did not reach this session): incident +10 events: the cancellation in the international press (09:10); the press on IPMA's downgrade 2 h 23 min after it, over-attributing; the TAF cut again (10:08); 222 then 288 flights cancelled; the government's 'the hardest is still to come'; Carris's trams and the Web Summit shuttle cancelled; the first ensemble spread (49% south of Lisbon); security's MEDIUM on the deploy job"
+    "12:21 wake (10:18 and 11:18 did not reach this session): incident +10 events: the cancellation in the international press (09:10); the press on IPMA's downgrade 2 h 23 min after it, over-attributing; the TAF cut again (10:08); 222 then 288 flights cancelled; the government's 'the hardest is still to come'; Carris's trams and the Web Summit shuttle cancelled; the first ensemble spread (49% south of Lisbon); security's MEDIUM on the deploy job",
+    "15:19 wake (13:18 and 14:18 did not reach this session): incident +11 events: IPMA shortened Lisbon's reds (CAP 12:33, red rain to 15:00); bridges limited again; Thursday reported reopening (Público 12:17, 24 Notícias on the organisers' email); ANA's own flight figures; the airport's peak gust 74 km/h at 14:00, below orange; the ministry: the alert ends today; Lisbon's red rain ended at 15:00",
+    "18:18 wake (16:18 and 17:18 did not reach this session): incident +9 events: IPMA ended Lisbon's orange wind early at 15:56 (read 14 min later); the minister's 'the most serious period is at the door' (by 15:17) ran ahead of the weather; the centre passed just north (the ensemble had 10% for that); CP's lines; Thursday 'the most intense day ever', a press conference at 11:00; Lisbon's yellow rain ended at 18:00, the sea warnings stay"
   ],
   "next": [
-    "incident: read PrompTugal__News__Storm-Charles from the next wake; Thursday and safety; the close-out",
+    "incident: Thursday morning (item 6), the alert's end at 23:59, the close-out: how far ahead could we have known (the lead times are in this trace)",
     "storm: the page's build and UI (stage 5); Wednesday against the decision graph",
     "video: the interview pipeline",
     "Android, iOS, Mobile",
@@ -35,6 +37,6 @@
     "For conductor@web-summit.dinis: /the-individual/ and WS-210 say Dinis's word was 'about 12:30 UTC', but the page was committed at 12:02:27 and live in v0.2.1686 at 12:04:51. The trace follows the commits; the page's time may want correcting.",
     "The clone is shallow (50 commits); each wake deepens it with git fetch --shallow-since to read the period it covers.",
     "For conductor@web-summit.indi: 348c7fa (12:40:37) says Indi's and Dinis's word was 'about 13:00 UTC'; the times disagree.",
-    "Ten of the last fourteen hourly wakes did not reach this session (22:18 to 11:18 except 00:18, 03:18, 06:22 and 09:18). Each catch-up re-caches about 290 k tokens of context: about 3 USD a wake, of which the work is a tenth. For Dinis: a fresh small session per wake (read status.json and traces/README.md, then the commits since last_commit_read) would cost a fraction."
+    "Fourteen of the last twenty hourly wakes did not reach this session (only 00:18, 03:18, 06:22, 09:18, 12:21, 15:19 and 18:18 arrived since 21:18). Each catch-up re-caches about 290 k tokens of context: about 3 USD a wake, of which the work is a tenth. For Dinis: a fresh small session per wake (read status.json and traces/README.md, then the commits since last_commit_read) would cost a fraction."
   ]
 }

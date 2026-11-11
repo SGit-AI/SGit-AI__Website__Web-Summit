@@ -1,6 +1,6 @@
 {
  "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by dashboard@web-summit.indi at each run, from 4 November at Indi's word (first written by synthetic@web-summit.indi from the board, Indi's briefs 1 to 8 and that day's git log).",
- "written": "2026-11-11T07:40Z",
+ "written": "2026-11-11T17:45Z",
  "done_for_indi": {
   "WS-01": "Done: you are at L4 (people/indi/onboarding.json).",
   "WS-02": "Done: you are at L4.",
@@ -20,7 +20,7 @@
   "WS-73": "Watch the videos and leave one line of feedback each.",
   "WS-113": "Sign your print set when the generic-QR update lands on /print/.",
   "WS-07": "Two-minute check-in, morning, midday and evening.",
-  "WS-126": "Wednesday's post said 'tomorrow at our stand', but today is called off. Check with your social helper before posting it.",
+  "WS-126": "Thursday's post has two versions: A if Web Summit confirms Thursday and our stand opens, B if it is called off. Check Web Summit's update in the morning, then post the right one.",
   "WS-15": "Read the draft at https://web-summit.sgit.ai/people/indi/overnight/2026-11-04/ws-15-message/MESSAGE.md, then agree it with Nimay.",
   "WS-19": "factory@ drafted the card-to-analysis loop overnight: review it.",
   "WS-22": "messaging@ has started the review: read its first drafts.",
@@ -45,13 +45,19 @@
   "WS-137": "Angelo said yes to the Opus 5.5 switch in the demo (off by default). His helper builds the side-by-side demo for Wednesday's rehearsal.",
   "WS-155": "Picking this up today (your word, 6 Nov): check the cards, round 4, at https://web-summit.sgit.ai/cards/#r4. Say if Dinis's designer's 4:18 am redesign covers your designer's fixes.",
   "WS-166": "Before Thursday: scan your key's QR code on each phone and iPad, add the card to Wallet, and update both apps from TestFlight. Five minutes.",
-  "WS-170": "Still waiting on Dinis (checked Wednesday 7:30 am): your GitHub name is not in the team list yet.",
+  "WS-170": "Still waiting on Dinis (checked Wednesday 5:30 pm): your GitHub name is not in the team list yet.",
   "WS-171": "Not built yet when checked at 14:30 UTC on 6 Nov: it is due today. Ask factory@'s chat for the first page, then read it and say if it makes sense.",
   "WS-177": "Still to run: paste your conductor's prompt into your synthetic helper's chat. Your accountant suggests the cheaper Sonnet or Haiku models for it. The outreach emails wait on reviews this weekend.",
   "WS-168": "Vicky reviewed the 'lead to article' page: the six steps work, keep the title. She suggests doing interviews on the spot at the stand. Read her note and say if you want that.",
   "WS-209": "Your education idea: (1) pick a time to talk with Dinis, before Thursday's stand day; (2) look at the list of 22 education and child-safety people and connect with them in the Web Summit app; (3) send the drafted reply to Dinis's agent. The idea page is already live."
  },
  "other": [
+  {
+   "group": "Your agents",
+   "title": "New today: your app developer and your ABP maker",
+   "detail": "Your app developer helper started and published its key. An ABP maker helper wrote its prompt and a page for making ABPs (the plain rules for each AI helper).",
+   "source": "Wednesday's commits"
+  },
   {
    "group": "Waiting on you",
    "title": "Unblock the Team app helper (1 minute)",
