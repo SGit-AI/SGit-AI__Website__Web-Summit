@@ -1,4 +1,4 @@
-For the digest: patterns 1-3 tried; OpenRouter works (0.10 USD) but cheap models fail exact work; testing a whole worker on OpenRouter; the signed reply to Dinis's packet is being prepared, shown to Angelo before any push; manual paste dropped by Angelo: the target is handover without a person passing prompts.
+For the digest: patterns 1-3 tried; OpenRouter works (0.10 USD) but cheap models fail exact work; testing a whole worker on OpenRouter; the signed reply to Dinis's packet is being prepared, shown to Angelo before any push; manual paste dropped; the target is handover with no person in the loop: our first outgoing Fringe-format packet is being prepared (nothing posted).
 For the digest: plan written; pattern 1 (Fringe packet relay) and the handover format running as workers; Angelo's go in principle for pattern 1's write-back, shown to him before any push; pattern 2 dry run on Angelo's own other account first (his go); pattern 3 (OpenRouter, Dinis's key) approved by Angelo as urgent: account B's usage is running out; key to be saved as a network secret for openrouter.ai.
 
 Lead: handover-market.pm@PrompTugal.angelo. Branch project/handover-market. Brief: BRIEF.md (opened by 20fe15f6, pushed-by ANGELO, checked 2026-11-11).
@@ -21,7 +21,8 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 - **3a handover-p3-openrouter** (build, large), running from 17:20. 3 OpenRouter (Angelo's go, 2026-11-11): key saved 17:1x as a network secret for openrouter.ai on env PrompTugal News shared; Dinis's key saved as this environment's network secret for openrouter.ai (Angelo enters it in the secure form); then one worker runs one small task through the cheap tier and has Claude check it, recorded with cost.
 - **3a done** 17:28 (pool/handover-p3-openrouter 1943369; 1.81 USD platform + 0.096 USD OpenRouter): key works; or-task.mjs; cheap tier 24% rows right, strong 54%: fit for drafts, summaries, tagging; not exact fields.
 - **3b handover-p3b-agent** (build, large): a whole worker whose model calls go to OpenRouter (Claude through OpenRouter, and a cheap model), cap 2 USD. Decided by default, Angelo can reverse.
-- 4 and 5: each waits for Angelo's go (see table).
+- **4 handover-p4-outpacket** (build, large): our first outgoing packet in the Fringe's format + a checklist for an always-on picker on Angelo's other account. Nothing posted; posting is tier 3 (first contact).
+- Ollama and AWS: each waits for Angelo's go (see table).
 
 ## Decisions (Angelo's words)
 - 2026-11-11: "We want to move very quickly to the point where we can start handing over tasks, staring from the easiest patterns and then moving on towards more complex ones." "Remember, don't execute anything yourself, this probably needs a pm with workers spawning powers."
@@ -32,6 +33,7 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 - 2026-11-11, after the signed reply via conductor.fringe@ (re-run with the Fringe's tool, pull request, shown before opening) was recommended: "Let's reply to Dinis's request." Step 1b-prep started; the PR is shown to Angelo before it is opened.
 - 2026-11-11 18:5x: wake routine trig_01Sp6G7mUcG4f97btiJRmgK4 set by conductor.b@ (a9199ce, pushed-by ANGELO; Angelo: "Go on all three, 2 hours is fine"): workers fire it last; below tier 3 the lead decides by default, recorded.
 - 2026-11-11 19:0x, on the manual dry run: "I don't think manually passing prompts is actually that significant, I know I can do it and it's not the workflow that we're interested in."
+- 2026-11-11, after the lead proposed outgoing packets in the Fringe's format (no person passing prompts): "Yes, go ahead with the outgoing packet".
 
 ## Open questions for Angelo
 (none open)
