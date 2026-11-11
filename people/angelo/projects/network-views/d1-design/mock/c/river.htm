@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hand-offs: River (mock C)</title><link rel="stylesheet" href="../shared.css">
+<style>
+ .stage canvas { height: 560px; } @media (max-width: 600px) { .stage canvas { height: 620px; } }
+ .seg { display: inline-flex; gap: 2px; padding: 3px; border-radius: 8px; border: 1px solid var(--border); margin: 10px 0 0; }
+ .seg button { min-height: 32px; padding: 0 12px; border: 0; border-radius: 6px; background: transparent; color: inherit; font: 600 12.5px var(--font); cursor: pointer; }
+ .seg button[aria-pressed="true"] { background: var(--cyan); color: #04121F; }
+</style></head>
+<body><div class="wrap">
+<h1>Today's hand-offs: River <small>Mock C. Work flows from Angelo, through the conductor and the leads, to the workers and out of the account. The wider the river, the more work went that way; each spark is a hand-off.</small></h1>
+<div class="seg" role="group" aria-label="River width shows"><button type="button" data-m="n" aria-pressed="true">Hand-offs</button><button type="button" data-m="cost" aria-pressed="false">Cost ($)</button><button type="button" data-m="tokens" aria-pressed="false">Tokens</button></div>
+<div class="hud" data-hud></div>
+<div class="grid2"><div>
+  <div class="stage"><canvas data-c role="img" aria-label="River of today's hand-offs from Angelo to the workers and outside; the same hand-offs are listed in text beside it"></canvas><div class="tip" data-tip></div></div>
+  <div class="controls" data-controls></div><div class="key"></div>
+</div>
+<div><section class="card" data-card aria-live="polite"></section>
+<section class="card"><h2>As they happen</h2><ul class="feed" data-feed></ul></section></div></div>
+<p class="note">Sample data: today's real records (mock/sample-handoffs.json, from mock/derive.mjs). Dashed streams are placeholders: no local model has run and no market hand-over has completed. Cost: only finished runs and OpenRouter calls carry one today.</p>
+</div>
+<script type="module">
+import { load, COL, WHERE, shapePath, clock, cardHtml, feed, wireFeed, hudHtml, keyHtml, short, money, tok, TIER_NAMES } from '../shared.js'
+const D = await load()
+document.querySelector('.key').innerHTML = keyHtml()
+const cv = document.querySelector('[data-c]'), ctx = cv.getContext('2d'), tip = document.querySelector('[data-tip]'), card = document.querySelector('[data-card]'), hud = document.querySelector('[data-hud]')
+let sel = null, metric = 'n'; const pick = r => { sel = r; card.innerHTML = cardHtml(r) }; card.innerHTML = cardHtml(null)
+document.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { metric = b.dataset.m; document.querySelectorAll('[data-m]').forEach(x => x.setAttribute('aria-pressed', x === b)) })
+let W, H, dpr, phone
+const size = () => { dpr = devicePixelRatio || 1; W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; phone = W < 600 }
+addEventListener('resize', size); size()
+// Columns: 0 Angelo, 1 conductor, 2 leads and helpers, 3 workers by slot, 4 where the work went outside a worker's own session.
+const colOf = a => a.tier <= 3 ? a.tier : 4
+const COLS = ['Angelo', 'Conductor', 'Leads and helpers', 'Workers', 'Sub-agents and outside']
+const first = {}; D.rows.forEach(r => { first[r.to] ??= r.t0; first[r.from] ??= r.t0 })
+const outOrder = a => a.tier === 4 ? 0 : { openrouter: 1, local: 2, market: 3 }[a.where] ?? 4
+// abstract space: u along the flow, v across it; a phone turns the river to run downwards
+const P = (u, v) => phone ? [16 + v * (W - 32), 46 + u * (H - 80)] : [34 + u * (W - 210), 30 + v * (H - 50)]
+const val = r => metric === 'n' ? 1 : metric === 'cost' ? (r.cost_usd || 0) : (r.tokens || 0)
+const nodeV = {}, bandV = {}   // smoothed sizes, so the river swells rather than jumps
+let L = { nodes: [], bands: [] }
+function layout(t) {
+  const rows = D.rows.filter(r => r.t0 <= t), bands = {}
+  for (const r of rows) { const k = r.from + '>' + r.to; (bands[k] ??= { from: r.from, to: r.to, rows: [], v: 0 }).rows.push(r); bands[k].v += val(r) }
+  const nodes = {}; const node = id => nodes[id] ??= { a: D.actors.find(a => a.id === id), in: 0, out: 0 }
+  for (const b of Object.values(bands)) { node(b.from).out += b.v; node(b.to).in += b.v }
+  const cols = [[], [], [], [], []]; for (const n of Object.values(nodes)) { n.v = Math.max(n.in, n.out); cols[colOf(n.a)].push(n) }
+  cols[2].sort((x, y) => first[x.a.id] - first[y.a.id]); cols[3].sort((x, y) => x.a.slot - y.a.slot); cols[4].sort((x, y) => outOrder(x.a) - outOrder(y.a) || first[x.a.id] - first[y.a.id])
+  // the market and local places are always drawn, empty and waiting until a hand-off reaches them
+  const MIN = .012, GAP = phone ? .018 : .022
+  const tot = Math.max(...cols.map(c => c.reduce((s, n) => s + n.v, 0))) || 1
+  const k = (1 - GAP * 10) / tot
+  cols.forEach((c, ci) => { const sum = c.reduce((s, n) => s + Math.max(MIN, n.v * k), 0) + GAP * (c.length - 1); let v = (1 - sum) / 2
+    for (const n of c) { const target = Math.max(MIN, n.v * k); nodeV[n.a.id] = (nodeV[n.a.id] ?? target) + (target - (nodeV[n.a.id] ?? target)) * .12; n.h = nodeV[n.a.id]; n.u = ci / 4; n.v0 = v; v += n.h + GAP; n.so = n.v0; n.si = n.v0 } })
+  const bl = Object.values(bands).sort((x, y) => (nodes[x.to].v0 - nodes[y.to].v0))
+  for (const b of bl) { const s = nodes[b.from], d = nodes[b.to], key = b.from + '>' + b.to
+    const ws = s.out ? b.v / s.out * s.h : s.h, wd = d.in ? b.v / d.in * d.h : d.h
+    b.s0 = s.so; b.s1 = s.so + Math.max(.002, ws); s.so = b.s1; b.d0 = d.si; b.d1 = d.si + Math.max(.002, wd); d.si = b.d1; b.su = s.u; b.du = d.u
+    b.where = b.rows.at(-1).where; b.real = b.rows.some(r => r.real); b.key = key }
+  L = { nodes: Object.values(nodes), bands: bl }
+}
+const NODE = .012, ease = x => x * x * (3 - 2 * x)
+const edge = (b, f, side) => { const u = b.su + NODE + (b.du - b.su - NODE) * f, e = ease(f); return [u, side ? b.s1 + (b.d1 - b.s1) * e : b.s0 + (b.d0 - b.s0) * e] }
+const particles = []; let lastT = null, T = 0
+const emit = (b, n, bright) => { for (let i = 0; i < n; i++) particles.push({ b: b.key, f: bright ? Math.random() * .05 : 0, o: Math.random(), sp: .25 + Math.random() * .25, bright }) }
+const st = clock(D, { root: document.querySelector('[data-controls]'), onTick: (s, jumped, dt = 1 / 60) => {
+  T += dt; layout(s.t)
+  if (lastT != null && !jumped && s.t > lastT) for (const r of D.rows) if (r.t0 > lastT && r.t0 <= s.t) { const b = L.bands.find(b => b.from === r.from && b.to === r.to); if (b) emit(b, r.where === 'openrouter' ? 3 : 9, true) }
+  if (jumped) particles.length = 0
+  for (const b of L.bands) { const recent = b.rows.filter(r => s.t - r.t0 < 40).length; if (Math.random() < dt * (.25 + recent * 1.5)) emit(b, 1, false) }
+  lastT = s.t; draw(s); hud.innerHTML = hudHtml(D, s, 'river'); upd(s.t, sel)
+} })
+const upd = feed(document.querySelector('[data-feed]'), D); wireFeed(document.querySelector('[data-feed]'), D, pick)
+function bandPath(b) { ctx.beginPath(); const N = 28
+  for (let i = 0; i <= N; i++) { const [u, v] = edge(b, i / N, 0); const [x, y] = P(u, v); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y) }
+  for (let i = N; i >= 0; i--) { const [u, v] = edge(b, i / N, 1); const [x, y] = P(u, v); ctx.lineTo(x, y) } ctx.closePath() }
+function draw(s) {
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H)
+  // column names
+  ctx.font = '600 9.5px ui-monospace,monospace'; ctx.fillStyle = 'rgba(143,166,194,.7)'
+  COLS.forEach((c, i) => { const [x, y] = P(i / 4, 0); if (phone) { ctx.fillText(c.toUpperCase(), W - 16 - ctx.measureText(c.toUpperCase()).width, P(i / 4, 0)[1] - (i < 2 ? 4 : 18)) } else { const t = c.toUpperCase(), w = ctx.measureText(t).width; ctx.fillText(t, Math.min(W - w - 8, Math.max(8, x - w / 2 + 6)), 18) } })
+  // the river
+  ctx.globalCompositeOperation = 'lighter'
+  for (const b of L.bands) { const w = WHERE[b.where], [x0, y0] = P(b.su, (b.s0 + b.s1) / 2), [x1, y1] = P(b.du, (b.d0 + b.d1) / 2)
+    const g = ctx.createLinearGradient(x0, y0, x1, y1), sw = WHERE[D.actors.find(a => a.id === b.from).where].color
+    g.addColorStop(0, sw + '40'); g.addColorStop(1, w.color + (b.real ? '66' : '22')); ctx.fillStyle = g; bandPath(b); ctx.fill()
+    if (!b.real) { ctx.setLineDash([3, 3]); ctx.strokeStyle = w.color; ctx.lineWidth = 1; ctx.stroke(); ctx.setLineDash([]) }
+    if (sel && sel.from === b.from && sel.to === b.to) { ctx.strokeStyle = COL.gold; ctx.lineWidth = 2; ctx.stroke() } }
+  // sparks
+  for (let i = particles.length - 1; i >= 0; i--) { const p = particles[i], b = L.bands.find(x => x.key === p.b); if (!b) { particles.splice(i, 1); continue }
+    p.f += p.sp * (1 / 60) * (p.bright ? 1.6 : 1); if (p.f >= 1) { particles.splice(i, 1); continue }
+    const [ua, va] = edge(b, p.f, 0), [, vb] = edge(b, p.f, 1), [x, y] = P(ua, va + (vb - va) * (.15 + .7 * p.o)), w = WHERE[b.where]
+    ctx.fillStyle = p.bright ? '#fff' : w.color; ctx.shadowColor = w.color; ctx.shadowBlur = p.bright ? 14 : 6; ctx.globalAlpha = p.bright ? 1 : .7
+    shapePath(ctx, p.bright ? w.shape : 'circle', x, y, p.bright ? 3.4 : 1.4); ctx.fill() }
+  ctx.globalAlpha = 1; ctx.shadowBlur = 0; ctx.globalCompositeOperation = 'source-over'
+  // the places: glowing bars with their name and total
+  for (const n of L.nodes) { const w = WHERE[n.a.where], [x0, y0] = P(n.u, n.v0), [x1, y1] = P(n.u + NODE, n.v0 + n.h)
+    const on = D.rows.some(r => r.to === n.a.id && r.t0 <= s.t && (r.t1 == null ? s.t - r.t0 < 90 : s.t <= r.t1))
+    ctx.shadowColor = w.color; ctx.shadowBlur = on ? 18 : 6; ctx.fillStyle = n.a.tier === 0 ? COL.gold : w.color; ctx.fillRect(Math.min(x0, x1), Math.min(y0, y1), Math.max(3, Math.abs(x1 - x0)), Math.max(3, Math.abs(y1 - y0))); ctx.shadowBlur = 0
+    const rows = D.rows.filter(r => r.to === n.a.id && r.t0 <= s.t), c = rows.reduce((a, r) => a + (r.cost_usd || 0), 0)
+    const lbl = short(n.a.id).replace(/ \(example\)/, '*'), sub = `${rows.length || ''}${c ? ' · ' + money(c) : ''}`
+    ctx.font = `${n.a.tier < 2 ? 700 : 500} ${phone ? 9.5 : 10.5}px ui-monospace,monospace`; ctx.fillStyle = on || n.a.tier < 3 ? COL.text : COL.dim
+    if (phone) { const bw = Math.abs(x1 - x0), tw = ctx.measureText(lbl).width; if (bw > tw + 4 || n.a.tier < 2) ctx.fillText(lbl, Math.max(4, Math.min(W - tw - 4, (x0 + x1) / 2 - tw / 2)), n.a.tier < 2 ? Math.min(y0, y1) - 4 : Math.max(y0, y1) + 11) }
+    else { const ym = (y0 + y1) / 2 + 3.5, tx = x1 + 6; ctx.fillText(lbl.slice(0, 24), tx, ym - (sub ? 5 : 0)); if (sub) { ctx.fillStyle = COL.dim; ctx.font = '9px ui-monospace,monospace'; ctx.fillText(sub, tx, ym + 7) } } }
+  // the empty places are drawn even before anything reaches them
+  for (const [k, label] of [['local', 'local models: waiting'], ['market', 'other accounts: waiting']]) if (!L.nodes.some(n => n.a.where === k)) {
+    const v = k === 'local' ? .86 : .93, [x, y] = P(1, v); ctx.setLineDash([3, 3]); ctx.strokeStyle = WHERE[k].color; ctx.strokeRect(phone ? x - 30 : x - 2, phone ? y - 2 : y - 8, phone ? 60 : 10, phone ? 8 : 16); ctx.setLineDash([])
+    ctx.fillStyle = COL.dim; ctx.font = '9.5px ui-monospace,monospace'; if (!phone) ctx.fillText(label, x + 14, y + 3) }
+}
+// hover: a place or a stream
+const hit = e => { const b = cv.getBoundingClientRect(), x = e.clientX - b.left, y = e.clientY - b.top
+  for (const n of L.nodes) { const [x0, y0] = P(n.u, n.v0), [x1, y1] = P(n.u + NODE, n.v0 + n.h); if (x >= Math.min(x0, x1) - 6 && x <= Math.max(x0, x1) + 6 && y >= Math.min(y0, y1) - 3 && y <= Math.max(y0, y1) + 3) return { n, x, y } }
+  for (const bd of [...L.bands].reverse()) { bandPath(bd); if (ctx.isPointInPath(x * dpr, y * dpr)) return { b: bd, x, y } } return { x, y } }
+cv.addEventListener('pointermove', e => { const h = hit(e); if (!h.n && !h.b) { tip.style.display = 'none'; return }
+  if (h.n) { const ins = D.rows.filter(r => r.to === h.n.a.id && r.t0 <= st.t); tip.innerHTML = `<b>${short(h.n.a.id)}</b><br>${TIER_NAMES[h.n.a.tier]} · ${WHERE[h.n.a.where].label}<br>${ins.length} received · ${money(ins.reduce((s, r) => s + (r.cost_usd || 0), 0))}` }
+  else { const r = h.b.rows; tip.innerHTML = `<b>${short(h.b.from)} → ${short(h.b.to)}</b><br>${r.length} hand-off${r.length > 1 ? 's' : ''} · ${money(r.reduce((s, x) => s + (x.cost_usd || 0), 0))} ${tok(r.reduce((s, x) => s + (x.tokens || 0), 0))}${h.b.real ? '' : '<br><i>placeholder</i>'}` }
+  tip.style.display = 'block'; tip.style.left = Math.min(h.x + 12, W - 200) + 'px'; tip.style.top = h.y + 12 + 'px' })
+cv.addEventListener('pointerleave', () => tip.style.display = 'none')
+cv.addEventListener('click', e => { const h = hit(e); const rows = h.b ? h.b.rows : h.n ? D.rows.filter(r => r.to === h.n.a.id && r.t0 <= st.t) : []; if (rows.length) pick(rows.at(-1)) })
+const q = new URLSearchParams(location.search); if (q.get('sel')) pick(D.rows.find(r => r.id === +q.get('sel'))); if (q.get('m')) document.querySelector(`[data-m="${q.get('m')}"]`)?.click()
+</script>
+</body></html>

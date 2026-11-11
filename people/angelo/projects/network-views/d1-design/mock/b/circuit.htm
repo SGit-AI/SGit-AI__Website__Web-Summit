@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hand-offs: Circuit (mock B)</title><link rel="stylesheet" href="../shared.css">
+<style>
+ .stage { background-image: linear-gradient(rgba(148,186,222,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148,186,222,.05) 1px, transparent 1px); background-size: 24px 24px; }
+ svg.view text { font-family: ui-monospace, Menlo, monospace; fill: #D5E1EE; }
+ .lbl { font-size: 10.5px; } .grp { font-size: 9px; fill: #8FA6C2 !important; letter-spacing: .6px; } .ax { font-size: 9.5px; fill: #8FA6C2 !important; }
+ .lane { fill: rgba(255,255,255,.018); } .lane.alt { fill: rgba(255,255,255,.035); }
+ .blk { stroke-width: 1.2; cursor: pointer; } .blk.ph, .wire.ph { stroke-dasharray: 4 3; }
+ .wire { fill: none; stroke-width: 1.3; opacity: .5; } .wire.on { opacity: 1; stroke-width: 2.2; }
+ .hit { fill: none; stroke: transparent; stroke-width: 12; cursor: pointer; }
+ .fut { opacity: 0 !important; pointer-events: none; }
+ .blkt { font-size: 9px; pointer-events: none; }
+ .now { stroke: #F5B942; stroke-width: 1.5; } .nowt { fill: #F5B942 !important; font-size: 10px; font-weight: 700; }
+ .badge { font-size: 9.5px; font-weight: 700; }
+ .sel { stroke: #F5B942 !important; stroke-width: 2.6 !important; opacity: 1 !important; }
+</style></head>
+<body><div class="wrap">
+<h1>Today's hand-offs: Circuit <small>Mock B. Time runs along each lane; a lane is an agent or a place where work runs. Every wire is one hand-off; a light runs along it when it happens.</small></h1>
+<div class="hud" data-hud></div>
+<div class="grid2"><div>
+  <div class="stage"><svg class="view" data-s role="img" aria-label="Circuit timeline of today's hand-offs; the same hand-offs are listed in text beside it"></svg><div class="tip" data-tip></div></div>
+  <div class="controls" data-controls></div><div class="key"></div>
+</div>
+<div><section class="card" data-card aria-live="polite"></section>
+<section class="card"><h2>As they happen</h2><ul class="feed" data-feed></ul></section></div></div>
+<p class="note">Sample data: today's real records (mock/sample-handoffs.json, from mock/derive.mjs). Dashed lanes, blocks and wires are placeholders: no local model has run and no market hand-over has completed.</p>
+</div>
+<script type="module">
+import { load, COL, WHERE, clock, cardHtml, feed, wireFeed, hudHtml, keyHtml, short, money, hm, tok, shapeSvg } from '../shared.js'
+const D = await load()
+document.querySelector('.key').innerHTML = keyHtml()
+const svg = document.querySelector('[data-s]'), tip = document.querySelector('[data-tip]'), card = document.querySelector('[data-card]'), hud = document.querySelector('[data-hud]')
+const NS = 'http://www.w3.org/2000/svg', el = (n, a = {}, p = svg) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e }
+let sel = null, phone, build
+const pick = r => { sel = r; card.innerHTML = cardHtml(r); svg.querySelectorAll('.sel').forEach(e => e.classList.remove('sel')); if (r) svg.querySelectorAll(`[data-id="${r.id}"]`).forEach(e => e.classList.add('sel')) }
+card.innerHTML = cardHtml(null)
+// Lanes: Angelo, the conductor, each lead and helper, each worker slot, sub-agents, then the three places outside the account.
+const GROUPS = [['Angelo', a => a.tier === 0], ['Conductor', a => a.tier === 1], ['Leads, helpers', a => a.tier === 2], ['Workers', a => a.tier === 3], ['Sub-agents', a => a.tier === 4], ['OpenRouter', a => a.where === 'openrouter'], ['Local', a => a.where === 'local'], ['Market', a => a.where === 'market']]
+const laneOf = {}, lanes = []
+GROUPS.forEach(([g, f], gi) => { const m = D.actors.filter(f).sort((a, b) => a.tier === 3 ? a.slot - b.slot : 0)
+  if (g === 'OpenRouter' || g === 'Local' || g === 'Market') { lanes.push({ g, gi, label: g === 'OpenRouter' ? 'OpenRouter (' + m.length + ' models)' : g === 'Local' ? 'Local models' : 'Other accounts', where: m[0].where }); m.forEach(a => laneOf[a.id] = lanes.length - 1) }
+  else m.forEach(a => { laneOf[a.id] = lanes.length; lanes.push({ g, gi, label: a.label.replace('.pm', ' pm'), where: a.where }) }) })
+const subLane = lanes.findIndex(l => l.g === 'Sub-agents')
+function draw() {
+  svg.innerHTML = ''; phone = svg.clientWidth < 600
+  const W = svg.clientWidth, LW = phone ? 0 : 150, RH = phone ? 20 : 22, top = phone ? 26 : 30
+  const H = top + lanes.length * RH + (phone ? 20 : 26)
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.style.height = H + 'px'
+  const x = m => LW + 10 + (m - D.start) / (D.end - D.start) * (W - LW - 24), y = i => top + i * RH + RH / 2
+  const defs = el('defs'); const f = el('filter', { id: 'g', x: '-50%', y: '-50%', width: '200%', height: '200%' }, defs); el('feGaussianBlur', { stdDeviation: 2.4, result: 'b' }, f); const mg = el('feMerge', {}, f); el('feMergeNode', { in: 'b' }, mg); el('feMergeNode', { in: 'SourceGraphic' }, mg)
+  lanes.forEach((l, i) => { el('rect', { class: 'lane' + (l.gi % 2 ? ' alt' : ''), x: 0, y: top + i * RH, width: W, height: RH })
+    const lx = phone ? 6 : 10, t = el('text', { class: 'lbl', x: phone ? 6 : 26, y: y(i) + 3.5, opacity: phone ? .55 : 1 }); t.textContent = l.label
+    if (!phone) { const ic = el('g', { transform: `translate(${lx},${y(i) - 6}) scale(.85)` }); ic.innerHTML = shapeSvg(WHERE[l.where].shape, WHERE[l.where].color, l.where === 'local' || l.where === 'market').replace(/^<svg[^>]*>|<\/svg>$/g, ''); ic.setAttribute('fill', l.where === 'local' || l.where === 'market' ? 'none' : WHERE[l.where].color); ic.setAttribute('stroke', WHERE[l.where].color) }
+    if (i === 0 || lanes[i - 1].gi !== l.gi) { el('line', { x1: 0, x2: W, y1: top + i * RH, y2: top + i * RH, stroke: 'rgba(148,186,222,.22)' }); if (!phone && l.gi < 5) { const g = el('text', { class: 'grp', x: W - 10, y: top + i * RH + 10, 'text-anchor': 'end' }); g.textContent = l.g.toUpperCase() } } })
+  for (let m = D.start; m <= D.end; m += 60) { if (phone && (m / 60) % 2) continue; el('line', { x1: x(m), x2: x(m), y1: top - 4, y2: H - (phone ? 6 : 22), stroke: 'rgba(148,186,222,.10)' }); const t = el('text', { class: 'ax', x: x(m), y: top - 8, 'text-anchor': m === D.start ? 'start' : 'middle' }); t.textContent = hm(m) }
+  // blocks: a run from its start to its end (or to now, still running), on the lane of whoever received the work
+  const items = []
+  const wires = el('g', { filter: 'url(#g)' }), blocks = el('g')
+  for (const r of D.rows) {
+    const to = laneOf[r.to] ?? subLane, from = laneOf[r.from] ?? 0, w = WHERE[r.where], ph = r.real ? '' : ' ph'
+    const xa = x(r.t0), ya = y(from), yb = y(to), dx = phone ? 8 : 14
+    const d = `M${xa - dx},${ya} C${xa},${ya} ${xa - dx},${yb} ${xa},${yb}`
+    const wire = el('path', { class: 'wire' + ph, d, stroke: w.color, 'data-id': r.id }, wires), hit = el('path', { class: 'hit', d, 'data-id': r.id }, wires)
+    let blk = null, txt = null
+    if (r.where !== 'openrouter' && r.kind !== 'word') { blk = el('rect', { class: 'blk' + ph, x: xa, y: yb - RH / 2 + 4, height: RH - 8, rx: 3, fill: w.color + '30', stroke: w.color, 'data-id': r.id }, blocks)
+      if (!phone) { txt = el('text', { class: 'blkt', x: xa + 4, y: yb + 3 }, blocks); txt.textContent = r.item.replace(/^(A\d )?/, '').slice(0, 22) } }
+    else { blk = el('circle', { class: 'blk' + ph, cx: xa, cy: yb, r: r.kind === 'word' ? 3.5 : 2.6, fill: w.color, stroke: w.color, 'data-id': r.id }, blocks) }
+    items.push({ r, wire, hit, blk, txt, x0: xa, ya, yb })
+  }
+  // a count where calls burst (OpenRouter: 30 calls in five minutes)
+  const or = D.rows.filter(r => r.where === 'openrouter'), orl = laneOf[or[0].to]
+  const badge = el('text', { class: 'badge', x: x(or.at(-1).t0) + 8, y: y(orl) + 3.5, fill: COL.violet }); badge.style.fill = COL.violet
+  if (!phone) for (const l of ['Local', 'Market']) { const i = lanes.findIndex(z => z.g === l), t = el('text', { class: 'ax', x: LW + 16, y: y(i) + 3.5 }); t.textContent = l === 'Local' ? 'local models: none has run yet' : 'other accounts: none completed yet' }
+  const now = el('line', { class: 'now', y1: top - 2, y2: H - 18 }), nowt = el('text', { class: 'nowt', y: H - 5, 'text-anchor': 'middle' })
+  const pulses = el('g', { filter: 'url(#g)' })
+  build = { items, x, now, nowt, badge, or, pulses, W }
+  if (sel) pick(sel)
+}
+draw(); addEventListener('resize', draw)
+let lastT = null; const live = []
+const st = clock(D, { root: document.querySelector('[data-controls]'), onTick: (s, jumped, dt = 1 / 60) => {
+  const { items, x, now, nowt, badge, or, pulses, W } = build
+  for (const it of items) { const vis = it.r.t0 <= s.t; it.wire.classList.toggle('fut', !vis); it.hit.classList.toggle('fut', !vis); it.blk.classList.toggle('fut', !vis); it.txt && it.txt.classList.toggle('fut', !vis)
+    if (vis && it.blk.tagName === 'rect') { const end = it.r.t1 ?? s.t, w = Math.max(3, x(Math.min(end, s.t)) - it.x0); it.blk.setAttribute('width', w); it.txt && it.txt.classList.toggle('fut', w < 60) }
+    if (!jumped && lastT != null && it.r.t0 > lastT && it.r.t0 <= s.t) { it.wire.classList.add('on'); live.push({ it, k: 0, c: el('circle', { r: 3.2, fill: '#fff' }, pulses) }) } }
+  const nx = x(s.t); now.setAttribute('x1', nx); now.setAttribute('x2', nx); nowt.setAttribute('x', Math.min(W - 20, Math.max(20, nx))); nowt.textContent = s.live ? 'LIVE' : hm(s.t)
+  const n = or.filter(r => r.t0 <= s.t).length; badge.textContent = n ? `${n} calls · ${money(or.filter(r => r.t0 <= s.t).reduce((a, r) => a + (r.cost_usd || 0), 0))}` : ''
+  for (let i = live.length - 1; i >= 0; i--) { const p = live[i]; p.k += dt / .9; const L = p.it.wire.getTotalLength(), q = p.it.wire.getPointAtLength(Math.min(1, p.k) * L)
+    p.c.setAttribute('cx', q.x); p.c.setAttribute('cy', q.y); if (p.k >= 1) { p.c.remove(); p.it.wire.classList.remove('on'); live.splice(i, 1) } }
+  if (jumped) { live.forEach(p => { p.c.remove(); p.it.wire.classList.remove('on') }); live.length = 0 }
+  lastT = s.t; hud.innerHTML = hudHtml(D, s, 'circuit'); upd(s.t, sel)
+} })
+const upd = feed(document.querySelector('[data-feed]'), D); wireFeed(document.querySelector('[data-feed]'), D, pick)
+svg.addEventListener('pointermove', e => { const id = e.target.dataset && e.target.dataset.id; if (!id) { tip.style.display = 'none'; return }
+  const r = D.rows.find(z => z.id === +id), b = svg.getBoundingClientRect()
+  tip.innerHTML = `<b>${short(r.from)} → ${short(r.to)}</b><br>${hm(r.t0)}${r.t1 ? ' to ' + hm(r.t1) : ''} · ${WHERE[r.where].label}<br>${r.item} · ${money(r.cost_usd)} ${tok(r.tokens)}${r.real ? '' : '<br><i>placeholder</i>'}`
+  tip.style.display = 'block'; tip.style.left = Math.min(e.clientX - b.left + 12, b.width - 220) + 'px'; tip.style.top = e.clientY - b.top + 14 + 'px' })
+svg.addEventListener('pointerleave', () => tip.style.display = 'none')
+svg.addEventListener('click', e => { const id = e.target.dataset && e.target.dataset.id; if (id) pick(D.rows.find(z => z.id === +id)) })
+const q = new URLSearchParams(location.search); if (q.get('sel')) pick(D.rows.find(r => r.id === +q.get('sel')))
+</script>
+</body></html>

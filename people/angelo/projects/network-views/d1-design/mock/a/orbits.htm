@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hand-offs: Orbits (mock A)</title><link rel="stylesheet" href="../shared.css">
+<style>
+ .stage canvas { height: min(72vh, 640px); } @media (max-width: 600px) { .stage canvas { height: 400px; } }
+</style></head>
+<body><div class="wrap">
+<h1>Today's hand-offs: Orbits <small>Mock A. Angelo at the centre; each ring is a layer of the estate; work leaves the account to the worlds outside. Each comet is one hand-off.</small></h1>
+<div class="hud" data-hud></div>
+<div class="grid2"><div>
+  <div class="stage"><canvas data-c role="img" aria-label="Orbit map of today's hand-offs; the same hand-offs are listed in text beside it"></canvas><div class="tip" data-tip></div></div>
+  <div class="controls" data-controls></div>
+  <div class="key"></div>
+</div>
+<div><section class="card" data-card aria-live="polite"></section>
+<section class="card"><h2>As they happen</h2><ul class="feed" data-feed></ul></section></div></div>
+<p class="note">Sample data: today's real records (mock/sample-handoffs.json, from mock/derive.mjs). The local-model and market worlds are dashed: nothing has run there yet, and their one comet each is a marked placeholder.</p>
+</div>
+<script type="module">
+import { load, COL, WHERE, shapePath, clock, cardHtml, feed, wireFeed, hudHtml, keyHtml, short, money, TIER_NAMES } from '../shared.js'
+const D = await load()
+document.querySelector('.key').innerHTML = keyHtml()
+const cv = document.querySelector('[data-c]'), ctx = cv.getContext('2d'), tip = document.querySelector('[data-tip]')
+const card = document.querySelector('[data-card]'), hud = document.querySelector('[data-hud]')
+let sel = null; const pick = r => { sel = r; card.innerHTML = cardHtml(r); flashSel = 1.5 }
+card.innerHTML = cardHtml(null)
+let W, H, cx, cy, R, K, dpr, phone, flashSel = 0
+const stars = Array.from({ length: 220 }, () => [Math.random(), Math.random(), Math.random()])
+const size = () => { dpr = devicePixelRatio || 1; W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; phone = W < 600; K = phone ? .8 : .56
+  cx = phone ? W / 2 : W * .45; cy = H * (phone ? .55 : .5); R = Math.min(phone ? W / 2 - 22 : W * .40, (H / 2 - (phone ? 50 : 24)) / K) }
+addEventListener('resize', size); size()
+const RING = [0, .17, .36, .58, .72], BOUND = .8
+const OUT = { openrouter: -0.42, local: 2.55, market: 3.45 }   // angles of the worlds outside
+const order = {}; D.actors.filter(a => a.tier === 2).forEach((a, i, all) => order[a.id] = i / all.length)
+const spin = [0, .0, .025, .012, .012]
+const ell = (a, r) => { const z = Math.sin(a); return { x: cx + Math.cos(a) * r * R, y: cy + z * r * R * K, z } }
+const worldPos = w => phone ? { openrouter: { x: W - 46, y: 46, z: 0 }, market: { x: 46, y: 46, z: 0 }, local: { x: 46, y: H - 44, z: 0 } }[w] : ell(OUT[w], 1.04)
+let T = 0
+const pos = (id, parent) => {
+  const a = D.actors.find(x => x.id === id) || { tier: 4 }
+  if (a.tier === 0) return { x: cx, y: cy, z: 0 }
+  if (a.tier === 1) return ell(-Math.PI / 2 + T * .01, RING[1])
+  if (a.tier === 2) return ell(order[id] * Math.PI * 2 - Math.PI / 2 + .5 + T * spin[2], RING[2])
+  if (a.tier === 3) return ell(a.slot / 12 * Math.PI * 2 - Math.PI / 2 + T * spin[3], RING[3])
+  if (a.tier === 4) { const p = pos(parent); const ang = Math.atan2((p.y - cy) / K, p.x - cx); return ell(ang + .12, RING[4]) }
+  const wp = worldPos(a.where), mates = D.actors.filter(x => x.where === a.where), i = mates.indexOf(a)
+  const ang = i / mates.length * Math.PI * 2 + T * .3, rr = (phone ? 22 : 30) + (i % 2) * 6
+  return { x: wp.x + Math.cos(ang) * rr, y: wp.y + Math.sin(ang) * rr * .6, z: 0 }
+}
+const comets = [], flash = {}
+let lastT = null
+const st = clock(D, { root: document.querySelector('[data-controls]'), onTick: (s, jumped) => {
+  if (lastT != null && !jumped && s.t > lastT) for (const r of D.rows) if (r.t0 > lastT && r.t0 <= s.t) comets.push({ r, k: 0 })
+  if (jumped || (lastT != null && s.t < lastT)) comets.length = 0
+  lastT = s.t; T += 1 / 60; draw(s); hud.innerHTML = hudHtml(D, s, 'orbits'); upd(s.t, sel)
+} })
+const upd = feed(document.querySelector('[data-feed]'), D); wireFeed(document.querySelector('[data-feed]'), D, pick)
+const glow = (c, b) => { ctx.shadowColor = c; ctx.shadowBlur = b }
+function draw(s) {
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H)
+  for (const [x, y, z] of stars) { ctx.fillStyle = `rgba(213,225,238,${.15 + .35 * Math.abs(Math.sin(T * .7 + z * 9))})`; ctx.fillRect(x * W, y * H, z > .9 ? 1.6 : 1, z > .9 ? 1.6 : 1) }
+  // rings and the account's boundary
+  ctx.lineWidth = 1
+  RING.forEach((r, i) => { if (!i) return; ctx.strokeStyle = 'rgba(5,191,233,.16)'; ctx.beginPath(); ctx.ellipse(cx, cy, r * R, r * R * K, 0, 0, Math.PI * 2); ctx.stroke()
+    if (!phone) { ctx.fillStyle = 'rgba(143,166,194,.5)'; ctx.font = '9px ui-monospace,monospace'; const t = TIER_NAMES[i].toUpperCase(); ctx.fillText(t, cx - r * R * .72 - ctx.measureText(t).width - 2, cy + r * R * K * .70 + 9) } })
+  ctx.setLineDash([3, 6]); ctx.strokeStyle = 'rgba(249,115,22,.35)'; ctx.beginPath(); ctx.ellipse(cx, cy, BOUND * R, BOUND * R * K, 0, 0, Math.PI * 2); ctx.stroke(); ctx.setLineDash([])
+  ctx.fillStyle = 'rgba(249,115,22,.75)'; ctx.font = '600 9.5px ui-monospace,monospace'; ctx.fillText('ACCOUNT B ENDS HERE', cx - 58, cy + BOUND * R * K + 13)
+  // the day so far: faint filaments, thicker where many hand-offs went
+  const done = D.rows.filter(r => r.t0 <= s.t), pairs = {}
+  for (const r of done) { const k = r.from + '>' + (r.to === 'sub-agent' ? 'sub:' + r.from : r.to); (pairs[k] = pairs[k] || { r, n: 0 }).n++ }
+  for (const { r, n } of Object.values(pairs)) { const a = pos(r.from), b = pos(r.to, r.from); const w = WHERE[r.where]
+    ctx.strokeStyle = w.color; ctx.globalAlpha = r.real ? .16 + Math.min(.3, n * .02) : .2; ctx.lineWidth = Math.min(4, .8 + Math.log2(n + 1)); if (!r.real) ctx.setLineDash([3, 4])
+    curve(a, b); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1 }
+  // outside worlds
+  for (const [k, ang] of Object.entries(OUT)) { const p = worldPos(k), w = WHERE[k], empty = k !== 'openrouter'
+    const g = ctx.createRadialGradient(p.x, p.y, 2, p.x, p.y, phone ? 26 : 34); g.addColorStop(0, w.color + (empty ? '55' : 'cc')); g.addColorStop(1, w.color + '00'); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, phone ? 26 : 34, 0, 7); ctx.fill()
+    ctx.strokeStyle = w.color; ctx.lineWidth = 1.2; if (empty) ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.ellipse(p.x, p.y, phone ? 22 : 30, (phone ? 22 : 30) * .6, 0, 0, 7); ctx.stroke(); ctx.setLineDash([])
+    ctx.fillStyle = w.color; shapePath(ctx, w.shape, p.x, p.y, 6); empty ? ctx.stroke() : ctx.fill()
+    ctx.fillStyle = COL.text; ctx.font = '600 10.5px ui-monospace,monospace'; const lbl = { openrouter: 'OPENROUTER', local: 'LOCAL MODELS', market: 'OTHER ACCOUNTS' }[k]
+    const tw = ctx.measureText(lbl).width, lx = Math.max(4, Math.min(W - tw - 4, p.x - tw / 2)); ctx.fillText(lbl, lx, p.y - (phone ? 30 : 40))
+    if (empty) { ctx.fillStyle = COL.dim; ctx.font = '9px ui-monospace,monospace'; const t2 = 'waiting: none yet'; ctx.fillText(t2, Math.max(4, Math.min(W - 90, p.x - 42)), p.y + (phone ? 38 : 48)) }
+    else { const c = done.filter(r => r.where === k); ctx.fillStyle = COL.dim; ctx.font = '9px ui-monospace,monospace'; ctx.fillText(`${c.length} calls · ${money(c.reduce((s, r) => s + (r.cost_usd || 0), 0))}`, Math.max(4, Math.min(W - 100, p.x - 40)), p.y + (phone ? 38 : 48)) } }
+  // nodes, back to front
+  const cost = {}; for (const r of done) cost[r.to] = (cost[r.to] || 0) + (r.cost_usd || 0)
+  const act = id => D.rows.some(r => r.to === id && r.t0 <= s.t && (r.t1 == null ? s.t - r.t0 < 90 : s.t <= r.t1))
+  const nodes = D.actors.filter(a => a.tier < 4 && D.rows.some(r => (r.to === a.id || r.from === a.id) && r.t0 <= s.t + 0.001) || a.tier === 0 || a.tier === 1)
+  nodes.sort((a, b) => pos(a.id).z - pos(b.id).z)
+  for (const a of nodes) { const p = pos(a.id), depth = 1 + p.z * .18, w = WHERE[a.where]
+    const base = [16, 10, 7.5, 6, 4, 3.5][a.tier] * depth * (phone ? .85 : 1), r = base + Math.sqrt(cost[a.id] || 0) * 2.2
+    const on = act(a.id); glow(w.color, on ? 22 : 8)
+    ctx.fillStyle = a.tier === 0 ? COL.gold : w.color; ctx.globalAlpha = on || a.tier < 2 ? 1 : .55; shapePath(ctx, a.tier === 0 ? 'star' : 'circle', p.x, p.y, r); ctx.fill(); ctx.globalAlpha = 1; glow('transparent', 0)
+    if (on && a.tier > 1) { ctx.strokeStyle = w.color; ctx.lineWidth = 1.5; ctx.setLineDash([4, 4]); ctx.lineDashOffset = -T * 20; ctx.beginPath(); ctx.arc(p.x, p.y, r + 5, 0, 7); ctx.stroke(); ctx.setLineDash([]) }
+    if (a.tier < 2 || !phone || on) { ctx.fillStyle = on || a.tier < 3 ? COL.text : COL.dim; ctx.font = `${a.tier < 2 ? 700 : 500} ${a.tier < 2 ? 11.5 : 10}px ui-monospace,monospace`
+      const t = a.tier === 3 ? a.label : a.label; ctx.fillText(t, p.x + r + 4, p.y + 3.5) } }
+  // comets: one per hand-off as it happens
+  for (let i = comets.length - 1; i >= 0; i--) { const c = comets[i]; c.k += 1 / 60 / (c.r.where === 'openrouter' ? .9 : 1.6); if (c.k >= 1) { flash[c.r.to] = 1; comets.splice(i, 1); continue }
+    const a = pos(c.r.from), b = pos(c.r.to, c.r.from), w = WHERE[c.r.where], e = c.k < .5 ? 2 * c.k * c.k : 1 - (-2 * c.k + 2) ** 2 / 2
+    for (let j = 10; j >= 0; j--) { const q = bez(a, b, Math.max(0, e - j * .025)); ctx.globalAlpha = (1 - j / 11) * .8; ctx.fillStyle = w.color; ctx.beginPath(); ctx.arc(q.x, q.y, 3.2 - j * .22, 0, 7); ctx.fill() }
+    const q = bez(a, b, e); ctx.globalAlpha = 1; glow(w.color, 18); ctx.fillStyle = '#fff'; shapePath(ctx, w.shape, q.x, q.y, 4.5); ctx.fill(); glow('transparent', 0) }
+  for (const [id, v] of Object.entries(flash)) { const p = pos(id); ctx.strokeStyle = `rgba(245,185,66,${v})`; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(p.x, p.y, 8 + (1 - v) * 22, 0, 7); ctx.stroke(); flash[id] = v - .03; if (flash[id] <= 0) delete flash[id] }
+  if (sel) { const a = pos(sel.from), b = pos(sel.to, sel.from); ctx.strokeStyle = COL.gold; ctx.lineWidth = 2.2; glow(COL.gold, 12); curve(a, b); ctx.stroke(); glow('transparent', 0) }
+}
+function ctrl(a, b) { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, dx = b.x - a.x, dy = b.y - a.y; return { x: mx - dy * .18, y: my + dx * .18 } }
+function curve(a, b) { const c = ctrl(a, b); ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.quadraticCurveTo(c.x, c.y, b.x, b.y) }
+function bez(a, b, t) { const c = ctrl(a, b), u = 1 - t; return { x: u * u * a.x + 2 * u * t * c.x + t * t * b.x, y: u * u * a.y + 2 * u * t * c.y + t * t * b.y } }
+// hover a node: a short tip; tap: the latest hand-off to it
+const near = e => { const b = cv.getBoundingClientRect(), x = e.clientX - b.left, y = e.clientY - b.top; let best = null, bd = 22
+  for (const a of D.actors) { if (a.tier === 4) continue; const p = pos(a.id), d = Math.hypot(p.x - x, p.y - y); if (d < bd) { bd = d; best = a } } return { best, x, y } }
+cv.addEventListener('pointermove', e => { const { best, x, y } = near(e); if (!best) { tip.style.display = 'none'; return }
+  const ins = D.rows.filter(r => r.to === best.id && r.t0 <= st.t), outs = D.rows.filter(r => r.from === best.id && r.t0 <= st.t)
+  tip.innerHTML = `<b>${short(best.id)}</b><br>${TIER_NAMES[best.tier]} · ${WHERE[best.where].label}<br>${ins.length} in, ${outs.length} out · ${money(ins.reduce((s, r) => s + (r.cost_usd || 0), 0))}`
+  tip.style.display = 'block'; tip.style.left = Math.min(x + 12, W - 200) + 'px'; tip.style.top = y + 12 + 'px' })
+cv.addEventListener('pointerleave', () => tip.style.display = 'none')
+cv.addEventListener('click', e => { const { best } = near(e); if (!best) return; const r = D.rows.filter(r => (r.to === best.id || r.from === best.id) && r.t0 <= st.t).at(-1); if (r) pick(r) })
+const q = new URLSearchParams(location.search); if (q.get('sel')) pick(D.rows.find(r => r.id === +q.get('sel')))
+</script>
+</body></html>
