@@ -115,6 +115,11 @@ Vicky's words where she gave them as a rule; the date each was given.
 
 - **Company pages: Wikipedia supports, never stands alone**: an About resting only on Wikipedia (or any secondary source) is not Ready; at least one of the company's own site or its official Web Summit page must support it. Applied 9 November, 11:30 UTC: Persona back to fix, RWS stays in fix; no other company file rests only on Wikipedia.
 
+## RULES-11NOV applied (11 November 2026, 19:25 UTC)
+
+- Both scheduled tasks' prompts now open with the RULES-11NOV rules, and step 8 of the first-review task is R-PUB-1 (standing answers 31 and 33), replacing "never publish at a scheduled run"; the re-check task stays disabled (standing answer 33). Both tasks stay disabled until Vicky agrees a new schedule. The stored task prompts are the source; the older copies below are kept for the record.
+- Key: reviewer-vicky-promptugal-3 (team account, 19:18 UTC); -b superseded at 19:20 UTC; 41 articles re-signed.
+
 ## Scheduled prompts (from 8 November 2026, SCHED-WS and REMOTE-WS)
 
 **From 8 Nov (SCHED-WS):** first review 06:15, 11:15, 15:15, 19:15 UTC (`trig_01JzwYcUkMpfFThdm1mbeGgs`); re-check 07:20, 12:20, 16:20, 20:20 UTC (`trig_01YQwEh2Z2UAjZX6vkrBqdNj`), both set by the conductor at Vicky's word, 7 Nov.
