@@ -1,0 +1,18 @@
+{
+  "shape": "lisbon-fringe-trace/1 + flow (a1-flow-proposal mock: an excerpt, five of 77 steps, to show the added fields; the full trace is team/angelo/traces/2026-11-11-ptw-classroom-deep-work-wexio.json in PrompTugal/PrompTugal__News__Fringe, 893d4e6)",
+  "event_id": "2026-11-11-ptw-classroom-deep-work-wexio",
+  "page": "https://fringe.promptugal.news/e/2026-11-11-ptw-classroom-deep-work-wexio/",
+  "generated_at": "2026-11-11T12:05:14Z",
+  "generated_by": "proposed: the build, on every deploy (today: admin/tools/trace-event.mjs by hand, then hand steps)",
+  "live": { "state": "idle", "checked_at": "2026-11-11T12:05:14Z", "signal": "proposed: a running[] field in team/angelo/status.json (today its state is prose)" },
+  "steps": [
+    { "n": 2, "t": "unknown", "before": "2026-11-11T10:27:41Z", "kind": "human", "who": "Dinis Cruz", "what": "asks for Lisbon Fringe", "evidence": ["7b0683c", "BRIEF.md"], "label": "fact", "source": "hand", "handoff_to": 3 },
+    { "n": 7, "t": "2026-11-11T10:57:00Z", "kind": "source-read", "who": "researcher.fringe@PrompTugal.dinis", "what": "read the organiser's public page", "evidence": ["66ab1f3"], "label": "fact", "source": "git", "slot": null, "minutes": null, "tokens": null, "handoff_to": 8 },
+    { "n": 8, "t": "2026-11-11T10:58:29Z", "kind": "agent", "who": "researcher.fringe@PrompTugal.dinis", "what": "created the entry in data/events.json", "evidence": ["66ab1f3"], "label": "fact", "source": "git", "slot": null, "minutes": null, "tokens": null },
+    { "n": 27, "t": "2026-11-11T11:42:50Z", "kind": "deploy", "who": "GitHub Actions", "what": "deployed as v0.1.29: the page first live", "version": "v0.1.29", "evidence": ["https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43014160174"], "label": "fact", "source": "ci" },
+    { "n": 71, "t": "2026-11-11T12:02:25Z", "kind": "agent", "who": "dev.2.fringe@PrompTugal.dinis", "what": "(context) runs 60 to 64 failed at 0 s", "evidence": ["2f42a7a", "537d766", "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016908017"], "label": "fact", "source": "git" }
+  ],
+  "stations": [ { "n": 2, "lvl": 0 }, { "n": 7, "lvl": 0 }, { "n": 8, "lvl": 2 }, { "n": 27, "lvl": 0, "live": true }, { "n": 71, "lvl": 1, "out": true } ],
+  "gaps": [ "slot, minutes and tokens: the Fringe's agents record none today (null, shown as 'not measured')" ],
+  "totals": { "page_first_live": "2026-11-11T11:42:50Z (v0.1.29)", "minutes_to_live": 46, "steps": 77, "humans": 3, "agents": 15, "commits": 38, "deploys": 17 }
+}
