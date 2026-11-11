@@ -40,6 +40,7 @@ Picked by Jose at 20:02 UTC on 7 November 2026 (session 2): piece one, one door.
 ## Open
 
 - Social posts (WS-208, Jose's word of 10 November): a batch when Jose asks, from the newly published GAMMA-Ray cards and interviews (the company named for tagging, the published link, only public facts, no contact details), into `people/jose/writer/posts/<date>.md`; Jose sends them.
+- GAMMA-Ray posts (WS-208, Prompt W4, 11 November 01:08 UTC): `posts/2026-11-11.md`, section "GAMMA-Ray (W4)": a LinkedIn share post, 12 card comments and a 13-post X thread, drafts only until Dinis's launch article is out; held: Codacy and Automaise (Control not yet evidenced); waiting: the launch article (none in the newsroom).
 - Storm batch (WS-208, Prompt W3): `posts/2026-11-11.md`, retried on 11 November once Jose allowed `websummit.com`, `ttsl.pt` and `promptugal.news`: five posts drafted (Web Summit's statement, the Algés ferry, S41, S45, and /storm/charles/, live since about 00:42 UTC), each for LinkedIn and X, for Jose to re-check and send; nothing waiting.
 - The meteologix ask (during Prompt W3): `desks/writer-jose/asks/2026-11-10-meteologix-on-the-storm-page.md` in the newsroom (45b71029); waits on Jose's word on which weather page (/storm/charles/ or the team site's /incidents/the-storm/), then on Vicky's weather desk.
 - JW1: the newsroom's review, then publishing by journalist@PrompTugal.dinis. Jose's read of the draft (about 8 minutes).
