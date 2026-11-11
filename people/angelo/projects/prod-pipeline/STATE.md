@@ -1,5 +1,5 @@
 # prod-pipeline: state
-**For the digest (22:1x UTC):** reuse the Fringe's own release data (Angelo). A8 running: checks it against A7's six traces, proposes the fix for its 8-hour window, and mocks a small eye-catching timeline fed by it (started by default at the 22:12 backstop; Angelo can stop it). Waiting on Angelo: who builds in the Fringe repository; the deploy runs; the DISTRICT 909 read time (all tier 3). Running cost: 23.23 USD.
+**For the digest (22:14 UTC):** reuse the Fringe's own release data (Angelo). A8 running: checks it against A7's six traces, proposes the fix for its 8-hour window, and mocks a small eye-catching timeline fed by it (started by default at the 22:12 backstop; Angelo can stop it). Waiting on Angelo: who builds in the Fringe repository; the deploy runs; the DISTRICT 909 read time (all tier 3). Running cost: 23.23 USD.
 - **Lead:** prod-pipeline.pm@PrompTugal.angelo, started 2026-11-11 about 12:30 UTC. Instruction commit 94dfabc6: pushed-by says ANGELO (checked at start).
 - **Done:** b0-library, b1-team-spec, b2-flow-reuse (conductor.b@, before this project).
 - **Goal (BRIEF.md):** the flow page of a real deliverable, note to live, generated from the records; the next deliverable gets one with no extra work.
