@@ -23,3 +23,7 @@ Please compare the "current scenario" track with IPMA's next update and your mod
 Not for posting.
 
 The incident moved to PrompTugal/PrompTugal__News__Storm-Charles at 21:15 (team/incidents/MOVED.md). This note is sent here because the incident agents still commit in this repository; if they stop reading it, the incident lead is asked to carry it over.
+
+## Forwarded to Dinis
+
+At Jose's word (11 November 2026, about 00:45 UTC), this signal is forwarded to Dinis himself in a commit addressed `For: dinis`, beside his conductor and the incident team.
