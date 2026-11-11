@@ -1,0 +1,98 @@
+/* prod-pipeline-a3 mocks: one strip, one trace page, option A within A2's limits.
+   Tokens: a subset of the Tech Fringe's admin/build/tokens.css (a749f50), as A1's mock.css took them.
+   Station shapes: the Fringe's admin/build/trace-strip.mjs (438f9f5). Sizes: A2's limits (findings.md, 91d6bff). */
+:root{color-scheme:light dark;
+--paper:#f6f3ec;--paper-2:#ece7db;--panel:#fffdf8;--ink:#121317;--ink-2:#3f424a;--ink-3:#595c64;--hair:#d9d2c1;--rule-2:#9d9580;
+--brand:#1f4fa8;--brand-soft:#e6ecf7;--live:#c52830;--ok:#006600;--ok-soft:#e2eedf;
+--tram:#f2b705;--on-tram:#121317;--terracotta:#b4532d;--river:#1f7f7f;--focus:#ffbf1f;
+--serif:"Newsreader",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#121317;--paper-2:#1b1d22;--panel:#1f2127;--ink:#eceae4;--ink-2:#c4c2bb;--ink-3:#a3a19a;--hair:#33363d;--rule-2:#5a5d66;--brand:#93b1ff;--brand-soft:#1c2740;--live:#f07278;--ok:#6dbb7e;--ok-soft:#16281c;--tram:#f5c542;--terracotta:#f0906b;--river:#5fcfcf}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--sans)}
+main{max-width:1100px;margin:0 auto;padding:12px 16px}
+h1{font:600 24px/1.2 var(--serif);margin:4px 0 6px}
+.dek{margin:0 0 8px;font-size:14px;color:var(--ink-3)}
+.fake{height:10px;background:var(--paper-2);margin:8px 0;border-radius:2px}.fake.s{width:60%}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+/* ---- the strip: the same component under every page and at the top of the trace page ---- */
+.fs{container-type:inline-size;background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:10px 12px;margin:20px 0}
+.fs-k{font:700 12px/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--terracotta);margin:0}
+.fs-h{font:600 16px/1.3 var(--serif);margin:2px 0 4px}
+.fs-h span{font:400 13px var(--sans);color:var(--ink-3)}
+.fs-line{list-style:none;margin:0;padding:0;display:flex;justify-content:space-between;position:relative}
+.fs-line li{flex:1 1 0;min-width:44px;display:flex;justify-content:center;position:relative}
+/* the line between stations: solid, dotted over a quiet stretch, marching into a running station */
+.fs-line li+li::before{content:"";position:absolute;top:19px;right:50%;width:100%;height:5px;background:var(--brand)}
+.fs-line li.quiet::before{background:repeating-linear-gradient(90deg,var(--brand) 0 6px,transparent 6px 11px)}
+.fs-line a{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;min-width:44px;min-height:44px;padding:0 2px;color:var(--ink);text-decoration:none;text-align:center}
+.fs-d{width:20px;height:20px;margin:11px 0 4px;border-radius:3px;background:var(--panel);border:4px solid var(--brand)}
+.s-ask .fs-d{border-color:var(--terracotta);border-style:dashed;border-radius:50%}
+.s-person .fs-d{border-color:var(--terracotta);border-radius:50%}
+.s-read .fs-d{border-color:var(--river);transform:rotate(45deg)}
+.s-live .fs-d{width:26px;height:26px;margin:8px 0 1px;border:0;border-radius:0;background:var(--tram);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.s-live [data-flow-label]{background:var(--tram);color:var(--on-tram);padding:0 6px;border-radius:999px}
+.s-fail .fs-d{background:var(--live);border-color:var(--live);transform:rotate(45deg)}
+.s-fail [data-flow-label],.s-fail .fs-t{color:var(--live)}
+.s-now .fs-d{background:var(--ok);border-color:var(--ok);border-radius:50%}
+/* the new station: work running now */
+.s-run .fs-d{background:var(--ok-soft);border-color:var(--ok);border-radius:50%}
+.s-run [data-flow-label]{color:var(--ok)}
+.fs-line li.s-run::before{background:repeating-linear-gradient(90deg,var(--ok) 0 8px,transparent 8px 14px);background-size:28px 5px}
+@media (prefers-reduced-motion:no-preference){
+ .fs-line li.s-run::before{animation:march 1s linear infinite}
+ .s-run .fs-d{animation:breathe 1.6s ease-in-out infinite}
+ @keyframes march{to{background-position:28px 0}}
+ @keyframes breathe{50%{transform:scale(1.2)}}}
+[data-flow-label]{font:600 12px/1.2 var(--sans);white-space:nowrap}
+.fs-t{font:12px/1.3 var(--mono);color:var(--ink-3);white-space:nowrap}
+.fs-f{margin:2px 0 0;font-size:13px;color:var(--ink-3)}
+.fs-f a{display:inline-flex;align-items:center;min-height:44px;color:var(--brand);font-weight:600}
+/* what gives way first (A2): the kicker, then lower-ranked stations, then the times */
+.fs-line .lv4{display:none}
+@container (min-width:700px){.fs-line .lv4{display:flex}}
+@container (max-width:420px){.fs-k{display:none}.fs-line .lv3{display:none}}
+@container (max-width:340px){.fs-t{display:none}.fs-line .lv2{display:none}}
+@container (min-width:600px){.fs-h{font-size:18px}}
+@media (max-height:420px) and (orientation:landscape){
+ .fs{display:grid;grid-template-columns:2fr 3fr;column-gap:12px;align-items:center;padding:6px 10px;margin:10px 0}
+ .fs-k,.fs-t,.fs-h span{display:none}.fs-h{grid-row:1;margin:0;font-size:15px}.fs-f{grid-row:2;margin:0}.fs-line{grid-column:2;grid-row:1/3}}
+
+/* ---- the trace page: "Show the flow" (A2's toggle) holding A1's lanes ---- */
+.fp{background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:8px 10px}
+.fp-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 8px}
+.fp-top h2{font:700 15px/1.3 var(--sans);margin:0}
+.fp-btns{display:flex;gap:6px;flex-wrap:wrap}
+.btn{min-height:44px;min-width:44px;padding:0 14px;border:2px solid var(--brand);border-radius:22px;background:var(--panel);color:var(--brand);font:600 14px var(--sans);cursor:pointer}
+.btn[aria-pressed="true"]{background:var(--brand);color:var(--panel)}
+.fp .opt{display:none}.open .opt{display:inline-block}
+.ov{margin:6px 0 0;padding:0;list-style:none}
+.ov li{display:grid;grid-template-columns:76px 1fr 28px;align-items:center;gap:6px;height:22px}
+.ov .bar{position:relative;height:10px;background:var(--paper-2);border-radius:5px}
+.ov i{position:absolute;top:2px;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:currentColor}
+.ov i.st{top:-1px;width:12px;height:12px;margin-left:-6px;box-shadow:0 0 0 2px var(--tram)}
+.ov .n{font:12px var(--mono);color:var(--ink-3);text-align:right}
+.k0{color:var(--terracotta)}.k1{color:var(--river)}.k2,.k3,.k4{color:var(--brand)}.k5{color:var(--ok)}
+.sc{display:none;overflow:auto;max-height:calc(60vh - 120px);margin-top:6px;border-top:1px solid var(--hair);overscroll-behavior-x:contain}
+.open .sc{display:block}.open .ov,.open .fp-note{display:none}
+.row{display:flex;height:44px;border-bottom:1px solid var(--hair)}
+.row:nth-child(odd){background:var(--paper-2)}
+.ln{position:sticky;left:0;z-index:2;flex:0 0 76px;display:flex;align-items:center;padding-left:6px;background-color:var(--panel)}
+.row:nth-child(odd) .ln{background-color:var(--paper-2)}
+.cell{flex:0 0 46px;display:flex;align-items:center;justify-content:center}
+.cell a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;color:inherit}
+.cell a::before{content:"";width:14px;height:14px;border-radius:50%;background:currentColor}
+.cell a.u::before{background:transparent;border:3px dashed currentColor}
+.cell a.ci::before{border-radius:2px}.cell a.dep::before{border-radius:2px;transform:rotate(45deg)}
+.cell a.st::before{box-shadow:0 0 0 3px var(--tram)}
+.cell a.run::before{background:var(--ok-soft);border:3px solid var(--ok)}
+.ax{display:flex;height:28px;position:sticky;top:0;z-index:3;background:var(--panel)}
+.ax .ln{z-index:4}.ax .cell{justify-content:flex-start;overflow:visible}
+.ax [data-flow-label]{font:12px/1 var(--mono);color:var(--ink-3)}
+.ax .gap [data-flow-label]{color:var(--terracotta)}
+.fp-note{font-size:13px;color:var(--ink-3);margin:6px 0 0}
+@media (prefers-reduced-motion:no-preference){
+ .replay .cell a{animation:pop .35s both;animation-delay:calc(var(--i) * 60ms)}
+ @keyframes pop{from{opacity:0;transform:scale(.4)}}}
+@media (max-height:420px) and (orientation:landscape){.ov li{height:16px}.ov{margin-top:2px}.fp{padding:4px 10px}.fp-note,.dek{display:none}h1{font-size:18px;margin:0}main{padding-top:4px}}
+@media (max-width:359px){.sc{max-height:calc(60vh - 170px)}}

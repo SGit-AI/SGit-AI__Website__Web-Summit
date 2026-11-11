@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A3 mock: the strip at the foot of a page</title><link rel="stylesheet" href="flow.css">
+<!-- golf.large.worker@PrompTugal.angelo, prod-pipeline-a3 (design mock, static, not live).
+     Option A's strip (A1, 991ae24) within A2's limits (91d6bff). Done: the Wexio event page (Fringe trace 893d4e6).
+     #running: the same strip while work runs (A1's example, a1-flow-proposal at 17:14). The build would write this HTML
+     from trace.json; the script here only swaps the two examples for the mock. -->
+</head><body><main>
+<h1>PTW Classroom: Deep Work x Wexio</h1>
+<p class="dek">An event page on the Tech Fringe ends here; the strip below says how it was made.</p>
+<div class="fake"></div><div class="fake"></div><div class="fake s"></div>
+<section class="fs" data-flow="strip" aria-labelledby="fs-h">
+ <p class="fs-k">How this page was made</p>
+ <h2 class="fs-h" id="fs-h">From the organiser's page to live in 46 min <span>· 3 people · 15 agents · 38 commits</span></h2>
+ <ol class="fs-line">
+  <li class="s-ask"><a href="trace.htm#s-2"><span class="fs-d"></span><span data-flow-label>Asked</span><span class="fs-t">10:27</span></a></li>
+  <li class="s-read quiet"><a href="trace.htm#s-7"><span class="fs-d"></span><span data-flow-label>Read</span><span class="fs-t">10:57</span></a></li>
+  <li class="lv3"><a href="trace.htm#s-9"><span class="fs-d"></span><span data-flow-label>Entry</span><span class="fs-t">10:58</span></a></li>
+  <li class="lv4 quiet s-person"><a href="trace.htm#s-15"><span class="fs-d"></span><span data-flow-label>Dinis</span><span class="fs-t">11:37</span></a></li>
+  <li class="lv4"><a href="trace.htm#s-24"><span class="fs-d"></span><span data-flow-label>Built</span><span class="fs-t">11:42</span></a></li>
+  <li class="s-live"><a href="trace.htm#s-27"><span class="fs-d"></span><span data-flow-label>Live</span><span class="fs-t">11:42</span></a></li>
+  <li class="lv4 quiet"><a href="trace.htm#s-33"><span class="fs-d"></span><span data-flow-label>26 commits</span><span class="fs-t">11:54</span></a></li>
+  <li class="s-fail lv2"><a href="trace.htm#s-66"><span class="fs-d"></span><span data-flow-label>5 failed</span><span class="fs-t">11:58</span></a></li>
+  <li class="s-now"><a href="trace.htm#s-76"><span class="fs-d"></span><span data-flow-label>Now</span><span class="fs-t">12:03</span></a></li>
+ </ol>
+ <p class="fs-f"><a href="trace.htm">See every step</a> · from the git record · taken 12:05</p>
+</section>
+</main>
+<script>
+if (location.hash === '#running') {
+  document.querySelector('h1').textContent = 'A1: the flow view proposal';
+  document.querySelector('.fs-k').textContent = 'How this page is being made';
+  document.querySelector('.fs-h').innerHTML = 'Working now: design, since 17:09 <span>· 1 person · 2 agents · 4 commits so far</span>';
+  document.querySelector('.fs-line').innerHTML =
+    '<li class="s-ask"><a href="trace.htm#r-1"><span class="fs-d"></span><span data-flow-label>Asked</span><span class="fs-t">12:40</span></a></li>' +
+    '<li class="lv3"><a href="trace.htm#r-2"><span class="fs-d"></span><span data-flow-label>+ phones</span><span class="fs-t">12:44</span></a></li>' +
+    '<li class="quiet"><a href="trace.htm#r-3"><span class="fs-d"></span><span data-flow-label>Brief</span><span class="fs-t">17:05</span></a></li>' +
+    '<li class="s-run"><a href="trace.htm#r-4"><span class="fs-d"></span><span data-flow-label>design</span><span class="fs-t">17:09 &rarr;</span></a></li>';
+  document.querySelector('.fs-f').innerHTML = '<a href="trace.htm">See every step</a> · running: status.json, checked 17:14';
+}
+</script></body></html>
