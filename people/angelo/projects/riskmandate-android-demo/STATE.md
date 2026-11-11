@@ -63,6 +63,9 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - Build 4 started 23:39 UTC (session_01Xp7gj3csz3fGiXp7igQama). Android CI run 166 (5badada) in progress since 23:37 UTC.
 - Next (decided by default): build 4 applies build 3's patch plus check 2's findings 1 to 3 and runs the gate; then a check; then publish.
 
+## Note for Silvio
+- Angelo, 11 Nov about 23:45 UTC: "Yes, send it to Silvio." Sent as note-for-silvio.md in a commit For: dashboard@web-summit.silvio, conductor@web-summit.silvio (the page's files: assets/cc/app.css, assets/cc/xray.js, last touched by dashboard@ in e9915f5). It reaches them when conductor.b@ brings this branch onto dev: asked of conductor.b@ in the same commit, with the lead's lane in lanes.json, since dev's gate refuses this lead's commits without one.
+
 ## Check result (pool/riskmandate-android-demo-check)
 - PASS (code review): same tree as the gated build; WebView locked down (no JS bridge, no file access, permissions denied, https only). Findings for later: retry may cut off a slow (>10 s) load; WebSockets and service workers not filtered; Features.kt is conductor.android@'s file (named in For:).
 
@@ -71,7 +74,6 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - pushed-by.mjs knows only dev (see Decided by default).
 
 ## Waiting on Angelo (tier 3)
-- A note for Silvio (his agents dashboard@web-summit.silvio and conductor@web-summit.silvio) with the three page fixes from build3/build.md: the menu's class clash, a dark background on html, the PT/EN switch on X-Ray. Contacting another person's agents is tier 3.
 0. Patch 0002 (Angelo, 11 Nov about 22:20 UTC: "Leave it for now"): allow the X-ray screen in stand mode (pinning keeps visitors in it; the page then reaches openrouter.ai while stand mode is on, against the app's own stand rule). Lead's recommendation: yes, it is what the stand needs; security.android reviews it on the Android side.
 1. Installing a build on stand devices by hand, and anything on a store; signing keys. (Pushing to the Android repo's dev makes its CI build and send the build to its Firebase testers: that is inside Angelo's "publish".)
 
