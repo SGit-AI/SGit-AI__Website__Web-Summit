@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1804",
+    "date": "2026-11-11",
+    "what": "token measure refused by this session's permission check; an ask for Dinis in status",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "1cd102d08"
+  },
+  {
     "version": "v0.2.1803",
     "date": "2026-11-11",
     "what": "bridges limited at 14:48, lifted by 22:29 (a sequence, not a conflict); AEMET named Charles at 10:20 on 9 Nov; social posts filed by service; Madeira SRPC",
