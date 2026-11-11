@@ -1,7 +1,7 @@
 {
  "entity": "port",
  "about": "Every decision in graph.json about port: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T08:41Z",
+ "updated": "2026-11-11T09:30Z",
  "decisions": [
   {
    "edge": "apram-cruises",
@@ -17,7 +17,11 @@
    "also": [],
    "read": "2026-11-11T01:35Z",
    "label": "evidence",
-   "note": "APRAM via Observador live 12:33:37 (JSON-LD). The ships cancelled; APRAM reported it."
+   "note": "APRAM via Observador live 12:33:37 (JSON-LD). The ships cancelled; APRAM reported it.",
+   "scope": {
+    "extent": "part",
+    "parts": "three cruise calls at Funchal"
+   }
   },
   {
    "edge": "capitania-aviso-53",
@@ -30,7 +34,11 @@
    "address": "https://www.amn.pt/DGAM/Capitanias/Lisboa/Documentos_AMN/Aviso%20n%C2%BA%2053_2026_Agravamento%20condi%C3%A7%C3%B5es%20meteo%2009-11NOV_signed.pdf",
    "read": "2026-11-11T02:30Z",
    "label": "fact",
-   "state": "limited"
+   "state": "limited",
+   "scope": {
+    "extent": "whole",
+    "parts": "Lisbon and Setúbal maritime regions: precautions only"
+   }
   },
   {
    "edge": "amn-bars-closed",
@@ -41,7 +49,11 @@
    "address": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
    "read": "2026-11-11T08:41Z",
    "label": "evidence",
-   "state": "closed"
+   "state": "closed",
+   "scope": {
+    "extent": "part",
+    "parts": "18 sea bars (which not stated)"
+   }
   }
  ],
  "open": []

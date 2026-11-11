@@ -1,7 +1,7 @@
 {
  "entity": "bridges",
  "about": "Every decision in graph.json about bridges: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:42Z",
+ "updated": "2026-11-11T09:30Z",
  "decisions": [
   {
    "edge": "bridges-60",
@@ -18,7 +18,11 @@
    "read": "2026-11-10T18:58Z",
    "label": "evidence",
    "note": "",
-   "state": "limited"
+   "state": "limited",
+   "scope": {
+    "extent": "whole",
+    "parts": "both bridges: 25 de Abril and Vasco da Gama (speed limit 60 km/h)"
+   }
   },
   {
    "edge": "bridges-lifted",
@@ -34,7 +38,11 @@
    "read": "2026-11-11T02:42Z",
    "label": "evidence",
    "state": "running",
-   "note": "Lusa headline; full text for subscribers. The 14:48 limit and the 22:29 lifting are a sequence, not a conflict."
+   "note": "Lusa headline; full text for subscribers. The 14:48 limit and the 22:29 lifting are a sequence, not a conflict.",
+   "scope": {
+    "extent": "whole",
+    "parts": "both bridges"
+   }
   }
  ],
  "open": [

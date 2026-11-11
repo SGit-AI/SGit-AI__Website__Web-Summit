@@ -1,7 +1,7 @@
 {
  "entity": "schools",
  "about": "Every decision in graph.json about schools: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:30Z",
+ "updated": "2026-11-11T09:30Z",
  "decisions": [
   {
    "edge": "gov-alert",
@@ -17,7 +17,11 @@
    "also": [],
    "read": "2026-11-11T01:00Z",
    "label": "fact",
-   "note": "Announced at about 09:17 (minister, ANEPC press conference); the declaration published at 12:10 on portugal.gov.pt. Before 01:00Z on 11 Nov this edge carried only 12:10 (the page time), which put the announcement 3 h late (question raised by incident.conductor@ from incident.media@'s live entries). In force from 00:00 (Lusa, 00:09)."
+   "note": "Announced at about 09:17 (minister, ANEPC press conference); the declaration published at 12:10 on portugal.gov.pt. Before 01:00Z on 11 Nov this edge carried only 12:10 (the page time), which put the announcement 3 h late (question raised by incident.conductor@ from incident.media@'s live entries). In force from 00:00 (Lusa, 00:09).",
+   "scope": {
+    "extent": "whole",
+    "parts": "mainland Portugal; measures (a) to (e)"
+   }
   },
   {
    "edge": "schools-close",
@@ -33,7 +37,11 @@
    "also": [],
    "read": "2026-11-10T16:55Z",
    "label": "fact",
-   "note": ""
+   "note": "",
+   "scope": {
+    "extent": "whole",
+    "parts": "all schools (public, private, social, incl. crèches) and non-essential public services, mainland"
+   }
   },
   {
    "edge": "madeira-schools",
@@ -49,7 +57,11 @@
    "also": [],
    "read": "2026-11-11T01:35Z",
    "label": "evidence",
-   "note": "Announced at a regional press conference by the president of the regional civil protection service (Observador 12:11:17, JSON-LD); DNOTICIAS headline 11:26 \"Escolas da Madeira encerradas na manhã de quarta-feira até às 13 horas\" (a search summary attributes it to the regional government). Most critical hours given as 21:00 to 06:00 (IPMA Madeira at the same conference)."
+   "note": "Announced at a regional press conference by the president of the regional civil protection service (Observador 12:11:17, JSON-LD); DNOTICIAS headline 11:26 \"Escolas da Madeira encerradas na manhã de quarta-feira até às 13 horas\" (a search summary attributes it to the regional government). Most critical hours given as 21:00 to 06:00 (IPMA Madeira at the same conference).",
+   "scope": {
+    "extent": "whole",
+    "parts": "Madeira schools, morning only (reopen 13:00)"
+   }
   },
   {
    "edge": "gov-alert (legal text)",
@@ -62,7 +74,11 @@
    "address": "https://diariodarepublica.pt/dr/detalhe/despacho/13773-a-2026-1193823993",
    "read": "2026-11-11T02:30Z",
    "label": "fact",
-   "state": "closed"
+   "state": "closed",
+   "scope": {
+    "extent": "whole",
+    "parts": "mainland Portugal; measures (a) to (e)"
+   }
   }
  ],
  "open": []

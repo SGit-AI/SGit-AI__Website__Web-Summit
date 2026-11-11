@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T08:41Z",
+ "updated": "2026-11-11T09:30Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -414,7 +414,8 @@
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
    "note": " 02:42Z: not verifiable at source: IPMA's communiqués page and RSS now carry only no. 2 (valid from 17:07 on 10 Nov), so no. 1's own publish time cannot be read; 13:17 is weather@'s reading of the page on 10 Nov. AEMET posted \"Nombrada la borrasca Charles\" on Bluesky at 2026-11-09T10:20:11Z (aemet-names-charles). IPMA's communiqué no. 2 says \"CHARLES é o nome atribuído pelo Instituto Português do Mar e da Atmosfera\". Whether IPMA's naming was public before 13:17 is not established.",
-   "area": "national"
+   "area": "national",
+   "scope": null
   },
   {
    "id": "anepc-aviso-21",
@@ -435,7 +436,8 @@
    "effect_note": "hours not stated",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "mainland"
+   "area": "mainland",
+   "scope": null
   },
   {
    "id": "anepc-readiness",
@@ -459,7 +461,8 @@
    "effect_note": "hours not stated",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "mainland"
+   "area": "mainland",
+   "scope": null
   },
   {
    "id": "gov-alert",
@@ -533,7 +536,11 @@
     "read_how": "a headless browser (the site is a JavaScript app; plain requests get a 2 KB shell)",
     "label": "fact"
    },
-   "area": "mainland"
+   "area": "mainland",
+   "scope": {
+    "extent": "whole",
+    "parts": "mainland Portugal; measures (a) to (e)"
+   }
   },
   {
    "id": "schools-close",
@@ -554,7 +561,11 @@
    "effect_note": "measure (a) of the alert declaration, whose period is 00:00 to 23:59 on 11 Nov",
    "state": "closed",
    "state_note": null,
-   "area": "mainland"
+   "area": "mainland",
+   "scope": {
+    "extent": "whole",
+    "parts": "all schools (public, private, social, incl. crèches) and non-essential public services, mainland"
+   }
   },
   {
    "id": "ipma-red-wind",
@@ -583,7 +594,8 @@
    ],
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "ipma-red-rain",
@@ -605,7 +617,8 @@
    "effect_note": "IPMA warnings JSON as read 18:59Z; superseded by ipma-red-rain-0900",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "ipma-communique-2",
@@ -626,7 +639,8 @@
    "effect_note": "hours not stated",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "national"
+   "area": "national",
+   "scope": null
   },
   {
    "id": "websummit-assessing",
@@ -650,7 +664,8 @@
    "effect_note": "hours not stated",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "mayor-expects-closure",
@@ -674,7 +689,8 @@
    "effect_note": "hours not stated",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "tunnels-close",
@@ -705,7 +721,11 @@
      "label": "evidence",
      "read": "2026-11-11T06:35Z"
     }
-   ]
+   ],
+   "scope": {
+    "extent": "whole",
+    "parts": "all Lisbon road tunnels (announced); three on Av. da República observed open after midnight"
+   }
   },
   {
    "id": "bridges-60",
@@ -727,7 +747,11 @@
    "state": "limited",
    "state_note": null,
    "note": " Not a conflict but a sequence: Lusa at 22:29 reports the restrictions lifted (bridges-lifted).",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": {
+    "extent": "whole",
+    "parts": "both bridges: 25 de Abril and Vasco da Gama (speed limit 60 km/h)"
+   }
   },
   {
    "id": "metro-runs",
@@ -749,7 +773,11 @@
    "effect_note": "hours not stated",
    "state": "running",
    "state_note": "the mayor's word (press); not on metrolisboa.pt",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": {
+    "extent": "whole",
+    "parts": null
+   }
   },
   {
    "id": "carris-runs-watched",
@@ -770,7 +798,11 @@
    "effect_note": "hours not stated; Jornal Económico: \"ao longo do dia\"",
    "state": "running",
    "state_note": null,
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": {
+    "extent": "whole",
+    "parts": "buses and trams; trams may be disrupted (press)"
+   }
   },
   {
    "id": "rede-expressos-suspends",
@@ -792,7 +824,11 @@
    "effect_note": "\"entre as 10h00 e as 23h59\" (Jornal de Negócios 12:39; Jornal Económico 17:47)",
    "state": "suspended",
    "state_note": null,
-   "area": "mainland"
+   "area": "mainland",
+   "scope": {
+    "extent": "whole",
+    "parts": "all national services, 10:00–23:59"
+   }
   },
   {
    "id": "gov-recommends-suspend",
@@ -817,7 +853,8 @@
    "effect_note": "hours not stated",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "websummit-wednesday",
@@ -853,7 +890,11 @@
    "state": "closed",
    "state_note": null,
    "area": "lisbon",
-   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
+   "scope": {
+    "extent": "whole",
+    "parts": "Day 2 of the conference (venue programme)"
+   }
   },
   {
    "id": "websummit-suspends-h",
@@ -884,7 +925,8 @@
    "effect_note": "no decision with an effect window",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "side-events-follow-h",
@@ -909,7 +951,8 @@
    "effect_note": "no decision with an effect window",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "camara-plan",
@@ -931,7 +974,8 @@
    "effect_note": "no decision with an effect window",
    "state": "not_announced",
    "state_note": null,
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "airport-ops",
@@ -953,7 +997,8 @@
    "effect_note": "hours not stated",
    "state": "not_announced",
    "state_note": null,
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "cp-ops",
@@ -975,7 +1020,11 @@
    "effect_note": "hours not stated; Jornal Económico: disruption expected on 10 and 11 Nov",
    "state": "limited",
    "state_note": "\"constrangimentos\"",
-   "area": "mainland"
+   "area": "mainland",
+   "scope": {
+    "extent": "unknown",
+    "parts": "\"constrangimentos\": which lines not stated"
+   }
   },
   {
    "id": "operators-possible-disruption",
@@ -1000,7 +1049,11 @@
    "effect_note": "hours not stated",
    "state": "limited",
    "state_note": "possible disruption announced; no suspension",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": {
+    "extent": "unknown",
+    "parts": "possible disruption at Fertagus, Carris, Carris Metropolitana"
+   }
   },
   {
    "id": "ana-conditioned",
@@ -1022,7 +1075,11 @@
    "effect_note": "hours not stated; the source names the day, 11 November",
    "state": "limited",
    "state_note": null,
-   "area": "national"
+   "area": "national",
+   "scope": {
+    "extent": "part",
+    "parts": "three airports: Lisbon, Faro, Madeira; cancellations expected (which flights not stated)"
+   }
   },
   {
    "id": "flixbus-suspends",
@@ -1044,7 +1101,11 @@
    "effect_note": "hours not stated: \"começa de madrugada e prolonga-se até ao final do dia\"",
    "state": "suspended",
    "state_note": null,
-   "area": "mainland"
+   "area": "mainland",
+   "scope": {
+    "extent": "part",
+    "parts": "all domestic (national) links; some international links from the north may run"
+   }
   },
   {
    "id": "websummit-thursday",
@@ -1073,7 +1134,11 @@
    "state": "running",
    "state_note": "\"aims to proceed as planned\"",
    "area": "lisbon",
-   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
+   "scope": {
+    "extent": "whole",
+    "parts": "Day 3, \"as planned\""
+   }
   },
   {
    "id": "websummit-n6",
@@ -1098,7 +1163,8 @@
    "state": "not_announced",
    "state_note": null,
    "area": "lisbon",
-   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
+   "scope": null
   },
   {
    "id": "side-events-wednesday",
@@ -1120,7 +1186,8 @@
    "effect_note": "no decision with an effect window",
    "state": "not_announced",
    "state_note": null,
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "websummit-thursday-change-h",
@@ -1149,7 +1216,8 @@
    "effect_note": "no decision with an effect window",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "pitch-semifinal",
@@ -1184,7 +1252,8 @@
    "state": "not_announced",
    "state_note": null,
    "area": "lisbon",
-   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
+   "scope": null
   },
   {
    "id": "night-summit-wednesday",
@@ -1208,7 +1277,11 @@
    "state": "not_announced",
    "state_note": null,
    "area": "lisbon",
-   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z."
+   "source_status": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
+   "scope": {
+    "extent": "unknown",
+    "parts": null
+   }
   },
   {
    "id": "ttsl-wednesday",
@@ -1230,7 +1303,11 @@
    "effect_note": "Jornal Económico: \"a operação terá início às 05h00, como habitual\"; the reassessment from 12:00 is from a search summary of TSF (not opened); end not stated",
    "state": "running",
    "state_note": "from 05:00 as usual; reassessed from 12:00 (search summary)",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": {
+    "extent": "part",
+    "parts": "all Lisbon–south bank crossings except Porto Brandão–Trafaria–Pedrouços/Algés; from 05:00 as usual; reassessed from 12:00"
+   }
   },
   {
    "id": "metro-shelter",
@@ -1252,7 +1329,11 @@
    "effect_note": "hours not stated: \"durante as noites de 10 para 11 e de 11 para 12 de novembro\"",
    "state": "running",
    "state_note": "stations open overnight for homeless people",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": {
+    "extent": "part",
+    "parts": "five stations at night: Amadora Este, Santa Apolónia, Marquês de Pombal, Moscavide, Olaias"
+   }
   },
   {
    "id": "transport-thursday",
@@ -1280,7 +1361,11 @@
    "effect_note": "no decision with an effect window",
    "state": "not_announced",
    "state_note": null,
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": {
+    "extent": "unknown",
+    "parts": null
+   }
   },
   {
    "id": "cp-fertagus-bridge",
@@ -1303,7 +1388,11 @@
    "effect_note": "CP: trains in \"o intervalo horário identificado como mais crítico\", forecast \"entre as 12:00 e as 15:00\"; the article also says \"entre o período da manhã e início da tarde\"",
    "state": "suspended",
    "state_note": "four trains suppressed 12:00-15:00; the rest of the line not stated",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": {
+    "extent": "part",
+    "parts": "four trains crossing the 25 de Abril bridge, 12:00–15:00"
+   }
   },
   {
    "id": "ipma-red-rain-0900",
@@ -1328,7 +1417,8 @@
    "note": "CAP 2.49.0.0.620.0.PT.261110212300.PO-10-6290, sent_utc 2026-11-10T21:23:00Z, severity Extreme, onset 11 Nov 09:00, expires 18:00; replaces 2.49.0.0.620.0.PT.261110163001.PO-10-6273 (sent 16:30:01). The orange before it (PO-10-6288) runs 00:00-09:00. Via team/incidents/2026-11-10-the-storm/data/weather/cap.json (incident.meteorologist@, read 2026-11-11T00:23:21Z); IPMA warnings JSON read by us 23:54Z agrees.",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "mai-websummit-indoor",
@@ -1352,7 +1442,8 @@
    "note": "Observador live entry 09:30:25 (JSON-LD), questioned by journalists at the press conference. 8 h 23 min later the government recommended suspending Wednesday (17:53).",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": null
   },
   {
    "id": "ipma-madeira-red",
@@ -1373,7 +1464,8 @@
    "region": "Madeira",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "madeira"
+   "area": "madeira",
+   "scope": null
   },
   {
    "id": "madeira-schools",
@@ -1396,7 +1488,11 @@
    "region": "Madeira",
    "state": "closed",
    "state_note": null,
-   "area": "madeira"
+   "area": "madeira",
+   "scope": {
+    "extent": "whole",
+    "parts": "Madeira schools, morning only (reopen 13:00)"
+   }
   },
   {
    "id": "madeira-airport-conditioned",
@@ -1419,7 +1515,11 @@
    "region": "Madeira",
    "state": "limited",
    "state_note": null,
-   "area": "madeira"
+   "area": "madeira",
+   "scope": {
+    "extent": "part",
+    "parts": "Madeira airport"
+   }
   },
   {
    "id": "apram-cruises",
@@ -1442,7 +1542,11 @@
    "region": "Madeira",
    "state": "suspended",
    "state_note": "three cruise calls cancelled (the ships' decision, reported by APRAM)",
-   "area": "madeira"
+   "area": "madeira",
+   "scope": {
+    "extent": "part",
+    "parts": "three cruise calls at Funchal"
+   }
   },
   {
    "id": "aemet-special",
@@ -1462,7 +1566,8 @@
    "note": "Title read on AEMET's own warnings page at 01:46Z. Its number (38/2026 per Wikipedia), its period (10 to 12 Nov per Wikipedia) and the Canary Islands' wind alert from 18:00 on 10 Nov were NOT read at source (the details are a map and a JavaScript view).",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "national"
+   "area": "national",
+   "scope": null
   },
   {
    "id": "gnr-readiness",
@@ -1484,7 +1589,8 @@
    "note": "GNR's own site lists \"10-11-2026 Depressão Charles – GNR reforça dispositivo operacional\" (read 01:45Z; the article page reset our connection). The figure 1,100 is from Observador's 18:17:26 entry quoting the GNR communiqué.",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
-   "area": "mainland"
+   "area": "mainland",
+   "scope": null
   },
   {
    "id": "mmp-closed",
@@ -1506,7 +1612,11 @@
    "note": "Observador 14:08:23 quoting MMP's online message. At 19:21 Observador adds Lisbon's 25 municipal cultural venues (EGEAC) closed.",
    "state": "closed",
    "state_note": null,
-   "area": "mainland"
+   "area": "mainland",
+   "scope": {
+    "extent": "whole",
+    "parts": "museums and monuments run by MMP (state)"
+   }
   },
   {
    "id": "tap-adjusts",
@@ -1528,7 +1638,11 @@
    "note": "Observador 16:09:04. \"TAP cancelling 10 Madeira flights\" (Wikipedia) is NOT established: Observador 19:47:28 says only that several TAP Funchal flights were affected on Wednesday, from ANA's site.",
    "state": "limited",
    "state_note": "rebooking offered; cancellations not stated by TAP",
-   "area": "national"
+   "area": "national",
+   "scope": {
+    "extent": "part",
+    "parts": "rebooking for tickets up to 11 Nov; cancellations not stated"
+   }
   },
   {
    "id": "csm-courts",
@@ -1550,7 +1664,11 @@
    "note": "CSM vice-president's despacho, via Lusa (Observador 12:51:24, 14:32:02). National, not Madeira-specific: \"Madeira's courts closed\" (Wikipedia) NOT established. csm.org.pt answered (01:45Z) with no matching notice on its home page.",
    "state": "limited",
    "state_note": "closure left to each court",
-   "area": "national"
+   "area": "national",
+   "scope": {
+    "extent": "part",
+    "parts": "left to each court president; urgent acts go ahead"
+   }
   },
   {
    "id": "mj-services",
@@ -1572,7 +1690,11 @@
    "note": "Observador 17:43:17, \"Na sequência da declaração de situação de alerta\".",
    "state": "closed",
    "state_note": null,
-   "area": "mainland"
+   "area": "mainland",
+   "scope": {
+    "extent": "part",
+    "parts": "registries, industrial property, forensic medicine (body intake kept)"
+   }
   },
   {
    "id": "capitania-aviso-53",
@@ -1596,7 +1718,11 @@
    "state": "limited",
    "state_note": "precautions; no bar closure",
    "note": "Signed 2026-11-09T14:07:38Z (PDF signature; created 14:05:49). PDF sha256 ce7849c00de2087c… (first 16 hex). It predates the red and orange warnings of 10 Nov; no later notice (no. 54 or after) found yet. A lead from leads.json.",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": {
+    "extent": "whole",
+    "parts": "Lisbon and Setúbal maritime regions: precautions only"
+   }
   },
   {
    "id": "bridges-lifted",
@@ -1621,7 +1747,11 @@
    "state": "running",
    "state_note": "as of 22:29 Tuesday",
    "note": "Lusa headline (article dated 10-11-2026 22:29; full text for subscribers only); Lusa's Bluesky post 22:29:36. Lusoponte's own site still unreachable (lusoponte.pt, no connection); Infraestruturas de Portugal not checked. Who lifted it is not stated in what we read: Lusoponte as the bridges' operator is assumed by the edge's \"by\", not read.",
-   "area": "lisbon"
+   "area": "lisbon",
+   "scope": {
+    "extent": "whole",
+    "parts": "both bridges"
+   }
   },
   {
    "id": "aemet-names-charles",
@@ -1641,7 +1771,8 @@
    "state": null,
    "state_note": "a warning, not a service decision",
    "note": "AEMET's own Bluesky account; createdAt 2026-11-09T10:20:11.685Z (read through the public API). 2 h 57 min before 13:17, the time we hold for IPMA's communiqué no. 1.",
-   "area": "national"
+   "area": "national",
+   "scope": null
   },
   {
    "id": "srpc-madeira-measures",
@@ -1664,7 +1795,8 @@
    "state_note": "preventive measures",
    "region": "Madeira",
    "note": "SRPC's own page, dateCreated 2026-11-10T15:27:01Z (Madeira = UTC in November). No official count of occurrences on it; \"14 occurrences in the first hour of red\" is DNOTICIAS (press, 22:00).",
-   "area": "madeira"
+   "area": "madeira",
+   "scope": null
   },
   {
    "id": "srpc-madeira-count-0200",
@@ -1687,7 +1819,8 @@
    "state_note": "a count, not a service decision",
    "region": "Madeira",
    "note": "DN Madeira (by Rúben Santos) via SAPO, published 02:10:06Z, modified 02:29:08Z: \"segundo a mais recente actualização da plataforma de informação à comunicação social da Protecção Civil Regional, consultada pelas 2h00\". The count is SRPC's, but read through its press-information platform, which is not public. SRPC's public site (procivmadeira.pt news list, read 03:51Z) carries no count: its latest items are the measures page (2158, 10 Nov 15:27) and Aviso 17/2026 (2157, created 6 Nov 11:31). Earlier counts in the press: 14 (DNOTICIAS 22:00), 26 to 22:30, 38, 42 (Funchal Notícias). \"Fallen trees 7\" per the article; the Wikipedia lead matches.",
-   "area": "madeira"
+   "area": "madeira",
+   "scope": null
   },
   {
    "id": "madeira-gov-visit",
@@ -1710,7 +1843,8 @@
    "state_note": "a statement, not a service decision",
    "region": "Madeira",
    "note": "Funchal Notícias, published 00:52:44Z, citing his Facebook post (not opened).",
-   "area": "madeira"
+   "area": "madeira",
+   "scope": null
   },
   {
    "id": "ttsl-pedroucos-suspended",
@@ -1732,7 +1866,11 @@
    "state": "suspended",
    "state_note": "one route; the rest run (ttsl-wednesday)",
    "area": "lisbon",
-   "note": "Observador 23:59:09Z quoting a Transtejo Soflusa communiqué \"divulgado hoje à noite\". ttsl.pt (read 06:33Z) shows no notice."
+   "note": "Observador 23:59:09Z quoting a Transtejo Soflusa communiqué \"divulgado hoje à noite\". ttsl.pt (read 06:33Z) shows no notice.",
+   "scope": {
+    "extent": "part",
+    "parts": "one route: Porto Brandão – Trafaria – Pedrouços/Algés (alternative Trafaria – Porto Brandão – Belém)"
+   }
   },
   {
    "id": "tcb-barreiro-limited",
@@ -1754,7 +1892,11 @@
    "state": "limited",
    "state_note": null,
    "area": "mainland",
-   "note": "Observador 01:03:19Z citing a notice on the Câmara Municipal do Barreiro's page; cm-barreiro.pt home (06:33Z) shows no such notice in its text."
+   "note": "Observador 01:03:19Z citing a notice on the Câmara Municipal do Barreiro's page; cm-barreiro.pt home (06:33Z) shows no such notice in its text.",
+   "scope": {
+    "extent": "part",
+    "parts": "express 4 and 8 cancelled; from 12:00 only lines 1, 2, 3, 6, 7, 14, 15 (~every 30 min)"
+   }
   },
   {
    "id": "srpc-funchal-centre",
@@ -1776,7 +1918,11 @@
    "state": "closed",
    "state_note": null,
    "area": "madeira",
-   "note": "CNN Portugal live 07:25:40Z quoting an SRPC communiqué (via Lusa). Not on procivmadeira.pt's news list at 07:33Z (latest item still 2158)."
+   "note": "CNN Portugal live 07:25:40Z quoting an SRPC communiqué (via Lusa). Not on procivmadeira.pt's news list at 07:33Z (latest item still 2158).",
+   "scope": {
+    "extent": "part",
+    "parts": "access to Funchal's centre"
+   }
   },
   {
    "id": "madeira-flights-16",
@@ -1798,7 +1944,11 @@
    "state": "limited",
    "state_note": null,
    "area": "madeira",
-   "note": "CNN Portugal live 07:05:50Z, from ANA's site consulted at 06:50 (ANA's site shows us a bot page)."
+   "note": "CNN Portugal live 07:05:50Z, from ANA's site consulted at 06:50 (ANA's site shows us a bot page).",
+   "scope": {
+    "extent": "part",
+    "parts": "16 flights to and from Madeira (7 arrivals, 9 departures), mostly the morning"
+   }
   },
   {
    "id": "srpc-madeira-count-0650",
@@ -1820,7 +1970,8 @@
    "state": null,
    "state_note": "a count, not a service decision",
    "area": "madeira",
-   "note": "CNN Portugal live 06:50, \"segundo os dados disponibilizados\" (SRPC's press platform, not public). Earlier: 71 to 02:00, 115 (CNN 06:05)."
+   "note": "CNN Portugal live 06:50, \"segundo os dados disponibilizados\" (SRPC's press platform, not public). Earlier: 71 to 02:00, 115 (CNN 06:05).",
+   "scope": null
   },
   {
    "id": "anepc-mainland-count-0330",
@@ -1842,7 +1993,8 @@
    "state": null,
    "state_note": "a count, not a service decision",
    "area": "mainland",
-   "note": "CNN Portugal live 05:44:15Z, citing ANEPC's public portal. prociv.gov.pt/pt/ocorrencias/ answers 200 (137 KB, read 07:33Z) but its data is not in the HTML: parser ask to incident.dev@."
+   "note": "CNN Portugal live 05:44:15Z, citing ANEPC's public portal. prociv.gov.pt/pt/ocorrencias/ answers 200 (137 KB, read 07:33Z) but its data is not in the HTML: parser ask to incident.dev@.",
+   "scope": null
   },
   {
    "id": "porto-santo-power",
@@ -1864,7 +2016,8 @@
    "state": null,
    "state_note": "an impact report, not a decision",
    "area": "porto-santo",
-   "note": "CNN Portugal live 01:02:24Z (no source body named). An impact, not a decision: recorded so the Porto Santo lead has a dated press address. The mayor's measures are still not found at source."
+   "note": "CNN Portugal live 01:02:24Z (no source body named). An impact, not a decision: recorded so the Porto Santo lead has a dated press address. The mayor's measures are still not found at source.",
+   "scope": null
   },
   {
    "id": "ipma-wind-orange",
@@ -1892,7 +2045,8 @@
    "state": null,
    "state_note": "a warning, not a service decision",
    "area": "lisbon",
-   "note": "CAP message sent 2026-11-11T07:16:30Z, severity Severe (orange), onset 09:00, expires 21:00 (incident.meteorologist@'s cap.json, commit 287ae82e). IPMA's open data showed it by 08:40Z (still red at 07:38 per the meteorologist). At 08:40Z red remains in 9 districts for rain (incl. Lisbon) and in Faro for wind. Day 2 had been called off partly for \"the impact of high winds on external structures\" (organisers, 19:09 Tue): we record the downgrade, not a judgement."
+   "note": "CAP message sent 2026-11-11T07:16:30Z, severity Severe (orange), onset 09:00, expires 21:00 (incident.meteorologist@'s cap.json, commit 287ae82e). IPMA's open data showed it by 08:40Z (still red at 07:38 per the meteorologist). At 08:40Z red remains in 9 districts for rain (incl. Lisbon) and in Faro for wind. Day 2 had been called off partly for \"the impact of high winds on external structures\" (organisers, 19:09 Tue): we record the downgrade, not a judgement.",
+   "scope": null
   },
   {
    "id": "amn-bars-closed",
@@ -1916,7 +2070,11 @@
    "state": "closed",
    "state_note": "18 bars",
    "area": "mainland",
-   "note": "CNN Portugal live 08:06:40Z quoting a Navy/AMN communiqué. Not yet read on amn.pt; whether the Lisbon bar is among the 18 is not stated."
+   "note": "CNN Portugal live 08:06:40Z quoting a Navy/AMN communiqué. Not yet read on amn.pt; whether the Lisbon bar is among the 18 is not stated.",
+   "scope": {
+    "extent": "part",
+    "parts": "18 sea bars (which not stated)"
+   }
   },
   {
    "id": "anepc-mainland-count-0600",
@@ -1938,7 +2096,8 @@
    "state": null,
    "state_note": "a count",
    "area": "mainland",
-   "note": "CNN Portugal live 08:26:01Z, ANEPC's situation briefing. (03:30: 66 per the portal; the two counts are from different windows or methods: not reconciled.)"
+   "note": "CNN Portugal live 08:26:01Z, ANEPC's situation briefing. (03:30: 66 per the portal; the two counts are from different windows or methods: not reconciled.)",
+   "scope": null
   }
  ],
  "lessons": [
@@ -2006,5 +2165,6 @@
   "since": "2026-11-11T05:25Z",
   "note": "not read since 05:25 (terms): interim hold by incident.conductor@ until Dinis decides; Web Summit's Terms (updated 27 Oct 2026, read by incident.sources@ 05:25) forbid automated access (48.2) and archiving or summarising its content (52.1). Our last read of websummit.com was 04:33Z.",
   "watch_instead": "the press, Web Summit's public social accounts where readable without a login and within those platforms' terms, the authorities"
- }
+ },
+ "scope_note": "scope: extent \"whole\" (the whole service or body's remit), \"part\" (parts names which routes, lines, places or times) or \"unknown\" (the source does not say); null for warnings, statements, counts and hypotheses. From the sources' own words only."
 }

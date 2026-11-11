@@ -1,7 +1,7 @@
 {
  "entity": "museums",
  "about": "Every decision in graph.json about museums: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:42Z",
+ "updated": "2026-11-11T09:30Z",
  "decisions": [
   {
    "edge": "mmp-closed",
@@ -17,7 +17,11 @@
    "also": [],
    "read": "2026-11-11T01:50Z",
    "label": "evidence",
-   "note": "Observador 14:08:23 quoting MMP's online message. At 19:21 Observador adds Lisbon's 25 municipal cultural venues (EGEAC) closed."
+   "note": "Observador 14:08:23 quoting MMP's online message. At 19:21 Observador adds Lisbon's 25 municipal cultural venues (EGEAC) closed.",
+   "scope": {
+    "extent": "whole",
+    "parts": "museums and monuments run by MMP (state)"
+   }
   },
   {
    "edge": "mmp-closed",
@@ -31,7 +35,11 @@
    "read": "2026-11-11T02:42Z",
    "label": "evidence",
    "state": "closed",
-   "note": "Lusa 14:23; Observador 14:08 quoting MMP's online message."
+   "note": "Lusa 14:23; Observador 14:08 quoting MMP's online message.",
+   "scope": {
+    "extent": "whole",
+    "parts": "museums and monuments run by MMP (state)"
+   }
   }
  ],
  "open": []

@@ -1,7 +1,7 @@
 {
  "entity": "courts",
  "about": "Every decision in graph.json about courts: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:20Z",
+ "updated": "2026-11-11T09:30Z",
  "decisions": [
   {
    "edge": "csm-courts",
@@ -17,7 +17,11 @@
    "also": [],
    "read": "2026-11-11T01:50Z",
    "label": "evidence",
-   "note": "CSM vice-president's despacho, via Lusa (Observador 12:51:24, 14:32:02). National, not Madeira-specific: \"Madeira's courts closed\" (Wikipedia) NOT established. csm.org.pt answered (01:45Z) with no matching notice on its home page."
+   "note": "CSM vice-president's despacho, via Lusa (Observador 12:51:24, 14:32:02). National, not Madeira-specific: \"Madeira's courts closed\" (Wikipedia) NOT established. csm.org.pt answered (01:45Z) with no matching notice on its home page.",
+   "scope": {
+    "extent": "part",
+    "parts": "left to each court president; urgent acts go ahead"
+   }
   },
   {
    "edge": "mj-services",
@@ -33,7 +37,11 @@
    "also": [],
    "read": "2026-11-11T01:50Z",
    "label": "evidence",
-   "note": "Observador 17:43:17, \"Na sequência da declaração de situação de alerta\"."
+   "note": "Observador 17:43:17, \"Na sequência da declaração de situação de alerta\".",
+   "scope": {
+    "extent": "part",
+    "parts": "registries, industrial property, forensic medicine (body intake kept)"
+   }
   }
  ],
  "open": []

@@ -1,7 +1,7 @@
 {
  "entity": "tap",
  "about": "Every decision in graph.json about tap: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:20Z",
+ "updated": "2026-11-11T09:30Z",
  "decisions": [
   {
    "edge": "tap-adjusts",
@@ -17,7 +17,11 @@
    "also": [],
    "read": "2026-11-11T01:50Z",
    "label": "evidence",
-   "note": "Observador 16:09:04. \"TAP cancelling 10 Madeira flights\" (Wikipedia) is NOT established: Observador 19:47:28 says only that several TAP Funchal flights were affected on Wednesday, from ANA's site."
+   "note": "Observador 16:09:04. \"TAP cancelling 10 Madeira flights\" (Wikipedia) is NOT established: Observador 19:47:28 says only that several TAP Funchal flights were affected on Wednesday, from ANA's site.",
+   "scope": {
+    "extent": "part",
+    "parts": "rebooking for tickets up to 11 Nov; cancellations not stated"
+   }
   }
  ],
  "open": []

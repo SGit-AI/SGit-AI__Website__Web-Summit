@@ -1,7 +1,7 @@
 {
  "entity": "airport",
  "about": "Every decision in graph.json about airport: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:20Z",
+ "updated": "2026-11-11T09:30Z",
  "decisions": [
   {
    "edge": "ana-conditioned",
@@ -17,7 +17,11 @@
    "also": [],
    "read": "2026-11-10T19:32Z",
    "label": "evidence",
-   "note": "Press report of an ANA statement; the official airport site is behind a bot check."
+   "note": "Press report of an ANA statement; the official airport site is behind a bot check.",
+   "scope": {
+    "extent": "part",
+    "parts": "three airports: Lisbon, Faro, Madeira; cancellations expected (which flights not stated)"
+   }
   },
   {
    "edge": "madeira-airport-conditioned",
@@ -33,7 +37,11 @@
    "also": [],
    "read": "2026-11-11T01:35Z",
    "label": "evidence",
-   "note": "Same ANA statement as ana-conditioned (Lisbon, Faro, Madeira)."
+   "note": "Same ANA statement as ana-conditioned (Lisbon, Faro, Madeira).",
+   "scope": {
+    "extent": "part",
+    "parts": "Madeira airport"
+   }
   },
   {
    "edge": "airport-ops",

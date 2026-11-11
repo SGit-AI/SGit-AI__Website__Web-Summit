@@ -1,7 +1,7 @@
 {
  "entity": "madeira",
  "about": "Every decision and official count we hold about Madeira (generated from graph.json by incident.researcher@web-summit.dinis).",
- "updated": "2026-11-11T07:35Z",
+ "updated": "2026-11-11T09:30Z",
  "decisions": [
   {
    "edge": "ipma-madeira-red",
@@ -27,7 +27,11 @@
    "read": "2026-11-11T01:35Z",
    "label": "evidence",
    "state": "closed",
-   "note": "Announced at a regional press conference by the president of the regional civil protection service (Observador 12:11:17, JSON-LD); DNOTICIAS headline 11:26 \"Escolas da Madeira encerradas na manhã de quarta-feira até às 13 horas\" (a search summary attributes it to the regional government). Most critical hours given as 21:00 to 06:00 (IPMA Madeira at the same conference)."
+   "note": "Announced at a regional press conference by the president of the regional civil protection service (Observador 12:11:17, JSON-LD); DNOTICIAS headline 11:26 \"Escolas da Madeira encerradas na manhã de quarta-feira até às 13 horas\" (a search summary attributes it to the regional government). Most critical hours given as 21:00 to 06:00 (IPMA Madeira at the same conference).",
+   "scope": {
+    "extent": "whole",
+    "parts": "Madeira schools, morning only (reopen 13:00)"
+   }
   },
   {
    "edge": "madeira-airport-conditioned",
@@ -40,7 +44,11 @@
    "read": "2026-11-11T01:35Z",
    "label": "evidence",
    "state": "limited",
-   "note": "Same ANA statement as ana-conditioned (Lisbon, Faro, Madeira)."
+   "note": "Same ANA statement as ana-conditioned (Lisbon, Faro, Madeira).",
+   "scope": {
+    "extent": "part",
+    "parts": "Madeira airport"
+   }
   },
   {
    "edge": "apram-cruises",
@@ -53,7 +61,11 @@
    "read": "2026-11-11T01:35Z",
    "label": "evidence",
    "state": "suspended",
-   "note": "APRAM via Observador live 12:33:37 (JSON-LD). The ships cancelled; APRAM reported it."
+   "note": "APRAM via Observador live 12:33:37 (JSON-LD). The ships cancelled; APRAM reported it.",
+   "scope": {
+    "extent": "part",
+    "parts": "three cruise calls at Funchal"
+   }
   },
   {
    "edge": "srpc-madeira-measures",
@@ -105,7 +117,11 @@
    "read": "2026-11-11T07:35Z",
    "label": "evidence",
    "state": "closed",
-   "note": "CNN Portugal live 07:25:40Z quoting an SRPC communiqué (via Lusa). Not on procivmadeira.pt's news list at 07:33Z (latest item still 2158)."
+   "note": "CNN Portugal live 07:25:40Z quoting an SRPC communiqué (via Lusa). Not on procivmadeira.pt's news list at 07:33Z (latest item still 2158).",
+   "scope": {
+    "extent": "part",
+    "parts": "access to Funchal's centre"
+   }
   },
   {
    "edge": "madeira-flights-16",
@@ -118,7 +134,11 @@
    "read": "2026-11-11T07:35Z",
    "label": "evidence",
    "state": "limited",
-   "note": "CNN Portugal live 07:05:50Z, from ANA's site consulted at 06:50 (ANA's site shows us a bot page)."
+   "note": "CNN Portugal live 07:05:50Z, from ANA's site consulted at 06:50 (ANA's site shows us a bot page).",
+   "scope": {
+    "extent": "part",
+    "parts": "16 flights to and from Madeira (7 arrivals, 9 departures), mostly the morning"
+   }
   },
   {
    "edge": "srpc-madeira-count-0650",

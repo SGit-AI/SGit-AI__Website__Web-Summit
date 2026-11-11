@@ -1,7 +1,7 @@
 {
  "entity": "cp",
  "about": "Every decision in graph.json about cp: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T02:42Z",
+ "updated": "2026-11-11T09:30Z",
  "decisions": [
   {
    "edge": "cp-ops",
@@ -17,7 +17,11 @@
    "also": [],
    "read": "2026-11-10T21:33Z",
    "label": "evidence",
-   "note": "Press summary (Jornal de Negócios live, 19:45 and 21:31 entries); not on cp.pt, a JavaScript app."
+   "note": "Press summary (Jornal de Negócios live, 19:45 and 21:31 entries); not on cp.pt, a JavaScript app.",
+   "scope": {
+    "extent": "unknown",
+    "parts": "\"constrangimentos\": which lines not stated"
+   }
   },
   {
    "edge": "cp-fertagus-bridge",
@@ -33,7 +37,11 @@
    "also": [],
    "read": "2026-11-10T23:33Z",
    "label": "evidence",
-   "note": "Lusa, quoting a CP statement; Jornal de Negócios live entry 23:10. Not read on cp.pt (JavaScript app)."
+   "note": "Lusa, quoting a CP statement; Jornal de Negócios live entry 23:10. Not read on cp.pt (JavaScript app).",
+   "scope": {
+    "extent": "part",
+    "parts": "four trains crossing the 25 de Abril bridge, 12:00–15:00"
+   }
   },
   {
    "edge": "cp-ops",
@@ -47,7 +55,11 @@
    "read": "2026-11-11T02:42Z",
    "label": "evidence",
    "state": "limited",
-   "note": "Lusa headline and Bluesky post 17:25; cp.pt is a JavaScript app."
+   "note": "Lusa headline and Bluesky post 17:25; cp.pt is a JavaScript app.",
+   "scope": {
+    "extent": "unknown",
+    "parts": "\"constrangimentos\": which lines not stated"
+   }
   }
  ],
  "open": [
