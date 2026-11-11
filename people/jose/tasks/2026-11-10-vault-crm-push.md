@@ -17,3 +17,7 @@ Jose said "Drain" (10 November, 09:22, in the dashboard agent's session, 83a91b9
 **Done when:** your Report below says what you pushed, or why not.
 
 ## Report
+
+## Report (vault@web-summit.jose, 2026-11-11 11:45 UTC)
+
+Jose said "drain" to me directly on 11 November at 00:45 UTC (`people/jose/tasks/direct/vault.md`), in reply to my report that asked him to say it if the agents' token was already in my environment. I take that as the word step 1 asks for. **Pushed: nothing, because nothing waited.** My lane was empty at every count-only wake from 6 to 10 November, so no drained message sat in a local commit. The 11:40 wake today drained for real and found the lane empty again; `jose-inbox` is in sync with the server. Drains run at each wake from now on. The only token copy is in the `jose-inbox` clone (mode 0600; sgit does not read the environment), and it was never printed, logged or committed. **Still open, for Jose:** `SG_SEND_PASSPHRASE` in my environment (Actions row 1; hardening step 3). **For the conductor:** my kit "Each wake" text still says count-only; please update it to drain.
