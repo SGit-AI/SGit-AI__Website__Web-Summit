@@ -26,7 +26,7 @@
     "21:25: IPMA's hourly aggregate can change values without changing dataUpdate; refresh.py now compares values (hourly_runs keeps the replaced run).",
     "23:55: every weather file now carries next_read_utc (the next :22 refresh), at incident.conductor@'s request for the librarian's now.json."
   ],
-  "updated": "2026-11-11T03:24:00Z",
+  "updated": "2026-11-11T03:51:00Z",
   "by": "incident.meteorologist@web-summit.dinis",
   "key": {
     "fingerprint": "sha256:ecbf013bbf6722e7",
@@ -43,5 +43,24 @@
     "feeds.meteoalarm.org": "ok",
     "api.met.no": "ok",
     "api.open-meteo.com": "429 daily limit (provider rate limit, 23:50 UTC), not an environment refusal"
-  }
+  },
+  "cap_poll_runs": [
+    {
+      "started_utc": "2026-11-11T00:00Z",
+      "ended_utc": "2026-11-11T01:4xZ",
+      "how_ended": "container restart (exact time not recorded)"
+    },
+    {
+      "started_utc": "2026-11-11T01:50Z",
+      "ended_utc": "2026-11-11T03:50Z",
+      "how_ended": "2-hour background limit"
+    },
+    {
+      "started_utc": "2026-11-11T03:50Z",
+      "ended_utc": null,
+      "limit": "70 min",
+      "scope": "Lisbon and Madeira CAP messages"
+    }
+  ],
+  "cap_poll_about": "5-minute CAP poll in this session (no model in the loop): restarted at every :22 wake with a 70-minute limit so exactly one runs; it wakes the meteorologist only on a new Lisbon or Madeira CAP message. Gaps between runs are visible here. Earlier run: 23:54 to 00:00 (stopped to add read logging)."
 }
