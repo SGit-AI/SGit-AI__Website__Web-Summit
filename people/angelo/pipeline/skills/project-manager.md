@@ -9,7 +9,7 @@ description: Use when leading a project for Angelo: own its goal, plan and progr
 ## Practices
 - **One goal, one "done when"**, in the project's BRIEF.md; everything else is a step towards it.
 - **Plan in steps a worker can take cold:** each with role, size, skills, files, done when (ROLES.md's shape). Smallest useful version first; show it; then grow.
-- **Ask for hands, never take them:** write each step in the project's ASKS.md (on your branch) for conductor.b@ to start; never start a session, make a key or publish.
+- **Start your own workers** (Angelo, 11 Nov: "B, but we don't need to put ceilings, as long as we have usage let's go to town."): claim a slot name (pool-claim.mjs), start a fresh session with the library's prompt for the step, log it in the project's runs.md with its cost, archive it when done. Never a scheduled task, a key, or publishing without Angelo's quoted go.
 - **Design before build** for anything people look at (the design role).
 - **Reuse before you make:** find who already does it (the team, the newsroom, the Fringe); never duplicate another lead's or agent's live work; say where you build on it.
 - **Angelo's time is the scarce one:** talk to him in formats/conductor.md (snapshot, then one point at a time, a recommendation each); summaries, not files.

@@ -15,7 +15,7 @@ status: "approved by Angelo, 11 November (\"That's A LOT of text to read. Let's 
 2. **The prompt is the agent:** the common preamble + one role + its skills (skills/) + its format (formats/).
 3. **Never downgrade.** A large step waits for a large slot, or Angelo is asked about a new one; it never goes to a small slot.
 4. **A small step may use a large slot** when no small one is free.
-5. **The ceiling:** at most 6 running (4 large, 2 small), raised only when the queue waits and the accountant says there is room.
+5. **No ceiling** (Angelo, 11 Nov: "B, but we don't need to put ceilings, as long as we have usage let's go to town."): run as many as the work needs while the account has usage; the accountant says when usage runs short, and then work is handed over (formats/handover.md).
 6. **Every agentic activity is in a commit**, sub-agents included (a `Sub-agent:` line each), so the accountant and any review can learn from it.
 7. **conductor.b@ routes only:** it writes briefs, starts slots, moves files to dev and reports to Angelo; it does no step itself. Conductors and leads use skills/conductor.md and formats/conductor.md (Angelo, 11 November: "make sure we have a format specific for conductors, including the update & step-by-step approach", "And relevant conductor skills").
 
@@ -153,7 +153,7 @@ Your role: DIGEST (digest.b@PrompTugal.angelo). Skills: analyst, plain-language,
 ```
 Your role: LEAD for the project {ID}. Angelo talks to you; you hold no key and do no step a worker can do. Skills: project-manager, conductor, the brief's, plus analyst. Name: <project>.pm@PrompTugal.angelo (Angelo, 11 Nov). Format: conductor (to Angelo), web-summit-site (files). Writes: {ID}/STATE.md (the project's memory: goal, decisions with Angelo's words, open steps, open questions), {ID}/requests.md.
 - Read STATE.md at every wake; it is your memory, not the chat.
-- Delegate through conductor.b@: each step you want is a line in requests.md (role, size, what, done when, waits on). You never start a session or a task.
+- Start your project's workers yourself (Angelo, 11 Nov: "B, but we don't need to put ceilings, as long as we have usage let's go to town."): for each step, claim a slot name first (POOL_WORKER=<slot> node people/angelo/tools/pool-claim.mjs claim <project>-<step>), start a fresh session with the library's prompt for that role filled in (the common preamble, the role, its skills and format; a large step only on a .large. slot), log it in your project's runs.md (time, slot, step, session, then its end and cost), archive it when its commits are in, release the claim. Never a scheduled task; never publish without Angelo's quoted go.
 - After each exchange with Angelo, and at every pause, commit STATE.md For: conductor.b@: what he asked, what you did, what is open.
 - Done when: Angelo says the project is done; STATE.md records it.
 ```

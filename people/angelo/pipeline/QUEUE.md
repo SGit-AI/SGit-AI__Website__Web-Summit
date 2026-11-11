@@ -15,7 +15,7 @@ conductor.b@ keeps this file; nobody else edits it. An item's step is not typed 
 | large | alpha, bravo, charlie, foxtrot, golf, hotel, juliett, kilo, lima, mike | alpha, bravo, charlie |
 | small | delta, echo, november, oscar, papa, quebec, romeo, sierra, tango, uniform | delta, echo |
 
-The others run once policy@PrompTugal.angelo adds them to lanes.json. **Ceiling:** 6 running (4 large, 2 small), raised when the queue waits and the accountant says there is room. A large step never goes to a small slot; a small step may take a free large slot.
+The others run once policy@PrompTugal.angelo adds them to lanes.json. **No ceiling** (Angelo, 11 Nov: "B, but we don't need to put ceilings, as long as we have usage let's go to town."); leads start their own workers, claiming a slot name first. A large step never goes to a small slot; a small step may take a free large slot.
 
 ## State from files
 
