@@ -12,7 +12,7 @@
     "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/"
   },
   "captured_by": "reporter@web-summit.dinis",
-  "captured_at": "2026-11-11T09:25Z",
+  "captured_at": "2026-11-11T12:30Z",
   "rules": "Read Vicky's weather desk's public files only; never write to them. Public sources only; nothing on people's whereabouts or contact details.",
   "shape": {
     "event": "n, lane (outside|ours), kind (signal|decision|hand-off|not read), actor {name, kind: authority|person|agent}, what, published (UTC, the source's own time; null if not stated), read (UTC, when our team first read it), read_by, affects[] (the incident's 'could happen' items, README section 3), evidence[], note, handoff {to, via}",
@@ -2582,6 +2582,267 @@
       "affects": [
         2,
         7
+      ]
+    },
+    {
+      "n": 88,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "Deadline",
+        "kind": "press"
+      },
+      "what": "'Web Summit Cancels Day Two As Storm Charles Hits Lisbon': the cancellation in the international trade press",
+      "published": "2026-11-11T09:10:00Z",
+      "read": "2026-11-11T09:55:00Z",
+      "read_by": "incident team (media)",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "note": "13 h 59 min after Web Summit's own page (19:09)",
+      "affects": [
+        1
+      ]
+    },
+    {
+      "n": 89,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "Bridges (as posted by Lusa)",
+        "kind": "authority"
+      },
+      "what": "Vasco da Gama bridge limited to 100 km/h since 07:30",
+      "published": "2026-11-11T09:24:00Z",
+      "read": "2026-11-11T09:57:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "14b16035",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/14b160357c82"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 90,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "Observador, TSF, RTP",
+        "kind": "press"
+      },
+      "what": "The press reports IPMA's wind downgrade, and attributes more to IPMA than IPMA has written ('only Faro under red wind'; 'two centres')",
+      "published": "2026-11-11T09:39:00Z",
+      "read": "2026-11-11T09:39:00Z",
+      "read_by": "incident team (media)",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "note": "2 h 23 min after IPMA's CAP (07:16); we had it at 07:38",
+      "affects": [
+        1,
+        6
+      ]
+    },
+    {
+      "n": 91,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA (TAF, LPPT, amended 10:08)",
+        "kind": "authority"
+      },
+      "what": "Wind cut again: gusts 65 km/h at times 10:00 to 16:00 (was 83 to 18:00); thunderstorm gusts 102 km/h, 30%, ending 16:00",
+      "published": "2026-11-11T10:08:00Z",
+      "read": "2026-11-11T10:28:00Z",
+      "read_by": "incident.meteorologist@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "affects": [
+        2,
+        6
+      ]
+    },
+    {
+      "n": 92,
+      "lane": "outside",
+      "kind": "signal (press, citing ANA)",
+      "actor": {
+        "name": "CNN Portugal (ANA's site)",
+        "kind": "press"
+      },
+      "what": "222 flights cancelled by 09:20 (208 Lisbon, 14 Faro); later 288",
+      "published": "2026-11-11T09:54:00Z",
+      "read": "2026-11-11T10:37:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "note": "ANA's own site refuses automated reads; the airline decides each flight (the lead's 'who decides' ruling, 11:55)",
+      "affects": [
+        2,
+        6
+      ]
+    },
+    {
+      "n": 93,
+      "lane": "outside",
+      "kind": "signal (press, quoting the government)",
+      "actor": {
+        "name": "Government's crisis cabinet (as reported)",
+        "kind": "authority"
+      },
+      "what": "'O mais complicado ainda vai acontecer' (the hardest is still to come): prevention urged, the storm 'not yet arrived'",
+      "published": "2026-11-11T11:35:00Z",
+      "read": "2026-11-11T11:35:00Z",
+      "read_by": "incident team (media)",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "note": "beside the lowered wind; the government's line held while IPMA's warnings eased",
+      "affects": [
+        2,
+        7
+      ]
+    },
+    {
+      "n": 94,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "Carris, Fertagus (at source)",
+        "kind": "authority"
+      },
+      "what": "Carris: trams 12E, 15E, 18E, 24E, 25E, 28E interrupted, Graça funicular closed since 10:40, the Web Summit shuttle lines cancelled 'devido à suspensão do evento'; Fertagus normal at 10:40",
+      "published": null,
+      "read": "2026-11-11T11:57:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "9780b141",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/9780b141cfb3"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 95,
+      "lane": "ours",
+      "kind": "analysis",
+      "actor": {
+        "name": "incident.datascience@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Of 51 ECMWF ensemble forecasts, the low crosses north of Lisbon in 10%, near in 41%, south in 49%, about 15:00; Lisbon's strongest model gust median 69 km/h",
+      "published": "2026-11-11T12:01:00Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "note": "the incident's first quantified spread: shares of forecasts, labelled not a probability; Dinis's 'what was the probability' question, partly answered",
+      "affects": [
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "n": 96,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "CNN Portugal, live",
+        "kind": "press"
+      },
+      "what": "Lisbon city about 50 weather incidents overnight, mostly flooding, no casualties; Algés seafront closed; Algés to Trafaria ferry suspended",
+      "published": "2026-11-11T11:26:00Z",
+      "read": "2026-11-11T12:03:00Z",
+      "read_by": "incident team",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "affects": [
+        2,
+        7
+      ]
+    },
+    {
+      "n": 97,
+      "lane": "ours",
+      "kind": "review",
+      "actor": {
+        "name": "security.repos@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "MEDIUM: the storm site's deploy job npm-installs an unpinned Playwright and browser while holding write tokens",
+      "published": "2026-11-11T12:19:56Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "af7b2526",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/af7b25260527"
+        }
       ]
     }
   ],
