@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1900",
+    "date": "2026-11-11",
+    "what": "17:22 wake: wind turned WNW, pressure rising: centre passed just north; TAF 17:00 covers Thursday; analysis 25",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "b0e0bc81b"
+  },
+  {
     "version": "v0.2.1899",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: usage at 17:22 UTC, by session",
