@@ -1,5 +1,5 @@
 # prod-pipeline: state
-**For the digest (20:2x UTC):** Angelo asked to review what the Tech Fringe already shows before building more ("possibly repeating work that is already there"). Lead's review in STATE.md: the per-page history data already exists in /changes/ (releases.mjs) but is organised by release, not by page; recommend one small improvement there instead of a new trace system. No worker running. Waiting on Angelo: that recommendation; who builds in the Fringe repository (tier 3). Running cost: 23.23 USD.
+**For the digest (22:1x UTC):** reuse the Fringe's own release data (Angelo). A8 running: checks it against A7's six traces, proposes the fix for its 8-hour window, and mocks a small eye-catching timeline fed by it (started by default at the 22:12 backstop; Angelo can stop it). Waiting on Angelo: who builds in the Fringe repository; the deploy runs; the DISTRICT 909 read time (all tier 3). Running cost: 23.23 USD.
 - **Lead:** prod-pipeline.pm@PrompTugal.angelo, started 2026-11-11 about 12:30 UTC. Instruction commit 94dfabc6: pushed-by says ANGELO (checked at start).
 - **Done:** b0-library, b1-team-spec, b2-flow-reuse (conductor.b@, before this project).
 - **Goal (BRIEF.md):** the flow page of a real deliverable, note to live, generated from the records; the next deliverable gets one with no extra work.
@@ -54,6 +54,9 @@ Lead's own read (Fringe dev 91fef64; live pages at v0.1.551, 20:17 UTC; no worke
 
 - **Angelo, 11 Nov about 21:2x:** "I agree on using the data that is already there, assuming it's reliable, and maybe just build a little graphical timeline that catches the eye. Thoughts?" Decided: reuse the Fringe's release data; no new trace system.
 - Lead's reliability check (live /api/v1/releases.json at v0.1.598, and /changes/v0.1.422/): DISTRICT 909's add is there (v0.1.422, its subject and the event, field by field). Three limits: (1) CI builds it from the last 500 commits (deploy.yml fetch-depth 500); at about 60 commits an hour that is about 8 hours, so a page's history falls off the site the same day (the feed now starts at v0.1.408); (2) it covers data/events.json only (not organisers, images, a page's own builder); a re-read is a count, not a step; (3) the read time can contradict the record (DISTRICT 909, 13:17 against 17:49).
+
+## Wake 22:12 UTC (backstop)
+- No worker running; no rule changes on dev. **Decided by default, Angelo can reverse:** start A8, the step proposed to Angelo at 21:24 (no answer): reliability of the release data against A7, the fix for its window, and the little timeline fed by it. Design, large, golf.large.
 
 ## Spend
 - Worker runs: A1 3.95 USD, A2 3.60 USD (platform, API-equivalent); plus A3 2.29, A4 4.02, A5 4.11, A6 2.79, A7 2.47 USD; total 23.23 USD. No budget (Angelo); recorded, not gated.
