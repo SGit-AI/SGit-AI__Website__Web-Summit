@@ -12,5 +12,6 @@ At Dinis's word (11 November 2026, about 10:00 UTC; he chose the name). Storm Ch
 
 - [x] The name (Lisbon Fringe); the repository; the brief and the kick-off.
 - [ ] fringe.promptugal.news pointed at the repository (Dinis).
-- [ ] The team started on account B (conductor.b@, from KICKOFF.md).
+- [x] The swarm: one conductor per person, Dinis head conductor; SWARM.md, JOIN.md, the roster, the first 11 board items; the page [/fringe/](../fringe/index.html).
+- [ ] The team started on account B (conductor.b@, from KICKOFF.md), and each person's conductor.fringe@ online.
 - [ ] Day one: today's and tomorrow's events, sourced; /api/v1/events.json; linked from pt.news.

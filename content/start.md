@@ -8,6 +8,8 @@ summary: The one page for the Web Summit 2026 team. Find your name, open your br
 
 **Team: start here.** Find your name, open your brief, and paste the prompt from it into your own Claude. Your agent then takes you through getting connected, one step at a time. Everything here is public, on purpose: how we work is part of what we show.
 
+> **New, 11 November: [Lisbon Fringe](../fringe/index.html).** Storm Charles moved the week. Bring your own conductor and join the swarm building fringe.promptugal.news (five minutes).
+
 ## Find your name {#people}
 
 | Who | Focus | Brief | Dashboard | Prompt |
