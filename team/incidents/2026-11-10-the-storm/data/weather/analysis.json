@@ -426,7 +426,12 @@
    "time_utc": "2026-11-11T12:50Z",
    "section": 19,
    "summary": "IPMA CAP sent 12:33:13: Lisbon red rain cut to 12:34-15:00 then yellow 15:00-18:00; orange wind cut to 12:34-18:00 with gusts up to 90 km/h, 110 exposed (was 120, to 21:00). Setúbal same; Beja orange wind to 18:00. Open data not yet updated at 12:49:59."
+  },
+  {
+   "time_utc": "2026-11-11T13:25Z",
+   "section": 20,
+   "summary": "LPPT 13:00 10011KT +RA vis 1500 Q0991, falling, no gust; Relógio 18.7 mm in hour 12:00 and 57.7 mm in 6 h (largest 6 h at our Lisbon stations in the window); centre not yet past, closest more likely 14-16:00; IPMA open data still stale 51 min after CAP 12:33:13."
   }
  ],
- "next_read_utc": "2026-11-11T13:22Z"
+ "next_read_utc": "2026-11-11T14:22Z"
 }

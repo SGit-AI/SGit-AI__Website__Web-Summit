@@ -398,3 +398,15 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 - MeteoAlarm carried it 13 min after it was sent at the latest (poll read 12:41:18 did not have it; 12:46:20 did). IPMA's open data (warnings_www.json) did not show it at 12:49:59; warnings.json still holds the old windows until it does.
 
 **Analysis (medium-high):** IPMA has now put in its warnings what communiqué no. 3 said: weaker wind, rain easing from mid-afternoon. For Lisbon the worst is now bounded at **15:00 for the heavy rain and 18:00 for the wind**, three hours earlier than this morning's warnings. Its new wind figure (90, 110 exposed) matches what the airport's TAF has said since 10:08 (gusts about 65 km/h at times, a 30% chance of about 100). Observed so far: no gust above warned; wind at the airport under 30 km/h at 12:30.
+
+## 20. 13:25 UTC 11 Nov: the rain at its heaviest at Relógio, the centre not yet past
+
+**Facts** (airport.json and lisbon-rain.json, read 13:24:33 UTC):
+- LPPT METARs: 12:30 07015KT +RA visibility 2000 m Q0992; 13:00 10011KT +RA visibility 1500 m Q0991. Pressure has fallen 8 hPa since 10:00 and is still falling (about 1–2 hPa per half hour). Still no gust; the highest LPPT gust in the window is 36 kt (67 km/h), on Tuesday. TAF 11:00 not amended.
+- IPMA stations, hour labelled 12:00: Relógio 18.7 mm (its heaviest hour in the window), Geofísico 18.1 mm (its first rain figures in the window), Tapada 14.3, Amoreiras 12.0, Carnide 10.3, Oeiras 9.2, Barreiro 8.7. Wind E or NE, means 9–30 km/h.
+- **Relógio 57.7 mm in the 6 hours labelled 07:00–12:00**, the largest 6-hour total at any of our Lisbon stations in the window (Tapada had 56.5 mm on Tuesday 03:00–08:00). The storm's heaviest single hour is still Barreiro's 18.9 mm on 10 Nov 01:00.
+- Warnings: the CAP 12:33:13 messages stand (red rain to 15:00, yellow to 18:00, orange wind to 18:00, gusts to 90 km/h). **IPMA's open data still had the old windows at 13:24:33, 51 minutes after the CAP was sent**, so warnings.json still shows red rain to 18:00 and orange wind to 21:00 at 120 km/h. Treat cap.json as current. No new CAP message since 12:33:13 (poll read every 5 min to 13:20:58).
+
+**Analysis (medium):** the wind still comes from the east and the pressure is still falling: the centre has not reached Lisbon. Section 16 stands (track over or just south, the wind backing). Section 12's timing for closest approach (13:00–15:00) now looks like the early end, more likely 14:00–16:00. The rain is at its heaviest now, as the centre nears; IPMA expects it to ease from 15:00.
+
+**Test (unchanged):** the pressure minimum, then the wind turning through N to NW (centre passed south) or S to SW (north).
