@@ -401,7 +401,12 @@
    "analysis": "one centre would need ~140-160 km/h to pass Madeira (06:30-08:00) and Lisbon (13-15:00), 966 km apart; no. 2 had it NW of Madeira at 00 UTC: Madeira's swing most likely a separate feature; consistent with 'two centres' (not proven); weakening consistent with IPMA's downgrade",
    "two_centres_confidence": "medium (observations and distance; not IPMA in writing)",
    "section_12": "stands: centre close to and just north of Lisbon ~13-15:00, strongest wind 14-16:00"
+  },
+  {
+   "time_utc": "2026-11-11T11:30Z",
+   "section": 15,
+   "summary": "LPPT TAF 11:00 repeats the 10:08 amendment; heavy rain steady at 4-6 mm/h (Relógio 24 mm in 5 h); wind backing SSE to ESE, pressure 998 falling (hypothesis, low: centre may pass south)"
   }
  ],
- "next_read_utc": "2026-11-11T11:22Z"
+ "next_read_utc": "2026-11-11T12:22Z"
 }

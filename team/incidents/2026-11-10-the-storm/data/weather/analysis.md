@@ -341,3 +341,15 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
   - That fits IPMA's orange (gusts to 120 km/h, in the district's most exposed places) and the "weakens" reported in the press.
   - **The strongest wind most likely comes 13:00 to 16:00**, ending earlier than section 12's 14:00 to 16:00.
   - **The red rain is now the main hazard for Lisbon.**
+
+## 15. 11:30 UTC 11 Nov: heavy rain steady, wind backing, airport forecast unchanged
+
+**Facts** (sources in airport.json and lisbon-rain.json, read 11:26:40 UTC):
+- LPPT TAF issued 11:00 (routine) repeats the 10:08 amendment: base 14015KT; TEMPO 12:00–16:00 14020G35KT (gusts about 65 km/h) with rain; PROB30 TEMPO 12:00–16:00 14040G55KT (about 102 km/h) in thunderstorms; BECMG 16:00–18:00 29012KT; TEMPO 18:00–21:00 29017G27KT (about 50 km/h).
+- LPPT METARs: 10:00 15011KT Q0999; 10:30 14011KT +RA Q0999; 11:00 11009KT 090V150, visibility 2000 m, heavy rain and mist, Q0998. No gust reported this morning; the highest LPPT gust in the window is still 36 kt (67 km/h) on Tuesday at 11:00.
+- IPMA stations, hours labelled 06:00–10:00 (5 h): Lisboa Relógio 24.0 mm, Oeiras 27.5 mm, Carnide 19.6 mm, Tapada da Ajuda 20.2 mm; 4–6 mm in each hour, no single burst. Mean winds stay under 25 km/h.
+- IPMA warnings for Lisboa unchanged: red rain 09:00–18:00, orange wind 09:00–21:00 (gusts to 120 km/h), orange sea 12:00–21:00 then yellow to 03:00 Thursday. No communiqué no. 3. No new CAP message since 07:16:30.
+
+**Analysis (medium):** the rain is behaving as IPMA's red warning says, "forte e persistente": steady, not torrential, about 5 mm an hour, so by 18:00 Lisbon could reach 50–60 mm on today alone at this rate (a projection, not a forecast). Wind is so far far below the orange threshold.
+
+**Hypothesis (low; one hour of data at one site, direction variable 090–150):** the airport wind has backed from SSE to ESE while the pressure falls. Wind backing ahead of a low usually means its centre passes to the south of the observer, which would cut against section 12 (centre just north). The TAF's later swing to 290° fits either side once it has passed. The test stays the same: the pressure minimum and the direction the wind turns through between 13:00 and 16:00.

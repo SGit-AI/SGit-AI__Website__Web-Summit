@@ -1,20 +1,20 @@
 {
  "about": "IPMA's aeronautical forecast (TAF) and observations (METAR) for Madeira airport (LPMA, Santa Cruz, on the south-east coast), read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport; not a public warning.",
  "icao": "LPMA",
- "read_utc": "2026-11-11T10:22:42Z",
+ "read_utc": "2026-11-11T11:26:40Z",
  "taf": {
-  "issue_utc": "2026-11-11T09:18Z",
-  "raw": "TAF AMD LPMA 110918Z 1109/1206 35015KT 9999 SCT015 TEMPO 1109/1115 35018G30KT BKN012 FEW018CB BECMG 1118/1120 VRB05KT",
-  "valid_from_utc": "2026-11-11T09:00Z",
-  "valid_to_utc": "2026-11-12T06:00Z",
+  "issue_utc": "2026-11-11T11:00Z",
+  "raw": "TAF LPMA 111100Z 1112/1212 34015KT 9999 SCT015 TEMPO 1112/1115 34018G30KT TEMPO 1115/1118 VRB05KT BECMG 1118/1120 VRB05KT",
+  "valid_from_utc": "2026-11-11T12:00Z",
+  "valid_to_utc": "2026-11-12T12:00Z",
   "groups": [
    {
     "change": "BASE",
     "prob": null,
-    "from_utc": "2026-11-11T09:00Z",
+    "from_utc": "2026-11-11T12:00Z",
     "to_utc": "2026-11-11T18:00Z",
     "becoming_by_utc": null,
-    "wind_dir": 350,
+    "wind_dir": 340,
     "wind_kt": 15,
     "gust_kt": null,
     "wind_kmh": 28,
@@ -25,10 +25,10 @@
    {
     "change": "TEMPO",
     "prob": null,
-    "from_utc": "2026-11-11T09:00Z",
+    "from_utc": "2026-11-11T12:00Z",
     "to_utc": "2026-11-11T15:00Z",
     "becoming_by_utc": null,
-    "wind_dir": 350,
+    "wind_dir": 340,
     "wind_kt": 18,
     "gust_kt": 30,
     "wind_kmh": 33,
@@ -37,10 +37,24 @@
     "weather": null
    },
    {
+    "change": "TEMPO",
+    "prob": null,
+    "from_utc": "2026-11-11T15:00Z",
+    "to_utc": "2026-11-11T18:00Z",
+    "becoming_by_utc": null,
+    "wind_dir": "VRB",
+    "wind_kt": 5,
+    "gust_kt": null,
+    "wind_kmh": 9,
+    "gust_kmh": null,
+    "visibility": "",
+    "weather": null
+   },
+   {
     "change": "BECMG",
     "prob": null,
     "from_utc": "2026-11-11T18:00Z",
-    "to_utc": "2026-11-12T06:00Z",
+    "to_utc": "2026-11-12T12:00Z",
     "becoming_by_utc": "2026-11-11T20:00Z",
     "wind_dir": "VRB",
     "wind_kt": 5,
@@ -52,7 +66,7 @@
    }
   ],
   "source": "https://aviationweather.gov/api/data/taf?ids=LPMA&format=json",
-  "read_utc": "2026-11-11T10:22:42Z"
+  "read_utc": "2026-11-11T11:26:40Z"
  },
  "taf_history": [
   {
@@ -72,6 +86,12 @@
    "raw": "TAF AMD LPMA 110918Z 1109/1206 35015KT 9999 SCT015 TEMPO 1109/1115 35018G30KT BKN012 FEW018CB BECMG 1118/1120 VRB05KT",
    "source": "https://aviationweather.gov/api/data/taf?ids=LPMA&format=json",
    "read_utc": "2026-11-11T09:22:47Z"
+  },
+  {
+   "issue_utc": "2026-11-11T11:00Z",
+   "raw": "TAF LPMA 111100Z 1112/1212 34015KT 9999 SCT015 TEMPO 1112/1115 34018G30KT TEMPO 1115/1118 VRB05KT BECMG 1118/1120 VRB05KT",
+   "source": "https://aviationweather.gov/api/data/taf?ids=LPMA&format=json",
+   "read_utc": "2026-11-11T11:26:40Z"
   }
  ],
  "metars": [
@@ -1124,6 +1144,34 @@
    "pressure_hpa": 997,
    "source": "https://aviationweather.gov/api/data/metar?ids=LPMA&hours=30&format=json",
    "read_utc": "2026-11-11T10:22:42Z"
+  },
+  {
+   "time_utc": "2026-11-11T10:30Z",
+   "raw": "METAR LPMA 111030Z 35018KT 290V020 9999 SCT012 23/18 Q0999",
+   "wind_dir": 350,
+   "wind_kt": 18,
+   "gust_kt": null,
+   "wind_kmh": 33,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": null,
+   "pressure_hpa": 999,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPMA&hours=30&format=json",
+   "read_utc": "2026-11-11T11:26:40Z"
+  },
+  {
+   "time_utc": "2026-11-11T11:00Z",
+   "raw": "METAR LPMA 111100Z 33016G27KT 290V030 9999 SCT014 22/17 Q1000",
+   "wind_dir": 330,
+   "wind_kt": 16,
+   "gust_kt": 27,
+   "wind_kmh": 30,
+   "gust_kmh": 50,
+   "visibility": "6+",
+   "weather": null,
+   "pressure_hpa": 1000,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPMA&hours=30&format=json",
+   "read_utc": "2026-11-11T11:26:40Z"
   }
  ],
  "max_gust": {
@@ -1132,5 +1180,5 @@
   "time_utc": "2026-11-11T02:30Z",
   "source": "https://aviationweather.gov/api/data/metar?ids=LPMA&hours=30&format=json"
  },
- "next_read_utc": "2026-11-11T11:22Z"
+ "next_read_utc": "2026-11-11T12:22Z"
 }
