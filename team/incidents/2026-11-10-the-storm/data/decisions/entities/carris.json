@@ -1,0 +1,24 @@
+{
+ "entity": "carris",
+ "about": "Carris (Lisbon buses, trams, funiculars).",
+ "updated": "2026-11-11T11:56Z",
+ "decisions": [
+  {
+   "edge": "carris-service-1156",
+   "decision": "Carris (its own page): service continues, priority to essential journeys (health, emergency workers); Web Summit shuttle lines cancelled \"devido à suspensão do evento\"; Graça funicular closed since 10:40; trams 15E, 25E, 24E, 28E, 12E, 18E interrupted in sequence, 15E replaced by buses on the same route; bus 763 diverted at Carnide cemetery (5 stops dropped); Saldanha and Cais do Sodré sales points closed",
+   "decided_by": "Carris",
+   "published_utc": null,
+   "address": "https://www.carris.pt/viaje/alteracoes-de-servico/alerta-circulacao/",
+   "read": "2026-11-11T11:56Z",
+   "label": "fact",
+   "state": "limited",
+   "scope": {
+    "extent": "part",
+    "parts": "trams 12E, 15E, 18E, 24E, 25E, 28E interrupted (15E by bus); Graça funicular closed; Web Summit shuttle cancelled; bus 763 diverted; buses otherwise running"
+   }
+  }
+ ],
+ "open": [
+  "The page carries no update time."
+ ]
+}

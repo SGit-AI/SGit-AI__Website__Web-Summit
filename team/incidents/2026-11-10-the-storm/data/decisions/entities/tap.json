@@ -1,7 +1,7 @@
 {
  "entity": "tap",
  "about": "Every decision in graph.json about tap: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T09:30Z",
+ "updated": "2026-11-11T13:16Z",
  "decisions": [
   {
    "edge": "tap-adjusts",
@@ -22,6 +22,16 @@
     "extent": "part",
     "parts": "rebooking for tickets up to 11 Nov; cancellations not stated"
    }
+  },
+  {
+   "edge": "tap-alert",
+   "decision": "Site alert \"Dias 10 e 11 de novembro - Condições meteorológicas adversas em todo o território português\" (medium)",
+   "decided_by": "TAP",
+   "published_utc": "2026-11-10T09:00Z",
+   "address": "https://www.flytap.com/pt-pt",
+   "read": "2026-11-11T13:16Z",
+   "label": "fact",
+   "state": "limited"
   }
  ],
  "open": []

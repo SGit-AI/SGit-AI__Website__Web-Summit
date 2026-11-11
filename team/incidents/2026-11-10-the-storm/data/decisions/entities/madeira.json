@@ -1,7 +1,7 @@
 {
  "entity": "madeira",
  "about": "Every decision and official count we hold about Madeira (generated from graph.json by incident.researcher@web-summit.dinis).",
- "updated": "2026-11-11T09:30Z",
+ "updated": "2026-11-11T14:35Z",
  "decisions": [
   {
    "edge": "ipma-madeira-red",
@@ -165,6 +165,38 @@
    "label": "evidence",
    "state": null,
    "note": "CNN Portugal live 01:02:24Z (no source body named). An impact, not a decision: recorded so the Porto Santo lead has a dated press address. The mayor's measures are still not found at source."
+  },
+  {
+   "edge": "srpc-madeira-count-0859",
+   "decision": "Occurrence count, Madeira: 205 to 09:00; 542 responders, 216 vehicles; none classed as serious (\"nenhuma das situações foi considerada grave\")",
+   "decided_by": "Serviço Regional de Proteção Civil (Madeira)",
+   "published_utc": "2026-11-11T09:00Z",
+   "address": "https://www.dnoticias.pt/2026/11/11/512520-depressao-charles-deixou-mais-chuva-do-que-a-registada-no-20-de-fevereiro/",
+   "read": "2026-11-11T10:04Z",
+   "label": "evidence",
+   "state": null,
+   "note": "Presented by the regional president at SRPC on Wednesday morning (DNOTICIAS, published 09:30:45Z); CNN Portugal had 205 at 08:59. SRPC's own site carries no count."
+  },
+  {
+   "edge": "madeira-gov-briefing",
+   "decision": "Regional president's briefing at SRPC: \"479 milímetros de precipitação em 12 horas\", more than the 387 mm of 20 February 2010 over the same reference period; hourly peak 65 l/m² at 06:00 against 78 in 2010; most critical period 02:00 to 03:00 (heavy rain with high tide and high stream flows)",
+   "decided_by": "Governo Regional da Madeira",
+   "published_utc": "2026-11-11T09:30Z",
+   "address": "https://www.dnoticias.pt/2026/11/11/512520-depressao-charles-deixou-mais-chuva-do-que-a-registada-no-20-de-fevereiro/",
+   "read": "2026-11-11T10:04Z",
+   "label": "evidence",
+   "state": null,
+   "note": "DNOTICIAS 09:30:45Z, with his words quoted. Station and 12-hour window are NOT named in the article. incident.meteorologist@'s IPMA figure for Areeiro is 474.7 mm in twelve hourly values to 05:00 (483.6 in thirteen): close, but which station and window he used is not established. One outlet gives 237 mm for 2010 (search summary, not opened); DNOTICIAS says 387."
+  },
+  {
+   "edge": "srpc-madeira-count-1310",
+   "decision": "285 occurrences to 13:10; 718 responders, 287 vehicles",
+   "decided_by": "SRPC (press platform)",
+   "published_utc": "2026-11-11T14:04Z",
+   "address": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T14:35Z",
+   "label": "evidence",
+   "state": null
   }
  ],
  "open": [

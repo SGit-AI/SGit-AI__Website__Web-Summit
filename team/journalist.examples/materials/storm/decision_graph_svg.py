@@ -19,7 +19,7 @@ C = {'done': '#1f5f8b', 'unknown_time': '#1f5f8b', 'not_read': '#8a8984', 'not_a
 o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">',
      f'<rect width="{W}" height="{H}" fill="#faf9f5"/>',
      '<text x="30" y="44" font-size="26" font-weight="700" fill="#141413">The storm: who decided what, and how far ahead</text>',
-     f'<text x="30" y="74" font-size="15" fill="#5e5d59">From the weather desk\'s sources, as of {g["as_of"][11:16]} UTC on {int(g["as_of"][8:10])} November. Lisbon time = UTC. Red rain Wednesday 09:00 to 18:00; wind lowered to orange at 07:16.</text>',
+     f'<text x="30" y="74" font-size="15" fill="#5e5d59">From the weather desk\'s sources, as of {g["as_of"][11:16]} UTC on {int(g["as_of"][8:10])} November. Lisbon time = UTC. Red rain Wednesday 09:00, ended 15:00; wind lowered to orange at 07:16, to 18:00.</text>',
      '<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#5e5d59"/></marker></defs>']
 for i, l in enumerate(LANES):
     y = TOP + i * LH
@@ -30,7 +30,7 @@ o.append(f'<rect x="{ex0}" y="{TOP-14}" width="{ex1-ex0}" height="{LH*len(LANES)
 _bx, _ba = ((X(g['as_of']) + 6, 'start') if ex0 <= X(g['as_of']) <= ex1 else ((ex0 + ex1) / 2, 'middle'))
 o.append(f'<text x="{_bx}" y="{TOP-20}" font-size="13" font-weight="700" fill="#8a3b1f" text-anchor="{_ba}">red rain in Lisbon</text>')
 now = X(g['as_of'])
-o.append(f'<line x1="{now}" y1="{TOP-14}" x2="{now}" y2="{TOP+LH*len(LANES)-8}" stroke="#141413" stroke-dasharray="2 3"/><text x="{now-5}" y="{TOP-20}" font-size="12" fill="#141413" text-anchor="end">as of {g["as_of"][11:16]}</text>')
+o.append(f'<line x1="{now}" y1="{TOP-14}" x2="{now}" y2="{TOP+LH*len(LANES)-8}" stroke="#141413" stroke-dasharray="2 3"/><text x="{now+5 if now > ex1 else now-5}" y="{TOP-20}" font-size="12" fill="#141413" text-anchor="{"start" if now > ex1 else "end"}">as of {g["as_of"][11:16]}</text>')
 for h in range(0, 59, 6):
     t = datetime.fromtimestamp(T0.timestamp() + h * 3600, timezone.utc); x = LW + (W - LW - 30) * h / 58
     lab = t.strftime('%a %H:%M') if t.hour == 0 or h == 0 else t.strftime('%H:%M')

@@ -1,7 +1,7 @@
 {
   "schema": "web-summit.sgit.ai/angelo-lanes/v1",
   "about": "Where each of Angelo's agents may write, from its ABP (content/abp/<agent>-web-summit-angelo.md, Mandate, Deployment scope) and Angelo's protocol (people/angelo/kit/README.md#protocol). Kept by policy@web-summit.angelo; read by people/angelo/policy/audit.mjs. A write outside these paths is not always a violation (tier 2 allows small changes the owner asked for, said so in the commit), but every one is listed and judged in findings.md.",
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "enforce": true,
   "enforce_about": "Turned on by policy@PrompTugal.angelo on 8 November 2026 at 07:30 UTC: since the check went in (42198055, 7 November 22:17), every outside write by Angelo's agents was declared (5 of 5) and none was refused; the one earlier refusal (d89d2576) predates the check. From now on release.sh and CI refuse an undeclared write outside a lane.",
   "common": [
@@ -210,10 +210,25 @@
       "aliases": [
         "bravo.large.worker@PrompTugal.angelo",
         "charlie.large.worker@PrompTugal.angelo",
+        "foxtrot.large.worker@PrompTugal.angelo",
+        "golf.large.worker@PrompTugal.angelo",
+        "hotel.large.worker@PrompTugal.angelo",
+        "juliett.large.worker@PrompTugal.angelo",
+        "kilo.large.worker@PrompTugal.angelo",
+        "lima.large.worker@PrompTugal.angelo",
+        "mike.large.worker@PrompTugal.angelo",
         "delta.small.worker@PrompTugal.angelo",
-        "echo.small.worker@PrompTugal.angelo"
+        "echo.small.worker@PrompTugal.angelo",
+        "november.small.worker@PrompTugal.angelo",
+        "oscar.small.worker@PrompTugal.angelo",
+        "papa.small.worker@PrompTugal.angelo",
+        "quebec.small.worker@PrompTugal.angelo",
+        "romeo.small.worker@PrompTugal.angelo",
+        "sierra.small.worker@PrompTugal.angelo",
+        "tango.small.worker@PrompTugal.angelo",
+        "uniform.small.worker@PrompTugal.angelo"
       ],
-      "source": "people/angelo/proposals/account-move/spec-pipeline-b.md (approved by Angelo, 10 November about 12:40 UTC): the five pipeline workers on account B, one entry for all five; here only people/angelo/pipeline/<id>/; the publish role's newsroom writes are in the other repository, not checked by this gate"
+      "source": "people/angelo/proposals/account-move/spec-pipeline-b.md (approved by Angelo, 10 November about 12:40 UTC): the pipeline workers on account B, one entry for all; twenty named slots, ten large and ten small, each named in full, no wildcard (Angelo, 11 November: \"I'm happy for opening all 20 lanes immediately but not give wildcards\"; the names as in people/angelo/conductor-b/STATE.md); here only people/angelo/pipeline/<id>/; the publish role's newsroom writes are in the other repository, not checked by this gate"
     }
   },
   "everyone": {

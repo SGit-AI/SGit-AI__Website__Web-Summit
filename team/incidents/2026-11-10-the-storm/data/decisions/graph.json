@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T09:34Z",
+ "updated": "2026-11-11T15:36Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -390,6 +390,26 @@
    "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
    "read": "2026-11-11T06:35Z",
    "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "rsb-lisboa",
+   "name": "Regimento de Sapadores Bombeiros (Lisbon fire brigade)",
+   "kind": "authority",
+   "role": "Lisbon city fire and rescue.",
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T11:35Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "ip",
+   "name": "Infraestruturas de Portugal (IP)",
+   "kind": "transport",
+   "role": "Manages the national rail and road networks (speed limits, inspections).",
+   "label": "fact",
+   "source": "https://www.infraestruturasdeportugal.pt/pt-pt/alerta-condicoes-meteorologicas-adversas",
+   "read": "2026-11-11T13:19Z",
+   "read_by": "incident.researcher@web-summit.dinis"
   }
  ],
  "edges": [
@@ -720,11 +740,25 @@
      "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
      "label": "evidence",
      "read": "2026-11-11T06:35Z"
+    },
+    {
+     "at": "2026-11-11T10:35Z",
+     "what": "Lisbon tunnels opening and closing as water accumulates (Campo Grande)",
+     "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+     "label": "evidence",
+     "read": "2026-11-11T11:35Z"
+    },
+    {
+     "at": "2026-11-11T15:24Z",
+     "what": "PSP: all Lisbon tunnels closed (\"Os túneis [de Lisboa] estão todos encerrados\"); main roads around Lisbon restricted (Eixo Norte-Sul, IC19, A8, Av. Infante D. Henrique), none fully cut",
+     "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+     "label": "evidence",
+     "read": "2026-11-11T15:36Z"
     }
    ],
    "scope": {
     "extent": "whole",
-    "parts": "all Lisbon road tunnels (announced); three on Av. da República observed open after midnight"
+    "parts": "all Lisbon road tunnels, parks, gardens and cultural facilities (announced); three tunnels on Av. da República observed open after midnight"
    }
   },
   {
@@ -802,7 +836,8 @@
    "scope": {
     "extent": "whole",
     "parts": "buses and trams; trams may be disrupted (press)"
-   }
+   },
+   "note": " 11:56Z: superseded by carris-service-1156 (Carris's own page)."
   },
   {
    "id": "rede-expressos-suspends",
@@ -1124,7 +1159,7 @@
    "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 13:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 14:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 15:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
    "corroborated_by": [
     "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
    ],
@@ -1156,7 +1191,7 @@
    "source": "https://websummit.com/startups/pitch/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 13:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 14:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 15:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "no decision with an effect window",
@@ -1371,7 +1406,7 @@
    "id": "cp-fertagus-bridge",
    "by": "cp",
    "to": [],
-   "decision": "CP suppresses four trains crossing the 25 de Abril bridge in the most critical window (12:00 to 15:00 forecast: heavy rain, strong wind)",
+   "decision": "CP suppresses four trains crossing the 25 de Abril bridge in what it calls the most critical window; CP says «as previsões meteorológicas para o período entre as 12:00 e as 15:00» point to heavy rain and strong wind (CP does not name the forecaster)",
    "at": "2026-11-10T23:10Z",
    "status": "happened",
    "follows": [
@@ -1403,18 +1438,18 @@
    ],
    "decision": "Red rain warning for the Lisbon district brought forward to 11 Nov 09:00 to 18:00 (orange 00:00 to 09:00; yellow from 21:24 Tuesday)",
    "at": "2026-11-10T21:23Z",
-   "status": "happened",
+   "status": "superseded",
    "follows": [
     "ipma-red-rain"
    ],
    "label": "fact",
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read": "2026-11-11T09:34Z",
+   "read": "2026-11-11T12:35Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": "2026-11-11T09:00Z",
    "effect_to_utc": "2026-11-11T18:00Z",
    "effect_note": "IPMA warnings JSON startTime/endTime",
-   "note": "CAP 2.49.0.0.620.0.PT.261110212300.PO-10-6290, sent_utc 2026-11-10T21:23:00Z, severity Extreme, onset 11 Nov 09:00, expires 18:00; replaces 2.49.0.0.620.0.PT.261110163001.PO-10-6273 (sent 16:30:01). The orange before it (PO-10-6288) runs 00:00-09:00. Via team/incidents/2026-11-10-the-storm/data/weather/cap.json (incident.meteorologist@, read 2026-11-11T00:23:21Z); IPMA warnings JSON read by us 23:54Z agrees.",
+   "note": "CAP 2.49.0.0.620.0.PT.261110212300.PO-10-6290, sent_utc 2026-11-10T21:23:00Z, severity Extreme, onset 11 Nov 09:00, expires 18:00; replaces 2.49.0.0.620.0.PT.261110163001.PO-10-6273 (sent 16:30:01). The orange before it (PO-10-6288) runs 00:00-09:00. Via team/incidents/2026-11-10-the-storm/data/weather/cap.json (incident.meteorologist@, read 2026-11-11T00:23:21Z); IPMA warnings JSON read by us 23:54Z agrees. Superseded at 12:33:13Z by ipma-cut-1233.",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
    "area": "lisbon",
@@ -1913,8 +1948,8 @@
    "read": "2026-11-11T07:35Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": null,
-   "effect_to_utc": null,
-   "effect_note": "\"hoje de manhã\"; end not stated",
+   "effect_to_utc": "2026-11-11T10:32Z",
+   "effect_note": "closed \"hoje de manhã\"; reopened by 10:32 (CNN Portugal: \"Apesar da reabertura dos acessos ao Funchal\")",
    "state": "closed",
    "state_note": null,
    "area": "madeira",
@@ -2028,13 +2063,13 @@
    ],
    "decision": "IPMA lowers Lisbon's wind warning from red to orange: Wednesday 09:00 to 21:00, gusts up to 120 km/h (\"Rajadas até 120 km/h\"); the red rain 09:00 to 18:00 stands",
    "at": "2026-11-11T07:16Z",
-   "status": "happened",
+   "status": "superseded",
    "follows": [
     "ipma-red-wind"
    ],
    "label": "fact",
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read": "2026-11-11T09:34Z",
+   "read": "2026-11-11T12:35Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "also": [
     "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json"
@@ -2045,7 +2080,7 @@
    "state": null,
    "state_note": "a warning, not a service decision",
    "area": "lisbon",
-   "note": "CAP message sent 2026-11-11T07:16:30Z, severity Severe (orange), onset 09:00, expires 21:00 (incident.meteorologist@'s cap.json, commit 287ae82e). IPMA's open data showed it by 08:40Z (still red at 07:38 per the meteorologist). At 08:40Z red remains in 9 districts for rain (incl. Lisbon) and in Faro for wind. Day 2 had been called off partly for \"the impact of high winds on external structures\" (organisers, 19:09 Tue): we record the downgrade, not a judgement.",
+   "note": "CAP message sent 2026-11-11T07:16:30Z, severity Severe (orange), onset 09:00, expires 21:00 (incident.meteorologist@'s cap.json, commit 287ae82e). IPMA's open data showed it by 08:40Z (still red at 07:38 per the meteorologist). At 08:40Z red remains in 9 districts for rain (incl. Lisbon) and in Faro for wind. Day 2 had been called off partly for \"the impact of high winds on external structures\" (organisers, 19:09 Tue): we record the downgrade, not a judgement. 10:02Z (CNN Portugal, from IPMA): Faro is the only district still red for wind; Évora, Setúbal, Santarém, Lisboa, Leiria, Beja and Portalegre lowered to orange. Superseded at 12:33:13Z by ipma-cut-1233.",
    "scope": null,
    "corroborated_by": [
     "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2 (08:39:39Z: Lisboa, Setúbal and Beja leave red for wind)"
@@ -2106,15 +2141,15 @@
    "id": "srpc-madeira-count-0859",
    "by": "madeira-prociv",
    "to": [],
-   "decision": "Occurrence count, Madeira: 205 so far; 542 responders, 216 means",
-   "at": "2026-11-11T08:59Z",
+   "decision": "Occurrence count, Madeira: 205 to 09:00; 542 responders, 216 vehicles; none classed as serious (\"nenhuma das situações foi considerada grave\")",
+   "at": "2026-11-11T09:00Z",
    "status": "happened",
    "follows": [
     "srpc-madeira-count-0650"
    ],
    "label": "evidence",
-   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
-   "read": "2026-11-11T09:34Z",
+   "source": "https://www.dnoticias.pt/2026/11/11/512520-depressao-charles-deixou-mais-chuva-do-que-a-registada-no-20-de-fevereiro/",
+   "read": "2026-11-11T10:04Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": null,
    "effect_to_utc": null,
@@ -2123,7 +2158,475 @@
    "state_note": "a count",
    "scope": null,
    "area": "madeira",
-   "note": "CNN Portugal live 08:59:12Z, \"segundo os dados disponibilizados\" (SRPC's press platform, not public)."
+   "note": "Presented by the regional president at SRPC on Wednesday morning (DNOTICIAS, published 09:30:45Z); CNN Portugal had 205 at 08:59. SRPC's own site carries no count.",
+   "corroborated_by": [
+    "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2 (08:59:12Z)"
+   ]
+  },
+  {
+   "id": "madeira-gov-briefing",
+   "by": "madeira-gov",
+   "to": [],
+   "decision": "Regional president's briefing at SRPC: \"479 milímetros de precipitação em 12 horas\", more than the 387 mm of 20 February 2010 over the same reference period; hourly peak 65 l/m² at 06:00 against 78 in 2010; most critical period 02:00 to 03:00 (heavy rain with high tide and high stream flows)",
+   "at": "2026-11-11T09:30Z",
+   "status": "happened",
+   "follows": [
+    "srpc-madeira-count-0200"
+   ],
+   "label": "evidence",
+   "source": "https://www.dnoticias.pt/2026/11/11/512520-depressao-charles-deixou-mais-chuva-do-que-a-registada-no-20-de-fevereiro/",
+   "read": "2026-11-11T10:04Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "statement",
+   "state": null,
+   "state_note": "a statement, not a service decision",
+   "scope": null,
+   "area": "madeira",
+   "also": [
+    "https://www.jm-madeira.pt/not%C3%ADcias/regi-o/30009071/niveis-de-pluviosidade-ultrapassaram-os-do-20-de-fevereiro.html"
+   ],
+   "note": "DNOTICIAS 09:30:45Z, with his words quoted. Station and 12-hour window are NOT named in the article. incident.meteorologist@'s IPMA figure for Areeiro is 474.7 mm in twelve hourly values to 05:00 (483.6 in thirteen): close, but which station and window he used is not established. One outlet gives 237 mm for 2010 (search summary, not opened); DNOTICIAS says 387."
+  },
+  {
+   "id": "lisbon-flights-208",
+   "by": "airport",
+   "to": [],
+   "decision": "222 flights cancelled at Lisbon and Faro by 09:20 (departures and arrivals): 208 at Lisbon (Humberto Delgado), 14 at Faro",
+   "at": "2026-11-11T09:20Z",
+   "status": "happened",
+   "follows": [
+    "ana-conditioned"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T10:34Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "count at 09:20; which hours the flights were due not stated",
+   "state": "limited",
+   "state_note": "cancellations; the airport stays open (not stated otherwise)",
+   "scope": {
+    "extent": "part",
+    "parts": "208 flights at Lisbon, 14 at Faro (to 09:20)"
+   },
+   "area": "lisbon",
+   "note": "CNN Portugal live 09:54:01Z, from ANA's site (ANA's site shows us a bot page). Earlier: \"at least 40\" (24noticias, Tue)."
+  },
+  {
+   "id": "vasco-da-gama-100",
+   "by": "lusoponte",
+   "to": [],
+   "decision": "Vasco da Gama bridge limited to 100 km/h since 07:30 for reduced visibility; usual limits on the 25 de Abril bridge; Lusoponte advises against motorcycles and high-sided vehicles",
+   "at": "2026-11-11T07:30Z",
+   "status": "superseded",
+   "follows": [
+    "bridges-lifted"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T11:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T07:30Z",
+   "effect_to_utc": null,
+   "effect_note": "\"desde as 07:30\"; end not stated",
+   "state": "limited",
+   "state_note": null,
+   "scope": {
+    "extent": "part",
+    "parts": "Vasco da Gama bridge only (100 km/h); 25 de Abril unchanged"
+   },
+   "area": "lisbon",
+   "note": "Lusoponte via CNN Portugal live 10:50:16Z (Lusa). lusoponte.pt still unreachable to us."
+  },
+  {
+   "id": "rsb-lisbon-count-1000",
+   "by": "rsb-lisboa",
+   "to": [],
+   "decision": "Occurrence count, Lisbon city: about 50 from 00:00 to 10:00, mostly floods",
+   "at": "2026-11-11T10:00Z",
+   "status": "happened",
+   "follows": [
+    "ipma-red-rain-0900"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T11:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": "2026-11-11T10:00Z",
+   "effect_note": "\"desde as 00:00 e até às 10:00\"",
+   "state": null,
+   "state_note": "a count",
+   "scope": null,
+   "area": "lisbon",
+   "note": "RSB source to Lusa, via CNN Portugal live 11:26:00Z."
+  },
+  {
+   "id": "gov-council-sao-bento",
+   "by": "government",
+   "to": [],
+   "decision": "Government meets at São Bento; reiterates that prevention is the key word and that the storm has not yet entered the mainland",
+   "at": "2026-11-11T11:07Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T11:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "a statement",
+   "scope": null,
+   "area": "mainland",
+   "note": "CNN Portugal live 11:07:00Z."
+  },
+  {
+   "id": "carris-service-1156",
+   "by": "carris",
+   "to": [
+    "websummit"
+   ],
+   "decision": "Carris (its own page): service continues, priority to essential journeys (health, emergency workers); Web Summit shuttle lines cancelled \"devido à suspensão do evento\"; Graça funicular closed since 10:40; trams 15E, 25E, 24E, 28E, 12E, 18E interrupted in sequence, 15E replaced by buses on the same route; bus 763 diverted at Carnide cemetery (5 stops dropped); Saldanha and Cais do Sodré sales points closed",
+   "at": "2026-11-11T10:40Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert",
+    "websummit-wednesday"
+   ],
+   "label": "fact",
+   "source": "https://www.carris.pt/viaje/alteracoes-de-servico/alerta-circulacao/",
+   "read": "2026-11-11T12:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "funicular \"desde as 10h40\"; others hours not stated; the page \"vamos atualizando aqui\"",
+   "state": "limited",
+   "state_note": "buses run with changes; trams interrupted; funicular closed; Web Summit shuttle cancelled",
+   "scope": {
+    "extent": "part",
+    "parts": "trams 12E, 15E, 18E, 24E, 25E, 28E interrupted (15E by bus); Graça funicular closed; Web Summit shuttle cancelled; bus 763 diverted; buses otherwise running"
+   },
+   "area": "lisbon",
+   "note": "Read at source 11:52Z; the page has no publish or update time; \"at\" is the only time it states (funicular, 10:40). Changes are also sent on Carris's WhatsApp channel (not read). 12:33Z re-read: adds bus 794 diverted (Estrada de Chelas closed) and 34B changes; trams still interrupted."
+  },
+  {
+   "id": "fertagus-normal-1040",
+   "by": "fertagus",
+   "to": [],
+   "decision": "Fertagus (its own notice, \"Alerta Vermelho | Condições Meteorológicas Adversas\", 11 Nov): conditions met to start normal service at 05:30; \"Circulação a decorrer com normalidade\" at 06:30, 08:00, 09:30 and 10:40; to be updated through the day",
+   "at": "2026-11-11T10:40Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert",
+    "cp-fertagus-bridge"
+   ],
+   "label": "fact",
+   "source": "https://www.fertagus.pt/Fertagus-pt/Viajar/Comunicados-e-Campanhas/Informa%C3%A7%C3%A3o-ao-P%C3%BAblico",
+   "read": "2026-11-11T11:56Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T05:30Z",
+   "effect_to_utc": null,
+   "effect_note": "normal since 05:30; last update 10:40",
+   "state": "running",
+   "state_note": "normal at 10:40",
+   "scope": {
+    "extent": "whole",
+    "parts": "Fertagus line (Setúbal–Roma-Areeiro, via the 25 de Abril bridge)"
+   },
+   "area": "lisbon",
+   "note": "Read at source 11:55Z. Note: CP (not Fertagus) announced suppressing four trains over the 25 de Abril bridge 12:00-15:00 (cp-fertagus-bridge, Lusa 23:10); Fertagus's own notice says nothing of suppressions up to 10:40."
+  },
+  {
+   "id": "ana-movements-1100",
+   "by": "airport",
+   "to": [],
+   "decision": "ANA's balance at 11:00: Lisbon 288 of 565 planned movements cancelled in advance, plus 22 cancelled during operation, 45 flown; Madeira 20 of 80 (+2; none flown by 11:00); Faro 14 of 62 (+2; 11 flown); Porto 12 of 214 (30 flown, no further cancellations)",
+   "at": "2026-11-11T11:00Z",
+   "status": "happened",
+   "follows": [
+    "lisbon-flights-208"
+   ],
+   "label": "fact",
+   "source": "https://en.newsroom.ana.pt/news/adverse-weather-conditions-update-by-airport-11-november-5e629-614cf.html",
+   "read": "2026-11-11T13:48Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "balance at 11:00",
+   "state": "limited",
+   "state_note": "cancellations; airports open",
+   "scope": {
+    "extent": "part",
+    "parts": "Lisbon 310 of 565 movements cancelled by 11:00; Madeira 22 of 80; Faro 16 of 62; Porto 12 of 214"
+   },
+   "area": "national",
+   "note": "ANA's own newsroom, published 2026-11-11T11:55:02Z (page: 12:55:02+01:00), situation at 11:00 (Lisbon = UTC): Lisbon 565 scheduled, 288 cancelled in advance, 22 more during the day, 45 operated; Porto 214/12/0/30; Faro 62/14/2/11; Madeira 80/20/2/0. Read at source 13:47Z (offered by incident.transport@, read 13:44; the conductor 13:38). Was evidence via CNN Portugal 11:49.",
+   "reuse": "no",
+   "reuse_basis": "ANA's terms (ana.pt, intellectual property) ask consent to reproduce its information: figures with the link, no quote",
+   "corroborated_by": [
+    "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2"
+   ]
+  },
+  {
+   "id": "tap-alert",
+   "by": "tap",
+   "to": [],
+   "decision": "TAP's site alert: \"Dias 10 e 11 de novembro - Condições meteorológicas adversas em todo o território português\" (criticality medium)",
+   "at": "2026-11-10T09:00Z",
+   "status": "happened",
+   "follows": [
+    "ipma-red-wind"
+   ],
+   "label": "fact",
+   "source": "https://www.flytap.com/pt-pt",
+   "read": "2026-11-11T13:16Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated; the source names 10 and 11 November",
+   "state": "limited",
+   "state_note": "an alert to passengers; no cancellation count on TAP's site",
+   "scope": {
+    "extent": "whole",
+    "parts": "all TAP passengers travelling in Portugal on 10 and 11 Nov"
+   },
+   "area": "national",
+   "note": "Read at source 13:15Z in the page's embedded data (alerts[0]: id portugal-meteo-conditions, publishDate 2026-11-10T09:00:00.000Z); the alert body text is not in the page. Offered by incident.transport@ (13:14Z), checked by us. TAP's rebooking offer (tap-adjusts) is press only."
+  },
+  {
+   "id": "ip-rail-restrictions",
+   "by": "ip",
+   "to": [
+    "cp",
+    "fertagus"
+   ],
+   "decision": "IP (its own alert, dated 10 Nov): rail traffic runs with restrictions, including speed limits in the highest-risk areas, and service may change as the weather develops; surveillance of the road and rail networks reinforced (paraphrased: IP's terms bar reproducing its content without written consent)",
+   "at": "2026-11-10",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "fact",
+   "source": "https://www.infraestruturasdeportugal.pt/pt-pt/alerta-condicoes-meteorologicas-adversas",
+   "read": "2026-11-11T13:19Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": "limited",
+   "state_note": "restrictions and speed limits on the rail network",
+   "scope": {
+    "extent": "part",
+    "parts": "speed limits in the highest-risk areas of the rail network (which not stated)"
+   },
+   "area": "mainland",
+   "reuse": "no",
+   "reuse_basis": "IP's terms (https://www.infraestruturasdeportugal.pt/pt-pt/termos-de-utilizacao-ip): content may not be reproduced or published without IP's prior written consent; we paraphrase and link only",
+   "note": "Read at source 13:18Z; the page shows the date 10/11/2026, no time. Offered by incident.transport@ (read 12:55Z), checked by us."
+  },
+  {
+   "id": "ipma-cut-1233",
+   "by": "ipma",
+   "to": [],
+   "decision": "IPMA cuts Lisbon's warnings: red rain until 15:00, then yellow 15:00 to 18:00; orange wind until 18:00 (gusts to 90 km/h)",
+   "at": "2026-11-11T12:33Z",
+   "status": "happened",
+   "follows": [
+    "ipma-red-rain-0900",
+    "ipma-wind-orange"
+   ],
+   "label": "fact",
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read": "2026-11-11T14:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T12:34Z",
+   "effect_to_utc": "2026-11-11T18:00Z",
+   "effect_note": "red rain to 15:00, yellow 15:00-18:00; orange wind to 18:00",
+   "state": null,
+   "state_note": "a warning",
+   "scope": null,
+   "area": "lisbon",
+   "note": "CAP messages sent 2026-11-11T12:33:13Z (Extreme rain 12:34-15:00; Moderate rain 15:00-18:00; Severe wind 12:34-18:00), from incident.meteorologist@'s cap.json (commit 39330503, read 13:24Z). IPMA's open data still showed red rain to 18:00 and wind to 21:00 at 13:33Z (stale). CNN Portugal 13:22 reports the same revision. 14:33Z: IPMA's open data now matches (red rain 12:34-15:00, yellow 15:00-18:00, orange wind 12:34-18:00).",
+   "also": [
+    "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2"
+   ]
+  },
+  {
+   "id": "bridges-60-80-wed",
+   "by": "lusoponte",
+   "to": [],
+   "decision": "Speed reduced on both bridges: 60 km/h on the 25 de Abril, 80 km/h on the Vasco da Gama",
+   "at": "2026-11-11T13:21Z",
+   "status": "happened",
+   "follows": [
+    "vasco-da-gama-100"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T13:36Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "from the communiqué; end not stated",
+   "state": "limited",
+   "state_note": null,
+   "scope": {
+    "extent": "whole",
+    "parts": "both bridges: 25 de Abril 60 km/h, Vasco da Gama 80 km/h"
+   },
+   "area": "lisbon",
+   "note": "Lusoponte communiqué via CNN Portugal live 13:21:35Z. Supersedes vasco-da-gama-100 (07:30). lusoponte.pt still unreachable."
+  },
+  {
+   "id": "lisbon-count-1200",
+   "by": "camara-lisboa",
+   "to": [],
+   "decision": "Occurrence count, Lisbon: 144 from 00:00 to 12:00 (128 floods); 59 active, 85 closed",
+   "at": "2026-11-11T12:00Z",
+   "status": "happened",
+   "follows": [
+    "rsb-lisbon-count-1000"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T13:36Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": "2026-11-11T12:00Z",
+   "effect_note": "\"desde as 00:00 ... até às 12:00\"",
+   "state": null,
+   "state_note": "a count",
+   "scope": null,
+   "area": "lisbon",
+   "note": "CNN Portugal live 13:26:21Z (source body as reported there). Earlier: ~50 to 10:00 (RSB)."
+  },
+  {
+   "id": "anepc-count-1200",
+   "by": "anepc",
+   "to": [],
+   "decision": "Occurrence count, mainland: 530 from 00:00 to 12:00 (falling trees and other usual situations); special readiness kept at the highest level; intense rain expected from 13:00, most between 15:00 and 18:00; the national commander: the phenomenon is shifting south, less impact in Lisbon, more in the Alentejo and Algarve",
+   "at": "2026-11-11T12:00Z",
+   "status": "happened",
+   "follows": [
+    "anepc-mainland-count-0600"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T13:36Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": "2026-11-11T12:00Z",
+   "effect_note": "count window",
+   "state": null,
+   "state_note": "a count and a briefing",
+   "scope": null,
+   "area": "mainland",
+   "note": "ANEPC briefing (commander Mário Silvestre) via CNN Portugal live 12:40, 12:44, 12:59; 538 to midday in a 13:07 video headline."
+  },
+  {
+   "id": "cp-sintra-alcantara",
+   "by": "cp",
+   "to": [],
+   "decision": "Lisbon urban trains: the Alcântara Terra – Castanheira do Ribatejo service suppressed between Campolide and Alcântara Terra",
+   "at": "2026-11-11T14:12Z",
+   "status": "happened",
+   "follows": [
+    "ipma-cut-1233"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T14:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": "suspended",
+   "state_note": "one section",
+   "scope": {
+    "extent": "part",
+    "parts": "Campolide – Alcântara Terra section of the Alcântara Terra – Castanheira do Ribatejo service"
+   },
+   "area": "lisbon",
+   "note": "CNN Portugal live 14:12:42Z (headline-only entry, as CP's notice). cp.pt is a JavaScript app."
+  },
+  {
+   "id": "srpc-madeira-count-1310",
+   "by": "madeira-prociv",
+   "to": [],
+   "decision": "Occurrence count, Madeira: 285 to 13:10 (since 22:00 Tuesday); 718 responders, 287 vehicles",
+   "at": "2026-11-11T13:10Z",
+   "status": "happened",
+   "follows": [
+    "srpc-madeira-count-0859"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T14:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-10T22:00Z",
+   "effect_to_utc": "2026-11-11T13:10Z",
+   "effect_note": "count window as stated",
+   "state": null,
+   "state_note": "a count",
+   "scope": null,
+   "area": "madeira",
+   "note": "CNN Portugal live 14:04:00Z citing \"a plataforma do SRPC\" (the press platform, not public)."
+  },
+  {
+   "id": "mai-alert-ends-midnight",
+   "by": "mai",
+   "to": [],
+   "decision": "The Interior Minister: the alert situation ends at midnight as planned; the government expects the country to return to normal on Thursday, with repair work; the government's crisis centre (CorGov, coordinated by the Prime Minister) meets after the Council of Ministers",
+   "at": "2026-11-11T14:44Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T15:36Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": "2026-11-11T23:59Z",
+   "effect_note": "the alert ends at midnight (despacho: 23:59)",
+   "state": null,
+   "state_note": "a statement",
+   "scope": null,
+   "area": "mainland",
+   "note": "CNN Portugal live 14:44:00Z (to journalists after the Council of Ministers at São Bento, from 09:30). Consistent with the despacho's period (to 23:59 on 11 Nov). An expectation, not a decision about Thursday's services."
+  },
+  {
+   "id": "ip-roads-1400",
+   "by": "ip",
+   "to": [],
+   "decision": "Eight roads restricted at 14:00 (Lisbon, Setúbal, Portalegre, Guarda), incl. the Eixo Norte-Sul (IP7) at the Av. de Ceuta access, EN6 in Oeiras and EN1 in the Lisbon district",
+   "at": "2026-11-11T14:00Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T15:36Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": "limited",
+   "state_note": null,
+   "scope": {
+    "extent": "part",
+    "parts": "eight roads; in Lisbon district IP7 at Av. de Ceuta (km 10.4), EN6 Oeiras (km 2.94-3.0), EN1"
+   },
+   "area": "mainland",
+   "note": "IP's situation point at 14:00 via CNN Portugal live 15:19 (Lusa). IP's own site not read for this (its terms: paraphrase only)."
   }
  ],
  "lessons": [
@@ -2170,6 +2673,12 @@
    "claim": "Porto Santo: power failures; municipal civil protection centre activated, coastal accesses closed, harbour operations suspended (the mayor)",
    "status": "not found at source: cm-portosanto.pt home (read 03:51Z) and apram.pt (03:51Z) carry no notice; in the 02:00 count Porto Santo has one occurrence. Not added.; 07:35Z: power cuts reported by CNN Portugal live 01:02 (porto-santo-power, evidence); the municipal measures still not found",
    "read": "2026-11-11T03:56Z"
+  },
+  {
+   "from": "incident.wikipedia@ via incident.conductor@ (10:02Z)",
+   "claim": "Madeira civil protection's assistant commander: the worst has passed; the system went south of the island and weaker than forecast",
+   "status": "not found in dated press or at SRPC (search 10:03Z; procivmadeira.pt has no such item). Not added.",
+   "read": "2026-11-11T10:04Z"
   }
  ],
  "state_values": [

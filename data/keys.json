@@ -1164,9 +1164,10 @@
         "fingerprint": "sha256:a1310b3a70f44df5",
         "signing_fingerprint": "sha256:4bd02b7006a59cdd"
       },
-      "status": "active",
+      "status": "superseded: replaced on 11 November 2026 at 11:53 UTC by policy-angelo-2, the account-B session, at Angelo's word that the account-A session is retired (11 November); this key signs nothing from then on",
       "renamed_to": "policy@PrompTugal.angelo",
-      "renamed": "7 November 2026, under Angelo's names of 6 November (people/angelo/kit/README.md, 90299d08): the same key and id, the agent's new name; it signs as policy@PrompTugal.angelo from then on."
+      "renamed": "7 November 2026, under Angelo's names of 6 November (people/angelo/kit/README.md, 90299d08): the same key and id, the agent's new name; it signs as policy@PrompTugal.angelo from then on.",
+      "superseded_by": "policy-angelo-2"
     },
     {
       "id": "checker-vicky",
@@ -1565,6 +1566,41 @@
         "label": "conductor.b@PrompTugal.angelo",
         "fingerprint": "sha256:e662d76812739fbd",
         "signing_fingerprint": "sha256:813a640bff3c423d"
+      }
+    },
+    {
+      "id": "policy-angelo-2",
+      "agent": "policy@PrompTugal.angelo",
+      "label": "policy@PrompTugal.angelo (Claude Code session, account B)",
+      "role": "Angelo's policy auditor (policy@PrompTugal.angelo): maps which rules apply to each of Angelo's agents and how each is enforced, audits their commits against their ABPs and Angelo's protocol, and proposes barriers. Independent of the conductor: takes work only from Angelo and reports only to him (people/angelo/policy/). Read-only except that folder and this entry. A session key: it ends with its session. From 11 November 2026 the only policy@ session (the account-A session retired); its notes are in people/angelo/policy/sessions/session_01Xp7gj36MTEH5cdctV5E5UE/.",
+      "how": "Made by the agent in its own session on 11 November 2026 (pki-agent.mjs keygen --session, the copy with sha256 fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab, matching the pin in admin/tools/seal.mjs), at Angelo's word in that session, and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai. The private halves stay in the session (~/.sg-send, outside this repository).",
+      "added": "2026-11-11",
+      "status": "active",
+      "replaces": "policy-angelo",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAkzBw0ZUiTlXvNiWo21OD\nuzqQtz6JNiMpkyJRrirPGlSPyhE0VJrUqmv8JLjXa39fQryhnywAVKUGyB36HITd\nxz0tkHgPVyrAvVBhaMraRXTVsOVVZLzb02EUrmXchsLwVFuyFtgjh3Px8Gg98zB7\nltT4gBg/jxMXnvAuDk3YibhAKszIcRdMAdyOAE8+pBAu3XqV544nhdZpMWWuBhpS\nDnoQ4Z++1ZN8FVDUs7hxB94kBw4zKp4Y/9OYjxYuvQSdbyBQ2O3MYr9QEPDF/LSA\nG0/taZ/Ct/0s7o4fTBk1TWmaE8nO44e8igavKm7tIg/8S/8o6tGuU3ZJNUW7Y3hb\nbUlk3a1kbiEob3Vsuq+6gGGTwKvYjHgZTatkuR02ooEO8emzciJ0eTxlv9AGa/xF\nbxOIvDIhbYX42myU0J+mTt3jCh16nB2huOPi9I7HYkdt60Y99T1/2ZnOmd41hSI8\nYnvl4qGY4aFB40naExO7gvUhTNMmof1atldCOhmxX1jPd1rFVoB5MBGC9ym4oFQI\n14SoOdCTSTKIuiIKHMgY4nh771bWn7kPzdi/WheSjw3KW5F83JFkcVDMy21rV9S6\nbne3EGXI80TcBuN0PkEMWBt4wzCjjDFAphRq2gJtFUzYlhCGujYF9m+NG58Dvw8Y\nV04Bt0RctOEPZKxISs95mHkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEWoX5cMO5A6QO5A5BFmDXRQuqUEYN\nn6b81bAC9T8jQ67VjFB/xKAMdZMIP9/oQcGfZBEPgHafmbKMid34WxKxIA==\n-----END PUBLIC KEY-----\n",
+        "label": "policy@PrompTugal.angelo",
+        "fingerprint": "sha256:e3ba83496058888c",
+        "signing_fingerprint": "sha256:e80b06bd4218b306"
+      }
+    },
+    {
+      "id": "appdev-indi",
+      "agent": "appdev@web-summit.indi",
+      "label": "appdev@web-summit.indi (Claude Code session, cloud)",
+      "role": "Indi's app developer for the PrompTugal iOS apps, the Team app first (appdev@web-summit.indi). Builds on night/ branches of PrompTugal/PrompTugal__App__iOS, merges to dev and writes a brief for the reviewers. Takes work only from Indi and Dinis. Writes here only this entry and people/indi/appdev/. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 11 November 2026 (pki-agent.mjs keygen --session, the copy with sha256 fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab, matching the pin in admin/tools/seal.mjs), at Indi's word in that session, and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai. The private halves stay in the session (~/.sg-send, outside this repository).",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxXMKNTszSMD9F8t0qFLy\nnylkssdNcjEs5ULbkhtoin/4ZOM7kMPDwizs7T5kxKvVBqR1pUa7osohQL65Mund\nMUiea4KD/OKSmts5MFZOasRRlLBZgyf/uQMYJFw2PS6lB9JS/6Upi9ZmqU643VAM\nyddW4Q86DUEUuxJLmkR+0e9xT6f8GPVmkBtHmY4VKGCEWGTJitfK5f8RFf54IyTe\nrJYret8998L3Znzm57z0UfOJiUAGnaPzOg+QL3FHGSEMruB4zwi0LsoycK5WetcI\nioOhkn0rd9wiQA2UqLgA0UljJibNiKiOn2wKtbIPvFR+3ElM3bXsnxfoLO+1cxii\ngML0rGGX9phCGBQaMC94kH3aYAlYLKyNNRI6RqFNdMLwBqSTDGS1x9ugc2x6yRse\nKZr4w0I3/5gQu3/b1mVkOE0jH1GWciQiCdInWjS2cDTnMm3LFkdWbJpsX/2taeH7\nkQ0KKoFiwVQl8yydPS+Rdn7SX2/FpaZ1htBfoEs5NhEJoaTL7WsFhxT5A9NxNR8r\n0ASubJdF+wv0Gy/Y2aOZevUBAE4/whT1eaDOVs8J2rP7m/D5lv0wFJVUgu5iA/UK\nOqDUxCVCc5qvQbVDuP0xWZJ9Jm5K3dLO4qLz6XOQe5B7ou0Hv+TFOshdjlmIMrcX\nO7g3+khmE7pNpbbjvL2B7Q0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE2GKYKBySfb58fnOmR+GsmiIhoAIn\nrZci0f/AB+yng3+Dh7NATHEEWC7xyS5wXUSO2d7yirMxyw9+XAE6mAUbVw==\n-----END PUBLIC KEY-----\n",
+        "label": "appdev@web-summit.indi",
+        "fingerprint": "sha256:5b412ffd4d41ca0c",
+        "signing_fingerprint": "sha256:24a06cd53375a188"
       }
     }
   ]

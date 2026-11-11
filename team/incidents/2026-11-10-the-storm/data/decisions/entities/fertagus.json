@@ -1,0 +1,18 @@
+{
+ "entity": "fertagus",
+ "about": "Fertagus (trains across the 25 de Abril bridge).",
+ "updated": "2026-11-11T11:56Z",
+ "decisions": [
+  {
+   "edge": "fertagus-normal-1040",
+   "decision": "Normal service from 05:30; normal at 06:30, 08:00, 09:30, 10:40",
+   "decided_by": "Fertagus",
+   "published_utc": "2026-11-11T10:40Z",
+   "address": "https://www.fertagus.pt/Fertagus-pt/Viajar/Comunicados-e-Campanhas/Informa%C3%A7%C3%A3o-ao-P%C3%BAblico",
+   "read": "2026-11-11T11:56Z",
+   "label": "fact",
+   "state": "running"
+  }
+ ],
+ "open": []
+}

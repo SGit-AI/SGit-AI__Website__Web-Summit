@@ -1,7 +1,7 @@
 {
  "entity": "cp",
  "about": "Every decision in graph.json about cp: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T09:30Z",
+ "updated": "2026-11-11T14:35Z",
  "decisions": [
   {
    "edge": "cp-ops",
@@ -25,7 +25,7 @@
   },
   {
    "edge": "cp-fertagus-bridge",
-   "decision": "CP suppresses four trains crossing the 25 de Abril bridge in the most critical window (12:00 to 15:00 forecast: heavy rain, strong wind)",
+   "decision": "CP suppresses four trains crossing the 25 de Abril bridge in what it calls the most critical window; CP says «as previsões meteorológicas para o período entre as 12:00 e as 15:00» point to heavy rain and strong wind (CP does not name the forecaster)",
    "decided_by": "CP (Comboios de Portugal) and Infraestruturas de Portugal",
    "status": "happened",
    "announced_utc": null,
@@ -59,6 +59,31 @@
    "scope": {
     "extent": "unknown",
     "parts": "\"constrangimentos\": which lines not stated"
+   }
+  },
+  {
+   "edge": "ip-rail-restrictions",
+   "decision": "IP: rail runs with restrictions, incl. speed limits in high-risk areas; service may change (paraphrased)",
+   "decided_by": "Infraestruturas de Portugal",
+   "published_utc": "2026-11-10",
+   "address": "https://www.infraestruturasdeportugal.pt/pt-pt/alerta-condicoes-meteorologicas-adversas",
+   "read": "2026-11-11T13:19Z",
+   "label": "fact",
+   "state": "limited",
+   "reuse": "no"
+  },
+  {
+   "edge": "cp-sintra-alcantara",
+   "decision": "Alcântara Terra – Castanheira do Ribatejo suppressed between Campolide and Alcântara Terra",
+   "decided_by": "CP",
+   "published_utc": "2026-11-11T14:12Z",
+   "address": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T14:35Z",
+   "label": "evidence",
+   "state": "suspended",
+   "scope": {
+    "extent": "part",
+    "parts": "Campolide – Alcântara Terra"
    }
   }
  ],
@@ -129,11 +154,59 @@
    "bytes": 3306,
    "result": "answered; no notice found",
    "excerpt": []
+  },
+  {
+   "at": "2026-11-11T10:32Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T11:33Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T12:32Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T13:33Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T14:33Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T15:33Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
   }
  ],
  "tries_summary": {
   "https://www.cp.pt/": {
-   "tries": 8,
+   "tries": 14,
    "published_found": false
   }
  }

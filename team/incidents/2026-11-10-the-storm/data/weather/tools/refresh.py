@@ -17,6 +17,7 @@ U = {
     'warnings': 'https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json',
     'areas': 'https://api.ipma.pt/open-data/distrits-islands.json',
     'communiques': 'https://www.ipma.pt/resources.www/rss/comunicados.xml',
+    'communiques_page': 'https://www.ipma.pt/opencms/pt/otempo/comunicados/index.jsp',
     'obs': 'https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json',
     'stations': 'https://api.ipma.pt/open-data/observation/meteorology/stations/stations.json',
     'daily': 'https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json',
@@ -52,6 +53,8 @@ OUR_EN = {  # our translations, used only where IPMA's CAP gives no English for 
     'Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.': 'Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.',
     'Precipitação forte e persistente.': 'Heavy and persistent rain.',
     'Precipitação por vezes forte e persistente.': 'Rain, at times heavy, and persistent.',
+    'Rajadas até 90 km/h, podendo atingir 110 km/h nos locais mais expostos.': 'Gusts up to 90 km/h, possibly reaching 110 km/h in the most exposed places.',
+    'Precipitação por vezes forte.': 'Rain, at times heavy.',
     'Precipitação persistente, por vezes forte.': 'Persistent rain, at times heavy.',
     'Precipitação por vezes forte e acompanhada de trovoada.': 'Rain, at times heavy, with thunderstorms.',
     'Chuva, por vezes forte e persistente.': 'Rain, at times heavy, and persistent.',
@@ -215,6 +218,13 @@ def seed_history():
 
 
 # ---------------------------------------------------------------- communiqués
+def _same(t):
+    """The substance of a communiqué for comparison: the RSS and the page format the same text differently."""
+    t = re.split(r'(?i)comunicado n[ºo°]\s?\d+', t or '', maxsplit=1)[-1]  # the RSS copy starts with a header and the title
+    t = t.split('Para mais detalhes')[0]  # the links and edit stamp after it differ between the two copies
+    return re.sub(r'\W+', '', t).lower()
+
+
 def communiques():
     prev = load('communiques.json', {})
     raw = get('communiques')
@@ -235,12 +245,36 @@ def communiques():
         if title not in seen:
             changes.insert(0, 'NEW IPMA COMMUNIQUÉ: ' + title)
             seen[title] = rec
-        elif seen[title]['text_pt'] != text:
+        elif _same(seen[title]['text_pt']) != _same(text):
             changes.append('IPMA communiqué text changed: ' + title)
             rec['first_read_utc'] = seen[title].get('first_read_utc', seen[title]['read_utc'])
             seen[title] = rec
         else:
             seen[title]['last_seen_utc'] = NOW
+    page = get('communiques_page')
+    if page:
+        if isinstance(page, bytes):
+            page = page.decode('utf-8', 'replace')
+        t = html.unescape(re.sub(r'\s+', ' ', re.sub('<[^>]+>', ' ', re.sub(r'(?s)<script.*?</script>|<style.*?</style>', '', page))))
+        for m in re.finditer(r'Comunicado válido entre (\S+ \S+) e (\S+ \S+) Assunto: (.*?Comunicado nº\s?\d+) (.*?) Data de edição: (\S+ \S+)', t):
+            title = m.group(3).strip()
+            if 'CHARLES' not in title:
+                continue
+            body = m.group(4).strip()
+            rec = {'title': title, 'issued_utc': m.group(5).replace(' ', 'T') + 'Z', 'edited_utc': m.group(5).replace(' ', 'T') + 'Z',
+                   'valid_from_utc': m.group(1).replace(' ', 'T') + 'Z', 'valid_to_utc': m.group(2).replace(' ', 'T') + 'Z',
+                   'link': U['communiques_page'], 'text_pt': body, 'source': U['communiques_page'], 'read_utc': NOW,
+                   'note': "Read from IPMA's communiqués page; not in the RSS feed when read. Time labels read as UTC (Lisbon is UTC in November)."}
+            if title not in seen:
+                changes.insert(0, 'NEW IPMA COMMUNIQUÉ: ' + title)
+                rec['first_read_utc'] = NOW
+                seen[title] = rec
+            elif _same(seen[title]['text_pt']) != _same(body):
+                changes.append('IPMA communiqué text changed: ' + title)
+                rec['first_read_utc'] = seen[title].get('first_read_utc', seen[title]['read_utc'])
+                seen[title] = rec
+            else:
+                seen[title]['last_seen_utc'] = NOW
     items = sorted(seen.values(), key=lambda c: c['issued_utc'], reverse=True)
     earlier = prev.get('not_in_feed') or [{
         'title': 'Depressão CHARLES - Comunicado nº1', 'issued_utc': '2026-11-09T13:17Z', 'valid_to_utc': '2026-11-11T23:59Z',
@@ -479,7 +513,7 @@ def cap():
                     CAP_INDEX.setdefault(k, []).append(datetime.fromisoformat(al['sent']).astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
             areas = [z.get('areaDesc') for z in i.get('area', [])]
             if 'Lisboa' not in areas:
-                if m and (CAP_LEVEL.get(m.group(1)) == 'red' or any(a_.startswith('Madeira') for a_ in areas)):
+                if m and (CAP_LEVEL.get(m.group(1)) in ('red', 'orange') or any(a_.startswith('Madeira') for a_ in areas)):
                     oid = al.get('identifier') + '|' + ','.join(areas)
                     OTHER_SEEN.setdefault(oid, {'identifier': al.get('identifier'), 'areas': areas, 'sent_utc': al.get('sent'), 'msg_type': al.get('msgType'),
                                                 'event_pt': i.get('event'), 'onset_utc': i.get('onset'), 'expires_utc': i.get('expires'),
@@ -513,6 +547,11 @@ def cap():
         elif 'left_feed_utc' not in m_:
             m_['left_feed_utc'] = NOW; m_['status'] = f'left the feed at {NOW} (time read)'
     others = sorted(OTHER_SEEN.values(), key=lambda m: (m['sent_utc'] or '', m['identifier']))
+    known = {m_['identifier'] for m_ in msgs} | {m_['identifier'] for m_ in others}
+    for m_ in msgs + others:  # IPMA's <references> sometimes carry a stray '-' before 'PO-' (seen from 11 Nov 15:55:03); kept verbatim, normalised beside it
+        for r in m_.get('replaces', []):
+            r['identifier_norm'] = re.sub(r'\.-(?=PO-)', '.', r['identifier'])
+            r['matches_known_message'] = r['identifier_norm'] in known
     for m_ in msgs:
         if m_.get('description_pt'):
             m_['text_en'], m_['text_en_by'] = en_for(m_['description_pt'])
@@ -527,7 +566,8 @@ def cap():
             'terms': {'source': 'https://www.meteoalarm.org', 'feed': U['cap'], 'disclaimer': disclaimer,
                       'record': f'a dated record, not a live feed (read {NOW})', 'publisher_of_the_warnings': 'IPMA (Instituto Português do Mar e da Atmosfera), via MeteoAlarm'},
             'source': U['cap'], 'read_utc': NOW, 'reads_utc': reads, 'lisbon_messages': msgs,
-            'other_messages_about': 'Beyond Lisbon: every CAP message for a Madeira area, and every red message for any district, kept once seen (from 11 Nov 01:50 UTC; earlier ones that had left the feed were never seen).',
+            'references_note': "Each 'replaces' entry keeps IPMA's <references> identifier verbatim. From the batch sent 11 Nov 15:55:03 IPMA's references carry a stray '-' (e.g. '…PT.261111123313.-PO-01-1939' for the message '…PT.261111123313.PO-01-1939'), in the CAP itself as MeteoAlarm serves it (checked 16:15:54 UTC), not from our parser. 'identifier_norm' removes it; 'matches_known_message' says whether the normalised identifier is a message we hold. Match on identifier_norm, or on sent_utc.",
+            'other_messages_about': 'Beyond Lisbon: every CAP message for a Madeira area, and every red message for any district, kept once seen (from 11 Nov 01:50 UTC; earlier ones that had left the feed were never seen); orange messages for any district kept as well from 11 Nov 12:36 UTC (earlier orange ones were not kept).',
             'other_messages': others}
 
 

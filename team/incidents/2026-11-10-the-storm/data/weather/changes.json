@@ -1,10 +1,10 @@
 {
  "thursday": {
   "about": "Thursday 12 November (Web Summit's day 3): every IPMA warning for Lisbon that touches Thursday, and what IPMA's model and the airport TAF say for Thursday morning (00:00-12:00 UTC = Lisbon time). Facts, each with its source; no analysis here.",
-  "read_utc": "2026-11-11T09:22:47Z",
+  "read_utc": "2026-11-11T16:16:07Z",
   "lisbon_warnings_touching_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T16:16:07Z",
    "items": [
     {
      "type": "Agitação Marítima",
@@ -13,7 +13,7 @@
      "end_utc": "2026-11-12T03:00:00Z",
      "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
      "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-     "read_utc": "2026-11-11T09:22:47Z",
+     "read_utc": "2026-11-11T16:16:07Z",
      "sent_utc": "2026-11-10T07:18:40Z",
      "text_en": "SW waves 4 to 5 metres.",
      "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
@@ -23,7 +23,7 @@
   },
   "ipma_model_thursday_morning": {
    "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T16:16:07Z",
    "model_updated_local": "2026-11-11T07:56:49",
    "wind_mean_kmh_range": [
     15.1,
@@ -34,8 +34,8 @@
    ],
    "rain_prob_pct_max": 92.0,
    "sea_total_m_range": [
-    3.2,
-    3.6
+    3.0,
+    3.5
    ],
    "rows": [
     {
@@ -45,7 +45,7 @@
      "rain_prob_pct": 47.0,
      "rain_intensity_class": 1,
      "temp_c": 16.9,
-     "sea_total_m": 3.2,
+     "sea_total_m": 3.0,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
      "weather_type_en": "Light showers/rain",
@@ -59,7 +59,7 @@
      "rain_prob_pct": null,
      "rain_intensity_class": 1,
      "temp_c": 16.7,
-     "sea_total_m": 3.2,
+     "sea_total_m": 3.1,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
      "weather_type_en": "Light showers/rain",
@@ -73,7 +73,7 @@
      "rain_prob_pct": null,
      "rain_intensity_class": 1,
      "temp_c": 16.5,
-     "sea_total_m": 3.3,
+     "sea_total_m": 3.1,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
      "weather_type_en": "Light showers/rain",
@@ -87,7 +87,7 @@
      "rain_prob_pct": 92.0,
      "rain_intensity_class": 1,
      "temp_c": 16.1,
-     "sea_total_m": 3.3,
+     "sea_total_m": 3.2,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
      "weather_type_en": "Light showers/rain",
@@ -101,7 +101,7 @@
      "rain_prob_pct": null,
      "rain_intensity_class": 1,
      "temp_c": 16.4,
-     "sea_total_m": 3.4,
+     "sea_total_m": 3.2,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
      "weather_type_en": "Light showers/rain",
@@ -115,7 +115,7 @@
      "rain_prob_pct": null,
      "rain_intensity_class": 1,
      "temp_c": 15.4,
-     "sea_total_m": 3.4,
+     "sea_total_m": 3.3,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
      "weather_type_en": "Light showers/rain",
@@ -129,7 +129,7 @@
      "rain_prob_pct": 90.0,
      "rain_intensity_class": 1,
      "temp_c": 16.2,
-     "sea_total_m": 3.5,
+     "sea_total_m": 3.3,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
      "weather_type_en": "Light showers/rain",
@@ -143,7 +143,7 @@
      "rain_prob_pct": null,
      "rain_intensity_class": 1,
      "temp_c": 16.4,
-     "sea_total_m": 3.5,
+     "sea_total_m": 3.4,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
      "weather_type_en": "Light showers/rain",
@@ -157,7 +157,7 @@
      "rain_prob_pct": null,
      "rain_intensity_class": 1,
      "temp_c": 16.7,
-     "sea_total_m": 3.6,
+     "sea_total_m": 3.4,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
      "weather_type_en": "Light showers/rain",
@@ -171,7 +171,7 @@
      "rain_prob_pct": 63.0,
      "rain_intensity_class": 1,
      "temp_c": 18.0,
-     "sea_total_m": 3.6,
+     "sea_total_m": 3.5,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
      "weather_type_en": "Light showers/rain",
@@ -185,7 +185,7 @@
      "rain_prob_pct": null,
      "rain_intensity_class": 2,
      "temp_c": 19.1,
-     "sea_total_m": 3.6,
+     "sea_total_m": 3.5,
      "weather_type_id": 6,
      "weather_type_pt": "Aguaceiros/chuva",
      "weather_type_en": "Showers/rain",
@@ -199,7 +199,7 @@
      "rain_prob_pct": null,
      "rain_intensity_class": 2,
      "temp_c": 19.6,
-     "sea_total_m": 3.6,
+     "sea_total_m": 3.5,
      "weather_type_id": 6,
      "weather_type_pt": "Aguaceiros/chuva",
      "weather_type_en": "Showers/rain",
@@ -213,7 +213,7 @@
      "rain_prob_pct": 88.0,
      "rain_intensity_class": 2,
      "temp_c": 20.6,
-     "sea_total_m": 3.6,
+     "sea_total_m": 3.5,
      "weather_type_id": 6,
      "weather_type_pt": "Aguaceiros/chuva",
      "weather_type_en": "Showers/rain",
@@ -224,8 +224,8 @@
   },
   "ipma_daily_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-   "read_utc": "2026-11-11T09:22:47Z",
-   "updated_local": "2026-11-11T08:31:03",
+   "read_utc": "2026-11-11T16:16:07Z",
+   "updated_local": "2026-11-11T15:31:02",
    "precipitaProb": "100.0",
    "tMin": "15.4",
    "tMax": "20.6",
@@ -248,23 +248,37 @@
   },
   "taf_groups_into_thursday": {
    "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-   "read_utc": "2026-11-11T09:22:47Z",
-   "taf_issue_utc": "2026-11-11T05:00Z",
-   "taf_valid_to_utc": "2026-11-12T12:00Z",
+   "read_utc": "2026-11-11T16:16:07Z",
+   "taf_issue_utc": "2026-11-11T14:36Z",
+   "taf_valid_to_utc": "2026-11-12T18:00Z",
    "groups": [
+    {
+     "change": "TEMPO",
+     "prob": null,
+     "from_utc": "2026-11-12T00:00Z",
+     "to_utc": "2026-11-12T18:00Z",
+     "becoming_by_utc": null,
+     "wind_dir": null,
+     "wind_kt": null,
+     "gust_kt": null,
+     "wind_kmh": null,
+     "gust_kmh": null,
+     "visibility": 2.49,
+     "weather": "SHRA"
+    },
     {
      "change": "BECMG",
      "prob": null,
-     "from_utc": "2026-11-11T18:00Z",
-     "to_utc": "2026-11-12T12:00Z",
-     "becoming_by_utc": "2026-11-11T20:00Z",
-     "wind_dir": 260,
-     "wind_kt": 12,
+     "from_utc": "2026-11-12T00:00Z",
+     "to_utc": "2026-11-12T18:00Z",
+     "becoming_by_utc": "2026-11-12T02:00Z",
+     "wind_dir": 230,
+     "wind_kt": 13,
      "gust_kt": null,
-     "wind_kmh": 22,
+     "wind_kmh": 24,
      "gust_kmh": null,
      "visibility": "6+",
-     "weather": null
+     "weather": "NSW"
     }
    ]
   }
@@ -594,7 +608,239 @@
     "LPMA METAR 09:00: 35 km/h"
    ],
    "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T10:22:42Z",
+   "changes": [
+    "THURSDAY: warnings yellow Agitação Marítima 11T21:00-12T03:00; model Thu 00-12 mean wind 15.1-24.1 km/h",
+    "1 Lisbon warning(s) expired",
+    "stations to 09:00: top mean wind 18.7 km/h at Barreiro, Lavradio",
+    "new LPPT TAF 11T10:08: TAF AMD LPPT 111008Z 1110/1212 16015KT 4...",
+    "LPPT METAR 10:00: 20 km/h",
+    "met.no forecast updated 2026-11-11T09:19:45Z",
+    "LPMA METAR 10:00: 35 km/h"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T11:26:40Z",
+   "changes": [
+    "THURSDAY: warnings yellow Agitação Marítima 11T21:00-12T03:00; model Thu 00-12 mean wind 15.1-24.1 km/h",
+    "stations to 10:00: top mean wind 18.4 km/h at Barreiro, Lavradio",
+    "new LPPT TAF 11T11:00: TAF LPPT 111100Z 1112/1218 14015KT 4000 ...",
+    "LPPT METAR 11:00: 17 km/h",
+    "met.no forecast updated 2026-11-11T11:19:59Z",
+    "new LPMA TAF 11T11:00: TAF LPMA 111100Z 1112/1212 34015KT 9999 ...",
+    "LPMA METAR 11:00: 30 km/h gust 50"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T12:23:12Z",
+   "changes": [
+    "THURSDAY: warnings yellow Agitação Marítima 11T21:00-12T03:00; model Thu 00-12 mean wind 15.1-24.1 km/h",
+    "stations to 11:00: top mean wind 23.8 km/h at Oeiras / Vila Fria (CMO)",
+    "LPPT METAR 12:00: 28 km/h",
+    "met.no forecast updated 2026-11-11T11:20:00Z",
+    "LPMA METAR 12:00: 33 km/h"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T12:28:46Z",
+   "changes": [
+    "NEW IPMA COMMUNIQUÉ: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-11T12:28:46Z",
+     "error": "<urlopen error [Errno 104] Connection reset by peer>"
+    }
+   ]
+  },
+  {
+   "read_utc": "2026-11-11T12:34:43Z",
+   "changes": [
+    "LPPT METAR 12:30: 28 km/h",
+    "LPMA METAR 12:30: 28 km/h gust 46"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-11T12:34:43Z",
+     "error": "<urlopen error [Errno 104] Connection reset by peer>"
+    }
+   ]
+  },
+  {
+   "read_utc": "2026-11-11T12:35:31Z",
+   "changes": [
+    "no change"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T12:46:37Z",
+   "changes": [
+    "THURSDAY: warnings yellow Agitação Marítima 11T21:00-12T03:00; model Thu 00-12 mean wind 15.1-24.1 km/h",
+    "IPMA communiqué text changed: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3",
+    "IPMA communiqué text changed: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3",
+    "stations to 12:00: top mean wind 29.5 km/h at Oeiras / Vila Fria (CMO)",
+    "Lisbon: largest 6 h rain 57.7 mm at Lisboa, Relógio (hours 11T07-11T12)"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T12:47:23Z",
+   "changes": [
+    "IPMA CAP (MeteoAlarm) sent 12:33:13: Aviso Laranja Vento 11T12:34-11T18:00",
+    "IPMA CAP (MeteoAlarm) sent 12:33:13: Aviso Amarelo Precipitação 11T15:00-11T18:00",
+    "IPMA CAP (MeteoAlarm) sent 12:33:13: Aviso Vermelho Precipitação 11T12:34-11T15:00",
+    "IPMA communiqué text changed: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3",
+    "IPMA communiqué text changed: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T12:48:04Z",
+   "changes": [
+    "IPMA communiqué text changed: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3",
+    "IPMA communiqué text changed: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T12:48:21Z",
+   "changes": [
+    "IPMA communiqué text changed: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3",
+    "IPMA communiqué text changed: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T12:48:36Z",
+   "changes": [
+    "IPMA communiqué text changed: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3",
+    "IPMA communiqué text changed: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T12:49:05Z",
+   "changes": [
+    "IPMA communiqué text changed: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3",
+    "IPMA communiqué text changed: Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-11T12:49:05Z",
+     "error": "<urlopen error [Errno 104] Connection reset by peer>"
+    }
+   ]
+  },
+  {
+   "read_utc": "2026-11-11T12:49:45Z",
+   "changes": [
+    "no change"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T12:49:59Z",
+   "changes": [
+    "no change"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T13:24:33Z",
+   "changes": [
+    "LPPT METAR 13:00: 20 km/h",
+    "met.no forecast updated 2026-11-11T11:21:11Z",
+    "LPMA METAR 13:00: 33 km/h gust 54"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T14:23:25Z",
+   "changes": [
+    "THURSDAY: warnings yellow Agitação Marítima 11T21:00-12T03:00; model Thu 00-12 mean wind 15.1-24.1 km/h",
+    "IPMA Lisbon warnings changed: +4 -3 (orange Agitação Marítima 11T12:34-11T21:00; red Precipitação 11T12:34-11T15:00; yellow Precipitação 11T15:00-11T18:00; orange Vento 11T12:34-11T18:00)",
+    "stations to 13:00: top mean wind 24.8 km/h at Barreiro, Lavradio",
+    "LPPT METAR 14:00: 54 km/h gust 74",
+    "met.no forecast updated 2026-11-11T13:17:23Z",
+    "LPMA METAR 14:00: 30 km/h gust 52",
+    "Lisbon: largest 6 h rain 73.4 mm at Oeiras / Vila Fria (CMO) (hours 11T08-11T13)"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-11T14:23:25Z",
+     "error": "HTTP Error 429: Too Many Requests"
+    }
+   ]
+  },
+  {
+   "read_utc": "2026-11-11T14:23:47Z",
+   "changes": [
+    "no change"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-11T14:23:47Z",
+     "error": "<urlopen error [Errno 104] Connection reset by peer>"
+    }
+   ]
+  },
+  {
+   "read_utc": "2026-11-11T15:22:56Z",
+   "changes": [
+    "THURSDAY: warnings yellow Agitação Marítima 11T21:00-12T03:00; model Thu 00-12 mean wind 15.1-24.1 km/h",
+    "stations to 14:00: top mean wind 41.0 km/h at Oeiras / Vila Fria (CMO)",
+    "LPPT METAR 15:00: 41 km/h gust 61",
+    "LPMA METAR 15:00: 20 km/h gust 39",
+    "Lisbon: largest 6 h rain 74.0 mm at Lisboa, Relógio (hours 11T09-11T14)"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T15:23:13Z",
+   "changes": [
+    "no change"
+   ],
+   "errors": []
+  },
+  {
+   "read_utc": "2026-11-11T16:09:31Z",
+   "changes": [
+    "THURSDAY: warnings yellow Agitação Marítima 11T21:00-12T03:00; model Thu 00-12 mean wind 15.1-24.1 km/h",
+    "IPMA CAP (MeteoAlarm) sent 15:55:03: Aviso Laranja Vento 11T12:00-11T15:56",
+    "IPMA Lisbon warnings changed: +3 -3 (orange Agitação Marítima 11T15:06-11T21:00; yellow Precipitação 11T15:06-11T18:00; orange Vento 11T15:06-11T18:00)",
+    "1 Lisbon warning(s) expired",
+    "stations to 15:00: top mean wind 36.7 km/h at Lisboa, Relógio",
+    "new LPPT TAF 11T14:36: TAF AMD LPPT 111436Z 1115/1218 21023G38K...",
+    "LPPT METAR 16:00: 39 km/h",
+    "met.no forecast updated 2026-11-11T13:17:17Z",
+    "LPMA METAR 16:00: 17 km/h"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-11T16:09:31Z",
+     "error": "<urlopen error [Errno 104] Connection reset by peer>"
+    }
+   ]
+  },
+  {
+   "read_utc": "2026-11-11T16:16:07Z",
+   "changes": [
+    "no change"
+   ],
+   "errors": []
   }
  ],
- "next_read_utc": "2026-11-11T10:22Z"
+ "next_read_utc": "2026-11-11T16:22Z"
 }
