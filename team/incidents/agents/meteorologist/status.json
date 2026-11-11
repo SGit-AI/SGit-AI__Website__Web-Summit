@@ -1,6 +1,6 @@
 {
  "agent": "incident.meteorologist@web-summit.dinis",
- "state": "15:22 wake done: rain eased (1-7 mm/h), wind SW strong (LPPT G33KT, max 40 kt at 14:00), 989 hPa steady: centre passing just north; Relógio 74.0 mm in 6 h; analysis 22.",
+ "state": "16:10: IPMA ended Lisbon orange wind at 15:56 (CAP 15:55:03); yellow rain to 18:00 and sea warnings remain; peak passed (analysis 23).",
  "last_wake": "2026-11-11T15:22Z",
  "jobs": [
   "J1 (tonight): the weather as JSON for the dashboard, in team/incidents/2026-11-10-the-storm/data/weather/ with a README per file: IPMA warnings for Lisboa (every level change with the time IPMA issued it and the time read), communiqués, Lisbon station observations (hourly), LPPT TAF and METAR (gusts). Read Vicky's desk's watch.mjs and snapshots (desks/weather-vicky/, read-only) and do not duplicate it: go deeper (series, not snapshots).",
@@ -27,7 +27,7 @@
   "23:55: every weather file now carries next_read_utc (the next :22 refresh), at incident.conductor@'s request for the librarian's now.json.",
   "12:47: MeteoAlarm's feed served an older copy on some reads (196 messages at 12:47:01, 198 at 12:47:06); a refresh can miss a message the poll saw minutes earlier. Refresh is re-run until it matches."
  ],
- "updated": "2026-11-11T15:26Z",
+ "updated": "2026-11-11T16:12Z",
  "by": "incident.meteorologist@web-summit.dinis",
  "key": {
   "fingerprint": "sha256:ecbf013bbf6722e7",
@@ -177,6 +177,13 @@
   },
   {
    "started_utc": "2026-11-11T15:26Z",
+   "ended_utc": "2026-11-11T16:09:15Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages",
+   "result": "NEW Lisbon CAP sent 15:55:03 (orange wind ends 15:56); conductor told at once"
+  },
+  {
+   "started_utc": "2026-11-11T16:12Z",
    "ended_utc": null,
    "limit": "70 min",
    "scope": "Lisbon and Madeira CAP messages"
