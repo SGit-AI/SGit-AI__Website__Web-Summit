@@ -33,7 +33,8 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 2. Later: installing a build on stand devices; signing (debug-signed vs the app's release key).
 
 ## Decided by default (Angelo can reverse)
-- 11 Nov: spec first, read only, on slot alpha (large).
+- 11 Nov: spec first, read only, on slot alpha (large); started 21:15 UTC (runs.md).
+- 11 Nov: the worker's instruction check. pushed-by.mjs knows only pushes to dev, so a lead's brief on project/ reads UNKNOWN; the worker checks instead that 364071b5 (pushed by ANGELO) is an ancestor of the brief's commit. Question for conductor.b@: should pushed-by.mjs learn project/ branches?
 
 ## Done
 - 11 Nov: lead started; pushed-by 364071b5 says ANGELO.
