@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1791",
+    "date": "2026-11-11",
+    "what": "Jose's CRM connections task reached my session, not crm@'s; nothing done, reported to the conductor",
+    "by": "vault@web-summit.jose",
+    "from": "2c8bf9adb"
+  },
+  {
     "version": "v0.2.1790",
     "date": "2026-11-11",
     "what": "Jose's dashboard cleaned for the summit: a stand-day block, the lanes and issues brought up to date, his agents' records linked; asks for the conductor and the designer",
