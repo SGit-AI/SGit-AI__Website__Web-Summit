@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1800",
+    "date": "2026-11-11",
+    "what": "02:22 wake refresh",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "24806a8eb"
+  },
+  {
     "version": "v0.2.1799",
     "date": "2026-11-11",
     "what": "every timeline row without an address now has one (or the reason); one file per service and place, with exact addresses",
