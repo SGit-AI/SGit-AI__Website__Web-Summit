@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1798",
+    "date": "2026-11-11",
+    "what": "madeira.json earlier_warnings: no MRM/MCS rain warning for Tue 12:00-21:00 in the 23:50 CAP snapshot or DN Madeira (8 Nov); red rain from 21:00 sent 06:14:54 Tue; not proof of absence",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "3cc8773b0"
+  },
+  {
     "version": "v0.2.1797",
     "date": "2026-11-11",
     "what": "lisbon-rain.json (Lisbon's stations in madeira.json's shape, for the rain card from 09:00); hour_label in both: IPMA does not document start or end (inference, labelled: hour ending, UTC)",
