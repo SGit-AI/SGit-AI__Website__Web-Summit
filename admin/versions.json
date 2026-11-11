@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1936",
+    "date": "2026-11-11",
+    "what": "vault A and vault B keys received and opened (kept in the session, never in the repository)",
+    "by": "conductor@web-summit.vicky",
+    "from": "7213e4580"
+  },
+  {
     "version": "v0.2.1935",
     "date": "2026-11-11",
     "what": "the stand demo: make your ABP from the X-ray (three designs)",
