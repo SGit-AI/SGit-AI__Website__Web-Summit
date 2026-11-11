@@ -487,15 +487,26 @@ def second_models(prev):
     return out
 
 
-def madeira():
-    """IPMA's Madeira stations: hourly rain and mean wind, kept across reads, and each station's largest 6-hour rain."""
-    prev = load('madeira.json', {})
+HOUR_LABEL = {
+    'convention': 'not documented',
+    'ipma_says': "IPMA's API documentation gives the key only as 'data/hora da observação' and precAcumulada as 'valor acumulado da hora (mm)'; it does not say whether a label is the hour starting or the hour ending at that time, nor the time zone.",
+    'source': 'https://api.ipma.pt/', 'read_utc': '2026-11-11T01:55Z',
+    'our_inference': {'label': 'analysis', 'reading': 'hour ENDING at the label, in UTC',
+                      'why': ["the feed's newest key is the last full hour (e.g. 18:00 present at 18:58, 19:00 absent)",
+                              "DN Madeira's 133.9 mm 'in 6 h by 22:00' at Chão do Areeiro equals the sum of the values labelled 17:00 to 22:00 at station 1210973, which is the hour-ending reading",
+                              'hour ending is the usual synoptic convention']},
+}
+
+
+def madeira(fname='madeira.json', pick=None, about=None):
+    """IPMA's stations for a region (default Madeira): hourly rain and mean wind, kept across reads, and each station's largest 6-hour rain."""
+    prev = load(fname, {})
     raw, meta = get('obs'), get('stations')
     if raw is None or meta is None:
         return prev
     obs = json.loads(raw)
     names = {str(f['properties']['idEstacao']): (f['properties']['localEstacao'], f['geometry']['coordinates'][::-1]) for f in json.loads(meta)}
-    ids = [k for k, (n, _) in names.items() if n.startswith('Madeira') or 'Funchal' in n or 'Porto Santo' in n]
+    ids = [k for k, (n, _) in names.items() if (pick(k, n) if pick else (n.startswith('Madeira') or 'Funchal' in n or 'Porto Santo' in n))]
     keep = {s_['id']: {r['time_utc']: r for r in s_['hourly']} for s_ in prev.get('stations', [])}
     out = []
     for sid in ids:
@@ -518,10 +529,11 @@ def madeira():
         out.append({'id': sid, 'name': names[sid][0], 'lat_lon': names[sid][1], 'source': U['obs'], 'read_utc': NOW, 'max_6h_rain': best, 'hourly': hourly})
     out.sort(key=lambda s_: -((s_['max_6h_rain'] or {}).get('mm') or 0))
     top = out[0] if out else None
+    region = 'Madeira' if fname == 'madeira.json' else 'Lisbon'
     if top and top['max_6h_rain'] and top['max_6h_rain'] != ((prev.get('stations') or [{}])[0].get('max_6h_rain')):
-        changes.append(f"Madeira: largest 6 h rain {top['max_6h_rain']['mm']} mm at {top['name']} (hours {top['max_6h_rain']['hours_labelled'][0][8:13]}-{top['max_6h_rain']['hours_labelled'][1][8:13]})")
-    return {'about': "IPMA's hourly station observations in Madeira (rain in mm per hour, mean wind), kept across reads (the feed holds 24 hours), sorted by each station's largest rain over six consecutive hourly values. Facts.",
-            'source': U['obs'], 'stations_source': U['stations'], 'read_utc': NOW, 'stations': out}
+        changes.append(f"{region}: largest 6 h rain {top['max_6h_rain']['mm']} mm at {top['name']} (hours {top['max_6h_rain']['hours_labelled'][0][8:13]}-{top['max_6h_rain']['hours_labelled'][1][8:13]})")
+    return {'about': about or "IPMA's hourly station observations in Madeira (rain in mm per hour, mean wind), kept across reads (the feed holds 24 hours), sorted by each station's largest rain over six consecutive hourly values. Facts.",
+            'hour_label': HOUR_LABEL, 'source': U['obs'], 'stations_source': U['stations'], 'read_utc': NOW, 'stations': out}
 
 
 def main():
@@ -529,7 +541,9 @@ def main():
     w, c, s, a, f = warnings(), communiques(), stations(), airport(), forecast()
     f['second_models'] = second_models(f.get('second_models'))
     mad = madeira()
-    for name, obj in (('warnings.json', w), ('communiques.json', c), ('stations.json', s), ('airport.json', a), ('forecast.json', f), ('cap.json', k), ('madeira.json', mad)):
+    lis = madeira('lisbon-rain.json', lambda k, n: k in LISBON_STATIONS,
+                  "IPMA's hourly station observations at Lisbon's stations (the same eight as stations.json), in madeira.json's shape: rain in mm per hour and mean wind, kept across reads, sorted by each station's largest rain over six consecutive hourly values. For the warned-against-observed card from Wed 09:00 (red rain 09:00-18:00). Facts.")
+    for name, obj in (('warnings.json', w), ('communiques.json', c), ('stations.json', s), ('airport.json', a), ('forecast.json', f), ('cap.json', k), ('madeira.json', mad), ('lisbon-rain.json', lis)):
         if obj:
             save(name, obj)
     # gusts against the forecast, now
