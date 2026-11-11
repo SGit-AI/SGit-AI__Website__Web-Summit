@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1963",
+    "date": "2026-11-11",
+    "what": "23:22 wake: LPPT TAF 23:00 for Thursday (showers, gusts ~50 km/h by day); Lisbon only yellow sea to 03:00; analysis 31",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "c4c8a76c8"
+  },
+  {
     "version": "v0.2.1962",
     "date": "2026-11-11",
     "what": "CAP batch 22:43:28: yellow rain for Thursday in the north; nothing for Lisboa",
