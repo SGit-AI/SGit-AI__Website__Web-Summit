@@ -38,6 +38,7 @@ last digest: 2026-11-11T11:25Z (team updates: WS-215 Lisbon Fringe, the storm, w
 - **Lisbon Fringe (WS-215, Dinis, due Thu 12 Nov):** "Go ahead, I think I already have access." conductor.b@ started conductor.fringe@PrompTugal.angelo (its own session, its own key, hourly wake to Friday, item 05 the graph), with Angelo's rules added: every activity in commits (team/angelo/runs.md in the Fringe repository), no extra sessions (asks to conductor.b@ in its status.json), tier 3 to Angelo.
 - **No automated reading of websummit.com** (Dinis's incident lead, 05:25, Web Summit's Terms 48.2, 52.1): for every worker prompt and the researcher skill.
 - **The prompt library approved** ("That's A LOT of text to read. Let's assume it's fine and will refine as we go."): in use from now; corrections go in each skill's Lessons. A rendered page for the library was offered and not taken.
+- **Capacity board, updated by every session** ("let's each have each session update the board"; the accountant every 4 hours is too slow for it). **Two offers to every team member** ("1. our conductors/pms/workers approach as a suggestion to consider and get feedback on 2. the handover market model as a request to help members of the team that are short on usage"): drafted in b3-team-offers, sent after Angelo's go on the wording. **Delegate to Dinis's agents from now** while usage is short.
 
 ## Waiting on
 
