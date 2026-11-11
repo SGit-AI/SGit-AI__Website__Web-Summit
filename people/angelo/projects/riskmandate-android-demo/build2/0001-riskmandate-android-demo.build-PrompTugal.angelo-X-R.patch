@@ -1,0 +1,1045 @@
+From 139ebb26ed00c440b0d0e42d7390bfcf31263ce7 Mon Sep 17 00:00:00 2001
+From: "riskmandate-android-demo.build" <noreply@anthropic.com>
+Date: Wed, 11 Nov 2026 23:17:04 +0000
+Subject: [PATCH] riskmandate-android-demo.build@PrompTugal.angelo: X-Ray
+ screen as a full embedded browser, full screen in and out
+
+Angelo, 11 Nov 2026 about 22:55 UTC, after installing 0.1.165: "there are a few things that don't work
+quite well, especially the buttons don't seem to work properly. I think you should run it as an embedded
+app in a browser, if it's not already like that. We want to keep the features and to also be able to go
+back and forth from full-screen."
+
+Reproduced in headless Chromium: build 1's host list refused api.github.com (UNIVERSO) and
+swarm.promptugal.news (SWARM); the page's own full-screen button did nothing (no onShowCustomView);
+links and window.open off the site were dropped; file inputs refused.
+
+- Policy: sub-resources from any host over TLS (http, ws refused); the site loads in the view; another
+  https page tapped by a person opens in the browser (Browser.openExternal); untapped ones ignored.
+- The page's own full screen (onShowCustomView), file inputs (system picker), https downloads (outside).
+- Starts full screen; a slim Exit full screen tab on the start edge fades after 4 s, returns on a tap;
+  Back leaves full screen. In the app's window: Reload and Full screen above the page, the app's Back.
+  The same WebView moves between the two. The staff hold-corner and exit dialog are removed.
+- Kept: watchdog and cover, keep-screen-on, own profile with storage (demo key), no JS bridge,
+  Safe Browsing, camera/microphone/location refused (the page uses Web Speech, absent in WebView).
+Tests: XrayPolicyTest 5, XrayScreenTest 7, XrayViewTest 4 (new), XrayWatchdogTest 6, XrayScreenshotTest 1.
+Gate green locally: testDebugUnitTest lintDebug assembleRelease bundleRelease, 978 tests, 0 failures.
+Undo: revert this commit.
+
+Agent: alpha.large.worker@PrompTugal.angelo
+Issue: WS-203
+For: conductor.android@promptugal.ai.dinis, security.android@promptugal.ai.dinis
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Xp7gj57KZ1SR62bJHasvFu
+---
+ .../app/features/xray/XrayFeature.kt          |   6 +-
+ .../app/features/xray/XrayPolicy.kt           |  76 ++--
+ .../app/features/xray/XrayScreen.kt           | 358 +++++++++++-------
+ .../app/features/xray/XrayWebView.kt          |  48 ++-
+ .../main/res/values-pt-rPT/feature_xray.xml   |  11 +-
+ app/src/main/res/values/feature_xray.xml      |  11 +-
+ .../app/features/xray/XrayPolicyTest.kt       |  34 +-
+ .../app/features/xray/XrayScreenTest.kt       |  87 +++--
+ .../app/features/xray/XrayScreenshotTest.kt   |  10 +-
+ .../app/features/xray/XrayViewTest.kt         |  39 ++
+ 10 files changed, 436 insertions(+), 244 deletions(-)
+ create mode 100644 app/src/test/java/ai/riskmandate/app/features/xray/XrayViewTest.kt
+
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayFeature.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayFeature.kt
+index 7a99b81..2117662 100644
+--- a/app/src/main/java/ai/riskmandate/app/features/xray/XrayFeature.kt
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayFeature.kt
+@@ -7,8 +7,8 @@ import ai.riskmandate.app.features.HoldIdleWhile
+ import androidx.compose.runtime.Composable
+ 
+ /**
+- * Silvio's X-Ray page (web-summit.sgit.ai) as a stand kiosk: full screen, screen on, locked to web-summit.sgit.ai,
+- * recovering by itself; staff leave by holding the bottom-start corner for three seconds.
++ * Silvio's X-Ray page (web-summit.sgit.ai) in an embedded browser: full screen at the start, with a toggle to the
++ * app's window and back; screen on; recovering by itself. In the window, the app's Back returns to the menu.
+  *
+  * Not on the stand-mode visitor list: the page itself can call AI services (openrouter.ai) with a demo key typed
+  * on the device, which stand mode's rule keeps away from visitors until security.android decides otherwise.
+@@ -24,6 +24,6 @@ object XrayFeature : Feature {
+     override fun Content(context: FeatureContext) {
+         // Left running on purpose: never reset by the idle timer while it shows.
+         context.HoldIdleWhile(true)
+-        XrayScreen(onExit = context.onBack)
++        XrayScreen()
+     }
+ }
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayPolicy.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayPolicy.kt
+index 77b040f..9c0b1fc 100644
+--- a/app/src/main/java/ai/riskmandate/app/features/xray/XrayPolicy.kt
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayPolicy.kt
+@@ -1,42 +1,49 @@
+ package ai.riskmandate.app.features.xray
+ 
+ /**
+- * Where the X-Ray kiosk may go. Pure Kotlin, so it runs on the JVM.
++ * Where the X-Ray screen may go. Pure Kotlin, so it runs on the JVM.
+  *
+- * Top-level pages: https://web-summit.sgit.ai only (Silvio's command centre lives there). Every other main-frame
+- * navigation is ignored: a kiosk opens nothing else, not even the system browser (that would leave the kiosk).
+- * Sub-resources (scripts, fonts, fetches): the hosts the page was seen to use on 11 Nov 2026 (headless Chromium:
+- * web-summit.sgit.ai, cdn.jsdelivr.net for three.js, Google Fonts, promptugal.news for the company list,
+- * dev.send.sgraph.ai for the vault) plus openrouter.ai, which the page calls once a demo key is set. Everything
+- * else over the network is refused.
++ * Build 2 (Angelo, 11 Nov 2026: "run it as an embedded app in a browser ... keep the features"): the page behaves
++ * as it does in Chrome. Sub-resources from any host over TLS (https, wss); plain http and ws refused (WebView's
++ * mixed-content rule refuses them too). Top-level pages stay on https://web-summit.sgit.ai in this view; a link or
++ * window.open elsewhere, tapped by a person, opens outside (Custom Tab or browser); one the page makes by itself is
++ * ignored.
+  */
+ object XrayPolicy {
+     const val START_URL = "https://web-summit.sgit.ai/people/silvio/app/index.html#xray"
+     const val HOME_HOST = "web-summit.sgit.ai"
+ 
+-    /** Hosts a page may fetch from (https only). Adding one is a security review, as for the site feature's list. */
+-    val SUBRESOURCE_HOSTS: Set<String> = setOf(
+-        HOME_HOST,
+-        "cdn.jsdelivr.net",
+-        "fonts.googleapis.com",
+-        "fonts.gstatic.com",
+-        "promptugal.news",
+-        "dev.send.sgraph.ai",
+-        "openrouter.ai",
+-    )
+-
+-    /** A main-frame page that may load: https on [HOME_HOST], port 443 at most. */
++    /** What to do with a top-level navigation. */
++    enum class Nav { LOAD, OPEN_OUTSIDE, IGNORE }
++
++    /** A main-frame page that may load in this view: https on [HOME_HOST], port 443 at most. */
+     fun allowPage(url: String): Boolean = httpsHost(url) == HOME_HOST
+ 
+-    /** True when a sub-resource must be refused: network schemes to a host off [SUBRESOURCE_HOSTS], or plain http. */
++    /**
++     * A top-level navigation (a link, target=_blank or window.open, which open in this same view): on the site,
++     * load it; another https page tapped by a person, open it outside; anything else (another scheme, a redirect
++     * the page made without a tap), ignore.
++     */
++    fun navigation(url: String, hasGesture: Boolean): Nav = when {
++        allowPage(url) -> Nav.LOAD
++        hasGesture && httpsHost(url) != null -> Nav.OPEN_OUTSIDE
++        else -> Nav.IGNORE
++    }
++
++    /** True when a sub-resource must be refused: plain http or ws, or a TLS URL with a suspicious authority. */
+     fun blockSubresource(url: String): Boolean {
+         val scheme = url.trim().substringBefore(':', "").lowercase()
+-        val network = scheme == "http" || scheme == "https" || scheme == "ws" || scheme == "wss"
+-        if (!network) return false // data:, blob: and about: never reach the network
+-        val host = if (scheme == "wss") httpsHost("https" + url.trim().substring(3)) else httpsHost(url)
+-        return host == null || host !in SUBRESOURCE_HOSTS
++        return when (scheme) {
++            "http", "ws" -> true
++            "https" -> httpsHost(url) == null
++            "wss" -> httpsHost("https" + url.trim().substring(3)) == null
++            else -> false // data:, blob: and about: never reach the network
++        }
+     }
+ 
++    /** Camera, microphone and the like: only ever for the site itself (and only if the app holds the permission). */
++    fun mayAskForMedia(origin: String): Boolean = httpsHost(origin) == HOME_HOST
++
+     /**
+      * The lower-case host of an https URL, or null when the URL is not plain https or is suspicious: a backslash,
+      * whitespace or control character anywhere, an '@' or a '%' in the authority, a port other than 443, an empty host.
+@@ -124,3 +131,24 @@ class XrayWatchdog(
+         return (firstRetryMs shl shift).coerceAtMost(maxRetryMs)
+     }
+ }
++
++/**
++ * Full screen or in the app's window. Pure state, tested on the JVM.
++ *
++ * [fullScreen]: the page fills the display, system bars hidden. [pageFullScreen]: the page's own full-screen button
++ * is in force (WebView hands over a view to show). [byPage]: full screen was entered by the page from the window,
++ * so the page leaving it goes back to the window.
++ */
++data class XrayView(val fullScreen: Boolean = true, val pageFullScreen: Boolean = false, val byPage: Boolean = false) {
++    /** The toggle (or Back while full screen): in and out. Leaving also ends the page's own full screen. */
++    fun toggled(): XrayView = if (fullScreen) XrayView(fullScreen = false) else copy(fullScreen = true)
++
++    /** True when leaving now must tell WebView the page's full screen is over. */
++    val leavingEndsPageFullScreen: Boolean get() = fullScreen && pageFullScreen
++
++    /** The page asked for full screen (its own button). */
++    fun pageEntered(): XrayView = XrayView(fullScreen = true, pageFullScreen = true, byPage = byPage || !fullScreen)
++
++    /** The page left full screen: back to the window if the page had brought us to full screen. */
++    fun pageExited(): XrayView = if (byPage) XrayView(fullScreen = false) else copy(pageFullScreen = false)
++}
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayScreen.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayScreen.kt
+index 4fb77de..2ff9351 100644
+--- a/app/src/main/java/ai/riskmandate/app/features/xray/XrayScreen.kt
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayScreen.kt
+@@ -1,38 +1,53 @@
+ package ai.riskmandate.app.features.xray
+ 
++import ai.riskmandate.app.Browser
+ import ai.riskmandate.app.Pt
+ import ai.riskmandate.app.R
++import android.content.ActivityNotFoundException
+ import android.content.Context
+ import android.net.ConnectivityManager
+ import android.net.Network
++import android.net.Uri
+ import android.os.Build
+ import android.os.Handler
+ import android.os.Looper
+ import android.os.SystemClock
++import android.view.View
+ import android.view.ViewGroup
+ import android.view.WindowManager
++import android.webkit.ValueCallback
++import android.webkit.WebChromeClient
+ import android.webkit.WebView
++import android.widget.Toast
++import androidx.activity.compose.rememberLauncherForActivityResult
++import androidx.activity.result.contract.ActivityResultContracts
++import androidx.compose.animation.AnimatedVisibility
++import androidx.compose.animation.fadeIn
++import androidx.compose.animation.fadeOut
+ import androidx.compose.foundation.background
+ import androidx.compose.foundation.gestures.awaitEachGesture
+ import androidx.compose.foundation.gestures.awaitFirstDown
+-import androidx.compose.foundation.gestures.waitForUpOrCancellation
+ import androidx.compose.foundation.layout.Arrangement
+ import androidx.compose.foundation.layout.Box
+ import androidx.compose.foundation.layout.Column
+ import androidx.compose.foundation.layout.Row
+ import androidx.compose.foundation.layout.fillMaxSize
++import androidx.compose.foundation.layout.fillMaxWidth
+ import androidx.compose.foundation.layout.padding
+ import androidx.compose.foundation.layout.size
+ import androidx.compose.foundation.layout.widthIn
+-import androidx.compose.material3.AlertDialog
++import androidx.compose.foundation.shape.RoundedCornerShape
++import androidx.compose.material.icons.Icons
++import androidx.compose.material.icons.filled.Close
++import androidx.compose.material3.Icon
+ import androidx.compose.material3.MaterialTheme
++import androidx.compose.material3.Surface
+ import androidx.compose.material3.Text
+ import androidx.compose.material3.TextButton
+ import androidx.compose.runtime.Composable
+ import androidx.compose.runtime.DisposableEffect
+ import androidx.compose.runtime.LaunchedEffect
+ import androidx.compose.runtime.getValue
+-import androidx.compose.runtime.key
+ import androidx.compose.runtime.mutableIntStateOf
+ import androidx.compose.runtime.mutableStateOf
+ import androidx.compose.runtime.remember
+@@ -40,7 +55,7 @@ import androidx.compose.runtime.rememberUpdatedState
+ import androidx.compose.runtime.setValue
+ import androidx.compose.ui.Alignment
+ import androidx.compose.ui.Modifier
+-import androidx.compose.ui.graphics.toArgb
++import androidx.compose.ui.input.pointer.PointerEventPass
+ import androidx.compose.ui.input.pointer.pointerInput
+ import androidx.compose.ui.platform.LocalContext
+ import androidx.compose.ui.platform.LocalLifecycleOwner
+@@ -65,41 +80,157 @@ import kotlinx.coroutines.delay
+ object XrayTags {
+     const val WEBVIEW = "xray_webview"
+     const val COVER = "xray_cover"
+-    const val STAFF_CORNER = "xray_staff_corner"
+-    const val EXIT_DIALOG = "xray_exit_dialog"
+-    const val EXIT_LEAVE = "xray_exit_leave"
+-    const val EXIT_STAY = "xray_exit_stay"
+-    const val EXIT_RELOAD = "xray_exit_reload"
++    const val TOOLBAR = "xray_toolbar"
++    const val RELOAD = "xray_reload"
++    const val FULLSCREEN_ENTER = "xray_fullscreen_enter"
++    const val FULLSCREEN_EXIT = "xray_fullscreen_exit"
++    const val FULLSCREEN = "xray_fullscreen"
+ }
+ 
++/** How long the Exit full screen button stays before it fades; a tap anywhere brings it back. */
++const val XRAY_TOGGLE_SHOWN_MS = 4_000L
+ 
+ /**
+- * The X-Ray page as a stand kiosk: a window over the whole app (so no app chrome), system bars hidden and coming
+- * back hidden after a swipe, the screen kept on, Back doing nothing. Staff leave by holding the bottom-start
+- * corner for [exitHoldMs] and confirming. The page reloads by itself after an error, a stall or a lost network.
++ * Silvio's X-Ray page in an embedded browser (Android System WebView, which is Chromium), in two ways:
++ * - **full screen** (the start): a window over the whole app, system bars hidden (immersive sticky), the screen kept
++ *   on; a small Exit full screen tab on the start edge, half way down, that fades after [XRAY_TOGGLE_SHOWN_MS] and returns on a
++ *   tap; Back also leaves full screen. The page's own full-screen button works too.
++ * - **in the app**: inside the app's frame (its top bar or sidebar, its Back to the menu), with a small bar above
++ *   the page: Reload and Full screen.
++ * The same WebView moves between the two, so the page keeps its place. It reloads by itself after an error, a stall
++ * or a lost network.
+  */
+ @Composable
+ fun XrayScreen(
+-    onExit: () -> Unit,
+     startUrl: String = XrayPolicy.START_URL,
+-    exitHoldMs: Long = 3_000,
+     clock: () -> Long = SystemClock::elapsedRealtime,
+     /** False in screenshot tests: Robolectric draws no web content. */
+     showWebView: Boolean = true,
+     /** For tests: start with the offline cover showing. */
+     startFailed: Boolean = false,
++    startFullScreen: Boolean = true,
+ ) {
+-    Dialog(
+-        onDismissRequest = {},
+-        properties = DialogProperties(
+-            dismissOnBackPress = false,
+-            dismissOnClickOutside = false,
+-            usePlatformDefaultWidth = false,
+-            decorFitsSystemWindows = false,
+-        ),
+-    ) {
+-        KioskWindow()
+-        XrayKiosk(onExit, startUrl, exitHoldMs, clock, showWebView, startFailed)
++    val context = LocalContext.current
++    val watchdog = remember { XrayWatchdog().also { if (startFailed) it.onMainFrameError(clock()) } }
++    var cover by remember { mutableStateOf(watchdog.coverShown) }
++    var view by remember { mutableStateOf(XrayView(fullScreen = startFullScreen)) }
++    var pageView by remember { mutableStateOf<View?>(null) }
++    var pageViewCallback by remember { mutableStateOf<WebChromeClient.CustomViewCallback?>(null) }
++    var webViewKey by remember { mutableIntStateOf(0) }
++
++    fun sync() { cover = watchdog.coverShown }
++    fun endPageFullScreen() {
++        val cb = pageViewCallback
++        pageView = null
++        pageViewCallback = null
++        cb?.onCustomViewHidden()
++    }
++    fun toggle() {
++        val ending = view.leavingEndsPageFullScreen
++        view = view.toggled()
++        if (ending) endPageFullScreen()
++    }
++
++    // File inputs on the page: the system picker, as in Chrome.
++    var pendingFiles by remember { mutableStateOf<ValueCallback<Array<Uri>>?>(null) }
++    val filePicker = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
++        pendingFiles?.onReceiveValue(WebChromeClient.FileChooserParams.parseResult(result.resultCode, result.data))
++        pendingFiles = null
++    }
++
++    val webView: WebView? = remember(webViewKey) {
++        if (!showWebView) return@remember null
++        WebView(context).apply {
++            applyXraySettings()
++            setBackgroundColor(0) // transparent: the theme's paper behind it shows while it loads
++            keepScreenOn = true // in the app's window and in full screen
++            contentDescription = context.getString(R.string.feature_xray_webview_description)
++            webChromeClient = XrayChromeClient(
++                onPageFullScreen = { v, cb ->
++                    pageView = v
++                    pageViewCallback = cb
++                    view = view.pageEntered()
++                },
++                onPageFullScreenEnd = {
++                    pageView = null
++                    pageViewCallback = null
++                    view = view.pageExited()
++                },
++                onFiles = { cb, params ->
++                    pendingFiles?.onReceiveValue(null)
++                    pendingFiles = cb
++                    try {
++                        filePicker.launch(params.createIntent())
++                    } catch (e: ActivityNotFoundException) {
++                        pendingFiles = null
++                        cb.onReceiveValue(null)
++                    }
++                    true
++                },
++            )
++            webViewClient = XrayWebViewClient(
++                onStarted = { watchdog.onLoadStarted(clock()); sync() },
++                onFinished = { failed -> watchdog.onLoadFinished(clock(), failed); sync() },
++                onMainFrameError = { watchdog.onMainFrameError(clock()); sync() },
++                onRenderGone = {
++                    // A new WebView (and renderer); the old one is released by the effect below.
++                    endPageFullScreen()
++                    watchdog.onMainFrameError(clock())
++                    sync()
++                    webViewKey++
++                },
++                onOutside = { url -> openOutside(context, url) },
++            )
++            // A download link to https opens outside (the browser downloads it); blob: exports need a JS bridge, which this screen never has.
++            setDownloadListener { url, _, _, _, _ -> if (XrayPolicy.navigation(url, hasGesture = true) == XrayPolicy.Nav.OPEN_OUTSIDE) openOutside(context, url) }
++            watchdog.onLoadStarted(clock())
++            loadUrl(startUrl)
++        }
++    }
++    DisposableEffect(webView) {
++        onDispose { webView?.apply { stopLoading(); destroy() } }
++    }
++    fun reload() {
++        webView?.loadUrl(startUrl)
++        sync()
++    }
++    val currentReload by rememberUpdatedState(::reload)
++
++    // Every 5 s: a stalled load or a failed page whose retry time has come is reloaded.
++    LaunchedEffect(Unit) {
++        while (true) {
++            delay(5_000)
++            if (watchdog.tick(clock()) == XrayAction.RELOAD) currentReload()
++            sync()
++        }
++    }
++    // The network came back: reload at once if the page had failed.
++    DisposableEffect(Unit) {
++        val unregister = watchNetwork(context) { if (watchdog.onNetworkAvailable(clock()) == XrayAction.RELOAD) currentReload() }
++        onDispose(unregister)
++    }
++
++    if (view.fullScreen) {
++        Dialog(
++            onDismissRequest = { toggle() }, // Back leaves full screen
++            properties = DialogProperties(
++                dismissOnBackPress = true,
++                dismissOnClickOutside = false,
++                usePlatformDefaultWidth = false,
++                decorFitsSystemWindows = false,
++            ),
++        ) {
++            KioskWindow()
++            FullScreenContent(onExit = { toggle() }) {
++                Page(webView, cover)
++                pageView?.let { v -> AndroidView(factory = { v.also { (it.parent as? ViewGroup)?.removeView(it) } }, modifier = Modifier.fillMaxSize()) }
++            }
++        }
++    } else {
++        Column(Modifier.fillMaxSize()) {
++            Toolbar(onReload = { reload() }, onFullScreen = { toggle() })
++            Box(Modifier.weight(1f).fillMaxWidth()) { Page(webView, cover) }
++        }
+     }
+ }
+ 
+@@ -138,106 +269,85 @@ private fun KioskWindow() {
+     }
+ }
+ 
+-/** The kiosk's content: the WebView, the cover while it recovers, the staff corner and the exit confirmation. */
++/** The WebView (moved here from wherever it was) with the calm cover over it while the page recovers. */
+ @Composable
+-internal fun XrayKiosk(
+-    onExit: () -> Unit,
+-    startUrl: String,
+-    exitHoldMs: Long,
+-    clock: () -> Long,
+-    showWebView: Boolean,
+-    startFailed: Boolean,
+-) {
+-    val context = LocalContext.current
+-    val watchdog = remember { XrayWatchdog().also { if (startFailed) it.onMainFrameError(clock()) } }
+-    var cover by remember { mutableStateOf(watchdog.coverShown) }
+-    var webView by remember { mutableStateOf<WebView?>(null) }
+-    var webViewKey by remember { mutableIntStateOf(0) }
+-    var askExit by remember { mutableStateOf(false) }
+-
+-    fun sync() { cover = watchdog.coverShown }
+-    fun reload() {
+-        webView?.loadUrl(startUrl)
+-        sync()
+-    }
+-    val currentReload by rememberUpdatedState(::reload)
+-
+-    // Every 5 s: a stalled load or a failed page whose retry time has come is reloaded.
+-    LaunchedEffect(Unit) {
+-        while (true) {
+-            delay(5_000)
+-            if (watchdog.tick(clock()) == XrayAction.RELOAD) currentReload()
+-            sync()
++private fun Page(webView: WebView?, cover: Boolean) {
++    Box(Modifier.fillMaxSize().background(Pt.colors.paper)) {
++        if (webView != null) {
++            AndroidView(
++                // The same WebView moves between the window and full screen: take it from its old parent first.
++                factory = { webView.also { (it.parent as? ViewGroup)?.removeView(it) } },
++                // Destroyed by XrayScreen, not here: leaving one mode is not leaving the page.
++                onRelease = {},
++                modifier = Modifier.fillMaxSize().testTag(XrayTags.WEBVIEW),
++            )
+         }
++        if (cover) Cover()
+     }
+-    // The network came back: reload at once if the page had failed.
+-    DisposableEffect(Unit) {
+-        val unregister = watchNetwork(context) { if (watchdog.onNetworkAvailable(clock()) == XrayAction.RELOAD) currentReload() }
+-        onDispose(unregister)
+-    }
++}
+ 
+-    // The theme's paper behind the page and the cover (colours come from Theme.kt only).
+-    val paper = Pt.colors.paper
+-    Box(Modifier.fillMaxSize().background(paper)) {
+-        if (showWebView) {
+-            key(webViewKey) {
+-                AndroidView(
+-                    factory = { c ->
+-                        WebView(c).apply {
+-                            applyXraySettings()
+-                            setBackgroundColor(paper.toArgb())
+-                            contentDescription = c.getString(R.string.feature_xray_webview_description)
+-                            webViewClient = XrayWebViewClient(
+-                                onStarted = { watchdog.onLoadStarted(clock()); sync() },
+-                                onFinished = { failed -> watchdog.onLoadFinished(clock(), failed); sync() },
+-                                onMainFrameError = { watchdog.onMainFrameError(clock()); sync() },
+-                                onRenderGone = {
+-                                    // A new WebView (and renderer) on the next composition; the old one is released below.
+-                                    webView = null
+-                                    watchdog.onMainFrameError(clock())
+-                                    sync()
+-                                    webViewKey++
+-                                },
+-                            )
+-                            webView = this
+-                            watchdog.onLoadStarted(clock())
+-                            loadUrl(startUrl)
+-                        }
+-                    },
+-                    onRelease = { it.stopLoading(); it.destroy() },
+-                    modifier = Modifier.fillMaxSize().testTag(XrayTags.WEBVIEW),
+-                )
+-            }
+-        }
+-        if (cover) Cover()
+-        StaffCorner(exitHoldMs, Modifier.align(Alignment.BottomStart)) { askExit = true }
++/** In the app's window: a slim bar above the page, never over it. */
++@Composable
++private fun Toolbar(onReload: () -> Unit, onFullScreen: () -> Unit) {
++    Row(
++        Modifier.fillMaxWidth().padding(horizontal = 8.dp).testTag(XrayTags.TOOLBAR),
++        horizontalArrangement = Arrangement.End,
++        verticalAlignment = Alignment.CenterVertically,
++    ) {
++        TextButton(onClick = onReload, modifier = Modifier.testTag(XrayTags.RELOAD)) { Text(stringResource(R.string.feature_xray_reload)) }
++        TextButton(onClick = onFullScreen, modifier = Modifier.testTag(XrayTags.FULLSCREEN_ENTER)) { Text(stringResource(R.string.feature_xray_fullscreen_enter)) }
+     }
++}
+ 
+-    if (askExit) {
+-        AlertDialog(
+-            onDismissRequest = { askExit = false },
+-            modifier = Modifier.testTag(XrayTags.EXIT_DIALOG),
+-            title = { Text(stringResource(R.string.feature_xray_exit_title)) },
+-            text = { Text(stringResource(R.string.feature_xray_exit_body)) },
+-            confirmButton = {
+-                TextButton(onClick = { askExit = false; onExit() }, modifier = Modifier.testTag(XrayTags.EXIT_LEAVE)) {
+-                    Text(stringResource(R.string.feature_xray_exit_leave))
+-                }
+-            },
+-            dismissButton = {
+-                Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+-                    TextButton(onClick = { askExit = false; reload() }, modifier = Modifier.testTag(XrayTags.EXIT_RELOAD)) {
+-                        Text(stringResource(R.string.feature_xray_exit_reload))
+-                    }
+-                    TextButton(onClick = { askExit = false }, modifier = Modifier.testTag(XrayTags.EXIT_STAY)) {
+-                        Text(stringResource(R.string.feature_xray_exit_stay))
+-                    }
++/**
++ * Full screen: [content] fills the display; a small Exit full screen tab on the start edge shows for
++ * [XRAY_TOGGLE_SHOWN_MS], then fades; any tap brings it back (the tap still reaches the page).
++ */
++@Composable
++internal fun FullScreenContent(onExit: () -> Unit, content: @Composable () -> Unit) {
++    var taps by remember { mutableIntStateOf(0) }
++    var shown by remember { mutableStateOf(true) }
++    LaunchedEffect(taps) {
++        shown = true
++        delay(XRAY_TOGGLE_SHOWN_MS)
++        shown = false
++    }
++    Box(
++        Modifier
++            .fillMaxSize()
++            .testTag(XrayTags.FULLSCREEN)
++            .pointerInput(Unit) {
++                // Watch, never consume: the page gets every touch.
++                awaitEachGesture {
++                    awaitFirstDown(requireUnconsumed = false, pass = PointerEventPass.Initial)
++                    taps++
+                 }
+             },
+-        )
++    ) {
++        content()
++        val exitLabel = stringResource(R.string.feature_xray_fullscreen_exit)
++        AnimatedVisibility(visible = shown, enter = fadeIn(), exit = fadeOut(), modifier = Modifier.align(Alignment.CenterStart)) {
++            // A slim tab on the start edge, half way down: on the page at 412 and 1280 px wide that is margin, while
++            // the corners hold the page's own buttons (its menu, full screen, bottom bar and voice button).
++            Surface(
++                onClick = onExit,
++                shape = RoundedCornerShape(topEnd = 12.dp, bottomEnd = 12.dp),
++                color = Pt.colors.ink.copy(alpha = 0.72f),
++                contentColor = Pt.colors.paper,
++                modifier = Modifier.size(width = 28.dp, height = 64.dp).testTag(XrayTags.FULLSCREEN_EXIT).semantics { contentDescription = exitLabel },
++            ) {
++                Box(contentAlignment = Alignment.Center) { Icon(Icons.Filled.Close, contentDescription = null, modifier = Modifier.size(18.dp)) }
++            }
++        }
+     }
+ }
+ 
++/** Another site, tapped on the page: a Custom Tab is not used for it (Browser.open is riskmandate.ai only), the system browser is. */
++private fun openOutside(context: Context, url: String) {
++    val message = Browser.message(Browser.openExternal(context, url)) ?: return
++    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
++}
++
+ /** A calm cover while the page is away: no error text from WebView, just that it is coming back. */
+ @Composable
+ private fun Cover() {
+@@ -260,26 +370,6 @@ private fun Cover() {
+     }
+ }
+ 
+-/** An invisible 56 dp corner: held for [holdMs], it asks to leave. A tap does nothing. */
+-@Composable
+-private fun StaffCorner(holdMs: Long, modifier: Modifier = Modifier, onHeld: () -> Unit) {
+-    val description = stringResource(R.string.feature_xray_staff_corner)
+-    val held by rememberUpdatedState(onHeld)
+-    Box(
+-        modifier
+-            .size(56.dp)
+-            .testTag(XrayTags.STAFF_CORNER)
+-            .semantics { contentDescription = description }
+-            .pointerInput(holdMs) {
+-                awaitEachGesture {
+-                    awaitFirstDown(requireUnconsumed = false)
+-                    val up = withTimeoutOrNull(holdMs) { waitForUpOrCancellation() }
+-                    if (up == null) held()
+-                }
+-            },
+-    )
+-}
+-
+ /** Calls [onAvailable] on the main thread whenever the default network becomes available. Returns the unregister. */
+ private fun watchNetwork(context: Context, onAvailable: () -> Unit): () -> Unit {
+     val cm = context.getSystemService(ConnectivityManager::class.java) ?: return {}
+diff --git a/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt b/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt
+index 10a7e04..6dcc6fb 100644
+--- a/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt
++++ b/app/src/main/java/ai/riskmandate/app/features/xray/XrayWebView.kt
+@@ -5,6 +5,7 @@ import android.graphics.Bitmap
+ import android.net.Uri
+ import android.net.http.SslError
+ import android.os.Message
++import android.view.View
+ import android.webkit.CookieManager
+ import android.webkit.GeolocationPermissions
+ import android.webkit.PermissionRequest
+@@ -24,22 +25,29 @@ import androidx.webkit.WebViewFeature
+ import java.io.ByteArrayInputStream
+ 
+ /**
+- * The kiosk's WebView client: main-frame pages only on web-summit.sgit.ai ([XrayPolicy.allowPage]), anything else
+- * ignored (never handed to a browser: that would leave the kiosk); sub-resources off [XrayPolicy.SUBRESOURCE_HOSTS]
+- * refused; load progress reported to the watchdog.
++ * The X-Ray screen's WebView client. Top-level pages: web-summit.sgit.ai loads here; another https page a person
++ * tapped (a link, target=_blank, window.open, which all open in this same view) goes to [onOutside]; anything else
++ * is ignored ([XrayPolicy.navigation]). Sub-resources from any host over TLS; plain http and ws refused. Load
++ * progress goes to the watchdog.
+  */
+ class XrayWebViewClient(
+     private val onStarted: () -> Unit,
+     private val onFinished: (failedMeanwhile: Boolean) -> Unit,
+     private val onMainFrameError: () -> Unit,
+     private val onRenderGone: () -> Unit,
++    private val onOutside: (url: String) -> Unit = {},
+ ) : WebViewClient() {
+     private var failedThisLoad = false
+ 
+-    /** True cancels: a page off web-summit.sgit.ai, or a frame to a host the page may not fetch from. */
++    /** True cancels: a page off web-summit.sgit.ai (opened outside if a person tapped it), or a frame over plain http. */
+     override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
+         val url = request.url.toString()
+-        return if (request.isForMainFrame) !XrayPolicy.allowPage(url) else XrayPolicy.blockSubresource(url)
++        if (!request.isForMainFrame) return XrayPolicy.blockSubresource(url)
++        return when (XrayPolicy.navigation(url, request.hasGesture())) {
++            XrayPolicy.Nav.LOAD -> false
++            XrayPolicy.Nav.OPEN_OUTSIDE -> { onOutside(url); true }
++            XrayPolicy.Nav.IGNORE -> true
++        }
+     }
+ 
+     override fun shouldInterceptRequest(view: WebView, request: WebResourceRequest): WebResourceResponse? {
+@@ -87,20 +95,34 @@ class XrayWebViewClient(
+ }
+ 
+ /**
+- * Denies what a page can ask for (camera, microphone, location, files, new windows). JavaScript alert and confirm
+- * keep WebView's own dialogs (the page asks `confirm` before some actions), which a WebChromeClient enables.
++ * What the page can ask for. The page's own full-screen button ([onPageFullScreen], [onPageFullScreenEnd]) and file
++ * inputs ([onFiles], the system picker) work as in Chrome; JavaScript alert, confirm and prompt keep WebView's own
++ * dialogs. Camera, microphone and location stay refused: the app holds none of those permissions, and the page never
++ * asks for camera or microphone (its voice input is Web Speech, which WebView does not have).
+  */
+-class XrayChromeClient : WebChromeClient() {
++class XrayChromeClient(
++    private val onPageFullScreen: (view: View, callback: CustomViewCallback) -> Unit = { _, cb -> cb.onCustomViewHidden() },
++    private val onPageFullScreenEnd: () -> Unit = {},
++    private val onFiles: (callback: ValueCallback<Array<Uri>>, params: FileChooserParams) -> Boolean = { _, _ -> false },
++) : WebChromeClient() {
+     override fun onPermissionRequest(request: PermissionRequest) = request.deny()
+ 
+     override fun onGeolocationPermissionsShowPrompt(origin: String?, callback: GeolocationPermissions.Callback) =
+         callback.invoke(origin, false, false)
+ 
+     override fun onShowFileChooser(webView: WebView?, filePathCallback: ValueCallback<Array<Uri>>?, fileChooserParams: FileChooserParams?): Boolean {
+-        filePathCallback?.onReceiveValue(null)
+-        return true
++        if (filePathCallback == null || fileChooserParams == null) return false
++        return onFiles(filePathCallback, fileChooserParams)
+     }
+ 
++    override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
++        if (view == null || callback == null) return
++        onPageFullScreen(view, callback)
++    }
++
++    override fun onHideCustomView() = onPageFullScreenEnd()
++
++    /** No second window: with multiple windows off, target=_blank and window.open load in this view (then the client decides). */
+     override fun onCreateWindow(view: WebView?, isDialog: Boolean, isUserGesture: Boolean, resultMsg: Message?): Boolean = false
+ }
+ 
+@@ -112,8 +134,9 @@ const val XRAY_PROFILE = "xray"
+  * cookies accepted and never cleared, so the demo key a staff member unlocks once (Silvio's page asks a new
+  * device for it) stays across reloads and app restarts. Where WebView supports profiles (WebView 110+), the
+  * kiosk has its own profile; otherwise it shares the default one, and opening the site screen clears it.
+- * Otherwise as locked down as the site screen: no file or content access, Safe Browsing on, no mixed content,
+- * no third-party cookies, no JavaScript interface, no downloads, no new windows, remote debugging off.
++ * Otherwise as the site screen: no file:// or content:// access from the page, Safe Browsing on, no mixed content,
++ * no third-party cookies, no JavaScript interface, no second window, remote debugging off. The caller sets the
++ * chrome client ([XrayChromeClient]) and the download listener.
+  *
+  * Returns true when the kiosk has its own profile.
+  */
+@@ -148,7 +171,6 @@ fun WebView.applyXraySettings(): Boolean {
+         mediaPlaybackRequiresUserGesture = true
+         cacheMode = WebSettings.LOAD_DEFAULT
+     }
+-    webChromeClient = XrayChromeClient()
+     (profileCookies ?: CookieManager.getInstance()).apply {
+         setAcceptCookie(true)
+         setAcceptThirdPartyCookies(this@applyXraySettings, false)
+diff --git a/app/src/main/res/values-pt-rPT/feature_xray.xml b/app/src/main/res/values-pt-rPT/feature_xray.xml
+index d8e8d74..ce35b1c 100644
+--- a/app/src/main/res/values-pt-rPT/feature_xray.xml
++++ b/app/src/main/res/values-pt-rPT/feature_xray.xml
+@@ -1,14 +1,11 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
+     <string name="feature_xray_kicker">Demo ao vivo</string>
+-    <string name="feature_xray_summary">A página X-Ray do Silvio em ecrã inteiro, para um dispositivo deixado no stand. Equipa: mantenha o canto inferior esquerdo premido três segundos para sair.</string>
++    <string name="feature_xray_summary">A página X-Ray do Silvio, em ecrã inteiro ou na app. Em ecrã inteiro, toque no ecrã para mostrar o botão Sair do ecrã inteiro.</string>
+     <string name="feature_xray_webview_description">Página X-Ray de web-summit.sgit.ai</string>
+     <string name="feature_xray_cover_title">O X-Ray volta já</string>
+     <string name="feature_xray_cover_body">A ligar de novo a web-summit.sgit.ai. A página recarrega sozinha.</string>
+-    <string name="feature_xray_staff_corner">Equipa: mantenha premido três segundos para sair do ecrã X-Ray</string>
+-    <string name="feature_xray_exit_title">Sair do ecrã X-Ray?</string>
+-    <string name="feature_xray_exit_body">Volta à app RiskMandate. A página e a sua chave de demo ficam neste dispositivo.</string>
+-    <string name="feature_xray_exit_leave">Sair</string>
+-    <string name="feature_xray_exit_stay">Ficar</string>
+-    <string name="feature_xray_exit_reload">Recarregar página</string>
++    <string name="feature_xray_fullscreen_enter">Ecrã inteiro</string>
++    <string name="feature_xray_fullscreen_exit">Sair do ecrã inteiro</string>
++    <string name="feature_xray_reload">Recarregar</string>
+ </resources>
+diff --git a/app/src/main/res/values/feature_xray.xml b/app/src/main/res/values/feature_xray.xml
+index 03c1d50..cd4708c 100644
+--- a/app/src/main/res/values/feature_xray.xml
++++ b/app/src/main/res/values/feature_xray.xml
+@@ -1,14 +1,11 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
+     <string name="feature_xray_kicker">Live demo</string>
+-    <string name="feature_xray_summary">Silvio\'s X-Ray page full screen, for a device left on the stand. Staff: hold the bottom-left corner for three seconds to leave.</string>
++    <string name="feature_xray_summary">Silvio\'s X-Ray page, full screen or in the app. In full screen, tap the screen to show the Exit full screen button.</string>
+     <string name="feature_xray_webview_description">X-Ray page from web-summit.sgit.ai</string>
+     <string name="feature_xray_cover_title">X-Ray will be back in a moment</string>
+     <string name="feature_xray_cover_body">Reconnecting to web-summit.sgit.ai. The page reloads by itself.</string>
+-    <string name="feature_xray_staff_corner">Staff: hold for three seconds to leave the X-Ray screen</string>
+-    <string name="feature_xray_exit_title">Leave the X-Ray screen?</string>
+-    <string name="feature_xray_exit_body">Back to the RiskMandate app. The page and its demo key stay on this device.</string>
+-    <string name="feature_xray_exit_leave">Leave</string>
+-    <string name="feature_xray_exit_stay">Stay</string>
+-    <string name="feature_xray_exit_reload">Reload page</string>
++    <string name="feature_xray_fullscreen_enter">Full screen</string>
++    <string name="feature_xray_fullscreen_exit">Exit full screen</string>
++    <string name="feature_xray_reload">Reload</string>
+ </resources>
+diff --git a/app/src/test/java/ai/riskmandate/app/features/xray/XrayPolicyTest.kt b/app/src/test/java/ai/riskmandate/app/features/xray/XrayPolicyTest.kt
+index 6c69bc8..67d3398 100644
+--- a/app/src/test/java/ai/riskmandate/app/features/xray/XrayPolicyTest.kt
++++ b/app/src/test/java/ai/riskmandate/app/features/xray/XrayPolicyTest.kt
+@@ -30,26 +30,34 @@ class XrayPolicyTest {
+         )) assertFalse(u, XrayPolicy.allowPage(u))
+     }
+ 
+-    @Test fun subresourcesOnlyFromThePagesHosts() {
++    @Test fun subresourcesFromAnyHostOverTls() {
+         for (u in listOf(
+-            "https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js", "https://fonts.googleapis.com/css2?family=x",
+-            "https://fonts.gstatic.com/s/x.woff2", "https://promptugal.news/api/v1/companies.json",
+-            "https://dev.send.sgraph.ai/api/vault/append/write/x", "https://openrouter.ai/api/v1/chat/completions",
+-            "https://web-summit.sgit.ai/people/silvio/app/assets/cc/xray.js", "wss://web-summit.sgit.ai/socket",
++            "https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js", "https://fonts.gstatic.com/s/x.woff2",
++            "https://swarm.promptugal.news/api/x", "https://api.github.com/repos/x", "https://openrouter.ai/api/v1/chat/completions",
++            "https://web-summit.sgit.ai/people/silvio/app/assets/cc/xray.js", "wss://web-summit.sgit.ai/socket", "wss://example.com/s",
+         )) assertFalse(u, XrayPolicy.blockSubresource(u))
+         for (u in listOf(
+-            "https://tracker.example/p.js", "http://web-summit.sgit.ai/a.js", "ws://web-summit.sgit.ai/s",
+-            "https://cdn.jsdelivr.net.evil.example.com/x.js", USERINFO_ON_AN_ALLOWED_HOST, "wss://evil.example.com/s",
+-            "https://api.openai.com/v1/x",
++            "http://web-summit.sgit.ai/a.js", "ws://web-summit.sgit.ai/s", "http://tracker.example/p.js",
++            USERINFO_ON_AN_ALLOWED_HOST, "https://cdn.jsdelivr.net:8443/x.js", "https://cdn.jsdelivr.net%2e.evil.example.com/x.js",
+         )) assertTrue(u, XrayPolicy.blockSubresource(u))
+         // Not the network: left to WebView.
+         for (u in listOf("data:image/png;base64,AAAA", "blob:https://web-summit.sgit.ai/1234", "about:blank")) assertFalse(u, XrayPolicy.blockSubresource(u))
+     }
+ 
+-    @Test fun theHostListIsTheOneReviewed() {
+-        assertEquals(
+-            setOf("web-summit.sgit.ai", "cdn.jsdelivr.net", "fonts.googleapis.com", "fonts.gstatic.com", "promptugal.news", "dev.send.sgraph.ai", "openrouter.ai"),
+-            XrayPolicy.SUBRESOURCE_HOSTS,
+-        )
++    @Test fun aTappedLinkOffTheSiteOpensOutsideAndAnUntappedOneIsIgnored() {
++        assertEquals(XrayPolicy.Nav.LOAD, XrayPolicy.navigation(XrayPolicy.START_URL, hasGesture = false))
++        assertEquals(XrayPolicy.Nav.LOAD, XrayPolicy.navigation("https://web-summit.sgit.ai/team/", hasGesture = true))
++        // The page's Summit desk link (target=_blank) and Ask Claude (window.open) both go to claude.ai.
++        assertEquals(XrayPolicy.Nav.OPEN_OUTSIDE, XrayPolicy.navigation("https://claude.ai/new?q=x", hasGesture = true))
++        assertEquals(XrayPolicy.Nav.OPEN_OUTSIDE, XrayPolicy.navigation("https://github.com/SGit-AI/x", hasGesture = true))
++        assertEquals(XrayPolicy.Nav.IGNORE, XrayPolicy.navigation("https://claude.ai/new", hasGesture = false))
++        for (u in listOf("http://example.com/", "intent://x#Intent;end", "javascript:alert(1)", "file:///sdcard/x", "https://web-summit.sgit.ai@evil.example.com/"))
++            assertEquals(u, XrayPolicy.Nav.IGNORE, XrayPolicy.navigation(u, hasGesture = true))
++    }
++
++    @Test fun mediaOnlyEverForTheSite() {
++        assertTrue(XrayPolicy.mayAskForMedia("https://web-summit.sgit.ai/"))
++        assertFalse(XrayPolicy.mayAskForMedia("https://evil.example.com/"))
++        assertFalse(XrayPolicy.mayAskForMedia("http://web-summit.sgit.ai/"))
+     }
+ }
+diff --git a/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt b/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt
+index a65c816..0aac8c7 100644
+--- a/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt
++++ b/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenTest.kt
+@@ -5,7 +5,11 @@ import android.app.Application
+ import android.net.Uri
+ import android.webkit.WebResourceRequest
+ import android.webkit.WebView
++import androidx.compose.foundation.layout.Box
++import androidx.compose.foundation.layout.fillMaxSize
++import androidx.compose.ui.Modifier
+ import androidx.compose.ui.test.assertIsDisplayed
++import androidx.compose.ui.test.click
+ import androidx.compose.ui.test.junit4.createComposeRule
+ import androidx.compose.ui.test.onNodeWithTag
+ import androidx.compose.ui.test.performClick
+@@ -26,72 +30,79 @@ class XrayScreenTest {
+     @get:Rule val compose = createComposeRule()
+     private val app: Application = ApplicationProvider.getApplicationContext()
+ 
+-    private fun request(url: String, main: Boolean = true) = object : WebResourceRequest {
++    private fun request(url: String, main: Boolean = true, gesture: Boolean = true) = object : WebResourceRequest {
+         override fun getUrl(): Uri = Uri.parse(url)
+         override fun isForMainFrame() = main
+         override fun isRedirect() = false
+-        override fun hasGesture() = true
++        override fun hasGesture() = gesture
+         override fun getMethod() = "GET"
+         override fun getRequestHeaders(): Map<String, String> = emptyMap()
+     }
+ 
+-    private fun kiosk(onExit: () -> Unit = {}, startFailed: Boolean = false, showWebView: Boolean = false) = compose.setContent {
++    private fun screen(startFailed: Boolean = false, fullScreen: Boolean = false, showWebView: Boolean = false) = compose.setContent {
+         RiskMandateTheme {
+-            XrayKiosk(onExit = onExit, startUrl = XrayPolicy.START_URL, exitHoldMs = 3_000, clock = { 0L }, showWebView = showWebView, startFailed = startFailed)
++            XrayScreen(startUrl = XrayPolicy.START_URL, clock = { 0L }, showWebView = showWebView, startFailed = startFailed, startFullScreen = fullScreen)
+         }
+     }
+ 
+-    @Test fun theKioskShowsTheWebViewAndNoCover() {
+-        kiosk(showWebView = true)
++    @Test fun inTheAppTheBarIsAboveThePage() {
++        screen(showWebView = true)
+         compose.onNodeWithTag(XrayTags.WEBVIEW).assertExists()
++        compose.onNodeWithTag(XrayTags.TOOLBAR).assertIsDisplayed()
++        compose.onNodeWithTag(XrayTags.RELOAD).assertIsDisplayed()
+         compose.onNodeWithTag(XrayTags.COVER).assertDoesNotExist()
+-        compose.onNodeWithTag(XrayTags.STAFF_CORNER).assertExists()
++        compose.onNodeWithTag(XrayTags.FULLSCREEN).assertDoesNotExist()
+     }
+ 
+     @Test fun aFailedPageShowsTheCalmCover() {
+-        kiosk(startFailed = true)
++        screen(startFailed = true)
+         compose.onNodeWithTag(XrayTags.COVER).assertIsDisplayed()
+     }
+ 
+-    @Test fun aShortTapOnTheCornerDoesNothing() {
+-        kiosk()
+-        compose.onNodeWithTag(XrayTags.STAFF_CORNER).performTouchInput { down(center); advanceEventTime(500); up() }
+-        compose.mainClock.advanceTimeBy(5_000)
+-        compose.onNodeWithTag(XrayTags.EXIT_DIALOG).assertDoesNotExist()
++    @Test fun fullScreenInAndOut() {
++        screen()
++        compose.onNodeWithTag(XrayTags.FULLSCREEN_ENTER).performClick()
++        compose.onNodeWithTag(XrayTags.FULLSCREEN).assertExists()
++        compose.onNodeWithTag(XrayTags.TOOLBAR).assertDoesNotExist()
++        compose.onNodeWithTag(XrayTags.FULLSCREEN_EXIT).assertIsDisplayed().performClick()
++        compose.onNodeWithTag(XrayTags.FULLSCREEN).assertDoesNotExist()
++        compose.onNodeWithTag(XrayTags.TOOLBAR).assertIsDisplayed()
+     }
+ 
+-    @Test fun holdingTheCornerThreeSecondsAsksAndLeaveExits() {
+-        var exited = 0
+-        kiosk(onExit = { exited++ })
+-        compose.onNodeWithTag(XrayTags.STAFF_CORNER).performTouchInput { down(center) }
+-        compose.mainClock.advanceTimeBy(3_100)
+-        compose.onNodeWithTag(XrayTags.EXIT_DIALOG).assertIsDisplayed()
+-        assertEquals("asking is not leaving", 0, exited)
+-        compose.onNodeWithTag(XrayTags.EXIT_LEAVE).performClick()
+-        assertEquals(1, exited)
++    @Test fun theExitButtonFadesAndATapBringsItBack() {
++        compose.mainClock.autoAdvance = false
++        compose.setContent { RiskMandateTheme { FullScreenContent(onExit = {}) { Box(Modifier.fillMaxSize()) } } }
++        compose.mainClock.advanceTimeByFrame()
++        compose.onNodeWithTag(XrayTags.FULLSCREEN_EXIT).assertExists()
++        compose.mainClock.advanceTimeBy(XRAY_TOGGLE_SHOWN_MS + 1_000)
++        compose.onNodeWithTag(XrayTags.FULLSCREEN_EXIT).assertDoesNotExist()
++        compose.mainClock.autoAdvance = true // the tap is delivered and recomposed; the 4 s fade is a real delay, not skipped
++        compose.onNodeWithTag(XrayTags.FULLSCREEN).performTouchInput { click(center) }
++        compose.waitForIdle()
++        compose.onNodeWithTag(XrayTags.FULLSCREEN_EXIT).assertExists()
+     }
+ 
+-    @Test fun stayKeepsTheKiosk() {
+-        var exited = 0
+-        kiosk(onExit = { exited++ })
+-        compose.onNodeWithTag(XrayTags.STAFF_CORNER).performTouchInput { down(center) }
+-        compose.mainClock.advanceTimeBy(3_100)
+-        compose.onNodeWithTag(XrayTags.EXIT_STAY).performClick()
+-        compose.onNodeWithTag(XrayTags.EXIT_DIALOG).assertDoesNotExist()
+-        assertEquals(0, exited)
++    @Test fun startsFullScreenByDefault() {
++        screen(fullScreen = true)
++        compose.onNodeWithTag(XrayTags.FULLSCREEN).assertExists()
++        compose.onNodeWithTag(XrayTags.TOOLBAR).assertDoesNotExist()
+     }
+ 
+-    @Test fun theClientIgnoresPagesOffTheSiteAndBlocksForeignFetches() {
++    @Test fun theClientKeepsPagesOnTheSiteAndSendsTappedLinksOutside() {
+         var errors = 0
+-        val client = XrayWebViewClient(onStarted = {}, onFinished = {}, onMainFrameError = { errors++ }, onRenderGone = {})
++        val outside = mutableListOf<String>()
++        val client = XrayWebViewClient(onStarted = {}, onFinished = {}, onMainFrameError = { errors++ }, onRenderGone = {}, onOutside = { outside += it })
+         val view = WebView(app)
+         assertFalse(client.shouldOverrideUrlLoading(view, request(XrayPolicy.START_URL)))
+-        assertTrue(client.shouldOverrideUrlLoading(view, request("https://evil.example/")))
+-        assertTrue(client.shouldOverrideUrlLoading(view, request("https://riskmandate.ai/")))
+-        assertTrue("a frame from a foreign host", client.shouldOverrideUrlLoading(view, request("https://evil.example/f", main = false)))
+-        assertNotNull(client.shouldInterceptRequest(view, request("https://tracker.example/p.js", main = false)))
+-        assertEquals(403, client.shouldInterceptRequest(view, request("https://tracker.example/p.js", main = false))!!.statusCode)
+-        assertNull(client.shouldInterceptRequest(view, request("https://cdn.jsdelivr.net/npm/three.js", main = false)))
++        assertTrue(client.shouldOverrideUrlLoading(view, request("https://claude.ai/new")))
++        assertEquals(listOf("https://claude.ai/new"), outside)
++        assertTrue(client.shouldOverrideUrlLoading(view, request("https://evil.example/", gesture = false)))
++        assertEquals("not tapped: not opened", 1, outside.size)
++        assertFalse("a frame from another host over TLS", client.shouldOverrideUrlLoading(view, request("https://example.com/f", main = false)))
++        assertTrue("a frame over plain http", client.shouldOverrideUrlLoading(view, request("http://example.com/f", main = false)))
++        assertNull("any host over TLS", client.shouldInterceptRequest(view, request("https://api.github.com/repos/x", main = false)))
++        assertEquals(403, client.shouldInterceptRequest(view, request("http://example.com/p.js", main = false))!!.statusCode)
++        assertNotNull(client.shouldInterceptRequest(view, request("https://evil.example/", main = true)))
+         assertEquals(0, errors)
+     }
+ 
+diff --git a/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenshotTest.kt b/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenshotTest.kt
+index b277a6f..2a43fd1 100644
+--- a/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenshotTest.kt
++++ b/app/src/test/java/ai/riskmandate/app/features/xray/XrayScreenshotTest.kt
+@@ -18,7 +18,7 @@ import org.robolectric.annotation.GraphicsMode
+ import java.io.File
+ 
+ /**
+- * The kiosk's own screen, the offline cover (Robolectric draws no web content, so the page itself needs a device),
++ * The screen in the app's window (the bar above the page) with the offline cover (Robolectric draws no web content, so the page itself needs a device),
+  * on a phone (portrait) and a 10" tablet (landscape). PNGs go to app/build/screenshots/xray-cover-<device>-<orientation>.png.
+  */
+ @RunWith(AndroidJUnit4::class)
+@@ -28,16 +28,16 @@ class XrayScreenshotTest {
+ 
+     @Test fun theCover() {
+         val outDir = File("build/screenshots").apply { mkdirs() }
+-        for ((name, qualifiers) in listOf(
+-            "phone-portrait" to "w360dp-h800dp-port-xxhdpi",
+-            "tablet10-landscape" to "w1280dp-h800dp-land-xhdpi",
++        for ((name, qualifiers, fullScreen) in listOf(
++            Triple("phone-portrait", "w360dp-h800dp-port-xxhdpi", false),
++            Triple("tablet10-landscape", "w1280dp-h800dp-land-xhdpi", false),
+         )) {
+             RuntimeEnvironment.setQualifiers(qualifiers)
+             ActivityScenario.launch(ComponentActivity::class.java).use { scenario ->
+                 scenario.onActivity {
+                     it.setContent {
+                         RiskMandateTheme(darkTheme = true) {
+-                            Surface { XrayKiosk(onExit = {}, startUrl = XrayPolicy.START_URL, exitHoldMs = 3_000, clock = { 0L }, showWebView = false, startFailed = true) }
++                            Surface { XrayScreen(startUrl = XrayPolicy.START_URL, clock = { 0L }, showWebView = false, startFailed = true, startFullScreen = fullScreen) }
+                         }
+                     }
+                 }
+diff --git a/app/src/test/java/ai/riskmandate/app/features/xray/XrayViewTest.kt b/app/src/test/java/ai/riskmandate/app/features/xray/XrayViewTest.kt
+new file mode 100644
+index 0000000..564c99e
+--- /dev/null
++++ b/app/src/test/java/ai/riskmandate/app/features/xray/XrayViewTest.kt
+@@ -0,0 +1,39 @@
++package ai.riskmandate.app.features.xray
++
++import org.junit.Assert.assertEquals
++import org.junit.Assert.assertFalse
++import org.junit.Assert.assertTrue
++import org.junit.Test
++
++class XrayViewTest {
++    @Test fun startsFullScreenAndTogglesBackAndForth() {
++        val start = XrayView()
++        assertTrue(start.fullScreen)
++        val windowed = start.toggled()
++        assertFalse(windowed.fullScreen)
++        assertTrue(windowed.toggled().fullScreen)
++        assertFalse(windowed.toggled().toggled().fullScreen)
++    }
++
++    @Test fun thePagesOwnButtonFromTheWindowReturnsToTheWindow() {
++        val page = XrayView(fullScreen = false).pageEntered()
++        assertEquals(XrayView(fullScreen = true, pageFullScreen = true, byPage = true), page)
++        assertEquals(XrayView(fullScreen = false), page.pageExited())
++    }
++
++    @Test fun thePagesOwnButtonInFullScreenStaysFullScreen() {
++        val page = XrayView(fullScreen = true).pageEntered()
++        assertFalse(page.byPage)
++        assertEquals(XrayView(fullScreen = true), page.pageExited())
++    }
++
++    @Test fun leavingFullScreenEndsThePagesFullScreenToo() {
++        val page = XrayView().pageEntered()
++        assertTrue(page.leavingEndsPageFullScreen)
++        val out = page.toggled()
++        assertEquals(XrayView(fullScreen = false), out)
++        // WebView then reports the page left full screen: stays in the window.
++        assertEquals(XrayView(fullScreen = false), out.pageExited())
++        assertFalse(XrayView().leavingEndsPageFullScreen)
++    }
++}
+-- 
+2.43.0
+
