@@ -5,6 +5,8 @@ started: 2026-11-11, by conductor.b@PrompTugal.angelo at Angelo's word
 status: running
 budget: about 15 USD API-equivalent of worker runs before checking with Angelo (record, not block)
 ---
+**Wake routine:** trig_01Sp6G7mUcG4f97btiJRmgK4 (fires into this lead's session when a worker fires it, and every 2 hours at :12 as a backstop; Angelo, 11 Nov: "Go on all three, 2 hours is fine"). Put "Wake routine: trig_01Sp6G7mUcG4f97btiJRmgK4" in every worker's brief.md.
+
 # The handover market
 
 **Angelo, 11 November:** "we want to be able to handover tasks across users and accounts and services, including Open Router, local Ollamas (one is already installed on this computer but has never been used plus we can install others on some of the devices we have available), even AWS, etc." "We want to move very quickly to the point where we can start handing over tasks, staring from the easiest patterns and then moving on towards more complex ones." "Remember, don't execute anything yourself, this probably needs a pm with workers spawning powers." Earlier: the package (how to create the agent: session-less, model, no schedule; the full prompt with skills and craft; the name, @PrompTugal.angelo; whatever else makes it run); "each conductor is able to claim "outsourced" work depending on their own capacity available, as soon as possible"; "let's each have each session update the board"; "from now on, let's delegate to Dinis's agents."
