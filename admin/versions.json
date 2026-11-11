@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1813",
+    "date": "2026-11-11",
+    "what": "04:33 wake: no change to Day 3; IPMA unchanged; primary pages tried (3rd), none published",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "14f2951cc"
+  },
+  {
     "version": "v0.2.1812",
     "date": "2026-11-11",
     "what": "04:23 wake refresh; CAP poll restarted",
