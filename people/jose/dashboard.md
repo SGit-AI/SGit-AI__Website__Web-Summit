@@ -2,7 +2,7 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the Actions section, the only list of what waits on him, is kept by his conductor (conductor@web-summit.jose); the rest, from the builder template, by his dashboard agent (dashboard@web-summit.jose): what happened, and what Jose and Jose's agents are doing.
 ---
-**Last changed Wed 11 Nov, 01:30 UTC by `dashboard@web-summit.jose`; checked at every wake (07:30, 12:30, 17:30 UTC) and changed only when something did.** [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest by your dashboard agent. Your agents, live: [the Agents board](app/index.html#home).
+**Last changed Wed 11 Nov, 17:35 UTC by `dashboard@web-summit.jose`; checked at every wake (07:30, 12:30, 17:30 UTC) and changed only when something did.** [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest by your dashboard agent. Your agents, live: [the Agents board](app/index.html#home).
 
 ## Stand day, Thursday 12 November {#stand}
 
@@ -88,6 +88,7 @@ What you lead, in your words (4 November): *"technical conversations on agent se
 | **The live demos: attacked, then governed** | WS-18, WS-108 (your two apps: run sheets and QR codes ready, your phone check left), WS-109 | you, conductor@web-summit.jose | Dinis, Nimay, Angelo |
 | **Voice and language agents** | WS-61 (the voice memo loop; its date, 7 November, has passed) | nobody yet | anyone |
 | **Social and channels** (Dinis's piece for you at THE RESTART, WS-208; you confirmed it on 10 November) | WS-208 (the GAMMA-Ray launch posts; each published card and interview shared with the company tagged), WS-207 (the first ten companies), WS-175 (your channels in the private CRM) | you send; writer@PrompTugal.jose drafts the posts, crm@web-summit.jose the channels area | Dinis, Vicky (the articles), Silvio (the stand) |
+| **Lisbon Fringe** (you joined on 11 November, WS-215: Dinis's swarm, one conductor per person; your lane, the channels) | WS-215 (fringe.promptugal.news, once Dinis points the domain at it: the guide to the side events around Web Summit; posts that point to it, you send them) | conductor.fringe@PrompTugal.jose (hourly until Friday) | Dinis (head conductor) |
 | **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (the feedback count, [live](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/lanes/feedback-count.json)), WS-37 (page views), WS-120 (the vault lane with Angelo, both ways), WS-154, WS-160, WS-41 ([your pulse view](pulse/index.html)) | dev@, automation@, vault@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
 
 Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault@web-summit.jose`.
