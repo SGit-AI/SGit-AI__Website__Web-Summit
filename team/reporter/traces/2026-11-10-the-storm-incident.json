@@ -12,7 +12,7 @@
     "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/"
   },
   "captured_by": "reporter@web-summit.dinis",
-  "captured_at": "2026-11-11T00:25Z",
+  "captured_at": "2026-11-11T03:25Z",
   "rules": "Read Vicky's weather desk's public files only; never write to them. Public sources only; nothing on people's whereabouts or contact details.",
   "shape": {
     "event": "n, lane (outside|ours), kind (signal|decision|hand-off|not read), actor {name, kind: authority|person|agent}, what, published (UTC, the source's own time; null if not stated), read (UTC, when our team first read it), read_by, affects[] (the incident's 'could happen' items, README section 3), evidence[], note, handoff {to, via}",
@@ -1936,6 +1936,227 @@
         }
       ],
       "note": "23:36 to 00:17; about 60 commits in the hour"
+    },
+    {
+      "n": 65,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "AEMET (Spain's weather agency)",
+        "kind": "authority"
+      },
+      "what": "Names the storm Charles",
+      "published": "2026-11-09T10:20:00Z",
+      "read": "2026-11-11T02:39:51Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "5c275635",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/5c2756355f23"
+        }
+      ],
+      "note": "2 h 57 min before IPMA's communiqué no. 1 (13:17): the earliest naming in the record",
+      "affects": [
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "n": 66,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "Harbour master (Capitania), Aviso 53/2026",
+        "kind": "authority"
+      },
+      "what": "A maritime notice for the storm",
+      "published": "2026-11-09T14:07:00Z",
+      "read": "2026-11-11T02:29:47Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "928937bf",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/928937bf92d0"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 67,
+      "lane": "outside",
+      "kind": "decision (legal text)",
+      "actor": {
+        "name": "Government: Despacho n.º 13773-A/2026 (Diário da República, II série, supplement, 10 Nov)",
+        "kind": "authority"
+      },
+      "what": "The alert's legal text, read at source: it names no event; Web Summit is not mentioned; 'formally advised' has no legal text",
+      "published": "2026-11-10",
+      "read": "2026-11-11T02:28:00Z",
+      "read_by": "incident.researcher@web-summit.dinis (with a browser)",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "928937bf",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/928937bf92d0"
+        }
+      ],
+      "note": "answers part of the treasure hunt: the summit's closure was the organisers' decision on the government's advice, not an order in the law",
+      "affects": [
+        1
+      ]
+    },
+    {
+      "n": 68,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "Bridges (as recorded by the researcher)",
+        "kind": "authority"
+      },
+      "what": "Tagus bridges limited from 14:48; limits lifted by 22:29 (a sequence, not a conflict)",
+      "published": "2026-11-10T14:48:00Z",
+      "read": "2026-11-11T02:39:51Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "5c275635",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/5c2756355f23"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 69,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA / LPMA METAR (Madeira)",
+        "kind": "authority"
+      },
+      "what": "Observed gust 53 kt (98 km/h) at Madeira's airport at 02:30; Madeira's rain verified (Areeiro 230.5 mm to 01:00)",
+      "published": "2026-11-11T02:30:00Z",
+      "read": "2026-11-11T02:38:28Z",
+      "read_by": "incident.meteorologist@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "d9e90c41",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/d9e90c41f9d7"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "8c822f84",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/8c822f84731f"
+        }
+      ],
+      "note": "the storm arriving where it was forecast first",
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 70,
+      "lane": "ours",
+      "kind": "work",
+      "actor": {
+        "name": "incident.meteorologist@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Hypothesis re-weighed: met.no 01:19 puts the centre just north of Lisbon (the stronger side); peak 14:00 to 17:00; 'just south' now low (labelled analysis)",
+      "published": "2026-11-11T02:29:19Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "5ccc21ca",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/5ccc21cae3ed"
+        }
+      ],
+      "affects": [
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "n": 71,
+      "lane": "ours",
+      "kind": "review",
+      "actor": {
+        "name": "security.repos@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "MEDIUM on the storm site: it publishes vault read keys by rewriting sgit's private prefix to public, past its gate; CRITICAL if any of those vaults holds non-public data (rotate)",
+      "published": "2026-11-11T03:16:23Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "516b76f6",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/516b76f6a318"
+        },
+        {
+          "type": "file",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "path": "team/security.repos/reports/2026-11-11T0335Z.md",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/security.repos/reports/2026-11-11T0335Z.md"
+        }
+      ],
+      "handoff": {
+        "to": "conductor@web-summit.dinis; the incident team",
+        "via": "commit For:; report"
+      }
+    },
+    {
+      "n": 72,
+      "lane": "ours",
+      "kind": "note",
+      "actor": {
+        "name": "the team",
+        "kind": "agents"
+      },
+      "what": "The incident team runs about 30 agents by 03:00 (draft behaviour policies for 30); an LLM cap of 20 USD a day set by Dinis (c83bd7c); the engines' account out of credit at 03:00 (HTTP 402)",
+      "published": "2026-11-11T03:06:49Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "a82da010",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/a82da0109f00"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "c83bd7cd",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/c83bd7cdbbfd"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "acea93ae",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/acea93aefeb4"
+        }
+      ]
     }
   ],
   "lead_times": [
@@ -2020,5 +2241,14 @@
     "to": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles",
     "site": "https://storm-charles.promptugal.news/",
     "note": "this trace stays here (the reporter's folder) and reads the new repository from the next wake"
+  },
+  "see_also": {
+    "note": "incident.reporter@web-summit.dinis (in PrompTugal__News__Storm-Charles, from 03:03) traces how the storm site was built: six traces in sc-trace/1, after this repository's ws-trace/1. This trace keeps the outside signals, our decisions and the lead times; the two do not overlap.",
+    "traces": {
+      "type": "file",
+      "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+      "path": "reporter/traces/index.json",
+      "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/reporter/traces/index.json"
+    }
   }
 }
