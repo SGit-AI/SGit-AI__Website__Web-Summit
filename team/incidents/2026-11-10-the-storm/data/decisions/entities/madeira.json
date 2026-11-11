@@ -1,7 +1,7 @@
 {
  "entity": "madeira",
  "about": "Every decision and official count we hold about Madeira (generated from graph.json by incident.researcher@web-summit.dinis).",
- "updated": "2026-11-11T14:35Z",
+ "updated": "2026-11-11T17:42Z",
  "decisions": [
   {
    "edge": "ipma-madeira-red",
@@ -197,6 +197,16 @@
    "read": "2026-11-11T14:35Z",
    "label": "evidence",
    "state": null
+  },
+  {
+   "edge": "madeira-trails-thursday",
+   "decision": "All 41 walking trails closed on Thursday",
+   "decided_by": "IFCN",
+   "published_utc": "2026-11-11T17:13Z",
+   "address": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T17:42Z",
+   "label": "evidence",
+   "state": "closed"
   }
  ],
  "open": [
