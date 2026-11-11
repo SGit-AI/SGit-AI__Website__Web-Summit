@@ -1,0 +1,274 @@
+{
+ "body": {
+  "packet": "2026-11-11-p1-place-12-items",
+  "packet_fp": "sha256:1853c951325c541b",
+  "runner": "set at write-back (proposed: conductor.fringe@PrompTugal.angelo)",
+  "environment": "R1 Claude Code cloud, Angelo account B, pool/handover-p1-relay",
+  "ran_at": "2026-11-11T17:06:00Z",
+  "runner_choices": {
+   "tier": "session model, not the router",
+   "model": null,
+   "max_tokens": 200
+  },
+  "outputs": [
+   {
+    "input": "work/03-find-the-uncon",
+    "altitude": "A2",
+    "why": "Searches the web with tools until found or not; one task, then stops.",
+    "tries": 1,
+    "call_fp": null
+   },
+   {
+    "input": "work/04-communities",
+    "altitude": "A2",
+    "why": "Must find groups and joining links with tools, then write the page.",
+    "tries": 1,
+    "call_fp": null
+   },
+   {
+    "input": "work/37-releases-as-json",
+    "altitude": "A0",
+    "why": "Git tags, commits and data diffs are deterministic; plain code builds it.",
+    "tries": 1,
+    "call_fp": null
+   },
+   {
+    "input": "work/01-pipeline",
+    "altitude": "A2",
+    "why": "Building CI and a first page needs tools; afterwards CI runs as A0.",
+    "tries": 1,
+    "call_fp": null
+   },
+   {
+    "input": "work/08-channel-drafts",
+    "altitude": "A2",
+    "why": "Drafts need a model, and files written; no scheduling or memory.",
+    "tries": 1,
+    "call_fp": null
+   },
+   {
+    "input": "work/13-editorial-check",
+    "altitude": "A2",
+    "why": "Spotting private people and unstated notes needs judgement, reading the file.",
+    "tries": 1,
+    "call_fp": null
+   },
+   {
+    "input": "work/18-outreach-kit",
+    "altitude": "A2",
+    "why": "Drafts and a share image need a model and tools; a person sends.",
+    "tries": 1,
+    "call_fp": null
+   },
+   {
+    "input": "work/23-organiser-outreach",
+    "altitude": "A3",
+    "why": "Tracker follows people sending over days: memory across runs needed.",
+    "tries": 1,
+    "call_fp": null
+   },
+   {
+    "input": "work/27-captures",
+    "altitude": "A3",
+    "why": "Runs repeatedly, writes to outside vaults, rolls vaults over: an environment.",
+    "tries": 1,
+    "call_fp": null
+   },
+   {
+    "input": "work/31-outreach-map",
+    "altitude": "A2",
+    "why": "Reads many public pages with tools, writes sourced JSON, then stops.",
+    "tries": 1,
+    "call_fp": null
+   },
+   {
+    "input": "work/36-designs-from-the-community",
+    "altitude": "A3",
+    "why": "Intake of pull requests arrives over time; needs its own wake.",
+    "tries": 1,
+    "call_fp": null
+   },
+   {
+    "input": "work/42-the-semantic-graph",
+    "altitude": "A2",
+    "why": "Builds linked files from existing data with tools; dedupe needs judgement.",
+    "tries": 1,
+    "call_fp": null
+   }
+  ],
+  "calls": [
+   {
+    "body": {
+     "input": "work/03-find-the-uncon",
+     "try": 1,
+     "ok": true,
+     "model": "set at write-back",
+     "ledger_id": null,
+     "cost_usd": null,
+     "latency_ms": null,
+     "prompt_sha256": "58f08967915fb732b45ee2476754caebcd00aeb7630418b332a6efa6e95424b5"
+    },
+    "by": null,
+    "sig": null
+   },
+   {
+    "body": {
+     "input": "work/04-communities",
+     "try": 1,
+     "ok": true,
+     "model": "set at write-back",
+     "ledger_id": null,
+     "cost_usd": null,
+     "latency_ms": null,
+     "prompt_sha256": "0e9cfde69e57997a5af3af45b1a7818fc057636a911beed2e5a04f63916cb1d3"
+    },
+    "by": null,
+    "sig": null
+   },
+   {
+    "body": {
+     "input": "work/37-releases-as-json",
+     "try": 1,
+     "ok": true,
+     "model": "set at write-back",
+     "ledger_id": null,
+     "cost_usd": null,
+     "latency_ms": null,
+     "prompt_sha256": "893c25d1a4e4dcdcc14733db8139e30f544f23aa740b97630a7a066f51af0dbd"
+    },
+    "by": null,
+    "sig": null
+   },
+   {
+    "body": {
+     "input": "work/01-pipeline",
+     "try": 1,
+     "ok": true,
+     "model": "set at write-back",
+     "ledger_id": null,
+     "cost_usd": null,
+     "latency_ms": null,
+     "prompt_sha256": "b03d1c0b3f0410c05043fd68e5715a39c3e6b14a636a5b8519944739709be4d3"
+    },
+    "by": null,
+    "sig": null
+   },
+   {
+    "body": {
+     "input": "work/08-channel-drafts",
+     "try": 1,
+     "ok": true,
+     "model": "set at write-back",
+     "ledger_id": null,
+     "cost_usd": null,
+     "latency_ms": null,
+     "prompt_sha256": "b00ab08453232f12653e87c0955f8e3f5f11e632dacddf122dd83f8b115c211c"
+    },
+    "by": null,
+    "sig": null
+   },
+   {
+    "body": {
+     "input": "work/13-editorial-check",
+     "try": 1,
+     "ok": true,
+     "model": "set at write-back",
+     "ledger_id": null,
+     "cost_usd": null,
+     "latency_ms": null,
+     "prompt_sha256": "d499e3a6db89f1067e4884435a17441769b75df5c6ed2066cf03b111924cf8ef"
+    },
+    "by": null,
+    "sig": null
+   },
+   {
+    "body": {
+     "input": "work/18-outreach-kit",
+     "try": 1,
+     "ok": true,
+     "model": "set at write-back",
+     "ledger_id": null,
+     "cost_usd": null,
+     "latency_ms": null,
+     "prompt_sha256": "59a388fbc762be2a36d1dd946a94cf1e01532a99c926a28f00ba6e0ab2dcadd2"
+    },
+    "by": null,
+    "sig": null
+   },
+   {
+    "body": {
+     "input": "work/23-organiser-outreach",
+     "try": 1,
+     "ok": true,
+     "model": "set at write-back",
+     "ledger_id": null,
+     "cost_usd": null,
+     "latency_ms": null,
+     "prompt_sha256": "05b9dd55aaa6b2344b6c39fedbd6a6b0ca5aa03b60f7304c4c6f86964ae3cbdd"
+    },
+    "by": null,
+    "sig": null
+   },
+   {
+    "body": {
+     "input": "work/27-captures",
+     "try": 1,
+     "ok": true,
+     "model": "set at write-back",
+     "ledger_id": null,
+     "cost_usd": null,
+     "latency_ms": null,
+     "prompt_sha256": "5dd0847a93ac513d35dea267183ff15f2bfe41b01e39a9cbe582e91fa5a00c8d"
+    },
+    "by": null,
+    "sig": null
+   },
+   {
+    "body": {
+     "input": "work/31-outreach-map",
+     "try": 1,
+     "ok": true,
+     "model": "set at write-back",
+     "ledger_id": null,
+     "cost_usd": null,
+     "latency_ms": null,
+     "prompt_sha256": "4a260fa04428151869031ccff76d771b73186c0add177ab5fef52882cd8389b4"
+    },
+    "by": null,
+    "sig": null
+   },
+   {
+    "body": {
+     "input": "work/36-designs-from-the-community",
+     "try": 1,
+     "ok": true,
+     "model": "set at write-back",
+     "ledger_id": null,
+     "cost_usd": null,
+     "latency_ms": null,
+     "prompt_sha256": "0e969e9bc2d1c621dac6361737564412d04fc436a13d7306c77b9f4f9a8f6cc0"
+    },
+    "by": null,
+    "sig": null
+   },
+   {
+    "body": {
+     "input": "work/42-the-semantic-graph",
+     "try": 1,
+     "ok": true,
+     "model": "set at write-back",
+     "ledger_id": null,
+     "cost_usd": null,
+     "latency_ms": null,
+     "prompt_sha256": "781878d114e33408acd1fe1f5128b063e392447b04f55337307c01833b9bd200"
+    },
+    "by": null,
+    "sig": null
+   }
+  ],
+  "cost_usd": 0
+ },
+ "by": null,
+ "sig": null,
+ "unsigned": "draft: part one of handover-p1-relay; signed only at write-back after Angelo's go"
+}
