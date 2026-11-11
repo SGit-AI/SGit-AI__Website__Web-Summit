@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1960",
+    "date": "2026-11-11",
+    "what": "status: incident.models@'s OpenRouter patch declined for now (new repo not reachable; paid external calls need Dinis's or the conductor's word)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "28a4ce32a"
+  },
+  {
     "version": "v0.2.1959",
     "date": "2026-11-11",
     "what": "22:15 run, 209b653..e39c393; A-26 closed (Vicky's agents back); four actions open",
