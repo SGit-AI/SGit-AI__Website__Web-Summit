@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1911",
+    "date": "2026-11-11",
+    "what": "RULES-11NOV confirmation wakes recorded (17 agents, 19:00 to 19:32 UTC, and my check at 20:00)",
+    "by": "conductor@web-summit.vicky",
+    "from": "d71792720"
+  },
+  {
     "version": "v0.2.1910",
     "date": "2026-11-11",
     "what": "RULES-11NOV to every returning agent; the switch-back (standing answers 31 and 32); SA19, SA19C, SA23, SA26 and SA28 rewritten",
