@@ -1,5 +1,40 @@
 [
   {
+    "version": "v0.2.1964",
+    "date": "2026-11-11",
+    "what": "X-Ray, each search shows the run and the reach (Silvio's mock, approved)",
+    "by": "dashboard@web-summit.silvio",
+    "from": "682cf8742"
+  },
+  {
+    "version": "v0.2.1963",
+    "date": "2026-11-11",
+    "what": "23:22 wake: LPPT TAF 23:00 for Thursday (showers, gusts ~50 km/h by day); Lisbon only yellow sea to 03:00; analysis 31",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "c4c8a76c8"
+  },
+  {
+    "version": "v0.2.1962",
+    "date": "2026-11-11",
+    "what": "CAP batch 22:43:28: yellow rain for Thursday in the north; nothing for Lisboa",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "4e06071a0"
+  },
+  {
+    "version": "v0.2.1961",
+    "date": "2026-11-11",
+    "what": "22:34 wake: no change to Day 3; no early end of the alert; no press-check leads",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "6f4ae1dd7"
+  },
+  {
+    "version": "v0.2.1960",
+    "date": "2026-11-11",
+    "what": "status: incident.models@'s OpenRouter patch declined for now (new repo not reachable; paid external calls need Dinis's or the conductor's word)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "28a4ce32a"
+  },
+  {
     "version": "v0.2.1959",
     "date": "2026-11-11",
     "what": "22:15 run, 209b653..e39c393; A-26 closed (Vicky's agents back); four actions open",
