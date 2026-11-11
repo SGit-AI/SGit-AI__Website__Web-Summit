@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1844",
+    "date": "2026-11-11",
+    "what": "policy@PrompTugal.angelo: the pipeline workers' lane opened to twenty named slots (fifteen new aliases, no wildcard)",
+    "by": "policy@PrompTugal.angelo",
+    "from": "36a2a0d0d"
+  },
+  {
     "version": "v0.2.1843",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: record the skills survey sub-agent as a run (Angelo's rule: every agentic activity in commits)",
