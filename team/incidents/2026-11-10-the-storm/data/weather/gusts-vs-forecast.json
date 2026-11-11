@@ -1,19 +1,19 @@
 {
  "about": "The latest observed wind in Lisbon against what was forecast for that hour. Facts with sources; no analysis here (see analysis.md).",
- "read_utc": "2026-11-11T16:22:55Z",
+ "read_utc": "2026-11-11T17:23:17Z",
  "observed_airport_latest": {
-  "time_utc": "2026-11-11T16:00Z",
-  "raw": "METAR LPPT 111600Z 21021KT 2500 -RADZ BR BKN004 19/19 Q0989 WS R20 NOSIG",
-  "wind_dir": 210,
-  "wind_kt": 21,
-  "gust_kt": null,
-  "wind_kmh": 39,
-  "gust_kmh": null,
-  "visibility": 1.55,
-  "weather": "-RA -DZ BR",
-  "pressure_hpa": 989,
+  "time_utc": "2026-11-11T17:00Z",
+  "raw": "METAR LPPT 111700Z 29011G23KT 270V330 9999 FEW004 SCT008 17/16 Q0991 NOSIG",
+  "wind_dir": 290,
+  "wind_kt": 11,
+  "gust_kt": 23,
+  "wind_kmh": 20,
+  "gust_kmh": 43,
+  "visibility": "6+",
+  "weather": null,
+  "pressure_hpa": 991,
   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
-  "read_utc": "2026-11-11T16:09:31Z"
+  "read_utc": "2026-11-11T17:22:38Z"
  },
  "observed_airport_max_gust": {
   "kt": 40,
@@ -23,60 +23,45 @@
  },
  "observed_stations_latest_mean": [
   {
-   "kmh": 36.7,
+   "kmh": 29.9,
    "station": "Lisboa, Relógio",
-   "time_utc": "2026-11-11T15:00Z",
+   "time_utc": "2026-11-11T16:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T16:22:55Z"
-  },
-  {
-   "kmh": 32.0,
-   "station": "Oeiras / Vila Fria (CMO)",
-   "time_utc": "2026-11-11T15:00Z",
-   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T16:22:55Z"
-  },
-  {
-   "kmh": 31.0,
-   "station": "Lisboa (Geofísico)",
-   "time_utc": "2026-11-11T15:00Z",
-   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T16:22:55Z"
+   "read_utc": "2026-11-11T17:23:17Z"
   },
   {
    "kmh": 26.6,
-   "station": "Lisboa, Carnide (CML)",
-   "time_utc": "2026-11-11T15:00Z",
+   "station": "Lisboa (Geofísico)",
+   "time_utc": "2026-11-11T16:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T16:22:55Z"
+   "read_utc": "2026-11-11T17:23:17Z"
   },
   {
-   "kmh": 26.3,
-   "station": "Barreiro, Lavradio",
-   "time_utc": "2026-11-11T15:00Z",
+   "kmh": 18.7,
+   "station": "Lisboa, Amoreiras (LFCL)",
+   "time_utc": "2026-11-11T16:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T16:22:55Z"
+   "read_utc": "2026-11-11T17:23:17Z"
+  },
+  {
+   "kmh": 18.0,
+   "station": "Oeiras / Vila Fria (CMO)",
+   "time_utc": "2026-11-11T16:00Z",
+   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
+   "read_utc": "2026-11-11T17:23:17Z"
+  },
+  {
+   "kmh": 17.6,
+   "station": "Barreiro, Lavradio",
+   "time_utc": "2026-11-11T16:00Z",
+   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
+   "read_utc": "2026-11-11T17:23:17Z"
   }
  ],
  "forecast_taf_groups_for_that_hour": {
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-11T16:22:55Z",
-  "groups": [
-   {
-    "change": "BECMG",
-    "prob": null,
-    "from_utc": "2026-11-11T16:00Z",
-    "to_utc": "2026-11-12T00:00Z",
-    "becoming_by_utc": "2026-11-11T18:00Z",
-    "wind_dir": 290,
-    "wind_kt": 12,
-    "gust_kt": null,
-    "wind_kmh": 22,
-    "gust_kmh": null,
-    "visibility": "6+",
-    "weather": "NSW"
-   }
-  ]
+  "read_utc": "2026-11-11T17:23:17Z",
+  "groups": []
  },
  "forecast_ipma_red_wind_warning": null,
  "forecast_ipma_hourly_wed_peak_mean": {
@@ -93,7 +78,7 @@
   "rain_intensity_pt": "Forte",
   "rain_intensity_en": "Strong",
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-11T16:22:55Z"
+  "read_utc": "2026-11-11T17:23:17Z"
  },
- "next_read_utc": "2026-11-11T17:22Z"
+ "next_read_utc": "2026-11-11T18:22Z"
 }

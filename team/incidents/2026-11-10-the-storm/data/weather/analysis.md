@@ -448,3 +448,13 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (read 16:22:30–16:22:55 UTC): no new LPPT METAR since 16:00 (21021KT, light rain and drizzle, Q0989, wind shear R20); TAF AMD 14:36 unchanged; highest LPPT gust in the window still 40 kt (74 km/h) at 14:00. IPMA stations, hour labelled 15:00: rain 0.0–1.2 mm; wind SW, means 18–37 km/h (Relógio 36.7). No new CAP message since 15:55:03 (poll every 5 min to 16:21:01). IPMA's open data still showed Lisbon's orange wind to 18:00 at 16:22:55, 27 min after the CAP ended it; cap.json is current (orange wind ended 15:56; yellow rain to 18:00; orange sea to 21:00; yellow sea to 03:00).
 
 **Analysis (medium-high):** the rain has stopped in all but name; the wind is slowly easing from the SW. Pressure flat at 989 since 14:00: the centre is lingering to the north, and the turn to W–NW with rising pressure (TAF: 16:00–18:00) has not come yet. When it does, a short spell of gusts near 50 km/h is possible (TAF TEMPO 18:00–21:00), under no warning. Section 23's peak times stand.
+
+## 25. 17:25 UTC 11 Nov: the turn to W–NW has come; the centre has passed
+
+**Facts** (read 17:22:38–17:23:17 UTC):
+- LPPT METARs: 16:30 26012KT, visibility 10 km or more, 18/17, Q0990, no wind shear reported; 17:00 29011G23KT 270V330, 17/16, **Q0991**. The wind turned from 210° to 290° in an hour, the pressure rose for the first time today (989 → 991), and the temperature fell 2 °C. Highest LPPT gust in the window still 40 kt (74 km/h) at 14:00.
+- IPMA stations, hour labelled 16:00: rain 0.0–1.2 mm; wind SW to W, means 13–30 km/h.
+- **LPPT TAF issued 17:00** (covers to Thursday 24:00): 29013KT, visibility 10 km or more; Thursday TEMPO 00:00–18:00 showers (4000 m, CB possible); BECMG 00:00–02:00 23013KT; TEMPO 10:00–18:00 23017G27KT (gusts about 50 km/h).
+- Warnings: no new CAP since 15:55:03. IPMA's open data dropped the orange wind by 17:22:38 (about 1 h 25 min after the CAP ended it) and now matches cap.json: yellow rain to 18:00, orange sea to 21:00, yellow sea 21:00–Thursday 03:00.
+
+**Analysis (high):** the wind veered through S and SW to WNW with rising pressure and falling temperature: the centre passed north of Lisbon, and the cold side has arrived. This settles sections 12, 16 and 21: **the centre passed just north, closest about 14:30–16:30**. For Lisbon the storm is over except for the sea (orange to 21:00) and passing showers. **Thursday (J4):** showers at times, SW wind with gusts about 50 km/h from 10:00 (TAF), no wind or rain warning for Lisboa so far; yellow sea until 03:00.
