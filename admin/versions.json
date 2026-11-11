@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1811",
+    "date": "2026-11-11",
+    "what": "area on every decision edge (lisbon, mainland, madeira, porto-santo, national)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "f9c3ff52f"
+  },
+  {
     "version": "v0.2.1810",
     "date": "2026-11-11",
     "what": "Madeira's 71 occurrences to 02:00 (SRPC's press platform via DN Madeira: evidence); Porto Santo's measures not found at source; entities/madeira.json",
