@@ -214,6 +214,45 @@
    "confidence": "low to medium",
    "test_on_wednesday": "wind backing to E/NE before N and pressure minimum ~987 hPa at 17-18Z at LPPT and stations = centre south; veering through SW/W = centre north",
    "prompt_not_evidence": "watcher@web-summit.jose's signal (an undated image on a non-IPMA public page) prompted the question; not used as evidence"
+  },
+  {
+   "written_utc": "2026-11-11T00:40Z",
+   "label": "evidence then analysis",
+   "official_facts": {
+    "communique_no3": false,
+    "rss_built_local": "2026-11-11 00:08:32",
+    "lisbon_cap_after_21_23": false,
+    "downgrade_or_window_change": false,
+    "cap_21_23": "new red rain Beja, Faro 09-18; red rain earlier (09-18) Lisboa, Setúbal",
+    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+    "read_utc": "2026-11-11T00:35Z"
+   },
+   "press_quoting_ipma": [
+    {
+     "outlet": "Observador live (Rádio Observador)",
+     "entry_utc": "2026-11-10T22:35Z",
+     "who": "Paula Leitão, IPMA meteorologist",
+     "quotes_pt": [
+      "deverá entrar entre a região de Lisboa e o Cabo de São Vicente (Sagres)",
+      "Isto ainda atinge a zona de Lisboa",
+      "a zona entre o Cabo Carvoeiro e o Cabo de São Vicente parece agora ser a que terá um impacto mais importante"
+     ],
+     "also": "23:19: 'foi necessário emitir mais avisos vermelhos'",
+     "url": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
+     "read_utc": "2026-11-11T00:37Z",
+     "note": "read through a fetch tool's summary; check quotes before reuse"
+    },
+    {
+     "outlet": "Renascença",
+     "who": "Cristina Simões, IPMA meteorologist (per a search summary)",
+     "claim": "the south up to Lisbon and Setúbal more exposed; may enter through the Algarve",
+     "url": "https://rr.pt/noticia/pais/2026/11/10/depressao-charles-desvia-se-para-sul-e-podera-entrar-em-portugal-pelo-algarve/493004/",
+     "read_utc": null,
+     "note": "not read: 403 to automated reads"
+    }
+   ],
+   "hypothesis_confidence": "medium (was low to medium)",
+   "headline_guidance": "IPMA's forecasters expect the strongest winds south of Lisbon; Lisbon's red warnings stand (until a CAP update says otherwise)"
   }
  ],
  "next_read_utc": "2026-11-11T01:22Z"

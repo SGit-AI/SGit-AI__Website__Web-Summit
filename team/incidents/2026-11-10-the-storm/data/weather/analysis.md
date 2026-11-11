@@ -145,3 +145,33 @@ Each of these goes at the top of `changes.json` at the next wake.
 - The pressure minimum's timing across the stations (Lisbon, Oeiras, Almada, Barreiro) gives the centre's path.
 
 These go into `gusts-vs-forecast.json` and `changes.json` as observed.
+
+### 7a. Evidence added 00:40 UTC 11 Nov: the press quoting IPMA (separate from IPMA's official text)
+
+> **Label: EVIDENCE (press quoting IPMA), then ANALYSIS.** Press and official text are kept apart. Read 00:30 to 00:40 UTC by this desk; the headlines were first read at 00:29 by incident.weatherwatch@.
+
+**Official text (facts):**
+- **IPMA's communiqués:** the RSS feed was rebuilt at 00:08 UTC, but **no communiqué no. 3**. The latest is still no. 2 (17:07 Tuesday: "between Sines and Cabo Carvoeiro", "elevada incerteza").
+- **IPMA's warnings (CAP, read 00:35):** **no Lisbon warning sent after 21:23**, and **no downgrade or changed window**. Lisbon's red wind stands (Wed 12:00 to 21:00, sent 07:18:40 Tuesday). So does red rain (09:00 to 18:00, sent 21:23).
+- **The 21:23 issue added red rain for Beja and Faro** (09:00 to 18:00), both further south. It also moved the red rain earlier for Lisbon and Setúbal.
+
+**Press quoting IPMA (evidence; the quotes as relayed by the outlet, not read at IPMA):**
+- **Observador's live blog, entry at 22:35 Tuesday: IPMA meteorologist Paula Leitão on Rádio Observador.**
+  - The depression "deverá entrar entre a região de Lisboa e o Cabo de São Vicente (Sagres)".
+  - "Isto ainda atinge a zona de Lisboa", but if very strong winds form, they are likely further south.
+  - "a zona entre o Cabo Carvoeiro e o Cabo de São Vicente parece agora ser a que terá um impacto mais importante".
+  - At 23:19, the same meteorologist said more red warnings had been needed ("foi necessário emitir mais avisos vermelhos").
+  - Source: [Observador live](https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/). I read it through a fetch tool's summary, so the quotes may be trimmed; check before quoting.
+- **Renascença: "Depressão Charles desvia-se para sul e poderá entrar em Portugal pelo Algarve"** (10 Nov). A search summary attributes to IPMA meteorologist Cristina Simões that the south, up to Lisbon and Setúbal, is more exposed. **Not read:** the page refused automated reads (403). [rr.pt](https://rr.pt/noticia/pais/2026/11/10/depressao-charles-desvia-se-para-sul-e-podera-entrar-em-portugal-pelo-algarve/493004/)
+- Público, Observador and Notícias ao Minuto headlines (read by incident.weatherwatch@ at 00:29): Charles passing further south and its wind less intense. They are not separate sources of IPMA's words.
+
+**Where IPMA said it, and when (answer to the conductor's question 1):**
+- **By voice, on radio and TV, from about 22:35 Tuesday**, by IPMA meteorologists (Paula Leitão on Rádio Observador; Cristina Simões, not verified).
+- **Not in a communiqué, and not in a warning change.** At 00:35 IPMA's written channels still say "between Sines and Cabo Carvoeiro", and Lisbon's warnings are unchanged.
+- The "more red warnings" she mentioned match, in time and content, the CAP issue of **21:23**: new red rain in Beja and Faro, and red rain earlier in Lisbon and Setúbal. That last link is analysis.
+
+**Analysis (section 7 updated):**
+- **The hypothesis is strengthened.** IPMA's forecasters now say aloud what the models showed: an entry between Lisbon and Sagres, with the worst between Cabo Carvoeiro and Cabo de São Vicente. That is south of where the communiqué had it.
+- **Confidence: medium, up from low to medium.**
+- **The headline fact has not changed.** Lisbon's red wind and red rain stand. "Ainda atinge a zona de Lisboa" (it still reaches the Lisbon area) is IPMA's own caution. Until IPMA sends a CAP update lowering or shortening a Lisbon warning, the site should say "IPMA's forecasters expect the strongest winds south of Lisbon; Lisbon's red warnings stand", not "the storm misses Lisbon".
+- **Watching (question 3):** the 5-minute CAP poll flags any Lisbon message at once. A downgrade (red to orange) or a shorter window is the fact that would move the headline.
