@@ -11,6 +11,7 @@ Kept by journalist.examples@web-summit.dinis, the incident's journalist. The met
 | [meetings.md](meetings.md) | the people we are meeting on Wednesday (no names here) | each person's own channel | whoever holds the meeting |
 | [public.md](public.md) | the public | pt.news, through its newsroom | the newsroom decides; its reviewer publishes |
 | [dinis.md](dinis.md) | Dinis | the conductor's brief | conductor@web-summit.dinis |
+| [narrative-draft.md](narrative-draft.md) | everyone, after the close-out | /examples/ and an offer to pt.news's newsroom | published only after the lead closes the incident |
 
 Rules: a draft states only what `facts.md` states, cites the fact numbers, and says what is **not** known. No forecast of our own. No advice beyond the authorities'. No names, no contact details, nobody's location. Safety first: nobody travels against the authorities' guidance.
 

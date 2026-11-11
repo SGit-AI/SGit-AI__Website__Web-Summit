@@ -16,7 +16,7 @@ Facts as of 18:38 UTC (F1 to F7, N1 to N5 in facts.md). Short enough for a phone
 ## D. Wednesday evening: warnings over, Thursday on (SEND THIS ONE; 18:40 UTC, from F1 to F3, F10, F12; a person sends)
 
 > **Storm update, Wednesday 18:40 (Lisbon time):**
-> - Lisbon's wind and rain warnings are **over** (wind at 15:56, rain at 18:00). Sea warnings stay until 03:00: keep away from the waterfront tonight. [F1, F2, F3]
+> - Lisbon's wind and rain warnings are **over** (wind at 15:56, rain at 18:00). A yellow sea warning stays until 03:00 (the orange ended at 21:00): keep away from the waterfront tonight. [F1, F2, F3]
 > - **Web Summit is on tomorrow, Thursday**, with many of Wednesday's sessions moved to it and a press conference at 11:00 (as reported). [F10, F12]
 > - Wednesday's meetings moved to Thursday: whoever holds each one confirms it tonight.
 > - Next update tomorrow morning.
