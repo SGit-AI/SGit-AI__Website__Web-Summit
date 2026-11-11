@@ -1,6 +1,6 @@
 # riskmandate-android-demo: state
 
-For the digest: Angelo said yes to writing and publishing in the Android repo; spec done (stand-mode xray feature, about 400 lines), build running (its own push refused: the lead pushes its patch), check and publish next; cost so far $2.80 in workers (the lead's own session not yet measured).
+For the digest: X-ray kiosk built (gate green, 973 tests) and pushed to branch angelo/riskmandate-xray-demo (683f9f7) in the Android repo; check-and-publish running; Angelo to decide stand mode (patch 0002); cost so far $8.61 in workers (the lead's own session not yet measured).
 
 Lead: riskmandate-android-demo.pm@PrompTugal.angelo. Branch: project/riskmandate-android-demo. Wake routine: trig_01GnGftTuQdk1LM63LnvaDtn (BRIEF.md on dev).
 
@@ -34,11 +34,17 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - iOS did the same tonight (iOS 16fd6dc: the X-Ray is its start screen).
 - Open for the check: the page calls openrouter.ai and may ask for the microphone; phone-size overlaps on Silvio's page (his to fix, a note For: him via Angelo).
 
+## Build result (pool/riskmandate-android-demo-build 3623d05)
+- Feature `xray` in the Android repo: own full-screen window, immersive, keep-on, locked to web-summit.sgit.ai (plus the page's fetch hosts), reload watchdog and offline cover, 3-second hidden corner exit, own WebView profile keeping the demo key. Gate green locally (973 tests, lint, release APK and AAB). Not testable in the cloud: a real device (no /dev/kvm).
+- 22:15 UTC: the lead applied patch 0001 (sha256 6a01811d9938, as build.md) on Android dev 653320a and pushed branch angelo/riskmandate-xray-demo at 683f9f7 (tree 190ce8df), under Angelo's go.
+- Patch 0002 (xray allowed in stand mode, so stand mode's screen pinning holds visitors in it) is NOT applied: it lets the page reach openrouter.ai in stand mode, which the app's own rule keeps off. Point for Angelo.
+
 ## Questions for conductor.b@
 - The gate on dev refuses the lead's commits: "riskmandate-android-demo.pm@: no lane in people/angelo/policy/lanes.json". Please add this lead's lane (people/angelo/projects/riskmandate-android-demo/**) before the branch comes onto dev.
 - pushed-by.mjs knows only dev (see Decided by default).
 
 ## Waiting on Angelo (tier 3)
+0. Patch 0002: allow the X-ray screen in stand mode (pinning keeps visitors in it; the page then reaches openrouter.ai while stand mode is on, against the app's own stand rule). Lead's recommendation: yes, it is what the stand needs; security.android reviews it on the Android side.
 1. Installing a build on stand devices by hand, and anything on a store; signing keys. (Pushing to the Android repo's dev makes its CI build and send the build to its Firebase testers: that is inside Angelo's "publish".)
 
 ## Decided by Angelo
@@ -46,6 +52,7 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 
 ## Decided by default (Angelo can reverse)
 - 11 Nov: spec first, read only, on slot alpha (large); started 21:15 UTC (runs.md).
+- 11 Nov: the check (charlie, large) started at about 22:17 UTC; publishes onto the Android repo's dev on PASS.
 - 11 Nov: build on slot bravo (large), started 21:20 UTC in parallel with the spec; the check (charlie) starts when the build ends.
 - 11 Nov: the worker's instruction check. pushed-by.mjs knows only pushes to dev, so a lead's brief on project/ reads UNKNOWN; the worker checks instead that 364071b5 (pushed by ANGELO) is an ancestor of the brief's commit. Question for conductor.b@: should pushed-by.mjs learn project/ branches?
 
