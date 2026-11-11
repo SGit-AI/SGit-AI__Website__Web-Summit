@@ -41,9 +41,11 @@ function one(s) {
 
 // the live graph's app: its download page and install guide (dev.app@PrompTugal.angelo, backlog 00a)
 import { pages as desktopPages } from './app/desktop/page.mjs'
+// the pipeline in eight pictures (charlie.large.worker@PrompTugal.angelo, item b4-how-it-works)
+import { pages as howItWorks } from './pipeline/how-it-works/page.mjs'
 
 export function build(ROOT) {
-    return [...guide(ROOT), ...desktopPages()]
+    return [...guide(ROOT), ...desktopPages(), ...howItWorks(ROOT)]
 }
 
 function guide(ROOT) {

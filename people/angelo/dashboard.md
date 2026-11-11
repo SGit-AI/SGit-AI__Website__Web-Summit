@@ -4,6 +4,8 @@ summary: The page Angelo reads first, about action: what is blocked on Angelo, t
 ---
 **Work in [your command centre](app/index.html#kanban).** This page is the short version: what waits on you, then links. Kept by `dashboard@PrompTugal.angelo` under [the protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol); your conductor's digest, when you ask for it in the desk session, carries the detail; its hourly runner flags anything urgent first. Stand-ups: 12:00 and 18:00 UTC from 5 November.
 
+**How your pipeline works, in eight pictures:** [the picture page](pipeline/how-it-works/index.html).
+
 ## 1. Blocked on you {#needs}
 
 Your go is needed before these move:
