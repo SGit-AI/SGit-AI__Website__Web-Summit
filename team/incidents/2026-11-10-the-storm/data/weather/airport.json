@@ -1,7 +1,7 @@
 {
  "about": "IPMA's aeronautical forecast (TAF) and observations (METAR) for Lisbon airport (LPPT), 8 km north of the centre, read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport; not a public warning.",
  "icao": "LPPT",
- "read_utc": "2026-11-11T11:26:40Z",
+ "read_utc": "2026-11-11T12:23:12Z",
  "taf": {
   "issue_utc": "2026-11-11T11:00Z",
   "raw": "TAF LPPT 111100Z 1112/1218 14015KT 4000 RADZ BR SCT004 BKN008 TEMPO 1112/1116 14020G35KT 2000 RA BR SCT002 BKN004 FEW016CB PROB30 TEMPO 1112/1116 14040G55KT 1200 +TSRA SCT015CB BECMG 1116/1118 29012KT 9999 NSW SCT020 TEMPO 1118/1121 29017G27KT TEMPO 1200/1218 4000 SHRA BKN018 FEW020CB BECMG 1200/1202 23013KT",
@@ -108,7 +108,7 @@
    }
   ],
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-11T11:26:40Z"
+  "read_utc": "2026-11-11T12:23:12Z"
  },
  "taf_history": [
   {
@@ -1437,6 +1437,34 @@
    "pressure_hpa": 998,
    "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
    "read_utc": "2026-11-11T11:26:40Z"
+  },
+  {
+   "time_utc": "2026-11-11T11:30Z",
+   "raw": "METAR LPPT 111130Z 07013KT 2000 +RA BR FEW001 BKN004 FEW015TCU 16/15 Q0995 NOSIG",
+   "wind_dir": 70,
+   "wind_kt": 13,
+   "gust_kt": null,
+   "wind_kmh": 24,
+   "gust_kmh": null,
+   "visibility": 1.24,
+   "weather": "+RA BR",
+   "pressure_hpa": 995,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
+   "read_utc": "2026-11-11T12:23:12Z"
+  },
+  {
+   "time_utc": "2026-11-11T12:00Z",
+   "raw": "METAR LPPT 111200Z 08015KT 2500 +RA BR FEW001 BKN004 16/16 Q0994 BECMG 14015KT",
+   "wind_dir": 80,
+   "wind_kt": 15,
+   "gust_kt": null,
+   "wind_kmh": 28,
+   "gust_kmh": null,
+   "visibility": 1.55,
+   "weather": "+RA BR",
+   "pressure_hpa": 994,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
+   "read_utc": "2026-11-11T12:23:12Z"
   }
  ],
  "max_gust": {
@@ -1445,5 +1473,5 @@
   "time_utc": "2026-11-10T11:00Z",
   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json"
  },
- "next_read_utc": "2026-11-11T12:22Z"
+ "next_read_utc": "2026-11-11T13:22Z"
 }

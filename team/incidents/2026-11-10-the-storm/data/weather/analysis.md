@@ -353,3 +353,17 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Analysis (medium):** the rain is behaving as IPMA's red warning says, "forte e persistente": steady, not torrential, about 5 mm an hour, so by 18:00 Lisbon could reach 50–60 mm on today alone at this rate (a projection, not a forecast). Wind is so far far below the orange threshold.
 
 **Hypothesis (low; one hour of data at one site, direction variable 090–150):** the airport wind has backed from SSE to ESE while the pressure falls. Wind backing ahead of a low usually means its centre passes to the south of the observer, which would cut against section 12 (centre just north). The TAF's later swing to 290° fits either side once it has passed. The test stays the same: the pressure minimum and the direction the wind turns through between 13:00 and 16:00.
+
+## 16. 12:25 UTC 11 Nov: the wind keeps backing, pressure falls fast, the heaviest rain hour so far
+
+**Facts** (airport.json and lisbon-rain.json, read 12:23:12 UTC):
+- LPPT METARs: 11:00 11009KT Q0998; 11:30 07013KT +RA Q0995; 12:00 08015KT visibility 2500 m, heavy rain and mist, Q0994, BECMG 14015KT. Pressure fell 4 hPa in the hour to 12:00 (999 at 10:00). Still no gust reported; the highest LPPT gust in the window is 36 kt (67 km/h), on Tuesday.
+- IPMA stations, hour labelled 11:00: Oeiras 17.9 mm, Relógio 17.2 mm, Tapada da Ajuda 14.6 mm, Barreiro 12.5 mm, Carnide 11.9 mm, Amoreiras 11.5 mm: three times the earlier hourly rate. Wind direction turned to E or NE at every station; mean winds 9–24 km/h.
+- Hours labelled 06:00–11:00 (6 h): Oeiras 45.4 mm, Relógio 41.2 mm, Tapada 34.8 mm.
+- LPPT TAF 11:00 unchanged (no amendment); it still expects 140° winds to 16:00. Warnings for Lisboa unchanged; no communiqué no. 3; no new CAP message (poll read every 5 min to 12:18:19).
+
+**Analysis (medium, up from low):** in three hours the wind at the airport has backed from SSE (150°) through ESE to ENE (070–080°), and the city stations agree (E/NE), while the pressure falls faster. On the northern hemisphere a wind that backs as a low approaches puts the observer on the north side of its path. So the centre now looks likely to pass **over or just south of Lisbon**, not just north as section 12 said; section 12's timing (closest about 13:00–15:00) still fits the pressure trend. Consequences, to be watched, not asserted: the strongest wind on the south side (the SW/W sector) may fall south of the Tagus (Setúbal) rather than in Lisbon; Lisbon's peak wind may come after the centre passes, from the NW/W, when the TAF has 290° at 16:00–18:00 with gusts about 50 km/h at times from 18:00. The airport's forecast 140° does not match what is observed; the TAF may be amended.
+
+**Hazard (medium):** the rain is now the story: 11–18 mm in one hour across the city, under a red warning to 18:00. Wind so far is far below IPMA's orange (gusts to 120 km/h).
+
+**Test:** the pressure minimum (now 994 and falling) and the turn: through N to NW means the centre passed south; through S to SW means north.

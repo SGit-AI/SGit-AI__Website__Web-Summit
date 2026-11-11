@@ -406,7 +406,12 @@
    "time_utc": "2026-11-11T11:30Z",
    "section": 15,
    "summary": "LPPT TAF 11:00 repeats the 10:08 amendment; heavy rain steady at 4-6 mm/h (Relógio 24 mm in 5 h); wind backing SSE to ESE, pressure 998 falling (hypothesis, low: centre may pass south)"
+  },
+  {
+   "time_utc": "2026-11-11T12:25Z",
+   "section": 16,
+   "summary": "LPPT wind backed to ENE (080) and pressure fell 4 hPa in an hour to 994; heaviest rain hour yet (11-18 mm in the hour labelled 11:00); centre now likely over or just south of Lisbon (medium), revising section 12"
   }
  ],
- "next_read_utc": "2026-11-11T12:22Z"
+ "next_read_utc": "2026-11-11T13:22Z"
 }
