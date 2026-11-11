@@ -9,12 +9,17 @@
      demo only). The key is kept only in this browser's localStorage; it is never sent anywhere but openrouter.ai and is
      never in the site or the repository. A live result is leads, not facts: shown at once, marked "not reviewed", kept
      only on this device.
+   - Three words instead of the key (Dinis, 11 November, 21:15 UTC): the key can be sealed once with three words
+     (PBKDF2-SHA-256, 600,000 rounds, then AES-256-GCM, all in the browser) and the sealed file published at
+     data/xray/key.sealed.json; on a new device a team member types the three words and the key is opened there.
+     The words are never sent or kept anywhere; only the sealed file is public, and it is useless without them.
    - Names are suggested from PrompTugal.news's list of Web Summit companies (promptugal.news/api/v1/companies.json).
    - What the search cost is hidden unless "Mostrar custo" is on (Silvio's call). */
 (function () {
     const X0 = window.CC_EXTRA = window.CC_EXTRA || {}; X0.views = X0.views || {}
     const SITE = 'https://web-summit.sgit.ai/', GRAVITY = SITE + 'lib/gravity/latest/gravity.js', ASK = SITE + 'admin/tools/xray-ask.mjs', PTCOS = 'https://promptugal.news/api/v1/companies.json'
     const XSLUGS = ['feedzai', 'klarna', 'booking-com', 'amex-gbt', 'atlassian', 'cloudflare', 'fidelidade', 'manus-ai', 'primitive', 'replit', 'riskmandate', 'salesforce', 'sgit']
+    const SEALED = SITE + 'data/xray/key.sealed.json', WORDS = SITE + 'assets/cc/words-en.txt', ROUNDS = 600000
     const KEYK = 'xr.orkey', LIVEK = 'xr.live', COSTK = 'xr.cost'
     const get = k => { try { return localStorage.getItem(k) } catch { return null } }, put = (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v) } catch {} }
     const getJ = u => fetch(u, { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json() })
@@ -88,7 +93,7 @@
       mount(h, A) { api = A; const { ico, Fan } = A; h.innerHTML = '<div class="fan" id="fan-xr"></div>'
         F = Fan(A.$('fan-xr'), { id: 'xr', start: 'leads', orbCol: '#43D9C6', askPh: 'askX',
           top: () => `<form class="xq" id="xq" autocomplete="off"><input id="xin" aria-label="Nome de uma empresa" placeholder="Qualquer empresa da Web Summit…" autocomplete="off" spellcheck="false"><button>▶ X-Ray</button></form><div class="xopt"><span class="team">🔒 Só equipa</span><button type="button" class="tog" id="keyb" aria-expanded="false"><span class="kd" id="kd"></span>Chave</button><button type="button" class="tog sw" id="costb" aria-pressed="${COST}"><i></i>Mostrar custo</button></div><div class="xas" id="xas"></div><div class="sug" id="sug" hidden></div>
-<div class="kdlg" id="kdlg" hidden><b>Chave do OpenRouter</b><p>Guardada só neste aparelho (no browser). Vai só para openrouter.ai; nunca para o site nem para o repositório. Usa a chave descartável da demo, com orçamento limitado.</p><input type="password" id="kin" placeholder="sk-or-…" autocomplete="off"><div class="kr"><button type="button" id="ksave">Guardar</button><button type="button" id="kdel">Apagar deste aparelho</button></div><small id="kst"></small></div>`,
+<div class="kdlg" id="kdlg" hidden></div>`,
           title: () => cur ? `X-Ray<br><em>${esc(cur.name)}</em>` : R.ph === 'live' ? `X-Ray<br><em>${esc(R.name)}</em>` : 'X-Ray',
           chips: () => R.ph === 'live' ? '<span class="chip am">A PESQUISAR AO VIVO</span>' : R.ph === 'replay' ? '<span class="chip am">A PESQUISAR</span>' : R.ph === 'reading' ? '<span class="chip am">A LER AS FONTES</span>' : !cur ? '' : isLive() ? '<span class="chip am">AO VIVO · NÃO REVISTO</span>' : `<span class="chip gr">${pctOf(cur)}% CONFIRMADO</span>`,
           cards: () => { if (R.ph === 'live' || !cur) return [{ k: 'leads', n: '…', l: 'Pistas', i: 'q' }, { k: 'src', n: '…', l: 'Fontes', i: 'src' }, { k: 'ag', n: '…', l: 'Agentes de IA', i: 'bot' }, { k: 'qs', n: '…', l: 'Perguntas', i: 'team' }]
@@ -147,9 +152,12 @@
         if (R.ph === 'live') { const b = api.SR.querySelector('.orbc'); if (b && cur) { /* partial results already drawn on arrival */ } }
         const sig = R.ph + (cur ? cur.slug + arrived().length : '') + Math.round(readDone() * 4); if (sig !== last && R.ph !== 'live') { last = sig; const keep = F.st.sel; F.draw(false); F.st.sel = keep } else if (R.ph === 'live') last = '' }
     function onClick(e) { const t = e.target
-        if (t.closest('#keyb')) { const d = $$('kdlg'); d.hidden = !d.hidden; $$('keyb').setAttribute('aria-expanded', String(!d.hidden)); $$('kst').textContent = KEY ? 'Há uma chave guardada neste aparelho.' : 'Ainda não há chave neste aparelho.'; if (!d.hidden) $$('kin').focus(); return }
-        if (t.closest('#ksave')) { const v = $$('kin').value.trim(); $$('kin').value = ''; if (!v) { $$('kst').textContent = 'Cola a chave primeiro.'; return } KEY = v; put(KEYK, v); kdot(); $$('kst').textContent = 'Guardada neste aparelho.'; setTimeout(() => { $$('kdlg').hidden = true }, 900); return }
-        if (t.closest('#kdel')) { KEY = ''; put(KEYK, null); kdot(); $$('kst').textContent = 'Apagada deste aparelho.'; return }
+        if (t.closest('#keyb')) { const d = $$('kdlg'); d.hidden = !d.hidden; $$('keyb').setAttribute('aria-expanded', String(!d.hidden)); if (!d.hidden) kpaint(); return }
+        if (t.closest('#kopen')) { unseal(); return }
+        if (t.closest('#ksave')) { const v = $$('kin').value.trim(); $$('kin').value = ''; if (!v) { kmsg('Cola a chave primeiro.', 1); return } KEY = v; put(KEYK, v); kdot(); kpaint('Guardada neste aparelho.'); return }
+        if (t.closest('#kdel')) { KEY = ''; put(KEYK, null); kdot(); kpaint('Apagada deste aparelho.'); return }
+        if (t.closest('#kmake')) { makeWords(); return }
+        if (t.closest('#kcopy')) { const ta = $$('kblob'); ta.select && ta.select(); (navigator.clipboard ? navigator.clipboard.writeText(ta.value) : Promise.reject()).then(() => kmsg('Copiado.'), () => { try { document.execCommand('copy'); kmsg('Copiado.') } catch { kmsg('Seleciona e copia à mão.', 1) } }); return }
         if (t.closest('#costb')) { COST = !COST; put(COSTK, COST ? '1' : '0'); $$('costb').setAttribute('aria-pressed', String(COST)); F.draw(false); return }
         if (t.closest('[data-relive]')) { if (cur) go(cur.name, true); return }
         const sb = t.closest('[data-sug]'); if (sb) { $$('xin').value = sb.dataset.sug; $$('sug').hidden = true; go(sb.dataset.sug); return }
@@ -160,7 +168,32 @@
         const hit = names.filter(c => c.l.toLowerCase().includes(q)).sort((a, b) => a.l.toLowerCase().indexOf(q) - b.l.toLowerCase().indexOf(q) || a.l.localeCompare(b.l)).slice(0, 8)
         const tagOf = l => { const d = done.get(l.toLowerCase()); return d ? (d.kind === 'live' ? '<em>neste aparelho · não revista</em>' : '<em class="done">✓ já pesquisada</em>') : '<em>pesquisar ao vivo</em>' }
         box.innerHTML = (hit.some(c => c.l.toLowerCase() === q) ? '' : `<button type="button" data-sug="${esc(raw)}">«${esc(raw)}»<em>pesquisar ao vivo</em></button>`) + hit.map(c => `<button type="button" data-sug="${esc(c.l)}">${esc(c.l)}${tagOf(c.l)}</button>`).join('') + `<p class="src">${PT.length ? PT.length + ' empresas da Web Summit, da lista do PrompTugal.news' : 'A lista do PrompTugal.news não respondeu; qualquer nome serve.'}</p>`; box.hidden = false }
-    function onKey(e) { if (e.key === 'Escape') { const s = $$('sug'), d = $$('kdlg'); if (s) s.hidden = true; if (d) d.hidden = true } }
+    function onKey(e) { if (e.target && e.target.id === 'kwords' && e.key === 'Enter') { e.preventDefault(); unseal(); return } if (e.key === 'Escape') { const s = $$('sug'), d = $$('kdlg'); if (s) s.hidden = true; if (d) d.hidden = true } }
+
+    // ---------- three words: seal the key once, open it on any team device ----------
+    let SEAL = null
+    const b64 = u => btoa(String.fromCharCode(...new Uint8Array(u))), unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0))
+    const norm = w => String(w || '').toLowerCase().normalize('NFKD').replace(/[^a-z\s]/g, ' ').trim().split(/\s+/).filter(Boolean).join(' ')
+    async function aesKey(words, salt, rounds) { const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(norm(words)), 'PBKDF2', false, ['deriveKey'])
+        return crypto.subtle.deriveKey({ name: 'PBKDF2', hash: 'SHA-256', salt, iterations: rounds }, base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']) }
+    const kmsg = (m, bad) => { const k = $$('kst'); if (k) { k.textContent = m; k.className = bad ? 'bad' : '' } }
+    function kpaint(msg) { const d = $$('kdlg'); if (!d) return
+        const paste = `<input type="password" id="kin" placeholder="sk-or-…" autocomplete="off"><div class="kr"><button type="button" id="ksave">Guardar</button></div>`
+        d.innerHTML = KEY ? `<b>Chave do OpenRouter</b><p>✓ Este aparelho já tem a chave. Fica só neste browser e vai só para openrouter.ai.</p><div class="kr"><button type="button" id="kdel">Apagar deste aparelho</button></div>${SEAL ? '' : `<details><summary>Criar três palavras para os outros aparelhos</summary><p>Fecha a chave com três palavras novas. Guarda as palavras contigo; o ficheiro fechado vai para o site (data/xray/key.sealed.json) e sem as palavras não serve para nada.</p><div class="kr"><button type="button" id="kmake">Criar as três palavras</button></div><div id="kout"></div></details>`}<small id="kst"></small>`
+            : SEAL ? `<b>As três palavras</b><p>Escreve as três palavras da equipa para abrir a chave da demo neste aparelho. Só é preciso uma vez.</p><input type="text" id="kwords" placeholder="palavra palavra palavra" autocomplete="off" autocapitalize="none" spellcheck="false"><div class="kr"><button type="button" id="kopen">Abrir</button></div><details><summary>Ou colar a chave</summary>${paste}</details><small id="kst"></small>`
+            : `<b>Chave do OpenRouter</b><p>Guardada só neste aparelho (no browser). Vai só para openrouter.ai; nunca para o site nem para o repositório. Usa a chave descartável da demo, com orçamento limitado.</p>${paste}<small id="kst"></small>`
+        if (msg) kmsg(msg); const f = $$('kwords') || $$('kin'); if (f) f.focus() }
+    async function unseal() { const w = $$('kwords'); if (!w || !SEAL) return; const words = w.value; if (norm(words).split(' ').length < 3) { kmsg('São três palavras.', 1); return }
+        kmsg('A abrir…'); try { const k = await aesKey(words, unb64(SEAL.salt), SEAL.rounds || ROUNDS), pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(SEAL.iv) }, k, unb64(SEAL.ct))
+            KEY = new TextDecoder().decode(pt); put(KEYK, KEY); w.value = ''; kdot(); kpaint('✓ Aberta. A chave fica neste aparelho.'); setTimeout(() => { const d = $$('kdlg'); if (d) d.hidden = true }, 1200)
+        } catch { kmsg('Essas palavras não abrem a chave. Confirma-as.', 1) } }
+    async function makeWords() { if (!KEY) return; kmsg('A criar…'); try { const list = (await fetch(WORDS).then(r => r.text())).split(/\s+/).filter(Boolean); if (list.length < 2048) throw new Error('lista')
+        const pick = () => { const u = new Uint32Array(1); crypto.getRandomValues(u); return list[u[0] % list.length] }, words = [pick(), pick(), pick()].join(' ')
+        const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12)), k = await aesKey(words, salt, ROUNDS)
+        const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, k, new TextEncoder().encode(KEY))
+        const blob = JSON.stringify({ v: 1, what: 'the X-Ray demo OpenRouter key, sealed with three words', kdf: 'PBKDF2-SHA-256', rounds: ROUNDS, cipher: 'AES-256-GCM', wordlist: 'BIP-39 English (assets/cc/words-en.txt)', words: 3, made: new Date().toISOString().slice(0, 10), salt: b64(salt), iv: b64(iv), ct: b64(ct) }, null, 1)
+        $$('kout').innerHTML = `<p>As três palavras (escreve-as já; não aparecem outra vez):</p><div class="words">${esc(words)}</div><p>O ficheiro fechado, para o site (manda-o ao dashboard@; nunca mandes as palavras junto):</p><textarea id="kblob" readonly>${esc(blob)}</textarea><div class="kr"><button type="button" id="kcopy">Copiar o ficheiro</button></div>`; kmsg('')
+    } catch (e) { kmsg('Não consegui criar: ' + String(e && e.message || e), 1) } }
 
     // ---------- the world: sub-menu and the three pages ----------
     const CSS = `html.cc-shell .cc-xray { display: grid; gap: 0; }
@@ -191,7 +224,7 @@
 .sug { position: absolute; left: 16px; top: 46px; z-index: 9; width: min(400px, calc(100% - 32px)); max-height: 320px; overflow: auto; padding: 6px; border-radius: 12px; background: rgba(4,18,18,.97); border: 1px solid rgba(150,230,215,.3); box-shadow: 0 20px 40px rgba(0,0,0,.6); } .sug[hidden], .kdlg[hidden] { display: none; }
 .sug button { all: unset; cursor: pointer; display: flex; justify-content: space-between; gap: 8px; width: 100%; box-sizing: border-box; padding: 6px 9px; border-radius: 8px; font: 500 14px "Barlow Semi Condensed", sans-serif; color: #EAF6F3; } .sug button:hover { background: rgba(67,217,198,.12); } .sug em { font-style: normal; font: 600 10.5px "Barlow Condensed", sans-serif; letter-spacing: 1.2px; text-transform: uppercase; color: #8EADA8; white-space: nowrap; } .sug em.done { color: #3DDC97; } .sug .src { margin: 0; padding: 5px 9px 2px; font: 500 11.5px "Barlow Semi Condensed", sans-serif; color: #5F7D79; }
 .kdlg { position: absolute; left: 432px; top: 46px; z-index: 9; width: min(320px, calc(100% - 32px)); display: grid; gap: 8px; padding: 14px; border-radius: 14px; background: rgba(4,18,18,.97); border: 1px solid rgba(251,226,174,.45); box-shadow: 0 20px 40px rgba(0,0,0,.6); font: 14px "Barlow Semi Condensed", sans-serif; color: #CFE3DF; } .kdlg b { font: 600 15px "Barlow Condensed", sans-serif; letter-spacing: 1px; text-transform: uppercase; color: #FBE2AE; } .kdlg p { margin: 0; font-size: 13px; color: #8EADA8; }
-.kdlg input { all: unset; padding: 7px 10px; border-radius: 8px; border: 1px solid rgba(150,230,215,.3); background: rgba(0,0,0,.35); color: #EAF6F3; font: 500 14px monospace; } .kr { display: flex; gap: 6px; flex-wrap: wrap; } .kr button { all: unset; cursor: pointer; padding: 5px 12px; border-radius: 999px; font: 600 12px "Barlow Condensed", sans-serif; letter-spacing: 1.2px; text-transform: uppercase; border: 1px solid rgba(150,230,215,.3); color: #CFE3DF; } .kr button:first-child { color: #10170F; background: linear-gradient(180deg, #FBE2AE, #D9B26E); border: 0; } .kdlg small { color: #3DDC97; font-size: 12.5px; }
+.kdlg input { all: unset; padding: 7px 10px; border-radius: 8px; border: 1px solid rgba(150,230,215,.3); background: rgba(0,0,0,.35); color: #EAF6F3; font: 500 14px monospace; } .kr { display: flex; gap: 6px; flex-wrap: wrap; } .kr button { all: unset; cursor: pointer; padding: 5px 12px; border-radius: 999px; font: 600 12px "Barlow Condensed", sans-serif; letter-spacing: 1.2px; text-transform: uppercase; border: 1px solid rgba(150,230,215,.3); color: #CFE3DF; } .kr button:first-child { color: #10170F; background: linear-gradient(180deg, #FBE2AE, #D9B26E); border: 0; } .kdlg small { color: #3DDC97; font-size: 12.5px; } .kdlg small.bad { color: #FF9AAE; } .kdlg details { font-size: 13px; color: #8EADA8; } .kdlg summary { cursor: pointer; } .kdlg .words { font: 600 20px "Barlow Condensed", sans-serif; letter-spacing: 1px; color: #FBE2AE; text-align: center; padding: 8px; border-radius: 10px; border: 1px dashed rgba(251,226,174,.5); } .kdlg textarea { all: unset; box-sizing: border-box; width: 100%; height: 70px; padding: 6px 8px; border-radius: 8px; border: 1px solid rgba(150,230,215,.3); background: rgba(0,0,0,.35); color: #CFE3DF; font: 11px monospace; word-break: break-all; white-space: pre-wrap; overflow: auto; }
 .xbtn { all: unset; cursor: pointer; justify-self: start; margin-top: 4px; padding: 6px 14px; border-radius: 999px; font: 600 12.5px "Barlow Condensed", sans-serif; letter-spacing: 1.3px; text-transform: uppercase; color: #10170F; background: linear-gradient(180deg, #FBE2AE, #D9B26E); }
 .orbt, .kc, .it b, .panel h2, .ph { font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important; } .panel, .it, .kc small { font-family: "Barlow Semi Condensed", "Arial Narrow", sans-serif !important; }
 @media (max-width: 900px) { .xopt { left: 16px; top: 50px; } .kdlg { left: 16px; top: 84px; } .xas { top: 84px; } }`
@@ -205,8 +238,8 @@
     }
     let booted = null
     function boot() { if (booted) return booted
-        booted = Promise.all([Promise.all(XSLUGS.map(s => getJ(SITE + 'data/xray/' + s + '/xray.json').catch(() => null))), getJ(PTCOS).catch(() => null), loadScript(GRAVITY)])
-            .then(([xs, pt]) => { X = xs.filter(Boolean).map(prep); PT = ((pt && pt.items) || []).map(i => ({ id: i.id, l: String(i.label || '') })).filter(c => c.l) })
+        booted = Promise.all([Promise.all(XSLUGS.map(s => getJ(SITE + 'data/xray/' + s + '/xray.json').catch(() => null))), getJ(PTCOS).catch(() => null), loadScript(GRAVITY), getJ(SEALED).catch(() => null)])
+            .then(([xs, pt, , sealed]) => { SEAL = sealed && sealed.ct ? sealed : null; X = xs.filter(Boolean).map(prep); PT = ((pt && pt.items) || []).map(i => ({ id: i.id, l: String(i.label || '') })).filter(c => c.l) })
         booted.catch(() => { booted = null }); return booted }
     async function paint() { const root = document.getElementById('cc-xray'); if (!root) return
         root.innerHTML = `<nav class="xr-sub" id="xr-sub" aria-label="X-Ray">${navHTML()}</nav><div id="xr-stage"><p style="padding:24px;color:#8EADA8">A abrir o X-Ray…</p></div><div id="xr-other"></div>`
