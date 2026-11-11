@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **50** the main image directly under "The story", caption under it; published articles moved on Friday, dates kept.
 - **49** step 2 approved (About check, curator evidence; agenda not re-sourced), from Friday; lisbontechfringe.com (Indi's app) counts as another source for events, as a pointer.
 - **48** takedown step 2: data another source confirms stays, re-cited; Dinis's agents' data follows his conductor; Vicky's desks' checks proposed first.
 - **47** takedown step 1: the 13 A-group articles and S44, S47, S49 withdrawn (notice "Withdrawn on 11 November 2026."); S58 the front-page lead first; derived data waits for Dinis.
@@ -264,6 +265,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 49. **Step 2 approved; Indi's app as a source for events** (Vicky, 11 Nov, about 21:35 UTC, in this window: "Conductor: yes to step 2 as recommended (About check, curator evidence; agenda not re-sourced)." and "Dinis also said can use "Indi's app" is lisbontechfringe.com. Count it as another source for events, used as a pointer as before, with each fact checked and cited at the organiser's own page.")
     - **Step 2, as in the plan:** dev@ writes the About-claims script; journalist-portugal, journalist-europe and journalist-ai re-source or cut the About claims that rest only on Web Summit; the reviewer checks and releases; the curator re-cites or marks withdrawn its Web Summit evidence captures. The agenda is not re-sourced. Runs from Friday 13 Nov (after the summit), about 10 to 20 dollars API-equivalent.
     - **lisbontechfringe.com (Indi's app)** counts as another source for events in the sense of standing answer 48, still a pointer only (standing answer 31, rule 5): each fact is checked and cited at the organiser's own page.
+
+50. **The article image under "The story"** (Vicky, 11 Nov, about 21:45 UTC, in this window: "add the image rule to STYLE.md now: the main image goes directly under the "The story" heading, before the first paragraph of the story, with its caption under it. Do the same on published articles, but on Friday after the summit, and keep each article's original publication date. Only the image position changes.")
+    - **Now:** the reviewer adds the rule to the newsroom's `desks/journalist-vicky/STYLE.md` and checks it on every draft (a misplaced image is a fix it makes itself, standing answer 17). Journalists follow it from their next draft.
+    - **Friday 13 Nov:** on the published articles from Vicky's desks that have an image in the story, the reviewer moves the main image and its caption to directly under "The story", keeping each article's original publication date; nothing else changes (the signature is renewed because the file changes). Articles with no image in the story are left as they are.
 
 ## Updates for agents
 
