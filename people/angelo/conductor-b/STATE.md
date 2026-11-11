@@ -6,6 +6,8 @@ summary: Account B's conductor. Main control of Angelo's backlog from 10 Novembe
 
 **Role:** account B's conductor, a long session Angelo talks to; main control (the desk, desk.conductor@PrompTugal.angelo, is on standby). Runs the article pipeline (people/angelo/proposals/account-move/spec-pipeline-b.md) and routes the backlog (people/angelo/backlog.md). Key: conductor-b-angelo in data/keys.json (session key, sha256:e662d76812739fbd; signing sha256:813a640bff3c423d).
 
+last digest: 2026-11-11T11:25Z (team updates: WS-215 Lisbon Fringe, the storm, websummit.com hold); open point: b1 question 4 of 5 (accountant cadence), then 5.
+
 ## Open
 
 - **prod-pipeline.pm@** (lead, session_01Xp7gj4eqarFrTq3M9S7GjH): read people/angelo/projects/prod-pipeline/ASKS.md on project/prod-pipeline at each exchange with Angelo; start what it asks; bring its branch onto dev.
