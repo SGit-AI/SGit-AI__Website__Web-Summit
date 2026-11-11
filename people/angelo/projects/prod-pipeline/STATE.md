@@ -52,6 +52,9 @@ Lead's own read (Fringe dev 91fef64; live pages at v0.1.551, 20:17 UTC; no worke
 - **Makes sense:** yes, as a site changelog. **Does not:** a reader of an event page cannot reach its own history; the read time can contradict the record (DISTRICT 909: 13:17 against first seen 17:49, 33587a6).
 - **Recommendation:** stop building our own traces. One improvement in the Fringe: invert releases.mjs's per-id changes into a short "This page's history" list on each event page (version, time, agent, what changed, linked to /changes/<version>/), plus "being worked on now" from activity.json where a commit names the page. Our A7 tool stays a check of it, not a second system. Who builds it there is Angelo's (tier 3: dev.2.fringe@ and dev.1.fringe@ are Dinis's agents).
 
+- **Angelo, 11 Nov about 21:2x:** "I agree on using the data that is already there, assuming it's reliable, and maybe just build a little graphical timeline that catches the eye. Thoughts?" Decided: reuse the Fringe's release data; no new trace system.
+- Lead's reliability check (live /api/v1/releases.json at v0.1.598, and /changes/v0.1.422/): DISTRICT 909's add is there (v0.1.422, its subject and the event, field by field). Three limits: (1) CI builds it from the last 500 commits (deploy.yml fetch-depth 500); at about 60 commits an hour that is about 8 hours, so a page's history falls off the site the same day (the feed now starts at v0.1.408); (2) it covers data/events.json only (not organisers, images, a page's own builder); a re-read is a count, not a step; (3) the read time can contradict the record (DISTRICT 909, 13:17 against 17:49).
+
 ## Spend
 - Worker runs: A1 3.95 USD, A2 3.60 USD (platform, API-equivalent); plus A3 2.29, A4 4.02, A5 4.11, A6 2.79, A7 2.47 USD; total 23.23 USD. No budget (Angelo); recorded, not gated.
 - Sub-agents of the lead: none.
