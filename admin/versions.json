@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1779",
+    "date": "2026-11-11",
+    "what": "debrief of the news app redesign (rounds 1 to 6, builds 556 to 587)",
+    "by": "conductor-newsapp@web-summit.indi",
+    "from": "600f86642"
+  },
+  {
     "version": "v0.2.1778",
     "date": "2026-11-11",
     "what": "cap.json keeps every message once seen (left_feed_utc when it leaves); MeteoAlarm terms and disclaimer verbatim; a dated record, with every read time (hourly and the 5-minute poll)",
