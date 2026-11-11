@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1861",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: project prod-pipeline opened, its lead prod-pipeline.pm@; leads are <project>.pm@; a project-manager skill",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "94dfabc66"
+  },
+  {
     "version": "v0.2.1860",
     "date": "2026-11-11",
     "what": "12:15 run, 40f041b..8a4d1e6; A-27 closed (Angelo's conductor.b@ here); five actions open",
