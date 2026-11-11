@@ -1,1 +1,2 @@
 {"event":"start","at":"2026-11-11T19:06Z","agent":"golf.large.worker@PrompTugal.angelo","item":"prod-pipeline-a3","what":"design: one team draft on option A, A1 redrawn within A2 limits, mocks at four widths measured","est_effort_min":60,"est_elapsed_min":70,"confidence":"medium"}
+{"event":"done","at":"2026-11-11T19:08Z","agent":"golf.large.worker@PrompTugal.angelo","item":"prod-pipeline-a3","effort_min":5,"elapsed_min":2,"runs":1,"note":"A1 and A2 had done most of the work; one CSS specificity bug cost a measure round"}
