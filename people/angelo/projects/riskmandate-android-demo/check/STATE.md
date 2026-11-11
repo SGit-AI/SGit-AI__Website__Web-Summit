@@ -1,5 +1,5 @@
 # riskmandate-android-demo-check: state
-- Role done: check (charlie.large.worker@PrompTugal.angelo), 2026-11-11 22:14Z to 22:20Z.
+- Role done: check (charlie.large.worker@PrompTugal.angelo), 2026-11-11 22:14Z to 22:18Z (the estimates done line says 22:21 by mistake; effort 4 min, not 7).
 - Result: PASS on code review (check.md). Branch angelo/riskmandate-xray-demo 683f9f7 has the same tree as the builder's tested build; Android dev is still 653320a, so a fast-forward works.
 - Not done here: push access to the Android repo was refused, and so was the gate run (building its code). No workaround tried.
 - Next step: the lead runs check.md's five commands (gate, then push HEAD:dev), watches the android CI run, and records the run, result and versionName.
