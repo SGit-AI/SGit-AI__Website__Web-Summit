@@ -63,11 +63,19 @@
    "bytes": 212,
    "result": "answered; no notice found",
    "excerpt": []
+  },
+  {
+   "at": "2026-11-11T03:33Z",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "http": 200,
+   "bytes": 212,
+   "result": "answered; no notice found",
+   "excerpt": []
   }
  ],
  "tries_summary": {
   "https://www.aeroportolisboa.pt/pt/lis/home": {
-   "tries": 1,
+   "tries": 2,
    "published_found": false
   }
  }
