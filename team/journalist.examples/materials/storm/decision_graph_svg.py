@@ -19,7 +19,7 @@ C = {'done': '#1f5f8b', 'unknown_time': '#1f5f8b', 'not_read': '#8a8984', 'not_a
 o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">',
      f'<rect width="{W}" height="{H}" fill="#faf9f5"/>',
      '<text x="30" y="44" font-size="26" font-weight="700" fill="#141413">The storm: who decided what, and how far ahead</text>',
-     f'<text x="30" y="74" font-size="15" fill="#5e5d59">From the weather desk\'s sources, as of {g["as_of"][11:16]} UTC on {int(g["as_of"][8:10])} November. Lisbon time = UTC. Red rain Wednesday 09:00 to 18:00; red wind 12:00 to 21:00.</text>',
+     f'<text x="30" y="74" font-size="15" fill="#5e5d59">From the weather desk\'s sources, as of {g["as_of"][11:16]} UTC on {int(g["as_of"][8:10])} November. Lisbon time = UTC. Red rain Wednesday 09:00 to 18:00; wind lowered to orange at 07:16.</text>',
      '<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#5e5d59"/></marker></defs>']
 for i, l in enumerate(LANES):
     y = TOP + i * LH
@@ -27,9 +27,10 @@ for i, l in enumerate(LANES):
     o.append(f'<text x="34" y="{y+LH/2}" font-size="14" font-weight="700" fill="#141413">{e(l)}</text>')
 ev = g['event']; ex0, ex1 = X(ev['from']), X(ev['to'])
 o.append(f'<rect x="{ex0}" y="{TOP-14}" width="{ex1-ex0}" height="{LH*len(LANES)+6}" fill="#8a3b1f" fill-opacity="0.10"/>')
-o.append(f'<text x="{(ex0+ex1)/2}" y="{TOP-20}" font-size="13" font-weight="700" fill="#8a3b1f" text-anchor="middle">red wind in Lisbon</text>')
+_bx, _ba = ((X(g['as_of']) + 6, 'start') if ex0 <= X(g['as_of']) <= ex1 else ((ex0 + ex1) / 2, 'middle'))
+o.append(f'<text x="{_bx}" y="{TOP-20}" font-size="13" font-weight="700" fill="#8a3b1f" text-anchor="{_ba}">red rain in Lisbon</text>')
 now = X(g['as_of'])
-o.append(f'<line x1="{now}" y1="{TOP-14}" x2="{now}" y2="{TOP+LH*len(LANES)-8}" stroke="#141413" stroke-dasharray="2 3"/><text x="{now}" y="{TOP-20}" font-size="12" fill="#141413" text-anchor="middle">as of {g["as_of"][11:16]}</text>')
+o.append(f'<line x1="{now}" y1="{TOP-14}" x2="{now}" y2="{TOP+LH*len(LANES)-8}" stroke="#141413" stroke-dasharray="2 3"/><text x="{now-5}" y="{TOP-20}" font-size="12" fill="#141413" text-anchor="end">as of {g["as_of"][11:16]}</text>')
 for h in range(0, 59, 6):
     t = datetime.fromtimestamp(T0.timestamp() + h * 3600, timezone.utc); x = LW + (W - LW - 30) * h / 58
     lab = t.strftime('%a %H:%M') if t.hour == 0 or h == 0 else t.strftime('%H:%M')
@@ -70,7 +71,7 @@ for (lane, _), ns in groups.items():
         LABELS.append(f'<text x="{tx}" y="{ty}" font-size="{12 if j==0 else 11.5}" font-weight="{700 if j==0 else 400}" fill="#141413" text-anchor="{anchor}" stroke="#f3f2ee" stroke-width="4" stroke-linejoin="round" paint-order="stroke">{e(t)}</text>')
 o += BARS + LABELS + DOTS
 lt = '; '.join(f'{x["from"]}: {x.get("to_event", "")} before'.replace('-', ' ') for x in g['lead_times'] if x.get('to_event'))
-o.append(f'<text x="30" y="{H-46}" font-size="12.5" fill="#141413"><tspan font-weight="700">Lead times to the red wind:</tspan> IPMA names the storm 46 h 43 min before; issues the red wind 28 h 41 min before; ANEPC\'s public warning 39 h 30 min; the government\'s alert 23 h 50 min (schools learn 11 h 50 min before they close). </text>')
+o.append(f'<text x="30" y="{H-46}" font-size="12.5" fill="#141413"><tspan font-weight="700">Lead times to the red wind, as issued:</tspan> IPMA names the storm 46 h 43 min before; issues the red wind 28 h 41 min before; ANEPC\'s public warning 39 h 30 min; the government\'s alert 23 h 50 min. </text>')
 o.append(f'<text x="30" y="{H-28}" font-size="12" fill="#5e5d59">Solid: a source says this follows that. Dashed: analysis, not a sourced fact. Hollow: nothing announced yet, or a source our tools cannot read. Bar: happened, time not known.</text>')
 o.append(f'<text x="30" y="{H-10}" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from decision-graph.json, built on weather@PrompTugal.vicky\'s live.md and decision-chain.md and decision-graph.json (PrompTugal__News__Website, eca7b396 and 358fa21b).</text>')
 o.append('</svg>')

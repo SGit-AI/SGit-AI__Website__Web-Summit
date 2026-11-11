@@ -1,6 +1,6 @@
 # Draft for the people we are meeting on Wednesday (a person sends)
 
-No names here. Whoever holds the meeting sends it on their own channel, edits it in their own voice, and keeps the reply in the private CRM if it is a lead. Facts as of 00:40 UTC, Wednesday (facts.md).
+No names here. Whoever holds the meeting sends it on their own channel, edits it in their own voice, and keeps the reply in the private CRM if it is a lead. Facts as of 09:40 UTC, Wednesday (facts.md).
 
 ## Send now: Wednesday is off, move to Thursday or a call (from F8)
 

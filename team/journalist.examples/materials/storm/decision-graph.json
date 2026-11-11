@@ -3,12 +3,12 @@
   "story": "the storm (CHARLES, Lisbon, Wednesday 11 November 2026)",
   "made_by": "journalist.examples@web-summit.dinis",
   "from": "weather@PrompTugal.vicky's desk (PrompTugal/PrompTugal__News__Website desks/weather-vicky/, live.md and decision-chain.md at eca7b396, read 17:10 UTC 10 Nov); every node cites the desk's source and the time the desk read it; updated at 18:40 UTC from the desk's own decision-graph.json (358fa21b, updated 18:00Z), which supersedes this file: read it at source, desks/weather-vicky/decision-graph.json",
-  "as_of": "2026-11-11T00:38Z",
+  "as_of": "2026-11-11T09:38Z",
   "event": {
-    "what": "IPMA red wind warning in force for Lisbon district",
-    "from": "2026-11-11T12:00Z",
-    "to": "2026-11-11T21:00Z",
-    "note": "Lisbon time = UTC in November; red rain from 09:00 (since 21:23 on 10 Nov)"
+    "what": "IPMA red rain warning in force for Lisbon district",
+    "from": "2026-11-11T09:00Z",
+    "to": "2026-11-11T18:00Z",
+    "note": "the wind, red 12:00 to 21:00 until 07:16, is orange 09:00 to 21:00"
   },
   "status_values": {
     "done": "happened, with a source",
@@ -63,7 +63,18 @@
       "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
       "read": "2026-11-10T17:42Z",
       "label_below": true,
-      "short": "red rain, now Wed 09:00 to 18:00"
+      "short": "red rain, Wed 09:00 to 18:00"
+    },
+    {
+      "id": "ipma-wind-orange",
+      "who": "IPMA",
+      "lane": "weather",
+      "decision": "Lisbon's wind lowered from red to orange, brought forward to 09:00 to 21:00, gusts to 120 km/h",
+      "short": "wind lowered to orange",
+      "at": "2026-11-11T07:16Z",
+      "status": "done",
+      "source": "IPMA CAP PO-01-1932; open data",
+      "read": "2026-11-11T07:38Z"
     },
     {
       "id": "mayor",
@@ -155,11 +166,13 @@
       "who": "Lisbon's district and municipal civil-protection commissions; Câmara de Lisboa",
       "lane": "city",
       "decision": "whether to activate Lisbon's emergency plan; the city's own measures",
-      "at": null,
+      "at": "2026-11-10T17:04Z",
       "status": "not_read",
       "note": "activated by the declaration (point 4); lisboa.pt refuses automated reads (403)",
       "source": "https://www.lisboa.pt",
-      "short": "the city's measures"
+      "short": "the city's measures",
+      "at_note": "the time the desk tried and failed to read it (403)",
+      "label_below": true
     },
     {
       "id": "transport",
@@ -282,6 +295,12 @@
       "to": "web-summit",
       "kind": "analysis",
       "why": "the mayor's word came 5 h 50 min before the decision"
+    },
+    {
+      "from": "ipma-red",
+      "to": "ipma-wind-orange",
+      "kind": "sourced",
+      "why": "the same warning, lowered by IPMA as the track moved south"
     }
   ],
   "lead_times": [
