@@ -8,6 +8,8 @@ summary: Account B's conductor. Main control of Angelo's backlog from 10 Novembe
 
 ## Open
 
+- **conductor.fringe@** (Lisbon Fringe, item 05): read its team/angelo/status.json asks "conductor.b@:" in the Fringe repository when Angelo checks in.
+
 - **ROLES.md** (people/angelo/pipeline/ROLES.md): waiting for Angelo's read before any worker runs.
 - **First pipeline item:** Angelo's interview with an exhibitor on agentic governance in construction (the desk's HANDOVER.md, job 2). Waits on Angelo's notes and the consent he recorded.
 - **THE RESTART (WS-208), Angelo's piece (RiskMandate demos):** waits on what Dinis said at 09:00.
@@ -24,6 +26,8 @@ summary: Account B's conductor. Main control of Angelo's backlog from 10 Novembe
 - **Yes to all three** (11 Nov): at most 6 running at once (4 large, 2 small) to start; a small task may use a large slot when no small one is free; go on b0-library.
 - **Archive finished workers** ("Yes, please go ahead."): once a worker's commits are on its branch and logged in runs.md, conductor.b@ archives its session (read-only; the record is the commits). A worker is never sent a second message: each job is a new session.
 - **Lanes open for all twenty** by policy@ (36a2a0d0, pushed-by ANGELO), named in full.
+- **Lisbon Fringe (WS-215, Dinis, due Thu 12 Nov):** "Go ahead, I think I already have access." conductor.b@ started conductor.fringe@PrompTugal.angelo (its own session, its own key, hourly wake to Friday, item 05 the graph), with Angelo's rules added: every activity in commits (team/angelo/runs.md in the Fringe repository), no extra sessions (asks to conductor.b@ in its status.json), tier 3 to Angelo.
+- **No automated reading of websummit.com** (Dinis's incident lead, 05:25, Web Summit's Terms 48.2, 52.1): for every worker prompt and the researcher skill.
 
 ## Waiting on
 
