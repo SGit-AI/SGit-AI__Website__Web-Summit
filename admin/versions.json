@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1912",
+    "date": "2026-11-11",
+    "what": "SA33-VAULTS: vault B's key only to the conductor, as Vicky said",
+    "by": "conductor@web-summit.vicky",
+    "from": "1c22cb118"
+  },
+  {
     "version": "v0.2.1911",
     "date": "2026-11-11",
     "what": "RULES-11NOV confirmation wakes recorded (17 agents, 19:00 to 19:32 UTC, and my check at 20:00)",
