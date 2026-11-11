@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1802",
+    "date": "2026-11-11",
+    "what": "text_en: where IPMA's English drops a qualifier the Portuguese has (por vezes, podendo, persistente, trovoada, forte, locais mais expostos), ours, with the reason in text_en_by",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "f3d5ed8f6"
+  },
+  {
     "version": "v0.2.1801",
     "date": "2026-11-11",
     "what": "the alert's legal text read at source (Despacho n.º 13773-A/2026, DR 2nd series); the harbour master's Aviso 53/2026; four leads not established",
