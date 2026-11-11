@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1810",
+    "date": "2026-11-11",
+    "what": "Madeira's 71 occurrences to 02:00 (SRPC's press platform via DN Madeira: evidence); Porto Santo's measures not found at source; entities/madeira.json",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "db56ba5f7"
+  },
+  {
     "version": "v0.2.1809",
     "date": "2026-11-11",
     "what": "Jose's example (a one-word yes to a GAMMA-Ray scan of 13 agents), and the pictures' version numbers restored",
