@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1879",
+    "date": "2026-11-11",
+    "what": "ABP maker prompt and ABP creation page",
+    "by": "conductor-abpmaker@web-summit.indi",
+    "from": "9f7f4a994"
+  },
+  {
     "version": "v0.2.1878",
     "date": "2026-11-11",
     "what": "14:22 wake: LPPT 14:00 S 29G40KT (74 km/h, window max) with wind shear; Oeiras 26.2 mm in an hour; analysis 21: centre now likely just north",
