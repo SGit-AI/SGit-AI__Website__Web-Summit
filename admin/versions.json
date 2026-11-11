@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1965",
+    "date": "2026-11-11",
+    "what": "X-Ray fix, the key box and the suggestions open above the run, not behind it",
+    "by": "dashboard@web-summit.silvio",
+    "from": "acb669c70"
+  },
+  {
     "version": "v0.2.1964",
     "date": "2026-11-11",
     "what": "X-Ray, each search shows the run and the reach (Silvio's mock, approved)",
