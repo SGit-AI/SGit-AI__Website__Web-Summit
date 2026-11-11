@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1961",
+    "date": "2026-11-11",
+    "what": "22:34 wake: no change to Day 3; no early end of the alert; no press-check leads",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "6f4ae1dd7"
+  },
+  {
     "version": "v0.2.1960",
     "date": "2026-11-11",
     "what": "status: incident.models@'s OpenRouter patch declined for now (new repo not reachable; paid external calls need Dinis's or the conductor's word)",
