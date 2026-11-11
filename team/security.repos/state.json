@@ -1,12 +1,12 @@
 {
   "about": "Where security.repos@web-summit.dinis stopped, per repository and branch: the last commit reviewed (the branch head when the run read it). The next run reviews every commit reachable from any branch and not from these. From the second run, every branch is listed, not only those active since the baseline.",
   "agent": "security.repos@web-summit.dinis",
-  "last_run": "2026-11-11T06:35Z",
+  "last_run": "2026-11-11T09:25Z",
   "baseline_from": "2026-11-08T11:00Z",
   "repos": {
     "SGit-AI/SGit-AI__Website__Web-Summit": {
       "branches": {
-        "dev": "9896c5c3:020ba46a:aafb1855:f88d9a56:1bc6cb49",
+        "dev": "e8eafd3f:48d62557:661535c9:ea7f78ee:abb1f2c6",
         "claude/awesome-dirac-rp94os": "1cc9740a:f6520690:6617362b:879004f6:564e0e8d",
         "claude/beautiful-clarke-mqhept": "a88e8c65:a2e854b4:1b5b2e2f:7506bab1:c53e2ddf",
         "claude/conductor-jose-setup-ogxaka": "ccfecefe:90fb74e8:38fd1b0b:0f89b40b:e179593d",
@@ -41,7 +41,7 @@
     },
     "PrompTugal/PrompTugal__News__Website": {
       "branches": {
-        "dev": "7abb4024:4e96f731:aaf0463b:ba128af8:5f43f44b",
+        "dev": "05dbb9cd:813c4e56:eede2c5d:046051a7:a313d09d",
         "claude/eager-euler-x3k3vm": "6bec1c34:72cbdc31:3d6b5c7c:a2142cee:7f9434b7",
         "claude/serene-keller-r1pzfc": "3affa4b4:a3478ef4:0565a131:54ffe10e:0c55e8bc",
         "claude/sweet-heisenberg-m1vm71": "c9217130:f27dae9a:55e5a708:0e644f28:6b31f73e",
@@ -49,9 +49,9 @@
         "preview/satellite-loop": "0096ef8e:0ce6e422:2e5a1788:860bea06:305582d0",
         "work/conductor-silvio": "e9ffd69b:1fc3f1cf:3aecbb1e:e3474c57:493ea465",
         "work/designer.experiments": "1177421a:6cc6e53e:ff0b578a:5b78ad2e:af1427ca",
-        "work/dev.data": "eb7bc85b:0fa7c440:0ba7612a:6757aa00:653adaf4",
-        "work/dev.graphs": "fe060fef:95c4d2d8:43fbebdf:c745eaa1:0f315436",
-        "work/dev.pages": "835024ac:4593d069:8d255aa5:81db5ab9:8ff95aee",
+        "work/dev.data": "56996698:2fb0dcaa:bf92ab0c:eb5d5f3e:bde5c40e",
+        "work/dev.graphs": "9091aa00:86de1ed1:270c0274:a4f42384:e310f64d",
+        "work/dev.pages": "5ea71079:599ba375:b315f6fe:5d2d93bc:dc6d1ace",
         "work/dev.portugal": "a1b6759c:2e35335a:aeef19d1:80e30d5f:3123cae5",
         "work/dev.search": "938ab510:70025f12:21ecfe41:5dc1b817:0b3a692e",
         "work/dev.verify": "56ed3c82:8adf8857:e4b2a852:d92f8a20:975fb0aa",
@@ -144,7 +144,7 @@
     },
     "PrompTugal/PrompTugal__News__Storm-Charles": {
       "branches": {
-        "dev": "bfadc616:c6c33d8f:6b3c99dd:5dd85dc4:dcb72235",
+        "dev": "b52b5c5c:74ee9418:ac100e81:b7749b2c:e15d653c",
         "main": "3a61421c:9ddb9966:6e7cbec7:93f27193:7c267916"
       },
       "note": "Added at run 18 (11 Nov), at conductor@web-summit.dinis's request (10 Nov 21:17, material); the storm incident's site, storm-charles.promptugal.news."
