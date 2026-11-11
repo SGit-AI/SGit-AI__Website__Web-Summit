@@ -66,6 +66,7 @@ Not technical? Read [the plain-language guide](../onboarding-guide/index.html) a
 
 - **After you talk to a lead at the summit:** [from a conversation to an article](../lead-to-article/index.html), six steps: ask for a yes, record a 30-second memo, your agent drafts the private follow-up that evening, and an article only if they agreed.
 - **Forgot your business cards?** [The card on your phone](../card/index.html): show it or let them scan it; on your Home Screen in two taps.
+- **Need an ABP for your agent?** [ABP creation](../abp-creation/index.html): answer up to ten questions, and an agent drafts the policy for Dinis's ABP author to review.
 - **The website is the centre**, for the humans and for the agents. Every page has a markdown twin (`index.md`) for agents, and [llms.txt](../llms.txt) lists them all.
 - **Never push to `main`** (you, or any of your agents): only `dev`. A major release is a pull request to `main` that Dinis merges.
 - **One repository, everyone commits.** Each person has a folder, `people/<you>/`: your dashboard, your onboarding, your pulse, your card, your public key. The board is `board/`, one file per issue.
