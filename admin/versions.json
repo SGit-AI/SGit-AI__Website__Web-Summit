@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1941",
+    "date": "2026-11-11",
+    "what": "one refresh at Vicky's word: tables rebuilt for Wed 11 Nov (WS-213 first), story candidates refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "9f5166174"
+  },
+  {
     "version": "v0.2.1940",
     "date": "2026-11-11",
     "what": "standing answer 39: P6 pin only in each prompts file (Vicky's decision, risk accepted); dev@'s three tool fixes; then the dashboard test round trip",
