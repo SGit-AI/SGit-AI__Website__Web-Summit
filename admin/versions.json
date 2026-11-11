@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1901",
+    "date": "2026-11-11",
+    "what": "17:20 wake: brief 23 to Jose (he joined Lisbon Fringe; crm, dev and vault wait on him); his fringe conductor in agents.json",
+    "by": "conductor@web-summit.jose",
+    "from": "0810b4b33"
+  },
+  {
     "version": "v0.2.1900",
     "date": "2026-11-11",
     "what": "17:22 wake: wind turned WNW, pressure rising: centre passed just north; TAF 17:00 covers Thursday; analysis 25",
