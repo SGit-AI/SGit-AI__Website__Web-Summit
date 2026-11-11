@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1884",
+    "date": "2026-11-11",
+    "what": "wake 15:19: the incident +11 events; Lisbon's red rain ended at 15:00, Thursday reported reopening",
+    "by": "reporter@web-summit.dinis",
+    "from": "b4d228645"
+  },
+  {
     "version": "v0.2.1883",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: charlie started on b4-how-it-works (design + build)",
