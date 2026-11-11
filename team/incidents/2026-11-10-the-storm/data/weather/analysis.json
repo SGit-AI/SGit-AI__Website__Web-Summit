@@ -317,6 +317,34 @@
     "wikipedia_date_note": "NHC labels AL94 on 6 Nov 11:37Z, not 7 Nov",
     "lead_time_meaning": "if true, a precursor ~9 days ahead (2 Nov) and an invest ~5 days ahead (6 Nov): weak signals, not warnings; first impact signal for Portugal stays IPMA no. 1 (~47 h)"
    }
+  },
+  {
+   "written_utc": "2026-11-11T02:35Z",
+   "label": "hypothesis re-weighed",
+   "supersedes": "2026-11-11T00:05Z and 00:40Z versions (kept above)",
+   "inputs_changed": {
+    "met_no_run": "2026-11-11T01:19:09Z",
+    "met_no": "backs to 118 deg at 12:00 then veers 140-180-200-232-283 deg (13-17:00); peak mean 56.5-58.3 km/h at 14-15:00 from S-SSW; MSLP min 987.7 hPa at 15:00; no swing to N",
+    "ipma_hourly": "unchanged (19:56 run): SE all day, N at 18:00, NW after",
+    "taf_2300": "SSE 30G45KT 09-16, PROB30 S 43G58KT 10-18, BECMG W 12 kt 18-20 (a veer through S to W)",
+    "ipma_forecasters_radio": "entry between the Lisbon region and Cabo de São Vicente; biggest impact Cabo Carvoeiro to Cabo de São Vicente; still reaches Lisbon"
+   },
+   "weighing": "newest model (met.no 01:19) and TAF show the south-of-track pattern (centre passing just north of Lisbon ~15:00, Lisbon on the stronger southern edge); IPMA's older hourly run and its forecasters' words lean the other way: the side is unsettled",
+   "hypothesis_just_south": {
+    "confidence": "low (was medium)"
+   },
+   "stands": "centre passes very close to Lisbon between ~15:00 and 18:00 (confidence medium)",
+   "worst_window_utc": [
+    "2026-11-11T12:00Z",
+    "2026-11-11T18:00Z"
+   ],
+   "likely_peak_utc": [
+    "2026-11-11T14:00Z",
+    "2026-11-11T17:00Z"
+   ],
+   "ends_utc": "2026-11-11T21:00Z",
+   "headline_guidance": "'less wind for Lisbon' is not supported; say the models disagree on which side the centre passes, and IPMA's red warnings for Lisbon stand",
+   "test_on_wednesday": "LPPT veer through SW to W with strongest S gusts before the pressure minimum = centre passed north; back through E to N = passed south"
   }
  ],
  "next_read_utc": "2026-11-11T03:22Z"

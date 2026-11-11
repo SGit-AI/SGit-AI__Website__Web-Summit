@@ -602,7 +602,7 @@ def madeira(fname='madeira.json', pick=None, about=None):
         changes.append(f"{region}: largest 6 h rain {top['max_6h_rain']['mm']} mm at {top['name']} (hours {top['max_6h_rain']['hours_labelled'][0][8:13]}-{top['max_6h_rain']['hours_labelled'][1][8:13]})")
     return {'about': about or "IPMA's hourly station observations in Madeira (rain in mm per hour, mean wind), kept across reads (the feed holds 24 hours), sorted by each station's largest rain over six consecutive hourly values. Facts.",
             'hour_label': HOUR_LABEL, 'source': U['obs'], 'stations_source': U['stations'], 'read_utc': NOW, 'stations': out,
-            **({'earlier_warnings': prev['earlier_warnings']} if 'earlier_warnings' in prev else {})}
+            **{k_: prev[k_] for k_ in ('earlier_warnings', 'station_warning_areas', 'observed_gusts') if k_ in prev}}
 
 
 def main():

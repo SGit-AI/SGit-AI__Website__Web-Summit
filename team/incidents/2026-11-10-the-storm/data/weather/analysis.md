@@ -201,3 +201,29 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 - **Against, or not established:** no source read says so. NHC never names the absorbing low. IPMA does not say where CHARLES came from. Wikipedia's own editor's note says the sources do not state it. The subtropical Atlantic often holds several lows at once. **Not established.**
 
 **What it means for "how far ahead could we have known" (analysis):** if the hypothesis holds, a precursor was visible in public outlooks about **9 days ahead** (2 Nov), and as a named invest about **5 days ahead** (6 Nov). That would be a weak signal, not a warning. NHC's outlooks are about tropical formation over the western Atlantic, not about impact in Portugal. The first impact signal for Portugal stays IPMA's communiqué no. 1 (about 47 h ahead). The red wind came about 28.7 h ahead.
+
+### 7b. Re-weighed, 02:35 UTC 11 Nov: the inputs moved
+
+> **Label: HYPOTHESIS, re-weighed.** The versions above (7, written 00:05; 7a, 00:40) stay as written, dated. This one supersedes them. It was prompted by the stories agent's catch, passed on by incident.conductor@.
+
+**What changed in the inputs (facts):**
+- **met.no's run updated 01:19 UTC** (read 02:22) is different from the 23:20 run I used:
+  - the wind backs to ESE (118° at 12:00), then **veers through south and south-west to west**: 140° at 13:00, 180° at 14:00, 200° at 15:00, 232° at 16:00, 283° at 17:00;
+  - **its strongest mean wind is 56 to 58 km/h from the south and south-south-west at 14:00 to 15:00** (was 36 km/h at 18:00);
+  - **pressure bottoms at 987.7 hPa at 15:00** (was 986.7 at 17:00 to 18:00);
+  - there is **no swing to north** any more.
+- **IPMA's hourly model** is unchanged since its 19:56 run (SE all day, N at 18:00, then NW). It is now the older guidance.
+- **The 23:00 TAF**, re-read: SSE (160°) gusting 45 kt 09:00 to 16:00, a 30% chance of S (180°) gusting 58 kt 10:00 to 18:00, then **becoming W (260°) 18:00 to 20:00**. That is a veer through south to west, which I did not weigh before.
+- **IPMA's forecasters on radio** (22:35, quotes verified at source): entry "entre a região de Lisboa e o Cabo de São Vicente", the biggest impact between Cabo Carvoeiro and Cabo de São Vicente, "ainda atinge a zona de Lisboa".
+
+**Re-weighed (analysis):**
+- **The newest model now points the other way.** A veer through south-west to west, with the strongest wind from the south-south-west before the minimum, is the pattern for a place **south of the centre's track, on its stronger southern edge**. On the 01:19 run, the centre passes **close to Lisbon and just north of it, around 15:00**. The 23:00 TAF's veer through south to west is consistent with that. IPMA's older hourly run (and met.no's previous run) had the north-side pattern. IPMA's forecasters, by voice, put the centre's entry from Lisbon southwards.
+- **So the side of Lisbon the centre passes on is now unsettled.** The guidance disagrees, and the newest model favours the more dangerous side for the city. **The "just south of Lisbon" hypothesis drops to low confidence.** What stands across all inputs: **the centre passes very close to Lisbon, between about 15:00 and 18:00.**
+- **What it means for the worst:** on met.no's newest run, Lisbon's strongest wind comes **14:00 to 16:00 from the south and south-west**, ahead of and at the minimum. A 56 to 58 km/h mean implies gusts well above 90 km/h (rule of thumb, analysis). That fits IPMA's red wind warning (gusts to 120, up to 140 km/h in exposed places), which IPMA has never lowered. **The worst window stays 12:00 to 18:00, and the peak most likely 14:00 to 17:00.** Red rain runs 09:00 to 18:00; red wind ends at 21:00.
+- **For the site (analysis):** "less wind for Lisbon" is **not supported** by the current inputs. Better: "the models disagree on which side of Lisbon the centre passes; IPMA's red warnings for Lisbon stand".
+- **Confidence:**
+  - the timing of the passage (15:00 to 18:00): medium;
+  - which side it passes on: low;
+  - Lisbon's red warnings being right to stand: they are IPMA's, unchanged since 21:23.
+
+**The test on Wednesday (as before):** at Lisbon airport, a **veer through south-west to west**, with the strongest gusts from the south before the pressure minimum, means the centre passed north (the dangerous side). A **back through east to north** means it passed south.
