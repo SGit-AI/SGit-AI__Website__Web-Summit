@@ -1,0 +1,154 @@
+/* Make your ABP (/abp-make/, assets/abp-make.js; conductor@web-summit.indi, WS-34): the stand demo. Colours are the
+   site's tokens only (assets/site.css), so light and dark mode follow the site. Readable from a metre away on a laptop,
+   and at 390 px wide. Three designs: .abpm-a Interview, .abpm-b Builder, .abpm-c Story. */
+body.abpm-on nav.site { position: static; }
+body.abpm-on .rail, body.abpm-on .crumbs, body.abpm-on nav.subnav, body.abpm-on .personbar { display: none !important; }
+body.abpm-on main { padding-top: 1.2rem; }
+.frame.abpm-frame { display: block; max-width: 96rem; }
+.abpm { --r: 16px; padding-top: .2rem; }
+.abpm [hidden] { display: none !important; }
+.abpm-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem 1rem; margin: 0 0 1rem; }
+.abpm-brand { display: flex; flex-direction: column; line-height: 1.25; }
+.abpm-brand > b { font-size: clamp(1.4rem, 1.2vw + 1rem, 1.9rem); letter-spacing: -0.02em; }
+.abpm-brand > span { color: var(--ink-2); font-size: 1rem; }
+.abpm-brand > span b { color: var(--ink); }
+.abpm-bar-acts { display: flex; gap: 1rem; }
+.abpm-link { background: none; border: 0; padding: .35rem 0; font: 600 1rem var(--sans); color: var(--accent-dk); text-decoration: underline; text-underline-offset: .2em; cursor: pointer; min-height: 40px; }
+.abpm-link:hover { text-decoration-thickness: 2px; }
+
+/* progress: ten dots, each one a way back to its question */
+.abpm-dots { list-style: none; margin: 0 0 1.2rem; padding: 0; display: flex; gap: .4rem; max-width: 40rem; }
+.abpm-dots li { flex: 1 1 0; min-width: 0; margin: 0; }
+.abpm-dots button { width: 100%; height: 2.4rem; border-radius: 10px; border: 2px solid var(--line-2); background: var(--surface); color: var(--ink-2); font: 700 1rem var(--sans); cursor: pointer; padding: 0; }
+.abpm-dots button.did { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-dk); }
+.abpm-dots button.now { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+/* the question card */
+.abpm-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: clamp(1.1rem, 2.4vw, 2.2rem); box-shadow: var(--shadow); }
+.abpm-qn { margin: 0 0 .3rem; font: 700 .95rem var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--accent-dk); }
+.abpm-qt { display: block; margin: 0 0 .9rem; font-size: clamp(1.55rem, 1.6vw + 1rem, 2.5rem); font-weight: 800; line-height: 1.18; letter-spacing: -0.02em; color: var(--ink); }
+.abpm-lede { font-size: 1.15rem; color: var(--ink-2); margin: 0 0 1rem; }
+.abpm-f { display: block; width: 100%; min-height: 3.4em; padding: .7em .85em; border: 2px solid var(--line-2); border-radius: 12px; background: var(--bg); color: var(--ink); font: 500 clamp(1.1rem, .6vw + .95rem, 1.45rem)/1.45 var(--sans); resize: vertical; overflow: hidden; }
+.abpm-f:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.abpm-f::placeholder { color: var(--ink-2); }
+.abpm-src { min-height: 1.5em; margin: .45rem 0 0; font-size: .98rem; color: var(--ink-2); }
+.abpm-src .abpm-link { min-height: 0; padding: 0; font-size: .98rem; }
+.abpm-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; align-items: center; }
+.abpm-nav .abpm-btn:last-child { margin-left: auto; }
+.abpm-btn { display: inline-flex; align-items: center; justify-content: center; gap: .4em; min-height: 54px; padding: .6em 1.3em; border-radius: 12px; border: 2px solid var(--accent); background: var(--accent); color: var(--accent-ink); font: 700 1.12rem var(--sans); cursor: pointer; text-decoration: none; }
+.abpm-btn:hover { background: var(--accent-dk); border-color: var(--accent-dk); }
+.abpm-btn.ghost { background: transparent; color: var(--ink); border-color: var(--line-2); }
+.abpm-btn.ghost:hover { border-color: var(--accent); background: var(--accent-soft); }
+.abpm-btn:disabled { opacity: .4; cursor: default; }
+.abpm-keys { margin: .7rem 0 0; font-size: .9rem; color: var(--ink-2); }
+.abpm-priv { margin: 1.2rem 0 0; font-size: .95rem; color: var(--ink-2); }
+.abpm-done-acts { display: flex; flex-wrap: wrap; gap: .6rem; margin: .4rem 0 0; }
+.abpm-status { min-height: 1.4em; margin: .5rem 0 0; color: var(--ok); font-weight: 600; }
+
+/* the picker */
+.abpm-pick { max-width: 60rem; }
+.abpm-choices { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: .7rem; margin: 0 0 1rem; }
+.abpm-choice { display: flex; flex-direction: column; align-items: flex-start; gap: .2rem; text-align: left; min-height: 64px; padding: .8rem 1rem; border-radius: 14px; border: 2px solid var(--line-2); background: var(--bg); color: var(--ink); font: inherit; cursor: pointer; }
+.abpm-choice b { font-size: 1.2rem; line-height: 1.25; }
+.abpm-choice span { color: var(--ink-2); font-size: .98rem; line-height: 1.35; }
+.abpm-choice i { font-style: normal; font-size: .85rem; font-weight: 700; color: var(--warm); }
+.abpm-choice:hover, .abpm-choice:focus-visible { border-color: var(--accent); background: var(--accent-soft); }
+.abpm-choice.ghost { border-style: dashed; }
+
+/* the ABP document */
+.abpm-doc { font-size: 1.02rem; line-height: 1.5; color: var(--ink); }
+.abpm-doc h2 { font-size: 1.2rem; margin: 0 0 .4rem; }
+.abpm-doc h3 { font-size: 1.02rem; margin: .9rem 0 .3rem; }
+.abpm-doc p { margin: .3rem 0 .5rem; }
+.abpm-doc ul, .abpm-doc ol { margin: .2rem 0 .5rem; padding-left: 1.3rem; }
+.abpm-doc li { margin: .15rem 0; }
+.abpm-doc dl { display: grid; grid-template-columns: minmax(8rem, max-content) 1fr; gap: .25rem 1rem; margin: .2rem 0 .4rem; }
+.abpm-doc dt { font-weight: 700; }
+.abpm-doc dd { margin: 0; }
+.abpm-doc dd ul { margin: 0; }
+.abpm-banner { display: inline-block; margin: 0 0 .5rem !important; padding: .3rem .7rem; border-radius: 8px; background: var(--warn-soft); color: var(--warm); font-weight: 700; font-size: .95rem; }
+.abpm-dtitle { font-size: clamp(1.4rem, 1vw + 1rem, 1.8rem); margin: 0 0 .5rem; }
+.abpm-sec { padding: .7rem .9rem; margin: 0 -.9rem; border-left: 4px solid transparent; border-radius: 6px; transition: opacity .25s, background-color .25s; }
+.abpm-sec.pending { opacity: .38; }
+.abpm-sec.hot { background: var(--accent-soft); border-left-color: var(--accent); opacity: 1; }
+.abpm-tw { overflow-x: auto; }
+.abpm-doc table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+.abpm-doc th, .abpm-doc td { text-align: left; vertical-align: top; padding: .4rem .5rem; border-bottom: 1px solid var(--line); }
+.abpm-doc thead th { font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); border-bottom: 2px solid var(--line-2); }
+.abpm-doc tbody th { width: 11rem; }
+.abpm-kind { display: inline-block; padding: .05rem .5rem; border-radius: 999px; font-size: .82rem; font-weight: 700; white-space: nowrap; }
+.k-rule { background: var(--wait-soft); color: var(--ink); }
+.k-review { background: var(--sent-soft); color: var(--sent); }
+.k-capability { background: var(--ok-soft); color: var(--ok); }
+.k-content { background: var(--warm-soft); color: var(--warm); }
+
+/* a: Interview: the card in the centre, the ABP in a side panel (below it on a phone) */
+.abpm-grid { display: grid; gap: 1.4rem; }
+.abpm-side { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 1rem 1.4rem; }
+@media (min-width: 64rem) {
+    .abpm-a .abpm-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: start; gap: 2rem; }
+    .abpm-a .abpm-card { position: sticky; top: 1rem; }
+    .abpm-a .abpm-side { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow-y: auto; }
+}
+
+/* b: Builder: the document, its questions inline */
+.abpm-b .abpm-sticky { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: .5rem 0 .3rem; margin-bottom: .6rem; border-bottom: 1px solid var(--line); }
+.abpm-b .abpm-sticky .abpm-dots { margin-bottom: .4rem; }
+.abpm-build { max-width: 62rem; margin: 0 auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: clamp(1rem, 2.5vw, 2.2rem) clamp(1rem, 3vw, 2.6rem); }
+.abpm-build .abpm-sec { margin: .3rem 0; padding: .8rem 0 .6rem; border-left: 0; border-top: 1px solid var(--line); border-radius: 0; }
+.abpm-build .abpm-sec[data-sec="head"] { border-top: 0; }
+.abpm-inline { display: block; width: 100%; text-align: left; margin: .3rem 0 .6rem; padding: .6rem .9rem; border-radius: 12px; border: 1px dashed var(--line-2); background: var(--bg); color: var(--ink); font: inherit; cursor: pointer; }
+.abpm-inline.did { border-style: solid; }
+.abpm-inline .abpm-ans { display: block; color: var(--ink-2); font-size: .95rem; margin-top: .15rem; }
+.abpm-inline .abpm-ed { display: inline-block; margin-top: .2rem; font-size: .9rem; font-weight: 700; color: var(--accent-dk); text-decoration: underline; }
+.abpm-inline .abpm-qn { display: inline; font-size: .8rem; }
+.abpm-inline.now { scroll-margin-top: 4.5rem; cursor: default; border: 2px solid var(--accent); background: var(--accent-soft); padding: 1rem 1.1rem 1.1rem; box-shadow: var(--shadow); }
+.abpm-inline.now .abpm-qt { font-size: clamp(1.4rem, 1.2vw + 1rem, 2.1rem); }
+.abpm-b .abpm-sec.pending { opacity: .55; }
+.abpm-b .abpm-priv { text-align: center; }
+
+/* c: Story: three steps, then the ABP */
+.abpm-steps { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; padding: 0; margin: 0 0 .4rem; }
+.abpm-steps li { display: flex; align-items: center; gap: .45rem; margin: 0; padding: .45rem .9rem .45rem .45rem; border-radius: 999px; border: 2px solid var(--line-2); background: var(--surface); font-weight: 700; color: var(--ink-2); font-size: 1.02rem; }
+.abpm-steps li span { display: inline-grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--surface-2); color: var(--ink); }
+.abpm-steps li.did { border-color: var(--accent); color: var(--accent-dk); }
+.abpm-steps li.did span { background: var(--accent-soft); }
+.abpm-steps li.now { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); }
+.abpm-steps li.now span { background: var(--accent-ink); color: var(--accent-dk); }
+.abpm-count { margin: 0 0 1rem; color: var(--ink-2); font-weight: 600; }
+.abpm-c .abpm-card { max-width: 62rem; }
+.abpm-step-t { font-size: clamp(1.5rem, 1.3vw + 1rem, 2.2rem); margin: 0 0 1rem; }
+.abpm-c .abpm-q { margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.abpm-c .abpm-q:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
+.abpm-c .abpm-qt { font-size: clamp(1.3rem, 1vw + 1rem, 1.85rem); margin-bottom: .6rem; }
+.abpm-skip1 { margin: 0; }
+.abpm-c .abpm-final { margin-bottom: 1.2rem; }
+.abpm-c > .abpm-doc { max-width: 62rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 1.2rem 1.6rem; }
+
+.abpm-notes { margin-top: 2.5rem; font-size: .95rem; color: var(--ink-2); max-width: var(--measure); }
+.abpm-notes summary { cursor: pointer; font-weight: 600; }
+
+@media (max-width: 40rem) {
+    .abpm-dots { gap: .25rem; }
+    .abpm-dots button { height: 2.2rem; font-size: .9rem; border-radius: 8px; }
+    .abpm-nav .abpm-btn { flex: 1 1 auto; }
+    .abpm-nav .abpm-btn:last-child { flex-basis: 100%; order: -1; margin-left: 0; }
+    .abpm-keys { display: none; }
+    .abpm-doc dl { grid-template-columns: 1fr; gap: 0 0; }
+    .abpm-doc dd { margin-bottom: .4rem; }
+    .abpm-doc tbody th { width: auto; }
+    .abpm-side { padding: .8rem 1rem; }
+    .abpm-sec { margin: 0 -.5rem; padding: .6rem .5rem; }
+}
+
+/* print or save as PDF: the ABP alone */
+@media print {
+    body.abpm-print nav.site, body.abpm-print footer, body.abpm-print .agent-block, body.abpm-print .abpm-notes,
+    body.abpm-print .abpm-bar, body.abpm-print .abpm-dots, body.abpm-print .abpm-card, body.abpm-print .abpm-sticky,
+    body.abpm-print .abpm-priv, body.abpm-print .abpm-steps, body.abpm-print .abpm-count, body.abpm-print .abpm-inline, body.abpm-print .skip { display: none !important; }
+    body.abpm-print, body.abpm-print .abpm-doc, body.abpm-print .abpm-side, body.abpm-print .abpm-build { background: #fff !important; color: #000 !important; }
+    body.abpm-print .abpm-side, body.abpm-print .abpm-build, body.abpm-print .abpm-c > .abpm-doc { position: static !important; max-height: none !important; overflow: visible !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; }
+    body.abpm-print .abpm-grid { display: block !important; }
+    body.abpm-print .abpm-sec { opacity: 1 !important; background: none !important; border-left: 0 !important; break-inside: avoid; }
+    body.abpm-print main { padding: 0 !important; }
+}

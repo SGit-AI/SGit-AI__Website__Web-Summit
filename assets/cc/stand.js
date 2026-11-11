@@ -41,7 +41,7 @@
         // GAMMA-Ray: the command centre's own circuit (one source), shown here without its chrome
         const gamma = { id: 'gamma', label: ['GAMMA-Ray', 'GAMMA-Ray'], icon: 'M3 12h4l3-8 4 16 3-8h4', mount(h) { const u = location.pathname + '?embed=1#gamma'; h.innerHTML = `<iframe src="${u}" title="GAMMA-Ray" style="width:100%;height:calc(100vh - 170px);border:0;border-radius:16px;background:#04100F"></iframe>` }, show() {} }
         const BAR = R0.BAR
-        await window.Gravity.mount(host, { css: '.subv button, .crumbs { font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; } .subv button { font-size: 13px; }', data: gdata, start: 'uni', tourCentre: 'indi', metric: BAR ? { pct: BAR.pct, of: BAR.e, total: BAR.t } : null, detail: polHTML, views: [shields, xray, gamma],
+        await window.Gravity.mount(host, { css: '#wrap { border-radius: 0 !important; border: 0 !important; min-height: calc(100vh - 64px) !important; } .fan, .uni { height: calc(100vh - 130px) !important; } .shf { min-height: calc(100vh - 130px) !important; } .subv button, .crumbs { font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; } .subv button { font-size: 13px; }', data: gdata, start: 'uni', tourCentre: 'indi', metric: BAR ? { pct: BAR.pct, of: BAR.e, total: BAR.t } : null, detail: polHTML, views: [shields, xray, gamma],
             liveLabel: null })
     }
     function shieldsPlugin(api, host) { const { SR, $, t, esc, ico, reduced } = api

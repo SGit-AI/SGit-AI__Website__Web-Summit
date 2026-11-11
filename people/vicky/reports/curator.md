@@ -261,3 +261,9 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Found, not changed (rule 3, nothing existing is changed): `desks/curator/tools/readme.py` has no network code, but it holds the twin session's text and one Luma link as a citation in a story's source list (S57, dropped); it is a link, not a read. The one attempt of mine to open a Web Summit page by machine (9 Nov, the Opening Night session page) was refused by the proxy and kept nothing.
 - The five regular wakes of 10 and 11 Nov reached this session only now, after its restart, so I ran no regular work from here; I did no normal work in this wake either. My scheduled task is disabled and its prompt now carries the rules.
 - state: ok; done: RULES-11NOV confirmed, fresh key, prompt updated; next: wait for the conductor or Vicky; ask: none; run: prompted
+
+## Wed 11 Nov 2026, 19:49 UTC wake (HANDOVER-CURATOR)
+
+- Verified (conductor's commit c6ea96c5, standing answer 37, quoting Vicky); no HOLD.md. Fixed the README: S42 [What Lovable deleted](https://promptugal.news/articles/what-lovable-deleted.html) and S49 (the update note, live on [Europe in Pavilion 4](https://promptugal.news/articles/europe-in-pavilion-4.html)), both opened on promptugal.news on 11 November 2026, are in PUBLISHED and out of DRAFTED in desks/curator/tools/readme.py; the regenerated README shows both as live (newsroom release in progress). Prompts file rule 32: S43 merged into S51, S57 dropped at Vicky's word.
+- For conductor: the README still shows S44 as "drafted, awaiting review" and S47 as "published as an update"; I changed neither (outside this wake's brief) and did no commissioning.
+- state: ok; done: S42 and S49 fixed to live, handover notes recorded; next: wait for the conductor or Vicky; ask: none; run: prompted

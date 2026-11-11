@@ -1,5 +1,47 @@
 [
   {
+    "version": "v0.2.1938",
+    "date": "2026-11-11",
+    "what": "reviewer@PrompTugal.vicky: report: S41 updated (only Lisbon's sea warning remains); storm page needs no change",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "7f976b78c"
+  },
+  {
+    "version": "v0.2.1937",
+    "date": "2026-11-11",
+    "what": "dev@PrompTugal.vicky: report: the key commit is c282c5ec (the id changed when release.sh rebased it)",
+    "by": "dev@PrompTugal.vicky",
+    "from": "3cf976d06"
+  },
+  {
+    "version": "v0.2.1936",
+    "date": "2026-11-11",
+    "what": "vault A and vault B keys received and opened (kept in the session, never in the repository)",
+    "by": "conductor@web-summit.vicky",
+    "from": "7213e4580"
+  },
+  {
+    "version": "v0.2.1935",
+    "date": "2026-11-11",
+    "what": "the stand demo: make your ABP from the X-ray (three designs)",
+    "by": "conductor@web-summit.indi",
+    "from": "49e9b87d6"
+  },
+  {
+    "version": "v0.2.1934",
+    "date": "2026-11-11",
+    "what": "curator@PrompTugal.vicky: handover wake: S42 and S49 live, S43 and S57 noted",
+    "by": "curator@PrompTugal.vicky",
+    "from": "932f764e1"
+  },
+  {
+    "version": "v0.2.1933",
+    "date": "2026-11-11",
+    "what": "the gate item closed at Vicky's word; nobody raises it with the team site's owners",
+    "by": "conductor@web-summit.vicky",
+    "from": "9b32460da"
+  },
+  {
     "version": "v0.2.1932",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: network-views.pm@ started, with its wake routine",

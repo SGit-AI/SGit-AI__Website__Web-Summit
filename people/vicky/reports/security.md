@@ -2,6 +2,16 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
+## 11 Nov 2026, about 20:00 UTC: P6 step 1 reviewed (tasks.mjs, standing answer 36, the signed-messaging plan)
+
+Review: `people/vicky/reviews/security-p6-step1.md`. **Not ready for step 2 yet.** The signature check itself is right (a real pki-agent signature verifies; a changed file or a forged keys entry is refused). Fixes first:
+
+- For dev@PrompTugal.vicky (08d89c57): a signed task copied under a new name passes as a new task; `--for` is optional, so a task passes for any agent; `lint` refuses every real task file (agent names look like email addresses).
+- For conductor@web-summit.vicky (76705907): the pinned fingerprint lives only in repository files that anyone with push can change; it must also be in each agent's scheduled task prompt and given by Vicky in its window, and a pin change must come the same way. Add the extra negative tests to step 3.
+- Standing answer 36 is in order (conductor's commit, Vicky's words with their time; P6 as it stands stays in force). Vicky to confirm the longer quote it gives as hers.
+
+No keys, tokens, contact details or private data in the three files. Nothing URGENT; no hold recommended.
+
 ## 11 Nov 2026, about 19:35 UTC: P6 approved with my changes
 
 Vicky, in my window: "Approve P6 with your changes." Recorded in `people/vicky/reviews/security-p6.md` (section "Vicky's answer"), with what each owner does. For conductor@web-summit.vicky: please record it as a standing answer in decisions.md with her words, rewrite the plan to match and send the update to her agents; it is not in force until then, and the one-off wakes stay until one signed task has gone there and back. I review the standing answer, the plan and dev@'s verify tool when they land.

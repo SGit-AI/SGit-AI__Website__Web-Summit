@@ -55,6 +55,7 @@ html.cc-shell .cc-nav a, html.cc-shell .cc-nav .grp { text-transform: uppercase;
 .cc-modes button[aria-pressed="true"] { background: linear-gradient(180deg, #FBE2AE, #D9B26E); color: #10170F; }
 html.cc-shell #cc-view.cc-zin > * { animation: cczin .6s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes cczin { from { opacity: 0; transform: scale(.94); filter: blur(5px); } }
+html.cc-shell.cc-v-stand .cc-content { padding: 0 !important; max-width: none !important; }
 html.cc-shell .cc-gravity { min-height: calc(100vh - 120px); display: grid; align-content: start; gap: 18px; }
 .gv-sub { box-sizing: border-box; display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; padding: 4px; border-radius: 999px; border: 1px solid rgba(150,230,215,.18); background: rgba(0,0,0,.25); width: max-content; max-width: 100%; margin: 0 auto; }
 .gv-sub button { all: unset; cursor: pointer; font: 600 13px "Barlow Condensed", sans-serif !important; letter-spacing: 1.4px; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; color: #8EADA8; }
@@ -110,7 +111,8 @@ html.cc-shell .cc-gravity iframe { width: 100%; min-height: calc(100vh - 130px);
         const m = e.target.closest && e.target.closest('[data-mode]'); if (m) { MODE = m.dataset.mode; put('cc.mode', MODE); inject(); if (!FLOWS[MODE].some(f => f[0] === view())) location.hash = '#' + FLOWS[MODE][0][0]; return }
         if (e.target.closest && e.target.closest('.cc-side a')) html.classList.remove('cc-drawer') })
     addEventListener('keydown', e => { if (e.key === 'Escape') html.classList.remove('cc-drawer') })
-    addEventListener('hashchange', () => { html.classList.remove('cc-drawer'); const cv = document.getElementById('cc-view'); if (cv) { cv.classList.remove('cc-zin'); void cv.offsetWidth; cv.classList.add('cc-zin') } setTimeout(inject, 30) })
+    const markView = () => html.classList.toggle('cc-v-stand', view() === 'stand'); markView()
+    addEventListener('hashchange', () => { markView(); html.classList.remove('cc-drawer'); const cv = document.getElementById('cc-view'); if (cv) { cv.classList.remove('cc-zin'); void cv.offsetWidth; cv.classList.add('cc-zin') } setTimeout(inject, 30) })
     new MutationObserver(() => { const top = document.querySelector('.cc-top'); if (top && (!top.querySelector('.cc-flow') || !top.querySelector('.cc-burger'))) inject() }).observe(document.body, { childList: true, subtree: true })
     inject()
     // GRAVITY: its own world with its own sub-menu (Silvio, 11 November): Sobre · Camadas · Exemplos · Dados e API · Versões
