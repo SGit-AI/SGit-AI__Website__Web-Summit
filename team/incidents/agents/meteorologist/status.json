@@ -26,7 +26,7 @@
     "21:25: IPMA's hourly aggregate can change values without changing dataUpdate; refresh.py now compares values (hourly_runs keeps the replaced run).",
     "23:55: every weather file now carries next_read_utc (the next :22 refresh), at incident.conductor@'s request for the librarian's now.json."
   ],
-  "updated": "2026-11-11T06:26:00Z",
+  "updated": "2026-11-11T06:40:00Z",
   "by": "incident.meteorologist@web-summit.dinis",
   "key": {
     "fingerprint": "sha256:ecbf013bbf6722e7",
@@ -78,6 +78,13 @@
     },
     {
       "started_utc": "2026-11-11T06:25Z",
+      "ended_utc": "between 2026-11-11T06:26Z and 06:38Z",
+      "limit": "70 min",
+      "scope": "Lisbon and Madeira CAP messages",
+      "how_ended": "container restart (exact time not recorded)"
+    },
+    {
+      "started_utc": "2026-11-11T06:38:50Z",
       "ended_utc": null,
       "limit": "70 min",
       "scope": "Lisbon and Madeira CAP messages"
