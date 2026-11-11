@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1820",
+    "date": "2026-11-11",
+    "what": "06:35 wake: no change to Day 3; three Lisbon tunnels still open after midnight (Observador); a ferry route suspended; Barreiro buses limited",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "e1ed79420"
+  },
+  {
     "version": "v0.2.1819",
     "date": "2026-11-11",
     "what": "06:25 wake refresh; CAP poll restarted",
