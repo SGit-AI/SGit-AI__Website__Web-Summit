@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1894",
+    "date": "2026-11-11",
+    "what": "ipma-cut-1555: Lisbon's orange wind ended at 15:56 (CAP 15:55:03); my 16:35 edge corrected (stale open data)",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "e48a20885"
+  },
+  {
     "version": "v0.2.1893",
     "date": "2026-11-11",
     "what": "the \"Add your key\" box no longer opens on every page (Silvio, with Dinis's yes)",
