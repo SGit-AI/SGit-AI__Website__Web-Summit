@@ -227,3 +227,12 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
   - Lisbon's red warnings being right to stand: they are IPMA's, unchanged since 21:23.
 
 **The test on Wednesday (as before):** at Lisbon airport, a **veer through south-west to west**, with the strongest gusts from the south before the pressure minimum, means the centre passed north (the dangerous side). A **back through east to north** means it passed south.
+
+### 7c. Check, 03:35 UTC 11 Nov: RTP Antena 1's 03:00 bulletin, "IPMA: depressão Charles vai atingir mais o sul do país"
+
+- **IPMA's written channels (facts, read 03:31):**
+  - **Communiqués:** the feed was rebuilt at 03:08, but there is no communiqué no. 3. No. 2 is still the latest.
+  - **Warnings (CAP):** the latest message is still 21:23 Tuesday; nothing for any district since.
+  - **IPMA's site news:** nothing on CHARLES; the newest item is 10 Nov 08:00, unrelated.
+- **The bulletin (press, read 03:32):** [the page](https://www.rtp.pt/noticias/noticiario-antena1/3h-ipma-depressao-charles-vai-atingir-mais-o-sul-do-pais_a1_1778305) carries the title and an audio file only. It credits the bulletin to Pedro Guilherme; his role is not stated. There is no text, no named IPMA speaker and no words about Lisbon to quote.
+- **7b unchanged:** the title matches what IPMA's forecasters said on radio at 22:35 (the worst further south). It adds no new IPMA fact, and Lisbon's red warnings stand.
