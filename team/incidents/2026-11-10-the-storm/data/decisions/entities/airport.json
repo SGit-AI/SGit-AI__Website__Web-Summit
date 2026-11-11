@@ -1,7 +1,7 @@
 {
  "entity": "airport",
  "about": "Every decision in graph.json about airport: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T10:34Z",
+ "updated": "2026-11-11T12:35Z",
  "decisions": [
   {
    "edge": "ana-conditioned",
@@ -71,6 +71,20 @@
    "scope": {
     "extent": "part",
     "parts": "208 at Lisbon, 14 at Faro"
+   }
+  },
+  {
+   "edge": "ana-movements-1100",
+   "decision": "At 11:00: Lisbon 288 of 565 cancelled in advance (+22 during operation, 45 flown)",
+   "decided_by": "ANA (balance)",
+   "published_utc": "2026-11-11T11:49Z",
+   "address": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T12:35Z",
+   "label": "evidence",
+   "state": "limited",
+   "scope": {
+    "extent": "part",
+    "parts": "Lisbon 310 of 565 movements cancelled by 11:00"
    }
   }
  ],
@@ -157,11 +171,19 @@
    "bytes": 212,
    "result": "answered; no notice found",
    "excerpt": []
+  },
+  {
+   "at": "2026-11-11T12:32Z",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "http": 200,
+   "bytes": 212,
+   "result": "answered; no notice found",
+   "excerpt": []
   }
  ],
  "tries_summary": {
   "https://www.aeroportolisboa.pt/pt/lis/home": {
-   "tries": 10,
+   "tries": 11,
    "published_found": false
   }
  }

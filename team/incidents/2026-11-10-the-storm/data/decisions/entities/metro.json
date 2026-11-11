@@ -167,11 +167,19 @@
    "bytes": 486018,
    "result": "answered; no notice found",
    "excerpt": []
+  },
+  {
+   "at": "2026-11-11T12:32Z",
+   "url": "https://www.metrolisboa.pt/",
+   "http": 200,
+   "bytes": 538039,
+   "result": "answered; no notice found",
+   "excerpt": []
   }
  ],
  "tries_summary": {
   "https://www.metrolisboa.pt/": {
-   "tries": 10,
+   "tries": 11,
    "published_found": false
   }
  }
