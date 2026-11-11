@@ -1585,6 +1585,23 @@
         "fingerprint": "sha256:e3ba83496058888c",
         "signing_fingerprint": "sha256:e80b06bd4218b306"
       }
+    },
+    {
+      "id": "appdev-indi",
+      "agent": "appdev@web-summit.indi",
+      "label": "appdev@web-summit.indi (Claude Code session, cloud)",
+      "role": "Indi's app developer for the PrompTugal iOS apps, the Team app first (appdev@web-summit.indi). Builds on night/ branches of PrompTugal/PrompTugal__App__iOS, merges to dev and writes a brief for the reviewers. Takes work only from Indi and Dinis. Writes here only this entry and people/indi/appdev/. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 11 November 2026 (pki-agent.mjs keygen --session, the copy with sha256 fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab, matching the pin in admin/tools/seal.mjs), at Indi's word in that session, and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai. The private halves stay in the session (~/.sg-send, outside this repository).",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxXMKNTszSMD9F8t0qFLy\nnylkssdNcjEs5ULbkhtoin/4ZOM7kMPDwizs7T5kxKvVBqR1pUa7osohQL65Mund\nMUiea4KD/OKSmts5MFZOasRRlLBZgyf/uQMYJFw2PS6lB9JS/6Upi9ZmqU643VAM\nyddW4Q86DUEUuxJLmkR+0e9xT6f8GPVmkBtHmY4VKGCEWGTJitfK5f8RFf54IyTe\nrJYret8998L3Znzm57z0UfOJiUAGnaPzOg+QL3FHGSEMruB4zwi0LsoycK5WetcI\nioOhkn0rd9wiQA2UqLgA0UljJibNiKiOn2wKtbIPvFR+3ElM3bXsnxfoLO+1cxii\ngML0rGGX9phCGBQaMC94kH3aYAlYLKyNNRI6RqFNdMLwBqSTDGS1x9ugc2x6yRse\nKZr4w0I3/5gQu3/b1mVkOE0jH1GWciQiCdInWjS2cDTnMm3LFkdWbJpsX/2taeH7\nkQ0KKoFiwVQl8yydPS+Rdn7SX2/FpaZ1htBfoEs5NhEJoaTL7WsFhxT5A9NxNR8r\n0ASubJdF+wv0Gy/Y2aOZevUBAE4/whT1eaDOVs8J2rP7m/D5lv0wFJVUgu5iA/UK\nOqDUxCVCc5qvQbVDuP0xWZJ9Jm5K3dLO4qLz6XOQe5B7ou0Hv+TFOshdjlmIMrcX\nO7g3+khmE7pNpbbjvL2B7Q0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE2GKYKBySfb58fnOmR+GsmiIhoAIn\nrZci0f/AB+yng3+Dh7NATHEEWC7xyS5wXUSO2d7yirMxyw9+XAE6mAUbVw==\n-----END PUBLIC KEY-----\n",
+        "label": "appdev@web-summit.indi",
+        "fingerprint": "sha256:5b412ffd4d41ca0c",
+        "signing_fingerprint": "sha256:24a06cd53375a188"
+      }
     }
   ]
 }
