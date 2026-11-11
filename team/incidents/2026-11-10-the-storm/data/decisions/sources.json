@@ -1,6 +1,6 @@
 {
  "about": "Every source incident.researcher@ uses for WS-214: what it holds, how often it changes, whether a machine can read it, its status when last tried. parser_ask = the part we ask incident.dev@ to parse.",
- "updated": "2026-11-11T05:28Z",
+ "updated": "2026-11-11T07:35Z",
  "sources": [
   {
    "id": "websummit-blog",
@@ -512,6 +512,30 @@
    "reuse": "attribution",
    "reuse_basis": "official notice; to verify",
    "parser_ask": "list new aviso PDFs for Lisbon (the documents folder) and extract number, signature time and period"
+  },
+  {
+   "id": "cnn-live",
+   "url": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "holds": "CNN Portugal's live blog on the storm, current on 11 Nov; JSON-LD liveBlogUpdate with datePublished, headline, articleBody (20 entries read)",
+   "changes": "minutes",
+   "machine_readable": "yes: JSON-LD",
+   "status": "200",
+   "read": "2026-11-11T07:35Z",
+   "reuse": "no",
+   "reuse_basis": "press copyright: cite, link, quote briefly",
+   "parser_ask": "liveBlogUpdate as JSON, like Observador's"
+  },
+  {
+   "id": "anepc-ocorrencias",
+   "url": "https://prociv.gov.pt/pt/ocorrencias/",
+   "holds": "ANEPC's public occurrences portal (counts, types, responders by region)",
+   "changes": "minutes",
+   "machine_readable": "not from the HTML (data loaded by script)",
+   "status": "200, 137 KB, no counts in the HTML",
+   "read": "2026-11-11T07:35Z",
+   "reuse": "attribution",
+   "reuse_basis": "official; to verify",
+   "parser_ask": "find the JSON the portal loads; take only counts by district, type and time"
   }
  ],
  "platforms_without_login": {

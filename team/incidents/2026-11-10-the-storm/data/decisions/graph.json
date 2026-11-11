@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T06:35Z",
+ "updated": "2026-11-11T07:35Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -571,7 +571,7 @@
    ],
    "label": "fact",
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read": "2026-11-11T06:35Z",
+   "read": "2026-11-11T07:35Z",
    "read_by": "incident.meteorologist@web-summit.dinis (CAP via MeteoAlarm), checked by us",
    "note": "IPMA's CAP message 2.49.0.0.620.0.PT.261110071840.PO-01-1915, sent_utc 2026-11-10T07:18:40Z, severity Extreme, onset 11 Nov 12:00, expires 21:00; replaces the wind message sent 2026-11-09T13:27:16Z. Via team/incidents/2026-11-10-the-storm/data/weather/cap.json (incident.meteorologist@, read 2026-11-11T00:23:21Z). First press report: DN live 08:05:24 (Observador 08:34:33). Earlier this edge carried 14:23 (the newsroom's first read) and then 08:05 (the first press report).",
    "effect_from_utc": "2026-11-11T12:00Z",
@@ -1063,7 +1063,7 @@
    "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
    "corroborated_by": [
     "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
    ],
@@ -1091,7 +1091,7 @@
    "source": "https://websummit.com/startups/pitch/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "no decision with an effect window",
@@ -1320,7 +1320,7 @@
    ],
    "label": "fact",
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read": "2026-11-11T06:35Z",
+   "read": "2026-11-11T07:35Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": "2026-11-11T09:00Z",
    "effect_to_utc": "2026-11-11T18:00Z",
@@ -1755,6 +1755,116 @@
    "state_note": null,
    "area": "mainland",
    "note": "Observador 01:03:19Z citing a notice on the Câmara Municipal do Barreiro's page; cm-barreiro.pt home (06:33Z) shows no such notice in its text."
+  },
+  {
+   "id": "srpc-funchal-centre",
+   "by": "madeira-prociv",
+   "to": [],
+   "decision": "Access to Funchal's centre closed for safety this morning; the public asked not to go to affected areas nor pass the restrictions",
+   "at": "2026-11-11T07:25Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T07:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "\"hoje de manhã\"; end not stated",
+   "state": "closed",
+   "state_note": null,
+   "area": "madeira",
+   "note": "CNN Portugal live 07:25:40Z quoting an SRPC communiqué (via Lusa). Not on procivmadeira.pt's news list at 07:33Z (latest item still 2158)."
+  },
+  {
+   "id": "madeira-flights-16",
+   "by": "madeira-airport",
+   "to": [],
+   "decision": "16 flights to and from Madeira airport cancelled, mostly this morning (7 arrivals, 9 departures: Lisbon, Porto, Paris, Nantes)",
+   "at": "2026-11-11T06:50Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T07:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "\"sobretudo para a manhã de hoje\"",
+   "state": "limited",
+   "state_note": null,
+   "area": "madeira",
+   "note": "CNN Portugal live 07:05:50Z, from ANA's site consulted at 06:50 (ANA's site shows us a bot page)."
+  },
+  {
+   "id": "srpc-madeira-count-0650",
+   "by": "madeira-prociv",
+   "to": [],
+   "decision": "Occurrence count, Madeira: at least 162 so far; 425 responders, 171 means",
+   "at": "2026-11-11T06:50Z",
+   "status": "happened",
+   "follows": [
+    "srpc-madeira-count-0200"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T07:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "a count, not a service decision",
+   "area": "madeira",
+   "note": "CNN Portugal live 06:50, \"segundo os dados disponibilizados\" (SRPC's press platform, not public). Earlier: 71 to 02:00, 115 (CNN 06:05)."
+  },
+  {
+   "id": "anepc-mainland-count-0330",
+   "by": "anepc",
+   "to": [],
+   "decision": "Occurrence count, mainland: 66 at 03:30, none classed significant; 4 floods (Mem Martins, Cacém e São Marcos, Península de Setúbal); 60 responders, 22 vehicles",
+   "at": "2026-11-11T03:30Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T07:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "a count, not a service decision",
+   "area": "mainland",
+   "note": "CNN Portugal live 05:44:15Z, citing ANEPC's public portal. prociv.gov.pt/pt/ocorrencias/ answers 200 (137 KB, read 07:33Z) but its data is not in the HTML: parser ask to incident.dev@."
+  },
+  {
+   "id": "porto-santo-power",
+   "by": "madeira-prociv",
+   "to": [],
+   "decision": "Porto Santo: power cuts and some communication difficulties reported",
+   "at": "2026-11-11T01:02Z",
+   "status": "happened",
+   "follows": [
+    "ipma-madeira-red"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T07:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "an impact report, not a decision",
+   "area": "porto-santo",
+   "note": "CNN Portugal live 01:02:24Z (no source body named). An impact, not a decision: recorded so the Porto Santo lead has a dated press address. The mayor's measures are still not found at source."
   }
  ],
  "lessons": [
@@ -1799,7 +1909,7 @@
   {
    "from": "incident.wikipedia@ / SAPO headline via incident.conductor@ (03:51Z)",
    "claim": "Porto Santo: power failures; municipal civil protection centre activated, coastal accesses closed, harbour operations suspended (the mayor)",
-   "status": "not found at source: cm-portosanto.pt home (read 03:51Z) and apram.pt (03:51Z) carry no notice; in the 02:00 count Porto Santo has one occurrence. Not added.",
+   "status": "not found at source: cm-portosanto.pt home (read 03:51Z) and apram.pt (03:51Z) carry no notice; in the 02:00 count Porto Santo has one occurrence. Not added.; 07:35Z: power cuts reported by CNN Portugal live 01:02 (porto-santo-power, evidence); the municipal measures still not found",
    "read": "2026-11-11T03:56Z"
   }
  ],
