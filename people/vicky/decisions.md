@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **38** dev@'s current key on the team site; vault A sealed to it before SA33-TOOLS.
 - **37** the storm page, S41 and the curator handed over to the team reviewer@, dev@ and curator.
 - **36** P6 approved with security@'s changes, in steps; not in force until Vicky says go.
 - **35** Web Summit news to journalist-portugal after the summit; hand-over messages in For Vicky when due; tools in vault A safe to publish.
@@ -195,6 +196,9 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - The team reviewer@ and dev@ own /storm/charles/ and S41 from 19:38 UTC (release flow: dev@ stages, the reviewer verifies at source, dev@ releases). S41 keeps its standing approval for factual updates from official sources, under R-PUB-1. weather@ (personal account, until Thu about 09:00) reports to conductor.B; material changes are noted in the newsroom's `desks/conductor-vicky/to-team/`, which the reviewer reads at each run.
     - The team curator takes over from the personal account's curator (its hand-over: the newsroom's `desks/curator/2026-11-10-handover.md`): S42 and S49 shown as live in the README; S43 merged into S51; S57 dropped.
     - One-off wakes at her word: reviewer 19:47, curator 19:49.
+
+38. **dev@'s current key on the team site, then vault A sealed to it** (Vicky, 11 Nov, about 19:50 UTC, in this window: "vault@ cannot seal vault A to dev@ because the team site still lists dev@'s old key. When dev@ finishes the signature check, have it add its current key dev-vicky-promptugal-c to the team site's data/keys.json by its own commit, then ask vault@ to seal vault A to it. Tell me when that is done, so I can paste Apply SA33-TOOLS in dev@'s window.")
+    - dev@ adds dev-vicky-promptugal-c (signing sha256:beac4728d9e041b1) to data/keys.json by its own commit and marks dev-vicky-promptugal superseded; vault@ checks it with seal.mjs and seals vault A (wyt9jdeo) to it. One-off wakes at her word: dev@ 19:53, vault@ 20:10; the conductor checks at 20:25 and tells Vicky. SA33-TOOLS starts only when Vicky pastes it in dev@'s window.
 
 ## Updates for agents
 
