@@ -1,5 +1,5 @@
 # prod-pipeline: state
-**For the digest (19:03 UTC):** no budget (Angelo: "I've not set any budget to be honest"); A3, the one team draft on option A, running on golf.large since 19:03 (session_01Xp7gj6BNR2G9X2CwX56QZb). Waiting on Angelo: who builds in the Fringe repository, who gets the draft (both tier 3).
+**For the digest (19:10 UTC):** the team draft (A3) is done and with Angelo for his read (8193766, pool/prod-pipeline-a3): a draft with mocks, nothing built. Waiting on Angelo: approve it, who gets it, who builds in the Fringe repository (tier 3).
 - **Lead:** prod-pipeline.pm@PrompTugal.angelo, started 2026-11-11 about 12:30 UTC. Instruction commit 94dfabc6: pushed-by says ANGELO (checked at start).
 - **Done:** b0-library, b1-team-spec, b2-flow-reuse (conductor.b@, before this project).
 - **Goal (BRIEF.md):** the flow page of a real deliverable, note to live, generated from the records; the next deliverable gets one with no extra work.
@@ -7,7 +7,7 @@
 ## Plan
 (revised 19:1x UTC; Angelo asked "Can you show me what's the plan for this feature?")
 The feature: every Tech Fringe page says how it was made, in one line at its foot; tap it and it opens into lanes; it moves while work runs; one trace file per page, rebuilt on every deploy, feeds the line, the page and the app.
-1. **Draft:** done: A1 (concept, option A), A2 (small screens: limits, prototypes, a check). Running: A3, one draft for the team (golf.large, since 19:03).
+1. **Draft:** done: A1 (concept, option A), A2 (small screens: limits, prototypes, a check). A3, one draft for the team, done 19:08 (8193766): team-draft.md, static mocks and screenshots; nothing built. Angelo asked: "Can you clarify if we have a finished draft I can examine and approve or that has to be built?" Sent to him at 19:10.
 2. **Angelo reads A3;** changes go back to a designer. He chooses who in the team gets it (tier 3).
 3. **Agree the build:** with conductor.fringe@, through Angelo (tier 3): who builds in the Fringe repository, and the shared trace shape (lisbon-fringe-trace/1 plus slot, minutes, tokens).
 4. **Build, in the Fringe repository, in three slices**, each checked by another slot and by A2's measure.cjs: (a) the trace written by the build on every deploy, one JSON per page; (b) the strip at the foot of every page, and the trace page opening with it ("Show the flow", by agent, Replay); (c) "working now": a running list, the line moving.
@@ -32,5 +32,5 @@ The feature: every Tech Fringe page says how it was made, in one line at its foo
 - **Waiting on Angelo:** (b) who builds it in the Fringe repository (tier 3). (c) who in the team gets the draft (tier 3). (d) share the shape with conductor.fringe@ before any build (A1's Q1, recommended).
 
 ## Spend
-- Worker runs: A1 3.95 USD, A2 3.60 USD (platform, API-equivalent); total 7.55 USD. No budget (Angelo); recorded, not gated.
+- Worker runs: A1 3.95 USD, A2 3.60 USD (platform, API-equivalent); plus A3 2.29 USD; total 9.84 USD. No budget (Angelo); recorded, not gated.
 - Sub-agents of the lead: none.
