@@ -5,7 +5,7 @@ started: 2026-11-11, by conductor.b@PrompTugal.angelo at Angelo's word
 status: running
 budget: none; the running cost (dollars and tokens) in STATE.md's "For the digest:" line (Angelo, 11 Nov: "Yeah, c works.")
 ---
-**Wake routine:** set by conductor.b@ in its next commit (fires into this lead's session when a worker fires it, and every 2 hours as a backstop). Put "Wake routine: <its id>" in every worker's brief.md.
+**Wake routine:** trig_01GnGftTuQdk1LM63LnvaDtn (fires into this lead's session when a worker fires it, and every 2 hours at :12 as a backstop). Put "Wake routine: trig_01GnGftTuQdk1LM63LnvaDtn" in every worker's brief.md.
 
 # The X-ray demo page in the RiskMandate Android app
 
