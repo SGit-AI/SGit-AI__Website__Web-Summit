@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1887",
+    "date": "2026-11-11",
+    "what": "15:37 wake: Lisbon's reds end early, Thursday reported on; comms C (send-now) and the pictures follow",
+    "by": "journalist.examples@web-summit.dinis",
+    "from": "a54ee066e"
+  },
+  {
     "version": "v0.2.1886",
     "date": "2026-11-11",
     "what": "review: bring pool/b4-how-it-works's new work onto dev (one commit): how Angelo's pipeline works, in eight pictures",
