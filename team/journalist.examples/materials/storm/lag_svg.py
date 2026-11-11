@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Published against first read: each signal of the storm incident as a bar from the moment its source published it
 to the moment our team first read it. From reporter@web-summit.dinis's trace 2026-11-10-the-storm-incident.json
-(lead_times; times as the trace gives them). Writes lag.svg beside it."""
+(lead_times and the corrected IPMA events of 00:25, from IPMA's CAP feed). Writes lag.svg beside it."""
 import os, re
 from datetime import datetime
 from html import escape as e
@@ -9,8 +9,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 T = lambda s: datetime.fromisoformat(s)
 ROWS = [  # signal, published, first read, lag as the trace states it
   ('IPMA names the storm CHARLES', '2026-11-09T13:17', '2026-11-10T16:53', '27 h 36 min'),
+  ("IPMA's red wind warning for Lisbon", '2026-11-10T07:18', '2026-11-10T14:23', '7 h 4 min'),
   ("the government's alert (schools, outdoor events)", '2026-11-10T12:10', '2026-11-10T17:01', '4 h 51 min'),
   ("Lisbon's mayor: the summit likely cannot run (press)", '2026-11-10T13:19', '2026-11-10T18:50', '5 h 31 min'),
+  ("IPMA's red rain warning for Lisbon", '2026-11-10T16:30', '2026-11-10T17:42', '1 h 12 min'),
   ("the government recommends suspending it (press)", '2026-11-10T17:53', '2026-11-10T18:50', '57 min'),
   ("Web Summit's own page: Day 2 off", '2026-11-10T19:09', '2026-11-10T20:58', '1 h 49 min'),
   ("Web Summit's email to attendees", '2026-11-10T19:38', '2026-11-10T19:48', '10 min'),
@@ -40,6 +42,6 @@ for i, (sig, pub, read, lag) in enumerate(ROWS):
     o.append(f'<text x="{tx:.1f}" y="{y+5}" font-size="13" font-weight="700" fill="#141413" text-anchor="{anc}" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">{lag}</text>')
 o.append(f'<text x="30" y="{H-48}" font-size="12.5" fill="#141413"><tspan font-weight="700">Blue:</tspan> published by the source. <tspan font-weight="700">Open orange:</tspan> first read by our team. Times UTC (= Lisbon), 9 to 10 November 2026; press items labelled.</text>')
 o.append(f'<text x="30" y="{H-28}" font-size="12" fill="#5e5d59">The longest gaps came before the incident was declared. The last miss: Web Summit\'s own update sat in a section of its site we were not watching.</text>')
-o.append(f'<text x="30" y="{H-10}" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from reporter@web-summit.dinis\'s trace 2026-11-10-the-storm-incident (lead_times).</text>')
+o.append(f'<text x="30" y="{H-10}" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from reporter@web-summit.dinis\'s trace 2026-11-10-the-storm-incident (lead_times; IPMA\'s issue times from its CAP feed, found 23:52).</text>')
 o.append('</svg>')
 open(f'{HERE}/lag.svg', 'w').write('\n'.join(o) + '\n'); print('lag.svg')

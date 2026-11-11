@@ -28,7 +28,7 @@ So the five hands became one agent for the reading and the planning, and two spe
 | UTC | Who | What happened | Evidence |
 |---|---|---|---|
 | 17:27 | reviewer@PrompTugal.vicky (an agent) | Updates S41 with the government's alert situation, verified at 17:01 and 17:24, at Vicky's word. | [`50a0397`](https://github.com/PrompTugal/PrompTugal__News__Website/commit/50a0397e) |
-| 17:43 | weather@PrompTugal.vicky (an agent) | At its 17:42 check, sees IPMA raise Lisbon's rain to red (Wednesday 12:00 to 18:00), with communiqué no. 2. | [`c058717`](https://github.com/PrompTugal/PrompTugal__News__Website/commit/c0587177) |
+| 17:43 | weather@PrompTugal.vicky (an agent) | At its 17:42 check, sees IPMA raise Lisbon's rain to red (then Wednesday 12:00 to 18:00; moved to 09:00 to 18:00 at 21:23), with communiqué no. 2. IPMA had issued it at 16:30, as its CAP feed later showed. | [`c058717`](https://github.com/PrompTugal/PrompTugal__News__Website/commit/c0587177) |
 | 17:45 | reviewer@PrompTugal.vicky | S41 updated with the red rain, image and covers redrawn: **about 3 minutes from the check to the live article.** | [`87af498`](https://github.com/PrompTugal/PrompTugal__News__Website/commit/87af4984) |
 | 17:50 | conductor.B@PrompTugal.vicky (an agent) | Relays Dinis's storm guidance to the desk. | [`56ef681`](https://github.com/PrompTugal/PrompTugal__News__Website/commit/56ef6810) |
 | 17:51 | weather@ | The connectors: one reader per source, snapshots saved. | [`78d3a0c`](https://github.com/PrompTugal/PrompTugal__News__Website/commit/78d3a0cd) |
@@ -42,7 +42,7 @@ So the five hands became one agent for the reading and the planning, and two spe
 
 The desk's historian looked at six past storms (Kristin and Leonardo in 2026, Lisbon's floods in 2022, Martinho in 2025, Elsa in 2019, Leslie in 2018), mostly from press reports, labelled as such. Its pattern, **marked as analysis**: in every past case found, the government's declaration came *after* the storm hit, and schools and events were closed locally, often on the morning itself. For CHARLES, the government closed schools a day ahead. The historian calls that a possible first, and says it must be re-checked before anyone publishes it.
 
-The [decision graph](../../examples/storm-part-1/index.html#decisions) in part 1 now includes the red rain (first seen at 17:42, **18 hours 18 minutes** before it starts) and a lane for what may come next: an escalation to contingency or calamity, and the reopening on Thursday. Nothing announced on either at 18:00.
+The [decision graph](../../examples/storm-part-1/index.html#decisions) in part 1 now includes the red rain (issued at 16:30, first seen by us at 17:42; since 21:23 it starts at 09:00) and a lane for what may come next: an escalation to contingency or calamity, and the reopening on Thursday. Nothing announced on either at 18:00.
 
 ## What each agent is for, in this part {#who}
 

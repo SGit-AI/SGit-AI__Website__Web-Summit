@@ -1,45 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 578" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
-<rect width="1400" height="578" fill="#faf9f5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 694" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1400" height="694" fill="#faf9f5"/>
 <text x="30" y="44" font-size="26" font-weight="700" fill="#141413">How far ahead could we have known? Published, then read by us</text>
 <text x="30" y="74" font-size="15" fill="#5e5d59">Each bar runs from when a source published a signal to when our team first read it. The gap is what a better watch would have given us.</text>
-<line x1="400.0" y1="110" x2="400.0" y2="468" stroke="#d8d5ca" stroke-dasharray="3 4"/><text x="400.0" y="486" font-size="12" fill="#5e5d59" text-anchor="middle">Mon 12:00</text>
-<line x1="569.4" y1="110" x2="569.4" y2="468" stroke="#d8d5ca" stroke-dasharray="3 4"/><text x="569.4" y="486" font-size="12" fill="#5e5d59" text-anchor="middle">18:00</text>
-<line x1="738.8" y1="110" x2="738.8" y2="468" stroke="#d8d5ca" stroke-dasharray="3 4"/><text x="738.8" y="486" font-size="12" fill="#5e5d59" text-anchor="middle">Tue 00:00</text>
-<line x1="908.2" y1="110" x2="908.2" y2="468" stroke="#d8d5ca" stroke-dasharray="3 4"/><text x="908.2" y="486" font-size="12" fill="#5e5d59" text-anchor="middle">06:00</text>
-<line x1="1077.6" y1="110" x2="1077.6" y2="468" stroke="#d8d5ca" stroke-dasharray="3 4"/><text x="1077.6" y="486" font-size="12" fill="#5e5d59" text-anchor="middle">12:00</text>
-<line x1="1247.1" y1="110" x2="1247.1" y2="468" stroke="#d8d5ca" stroke-dasharray="3 4"/><text x="1247.1" y="486" font-size="12" fill="#5e5d59" text-anchor="middle">18:00</text>
-<line x1="1263.5" y1="96" x2="1263.5" y2="468" stroke="#8a3b1f" stroke-width="1.5"/><text x="1257.5" y="90" font-size="12.5" font-weight="700" fill="#8a3b1f" text-anchor="end">incident declared, 18:35</text>
+<line x1="400.0" y1="110" x2="400.0" y2="584" stroke="#d8d5ca" stroke-dasharray="3 4"/><text x="400.0" y="602" font-size="12" fill="#5e5d59" text-anchor="middle">Mon 12:00</text>
+<line x1="569.4" y1="110" x2="569.4" y2="584" stroke="#d8d5ca" stroke-dasharray="3 4"/><text x="569.4" y="602" font-size="12" fill="#5e5d59" text-anchor="middle">18:00</text>
+<line x1="738.8" y1="110" x2="738.8" y2="584" stroke="#d8d5ca" stroke-dasharray="3 4"/><text x="738.8" y="602" font-size="12" fill="#5e5d59" text-anchor="middle">Tue 00:00</text>
+<line x1="908.2" y1="110" x2="908.2" y2="584" stroke="#d8d5ca" stroke-dasharray="3 4"/><text x="908.2" y="602" font-size="12" fill="#5e5d59" text-anchor="middle">06:00</text>
+<line x1="1077.6" y1="110" x2="1077.6" y2="584" stroke="#d8d5ca" stroke-dasharray="3 4"/><text x="1077.6" y="602" font-size="12" fill="#5e5d59" text-anchor="middle">12:00</text>
+<line x1="1247.1" y1="110" x2="1247.1" y2="584" stroke="#d8d5ca" stroke-dasharray="3 4"/><text x="1247.1" y="602" font-size="12" fill="#5e5d59" text-anchor="middle">18:00</text>
+<line x1="1263.5" y1="96" x2="1263.5" y2="584" stroke="#8a3b1f" stroke-width="1.5"/><text x="1257.5" y="90" font-size="12.5" font-weight="700" fill="#8a3b1f" text-anchor="end">incident declared, 18:35</text>
 <rect x="20" y="124.0" width="1360" height="50" rx="8" fill="#5e5d59" fill-opacity="0.09"/>
 <text x="34" y="154.0" font-size="13.5" fill="#141413">IPMA names the storm CHARLES</text>
 <rect x="436.2" y="142.0" width="779.3" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
 <circle cx="436.2" cy="149.0" r="6" fill="#1f5f8b"/><circle cx="1215.5" cy="149.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
 <text x="424.2" y="154.0" font-size="13" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">27 h 36 min</text>
 <rect x="20" y="182.0" width="1360" height="50" rx="8" fill="#5e5d59" fill-opacity="0.05"/>
-<text x="34" y="212.0" font-size="13.5" fill="#141413">the government&#x27;s alert (schools, outdoor events)</text>
-<rect x="1082.4" y="200.0" width="136.9" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
-<circle cx="1082.4" cy="207.0" r="6" fill="#1f5f8b"/><circle cx="1219.3" cy="207.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
-<text x="1070.4" y="212.0" font-size="13" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">4 h 51 min</text>
+<text x="34" y="212.0" font-size="13.5" fill="#141413">IPMA&#x27;s red wind warning for Lisbon</text>
+<rect x="944.9" y="200.0" width="200.0" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
+<circle cx="944.9" cy="207.0" r="6" fill="#1f5f8b"/><circle cx="1144.9" cy="207.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
+<text x="1156.9" y="212.0" font-size="13" font-weight="700" fill="#141413" text-anchor="start" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">7 h 4 min</text>
 <rect x="20" y="240.0" width="1360" height="50" rx="8" fill="#5e5d59" fill-opacity="0.09"/>
-<text x="34" y="270.0" font-size="13.5" fill="#141413">Lisbon&#x27;s mayor: the summit likely cannot run (press)</text>
-<rect x="1114.8" y="258.0" width="155.8" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
-<circle cx="1114.8" cy="265.0" r="6" fill="#1f5f8b"/><circle cx="1270.6" cy="265.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
-<text x="1102.8" y="270.0" font-size="13" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">5 h 31 min</text>
+<text x="34" y="270.0" font-size="13.5" fill="#141413">the government&#x27;s alert (schools, outdoor events)</text>
+<rect x="1082.4" y="258.0" width="136.9" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
+<circle cx="1082.4" cy="265.0" r="6" fill="#1f5f8b"/><circle cx="1219.3" cy="265.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
+<text x="1070.4" y="270.0" font-size="13" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">4 h 51 min</text>
 <rect x="20" y="298.0" width="1360" height="50" rx="8" fill="#5e5d59" fill-opacity="0.05"/>
-<text x="34" y="328.0" font-size="13.5" fill="#141413">the government recommends suspending it (press)</text>
-<rect x="1243.8" y="316.0" width="26.8" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
-<circle cx="1243.8" cy="323.0" r="6" fill="#1f5f8b"/><circle cx="1270.6" cy="323.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
-<text x="1231.8" y="328.0" font-size="13" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">57 min</text>
+<text x="34" y="328.0" font-size="13.5" fill="#141413">Lisbon&#x27;s mayor: the summit likely cannot run (press)</text>
+<rect x="1114.8" y="316.0" width="155.8" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
+<circle cx="1114.8" cy="323.0" r="6" fill="#1f5f8b"/><circle cx="1270.6" cy="323.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
+<text x="1102.8" y="328.0" font-size="13" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">5 h 31 min</text>
 <rect x="20" y="356.0" width="1360" height="50" rx="8" fill="#5e5d59" fill-opacity="0.09"/>
-<text x="34" y="386.0" font-size="13.5" fill="#141413">Web Summit&#x27;s own page: Day 2 off</text>
-<rect x="1279.5" y="374.0" width="51.3" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
-<circle cx="1279.5" cy="381.0" r="6" fill="#1f5f8b"/><circle cx="1330.8" cy="381.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
-<text x="1267.5" y="386.0" font-size="13" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">1 h 49 min</text>
+<text x="34" y="386.0" font-size="13.5" fill="#141413">IPMA&#x27;s red rain warning for Lisbon</text>
+<rect x="1204.7" y="374.0" width="33.9" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
+<circle cx="1204.7" cy="381.0" r="6" fill="#1f5f8b"/><circle cx="1238.6" cy="381.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
+<text x="1192.7" y="386.0" font-size="13" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">1 h 12 min</text>
 <rect x="20" y="414.0" width="1360" height="50" rx="8" fill="#5e5d59" fill-opacity="0.05"/>
-<text x="34" y="444.0" font-size="13.5" fill="#141413">Web Summit&#x27;s email to attendees</text>
-<rect x="1293.2" y="432.0" width="4.7" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
-<circle cx="1293.2" cy="439.0" r="6" fill="#1f5f8b"/><circle cx="1297.9" cy="439.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
-<text x="1281.2" y="444.0" font-size="13" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">10 min</text>
-<text x="30" y="530" font-size="12.5" fill="#141413"><tspan font-weight="700">Blue:</tspan> published by the source. <tspan font-weight="700">Open orange:</tspan> first read by our team. Times UTC (= Lisbon), 9 to 10 November 2026; press items labelled.</text>
-<text x="30" y="550" font-size="12" fill="#5e5d59">The longest gaps came before the incident was declared. The last miss: Web Summit's own update sat in a section of its site we were not watching.</text>
-<text x="30" y="568" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from reporter@web-summit.dinis's trace 2026-11-10-the-storm-incident (lead_times).</text>
+<text x="34" y="444.0" font-size="13.5" fill="#141413">the government recommends suspending it (press)</text>
+<rect x="1243.8" y="432.0" width="26.8" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
+<circle cx="1243.8" cy="439.0" r="6" fill="#1f5f8b"/><circle cx="1270.6" cy="439.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
+<text x="1231.8" y="444.0" font-size="13" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">57 min</text>
+<rect x="20" y="472.0" width="1360" height="50" rx="8" fill="#5e5d59" fill-opacity="0.09"/>
+<text x="34" y="502.0" font-size="13.5" fill="#141413">Web Summit&#x27;s own page: Day 2 off</text>
+<rect x="1279.5" y="490.0" width="51.3" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
+<circle cx="1279.5" cy="497.0" r="6" fill="#1f5f8b"/><circle cx="1330.8" cy="497.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
+<text x="1267.5" y="502.0" font-size="13" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">1 h 49 min</text>
+<rect x="20" y="530.0" width="1360" height="50" rx="8" fill="#5e5d59" fill-opacity="0.05"/>
+<text x="34" y="560.0" font-size="13.5" fill="#141413">Web Summit&#x27;s email to attendees</text>
+<rect x="1293.2" y="548.0" width="4.7" height="14" rx="7" fill="#c96442" fill-opacity="0.35"/>
+<circle cx="1293.2" cy="555.0" r="6" fill="#1f5f8b"/><circle cx="1297.9" cy="555.0" r="6" fill="#ffffff" stroke="#c96442" stroke-width="2"/>
+<text x="1281.2" y="560.0" font-size="13" font-weight="700" fill="#141413" text-anchor="end" stroke="#f3f2ee" stroke-width="4" paint-order="stroke">10 min</text>
+<text x="30" y="646" font-size="12.5" fill="#141413"><tspan font-weight="700">Blue:</tspan> published by the source. <tspan font-weight="700">Open orange:</tspan> first read by our team. Times UTC (= Lisbon), 9 to 10 November 2026; press items labelled.</text>
+<text x="30" y="666" font-size="12" fill="#5e5d59">The longest gaps came before the incident was declared. The last miss: Web Summit's own update sat in a section of its site we were not watching.</text>
+<text x="30" y="684" font-size="12" fill="#5e5d59">Drawn by journalist.examples@web-summit.dinis from reporter@web-summit.dinis's trace 2026-11-10-the-storm-incident (lead_times; IPMA's issue times from its CAP feed, found 23:52).</text>
 </svg>
