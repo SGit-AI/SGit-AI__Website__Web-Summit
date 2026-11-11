@@ -12,7 +12,7 @@
     "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/"
   },
   "captured_by": "reporter@web-summit.dinis",
-  "captured_at": "2026-11-11T06:30Z",
+  "captured_at": "2026-11-11T09:25Z",
   "rules": "Read Vicky's weather desk's public files only; never write to them. Public sources only; nothing on people's whereabouts or contact details.",
   "shape": {
     "event": "n, lane (outside|ours), kind (signal|decision|hand-off|not read), actor {name, kind: authority|person|agent}, what, published (UTC, the source's own time; null if not stated), read (UTC, when our team first read it), read_by, affects[] (the incident's 'could happen' items, README section 3), evidence[], note, handoff {to, via}",
@@ -2386,6 +2386,203 @@
           "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/193b849a6644"
         }
       ]
+    },
+    {
+      "n": 81,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA",
+        "kind": "authority"
+      },
+      "what": "Madeira's red warnings end at 06:00, as scheduled",
+      "published": "2026-11-11T06:00:00Z",
+      "read": "2026-11-11T06:25:00Z",
+      "read_by": "incident.meteorologist@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ]
+    },
+    {
+      "n": 82,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "CNN Portugal, live",
+        "kind": "press"
+      },
+      "what": "Near the venue: nearly ten cars partly submerged at Parque das Nações, by Oriente; Madeira closes Funchal's centre; 16 Madeira flights cancelled",
+      "published": "2026-11-11T07:24:00Z",
+      "read": "2026-11-11T07:35:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "75315a2f",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/75315a2f2513"
+        }
+      ],
+      "note": "not confirmed at a public body",
+      "affects": [
+        2,
+        7
+      ]
+    },
+    {
+      "n": 83,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "IPMA (CAP PO-01-1932)",
+        "kind": "authority"
+      },
+      "what": "Lisbon's wind warning lowered from red to orange, and brought forward: orange 09:00 to 21:00, gusts to 120 km/h (was red 12:00 to 21:00, to 140 km/h); wind lowered in ten other districts; red rain 09:00 to 18:00 stands",
+      "published": "2026-11-11T07:16:30Z",
+      "read": "2026-11-11T07:38:00Z",
+      "read_by": "incident.meteorologist@web-summit.dinis (CAP poll)",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "287ae82e",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/287ae82e35c9"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "2fc21883",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/2fc21883b480"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "note": "read 22 min after it was sent, through the CAP feed built the night before; MeteoAlarm carried it after 16 to 21 min; IPMA's own open data still showed red until between 08:22 and 08:44 (66 to 88 min). The red wind that the summit's Day 2 decision rested on was lowered about 4 h 44 min before it would have begun",
+      "affects": [
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "n": 84,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA / METAR (Madeira airport)",
+        "kind": "authority"
+      },
+      "what": "The wind collapses from SW 69 km/h gusting 89 to NE 13 km/h at 995 hPa: the centre passing close by, about 07:30 to 08:00 (labelled analysis)",
+      "published": "2026-11-11T08:00:00Z",
+      "read": "2026-11-11T08:22:00Z",
+      "read_by": "incident.meteorologist@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "e9596c8f",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/e9596c8f83a8"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 85,
+      "lane": "outside",
+      "kind": "signal (press, citing AMN)",
+      "actor": {
+        "name": "press (AMN)",
+        "kind": "press"
+      },
+      "what": "18 sea bars closed",
+      "published": null,
+      "read": "2026-11-11T08:41:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "b9cf8a2f",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/b9cf8a2fb308"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 86,
+      "lane": "outside",
+      "kind": "signal (press)",
+      "actor": {
+        "name": "CNN Portugal, live",
+        "kind": "press"
+      },
+      "what": "Intense rain may meet the high tide and hinder drainage in the cities; civil protection's 60 incidents by 06:00, Greater Lisbon most (26)",
+      "published": "2026-11-11T08:27:00Z",
+      "read": "2026-11-11T08:51:00Z",
+      "read_by": "incident team",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "note": "60 by 06:00 and 66 by 03:30 come from different reports and periods",
+      "affects": [
+        2,
+        7
+      ]
+    },
+    {
+      "n": 87,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA",
+        "kind": "authority"
+      },
+      "what": "Red rain for Lisbon in force, 09:00 to 18:00; orange wind 09:00 to 21:00; airport at 08:30: 20 km/h, no gust",
+      "published": "2026-11-11T09:00:00Z",
+      "read": "2026-11-11T09:03:00Z",
+      "read_by": "incident.meteorologist@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "affects": [
+        2,
+        7
+      ]
     }
   ],
   "lead_times": [
@@ -2443,6 +2640,13 @@
       "first_read_by_us": "2026-11-10T14:23Z (IPMA's data, by the newsroom)",
       "lag": "about 6 h 18 min",
       "note": "the press was 47 min behind IPMA; we were 6 h behind the press"
+    },
+    {
+      "signal": "IPMA lowers Lisbon's wind to orange",
+      "published": "2026-11-11T07:16:30Z",
+      "first_read_by_us": "2026-11-11T07:38Z",
+      "lag": "about 22 min (the CAP feed); the open data would have given it 66 to 88 min late",
+      "note": "the CAP connector, built at 23:52 after we learned IPMA's issue times, made this the fastest official read of the incident"
     }
   ],
   "open_questions": [
