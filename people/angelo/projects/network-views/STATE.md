@@ -1,8 +1,8 @@
 # network-views: state
-For the digest: plan written; first step (design of a hand-offs view, three options) ready to start; waiting on Angelo for nothing yet; risk: no real market hand-over or local-model run exists to show; cost so far 1 sub-agent (survey, platform cost not reported), 0 workers.
+For the digest: d1 design running (alpha.large, three stunning concepts for a hand-offs view, at Angelo's word); waiting on Angelo: nothing until the pick; risk: no real market hand-over or local-model run exists to show; cost so far 1 sub-agent (survey, platform cost not reported), 0 workers.
 
-Lead: network-views.pm@PrompTugal.angelo (session_01Xp7gj49w3HhKrhT64Gp1c1). Wake routine: not yet in BRIEF.md (conductor.b@ adds it).
-Last update: 2026-11-11 ~20:05 UTC.
+Lead: network-views.pm@PrompTugal.angelo (session_01Xp7gj49w3HhKrhT64Gp1c1). Wake routine: trig_01D39RAzsMdheFWbiBWjttdi (BRIEF.md, b59b01a).
+Last update: 2026-11-11 20:08 UTC.
 
 ## 1. The old views: what they show, what to keep (all kept unchanged; owner dashboard@)
 - #live (live.js, live3d.js): hexagon graph of who wrote to whom, 48 h, from git. Keep: the "who talks to whom" picture.
@@ -33,7 +33,8 @@ Decided by default, Angelo can reverse: the new view reads the existing records 
 Then Angelo's pick (below tier 3: if he does not pick, decided by default on the designer's recommendation). Then d2 build (collector + view, new files), d3 a small link from the command centre (For: dashboard@).
 
 ## Next
-- Start d1 (design) on a large slot once the wake routine id is in BRIEF.md (so the worker can wake me); if not there by the next check, start without it and check the worker by get_session.
+- d1 design running: alpha.large.worker@, session_01Xp7gj3WbDLr5fQ2fn1DDuA, brief d1-design/brief.md (95ccf113), branch pool/network-views-d1. Three bold concepts (not three layouts of one chart), working animated mocks on a real day's sample data, 390/1280 screenshots, a recommendation. Then Angelo's pick, then d2 build.
+- Worker check of its instruction: pushed-by cannot see project branches, so the brief has it check aa8f579f is ANGELO and 95ccf113 is on project/network-views by this lead.
 
 ## Waiting on Angelo
 - Nothing tier 3 yet. Note: "done when" needs one market hand-over; none exists. It comes from handover-market.pm@'s p1 write-back, which waits on Angelo's go there, not here.
@@ -43,4 +44,5 @@ Then Angelo's pick (below tier 3: if he does not pick, decided by default on the
 - Sub-agent hops are invisible until commits carry Sub-agent: lines.
 
 ## Decided
+- Angelo, 11 Nov 20:05 UTC, on the first view: "We need the designer to come up with a visual approach that is as stunning as the old agent network views or what Silvio has been doing in the command centre. I don't have an idea on how this can look like, but it needs to be nicely designed." So: d1 asks for three bold concepts, the bar being his old network views and Silvio's command centre (assets/cc/, GAMMA-Ray, the Universe), keeping the command centre's look; my forms A/B/C are dropped as the frame, the designer may use them as one input.
 - Angelo, 11 Nov (BRIEF.md): "I don't want to retire them because they still tell important things": old views unchanged.
