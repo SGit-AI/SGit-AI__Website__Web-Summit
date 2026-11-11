@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1807",
+    "date": "2026-11-11",
+    "what": "03:23 wake refresh; token measure refused by the session's permission check (Dinis: ask in status)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "14f538c16"
+  },
+  {
     "version": "v0.2.1806",
     "date": "2026-11-11",
     "what": "wake 03:18: Jose's example as a trace (10 steps); the incident +8 events (AEMET named the storm 3 h before IPMA)",
