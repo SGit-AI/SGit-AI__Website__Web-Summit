@@ -1,7 +1,7 @@
 {
  "entity": "bridges",
  "about": "Every decision in graph.json about bridges: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T09:30Z",
+ "updated": "2026-11-11T11:35Z",
  "decisions": [
   {
    "edge": "bridges-60",
@@ -42,6 +42,21 @@
    "scope": {
     "extent": "whole",
     "parts": "both bridges"
+   }
+  },
+  {
+   "edge": "vasco-da-gama-100",
+   "decision": "Vasco da Gama limited to 100 km/h since 07:30 (visibility); 25 de Abril at usual limits",
+   "decided_by": "Lusoponte",
+   "published_utc": "2026-11-11T10:50Z",
+   "effect_from_utc": "2026-11-11T07:30Z",
+   "address": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T11:35Z",
+   "label": "evidence",
+   "state": "limited",
+   "scope": {
+    "extent": "part",
+    "parts": "Vasco da Gama only"
    }
   }
  ],
@@ -102,11 +117,17 @@
    "url": "https://www.lusoponte.pt/",
    "http": null,
    "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T11:33Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
   }
  ],
  "tries_summary": {
   "https://www.lusoponte.pt/": {
-   "tries": 9,
+   "tries": 10,
    "published_found": false
   }
  }

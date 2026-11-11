@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T10:34Z",
+ "updated": "2026-11-11T11:35Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -390,6 +390,16 @@
    "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
    "read": "2026-11-11T06:35Z",
    "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "rsb-lisboa",
+   "name": "Regimento de Sapadores Bombeiros (Lisbon fire brigade)",
+   "kind": "authority",
+   "role": "Lisbon city fire and rescue.",
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T11:35Z",
+   "read_by": "incident.researcher@web-summit.dinis"
   }
  ],
  "edges": [
@@ -720,6 +730,13 @@
      "source": "https://observador.pt/liveblogs/manifestantes-detidos-no-porto-pronunciam-se-sobre-suspensao-provisoria-do-processo/",
      "label": "evidence",
      "read": "2026-11-11T06:35Z"
+    },
+    {
+     "at": "2026-11-11T10:35Z",
+     "what": "Lisbon tunnels opening and closing as water accumulates (Campo Grande)",
+     "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+     "label": "evidence",
+     "read": "2026-11-11T11:35Z"
     }
    ],
    "scope": {
@@ -1124,7 +1141,7 @@
    "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
    "corroborated_by": [
     "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
    ],
@@ -1156,7 +1173,7 @@
    "source": "https://websummit.com/startups/pitch/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "no decision with an effect window",
@@ -1409,7 +1426,7 @@
    ],
    "label": "fact",
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read": "2026-11-11T10:34Z",
+   "read": "2026-11-11T11:35Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": "2026-11-11T09:00Z",
    "effect_to_utc": "2026-11-11T18:00Z",
@@ -1913,8 +1930,8 @@
    "read": "2026-11-11T07:35Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": null,
-   "effect_to_utc": null,
-   "effect_note": "\"hoje de manhã\"; end not stated",
+   "effect_to_utc": "2026-11-11T10:32Z",
+   "effect_note": "closed \"hoje de manhã\"; reopened by 10:32 (CNN Portugal: \"Apesar da reabertura dos acessos ao Funchal\")",
    "state": "closed",
    "state_note": null,
    "area": "madeira",
@@ -2034,7 +2051,7 @@
    ],
    "label": "fact",
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
-   "read": "2026-11-11T10:34Z",
+   "read": "2026-11-11T11:35Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "also": [
     "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json"
@@ -2179,6 +2196,78 @@
    },
    "area": "lisbon",
    "note": "CNN Portugal live 09:54:01Z, from ANA's site (ANA's site shows us a bot page). Earlier: \"at least 40\" (24noticias, Tue)."
+  },
+  {
+   "id": "vasco-da-gama-100",
+   "by": "lusoponte",
+   "to": [],
+   "decision": "Vasco da Gama bridge limited to 100 km/h since 07:30 for reduced visibility; usual limits on the 25 de Abril bridge; Lusoponte advises against motorcycles and high-sided vehicles",
+   "at": "2026-11-11T07:30Z",
+   "status": "happened",
+   "follows": [
+    "bridges-lifted"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T11:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T07:30Z",
+   "effect_to_utc": null,
+   "effect_note": "\"desde as 07:30\"; end not stated",
+   "state": "limited",
+   "state_note": null,
+   "scope": {
+    "extent": "part",
+    "parts": "Vasco da Gama bridge only (100 km/h); 25 de Abril unchanged"
+   },
+   "area": "lisbon",
+   "note": "Lusoponte via CNN Portugal live 10:50:16Z (Lusa). lusoponte.pt still unreachable to us."
+  },
+  {
+   "id": "rsb-lisbon-count-1000",
+   "by": "rsb-lisboa",
+   "to": [],
+   "decision": "Occurrence count, Lisbon city: about 50 from 00:00 to 10:00, mostly floods",
+   "at": "2026-11-11T10:00Z",
+   "status": "happened",
+   "follows": [
+    "ipma-red-rain-0900"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T11:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": "2026-11-11T10:00Z",
+   "effect_note": "\"desde as 00:00 e até às 10:00\"",
+   "state": null,
+   "state_note": "a count",
+   "scope": null,
+   "area": "lisbon",
+   "note": "RSB source to Lusa, via CNN Portugal live 11:26:00Z."
+  },
+  {
+   "id": "gov-council-sao-bento",
+   "by": "government",
+   "to": [],
+   "decision": "Government meets at São Bento; reiterates that prevention is the key word and that the storm has not yet entered the mainland",
+   "at": "2026-11-11T11:07Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T11:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": null,
+   "state_note": "a statement",
+   "scope": null,
+   "area": "mainland",
+   "note": "CNN Portugal live 11:07:00Z."
   }
  ],
  "lessons": [
