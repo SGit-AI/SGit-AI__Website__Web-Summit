@@ -21,7 +21,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** today's summit is called off (Storm Charles). Thursday goes ahead and is the only summit day left. First, unblock the Team app helper: reply 'Yes, attach the repositories and push' in the chat '2 · teamapp'. Then rehearse the stand demo with Angelo this morning, before the wind warning at midday. And start your inbox chat. Everything else is on [your to-do list](todo/index.html).
+**Right now:** Thursday is the only summit day left, if Web Summit confirms it. Tomorrow morning: check Web Summit's update, then post version A (stand open) or B (called off) of Thursday's LinkedIn post. Tonight: your phone (key, Wallet card, both apps updated), the Team app helper's 'yes, push', and your inbox chat. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 

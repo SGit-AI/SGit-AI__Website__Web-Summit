@@ -156,3 +156,9 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 ## Tue 10 Nov 2026, 04:15 UTC (OVERNIGHT-10NOV fix-only wake 2)
 
 - state: idle
+
+## Wed 11 Nov 2026, 19:20 UTC (RULES-11NOV confirmation wake)
+
+- confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: from this session's own scratch space, two Web Summit page parsers (wsapp.py, wstext.py), the saved lists of Web Summit addresses (company, session and schedule pages) and about 90 saved copies of Web Summit pages from my 5 to 9 November runs; my newsroom notes and the "-b" session's notes already forbid machine reads (nothing to remove); my writing task's prompt had no such step and now carries the rules (task left disabled); my fix-only task has none either (stays disabled, standing answer 33); key: journalist-vicky-promptugal-c (signing sha256:962def922dc5c2b7, newsroom board/keys.json), journalist-vicky-promptugal-b marked superseded at 19:10 UTC.
+- Note: ten regular wakes from 10 and 11 November reached this session only tonight (after restarts); not run, being stale, and normal work waits for the conductor or Vicky.
+- state: ok; done: RULES-11NOV confirmed, new key; next: wait for the conductor or Vicky; ask: none; run: scheduled

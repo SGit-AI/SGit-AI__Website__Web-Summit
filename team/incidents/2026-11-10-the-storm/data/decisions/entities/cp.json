@@ -210,11 +210,35 @@
    "bytes": 3306,
    "result": "answered; no notice found",
    "excerpt": []
+  },
+  {
+   "at": "2026-11-11T17:40Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T18:33Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
+  },
+  {
+   "at": "2026-11-11T19:33Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
   }
  ],
  "tries_summary": {
   "https://www.cp.pt/": {
-   "tries": 15,
+   "tries": 18,
    "published_found": false
   }
  }

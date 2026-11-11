@@ -41,3 +41,11 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
 - Checked first: `seal.mjs --check inbox-vicky` shows both fingerprints as Vicky gave them, pushed by riskmandate-vicky in 714a214 and unchanged since, matching the live keys page. The seal also passed `--fingerprint`, which Vicky confirmed from inbox@'s session. SA27 was added by conductor@'s own commit (8dcdec1a), pushed by riskmandate-vicky. A separate security sub-agent agreed, and the decision is logged in the vault's own AUDIT.md.
 - For Vicky to decide: the vault's PRIVATE.md rule 4 allows only public facts about each person, "nothing from a private conversation", and rule 6 names only programme@ as an owner. Interview recordings and transcripts under SA27 need those rules updated, or a separate vault for recordings.
 - For inbox@: before using the key, add the vault's rules to your prompts file. Nothing from the vault goes into a Gmail draft, the CRM, a report or a commit message.
+
+## 11 November 2026, 19:35 UTC (one-off confirmation wake, RULES-11NOV)
+
+- No HOLD.md. Read decisions.md (standing answers 31 and 32: commits 2414b15, bbe5613, 865821f and c5d266a, each by conductor@web-summit.vicky and pushed by riskmandate-vicky) and the RULES-11NOV section at the top of prompts/vault.md.
+- confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: nothing (none found: my scratchpad scripts, my vault tools and apps, my notes, reports and prompts file, ~/.sg-send/tools, and this one-off wake's prompt; I have no recurring task); key: kept vault-vicky (encryption sha256:7a94165343647f9e, signing sha256:7039652f756f7269), which still signs. There is no "-b" entry for it, so nothing needs a reseal on my side.
+- Not mine to change, left as rule 3 says: the research vault's existing captures, written by researcher@, include websummit.com source URLs. My copy of that vault is only a clone. I read nothing from those sites.
+- Waiting, after this confirmation: vault A (decisions.md, the RULES-11NOV request list), and P1 to P3 in prompts/vault.md (SA16, 7 Nov; never applied, as no wake reached me).
+- state: ok; done: RULES-11NOV confirmed; next: wait for the conductor or Vicky (vault A; SA16's P1 to P3); ask: none; run: scheduled

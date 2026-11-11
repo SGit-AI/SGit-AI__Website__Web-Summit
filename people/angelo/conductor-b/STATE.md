@@ -8,7 +8,20 @@ summary: Account B's conductor. Main control of Angelo's backlog from 10 Novembe
 
 last digest: 2026-11-11T11:25Z (team updates: WS-215 Lisbon Fringe, the storm, websummit.com hold); open point: b1 question 4 of 5 (accountant cadence), then 5.
 
+## Before compaction (11 Nov, about 17:35 UTC): open with Angelo, in order
+1. **Offers 1 and 2: PARKED** (Angelo, 11 Nov: "Let's park the offers, as we're now working with conductor.fringe@ on an article on the website to clarify how to model agentic semantics and at the same time working on the offers market experiments with Dinis."). Was: offer 1 (people/angelo/pipeline/b3-team-offers/offer-1-our-approach.md, with crafts and skills): send, with the picture page https://web-summit.sgit.ai/people/angelo/pipeline/how-it-works/ as its first link? Recommended yes: one board item for everyone and a commit For: each person's conductor. Offer 2 waits until the capacity board and claim tool exist (handover-market.pm@'s project).
+2. **The accountant routine** (trig_01CvoEzp8UjqACZ2EXV3hnFW) has no repository: Angelo attaches SGit-AI/SGit-AI__Website__Web-Summit in its routine settings, or conductor.b@ pauses it. The hourly digest (trig_019P5mmH76wN24vNXQTvbU5C) is paused; digests are gathered on demand.
+3. **b1's last question:** share the accountant's reports with Indi's conductor? Recommended: not now.
+4. **Leads waiting on him:** prod-pipeline.pm@ (asked "shall I take A?"; its next wake should decide by default); handover-market.pm@ (said it would show a pull request: tell it no pull requests, push to its branch); conductor.fringe@ (which of Dinis's four altitudes MVPs; an OpenRouter key for MVP 1 is Dinis's credit, tier 3).
+5. **Usage:** the percentage from Angelo's usage page, to calibrate account B's window against today's spend (about 64 USD by 17:22; the window resets 19:40 UTC).
+6. **Later (from the desk's HANDOVER.md):** what Dinis said at 09:00 on 10 Nov (the RiskMandate demos); the construction exhibitor interview notes and consent (the first article through the pipeline); Indi's demo approve button (recommended yes); drafts gw1 and pr1; LinkedIn drafts' three questions.
+
+## How conductor.b@ works now (decided 11 Nov, all in commits)
+Route only; never build. Workers: session-less, 20 slots (10 large, 10 small), prompt = preamble + craft + skills + format + name (people/angelo/pipeline/ROLES.md); never a large step on a small slot; no ceiling while usage lasts. Projects: one PM each (<project>.pm@), who starts its own workers and is woken by them through its routine (2-hour backstop), deciding by default below tier 3. Every agentic activity in a commit (runs.md, ledgers, costs in dollars and tokens). Review each branch onto dev, archive finished sessions. Talk to Angelo in formats/conductor.md (snapshot, then one point at a time). When usage runs short: hand over (the handover market, project handover-market).
+
 ## Open
+
+- **With conductor.fringe@ (Angelo directly):** an article on the Fringe site on how to model agentic semantics; the offers-market experiments with Dinis. conductor.b@ does not duplicate either. The overlap with handover-market.pm@ (its pattern 1 is a reply to Dinis's packet) stays: Angelo coordinates the two himself (11 Nov, to split, merge or leave both: "c").
 
 - **Usage at 17:22 UTC (11 Nov):** account B allowed; the 5-hour window resets 19:40 UTC (hit the limit once, 13:35 to 14:40). API-equivalent dollars by session: conductor.b@ 28.31 (since 10 Nov 17:16; context 461k tokens, the biggest cost), conductor.fringe@ 19.61, prod-pipeline.pm@ 3.54, handover-market.pm@ 2.37, workers 9.99, accountant 0.11; about 64 in all. Recommended: a fresh conductor.b@ session from STATE.md.
 

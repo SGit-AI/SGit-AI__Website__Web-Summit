@@ -2,6 +2,9 @@
 
 > **Label: ANALYSIS** (incident.meteorologist@web-summit.dinis, 10 November 2026, written at 19:05 UTC from the data in this folder as read at 19:01 UTC). The facts it rests on are in the JSON files beside it, each with its source and time read. The conclusions are reasoning, not IPMA's words, and will move as IPMA updates. Lisbon is on UTC in November: every time here is both UTC and Lisbon time. The machine-readable version is `analysis.json`.
 
+
+> **Sources and coverage of the CAP record (`cap.json`)** (added 19:35 UTC 11 Nov). `lisbon_messages`: every Lisbon CAP message, any level, since 10 Nov 19:01 UTC. `other_messages`: red messages for any district and every Madeira message since 11 Nov 01:50; orange for any district since 11 Nov 12:36. `feed_batches`: every message of any level and district, grouped by sent time, **complete only from 11 Nov 19:27:32 UTC**. Earlier rows there hold only what was still in the feed at that read, so a gap before then does not mean IPMA sent nothing (for example, the yellow messages of 12:18:03 that the 19:17:31 batch replaces were never kept). IPMA's open data (`warnings.json`) lagged CAP by 27 min to more than 1 h 50 min on 11 Nov; CAP is the record of when IPMA acted.
+
 ## 1. When does the worst arrive, and when does it end?
 
 **Short answer (analysis):** the weather turns bad from the early morning (rain from about 05:00, wind building 07:00 to 09:00), **the worst window is 12:00 to 18:00**, when IPMA's two red warnings overlap, and **the peak is most likely between about 15:00 and 19:00**, around the moment the wind swings from south to north-west as CHARLES's centre passes. **It ends by 21:00** (red wind ends; the airport forecast's strongest groups end at 18:00; IPMA's model has the wind easing from 19:00). Confidence: **medium on the window, low on the exact peak hour and strength**: IPMA itself says the track and strength carry "elevada incerteza".
@@ -458,3 +461,15 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 - Warnings: no new CAP since 15:55:03. IPMA's open data dropped the orange wind by 17:22:38 (about 1 h 25 min after the CAP ended it) and now matches cap.json: yellow rain to 18:00, orange sea to 21:00, yellow sea 21:00–Thursday 03:00.
 
 **Analysis (high):** the wind veered through S and SW to WNW with rising pressure and falling temperature: the centre passed north of Lisbon, and the cold side has arrived. This settles sections 12, 16 and 21: **the centre passed just north, closest about 14:30–16:30**. For Lisbon the storm is over except for the sea (orange to 21:00) and passing showers. **Thursday (J4):** showers at times, SW wind with gusts about 50 km/h from 10:00 (TAF), no wind or rain warning for Lisboa so far; yellow sea until 03:00.
+
+## 26. 18:25 UTC 11 Nov: after the storm
+
+**Facts** (read 18:22:58–18:23:17 UTC): LPPT 17:30 30012KT Q0991; 18:00 30013G27KT (gusts 50 km/h), visibility 10 km or more, Q0992, rising. IPMA stations, hour labelled 17:00: no rain; wind NW or W, means 15–25 km/h. No new CAP since 15:55:03 (poll every 5 min to 18:19:21); no new communiqué. Lisbon's yellow rain warning ran to 18:00; orange sea to 21:00 and yellow sea 21:00–Thursday 03:00 remain.
+
+**Analysis (high):** the 18:00 gust of 50 km/h is the TAF's forecast for 18:00–21:00 (TEMPO 27 kt), under no warning. Nothing in the data points to a second peak for Lisbon tonight. Thursday as in section 25: showers, SW gusts about 50 km/h from 10:00.
+
+## 27. 19:25 UTC 11 Nov: quiet
+
+**Facts** (read 19:23:26–19:23:58 UTC): LPPT 18:30 29013KT Q0993; 19:00 29011KT, no gust, Q0994. The highest station mean in the hour labelled 18:00 was 29.9 km/h, at Relógio. Lisbon's yellow rain warning has expired; orange sea to 21:00 and yellow sea 21:00–Thursday 03:00 remain. No new CAP since 15:55:03, no new communiqué, LPPT TAF 17:00 unchanged.
+
+**Analysis (high):** nothing changes from section 26.

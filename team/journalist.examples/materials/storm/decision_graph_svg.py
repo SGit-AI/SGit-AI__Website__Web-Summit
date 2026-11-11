@@ -19,7 +19,7 @@ C = {'done': '#1f5f8b', 'unknown_time': '#1f5f8b', 'not_read': '#8a8984', 'not_a
 o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">',
      f'<rect width="{W}" height="{H}" fill="#faf9f5"/>',
      '<text x="30" y="44" font-size="26" font-weight="700" fill="#141413">The storm: who decided what, and how far ahead</text>',
-     f'<text x="30" y="74" font-size="15" fill="#5e5d59">From the weather desk\'s sources, as of {g["as_of"][11:16]} UTC on {int(g["as_of"][8:10])} November. Lisbon time = UTC. Red rain Wednesday 09:00, ended 15:00; wind lowered to orange at 07:16, to 18:00.</text>',
+     f'<text x="30" y="74" font-size="15" fill="#5e5d59">From the weather desk\'s sources, as of {g["as_of"][11:16]} UTC on {int(g["as_of"][8:10])} November. Lisbon time = UTC. Red rain Wednesday 09:00, ended 15:00; wind orange from 07:16, ended 15:56; sea warnings to 03:00.</text>',
      '<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#5e5d59"/></marker></defs>']
 for i, l in enumerate(LANES):
     y = TOP + i * LH

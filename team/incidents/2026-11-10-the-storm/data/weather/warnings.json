@@ -1,7 +1,7 @@
 {
  "about": "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). IPMA's open data carries no issue time: `sent_utc` is the sent time of the CAP message (MeteoAlarm, cap.json) matching the warning's area, type, level and window exactly, or null where none matches (never guessed).",
  "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
- "read_utc": "2026-11-11T17:23:17Z",
+ "read_utc": "2026-11-11T19:29:49Z",
  "lisbon_peak_level": "orange",
  "lisbon": [
   {
@@ -11,7 +11,7 @@
    "end_utc": "2026-11-11T21:00:00Z",
    "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T17:23:17Z",
+   "read_utc": "2026-11-11T19:29:49Z",
    "sent_utc": null,
    "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
@@ -23,27 +23,15 @@
    "end_utc": "2026-11-12T03:00:00Z",
    "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T17:23:17Z",
+   "read_utc": "2026-11-11T19:29:49Z",
    "sent_utc": "2026-11-10T07:18:40Z",
    "text_en": "SW waves 4 to 5 metres.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-  },
-  {
-   "type": "Precipitação",
-   "level": "yellow",
-   "start_utc": "2026-11-11T15:56:00Z",
-   "end_utc": "2026-11-11T18:00:00Z",
-   "text_pt": "Precipitação por vezes forte.",
-   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T17:23:17Z",
-   "sent_utc": null,
-   "text_en": "Rain, at times heavy.",
-   "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent precipitation.', drops 'por vezes')"
   }
  ],
  "red_and_orange_elsewhere": {
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-11T17:23:17Z",
+  "read_utc": "2026-11-11T19:29:49Z",
   "items": [
    {
     "area": "BJA",
@@ -66,17 +54,6 @@
     "sent_utc": null,
     "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
     "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "FAR",
-    "type": "Vento",
-    "level": "orange",
-    "start_utc": "2026-11-11T15:56:00Z",
-    "end_utc": "2026-11-11T18:00:00Z",
-    "text_pt": "Rajadas até 90 km/h, podendo atingir 110 km/h nos locais mais expostos.",
-    "sent_utc": "2026-11-11T15:55:03Z",
-    "text_en": "Gusts up to 90 km/h, possibly reaching 110 km/h in the most exposed places.",
-    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 90-110 km/h.', drops 'podendo', 'locais mais expostos')"
    },
    {
     "area": "STB",
@@ -605,7 +582,24 @@
    ],
    "expired": [],
    "note": "compared with the read at 2026-11-11T16:22:55Z"
+  },
+  {
+   "read_utc": "2026-11-11T19:23:26Z",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "kind": "fact",
+   "added": [],
+   "removed": [],
+   "expired": [
+    [
+     "Precipitação",
+     "yellow",
+     "2026-11-11T15:56:00Z",
+     "2026-11-11T18:00:00Z",
+     "Precipitação por vezes forte."
+    ]
+   ],
+   "note": "compared with the read at 2026-11-11T18:23:17Z"
   }
  ],
- "next_read_utc": "2026-11-11T18:22Z"
+ "next_read_utc": "2026-11-11T20:22Z"
 }

@@ -23,3 +23,8 @@ Vicky's designer for Promptugal News, the Web Summit newsroom's new name (WS-14)
 ## Fri 6 Nov 2026 (paused)
 
 - At Vicky's word: the logo work stops (Dinis's designer owns the brand), with no comparison against the brand guide v2.0. designer@PrompTugal.vicky is paused until Vicky asks.
+
+## Wed 11 Nov 2026, 19:40 UTC (RULES-11NOV confirmation wake)
+
+- confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: nothing (my desk desks/designer-vicky/, my logo generator in this session's scratch area and my key files hold no reads of those sites: the generator reads only the site's own fonts; I have no scheduled task of my own, only this one-off wake); key: kept designer-vicky-promptugal (record sha256:228de9dce8c49784, still in this session, no "-b" entry). No HOLD.md. Read standing answers 31 to 33 and the RULES-11NOV section of my prompts file; it updates my memory (paused since 6 Nov) with the new remit: cover graphics on request only. My newsroom clone now points at PrompTugal/PrompTugal__News__Website again (the container had reset it to the old SGit-AI address; nothing was pushed there). No design work in this wake.
+- state: ok; done: RULES-11NOV confirmed, key kept; next: wait until the reviewer, a journalist, the conductor or Vicky asks for a graphic; ask: none; run: scheduled
