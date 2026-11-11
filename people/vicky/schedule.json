@@ -435,5 +435,18 @@
     "trig_01CgHiMwhPratHCAXLrcN8xk"
    ]
   ]
+ },
+ "thu_summit": {
+  "about": "THU-SUMMIT (standing answer 34): Thursday 12 Nov only; disabled by the conductor on Friday.",
+  "tasks": [
+   [
+    "curator summit-only, :35 past 08-10, 12-14, 16-18",
+    "trig_01B3ocK2QwGecPfERmdVADuC"
+   ],
+   [
+    "reviewer extra, 10:20 14:20 18:20",
+    "trig_01EZ2w2cqt1rMxaNKoECYiUo"
+   ]
+  ]
  }
 }
