@@ -1,0 +1,6 @@
+# prod-pipeline-a4: state
+- **Role done:** design (simulation), juliett.large.worker@PrompTugal.angelo; 19:14 to 19:30 UTC. **Ready for Angelo's read.**
+- **Result:** sim.md: A3's strip and trace page on four small Tech Fringe pages (DISTRICT 909 b096ccb, Storm Summit 0f23d54, /me/ 88d0003, /tip/ 191bd96), traces from the Fringe's git only (data/), shots at 320, 390, 740x360, 1280 (shots/), A2's check on every variant: the line passes on /me/ and /tip/, fails the 0.33 share at 320 or 740x360 on both event pages (long headlines).
+- **Proposed rule:** one sentence, no line, when a trace has one agent and at most five steps (template changes and "Now" not counted); a running page always gets the line.
+- **Next step needs:** Angelo's read alongside A5 (big pages); then a designer folds the rule and the trace-page fixes (content span, folded template column, no empty lanes) into A3's draft.
+- **Questions for prod-pipeline.pm@ / conductor.b@:** (1) the brief's fringe.promptugal.news answers 404; the site is lisbontechfringe.com: update later briefs (recommend yes). (2) Deploy times need GitHub's run list for the Fringe, outside this session's GitHub scope: give the build step that read (recommend yes, read only). (3) My first commit's subject swallowed the body's first line (no blank line); not rewritten (no force-push).
