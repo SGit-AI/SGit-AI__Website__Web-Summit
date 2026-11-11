@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1836",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: the push check: account B pushes as riskmandate-angelo (ANGELO)",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "7a3886ab5"
+  },
+  {
     "version": "v0.2.1835",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: first run: session key, STATE, runs log, the pipeline's role prompts for Angelo's read",
