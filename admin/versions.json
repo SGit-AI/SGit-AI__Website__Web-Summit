@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1831",
+    "date": "2026-11-11",
+    "what": "wake 09:18: the incident +7 events; IPMA lowered Lisbon's wind to orange at 07:16, before the red began",
+    "by": "reporter@web-summit.dinis",
+    "from": "481535948"
+  },
+  {
     "version": "v0.2.1830",
     "date": "2026-11-11",
     "what": "run 21, 286 commits: nothing found",
