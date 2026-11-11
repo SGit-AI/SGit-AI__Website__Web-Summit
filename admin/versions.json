@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1860",
+    "date": "2026-11-11",
+    "what": "12:15 run, 40f041b..8a4d1e6; A-27 closed (Angelo's conductor.b@ here); five actions open",
+    "by": "watcher@web-summit.jose",
+    "from": "19307df01"
+  },
+  {
     "version": "v0.2.1859",
     "date": "2026-11-11",
     "what": "wake 12:21: the incident +10 events; the press took 2 h 23 min to report IPMA's downgrade, and over-read it",
