@@ -1,0 +1,11 @@
+a2 measure: people/angelo/pipeline/prod-pipeline-a6/mock/strip.htm
+| viewport | part | share | 1st screen | min text | min tap (<44) | overlaps | clipped | inner scroll | page scroll | result |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 320x640 | strip | 0.29 | 0.29 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 360x760 | strip | 0.22 | 0.22 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 390x844 | strip | 0.2 | 0.2 | 12 | 44 (0/5) | 0 | 0 | no | no | ok |
+| 430x932 | strip | 0.19 | 0.19 | 12 | 44 (0/6) | 0 | 0 | no | no | ok |
+| 740x360 | strip | 0.32 | 0.32 | 12 | 44 (0/7) | 0 | 0 | no | no | ok |
+| 768x1024 | strip | 0.17 | 0.17 | 12 | 44 (0/10) | 0 | 0 | no | no | ok |
+| 1280x800 | strip | 0.22 | 0.22 | 12 | 44 (0/10) | 0 | 0 | no | no | ok |
+OK: 7 measurements within the limits

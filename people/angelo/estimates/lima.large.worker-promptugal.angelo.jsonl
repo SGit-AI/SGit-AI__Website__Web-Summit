@@ -1,0 +1,2 @@
+{"event":"start","at":"2026-11-11T19:50:00Z","agent":"lima.large.worker@PrompTugal.angelo","item":"prod-pipeline-a6","what":"design: team draft v2, A3 with A4 and A5 rules, small and big page shown","est_effort_min":45,"est_elapsed_min":55,"confidence":"medium"}
+{"event":"done","at":"2026-11-11T19:57:00Z","agent":"lima.large.worker@PrompTugal.angelo","item":"prod-pipeline-a6","effort_min":9,"elapsed_min":7,"runs":1,"note":"most of the work was reuse: A3 look, A5 renderer, A4 and A5 data"}

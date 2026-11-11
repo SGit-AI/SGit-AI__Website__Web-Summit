@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A6 mock: the strip, three forms</title><link rel="stylesheet" href="flow.css">
+<!-- lima.large.worker@PrompTugal.angelo, prod-pipeline-a6 (design mock, static, not live). A3's strip (8193766) unchanged in look,
+     with A4's rule (0905d30) and A5's rules (3af1628). The build writes one of these from trace.json; the script only swaps examples.
+     (default) normal: the Wexio event page (Fringe trace 893d4e6), A3's example.
+     #small: DISTRICT 909, one agent, 4 steps: one sentence, no line (A4's data/district-909.trace.json).
+     #big: the home page, 135 steps, 21 agents: the last change, the history one link, a top link (A5's data/home.trace.json).
+     #running: the home page while design works: always the line, stations in time order (A5's running mock). -->
+</head><body><main>
+<p id="top"></p>
+<h1>PTW Classroom: Deep Work x Wexio</h1>
+<p class="dek">An event page on the Tech Fringe ends here; the strip below says how it was made.</p>
+<div class="fake"></div><div class="fake"></div><div class="fake s"></div>
+<section class="fs" data-flow="strip" aria-labelledby="fs-h">
+ <p class="fs-k">How this page was made</p>
+ <h2 class="fs-h" id="fs-h">From the organiser's page to live in 46 min <span>· 3 people · 15 agents · 38 commits</span></h2>
+ <ol class="fs-line">
+  <li class="s-ask"><a href="trace.htm#s-2"><span class="fs-d"></span><span data-flow-label>Asked</span><span class="fs-t">10:27</span></a></li>
+  <li class="s-read quiet"><a href="trace.htm#s-7"><span class="fs-d"></span><span data-flow-label>Read</span><span class="fs-t">10:57</span></a></li>
+  <li class="lv3"><a href="trace.htm#s-9"><span class="fs-d"></span><span data-flow-label>Entry</span><span class="fs-t">10:58</span></a></li>
+  <li class="lv4 quiet s-person"><a href="trace.htm#s-15"><span class="fs-d"></span><span data-flow-label>Dinis</span><span class="fs-t">11:37</span></a></li>
+  <li class="lv4"><a href="trace.htm#s-24"><span class="fs-d"></span><span data-flow-label>Built</span><span class="fs-t">11:42</span></a></li>
+  <li class="s-live"><a href="trace.htm#s-27"><span class="fs-d"></span><span data-flow-label>Live</span><span class="fs-t">11:42</span></a></li>
+  <li class="lv4 quiet"><a href="trace.htm#s-33"><span class="fs-d"></span><span data-flow-label>26 commits</span><span class="fs-t">11:54</span></a></li>
+  <li class="s-fail lv2"><a href="trace.htm#s-66"><span class="fs-d"></span><span data-flow-label>5 failed</span><span class="fs-t">11:58</span></a></li>
+  <li class="s-now"><a href="trace.htm#s-76"><span class="fs-d"></span><span data-flow-label>Now</span><span class="fs-t">12:03</span></a></li>
+ </ol>
+ <p class="fs-f"><a href="trace.htm">See every step</a> · from the git record · taken 12:05</p>
+</section>
+</main>
+<script>
+const st=(c,href,l,t)=>'<li class="'+c+'"><a href="'+href+'"><span class="fs-d"></span><span data-flow-label>'+l+'</span><span class="fs-t">'+t+'</span></a></li>';
+const BIG=[st('s-ask','trace.htm#big','Started','18:52'),st('quiet','trace.htm#big','design.4','18:52'),st('lv3 quiet','trace.htm#big','conductor','18:56'),st('lv3 lv4 quiet','trace.htm#big','architect.1','19:03')];
+const fs=document.querySelector('.fs'), h1=document.querySelector('h1'), dek=document.querySelector('.dek');
+const big=()=>{h1.textContent='Lisbon Tech Fringe';dek.textContent='The home page: 11.9 phone screens long, rebuilt by 135 commits from 21 agents today.';
+ document.getElementById('top').innerHTML='<a class="fs-top" href="#fs-h">How this page was made &darr;</a>';};
+if(location.hash==='#small'){
+ h1.textContent='DISTRICT 909: back where it all started';dek.textContent='An event page added by one research agent in one pass.';
+ fs.classList.add('fs-one');
+ fs.innerHTML='<p class="fs-k" id="fs-h">How this page was made</p><p class="fs-s">A research agent read the organisers’ Luma page at 17:49 and added this event at 17:50, after a team member passed on the link. Live as v0.1.422.</p><p class="fs-f"><a href="trace.htm#small">See all 4 steps</a> · from the git record</p>';
+}else if(location.hash==='#big'){big();
+ fs.querySelector('.fs-h').innerHTML='Last change: 21 min <span>· 4 commits · 4 agents</span>';
+ fs.querySelector('.fs-line').innerHTML=BIG.join('')+st('s-live','trace.htm#big','Live','19:13')+st('s-now','trace.htm#big','Now','19:26');
+ fs.querySelector('.fs-f').innerHTML='<a href="trace.htm#big">See this change</a> <span class="hist">· <a href="trace.htm#big-open">All 135 commits</a></span>';
+}else if(location.hash==='#running'){big();
+ fs.querySelector('.fs-k').textContent='How this page is being made';
+ fs.querySelector('.fs-h').innerHTML='Working now: design, since 19:20 <span>· live 19:13 · last change 4 agents</span>';
+ fs.querySelector('.fs-line').innerHTML=BIG.join('')+st('s-live lv2','trace.htm#big','Live','19:13')+st('s-run','trace.htm#run','design','19:20 &rarr;');
+ fs.querySelector('.fs-f').innerHTML='<a href="trace.htm#big">See this change</a> · running: status.json, checked 19:24';
+}
+</script></body></html>
