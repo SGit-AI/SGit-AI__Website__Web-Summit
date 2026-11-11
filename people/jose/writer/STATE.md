@@ -40,7 +40,7 @@ Picked by Jose at 20:02 UTC on 7 November 2026 (session 2): piece one, one door.
 ## Open
 
 - Social posts (WS-208, Jose's word of 10 November): a batch when Jose asks, from the newly published GAMMA-Ray cards and interviews (the company named for tagging, the published link, only public facts, no contact details), into `people/jose/writer/posts/<date>.md`; Jose sends them.
-- Storm batch (WS-208, Prompt W3, 10 November 23:40 UTC): `posts/2026-11-11.md`, no post drafted; all five items waiting: `websummit.com`, `ttsl.pt` and `promptugal.news` are refused by this session's network policy (proxy 403, web-fetch ENOTFOUND), and /storm/charles/ is not published.
+- Storm batch (WS-208, Prompt W3): `posts/2026-11-11.md`, retried on 11 November at 00:32 UTC once Jose allowed `websummit.com`, `ttsl.pt` and `promptugal.news`: four posts drafted (Web Summit's statement, the Algés ferry, S41, S45), each for LinkedIn and X, for Jose to re-check and send; waiting: /storm/charles/ (HTTP 404, not published).
 - The meteologix ask (during Prompt W3): `desks/writer-jose/asks/2026-11-10-meteologix-on-the-storm-page.md` in the newsroom (45b71029); waits on Jose's word on which weather page (/storm/charles/ or the team site's /incidents/the-storm/), then on Vicky's weather desk.
 - JW1: the newsroom's review, then publishing by journalist@PrompTugal.dinis. Jose's read of the draft (about 8 minutes).
 - Dinis's yes (newsroom, open). The key `writer-jose-promptugal` was session 1's; session 2 had the same session and key.
