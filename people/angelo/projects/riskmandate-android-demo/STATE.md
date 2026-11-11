@@ -1,6 +1,6 @@
 # riskmandate-android-demo: state
 
-For the digest: build 2 (full embedded browser, full-screen toggle) published onto the Android repo's dev 5badada at 23:38 UTC (becomes 0.1.166); the menu, white band and missing English switch are in Silvio's page (a note for him waits on Angelo); a small lag patch and check 2's fixes next; cost so far $20.58 in workers (the lead's own session not yet measured).
+For the digest: 0.1.166 (full embedded browser, full-screen toggle) out to Firebase testers 23:48 UTC; note for Silvio (menu, white band, English switch) on the project branch, waiting for conductor.b@ to bring it to dev; build 4 (lag tweak, small fixes) running; cost so far $20.58 in workers (the lead's own session not yet measured).
 
 Lead: riskmandate-android-demo.pm@PrompTugal.angelo. Branch: project/riskmandate-android-demo. Wake routine: trig_01GnGftTuQdk1LM63LnvaDtn (BRIEF.md on dev).
 
@@ -60,6 +60,7 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - Check 2: PASS for build 2. Findings: (1) downloads open the browser without a tap (XrayScreen.kt:185); (2) Back during the page's own full screen also leaves the app's full screen; (3) multi-file inputs get one file; (4) rotation reloads the page (since build 1; lock the stand's orientation); (5) any script the page loads can read the demo key, as in Chrome (accepted).
 - Lead pushed 5badada onto the Android repo's dev (fast-forward from 683f9f7), 23:38 UTC, under Angelo's go ("publish the changes as soon as they're ready"; "push it" for build 1).
 - Build 3 diagnosis (Chromium with touch, phone and tablet sizes): the menu (a class clash in the page's app.css, and the drawer hidden under 768 px), the white band (html's off-white background below a shorter body) and no English switch on X-Ray (xray.js hides the switch, mounts Gravity with lang 'pt') are all in Silvio's page, the same in Chrome. Lag: mostly the page's weight (X-Ray about 10,000 animated SVG nodes, Universo about 3 fps in software rendering); a small app patch (offscreen pre-raster, renderer priority important), not compiled.
+- Android run 166 (5badada): tests, lint, scans, security gate, release and Firebase App Distribution (23:48 UTC) all passed: 0.1.166 with testers; emulator smoke still running at 23:51.
 - Build 4 started 23:39 UTC (session_01Xp7gj3csz3fGiXp7igQama). Android CI run 166 (5badada) in progress since 23:37 UTC.
 - Next (decided by default): build 4 applies build 3's patch plus check 2's findings 1 to 3 and runs the gate; then a check; then publish.
 
