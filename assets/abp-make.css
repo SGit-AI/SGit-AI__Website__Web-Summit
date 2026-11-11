@@ -152,3 +152,38 @@ body.abpm-on main { padding-top: 1.2rem; }
     body.abpm-print .abpm-sec { opacity: 1 !important; background: none !important; border-left: 0 !important; break-inside: avoid; }
     body.abpm-print main { padding: 0 !important; }
 }
+
+/* made simple (conductor@web-summit.indi, 11 November 2026, WS-34, at Indi's word: "much more simple ... subtitles with
+   expandable and collapsible bits which have all the detail"): each section a subtitle with one short line, folded;
+   the section the current question fills opens and is highlighted; printing opens them all */
+.abpm-line1 { margin: 0 0 .6rem !important; padding: .25rem .6rem; border-radius: 8px; background: var(--warn-soft); color: var(--warm); font-weight: 700; font-size: .95rem; display: inline-block; }
+.abpm-line1.hot { outline: 3px solid var(--accent); }
+details.abpm-sec { display: block; margin: 0 0 .45rem; padding: 0; border: 1px solid var(--line); border-left: 6px solid var(--line-2); border-radius: 10px; background: var(--surface); }
+details.abpm-sec > summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .6rem; padding: .6rem .9rem; min-height: 48px; }
+details.abpm-sec > summary::-webkit-details-marker { display: none; }
+details.abpm-sec > summary::after { content: '+'; margin-left: auto; font: 700 1.3rem/1 var(--sans); color: var(--accent-dk); }
+details.abpm-sec[open] > summary::after { content: '−'; }
+details.abpm-sec > summary b { font-size: 1.15rem; color: var(--ink); }
+details.abpm-sec > summary span { font-size: 1.05rem; color: var(--ink-2); }
+details.abpm-sec .abpm-secb { padding: 0 .9rem .7rem; border-top: 1px solid var(--line); }
+details.abpm-sec.hot { background: var(--accent-soft); border-left-color: var(--accent); opacity: 1; }
+details.abpm-sec.hot > summary span { color: var(--ink); }
+.abpm-sec.pending { opacity: .62; }
+.abpm-full > summary { cursor: pointer; list-style: none; }
+.abpm-full > summary::-webkit-details-marker { display: none; }
+.abpm-full > summary u { color: var(--accent-dk); font-weight: 600; text-underline-offset: .2em; }
+.abpm-full ul { margin: .4rem 0 0; padding-left: 1.2rem; font-size: .95rem; color: var(--ink); }
+.abpm-i { position: relative; }
+.abpm-i > summary { list-style: none; cursor: pointer; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--line-2); font: 700 1.05rem var(--serif, Georgia, serif); font-style: italic; color: var(--ink-2); }
+.abpm-i > summary::-webkit-details-marker { display: none; }
+.abpm-i[open] > summary { border-color: var(--accent); color: var(--accent-dk); }
+.abpm-i > div { position: absolute; right: 0; top: 46px; z-index: 20; width: min(22rem, 80vw); padding: .7rem .9rem; border-radius: 12px; background: var(--surface); border: 1px solid var(--line-2); box-shadow: var(--shadow); font-size: .95rem; color: var(--ink-2); }
+.abpm-i p { margin: 0 0 .4rem; } .abpm-i p:last-child { margin: 0; }
+.abpm-bar-acts { align-items: center; }
+@media print {
+    body.abpm-print .abpm-i, body.abpm-print details.abpm-sec > summary::after { display: none !important; }
+    body.abpm-print details.abpm-sec { border: 0 !important; background: none !important; }
+    body.abpm-print details.abpm-sec > summary { padding: .6rem 0 .2rem; min-height: 0; }
+    body.abpm-print details.abpm-sec .abpm-secb { padding: 0; border: 0; }
+    body.abpm-print .abpm-line1 { background: none; color: #000; padding: 0; }
+}
