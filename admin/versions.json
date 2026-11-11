@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1904",
+    "date": "2026-11-11",
+    "what": "17:40 wake: lane drained (empty); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "f0f67f428"
+  },
+  {
     "version": "v0.2.1903",
     "date": "2026-11-11",
     "what": "17:42 wake: no red anywhere (IPMA; press conflict recorded); Lisbon 275 occurrences to 16:30; Madeira trails closed Thursday; no change to Day 3",
