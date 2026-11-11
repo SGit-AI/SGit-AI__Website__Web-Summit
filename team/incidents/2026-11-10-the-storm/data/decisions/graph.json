@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T13:19Z",
+ "updated": "2026-11-11T13:36Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -1152,7 +1152,7 @@
    "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 13:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
    "corroborated_by": [
     "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
    ],
@@ -1184,7 +1184,7 @@
    "source": "https://websummit.com/startups/pitch/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 13:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold).",
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "no decision with an effect window",
@@ -1431,7 +1431,7 @@
    ],
    "decision": "Red rain warning for the Lisbon district brought forward to 11 Nov 09:00 to 18:00 (orange 00:00 to 09:00; yellow from 21:24 Tuesday)",
    "at": "2026-11-10T21:23Z",
-   "status": "happened",
+   "status": "superseded",
    "follows": [
     "ipma-red-rain"
    ],
@@ -1442,7 +1442,7 @@
    "effect_from_utc": "2026-11-11T09:00Z",
    "effect_to_utc": "2026-11-11T18:00Z",
    "effect_note": "IPMA warnings JSON startTime/endTime",
-   "note": "CAP 2.49.0.0.620.0.PT.261110212300.PO-10-6290, sent_utc 2026-11-10T21:23:00Z, severity Extreme, onset 11 Nov 09:00, expires 18:00; replaces 2.49.0.0.620.0.PT.261110163001.PO-10-6273 (sent 16:30:01). The orange before it (PO-10-6288) runs 00:00-09:00. Via team/incidents/2026-11-10-the-storm/data/weather/cap.json (incident.meteorologist@, read 2026-11-11T00:23:21Z); IPMA warnings JSON read by us 23:54Z agrees.",
+   "note": "CAP 2.49.0.0.620.0.PT.261110212300.PO-10-6290, sent_utc 2026-11-10T21:23:00Z, severity Extreme, onset 11 Nov 09:00, expires 18:00; replaces 2.49.0.0.620.0.PT.261110163001.PO-10-6273 (sent 16:30:01). The orange before it (PO-10-6288) runs 00:00-09:00. Via team/incidents/2026-11-10-the-storm/data/weather/cap.json (incident.meteorologist@, read 2026-11-11T00:23:21Z); IPMA warnings JSON read by us 23:54Z agrees. Superseded at 12:33:13Z by ipma-cut-1233.",
    "state": null,
    "state_note": "not a service decision (a warning, a statement, a recommendation or a hypothesis): no state",
    "area": "lisbon",
@@ -2056,7 +2056,7 @@
    ],
    "decision": "IPMA lowers Lisbon's wind warning from red to orange: Wednesday 09:00 to 21:00, gusts up to 120 km/h (\"Rajadas até 120 km/h\"); the red rain 09:00 to 18:00 stands",
    "at": "2026-11-11T07:16Z",
-   "status": "happened",
+   "status": "superseded",
    "follows": [
     "ipma-red-wind"
    ],
@@ -2073,7 +2073,7 @@
    "state": null,
    "state_note": "a warning, not a service decision",
    "area": "lisbon",
-   "note": "CAP message sent 2026-11-11T07:16:30Z, severity Severe (orange), onset 09:00, expires 21:00 (incident.meteorologist@'s cap.json, commit 287ae82e). IPMA's open data showed it by 08:40Z (still red at 07:38 per the meteorologist). At 08:40Z red remains in 9 districts for rain (incl. Lisbon) and in Faro for wind. Day 2 had been called off partly for \"the impact of high winds on external structures\" (organisers, 19:09 Tue): we record the downgrade, not a judgement. 10:02Z (CNN Portugal, from IPMA): Faro is the only district still red for wind; Évora, Setúbal, Santarém, Lisboa, Leiria, Beja and Portalegre lowered to orange.",
+   "note": "CAP message sent 2026-11-11T07:16:30Z, severity Severe (orange), onset 09:00, expires 21:00 (incident.meteorologist@'s cap.json, commit 287ae82e). IPMA's open data showed it by 08:40Z (still red at 07:38 per the meteorologist). At 08:40Z red remains in 9 districts for rain (incl. Lisbon) and in Faro for wind. Day 2 had been called off partly for \"the impact of high winds on external structures\" (organisers, 19:09 Tue): we record the downgrade, not a judgement. 10:02Z (CNN Portugal, from IPMA): Faro is the only district still red for wind; Évora, Setúbal, Santarém, Lisboa, Leiria, Beja and Portalegre lowered to orange. Superseded at 12:33:13Z by ipma-cut-1233.",
    "scope": null,
    "corroborated_by": [
     "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2 (08:39:39Z: Lisboa, Setúbal and Beja leave red for wind)"
@@ -2214,7 +2214,7 @@
    "to": [],
    "decision": "Vasco da Gama bridge limited to 100 km/h since 07:30 for reduced visibility; usual limits on the 25 de Abril bridge; Lusoponte advises against motorcycles and high-sided vehicles",
    "at": "2026-11-11T07:30Z",
-   "status": "happened",
+   "status": "superseded",
    "follows": [
     "bridges-lifted"
    ],
@@ -2418,6 +2418,105 @@
    "reuse": "no",
    "reuse_basis": "IP's terms (https://www.infraestruturasdeportugal.pt/pt-pt/termos-de-utilizacao-ip): content may not be reproduced or published without IP's prior written consent; we paraphrase and link only",
    "note": "Read at source 13:18Z; the page shows the date 10/11/2026, no time. Offered by incident.transport@ (read 12:55Z), checked by us."
+  },
+  {
+   "id": "ipma-cut-1233",
+   "by": "ipma",
+   "to": [],
+   "decision": "IPMA cuts Lisbon's warnings: red rain until 15:00, then yellow 15:00 to 18:00; orange wind until 18:00 (gusts to 90 km/h)",
+   "at": "2026-11-11T12:33Z",
+   "status": "happened",
+   "follows": [
+    "ipma-red-rain-0900",
+    "ipma-wind-orange"
+   ],
+   "label": "fact",
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read": "2026-11-11T13:36Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T12:34Z",
+   "effect_to_utc": "2026-11-11T18:00Z",
+   "effect_note": "red rain to 15:00, yellow 15:00-18:00; orange wind to 18:00",
+   "state": null,
+   "state_note": "a warning",
+   "scope": null,
+   "area": "lisbon",
+   "note": "CAP messages sent 2026-11-11T12:33:13Z (Extreme rain 12:34-15:00; Moderate rain 15:00-18:00; Severe wind 12:34-18:00), from incident.meteorologist@'s cap.json (commit 39330503, read 13:24Z). IPMA's open data still showed red rain to 18:00 and wind to 21:00 at 13:33Z (stale). CNN Portugal 13:22 reports the same revision.",
+   "also": [
+    "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2"
+   ]
+  },
+  {
+   "id": "bridges-60-80-wed",
+   "by": "lusoponte",
+   "to": [],
+   "decision": "Speed reduced on both bridges: 60 km/h on the 25 de Abril, 80 km/h on the Vasco da Gama",
+   "at": "2026-11-11T13:21Z",
+   "status": "happened",
+   "follows": [
+    "vasco-da-gama-100"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T13:36Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "from the communiqué; end not stated",
+   "state": "limited",
+   "state_note": null,
+   "scope": {
+    "extent": "whole",
+    "parts": "both bridges: 25 de Abril 60 km/h, Vasco da Gama 80 km/h"
+   },
+   "area": "lisbon",
+   "note": "Lusoponte communiqué via CNN Portugal live 13:21:35Z. Supersedes vasco-da-gama-100 (07:30). lusoponte.pt still unreachable."
+  },
+  {
+   "id": "lisbon-count-1200",
+   "by": "camara-lisboa",
+   "to": [],
+   "decision": "Occurrence count, Lisbon: 144 from 00:00 to 12:00 (128 floods); 59 active, 85 closed",
+   "at": "2026-11-11T12:00Z",
+   "status": "happened",
+   "follows": [
+    "rsb-lisbon-count-1000"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T13:36Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": "2026-11-11T12:00Z",
+   "effect_note": "\"desde as 00:00 ... até às 12:00\"",
+   "state": null,
+   "state_note": "a count",
+   "scope": null,
+   "area": "lisbon",
+   "note": "CNN Portugal live 13:26:21Z (source body as reported there). Earlier: ~50 to 10:00 (RSB)."
+  },
+  {
+   "id": "anepc-count-1200",
+   "by": "anepc",
+   "to": [],
+   "decision": "Occurrence count, mainland: 530 from 00:00 to 12:00 (falling trees and other usual situations); special readiness kept at the highest level; intense rain expected from 13:00, most between 15:00 and 18:00; the national commander: the phenomenon is shifting south, less impact in Lisbon, more in the Alentejo and Algarve",
+   "at": "2026-11-11T12:00Z",
+   "status": "happened",
+   "follows": [
+    "anepc-mainland-count-0600"
+   ],
+   "label": "evidence",
+   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T13:36Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T00:00Z",
+   "effect_to_utc": "2026-11-11T12:00Z",
+   "effect_note": "count window",
+   "state": null,
+   "state_note": "a count and a briefing",
+   "scope": null,
+   "area": "mainland",
+   "note": "ANEPC briefing (commander Mário Silvestre) via CNN Portugal live 12:40, 12:44, 12:59; 538 to midday in a 13:07 video headline."
   }
  ],
  "lessons": [
