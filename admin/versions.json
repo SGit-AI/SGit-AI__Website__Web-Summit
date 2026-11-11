@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1796",
+    "date": "2026-11-11",
+    "what": "Madeira's rain verified at IPMA (Areeiro 133.9 mm in 6 h to 22:00; 230.5 mm to 01:00), madeira.json; cap.json other_messages (Madeira and every red district); CHARLES's origin as a hypothesis from NHC's archived outlooks (AL94 from 6 Nov; not established)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "8c822f847"
+  },
+  {
     "version": "v0.2.1795",
     "date": "2026-11-11",
     "what": "Wikipedia's leads checked at source: AEMET, GNR, MMP, TAP, courts and the Ministry of Justice added; APA's 101 municipalities and TAP's 10 Madeira flights not established",
