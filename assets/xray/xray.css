@@ -468,3 +468,49 @@ details.xp-tech > summary { font-size: 1.05em; }
     .xs-card > p:not(.xs-ours) { font-size: 1.5rem; }
     .xs-name { font-size: 2.2rem; }
 }
+
+/* ---------- the X-ray card in light mode, for daylight at the stand (conductor@web-summit.indi, 11 November 2026, WS-191,
+   at Indi's word: "Make the X-ray card in light mode, needed for viewing in daylight"). Light on /xray/ whatever the page
+   theme; dark only where the site is put in dark mode by choice (data-theme="dark"). Dark text on light, AA at least and
+   AAA on the three big lines; the gap card the strongest colour. The replay and the graph under More detail stay dark. ---------- */
+:root:not([data-theme="dark"]) .xr-stage.xr-home {
+    --xr-bg: #f7f9fc; --xr-bg2: #ffffff; --xr-line: #cbd5e1; --xr-ink: #0b1220; --xr-ink2: #334155;
+    --xr-cyan: #0f766e; --xr-cyan2: #0e7490; --xr-mandate: #0f766e; --xr-gap: #be123c; --xr-gold: #b45309;
+    background: var(--xr-bg); color: var(--xr-ink); box-shadow: 0 0 0 1px var(--xr-line), 0 10px 30px rgb(15 23 42 / .08);
+}
+:root:not([data-theme="dark"]) .xr-stage.xr-home::before { background-image: linear-gradient(#0f172a08 1px, transparent 1px), linear-gradient(90deg, #0f172a08 1px, transparent 1px); }
+:root:not([data-theme="dark"]) .xr-home .xr-logo { box-shadow: none; }
+:root:not([data-theme="dark"]) .xr-home .xr-brand { color: #1e293b; font-weight: 700; }
+:root:not([data-theme="dark"]) .xr-home .xr-btn { background: #0f766e; border-color: #0f766e; color: #ffffff !important; }
+:root:not([data-theme="dark"]) .xr-home .xr-btn.ghost { background: #ffffff; border: 2px solid #64748b; color: #0b1220 !important; }
+:root:not([data-theme="dark"]) .xr-home .xr-q-row { background: #ffffff; box-shadow: 0 0 0 2px #64748b; }
+:root:not([data-theme="dark"]) .xr-home .xr-q-row:focus-within { box-shadow: 0 0 0 3px #0f766e; }
+:root:not([data-theme="dark"]) .xr-home .xr-q-scan { display: none; }
+:root:not([data-theme="dark"]) .xr-home .xr-q-row input { color: #0b1220; }
+:root:not([data-theme="dark"]) .xr-home .xr-q-row input::placeholder { color: #64748b; }
+:root:not([data-theme="dark"]) .xr-home .xr-go { background: #0f766e; color: #ffffff; box-shadow: none; }
+:root:not([data-theme="dark"]) .xr-home .xr-chip { background: #ffffff; border: 2px solid #94a3b8; color: #0b1220; }
+:root:not([data-theme="dark"]) .xr-home .xr-chip span { color: #334155; }
+:root:not([data-theme="dark"]) .xr-home .xr-chip:hover, :root:not([data-theme="dark"]) .xr-home .xr-chip:focus-visible { border-color: #0f766e; }
+:root:not([data-theme="dark"]) .xr-home .xr-result { background: #ffffff; box-shadow: inset 0 0 0 2px #cbd5e1; }
+:root:not([data-theme="dark"]) .xr-home .xp-tab { background: #ffffff; border: 2px solid #94a3b8; color: #0b1220; font-weight: 600; }
+:root:not([data-theme="dark"]) .xr-home .xp-tab[aria-pressed="true"] { background: #ccfbf1; border-color: #0f766e; box-shadow: none; }
+:root:not([data-theme="dark"]) .xr-home .xs-card { background: #ffffff; border: 2px solid #94a3b8; border-top: 10px solid var(--xs-c); }
+:root:not([data-theme="dark"]) .xr-home .xs-reach { --xs-c: #1d4ed8; background: #eff6ff; }
+:root:not([data-theme="dark"]) .xr-home .xs-asked { --xs-c: #0f766e; background: #f0fdfa; }
+:root:not([data-theme="dark"]) .xr-home .xs-card > p:not(.xs-ours) { color: #0b1220; }
+:root:not([data-theme="dark"]) .xr-home .xs-gap { --xs-c: #ffe4e6; background: #9f1239; border-color: #9f1239; border-top-color: #4c0519; box-shadow: 0 6px 24px rgb(159 18 57 / .3); }
+:root:not([data-theme="dark"]) .xr-home .xs-gap > p:not(.xs-ours) { color: #ffffff; }
+:root:not([data-theme="dark"]) .xr-home .xs-ours { color: #1e293b; font-weight: 700; }
+:root:not([data-theme="dark"]) .xr-home .xs-abp.xr-btn { box-shadow: 0 4px 16px rgb(15 118 110 / .3); }
+:root:not([data-theme="dark"]) .xr-home .xr-tech { border-top-color: #cbd5e1; }
+:root:not([data-theme="dark"]) .xr-home .xr-tech > summary { color: #1e293b; }
+:root:not([data-theme="dark"]) .xr-home .xp-block { background: #ffffff; border-color: #cbd5e1; }
+:root:not([data-theme="dark"]) .xr-home .xp-reach { --xp-c: #1d4ed8; } :root:not([data-theme="dark"]) .xr-home .xp-asked { --xp-c: #0f766e; } :root:not([data-theme="dark"]) .xr-home .xp-gap { --xp-c: #be123c; }
+:root:not([data-theme="dark"]) .xr-home .xr-stats li { background: #f1f5f9; box-shadow: inset 0 0 0 1px #cbd5e1; }
+:root:not([data-theme="dark"]) .xr-home .xr-abp { border-top-color: #cbd5e1; }
+/* the replay and the graph keep the dark scanner */
+:root:not([data-theme="dark"]) .xr-home .xr-panes, :root:not([data-theme="dark"]) .xr-home .xr-log, :root:not([data-theme="dark"]) .xr-home .xr-detail {
+    --xr-bg: #070d1a; --xr-line: #1e2b4a; --xr-ink: #e8eefc; --xr-ink2: #93a3c4; --xr-cyan: #5eead4; --xr-cyan2: #22d3ee; --xr-mandate: #2dd4bf; --xr-gap: #fb7185; --xr-gold: #fbbf24;
+    background: #070d1a; color: #e8eefc; border-radius: 16px; padding: .6em;
+}
