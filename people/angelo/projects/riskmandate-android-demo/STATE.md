@@ -1,6 +1,6 @@
 # riskmandate-android-demo: state
 
-For the digest: 0.1.165 on Angelo's device: X-ray opens full screen, but buttons misbehave; build 2 (a full embedded browser with a full-screen toggle) starting; cost so far $10.25 in workers (the lead's own session not yet measured).
+For the digest: build 2 (full embedded browser, full-screen toggle; fixes Swarm/Universo, links, page full screen) on Android branch angelo/riskmandate-xray-browser 5badada, check 2 and build 3 (hamburger, white band, language, lag) running; cost so far $15.93 in workers (the lead's own session not yet measured).
 
 Lead: riskmandate-android-demo.pm@PrompTugal.angelo. Branch: project/riskmandate-android-demo. Wake routine: trig_01GnGftTuQdk1LM63LnvaDtn (BRIEF.md on dev).
 
@@ -49,6 +49,12 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - Angelo's findings, about 23:00 UTC: "The menu sandwich on the top left corner doesn't work, some pages like x-ray and gravity have a white band at the bottom, also the swarm page seems to be completely white except for the header, also it's in Portuguese but I can't see the button to switch to english." Sent to the build 2 worker as four rows to reproduce and fix (send_message, 23:0x UTC).
 - Angelo, about 23:05 UTC: "There's also a quite evident lag in processing the graphical elements of the dashboard, not sure if that can't be helped or there is a fix?" Passed to build 2 as a fifth row (rendering path in our screen vs the page's own weight).
 - Lead's reading: it is already an embedded Chromium (WebView), but locked down too hard (host filter on sub-resources, popups and permissions denied, an invisible corner). Build 2 (build2/brief.md): reproduce which buttons break, lift the lock-down to what the page needs, add a visible full-screen toggle. Decided by default (Angelo can reverse): WebView made into a full browser, not a Trusted Web Activity (TWA loses keep-on, the watchdog and the toggle control); TWA described as the fallback.
+
+## Build 2 result (pool/riskmandate-android-demo-build2 38720b7)
+- Reproduced: Universo and Swarm empty (api.github.com and swarm.promptugal.news refused by build 1's host list), the page's own full-screen button dead (no onShowCustomView), links out dropped, file inputs refused, the hidden corner on the page's Home button at phone size. All fixed; gate green (978 tests). Lead pushed the patch (sha256 05231d14) as Android branch angelo/riskmandate-xray-browser 5badada (tree a8aa9b5, as tested), 23:2x UTC.
+- Not fixed in build 2 (it kept to its brief commit): the hamburger in WebView, the white band, the language, the lag. Build 3 takes them, on top of 5badada.
+- Not possible in WebView: the page's voice input (Web Speech), the brain's blob export, clipboard read. A Trusted Web Activity would give them but loses the watchdog, keep-on control and the separate profile.
+- Decided by default (Angelo can reverse): check 2 and build 3 run in parallel; build 2 is published on check 2's PASS, build 3 follows as 0.1.167 or so.
 
 ## Check result (pool/riskmandate-android-demo-check)
 - PASS (code review): same tree as the gated build; WebView locked down (no JS bridge, no file access, permissions denied, https only). Findings for later: retry may cut off a slow (>10 s) load; WebSockets and service workers not filtered; Features.kt is conductor.android@'s file (named in For:).

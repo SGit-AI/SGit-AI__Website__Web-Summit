@@ -1,0 +1,8 @@
+# Step 6: check build 2 (riskmandate-android-demo-check2)
+
+**Role:** check (large, never the slot that built: build 2 was alpha). **Skills:** software-engineer, security, cold-reader. **Wake routine:** trig_01GnGftTuQdk1LM63LnvaDtn (fire it when you end).
+**Angelo's go stands** (11 Nov about 21:30 UTC: "You're authorized to write there and publish the changes as soon as they're ready."), and his request for build 2 is quoted in build2/brief.md.
+
+1. Read build2/build.md on origin/pool/riskmandate-android-demo-build2 and the branch `angelo/riskmandate-xray-browser` in PrompTugal/PrompTugal__App__Android (head 5badada, tree a8aa9b5, on dev 683f9f7; pushed by the lead from build 2's patch). Review it cold against build2/brief.md: the WebView is now open to any https host, so check what still holds (no JS bridge, no file:// access, mixed content off, Safe Browsing, third-party cookies off, off-site pages only on a person's tap and only to the browser, no intent:/javascript:/file: navigation, the file chooser only returns content the user picked); the full-screen toggle and the page's own full screen (onShowCustomView); tests real.
+2. Try the gate on the branch: `./gradlew testDebugUnitTest lintDebug assembleRelease bundleRelease`. If your session refuses the SDK or the build, say so; build 2 ran it green on the same tree (978 tests).
+3. Write check2/check.md (first line "PASS" or "HOLD: <why>"; then findings, most serious first, each with a fix) and check2/STATE.md, on pool/riskmandate-android-demo-check2 from origin/project/riskmandate-android-demo. Do not push to the Android repo's dev: the lead publishes on PASS. Small fixes: write them as findings, not commits.
