@@ -22,16 +22,17 @@ summary: Account B's conductor. Main control of Angelo's backlog from 10 Novembe
 - Workers are session-less slots; the prompt (role + skills + format) is the agent; conductor.b@ routes only and stays reactive.
 
 - **Yes to all three** (11 Nov): at most 6 running at once (4 large, 2 small) to start; a small task may use a large slot when no small one is free; go on b0-library.
+- **Archive finished workers** ("Yes, please go ahead."): once a worker's commits are on its branch and logged in runs.md, conductor.b@ archives its session (read-only; the record is the commits). A worker is never sent a second message: each job is a new session.
+- **Lanes open for all twenty** by policy@ (36a2a0d0, pushed-by ANGELO), named in full.
 
 ## Waiting on
 
-- policy@: the fifteen new names in the workers' lane.
 
 - Angelo: his read of ROLES.md; the interview notes; what Dinis said at 09:00; whether to tell Jose's conductor about the follow links.
 - (done) The push check: this session's first commit 7acabbef6 (live in v0.2.1835) was pushed by riskmandate-angelo; pushed-by says ANGELO.
 
 ## Workers
 
-Twenty slots decided; five in the lane today (alpha, bravo, charlie large; delta, echo small), fifteen waiting on policy@. None running. Log: people/angelo/conductor-b/runs.md.
+Twenty slots, all in the lane. Ceiling: 6 at once (4 large, 2 small). Running: see runs.md. Log: people/angelo/conductor-b/runs.md.
 
 last_run: 2026-11-10T17:30Z (first run: key, STATE, runs.md, ROLES.md); released 2026-11-11 once policy@ added the lanes (c9c7398)
