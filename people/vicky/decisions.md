@@ -4,6 +4,16 @@
 
 For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@web-summit.vicky, who adds a standing answer whenever Vicky decides something more than one agent asked about.
 
+## Rules in force (index; the full text is below)
+
+Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **33** the schedule after the switch-back; vaults A and B; designer, reporter and internal journalist plans.
+- **32** the switch-back: one session per role, fresh keys, lanes, confirmation wakes.
+- **31** RULES-11NOV: no machine reads of Web Summit, Luma, Meetup or Eventbrite; sources; Connections proof; agenda frozen; R-PUB-1; eight categories.
+- **29** the pivot: how teams use AI agents in real work. **28** (changed 11 Nov) agenda status and research. **27** voice memos (interviews: nothing stored for now).
+- **26, 23** company pages (changed 11 Nov). **25** the checker's remit. **24** company pages only in batches Vicky starts. **22** Connections first. **20** the duplicate check. **19, 19C** connection stories (changed 11 Nov).
+- **17, 13** the reviewer fixes and lists; the auto-revision loop. **16** P1 to P3 in every prompt. **15** a cover image on every article. **14** single-window routing. **12** no ABP articles. **11** Vicky's agents' own rules. **7** publishing (now R-PUB-1).
+
 ## Decide yourself, without asking, when
 
 - the answer follows STYLE.md (the newsroom's `desks/journalist-vicky/STYLE.md`), the newsroom's CLAUDE.md or your own README;
@@ -152,6 +162,14 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Inbox lanes:** conductor@PrompTugal.dinis re-issues the team agents' lanes to their new keys (requested by the conductor in the newsroom).
     - **Confirmation wakes:** one one-off wake per returning agent, confirmation only: no normal work. Scheduled tasks stay disabled until Vicky agrees a new schedule.
 
+33. **After the switch-back: the schedule, the nine ideas and the additions** (Vicky, 11 Nov, about 19:00 UTC, in this window).
+    - **Schedule** (her words: "Schedule: yes, with one change. Programme runs on Thursday for side events only, using lisbontechfringe.com as a pointer and coordinating with my fringe conductor. The agenda itself stays frozen until Dinis decides."). Times in schedule.json; each agent's task is enabled only after its "confirmed RULES-11NOV" line. The journalist (summit desk) runs hourly on Thursday only, then four rounds; from Friday the reduced schedule in schedule.json's proposal applies, changed by the conductor at Friday's brief. The separate fix-only tasks and the reviewer's re-check task stay disabled: each writing run revises its Fix first drafts first (standing answer 13), and the reviewer's single task reviews, re-checks and publishes under R-PUB-1 (standing answer 31, rule 8), which replaces "never publish at a scheduled run" in its task's prompt. The conductor's 17:30 check is dropped; its brief moves to 08:45.
+    - **Programme, Thursday:** one run, side events only: lisbontechfringe.com as a pointer (standing answer 31, rule 5), every item checked at its organiser's own page, no machine reads of Luma, Meetup or Eventbrite (rule 2); `agenda.json` stays frozen (rule 7); side events go in `desks/programme/side-events-2026-11-12.md` in the newsroom, and the conductor relays them to the fringe conductor through `desks/conductor-vicky/requests/from-team/`.
+    - **Decided:** draft the narrow P6 change for her security agent to review; agent creation stays with Vicky, the conductor prepares start kits; hourly for journalist on Thursday only; plan the model moves for after the summit; archive merged personal-account files to the newsroom's `desks/conductor-vicky/archive/`, never delete; vault@ makes two private vaults (A: tools and agent reports; B: Vicky's ideas, its key sealed only to the conductor); a start kit for a new security@web-summit.vicky (weather@ stays as it is); designer confirms RULES-11NOV, then cover graphics on request; synthetic is repurposed as the internal journalist, covering what Vicky's agents actually do, with evidence, writing only to vault A, never vault B.
+    - **R-PUB-1 on the team account** (Vicky, 11 Nov, about 19:05 UTC: "R-PUB-1 must work on the team account too. The reviewer should publish fact stories that pass its source checks, without waiting for me."): in every scheduled run, the reviewer publishes each factual story from Vicky's desks that passes its source checks (standing answer 31, rule 8), without waiting for Vicky; only material uncertainty or editorial judgment goes to her. This replaces "Never publish at a scheduled run: publishing is only at Vicky's word" in its task's prompt, which the reviewer rewrites itself.
+    - **Programme gate** (Vicky, 11 Nov, about 19:05 UTC: "Conductor: enable programme only after SA33-PROGRAMME is confirmed."): its Thursday task stays disabled until its report says "applied SA33-PROGRAMME" and its task's prompt no longer has the agenda step.
+    - **Additions:** plan the reporter role (reports to vault A only); dev@ builds the confirmations board and the schedule checker into vault A; three repurposing hand-overs prepared (designer, programme to reporter after Friday, synthetic to internal journalist), each started only at Vicky's word, not weather@; adopt the five ways of her personal account (the For Vicky list, a "Rules in force" index, the leads fallback, self-publishing under R-PUB-1 with a verification summary in each brief, confirmations as data); Ângelo's market skipped until he says it is ready; no sales helper; an interview journalist only once the interview vault exists.
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -203,8 +221,17 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA29, the newsroom pivot in the regular runs** (Vicky, 9 Nov, about 23:45 UTC). For: researcher, curator.
 > Vicky: "For regular runs, record the pivot as a standing editorial instruction and update both agents' scheduled prompts." At your next run (the researcher's overnight pass counts; the curator's 01:00 too): put standing answer 29 in your prompts file, add it to your own scheduled task's prompt (a task's prompt can be changed only from its own session; keep the rest word for word), and confirm "applied SA29" in your report, saying that you changed the task's prompt. Your first regular run after that (researcher 05:15, curator 05:30) says "SA29 used" with what it found.
 
-**RULES-11NOV, confirm before any work** (Vicky, 11 Nov, about 18:45 UTC). For: pm, logistics, dashboard, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, scout, vault, inbox, dev.
+**RULES-11NOV, confirm before any work** (Vicky, 11 Nov, about 18:45 UTC). For: pm, logistics, dashboard, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, scout, vault, inbox, dev, designer.
 > Read standing answers 31 and 32 and the RULES-11NOV section at the top of your prompts file (written in by the conductor at Vicky's word). Make your fresh key if standing answer 32 says you need one. Check your own tools, scripts, notes, saved files and scheduled task's prompt for machine reads of websummit.com, Luma, Meetup or Eventbrite and remove them (your own files only), put the rules in your scheduled task's prompt if you have one, and write the confirmation line (rule 11) in your report. No normal work until then.
+
+**SA33-VAULTS, two private vaults** (Vicky, 11 Nov, about 19:00 UTC: "Ask vault@ for the two vaults. Vault A holds tools and agent reports. Vault B holds my ideas and only you get its key."). For: vault.
+> After your RULES-11NOV confirmation: create vault A (tools, apps and agent reports; its key sealed to the agents the conductor lists in its request, starting with dev@PrompTugal.vicky and the conductor) and vault B (Vicky's ideas; its key sealed to conductor-vicky-2 and Vicky's own copy (Vicky, 11 Nov about 19:05 UTC: "Vault B also gets my own copy."), to no one else), each audited as usual; read keys never published. Confirm "applied SA33-VAULTS" with the vault ids.
+
+**SA33-TOOLS, the confirmations board and the schedule checker** (Vicky, 11 Nov, about 19:00 UTC: "dev@ builds the confirmations board and the schedule checker into vault A."). For: dev.
+> After your RULES-11NOV confirmation and once vault A exists: build two small apps into vault A, no external reads: (1) a confirmations board from people/vicky/decisions.md's updates and the agents' reports (who applied what, with dates), (2) a schedule checker comparing people/vicky/schedule.json with what the conductor records from the account. Your security review comes from security@web-summit.vicky once it runs. Confirm "applied SA33-TOOLS".
+
+**SA33-PROGRAMME, Thursday side events** (Vicky, 11 Nov, about 19:00 UTC). For: programme.
+> Your Thursday 07:00 run (your task's only run now) does side events only, as standing answer 33 says; put this in your task's prompt in place of the agenda step, keep the shortlist step, and confirm "applied SA33-PROGRAMME".
 
 Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - P10, P17, P22, P27: vault, designer.
@@ -215,7 +242,8 @@ Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - SA26: reviewer, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, dev.
 - SA27 (added 9 Nov, 11:25; changed 13:40): inbox. (vault applied it at 11:35.)
 - SA28 (added 9 Nov, 14:15): programme, researcher, curator.
-- RULES-11NOV (added 11 Nov, 19:00): all 17 returning agents.
+- RULES-11NOV (added 11 Nov, 19:00): all 17 returning agents, and designer.
+- SA33-VAULTS: vault. SA33-TOOLS: dev. SA33-PROGRAMME: programme.
 - SA29 (added 9 Nov, 23:50): researcher, curator (and "SA29 used" at the first regular run).
 
 Removed on 9 Nov once done or confirmed: SA13, SA15, SA18, SA19B, SA19C, SA22, SA25, PILOT-REPLIT, TRIAGE-REPLIT and OVERNIGHT-9NOV (closed at 04:40, people/vicky/company-pages/backlog.md).
