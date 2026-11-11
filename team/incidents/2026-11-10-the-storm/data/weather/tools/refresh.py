@@ -547,6 +547,11 @@ def cap():
         elif 'left_feed_utc' not in m_:
             m_['left_feed_utc'] = NOW; m_['status'] = f'left the feed at {NOW} (time read)'
     others = sorted(OTHER_SEEN.values(), key=lambda m: (m['sent_utc'] or '', m['identifier']))
+    known = {m_['identifier'] for m_ in msgs} | {m_['identifier'] for m_ in others}
+    for m_ in msgs + others:  # IPMA's <references> sometimes carry a stray '-' before 'PO-' (seen from 11 Nov 15:55:03); kept verbatim, normalised beside it
+        for r in m_.get('replaces', []):
+            r['identifier_norm'] = re.sub(r'\.-(?=PO-)', '.', r['identifier'])
+            r['matches_known_message'] = r['identifier_norm'] in known
     for m_ in msgs:
         if m_.get('description_pt'):
             m_['text_en'], m_['text_en_by'] = en_for(m_['description_pt'])
@@ -561,6 +566,7 @@ def cap():
             'terms': {'source': 'https://www.meteoalarm.org', 'feed': U['cap'], 'disclaimer': disclaimer,
                       'record': f'a dated record, not a live feed (read {NOW})', 'publisher_of_the_warnings': 'IPMA (Instituto Português do Mar e da Atmosfera), via MeteoAlarm'},
             'source': U['cap'], 'read_utc': NOW, 'reads_utc': reads, 'lisbon_messages': msgs,
+            'references_note': "Each 'replaces' entry keeps IPMA's <references> identifier verbatim. From the batch sent 11 Nov 15:55:03 IPMA's references carry a stray '-' (e.g. '…PT.261111123313.-PO-01-1939' for the message '…PT.261111123313.PO-01-1939'), in the CAP itself as MeteoAlarm serves it (checked 16:15:54 UTC), not from our parser. 'identifier_norm' removes it; 'matches_known_message' says whether the normalised identifier is a message we hold. Match on identifier_norm, or on sent_utc.",
             'other_messages_about': 'Beyond Lisbon: every CAP message for a Madeira area, and every red message for any district, kept once seen (from 11 Nov 01:50 UTC; earlier ones that had left the feed were never seen); orange messages for any district kept as well from 11 Nov 12:36 UTC (earlier orange ones were not kept).',
             'other_messages': others}
 
