@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1799",
+    "date": "2026-11-11",
+    "what": "every timeline row without an address now has one (or the reason); one file per service and place, with exact addresses",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "36155b772"
+  },
+  {
     "version": "v0.2.1798",
     "date": "2026-11-11",
     "what": "madeira.json earlier_warnings: no MRM/MCS rain warning for Tue 12:00-21:00 in the 23:50 CAP snapshot or DN Madeira (8 Nov); red rain from 21:00 sent 06:14:54 Tue; not proof of absence",
