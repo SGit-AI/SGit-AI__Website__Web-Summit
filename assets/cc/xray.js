@@ -9,7 +9,7 @@
      demo only). The key is kept only in this browser's localStorage; it is never sent anywhere but openrouter.ai and is
      never in the site or the repository. A live result is leads, not facts: shown at once, marked "not reviewed", kept
      only on this device.
-   - Three words instead of the key (Dinis, 11 November, 21:15 UTC): the key can be sealed once with three words
+   - A team phrase instead of the key (Dinis, 11 November, 21:15 UTC; the phrase is his choice): the key is sealed once with it
      (PBKDF2-SHA-256, 600,000 rounds, then AES-256-GCM, all in the browser) and the sealed file published at
      data/xray/key.sealed.json; on a new device a team member types the three words and the key is opened there.
      The words are never sent or kept anywhere; only the sealed file is public, and it is useless without them.
@@ -173,26 +173,29 @@
     // ---------- three words: seal the key once, open it on any team device ----------
     let SEAL = null
     const b64 = u => btoa(String.fromCharCode(...new Uint8Array(u))), unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0))
-    const norm = w => String(w || '').toLowerCase().normalize('NFKD').replace(/[^a-z\s]/g, ' ').trim().split(/\s+/).filter(Boolean).join(' ')
+    // the team phrase: lower case, spaces around it and doubled spaces ignored; letters, digits and hyphens kept ("web-summit-2026")
+    const norm = w => String(w || '').toLowerCase().normalize('NFKC').trim().split(/\s+/).filter(Boolean).join(' ')
     async function aesKey(words, salt, rounds) { const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(norm(words)), 'PBKDF2', false, ['deriveKey'])
         return crypto.subtle.deriveKey({ name: 'PBKDF2', hash: 'SHA-256', salt, iterations: rounds }, base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']) }
     const kmsg = (m, bad) => { const k = $$('kst'); if (k) { k.textContent = m; k.className = bad ? 'bad' : '' } }
     function kpaint(msg) { const d = $$('kdlg'); if (!d) return
         const paste = `<input type="password" id="kin" placeholder="sk-or-…" autocomplete="off"><div class="kr"><button type="button" id="ksave">Guardar</button></div>`
-        d.innerHTML = KEY ? `<b>Chave do OpenRouter</b><p>✓ Este aparelho já tem a chave. Fica só neste browser e vai só para openrouter.ai.</p><div class="kr"><button type="button" id="kdel">Apagar deste aparelho</button></div>${SEAL ? '' : `<details><summary>Criar três palavras para os outros aparelhos</summary><p>Fecha a chave com três palavras novas. Guarda as palavras contigo; o ficheiro fechado vai para o site (data/xray/key.sealed.json) e sem as palavras não serve para nada.</p><div class="kr"><button type="button" id="kmake">Criar as três palavras</button></div><div id="kout"></div></details>`}<small id="kst"></small>`
-            : SEAL ? `<b>As três palavras</b><p>Escreve as três palavras da equipa para abrir a chave da demo neste aparelho. Só é preciso uma vez.</p><input type="text" id="kwords" placeholder="palavra palavra palavra" autocomplete="off" autocapitalize="none" spellcheck="false"><div class="kr"><button type="button" id="kopen">Abrir</button></div><details><summary>Ou colar a chave</summary>${paste}</details><small id="kst"></small>`
+        d.innerHTML = KEY ? `<b>Chave do OpenRouter</b><p>✓ Este aparelho já tem a chave. Fica só neste browser e vai só para openrouter.ai.</p><div class="kr"><button type="button" id="kdel">Apagar deste aparelho</button></div>${SEAL ? '' : `<details><summary>Fechar a chave com a frase da equipa</summary><p>Escreve a frase da equipa (ou deixa vazio para três palavras ao acaso). O ficheiro fechado vai para o site (data/xray/key.sealed.json); sem a frase não serve para nada.</p><input type="text" id="kphrase" placeholder="a frase da equipa" autocomplete="off" autocapitalize="none" spellcheck="false"><div class="kr"><button type="button" id="kmake">Fechar a chave</button></div><div id="kout"></div></details>`}<small id="kst"></small>`
+            : SEAL ? `<b>A frase da equipa</b><p>Escreve a frase da equipa para abrir a chave da demo neste aparelho. Só é preciso uma vez.</p><input type="text" id="kwords" placeholder="a frase da equipa" autocomplete="off" autocapitalize="none" spellcheck="false"><div class="kr"><button type="button" id="kopen">Abrir</button></div><details><summary>Ou colar a chave</summary>${paste}</details><small id="kst"></small>`
             : `<b>Chave do OpenRouter</b><p>Guardada só neste aparelho (no browser). Vai só para openrouter.ai; nunca para o site nem para o repositório. Usa a chave descartável da demo, com orçamento limitado.</p>${paste}<small id="kst"></small>`
         if (msg) kmsg(msg); const f = $$('kwords') || $$('kin'); if (f) f.focus() }
-    async function unseal() { const w = $$('kwords'); if (!w || !SEAL) return; const words = w.value; if (norm(words).split(' ').length < 3) { kmsg('São três palavras.', 1); return }
+    async function unseal() { const w = $$('kwords'); if (!w || !SEAL) return; const words = w.value; if (norm(words).length < 4) { kmsg('Escreve a frase da equipa.', 1); return }
         kmsg('A abrir…'); try { const k = await aesKey(words, unb64(SEAL.salt), SEAL.rounds || ROUNDS), pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(SEAL.iv) }, k, unb64(SEAL.ct))
             KEY = new TextDecoder().decode(pt); put(KEYK, KEY); w.value = ''; kdot(); kpaint('✓ Aberta. A chave fica neste aparelho.'); setTimeout(() => { const d = $$('kdlg'); if (d) d.hidden = true }, 1200)
-        } catch { kmsg('Essas palavras não abrem a chave. Confirma-as.', 1) } }
-    async function makeWords() { if (!KEY) return; kmsg('A criar…'); try { const list = (await fetch(WORDS).then(r => r.text())).split(/\s+/).filter(Boolean); if (list.length < 2048) throw new Error('lista')
-        const pick = () => { const u = new Uint32Array(1); crypto.getRandomValues(u); return list[u[0] % list.length] }, words = [pick(), pick(), pick()].join(' ')
+        } catch { kmsg('Essa frase não abre a chave. Confirma-a.', 1) } }
+    async function makeWords() { if (!KEY) return; kmsg('A fechar…'); try { const own = norm(($$('kphrase') || {}).value || '')
+        if (own && own.length < 4) throw new Error('a frase é curta demais')
+        let words = own; if (!words) { const list = (await fetch(WORDS).then(r => r.text())).split(/\s+/).filter(Boolean); if (list.length < 2048) throw new Error('lista')
+        const pick = () => { const u = new Uint32Array(1); crypto.getRandomValues(u); return list[u[0] % list.length] }; words = [pick(), pick(), pick()].join(' ') }
         const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12)), k = await aesKey(words, salt, ROUNDS)
         const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, k, new TextEncoder().encode(KEY))
-        const blob = JSON.stringify({ v: 1, what: 'the X-Ray demo OpenRouter key, sealed with three words', kdf: 'PBKDF2-SHA-256', rounds: ROUNDS, cipher: 'AES-256-GCM', wordlist: 'BIP-39 English (assets/cc/words-en.txt)', words: 3, made: new Date().toISOString().slice(0, 10), salt: b64(salt), iv: b64(iv), ct: b64(ct) }, null, 1)
-        $$('kout').innerHTML = `<p>As três palavras (escreve-as já; não aparecem outra vez):</p><div class="words">${esc(words)}</div><p>O ficheiro fechado, para o site (manda-o ao dashboard@; nunca mandes as palavras junto):</p><textarea id="kblob" readonly>${esc(blob)}</textarea><div class="kr"><button type="button" id="kcopy">Copiar o ficheiro</button></div>`; kmsg('')
+        const blob = JSON.stringify({ v: 1, what: 'the X-Ray demo OpenRouter key, sealed with the team phrase', kdf: 'PBKDF2-SHA-256', rounds: ROUNDS, cipher: 'AES-256-GCM', phrase: own ? 'chosen by the team' : 'three BIP-39 English words (assets/cc/words-en.txt)', made: new Date().toISOString().slice(0, 10), salt: b64(salt), iv: b64(iv), ct: b64(ct) }, null, 1)
+        $$('kout').innerHTML = `${own ? '<p>Fechada com a frase da equipa.</p>' : `<p>As três palavras (escreve-as já; não aparecem outra vez):</p><div class="words">${esc(words)}</div>`}<p>O ficheiro fechado, para o site (manda-o ao dashboard@; nunca mandes a frase junto):</p><textarea id="kblob" readonly>${esc(blob)}</textarea><div class="kr"><button type="button" id="kcopy">Copiar o ficheiro</button></div>`; kmsg('')
     } catch (e) { kmsg('Não consegui criar: ' + String(e && e.message || e), 1) } }
 
     // ---------- the world: sub-menu and the three pages ----------

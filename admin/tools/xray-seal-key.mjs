@@ -12,12 +12,14 @@ const key = process.env.OPEN_ROUTER_KEY
 if (!key) { console.error('xray-seal-key: OPEN_ROUTER_KEY is not set in this session'); process.exit(1) }
 const list = fs.readFileSync(path.join(ROOT, 'assets/cc/words-en.txt'), 'utf8').split(/\s+/).filter(Boolean)
 if (list.length !== 2048) { console.error('xray-seal-key: the word list should have 2048 words'); process.exit(1) }
-const pick = () => list[crypto.getRandomValues(new Uint32Array(1))[0] % list.length], words = [pick(), pick(), pick()].join(' ')
+// XRAY_PHRASE (optional): the team's own phrase, normalised as the page does (lower case, spaces collapsed); else three random words
+const own = String(process.env.XRAY_PHRASE || '').toLowerCase().normalize('NFKC').trim().split(/\s+/).filter(Boolean).join(' ')
+const pick = () => list[crypto.getRandomValues(new Uint32Array(1))[0] % list.length], words = own || [pick(), pick(), pick()].join(' ')
 const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12))
 const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(words), 'PBKDF2', false, ['deriveKey'])
 const k = await crypto.subtle.deriveKey({ name: 'PBKDF2', hash: 'SHA-256', salt, iterations: ROUNDS }, base, { name: 'AES-GCM', length: 256 }, false, ['encrypt'])
 const ct = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, k, new TextEncoder().encode(key)))
 const b64 = u => Buffer.from(u).toString('base64')
-const out = { v: 1, what: 'the X-Ray demo OpenRouter key, sealed with three words', kdf: 'PBKDF2-SHA-256', rounds: ROUNDS, cipher: 'AES-256-GCM', wordlist: 'BIP-39 English (assets/cc/words-en.txt)', words: 3, made: new Date().toISOString().slice(0, 10), salt: b64(salt), iv: b64(iv), ct: b64(ct) }
+const out = { v: 1, what: 'the X-Ray demo OpenRouter key, sealed with the team phrase', kdf: 'PBKDF2-SHA-256', rounds: ROUNDS, cipher: 'AES-256-GCM', phrase: own ? 'chosen by the team' : 'three BIP-39 English words (assets/cc/words-en.txt)', made: new Date().toISOString().slice(0, 10), salt: b64(salt), iv: b64(iv), ct: b64(ct) }
 fs.mkdirSync(path.join(ROOT, 'data/xray'), { recursive: true }); fs.writeFileSync(path.join(ROOT, 'data/xray/key.sealed.json'), JSON.stringify(out, null, 1) + '\n')
-console.log('wrote data/xray/key.sealed.json\nthe three words (shown once, give them in person):\n\n    ' + words + '\n')
+console.log(own ? 'wrote data/xray/key.sealed.json, sealed with XRAY_PHRASE' : 'wrote data/xray/key.sealed.json\nthe three words (shown once, give them in person):\n\n    ' + words + '\n')
