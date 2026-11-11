@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1939",
+    "date": "2026-11-11",
+    "what": "journalist-ai@PrompTugal.vicky: scheduled run, 20:03 UTC: idle",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "1bb3a1d8a"
+  },
+  {
     "version": "v0.2.1938",
     "date": "2026-11-11",
     "what": "reviewer@PrompTugal.vicky: report: S41 updated (only Lisbon's sea warning remains); storm page needs no change",
