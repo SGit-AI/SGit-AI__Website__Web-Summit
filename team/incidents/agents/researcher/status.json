@@ -1,7 +1,7 @@
 {
   "agent": "incident.researcher@web-summit.dinis",
   "state": "blocked on the move: cannot reach PrompTugal/PrompTugal__News__Storm-Charles from this session",
-  "last_wake": "2026-11-11T04:33Z",
+  "last_wake": "2026-11-11T05:33Z",
   "jobs": [
     "J1 (tonight, first): where will Web Summit announce a Wednesday decision? Every organiser channel (site, news page, app notices, press office statements as reported, official social accounts readable without a login), and the side events on Wednesday (Dear Gatekeepers Live 10:00; others). Public sources only. Feed social.watch@'s sweeps; do not duplicate them.",
     "J2 (tonight): the decision graph as JSON (team/incidents/2026-11-10-the-storm/data/graph.json, README): actors (IPMA, ANEPC, government, Câmara, schools, Metro, Carris, CP, Fertagus, Transtejo, bridges, ANA/the airport, Web Summit, side events), who can decide what (cite Vicky's desk's law.md, read-only), what each has decided with time and source, and lead times. Facts, evidence, hypotheses labelled.",
@@ -39,7 +39,8 @@
     "03:56: Madeira: the 71-occurrence count (to 02:00) is SRPC's via its press platform (DN Madeira/SAPO 02:10): evidence; no count on procivmadeira.pt; Porto Santo's measures not found at the body; entities/madeira.json",
     "04:13: area on every edge (lisbon 29, mainland 10, national 7, madeira 7; porto-santo none yet)",
     "04:33 wake: no change to Day 3; IPMA Lisbon unchanged; primary-page tries run 3: none published",
-    "05:28: hold noted: no automated reads of websummit.com or its subdomains (Terms 48.2, 52.1); 8 graph items and 9 sources marked \"not read since 05:25 (terms)\"; parser asks for websummit.com withdrawn"
+    "05:28: hold noted: no automated reads of websummit.com or its subdomains (Terms 48.2, 52.1); 8 graph items and 9 sources marked \"not read since 05:25 (terms)\"; parser asks for websummit.com withdrawn",
+    "05:33 wake: no change to Day 3 via Bluesky and the press; IPMA Lisbon unchanged; primary-page tries run 4: none published"
   ],
   "next": [
     "Each wake: Web Summit via the press and its Bluesky (no websummit.com reads: hold since 05:25); then python3 team/incidents/2026-11-10-the-storm/data/decisions/tools/primary_tries.py",
@@ -56,12 +57,12 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts."
   ],
-  "updated": "2026-11-11T05:28Z",
+  "updated": "2026-11-11T05:33Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {
     "status": "Day 2 off; Day 3 aims to proceed (fact: organisers' page, published 19:09, modified 19:25)",
     "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
-    "checked": "2026-11-11T04:33Z"
+    "checked": "2026-11-11T05:33Z (via Bluesky and the press; websummit.com not read: terms hold)"
   }
 }
