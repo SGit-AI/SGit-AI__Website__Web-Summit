@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1846",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: alpha started on b0-library (the first worker session on account B)",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "e9bf41af8"
+  },
+  {
     "version": "v0.2.1845",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: b0-library opened (step 0): the prompt library, skills, formats and queue, for alpha",
