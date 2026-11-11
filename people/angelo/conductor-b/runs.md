@@ -17,6 +17,7 @@ summary: One line per worker session conductor.b@ starts, appended, never rewrit
 | 2026-11-11 13:34 | alpha.large.worker@PrompTugal.angelo | b3-team-offers | spec | session_01Xp7gj72uwKSo14DwxG8SnC (from b5593420) | ~13:35 | failed: account B's 5-hour usage limit (reset 14:40 UTC) before any commit; cost 0.71 USD API-equivalent; archived |
 | 2026-11-11 14:41 | bravo.large.worker@PrompTugal.angelo | b3-team-offers | spec (second try) | session_01Xp7gj5B3HESJSgjvfaPKkR (from b5593420) | ~14:46 | done: the market spec, offers 1 and 2, summary; reviewed onto dev; archived; cost 1.16 USD API-equivalent |
 | 2026-11-11 14:56 | charlie.large.worker@PrompTugal.angelo | b4-how-it-works | design + build | session_01Xp7gj63xvVz2ADBSg7Sas9 (from 762167db) | 15:04 | done: the how-it-works page (eight picture cards), screenshots; reviewed onto dev; archived; cost 3.08 USD API-equivalent |
+| 2026-11-11 ~16:51 | (in-session sub-agent, read-only search) | handover survey | research | in conductor.b's own session | ~16:54 | report in conductor-b/research/2026-11-11-handover-survey.md; tokens in the ledger line of 16:55 (subagents) |
 
 **Costs** (Angelo, 11 Nov, "Both?"): each finished worker's row gives the platform's API-equivalent dollars; tokens are in people/angelo/ledger/.
 
