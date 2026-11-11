@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1862",
+    "date": "2026-11-11",
+    "what": "IPMA communiqué no. 3 (12:16:26): two centres, weaker wind, gusts 70-90 km/h South; no Lisbon warning change in CAP or open data at 12:28; refresh reads IPMA's communiqués page",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "b5af06f1f"
+  },
+  {
     "version": "v0.2.1861",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: project prod-pipeline opened, its lead prod-pipeline.pm@; leads are <project>.pm@; a project-manager skill",
