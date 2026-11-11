@@ -1,6 +1,6 @@
 # riskmandate-android-demo: state
 
-For the digest: X-ray kiosk live for Firebase testers as RiskMandate 0.1.165 (Android CI run 165 green, 22:44 UTC, emulator smoke passed); not on Play/managed tablets (promotion waits on security.android's PASS for 683f9f7); next: Angelo looks on a device; cost so far $10.25 in workers (the lead's own session not yet measured).
+For the digest: 0.1.165 on Angelo's device: X-ray opens full screen, but buttons misbehave; build 2 (a full embedded browser with a full-screen toggle) starting; cost so far $10.25 in workers (the lead's own session not yet measured).
 
 Lead: riskmandate-android-demo.pm@PrompTugal.angelo. Branch: project/riskmandate-android-demo. Wake routine: trig_01GnGftTuQdk1LM63LnvaDtn (BRIEF.md on dev).
 
@@ -43,6 +43,10 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - Angelo, 11 Nov about 22:23 UTC: "push it". The lead pushed 683f9f7 onto PrompTugal/PrompTugal__App__Android dev (fast-forward from 653320a). CI: android run 165 (id 43111403958), queued 22:23 UTC; versionName 0.1.165 if it releases. Next wake: record its result; then Angelo looks on a device (installing on stand devices is still his word).
 - Run 165 result (22:44 UTC): success. Tests and lint, secret scan, licences, security-gate, release (signed APK and AAB, 0.1.165), Firebase App Distribution to group "team" (22:39 UTC), GitHub release, emulator smoke test: all passed.
 - Its promote-dispatch started promote.yml run 57 on main: failure (22:34 UTC), expected: main moves only on security.android's signed PASS for the exact dev head (its last PASS is for 30c806b). So Play and the managed tablets do not have it. Getting it there means security.android reviewing 683f9f7: a request to Dinis's agents, tier 3, Angelo's word.
+
+## Angelo's look at 0.1.165 (11 Nov about 22:55 UTC)
+"Ok the app has been deployed and I can see the X-ray menu item, and if I click it I can see the dashboard go automatically in full screen. But there are a few things that don't work quite well, especially the buttons don't seem to work properly. I think you should run it as an embedded app in a browser, if it's not already like that. We want to keep the features and to also be able to go back and forth from full-screen."
+- Lead's reading: it is already an embedded Chromium (WebView), but locked down too hard (host filter on sub-resources, popups and permissions denied, an invisible corner). Build 2 (build2/brief.md): reproduce which buttons break, lift the lock-down to what the page needs, add a visible full-screen toggle. Decided by default (Angelo can reverse): WebView made into a full browser, not a Trusted Web Activity (TWA loses keep-on, the watchdog and the toggle control); TWA described as the fallback.
 
 ## Check result (pool/riskmandate-android-demo-check)
 - PASS (code review): same tree as the gated build; WebView locked down (no JS bridge, no file access, permissions denied, https only). Findings for later: retry may cut off a slow (>10 s) load; WebSockets and service workers not filtered; Features.kt is conductor.android@'s file (named in For:).
