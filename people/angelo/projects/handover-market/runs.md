@@ -1,5 +1,5 @@
 # handover-market: runs (one line per worker or sub-agent: time, slot, step, session, end, cost)
 - 2026-11-11 16:59 UTC | alpha.large.worker@PrompTugal.angelo | handover-p1-relay (relay, large) | session_01Xp7gj66un3guSqmjmxPT8w | end: 17:03 UTC, done (11db0db), archived, claim released | cost: 1.30 USD (platform), 14,584 output tokens
 - 2026-11-11 16:59 UTC | bravo.large.worker@PrompTugal.angelo | handover-p2-format (spec, large) | session_01Xp7gj6GGazH2nFps19Nbx5 | end: 17:03 UTC, done (27d8dd5), archived, claim released | cost: 1.45 USD (platform), 14,369 output tokens
-- 2026-11-11 17:20 UTC | charlie.large.worker@PrompTugal.angelo | handover-p3-openrouter (build, large; claim handover-market-p3-openrouter) | session_01Xp7gj55tV2m7ZEDSUxaXoL | end: running | cost: pending (plus at most 1 USD OpenRouter, Dinis's key)
+- 2026-11-11 17:20 UTC | charlie.large.worker@PrompTugal.angelo | handover-p3-openrouter (build, large) | session_01Xp7gj55tV2m7ZEDSUxaXoL | end: 17:28 UTC, done (1943369), archived 18:5x, claim released | cost: 1.81 USD (platform), 24,634 output tokens; OpenRouter 0.096 USD (Dinis's key)
 - 2026-11-11 17:32 UTC | hotel.large.worker@PrompTugal.angelo | handover-p1-writeback (build, large; claim handover-market-p1-writeback) | session_01Xp7gj4v9qrAKJPfPYBR75b | end: running | cost: pending (plus at most 0.50 USD OpenRouter)
