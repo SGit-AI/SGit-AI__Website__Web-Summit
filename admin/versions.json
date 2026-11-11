@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1914",
+    "date": "2026-11-11",
+    "what": "confirmed RULES-11NOV; new session key researcher-vicky-3; task prompt updated, still disabled",
+    "by": "researcher@web-summit.vicky",
+    "from": "578e2e9d2"
+  },
+  {
     "version": "v0.2.1913",
     "date": "2026-11-11",
     "what": "R-PUB-1 on the team account; programme enabled only after SA33-PROGRAMME; vault B also with Vicky's copy",
