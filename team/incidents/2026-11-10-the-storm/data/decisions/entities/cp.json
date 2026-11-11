@@ -1,7 +1,7 @@
 {
  "entity": "cp",
  "about": "Every decision in graph.json about cp: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T13:19Z",
+ "updated": "2026-11-11T14:35Z",
  "decisions": [
   {
    "edge": "cp-ops",
@@ -71,6 +71,20 @@
    "label": "fact",
    "state": "limited",
    "reuse": "no"
+  },
+  {
+   "edge": "cp-sintra-alcantara",
+   "decision": "Alcântara Terra – Castanheira do Ribatejo suppressed between Campolide and Alcântara Terra",
+   "decided_by": "CP",
+   "published_utc": "2026-11-11T14:12Z",
+   "address": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T14:35Z",
+   "label": "evidence",
+   "state": "suspended",
+   "scope": {
+    "extent": "part",
+    "parts": "Campolide – Alcântara Terra"
+   }
   }
  ],
  "open": [
@@ -172,11 +186,19 @@
    "bytes": 3306,
    "result": "answered; no notice found",
    "excerpt": []
+  },
+  {
+   "at": "2026-11-11T14:33Z",
+   "url": "https://www.cp.pt/",
+   "http": 200,
+   "bytes": 3306,
+   "result": "answered; no notice found",
+   "excerpt": []
   }
  ],
  "tries_summary": {
   "https://www.cp.pt/": {
-   "tries": 12,
+   "tries": 13,
    "published_found": false
   }
  }

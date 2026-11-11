@@ -1,7 +1,7 @@
 {
   "agent": "incident.researcher@web-summit.dinis",
   "state": "blocked on the move: cannot reach PrompTugal/PrompTugal__News__Storm-Charles from this session",
-  "last_wake": "2026-11-11T13:36Z",
+  "last_wake": "2026-11-11T14:35Z",
   "jobs": [
     "J1 (tonight, first): where will Web Summit announce a Wednesday decision? Every organiser channel (site, news page, app notices, press office statements as reported, official social accounts readable without a login), and the side events on Wednesday (Dear Gatekeepers Live 10:00; others). Public sources only. Feed social.watch@'s sweeps; do not duplicate them.",
     "J2 (tonight): the decision graph as JSON (team/incidents/2026-11-10-the-storm/data/graph.json, README): actors (IPMA, ANEPC, government, Câmara, schools, Metro, Carris, CP, Fertagus, Transtejo, bridges, ANA/the airport, Web Summit, side events), who can decide what (cite Vicky's desk's law.md, read-only), what each has decided with time and source, and lead times. Facts, evidence, hypotheses labelled.",
@@ -53,7 +53,8 @@
     "12:06: cp-fertagus-bridge text now attributes the 12:00-15:00 forecast to CP's own statement (incident.sherpa@'s catch); no other unattributed forecast text in decisions/",
     "12:25: my 12:06 CP fix wrote unescaped quotes into graph.json and entities/cp.json (invalid JSON; it broke builds in the new repo after sync). Fixed with «» as incident.conductor@ did in the new repo (bd91d2d1); every JSON in decisions/ and my status now parsed with node before push. From now on: edits by json.load/json.dump only, never raw text replace, and a node JSON.parse check before each push.",
     "12:35 wake: no change to Day 3; ANA at 11:00: Lisbon 288 of 565 cancelled in advance +22 (press); Carris page re-read (794 diverted); IPMA Lisbon unchanged; primary tries run 11: none published",
-    "13:36 wake: no change to Day 3; IPMA cut Lisbon (CAP 12:33): red rain to 15:00 then yellow, orange wind to 18:00 (fact; open data stale); bridges 60/80 km/h (Lusoponte via press); Lisbon 144 occurrences to 12:00; ANEPC 530 to 12:00, impact shifting south; primary tries run 12: none published"
+    "13:36 wake: no change to Day 3; IPMA cut Lisbon (CAP 12:33): red rain to 15:00 then yellow, orange wind to 18:00 (fact; open data stale); bridges 60/80 km/h (Lusoponte via press); Lisbon 144 occurrences to 12:00; ANEPC 530 to 12:00, impact shifting south; primary tries run 12: none published",
+    "14:35 wake: no change to Day 3; IPMA open data now matches the 12:33 cut; CP urban: Campolide–Alcântara Terra suppressed (press); Madeira 285 to 13:10 (press); primary tries run 13: none published"
   ],
   "next": [
     "Find the press live blogs for 11 Nov (Observador's 10 Nov blog stopped at 01:03; Jornal de Negócios at 00:09)",
@@ -71,12 +72,12 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts. New: ANEPC's occurrences portal (prociv.gov.pt/pt/ocorrencias/: the JSON it loads, counts only); CNN Portugal live JSON-LD."
   ],
-  "updated": "2026-11-11T13:36Z",
+  "updated": "2026-11-11T14:35Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {
     "status": "Day 2 off; Day 3 aims to proceed (fact: organisers' page, published 19:09, modified 19:25)",
     "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
-    "checked": "2026-11-11T13:36Z (Bluesky and press; websummit.com on hold)"
+    "checked": "2026-11-11T14:35Z (Bluesky and press; websummit.com on hold)"
   }
 }

@@ -116,11 +116,17 @@
    "url": "https://www.rede-expressos.pt/",
    "http": 403,
    "result": "not reached: HTTPError 403"
+  },
+  {
+   "at": "2026-11-11T14:33Z",
+   "url": "https://www.rede-expressos.pt/",
+   "http": 403,
+   "result": "not reached: HTTPError 403"
   }
  ],
  "tries_summary": {
   "https://www.rede-expressos.pt/": {
-   "tries": 12,
+   "tries": 13,
    "published_found": false
   }
  }

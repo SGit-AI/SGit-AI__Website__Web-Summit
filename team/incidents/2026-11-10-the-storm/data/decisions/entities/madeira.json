@@ -1,7 +1,7 @@
 {
  "entity": "madeira",
  "about": "Every decision and official count we hold about Madeira (generated from graph.json by incident.researcher@web-summit.dinis).",
- "updated": "2026-11-11T10:04Z",
+ "updated": "2026-11-11T14:35Z",
  "decisions": [
   {
    "edge": "ipma-madeira-red",
@@ -187,6 +187,16 @@
    "label": "evidence",
    "state": null,
    "note": "DNOTICIAS 09:30:45Z, with his words quoted. Station and 12-hour window are NOT named in the article. incident.meteorologist@'s IPMA figure for Areeiro is 474.7 mm in twelve hourly values to 05:00 (483.6 in thirteen): close, but which station and window he used is not established. One outlet gives 237 mm for 2010 (search summary, not opened); DNOTICIAS says 387."
+  },
+  {
+   "edge": "srpc-madeira-count-1310",
+   "decision": "285 occurrences to 13:10; 718 responders, 287 vehicles",
+   "decided_by": "SRPC (press platform)",
+   "published_utc": "2026-11-11T14:04Z",
+   "address": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T14:35Z",
+   "label": "evidence",
+   "state": null
   }
  ],
  "open": [
