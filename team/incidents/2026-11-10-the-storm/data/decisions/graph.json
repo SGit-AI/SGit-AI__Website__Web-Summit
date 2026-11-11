@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T09:34Z",
+ "updated": "2026-11-11T10:04Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -2106,15 +2106,15 @@
    "id": "srpc-madeira-count-0859",
    "by": "madeira-prociv",
    "to": [],
-   "decision": "Occurrence count, Madeira: 205 so far; 542 responders, 216 means",
-   "at": "2026-11-11T08:59Z",
+   "decision": "Occurrence count, Madeira: 205 to 09:00; 542 responders, 216 vehicles; none classed as serious (\"nenhuma das situações foi considerada grave\")",
+   "at": "2026-11-11T09:00Z",
    "status": "happened",
    "follows": [
     "srpc-madeira-count-0650"
    ],
    "label": "evidence",
-   "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
-   "read": "2026-11-11T09:34Z",
+   "source": "https://www.dnoticias.pt/2026/11/11/512520-depressao-charles-deixou-mais-chuva-do-que-a-registada-no-20-de-fevereiro/",
+   "read": "2026-11-11T10:04Z",
    "read_by": "incident.researcher@web-summit.dinis",
    "effect_from_utc": null,
    "effect_to_utc": null,
@@ -2123,7 +2123,36 @@
    "state_note": "a count",
    "scope": null,
    "area": "madeira",
-   "note": "CNN Portugal live 08:59:12Z, \"segundo os dados disponibilizados\" (SRPC's press platform, not public)."
+   "note": "Presented by the regional president at SRPC on Wednesday morning (DNOTICIAS, published 09:30:45Z); CNN Portugal had 205 at 08:59. SRPC's own site carries no count.",
+   "corroborated_by": [
+    "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2 (08:59:12Z)"
+   ]
+  },
+  {
+   "id": "madeira-gov-briefing",
+   "by": "madeira-gov",
+   "to": [],
+   "decision": "Regional president's briefing at SRPC: \"479 milímetros de precipitação em 12 horas\", more than the 387 mm of 20 February 2010 over the same reference period; hourly peak 65 l/m² at 06:00 against 78 in 2010; most critical period 02:00 to 03:00 (heavy rain with high tide and high stream flows)",
+   "at": "2026-11-11T09:30Z",
+   "status": "happened",
+   "follows": [
+    "srpc-madeira-count-0200"
+   ],
+   "label": "evidence",
+   "source": "https://www.dnoticias.pt/2026/11/11/512520-depressao-charles-deixou-mais-chuva-do-que-a-registada-no-20-de-fevereiro/",
+   "read": "2026-11-11T10:04Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "statement",
+   "state": null,
+   "state_note": "a statement, not a service decision",
+   "scope": null,
+   "area": "madeira",
+   "also": [
+    "https://www.jm-madeira.pt/not%C3%ADcias/regi-o/30009071/niveis-de-pluviosidade-ultrapassaram-os-do-20-de-fevereiro.html"
+   ],
+   "note": "DNOTICIAS 09:30:45Z, with his words quoted. Station and 12-hour window are NOT named in the article. incident.meteorologist@'s IPMA figure for Areeiro is 474.7 mm in twelve hourly values to 05:00 (483.6 in thirteen): close, but which station and window he used is not established. One outlet gives 237 mm for 2010 (search summary, not opened); DNOTICIAS says 387."
   }
  ],
  "lessons": [
@@ -2170,6 +2199,12 @@
    "claim": "Porto Santo: power failures; municipal civil protection centre activated, coastal accesses closed, harbour operations suspended (the mayor)",
    "status": "not found at source: cm-portosanto.pt home (read 03:51Z) and apram.pt (03:51Z) carry no notice; in the 02:00 count Porto Santo has one occurrence. Not added.; 07:35Z: power cuts reported by CNN Portugal live 01:02 (porto-santo-power, evidence); the municipal measures still not found",
    "read": "2026-11-11T03:56Z"
+  },
+  {
+   "from": "incident.wikipedia@ via incident.conductor@ (10:02Z)",
+   "claim": "Madeira civil protection's assistant commander: the worst has passed; the system went south of the island and weaker than forecast",
+   "status": "not found in dated press or at SRPC (search 10:03Z; procivmadeira.pt has no such item). Not added.",
+   "read": "2026-11-11T10:04Z"
   }
  ],
  "state_values": [
