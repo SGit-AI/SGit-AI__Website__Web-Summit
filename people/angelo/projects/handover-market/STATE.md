@@ -22,6 +22,8 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 - **3a done** 17:28 (pool/handover-p3-openrouter 1943369; 1.81 USD platform + 0.096 USD OpenRouter): key works; or-task.mjs; cheap tier 24% rows right, strong 54%: fit for drafts, summaries, tagging; not exact fields.
 - **3b handover-p3b-agent** (build, large): a whole worker whose model calls go to OpenRouter (Claude through OpenRouter, and a cheap model), cap 2 USD. Decided by default, Angelo can reverse.
 - **4 handover-p4-outpacket** (build, large): our first outgoing packet in the Fringe's format + a checklist for an always-on picker on Angelo's other account. Nothing posted; posting is tier 3 (first contact).
+- **3b done** 19:11 (pool/handover-p3b-agent 1c5a584; 1.75 USD + 0.25 OpenRouter): a headless worker on OpenRouter works; Sonnet 5.5 right (0.14 USD), DeepSeek 6 wrong.
+- **5 handover-p5-or-step** (build on OpenRouter, Sonnet 5.5 inner; wrapper on a Sonnet session to save account B, decided by default): one real step with a commit: mark the pipeline library's missing paths.
 - Ollama and AWS: each waits for Angelo's go (see table).
 
 ## Decisions (Angelo's words)
@@ -35,6 +37,7 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 - 2026-11-11 19:0x, on the manual dry run: "I don't think manually passing prompts is actually that significant, I know I can do it and it's not the workflow that we're interested in."
 - 2026-11-11, after the lead proposed outgoing packets in the Fringe's format (no person passing prompts): "Yes, go ahead with the outgoing packet".
 - 2026-11-11 19:1x, standing rule for workers: "If one of the workers is not needed anymore, can you remove it from my list? We should never have stranded workers, if their work is interrupted, we should retire them. This way I can keep an eye on what's going on. Any worker I see should always be actively running, there should never be stopped workers around except for brief moments while their pm is busy." At every wake: any worker session that is idle, blocked, failed or interrupted is checked, its commits logged, and archived at once; its claim released.
+- 2026-11-11 19:4x: "Yes, go ahead with the OpenRouter worker" (one real step on OpenRouter Sonnet 5.5, the wrapper commits).
 
 ## Open questions for Angelo
 (none open)
