@@ -48,7 +48,8 @@
     "09:34 wake: no change to Day 3; IPMA Lisbon unchanged since the 07:16 downgrade (rain red 09-18, wind orange 09-21); Madeira count 205 (08:59, press); E-REDES ~2,000 without power at 07:00 (press, not a decision); primary tries run 8: none published",
     "10:04: Madeira leads: (1) 205 to 09:00, none serious (DNOTICIAS 09:30, the president at SRPC; evidence); (3) 479 mm in 12 h vs 387 mm in 2010 (evidence; station and window not named); (2) the assistant commander's words not found: a lead",
     "10:34 wake: no change to Day 3; 208 flights cancelled at Lisbon by 09:20 (ANA site via CNN; evidence); only Faro still red for wind (10:02); IPMA Lisbon: red rain 09-18, orange wind 09-21; primary tries run 9: none published",
-    "11:35 wake: no change to Day 3; Vasco da Gama 100 km/h since 07:30 (Lusoponte via Lusa); Lisbon ~50 occurrences 00-10 (RSB); tunnels opening/closing with water; Funchal accesses reopened by 10:32; IPMA Lisbon unchanged; primary tries run 10: none published"
+    "11:35 wake: no change to Day 3; Vasco da Gama 100 km/h since 07:30 (Lusoponte via Lusa); Lisbon ~50 occurrences 00-10 (RSB); tunnels opening/closing with water; Funchal accesses reopened by 10:32; IPMA Lisbon unchanged; primary tries run 10: none published",
+    "11:56 (sherpa's needs via the conductor): (1) Carris's own page (fact): trams interrupted, Graça funicular closed 10:40, Web Summit shuttle cancelled; Fertagus's own notice (fact): normal at 10:40; Metro: still no service notice on metrolisboa.pt; Thursday hours: none published. (2) No ANEPC or CML list of open places, shelters for visitors, pharmacies, hotels, malls, taxis: ANEPC news has only the 10 Nov measures; lisboa.pt 403. (3) ANEPC's counts: only via its portal (data not in HTML) and the press. (4) SRPC: no count on its site."
   ],
   "next": [
     "Find the press live blogs for 11 Nov (Observador's 10 Nov blog stopped at 01:03; Jornal de Negócios at 00:09)",
@@ -66,7 +67,7 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts. New: ANEPC's occurrences portal (prociv.gov.pt/pt/ocorrencias/: the JSON it loads, counts only); CNN Portugal live JSON-LD."
   ],
-  "updated": "2026-11-11T11:35Z",
+  "updated": "2026-11-11T11:56Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {

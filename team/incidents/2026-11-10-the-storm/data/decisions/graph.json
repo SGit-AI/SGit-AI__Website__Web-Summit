@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T11:35Z",
+ "updated": "2026-11-11T11:56Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -819,7 +819,8 @@
    "scope": {
     "extent": "whole",
     "parts": "buses and trams; trams may be disrupted (press)"
-   }
+   },
+   "note": " 11:56Z: superseded by carris-service-1156 (Carris's own page)."
   },
   {
    "id": "rede-expressos-suspends",
@@ -2268,6 +2269,62 @@
    "scope": null,
    "area": "mainland",
    "note": "CNN Portugal live 11:07:00Z."
+  },
+  {
+   "id": "carris-service-1156",
+   "by": "carris",
+   "to": [
+    "websummit"
+   ],
+   "decision": "Carris (its own page): service continues, priority to essential journeys (health, emergency workers); Web Summit shuttle lines cancelled \"devido à suspensão do evento\"; Graça funicular closed since 10:40; trams 15E, 25E, 24E, 28E, 12E, 18E interrupted in sequence, 15E replaced by buses on the same route; bus 763 diverted at Carnide cemetery (5 stops dropped); Saldanha and Cais do Sodré sales points closed",
+   "at": "2026-11-11T10:40Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert",
+    "websummit-wednesday"
+   ],
+   "label": "fact",
+   "source": "https://www.carris.pt/viaje/alteracoes-de-servico/alerta-circulacao/",
+   "read": "2026-11-11T11:56Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "funicular \"desde as 10h40\"; others hours not stated; the page \"vamos atualizando aqui\"",
+   "state": "limited",
+   "state_note": "buses run with changes; trams interrupted; funicular closed; Web Summit shuttle cancelled",
+   "scope": {
+    "extent": "part",
+    "parts": "trams 12E, 15E, 18E, 24E, 25E, 28E interrupted (15E by bus); Graça funicular closed; Web Summit shuttle cancelled; bus 763 diverted; buses otherwise running"
+   },
+   "area": "lisbon",
+   "note": "Read at source 11:52Z; the page has no publish or update time; \"at\" is the only time it states (funicular, 10:40). Changes are also sent on Carris's WhatsApp channel (not read)."
+  },
+  {
+   "id": "fertagus-normal-1040",
+   "by": "fertagus",
+   "to": [],
+   "decision": "Fertagus (its own notice, \"Alerta Vermelho | Condições Meteorológicas Adversas\", 11 Nov): conditions met to start normal service at 05:30; \"Circulação a decorrer com normalidade\" at 06:30, 08:00, 09:30 and 10:40; to be updated through the day",
+   "at": "2026-11-11T10:40Z",
+   "status": "happened",
+   "follows": [
+    "gov-alert",
+    "cp-fertagus-bridge"
+   ],
+   "label": "fact",
+   "source": "https://www.fertagus.pt/Fertagus-pt/Viajar/Comunicados-e-Campanhas/Informa%C3%A7%C3%A3o-ao-P%C3%BAblico",
+   "read": "2026-11-11T11:56Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T05:30Z",
+   "effect_to_utc": null,
+   "effect_note": "normal since 05:30; last update 10:40",
+   "state": "running",
+   "state_note": "normal at 10:40",
+   "scope": {
+    "extent": "whole",
+    "parts": "Fertagus line (Setúbal–Roma-Areeiro, via the 25 de Abril bridge)"
+   },
+   "area": "lisbon",
+   "note": "Read at source 11:55Z. Note: CP (not Fertagus) announced suppressing four trains over the 25 de Abril bridge 12:00-15:00 (cp-fertagus-bridge, Lusa 23:10); Fertagus's own notice says nothing of suppressions up to 10:40."
   }
  ],
  "lessons": [
