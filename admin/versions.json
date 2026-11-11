@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1793",
+    "date": "2026-11-11",
+    "what": "01:36 wake: no change to Day 3",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "6fa509d82"
+  },
+  {
     "version": "v0.2.1792",
     "date": "2026-11-11",
     "what": "Madeira's decisions in the graph (red warnings, schools to 13:00, airport, cruise calls); RTP's new live-blog address in the source map",
