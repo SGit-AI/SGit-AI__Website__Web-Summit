@@ -431,7 +431,12 @@
    "time_utc": "2026-11-11T13:25Z",
    "section": 20,
    "summary": "LPPT 13:00 10011KT +RA vis 1500 Q0991, falling, no gust; Relógio 18.7 mm in hour 12:00 and 57.7 mm in 6 h (largest 6 h at our Lisbon stations in the window); centre not yet past, closest more likely 14-16:00; IPMA open data still stale 51 min after CAP 12:33:13."
+  },
+  {
+   "time_utc": "2026-11-11T14:25Z",
+   "section": 21,
+   "summary": "LPPT 14:00 19029G40KT (74 km/h, highest in the window, below warned 90/110), wind shear R20, +2 C, Q0989 still falling: warm sector arriving, centre now more likely to pass just north (revises 16, back to 12). Oeiras 26.2 mm in hour 13:00 (heaviest hour in the window), 73.4 mm in 6 h. IPMA open data caught up with CAP 12:33:13 after 1 h 50 min; orange sea now 12:34-21:00."
   }
  ],
- "next_read_utc": "2026-11-11T14:22Z"
+ "next_read_utc": "2026-11-11T15:22Z"
 }
