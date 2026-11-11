@@ -47,5 +47,5 @@
 - **A5** (big pages): design, large, kilo.large; brief a5-sim-big/brief.md; writes people/angelo/pipeline/prod-pipeline-a5/.
 - Both: A3's design on real Tech Fringe pages, traces from git history only, screenshots at 320, 390, 740 x 360 and 1280, A2's check; a rule for tiny traces (A4) and for huge ones (A5). Done when sim.md is on their pool branch and STATE.md says "ready for Angelo's read".
 
-## A6: the team draft, version 2 (started 2026-11-11 about 19:5x)
+## A6: the team draft, version 2 (started 2026-11-11 19:48, session_01Xp7gj3T5setN3YtbMbiDEo)
 - Decided by default, Angelo can reverse: fold A4's small-page rule and A5's nine big-page rules into A3's draft before the team sees it (both workers recommend it). Design, large, lima.large; brief a6-team-draft-v2/brief.md; writes people/angelo/pipeline/prod-pipeline-a6/.
