@@ -1,0 +1,103 @@
+{
+ "shape": "lisbon-fringe-trace/1 (adapted: role contributed|related, live_in, deploy_time)",
+ "about": "Every commit and interaction behind https://lisbontechfringe.com/me/, by Angelo's definition (11 Nov 2026); template changes are not steps.",
+ "page": "https://lisbontechfringe.com/me/",
+ "traced_by": "mike.large.worker@PrompTugal.angelo (prod-pipeline-a7)",
+ "generator": "people/angelo/pipeline/prod-pipeline-a7/tool/page-trace.mjs",
+ "repo": "PrompTugal/PrompTugal__News__Fringe",
+ "repo_head": "00e1eeb",
+ "traced_at": "2026-11-11T20:01:52Z",
+ "privacy": "Public commits only; persons by role; no contact detail.",
+ "totals": {
+  "steps": 5,
+  "contributed": 3,
+  "related": 2
+ },
+ "template": {
+  "shared_template_commits_since_first_step": 175,
+  "line": "The shared template changed 175 times since; see its own page."
+ },
+ "steps": [
+  {
+   "t": "2026-11-11T11:37:32Z",
+   "sha": "73cb424",
+   "kind": "commit",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "what": "conductor.fringe@PrompTugal.dinis: work/19 comms layer: an inbox vault for every agent, tested end to end",
+   "files": [
+    "data/inboxes/conductor.fringe-promptugal.json"
+   ],
+   "role": "contributed",
+   "why": "changed its own source: data/inboxes/conductor.fringe-promptugal.json",
+   "live_in": "v0.1.23",
+   "deploy_time": "gap",
+   "n": 1
+  },
+  {
+   "t": "2026-11-11T11:51:39Z",
+   "sha": "467db90",
+   "kind": "commit",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "what": "conductor.fringe@PrompTugal.dinis: brief 4 (full throttle): ROLES.md, the design board, work/25 to 28",
+   "files": [
+    "work/26-dinis-key-and-talk.md"
+   ],
+   "role": "related",
+   "why": "the work item that asked for it and tracks it: work/26-dinis-key-and-talk.md",
+   "live_in": "v0.1.33",
+   "deploy_time": "gap",
+   "n": 2
+  },
+  {
+   "t": "2026-11-11T11:58:38Z",
+   "sha": "88d0003",
+   "kind": "commit",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "what": "dev.1.fringe@PrompTugal.dinis: work/26 /me/ (key and passkey in the browser) and the message-the-lead box",
+   "files": [
+    "admin/build/me.mjs",
+    "assets/me/me.js"
+   ],
+   "role": "contributed",
+   "why": "changed its own source: admin/build/me.mjs, assets/me/me.js",
+   "live_in": "v0.1.65",
+   "deploy_time": "gap",
+   "n": 3
+  },
+  {
+   "t": "2026-11-11T12:03:08Z",
+   "sha": "0aa5ca4",
+   "kind": "commit",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "what": "dev.1.fringe@PrompTugal.dinis: work/25 health and outreach sections (brief 6); work/26 done pending live check",
+   "files": [
+    "work/26-dinis-key-and-talk.md"
+   ],
+   "role": "related",
+   "why": "the work item that asked for it and tracks it: work/26-dinis-key-and-talk.md",
+   "live_in": "v0.1.69",
+   "deploy_time": "gap",
+   "n": 4
+  },
+  {
+   "t": "2026-11-11T13:39:10Z",
+   "sha": "191bd96",
+   "kind": "commit",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "dev.2.fringe@PrompTugal.dinis: work/41 /tip/ first version: sealed paste box, tips status API, drain shows tip id and priority",
+   "files": [
+    "assets/me/me.js"
+   ],
+   "role": "contributed",
+   "why": "changed its own source: assets/me/me.js",
+   "live_in": "v0.1.201",
+   "deploy_time": "gap",
+   "n": 5
+  }
+ ],
+ "gaps": [
+  "deploy_time: the deploy runs are in the Fringe's GitHub Actions, not readable here; live_in is the first CI version tag (v<series>.<run>) that holds the commit; its deploy time is not known.",
+  "A person's words outside git (chat, voice) appear only where a commit body quotes or names them.",
+  "A sub-agent behind a commit is not visible unless the commit says so."
+ ]
+}

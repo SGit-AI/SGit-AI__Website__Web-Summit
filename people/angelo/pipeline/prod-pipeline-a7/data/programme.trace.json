@@ -1,0 +1,745 @@
+{
+ "shape": "lisbon-fringe-trace/1 (adapted: role contributed|related, live_in, deploy_time)",
+ "about": "Every commit and interaction behind https://lisbontechfringe.com/programme/, by Angelo's definition (11 Nov 2026); template changes are not steps.",
+ "page": "https://lisbontechfringe.com/programme/",
+ "events_feed": {
+  "events_now": 179,
+  "commits_to_events_data": 32,
+  "agents": [
+   {
+    "who": "researcher.2.fringe@PrompTugal.dinis",
+    "commits": 22,
+    "added": 113,
+    "changed": 1700,
+    "removed": 7
+   },
+   {
+    "who": "researcher.fringe@PrompTugal.dinis",
+    "commits": 5,
+    "added": 71,
+    "changed": 117,
+    "removed": 1
+   },
+   {
+    "who": "researcher.1.fringe@PrompTugal.jose",
+    "commits": 4,
+    "added": 3,
+    "changed": 2,
+    "removed": 0
+   },
+   {
+    "who": "conductor.fringe@PrompTugal.dinis",
+    "commits": 1,
+    "added": 0,
+    "changed": 11,
+    "removed": 0
+   }
+  ]
+ },
+ "traced_by": "mike.large.worker@PrompTugal.angelo (prod-pipeline-a7)",
+ "generator": "people/angelo/pipeline/prod-pipeline-a7/tool/page-trace.mjs",
+ "repo": "PrompTugal/PrompTugal__News__Fringe",
+ "repo_head": "00e1eeb",
+ "traced_at": "2026-11-11T20:01:52Z",
+ "privacy": "Public commits only; persons by role; no contact detail.",
+ "totals": {
+  "steps": 35,
+  "contributed": 35
+ },
+ "template": {
+  "shared_template_commits_since_first_step": 179,
+  "line": "The shared template changed 179 times since; see its own page."
+ },
+ "steps": [
+  {
+   "t": "2026-11-11T10:49:31Z",
+   "sha": "6d8b29b",
+   "kind": "commit",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "what": "researcher.fringe@PrompTugal.dinis: data/events.json, the 21 seed events re-read at their public pages (work/02)",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 21 added",
+   "live_in": "v0.1.8",
+   "deploy_time": "gap",
+   "events": {
+    "added": 21,
+    "changed": 0,
+    "removed": 0
+   },
+   "n": 1
+  },
+  {
+   "t": "2026-11-11T10:53:32Z",
+   "sha": "48efab3",
+   "kind": "commit",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "what": "researcher.fringe@PrompTugal.dinis: 30 new events from Luma's public calendars, work/03 notes, sources.md",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 30 added",
+   "live_in": "v0.1.8",
+   "deploy_time": "gap",
+   "events": {
+    "added": 30,
+    "changed": 0,
+    "removed": 0
+   },
+   "n": 2
+  },
+  {
+   "t": "2026-11-11T10:54:57Z",
+   "sha": "b8de457",
+   "kind": "commit",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "what": "researcher.fringe@PrompTugal.dinis: merge dev; data/events.json follows the v1 contract (50 events)",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 50 changed, 1 removed",
+   "live_in": "v0.1.8",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 50,
+    "removed": 1
+   },
+   "n": 3
+  },
+  {
+   "t": "2026-11-11T10:58:29Z",
+   "sha": "66ab1f3",
+   "kind": "commit",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "what": "researcher.fringe@PrompTugal.dinis: 19 more events (69), from the PTW, Unicorn Factory and Canopy calendars",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 19 added",
+   "live_in": "v0.1.11",
+   "deploy_time": "gap",
+   "events": {
+    "added": 19,
+    "changed": 0,
+    "removed": 0
+   },
+   "n": 4
+  },
+  {
+   "t": "2026-11-11T11:25:31Z",
+   "sha": "cb97fa3",
+   "kind": "commit",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "what": "researcher.fringe@PrompTugal.dinis: the Uncon is WET SUMMIT Lisbon (work/03 done); 61 events re-read; 70 events",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 1 added, 67 changed",
+   "live_in": "v0.1.25",
+   "deploy_time": "gap",
+   "events": {
+    "added": 1,
+    "changed": 67,
+    "removed": 0
+   },
+   "n": 5
+  },
+  {
+   "t": "2026-11-11T11:41:56Z",
+   "sha": "e97903d",
+   "kind": "commit",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "what": "conductor.fringe@PrompTugal.dinis: PTW Palace sessions re-read at source (work/24 first case)",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 11 changed",
+   "live_in": "v0.1.28",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 11,
+    "removed": 0
+   },
+   "n": 6
+  },
+  {
+   "t": "2026-11-11T11:56:09Z",
+   "sha": "ac6b57a",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: work/24 wake 1: 61 events re-read, 94 added (164), Kuma H2H online",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 94 added, 59 changed",
+   "live_in": "v0.1.50",
+   "deploy_time": "gap",
+   "events": {
+    "added": 94,
+    "changed": 59,
+    "removed": 0
+   },
+   "n": 7
+  },
+  {
+   "t": "2026-11-11T12:16:10Z",
+   "sha": "437ee4b",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: work/24 wake 2: 156 re-read, Agents Are Ready postponed to Thu, 7 new from calendars (171)",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 7 added, 151 changed",
+   "live_in": "v0.1.80",
+   "deploy_time": "gap",
+   "events": {
+    "added": 7,
+    "changed": 151,
+    "removed": 0
+   },
+   "n": 8
+  },
+  {
+   "t": "2026-11-11T12:38:45Z",
+   "sha": "e9f40e7",
+   "kind": "commit",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "what": "design.3.fringe@PrompTugal.dinis: /programme/: the week by day, place and kind (D17)",
+   "files": [
+    "admin/build/programme.mjs"
+   ],
+   "role": "contributed",
+   "why": "changed its own source: admin/build/programme.mjs",
+   "live_in": "v0.1.103",
+   "deploy_time": "gap",
+   "n": 9
+  },
+  {
+   "t": "2026-11-11T12:40:59Z",
+   "sha": "45e52fc",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: work/10 claimed: lane \"business\" on 49 founders', investors' and partners' meetups",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 49 changed",
+   "live_in": "v0.1.109",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 49,
+    "removed": 0
+   },
+   "n": 10
+  },
+  {
+   "t": "2026-11-11T12:42:46Z",
+   "sha": "6502ff1",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: size (major/community) on every event; documented in api/v1",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 171 changed",
+   "live_in": "v0.1.114",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 171,
+    "removed": 0
+   },
+   "n": 11
+  },
+  {
+   "t": "2026-11-11T12:43:36Z",
+   "sha": "20c7a5d",
+   "kind": "commit",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "what": "design.3.fringe@PrompTugal.dinis: D18 big events as a slim strip, small events as a dense list (home and programme)",
+   "files": [
+    "admin/build/programme.mjs"
+   ],
+   "role": "contributed",
+   "why": "changed its own source: admin/build/programme.mjs",
+   "live_in": "v0.1.117",
+   "deploy_time": "gap",
+   "n": 12
+  },
+  {
+   "t": "2026-11-11T12:49:31Z",
+   "sha": "b5d2178",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: second-opinion times: travel tech start stays 17:00, life-with-artificials uncertain by an hour (Copenhagen time zone), Aubay still 404",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 3 changed",
+   "live_in": "v0.1.125",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 3,
+    "removed": 0
+   },
+   "n": 13
+  },
+  {
+   "t": "2026-11-11T12:55:19Z",
+   "sha": "e9a3981",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: second-opinion worth_a_look: Yorkseed salon on, AI Engineers lunch not moved, Elevon night confirmed moved to Thursday",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 3 changed",
+   "live_in": "v0.1.142",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 3,
+    "removed": 0
+   },
+   "n": 14
+  },
+  {
+   "t": "2026-11-11T13:18:36Z",
+   "sha": "b84d64b",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: work/24 wake 4: 131 re-read, Eventbrite read (+6, 177 events), lane retagged",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 6 added, 130 changed",
+   "live_in": "v0.1.161",
+   "deploy_time": "gap",
+   "events": {
+    "added": 6,
+    "changed": 130,
+    "removed": 0
+   },
+   "n": 15
+  },
+  {
+   "t": "2026-11-11T13:27:22Z",
+   "sha": "0896640",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: remove the 6 Eventbrite events (terms forbid automated reading); one rule for unknown applied (99 events on/evidence)",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 129 changed, 6 removed",
+   "live_in": "v0.1.168",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 129,
+    "removed": 6
+   },
+   "n": 16
+  },
+  {
+   "t": "2026-11-11T13:34:58Z",
+   "sha": "32bbc63",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: neighbourhood field on 47 events where the public page names the area; documented in api/v1",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 47 changed",
+   "live_in": "v0.1.194",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 47,
+    "removed": 0
+   },
+   "n": 17
+  },
+  {
+   "t": "2026-11-11T13:37:28Z",
+   "sha": "0f23d54",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: add Storm Summit (stormsummit.app), online Wed 11 Nov 08:30, from the organiser's public page",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 1 added",
+   "live_in": "v0.1.200",
+   "deploy_time": "gap",
+   "events": {
+    "added": 1,
+    "changed": 0,
+    "removed": 0
+   },
+   "n": 18
+  },
+  {
+   "t": "2026-11-11T14:01:21Z",
+   "sha": "aefea2d",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: work/44 done: cost, in_lisbon, personas, umbrella on all events; fields documented",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 172 changed",
+   "live_in": "v0.1.227",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 172,
+    "removed": 0
+   },
+   "n": 19
+  },
+  {
+   "t": "2026-11-11T14:03:14Z",
+   "sha": "36340f6",
+   "kind": "commit",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "design.1.fringe@PrompTugal.dinis: chips under 3 events fold into Elsewhere in Lisbon (home, programme); organiser links on home cards",
+   "files": [
+    "admin/build/programme.mjs"
+   ],
+   "role": "contributed",
+   "why": "changed its own source: admin/build/programme.mjs",
+   "live_in": "v0.1.232",
+   "deploy_time": "gap",
+   "n": 20
+  },
+  {
+   "t": "2026-11-11T14:08:50Z",
+   "sha": "1b7122c",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: staaake: organiser set to an independent organiser (finding 10), not clearly an organisation",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 6 changed",
+   "live_in": "v0.1.249",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 6,
+    "removed": 0
+   },
+   "n": 21
+  },
+  {
+   "t": "2026-11-11T14:15:49Z",
+   "sha": "24adb2d",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: work/24 wake 14:15: 131 re-read, Enchant Afterparty added, Side Events Guide IRL now 404",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 1 added, 129 changed",
+   "live_in": "v0.1.256",
+   "deploy_time": "gap",
+   "events": {
+    "added": 1,
+    "changed": 129,
+    "removed": 0
+   },
+   "n": 22
+  },
+  {
+   "t": "2026-11-11T14:39:01Z",
+   "sha": "ceac351",
+   "kind": "commit",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "researcher.1.fringe@PrompTugal.jose: Soirée is in person per its Luma page (was online); notes checked at source",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 1 changed",
+   "live_in": "v0.1.279",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 1,
+    "removed": 0
+   },
+   "n": 23
+  },
+  {
+   "t": "2026-11-11T14:43:31Z",
+   "sha": "d501143",
+   "kind": "commit",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "researcher.1.fringe@PrompTugal.jose: two new online events from the guides (WonderLead in Tech, ideaic.io); guides read",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 2 added",
+   "live_in": "v0.1.280",
+   "deploy_time": "gap",
+   "events": {
+    "added": 2,
+    "changed": 0,
+    "removed": 0
+   },
+   "n": 24
+  },
+  {
+   "t": "2026-11-11T15:14:41Z",
+   "sha": "f131859",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: work/24 wake 15:15: 134 re-read, 2 new from the Luma calendars (175 events)",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 2 added, 131 changed",
+   "live_in": "v0.1.300",
+   "deploy_time": "gap",
+   "events": {
+    "added": 2,
+    "changed": 131,
+    "removed": 0
+   },
+   "n": 25
+  },
+  {
+   "t": "2026-11-11T15:23:40Z",
+   "sha": "34c0b63",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: privacy: withhold the venue where the organiser's page hides it (3), correct the wrong 'shows only the city' note (60)",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 65 changed",
+   "live_in": "v0.1.307",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 65,
+    "removed": 0
+   },
+   "n": 26
+  },
+  {
+   "t": "2026-11-11T16:14:21Z",
+   "sha": "b74280a",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: work/24 wake 16:13: 161 re-read, 1 new from the Luma calendars (176 events)",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 1 added, 158 changed",
+   "live_in": "v0.1.347",
+   "deploy_time": "gap",
+   "events": {
+    "added": 1,
+    "changed": 158,
+    "removed": 0
+   },
+   "n": 27
+  },
+  {
+   "t": "2026-11-11T17:12:38Z",
+   "sha": "cec6310",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: wake 17:12 (iCal only): feeds refreshed, Valois cost corrected to EUR 40 at the door",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 1 changed",
+   "live_in": "v0.1.389",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 1,
+    "removed": 0
+   },
+   "n": 28
+  },
+  {
+   "t": "2026-11-11T17:17:20Z",
+   "sha": "510868b",
+   "kind": "commit",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "researcher.1.fringe@PrompTugal.jose: Cisco 17:30 is online per its Luma page (was in person); PTW's calendar for today compared",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 1 changed",
+   "live_in": "v0.1.392",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 1,
+    "removed": 0
+   },
+   "n": 29
+  },
+  {
+   "t": "2026-11-11T17:23:31Z",
+   "sha": "f44f7c4",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: AltaIR Capital: unknown/evidence (page no longer shows the cancellation); other cancelled/moved entries re-confirmed",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 1 changed",
+   "live_in": "v0.1.400",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 1,
+    "removed": 0
+   },
+   "n": 30
+  },
+  {
+   "t": "2026-11-11T17:24:38Z",
+   "sha": "ebfb686",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: ical_uid on 121 Luma events; status check counts a vanished notice as a change; ASCII id for one event",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 1 added, 121 changed, 1 removed",
+   "live_in": "v0.1.403",
+   "deploy_time": "gap",
+   "events": {
+    "added": 1,
+    "changed": 121,
+    "removed": 1
+   },
+   "n": 31
+  },
+  {
+   "t": "2026-11-11T17:50:43Z",
+   "sha": "b096ccb",
+   "kind": "commit",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "researcher.1.fringe@PrompTugal.jose: DISTRICT 909 (22:00, Rive Rouge) added from its Luma page; guide list compared; status",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 1 added",
+   "live_in": "v0.1.422",
+   "deploy_time": "gap",
+   "events": {
+    "added": 1,
+    "changed": 0,
+    "removed": 0
+   },
+   "n": 32
+  },
+  {
+   "t": "2026-11-11T18:11:46Z",
+   "sha": "5bb00e0",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: wake 18:11 (iCal only): feeds refreshed, one dropped entry noted",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 1 changed",
+   "live_in": "v0.1.439",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 1,
+    "removed": 0
+   },
+   "n": 33
+  },
+  {
+   "t": "2026-11-11T19:13:27Z",
+   "sha": "ffe1588",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: wake 19:13 (iCal only): Side Events Guide IRL unknown (page gone), end-time note, feeds refreshed",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 2 changed",
+   "live_in": "v0.1.491",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 2,
+    "removed": 0
+   },
+   "n": 34
+  },
+  {
+   "t": "2026-11-11T19:23:08Z",
+   "sha": "33587a6",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: read_at means re-checked, seen_at added and read_at set back; ical_uid without the @ part; work/13 reply",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "events data: 171 changed",
+   "live_in": "v0.1.501",
+   "deploy_time": "gap",
+   "events": {
+    "added": 0,
+    "changed": 171,
+    "removed": 0
+   },
+   "n": 35
+  }
+ ],
+ "gaps": [
+  "deploy_time: the deploy runs are in the Fringe's GitHub Actions, not readable here; live_in is the first CI version tag (v<series>.<run>) that holds the commit; its deploy time is not known.",
+  "A person's words outside git (chat, voice) appear only where a commit body quotes or names them.",
+  "A sub-agent behind a commit is not visible unless the commit says so."
+ ]
+}

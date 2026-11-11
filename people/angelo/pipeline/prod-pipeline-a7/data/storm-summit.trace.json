@@ -1,0 +1,327 @@
+{
+ "shape": "lisbon-fringe-trace/1 (adapted: role contributed|related, live_in, deploy_time)",
+ "about": "Every commit and interaction behind https://lisbontechfringe.com/e/2026-11-11-storm-summit-stormsummit-app/, by Angelo's definition (11 Nov 2026); template changes are not steps.",
+ "page": "https://lisbontechfringe.com/e/2026-11-11-storm-summit-stormsummit-app/",
+ "event_id": "2026-11-11-storm-summit-stormsummit-app",
+ "source_url": "https://stormsummit.app/",
+ "traced_by": "mike.large.worker@PrompTugal.angelo (prod-pipeline-a7)",
+ "generator": "people/angelo/pipeline/prod-pipeline-a7/tool/page-trace.mjs",
+ "repo": "PrompTugal/PrompTugal__News__Fringe",
+ "repo_head": "00e1eeb",
+ "traced_at": "2026-11-11T20:01:52Z",
+ "privacy": "Public commits only; persons by role; no contact detail.",
+ "totals": {
+  "steps": 16,
+  "related": 13,
+  "contributed": 3
+ },
+ "template": {
+  "shared_template_commits_since_first_step": 95,
+  "line": "The shared template changed 95 times since; see its own page."
+ },
+ "steps": [
+  {
+   "t": "2026-11-11T13:36:52Z",
+   "sha": "064a9a1",
+   "kind": "commit",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "what": "conductor.fringe@PrompTugal.dinis: work/41 /tip/: paste a tip, research it, list it, draft the organiser's note (Dinis, 13:36 UTC); work/06 folds in",
+   "files": [
+    "work/41-tip-intake.md"
+   ],
+   "role": "related",
+   "why": "names it in work/41-tip-intake.md; shows nothing on the page",
+   "live_in": "v0.1.197",
+   "deploy_time": "gap",
+   "matched": [
+    "stormsummit.app"
+   ],
+   "n": 1
+  },
+  {
+   "t": "2026-11-11T13:37:00Z",
+   "kind": "source-read",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "read https://stormsummit.app/ (the entry's read_at, set in 0f23d54)",
+   "evidence": [
+    "0f23d54",
+    "https://stormsummit.app/"
+   ],
+   "role": "contributed",
+   "n": 2
+  },
+  {
+   "t": "2026-11-11T13:37:28Z",
+   "sha": "0f23d54",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: add Storm Summit (stormsummit.app), online Wed 11 Nov 08:30, from the organiser's public page",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "changed its entry in data/events.json: (added)",
+   "live_in": "v0.1.200",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-storm-summit-stormsummit-app",
+    "https://stormsummit.app/",
+    "Storm Summit (stormsummit.app): a digital copy of the venue for Wednesday",
+    "stormsummit.app"
+   ],
+   "n": 3
+  },
+  {
+   "t": "2026-11-11T13:42:16Z",
+   "sha": "ba1f497",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: status: tips lane drained (0 tips), next steps",
+   "files": [
+    "team/dinis/agents/researcher.2.json"
+   ],
+   "role": "related",
+   "why": "names it in team/dinis/agents/researcher.2.json; shows nothing on the page",
+   "live_in": "v0.1.207",
+   "deploy_time": "gap",
+   "matched": [
+    "stormsummit.app"
+   ],
+   "n": 4
+  },
+  {
+   "t": "2026-11-11T13:54:47Z",
+   "sha": "d4ae8e8",
+   "kind": "commit",
+   "who": "conductor.fringe@PrompTugal.indi",
+   "what": "conductor.fringe@PrompTugal.indi: wake: communities refreshed (102, 49 calendars), status; ABP question to Indi",
+   "files": [
+    "data/communities.json"
+   ],
+   "role": "related",
+   "why": "names it in data/communities.json; shows nothing on the page",
+   "live_in": "v0.1.217",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-storm-summit-stormsummit-app"
+   ],
+   "n": 5
+  },
+  {
+   "t": "2026-11-11T13:57:41Z",
+   "sha": "9f3ceef",
+   "kind": "commit",
+   "who": "observability.fringe@PrompTugal.dinis",
+   "what": "observability.fringe@PrompTugal.dinis: counts 13:57 UTC",
+   "files": [
+    "data/obs/traffic.json"
+   ],
+   "role": "related",
+   "why": "names it in data/obs/traffic.json; shows nothing on the page",
+   "live_in": "v0.1.220",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-storm-summit-stormsummit-app"
+   ],
+   "n": 6
+  },
+  {
+   "t": "2026-11-11T14:01:21Z",
+   "sha": "aefea2d",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: work/44 done: cost, in_lisbon, personas, umbrella on all events; fields documented",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "changed its entry in data/events.json: cost, in_lisbon, personas",
+   "live_in": "v0.1.227",
+   "deploy_time": "gap",
+   "matched": [
+    "stormsummit.app"
+   ],
+   "n": 7
+  },
+  {
+   "t": "2026-11-11T14:03:51Z",
+   "sha": "28e88c5",
+   "kind": "commit",
+   "who": "capture.1.fringe@PrompTugal.dinis",
+   "what": "capture.1.fringe@PrompTugal.dinis: work/45: covers also from organisers' own sites; Meetup/Eventbrite/Partiful none, listed in status",
+   "files": [
+    "data/event-images.json"
+   ],
+   "role": "related",
+   "why": "names it in data/event-images.json; shows nothing on the page",
+   "live_in": "v0.1.235",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-storm-summit-stormsummit-app",
+    "https://stormsummit.app/",
+    "stormsummit.app"
+   ],
+   "n": 8
+  },
+  {
+   "t": "2026-11-11T14:17:55Z",
+   "sha": "28b4a6b",
+   "kind": "commit",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "researcher.1.fringe@PrompTugal.jose: wake 14:16: 9 online events still to come, note 1 ready, status",
+   "files": [
+    "work/31-jose-today.md"
+   ],
+   "role": "related",
+   "why": "names it in work/31-jose-today.md; shows nothing on the page",
+   "live_in": "v0.1.257",
+   "deploy_time": "gap",
+   "matched": [
+    "https://stormsummit.app/",
+    "Storm Summit (stormsummit.app): a digital copy of the venue for Wednesday",
+    "stormsummit.app"
+   ],
+   "n": 9
+  },
+  {
+   "t": "2026-11-11T14:26:38Z",
+   "sha": "e2f585a",
+   "kind": "commit",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "dev.2.fringe@PrompTugal.dinis: wake: second-opinion run, models ledger, status",
+   "files": [
+    "data/second-opinion.json"
+   ],
+   "role": "related",
+   "why": "names it in data/second-opinion.json; shows nothing on the page",
+   "live_in": "v0.1.268",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-storm-summit-stormsummit-app",
+    "https://stormsummit.app/",
+    "stormsummit.app"
+   ],
+   "n": 10
+  },
+  {
+   "t": "2026-11-11T14:26:43Z",
+   "sha": "249c105",
+   "kind": "commit",
+   "who": "outreach.1.fringe@PrompTugal.dinis",
+   "what": "outreach.1.fringe@PrompTugal.dinis: organiser note approved by Dinis (brief 15): note and tracker updated",
+   "files": [
+    "data/outreach-tracker.json",
+    "work/23-tracker.md"
+   ],
+   "role": "related",
+   "why": "names it in data/outreach-tracker.json, work/23-tracker.md; shows nothing on the page",
+   "live_in": "v0.1.268",
+   "deploy_time": "gap",
+   "matched": [
+    "https://stormsummit.app/",
+    "stormsummit.app"
+   ],
+   "n": 11
+  },
+  {
+   "t": "2026-11-11T14:28:47Z",
+   "sha": "19e56ea",
+   "kind": "commit",
+   "who": "observability.fringe@PrompTugal.dinis",
+   "what": "observability.fringe@PrompTugal.dinis: counts 14:28 UTC",
+   "files": [
+    "data/obs/traffic.json"
+   ],
+   "role": "related",
+   "why": "names it in data/obs/traffic.json; shows nothing on the page",
+   "live_in": "v0.1.271",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-storm-summit-stormsummit-app"
+   ],
+   "n": 12
+  },
+  {
+   "t": "2026-11-11T14:29:40Z",
+   "sha": "15edf50",
+   "kind": "commit",
+   "who": "observability.fringe@PrompTugal.dinis",
+   "what": "observability.fringe@PrompTugal.dinis: a tab with 40+ views counts as a crawler, not a reader",
+   "files": [
+    "data/obs/traffic.json"
+   ],
+   "role": "related",
+   "why": "names it in data/obs/traffic.json; shows nothing on the page",
+   "live_in": "v0.1.272",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-storm-summit-stormsummit-app"
+   ],
+   "n": 13
+  },
+  {
+   "t": "2026-11-11T15:24:13Z",
+   "sha": "3fd2391",
+   "kind": "commit",
+   "who": "conductor.fringe@PrompTugal.vicky",
+   "what": "conductor.fringe@PrompTugal.vicky: work/13 seventh pass: data lint of 177 events, no contact details",
+   "files": [
+    "work/13-editorial-check.md"
+   ],
+   "role": "related",
+   "why": "names it in work/13-editorial-check.md; shows nothing on the page",
+   "live_in": "v0.1.308",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-storm-summit-stormsummit-app"
+   ],
+   "n": 14
+  },
+  {
+   "t": "2026-11-11T17:21:52Z",
+   "sha": "c05bfcf",
+   "kind": "commit",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "dev.2.fringe@PrompTugal.dinis: second-opinion: Luma events compared with the public iCal data, no page fetch (work/49)",
+   "files": [
+    "data/second-opinion.json"
+   ],
+   "role": "related",
+   "why": "names it in data/second-opinion.json; shows nothing on the page",
+   "live_in": "v0.1.394",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-storm-summit-stormsummit-app",
+    "https://stormsummit.app/",
+    "stormsummit.app"
+   ],
+   "n": 15
+  },
+  {
+   "t": "2026-11-11T17:57:46Z",
+   "sha": "dd871ad",
+   "kind": "commit",
+   "who": "ontologist.1.fringe@PrompTugal.dinis",
+   "what": "ontologist.1.fringe@PrompTugal.dinis: work/42: supersede, never delete: retired event ids keep a page",
+   "files": [
+    "data/graph/seen.json"
+   ],
+   "role": "related",
+   "why": "names it in data/graph/seen.json; shows nothing on the page",
+   "live_in": "v0.1.431",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-storm-summit-stormsummit-app",
+    "https://stormsummit.app/",
+    "Storm Summit (stormsummit.app): a digital copy of the venue for Wednesday",
+    "stormsummit.app"
+   ],
+   "n": 16
+  }
+ ],
+ "gaps": [
+  "deploy_time: the deploy runs are in the Fringe's GitHub Actions, not readable here; live_in is the first CI version tag (v<series>.<run>) that holds the commit; its deploy time is not known.",
+  "A person's words outside git (chat, voice) appear only where a commit body quotes or names them.",
+  "A sub-agent behind a commit is not visible unless the commit says so."
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "shape": "lisbon-fringe-trace/1 (adapted: role contributed|related, live_in, deploy_time)",
+ "about": "Every commit and interaction behind https://lisbontechfringe.com/tip/, by Angelo's definition (11 Nov 2026); template changes are not steps.",
+ "page": "https://lisbontechfringe.com/tip/",
+ "traced_by": "mike.large.worker@PrompTugal.angelo (prod-pipeline-a7)",
+ "generator": "people/angelo/pipeline/prod-pipeline-a7/tool/page-trace.mjs",
+ "repo": "PrompTugal/PrompTugal__News__Fringe",
+ "repo_head": "00e1eeb",
+ "traced_at": "2026-11-11T20:01:52Z",
+ "privacy": "Public commits only; persons by role; no contact detail.",
+ "totals": {
+  "steps": 7,
+  "contributed": 6,
+  "related": 1
+ },
+ "template": {
+  "shared_template_commits_since_first_step": 111,
+  "line": "The shared template changed 111 times since; see its own page."
+ },
+ "steps": [
+  {
+   "t": "2026-11-11T13:26:17Z",
+   "sha": "a0253eb",
+   "kind": "commit",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "what": "conductor.fringe@PrompTugal.dinis: wake 13:2x: captures held for privacy; creds re-sealed to Dinis; 7 inboxes; corrections, reality, roster, five asks",
+   "files": [
+    "data/inboxes/researcher.2.fringe-dinis.json"
+   ],
+   "role": "contributed",
+   "why": "changed its own source: data/inboxes/researcher.2.fringe-dinis.json",
+   "live_in": "v0.1.165",
+   "deploy_time": "gap",
+   "n": 1
+  },
+  {
+   "t": "2026-11-11T13:36:52Z",
+   "sha": "064a9a1",
+   "kind": "commit",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "what": "conductor.fringe@PrompTugal.dinis: work/41 /tip/: paste a tip, research it, list it, draft the organiser's note (Dinis, 13:36 UTC); work/06 folds in",
+   "files": [
+    "work/41-tip-intake.md"
+   ],
+   "role": "related",
+   "why": "the work item that asked for it and tracks it: work/41-tip-intake.md",
+   "live_in": "v0.1.197",
+   "deploy_time": "gap",
+   "n": 2
+  },
+  {
+   "t": "2026-11-11T13:39:10Z",
+   "sha": "191bd96",
+   "kind": "commit",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "dev.2.fringe@PrompTugal.dinis: work/41 /tip/ first version: sealed paste box, tips status API, drain shows tip id and priority",
+   "files": [
+    "admin/build/tip.mjs",
+    "assets/tip/tip.js"
+   ],
+   "role": "contributed",
+   "why": "changed its own source: admin/build/tip.mjs, assets/tip/tip.js",
+   "live_in": "v0.1.201",
+   "deploy_time": "gap",
+   "n": 3
+  },
+  {
+   "t": "2026-11-11T13:41:05Z",
+   "sha": "2e3c308",
+   "kind": "commit",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "what": "conductor.fringe@PrompTugal.dinis: the tips lane (work/41): data/inboxes/lane-tips.json, sealed to researcher.2 and the lead",
+   "files": [
+    "data/inboxes/lane-tips.json"
+   ],
+   "role": "contributed",
+   "why": "changed its own source: data/inboxes/lane-tips.json",
+   "live_in": "v0.1.203",
+   "deploy_time": "gap",
+   "n": 4
+  },
+  {
+   "t": "2026-11-11T13:43:05Z",
+   "sha": "34e8a64",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: tip-a97f86b4 received (dev.2's lane test, no event)",
+   "files": [
+    "data/tips-status.json"
+   ],
+   "role": "contributed",
+   "why": "changed its own source: data/tips-status.json",
+   "live_in": "v0.1.210",
+   "deploy_time": "gap",
+   "n": 5
+  },
+  {
+   "t": "2026-11-11T14:01:30Z",
+   "sha": "00a6e45",
+   "kind": "commit",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "what": "dev.2.fringe@PrompTugal.dinis: work/46 give-us-the-intel box on home and every event page, WhatsApp share with ?via, tip counts on the dashboard",
+   "files": [
+    "admin/build/tip.mjs",
+    "assets/tip/tip.js"
+   ],
+   "role": "contributed",
+   "why": "changed its own source: admin/build/tip.mjs, assets/tip/tip.js",
+   "live_in": "v0.1.227",
+   "deploy_time": "gap",
+   "n": 6
+  },
+  {
+   "t": "2026-11-11T14:55:08Z",
+   "sha": "1608aef",
+   "kind": "commit",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "what": "design.1.fringe@PrompTugal.dinis: D36 Tell us link on every event page, event pre-filled on /tip/ (closes D16)",
+   "files": [
+    "admin/build/tip.mjs"
+   ],
+   "role": "contributed",
+   "why": "changed its own source: admin/build/tip.mjs",
+   "live_in": "v0.1.291",
+   "deploy_time": "gap",
+   "n": 7
+  }
+ ],
+ "gaps": [
+  "deploy_time: the deploy runs are in the Fringe's GitHub Actions, not readable here; live_in is the first CI version tag (v<series>.<run>) that holds the commit; its deploy time is not known.",
+  "A person's words outside git (chat, voice) appear only where a commit body quotes or names them.",
+  "A sub-agent behind a commit is not visible unless the commit says so."
+ ]
+}

@@ -1,0 +1,210 @@
+{
+ "shape": "lisbon-fringe-trace/1 (adapted: role contributed|related, live_in, deploy_time)",
+ "about": "Every commit and interaction behind https://lisbontechfringe.com/e/2026-11-11-district-909-back-where-it-all-started/, by Angelo's definition (11 Nov 2026); template changes are not steps.",
+ "page": "https://lisbontechfringe.com/e/2026-11-11-district-909-back-where-it-all-started/",
+ "event_id": "2026-11-11-district-909-back-where-it-all-started",
+ "source_url": "https://luma.com/cgkr0awt",
+ "traced_by": "mike.large.worker@PrompTugal.angelo (prod-pipeline-a7)",
+ "generator": "people/angelo/pipeline/prod-pipeline-a7/tool/page-trace.mjs",
+ "repo": "PrompTugal/PrompTugal__News__Fringe",
+ "repo_head": "00e1eeb",
+ "traced_at": "2026-11-11T20:01:52Z",
+ "privacy": "Public commits only; persons by role; no contact detail.",
+ "totals": {
+  "steps": 11,
+  "contributed": 6,
+  "related": 5
+ },
+ "template": {
+  "shared_template_commits_since_first_step": 27,
+  "line": "The shared template changed 27 times since; see its own page."
+ },
+ "steps": [
+  {
+   "t": "2026-11-11T13:17:00Z",
+   "kind": "source-read",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "read https://luma.com/cgkr0awt (the entry's read_at, set in 33587a6)",
+   "evidence": [
+    "33587a6",
+    "https://luma.com/cgkr0awt"
+   ],
+   "role": "contributed",
+   "note": "read_at is earlier than seen_at (2026-11-11T17:49:00Z): the record contradicts itself; the page shows this read_at",
+   "n": 1
+  },
+  {
+   "t": "2026-11-11T17:49:00Z",
+   "kind": "source-read",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "read https://luma.com/cgkr0awt (the entry's read_at, set in b096ccb)",
+   "evidence": [
+    "b096ccb",
+    "https://luma.com/cgkr0awt"
+   ],
+   "role": "contributed",
+   "n": 2
+  },
+  {
+   "t": "2026-11-11T17:49:00Z",
+   "kind": "source-read",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "first seen (the entry's seen_at)",
+   "evidence": [
+    "33587a6"
+   ],
+   "role": "contributed",
+   "n": 3
+  },
+  {
+   "t": "unknown",
+   "before": "2026-11-11T17:50:43Z",
+   "kind": "ask",
+   "who": "a person (as the commit body says)",
+   "what": "From the link Jose passed on, read once at 17:49 UTC: hosted by District 909 and Blackdor Collective, 22:00 to 05:30, Rive Rouge, EUR 10, in person, no storm note",
+   "evidence": [
+    "b096ccb"
+   ],
+   "role": "contributed",
+   "n": 4
+  },
+  {
+   "t": "2026-11-11T17:50:43Z",
+   "sha": "b096ccb",
+   "kind": "commit",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "researcher.1.fringe@PrompTugal.jose: DISTRICT 909 (22:00, Rive Rouge) added from its Luma page; guide list compared; status",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "changed its entry in data/events.json: (added)",
+   "live_in": "v0.1.422",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-district-909-back-where-it-all-started",
+    "https://luma.com/cgkr0awt",
+    "Blackdor presents DISTRICT 909: Back Where It All Started",
+    "DISTRICT 909"
+   ],
+   "n": 5
+  },
+  {
+   "t": "2026-11-11T17:57:46Z",
+   "sha": "dd871ad",
+   "kind": "commit",
+   "who": "ontologist.1.fringe@PrompTugal.dinis",
+   "what": "ontologist.1.fringe@PrompTugal.dinis: work/42: supersede, never delete: retired event ids keep a page",
+   "files": [
+    "data/graph/seen.json"
+   ],
+   "role": "related",
+   "why": "names it in data/graph/seen.json; shows nothing on the page",
+   "live_in": "v0.1.431",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-district-909-back-where-it-all-started",
+    "https://luma.com/cgkr0awt",
+    "Blackdor presents DISTRICT 909: Back Where It All Started",
+    "DISTRICT 909"
+   ],
+   "n": 6
+  },
+  {
+   "t": "2026-11-11T18:22:00Z",
+   "sha": "ae5dfa9",
+   "kind": "commit",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "researcher.1.fringe@PrompTugal.jose: wake 18:20: DISTRICT 909 served; 3 online events to come; events.json left to its owner; status",
+   "files": [
+    "team/jose/agents/researcher.1.json",
+    "work/31-jose-today.md"
+   ],
+   "role": "related",
+   "why": "names it in team/jose/agents/researcher.1.json, work/31-jose-today.md; shows nothing on the page",
+   "live_in": "v0.1.444",
+   "deploy_time": "gap",
+   "matched": [
+    "DISTRICT 909"
+   ],
+   "n": 7
+  },
+  {
+   "t": "2026-11-11T18:35:50Z",
+   "sha": "93f9301",
+   "kind": "commit",
+   "who": "outreach.1.fringe@PrompTugal.dinis",
+   "what": "outreach.1.fringe@PrompTugal.dinis: wake 18:35: quiet; tracker 76 organisers; status",
+   "files": [
+    "data/outreach-tracker.json",
+    "work/23-tracker.md"
+   ],
+   "role": "related",
+   "why": "names it in data/outreach-tracker.json, work/23-tracker.md; shows nothing on the page",
+   "live_in": "v0.1.455",
+   "deploy_time": "gap",
+   "matched": [
+    "https://luma.com/cgkr0awt",
+    "DISTRICT 909"
+   ],
+   "n": 8
+  },
+  {
+   "t": "2026-11-11T18:56:33Z",
+   "sha": "698898b",
+   "kind": "commit",
+   "who": "conductor.fringe@PrompTugal.indi",
+   "what": "conductor.fringe@PrompTugal.indi: wake: communities in step with events.json (106); status",
+   "files": [
+    "data/communities.json"
+   ],
+   "role": "related",
+   "why": "names it in data/communities.json; shows nothing on the page",
+   "live_in": "v0.1.466",
+   "deploy_time": "gap",
+   "matched": [
+    "2026-11-11-district-909-back-where-it-all-started",
+    "DISTRICT 909"
+   ],
+   "n": 9
+  },
+  {
+   "t": "2026-11-11T18:57:41Z",
+   "sha": "ab0c35a",
+   "kind": "commit",
+   "who": "researcher.1.fringe@PrompTugal.jose",
+   "what": "researcher.1.fringe@PrompTugal.jose: wake 18:57: 2 online events to come; no organiser answer yet; status",
+   "files": [
+    "team/jose/agents/researcher.1.json"
+   ],
+   "role": "related",
+   "why": "names it in team/jose/agents/researcher.1.json; shows nothing on the page",
+   "live_in": "v0.1.470",
+   "deploy_time": "gap",
+   "matched": [
+    "DISTRICT 909"
+   ],
+   "n": 10
+  },
+  {
+   "t": "2026-11-11T19:23:08Z",
+   "sha": "33587a6",
+   "kind": "commit",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "what": "researcher.2.fringe@PrompTugal.dinis: read_at means re-checked, seen_at added and read_at set back; ical_uid without the @ part; work/13 reply",
+   "files": [
+    "data/events.json"
+   ],
+   "role": "contributed",
+   "why": "changed its entry in data/events.json: read_at, seen_at",
+   "live_in": "v0.1.501",
+   "deploy_time": "gap",
+   "n": 11
+  }
+ ],
+ "gaps": [
+  "deploy_time: the deploy runs are in the Fringe's GitHub Actions, not readable here; live_in is the first CI version tag (v<series>.<run>) that holds the commit; its deploy time is not known.",
+  "A person's words outside git (chat, voice) appear only where a commit body quotes or names them.",
+  "A sub-agent behind a commit is not visible unless the commit says so."
+ ]
+}
