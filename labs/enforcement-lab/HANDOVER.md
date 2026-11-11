@@ -106,4 +106,4 @@ See the README's "Security review" and "What it does not prove".
 
 ## 15. Pull request and CI
 
-See the pull request on `SGit-AI/SGit-AI__Website__Web-Summit` from `claude/hopeful-rubin-3zcktn` into `dev`. The quality gate (`node admin/build/build.mjs && node admin/build/validate.js`) passed locally. CI runs the gate on the pull request; deploying is skipped for pull requests.
+Draft pull request [SGit-AI/SGit-AI__Website__Web-Summit#9](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/pull/9), from `claude/hopeful-rubin-3zcktn` into `dev`, not merged. The quality gate (`node admin/build/build.mjs && node admin/build/validate.js`) passed locally. CI runs the gate on the pull request; deploying is skipped for pull requests.
