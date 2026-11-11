@@ -1,5 +1,5 @@
 # prod-pipeline: state
-**For the digest (18:55 UTC):** A1 and A2 done and closed (7.55 USD of the 10 USD budget). Decided by default: option A. Waiting on Angelo: the budget for A3 (the one team draft), and A2's red lane check on dev's way in.
+**For the digest (19:0x UTC):** no budget (Angelo: "I've not set any budget to be honest"); A3, the one team draft on option A, started on golf.large. Waiting on Angelo: who builds in the Fringe repository, who gets the draft (both tier 3).
 - **Lead:** prod-pipeline.pm@PrompTugal.angelo, started 2026-11-11 about 12:30 UTC. Instruction commit 94dfabc6: pushed-by says ANGELO (checked at start).
 - **Done:** b0-library, b1-team-spec, b2-flow-reuse (conductor.b@, before this project).
 - **Goal (BRIEF.md):** the flow page of a real deliverable, note to live, generated from the records; the next deliverable gets one with no extra work.
@@ -26,8 +26,9 @@ Plan (revised at Angelo's word, 11 Nov: Tech Fringe first, a draft before anythi
 - New rules read on dev, a9199ce (pushed-by: ANGELO): PMs are never blocked; below tier 3 decide by default; workers fire the wake routine. Dev merged into this branch (BRIEF.md keeps the wake routine and the prior-art copy, prior-art/fringe-6b079db/, 2e01c12, ANGELO).
 - A1 closed: 991ae24, gate OK, 3.95 USD. A2 closed: 91d6bff, 3.60 USD; **its gate is red**: the lane check refuses its 15 files because my brief put worker files in people/angelo/projects/prod-pipeline/, outside the workers' lane (people/angelo/pipeline/**). A1 declared its files with Outside: lines; A2 did not. My error, not the worker's. Fix when brought to dev: the review commit carries an Outside: line per file (brief 13d19c7c5, Angelo's "Start A1 and A2 yourself").
 - **Decided by default, Angelo can reverse:** (1) option A, "one line, two sizes" (A1's recommendation; Angelo was shown it at 17:2x and had not answered). (2) Worker files from now on in people/angelo/pipeline/<id>/, the lane they have; no lane change asked. (3) A2's limits fold into A1 as one draft for the team (A2's own recommendation).
-- **Waiting on Angelo:** (a) budget: A3 (one team draft, design, large, about 3.5 USD) would take the project to about 11 USD, over the 10 USD budget; money is his to raise, so A3 is written (ASKS.md) but not started. (b) who builds it in the Fringe repository (tier 3). (c) who in the team gets the draft (tier 3). (d) share the shape with conductor.fringe@ before any build (A1's Q1, recommended).
+- **Angelo, 11 Nov:** "Where does this budget come from? I've not set any budget to be honest." It came from conductor.b@'s intake (94dfabc, BRIEF.md and the lead's start prompt), not from him; the lead had taken it as his. Budget removed from BRIEF.md; his "as long as we have usage let's go to town" stands. A3 started (see runs.md).
+- **Waiting on Angelo:** (b) who builds it in the Fringe repository (tier 3). (c) who in the team gets the draft (tier 3). (d) share the shape with conductor.fringe@ before any build (A1's Q1, recommended).
 
 ## Spend
-- Worker runs: A1 3.95 USD, A2 3.60 USD (platform, API-equivalent); total 7.55 of about 10 USD.
+- Worker runs: A1 3.95 USD, A2 3.60 USD (platform, API-equivalent); total 7.55 USD. No budget (Angelo); recorded, not gated.
 - Sub-agents of the lead: none.

@@ -34,8 +34,8 @@
 - **Not:** no change in the Fringe repository; no message to any agent or person; nothing published.
 - **Done when:** findings.md, shots/ and test/ are on pool/a2-small-screens, the check runs with one command and its output is in findings.md, the gate prints OK, and STATE.md says "ready for Angelo's read".
 
-## A3: one draft for the team (written 2026-11-11 18:55; NOT started: waits on Angelo's budget)
-- **Role:** design (large), not charlie or foxtrot (they made A1 and A2; a fresh eye merges them). Folder and branch: people/angelo/pipeline/prod-pipeline-a3/, pool/prod-pipeline-a3 (inside the workers' lane).
+## A3: one draft for the team (written 2026-11-11 18:55; started 19:0x on golf.large: no budget, Angelo)
+- **Role:** design (large), not charlie or foxtrot (they made A1 and A2; a fresh eye merges them). Brief: people/angelo/projects/prod-pipeline/a3-team-draft/brief.md (the lead's folder). Writes: people/angelo/pipeline/prod-pipeline-a3/ (inside the workers' lane), branch pool/prod-pipeline-a3.
 - **Wake routine:** trig_01MqHQ7CWqSnu5JGwYRpkQg5
 - **Reads:** A1 (pool/a1-flow-proposal, 991ae24: proposal.md, mock/), A2 (pool/a2-small-screens, 91d6bff: findings.md, proto/, shots/), the project's BRIEF.md (Angelo's words), the prior-art copy (prior-art/fringe-6b079db/).
 - **Brief:** one draft a team member reads cold, on option A (decided by default, Angelo can reverse): one phone screen first (the idea, one picture, what changes, what it needs); A1's option A redrawn within A2's limits (at most a third of the screen for the strip, text at least 12 px, targets at least 44 px, no sideways page scroll), the "Show the flow" toggle on the trace page; screenshots at 320, 390, 740x360 and 1280 px, measured with A2's measure.cjs; the data shape and the open questions from A1. Options B and C go to an appendix of two lines each.
