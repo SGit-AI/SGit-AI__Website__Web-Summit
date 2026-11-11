@@ -1,0 +1,2 @@
+{"event":"start","at":"2026-11-11T11:10:00Z","agent":"alpha.large.worker@PrompTugal.angelo","item":"b0-library","what":"spec: prompt library, skills, formats, queue","est_effort_min":45,"est_elapsed_min":50,"confidence":"medium"}
+{"event":"done","at":"2026-11-11T11:13:00Z","agent":"alpha.large.worker@PrompTugal.angelo","item":"b0-library","effort_min":6,"elapsed_min":6,"runs":1,"tokens":83330,"note":"faster than the 45 estimated: the brief named every source and the survey had done the reading"}
