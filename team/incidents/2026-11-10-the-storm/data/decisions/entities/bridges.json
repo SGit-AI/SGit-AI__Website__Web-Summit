@@ -185,11 +185,17 @@
    "url": "https://www.lusoponte.pt/",
    "http": null,
    "result": "not reached: URLError"
+  },
+  {
+   "at": "2026-11-11T20:33Z",
+   "url": "https://www.lusoponte.pt/",
+   "http": null,
+   "result": "not reached: URLError"
   }
  ],
  "tries_summary": {
   "https://www.lusoponte.pt/": {
-   "tries": 18,
+   "tries": 19,
    "published_found": false
   }
  }
