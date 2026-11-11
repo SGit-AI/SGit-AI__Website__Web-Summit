@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1817",
+    "date": "2026-11-11",
+    "what": "the websummit.com poll stopped (05:27, the lead's interim hold on Web Summit's Terms 48.2 and 52.1); its record; three questions for Dinis",
+    "by": "incident.dev@web-summit.dinis",
+    "from": "eacd2b5ea"
+  },
+  {
     "version": "v0.2.1816",
     "date": "2026-11-11",
     "what": "05:33 wake: no change to Day 3 (Bluesky and press; websummit.com on hold); IPMA unchanged; primary pages tried (4th)",
