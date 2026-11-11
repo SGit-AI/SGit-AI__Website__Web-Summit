@@ -321,3 +321,23 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 - Two centres would mean the afternoon low is **shallower** than a single merged one. That would fit gusts nearer orange than red, but it is a hypothesis.
 - **Confidence:** two centres, **medium** (from observations and distance, not from IPMA in writing); timing for Lisbon, **medium**.
 - **The test this afternoon:** if Lisbon's pressure bottoms near 988 to 992 hPa around 14:00 to 15:00 and the wind veers through SW, a centre passed close, whatever happened at Madeira.
+
+## 14. 10:25 UTC 11 Nov: the airport forecast is lowered again
+
+- **Fact: `TAF AMD LPPT 111008Z`** (amended 10:08):
+
+  | Group | 05:00 TAF | 10:08 amendment |
+  |---|---|---|
+  | Prevailing | SSE 12 kt | SSE 15 kt, rain and mist, 4 km |
+  | At times | 30 kt gusting 45 (83 km/h), 09:00 to 18:00 | **20 kt gusting 35 (65 km/h), 10:00 to 16:00** |
+  | 30% chance, in thunderstorms | 43 kt gusting 58 (107 km/h), 10:00 to 18:00 | **40 kt gusting 55 (102 km/h), 10:00 to 16:00** |
+  | Later | becoming W 12 kt, 18:00 to 20:00 | unchanged |
+
+- **Fact, Lisbon airport, 10:00:** SSE 11 kt, rain and mist, 4 km, **999 hPa** (falling about 1 hPa an hour since 04:00); no gust so far.
+- **Fact, Lisbon's stations:** 3.6 to 6.5 mm an hour in the hour labelled 09:00 (`lisbon-rain.json`); red rain 09:00 to 18:00.
+- **Fact:** the orange rain warning (00:00 to 09:00) has expired.
+- **Analysis:**
+  - The airport's own forecaster now expects **less wind, ending earlier**. Gusts are expected to about 65 km/h at times, with a 30% chance of about 100 km/h in thunderstorms, **up to 16:00**.
+  - That fits IPMA's orange (gusts to 120 km/h, in the district's most exposed places) and the "weakens" reported in the press.
+  - **The strongest wind most likely comes 13:00 to 16:00**, ending earlier than section 12's 14:00 to 16:00.
+  - **The red rain is now the main hazard for Lisbon.**

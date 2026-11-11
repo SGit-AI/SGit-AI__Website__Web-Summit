@@ -17,7 +17,7 @@
  },
  "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
  "stations_source": "https://api.ipma.pt/open-data/observation/meteorology/stations/stations.json",
- "read_utc": "2026-11-11T09:22:47Z",
+ "read_utc": "2026-11-11T10:22:42Z",
  "stations": [
   {
    "id": "1210973",
@@ -27,7 +27,7 @@
     -16.91666667
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 249.5,
     "hours_labelled": [
@@ -221,6 +221,12 @@
      "rain_mm": 8.9,
      "wind_mean_kmh": 31.7,
      "wind_dir": "NW"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 0.6,
+     "wind_mean_kmh": 27.7,
+     "wind_dir": "N"
     }
    ]
   },
@@ -232,7 +238,7 @@
     -17.044722
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 141.5,
     "hours_labelled": [
@@ -426,6 +432,12 @@
      "rain_mm": 4.7,
      "wind_mean_kmh": null,
      "wind_dir": "calm"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 6.1,
+     "wind_mean_kmh": null,
+     "wind_dir": "calm"
     }
    ]
   },
@@ -437,7 +449,7 @@
     -16.816822
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 130.4,
     "hours_labelled": [
@@ -631,6 +643,12 @@
      "rain_mm": 2.5,
      "wind_mean_kmh": null,
      "wind_dir": "calm"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 0.7,
+     "wind_mean_kmh": null,
+     "wind_dir": "calm"
     }
    ]
   },
@@ -642,7 +660,7 @@
     -16.903955
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 126.8,
     "hours_labelled": [
@@ -836,6 +854,12 @@
      "rain_mm": 7.0,
      "wind_mean_kmh": 24.5,
      "wind_dir": "W"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 9.7,
+     "wind_dir": "SW"
     }
    ]
   },
@@ -847,7 +871,7 @@
     -16.928271
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 123.9,
     "hours_labelled": [
@@ -1041,6 +1065,12 @@
      "rain_mm": 6.9,
      "wind_mean_kmh": null,
      "wind_dir": "calm"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 1.2,
+     "wind_mean_kmh": null,
+     "wind_dir": "calm"
     }
    ]
   },
@@ -1052,7 +1082,7 @@
     -16.906944
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 85.6,
     "hours_labelled": [
@@ -1246,6 +1276,12 @@
      "rain_mm": 4.4,
      "wind_mean_kmh": 7.6,
      "wind_dir": "W"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 3.2,
+     "wind_dir": "W"
     }
    ]
   },
@@ -1257,7 +1293,7 @@
     -16.8864166
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 42.0,
     "hours_labelled": [
@@ -1451,6 +1487,12 @@
      "rain_mm": 5.3,
      "wind_mean_kmh": null,
      "wind_dir": "calm"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 5.5,
+     "wind_mean_kmh": null,
+     "wind_dir": "calm"
     }
    ]
   },
@@ -1462,7 +1504,7 @@
     -17.26321389
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 40.3,
     "hours_labelled": [
@@ -1656,6 +1698,12 @@
      "rain_mm": 1.0,
      "wind_mean_kmh": 10.4,
      "wind_dir": "NW"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 0.8,
+     "wind_mean_kmh": 10.1,
+     "wind_dir": "SE"
     }
    ]
   },
@@ -1667,7 +1715,7 @@
     -17.171373
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 37.9,
     "hours_labelled": [
@@ -1861,6 +1909,12 @@
      "rain_mm": 1.1,
      "wind_mean_kmh": null,
      "wind_dir": "calm"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 0.8,
+     "wind_mean_kmh": null,
+     "wind_dir": "calm"
     }
    ]
   },
@@ -1872,7 +1926,7 @@
     -17.01503611
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 37.1,
     "hours_labelled": [
@@ -2066,6 +2120,12 @@
      "rain_mm": 2.1,
      "wind_mean_kmh": null,
      "wind_dir": "calm"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": null,
+     "wind_dir": "calm"
     }
    ]
   },
@@ -2077,7 +2137,7 @@
     -16.706
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 33.0,
     "hours_labelled": [
@@ -2271,6 +2331,12 @@
      "rain_mm": 2.9,
      "wind_mean_kmh": 25.9,
      "wind_dir": "calm"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 0.6,
+     "wind_mean_kmh": 52.2,
+     "wind_dir": "N"
     }
    ]
   },
@@ -2282,7 +2348,7 @@
     -16.888
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 32.6,
     "hours_labelled": [
@@ -2476,6 +2542,223 @@
      "rain_mm": 1.7,
      "wind_mean_kmh": 4.0,
      "wind_dir": "NW"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 9.4,
+     "wind_dir": "NE"
+    }
+   ]
+  },
+  {
+   "id": "1210960",
+   "name": "Madeira, S. Jorge, Santana",
+   "lat_lon": [
+    32.83446944,
+    -16.906219
+   ],
+   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
+   "read_utc": "2026-11-11T10:22:42Z",
+   "max_6h_rain": {
+    "mm": 32.2,
+    "hours_labelled": [
+     "2026-11-11T04:00Z",
+     "2026-11-11T09:00Z"
+    ]
+   },
+   "hourly": [
+    {
+     "time_utc": "2026-11-10T02:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 7.2,
+     "wind_dir": "SE"
+    },
+    {
+     "time_utc": "2026-11-10T03:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 5.8,
+     "wind_dir": "S"
+    },
+    {
+     "time_utc": "2026-11-10T04:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 13.7,
+     "wind_dir": "S"
+    },
+    {
+     "time_utc": "2026-11-10T05:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 11.5,
+     "wind_dir": "S"
+    },
+    {
+     "time_utc": "2026-11-10T06:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 2.9,
+     "wind_dir": "W"
+    },
+    {
+     "time_utc": "2026-11-10T07:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 10.8,
+     "wind_dir": "SW"
+    },
+    {
+     "time_utc": "2026-11-10T08:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 13.7,
+     "wind_dir": "S"
+    },
+    {
+     "time_utc": "2026-11-10T09:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 10.1,
+     "wind_dir": "SW"
+    },
+    {
+     "time_utc": "2026-11-10T10:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 9.0,
+     "wind_dir": "S"
+    },
+    {
+     "time_utc": "2026-11-10T11:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 10.8,
+     "wind_dir": "SE"
+    },
+    {
+     "time_utc": "2026-11-10T12:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 9.4,
+     "wind_dir": "SE"
+    },
+    {
+     "time_utc": "2026-11-10T13:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 9.7,
+     "wind_dir": "SE"
+    },
+    {
+     "time_utc": "2026-11-10T14:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 12.2,
+     "wind_dir": "S"
+    },
+    {
+     "time_utc": "2026-11-10T15:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 13.7,
+     "wind_dir": "SE"
+    },
+    {
+     "time_utc": "2026-11-10T16:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 3.2,
+     "wind_dir": "E"
+    },
+    {
+     "time_utc": "2026-11-10T17:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 7.2,
+     "wind_dir": "S"
+    },
+    {
+     "time_utc": "2026-11-10T18:00Z",
+     "rain_mm": 0.1,
+     "wind_mean_kmh": 9.7,
+     "wind_dir": "SW"
+    },
+    {
+     "time_utc": "2026-11-10T19:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": 3.2,
+     "wind_dir": "S"
+    },
+    {
+     "time_utc": "2026-11-10T20:00Z",
+     "rain_mm": 1.5,
+     "wind_mean_kmh": 9.7,
+     "wind_dir": "SW"
+    },
+    {
+     "time_utc": "2026-11-10T21:00Z",
+     "rain_mm": 5.0,
+     "wind_mean_kmh": 7.2,
+     "wind_dir": "W"
+    },
+    {
+     "time_utc": "2026-11-10T22:00Z",
+     "rain_mm": 4.8,
+     "wind_mean_kmh": 10.8,
+     "wind_dir": "S"
+    },
+    {
+     "time_utc": "2026-11-10T23:00Z",
+     "rain_mm": 4.1,
+     "wind_mean_kmh": 5.8,
+     "wind_dir": "W"
+    },
+    {
+     "time_utc": "2026-11-11T00:00Z",
+     "rain_mm": 2.5,
+     "wind_mean_kmh": 13.0,
+     "wind_dir": "SE"
+    },
+    {
+     "time_utc": "2026-11-11T01:00Z",
+     "rain_mm": 3.8,
+     "wind_mean_kmh": 5.8,
+     "wind_dir": "NW"
+    },
+    {
+     "time_utc": "2026-11-11T02:00Z",
+     "rain_mm": 3.8,
+     "wind_mean_kmh": 14.0,
+     "wind_dir": "E"
+    },
+    {
+     "time_utc": "2026-11-11T03:00Z",
+     "rain_mm": 2.6,
+     "wind_mean_kmh": 8.3,
+     "wind_dir": "SE"
+    },
+    {
+     "time_utc": "2026-11-11T04:00Z",
+     "rain_mm": 2.9,
+     "wind_mean_kmh": 5.0,
+     "wind_dir": "SE"
+    },
+    {
+     "time_utc": "2026-11-11T05:00Z",
+     "rain_mm": 2.5,
+     "wind_mean_kmh": 12.6,
+     "wind_dir": "SE"
+    },
+    {
+     "time_utc": "2026-11-11T06:00Z",
+     "rain_mm": 1.7,
+     "wind_mean_kmh": 5.8,
+     "wind_dir": "SW"
+    },
+    {
+     "time_utc": "2026-11-11T07:00Z",
+     "rain_mm": 2.5,
+     "wind_mean_kmh": 18.7,
+     "wind_dir": "NW"
+    },
+    {
+     "time_utc": "2026-11-11T08:00Z",
+     "rain_mm": 12.4,
+     "wind_mean_kmh": 38.2,
+     "wind_dir": "NW"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 10.2,
+     "wind_mean_kmh": 25.9,
+     "wind_dir": "NW"
     }
    ]
   },
@@ -2487,7 +2770,7 @@
     -16.86575
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 29.2,
     "hours_labelled": [
@@ -2681,211 +2964,12 @@
      "rain_mm": 1.6,
      "wind_mean_kmh": 6.5,
      "wind_dir": "NE"
-    }
-   ]
-  },
-  {
-   "id": "1210960",
-   "name": "Madeira, S. Jorge, Santana",
-   "lat_lon": [
-    32.83446944,
-    -16.906219
-   ],
-   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
-   "max_6h_rain": {
-    "mm": 24.6,
-    "hours_labelled": [
-     "2026-11-11T03:00Z",
-     "2026-11-11T08:00Z"
-    ]
-   },
-   "hourly": [
-    {
-     "time_utc": "2026-11-10T02:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 7.2,
-     "wind_dir": "SE"
     },
     {
-     "time_utc": "2026-11-10T03:00Z",
+     "time_utc": "2026-11-11T09:00Z",
      "rain_mm": 0.0,
-     "wind_mean_kmh": 5.8,
-     "wind_dir": "S"
-    },
-    {
-     "time_utc": "2026-11-10T04:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 13.7,
-     "wind_dir": "S"
-    },
-    {
-     "time_utc": "2026-11-10T05:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 11.5,
-     "wind_dir": "S"
-    },
-    {
-     "time_utc": "2026-11-10T06:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 2.9,
-     "wind_dir": "W"
-    },
-    {
-     "time_utc": "2026-11-10T07:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 10.8,
-     "wind_dir": "SW"
-    },
-    {
-     "time_utc": "2026-11-10T08:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 13.7,
-     "wind_dir": "S"
-    },
-    {
-     "time_utc": "2026-11-10T09:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 10.1,
-     "wind_dir": "SW"
-    },
-    {
-     "time_utc": "2026-11-10T10:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 9.0,
-     "wind_dir": "S"
-    },
-    {
-     "time_utc": "2026-11-10T11:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 10.8,
-     "wind_dir": "SE"
-    },
-    {
-     "time_utc": "2026-11-10T12:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 9.4,
-     "wind_dir": "SE"
-    },
-    {
-     "time_utc": "2026-11-10T13:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 9.7,
-     "wind_dir": "SE"
-    },
-    {
-     "time_utc": "2026-11-10T14:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 12.2,
-     "wind_dir": "S"
-    },
-    {
-     "time_utc": "2026-11-10T15:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 13.7,
-     "wind_dir": "SE"
-    },
-    {
-     "time_utc": "2026-11-10T16:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 3.2,
+     "wind_mean_kmh": 13.3,
      "wind_dir": "E"
-    },
-    {
-     "time_utc": "2026-11-10T17:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 7.2,
-     "wind_dir": "S"
-    },
-    {
-     "time_utc": "2026-11-10T18:00Z",
-     "rain_mm": 0.1,
-     "wind_mean_kmh": 9.7,
-     "wind_dir": "SW"
-    },
-    {
-     "time_utc": "2026-11-10T19:00Z",
-     "rain_mm": 0.0,
-     "wind_mean_kmh": 3.2,
-     "wind_dir": "S"
-    },
-    {
-     "time_utc": "2026-11-10T20:00Z",
-     "rain_mm": 1.5,
-     "wind_mean_kmh": 9.7,
-     "wind_dir": "SW"
-    },
-    {
-     "time_utc": "2026-11-10T21:00Z",
-     "rain_mm": 5.0,
-     "wind_mean_kmh": 7.2,
-     "wind_dir": "W"
-    },
-    {
-     "time_utc": "2026-11-10T22:00Z",
-     "rain_mm": 4.8,
-     "wind_mean_kmh": 10.8,
-     "wind_dir": "S"
-    },
-    {
-     "time_utc": "2026-11-10T23:00Z",
-     "rain_mm": 4.1,
-     "wind_mean_kmh": 5.8,
-     "wind_dir": "W"
-    },
-    {
-     "time_utc": "2026-11-11T00:00Z",
-     "rain_mm": 2.5,
-     "wind_mean_kmh": 13.0,
-     "wind_dir": "SE"
-    },
-    {
-     "time_utc": "2026-11-11T01:00Z",
-     "rain_mm": 3.8,
-     "wind_mean_kmh": 5.8,
-     "wind_dir": "NW"
-    },
-    {
-     "time_utc": "2026-11-11T02:00Z",
-     "rain_mm": 3.8,
-     "wind_mean_kmh": 14.0,
-     "wind_dir": "E"
-    },
-    {
-     "time_utc": "2026-11-11T03:00Z",
-     "rain_mm": 2.6,
-     "wind_mean_kmh": 8.3,
-     "wind_dir": "SE"
-    },
-    {
-     "time_utc": "2026-11-11T04:00Z",
-     "rain_mm": 2.9,
-     "wind_mean_kmh": 5.0,
-     "wind_dir": "SE"
-    },
-    {
-     "time_utc": "2026-11-11T05:00Z",
-     "rain_mm": 2.5,
-     "wind_mean_kmh": 12.6,
-     "wind_dir": "SE"
-    },
-    {
-     "time_utc": "2026-11-11T06:00Z",
-     "rain_mm": 1.7,
-     "wind_mean_kmh": 5.8,
-     "wind_dir": "SW"
-    },
-    {
-     "time_utc": "2026-11-11T07:00Z",
-     "rain_mm": 2.5,
-     "wind_mean_kmh": 18.7,
-     "wind_dir": "NW"
-    },
-    {
-     "time_utc": "2026-11-11T08:00Z",
-     "rain_mm": 12.4,
-     "wind_mean_kmh": 38.2,
-     "wind_dir": "NW"
     }
    ]
   },
@@ -2897,7 +2981,7 @@
     -16.935592
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 19.1,
     "hours_labelled": [
@@ -3091,6 +3175,12 @@
      "rain_mm": 1.3,
      "wind_mean_kmh": null,
      "wind_dir": "calm"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
+     "rain_mm": 0.0,
+     "wind_mean_kmh": null,
+     "wind_dir": "calm"
     }
    ]
   },
@@ -3102,7 +3192,7 @@
     -16.34868
    ],
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T09:22:47Z",
+   "read_utc": "2026-11-11T10:22:42Z",
    "max_6h_rain": {
     "mm": 15.4,
     "hours_labelled": [
@@ -3293,6 +3383,12 @@
     },
     {
      "time_utc": "2026-11-11T08:00Z",
+     "rain_mm": 0.1,
+     "wind_mean_kmh": 37.1,
+     "wind_dir": "NW"
+    },
+    {
+     "time_utc": "2026-11-11T09:00Z",
      "rain_mm": null,
      "wind_mean_kmh": null,
      "wind_dir": "calm"
@@ -3381,5 +3477,5 @@
   ],
   "read_utc": "2026-11-11T02:35Z"
  },
- "next_read_utc": "2026-11-11T10:22Z"
+ "next_read_utc": "2026-11-11T11:22Z"
 }

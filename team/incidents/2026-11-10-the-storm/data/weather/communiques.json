@@ -1,8 +1,8 @@
 {
  "about": "IPMA's communiqués (special weather information) from its RSS feed, kept across reads; earthquake notices left out.",
  "source": "https://www.ipma.pt/resources.www/rss/comunicados.xml",
- "feed_built_local": "2026-11-11 09:08:32",
- "read_utc": "2026-11-11T09:22:47Z",
+ "feed_built_local": "2026-11-11 10:08:32",
+ "read_utc": "2026-11-11T10:22:42Z",
  "items": [
   {
    "title": "Chuva, vento e agitação marítima - Depressão CHARLES - Continente e Madeira - Comunicado nº2",
@@ -13,7 +13,7 @@
    "text_pt": "Informação Meteorológica Comunicado válido entre 2026-11-10 17:07 e 2026-11-11 23:59 Titulo: Chuva, vento e agitação marítima - Depressão CHARLES - Continente e Madeira - Comunicado nº2 CHARLES é o nome atribuído pelo Instituto Português do Mar e da Atmosfera a uma depressão que se prevê estar centrada às 00 UTC de dia 11 de novembro aproximadamente em 34°N 21°W, a noroeste da Madeira, com uma pressão atmosférica no seu centro de 989 hPa, deslocando-se depois em direção a Portugal continental, com elevada incerteza na trajetória e intensidade. A depressão BRUNA continuará quase estacionária a noroeste da Península Ibérica até sexta-feira, dia 13, sendo um sistema independente da depressão CHARLES. O arquipélago da Madeira irá sentir o agravamento do estado do tempo entre o final do dia de hoje, dia 10, e a manhã de dia 11. Prevê-se chuva persistente e por vezes forte, podendo acumular valores superiores a 100 mm em 12 h em alguns locais, em especial nas regiões montanhosas. O vento irá aumentar de intensidade, soprando de sudoeste com rajadas até 100 km/h, podendo ser da ordem de 140 km/h nas terras altas. A agitação marítima irá igualmente sofrer um agravamento neste período, com ondas de sudoeste com 4 a 5 metros na costa sul da ilha da Madeira. Em Portugal continental, o agravamento do estado do tempo associado à depressão CHARLES deverá fazer-se sentir a partir do início da manhã do dia 11, embora as regiões mais afetadas estejam ainda dependentes da trajetória da mesma. Com os dados disponíveis de momento, a maior probabilidade será o centro da depressão passar entre Sines e o Cabo Carvoeiro, com o vento a soprar inicialmente do quadrante sul e rodando para o quadrante norte, sendo que no bordo sul da depressão as rajadas serão da ordem dos 100 a 120 km/h, podendo ser localmente até 140 km/h. A precipitação será por vezes forte na generalidade do território, com acumulados que poderão ser superiores a 100 mm em 24h em alguns locais. Prevê-se igualmente ondas de sudoeste com 5 a 7 metros a sul do Cabo Raso durante a tarde de dia 11 e que poderão atingir os 13 metros de altura máxima, diminuindo para 4 a 5 metros no início da noite. O arquipélago dos Açores não será influenciado pela depressão CHARLES. Devido a esta situação foram emitidos avisos meteorológicos de nível VERMELHO e LARANJA, não se excluindo a possibilidade de agravamento em algumas regiões após as próximas atualizações dos modelos numéricos de previsão do tempo, aconselhando-se, por esse motivo, o seu acompanhamento. Este comunicado será atualizado sempre que necessário. Para mais detalhes sobre a previsão meteorológica dos próximos dias consultar: https://www.ipma.pt/pt/otempo/prev.descritiva/ http://www.ipma.pt/pt/otempo/prev.significativa/ Para mais detalhes sobre os avisos meteorológicos emitidos consultar: http://www.ipma.pt/pt/otempo/prev-sam/ Data de Edição: Ter, 10 Nov 2026 17:07:58",
    "source": "https://www.ipma.pt/resources.www/rss/comunicados.xml",
    "read_utc": "2026-11-10T19:01:07Z",
-   "last_seen_utc": "2026-11-11T09:22:47Z"
+   "last_seen_utc": "2026-11-11T10:22:42Z"
   },
   {
    "title": "Depressão BRUNA - Açores - COMUNICADO Nº3",
@@ -38,5 +38,5 @@
    "note": "No longer in the RSS feed (replaced by no. 2); read by weather@PrompTugal.vicky at the time; quoted from its record."
   }
  ],
- "next_read_utc": "2026-11-11T10:22Z"
+ "next_read_utc": "2026-11-11T11:22Z"
 }
