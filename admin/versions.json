@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1952",
+    "date": "2026-11-11",
+    "what": "21:35 wake: no change to Day 3; no new Lisbon decisions",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "1d25a0892"
+  },
+  {
     "version": "v0.2.1951",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: handover-market's scope: the live packet exchange is conductor.fringe@'s",
