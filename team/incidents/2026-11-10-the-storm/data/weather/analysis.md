@@ -377,3 +377,13 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Fact:** at 12:28:46 neither IPMA's open data nor the MeteoAlarm CAP feed shows a Lisbon warning change after 07:16:30 (wind lowered to orange, gusts to 120 km/h). Lisbon still reads red rain 09:00–18:00, orange wind 09:00–21:00 and orange sea 12:00–21:00. "Ajustados" may refer to that 07:16 change; if a new change follows the communiqué, MeteoAlarm has carried IPMA's changes 16–21 min late before, so the 5-minute poll should see it by about 12:40.
 
 **Analysis (medium-high):** the communiqué settles section 13 in writing: two centres, as the press reported. It also agrees with what Lisbon is seeing: no gust all morning and wind at the airport under 30 km/h. IPMA's own number, 70–90 km/h in the South, sits below Lisbon's orange threshold (gusts to 120 km/h) and near the airport's TAF (gusts about 65 km/h at times, a 30% chance of about 100 km/h). Rain stays the main hazard. Section 16's track (centre over or south of Lisbon) is not contradicted; the communiqué does not say where the centres go.
+
+## 18. 12:36 UTC 11 Nov: the warnings "ajustados": IPMA's CAP batch sent 12:18:03
+
+**Facts** (MeteoAlarm CAP feed, cap.json other_messages, read 12:35:31 UTC; weatherwatch saw the batch in the feed at 12:33):
+- IPMA sent a batch at 12:18:03, two minutes after communiqué no. 3 was edited. Of its red and orange messages: **rain lowered from red to orange, 12:19–18:00, for Castelo Branco, Leiria, Portalegre** (replacing messages sent 10 Nov 16:30:01) **and Beja** (replacing 21:23:00). **Faro keeps red rain, 12:19–18:00** (replacing 21:23:00). The batch's other messages (yellow) are not kept by cap.json.
+- **No message for Lisboa.** Lisbon still reads red rain 09:00–18:00, orange wind 09:00–21:00 (gusts to 120 km/h) and orange sea 12:00–21:00. Setúbal and Santarém, red rain on their last reads, had no message in the batch.
+- IPMA's open data (warnings_www.json) did not yet show the change at 12:35:31.
+- The 5-minute poll watches Lisbon and Madeira only, so it did not flag this batch. From this read on, cap.json also keeps orange messages for every district.
+
+**Analysis (medium):** IPMA lowered red rain only inland and in Beja, and kept it where the rain is falling now (Faro, and Lisbon, which had 11–18 mm in the last hour). Lisbon's red rain warning still stands, and so does its orange wind, although IPMA's own figure for the South (70–90 km/h) is now below Lisbon's threshold. A further Lisbon change this afternoon is possible; that is a judgement, not a statement from IPMA.

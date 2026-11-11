@@ -1,14 +1,14 @@
 {
- "about": "IPMA's warnings for the Lisbon district as CAP messages (Common Alerting Protocol), read through MeteoAlarm's public feed (https://www.meteoalarm.org). A dated record, not a live feed: read 2026-11-11T12:28:46Z. MeteoAlarm: \"Time delays between this website and the www.meteoalarm.org website are possible. For the most up-to-date awareness information as published by the participating National Meteorological and Hydrological Services, please refer to www.meteoalarm.org.\" Unlike IPMA's open data, each message carries `sent_utc`, the time IPMA issued it, and `replaces`, the message it updates (with that one's sent time). Every message once seen is kept; one no longer in the feed is marked `left_feed_utc` (the time read). Messages that left the feed before this desk's first read (10 Nov 23:51) were never seen. Facts.",
+ "about": "IPMA's warnings for the Lisbon district as CAP messages (Common Alerting Protocol), read through MeteoAlarm's public feed (https://www.meteoalarm.org). A dated record, not a live feed: read 2026-11-11T12:35:31Z. MeteoAlarm: \"Time delays between this website and the www.meteoalarm.org website are possible. For the most up-to-date awareness information as published by the participating National Meteorological and Hydrological Services, please refer to www.meteoalarm.org.\" Unlike IPMA's open data, each message carries `sent_utc`, the time IPMA issued it, and `replaces`, the message it updates (with that one's sent time). Every message once seen is kept; one no longer in the feed is marked `left_feed_utc` (the time read). Messages that left the feed before this desk's first read (10 Nov 23:51) were never seen. Facts.",
  "terms": {
   "source": "https://www.meteoalarm.org",
   "feed": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
   "disclaimer": "Time delays between this website and the www.meteoalarm.org website are possible. For the most up-to-date awareness information as published by the participating National Meteorological and Hydrological Services, please refer to www.meteoalarm.org.",
-  "record": "a dated record, not a live feed (read 2026-11-11T12:28:46Z)",
+  "record": "a dated record, not a live feed (read 2026-11-11T12:35:31Z)",
   "publisher_of_the_warnings": "IPMA (Instituto Português do Mar e da Atmosfera), via MeteoAlarm"
  },
  "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
- "read_utc": "2026-11-11T12:28:46Z",
+ "read_utc": "2026-11-11T12:35:31Z",
  "reads_utc": [
   "2026-11-10T23:51:47Z",
   "2026-11-10T23:53:38Z",
@@ -189,7 +189,10 @@
   "2026-11-11T12:18:19Z",
   "2026-11-11T12:23:12Z",
   "2026-11-11T12:24:07Z",
-  "2026-11-11T12:28:46Z"
+  "2026-11-11T12:28:46Z",
+  "2026-11-11T12:29:52Z",
+  "2026-11-11T12:34:43Z",
+  "2026-11-11T12:35:31Z"
  ],
  "lisbon_messages": [
   {
@@ -227,7 +230,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Periods of rain or showers, sometimes heavy and accompanied by thunderstorms.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -243,7 +246,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Periods of rain, sometimes heavy and accompanied by thunderstorms.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -264,7 +267,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Wind from the southern quadrant with gusts of up to 75 km/h.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -280,7 +283,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Favorable conditions for the occurrence of localized weather phenomena, such as: thunderstorms; locally heavy precipitation, with accumulations of 10 to 20 mm in 1 hour; wind gusts between 70 and 90 km/h.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -301,7 +304,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Western waves up to 4 to 5 meters.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -322,7 +325,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Favorable conditions for the occurrence of localized weather phenomena, such as: thunderstorms; locally heavy precipitation, with accumulations of 10 to 20 mm in 1 hour; wind gusts between 70 and 90 km/h.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -343,7 +346,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Rain, sometimes heavy and with thunderstorms.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -364,7 +367,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Rain, sometimes heavy and with thunderstorms.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -380,7 +383,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Rain, sometimes heavy and with thunderstorms.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -396,7 +399,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Rain, sometimes heavy and with thunderstorms.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -440,7 +443,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "SW waves 4 to 5 metres.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -461,7 +464,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -482,7 +485,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Rain, at times heavy, and persistent.",
    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
   },
@@ -503,7 +506,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Strong and persistent precipitation.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
   },
@@ -519,7 +522,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-10T23:51:47Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z",
    "text_en": "Rain, at times heavy, and persistent.",
    "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Strong and persistent rain.', drops 'por vezes')"
   },
@@ -542,10 +545,10 @@
    "read_utc": "2026-11-11T07:38:35Z",
    "text_en": "Wind gusts up to 120 km/h.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   }
  ],
- "other_messages_about": "Beyond Lisbon: every CAP message for a Madeira area, and every red message for any district, kept once seen (from 11 Nov 01:50 UTC; earlier ones that had left the feed were never seen).",
+ "other_messages_about": "Beyond Lisbon: every CAP message for a Madeira area, and every red message for any district, kept once seen (from 11 Nov 01:50 UTC; earlier ones that had left the feed were never seen); orange messages for any district kept as well from 11 Nov 12:36 UTC (earlier orange ones were not kept).",
  "other_messages": [
   {
    "identifier": "2.49.0.0.620.0.PT.261106071443.MD-10-1214",
@@ -565,7 +568,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261106071443.MD-10-1215",
@@ -585,7 +588,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-01-651",
@@ -605,7 +608,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-01-652",
@@ -625,7 +628,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-01-653",
@@ -645,7 +648,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-01-654",
@@ -665,7 +668,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-10-1216",
@@ -680,7 +683,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-10-1217",
@@ -695,7 +698,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-10-1218",
@@ -710,7 +713,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261107072830.MD-10-1219",
@@ -725,7 +728,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108122332.MD-07-917",
@@ -745,7 +748,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108122332.MD-07-918",
@@ -765,7 +768,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261108122332.MD-07-919",
@@ -780,7 +783,102 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6183",
+   "areas": [
+    "Guarda"
+   ],
+   "sent_utc": "2026-11-08T19:03:31+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-09T00:00:00+00:00",
+   "expires_utc": "2026-11-09T06:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261108124742.PO-10-6174",
+     "sent_utc": "2026-11-08T12:47:42+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261108190331.PO-10-6185",
+   "areas": [
+    "Castelo Branco"
+   ],
+   "sent_utc": "2026-11-08T19:03:31+00:00",
+   "msg_type": "Alert",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-09T00:00:00+00:00",
+   "expires_utc": "2026-11-09T06:00:00+00:00",
+   "replaces": [],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6220",
+   "areas": [
+    "Castelo Branco"
+   ],
+   "sent_utc": "2026-11-09T13:27:16+00:00",
+   "msg_type": "Alert",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-10T00:00:00+00:00",
+   "expires_utc": "2026-11-10T09:00:00+00:00",
+   "replaces": [],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6221",
+   "areas": [
+    "Santarém"
+   ],
+   "sent_utc": "2026-11-09T13:27:16+00:00",
+   "msg_type": "Alert",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-10T00:00:00+00:00",
+   "expires_utc": "2026-11-10T09:00:00+00:00",
+   "replaces": [],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6222",
+   "areas": [
+    "Portalegre"
+   ],
+   "sent_utc": "2026-11-09T13:27:16+00:00",
+   "msg_type": "Alert",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-10T00:00:00+00:00",
+   "expires_utc": "2026-11-10T09:00:00+00:00",
+   "replaces": [],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261109132716.PO-10-6223",
+   "areas": [
+    "Évora"
+   ],
+   "sent_utc": "2026-11-09T13:27:16+00:00",
+   "msg_type": "Alert",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-10T00:00:00+00:00",
+   "expires_utc": "2026-11-10T09:00:00+00:00",
+   "replaces": [],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261109140535.MD-01-663",
@@ -800,7 +898,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261109140535.MD-01-664",
@@ -820,7 +918,22 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261109215857.PO-10-6249",
+   "areas": [
+    "Setúbal"
+   ],
+   "sent_utc": "2026-11-09T21:58:57+00:00",
+   "msg_type": "Alert",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-09T21:59:00+00:00",
+   "expires_utc": "2026-11-10T09:00:00+00:00",
+   "replaces": [],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-01-666",
@@ -840,7 +953,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-01-667",
@@ -855,7 +968,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-01-668",
@@ -870,7 +983,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-01-669",
@@ -890,7 +1003,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-07-924",
@@ -905,7 +1018,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-07-925",
@@ -920,7 +1033,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1231",
@@ -940,7 +1053,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1232",
@@ -960,7 +1073,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1234",
@@ -975,7 +1088,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110061454.MD-10-1235",
@@ -990,7 +1103,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110071840.PO-01-1914",
@@ -1142,7 +1255,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110120341.MD-07-926",
@@ -1162,7 +1275,67 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110120908.PO-07-4526",
+   "areas": [
+    "Setúbal"
+   ],
+   "sent_utc": "2026-11-10T12:09:08+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Agitação Marítima",
+   "onset_utc": "2026-11-11T12:00:00+00:00",
+   "expires_utc": "2026-11-11T21:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4522",
+     "sent_utc": "2026-11-10T07:18:40+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110120908.PO-07-4527",
+   "areas": [
+    "Beja"
+   ],
+   "sent_utc": "2026-11-10T12:09:08+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Agitação Marítima",
+   "onset_utc": "2026-11-11T12:00:00+00:00",
+   "expires_utc": "2026-11-11T21:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4523",
+     "sent_utc": "2026-11-10T07:18:40+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110120908.PO-07-4528",
+   "areas": [
+    "Faro"
+   ],
+   "sent_utc": "2026-11-10T12:09:08+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Agitação Marítima",
+   "onset_utc": "2026-11-11T12:00:00+00:00",
+   "expires_utc": "2026-11-11T21:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-07-4524",
+     "sent_utc": "2026-11-10T07:18:40+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6271",
@@ -1177,7 +1350,9 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "left_feed_utc": "2026-11-11T12:34:43Z",
+   "status": "left the feed at 2026-11-11T12:34:43Z (time read)"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6272",
@@ -1192,7 +1367,9 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "left_feed_utc": "2026-11-11T12:34:43Z",
+   "status": "left the feed at 2026-11-11T12:34:43Z (time read)"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6275",
@@ -1207,7 +1384,7 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6276",
@@ -1222,7 +1399,9 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "left_feed_utc": "2026-11-11T12:34:43Z",
+   "status": "left the feed at 2026-11-11T12:34:43Z (time read)"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110205239.MD-10-1236",
@@ -1242,7 +1421,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110205239.MD-10-1237",
@@ -1262,7 +1441,7 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110205239.MD-10-1238",
@@ -1277,7 +1456,27 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6289",
+   "areas": [
+    "Setúbal"
+   ],
+   "sent_utc": "2026-11-10T21:23:00+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-11T00:00:00+00:00",
+   "expires_utc": "2026-11-11T09:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6280",
+     "sent_utc": "2026-11-10T16:30:01+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6291",
@@ -1297,7 +1496,47 @@
    ],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6292",
+   "areas": [
+    "Beja"
+   ],
+   "sent_utc": "2026-11-10T21:23:00+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-11T00:00:00+00:00",
+   "expires_utc": "2026-11-11T09:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-10-6269",
+     "sent_utc": "2026-11-10T07:18:40+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6293",
+   "areas": [
+    "Faro"
+   ],
+   "sent_utc": "2026-11-10T21:23:00+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-11T00:00:00+00:00",
+   "expires_utc": "2026-11-11T09:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-10-6270",
+     "sent_utc": "2026-11-10T07:18:40+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6294",
@@ -1312,7 +1551,9 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "left_feed_utc": "2026-11-11T12:34:43Z",
+   "status": "left the feed at 2026-11-11T12:34:43Z (time read)"
   },
   {
    "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6295",
@@ -1327,7 +1568,249 @@
    "replaces": [],
    "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
    "read_utc": "2026-11-11T01:46:44Z",
-   "last_seen_utc": "2026-11-11T12:28:46Z"
+   "last_seen_utc": "2026-11-11T12:28:46Z",
+   "left_feed_utc": "2026-11-11T12:34:43Z",
+   "status": "left the feed at 2026-11-11T12:34:43Z (time read)"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6308",
+   "areas": [
+    "Castelo Branco"
+   ],
+   "sent_utc": "2026-11-10T21:23:00+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-11T03:00:00+00:00",
+   "expires_utc": "2026-11-11T12:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6277",
+     "sent_utc": "2026-11-10T16:30:01+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6309",
+   "areas": [
+    "Leiria"
+   ],
+   "sent_utc": "2026-11-10T21:23:00+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-11T03:00:00+00:00",
+   "expires_utc": "2026-11-11T12:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6278",
+     "sent_utc": "2026-11-10T16:30:01+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6310",
+   "areas": [
+    "Santarém"
+   ],
+   "sent_utc": "2026-11-10T21:23:00+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-11T03:00:00+00:00",
+   "expires_utc": "2026-11-11T12:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6281",
+     "sent_utc": "2026-11-10T16:30:01+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6311",
+   "areas": [
+    "Portalegre"
+   ],
+   "sent_utc": "2026-11-10T21:23:00+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-11T03:00:00+00:00",
+   "expires_utc": "2026-11-11T12:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6282",
+     "sent_utc": "2026-11-10T16:30:01+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6312",
+   "areas": [
+    "Évora"
+   ],
+   "sent_utc": "2026-11-10T21:23:00+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-11T03:00:00+00:00",
+   "expires_utc": "2026-11-11T18:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-10-6268",
+     "sent_utc": "2026-11-10T07:18:40+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261111071630.PO-01-1933",
+   "areas": [
+    "Setúbal"
+   ],
+   "sent_utc": "2026-11-11T07:16:30+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Vento",
+   "onset_utc": "2026-11-11T09:00:00+00:00",
+   "expires_utc": "2026-11-11T21:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-01-1919",
+     "sent_utc": "2026-11-10T07:18:40+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261111071630.PO-01-1934",
+   "areas": [
+    "Beja"
+   ],
+   "sent_utc": "2026-11-11T07:16:30+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Vento",
+   "onset_utc": "2026-11-11T09:00:00+00:00",
+   "expires_utc": "2026-11-11T21:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110071840.PO-01-1920",
+     "sent_utc": "2026-11-10T07:18:40+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6322",
+   "areas": [
+    "Castelo Branco"
+   ],
+   "sent_utc": "2026-11-11T12:18:03+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-11T12:19:00+00:00",
+   "expires_utc": "2026-11-11T18:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6271",
+     "sent_utc": "2026-11-10T16:30:01+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6323",
+   "areas": [
+    "Leiria"
+   ],
+   "sent_utc": "2026-11-11T12:18:03+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-11T12:19:00+00:00",
+   "expires_utc": "2026-11-11T18:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6272",
+     "sent_utc": "2026-11-10T16:30:01+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6324",
+   "areas": [
+    "Portalegre"
+   ],
+   "sent_utc": "2026-11-11T12:18:03+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-11T12:19:00+00:00",
+   "expires_utc": "2026-11-11T18:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110163001.PO-10-6276",
+     "sent_utc": "2026-11-10T16:30:01+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6325",
+   "areas": [
+    "Beja"
+   ],
+   "sent_utc": "2026-11-11T12:18:03+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Laranja Precipitação",
+   "onset_utc": "2026-11-11T12:19:00+00:00",
+   "expires_utc": "2026-11-11T18:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6294",
+     "sent_utc": "2026-11-10T21:23:00+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:35:31Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
+  },
+  {
+   "identifier": "2.49.0.0.620.0.PT.261111121803.PO-10-6326",
+   "areas": [
+    "Faro"
+   ],
+   "sent_utc": "2026-11-11T12:18:03+00:00",
+   "msg_type": "Update",
+   "event_pt": "Aviso Vermelho Precipitação",
+   "onset_utc": "2026-11-11T12:19:00+00:00",
+   "expires_utc": "2026-11-11T18:00:00+00:00",
+   "replaces": [
+    {
+     "identifier": "2.49.0.0.620.0.PT.261110212300.PO-10-6295",
+     "sent_utc": "2026-11-10T21:23:00+00:00"
+    }
+   ],
+   "source": "https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal",
+   "read_utc": "2026-11-11T12:34:43Z",
+   "last_seen_utc": "2026-11-11T12:35:31Z"
   }
  ],
  "next_read_utc": "2026-11-11T13:22Z"

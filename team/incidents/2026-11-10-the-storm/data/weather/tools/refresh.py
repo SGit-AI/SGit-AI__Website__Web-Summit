@@ -504,7 +504,7 @@ def cap():
                     CAP_INDEX.setdefault(k, []).append(datetime.fromisoformat(al['sent']).astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
             areas = [z.get('areaDesc') for z in i.get('area', [])]
             if 'Lisboa' not in areas:
-                if m and (CAP_LEVEL.get(m.group(1)) == 'red' or any(a_.startswith('Madeira') for a_ in areas)):
+                if m and (CAP_LEVEL.get(m.group(1)) in ('red', 'orange') or any(a_.startswith('Madeira') for a_ in areas)):
                     oid = al.get('identifier') + '|' + ','.join(areas)
                     OTHER_SEEN.setdefault(oid, {'identifier': al.get('identifier'), 'areas': areas, 'sent_utc': al.get('sent'), 'msg_type': al.get('msgType'),
                                                 'event_pt': i.get('event'), 'onset_utc': i.get('onset'), 'expires_utc': i.get('expires'),
@@ -552,7 +552,7 @@ def cap():
             'terms': {'source': 'https://www.meteoalarm.org', 'feed': U['cap'], 'disclaimer': disclaimer,
                       'record': f'a dated record, not a live feed (read {NOW})', 'publisher_of_the_warnings': 'IPMA (Instituto Português do Mar e da Atmosfera), via MeteoAlarm'},
             'source': U['cap'], 'read_utc': NOW, 'reads_utc': reads, 'lisbon_messages': msgs,
-            'other_messages_about': 'Beyond Lisbon: every CAP message for a Madeira area, and every red message for any district, kept once seen (from 11 Nov 01:50 UTC; earlier ones that had left the feed were never seen).',
+            'other_messages_about': 'Beyond Lisbon: every CAP message for a Madeira area, and every red message for any district, kept once seen (from 11 Nov 01:50 UTC; earlier ones that had left the feed were never seen); orange messages for any district kept as well from 11 Nov 12:36 UTC (earlier orange ones were not kept).',
             'other_messages': others}
 
 

@@ -416,6 +416,11 @@
    "time_utc": "2026-11-11T12:30Z",
    "section": 17,
    "summary": "IPMA communiqué no. 3 (edited 12:16:26): split into two centres, less deepening, weaker wind; gusts 70-90 km/h in the South, 110 on exposed coast; warnings 'ajustados'. No Lisbon warning change after 07:16:30 in open data or CAP at 12:28:46."
+  },
+  {
+   "time_utc": "2026-11-11T12:36Z",
+   "section": 18,
+   "summary": "IPMA CAP batch sent 12:18:03: rain red to orange 12:19-18:00 for Castelo Branco, Leiria, Portalegre, Beja; Faro red rain kept; nothing for Lisboa (red rain 09-18 and orange wind stand). Open data not yet updated at 12:35:31."
   }
  ],
  "next_read_utc": "2026-11-11T13:22Z"
