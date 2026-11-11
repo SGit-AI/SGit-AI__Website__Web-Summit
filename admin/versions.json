@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1889",
+    "date": "2026-11-11",
+    "what": "IPMA ends Lisbon's orange wind at 15:56 (CAP 15:55:03); LPPT TAF AMD 14:36; analysis 23: Lisbon's peak has passed",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "ac494e9d2"
+  },
+  {
     "version": "v0.2.1888",
     "date": "2026-11-11",
     "what": "Thursday's post drafted in two versions, after Storm Charles",
