@@ -1,7 +1,7 @@
 {
  "entity": "airport",
  "about": "Every decision in graph.json about airport: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T09:30Z",
+ "updated": "2026-11-11T10:34Z",
  "decisions": [
   {
    "edge": "ana-conditioned",
@@ -58,6 +58,20 @@
    "read": "2026-11-10T18:59Z",
    "label": "fact",
    "note": "No readable notice: the official site returns a bot check. Superseded by ana-conditioned (press, 18:04Z)."
+  },
+  {
+   "edge": "lisbon-flights-208",
+   "decision": "208 flights cancelled at Lisbon, 14 at Faro, by 09:20",
+   "decided_by": "airlines (as listed on ANA's site)",
+   "published_utc": "2026-11-11T09:54Z",
+   "address": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
+   "read": "2026-11-11T10:34Z",
+   "label": "evidence",
+   "state": "limited",
+   "scope": {
+    "extent": "part",
+    "parts": "208 at Lisbon, 14 at Faro"
+   }
   }
  ],
  "open": [
@@ -127,11 +141,19 @@
    "bytes": 212,
    "result": "answered; no notice found",
    "excerpt": []
+  },
+  {
+   "at": "2026-11-11T10:32Z",
+   "url": "https://www.aeroportolisboa.pt/pt/lis/home",
+   "http": 200,
+   "bytes": 212,
+   "result": "answered; no notice found",
+   "excerpt": []
   }
  ],
  "tries_summary": {
   "https://www.aeroportolisboa.pt/pt/lis/home": {
-   "tries": 8,
+   "tries": 9,
    "published_found": false
   }
  }
