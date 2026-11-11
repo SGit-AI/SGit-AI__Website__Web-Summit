@@ -13,7 +13,15 @@ Facts as of 18:38 UTC (F1 to F7, N1 to N5 in facts.md). Short enough for a phone
 > - **Safety first:** nobody travels against the guidance. Who goes in tomorrow is decided tonight; until then, plan nothing that depends on travelling.
 > - Plan B for every Wednesday commitment (stand, demos, meetings, interviews) is being prepared. Next update this evening, or sooner if anything changes.
 
-## B. Web Summit has suspended Wednesday (SEND THIS ONE; filled 19:55 UTC from F8; a person sends)
+## C. Wednesday afternoon: the reds are over, Thursday is on (SEND THIS ONE; 15:40 UTC, from F1, F2, F10; a person sends)
+
+> **Storm update, Wednesday 15:40 (Lisbon time):**
+> - Lisbon's **red rain warning ended at 15:00**; yellow rain and orange wind until 18:00. [F1, F2]
+> - **Web Summit reopens tomorrow, Thursday**: it has told participants so (as reported in the press this afternoon). The government's alert ends at midnight. [F10]
+> - Today: the government still asks people to avoid unnecessary travel; the warnings end at 18:00. [F5, F1, F2]
+> - Tomorrow: Wednesday's meetings moved to Thursday go ahead; whoever holds each one confirms it today. Next update this evening.
+
+## B. Superseded at 15:40 by C. Web Summit has suspended Wednesday (SEND THIS ONE; filled 19:55 UTC from F8; a person sends)
 
 > **Storm update, Tuesday 20:00 (Lisbon time):** Web Summit has called off **Day 2, Wednesday**: the government formally advised it because of the storm (Web Summit's own update, 19:09: https://websummit.com/blog/web-summit/important-event-update-2026/). [F8]
 > - **Do not travel to the venue on Wednesday.** Stay where you are; the red rain warning (09:00 to 18:00, in force), the orange wind warning (09:00 to 21:00, lowered from red at 07:16) and the government's alert stand. [F1, F2, F4]

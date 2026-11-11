@@ -3,12 +3,12 @@
   "story": "the storm (CHARLES, Lisbon, Wednesday 11 November 2026)",
   "made_by": "journalist.examples@web-summit.dinis",
   "from": "weather@PrompTugal.vicky's desk (PrompTugal/PrompTugal__News__Website desks/weather-vicky/, live.md and decision-chain.md at eca7b396, read 17:10 UTC 10 Nov); every node cites the desk's source and the time the desk read it; updated at 18:40 UTC from the desk's own decision-graph.json (358fa21b, updated 18:00Z), which supersedes this file: read it at source, desks/weather-vicky/decision-graph.json",
-  "as_of": "2026-11-11T09:38Z",
+  "as_of": "2026-11-11T15:37Z",
   "event": {
-    "what": "IPMA red rain warning in force for Lisbon district",
+    "what": "IPMA red rain for Lisbon district (in force; ended early)",
     "from": "2026-11-11T09:00Z",
-    "to": "2026-11-11T18:00Z",
-    "note": "the wind, red 12:00 to 21:00 until 07:16, is orange 09:00 to 21:00"
+    "to": "2026-11-11T15:00Z",
+    "note": "shortened from 18:00 at 12:33; the wind, red until 07:16, orange to 18:00"
   },
   "status_values": {
     "done": "happened, with a source",
@@ -63,7 +63,7 @@
       "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
       "read": "2026-11-10T17:42Z",
       "label_below": true,
-      "short": "red rain, Wed 09:00 to 18:00"
+      "short": "red rain, Wed 09:00 (to 15:00)"
     },
     {
       "id": "ipma-wind-orange",
@@ -75,6 +75,18 @@
       "status": "done",
       "source": "IPMA CAP PO-01-1932; open data",
       "read": "2026-11-11T07:38Z"
+    },
+    {
+      "id": "ipma-shortened",
+      "who": "IPMA",
+      "lane": "weather",
+      "decision": "Lisbon's warnings shortened: red rain to 15:00, orange wind to 18:00",
+      "short": "warnings shortened",
+      "at": "2026-11-11T12:33Z",
+      "status": "done",
+      "source": "IPMA CAP; open data",
+      "read": "2026-11-11T12:46Z",
+      "label_below": true
     },
     {
       "id": "mayor",
@@ -208,19 +220,31 @@
       "status": "not_announced",
       "source": "https://portugal.gov.pt/gc25/comunicacao/noticias/",
       "read": "2026-11-10T18:00Z",
-      "short": "contingency or calamity"
+      "short": "contingency or calamity: not declared"
     },
     {
       "id": "reopening",
-      "who": "the government, the city, the operators, Web Summit",
-      "lane": "next",
-      "decision": "the end of the measures and the reopening on Thursday 12 Nov",
-      "at": "2026-11-10T18:00Z",
+      "who": "Web Summit (as reported)",
+      "lane": "the summit",
+      "decision": "Web Summit reopens Thursday, told to participants (Público 12:17; 24 Notícias 13:05)",
+      "at": "2026-11-11T12:17Z",
       "at_note": "time read",
-      "status": "not_announced",
-      "source": "desks/weather-vicky/decision-graph.json",
-      "read": "2026-11-10T18:00Z",
-      "short": "reopening on Thursday"
+      "status": "done",
+      "source": "press, via the incident's trace",
+      "read": "2026-11-11T12:52Z",
+      "short": "Thursday on (as reported)",
+      "label_below": true
+    },
+    {
+      "id": "alert-ends",
+      "who": "the government (Interior Ministry, as reported)",
+      "lane": "government",
+      "decision": "the alert situation ends today; normality expected Thursday",
+      "short": "alert ends today",
+      "at": "2026-11-11T14:46Z",
+      "status": "done",
+      "source": "Lusa, via the incident's trace",
+      "read": "2026-11-11T14:47Z"
     }
   ],
   "edges": [
@@ -301,6 +325,24 @@
       "to": "ipma-wind-orange",
       "kind": "sourced",
       "why": "the same warning, lowered by IPMA as the track moved south"
+    },
+    {
+      "from": "ipma-wind-orange",
+      "to": "ipma-shortened",
+      "kind": "sourced",
+      "why": "IPMA's next batch, as the storm passed"
+    },
+    {
+      "from": "web-summit",
+      "to": "reopening",
+      "kind": "sourced",
+      "why": "Day 3 was the aim in the 19:09 update"
+    },
+    {
+      "from": "ipma-shortened",
+      "to": "alert-ends",
+      "kind": "analysis",
+      "why": "the warnings eased before the government ended the alert"
     }
   ],
   "lead_times": [
