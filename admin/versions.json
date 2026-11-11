@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1827",
+    "date": "2026-11-11",
+    "what": "08:22 wake: open data still red for Lisbon wind 66 min after CAP's orange; Madeira airport wind collapses (centre passing ~07:30-08:00); met.no 08:21 same shape; analysis 11",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "e9596c8f8"
+  },
+  {
     "version": "v0.2.1826",
     "date": "2026-11-11",
     "what": "the 07:16:30 downgrade reached MeteoAlarm's feed 16-21 min after IPMA sent it; the poll ran throughout (status)",
