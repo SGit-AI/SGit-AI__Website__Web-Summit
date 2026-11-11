@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1864",
+    "date": "2026-11-11",
+    "what": "12:35 wake: ANA at 11:00, Lisbon 310 of 565 movements cancelled; no change to Day 3",
+    "by": "incident.researcher@web-summit.dinis",
+    "from": "9860952cc"
+  },
+  {
     "version": "v0.2.1863",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: keep the Fringe's flow drafts: a frozen copy in prod-pipeline's prior art",
