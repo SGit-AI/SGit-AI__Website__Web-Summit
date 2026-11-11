@@ -2,7 +2,7 @@
  "about": "IPMA's own forecast for Lisbon (globalIdLocal 1110600): the 5-day daily forecast and the hourly model forecast (mean wind, no gusts). IPMA's wind classes: 1 weak, 2 moderate, 3 strong, 4 very strong.",
  "daily": {
   "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-  "read_utc": "2026-11-11T01:51:55Z",
+  "read_utc": "2026-11-11T02:20:50Z",
   "updated_local": "2026-11-11T01:31:02",
   "days": [
    {
@@ -15,7 +15,16 @@
     "longitude": "-9.1286",
     "forecastDate": "2026-11-11",
     "classPrecInt": 2,
-    "latitude": "38.7660"
+    "latitude": "38.7660",
+    "idWeatherType_pt": "Chuva/aguaceiros",
+    "idWeatherType_en": "Rain/showers",
+    "idWeatherType_source": "https://api.ipma.pt/open-data/weather-type-classe.json",
+    "classWindSpeed_pt": "Moderado",
+    "classWindSpeed_en": "Moderate",
+    "classWindSpeed_source": "https://api.ipma.pt/open-data/wind-speed-daily-classe.json",
+    "classPrecInt_pt": "Moderado",
+    "classPrecInt_en": "Moderate",
+    "classPrecInt_source": "https://api.ipma.pt/open-data/precipitation-classe.json"
    },
    {
     "precipitaProb": "100.0",
@@ -27,7 +36,16 @@
     "longitude": "-9.1286",
     "forecastDate": "2026-11-12",
     "classPrecInt": 1,
-    "latitude": "38.7660"
+    "latitude": "38.7660",
+    "idWeatherType_pt": "Aguaceiros/chuva fracos",
+    "idWeatherType_en": "Light showers/rain",
+    "idWeatherType_source": "https://api.ipma.pt/open-data/weather-type-classe.json",
+    "classWindSpeed_pt": "Moderado",
+    "classWindSpeed_en": "Moderate",
+    "classWindSpeed_source": "https://api.ipma.pt/open-data/wind-speed-daily-classe.json",
+    "classPrecInt_pt": "Fraco",
+    "classPrecInt_en": "Weak",
+    "classPrecInt_source": "https://api.ipma.pt/open-data/precipitation-classe.json"
    },
    {
     "precipitaProb": "100.0",
@@ -39,7 +57,16 @@
     "longitude": "-9.1286",
     "forecastDate": "2026-11-13",
     "classPrecInt": 1,
-    "latitude": "38.7660"
+    "latitude": "38.7660",
+    "idWeatherType_pt": "Aguaceiros/chuva fracos",
+    "idWeatherType_en": "Light showers/rain",
+    "idWeatherType_source": "https://api.ipma.pt/open-data/weather-type-classe.json",
+    "classWindSpeed_pt": "Moderado",
+    "classWindSpeed_en": "Moderate",
+    "classWindSpeed_source": "https://api.ipma.pt/open-data/wind-speed-daily-classe.json",
+    "classPrecInt_pt": "Fraco",
+    "classPrecInt_en": "Weak",
+    "classPrecInt_source": "https://api.ipma.pt/open-data/precipitation-classe.json"
    },
    {
     "precipitaProb": "100.0",
@@ -51,7 +78,16 @@
     "longitude": "-9.1286",
     "forecastDate": "2026-11-14",
     "classPrecInt": 1,
-    "latitude": "38.7660"
+    "latitude": "38.7660",
+    "idWeatherType_pt": "Aguaceiros/chuva fracos",
+    "idWeatherType_en": "Light showers/rain",
+    "idWeatherType_source": "https://api.ipma.pt/open-data/weather-type-classe.json",
+    "classWindSpeed_pt": "Moderado",
+    "classWindSpeed_en": "Moderate",
+    "classWindSpeed_source": "https://api.ipma.pt/open-data/wind-speed-daily-classe.json",
+    "classPrecInt_pt": "Fraco",
+    "classPrecInt_en": "Weak",
+    "classPrecInt_source": "https://api.ipma.pt/open-data/precipitation-classe.json"
    },
    {
     "precipitaProb": "86.0",
@@ -63,7 +99,16 @@
     "longitude": "-9.1286",
     "forecastDate": "2026-11-15",
     "classPrecInt": 2,
-    "latitude": "38.7660"
+    "latitude": "38.7660",
+    "idWeatherType_pt": "Chuva/aguaceiros",
+    "idWeatherType_en": "Rain/showers",
+    "idWeatherType_source": "https://api.ipma.pt/open-data/weather-type-classe.json",
+    "classWindSpeed_pt": "Moderado",
+    "classWindSpeed_en": "Moderate",
+    "classWindSpeed_source": "https://api.ipma.pt/open-data/wind-speed-daily-classe.json",
+    "classPrecInt_pt": "Moderado",
+    "classPrecInt_en": "Moderate",
+    "classPrecInt_source": "https://api.ipma.pt/open-data/precipitation-classe.json"
    }
   ]
  },
@@ -538,7 +583,7 @@
  ],
  "hourly": {
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-11T01:51:55Z",
+  "read_utc": "2026-11-11T02:20:50Z",
   "updated_local": "2026-11-10T19:56:03",
   "wed_peak": {
    "time_utc": "2026-11-11T20:00Z",
@@ -547,7 +592,10 @@
    "rain_prob_pct": null,
    "rain_intensity_class": null,
    "temp_c": 17.3,
-   "sea_total_m": 3.4
+   "sea_total_m": 3.4,
+   "weather_type_id": 4,
+   "weather_type_pt": "Céu muito nublado ou encoberto",
+   "weather_type_en": "Cloudy "
   },
   "rows": [
    {
@@ -557,7 +605,12 @@
     "rain_prob_pct": 100.0,
     "rain_intensity_class": 2,
     "temp_c": 17.4,
-    "sea_total_m": 3.7
+    "sea_total_m": 3.7,
+    "weather_type_id": 9,
+    "weather_type_pt": "Chuva/aguaceiros",
+    "weather_type_en": "Rain/showers",
+    "rain_intensity_pt": "Moderado",
+    "rain_intensity_en": "Moderate"
    },
    {
     "time_utc": "2026-11-11T01:00Z",
@@ -566,7 +619,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 16.6,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.6,
+    "weather_type_id": 9,
+    "weather_type_pt": "Chuva/aguaceiros",
+    "weather_type_en": "Rain/showers",
+    "rain_intensity_pt": "Moderado",
+    "rain_intensity_en": "Moderate"
    },
    {
     "time_utc": "2026-11-11T02:00Z",
@@ -575,7 +633,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 16.8,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.6,
+    "weather_type_id": 9,
+    "weather_type_pt": "Chuva/aguaceiros",
+    "weather_type_en": "Rain/showers",
+    "rain_intensity_pt": "Moderado",
+    "rain_intensity_en": "Moderate"
    },
    {
     "time_utc": "2026-11-11T03:00Z",
@@ -584,7 +647,12 @@
     "rain_prob_pct": 100.0,
     "rain_intensity_class": 2,
     "temp_c": 16.9,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.6,
+    "weather_type_id": 9,
+    "weather_type_pt": "Chuva/aguaceiros",
+    "weather_type_en": "Rain/showers",
+    "rain_intensity_pt": "Moderado",
+    "rain_intensity_en": "Moderate"
    },
    {
     "time_utc": "2026-11-11T04:00Z",
@@ -593,7 +661,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 16.6,
-    "sea_total_m": 3.5
+    "sea_total_m": 3.5,
+    "weather_type_id": 9,
+    "weather_type_pt": "Chuva/aguaceiros",
+    "weather_type_en": "Rain/showers",
+    "rain_intensity_pt": "Moderado",
+    "rain_intensity_en": "Moderate"
    },
    {
     "time_utc": "2026-11-11T05:00Z",
@@ -602,7 +675,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 16.1,
-    "sea_total_m": 3.5
+    "sea_total_m": 3.5,
+    "weather_type_id": 9,
+    "weather_type_pt": "Chuva/aguaceiros",
+    "weather_type_en": "Rain/showers",
+    "rain_intensity_pt": "Moderado",
+    "rain_intensity_en": "Moderate"
    },
    {
     "time_utc": "2026-11-11T06:00Z",
@@ -611,7 +689,12 @@
     "rain_prob_pct": 100.0,
     "rain_intensity_class": 3,
     "temp_c": 16.4,
-    "sea_total_m": 3.4
+    "sea_total_m": 3.4,
+    "weather_type_id": 11,
+    "weather_type_pt": "Chuva/aguaceiros forte",
+    "weather_type_en": "Heavy rain/showers",
+    "rain_intensity_pt": "Forte",
+    "rain_intensity_en": "Strong"
    },
    {
     "time_utc": "2026-11-11T07:00Z",
@@ -620,7 +703,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 15.6,
-    "sea_total_m": 3.4
+    "sea_total_m": 3.4,
+    "weather_type_id": 9,
+    "weather_type_pt": "Chuva/aguaceiros",
+    "weather_type_en": "Rain/showers",
+    "rain_intensity_pt": "Moderado",
+    "rain_intensity_en": "Moderate"
    },
    {
     "time_utc": "2026-11-11T08:00Z",
@@ -629,7 +717,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 15.3,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.3,
+    "weather_type_id": 9,
+    "weather_type_pt": "Chuva/aguaceiros",
+    "weather_type_en": "Rain/showers",
+    "rain_intensity_pt": "Moderado",
+    "rain_intensity_en": "Moderate"
    },
    {
     "time_utc": "2026-11-11T09:00Z",
@@ -638,7 +731,12 @@
     "rain_prob_pct": 100.0,
     "rain_intensity_class": 3,
     "temp_c": 15.1,
-    "sea_total_m": 3.2
+    "sea_total_m": 3.2,
+    "weather_type_id": 11,
+    "weather_type_pt": "Chuva/aguaceiros forte",
+    "weather_type_en": "Heavy rain/showers",
+    "rain_intensity_pt": "Forte",
+    "rain_intensity_en": "Strong"
    },
    {
     "time_utc": "2026-11-11T10:00Z",
@@ -647,7 +745,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 3,
     "temp_c": 15.1,
-    "sea_total_m": 3.2
+    "sea_total_m": 3.2,
+    "weather_type_id": 11,
+    "weather_type_pt": "Chuva/aguaceiros forte",
+    "weather_type_en": "Heavy rain/showers",
+    "rain_intensity_pt": "Forte",
+    "rain_intensity_en": "Strong"
    },
    {
     "time_utc": "2026-11-11T11:00Z",
@@ -656,7 +759,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 3,
     "temp_c": 15.2,
-    "sea_total_m": 3.2
+    "sea_total_m": 3.2,
+    "weather_type_id": 11,
+    "weather_type_pt": "Chuva/aguaceiros forte",
+    "weather_type_en": "Heavy rain/showers",
+    "rain_intensity_pt": "Forte",
+    "rain_intensity_en": "Strong"
    },
    {
     "time_utc": "2026-11-11T12:00Z",
@@ -665,7 +773,12 @@
     "rain_prob_pct": 100.0,
     "rain_intensity_class": 3,
     "temp_c": 14.6,
-    "sea_total_m": 3.2
+    "sea_total_m": 3.2,
+    "weather_type_id": 11,
+    "weather_type_pt": "Chuva/aguaceiros forte",
+    "weather_type_en": "Heavy rain/showers",
+    "rain_intensity_pt": "Forte",
+    "rain_intensity_en": "Strong"
    },
    {
     "time_utc": "2026-11-11T13:00Z",
@@ -674,7 +787,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 3,
     "temp_c": 17.0,
-    "sea_total_m": 3.2
+    "sea_total_m": 3.2,
+    "weather_type_id": 11,
+    "weather_type_pt": "Chuva/aguaceiros forte",
+    "weather_type_en": "Heavy rain/showers",
+    "rain_intensity_pt": "Forte",
+    "rain_intensity_en": "Strong"
    },
    {
     "time_utc": "2026-11-11T14:00Z",
@@ -683,7 +801,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 3,
     "temp_c": 17.0,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.3,
+    "weather_type_id": 11,
+    "weather_type_pt": "Chuva/aguaceiros forte",
+    "weather_type_en": "Heavy rain/showers",
+    "rain_intensity_pt": "Forte",
+    "rain_intensity_en": "Strong"
    },
    {
     "time_utc": "2026-11-11T15:00Z",
@@ -692,7 +815,12 @@
     "rain_prob_pct": 100.0,
     "rain_intensity_class": 3,
     "temp_c": 17.2,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.3,
+    "weather_type_id": 11,
+    "weather_type_pt": "Chuva/aguaceiros forte",
+    "weather_type_en": "Heavy rain/showers",
+    "rain_intensity_pt": "Forte",
+    "rain_intensity_en": "Strong"
    },
    {
     "time_utc": "2026-11-11T16:00Z",
@@ -701,7 +829,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.8,
-    "sea_total_m": 3.4
+    "sea_total_m": 3.4,
+    "weather_type_id": 10,
+    "weather_type_pt": "Chuva fraca ou chuvisco",
+    "weather_type_en": "Light rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-11T17:00Z",
@@ -710,7 +843,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.9,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.6,
+    "weather_type_id": 10,
+    "weather_type_pt": "Chuva fraca ou chuvisco",
+    "weather_type_en": "Light rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-11T18:00Z",
@@ -719,7 +857,12 @@
     "rain_prob_pct": 90.0,
     "rain_intensity_class": 1,
     "temp_c": 18.4,
-    "sea_total_m": 3.8
+    "sea_total_m": 3.8,
+    "weather_type_id": 10,
+    "weather_type_pt": "Chuva fraca ou chuvisco",
+    "weather_type_en": "Light rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-11T19:00Z",
@@ -728,7 +871,10 @@
     "rain_prob_pct": null,
     "rain_intensity_class": null,
     "temp_c": 17.9,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.6,
+    "weather_type_id": 3,
+    "weather_type_pt": "Céu parcialmente nublado",
+    "weather_type_en": "Sunny intervals"
    },
    {
     "time_utc": "2026-11-11T20:00Z",
@@ -737,7 +883,10 @@
     "rain_prob_pct": null,
     "rain_intensity_class": null,
     "temp_c": 17.3,
-    "sea_total_m": 3.4
+    "sea_total_m": 3.4,
+    "weather_type_id": 4,
+    "weather_type_pt": "Céu muito nublado ou encoberto",
+    "weather_type_en": "Cloudy "
    },
    {
     "time_utc": "2026-11-11T21:00Z",
@@ -746,7 +895,10 @@
     "rain_prob_pct": 24.0,
     "rain_intensity_class": null,
     "temp_c": 17.1,
-    "sea_total_m": 3.4
+    "sea_total_m": 3.4,
+    "weather_type_id": 3,
+    "weather_type_pt": "Céu parcialmente nublado",
+    "weather_type_en": "Sunny intervals"
    },
    {
     "time_utc": "2026-11-11T22:00Z",
@@ -755,7 +907,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.3,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.3,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-11T23:00Z",
@@ -764,7 +921,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 16.8,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.3,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T00:00Z",
@@ -773,7 +935,12 @@
     "rain_prob_pct": 55.0,
     "rain_intensity_class": 1,
     "temp_c": 16.6,
-    "sea_total_m": 3.2
+    "sea_total_m": 3.2,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T01:00Z",
@@ -782,7 +949,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 16.9,
-    "sea_total_m": 3.2
+    "sea_total_m": 3.2,
+    "weather_type_id": 6,
+    "weather_type_pt": "Aguaceiros/chuva",
+    "weather_type_en": "Showers/rain",
+    "rain_intensity_pt": "Moderado",
+    "rain_intensity_en": "Moderate"
    },
    {
     "time_utc": "2026-11-12T02:00Z",
@@ -791,7 +963,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 2,
     "temp_c": 16.1,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.3,
+    "weather_type_id": 9,
+    "weather_type_pt": "Chuva/aguaceiros",
+    "weather_type_en": "Rain/showers",
+    "rain_intensity_pt": "Moderado",
+    "rain_intensity_en": "Moderate"
    },
    {
     "time_utc": "2026-11-12T03:00Z",
@@ -800,7 +977,12 @@
     "rain_prob_pct": 88.0,
     "rain_intensity_class": 2,
     "temp_c": 16.4,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.3,
+    "weather_type_id": 9,
+    "weather_type_pt": "Chuva/aguaceiros",
+    "weather_type_en": "Rain/showers",
+    "rain_intensity_pt": "Moderado",
+    "rain_intensity_en": "Moderate"
    },
    {
     "time_utc": "2026-11-12T04:00Z",
@@ -809,7 +991,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 16.6,
-    "sea_total_m": 3.4
+    "sea_total_m": 3.4,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T05:00Z",
@@ -818,7 +1005,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 16.4,
-    "sea_total_m": 3.4
+    "sea_total_m": 3.4,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T06:00Z",
@@ -827,7 +1019,12 @@
     "rain_prob_pct": 84.0,
     "rain_intensity_class": 1,
     "temp_c": 16.4,
-    "sea_total_m": 3.5
+    "sea_total_m": 3.5,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T07:00Z",
@@ -836,7 +1033,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 15.3,
-    "sea_total_m": 3.5
+    "sea_total_m": 3.5,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T08:00Z",
@@ -845,7 +1047,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 16.3,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.6,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T09:00Z",
@@ -854,7 +1061,12 @@
     "rain_prob_pct": 67.0,
     "rain_intensity_class": 1,
     "temp_c": 17.6,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.6,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T10:00Z",
@@ -863,7 +1075,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 19.0,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.6,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T11:00Z",
@@ -872,7 +1089,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 19.6,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.6,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T12:00Z",
@@ -881,7 +1103,12 @@
     "rain_prob_pct": 90.0,
     "rain_intensity_class": 1,
     "temp_c": 21.1,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.6,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T13:00Z",
@@ -890,7 +1117,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 20.2,
-    "sea_total_m": 3.6
+    "sea_total_m": 3.6,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T14:00Z",
@@ -899,7 +1131,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 19.5,
-    "sea_total_m": 3.5
+    "sea_total_m": 3.5,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T15:00Z",
@@ -908,7 +1145,12 @@
     "rain_prob_pct": 94.0,
     "rain_intensity_class": 1,
     "temp_c": 18.7,
-    "sea_total_m": 3.5
+    "sea_total_m": 3.5,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T16:00Z",
@@ -917,7 +1159,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 18.4,
-    "sea_total_m": 3.4
+    "sea_total_m": 3.4,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T17:00Z",
@@ -926,7 +1173,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 18.1,
-    "sea_total_m": 3.4
+    "sea_total_m": 3.4,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T18:00Z",
@@ -935,7 +1187,12 @@
     "rain_prob_pct": 75.0,
     "rain_intensity_class": 1,
     "temp_c": 17.1,
-    "sea_total_m": 3.4
+    "sea_total_m": 3.4,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T19:00Z",
@@ -944,7 +1201,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.1,
-    "sea_total_m": 3.4
+    "sea_total_m": 3.4,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T20:00Z",
@@ -953,7 +1215,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.1,
-    "sea_total_m": 3.4
+    "sea_total_m": 3.4,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T21:00Z",
@@ -962,7 +1229,12 @@
     "rain_prob_pct": 43.0,
     "rain_intensity_class": 1,
     "temp_c": 17.2,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.3,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T22:00Z",
@@ -971,7 +1243,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 17.1,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.3,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-12T23:00Z",
@@ -980,7 +1257,12 @@
     "rain_prob_pct": null,
     "rain_intensity_class": 1,
     "temp_c": 16.1,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.3,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    },
    {
     "time_utc": "2026-11-13T00:00Z",
@@ -989,7 +1271,12 @@
     "rain_prob_pct": 76.0,
     "rain_intensity_class": 1,
     "temp_c": 16.7,
-    "sea_total_m": 3.3
+    "sea_total_m": 3.3,
+    "weather_type_id": 7,
+    "weather_type_pt": "Aguaceiros/chuva fracos",
+    "weather_type_en": "Light showers/rain",
+    "rain_intensity_pt": "Fraco",
+    "rain_intensity_en": "Weak"
    }
   ]
  },
@@ -998,18 +1285,10 @@
    "name": "MET Norway Locationforecast 2.0 (complete)",
    "licence": "NLOD 2.0 / CC BY 4.0, data from MET Norway",
    "source": "https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=38.72&lon=-9.14",
-   "read_utc": "2026-11-11T01:51:55Z",
+   "read_utc": "2026-11-11T02:20:50Z",
    "updated_utc": "2026-11-11T01:19:09Z",
    "units": "km/h (converted from m/s), mm, hPa",
    "rows": [
-    {
-     "time_utc": "2026-11-11T01:00Z",
-     "wind_mean_kmh": 16.6,
-     "gust_kmh": null,
-     "wind_from_deg": 212.4,
-     "rain_mm_next_1h": 4.8,
-     "pressure_hpa": 1007.6
-    },
     {
      "time_utc": "2026-11-11T02:00Z",
      "wind_mean_kmh": 24.1,
@@ -1296,7 +1575,7 @@
    "name": "Open-Meteo (best match)",
    "licence": "CC BY 4.0, Open-Meteo.com",
    "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
-   "read_utc": "2026-11-11T01:46:44Z",
+   "read_utc": "2026-11-11T02:20:50Z",
    "rows": [
     {
      "time_utc": "2026-11-11T00:00Z",
@@ -1560,5 +1839,11 @@
    ]
   }
  },
- "next_read_utc": "2026-11-11T02:22Z"
+ "next_read_utc": "2026-11-11T02:22Z",
+ "code_tables": {
+  "weather_type": "https://api.ipma.pt/open-data/weather-type-classe.json",
+  "wind_speed_class": "https://api.ipma.pt/open-data/wind-speed-daily-classe.json",
+  "precipitation_intensity_class": "https://api.ipma.pt/open-data/precipitation-classe.json",
+  "note": "Decoded with IPMA's own id tables. The hourly feed's idIntensidadePrecipita (rain_intensity_class) is decoded with precipitation-classe.json, assumed the same scale as the daily classPrecInt; IPMA does not say so. idTipoTempo (weather_type_id) uses weather-type-classe.json."
+ }
 }

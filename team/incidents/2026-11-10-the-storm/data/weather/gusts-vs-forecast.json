@@ -1,19 +1,19 @@
 {
  "about": "The latest observed wind in Lisbon against what was forecast for that hour. Facts with sources; no analysis here (see analysis.md).",
- "read_utc": "2026-11-11T01:51:55Z",
+ "read_utc": "2026-11-11T02:20:50Z",
  "observed_airport_latest": {
-  "time_utc": "2026-11-11T01:30Z",
-  "raw": "METAR LPPT 110130Z 19005KT 160V280 9999 VCSH FEW015 FEW018TCU 17/16 Q1006 NOSIG",
-  "wind_dir": 190,
+  "time_utc": "2026-11-11T02:00Z",
+  "raw": "METAR LPPT 110200Z 20005KT 160V220 9999 FEW018TCU 17/16 Q1006 NOSIG",
+  "wind_dir": 200,
   "wind_kt": 5,
   "gust_kt": null,
   "wind_kmh": 9,
   "gust_kmh": null,
   "visibility": "6+",
-  "weather": "VCSH",
+  "weather": null,
   "pressure_hpa": 1006,
   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
-  "read_utc": "2026-11-11T01:46:44Z"
+  "read_utc": "2026-11-11T02:20:18Z"
  },
  "observed_airport_max_gust": {
   "kt": 36,
@@ -27,40 +27,40 @@
    "station": "Lisboa, Carnide (CML)",
    "time_utc": "2026-11-11T01:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T01:51:55Z"
+   "read_utc": "2026-11-11T02:20:50Z"
   },
   {
    "kmh": 10.4,
    "station": "Oeiras / Vila Fria (CMO)",
    "time_utc": "2026-11-11T01:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T01:51:55Z"
+   "read_utc": "2026-11-11T02:20:50Z"
   },
   {
    "kmh": 10.4,
    "station": "Barreiro, Lavradio",
    "time_utc": "2026-11-11T01:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T01:51:55Z"
+   "read_utc": "2026-11-11T02:20:50Z"
   },
   {
    "kmh": 9.4,
    "station": "Lisboa, Relógio",
    "time_utc": "2026-11-11T01:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T01:51:55Z"
+   "read_utc": "2026-11-11T02:20:50Z"
   },
   {
    "kmh": 9.4,
    "station": "Lisboa (Geofísico)",
    "time_utc": "2026-11-11T01:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-11T01:51:55Z"
+   "read_utc": "2026-11-11T02:20:50Z"
   }
  ],
  "forecast_taf_groups_for_that_hour": {
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-11T01:51:55Z",
+  "read_utc": "2026-11-11T02:20:50Z",
   "groups": [
    {
     "change": "BASE",
@@ -86,8 +86,10 @@
   "end_utc": "2026-11-11T21:00:00Z",
   "text_pt": "Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.",
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-11T01:51:55Z",
-  "sent_utc": "2026-11-10T07:18:40Z"
+  "read_utc": "2026-11-11T02:20:50Z",
+  "sent_utc": "2026-11-10T07:18:40Z",
+  "text_en": "Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.",
+  "text_en_by": "incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, 'Wind gusts up to 140 km/h.', does not carry the same figures)"
  },
  "forecast_ipma_hourly_wed_peak_mean": {
   "time_utc": "2026-11-11T20:00Z",
@@ -97,8 +99,11 @@
   "rain_intensity_class": null,
   "temp_c": 17.3,
   "sea_total_m": 3.4,
+  "weather_type_id": 4,
+  "weather_type_pt": "Céu muito nublado ou encoberto",
+  "weather_type_en": "Cloudy ",
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-11T01:51:55Z"
+  "read_utc": "2026-11-11T02:20:50Z"
  },
  "next_read_utc": "2026-11-11T02:22Z"
 }

@@ -24,6 +24,9 @@ U = {
     'taf': 'https://aviationweather.gov/api/data/taf?ids=LPPT&format=json',
     'metar': 'https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json',
     'cap': 'https://feeds.meteoalarm.org/api/v1/warnings/feeds-portugal',
+    'wx_types': 'https://api.ipma.pt/open-data/weather-type-classe.json',
+    'wind_classes': 'https://api.ipma.pt/open-data/wind-speed-daily-classe.json',
+    'prec_classes': 'https://api.ipma.pt/open-data/precipitation-classe.json',
     'met_no': 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=38.72&lon=-9.14',
     'open_meteo': 'https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12',
 }
@@ -44,6 +47,37 @@ AREA_CAP = {'AVR': 'Aveiro', 'BJA': 'Beja', 'BRG': 'Braga', 'BGC': 'Bragança', 
             'ACE': 'Açores - Grupo Central', 'AOC': 'Açores - Grupo Ocidental', 'AOR': 'Açores - Grupo Oriental',
             'MCN': 'Madeira - Costa Norte', 'MCS': 'Madeira - Costa Sul', 'MPS': 'Madeira - Porto Santo', 'MRM': 'Madeira - Regiões Montanhosas'}
 OTHER_SEEN, OTHER_IN_FEED = {}, set()
+PT_EN = {}  # IPMA's own English for a warning text, from the en-GB info beside the pt-PT one in the same CAP message
+OUR_EN = {  # our translations, used only where IPMA's CAP gives no English for that exact text (figures unchanged)
+    'Rajadas até 120 km/h, podendo atingir 140 km/h nos locais mais expostos.': 'Gusts up to 120 km/h, possibly reaching 140 km/h in the most exposed places.',
+    'Precipitação forte e persistente.': 'Heavy and persistent rain.',
+    'Precipitação por vezes forte e persistente.': 'Rain, at times heavy, and persistent.',
+    'Precipitação persistente, por vezes forte.': 'Persistent rain, at times heavy.',
+    'Precipitação por vezes forte e acompanhada de trovoada.': 'Rain, at times heavy, with thunderstorms.',
+    'Chuva, por vezes forte e persistente.': 'Rain, at times heavy, and persistent.',
+    'Aguaceiros, por vezes fortes': 'Showers, at times heavy',
+    'Ondas de sudoeste com 4 a 5 metros.': 'South-westerly waves of 4 to 5 metres.',
+    'Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.': 'South-westerly waves of 5 to 7 metres, possibly reaching 13 metres maximum height.',
+    'Ondas do quadrante oeste com 4 a 5 metros.': 'Westerly waves of 4 to 5 metres.',
+    'Rajadas até 100 km/h.': 'Gusts up to 100 km/h.', 'Rajadas até 120 km/h.': 'Gusts up to 120 km/h.',
+    'Rajadas até 130 km/h.': 'Gusts up to 130 km/h.', 'Rajadas até 140 km/h.': 'Gusts up to 140 km/h.',
+    'Rajadas até 100 km/h, em esepcial nos extremos leste e oeste.': 'Gusts up to 100 km/h, especially at the eastern and western ends.',
+    'Vento do quadrante sul com rajadas até 75 km/h.': 'Southerly wind with gusts up to 75 km/h.',
+}
+
+
+def en_for(pt):
+    """(text_en, text_en_by): IPMA's own English from CAP if it exists for this exact text, else ours, else None."""
+    if not pt:
+        return None, None
+    nums = lambda t: sorted(re.findall(r'\d+', t))
+    if pt in PT_EN and nums(PT_EN[pt]) == nums(pt):
+        return PT_EN[pt], 'IPMA (its en-GB text in the CAP message, MeteoAlarm feed)'
+    if pt in PT_EN and pt in OUR_EN:  # IPMA's English changes the figures: ours, and IPMA's noted beside it
+        return OUR_EN[pt], f"incident.meteorologist@web-summit.dinis (our translation; IPMA's own English, '{PT_EN[pt]}', does not carry the same figures)"
+    if pt in OUR_EN:
+        return OUR_EN[pt], 'incident.meteorologist@web-summit.dinis (our translation; figures unchanged)'
+    return None, 'not translated yet'
 CAP_LEVEL = {'Amarelo': 'yellow', 'Laranja': 'orange', 'Vermelho': 'red', 'Verde': 'green'}
 
 
@@ -140,8 +174,10 @@ def warnings():
             changes.append(f"{len(expired)} Lisbon warning(s) expired")
     for x in lsb:
         x['sent_utc'] = sent_for('LSB', x['type'], x['level'], x['start_utc'], x['end_utc'])
+        x['text_en'], x['text_en_by'] = en_for(x['text_pt'])
     for x in elsewhere:
         x['sent_utc'] = sent_for(x['area'], x['type'], x['level'], x['start_utc'], x['end_utc'])
+        x['text_en'], x['text_en_by'] = en_for(x['text_pt'])
     peak = max((RANK[w['level']] for w in lsb), default=0)
     return {
         'about': "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). IPMA's open data carries no issue time: `sent_utc` is the sent time of the CAP message (MeteoAlarm, cap.json) matching the warning's area, type, level and window exactly, or null where none matches (never guessed).",
@@ -298,15 +334,39 @@ def forecast():
     prev = load('forecast.json', {})
     d, h = get('daily'), get('hourly')
     out = dict(prev)
+    tables = {}
+    for key, idk, pk, ek in (('wx_types', 'idWeatherType', 'descWeatherTypePT', 'descWeatherTypeEN'),
+                             ('wind_classes', 'classWindSpeed', 'descClassWindSpeedDailyPT', 'descClassWindSpeedDailyEN'),
+                             ('prec_classes', 'classPrecInt', 'descClassPrecIntPT', 'descClassPrecIntEN')):
+        r = get(key)
+        if r:
+            tables[key] = {str(e[idk]): {'pt': e[pk], 'en': e[ek]} for e in json.loads(r)['data']}
+    dec = lambda key, v: (tables.get(key) or {}).get(str(v)) if v is not None else None
     out['about'] = "IPMA's own forecast for Lisbon (globalIdLocal 1110600): the 5-day daily forecast and the hourly model forecast (mean wind, no gusts). IPMA's wind classes: 1 weak, 2 moderate, 3 strong, 4 very strong."
     if d:
         dd = json.loads(d)
-        out['daily'] = {'source': U['daily'], 'read_utc': NOW, 'updated_local': dd.get('dataUpdate'), 'days': dd.get('data')}
+        days = dd.get('data') or []
+        for d_ in days:
+            for key, field in (('wx_types', 'idWeatherType'), ('wind_classes', 'classWindSpeed'), ('prec_classes', 'classPrecInt')):
+                v = dec(key, d_.get(field))
+                if v:
+                    d_[field + '_pt'], d_[field + '_en'], d_[field + '_source'] = v['pt'], v['en'], U[key]
+        out['daily'] = {'source': U['daily'], 'read_utc': NOW, 'updated_local': dd.get('dataUpdate'), 'days': days}
     if h:
         hh = json.loads(h)
         rows = [{'time_utc': x['dataPrev'][:16] + 'Z', 'wind_mean_kmh': num(x.get('ffVento')), 'wind_dir': x.get('ddVento'),
                  'rain_prob_pct': num(x.get('probabilidadePrecipita')), 'rain_intensity_class': x.get('idIntensidadePrecipita'),
-                 'temp_c': num(x.get('tMed')), 'sea_total_m': num(x.get('marTotal'))} for x in hh if x.get('idPeriodo') == 1]
+                 'temp_c': num(x.get('tMed')), 'sea_total_m': num(x.get('marTotal')),
+                 'weather_type_id': x.get('idTipoTempo')} for x in hh if x.get('idPeriodo') == 1]
+        for r_ in rows:
+            v = dec('wx_types', r_['weather_type_id'])
+            if v:
+                r_['weather_type_pt'], r_['weather_type_en'] = v['pt'], v['en']
+            v = dec('prec_classes', r_['rain_intensity_class'])
+            if v:
+                r_['rain_intensity_pt'], r_['rain_intensity_en'] = v['pt'], v['en']
+        out['code_tables'] = {'weather_type': U['wx_types'], 'wind_speed_class': U['wind_classes'], 'precipitation_intensity_class': U['prec_classes'],
+                              'note': "Decoded with IPMA's own id tables. The hourly feed's idIntensidadePrecipita (rain_intensity_class) is decoded with precipitation-classe.json, assumed the same scale as the daily classPrecInt; IPMA does not say so. idTipoTempo (weather_type_id) uses weather-type-classe.json."}
         upd = hh[0].get('dataUpdate') if hh else None
         # IPMA can change the values without changing dataUpdate (seen 10 Nov, 20:22-21:18): compare the values too
         key = lambda rs: json.dumps([(r['time_utc'], r['wind_mean_kmh'], r['wind_dir']) for r in rs if r['time_utc'] >= '2026-11-11'])
@@ -393,7 +453,12 @@ def cap():
     in_feed = set()
     for x in json.loads(raw).get('warnings', []):
         al = x.get('alert', {})
-        for i in al.get('info', []):
+        infos = al.get('info', [])
+        pt_ = next((i.get('description') for i in infos if i.get('language', '').startswith('pt')), None)
+        en_ = next((i.get('description') for i in infos if i.get('language', '').startswith('en')), None)
+        if pt_ and en_:
+            PT_EN[pt_] = en_
+        for i in infos:
             if not i.get('language', '').startswith('pt'):
                 continue
             m = re.match(r'Aviso (\w+) (.+)$', i.get('event') or '')
@@ -437,6 +502,9 @@ def cap():
         elif 'left_feed_utc' not in m_:
             m_['left_feed_utc'] = NOW; m_['status'] = f'left the feed at {NOW} (time read)'
     others = sorted(OTHER_SEEN.values(), key=lambda m: (m['sent_utc'] or '', m['identifier']))
+    for m_ in msgs:
+        if m_.get('description_pt'):
+            m_['text_en'], m_['text_en_by'] = en_for(m_['description_pt'])
     reads = prev.get('reads_utc', [])
     log = os.environ.get('CAP_POLL_LOG')  # the session's 5-minute poll writes its read times here
     if log and os.path.exists(log):
