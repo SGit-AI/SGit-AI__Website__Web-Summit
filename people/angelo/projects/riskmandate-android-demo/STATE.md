@@ -1,6 +1,6 @@
 # riskmandate-android-demo: state
 
-For the digest: build 2 (full embedded browser, full-screen toggle; fixes Swarm/Universo, links, page full screen) on Android branch angelo/riskmandate-xray-browser 5badada, check 2 and build 3 (hamburger, white band, language, lag) running; cost so far $15.93 in workers (the lead's own session not yet measured).
+For the digest: build 2 (full embedded browser, full-screen toggle) published onto the Android repo's dev 5badada at 23:38 UTC (becomes 0.1.166); the menu, white band and missing English switch are in Silvio's page (a note for him waits on Angelo); a small lag patch and check 2's fixes next; cost so far $20.58 in workers (the lead's own session not yet measured).
 
 Lead: riskmandate-android-demo.pm@PrompTugal.angelo. Branch: project/riskmandate-android-demo. Wake routine: trig_01GnGftTuQdk1LM63LnvaDtn (BRIEF.md on dev).
 
@@ -56,6 +56,12 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - Not possible in WebView: the page's voice input (Web Speech), the brain's blob export, clipboard read. A Trusted Web Activity would give them but loses the watchdog, keep-on control and the separate profile.
 - Decided by default (Angelo can reverse): check 2 and build 3 run in parallel; build 2 is published on check 2's PASS, build 3 follows as 0.1.167 or so.
 
+## Check 2 and build 3 (23:24 to 23:37 UTC)
+- Check 2: PASS for build 2. Findings: (1) downloads open the browser without a tap (XrayScreen.kt:185); (2) Back during the page's own full screen also leaves the app's full screen; (3) multi-file inputs get one file; (4) rotation reloads the page (since build 1; lock the stand's orientation); (5) any script the page loads can read the demo key, as in Chrome (accepted).
+- Lead pushed 5badada onto the Android repo's dev (fast-forward from 683f9f7), 23:38 UTC, under Angelo's go ("publish the changes as soon as they're ready"; "push it" for build 1).
+- Build 3 diagnosis (Chromium with touch, phone and tablet sizes): the menu (a class clash in the page's app.css, and the drawer hidden under 768 px), the white band (html's off-white background below a shorter body) and no English switch on X-Ray (xray.js hides the switch, mounts Gravity with lang 'pt') are all in Silvio's page, the same in Chrome. Lag: mostly the page's weight (X-Ray about 10,000 animated SVG nodes, Universo about 3 fps in software rendering); a small app patch (offscreen pre-raster, renderer priority important), not compiled.
+- Next (decided by default): build 4 applies build 3's patch plus check 2's findings 1 to 3 and runs the gate; then a check; then publish.
+
 ## Check result (pool/riskmandate-android-demo-check)
 - PASS (code review): same tree as the gated build; WebView locked down (no JS bridge, no file access, permissions denied, https only). Findings for later: retry may cut off a slow (>10 s) load; WebSockets and service workers not filtered; Features.kt is conductor.android@'s file (named in For:).
 
@@ -64,6 +70,7 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - pushed-by.mjs knows only dev (see Decided by default).
 
 ## Waiting on Angelo (tier 3)
+- A note for Silvio (his agents dashboard@web-summit.silvio and conductor@web-summit.silvio) with the three page fixes from build3/build.md: the menu's class clash, a dark background on html, the PT/EN switch on X-Ray. Contacting another person's agents is tier 3.
 0. Patch 0002 (Angelo, 11 Nov about 22:20 UTC: "Leave it for now"): allow the X-ray screen in stand mode (pinning keeps visitors in it; the page then reaches openrouter.ai while stand mode is on, against the app's own stand rule). Lead's recommendation: yes, it is what the stand needs; security.android reviews it on the Android side.
 1. Installing a build on stand devices by hand, and anything on a store; signing keys. (Pushing to the Android repo's dev makes its CI build and send the build to its Firebase testers: that is inside Angelo's "publish".)
 
