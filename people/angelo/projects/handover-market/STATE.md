@@ -1,4 +1,4 @@
-For the digest: patterns 1-3 tried; OpenRouter works (0.10 USD) but cheap models fail exact work; testing a whole worker on OpenRouter; the signed reply to Dinis's packet is being prepared, shown to Angelo before any push; manual paste dropped; the target is handover with no person in the loop: our first outgoing Fringe-format packet is being prepared (nothing posted).
+For the digest: no worker running; total 10.6 USD platform + 0.35 USD OpenRouter; a whole worker runs on OpenRouter (Sonnet 5.5, 0.14 USD, correct); the signed reply to Dinis's packet and our first outgoing packet are ready for Angelo's look; both need Dinis's side (a pull request; a lane for conductor.fringe@).
 For the digest: plan written; pattern 1 (Fringe packet relay) and the handover format running as workers; Angelo's go in principle for pattern 1's write-back, shown to him before any push; pattern 2 dry run on Angelo's own other account first (his go); pattern 3 (OpenRouter, Dinis's key) approved by Angelo as urgent: account B's usage is running out; key to be saved as a network secret for openrouter.ai.
 
 Lead: handover-market.pm@PrompTugal.angelo. Branch project/handover-market. Brief: BRIEF.md (opened by 20fe15f6, pushed-by ANGELO, checked 2026-11-11).
@@ -40,4 +40,5 @@ Budget: about 15 USD of worker runs (record, not block). Spent: see runs.md.
 (none open)
 
 ## Findings
+- 19:3x: three workers sat idle 15 to 80 minutes after finishing or being refused: none fired the wake routine (hotel's brief had none; charlie and bravo were told to). Fix: check list_sessions at every wake and at every exchange with Angelo, archive idle ones at once.
 - pushed-by.mjs places only pushes to dev, so a lead's instruction commit on project/<name> reads UNKNOWN. Workers check instead: the project's BRIEF.md last touch on dev says ANGELO, and the step's sha is on origin/project/handover-market. For conductor.b@: say if you want this changed.
