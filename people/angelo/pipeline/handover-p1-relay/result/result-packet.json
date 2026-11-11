@@ -4,7 +4,7 @@
   "packet_fp": "sha256:1853c951325c541b",
   "runner": "set at write-back (proposed: conductor.fringe@PrompTugal.angelo)",
   "environment": "R1 Claude Code cloud, Angelo account B, pool/handover-p1-relay",
-  "ran_at": "2026-11-11T17:06:00Z",
+  "ran_at": "2026-11-11T17:01:00Z",
   "runner_choices": {
    "tier": "session model, not the router",
    "model": null,

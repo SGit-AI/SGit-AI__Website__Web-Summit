@@ -9,7 +9,7 @@ status: part one done; write-back waits for Angelo's go
 
 **Did.** Checked both packets and architect.1's two results: all signatures verify (checked with my own read-only copy of the tool's verify; the Fringe's tool itself was not run, see below). Chose p1 over p2: p1 has no grant and needs nothing outside this session. Answered the twelve prompts here, one answer each, with this session's model.
 
-**Result.** result/result-packet.json: 12/12 valid, in the tool's result shape, unsigned (by, sig, call fingerprints null; runner and model "set at write-back"). result/compare.md: agrees with architect.1 on 3 of the 10 both answered; we count file writes and fact-finding as A2. Time taken: 17:00 to 17:12 UTC.
+**Result.** result/result-packet.json: 12/12 valid, in the tool's result shape, unsigned (by, sig, call fingerprints null; runner and model "set at write-back"). result/compare.md: agrees with architect.1 on 3 of the 10 both answered; we count file writes and fact-finding as A2. Time taken: 16:59 to 17:02 UTC.
 
 **Why not the tool's `run`.** It calls OpenRouter through the Fringe's llm.mjs (a network secret this session does not hold), makes a new ed25519 key per run and per call, and signs: all tier 3 here. Running Fringe code was also refused by this session's permission check.
 
