@@ -1,8 +1,8 @@
 # network-views: state
-For the digest: d1 design running (alpha.large, three stunning concepts for a hand-offs view, at Angelo's word); waiting on Angelo: nothing until the pick; risk: no real market hand-over or local-model run exists to show; cost so far 1 sub-agent (survey, platform cost not reported), 0 workers.
+For the digest: d1 design done (three animated concepts; recommend Orbits, Circuit as its timeline tab), waiting on Angelo's pick (default Orbits at the next wake); gate's lanes check red on project folders, question to conductor.b@; cost so far 5.62 USD and 78k output tokens (1 worker) + 1 sub-agent unreported.
 
 Lead: network-views.pm@PrompTugal.angelo (session_01Xp7gj49w3HhKrhT64Gp1c1). Wake routine: trig_01D39RAzsMdheFWbiBWjttdi (BRIEF.md, b59b01a).
-Last update: 2026-11-11 20:08 UTC.
+Last update: 2026-11-11 20:47 UTC.
 
 ## 1. The old views: what they show, what to keep (all kept unchanged; owner dashboard@)
 - #live (live.js, live3d.js): hexagon graph of who wrote to whom, 48 h, from git. Keep: the "who talks to whom" picture.
@@ -33,10 +33,16 @@ Decided by default, Angelo can reverse: the new view reads the existing records 
 Then Angelo's pick (below tier 3: if he does not pick, decided by default on the designer's recommendation). Then d2 build (collector + view, new files), d3 a small link from the command centre (For: dashboard@).
 
 ## Next
-- d1 design running: alpha.large.worker@, session_01Xp7gj3WbDLr5fQ2fn1DDuA, brief d1-design/brief.md (95ccf113), branch pool/network-views-d1. Three bold concepts (not three layouts of one chart), working animated mocks on a real day's sample data, 390/1280 screenshots, a recommendation. Then Angelo's pick, then d2 build.
-- Worker check of its instruction: pushed-by cannot see project branches, so the brief has it check aa8f579f is ANGELO and 95ccf113 is on project/network-views by this lead.
+- d1 done (pool/network-views-d1, ea82463): d1-design/design.md, mocks mock/a/orbits.htm, mock/b/circuit.htm, mock/c/river.htm, sample-handoffs.json from mock/derive.mjs (69 hand-offs, 66 real, 3 placeholders). Recommends A Orbits (Angelo the sun, rings for conductor, leads, slots, sub-agents; "account B ends here"; OpenRouter, local, market worlds outside; a comet per hand-off), B Circuit as its "Timeline" tab, C's width switch (hand-offs, cost, tokens) inside A.
+- Shown to Angelo for his pick. No pick by the next wake: decided by default A + B tab, Angelo can reverse; then d2 build (collector from derive.mjs into a gitignored handoffs.json, the view in new files), then d3 the nav link (For: dashboard@).
+- Decided by default, Angelo can reverse: d2 does not ask other agents to change habits (Sub-agent: lines, leads' starts in conductor-b/runs.md); those go to conductor.b@ as a request.
+
+## Questions for conductor.b@
+- The gate's check 21 (lanes) is red for project folders: network-views.pm@ has no lane for people/angelo/projects/network-views/**, and pool workers have none for projects/*/<item>/** (d1's a8e2d9d, my 1071f504 and 95ccf113). Recommend: bring them onto dev with "Outside: people/angelo/projects/network-views/**" in your merge commit and ask policy@ for those lanes (as for prod-pipeline, if it is done there).
+- Recommend asking agents for "Sub-agent:" lines and a conductor-b/runs.md row for each lead's start: without them the view lumps sub-agents into one hop and approximates handover-market.pm@'s start.
 
 ## Waiting on Angelo
+- His pick of d1's concepts (not tier 3; default A at the next wake).
 - Nothing tier 3 yet. Note: "done when" needs one market hand-over; none exists. It comes from handover-market.pm@'s p1 write-back, which waits on Angelo's go there, not here.
 
 ## Risks
