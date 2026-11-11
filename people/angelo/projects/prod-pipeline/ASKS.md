@@ -40,3 +40,9 @@
 - **Reads:** A1 (pool/a1-flow-proposal, 991ae24: proposal.md, mock/), A2 (pool/a2-small-screens, 91d6bff: findings.md, proto/, shots/), the project's BRIEF.md (Angelo's words), the prior-art copy (prior-art/fringe-6b079db/).
 - **Brief:** one draft a team member reads cold, on option A (decided by default, Angelo can reverse): one phone screen first (the idea, one picture, what changes, what it needs); A1's option A redrawn within A2's limits (at most a third of the screen for the strip, text at least 12 px, targets at least 44 px, no sideways page scroll), the "Show the flow" toggle on the trace page; screenshots at 320, 390, 740x360 and 1280 px, measured with A2's measure.cjs; the data shape and the open questions from A1. Options B and C go to an appendix of two lines each.
 - **Done when:** team-draft.md, its mocks and screenshots on pool/prod-pipeline-a3; measure.cjs passes on the mocks; the gate prints OK; STATE.md says "ready for Angelo's read".
+
+## A4 and A5: simulate the diagram on small and big pages (asked and started 2026-11-11, about 19:2x)
+- **Angelo, 11 Nov:** "Can you spawn a couple workers to simulate how a few diagrams would look like on various pages from the website, choosing some small and some big pages?"
+- **A4** (small pages): design, large, juliett.large; brief a4-sim-small/brief.md; writes people/angelo/pipeline/prod-pipeline-a4/.
+- **A5** (big pages): design, large, kilo.large; brief a5-sim-big/brief.md; writes people/angelo/pipeline/prod-pipeline-a5/.
+- Both: A3's design on real Tech Fringe pages, traces from git history only, screenshots at 320, 390, 740 x 360 and 1280, A2's check; a rule for tiny traces (A4) and for huge ones (A5). Done when sim.md is on their pool branch and STATE.md says "ready for Angelo's read".
