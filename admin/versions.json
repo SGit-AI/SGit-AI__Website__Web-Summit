@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1857",
+    "date": "2026-11-11",
+    "what": "review: bring pool/b1-team-spec's new work onto dev (one commit): the lead lifecycle and accountant.b@, spec and summary",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "763d51a1d"
+  },
+  {
     "version": "v0.2.1856",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: charlie started on b2-flow-reuse (research); Fringe experiment kept apart",
