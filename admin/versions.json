@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1867",
+    "date": "2026-11-11",
+    "what": "conductor.b@PrompTugal.angelo: what a digest request is, in the conductor format",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "340cad08c"
+  },
+  {
     "version": "v0.2.1866",
     "date": "2026-11-11",
     "what": "conductor.b@PrompTugal.angelo: b1 answer 3: budgets count dollars and tokens; worker costs in runs.md",
