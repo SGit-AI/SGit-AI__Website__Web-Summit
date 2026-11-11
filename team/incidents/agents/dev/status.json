@@ -1,7 +1,7 @@
 {
   "agent": "incident.dev@web-summit.dinis",
-  "state": "blocked on the new repository (add_repo refused; 'Dinis:' ask); the pinned 2-minute blog poll running until ~23:35 (one alert, 21:32, not a new decision); dashboard code waits for the new repository",
-  "last_wake": "2026-11-10T21:42Z",
+  "state": "the websummit.com poll stopped (05:27:38) at incident.conductor@'s interim hold (Web Summit's Terms 48.2 and 52.1); no automated request to websummit.com until Dinis decides; still blocked on the new repository",
+  "last_wake": "2026-11-11T05:42Z",
   "jobs": [
     "J1 (tonight): measure, do not guess: why this repository's gate takes 110 s in CI (run 42879607949, validate step) against 7.8 s locally. Hypothesis in PIPELINE.md section 0. Report in status; change nothing in this repository's CI without the conductor's and Dinis's yes.",
     "J2 (tonight): the data lane prototype (PIPELINE.md section 4): a public vault for WS-214, one connector writing facts.json to it, one page under team/incidents/ reading it with the pinned sg-vault library; measure write-to-read latency end to end. Vault keys never committed; only a public read key, if Dinis agrees.",
@@ -25,7 +25,8 @@
     "21:20 the lead's checks (21:03): (1) two dates per post, each named with its read time: the listing's Post.modified (19:58 for 'Important event update') and the post page's JSON-LD dateModified (19:25); both shown on the dashboard when they differ. (2) robots.txt read and obeyed on every run (Disallow: /api/ only); websummit.mjs --quick (/blog/ only) and websummit-poll.sh: every 2 min in its own worktree, alert -> commit and release at once. Any new sitemap URL now alerts once (first: lis26-homepage-components, 21:13; the sitemap's set changes between reads)",
     "21:30 security.repos@'s MEDIUM on websummit-poll.sh (report 2026-11-10T2130Z) fixed before the poll ever ran: the code is pinned at start (a copy, sha256 printed), no git command in the loop (no fetch, reset, commit or push), the watch file is a scratch copy; on an alert it stops and this session commits with a fixed subject, the site's words quoted in the body only",
     "21:20 the pinned poll running (websummit-poll.sh from 6260b8a3, websummit.mjs sha256 defbafe7df8d4d89, every 2 min, /blog/ only, robots.txt obeyed): no alert so far; an alert goes to incident.conductor@ at once by message, for the new repository's data",
-    "21:33 first poll alert: 'Important event update' modified 20:06 in the /blog/ listing (19:58 in the cached category listing; the page's JSON-LD still 19:25). Sent to incident.conductor@ at once. Its text (read 21:33) still says Day 2 will not take place and Web Summit 'aims to proceed with Day 3 (Thursday, November 12) as planned'. The watch now keeps the newest modified across listings (with each listing's value) and each recent post's text and its sha256, alerting on a text change"
+    "21:33 first poll alert: 'Important event update' modified 20:06 in the /blog/ listing (19:58 in the cached category listing; the page's JSON-LD still 19:25). Sent to incident.conductor@ at once. Its text (read 21:33) still says Day 2 will not take place and Web Summit 'aims to proceed with Day 3 (Thursday, November 12) as planned'. The watch now keeps the newest modified across listings (with each listing's value) and each recent post's text and its sha256, alerting on a text change",
+    "05:27 the 2-minute poll stopped at the lead's interim hold (incident.sources@ read Web Summit's Terms at 05:25: 48.2 forbids bots, scripts, scrapers or AI agents on its sites; 52.1 archiving, storing, summarising or scraping their content). Record sent to incident.sources@: 244 poll reads, 10 Nov 21:18:48 to 11 Nov 05:27:31, every 2 min, ~490-510 requests (estimated: 2 per read plus a few post pages; not logged per request), plus ~150 from full and manual reads 19:43-21:40; ~640-660 in all; robots.txt obeyed; the Terms not read before the poll started. Script and history kept as they are"
   ],
   "next": [
     "once the new repository is attached: point websummit-poll.sh at tools/ and incidents/2026-11-10-storm-charles/ there",
@@ -36,11 +37,12 @@
   ],
   "asks": [
     "Dinis: attach PrompTugal/PrompTugal__News__Storm-Charles to incident.dev@'s session with push (my add_repo call at 21:19 was refused by the session's permission check, auto mode: 'access added as a means'), or allow mcp__claude-code-remote__add_repo for it. Until then no change to the new site's code (app/, build) from me",
+    "Dinis: Web Summit's Terms (48.2, 52.1) and our websummit.com watch: (1) may any automated read of websummit.com resume (the poll is stopped, at the lead's hold); (2) the repository holds the blog posts' titles, excerpts, dates and the full text of 'Important event update' (data/watch/websummit.json here and in the new repository) and quotes in two of my commit messages: keep or remove? (3) the dashboard page reads Web Summit's public Bluesky posts live (Bluesky's public API, not websummit.com): keep or stop?",
     "Dinis: incident.conductor@ asked me to rewrite my own hourly wake (trig_013pf4ccvnRJEMCPr82tzs8g) for the new repository. Changing a scheduled task at another session's request is yours to decide: say so and I will; until then each wake follows the lead's routing",
     "incident.conductor@ and Dinis: a yes to drop `filter: blob:none` from the validate job's checkout in .github/workflows/deploy-pages.yml (one line). Expected: the gate step from ~90 s to ~20 s, about 70 s off every push (median 3 min 56 s to about 2 min 45 s). Not changed: CI is not mine to change without that yes",
     "Dinis: OPEN_ROUTER_KEY is already set in incident.dev@'s environment (one 20-token test call through llm.mjs at 20:48: ok, $0.0000038). Your yes still needed on the daily cap (LLM_DAILY_CAP_USD; 5 USD until you say) and on which sessions get the key"
   ],
-  "updated": "2026-11-10T21:45Z",
+  "updated": "2026-11-11T05:45Z",
   "by": "incident.dev@web-summit.dinis (done, next, asks, baseline); jobs by incident.conductor@web-summit.dinis",
   "baseline": {
     "what": "push to deployed on web-summit.sgit.ai (deploy-pages, push to dev): run created to run completed, as GitHub reports it",
