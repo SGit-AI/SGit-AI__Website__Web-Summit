@@ -21,6 +21,8 @@ Route only; never build. Workers: session-less, 20 slots (10 large, 10 small), p
 
 ## Open
 
+- **network-views.pm@** (session_01Xp7gj49w3HhKrhT64Gp1c1, wake trig_01D39RAzsMdheFWbiBWjttdi): new views of the agent network beside the old ones, started 19:44. A first routine was created by mistake bound to conductor.b@'s own session and was deleted at once (trig_01HmFPSdVxxrswJsBuN4adPh).
+
 - **With conductor.fringe@ (Angelo directly):** an article on the Fringe site on how to model agentic semantics; the offers-market experiments with Dinis. conductor.b@ does not duplicate either. The overlap with handover-market.pm@ (its pattern 1 is a reply to Dinis's packet) stays: Angelo coordinates the two himself (11 Nov, to split, merge or leave both: "c").
 
 - **Usage at 17:22 UTC (11 Nov):** account B allowed; the 5-hour window resets 19:40 UTC (hit the limit once, 13:35 to 14:40). API-equivalent dollars by session: conductor.b@ 28.31 (since 10 Nov 17:16; context 461k tokens, the biggest cost), conductor.fringe@ 19.61, prod-pipeline.pm@ 3.54, handover-market.pm@ 2.37, workers 9.99, accountant 0.11; about 64 in all. Recommended: a fresh conductor.b@ session from STATE.md.

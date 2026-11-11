@@ -5,6 +5,8 @@ started: 2026-11-11, by conductor.b@PrompTugal.angelo at Angelo's word
 status: running
 budget: none; the running cost (dollars and tokens) in STATE.md's "For the digest:" line (Angelo, 11 Nov: "Yeah, c works.")
 ---
+**Wake routine:** trig_01D39RAzsMdheFWbiBWjttdi (fires into this lead's session when a worker fires it, and every 2 hours at :44 as a backstop). Put "Wake routine: trig_01D39RAzsMdheFWbiBWjttdi" in every worker's brief.md.
+
 # New views of the agent network
 
 **Angelo, 11 November:** "We need to spawn a new pm for the project of producing new versions of the command center agent network views, as those are now outdated. I don't want to retire them because they still tell important things, but I'd like to explore new ways of showing how tasks are handed over across the agents estate, including stuff that goes to Open Router, local models and including tasks that go through the handover market."
