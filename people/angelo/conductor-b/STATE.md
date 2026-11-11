@@ -10,6 +10,8 @@ last digest: 2026-11-11T11:25Z (team updates: WS-215 Lisbon Fringe, the storm, w
 
 ## Open
 
+- **Usage:** account B hit its 5-hour limit about 13:35 UTC (reset 14:40). alpha's b3 run stopped before any commit; restarted on bravo at 14:41. The 13:58 digest fire made no commit; the accountant's baseline run (13:01) made none either (its session had no repository attached): check the scheduled sessions can clone and push.
+
 - **Scheduled:** digest.b@ hourly at :58 (trig_019P5mmH76wN24vNXQTvbU5C) and accountant.b@ every 4 hours at :58 (trig_01CvoEzp8UjqACZ2EXV3hnFW), both on the smaller model; their results on pool/ops-digest and pool/ops-accounts. Start each digest from digest.md.
 - **Angelo's open questions (11 Nov):** who allocates workers (conductor.b@ only, or leads too); planning hand-overs to other team members' accounts before usage runs out ("We should plan and examine how to best do these types of handovers, using our workers approach.").
 

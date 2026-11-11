@@ -13,8 +13,9 @@ summary: One line per worker session conductor.b@ starts, appended, never rewrit
 | 2026-11-11 12:06 | charlie.large.worker@PrompTugal.angelo | b2-flow-reuse | research | session_01Xp7gj4DGwdGSVFWsyRowii (from bb753865) | ~12:14 | done: research.md (build on the newsroom's piece drawing, fed by our records in ws-trace/1); reviewed onto dev; session archived; cost 2.10 USD API-equivalent |
 | 2026-11-11 12:28 | prod-pipeline.pm@PrompTugal.angelo (a lead, long session) | project prod-pipeline | lead | session_01Xp7gj4eqarFrTq3M9S7GjH (from 94dfabc6) | | running |
 | 2026-11-11 12:58 | digest.b@PrompTugal.angelo (scheduled task trig_019P5mmH76wN24vNXQTvbU5C, hourly at :58, smaller model, a fresh session per fire) | ops-digest | digest | first fire 13:58 | | scheduled |
-| 2026-11-11 12:58 | accountant.b@PrompTugal.angelo (scheduled task trig_01CvoEzp8UjqACZ2EXV3hnFW, every 4 hours at :58, smaller model, a fresh session per fire) | ops-accounts | accountant | fired now for a baseline (cse_01Xp7gj5JYEeQkQpi9s74yB7) | | running |
-| 2026-11-11 13:34 | alpha.large.worker@PrompTugal.angelo | b3-team-offers | spec | session_01Xp7gj72uwKSo14DwxG8SnC (from b5593420) | | running |
+| 2026-11-11 12:58 | accountant.b@PrompTugal.angelo (scheduled task trig_01CvoEzp8UjqACZ2EXV3hnFW, every 4 hours at :58, smaller model, a fresh session per fire) | ops-accounts | accountant | fired now for a baseline (session_01Xp7gj5JYEeQkQpi9s74yB7) | 13:01 | no commit (the fired session had no repository attached; to check); cost 0.11 USD |
+| 2026-11-11 13:34 | alpha.large.worker@PrompTugal.angelo | b3-team-offers | spec | session_01Xp7gj72uwKSo14DwxG8SnC (from b5593420) | ~13:35 | failed: account B's 5-hour usage limit (reset 14:40 UTC) before any commit; cost 0.71 USD API-equivalent; archived |
+| 2026-11-11 14:41 | bravo.large.worker@PrompTugal.angelo | b3-team-offers | spec (second try) | session_01Xp7gj5B3HESJSgjvfaPKkR (from b5593420) | | running |
 
 **Costs** (Angelo, 11 Nov, "Both?"): each finished worker's row gives the platform's API-equivalent dollars; tokens are in people/angelo/ledger/.
 
