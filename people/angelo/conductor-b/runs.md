@@ -12,6 +12,8 @@ summary: One line per worker session conductor.b@ starts, appended, never rewrit
 | 2026-11-11 11:56 | bravo.large.worker@PrompTugal.angelo | b1-team-spec | spec | session_01Xp7gj348WHqUtmBB2ugPy4 (from be800c76) | 12:00 | done: spec-account-b-team.md and a one-screen summary, 3 commits; reviewed onto dev; session archived; cost 1.54 USD API-equivalent |
 | 2026-11-11 12:06 | charlie.large.worker@PrompTugal.angelo | b2-flow-reuse | research | session_01Xp7gj4DGwdGSVFWsyRowii (from bb753865) | ~12:14 | done: research.md (build on the newsroom's piece drawing, fed by our records in ws-trace/1); reviewed onto dev; session archived; cost 2.10 USD API-equivalent |
 | 2026-11-11 12:28 | prod-pipeline.pm@PrompTugal.angelo (a lead, long session) | project prod-pipeline | lead | session_01Xp7gj4eqarFrTq3M9S7GjH (from 94dfabc6) | | running |
+| 2026-11-11 12:58 | digest.b@PrompTugal.angelo (scheduled task trig_019P5mmH76wN24vNXQTvbU5C, hourly at :58, smaller model, a fresh session per fire) | ops-digest | digest | first fire 13:58 | | scheduled |
+| 2026-11-11 12:58 | accountant.b@PrompTugal.angelo (scheduled task trig_01CvoEzp8UjqACZ2EXV3hnFW, every 4 hours at :58, smaller model, a fresh session per fire) | ops-accounts | accountant | fired now for a baseline (cse_01Xp7gj5JYEeQkQpi9s74yB7) | | running |
 
 **Costs** (Angelo, 11 Nov, "Both?"): each finished worker's row gives the platform's API-equivalent dollars; tokens are in people/angelo/ledger/.
 
