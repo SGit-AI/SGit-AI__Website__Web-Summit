@@ -175,3 +175,29 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 - **Confidence: medium, up from low to medium.**
 - **The headline fact has not changed.** Lisbon's red wind and red rain stand. "Ainda atinge a zona de Lisboa" (it still reaches the Lisbon area) is IPMA's own caution. Until IPMA sends a CAP update lowering or shortening a Lisbon warning, the site should say "IPMA's forecasters expect the strongest winds south of Lisbon; Lisbon's red warnings stand", not "the storm misses Lisbon".
 - **Watching (question 3):** the 5-minute CAP poll flags any Lisbon message at once. A downgrade (red to orange) or a shorter window is the fact that would move the headline.
+
+## 8. Madeira's rain, and where CHARLES came from (01:55 UTC 11 Nov; leads from incident.wikipedia@, checked at source)
+
+### 8a. Madeira's measured rain: FACT, verified at IPMA
+
+- incident.wikipedia@'s lead (Portuguese Wikipedia, citing DN Madeira): Chão do Areeiro had 133.9 mm in 6 h by 22:00 Tuesday.
+- **At source it stands exactly.** At IPMA station **1210973, "Madeira, Areeiro"**, the hourly rain values labelled 17:00 to 22:00 UTC on 10 Nov (0.8 + 4.0 + 7.1 + 29.7 + 47.6 + 44.7) sum to **133.9 mm**.
+- It went on raining. By the 01:46 read, the largest 6 hours at the same station is **230.5 mm** (hours labelled 20:00 to 01:00).
+- Other stations: Santo da Serra 124.4 mm, Pico do Areeiro 123.9 mm and Pico Alto 116.7 mm over the same hours.
+- Source: [IPMA observations](https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json), now kept hourly in `madeira.json`.
+- For scale: IPMA's communiqué no. 2 forecast more than 100 mm in 12 h in places.
+
+### 8b. Where CHARLES came from: HYPOTHESIS
+
+**Established (facts, from the [US National Hurricane Center's archived Tropical Weather Outlooks](https://www.nhc.noaa.gov/archive/text/TWOAT/2026/), read 01:50 UTC):**
+- **2 Nov, 11:38 UTC:** NHC expects a low to form "along a weakening frontal boundary a few hundred miles northeast of the Bahamas" (7-day formation chance 20%). The 1 Nov outlooks expected nothing.
+- **3 to 5 Nov:** the chance rises to **50%** (4 Nov), for possible subtropical development south of Bermuda.
+- **6 Nov, 11:37 UTC:** the system is labelled **AL94** ("Invest 94L"), a gale-force non-tropical low south of Bermuda. NHC says it will move east and "become absorbed by a new non-tropical low pressure system to its east". Wikipedia's "7 Nov" for 94L is a day late against NHC's own text.
+- **7 Nov, 23:21 UTC:** last mention: "merges with a frontal system over the next day or two". **8 Nov, 05:16 UTC:** dropped ("Tropical cyclone formation is not expected").
+- **9 Nov, 13:17 UTC:** IPMA names CHARLES in communiqué no. 1, expecting it north-west of Madeira at 00 UTC on 11 Nov. As read by the newsroom, the communiqué says nothing of where the low came from.
+
+**Hypothesis:** the "new non-tropical low to its east" that absorbed AL94 is the system IPMA named CHARLES, or one that became part of it.
+- **For:** the timing (absorption forecast "early next week", that is 9 to 10 Nov, the days CHARLES was named and tracked), the direction (east across the subtropical Atlantic, towards 34°N 21°W) and the type (non-tropical lows, fronts).
+- **Against, or not established:** no source read says so. NHC never names the absorbing low. IPMA does not say where CHARLES came from. Wikipedia's own editor's note says the sources do not state it. The subtropical Atlantic often holds several lows at once. **Not established.**
+
+**What it means for "how far ahead could we have known" (analysis):** if the hypothesis holds, a precursor was visible in public outlooks about **9 days ahead** (2 Nov), and as a named invest about **5 days ahead** (6 Nov). That would be a weak signal, not a warning. NHC's outlooks are about tropical formation over the western Atlantic, not about impact in Portugal. The first impact signal for Portugal stays IPMA's communiqué no. 1 (about 47 h ahead). The red wind came about 28.7 h ahead.

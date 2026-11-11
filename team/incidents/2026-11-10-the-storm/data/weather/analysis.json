@@ -253,6 +253,70 @@
    ],
    "hypothesis_confidence": "medium (was low to medium)",
    "headline_guidance": "IPMA's forecasters expect the strongest winds south of Lisbon; Lisbon's red warnings stand (until a CAP update says otherwise)"
+  },
+  {
+   "written_utc": "2026-11-11T01:55Z",
+   "label": "fact and hypothesis",
+   "madeira_rain_fact": {
+    "station": "1210973 Madeira, Areeiro",
+    "mm_6h": 133.9,
+    "hours_labelled": [
+     "2026-11-10T17:00Z",
+     "2026-11-10T22:00Z"
+    ],
+    "later_max_6h_mm": 230.5,
+    "later_hours_labelled": [
+     "2026-11-10T20:00Z",
+     "2026-11-11T01:00Z"
+    ],
+    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
+    "read_utc": "2026-11-11T01:46Z",
+    "lead": "incident.wikipedia@ (pt Wikipedia citing DN Madeira), verified at IPMA"
+   },
+   "origin": {
+    "label": "hypothesis",
+    "established": [
+     {
+      "utc": "2026-11-02T11:38Z",
+      "fact": "NHC: low expected to form along a weakening front NE of the Bahamas; 7-day 20%"
+     },
+     {
+      "utc": "2026-11-04T11:49Z",
+      "fact": "NHC: 7-day formation chance 50%"
+     },
+     {
+      "utc": "2026-11-06T11:37Z",
+      "fact": "NHC labels it AL94; to be absorbed by a new non-tropical low to its east"
+     },
+     {
+      "utc": "2026-11-07T23:21Z",
+      "fact": "NHC last mention: merges with a frontal system in a day or two"
+     },
+     {
+      "utc": "2026-11-08T05:16Z",
+      "fact": "NHC drops it"
+     },
+     {
+      "utc": "2026-11-09T13:17Z",
+      "fact": "IPMA names CHARLES (communiqué no. 1); no origin stated"
+     }
+    ],
+    "source": "https://www.nhc.noaa.gov/archive/text/TWOAT/2026/",
+    "read_utc": "2026-11-11T01:50Z",
+    "hypothesis": "the new non-tropical low that absorbed AL94 is, or became part of, CHARLES",
+    "for": [
+     "timing (absorption 'early next week' = 9-10 Nov)",
+     "eastward track towards 34N 21W",
+     "non-tropical, frontal"
+    ],
+    "against": [
+     "no source says so; NHC never names the absorbing low; IPMA gives no origin; Wikipedia's editor's note says sources don't state it",
+     "several lows coexist in the subtropical Atlantic"
+    ],
+    "status": "not established",
+    "wikipedia_date_note": "NHC labels AL94 on 6 Nov 11:37Z, not 7 Nov",
+    "lead_time_meaning": "if true, a precursor ~9 days ahead (2 Nov) and an invest ~5 days ahead (6 Nov): weak signals, not warnings; first impact signal for Portugal stays IPMA no. 1 (~47 h)"
+   }
   }
  ],
  "next_read_utc": "2026-11-11T02:22Z"

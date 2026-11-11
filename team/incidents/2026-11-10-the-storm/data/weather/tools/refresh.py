@@ -43,6 +43,7 @@ AREA_CAP = {'AVR': 'Aveiro', 'BJA': 'Beja', 'BRG': 'Braga', 'BGC': 'Bragança', 
             'STM': 'Santarém', 'STB': 'Setúbal', 'VCT': 'Viana do Castelo', 'VRL': 'Vila Real', 'VIS': 'Viseu',
             'ACE': 'Açores - Grupo Central', 'AOC': 'Açores - Grupo Ocidental', 'AOR': 'Açores - Grupo Oriental',
             'MCN': 'Madeira - Costa Norte', 'MCS': 'Madeira - Costa Sul', 'MPS': 'Madeira - Porto Santo', 'MRM': 'Madeira - Regiões Montanhosas'}
+OTHER_SEEN, OTHER_IN_FEED = {}, set()
 CAP_LEVEL = {'Amarelo': 'yellow', 'Laranja': 'orange', 'Vermelho': 'red', 'Verde': 'green'}
 
 
@@ -386,6 +387,9 @@ def cap():
     if raw is None:
         return prev
     seen = {m['identifier']: m for m in prev.get('lisbon_messages', [])}  # every message once seen is kept, never dropped
+    OTHER_SEEN.clear(); OTHER_IN_FEED.clear()
+    for m_ in prev.get('other_messages', []):
+        OTHER_SEEN[m_['identifier'] + '|' + ','.join(m_['areas'])] = m_
     in_feed = set()
     for x in json.loads(raw).get('warnings', []):
         al = x.get('alert', {})
@@ -397,7 +401,15 @@ def cap():
                 for z in i.get('area', []):
                     k = (z.get('areaDesc'), m.group(2), CAP_LEVEL.get(m.group(1)), i['onset'][:16], i['expires'][:16])
                     CAP_INDEX.setdefault(k, []).append(datetime.fromisoformat(al['sent']).astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
-            if 'Lisboa' not in [z.get('areaDesc') for z in i.get('area', [])]:
+            areas = [z.get('areaDesc') for z in i.get('area', [])]
+            if 'Lisboa' not in areas:
+                if m and (CAP_LEVEL.get(m.group(1)) == 'red' or any(a_.startswith('Madeira') for a_ in areas)):
+                    oid = al.get('identifier') + '|' + ','.join(areas)
+                    OTHER_SEEN.setdefault(oid, {'identifier': al.get('identifier'), 'areas': areas, 'sent_utc': al.get('sent'), 'msg_type': al.get('msgType'),
+                                                'event_pt': i.get('event'), 'onset_utc': i.get('onset'), 'expires_utc': i.get('expires'),
+                                                'replaces': [{'identifier': r.split(',')[1], 'sent_utc': r.split(',')[2]} for r in (al.get('references') or '').split(' ') if r.count(',') == 2],
+                                                'source': U['cap'], 'read_utc': NOW})
+                    OTHER_IN_FEED.add(oid)
                 continue
             ident = al.get('identifier')
             in_feed.add(ident)
@@ -419,6 +431,12 @@ def cap():
             m['left_feed_utc'] = NOW
             m['status'] = f'left the feed at {NOW} (time read)'
     msgs = sorted(seen.values(), key=lambda m: (m['sent_utc'] or '', m['identifier']))
+    for oid, m_ in OTHER_SEEN.items():
+        if oid in OTHER_IN_FEED:
+            m_.pop('left_feed_utc', None); m_.pop('status', None); m_['last_seen_utc'] = NOW
+        elif 'left_feed_utc' not in m_:
+            m_['left_feed_utc'] = NOW; m_['status'] = f'left the feed at {NOW} (time read)'
+    others = sorted(OTHER_SEEN.values(), key=lambda m: (m['sent_utc'] or '', m['identifier']))
     reads = prev.get('reads_utc', [])
     log = os.environ.get('CAP_POLL_LOG')  # the session's 5-minute poll writes its read times here
     if log and os.path.exists(log):
@@ -429,7 +447,9 @@ def cap():
     return {'about': f"IPMA's warnings for the Lisbon district as CAP messages (Common Alerting Protocol), read through MeteoAlarm's public feed (https://www.meteoalarm.org). A dated record, not a live feed: read {NOW}. MeteoAlarm: \"{disclaimer}\" Unlike IPMA's open data, each message carries `sent_utc`, the time IPMA issued it, and `replaces`, the message it updates (with that one's sent time). Every message once seen is kept; one no longer in the feed is marked `left_feed_utc` (the time read). Messages that left the feed before this desk's first read (10 Nov 23:51) were never seen. Facts.",
             'terms': {'source': 'https://www.meteoalarm.org', 'feed': U['cap'], 'disclaimer': disclaimer,
                       'record': f'a dated record, not a live feed (read {NOW})', 'publisher_of_the_warnings': 'IPMA (Instituto Português do Mar e da Atmosfera), via MeteoAlarm'},
-            'source': U['cap'], 'read_utc': NOW, 'reads_utc': reads, 'lisbon_messages': msgs}
+            'source': U['cap'], 'read_utc': NOW, 'reads_utc': reads, 'lisbon_messages': msgs,
+            'other_messages_about': 'Beyond Lisbon: every CAP message for a Madeira area, and every red message for any district, kept once seen (from 11 Nov 01:50 UTC; earlier ones that had left the feed were never seen).',
+            'other_messages': others}
 
 
 def second_models(prev):
@@ -467,11 +487,49 @@ def second_models(prev):
     return out
 
 
+def madeira():
+    """IPMA's Madeira stations: hourly rain and mean wind, kept across reads, and each station's largest 6-hour rain."""
+    prev = load('madeira.json', {})
+    raw, meta = get('obs'), get('stations')
+    if raw is None or meta is None:
+        return prev
+    obs = json.loads(raw)
+    names = {str(f['properties']['idEstacao']): (f['properties']['localEstacao'], f['geometry']['coordinates'][::-1]) for f in json.loads(meta)}
+    ids = [k for k, (n, _) in names.items() if n.startswith('Madeira') or 'Funchal' in n or 'Porto Santo' in n]
+    keep = {s_['id']: {r['time_utc']: r for r in s_['hourly']} for s_ in prev.get('stations', [])}
+    out = []
+    for sid in ids:
+        rows = keep.get(sid, {})
+        for hour in sorted(obs):
+            o = (obs[hour] or {}).get(sid)
+            if o:
+                rows[hour + 'Z'] = {'time_utc': hour + 'Z', 'rain_mm': num(o.get('precAcumulada')), 'wind_mean_kmh': num(o.get('intensidadeVentoKM')), 'wind_dir': DIRS.get(o.get('idDireccVento'))}
+        hourly = [rows[k] for k in sorted(rows)]
+        if not hourly:
+            continue
+        best = None
+        for i in range(len(hourly)):
+            win = hourly[max(0, i - 5):i + 1]
+            # six consecutive hourly values (hours labelled h-5 .. h): the 6 h ending at hour h
+            if len(win) == 6 and all(r['rain_mm'] is not None for r in win):
+                t = round(sum(r['rain_mm'] for r in win), 1)
+                if best is None or t > best['mm']:
+                    best = {'mm': t, 'hours_labelled': [win[0]['time_utc'], win[-1]['time_utc']]}
+        out.append({'id': sid, 'name': names[sid][0], 'lat_lon': names[sid][1], 'source': U['obs'], 'read_utc': NOW, 'max_6h_rain': best, 'hourly': hourly})
+    out.sort(key=lambda s_: -((s_['max_6h_rain'] or {}).get('mm') or 0))
+    top = out[0] if out else None
+    if top and top['max_6h_rain'] and top['max_6h_rain'] != ((prev.get('stations') or [{}])[0].get('max_6h_rain')):
+        changes.append(f"Madeira: largest 6 h rain {top['max_6h_rain']['mm']} mm at {top['name']} (hours {top['max_6h_rain']['hours_labelled'][0][8:13]}-{top['max_6h_rain']['hours_labelled'][1][8:13]})")
+    return {'about': "IPMA's hourly station observations in Madeira (rain in mm per hour, mean wind), kept across reads (the feed holds 24 hours), sorted by each station's largest rain over six consecutive hourly values. Facts.",
+            'source': U['obs'], 'stations_source': U['stations'], 'read_utc': NOW, 'stations': out}
+
+
 def main():
     k = cap()  # first: warnings() takes each warning's issue time (sent_utc) from it
     w, c, s, a, f = warnings(), communiques(), stations(), airport(), forecast()
     f['second_models'] = second_models(f.get('second_models'))
-    for name, obj in (('warnings.json', w), ('communiques.json', c), ('stations.json', s), ('airport.json', a), ('forecast.json', f), ('cap.json', k)):
+    mad = madeira()
+    for name, obj in (('warnings.json', w), ('communiques.json', c), ('stations.json', s), ('airport.json', a), ('forecast.json', f), ('cap.json', k), ('madeira.json', mad)):
         if obj:
             save(name, obj)
     # gusts against the forecast, now
