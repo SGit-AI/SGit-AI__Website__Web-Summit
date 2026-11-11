@@ -1,6 +1,6 @@
 {
  "about": "Every source incident.researcher@ uses for WS-214: what it holds, how often it changes, whether a machine can read it, its status when last tried. parser_ask = the part we ask incident.dev@ to parse.",
- "updated": "2026-11-11T07:35Z",
+ "updated": "2026-11-11T13:19Z",
  "sources": [
   {
    "id": "websummit-blog",
@@ -536,6 +536,17 @@
    "reuse": "attribution",
    "reuse_basis": "official; to verify",
    "parser_ask": "find the JSON the portal loads; take only counts by district, type and time"
+  },
+  {
+   "id": "ip-alert",
+   "url": "https://www.infraestruturasdeportugal.pt/pt-pt/alerta-condicoes-meteorologicas-adversas",
+   "holds": "IP's alert on rail and road measures for the storm",
+   "changes": "on update",
+   "machine_readable": "partly: HTML",
+   "status": "200",
+   "read": "2026-11-11T13:19Z",
+   "reuse": "no",
+   "reuse_basis": "terms forbid reproduction without written consent: paraphrase and link only"
   }
  ],
  "platforms_without_login": {

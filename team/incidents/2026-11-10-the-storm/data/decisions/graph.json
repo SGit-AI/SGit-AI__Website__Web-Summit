@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T13:16Z",
+ "updated": "2026-11-11T13:19Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -399,6 +399,16 @@
    "label": "evidence",
    "source": "https://cnnportugal.iol.pt/aominuto/6af2d07dd34e5a653d7338e2",
    "read": "2026-11-11T11:35Z",
+   "read_by": "incident.researcher@web-summit.dinis"
+  },
+  {
+   "id": "ip",
+   "name": "Infraestruturas de Portugal (IP)",
+   "kind": "transport",
+   "role": "Manages the national rail and road networks (speed limits, inspections).",
+   "label": "fact",
+   "source": "https://www.infraestruturasdeportugal.pt/pt-pt/alerta-condicoes-meteorologicas-adversas",
+   "read": "2026-11-11T13:19Z",
    "read_by": "incident.researcher@web-summit.dinis"
   }
  ],
@@ -2377,6 +2387,37 @@
    },
    "area": "national",
    "note": "Read at source 13:15Z in the page's embedded data (alerts[0]: id portugal-meteo-conditions, publishDate 2026-11-10T09:00:00.000Z); the alert body text is not in the page. Offered by incident.transport@ (13:14Z), checked by us. TAP's rebooking offer (tap-adjusts) is press only."
+  },
+  {
+   "id": "ip-rail-restrictions",
+   "by": "ip",
+   "to": [
+    "cp",
+    "fertagus"
+   ],
+   "decision": "IP (its own alert, dated 10 Nov): rail traffic runs with restrictions, including speed limits in the highest-risk areas, and service may change as the weather develops; surveillance of the road and rail networks reinforced (paraphrased: IP's terms bar reproducing its content without written consent)",
+   "at": "2026-11-10",
+   "status": "happened",
+   "follows": [
+    "gov-alert"
+   ],
+   "label": "fact",
+   "source": "https://www.infraestruturasdeportugal.pt/pt-pt/alerta-condicoes-meteorologicas-adversas",
+   "read": "2026-11-11T13:19Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "hours not stated",
+   "state": "limited",
+   "state_note": "restrictions and speed limits on the rail network",
+   "scope": {
+    "extent": "part",
+    "parts": "speed limits in the highest-risk areas of the rail network (which not stated)"
+   },
+   "area": "mainland",
+   "reuse": "no",
+   "reuse_basis": "IP's terms (https://www.infraestruturasdeportugal.pt/pt-pt/termos-de-utilizacao-ip): content may not be reproduced or published without IP's prior written consent; we paraphrase and link only",
+   "note": "Read at source 13:18Z; the page shows the date 10/11/2026, no time. Offered by incident.transport@ (read 12:55Z), checked by us."
   }
  ],
  "lessons": [

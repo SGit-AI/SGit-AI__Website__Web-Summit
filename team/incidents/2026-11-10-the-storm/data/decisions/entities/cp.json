@@ -1,7 +1,7 @@
 {
  "entity": "cp",
  "about": "Every decision in graph.json about cp: who decided, when published, when it takes effect, the exact address, the time read, fact or evidence. Generated from graph.json by incident.researcher@web-summit.dinis; graph.json is the source of truth.",
- "updated": "2026-11-11T09:30Z",
+ "updated": "2026-11-11T13:19Z",
  "decisions": [
   {
    "edge": "cp-ops",
@@ -60,6 +60,17 @@
     "extent": "unknown",
     "parts": "\"constrangimentos\": which lines not stated"
    }
+  },
+  {
+   "edge": "ip-rail-restrictions",
+   "decision": "IP: rail runs with restrictions, incl. speed limits in high-risk areas; service may change (paraphrased)",
+   "decided_by": "Infraestruturas de Portugal",
+   "published_utc": "2026-11-10",
+   "address": "https://www.infraestruturasdeportugal.pt/pt-pt/alerta-condicoes-meteorologicas-adversas",
+   "read": "2026-11-11T13:19Z",
+   "label": "fact",
+   "state": "limited",
+   "reuse": "no"
   }
  ],
  "open": [
