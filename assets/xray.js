@@ -95,6 +95,46 @@
         } catch (e) { return { status: 'failed', why: String((e && e.message) || e) } }
     }
 
+    // the live X-ray for a name not X-rayed yet (WS-191): a claude.ai link that carries the prompt; the answer's "ABP
+    // ANSWERS" block is the format /abp-make/'s paste box reads (assets/abp-make.js, parsePasted)
+    function claudeXrayUrl(c) {
+        const prompt = `X-ray ${c} for RiskMandate, in under a minute. Use web search.
+
+Rules: public facts only, each with its source link. Nothing about private individuals. If you cannot find something, write "not found"; never guess. Plain words, British spelling, no em-dashes.
+
+RiskMandate's words: Reach is what an AI agent can access or affect. Mandate is what it was asked to do. The gap is reach beyond the mandate.
+
+Answer in exactly this format, and keep it short:
+
+AGENTS
+- each AI agent or assistant ${c} publicly uses or sells, one line each, with its source link (or "not found")
+
+CAN REACH: at most 8 plain words
+WAS ASKED TO: at most 8 plain words (our example of sensible limits, not the company's own policy)
+THE GAP: at most 8 plain words
+
+AGENT FOR THE ABP: the one agent above with the biggest gap
+
+ABP ANSWERS
+Suggested answers to the ten questions of an Agent Behaviour Policy (ABP) for that agent. One line each, starting with the number; separate items with "; ". Where the sources say nothing, give a safe default and add "(suggested)".
+1. Which agent is it, and whose? (its name, at ${c})
+2. What is it for, in one sentence?
+3. What can it reach today? (systems, data, tools, money, people it can message; "not sure" for any you do not know)
+4. What must it never do?
+5. What needs a person's yes before it acts?
+6. Who may tell it what to do?
+7. What may it read but never act on?
+8. When it is unsure, what does it do?
+9. How often does it run, and how many tokens may it use each time?
+10. What shows it behaved?
+
+SOURCES
+- every link you used
+
+This is a draft for a conversation at the RiskMandate stand at Web Summit Lisbon, not an audit. RiskMandate: https://riskmandate.ai`
+        return 'https://claude.ai/new?q=' + encodeURIComponent(prompt)
+    }
+
     // ---------- the timeline: events at times, frame functions, and particles along paths ----------
     function Timeline() {
         const ev = [], frames = [], parts = []
@@ -558,16 +598,17 @@ ${ucs.length > 1 ? `<div class="xp-cases xs-cases" role="group" aria-label="Situ
 <p class="xr-links"><a class="xr-btn ghost" href="${up}xray/${slug}/deck/index.html">Open the deck</a><a class="xr-btn ghost" href="${up}xray/${slug}/run/index.html">How this X-ray was made</a><a class="xr-btn ghost" href="${up}xray/how/index.html">What we read and why</a></p>`
                 show(0)
             } else {
-                result.innerHTML = `<h2 class="xr-h">${esc(q)}</h2><p class="xr-tag">We have not looked at this one yet. A team member can ask for it, and it will be ready later.</p><p class="xr-links"><button type="button" class="xr-btn xr-request">Ask us to look at ${esc(clip(q, 40))}</button></p><p class="xr-cap xr-req-status" role="status">${hit && hit.status !== 'prepared' ? `${esc(hit.subject)} is ${esc(hit.status)}, not ready yet. ` : ''}Nothing is sent until you press the button. Only a company name, never a person's name or an email.${prepared.length ? ' Or try one that is ready:' : ''}</p>${prepared.length ? `<div class="xr-chips">${prepared.map(s => `<button type="button" class="xr-chip" data-slug="${esc(s.slug)}"><b>${esc(s.subject)}</b></button>`).join('')}</div>` : ''}`
+                // not X-rayed yet (WS-191, conductor@web-summit.indi, 12 November 2026): the stand view's size, one line and
+                // one big button that opens claude.ai with the X-ray prompt (the stand laptop is signed in; no key in the page).
+                // Pressing it also sends the name to xray@ (WS-194), silently, when this browser holds a team key.
+                const name = clip(q.replace(/\s+/g, ' '), 80)
+                result.innerHTML = `<h2 class="xs-name">${esc(name)}</h2><p class="xr-tag xs-not">We have not X-rayed this company yet.</p>
+<p class="xs-go"><a class="xr-btn xs-abp xs-claude" href="${esc(claudeXrayUrl(name))}" target="_blank" rel="noopener">X-ray it live with Claude ↗</a></p>
+<p class="xs-go"><a class="xr-btn ghost xs-make" href="${up}abp-make/index.html?company=${encodeURIComponent(name)}">Make their ABP</a></p>
+<p class="xr-cap">${hit && hit.status !== 'prepared' ? `${esc(hit.subject)} is ${esc(hit.status)}, not ready yet. ` : ''}Claude opens in a new tab and searches the web. Then paste its answer into Make their ABP.${prepared.length ? ' Or try one we have X-rayed:' : ''}</p>${prepared.length ? `<div class="xr-chips">${prepared.map(s => `<button type="button" class="xr-chip" data-slug="${esc(s.slug)}"><b>${esc(s.subject)}</b></button>`).join('')}</div>` : ''}`
                 result.querySelectorAll('.xr-chip').forEach(bindChip)
-                const rb = result.querySelector('.xr-request'), rs = result.querySelector('.xr-req-status')
-                rb.addEventListener('click', async () => {
-                    rb.disabled = true; rb.textContent = 'Sealing and sending…'
-                    const r = await requestXray(q)
-                    rb.textContent = r.status === 'queued' ? 'Asked' : 'Ask us to look at it'
-                    rb.disabled = r.status === 'queued'
-                    rs.textContent = r.status === 'queued' ? `Asked (${r.id}). We will look at it soon; come back to this page later.` : `Not sent: ${r.why || r.status}.`
-                })
+                let asked = false
+                result.querySelector('.xs-claude').addEventListener('click', () => { if (!asked) { asked = true; requestXray(name).catch(() => {}) } })
             }
             // scroll once the result is drawn: before, the page was too short to scroll and the stand view sat half below the fold
             stage.scrollIntoView({ block: 'start', behavior: 'auto' })

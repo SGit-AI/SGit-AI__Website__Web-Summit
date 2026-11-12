@@ -17,7 +17,7 @@ script: xray
 - **The run is a replay.** The animation replays the real run: the agents in the order they ran, their timings scaled to a few seconds, their citation counts and the cost.
 - **RiskMandate watches; it does not stop.** RiskMandate is never in the request path: read-only by design. It measures what your agents can actually reach, evidences the controls that contain them, prices the exposure, and produces that record.
 
-A name we have not looked at yet is not searched from this page. A team member can ask for it (WS-194). Nothing you type is kept or sent unless you press that button.
+A name we have not X-rayed yet is not searched by this page. Its button opens Claude (claude.ai, in a new tab, on the stand's signed-in laptop) with a short X-ray prompt; Claude searches the web there, and its answer can be pasted into [Make their ABP](../abp-make/index.html). Pressing it also sends the name to the X-ray agent (WS-194) when this browser holds a team key. Nothing you type is kept, and nothing is sent unless you press that button.
 
 How each X-ray is made, step by step, with what every run cost: [What we read and why](how/index.html). Each company's page links to the story of its own run.
 

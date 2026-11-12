@@ -68,8 +68,8 @@
     const STEPS = [{ t: 'Your agent', qs: [0, 1, 5, 8] }, { t: 'What it can do', qs: [2, 6] }, { t: 'What stops it', qs: [3, 4, 7, 9] }]
 
     // ---------- state: in memory only ----------
-    const S = { phase: 'pick', x: null, slug: '', uc: null, agent: null, def: [], full: [], ans: [], pos: 0, step: 0, index: null, open: new Set() }
-    const fresh = () => Object.assign(S, { phase: 'pick', x: null, slug: '', uc: null, agent: null, def: [], full: [], ans: [], pos: 0, step: 0, open: new Set() })
+    const S = { phase: 'pick', x: null, slug: '', company: '', pasted: new Set(), pasteOpen: false, uc: null, agent: null, def: [], full: [], ans: [], pos: 0, step: 0, index: null, open: new Set() }
+    const fresh = () => Object.assign(S, { phase: 'pick', x: null, slug: '', company: '', pasted: new Set(), pasteOpen: false, uc: null, agent: null, def: [], full: [], ans: [], pos: 0, step: 0, open: new Set() })
 
     const loadX = slug => fetch(`${up}data/xray/${encodeURIComponent(slug)}/xray.json`).then(r => { if (!r.ok) throw new Error(r.status); return r.json() })
     // the X-rayed subjects, from the X-ray page's own index (one source of truth: admin/build/xray.mjs writes it)
@@ -86,6 +86,7 @@
             const t = (ag.actions || [])[0] || String(ag.what || '').split(/(?<=\.)\s/)[0]
             d[1] = sentence(plain(t, 15)); if (d[1] !== sentence(t)) S.full[1] = [t]
         } else if (x) d[0] = `Our agent, at ${x.subject}`
+        else if (S.company) d[0] = `Our agent, at ${S.company}`
         if (uc && (uc.reach || []).length) {
             const k = Math.min(3, uc.reach.length), per = Math.floor(15 / k)
             d[2] = uc.reach.slice(0, k).map(r => plain(r.what, per)).join('\n'); S.full[2] = uc.reach.map(r => r.what)
@@ -107,6 +108,7 @@
         name = isNot(a(0)) || !name.trim() ? 'Your agent' : name.trim()
         let owner = rest.join(',').trim().replace(/^(at|run by|by|for|owned by|from)\s+/i, '').replace(/['’]s$/, '').trim()
         if (!owner && x) owner = x.subject
+        if (!owner && S.company) owner = S.company
         const ownerS = owner ? `${owner}'s` : 'Its owner\'s'
         const fromX = !!(x && uc && a(2) === S.def[2])
         const reach = isNot(a(2)) ? [{ t: 'Not known yet', unknown: true }] : (fromX ? uc.reach.map(r => r.what) : items(a(2))).map(t => ({ t, unknown: /not (known|sure)|unknown/i.test(t) }))
@@ -191,7 +193,7 @@
     // ---------- Refine with Claude: a link that carries the maker's prompt and the answers (no iframe: claude.ai refuses framing) ----------
     function claudeUrl() {
         const ans = Q.map((q, i) => `${i + 1}. ${q.q}\n${clipW(String(S.ans[i] || 'not sure').trim() || 'not sure', 600)}`).join('\n\n')
-        const prompt = `You are an ABP maker. Help me finish an Agent Behaviour Policy (ABP) for one of my AI agents. I started it at the RiskMandate stand at Web Summit Lisbon on ${TODAY}${S.x ? `, from the RiskMandate X-ray of ${S.x.subject} (${HOST}xray/${S.x.slug}/)` : ''}.
+        const prompt = `You are an ABP maker. Help me finish an Agent Behaviour Policy (ABP) for one of my AI agents. I started it at the RiskMandate stand at Web Summit Lisbon on ${TODAY}${S.x ? `, from the RiskMandate X-ray of ${S.x.subject} (${HOST}xray/${S.x.slug}/)` : S.company ? `, for an agent at ${S.company}${S.pasted.size ? ', with answers suggested by a live X-ray in Claude' : ''}` : ''}.
 
 The words, from RiskMandate:
 - Reach: what the agent can access or affect today, and how that is known.
@@ -228,12 +230,12 @@ Please:
     const PRIV = '<p class="abpm-priv">Nothing you type is stored or sent anywhere. It stays on this screen until you press Start again.</p>'
     const INFO = '<details class="abpm-i"><summary aria-label="About this page">i</summary><div><p>Enter to go on. Shift+Enter for a new line.</p><p>Nothing you type is stored or sent anywhere. It stays on this screen until you press Start again.</p></div></details>'
 
-    const titleBar = () => `<div class="abpm-bar"><div class="abpm-brand"><b>Make your ABP</b><span>${S.x ? `From the X-ray of <b>${esc(S.x.subject)}</b>${S.agent ? ` · ${esc(cleanName(S.agent.name))}` : ''}` : 'An Agent Behaviour Policy, in ten questions'}</span></div><div class="abpm-bar-acts">${S.phase !== 'pick' && S.x ? '<button type="button" class="abpm-link" data-act="change">Change agent</button>' : ''}${S.phase !== 'pick' ? '<button type="button" class="abpm-link" data-act="restart">Start again</button>' : ''}${INFO}</div></div>`
+    const titleBar = () => `<div class="abpm-bar"><div class="abpm-brand"><b>Make your ABP</b><span>${S.x ? `From the X-ray of <b>${esc(S.x.subject)}</b>${S.agent ? ` · ${esc(cleanName(S.agent.name))}` : ''}` : S.company ? `For <b>${esc(S.company)}</b>` : 'An Agent Behaviour Policy, in ten questions'}</span></div><div class="abpm-bar-acts">${S.phase !== 'pick' && S.x ? '<button type="button" class="abpm-link" data-act="change">Change agent</button>' : ''}${S.phase !== 'pick' ? '<button type="button" class="abpm-link" data-act="restart">Start again</button>' : ''}${INFO}</div></div>`
     const dots = () => `<ol class="abpm-dots" aria-label="Progress">${ORDER.map((qi, p) => `<li><button type="button" data-go="${p}" class="${p < S.pos || S.phase === 'done' ? 'did' : ''}${p === S.pos && S.phase === 'ask' ? ' now' : ''}" aria-label="Question ${p + 1}: ${esc(Q[qi].q)}"${p === S.pos && S.phase === 'ask' ? ' aria-current="step"' : ''}>${p + 1}</button></li>`).join('')}</ol>`
     const srcNote = i => {
         if (!(S.ans[i] === S.def[i] && S.def[i])) return S.def[i] ? '<button type="button" class="abpm-link" data-act="usedef">Put the suggestion back</button>' : ''
         const fromX = S.x && ((i <= 1 && S.agent) || (i === 2 && S.uc && S.def[2] !== SAFE.reach) || (i === 4 && S.def[4] !== SAFE.yes))
-        const say = fromX ? `Suggested from ${esc(S.x.subject)}'s X-ray. Keep it or change it.` : 'A safe default. Keep it or change it.'
+        const say = fromX ? `Suggested from ${esc(S.x.subject)}'s X-ray. Keep it or change it.` : S.pasted.has(i) ? "From Claude's X-ray. Keep it or change it." : 'A safe default. Keep it or change it.'
         return S.full[i] && fromX ? `<details class="abpm-full"><summary>${say} <u>Full text</u></summary><ul>${S.full[i].map(t => `<li>${esc(t)}</li>`).join('')}</ul></details>` : say
     }
     const field = (i, label) => `<div class="abpm-q" data-q="${i}"><p class="abpm-qn">${label}</p><label class="abpm-qt" for="abpm-f${i}">${esc(Q[i].q)}</label>
@@ -241,6 +243,46 @@ Please:
 <p class="abpm-src" data-src="${i}">${srcNote(i)}</p></div>`
     const navBtns = (back, next) => `<div class="abpm-nav"><button type="button" class="abpm-btn ghost" data-act="back"${back ? '' : ' disabled'}>← Back</button><button type="button" class="abpm-btn ghost" data-act="skip">Not sure, skip</button><button type="button" class="abpm-btn" data-act="next">${next}</button></div>`
     const doneActs = () => `<div class="abpm-done-acts"><button type="button" class="abpm-btn" data-act="print">Print or save as PDF</button><button type="button" class="abpm-btn ghost" data-act="copy">Copy as Markdown</button><a class="abpm-btn ghost" data-act="claude" href="${esc(claudeUrl())}" target="_blank" rel="noopener">Refine with Claude ↗</a></div><p class="abpm-status" role="status"></p>`
+
+    // ---------- Paste Claude's X-ray (WS-191): the answer to the X-ray page's live prompt (assets/xray.js, claudeXrayUrl) fills
+    // the suggested answers it can read; simple and forgiving: the numbered lines 1 to 10 after "ABP ANSWERS" ----------
+    const pasteBox = () => S.x ? '' : `<details class="abpm-paste"${S.pasteOpen ? ' open' : ''}><summary>Paste Claude's X-ray <span>${esc(S.pasteMsg || '(optional)')}</span></summary><div><label class="abpm-sr" for="abpm-paste">Claude's X-ray</label><textarea id="abpm-paste" class="abpm-pastet" rows="5" placeholder="Paste Claude's whole answer here"></textarea><p><button type="button" class="abpm-btn" data-act="paste">Fill the answers</button></p><p class="abpm-paste-st" role="status">${esc(S.pasteMsg || '')}</p></div></details>`
+    const LISTQ = new Set([2, 3, 4, 6, 9])
+    const nq = t => String(t || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
+    function parsePasted(text) {
+        let t = String(text || '').replace(/\r/g, '').replace(/\*\*|__|`/g, '').replace(/\u2014|\u2013/g, ', ')
+        const at = t.search(/ABP ANSWERS/i); if (at >= 0) t = t.slice(at).replace(/^.*\n?/, '')
+        const end = t.search(/\n\s*#*\s*SOURCES\b/i); if (end >= 0) t = t.slice(0, end)
+        const out = [], seen = new Set()
+        let cur = -1
+        for (const raw of t.split('\n')) {
+            const line = raw.replace(/^\s*#+\s*/, '').trim(); if (!line) continue
+            const m = line.match(/^(?:Q(?:uestion)?\s*)?(\d{1,2})\s*[.):-]\s*(.*)$/i)
+            if (m && +m[1] >= 1 && +m[1] <= 10 && !seen.has(+m[1] - 1)) { cur = +m[1] - 1; seen.add(cur); out[cur] = m[2]; continue }
+            if (cur >= 0) out[cur] = (out[cur] ? out[cur] + '\n' : '') + line.replace(/^[-*•]\s*/, '')
+        }
+        return out.map((v, i) => {
+            if (v == null) return null
+            let a = v.trim()
+            // drop the question if it was repeated, and an "Answer:" label
+            const two = t => nq(t).split(' ').slice(0, 2).join(' ')
+            const qm = a.match(/^([^?]{4,140}\?)\s*(\([^)]*\))?\s*[:-]?\s*/); if (qm && two(qm[1]) === two(Q[i].q)) a = a.slice(qm[0].length)
+            else if (nq(a).startsWith(nq(Q[i].q))) a = a.slice(Q[i].q.length)
+            a = a.replace(/^(answer|a)\s*:\s*/i, '').replace(/^[:\s-]+/, '').trim()
+            if (LISTQ.has(i)) a = a.split(/\n|;\s+/).map(x => x.replace(/^[-*•]\s*/, '').trim()).filter(Boolean).join('\n')
+            return a || null
+        })
+    }
+    function applyPaste() {
+        const ta = root.querySelector('.abpm-pastet'), got = parsePasted(ta ? ta.value : '')
+        const n = got.filter(Boolean).length
+        S.pasteOpen = true
+        if (n < 3) { S.pasteMsg = "Could not read the ten numbered answers, so the safe defaults stay."; return render() }
+        got.forEach((v, i) => { if (v && !/^not found\W*$/i.test(v)) { S.def[i] = v; S.ans[i] = v; S.pasted.add(i) } })
+        S.pasteMsg = `Filled ${n} of 10 answers from Claude's X-ray. Check each one.`
+        S.pasteOpen = false
+        render()
+    }
 
     // which sections are still to come (dimmed while the interview has not reached them)
     const firstQ = { head: 0, mandate: 1, reach: 2, gap: 4, barriers: 4, licence: 0, rules: 7, provenance: 0 }
@@ -261,7 +303,7 @@ Please:
     // a: Interview: one big question, the ABP building beside it
     function renderA() {
         const qi = ORDER[S.pos], done = S.phase === 'done'
-        root.innerHTML = `${titleBar()}${dots()}<div class="abpm-grid"><section class="abpm-card" aria-live="polite">${done
+        root.innerHTML = `${titleBar()}${pasteBox()}${dots()}<div class="abpm-grid"><section class="abpm-card" aria-live="polite">${done
             ? `<p class="abpm-qn">All ten answered</p><h2 class="abpm-qt">Your draft ABP is ready.</h2><p class="abpm-lede">Print it, save it or copy it. A draft, not in force.</p>${doneActs()}<div class="abpm-nav"><button type="button" class="abpm-btn ghost" data-act="back">← Change an answer</button></div>`
             : field(qi, `Question ${S.pos + 1} of 10`) + navBtns(S.pos > 0, S.pos === 9 ? 'Finish ✓' : 'Next →')}</section>
 <aside class="abpm-side" aria-label="Your ABP, as it builds"><div class="abpm-doc">${docHtml(model(), pending)}</div></aside></div>`
@@ -283,7 +325,7 @@ Please:
             if (qi === active) return `<div class="abpm-inline now">${field(qi, `Question ${p + 1} of 10`)}${navBtns(p > 0, p === 9 ? 'Finish ✓' : 'Next →')}</div>`
             return `<button type="button" class="abpm-inline ${p < S.pos || done ? 'did' : 'todo'}" data-go="${p}"><span class="abpm-qn">Question ${p + 1}</span> <b>${esc(Q[qi].q)}</b>${p < S.pos || done ? `<span class="abpm-ans">${esc(clipW(String(S.ans[qi] || 'not sure').replace(/\n/g, '; '), 140))}</span><span class="abpm-ed">Change</span>` : ''}</button>`
         }
-        root.innerHTML = `${titleBar()}<div class="abpm-sticky">${dots()}${done ? doneActs() : ''}</div><article class="abpm-doc abpm-build"><p class="abpm-banner">${esc(m.banner)}</p><h1 class="abpm-dtitle">${esc(m.title)}</h1>${m.sections.map(s => `<section class="abpm-sec${pending(s.id) ? ' pending' : ''}" data-sec="${s.id}">${s.h ? `<h2>${esc(s.h)}</h2>` : ''}${(qsIn[s.id] || []).map(qBlock).join('')}<div class="abpm-part">${s.blocks.map(blockHtml).join('')}</div></section>`).join('')}</article>${PRIV}`
+        root.innerHTML = `${titleBar()}${pasteBox()}<div class="abpm-sticky">${dots()}${done ? doneActs() : ''}</div><article class="abpm-doc abpm-build"><p class="abpm-banner">${esc(m.banner)}</p><h1 class="abpm-dtitle">${esc(m.title)}</h1>${m.sections.map(s => `<section class="abpm-sec${pending(s.id) ? ' pending' : ''}" data-sec="${s.id}">${s.h ? `<h2>${esc(s.h)}</h2>` : ''}${(qsIn[s.id] || []).map(qBlock).join('')}<div class="abpm-part">${s.blocks.map(blockHtml).join('')}</div></section>`).join('')}</article>${PRIV}`
         after(done ? null : `#abpm-f${active}`)
         const now = root.querySelector('.abpm-inline.now'); if (now && S.pos > 0) now.scrollIntoView({ block: 'start', behavior: 'auto' })
     }
@@ -294,7 +336,7 @@ Please:
     // c: Story: three steps, the questions grouped, then the finished ABP
     function renderC() {
         const done = S.phase === 'done', st = STEPS[S.step], answered = done ? 10 : STEPS.slice(0, S.step).reduce((k, s) => k + s.qs.length, 0)
-        root.innerHTML = `${titleBar()}<ol class="abpm-steps">${[...STEPS, { t: 'Your ABP' }].map((s, k) => `<li class="${(done ? 3 : S.step) === k ? 'now' : k < (done ? 3 : S.step) ? 'did' : ''}"><span>${k + 1}</span>${esc(s.t)}</li>`).join('')}</ol><p class="abpm-count">${answered} of 10 answered</p>${done
+        root.innerHTML = `${titleBar()}${pasteBox()}<ol class="abpm-steps">${[...STEPS, { t: 'Your ABP' }].map((s, k) => `<li class="${(done ? 3 : S.step) === k ? 'now' : k < (done ? 3 : S.step) ? 'did' : ''}"><span>${k + 1}</span>${esc(s.t)}</li>`).join('')}</ol><p class="abpm-count">${answered} of 10 answered</p>${done
             ? `<section class="abpm-card abpm-final"><h2 class="abpm-qt">Your draft ABP is ready.</h2>${doneActs()}<div class="abpm-nav"><button type="button" class="abpm-btn ghost" data-act="back">← Change an answer</button></div></section><div class="abpm-doc">${docHtml(model())}</div>`
             : `<section class="abpm-card"><h2 class="abpm-step-t">Step ${S.step + 1} of 3: ${esc(st.t)}</h2>${st.qs.map(qi => field(qi, `Question ${STEPS.flatMap(s => s.qs).indexOf(qi) + 1} of 10`) + `<p class="abpm-skip1"><button type="button" class="abpm-link" data-act="unsure" data-i="${qi}">Not sure</button></p>`).join('')}
 <div class="abpm-nav"><button type="button" class="abpm-btn ghost" data-act="back"${S.step ? '' : ' disabled'}>← Back</button><button type="button" class="abpm-btn" data-act="next">${S.step === 2 ? 'Make my ABP ✓' : 'Next step →'}</button></div><p class="abpm-keys">Enter for the next question · Shift+Enter for a new line</p></section>`}${PRIV}`
@@ -314,12 +356,13 @@ Please:
     }
 
     function setUrl() {
-        const q = new URLSearchParams(); if (S.slug) q.set('x', S.slug); if (S.uc) q.set('uc', S.uc.id); else if (S.agent) q.set('a', S.agent.id)
+        const q = new URLSearchParams(); if (S.slug) q.set('x', S.slug); else if (S.company) q.set('company', S.company); if (S.uc) q.set('uc', S.uc.id); else if (S.agent) q.set('a', S.agent.id)
         if (P.get('design')) q.set('design', DESIGN)
         try { history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q : '')) } catch { }
     }
     function start(uc, agent) {
         S.uc = uc || null; S.agent = agent || (uc && S.x ? (S.x.agents || []).find(a => a.id === uc.agent) : null) || null
+        S.pasted = new Set(); S.pasteMsg = ''
         S.def = defaults(); S.ans = S.def.slice(); S.pos = 0; S.step = 0; S.phase = 'ask'
         setUrl(); render(); window.scrollTo({ top: 0 })
     }
@@ -364,6 +407,7 @@ Please:
             next()
         }
     })
+    root.addEventListener('toggle', e => { if (e.target.classList && e.target.classList.contains('abpm-paste')) S.pasteOpen = e.target.open }, true)
     root.addEventListener('click', e => {
         const sm = e.target.closest('.abpm-sec > summary'); if (sm) { const d = sm.parentElement; if (d.open) S.open.delete(d.dataset.sec); else S.open.add(d.dataset.sec); return }
         const b = e.target.closest('button, a'); if (!b || !root.contains(b)) return
@@ -378,6 +422,7 @@ Please:
         if (act === 'unsure') { const t = root.querySelector(`#abpm-f${b.dataset.i}`); if (t) { t.value = 'Not sure'; readField(t) } return }
         if (act === 'usedef') { const t = b.closest('.abpm-q').querySelector('.abpm-f'); t.value = S.def[+t.dataset.i]; readField(t); t.focus(); return }
         if (act === 'restart') return restart()
+        if (act === 'paste') return applyPaste()
         if (act === 'change') { S.phase = 'pick'; S.uc = null; S.agent = null; setUrl(); return render() }
         if (act === 'print') { window.print(); return }
         if (act === 'copy') return copyMd(b)
@@ -401,6 +446,9 @@ Please:
                 if (ag) return start((S.x.use_cases || []).find(u => u.agent === ag.id), ag)
             }
         }
+        // ?company=<name>: a company not X-rayed yet (from the X-ray's "Make their ABP"); the maker's safe defaults
+        const co = String(P.get('company') || '').replace(/[\u0000-\u001f<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, 80)
+        if (!S.x && co) { S.company = co; return start(null, null) }
         render()
     })()
 })()

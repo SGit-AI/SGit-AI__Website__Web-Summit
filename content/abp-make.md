@@ -25,6 +25,7 @@ The questions are the ABP maker's ([ABP creation](../abp-creation/index.html)). 
 ## For the team at the stand {#team}
 
 - **The flow.** X-ray the visitor's company, then press "Make an ABP for one of these agents" and pick an agent. Ten taps make a draft. Print it, save it as a PDF or copy it as Markdown, then press Start again for the next visitor.
+- **A company we have not X-rayed.** On the X-ray page, type the name and press "X-ray it live with Claude": claude.ai opens in a new tab with a short X-ray prompt and searches the web. Then press "Make their ABP" (or open `?company=<name>`), open "Paste Claude's X-ray" at the top, paste Claude's whole answer and press "Fill the answers". It reads the ten numbered answers after "ABP ANSWERS"; if it cannot, the safe defaults stay and it says so.
 - **Three designs.** Add `?design=a` (Interview, the default), `?design=b` (Builder) or `?design=c` (Story) to the address.
 - **No network, no key.** The draft is made in the browser from a template, so it works with no model and no API key. The only data read is this site's own X-ray record.
 - **Refine with Claude** opens claude.ai in a new tab with the maker's prompt and the visitor's answers in the address, so a Claude session carries on the interview. claude.ai cannot be shown inside this page (it does not allow framing), so it is a link. It needs a signed-in claude.ai on the stand's laptop, and it is the only button that sends anything anywhere.
