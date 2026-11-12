@@ -1,7 +1,7 @@
 {
  "about": "IPMA's aeronautical forecast (TAF) and observations (METAR) for Madeira airport (LPMA, Santa Cruz, on the south-east coast), read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport; not a public warning.",
  "icao": "LPMA",
- "read_utc": "2026-11-12T01:24:36Z",
+ "read_utc": "2026-11-12T02:28:20Z",
  "taf": {
   "issue_utc": "2026-11-11T23:00Z",
   "raw": "TAF LPMA 112300Z 1200/1224 VRB05KT 9999 SCT015",
@@ -24,7 +24,7 @@
    }
   ],
   "source": "https://aviationweather.gov/api/data/taf?ids=LPMA&format=json",
-  "read_utc": "2026-11-12T01:24:36Z"
+  "read_utc": "2026-11-12T02:28:20Z"
  },
  "taf_history": [
   {
@@ -1534,6 +1534,34 @@
    "pressure_hpa": 1011,
    "source": "https://aviationweather.gov/api/data/metar?ids=LPMA&hours=30&format=json",
    "read_utc": "2026-11-12T01:24:11Z"
+  },
+  {
+   "time_utc": "2026-11-12T01:30Z",
+   "raw": "METAR LPMA 120130Z 28004KT 9999 SCT015 19/15 Q1011",
+   "wind_dir": 280,
+   "wind_kt": 4,
+   "gust_kt": null,
+   "wind_kmh": 7,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": null,
+   "pressure_hpa": 1011,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPMA&hours=30&format=json",
+   "read_utc": "2026-11-12T02:28:06Z"
+  },
+  {
+   "time_utc": "2026-11-12T02:00Z",
+   "raw": "METAR LPMA 120200Z 28004KT 9999 SCT015 19/15 Q1011",
+   "wind_dir": 280,
+   "wind_kt": 4,
+   "gust_kt": null,
+   "wind_kmh": 7,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": null,
+   "pressure_hpa": 1011,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPMA&hours=30&format=json",
+   "read_utc": "2026-11-12T02:28:06Z"
   }
  ],
  "max_gust": {
@@ -1542,5 +1570,5 @@
   "time_utc": "2026-11-11T02:30Z",
   "source": "https://aviationweather.gov/api/data/metar?ids=LPMA&hours=30&format=json"
  },
- "next_read_utc": "2026-11-12T02:22Z"
+ "next_read_utc": "2026-11-12T03:22Z"
 }

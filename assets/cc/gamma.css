@@ -124,3 +124,6 @@ html.cc-shell #gamma .gr-live { color: #3DDC97; } html.cc-shell #gamma .gr-live:
 html.cc-shell #gamma .gr-std:hover { color: #fff; border-color: rgba(251,226,174,.5); }
 html.cc-shell #gamma .gr-foot .gr-head { display: block; margin: 18px 4px 0; opacity: .8; } html.cc-shell #gamma .gr-foot .gr-head h2 { display: none; } html.cc-shell #gamma .gr-foot .gr-warn { display: inline-block; margin-bottom: 6px; }
 @media (max-width: 760px) { html.cc-shell #gamma .gr-bar { grid-template-columns: 1fr; } html.cc-shell #gamma .gr-name { display: none; } html.cc-shell #gamma .gr-state { justify-self: start; justify-content: flex-start; } }
+
+/* the indicator bus in the middle (Silvio, 12 November): its labels read over the wires */
+html.cc-shell .gr-circ .bc-svg .bc-bus text { paint-order: stroke; stroke: #04100F; stroke-width: 4px; stroke-linejoin: round; fill: #CFE3DF; font-size: 12px; }
