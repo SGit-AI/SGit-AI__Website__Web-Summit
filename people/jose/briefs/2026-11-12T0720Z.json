@@ -1,0 +1,90 @@
+{
+  "number": 24,
+  "date": "12 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Summit Day 3, the stand day: thirteen videos approved to post; crm still waits on your word",
+  "when": "12 November 2026, 07:25 UTC (scheduled wake; since brief 23, 11 Nov 17:22 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Silvio's video agent answered your ask overnight: SHARE.md lists the thirteen videos Silvio approved to post, what not to post, and how to post, for you and your writer. On this site your agents were quiet overnight, and all their tasks fired. Four things still wait on you: crm's token word and its company sites, dev's schedule, and vault's passphrase. Page views: 258 drained this morning, 8,089 in all. Lisbon's last weather warning ended at 03:00 (Dinis's incident agents, not checked at source).",
+  "stats": [
+    {"n": "13", "label": "videos approved to post (Silvio's yes), in the library"},
+    {"n": "4", "label": "asks waiting on you (crm's word, crm's sites, dev's schedule, vault's passphrase)"},
+    {"n": "8,089", "label": "page views drained in all (258 overnight)"},
+    {"n": "$45.78", "label": "your agents' tokens on 11 November (10 November: $27.47)"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "🎬 Post a video from the stand today",
+      "detail": "Open the library (people/silvio/videos/), pick one of the thirteen, press Copy text and Share (phone) or Download. On LinkedIn, reshare RiskMandate's post with one line of your own (WS-126). Don't post the 53-second Reach, Mandate, Gap, fifty new agents or the X-ray company videos. Then tell me the post's public link and I record it for Silvio's agent.",
+      "options": ["today at the stand", "skip"],
+      "recommend": "Today: 'The demo is us' (0:47) or 'The X-ray, a real run' (0:30) fit the stand."
+    },
+    {
+      "id": "2",
+      "ask": "🔑 crm: 'the token is set', and its company sites",
+      "detail": "crm still holds your 31 connections in 6 unpushed vault commits, and none of your eleven companies is added. Say 'the token is set' in its session (or to me), and allow the eleven companies' domains in its environment's network settings.",
+      "options": ["now", "after the summit"],
+      "recommend": "Now, if you want the CRM at the stand; otherwise after the summit."
+    },
+    {
+      "id": "3",
+      "ask": "⏱️ dev's schedule and 🔐 vault's passphrase",
+      "detail": "dev still runs the 3 November text at 09:30 and 15:30: re-save its task after the summit with a fresh session (every two hours or hourly, your choice). Vault waits on SG_SEND_PASSPHRASE in its environment, and on your word to update its kit text to drain.",
+      "options": ["after the summit", "now"],
+      "recommend": "After the summit: neither blocks anything today."
+    }
+  ],
+  "you_asked": [
+    {
+      "at": "11 Nov, about 21:30",
+      "said": "Ask Silvio's video agent to send the link to where the videos are",
+      "done": "Asked by commit; it answered at night with SHARE.md: the link, the vault, the thirteen approved, how to post",
+      "where": "7a67b181, a989bda1",
+      "status": "done"
+    },
+    {
+      "at": "11 Nov, evening",
+      "said": "So how do I post it, step by step? To post on the repo? How to add the video to the vault?",
+      "done": "The steps per channel; nothing is posted in the repository; only Silvio's side adds a video to the vault, after his approval",
+      "where": "this session",
+      "status": "done"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Correction to brief 23",
+      "items": [
+        "Its headline counted three asks as crm's word, crm's sites and dev's schedule, but its third ask was vault's (passphrase and kit text). All four are listed above."
+      ]
+    },
+    {
+      "title": "Tokens on 11 November (the accountant)",
+      "items": [
+        "84.0M tokens, 5.3M of them not cache reads, about $45.78 (10 November: 47.4M, $27.47); every wake passed. The rise is mostly cache writes (5.1M against 3.3M), not a model change.",
+        "The dashboard $9.40, the watcher $9.18, your conductor $8.85, vault $5.68, dev $4.83, the writer $4.25, crm $3.58.",
+        "Recommendation 1: the watcher to Sonnet first (8 routine Opus wakes in two days, all pass).",
+        "Recommendation 2: vault to Sonnet now that it drains again.",
+        "Recommendation 3: the dashboard and the writer to Sonnet; your conductor stays on Opus, its sub-agents can run on Sonnet. Your word decides; nothing changes until you say so."
+      ]
+    },
+    {
+      "title": "The team",
+      "items": [
+        "Silvio's agents worked on the stand overnight: the RiskMandate tablet, the GAMMA-Ray view, X-Ray, and the clean 18-second Reach, Mandate, Gap approved for the stand.",
+        "Vicky's agents are back on this site; Angelo's work from his second account.",
+        "Dinis's security agent: one new medium in Storm-Charles (run 26); nothing in your files."
+      ]
+    }
+  ],
+  "next": [
+    "Hourly to 21:20; the evening brief at 17:20 with your 'today' list."
+  ],
+  "sources": [
+    "git log origin/dev since 17:22 yesterday",
+    "people/jose/watcher/latest.md (07:20)",
+    "people/silvio/video/SHARE.md (a989bda1), 7a67b181",
+    "people/jose/accountant/reports/2026-11-11.json",
+    "telemetry_drain.py (07:25)"
+  ]
+}
