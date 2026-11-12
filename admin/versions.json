@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1976",
+    "date": "2026-11-12",
+    "what": "GAMMA-RAY on top opens the command centre's circuit graph, not the external site",
+    "by": "dashboard@web-summit.silvio",
+    "from": "dceca8e39"
+  },
+  {
     "version": "v0.2.1975",
     "date": "2026-11-12",
     "what": "INVEST, the last button on the stand's top bar: the investor deck as live slides",
