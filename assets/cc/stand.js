@@ -90,9 +90,10 @@
             addEventListener('hashchange', () => setTimeout(vis, 300)); vis()
         }
         // Web Summit Booth Mode (Silvio, 12 November): Normal or Booth, for the 1080p television at the stand; larger, sharper names,
-        // the 3D scene rendered at 1.5x. Remembered in this browser (cc.booth); ?booth=1 opens it. The host carries data-booth.
+        // the 3D scene rendered at 1.5x. On by default on every device (Silvio: "not only the iMac, every MacBook too"); NORMAL turns it
+        // off and is remembered in this browser (cc.booth = '0'); ?booth=0 / ?booth=1 force it. The host carries data-booth.
         {
-            const on = (() => { try { const q = new URLSearchParams(location.search).get('booth'); if (q === '1' || q === '0') localStorage.setItem('cc.booth', q); return localStorage.getItem('cc.booth') === '1' } catch { return false } })()
+            const on = (() => { try { const q = new URLSearchParams(location.search).get('booth'); if (q === '1' || q === '0') localStorage.setItem('cc.booth', q); return localStorage.getItem('cc.booth') !== '0' } catch { return true } })()
             if (on) host.dataset.booth = '1'; else delete host.dataset.booth
             let bs = document.getElementById('cc-booth-switch')
             if (!bs) { bs = document.createElement('div'); bs.id = 'cc-booth-switch'; bs.setAttribute('role', 'group'); bs.setAttribute('aria-label', 'Display mode')
@@ -100,7 +101,7 @@
                 const st2 = document.createElement('style'); st2.textContent = '#cc-booth-switch{right:132px;top:176px}@media (max-width:760px){#cc-booth-switch{display:none!important}}'; document.head.appendChild(st2); document.body.appendChild(bs)
                 const vis2 = () => { bs.style.display = document.getElementById('cc-stand') && document.getElementById('cc-stand').isConnected ? 'flex' : 'none' }
                 addEventListener('hashchange', () => setTimeout(vis2, 300)); vis2() }
-            const paint = () => { const now = (() => { try { return localStorage.getItem('cc.booth') === '1' } catch { return false } })(); bs.innerHTML = ''
+            const paint = () => { const now = (() => { try { return localStorage.getItem('cc.booth') !== '0' } catch { return true } })(); bs.innerHTML = ''
                 for (const [label, val] of [['Normal', false], ['\u25A3 Booth', true]]) { const b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.setAttribute('aria-pressed', String(now === val))
                     b.style.cssText = 'border:0;border-radius:999px;padding:10px 16px;min-height:40px;cursor:pointer;font:inherit;letter-spacing:inherit;text-transform:inherit;' + (now === val ? 'background:#FBE2AE;color:#10170F' : 'background:transparent;color:#B9C7CB')
                     b.onclick = () => { try { localStorage.setItem('cc.booth', val ? '1' : '0') } catch { } const h = document.getElementById('cc-stand'); if (h) { if (val) h.dataset.booth = '1'; else delete h.dataset.booth } paint() }
