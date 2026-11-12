@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1997",
+    "date": "2026-11-12",
+    "what": "07:30 wake: post version A today, at the top of Indi's dashboard (Day 3 goes ahead)",
+    "by": "dashboard@web-summit.indi",
+    "from": "f8e9a97fb"
+  },
+  {
     "version": "v0.2.1996",
     "date": "2026-11-12",
     "what": "07:15 run, 2 captures in the research vault 41j3e9s9",
