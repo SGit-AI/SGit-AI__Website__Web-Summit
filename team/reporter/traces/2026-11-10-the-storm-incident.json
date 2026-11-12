@@ -3,7 +3,7 @@
   "schema": "ws-incident-trace/1",
   "issue": "WS-214",
   "severity": "P1 (run as P3-as-P1)",
-  "status": "open: Lisbon's warnings over except the sea (to 03:00 Thursday); the centre passed just north about 16:30 to 17:00; Thursday reported on, with a press conference at 11:00; the close-out next",
+  "status": "open until the lead closes it: the alert ended at 23:59; Lisbon's yellow sea to 03:00; the close trigger waits on the 03:47 read",
   "title": "Incident: the storm on Wednesday 11 November, run as P1 on account A",
   "folder": {
     "type": "file",
@@ -12,7 +12,7 @@
     "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/incidents/2026-11-10-the-storm/"
   },
   "captured_by": "reporter@web-summit.dinis",
-  "captured_at": "2026-11-11T21:25Z",
+  "captured_at": "2026-11-12T00:25Z",
   "rules": "Read Vicky's weather desk's public files only; never write to them. Public sources only; nothing on people's whereabouts or contact details.",
   "shape": {
     "event": "n, lane (outside|ours), kind (signal|decision|hand-off|not read), actor {name, kind: authority|person|agent}, what, published (UTC, the source's own time; null if not stated), read (UTC, when our team first read it), read_by, affects[] (the incident's 'could happen' items, README section 3), evidence[], note, handoff {to, via}",
@@ -3632,6 +3632,217 @@
           "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/60037c7d3b34"
         }
       ]
+    },
+    {
+      "n": 127,
+      "lane": "outside",
+      "kind": "signal (press, quoting the PM)",
+      "actor": {
+        "name": "Prime Minister (as reported)",
+        "kind": "authority"
+      },
+      "what": "The conditions are met 'para fazer cessar a situação de alerta'; the government's crisis centre (CORGOV) stood down",
+      "published": "2026-11-11T20:38:00Z",
+      "read": "2026-11-11T21:36:00Z",
+      "read_by": "incident team",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "note": "no end time given; no act ending it early was published (DRE, portugal.gov.pt at 21:37 and 23:35)",
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 128,
+      "lane": "ours",
+      "kind": "decision",
+      "actor": {
+        "name": "incident.conductor@web-summit.dinis (team)",
+        "kind": "agent"
+      },
+      "what": "The wind-down plan's close trigger not met: Lisbon's yellow sea runs to 03:00 Thursday; Web Summit has published nothing new we may read",
+      "published": "2026-11-11T22:05:00Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ]
+    },
+    {
+      "n": 129,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA (CAP)",
+        "kind": "authority"
+      },
+      "what": "The first warnings for Thursday: yellow rain in the north (Aveiro, Braga, Porto, Viana do Castelo, Vila Real, Viseu); nothing for Lisbon",
+      "published": "2026-11-11T22:43:28Z",
+      "read": "2026-11-11T23:00:00Z",
+      "read_by": "incident.meteorologist@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "4e06071a",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/4e06071a0b8c"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 130,
+      "lane": "outside",
+      "kind": "signal",
+      "actor": {
+        "name": "IPMA (TAF, LPPT, 23:00)",
+        "kind": "authority"
+      },
+      "what": "Thursday: west-south-west about 22 km/h, showers; at times about 31 km/h gusting about 50 km/h, 06:00 to 18:00",
+      "published": "2026-11-11T23:00:00Z",
+      "read": "2026-11-11T23:28:00Z",
+      "read_by": "incident.meteorologist@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "c4c8a76c",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/c4c8a76c89cb"
+        },
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "affects": [
+        2,
+        6
+      ]
+    },
+    {
+      "n": 131,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "CP (at source)",
+        "kind": "authority"
+      },
+      "what": "Replacement buses on Thursday on the Beira Baixa line (landslide between Santa Margarida and Tramagal)",
+      "published": "2026-11-11T21:30:00Z",
+      "read": "2026-11-11T23:43:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        }
+      ],
+      "affects": [
+        2
+      ]
+    },
+    {
+      "n": 132,
+      "lane": "outside",
+      "kind": "decision",
+      "actor": {
+        "name": "Government",
+        "kind": "authority"
+      },
+      "what": "The alert situation for mainland Portugal ran its course at 23:59 on Wednesday, as declared; no extension or early end published",
+      "published": "2026-11-11T23:59:00Z",
+      "read": "2026-11-12T00:03:00Z",
+      "read_by": "incident.researcher@web-summit.dinis",
+      "evidence": [
+        {
+          "type": "file",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "path": "incidents/2026-11-10-storm-charles/timeline.md",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/blob/dev/incidents/2026-11-10-storm-charles/timeline.md"
+        },
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "774375ff",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/774375ffab10"
+        }
+      ],
+      "note": "the outside lane's last decision for Wednesday",
+      "affects": [
+        6
+      ]
+    },
+    {
+      "n": 133,
+      "lane": "ours",
+      "kind": "review",
+      "actor": {
+        "name": "security.repos@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "MEDIUM: the storm site's hourly flights publisher resets to dev and runs its code with a token; run 22's MEDIUM down to LOW (CI split by privilege)",
+      "published": "2026-11-12T00:16:51Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+          "sha": "fa321437",
+          "url": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/fa321437a370"
+        }
+      ]
+    },
+    {
+      "n": 134,
+      "lane": "ours",
+      "kind": "note",
+      "actor": {
+        "name": "incident.reporter@web-summit.dinis",
+        "kind": "agent"
+      },
+      "what": "Runs as successive fresh sessions with hand-overs (the eighth started at 00:11), each with its own key and hourly wake",
+      "published": "2026-11-12T00:11:30Z",
+      "read": null,
+      "read_by": null,
+      "evidence": [
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "1354dde5",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/1354dde5b0dc"
+        },
+        {
+          "type": "commit",
+          "repo": "PrompTugal/PrompTugal__News__Storm-Charles",
+          "sha": "4560e12f",
+          "url": "https://github.com/PrompTugal/PrompTugal__News__Storm-Charles/commit/4560e12f561e"
+        }
+      ],
+      "note": "the model this reporter proposed for itself in status.json (a fresh small session per wake)"
     }
   ],
   "lead_times": [
@@ -3748,12 +3959,13 @@
     }
   },
   "close_out_draft": {
-    "as_of": "2026-11-11T21:25Z",
+    "as_of": "2026-11-12T00:25Z",
     "status": "draft by the reporter; the lead closes the incident",
     "what_happened": [
       "Storm Charles passed just north of Lisbon about 16:30 to 17:00 on Wednesday; the airport's highest gust was 74 km/h (14:00), below IPMA's orange threshold.",
       "The government's alert held for all of Wednesday; schools closed; 1,630 occurrences on the mainland, mostly floods; no deaths reported in the sources read.",
-      "Web Summit called off Day 2 (its own page 19:09 Tuesday) on the government's formal advice; Day 3 reported reopening, with a press conference at 11:00 Thursday."
+      "Web Summit called off Day 2 (its own page 19:09 Tuesday) on the government's formal advice; Day 3 reported reopening, with a press conference at 11:00 Thursday.",
+      "The alert ran its course at 23:59 Wednesday; Lisbon's last warning (yellow sea) ends at 03:00 Thursday; IPMA's Thursday warnings are yellow rain in the north only."
     ],
     "how_far_ahead_could_we_have_known": [
       {

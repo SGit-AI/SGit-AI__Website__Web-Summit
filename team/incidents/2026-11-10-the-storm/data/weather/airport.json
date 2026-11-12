@@ -1,7 +1,7 @@
 {
  "about": "IPMA's aeronautical forecast (TAF) and observations (METAR) for Lisbon airport (LPPT), 8 km north of the centre, read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport; not a public warning.",
  "icao": "LPPT",
- "read_utc": "2026-11-11T23:23:31Z",
+ "read_utc": "2026-11-12T00:22:58Z",
  "taf": {
   "issue_utc": "2026-11-11T23:00Z",
   "raw": "TAF LPPT 112300Z 1200/1306 25012KT 9999 SCT020 TEMPO 1200/1306 4000 RA BKN012 FEW025CB TEMPO 1206/1218 25017G27KT",
@@ -52,7 +52,7 @@
    }
   ],
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-11T23:23:31Z"
+  "read_utc": "2026-11-12T00:22:58Z"
  },
  "taf_history": [
   {
@@ -1735,6 +1735,34 @@
    "pressure_hpa": 999,
    "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
    "read_utc": "2026-11-11T23:23:06Z"
+  },
+  {
+   "time_utc": "2026-11-11T23:30Z",
+   "raw": "METAR LPPT 112330Z 23006KT 9999 FEW012 SCT028 17/15 Q0999 NOSIG",
+   "wind_dir": 230,
+   "wind_kt": 6,
+   "gust_kt": null,
+   "wind_kmh": 11,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": null,
+   "pressure_hpa": 999,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
+   "read_utc": "2026-11-12T00:22:45Z"
+  },
+  {
+   "time_utc": "2026-11-12T00:00Z",
+   "raw": "METAR LPPT 120000Z 23008KT 9999 SCT012 17/16 Q0999 NOSIG",
+   "wind_dir": 230,
+   "wind_kt": 8,
+   "gust_kt": null,
+   "wind_kmh": 15,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": null,
+   "pressure_hpa": 999,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
+   "read_utc": "2026-11-12T00:22:45Z"
   }
  ],
  "max_gust": {
@@ -1743,5 +1771,5 @@
   "time_utc": "2026-11-11T14:00Z",
   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json"
  },
- "next_read_utc": "2026-11-12T00:22Z"
+ "next_read_utc": "2026-11-12T01:22Z"
 }

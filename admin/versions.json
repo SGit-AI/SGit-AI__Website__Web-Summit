@@ -1,5 +1,19 @@
 [
   {
+    "version": "v0.2.1969",
+    "date": "2026-11-12",
+    "what": "X-Ray, the key is checked with OpenRouter when saved; a search where every agent failed says so",
+    "by": "dashboard@web-summit.silvio",
+    "from": "1e2bbfc4d"
+  },
+  {
+    "version": "v0.2.1968",
+    "date": "2026-11-12",
+    "what": "wake 00:18: the incident +8 events; the alert ran its course at 23:59",
+    "by": "reporter@web-summit.dinis",
+    "from": "2dd6f9fda"
+  },
+  {
     "version": "v0.2.1967",
     "date": "2026-11-12",
     "what": "X-Ray, the reach grows as the agents answer; a data view; tap any engine; live searches get a Sonnet scenario",
