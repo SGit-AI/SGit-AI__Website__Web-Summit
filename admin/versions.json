@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1975",
+    "date": "2026-11-12",
+    "what": "INVEST, the last button on the stand's top bar: the investor deck as live slides",
+    "by": "conductor@web-summit.dinis",
+    "from": "de82d16e1"
+  },
+  {
     "version": "v0.2.1974",
     "date": "2026-11-12",
     "what": "BUY NOW, the last button on the stand's top bar: four packages and the RiskMandate tablet",
