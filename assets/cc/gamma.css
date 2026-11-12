@@ -127,3 +127,11 @@ html.cc-shell #gamma .gr-foot .gr-head { display: block; margin: 18px 4px 0; opa
 
 /* the indicator bus in the middle (Silvio, 12 November): its labels read over the wires */
 html.cc-shell .gr-circ .bc-svg .bc-bus text { paint-order: stroke; stroke: #04100F; stroke-width: 4px; stroke-linejoin: round; fill: #CFE3DF; font-size: 12px; }
+
+/* a box's card, opened by a tap (Silvio, 12 November) */
+#gamma [data-box] { cursor: pointer; } #gamma [data-box]:hover > rect:first-of-type, #gamma [data-box]:focus-visible > rect:first-of-type { filter: brightness(1.25); } #gamma [data-box]:focus-visible { outline: none; }
+#gr-pop { position: fixed; z-index: 95; width: min(340px, calc(100vw - 24px)); padding: 12px 14px; border-radius: 12px; background: rgba(4,18,18,.97); border: 1px solid color-mix(in srgb, var(--c, #43D9C6) 60%, transparent); box-shadow: 0 0 14px color-mix(in srgb, var(--c, #43D9C6) 25%, transparent), 0 20px 40px rgba(0,0,0,.6); font: 13.5px/1.45 "Barlow Semi Condensed", "Arial Narrow", sans-serif; color: #CFE3DF; animation: grpop .2s ease both; }
+#gr-pop b { display: block; margin: 0 22px 4px 0; font: 600 13px "Barlow Condensed", sans-serif; letter-spacing: 1.3px; text-transform: uppercase; color: var(--c, #43D9C6); }
+#gr-pop p { margin: 0 0 8px; } #gr-pop dl { display: grid; grid-template-columns: 1fr auto; gap: 3px 12px; margin: 0 0 6px; padding: 8px 10px; border-radius: 8px; background: rgba(0,0,0,.3); } #gr-pop dt { color: #8EADA8; } #gr-pop dd { margin: 0; color: #EAF6F3; text-align: right; }
+#gr-pop small { color: #5F7D79; font-size: 12px; } #gr-pop .x { all: unset; cursor: pointer; position: absolute; right: 10px; top: 8px; color: #8EADA8; } #gr-pop .x:focus-visible { outline: 2px solid #FBE2AE; }
+@keyframes grpop { from { opacity: 0; transform: translateY(4px) scale(.98); } }

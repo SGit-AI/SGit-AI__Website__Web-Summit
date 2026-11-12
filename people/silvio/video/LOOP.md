@@ -22,6 +22,7 @@ For the iMac when the screen should play everything, not one film on repeat. **O
 | # | Film | Length | File in the vault (EN) |
 |---|---|---|---|
 | 1 | What is RiskMandate (the stand loop) | 1:07 | `stand-loop-what-is-riskmandate/what-is-riskmandate-stand-loop-67s-en-english.mp4` |
+| 1b | Reach, Mandate, Gap (the clean cut; added 12 November at Silvio's yes) | 0:18 | `reach-mandate-gap-clean-cut/reach-mandate-gap-clean-cut-18s-en.mp4` (its own music; mute it) |
 | 2 | Four real cases, and the gap closed | 0:56 | `four-real-cases-and-the-gap-closed/four-real-cases-and-the-gap-closed-56s-en.mp4` |
 | 3 | The AI agent beyond its mandate | 0:19 | `with-and-without-riskmandate/the-ai-agent-beyond-its-mandate-19s-en.mp4` |
 | 4 | The access that stayed | 0:19 | `with-and-without-riskmandate/the-access-that-stayed-after-offboarding-19s-en.mp4` |
@@ -33,7 +34,7 @@ For the iMac when the screen should play everything, not one film on repeat. **O
 | 10 | The X-ray, a real run | 0:30 | `riskmandate-xray-of-a-company/riskmandate-xray-a-real-run-30s-en.mp4` |
 | 11 | The demo is us | 0:47 | `the-demo-is-us-our-team-and-its-agents/the-demo-is-us-our-team-and-its-agents-47s-en.mp4` |
 | 12 | PrompTugal.news in 37 seconds | 0:37 | `promptugal-news-in-37-seconds/promptugal-news-in-37-seconds-en.mp4` |
-| | **Total, one pass** | **6:32** (392 s), then it starts again | |
+| | **Total, one pass** | **6:50** (410 s), then it starts again | |
 
 **The order:** what RiskMandate is, then why it matters (real cases), then one problem at a time (the five with-and-without films), then what it looks like (the access film, the licence, a real X-ray run, our own team), and last the newsroom it powers.
 
@@ -41,7 +42,7 @@ For the iMac when the screen should play everything, not one film on repeat. **O
 
 **A short pass (3:18)** when people are queuing: 1, 2, 3, 6, 12 (67 + 56 + 19 + 19 + 37 s = 198 s; with 9 instead of 12, 191 s, 3:11).
 
-**Not in the playlist:** the two films that were on hold (Reach, Mandate, Gap; RiskMandate Stories: fifty new agents), fixed on 10 November and in the vault for Silvio's yes; the 24 X-ray company videos (waiting for Dinis's OK).
+**Not in the playlist:** RiskMandate Stories: fifty new agents (fixed on 10 November, in the vault for Silvio's yes; it is narrated); the 24 X-ray company videos (waiting for Dinis's OK).
 
 **On the command centre** (12 November, conductor@web-summit.dinis, WS-212): the VÍDEOS tab plays these twelve in a loop with a language picker, from vault `cf8uki85` (the same files, cut into pieces for the browser).
 
