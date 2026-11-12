@@ -1,19 +1,19 @@
 {
  "about": "The latest observed wind in Lisbon against what was forecast for that hour. Facts with sources; no analysis here (see analysis.md).",
- "read_utc": "2026-11-12T05:23:50Z",
+ "read_utc": "2026-11-12T06:23:32Z",
  "observed_airport_latest": {
-  "time_utc": "2026-11-12T05:00Z",
-  "raw": "METAR LPPT 120500Z 25009KT 9999 -SHRA BKN012 FEW020TCU 16/15 Q1001 RESHRA NOSIG",
-  "wind_dir": 250,
-  "wind_kt": 9,
+  "time_utc": "2026-11-12T06:00Z",
+  "raw": "METAR LPPT 120600Z 24008KT 210V270 9999 FEW014 SCT020 17/15 Q1001 NOSIG",
+  "wind_dir": 240,
+  "wind_kt": 8,
   "gust_kt": null,
-  "wind_kmh": 17,
+  "wind_kmh": 15,
   "gust_kmh": null,
   "visibility": "6+",
-  "weather": "-SHRA",
+  "weather": null,
   "pressure_hpa": 1001,
   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
-  "read_utc": "2026-11-12T05:22:47Z"
+  "read_utc": "2026-11-12T06:23:19Z"
  },
  "observed_airport_max_gust": {
   "kt": 40,
@@ -23,47 +23,76 @@
  },
  "observed_stations_latest_mean": [
   {
-   "kmh": 20.5,
+   "kmh": 20.9,
+   "station": "Oeiras / Vila Fria (CMO)",
+   "time_utc": "2026-11-12T05:00Z",
+   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
+   "read_utc": "2026-11-12T06:23:32Z"
+  },
+  {
+   "kmh": 20.9,
    "station": "Lisboa (Geofísico)",
-   "time_utc": "2026-11-12T04:00Z",
+   "time_utc": "2026-11-12T05:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-12T05:23:50Z"
+   "read_utc": "2026-11-12T06:23:32Z"
   },
   {
-   "kmh": 17.3,
-   "station": "Barreiro, Lavradio",
-   "time_utc": "2026-11-12T04:00Z",
+   "kmh": 18.0,
+   "station": "Lisboa, Relógio",
+   "time_utc": "2026-11-12T05:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-12T05:23:50Z"
-  },
-  {
-   "kmh": 16.9,
-   "station": "Lisboa, Amoreiras (LFCL)",
-   "time_utc": "2026-11-12T04:00Z",
-   "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-12T05:23:50Z"
+   "read_utc": "2026-11-12T06:23:32Z"
   },
   {
    "kmh": 16.2,
-   "station": "Oeiras / Vila Fria (CMO)",
-   "time_utc": "2026-11-12T04:00Z",
+   "station": "Barreiro, Lavradio",
+   "time_utc": "2026-11-12T05:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-12T05:23:50Z"
+   "read_utc": "2026-11-12T06:23:32Z"
   },
   {
-   "kmh": 15.1,
-   "station": "Lisboa, Relógio",
-   "time_utc": "2026-11-12T04:00Z",
+   "kmh": 15.5,
+   "station": "Lisboa, Carnide (CML)",
+   "time_utc": "2026-11-12T05:00Z",
    "source": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
-   "read_utc": "2026-11-12T05:23:50Z"
+   "read_utc": "2026-11-12T06:23:32Z"
   }
  ],
  "forecast_taf_groups_for_that_hour": {
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-12T05:23:50Z",
-  "groups": []
+  "read_utc": "2026-11-12T06:23:32Z",
+  "groups": [
+   {
+    "change": "BASE",
+    "prob": null,
+    "from_utc": "2026-11-12T06:00Z",
+    "to_utc": "2026-11-13T12:00Z",
+    "becoming_by_utc": null,
+    "wind_dir": 250,
+    "wind_kt": 12,
+    "gust_kt": null,
+    "wind_kmh": 22,
+    "gust_kmh": null,
+    "visibility": "6+",
+    "weather": null
+   },
+   {
+    "change": "TEMPO",
+    "prob": null,
+    "from_utc": "2026-11-12T06:00Z",
+    "to_utc": "2026-11-12T18:00Z",
+    "becoming_by_utc": null,
+    "wind_dir": 250,
+    "wind_kt": 17,
+    "gust_kt": 27,
+    "wind_kmh": 31,
+    "gust_kmh": 50,
+    "visibility": "",
+    "weather": null
+   }
+  ]
  },
  "forecast_ipma_red_wind_warning": null,
  "forecast_ipma_hourly_wed_peak_mean": null,
- "next_read_utc": "2026-11-12T06:22Z"
+ "next_read_utc": "2026-11-12T07:22Z"
 }

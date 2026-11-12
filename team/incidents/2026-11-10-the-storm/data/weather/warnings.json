@@ -1,12 +1,12 @@
 {
  "about": "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). IPMA's open data carries no issue time: `sent_utc` is the sent time of the CAP message (MeteoAlarm, cap.json) matching the warning's area, type, level and window exactly, or null where none matches (never guessed).",
  "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
- "read_utc": "2026-11-12T05:23:50Z",
+ "read_utc": "2026-11-12T06:23:32Z",
  "lisbon_peak_level": "green",
  "lisbon": [],
  "red_and_orange_elsewhere": {
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-12T05:23:50Z",
+  "read_utc": "2026-11-12T06:23:32Z",
   "items": []
  },
  "history": [
@@ -651,5 +651,5 @@
    "note": "compared with the read at 2026-11-12T03:23:40Z"
   }
  ],
- "next_read_utc": "2026-11-12T06:22Z"
+ "next_read_utc": "2026-11-12T07:22Z"
 }

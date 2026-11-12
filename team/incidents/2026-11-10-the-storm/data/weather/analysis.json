@@ -516,7 +516,12 @@
    "time_utc": "2026-11-12T05:25Z",
    "section": 37,
    "summary": "New LPPT TAF 05:00 repeats Thursday's picture (TEMPO 25017G27KT 06-18, TEMPO rain, TCU not CB); showers (Carnide 3.4 mm, hour labelled 04:00); Q1001; no Lisbon warning; no new CAP batch since 22:43:28."
+  },
+  {
+   "time_utc": "2026-11-12T06:25Z",
+   "section": 38,
+   "summary": "Showers (Relógio 3.3 mm, hour labelled 05:00); LPPT 06:00 24008KT Q1001, no gust; no Lisbon warning; no new CAP batch since 22:43:28; TAF 05:00 unchanged."
   }
  ],
- "next_read_utc": "2026-11-12T06:22Z"
+ "next_read_utc": "2026-11-12T07:22Z"
 }

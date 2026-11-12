@@ -536,3 +536,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (read 05:22:47–05:23:50 UTC): new LPPT TAF issued 05:00, valid Thursday 06:00 to Friday 12:00: 25012KT, visibility 10 km or more; TEMPO through the period: rain, visibility 4000 m, cloud base 1200 ft, towering cumulus (TCU) possible; TEMPO Thursday 06:00–18:00: 25017G27KT (gusts about 50 km/h). LPPT 04:30 27011KT (direction 230–310), TCU, Q1001; 05:00 25009KT, light rain shower, no gust, Q1001. Lisbon stations' rain in the hour labelled 04:00: 3.4 mm at Carnide, 0.3 mm or less elsewhere. Still no warning for Lisbon. No new CAP batch for any district since 22:43:28 (reads every 5 min to 05:19:02). No new communiqué. Open-Meteo's model refused the first two reads (connection reset); the third, at 05:23:50, worked (changes.json records all three).
 
 **Analysis (high):** the 05:00 TAF repeats the 23:00 one for Thursday daytime (same gusts about 50 km/h at times, 06:00–18:00) and swaps CB for TCU, a slightly weaker shower signal. Scattered showers, some locally heavier (Carnide), pressure rising (1001 hPa). No hazard for Lisbon on Thursday; Thursday as in section 31.
+
+## 38. 06:25 UTC 12 Nov: showers, no warning, day 3 starts
+
+**Facts** (read 06:23:19–06:23:32 UTC): LPPT 05:30 23009KT, TCU, Q1001; 06:00 24008KT (direction 210–270), no gust, no rain, Q1001. Lisbon stations' rain in the hour labelled 05:00: 3.3 mm at Relógio, 1.3 mm at Carnide, 0.6 mm or less elsewhere. Still no warning for Lisbon. No new CAP batch for any district since 22:43:28 (reads every 5 min to 06:19:58). No new communiqué; LPPT TAF 05:00 unchanged.
+
+**Analysis (high):** passing showers of up to about 3 mm in an hour, no gusts so far; the TAF's gusts about 50 km/h at times (06:00–18:00) are still to come and still below any warning level. Thursday as in sections 31 and 37.
