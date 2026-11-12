@@ -19,6 +19,7 @@ One file per day: `people/indi/social/<YYYY-MM-DD>.md`.
 | Mon 9 Nov | [2026-11-09.md](2026-11-09.md) | The demo is us: every agent has a published behaviour policy | Tue 10, 08:00 |
 | Tue 10 Nov | [2026-11-10.md](2026-11-10.md) | Tomorrow at our stand: the green card's line, run, buy or sell, the card on your phone | Wed 11, 08:00 |
 | Wed 11 Nov | [2026-11-11.md](2026-11-11.md) | Stand day, two versions after Storm Charles: A (Thursday on) or B (called off) | Thu 12, 08:30, after checking Web Summit's update |
+| Thu 12 Nov | [2026-11-12.md](2026-11-12.md) | Thank you, Lisbon: the question stands, try it yourself | Fri 13, 09:00 |
 
 ## Posted (only when Indi says so)
 
@@ -33,6 +34,7 @@ One file per day: `people/indi/social/<YYYY-MM-DD>.md`.
 - **The demo is us:** our own agents' published policies (9 Nov).
 - **Tomorrow at our stand:** the green card's line; the three openers (10 Nov).
 - **Stand day after the storm:** Wednesday called off, Thursday's question (11 Nov).
+- **Thank you, Lisbon:** riskmandate.ai's try-it-yourself examples (12 Nov).
 
 ## Themes others already cover (do not repeat)
 
