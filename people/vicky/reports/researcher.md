@@ -195,3 +195,11 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - Agents in real work (SA29): [PagerDuty's engineering blog, 11 June](https://www.pagerduty.com/eng/production-ai-agents-closing-the-gaps-between-idea-and-reality/) on launching a multi-agent system: context fatigue, compounding errors, a kill switch from day one; general lessons, no named customer or results; a candidate for the AI desk only with a second source.
 - Not captured: protest and cost stories (outside the positive line); Brazil's TissueLabs awards (headline only, behind a redirect).
 - state: ok; done: 2 captures; next: 11:15 run; ask: none; run: scheduled
+
+## Thu 12 Nov 2026, 11:15 UTC run
+
+- decisions.md read first (nothing new since 07:15; no HOLD.md; prompts file re-read, no difference); RULES-11NOV kept, no Web Summit, Luma, Meetup or Eventbrite reads. 2 captures went into vault 41j3e9s9 and 1 was revised, audited and pushed; sgit status in sync.
+- Gap filled (Discord, Portugal): [AICEP, "Discord opens first European Engineering Hub in Lisbon"](https://www.portugalglobal.pt/en/news/2026/novembro/discord-opens-first-european-engineering-hub-in-lisbon/), an official body: opened 11 Nov, first engineering hub outside the US, about 30 staff by the end of 2027; the DN article is still unread (behind a redirect), Discord's own newsroom page not found.
+- Gap filled (PagerDuty, AI): the rest of [the engineering post](https://www.pagerduty.com/eng/production-ai-agents-closing-the-gaps-between-idea-and-reality/) (supervisor and sub-agents, an invalidated-hypothesis example, evaluation with golden datasets) and [PagerDuty's page on its SRE agent Paige, 3 Nov](https://www.pagerduty.com/blog/ai/meet-paige-sre-agent/): the user sets what it can see and do, and permission is needed for it to resolve incidents; neither page says Paige is the system the post describes, so a story must not say so.
+- Still open: DN's own article; IBM's Prize Challenge winner release (headline seen only, behind a redirect); a second source for PagerDuty (results or a customer).
+- state: ok; done: 2 captures, 1 revised, 2 gaps filled; next: 15:15 run; ask: none; run: scheduled
