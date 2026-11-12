@@ -78,7 +78,9 @@
             sources: [...S.values()], leads: L, ai: [...AI.values()], q: [], uses, risks } }
 
     // ---------- state ----------
-    let sub = 'search', cur = null, R = { ph: 'idle' }, F = null, api = null, COST = get(COSTK) === '1', KEY = get(KEYK) || '', LIVERUN = null
+    const askKey = () => { try { const v = localStorage.getItem('cc.or.key'); return v ? String(JSON.parse(v) || '') : '' } catch { return '' } }
+    const shareKey = v => { try { if (v && !askKey()) localStorage.setItem('cc.or.key', JSON.stringify(v)) } catch {} }
+    let sub = 'search', cur = null, R = { ph: 'idle' }, F = null, api = null, COST = get(COSTK) === '1', KEY = get(KEYK) || askKey() || '', LIVERUN = null
     const elapsed = () => performance.now() - (R.t0 || 0)
     const prog = (a, i) => R.ph === 'replay' ? Math.min(1, elapsed() / Math.max(1, a.ms)) : R.ph === 'live' ? (LIVERUN && LIVERUN.done[a.id] ? 1 : Math.min(.95, elapsed() / 25000)) : 1
     function arrived() { if (!cur) return []; if (R.ph === 'live') return []
@@ -132,7 +134,7 @@
         if (isLive()) return head + `<div class="st"><span><em style="color:var(--gold2);border-color:rgba(251,226,174,.5)">NÃO REVISTO</em> pistas dos agentes; fica só neste aparelho</span></div>${x.tag ? `<p class="note" style="color:#CFE3DF">${esc(x.tag)}</p>` : ''}<div class="rate"><div class="t"><span>Pistas, cada uma com a fonte que o agente citou</span>${COST ? '<em>$' + (x.cost || 0).toFixed(3) + ' esta pesquisa</em>' : ''}</div><div class="n"><strong>${x.leads.length}</strong><span class="d" style="color:var(--dim)">${x.sources.length} fontes · ${x.ai.length} agentes de IA</span></div></div>${x.ai[0] ? `<div class="ai"><b>Agente de IA · ${esc(x.ai[0].n)}</b>${esc(x.ai[0].w.slice(0, 180))}</div>` : ''}${errs.length ? `<div class="ai"><b>Não responderam</b>${errs.map(a => esc(short(a.label)) + ': ' + esc(String(a.error).slice(0, 80))).join('<br>')}</div>` : ''}<p class="note">Uma pista é o que um agente disse; só conta como facto depois de lida a fonte (o xray@ revê).</p>${KEY ? '<button type="button" class="xbtn" data-relive="1">↻ Pesquisar outra vez</button>' : ''}`
         return head + `<p class="note" style="color:#CFE3DF">${esc(x.tag)}</p><div class="rate"><div class="t"><span>Pistas confirmadas na fonte</span>${COST && x.cost ? '<em>$' + x.cost.toFixed(2) + ' esta pesquisa</em>' : ''}</div><div class="n"><strong>${pctOf(x)}%</strong><span class="d" style="color:var(--dim)">${ok} / ${x.leads.length}</span></div></div>${x.ai[0] ? `<div class="ai"><b>Agente de IA · ${esc(x.ai[0].n)}</b>${esc(x.ai[0].w.slice(0, 180))}${x.ai[0].w.length > 180 ? '…' : ''}</div>` : ''}<p class="note">Revisto pelo xray@ · <a href="${SITE}xray/${esc(x.slug)}/" target="_blank" rel="noopener" style="color:var(--teal)">a ficha completa ›</a></p>${KEY ? '<button type="button" class="xbtn" data-relive="1">▶ Pesquisar agora ao vivo</button>' : ''}`
     }
-    function go(name, forceLive) { const q = String(name).trim(), lq = q.toLowerCase()
+    function go(name, forceLive) { if (!KEY) { KEY = askKey(); kdot() } const q = String(name).trim(), lq = q.toLowerCase()
         const x = !forceLive && (all().find(y => y.name.toLowerCase() === lq || y.slug === lq) || (q.length > 3 && all().find(y => y.name.toLowerCase().includes(lq))))
         F.st.card = 'leads'; F.st.sel = -1
         if (x) { cur = x; R = { ph: 'idle' }; $$('xin').value = x.name; F.draw(true); rvFor(x); return }
@@ -155,9 +157,9 @@
         if (R.ph === 'live') { const b = api.SR.querySelector('.orbc'); if (b && cur) { /* partial results already drawn on arrival */ } }
         const sig = R.ph + (cur ? cur.slug + arrived().length : '') + Math.round(readDone() * 4); if (sig !== last && R.ph !== 'live') { last = sig; const keep = F.st.sel; F.draw(false); F.st.sel = keep } else if (R.ph === 'live') last = '' }
     function onClick(e) { const t = e.target
-        if (t.closest('#keyb')) { const d = $$('kdlg'); d.hidden = !d.hidden; $$('keyb').setAttribute('aria-expanded', String(!d.hidden)); if (!d.hidden) kpaint(); return }
+        if (t.closest('#keyb')) { if (!KEY) { KEY = askKey(); kdot() } const d = $$('kdlg'); d.hidden = !d.hidden; $$('keyb').setAttribute('aria-expanded', String(!d.hidden)); if (!d.hidden) kpaint(); return }
         if (t.closest('#kopen')) { unseal(); return }
-        if (t.closest('#ksave')) { const v = $$('kin').value.trim(); $$('kin').value = ''; if (!v) { kmsg('Cola a chave primeiro.', 1); return } KEY = v; put(KEYK, v); kdot(); kpaint('Guardada neste aparelho. A verificar…'); keyCheck(); return }
+        if (t.closest('#ksave')) { const v = $$('kin').value.trim(); $$('kin').value = ''; if (!v) { kmsg('Cola a chave primeiro.', 1); return } KEY = v; put(KEYK, v); shareKey(v); kdot(); kpaint('Guardada neste aparelho. A verificar…'); keyCheck(); return }
         if (t.closest('#kdel')) { KEY = ''; put(KEYK, null); kdot(); kpaint('Apagada deste aparelho.'); return }
         if (t.closest('#kmake')) { makeWords(); return }
         if (t.closest('#kcopy')) { const ta = $$('kblob'); ta.select && ta.select(); (navigator.clipboard ? navigator.clipboard.writeText(ta.value) : Promise.reject()).then(() => kmsg('Copiado.'), () => { try { document.execCommand('copy'); kmsg('Copiado.') } catch { kmsg('Seleciona e copia à mão.', 1) } }); return }
@@ -199,13 +201,13 @@
     const kmsg = (m, bad) => { const k = $$('kst'); if (k) { k.textContent = m; k.className = bad ? 'bad' : '' } }
     function kpaint(msg) { const d = $$('kdlg'); if (!d) return
         const paste = `<input type="password" id="kin" placeholder="sk-or-…" autocomplete="off"><div class="kr"><button type="button" id="ksave">Guardar</button></div>`
-        d.innerHTML = KEY ? `<b>Chave do OpenRouter</b><p>✓ Este aparelho já tem a chave. Fica só neste browser e vai só para openrouter.ai.</p><div class="kr"><button type="button" id="kdel">Apagar deste aparelho</button></div>${SEAL ? '' : `<details><summary>Fechar a chave com a frase da equipa</summary><p>Escreve a frase da equipa (ou deixa vazio para três palavras ao acaso). O ficheiro fechado vai para o site (data/xray/key.sealed.json); sem a frase não serve para nada.</p><input type="text" id="kphrase" placeholder="a frase da equipa" autocomplete="off" autocapitalize="none" spellcheck="false"><div class="kr"><button type="button" id="kmake">Fechar a chave</button></div><div id="kout"></div></details>`}<small id="kst"></small>`
+        d.innerHTML = KEY ? `<b>Chave do OpenRouter</b><p>✓ Este aparelho já tem a chave${!get(KEYK) && askKey() ? ' (a mesma do Ask Claude)' : ''}. Fica só neste browser e vai só para openrouter.ai.</p><div class="kr"><button type="button" id="kdel">Apagar deste aparelho</button></div>${SEAL ? '' : `<details><summary>Fechar a chave com a frase da equipa</summary><p>Escreve a frase da equipa (ou deixa vazio para três palavras ao acaso). O ficheiro fechado vai para o site (data/xray/key.sealed.json); sem a frase não serve para nada.</p><input type="text" id="kphrase" placeholder="a frase da equipa" autocomplete="off" autocapitalize="none" spellcheck="false"><div class="kr"><button type="button" id="kmake">Fechar a chave</button></div><div id="kout"></div></details>`}<small id="kst"></small>`
             : SEAL ? `<b>A frase da equipa</b><p>Escreve a frase da equipa para abrir a chave da demo neste aparelho. Só é preciso uma vez.</p><input type="text" id="kwords" placeholder="a frase da equipa" autocomplete="off" autocapitalize="none" spellcheck="false"><div class="kr"><button type="button" id="kopen">Abrir</button></div><details><summary>Ou colar a chave</summary>${paste}</details><small id="kst"></small>`
             : `<b>Chave do OpenRouter</b><p>Guardada só neste aparelho (no browser). Vai só para openrouter.ai; nunca para o site nem para o repositório. Usa a chave descartável da demo, com orçamento limitado.</p>${paste}<small id="kst"></small>`
         if (msg) kmsg(msg); const f = $$('kwords') || $$('kin'); if (f) f.focus() }
     async function unseal() { const w = $$('kwords'); if (!w || !SEAL) return; const words = w.value; if (norm(words).length < 4) { kmsg('Escreve a frase da equipa.', 1); return }
         kmsg('A abrir…'); try { const k = await aesKey(words, unb64(SEAL.salt), SEAL.rounds || ROUNDS), pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(SEAL.iv) }, k, unb64(SEAL.ct))
-            KEY = new TextDecoder().decode(pt); put(KEYK, KEY); w.value = ''; kdot(); kpaint('✓ Aberta. A verificar…'); keyCheck()
+            KEY = new TextDecoder().decode(pt); put(KEYK, KEY); shareKey(KEY); w.value = ''; kdot(); kpaint('✓ Aberta. A verificar…'); keyCheck()
         } catch { kmsg('Essa frase não abre a chave. Confirma-a.', 1) } }
     async function makeWords() { if (!KEY) return; kmsg('A fechar…'); try { const own = norm(($$('kphrase') || {}).value || '')
         if (own && own.length < 4) throw new Error('a frase é curta demais')
@@ -461,7 +463,7 @@
         'Agente de IA': 'AI agent', 'Fonte pública': 'Public source', 'Ver este cenário ›': 'See this scenario ›',
         'Chave do OpenRouter': 'OpenRouter key', 'Guardar': 'Save', 'Apagar deste aparelho': 'Remove from this device', 'A frase da equipa': 'The team phrase', 'Abrir': 'Open', 'Ou colar a chave': 'Or paste the key',
         'Guardada só neste aparelho (no browser). Vai só para openrouter.ai; nunca para o site nem para o repositório. Usa a chave descartável da demo, com orçamento limitado.': 'Kept only on this device (in the browser). It goes only to openrouter.ai; never to the site or the repository. Use the demo\'s disposable key, with a limited budget.',
-        '✓ Este aparelho já tem a chave. Fica só neste browser e vai só para openrouter.ai.': '✓ This device has the key. It stays in this browser and goes only to openrouter.ai.',
+        '✓ Este aparelho já tem a chave. Fica só neste browser e vai só para openrouter.ai.': '✓ This device has the key. It stays in this browser and goes only to openrouter.ai.', '✓ Este aparelho já tem a chave (a mesma do Ask Claude). Fica só neste browser e vai só para openrouter.ai.': '✓ This device has the key (the same as Ask Claude\'s). It stays in this browser and goes only to openrouter.ai.',
         'Escreve a frase da equipa para abrir a chave da demo neste aparelho. Só é preciso uma vez.': 'Type the team phrase to open the demo key on this device. Needed once.',
         'Fechar a chave com a frase da equipa': 'Seal the key with the team phrase', 'Fechar a chave': 'Seal the key', 'Escreve a frase da equipa (ou deixa vazio para três palavras ao acaso). O ficheiro fechado vai para o site (data/xray/key.sealed.json); sem a frase não serve para nada.': 'Type the team phrase (or leave it empty for three random words). The sealed file goes to the site (data/xray/key.sealed.json); without the phrase it is useless.',
         'Fechada com a frase da equipa.': 'Sealed with the team phrase.', 'Copiar o ficheiro': 'Copy the file', 'Copiado.': 'Copied.', 'A fechar…': 'Sealing…', 'A abrir…': 'Opening…', 'Cola a chave primeiro.': 'Paste the key first.', 'Apagada deste aparelho.': 'Removed from this device.',
