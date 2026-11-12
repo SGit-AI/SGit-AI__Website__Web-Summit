@@ -1,0 +1,268 @@
+{
+ "number": 9,
+ "date": "2026-11-12",
+ "kicker": "Web Summit 2026 · token accountant",
+ "title": "Brief 9: a quiet day, dashboard keeps growing",
+ "when": "12 November 2026, 17:40 UTC (window: since brief 8, 11 November 17:44 UTC)",
+ "by": "accountant@web-summit.indi",
+ "headline": "931,712 fresh tokens, from dashboard and me only; dashboard's cost per wake has risen most days since 8 November to 349,152, 99% re-loading, so A6 is still the biggest saving open.",
+ "stats": [
+  {
+   "n": "931,712",
+   "label": "tokens today (fresh, Indi's agents)"
+  },
+  {
+   "n": "5,346,437",
+   "label": "cache reads today"
+  },
+  {
+   "n": "2 of 17",
+   "label": "agents measured of agents running"
+  },
+  {
+   "n": "~1.3 million",
+   "label": "fresh saving per day from A6 (estimate, brief 7)"
+  }
+ ],
+ "for_you": [
+  {
+   "id": "A6",
+   "ask": "Fresh sessions with the full kit prompt for dashboard, dev, prompter and me (brief 7)?",
+   "detail": "Dashboard per wake: 219,031 (8 Nov), 233,468, 205,992, 327,129, 349,152 (today); 99% of it re-loading. A fresh first wake measured 12,676.",
+   "options": [
+    "Yes, all four",
+    "Dashboard first",
+    "No"
+   ],
+   "recommend": "Yes, all four"
+  },
+  {
+   "id": "A9",
+   "ask": "A new session per overnight round for newsapp and teamapp (brief 8)?",
+   "detail": "Neither ran last night. Open for their next night.",
+   "options": [
+    "Yes, both",
+    "No"
+   ],
+   "recommend": "Yes, both"
+  },
+  {
+   "id": "A8",
+   "ask": "Run me lighter (brief 7)?",
+   "detail": "Eight wakes: 1,356,876 fresh; savings 0, nothing applied. A7 and A4 also open.",
+   "options": [
+    "Fresh session, brief only on new numbers",
+    "Every other day",
+    "Keep daily"
+   ],
+   "recommend": "Fresh session, brief only on new numbers"
+  }
+ ],
+ "you_asked": [],
+ "sections": [
+  {
+   "title": "1. Ledger",
+   "table": {
+    "head": [
+     "Agent",
+     "Wakes",
+     "Fresh input",
+     "Output",
+     "Cache write",
+     "Cache read",
+     "Sub-agent tokens",
+     "Per wake (trend)",
+     "Pass rate"
+    ],
+    "rows": [
+     [
+      "dashboard",
+      "2",
+      "21",
+      "4,402",
+      "693,880",
+      "3,660,907",
+      "0",
+      "349,152 (up from 327,129)",
+      "2/2"
+     ],
+     [
+      "accountant",
+      "1",
+      "13",
+      "7,842",
+      "225,554",
+      "1,685,530",
+      "0",
+      "233,409 (up from 222,255)",
+      "1/1"
+     ],
+     [
+      "15 others",
+      "0",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "2. Biggest three savings",
+   "items": [
+    "Dashboard re-loading (A6): 693,880 of 698,303 fresh tokens were cache writes; context per call 301,017 and 313,192.",
+    "Overnight rounds (A9): no run last night; 100.5 million cache reads the night before.",
+    "My own wakes (A8): 97% re-loading, 233,409 fresh."
+   ]
+  },
+  {
+   "title": "3. Model tests run",
+   "text": "None: A7 open."
+  },
+  {
+   "title": "4. Agents not yet measuring",
+   "text": "Told to their conductor: conductor@web-summit.indi made 14 commits today and has never written a line; dev (1) and social (1) also ran without one."
+  },
+  {
+   "title": "5. Data notes and 6. My own use",
+   "text": "tally.py. My wake 8 line is stamped 17:44 by its machine's clock, before brief 8's 17:48 stamp, so it is in this window. Inbox report sent. This wake: brief 10."
+  }
+ ],
+ "next": [
+  "13 November: brief 10."
+ ],
+ "sources": [
+  "people/indi/accountant/ledger/ (via tally.py)",
+  "people/indi/agents.json",
+  "git log since brief 8"
+ ],
+ "friendly": {
+  "title": "Your agents' token use, 12 November",
+  "summary": "A quiet day: only dashboard and I reported. Dashboard's cost per run keeps climbing, because it runs in one long session that grows every day. A fresh session (A6) would stop that.",
+  "numbers": [
+   {
+    "n": "931,712",
+    "label": "Fresh tokens today",
+    "explain": "Dashboard and me."
+   },
+   {
+    "n": "349,152",
+    "label": "One dashboard run",
+    "explain": "Up from 219,031 on 8 November."
+   },
+   {
+    "n": "99%",
+    "label": "Of it re-loading",
+    "explain": "Old conversation written back into memory."
+   },
+   {
+    "n": "14",
+    "label": "Conductor commits, no report",
+    "explain": "Your conductor still does not measure itself."
+   }
+  ],
+  "agents": [
+   {
+    "name": "dashboard, accountant",
+    "state": "report",
+    "on": true
+   },
+   {
+    "name": "15 others, incl. the conductor",
+    "state": "not today",
+    "on": false
+   }
+  ],
+  "bars_title": "Dashboard: fresh tokens per run",
+  "bars": [
+   {
+    "label": "8 Nov",
+    "value": 219031,
+    "shown": "219,031"
+   },
+   {
+    "label": "9 Nov",
+    "value": 233468,
+    "shown": "233,468"
+   },
+   {
+    "label": "10 Nov",
+    "value": 205992,
+    "shown": "205,992"
+   },
+   {
+    "label": "11 Nov",
+    "value": 327129,
+    "shown": "327,129"
+   },
+   {
+    "label": "12 Nov",
+    "value": 349152,
+    "shown": "349,152"
+   }
+  ],
+  "bars_note": "A fresh session's first run measured 12,676 (video-editor).",
+  "savings": [
+   {
+    "title": "Fresh session for dashboard",
+    "plain": "Stops the daily climb.",
+    "evidence": "349,152 per run, 99% re-loading."
+   },
+   {
+    "title": "New session per overnight round",
+    "plain": "For the next night the helpers run.",
+    "evidence": "100.5 million re-reads on 10 to 11 November."
+   },
+   {
+    "title": "Run me lighter",
+    "plain": "A fresh session, and briefs only on new numbers.",
+    "evidence": "233,409 for today's brief."
+   }
+  ],
+  "decisions": [
+   {
+    "id": "A6",
+    "question": "Fresh sessions for daily runs?",
+    "plain": "Dashboard, dev, prompter and me.",
+    "options": [
+     "Yes, all four",
+     "Dashboard first",
+     "No"
+    ],
+    "recommend": "Yes, all four"
+   },
+   {
+    "id": "A9",
+    "question": "New session per overnight round?",
+    "plain": "News app and Team app helpers.",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "recommend": "Yes"
+   },
+   {
+    "id": "A8",
+    "question": "Run me lighter?",
+    "plain": "Fresh session, brief only on new numbers.",
+    "options": [
+     "Yes",
+     "Every other day",
+     "Keep daily"
+    ],
+    "recommend": "Yes"
+   }
+  ],
+  "glossary": [
+   [
+    "Re-loading",
+    "a long session writing its whole history back into memory after a pause."
+   ]
+  ],
+  "next": "13 November at 17:30 UTC."
+ }
+}
