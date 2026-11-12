@@ -1,16 +1,16 @@
 {
  "thursday": {
   "about": "Thursday 12 November (Web Summit's day 3): every IPMA warning for Lisbon that touches Thursday, and what IPMA's model and the airport TAF say for Thursday morning (00:00-12:00 UTC = Lisbon time). Facts, each with its source; no analysis here.",
-  "read_utc": "2026-11-12T04:22:54Z",
+  "read_utc": "2026-11-12T05:23:50Z",
   "lisbon_warnings_touching_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-12T04:22:54Z",
+   "read_utc": "2026-11-12T05:23:50Z",
    "items": [],
    "none_above_yellow": true
   },
   "ipma_model_thursday_morning": {
    "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-   "read_utc": "2026-11-12T04:22:54Z",
+   "read_utc": "2026-11-12T05:23:50Z",
    "model_updated_local": "2026-11-11T19:56:17",
    "wind_mean_kmh_range": [
     15.1,
@@ -211,8 +211,8 @@
   },
   "ipma_daily_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-   "read_utc": "2026-11-12T04:22:54Z",
-   "updated_local": "2026-11-12T03:31:02",
+   "read_utc": "2026-11-12T05:23:50Z",
+   "updated_local": "2026-11-12T04:31:02",
    "precipitaProb": "100.0",
    "tMin": "15.8",
    "tMax": "20.5",
@@ -235,15 +235,15 @@
   },
   "taf_groups_into_thursday": {
    "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-   "read_utc": "2026-11-12T04:22:54Z",
-   "taf_issue_utc": "2026-11-11T23:00Z",
-   "taf_valid_to_utc": "2026-11-13T06:00Z",
+   "read_utc": "2026-11-12T05:23:50Z",
+   "taf_issue_utc": "2026-11-12T05:00Z",
+   "taf_valid_to_utc": "2026-11-13T12:00Z",
    "groups": [
     {
      "change": "BASE",
      "prob": null,
-     "from_utc": "2026-11-12T00:00Z",
-     "to_utc": "2026-11-13T06:00Z",
+     "from_utc": "2026-11-12T06:00Z",
+     "to_utc": "2026-11-13T12:00Z",
      "becoming_by_utc": null,
      "wind_dir": 250,
      "wind_kt": 12,
@@ -256,8 +256,8 @@
     {
      "change": "TEMPO",
      "prob": null,
-     "from_utc": "2026-11-12T00:00Z",
-     "to_utc": "2026-11-13T06:00Z",
+     "from_utc": "2026-11-12T06:00Z",
+     "to_utc": "2026-11-13T12:00Z",
      "becoming_by_utc": null,
      "wind_dir": null,
      "wind_kt": null,
@@ -1150,7 +1150,46 @@
     "no change"
    ],
    "errors": []
+  },
+  {
+   "read_utc": "2026-11-12T05:22:47Z",
+   "changes": [
+    "THURSDAY: warnings none; model Thu 00-12 mean wind 15.1-22.0 km/h",
+    "stations to 04:00: top mean wind 20.5 km/h at Lisboa (Geofísico)",
+    "new LPPT TAF 12T05:00: TAF LPPT 120500Z 1206/1312 25012KT 9999 ...",
+    "LPPT METAR 05:00: 17 km/h",
+    "met.no forecast updated 2026-11-12T05:19:48Z",
+    "new LPMA TAF 12T05:00: TAF LPMA 120500Z 1206/1306 VRB05KT 9999 ...",
+    "LPMA METAR 05:00: 7 km/h"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-12T05:22:47Z",
+     "error": "<urlopen error [Errno 104] Connection reset by peer>"
+    }
+   ]
+  },
+  {
+   "read_utc": "2026-11-12T05:23:16Z",
+   "changes": [
+    "no change"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-12T05:23:16Z",
+     "error": "<urlopen error [Errno 104] Connection reset by peer>"
+    }
+   ]
+  },
+  {
+   "read_utc": "2026-11-12T05:23:50Z",
+   "changes": [
+    "no change"
+   ],
+   "errors": []
   }
  ],
- "next_read_utc": "2026-11-12T05:22Z"
+ "next_read_utc": "2026-11-12T06:22Z"
 }

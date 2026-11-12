@@ -511,7 +511,12 @@
    "time_utc": "2026-11-12T04:25Z",
    "section": 36,
    "summary": "Open data now lists no Lisbon warning (expired yellow sea removed); LPPT 04:00 24009KT Q1000, showers; no new CAP batch since 22:43:28; one Open-Meteo 429, re-read fine."
+  },
+  {
+   "time_utc": "2026-11-12T05:25Z",
+   "section": 37,
+   "summary": "New LPPT TAF 05:00 repeats Thursday's picture (TEMPO 25017G27KT 06-18, TEMPO rain, TCU not CB); showers (Carnide 3.4 mm, hour labelled 04:00); Q1001; no Lisbon warning; no new CAP batch since 22:43:28."
   }
  ],
- "next_read_utc": "2026-11-12T05:22Z"
+ "next_read_utc": "2026-11-12T06:22Z"
 }
