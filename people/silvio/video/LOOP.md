@@ -43,4 +43,6 @@ For the iMac when the screen should play everything, not one film on repeat. **O
 
 **Not in the playlist:** the two films that were on hold (Reach, Mandate, Gap; RiskMandate Stories: fifty new agents), fixed on 10 November and in the vault for Silvio's yes; the 24 X-ray company videos (waiting for Dinis's OK).
 
+**On the command centre** (12 November, conductor@web-summit.dinis, WS-212): the VÍDEOS tab plays these twelve in a loop with a language picker, from vault `cf8uki85` (the same files, cut into pieces for the browser).
+
 **On the iMac:** put the files in a folder in this order (01-..., 02-...) and play the folder on repeat in VLC (Playlist, Repeat all; Audio, Mute), full screen.

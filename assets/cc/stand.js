@@ -40,8 +40,23 @@
         const xray = { id: 'xray', label: ['X-Ray', 'X-Ray'], icon: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM21 21l-5-5', mount(h, api) { this.p = xrayPlugin(api, h, X) }, show(anim) { this.p.FX.open(anim) }, zoom(k) { this.p.FX.zoom(k) } }
         // GAMMA-Ray: the command centre's own circuit (one source), shown here without its chrome
         const gamma = { id: 'gamma', label: ['GAMMA-Ray', 'GAMMA-Ray'], icon: 'M3 12h4l3-8 4 16 3-8h4', mount(h) { const u = location.pathname + '?embed=1#gamma'; h.innerHTML = `<iframe src="${u}" title="GAMMA-Ray" style="width:100%;height:calc(100vh - 170px);border:0;border-radius:16px;background:#04100F"></iframe>` }, show() {} }
+        // Angelo's three live views (Dinis, 12 November: "squeeze in the universe two more little tabs"): MENSAGENS (the hexagon,
+        // every exchange at its moment), ENTREGAS (the agents on one side, what they delivered on the other) and WORKSTREAMS, from
+        // people/angelo/app/live.js, shown here without that page's chrome: the hexagon in its own display mode, the other two as
+        // the same page with only its graph (.lv-frame) left on screen (same origin, so the frame's own CSS is set once it loads).
+        const ANG = SITE + 'people/angelo/app/index.html'
+        const angelo = (id, label, icon, src) => ({ id, label, icon, mount(h) {
+            h.innerHTML = `<iframe src="${src}" title="${label[1]}" style="width:100%;height:calc(100vh - 170px);border:0;border-radius:16px;background:#04100F"></iframe>`
+            const fr = h.querySelector('iframe')
+            fr.addEventListener('load', () => { try { const d = fr.contentDocument; if (!d || /display=1/.test(src)) return
+                const css = d.createElement('style'); css.textContent = 'html, body { background: #04100F !important; overflow: hidden !important; } body * { visibility: hidden !important; } .lv-frame, .lv-frame * { visibility: visible !important; } .lv-frame { position: fixed !important; inset: 0 !important; width: 100vw !important; height: 100vh !important; max-width: none !important; margin: 0 !important; z-index: 2147483000 !important; background: #04100F !important; border: 0 !important; } .lv-frame .lv { width: 100% !important; height: 100% !important; } .lv-frame select { visibility: hidden !important; }'
+                const put = () => { if (!d.getElementById('rm-stand-only')) { css.id = 'rm-stand-only'; d.head.appendChild(css) } fr.contentWindow.dispatchEvent(new Event('resize')) }
+                put(); setTimeout(put, 1500); setTimeout(put, 5000) } catch { } }) }, show() {} })
+        const angMsg = angelo('ang-live', ['Mensagens', 'Messages'], 'M4 12l8-8 8 8-8 8z', ANG + '?display=1#live')
+        const angWork = angelo('ang-work', ['Entregas', 'Deliverables'], 'M4 6h6v12H4zM14 6h6v5h-6zM14 13h6v5h-6zM10 12h4', ANG + '#live?v=work')
+        const angWs = angelo('ang-ws', ['Workstreams', 'Workstreams'], 'M5 5h14M5 12h14M5 19h14', ANG + '#live?v=ws')
         const BAR = R0.BAR
-        await window.Gravity.mount(host, { css: '#wrap { border-radius: 0 !important; border: 0 !important; min-height: calc(100vh - 64px) !important; } .fan, .uni { height: calc(100vh - 130px) !important; } .shf { min-height: calc(100vh - 130px) !important; } .subv button, .crumbs { font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; } .subv button { font-size: 13px; }', data: gdata, start: 'uni', tourCentre: 'indi', metric: BAR ? { pct: BAR.pct, of: BAR.e, total: BAR.t } : null, detail: polHTML, views: [shields, xray], // GAMMA-Ray sits on the top bar now (Silvio, 12 November)
+        await window.Gravity.mount(host, { css: '#wrap { border-radius: 0 !important; border: 0 !important; min-height: calc(100vh - 64px) !important; } .fan, .uni { height: calc(100vh - 130px) !important; } .shf { min-height: calc(100vh - 130px) !important; } .subv button, .crumbs { font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; } .subv button { font-size: 13px; }', data: gdata, start: 'uni', tourCentre: 'indi', metric: BAR ? { pct: BAR.pct, of: BAR.e, total: BAR.t } : null, detail: polHTML, views: [shields, xray, angMsg, angWork, angWs], // GAMMA-Ray sits on the top bar now (Silvio, 12 November)
             liveLabel: null })
     }
     function shieldsPlugin(api, host) { const { SR, $, t, esc, ico, reduced } = api
