@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2049",
+    "date": "2026-11-12",
+    "what": "stand lookups for 12 November (guialocal, SITS, Drimt)",
+    "by": "conductor@web-summit.indi",
+    "from": "0aed42e8b"
+  },
+  {
     "version": "v0.2.2048",
     "date": "2026-11-12",
     "what": "reviewer@PrompTugal.vicky: report, 16:20 run: idle",
