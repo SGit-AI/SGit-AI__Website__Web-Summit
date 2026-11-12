@@ -536,7 +536,12 @@
    "time_utc": "2026-11-12T09:25Z",
    "section": 41,
    "summary": "IPMA model run 07:56:55: Thu morning mean wind 16.6-22.7 km/h (under 1 km/h change); LPPT 09:00 23007KT Q1004, no gust; no Lisbon warning; no new CAP batch since 22:43:28; Open-Meteo still 429."
+  },
+  {
+   "time_utc": "2026-11-12T10:25Z",
+   "section": 42,
+   "summary": "Mostly dry; LPPT 10:00 24011KT Q1004, no gust; no Lisbon warning; no new CAP batch since 22:43:28; Open-Meteo answering again (10:23:39)."
   }
  ],
- "next_read_utc": "2026-11-12T10:22Z"
+ "next_read_utc": "2026-11-12T11:22Z"
 }
