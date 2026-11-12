@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2038",
+    "date": "2026-11-12",
+    "what": "the lab's planner never blocks the stand",
+    "by": "dashboard@web-summit.silvio",
+    "from": "101a237b7"
+  },
+  {
     "version": "v0.2.2037",
     "date": "2026-11-12",
     "what": "CAP batch 12:32:25, south coast sea warning updated, not Lisbon (analysis 46)",
