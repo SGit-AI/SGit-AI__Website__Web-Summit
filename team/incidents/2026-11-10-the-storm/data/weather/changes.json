@@ -1,65 +1,37 @@
 {
  "thursday": {
   "about": "Thursday 12 November (Web Summit's day 3): every IPMA warning for Lisbon that touches Thursday, and what IPMA's model and the airport TAF say for Thursday morning (00:00-12:00 UTC = Lisbon time). Facts, each with its source; no analysis here.",
-  "read_utc": "2026-11-12T08:23:11Z",
+  "read_utc": "2026-11-12T09:22:55Z",
   "lisbon_warnings_touching_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-12T08:23:11Z",
+   "read_utc": "2026-11-12T09:22:55Z",
    "items": [],
    "none_above_yellow": true
   },
   "ipma_model_thursday_morning": {
    "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-   "read_utc": "2026-11-12T08:23:11Z",
-   "model_updated_local": "2026-11-11T19:56:17",
+   "read_utc": "2026-11-12T09:22:55Z",
+   "model_updated_local": "2026-11-12T07:56:55",
    "wind_mean_kmh_range": [
-    15.1,
-    22.0
+    16.6,
+    22.7
    ],
    "wind_dirs": [
     "W"
    ],
-   "rain_prob_pct_max": 100.0,
+   "rain_prob_pct_max": 96.0,
    "sea_total_m_range": [
     3.0,
     3.4
    ],
    "rows": [
     {
-     "time_utc": "2026-11-12T00:00Z",
-     "wind_mean_kmh": 15.8,
-     "wind_dir": "W",
-     "rain_prob_pct": 41.0,
-     "rain_intensity_class": 1,
-     "temp_c": 16.9,
-     "sea_total_m": 3.0,
-     "weather_type_id": 7,
-     "weather_type_pt": "Aguaceiros/chuva fracos",
-     "weather_type_en": "Light showers/rain",
-     "rain_intensity_pt": "Fraco",
-     "rain_intensity_en": "Weak"
-    },
-    {
-     "time_utc": "2026-11-12T01:00Z",
-     "wind_mean_kmh": 15.1,
-     "wind_dir": "W",
-     "rain_prob_pct": null,
-     "rain_intensity_class": 1,
-     "temp_c": 16.9,
-     "sea_total_m": 3.0,
-     "weather_type_id": 7,
-     "weather_type_pt": "Aguaceiros/chuva fracos",
-     "weather_type_en": "Light showers/rain",
-     "rain_intensity_pt": "Fraco",
-     "rain_intensity_en": "Weak"
-    },
-    {
      "time_utc": "2026-11-12T02:00Z",
-     "wind_mean_kmh": 16.9,
+     "wind_mean_kmh": 18.0,
      "wind_dir": "W",
      "rain_prob_pct": null,
      "rain_intensity_class": 1,
-     "temp_c": 16.6,
+     "temp_c": 16.1,
      "sea_total_m": 3.0,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
@@ -69,11 +41,11 @@
     },
     {
      "time_utc": "2026-11-12T03:00Z",
-     "wind_mean_kmh": 19.1,
+     "wind_mean_kmh": 16.6,
      "wind_dir": "W",
-     "rain_prob_pct": 100.0,
+     "rain_prob_pct": 92.0,
      "rain_intensity_class": 1,
-     "temp_c": 16.3,
+     "temp_c": 16.1,
      "sea_total_m": 3.1,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
@@ -83,11 +55,11 @@
     },
     {
      "time_utc": "2026-11-12T04:00Z",
-     "wind_mean_kmh": 17.3,
+     "wind_mean_kmh": 18.4,
      "wind_dir": "W",
      "rain_prob_pct": null,
      "rain_intensity_class": 1,
-     "temp_c": 16.4,
+     "temp_c": 15.4,
      "sea_total_m": 3.2,
      "weather_type_id": 10,
      "weather_type_pt": "Chuva fraca ou chuvisco",
@@ -97,11 +69,11 @@
     },
     {
      "time_utc": "2026-11-12T05:00Z",
-     "wind_mean_kmh": 16.9,
+     "wind_mean_kmh": 18.7,
      "wind_dir": "W",
      "rain_prob_pct": null,
      "rain_intensity_class": 1,
-     "temp_c": 16.7,
+     "temp_c": 16.2,
      "sea_total_m": 3.2,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
@@ -111,15 +83,15 @@
     },
     {
      "time_utc": "2026-11-12T06:00Z",
-     "wind_mean_kmh": 16.9,
+     "wind_mean_kmh": 17.6,
      "wind_dir": "W",
-     "rain_prob_pct": 100.0,
+     "rain_prob_pct": 96.0,
      "rain_intensity_class": 1,
      "temp_c": 16.3,
      "sea_total_m": 3.3,
-     "weather_type_id": 7,
-     "weather_type_pt": "Aguaceiros/chuva fracos",
-     "weather_type_en": "Light showers/rain",
+     "weather_type_id": 10,
+     "weather_type_pt": "Chuva fraca ou chuvisco",
+     "weather_type_en": "Light rain",
      "rain_intensity_pt": "Fraco",
      "rain_intensity_en": "Weak"
     },
@@ -139,11 +111,11 @@
     },
     {
      "time_utc": "2026-11-12T08:00Z",
-     "wind_mean_kmh": 16.9,
+     "wind_mean_kmh": 16.6,
      "wind_dir": "W",
      "rain_prob_pct": null,
      "rain_intensity_class": 1,
-     "temp_c": 16.8,
+     "temp_c": 16.5,
      "sea_total_m": 3.4,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
@@ -153,11 +125,11 @@
     },
     {
      "time_utc": "2026-11-12T09:00Z",
-     "wind_mean_kmh": 16.9,
+     "wind_mean_kmh": 16.6,
      "wind_dir": "W",
-     "rain_prob_pct": 57.0,
+     "rain_prob_pct": 53.0,
      "rain_intensity_class": 1,
-     "temp_c": 18.0,
+     "temp_c": 17.9,
      "sea_total_m": 3.4,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
@@ -167,55 +139,55 @@
     },
     {
      "time_utc": "2026-11-12T10:00Z",
-     "wind_mean_kmh": 19.8,
+     "wind_mean_kmh": 19.4,
      "wind_dir": "W",
      "rain_prob_pct": null,
-     "rain_intensity_class": 1,
+     "rain_intensity_class": 2,
      "temp_c": 19.1,
      "sea_total_m": 3.4,
-     "weather_type_id": 7,
-     "weather_type_pt": "Aguaceiros/chuva fracos",
-     "weather_type_en": "Light showers/rain",
-     "rain_intensity_pt": "Fraco",
-     "rain_intensity_en": "Weak"
+     "weather_type_id": 6,
+     "weather_type_pt": "Aguaceiros/chuva",
+     "weather_type_en": "Showers/rain",
+     "rain_intensity_pt": "Moderado",
+     "rain_intensity_en": "Moderate"
     },
     {
      "time_utc": "2026-11-12T11:00Z",
-     "wind_mean_kmh": 20.9,
+     "wind_mean_kmh": 21.2,
      "wind_dir": "W",
      "rain_prob_pct": null,
-     "rain_intensity_class": 1,
-     "temp_c": 19.5,
+     "rain_intensity_class": 2,
+     "temp_c": 19.1,
      "sea_total_m": 3.4,
-     "weather_type_id": 7,
-     "weather_type_pt": "Aguaceiros/chuva fracos",
-     "weather_type_en": "Light showers/rain",
-     "rain_intensity_pt": "Fraco",
-     "rain_intensity_en": "Weak"
+     "weather_type_id": 6,
+     "weather_type_pt": "Aguaceiros/chuva",
+     "weather_type_en": "Showers/rain",
+     "rain_intensity_pt": "Moderado",
+     "rain_intensity_en": "Moderate"
     },
     {
      "time_utc": "2026-11-12T12:00Z",
-     "wind_mean_kmh": 22.0,
+     "wind_mean_kmh": 22.7,
      "wind_dir": "W",
-     "rain_prob_pct": 88.0,
-     "rain_intensity_class": 1,
-     "temp_c": 20.5,
+     "rain_prob_pct": 92.0,
+     "rain_intensity_class": 2,
+     "temp_c": 19.7,
      "sea_total_m": 3.3,
-     "weather_type_id": 7,
-     "weather_type_pt": "Aguaceiros/chuva fracos",
-     "weather_type_en": "Light showers/rain",
-     "rain_intensity_pt": "Fraco",
-     "rain_intensity_en": "Weak"
+     "weather_type_id": 6,
+     "weather_type_pt": "Aguaceiros/chuva",
+     "weather_type_en": "Showers/rain",
+     "rain_intensity_pt": "Moderado",
+     "rain_intensity_en": "Moderate"
     }
    ]
   },
   "ipma_daily_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-   "read_utc": "2026-11-12T08:23:11Z",
-   "updated_local": "2026-11-12T07:31:02",
+   "read_utc": "2026-11-12T09:22:55Z",
+   "updated_local": "2026-11-12T08:31:02",
    "precipitaProb": "100.0",
-   "tMin": "15.8",
-   "tMax": "20.5",
+   "tMin": "15.4",
+   "tMax": "20.0",
    "predWindDir": "W",
    "idWeatherType": 7,
    "classWindSpeed": 2,
@@ -235,7 +207,7 @@
   },
   "taf_groups_into_thursday": {
    "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-   "read_utc": "2026-11-12T08:23:11Z",
+   "read_utc": "2026-11-12T09:22:55Z",
    "taf_issue_utc": "2026-11-12T05:00Z",
    "taf_valid_to_utc": "2026-11-13T12:00Z",
    "groups": [
@@ -1279,7 +1251,38 @@
      "error": "<urlopen error [Errno 104] Connection reset by peer>"
     }
    ]
+  },
+  {
+   "read_utc": "2026-11-12T09:22:42Z",
+   "changes": [
+    "THURSDAY: warnings none; model Thu 00-12 mean wind 16.6-22.7 km/h",
+    "stations to 08:00: top mean wind 16.6 km/h at Lisboa (Geofísico)",
+    "LPPT METAR 09:00: 13 km/h",
+    "IPMA hourly forecast changed (dataUpdate 2026-11-12T07:56:55)",
+    "met.no forecast updated 2026-11-12T08:19:44Z",
+    "LPMA METAR 09:00: 0 km/h"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-12T09:22:42Z",
+     "error": "HTTP Error 429: Too Many Requests"
+    }
+   ]
+  },
+  {
+   "read_utc": "2026-11-12T09:22:55Z",
+   "changes": [
+    "no change"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-12T09:22:55Z",
+     "error": "HTTP Error 429: Too Many Requests"
+    }
+   ]
   }
  ],
- "next_read_utc": "2026-11-12T09:22Z"
+ "next_read_utc": "2026-11-12T10:22Z"
 }

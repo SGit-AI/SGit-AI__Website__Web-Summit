@@ -1,7 +1,7 @@
 {
  "about": "IPMA's aeronautical forecast (TAF) and observations (METAR) for Lisbon airport (LPPT), 8 km north of the centre, read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport; not a public warning.",
  "icao": "LPPT",
- "read_utc": "2026-11-12T08:23:11Z",
+ "read_utc": "2026-11-12T09:22:55Z",
  "taf": {
   "issue_utc": "2026-11-12T05:00Z",
   "raw": "TAF LPPT 120500Z 1206/1312 25012KT 9999 FEW012 SCT020 TEMPO 1206/1312 4000 RA BKN012 FEW025TCU TEMPO 1206/1218 25017G27KT",
@@ -52,7 +52,7 @@
    }
   ],
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-12T08:23:11Z"
+  "read_utc": "2026-11-12T09:22:55Z"
  },
  "taf_history": [
   {
@@ -1993,6 +1993,34 @@
    "pressure_hpa": 1003,
    "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
    "read_utc": "2026-11-12T08:22:58Z"
+  },
+  {
+   "time_utc": "2026-11-12T08:30Z",
+   "raw": "METAR LPPT 120830Z 24006KT 210V280 9999 FEW012 FEW020TCU SCT048 17/15 Q1003 NOSIG",
+   "wind_dir": 240,
+   "wind_kt": 6,
+   "gust_kt": null,
+   "wind_kmh": 11,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": null,
+   "pressure_hpa": 1003,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
+   "read_utc": "2026-11-12T09:22:42Z"
+  },
+  {
+   "time_utc": "2026-11-12T09:00Z",
+   "raw": "METAR LPPT 120900Z 23007KT 210V280 9999 FEW012 18/15 Q1004 NOSIG",
+   "wind_dir": 230,
+   "wind_kt": 7,
+   "gust_kt": null,
+   "wind_kmh": 13,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": null,
+   "pressure_hpa": 1004,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
+   "read_utc": "2026-11-12T09:22:42Z"
   }
  ],
  "max_gust": {
@@ -2001,5 +2029,5 @@
   "time_utc": "2026-11-11T14:00Z",
   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json"
  },
- "next_read_utc": "2026-11-12T09:22Z"
+ "next_read_utc": "2026-11-12T10:22Z"
 }

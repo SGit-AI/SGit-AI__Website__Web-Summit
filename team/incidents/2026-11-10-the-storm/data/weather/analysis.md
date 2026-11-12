@@ -554,3 +554,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (read 08:22:58–08:23:11 UTC): LPPT 07:30 24006KT, TCU, Q1002; 08:00 24007KT (direction 210–270), showers in the vicinity, no gust, Q1003. Lisbon stations' rain in the hour labelled 07:00: 1.4 mm at Oeiras, 0.1 mm or less elsewhere. Still no warning for Lisbon. No new CAP batch for any district since 22:43:28 (reads every 5 min to 08:20:22). No new communiqué; LPPT TAF 05:00 unchanged. Open-Meteo still refused both reads this hour (its own rate limit); forecast.json keeps its last good read, 06:23:32 UTC. IPMA, met.no (updated 08:18:49) and the TAF were read normally.
 
 **Analysis (high):** no change: light wind, isolated showers, pressure still rising (1003 hPa). The gusts about 50 km/h at times in the TAF (06:00–18:00) have not appeared so far. Thursday as in sections 31 and 37.
+
+## 41. 09:25 UTC 12 Nov: IPMA model updated, same picture
+
+**Facts** (read 09:22:42–09:22:55 UTC): IPMA's hourly model for Lisbon updated (dataUpdate 12 Nov 07:56:55); Thursday 00:00–12:00 mean wind now 16.6–22.7 km/h (was 15.1–22.0). LPPT 08:30 24006KT, TCU, Q1003; 09:00 23007KT, no gust, no rain, Q1004. Lisbon stations' rain in the hour labelled 08:00: 1.5 mm at Barreiro, 0.1 mm or less elsewhere. Still no warning for Lisbon. No new CAP batch for any district since 22:43:28 (reads every 5 min to 09:19:25). No new communiqué; LPPT TAF 05:00 unchanged. Open-Meteo still refused both reads (HTTP 429); its last good read is 06:23:32.
+
+**Analysis (high):** the new IPMA run changes Thursday morning's wind by under 1 km/h; light wind, isolated showers, pressure rising (1004 hPa). No gusts so far against the TAF's about 50 km/h at times. Thursday as in sections 31 and 37.
