@@ -1,12 +1,12 @@
 {
   "about": "Where security.repos@web-summit.dinis stopped, per repository and branch: the last commit reviewed (the branch head when the run read it). The next run reviews every commit reachable from any branch and not from these. From the second run, every branch is listed, not only those active since the baseline.",
   "agent": "security.repos@web-summit.dinis",
-  "last_run": "2026-11-12T00:35Z",
+  "last_run": "2026-11-12T03:25Z",
   "baseline_from": "2026-11-08T11:00Z",
   "repos": {
     "SGit-AI/SGit-AI__Website__Web-Summit": {
       "branches": {
-        "dev": "c87e825f:b21769b0:199acb08:0d9150bc:0112e9b7",
+        "dev": "af4a941d:d4d14caf:2f16a9ed:df60a427:de22ae1e",
         "claude/awesome-dirac-rp94os": "1cc9740a:f6520690:6617362b:879004f6:564e0e8d",
         "claude/beautiful-clarke-mqhept": "a88e8c65:a2e854b4:1b5b2e2f:7506bab1:c53e2ddf",
         "claude/conductor-jose-setup-ogxaka": "ccfecefe:90fb74e8:38fd1b0b:0f89b40b:e179593d",
@@ -17,7 +17,7 @@
         "claude/hopeful-rubin-3zcktn": "b1fa5d0b:357aa159:da152b62:a1b9a004:13f232e2",
         "claude/modest-brahmagupta-37bfva": "60e4404e:43c38faa:28846c2e:c1eaf535:b0dcb11c",
         "claude/modest-lamport-v1ejmm": "166b6650:1b590251:32aae019:e6946550:73cab8f1",
-        "claude/nifty-bell-f1rkca": "675e42ce:d9795e49:b34a0d74:ef14357f:4dd0e0e7",
+        "claude/nifty-bell-f1rkca": "d95dd008:a30644f0:77ff6656:fd877211:f3083c6f",
         "claude/nifty-knuth-cnyek0": "359a829d:401c847b:468b04e0:8b63391a:77511427",
         "claude/optimistic-feynman-7pkot9": "dc306d7a:08898d1d:79bc0544:0601138f:ad218353",
         "claude/policy-lanes-angelo-entries-h6m2x0": "3bfc2f9a:f8305bb8:c22bb736:c1e15a33:2200fc2a",
@@ -35,7 +35,7 @@
         "pool/b2-flow-reuse": "33401ca1:90df7123:64840a90:f96b7994:e67ffd2b",
         "pool/b3-team-offers": "c2b0fa3d:31a09463:e64e7d57:65c139c0:72599d2f",
         "pool/b4-how-it-works": "acfa4403:8a5804ac:19053577:8f34128a:ee35bb9f",
-        "pool/claims": "8be10156:2c423fd5:e81facd5:8f3d9241:d579c787",
+        "pool/claims": "cfdcb028:457f7de0:e0d0443a:8545dd65:4fff55e8",
         "pool/handover-p1-relay": "11db0db2:1519a3c4:6a355d3b:9356453c:d578dea5",
         "pool/handover-p1-writeback": "0696db98:57e0d420:9fd9394a:3e3a2f97:94404749",
         "pool/handover-p2-format": "27d8dd52:d40f9ab2:a13332bc:e0a1ab85:1e264c6d",
@@ -58,11 +58,12 @@
         "pool/riskmandate-android-demo-build4": "965a2f2c:8ce1e567:e2928c6a:f9a864cb:89b8668e",
         "pool/riskmandate-android-demo-check": "8bf81c12:cea8a0af:fafb53c2:85ddd760:754d8e20",
         "pool/riskmandate-android-demo-check2": "c3f5feaa:81568b08:d0b81866:15b0b268:da6a94c8",
+        "pool/riskmandate-android-demo-check3": "eff23bdb:d97add0f:92fbd598:22d4db51:f0dbcb90",
         "pool/riskmandate-android-demo-spec": "1446287c:7dc810c4:c1298d61:28c242b7:ddaf1da6",
         "project/handover-market": "61be8b27:625d5ff1:3c963dfa:af1fbdd7:28538475",
         "project/network-views": "9bce297d:18e7b690:525d9cb1:28840692:28089d48",
         "project/prod-pipeline": "a922129c:7f18e068:45bd362c:d8469088:37ae4d69",
-        "project/riskmandate-android-demo": "f6df925b:4a8d3e9b:bdf57a52:a6e20c7b:a3abf945",
+        "project/riskmandate-android-demo": "990b1730:a14fb6b3:1a56eb3a:65a1c04d:50b04e0d",
         "workers/dev.abp": "1c15f6aa:28d462b1:b7990953:eb700d6a:3e27052a",
         "workers/dev.app": "8114482b:d12547e1:a6e12423:86fae6fd:63b344a9",
         "workers/dev.links": "1bd3382c:6c7a89e5:2ef8b100:06dfe4b7:e40347c6",
@@ -77,7 +78,7 @@
     },
     "PrompTugal/PrompTugal__News__Website": {
       "branches": {
-        "dev": "75e5948a:04b71a2e:0379479c:92b6062d:834b2618",
+        "dev": "74178abd:4093d6d6:8e40bc4b:42474040:9dd629eb",
         "claude/eager-euler-x3k3vm": "6bec1c34:72cbdc31:3d6b5c7c:a2142cee:7f9434b7",
         "claude/serene-keller-r1pzfc": "3affa4b4:a3478ef4:0565a131:54ffe10e:0c55e8bc",
         "claude/sweet-heisenberg-m1vm71": "c9217130:f27dae9a:55e5a708:0e644f28:6b31f73e",
@@ -85,9 +86,9 @@
         "preview/satellite-loop": "0096ef8e:0ce6e422:2e5a1788:860bea06:305582d0",
         "work/conductor-silvio": "e9ffd69b:1fc3f1cf:3aecbb1e:e3474c57:493ea465",
         "work/designer.experiments": "1177421a:6cc6e53e:ff0b578a:5b78ad2e:af1427ca",
-        "work/dev.data": "3c26dd8f:345a2604:4c0448d2:ca2529b3:d9a28377",
-        "work/dev.graphs": "e7684cf4:58e8df89:7bb8bf91:73e6b99d:277b969b",
-        "work/dev.pages": "3699ca87:8d1aaacb:36632996:ef9036c5:391cecc2",
+        "work/dev.data": "52fe5143:139eed35:ee3c7274:005e0daf:866f2f10",
+        "work/dev.graphs": "071d4f73:e569f6d7:03efde44:39cbae10:7d0c63a7",
+        "work/dev.pages": "8b357d8e:13ed62f3:ead5af93:1baa9db7:de386c66",
         "work/dev.portugal": "a1b6759c:2e35335a:aeef19d1:80e30d5f:3123cae5",
         "work/dev.search": "938ab510:70025f12:21ecfe41:5dc1b817:0b3a692e",
         "work/dev.verify": "56ed3c82:8adf8857:e4b2a852:d92f8a20:975fb0aa",
@@ -98,11 +99,11 @@
     },
     "PrompTugal/PrompTugal__App__Android": {
       "branches": {
-        "dev": "5badadaa:2fe70ad2:057584ae:baa78721:e14ee29a",
+        "dev": "2cd4cd75:5dea5c47:6a1e8ee6:058e81a0:da0e7287",
         "angelo/riskmandate-xray-browser": "5badadaa:2fe70ad2:057584ae:baa78721:e14ee29a",
         "angelo/riskmandate-xray-demo": "683f9f7d:1535d83d:1d05fd5c:3e8a1083:65c460af",
         "angelo/riskmandate-xray-fixes": "22dafcee:c949472c:2db842e9:a08c1c9f:b0120e20",
-        "main": "67bb9367:ba595d3a:5bce3638:66926d38:3586ef81",
+        "main": "2cd4cd75:5dea5c47:6a1e8ee6:058e81a0:da0e7287",
         "promote/0b21eef10c73": "0b21eef1:0c7326b7:9fa6b249:9e7d5e5d:eed22388",
         "work/app": "ca5ebb43:9901f679:b7dd0205:cd0cabe1:70de9054",
         "work/architect": "90cb10f4:d3115a01:5f38be9a:68076180:15734184",
@@ -121,7 +122,7 @@
         "work/play": "b7feedd4:357622dd:484f36be:40a12d80:776e869a",
         "work/qa": "36b87e26:2e08aaa4:92976f08:92c3e211:9ee93494",
         "work/release": "fdfebded:8b14e791:cc044776:08f905f8:e72ff24d",
-        "work/security": "793aae8a:8320e694:f18b2b4f:9b15a2ae:96e91f20"
+        "work/security": "25118da0:d2782403:520a3f7c:d6dd536d:cce5873c"
       }
     },
     "PrompTugal/PrompTugal__App__iOS": {
@@ -185,7 +186,7 @@
     },
     "PrompTugal/PrompTugal__News__Storm-Charles": {
       "branches": {
-        "dev": "36d157e7:c73892a7:6603d639:13e80f22:03049654",
+        "dev": "9bca9feb:f6cb4ad1:0bafbe6b:302bd02f:82c29578",
         "main": "3a61421c:9ddb9966:6e7cbec7:93f27193:7c267916"
       },
       "note": "Added at run 18 (11 Nov), at conductor@web-summit.dinis's request (10 Nov 21:17, material); the storm incident's site, storm-charles.promptugal.news."
