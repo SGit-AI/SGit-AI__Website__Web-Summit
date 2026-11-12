@@ -65,7 +65,10 @@
         // Silvio's galaxy is the default again (Dinis, 12 November, about 09:25 UTC, relayed: "you need to bring the Silvio asap");
         // Indi's calm view stays one step away: ?calm=1, or localStorage cc.calm = '1' (xray@web-summit.dinis)
         const CALM = (() => { try { return new URLSearchParams(location.search).get('calm') === '1' || localStorage.getItem('cc.calm') === '1' } catch { return false } })()
-        await window.Gravity.mount(host, { calm: CALM, theme, css: '#wrap { border-radius: 0 !important; border: 0 !important; min-height: calc(100vh - 64px) !important; } .fan, .uni { height: calc(100vh - 130px) !important; } .shf { min-height: calc(100vh - 130px) !important; } .subv button, .crumbs { font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; } .subv button { font-size: 13px; }', data: gdata, start: 'uni', tourCentre: 'indi', metric: BAR ? { pct: BAR.pct, of: BAR.e, total: BAR.t } : null, detail: polHTML, views: [shields, xray, angMsg, angWork, angWs], // GAMMA-Ray sits on the top bar now (Silvio, 12 November)
+        // the default (not ?calm=1): the solar system as it was, dark (Indi, 12 November, after seeing the calm look: "Bring back
+        // the solar system nature of it ... keep it dark ... Only remove the background stars, and remove just some of the hue
+        // from all of the planets"), in its own card with the iPad gestures (touch)
+        await window.Gravity.mount(host, { calm: CALM, theme, touch: true, noStars: true, soft: .25, css: '#wrap { border-radius: 0 !important; border: 0 !important; min-height: calc(100vh - 64px) !important; } .fan, .uni { height: calc(100vh - 130px) !important; } .shf { min-height: calc(100vh - 130px) !important; } .subv button, .crumbs { font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; } .subv button { font-size: 13px; }', data: gdata, start: 'uni', tourCentre: 'indi', metric: BAR ? { pct: BAR.pct, of: BAR.e, total: BAR.t } : null, detail: polHTML, views: [shields, xray, angMsg, angWork, angWs], // GAMMA-Ray sits on the top bar now (Silvio, 12 November)
             liveLabel: null })
     }
     function shieldsPlugin(api, host) { const { SR, $, t, esc, ico, reduced } = api
