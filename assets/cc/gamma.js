@@ -118,7 +118,7 @@
     function circuit(d) {
         const s = d.scans.find(x => x.id === st.sel) || d.scans[0]; if (!s) return ''
         st.sel = s.id
-        const ind = d.indicators, W = 1400, BX = 330, BT = 24, rowsH = 22 + 1 * 17 + 6, gapY = 8, H = Math.max(700, 16 + d.scans.length * (rowsH + gapY)), BB = H - 40, step = (BB - BT) / Math.max(1, ind.length - 1)
+        const ind = d.indicators, W = 1400, BX = 455, BT = 24, rowsH = 22 + 1 * 17 + 6, gapY = 8, H = Math.max(700, 16 + d.scans.length * (rowsH + gapY)), BB = H - 40, step = (BB - BT) / Math.max(1, ind.length - 1)
         const tick = new Map(ind.map((x, k) => [x.id, BT + k * step])), cut = (x, n) => (x = String(x == null ? '' : x)).length > n ? x.slice(0, n - 1) + '…' : x
         const tx = (x, y, v, cls, a) => `<text x="${x}" y="${y}" class="${cls}"${a ? ` text-anchor="${a}"` : ''}>${esc(v)}</text>`
         const node = (x, y, w, head, hc, rows, cls = '', data = '') => { let o = `<g class="bc-n ${cls}"${data}><rect x="${x}" y="${y}" width="${w}" height="${22 + rows.length * 17 + 6}" rx="3" class="bc-body"/><rect x="${x}" y="${y}" width="${w}" height="18" rx="3" style="fill:${hc}"/>${tx(x + 8, y + 13, head, 'bc-ht')}`
