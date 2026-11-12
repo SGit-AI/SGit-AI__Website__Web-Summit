@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2009",
+    "date": "2026-11-12",
+    "what": "the universe on an iPad: drag in any direction, pinch to zoom, inside its own card",
+    "by": "conductor@web-summit.indi",
+    "from": "adf7f2827"
+  },
+  {
     "version": "v0.2.2008",
     "date": "2026-11-12",
     "what": "the universe view, clear at a glance: no background stars, big labels, a short key",
