@@ -23,3 +23,4 @@ summary: One line per worker session conductor.b@ starts, appended, never rewrit
 **Costs** (Angelo, 11 Nov, "Both?"): each finished worker's row gives the platform's API-equivalent dollars; tokens are in people/angelo/ledger/.
 
 **Rule from 11 Nov (Angelo):** every agentic activity is tracked through commits. An in-session sub-agent gets a line here, its result committed and its tokens in the ledger, in the same commit; work that can wait goes to a worker session, which commits for itself.
+- 2026-11-12 06:58 to 07:00 UTC: sub-agent (in session, general-purpose), the overnight overview of the four websites for Angelo, read only; 9 tool calls, about 121k tokens; result given to Angelo in the session.
