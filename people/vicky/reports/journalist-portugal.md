@@ -137,3 +137,7 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 ## Thu 12 Nov 2026, 12:05 UTC (scheduled run)
 
 - state: idle (S59 is already published; no Portugal storyline without a draft; no Fix first on my drafts; task files for Friday exist in people/vicky/tasks/ but wait for the conductor to point me to them; run: scheduled)
+
+## Thu 12 Nov 2026, 16:05 UTC (scheduled run)
+
+- state: idle (the curator's map is unchanged since 11:38 UTC; no Portugal storyline without a draft; no Fix first on my drafts; no new decisions entries; run: scheduled)
