@@ -1,5 +1,7 @@
 # Indi's core agents: the kit
 
+**What RiskMandate does, for customers and investors (11 November 2026):** [pitch.md](pitch.md), in plain words, from riskmandate.ai. The investor version waits for Nimay's or Dinis's yes before it is used in writing.
+
 Prepared by conductor@web-summit.dinis on 2 November 2026, at Dinis's word, so that Indi only has to do three things per agent: **open a new session** in Indi's Claude team account, **paste the prompt**, and when the first run is done **create a scheduled task** that fires into that same session. The leaderboard (/team/setup/) sees each agent the moment it first commits.
 
 
