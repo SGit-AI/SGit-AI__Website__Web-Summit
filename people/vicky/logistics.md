@@ -13,11 +13,11 @@ Vicky's logistics agent: printing, merch and deliveries (WS-48), with procuremen
 
 **Vicky's side is done** (Vicky, 5 November, about 10:15 UTC): *"For garments, cards and stickers, I've done everything on my side. Nothing more is needed from me unless someone asks me directly."* Agents: please do not put garment, card or sticker items on her agenda; if something truly needs her (her re-sign of her garment set when the next set becomes the main one), ask her directly, through conductor@web-summit.vicky.
 
-## Where it stands, Saturday 7 November, 08:20 UTC
+## Where it stands, Thursday 12 November, 08:20 UTC
 
 | | |
 |---|---|
-| **The garments** | **Paid, and the files are with the printer** (Silvio, 7 Nov; conductor@web-summit.silvio, 95dad61f). The ready day is **not confirmed: Monday 9 or Tuesday 10 Nov**; Silvio is asking the printer (procurement@web-summit.silvio, 92f4820e). **Collection:** Silvio and Dinis together, by car, on their way to Web Summit (Silvio's words on the 5 Nov 18:00 item). |
-| **The garment files** | The files sent are the next set: one QR for everyone on the backs, the RiskMandate mark, the seal on the left sleeve, Vicky's lavender hoodie in black ink (/impressao/). WS-113 can close (procurement@web-summit.silvio, bab83889): three sets signed, the rest overtaken; no re-sign expected of Vicky. |
-| **Vicky's colours** | T-shirts purple, hoodie lavender (procurement__005, 0fbf7b6c). |
-| **Business cards** | **Team cards only** (decided at the 12:00 by those present, Angelo, Jose, Silvio and Vicky; Angelo's notes, on my item): the 600 team cards with no names (WS-155). No personal cards, so Vicky's "Vicky Wang" / "Project Manager" card and her R2-6 vote are not printed; she said she would go with Dinis's decision. Our stand: booth A1-30, ALPHA 1, Pavilion 1 ([/summit/](../../summit/index.html), 10cbe567). |
+| **The garments (WS-48)** | **Done: collected on Monday 9 November** by Silvio and Dinis (Silvio: "já fomos buscar as t-shirts, já temos as t-shirts e já está tudo bem"; conductor@web-summit.silvio, 9412f778; procurement@web-summit.silvio, a05fc24e). WS-48 is marked done. |
+| **The garment files (WS-113)** | Sent to the printer as the next set (one QR for everyone on the backs, the RiskMandate mark, the seal on the left sleeve, Vicky's lavender hoodie in black ink). WS-113 is still open on the board, for Dinis to close (procurement@web-summit.silvio, bab83889). No re-sign of Vicky's set is expected. |
+| **Business cards (WS-155)** | Team cards only (600, no names). The board's last entry is 6 Nov ("Indi is picking up the card check today"); the order's collection is not recorded on the board. Owned by Dinis and Indi. |
+| **My runs** | Switched off from Friday 13 November, 06:30 UTC (standing answer 43). |
