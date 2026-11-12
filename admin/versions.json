@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1971",
+    "date": "2026-11-12",
+    "what": "X-Ray in PT and EN (a switch next to the key); the command centre is dark only",
+    "by": "dashboard@web-summit.silvio",
+    "from": "e41510ee2"
+  },
+  {
     "version": "v0.2.1970",
     "date": "2026-11-12",
     "what": "00:35 Thu: the alert ended at 23:59; Fertagus normal; Carris still lists the Web Summit shuttle out of service; no change to Day 3",
