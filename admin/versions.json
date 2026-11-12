@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2042",
+    "date": "2026-11-12",
+    "what": "weather 14:22 wake, dry and breezy, no Lisbon warning (analysis 48)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "d3e52fa8e"
+  },
+  {
     "version": "v0.2.2041",
     "date": "2026-11-12",
     "what": "journalist@PrompTugal.vicky: report, 13:53 UTC run idle",
