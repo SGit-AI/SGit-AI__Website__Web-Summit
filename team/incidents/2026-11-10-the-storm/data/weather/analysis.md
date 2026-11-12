@@ -506,3 +506,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (read 00:22:45–00:22:58 UTC): LPPT 23:30 23006KT; 00:00 23008KT, no gust, Q0999. Station means under 15 km/h. Lisbon: yellow sea to 03:00 (open data restamped its start to 22:44, no CAP message for Lisboa behind it; the CAP batch at 22:43:28 was yellow rain in the north only). No newer CAP batch (reads every 5 min to 00:19:30). No new communiqué; LPPT TAF 23:00 unchanged. IPMA's hourly model for Lisbon was updated (dataUpdate 11 Nov 19:56:17).
 
 **Analysis (high):** no change; Thursday as in section 31.
+
+## 33. 01:26 UTC 12 Nov: light rain at the airport, no change
+
+**Facts** (read 01:24:11–01:24:36 UTC): LPPT 00:30 24010KT, rain, visibility 4000 m, Q1000; 01:00 24007KT, light rain, visibility 9000 m, Q1000, no gust. Lisbon stations' rain in the hour labelled 00:00 at most 0.2 mm (Barreiro, Lavradio). Lisbon: yellow sea to 03:00 only. No new CAP batch for any district since 22:43:28 (reads every 5 min to 01:23:57). No new communiqué; LPPT TAF 23:00 unchanged.
+
+**Analysis (high):** the rain at the airport is the TEMPO rain the 23:00 TAF forecast, not a hazard; pressure rising slowly (999 to 1000 hPa). Thursday as in section 31.

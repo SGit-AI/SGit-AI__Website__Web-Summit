@@ -2,30 +2,9 @@
  "about": "IPMA's own forecast for Lisbon (globalIdLocal 1110600): the 5-day daily forecast and the hourly model forecast (mean wind, no gusts). IPMA's wind classes: 1 weak, 2 moderate, 3 strong, 4 very strong.",
  "daily": {
   "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-  "read_utc": "2026-11-12T00:22:58Z",
-  "updated_local": "2026-11-11T23:31:02",
+  "read_utc": "2026-11-12T01:24:36Z",
+  "updated_local": "2026-11-12T00:31:02",
   "days": [
-   {
-    "precipitaProb": "100.0",
-    "tMin": "14.8",
-    "tMax": "19.8",
-    "predWindDir": "S",
-    "idWeatherType": 9,
-    "classWindSpeed": 2,
-    "longitude": "-9.1286",
-    "forecastDate": "2026-11-11",
-    "classPrecInt": 2,
-    "latitude": "38.7660",
-    "idWeatherType_pt": "Chuva/aguaceiros",
-    "idWeatherType_en": "Rain/showers",
-    "idWeatherType_source": "https://api.ipma.pt/open-data/weather-type-classe.json",
-    "classWindSpeed_pt": "Moderado",
-    "classWindSpeed_en": "Moderate",
-    "classWindSpeed_source": "https://api.ipma.pt/open-data/wind-speed-daily-classe.json",
-    "classPrecInt_pt": "Moderado",
-    "classPrecInt_en": "Moderate",
-    "classPrecInt_source": "https://api.ipma.pt/open-data/precipitation-classe.json"
-   },
    {
     "precipitaProb": "100.0",
     "tMin": "15.8",
@@ -98,6 +77,27 @@
     "classWindSpeed": 2,
     "longitude": "-9.1286",
     "forecastDate": "2026-11-15",
+    "classPrecInt": 2,
+    "latitude": "38.7660",
+    "idWeatherType_pt": "Chuva/aguaceiros",
+    "idWeatherType_en": "Rain/showers",
+    "idWeatherType_source": "https://api.ipma.pt/open-data/weather-type-classe.json",
+    "classWindSpeed_pt": "Moderado",
+    "classWindSpeed_en": "Moderate",
+    "classWindSpeed_source": "https://api.ipma.pt/open-data/wind-speed-daily-classe.json",
+    "classPrecInt_pt": "Moderado",
+    "classPrecInt_en": "Moderate",
+    "classPrecInt_source": "https://api.ipma.pt/open-data/precipitation-classe.json"
+   },
+   {
+    "precipitaProb": "92.0",
+    "tMin": "15.3",
+    "tMax": "20.5",
+    "predWindDir": "SW",
+    "idWeatherType": 9,
+    "classWindSpeed": 2,
+    "longitude": "-9.1286",
+    "forecastDate": "2026-11-16",
     "classPrecInt": 2,
     "latitude": "38.7660",
     "idWeatherType_pt": "Chuva/aguaceiros",
@@ -1575,7 +1575,7 @@
  ],
  "hourly": {
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-12T00:22:58Z",
+  "read_utc": "2026-11-12T01:24:36Z",
   "updated_local": "2026-11-11T19:56:17",
   "wed_peak": null,
   "rows": [
@@ -2266,113 +2266,105 @@
    "name": "MET Norway Locationforecast 2.0 (complete)",
    "licence": "NLOD 2.0 / CC BY 4.0, data from MET Norway",
    "source": "https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=38.72&lon=-9.14",
-   "read_utc": "2026-11-12T00:22:58Z",
-   "updated_utc": "2026-11-11T23:20:25Z",
+   "read_utc": "2026-11-12T01:24:36Z",
+   "updated_utc": "2026-11-12T01:17:18Z",
    "units": "km/h (converted from m/s), mm, hPa",
    "rows": [
     {
-     "time_utc": "2026-11-12T00:00Z",
-     "wind_mean_kmh": 19.8,
-     "gust_kmh": null,
-     "wind_from_deg": 245.1,
-     "rain_mm_next_1h": 0.0,
-     "pressure_hpa": 999.7
-    },
-    {
      "time_utc": "2026-11-12T01:00Z",
-     "wind_mean_kmh": 19.4,
+     "wind_mean_kmh": 20.9,
      "gust_kmh": null,
-     "wind_from_deg": 242.1,
+     "wind_from_deg": 241.8,
      "rain_mm_next_1h": 0.0,
-     "pressure_hpa": 1000.2
+     "pressure_hpa": 1000.5
     },
     {
      "time_utc": "2026-11-12T02:00Z",
      "wind_mean_kmh": 22.0,
      "gust_kmh": null,
-     "wind_from_deg": 245.5,
-     "rain_mm_next_1h": 0.1,
-     "pressure_hpa": 1000.4
+     "wind_from_deg": 245.6,
+     "rain_mm_next_1h": 0.2,
+     "pressure_hpa": 1000.5
     },
     {
      "time_utc": "2026-11-12T03:00Z",
-     "wind_mean_kmh": 23.8,
+     "wind_mean_kmh": 23.0,
      "gust_kmh": null,
-     "wind_from_deg": 244.9,
+     "wind_from_deg": 243.8,
      "rain_mm_next_1h": 0.3,
      "pressure_hpa": 1000.8
     },
     {
      "time_utc": "2026-11-12T04:00Z",
-     "wind_mean_kmh": 24.8,
+     "wind_mean_kmh": 20.9,
      "gust_kmh": null,
-     "wind_from_deg": 237.2,
+     "wind_from_deg": 237.4,
      "rain_mm_next_1h": 0.2,
      "pressure_hpa": 1000.8
     },
     {
      "time_utc": "2026-11-12T05:00Z",
-     "wind_mean_kmh": 25.6,
+     "wind_mean_kmh": 23.8,
      "gust_kmh": null,
-     "wind_from_deg": 245.4,
-     "rain_mm_next_1h": 0.0,
+     "wind_from_deg": 243.6,
+     "rain_mm_next_1h": 0.4,
      "pressure_hpa": 1001.3
     },
     {
      "time_utc": "2026-11-12T06:00Z",
-     "wind_mean_kmh": 23.8,
+     "wind_mean_kmh": 25.2,
      "gust_kmh": null,
-     "wind_from_deg": 249.8,
+     "wind_from_deg": 243.5,
      "rain_mm_next_1h": 0.0,
      "pressure_hpa": 1001.9
     },
     {
      "time_utc": "2026-11-12T07:00Z",
-     "wind_mean_kmh": 24.1,
+     "wind_mean_kmh": 23.4,
      "gust_kmh": null,
-     "wind_from_deg": 251.7,
+     "wind_from_deg": 246.2,
      "rain_mm_next_1h": 0.0,
-     "pressure_hpa": 1002.6
+     "pressure_hpa": 1002.5
     },
     {
      "time_utc": "2026-11-12T08:00Z",
      "wind_mean_kmh": 23.0,
      "gust_kmh": null,
-     "wind_from_deg": 249.9,
+     "wind_from_deg": 251.0,
      "rain_mm_next_1h": 0.0,
      "pressure_hpa": 1003.4
     },
     {
      "time_utc": "2026-11-12T09:00Z",
-     "wind_mean_kmh": 21.6,
+     "wind_mean_kmh": 21.2,
      "gust_kmh": null,
-     "wind_from_deg": 252.1,
-     "rain_mm_next_1h": 0.2,
+     "wind_from_deg": 250.7,
+     "rain_mm_next_1h": 0.0,
      "pressure_hpa": 1004.3
     },
     {
      "time_utc": "2026-11-12T10:00Z",
-     "wind_mean_kmh": 23.8,
+     "wind_mean_kmh": 23.4,
      "gust_kmh": null,
-     "wind_from_deg": 249.8,
-     "rain_mm_next_1h": 0.0,
-     "pressure_hpa": 1005.0
+     "wind_from_deg": 250.8,
+     "rain_mm_next_1h": 0.2,
+     "pressure_hpa": 1004.8
     },
     {
      "time_utc": "2026-11-12T11:00Z",
-     "wind_mean_kmh": 25.2,
+     "wind_mean_kmh": 24.1,
      "gust_kmh": null,
-     "wind_from_deg": 248.2,
-     "rain_mm_next_1h": 0.0,
+     "wind_from_deg": 246.8,
+     "rain_mm_next_1h": 0.1,
      "pressure_hpa": 1005.4
     },
     {
      "time_utc": "2026-11-12T12:00Z",
      "wind_mean_kmh": 25.6,
      "gust_kmh": null,
-     "wind_from_deg": 246.6,
+     "wind_from_deg": 248.3,
      "rain_mm_next_1h": 0.0,
-     "pressure_hpa": 1005.6
+     "pressure_hpa": 1005.7
     }
    ]
   },
@@ -2380,7 +2372,7 @@
    "name": "Open-Meteo (best match)",
    "licence": "CC BY 4.0, Open-Meteo.com",
    "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
-   "read_utc": "2026-11-12T00:22:58Z",
+   "read_utc": "2026-11-12T01:24:36Z",
    "rows": [
     {
      "time_utc": "2026-11-11T00:00Z",
@@ -2644,7 +2636,7 @@
    ]
   }
  },
- "next_read_utc": "2026-11-12T01:22Z",
+ "next_read_utc": "2026-11-12T02:22Z",
  "code_tables": {
   "weather_type": "https://api.ipma.pt/open-data/weather-type-classe.json",
   "wind_speed_class": "https://api.ipma.pt/open-data/wind-speed-daily-classe.json",
