@@ -578,3 +578,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (read 11:23:20–11:23:45 UTC): new LPPT TAF issued 11:00, valid Thursday 12:00 to Friday 18:00: 25013KT, visibility 10 km or more; TEMPO through the period: showers, visibility 4000 m, cloud base 1200 ft, CB; PROB30 TEMPO Thursday 12:00–18:00: 25015G25KT (gusts about 46 km/h). The 05:00 TAF had TEMPO 25017G27KT (about 50 km/h) 06:00–18:00 with no probability qualifier. LPPT 11:00 25011KT, CB in the area, no gust, Q1005. Lisbon stations' rain in the hour labelled 10:00: none. Still no warning for Lisbon. No new CAP batch since 10:24:25 (yellow sea for Setúbal, Beja, Faro; reads every 5 min to 11:20:58). No new communiqué. Open-Meteo answered on the second read.
 
 **Analysis (high):** the gust signal for Thursday afternoon is weaker: gusts about 46 km/h at times, now only a 30% chance, and none observed so far. Showers with CB stay possible, so a short heavy shower is the main thing to watch this afternoon. No hazard for Lisbon; no warning.
+
+## 45. 12:25 UTC 12 Nov: dry, breezy, no gust
+
+**Facts** (read 12:22:53–12:23:08 UTC): LPPT 11:30 24013KT, TCU, Q1005; 12:00 25013KT (direction 220–280), no gust, no rain, Q1005. Highest station mean wind in the hour labelled 11:00: 25.9 km/h (Relógio). No rain at Lisbon stations in the hours labelled 10:00 and 11:00. Still no warning for Lisbon. No new CAP batch since 10:24:25 (reads every 5 min to 12:19:51). No new communiqué; LPPT TAF 11:00 unchanged. Open-Meteo refused both reads (HTTP 429; incident.conductor@ reports at 12:15 that it is the team's daily request limit, until 00:00 UTC); forecast.json keeps its last good read, 11:23:45 UTC.
+
+**Analysis (high):** dry and breezy (about 24 km/h), no gust. Thursday afternoon as in section 44: showers possible, gusts about 46 km/h only a 30% chance; no hazard, no warning.
