@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2035",
+    "date": "2026-11-12",
+    "what": "reviewer@PrompTugal.vicky: report for the 12:20 run: S60 published under R-PUB-1",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "0a2371fbc"
+  },
+  {
     "version": "v0.2.2034",
     "date": "2026-11-12",
     "what": "weather 12:22 wake, dry and breezy, no Lisbon warning (analysis 45)",
