@@ -138,22 +138,22 @@
         const NX = 640, NW = 270, FY = 8, GY = 170
         const fRows = RULES.freedom.map(([l, name, rule]) => [l + ' · ' + name, s.freedom >= l ? '✓' : '·', s.freedom >= l ? '#3DDC97' : '#2B4256', , s.freedom >= l])
         const gRows = RULES.governance.map(([l, name, rule]) => [l + ' · ' + name, s.governance >= l ? '✓' : (s.nextLevel === l ? 'next' : s.claimed && s.claimed.governance >= l ? 'claimed' : '·'), s.governance >= l ? '#3DDC97' : s.nextLevel === l ? '#FF5C7A' : '#2B4256', , s.governance >= l])
-        nodes += node(NX, FY, NW, 'freedom · what it does on its own', '#4FA8FF', [['1 · answers', '✓', '#3DDC97', , true], ...fRows])
-        nodes += node(NX, GY, NW, 'governance · how it is controlled', '#FF8A5C', [['0 · unstated', '✓', '#3DDC97', , true], ...gRows])
+        nodes += node(NX, FY, NW, 'freedom · what it does on its own', '#4FA8FF', [['1 · answers', '✓', '#3DDC97', , true], ...fRows], '', ` data-box="freedom" role="button" tabindex="0"`)
+        nodes += node(NX, GY, NW, 'governance · how it is controlled', '#FF8A5C', [['0 · unstated', '✓', '#3DDC97', , true], ...gRows], '', ` data-box="governance" role="button" tabindex="0"`)
         for (const [axis, Y0] of [['freedom', FY], ['governance', GY]]) RULES[axis].forEach(([l, , , ids], k) => { for (const id of ids) if (tick.has(id)) { const ty = tick.get(id), ry = pY(Y0, k + 1), on = y_(id)
             const cl = !on && !!(s.answers || {})[id]; W2 += `<path class="bc-w${on ? ' sel' : cl ? ' claim' : ''}" style="stroke:${axis === 'freedom' ? '#4FA8FF' : '#FF8A5C'}" d="M${BX} ${ty} C ${BX + 150} ${ty}, ${NX - 150} ${ry}, ${NX} ${ry}"/>` } })
         // the gate and the work order
         const WY = 330, wo = s.workOrder || []
-        nodes += node(NX, WY, NW, 'gate · the level held', '#FF6B5C', [['clears', 'freedom ' + s.clears, '#FF6B5C'], ['held at', String(s.held), '#F5E14A', '#F5E14A'], ['gap', String(s.gap), s.gap ? '#FF5C7A' : '#3DDC97', s.gap ? '#FF5C7A' : '']])
-        nodes += node(NX, WY + 110, NW, 'work order · to raise governance', '#F4C6FF', wo.length ? wo.slice(0, 4).map(w => [cut(w.need || w.text, 30), (w.ids || []).join(' '), w.type === 'claimed' ? '#F5C542' : '#F4C6FF', , false]) : [['nothing missing for the next level', '']])
+        nodes += node(NX, WY, NW, 'gate · the level held', '#FF6B5C', [['clears', 'freedom ' + s.clears, '#FF6B5C'], ['held at', String(s.held), '#F5E14A', '#F5E14A'], ['gap', String(s.gap), s.gap ? '#FF5C7A' : '#3DDC97', s.gap ? '#FF5C7A' : '']], '', ` data-box="gate" role="button" tabindex="0"`)
+        nodes += node(NX, WY + 110, NW, 'work order · to raise governance', '#F4C6FF', wo.length ? wo.slice(0, 4).map(w => [cut(w.need || w.text, 30), (w.ids || []).join(' '), w.type === 'claimed' ? '#F5C542' : '#F4C6FF', , false]) : [['nothing missing for the next level', '']], '', ` data-box="work" role="button" tabindex="0"`)
         W2 += `<path class="bc-w sel" d="M${NX + NW} ${pY(GY, s.governance)} C ${NX + NW + 50} ${pY(GY, s.governance)}, ${NX + NW + 50} ${pY(WY, 0)}, ${NX + NW} ${pY(WY, 0)}"/><path class="bc-w sel" d="M${NX} ${pY(FY, s.freedom - 1)} C ${NX - 60} ${pY(FY, s.freedom - 1)}, ${NX - 60} ${pY(WY, 2)}, ${NX} ${pY(WY, 2)}"/>`
         // the result
         const RX = 1080, RW = 300
-        nodes += node(RX, 8, RW, 'result · ' + cut(s.name, 34).toLowerCase(), '#3EE6C1', [['freedom', s.freedom + ' · ' + fName(d, s.freedom), '#4FA8FF'], ['governance', s.governance + ' · ' + gName(d, s.governance), '#FF8A5C'], ['held at', String(s.held), '#F5E14A'], ['gap (RiskMandate)', String(s.gap), '#FF5C7A', s.gap ? '#FF5C7A' : '']])
-        nodes += node(RX, 150, RW, 'result · claimed (self-reported)', '#B39DFF', [['if every claim were observed', 'held ' + (s.claimed ? s.claimed.held : '—'), '#B39DFF'], ['answers that count', String(s.evidenced), '#3DDC97'], ['claimed only', String(s.claimedOnly), '#F5C542']])
-        nodes += node(RX, 270, RW, 'human · operator', '#FFC1E3', [['operator', cut(s.operator || '—', 22), '#FFC1E3'], ['tier', 'Public', '#7F97A8'], ['read', cut(s.read || '—', 14)]])
+        nodes += node(RX, 8, RW, 'result · ' + cut(s.name, 34).toLowerCase(), '#3EE6C1', [['freedom', s.freedom + ' · ' + fName(d, s.freedom), '#4FA8FF'], ['governance', s.governance + ' · ' + gName(d, s.governance), '#FF8A5C'], ['held at', String(s.held), '#F5E14A'], ['gap (RiskMandate)', String(s.gap), '#FF5C7A', s.gap ? '#FF5C7A' : '']], '', ` data-box="result" role="button" tabindex="0"`)
+        nodes += node(RX, 150, RW, 'result · claimed (self-reported)', '#B39DFF', [['if every claim were observed', 'held ' + (s.claimed ? s.claimed.held : '—'), '#B39DFF'], ['answers that count', String(s.evidenced), '#3DDC97'], ['claimed only', String(s.claimedOnly), '#F5C542']], '', ` data-box="claimed" role="button" tabindex="0"`)
+        nodes += node(RX, 270, RW, 'human · operator', '#FFC1E3', [['operator', cut(s.operator || '—', 22), '#FFC1E3'], ['tier', 'Public', '#7F97A8'], ['read', cut(s.read || '—', 14)]], '', ` data-box="human" role="button" tabindex="0"`)
         const pub = s.published && s.published.held != null
-        nodes += node(RX, 390, RW, 'check · against gamma-ray.sgit.ai', pub ? (s.published.held === s.held ? '#3DDC97' : '#FF5C7A') : '#7F97A8', [[pub ? (s.published.held === s.held && s.published.freedom === s.freedom && s.published.governance === s.governance ? 'same as published' : 'differs from published') : 'computed here only', pub ? 'held ' + s.published.held : MODEL.split(' @ ')[1], pub && s.published.held === s.held ? '#3DDC97' : '#7F97A8', , true]])
+        nodes += node(RX, 390, RW, 'check · against gamma-ray.sgit.ai', pub ? (s.published.held === s.held ? '#3DDC97' : '#FF5C7A') : '#7F97A8', [[pub ? (s.published.held === s.held && s.published.freedom === s.freedom && s.published.governance === s.governance ? 'same as published' : 'differs from published') : 'computed here only', pub ? 'held ' + s.published.held : MODEL.split(' @ ')[1], pub && s.published.held === s.held ? '#3DDC97' : '#7F97A8', , true]], '', ` data-box="check" role="button" tabindex="0"`)
         W3 += `<path class="bc-w sel" d="M${NX + NW} ${pY(WY, 1)} C ${NX + NW + 90} ${pY(WY, 1)}, ${RX - 90} ${pY(8, 2)}, ${RX} ${pY(8, 2)}"/><path class="bc-w sel" d="M${NX + NW} ${pY(WY + 110, 0)} C ${NX + NW + 90} ${pY(WY + 110, 0)}, ${RX - 90} ${pY(150, 0)}, ${RX} ${pY(150, 0)}"/><path class="bc-w" style="stroke:#FFC1E3" d="M${NX + NW} ${pY(WY, 2)} C ${NX + NW + 90} ${pY(WY, 2)}, ${RX - 90} ${pY(270, 0)}, ${RX} ${pY(270, 0)}"/>`
         const ans = Object.entries(s.answers || {}), nAns = d.scans.reduce((n, x) => n + Object.keys(x.answers || {}).length, 0), wires = (W1 + W2 + W3).split('<path').length - 1
         const byHeld = [1, 2, 3, 4, 5].map(l => d.scans.filter(x => x.held === l).length), mx = Math.max(1, ...byHeld)
@@ -204,4 +204,32 @@ ${sw}${body}`
     // and hand it to the card as --c, so the stylesheet can tint the glass, the mark on the left and the title
     const tag = () => document.querySelectorAll('#gamma .gr-circ .bc-n').forEach(g => { if (g.dataset.c) return; const h = g.querySelector(':scope > rect:nth-of-type(2)'); const c = h && h.style.fill; if (c) { g.dataset.c = c; g.style.setProperty('--c', c) } })
     new MutationObserver(tag).observe(document.documentElement, { childList: true, subtree: true })
+})()
+
+;(function () {
+    // every box in the circuit answers a tap (Silvio, 12 November): what it means, and what it says for the agent shown
+    const EX = {
+        freedom: ['Freedom · what it does on its own', 'How much the agent does without a person: 1 answers, 2 suggests, 3 acts, 4 acts widely, 5 coordinates other agents. A level is ticked when the answers on the indicator bus evidence it.'],
+        governance: ['Governance · how it is controlled', 'How the agent is held: 0 unstated, 1 stated (a written policy), 2 owned (a named owner answers for it), 3 bounded (its limits are enforced), 4 proven (tested). "next" is the level to reach.'],
+        gate: ['Gate · the level held', 'The level the agent is actually held at: governance has to clear each level of freedom. The gap is how far its freedom runs ahead of what governance holds.'],
+        work: ['Work order · to raise governance', 'What is missing for the next level of governance, each line with the indicator it answers. Doing these closes the gap.'],
+        result: ['Result', 'The agent\'s reading in one place: its freedom, its governance, the level it is held at and the gap RiskMandate measures.'],
+        claimed: ['Result · claimed (self-reported)', 'If every claim the agent makes about itself were observed, the level it would hold; how many answers count as evidence, and how many are claims only.'],
+        human: ['Human · operator', 'The named person who runs the agent, the tier (public pages only) and when it was read.'],
+        check: ['Check · against gamma-ray.sgit.ai', 'Whether this page\'s reading matches what gamma-ray.sgit.ai publishes for the same agent.']
+    }
+    const esc = v => String(v == null ? '' : v).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
+    const close = () => { const o = document.getElementById('gr-pop'); if (o) o.remove() }
+    function open(box, x, y) { close(); const k = box.dataset.box, ex = EX[k]; if (!ex) return
+        const texts = [...box.querySelectorAll('text')].map(t => t.textContent.trim()).filter(Boolean), head = texts.shift() || ex[0]
+        const rows = []; for (let i = 0; i < texts.length; i += 2) rows.push([texts[i], texts[i + 1] || ''])
+        const c = box.dataset.c || box.style.getPropertyValue('--c') || '#43D9C6'
+        const o = document.createElement('div'); o.id = 'gr-pop'; o.setAttribute('role', 'dialog'); o.style.setProperty('--c', c)
+        o.innerHTML = `<button type="button" class="x" aria-label="Close">✕</button><b>${esc(ex[0])}</b><p>${esc(ex[1])}</p>${rows.length ? `<dl>${rows.map(([a, v]) => `<dt>${esc(a)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>` : ''}<small>${esc(head)}</small>`
+        document.body.appendChild(o); const w = o.offsetWidth, h = o.offsetHeight
+        o.style.left = Math.max(12, Math.min(innerWidth - w - 12, x + 14)) + 'px'; o.style.top = Math.max(70, Math.min(innerHeight - h - 12, y - 20)) + 'px'
+        o.querySelector('.x').onclick = close }
+    document.addEventListener('click', e => { const b = e.target.closest && e.target.closest('#gamma [data-box]'); if (b) { open(b, e.clientX, e.clientY); return } if (!(e.target.closest && e.target.closest('#gr-pop'))) close() })
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); const b = e.target.closest && e.target.closest('#gamma [data-box]'); if (b && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); const r = b.getBoundingClientRect(); open(b, r.right, r.top) } })
+    addEventListener('hashchange', close)
 })()
