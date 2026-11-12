@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2052",
+    "date": "2026-11-12",
+    "what": "17:45 wake: tables for Thu 12 Nov (from the 12 Nov brief), story candidates refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "d4dae2e66"
+  },
+  {
     "version": "v0.2.2051",
     "date": "2026-11-12",
     "what": "17:40 wake: lane drained (empty); feedback-count.json refreshed",
