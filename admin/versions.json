@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2027",
+    "date": "2026-11-12",
+    "what": "weather 11:22 wake, new LPPT TAF lowers the gust signal (analysis 44)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "0fb9b9263"
+  },
+  {
     "version": "v0.2.2026",
     "date": "2026-11-12",
     "what": "the command centre X-ray's replay verdicts in plain words: Allowed, Not allowed but caught, Not allowed and nobody would know",
