@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **53** the conductor warns Vicky first when the account nears its five-hour or weekly limit, with the steps to move the busiest agents to her personal account.
 - **52** a new strand Vicky leads, humans and AI: five angles, proposed in Friday's review; nothing started.
 - **51** from Friday: researcher and curator three rounds a day (07:15, 11:15, 15:15; curator 20 minutes after); a post-summit review of the brief and About page, nothing started.
 - **50** the main image directly under "The story", caption under it; published articles moved on Friday, dates kept.
@@ -279,6 +280,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 52. **A new strand Vicky leads: humans and AI** (Vicky, 12 Nov, about 19:45 UTC, in this window: "For Friday's review, add a new strand I want to lead: humans and AI. Five angles: how people actually use AI and where it fails them, the relationship between people and AI including loneliness in teams that move to agents, health tech, underrepresented groups in tech such as women in tech, and how people move from skills and plugins to running agents, starting with my own story. Keep it positive and constructive, never invent quotes, and use public research, people's own public posts and our own experience until we have interviews. Suggest which desk owns it, the first three stories and the usage.")
     - **Now:** the conductor adds it to Friday's review (standing answer 51): the owning desk, the first three stories and the usage. No agent starts it until Vicky says go.
     - **When it starts:** positive and constructive; no invented quotes; sources are public research, people's own public posts and the team's own experience, until there are interviews (with consent, standing answer 27).
+
+53. **Warn before the usage limit** (Vicky, 12 Nov, about 21:00 UTC, in this window: "When my account's usage reaches about 90% of the weekly or 5-hour limit, warn me at the top of For Vicky, and give me the steps to move my most-used agents to my personal account before it runs out.")
+    - **The conductor** reads the account's rate-limit state from each session's usage record at every wake and every hand-off (P6: usage numbers only). If it shows a warning state or overage, the top line of For Vicky says so, with the reset time and a link to `people/vicky/plans/2026-11-12-usage-limit-fallback.md`. The service gives a state, not a percentage, so the warning comes when the service raises it.
+    - **No agent moves** until Vicky says which; one session per role at a time (standing answer 32).
 
 ## Updates for agents
 
