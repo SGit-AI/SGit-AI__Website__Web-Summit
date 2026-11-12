@@ -1,23 +1,23 @@
 {
  "about": "IPMA's aeronautical forecast (TAF) and observations (METAR) for Lisbon airport (LPPT), 8 km north of the centre, read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport; not a public warning.",
  "icao": "LPPT",
- "read_utc": "2026-11-12T10:34:53Z",
+ "read_utc": "2026-11-12T11:23:45Z",
  "taf": {
-  "issue_utc": "2026-11-12T05:00Z",
-  "raw": "TAF LPPT 120500Z 1206/1312 25012KT 9999 FEW012 SCT020 TEMPO 1206/1312 4000 RA BKN012 FEW025TCU TEMPO 1206/1218 25017G27KT",
-  "valid_from_utc": "2026-11-12T06:00Z",
-  "valid_to_utc": "2026-11-13T12:00Z",
+  "issue_utc": "2026-11-12T11:00Z",
+  "raw": "TAF LPPT 121100Z 1212/1318 25013KT 9999 SCT020 TEMPO 1212/1318 4000 SHRA BKN012 FEW025CB PROB30 TEMPO 1212/1218 25015G25KT",
+  "valid_from_utc": "2026-11-12T12:00Z",
+  "valid_to_utc": "2026-11-13T18:00Z",
   "groups": [
    {
     "change": "BASE",
     "prob": null,
-    "from_utc": "2026-11-12T06:00Z",
-    "to_utc": "2026-11-13T12:00Z",
+    "from_utc": "2026-11-12T12:00Z",
+    "to_utc": "2026-11-13T18:00Z",
     "becoming_by_utc": null,
     "wind_dir": 250,
-    "wind_kt": 12,
+    "wind_kt": 13,
     "gust_kt": null,
-    "wind_kmh": 22,
+    "wind_kmh": 24,
     "gust_kmh": null,
     "visibility": "6+",
     "weather": null
@@ -25,8 +25,8 @@
    {
     "change": "TEMPO",
     "prob": null,
-    "from_utc": "2026-11-12T06:00Z",
-    "to_utc": "2026-11-13T12:00Z",
+    "from_utc": "2026-11-12T12:00Z",
+    "to_utc": "2026-11-13T18:00Z",
     "becoming_by_utc": null,
     "wind_dir": null,
     "wind_kt": null,
@@ -34,25 +34,25 @@
     "wind_kmh": null,
     "gust_kmh": null,
     "visibility": 2.49,
-    "weather": "RA"
+    "weather": "SHRA"
    },
    {
     "change": "TEMPO",
-    "prob": null,
-    "from_utc": "2026-11-12T06:00Z",
+    "prob": 30,
+    "from_utc": "2026-11-12T12:00Z",
     "to_utc": "2026-11-12T18:00Z",
     "becoming_by_utc": null,
     "wind_dir": 250,
-    "wind_kt": 17,
-    "gust_kt": 27,
-    "wind_kmh": 31,
-    "gust_kmh": 50,
+    "wind_kt": 15,
+    "gust_kt": 25,
+    "wind_kmh": 28,
+    "gust_kmh": 46,
     "visibility": "",
     "weather": null
    }
   ],
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-12T10:34:53Z"
+  "read_utc": "2026-11-12T11:23:45Z"
  },
  "taf_history": [
   {
@@ -115,6 +115,12 @@
    "raw": "TAF LPPT 120500Z 1206/1312 25012KT 9999 FEW012 SCT020 TEMPO 1206/1312 4000 RA BKN012 FEW025TCU TEMPO 1206/1218 25017G27KT",
    "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
    "read_utc": "2026-11-12T05:22:47Z"
+  },
+  {
+   "issue_utc": "2026-11-12T11:00Z",
+   "raw": "TAF LPPT 121100Z 1212/1318 25013KT 9999 SCT020 TEMPO 1212/1318 4000 SHRA BKN012 FEW025CB PROB30 TEMPO 1212/1218 25015G25KT",
+   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
+   "read_utc": "2026-11-12T11:23:20Z"
   }
  ],
  "metars": [
@@ -2063,6 +2069,20 @@
    "pressure_hpa": 1005,
    "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
    "read_utc": "2026-11-12T10:34:53Z"
+  },
+  {
+   "time_utc": "2026-11-12T11:00Z",
+   "raw": "METAR LPPT 121100Z 25011KT 9999 SCT025 FEW030CB 18/14 Q1005 NOSIG",
+   "wind_dir": 250,
+   "wind_kt": 11,
+   "gust_kt": null,
+   "wind_kmh": 20,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": null,
+   "pressure_hpa": 1005,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
+   "read_utc": "2026-11-12T11:23:20Z"
   }
  ],
  "max_gust": {
@@ -2071,5 +2091,5 @@
   "time_utc": "2026-11-11T14:00Z",
   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json"
  },
- "next_read_utc": "2026-11-12T11:22Z"
+ "next_read_utc": "2026-11-12T12:22Z"
 }

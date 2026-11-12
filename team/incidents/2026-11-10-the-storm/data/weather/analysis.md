@@ -572,3 +572,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (CAP feed read 10:34:32 by the 5-minute check; refresh 10:34:53 UTC): CAP batch sent 10:24:25: yellow sea (Agitação Marítima) for Setúbal, Beja and Faro, 12 Nov 10:25 to 13 Nov 03:00. Nothing for Lisboa or Madeira. LPPT 10:30 23013KT, CB in the area, no gust, Q1005. Open-Meteo refused again (HTTP 429).
 
 **Analysis (medium):** a renewed south-west swell along the south-west and south coasts; Lisbon's coast is not in it. For Lisbon the day stays as in sections 31 and 37: showers (a CB nearby at 10:30), wind about 24 km/h, gusts about 50 km/h at times possible to 18:00.
+
+## 44. 11:26 UTC 12 Nov: new TAF lowers the gust signal
+
+**Facts** (read 11:23:20–11:23:45 UTC): new LPPT TAF issued 11:00, valid Thursday 12:00 to Friday 18:00: 25013KT, visibility 10 km or more; TEMPO through the period: showers, visibility 4000 m, cloud base 1200 ft, CB; PROB30 TEMPO Thursday 12:00–18:00: 25015G25KT (gusts about 46 km/h). The 05:00 TAF had TEMPO 25017G27KT (about 50 km/h) 06:00–18:00 with no probability qualifier. LPPT 11:00 25011KT, CB in the area, no gust, Q1005. Lisbon stations' rain in the hour labelled 10:00: none. Still no warning for Lisbon. No new CAP batch since 10:24:25 (yellow sea for Setúbal, Beja, Faro; reads every 5 min to 11:20:58). No new communiqué. Open-Meteo answered on the second read.
+
+**Analysis (high):** the gust signal for Thursday afternoon is weaker: gusts about 46 km/h at times, now only a 30% chance, and none observed so far. Showers with CB stay possible, so a short heavy shower is the main thing to watch this afternoon. No hazard for Lisbon; no warning.
