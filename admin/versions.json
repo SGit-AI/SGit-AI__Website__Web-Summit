@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2018",
+    "date": "2026-11-12",
+    "what": "X-Ray uses the same OpenRouter key as Ask Claude (one key per device)",
+    "by": "dashboard@web-summit.silvio",
+    "from": "076d55731"
+  },
+  {
     "version": "v0.2.2017",
     "date": "2026-11-12",
     "what": "checker@PrompTugal.vicky: state: idle",
