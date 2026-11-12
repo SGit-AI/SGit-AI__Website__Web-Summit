@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2036",
+    "date": "2026-11-12",
+    "what": "12:30 wake: stand day; Indi's pitch (7d547d49) and the X-ray for any company (c7eef0ce) in the \"right now\" line",
+    "by": "dashboard@web-summit.indi",
+    "from": "966be336d"
+  },
+  {
     "version": "v0.2.2035",
     "date": "2026-11-12",
     "what": "reviewer@PrompTugal.vicky: report for the 12:20 run: S60 published under R-PUB-1",
