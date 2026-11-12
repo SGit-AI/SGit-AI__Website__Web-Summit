@@ -7,7 +7,11 @@
     const SITE = 'https://web-summit.sgit.ai/', FONTS = 'https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600&display=swap'
     const get = k => { try { return localStorage.getItem(k) } catch { return null } }, put = (k, v) => { try { localStorage.setItem(k, v) } catch {} }
     let MODE = get('cc.mode') || 'work'
-    const FLOWS = { client: [['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['gravity', 'Gravity'], ['swarm', 'Swarm']], work: [['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['gravity', 'Gravity'], ['swarm', 'Swarm'], ['tasks', 'Tarefas']] }
+    // the stand's demo flows on top (Dinis, 12 November, the summit's last day): GRAVITY and TAREFAS left the top bar (both
+    // stay in the ☰ menu); VÍDEOS, PT.NEWS, LISBON TECH FRINGE, STORM and GAMMA-RAY joined (assets/cc/demo.js)
+    // GAMMA-RAY next to the Universe (Silvio, 12 November)
+    const DEMO = [['stand', 'Universo ✦'], ['gammaray', 'GAMMA-Ray'], ['xray', 'X-Ray'], ['swarm', 'Swarm'], ['reel', 'Vídeos'], ['ptnews', 'PT.news'], ['fringe', 'Lisbon Tech Fringe'], ['storm', 'Storm']]
+    const FLOWS = { client: DEMO, work: DEMO }
     const html = document.documentElement
     if (![...document.querySelectorAll('link')].some(l => l.href === FONTS)) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = FONTS; document.head.appendChild(l) }
     const css = document.createElement('style'); css.id = 'cc-shell-css'; css.textContent = `

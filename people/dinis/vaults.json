@@ -17,6 +17,16 @@
       "agent": "observability@web-summit.dinis",
       "updated": "2026-11-05",
       "app": true
+    },
+    {
+      "name": "The stand reel",
+      "use": "stand-reel",
+      "vault_id": "cf8uki85",
+      "endpoint": "https://dev.send.sgraph.ai",
+      "read_key": "sgit_public_read_9a441f69a9e8caf4209ca30c848bae0b9878b6a95351a8fdb6da2404e8257f99",
+      "what": "The twelve approved stand videos from the team's videos vault (h9in5em4, kept by video@web-summit.silvio), every language and format, cut into 4-second fragmented-MP4 pieces under 4 MB so the command centre's VÍDEOS view (assets/cc/demo.js) plays them in the browser through the vault's read API. Content unchanged, re-encoded at 1080p. reel.json lists them.",
+      "agent": "conductor@web-summit.dinis",
+      "updated": "2026-11-12"
     }
   ]
 }
