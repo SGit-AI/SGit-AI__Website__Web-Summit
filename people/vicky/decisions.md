@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **51** from Friday: researcher and curator three rounds a day (07:15, 11:15, 15:15; curator 20 minutes after); a post-summit review of the brief and About page, nothing started.
 - **50** the main image directly under "The story", caption under it; published articles moved on Friday, dates kept.
 - **49** step 2 approved (About check, curator evidence; agenda not re-sourced), from Friday; lisbontechfringe.com (Indi's app) counts as another source for events, as a pointer.
 - **48** takedown step 2: data another source confirms stays, re-cited; Dinis's agents' data follows his conductor; Vicky's desks' checks proposed first.
@@ -269,6 +270,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 50. **The article image under "The story"** (Vicky, 11 Nov, about 21:45 UTC, in this window: "add the image rule to STYLE.md now: the main image goes directly under the "The story" heading, before the first paragraph of the story, with its caption under it. Do the same on published articles, but on Friday after the summit, and keep each article's original publication date. Only the image position changes.")
     - **Now:** the reviewer adds the rule to the newsroom's `desks/journalist-vicky/STYLE.md` and checks it on every draft (a misplaced image is a fix it makes itself, standing answer 17). Journalists follow it from their next draft.
     - **Friday 13 Nov:** on the published articles from Vicky's desks that have an image in the story, the reviewer moves the main image and its caption to directly under "The story", keeping each article's original publication date; nothing else changes (the signature is renewed because the file changes). Articles with no image in the story are left as they are.
+
+51. **Researcher and curator: a midday round from Friday; a post-summit coverage review** (Vicky, 12 Nov, about 13:30 UTC, in this window: "From Friday, add a midday round for researcher and curator, around 11:15 and 11:35, so they run three times a day. Tell me the extra usage. After the summit, review the newsroom's original brief and About page against what we actually publish. List topics we have not covered, for example how the newsroom works, post-summit follow-ups on announcements, the storm's aftermath, a Portuguese edition, the Portugal industry banner, and company pages rebuilt from companies' own sources. Recommend which to start first and the usage, and do not start any yet.")
+    - **Schedule:** this changes standing answer 43's "two fixed rounds". From Friday 13 Nov: researcher 07:15, 11:15 and 15:15 UTC (cron 15 7,11,15 * * *); curator 07:35, 11:35 and 15:35 (cron 35 7,11,15 * * *). The conductor sets both crons at its Friday 06:30 switch. Nothing changes in either agent's prompt; each run works as now.
+    - **The review:** the conductor does it on Friday after the summit and gives Vicky the list, a recommendation and the usage. No agent starts any new topic, edition or rebuild from it until Vicky says which.
 
 ## Updates for agents
 
