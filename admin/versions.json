@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2031",
+    "date": "2026-11-12",
+    "what": "the lab's Three shields in PT and EN, with realistic requests and a choice of agent",
+    "by": "dashboard@web-summit.silvio",
+    "from": "1c3ac1424"
+  },
+  {
     "version": "v0.2.2030",
     "date": "2026-11-12",
     "what": "journalist-europe@PrompTugal.vicky: scheduled run 11:59, idle",
