@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2054",
+    "date": "2026-11-12",
+    "what": "reviewer@PrompTugal.vicky: report, THU-SUMMIT 18:20 run: idle",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "ea78b7385"
+  },
+  {
     "version": "v0.2.2053",
     "date": "2026-11-12",
     "what": "HOLD: the show is over; every agent stops (observability drains excepted)",
