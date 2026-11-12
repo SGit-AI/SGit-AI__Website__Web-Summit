@@ -1,5 +1,5 @@
 # prod-pipeline: state
-**For the digest (22:14 UTC):** reuse the Fringe's own release data (Angelo). A8 running: checks it against A7's six traces, proposes the fix for its 8-hour window, and mocks a small eye-catching timeline fed by it (started by default at the 22:12 backstop; Angelo can stop it). Waiting on Angelo: who builds in the Fringe repository; the deploy runs; the DISTRICT 909 read time (all tier 3). Running cost: 23.23 USD.
+**For the digest (00:15 UTC, 12 Nov):** A8 done: the Fringe's release data is right but keeps only about 4 hours, so a timeline needs a kept history file first; option A (a rail of dots linked to each release) chosen by default. Nothing more can move without Angelo: who builds it in the Fringe repository, and passing the fixes to Dinis's agents (tier 3). Running cost: 26.75 USD, about 1.40 M tokens without cache reads.
 - **Lead:** prod-pipeline.pm@PrompTugal.angelo, started 2026-11-11 about 12:30 UTC. Instruction commit 94dfabc6: pushed-by says ANGELO (checked at start).
 - **Done:** b0-library, b1-team-spec, b2-flow-reuse (conductor.b@, before this project).
 - **Goal (BRIEF.md):** the flow page of a real deliverable, note to live, generated from the records; the next deliverable gets one with no extra work.
@@ -53,11 +53,16 @@ Lead's own read (Fringe dev 91fef64; live pages at v0.1.551, 20:17 UTC; no worke
 - **Recommendation:** stop building our own traces. One improvement in the Fringe: invert releases.mjs's per-id changes into a short "This page's history" list on each event page (version, time, agent, what changed, linked to /changes/<version>/), plus "being worked on now" from activity.json where a commit names the page. Our A7 tool stays a check of it, not a second system. Who builds it there is Angelo's (tier 3: dev.2.fringe@ and dev.1.fringe@ are Dinis's agents).
 
 - **Angelo, 11 Nov about 21:2x:** "I agree on using the data that is already there, assuming it's reliable, and maybe just build a little graphical timeline that catches the eye. Thoughts?" Decided: reuse the Fringe's release data; no new trace system.
-- Lead's reliability check (live /api/v1/releases.json at v0.1.598, and /changes/v0.1.422/): DISTRICT 909's add is there (v0.1.422, its subject and the event, field by field). Three limits: (1) CI builds it from the last 500 commits (deploy.yml fetch-depth 500); at about 60 commits an hour that is about 8 hours, so a page's history falls off the site the same day (the feed now starts at v0.1.408); (2) it covers data/events.json only (not organisers, images, a page's own builder); a re-read is a count, not a step; (3) the read time can contradict the record (DISTRICT 909, 13:17 against 17:49).
+- Lead's reliability check (live /api/v1/releases.json at v0.1.598, and /changes/v0.1.422/): DISTRICT 909's add is there (v0.1.422, its subject and the event, field by field). Three limits: (1) CI builds it from the last 200 commits (corrected by A8: changes.mjs:13 readChanges max 200; deploy.yml's fetch-depth 500 is a wider second limit); at 40 to 51 commits an hour that is about 4 hours, so a page's history falls off the site the same day; (2) it covers data/events.json only (not organisers, images, a page's own builder); a re-read is a count, not a step; (3) the read time can contradict the record (DISTRICT 909, 13:17 against 17:49).
 
 ## Wake 22:12 UTC (backstop)
 - No worker running; no rule changes on dev. **Decided by default, Angelo can reverse:** start A8, the step proposed to Angelo at 21:24 (no answer): reliability of the release data against A7, the fix for its window, and the little timeline fed by it. Design, large, golf.large.
 
+## Wake 00:13 UTC, 12 Nov (backstop; A8's own wake did not arrive)
+- A8 closed: 523c2ef, 3.52 USD, sent to Angelo. The release feed is right where it has data (7 of 7 of A7's commits in the same release) but keeps 200 commits (about 4 hours); covers events.json only; lists seen_at re-checks as changes (375 of 499 entries); DISTRICT 909's add has already dropped out. Fix proposed for the Fringe's owners: a kept per-event history file built by CI (about 170 KB a day), re-checks counted not listed.
+- **Decided by default, Angelo can reverse:** (1) option A, the rail of dots (A8's recommendation); (2) the lead's "500 commits" corrected to 200 above.
+- **Waiting on Angelo (tier 3, nothing else can move):** who builds the kept history file and the timeline in the Fringe repository (releases.mjs: dev.2.fringe@PrompTugal.dinis; event-pages.mjs: dev.lead.fringe@PrompTugal.dinis); passing A8's fixes and A7's read-time finding to Dinis's agents; the deploy runs.
+
 ## Spend
-- Worker runs: A1 3.95 USD, A2 3.60 USD (platform, API-equivalent); plus A3 2.29, A4 4.02, A5 4.11, A6 2.79, A7 2.47 USD; total 23.23 USD. No budget (Angelo); recorded, not gated.
+- Worker runs: A1 3.95 USD, A2 3.60 USD (platform, API-equivalent); plus A3 2.29, A4 4.02, A5 4.11, A6 2.79, A7 2.47, A8 3.52 USD; total 26.75 USD. No budget (Angelo); recorded, not gated.
 - Sub-agents of the lead: none.
