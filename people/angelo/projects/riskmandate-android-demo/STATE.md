@@ -1,6 +1,6 @@
 # riskmandate-android-demo: state
 
-For the digest: 0.1.166 with testers; build 4 (lag tweak, downloads on tap, Back in page full screen, multi-file) gate green and on Android branch angelo/riskmandate-xray-fixes 22dafce, check 3 running, then publish as 0.1.167; note for Silvio waits for conductor.b@ to bring it to dev (Silvio's agent is meanwhile changing X-Ray: 1ed4a26); cost so far $23.17 in workers (the lead's own session not yet measured).
+For the digest: X-ray screen done and live for Firebase testers as 0.1.168 (build 4 included; security.android PASS on the Android side); open: device checks, Dinis's asks XR-2 (a demo-only openrouter key with a small limit) and XR-5 (should our agents publish keys there), the note for Silvio waiting for conductor.b@; no worker running; cost so far $24.68 in workers (the lead's own session not yet measured).
 
 Lead: riskmandate-android-demo.pm@PrompTugal.angelo. Branch: project/riskmandate-android-demo. Wake routine: trig_01GnGftTuQdk1LM63LnvaDtn (BRIEF.md on dev).
 
@@ -67,6 +67,12 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 ## Build 4 (00:01 UTC, 12 Nov)
 - Build 3's lag patch plus check 2's findings 1 to 3, with tests; its gate green (984 tests). Lead pushed its patches as angelo/riskmandate-xray-fixes 22dafce (tree 00e8e89c, as gated), 00:15 UTC. Check 3 on charlie next; publish on PASS.
 
+## Android side, 12 Nov (seen at the 02:12 wake)
+- Check 3 (00:18 UTC): PASS for build 4; notes, none blocking: "a touch" is any touch within 2 s; the screen's wiring untested except on a device; downloads inside the page's own full screen fail closed; a stale comment.
+- conductor.android@ merged 22dafce onto the Android dev itself (f3e30b3, "fixes XR-1"); security.android signed PASS for dev 5badada (record 5178a91) and 0c4a260. Android run 169 green; RiskMandate 0.1.168 (01:05 UTC) to Firebase testers carries build 4. main moved to 2cd4cd7 and play.yml ran (Dinis's side).
+- Their review (docs/security/reviews/2026-11-12-dev-5badada.md) and board/status.json asks, all addressed to Dinis: XR-2 MEDIUM, the page calls openrouter.ai with a demo key typed on the tablet, outside the app's cloud rules: use a key made only for this demo with a small credit limit; XR-3 MEDIUM, privacy and Data safety must name X-Ray; X-Ray stays out of any store build until that is answered; XR-4 LOW, the page is unpinned remote code: ask the page owner for a Content Security Policy; XR-5 LOW, Angelo's agents push to dev with no key in their board/keys.json: should they publish keys or work through a branch.
+- Nothing more for us to build now: no worker started (decided by default, Angelo can reverse).
+
 ## Note for Silvio
 - Angelo, 11 Nov about 23:45 UTC: "Yes, send it to Silvio." Sent as note-for-silvio.md in a commit For: dashboard@web-summit.silvio, conductor@web-summit.silvio (the page's files: assets/cc/app.css, assets/cc/xray.js, last touched by dashboard@ in e9915f5). It reaches them when conductor.b@ brings this branch onto dev: asked of conductor.b@ in the same commit, with the lead's lane in lanes.json, since dev's gate refuses this lead's commits without one.
 
@@ -78,6 +84,9 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - pushed-by.mjs knows only dev (see Decided by default).
 
 ## Waiting on Angelo (tier 3)
+- XR-2 (keys): which openrouter key the stand tablets use for X-Ray; their reviewer asks for one made only for this demo, with a small credit limit.
+- XR-5 (keys, another person's repo): whether our agents publish a key in the Android repo's board/keys.json or keep to branches and let conductor.android@ merge (as it did tonight).
+- XR-4: ask Silvio for a Content Security Policy on the page (can join the note for Silvio).
 0. Patch 0002 (Angelo, 11 Nov about 22:20 UTC: "Leave it for now"): allow the X-ray screen in stand mode (pinning keeps visitors in it; the page then reaches openrouter.ai while stand mode is on, against the app's own stand rule). Lead's recommendation: yes, it is what the stand needs; security.android reviews it on the Android side.
 1. Installing a build on stand devices by hand, and anything on a store; signing keys. (Pushing to the Android repo's dev makes its CI build and send the build to its Firebase testers: that is inside Angelo's "publish".)
 
