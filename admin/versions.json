@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2012",
+    "date": "2026-11-12",
+    "what": "the stand's Universe shows Silvio's galaxy again by default; Indi's calm view with ?calm=1",
+    "by": "xray@web-summit.dinis",
+    "from": "28e975615"
+  },
+  {
     "version": "v0.2.2011",
     "date": "2026-11-12",
     "what": "decisions: Web Summit says Day 3 is running (Bluesky 09:00 UTC)",
