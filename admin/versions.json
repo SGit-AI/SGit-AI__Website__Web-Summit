@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2017",
+    "date": "2026-11-12",
+    "what": "checker@PrompTugal.vicky: state: idle",
+    "by": "checker@PrompTugal.vicky",
+    "from": "08da188df"
+  },
+  {
     "version": "v0.2.2016",
     "date": "2026-11-12",
     "what": "journalist@PrompTugal.vicky: report, 09:53 UTC run idle",
