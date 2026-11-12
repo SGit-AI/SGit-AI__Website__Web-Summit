@@ -264,7 +264,7 @@
 <defs><linearGradient id="tb-b" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#3B4746"/><stop offset=".5" stop-color="#1B2322"/><stop offset="1" stop-color="#0B1110"/></linearGradient>
 <radialGradient id="tb-s" cx=".45" cy=".45" r=".8"><stop offset="0" stop-color="#0E3330"/><stop offset=".7" stop-color="#061716"/><stop offset="1" stop-color="#030A0A"/></radialGradient>
 <linearGradient id="tb-g" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
-<g transform="translate(320 236) rotate(-6) translate(-280 -190)">
+<g transform="translate(320 226) translate(-280 -190)">
 <rect x="10" y="14" width="560" height="380" rx="34" fill="#000" opacity=".35" transform="translate(14 22)"/>
 <rect x="0" y="0" width="560" height="380" rx="34" fill="url(#tb-b)" stroke="#5E6D6B" stroke-width="1.5"/>
 <rect x="18" y="18" width="524" height="344" rx="20" fill="url(#tb-s)"/>

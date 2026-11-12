@@ -60,6 +60,7 @@ html.cc-shell .cc-nav a, html.cc-shell .cc-nav .grp { text-transform: uppercase;
 html.cc-shell #cc-view.cc-zin > * { animation: cczin .6s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes cczin { from { opacity: 0; transform: scale(.94); filter: blur(5px); } }
 html.cc-shell.cc-v-stand .cc-content { padding: 0 !important; max-width: none !important; }
+html.cc-shell .cc-askfab { bottom: 96px !important; } /* above the Feedback tab (Silvio, 12 November) */
 html.cc-shell .cc-gravity { min-height: calc(100vh - 120px); display: grid; align-content: start; gap: 18px; }
 .gv-sub { box-sizing: border-box; display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; padding: 4px; border-radius: 999px; border: 1px solid rgba(150,230,215,.18); background: rgba(0,0,0,.25); width: max-content; max-width: 100%; margin: 0 auto; }
 .gv-sub button { all: unset; cursor: pointer; font: 600 13px "Barlow Condensed", sans-serif !important; letter-spacing: 1.4px; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; color: #8EADA8; }
