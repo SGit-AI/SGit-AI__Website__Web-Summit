@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.2.2044",
+    "date": "2026-11-12",
+    "what": "hold: all scheduled agents paused by Dinis (hand brake, 15:15 UTC)",
+    "from": "24243f3bf"
+  },
+  {
     "version": "v0.2.2043",
     "date": "2026-11-12",
     "what": "journalist@PrompTugal.vicky: report, 14:53 UTC run idle",
