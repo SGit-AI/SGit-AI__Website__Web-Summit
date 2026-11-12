@@ -95,3 +95,20 @@ html.cc-shell .gr-circ .bc-svg { height: max(560px, calc(100vh - 150px)) !import
 html.cc-shell .gr-circ .bc-scroll { overflow-x: auto; }
 html.cc-shell .gr-circ.bm-circuit, html.cc-shell .bm.circ:has(.gr-circ) { height: auto !important; max-height: none !important; overflow: visible !important; position: relative !important; }
 html.cc-shell .gr-circ.bm-circuit .bc-scroll, html.cc-shell .gr-circ .bc-scroll { overflow-x: auto !important; overflow-y: visible !important; flex: none !important; }
+
+/* GAMMA-RAY like the Universe (Silvio, 12 November, his side-by-side picture): no page header; one thin row (the name, the draft
+   chip, where it was read, the Circuit/Grid tabs); no cards around; the circuit fits the screen at once, the panels and the
+   questions below it for whoever wants the detail. */
+html.cc-shell #gamma { padding: 0 4px 40px; margin-top: -14px; }
+html.cc-shell #gamma .gr-head { display: flex; align-items: center; gap: 10px 14px; flex-wrap: wrap; margin: 0 0 6px; padding: 2px 4px; background: none !important; border: 0 !important; box-shadow: none !important; }
+html.cc-shell #gamma .gr-head h2 { margin: 0; font: 600 14px "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: 1.6px; text-transform: uppercase; color: #43D9C6; }
+html.cc-shell #gamma .gr-head .gr-warn { margin: 0; padding: 3px 10px; border-radius: 999px; border: 1px solid rgba(255,77,109,.45); background: rgba(255,77,109,.08); color: #FF9AAE; font: 600 11px "Barlow Condensed", sans-serif; letter-spacing: 1.1px; text-transform: uppercase; }
+html.cc-shell #gamma .gr-head .note { margin: 0; flex: 1 1 320px; font: 400 12px "Barlow Semi Condensed", sans-serif; color: #5F7D79; }
+html.cc-shell #gamma .gr-head .note a { color: #43D9C6; }
+html.cc-shell #gamma .gr-switch { display: inline-flex; gap: 2px; padding: 3px; margin: 0 0 8px 4px; border-radius: 999px; border: 1px solid rgba(150,230,215,.18); background: rgba(0,0,0,.3); }
+html.cc-shell #gamma .gr-switch button { all: unset; cursor: pointer; font: 600 12px "Barlow Condensed", sans-serif; letter-spacing: 1.3px; text-transform: uppercase; padding: 5px 13px; border-radius: 999px; color: #8EADA8; }
+html.cc-shell #gamma .gr-switch button[aria-pressed="true"], html.cc-shell #gamma .gr-switch button.on { color: #10170F; background: linear-gradient(180deg, #FBE2AE, #D9B26E); }
+html.cc-shell #gamma .gr-switch button:focus-visible { outline: 2px solid #FBE2AE; outline-offset: 2px; }
+html.cc-shell #gamma .gr-circwrap, html.cc-shell #gamma .gr-detail { background: none !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; }
+html.cc-shell #gamma .bc-title { padding-top: 4px; padding-bottom: 4px; }
+html.cc-shell .gr-circ .bc-svg { height: max(520px, calc(100vh - 275px)) !important; }
