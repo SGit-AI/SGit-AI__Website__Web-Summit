@@ -211,3 +211,11 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - Curator's gap filled (PagerDuty, a second source): [ITPro, 4 Nov](https://www.itpro.com/business/data-and-insights/this-is-a-massive-change-pagerduty-wants-to-supercharge-incident-response-with-a-new-sre-agent-and-command-center), an interview-based report of the Paige launch: no measured results; customer results exist only as vendor claims.
 - Still open: Diário de Notícias' own Discord article (behind a redirect); IBM's winner release (a headline seen only); where Humanos is based; Humanos's own pages or Sifted's original.
 - state: ok; done: 3 captures, 1 gap filled; next: 07:15 run (from Friday, 07:15 and 15:15); ask: none; run: scheduled
+
+## Thu 12 Nov 2026, 19:15 UTC run
+
+- decisions.md read first (nothing new for me; no HOLD.md; prompts file re-read, no difference); RULES-11NOV kept, no Web Summit, Luma, Meetup or Eventbrite reads; the curator's two gaps are unchanged (Diário de Notícias' Discord article still unreadable; PagerDuty already filled at 15:15). 3 captures went into vault 41j3e9s9, audited and pushed; sgit status in sync.
+- Announcements: Carevision, a digital health startup (a Jordanian company per the report), won PITCH 2026 on the last day, ahead of Zoyk and Moola; the jury overruled the audience vote ([Tek Notícias, 12 Nov](https://tek.sapo.pt/noticias/internet/artigos/carevision-vence-pitch-do-web-summit-2026-com-tecnologia-que-transforma-a-camara-do-telemovel-num-scanner-de-saude/)).
+- The summit: Web Summit's founder told ECO the 2029 host city will be announced at the 2027 edition, with Lisbon still possible after the contract ends in 2028 ([AICEP, relaying ECO, 11 Nov](https://www.portugalglobal.pt/en/news/2026/novembro/web-summit-to-reveal-2029-host-city-at-2027-event/)). Europe: Italy's Oversonic showed its RoBee R20 industrial humanoid on Intel's stand, naming Portugal's industry as a market ([AICEP, 12 Nov](https://www.portugalglobal.pt/pt/noticias/2026/novembro/oversonic-apresenta-robo-humanoide-industrial-em-lisboa/)); company claims, not checked.
+- Not captured: the summit's storm interruption, protest and criticism stories (outside the positive line).
+- state: ok; done: 3 captures; next: 07:15 run tomorrow; ask: none; run: scheduled
