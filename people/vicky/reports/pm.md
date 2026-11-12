@@ -116,3 +116,7 @@ state: idle
 - Daily run (people/vicky/board-health.md): 218 issues; 9 due today, 5 of them with no owner; 159 overdue. WS-48 is done (9412f77, merch collected 9 Nov). Two file numbers are each used twice (WS-106, WS-203).
 - **For Vicky, not urgent:** WS-213 (Silvio, 10 Nov, no owner) asks each of her agents to log every run's tokens in people/vicky/ledger/. pm has not done it: nothing in decisions.md covers it. Does she want it, and for which agents?
 - state: ok; done: daily board-health and alignment notes; next: on demand through the conductor (task disabled from Fri 06:30); ask: WS-213, the token ledger for her agents, yes or no?; run: scheduled
+
+## 12 November 2026, 17:40 UTC (wake)
+
+state: idle
