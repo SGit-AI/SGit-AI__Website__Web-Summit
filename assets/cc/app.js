@@ -170,9 +170,8 @@ ${cols.length > 1 ? `<nav class="kb-jump" aria-label="Columns">${cols.map(c => `
 
     // ---------- theme: dark by default, light designed ----------
     const applyTheme = () => {
-        const pref = store.get('theme', 'dark')
-        const t = pref === 'system' ? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark') : pref
-        html.setAttribute('data-theme', t)
+        // dark only (Silvio, 12 November): the light mode is gone
+        html.setAttribute('data-theme', 'dark')
     }
     html.classList.add('cc-on'); applyTheme()
 
