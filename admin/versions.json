@@ -1,5 +1,33 @@
 [
   {
+    "version": "v0.2.2025",
+    "date": "2026-11-12",
+    "what": "11:15 run, 2 captures and a revision in the research vault 41j3e9s9; the curator's two gaps filled",
+    "by": "researcher@web-summit.vicky",
+    "from": "0754e095a"
+  },
+  {
+    "version": "v0.2.2024",
+    "date": "2026-11-12",
+    "what": "journalist@PrompTugal.vicky: report, 10:53 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "878824ef7"
+  },
+  {
+    "version": "v0.2.2023",
+    "date": "2026-11-12",
+    "what": "CAP batch 10:24:25, yellow sea for the south coast, not Lisbon (analysis 43)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "7373bb5e0"
+  },
+  {
+    "version": "v0.2.2022",
+    "date": "2026-11-12",
+    "what": "Indi's pitch in the kit: what RiskMandate does, for customers and investors",
+    "by": "conductor@web-summit.indi",
+    "from": "7d547d490"
+  },
+  {
     "version": "v0.2.2021",
     "date": "2026-11-12",
     "what": "weather 10:22 wake, mostly dry, no Lisbon warning (analysis 42)",

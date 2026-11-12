@@ -2,7 +2,7 @@
  "about": "IPMA's own forecast for Lisbon (globalIdLocal 1110600): the 5-day daily forecast and the hourly model forecast (mean wind, no gusts). IPMA's wind classes: 1 weak, 2 moderate, 3 strong, 4 very strong.",
  "daily": {
   "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-  "read_utc": "2026-11-12T10:23:39Z",
+  "read_utc": "2026-11-12T10:34:53Z",
   "updated_local": "2026-11-12T09:31:03",
   "days": [
    {
@@ -1583,7 +1583,7 @@
  ],
  "hourly": {
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-12T10:23:39Z",
+  "read_utc": "2026-11-12T10:34:53Z",
   "updated_local": "2026-11-12T07:56:55",
   "wed_peak": null,
   "rows": [
@@ -2564,18 +2564,10 @@
    "name": "MET Norway Locationforecast 2.0 (complete)",
    "licence": "NLOD 2.0 / CC BY 4.0, data from MET Norway",
    "source": "https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=38.72&lon=-9.14",
-   "read_utc": "2026-11-12T10:23:39Z",
-   "updated_utc": "2026-11-12T09:20:40Z",
+   "read_utc": "2026-11-12T10:34:53Z",
+   "updated_utc": "2026-11-12T09:20:36Z",
    "units": "km/h (converted from m/s), mm, hPa",
    "rows": [
-    {
-     "time_utc": "2026-11-12T09:00Z",
-     "wind_mean_kmh": 20.2,
-     "gust_kmh": null,
-     "wind_from_deg": 246.2,
-     "rain_mm_next_1h": 0.0,
-     "pressure_hpa": 1004.1
-    },
     {
      "time_utc": "2026-11-12T10:00Z",
      "wind_mean_kmh": 22.7,
