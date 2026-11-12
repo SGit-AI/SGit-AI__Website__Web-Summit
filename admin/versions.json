@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1977",
+    "date": "2026-11-12",
+    "what": "GAMMA-RAY's circuit big enough to read from a step away (fills the screen)",
+    "by": "dashboard@web-summit.silvio",
+    "from": "848e64605"
+  },
+  {
     "version": "v0.2.1976",
     "date": "2026-11-12",
     "what": "GAMMA-RAY on top opens the command centre's circuit graph, not the external site",
