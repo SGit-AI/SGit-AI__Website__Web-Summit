@@ -486,7 +486,12 @@
    "time_utc": "2026-11-11T23:25Z",
    "section": 31,
    "summary": "New LPPT TAF 23:00 for Thursday: 25012KT, TEMPO rain all day, TEMPO 06-18 25017G27KT (gusts ~50 km/h). Lisbon only yellow sea to 03:00; Thursday yellow rain warnings are in the north (CAP 22:43:28), nothing for Lisboa."
+  },
+  {
+   "time_utc": "2026-11-12T00:25Z",
+   "section": 32,
+   "summary": "Quiet: LPPT 00:00 23008KT Q0999; yellow sea to 03:00 (start restamped in open data); no new CAP batch since 22:43:28."
   }
  ],
- "next_read_utc": "2026-11-12T00:22Z"
+ "next_read_utc": "2026-11-12T01:22Z"
 }

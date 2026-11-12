@@ -500,3 +500,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 - Lisbon: only yellow sea, 21:00–Thursday 03:00. The CAP batch of 22:43:28 (yellow rain for Thursday in six northern districts) has nothing for Lisboa. No newer batch (reads every 5 min to 23:20:20). No new communiqué.
 
 **Analysis (high), Thursday for Lisbon (J4):** showers at times, WSW wind about 22 km/h, gusts about 50 km/h at times by day. No wind or rain warning for Lisboa. IPMA's rain warnings for Thursday are in the north, so Lisbon may get the edge of that rain, but nothing points to a hazard for Lisbon.
+
+## 32. 00:25 UTC 12 Nov: quiet
+
+**Facts** (read 00:22:45–00:22:58 UTC): LPPT 23:30 23006KT; 00:00 23008KT, no gust, Q0999. Station means under 15 km/h. Lisbon: yellow sea to 03:00 (open data restamped its start to 22:44, no CAP message for Lisboa behind it; the CAP batch at 22:43:28 was yellow rain in the north only). No newer CAP batch (reads every 5 min to 00:19:30). No new communiqué; LPPT TAF 23:00 unchanged. IPMA's hourly model for Lisbon was updated (dataUpdate 11 Nov 19:56:17).
+
+**Analysis (high):** no change; Thursday as in section 31.
