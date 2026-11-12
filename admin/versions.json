@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2019",
+    "date": "2026-11-12",
+    "what": "the X-ray for any company: X-ray it live with Claude, then make their ABP",
+    "by": "conductor@web-summit.indi",
+    "from": "3de7e8c5a"
+  },
+  {
     "version": "v0.2.2018",
     "date": "2026-11-12",
     "what": "X-Ray uses the same OpenRouter key as Ask Claude (one key per device)",
