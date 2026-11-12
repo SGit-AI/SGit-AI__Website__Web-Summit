@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2020",
+    "date": "2026-11-12",
+    "what": "the stand's galaxy fills the stage again (touch mode only in Simple)",
+    "by": "xray@web-summit.dinis",
+    "from": "facfe82a7"
+  },
+  {
     "version": "v0.2.2019",
     "date": "2026-11-12",
     "what": "the X-ray for any company: X-ray it live with Claude, then make their ABP",
