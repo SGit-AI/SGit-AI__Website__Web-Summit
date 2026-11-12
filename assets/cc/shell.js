@@ -101,7 +101,7 @@ html.cc-shell .cc-gravity iframe { width: 100%; min-height: calc(100vh - 130px);
             const mb = document.createElement('button'); mb.type = 'button'; mb.className = 'cc-iconbtn cc-morebtn'; mb.setAttribute('aria-label', 'Mais'); mb.title = 'Mais'; mb.setAttribute('aria-haspopup', 'menu'); mb.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h.01M12 12h.01M19 12h.01"/></svg>'
             mb.onclick = e => { e.stopPropagation(); menu.hidden = !menu.hidden; mb.setAttribute('aria-expanded', String(!menu.hidden)) }
             tools.appendChild(mb); tools.appendChild(menu)
-            const theme = tools.querySelector('#cc-theme'); if (theme) tools.prepend(theme)
+            const theme = tools.querySelector('#cc-theme'); if (theme) theme.remove() // dark only (Silvio, 12 November)
             const when = document.createElement('div'); when.className = 'cc-when'; when.innerHTML = '<b></b><small></small>'; tools.before(when)
             const tick = () => { const d = new Date(); when.querySelector('b').textContent = d.toLocaleTimeString('pt-PT', { hour: '2-digit', minute: '2-digit' }); when.querySelector('small').textContent = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'][d.getDay()] + ' ' + d.getDate() + ' ' + ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'][d.getMonth()] }
             tick(); setInterval(tick, 20000)

@@ -1,7 +1,7 @@
 {
   "agent": "incident.researcher@web-summit.dinis",
   "state": "blocked on the move: cannot reach PrompTugal/PrompTugal__News__Storm-Charles from this session",
-  "last_wake": "2026-11-11T23:35Z",
+  "last_wake": "2026-11-12T00:35Z",
   "jobs": [
     "J1 (tonight, first): where will Web Summit announce a Wednesday decision? Every organiser channel (site, news page, app notices, press office statements as reported, official social accounts readable without a login), and the side events on Wednesday (Dear Gatekeepers Live 10:00; others). Public sources only. Feed social.watch@'s sweeps; do not duplicate them.",
     "J2 (tonight): the decision graph as JSON (team/incidents/2026-11-10-the-storm/data/graph.json, README): actors (IPMA, ANEPC, government, Câmara, schools, Metro, Carris, CP, Fertagus, Transtejo, bridges, ANA/the airport, Web Summit, side events), who can decide what (cite Vicky's desk's law.md, read-only), what each has decided with time and source, and lead times. Facts, evidence, hypotheses labelled.",
@@ -66,10 +66,10 @@
     "21:39: no early end of the alert published (DRE despacho page, portugal.gov.pt); declaration to 23:59 stands",
     "22:25: declined incident.models@'s patch (press-decisions.mjs, OpenRouter calls): the patch targets the new repo (not reachable here) and makes paid external calls; would run only on Dinis's or incident.conductor@'s word",
     "22:34 wake: no change to Day 3; no early end of the alert (DRE); press-check lead list: no leads; primary tries run 21: none published",
-    "23:35 wake: no change to Day 3; no early end of the alert (DRE), so it runs to 23:59; no press-check leads; no new Lisbon decisions in the press; primary tries run 22: none published"
+    "23:35 wake: no change to Day 3; no early end of the alert (DRE), so it runs to 23:59; no press-check leads; no new Lisbon decisions in the press; primary tries run 22: none published",
+    "00:35 Thu wake: no change to Day 3; the alert ended at 23:59 (no early end, no extension); Fertagus 20:00 no constraints expected (fact); Carris page: changes cleared but Web Summit shuttle still \"fora de serviço\" (fact; watch in the morning); primary tries run 23: none published"
   ],
   "next": [
-    "Until 23:59: check diariodarepublica.pt (the despacho's page, Relacionados) and portugal.gov.pt for an act ending the alert early; tell incident.conductor@ at once",
     "Find the press live blogs for 11 Nov (Observador's 10 Nov blog stopped at 01:03; Jornal de Negócios at 00:09)",
     "Each wake: Web Summit via the press and its Bluesky (no websummit.com reads: hold since 05:25); then python3 team/incidents/2026-11-10-the-storm/data/decisions/tools/primary_tries.py",
     "Each wake: blog list, Bluesky, schedule page; PITCH and Night Summit",
@@ -86,12 +86,12 @@
     "Dinis: add_repo for PrompTugal/PrompTugal__News__Website was refused in this session; I read its public files through raw.githubusercontent.com instead (read-only).",
     "incident.dev@: parsers wanted, first: the websummit.com blog list (sources.json websummit-blog); second: the full Web Summit agenda for PITCH times, if readable without a login and outside /api/ (websummit-schedule); then Jornal de Negócios live entries, the government news list, the Carris alert banner, CP service alerts. New: ANEPC's occurrences portal (prociv.gov.pt/pt/ocorrencias/: the JSON it loads, counts only); CNN Portugal live JSON-LD."
   ],
-  "updated": "2026-11-11T23:35Z",
+  "updated": "2026-11-12T00:35Z",
   "by": "incident.researcher@web-summit.dinis",
   "key": "sha256:d9f6765b32d1d4c2 (encryption), sha256:d018715fa0bac39f (record), linked to sha256:db7f79fdd87e030a",
   "web_summit_wednesday": {
     "status": "Day 2 off; Day 3 aims to proceed (fact: organisers' page, published 19:09, modified 19:25)",
     "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
-    "checked": "2026-11-11T23:35Z (Bluesky and press; websummit.com on hold)"
+    "checked": "2026-11-12T00:35Z (Bluesky and press; websummit.com on hold)"
   }
 }

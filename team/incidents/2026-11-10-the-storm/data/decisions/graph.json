@@ -1,6 +1,6 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-11T23:35Z",
+ "updated": "2026-11-12T00:35Z",
  "updated_by": "incident.researcher@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
@@ -550,8 +550,8 @@
     "read": "2026-11-11T01:00Z",
     "note": "The formal declaration with its measures (a) to (e). Observador carried \"Governo declara situação de alerta\" with the measures at 10:57:31, before the page time; whether the text was out earlier elsewhere (e.g. a press release) is not established."
    },
-   "state": "limited",
-   "state_note": "the alert itself limits (measures a to e); schools: see schools-close",
+   "state": "running",
+   "state_note": "ended 23:59 on 11 Nov (the alert's measures lapsed)",
    "legal_text": {
     "title": "Despacho n.º 13773-A/2026, de 10 de novembro",
     "publication": "Diário da República n.º 218/2026, Suplemento, Série II de 2026-11-10",
@@ -572,8 +572,8 @@
     "parts": "mainland Portugal; measures (a) to (e)"
    },
    "end_watch": {
-    "checked": "2026-11-11T23:35Z",
-    "result": "23:34Z: still no act ending the alert early (DRE despacho page: no revocation or amendment); the declaration runs to 23:59 as published.",
+    "checked": "2026-11-12T00:35Z",
+    "result": "Ended at 23:59 on 11 Nov as published: no act ending it early or extending it found (DRE despacho page 23:34Z; the PM said it would not be extended, 19:34).",
     "asked_by": "incident.conductor@ (21:37Z), after the PM's 20:38 words (Lusa via Jornal Económico) that conditions are met to end it, with no end time"
    }
   },
@@ -1174,7 +1174,7 @@
    "source": "https://websummit.com/blog/web-summit/important-event-update-2026/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 13:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 14:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 15:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 16:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 17:40Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 18:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 19:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 20:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 21:34Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 22:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 23:34Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "\"Aims\": an intention, not a guarantee. Same organiser page as websummit-wednesday; press (Jornal de Negócios 19:42, RTP 19:46) followed. 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 13:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 14:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 15:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 16:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 17:40Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 18:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 19:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 20:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 21:34Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 22:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 23:34Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 00:34Z Thu: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold).",
    "corroborated_by": [
     "https://www.jornaldenegocios.pt/economia/detalhe/fiquem-em-casa-todos-os-que-puderem-escolas-e-servicos-publicos-encerrados-amanha-siga-ao-minuto"
    ],
@@ -1206,7 +1206,7 @@
    "source": "https://websummit.com/startups/pitch/",
    "read": "2026-11-11T04:33Z",
    "read_by": "incident.researcher@web-summit.dinis",
-   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 13:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 14:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 15:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 16:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 17:40Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 18:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 19:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 20:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 21:34Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 22:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 23:34Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold).",
+   "note": "The organisers' page (19:09, modified 19:25) says only \"Web Summit will communicate directly with those impacted\". Nothing on talks, PITCH, side events or tickets on websummit.com (blog list, home, /startups/pitch/, /night-summit/, /essentials/schedule/), Bluesky, the press or a web search at 20:59Z. 21:33Z: still nothing (blog list: no new post; Bluesky: last post 17:36Z; Jornal de Negócios live to 21:31). 05:33Z: watched via Bluesky (last post 17:36Z) and the press (Jornal de Negócios live to 00:09): nothing new; websummit.com not read (terms hold). 06:33Z: via Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 07:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 08:39Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 09:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 10:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 11:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 12:32Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 13:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 14:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 15:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 16:33Z: Bluesky (last post 17:36Z) and the press: nothing new; websummit.com not read (terms hold). 17:40Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 18:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 19:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 20:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 21:34Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 22:33Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 23:34Z: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold). 00:34Z Thu: Bluesky (last post 17:36Z Tue) and the press: nothing new; websummit.com not read (terms hold).",
    "effect_from_utc": null,
    "effect_to_utc": null,
    "effect_note": "no decision with an effect window",
@@ -2310,7 +2310,7 @@
    ],
    "decision": "Carris (its own page): service continues, priority to essential journeys (health, emergency workers); Web Summit shuttle lines cancelled \"devido à suspensão do evento\"; Graça funicular closed since 10:40; trams 15E, 25E, 24E, 28E, 12E, 18E interrupted in sequence, 15E replaced by buses on the same route; bus 763 diverted at Carnide cemetery (5 stops dropped); Saldanha and Cais do Sodré sales points closed",
    "at": "2026-11-11T10:40Z",
-   "status": "happened",
+   "status": "superseded",
    "follows": [
     "gov-alert",
     "websummit-wednesday"
@@ -2973,6 +2973,60 @@
    "scope": null,
    "area": "mainland",
    "note": "CNN Portugal live 20:05:12Z citing IPMA; our 18:33 read of IPMA's open data already showed Lisbon down to sea warnings only."
+  },
+  {
+   "id": "fertagus-2000",
+   "by": "fertagus",
+   "to": [],
+   "decision": "Fertagus (its own notice, 20:00): with the weather stabilised, no relevant constraints on train service expected (\"não se prevê a ocorrência de constrangimentos relevantes na circulação\")",
+   "at": "2026-11-11T20:00Z",
+   "status": "happened",
+   "follows": [
+    "fertagus-normal-1040"
+   ],
+   "label": "fact",
+   "source": "https://www.fertagus.pt/Fertagus-pt/Viajar/Comunicados-e-Campanhas/Informa%C3%A7%C3%A3o-ao-P%C3%BAblico",
+   "read": "2026-11-12T00:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": "2026-11-11T20:00Z",
+   "effect_to_utc": null,
+   "effect_note": "from 20:00; end not stated",
+   "state": "running",
+   "state_note": "normal",
+   "scope": {
+    "extent": "whole",
+    "parts": "Fertagus line"
+   },
+   "area": "lisbon",
+   "note": "Read at source 00:34Z Thu."
+  },
+  {
+   "id": "carris-thu-0034",
+   "by": "carris",
+   "to": [
+    "websummit"
+   ],
+   "decision": "Carris's page (read 00:34 Thu): service continues; the tram, funicular and diversion list is gone; it still says \"O Shuttle Web Summit está fora de serviço devido à suspensão do evento\"",
+   "at": null,
+   "status": "happened",
+   "follows": [
+    "carris-service-1156"
+   ],
+   "label": "fact",
+   "source": "https://www.carris.pt/viaje/alteracoes-de-servico/alerta-circulacao/",
+   "read": "2026-11-12T00:35Z",
+   "read_by": "incident.researcher@web-summit.dinis",
+   "effect_from_utc": null,
+   "effect_to_utc": null,
+   "effect_note": "the page has no time; whether the shuttle line refers to Wednesday only is not stated",
+   "state": "running",
+   "state_note": "buses and trams no longer listed as interrupted; Web Summit shuttle out of service",
+   "scope": {
+    "extent": "part",
+    "parts": "Web Summit shuttle out of service (as of the page read); no other changes listed"
+   },
+   "area": "lisbon",
+   "note": "Read at source 00:34Z Thu. The shuttle line may simply not have been updated for Day 3 (Web Summit aims to hold Thursday as planned); watch it in the morning."
   }
  ],
  "lessons": [
