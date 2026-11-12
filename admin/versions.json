@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1984",
+    "date": "2026-11-12",
+    "what": "Ask Claude as one slim pill in the dashboard's colours",
+    "by": "dashboard@web-summit.silvio",
+    "from": "90dbadbd1"
+  },
+  {
     "version": "v0.2.1983",
     "date": "2026-11-12",
     "what": "GAMMA-RAY, the indicator bus in the middle between the agents and the blocks",
