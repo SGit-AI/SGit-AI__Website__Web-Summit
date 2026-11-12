@@ -211,3 +211,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Tables rebuilt from the board and pm@'s 07:40 note. Still open for Vicky: WS-213 (now overdue; the model part is settled by standing answer 44, left: which workloads Silvio's router may test), the parking yes or no (undecided on 10 Nov) and the 5 Nov newsroom record line. Team follow-ups: WS-201 and WS-208 overdue; one row for the five unowned items due today (WS-202, 205, 206, 210, 211).
 - Story candidates refreshed: 53 stories, 106 sources, all links (desks/curator/README.md).
 - state: ok; done: tables and stories refreshed; next: 17:45 wake (the last one before the daily-only schedule on Friday); ask: your workloads for the router on WS-213; run: scheduled
+
+## Thu 12 Nov 2026, 17:55 UTC (wake)
+
+- Read people/vicky/decisions.md (no new commits to it, or to my prompts file, since my 08:00 push); no HOLD.md; session key present; RULES-11NOV kept. Re-read prompts/dashboard.md (P2): it matches. The 08:00 refresh is live.
+- "Needs me" now follows the conductor's brief of 12 Nov (08:45): the WS-213 reply it proposes (yes to the ledger, numbers only; the router only on research digests and curation summaries, after the summit), the curator's "withdrawn 11 Nov" marking (yes or no), and the two asks for Dinis (inbox lanes, interview vault). Still open: the parking yes or no and the 5 Nov newsroom record line. The follow-ups are as at 08:00 (pm@'s 17:40 check found nothing new).
+- Story candidates refreshed: 54 stories, 108 sources, all links (desks/curator/README.md).
+- state: ok; done: tables and stories refreshed; next: 07:50 wake on Fri 13 Nov, then daily only (standing answer 43); ask: your word on the four items in "Needs me" (WS-213, the curator's marking, the two asks for Dinis); run: scheduled

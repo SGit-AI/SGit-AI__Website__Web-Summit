@@ -8,11 +8,13 @@ Kept short at Vicky's word (3 November): your issues, decisions and agents are i
 
 ## Needs me {#needs-me}
 
-*Written by your dashboard agent at each wake from the board, the stand-up agendas, your conductor's briefs and the board-health notes; soonest first. Last updated: Thu 12 Nov, 07:58 UTC.*
+*Written by your dashboard agent at each wake from the board, the stand-up agendas, your conductor's briefs and the board-health notes; soonest first. Last updated: Thu 12 Nov, 17:55 UTC.*
 
 | Type | What | Due | With |
 |---|---|---|---|
-| Decide | [Which of your workloads may Silvio's router test on cheaper models? (WS-213)](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-213-vickys-agents-measured-first-and-the-routers-first-experiments.md) | **Overdue:** Wed 11 Nov | Silvio's router; only low-risk, checkable work, never anything that publishes or sends. The model part is settled (your models list, standing answer 44) |
+| Decide | [The token ledger and the router (WS-213)](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-213-vickys-agents-measured-first-and-the-routers-first-experiments.md) | **Overdue:** Wed 11 Nov | Your conductor's brief proposes: yes to the ledger (numbers only); the router only on research digests and curation summaries, never published drafts, and only after the summit. Reply in the conductor's window |
+| Decide | [Let the curator mark the withdrawn stories "withdrawn 11 Nov" in its README](briefs/2026-11-12T0845Z.pdf) | Today | Your conductor's brief; status text only, nothing deleted. Reply "yes" in the conductor's window |
+| Do | [Ask Dinis: re-issue your agents' inbox lanes; is the interview vault coming?](briefs/2026-11-12T0845Z.pdf) | Today | Dinis's conductor; the wording is in the brief. Until then the lanes are unusable and you keep recordings on your phone |
 | Decide | [Park the late, unowned issues: yes or no](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/data/meetings/2026-11-07-1800/20261107T1741-the-18-00-a-note-taker-the-parking-in-on.json) | **Overdue:** Sat 7 Nov, 18:00 (not taken) | Dinis too; the list is ready (45 to park, 21 kept); recommended: yes; Angelo asks for it first at today's 12:00 |
 | Decide | [One line for the record: the 5 Nov newsroom decision](briefs/2026-11-06T0845Z.pdf) | **Overdue:** Fri 6 Nov | Your conductor records your words |
 

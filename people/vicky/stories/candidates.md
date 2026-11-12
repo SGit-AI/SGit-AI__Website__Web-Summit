@@ -6,7 +6,7 @@ Kept by curator@PrompTugal.vicky (until 6 November curator@web-summit.vicky), Vi
 
 **Connections** (from 5 November, at Dinis's direction): stories that link startups and companies at Web Summit so each gets the most out of the week: startups in the same field, startups and the investors or programmes that back that field, companies on the same stage or day, Portuguese startups and the European ones they could work with. They are marked "Connections" in the beat. Each link is the curator's suggestion from public facts: no source says these organisations plan to meet, and no story should say so. Organisations only; nothing private about anyone.
 
-Last updated: Thursday 12 November 2026, 07:38 UTC.
+Last updated: Thursday 12 November 2026, 11:38 UTC.
 
 **Categories** (Vicky, 10 November 2026): the curator assigns every article its main categories from `desks/curator/categories.json` (one or more of Web Summit 2026, Startups & Scaleups, AI, Portugal, The newsroom, Brazil, Europe, Corporate) when commissioning it, and adds its line to that file before the article is published. A new main category only with Vicky's approval; routine corrections are the curator's. Corporate versus Startups & Scaleups by the story's subject and angle, never by size, valuation, funding round or headcount. No article file is edited for this.
 
@@ -30,7 +30,8 @@ Last updated: Thursday 12 November 2026, 07:38 UTC.
 
 | Id | Title | Beat | Added |
 |---|---|---|---|
-| S59 | Discord is opening its first engineering hub outside San Francisco, in Lisbon | Portugal | 12 Nov |
+| S60 | What PagerDuty says it learned running AI agents in production | AI and robotics | 12 Nov |
+| S59 | Discord is opening its first engineering hub outside San Francisco, in Lisbon (published 12 Nov) | Portugal | 12 Nov |
 | S58 | Thursday at Web Summit: a practical guide to the last day (published 11 Nov) | The summit | 11 Nov |
 | S56 | The EU proposes a Digital Fairness Act: what it would change for online shoppers, including those using AI agents (published 11 Nov) | Europe | 11 Nov |
 | S55 | The EU says TikTok's For You feed may breach its platform law: what it found, and what happens next (published 11 Nov) | Europe | 11 Nov |
@@ -84,9 +85,18 @@ Last updated: Thursday 12 November 2026, 07:38 UTC.
 | S2 | Europe arrives in Pavilion 4: the Commission's week at Web Summit | Europe | 4 Nov |
 | S1 | Web Summit Lisbon: your first day, from airport to arena | The summit | 4 Nov |
 
+## S60: What PagerDuty says it learned running AI agents in production
+
+AI and robotics, added 12 Nov. PagerDuty's own engineering post and its Paige announcement: the failures it names and the controls it chose, as the company's own account. For journalist-ai, categories AI and Corporate. Company's own account; no second source yet.
+
+Sources:
+
+- [PagerDuty (engineering blog), "Production AI Agents: Closing the Gaps Between Idea and Reality | PagerDuty"](https://www.pagerduty.com/eng/production-ai-agents-closing-the-gaps-between-idea-and-reality/), read 12 November 2026
+- [PagerDuty (company blog, product announcement), "Meet Paige, the PagerDuty SRE Agent | PagerDuty"](https://www.pagerduty.com/blog/ai/meet-paige-sre-agent/), read 12 November 2026
+
 ## S59: Discord is opening its first engineering hub outside San Francisco, in Lisbon
 
-Portugal, added 12 Nov. Discord's own recruiting text says it is opening an engineering hub in Lisbon, its first outside San Francisco; what that says, and does not yet say, about Portugal's tech jobs. For journalist-portugal, categories Portugal and Corporate. One primary source plus a press report the writer reads.
+Portugal, added 12 Nov. Discord's own recruiting text says it is opening an engineering hub in Lisbon, its first outside San Francisco; what that says, and does not yet say, about Portugal's tech jobs. For journalist-portugal, categories Portugal and Corporate. One primary source plus a press report the writer reads. Published on 12 Nov 2026: https://promptugal.news/articles/discord-lisbon-engineering-hub.html. Not to be written again.
 
 Sources:
 
@@ -567,9 +577,9 @@ For the five journalists, in priority order (standing answers 20 and 22, the des
 
 Ready to write now:
 
-1. S59, Discord is opening its first engineering hub outside San Francisco, in Lisbon: for the Portugal desk (journalist-portugal). Discord says, in its own recruiting text, that it is opening its first engineering hub outside San Francisco in Lisbon; re-read the posting yourself, read the press report (Diario de Noticias, 11 Nov) at its source, give no size, timing or job numbers, and do not cite Web Summit pages; short and plain; categories Portugal and Corporate.
+1. S60, What PagerDuty says it learned running AI agents in production: for the AI desk (journalist-ai). PagerDuty says, in its own engineering post and product announcement, what it learned running agents in production; re-read both pages yourself, attribute every claim to PagerDuty, say there is no second source yet, no Web Summit pages; short and plain; categories AI and Corporate.
 
-Already published, not to be written again: S58 (https://promptugal.news/articles/thursday-last-day-guide.html); S37 (https://promptugal.news/articles/teamworks-coaches-agent.html); S38 (https://promptugal.news/articles/glovo-restaurant-agents-getvocal.html); S39 (https://promptugal.news/articles/wpp-call-transcripts-to-jira.html); S40 (https://promptugal.news/articles/gravitee-agent-security-survey.html); S42 (https://promptugal.news/articles/what-lovable-deleted.html); S49 (https://promptugal.news/articles/europe-in-pavilion-4.html); S56 (https://promptugal.news/articles/digital-fairness-act-ai-agents.html); S53 (https://promptugal.news/articles/eu-election-guidelines-generative-ai.html); S55 (https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html); S52 (https://promptugal.news/articles/konecta-lisbon-delivery-centre.html); S54 (https://promptugal.news/articles/breakout-startups-thursday-centre-stage.html); S46 (https://promptugal.news/articles/zalando-ai-coding-agents.html); S48 (https://promptugal.news/articles/manus-2-0-agents-own-email-phone-wallet.html); S50 (https://promptugal.news/articles/ai-act-first-harmonised-standard.html); S51 (https://promptugal.news/articles/getting-around-lisbon-wednesday.html); S45 (https://promptugal.news/articles/web-summit-day-2-refunds.html); S41 (https://promptugal.news/articles/red-wind-warning-lisbon-wednesday.html); S28 (https://promptugal.news/articles/five-ai-builders-to-know.html); S29 (https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html); S30 (https://promptugal.news/articles/health-startups-by-problem.html); S31 (https://promptugal.news/articles/road-2-web-summit-beyond-lisbon.html); S33 (https://promptugal.news/articles/ibm-sports-tech-challenge.html); S34 (https://promptugal.news/articles/where-to-find-portugal.html); S35 (https://promptugal.news/articles/press-conferences-day-by-day.html); S36 (https://promptugal.news/articles/portugal-on-the-programme.html).
+Already published, not to be written again: S59 (https://promptugal.news/articles/discord-lisbon-engineering-hub.html); S58 (https://promptugal.news/articles/thursday-last-day-guide.html); S37 (https://promptugal.news/articles/teamworks-coaches-agent.html); S38 (https://promptugal.news/articles/glovo-restaurant-agents-getvocal.html); S39 (https://promptugal.news/articles/wpp-call-transcripts-to-jira.html); S40 (https://promptugal.news/articles/gravitee-agent-security-survey.html); S42 (https://promptugal.news/articles/what-lovable-deleted.html); S49 (https://promptugal.news/articles/europe-in-pavilion-4.html); S56 (https://promptugal.news/articles/digital-fairness-act-ai-agents.html); S53 (https://promptugal.news/articles/eu-election-guidelines-generative-ai.html); S55 (https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html); S52 (https://promptugal.news/articles/konecta-lisbon-delivery-centre.html); S54 (https://promptugal.news/articles/breakout-startups-thursday-centre-stage.html); S46 (https://promptugal.news/articles/zalando-ai-coding-agents.html); S48 (https://promptugal.news/articles/manus-2-0-agents-own-email-phone-wallet.html); S50 (https://promptugal.news/articles/ai-act-first-harmonised-standard.html); S51 (https://promptugal.news/articles/getting-around-lisbon-wednesday.html); S45 (https://promptugal.news/articles/web-summit-day-2-refunds.html); S41 (https://promptugal.news/articles/red-wind-warning-lisbon-wednesday.html); S28 (https://promptugal.news/articles/five-ai-builders-to-know.html); S29 (https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html); S30 (https://promptugal.news/articles/health-startups-by-problem.html); S31 (https://promptugal.news/articles/road-2-web-summit-beyond-lisbon.html); S33 (https://promptugal.news/articles/ibm-sports-tech-challenge.html); S34 (https://promptugal.news/articles/where-to-find-portugal.html); S35 (https://promptugal.news/articles/press-conferences-day-by-day.html); S36 (https://promptugal.news/articles/portugal-on-the-programme.html).
 
 Already drafted, not to be written again: S44 (drafted, awaiting review); S47 (published as an update).
 
