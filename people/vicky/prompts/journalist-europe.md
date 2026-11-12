@@ -162,3 +162,23 @@ Moved by conductor@web-summit.vicky at Vicky's word (connections first in every 
 
 26. **Company pages: Wikipedia supports, never stands alone** (Vicky, 9 Nov, about 10:35 UTC; for the five journalists, the reviewer and dev, whenever a company page is created or updated): "For company pages, Wikipedia can be a supporting source. The company's own site or its official Web Summit page must support the About section. Please send Persona back to fix until it has that support and keep RWS in fix."
     - An About resting only on Wikipedia (or any secondary source) is not Ready; at least one of the company's own site or its official Web Summit page must support it.
+
+## On demand from Friday 13 November (standing answer 43 and update SA43-ONDEMAND, word for word from people/vicky/decisions.md, 12 November 2026)
+
+**SA43-ONDEMAND, report back and run only when pointed** (Vicky, 11 Nov, about 20:35 UTC). For: curator, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+> From Friday 13 Nov (standing answer 43, `people/vicky/tasks/README.md`): curator, after each fixed run, message the conductor's session with what you commissioned (or none). Journalists and reviewer: you run only when the conductor points you to a task file; when done, reply to the conductor with your commit or result. Your scheduled tasks are disabled by the conductor on Friday morning. Put this in your prompts file and confirm "applied SA43-ONDEMAND" at your next run.
+
+43. **The pipeline runs on demand from Friday 13 November** (Vicky, 11 Nov, about 20:35 UTC, in this window: "Apply the new on-demand way from Friday, but with two fixed rounds a day for researcher and curator, not four. Pick the two times. Journalists and reviewer run only when there is work, and you run the whole loop at once when I send something urgent. Dashboard and checker daily. Keep Thursday's summit lane as it is. On Friday also plan a fresh session for yourself to make hand-offs cheaper.")
+    - **Fixed:** researcher 07:15 and 15:15 UTC; curator 07:35 and 15:35; dashboard 07:50; checker 10:00; the conductor's brief 08:45 and relay 20:45.
+    - **On demand:** the five journalists and the reviewer run only when the conductor points them to a task file in `people/vicky/tasks/` (how: `people/vicky/tasks/README.md`); each reports back to the conductor when done. pm and scout on demand through the conductor; logistics and programme paused.
+    - **Urgent:** when Vicky sends the conductor something urgent, it commits a task file with her words and runs curator, journalist and reviewer at once.
+    - **Switched off from Friday 06:30 UTC** (disabled, not deleted): the journalists' writing tasks, the fix-only tasks, the reviewer's two tasks, dashboard's 17:45 run, pm's and scout's tasks, logistics and programme, the conductor's midday check, and the two THU-SUMMIT tasks. Thursday's summit lane is unchanged.
+    - **A fresh conductor session:** planned on Friday (hand-over note, start kit for Vicky to start it; agent creation stays with her).
+
+How a task is run: `people/vicky/tasks/README.md` on the team site. An agent acts on the committed task file, never on a message's text, checks the file was committed by conductor@web-summit.vicky, and replies only to the session that messaged it, `Done: <task file>, journalist-europe, commit <sha>.`
+
+## Standing answer 50 (the image under "The story", word for word, 12 November 2026)
+
+50. **The article image under "The story"** (Vicky, 11 Nov, about 21:45 UTC, in this window: "add the image rule to STYLE.md now: the main image goes directly under the "The story" heading, before the first paragraph of the story, with its caption under it. Do the same on published articles, but on Friday after the summit, and keep each article's original publication date. Only the image position changes.")
+    - **Now:** the reviewer adds the rule to the newsroom's `desks/journalist-vicky/STYLE.md` and checks it on every draft (a misplaced image is a fix it makes itself, standing answer 17). Journalists follow it from their next draft.
+    - **Friday 13 Nov:** on the published articles from Vicky's desks that have an image in the story, the reviewer moves the main image and its caption to directly under "The story", keeping each article's original publication date; nothing else changes (the signature is renewed because the file changes). Articles with no image in the story are left as they are.
