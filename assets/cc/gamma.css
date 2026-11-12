@@ -88,3 +88,10 @@ html.cc-shell .gr-switch button[aria-pressed="true"] { background: linear-gradie
 .gr-circ .bc-svg .bc-n[data-c] .bc-ht { fill: #C9D6D3; }
 .gr-circ .bc-svg .bc-n[data-gr][data-c] .bc-ht { fill: #EAF6F3; }
 .gr-circ .bc-n.hit[data-c] .bc-body { fill: rgba(40,36,24,.92); stroke: #F3E6C6; stroke-opacity: 1; stroke-width: 2.2; }
+
+/* Big on the stand (Silvio, 12 November): in the clean shell the circuit fills the screen's height, so its text reads from a
+   step away, like the Universe's views; the page's title and notes stay above it, smaller. */
+html.cc-shell .gr-circ .bc-svg { height: max(560px, calc(100vh - 150px)) !important; width: 100% !important; }
+html.cc-shell .gr-circ .bc-scroll { overflow-x: auto; }
+html.cc-shell .gr-circ.bm-circuit, html.cc-shell .bm.circ:has(.gr-circ) { height: auto !important; max-height: none !important; overflow: visible !important; position: relative !important; }
+html.cc-shell .gr-circ.bm-circuit .bc-scroll, html.cc-shell .gr-circ .bc-scroll { overflow-x: auto !important; overflow-y: visible !important; flex: none !important; }
