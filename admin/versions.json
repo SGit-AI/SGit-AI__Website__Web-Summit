@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1986",
+    "date": "2026-11-12",
+    "what": "weather 03:22 wake, Lisbon's last warning ended 03:00 (analysis 35)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "11be52a67"
+  },
+  {
     "version": "v0.2.1985",
     "date": "2026-11-12",
     "what": "run 27, 207 commits: nothing found",
