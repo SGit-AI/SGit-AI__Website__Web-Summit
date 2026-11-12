@@ -141,3 +141,7 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 ## Thu 12 Nov 2026, 16:05 UTC (scheduled run)
 
 - state: idle (the curator's map is unchanged since 11:38 UTC; no Portugal storyline without a draft; no Fix first on my drafts; no new decisions entries; run: scheduled)
+
+## Thu 12 Nov 2026, 20:05 UTC (scheduled run)
+
+- state: idle (the curator's map is unchanged since 11:38 UTC; no Portugal storyline without a draft; no Fix first on my drafts; standing answer 51 is for researcher, curator and the conductor; run: scheduled)
