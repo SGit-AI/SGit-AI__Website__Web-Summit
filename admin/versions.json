@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2040",
+    "date": "2026-11-12",
+    "what": "weather 13:22 wake, first gust of the day as forecast (analysis 47)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "6128e4d9d"
+  },
+  {
     "version": "v0.2.2039",
     "date": "2026-11-12",
     "what": "journalist@PrompTugal.vicky: report, 12:53 UTC run idle",
