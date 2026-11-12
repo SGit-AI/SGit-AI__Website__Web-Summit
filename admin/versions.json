@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2029",
+    "date": "2026-11-12",
+    "what": "journalist@PrompTugal.vicky: report, 11:53 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "19f532527"
+  },
+  {
     "version": "v0.2.2028",
     "date": "2026-11-12",
     "what": "11:40 wake: lane drained (empty); feedback-count.json refreshed",
