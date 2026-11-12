@@ -56,7 +56,10 @@
         const angWork = angelo('ang-work', ['Entregas', 'Deliverables'], 'M4 6h6v12H4zM14 6h6v5h-6zM14 13h6v5h-6zM10 12h4', ANG + '#live?v=work')
         const angWs = angelo('ang-ws', ['Workstreams', 'Workstreams'], 'M5 5h14M5 12h14M5 19h14', ANG + '#live?v=ws')
         const BAR = R0.BAR
-        await window.Gravity.mount(host, { css: '#wrap { border-radius: 0 !important; border: 0 !important; min-height: calc(100vh - 64px) !important; } .fan, .uni { height: calc(100vh - 130px) !important; } .shf { min-height: calc(100vh - 130px) !important; } .subv button, .crumbs { font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; } .subv button { font-size: 13px; }', data: gdata, start: 'uni', tourCentre: 'indi', metric: BAR ? { pct: BAR.pct, of: BAR.e, total: BAR.t } : null, detail: polHTML, views: [shields, xray, angMsg, angWork, angWs], // GAMMA-Ray sits on the top bar now (Silvio, 12 November)
+        // calm (Indi, 12 November: "remove all the background stars ... understandable by a 5-year-old, at a 2-second glance at the
+        // stand"): light by default (daylight at the stand), dark only when this browser chose dark (or system, in a dark system)
+        const theme = (() => { try { const v = JSON.parse(localStorage.getItem('cc.theme')); return v === 'dark' || (v === 'system' && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light' } catch { return 'light' } })()
+        await window.Gravity.mount(host, { calm: true, theme, css: '#wrap { border-radius: 0 !important; border: 0 !important; min-height: calc(100vh - 64px) !important; } .fan, .uni { height: calc(100vh - 130px) !important; } .shf { min-height: calc(100vh - 130px) !important; } .subv button, .crumbs { font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; } .subv button { font-size: 13px; }', data: gdata, start: 'uni', tourCentre: 'indi', metric: BAR ? { pct: BAR.pct, of: BAR.e, total: BAR.t } : null, detail: polHTML, views: [shields, xray, angMsg, angWork, angWs], // GAMMA-Ray sits on the top bar now (Silvio, 12 November)
             liveLabel: null })
     }
     function shieldsPlugin(api, host) { const { SR, $, t, esc, ico, reduced } = api
