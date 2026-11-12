@@ -61,6 +61,18 @@ html.cc-shell #cc-view.cc-zin > * { animation: cczin .6s cubic-bezier(.2,.8,.2,1
 @keyframes cczin { from { opacity: 0; transform: scale(.94); filter: blur(5px); } }
 html.cc-shell.cc-v-stand .cc-content { padding: 0 !important; max-width: none !important; }
 html.cc-shell .cc-askfab { bottom: 96px !important; } /* above the Feedback tab (Silvio, 12 November) */
+/* Ask Claude, small and in the dashboard's colours (Silvio, 12 November): one slim glass pill above the Feedback tab, no label block, no wide bar */
+html.cc-shell .cc-ask { position: fixed !important; left: auto !important; right: 22px !important; bottom: 92px !important; top: auto !important; width: min(440px, calc(100vw - 32px)) !important; max-width: none !important; display: flex !important; align-items: center; gap: 4px !important; padding: 4px 4px 4px 6px !important; border-radius: 999px !important; background: rgba(6,22,22,.94) !important; border: 1px solid rgba(67,217,198,.35) !important; box-shadow: 0 0 18px rgba(67,217,198,.15), 0 14px 30px rgba(0,0,0,.5) !important; backdrop-filter: blur(14px); z-index: 60 !important; }
+html.cc-shell .cc[data-ask="closed"] .cc-ask { display: none !important; }
+html.cc-shell .cc-ask .wave, html.cc-shell .cc-ask .lbl { display: none !important; } html.cc-shell .cc-ask::before, html.cc-shell .cc-ask::after { display: none !important; }
+html.cc-shell .cc-ask form { display: flex !important; flex: 1; align-items: center; gap: 4px; margin: 0 !important; min-width: 0; }
+html.cc-shell .cc-ask input { flex: 1; min-width: 0; height: 34px !important; padding: 0 12px !important; border-radius: 999px !important; border: 0 !important; background: transparent !important; box-shadow: none !important; color: #EAF6F3 !important; font: 500 14px "Barlow Semi Condensed", "Arial Narrow", sans-serif !important; }
+html.cc-shell .cc-ask input::placeholder { color: #5F7D79 !important; }
+html.cc-shell .cc-ask .cc-mic, html.cc-shell .cc-ask .cc-askclose { width: 32px !important; height: 32px !important; min-width: 0 !important; padding: 0 !important; display: grid !important; place-items: center; border-radius: 50% !important; border: 1px solid rgba(150,230,215,.25) !important; background: rgba(10,30,30,.7) !important; color: #CFE3DF !important; box-shadow: none !important; }
+html.cc-shell .cc-ask .cc-btn.gold { width: 32px !important; height: 32px !important; min-width: 0 !important; padding: 0 !important; display: grid !important; place-items: center; border-radius: 50% !important; background: linear-gradient(180deg, #FBE2AE, #D9B26E) !important; color: #10170F !important; box-shadow: 0 0 10px rgba(217,178,110,.35) !important; }
+html.cc-shell .cc-ask svg { width: 16px !important; height: 16px !important; }
+html.cc-shell .cc-askfab { width: 44px !important; height: 44px !important; }
+
 html.cc-shell .cc-gravity { min-height: calc(100vh - 120px); display: grid; align-content: start; gap: 18px; }
 .gv-sub { box-sizing: border-box; display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; padding: 4px; border-radius: 999px; border: 1px solid rgba(150,230,215,.18); background: rgba(0,0,0,.25); width: max-content; max-width: 100%; margin: 0 auto; }
 .gv-sub button { all: unset; cursor: pointer; font: 600 13px "Barlow Condensed", sans-serif !important; letter-spacing: 1.4px; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; color: #8EADA8; }
