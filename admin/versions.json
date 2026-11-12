@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2013",
+    "date": "2026-11-12",
+    "what": "the stand's Universe is dark only for now; the calm view shows its dark variant",
+    "by": "xray@web-summit.dinis",
+    "from": "61f66cb8d"
+  },
+  {
     "version": "v0.2.2012",
     "date": "2026-11-12",
     "what": "the stand's Universe shows Silvio's galaxy again by default; Indi's calm view with ?calm=1",
