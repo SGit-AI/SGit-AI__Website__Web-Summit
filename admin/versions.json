@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1983",
+    "date": "2026-11-12",
+    "what": "GAMMA-RAY, the indicator bus in the middle between the agents and the blocks",
+    "by": "dashboard@web-summit.silvio",
+    "from": "0967797b5"
+  },
+  {
     "version": "v0.2.1982",
     "date": "2026-11-12",
     "what": "weather 02:22 wake, shower passed, quiet (analysis 34)",
