@@ -9,7 +9,8 @@
     let MODE = get('cc.mode') || 'work'
     // the stand's demo flows on top (Dinis, 12 November, the summit's last day): GRAVITY and TAREFAS left the top bar (both
     // stay in the ☰ menu); VÍDEOS, PT.NEWS, LISBON TECH FRINGE, STORM and GAMMA-RAY joined (assets/cc/demo.js)
-    const DEMO = [['stand', 'Universo ✦'], ['xray', 'X-Ray'], ['swarm', 'Swarm'], ['reel', 'Vídeos'], ['ptnews', 'PT.news'], ['fringe', 'Lisbon Tech Fringe'], ['storm', 'Storm'], ['gammaray', 'GAMMA-Ray']]
+    // GAMMA-RAY next to the Universe (Silvio, 12 November)
+    const DEMO = [['stand', 'Universo ✦'], ['gammaray', 'GAMMA-Ray'], ['xray', 'X-Ray'], ['swarm', 'Swarm'], ['reel', 'Vídeos'], ['ptnews', 'PT.news'], ['fringe', 'Lisbon Tech Fringe'], ['storm', 'Storm']]
     const FLOWS = { client: DEMO, work: DEMO }
     const html = document.documentElement
     if (![...document.querySelectorAll('link')].some(l => l.href === FONTS)) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = FONTS; document.head.appendChild(l) }
