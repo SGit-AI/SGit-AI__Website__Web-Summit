@@ -521,7 +521,12 @@
    "time_utc": "2026-11-12T06:25Z",
    "section": 38,
    "summary": "Showers (Relógio 3.3 mm, hour labelled 05:00); LPPT 06:00 24008KT Q1001, no gust; no Lisbon warning; no new CAP batch since 22:43:28; TAF 05:00 unchanged."
+  },
+  {
+   "time_utc": "2026-11-12T07:26Z",
+   "section": 39,
+   "summary": "Showers; LPPT 07:00 25008KT -SHRA Q1002, no gust; no Lisbon warning; no new CAP batch since 22:43:28; Open-Meteo rate-limited (429) all three reads, other sources fine."
   }
  ],
- "next_read_utc": "2026-11-12T07:22Z"
+ "next_read_utc": "2026-11-12T08:22Z"
 }
