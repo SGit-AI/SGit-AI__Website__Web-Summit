@@ -1,12 +1,12 @@
 {
   "about": "Where security.repos@web-summit.dinis stopped, per repository and branch: the last commit reviewed (the branch head when the run read it). The next run reviews every commit reachable from any branch and not from these. From the second run, every branch is listed, not only those active since the baseline.",
   "agent": "security.repos@web-summit.dinis",
-  "last_run": "2026-11-11T21:30Z",
+  "last_run": "2026-11-12T00:35Z",
   "baseline_from": "2026-11-08T11:00Z",
   "repos": {
     "SGit-AI/SGit-AI__Website__Web-Summit": {
       "branches": {
-        "dev": "0c4009e2:20010e87:3960c65b:116dcd7f:3a9ab9a3",
+        "dev": "c87e825f:b21769b0:199acb08:0d9150bc:0112e9b7",
         "claude/awesome-dirac-rp94os": "1cc9740a:f6520690:6617362b:879004f6:564e0e8d",
         "claude/beautiful-clarke-mqhept": "a88e8c65:a2e854b4:1b5b2e2f:7506bab1:c53e2ddf",
         "claude/conductor-jose-setup-ogxaka": "ccfecefe:90fb74e8:38fd1b0b:0f89b40b:e179593d",
@@ -17,7 +17,7 @@
         "claude/hopeful-rubin-3zcktn": "b1fa5d0b:357aa159:da152b62:a1b9a004:13f232e2",
         "claude/modest-brahmagupta-37bfva": "60e4404e:43c38faa:28846c2e:c1eaf535:b0dcb11c",
         "claude/modest-lamport-v1ejmm": "166b6650:1b590251:32aae019:e6946550:73cab8f1",
-        "claude/nifty-bell-f1rkca": "d965a9ef:f98ae4fa:f9808d42:f22deac0:1c545245",
+        "claude/nifty-bell-f1rkca": "675e42ce:d9795e49:b34a0d74:ef14357f:4dd0e0e7",
         "claude/nifty-knuth-cnyek0": "359a829d:401c847b:468b04e0:8b63391a:77511427",
         "claude/optimistic-feynman-7pkot9": "dc306d7a:08898d1d:79bc0544:0601138f:ad218353",
         "claude/policy-lanes-angelo-entries-h6m2x0": "3bfc2f9a:f8305bb8:c22bb736:c1e15a33:2200fc2a",
@@ -35,7 +35,7 @@
         "pool/b2-flow-reuse": "33401ca1:90df7123:64840a90:f96b7994:e67ffd2b",
         "pool/b3-team-offers": "c2b0fa3d:31a09463:e64e7d57:65c139c0:72599d2f",
         "pool/b4-how-it-works": "acfa4403:8a5804ac:19053577:8f34128a:ee35bb9f",
-        "pool/claims": "cd9e58f4:4ac17801:63dcc610:b8798b3a:1d7671cb",
+        "pool/claims": "8be10156:2c423fd5:e81facd5:8f3d9241:d579c787",
         "pool/handover-p1-relay": "11db0db2:1519a3c4:6a355d3b:9356453c:d578dea5",
         "pool/handover-p1-writeback": "0696db98:57e0d420:9fd9394a:3e3a2f97:94404749",
         "pool/handover-p2-format": "27d8dd52:d40f9ab2:a13332bc:e0a1ab85:1e264c6d",
@@ -44,15 +44,25 @@
         "pool/handover-p4-outpacket": "721de9ea:4373504f:949c4406:a95d6842:f5f3b67b",
         "pool/handover-p5-or-step": "e958ac84:761bf4eb:7c14872e:72f7f659:f44ea2b7",
         "pool/handover-p6-names": "188feded:62e4471d:286d0fd9:0a4e3015:79d77813",
+        "pool/handover-p7-market": "85f30e66:2e81c0db:3f16e182:51ef6dbb:e45cd906",
         "pool/network-views-d1": "ea82463e:ac12da03:ee2e94ae:983b28fa:8a5a80e3",
         "pool/prod-pipeline-a3": "81937668:33d1c7b9:b7629971:7be9639f:d43d8842",
         "pool/prod-pipeline-a4": "0905d30d:4fbc94b0:d1cb6eed:c97524ed:4f5008fa",
         "pool/prod-pipeline-a5": "3af1628b:d6f6c950:df099341:d3802f93:797aaf5c",
         "pool/prod-pipeline-a6": "f2635bd6:97f2aa41:dd206b1d:4cf07973:da2c771e",
         "pool/prod-pipeline-a7": "419bdfcd:8c249271:d834dade:4ea91765:80daddd3",
-        "project/handover-market": "1e7f22b9:3dde0a3f:7cc8c355:4103e73e:a4315870",
+        "pool/prod-pipeline-a8": "523c2ef3:b4c9ef33:14552580:3a1182bf:12d0dcb4",
+        "pool/riskmandate-android-demo-build": "3623d051:0f6b9c71:48b14779:c45613e4:49ce47c0",
+        "pool/riskmandate-android-demo-build2": "38720b73:05ef28eb:c1e1ae8d:a2db9805:9d23dfd4",
+        "pool/riskmandate-android-demo-build3": "2904b3f6:9be570c1:ae52625b:e4f20b03:4be2b5ca",
+        "pool/riskmandate-android-demo-build4": "965a2f2c:8ce1e567:e2928c6a:f9a864cb:89b8668e",
+        "pool/riskmandate-android-demo-check": "8bf81c12:cea8a0af:fafb53c2:85ddd760:754d8e20",
+        "pool/riskmandate-android-demo-check2": "c3f5feaa:81568b08:d0b81866:15b0b268:da6a94c8",
+        "pool/riskmandate-android-demo-spec": "1446287c:7dc810c4:c1298d61:28c242b7:ddaf1da6",
+        "project/handover-market": "61be8b27:625d5ff1:3c963dfa:af1fbdd7:28538475",
         "project/network-views": "9bce297d:18e7b690:525d9cb1:28840692:28089d48",
-        "project/prod-pipeline": "afe04ab8:649c4caa:aa8e3ea6:3774cc3a:d01cf847",
+        "project/prod-pipeline": "a922129c:7f18e068:45bd362c:d8469088:37ae4d69",
+        "project/riskmandate-android-demo": "f6df925b:4a8d3e9b:bdf57a52:a6e20c7b:a3abf945",
         "workers/dev.abp": "1c15f6aa:28d462b1:b7990953:eb700d6a:3e27052a",
         "workers/dev.app": "8114482b:d12547e1:a6e12423:86fae6fd:63b344a9",
         "workers/dev.links": "1bd3382c:6c7a89e5:2ef8b100:06dfe4b7:e40347c6",
@@ -67,7 +77,7 @@
     },
     "PrompTugal/PrompTugal__News__Website": {
       "branches": {
-        "dev": "19222f02:31f7e996:dce61464:fafdc7d2:fe9f4986",
+        "dev": "75e5948a:04b71a2e:0379479c:92b6062d:834b2618",
         "claude/eager-euler-x3k3vm": "6bec1c34:72cbdc31:3d6b5c7c:a2142cee:7f9434b7",
         "claude/serene-keller-r1pzfc": "3affa4b4:a3478ef4:0565a131:54ffe10e:0c55e8bc",
         "claude/sweet-heisenberg-m1vm71": "c9217130:f27dae9a:55e5a708:0e644f28:6b31f73e",
@@ -75,9 +85,9 @@
         "preview/satellite-loop": "0096ef8e:0ce6e422:2e5a1788:860bea06:305582d0",
         "work/conductor-silvio": "e9ffd69b:1fc3f1cf:3aecbb1e:e3474c57:493ea465",
         "work/designer.experiments": "1177421a:6cc6e53e:ff0b578a:5b78ad2e:af1427ca",
-        "work/dev.data": "383c4d08:88dbad69:d2b7018f:2fc3bf12:60fb478d",
-        "work/dev.graphs": "124b6fac:54f7a3ad:ea4cbad8:eca6f97b:0a1af323",
-        "work/dev.pages": "4d3a049c:bc38174c:5cb5ab78:26621588:fb977525",
+        "work/dev.data": "3c26dd8f:345a2604:4c0448d2:ca2529b3:d9a28377",
+        "work/dev.graphs": "e7684cf4:58e8df89:7bb8bf91:73e6b99d:277b969b",
+        "work/dev.pages": "3699ca87:8d1aaacb:36632996:ef9036c5:391cecc2",
         "work/dev.portugal": "a1b6759c:2e35335a:aeef19d1:80e30d5f:3123cae5",
         "work/dev.search": "938ab510:70025f12:21ecfe41:5dc1b817:0b3a692e",
         "work/dev.verify": "56ed3c82:8adf8857:e4b2a852:d92f8a20:975fb0aa",
@@ -88,7 +98,10 @@
     },
     "PrompTugal/PrompTugal__App__Android": {
       "branches": {
-        "dev": "653320a6:21657a6b:a07e3697:fdd67049:e6f52ec7",
+        "dev": "5badadaa:2fe70ad2:057584ae:baa78721:e14ee29a",
+        "angelo/riskmandate-xray-browser": "5badadaa:2fe70ad2:057584ae:baa78721:e14ee29a",
+        "angelo/riskmandate-xray-demo": "683f9f7d:1535d83d:1d05fd5c:3e8a1083:65c460af",
+        "angelo/riskmandate-xray-fixes": "22dafcee:c949472c:2db842e9:a08c1c9f:b0120e20",
         "main": "67bb9367:ba595d3a:5bce3638:66926d38:3586ef81",
         "promote/0b21eef10c73": "0b21eef1:0c7326b7:9fa6b249:9e7d5e5d:eed22388",
         "work/app": "ca5ebb43:9901f679:b7dd0205:cd0cabe1:70de9054",
@@ -113,7 +126,7 @@
     },
     "PrompTugal/PrompTugal__App__iOS": {
       "branches": {
-        "dev": "16fd6dc6:57f0a87e:55f5efac:7a7d7381:6d977e00",
+        "dev": "bf76d293:7d0dbf46:7ce5c4b1:a61c7f83:dd752f84",
         "claude/serene-edison-22z0xn": "38f17268:b7830bbf:185a2fa3:e48f2c2a:bc15b766",
         "conductor/self-hosted-trial": "3e960dff:1c15a152:d9a081d8:d30c4849:5673e3d8",
         "main": "2bd40e27:f2212a91:66916ad1:8cc558b7:5106feda",
@@ -172,7 +185,7 @@
     },
     "PrompTugal/PrompTugal__News__Storm-Charles": {
       "branches": {
-        "dev": "60037c7d:3b348dfd:9e632b09:c5460c44:aa788af2",
+        "dev": "36d157e7:c73892a7:6603d639:13e80f22:03049654",
         "main": "3a61421c:9ddb9966:6e7cbec7:93f27193:7c267916"
       },
       "note": "Added at run 18 (11 Nov), at conductor@web-summit.dinis's request (10 Nov 21:17, material); the storm incident's site, storm-charles.promptugal.news."
