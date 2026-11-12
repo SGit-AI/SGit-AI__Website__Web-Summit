@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **52** a new strand Vicky leads, humans and AI: five angles, proposed in Friday's review; nothing started.
 - **51** from Friday: researcher and curator three rounds a day (07:15, 11:15, 15:15; curator 20 minutes after); a post-summit review of the brief and About page, nothing started.
 - **50** the main image directly under "The story", caption under it; published articles moved on Friday, dates kept.
 - **49** step 2 approved (About check, curator evidence; agenda not re-sourced), from Friday; lisbontechfringe.com (Indi's app) counts as another source for events, as a pointer.
@@ -274,6 +275,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 51. **Researcher and curator: a midday round from Friday; a post-summit coverage review** (Vicky, 12 Nov, about 19:35 UTC, in this window: "From Friday, add a midday round for researcher and curator, around 11:15 and 11:35, so they run three times a day. Tell me the extra usage. After the summit, review the newsroom's original brief and About page against what we actually publish. List topics we have not covered, for example how the newsroom works, post-summit follow-ups on announcements, the storm's aftermath, a Portuguese edition, the Portugal industry banner, and company pages rebuilt from companies' own sources. Recommend which to start first and the usage, and do not start any yet.")
     - **Schedule:** this changes standing answer 43's "two fixed rounds". From Friday 13 Nov: researcher 07:15, 11:15 and 15:15 UTC (cron 15 7,11,15 * * *); curator 07:35, 11:35 and 15:35 (cron 35 7,11,15 * * *). The conductor sets both crons at its Friday 06:30 switch. Nothing changes in either agent's prompt; each run works as now.
     - **The review:** the conductor does it on Friday after the summit and gives Vicky the list, a recommendation and the usage. No agent starts any new topic, edition or rebuild from it until Vicky says which.
+
+52. **A new strand Vicky leads: humans and AI** (Vicky, 12 Nov, about 19:45 UTC, in this window: "For Friday's review, add a new strand I want to lead: humans and AI. Five angles: how people actually use AI and where it fails them, the relationship between people and AI including loneliness in teams that move to agents, health tech, underrepresented groups in tech such as women in tech, and how people move from skills and plugins to running agents, starting with my own story. Keep it positive and constructive, never invent quotes, and use public research, people's own public posts and our own experience until we have interviews. Suggest which desk owns it, the first three stories and the usage.")
+    - **Now:** the conductor adds it to Friday's review (standing answer 51): the owning desk, the first three stories and the usage. No agent starts it until Vicky says go.
+    - **When it starts:** positive and constructive; no invented quotes; sources are public research, people's own public posts and the team's own experience, until there are interviews (with consent, standing answer 27).
 
 ## Updates for agents
 
