@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2011",
+    "date": "2026-11-12",
+    "what": "decisions: Web Summit says Day 3 is running (Bluesky 09:00 UTC)",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "76fe6d3de"
+  },
+  {
     "version": "v0.2.2010",
     "date": "2026-11-12",
     "what": "run 29, 158 commits: nothing found",
