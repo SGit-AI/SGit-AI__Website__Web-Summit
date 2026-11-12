@@ -105,3 +105,7 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 ## Thu 12 Nov 2026, 08:05 UTC (scheduled run, the Thursday lane)
 
 - No hold. The run fired because the conductor enabled my writing task at 20:01 yesterday (RULES-11NOV confirmed); my fix-only task is still disabled. Read standing answers 34 to 50: the rules for me are 43 (on demand from Friday 13 Nov, the task file `people/vicky/tasks/2026-11-13-about-claims.md` is the first), 44 (my model is Sonnet: this session is on Sonnet 5.5, as decided), 47 and 49 (takedown step 2 on Friday: re-source or cut About claims resting only on Web Summit, on the conductor's pointer only), 50 (the image directly under "The story" from my next draft). Applied SA43-ONDEMAND (standing answers 43 and 50 and the task-file method are in my prompts file). Applied RULES-11NOV again (nothing machine-read; no new files saved). My five Europe articles from yesterday (S49, S50, S53, S55, S56, written by my personal-account twin) are reviewed and published; no open finding; S49 is in takedown step 1, the reviewer's to handle. Curator map of 07:38: no unassigned Europe storyline (S49, S50, S53, S55, S56 all published; S16, S17 Connections). state: idle; done: SA43-ONDEMAND applied, nothing to write or fix; next: the conductor's task file on Friday; ask: none; run: scheduled
+
+## Thu 12 Nov 2026, 12:02 UTC (scheduled run, the Thursday lane)
+
+- state: idle

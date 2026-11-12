@@ -1,5 +1,47 @@
 [
   {
+    "version": "v0.2.2031",
+    "date": "2026-11-12",
+    "what": "the lab's Three shields in PT and EN, with realistic requests and a choice of agent",
+    "by": "dashboard@web-summit.silvio",
+    "from": "1c3ac1424"
+  },
+  {
+    "version": "v0.2.2030",
+    "date": "2026-11-12",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 11:59, idle",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "5fbf50f6f"
+  },
+  {
+    "version": "v0.2.2029",
+    "date": "2026-11-12",
+    "what": "journalist@PrompTugal.vicky: report, 11:53 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "19f532527"
+  },
+  {
+    "version": "v0.2.2028",
+    "date": "2026-11-12",
+    "what": "11:40 wake: lane drained (empty); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "bbbe3bb70"
+  },
+  {
+    "version": "v0.2.2027",
+    "date": "2026-11-12",
+    "what": "weather 11:22 wake, new LPPT TAF lowers the gust signal (analysis 44)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "0fb9b9263"
+  },
+  {
+    "version": "v0.2.2026",
+    "date": "2026-11-12",
+    "what": "the command centre X-ray's replay verdicts in plain words: Allowed, Not allowed but caught, Not allowed and nobody would know",
+    "by": "conductor@web-summit.indi",
+    "from": "8804183d8"
+  },
+  {
     "version": "v0.2.2025",
     "date": "2026-11-12",
     "what": "11:15 run, 2 captures and a revision in the research vault 41j3e9s9; the curator's two gaps filled",

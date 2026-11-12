@@ -210,3 +210,9 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 
 - No hold. applied SA43-ONDEMAND: added word for word to my prompts file (plus how task files work). From Friday 13 Nov I run only when the conductor points me to a task file in people/vicky/tasks/, and reply to the conductor with the commit; the conductor disables my tasks on Friday morning. Nothing new on my beat (the curator's list has no unwritten AI and robotics storyline; S59 is Portugal). Remote set and confirmed before pulling.
 - state: ok; done: SA43-ONDEMAND applied; next: wait for a task file; ask: none; run: scheduled
+
+## Thu 12 Nov 2026, 12:25 UTC (scheduled run)
+
+- No hold. Draft S60, "What PagerDuty says it learned running AI agents in production" (700 words, newsroom v0.1.1389, For: reviewer@PrompTugal.vicky): from PagerDuty's own engineering post (11 June 2026) and its Paige announcement (3 November 2026), both read today; the company's own account, said so; the 80 to 90 per cent injection figure attributed as research PagerDuty cites; the diagram's problem-and-fix pairings flagged as our reading; categories AI, Corporate; the main image directly under "The story" (standing answer 50). Neither source is Web Summit, Luma, Meetup or Eventbrite. Cover: a five-pair diagram (SVG), phone-checked.
+- Not checked: any second source on PagerDuty's claims, as the curator noted; nothing says PagerDuty is at Web Summit, and the article does not.
+- state: ok; done: S60 drafted; next: review (fix-only task at 12:14 passed; after Friday I run on task files); ask: none; run: scheduled
