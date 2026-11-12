@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2028",
+    "date": "2026-11-12",
+    "what": "11:40 wake: lane drained (empty); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "bbbe3bb70"
+  },
+  {
     "version": "v0.2.2027",
     "date": "2026-11-12",
     "what": "weather 11:22 wake, new LPPT TAF lowers the gust signal (analysis 44)",
