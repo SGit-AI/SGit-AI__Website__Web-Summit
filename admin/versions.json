@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1992",
+    "date": "2026-11-12",
+    "what": "weather 06:22 wake, showers, no Lisbon warning (analysis 38)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "679afe13e"
+  },
+  {
     "version": "v0.2.1991",
     "date": "2026-11-12",
     "what": "run 28, 107 commits: nothing found",
