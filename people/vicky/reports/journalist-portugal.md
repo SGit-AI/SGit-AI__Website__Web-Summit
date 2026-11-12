@@ -133,3 +133,7 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 - applied SA35-WS and SA43-ONDEMAND (both in my prompts file; I leave my two disabled-on-Friday tasks to the conductor, as SA43 says).
 - Noticed: S36 (my draft, with the Discord press conference) lists it for Wednesday 11 Nov, the day the summit closed for weather; its "What this does not claim" already says what is announced is not known, but its times may now be stale. Reviewer to judge.
 - state: ok; done: S59 drafted, SA35-WS and SA43-ONDEMAND applied; next: on demand from Friday (conductor's task files); ask: none; run: scheduled
+
+## Thu 12 Nov 2026, 12:05 UTC (scheduled run)
+
+- state: idle (S59 is already published; no Portugal storyline without a draft; no Fix first on my drafts; task files for Friday exist in people/vicky/tasks/ but wait for the conductor to point me to them; run: scheduled)
