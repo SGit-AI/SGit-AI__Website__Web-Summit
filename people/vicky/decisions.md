@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **54** WS-213: the token ledger yes (numbers only), every agent logs each run; the router held. The curator marks the 16 withdrawn stories.
 - **53** the conductor warns Vicky first when the account nears its five-hour or weekly limit, with the steps to move the busiest agents to her personal account.
 - **52** a new strand Vicky leads, humans and AI: five angles, proposed in Friday's review; nothing started.
 - **51** from Friday: researcher and curator three rounds a day (07:15, 11:15, 15:15; curator 20 minutes after); a post-summit review of the brief and About page, nothing started.
@@ -285,6 +286,12 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **The conductor** reads the account's rate-limit state from each session's usage record at every wake and every hand-off (P6: usage numbers only). If it shows a warning state or overage, the top line of For Vicky says so, with the reset time and a link to `people/vicky/plans/2026-11-12-usage-limit-fallback.md`. The service gives a state, not a percentage, so the warning comes when the service raises it.
     - **No agent moves** until Vicky says which; one session per role at a time (standing answer 32).
 
+54. **WS-213 ledger yes, router held; the curator marks withdrawn stories** (Vicky, 12 Nov, about 21:15 UTC, in this window: "Conductor: yes to the WS-213 ledger, numbers only. Hold the router part for now. ... Tell the curator yes, mark the 16 stories "withdrawn 11 Nov" in its README, status text only. No two-hour usage check for now.")
+    - **Every agent of Vicky's (update SA54-LEDGER):** at the end of each run that does work, run `node people/vicky/measure.mjs --agent <your short name> --task "<what the run did, a title>" --since <the run's start, ISO UTC> --append` on the team site and commit the line in `people/vicky/ledger/<short name>.jsonl` with your report. Numbers and the task title only: no session ids, prompts, model ids or content. Once, at your first run after this, also add one line with no `--since`, for your session's total so far (WS-213's "what the plan held"). It reads only your own session's transcript, never another's.
+    - **The router (WS-213's experiments) is held:** no agent's work, input or output goes to router@web-summit.silvio or OpenRouter until Vicky decides.
+    - **The curator** marks the 16 stories withdrawn on 11 Nov "withdrawn 11 Nov" in its README, status text only (task file `people/vicky/tasks/2026-11-12-2120-curator-withdrawn-marking.md`).
+    - **No two-hour usage check** (standing answer 53 stays at the conductor's wakes and hand-offs).
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -379,3 +386,6 @@ Removed on 8 Nov once done or confirmed: HANDOFF-FIX (all five journalists' writ
 Accepted and done on 7 Nov (Vicky's word): P21 (she turned off Gmail send, reply and forward in the account's connector settings, 6 Nov), P23 (inbox@web-summit.vicky started, on demand; key inbox-vicky, its own commit 714a2149) and P24 (the private CRM's key sealed to inbox-vicky by the conductor, recorded on WS-172). Only inbox@web-summit.vicky uses Gmail (P22).
 
 Removed on 7 Nov once every agent they were for had confirmed them: P1 (the hold), P2 (re-read your prompts file), P3 (the status block), P5 (the journalists' staggered times), P9 (the hooks check), and the conductor's P4, P6, P8, P16, P18, P19 and P26. They stay in force; the agents carry them in their own prompts, and their text is in this file's history and in the scout's notes.
+
+**SA54-LEDGER, log each run's tokens** (standing answer 54, Vicky, 12 Nov about 21:15 UTC: "yes to the WS-213 ledger, numbers only"). For: all agents with runs (dashboard, pm, logistics, vault, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, scout, dev, security, inbox, designer, synthetic, conductor).
+> At the end of each run that does work: `node people/vicky/measure.mjs --agent <short name> --task "<title>" --since <run start, ISO UTC> --append`, and commit `people/vicky/ledger/<short name>.jsonl` with your report. Once, at your first run after this, one more line without `--since` (your session's total so far). Numbers and the task title only. Confirm "applied SA54-LEDGER" in your report.
