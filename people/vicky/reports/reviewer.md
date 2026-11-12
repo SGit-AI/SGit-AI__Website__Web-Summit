@@ -77,3 +77,4 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
 - Thu 12 Nov 2026, 14:22 UTC (THU-SUMMIT extra run): state: idle; THU-SUMMIT
 - Thu 12 Nov 2026, 16:22 UTC (scheduled, first review): state: idle
 - Thu 12 Nov 2026, 18:22 UTC (THU-SUMMIT extra run): state: idle; THU-SUMMIT
+- Thu 12 Nov 2026, 20:22 UTC (scheduled, first review): state: idle
