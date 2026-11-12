@@ -117,6 +117,50 @@
         setInterval(tick, 200) },
       show(anim) { F.open(anim) }, zoom(k) { F.zoom(k) } }
     const $$ = id => document.getElementById(id)
+    // a company not X-rayed yet, without a team key (WS-191, conductor@web-summit.indi, 12 November 2026): the same card as
+    // /xray/ (assets/xray.js): one big button that opens claude.ai with the X-ray prompt (no key in the page), then Make their
+    // ABP. claudeXrayUrl is copied unchanged from assets/xray.js; keep the two the same.
+    function claudeXrayUrl(c) {
+        const prompt = `X-ray ${c} for RiskMandate, in under a minute. Use web search.
+
+Rules: public facts only, each with its source link. Nothing about private individuals. If you cannot find something, write "not found"; never guess. Plain words, British spelling, no em-dashes.
+
+RiskMandate's words: Reach is what an AI agent can access or affect. Mandate is what it was asked to do. The gap is reach beyond the mandate.
+
+Answer in exactly this format, and keep it short:
+
+AGENTS
+- each AI agent or assistant ${c} publicly uses or sells, one line each, with its source link (or "not found")
+
+CAN REACH: at most 8 plain words
+WAS ASKED TO: at most 8 plain words (our example of sensible limits, not the company's own policy)
+THE GAP: at most 8 plain words
+
+AGENT FOR THE ABP: the one agent above with the biggest gap
+
+ABP ANSWERS
+Suggested answers to the ten questions of an Agent Behaviour Policy (ABP) for that agent. One line each, starting with the number; separate items with "; ". Where the sources say nothing, give a safe default and add "(suggested)".
+1. Which agent is it, and whose? (its name, at ${c})
+2. What is it for, in one sentence?
+3. What can it reach today? (systems, data, tools, money, people it can message; "not sure" for any you do not know)
+4. What must it never do?
+5. What needs a person's yes before it acts?
+6. Who may tell it what to do?
+7. What may it read but never act on?
+8. When it is unsure, what does it do?
+9. How often does it run, and how many tokens may it use each time?
+10. What shows it behaved?
+
+SOURCES
+- every link you used
+
+This is a draft for a conversation at the RiskMandate stand at Web Summit Lisbon, not an audit. RiskMandate: https://riskmandate.ai`
+        return 'https://claude.ai/new?q=' + encodeURIComponent(prompt)
+    }
+    const nxHTML = q => `<p class="ph">X-Ray</p><h2 class="nx-name">${esc(q)}</h2><p class="nx-not">Ainda sem X-ray</p><p class="nx-go"><a class="nx-btn nx-claude" href="${esc(claudeXrayUrl(q))}" target="_blank" rel="noopener">Fazer o X-ray ao vivo com o Claude ↗</a></p><p class="nx-go"><a class="nx-btn ghost nx-make" href="${SITE}abp-make/index.html?company=${encodeURIComponent(q)}" target="_blank" rel="noopener">Fazer a ABP deles</a></p><p class="nx-cap">O Claude abre num separador novo e pesquisa a web. Depois cola a resposta em Fazer a ABP deles.</p><p class="nx-cap">Quem tem a frase da equipa pode tocar em CHAVE e pesquisar aqui ao vivo.</p>`
+    function nxShow(q) { const run = $$('xr-run'); if (!run) return; let c = $$('xr-nx'); if (!c) { c = document.createElement('div'); c.id = 'xr-nx'; c.className = 'xr-nx'; run.prepend(c) }
+        c.innerHTML = `<div class="nx-card">${nxHTML(q)}</div>`; c.hidden = false; const st = run.querySelector('.xr-stages'); if (st) st.style.display = 'none' }
+    function nxHide() { const c = $$('xr-nx'); if (c) c.hidden = true; const st = document.querySelector('#xr-run .xr-stages'); if (st) st.style.display = '' }
     const kdot = () => { const d = $$('kd'); if (d) d.className = 'kd' + (KEY ? ' on' : '') }
     const linkTo = u => u && /^https?:/.test(u) ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer" style="color:var(--teal)">${esc(host(u))} ›</a>` : ''
     function panel(it, ico) {
@@ -136,9 +180,9 @@
     }
     function go(name, forceLive) { if (!KEY) { KEY = askKey(); kdot() } const q = String(name).trim(), lq = q.toLowerCase()
         const x = !forceLive && (all().find(y => y.name.toLowerCase() === lq || y.slug === lq) || (q.length > 3 && all().find(y => y.name.toLowerCase().includes(lq))))
-        F.st.card = 'leads'; F.st.sel = -1
+        if (F) { F.st.card = 'leads'; F.st.sel = -1 }
         if (x) { cur = x; R = { ph: 'idle' }; $$('xin').value = x.name; F.draw(true); rvFor(x); return }
-        if (!KEY) { cur = null; R = { ph: 'idle' }; F.draw(true); api.SR.querySelector('.panel').innerHTML = `<p class="ph">X-Ray</p><h2>${esc(q)}</h2><div class="ai"><b>⚠ Falta a chave neste aparelho</b>Para pesquisar uma empresa nova ao vivo, toca em CHAVE e escreve a frase da equipa (ou cola a chave). Sem ela, só abrem as empresas já pesquisadas (em EMPRESAS).</div>`; rvNoKey(q); return }
+        if (!KEY) { cur = null; R = { ph: 'idle' }; if (F) F.draw(true); const pn = api.SR && api.SR.querySelector('.panel'); if (pn) pn.innerHTML = nxHTML(q); rvNoKey(q); return }
         live(q) }
     async function live(q) { cur = null; R = { ph: 'live', t0: performance.now(), name: q }; F.draw(true)
         try { await loadAsk() } catch (e) { R = { ph: 'idle' }; F.draw(false); api.SR.querySelector('.panel').innerHTML = `<h2>${esc(q)}</h2><div class="ai"><b>Não consegui carregar a pergunta dos agentes</b>${esc(String(e && e.message || e))}</div>`; return }
@@ -239,8 +283,8 @@
     const say = h => { const l = $$('xr-log'); if (!l) return; const p = document.createElement('p'); p.innerHTML = h; l.appendChild(p); l.scrollTop = 1e6 }
     const status = (txt, done) => { const s = $$('xr-st'); if (s) { s.className = 'xr-status' + (done ? ' done' : ''); s.querySelector('span').textContent = txt } }
     const rvFor = (x, anim) => rvStart(x.name, x.agents_run.map(a => ({ id: a.id, label: a.label, model: a.model || '' })), x.kind === 'prep' ? (anim ? 'replay' : 'done') : 'saved', x)
-    function rvNoKey(q) { if (RV) RV.stop = true; status('Falta a chave · ' + q); const l = $$('xr-log'); if (l) l.innerHTML = ''; say(`<b>${esc(q)}</b>: para pesquisar ao vivo, toca em CHAVE e escreve a frase da equipa.`) }
-    function rvStart(name, agents, mode, x) { if (!$$('xr-runsvg')) return; if (RV) RV.stop = true; const V = RV = { stop: false, t0: performance.now(), mode, x, name, run: mode === 'live' ? LIVERUN : null, instant: mode === 'done' || mode === 'saved' }
+    function rvNoKey(q) { if (RV) RV.stop = true; status('Ainda sem X-ray · ' + q); const l = $$('xr-log'); if (l) l.innerHTML = ''; nxShow(q) }
+    function rvStart(name, agents, mode, x) { if (!$$('xr-runsvg')) return; nxHide(); if (RV) RV.stop = true; const V = RV = { stop: false, t0: performance.now(), mode, x, name, run: mode === 'live' ? LIVERUN : null, instant: mode === 'done' || mode === 'saved' }
         $$('xr-log').innerHTML = ''; $$('xr-det').hidden = true; status((mode === 'live' ? 'Ao vivo · a pesquisar ' : V.instant ? 'A abrir ' : 'A pesquisar ') + name); if ($$('xr-scnsvg')) rvScnWait(mode === 'live')
         $$('xr-runsub').textContent = mode === 'replay' || mode === 'done' ? `replay da pesquisa real de ${String(x.read).split('-').reverse().join('/')}${x.at ? ' às ' + String(x.at).slice(11, 16) + ' UTC' : ''}` : mode === 'live' ? 'ao vivo, agora' : 'pesquisada ao vivo neste aparelho · ' + x.read
         const s = $$('xr-runsvg'); s.innerHTML = ''; rvDefs(s)
@@ -476,9 +520,13 @@
         'A chave:': 'The key:', 'descartável, com orçamento limitado, colada em cada aparelho da equipa (CHAVE, ao lado da pesquisa). Fica só no browser desse aparelho e vai só para openrouter.ai.': 'disposable, with a limited budget, pasted on each team device (KEY, next to the search). It stays in that device\'s browser and goes only to openrouter.ai.',
         'ao vivo, agora': 'live, now', 'entre o que alcançam e o que está autorizado.': 'between what they reach and what is authorised.', 'Pronto': 'Ready',
         'PH:Qualquer empresa da Web Summit…': 'Any Web Summit company…', 'PH:a frase da equipa': 'the team phrase', 'AL:Nome de uma empresa': 'A company\'s name', 'AL:Disposição': 'Layout', 'AL:Minimizar': 'Minimise', 'AL:Ecrã inteiro': 'Full screen', 'AL:Política': 'Policy', 'AL:Fechar': 'Close',
-        'AL:A corrida dos agentes de pesquisa': 'The search agents\' run', 'AL:O mapa do alcance': 'The reach map', 'AL:O cenário: o mandato, o alcance e a falha': 'The scenario: the mandate, the reach and the gap', 'AL:Juntar ao meu dia': 'Add to my day'
+        'AL:A corrida dos agentes de pesquisa': 'The search agents\' run', 'AL:O mapa do alcance': 'The reach map', 'AL:O cenário: o mandato, o alcance e a falha': 'The scenario: the mandate, the reach and the gap', 'AL:Juntar ao meu dia': 'Add to my day',
+        'Ainda sem X-ray': 'Not X-rayed yet', 'Fazer o X-ray ao vivo com o Claude ↗': 'X-ray it live with Claude ↗', 'Fazer a ABP deles': 'Make their ABP',
+        'O Claude abre num separador novo e pesquisa a web. Depois cola a resposta em Fazer a ABP deles.': 'Claude opens in a new tab and searches the web. Then paste its answer into Make their ABP.',
+        'Quem tem a frase da equipa pode tocar em CHAVE e pesquisar aqui ao vivo.': 'With the team phrase, tap KEY to search here live.',
     }
     const RX = [
+        [/^Ainda sem X-ray · (.*)$/, 'Not X-rayed yet · $1'],
         [/^(\d+) fontes · ([\d.]+) s$/, '$1 sources · $2 s'], [/^(\d+) pistas$/, '$1 leads'], [/^(\d+) fontes citadas$/, '$1 sources cited'], [/^(\d+) fontes citadas, por ler$/, '$1 sources cited, not read yet'], [/^(\d+) fontes seladas$/, '$1 sources sealed'],
         [/^(\d+) agentes de IA · (\d+) alcances · (\d+) falhas · (\d+) fontes$/, '$1 AI agents · $2 reaches · $3 gaps · $4 sources'], [/^(\d+) agentes de IA · não revisto$/, '$1 AI agents · not reviewed'], [/^(\d+) cenários · escolhe um$/, '$1 scenarios · pick one'],
         [/^(\d+) pistas · (\d+) agentes de IA(.*)$/, '$1 leads · $2 AI agents$3'], [/^(\d+) pistas de (\d+) agentes · (\d+) fontes$/, '$1 leads from $2 agents · $3 sources'], [/^(\d+) falhas$/, '$1 gaps'], [/^(.+) · (\d+) pistas$/, '$1 · $2 leads'],
@@ -532,6 +580,10 @@
 .cc-xray .xr-status { display: flex; align-items: center; gap: 8px; font: 600 12px "Barlow Condensed", sans-serif; letter-spacing: 1.4px; text-transform: uppercase; color: #FBE2AE; } .cc-xray .xr-status i { width: 8px; height: 8px; border-radius: 50%; background: #FBE2AE; box-shadow: 0 0 8px #FBE2AE; animation: xrblink 1.2s infinite; } .cc-xray .xr-status.done, .cc-xray .xr-status.done i { color: #3DDC97; } .cc-xray .xr-status.bad { color: #FF8FA3; } .cc-xray .xr-status.bad i { background: #FF4D6D; box-shadow: 0 0 8px #FF4D6D; animation: none; } .cc-xray .xr-status.done i { background: #3DDC97; box-shadow: 0 0 8px #3DDC97; animation: none; } @keyframes xrblink { 50% { opacity: .3 } }
 .cc-xray .xr-ghost { all: unset; cursor: pointer; padding: 5px 13px; border-radius: 999px; font: 600 12px "Barlow Condensed", sans-serif; letter-spacing: 1.3px; text-transform: uppercase; color: #CFE3DF; border: 1px solid rgba(150,230,215,.3); white-space: nowrap; } .cc-xray .xr-ghost:hover { color: #fff; border-color: rgba(251,226,174,.5); }
 #xr-run { max-width: 1440px; margin: 12px auto 60px; padding: 0 16px; display: grid; gap: 14px; box-sizing: border-box; width: 100%; font-family: "Barlow Semi Condensed", "Arial Narrow", sans-serif; color: #EAF6F3; }
+.cc-xray .xr-nx { display: flex; justify-content: center; padding: 28px 16px 40px; } .cc-xray .xr-nx[hidden] { display: none; } .cc-xray .nx-card { width: min(640px, 100%); box-sizing: border-box; background: rgba(8,26,26,.92); border: 1px solid rgba(150,230,215,.3); border-radius: 18px; padding: 28px 22px 22px; text-align: center; box-shadow: 0 18px 60px rgba(0,0,0,.45); }
+.cc-xray .nx-card .ph { color: #8EADA8; font: 600 12px "Barlow Condensed", sans-serif; letter-spacing: 1.6px; text-transform: uppercase; margin: 0 0 6px; } .cc-xray .nx-card h2.nx-name { font: 700 44px/1.05 "Barlow Condensed", sans-serif; color: #fff; margin: 0 0 6px; overflow-wrap: anywhere; } .cc-xray .nx-not { color: #FBE2AE; font: 600 18px "Barlow Condensed", sans-serif; letter-spacing: 1.2px; text-transform: uppercase; margin: 0 0 22px; }
+.cc-xray .nx-go { margin: 0 0 12px; } .cc-xray .nx-btn { display: inline-block; box-sizing: border-box; min-width: min(420px, 100%); padding: 16px 26px; border-radius: 999px; font: 700 22px "Barlow Condensed", sans-serif; letter-spacing: 1px; text-decoration: none; color: #062320; background: linear-gradient(180deg, #5FE6D4, #2FBFAD); border: 1px solid #43D9C6; } .cc-xray .nx-btn:hover { filter: brightness(1.08); } .cc-xray .nx-btn.ghost { background: transparent; color: #CFE3DF; border-color: rgba(150,230,215,.45); font-size: 18px; padding: 12px 22px; } .cc-xray .nx-btn:focus-visible { outline: 2px solid #FBE2AE; outline-offset: 3px; }
+.cc-xray .nx-cap { color: #8EADA8; font-size: 14px; margin: 10px 0 0; }
 #xr-run .xr-stages { display: flex; gap: 14px; align-items: flex-start; }
 #xr-run .xr-box { flex: 1 1 0; min-width: 0; transition: flex .35s ease; } #xr-run .xr-col1 { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 14px; transition: flex .35s ease; } #xr-run .xr-col1 > .xr-box { flex: none; } #xr-run .xr-col1:has(#xb-run.min) { flex: 0 0 210px; } #xr-run .xr-col1:has(#xb-run.min) #xb-log { display: none; } #xr-run #xb-log .xr-log { max-height: 340px; } #xr-run #xb-reach { flex-grow: 1.15; } #xr-run .xr-box.min { flex: 0 0 210px; } #xr-run .xr-box.min > :not(h2) { display: none !important; } #xr-run .xr-box.min > h2 small { display: none; }
 #xr-run .xr-box.max { position: fixed; z-index: 80; left: 12px; right: 12px; top: 64px; bottom: 12px; overflow: auto; background: #061413; } #xr-run .xr-box.max > svg { max-height: calc(100vh - 170px); width: auto; max-width: 100%; margin: 0 auto; }
