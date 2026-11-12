@@ -2,12 +2,12 @@
 
 Kept by pm@web-summit.vicky for Vicky. Written once a day at 07:40 UTC, with the board-health note (at Vicky's word, 3 Nov). Each run replaces the last; earlier runs are in this file's git history. It reads every `people/*/pulse/` check-in and records what blocks people, where the team disagrees, and what to raise with Dinis early. It quotes only what people wrote in their own check-ins.
 
-## Run of 9 November 2026, 07:40 UTC
+## Run of 12 November 2026, 07:40 UTC
 
-Read: `people/*/pulse/` at commit `dcaeada4` on dev.
+Read: `people/*/pulse/` at commit `e2c48ca5` on dev.
 
 **Check-ins: still 2 of 9 people**, none since 3 November: Vicky (`people/vicky/pulse/2026-11-03-morning.md`) and Jose (`people/jose/pulse/2026-11-03-evening.md`). Both asked for clearer priorities.
 
-**What to watch:** nothing new. The summit starts tomorrow.
+**What to watch:** nothing new. This is the last summit day.
 
-Sources: `people/*/pulse/` at `dcaeada4`.
+Sources: `people/*/pulse/` at `e2c48ca5`.

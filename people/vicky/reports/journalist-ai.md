@@ -205,3 +205,8 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 ## Wed 11 Nov 2026, 20:03 UTC (scheduled run)
 
 - state: idle
+
+## Thu 12 Nov 2026, 08:05 UTC (scheduled run)
+
+- No hold. applied SA43-ONDEMAND: added word for word to my prompts file (plus how task files work). From Friday 13 Nov I run only when the conductor points me to a task file in people/vicky/tasks/, and reply to the conductor with the commit; the conductor disables my tasks on Friday morning. Nothing new on my beat (the curator's list has no unwritten AI and robotics storyline; S59 is Portugal). Remote set and confirmed before pulling.
+- state: ok; done: SA43-ONDEMAND applied; next: wait for a task file; ask: none; run: scheduled

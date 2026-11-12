@@ -511,7 +511,32 @@
    "time_utc": "2026-11-12T04:25Z",
    "section": 36,
    "summary": "Open data now lists no Lisbon warning (expired yellow sea removed); LPPT 04:00 24009KT Q1000, showers; no new CAP batch since 22:43:28; one Open-Meteo 429, re-read fine."
+  },
+  {
+   "time_utc": "2026-11-12T05:25Z",
+   "section": 37,
+   "summary": "New LPPT TAF 05:00 repeats Thursday's picture (TEMPO 25017G27KT 06-18, TEMPO rain, TCU not CB); showers (Carnide 3.4 mm, hour labelled 04:00); Q1001; no Lisbon warning; no new CAP batch since 22:43:28."
+  },
+  {
+   "time_utc": "2026-11-12T06:25Z",
+   "section": 38,
+   "summary": "Showers (Relógio 3.3 mm, hour labelled 05:00); LPPT 06:00 24008KT Q1001, no gust; no Lisbon warning; no new CAP batch since 22:43:28; TAF 05:00 unchanged."
+  },
+  {
+   "time_utc": "2026-11-12T07:26Z",
+   "section": 39,
+   "summary": "Showers; LPPT 07:00 25008KT -SHRA Q1002, no gust; no Lisbon warning; no new CAP batch since 22:43:28; Open-Meteo rate-limited (429) all three reads, other sources fine."
+  },
+  {
+   "time_utc": "2026-11-12T08:25Z",
+   "section": 40,
+   "summary": "LPPT 08:00 24007KT VCSH Q1003, no gust; no Lisbon warning; no new CAP batch since 22:43:28; Open-Meteo still rate-limited (last good read 06:23:32)."
+  },
+  {
+   "time_utc": "2026-11-12T09:25Z",
+   "section": 41,
+   "summary": "IPMA model run 07:56:55: Thu morning mean wind 16.6-22.7 km/h (under 1 km/h change); LPPT 09:00 23007KT Q1004, no gust; no Lisbon warning; no new CAP batch since 22:43:28; Open-Meteo still 429."
   }
  ],
- "next_read_utc": "2026-11-12T05:22Z"
+ "next_read_utc": "2026-11-12T10:22Z"
 }

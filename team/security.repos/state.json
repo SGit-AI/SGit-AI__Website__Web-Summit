@@ -1,12 +1,12 @@
 {
   "about": "Where security.repos@web-summit.dinis stopped, per repository and branch: the last commit reviewed (the branch head when the run read it). The next run reviews every commit reachable from any branch and not from these. From the second run, every branch is listed, not only those active since the baseline.",
   "agent": "security.repos@web-summit.dinis",
-  "last_run": "2026-11-12T03:25Z",
+  "last_run": "2026-11-12T09:20Z",
   "baseline_from": "2026-11-08T11:00Z",
   "repos": {
     "SGit-AI/SGit-AI__Website__Web-Summit": {
       "branches": {
-        "dev": "af4a941d:d4d14caf:2f16a9ed:df60a427:de22ae1e",
+        "dev": "929de95f:09a6724d:25a3f855:b422cfc1:af6c0bf3",
         "claude/awesome-dirac-rp94os": "1cc9740a:f6520690:6617362b:879004f6:564e0e8d",
         "claude/beautiful-clarke-mqhept": "a88e8c65:a2e854b4:1b5b2e2f:7506bab1:c53e2ddf",
         "claude/conductor-jose-setup-ogxaka": "ccfecefe:90fb74e8:38fd1b0b:0f89b40b:e179593d",
@@ -17,7 +17,7 @@
         "claude/hopeful-rubin-3zcktn": "b1fa5d0b:357aa159:da152b62:a1b9a004:13f232e2",
         "claude/modest-brahmagupta-37bfva": "60e4404e:43c38faa:28846c2e:c1eaf535:b0dcb11c",
         "claude/modest-lamport-v1ejmm": "166b6650:1b590251:32aae019:e6946550:73cab8f1",
-        "claude/nifty-bell-f1rkca": "d95dd008:a30644f0:77ff6656:fd877211:f3083c6f",
+        "claude/nifty-bell-f1rkca": "fd30503b:6c89be44:9bcf02d1:98ff2936:8426f81f",
         "claude/nifty-knuth-cnyek0": "359a829d:401c847b:468b04e0:8b63391a:77511427",
         "claude/optimistic-feynman-7pkot9": "dc306d7a:08898d1d:79bc0544:0601138f:ad218353",
         "claude/policy-lanes-angelo-entries-h6m2x0": "3bfc2f9a:f8305bb8:c22bb736:c1e15a33:2200fc2a",
@@ -78,7 +78,7 @@
     },
     "PrompTugal/PrompTugal__News__Website": {
       "branches": {
-        "dev": "74178abd:4093d6d6:8e40bc4b:42474040:9dd629eb",
+        "dev": "d3c70e40:768ddf0f:f04788f9:dc07945c:da6b2386",
         "claude/eager-euler-x3k3vm": "6bec1c34:72cbdc31:3d6b5c7c:a2142cee:7f9434b7",
         "claude/serene-keller-r1pzfc": "3affa4b4:a3478ef4:0565a131:54ffe10e:0c55e8bc",
         "claude/sweet-heisenberg-m1vm71": "c9217130:f27dae9a:55e5a708:0e644f28:6b31f73e",
@@ -86,9 +86,9 @@
         "preview/satellite-loop": "0096ef8e:0ce6e422:2e5a1788:860bea06:305582d0",
         "work/conductor-silvio": "e9ffd69b:1fc3f1cf:3aecbb1e:e3474c57:493ea465",
         "work/designer.experiments": "1177421a:6cc6e53e:ff0b578a:5b78ad2e:af1427ca",
-        "work/dev.data": "52fe5143:139eed35:ee3c7274:005e0daf:866f2f10",
-        "work/dev.graphs": "071d4f73:e569f6d7:03efde44:39cbae10:7d0c63a7",
-        "work/dev.pages": "8b357d8e:13ed62f3:ead5af93:1baa9db7:de386c66",
+        "work/dev.data": "e18887e5:eb50ba1c:df995395:5478987e:0325e5ef",
+        "work/dev.graphs": "4fba60d6:f40218ee:818d132c:3d91c8c8:e5d55e34",
+        "work/dev.pages": "ae3f6a3f:86dcfceb:b7c1899c:9de12d50:46fb66d1",
         "work/dev.portugal": "a1b6759c:2e35335a:aeef19d1:80e30d5f:3123cae5",
         "work/dev.search": "938ab510:70025f12:21ecfe41:5dc1b817:0b3a692e",
         "work/dev.verify": "56ed3c82:8adf8857:e4b2a852:d92f8a20:975fb0aa",
@@ -186,7 +186,7 @@
     },
     "PrompTugal/PrompTugal__News__Storm-Charles": {
       "branches": {
-        "dev": "9bca9feb:f6cb4ad1:0bafbe6b:302bd02f:82c29578",
+        "dev": "4f7d9740:a0caec9c:f2b7c283:cd958f15:80f796e7",
         "main": "3a61421c:9ddb9966:6e7cbec7:93f27193:7c267916"
       },
       "note": "Added at run 18 (11 Nov), at conductor@web-summit.dinis's request (10 Nov 21:17, material); the storm incident's site, storm-charles.promptugal.news."

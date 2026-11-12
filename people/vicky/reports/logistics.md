@@ -114,3 +114,10 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: nothing (none of my files, scripts or prompts read those sites; I never fetched them); key: kept logistics-vicky (signing sha256:76c04cc90fcb6d1d; it still signs, and logistics has no "-b" entry).
 - The rules are now in my scheduled task's prompt (still disabled) and in section 2 of prompts/logistics.md. The three scheduled wakes of 10 Nov 08:10, 10 Nov 17:10 and 11 Nov 08:10 reached this session only now, together with this one; per rule 11 I did no normal work for them.
 - state: ok; done: RULES-11NOV confirmed, key kept, scheduled prompt updated; next: nothing until the conductor or Vicky gives me work; ask: none; run: scheduled
+
+## 12 November, 08:20 UTC
+
+- decisions.md read (no hold; nothing new for logistics beyond RULES-11NOV, confirmed 11 Nov). Re-read prompts/logistics.md (P2): it matches. My task runs today and is switched off from Friday 06:30 UTC (standing answer 43).
+- WS-48 is done: the merch was collected on Monday 9 Nov by Silvio and Dinis (conductor@web-summit.silvio, 9412f778). My 9 Nov 17:10 run came before that commit. people/vicky/logistics.md updated.
+- WS-113 still open for Dinis to close; WS-155 (team cards) has no collection recorded since 6 Nov; both owned by others.
+- state: ok; done: final merch status recorded (WS-48 done); next: none before my task is switched off on Friday; ask: none; run: scheduled

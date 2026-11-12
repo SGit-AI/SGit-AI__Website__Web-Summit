@@ -458,6 +458,8 @@ details.xp-tech > summary { font-size: 1.05em; }
 .xs-ours { position: absolute; bottom: calc(100% + 12px); left: .2em; margin: 0 0 .3em; font: 600 1em var(--sans); color: var(--xr-ink2); }
 .xs-src { margin: .3em 0 0; font-size: .85em; }
 .xs-go { margin: .8em 0 0; }
+.xs-not.xr-tag { font-size: clamp(1.3rem, 2.2vw, 2rem); margin: .2em 0 .4em; }
+.xs-make.xr-btn { font-size: clamp(1.05rem, 1.6vw, 1.4rem); padding: .6em 1.4em; border-radius: 16px; }
 .xs-abp.xr-btn { font-size: clamp(1.2rem, 2vw, 1.8rem); padding: .7em 1.6em; border-radius: 18px; box-shadow: 0 0 30px #2dd4bf55; }
 .xr-stage.booth .xs-card > p:not(.xs-ours) { font-size: clamp(1.8rem, 3vw, 3.4rem); }
 @media (max-width: 760px) {

@@ -1,7 +1,7 @@
 {
  "about": "The decision graph of the storm (WS-214), kept by incident.researcher@web-summit.dinis. Nodes are decision-makers; edges are decisions, each with who made it (by), whom it touches (to) and what it followed (follows: ids of earlier decisions). Every node and edge carries a label (fact, evidence or hypothesis), its source URL and the UTC time it was read, and who read it. Read the README first.",
- "updated": "2026-11-12T00:35Z",
- "updated_by": "incident.researcher@web-summit.dinis",
+ "updated": "2026-11-12T09:48Z",
+ "updated_by": "incident.conductor@web-summit.dinis",
  "labels": {
   "fact": "read by us or a named desk on the primary source (the decision-maker's own channel)",
   "evidence": "reported by a secondary source (press, a person's account of a statement) or a primary page we could not read; true until a primary source says otherwise",
@@ -3027,6 +3027,32 @@
    },
    "area": "lisbon",
    "note": "Read at source 00:34Z Thu. The shuttle line may simply not have been updated for Day 3 (Web Summit aims to hold Thursday as planned); watch it in the morning."
+  },
+  {
+   "id": "websummit-day3-running",
+   "by": "websummit",
+   "to": [],
+   "decision": "Day 3 (Thursday 12 Nov) is running: \"Welcome to the last day of #WebSummit 2026! … Yesterday may have been cancelled, but we are making up for it in a huge way. Today is officially Web Summit's biggest-ever day of content and meetups!\"",
+   "at": "2026-11-12T09:23Z",
+   "status": "happened",
+   "follows": [
+    "websummit-thursday",
+    "websummit-wednesday"
+   ],
+   "label": "fact",
+   "source": "https://bsky.app/profile/websummit.bsky.social/post/3n245iu57wk2i",
+   "read": "2026-11-12T09:46Z",
+   "read_by": "incident.social@web-summit.dinis",
+   "effect_from_utc": "2026-11-12T00:00Z",
+   "effect_to_utc": null,
+   "effect_note": "the organisers first posted this at 09:00:19 UTC (their first post since 10 Nov 17:36), deleted that post and posted the same text again at 09:23:34 UTC (read 09:46 by incident.social@, checked by incident.conductor@ through Bluesky's public API at 09:46:54); the 09:00 text is kept in research/social/posts",
+   "state": "running",
+   "state_note": "the event's last day goes ahead",
+   "area": "lisbon",
+   "scope": {
+    "extent": "all",
+    "parts": "Day 3"
+   }
   }
  ],
  "lessons": [

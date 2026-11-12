@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-11T22:17Z",
+ "run": "2026-11-12T07:16Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,32 +12,32 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "209b653",
-  "to": "e39c393",
+  "from": "e39c393",
+  "to": "4fe8f73",
   "branch": "dev"
  },
  "counts": {
-  "commits": 200,
-  "ci_releases": 60,
+  "commits": 83,
+  "ci_releases": 36,
   "watcher_own": 1,
-  "agents": 139,
+  "agents": 46,
   "no_agent_name": 0
  },
  "security": {
   "old_agent_last_review": "f4a9fbe, wake 11:51 on 7 November",
   "new_agent": "security.repos@web-summit.dinis, first run on 9 November (started about 10:55, committed 10:58, cb4e0b7): about 2,600 commits in six repositories, this one from b4d20ce (10:58 on 8 November) to f688309; no critical, high or medium finding; five low notes (team/security.repos/reports/2026-11-09T1110Z.md)",
   "gap_not_reviewed": "11:51 on 7 November to 10:58 on 8 November on dev, which includes 4219805 (the gate runs Angelo's lane check) and 084ebe7 (enforced), and f20d264 is older still",
-  "new_agent_later_runs": "runs 24 (1825Z) and 25 (2130Z): nothing found. Run 24 notes this site's contact gate (admin/tools/comms_check.mjs, 04085ea, dashboard@web-summit.silvio) now accepts one more agent-name form, <role>@lisbon-tech-fringe.<person>; the comms_check phone low (run 13) is still open. None covers the gap below"
+  "new_agent_later_runs": "runs 26 (0035Z: one new medium in Storm-Charles, its hourly flights publisher resets to dev and runs it with a token, the pattern fixed on this site in run 18; run 22's medium drops to low; this site: a layout-only build change and new public key halves), 27 (0325Z: nothing found; this site: a third entry in people/dinis/vaults.json, 17b9e9d, the stand-reel vault with a public read key by design, to hold approved videos only) and 28 (0625Z: nothing found; this site: no workflow, gate, key or script change). The comms_check phone low (run 13) still open on this site. None covers the gap below"
  },
  "by_person": {
-  "vicky": 76,
-  "dinis": 21,
-  "angelo": 17,
-  "silvio": 12,
-  "indi": 10,
-  "jose": 3
+  "dinis": 23,
+  "silvio": 20,
+  "jose": 1,
+  "angelo": 1,
+  "vicky": 1,
+  "indi": 0
  },
- "actions": "open A-06 (twenty-seventh run, dev only), A-21 (seventeenth), A-14 (twenty-fourth), A-23 (sixteenth); closed A-26 (Vicky's conductor back since 18:43)",
+ "actions": "open A-06 (twenty-eighth run, dev only), A-21 (eighteenth), A-14 (twenty-fifth), A-23 (seventeenth)",
  "task_report": {
   "task": "people/jose/tasks/2026-11-07-watcher-a06-pointers.md",
   "status": "done: the conductor marked people/jose/tasks/2026-11-07-watcher-a06-pointers.md done; A-06 itself stays open for dev",
@@ -48,11 +48,11 @@
    "level": "medium",
    "what": "still open: about 23 hours of dev not reviewed by any security agent",
    "where": "security.repos@web-summit.dinis (cb4e0b7, report team/security.repos/reports/2026-11-09T1110Z.md): this repository from 10:58 on 8 November; no critical, high or medium finding",
-   "context": "dev from 11:51 on 7 November to 10:58 on 8 November, including the gate's lane check (4219805) and its enforcement (084ebe7). security.repos covers only commits since its last run (runs 24 and 25 tonight). For conductor@web-summit.dinis to point one run at that gap"
+   "context": "dev from 11:51 on 7 November to 10:58 on 8 November, including the gate's lane check (4219805) and its enforcement (084ebe7). security.repos covers only commits since its last run (runs 26 to 28 overnight). For conductor@web-summit.dinis to point one run at that gap"
   },
   {
    "level": "high",
-   "what": "still open, twenty-eighth run: contact-detail rule hits in a public page",
+   "what": "still open, twenty-ninth run: contact-detail rule hits in a public page",
    "where": "f20d264 content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
    "context": "older than the new security agent's window, so not covered by its review"
@@ -65,16 +65,16 @@
    "context": "unchanged"
   },
   {
-   "level": "low",
-   "what": "third report: dashboard@web-summit.jose's trailers are still not read by git",
-   "where": "189f9ad (17:33): Agent and Reviewed-by sit above the Co-Authored-By block",
-   "rule": "the commit convention (trailers in the last block)",
-   "context": "the lines are present in the text; conductor and vault commits in this range parse correctly. For conductor@web-summit.jose: the kit's shared section, or the dashboard's own section, should say every trailer goes in the last block"
+   "level": "note",
+   "what": "Jose's one commit in this range parses",
+   "where": "7a67b18 (conductor@web-summit.jose, 23:49)",
+   "rule": "the commit convention",
+   "context": "the dashboard's trailer low (third report at 22:17) is untested: the dashboard did not commit in this range"
   },
   {
    "level": "note",
-   "what": "221 email-rule lines in 69 commits by the watcher's own scan (lines added by every commit in the range that match an address pattern, leaving out web-summit agent names, noreply headers and example domains; the vault audit's pattern counts more)",
-   "where": "agent names, including the new lisbon-tech-fringe form, and CI's versions rows",
+   "what": "8 email-rule lines in 6 commits by the watcher's own scan (lines added by every commit in the range that match an address pattern, leaving out web-summit agent names, noreply headers and example domains)",
+   "where": "agent names, in 6 commits, two of them CI's version rows",
    "rule": "an email address",
    "context": "none is a person's contact detail by shape"
   }
@@ -103,11 +103,9 @@
   }
  ],
  "reviewer_trailer": {
-  "jose_commits_checked": 3,
+  "jose_commits_checked": 1,
   "missing": [],
-  "misplaced": [
-   "189f9ad (Agent, Reviewed-by)"
-  ]
+  "misplaced": []
  },
  "branches": {
   "main": "no new commit (last 81353d4)",
@@ -117,16 +115,8 @@
  },
  "commits_jose": [
   {
-   "sha": "0810b4b",
+   "sha": "7a67b18",
    "agent": "conductor@web-summit.jose"
-  },
-  {
-   "sha": "189f9ad",
-   "agent": "dashboard@web-summit.jose"
-  },
-  {
-   "sha": "f0f67f4",
-   "agent": "vault@web-summit.jose"
   }
  ],
  "could_not_check": [
@@ -134,5 +124,5 @@
   "the agents' run logs in the public vault aym98gsm (no sgit client yet)",
   "work done in other repositories (the newsroom, the apps, Storm-Charles, and Jose's Fringe agents in PrompTugal__News__Fringe)"
  ],
- "context": "Evening of 11 November: the incident agents record no change to Day 3 (Thursday) at 21:35 (1d25a08), Lisbon's orange sea warning ended at 21:00 (44f711c), and a close-out draft calls the storm 'much less serious than forecast' (698b358); not checked at source. With GitHub degraded, Vicky's conductor set a hold at her word at 21:05 (standing answer 46, 7b54d74), was allowed to lift it after an hour of normal deploys (ae5303f), and lifted it at 22:10 (d3861b1). Indi's conductor changed the build (49fff4b, the X-ray stand view, layout only). Jose's Fringe conductor fires hourly in another repository; the Fringe researcher's one-off wakes ended"
+ "context": "Thursday 12 November, the event day: the incident meteorologist reads 'the same Thursday picture' at 05:22 (e38a367); Silvio's team worked on the stand overnight (the RiskMandate tablet, the GAMMA-Ray view, a video approved for the stand: a4c6f87, 0967797, ca0a229). Not checked at source. Indi's agents have not committed since 20:36 (about 11 hours, overnight); on 10 November the same overnight quiet ended three minutes after the watcher opened A-25, so it is noted, not raised"
 }

@@ -1,5 +1,208 @@
 [
   {
+    "version": "v0.2.2018",
+    "date": "2026-11-12",
+    "what": "X-Ray uses the same OpenRouter key as Ask Claude (one key per device)",
+    "by": "dashboard@web-summit.silvio",
+    "from": "076d55731"
+  },
+  {
+    "version": "v0.2.2017",
+    "date": "2026-11-12",
+    "what": "checker@PrompTugal.vicky: state: idle",
+    "by": "checker@PrompTugal.vicky",
+    "from": "08da188df"
+  },
+  {
+    "version": "v0.2.2016",
+    "date": "2026-11-12",
+    "what": "journalist@PrompTugal.vicky: report, 09:53 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "9cb7beeb6"
+  },
+  {
+    "version": "v0.2.2015",
+    "date": "2026-11-12",
+    "what": "decisions: Web Summit's Day 3 post moved (deleted 09:00, reposted 09:23)",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "f324d90cd"
+  },
+  {
+    "version": "v0.2.2014",
+    "date": "2026-11-12",
+    "what": "a Galaxy | Simple switch on the stand's Universe",
+    "by": "xray@web-summit.dinis",
+    "from": "b3a1e4a23"
+  },
+  {
+    "version": "v0.2.2013",
+    "date": "2026-11-12",
+    "what": "the stand's Universe is dark only for now; the calm view shows its dark variant",
+    "by": "xray@web-summit.dinis",
+    "from": "61f66cb8d"
+  },
+  {
+    "version": "v0.2.2012",
+    "date": "2026-11-12",
+    "what": "the stand's Universe shows Silvio's galaxy again by default; Indi's calm view with ?calm=1",
+    "by": "xray@web-summit.dinis",
+    "from": "28e975615"
+  },
+  {
+    "version": "v0.2.2011",
+    "date": "2026-11-12",
+    "what": "decisions: Web Summit says Day 3 is running (Bluesky 09:00 UTC)",
+    "by": "incident.conductor@web-summit.dinis",
+    "from": "76fe6d3de"
+  },
+  {
+    "version": "v0.2.2010",
+    "date": "2026-11-12",
+    "what": "run 29, 158 commits: nothing found",
+    "by": "security.repos@web-summit.dinis",
+    "from": "ca6f75824"
+  },
+  {
+    "version": "v0.2.2009",
+    "date": "2026-11-12",
+    "what": "the universe on an iPad: drag in any direction, pinch to zoom, inside its own card",
+    "by": "conductor@web-summit.indi",
+    "from": "adf7f2827"
+  },
+  {
+    "version": "v0.2.2008",
+    "date": "2026-11-12",
+    "what": "the universe view, clear at a glance: no background stars, big labels, a short key",
+    "by": "conductor@web-summit.indi",
+    "from": "0b7200dc5"
+  },
+  {
+    "version": "v0.2.2007",
+    "date": "2026-11-12",
+    "what": "brief 9, 12 Nov (last summit day)",
+    "by": "conductor@web-summit.vicky",
+    "from": "417c0bde2"
+  },
+  {
+    "version": "v0.2.2006",
+    "date": "2026-11-12",
+    "what": "reviewer@PrompTugal.vicky: report for the 08:20 run: S59 published under R-PUB-1",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "c9da207f5"
+  },
+  {
+    "version": "v0.2.2005",
+    "date": "2026-11-12",
+    "what": "weather 08:22 wake, quiet, no Lisbon warning (analysis 40)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "79421b11c"
+  },
+  {
+    "version": "v0.2.2004",
+    "date": "2026-11-12",
+    "what": "08:10 run: WS-48 done, the merch collected on 9 Nov; final status recorded",
+    "by": "logistics@web-summit.vicky",
+    "from": "81600d8c5"
+  },
+  {
+    "version": "v0.2.2003",
+    "date": "2026-11-12",
+    "what": "journalist-ai@PrompTugal.vicky: scheduled run, 08:05 UTC: SA43-ONDEMAND applied; nothing new on my beat",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "3fd1e02d3"
+  },
+  {
+    "version": "v0.2.2002",
+    "date": "2026-11-12",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 07:59, idle; SA43-ONDEMAND applied",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "d058c8506"
+  },
+  {
+    "version": "v0.2.2001",
+    "date": "2026-11-12",
+    "what": "journalist@PrompTugal.vicky: report, 07:53 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "4d6d140ee"
+  },
+  {
+    "version": "v0.2.2000",
+    "date": "2026-11-12",
+    "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 07:50, idle",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "0776e35db"
+  },
+  {
+    "version": "v0.2.1999",
+    "date": "2026-11-12",
+    "what": "07:40 daily run: board health, alignment, report",
+    "by": "pm@web-summit.vicky",
+    "from": "830f39ff8"
+  },
+  {
+    "version": "v0.2.1998",
+    "date": "2026-11-12",
+    "what": "curator@PrompTugal.vicky: 07:35 run, S59 commissioned",
+    "by": "curator@PrompTugal.vicky",
+    "from": "e2c48ca5a"
+  },
+  {
+    "version": "v0.2.1997",
+    "date": "2026-11-12",
+    "what": "07:30 wake: post version A today, at the top of Indi's dashboard (Day 3 goes ahead)",
+    "by": "dashboard@web-summit.indi",
+    "from": "f8e9a97fb"
+  },
+  {
+    "version": "v0.2.1996",
+    "date": "2026-11-12",
+    "what": "07:15 run, 2 captures in the research vault 41j3e9s9",
+    "by": "researcher@web-summit.vicky",
+    "from": "6369d4860"
+  },
+  {
+    "version": "v0.2.1995",
+    "date": "2026-11-12",
+    "what": "07:15 run, e39c393..4fe8f73; event day; four actions open",
+    "by": "watcher@web-summit.jose",
+    "from": "e16830b93"
+  },
+  {
+    "version": "v0.2.1994",
+    "date": "2026-11-12",
+    "what": "programme@PrompTugal.vicky: 07:00 run: Thursday's side events (1 checked, 67 pointers); agenda frozen",
+    "by": "programme@PrompTugal.vicky",
+    "from": "3202ff12f"
+  },
+  {
+    "version": "v0.2.1993",
+    "date": "2026-11-12",
+    "what": "conductor.b@PrompTugal.angelo: runs.md: the overnight websites overview sub-agent",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "f565f93ef"
+  },
+  {
+    "version": "v0.2.1992",
+    "date": "2026-11-12",
+    "what": "weather 06:22 wake, showers, no Lisbon warning (analysis 38)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "679afe13e"
+  },
+  {
+    "version": "v0.2.1991",
+    "date": "2026-11-12",
+    "what": "run 28, 107 commits: nothing found",
+    "by": "security.repos@web-summit.dinis",
+    "from": "62cd9703b"
+  },
+  {
+    "version": "v0.2.1990",
+    "date": "2026-11-12",
+    "what": "weather 05:22 wake, new LPPT TAF, same Thursday picture (analysis 37)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "e38a367ba"
+  },
+  {
     "version": "v0.2.1989",
     "date": "2026-11-12",
     "what": "GAMMA-RAY's bottom as tabs: Respostas, Níveis, Dados, Gráfico, Perguntas",

@@ -187,3 +187,12 @@ details.abpm-sec.hot > summary span { color: var(--ink); }
     body.abpm-print details.abpm-sec .abpm-secb { padding: 0; border: 0; }
     body.abpm-print .abpm-line1 { background: none; color: #000; padding: 0; }
 }
+
+/* Paste Claude's X-ray (WS-191, conductor@web-summit.indi, 12 November 2026): optional, collapsed, above the questions */
+.abpm-paste { margin: 0 0 1rem; border: 1px solid var(--line, #8884); border-radius: 12px; padding: .5rem .9rem; }
+.abpm-paste > summary { cursor: pointer; font-weight: 700; min-height: 2rem; display: flex; align-items: center; gap: .4em; }
+.abpm-paste > summary span { font-weight: 400; color: var(--ink-2); }
+.abpm-pastet { width: 100%; box-sizing: border-box; font: inherit; font-size: .95rem; padding: .6rem; border-radius: 8px; border: 1px solid var(--line, #8886); background: transparent; color: inherit; }
+.abpm-paste-st { margin: .3rem 0 0; font-size: .95rem; color: var(--ink-2); }
+.abpm-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media print { .abpm-paste { display: none; } }

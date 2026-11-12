@@ -6,21 +6,21 @@
    "agent": "pm",
    "decided": "sonnet",
    "session": "sonnet",
-   "verified": null,
+   "verified": "sonnet (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
    "agent": "logistics",
    "decided": "opus",
    "session": "opus",
-   "verified": null,
+   "verified": "opus (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
    "agent": "dashboard",
    "decided": "sonnet",
    "session": "sonnet",
-   "verified": null,
+   "verified": "sonnet (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
@@ -34,84 +34,84 @@
    "agent": "curator",
    "decided": "sonnet",
    "session": "sonnet",
-   "verified": null,
+   "verified": "sonnet (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
    "agent": "programme",
    "decided": "opus",
    "session": "opus",
-   "verified": null,
+   "verified": "opus (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
    "agent": "journalist",
    "decided": "opus (Sonnet from Fri 13 Nov)",
    "session": "opus",
-   "verified": null,
+   "verified": "opus (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
    "agent": "journalist-portugal",
    "decided": "sonnet",
    "session": "sonnet",
-   "verified": null,
+   "verified": "sonnet (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
    "agent": "journalist-europe",
    "decided": "sonnet",
    "session": "sonnet",
-   "verified": null,
+   "verified": "sonnet (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
    "agent": "journalist-ai",
    "decided": "sonnet",
    "session": "sonnet",
-   "verified": null,
+   "verified": "sonnet (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
    "agent": "journalist-connections",
    "decided": "opus",
-   "session": "sonnet",
-   "verified": null,
-   "mismatch": true
+   "session": "opus",
+   "verified": "opus (12 Nov 08:50 UTC read)",
+   "mismatch": false
   },
   {
    "agent": "reviewer",
    "decided": "opus",
    "session": "opus",
-   "verified": null,
+   "verified": "opus (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
    "agent": "checker",
    "decided": "opus",
-   "session": "sonnet",
-   "verified": null,
+   "session": "opus",
+   "verified": "not yet: session set to opus, its last run (before the switch) served sonnet; check after its next run",
    "mismatch": true
   },
   {
    "agent": "scout",
    "decided": "sonnet",
    "session": "sonnet",
-   "verified": null,
+   "verified": "sonnet (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
    "agent": "dev",
    "decided": "opus",
    "session": "opus",
-   "verified": null,
+   "verified": "opus (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
    "agent": "synthetic",
    "decided": "sonnet",
    "session": "sonnet",
-   "verified": null,
+   "verified": "sonnet (12 Nov 08:50 UTC read)",
    "mismatch": false
   },
   {
@@ -146,8 +146,9 @@
    "agent": "conductor",
    "decided": "opus",
    "session": "opus",
-   "verified": null,
+   "verified": "opus (12 Nov 08:50 UTC read)",
    "mismatch": false
   }
- ]
+ ],
+ "verified_read": "2026-11-12T08:50Z (last model that served each session, get_session only)"
 }

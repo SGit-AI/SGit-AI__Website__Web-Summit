@@ -78,3 +78,11 @@ Vicky's programme desk for the Web Summit newsroom (brief 4; brief 5, step 1; br
 - applied SA33-PROGRAMME: my task's prompt has the Thursday 07:00 side events step (lisbontechfringe.com as a pointer, each item at its organiser's own page, into desks/programme/side-events-2026-11-12.md) in place of the agenda step, and keeps the shortlist step, reworded to rule 6 sources only; agenda.json untouched (people/vicky/decisions.md, standing answer 33).
 - This morning's 05:00 run was delivered to this session only at 19:05 UTC and was not run: no normal work before this confirmation, and the agenda is frozen (standing answer 31, rule 7). Shortlist vault: its key is sealed to my first key (programme-vicky), which this session still holds, so no reseal is needed; nothing in it changed today.
 - state: ok; done: confirmed RULES-11NOV, new key, applied SA33-PROGRAMME; next: wait for the conductor or Vicky (task enabled only by the conductor); ask: none; run: scheduled
+
+## Thu 12 Nov 2026, 07:00 UTC run (side events only, standing answer 33)
+
+- Thursday's side events are in desks/programme/side-events-2026-11-12.md (PrompTugal/PrompTugal__News__Website c7d2eb20, promptugal.news v0.1.1362), for the conductor to relay to the fringe conductor: lisbontechfringe.com's list read at 07:02 UTC as a pointer; 68 events on Thursday.
+- 1 checked at its organiser's own page: Elevon CZ/SK Community Night, 17:00 to 19:00 on a catamaran on the Tagus, moved from Wednesday (elevon.io/websummit/night, read 07:04 UTC). The other 67 have organiser pages on Luma (66) or Meetup (1), which no agent reads by machine, so they are listed as unchecked pointers that need a person's browser check (standing answer 31, rule 2).
+- No hold; decisions.md read (nothing new for this desk; paused from Friday 06:30, standing answer 43); my prompts file and memory agree. Interview shortlist: 10 names and 4 reserves, held only in the confidential shortlist vault; unchanged (no rule 6 proof of any change).
+- agenda changes: none (agenda.json frozen, standing answer 31, rule 7)
+- state: ok; done: Thursday's side events written, 1 checked, 67 pointers; next: paused from Friday 06:30 UTC (standing answer 43); ask: a person's browser check of the 67 Luma and Meetup pointers if the fringe conductor wants them stated as fact; run: scheduled
