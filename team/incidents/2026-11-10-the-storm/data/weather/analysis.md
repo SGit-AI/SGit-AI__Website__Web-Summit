@@ -518,3 +518,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (read 02:28:06–02:28:20 UTC): LPPT 01:30 24009KT, no rain, Q1000; 02:00 23009KT, no gust, Q1000. Lisbon stations' rain in the hour labelled 01:00: up to 2.2 mm (Relógio), 1.9 mm (Carnide), 0.4 mm or less elsewhere. Lisbon: yellow sea to 03:00 only. No new CAP batch for any district since 22:43:28 (reads every 5 min to 02:25:56). No new communiqué; LPPT TAF 23:00 unchanged.
 
 **Analysis (high):** a light shower around 00:30–01:00, now passed; no hazard. Once the yellow sea warning ends at 03:00 Lisbon will have no warning, unless IPMA issues a new one. Thursday as in section 31.
+
+## 35. 03:26 UTC 12 Nov: yellow sea warning ended at 03:00, quiet
+
+**Facts** (read 03:23:24–03:23:40 UTC): LPPT 02:30 23010KT, Q1000; 03:00 24009KT, light rain shower, no gust, Q1000. Lisbon stations' rain in the hour labelled 02:00: 0.5 mm or less. IPMA's open data still lists Lisbon's yellow sea warning with end 03:00 (read 23 minutes after that end; an expired entry not yet removed). No new CAP batch for any district since 22:43:28 (reads every 5 min to 03:19:20). No new communiqué; LPPT TAF 23:00 unchanged.
+
+**Analysis (high):** Lisbon has had no warning in force since 03:00. Showers, no hazard. Thursday as in section 31.

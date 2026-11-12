@@ -501,7 +501,12 @@
    "time_utc": "2026-11-12T02:30Z",
    "section": 34,
    "summary": "Shower around 00:30-01:00 passed (Relógio 2.2 mm in the hour labelled 01:00); LPPT 02:00 23009KT Q1000; yellow sea to 03:00; no new CAP batch since 22:43:28."
+  },
+  {
+   "time_utc": "2026-11-12T03:26Z",
+   "section": 35,
+   "summary": "Lisbon's yellow sea warning ended at 03:00 (open data still lists the expired entry); no warning in force; LPPT 03:00 24009KT -SHRA Q1000; no new CAP batch since 22:43:28."
   }
  ],
- "next_read_utc": "2026-11-12T03:22Z"
+ "next_read_utc": "2026-11-12T04:22Z"
 }
