@@ -506,7 +506,12 @@
    "time_utc": "2026-11-12T03:26Z",
    "section": 35,
    "summary": "Lisbon's yellow sea warning ended at 03:00 (open data still lists the expired entry); no warning in force; LPPT 03:00 24009KT -SHRA Q1000; no new CAP batch since 22:43:28."
+  },
+  {
+   "time_utc": "2026-11-12T04:25Z",
+   "section": 36,
+   "summary": "Open data now lists no Lisbon warning (expired yellow sea removed); LPPT 04:00 24009KT Q1000, showers; no new CAP batch since 22:43:28; one Open-Meteo 429, re-read fine."
   }
  ],
- "next_read_utc": "2026-11-12T04:22Z"
+ "next_read_utc": "2026-11-12T05:22Z"
 }
