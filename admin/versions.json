@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2050",
+    "date": "2026-11-12",
+    "what": "17:30 wake: the summit is over; Friday's post (756bb9c1); today's A/B line removed",
+    "by": "dashboard@web-summit.indi",
+    "from": "cbc48c48d"
+  },
+  {
     "version": "v0.2.2049",
     "date": "2026-11-12",
     "what": "stand lookups for 12 November (guialocal, SITS, Drimt)",
