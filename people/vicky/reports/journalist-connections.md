@@ -199,3 +199,7 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: 145 saved files in this session's scratchpads (cached copies of pages fetched from websummit.com, and the URL lists sess.txt, urls.txt and ap.txt that drove those fetches for the company batches and S28 to S30); my scripts (txt.py, shot.js, bl.py, fix.py) hold none; neither scheduled task's prompt contained such a read, and both now carry the rules at the top and stay disabled; key: journalist-connections-vicky-promptugal-c (signing sha256:913e64060343b6a4), added in the newsroom's board/keys.json by my own commit, -b marked superseded at 2026-11-11T19:16Z.
 - Not run: ten scheduled runs (10 Nov 05:45 to 11 Nov 06:50) delivered only now, after worker restarts, 12 hours to a day and a half late; skipped as stale. No normal work in this wake.
 - state: ok; done: RULES-11NOV confirmed, new key published, task prompts updated; next: wait for work from the conductor or Vicky; ask: none; run: scheduled
+
+## Thu 12 Nov 2026, 07:55 UTC (scheduled run)
+
+- state: idle
