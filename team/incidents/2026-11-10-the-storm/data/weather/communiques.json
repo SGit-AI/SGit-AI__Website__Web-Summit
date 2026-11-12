@@ -1,8 +1,8 @@
 {
  "about": "IPMA's communiqués (special weather information) from its RSS feed, kept across reads; earthquake notices left out.",
  "source": "https://www.ipma.pt/resources.www/rss/comunicados.xml",
- "feed_built_local": "2026-11-12 11:08:32",
- "read_utc": "2026-11-12T11:23:45Z",
+ "feed_built_local": "2026-11-12 12:08:32",
+ "read_utc": "2026-11-12T12:23:08Z",
  "items": [
   {
    "title": "Atualização da situação meteorológica - Depressão CHARLES - Continente - Comunicado nº3",
@@ -52,5 +52,5 @@
    "note": "No longer in the RSS feed (replaced by no. 2); read by weather@PrompTugal.vicky at the time; quoted from its record."
   }
  ],
- "next_read_utc": "2026-11-12T12:22Z"
+ "next_read_utc": "2026-11-12T13:22Z"
 }

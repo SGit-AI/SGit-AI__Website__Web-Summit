@@ -551,7 +551,12 @@
    "time_utc": "2026-11-12T11:26Z",
    "section": 44,
    "summary": "New LPPT TAF 11:00: 25013KT, TEMPO SHRA with CB, PROB30 TEMPO 12-18 25015G25KT (gusts ~46 km/h, 30%), weaker than the 05:00 TAF; LPPT 11:00 25011KT Q1005, no gust; no Lisbon warning."
+  },
+  {
+   "time_utc": "2026-11-12T12:25Z",
+   "section": 45,
+   "summary": "Dry, breezy: LPPT 12:00 25013KT Q1005, no gust; no Lisbon warning; no new CAP batch since 10:24:25; Open-Meteo at the team's daily limit until 00:00 (last good read 11:23:45)."
   }
  ],
- "next_read_utc": "2026-11-12T12:22Z"
+ "next_read_utc": "2026-11-12T13:22Z"
 }

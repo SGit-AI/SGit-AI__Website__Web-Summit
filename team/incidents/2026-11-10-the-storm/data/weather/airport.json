@@ -1,7 +1,7 @@
 {
  "about": "IPMA's aeronautical forecast (TAF) and observations (METAR) for Lisbon airport (LPPT), 8 km north of the centre, read through the US NOAA Aviation Weather Center's public API. Knots, with km/h (1 kt = 1.852 km/h). A point forecast for pilots at the airport; not a public warning.",
  "icao": "LPPT",
- "read_utc": "2026-11-12T11:23:45Z",
+ "read_utc": "2026-11-12T12:23:08Z",
  "taf": {
   "issue_utc": "2026-11-12T11:00Z",
   "raw": "TAF LPPT 121100Z 1212/1318 25013KT 9999 SCT020 TEMPO 1212/1318 4000 SHRA BKN012 FEW025CB PROB30 TEMPO 1212/1218 25015G25KT",
@@ -52,7 +52,7 @@
    }
   ],
   "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-  "read_utc": "2026-11-12T11:23:45Z"
+  "read_utc": "2026-11-12T12:23:08Z"
  },
  "taf_history": [
   {
@@ -2083,6 +2083,34 @@
    "pressure_hpa": 1005,
    "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
    "read_utc": "2026-11-12T11:23:20Z"
+  },
+  {
+   "time_utc": "2026-11-12T11:30Z",
+   "raw": "METAR LPPT 121130Z 24013KT 210V270 9999 BKN024 FEW030TCU 19/14 Q1005 NOSIG",
+   "wind_dir": 240,
+   "wind_kt": 13,
+   "gust_kt": null,
+   "wind_kmh": 24,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": null,
+   "pressure_hpa": 1005,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
+   "read_utc": "2026-11-12T12:22:53Z"
+  },
+  {
+   "time_utc": "2026-11-12T12:00Z",
+   "raw": "METAR LPPT 121200Z 25013KT 220V280 9999 SCT027 FEW030TCU 20/14 Q1005 NOSIG",
+   "wind_dir": 250,
+   "wind_kt": 13,
+   "gust_kt": null,
+   "wind_kmh": 24,
+   "gust_kmh": null,
+   "visibility": "6+",
+   "weather": null,
+   "pressure_hpa": 1005,
+   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json",
+   "read_utc": "2026-11-12T12:22:53Z"
   }
  ],
  "max_gust": {
@@ -2091,5 +2119,5 @@
   "time_utc": "2026-11-11T14:00Z",
   "source": "https://aviationweather.gov/api/data/metar?ids=LPPT&hours=30&format=json"
  },
- "next_read_utc": "2026-11-12T12:22Z"
+ "next_read_utc": "2026-11-12T13:22Z"
 }
