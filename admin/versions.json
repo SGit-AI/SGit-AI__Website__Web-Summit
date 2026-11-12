@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2006",
+    "date": "2026-11-12",
+    "what": "reviewer@PrompTugal.vicky: report for the 08:20 run: S59 published under R-PUB-1",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "c9da207f5"
+  },
+  {
     "version": "v0.2.2005",
     "date": "2026-11-12",
     "what": "weather 08:22 wake, quiet, no Lisbon warning (analysis 40)",
