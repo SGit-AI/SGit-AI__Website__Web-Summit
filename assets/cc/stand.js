@@ -70,6 +70,23 @@
         // from all of the planets"), in its own card with the iPad gestures (touch)
         await window.Gravity.mount(host, { calm: CALM, theme, touch: true, noStars: true, soft: .25, css: '#wrap { border-radius: 0 !important; border: 0 !important; min-height: calc(100vh - 64px) !important; } .fan, .uni { height: calc(100vh - 130px) !important; } .shf { min-height: calc(100vh - 130px) !important; } .subv button, .crumbs { font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; } .subv button { font-size: 13px; }', data: gdata, start: 'uni', tourCentre: 'indi', metric: BAR ? { pct: BAR.pct, of: BAR.e, total: BAR.t } : null, detail: polHTML, views: [shields, xray, angMsg, angWork, angWs], // GAMMA-Ray sits on the top bar now (Silvio, 12 November)
             liveLabel: null })
+        // a switch the stand can tap: Galaxy (Silvio's, the default) or Simple (Indi's calm view); it remembers the choice in this
+        // browser (cc.calm) and reloads. ?calm=1 still opens Simple. (xray@web-summit.dinis, 12 November)
+        if (!document.getElementById('cc-galaxy-switch')) {
+            const sw = document.createElement('div'); sw.id = 'cc-galaxy-switch'; sw.setAttribute('role', 'group'); sw.setAttribute('aria-label', 'Universe view')
+            sw.style.cssText = 'position:fixed;z-index:50;display:flex;gap:2px;padding:3px;border-radius:999px;background:#0F1A1Dcc;border:1px solid #2C4A50;font:600 14px/1 "Barlow Condensed","Arial Narrow",sans-serif;letter-spacing:1px;text-transform:uppercase'
+            for (const [label, calm] of [['\u2726 Galaxy', false], ['\u25EF Simple', true]]) {
+                const b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.setAttribute('aria-pressed', String(CALM === calm))
+                b.style.cssText = 'border:0;border-radius:999px;padding:10px 16px;min-height:40px;cursor:pointer;font:inherit;letter-spacing:inherit;text-transform:inherit;' + (CALM === calm ? 'background:#6FB1FF;color:#0F1A1D' : 'background:transparent;color:#B9C7CB')
+                b.onclick = () => { if (CALM === calm) return; try { localStorage.setItem('cc.calm', calm ? '1' : '0') } catch { } const u = new URL(location.href); u.searchParams.delete('calm'); history.replaceState(null, '', u.toString()); location.reload() }
+                sw.appendChild(b)
+            }
+            const st = document.createElement('style'); st.textContent = '#cc-galaxy-switch{right:132px;top:122px}@media (max-width:760px){#cc-galaxy-switch{right:auto;top:auto;left:12px;bottom:92px}}'
+            document.head.appendChild(st); document.body.appendChild(sw)
+            // only while the Universe is on screen: the other tabs keep their corners
+            const vis = () => { sw.style.display = document.getElementById('cc-stand') && document.getElementById('cc-stand').isConnected ? 'flex' : 'none' }
+            addEventListener('hashchange', () => setTimeout(vis, 300)); vis()
+        }
     }
     function shieldsPlugin(api, host) { const { SR, $, t, esc, ico, reduced } = api
         host.innerHTML = '<div class="shf"><div class="skc" id="sbar"></div><div class="shc"><p class="qask" id="sq"></p><div class="arenas" id="arenas"></div><div class="score2" id="score"></div></div><aside class="g panel" id="spanel"></aside></div>'
