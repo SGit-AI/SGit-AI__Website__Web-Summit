@@ -1,0 +1,101 @@
+{
+ "number": 9,
+ "date": "12 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "Last summit day: S58 and S59 live, every agent back and confirmed",
+ "when": "12 November 2026, 08:45 UTC (the daily brief; since 11 Nov 08:45 UTC, the first since your team account came back)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "None. No hold, no Gmail use, no edit to decisions.md but mine, no key mismatch; every task's last run succeeded.",
+  "The GitHub hold (standing answer 46) was lifted at 22:10 last night, after both sites deployed normally from 21:05; no agent reported held work."
+ ],
+ "actions": [
+  {"window": "conductor (this window)", "items": [
+   {"what": "WS-213: the token ledger and the router",
+    "why": "pm and dashboard both ask. Silvio's issue: log each run's tokens in people/vicky/ledger/, and let router@web-summit.silvio try some of your low-risk work on open models, checked by Claude.",
+    "reply": "Conductor: yes to the WS-213 ledger (numbers only). The router may try only research digests and curation summaries, never drafts that get published, and only after the summit. Record it and tell pm and dashboard."},
+   {"what": "Curator: mark the withdrawn stories in its README",
+    "why": "The curator asks before marking the A-group items and S44, S47 and S49 \"withdrawn 11 Nov\" in its own storyline README; status text only, nothing deleted.",
+    "reply": "Conductor: tell the curator yes, mark them \"withdrawn 11 Nov\" in its README, status text only."}
+  ]},
+  {"window": "Dinis / stand-up", "items": [
+   {"what": "Inbox lanes for the new keys",
+    "why": "Your agents' fresh keys still need their lanes re-issued by Dinis's conductor (my request of 11 Nov 19:00; journalist-ai asked too). Until then, your agents' inbox lanes are not usable.",
+    "reply": "Dinis, could your conductor re-issue inbox lanes to my agents' new keys? The request is in desks/conductor-vicky/requests/2026-11-11-1900-lane-reissue.md."},
+   {"what": "The interview vault",
+    "why": "Still not built (your request of 9 Nov), so inbox@ stores no interview recordings and you keep them on your phone.",
+    "reply": "Dinis, is the interview vault coming? Until then I keep recordings on my phone."}
+  ]}
+ ],
+ "sections": [
+  {"title": "The runs (✓ ran and reported, ○ ran with nothing to do, · no report)", "table": {"head": ["Agent", "Wed 11 Nov, from 19:00 (return)", "Thu 12 Nov, to 08:45"], "rows": [
+   ["researcher", "19:02 ✓ confirmed · 20:39 ○ model check", "07:15 ✓ (2 captures)"],
+   ["curator", "19:02 ✓ · 19:49 ✓ hand-over · 20:20 ✓ S58 commissioned", "07:35 ✓ S59 commissioned · 08:35 fired, report not yet in"],
+   ["programme", "19:15 ✓ confirmed", "07:00 ✓ side events (1 checked, 67 pointers)"],
+   ["journalist (summit)", "19:20 ✓ · 20:50 ✓ S58 draft", "07:53 ○"],
+   ["journalist-portugal", "19:15 ✓", "07:56 ✓ S59 draft"],
+   ["journalist-europe", "19:18 ✓", "07:59 ✓"],
+   ["journalist-ai", "19:18 ✓ · 20:03 ○", "08:02 ✓"],
+   ["journalist-connections", "19:20 ✓", "07:50 ○"],
+   ["reviewer", "19:30 ✓ · 21:05 to 21:50 ✓ S58, S44 dropped, image rule", "08:20 ✓ S59 published"],
+   ["checker", "19:25 ✓ · 21:10 ✓ four findings kept open", "next 10:00"],
+   ["dev", "19:25 · 19:58 · 20:00 · 20:50 · 21:45 ✓ withdrawal live", "on demand"],
+   ["pm", "19:23 ✓", "07:40 ✓"],
+   ["dashboard", "19:35 ✓ · 20:15 ✓ refresh", "07:50 ✓"],
+   ["logistics", "19:30 ✓", "08:10 ✓ (WS-48 done)"],
+   ["vault", "19:35 ✓ · 19:55 ✓ vaults A, B · 20:15 ✓ A sealed to dev", "on demand"],
+   ["scout", "19:30 ✓ · 22:00 ○", ""],
+   ["security", "19:30 ✓ key · 20:00 ✓ P6 review", "on demand"]
+  ]}},
+  {"title": "Your agents: problems first", "items": [
+   "No missed run and no problem. All 17 returning agents, plus security, confirmed RULES-11NOV between 19:02 and 19:36 yesterday, each with a fresh key added by its own commit.",
+   "Context depth: dev 887k and curator 887k are about 15k from automatic compaction (902k); the summit journalist 857k and journalist-ai 826k are next. They keep working through it. On Friday a fresh session for the curator is worth it; I will put it in Friday's list with the conductor hand-over.",
+   "Researcher: on Sonnet, verified at its 20:38 and 07:15 runs; no full switch needed on Friday.",
+   "Models (standing answer 44): every session runs the model you set, journalist-connections now on Opus. The checker's window is set to Opus but its last run (before your switch) served Sonnet; I check again after its 10:00 run.",
+   "vault@ has still not put P1 to P3 in its prompts file (standing answer 16); I will remind it in a task file when it next has work."
+  ]},
+  {"title": "PrompTugal.news: your desks", "items": [
+   "Live: 38 articles with one of your desks in the byline; 10 of yours were withdrawn on 11 Nov (step 1, notice \"Withdrawn on 11 November 2026.\").",
+   "New since yesterday, all published by the reviewer under R-PUB-1 unless marked: S52 (at your word, 09:49), S55, S56, the S54 and S41 updates, S58 the last-day guide (21:15, the front-page lead), and S59 \"Discord opens its first engineering hub outside San Francisco, in Lisbon\" (journalist-portugal, live today). No Fix first verdicts. S44 and S57 dropped.",
+   "Checker: no new findings; WK1, BR4, S3 and S11 kept open as \"not checkable by machine\". No reply from Dinis's agents.",
+   "Programme's Thursday side events are relayed to the fringe conductor (newsroom request 2026-11-12-0900-thursday-side-events.md). Its 67 pointers are Luma and Meetup links: facts only if a person checks them, the fringe conductor's call.",
+   "Researcher used SA29: a PagerDuty engineering-blog lead, held by the curator until a second source."
+  ]},
+  {"title": "Usage, once a day (API-equivalent dollars, not money; never a reason to slow an agent)", "table": {"head": ["Agent", "Model", "API-eq. $", "Output tokens", "Context"], "rows": [
+   ["journalist-ai", "Sonnet", "180", "296k", "826k"],
+   ["reviewer", "Opus", "169", "797k", "556k"],
+   ["journalist (summit)", "Opus", "161", "258k", "857k"],
+   ["journalist-connections", "Opus", "141", "239k", "790k"],
+   ["researcher", "Sonnet", "116", "311k", "740k"],
+   ["journalist-portugal", "Sonnet", "102", "195k", "691k"],
+   ["pm", "Sonnet", "98", "208k", "579k"],
+   ["journalist-europe", "Sonnet", "84", "145k", "628k"],
+   ["checker", "Opus (last run Sonnet)", "79", "350k", "635k"],
+   ["programme", "Opus", "69", "212k", "640k"],
+   ["dev", "Opus", "67", "407k", "887k"],
+   ["conductor", "Opus", "63", "345k", "103k"],
+   ["logistics", "Opus", "56", "109k", "464k"],
+   ["curator", "Sonnet", "51", "318k", "887k"],
+   ["scout", "Sonnet", "27", "118k", "401k"],
+   ["dashboard", "Sonnet", "24", "194k", "625k"],
+   ["synthetic", "Sonnet", "2", "61k", "198k"]
+  ]}},
+  {"title": "Checks", "items": [
+   "Total 1,488 API-equivalent dollars across 17 sessions (whole-session totals). Deepest: dev, curator, summit journalist.",
+   "Schedule: the account matches schedule.json; Friday's three one-off wakes recorded (06:30 the on-demand switch, 09:20 takedown step 2, 10:00 the image move). The cancelled signing wakes stay disabled.",
+   "decisions.md: all 31 edits since yesterday mine. Keys: every new key on both sites added by its own agent's commit. Gmail: no sign of mailbox use; inbox@ read 0 emails.",
+   "Inbox lane: none (your 9 Nov word). For vault@: nothing waiting. Follow-up drafts waiting: no count yet (inbox@ has not written one).",
+   "Updates for agents: SA43-ONDEMAND applied by journalist-ai, journalist-europe and journalist-portugal so far; the rest are messaged at Friday's 06:30 switch."
+  ]}
+ ],
+ "next": [
+  "Today: curator summit-only runs at :35 (09 to 18), the reviewer's extra runs 10:20, 14:20, 18:20, the checker at 10:00. My midday check 12:50, relay 20:45.",
+  "Friday 06:30: the on-demand switch (standing answer 43), then a hand-over note and start kit for a fresh conductor session; 09:20 takedown step 2; 10:00 the image move on published articles. After its last summit run, switch the summit journalist to Sonnet in its window.",
+  "Web Summit's last day."
+ ],
+ "sources": [
+  "people/vicky/reports/*.md and commits since 11 Nov 08:45, read by a Sonnet sub-agent (P16)",
+  "The account's scheduled tasks (listed only); get_session usage numbers only (P6)",
+  "Newsroom PrompTugal/PrompTugal__News__Website dev; content/articles, desks/reviewer-vicky/reviews, data/site/withdrawn.json"
+ ]
+}
