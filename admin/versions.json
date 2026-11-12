@@ -1,5 +1,26 @@
 [
   {
+    "version": "v0.2.2021",
+    "date": "2026-11-12",
+    "what": "weather 10:22 wake, mostly dry, no Lisbon warning (analysis 42)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "fc759c820"
+  },
+  {
+    "version": "v0.2.2020",
+    "date": "2026-11-12",
+    "what": "the stand's galaxy fills the stage again (touch mode only in Simple)",
+    "by": "xray@web-summit.dinis",
+    "from": "facfe82a7"
+  },
+  {
+    "version": "v0.2.2019",
+    "date": "2026-11-12",
+    "what": "the X-ray for any company: X-ray it live with Claude, then make their ABP",
+    "by": "conductor@web-summit.indi",
+    "from": "3de7e8c5a"
+  },
+  {
     "version": "v0.2.2018",
     "date": "2026-11-12",
     "what": "X-Ray uses the same OpenRouter key as Ask Claude (one key per device)",
