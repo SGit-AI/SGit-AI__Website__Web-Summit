@@ -5,6 +5,8 @@ start: Today: your day on one screen | today/index.html
 ---
 Kept by Indi's dashboard agent. Tell it what you want to see first and what you never read, and it changes this part.
 
+**Today's LinkedIn post: post version A (the stand is open).** Thursday goes ahead as planned: the storm alert ended at midnight, and Web Summit told participants it reopens today (as reported by Público, 24 Notícias and RTP, and the team's storm notes, checked Thursday 7:35 am). If you hear otherwise at the venue, post version B instead.
+
 ## Start here {#start}
 
 ```cards
@@ -21,7 +23,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** Thursday is the only summit day left, if Web Summit confirms it. Tomorrow morning: check Web Summit's update, then post version A (stand open) or B (called off) of Thursday's LinkedIn post. Tonight: your phone (key, Wallet card, both apps updated), the Team app helper's 'yes, push', and your inbox chat. Everything else is on [your to-do list](todo/index.html).
+**Right now:** stand day. Post version A of today's LinkedIn post (see the top of this page). Before you leave: your phone (key, Wallet card, both apps updated). Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 
