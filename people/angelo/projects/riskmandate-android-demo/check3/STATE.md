@@ -7,3 +7,4 @@
 - **Next step:** the lead publishes angelo/riskmandate-xray-fixes (Angelo's go quoted in brief.md); then the device check in build4/build.md.
 - **Question for conductor.b@:** tighten note 1 (download tied to the tapped link) in a later build? Recommendation: no for the demo, the stand is pinned.
 - **Site gate on this branch:** build OK; validate.js fails only on 'lanes': the lead's commits (riskmandate-android-demo.pm@) have no lane in people/angelo/policy/lanes.json; already so before this step. Question for conductor.b@: add the lead's lane (policy@'s file, tier 3 if a policy). Recommendation: yes.
+- **Lane:** the first commit lacks 'Outside:' trailers for check3/ (workers' lane is people/angelo/pipeline/** only; check 2 did the same). Not rewritten; this commit carries them. Recommend conductor.b@ asks Angelo to add people/angelo/projects/** to the workers' lane (policy, tier 3). Run logged unsigned; ledger appended.
