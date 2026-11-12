@@ -8,11 +8,11 @@ Kept short at Vicky's word (3 November): your issues, decisions and agents are i
 
 ## Needs me {#needs-me}
 
-*Written by your dashboard agent at each wake from the board, the stand-up agendas, your conductor's briefs and the board-health notes; soonest first. Last updated: Wed 11 Nov, 20:25 UTC.*
+*Written by your dashboard agent at each wake from the board, the stand-up agendas, your conductor's briefs and the board-health notes; soonest first. Last updated: Thu 12 Nov, 07:58 UTC.*
 
 | Type | What | Due | With |
 |---|---|---|---|
-| Decide | [Which of your workloads may Silvio's router test on cheaper models? (WS-213)](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-213-vickys-agents-measured-first-and-the-routers-first-experiments.md) | **Today**, Wed 11 Nov | Silvio's router; only low-risk, checkable work, never anything that publishes or sends. Optional: a smaller Claude model for routine agents (your call) |
+| Decide | [Which of your workloads may Silvio's router test on cheaper models? (WS-213)](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-213-vickys-agents-measured-first-and-the-routers-first-experiments.md) | **Overdue:** Wed 11 Nov | Silvio's router; only low-risk, checkable work, never anything that publishes or sends. The model part is settled (your models list, standing answer 44) |
 | Decide | [Park the late, unowned issues: yes or no](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/data/meetings/2026-11-07-1800/20261107T1741-the-18-00-a-note-taker-the-parking-in-on.json) | **Overdue:** Sat 7 Nov, 18:00 (not taken) | Dinis too; the list is ready (45 to park, 21 kept); recommended: yes; Angelo asks for it first at today's 12:00 |
 | Decide | [One line for the record: the 5 Nov newsroom decision](briefs/2026-11-06T0845Z.pdf) | **Overdue:** Fri 6 Nov | Your conductor records your words |
 
@@ -25,7 +25,7 @@ Mine to act on or decide: issues you picked. The rest of the plan's follow-ups a
 | [Newsroom vault keys](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-153-vicky-s-vault-keys-to-the-conductor-over-the-inbox.md) (WS-153) | You; waiting on conductor@web-summit.dinis | Picked | **Overdue:** Thu 5 Nov | Dinis's conductor to confirm it can open the vaults |
 | [Photos on the site](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-163-each-person-confirms-their-own-photo.md) (WS-163) | You | Yours confirmed | **Overdue:** Fri 6 Nov | Angelo, Indi, Jose and Dinis still to answer |
 
-:::details Team follow-ups (7)
+:::details Team follow-ups (8)
 
 Not mine, but on the plan: due by Thursday, overdue, or blocking someone. **No owner** means nobody is named in `picked_by` (in brackets, who it is for).
 
@@ -36,8 +36,9 @@ Not mine, but on the plan: due by Thursday, overdue, or blocking someone. **No o
 | [Sessions each person attends](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-32-the-sessions-each-person-attends.md) | **No owner** (for everyone) | Open | **Overdue:** Sat 7 Nov | Each person adds their own |
 | [Every person's key on every device](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-166-every-person-s-key-on-every-device-before-web-summit.md) (WS-166) | **No owner** (for Dinis, Nimay, Daniela, Sarah, everyone) | Open | **Overdue:** Sun 8 Nov | The summit is under way; someone to pick it up |
 | [Three apps, three lines](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-199-three-apps-three-lines.md) (WS-199) | **No owner** (for everyone) | Open | **Overdue:** Mon 9 Nov | The summit is under way; someone to pick it up |
-| [We are the power users: the team app runs our own summit first](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-201-we-are-the-power-users.md) (WS-201) | **No owner** (for everyone) | Open | Today, Wed 11 Nov | Someone to pick it up |
-| [THE RESTART: every team on one theme, who takes what](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-208-the-restart.md) (WS-208) | **No owner** (for everyone) | Open | Today, Wed 11 Nov | Your team's part still to be named |
+| [We are the power users: the team app runs our own summit first](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-201-we-are-the-power-users.md) (WS-201) | **No owner** (for everyone) | Open | **Overdue:** Wed 11 Nov | Someone to pick it up |
+| [THE RESTART: every team on one theme, who takes what](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-208-the-restart.md) (WS-208) | **No owner** (for everyone) | Open | **Overdue:** Wed 11 Nov | Your team's part still to be named |
+| [WS-202](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-202-how-we-work.md); [WS-205](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-205-the-pipeline-live.md); [WS-206](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-206-gamma-ray.md); [WS-210](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-210-the-individual-from-a-photo-to-a-unit.md); [WS-211](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-211-pt-news-is-about-agents-the-workflow-is-the-picture.md) (how we work; the pipeline live; GAMMA-Ray; the individual; pt.news and agents) | **No owner** (for everyone) | Open (WS-206: design first) | Today, Thu 12 Nov | The last summit day; someone to pick them up, or park them |
 :::
 
 ## My vault {#vault}

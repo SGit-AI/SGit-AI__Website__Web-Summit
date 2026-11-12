@@ -204,3 +204,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Tables rebuilt from the board, as pm@'s board-health note is stale (last run 9 Nov; its wakes were missed). New first row of "Needs me": WS-213 (for Vicky, due today): which of her workloads Silvio's router may test on cheaper models, and the optional smaller-model test. Still open for her: the parking yes or no (still undecided on 10 Nov, team-collaboration) and the 5 Nov newsroom record line. Added to the follow-ups: WS-201 and WS-208 (everyone, due today, no owner); WS-199 is overdue.
 - Story candidates refreshed: 51 stories, 104 sources, all links (desks/curator/README.md, up from 30 on 9 Nov).
 - state: ok; done: one refresh of the tables and stories; next: wait for the conductor or Vicky (regular runs stay 07:50 and 17:45 UTC); ask: your choice of workloads for the router on WS-213; run: prompted
+
+## Thu 12 Nov 2026, 08:00 UTC (wake)
+
+- Read people/vicky/decisions.md (d3861b14; 13 new conductor commits since last night, each with the Agent: line, pushed by riskmandate-vicky). No HOLD.md; session key present; RULES-11NOV kept. Re-read prompts/dashboard.md (P2): it matches. Standing answers 43 and 44 for the dashboard (daily 07:50 from Friday; stays on Sonnet) need nothing from me. Last night's refresh went live (v0.2.1941 after a long CI queue).
+- Tables rebuilt from the board and pm@'s 07:40 note. Still open for Vicky: WS-213 (now overdue; the model part is settled by standing answer 44, left: which workloads Silvio's router may test), the parking yes or no (undecided on 10 Nov) and the 5 Nov newsroom record line. Team follow-ups: WS-201 and WS-208 overdue; one row for the five unowned items due today (WS-202, 205, 206, 210, 211).
+- Story candidates refreshed: 53 stories, 106 sources, all links (desks/curator/README.md).
+- state: ok; done: tables and stories refreshed; next: 17:45 wake (the last one before the daily-only schedule on Friday); ask: your workloads for the router on WS-213; run: scheduled
