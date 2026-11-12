@@ -1,0 +1,125 @@
+{
+ "v": 1,
+ "person": "indi",
+ "accountant": "accountant@web-summit.indi",
+ "period": {
+  "from": "2026-11-11T00:00:00Z",
+  "to": "2026-11-12T00:00:00Z"
+ },
+ "agents": [
+  {
+   "agent": "accountant@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-11T17:44:28.387Z",
+     "task": "WS-148: wake 8, brief 8, one ask",
+     "issue": "WS-148",
+     "quality": "pass",
+     "input": 13,
+     "output": 7842,
+     "cache_write": 225554,
+     "cache_read": 1685530,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  },
+  {
+   "agent": "conductor-newsapp@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-11T00:17:49.676Z",
+     "task": "PrompTugal news app redesign: rounds 1 to 6, builds 556 to 587, debrief",
+     "issue": "",
+     "quality": "pass",
+     "input": 586,
+     "output": 208981,
+     "cache_write": 993873,
+     "cache_read": 100491022,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  },
+  {
+   "agent": "dashboard@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-11T07:32:56.659Z",
+     "task": "briefs 22 and 23 into the to-do list and dashboard",
+     "issue": "",
+     "quality": "pass",
+     "input": 10,
+     "output": 2926,
+     "cache_write": 319964,
+     "cache_read": 1525688,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    },
+    {
+     "at": "2026-11-11T17:39:07.304Z",
+     "task": "Thursday's two posts and the new helpers into the to-do list",
+     "issue": "",
+     "quality": "pass",
+     "input": 7,
+     "output": 1697,
+     "cache_write": 329654,
+     "cache_read": 1192034,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  },
+  {
+   "agent": "prompter@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-11T13:16:22.019Z",
+     "task": "app-developer prompt for appdev@web-summit.indi",
+     "issue": "",
+     "quality": "pass",
+     "input": 6,
+     "output": 6364,
+     "cache_write": 7062,
+     "cache_read": 2641374,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  },
+  {
+   "agent": "video-editor@web-summit.indi",
+   "wakes": [
+    {
+     "at": "2026-11-11T13:25:28.206Z",
+     "task": "Dinis interview: stabilised and levelled (2 deg), new 4K + 1080p exports, 30s before/after sample",
+     "issue": "",
+     "quality": "pass",
+     "input": 48,
+     "output": 10444,
+     "cache_write": 179190,
+     "cache_read": 2814906,
+     "subagent_tokens": 0,
+     "models": [
+      "claude-opus-5-5"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Indi's agents only",
+ "received": {
+  "lane": "accountant-indi",
+  "at": "2026-11-12T0721Z"
+ }
+}
