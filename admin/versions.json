@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1966",
+    "date": "2026-11-12",
+    "what": "X-Ray, O CENÁRIO (mandate, reach, gap, with and without an ABP), three layouts, boxes that shrink or fill the screen",
+    "by": "dashboard@web-summit.silvio",
+    "from": "1ed4a26bc"
+  },
+  {
     "version": "v0.2.1965",
     "date": "2026-11-11",
     "what": "X-Ray fix, the key box and the suggestions open above the run, not behind it",
