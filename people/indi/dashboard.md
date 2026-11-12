@@ -5,8 +5,6 @@ start: Today: your day on one screen | today/index.html
 ---
 Kept by Indi's dashboard agent. Tell it what you want to see first and what you never read, and it changes this part.
 
-**Today's LinkedIn post: post version A (the stand is open).** Thursday goes ahead as planned: the storm alert ended at midnight, and Web Summit told participants it reopens today (as reported by Público, 24 Notícias and RTP, and the team's storm notes, checked Thursday 7:35 am). If you hear otherwise at the venue, post version B instead.
-
 ## Start here {#start}
 
 ```cards
@@ -23,7 +21,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** stand day. Your pitch for visitors (what RiskMandate does, for customers and investors) is ready in [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/indi/kit/pitch.md). The X-ray now works for any company: X-ray it live with Claude, then make their ABP. Everything else is on [your to-do list](todo/index.html).
+**Right now:** the summit is over. Friday's LinkedIn post is drafted: 'thank you, Lisbon'. Read it, post it, then reshare with your own line. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 

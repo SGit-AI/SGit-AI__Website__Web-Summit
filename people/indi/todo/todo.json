@@ -1,6 +1,6 @@
 {
  "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by dashboard@web-summit.indi at each run, from 4 November at Indi's word (first written by synthetic@web-summit.indi from the board, Indi's briefs 1 to 8 and that day's git log).",
- "written": "2026-11-12T12:40Z",
+ "written": "2026-11-12T17:45Z",
  "done_for_indi": {
   "WS-01": "Done: you are at L4 (people/indi/onboarding.json).",
   "WS-02": "Done: you are at L4.",
@@ -20,7 +20,7 @@
   "WS-73": "Watch the videos and leave one line of feedback each.",
   "WS-113": "Sign your print set when the generic-QR update lands on /print/.",
   "WS-07": "Two-minute check-in, morning, midday and evening.",
-  "WS-126": "Today: post version A (stand open). Thursday goes ahead as planned, as reported by Público, 24 Notícias and RTP. If you hear otherwise at the venue, post version B.",
+  "WS-126": "Friday's post is drafted: 'thank you, Lisbon'. Read it, post it, then reshare with your own line.",
   "WS-15": "Read the draft at https://web-summit.sgit.ai/people/indi/overnight/2026-11-04/ws-15-message/MESSAGE.md, then agree it with Nimay.",
   "WS-19": "factory@ drafted the card-to-analysis loop overnight: review it.",
   "WS-22": "messaging@ has started the review: read its first drafts.",
