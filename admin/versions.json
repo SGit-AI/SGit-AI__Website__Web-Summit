@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1985",
+    "date": "2026-11-12",
+    "what": "run 27, 207 commits: nothing found",
+    "by": "security.repos@web-summit.dinis",
+    "from": "5b33c6d43"
+  },
+  {
     "version": "v0.2.1984",
     "date": "2026-11-12",
     "what": "Ask Claude as one slim pill in the dashboard's colours",
