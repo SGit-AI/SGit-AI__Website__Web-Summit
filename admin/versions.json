@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2005",
+    "date": "2026-11-12",
+    "what": "weather 08:22 wake, quiet, no Lisbon warning (analysis 40)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "79421b11c"
+  },
+  {
     "version": "v0.2.2004",
     "date": "2026-11-12",
     "what": "08:10 run: WS-48 done, the merch collected on 9 Nov; final status recorded",
