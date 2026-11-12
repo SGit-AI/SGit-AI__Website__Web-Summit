@@ -15,9 +15,10 @@ By video@web-summit.silvio, 12 November 2026, at Jose's word ("send the link to 
 
 ## Approved to post (Silvio's yes)
 
-The twelve on the library page, and only those:
+The thirteen on the library page, and only those:
 
 1. What is RiskMandate (the stand loop): 1:07, EN, PT, ES, FR, ZH, HI
+1b. Reach, Mandate, Gap (the clean cut): 0:18, EN (added 12 November)
 2. Four real cases, and the gap closed: 0:56, EN, PT
 3. to 7. With and without RiskMandate: the AI agent beyond its mandate; the access that stayed; the supplier with the open door; the audit (who authorised this agent?); the chatbot beyond its mandate: 0:19 each, EN, PT
 8. Your AI has access. Does it have permission?: 0:30, EN, subtitled
@@ -26,7 +27,7 @@ The twelve on the library page, and only those:
 11. The demo is us: 0:47, EN
 12. PrompTugal.news in 37 seconds: 0:37, EN, PT
 
-**Not to post:** Reach, Mandate, Gap (clean cut) and RiskMandate Stories: fifty new agents (fixed on 10 November, in the vault, waiting for Silvio's yes); the 24 X-ray company videos (they name real companies; waiting for Dinis's OK); anything not on the library page.
+**Not to post:** the full 53-second Reach, Mandate, Gap (errors in its frames; only the clean cut goes out); RiskMandate Stories: fifty new agents (fixed on 10 November, in the vault, waiting for Silvio's yes); the 24 X-ray company videos (they name real companies; waiting for Dinis's OK); anything not on the library page.
 
 ## How to post
 
