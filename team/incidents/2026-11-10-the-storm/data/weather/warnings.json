@@ -1,21 +1,9 @@
 {
  "about": "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). IPMA's open data carries no issue time: `sent_utc` is the sent time of the CAP message (MeteoAlarm, cap.json) matching the warning's area, type, level and window exactly, or null where none matches (never guessed).",
  "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
- "read_utc": "2026-11-11T21:23:03Z",
- "lisbon_peak_level": "orange",
+ "read_utc": "2026-11-11T23:23:31Z",
+ "lisbon_peak_level": "yellow",
  "lisbon": [
-  {
-   "type": "Agitação Marítima",
-   "level": "orange",
-   "start_utc": "2026-11-11T19:18:00Z",
-   "end_utc": "2026-11-11T21:00:00Z",
-   "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
-   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T21:23:03Z",
-   "sent_utc": null,
-   "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
-   "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-  },
   {
    "type": "Agitação Marítima",
    "level": "yellow",
@@ -23,7 +11,7 @@
    "end_utc": "2026-11-12T03:00:00Z",
    "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-11T21:23:03Z",
+   "read_utc": "2026-11-11T23:23:31Z",
    "sent_utc": "2026-11-10T07:18:40Z",
    "text_en": "SW waves 4 to 5 metres.",
    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
@@ -31,42 +19,8 @@
  ],
  "red_and_orange_elsewhere": {
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-11T21:23:03Z",
-  "items": [
-   {
-    "area": "BJA",
-    "type": "Agitação Marítima",
-    "level": "orange",
-    "start_utc": "2026-11-11T19:18:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
-    "sent_utc": null,
-    "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "FAR",
-    "type": "Agitação Marítima",
-    "level": "orange",
-    "start_utc": "2026-11-11T19:18:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
-    "sent_utc": null,
-    "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   },
-   {
-    "area": "STB",
-    "type": "Agitação Marítima",
-    "level": "orange",
-    "start_utc": "2026-11-11T19:18:00Z",
-    "end_utc": "2026-11-11T21:00:00Z",
-    "text_pt": "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima.",
-    "sent_utc": null,
-    "text_en": "SW waves 5 to 7 meters, which may reach a maximum height of up to 13 meters.",
-    "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-   }
-  ]
+  "read_utc": "2026-11-11T23:23:31Z",
+  "items": []
  },
  "history": [
   {
@@ -649,7 +603,24 @@
     ]
    ],
    "note": "compared with the read at 2026-11-11T20:23:08Z"
+  },
+  {
+   "read_utc": "2026-11-11T22:22:59Z",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "kind": "fact",
+   "added": [],
+   "removed": [],
+   "expired": [
+    [
+     "Agitação Marítima",
+     "orange",
+     "2026-11-11T19:18:00Z",
+     "2026-11-11T21:00:00Z",
+     "Ondas de sudoeste com 5 a 7 metros e que poderão atingir até 13 metros de altura máxima."
+    ]
+   ],
+   "note": "compared with the read at 2026-11-11T21:23:03Z"
   }
  ],
- "next_read_utc": "2026-11-11T22:22Z"
+ "next_read_utc": "2026-11-12T00:22Z"
 }

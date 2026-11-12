@@ -476,7 +476,17 @@
    "time_utc": "2026-11-11T21:25Z",
    "section": 29,
    "summary": "Orange sea ended 21:00 (open data still listed it at 21:22, restamped); yellow sea to Thu 03:00; LPPT 21:00 27011KT Q0997; no new CAP batch since 19:17:31."
+  },
+  {
+   "time_utc": "2026-11-11T22:25Z",
+   "section": 30,
+   "summary": "Quiet: open data dropped expired orange sea; only yellow sea to Thu 03:00; LPPT 22:00 27009KT Q0998; no new CAP batch since 19:17:31."
+  },
+  {
+   "time_utc": "2026-11-11T23:25Z",
+   "section": 31,
+   "summary": "New LPPT TAF 23:00 for Thursday: 25012KT, TEMPO rain all day, TEMPO 06-18 25017G27KT (gusts ~50 km/h). Lisbon only yellow sea to 03:00; Thursday yellow rain warnings are in the north (CAP 22:43:28), nothing for Lisboa."
   }
  ],
- "next_read_utc": "2026-11-11T22:22Z"
+ "next_read_utc": "2026-11-12T00:22Z"
 }
