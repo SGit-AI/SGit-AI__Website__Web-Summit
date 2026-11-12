@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2002",
+    "date": "2026-11-12",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 07:59, idle; SA43-ONDEMAND applied",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "d058c8506"
+  },
+  {
     "version": "v0.2.2001",
     "date": "2026-11-12",
     "what": "journalist@PrompTugal.vicky: report, 07:53 UTC run idle",
