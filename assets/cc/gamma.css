@@ -112,3 +112,15 @@ html.cc-shell #gamma .gr-switch button:focus-visible { outline: 2px solid #FBE2A
 html.cc-shell #gamma .gr-circwrap, html.cc-shell #gamma .gr-detail { background: none !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; }
 html.cc-shell #gamma .bc-title { padding-top: 4px; padding-bottom: 4px; }
 html.cc-shell .gr-circ .bc-svg { height: max(520px, calc(100vh - 275px)) !important; }
+
+/* the thin bar (Silvio, 12 November): tabs on the left, the name in the middle, the state on the right, like the Universe */
+html.cc-shell #gamma .gr-bar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; margin: 14px 0 10px; }
+html.cc-shell #gamma .gr-bar .gr-switch { margin: 0; justify-self: start; }
+html.cc-shell #gamma .gr-name { font: 600 14px "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: 2px; text-transform: uppercase; color: #43D9C6; }
+html.cc-shell #gamma .gr-state { justify-self: end; display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+html.cc-shell #gamma .gr-chip, html.cc-shell #gamma .gr-live, html.cc-shell #gamma .gr-std { font: 600 11.5px "Barlow Condensed", sans-serif; letter-spacing: 1.2px; text-transform: uppercase; padding: 5px 11px; border-radius: 999px; border: 1px solid rgba(150,230,215,.25); background: rgba(0,0,0,.3); color: #CFE3DF; text-decoration: none; white-space: nowrap; }
+html.cc-shell #gamma .gr-chip { color: #FF9AAE; border-color: rgba(255,77,109,.4); cursor: help; }
+html.cc-shell #gamma .gr-live { color: #3DDC97; } html.cc-shell #gamma .gr-live::before { content: "● "; } html.cc-shell #gamma .gr-live.snap { color: #F2B544; }
+html.cc-shell #gamma .gr-std:hover { color: #fff; border-color: rgba(251,226,174,.5); }
+html.cc-shell #gamma .gr-foot .gr-head { display: block; margin: 18px 4px 0; opacity: .8; } html.cc-shell #gamma .gr-foot .gr-head h2 { display: none; } html.cc-shell #gamma .gr-foot .gr-warn { display: inline-block; margin-bottom: 6px; }
+@media (max-width: 760px) { html.cc-shell #gamma .gr-bar { grid-template-columns: 1fr; } html.cc-shell #gamma .gr-name { display: none; } html.cc-shell #gamma .gr-state { justify-self: start; justify-content: flex-start; } }
