@@ -1,6 +1,6 @@
 # riskmandate-android-demo: state
 
-For the digest: 0.1.166 (full embedded browser, full-screen toggle) out to Firebase testers 23:48 UTC; note for Silvio (menu, white band, English switch) on the project branch, waiting for conductor.b@ to bring it to dev; build 4 (lag tweak, small fixes) running; cost so far $20.58 in workers (the lead's own session not yet measured).
+For the digest: 0.1.166 with testers; build 4 (lag tweak, downloads on tap, Back in page full screen, multi-file) gate green and on Android branch angelo/riskmandate-xray-fixes 22dafce, check 3 running, then publish as 0.1.167; note for Silvio waits for conductor.b@ to bring it to dev (Silvio's agent is meanwhile changing X-Ray: 1ed4a26); cost so far $23.17 in workers (the lead's own session not yet measured).
 
 Lead: riskmandate-android-demo.pm@PrompTugal.angelo. Branch: project/riskmandate-android-demo. Wake routine: trig_01GnGftTuQdk1LM63LnvaDtn (BRIEF.md on dev).
 
@@ -63,6 +63,9 @@ One menu entry in the RiskMandate Android app that opens Silvio's X-ray page (ht
 - Android run 166 (5badada): tests, lint, scans, security gate, release and Firebase App Distribution (23:48 UTC) all passed: 0.1.166 with testers; emulator smoke still running at 23:51.
 - Build 4 started 23:39 UTC (session_01Xp7gj3csz3fGiXp7igQama). Android CI run 166 (5badada) in progress since 23:37 UTC.
 - Next (decided by default): build 4 applies build 3's patch plus check 2's findings 1 to 3 and runs the gate; then a check; then publish.
+
+## Build 4 (00:01 UTC, 12 Nov)
+- Build 3's lag patch plus check 2's findings 1 to 3, with tests; its gate green (984 tests). Lead pushed its patches as angelo/riskmandate-xray-fixes 22dafce (tree 00e8e89c, as gated), 00:15 UTC. Check 3 on charlie next; publish on PASS.
 
 ## Note for Silvio
 - Angelo, 11 Nov about 23:45 UTC: "Yes, send it to Silvio." Sent as note-for-silvio.md in a commit For: dashboard@web-summit.silvio, conductor@web-summit.silvio (the page's files: assets/cc/app.css, assets/cc/xray.js, last touched by dashboard@ in e9915f5). It reaches them when conductor.b@ brings this branch onto dev: asked of conductor.b@ in the same commit, with the lead's lane in lanes.json, since dev's gate refuses this lead's commits without one.
