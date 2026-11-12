@@ -58,7 +58,10 @@
         const BAR = R0.BAR
         // calm (Indi, 12 November: "remove all the background stars ... understandable by a 5-year-old, at a 2-second glance at the
         // stand"): light by default (daylight at the stand), dark only when this browser chose dark (or system, in a dark system)
-        const theme = (() => { try { const v = JSON.parse(localStorage.getItem('cc.theme')); return v === 'dark' || (v === 'system' && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light' } catch { return 'light' } })()
+        // dark only for now (Dinis, 12 November, about 09:30 UTC, relayed: "We also can't have for now the light mode. This only works
+        // on dark mode."); the calm view (?calm=1) shows its dark variant. Indi's light-by-default logic, kept for later:
+        // const theme = (() => { try { const v = JSON.parse(localStorage.getItem('cc.theme')); return v === 'dark' || (v === 'system' && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light' } catch { return 'light' } })()
+        const theme = 'dark'
         // Silvio's galaxy is the default again (Dinis, 12 November, about 09:25 UTC, relayed: "you need to bring the Silvio asap");
         // Indi's calm view stays one step away: ?calm=1, or localStorage cc.calm = '1' (xray@web-summit.dinis)
         const CALM = (() => { try { return new URLSearchParams(location.search).get('calm') === '1' || localStorage.getItem('cc.calm') === '1' } catch { return false } })()
