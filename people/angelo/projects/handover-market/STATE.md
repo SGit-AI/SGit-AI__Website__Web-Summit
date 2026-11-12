@@ -1,4 +1,4 @@
-For the digest: scope changed (eecd609): the packet exchange with Dinis is conductor.fringe@'s; this project now builds the capacity board and offer/claim/lapse between accounts (prototype started, nothing live), then Ollama and AWS (tier 3); waiting on Angelo: names in policy@'s lane check (closed sets, his "no wildcards" rule).
+For the digest: no worker running; 12.6 USD platform + 0.80 OpenRouter of a 15 USD budget; the capacity board and offer/claim/lapse work as a tested prototype (pool/handover-p7-market); going live is tier 3 and waits for Angelo's review of market.md; also waiting: worker names in policy@'s lane check.
 For the digest: plan written; pattern 1 (Fringe packet relay) and the handover format running as workers; Angelo's go in principle for pattern 1's write-back, shown to him before any push; pattern 2 dry run on Angelo's own other account first (his go); pattern 3 (OpenRouter, Dinis's key) approved by Angelo as urgent: account B's usage is running out; key to be saved as a network secret for openrouter.ai.
 
 Lead: handover-market.pm@PrompTugal.angelo. Branch project/handover-market. Brief: BRIEF.md (opened by 20fe15f6, pushed-by ANGELO, checked 2026-11-11).
@@ -30,7 +30,7 @@ Angelo: "Handover experiments have been handled by conductor.fringe, can you che
 - **5 done** 19:43 (pool/handover-p5-or-step e958ac8): one real step on OpenRouter ended in a commit; 0.446 USD OpenRouter + 0.52 USD Sonnet wrapper; 10 of 11 marks kept.
 - **6 handover-p6-names** (spec): names <slot>.<model>.<environment>.worker@, inner-agent lines, ledger by environment; drafts only, policy@'s and Indi's files proposed, not edited. Decided by default (Angelo can reverse).
 - **6 done** 20:07 (pool/handover-p6-names 188fede; 0.78 USD Sonnet): names scheme, ROLES diff, lanes and ledger proposals. lane-check.mjs matches names exactly, enforce on: new names need policy@'s change first. Recommend closed sets (slots x models x environments), which needs Angelo's word on his "no wildcards" rule.
-- **7 handover-p7-market** (build, prototype only): capacity board + offer/claim/lapse in a copy of pool-claim.mjs, with tests, in its own folder; nothing live; then a spec for Angelo's review before anything goes live. Decided by default, Angelo can reverse.
+- **7 done** 22:18 (pool/handover-p7-market 85f30e6; 0.71 USD Sonnet): capacity.mjs, market.mjs, 7 tests pass on a local bare repository; market.md lists going live (T3: board/capacity.json, handover/claims on origin, preamble lines, policy@ lanes, Dinis's accounts). Fix before live: claimed_at from the commit time. Was: capacity board + offer/claim/lapse in a copy of pool-claim.mjs, with tests, in its own folder; nothing live; then a spec for Angelo's review before anything goes live. Decided by default, Angelo can reverse.
 - Ollama and AWS: each waits for Angelo's go (see table).
 
 ## Decisions (Angelo's words)
@@ -53,5 +53,6 @@ Angelo: "Handover experiments have been handled by conductor.fringe, can you che
 (none open)
 
 ## Findings
+- 00:13: step 7's worker fired the wake at 22:18 but the lead was not woken until the 2-hour backstop; it sat idle 2 hours. For conductor.b@: the worker-fired wake did not reach this session.
 - 19:3x: three workers sat idle 15 to 80 minutes after finishing or being refused: none fired the wake routine (hotel's brief had none; charlie and bravo were told to). Fix: check list_sessions at every wake and at every exchange with Angelo, archive idle ones at once.
 - pushed-by.mjs places only pushes to dev, so a lead's instruction commit on project/<name> reads UNKNOWN. Workers check instead: the project's BRIEF.md last touch on dev says ANGELO, and the step's sha is on origin/project/handover-market. For conductor.b@: say if you want this changed.
