@@ -590,3 +590,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (CAP feed read 12:44:00 by the 5-minute check; refresh 12:44:23 UTC): CAP batch sent 12:32:25: Update of the yellow sea warnings for Setúbal, Beja and Faro, now 12:33 to Friday 03:00 (the 10:24:25 messages had 10:25 to Friday 03:00); IPMA's text: "Ondas de oeste/sudoeste até 4 metros de altura significativa." (W/SW waves up to 4 m significant height). Nothing for Lisboa or Madeira. LPPT 12:30 24014KT, no gust, Q1005.
 
 **Analysis (high):** a restamp of the same south coast warning (same end, same level); no change for Lisbon. Thursday afternoon as in section 44.
+
+## 47. 13:26 UTC 12 Nov: first gust of the day, as the TAF allowed
+
+**Facts** (read 13:24:20–13:24:36 UTC): LPPT 13:00 24015G25KT (gust 46 km/h), no rain, Q1005; 12:30 24014KT, no gust. No rain at Lisbon stations in the hour labelled 12:00. Still no warning for Lisbon. No new CAP batch since 12:32:25 (reads every 5 min to 13:20:21). No new communiqué; LPPT TAF 11:00 unchanged (PROB30 TEMPO 12:00–18:00 25015G25KT). Open-Meteo refused both reads (team's daily limit; last good read 11:23:45).
+
+**Analysis (high):** the 13:00 gust is exactly the TAF's PROB30 group (25015G25KT): the forecast verifying, not a surprise. Gusts about 46 km/h are well below IPMA's yellow wind threshold for Lisbon; dry, no hazard.
