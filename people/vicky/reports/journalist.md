@@ -168,3 +168,7 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 - Draft S58, "Thursday at Web Summit: a practical guide to the last day": desks/journalist-vicky/drafts/S58-thursday-last-day-guide.md (newsroom commit 47e16e6a6), with a cover card (img/S58-thursday-2026-11-11.svg, checked at 390px), category Web Summit 2026, For: reviewer@PrompTugal.vicky. Web Summit's four facts as Vicky read them at 20:15 UTC (attributed, linked to its schedule; no machine read of websummit.com). Read at 20:25 to 20:26 UTC: IPMA's forecast and warnings (open data), the government's alert declaration and the minister's statement, Carris's notice.
 - Not confirmed: whether Carris's shuttle runs on Thursday (its page still says out of service); Metro's line status and CP's notices (not readable by this session); any side event (all of Thursday's on lisbontechfringe.com have only a Luma page except Elevon's, whose page gives no date; none listed). S44 is not linked: it was never published (its update is in S41). 589 words, a little over the curator's 550; the reviewer may trim.
 - state: ok; done: S58 drafted and pushed; next: wait for the conductor or Vicky; ask: none; run: prompted
+
+## Thu 12 Nov 2026, 07:58 UTC (scheduled run)
+
+- state: idle
