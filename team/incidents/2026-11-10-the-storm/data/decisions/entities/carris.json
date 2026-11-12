@@ -1,7 +1,7 @@
 {
  "entity": "carris",
  "about": "Carris (Lisbon buses, trams, funiculars).",
- "updated": "2026-11-11T11:56Z",
+ "updated": "2026-11-12T00:35Z",
  "decisions": [
   {
    "edge": "carris-service-1156",
@@ -16,6 +16,16 @@
     "extent": "part",
     "parts": "trams 12E, 15E, 18E, 24E, 25E, 28E interrupted (15E by bus); Graça funicular closed; Web Summit shuttle cancelled; bus 763 diverted; buses otherwise running"
    }
+  },
+  {
+   "edge": "carris-thu-0034",
+   "decision": "Changes list cleared; Web Summit shuttle still \"fora de serviço devido à suspensão do evento\"",
+   "decided_by": "Carris",
+   "published_utc": null,
+   "address": "https://www.carris.pt/viaje/alteracoes-de-servico/alerta-circulacao/",
+   "read": "2026-11-12T00:35Z",
+   "label": "fact",
+   "state": "running"
   }
  ],
  "open": [
