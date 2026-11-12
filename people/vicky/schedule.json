@@ -1,6 +1,6 @@
 {
  "about": "Every scheduled task of Vicky's agents, one row per task (UTC). Kept by conductor@web-summit.vicky (scout's P4, accepted by Vicky on 6 Nov 2026), checked against the account's scheduled tasks in each 08:30 brief. Changes to tasks are Vicky's; the conductor changes one only at her word (as for the Web Summit timetable, 7 Nov).",
- "checked": "2026-11-11T20:03Z",
+ "checked": "2026-11-12T08:55Z (the account matches every task listed here; one-shots below added)",
  "tasks": [
   {
    "agent": "conductor@web-summit.vicky",
@@ -446,6 +446,35 @@
    [
     "reviewer extra, 10:20 14:20 18:20",
     "trig_01EZ2w2cqt1rMxaNKoECYiUo"
+   ]
+  ]
+ },
+ "one_shots_11nov": {
+  "about": "One-off wakes into the conductor session, created 11 Nov at Vicky's word; and cancelled ones kept disabled, not deleted.",
+  "tasks": [
+   [
+    "SA43 switch to on demand, Fri 13 Nov 06:30, enabled",
+    "trig_019Nq37D5XAaxRXE9cJgv1se"
+   ],
+   [
+    "takedown step 2 (SA48, SA49), Fri 13 Nov 09:20, enabled",
+    "trig_01KvqTrJKrfVn5wBaunZuLxG"
+   ],
+   [
+    "image move part 2 (SA50), Fri 13 Nov 10:00, enabled",
+    "trig_01XgnJTs5agqJWn4mzN2dZf8"
+   ],
+   [
+    "SA39 signed test, cancelled by SA42, disabled",
+    "trig_01Gm8cYQ9WyV794hrVNphdPX"
+   ],
+   [
+    "SA39-FIX dev@ wake, cancelled by SA42, disabled",
+    "trig_015Vw64WQwD2VoCfuBi1uDhH"
+   ],
+   [
+    "THU-GUIDE journalist 20:40 and reviewer 21:25, replaced by direct messages (SA42), disabled",
+    "trig_01GcVRMRj2pTsRFMZbuLPbeD, trig_013bQUrgU8txooeKUT9XztTA"
    ]
   ]
  }
