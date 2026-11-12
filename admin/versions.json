@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2034",
+    "date": "2026-11-12",
+    "what": "weather 12:22 wake, dry and breezy, no Lisbon warning (analysis 45)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "7eeb56946"
+  },
+  {
     "version": "v0.2.2033",
     "date": "2026-11-12",
     "what": "run 30, 165 commits: nothing new (run 26's MEDIUM on the flights publisher still open)",
