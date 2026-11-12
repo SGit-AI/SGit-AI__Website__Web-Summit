@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1990",
+    "date": "2026-11-12",
+    "what": "weather 05:22 wake, new LPPT TAF, same Thursday picture (analysis 37)",
+    "by": "incident.meteorologist@web-summit.dinis",
+    "from": "e38a367ba"
+  },
+  {
     "version": "v0.2.1989",
     "date": "2026-11-12",
     "what": "GAMMA-RAY's bottom as tabs: Respostas, Níveis, Dados, Gráfico, Perguntas",
