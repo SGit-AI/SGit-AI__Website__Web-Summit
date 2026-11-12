@@ -1,25 +1,12 @@
 {
  "about": "IPMA's weather warnings for the Lisbon district (idAreaAviso LSB), non-green only; red and orange warnings elsewhere; and how Lisbon's warnings changed over time. Times are local = UTC (WET). IPMA's open data carries no issue time: `sent_utc` is the sent time of the CAP message (MeteoAlarm, cap.json) matching the warning's area, type, level and window exactly, or null where none matches (never guessed).",
  "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
- "read_utc": "2026-11-12T03:23:40Z",
- "lisbon_peak_level": "yellow",
- "lisbon": [
-  {
-   "type": "Agitação Marítima",
-   "level": "yellow",
-   "start_utc": "2026-11-11T22:44:00Z",
-   "end_utc": "2026-11-12T03:00:00Z",
-   "text_pt": "Ondas de sudoeste com 4 a 5 metros.",
-   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-12T03:23:40Z",
-   "sent_utc": null,
-   "text_en": "SW waves 4 to 5 metres.",
-   "text_en_by": "IPMA (its en-GB text in the CAP message, MeteoAlarm feed)"
-  }
- ],
+ "read_utc": "2026-11-12T04:22:54Z",
+ "lisbon_peak_level": "green",
+ "lisbon": [],
  "red_and_orange_elsewhere": {
   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-  "read_utc": "2026-11-12T03:23:40Z",
+  "read_utc": "2026-11-12T04:22:54Z",
   "items": []
  },
  "history": [
@@ -645,7 +632,24 @@
    ],
    "expired": [],
    "note": "compared with the read at 2026-11-11T23:23:31Z"
+  },
+  {
+   "read_utc": "2026-11-12T04:22:38Z",
+   "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
+   "kind": "fact",
+   "added": [],
+   "removed": [],
+   "expired": [
+    [
+     "Agitação Marítima",
+     "yellow",
+     "2026-11-11T22:44:00Z",
+     "2026-11-12T03:00:00Z",
+     "Ondas de sudoeste com 4 a 5 metros."
+    ]
+   ],
+   "note": "compared with the read at 2026-11-12T03:23:40Z"
   }
  ],
- "next_read_utc": "2026-11-12T04:22Z"
+ "next_read_utc": "2026-11-12T05:22Z"
 }

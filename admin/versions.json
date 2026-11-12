@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1989",
+    "date": "2026-11-12",
+    "what": "GAMMA-RAY's bottom as tabs: Respostas, Níveis, Dados, Gráfico, Perguntas",
+    "by": "dashboard@web-summit.silvio",
+    "from": "49a912c92"
+  },
+  {
     "version": "v0.2.1988",
     "date": "2026-11-12",
     "what": "GAMMA-RAY, every box in the circuit answers a tap with what it means and its values",

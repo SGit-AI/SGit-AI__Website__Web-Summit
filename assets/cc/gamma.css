@@ -135,3 +135,23 @@ html.cc-shell .gr-circ .bc-svg .bc-bus text { paint-order: stroke; stroke: #0410
 #gr-pop p { margin: 0 0 8px; } #gr-pop dl { display: grid; grid-template-columns: 1fr auto; gap: 3px 12px; margin: 0 0 6px; padding: 8px 10px; border-radius: 8px; background: rgba(0,0,0,.3); } #gr-pop dt { color: #8EADA8; } #gr-pop dd { margin: 0; color: #EAF6F3; text-align: right; }
 #gr-pop small { color: #5F7D79; font-size: 12px; } #gr-pop .x { all: unset; cursor: pointer; position: absolute; right: 10px; top: 8px; color: #8EADA8; } #gr-pop .x:focus-visible { outline: 2px solid #FBE2AE; }
 @keyframes grpop { from { opacity: 0; transform: translateY(4px) scale(.98); } }
+
+/* the bottom as tabs (Silvio, 12 November): one panel at a time, full width, nothing cut, room around it */
+html.cc-shell #gamma .gr-tabs { margin: 26px 4px 40px; }
+html.cc-shell #gamma .gr-tabbar { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; border: 1px solid rgba(150,230,215,.18); background: rgba(0,0,0,.3); margin-bottom: 14px; flex-wrap: wrap; }
+html.cc-shell #gamma .gr-tabbar button { all: unset; cursor: pointer; font: 600 12px "Barlow Condensed", sans-serif; letter-spacing: 1.3px; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; color: #8EADA8; }
+html.cc-shell #gamma .gr-tabbar button[aria-selected="true"] { color: #10170F; background: linear-gradient(180deg, #FBE2AE, #D9B26E); } html.cc-shell #gamma .gr-tabbar button:focus-visible { outline: 2px solid #FBE2AE; outline-offset: 2px; }
+html.cc-shell #gamma .gr-tabbody { border-radius: 14px; border: 1px solid rgba(150,230,215,.18); background: rgba(10,28,28,.72); padding: 16px 20px; }
+html.cc-shell #gamma .gr-pane[hidden] { display: none !important; }
+html.cc-shell #gamma .gr-pane { border: 0 !important; padding: 0 !important; margin: 0 !important; max-height: none !important; overflow: visible !important; font: 400 15px/1.55 "Barlow Semi Condensed", "Arial Narrow", sans-serif !important; color: #CFE3DF; background: none !important; }
+html.cc-shell #gamma .gr-pane * { white-space: normal !important; text-overflow: clip !important; max-height: none !important; }
+html.cc-shell #gamma .gr-pane h4 { font: 600 13px "Barlow Condensed", sans-serif !important; letter-spacing: 1.5px; text-transform: uppercase; color: #43D9C6 !important; margin: 0 0 12px !important; display: flex; gap: 12px; } html.cc-shell #gamma .gr-pane h4 em { font-style: normal; color: #FBE2AE; margin-left: auto; }
+html.cc-shell #gamma .gr-pane ol, html.cc-shell #gamma .gr-pane dl { font-size: 15px !important; } html.cc-shell #gamma .gr-pane .bc-log li { display: grid !important; grid-template-columns: 60px 90px 1fr; gap: 10px; padding: 7px 0; border-bottom: 1px solid rgba(150,230,215,.07); }
+html.cc-shell #gamma .gr-pane .bc-dl div { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(150,230,215,.07); }
+html.cc-shell #gamma .gr-pane.gr-detail { font-size: 15px !important; }
+
+html.cc-shell #gamma .gr-pane li, html.cc-shell #gamma .gr-pane li *, html.cc-shell #gamma .gr-pane p, html.cc-shell #gamma .gr-pane p *, html.cc-shell #gamma .gr-pane dt, html.cc-shell #gamma .gr-pane dd { font-size: 15px !important; line-height: 1.5 !important; }
+html.cc-shell #gamma .gr-pane .bc-log li > span { color: #8EADA8 !important; } html.cc-shell #gamma .gr-pane .bc-log li > i { font-style: normal; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; font-size: 12.5px !important; }
+html.cc-shell #gamma .gr-pane .bc-disp { display: grid !important; grid-template-columns: 80px minmax(120px, 1fr) 50px 160px; gap: 14px; align-items: center; padding: 8px 0; margin: 0; border-bottom: 1px solid rgba(150,230,215,.07); }
+html.cc-shell #gamma .gl-track { display: block; height: 10px; border-radius: 6px; background: rgba(255,255,255,.06); overflow: hidden; } html.cc-shell #gamma .gl-bar { display: block; height: 100%; border-radius: 6px; box-shadow: 0 0 8px currentColor; }
+html.cc-shell #gamma .gr-pane .bc-disp em { font-style: normal; color: #EAF6F3; text-align: right; } html.cc-shell #gamma .gr-pane .bc-disp small { color: #8EADA8; } html.cc-shell #gamma .gr-pane .bc-note { color: #5F7D79 !important; margin-top: 10px; }

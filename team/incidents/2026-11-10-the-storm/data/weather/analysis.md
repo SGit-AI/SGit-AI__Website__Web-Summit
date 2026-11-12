@@ -524,3 +524,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (read 03:23:24–03:23:40 UTC): LPPT 02:30 23010KT, Q1000; 03:00 24009KT, light rain shower, no gust, Q1000. Lisbon stations' rain in the hour labelled 02:00: 0.5 mm or less. IPMA's open data still lists Lisbon's yellow sea warning with end 03:00 (read 23 minutes after that end; an expired entry not yet removed). No new CAP batch for any district since 22:43:28 (reads every 5 min to 03:19:20). No new communiqué; LPPT TAF 23:00 unchanged.
 
 **Analysis (high):** Lisbon has had no warning in force since 03:00. Showers, no hazard. Thursday as in section 31.
+
+## 36. 04:25 UTC 12 Nov: open data now shows no warning for Lisbon
+
+**Facts** (read 04:22:38–04:22:54 UTC): IPMA's open data now lists no warning for Lisbon; the expired yellow sea entry (end 03:00) has gone. LPPT 03:30 24009KT, rain shower, visibility 7000 m, Q1000; 04:00 24009KT, no gust, Q1000, recent rain. Lisbon stations' rain in the hour labelled 03:00: at most 1.0 mm (Carnide). No new CAP batch for any district since 22:43:28 (reads every 5 min to 04:19:42). No new communiqué; LPPT TAF 23:00 unchanged. The first read of Open-Meteo's model got HTTP 429 (too many requests); the second read, 16 s later, worked (changes.json records both).
+
+**Analysis (high):** showers, no hazard, no warning. Thursday as in section 31.
