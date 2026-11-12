@@ -1,16 +1,16 @@
 {
  "thursday": {
   "about": "Thursday 12 November (Web Summit's day 3): every IPMA warning for Lisbon that touches Thursday, and what IPMA's model and the airport TAF say for Thursday morning (00:00-12:00 UTC = Lisbon time). Facts, each with its source; no analysis here.",
-  "read_utc": "2026-11-12T10:23:39Z",
+  "read_utc": "2026-11-12T10:34:53Z",
   "lisbon_warnings_touching_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-12T10:23:39Z",
+   "read_utc": "2026-11-12T10:34:53Z",
    "items": [],
    "none_above_yellow": true
   },
   "ipma_model_thursday_morning": {
    "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-   "read_utc": "2026-11-12T10:23:39Z",
+   "read_utc": "2026-11-12T10:34:53Z",
    "model_updated_local": "2026-11-12T07:56:55",
    "wind_mean_kmh_range": [
     16.6,
@@ -183,7 +183,7 @@
   },
   "ipma_daily_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-   "read_utc": "2026-11-12T10:23:39Z",
+   "read_utc": "2026-11-12T10:34:53Z",
    "updated_local": "2026-11-12T09:31:03",
    "precipitaProb": "100.0",
    "tMin": "15.4",
@@ -207,7 +207,7 @@
   },
   "taf_groups_into_thursday": {
    "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-   "read_utc": "2026-11-12T10:23:39Z",
+   "read_utc": "2026-11-12T10:34:53Z",
    "taf_issue_utc": "2026-11-12T05:00Z",
    "taf_valid_to_utc": "2026-11-13T12:00Z",
    "groups": [
@@ -1306,6 +1306,21 @@
     "no change"
    ],
    "errors": []
+  },
+  {
+   "read_utc": "2026-11-12T10:34:53Z",
+   "changes": [
+    "LPPT METAR 10:30: 24 km/h",
+    "met.no forecast updated 2026-11-12T09:20:36Z",
+    "LPMA METAR 10:30: 9 km/h"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-12T10:34:53Z",
+     "error": "HTTP Error 429: Too Many Requests"
+    }
+   ]
   }
  ],
  "next_read_utc": "2026-11-12T11:22Z"

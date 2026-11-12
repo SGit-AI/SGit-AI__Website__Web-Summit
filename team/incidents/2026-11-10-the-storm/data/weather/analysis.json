@@ -541,6 +541,11 @@
    "time_utc": "2026-11-12T10:25Z",
    "section": 42,
    "summary": "Mostly dry; LPPT 10:00 24011KT Q1004, no gust; no Lisbon warning; no new CAP batch since 22:43:28; Open-Meteo answering again (10:23:39)."
+  },
+  {
+   "time_utc": "2026-11-12T10:37Z",
+   "section": 43,
+   "summary": "CAP batch 10:24:25: yellow sea for Setúbal, Beja, Faro, 10:25 to Fri 03:00; nothing for Lisboa or Madeira. LPPT 10:30 23013KT CB nearby Q1005."
   }
  ],
  "next_read_utc": "2026-11-12T11:22Z"
