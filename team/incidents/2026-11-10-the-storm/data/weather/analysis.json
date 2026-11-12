@@ -556,6 +556,11 @@
    "time_utc": "2026-11-12T12:25Z",
    "section": 45,
    "summary": "Dry, breezy: LPPT 12:00 25013KT Q1005, no gust; no Lisbon warning; no new CAP batch since 10:24:25; Open-Meteo at the team's daily limit until 00:00 (last good read 11:23:45)."
+  },
+  {
+   "time_utc": "2026-11-12T12:47Z",
+   "section": 46,
+   "summary": "CAP batch 12:32:25: Update of yellow sea for Setúbal, Beja, Faro, 12:33 to Fri 03:00 (W/SW waves up to 4 m); nothing for Lisboa or Madeira. LPPT 12:30 24014KT Q1005."
   }
  ],
  "next_read_utc": "2026-11-12T13:22Z"

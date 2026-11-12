@@ -23,7 +23,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** stand day. Post version A of today's LinkedIn post (see the top of this page). Before you leave: your phone (key, Wallet card, both apps updated). Everything else is on [your to-do list](todo/index.html).
+**Right now:** stand day. Your pitch for visitors (what RiskMandate does, for customers and investors) is ready in [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/indi/kit/pitch.md). The X-ray now works for any company: X-ray it live with Claude, then make their ABP. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 
