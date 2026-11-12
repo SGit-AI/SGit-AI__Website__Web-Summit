@@ -108,6 +108,11 @@ Standing answer 18 (Vicky, 7 Nov), as in decisions.md: a fix-only follow-up run 
 
 "For company pages, Wikipedia can be a supporting source. The company's own site or its official Web Summit page must support the About section. Please send Persona back to fix until it has that support and keep RWS in fix."
 
+## SA35-WS and SA43-ONDEMAND (Vicky, 11 Nov, about 19:30 and 20:35 UTC), word for word as in decisions.md
+
+- SA35-WS: "From Friday 13 Nov: any further Web Summit news is commissioned for journalist-portugal, category "Web Summit 2026" (standing answer 35); the reviewer checks the category."
+- SA43-ONDEMAND: "From Friday 13 Nov (standing answer 43, `people/vicky/tasks/README.md`): curator, after each fixed run, message the conductor's session with what you commissioned (or none). Journalists and reviewer: you run only when the conductor points you to a task file; when done, reply to the conductor with your commit or result. Your scheduled tasks are disabled by the conductor on Friday morning."
+
 ## Standing rules given in chat
 
 ### 5 November 2026
