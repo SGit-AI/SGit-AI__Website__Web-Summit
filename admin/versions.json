@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2053",
+    "date": "2026-11-12",
+    "what": "HOLD: the show is over; every agent stops (observability drains excepted)",
+    "by": "conductor@web-summit.dinis",
+    "from": "2a991904d"
+  },
+  {
     "version": "v0.2.2052",
     "date": "2026-11-12",
     "what": "17:45 wake: tables for Thu 12 Nov (from the 12 Nov brief), story candidates refreshed",
