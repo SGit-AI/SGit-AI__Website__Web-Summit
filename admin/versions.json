@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2039",
+    "date": "2026-11-12",
+    "what": "journalist@PrompTugal.vicky: report, 12:53 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "aae8e0e18"
+  },
+  {
     "version": "v0.2.2038",
     "date": "2026-11-12",
     "what": "the lab's planner never blocks the stand",
