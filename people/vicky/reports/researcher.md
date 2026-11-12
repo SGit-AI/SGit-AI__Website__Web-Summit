@@ -187,3 +187,11 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - state: ok; done: RULES-11NOV confirmed, new key, task prompt updated (still disabled); next: nothing until the conductor or Vicky gives work; ask: none; run: scheduled
 
 - model check (conductor's task, 11 Nov): ran at 20:39 UTC; state: idle; run: prompted
+
+## Thu 12 Nov 2026, 07:15 UTC run
+
+- decisions.md read first (ten new commits, all from Vicky's account; no HOLD.md; prompts file re-read, no difference); RULES-11NOV kept: no websummit.com, Luma, Meetup or Eventbrite read; the curator's latest map lists no gap for me and the agenda is frozen. 2 captures went into vault 41j3e9s9, audited and pushed; sgit status in sync.
+- Portugal: Discord says in its own job posting that it is opening an engineering hub in Lisbon, its first dedicated one outside San Francisco, with a founding team and the first EMEA IT hire ([Discord, "IT Ops Engineer - Lisbon", posted 8 Oct](https://jobs.generalcatalyst.com/companies/discord-2/jobs/96245323-it-ops-engineer-lisbon)); Diário de Notícias headlined it on 11 Nov, not read.
+- Agents in real work (SA29): [PagerDuty's engineering blog, 11 June](https://www.pagerduty.com/eng/production-ai-agents-closing-the-gaps-between-idea-and-reality/) on launching a multi-agent system: context fatigue, compounding errors, a kill switch from day one; general lessons, no named customer or results; a candidate for the AI desk only with a second source.
+- Not captured: protest and cost stories (outside the positive line); Brazil's TissueLabs awards (headline only, behind a redirect).
+- state: ok; done: 2 captures; next: 11:15 run; ask: none; run: scheduled
