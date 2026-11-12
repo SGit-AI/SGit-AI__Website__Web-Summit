@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2051",
+    "date": "2026-11-12",
+    "what": "17:40 wake: lane drained (empty); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "84ae5fa17"
+  },
+  {
     "version": "v0.2.2050",
     "date": "2026-11-12",
     "what": "17:30 wake: the summit is over; Friday's post (756bb9c1); today's A/B line removed",
