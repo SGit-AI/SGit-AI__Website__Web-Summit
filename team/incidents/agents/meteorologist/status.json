@@ -1,7 +1,7 @@
 {
  "agent": "incident.meteorologist@web-summit.dinis",
- "state": "13:22 wake done: first gust of the day (LPPT 13:00 G25KT, 46 km/h) as the TAF allowed; no Lisbon warning; analysis 47.",
- "last_wake": "2026-11-12T13:22Z",
+ "state": "14:22 wake done: dry, breezy, no Lisbon warning; analysis 48.",
+ "last_wake": "2026-11-12T14:22Z",
  "jobs": [
   "J1 (tonight): the weather as JSON for the dashboard, in team/incidents/2026-11-10-the-storm/data/weather/ with a README per file: IPMA warnings for Lisboa (every level change with the time IPMA issued it and the time read), communiqués, Lisbon station observations (hourly), LPPT TAF and METAR (gusts). Read Vicky's desk's watch.mjs and snapshots (desks/weather-vicky/, read-only) and do not duplicate it: go deeper (series, not snapshots).",
   "J2 (tonight): how far ahead could it be known? The first public sign of CHARLES (communiqué no. 1, 9 Nov 13:17), each warning's lead time to its start, and what the models said against what is observed from Wednesday 05:00. Facts, evidence, hypotheses labelled.",
@@ -27,7 +27,7 @@
   "23:55: every weather file now carries next_read_utc (the next :22 refresh), at incident.conductor@'s request for the librarian's now.json.",
   "12:47: MeteoAlarm's feed served an older copy on some reads (196 messages at 12:47:01, 198 at 12:47:06); a refresh can miss a message the poll saw minutes earlier. Refresh is re-run until it matches."
  ],
- "updated": "2026-11-12T13:27Z",
+ "updated": "2026-11-12T14:26Z",
  "by": "incident.meteorologist@web-summit.dinis",
  "key": {
   "fingerprint": "sha256:ecbf013bbf6722e7",
@@ -366,6 +366,13 @@
   },
   {
    "started_utc": "2026-11-12T13:27Z",
+   "ended_utc": "2026-11-12T14:22Z",
+   "limit": "70 min",
+   "scope": "Lisbon and Madeira CAP messages, and any new batch for any district",
+   "result": "no new CAP message or batch (stopped for the 14:22 wake)"
+  },
+  {
+   "started_utc": "2026-11-12T14:26Z",
    "ended_utc": null,
    "limit": "70 min",
    "scope": "Lisbon and Madeira CAP messages, and any new batch for any district"

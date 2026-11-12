@@ -2,8 +2,8 @@
  "about": "IPMA's own forecast for Lisbon (globalIdLocal 1110600): the 5-day daily forecast and the hourly model forecast (mean wind, no gusts). IPMA's wind classes: 1 weak, 2 moderate, 3 strong, 4 very strong.",
  "daily": {
   "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-  "read_utc": "2026-11-12T13:24:36Z",
-  "updated_local": "2026-11-12T12:31:03",
+  "read_utc": "2026-11-12T14:23:11Z",
+  "updated_local": "2026-11-12T13:31:02",
   "days": [
    {
     "precipitaProb": "100.0",
@@ -1583,7 +1583,7 @@
  ],
  "hourly": {
   "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-  "read_utc": "2026-11-12T13:24:36Z",
+  "read_utc": "2026-11-12T14:23:11Z",
   "updated_local": "2026-11-12T07:56:55",
   "wed_peak": null,
   "rows": [
@@ -2564,8 +2564,8 @@
    "name": "MET Norway Locationforecast 2.0 (complete)",
    "licence": "NLOD 2.0 / CC BY 4.0, data from MET Norway",
    "source": "https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=38.72&lon=-9.14",
-   "read_utc": "2026-11-12T13:24:36Z",
-   "updated_utc": "2026-11-12T11:20:42Z",
+   "read_utc": "2026-11-12T14:23:11Z",
+   "updated_utc": "2026-11-12T13:18:48Z",
    "units": "km/h (converted from m/s), mm, hPa",
    "rows": []
   },
@@ -2573,7 +2573,7 @@
    "name": "Open-Meteo (best match)",
    "licence": "CC BY 4.0, Open-Meteo.com",
    "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
-   "read_utc": "2026-11-12T11:23:45Z",
+   "read_utc": "2026-11-12T14:22:56Z",
    "rows": [
     {
      "time_utc": "2026-11-11T00:00Z",
@@ -2808,36 +2808,36 @@
     },
     {
      "time_utc": "2026-11-12T09:00Z",
-     "wind_mean_kmh": 14.0,
+     "wind_mean_kmh": 14.5,
      "gust_kmh": 35.3,
-     "wind_from_deg": 247,
+     "wind_from_deg": 251,
      "rain_mm": 0.0
     },
     {
      "time_utc": "2026-11-12T10:00Z",
-     "wind_mean_kmh": 17.7,
-     "gust_kmh": 44.6,
-     "wind_from_deg": 253,
-     "rain_mm": 0.0
-    },
-    {
-     "time_utc": "2026-11-12T11:00Z",
-     "wind_mean_kmh": 18.8,
-     "gust_kmh": 50.0,
-     "wind_from_deg": 253,
+     "wind_mean_kmh": 18.1,
+     "gust_kmh": 46.8,
+     "wind_from_deg": 257,
      "rain_mm": 0.1
     },
     {
-     "time_utc": "2026-11-12T12:00Z",
-     "wind_mean_kmh": 19.5,
-     "gust_kmh": 57.2,
-     "wind_from_deg": 251,
+     "time_utc": "2026-11-12T11:00Z",
+     "wind_mean_kmh": 19.3,
+     "gust_kmh": 49.7,
+     "wind_from_deg": 256,
      "rain_mm": 0.3
+    },
+    {
+     "time_utc": "2026-11-12T12:00Z",
+     "wind_mean_kmh": 18.6,
+     "gust_kmh": 55.8,
+     "wind_from_deg": 252,
+     "rain_mm": 0.2
     }
    ]
   }
  },
- "next_read_utc": "2026-11-12T14:22Z",
+ "next_read_utc": "2026-11-12T15:22Z",
  "code_tables": {
   "weather_type": "https://api.ipma.pt/open-data/weather-type-classe.json",
   "wind_speed_class": "https://api.ipma.pt/open-data/wind-speed-daily-classe.json",

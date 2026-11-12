@@ -596,3 +596,9 @@ These go into `gusts-vs-forecast.json` and `changes.json` as observed.
 **Facts** (read 13:24:20–13:24:36 UTC): LPPT 13:00 24015G25KT (gust 46 km/h), no rain, Q1005; 12:30 24014KT, no gust. No rain at Lisbon stations in the hour labelled 12:00. Still no warning for Lisbon. No new CAP batch since 12:32:25 (reads every 5 min to 13:20:21). No new communiqué; LPPT TAF 11:00 unchanged (PROB30 TEMPO 12:00–18:00 25015G25KT). Open-Meteo refused both reads (team's daily limit; last good read 11:23:45).
 
 **Analysis (high):** the 13:00 gust is exactly the TAF's PROB30 group (25015G25KT): the forecast verifying, not a surprise. Gusts about 46 km/h are well below IPMA's yellow wind threshold for Lisbon; dry, no hazard.
+
+## 48. 14:25 UTC 12 Nov: dry, breezy, no warning
+
+**Facts** (read 14:22:56–14:23:11 UTC): LPPT 13:30 25013KT; 14:00 23015KT, no gust, no rain, Q1005. Highest station mean wind in the hour labelled 13:00: 25.6 km/h (Geofísico). No rain at Lisbon stations in the hours labelled 12:00 and 13:00. Still no warning for Lisbon. No new CAP batch since 12:32:25 (reads every 5 min to 14:20:57). No new communiqué; LPPT TAF 11:00 unchanged. Open-Meteo answered the first read (14:22:56) and refused the second (HTTP 429); forecast.json has the 14:22:56 read.
+
+**Analysis (high):** dry and breezy (about 28 km/h), the 13:00 gust not repeated. Rest of Thursday as in section 44; no hazard, no warning.

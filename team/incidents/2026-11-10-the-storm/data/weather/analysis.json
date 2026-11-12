@@ -566,7 +566,12 @@
    "time_utc": "2026-11-12T13:26Z",
    "section": 47,
    "summary": "LPPT 13:00 24015G25KT (gust 46 km/h), the TAF's PROB30 group verifying; dry; no Lisbon warning; no new CAP batch since 12:32:25."
+  },
+  {
+   "time_utc": "2026-11-12T14:25Z",
+   "section": 48,
+   "summary": "Dry, breezy: LPPT 14:00 23015KT Q1005, no gust; no Lisbon warning; no new CAP batch since 12:32:25; Open-Meteo answered once (14:22:56)."
   }
  ],
- "next_read_utc": "2026-11-12T14:22Z"
+ "next_read_utc": "2026-11-12T15:22Z"
 }
