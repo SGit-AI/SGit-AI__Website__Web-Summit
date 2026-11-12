@@ -526,7 +526,12 @@
    "time_utc": "2026-11-12T07:26Z",
    "section": 39,
    "summary": "Showers; LPPT 07:00 25008KT -SHRA Q1002, no gust; no Lisbon warning; no new CAP batch since 22:43:28; Open-Meteo rate-limited (429) all three reads, other sources fine."
+  },
+  {
+   "time_utc": "2026-11-12T08:25Z",
+   "section": 40,
+   "summary": "LPPT 08:00 24007KT VCSH Q1003, no gust; no Lisbon warning; no new CAP batch since 22:43:28; Open-Meteo still rate-limited (last good read 06:23:32)."
   }
  ],
- "next_read_utc": "2026-11-12T08:22Z"
+ "next_read_utc": "2026-11-12T09:22Z"
 }

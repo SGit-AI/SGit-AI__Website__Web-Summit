@@ -1,16 +1,16 @@
 {
  "thursday": {
   "about": "Thursday 12 November (Web Summit's day 3): every IPMA warning for Lisbon that touches Thursday, and what IPMA's model and the airport TAF say for Thursday morning (00:00-12:00 UTC = Lisbon time). Facts, each with its source; no analysis here.",
-  "read_utc": "2026-11-12T07:23:48Z",
+  "read_utc": "2026-11-12T08:23:11Z",
   "lisbon_warnings_touching_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-   "read_utc": "2026-11-12T07:23:48Z",
+   "read_utc": "2026-11-12T08:23:11Z",
    "items": [],
    "none_above_yellow": true
   },
   "ipma_model_thursday_morning": {
    "source": "https://api.ipma.pt/public-data/forecast/aggregate/1110600.json",
-   "read_utc": "2026-11-12T07:23:48Z",
+   "read_utc": "2026-11-12T08:23:11Z",
    "model_updated_local": "2026-11-11T19:56:17",
    "wind_mean_kmh_range": [
     15.1,
@@ -88,7 +88,7 @@
      "rain_prob_pct": null,
      "rain_intensity_class": 1,
      "temp_c": 16.4,
-     "sea_total_m": 3.1,
+     "sea_total_m": 3.2,
      "weather_type_id": 10,
      "weather_type_pt": "Chuva fraca ou chuvisco",
      "weather_type_en": "Light rain",
@@ -200,7 +200,7 @@
      "rain_prob_pct": 88.0,
      "rain_intensity_class": 1,
      "temp_c": 20.5,
-     "sea_total_m": 3.4,
+     "sea_total_m": 3.3,
      "weather_type_id": 7,
      "weather_type_pt": "Aguaceiros/chuva fracos",
      "weather_type_en": "Light showers/rain",
@@ -211,8 +211,8 @@
   },
   "ipma_daily_thursday": {
    "source": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
-   "read_utc": "2026-11-12T07:23:48Z",
-   "updated_local": "2026-11-12T06:31:02",
+   "read_utc": "2026-11-12T08:23:11Z",
+   "updated_local": "2026-11-12T07:31:02",
    "precipitaProb": "100.0",
    "tMin": "15.8",
    "tMax": "20.5",
@@ -235,7 +235,7 @@
   },
   "taf_groups_into_thursday": {
    "source": "https://aviationweather.gov/api/data/taf?ids=LPPT&format=json",
-   "read_utc": "2026-11-12T07:23:48Z",
+   "read_utc": "2026-11-12T08:23:11Z",
    "taf_issue_utc": "2026-11-12T05:00Z",
    "taf_valid_to_utc": "2026-11-13T12:00Z",
    "groups": [
@@ -1249,7 +1249,37 @@
      "error": "<urlopen error [Errno 104] Connection reset by peer>"
     }
    ]
+  },
+  {
+   "read_utc": "2026-11-12T08:22:58Z",
+   "changes": [
+    "THURSDAY: warnings none; model Thu 00-12 mean wind 15.1-22.0 km/h",
+    "stations to 07:00: top mean wind 20.9 km/h at Oeiras / Vila Fria (CMO)",
+    "LPPT METAR 08:00: 13 km/h",
+    "met.no forecast updated 2026-11-12T08:18:49Z",
+    "LPMA METAR 08:00: 4 km/h"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-12T08:22:58Z",
+     "error": "HTTP Error 429: Too Many Requests"
+    }
+   ]
+  },
+  {
+   "read_utc": "2026-11-12T08:23:11Z",
+   "changes": [
+    "no change"
+   ],
+   "errors": [
+    {
+     "source": "https://api.open-meteo.com/v1/forecast?latitude=38.72&longitude=-9.14&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=UTC&start_date=2026-11-11&end_date=2026-11-12",
+     "read_utc": "2026-11-12T08:23:11Z",
+     "error": "<urlopen error [Errno 104] Connection reset by peer>"
+    }
+   ]
   }
  ],
- "next_read_utc": "2026-11-12T08:22Z"
+ "next_read_utc": "2026-11-12T09:22Z"
 }
