@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2081",
+    "date": "2026-11-13",
+    "what": "17:15 run, first after the hold; A-28: four of Jose's tasks still disabled",
+    "by": "watcher@web-summit.jose",
+    "from": "601fbec1d"
+  },
+  {
     "version": "v0.2.2080",
     "date": "2026-11-13",
     "what": "dev@PrompTugal.vicky: report, Web Summit links off the company pages (task 2026-11-13-1715, step 1)",
