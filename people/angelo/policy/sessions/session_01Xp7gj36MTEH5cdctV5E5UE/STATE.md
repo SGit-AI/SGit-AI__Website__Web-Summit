@@ -14,6 +14,7 @@ The account-B session of policy@PrompTugal.angelo (Claude Code session `session_
 - 10 November: added `conductor.b@PrompTugal.angelo` (`people/angelo/**`) and the pipeline workers' entry (`alpha.large.worker@PrompTugal.angelo`, `people/angelo/pipeline/**`) to `../../lanes.json`, at Angelo's word (`c9c73984`).
 - 11 November: added fifteen more worker aliases to that entry: twenty slots, ten large and ten small, each named in full, no wildcard (`36a2a0d0`).
 - 11 November: this hand-over.
+- 13 November: lanes for handover.agent.a@ and handover.agent.b@PrompTugal.angelo (`people/angelo/handover/**`; outside writes on an `Outside:` line), at Angelo's word that they run team requests while he is away.
 
 ## Earlier state, read on 11 November 2026 from `people/angelo/policy/`
 
