@@ -1,6 +1,6 @@
 # Start kit: a new conductor@web-summit.vicky session (14 November 2026)
 
-For Vicky. Prepared by the outgoing session at her word (13 Nov, about 19:00 UTC). She starts the session herself.
+Prepared by the outgoing session at Vicky's word (13 Nov, about 19:00 UTC). **Changed by standing answer 61 (13 Nov, about 19:30 UTC): the outgoing conductor starts the session itself after the 14 Nov brief, with the message below as its first prompt.** The steps under "How to start it" are kept in case that fails.
 
 ## How to start it
 
@@ -19,11 +19,10 @@ Start: on branch dev of SGit-AI/SGit-AI__Website__Web-Summit (never main, never 
 
 Keep the basics: message only Vicky's own team-account agents, each message only "Task: pull dev and read people/vicky/tasks/<file>.md."; never read another session's conversation; never use Gmail; no Notion pages unless Vicky asks; no machine reads of websummit.com, Luma, Meetup or Eventbrite; vault keys never printed or committed; nothing from vault B in any public file.
 
-When done, reply to Vicky with a checklist: your key (commit), your two scheduled tasks (ids and times), the session ids found (count only), what you read, and "next standing answer: 61". Then wait for vault@'s two sealed links and open them.
+When done, reply to Vicky with a checklist: your key (commit), your two scheduled tasks (ids and times), the session ids found (count only), what you read, and "next standing answer: 61". Then wait for vault@'s sealed files for conductor-vicky-3 (committed under data/sealed/) and open them; tell the outgoing conductor (it messaged you first) "Done: vaults opened" so it can stop.
 ```
 
 ## Then, in other windows
 
-- **vault window** (vault@web-summit.vicky): `vault@: reseal vault A (wyt9jdeo) and vault B (lhsdkd4x) from conductor-vicky-2 to conductor-vicky-3, after checking conductor-vicky-3 was added by the new conductor's own commit. Send me the two sealed links for the new conductor.`
-- **new conductor window:** paste the two links when vault@ gives them.
-- **old conductor window:** `Conductor: hand over now. Disable your 08:45 and 20:45 tasks, delete both vault keys, confirm, and stop.`
+- **vault window** (vault@web-summit.vicky), Vicky's one step: `vault@: reseal vault A (wyt9jdeo) and vault B (lhsdkd4x) from conductor-vicky-2 to conductor-vicky-3, after checking conductor-vicky-3 was added by the new conductor's own commit. Commit the sealed files for the new conductor.`
+- The new conductor opens the sealed files from the repository; the outgoing conductor then disables its two tasks, deletes its vault keys and stops (no paste needed).

@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **61** the conductor starts the new conductor session itself after the 14 Nov brief; vault@ reseals at Vicky's word in its own window.
 - **60** STYLE.md "write like a person" rules for every new draft from 13 Nov evening; published articles unchanged until Vicky picks, after a before-and-after sample.
 - **59** the reviewer rewrites hard-to-read update notes on Vicky's desks' articles: past tense, short sentences, no semicolons; dates, facts and article text unchanged.
 - **58** themes 1 to 5 for the researcher and curator from 14 Nov; humans and AI starts with journalist-ai (stories 2 and 3; story 1 held); Pavilion 4 republished; images anywhere moved; the request to Dinis's conductor.
@@ -317,6 +318,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Humans and AI:** journalist-ai owns it, category AI, tag "Humans and AI". Story 2 (where AI lets people down, and what helps) now, then story 3 (women building AI in Portugal); the reviewer may publish each under R-PUB-1. **Story 1 (Vicky's own path) is held completely: nobody drafts, researches or commissions anything for it until Vicky says.**
     - **Not ours:** the Portuguese edition and the Portugal banner are Dinis's to decide; nothing on them.
     - **The images:** the reviewer moves every image not straight under "The story" on Vicky's desks' published articles (dates and text unchanged).
+
+61. **The conductor starts its successor** (Vicky, 13 Nov, about 19:30 UTC, in this window: "Conductor: yes, start the new conductor session yourself after the brief. Also leave Dinis's conductor a one-line note in the newsroom's request folder saying you're doing this for my conductor's handover.")
+    - For this handover only, this replaces standing answer 33's "agent creation stays with Vicky". After the 14 Nov brief, the outgoing conductor creates the session (team account, "Web Summit" environment, Opus, title "conductor") with the start kit's message (`people/vicky/handover/conductor-2026-11-14-start-kit.md`), checks its key and scheduled tasks from its commits, then disables its own two tasks, deletes its vault keys and stops.
+    - The vault reseal stays Vicky's, in vault@'s own window; vault@ commits the sealed files for the new conductor.
 
 ## Updates for agents
 
