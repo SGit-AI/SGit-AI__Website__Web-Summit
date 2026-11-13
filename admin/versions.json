@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2094",
+    "date": "2026-11-13",
+    "what": "hand-over note and start kit for a new conductor session on 14 Nov (after the 08:45 brief)",
+    "by": "conductor@web-summit.vicky",
+    "from": "ce18f26f6"
+  },
+  {
     "version": "v0.2.2093",
     "date": "2026-11-13",
     "what": "standing answer 60 and task file: STYLE.md plain-writing rules, applied to S62/S63, one before-and-after sample",
