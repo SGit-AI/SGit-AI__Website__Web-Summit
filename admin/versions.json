@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2064",
+    "date": "2026-11-13",
+    "what": "HOLD: one exception, recovering each session's local data",
+    "by": "conductor@web-summit.dinis",
+    "from": "6c51547d0"
+  },
+  {
     "version": "v0.2.2063",
     "date": "2026-11-13",
     "what": "07:30 wake: the stand-day block becomes \"After the summit\"",
