@@ -1,3 +1,39 @@
 # crm-pipeline: state
 
-For the digest: project opened by conductor.b@; the lead not started yet, cost so far 0.
+For the digest: design step started (large worker, three options with phone and desktop mocks, made-up people only); nothing for Angelo until the pick; 4 questions waiting (tier 3, none blocking yet); cost so far 0 USD (the lead's own session not counted by the platform per step).
+
+Lead: crm-pipeline.pm@PrompTugal.angelo (started 13 Nov 2026 by conductor.b@ at Angelo's word: "can you spawn a pm for this, and give it the first task of coming up with a good design for this?"). Wake routine: not yet in BRIEF.md (conductor.b@'s next commit); workers read it from BRIEF.md on origin/dev at their end.
+
+## Goal (BRIEF.md)
+One place the whole team records each new connection (who, company, notes, stage, owner, next follow-up and when), stages to contact / to follow up / in conversation / call booked / proposal / won / parked (the middle three loop until won or parked), on the team's private CRM vault, behind a secured UI the team, and only the team, can open. Done when: Angelo says so.
+
+## 1. The private CRM today (WS-170, read only: board and admin/tools/crm.mjs header; the vault itself not read, tier 3)
+- Two vaults on dev.send.sgraph.ai (conductor@web-summit.dinis owns them): `ws-team-crm-public` (public facts, read key in data/crm.json) and `ws-team-crm-private` (the team's records).
+- One layout: companies/<slug>/company.json (+ notes.md), contacts/<slug>/contact.json, actions/<date>-<slug>.json, schedules/<date>/<slug>.json, companies/<c>/comms/<thread>/thread.json (WS-173: subject, owner, state, next_step, updated_at, updated_by), graph/ (derived), schemas/, and a vault app (index.html from admin/tools/crm_app.html.tpl).
+- Keys: the private vault key is sealed to every person's site key and to their conductors (data/sealed/), checked by seal.mjs --verify (WS-178). It opens in the browser on /crm/ (the "dance": the page unseals for the embedded vault app).
+- Layer 2 (per-record sealing, ws-crm-env-1) is paused at Dinis's word (5 Nov): "let's pause for now the double encryption and just use the fact that agents have the vault key." Whoever holds the private key reads and writes everything.
+- Writing needs an SG/Send access token, one per agent (Dinis, 5 Nov: "everybody should have they own SG Send access token"); several asked for (crm-angelo, crm-jose...) and, as far as WS-170 shows, not issued. Browser writing is unsolved (WS-189 q4: sg.auth.check() said valid: false).
+- WS-189 (Silvio's stand desk writing to the private CRM) is the nearest live work: its four questions to Dinis are open, q3 (how a visitor's contact is kept: sealed to interviewer and Dinis, or kept out) included.
+
+## 2. What the pipeline can reuse
+- The vault and its layout; thread.json already has owner, state and next_step: the stage could be a thread's state, or a new record kind. The design says which.
+- The /crm/ page, the vault app and its unseal bridge (Dinis's agents' files: material, the five steps, For: their owners, tier 3 for us to change).
+- Person site keys (data/person-keys.json) as who-is-on-the-team; the roster data/team.json for owners.
+- Silvio's desk flow (WS-189), Silvio's 50 ranked companies (people/silvio/outreach/), Angelo's meetings workflow (people/angelo/meetings/README.md), WS-96 follow-ups: the design looks at these so we build one list, not a second.
+
+## 3. Plan (steps; each a fresh worker)
+1. **d1 design** (large, running): the ten-second add on a phone, the stage board, the record and its history, how it sits on the vault, security and privacy; two or three options with mocks at 390 and 1280 px; a recommendation. Then Angelo's pick (point to him).
+2. d2 spec (large): the record layout, who writes stage changes and how, the agents' API, the tier-3 asks to Dinis as one proposal.
+3. d3 build (large), then a cold-reader check; a proposal to the team only through Angelo.
+
+## Waiting on Angelo (tier 3; none blocks the design)
+1. Reading or writing the private vault: how, and with whose key and token? (Recommendation: nothing until the spec; then crm@PrompTugal.angelo or a new pipeline agent with its own SG/Send token, asked of Dinis through Angelo.)
+2. WS-189 q3, a visitor's contact details: sealed per record (layer 2 back on for contacts) or kept out of the CRM? Dinis's call; the design will show both.
+3. Changing Dinis's /crm/ and admin/tools/crm* (if the pick puts the UI there): the five steps, For: conductor@web-summit.dinis, with Angelo's go.
+4. Proposing it to the team (Dinis replied "yes ... we can then all use it"): through Angelo, after the pick.
+
+## Decided by default (Angelo can reverse)
+- The design brief asks for three options, not two, and for made-up people labelled as such in every mock (privacy).
+
+## Open steps
+- d1 design: brief d1-design/brief.md; worker in runs.md.
