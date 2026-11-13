@@ -45,6 +45,9 @@ Vicky's agents' tasks fire into their own sessions and do not move.
 | Scout's prompt to "whole team, reusable only"; its weekly run is set for Sundays 18:47 UTC | scout's Done | task `2026-11-13-1645-scout-whole-team-weekly.md` |
 | SA58-THEMES: researcher and curator apply themes 1 to 5 from 14 Nov | their 07:15 and 07:35 reports ("applied SA58-THEMES") | `people/vicky/reports/` |
 | SA54-LEDGER: every agent logs each run, generic titles | agents' reports | `people/vicky/ledger/` |
+| **The rules cleanup** (standing answer 63): Vicky said yes, with her answers in the entry. Fix nothing else first; show her the new decisions.md before the prompts files, STYLE.md or standing-rules.md change; retired text to `people/vicky/decisions-archive.md` | you, first job after the hand-over | the outgoing session's proposal is summarised in standing answer 63's answers; re-read the four kinds of file yourself |
+| **The three role changes**, after the cleanup so the prompts are written once: summit journalist to internal journalist, programme to reporter, the designer's hand-over | you, then Vicky pastes | `people/vicky/plans/2026-11-11-repurposing-handovers.md`; send Vicky the paste messages when ready |
+| Live AI Office: no agent spends runs or tokens on it (no commit since 9 Nov; only a link line on the dashboard); keep as it is | none | standing answer 63 |
 | Humans and AI story 1 (Vicky's own path): **held completely**; nobody drafts or researches it | Vicky, after the weekend | standing answer 58 |
 | Interview vault; inbox lanes for the agents' new keys | Dinis | brief "Dinis / stand-up" items |
 | Portuguese edition, Portugal banner | Dinis's to decide; leave | standing answer 58 |
@@ -52,7 +55,7 @@ Vicky's agents' tasks fire into their own sessions and do not move.
 
 ## Numbering
 
-Next standing answer **63**. Next brief **10** (brief 9 was 12 Nov; no brief on 13 Nov, the hold). The curator's storylines continue from **S64**.
+Next standing answer **64**. Next brief **10** (brief 9 was 12 Nov; no brief on 13 Nov, the hold). The curator's storylines continue from **S64**.
 
 ## Checklist for Vicky
 

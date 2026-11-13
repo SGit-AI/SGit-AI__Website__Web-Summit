@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **63** the rules cleanup, after the hand-over, with Vicky's answers; then the three role changes.
 - **62** the inbox lane re-issue request is closed (Vicky, 13 Nov about 21:45 UTC: "Conductor: close the inbox lane requests."); agents work through task files and messages. The interview vault request stays open.
 - **61** the conductor starts the new conductor session itself after the 14 Nov brief; vault@ reseals at Vicky's word in its own window.
 - **60** STYLE.md "write like a person" rules for every new draft from 13 Nov evening; published articles stay as they are (Vicky, 13 Nov about 21:30 UTC: "I think the old ones no need to change starting from the new ones.").
@@ -14,7 +15,7 @@ Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
 - **58** themes 1 to 5 for the researcher and curator from 14 Nov; humans and AI starts with journalist-ai (stories 2 and 3; story 1 held); Pavilion 4 republished; images anywhere moved; the request to Dinis's conductor.
 - **57** every Web Summit link off the company pages (dev's scripted pass, reviewer spot-check); RWS re-sourced, Akamai and Persona held; Teamworks, Rio and Pavilion 4 brought back.
 - **56** cut the three "Media only" lines; the stories-page generator's lists move to their own file after the one-off jobs; scout reads the whole team weekly (Sundays), reusable only.
-- **55** from Friday only the newsroom line runs (researcher and curator three rounds; journalists and reviewer on demand; the conductor's brief, relay and hand-offs); every other agent's scheduled task off.
+- **55** dropped by Vicky on 12 Nov about 21:30 UTC; not in force (the schedule is as restored on 13 Nov, standing answers 43, 51 and 56).
 - **54** WS-213: the token ledger yes (numbers only), every agent logs each run; the router held. The curator marks the 16 withdrawn stories.
 - **53** the conductor warns Vicky first when the account nears its five-hour or weekly limit, with the steps to move the busiest agents to her personal account.
 - **52** a new strand Vicky leads, humans and AI: five angles, proposed in Friday's review; nothing started.
@@ -301,7 +302,7 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **The curator** marks the 16 stories withdrawn on 11 Nov "withdrawn 11 Nov" in its README, status text only (task file `people/vicky/tasks/2026-11-12-2120-curator-withdrawn-marking.md`).
     - **No two-hour usage check** (standing answer 53 stays at the conductor's wakes and hand-offs).
 
-55. **After the summit: only the newsroom line runs** (Vicky, 12 Nov, about 21:10 UTC, in this window: "Dinis's stop was a casual "everyone rest after the summit", not a formal hold. Rest tonight. From Friday run only the newsroom line: researcher, curator, the five journalists and reviewer, plus your own wakes to hand on work. Keep every other agent's scheduled tasks off and list them. Push the ledger title rule before the first run. Tell me which of Friday's planned items need an agent outside the newsroom line, so we can move them to later.")
+55. **Dropped, not in force** (Vicky, 12 Nov, about 21:30 UTC: "Forget my plan to run only the newsroom line tomorrow."; the schedule was restored on 13 Nov at her word, about 16:15 UTC). Kept for the record: **After the summit: only the newsroom line runs** (Vicky, 12 Nov, about 21:10 UTC, in this window: "Dinis's stop was a casual "everyone rest after the summit", not a formal hold. Rest tonight. From Friday run only the newsroom line: researcher, curator, the five journalists and reviewer, plus your own wakes to hand on work. Keep every other agent's scheduled tasks off and list them. Push the ledger title rule before the first run. Tell me which of Friday's planned items need an agent outside the newsroom line, so we can move them to later.")
     - **Scheduled from Friday 13 Nov:** researcher 07:15, 11:15, 15:15; curator 07:35, 11:35, 15:35 (standing answer 51). Journalists and reviewer on demand, through the conductor (standing answer 43). The conductor: brief 08:45, relay 20:45, and each hand-off.
     - **Off (disabled, never deleted), set by the conductor 12 Nov about 21:12 UTC:** the five journalists' and the reviewer's scheduled runs; dashboard (07:50 and 17:45); pm; logistics; programme; scout; checker; the two THU-SUMMIT tasks; the conductor's midday check. On demand only, with no task: dev, vault, security, inbox, designer, synthetic.
     - **The hold files** (`HOLD.md` and `team/conductor/HOLD.md` on this site, `board/HOLD.md` on the newsroom, from conductor@web-summit.dinis, 12 Nov 15:15 and 18:12 UTC) stay where they are: only Dinis removes them. Agents that read them stop, so the newsroom line works only once he removes them or tells Vicky they no longer apply.
@@ -323,6 +324,19 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 61. **The conductor starts its successor** (Vicky, 13 Nov, about 19:30 UTC, in this window: "Conductor: yes, start the new conductor session yourself after the brief. Also leave Dinis's conductor a one-line note in the newsroom's request folder saying you're doing this for my conductor's handover.")
     - For this handover only, this replaces standing answer 33's "agent creation stays with Vicky". After the 14 Nov brief, the outgoing conductor creates the session (team account, "Web Summit" environment, Opus, title "conductor") with the start kit's message (`people/vicky/handover/conductor-2026-11-14-start-kit.md`), checks its key and scheduled tasks from its commits, then disables its own two tasks, deletes its vault keys and stops.
     - The vault reseal stays Vicky's, in vault@'s own window; vault@ commits the sealed files for the new conductor.
+
+59. **The update notes** (Vicky, 13 Nov, about 18:45 UTC, in this window: "please ask the reviewer to check the update notes at the top of every published article from my desks, starting with Europe in Pavilion 4. Rewrite any note that is hard to read now the summit is over: past tense, short sentences, one point per sentence, no semicolons. Keep every date and fact as it is, and don't touch the article text.")
+    - Done 13 Nov by the reviewer (9 of 11 notes rewritten). Future update notes follow the same form.
+
+60. **Write like a person** (Vicky, 13 Nov, about 18:55 UTC, in this window: "many of our articles read like AI wrote them: filler words and the same point repeated in several places. Please update STYLE.md for my desks with these rules, and have the reviewer apply them to every new draft from tonight ... For published articles, change nothing yet."; and about 21:30 UTC: "I think the old ones no need to change starting from the new ones.")
+    - The rules are in the newsroom's `desks/journalist-vicky/STYLE.md`, "Write like a person (Vicky, 13 Nov 2026)". They apply to every new draft; published articles stay as they are.
+
+62. **The inbox lane requests are closed** (Vicky, 13 Nov, about 21:45 UTC, in this window: "Conductor: close the inbox lane requests.")
+    - Vicky's agents work through task files and direct messages; nothing depends on the lanes. The interview vault request stays open.
+
+63. **The rules cleanup, after the hand-over** (Vicky, 13 Nov, about 22:00 UTC, in this window: "Yes to the rules cleanup, after the handover. My answers: - Conflicts: the hold check covers my own HOLD file and Dinis's stop files on both sites. R-PUB-1 wins over the older publishing lines in STYLE.md and 13. 51 wins on the schedule (three rounds a day), and scout runs weekly. Direct dispatch (41/42) replaces "never message another session"; agents may reply to the session that messaged them. - Keep: 27 voice memos, 53 and 54, 12, the fringe-naming rule, the "Web Summit 2026" category, and the Live AI Office for now. - Retire: the agenda freeze, and the storm-site part of the pointer-sources rule (keep lisbontechfringe.com). - Keep the interview shortlist vault but archive its summit rules. Programme hands over to reporter as planned. Move everything retired to people/vicky/decisions-archive.md. Show me the new decisions.md before the prompts files change.")
+    - **Who and when:** the new conductor, after the 14 Nov hand-over. Nothing is deleted: retired text moves to `people/vicky/decisions-archive.md`. It shows Vicky the new decisions.md first; the prompts files, STYLE.md (the reviewer's) and the newsroom's standing-rules change only after her yes.
+    - **Then the role changes** (postponed by the hold): the summit journalist becomes the internal journalist, programme becomes the reporter, and the designer's hand-over, from `people/vicky/plans/2026-11-11-repurposing-handovers.md`, with the new prompts written once, after the cleanup. The conductor sends Vicky the paste messages when they are ready.
 
 ## Updates for agents
 
