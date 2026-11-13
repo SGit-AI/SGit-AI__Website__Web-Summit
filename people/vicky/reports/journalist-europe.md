@@ -117,3 +117,11 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 ## Thu 12 Nov 2026, 20:02 UTC (scheduled run, the Thursday lane)
 
 - state: idle
+
+## Fri 13 Nov 2026, 17:00 UTC (task people/vicky/tasks/2026-11-13-about-claims.md, step 2, pointed by the conductor at 16:26)
+
+- Checked first: the task file was committed by conductor@web-summit.vicky (aae33f22) and quotes Vicky's words of 11 Nov; no hold; dev's ws-only-claims.json was there (6dc76824, 16:22), my part 34 files and 64 claims (21 About, 43 "At Web Summit 2026" lines).
+- Done: newsroom commit a65cc5235, 34 files, all set to status: fix for the reviewer. 21 About claims and IBM's partner line re-cited or reworded to the company's own pages (Fido, Fretefy, Google Cloud, Hablla, IBM, Just Travel, Keewano, Kiggu, KPMG global, ManageEngine, Mastra) and IBM's newsroom release of 10 Nov 2025 (Official AI Partner); Genspark's own site blocks plain requests, so its two sentences now rest on its App Store listing (published by GENSPARK INC). 40 session, stage and listing lines cut: a search for each found no source outside Web Summit. naPorta: one sentence cut (its site's domain has expired). Claims re-sourced 22 (21 About rewrites, counting by claim, plus IBM), cut 41 (40 lines and naPorta's sentence), kept 3. Where a file's At Web Summit section became empty it was removed. dev's check on the files now lists only the 3 kept lines in my part.
+- Needs the conductor's or Vicky's decision: 3 "Media only" press-conference lines kept, in neo (Guardrails for Doomsday), neo4j and linux-foundation-aaif (Open or Closed AI models): the build reads the Media only marker from these lines, so cutting them would un-mark the sessions on the live pages. Left as they are until decided.
+- Searches: 14 web searches for press or the companies' own posts; nothing found outside Web Summit for any session. No machine read of websummit.com, Luma, Meetup or Eventbrite (RULES-11NOV).
+- state: ok; done: step 2 for my part, 34 files in fix; next: nothing until pointed; ask: Media only lines, keep or cut? (I recommend keep until Vicky decides how to source "Media only" without Web Summit); run: prompted
