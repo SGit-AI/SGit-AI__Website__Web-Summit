@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **56** cut the three "Media only" lines; the stories-page generator's lists move to their own file after the one-off jobs; scout reads the whole team weekly (Sundays), reusable only.
 - **55** from Friday only the newsroom line runs (researcher and curator three rounds; journalists and reviewer on demand; the conductor's brief, relay and hand-offs); every other agent's scheduled task off.
 - **54** WS-213: the token ledger yes (numbers only), every agent logs each run; the router held. The curator marks the 16 withdrawn stories.
 - **53** the conductor warns Vicky first when the account nears its five-hour or weekly limit, with the steps to move the busiest agents to her personal account.
@@ -298,6 +299,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Scheduled from Friday 13 Nov:** researcher 07:15, 11:15, 15:15; curator 07:35, 11:35, 15:35 (standing answer 51). Journalists and reviewer on demand, through the conductor (standing answer 43). The conductor: brief 08:45, relay 20:45, and each hand-off.
     - **Off (disabled, never deleted), set by the conductor 12 Nov about 21:12 UTC:** the five journalists' and the reviewer's scheduled runs; dashboard (07:50 and 17:45); pm; logistics; programme; scout; checker; the two THU-SUMMIT tasks; the conductor's midday check. On demand only, with no task: dev, vault, security, inbox, designer, synthetic.
     - **The hold files** (`HOLD.md` and `team/conductor/HOLD.md` on this site, `board/HOLD.md` on the newsroom, from conductor@web-summit.dinis, 12 Nov 15:15 and 18:12 UTC) stay where they are: only Dinis removes them. Agents that read them stop, so the newsroom line works only once he removes them or tells Vicky they no longer apply.
+
+56. **Three decisions after the hold** (Vicky, 13 Nov, about 16:40 UTC, in this window: "Conductor: cut the three Media only lines. Also yes to both earlier proposals: 1. Stories page: go ahead with your four steps, after the three one-off jobs are finished. 2. Scout: update its prompt to "whole team, reusable only" and schedule one run on Sunday evenings so the note reaches Monday's brief. Keep it on Sonnet.")
+    - **Media only:** journalist-europe cuts the three "Media only" lines it kept (neo, neo4j, linux-foundation-aaif); task file `people/vicky/tasks/2026-11-13-1645-europe-cut-media-only.md`.
+    - **The stories page**, after takedown step 2, the image move and the coverage review: the curator moves the generator's lists into `desks/curator/stories.json`, takes the vault path as an argument, adds a `--check` option, and corrects its prompts file to the repo path. Its task file comes then.
+    - **Scout:** one run a week, Sundays 18:47 UTC, on Sonnet; whole team, only what Vicky could reuse; it changes its own prompt (task file `people/vicky/tasks/2026-11-13-1645-scout-whole-team-weekly.md`).
 
 ## Updates for agents
 
