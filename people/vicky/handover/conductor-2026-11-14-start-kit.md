@@ -19,7 +19,7 @@ Start: if PrompTugal/PrompTugal__News__Website is not attached, attach it with a
 
 Keep the basics: message only Vicky's own team-account agents, each message only "Task: pull dev and read people/vicky/tasks/<file>.md."; never read another session's conversation; never use Gmail; no Notion pages unless Vicky asks; no machine reads of websummit.com, Luma, Meetup or Eventbrite; vault keys never printed or committed; nothing from vault B in any public file.
 
-When done, reply to Vicky with a checklist: your key (commit), your two scheduled tasks (ids and times), the session ids found (count only), what you read, and "next standing answer: 61". Then wait for vault@'s sealed files for conductor-vicky-3 (committed under data/sealed/) and open them; tell the outgoing conductor (it messaged you first) "Done: vaults opened" so it can stop.
+When done, reply to Vicky with a checklist: your key (commit), your two scheduled tasks (ids and times), the session ids found (count only), what you read, and "next standing answer: 63". Then wait for vault@'s sealed files for conductor-vicky-3 (committed under data/sealed/) and open them; tell the outgoing conductor (it messaged you first) "Done: vaults opened" so it can stop.
 ```
 
 ## Then, in other windows
