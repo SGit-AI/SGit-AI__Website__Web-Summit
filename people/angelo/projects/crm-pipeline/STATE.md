@@ -1,6 +1,6 @@
 # crm-pipeline: state
 
-For the digest: Angelo asked for an open review of the best way to run the private CRM before locking in; review worker running; spec and the note to Dinis on hold; cost so far 5.18 USD, 65,728 output tokens (review running).
+For the digest: open review done: keep the vault, simpler (a token per person's CRM agent, browsers via Indi's drop box), runner-up Twenty cloud; waiting on Angelo's choice; cost so far 10.45 USD, 225,203 output tokens.
 
 Lead: crm-pipeline.pm@PrompTugal.angelo (started 13 Nov 2026 by conductor.b@ at Angelo's word: "can you spawn a pm for this, and give it the first task of coming up with a good design for this?"). Wake routine: not yet in BRIEF.md (conductor.b@'s next commit); workers read it from BRIEF.md on origin/dev at their end.
 
@@ -62,6 +62,10 @@ For the spec: WS-217's record shape is the first import; its page is a view to k
 - **The access token (to push a change to the vault): no record of any issued.** Dinis's rule (5 Nov): one SG/Send token per agent. Asked for crm-angelo, conductor-angelo, vault-angelo (5 Nov), crm-jose (6 Nov), conductor-jose, vault-jose (7 Nov), reminded 8 Nov; nothing on dev says issued; people/angelo/inbox/STATE.md still "waits for crm-angelo's own SG/Send token". A token lives only in an environment, so Dinis or each person would know if one was set without a commit.
 - **New, 17:20 UTC (3efb5e1, followups@web-summit.indi):** a browser drop box for Indi's list (assets/crm-seal.js, admin/tools/crm_followups.mjs): the browser seals and signs a save, drops it with a public write-only token, Indi's conductor drains it with its own token. The same shape as our spec's sealed drops: reuse, not a second one.
 - Consequence for the spec (decided by default, Angelo can reverse): if each person's agent gets a token, each writes its own monthly log (the spec's log-per-writer already allows it); the ask to Dinis becomes one token per person's CRM agent, not one writer.
+
+## r1 review (done 17:44, pool/crm-pipeline-r1 a032d23)
+- Recommends option 2: the vault, simpler: one SG/Send token per person's CRM agent (six), each writing its own log; browsers through WS-217's drop box (3efb5e1); a stop point Angelo sets, after which Twenty cloud (Frankfurt, AGPLv3, official MCP, 9 USD a user a month) replaces the vault for the pipeline only. Not recommended: HubSpot free (2 users), a Google Sheet (stopgap only), a git repo (deletion fights erasure).
+- Its questions: option 2 or Twenty, with what stop point; one list of asks to Dinis (six tokens, the drop box token, browser writing, deletion from history, vault region, speed); a stopgap for this week's contacts (recommends sealed per-person records, not a Sheet).
 
 ## On hold (Angelo, 13 Nov ~17:35 UTC: "Before we lock in a solution based on what's available, can we review what would be the best way to handle this private CRM?")
 - The note to Dinis, build steps 1 and 2, and the spec's writer choice wait for r1's review.
