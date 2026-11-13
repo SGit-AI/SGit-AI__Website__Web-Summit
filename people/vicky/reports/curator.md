@@ -294,3 +294,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Task 2026-11-12-2120: 13 of the 16 stories marked "withdrawn 11 Nov" in the README, status text only, set in the generator; BR3, BR4 and WK1 are not on the curator's page. Commit bddb808aa, live in promptugal.news v0.1.1417.
 - Task 2026-11-13-curator-evidence: of the 31 Web Summit evidence captures, 0 re-cited (I do not open sources and the other pages were not read for these facts), 17 marked withdrawn, 13 left with withdrawn stories, 1 left (Vicky's own browser read, S58). Marks are in `desks/curator/2026-11-13-1635-evidence.json`; the evidence schema has no withdrawn field, so dev would need to show it. Commit 8b24544b5, live v0.1.1418.
 - state: ok; done: both tasks released, S61 released; next: curator run Fri 15:35 was missed, next Sat per schedule (standing answers 43/49: 07:35 and 15:35); ask: none; run: prompted
+
+## Fri 13 Nov 2026, 17:50 UTC (task 2026-11-13-1740-curator-stories-json)
+
+- The README generator now reads its lists (stories, rests, PUBLISHED, WITHDRAWN, DROPPED, READY, ASSIGN, plus DRAFTED and EXTRA_SRC) from `desks/curator/stories.json`; `--captures <folder>` (clear message if missing) and `--check` (exits 1 on a difference, ignores "Last updated") added. The README it writes is identical to the previous one apart from that line, and `--check` passes. Newsroom commit 0e7dda3d5, live in promptugal.news v0.1.1429.
+- S61 (Humanos, Road 2 Web Summit's winner) was published at 17:26 UTC ([article](https://promptugal.news/articles/humanos-road-2-web-summit-winner.html)); the generator's duplicate guard caught it as already written, so it is marked published and the ready list is empty.
+- Prompts file: the old scratchpad path (line 41) now says `desks/curator/tools/readme.py`, and the step-5 text mentions `stories.json`; my scheduled prompt says the same (changed with the scheduler, word for word in the file).
+- state: ok; done: stories.json refactor, prompts file and scheduled prompt updated; next: curator runs 07:35 and 15:35 per schedule; ask: none; run: prompted
