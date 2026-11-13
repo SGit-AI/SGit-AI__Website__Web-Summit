@@ -1,0 +1,266 @@
+{
+ "number": 10,
+ "date": "2026-11-13",
+ "kicker": "Web Summit 2026 · token accountant",
+ "title": "Brief 10: after the summit, fewer wakes",
+ "when": "13 November 2026, 17:40 UTC (window: since brief 9, 12 November 17:38 UTC; Dinis's hold 12 Nov 18:13 to 13 Nov 15:53)",
+ "by": "accountant@web-summit.indi",
+ "headline": "967,992 fresh tokens from dashboard and me; with the summit over, the biggest saving is fewer wakes: dashboard once a day instead of three saves about 725,000 a day, and me weekly saves about 200,000.",
+ "stats": [
+  {
+   "n": "967,992",
+   "label": "tokens today (fresh, Indi's agents)"
+  },
+  {
+   "n": "3,643,167",
+   "label": "cache reads today"
+  },
+  {
+   "n": "2 of 17",
+   "label": "agents measured of agents running"
+  },
+  {
+   "n": "~925,000",
+   "label": "fresh saving per day from A10 (from measured wakes)"
+  }
+ ],
+ "for_you": [
+  {
+   "id": "A10",
+   "ask": "After the summit: dashboard once a day, and me weekly?",
+   "detail": "Dashboard runs 07:30, 12:30 and 17:30 at 362,440 fresh a wake (up from 219,031 on 8 Nov), 100% of it re-loading. Old: cron 30 7,12,17 * * *. New: cron 30 7 * * *. Saving about 725,000 fresh a day (two wakes of 362,440). Me: old cron 30 17 * * *, new 30 17 * * 5 (Friday), saving about 200,000 a day; my nine wakes cost 1,599,987 fresh with nothing yet applied. Vicky moved to a lighter after-summit plan today.",
+   "options": [
+    "Yes, both",
+    "Dashboard only",
+    "Neither"
+   ],
+   "recommend": "Yes, both"
+  },
+  {
+   "id": "A6",
+   "ask": "Fresh sessions with the full kit prompt (brief 7)?",
+   "detail": "Still open; with A10 it matters less, but each wake would drop from about 362,440 toward 12,676.",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "recommend": "Yes"
+  },
+  {
+   "id": "A9",
+   "ask": "New session per overnight round (brief 8)?",
+   "detail": "Still open, if the overnight helpers run again after the summit.",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "recommend": "Yes"
+  }
+ ],
+ "you_asked": [],
+ "sections": [
+  {
+   "title": "1. Ledger",
+   "table": {
+    "head": [
+     "Agent",
+     "Wakes",
+     "Fresh input",
+     "Output",
+     "Cache write",
+     "Cache read",
+     "Sub-agent tokens",
+     "Per wake (trend)",
+     "Pass rate"
+    ],
+    "rows": [
+     [
+      "dashboard",
+      "2",
+      "14",
+      "2,625",
+      "722,242",
+      "2,167,738",
+      "0",
+      "362,440 (up from 349,152)",
+      "2/2"
+     ],
+     [
+      "accountant",
+      "1",
+      "12",
+      "6,348",
+      "236,751",
+      "1,475,429",
+      "0",
+      "243,111 (up from 233,409)",
+      "1/1"
+     ],
+     [
+      "15 others",
+      "0",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "2. Biggest three savings",
+   "items": [
+    "Fewer wakes after the summit (A10): about 925,000 fresh a day, from measured wakes.",
+    "Fresh sessions (A6): dashboard writes 2,625 tokens of output for 722,242 of re-loading.",
+    "Overnight rounds (A9): only if they run again."
+   ]
+  },
+  {
+   "title": "3. Model tests run",
+   "text": "None: A7 open."
+  },
+  {
+   "title": "4. Agents not yet measuring",
+   "text": "Only the conductor ran (2 commits), still without a line. The hold kept the rest still."
+  },
+  {
+   "title": "5. Data notes and 6. My own use",
+   "text": "tally.py. Dinis's hold (WS-214) ran 12 Nov 18:13 to 13 Nov 15:53 UTC; I did not wake in it. Correction: my wake 9 cost 243,111 fresh, not 196,429 as its commit said; I now write the commit after reading the measure. Inbox report sent. This wake: brief 11."
+  }
+ ],
+ "next": [
+  "Brief 11 on 14 November, or on Friday 20 November if A10 is yes."
+ ],
+ "sources": [
+  "people/indi/accountant/ledger/ (via tally.py)",
+  "HOLD.md history",
+  "git log since brief 9"
+ ],
+ "friendly": {
+  "title": "Your agents' token use, 13 November",
+  "summary": "Web Summit is over and Dinis's hold has lifted. Your agents can now run less often. Dashboard once a day instead of three times, and me once a week, would save about 925,000 tokens a day.",
+  "numbers": [
+   {
+    "n": "967,992",
+    "label": "Fresh tokens today",
+    "explain": "Dashboard and me."
+   },
+   {
+    "n": "362,440",
+    "label": "One dashboard run",
+    "explain": "Three a day; almost all re-loading."
+   },
+   {
+    "n": "1.6 million",
+    "label": "My nine briefs",
+    "explain": "Nothing applied yet, so nothing saved yet."
+   },
+   {
+    "n": "~925,000",
+    "label": "Saving per day (A10)",
+    "explain": "From measured runs."
+   }
+  ],
+  "agents": [
+   {
+    "name": "dashboard, accountant",
+    "state": "report",
+    "on": true
+   },
+   {
+    "name": "15 others",
+    "state": "quiet (hold)",
+    "on": false
+   }
+  ],
+  "bars_title": "Dashboard: fresh tokens per run",
+  "bars": [
+   {
+    "label": "8 Nov",
+    "value": 219031,
+    "shown": "219,031"
+   },
+   {
+    "label": "10 Nov",
+    "value": 205992,
+    "shown": "205,992"
+   },
+   {
+    "label": "11 Nov",
+    "value": 327129,
+    "shown": "327,129"
+   },
+   {
+    "label": "12 Nov",
+    "value": 349152,
+    "shown": "349,152"
+   },
+   {
+    "label": "13 Nov",
+    "value": 362440,
+    "shown": "362,440"
+   }
+  ],
+  "bars_note": "Three of these a day now. One a day after the summit is enough.",
+  "savings": [
+   {
+    "title": "Dashboard once a day",
+    "plain": "The summit is over; one update each morning.",
+    "evidence": "About 725,000 a day."
+   },
+   {
+    "title": "Me once a week",
+    "plain": "A Friday brief, until your agents change.",
+    "evidence": "About 200,000 a day."
+   },
+   {
+    "title": "Fresh sessions",
+    "plain": "Still worth it for whatever keeps running.",
+    "evidence": "A fresh run measured 12,676."
+   }
+  ],
+  "decisions": [
+   {
+    "id": "A10",
+    "question": "Dashboard once a day and me weekly?",
+    "plain": "Your conductor changes the two schedules.",
+    "options": [
+     "Yes, both",
+     "Dashboard only",
+     "Neither"
+    ],
+    "recommend": "Yes, both"
+   },
+   {
+    "id": "A6",
+    "question": "Fresh sessions for daily runs?",
+    "plain": "Still open from brief 7.",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "recommend": "Yes"
+   },
+   {
+    "id": "A9",
+    "question": "New session per overnight round?",
+    "plain": "Only if they run again.",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "recommend": "Yes"
+   }
+  ],
+  "glossary": [
+   [
+    "Re-loading",
+    "a long session writing its whole history back into memory after a pause."
+   ]
+  ],
+  "next": "14 November, or Friday 20 November if A10 is yes."
+ }
+}
