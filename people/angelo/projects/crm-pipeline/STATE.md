@@ -37,6 +37,9 @@ One place the whole team records each new connection (who, company, notes, stage
 - 13 Nov, point 1 (the plan, the vault approach above): "Yes, go ahead".
 - 13 Nov, point 2 (contact details): team-wide, no sealing: "Those who'll have access to the vault are only the members of the team and they are allowed to see the contacts because we're all part of this work."
 
+## Angelo's leaning (not yet the pick)
+- 13 Nov ~16:35 UTC, on the three options as outlined (A a page under /crm/, B the vault's own app, C agent-first): "I like option B, but let's see if the worker has better ideas." The pick waits for d1's design.md.
+
 ## Decided by default (Angelo can reverse)
 - The design brief asks for three options, not two, and for made-up people labelled as such in every mock (privacy).
 
