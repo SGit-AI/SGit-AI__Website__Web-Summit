@@ -9,6 +9,8 @@ script: crm
 ```crm
 ```
 
+**The follow-up list** (WS-217): the people we met at Web Summit and still have to follow up, sealed in the private CRM and opened on [its own page](follow-ups/index.html) with your key.
+
 ## The two CRMs {#two}
 
 | | Public CRM | Private CRM |

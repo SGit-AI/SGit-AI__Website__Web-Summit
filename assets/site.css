@@ -689,6 +689,29 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
 .crm-plist li.opened { border-color: var(--ok); background: var(--ok-soft); }
 .crm-plist li.not-you { opacity: 0.75; }
 .crm-plist.mine li:not(.opened) { display: none; }
+.fu-head { display: grid; gap: 0.4rem; margin: 0.4rem 0 1rem; }
+.fu-count { margin: 0; }
+.fu-bar { height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.fu-bar i { display: block; height: 100%; background: var(--accent); }
+.fu-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1rem; }
+.fu-pill { font: 600 0.9rem var(--sans); padding: 0.45rem 0.95rem; border-radius: 999px; border: 2px solid transparent; cursor: pointer; display: inline-flex; gap: 0.45rem; align-items: center; color: var(--ink); background: var(--surface-2); }
+.fu-pill span { font-size: 0.78rem; padding: 0 0.45rem; border-radius: 999px; background: var(--surface); }
+.fu-pill[aria-pressed="true"] { border-color: currentColor; }
+.fu-investor { color: var(--warn); background: var(--warn-soft); }
+.fu-customer { color: var(--sent); background: var(--sent-soft); }
+.fu-partner { color: var(--ok); background: var(--ok-soft); }
+.fu-other, .fu-all { color: var(--wait); background: var(--wait-soft); }
+.fu-list { list-style: none; padding: 0; margin: 0 0 1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.fu-row { display: grid; grid-template-columns: auto 1fr auto; gap: 0.35rem 0.8rem; align-items: start; padding: 0.7rem 0.9rem; margin: 0; }
+.fu-row + .fu-row { border-top: 1px solid var(--line); }
+.fu-who { display: grid; gap: 0.15rem; min-width: 0; }
+.fu-role { color: var(--ink-2); overflow-wrap: anywhere; }
+.fu-note { font-size: 0.9rem; padding: 0.3rem 0.5rem; border-radius: 8px; background: var(--surface-2); }
+.fu-tag { font-size: 0.75rem; font-weight: 600; padding: 0.05rem 0.5rem; border-radius: 999px; justify-self: start; }
+.fu-done .fu-who b { text-decoration: line-through; color: var(--ink-2); }
+.fu-donebox { margin: 0 0 1rem; }
+.fu-donebox summary { cursor: pointer; font-weight: 600; padding: 0.4rem 0; }
+@media (max-width: 520px) { .fu-row { grid-template-columns: auto 1fr; } .fu-row > a { grid-column: 2; } }
 .crm-pfilter { margin: 0.6rem 0 0; }
 @media (max-width: 48rem) { .crm-cols { grid-template-columns: 1fr; } .crm-list { max-height: 18rem; } .crm-fig text { font-size: 15px; } }
 

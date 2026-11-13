@@ -155,6 +155,12 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push('<div class="crm" id="crm"><p class="meta">The diagram and the live CRM need JavaScript: they are drawn here by the page.</p></div>')
+        } else if (/^```crm-follow-ups\s*$/.test(l)) {
+            // the follow-up list (WS-217, followups@web-summit.indi): a mount for assets/crm-follow-ups.js, which opens the
+            // sealed record in the private CRM with the reader's own key; no contact is ever in the page
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push('<div class="crm-box" id="crm-follow-ups"><p class="meta">Team only. The list needs JavaScript and your site key: it is opened from the private CRM in your browser.</p></div>')
         } else if (/^```xray\s*$/.test(l)) {
             // the RiskMandate X-ray (xray@web-summit.dinis): a mount for assets/xray.js (front matter script: xray), with every subject as a plain link
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
@@ -644,6 +650,7 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js?v=${VERSION}" defer></script>` : ''
     md = md.replace(/^```sticker-vault\s*\n```\s*$/m, '*The vault with full access is opened on the HTML page by assets/stickers-vault.js, for a person the vault key is sealed to.*')
     md = md.replace(/^```crm\s*\n```\s*$/m, '*On the HTML page: a diagram of the two layers, the public CRM browsed live with its published read key, and, for a person whose browser holds their key, Open the private CRM (assets/crm.js, from data/crm.json).*')
+    md = md.replace(/^```crm-follow-ups\s*\n```\s*$/m, '*On the HTML page, for a team member whose browser holds their key: the list, opened from the private CRM (assets/crm-follow-ups.js). No contact is in this file.*')
     md = md.replace(/^```xray\s*\n```\s*$/m, () => `*On the HTML page: the input, the replay of each run and the graph, drawn by assets/xray.js.* The subjects X-rayed so far:\n\n${xrayIndexMd(XRAY)}`)
     md = md.replace(/^```sticker-vote\s*\n```\s*$/m, '*The vote: the twelve stickers, the Vote button, the vault and who has voted are drawn on the HTML page by assets/stickers-vote.js, from data/stickers-vote.json.*')
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index', head }))
