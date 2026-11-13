@@ -8,7 +8,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
 - **61** the conductor starts the new conductor session itself after the 14 Nov brief; vault@ reseals at Vicky's word in its own window.
-- **60** STYLE.md "write like a person" rules for every new draft from 13 Nov evening; published articles unchanged until Vicky picks, after a before-and-after sample.
+- **60** STYLE.md "write like a person" rules for every new draft from 13 Nov evening; published articles stay as they are (Vicky, 13 Nov about 21:30 UTC: "I think the old ones no need to change starting from the new ones.").
 - **59** the reviewer rewrites hard-to-read update notes on Vicky's desks' articles: past tense, short sentences, no semicolons; dates, facts and article text unchanged.
 - **58** themes 1 to 5 for the researcher and curator from 14 Nov; humans and AI starts with journalist-ai (stories 2 and 3; story 1 held); Pavilion 4 republished; images anywhere moved; the request to Dinis's conductor.
 - **57** every Web Summit link off the company pages (dev's scripted pass, reviewer spot-check); RWS re-sourced, Akamai and Persona held; Teamworks, Rio and Pavilion 4 brought back.
