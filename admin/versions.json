@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2095",
+    "date": "2026-11-13",
+    "what": "task file: the reviewer re-checks S63 after the STYLE.md task",
+    "by": "conductor@web-summit.vicky",
+    "from": "09741afd1"
+  },
+  {
     "version": "v0.2.2094",
     "date": "2026-11-13",
     "what": "hand-over note and start kit for a new conductor session on 14 Nov (after the 08:45 brief)",
