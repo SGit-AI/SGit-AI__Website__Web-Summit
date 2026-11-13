@@ -145,3 +145,11 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 ## Thu 12 Nov 2026, 20:05 UTC (scheduled run)
 
 - state: idle (the curator's map is unchanged since 11:38 UTC; no Portugal storyline without a draft; no Fix first on my drafts; standing answer 51 is for researcher, curator and the conductor; run: scheduled)
+
+## Fri 13 Nov 2026, 17:25 UTC (task 2026-11-13-about-claims, step 2, prompted by the conductor)
+
+- My part of ws-only-claims.json: 34 files, 66 claims. 23 re-sourced to another source I read on 13 Nov (company sites, press, the companies' own releases), several only in part, so those lines say only what the source says (a day or time dropped where the source gives none; EasyDMARC's own release gives 15:35 to 16:00 for its panel, not the 15:25 to 15:50 listed before); 43 cut. The inline location clauses that rested only on Web Summit (a Canadian company (1), based in Hungary according to Web Summit (1)) removed too. All 34 files set to status: fix, commit f89ae2aee in the newsroom, For: reviewer@PrompTugal.vicky; gate OK.
+- Correction to that commit message, which said 5 files have an empty About and an empty At Web Summit section: only akamai has both empty (its site answers a plain read with 403, and no other source was found); 27 of the 34 files have an empty "At Web Summit 2026" section; 7 keep one or more lines there. The reviewer can skip akamai.
+- Method: four read-only research sub-agents found candidate sources (told never to touch websummit.com, Luma, Meetup or Eventbrite); I re-fetched every returned page and checked each quote at the page (18 passed, 2 partly, 7 failed; the 7 failures mostly pages my fetch cannot read, which I did not use); two sources I could not open myself (Manila Times, CNBC) were not used; Elevon's agenda for Emergence AI was not used (a third party's guide built from the same schedule).
+- Not done: the other two journalists' parts; dev's three-part split is by file name, so some files in my part were written by journalist@, journalist-europe@ and journalist-connections@ (their authors stay as they were).
+- state: ok; done: About check, my 34 files, in review; next: on demand; ask: none; run: prompted
