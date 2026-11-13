@@ -24,3 +24,4 @@ summary: One line per worker session conductor.b@ starts, appended, never rewrit
 
 **Rule from 11 Nov (Angelo):** every agentic activity is tracked through commits. An in-session sub-agent gets a line here, its result committed and its tokens in the ledger, in the same commit; work that can wait goes to a worker session, which commits for itself.
 - 2026-11-12 06:58 to 07:00 UTC: sub-agent (in session, general-purpose), the overnight overview of the four websites for Angelo, read only; 9 tool calls, about 121k tokens; result given to Angelo in the session.
+- 2026-11-13 ~16:00 UTC: three PMs retired and archived at Angelo's word; their own sessions' platform cost at the end (API-equivalent, get_session): riskmandate-android-demo.pm@ 62.02 USD, prod-pipeline.pm@ 70.10 USD, network-views.pm@ 25.87 USD (workers counted in each project's runs.md).
