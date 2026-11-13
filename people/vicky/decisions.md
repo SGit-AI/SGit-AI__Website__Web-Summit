@@ -322,6 +322,7 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **The images:** the reviewer moves every image not straight under "The story" on Vicky's desks' published articles (dates and text unchanged).
 
 61. **The conductor starts its successor** (Vicky, 13 Nov, about 19:30 UTC, in this window: "Conductor: yes, start the new conductor session yourself after the brief. Also leave Dinis's conductor a one-line note in the newsroom's request folder saying you're doing this for my conductor's handover.")
+    - **Timing changed** (Vicky, 13 Nov, about 22:05 UTC: "Send the 08:45 brief as usual, but don't start the new conductor session until I say "go" in your window. Then we do the handover steps back to back."): the session is created only after her "go".
     - For this handover only, this replaces standing answer 33's "agent creation stays with Vicky". After the 14 Nov brief, the outgoing conductor creates the session (team account, "Web Summit" environment, Opus, title "conductor") with the start kit's message (`people/vicky/handover/conductor-2026-11-14-start-kit.md`), checks its key and scheduled tasks from its commits, then disables its own two tasks, deletes its vault keys and stops.
     - The vault reseal stays Vicky's, in vault@'s own window; vault@ commits the sealed files for the new conductor.
 
