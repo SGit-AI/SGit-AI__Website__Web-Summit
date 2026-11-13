@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2065",
+    "date": "2026-11-13",
+    "what": "conductor.b@PrompTugal.angelo: all agents paused (five routines off)",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "eb59c2918"
+  },
+  {
     "version": "v0.2.2064",
     "date": "2026-11-13",
     "what": "HOLD: one exception, recovering each session's local data",
