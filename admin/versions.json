@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2102",
+    "date": "2026-11-13",
+    "what": "standing answer 60: published articles stay as they are; the style rules apply to new drafts only",
+    "by": "conductor@web-summit.vicky",
+    "from": "355ec4797"
+  },
+  {
     "version": "v0.2.2101",
     "date": "2026-11-13",
     "what": "ask Indi's agents to add inbox-vicky to the follow-up list's readers and an add-a-contact option (WS-217)",
