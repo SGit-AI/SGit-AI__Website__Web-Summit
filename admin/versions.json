@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2101",
+    "date": "2026-11-13",
+    "what": "ask Indi's agents to add inbox-vicky to the follow-up list's readers and an add-a-contact option (WS-217)",
+    "by": "conductor@web-summit.vicky",
+    "from": "67953bd81"
+  },
+  {
     "version": "v0.2.2100",
     "date": "2026-11-13",
     "what": "six follow-up drafts saved; list entries waiting on access",
