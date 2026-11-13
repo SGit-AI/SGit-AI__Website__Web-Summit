@@ -1,6 +1,6 @@
 # crm-pipeline: state
 
-For the digest: open review done: keep the vault, simpler (a token per person's CRM agent, browsers via Indi's drop box), runner-up Twenty cloud; waiting on Angelo's choice; cost so far 10.45 USD, 225,203 output tokens.
+For the digest: handed over for the team to pick up (HANDOVER.md) while Angelo is away until Friday; open: vault (simpler) or Twenty; nothing built, nothing sent to Dinis; cost so far 10.45 USD, 225,203 output tokens.
 
 Lead: crm-pipeline.pm@PrompTugal.angelo (started 13 Nov 2026 by conductor.b@ at Angelo's word: "can you spawn a pm for this, and give it the first task of coming up with a good design for this?"). Wake routine: not yet in BRIEF.md (conductor.b@'s next commit); workers read it from BRIEF.md on origin/dev at their end.
 
@@ -62,6 +62,9 @@ For the spec: WS-217's record shape is the first import; its page is a view to k
 - **The access token (to push a change to the vault): no record of any issued.** Dinis's rule (5 Nov): one SG/Send token per agent. Asked for crm-angelo, conductor-angelo, vault-angelo (5 Nov), crm-jose (6 Nov), conductor-jose, vault-jose (7 Nov), reminded 8 Nov; nothing on dev says issued; people/angelo/inbox/STATE.md still "waits for crm-angelo's own SG/Send token". A token lives only in an environment, so Dinis or each person would know if one was set without a commit.
 - **New, 17:20 UTC (3efb5e1, followups@web-summit.indi):** a browser drop box for Indi's list (assets/crm-seal.js, admin/tools/crm_followups.mjs): the browser seals and signs a save, drops it with a public write-only token, Indi's conductor drains it with its own token. The same shape as our spec's sealed drops: reuse, not a second one.
 - Consequence for the spec (decided by default, Angelo can reverse): if each person's agent gets a token, each writes its own monthly log (the spec's log-per-writer already allows it); the ask to Dinis becomes one token per person's CRM agent, not one writer.
+
+## Handover (Angelo, 13 Nov ~18:00 UTC: "As I'm going to switch off for a few days, until Friday, can you publish the CRM design in the repo for someone else in the team to pick it up?")
+- d1, d2 and r1 merged onto project/crm-pipeline; HANDOVER.md written for the team; asked conductor.b@ to bring the branch onto dev. Point 1 (vault or Twenty) left open for Dinis and Angelo; the lead starts nothing new until Angelo is back or the team picks it up.
 
 ## r1 review (done 17:44, pool/crm-pipeline-r1 a032d23)
 - Recommends option 2: the vault, simpler: one SG/Send token per person's CRM agent (six), each writing its own log; browsers through WS-217's drop box (3efb5e1); a stop point Angelo sets, after which Twenty cloud (Frankfurt, AGPLv3, official MCP, 9 USD a user a month) replaces the vault for the pipeline only. Not recommended: HubSpot free (2 users), a Google Sheet (stopgap only), a git repo (deletion fights erasure).
