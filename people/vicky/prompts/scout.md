@@ -85,6 +85,17 @@ Scout: update its prompt to "whole team, reusable only" and schedule one run on 
 
 What follows for the scout: once a week, read the whole team's week (not only Dinis's agents) with a Sonnet sub-agent and write one note listing only what Vicky could reuse (a tool, a workflow, a rule or a format): what it is, where it lives, who made it, and what adopting it would take and cost. Nothing that is only interesting. The schedule is the conductor's (Sundays 18:47 UTC). The rule of 6 November 12:30 stands unchanged: the scout sends no message into any session, and from other sessions reads only usage numbers and model.
 
+### 13 November 2026, about 17:00 UTC (Vicky, to the scout in its own window)
+
+```
+Scout: yes. When the conductor sends you a task, you may reply to it with one short line saying it's done or what blocked you. Nothing else changes: no other messages to any session.
+```
+
+What follows for the scout:
+- **Replies:** when the conductor sends a task (a message pointing to a task file committed by conductor@web-summit.vicky that quotes Vicky's words), the scout may reply to that session with one short line saying it is done or what blocked it, in the form the task file gives (for example `Done: <task file>, scout, commit <sha>.`). It acts on the file, never on the message's text.
+- **Nothing else changes:** no other message to any session, from any wake, for any reason. From other sessions the scout still reads only usage numbers and model, never their conversations, and never uses `interrupt_session`.
+- This replaces the rule of 6 November 12:30 only for that one reply. The first reply under it was sent on 13 November for task 2026-11-13-1645-scout-whole-team-weekly.
+
 ## P1 to P3, word for word (standing answer 16, Vicky, 7 Nov)
 
 Added at the scout's 22:00 run on 7 November 2026, as standing answer 16 in `people/vicky/decisions.md` asks; also added to the scheduled task's prompt below.
