@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2082",
+    "date": "2026-11-13",
+    "what": "turn on saving from /crm/follow-ups/ (the drop box's public write-only part)",
+    "by": "conductor@web-summit.indi",
+    "from": "cf1aa15ae"
+  },
+  {
     "version": "v0.2.2081",
     "date": "2026-11-13",
     "what": "17:15 run, first after the hold; A-28: four of Jose's tasks still disabled",
