@@ -1,6 +1,6 @@
 # crm-pipeline: state
 
-For the digest: design done, waiting on Angelo's pick (he leans to B, the vault's own app; the worker recommends A, a tab on /crm/ written by agents first); cost so far 3.29 USD, 45,433 output tokens.
+For the digest: Angelo picked B with A's board (the vault's own app, stage columns with the loop, agents write first); spec step running; cost so far 3.29 USD, 45,433 output tokens (spec running).
 
 Lead: crm-pipeline.pm@PrompTugal.angelo (started 13 Nov 2026 by conductor.b@ at Angelo's word: "can you spawn a pm for this, and give it the first task of coming up with a good design for this?"). Wake routine: not yet in BRIEF.md (conductor.b@'s next commit); workers read it from BRIEF.md on origin/dev at their end.
 
@@ -23,7 +23,7 @@ One place the whole team records each new connection (who, company, notes, stage
 
 ## 3. Plan (steps; each a fresh worker)
 1. **d1 design** (large, DONE 15:56, pool/crm-pipeline-d1 55cd0a2: recommends A, a Pipeline tab on /crm/, written by agents first until browsers can write; one pipeline record per company with append-only event files and a derived index): the ten-second add on a phone, the stage board, the record and its history, how it sits on the vault, security and privacy; two or three options with mocks at 390 and 1280 px; a recommendation. Then Angelo's pick (point to him).
-2. d2 spec (large): the record layout, who writes stage changes and how, the agents' API, the tier-3 asks to Dinis as one proposal.
+2. **d2 spec** (large, running): the record layout, who writes stage changes and how, the agents' API, the tier-3 asks to Dinis as one proposal.
 3. d3 build (large), then a cold-reader check; a proposal to the team only through Angelo.
 
 ## Waiting on Angelo (tier 3; none blocks the design)
@@ -37,7 +37,10 @@ One place the whole team records each new connection (who, company, notes, stage
 - 13 Nov, point 1 (the plan, the vault approach above): "Yes, go ahead".
 - 13 Nov, point 2 (contact details): team-wide, no sealing: "Those who'll have access to the vault are only the members of the team and they are allowed to see the contacts because we're all part of this work."
 
-## Angelo's leaning (not yet the pick)
+## The pick
+- 13 Nov ~16:50 UTC, Angelo: "B with A's board, go ahead" (to the lead's recommendation: B, the private vault's own app, with A's board: stage columns with the loop on desktop, my list by due date on a phone, the ten-second add; agents write the event files first, until browsers can).
+
+## Angelo's leaning (before the pick)
 - 13 Nov ~16:35 UTC, on the three options as outlined (A a page under /crm/, B the vault's own app, C agent-first): "I like option B, but let's see if the worker has better ideas." The pick waits for d1's design.md.
 
 ## Decided by default (Angelo can reverse)
