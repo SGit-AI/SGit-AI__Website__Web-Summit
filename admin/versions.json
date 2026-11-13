@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2063",
+    "date": "2026-11-13",
+    "what": "07:30 wake: the stand-day block becomes \"After the summit\"",
+    "by": "dashboard@web-summit.jose",
+    "from": "e2b6e863c"
+  },
+  {
     "version": "v0.2.2062",
     "date": "2026-11-12",
     "what": "where RiskMandate should focus, a view after Web Summit (at Silvio's request)",
