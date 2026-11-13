@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2089",
+    "date": "2026-11-13",
+    "what": "handover.agent.a@PrompTugal.angelo: hourly wake set (trig_01N3fvxJKu6vx39TzAy73nk8)",
+    "by": "handover.agent.a@PrompTugal.angelo",
+    "from": "ff493ce85"
+  },
+  {
     "version": "v0.2.2088",
     "date": "2026-11-13",
     "what": "journalist-ai@PrompTugal.vicky: report on Humans and AI story 2",
