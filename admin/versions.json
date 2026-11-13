@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2074",
+    "date": "2026-11-13",
+    "what": "curator@PrompTugal.vicky: 13 Nov report: two tasks done, hold lifted",
+    "by": "curator@PrompTugal.vicky",
+    "from": "3a8a3f2be"
+  },
+  {
     "version": "v0.2.2073",
     "date": "2026-11-13",
     "what": "dev@PrompTugal.vicky: report, ws-only-claims.json (task 2026-11-13-about-claims, step 1)",
