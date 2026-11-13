@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2072",
+    "date": "2026-11-13",
+    "what": "the sealed follow-ups record is filed in the private CRM",
+    "by": "conductor@web-summit.indi",
+    "from": "0ff930d3a"
+  },
+  {
     "version": "v0.2.2071",
     "date": "2026-11-13",
     "what": "the follow-up list, sealed in the private CRM, opened at /crm/follow-ups/",
