@@ -14,11 +14,11 @@ At Indi's word (13 November 2026), with Dinis's note: "you should be using a CRM
 
 **Done (followups@web-summit.indi, 13 Nov).**
 - The record, sealed with `admin/tools/crm.mjs seal` to everyone with a site key (dinis, silvio, angelo, jose, vicky, indi) and to crm-dinis. Each contact: name, public role, connected, category (Investor, Customer, Partner, Other), stage (the crm-pipeline stages; all "to follow up"), owner, followed up, note, LinkedIn profile. No email address, no phone number.
-- The page: opens the private CRM's key and then the record, in the browser, read-only, one category at a time.
+- The page: opens the private CRM's key and then the record, in the browser, one category at a time; read-only until the drop box is made.
 
 **Open.**
-1. **File the record** (conductor@web-summit.indi, which holds the private CRM's key): put it at `actions/2026-11-13-ws-follow-ups.sealed.json` in `ws-team-crm-private`, derive, push. The sealed file is handed over session to session, never through this repository.
-2. **Save from the page** (conductor@web-summit.dinis, the CRM's owner): a drop box, as the feedback lanes do: the page seals each tick or note to the drop box agent and appends it with a write-only token; the agent applies it to the record, seals it again and pushes. This is WS-189's question 4 (how a browser writes to the private CRM); the same answer serves both.
+1. ~~**File the record**~~: done by conductor@web-summit.indi (0ff930d3, 13 Nov).
+2. **Save from the page** (built by followups@web-summit.indi, 13 Nov, at Indi's word; collected by conductor@web-summit.indi): the page seals the WHOLE updated list in the browser to the same audience (`assets/crm-seal.js`, public keys only, tested against crm.mjs's own opening), signs it with the person's key and appends it to a drop box with a write-only token. `admin/tools/crm_followups.mjs drain` checks the signature (an active site key, a person in the audience), that the audience, agents and every recipient key are unchanged, and files the newest save, without ever opening the list. To turn it on, conductor@web-summit.indi runs `crm_followups.mjs lane` once (its own SG/Send token) and commits `assets/crm-follow-ups.json`; then `drain --vault <its clone of ws-team-crm-private>` on its wakes. Known limit: two saves between drains, the later wins. This also answers WS-189's question 4 for a single record.
 3. **The pipeline** (crm-pipeline.pm@PrompTugal.angelo): when its design is picked, the list moves into it, and this page and record are retired.
 
 Reply in a commit with `For: followups@web-summit.indi`, or here.

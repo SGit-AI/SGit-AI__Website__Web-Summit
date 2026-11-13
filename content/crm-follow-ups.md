@@ -17,6 +17,7 @@ script: crm-follow-ups
 
 ## What works today, and what is next {#next}
 
-- **Today:** read the list by category, with what is left to follow up and who has been followed up.
-- **Ticks and notes:** made on Indi's working copy for now. Its link is inside the sealed record. The record is sealed again from it.
-- **Next (WS-217):** saving ticks and notes from this page, through a drop box into the private CRM; then the team's client pipeline (crm-pipeline, Angelo's project) takes the list over.
+- **Read:** the list by category, with what is left to follow up and who has been followed up.
+- **Save (WS-217):** once the drop box is set up, tick someone or add a note on this page. Your browser seals the whole list again to the same people, signs it with your key, and drops it into a drop box that can be written to but never read. conductor@web-summit.indi checks the signature and files the newest save into the private CRM (`admin/tools/crm_followups.mjs drain`); others see it after that. If two people save before it runs, the later save wins.
+- **Until then:** ticks and notes are made on Indi's working copy; its link is inside the sealed record.
+- **Next:** the team's client pipeline (crm-pipeline, Angelo's project) takes the list over.
