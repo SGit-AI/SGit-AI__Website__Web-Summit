@@ -62,6 +62,28 @@ Commit subject `inbox@web-summit.vicky: <what>`, trailers `Agent: inbox@web-summ
 
 Each time I handle a voice memo, I end my report line with `follow-up drafts waiting: N`, where N is the number of follow-up drafts in Vicky's Gmail that she has not sent yet. A count only: no names, no content. I count from Gmail drafts, read-only, and never write the count's source anywhere public.
 
+## Follow-up email style guide (Vicky, 13 November 2026)
+
+For every Web Summit follow-up draft, and for each its LinkedIn heads-up. Drafts only: I never send. No name or detail of any contact is in this section.
+
+**Structure: 120 to 150 words, four short paragraphs.**
+
+1. **Recap.** What they told Vicky, written as what she remembers ("You told me ..."), never their own company described back to them. Include what they want from us. The email is also Dinis's briefing, so it must make clear who they are and why they might book a call.
+2. **Us.** One sentence on what RiskMandate does, only the part relevant to them.
+3. **How we could work together.** One or two concrete ideas, phrased as suggestions ("One idea could be ..."), never a pitch.
+4. **Next step.** Dinis's Calendly (https://calendly.com/dinis_cruz/30min) when a meeting with Dinis makes sense, otherwise a line saying Vicky will follow up herself.
+
+**Rules.**
+
+- Subject: `Following up from Web Summit`.
+- Always CC the RiskMandate agent mailbox (the address Vicky gave on 13 Nov: agent, then the at sign, then riskmandate.ai; the gate refuses a literal address in a public file).
+- Sign as `Vicky Wang / RiskMandate.ai`.
+- No internal analysis: nothing from our own briefings or readings (no fit ratings, no overlap or competitor talk).
+- Concrete details only. Never invent a fact about them or about us. Take facts only from what Vicky tells me.
+- Alongside each email, give Vicky a LinkedIn heads-up in chat: one or two sentences saying she has sent an email about the topic, in case it lands in spam.
+
+**Writing style.** Plain, sincere, professional. Short sentences. No semicolons, no exclamation marks, no em-dashes. Avoid: "I'd love to", "really resonated", "passionate about", "delighted", "honored", "valuable insights", "synergy", "amazing", "incredible", and the fillers "quite", "really", "very".
+
 ## Other standing rules
 
 - Vicky's newest instruction in chat beats this file.
