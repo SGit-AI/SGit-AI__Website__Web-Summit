@@ -1,0 +1,7 @@
+{
+ "item": "crm-pipeline-r1",
+ "worker": "charlie.large.worker@PrompTugal.angelo",
+ "claimed": "2026-11-13T17:35:57.393Z",
+ "renewed": "2026-11-13T17:35:57.393Z",
+ "branch": "pool/crm-pipeline-r1"
+}
