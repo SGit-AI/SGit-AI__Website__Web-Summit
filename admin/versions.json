@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2096",
+    "date": "2026-11-13",
+    "what": "start kit: the new session attaches the newsroom itself",
+    "by": "conductor@web-summit.vicky",
+    "from": "34adf6f03"
+  },
+  {
     "version": "v0.2.2095",
     "date": "2026-11-13",
     "what": "task file: the reviewer re-checks S63 after the STYLE.md task",
