@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **62** the inbox lane re-issue request is closed (Vicky, 13 Nov about 21:45 UTC: "Conductor: close the inbox lane requests."); agents work through task files and messages. The interview vault request stays open.
 - **61** the conductor starts the new conductor session itself after the 14 Nov brief; vault@ reseals at Vicky's word in its own window.
 - **60** STYLE.md "write like a person" rules for every new draft from 13 Nov evening; published articles stay as they are (Vicky, 13 Nov about 21:30 UTC: "I think the old ones no need to change starting from the new ones.").
 - **59** the reviewer rewrites hard-to-read update notes on Vicky's desks' articles: past tense, short sentences, no semicolons; dates, facts and article text unchanged.
