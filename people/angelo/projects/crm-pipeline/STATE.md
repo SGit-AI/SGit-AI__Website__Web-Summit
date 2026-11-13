@@ -1,6 +1,6 @@
 # crm-pipeline: state
 
-For the digest: Angelo picked B with A's board (the vault's own app, stage columns with the loop, agents write first); spec step running; cost so far 3.29 USD, 45,433 output tokens (spec running).
+For the digest: spec done (Pipeline tab in the vault app, writer crm@PrompTugal.angelo, Indi's 19 as first import), waiting on Angelo's read and his go to send the note to Dinis; cost so far 5.18 USD, 65,728 output tokens.
 
 Lead: crm-pipeline.pm@PrompTugal.angelo (started 13 Nov 2026 by conductor.b@ at Angelo's word: "can you spawn a pm for this, and give it the first task of coming up with a good design for this?"). Wake routine: not yet in BRIEF.md (conductor.b@'s next commit); workers read it from BRIEF.md on origin/dev at their end.
 
@@ -23,14 +23,14 @@ One place the whole team records each new connection (who, company, notes, stage
 
 ## 3. Plan (steps; each a fresh worker)
 1. **d1 design** (large, DONE 15:56, pool/crm-pipeline-d1 55cd0a2: recommends A, a Pipeline tab on /crm/, written by agents first until browsers can write; one pipeline record per company with append-only event files and a derived index): the ten-second add on a phone, the stage board, the record and its history, how it sits on the vault, security and privacy; two or three options with mocks at 390 and 1280 px; a recommendation. Then Angelo's pick (point to him).
-2. **d2 spec** (large, running): the record layout, who writes stage changes and how, the agents' API, the tier-3 asks to Dinis as one proposal.
+2. **d2 spec** (large, DONE 16:48, pool/crm-pipeline-d2 55ffdbf: monthly append-only log per writer + derived index (about 30 files a year), Pipeline tab as a module like the Mail tab, writer crm@PrompTugal.angelo, sealed drops for agents now and browsers later, Indi's 19 by reseal with her yes, seven build steps; proposal-dinis.md drafted, not sent): the record layout, who writes stage changes and how, the agents' API, the tier-3 asks to Dinis as one proposal.
 3. d3 build (large), then a cold-reader check; a proposal to the team only through Angelo.
 
 ## Waiting on Angelo (tier 3; none blocks the design)
 1. Reading or writing the private vault: DECIDED by Angelo, 13 Nov ~15:55 UTC, to the recommendation "nobody touches the vault before the spec; then one agent with its own access token, asked of Dinis through Angelo, as the only writer": "Yes, go ahead". The token ask itself still goes through Angelo when the spec is ready.
 2. A contact's details: DECIDED by Angelo, 13 Nov ~16:00 UTC: "Those who'll have access to the vault are only the members of the team and they are allowed to see the contacts because we're all part of this work." So contact details sit in the record, readable by everyone with the vault key; no per-record sealing. The spec still records consent and the deletion path. Note for the spec: the vault key is also sealed to each person's conductor and to CRM agents (WS-170), so "the team" includes their agents; the spec says so plainly.
 3. Changing Dinis's /crm/ and admin/tools/crm* (if the pick puts the UI there): the five steps, For: conductor@web-summit.dinis, with Angelo's go.
-3b. Replying to followups@web-summit.indi (WS-217): GO from Angelo, 13 Nov ~16:50 UTC: "Yes, reply to Indi's agent after the spec". When d2's spec is in: one commit For: followups@web-summit.indi (and conductor@web-summit.indi), saying the pipeline takes the list over and how, per the spec.
+3b. Replying to followups@web-summit.indi (WS-217): DONE 13 Nov ~16:55 UTC (replies/ws-217-followups.md); GO from Angelo, 13 Nov ~16:50 UTC: "Yes, reply to Indi's agent after the spec". When d2's spec is in: one commit For: followups@web-summit.indi (and conductor@web-summit.indi), saying the pipeline takes the list over and how, per the spec.
 4. Proposing it to the team (Dinis replied "yes ... we can then all use it"): through Angelo, after the pick.
 
 ## Decided by Angelo
