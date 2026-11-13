@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-13T17:18Z",
+ "run": "2026-11-13T22:17Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,31 +12,31 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "4a4f30d",
-  "to": "3b655b5",
+  "from": "3b655b5",
+  "to": "c8a239e",
   "branch": "dev"
  },
  "counts": {
-  "commits": 115,
-  "ci_releases": 49,
+  "commits": 69,
+  "ci_releases": 25,
   "watcher_own": 1,
-  "agents": 64,
-  "no_agent_name": 1
+  "agents": 43,
+  "no_agent_name": 0
  },
  "security": {
   "old_agent_last_review": "f4a9fbe, wake 11:51 on 7 November",
-  "new_agent": "security.repos@web-summit.dinis, last report 2026-11-12T1225Z (run 30): nothing new; it has not run since (Dinis's hand brake disabled his tasks)",
-  "gap_not_reviewed": "two gaps: dev from 11:51 on 7 November to 10:58 on 8 November, and dev since 12:25 on 12 November (115 commits in this range, including c0ebf5d's build change for /crm/follow-ups/, which the watcher read: a mount only; the list is opened in the reader's browser with their key, no contact in the page)"
+  "new_agent": "security.repos@web-summit.dinis, last report 2026-11-12T1225Z (run 30); it has not run since 12:19 on 12 November",
+  "gap_not_reviewed": "two gaps: dev from 11:51 on 7 November to 10:58 on 8 November, and dev after 4a4f30d (12:19 on 12 November), now 184 commits; the watcher read the token-rule hit in this range (see flags) and the new admin/tools/crm_followups.mjs"
  },
  "by_person": {
-  "vicky": 37,
-  "dinis": 8,
-  "indi": 8,
-  "angelo": 5,
-  "silvio": 3,
-  "jose": 3
+  "vicky": 31,
+  "angelo": 6,
+  "indi": 5,
+  "jose": 1,
+  "silvio": 0,
+  "dinis": 0
  },
- "actions": "open A-06 (thirtieth run, dev only), A-21 (twentieth), A-14 (twenty-seventh), A-23 (nineteenth), new A-28 (four of Jose's tasks still disabled after the hold)",
+ "actions": "open A-28 (second run: four of Jose's tasks disabled), A-06 (thirty-first run, dev only), A-21 (twenty-first), A-14 (twenty-eighth), A-23 (twentieth), new A-29 (Silvio's agents quiet since the hold)",
  "task_report": {
   "task": "people/jose/tasks/2026-11-07-watcher-a06-pointers.md",
   "status": "done: the conductor marked people/jose/tasks/2026-11-07-watcher-a06-pointers.md done; A-06 itself stays open for dev",
@@ -46,12 +46,12 @@
   {
    "level": "medium",
    "what": "two stretches of dev not reviewed by any security agent",
-   "where": "11:51 on 7 November to 10:58 on 8 November (includes 4219805 and 084ebe7); and since 12:25 on 12 November (security.repos stopped by the hand brake)",
-   "context": "for conductor@web-summit.dinis: when security.repos is turned back on, point it at both"
+   "where": "11:51 on 7 November to 10:58 on 8 November (includes 4219805 and 084ebe7); and after 4a4f30d (12:19 on 12 November), 184 commits so far",
+   "context": "security.repos has not run since the hand brake. For conductor@web-summit.dinis: when it is turned back on, point it at both"
   },
   {
    "level": "high",
-   "what": "still open, thirty-first run: contact-detail rule hits in a public page",
+   "what": "still open, thirty-second run: contact-detail rule hits in a public page",
    "where": "f20d264 content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
    "context": "older than the new security agent's window, so not covered by its review"
@@ -64,25 +64,25 @@
    "context": "unchanged"
   },
   {
-   "level": "medium",
-   "what": "two of Jose's agents committed while Dinis's hold stood",
-   "where": "vault@web-summit.jose 84ae5fa (17:43 on 12 November, after the 15:15 hand brake) and dashboard@web-summit.jose e2b6e86 (07:39 on 13 November)",
-   "rule": "the hold ('stop after pulling, do no work, push nothing')",
-   "context": "automation@web-summit.jose found the same gap in itself (aa9e786, 16:34 on 13 November): the kit's Each wake steps do not mention the hold files. For conductor@web-summit.jose: one line in the kit's shared section, 'if HOLD.md or team/conductor/HOLD.md exists, stop after pulling'. Both commits are small (a drained-empty lane, a dashboard heading)"
+   "level": "note",
+   "what": "a token-rule hit that is a public write-only token by design",
+   "where": "cf1aa15 (conductor@web-summit.indi, 17:23) assets/crm-follow-ups.json line 6",
+   "rule": "a token assignment (vault-audit.mjs)",
+   "context": "the drop box's append token for /crm/follow-ups/: write-only, published on purpose so the page can save; the drain (admin/tools/crm_followups.mjs) files only saves sealed to the record's audience and signed by a member's key, and logs the rest, so a stranger with the token can fill only the log; the drain credentials stay in ~/.sg-send (0600). Same pattern as fa34c08's lane token. Not yet reviewed by a security agent"
   },
   {
    "level": "note",
-   "what": "93 email-rule lines in 32 commits by the watcher's own scan (lines added by every commit in the range that match an address pattern, leaving out web-summit agent names, noreply headers and example domains)",
+   "what": "48 email-rule lines in 29 commits by the watcher's own scan (lines added by every commit in the range that match an address pattern, leaving out web-summit agent names, noreply headers and example domains)",
    "where": "agent names and CI's version rows",
    "rule": "an email address",
-   "context": "none is a person's contact detail by shape. One commit without an agent name: 24243f3, the hand brake, written in Dinis's session"
+   "context": "none is a person's contact detail by shape"
   },
   {
-   "level": "low",
-   "what": "trailers: dashboard's now parse; automation's do not",
-   "where": "e2b6e86 (dashboard) parses; aa9e786 (automation): Agent and Reviewed-by above the Co-Authored-By block",
+   "level": "note",
+   "what": "Jose's one commit in this range parses",
+   "where": "15ab016 (dashboard@web-summit.jose, 17:33)",
    "rule": "the commit convention",
-   "context": "the dashboard low is fixed; the same slip now in automation"
+   "context": "automation's trailer low (aa9e786) is untested: it did not commit again"
   }
  ],
  "open_from_earlier_runs": [
@@ -109,11 +109,9 @@
   }
  ],
  "reviewer_trailer": {
-  "jose_commits_checked": 3,
+  "jose_commits_checked": 1,
   "missing": [],
-  "misplaced": [
-   "aa9e786 (Agent, Reviewed-by)"
-  ]
+  "misplaced": []
  },
  "branches": {
   "main": "no new commit (last 81353d4)",
@@ -123,16 +121,8 @@
  },
  "commits_jose": [
   {
-   "sha": "84ae5fa",
-   "agent": "vault@web-summit.jose"
-  },
-  {
-   "sha": "e2b6e86",
+   "sha": "15ab016",
    "agent": "dashboard@web-summit.jose"
-  },
-  {
-   "sha": "aa9e786",
-   "agent": "automation@web-summit.jose"
   }
  ],
  "could_not_check": [
@@ -140,6 +130,6 @@
   "the agents' run logs in the public vault aym98gsm (no sgit client yet)",
   "work done in other repositories (the newsroom, the apps, Storm-Charles, and Jose's Fringe agents in PrompTugal__News__Fringe)"
  ],
- "context": "The holds: Dinis's hand brake (team/conductor/HOLD.md, 24243f3, 15:15 on 12 November) and the show-is-over HOLD.md (2a99190, 18:12), with a local-data exception (6c51547, 08:00 on 13 November); both lifted at Dinis's word at 15:53 on 13 November (dd63b27). The watcher stopped after pulling at its 17:15 and 22:15 wakes on 12 November and its 07:15 and 12:15 wakes on 13 November, and resumed at 17:15. Web Summit has ended (Dinis, 12 November)",
+ "context": "After the hold (lifted 15:53 on 13 November): Vicky's, Angelo's and Indi's agents are back; Silvio's and most of Dinis's are not, and four of Jose's tasks are still disabled (A-28)",
  "correction": "the watcher's schedule checker matched agent names as substrings, so 'Dinis's conductor last ...' times in runs before 12:18 on 12 November may have been incident.conductor@web-summit.dinis's; fixed (exact match)"
 }

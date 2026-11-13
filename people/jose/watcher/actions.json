@@ -2,7 +2,7 @@
  "schema": "web-summit.sgit.ai/watcher-actions/v1",
  "by": "watcher@web-summit.jose",
  "about": "At Jose's word (5 November 2026): every time an agent looks stopped or late, the watcher opens an action here with what it found and what it recommends, addressed to Jose's conductor and to the agent's owner's conductor in its commit (For:). Every run re-checks each open action: closed when the agent commits again or its scheduled task is seen to fire; still open after two runs, it is raised again at the top of the commit. The watcher only reports and recommends; it never changes an agent, a task or a session (WS-129). An action's 'opened' is the run that first flagged the agent (12:15), before the loop existed.",
- "updated": "2026-11-13T17:18Z",
+ "updated": "2026-11-13T22:17Z",
  "actions": [
   {
    "id": "A-2026-11-05-01",
@@ -90,11 +90,11 @@
    ],
    "status": "open",
    "opened": "2026-11-05T14:22Z",
-   "runs_open": 30,
-   "seen": "at 17:18 on 13 November: only dev is left (the 3 November text, 30 9,15; fired at 15:53 and succeeded)",
+   "runs_open": 31,
+   "seen": "at 22:17 on 13 November: only dev is left (the 3 November text, 30 9,15; fired at 15:53 and succeeded)",
    "likely_cause": "the tasks were made before the kit changed; the agents re-read the kit at each wake, so they may follow it anyway, but the stored prompts disagree",
    "recommend": "Jose: paste the pointer into the dev task and set it to 30 7-21/2",
-   "raised": "open thirty runs, one agent left: raised",
+   "raised": "open thirty-one runs, one agent left: raised",
    "per_agent": {
     "conductor": "done: pointer pasted, time every hour 07:20 to 21:20 (20 7-21)",
     "dev": "open: still the 3 November text; time 30 9,15, not every two hours 07:30 to 21:30",
@@ -236,11 +236,11 @@
    ],
    "status": "open",
    "opened": "2026-11-06T07:15Z",
-   "runs_open": 27,
-   "seen": "no commit since 23:53 on 5 November, about 185 hours",
+   "runs_open": 28,
+   "seen": "no commit since 23:53 on 5 November, about 190 hours",
    "likely_cause": "unknown; its mandate is a refactoring pass every wake, so a quiet wake is unusual; not confirmed (Dinis's account)",
    "recommend": "conductor@web-summit.dinis: check its 00:40 to 09:40 wakes",
-   "raised": "open twenty-seven runs; part of A-21"
+   "raised": "open twenty-eight runs; part of A-21"
   },
   {
    "id": "A-2026-11-06-15",
@@ -358,11 +358,11 @@
    ],
    "status": "open",
    "opened": "2026-11-07T22:15Z",
-   "runs_open": 20,
-   "seen": "Dinis's hand brake (12 November 15:13) disabled all his scheduled tasks; the hold was lifted at 15:53 on 13 November, and his conductor committed then. security.repos has not committed since 12:19 on 12 November. The older agents (dev, the old security agent, sgit, pulse, project-manager, designer, dashboard, abp, mentor, investors, journalist) are still quiet, with no word that THE RESTART retired them",
+   "runs_open": 21,
+   "seen": "the hold was lifted at 15:53 on 13 November; Dinis's conductor committed then and not since; security.repos has not committed since 12:19 on 12 November (about 34 hours); the older agents are still quiet, with no word that THE RESTART retired them",
    "likely_cause": "first an account outage (about 27 hours, by his conductor's words), then the big stop; after THE RESTART some of these agents may be retired rather than stopped",
    "recommend": "conductor@web-summit.dinis: say which of these agents are retired by THE RESTART, so the watcher can close them, and restart the rest",
-   "raised": "open twenty runs: raised"
+   "raised": "open twenty-one runs: raised"
   },
   {
    "id": "A-2026-11-08-22",
@@ -392,11 +392,11 @@
    ],
    "status": "open",
    "opened": "2026-11-08T07:15Z",
-   "runs_open": 19,
-   "seen": "no commit since 18:16 on 7 November, about 143 hours; Silvio's agents have not committed since 22:13 on 12 November (the hold)",
+   "runs_open": 20,
+   "seen": "no commit since 18:16 on 7 November, about 148 hours; part of A-29 now",
    "likely_cause": "night mail checks with nothing to commit, as with A-12 and A-20",
    "recommend": "conductor@web-summit.silvio: restart it with the others, or say it is retired",
-   "raised": "open nineteen runs: raised"
+   "raised": "open twenty runs: raised"
   },
   {
    "id": "A-2026-11-08-24",
@@ -481,10 +481,26 @@
    ],
    "status": "open",
    "opened": "2026-11-13T17:18Z",
-   "runs_open": 1,
-   "seen": "the hold was lifted at 15:53 on 13 November (dd63b27: 'agents may wake and work again under their usual rules'), but four of Jose's tasks are still disabled: conductor@web-summit.jose (since 18:21 on 12 November; its last commit 07:31 on 12 November), helper (since 09:53 on 13 November), vault (since 11:42 on 13 November) and the Fringe conductor (since 19:09 on 12 November; its own prompt ends it after 13 November). designer, automation, dev, dashboard and the watcher are enabled and fired",
+   "runs_open": 2,
+   "seen": "at 22:17 on 13 November, unchanged: conductor (since 18:21 on 12 November), helper (since 09:53), vault (since 11:42) and the Fringe conductor (since 19:09 on 12 November) still disabled; designer, automation, dev, dashboard and the watcher enabled and fired",
    "likely_cause": "each was disabled during the hold, which said not to re-enable tasks; only a person can turn them back on",
-   "recommend": "Jose: re-enable the conductor, helper and vault tasks in your scheduled tasks (the conductor first: it reads the watcher's reports); leave the Fringe conductor off if the Fringe is over. The watcher never changes a task (WS-129)"
+   "recommend": "Jose: re-enable the conductor, helper and vault tasks in your scheduled tasks (the conductor first: it reads the watcher's reports); leave the Fringe conductor off if the Fringe is over. The watcher never changes a task (WS-129)",
+   "raised": "open two runs: raised"
+  },
+  {
+   "id": "A-2026-11-13-29",
+   "agent": "Silvio's agents (in this repository)",
+   "owner": "silvio",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.silvio"
+   ],
+   "status": "open",
+   "opened": "2026-11-13T22:17Z",
+   "runs_open": 1,
+   "seen": "no commit by any of Silvio's agents since 22:13 on 12 November (conductor@web-summit.silvio), about 24 hours; the hold was lifted at 15:53 on 13 November and the other teams have committed since (Vicky 22:04, Angelo 18:35, Indi 17:38)",
+   "likely_cause": "probably the hold: Dinis's hand brake asked every account to stop, and tasks disabled during it stay off until a person turns them on (as with Jose's, A-28); not confirmed (Silvio's account)",
+   "recommend": "Silvio: turn your agents' scheduled tasks back on if you want them running, or say they stay off now the summit is over"
   }
  ],
  "could_not_check": [
