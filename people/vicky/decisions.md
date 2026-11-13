@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"). Newest first.
+- **57** every Web Summit link off the company pages (dev's scripted pass, reviewer spot-check); RWS re-sourced, Akamai and Persona held; Teamworks, Rio and Pavilion 4 brought back.
 - **56** cut the three "Media only" lines; the stories-page generator's lists move to their own file after the one-off jobs; scout reads the whole team weekly (Sundays), reusable only.
 - **55** from Friday only the newsroom line runs (researcher and curator three rounds; journalists and reviewer on demand; the conductor's brief, relay and hand-offs); every other agent's scheduled task off.
 - **54** WS-213: the token ledger yes (numbers only), every agent logs each run; the router held. The curator marks the 16 withdrawn stories.
@@ -304,6 +305,9 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Media only:** journalist-europe cuts the three "Media only" lines it kept (neo, neo4j, linux-foundation-aaif); task file `people/vicky/tasks/2026-11-13-1645-europe-cut-media-only.md`.
     - **The stories page**, after takedown step 2, the image move and the coverage review: the curator moves the generator's lists into `desks/curator/stories.json`, takes the vault path as an argument, adds a `--check` option, and corrects its prompts file to the repo path. Its task file comes then.
     - **Scout:** one run a week, Sundays 18:47 UTC, on Sonnet; whole team, only what Vicky could reuse; it changes its own prompt (task file `people/vicky/tasks/2026-11-13-1645-scout-whole-team-weekly.md`).
+
+57. **After takedown step 2** (Vicky, 13 Nov, about 17:10 UTC, in this window: "1. Remove every Web Summit link from the company pages, as my rule says. Please have dev do it in one scripted pass and the reviewer spot-check, rather than waking the journalists. 2. Held pages: send the AI journalist the RWS task. Keep Akamai and Persona held back for now; no one needs to read their sites today. 3. Bring back Teamworks, Rio and Pavilion 4. Leave the "partly" ones and the four "stay withdrawn" ones as they are.")
+    - Task files: `people/vicky/tasks/2026-11-13-1715-company-pages-no-ws-links.md` (dev, then reviewer), `2026-11-13-1715-rws-about.md` (journalist-ai), `2026-11-13-1715-bring-back-three.md` (reviewer). The other ten withdrawn articles stay withdrawn.
 
 ## Updates for agents
 
