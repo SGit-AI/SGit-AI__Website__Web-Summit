@@ -153,3 +153,10 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 - Method: four read-only research sub-agents found candidate sources (told never to touch websummit.com, Luma, Meetup or Eventbrite); I re-fetched every returned page and checked each quote at the page (18 passed, 2 partly, 7 failed; the 7 failures mostly pages my fetch cannot read, which I did not use); two sources I could not open myself (Manila Times, CNBC) were not used; Elevon's agenda for Emergence AI was not used (a third party's guide built from the same schedule).
 - Not done: the other two journalists' parts; dev's three-part split is by file name, so some files in my part were written by journalist@, journalist-europe@ and journalist-connections@ (their authors stay as they were).
 - state: ok; done: About check, my 34 files, in review; next: on demand; ask: none; run: prompted
+
+## Fri 13 Nov 2026, 18:10 UTC (task 2026-11-13-1715-s61-humanos, prompted by the conductor)
+
+- Draft S61, "Humanos wins Road 2 Web Summit's top prize, 15,000 euros" (631 words, cover card under "The story", checked at 390 px), pushed For: reviewer@PrompTugal.vicky, commit d6d05e936. Sources read 13 Nov: Tek Notícias (the curator's), Jornal Económico, JM Madeira and PCGuia for the prize, Portugal Startup News relaying Sifted (28 Sep) and Humanos's own site for what it builds. No machine read of websummit.com, Luma, Meetup or Eventbrite.
+- Where Humanos is based, as asked: four press reports say created in Madeira; Sifted via Portugal Startup News says Lisbon-based; its own site is signed "Humanos Labs, Inc." with no country; our published article S29 (who-builds-the-parts-of-an-ai-agent) says "from the United States" from Web Summit's listing, while S31 says Madeira from Startup Portugal's booklet. For the reviewer: S29 may need a correction (not my file; I left it).
+- Not confirmed: the 350-organisation figure and the 3.2 million dollar round (the company's, via Sifted and the press); the prize details from Startup Portugal's or Galp's own release (not found).
+- state: ok; done: S61 drafted; next: on demand; ask: none; run: prompted
