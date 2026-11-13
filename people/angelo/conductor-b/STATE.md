@@ -21,6 +21,8 @@ Route only; never build. Workers: session-less, 20 slots (10 large, 10 small), p
 
 ## Open
 
+- **Retired** (Angelo, 13 Nov: "We can retire the riskmandate-android-demo.pm@, the prod-pipeline.pm@, and the network-views.pm@."): their project folders brought onto dev from project/*, wake routines deleted (trig_01GnGftTuQdk1LM63LnvaDtn, trig_01MqHQ7CWqSnu5JGwYRpkQg5, trig_01D39RAzsMdheFWbiBWjttdi), sessions archived. Their open questions (X-ray key and patch 0002; Fringe build and fixes; Kibana key) close with them unless Angelo reopens one.
+
 - **crm-pipeline.pm@** (session_01Xp7gj43XKKzuUiEvg82Fgq, wake trig_01P4tAMLBsNBLGuw2mFPZMNY, fired by workers only, no schedule): the team's client funnel pipeline on the private CRM, started 15:46 13 Nov at Angelo's word, after Dinis's "yes we need a CRM for that"; first task the design, then Angelo's pick. The vault, keys and tokens are tier 3.
 
 - **ALL PAUSED** (Angelo, 13 Nov about 12:50 UTC: "Yes please, pause all agents."): routines disabled: accountant.b@ trig_01CvoEzp8UjqACZ2EXV3hnFW; PM wakes prod-pipeline trig_01MqHQ7CWqSnu5JGwYRpkQg5, handover-market trig_01Sp6G7mUcG4f97btiJRmgK4, riskmandate-android-demo trig_01GnGftTuQdk1LM63LnvaDtn, network-views trig_01D39RAzsMdheFWbiBWjttdi (digest.b@ and conductor.fringe@'s wake were already off; the Fringe is under Dinis's HOLD.md). No worker session running (all archived); the four PMs, conductor.fringe@ and policy@ are idle and wake only when Angelo writes to them. Re-enable a routine only at Angelo's word.

@@ -46,3 +46,12 @@
 - **A4** (small pages): design, large, juliett.large; brief a4-sim-small/brief.md; writes people/angelo/pipeline/prod-pipeline-a4/.
 - **A5** (big pages): design, large, kilo.large; brief a5-sim-big/brief.md; writes people/angelo/pipeline/prod-pipeline-a5/.
 - Both: A3's design on real Tech Fringe pages, traces from git history only, screenshots at 320, 390, 740 x 360 and 1280, A2's check; a rule for tiny traces (A4) and for huge ones (A5). Done when sim.md is on their pool branch and STATE.md says "ready for Angelo's read".
+
+## A6: the team draft, version 2 (started 2026-11-11 19:48, session_01Xp7gj3T5setN3YtbMbiDEo)
+- Decided by default, Angelo can reverse: fold A4's small-page rule and A5's nine big-page rules into A3's draft before the team sees it (both workers recommend it). Design, large, lima.large; brief a6-team-draft-v2/brief.md; writes people/angelo/pipeline/prod-pipeline-a6/.
+
+## A7: every commit and interaction behind a page (started 2026-11-11 20:03, session_01Xp7gj4LrcGjJ5Jh2Ydr3eS)
+- Angelo: "I would like to see each and every commit (and other interactions?) that have contributed to get the page to the current state, let's leave the template changes to their own pages." Build (a read-only tool and its traces), large, mike.large; brief a7-full-traces/brief.md; writes people/angelo/pipeline/prod-pipeline-a7/. Six pages: DISTRICT 909, Storm Summit, /me/, /tip/, home, programme.
+
+## A8: a small eye-catching timeline from the Fringe's release data (started 2026-11-11 22:13, by default, session_01Xp7gj4Zhn9kk5KiRDLSboR)
+- Angelo: "I agree on using the data that is already there, assuming it's reliable, and maybe just build a little graphical timeline that catches the eye." Design, large, golf.large; brief a8-timeline-from-releases/brief.md; writes people/angelo/pipeline/prod-pipeline-a8/.

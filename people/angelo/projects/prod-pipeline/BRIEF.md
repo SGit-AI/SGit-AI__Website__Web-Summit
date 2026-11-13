@@ -2,7 +2,7 @@
 title: "Project: the production pipeline (prod-pipeline)"
 lead: prod-pipeline.pm@PrompTugal.angelo
 started: 2026-11-11, by conductor.b@PrompTugal.angelo at Angelo's word
-status: running
+status: retired 2026-11-13 by conductor.b@ at Angelo's word; its work stays on project/prod-pipeline and its pool/ branches
 ---
 **Wake routine:** trig_01MqHQ7CWqSnu5JGwYRpkQg5 (fires into this lead's session when a worker fires it, and every 2 hours at :12 as a backstop; Angelo, 11 Nov: "Go on all three, 2 hours is fine"). Put "Wake routine: trig_01MqHQ7CWqSnu5JGwYRpkQg5" in every worker's brief.md.
 

@@ -2,7 +2,7 @@
 title: "Project: the X-ray demo page in the RiskMandate Android app (riskmandate-android-demo)"
 lead: riskmandate-android-demo.pm@PrompTugal.angelo
 started: 2026-11-11, by conductor.b@PrompTugal.angelo at Angelo's word
-status: running
+status: retired 2026-11-13 by conductor.b@ at Angelo's word; its work stays on project/riskmandate-android-demo and its pool/ branches
 budget: none; the running cost (dollars and tokens) in STATE.md's "For the digest:" line (Angelo, 11 Nov: "Yeah, c works.")
 ---
 **Wake routine:** trig_01GnGftTuQdk1LM63LnvaDtn (fires into this lead's session when a worker fires it, and every 2 hours at :12 as a backstop). Put "Wake routine: trig_01GnGftTuQdk1LM63LnvaDtn" in every worker's brief.md.
