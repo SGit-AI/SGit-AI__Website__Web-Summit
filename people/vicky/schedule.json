@@ -154,10 +154,10 @@
   },
   {
    "agent": "scout@web-summit.vicky",
-   "task": "daily run",
-   "cron_utc": "0 22 * * *",
+   "task": "weekly whole-team note, reusable only (standing answer 56)",
+   "cron_utc": "47 18 * * 0",
    "task_id": "trig_01H1P9CwiciQNftmoE4AghcQ",
-   "state": "disabled; on demand through the conductor (13 Nov, standing answer 43)",
+   "state": "enabled 13 Nov 16:40 UTC (Sundays 18:47, on Sonnet)",
    "since": "6 Nov 2026",
    "at_whose_word": "Vicky (6 Nov)"
   },
