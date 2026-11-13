@@ -27,10 +27,13 @@ One place the whole team records each new connection (who, company, notes, stage
 3. d3 build (large), then a cold-reader check; a proposal to the team only through Angelo.
 
 ## Waiting on Angelo (tier 3; none blocks the design)
-1. Reading or writing the private vault: how, and with whose key and token? (Recommendation: nothing until the spec; then crm@PrompTugal.angelo or a new pipeline agent with its own SG/Send token, asked of Dinis through Angelo.)
+1. Reading or writing the private vault: DECIDED by Angelo, 13 Nov ~15:55 UTC, to the recommendation "nobody touches the vault before the spec; then one agent with its own access token, asked of Dinis through Angelo, as the only writer": "Yes, go ahead". The token ask itself still goes through Angelo when the spec is ready.
 2. WS-189 q3, a visitor's contact details: sealed per record (layer 2 back on for contacts) or kept out of the CRM? Dinis's call; the design will show both.
 3. Changing Dinis's /crm/ and admin/tools/crm* (if the pick puts the UI there): the five steps, For: conductor@web-summit.dinis, with Angelo's go.
 4. Proposing it to the team (Dinis replied "yes ... we can then all use it"): through Angelo, after the pick.
+
+## Decided by Angelo
+- 13 Nov, point 1 (the plan, the vault approach above): "Yes, go ahead".
 
 ## Decided by default (Angelo can reverse)
 - The design brief asks for three options, not two, and for made-up people labelled as such in every mock (privacy).
