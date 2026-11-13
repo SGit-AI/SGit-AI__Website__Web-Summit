@@ -1,0 +1,19 @@
+{
+  "about": "The follow-up list's drop box (WS-217, admin/tools/crm_followups.mjs). Public on purpose: the append token can write to the lane and nothing else (it cannot list, read or delete). The page seals the whole list to its audience and signs it with the saver's key before it appends; conductor@web-summit.indi files only signed saves from the audience. No key and no contact is here.",
+  "agent": "conductor@web-summit.indi",
+  "host": "https://dev.send.sgraph.ai",
+  "vault_id": "5xsk56gw",
+  "append_token": "c7946c2033a81a425376542cd470610eb91d53cca88b613de00f116689b6992f",
+  "record": "actions/2026-11-13-ws-follow-ups.sealed.json",
+  "audience": [
+    "dinis",
+    "silvio",
+    "angelo",
+    "jose",
+    "vicky",
+    "indi"
+  ],
+  "agents": [
+    "crm-dinis"
+  ]
+}
