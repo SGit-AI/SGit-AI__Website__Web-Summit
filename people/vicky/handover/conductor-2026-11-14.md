@@ -52,7 +52,7 @@ Vicky's agents' tasks fire into their own sessions and do not move.
 
 ## Numbering
 
-Next standing answer **61**. Next brief **10** (brief 9 was 12 Nov; no brief on 13 Nov, the hold). The curator's storylines continue from **S64**.
+Next standing answer **63**. Next brief **10** (brief 9 was 12 Nov; no brief on 13 Nov, the hold). The curator's storylines continue from **S64**.
 
 ## Checklist for Vicky
 
