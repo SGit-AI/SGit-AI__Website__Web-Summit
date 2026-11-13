@@ -2,20 +2,18 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the Actions section, the only list of what waits on him, is kept by his conductor (conductor@web-summit.jose); the rest, from the builder template, by his dashboard agent (dashboard@web-summit.jose): what happened, and what Jose and Jose's agents are doing.
 ---
-**Last changed Thu 12 Nov, 07:35 UTC by `dashboard@web-summit.jose`; checked at every wake (07:30, 12:30, 17:30 UTC) and changed only when something did.** [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest by your dashboard agent. Your agents, live: [the Agents board](app/index.html#home).
+**Last changed Fri 13 Nov, 07:40 UTC by `dashboard@web-summit.jose`; checked at every wake (07:30, 12:30, 17:30 UTC) and changed only when something did.** [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest by your dashboard agent. Your agents, live: [the Agents board](app/index.html#home).
 
-## Stand day, Thursday 12 November {#stand}
+## After the summit {#after}
 
-Pointers for the stand, not a second list: what to do and when is in [Actions](#actions).
+Web Summit closed on Thursday 12 November. Pointers, not a second list: what to do and when is in [Actions](#actions), where the rows parked "until after the summit" are now due ([Parked](#parked)).
 
 | For | Open |
 |---|---|
-| **Hack the Agent** (attacked, then governed) | [the app](https://agent-defense-arena.lovable.app/) · [run sheet](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/demos/hack-the-agent.md) · [QR code](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/qr/hack-the-agent.png) |
-| **ReachCheck** | [the app](https://reach-check-agent.lovable.app/) · [run sheet](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/demos/reachcheck.md) · [QR code](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/qr/reachcheck.png) |
-| **No internet at the stand** | the venue bans hotspots and tethering for exhibitors, so keep a screen recording of each demo on your phone; check both apps on your phone first (WS-108) |
-| **Your social posts** (WS-208) | drafted by your writer agent for you to check and send: [today's batch](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/writer/posts/2026-11-11.md) (the storm posts, and the GAMMA-Ray card posts at its end) · [the team's videos](../silvio/videos/index.html), the approved ones ready to post, each with its post text ready ([how to share them](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/silvio/video/SHARE.md), from Silvio's video agent at your ask) |
-| **Agent security conversations** | [the message](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-15-the-riskmandate-message-one-paragraph-three-open.md) (WS-15) · [the targets](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-26-the-big-outreach-50-targets-for-thursday-and-fri.md) (WS-26) |
-| **Your meet page and the stand-ups** | [meet Jose](../../meet/jose/index.html) · [the stand-ups](../../meetings/index.html) |
+| **Your posts still to send** (WS-208) | [the drafts of 11 November](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/writer/posts/2026-11-11.md) and [the team's videos](../silvio/videos/index.html); your writer agent drafts, you send |
+| **Lisbon Fringe** (WS-215) | your fringe conductor runs hourly until it disables itself after Friday; your lane, the channels |
+| **Your two demos, for follow-ups** | Hack the Agent: [the app](https://agent-defense-arena.lovable.app/), [run sheet](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/demos/hack-the-agent.md) · ReachCheck: [the app](https://reach-check-agent.lovable.app/), [run sheet](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/demos/reachcheck.md) · [your meet page](../../meet/jose/index.html) |
+| **The companies you met** | in the private CRM, kept by crm@web-summit.jose; nothing about them goes on this public page |
 
 ## Actions {#actions}
 
