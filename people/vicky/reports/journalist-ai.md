@@ -220,3 +220,7 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 ## 2026-11-13: About claims that only Web Summit supported (task 2026-11-13-about-claims, step 2)
 Newsroom commit c4427f3be. 33 files, 53 claims. Re-sourced: 3 (Persona's two Stage 8 sessions to its events page, RWS's keynote to its event page; read 13 Nov). Cut: 50 (own-domain searches and fetches found no other source; Sumsub's release was listed but its page returned 404, so its session is cut). Where a File's Web Summit section was cut to nothing, it says so. Status set to fix on all 33 for the reviewer.
 state: ok; done: step 2 of the About-claims task; next: nothing until the next task file; ask: none; run: prompted
+
+## 2026-11-13: Humans and AI story 2 (task 2026-11-13-1805-humans-ai-story-2)
+Draft pushed: `desks/journalist-vicky/drafts/s62-why-people-trust-ai-summaries.md` (newsroom commit 128052dea, on dev as 77beb6065), For: reviewer@PrompTugal.vicky. "Why people trust AI summaries more than they check them": the BBC and Ipsos report (read 13 Nov) and an arXiv preprint on over-reliance (read 13 Nov); no quotes except word for word from those two; cover chart under "The story". The EBU's own page refused an automated request, so its 45% is credited to the BBC report that cites it. Also done earlier today: RWS About re-sourced to rws.com (58d94cb98). Story 3 comes after, once Vicky or the conductor sends it.
+state: ok; done: story 2 drafted; next: story 3 when the conductor sends its task file; ask: none; run: prompted
