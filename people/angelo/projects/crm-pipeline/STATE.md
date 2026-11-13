@@ -1,6 +1,6 @@
 # crm-pipeline: state
 
-For the digest: design step started (large worker, three options with phone and desktop mocks, made-up people only); nothing for Angelo until the pick; 4 questions waiting (tier 3, none blocking yet); cost so far 0 USD (the lead's own session not counted by the platform per step).
+For the digest: design done, waiting on Angelo's pick (he leans to B, the vault's own app; the worker recommends A, a tab on /crm/ written by agents first); cost so far 3.29 USD, 45,433 output tokens.
 
 Lead: crm-pipeline.pm@PrompTugal.angelo (started 13 Nov 2026 by conductor.b@ at Angelo's word: "can you spawn a pm for this, and give it the first task of coming up with a good design for this?"). Wake routine: not yet in BRIEF.md (conductor.b@'s next commit); workers read it from BRIEF.md on origin/dev at their end.
 
@@ -22,7 +22,7 @@ One place the whole team records each new connection (who, company, notes, stage
 - Silvio's desk flow (WS-189), Silvio's 50 ranked companies (people/silvio/outreach/), Angelo's meetings workflow (people/angelo/meetings/README.md), WS-96 follow-ups: the design looks at these so we build one list, not a second.
 
 ## 3. Plan (steps; each a fresh worker)
-1. **d1 design** (large, running): the ten-second add on a phone, the stage board, the record and its history, how it sits on the vault, security and privacy; two or three options with mocks at 390 and 1280 px; a recommendation. Then Angelo's pick (point to him).
+1. **d1 design** (large, DONE 15:56, pool/crm-pipeline-d1 55cd0a2: recommends A, a Pipeline tab on /crm/, written by agents first until browsers can write; one pipeline record per company with append-only event files and a derived index): the ten-second add on a phone, the stage board, the record and its history, how it sits on the vault, security and privacy; two or three options with mocks at 390 and 1280 px; a recommendation. Then Angelo's pick (point to him).
 2. d2 spec (large): the record layout, who writes stage changes and how, the agents' API, the tier-3 asks to Dinis as one proposal.
 3. d3 build (large), then a cold-reader check; a proposal to the team only through Angelo.
 
@@ -48,6 +48,10 @@ Swept dev's commits (5 days), the board, branches, the CRM's tools and Silvio's 
 - **WS-217, Indi's followups@web-summit.indi (c0ebf5d, today 16:14):** Indi's 19 people to follow up as one sealed record in the private CRM (each with category, stage in our stages, owner, note; filed by conductor@web-summit.indi, 0ff930d) and a read-only page /crm/follow-ups/. Its item 3: "when its design is picked, the list moves into it, and this page and record are retired." It needs the same browser-write answer from Dinis (a drop box, WS-189 q4). It seals per record, unlike Angelo's point 2 decision: the spec reconciles.
 - WS-189 (Silvio's stand desk) and WS-172 (CRM editors/outreach/inbox agents): no change since 12 Nov, no stage board. WS-205 "the pipeline" is the agents' work trace, not sales.
 For the spec: WS-217's record shape is the first import; its page is a view to keep or retire.
+
+## For conductor.b@ (from d1's STATE)
+- check 21 (lanes): crm-pipeline.pm@ and design@ have no entry in people/angelo/policy/lanes.json; recommend people/angelo/projects/crm-pipeline/** through policy@.
+- d1's PNGs are about 4 MB in a public repository: keep for the pick, trim after the spec (decided by default).
 
 ## Open steps
 - d1 design: brief d1-design/brief.md; alpha.large.worker@ started 15:48 UTC (session_01Xp7gj55asnnL4CtJpYBcNS), claim crm-pipeline-d1. Note: pushed-by.mjs reads dev only; the worker checks my push on project/crm-pipeline through the activity API instead.
