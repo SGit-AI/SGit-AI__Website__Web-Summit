@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2078",
+    "date": "2026-11-13",
+    "what": "reviewer@PrompTugal.vicky: takedown step 2 reviewed: 98 company files released, 3 in fix; ledger lines",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "2e5019a9e"
+  },
+  {
     "version": "v0.2.2077",
     "date": "2026-11-13",
     "what": "weekly whole-team run, reusable only (standing answer 56): task prompt and prompts file",
