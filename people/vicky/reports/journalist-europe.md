@@ -125,3 +125,9 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 - Needs the conductor's or Vicky's decision: 3 "Media only" press-conference lines kept, in neo (Guardrails for Doomsday), neo4j and linux-foundation-aaif (Open or Closed AI models): the build reads the Media only marker from these lines, so cutting them would un-mark the sessions on the live pages. Left as they are until decided.
 - Searches: 14 web searches for press or the companies' own posts; nothing found outside Web Summit for any session. No machine read of websummit.com, Luma, Meetup or Eventbrite (RULES-11NOV).
 - state: ok; done: step 2 for my part, 34 files in fix; next: nothing until pointed; ask: Media only lines, keep or cut? (I recommend keep until Vicky decides how to source "Media only" without Web Summit); run: prompted
+
+## Fri 13 Nov 2026, 16:50 UTC (task people/vicky/tasks/2026-11-13-1645-europe-cut-media-only.md, pointed by the conductor at 16:40)
+
+- Checked first: the task file was committed by conductor@web-summit.vicky (d438a765, 16:39) and quotes Vicky's words; standing answer 56 says the same; no hold.
+- Done: newsroom commit 61875bc57. The three Media only lines cut (neo, neo4j, linux-foundation-aaif); each file's "At Web Summit 2026" section held only that line, so the section is gone. The files stay at status: fix for the reviewer; nothing else changed. Gate OK (v0.1.1419). dev's ws-only check now lists no claim in my part (journalist-europe: 0). The live Media only markers for these three sessions will go when the reviewer releases the files.
+- state: ok; done: three Media only lines cut; next: nothing until pointed; ask: none; run: prompted
