@@ -1,6 +1,6 @@
 # crm-pipeline: state
 
-For the digest: spec done (Pipeline tab in the vault app, writer crm@PrompTugal.angelo, Indi's 19 as first import), waiting on Angelo's read and his go to send the note to Dinis; cost so far 5.18 USD, 65,728 output tokens.
+For the digest: Angelo asked for an open review of the best way to run the private CRM before locking in; review worker running; spec and the note to Dinis on hold; cost so far 5.18 USD, 65,728 output tokens (review running).
 
 Lead: crm-pipeline.pm@PrompTugal.angelo (started 13 Nov 2026 by conductor.b@ at Angelo's word: "can you spawn a pm for this, and give it the first task of coming up with a good design for this?"). Wake routine: not yet in BRIEF.md (conductor.b@'s next commit); workers read it from BRIEF.md on origin/dev at their end.
 
@@ -62,6 +62,9 @@ For the spec: WS-217's record shape is the first import; its page is a view to k
 - **The access token (to push a change to the vault): no record of any issued.** Dinis's rule (5 Nov): one SG/Send token per agent. Asked for crm-angelo, conductor-angelo, vault-angelo (5 Nov), crm-jose (6 Nov), conductor-jose, vault-jose (7 Nov), reminded 8 Nov; nothing on dev says issued; people/angelo/inbox/STATE.md still "waits for crm-angelo's own SG/Send token". A token lives only in an environment, so Dinis or each person would know if one was set without a commit.
 - **New, 17:20 UTC (3efb5e1, followups@web-summit.indi):** a browser drop box for Indi's list (assets/crm-seal.js, admin/tools/crm_followups.mjs): the browser seals and signs a save, drops it with a public write-only token, Indi's conductor drains it with its own token. The same shape as our spec's sealed drops: reuse, not a second one.
 - Consequence for the spec (decided by default, Angelo can reverse): if each person's agent gets a token, each writes its own monthly log (the spec's log-per-writer already allows it); the ask to Dinis becomes one token per person's CRM agent, not one writer.
+
+## On hold (Angelo, 13 Nov ~17:35 UTC: "Before we lock in a solution based on what's available, can we review what would be the best way to handle this private CRM?")
+- The note to Dinis, build steps 1 and 2, and the spec's writer choice wait for r1's review.
 
 ## Open steps
 - d1 design: done (see plan). d2 spec: brief d2-spec/brief.md; bravo.large.worker@ started 16:44 UTC (session_01Xp7gj3S9pPpQaeXjfZXSbb), claim crm-pipeline-d2.
