@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2086",
+    "date": "2026-11-13",
+    "what": "conductor.b@PrompTugal.angelo: hand tasks to Angelo's agents while he is away (handover.agent.a@ and .b@)",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "1dcf30da9"
+  },
+  {
     "version": "v0.2.2085",
     "date": "2026-11-13",
     "what": "curator@PrompTugal.vicky: prompts file and report: stories.json for the README generator",
