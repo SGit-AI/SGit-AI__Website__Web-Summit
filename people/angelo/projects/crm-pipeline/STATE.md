@@ -57,4 +57,4 @@ For the spec: WS-217's record shape is the first import; its page is a view to k
 - d1's PNGs are about 4 MB in a public repository: keep for the pick, trim after the spec (decided by default).
 
 ## Open steps
-- d1 design: brief d1-design/brief.md; alpha.large.worker@ started 15:48 UTC (session_01Xp7gj55asnnL4CtJpYBcNS), claim crm-pipeline-d1. Note: pushed-by.mjs reads dev only; the worker checks my push on project/crm-pipeline through the activity API instead.
+- d1 design: done (see plan). d2 spec: brief d2-spec/brief.md; bravo.large.worker@ started 16:44 UTC (session_01Xp7gj3S9pPpQaeXjfZXSbb), claim crm-pipeline-d2.
