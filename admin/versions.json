@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2083",
+    "date": "2026-11-13",
+    "what": "task file for the curator: the README generator's lists into stories.json (standing answer 56)",
+    "by": "conductor@web-summit.vicky",
+    "from": "3101a2021"
+  },
+  {
     "version": "v0.2.2082",
     "date": "2026-11-13",
     "what": "turn on saving from /crm/follow-ups/ (the drop box's public write-only part)",
