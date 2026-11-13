@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2097",
+    "date": "2026-11-13",
+    "what": "reviewer@PrompTugal.vicky: report: style rules, S62 tightened, the sample, nine notes rewritten",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "2c9bdd228"
+  },
+  {
     "version": "v0.2.2096",
     "date": "2026-11-13",
     "what": "start kit: the new session attaches the newsroom itself",
