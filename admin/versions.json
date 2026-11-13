@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2085",
+    "date": "2026-11-13",
+    "what": "curator@PrompTugal.vicky: prompts file and report: stories.json for the README generator",
+    "by": "curator@PrompTugal.vicky",
+    "from": "38d2119a6"
+  },
+  {
     "version": "v0.2.2084",
     "date": "2026-11-13",
     "what": "my tokens, wake 10: 254,807 fresh (249,005 re-loading); today's report sent to the accounts inbox",
