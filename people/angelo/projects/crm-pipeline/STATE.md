@@ -57,5 +57,11 @@ For the spec: WS-217's record shape is the first import; its page is a view to k
 - check 21 (lanes): crm-pipeline.pm@ and design@ have no entry in people/angelo/policy/lanes.json; recommend people/angelo/projects/crm-pipeline/** through policy@.
 - d1's PNGs are about 4 MB in a public repository: keep for the pick, trim after the spec (decided by default).
 
+## Who can write the CRM today (checked 13 Nov ~17:30 UTC, at Angelo's question: "I think each member of the team needs to have at least 1 agent that can write to the CRM app, and I thought we all already had that in place, isn't that the case?")
+- **The key (to read and to make changes): yes, everyone.** data/sealed/agents/ on dev: Angelo (conductor@, crm@web-summit.angelo), Dinis (crm@, inbox@web-summit.dinis), Jose (conductor@, crm@), Silvio (conductor@, crm@, dev@, inbox@, vault@), Vicky (conductor@, inbox@), Indi (conductor@web-summit.indi, two keys).
+- **The access token (to push a change to the vault): no record of any issued.** Dinis's rule (5 Nov): one SG/Send token per agent. Asked for crm-angelo, conductor-angelo, vault-angelo (5 Nov), crm-jose (6 Nov), conductor-jose, vault-jose (7 Nov), reminded 8 Nov; nothing on dev says issued; people/angelo/inbox/STATE.md still "waits for crm-angelo's own SG/Send token". A token lives only in an environment, so Dinis or each person would know if one was set without a commit.
+- **New, 17:20 UTC (3efb5e1, followups@web-summit.indi):** a browser drop box for Indi's list (assets/crm-seal.js, admin/tools/crm_followups.mjs): the browser seals and signs a save, drops it with a public write-only token, Indi's conductor drains it with its own token. The same shape as our spec's sealed drops: reuse, not a second one.
+- Consequence for the spec (decided by default, Angelo can reverse): if each person's agent gets a token, each writes its own monthly log (the spec's log-per-writer already allows it); the ask to Dinis becomes one token per person's CRM agent, not one writer.
+
 ## Open steps
 - d1 design: done (see plan). d2 spec: brief d2-spec/brief.md; bravo.large.worker@ started 16:44 UTC (session_01Xp7gj3S9pPpQaeXjfZXSbb), claim crm-pipeline-d2.
