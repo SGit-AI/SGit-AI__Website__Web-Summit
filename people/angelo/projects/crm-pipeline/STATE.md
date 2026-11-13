@@ -36,4 +36,4 @@ One place the whole team records each new connection (who, company, notes, stage
 - The design brief asks for three options, not two, and for made-up people labelled as such in every mock (privacy).
 
 ## Open steps
-- d1 design: brief d1-design/brief.md; worker in runs.md.
+- d1 design: brief d1-design/brief.md; alpha.large.worker@ started 15:48 UTC (session_01Xp7gj55asnnL4CtJpYBcNS), claim crm-pipeline-d1. Note: pushed-by.mjs reads dev only; the worker checks my push on project/crm-pipeline through the activity API instead.
