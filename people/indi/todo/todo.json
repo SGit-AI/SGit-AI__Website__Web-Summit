@@ -1,6 +1,6 @@
 {
  "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by dashboard@web-summit.indi at each run, from 4 November at Indi's word (first written by synthetic@web-summit.indi from the board, Indi's briefs 1 to 8 and that day's git log).",
- "written": "2026-11-12T17:45Z",
+ "written": "2026-11-13T17:40Z",
  "done_for_indi": {
   "WS-01": "Done: you are at L4 (people/indi/onboarding.json).",
   "WS-02": "Done: you are at L4.",
@@ -49,7 +49,8 @@
   "WS-171": "Not built yet when checked at 14:30 UTC on 6 Nov: it is due today. Ask factory@'s chat for the first page, then read it and say if it makes sense.",
   "WS-177": "Still to run: paste your conductor's prompt into your synthetic helper's chat. Your accountant suggests the cheaper Sonnet or Haiku models for it. The outreach emails wait on reviews this weekend.",
   "WS-168": "Vicky reviewed the 'lead to article' page: the six steps work, keep the title. She suggests doing interviews on the spot at the stand. Read her note and say if you want that.",
-  "WS-209": "Your education idea: (1) pick a time to talk with Dinis, before Thursday's stand day; (2) look at the list of 22 education and child-safety people and connect with them in the Web Summit app; (3) send the drafted reply to Dinis's agent. The idea page is already live."
+  "WS-209": "Your education idea: (1) pick a time to talk with Dinis, before Thursday's stand day; (2) look at the list of 22 education and child-safety people and connect with them in the Web Summit app; (3) send the drafted reply to Dinis's agent. The idea page is already live.",
+  "WS-217": "Your follow-up list (19 people you met) is on the follow-ups page, sealed so only the team can open it. Tick each person as you follow up, and add a note. Due Saturday."
  },
  "other": [
   {

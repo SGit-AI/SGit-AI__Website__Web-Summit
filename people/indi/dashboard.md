@@ -21,7 +21,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** the summit is over. Friday's LinkedIn post is drafted: 'thank you, Lisbon'. Read it, post it, then reshare with your own line. Everything else is on [your to-do list](todo/index.html).
+**Right now:** the summit is over. Your follow-up list of 19 people is ready on [the follow-ups page](../../crm/follow-ups/index.html): tick each one as you follow up, by Saturday. Friday's LinkedIn post, 'thank you, Lisbon', is drafted. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 
