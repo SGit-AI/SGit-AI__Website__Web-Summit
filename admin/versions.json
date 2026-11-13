@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2066",
+    "date": "2026-11-13",
+    "what": "conductor.b@PrompTugal.angelo: project crm-pipeline opened for its PM",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "6a78f8e2a"
+  },
+  {
     "version": "v0.2.2065",
     "date": "2026-11-13",
     "what": "conductor.b@PrompTugal.angelo: all agents paused (five routines off)",
