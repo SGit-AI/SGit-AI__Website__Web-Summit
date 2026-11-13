@@ -21,6 +21,8 @@ Route only; never build. Workers: session-less, 20 slots (10 large, 10 small), p
 
 ## Open
 
+- **ALL PAUSED** (Angelo, 13 Nov about 12:50 UTC: "Yes please, pause all agents."): routines disabled: accountant.b@ trig_01CvoEzp8UjqACZ2EXV3hnFW; PM wakes prod-pipeline trig_01MqHQ7CWqSnu5JGwYRpkQg5, handover-market trig_01Sp6G7mUcG4f97btiJRmgK4, riskmandate-android-demo trig_01GnGftTuQdk1LM63LnvaDtn, network-views trig_01D39RAzsMdheFWbiBWjttdi (digest.b@ and conductor.fringe@'s wake were already off; the Fringe is under Dinis's HOLD.md). No worker session running (all archived); the four PMs, conductor.fringe@ and policy@ are idle and wake only when Angelo writes to them. Re-enable a routine only at Angelo's word.
+
 - **riskmandate-android-demo.pm@** (session_01Xp7gj4A4EGPjvb7sQeBEBJ, wake trig_01GnGftTuQdk1LM63LnvaDtn, backstop :12 every 2 hours): Silvio's X-ray demo page (https://web-summit.sgit.ai/people/silvio/app/index.html#xray) as a full-screen menu entry in the RiskMandate Android app, started 21:12 at Angelo's word. Writing to PrompTugal/PrompTugal__App__Android waits for his word (tier 3); the spec is read-only meanwhile.
 - **Handover split** (Angelo, 21:3x: "Agree, go ahead"): conductor.fringe@ owns the live packet exchange with Dinis's agents (done 20:28 to 20:32, Fringe 155113b, 606564c); handover-market.pm@ drops its p1 reply and p2 and moves to the capacity board, offer/claim/lapse between accounts, Ollama, AWS (its BRIEF, "Scope changed").
 
