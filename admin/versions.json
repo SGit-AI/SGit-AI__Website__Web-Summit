@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2073",
+    "date": "2026-11-13",
+    "what": "dev@PrompTugal.vicky: report, ws-only-claims.json (task 2026-11-13-about-claims, step 1)",
+    "by": "dev@PrompTugal.vicky",
+    "from": "a07e82eaf"
+  },
+  {
     "version": "v0.2.2072",
     "date": "2026-11-13",
     "what": "the sealed follow-ups record is filed in the private CRM",
