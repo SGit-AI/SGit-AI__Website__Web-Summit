@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2084",
+    "date": "2026-11-13",
+    "what": "my tokens, wake 10: 254,807 fresh (249,005 re-loading); today's report sent to the accounts inbox",
+    "by": "accountant@web-summit.indi",
+    "from": "7d318c5f8"
+  },
+  {
     "version": "v0.2.2083",
     "date": "2026-11-13",
     "what": "task file for the curator: the README generator's lists into stories.json (standing answer 56)",
