@@ -28,12 +28,13 @@ One place the whole team records each new connection (who, company, notes, stage
 
 ## Waiting on Angelo (tier 3; none blocks the design)
 1. Reading or writing the private vault: DECIDED by Angelo, 13 Nov ~15:55 UTC, to the recommendation "nobody touches the vault before the spec; then one agent with its own access token, asked of Dinis through Angelo, as the only writer": "Yes, go ahead". The token ask itself still goes through Angelo when the spec is ready.
-2. WS-189 q3, a visitor's contact details: sealed per record (layer 2 back on for contacts) or kept out of the CRM? Dinis's call; the design will show both.
+2. A contact's details: DECIDED by Angelo, 13 Nov ~16:00 UTC: "Those who'll have access to the vault are only the members of the team and they are allowed to see the contacts because we're all part of this work." So contact details sit in the record, readable by everyone with the vault key; no per-record sealing. The spec still records consent and the deletion path. Note for the spec: the vault key is also sealed to each person's conductor and to CRM agents (WS-170), so "the team" includes their agents; the spec says so plainly.
 3. Changing Dinis's /crm/ and admin/tools/crm* (if the pick puts the UI there): the five steps, For: conductor@web-summit.dinis, with Angelo's go.
 4. Proposing it to the team (Dinis replied "yes ... we can then all use it"): through Angelo, after the pick.
 
 ## Decided by Angelo
 - 13 Nov, point 1 (the plan, the vault approach above): "Yes, go ahead".
+- 13 Nov, point 2 (contact details): team-wide, no sealing: "Those who'll have access to the vault are only the members of the team and they are allowed to see the contacts because we're all part of this work."
 
 ## Decided by default (Angelo can reverse)
 - The design brief asks for three options, not two, and for made-up people labelled as such in every mock (privacy).
