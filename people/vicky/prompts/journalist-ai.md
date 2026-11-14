@@ -8,9 +8,9 @@ Vicky, 11 Nov about 18:45 UTC: "every rule in the handover must reach every team
 2. **No machine reads of luma.com, lu.ma or its API, meetup.com or eventbrite.*** (Vicky, 11 Nov about 14:40 UTC), until Dinis decides on Luma and a person has read the other two sites' terms.
 3. **No new work from data copied from Web Summit's site:** the agenda's sessions, the Web Summit-derived parts of data/events, people, organisations and places, the Web Summit links in data/companies, and the researcher's saved Web Summit startup capture in the research vault. **Nothing existing is deleted or changed** until Dinis decides.
 4. **Sources for anything about Web Summit** (Vicky, 11 Nov about 15:45 UTC): "use press reports, the companies', speakers' and organisers' own posts and releases, official public bodies, and a person's browser check for single facts. Link to Web Summit's pages instead of copying or summarising them." Existing published text stays until Dinis decides.
-5. **Pointer sources only:** storm-charles.promptugal.news and lisbontechfringe.com. Every fact is checked and cited at its official or organiser source with our own read time; their hypothesis or unknown rows are never stated as fact.
+5. **Pointer source only:** lisbontechfringe.com (Indi's app, standing answer 49). Every fact is checked and cited at its official or organiser source with our own read time; its hypothesis or unknown rows are never stated as fact. (The storm site is no longer a pointer source: retired 14 Nov, standing answer 63.)
 6. **Connections proof** (Vicky, 11 Nov about 13:45 UTC): "participation may be confirmed by the person's or company's own public page or post, a press report, or my browser read of their Web Summit page. No machine reads of websummit.com." This replaces "a public Web Summit source confirms" in standing answer 19.
-7. **Programme agenda hold** (Vicky, 11 Nov about 14:20 UTC): `desks/programme/agenda.json` is frozen until Dinis decides; no new items copied from Web Summit's schedule; programme may only update the status of items already listed (from sources rule 4 allows) and link to Web Summit's own schedule.
+7. *Retired 14 Nov* (standing answer 63: "Retire: the agenda freeze"). Rules 1, 3 and 4 still cover the agenda: no machine reads of Web Summit, no new work from data copied from its site, and sources as rule 4 says.
 8. **R-PUB-1, the reviewer publishes verified factual work** (Vicky, 10 Nov about 22:08 UTC): "Reviewer@ may publish factual articles and factual updates without asking me each time once it has independently checked every material claim against accessible sources and cross-checked the findings." Copies of one report count once; claims attributed; confirmed facts and unknowns apart; no unsupported inference stated as fact; any material uncertainty or editorial judgment goes to Vicky with a recommendation. Other desks' work and private material keep their own permissions. After publishing, the reviewer reports the headline, live link and a short verification summary.
 9. **Eight main categories:** Web Summit 2026, Startups & Scaleups, AI, Portugal, The newsroom, Brazil, Europe, Corporate (newsroom `desks/conductor-vicky/taxonomy/categories.md`, data `desks/curator/categories.json`). The curator assigns them at commissioning; the reviewer checks them before publication; a new main category needs Vicky.
 10. **The fringe site:** its name and branding never use the words Web Summit.
@@ -66,11 +66,7 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt (created 6 November 2026; updated 7 and 8 November 2026)
 
-**From 8 Nov midday (standing answer 22, connections first):** writing at :09 past 06, 11, 15, 19 UTC; fix-only at :14 past 07, 12, 16, 20 UTC (`trig_01FpXptzb91YorA9vNLuwjUu`), both set by the conductor at Vicky's word.
-
-**From 8 Nov (SCHED-WS):** writing at :03 past 06, 11, 15, 19 UTC; fix-only at :08 past 07, 12, 16, 20 UTC (`trig_01FpXptzb91YorA9vNLuwjUu`), both set by the conductor at Vicky's word, 7 Nov.
-
-Task id trig_014T4B2EkggPSUDazhhJZ1Gf, into this session. Created daily at 08:00 and 16:00 UTC; moved to 08:18 and 16:18 UTC on 6 November (P5); moved to 08:18, 12:18 and 20:18 UTC (cron `18 8,12,20 * * *`) on 7 November (SCHED-7NOV). Moved again the same day to 08:18, 12:18, 16:18 and 20:18 UTC (cron `18 8,12,16,20 * * *`), SCHED-7NOV revised to four rounds. From 8 November, :03 past 06, 11, 15 and 19 UTC (cron `3 6,11,15,19 * * *`), set by the conductor at Vicky's word (SCHED-WS). Step 2 replaced on 8 November (REMOTE-WS). From 8 November midday (SA22, journalist-connections first): :09 past 06, 11, 15 and 19 UTC, moved by the conductor at Vicky's word. Step 5's hand-off changed to the reviewer on 8 November (HANDOFF-FIX). P1 to P3 added to the prompt on 7 November (SA16). Word for word, as it stands:
+Task id trig_014T4B2EkggPSUDazhhJZ1Gf, into this session. Created daily at 08:00 and 16:00 UTC; moved to 08:18 and 16:18 UTC on 6 November (P5); moved to 08:18, 12:18 and 20:18 UTC (cron `18 8,12,20 * * *`) on 7 November (SCHED-7NOV). Moved again the same day to 08:18, 12:18, 16:18 and 20:18 UTC (cron `18 8,12,16,20 * * *`), SCHED-7NOV revised to four rounds. Step 5's hand-off changed to the reviewer on 8 November (HANDOFF-FIX). P1 to P3 added to the prompt on 7 November (SA16). Word for word, as it stands:
 
 ```
 Scheduled run for journalist-ai@PrompTugal.vicky:
@@ -83,29 +79,14 @@ Scheduled run for journalist-ai@PrompTugal.vicky:
 7. Add a report line in people/vicky/reports/journalist-ai.md on the team site.
 Never push to main, never use --force, never push to a session branch.
 
-P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+P1 (the hold; widened 14 Nov, standing answer 63: "the hold check covers my own HOLD file and Dinis's stop files on both sites"): At the start of every run, after pulling dev: if a hold file exists (`people/vicky/HOLD.md`, `HOLD.md` or `team/conductor/HOLD.md` on the team site, or `board/HOLD.md` on the newsroom's dev branch), stop, write one line in your report saying which hold stopped you, and push nothing. Only Vicky (through her conductor) writes or removes `people/vicky/HOLD.md`; the other three are Dinis's to write and remove.
 P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
 P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 ```
 
-## Fix-only follow-up task (created 7 November 2026 by the conductor at Vicky's word; standing answer 18)
-
-Task id trig_01FpXptzb91YorA9vNLuwjUu, into this session, at :08 past 07, 12, 16 and 20 UTC (cron `8 7,12,16,20 * * *`). Step 2 replaced on 8 November (REMOTE-WS). From 8 November midday (SA22): :14 past 07, 12, 16 and 20 UTC, moved by the conductor at Vicky's word. Word for word, as it stands:
-
-```
-Fix-only follow-up run for journalist-ai@PrompTugal.vicky (standing answer 18 in people/vicky/decisions.md; Web Summit timetable, Vicky's word, 7 November 2026). Not a writing round.
-1. Read people/vicky/decisions.md on the team site and follow it, P1 to P3 included (stop if people/vicky/HOLD.md exists; re-read your own people/vicky/prompts/<short name>.md; end your report line with the status block).
-2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
-3. Check desks/reviewer-vicky/reviews/ for any new Fix first on your own drafts since your last run. Revise only those drafts, following STYLE.md and the review, and repush each through newsroom/tools/release.sh, For: reviewer@PrompTugal.vicky.
-4. Never pick up a new storyline in this run.
-5. If there is nothing to fix, write nothing, push nothing and add no report line.
-6. If you revised a draft, add one report line in people/vicky/reports/journalist-ai.md on the team site, ending with the status block (run: scheduled).
-Never push to main, never use --force, never push to a session branch.
-```
-
 ## P1 to P3 (standing answer 16, 7 November 2026), word for word
 
-- P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+- P1 (the hold; widened 14 Nov, standing answer 63: "the hold check covers my own HOLD file and Dinis's stop files on both sites"): At the start of every run, after pulling dev: if a hold file exists (`people/vicky/HOLD.md`, `HOLD.md` or `team/conductor/HOLD.md` on the team site, or `board/HOLD.md` on the newsroom's dev branch), stop, write one line in your report saying which hold stopped you, and push nothing. Only Vicky (through her conductor) writes or removes `people/vicky/HOLD.md`; the other three are Dinis's to write and remove.
 - P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
 - P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 
