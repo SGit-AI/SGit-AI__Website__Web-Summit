@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2157",
+    "date": "2026-11-14",
+    "what": "standing answer 74: only the conductor opens the interview write-ups; journalist-ai drafts Vicky's page privately (task file, no private content)",
+    "by": "conductor@web-summit.vicky",
+    "from": "5b416f2bf"
+  },
+  {
     "version": "v0.2.2156",
     "date": "2026-11-14",
     "what": "the client pipeline, a first start on the UI and UX (Indi picks up crm-pipeline)",
