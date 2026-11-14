@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **71** the interview series: AI and The newsroom, tags "Humans and AI" and "Team interviews"; titles in the person's own words; the designer draws covers in its own folder, the reviewer wires them in.
 - **70** humans and AI story 1 as a team piece: interviews by each person's own Claude (Dinis, Silvio, Angelo, Indi, Jose), write-ups to vault A only, one page per person approved as a whole, then an overview; not commissioned yet.
 - **69** covers by the designer, checked by the reviewer (15 changed); weekly runs: reporter Fridays 09:30, internal Fridays 14:30 UTC, counts in Friday's relay.
 - **68** stored copies of scheduled prompts become a one-line reference, after the fix-up (update STORED-REF); scout's narrower reply rule stands.
@@ -304,6 +305,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **The request:** `people/vicky/requests/2026-11-14-humans-and-ai-interview.md` (the prompt and how to return it), addressed in a commit to the five recipients' conductors. Recipients: Dinis, Silvio, Angelo (away until 20 Nov), Indi and Jose. Vicky sends her group message herself.
     - **Write-ups:** sent privately to Vicky; when she passes one to the conductor it goes only into vault A (`reports/humans-and-ai/`); public files show a count only.
     - **Publishing:** one page per person: a short introduction (150 to 250 words), then the full Q&A exactly as that person approved it; nothing is published until they approve the whole page. When all are out, one overview article in the Humans and AI series (journalist-ai, category AI) links to each page. Titles are Vicky's call.
+
+71. **The interview series' categories and titles; who wires a cover** (Vicky, 14 Nov, about 11:40 UTC, in this window: "categories option A for the humans-and-AI interviews." and "title format option 2." and "designer asks who wires a cover into the article. Keep designer to its own folder: it draws covers under desks/designer-vicky/covers/<slug>/, and the reviewer wires the cover into the article when it publishes. Tell both of them the exact field and path.")
+    - **Categories and tags** (the person pages and the overview): AI and The newsroom; tags "Humans and AI" and "Team interviews".
+    - **Titles:** each page's title is a line in the person's own words from their Q&A; the subtitle is "<name, or role only if they chose>, <role>, on <main topic>"; the series shows through the tag and categories. journalist-ai proposes two or three titles per page, Vicky chooses, and the person approves the title with the whole page.
+    - **Covers:** the designer draws only in `desks/designer-vicky/covers/<slug>/` (the four PNGs `<slug>--paper|ink--card|thumb.png`, the `.svg` source, `notes.md` with the alt text and each figure's source). The reviewer wires the cover in when it publishes: the PNGs copied to `design/infographics/out/`, four entries in its `index.json` (`hand.by` designer@PrompTugal.vicky), `image:`/`image_width`/`image_height`/`image_alt` in the article's front matter, and the image directly under "The story". Task files `2026-11-14-1140-cover-wiring-*`.
 
 ## Updates for agents
 
