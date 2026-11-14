@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **73** outside interviews on hold until Vicky talks to Dinis; nothing drafted or changed.
 - **72** the interview page (people/vicky/interview/) and a sealed way back to people/vicky/sealed/humans-and-ai/; the conductor reports arrivals in the brief.
 - **71** the interview series: AI and The newsroom, tags "Humans and AI" and "Team interviews"; titles in the person's own words; the designer draws covers in its own folder, the reviewer wires them in.
 - **70** humans and AI story 1 as a team piece: interviews by each person's own Claude (Dinis, Silvio, Angelo, Indi, Jose), write-ups to vault A only, one page per person approved as a whole, then an overview; not commissioned yet.
@@ -317,6 +318,9 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Two ways back:** privately to Vicky (anyone); or, if the person's conductor can seal files and only after the person has approved the write-up, sealed to conductor-vicky-3 (encryption sha256:6c7ad1aec4d55f31) and committed to `people/vicky/sealed/humans-and-ai/<first name>-<date>` with `For: conductor@web-summit.vicky`. Never an unsealed write-up in the repository.
     - **A file to download** (Vicky, 14 Nov, about 12:00 UTC, in this window: "I think it's better to do this like after the interview. The cloud session can generate a file so they can download the file and put the file into the conductor and then seal that to me."): the interview runs in a new Claude chat (not the working conductor session); at the end it gives a Markdown file `humans-and-ai-<first name>-<date>.md`; the person sends that file to Vicky privately, or gives it to their own conductor, which seals it to conductor-vicky-3 and commits only the sealed file to the folder above.
     - **The conductor** checks that folder at every brief and relay, opens any new file, moves it into vault A (`reports/humans-and-ai/`), and reports its arrival under "Being tracked" (name and count only).
+
+73. **Outside interviews: on hold** (Vicky, 14 Nov, about 12:20 UTC, in this window: "can you keep the outside interview on hold for now, i need to talk to dinis about this. when i need this again, then we plan it more detailed")
+    - The idea (interviewing people outside the team, contacted by Vicky on LinkedIn or Web Summit Connect, published on PrompTugal.news; storage in the interview shortlist vault, renamed; contacts in the CRM or nowhere) is on hold until Vicky has talked to Dinis. Nothing is drafted, no vault is renamed or resealed, no page is built, and nobody is contacted. When she raises it again, the conductor plans it in detail and shows her the drafts first.
 
 ## Updates for agents
 
