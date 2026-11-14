@@ -81,3 +81,8 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
 - SA54-LEDGER: people/vicky/ledger/vault.jsonl holds my first line (the session total so far) and this run's ("prompts update"), numbers only.
 - For Vicky or the conductor: the interview shortlist vault's own PRIVATE.md still carries its summit purpose ("until Dinis has picked"). That file is inside the vault, not in my prompts file, so I left it. Standing answer 63 says to archive the vault's summit rules; tell me if you want that wording changed there.
 - state: ok; done: CLEANUP-14NOV and SA16 applied, ledger started; next: wait for the conductor or Vicky; ask: none; run: prompted
+
+## 14 November 2026 (the interview shortlist vault is an archive)
+
+- At Vicky's word: the interview shortlist vault's PRIVATE.md description now says "Web Summit is over. This vault is kept as an archive; no new work." in place of "until Dinis has picked". Rule 1, that nothing leaves the vault until Dinis has picked and the person has been asked, is unchanged, at her choice. vault-audit.mjs is clean.
+- state: ok; done: shortlist vault marked as an archive; next: wait for the conductor or Vicky; ask: none; run: prompted
