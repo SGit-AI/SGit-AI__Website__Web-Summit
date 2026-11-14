@@ -324,3 +324,8 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 
 - Scheduled-prompt fix-up applied to my one task (`trig_01QqwpxE9hhp5rwuxSS9D9ZF`, enabled, `35 7,11,15 * * *`, time and state unchanged): the pointer to the top of my prompts file now points to decisions.md (standing answers 31 and 16), and "Until the researcher's first confirmed run..." and "This task stays disabled until Vicky agrees a new schedule" are gone. P1 to P3 and the rest are word for word. The stored copy in my prompts file matches.
 - state: ok; done: scheduled prompt and stored copy fixed; next: curator 11:35 and 15:35; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:10 UTC (task 2026-11-14-1110-stored-ref-curator)
+
+- applied STORED-REF: the full copy of my scheduled task's prompt in `people/vicky/prompts/curator.md` is replaced by one reference line (task `trig_01QqwpxE9hhp5rwuxSS9D9ZF`, `35 7,11,15 * * *`, enabled) and a dates-only history; the file went from 39,164 to 23,694 bytes. No task prompt, state or time changed.
+- state: ok; done: stored prompt copy replaced; next: curator 11:35 and 15:35; ask: none; run: prompted
