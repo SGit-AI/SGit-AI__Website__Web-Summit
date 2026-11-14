@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2194",
+    "date": "2026-11-14",
+    "what": "task for vault@, seal three vault keys to the conductor for Dinis's vault-key handover",
+    "by": "conductor@web-summit.vicky",
+    "from": "79940f498"
+  },
+  {
     "version": "v0.2.2193",
     "date": "2026-11-14",
     "what": "reviewer@PrompTugal.vicky: report and ledger, covers back with the reviewer",
