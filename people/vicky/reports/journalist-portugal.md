@@ -160,3 +160,10 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 - Where Humanos is based, as asked: four press reports say created in Madeira; Sifted via Portugal Startup News says Lisbon-based; its own site is signed "Humanos Labs, Inc." with no country; our published article S29 (who-builds-the-parts-of-an-ai-agent) says "from the United States" from Web Summit's listing, while S31 says Madeira from Startup Portugal's booklet. For the reviewer: S29 may need a correction (not my file; I left it).
 - Not confirmed: the 350-organisation figure and the 3.2 million dollar round (the company's, via Sifted and the press); the prize details from Startup Portugal's or Galp's own release (not found).
 - state: ok; done: S61 drafted; next: on demand; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 10:20 UTC (task 2026-11-14-1015-cleanup-journalist-portugal, prompted by the conductor)
+
+- applied CLEANUP-14NOV: in my prompts file, P1 replaced by the widened text of standing answer 16; RULES-11NOV rule 5 now standing answer 31's new rule 5 (lisbontechfringe.com only) and rule 7 its "Retired 14 Nov" line; the schedule paragraphs (SCHED-WS, the fix-only task's times) and the whole fix-only task section (standing answer 18) taken out; the scheduled task's copy now also carries its line 0 (RULES-11NOV), which the file lacked. Everything else word for word. No line said publishing waits for Vicky's word (my startup prompt's "you never publish or sign an article" is my role and stays) and none said never message another session.
+- Scheduled prompt: changed (trig_01R4SDnvm1qg6LrQVcmCRPaH: widened P1, and line 0 now names lisbontechfringe.com only; still disabled). Could not apply: the fix-only task (trig_015W8aURM2zEyH9Sd9gJvzNx) rests only on archived standing answer 18; I left its prompt as it is (disabled) because the task is the conductor's to remove; I cannot delete it from here.
+- Ledger (SA54-LEDGER): added "prompts update", and, because I had missed it since 12 Nov, the one-off "session total so far" line.
+- state: ok; done: CLEANUP-14NOV applied; next: on demand; ask: none; run: prompted
