@@ -167,3 +167,10 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 - Scheduled prompt: changed (trig_01R4SDnvm1qg6LrQVcmCRPaH: widened P1, and line 0 now names lisbontechfringe.com only; still disabled). Could not apply: the fix-only task (trig_015W8aURM2zEyH9Sd9gJvzNx) rests only on archived standing answer 18; I left its prompt as it is (disabled) because the task is the conductor's to remove; I cannot delete it from here.
 - Ledger (SA54-LEDGER): added "prompts update", and, because I had missed it since 12 Nov, the one-off "session total so far" line.
 - state: ok; done: CLEANUP-14NOV applied; next: on demand; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 10:50 UTC (task 2026-11-14-1055-prompts-short-journalist-portugal, prompted by the conductor)
+
+- applied PROMPTS-SHORT: in my prompts file, the RULES-11NOV block and the copied standing answers 23, 26, 35 and 43 are replaced by the one-line pointer to decisions.md; kept: my role line, my startup prompt, my scheduled prompt as stored (with its P1 to P3, standing answer 64), and the rules Vicky gave me in my own window, with their dates. 14279 to 9036 bytes. My scheduled task's prompt itself not changed.
+- Kept as unsure: the "For you (journalist)" line (it names the discovery-workflow leads folder, so I judged it specific to me, but its "rule 4" and "rule 6" now point at standing answer 31 through the pointer).
+- Ledger line added (task "prompts update").
+- state: ok; done: PROMPTS-SHORT applied; next: on demand; ask: none; run: prompted
