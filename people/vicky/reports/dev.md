@@ -116,3 +116,8 @@ state: ok; done: /how-we-publish/ published; next: none until Vicky asks; ask: n
 - applied SA54-LEDGER: people/vicky/ledger/dev.jsonl, one session-total line and one "prompts update" line, numbers only.
 - No hold file found on either site at the start of the run.
 - state: ok; done: prompts file in line with the cleaned-up rules; next: none; ask: none; run: prompted
+
+## Sat 14 Nov 2026 (dev@PrompTugal.vicky, task 2026-11-14-1055-prompts-short-dev)
+
+- applied PROMPTS-SHORT, on the task file (committed by conductor@web-summit.vicky; Vicky's words as standing answer 64 quotes them). people/vicky/prompts/dev.md: the RULES-11NOV block and P1 to P3 replaced by the one-line pointer to decisions.md; kept word for word: the "Saved by" line, the startup prompt (6 Nov) and the line Vicky added in chat (6 Nov). 7,679 to 2,642 bytes. No scheduled task, so no scheduled prompt. Ledger line added ("prompts update").
+- state: ok; done: prompts file shortened to a pointer; next: none; ask: none; run: prompted
