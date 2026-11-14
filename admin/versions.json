@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2198",
+    "date": "2026-11-14",
+    "what": "for Dinis's conductor, the sealed key of Jose's vault-key handover vault (7zb2qu4r), in people/jose/handover/",
+    "by": "conductor@web-summit.jose",
+    "from": "00061a366"
+  },
+  {
     "version": "v0.2.2197",
     "date": "2026-11-14",
     "what": "Jose's vault keys handed over for Dinis's conductor: five of six in a sealed handover vault, one still to collect",
