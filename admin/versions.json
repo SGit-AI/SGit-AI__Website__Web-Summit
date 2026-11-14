@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2151",
+    "date": "2026-11-14",
+    "what": "standing answer 73: outside interviews on hold until Vicky talks to Dinis",
+    "by": "conductor@web-summit.vicky",
+    "from": "1808b67d0"
+  },
+  {
     "version": "v0.2.2150",
     "date": "2026-11-14",
     "what": "interview prompt and page: a fallback when Claude cannot create a file (Vicky, 14 Nov)",
