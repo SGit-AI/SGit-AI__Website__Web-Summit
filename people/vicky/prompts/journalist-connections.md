@@ -45,11 +45,20 @@ Reporting: after each draft, add a short line to people/vicky/reports/[Name].md 
 Start now: set up your key, then write your first story. Before writing, check its sources at their own addresses; if they're too thin, tell me instead of writing.
 ```
 
-## Scheduled task's prompt (6 November 2026)
+## Scheduled task's prompt (6 November 2026; stored copy as of 14 November 2026, 10:59 UTC, task trig_01RqSqjPAC6WuwNmTbjKFzwa, disabled)
 
 **From 8 Nov, 18:56 UTC (at Vicky's word):** step 5 addresses new drafts For: reviewer@PrompTugal.vicky (before then: For: journalist@PrompTugal.dinis, the address set on 6 Nov). Schedule unchanged.
 
 ```
+RULES-11NOV, read first; they override anything below (Vicky, 11 Nov 2026, about 18:45 UTC; in people/vicky/decisions.md on the team site: RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16; it wins if anything disagrees):
+- No machine reads of websummit.com, any of its subdomains, the Web Summit app or any API behind its pages (including graphql.cilabs.com and the startups page's search service).
+- No machine reads of luma.com, lu.ma or its API, meetup.com or eventbrite.*.
+- No new work from data copied from Web Summit's site; nothing existing deleted or changed until Dinis decides.
+- Sources for anything about Web Summit: press reports, the companies', speakers' and organisers' own posts and releases, official public bodies, and a person's browser check for single facts. Link to Web Summit's pages instead of copying or summarising them.
+- Pointer source only: lisbontechfringe.com (Indi's app, standing answer 49); every fact checked and cited at its official or organiser source. (The storm site is no longer a pointer source: retired 14 Nov, standing answer 63.)
+- Connections proof: participation may be confirmed by the person's or company's own public page or post, a press report, or Vicky's browser read of their Web Summit page. No machine reads of websummit.com.
+- Write only from the curator's assignments; log leads in desks/journalist-vicky/leads/ while the discovery workflow runs.
+
 Scheduled run for journalist-connections@PrompTugal.vicky:
 1. Read people/vicky/decisions.md on the team site and follow it.
 2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
