@@ -305,5 +305,5 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 
 Retired from this list on 14 Nov (standing answer 63): SCHED-WS, SA24X, SA26, SA27, SA28, SA29, RULES-11NOV, SA33-VAULTS, SA33-TOOLS, SA33-PROGRAMME, SA35-WS, SA36-SIGN, SA39-FIX, SA43-ONDEMAND and the old confirmation lists. The rules they carried stay in force through the standing answers and the agents' prompts files; their text is in the archive.
 
-**PROMPTS-SHORT, pointers in place of copied rules** (standing answer 64, Vicky, 14 Nov about 10:35 UTC). For: all agents with a prompts file. **Starts after the three role changes; the conductor sends each agent a task file then.**
+**PROMPTS-SHORT, pointers in place of copied rules** (standing answer 64, Vicky, 14 Nov about 10:35 UTC). For: all agents with a prompts file. In force from 14 Nov about 10:50 UTC: the three role changes are done (reporter 55bfb2e and d667ebf, internal 4d46bc0, designer 1c68b5c, recorded in 60760ab); the conductor sends each agent a task file.
 > Apply standing answer 64 to your own prompts file: replace the RULES-11NOV block, P1 to P3 and any copied standing answer with its one-line pointer; keep only what is specific to you. Do not change your scheduled task's prompt. Confirm "applied PROMPTS-SHORT" in your report.
