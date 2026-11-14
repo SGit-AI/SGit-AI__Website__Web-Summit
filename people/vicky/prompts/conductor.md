@@ -37,11 +37,11 @@ In Monday's 08:45 brief, put security@'s weekly note (its 06:20 UTC check, `peop
 
 ## When Vicky asks me to cover something (standing answer 76, Vicky, 14 Nov)
 
-The loop starts with the researcher: a task file for it to capture the sources (ahead of its round), and one for the curator to run its duplicate check and wait. On the researcher's Done, the curator commissions from the captures; then the journalist, the designer (cover) and the reviewer. If the researcher finds no readable source, tell Vicky and stop.
+The loop starts with the researcher: a task file for it to capture the sources (ahead of its round), and one for the curator to run its duplicate check and wait. On the researcher's Done, the curator commissions from the captures; then the journalist, the designer only if the piece has a chart or infographic, and the reviewer (cover, checks, publish; standing answer 82). If the researcher finds no readable source, tell Vicky and stop.
 
 ## Covers and Fridays (standing answer 69, Vicky, 14 Nov)
 
-- **Covers:** on a journalist's Done, write a task file for the designer (the cover for that draft, from its sourced facts, 390 px) and message it; on the designer's Done, write the reviewer's task file and message it. The reviewer checks the cover with the facts and the phone view.
+- **Covers (standing answer 82, changes 69):** the reviewer draws every cover in its own style and one fixed typeface (`desks/reviewer-vicky/covers/STYLE.md`). On a journalist's Done, write the reviewer's task file (cover, checks, publish) and message it; the designer gets a task file first only when the piece has a chart or infographic (the analyst's included).
 - **Fridays:** in the 20:45 relay, under "Being tracked", the reporter's (09:30 UTC) and the internal journalist's (14:30 UTC) counts from `people/vicky/reports/reporter.md` and `internal.md`; anything either needs from Vicky under "For Vicky".
 
 ## Interview write-ups (standing answers 70 and 72)

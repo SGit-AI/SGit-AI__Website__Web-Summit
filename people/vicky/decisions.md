@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **82** covers by the reviewer again, in its own style and one fixed typeface (style file desks/reviewer-vicky/covers/STYLE.md); the designer stops covers, keeps charts and infographics inside articles, the analyst's included (changes 69 and 79 for covers).
 - **81** Dinis's brief "PrompTugal.news by place" replaces our local-sites plan; every story passes the PrompTugal test (AI within two or three steps, the path written down); Dinis's agents build, journalist-portugal writes the local stories; S65 checked for a sourced AI path.
 - **80** the public vault app after the summit: eight cards (the front page, not a latest-article card), beige background; vault@ makes it.
 - **79** one cover style: the designer drafts desks/designer-vicky/covers/STYLE.md, the reviewer adds its notes, Vicky sees it.
@@ -380,6 +381,13 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **The PrompTugal test**, for every story of Vicky's desks from 14 Nov: a story is about AI directly or within two or three steps (a council's new data centre and its AI workloads; a startup event and its AI founders), and the path is written down. Each story answers: What is the AI connection? How many steps away is it? Which places does it touch? No path to AI: not ours, however local or big. Place decides where a story shows and how big; AI decides whether it is ours at all.
     - **Our part:** the researcher records the AI path in each capture; the curator commissions only stories that pass and writes the three answers in the commission; the journalists put the path in the story; the reviewer checks it before publishing (a story with no path goes back); the analyst's topics and pieces pass it too. journalist-portugal writes the local stories the brief names it for. We build nothing: the sites, the graph, the places and the towns' looks are Dinis's agents' (@PrompTugal.dinis).
     - **Published before the test:** S65 (3WX, Best Number One): the researcher checks 3WX's and Best Number One's public pages for a sourced AI path; if found, the reviewer adds one sourced line; if not, it stays as published before the test, with no note. Other earlier stories stay as they are.
+
+82. **Covers by the reviewer again; the designer keeps charts and infographics** (Vicky, 14 Nov, evening, in this window: "tbh i checked the new images for the articles, i actually prefer those reviewer drew" and then: "option A for covers: the reviewer draws them again in its own style, and redraws my interview and S65 covers. Two conditions: 1. The designer stops drawing covers but keeps charts and infographics inside articles, including the analyst's pieces. 2. The reviewer's covers must use one fixed typeface, so they look the same on every device. Write that into the style file.")
+    - **Covers:** reviewer@PrompTugal.vicky draws every cover for Vicky's desks again, in its own style, and wires it in as before. The cover style file is now `desks/reviewer-vicky/covers/STYLE.md` in the newsroom (started by the conductor with Vicky's condition; the reviewer writes its look there and keeps it). The designer's `desks/designer-vicky/covers/STYLE.md` no longer applies to covers.
+    - **One fixed typeface:** one face on every cover, from the site's own licensed font files (`assets/fonts/`), no system or fallback fonts (letters as paths or the font embedded), checked at 390 px and 1280 px, light and dark. Not changed without Vicky's word.
+    - **The designer** stops drawing covers; it keeps the charts and infographics inside articles, including the analyst's pieces (standing answer 75's chart specs go to it).
+    - **The loop** (changes 76 and 69 for covers): researcher, curator, journalist, then the designer only when the piece has a chart or infographic, then the reviewer (cover, checks, publish).
+    - **First:** the reviewer redraws Vicky's interview cover and S65's in its own style and the fixed typeface.
 
 ## Updates for agents
 
