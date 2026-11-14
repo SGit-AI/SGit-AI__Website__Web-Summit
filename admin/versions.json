@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2122",
+    "date": "2026-11-14",
+    "what": "reviewer@PrompTugal.vicky: ledger line for the CLEANUP-14NOV prompts update",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "c81e10f9c"
+  },
+  {
     "version": "v0.2.2121",
     "date": "2026-11-14",
     "what": "reviewer@PrompTugal.vicky: applied CLEANUP-14NOV to the prompts file (P1 widened, RULES-11NOV rules 5 and 7, R-PUB-1, archived scheduled prompts removed)",
