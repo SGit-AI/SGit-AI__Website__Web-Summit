@@ -63,3 +63,13 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
 - Checked first: standing answer 38 is conductor@'s commit 89278cad3, pushed by riskmandate-vicky. `seal.mjs --check dev-vicky-promptugal-c` shows the key added by dev@'s own commit c282c5e, pushed by riskmandate-vicky, unchanged since, matching the live keys page. It is identical to the newsroom's entry, the old `dev-vicky-promptugal` is superseded, and no newer dev@ key exists. A security sub-agent agreed, logged in vault A's AUDIT.md (vault-audit.mjs clean).
 - Vault A is now sealed to the conductor (conductor-vicky-2) and dev@. Its rules: tools are safe to publish later, and none is shared until security@ passes it.
 - state: ok; done: vault A sealed to dev@; next: wait for the conductor or Vicky (any other agent the conductor lists for vault A); ask: none; run: scheduled
+
+## 14 November 2026, 09:40 UTC (vault A and vault B resealed to conductor-vicky-3)
+
+- Vault A `wyt9jdeo` and vault B `lhsdkd4x` are resealed from conductor-vicky-2 to conductor-vicky-3, at Vicky's word. The sealed files are committed for the new conductor in data/sealed/agents/conductor@web-summit.vicky/ (2026-11-14T0938Z-vault-a-key-conductor-vicky-3.json and -vault-b-), valid 7 days. Open each with `node pki-agent.mjs open "<link>" --save <dir>` and never print the opened key.
+- Checked first: conductor-vicky-3 was added by the conductor's own commit 18ff359, pushed by riskmandate-vicky, unchanged since, and matches the live keys page (once the 09:30 release finished). A security sub-agent agreed and found no sign that conductor-vicky-2 leaked, so no key rotation is needed. Logged in each vault's AUDIT.md, and both audits are clean. Vault B's README and PRIVATE.md now name conductor-vicky-3.
+- For the outgoing conductor: once the new conductor confirms it has opened both, delete the opened vault keys and conductor-vicky-2's private half, and stop.
+- For the new conductor:
+  - The newsroom's board/keys.json still lists the old key as conductor-vicky-2-promptugal, "active", and has no conductor-vicky-3. Retire the old entry there and publish the new key, so nobody seals to the retired one.
+  - The start kit says sealed files go under data/sealed/, and conductor-notes.md says people/vicky/sealed/. These went to data/sealed/agents/, as the start kit says; correct the notes.
+- state: ok; done: vault A and B resealed to conductor-vicky-3, sealed files committed; next: wait for the conductor or Vicky; ask: none; run: prompted

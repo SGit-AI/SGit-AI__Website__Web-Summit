@@ -1,0 +1,12 @@
+{
+  "v": "pki-link",
+  "to": "conductor-vicky-3",
+  "agent": "conductor@web-summit.vicky",
+  "key": "sha256:6c7ad1aec4d55f31",
+  "by": "vault@web-summit.vicky",
+  "signing_fingerprint": "sha256:7039652f756f7269",
+  "at": "2026-11-14T0938Z",
+  "expires_days": 7,
+  "about": "Vault B (Vicky's ideas): vault lhsdkd4x's vault key, resealed from conductor-vicky-2 to conductor-vicky-3 at Vicky's word (14 Nov 2026), after a security sub-agent's check logged in the vault's AUDIT.md. Opens only with conductor-vicky-3's private key: node pki-agent.mjs open \"<link>\" --save <dir>. Never print the opened key.",
+  "link": "https://pki.sgit.ai/m/#m1.bef655df837f035a.jZ-XFKPcxSQZsrNWrZSDifNRC37r6qv_5fdEE0rFGcDC-81HxT6Ieoimakm-gqm1yC5vOxKABoTdwUPT9itehUoqr9bveYZZ5usrkCPsCHyuF-MNyOo034xtros_Vw9Jk95Sobz2zGTOXSt1o0_MoeUCcUUeJS9buSK_qsj_GLgzgqcPR41qFHhBBtVNmK5UrcUyY7L0O6BCIAv8NeCwwztXEPz95WJPvUkN9a_eHNQHrHs2CatO9RC6ur5U8rFf_7gpfM_u0VVbRV1olNgcbkYNFl68yIRYRjh9WY7J0Xm9xNhiFUfusG-yRXgs2vi19tE8y-3Op_-2TylG3b2SznUwUDRfb82CQXnkzaTTcw9wiobBUy76GOpkTFt7oldqM1GFialPX6DmQViHt414dN55-uRTgrv7DCixOkEeAgInIVTyBt1Rm2PUfUB956-L-92xtJIU9N5GSxfNoAYHwjo7pRCzHdO6omcN94rRIeu_lOjp_qgVZMQKS6or3yqzpjSWIIdlBdzDaibas8R_2r2shiyC7D8VPVFmZIvEATsgR-Whh_12wZeYg3XWus6Gh0yNq07DwStDc4YfnT3UkpwIzXkSHjFmC35zYteZsLhk_h3k4gBmD5VppoCyXxbT8KgPlI7x-zK4WiHeFUEDRnIVMo_2XCw18S7QUhs6SS4.S1NDIfCuPF3n-_SJ.i-CxEML2AVt5Q7TCbO0mZSEYcYZEkzdjgThpfNDYpDi7CKChelvd8TBAIKjwzbjH16Rooys-wdYIymlfLbWQcZcW3jSdDSkXgzvHbK4ihvRpmyHA2dULIq9na0doZauWOLATD_WIjZ384hqkrnIXBM_HfOT1DWMKY2J9DedrbP4GMUsxU5D4nWeW-kWtXohhb5_RD1rm2V-j1a7b3nXp_dTTZ40u2fkp8LX2qQ4PsLuOPqFkpdxtP2C0VGcH016Osf32En2C_Fd3Is1d8xlH3ENk1saANgtTmyH4zHDhujtUACPoebrmlEGxZlxzTjxwOybyLsb_JIKf4J4QvjCYwY3apsxs78pBMuO5tXxabi_SMjmZU2miUhg1odgzowCzpHp-U4hLdM8vMbu0f2A_HnT2RstQmi7xrP4bzDsRA6PdlwiYn6hDmDJZQxkholZMiZ22HUUTPv8UTpC1oAv-nztfEee0eDfsVm47ZyQUBIYAwcV-c3U9Qrv3Zgdf1CSaR2VehC56B9JI4fyI0b65URqTRM-QOjPJTOVU9LGEKu3QTAWcPmtec3OWMBq83TcHxuh4AohAS7JTbF6hHmLEjVt2GpKdfMuwT5naZDN0xl5iTN-79pMCLeaMU5GjRmuJteoeQ0BZCt4h88WflnKmwc3D1YgasBTFpFTlrfIJK_3Ncz0bBD_0yDSLeocRkij1Y2wjj6bbUpTTn0Yfca3yM4og7NTJ6aUcPIIzUOAk1aetFz5fFla6sN1A0NCcj1JgWpoJYh0_YWuAwbAQKZUaWL2v9QmfZIotodslUjl7lZqwXq_hG2l9NmlV9dsBvdxRuRdyF22CxDkRYjV_Ptz7PIpNpmrSZrBFNizcaWeGG6Yt4DiHtkVdmU7p2SyJv3I.R6Gg2Hs0PNKRmuCo4yhT1oqvbk2o_9K9XKqr4_wfIfmid5UlWgloSGTVZxQpmVUE31ale01SIPdz9cGfO3O8aQ.7039652f756f7269"
+}

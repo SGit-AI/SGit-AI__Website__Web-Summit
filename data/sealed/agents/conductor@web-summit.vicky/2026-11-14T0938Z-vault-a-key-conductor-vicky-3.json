@@ -1,0 +1,12 @@
+{
+  "v": "pki-link",
+  "to": "conductor-vicky-3",
+  "agent": "conductor@web-summit.vicky",
+  "key": "sha256:6c7ad1aec4d55f31",
+  "by": "vault@web-summit.vicky",
+  "signing_fingerprint": "sha256:7039652f756f7269",
+  "at": "2026-11-14T0938Z",
+  "expires_days": 7,
+  "about": "Vault A (tools, apps and agent reports): vault wyt9jdeo's vault key, resealed from conductor-vicky-2 to conductor-vicky-3 at Vicky's word (14 Nov 2026), after a security sub-agent's check logged in the vault's AUDIT.md. Opens only with conductor-vicky-3's private key: node pki-agent.mjs open \"<link>\" --save <dir>. Never print the opened key.",
+  "link": "https://pki.sgit.ai/m/#m1.bef655df837f035a.CNamhwBikmPATEovhW7rt-jTRhB3QNTdISQc5qom9GWvAKgP5juIa-sWEFqB8huiSI8kY9flJmvSraH-AhVFMPh5ln1dq9qyTa9TMv23rRj9QLsdTxPskn4kyeblW0_DUrj7hCmmsez4qFNUMk7o_fdRl-SpGAZnlqUHsLuNySBueRvVVURlmiOi0z-b5BBnzdvU_D4sL9lVv0igx5i_mSpB2DeNzCSL9k1vLfWyFPn37t1D-YNN_FiYVwkhImf3RGhi66ldON_5mWN3atx3NHIXHhYmaLOI_IofW2pnvWOT7DAs-cdsft4Z0wWxmqmAHpginSDRtNI-xG5Sg3yJN7HJIVpQnt82bHg9Ld6_UzF7W3rsg7duijn2AgKt5QkeRx7K2YPB3mJqTLfqsBKAzSlyw7S2yF44yUnjUA4qYpf9z9vs762fwtecZ4zr5HDjUN6L6ECMWg09TW860dMcLGaHbGBAazRE-ruUbcqajv8nj0HYj48-y5kjtfu-okZ3Zbt6cBdLHuHOb1u7sDVaUf66DRB3-og20GF3NTkNr0dz7W6HvdDV1qWcJvn8zQ3hYirZLdzQpU-3xLYMXYco-Uu5b1YVrY1j4QzR9VyURqkgLsEwCBZ7HRVBHOsxtMsJH1SKJmwIG0h1YFlW-YakF6ODITsBq7wrFxzEWbstOio.ccCA4SkHvumY_iuF.FEswofJbY_mihTwacH8h1EnAHrwiN6E9TbAjLq0AKIU0C2C6OCJtO5Yxa2X3bwxB1Us4IDs3xs69g1YWQ75vj8dFQjoL3xLgFoeaaAA2g3F_PjHBa0oo8mxCNlwbolK5rrpsvpg6F2zcllKQz3W2pzjkpkVYlswHuGHJnLND32D_viLbX21h0Zprg_ZcP5O8PWS8tcNNTg50lzQ2q7Sv17GNROjK0kArYQOm6mnKVo8xsL6dmu9v5bOSVCkR7w4Ssae9tOnL01AZ7QT1zg8U2qQ8NkZiJDfIA75mdMenj1MwmQunuyl4DylQoiiUlkr_ILvmf4_vTXZN5kadhC7QIqxx3sgsdYB-1neoQwYF07B-hlwij873LXc3xgJkl8kbrqHfOVWcNyXVXwaGL6XFamAmAPDBWRdsJQWs4sPw6WvyEpFHyPop8JKbmrblkftlD8SC_KhXITbbh-0-PN0cCAeauhn3XjAChiOjwSYDG5LEleBeHTqK5eeQow8QtMWW_LuBYwMd9Ss7HN6zJNlvjuHVYBJDBuB65zRaZczpfKN_PdUefEX57ix0hy9oMR9MlfXQQUCT26rcjlYT46rfoX7tmAYCUJZmzcG6ul_OtVQYoVxRX1HFu3rly5ug7gtEsKNIynOuRNTb9WGqtPDaIQqKqA6qZe9B_3DPQJPywgDdN5WGHB6MJ9BdgyZHi8lHXuEyEPtD-wO64cUw5m33OlgVQTdvn0XR-koRlewa5Kqi4X-YZLg0ZOKZOgtLR7yqSvFjV-rKnj3gkWnnI9W3PwPnFIuwhDcvMtjEz0vgi-ZQRLbSjkv3VYHrQO_zKndMPHFB9V5oa2aSBQ_0TWQw_78eF-sNMuAZkSGqAM6ox3SH4kUdajBaLwn39mjAif8.cP5XvYunKw_CeDNd7OnWGd1oxwwhasgu1yStS6ZOf_arGBb2G8jCxYlCOfBapUeKdgrckeBj9Qm3rDlwpu-d2A.7039652f756f7269"
+}
