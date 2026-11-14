@@ -2,6 +2,16 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
+## 14 Nov 2026, about 11:10 UTC: applied STORED-REF
+
+A Task message from the conductor's session pointed to `people/vicky/tasks/2026-11-14-1110-stored-ref-security.md` (9fec7848; standing answer 68, conductor's title and Agent line, Vicky's words quoted). Applied without asking: it changes only my own file, loosens no rule and is reversible.
+
+applied STORED-REF: the stored copy of my weekly scheduled prompt in `people/vicky/prompts/security.md` replaced with a one-line reference and a short history; the task itself unchanged (prompt, state, time). One difference from the template: I left the task's id out, as before; the template's own field asks for it, but vault A's rule counts task ids as private and nothing needs it in a public file. 12,856 to 9,577 bytes.
+
+Compare, about 11:10 UTC: standing answer 31 matches my copy; every commit to decisions.md since 10:50 UTC carries the conductor's guard.
+
+state: ok; done: STORED-REF; next: Monday 16 Nov 06:20 UTC; ask: none; run: woken by message
+
 ## 14 Nov 2026, about 11:00 UTC: the vault A tools review, closed
 
 Vicky, in my window: "no review needed now. These tools are only for my own agents. Close this item. If I ever want to share or publish one of them, you review it first, and I'll arrange how you get the files then."
