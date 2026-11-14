@@ -242,3 +242,8 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 
 - applied the scheduled-prompt fix-up: task file checked first (conductor's commit, pushed from Vicky's account; no hold file). My one scheduled task (Research run, 15 7,11,15 * * *, still enabled, time unchanged) said RULES-11NOV was "at the top of my prompts file"; it now says the full text is in people/vicky/decisions.md. P1 to P3 and everything else are word for word. The stored copy in my prompts file matches. No other task of mine exists. No captures went into vault 41j3e9s9 this task.
 - state: ok; done: scheduled prompt reference fixed; next: 11:15 run; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:12 UTC, task 2026-11-14-1110-stored-ref-researcher
+
+- applied STORED-REF: task file checked first (conductor's commit, pushed from Vicky's account; no hold file). In my prompts file the stored scheduled prompt, and the old copy inside the startup prompt's step 7, are replaced by one reference line for my one task (Research run, cron 15 7,11,15, enabled) plus a short history of dates; 21696 to 11058 bytes. The task's prompt, state and time are unchanged. No captures went into vault 41j3e9s9 this task.
+- state: ok; done: stored prompt copies replaced by a reference; next: 11:15 run; ask: none; run: prompted
