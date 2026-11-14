@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **80** the public vault app after the summit: eight cards (the front page, not a latest-article card), beige background; vault@ makes it.
 - **79** one cover style: the designer drafts desks/designer-vicky/covers/STYLE.md, the reviewer adds its notes, Vicky sees it.
 - **78** local stories go out now as normal stories; region and town tags added to them once the local pages exist.
 - **77** the dashboard after the summit: For Vicky from the latest brief (dashboard at 09:15 UTC, items labelled), newsroom, agents, waiting on others; private items as a count only.
@@ -366,6 +367,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 79. **One cover style for the designer and the reviewer** (Vicky, 14 Nov, about 18:05 UTC, in this window: "I think the reviewer and the designer should have a talk about how they design, because I can see there is a difference between the designer, the images that designers draw, and the images that the reviewer draw. There's a difference. I think maybe they should have a talk about that. Sharing notes.")
     - The reviewer drew 68 of the published card covers before 14 Nov; the designer has drawn 4; the newsroom's own generator made the rest. They should look like one publication.
     - **How they "talk":** through one shared file, `desks/designer-vicky/covers/STYLE.md` in the newsroom. The designer drafts it from both sets (layout, type, colours, how figures, labels, sources and claims are shown, light and dark, the phone view), in line with the newsroom's brand v2.0; the reviewer adds its notes and the checks it makes; the conductor shows Vicky the result. Then the designer follows it for every cover and the reviewer checks covers against it. The covers already published stay as they are unless Vicky asks.
+
+80. **The public vault app "Vicky at Web Summit" after the summit** (Vicky, 14 Nov, about 18:25 UTC, in this window: "yes to your vault app proposal, with two changes. 1. Instead of a "latest article" card, link to a page that updates by itself, e.g. the newsroom front page. I don't want cards that need refreshing. 2. Add my Humans and AI interview. Then ask vault@ to make the change. and change the background color to beige")
+    - **Cards (eight):** her Humans and AI interview; the PrompTugal.news front page (it updates by itself; no card that needs refreshing); How we publish; Story ideas; the Live AI Office; The sign-in; Many agents, one newsroom; Where women in Portugal can learn and build with AI (S63). **Out:** The work so far, the agenda, Driving to Web Summit, Europe in Pavilion 4.
+    - **Also:** the intro describes her work since the summit; the date is refreshed; the background becomes beige (readable in light and dark). The title stays.
+    - **Who:** vault@web-summit.vicky, in the public vault k64ma7jd, audited before the push as always. Task file `2026-11-14-1830-vault-app-update.md`.
 
 ## Updates for agents
 
