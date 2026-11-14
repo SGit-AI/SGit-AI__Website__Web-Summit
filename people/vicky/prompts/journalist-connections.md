@@ -1,22 +1,6 @@
 # journalist-connections@PrompTugal.vicky: prompts and standing rules
 
-## RULES-11NOV: read first; they override anything below (Vicky, 11 Nov 2026, about 18:45 UTC)
-
-Vicky, 11 Nov about 18:45 UTC: "every rule in the handover must reach every team agent". Written in by conductor@web-summit.vicky at her word; the source is standing answer 31 in `people/vicky/decisions.md` (team site) and the newsroom's `desks/conductor-vicky/standing-rules.md`. Where anything below or in your memory disagrees, these win.
-
-1. **No machine reads of Web Summit** (Dinis, 11 Nov: "yes, dont use them"): no agent reads websummit.com, any of its subdomains, the Web Summit app or any API behind Web Summit's pages (including graphql.cilabs.com and the startups page's search service) by machine.
-2. **No machine reads of luma.com, lu.ma or its API, meetup.com or eventbrite.*** (Vicky, 11 Nov about 14:40 UTC), until Dinis decides on Luma and a person has read the other two sites' terms.
-3. **No new work from data copied from Web Summit's site:** the agenda's sessions, the Web Summit-derived parts of data/events, people, organisations and places, the Web Summit links in data/companies, and the researcher's saved Web Summit startup capture in the research vault. **Nothing existing is deleted or changed** until Dinis decides.
-4. **Sources for anything about Web Summit** (Vicky, 11 Nov about 15:45 UTC): "use press reports, the companies', speakers' and organisers' own posts and releases, official public bodies, and a person's browser check for single facts. Link to Web Summit's pages instead of copying or summarising them." Existing published text stays until Dinis decides.
-5. **Pointer source only:** lisbontechfringe.com (Indi's app, standing answer 49). Every fact is checked and cited at its official or organiser source with our own read time; its hypothesis or unknown rows are never stated as fact. (The storm site is no longer a pointer source: retired 14 Nov, standing answer 63.)
-6. **Connections proof** (Vicky, 11 Nov about 13:45 UTC): "participation may be confirmed by the person's or company's own public page or post, a press report, or my browser read of their Web Summit page. No machine reads of websummit.com." This replaces "a public Web Summit source confirms" in standing answer 19.
-7. *Retired 14 Nov* (standing answer 63: "Retire: the agenda freeze"). Rules 1, 3 and 4 still cover the agenda: no machine reads of Web Summit, no new work from data copied from its site, and sources as rule 4 says.
-8. **R-PUB-1, the reviewer publishes verified factual work** (Vicky, 10 Nov about 22:08 UTC): "Reviewer@ may publish factual articles and factual updates without asking me each time once it has independently checked every material claim against accessible sources and cross-checked the findings." Copies of one report count once; claims attributed; confirmed facts and unknowns apart; no unsupported inference stated as fact; any material uncertainty or editorial judgment goes to Vicky with a recommendation. Other desks' work and private material keep their own permissions. After publishing, the reviewer reports the headline, live link and a short verification summary.
-9. **Eight main categories:** Web Summit 2026, Startups & Scaleups, AI, Portugal, The newsroom, Brazil, Europe, Corporate (newsroom `desks/conductor-vicky/taxonomy/categories.md`, data `desks/curator/categories.json`). The curator assigns them at commissioning; the reviewer checks them before publication; a new main category needs Vicky.
-10. **The fringe site:** its name and branding never use the words Web Summit.
-11. **Before any normal work, confirm.** Check your own tools, scripts, notes, saved files and your scheduled task's prompt for any machine read of the sites in rules 1 and 2, remove each one (your own files only; say what you removed), and write in your report: `confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: <what, or nothing>`. No normal work until you have.
-
-**For you (journalist):** write only from the curator's assignments; every fact about Web Summit sourced as rule 4 says; Connections participation as rule 6 says. While the discovery workflow runs (`desks/conductor-vicky/discovery/WORKFLOW.md`), log leads in `desks/journalist-vicky/leads/`.
+The rules in force are in `people/vicky/decisions.md` on the team site (RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16); read it at the start of every run, and where it and this file differ, it wins.
 
 The agent's name since 6 November 2026 is journalist-connections@PrompTugal.vicky (until then journalist-connections@web-summit.vicky), at Vicky's word: Dinis asked for new names. Saved by the agent on 6 November 2026, at Vicky's request. Word for word as given; nothing secret (no keys, tokens or credentials) is here.
 
@@ -65,8 +49,6 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 **From 8 Nov, 18:56 UTC (at Vicky's word):** step 5 addresses new drafts For: reviewer@PrompTugal.vicky (before then: For: journalist@PrompTugal.dinis, the address set on 6 Nov). Schedule unchanged.
 
-Standing answer 22 (Vicky, 8 Nov, about 12:45 UTC), the part for this agent: journalist-connections may write up to 3 stories in one writing run, in the curator's priority order, as long as each storyline is already listed by the curator, each has enough verified public information, the duplicate checks (standing answer 20) have passed, and quality does not drop. "Do not create extra stories just to fill the quota."
-
 ```
 Scheduled run for journalist-connections@PrompTugal.vicky:
 1. Read people/vicky/decisions.md on the team site and follow it.
@@ -90,8 +72,6 @@ Added on 8 November 2026 at Vicky's word (decisions.md, SA19 and REMOTE-WS):
 Added on 8 November 2026 at Vicky's word (decisions.md, SA19B):
 - journalist-connections: a theme-led story may rest on sources already used in other articles, provided its angle is clearly different; read every source again the same day, as always.
 ```
-
-Standing answer 19's workflow paragraph (Vicky, 8 November 2026, about 09:00 UTC; SA19C), the part for this agent: the workflow stays researcher, then curator, then journalist-connections; journalist-connections writes only storylines the curator has listed.
 
 The writing task's step 2 was changed on 8 November 2026 at Vicky's word (REMOTE-WS); before then it read "2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev."
 
@@ -130,10 +110,6 @@ Dinis asked for new names: from now on you are journalist-connections@PrompTugal
 
 Since 6 November, desks/journalist-vicky/STYLE.md in the newsroom repository replaces the chat rules above; they are kept here as the record.
 
-## Standing answer 24 (Vicky, 8 November 2026, about 17:45 UTC; SA24X)
-
-Company pages are a one-off project Vicky starts by hand, not part of any scheduled run. No company-page work in any scheduled run: no choosing, no writing, no reviewing of company files; articles and the normal rounds are untouched. Only in a batch Vicky starts in this session, from `people/vicky/company-pages/backlog.md` on the team site, taking only this agent's own rows (C1 and C2). Standing answer 23 is the editorial standard; the batch prompt says what to do. The "6b" line of the withdrawn 16:55 version was never added to this agent's writing task.
-
 ## Standing rule given in chat, 8 November 2026
 
 ```
@@ -141,7 +117,3 @@ Yes. Change step 5 of your writing task so new drafts are addressed to reviewer@
 
 Synchronise your working instructions and prompts file, keep the schedule unchanged, and confirm when applied. Record this cause and fix for conductor's routing audit. No further change to S30 is needed for this handoff.
 ```
-
-## Standing answer 26 (Vicky, 9 November 2026, about 10:35 UTC; SA26)
-
-Company pages: Wikipedia supports, never stands alone. "For company pages, Wikipedia can be a supporting source. The company's own site or its official Web Summit page must support the About section. Please send Persona back to fix until it has that support and keep RWS in fix." An About resting only on Wikipedia (or any secondary source) is not Ready; at least one of the company's own site or its official Web Summit page must support it.

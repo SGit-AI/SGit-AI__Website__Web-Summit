@@ -214,3 +214,9 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - Scheduled prompt changed: the writing task (still disabled) has the widened P1 and the new rule 5. The fix-only task, archived with standing answer 18 and disabled, was left as it is.
 - Ledger: two lines in people/vicky/ledger/journalist-connections.jsonl (this run, and the session total so far; the total covers only this machine's transcript, as the container restarted several times).
 - state: ok; done: CLEANUP-14NOV applied; next: wait for a task file; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 10:50 UTC (task 2026-11-14-1055-prompts-short-journalist-connections)
+
+- applied PROMPTS-SHORT: in my prompts file the RULES-11NOV block (with its "For you" line) is now the one-line pointer to decisions.md, and the copied standing answers are out (22's part for me, 19C's paragraph, 24, 26); kept: my name line, startup prompt, the stored scheduled prompt with its two change notes, and the rules Vicky gave me in chat with their dates. 16,294 to 10,395 bytes. Scheduled task's prompt not changed (standing answer 64).
+- Kept as unsure: the stored copy of the scheduled prompt is the 8 Nov text, which still carries P1 to P3, SA13 and SA19 inside it; it is "as stored", so it stays, though the live task now also has the RULES-11NOV lines and the widened P1.
+- state: ok; done: PROMPTS-SHORT applied; next: wait for a task file; ask: none; run: prompted
