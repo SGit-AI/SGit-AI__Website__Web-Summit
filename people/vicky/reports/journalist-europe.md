@@ -140,3 +140,10 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 - Unsure, kept: my copies of standing answers 23, 26 and 43 lack the later "Changed" lines now in decisions.md (for 23 and 26, the Web Summit sources change of 11 Nov; for 43, the three-rounds and weekly-scout change). Not added, as told. The "For you (journalist)" line in RULES-11NOV (the discovery workflow and `desks/journalist-vicky/leads/`) kept too.
 - SA54-LEDGER: I had not applied it before today (I did not log the 13 Nov task runs). Now: the one-time session-total line and this run's line ("prompts update") are in people/vicky/ledger/journalist-europe.jsonl. The 13 Nov runs (the About-claims step and the Media only cut) are not backfilled.
 - state: ok; done: prompts file and both task prompts brought in line; next: nothing until pointed; ask: delete the fix-only task trig_01A87nPnVKv8jMhzDzwi5eYU (retired standing answer 18)? I recommend yes; run: prompted
+
+## Sat 14 Nov 2026, 10:50 UTC (task people/vicky/tasks/2026-11-14-1055-prompts-short-journalist-europe.md, pointed by the conductor's session at 10:43)
+
+- Checked first: the task file was committed by conductor@web-summit.vicky (ea8e0a84, same session as the 10:14 task) and quotes Vicky's words (standing answer 64); no hold file (HOLD.md, people/vicky/HOLD.md, team/conductor/HOLD.md).
+- applied PROMPTS-SHORT. In people/vicky/prompts/journalist-europe.md: the RULES-11NOV block, P1 to P3 and the copied standing answers (23, 26, 43 with SA43-ONDEMAND, 50) replaced by the one-line pointer to decisions.md near the top. Kept: the line on my renaming, my startup prompt and my scheduled task's prompt as stored, and the rules Vicky gave me in my own window (with their dates). Size: 18,776 bytes to 8,142. My scheduled tasks' prompts on the account not touched (item 3).
+- Ledger line added (task "prompts update").
+- state: ok; done: prompts file shortened; next: nothing until pointed; ask: none; run: prompted
