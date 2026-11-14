@@ -1,6 +1,6 @@
 {
  "about": "Every scheduled task of Vicky's agents, one row per task (UTC). Kept by conductor@web-summit.vicky (scout's P4, accepted by Vicky on 6 Nov 2026), checked against the account's scheduled tasks in each 08:30 brief. Changes to tasks are Vicky's; the conductor changes one only at her word (as for the Web Summit timetable, 7 Nov).",
- "checked": "2026-11-14T09:32Z (conductor hand-over: the two conductor tasks moved to the 14 Nov session)",
+ "checked": "2026-11-14T10:12Z (scout moved to Mondays 06:47 at Vicky's word; conductor tasks moved to the 14 Nov session at 09:31)",
  "tasks": [
   {
    "agent": "conductor@web-summit.vicky",
@@ -155,11 +155,11 @@
   {
    "agent": "scout@web-summit.vicky",
    "task": "weekly whole-team note, reusable only (standing answer 56)",
-   "cron_utc": "47 18 * * 0",
+   "cron_utc": "47 6 * * 1",
    "task_id": "trig_01H1P9CwiciQNftmoE4AghcQ",
-   "state": "enabled 13 Nov 16:40 UTC (Sundays 18:47, on Sonnet)",
+   "state": "enabled; moved 14 Nov 10:11 UTC from Sundays 18:47 to Mondays 06:47 (Vicky, 14 Nov: so its note is in Monday's 08:45 brief), on Sonnet",
    "since": "6 Nov 2026",
-   "at_whose_word": "Vicky (6 Nov)"
+   "at_whose_word": "Vicky (6 Nov; weekly from 13 Nov, standing answer 56; Mondays 06:47 from 14 Nov)"
   },
   {
    "agent": "conductor@web-summit.vicky",
