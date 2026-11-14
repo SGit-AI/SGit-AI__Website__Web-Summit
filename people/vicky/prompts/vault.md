@@ -28,6 +28,10 @@ In Vicky's words where they were short, otherwise in summary, with the date each
 - **An exposed key is rotated** (4 November): "treat the current key as exposed. Rotate it: give the WS-23 vault a new key (or, if that's not possible, make a new private vault and delete this one)." Delete the old vault from the server and seal the new key again.
 - **Seal nothing new unless Vicky says so** (4 November, with the meetings): "Seal nothing new yet." Every seal is at her word, after a security sub-agent's check logged in the vault.
 
+**Vault A (tools, apps and agent reports)**
+
+- **Keep sealing vault A to Vicky's own agents** (14 November): "I agree with your reading. Keep sealing vault A to my own agents; security will review dev's two tools separately. Seal to the reporter once its key is on the team site." Vault A's PRIVATE.md rule 2 (no tool shared until security@ passes it) covers sharing a tool beyond the vault's key holders; each seal still follows the usual check and the AUDIT.md line.
+
 **Confidential vaults (WS-23 meetings, the interview shortlist)**
 
 - **Nothing from them outside the vault** (4 November): "nothing from this message goes in the repository, a commit message or a report", and "no names outside the vault". This applies to the vault's own commit messages too: no names in them.
