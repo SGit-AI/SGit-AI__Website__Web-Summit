@@ -1045,6 +1045,26 @@
         "fingerprint": "sha256:de450e3ef39373e2",
         "signing_fingerprint": "sha256:9b06aaa9c85941a3"
       },
+      "status": "superseded",
+      "superseded": "2026-11-14T10:40Z",
+      "superseded_by": "internal-vicky"
+    },
+    {
+      "id": "internal-vicky",
+      "agent": "internal@web-summit.vicky",
+      "label": "internal@web-summit.vicky (Claude Code session, 14 November 2026)",
+      "role": "Vicky Wang's internal journalist (internal@web-summit.vicky): writes about what her agents actually do, from the record only (commits, reports, files, run results), into vault A only. The same session as the summit journalist (journalist@PrompTugal.vicky), repurposed at Vicky's word on 14 November 2026 (standing answer 34). It replaces the entries journalist-vicky here and journalist-vicky-promptugal-c in the newsroom's board/keys.json, both superseded. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 14 November 2026 (pki-agent.mjs keygen --session, the copy with sha256 fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab) and pushed to this repository from Vicky's account; the push is the authorisation. It is not linked to the operator's key.",
+      "added": "2026-11-14",
+      "replaces": "journalist-vicky",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzNC3w+9T+6wvIMyNmWZY\n5qn9imCS4TTnmCAdVePEdMmHqAu31ipg7aSsKJZ9RPd4MAR6EdVP5UQrzmg+mGXj\nSZA1skV0ZN1xyoCxKefBZuqOxAATGghyZ44IwlsYReAtFsbuodd7CIh/r/EifCeB\nemdxtfQTQgQXbBlp3jwzuhMAMYNQU0ue2gzwFIQt8MJdPe9uWkMjtuVLWalhauru\nTn1g342NGmsJovBKJsRYnTWrZXLySNdRI4a9gLep0I6TgF12Z0bpwBAE3ldaZBJ0\n3hnOcd+Vhk+Arul65GypeMOSY6P6PvEgDbVj2nGASvMiHHs7+8wuwty3V0TAf4a7\n1QHdhkd+4Tjb4kAmLYYFof4euM8JYh0DpjjCEKuu+lOUBa3PCNWeMBbRT5FeWZMe\nSAA8Gr02Ag03KMLL9DiTI/t1DyAiGgDzcjn6kNSenZXmM/qXPTZFHoBCIrzPhsVG\nrWdb/FVDpaz73oN1y7ecVAiPpDLw+orXEsHtTFow+ZwpkGYa67dwyLqLvlm4YIdH\nPKqf/W7MSbmrlJshLP+wFAOsG3wIutaVb29CyFb1EH2VY0M1If+uKFsM3hT53oGj\nLmJLQpabsg6fqJfroWGj0fpP9nS0n3+fWXrkIKwhv94NJRc3PQZWE7SPp8PG5PCg\n9Y4ivovYzlVvo9GQepjVx4ECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEX7SxNGe13jTucKGOgHYnC9Fo3HbC\nx/3WwMQOjDWxXz0MhY20jvpqWqWDMWnhq1fH3fIe6MLsNBw6AZ7I73tr9A==\n-----END PUBLIC KEY-----\n",
+        "label": "internal@web-summit.vicky",
+        "fingerprint": "sha256:ba1ee4fe9ffc48d4",
+        "signing_fingerprint": "sha256:89fbc73f0c2b4d02"
+      },
       "status": "active"
     },
     {
