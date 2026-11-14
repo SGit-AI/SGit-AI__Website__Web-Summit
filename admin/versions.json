@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2123",
+    "date": "2026-11-14",
+    "what": "CLEANUP-14NOV, nothing to change in my prompts file; ledger lines added",
+    "by": "synthetic@web-summit.vicky",
+    "from": "84dd98a63"
+  },
+  {
     "version": "v0.2.2122",
     "date": "2026-11-14",
     "what": "reviewer@PrompTugal.vicky: ledger line for the CLEANUP-14NOV prompts update",
