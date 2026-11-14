@@ -121,3 +121,10 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - WS-48 is done: the merch was collected on Monday 9 Nov by Silvio and Dinis (conductor@web-summit.silvio, 9412f778). My 9 Nov 17:10 run came before that commit. people/vicky/logistics.md updated.
 - WS-113 still open for Dinis to close; WS-155 (team cards) has no collection recorded since 6 Nov; both owned by others.
 - state: ok; done: final merch status recorded (WS-48 done); next: none before my task is switched off on Friday; ask: none; run: scheduled
+
+## 14 November, 10:20 UTC (task 2026-11-14-1015-cleanup-logistics)
+
+- No hold (people/vicky/HOLD.md, HOLD.md, team/conductor/HOLD.md absent on the team site; I have no newsroom clone, so its board/HOLD.md was not checked). The task file and decisions.md pass the guard (fb2eacbe, conductor@web-summit.vicky).
+- **applied CLEANUP-14NOV:** P1 widened (standing answer 16) in both copies in prompts/logistics.md and in my scheduled prompt; RULES-11NOV rule 5 (lisbontechfringe.com only) and rule 7 ("Retired 14 Nov") replaced. Nothing else in my files rests on archived entries. Kept as it is: "never send" in my startup prompt and rules, which is about sending to people (still Vicky's, decisions.md "Ask Vicky only when it sends anything to a person"), not about replying to sessions.
+- My scheduled task stays disabled (since 12 Nov, standing answer 43); its prompt changed to match section 2 of prompts/logistics.md. **applied SA54-LEDGER:** two lines in people/vicky/ledger/logistics.jsonl (this run, and the session total once).
+- state: ok; done: CLEANUP-14NOV applied, ledger lines added; next: nothing until the conductor or Vicky gives me work; ask: none; run: prompted
