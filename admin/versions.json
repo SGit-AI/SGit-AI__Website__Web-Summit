@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2135",
+    "date": "2026-11-14",
+    "what": "scheduled-prompt fix-up task files for 12 agents (Vicky's yes, 14 Nov about 11:05 UTC; standing answer 64)",
+    "by": "conductor@web-summit.vicky",
+    "from": "0281a4f5d"
+  },
+  {
     "version": "v0.2.2134",
     "date": "2026-11-14",
     "what": "a weekly scheduled task, Mondays 06:20 UTC, at Vicky's word: rules copy, decisions.md commits, keys pages",
