@@ -1,10 +1,10 @@
 # PrompTugal.news by place: Portugal, the Algarve and its towns
 
-**A brief from Dinis, 14 November 2026.** It answers Vicky's plan for local sites (https://web-summit.sgit.ai/people/vicky/local-sites/) and is the brief for the PrompTugal team. Written by conductor@web-summit.dinis at Dinis's word. Nothing is built yet: this is what we agree first.
+**A brief from Dinis, 14 November 2026.** It answers Vicky's plan for local sites (https://web-summit.sgit.ai/people/vicky/local-sites/) and is the brief for the PrompTugal team. Written by conductor@web-summit.dinis at Dinis's word. The same answer, as an article: [PrompTugal.news by place: Dinis's answer on local sites](../../../articles/promptugal-by-place.html). Nothing is built yet: this is what we agree first.
 
 ## In one paragraph
 
-Thanks Vicky: one set of agents, stories tagged by place, no agent per town. Yes, option A, with one change: **every place gets its own subdomain from the start**, because we will make many of them and it must be automated. promptugal.news is the national site; `algarve.promptugal.news` is the region; each town has its own site (`faro.promptugal.news`, `loule.promptugal.news`, `quarteira.promptugal.news`, …). Each site is a **lens on one shared semantic graph**: the same stories, centred on a different place. On a town's site its local news is big, and national and international AI news still appears, picked for what it means there. On the national site it is the other way round.
+Thanks Vicky: one set of agents, stories tagged by place, no agent per town. Yes, option A: **every place gets its own site, made automatically**, because we will make many of them. promptugal.news is the national site; to start, the region is `promptugal.news/algarve/` and each town has its own site under it (`promptugal.news/algarve/faro/`, `promptugal.news/algarve/loule/`, `promptugal.news/algarve/quarteira/`, …). Subdomains (`algarve.promptugal.news`) can come later. Each site is a **lens on one shared semantic graph**: the same stories, centred on a different place. On a town's site its local news is big, and national and international AI news still appears, picked for what it means there. On the national site it is the other way round.
 
 ## The north star (so this does not escalate)
 
@@ -18,7 +18,7 @@ Thanks Vicky: one set of agents, stories tagged by place, no agent per town. Yes
 ## Three levels of place, and the flow
 
 - **Portugal: promptugal.news**, which also carries the international news (Europe and the world).
-- **The Algarve: algarve.promptugal.news**, the region.
+- **The Algarve: promptugal.news/algarve/**, the region.
 - **The towns:** all 16 municipalities of the Algarve, and the city of Quarteira.
 
 The news flows **down**: national and international AI news is picked for each region and town by what it means there. And it flows **up**: each town is where the sources live (its council, its regional press, its university, its companies, its events). They are captured at town level, tagged, and rise to the Algarve and to the national site when they matter. Top sites do national and international and feed down; town sites do local and feed up.
@@ -66,9 +66,9 @@ Each town site gets a playful toggle that rewrites the page in an exaggerated lo
 ## How it is built (for now)
 
 - **Everything in the same repository**, the PrompTugal.news repository, with one build that makes the national site, the Algarve site and every town site. We will decide later whether a place ever gets its own repository.
-- **Addresses are subdomains** (`<town>.promptugal.news`), never a `/town` path. DNS is not being set up now; until it is, the town sites are built and checked, not served at their address.
+- **Addresses, to start:** `promptugal.news/algarve/` for the region and `promptugal.news/algarve/<town>/` for each town. Subdomains (`algarve.promptugal.news`, `<town>.promptugal.news`) come later, once DNS is automated; nothing is set up for them now. Every place is generated from the same list, so moving it to a subdomain later changes its address, not its build.
 - **Making a place is one entry in a list**: its name, its parent place, its mandate, its sources. The build does the rest.
-- **The PrompTugal team builds it**: dev@ (the build and the subdomains), ontologist@ (the places and the graph), dev.portugal@ (the Portugal section and the Algarve, Algarve Evolution first), researcher@ (the towns' sources and centres of gravity), designer@ (each town's look), correspondent@ (what leads on each site), journalist@ and Vicky's journalist-portugal (the stories). The usual rules hold: public sources, a source and the date read for every fact, no contact details.
+- **The PrompTugal team builds it**: dev@ (the build, and later the subdomains), ontologist@ (the places and the graph), dev.portugal@ (the Portugal section and the Algarve, Algarve Evolution first), researcher@ (the towns' sources and centres of gravity), designer@ (each town's look), correspondent@ (what leads on each site), journalist@ and Vicky's journalist-portugal (the stories). The usual rules hold: public sources, a source and the date read for every fact, no contact details.
 
 ## What we agree first, and what is not now
 

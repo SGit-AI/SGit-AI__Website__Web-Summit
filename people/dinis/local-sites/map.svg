@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" font-family="Helvetica, Arial, sans-serif">
 <rect width="960" height="680" fill="#f6f3ec"/>
 <text x="40" y="52" font-size="26" font-weight="700" fill="#121317">The first wave: every town in the Algarve</text>
-<text x="40" y="80" font-size="15" fill="#555">The 16 municipalities, and the city of Quarteira: one site each, under algarve.promptugal.news</text>
+<text x="40" y="80" font-size="15" fill="#555">The 16 municipalities, and the city of Quarteira: one site each, under promptugal.news/algarve</text>
 <polyline points="66,570 110,570 200,517 245,500 318,482 396,508 480,517 564,535 637,596 687,588 816,500 883,438 950,429" fill="none" stroke="#5b8fb0" stroke-width="3"/>
 <polyline points="66,570 105,456 144,324 172,192" fill="none" stroke="#5b8fb0" stroke-width="3"/>
 <polyline points="950,429 934,324 917,174 900,130" fill="none" stroke="#5b8fb0" stroke-width="2" stroke-dasharray="6 4"/>

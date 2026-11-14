@@ -70,6 +70,7 @@ document.addEventListener('click', e => {
 // block in its <style>); the page shows each copied file twice, forced light and forced dark. The files are never changed.
 const DESK = 'https://github.com/PrompTugal/PrompTugal__News__Website/tree/dev/desks/designer-vicky'
 const inline = s => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/\*([^*]+)\*/g, '<i>$1</i>')
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => /[./#]/.test(u) ? `<a href="${u}">${t}</a>` : m)
     .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2">$1</a>').replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '$1')
 function mdHtml(md) {
     const out = []; let list = null
