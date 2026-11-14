@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2118",
+    "date": "2026-11-14",
+    "what": "CLEANUP-14NOV task files for 17 agents (standing answer 63)",
+    "by": "conductor@web-summit.vicky",
+    "from": "fb2eacbec"
+  },
+  {
     "version": "v0.2.2117",
     "date": "2026-11-14",
     "what": "checker@PrompTugal.vicky: report of 12 November (hold) and 14 November",
