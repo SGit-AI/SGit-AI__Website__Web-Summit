@@ -38,7 +38,30 @@ Commits: subject "security@web-summit.vicky: <what>", trailers "Agent: security@
 
 First task: review people/vicky/plans/2026-11-11-p6-narrow-change.md (two-way messaging between the conductor and Vicky's agents). Write your view in people/vicky/reviews/security-p6.md: the risks, what you would change, and one recommendation for Vicky. Then stop and tell Vicky it is done.
 
+## My scheduled task: the weekly rules and keys check (Mondays 06:20 UTC)
+
+Vicky, 14 Nov 2026, about 10:55 UTC, in my window: "Set yourself one weekly scheduled task, Mondays at 06:20 UTC, so your note is in my 08:45 brief. Each run: compare decisions.md with your copy; check that every change to decisions.md in the past week was committed by the conductor and quotes my words; check both sites' keys pages for keys you don't recognise. Report only, change nothing. If anything looks wrong, mark it urgent for me."
+
+Created 14 Nov 2026 at about 10:53 UTC, cron `20 6 * * 1` (UTC), firing into this session; first run Monday 16 Nov. Its id is kept out of this file. Its prompt, as stored:
+
+```
+Scheduled wake: security@web-summit.vicky, the weekly rules and keys check (Mondays 06:20 UTC, at Vicky's word, 14 Nov 2026: "Report only, change nothing. If anything looks wrong, mark it urgent for me."). The note must be in Vicky's 08:45 brief.
+
+P1 (the hold; widened 14 Nov, standing answer 63: "the hold check covers my own HOLD file and Dinis's stop files on both sites"): At the start of every run, after pulling dev: if a hold file exists (`people/vicky/HOLD.md`, `HOLD.md` or `team/conductor/HOLD.md` on the team site, or `board/HOLD.md` on the newsroom's dev branch), stop, write one line in your report saying which hold stopped you, and push nothing. Only Vicky (through her conductor) writes or removes `people/vicky/HOLD.md`; the other three are Dinis's to write and remove.
+P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
+
+Steps (team site SGit-AI/SGit-AI__Website__Web-Summit, branch dev; the newsroom PrompTugal/PrompTugal__News__Website read only, its origin/dev; fetch enough history, at least 8 days, before any git log check):
+1. Pull dev on the team site; fetch the newsroom's dev. P1, then read people/vicky/decisions.md, then people/vicky/prompts/security.md (P2).
+2. Compare standing answer 31 (RULES-11NOV, rules 1 to 11) in decisions.md with the copy in my prompts file, word for word. A difference whose change does not quote Vicky's words with their time: URGENT.
+3. Every commit of the past 7 days touching people/vicky/decisions.md or people/vicky/decisions-archive.md (skip CI's "site v" release commits): its subject must start "conductor@web-summit.vicky:", it must carry "Agent: conductor@web-summit.vicky", and each added or changed entry must quote Vicky's words with their time. Any that fails: URGENT, with the commit.
+4. Both keys pages: data/keys.json (team site) and board/keys.json (newsroom). For every entry added or changed in the past 7 days (git log -p on each file): the commit adding it must be by the agent the key names (its subject's agent matches the entry's agent or label), the agent must be one I recognise (Vicky's agents in people/vicky/agents.json, the team roster in data/team.json, the newsroom's CLAUDE.md table, or an agent already named on the same page), only public halves (no private key, no "PRIVATE KEY" text, no keyfile), and a replaced entry marked superseded or retired, never reactivated. Any that fails, or any key I cannot place: URGENT, with the commit.
+5. Report only, change nothing else: add one dated section at the top of people/vicky/reports/security.md ("Weekly check, <date>": what I checked, the commits looked at, findings each with its commit, URGENT first; or "nothing wrong"); no key material, no session or task ids, no contact details. Add the ledger line (node people/vicky/measure.mjs --agent security --task "security review" --since <run start> --append). Commit as security@web-summit.vicky (trailers Agent, Issue: WS-14, For: conductor@web-summit.vicky) and release with AGENT=security@web-summit.vicky SKIP_LIVE=1 admin/tools/release.sh (retry if someone pushed first).
+6. No messages into any session, no Gmail or Notion, never read another session's conversation, never seal or open a vault key, never change another agent's file. Anything URGENT also goes first in this run's reply to Vicky.
+```
+
 ## Changes since
 
 - 14 Nov 2026 (CLEANUP-14NOV, at Vicky's word in my window): rules 5 and 7 of the copy updated; "never send a message into another session" replaced with standing answer 41 (reply only to the session that messaged me).
-- 14 Nov 2026 (PROMPTS-SHORT, standing answer 64, at Vicky's word in my window): the pointer to decisions.md added; the RULES-11NOV copy kept as my exception, for comparison only. I have no scheduled task.
+- 14 Nov 2026 (PROMPTS-SHORT, standing answer 64, at Vicky's word in my window): the pointer to decisions.md added; the RULES-11NOV copy kept as my exception, for comparison only.
+- 14 Nov 2026 (at Vicky's word in my window): one weekly scheduled task, Mondays 06:20 UTC, above.

@@ -2,6 +2,12 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
+## 14 Nov 2026, about 10:55 UTC: weekly scheduled task set
+
+At Vicky's word in my window: one scheduled task, Mondays 06:20 UTC (first run Monday 16 Nov), firing into this session: compare standing answer 31 with my copy; check every change to decisions.md and the archive in the past week was the conductor's and quotes her words; check both keys pages (team site data/keys.json, newsroom board/keys.json) for keys not added by their own agent or that I cannot place. Report only, URGENT where anything looks wrong. Its prompt, as stored, is in my prompts file; its id is not in the repository. It carries P1 to P3 word for word (standing answer 16).
+
+state: ok; done: weekly task set; next: Monday 16 Nov 06:20 UTC; ask: none; run: prompted
+
 ## 14 Nov 2026, about 10:55 UTC: applied PROMPTS-SHORT, with my one exception
 
 Vicky, in my window: "keep your RULES-11NOV copy. You're the one exception to PROMPTS-SHORT. decisions.md is still what applies; use your copy only to compare, and flag it to me at once if decisions.md's version changes without my words. Shorten the rest of your file as the task says."
