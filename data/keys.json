@@ -142,6 +142,23 @@
         "label": "conductor@web-summit.vicky (Claude Code session, 9 November 2026)",
         "fingerprint": "sha256:be89979acc73dda7",
         "signing_fingerprint": "sha256:9c16424f1889540d"
+      },
+      "status": "retired: replaced by a new session on 14 November 2026 at Vicky's word (hand-over, P17), 09:30 UTC; sign or seal nothing to it. The new session's key is conductor-vicky-3"
+    },
+    {
+      "id": "conductor-vicky-3",
+      "label": "conductor@web-summit.vicky (Claude Code session, 14 November 2026)",
+      "role": "Vicky's conductor (conductor@web-summit.vicky), the new session that took over on 14 November 2026 at Vicky's word (hand-over, P17). It replaces the entry conductor-vicky-2 (sha256:be89979acc73dda7), which is retired. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 14 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository from Vicky's account; the push is the authorisation. It is not linked to the operator's key.",
+      "added": "2026-11-14",
+      "replaces": "conductor-vicky-2",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwBvPCwq/GHGPgU1oU9P7\nsvpZjxgMBWTo7bPWH+ZrVaVNbVjDm443xtkdTSdS1SyGwOsEW/7H9mBxe4ZPYML6\nr89rnd+gKEjc9lZzX5KpsNeocaR78PJFaOefq4DkdOMO7zlKzKPgpjxjTrlRI5qd\nRfn8YgTpsTlxa4uFBdGrEPNbCdTvlnCoXrVOEAg2MK2U252tpcwxm85yZYKJdAyI\nD8mNDy48LOjwK5yrkD+jCsKfnIwZUWQ4Pmu0bqpN7iXEFTPOmuqkR+WU0ghB+EBe\nNprfj9mVwaRrGC06nNNVysgeDj2R130MFNj63GSa9Zavpq5I9xUKKrtxsfhg3rvW\nk+bYDqCoAdNyVVY2e+7aEL1OhlikYi+lLuQdyyRYBWCHs745mVL5VHJluQZ2rh5g\nVXSmbJPgP4UNu+TAyuBIkWq/3iaP1WJPhvL86J9S31Ixx2VDvbkZqJtypDUHm2Gp\ndXTMtxod4o9m/AKboJPNGOWJfMpQYNpYwrxhTTOjxreT3bJyWiQVkNfZZh2GBhRS\nwdXAPorkd2cXm1mnAK/3yB8NPXXsLhxyv7d+4MIBLttJLT9fIBRwyDkOyxiAqG5t\nW/zfUs1+qlIIz6J5RUxn6rPfVYmVllj8GqpK3yQY+2BRQ8txUpOr4Zgi15doFO9H\nq5kQPz/iAYDVM1Rb9EKmSJUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkY5RM9FwZCvTouNSZl1xNbeaG3F9\nYcEQR952E3qMBGeaWOtLfEGlv4sTV7JmCH0xtedBgiaE82bUdP4iiTExzQ==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor@web-summit.vicky (Claude Code session, 14 November 2026)",
+        "fingerprint": "sha256:6c7ad1aec4d55f31",
+        "signing_fingerprint": "sha256:bef655df837f035a"
       }
     },
     {
