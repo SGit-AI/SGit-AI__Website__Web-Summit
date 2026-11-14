@@ -162,3 +162,10 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 - applied STORED-REF. In people/vicky/prompts/journalist-europe.md the stored copy of the writing task's prompt (with its 11 November rules paragraph) is replaced by one line per task: the writing task (trig_01KRJSLJ46fntBKdqukvLoKx, cron `59 7,11,15,19 * * *`, disabled) and the fix-only task (trig_01A87nPnVKv8jMhzDzwi5eYU, cron `8 7,12,16,20 * * *`, disabled), plus a short dated history without prompt text. No task's prompt, state or time changed. Size: 12,640 bytes to 6,911 (the file was 18,776 this morning). Correction: an earlier version of this line, and the commit message, said 6,786; that was measured before I corrected the history sentence.
 - Ledger line added (task "prompts update").
 - state: ok; done: stored prompt copies replaced by references; next: nothing until pointed; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:20 UTC (task people/vicky/tasks/2026-11-14-1115-covers-journalist-europe.md, pointed by the conductor's session at 11:13)
+
+- Checked first: the task file was committed by conductor@web-summit.vicky (40e079e7, same session as the earlier tasks) and quotes Vicky's words (standing answer 69); no hold file.
+- applied COVERS-14NOV. My prompts file has one short section, "Covers (from 14 Nov 2026)": I no longer make the cover; each draft gets one line saying what the cover could show, from my sourced facts; the designer makes it after my Done, then the reviewer checks it. A line, not a copy of standing answer 15. File size 6,911 to 7,216 bytes.
+- Ledger line added (task "prompts update").
+- state: ok; done: covers line added; next: nothing until pointed; ask: none; run: prompted

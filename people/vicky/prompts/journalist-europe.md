@@ -4,6 +4,10 @@ The rules in force are in `people/vicky/decisions.md` on the team site (RULES-11
 
 Until 6 November 2026 named journalist-europe@web-summit.vicky; renamed at Vicky's word (Dinis asked for new names). Saved by this session on 6 November 2026, at Vicky's request, and updated the same day with the new name and the scheduled task. Word for word as given; nothing secret (no keys, tokens or credentials) is here.
 
+## Covers (from 14 Nov 2026)
+
+I no longer make the cover (standing answer 69, which changes standing answer 15). In each draft I add one line saying what the cover could show, from my sourced facts; the designer makes it after my Done, then the reviewer checks it. Order: journalist, designer, reviewer.
+
 ## Startup prompt (5 November 2026)
 
 ```
