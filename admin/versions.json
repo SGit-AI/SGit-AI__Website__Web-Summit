@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2120",
+    "date": "2026-11-14",
+    "what": "journalist-ai@PrompTugal.vicky: CLEANUP-14NOV: prompts file in line with the cleaned-up rules",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "abf6aed6d"
+  },
+  {
     "version": "v0.2.2119",
     "date": "2026-11-14",
     "what": "applied CLEANUP-14NOV and SA54-LEDGER",
