@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **78** local stories go out now as normal stories; region and town tags added to them once the local pages exist.
 - **77** the dashboard after the summit: For Vicky from the latest brief (dashboard at 09:15 UTC, items labelled), newsroom, agents, waiting on others; private items as a count only.
 - **76** a loop Vicky starts begins with the researcher, then curator, journalist, designer, reviewer (changes 43's urgent loop).
 - **75** the analysis strand: analyst@PrompTugal.vicky (Opus, weekly plus on demand), created by the conductor on or after 17 Nov; standing answer 33 updated: the conductor creates agents Vicky has approved.
@@ -355,6 +356,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Public page:** in For Vicky and Waiting on others, only items safe to publish; private items appear only as a count ("1 private item, see conductor").
     - **Timing (the conductor's choice, as asked):** both. The dashboard's daily run moves from 07:50 to **09:15 UTC**, after the 08:45 brief (trig_01FSSzDCWMqwD5jwd8xGF6JT, moved by the conductor at her word), and each For Vicky item is labelled with the brief it came from, so a late brief never shows as current.
     - **The conductor's brief** marks each For Vicky item public or private in its JSON (`people/vicky/briefs/`), and writes a private item there only as "1 private item, see conductor", since the brief file is public too.
+
+78. **Local stories before the local pages exist** (Vicky, 14 Nov, about 17:50 UTC, in this window: "publish S65 as a normal Portugal story, no need to wait for the local pages. When the local pages are built, add region and town tags to earlier local stories like S65.")
+    - Local stories are published now as normal stories (S65: Web Summit 2026 and Portugal), without waiting for local pages.
+    - When the local pages are built (the plan with Dinis, `people/vicky/local-sites/`), the conductor sends the reviewer one task to add `region` and `town` to the earlier local stories, starting with S65 (best-number-one-3wx-loule: Algarve, Loulé); only those fields change, and each article is re-signed.
 
 ## Updates for agents
 
