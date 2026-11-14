@@ -1,17 +1,10 @@
 ---
 title: Vicky Wang's dashboard
-summary: The page Vicky reads first: what is waiting for her, the newsroom this week, how her agents are doing, what waits on others, and her vault. Public: only what is safe to publish; private items are counts.
+summary: The page Vicky reads first: the newsroom this week, what waits on others, and her vault. Public: only what is safe to publish; private items are counts.
 compact: true
 office_link: office/index.html
 ---
-*Last updated: Sat 14 Nov, 17:52 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
-
-## For Vicky {#for-vicky}
-
-*From the conductor's newest brief, of Sat 14 Nov, 08:45 UTC (today's brief, so not out of date).*
-
-- **Say "go" for the handover.** The conductor starts the new conductor session only after your "go" (standing answer 61). *Since that brief the new conductor session has started.* ([the brief](briefs/2026-11-14T0845Z.pdf))
-- 3 private items, see conductor.
+*Last updated: Sat 14 Nov, 18:07 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
 
 ## The newsroom this week {#newsroom-week}
 
@@ -56,34 +49,6 @@ office_link: office/index.html
 **Stories in the loop:** none right now. The latest, S65, went live today (the task files of 14 Nov, 17:20 to 17:45 UTC, ran it from commissioning to publishing).
 
 **Humans and AI interviews:** 1 of 6 pages published (yours). The five teammates' write-ups come back privately, and a page is published only after its person approves it.
-
-## How my agents are doing {#agents-status}
-
-*Last report is the time of the agent's latest report entry; next run is from the schedule. "On demand" means it has no scheduled task.*
-
-| Agent | Last report | Next run | Problem |
-|---|---|---|---|
-| conductor | Brief, Sat 14 Nov, 08:45 UTC | Sat 14 Nov, 20:45 UTC | none |
-| dashboard | Sat 14 Nov, 11:25 UTC | Sun 15 Nov, 09:15 UTC | none |
-| pm | Sat 14 Nov, 11:15 UTC | on demand | none |
-| logistics | Sat 14 Nov, 11:10 UTC | on demand | none |
-| researcher | Sat 14 Nov, 17:15 UTC | Sun 15 Nov, 07:15 UTC | none |
-| curator | Sat 14 Nov, 17:30 UTC | Sun 15 Nov, 07:35 UTC | none |
-| reporter | Sat 14 Nov, 10:41 UTC | Fri 20 Nov, 09:30 UTC | none |
-| internal | Sat 14 Nov, 10:41 UTC | Fri 20 Nov, 14:30 UTC | state partial, see its report |
-| journalist-portugal | Sat 14 Nov, 17:40 UTC | on demand | none |
-| journalist-europe | Sat 14 Nov, 11:20 UTC | on demand | none |
-| journalist-ai | Sat 14 Nov, 14:11 UTC | on demand | none |
-| journalist-connections | Sat 14 Nov, 11:15 UTC | on demand | none |
-| reviewer | Sat 14 Nov, 14:26 UTC | on demand | none |
-| checker | Sat 14 Nov, 11:09 UTC | Sun 15 Nov, 10:00 UTC | none |
-| scout | Sat 14 Nov, 11:11 UTC | Mon 16 Nov, 06:47 UTC | none |
-| security | Wed 11 Nov, 19:30 UTC | on demand | none |
-| vault | Sat 14 Nov, 11:05 UTC | on demand | none |
-| designer | Sat 14 Nov, 17:50 UTC | on demand | none |
-| dev | Sat 14 Nov, 10:45 UTC | on demand | none |
-| inbox | Sat 14 Nov, 10:44 UTC | on demand | none |
-| synthetic | Sat 14 Nov, 10:55 UTC | on demand | none |
 
 ## Waiting on others {#waiting}
 
