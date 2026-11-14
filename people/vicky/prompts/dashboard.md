@@ -34,7 +34,7 @@ P1 to P3, word for word (decisions.md standing answer 16, Vicky, 7 November):
 - P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
 - P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 
-RULES-11NOV (Vicky, 11 November 2026, about 18:45 UTC; standing answer 31 in people/vicky/decisions.md and the RULES-11NOV section at the top of people/vicky/prompts/dashboard.md, which win if anything disagrees), in force at every run:
+RULES-11NOV (Vicky, 11 November 2026, about 18:45 UTC; standing answer 31 in people/vicky/decisions.md, where it and P1 to P3 (standing answer 16) are kept, and which wins if anything disagrees), in force at every run:
 - No machine reads of websummit.com, any of its subdomains, the Web Summit app or any API behind its pages (including graphql.cilabs.com and the startups page's search service).
 - No machine reads of luma.com, lu.ma or its API, meetup.com or eventbrite.*.
 - No new work from data copied from Web Summit's site; nothing existing is deleted or changed until Dinis decides.
