@@ -48,25 +48,12 @@ Reporting: after each draft, add a short line to people/vicky/reports/[Name].md 
 Start now: set up your key, then write your first story. Before writing, check its sources at their own addresses; if they're too thin, tell me instead of writing.
 ```
 
-## Scheduled task's prompt (step 5 changed 8 November at HANDOFF-FIX, revised: no copy to Dinis's journalist; P1 to P3 added 7 November at standing answer 16; P1 widened 14 November, CLEANUP-14NOV)
+## My scheduled tasks
 
-```
-Scheduled run for journalist-portugal@PrompTugal.vicky:
-0. RULES-11NOV (Vicky, 11 Nov, standing answer 31 in people/vicky/decisions.md; they override anything below): no machine reads of websummit.com, its subdomains, the Web Summit app or any API behind its pages; no machine reads of luma.com, lu.ma or its API, meetup.com or eventbrite.*; no new work from data copied from Web Summit's site; facts about Web Summit only from press reports, the companies', speakers' and organisers' own posts and releases, official public bodies, or a person's browser check, linking to Web Summit's pages instead of copying them; lisbontechfringe.com is a pointer only, every fact checked at its official or organiser source; the eight main categories as the curator assigns them.
-1. Read people/vicky/decisions.md on the team site and follow it.
-2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
-3. Read desks/journalist-vicky/STYLE.md.
-4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
-5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: reviewer@PrompTugal.vicky (the review hand-off).
-6. If there's nothing new in your beat, write nothing.
-7. Add a report line in people/vicky/reports/journalist-portugal.md on the team site.
-Never push to main, never use --force, never push to a session branch.
+- My scheduled task "journalist-portugal@PrompTugal.vicky scheduled run" (trig_01R4SDnvm1qg6LrQVcmCRPaH, 56 7,11,15,19 * * * UTC, disabled) holds its prompt; the account is the only full copy.
+- My scheduled task "journalist-portugal@PrompTugal.vicky fix-only follow-up" (trig_015W8aURM2zEyH9Sd9gJvzNx, 2 7,12,16,20 * * * UTC, disabled) holds its prompt; the account is the only full copy.
 
-Added at Vicky's standing answer 16 (7 Nov), word for word:
-- P1 (the hold; widened 14 Nov, standing answer 63: "the hold check covers my own HOLD file and Dinis's stop files on both sites"): At the start of every run, after pulling dev: if a hold file exists (`people/vicky/HOLD.md`, `HOLD.md` or `team/conductor/HOLD.md` on the team site, or `board/HOLD.md` on the newsroom's dev branch), stop, write one line in your report saying which hold stopped you, and push nothing. Only Vicky (through her conductor) writes or removes `people/vicky/HOLD.md`; the other three are Dinis's to write and remove.
-- P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
-- P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
-```
+History: the writing task was created on 6 November 2026 (daily 08:00 and 16:00 UTC), moved to 08:06 and 16:06 at P5 (6 November), to four rounds at SCHED-7NOV (7 November), to :57 past 05, 10, 14 and 18 at SCHED-WS and standing answer 22 (8 November), and to 07:56, 11:56, 15:56 and 19:56 by the conductor (11 November). It was disabled at the switch-back (11 November), enabled again by the conductor after my RULES-11NOV confirmation (11 November), and is disabled from 13 November (standing answer 43). Its step 2 changed at REMOTE-WS (8 November) and step 5 at HANDOFF-FIX (8 November, revised the same day); P1 to P3 were added at standing answer 16 (7 November) and P1 widened at CLEANUP-14NOV (14 November). The fix-only task was created by the conductor on 7 November at standing answer 18, ran from 8 to 11 November (its step 2 changed at REMOTE-WS, 8 November), and was disabled at the switch-back on 11 November.
 
 ## Standing rules given in chat
 
