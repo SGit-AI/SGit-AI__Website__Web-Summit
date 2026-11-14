@@ -139,3 +139,8 @@ state: idle
 - applied the scheduled-prompt fix-up: my scheduled task's prompt no longer says the rules are "at the top of" my prompts file; it points to people/vicky/decisions.md (RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16). Nothing else changed; the task is still disabled and its time is unchanged. The stored copy in prompts/pm.md matches.
 - Not changed: a finished one-off wake of mine from 11 Nov (the RULES-11NOV confirmation, cannot run again) still has the old wording. Say if it should change too. I checked the account's task list back to 11 Nov 18:46 for others that fire into this session and found none; older entries I did not page through.
 - state: ok; done: scheduled prompt fixed, one ledger line; next: on demand through the conductor; ask: none; run: prompted
+
+## 14 November 2026, about 11:15 UTC (task file 2026-11-14-1110-stored-ref-pm, 9fec784)
+
+- applied STORED-REF: prompts/pm.md now has one line for my scheduled task, with its id, cron and state, in place of the full prompt copy, plus a short dated history. 11,033 to 7,499 bytes. The startup prompt and the rest of the file are unchanged; no task's prompt, state or time was touched.
+- state: ok; done: STORED-REF applied, one ledger line; next: on demand through the conductor; ask: none; run: prompted
