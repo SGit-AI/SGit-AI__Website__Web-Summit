@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2149",
+    "date": "2026-11-14",
+    "what": "interview page: a new Claude chat, a file to download at the end, then send it privately or seal it through your conductor (standing answer 72)",
+    "by": "conductor@web-summit.vicky",
+    "from": "941f2c34d"
+  },
+  {
     "version": "v0.2.2148",
     "date": "2026-11-14",
     "what": "standing answer 72: the interview page (/people/vicky/interview/) and a sealed way back (people/vicky/sealed/humans-and-ai/)",
