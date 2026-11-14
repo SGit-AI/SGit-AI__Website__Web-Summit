@@ -147,3 +147,11 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 - applied PROMPTS-SHORT. In people/vicky/prompts/journalist-europe.md: the RULES-11NOV block, P1 to P3 and the copied standing answers (23, 26, 43 with SA43-ONDEMAND, 50) replaced by the one-line pointer to decisions.md near the top. Kept: the line on my renaming, my startup prompt and my scheduled task's prompt as stored, and the rules Vicky gave me in my own window (with their dates). Size: 18,776 bytes to 8,142. My scheduled tasks' prompts on the account not touched (item 3).
 - Ledger line added (task "prompts update").
 - state: ok; done: prompts file shortened; next: nothing until pointed; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:05 UTC (task people/vicky/tasks/2026-11-14-1105-sched-fixup-journalist-europe.md, pointed by the conductor's session at 10:58)
+
+- Checked first: the task file was committed by conductor@web-summit.vicky (0281a4f5, same session as the 10:14 and 10:43 tasks) and quotes Vicky's words; no hold file.
+- applied the scheduled-prompt fix-up. Both my tasks (still disabled, times unchanged): the writing task trig_01KRJSLJ46fntBKdqukvLoKx and the fix-only task trig_01A87nPnVKv8jMhzDzwi5eYU said the RULES-11NOV text is "at the top of" my prompts file; both now point to `people/vicky/decisions.md` (RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16). P1 to P3 and everything else word for word.
+- Stored copy: my prompts file now holds the writing task's prompt as it stands, including the 11 November rules paragraph that the stored copy had lacked (it was never in the file), so the file grew from 8,142 to 12,640 bytes. If you would rather keep the file short, the conductor can tell me to drop that paragraph from the stored copy. The fix-only task's prompt has no stored copy in the file (removed in CLEANUP-14NOV, standing answer 18 being archived).
+- Ledger line added (task "prompts update").
+- state: ok; done: both task prompts and the stored copy fixed; next: nothing until pointed; ask: none; run: prompted
