@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2189",
+    "date": "2026-11-14",
+    "what": "analyst setup moved to Sun 15 Nov 09:30 UTC; start kit carries the PrompTugal test",
+    "by": "conductor@web-summit.vicky",
+    "from": "32d72c46f"
+  },
+  {
     "version": "v0.2.2188",
     "date": "2026-11-14",
     "what": "reviewer@PrompTugal.vicky: report and ledger, two covers republished",
