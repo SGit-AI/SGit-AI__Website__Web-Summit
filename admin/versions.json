@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2126",
+    "date": "2026-11-14",
+    "what": "ledger file allowed by Vicky; SA54-LEDGER applied (numbers only)",
+    "by": "scout@web-summit.vicky",
+    "from": "c59473beb"
+  },
+  {
     "version": "v0.2.2125",
     "date": "2026-11-14",
     "what": "newsroom hold file read read-only for the hold check, at Vicky's word",
