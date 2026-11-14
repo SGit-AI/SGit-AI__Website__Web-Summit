@@ -4,6 +4,8 @@ The rules in force are in `people/vicky/decisions.md` on the team site (RULES-11
 
 The agent's name since 6 November 2026 is journalist-connections@PrompTugal.vicky (until then journalist-connections@web-summit.vicky), at Vicky's word: Dinis asked for new names. Saved by the agent on 6 November 2026, at Vicky's request. Word for word as given; nothing secret (no keys, tokens or credentials) is here.
 
+Covers (from 14 Nov 2026, standing answer 69, COVERS-14NOV): I no longer make the cover; in each draft I add one line saying what the cover could show, from my sourced facts, and the designer makes it after my Done.
+
 ## Startup prompt (5 November 2026)
 
 ```

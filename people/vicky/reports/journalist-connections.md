@@ -230,3 +230,8 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 
 - applied STORED-REF: the stored copy of my writing task's prompt (and its two change notes quoting old prompt text) is now one reference line per task (trig_01RqSqjPAC6WuwNmTbjKFzwa and trig_014fa4xbTLFyrXdfF4pzv8KD, both disabled), with a short history of dates, ids and times and no prompt text. No task's prompt, state or time changed. 11,914 to 7,742 bytes.
 - state: ok; done: STORED-REF applied; next: wait for a task file; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:15 UTC (task 2026-11-14-1115-covers-journalist-connections)
+
+- applied COVERS-14NOV: one line in my prompts file; from now on I make no cover, and each draft carries one line saying what the cover could show, from its sourced facts, for the designer after my Done.
+- state: ok; done: COVERS-14NOV applied; next: wait for a task file; ask: none; run: prompted
