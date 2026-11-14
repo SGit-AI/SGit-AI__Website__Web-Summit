@@ -1,0 +1,58 @@
+{
+ "number": 10,
+ "date": "14 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "Handover day: the new conductor starts at your \"go\"",
+ "when": "14 November 2026, 08:45 UTC (since brief 9, 12 Nov 08:45 UTC; no brief on 13 Nov, the hold)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "None. No hold on either site, no edit to decisions.md but mine, no key changes, Gmail used only by your inbox agent, usage limit status \"allowed\".",
+  "My session's context is at 795,000 of about 900,000 tokens before automatic compaction: a good day to hand over."
+ ],
+ "actions": [
+  {"window": "conductor (this window)", "items": [
+   {"what": "Say go for the handover",
+    "why": "At your word I start the new conductor session only after your \"go\" (standing answer 61). Then the steps run back to back.",
+    "reply": "Conductor: go."}
+  ]},
+  {"window": "vault", "items": [
+   {"what": "Reseal vaults A and B for the new conductor (paste after the new session has made its key)",
+    "why": "The new conductor needs your agents' tools (A) and your ideas (B); vault@ checks the new key was added by its own commit, then commits the sealed files, so nothing needs pasting back.",
+    "reply": "vault@: reseal vault A (wyt9jdeo) and vault B (lhsdkd4x) from conductor-vicky-2 to conductor-vicky-3, after checking conductor-vicky-3 was added by the new conductor's own commit. Commit the sealed files for the new conductor."}
+  ]},
+  {"window": "inbox", "items": [
+   {"what": "Hold the staged follow-up entries",
+    "why": "Your inbox agent asks which agent to seal its staged follow-up list entries to. Nothing can be added until Indi's agents reseal the list to inbox-vicky or add an \"add a contact\" option (your request of last night, no reply yet).",
+    "reply": "Inbox: keep the staged entries in your own window until Indi's agents add you to the follow-up list. Seal them to no one yet."}
+  ]},
+  {"window": "Dinis / stand-up", "items": [
+   {"what": "The interview vault request is still open",
+    "why": "Asked on 9 Nov, never answered; the summit is over. Close it unless you still want a place for interview recordings.",
+    "reply": "Conductor: close the interview vault request."}
+  ]}
+ ],
+ "sections": [
+  {"title": "Overnight and this morning", "items": [
+   "Researcher 07:15 and curator 07:35 ran on the five new themes (both say \"applied SA58-THEMES\" and \"applied SA54-LEDGER\"). Researcher: 2 captures (the EU's Digital Fairness Act explainer, Konecta's Lisbon centre). Curator: no new story yet (Konecta and the DFA already covered by S52 and S56); gaps sent to the researcher for themes 1 and 2 (follow-ups, the map of AI in Portugal). Next rounds 11:15 and 11:35.",
+   "Dashboard 07:50 ran; your stories page is refreshed (55 stories).",
+   "Nothing published overnight; no new drafts. Yesterday's tally: S61 (Humanos), S62 (why people trust AI summaries) and S63 (women learning and building AI in Portugal) live; Teamworks, Rio and Pavilion 4 back; 98 company pages cleaned of Web Summit sources; 27 images moved; 9 update notes rewritten.",
+   "Ledger: 17 lines from five agents so far, all with generic titles."
+  ]},
+  {"title": "Waiting on others", "items": [
+   "Indi's agents: inbox-vicky on the follow-up list, or an add-a-contact option. No reply yet.",
+   "correspondent@ (front page): the fringe instead of the agenda, a new lead (S63 suggested), the storm block off. No reply; the lead is still Thursday's guide.",
+   "Dinis's conductor: Web Summit links in the company-page template and data. No reply."
+  ]},
+  {"title": "Today, in order", "items": [
+   "1. You say go in this window. 2. I start the new conductor session (Opus, the Web Summit environment) with the start kit. 3. It makes its key conductor-vicky-3 and its 08:45 and 20:45 tasks; I check them in its commits. 4. You paste the reseal line in vault@'s window. 5. The new conductor opens both vaults and tells me. 6. I disable my two tasks, delete my vault keys and stop.",
+   "Then the new conductor's first jobs: the rules cleanup (it shows you the new decisions.md first), then the three role changes with paste messages for you.",
+   "Researcher and curator 11:15/11:35 and 15:15/15:35; checker 10:00; scout's first weekly note Sunday 18:47."
+  ]},
+  {"title": "Checks", "items": [
+   "decisions.md: all edits mine (standing answers 51 to 63 since brief 9). Keys: no changes. Holds: none. Gmail: inbox@ only (6 drafts kept, 0 sent). Follow-up drafts waiting: 6 (inbox, 13 Nov about 22:10 UTC).",
+   "Schedule as restored on 13 Nov: researcher and curator three rounds, dashboard 07:50, checker 10:00, scout Sundays 18:47, my 08:45 and 20:45; everything else off or on demand."
+  ]}
+ ],
+ "next": ["Your \"go\", then the handover.", "11:15 and 11:35 research and curation.", "Sunday 18:47 scout's weekly note."],
+ "sources": ["people/vicky/reports/*.md since 13 Nov 19:30, read by a Sonnet sub-agent (P16)", "get_session (usage only); the account's scheduled tasks as set on 13 Nov", "Newsroom PrompTugal/PrompTugal__News__Website dev"]
+}
