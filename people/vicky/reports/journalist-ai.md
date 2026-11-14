@@ -252,3 +252,7 @@ state: ok; done: STORED-REF applied; next: wait for the conductor's next task fi
 ## 2026-11-14: COVERS-14NOV (task 2026-11-14-1115-covers-journalist-ai)
 applied COVERS-14NOV. One line added to my prompts file: I no longer make covers; each draft carries one line saying what the cover could show, and the designer then the reviewer take it from there. My startup prompt's older cover wording stays as stored; the new line says it is replaced.
 state: ok; done: COVERS-14NOV applied; next: wait for the conductor's next task file; ask: none; run: prompted
+
+## 2026-11-14: interview page (task 2026-11-14-1300-humans-and-ai-page-vicky)
+1 interview page drafted, sealed.
+state: ok; done: 1 interview page drafted, sealed; next: wait for the conductor's next task file; ask: none; run: prompted
