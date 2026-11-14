@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **76** a loop Vicky starts begins with the researcher, then curator, journalist, designer, reviewer (changes 43's urgent loop).
 - **75** the analysis strand: analyst@PrompTugal.vicky (Opus, weekly plus on demand), created by the conductor on or after 17 Nov; standing answer 33 updated: the conductor creates agents Vicky has approved.
 - **74** only the conductor opens reports/humans-and-ai/; write-ups reach journalist-ai privately (Vicky's paste now, sealed later); interview page drafts stay sealed until approved.
 - **73** outside interviews on hold until Vicky talks to Dinis; nothing drafted or changed.
@@ -195,6 +196,7 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Urgent:** when Vicky sends the conductor something urgent, it commits a task file with her words and runs curator, journalist and reviewer at once.
     - **Switched off from Friday 06:30 UTC** (disabled, not deleted): the journalists' writing tasks, the fix-only tasks, the reviewer's two tasks, dashboard's 17:45 run, pm's and scout's tasks, logistics and programme, the conductor's midday check, and the two THU-SUMMIT tasks. Thursday's summit lane is unchanged.
     - **A fresh conductor session:** planned on Friday (hand-over note, start kit for Vicky to start it; agent creation stays with her).
+    - **Vicky's own requests** (standing answer 76): the loop starts with the researcher, then the curator.
     - **Covers** (standing answer 69): on a journalist's Done, the conductor wakes the designer for the cover first, then the reviewer.
     - **Changed** (standing answer 63: "51 wins on the schedule (three rounds a day), and scout runs weekly."): researcher 07:15, 11:15 and 15:15; curator 07:35, 11:35 and 15:35 (standing answer 51); scout one run a week, Mondays 06:47 UTC (standing answer 56, as moved on 14 Nov). The rest of this answer stands; the fresh conductor session was done on 14 Nov.
 
@@ -341,6 +343,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Flow:** researcher (captures) → analyst (proposes, checks, writes) → curator agrees the topic → designer (the chart) → reviewer (checks every figure, publishes). Its first pieces go out only after Vicky approves them.
     - **First task:** propose its first piece (up to three topics) from public reports, datasets and the researcher's captures. The pre-seed post is not a task.
     - **When:** the conductor creates the session on or after Tuesday 17 November (not on 14 Nov), from `people/vicky/plans/2026-11-14-start-kit-analyst.md`, under standing answer 33 as updated, and says in the brief when it is ready.
+
+76. **A loop Vicky starts begins with the researcher** (Vicky, 14 Nov, about 15:15 UTC, in this window: "I think from now on, if I have manually talk to cover something, it's better to include the researcher in the writing loop because it's job originally, and I only tell you a thing I want to cover, but the curator doesn't necessarily has the material to cope with, so it has to begin with the researcher in this kind of writing loop.")
+    - **Whenever Vicky asks the conductor to cover something** (a link, a screenshot, a topic), the loop is: **researcher** (captures the sources into the research vault, ahead of the rest of its round) → curator (duplicate check, then commissions from the researcher's captures; it does not search for sources itself) → journalist → designer (cover) → reviewer. This changes standing answer 43's urgent loop ("curator, journalist and reviewer at once").
+    - The curator may do its duplicate check while the researcher works. If the researcher finds no readable source, the conductor tells Vicky and the loop stops.
+    - The curator's own commissions from its scheduled rounds are unchanged: they already come from the researcher's captures.
 
 ## Updates for agents
 

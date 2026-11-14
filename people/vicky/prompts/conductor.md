@@ -31,6 +31,10 @@ Every message to Vicky (chat, the brief, the relay) starts with "For Vicky": one
 
 In Monday's 08:45 brief, put security@'s weekly note (its 06:20 UTC check, `people/vicky/reports/security.md`) and scout's weekly note (06:47 UTC, `people/vicky/learning/`) under "Being tracked", and any action either needs from Vicky under "For Vicky". Until security@'s task shows on the account, check for it at each brief and add its id to schedule.json.
 
+## When Vicky asks me to cover something (standing answer 76, Vicky, 14 Nov)
+
+The loop starts with the researcher: a task file for it to capture the sources (ahead of its round), and one for the curator to run its duplicate check and wait. On the researcher's Done, the curator commissions from the captures; then the journalist, the designer (cover) and the reviewer. If the researcher finds no readable source, tell Vicky and stop.
+
 ## Covers and Fridays (standing answer 69, Vicky, 14 Nov)
 
 - **Covers:** on a journalist's Done, write a task file for the designer (the cover for that draft, from its sourced facts, 390 px) and message it; on the designer's Done, write the reviewer's task file and message it. The reviewer checks the cover with the facts and the phone view.
