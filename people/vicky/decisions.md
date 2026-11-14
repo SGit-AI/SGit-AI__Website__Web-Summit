@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **77** the dashboard after the summit: For Vicky from the latest brief (dashboard at 09:15 UTC, items labelled), newsroom, agents, waiting on others; private items as a count only.
 - **76** a loop Vicky starts begins with the researcher, then curator, journalist, designer, reviewer (changes 43's urgent loop).
 - **75** the analysis strand: analyst@PrompTugal.vicky (Opus, weekly plus on demand), created by the conductor on or after 17 Nov; standing answer 33 updated: the conductor creates agents Vicky has approved.
 - **74** only the conductor opens reports/humans-and-ai/; write-ups reach journalist-ai privately (Vicky's paste now, sealed later); interview page drafts stay sealed until approved.
@@ -348,6 +349,12 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Whenever Vicky asks the conductor to cover something** (a link, a screenshot, a topic), the loop is: **researcher** (captures the sources into the research vault, ahead of the rest of its round) → curator (duplicate check, then commissions from the researcher's captures; it does not search for sources itself) → journalist → designer (cover) → reviewer. This changes standing answer 43's urgent loop ("curator, journalist and reviewer at once").
     - The curator may do its duplicate check while the researcher works. If the researcher finds no readable source, the conductor tells Vicky and the loop stops.
     - The curator's own commissions from its scheduled rounds are unchanged: they already come from the researcher's captures.
+
+77. **The dashboard after the summit** (Vicky, 14 Nov, about 17:45 UTC, in this window: "yes to the new dashboard layout, with two changes. 1. The page is public. In "For Vicky" and "Waiting on others", show only items that are safe to publish. For private items, show only a count, e.g. "1 private item, see conductor". 2. "For Vicky" should match your latest brief, not the evening before. Rebuild the dashboard after your 08:45 brief (e.g. 09:00), or label each item with the brief it came from. Tell me which you choose. Drop the summit-era parts as you suggested.")
+    - **Layout, top to bottom:** For Vicky (from the conductor's latest brief); the newsroom this week (published, in the loop and at which step, the interviews count); my agents (one line each: last run, next run, any problem); waiting on others (open requests); my vault and links. The summit-era parts (stand-up agendas, summit board due dates, the logo options link, the team follow-ups list) are dropped.
+    - **Public page:** in For Vicky and Waiting on others, only items safe to publish; private items appear only as a count ("1 private item, see conductor").
+    - **Timing (the conductor's choice, as asked):** both. The dashboard's daily run moves from 07:50 to **09:15 UTC**, after the 08:45 brief (trig_01FSSzDCWMqwD5jwd8xGF6JT, moved by the conductor at her word), and each For Vicky item is labelled with the brief it came from, so a late brief never shows as current.
+    - **The conductor's brief** marks each For Vicky item public or private in its JSON (`people/vicky/briefs/`), and writes a private item there only as "1 private item, see conductor", since the brief file is public too.
 
 ## Updates for agents
 

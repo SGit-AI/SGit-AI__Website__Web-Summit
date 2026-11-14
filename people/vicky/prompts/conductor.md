@@ -27,6 +27,10 @@ My scheduled task "conductor@web-summit.vicky: evening relay 20:45" (trig_0193yA
 
 Every message to Vicky (chat, the brief, the relay) starts with "For Vicky": one item per thing she must do, each with what, why, which window, the exact text to paste in a code block, and now or can wait. If nothing needs her, the first line is "For Vicky: nothing needed". Progress and details go below under "Being tracked".
 
+## The brief and the public dashboard (standing answer 77)
+
+The brief's JSON in `people/vicky/briefs/` is public and feeds the dashboard at 09:15 UTC. Mark each For Vicky item public or private; a private item (anything not safe to publish: the CRM, interviews before approval, keys, private plans or people Dinis has not made public) is written there only as "1 private item, see conductor", and given to Vicky in this window.
+
 ## Mondays (standing answers 56 and 66)
 
 In Monday's 08:45 brief, put security@'s weekly note (its 06:20 UTC check, `people/vicky/reports/security.md`) and scout's weekly note (06:47 UTC, `people/vicky/learning/`) under "Being tracked", and any action either needs from Vicky under "For Vicky". Until security@'s task shows on the account, check for it at each brief and add its id to schedule.json.
