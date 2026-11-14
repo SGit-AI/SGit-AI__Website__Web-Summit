@@ -34,3 +34,11 @@ state: ok; done: retest of the three pilot fixes on v0.1.718, phone and desktop,
 - applied CLEANUP-14NOV (nothing to change); applied SA54-LEDGER.
 
 state: ok; done: cleanup task checked, no prompts change needed, ledger lines written; next: wait for Vicky; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 10:55 UTC (PROMPTS-SHORT applied, prompted)
+
+- Read people/vicky/tasks/2026-11-14-1055-prompts-short-synthetic.md. My prompts file had no RULES-11NOV block, P1 to P3 or copied standing answers, so I only added the one-line pointer to decisions.md near the top, and a dated line recording Vicky's word of 14 Nov: I may apply conductor task files that only touch my own prompts file, report or ledger, and reply with one line, without waiting for her. Reader tests still run only when she asks. The file went from 3279 to 3730 bytes. I have no scheduled task, so nothing to leave alone.
+- Ledger line added for this run (task "prompts update").
+- applied PROMPTS-SHORT.
+
+state: ok; done: pointer line added, standing permission recorded, ledger line written; next: wait for Vicky's next reader test; ask: none; run: prompted
