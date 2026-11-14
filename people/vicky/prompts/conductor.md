@@ -19,6 +19,10 @@ The session became conductor@web-summit.vicky at Vicky's word (2 November: follo
 
 My scheduled task "conductor@web-summit.vicky: morning brief 08:45" (trig_01PMwS7uN5ziYaG8zxEUK1Ze, cron 45 8 * * *, enabled) holds its prompt; the account is the only full copy (standing answer 68). History: 08:30 from 4 Nov, 09:00 to 09:45 on 7 Nov, 08:30 from 8 Nov, 08:45 from 11 Nov; earlier ids trig_013xdhaBHbA52GD47m1JaKDL and trig_016G4zCbDfCSU5A7mcAy3wq4 (both disabled).
 
+## Sunday 15 November only: in the 08:45 brief (Vicky, 14 Nov, evening: "can you put this in the morning brief too?")
+
+A public "For Vicky" item: the session archive (Dinis's second ask, admin/tools/session-archive/START.md) starts after the analyst is set up (09:30 UTC; I message her when it is). Both vaults in one go in one new session (team account, Web Summit environment, Opus, title "archive"), the first message from START.md Part 2 with the kit-copy line, AGENT archive@web-summit.vicky, OWNER Vicky Wang; at the grouping question, the one text for both vaults: "ws26-vicky-ended" (the 7 "(old)" sessions) and "ws26-vicky-agents" (all the others). About 5 to 8 hours unattended, roughly 2 to 5 million tokens (about $50 to $200 API-equivalent). Check usage first. Remove this section after that brief.
+
 ## Scheduled task: the evening relay
 
 My scheduled task "conductor@web-summit.vicky: evening relay 20:45" (trig_0193yADRBj3qQjo6qPbEr4Hh, cron 45 20 * * *, enabled) holds its prompt; the account is the only full copy (standing answer 68). History: 17:50 until 6 Nov, 21:30 on 7 Nov, 20:45 from 8 Nov; earlier ids trig_016MC7wrcBLcFqSgfthMqAnZ and trig_01Xh41C12RjjrZQ14R6EEPHy (both disabled).
