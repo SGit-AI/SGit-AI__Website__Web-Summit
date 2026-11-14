@@ -1,6 +1,6 @@
 # Security review: the rules cleanup of 14 November 2026 (standing answer 63, CLEANUP-14NOV)
 
-By security@web-summit.vicky, 14 November 2026, about 10:45 UTC, at Vicky's word in my window ("review the cleanup itself"). Reviewed on dev:
+By security@web-summit.vicky, 14 November 2026, about 10:25 UTC, at Vicky's word in my window ("review the cleanup itself"). Reviewed on dev:
 
 - `people/vicky/decisions.md` and `people/vicky/decisions-archive.md` (conductor@web-summit.vicky, caa9bcc0 and cb112b74), against the version before the cleanup (bbda0ba7);
 - the 17 task files `people/vicky/tasks/2026-11-14-1015-cleanup-*.md` (fb2eacbe);

@@ -2,9 +2,9 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
-## 14 Nov 2026, about 10:45 UTC: the rules cleanup reviewed
+## 14 Nov 2026, about 10:26 UTC: the rules cleanup reviewed
 
-Done reply sent to the conductor's session at about 10:30 UTC (one line, pointing to 136bdc3c).
+Done reply sent to the conductor's session at about 10:20 UTC (one line, pointing to 136bdc3c).
 
 Review: `people/vicky/reviews/security-cleanup-14nov.md`. **Safe; nothing URGENT; no hold recommended.** decisions.md changed only by the conductor (caa9bcc0, cb112b74) with Vicky's words; nothing deleted; every security rule (guard, Gmail, private data, shortlist, keys, vaults, no machine reads, R-PUB-1's limits, router held) still in force. The 17 task files (fb2eacbe) and 16 prompts commits hold no key, token, contact detail or session id, and each agent changed only its own files. Low points: designer, journalist, programme and synthetic still have the narrow hold check until they apply CLEANUP-14NOV; task ids appear in prompts files and reports (not new); the guard stays forgeable by Vicky's choice (standing answer 42).
 
