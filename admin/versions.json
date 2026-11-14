@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2113",
+    "date": "2026-11-14",
+    "what": "the session archive kit, for each team member to archive their own Claude Code sessions into vaults",
+    "by": "conductor@web-summit.dinis",
+    "from": "63ff43732"
+  },
+  {
     "version": "v0.2.2112",
     "date": "2026-11-14",
     "what": "brief 10, 14 Nov (handover day)",
