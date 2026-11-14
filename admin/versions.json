@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2137",
+    "date": "2026-11-14",
+    "what": "scheduled-prompt fix-up: the tasks point at decisions.md, not at the top of the prompts file",
+    "by": "dashboard@web-summit.vicky",
+    "from": "31f2bb825"
+  },
+  {
     "version": "v0.2.2136",
     "date": "2026-11-14",
     "what": "scheduled-prompt fix-up applied (rules pointer to decisions.md)",
