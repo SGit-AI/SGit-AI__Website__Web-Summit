@@ -15,9 +15,9 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 | pm@web-summit.vicky | board health, alignment, WS-31, all writing | [pm.md](pm.md) |
 | researcher@web-summit.vicky | the newsroom's research, into vault 41j3e9s9 | [researcher.md](researcher.md) |
 | curator@PrompTugal.vicky | maps the research into story candidates | [curator.md](curator.md) |
-| programme@PrompTugal.vicky | the public agenda; the interview shortlist in its vault | [programme.md](programme.md) |
-| journalist@PrompTugal.vicky | drafts: the summit | [journalist.md](journalist.md) |
-| designer@PrompTugal.vicky | the newsroom's design (paused) | [designer.md](designer.md) |
+| reporter@PrompTugal.vicky | evidence roadmaps for the curator, to vault A only (was programme until 14 Nov; [programme.md](programme.md) kept as the record) | [reporter.md](reporter.md) |
+| internal@web-summit.vicky | the internal journalist, to vault A only (was the summit journalist until 14 Nov; [journalist.md](journalist.md) kept as the record) | [internal.md](internal.md) |
+| designer@PrompTugal.vicky | cover graphics on request | [designer.md](designer.md) |
 | journalist-portugal@PrompTugal.vicky | drafts: Portugal | [journalist-portugal.md](journalist-portugal.md) |
 | journalist-europe@PrompTugal.vicky | drafts: Europe | [journalist-europe.md](journalist-europe.md) |
 | journalist-ai@PrompTugal.vicky | drafts: AI and robotics | [journalist-ai.md](journalist-ai.md) |
@@ -29,4 +29,4 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 
 tools@web-summit.vicky was never started (Vicky, 3 November), so it has no prompt.
 
-Last updated: 8 November 2026, about 08:50 UTC (20 saved here, 1 in the kit, 0 not saved yet; thirteen files changed overnight with the Web Summit timetable and the new prompt changes, checked for anything that should not be public: nothing found).
+Last updated: 14 November 2026, about 10:50 UTC (22 saved here, 1 in the kit; the rules cleanup (CLEANUP-14NOV) applied to every file, and the role changes: reporter.md and internal.md added, designer.md rewritten; checked for anything that should not be public: nothing found).

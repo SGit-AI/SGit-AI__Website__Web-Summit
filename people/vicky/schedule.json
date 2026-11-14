@@ -1,6 +1,6 @@
 {
  "about": "Every scheduled task of Vicky's agents, one row per task (UTC). Kept by conductor@web-summit.vicky (scout's P4, accepted by Vicky on 6 Nov 2026), checked against the account's scheduled tasks in each 08:30 brief. Changes to tasks are Vicky's; the conductor changes one only at her word (as for the Web Summit timetable, 7 Nov).",
- "checked": "2026-11-14T10:12Z (scout moved to Mondays 06:47 at Vicky's word; conductor tasks moved to the 14 Nov session at 09:31)",
+ "checked": "2026-11-14T10:50Z (role changes: programme to reporter, the summit journalist to internal; scout Mondays 06:47; conductor tasks in the 14 Nov session)",
  "tasks": [
   {
    "agent": "conductor@web-summit.vicky",
@@ -81,20 +81,20 @@
    "at_whose_word": "Vicky (7 Nov, about 23:00 UTC): the Web Summit timetable from 8 Nov, set by the conductor at her word (SCHED-WS)"
   },
   {
-   "agent": "programme@PrompTugal.vicky",
+   "agent": "reporter@PrompTugal.vicky (was programme@PrompTugal.vicky until 14 Nov)",
    "task": "daily run",
    "cron_utc": "0 7 12 11 *",
    "task_id": "trig_01RhHHq7KU16JfguhbU1d7HU",
-   "state": "disabled (13 Nov, stays off at Vicky's word)",
+   "state": "disabled (13 Nov, stays off at Vicky's word); the reporter has no task until Vicky sets one",
    "since": "4 Nov 2026",
    "at_whose_word": "Vicky (7 Nov, about 23:00 UTC): the Web Summit timetable from 8 Nov, set by the conductor at her word (SCHED-WS)"
   },
   {
-   "agent": "journalist@PrompTugal.vicky",
+   "agent": "internal@web-summit.vicky (was journalist@PrompTugal.vicky until 14 Nov)",
    "task": "scheduled run",
    "cron_utc": "53 7-19 * * *",
    "task_id": "trig_01SpLzX33tb8C82iAaPMBy3d",
-   "state": "disabled; on demand through the conductor (13 Nov, standing answer 43)",
+   "state": "disabled; on demand through the conductor (13 Nov, standing answer 43); the internal journalist has no task until Vicky sets one",
    "since": "6 Nov 2026",
    "at_whose_word": "Vicky (7 Nov, about 23:00 UTC): the Web Summit timetable from 8 Nov, set by the conductor at her word (SCHED-WS); reordered at Vicky's word, 8 Nov about 12:45 (connections first, standing answer 22), set by the conductor"
   },
@@ -185,11 +185,11 @@
    "checked": "2026-11-09T11:15Z"
   },
   {
-   "agent": "journalist@PrompTugal.vicky",
+   "agent": "internal@web-summit.vicky (was journalist@PrompTugal.vicky until 14 Nov)",
    "task": "fix-only follow-up",
    "cron_utc": "56 6,11,15,19 * * *",
    "task_id": "trig_01ENwR7p1ggLZHK2RcyBPTud",
-   "state": "disabled; on demand through the conductor (13 Nov, standing answer 43)",
+   "state": "disabled; on demand through the conductor (13 Nov, standing answer 43); the internal journalist has no task until Vicky sets one",
    "since": "7 Nov 2026",
    "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; created in the agent's own session by the conductor at Vicky's word, 7 Nov about 23:00 (SCHED-WS); reordered at Vicky's word, 8 Nov about 12:45 (connections first, standing answer 22), set by the conductor"
   },
