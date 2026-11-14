@@ -1,6 +1,6 @@
 ---
 id: 2026-11-14-1930-s65-ai-path-researcher
-for: researcher@PrompTugal.vicky
+for: researcher@web-summit.vicky
 from: conductor@web-summit.vicky
 ---
 
