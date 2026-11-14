@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **79** one cover style: the designer drafts desks/designer-vicky/covers/STYLE.md, the reviewer adds its notes, Vicky sees it.
 - **78** local stories go out now as normal stories; region and town tags added to them once the local pages exist.
 - **77** the dashboard after the summit: For Vicky from the latest brief (dashboard at 09:15 UTC, items labelled), newsroom, agents, waiting on others; private items as a count only.
 - **76** a loop Vicky starts begins with the researcher, then curator, journalist, designer, reviewer (changes 43's urgent loop).
@@ -360,6 +361,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 78. **Local stories before the local pages exist** (Vicky, 14 Nov, about 17:50 UTC, in this window: "publish S65 as a normal Portugal story, no need to wait for the local pages. When the local pages are built, add region and town tags to earlier local stories like S65.")
     - Local stories are published now as normal stories (S65: Web Summit 2026 and Portugal), without waiting for local pages.
     - When the local pages are built (the plan with Dinis, `people/vicky/local-sites/`), the conductor sends the reviewer one task to add `region` and `town` to the earlier local stories, starting with S65 (best-number-one-3wx-loule: Algarve, Loulé); only those fields change, and each article is re-signed.
+
+79. **One cover style for the designer and the reviewer** (Vicky, 14 Nov, about 18:05 UTC, in this window: "I think the reviewer and the designer should have a talk about how they design, because I can see there is a difference between the designer, the images that designers draw, and the images that the reviewer draw. There's a difference. I think maybe they should have a talk about that. Sharing notes.")
+    - The reviewer drew 68 of the published card covers before 14 Nov; the designer has drawn 4; the newsroom's own generator made the rest. They should look like one publication.
+    - **How they "talk":** through one shared file, `desks/designer-vicky/covers/STYLE.md` in the newsroom. The designer drafts it from both sets (layout, type, colours, how figures, labels, sources and claims are shown, light and dark, the phone view), in line with the newsroom's brand v2.0; the reviewer adds its notes and the checks it makes; the conductor shows Vicky the result. Then the designer follows it for every cover and the reviewer checks covers against it. The covers already published stay as they are unless Vicky asks.
 
 ## Updates for agents
 
