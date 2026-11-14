@@ -717,7 +717,10 @@
         "fingerprint": "sha256:d43b8829162e23a0",
         "signing_fingerprint": "sha256:2d1801d4d6b81aef"
       },
-      "status": "active"
+      "status": "superseded",
+      "superseded_at": "2026-11-14T10:56Z",
+      "superseded_by": "reporter-vicky-promptugal",
+      "superseded_note": "The same session became reporter@PrompTugal.vicky at Vicky's word (14 Nov 2026) and made a fresh key. It no longer uses the interview shortlist vault (handed back to vault@web-summit.vicky on 14 Nov). Never reactivated."
     },
     {
       "id": "builder-indi",
@@ -1710,6 +1713,24 @@
         "fingerprint": "sha256:a68097b1fa4598c9",
         "signing_fingerprint": "sha256:65c6003b5a288e82"
       }
+    },
+    {
+      "id": "reporter-vicky-promptugal",
+      "agent": "reporter@PrompTugal.vicky",
+      "label": "reporter@PrompTugal.vicky (Claude Code session, team account)",
+      "role": "Vicky Wang's reporter for PrompTugal.news (reporter@PrompTugal.vicky, until 14 November 2026 programme@PrompTugal.vicky): finds public, primary evidence of what AI agents actually do at other organisations and writes evidence roadmaps per candidate, as internal reports to Vicky's private vault A only; never writes articles or publishes. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on the team account on 14 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), first published as reporter-vicky-promptugal in the newsroom's board/keys.json (commit 55bfb2e7); the same public halves, entered here by that session at Vicky's word (14 Nov 2026), so vault A can be sealed to it. It replaces programme-vicky, marked superseded at the same time. Linked locally to the operator's key sha256:db7f79fdd87e030a; not confirmed on pki.sgit.ai. The private halves stay in the session (~/.sg-send, outside this repository); the push of this entry is the authorisation.",
+      "added": "2026-11-14T10:56Z",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA3QbkBDTyNjS/RPTAQa0P\nGH3lmgdZhoWJFMolNIQxTwiZxSK4Yv80E0qPBzgS+B1XSpuHQelDLnBZQfc7qngD\nLpbRCSQ4RgWF8ZPxyeiq8Xr8LjICPVOKFRTf5AHVdW3QUB67xHSTVppg/8lYgv0d\nVuYlM5pquetn75ldjwBGLviMt6LadlA6GJwfUAkct28KBnS68H9g8a4e2eKy32o+\nrIYegBp/4ZtRnR/otLclYh0HRDZEzNs90mk8hW7dP9QpvZNozaqGIyjlKh+hgCpZ\nRAWUqq3NVKDdAvTbqF3CQpq6w5mNTJOjBdva6/FnWFYjCzn4UO/C/COmz8+xvbCI\nUgHMpTew8W+7HZOnT2SEvPWlMYxV5m4qdbtLHdkdozkEpEhh7NeAVdMBI4kDjWt/\nKYT2gxGbT8szLs5dV5lVvHFLpT/UM+qunBIu/gcBXrBIjCx39xNokldDZIUrGBYM\naKrFvsHem9TGDIunwxGE9sCEeEDmEvBn6H6j+AW3MSwxU1Q4+31Nm/RR2n9cTwHH\ndbv3HBBkbE48eXvN9nJ5Y8e0ASG1iCV4MB5MwSBKmB4uHGobITHvuyM7ZQngpP3j\nQa3SoHyIAC+Rvmu+SGIAquUGGaxieSgh4Iyi+G7DsTXvpx2AY1Js2gxlzER1HiO/\nH/Ko1agMW2dLrkvc/lvItsECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqaQfy3MoTIaZQFdnQRuQ8b81D7c+\nt7MlDmxQtfKegmjmRgGOxV95R/iKNT+yRwGnHQpWyO+wCZOAPFR42bTdUw==\n-----END PUBLIC KEY-----\n",
+        "label": "reporter@PrompTugal.vicky",
+        "fingerprint": "sha256:f45875ece161b9d0",
+        "signing_fingerprint": "sha256:9318b406fc087758"
+      },
+      "status": "active",
+      "replaces": "programme-vicky"
     }
   ]
 }
