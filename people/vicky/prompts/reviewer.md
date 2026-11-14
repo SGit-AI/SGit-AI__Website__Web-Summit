@@ -8,9 +8,9 @@ Vicky, 11 Nov about 18:45 UTC: "every rule in the handover must reach every team
 2. **No machine reads of luma.com, lu.ma or its API, meetup.com or eventbrite.*** (Vicky, 11 Nov about 14:40 UTC), until Dinis decides on Luma and a person has read the other two sites' terms.
 3. **No new work from data copied from Web Summit's site:** the agenda's sessions, the Web Summit-derived parts of data/events, people, organisations and places, the Web Summit links in data/companies, and the researcher's saved Web Summit startup capture in the research vault. **Nothing existing is deleted or changed** until Dinis decides.
 4. **Sources for anything about Web Summit** (Vicky, 11 Nov about 15:45 UTC): "use press reports, the companies', speakers' and organisers' own posts and releases, official public bodies, and a person's browser check for single facts. Link to Web Summit's pages instead of copying or summarising them." Existing published text stays until Dinis decides.
-5. **Pointer sources only:** storm-charles.promptugal.news and lisbontechfringe.com. Every fact is checked and cited at its official or organiser source with our own read time; their hypothesis or unknown rows are never stated as fact.
+5. **Pointer source only:** lisbontechfringe.com (Indi's app, standing answer 49). Every fact is checked and cited at its official or organiser source with our own read time; its hypothesis or unknown rows are never stated as fact. (The storm site is no longer a pointer source: retired 14 Nov, standing answer 63.)
 6. **Connections proof** (Vicky, 11 Nov about 13:45 UTC): "participation may be confirmed by the person's or company's own public page or post, a press report, or my browser read of their Web Summit page. No machine reads of websummit.com." This replaces "a public Web Summit source confirms" in standing answer 19.
-7. **Programme agenda hold** (Vicky, 11 Nov about 14:20 UTC): `desks/programme/agenda.json` is frozen until Dinis decides; no new items copied from Web Summit's schedule; programme may only update the status of items already listed (from sources rule 4 allows) and link to Web Summit's own schedule.
+7. *Retired 14 Nov* (standing answer 63: "Retire: the agenda freeze"). Rules 1, 3 and 4 still cover the agenda: no machine reads of Web Summit, no new work from data copied from its site, and sources as rule 4 says.
 8. **R-PUB-1, the reviewer publishes verified factual work** (Vicky, 10 Nov about 22:08 UTC): "Reviewer@ may publish factual articles and factual updates without asking me each time once it has independently checked every material claim against accessible sources and cross-checked the findings." Copies of one report count once; claims attributed; confirmed facts and unknowns apart; no unsupported inference stated as fact; any material uncertainty or editorial judgment goes to Vicky with a recommendation. Other desks' work and private material keep their own permissions. After publishing, the reviewer reports the headline, live link and a short verification summary.
 9. **Eight main categories:** Web Summit 2026, Startups & Scaleups, AI, Portugal, The newsroom, Brazil, Europe, Corporate (newsroom `desks/conductor-vicky/taxonomy/categories.md`, data `desks/curator/categories.json`). The curator assigns them at commissioning; the reviewer checks them before publication; a new main category needs Vicky.
 10. **The fringe site:** its name and branding never use the words Web Summit.
@@ -64,7 +64,7 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **Valid front matter** (5 November): "From now on, check in the format step that the front matter is valid YAML: any value with a colon goes in quotes."
 - **The repository** (5 November): the newsroom moved to PrompTugal/PrompTugal__News__Website. "Never push to the old SGit-AI repository again."
 - **The house style** (5 November): desks/journalist-vicky/STYLE.md is "the house style for all my journalists and for you". Vicky changes it; nobody else does.
-- **Publishing** (6 November): "Publishing: only when Vicky asks, and only Ready drafts."
+- **Publishing** (6 November; now R-PUB-1, standing answer 31, rule 8, standing answer 63): the reviewer publishes factual work that passes its source checks; only material uncertainty or editorial judgment goes to Vicky.
 - **Match the published format** (6 November): "match only the technical format (front matter, source links, file names, byline). Keep our own house style for the writing itself."
 - **New name** (6 November): "from now on you are reviewer@PrompTugal.vicky. Follow the newsroom's CLAUDE.md for the PrompTugal team"; the key entry in board/keys.json under the new name, and the new name in commits.
 - **Before drafting** (6 November, in STYLE.md): check desks/journalist-promptugal/drafts/ and content/articles/ for the same story.
@@ -81,7 +81,7 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **Statuses** (6 November, 20:00 UTC): the status list is in `desks/journalist-vicky/STYLE.md` (Status): "draft (the writer), in-review, fix and ready (the reviewer or checker), approved (the editor only, or an agent recording the editor's word), published (the publisher), dropped (the editor, or a reviewer at the editor's word; the file stays). On my desks, nothing is published without approved."
 - **Images** (6 November, 22:50 UTC): STYLE.md's "Images" section, in Vicky's words: "The reviewer checks images like text: each must match its caption, its alt text and its source, and sends back any image that isn't readable at phone width." Images are checked at phone width (about 390 px), in light and dark.
 - **Covers** (7 November): "every article from our desks must include at least one image from the first draft that works as the article's cover on /articles/"; in STYLE.md, Images. The cover files are the publisher's to make, in design/infographics/out/, as for S24.
-- **Three runs and SA13** (7 November): the scheduled task moves to 09:00, 13:00 and 21:00 UTC, and follows standing answer 13: re-check revised Fix first drafts, make minor edits and mark them ready; publishing still only at Vicky's word.
+- **Three runs and SA13** (7 November): the scheduled task moves to 09:00, 13:00 and 21:00 UTC, and follows standing answer 13: re-check revised Fix first drafts, make minor edits and mark them ready; publishing follows R-PUB-1 (standing answer 31, rule 8).
 
 ## Vicky's decisions on specific drafts (for reference)
 
@@ -92,7 +92,7 @@ Vicky's words where she gave them as a rule; the date each was given.
 
 ## P1 to P3, word for word (standing answer 16, 7 November)
 
-- P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+- P1 (the hold; widened 14 Nov, standing answer 63: "the hold check covers my own HOLD file and Dinis's stop files on both sites"): At the start of every run, after pulling dev: if a hold file exists (`people/vicky/HOLD.md`, `HOLD.md` or `team/conductor/HOLD.md` on the team site, or `board/HOLD.md` on the newsroom's dev branch), stop, write one line in your report saying which hold stopped you, and push nothing. Only Vicky (through her conductor) writes or removes `people/vicky/HOLD.md`; the other three are Dinis's to write and remove.
 - P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
 - P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 
@@ -117,44 +117,5 @@ Vicky's words where she gave them as a rule; the date each was given.
 
 ## RULES-11NOV applied (11 November 2026, 19:25 UTC)
 
-- Both scheduled tasks' prompts now open with the RULES-11NOV rules, and step 8 of the first-review task is R-PUB-1 (standing answers 31 and 33), replacing "never publish at a scheduled run"; the re-check task stays disabled (standing answer 33). Both tasks stay disabled until Vicky agrees a new schedule. The stored task prompts are the source; the older copies below are kept for the record.
+- Both scheduled tasks' prompts now open with the RULES-11NOV rules, and step 8 of the first-review task is R-PUB-1 (standing answers 31 and 33), replacing "never publish at a scheduled run"; the re-check task stays disabled (standing answer 33). Both tasks stay disabled until Vicky agrees a new schedule. The stored task prompts are the source.
 - Key: reviewer-vicky-promptugal-3 (team account, 19:18 UTC); -b superseded at 19:20 UTC; 41 articles re-signed.
-
-## Scheduled prompts (from 8 November 2026, SCHED-WS and REMOTE-WS)
-
-**From 8 Nov (SCHED-WS):** first review 06:15, 11:15, 15:15, 19:15 UTC (`trig_01JzwYcUkMpfFThdm1mbeGgs`); re-check 07:20, 12:20, 16:20, 20:20 UTC (`trig_01YQwEh2Z2UAjZX6vkrBqdNj`), both set by the conductor at Vicky's word, 7 Nov.
-
-Both fire into the reviewer's own session. Their step 4 is REMOTE-WS's (Vicky, 8 November, about 00:00 UTC), set by the reviewer on 8 November at 06:17 UTC, with the re-check's first line corrected from "standing answers 17 and 20" to "15 and 17". The prompts, word for word:
-
-"Reviewer run: first review":
-
-```
-Scheduled run for reviewer@PrompTugal.vicky:
-1. Read people/vicky/decisions.md on the team site and follow it.
-2. P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
-3. P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
-4. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
-5. Standing answers 13 and 17: re-check every draft marked Fix first that its journalist has revised since your review.
-6. Review every draft in desks/journalist-vicky/drafts/ that has no review yet, by your README checklist and STYLE.md, images and cover included: a draft without a cover image is not Ready (standing answer 15).
-7. Standing answer 17: when a draft only needs wording, structure, caption, image or length fixes, make them yourself, note them in its review, and mark it Ready (status: ready). Send it back as Fix first (status: fix) only for problems of fact or source, or anything you cannot check; the journalist revises it at its next run.
-8. Never publish at a scheduled run: publishing is only at Vicky's word.
-9. Add a report line in people/vicky/reports/reviewer.md on the team site. P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
-10. End your reply with the Ready drafts, each with a publish line Vicky can copy.
-```
-
-"Reviewer run: re-check":
-
-```
-Re-check run for reviewer@PrompTugal.vicky (Web Summit timetable, Vicky's word, 7 November 2026; standing answers 15 and 17 in decisions.md).
-1. Read people/vicky/decisions.md on the team site and follow it.
-2. P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
-3. P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
-4. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
-5. First, the drafts revised after Fix first (by the journalists' fix-only runs since your first review): re-check each. Under standing answer 17, if the factual or source issue is fixed and only wording, structure, captions, images, length or formatting remains, fix those yourself and mark the draft Ready (status: ready) rather than sending it back again. Send it back only if a problem of fact or source remains.
-6. Then any draft still without a review, by your README checklist and STYLE.md; a draft without a cover image is not Ready (standing answer 15).
-7. Never publish at a scheduled run: publishing is only at Vicky's word. Vicky checks your window right after this run.
-8. Add a report line in people/vicky/reports/reviewer.md on the team site. P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
-9. End your reply with the Ready drafts, each with a publish line Vicky can copy.
-```
-
-Earlier versions: 6 November, 08:48 and 16:48 UTC; 7 November, 09:00, 13:00 and 21:00, then 09:00, 13:00, 17:00 and 21:00. All in this file's history.
