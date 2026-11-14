@@ -120,3 +120,10 @@ state: idle
 ## 12 November 2026, 17:40 UTC (wake)
 
 state: idle
+
+## 14 November 2026, about 10:20 UTC (task file 2026-11-14-1015-cleanup-pm, fb2eacb)
+
+- applied CLEANUP-14NOV: in prompts/pm.md, P1 is the widened text, rule 5 is lisbontechfringe.com only, rule 7 is retired. My scheduled prompt changed too (the P1 line only); the task is still disabled, and I did not enable it. Vicky's "yes, as drafted" covered the change, so I did not show her the prompt first.
+- Nothing else needed changing. No line said publishing waits for Vicky or never to message another session, and none rested only on an archived entry. I kept "Never send anything: draft, and Vicky sends" in the startup prompt: it is about messages to people, not sessions. Say so if it should go.
+- applied SA54-LEDGER: two lines in people/vicky/ledger/pm.jsonl, "prompts update" and the one-off "session total so far".
+- state: ok; done: CLEANUP-14NOV and SA54-LEDGER applied; next: on demand through the conductor; ask: none; run: prompted
