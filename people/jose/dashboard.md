@@ -2,7 +2,7 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the Actions section, the only list of what waits on him, is kept by his conductor (conductor@web-summit.jose); the rest, from the builder template, by his dashboard agent (dashboard@web-summit.jose): what happened, and what Jose and Jose's agents are doing.
 ---
-**Last changed Fri 13 Nov, 17:40 UTC by `dashboard@web-summit.jose`; checked at every wake (07:30, 12:30, 17:30 UTC) and changed only when something did.** [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest by your dashboard agent. Your agents, live: [the Agents board](app/index.html#home).
+**Last changed Sat 14 Nov, 12:35 UTC by `dashboard@web-summit.jose`; checked at every wake (07:30, 12:30, 17:30 UTC) and changed only when something did.** [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest by your dashboard agent. Your agents, live: [the Agents board](app/index.html#home).
 
 ## After the summit {#after}
 
@@ -11,6 +11,7 @@ Web Summit closed on Thursday 12 November. Pointers, not a second list: what to 
 | For | Open |
 |---|---|
 | **After Dinis's hold** (12 to 13 November, lifted at 15:53 on the 13th) | four of your agents' scheduled tasks are still switched off and only you can turn them on: your conductor first (off since 18:21 on the 12th, so your Actions list is not being kept), then helper and vault; the Fringe conductor only if the Fringe goes on ([your watcher's A-28](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md)) |
+| **Two asks that came while your conductor is off** | Dinis: archive your Claude Code sessions into your own vault ([how](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/admin/tools/session-archive/FOR-EVERYONE.md); a new session with your access token); Vicky: an interview for PrompTugal.news on how you have worked with AI and agents ([the request and its prompt](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/requests/2026-11-14-humans-and-ai-interview.md); your write-up goes to her privately, never into this repository) |
 | **Your posts still to send** (WS-208) | [the drafts of 11 November](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/writer/posts/2026-11-11.md) and [the team's videos](../silvio/videos/index.html); your writer agent drafts, you send |
 | **Lisbon Fringe** (WS-215) | your fringe conductor runs hourly until it disables itself after Friday; your lane, the channels |
 | **Your two demos, for follow-ups** | Hack the Agent: [the app](https://agent-defense-arena.lovable.app/), [run sheet](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/demos/hack-the-agent.md) · ReachCheck: [the app](https://reach-check-agent.lovable.app/), [run sheet](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/demos/reachcheck.md) · [your meet page](../../meet/jose/index.html) |
