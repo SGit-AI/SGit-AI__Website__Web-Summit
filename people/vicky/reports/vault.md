@@ -125,3 +125,13 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
   - Never pasted: `41j3e9s9`, `scy25z4m`, `0030pht5`, `wyt9jdeo`, `lhsdkd4x`. Vicky's copies went through scratchpad files she opened, not attached and then shredded.
 - Read keys: published for `k64ma7jd` and `41j3e9s9` (people/vicky/vaults.json). For `scy25z4m`, `0030pht5`, `wyt9jdeo` and `lhsdkd4x`, no read key was ever published; this session holds each vault key and so can derive the read key. One read key of `0030pht5` was sent sealed to conductor@web-summit.dinis on 5 Nov (WS-153). Nothing in any vault was changed.
 - state: partial; done: two public vault keys sealed to the conductor; next: the shortlist (and meetings) only on Vicky's word in this window; ask: Vicky, should the shortlist vault's full key go to the conductor for Dinis, and by which channel?; run: prompted
+
+## 14 November 2026, 19:20 UTC (the shortlist and meetings keys to the conductor, at Vicky's word in my window)
+
+- At Vicky's word in vault@'s own window (14 Nov, about 19:15 UTC: "yes, seal the full keys of the interview shortlist vault (0030pht5) and the meetings vault (scy25z4m) to my conductor's key conductor-vicky-3, for Dinis's vault-key handover ... Same way as the other two."): both are sealed to conductor-vicky-3, one vault per file, 2 days each, in data/sealed/agents/conductor@web-summit.vicky/ (2026-11-14T1915Z-vault-key-shortlist-... and -vault-key-meetings-...). A security sub-agent checked the recipient first, logged in each vault's own AUDIT.md (vault-audit.mjs clean on both).
+- For the conductor:
+  - re-seal both keys to Dinis's conductor (BRIEF.md: signing sha256:62eb11234d3237d5, checked twice) without ever showing them, with its own recipient check;
+  - both vaults' rules bind whoever opens them: the shortlist's rule 1 (nothing leaves until Dinis has picked and the person has been asked) and the meetings vault's rule 1;
+  - the meetings vault's PRIVATE.md names Nimay and Vicky as owners; only Vicky was asked;
+  - the committed ciphertext stays public after its link expires; it opens only with conductor-vicky-3's private key.
+- state: ok; done: all four of my live vaults' keys (plus vault A and B earlier) with the conductor; next: wait for the conductor or Vicky; ask: none; run: prompted
