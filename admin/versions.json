@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2121",
+    "date": "2026-11-14",
+    "what": "reviewer@PrompTugal.vicky: applied CLEANUP-14NOV to the prompts file (P1 widened, RULES-11NOV rules 5 and 7, R-PUB-1, archived scheduled prompts removed)",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "7fa35b721"
+  },
+  {
     "version": "v0.2.2120",
     "date": "2026-11-14",
     "what": "journalist-ai@PrompTugal.vicky: CLEANUP-14NOV: prompts file in line with the cleaned-up rules",
