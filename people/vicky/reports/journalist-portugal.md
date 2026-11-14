@@ -189,3 +189,8 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 
 - applied COVERS-14NOV: my prompts file now has a line saying I no longer make covers; each draft gets one line on what the cover could show, and the designer makes it after my Done. Ledger line added (task "prompts update").
 - state: ok; done: COVERS-14NOV applied; next: on demand; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 17:40 UTC (task 2026-11-14-1730-s65-best-number-one, prompted by the conductor)
+
+- S65 drafted: `desks/journalist-vicky/drafts/S65-best-number-one-3wx-loule.md`, newsroom commit 4287458c9. I read the three sources again today (Postal do Algarve, A Voz do Algarve, the platform's own page); the two papers count as one source (same quote, near-identical text). The launch at Web Summit and the 300 sign-ups are attributed to 3WX; no Web Summit page read; no founder name; no contact details; not called a startup or exhibitor. No cover: a cover idea is in a comment at the end of the draft for the designer. The site has no page for 3WX in the sitemap, so no internal link.
+- state: ok; done: S65 drafted; next: on demand (reviewer and designer next); ask: none; run: prompted
