@@ -290,7 +290,7 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **When:** after the scheduled-prompt fix-up (task files `2026-11-14-1105-sched-fixup-*`) has finished.
     - **What:** in each prompts file, every full copy of a scheduled task's prompt is replaced by one line: "My scheduled task <name> (<task id>, <cron, UTC>) holds its prompt; the account is the only full copy." The task's own prompt is not changed. A prompts file may keep the history of when a task was created or changed, without its text. This narrows standing answer 64's "scheduled prompts as stored".
     - **Scout's reply rule:** Vicky confirmed in scout's window that its narrower 13 Nov rule stands, as the exception to its pointer line.
-    - The conductor sends update STORED-REF by task files to the agents with scheduled tasks.
+    - The conductor sends update STORED-REF by task files to the agents with scheduled tasks. (The fix-up finished at 11:07 UTC: all 12 replied.)
 
 ## Updates for agents
 
