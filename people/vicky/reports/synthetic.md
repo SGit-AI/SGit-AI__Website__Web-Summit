@@ -26,3 +26,11 @@ state: ok; done: Replit report revised around reader value, evidence retained; n
 - Evidence and limits: section 9 of people/vicky/synthetic/2026-11-08-replit.md (appended; the persona assessment is unchanged). No new issues; the other points in the first report were not re-tested. No page was changed.
 
 state: ok; done: retest of the three pilot fixes on v0.1.718, phone and desktop, all pass; next: wait for Vicky; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 10:25 UTC (CLEANUP-14NOV: nothing to change; ledger lines added, at Vicky's word)
+
+- Read people/vicky/tasks/2026-11-14-1015-cleanup-synthetic.md. My prompts file (people/vicky/prompts/synthetic.md) has none of the lines it names (no P1 text, RULES-11NOV block, publishing-waits line, messaging line or retired items), so it is unchanged. I have no scheduled task.
+- Vicky said in chat to send the conductor the Done line and to write the ledger line in people/vicky/ledger/. Two lines added to people/vicky/ledger/synthetic.jsonl (numbers and the generic title "prompts update": one session total with no --since, one for this run).
+- applied CLEANUP-14NOV (nothing to change); applied SA54-LEDGER.
+
+state: ok; done: cleanup task checked, no prompts change needed, ledger lines written; next: wait for Vicky; ask: none; run: prompted
