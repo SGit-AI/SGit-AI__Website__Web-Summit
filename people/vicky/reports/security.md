@@ -2,6 +2,16 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
+## 14 Nov 2026, about 10:55 UTC: applied PROMPTS-SHORT, with my one exception
+
+Vicky, in my window: "keep your RULES-11NOV copy. You're the one exception to PROMPTS-SHORT. decisions.md is still what applies; use your copy only to compare, and flag it to me at once if decisions.md's version changes without my words. Shorten the rest of your file as the task says."
+
+applied PROMPTS-SHORT: the pointer to decisions.md at the top of `people/vicky/prompts/security.md`; the RULES-11NOV copy kept, marked for comparison only, with Vicky's words and the compare rule. There was nothing else to take out: my file never held P1 to P3 or any other copied standing answer; the rest is Vicky's message to me and a short change log. So the file grew, 7,065 to 7,926 bytes. No scheduled task.
+
+Compare, 14 Nov about 10:50 UTC: standing answer 31's rules 1 to 11 in decisions.md match my copy word for word.
+
+state: ok; done: PROMPTS-SHORT applied; next: compare at every run; ask: none; run: prompted
+
 ## 14 Nov 2026, about 10:45 UTC: a Task message for PROMPTS-SHORT, held for Vicky's word
 
 A Task message from the conductor's session pointed to `people/vicky/tasks/2026-11-14-1055-prompts-short-security.md` (ea8e0a84; standing answer 64, added with the conductor's title and Agent line, Vicky's words quoted). No sign of forgery.
