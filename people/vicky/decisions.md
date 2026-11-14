@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **83** the Algarve partner is Algarve Evolution, named publicly in Dinis's brief; Vicky's earlier privacy note about the partner is lifted.
 - **82** covers by the reviewer again, in its own style and one fixed typeface (style file desks/reviewer-vicky/covers/STYLE.md); the designer stops covers, keeps charts and infographics inside articles, the analyst's included (changes 69 and 79 for covers).
 - **81** Dinis's brief "PrompTugal.news by place" replaces our local-sites plan; every story passes the PrompTugal test (AI within two or three steps, the path written down); Dinis's agents build, journalist-portugal writes the local stories; S65 checked for a sourced AI path.
 - **80** the public vault app after the summit: eight cards (the front page, not a latest-article card), beige background; vault@ makes it.
@@ -388,6 +389,9 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **The designer** stops drawing covers; it keeps the charts and infographics inside articles, including the analyst's pieces (standing answer 75's chart specs go to it).
     - **The loop** (changes 76 and 69 for covers): researcher, curator, journalist, then the designer only when the piece has a chart or infographic, then the reviewer (cover, checks, publish).
     - **First:** the reviewer redraws Vicky's interview cover and S65's in its own style and the fixed typeface.
+
+83. **The Algarve partner is public** (Vicky, 14 Nov, evening, in this window: "Algarve Evolution is the partner, and Dinis has named it publicly in his brief. The privacy note no longer applies.")
+    - Vicky's earlier note (14 Nov) kept a local partner organisation in the Algarve out of the repository, commits, reports and public pages until Dinis made it public. Dinis's brief "PrompTugal.news by place" (people/dinis/local-sites/, 14 Nov) names it: Algarve Evolution. The note no longer applies; agents may name Algarve Evolution where a public source supports it, as with any organisation. Its people and any private conversation stay under the usual rules (public and professional only, no contact details).
 
 ## Updates for agents
 
