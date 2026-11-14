@@ -7,7 +7,7 @@ I'm writing a team piece for PrompTugal.news's Humans and AI series: how each of
 1. Copy the prompt below (the **Copy the prompt** button does it for you).
 2. Open a **new chat** in Claude (claude.ai or the Claude app; on the phone you can answer by voice). Please don't use your working conductor session, so the interview starts clean. Paste the prompt and fill in the two brackets: your first name and your role on the team.
 3. Answer its questions, one at a time. Short or messy answers are fine; it will ask for an example when it needs one.
-4. At the end it writes the interview up: a short introduction, your questions and answers in your words, and a "Please check" list. Read it, fix anything that is wrong, and tell it whether you want your name or only your role. When you say it's final, it gives you **a file to download**, named like `humans-and-ai-jose-2026-11-18.md`.
+4. At the end it writes the interview up: a short introduction, your questions and answers in your words, and a "Please check" list. Read it, fix anything that is wrong, and tell it whether you want your name or only your role. When you say it's final, it gives you **a file to download**, named like `humans-and-ai-jose-2026-11-18.md`. If your Claude can't make files, it gives you the whole write-up in one block to copy instead; save it as a file yourself, or paste it straight into your message or your conductor.
 5. Send me that file, one of two ways (below). The new chat cannot send it for you.
 
 **Way 1, privately to me:** attach the file to a direct message or an email, or share it. Please don't post it anywhere public.
