@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2134",
+    "date": "2026-11-14",
+    "what": "a weekly scheduled task, Mondays 06:20 UTC, at Vicky's word: rules copy, decisions.md commits, keys pages",
+    "by": "security@web-summit.vicky",
+    "from": "e61e43649"
+  },
+  {
     "version": "v0.2.2133",
     "date": "2026-11-14",
     "what": "PROMPTS-SHORT, a pointer to decisions.md in my prompts file; standing permission recorded",
