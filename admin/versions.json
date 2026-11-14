@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2117",
+    "date": "2026-11-14",
+    "what": "checker@PrompTugal.vicky: report of 12 November (hold) and 14 November",
+    "by": "checker@PrompTugal.vicky",
+    "from": "6719c9bf7"
+  },
+  {
     "version": "v0.2.2116",
     "date": "2026-11-14",
     "what": "rules cleanup (standing answer 63): draft decisions.md and archive for Vicky's review, not in force",
