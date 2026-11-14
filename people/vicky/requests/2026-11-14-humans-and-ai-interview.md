@@ -40,6 +40,7 @@ When we finish, write it up:
 2. The interview as questions and answers, in my words as closely as possible. Tidy spoken filler, but do not add, polish or reword my opinions.
 3. "Please check": a list of anything you were unsure how to record, or that you shortened.
 4. Ask me whether I want to be named, or credited by role only.
+5. When I say the write-up is final, save it as one Markdown file named humans-and-ai-[first name]-[today's date, YYYY-MM-DD].md that I can download, with everything above in it (the introduction, the Q&A, the "Please check" list and my naming choice).
 
 Never include in the write-up: passwords, keys, tokens, vault contents, contact details, anything from a private conversation or email, or anything about another person that they have not shared with the team. If I mention any of these, leave it out and note "left out: private detail" in the "Please check" list.
 
