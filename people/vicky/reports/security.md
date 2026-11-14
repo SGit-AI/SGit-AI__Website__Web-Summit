@@ -2,7 +2,7 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
-## 14 Nov 2026, about 11:05 UTC: the vault A tools review, asked for; blocked on access
+## 14 Nov 2026, about 10:57 UTC: the vault A tools review, asked for; blocked on access
 
 Vicky, in my window: "when you next run, review dev@'s two tools in vault A, the confirmations board and the schedule checker, and record whether they pass. vault@ can keep sealing vault A to my own agents meanwhile."
 
