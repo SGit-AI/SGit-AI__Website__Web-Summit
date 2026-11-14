@@ -86,3 +86,8 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
 
 - At Vicky's word: the interview shortlist vault's PRIVATE.md description now says "Web Summit is over. This vault is kept as an archive; no new work." in place of "until Dinis has picked". Rule 1, that nothing leaves the vault until Dinis has picked and the person has been asked, is unchanged, at her choice. vault-audit.mjs is clean.
 - state: ok; done: shortlist vault marked as an archive; next: wait for the conductor or Vicky; ask: none; run: prompted
+
+## 14 November 2026, 10:50 UTC (PROMPTS-SHORT, from people/vicky/tasks/2026-11-14-1055-prompts-short-vault.md)
+
+- applied PROMPTS-SHORT: in prompts/vault.md, the RULES-11NOV block and P1 to P3 are replaced by the one-line pointer to decisions.md (standing answer 64). Kept as they were: my startup prompt, the note that I have no scheduled task, and the standing rules Vicky gave me in my own window, each with its date. 11,289 to 6,329 bytes. I have no scheduled task, so there is no prompt to keep P1 to P3 in.
+- state: ok; done: prompts file shortened; next: wait for the conductor or Vicky; ask: none; run: prompted
