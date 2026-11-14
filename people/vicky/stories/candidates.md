@@ -6,7 +6,7 @@ Kept by curator@PrompTugal.vicky (until 6 November curator@web-summit.vicky), Vi
 
 **Connections** (from 5 November, at Dinis's direction): stories that link startups and companies at Web Summit so each gets the most out of the week: startups in the same field, startups and the investors or programmes that back that field, companies on the same stage or day, Portuguese startups and the European ones they could work with. They are marked "Connections" in the beat. Each link is the curator's suggestion from public facts: no source says these organisations plan to meet, and no story should say so. Organisations only; nothing private about anyone.
 
-Last updated: Thursday 12 November 2026, 11:38 UTC.
+Last updated: Saturday 14 November 2026, 07:38 UTC.
 
 **Categories** (Vicky, 10 November 2026): the curator assigns every article its main categories from `desks/curator/categories.json` (one or more of Web Summit 2026, Startups & Scaleups, AI, Portugal, The newsroom, Brazil, Europe, Corporate) when commissioning it, and adds its line to that file before the article is published. A new main category only with Vicky's approval; routine corrections are the curator's. Corporate versus Startups & Scaleups by the story's subject and angle, never by size, valuation, funding round or headcount. No article file is edited for this.
 
@@ -30,37 +30,38 @@ Last updated: Thursday 12 November 2026, 11:38 UTC.
 
 | Id | Title | Beat | Added |
 |---|---|---|---|
-| S60 | What PagerDuty says it learned running AI agents in production | AI and robotics | 12 Nov |
+| S61 | Humanos wins Road 2 Web Summit's top prize, 15,000 euros (published 13 Nov) | Portugal | 12 Nov |
+| S60 | What PagerDuty says it learned running AI agents in production (published 12 Nov) | AI and robotics | 12 Nov |
 | S59 | Discord is opening its first engineering hub outside San Francisco, in Lisbon (published 12 Nov) | Portugal | 12 Nov |
 | S58 | Thursday at Web Summit: a practical guide to the last day (published 11 Nov) | The summit | 11 Nov |
 | S56 | The EU proposes a Digital Fairness Act: what it would change for online shoppers, including those using AI agents (published 11 Nov) | Europe | 11 Nov |
 | S55 | The EU says TikTok's For You feed may breach its platform law: what it found, and what happens next (published 11 Nov) | Europe | 11 Nov |
-| S54 | Four startups pitch on Thursday's Centre Stage: what each says it does (published 11 Nov) | Connections: the summit | 11 Nov |
+| S54 | Four startups pitch on Thursday's Centre Stage: what each says it does (withdrawn 11 Nov) | Connections: the summit | 11 Nov |
 | S53 | The EU asks for views on updating its election rules for the age of generative AI (published 11 Nov) | Europe | 11 Nov |
 | S52 | Konecta chooses Lisbon for a global delivery centre, with 700 new jobs by the end of 2027 (published 11 Nov) | Portugal | 11 Nov |
 | S51 | Getting around Lisbon on Wednesday: what Carris and Fertagus have said, and what the government has closed (published 11 Nov) | The summit | 11 Nov |
 | S50 | The AI Act's first harmonised standard is out: what EN 18286 changes for AI providers (published 11 Nov) | Europe | 11 Nov |
-| S49 | Update: the EU's Wednesday sessions at Web Summit fall on the cancelled day (published 11 Nov) | Europe | 11 Nov |
+| S49 | Update: the EU's Wednesday sessions at Web Summit fall on the cancelled day (withdrawn 11 Nov) | Europe | 11 Nov |
 | S48 | Manus 2.0: agents that get their own email, phone number and wallet, in Manus's own words (published 11 Nov) | Connections: the summit | 11 Nov |
-| S47 | Update: Web Summit's final 2026 figures (published as an update) | The summit | 11 Nov |
+| S47 | Update: Web Summit's final 2026 figures (withdrawn 11 Nov) | The summit | 11 Nov |
 | S46 | How Zalando rolled out AI coding agents across 250 teams, in its own account (published 11 Nov) | AI and robotics | 11 Nov |
 | S45 | Web Summit's cancelled Day 2: what is known about refunds (published 10 Nov) | The summit | 10 Nov |
-| S44 | Update: Web Summit's Wednesday will not take place; it aims to hold Thursday (drafted, awaiting review) | The summit | 10 Nov |
+| S44 | Update: Web Summit's Wednesday will not take place; it aims to hold Thursday (withdrawn 11 Nov) | The summit | 10 Nov |
 | S42 | What Lovable deleted: its CEO on rebuilding an AI coding agent (published 10 Nov) | AI and robotics | 10 Nov |
 | S41 | Red wind warning for Lisbon on Wednesday: what it means for Web Summit (published 10 Nov) | The summit | 10 Nov |
 | S40 | AI agents are spreading faster than their security, Gravitee's survey finds (published 10 Nov) | The summit | 10 Nov |
 | S39 | How WPP turns call transcripts into reviewed Jira plans (published 10 Nov) | Connections: the summit | 10 Nov |
 | S38 | Glovo's restaurant partners meet 80 AI agents on WhatsApp, GetVocal says (published 10 Nov) | Connections: the summit | 10 Nov |
-| S37 | What failed when Teamworks built an AI assistant for NFL coaches (published 10 Nov) | AI and robotics | 10 Nov |
-| S36 | Portugal on the programme: a masterclass, a meetup and three announcements (published 9 Nov) | Portugal | 9 Nov |
-| S35 | Web Summit's press conferences, day by day: what is announced and when (published 9 Nov) | The summit | 9 Nov |
+| S37 | What failed when Teamworks built an AI assistant for NFL coaches (withdrawn 11 Nov) | AI and robotics | 10 Nov |
+| S36 | Portugal on the programme: a masterclass, a meetup and three announcements (withdrawn 11 Nov) | Portugal | 9 Nov |
+| S35 | Web Summit's press conferences, day by day: what is announced and when (withdrawn 11 Nov) | The summit | 9 Nov |
 | S34 | Where to find Portugal at Web Summit: Pavilion 1, stand E145 (published 9 Nov) | Portugal | 9 Nov |
 | S33 | Sports tech at Web Summit: IBM's startup challenge ends in Lisbon (published 9 Nov) | The summit | 9 Nov |
 | S32 | Rehab beyond the clinic: three Portuguese startups at Web Summit | Connections: Portugal | 9 Nov |
 | S31 | Beyond Lisbon: where Road 2 Web Summit's 78 startups come from (published 9 Nov) | Portugal | 9 Nov |
-| S30 | Eleven health startups at Web Summit, by the problem they tackle (published 8 Nov) | Connections: the summit | 8 Nov |
-| S29 | Who builds the parts of an AI agent? Startups at Web Summit (published 8 Nov) | AI and robotics | 8 Nov |
-| S28 | Five AI builders on Web Summit's speaker list worth knowing (published 8 Nov) | Connections: the summit | 8 Nov |
+| S30 | Eleven health startups at Web Summit, by the problem they tackle (withdrawn 11 Nov) | Connections: the summit | 8 Nov |
+| S29 | Who builds the parts of an AI agent? Startups at Web Summit (withdrawn 11 Nov) | AI and robotics | 8 Nov |
+| S28 | Five AI builders on Web Summit's speaker list worth knowing (withdrawn 11 Nov) | Connections: the summit | 8 Nov |
 | S27 | A map of Web Summit's buildings, and what each holds | AI and robotics | 7 Nov |
 | S26 | Two editions a day: PrompTugal.news starts a daily newsletter | AI and robotics | 7 Nov |
 | S25 | The sign-in: how editors and agents prove who they are | AI and robotics | 7 Nov |
@@ -68,10 +69,10 @@ Last updated: Thursday 12 November 2026, 11:38 UTC.
 | S22 | From pineapple waste to fish feed: AgroGrINTech's pilot in Maia | Portugal | 6 Nov |
 | S20 | Lisbon's Octo Health launches health tracking in Portugal and the US | Portugal | 6 Nov |
 | S19 | Brazil comes to Lisbon as Intuitivo heads to Brazil | Connections: announcements | 5 Nov |
-| S18 | Tuesday 10 November: Europe on Centre Stage, universities pitching, first-timers meeting | Connections: the summit | 5 Nov |
+| S18 | Tuesday 10 November: Europe on Centre Stage, universities pitching, first-timers meeting (withdrawn 11 Nov) | Connections: the summit | 5 Nov |
 | S17 | 11 November for startups going abroad: three events to know | Connections: Europe | 5 Nov |
 | S16 | Europe's AI and funding help, a walk from Portugal's AI startups | Connections: Europe | 5 Nov |
-| S15 | From Técnico's stand to the lineup: following robotics at Web Summit | Connections: the summit | 5 Nov |
+| S15 | From Técnico's stand to the lineup: following robotics at Web Summit (withdrawn 11 Nov) | Connections: the summit | 5 Nov |
 | S13 | Web Summit's ten Lisbon years: 2.5 billion euros, says EY | Portugal | 5 Nov |
 | S12 | A robot among 800 speakers: Web Summit 2026 turns to robotics | The summit | 5 Nov |
 | S11 | Italy and Portugal meet in Beato on how European tech scales | Europe | 5 Nov |
@@ -82,12 +83,21 @@ Last updated: Thursday 12 November 2026, 11:38 UTC.
 | S5 | Web Summit 2026 in numbers: 70,000 people, 10,000 startups | Announcements | 4 Nov |
 | S4 | From the PITCH stage to new markets: Portuguese startups raising | Portugal | 4 Nov |
 | S3 | Road 2 Web Summit: Portugal's startups head for Lisbon | Portugal | 4 Nov |
-| S2 | Europe arrives in Pavilion 4: the Commission's week at Web Summit | Europe | 4 Nov |
+| S2 | Europe arrives in Pavilion 4: the Commission's week at Web Summit (withdrawn 11 Nov) | Europe | 4 Nov |
 | S1 | Web Summit Lisbon: your first day, from airport to arena | The summit | 4 Nov |
+
+## S61: Humanos wins Road 2 Web Summit's top prize, 15,000 euros
+
+Portugal, added 12 Nov. Tek Notícias reports Humanos won Most Promising Startup at the 11th Road 2 Web Summit and eDynamics Best Performance; what the press says Humanos builds. For journalist-portugal, categories Portugal and Startups & Scaleups. Two press sources; flag the country difference with S29. Published on 13 Nov 2026: https://promptugal.news/articles/humanos-road-2-web-summit-winner.html. Not to be written again.
+
+Sources:
+
+- [Tek Notícias (SAPO), "Humanos é a startup vencedora do Road 2 Web Summit 2026 e defende mais aposta na engenharia e menos em fundadores "pavões" - Tek Notícias"](https://tek.sapo.pt/noticias/negocios/artigos/humanos-e-a-startup-vencedora-do-road-2-web-summit-2026-e-defende-mais-aposta-na-engenharia-e-menos-em-fundadores-pavoes/), read 12 November 2026
+- [Portugal Startup News (relaying a Sifted report), "Humanos raises $3.2M to build risk infrastructure for AI agents – Portugal Startup News"](https://portugalstartupnews.com/2026/09/28/humanos-raises-3-2m-to-build-risk-infrastructure-for-ai-agents/), read 12 November 2026
 
 ## S60: What PagerDuty says it learned running AI agents in production
 
-AI and robotics, added 12 Nov. PagerDuty's own engineering post and its Paige announcement: the failures it names and the controls it chose, as the company's own account. For journalist-ai, categories AI and Corporate. Company's own account; no second source yet.
+AI and robotics, added 12 Nov. PagerDuty's own engineering post and its Paige announcement: the failures it names and the controls it chose, as the company's own account. For journalist-ai, categories AI and Corporate. Company's own account; no second source yet. Published on 12 Nov 2026: https://promptugal.news/articles/pagerduty-agents-in-production.html. Not to be written again.
 
 Sources:
 
@@ -128,7 +138,7 @@ Sources:
 
 ## S54: Four startups pitch on Thursday's Centre Stage: what each says it does
 
-Connections: the summit, added 11 Nov. A preview of Thursday's 'Breakout startups' session: a physical-AI research lab, a Brazil-focused finance automation tool, an enterprise agent platform and a hologram company, each in its own words. LEADS-11NOV-5, for journalist-connections. Categories: Startups & Scaleups, Web Summit 2026, AI. Time-sensitive. Published on 11 Nov 2026: https://promptugal.news/articles/breakout-startups-thursday-centre-stage.html. Not to be written again.
+Connections: the summit, added 11 Nov. A preview of Thursday's 'Breakout startups' session: a physical-AI research lab, a Brazil-focused finance automation tool, an enterprise agent platform and a hologram company, each in its own words. LEADS-11NOV-5, for journalist-connections. Categories: Startups & Scaleups, Web Summit 2026, AI. Time-sensitive. Status: withdrawn 11 Nov. Was published on 11 Nov 2026: https://promptugal.news/articles/breakout-startups-thursday-centre-stage.html. Not to be written again.
 
 Sources:
 
@@ -170,7 +180,7 @@ Sources:
 
 ## S49: Update: the EU's Wednesday sessions at Web Summit fall on the cancelled day
 
-Europe, added 11 Nov. An update note for the Commission-week article: four EU sessions are listed for Wednesday 11 November; Web Summit has said Day 2 will not take place; the Commission's page does not say whether they move. LEADS-11NOV-2, for journalist-europe. An update, not a new article. Time-sensitive. Published on 11 Nov 2026: https://promptugal.news/articles/europe-in-pavilion-4.html. Not to be written again.
+Europe, added 11 Nov. An update note for the Commission-week article: four EU sessions are listed for Wednesday 11 November; Web Summit has said Day 2 will not take place; the Commission's page does not say whether they move. LEADS-11NOV-2, for journalist-europe. An update, not a new article. Time-sensitive. Status: withdrawn 11 Nov. Was published on 11 Nov 2026: https://promptugal.news/articles/europe-in-pavilion-4.html. Not to be written again.
 
 Sources:
 
@@ -187,7 +197,7 @@ Sources:
 
 ## S47: Update: Web Summit's final 2026 figures
 
-The summit, added 11 Nov. An update note on the published numbers article: Web Summit's own post of 10 Nov gives 70,003 attendees from 164 countries, 1,943 investors and 3,052 exhibiting companies. LEADS-11NOV, for journalist (summit desk). An update, not a new article.
+The summit, added 11 Nov. An update note on the published numbers article: Web Summit's own post of 10 Nov gives 70,003 attendees from 164 countries, 1,943 investors and 3,052 exhibiting companies. LEADS-11NOV, for journalist (summit desk). An update, not a new article. Status: withdrawn 11 Nov. Not to be written again.
 
 Sources:
 
@@ -212,7 +222,7 @@ Sources:
 
 ## S44: Update: Web Summit's Wednesday will not take place; it aims to hold Thursday
 
-The summit, added 10 Nov. An update note for the published Wednesday 11 November guide, from Web Summit's own statement: Day 2 will not take place on the Government's formal advice; it aims to proceed with Day 3 on Thursday as planned. STORM-10NOV, for journalist (summit desk). An update, not a new article. Time-sensitive.
+The summit, added 10 Nov. An update note for the published Wednesday 11 November guide, from Web Summit's own statement: Day 2 will not take place on the Government's formal advice; it aims to proceed with Day 3 on Thursday as planned. STORM-10NOV, for journalist (summit desk). An update, not a new article. Time-sensitive. Status: withdrawn 11 Nov. Not to be written again.
 
 Sources:
 
@@ -263,7 +273,7 @@ Sources:
 
 ## S37: What failed when Teamworks built an AI assistant for NFL coaches
 
-AI and robotics, added 10 Nov. An honest build story in Mastra's account: what failed in a routing agent with seven specialists and what was changed. OVERNIGHT-10NOV, for journalist-ai. Published on 10 Nov 2026: https://promptugal.news/articles/teamworks-coaches-agent.html. Not to be written again.
+AI and robotics, added 10 Nov. An honest build story in Mastra's account: what failed in a routing agent with seven specialists and what was changed. OVERNIGHT-10NOV, for journalist-ai. Status: withdrawn 11 Nov. Was published on 10 Nov 2026: https://promptugal.news/articles/teamworks-coaches-agent.html. Not to be written again.
 
 Sources:
 
@@ -271,7 +281,7 @@ Sources:
 
 ## S36: Portugal on the programme: a masterclass, a meetup and three announcements
 
-Portugal, added 9 Nov. What to plan around for Portugal's startup scene: Startup Portugal's masterclass, the founders-in-Portugal meetup and three press conferences, with the Portugal Stand as base. For journalist-portugal. Links S34 and S35. Published on 9 Nov 2026: https://promptugal.news/articles/portugal-on-the-programme.html. Not to be written again.
+Portugal, added 9 Nov. What to plan around for Portugal's startup scene: Startup Portugal's masterclass, the founders-in-Portugal meetup and three press conferences, with the Portugal Stand as base. For journalist-portugal. Links S34 and S35. Status: withdrawn 11 Nov. Was published on 9 Nov 2026: https://promptugal.news/articles/portugal-on-the-programme.html. Not to be written again.
 
 Sources:
 
@@ -283,7 +293,7 @@ Sources:
 
 ## S35: Web Summit's press conferences, day by day: what is announced and when
 
-The summit, added 9 Nov. The week's press conferences on Stage 2, day by day, with times, titles and speakers by role; the agenda lists 24. For journalist (summit desk). Time-sensitive: the first is Tuesday 10 November at 10:30. Published on 9 Nov 2026: https://promptugal.news/articles/press-conferences-day-by-day.html. Not to be written again.
+The summit, added 9 Nov. The week's press conferences on Stage 2, day by day, with times, titles and speakers by role; the agenda lists 24. For journalist (summit desk). Time-sensitive: the first is Tuesday 10 November at 10:30. Status: withdrawn 11 Nov. Was published on 9 Nov 2026: https://promptugal.news/articles/press-conferences-day-by-day.html. Not to be written again.
 
 Sources:
 
@@ -327,7 +337,7 @@ Sources:
 
 ## S30: Eleven health startups at Web Summit, by the problem they tackle
 
-Connections: the summit, added 8 Nov. The health and wellness startups on Web Summit's featured list, grouped by the problem each says it tackles, from a first look at the list. For journalist-connections. From the first page of 26 only. Published on 8 Nov 2026: https://promptugal.news/articles/health-startups-by-problem.html. Not to be written again.
+Connections: the summit, added 8 Nov. The health and wellness startups on Web Summit's featured list, grouped by the problem each says it tackles, from a first look at the list. For journalist-connections. From the first page of 26 only. Status: withdrawn 11 Nov. Was published on 8 Nov 2026: https://promptugal.news/articles/health-startups-by-problem.html. Not to be written again.
 
 Sources:
 
@@ -335,7 +345,7 @@ Sources:
 
 ## S29: Who builds the parts of an AI agent? Startups at Web Summit
 
-AI and robotics, added 8 Nov. A reader's guide to the AI-agent stack as eight startups on the featured list describe themselves, from frameworks and databases to governance and the products on top. For journalist-ai (AI desk). From the first page of 26 only. Published on 8 Nov 2026: https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html. Not to be written again.
+AI and robotics, added 8 Nov. A reader's guide to the AI-agent stack as eight startups on the featured list describe themselves, from frameworks and databases to governance and the products on top. For journalist-ai (AI desk). From the first page of 26 only. Status: withdrawn 11 Nov. Was published on 8 Nov 2026: https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html. Not to be written again.
 
 Sources:
 
@@ -343,7 +353,7 @@ Sources:
 
 ## S28: Five AI builders on Web Summit's speaker list worth knowing
 
-Connections: the summit, added 8 Nov. A theme-led guide to five AI builders on the speakers page: who they are by role and why a founder in the field might want to hear them. Theme-led (standing answers 19 and 20), for journalist-connections; different from S12, S15 and S16. Published on 8 Nov 2026: https://promptugal.news/articles/five-ai-builders-to-know.html. Not to be written again.
+Connections: the summit, added 8 Nov. A theme-led guide to five AI builders on the speakers page: who they are by role and why a founder in the field might want to hear them. Theme-led (standing answers 19 and 20), for journalist-connections; different from S12, S15 and S16. Status: withdrawn 11 Nov. Was published on 8 Nov 2026: https://promptugal.news/articles/five-ai-builders-to-know.html. Not to be written again.
 
 Sources:
 
@@ -409,7 +419,7 @@ Sources:
 
 ## S18: Tuesday 10 November: Europe on Centre Stage, universities pitching, first-timers meeting
 
-Connections: the summit, added 5 Nov. One day, three ways in, with a note that two of them overlap.
+Connections: the summit, added 5 Nov. One day, three ways in, with a note that two of them overlap. Status: withdrawn 11 Nov. Not to be written again.
 
 Sources:
 
@@ -443,7 +453,7 @@ Sources:
 
 ## S15: From Técnico's stand to the lineup: following robotics at Web Summit
 
-Connections: the summit, added 5 Nov. Robotics on stage and on the floor, linked for anyone following the field. Builds on S12.
+Connections: the summit, added 5 Nov. Robotics on stage and on the floor, linked for anyone following the field. Builds on S12. Status: withdrawn 11 Nov. Not to be written again.
 
 Sources:
 
@@ -547,7 +557,7 @@ Sources:
 
 ## S2: Europe arrives in Pavilion 4: the Commission's week at Web Summit
 
-Europe, added 4 Nov. The European Commission comes to help builders, with talks, masterclasses and funding sessions.
+Europe, added 4 Nov. The European Commission comes to help builders, with talks, masterclasses and funding sessions. Status: withdrawn 11 Nov. Not to be written again.
 
 Sources:
 
@@ -577,9 +587,8 @@ For the five journalists, in priority order (standing answers 20 and 22, the des
 
 Ready to write now:
 
-1. S60, What PagerDuty says it learned running AI agents in production: for the AI desk (journalist-ai). PagerDuty says, in its own engineering post and product announcement, what it learned running agents in production; re-read both pages yourself, attribute every claim to PagerDuty, say there is no second source yet, no Web Summit pages; short and plain; categories AI and Corporate.
 
-Already published, not to be written again: S59 (https://promptugal.news/articles/discord-lisbon-engineering-hub.html); S58 (https://promptugal.news/articles/thursday-last-day-guide.html); S37 (https://promptugal.news/articles/teamworks-coaches-agent.html); S38 (https://promptugal.news/articles/glovo-restaurant-agents-getvocal.html); S39 (https://promptugal.news/articles/wpp-call-transcripts-to-jira.html); S40 (https://promptugal.news/articles/gravitee-agent-security-survey.html); S42 (https://promptugal.news/articles/what-lovable-deleted.html); S49 (https://promptugal.news/articles/europe-in-pavilion-4.html); S56 (https://promptugal.news/articles/digital-fairness-act-ai-agents.html); S53 (https://promptugal.news/articles/eu-election-guidelines-generative-ai.html); S55 (https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html); S52 (https://promptugal.news/articles/konecta-lisbon-delivery-centre.html); S54 (https://promptugal.news/articles/breakout-startups-thursday-centre-stage.html); S46 (https://promptugal.news/articles/zalando-ai-coding-agents.html); S48 (https://promptugal.news/articles/manus-2-0-agents-own-email-phone-wallet.html); S50 (https://promptugal.news/articles/ai-act-first-harmonised-standard.html); S51 (https://promptugal.news/articles/getting-around-lisbon-wednesday.html); S45 (https://promptugal.news/articles/web-summit-day-2-refunds.html); S41 (https://promptugal.news/articles/red-wind-warning-lisbon-wednesday.html); S28 (https://promptugal.news/articles/five-ai-builders-to-know.html); S29 (https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html); S30 (https://promptugal.news/articles/health-startups-by-problem.html); S31 (https://promptugal.news/articles/road-2-web-summit-beyond-lisbon.html); S33 (https://promptugal.news/articles/ibm-sports-tech-challenge.html); S34 (https://promptugal.news/articles/where-to-find-portugal.html); S35 (https://promptugal.news/articles/press-conferences-day-by-day.html); S36 (https://promptugal.news/articles/portugal-on-the-programme.html).
+Already published, not to be written again: S61 (https://promptugal.news/articles/humanos-road-2-web-summit-winner.html); S60 (https://promptugal.news/articles/pagerduty-agents-in-production.html); S59 (https://promptugal.news/articles/discord-lisbon-engineering-hub.html); S58 (https://promptugal.news/articles/thursday-last-day-guide.html); S37 (https://promptugal.news/articles/teamworks-coaches-agent.html); S38 (https://promptugal.news/articles/glovo-restaurant-agents-getvocal.html); S39 (https://promptugal.news/articles/wpp-call-transcripts-to-jira.html); S40 (https://promptugal.news/articles/gravitee-agent-security-survey.html); S42 (https://promptugal.news/articles/what-lovable-deleted.html); S49 (https://promptugal.news/articles/europe-in-pavilion-4.html); S56 (https://promptugal.news/articles/digital-fairness-act-ai-agents.html); S53 (https://promptugal.news/articles/eu-election-guidelines-generative-ai.html); S55 (https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html); S52 (https://promptugal.news/articles/konecta-lisbon-delivery-centre.html); S54 (https://promptugal.news/articles/breakout-startups-thursday-centre-stage.html); S46 (https://promptugal.news/articles/zalando-ai-coding-agents.html); S48 (https://promptugal.news/articles/manus-2-0-agents-own-email-phone-wallet.html); S50 (https://promptugal.news/articles/ai-act-first-harmonised-standard.html); S51 (https://promptugal.news/articles/getting-around-lisbon-wednesday.html); S45 (https://promptugal.news/articles/web-summit-day-2-refunds.html); S41 (https://promptugal.news/articles/red-wind-warning-lisbon-wednesday.html); S28 (https://promptugal.news/articles/five-ai-builders-to-know.html); S29 (https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html); S30 (https://promptugal.news/articles/health-startups-by-problem.html); S31 (https://promptugal.news/articles/road-2-web-summit-beyond-lisbon.html); S33 (https://promptugal.news/articles/ibm-sports-tech-challenge.html); S34 (https://promptugal.news/articles/where-to-find-portugal.html); S35 (https://promptugal.news/articles/press-conferences-day-by-day.html); S36 (https://promptugal.news/articles/portugal-on-the-programme.html).
 
 Already drafted, not to be written again: S44 (drafted, awaiting review); S47 (published as an update).
 

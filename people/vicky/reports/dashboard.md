@@ -218,3 +218,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - "Needs me" now follows the conductor's brief of 12 Nov (08:45): the WS-213 reply it proposes (yes to the ledger, numbers only; the router only on research digests and curation summaries, after the summit), the curator's "withdrawn 11 Nov" marking (yes or no), and the two asks for Dinis (inbox lanes, interview vault). Still open: the parking yes or no and the 5 Nov newsroom record line. The follow-ups are as at 08:00 (pm@'s 17:40 check found nothing new).
 - Story candidates refreshed: 54 stories, 108 sources, all links (desks/curator/README.md).
 - state: ok; done: tables and stories refreshed; next: 07:50 wake on Fri 13 Nov, then daily only (standing answer 43); ask: your word on the four items in "Needs me" (WS-213, the curator's marking, the two asks for Dinis); run: scheduled
+
+## Sat 14 Nov 2026, 08:05 UTC (wake)
+
+- Read people/vicky/decisions.md (bbda0ba7; 16 new conductor commits, standing answers 51 to 63, each with the Agent: line, pushed by riskmandate-vicky). No HOLD.md; session key present; RULES-11NOV kept. Re-read prompts/dashboard.md (P2): it matches. **Applied SA54-LEDGER**: this run's line and the one-time session-total line are in people/vicky/ledger/dashboard.jsonl (numbers and generic titles only). My task was off until 13 Nov 16:18, so Friday's 07:50 run did not fire; my 17:45 task stays off.
+- "Needs me" now: your "go" for the new conductor session (standing answer 61), the parking yes or no and the 5 Nov newsroom record line (both still undecided as far as I can see), and the interview vault ask for Dinis. Off the table, as you decided: WS-213 (ledger yes, router held), the curator's withdrawn marking, the inbox lanes (closed).
+- Follow-ups trimmed to 7 now the summit is over (WS-166 dropped; the overdue unowned items grouped; WS-217 added). pm@'s board-health note is from 12 Nov and WS-213 still reads open on the board. Stories refreshed: 55 stories, 110 sources, all links.
+- state: ok; done: tables and stories refreshed, SA54 ledger applied; next: 07:50 wake on Sun 15 Nov; ask: none; run: scheduled
