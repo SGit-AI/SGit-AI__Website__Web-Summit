@@ -1673,6 +1673,23 @@
       },
       "status": "active",
       "replaces": "dev-vicky-promptugal"
+    },
+    {
+      "id": "maestro-dinis",
+      "agent": "maestro@dinis",
+      "label": "maestro@dinis (Claude Code session)",
+      "role": "Dinis Cruz's conductor of conductors (maestro@dinis): maps and routes work across Dinis's agents on every account, follows it to done and reports to Dinis. It does no project's work itself. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 14 November 2026 (pki-agent.mjs keygen --session) and linked to the operator's key sha256:db7f79fdd87e030a; pushed to this repository by that session, which is the authorisation. Started by Dinis on 14 November 2026, relayed from the conductor@web-summit.dinis session.",
+      "added": "2026-11-14",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwnAf+IjWW2hbvrajWfnX\nczFG40tjYJgv9OjpesEat+dMA/9gOqp6z2YV+EaBIMfGBk+7ozE38UUNuRepjqDp\nPtKk2ZTh2UD3HGG1TV5BaDFrS+dCVgrTCgLMgIJ7Fn3XYkQBTjW7Pb21uJ/Wz9yY\not1VWyxmV3hlG9ZQuDV2bk7wtdMjBpxXHckWq7XpGIvse7RQdS/hP94gMTgtd3H3\nlGdqjYG2a3B2AHE6bsGDNJkoVDVjWnt6p5muTDVRcfz6nQIIMEHHtqYYgFTW7uqh\nn9xinRizoDBrTgw90PrCo6piKGFR2zFodmltFTjsknA54/4NMBzOv4WlKwsSBY0W\nlAW7Licx0u6oWAaKWX80YGWqkOqHfQlFKfbVzi0yiNZ0rBcQo95LnhBXLPJmJ869\ntpq3MSkOPDnL2SS/ONbGmSWCs/YAijikimRngj0rO1YPnIimzkQOeHd+LTAJDK4K\n9Hvm3+76GBSd/X8dlhtBpAGAWDDExuKOl4w7k+bOB1wuZLjo9BFmnmkAttoRFx6q\nVuz4M0XGy0Qo0TOlIE5cchd/AYQWTWfi89lxaS3JxZaQ7/zn4VOOqMWcFvgLSf9S\ny8/i4FHb4udxgOPP+hV3gGTACjKzIEc/9ZoHU16F3KynMGOYkxigVQ+2Miro20IC\nGZao/SqtTvd1FbEkkpy0A1cCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAElPtxBB0g9lHkFUq8uwymTXQBh6zB\nJMTTrN/DCsvW286mkAp+wKh2VmJclDFOZmSytSIxA1plumgZLWgFTgltig==\n-----END PUBLIC KEY-----\n",
+        "label": "maestro@dinis",
+        "fingerprint": "sha256:a68097b1fa4598c9",
+        "signing_fingerprint": "sha256:65c6003b5a288e82"
+      }
     }
   ]
 }
