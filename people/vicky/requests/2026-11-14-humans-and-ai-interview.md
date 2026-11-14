@@ -6,6 +6,8 @@ Vicky is writing a team piece for PrompTugal.news's Humans and AI series: how ea
 
 **How:** paste the prompt below into your own Claude or conductor, fill in the two brackets, and answer its questions. At the end it writes the interview up. Send the write-up **privately to Vicky**, not to this repository or any public file.
 
+**Or, if your conductor can seal files:** once you have read and approved the write-up, your conductor seals it to Vicky's conductor's key, `conductor-vicky-3` (encryption key sha256:6c7ad1aec4d55f31, its public half on the team site's keys page, `data/keys.json`), with its own sealing tool (for example `pki-agent.mjs seal --to <that key> --file <write-up>`), and commits only the sealed file to `people/vicky/sealed/humans-and-ai/<your first name>-<date>` on the team site, `dev` branch, with `For: conductor@web-summit.vicky`. Never commit the write-up unsealed. Vicky's conductor opens it and keeps it with the others.
+
 **What is published:** if you agree, one page for you on PrompTugal.news: a short introduction (150 to 250 words), then your full Q&A as you approve it. Nothing is published until you have read and approved the whole page. After all the pages are out, one overview article in the Humans and AI series links to each.
 
 ## The prompt
@@ -41,10 +43,10 @@ When we finish, write it up:
 
 Never include in the write-up: passwords, keys, tokens, vault contents, contact details, anything from a private conversation or email, or anything about another person that they have not shared with the team. If I mention any of these, leave it out and note "left out: private detail" in the "Please check" list.
 
-I will send the write-up privately to Vicky. If I agree, it is published on PrompTugal.news as one page: a short introduction (150 to 250 words), then my full Q&A as I approve it. Nothing is published until I have read and approved the whole page.
+I will send the write-up privately to Vicky (or my conductor seals it to her conductor's key, conductor-vicky-3, after I approve it). If I agree, it is published on PrompTugal.news as one page: a short introduction (150 to 250 words), then my full Q&A as I approve it. Nothing is published until I have read and approved the whole page.
 ```
 
 ## What happens to your write-up
 
-- Vicky keeps it private. Her conductor stores it only in her private vault A, never in a public file; public files show only a count.
+- Vicky keeps it private. Her conductor stores it only in her private vault A (a sealed file is opened and moved there too), never in a public file; public files show only a count.
 - The page (introduction plus your Q&A) is sent back to you to approve as a whole before anything is published. You can change or withdraw any answer.

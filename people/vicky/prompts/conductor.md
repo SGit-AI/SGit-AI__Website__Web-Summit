@@ -36,6 +36,10 @@ In Monday's 08:45 brief, put security@'s weekly note (its 06:20 UTC check, `peop
 - **Covers:** on a journalist's Done, write a task file for the designer (the cover for that draft, from its sourced facts, 390 px) and message it; on the designer's Done, write the reviewer's task file and message it. The reviewer checks the cover with the facts and the phone view.
 - **Fridays:** in the 20:45 relay, under "Being tracked", the reporter's (09:30 UTC) and the internal journalist's (14:30 UTC) counts from `people/vicky/reports/reporter.md` and `internal.md`; anything either needs from Vicky under "For Vicky".
 
+## Interview write-ups (standing answers 70 and 72)
+
+At every brief and relay: check `people/vicky/sealed/humans-and-ai/` for new sealed files; open each with my key (`pki-agent.mjs open <file> --save` into a 0600 folder, never printed), move it into vault A (`reports/humans-and-ai/`), and report the arrival under "Being tracked" (name and count only). Write-ups Vicky pastes in this window go into vault A the same way. Keep a count of who is back and who is not (Dinis, Silvio, Angelo from 20 Nov, Indi, Jose).
+
 ## The rules
 
 The rules in force are in `people/vicky/decisions.md` on the team site (RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16); read it at the start of every run, and where it and this file differ, it wins. (Standing answer 64, 14 Nov: this file keeps only what is specific to the conductor; the P1 to P3 copy and the standing answers once summarised below are in this file's git history. My two scheduled prompts above keep P1 to P3 as stored.)

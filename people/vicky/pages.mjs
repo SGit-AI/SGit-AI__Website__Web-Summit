@@ -60,7 +60,7 @@ document.addEventListener('click', e => {
 })
 </script>`
     const twinMd = `The newsroom curator's story candidates, newest first, from ${SRC} (last updated by the curator on ${updated}). None is fact-checked yet.\n\n${stories.map(s => `- **${s.id}** (${s.beat}, added ${s.added}): ${s.title}. ${s.angle}${s.sources.map(x => `\n  - [${x.label}](${x.url})${x.read ? `, read ${x.read}` : ''}`).join('')}`).join('\n')}`
-    return [...promptugal(ROOT), ...workSoFar(ROOT), ...office(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
+    return [...promptugal(ROOT), ...workSoFar(ROOT), ...office(ROOT), ...interview(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
 }
 
 // Promptugal News's logo options (Jose's request, through Vicky, 5 November 2026): /people/vicky/promptugal/. Built from
@@ -132,7 +132,23 @@ function workSoFar(ROOT) {
     if (!fs.existsSync(f)) return []
     const src = fs.readFileSync(f, 'utf8').replace(/^# .*\n/, '')
     const body = `<p class="meta">Written by Vicky's conductor (conductor@web-summit.vicky) on 6 November 2026, about 19:30 UTC, from her records on this site and the newsroom repository. Plain words, public material only.</p>\n${mdHtml(src)}`
-    return [{ rel: 'people/vicky/work-so-far/index.html', title: "Vicky's agents: the work so far", description: "Vicky's agents and their jobs, how a story reaches PrompTugal.news, what is live, the rules and files she set up, what changed on 6 November, and what is next.", body, md: src }]
+    const link = `\n<p><a href="../interview/index.html">Humans and AI: your interview</a> (14 November 2026)</p>`
+    return [{ rel: 'people/vicky/work-so-far/index.html', title: "Vicky's agents: the work so far", description: "Vicky's agents and their jobs, how a story reaches PrompTugal.news, what is live, the rules and files she set up, what changed on 6 November, and what is next.", body: body + link, md: src + '\n\n[Humans and AI: your interview](../interview/index.html)' }]
+}
+
+// Humans and AI: the interview page (Vicky, 14 November 2026; decisions.md, standing answer 70): /people/vicky/interview/.
+// Built from people/vicky/interview/source.md (written by conductor@web-summit.vicky in Vicky's voice) and the prompt
+// in people/vicky/requests/2026-11-14-humans-and-ai-interview.md (one copy of the prompt, never two). Public material only.
+function interview(ROOT) {
+    const f = path.join(ROOT, 'people/vicky/interview/source.md'), r = path.join(ROOT, 'people/vicky/requests/2026-11-14-humans-and-ai-interview.md')
+    if (!fs.existsSync(f) || !fs.existsSync(r)) return []
+    const src = fs.readFileSync(f, 'utf8').replace(/^# .*\n/, '')
+    const prompt = (fs.readFileSync(r, 'utf8').match(/```\n([\s\S]*?)\n```/) || [])[1] || ''
+    const [before, after] = src.split('## What happens next')
+    const box = `<h3>The prompt</h3>\n<p><button type="button" id="copy-prompt">Copy the prompt</button> <span id="copied" role="status"></span></p>\n<pre id="interview-prompt" style="white-space:pre-wrap;overflow-wrap:anywhere">${esc(prompt)}</pre>\n<script>document.getElementById('copy-prompt').addEventListener('click',function(){var t=document.getElementById('interview-prompt').textContent;var s=document.getElementById('copied');(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){s.textContent='Copied.'},function(){s.textContent='Select the text below and copy it.'})})</script>`
+    const body = `${mdHtml(before)}\n${box}\n${mdHtml('## What happens next' + (after || ''))}`
+    const md = `${before.trim()}\n\n### The prompt\n\n\`\`\`\n${prompt}\n\`\`\`\n\n## What happens next${after || ''}`
+    return [{ rel: 'people/vicky/interview/index.html', title: 'Humans and AI: your interview', description: "How to be interviewed by your own Claude for PrompTugal.news's Humans and AI team piece: the prompt to copy, and how to send the write-up back to Vicky.", body, md }]
 }
 
 // The Live AI Office (Vicky, 8 November 2026; decisions.md, standing answer 21): /people/vicky/office/, a near-live

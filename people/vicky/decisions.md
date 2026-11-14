@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **72** the interview page (people/vicky/interview/) and a sealed way back to people/vicky/sealed/humans-and-ai/; the conductor reports arrivals in the brief.
 - **71** the interview series: AI and The newsroom, tags "Humans and AI" and "Team interviews"; titles in the person's own words; the designer draws covers in its own folder, the reviewer wires them in.
 - **70** humans and AI story 1 as a team piece: interviews by each person's own Claude (Dinis, Silvio, Angelo, Indi, Jose), write-ups to vault A only, one page per person approved as a whole, then an overview; not commissioned yet.
 - **69** covers by the designer, checked by the reviewer (15 changed); weekly runs: reporter Fridays 09:30, internal Fridays 14:30 UTC, counts in Friday's relay.
@@ -310,6 +311,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Categories and tags** (the person pages and the overview): AI and The newsroom; tags "Humans and AI" and "Team interviews".
     - **Titles:** each page's title is a line in the person's own words from their Q&A; the subtitle is "<name, or role only if they chose>, <role>, on <main topic>"; the series shows through the tag and categories. journalist-ai proposes two or three titles per page, Vicky chooses, and the person approves the title with the whole page.
     - **Covers:** the designer draws only in `desks/designer-vicky/covers/<slug>/` (the four PNGs `<slug>--paper|ink--card|thumb.png`, the `.svg` source, `notes.md` with the alt text and each figure's source). The reviewer wires the cover in when it publishes: the PNGs copied to `design/infographics/out/`, four entries in its `index.json` (`hand.by` designer@PrompTugal.vicky), `image:`/`image_width`/`image_height`/`image_alt` in the article's front matter, and the image directly under "The story". Task files `2026-11-14-1140-cover-wiring-*`.
+
+72. **The interview page, and a sealed way back** (Vicky, 14 Nov, about 11:45 UTC, in this window: "yes, put the interview instructions on a page on the team site." and "Also add a second way to send the write-up back: if their conductor can seal files, it seals the write-up to your key (conductor-vicky-3) and commits the sealed file to a folder you choose in my area, only after the person has read and approved it. You open it and put it in vault A, as with the others. Keep "send it to Vicky privately" for anyone without sealing tools. Tell me on the page which folder, and tell me in your brief when one arrives.")
+    - **The page:** https://web-summit.sgit.ai/people/vicky/interview/ (built by `people/vicky/pages.mjs` from `people/vicky/interview/source.md` and the prompt in the request file; linked from "Work so far").
+    - **Two ways back:** privately to Vicky (anyone); or, if the person's conductor can seal files and only after the person has approved the write-up, sealed to conductor-vicky-3 (encryption sha256:6c7ad1aec4d55f31) and committed to `people/vicky/sealed/humans-and-ai/<first name>-<date>` with `For: conductor@web-summit.vicky`. Never an unsealed write-up in the repository.
+    - **The conductor** checks that folder at every brief and relay, opens any new file, moves it into vault A (`reports/humans-and-ai/`), and reports its arrival under "Being tracked" (name and count only).
 
 ## Updates for agents
 

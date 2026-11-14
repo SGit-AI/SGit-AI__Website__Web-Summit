@@ -66,3 +66,7 @@ Each agent is its own Claude Code session in my account. Most run on a schedule 
 - **Usage**: from tomorrow's brief, my conductor shows what each session uses, never to stop one.
 - **Hooks check**: the newsroom desks report whether Dinis's behaviour-policy hooks run in their sessions; then I decide whether to raise it with Dinis.
 - **After the summit**: the proposals on hold, from the scout's notes.
+
+## Since then
+
+- **Humans and AI, the team interviews (14 November)**: each teammate is interviewed by their own Claude; how to take part is on the interview page linked below.
