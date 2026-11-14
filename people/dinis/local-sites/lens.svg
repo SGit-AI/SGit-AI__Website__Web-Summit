@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="Helvetica, Arial, sans-serif">
+<rect width="960" height="560" fill="#f6f3ec"/>
+<text x="40" y="52" font-size="26" font-weight="700" fill="#121317">Each site is a lens: same stories, different focus</text>
+<text x="40" y="80" font-size="15" fill="#555">How prominent a story is depends on how close it is to the site's centre (illustrative weights)</text>
+<g font-size="15" font-weight="700" fill="#121317" text-anchor="middle">
+<text x="215" y="125">promptugal.news</text><text x="490" y="125">algarve.promptugal.news</text><text x="765" y="125">loule.promptugal.news</text>
+</g>
+<g font-size="13" fill="#333" text-anchor="end">
+<text x="95" y="172">International</text><text x="95" y="232">National</text><text x="95" y="292">Algarve</text><text x="95" y="352">Loulé</text>
+</g>
+<g>
+<!-- national -->
+<rect x="110" y="152" width="170" height="30" fill="#121317"/><rect x="110" y="212" width="210" height="30" fill="#121317"/><rect x="110" y="272" width="80" height="30" fill="#006600"/><rect x="110" y="332" width="30" height="30" fill="#c52830"/>
+<!-- algarve -->
+<rect x="385" y="152" width="60" height="30" fill="#121317"/><rect x="385" y="212" width="110" height="30" fill="#121317"/><rect x="385" y="272" width="210" height="30" fill="#006600"/><rect x="385" y="332" width="120" height="30" fill="#c52830"/>
+<!-- loule -->
+<rect x="660" y="152" width="40" height="30" fill="#121317"/><rect x="660" y="212" width="80" height="30" fill="#121317"/><rect x="660" y="272" width="130" height="30" fill="#006600"/><rect x="660" y="332" width="210" height="30" fill="#c52830"/>
+</g>
+<g stroke="#d9d2c1" stroke-width="2"><line x1="110" y1="140" x2="110" y2="372"/><line x1="385" y1="140" x2="385" y2="372"/><line x1="660" y1="140" x2="660" y2="372"/></g>
+<g font-size="13.5" fill="#121317">
+<rect x="40" y="400" width="880" height="130" rx="10" fill="#fffdf8" stroke="#d9d2c1"/>
+<text x="60" y="430"><tspan font-weight="700">On the national site,</tspan> a Loulé story is a small item. On loule.promptugal.news it leads.</text>
+<text x="60" y="458"><tspan font-weight="700">On a town site,</tspan> national and international AI news still appears, picked for what it means there.</text>
+<text x="60" y="486"><tspan font-weight="700">One story, one home:</tspan> it is written once and listed by every site it concerns, never copied.</text>
+<text x="60" y="514"><tspan font-weight="700">Someone local</tspan> only needs their town's site: that is where the dots connect.</text>
+</g>
+</svg>

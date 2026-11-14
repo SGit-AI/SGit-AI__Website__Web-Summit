@@ -42,3 +42,7 @@ Where each one is read today. A KPI with no page yet says so; that is a gap to c
 - KR2: a security review twice a day, with no finding left open past the next review.
 - KR3: no issue overdue without an owner on the board.
 
+
+## Briefs from Dinis {#briefs}
+
+- [PrompTugal.news by place: Portugal, the Algarve and its towns](local-sites/index.html) (14 November 2026), answering [Vicky's local-sites plan](../vicky/local-sites/index.html).

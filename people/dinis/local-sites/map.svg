@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" font-family="Helvetica, Arial, sans-serif">
+<rect width="960" height="680" fill="#f6f3ec"/>
+<text x="40" y="52" font-size="26" font-weight="700" fill="#121317">The first wave: every town in the Algarve</text>
+<text x="40" y="80" font-size="15" fill="#555">The 16 municipalities, and the city of Quarteira: one site each, under algarve.promptugal.news</text>
+<polyline points="66,570 110,570 200,517 245,500 318,482 396,508 480,517 564,535 637,596 687,588 816,500 883,438 950,429" fill="none" stroke="#5b8fb0" stroke-width="3"/>
+<polyline points="66,570 105,456 144,324 172,192" fill="none" stroke="#5b8fb0" stroke-width="3"/>
+<polyline points="950,429 934,324 917,174 900,130" fill="none" stroke="#5b8fb0" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="240" y="610" font-size="15" fill="#5b8fb0" font-style="italic">Atlantic Ocean</text>
+<text x="900" y="236" text-anchor="end" font-size="12" fill="#5b8fb0" font-style="italic">Guadiana · Spain</text>
+<circle cx="172" cy="306" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="172" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#121317">Aljezur</text>
+<circle cx="110" cy="517" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="110" y="543" text-anchor="middle" font-size="14" font-weight="700" fill="#121317">Vila do Bispo</text>
+<circle cx="245" cy="500" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="245" y="526" text-anchor="middle" font-size="14" font-weight="700" fill="#121317">Lagos</text>
+<circle cx="306" cy="306" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="306" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#121317">Monchique</text>
+<circle cx="318" cy="464" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="318" y="448" text-anchor="middle" font-size="14" font-weight="700" fill="#121317">Portimão</text>
+<circle cx="368" cy="473" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="378" y="499" text-anchor="start" font-size="14" font-weight="700" fill="#121317">Lagoa</text>
+<circle cx="374" cy="420" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="374" y="406" text-anchor="middle" font-size="14" font-weight="700" fill="#121317">Silves</text>
+<circle cx="480" cy="508" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="480" y="494" text-anchor="middle" font-size="14" font-weight="700" fill="#121317">Albufeira</text>
+<circle cx="609" cy="464" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="609" y="450" text-anchor="middle" font-size="14" font-weight="700" fill="#121317">Loulé</text>
+<circle cx="564" cy="526" r="8" fill="#fffdf8" stroke="#c52830" stroke-width="3"/>
+<text x="564" y="550" text-anchor="middle" font-size="14" font-weight="700" fill="#121317">Quarteira</text>
+<circle cx="682" cy="456" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="694" y="442" text-anchor="start" font-size="14" font-weight="700" fill="#121317">São Brás de Alportel</text>
+<circle cx="659" cy="570" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="659" y="596" text-anchor="middle" font-size="14" font-weight="700" fill="#121317">Faro</text>
+<circle cx="710" cy="561" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="724" y="583" text-anchor="start" font-size="14" font-weight="700" fill="#121317">Olhão</text>
+<circle cx="816" cy="473" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="816" y="459" text-anchor="middle" font-size="14" font-weight="700" fill="#121317">Tavira</text>
+<circle cx="934" cy="394" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="924" y="382" text-anchor="end" font-size="14" font-weight="700" fill="#121317">Castro Marim</text>
+<circle cx="945" cy="420" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="932" y="407" text-anchor="end" font-size="14" font-weight="700" fill="#121317">Vila Real de S. António</text>
+<circle cx="917" cy="174" r="8" fill="#c52830" stroke="#c52830" stroke-width="3"/>
+<text x="917" y="160" text-anchor="middle" font-size="14" font-weight="700" fill="#121317">Alcoutim</text>
+<g font-size="13" fill="#333"><circle cx="60" cy="650" r="7" fill="#c52830"/><text x="74" y="655">municipality (town site)</text>
+<circle cx="270" cy="650" r="7" fill="#fffdf8" stroke="#c52830" stroke-width="3"/><text x="284" y="655">city within a municipality (Quarteira, in Loulé)</text>
+<text x="920" y="655" text-anchor="end" fill="#777">Schematic, not to scale</text></g></svg>

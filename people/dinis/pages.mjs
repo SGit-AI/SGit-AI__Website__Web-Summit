@@ -9,6 +9,30 @@ const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').re
 const inl = s => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>')
 const STATUS = { built: 'built, try it', next: 'next', planned: 'planned', research: 'researched, to build' }
 
+
+// PrompTugal.news by place (Dinis, 14 November 2026): /people/dinis/local-sites/, the brief that answers Vicky's
+// local-sites plan. Built from people/dinis/local-sites/source.md and its SVG infographics, written by conductor@web-summit.dinis.
+function mdPage(md) {
+    const link = s => inl(s).replace(/(^|[\s(])(https:\/\/[^\s)<]+)/g, '$1<a href="$2">$2</a>')
+    const out = []
+    for (const block of md.replace(/\r/g, '').trim().split(/\n\s*\n/)) {
+        const L = block.split('\n').filter(l => l.trim()); if (!L.length) continue
+        const img = block.match(/^!\[([^\]]*)\]\(([^)\s]+)\)$/)
+        if (img) { out.push(`<figure><img src="${esc(img[2])}" alt="${esc(img[1])}" style="width:100%;height:auto"></figure>`); continue }
+        const h = L[0].match(/^(#{1,3}) (.+)$/)
+        if (h && L.length === 1) { const n = Math.max(2, h[1].length); out.push(n === 2 && h[1].length === 1 ? '' : `<h${n}>${link(h[2])}</h${n}>`); continue }
+        if (L.every(l => /^(- |\d+\. )/.test(l))) { const t = /^\d/.test(L[0]) ? 'ol' : 'ul'; out.push(`<${t}>${L.map(l => `<li>${link(l.replace(/^(- |\d+\. )/, ''))}</li>`).join('')}</${t}>`); continue }
+        out.push(`<p>${link(L.join(' '))}</p>`)
+    }
+    return out.join('\n')
+}
+function localSites(ROOT) {
+    const f = path.join(ROOT, 'people/dinis/local-sites/source.md')
+    if (!fs.existsSync(f)) return []
+    const src = fs.readFileSync(f, 'utf8')
+    return [{ rel: 'people/dinis/local-sites/index.html', title: 'PrompTugal.news by place: Portugal, the Algarve and its towns', description: "Dinis's brief answering Vicky's local-sites plan: one publication, three levels of place, each site a lens on one semantic graph, the PrompTugal test (always AI), and every town in the Algarve first.", body: mdPage(src), md: src }]
+}
+
 export function build(ROOT) {
     const E = JSON.parse(fs.readFileSync(path.join(ROOT, 'people/dinis/lab/experiments.json'), 'utf8'))
     const card = e => `<div class="lab-x lab-${esc(e.status)}"><p class="lab-n">${esc(e.id)} · <span>${esc(STATUS[e.status] || e.status)}</span></p><h3 id="${esc(e.id.toLowerCase())}">${esc(e.title)}</h3><p>${inl(e.what)}</p>${e.how ? `<p class="lab-how"><b>How:</b> ${inl(e.how)}</p>` : ''}${e.reuse ? `<p class="lab-how"><b>Reuses:</b> ${inl(e.reuse)}</p>` : ''}<p class="lab-how"><b>Who:</b> ${inl(e.who)}${e.issue ? ` · ${esc(e.issue)}` : ''}</p>${e.try ? `<p><a class="lab-try" href="${esc(e.try)}">Open it</a></p>` : ''}</div>`
@@ -25,5 +49,6 @@ export function build(ROOT) {
     return [
         { rel: 'people/dinis/lab/index.html', title: "Dinis's lab: from a conversation to an agent policy", description: 'The browser experiments towards an end-to-end MVP: research a company or a scenario, write its Agent Behaviour Policy, animate it, keep it in a vault.', body: hub, md: hubMd, head: head('') },
         { rel: 'people/dinis/lab/studio/index.html', title: 'The policy studio', description: 'A chat with Claude that uses the tools you choose to research a company or scenario and write its Agent Behaviour Policy, with an animated picture.', body: studio, md: studioMd, head: head('../') + '<script src="../studio-vault.js" defer></script><script src="../studio.js" defer></script>' },
+        ...localSites(ROOT),
     ]
 }

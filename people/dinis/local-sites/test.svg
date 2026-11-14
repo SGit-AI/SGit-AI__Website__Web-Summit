@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" font-family="Helvetica, Arial, sans-serif">
+<rect width="960" height="600" fill="#f6f3ec"/>
+<text x="40" y="52" font-size="26" font-weight="700" fill="#121317">The PrompTugal test: is this a PrompTugal story?</text>
+<text x="40" y="80" font-size="15" fill="#555">A PrompTugal story is always about AI: directly, or within two or three steps in the graph</text>
+<g transform="translate(330 340)">
+<circle r="230" fill="#fffdf8" stroke="#d9d2c1" stroke-width="2"/>
+<circle r="160" fill="#e2eedf" stroke="#d9d2c1" stroke-width="2"/>
+<circle r="92" fill="#006600"/>
+<text y="-6" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">AI</text>
+<text y="18" text-anchor="middle" font-size="13" fill="#e2eedf">prompts, models,</text><text y="34" text-anchor="middle" font-size="13" fill="#e2eedf">agents</text>
+<text y="-118" text-anchor="middle" font-size="13" font-weight="700" fill="#006600">1 step</text>
+<text y="-190" text-anchor="middle" font-size="13" font-weight="700" fill="#555">2 to 3 steps</text>
+</g>
+<g font-size="12.5" fill="#121317">
+<circle cx="330" cy="232" r="6" fill="#121317"/><text x="342" y="236">a local company ships an AI product</text>
+<circle cx="230" cy="360" r="6" fill="#121317"/><text x="118" y="384">a university AI lab's result</text>
+<circle cx="440" cy="420" r="6" fill="#121317"/><text x="372" y="444">a council uses AI for services</text>
+<circle cx="170" cy="200" r="6" fill="#555"/><text x="110" y="186">a new data centre → its AI workloads</text>
+<circle cx="470" cy="192" r="6" fill="#555"/><text x="400" y="178">a startup event → its AI founders</text>
+<circle cx="200" cy="520" r="6" fill="#555"/><text x="130" y="544">tourism jobs → automation in hotels</text>
+</g>
+<g font-size="14" fill="#121317">
+<rect x="610" y="130" width="310" height="420" rx="10" fill="#fffdf8" stroke="#d9d2c1"/>
+<text x="630" y="162" font-weight="700" font-size="16">Every story answers it</text>
+<text x="630" y="192">1. What is the AI connection?</text>
+<text x="630" y="216">2. How many steps away is it?</text>
+<text x="630" y="240">3. Which places does it touch?</text>
+<text x="630" y="280" font-weight="700" fill="#006600">Pass:</text><text x="672" y="280">AI is within 3 steps,</text>
+<text x="630" y="302">and the path is written down.</text>
+<text x="630" y="338" font-weight="700" fill="#c52830">Fail:</text><text x="670" y="338">no path to AI. Not ours,</text>
+<text x="630" y="360">however local or big it is.</text>
+<text x="630" y="400" font-weight="700">Place decides where</text>
+<text x="630" y="422">it shows and how big.</text>
+<text x="630" y="444" font-weight="700">AI decides whether</text>
+<text x="630" y="466">it is ours at all.</text>
+<text x="630" y="510" font-size="12" fill="#555">Grey dots: examples of 2–3 step</text>
+<text x="630" y="528" font-size="12" fill="#555">paths, illustrative only.</text>
+</g>
+</svg>
