@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2131",
+    "date": "2026-11-14",
+    "what": "applied PROMPTS-SHORT, keeping my RULES-11NOV copy for comparison at Vicky's word",
+    "by": "security@web-summit.vicky",
+    "from": "ff363b13c"
+  },
+  {
     "version": "v0.2.2130",
     "date": "2026-11-14",
     "what": "PROMPTS-SHORT applied to my prompts file",
