@@ -319,3 +319,8 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 
 - applied PROMPTS-SHORT: `people/vicky/prompts/curator.md` now points to decisions.md (standing answers 31 and 16) in place of the RULES-11NOV block, P1 to P3 and the copied standing answers (rules 18 to 24 and 28 to 31); 50,082 to 39,058 bytes. Scheduled prompt untouched, as the task says; the stored copy of it in the file is unchanged, so the two lines Vicky named remain only there.
 - state: ok; done: prompts file shortened; next: curator 11:35 and 15:35; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:00 UTC (task 2026-11-14-1105-sched-fixup-curator)
+
+- Scheduled-prompt fix-up applied to my one task (`trig_01QqwpxE9hhp5rwuxSS9D9ZF`, enabled, `35 7,11,15 * * *`, time and state unchanged): the pointer to the top of my prompts file now points to decisions.md (standing answers 31 and 16), and "Until the researcher's first confirmed run..." and "This task stays disabled until Vicky agrees a new schedule" are gone. P1 to P3 and the rest are word for word. The stored copy in my prompts file matches.
+- state: ok; done: scheduled prompt and stored copy fixed; next: curator 11:35 and 15:35; ask: none; run: prompted
