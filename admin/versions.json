@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2116",
+    "date": "2026-11-14",
+    "what": "rules cleanup (standing answer 63): draft decisions.md and archive for Vicky's review, not in force",
+    "by": "conductor@web-summit.vicky",
+    "from": "b6ea02435"
+  },
+  {
     "version": "v0.2.2115",
     "date": "2026-11-14",
     "what": "vault A and vault B resealed to conductor-vicky-3; sealed files for the new conductor",
