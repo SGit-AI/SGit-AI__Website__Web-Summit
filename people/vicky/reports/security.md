@@ -2,6 +2,14 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
+## 14 Nov 2026, about 11:00 UTC: the vault A tools review, closed
+
+Vicky, in my window: "no review needed now. These tools are only for my own agents. Close this item. If I ever want to share or publish one of them, you review it first, and I'll arrange how you get the files then."
+
+Closed: dev@'s confirmations board and schedule checker stay in vault A for her own agents, with no security@ pass needed. Standing for later: before either is shared beyond her own agents or published, I review it, and Vicky arranges how I get the files. Vault A is not sealed to me, and I asked for no seal.
+
+state: ok; done: item closed; next: Monday 16 Nov 06:20 UTC; ask: none; run: prompted
+
 ## 14 Nov 2026, about 10:57 UTC: the vault A tools review, asked for; blocked on access
 
 Vicky, in my window: "when you next run, review dev@'s two tools in vault A, the confirmations board and the schedule checker, and record whether they pass. vault@ can keep sealing vault A to my own agents meanwhile."
