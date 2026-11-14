@@ -225,3 +225,9 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - "Needs me" now: your "go" for the new conductor session (standing answer 61), the parking yes or no and the 5 Nov newsroom record line (both still undecided as far as I can see), and the interview vault ask for Dinis. Off the table, as you decided: WS-213 (ledger yes, router held), the curator's withdrawn marking, the inbox lanes (closed).
 - Follow-ups trimmed to 7 now the summit is over (WS-166 dropped; the overdue unowned items grouped; WS-217 added). pm@'s board-health note is from 12 Nov and WS-213 still reads open on the board. Stories refreshed: 55 stories, 110 sources, all links.
 - state: ok; done: tables and stories refreshed, SA54 ledger applied; next: 07:50 wake on Sun 15 Nov; ask: none; run: scheduled
+
+## Sat 14 Nov 2026, 10:25 UTC (prompted: CLEANUP-14NOV)
+
+- **applied CLEANUP-14NOV** (task file people/vicky/tasks/2026-11-14-1015-cleanup-dashboard.md, committed by conductor@web-summit.vicky and pushed by riskmandate-vicky; the message came from the conductor's session). In my prompts file: P1 is the widened text (Vicky's HOLD file and Dinis's three stop files); in the RULES-11NOV block rule 5 is the lisbontechfringe.com-only text and rule 7 the "Retired 14 Nov" line. Both of my scheduled tasks got the widened P1 (the 17:45 one stays disabled).
+- Kept on purpose: my "When to ask Vicky" line, because decisions.md still says publishing waits for Vicky and R-PUB-1 is an exception for the reviewer only. I found no "never message another session" line and no line resting only on archived entries. Ledger line added (task "prompts update").
+- state: ok; done: applied CLEANUP-14NOV to the prompts file and both scheduled tasks; next: 07:50 wake on Sun 15 Nov; ask: none; run: prompted
