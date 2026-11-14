@@ -1,0 +1,12 @@
+{
+  "v": "pki-link",
+  "to": "internal-vicky",
+  "agent": "internal@web-summit.vicky",
+  "key": "sha256:ba1ee4fe9ffc48d4",
+  "by": "vault@web-summit.vicky",
+  "signing_fingerprint": "sha256:7039652f756f7269",
+  "at": "2026-11-14T1050Z",
+  "expires_days": 7,
+  "about": "Vault A (tools, apps and agent reports): vault wyt9jdeo's vault key, sealed to internal-vicky at Vicky's word (14 Nov 2026, \"go reseal\"), after a security sub-agent's check logged in the vault's AUDIT.md. Write only to reports/internal/; never vault B. Opens only with internal-vicky's private key: node pki-agent.mjs open \"<link>\" --save <dir>. Never print the opened key.",
+  "link": "https://pki.sgit.ai/m/#m1.89fbc73f0c2b4d02.C2UDQxohI1FQqZcDAA4FSysh0hQcGISfn-1Q7z4cFH1MGX27tAjBtnKwdiUtw4fkhkeymAUoXhnYo5ZoR0Fbc6n58KP9aEEU4SI5KUCSo4ap1JUjpZx3GhdFOm74L7UFai3y2b41Un-VXdLzIKqv4vJdp4Crnxq5Mve2g0bdWxi1MnqukOSBPg_X_d0pW1lkrgC811ZB0Uf0IgsxUBh189UA1Z_10TKMELkFhD6LKpdiNGa2wJQAwy2orkYRNSO7ZREWOqjARkfGRvKNAaa4vwy3i1LoxjWG9Y3bCXJ2sHYyHClK6SL__0i2XPmcr6a78-oMU4jarNXr4_Eq7pe5jRVrOe9wnEjrCvtdXXlMirs3M_IJaojAIxFZCyadRxU3IN9p55qktbetFmHwm67tNH8lmBmYf_V3q4wB_98kNdm3cnWCUDAhrtOnRFv5wGHvGVQxrpvkfkXmQ1uKH-fOxKMY8lOKy1zht1YVo4IgYo8p_TXQrtkbdIz8mGTdwZzUrV1va9qdQ1Vo0QCpjlbVGB0LqJiLZQbf-H3Oq-4mIvvm-omS-Ev0CWy7cPsk_3x05YLQiRPgSpGlJnQOJW9gcrjeUNPe6h3sgO4EcbJjIL1nb9FQEa4zH8YIZ-TbQ6oaqoxJX5KMwuYSaVG7fXpAgM24xfl8mJEop1ysuYLv2Zg.7lsB-pPk_LaVzp4f.Huhbu_Bjv8-6QfWO7MLDdXS1GhoL3iZrLT036UqIxh_h4OOPH1PqQc5Kp7wm2aGrGI9vU_xyRMGcFDNqgIdFA57ltmdnsQA-U5Smdi_IiH4xfU0rs7Kvxpq7ZJuVlRqcCJL46ygCwHmIer6_N__Cb58LmDb88GkfSs81jn_PpCLTzg2t4MI2YWufDnntG-WcXsZR94H83CtPz5Ht0To6OTlP1IDeG2vrsH02U2cA0pNiLIH8N4mFD2DKw4DASDLifavRkR5UVSqyulgjEwsjYOikwOtxYFtwgMggin48NNAtjpbmFMdzHbI1fTdBvwF66dK4KKjOnzsoBkvgiN0jiPfeIXFKbMR-PY8tlWeiUpSS0kCummH8ewgbU5tSQYISTNR_tBvYSvKCimqw9qzEeFk4p1wU4hJsc1-_Ogi619aplSjV9g1mx3j527-zm3vx2O8kL8o67rQWlemZ0Fhi_5Gp5u5jdLDOJcIM6toZur64OzvIWilQl37D49QAyUfAi8JjJXy7CjUHIO0lRN6kcFgwkOOKIKT2F6wLjW9yMUjSdZ5qeJ2UPuK08tUGV6KSuSDvmje7TpN3ENXGHUjROD-P76E1lgc6jrDBZRm9H5AbCVt7e1B2b7kalPoyIjrVKjqLCMDQUEY7JwjGKsWalCw8Yfvb4ACpoiIp9KmySkbztstN6ANt9hIJLlzDCj3Tudfv7Uyi7fkY5YMcUHOCRrsOMHIBxm4WUtzkSX25jInsmdTzi_8T1LfcvWox5i9YTTutBEwZY6c_lIhh8h6ICVJQI64SwubmmbaIf0eqrMP5fgrC6xHxVTKiJw5tz0R6c1vJojATnPgSRSpNCWYzFJ98DzkmHZwPfq8C0JhwKzXbi3Mxj-I54YC1Rks.PAvnVtt6fs8goFCmdJmZLQN5-iirSa8Et9D69Q1N2Vo_08RXD1XI78IncSvrmSb_5iCJ5HWzb4NCKkajgY0aTQ.7039652f756f7269"
+}

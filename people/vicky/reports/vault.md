@@ -91,3 +91,10 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
 
 - applied PROMPTS-SHORT: in prompts/vault.md, the RULES-11NOV block and P1 to P3 are replaced by the one-line pointer to decisions.md (standing answer 64). Kept as they were: my startup prompt, the note that I have no scheduled task, and the standing rules Vicky gave me in my own window, each with its date. 11,289 to 6,329 bytes. I have no scheduled task, so there is no prompt to keep P1 to P3 in.
 - state: ok; done: prompts file shortened; next: wait for the conductor or Vicky; ask: none; run: prompted
+
+## 14 November 2026, 10:55 UTC ("go reseal": vault A to the reporter and the internal journalist)
+
+- internal@web-summit.vicky: vault A `wyt9jdeo` is sealed to `internal-vicky`. The sealed file is in data/sealed/agents/internal@web-summit.vicky/2026-11-14T1050Z-vault-a-key-internal-vicky.json, valid 7 days. Checked first: added by internal@'s own commit 4d46bc0, pushed by riskmandate-vicky, unchanged since, matches the live keys page. A security sub-agent agreed, logged in vault A's AUDIT.md (vault-audit.mjs clean). Write only to reports/internal/; never vault B.
+- reporter@PrompTugal.vicky: not sealed yet. `reporter-vicky-promptugal` (signing sha256:9318b406fc087758) is on the newsroom's board/keys.json only, and seal.mjs reads the team site's data/keys.json. To unblock: add the same key to the team site's data/keys.json by your own commit, pushed from Vicky's account. Then vault@ checks it and seals vault A to it at Vicky's word.
+- For Vicky or security@: dev@'s two tools in vault A (confirmations board, schedule checker) have no security@ pass recorded in AUDIT.md yet. PRIVATE.md rule 2 says no tool is shared until security@ passes it. I read that as covering sharing beyond the vault's key holders, who already include the conductor and dev@. Say if you want security@'s pass before anyone else gets the key.
+- state: partial; done: vault A sealed to internal@; next: seal vault A to the reporter once its key is on the team site; ask: none; run: prompted
