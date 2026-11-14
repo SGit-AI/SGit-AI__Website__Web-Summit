@@ -232,3 +232,8 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 
 - applied CLEANUP-14NOV: task file checked first (conductor's commit, pushed from Vicky's account; no hold file). In my prompts file and my scheduled task's prompt: P1 widened (standing answer 16); RULES-11NOV rule 5 now lisbontechfringe.com only; rule 7 shows the "Retired 14 Nov" line; standing answer 28 section removed, and the agenda.json and `agenda changes:` reading taken out; I still read `gaps_for_the_researcher` and report which I filled. No line about publishing waiting for Vicky's word and none about never messaging another session were in my files, so nothing to change there. Times checked: cron `15 7,11,15 * * *`. Everything else is word for word. No captures went into vault 41j3e9s9 this task.
 - state: ok; done: prompts file and scheduled prompt cleaned; next: 11:15 run; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 10:45 UTC, task 2026-11-14-1055-prompts-short-researcher
+
+- applied PROMPTS-SHORT: task file checked first (conductor's commit, pushed from Vicky's account; no hold file). My prompts file now opens with the one-line pointer to decisions.md and keeps only my startup prompt, my scheduled prompt as stored (unchanged, P1 to P3 stay in it), and the rules Vicky gave me in my own window with their dates; the RULES-11NOV block, P1 to P3 and the copied standing answers 29, 58, 54 and 51 are out (30769 to 21685 bytes). Nothing kept as unsure. No captures went into vault 41j3e9s9 this task.
+- state: ok; done: prompts file shortened; next: 11:15 run; ask: none; run: prompted
