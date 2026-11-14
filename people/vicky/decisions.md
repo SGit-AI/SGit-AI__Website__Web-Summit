@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **81** Dinis's brief "PrompTugal.news by place" replaces our local-sites plan; every story passes the PrompTugal test (AI within two or three steps, the path written down); Dinis's agents build, journalist-portugal writes the local stories; S65 checked for a sourced AI path.
 - **80** the public vault app after the summit: eight cards (the front page, not a latest-article card), beige background; vault@ makes it.
 - **79** one cover style: the designer drafts desks/designer-vicky/covers/STYLE.md, the reviewer adds its notes, Vicky sees it.
 - **78** local stories go out now as normal stories; region and town tags added to them once the local pages exist.
@@ -373,6 +374,12 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Cards (eight):** her Humans and AI interview; the PrompTugal.news front page (it updates by itself; no card that needs refreshing); How we publish; Story ideas; the Live AI Office; The sign-in; Many agents, one newsroom; Where women in Portugal can learn and build with AI (S63). **Out:** The work so far, the agenda, Driving to Web Summit, Europe in Pavilion 4.
     - **Also:** the intro describes her work since the summit; the date is refreshed; the background becomes beige (readable in light and dark). The title stays.
     - **Who:** vault@web-summit.vicky, in the public vault k64ma7jd, audited before the push as always. Task file `2026-11-14-1830-vault-app-update.md`.
+
+81. **Dinis's brief "PrompTugal.news by place" and the PrompTugal test** (Vicky, 14 Nov, evening, in this window: "Yes, add the "replaced by Dinis's brief" note to the local-sites page and request, and record the PrompTugal test and our part as standing answer 81." and "Option A for S65: researcher checks for a sourced AI path; add a line if found, otherwise leave it as published before the test." Earlier the same evening: "Don't build anything. The build is led by Dinis's agents.")
+    - **The plan:** Dinis's brief (people/dinis/local-sites/, 14 Nov) replaces our local-sites plan (standing answer 78 still holds for tags). All 16 Algarve municipalities and Quarteira at once, not Loulé first. Our plan page and request carry a "replaced" note and stay as the record.
+    - **The PrompTugal test**, for every story of Vicky's desks from 14 Nov: a story is about AI directly or within two or three steps (a council's new data centre and its AI workloads; a startup event and its AI founders), and the path is written down. Each story answers: What is the AI connection? How many steps away is it? Which places does it touch? No path to AI: not ours, however local or big. Place decides where a story shows and how big; AI decides whether it is ours at all.
+    - **Our part:** the researcher records the AI path in each capture; the curator commissions only stories that pass and writes the three answers in the commission; the journalists put the path in the story; the reviewer checks it before publishing (a story with no path goes back); the analyst's topics and pieces pass it too. journalist-portugal writes the local stories the brief names it for. We build nothing: the sites, the graph, the places and the towns' looks are Dinis's agents' (@PrompTugal.dinis).
+    - **Published before the test:** S65 (3WX, Best Number One): the researcher checks 3WX's and Best Number One's public pages for a sourced AI path; if found, the reviewer adds one sourced line; if not, it stays as published before the test, with no note. Other earlier stories stay as they are.
 
 ## Updates for agents
 

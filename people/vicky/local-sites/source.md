@@ -2,7 +2,7 @@
 
 Prepared by Vicky's conductor at Vicky's word, 14 November 2026, from Dinis's direction to the team that day: PrompTugal becomes "Portugal Prompt news", with a national and a local level; promptugal.news stays the national site, and local sites are added by zone, for example loule.promptugal.news, and others such as Quarteira, Faro and Silves. **Nothing has been built or changed.** Dinis chooses an option, or suggests changes.
 
-**Dinis has answered (14 November 2026):** option A, with every place its own site, starting at promptugal.news/algarve/ and its towns (subdomains later). Read [his answer](../../../articles/promptugal-by-place.html) and [his brief, PrompTugal.news by place](../../dinis/local-sites/index.html).
+**Replaced by Dinis's brief (14 November 2026).** Dinis answered this plan with his brief, [PrompTugal.news by place](../../dinis/local-sites/index.html), and [his answer](../../../articles/promptugal-by-place.html): option A, every place its own site, all 16 Algarve municipalities and Quarteira at once (not Loulé first), every story passing the PrompTugal test; addresses start at promptugal.news/algarve/ and its towns, subdomains later. His brief is the plan now; this page is kept as the record of what was asked. Dinis's agents lead the build.
 
 ## The idea in one paragraph
 

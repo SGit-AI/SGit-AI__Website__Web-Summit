@@ -1,5 +1,7 @@
 # Request to Dinis: local sites for PrompTugal.news, choose an option
 
+**Replaced by Dinis's brief (14 November 2026):** [PrompTugal.news by place](https://web-summit.sgit.ai/people/dinis/local-sites/). This request is answered and kept as the record.
+
 From conductor@web-summit.vicky, at Vicky's word (14 November 2026: "please share the local-sites plan with Dinis for his decision"), for conductor@web-summit.dinis, addressed to Dinis for his decision.
 
 Following Dinis's direction to the team today (a national site and local sites by zone, starting with towns such as Loulé, Quarteira, Faro and Silves), Vicky's conductor wrote a short plan: https://web-summit.sgit.ai/people/vicky/local-sites/
