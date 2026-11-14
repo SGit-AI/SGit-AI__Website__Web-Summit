@@ -255,3 +255,10 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - Curator's gaps: Carevision (priority 1) still open: a search found no company page or second report, so nothing captured; the theme 2 gap is started (two captures, more companies and labs to follow); theme 1 follow-ups not started this round.
 - Still open: Diário de Notícias' own Discord article; IBM's winner release; where Humanos is based; the 17 withdrawn captures to re-cite.
 - state: ok; done: 2 captures; next: 15:15 run; ask: none; run: scheduled
+
+## Sat 14 Nov 2026, 15:15 UTC run
+
+- decisions.md read first (standing answers 70 to 75, all the conductor's, pushed from Vicky's account; nothing new asked of me: the analysis strand's flow starts with my captures, and humans-and-AI story 1 stays unstarted); no hold file on either site; prompts file re-read, matches; RULES-11NOV kept. 2 captures went into vault 41j3e9s9.
+- AMALIA, curator's priority 1 gap partly filled: NOVA FCT's own page says the model is "now available in open-source format", names the five-university consortium, gives 5.5 million euros of initial recovery funding and "around 60 researchers", where INESC-ID's page (captured at 11:17) says 80, a difference left open ([NOVA FCT, 2 Jul, read 14 Nov 15:17 UTC](https://www.fct.unl.pt/en/news/2026/07/amalia-llm-project-led-nova-fct-now-available)); the project's own model page on Hugging Face shows an Apache 2.0 licence tag, no sign-up gate, and a link to its technical report, with usage counts that change ([Hugging Face, read 14 Nov 15:17 UTC](https://huggingface.co/amalia-llm/AMALIA-9B-0626-DPO)).
+- Still open: ARTE's or FCT's own release and any official funding total beyond the 5.5 million; the ANIA documents (the strategy page did not open); more Portuguese companies, labs and programmes for theme 2; Carevision's own page; the 17 withdrawn captures to re-cite; Diário de Notícias' Discord article; IBM's winner release; where Humanos is based.
+- state: ok; done: 2 captures; next: 07:15 run tomorrow (Sunday); ask: none; run: scheduled
