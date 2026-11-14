@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2115",
+    "date": "2026-11-14",
+    "what": "vault A and vault B resealed to conductor-vicky-3; sealed files for the new conductor",
+    "by": "vault@web-summit.vicky",
+    "from": "4a5d1eaf5"
+  },
+  {
     "version": "v0.2.2114",
     "date": "2026-11-14",
     "what": "schedule.json: the brief (08:45) and relay (20:45) tasks moved to the 14 Nov session; the old two disabled",
