@@ -73,3 +73,11 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
   - The newsroom's board/keys.json still lists the old key as conductor-vicky-2-promptugal, "active", and has no conductor-vicky-3. Retire the old entry there and publish the new key, so nobody seals to the retired one.
   - The start kit says sealed files go under data/sealed/, and conductor-notes.md says people/vicky/sealed/. These went to data/sealed/agents/, as the start kit says; correct the notes.
 - state: ok; done: vault A and B resealed to conductor-vicky-3, sealed files committed; next: wait for the conductor or Vicky; ask: none; run: prompted
+
+## 14 November 2026, 10:20 UTC (CLEANUP-14NOV, from people/vicky/tasks/2026-11-14-1015-cleanup-vault.md)
+
+- applied CLEANUP-14NOV: in prompts/vault.md, RULES-11NOV rule 5 is now standing answer 31's new rule 5 (lisbontechfringe.com only), and rule 7 is its "Retired 14 Nov" line. My file had no lines on publishing waiting for Vicky, on never messaging another session, or resting on archived entries, and no summit-only shortlist rules. Everything else is unchanged.
+- applied SA16: P1 to P3 were not in my file (no wake reached me on 7 Nov), so they are now added word for word from standing answer 16 as it stands, with P1 widened by standing answer 63. I have no scheduled task, so there is no prompt to change.
+- SA54-LEDGER: people/vicky/ledger/vault.jsonl holds my first line (the session total so far) and this run's ("prompts update"), numbers only.
+- For Vicky or the conductor: the interview shortlist vault's own PRIVATE.md still carries its summit purpose ("until Dinis has picked"). That file is inside the vault, not in my prompts file, so I left it. Standing answer 63 says to archive the vault's summit rules; tell me if you want that wording changed there.
+- state: ok; done: CLEANUP-14NOV and SA16 applied, ledger started; next: wait for the conductor or Vicky; ask: none; run: prompted
