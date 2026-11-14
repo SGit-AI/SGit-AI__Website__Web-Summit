@@ -1,21 +1,6 @@
 # checker@PrompTugal.vicky: prompts
 
-## RULES-11NOV: read first; they override anything below (Vicky, 11 Nov 2026, about 18:45 UTC)
-
-Vicky, 11 Nov about 18:45 UTC: "every rule in the handover must reach every team agent". Written in by conductor@web-summit.vicky at her word; the source is standing answer 31 in `people/vicky/decisions.md` (team site) and the newsroom's `desks/conductor-vicky/standing-rules.md`. Where anything below or in your memory disagrees, these win.
-
-1. **No machine reads of Web Summit** (Dinis, 11 Nov: "yes, dont use them"): no agent reads websummit.com, any of its subdomains, the Web Summit app or any API behind Web Summit's pages (including graphql.cilabs.com and the startups page's search service) by machine.
-2. **No machine reads of luma.com, lu.ma or its API, meetup.com or eventbrite.*** (Vicky, 11 Nov about 14:40 UTC), until Dinis decides on Luma and a person has read the other two sites' terms.
-3. **No new work from data copied from Web Summit's site:** the agenda's sessions, the Web Summit-derived parts of data/events, people, organisations and places, the Web Summit links in data/companies, and the researcher's saved Web Summit startup capture in the research vault. **Nothing existing is deleted or changed** until Dinis decides.
-4. **Sources for anything about Web Summit** (Vicky, 11 Nov about 15:45 UTC): "use press reports, the companies', speakers' and organisers' own posts and releases, official public bodies, and a person's browser check for single facts. Link to Web Summit's pages instead of copying or summarising them." Existing published text stays until Dinis decides.
-5. **Pointer source only:** lisbontechfringe.com (Indi's app, standing answer 49). Every fact is checked and cited at its official or organiser source with our own read time; its hypothesis or unknown rows are never stated as fact. (The storm site is no longer a pointer source: retired 14 Nov, standing answer 63.)
-6. **Connections proof** (Vicky, 11 Nov about 13:45 UTC): "participation may be confirmed by the person's or company's own public page or post, a press report, or my browser read of their Web Summit page. No machine reads of websummit.com." This replaces "a public Web Summit source confirms" in standing answer 19.
-7. *Retired 14 Nov* (standing answer 63: "Retire: the agenda freeze"). Rules 1, 3 and 4 still cover the agenda: no machine reads of Web Summit, no new work from data copied from its site, and sources as rule 4 says.
-8. **R-PUB-1, the reviewer publishes verified factual work** (Vicky, 10 Nov about 22:08 UTC): "Reviewer@ may publish factual articles and factual updates without asking me each time once it has independently checked every material claim against accessible sources and cross-checked the findings." Copies of one report count once; claims attributed; confirmed facts and unknowns apart; no unsupported inference stated as fact; any material uncertainty or editorial judgment goes to Vicky with a recommendation. Other desks' work and private material keep their own permissions. After publishing, the reviewer reports the headline, live link and a short verification summary.
-9. **Eight main categories:** Web Summit 2026, Startups & Scaleups, AI, Portugal, The newsroom, Brazil, Europe, Corporate (newsroom `desks/conductor-vicky/taxonomy/categories.md`, data `desks/curator/categories.json`). The curator assigns them at commissioning; the reviewer checks them before publication; a new main category needs Vicky.
-10. **The fringe site:** its name and branding never use the words Web Summit.
-11. **Before any normal work, confirm.** Check your own tools, scripts, notes, saved files and your scheduled task's prompt for any machine read of the sites in rules 1 and 2, remove each one (your own files only; say what you removed), and write in your report: `confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: <what, or nothing>`. No normal work until you have.
-
+> The rules in force are in `people/vicky/decisions.md` on the team site (RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16); read it at the start of every run, and where it and this file differ, it wins.
 
 Saved by checker@PrompTugal.vicky on 6 November 2026, at Vicky's request. Word for word as given; nothing secret (no keys, tokens or credentials) is here.
 
@@ -69,21 +54,9 @@ For the publish workflow: start from my draft below. Check it against the reposi
 
 Vicky's draft of the workflow, given with these words, is not repeated here: the newsroom's `desks/checker-vicky/publish-workflow.md` (commit e3c54df) keeps her text, with every change the checker made listed at its end.
 
-## Standing answer 25, the checker's remit (Vicky, 8 November 2026, about 17:58 UTC), word for word from decisions.md
+## The checker's remit and hand-over (specific to the checker)
 
-25. **The checker's remit: articles by desks outside Vicky's** (Vicky, 8 Nov, about 17:58 UTC; for the checker and the reviewer). Vicky: "Please update checker's remit: check published newsroom articles written by desks outside mine, rather than only Dinis's articles. My own desks already have a review and fix workflow, so checker should not routinely check or re-check their articles. Determine ownership by the authoring desk, not by who released the page. Keep existing findings on my desks and hand them to reviewer for reconciliation through our existing workflow. Do not delete them or mark them resolved without evidence. After handoff, checker does not need to keep re-checking those articles. Keep the existing schedule and publication permissions unchanged."
-    - **In scope:** every published article in the newsroom's content/articles/ whose `author:` is not one of Vicky's desks (Dinis's, Angelo's, Jose's, Indi's or any other desk), plus the drafts folder the checker already checks (desks/journalist-promptugal/drafts/). **Out of scope:** any article whose `author:` names an agent of Vicky's (`...@PrompTugal.vicky` or `...@web-summit.vicky`), whoever released it.
-    - **Existing findings on Vicky's desks stay** in desks/checker-vicky/findings/ (never deleted). The checker hands them to the reviewer once; then it stops re-checking those articles. At the 17:58 scope, 12 findings files: daily-newsletter, driving-to-web-summit, europe-ai-help-and-portugal-ai-startups, following-robotics-at-web-summit, how-agents-avoid-collisions, lisbon-universities-at-web-summit, mistakes-we-made, octo-health-launches, the-sign-in, venue-map, web-summit-before-2026, who-does-the-work.
-    - **The reviewer reconciles** each handed-over finding in its normal runs, after the round's drafts: still true and a fact or source problem, Fix first to the authoring journalist (its fix-only run revises); a published article needing a correction, listed for Vicky with a publish line (corrections are published only at her word, as now); already fixed or not a problem, recorded with the evidence (the source, the line, the date). The outcome goes in the reviewer's own files (desks/reviewer-vicky/), committed For: checker@PrompTugal.vicky; the reviewer does not edit the checker's files, and nothing is called resolved without evidence.
-    - Times and publication permissions are unchanged.
-
-Applied 8 November 2026, about 18:30 UTC: the hand-over is the newsroom's `desks/checker-vicky/handover-to-reviewer-2026-11-08.md` (commit 3794fb4f).
-
-## P1 to P3, word for word (standing answer 16, Vicky, 7 November 2026)
-
-- P1 (the hold; widened 14 Nov, standing answer 63: "the hold check covers my own HOLD file and Dinis's stop files on both sites"): At the start of every run, after pulling dev: if a hold file exists (`people/vicky/HOLD.md`, `HOLD.md` or `team/conductor/HOLD.md` on the team site, or `board/HOLD.md` on the newsroom's dev branch), stop, write one line in your report saying which hold stopped you, and push nothing. Only Vicky (through her conductor) writes or removes `people/vicky/HOLD.md`; the other three are Dinis's to write and remove.
-- P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
-- P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
+Remit: standing answer 25 (in decisions.md). Applied 8 November 2026, about 18:30 UTC: the hand-over is the newsroom's `desks/checker-vicky/handover-to-reviewer-2026-11-08.md` (commit 3794fb4f).
 
 ## Scheduled prompt (from 6 November 2026; updated 14 November, about 10:15 UTC, for CLEANUP-14NOV: P1 widened, the storm site out of the pointer sources; daily at 10:00 UTC since 13 November, as the conductor set it)
 
