@@ -128,3 +128,10 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - **applied CLEANUP-14NOV:** P1 widened (standing answer 16) in both copies in prompts/logistics.md and in my scheduled prompt; RULES-11NOV rule 5 (lisbontechfringe.com only) and rule 7 ("Retired 14 Nov") replaced. Nothing else in my files rests on archived entries. Kept as it is: "never send" in my startup prompt and rules, which is about sending to people (still Vicky's, decisions.md "Ask Vicky only when it sends anything to a person"), not about replying to sessions.
 - My scheduled task stays disabled (since 12 Nov, standing answer 43); its prompt changed to match section 2 of prompts/logistics.md. **applied SA54-LEDGER:** two lines in people/vicky/ledger/logistics.jsonl (this run, and the session total once).
 - state: ok; done: CLEANUP-14NOV applied, ledger lines added; next: nothing until the conductor or Vicky gives me work; ask: none; run: prompted
+
+## 14 November, 10:50 UTC (task 2026-11-14-1055-prompts-short-logistics)
+
+- No hold on the team site (newsroom board/HOLD.md not checked: no clone here). Task file passes the guard (ea8e0a84).
+- **applied PROMPTS-SHORT:** in prompts/logistics.md the RULES-11NOV block and my copy of P1 to P3 (standing rule 6) are replaced by the one-line pointer to decisions.md; my startup prompt, my stored scheduled prompt, my standing rules 1 to 5 and Vicky's merch decisions stay. 15,584 to 10,622 bytes.
+- Kept as unsure: my scheduled task's prompt (unchanged, as the task says) still says the full RULES-11NOV text is "at the top of people/vicky/prompts/logistics.md"; that is now in decisions.md (standing answer 31). The task is disabled; I have not changed it. Ledger line added (SA54-LEDGER).
+- state: ok; done: PROMPTS-SHORT applied, ledger line; next: nothing until the conductor or Vicky gives me work; ask: may I change one phrase in my (disabled) scheduled prompt to point at decisions.md for RULES-11NOV? I recommend yes; run: prompted
