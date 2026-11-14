@@ -1,45 +1,96 @@
 ---
 title: Vicky Wang's dashboard
-summary: The page Vicky reads first. The top is built for Vicky; below it, what needs Vicky today and tomorrow, then only what the command centre does not show.
+summary: The page Vicky reads first: what is waiting for her, the newsroom this week, how her agents are doing, what waits on others, and her vault. Public: only what is safe to publish; private items are counts.
 compact: true
 office_link: office/index.html
 ---
-Kept short at Vicky's word (3 November): your issues, decisions and agents are in [your command centre](app/index.html); here is only what it does not show. The **For you** panel: your issues first.
+*Last updated: Sat 14 Nov, 17:52 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
 
-## Needs me {#needs-me}
+## For Vicky {#for-vicky}
 
-*Written by your dashboard agent at each wake from the board, the stand-up agendas, your conductor's briefs and the board-health notes; soonest first. Last updated: Sat 14 Nov, 08:05 UTC.*
+*From the conductor's newest brief, of Sat 14 Nov, 08:45 UTC (today's brief, so not out of date).*
 
-| Type | What | Due | With |
-|---|---|---|---|
-| Do | [Say "go" in your conductor's window, once the 14 Nov brief is out](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/decisions.md) | Today, after the 08:45 brief | Starts the new conductor session (standing answer 61); then the vault reseal in vault@'s own window, which only you do |
-| Decide | [Park the late, unowned issues: yes or no](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/data/meetings/2026-11-07-1800/20261107T1741-the-18-00-a-note-taker-the-parking-in-on.json) | **Overdue:** Sat 7 Nov, 18:00 (not taken) | Dinis too; the list is ready (45 to park, 21 kept); recommended: yes; Angelo asks for it first at today's 12:00 |
-| Decide | [One line for the record: the 5 Nov newsroom decision](briefs/2026-11-06T0845Z.pdf) | **Overdue:** Fri 6 Nov | Your conductor records your words |
-| Do | [Ask Dinis: is the interview vault coming?](briefs/2026-11-12T0845Z.pdf) | When you can | Until then you keep recordings on your phone; the request stays open (standing answer 62) |
+- **Say "go" for the handover.** The conductor starts the new conductor session only after your "go" (standing answer 61). *Since that brief the new conductor session has started.* ([the brief](briefs/2026-11-14T0845Z.pdf))
+- 3 private items, see conductor.
 
-## To follow up {#follow-up}
+## The newsroom this week {#newsroom-week}
 
-Mine to act on or decide: issues you picked. The rest of the plan's follow-ups are under Team follow-ups. **No owner** means nobody is named in `picked_by`.
+**Published from your desks in the last seven days (30 articles):**
 
-| What | Owner | Status | Due | Risk / next step |
-|---|---|---|---|---|
-| [Newsroom vault keys](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-153-vicky-s-vault-keys-to-the-conductor-over-the-inbox.md) (WS-153) | You; waiting on conductor@web-summit.dinis | Picked | **Overdue:** Thu 5 Nov | Dinis's conductor to confirm it can open the vaults |
-| [Photos on the site](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-163-each-person-confirms-their-own-photo.md) (WS-163) | You | Yours confirmed | **Overdue:** Fri 6 Nov | Angelo, Indi, Jose and Dinis still to answer |
+- 14 Nov: [When an agent says it's done, check a few things yourself](https://promptugal.news/articles/humans-and-ai-vicky-wang.html)
+- 14 Nov: [Loulé agency 3WX launches Best Number One, a free start page](https://promptugal.news/articles/best-number-one-3wx-loule.html)
+- 13 Nov: [Where women in Portugal can learn and build with AI](https://promptugal.news/articles/women-learning-and-building-ai-in-portugal.html)
+- 13 Nov: [Why people trust AI summaries more than they check them](https://promptugal.news/articles/why-people-trust-ai-summaries.html)
+- 13 Nov: [Humanos wins Road 2 Web Summit's top prize, 15,000 euros](https://promptugal.news/articles/humanos-road-2-web-summit-winner.html)
+- 12 Nov: [What PagerDuty says it learned running AI agents in production](https://promptugal.news/articles/pagerduty-agents-in-production.html)
+- 12 Nov: [Discord opens its first engineering hub outside San Francisco, in Lisbon](https://promptugal.news/articles/discord-lisbon-engineering-hub.html)
+- 11 Nov: [How Zalando rolled out AI coding agents across its engineering teams](https://promptugal.news/articles/zalando-ai-coding-agents.html)
 
-:::details Team follow-ups (7)
+:::details Earlier this week (22 more)
 
-Not mine, but on the plan: due by Thursday, overdue, or blocking someone. **No owner** means nobody is named in `picked_by` (in brackets, who it is for).
+- 11 Nov: [EU says TikTok's For You feed may breach its platform law](https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html)
+- 11 Nov: [Thursday at Web Summit: a practical guide to the last day](https://promptugal.news/articles/thursday-last-day-guide.html)
+- 11 Nov: [Manus 2.0 gives each agent its own email, phone and wallet](https://promptugal.news/articles/manus-2-0-agents-own-email-phone-wallet.html)
+- 11 Nov: [Konecta picks Lisbon for a delivery centre and 700 jobs](https://promptugal.news/articles/konecta-lisbon-delivery-centre.html)
+- 11 Nov: [Getting around Lisbon on Wednesday: what operators and the government say](https://promptugal.news/articles/getting-around-lisbon-wednesday.html)
+- 11 Nov: [The EU asks for views on election rules for generative AI](https://promptugal.news/articles/eu-election-guidelines-generative-ai.html)
+- 11 Nov: [The EU's Digital Fairness Act: rules for AI agents that shop](https://promptugal.news/articles/digital-fairness-act-ai-agents.html)
+- 11 Nov: [The AI Act's first harmonised standard: what EN 18286 changes](https://promptugal.news/articles/ai-act-first-harmonised-standard.html)
+- 10 Nov: [How WPP turns call transcripts into reviewed Jira plans](https://promptugal.news/articles/wpp-call-transcripts-to-jira.html)
+- 10 Nov: [What Lovable deleted: its CEO on rebuilding an AI coding agent](https://promptugal.news/articles/what-lovable-deleted.html)
+- 10 Nov: [Web Summit's cancelled Day 2: what is known about refunds](https://promptugal.news/articles/web-summit-day-2-refunds.html)
+- 10 Nov: [What failed first as Teamworks builds an AI assistant for coaches](https://promptugal.news/articles/teamworks-coaches-agent.html)
+- 10 Nov: [Web Summit calls off Wednesday on the government's advice](https://promptugal.news/articles/red-wind-warning-lisbon-wednesday.html)
+- 10 Nov: [AI agents are spreading faster than their security, Gravitee's survey finds](https://promptugal.news/articles/gravitee-agent-security-survey.html)
+- 10 Nov: [Glovo's restaurant partners meet 80 AI agents on WhatsApp, GetVocal says](https://promptugal.news/articles/glovo-restaurant-agents-getvocal.html)
+- 9 Nov: [Where to find Portugal at Web Summit: Pavilion 1, stand E145](https://promptugal.news/articles/where-to-find-portugal.html)
+- 9 Nov: [Beyond Lisbon: where Road 2 Web Summit's 78 startups come from](https://promptugal.news/articles/road-2-web-summit-beyond-lisbon.html)
+- 9 Nov: [Sports tech at Web Summit: IBM's startup challenge ends in Lisbon](https://promptugal.news/articles/ibm-sports-tech-challenge.html)
+- 7 Nov: [A map of Web Summit's buildings, and what each holds](https://promptugal.news/articles/venue-map.html)
+- 7 Nov: [The sign-in: how editors and agents prove who they are](https://promptugal.news/articles/the-sign-in.html)
+- 7 Nov: [Driving to Web Summit? Road closures and drop-off points](https://promptugal.news/articles/driving-to-web-summit.html)
+- 7 Nov: [Two editions a day: PrompTugal.news starts a daily newsletter](https://promptugal.news/articles/daily-newsletter.html)
 
-| What | Owner | Status | Due | Risk / next step |
-|---|---|---|---|---|
-| [Pulse app](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-41-the-pulse-app.md); [PM workflow write-up](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-53-silvio-s-agentic-project-management-workflow-wri.md) | **No owner** (Jose; Silvio) | Open | **Overdue:** Wed 4 Nov | Not yours, at your word; theirs to pick up |
-| [The 12 storylines](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-177-promptugal-ready-for-outreach-by-friday.md) (WS-177) | conductor@web-summit.dinis | Picked | **Overdue:** Fri 6 Nov, 10:00 | Outreach is parked (Dinis, 9 Nov 10:55); the stories still help the newsroom |
-| [Sessions each person attends](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-32-the-sessions-each-person-attends.md) | **No owner** (for everyone) | Open | **Overdue:** Sat 7 Nov | Each person adds their own |
-| [WS-199](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-199-three-apps-three-lines.md); [WS-201](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-201-we-are-the-power-users.md); [WS-208](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-208-the-restart.md) (three apps; the power users; the restart) | **No owner** (for everyone) | Open | **Overdue:** Mon 9 to Wed 11 Nov | The summit is over: someone to pick them up, or park them |
-| [WS-202](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-202-how-we-work.md); [WS-205](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-205-the-pipeline-live.md); [WS-206](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-206-gamma-ray.md); [WS-210](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-210-the-individual-from-a-photo-to-a-unit.md); [WS-211](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-211-pt-news-is-about-agents-the-workflow-is-the-picture.md) (how we work; the pipeline live; GAMMA-Ray; the individual; pt.news and agents) | **No owner** (for everyone) | Open (WS-206: design first) | **Overdue:** Thu 12 Nov | The summit is over: someone to pick them up, or park them |
-| [The follow-up list in the private CRM](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-217-the-follow-up-list-in-the-private-crm.md) (WS-217) | followups@web-summit.indi | Open | Today, Sat 14 Nov | Indi, Dinis and Angelo are named on it |
-| [The token ledger and the router](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-213-vickys-agents-measured-first-and-the-routers-first-experiments.md) (WS-213) | **No owner** (for you) | Open on the board | **Overdue:** Wed 11 Nov | Decided 12 Nov: the ledger yes, numbers only; the router held (standing answer 54). The board file is not updated yet |
 :::
+
+**Stories in the loop:** none right now. The latest, S65, went live today (the task files of 14 Nov, 17:20 to 17:45 UTC, ran it from commissioning to publishing).
+
+**Humans and AI interviews:** 1 of 6 pages published (yours). The five teammates' write-ups come back privately, and a page is published only after its person approves it.
+
+## How my agents are doing {#agents-status}
+
+*Last report is the time of the agent's latest report entry; next run is from the schedule. "On demand" means it has no scheduled task.*
+
+| Agent | Last report | Next run | Problem |
+|---|---|---|---|
+| conductor | Brief, Sat 14 Nov, 08:45 UTC | Sat 14 Nov, 20:45 UTC | none |
+| dashboard | Sat 14 Nov, 11:25 UTC | Sun 15 Nov, 09:15 UTC | none |
+| pm | Sat 14 Nov, 11:15 UTC | on demand | none |
+| logistics | Sat 14 Nov, 11:10 UTC | on demand | none |
+| researcher | Sat 14 Nov, 17:15 UTC | Sun 15 Nov, 07:15 UTC | none |
+| curator | Sat 14 Nov, 17:30 UTC | Sun 15 Nov, 07:35 UTC | none |
+| reporter | Sat 14 Nov, 10:41 UTC | Fri 20 Nov, 09:30 UTC | none |
+| internal | Sat 14 Nov, 10:41 UTC | Fri 20 Nov, 14:30 UTC | state partial, see its report |
+| journalist-portugal | Sat 14 Nov, 17:40 UTC | on demand | none |
+| journalist-europe | Sat 14 Nov, 11:20 UTC | on demand | none |
+| journalist-ai | Sat 14 Nov, 14:11 UTC | on demand | none |
+| journalist-connections | Sat 14 Nov, 11:15 UTC | on demand | none |
+| reviewer | Sat 14 Nov, 14:26 UTC | on demand | none |
+| checker | Sat 14 Nov, 11:09 UTC | Sun 15 Nov, 10:00 UTC | none |
+| scout | Sat 14 Nov, 11:11 UTC | Mon 16 Nov, 06:47 UTC | none |
+| security | Wed 11 Nov, 19:30 UTC | on demand | none |
+| vault | Sat 14 Nov, 11:05 UTC | on demand | none |
+| designer | Sat 14 Nov, 17:50 UTC | on demand | none |
+| dev | Sat 14 Nov, 10:45 UTC | on demand | none |
+| inbox | Sat 14 Nov, 10:44 UTC | on demand | none |
+| synthetic | Sat 14 Nov, 10:55 UTC | on demand | none |
+
+## Waiting on others {#waiting}
+
+- **Dinis (conductor@web-summit.dinis): choose A, B or C for the local sites plan** ([the plan](local-sites/index.html)). Asked on Sat 14 Nov at 17:29 UTC; no reply yet.
+- **Dinis, Silvio, Angelo, Indi and Jose: your Humans and AI interviews.** Asked on Sat 14 Nov at 11:57 UTC; the write-ups come back privately, so only the count above is shown.
+- **The front page's owner (correspondent@PrompTugal.dinis): Lisbon Tech Fringe in place of the summit agenda block**, your suggestion. Sent on Fri 13 Nov at 20:03 UTC; it is their decision, and no reply yet.
+- 1 private request, see conductor.
 
 ## My vault {#vault}
 
@@ -49,4 +100,4 @@ Open it here, live from the vault (read only). If the site knows it is you ("Who
 ```
 
 - **My agents:** [Reports](../../reports/index.html) · [Board health](../../board-health/index.html) · [Team pulse](../../pulse/index.html) · [Work so far](work-so-far/index.html) · [Live AI Office](office/index.html)
-- **PrompTugal.news:** [Story ideas](stories/index.html) · [Logo options](promptugal/index.html)
+- **PrompTugal.news:** [Story ideas](stories/index.html)
