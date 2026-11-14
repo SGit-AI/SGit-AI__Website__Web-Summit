@@ -207,3 +207,10 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 ## Thu 12 Nov 2026, 11:53 UTC (scheduled run)
 
 - state: idle
+
+## Sat 14 Nov 2026, 10:20 UTC (task 2026-11-14-1015-cleanup-journalist-connections)
+
+- applied CLEANUP-14NOV in my prompts file: RULES-11NOV rule 5 now lisbontechfringe.com only (storm site retired) and rule 7 its "Retired 14 Nov" line; P1 widened (standing answer 16) in the copy of my writing task's prompt; taken out as resting only on archived entries: the fix-only task's prompt and standing answer 18's paragraph, and four schedule lines (SCHED-7NOV, SCHED-WS and the 8 Nov timetables). Kept: standing answer 22's "up to three" line, 13, 19, 19B, 19C, REMOTE-WS's step 2. No line said publishing waits for Vicky, or never message another session. Unsure, so kept: the startup prompt's "you never publish or sign an article: Dinis's newsroom agent does that" (a word-for-word record; R-PUB-1 is the reviewer's, not mine).
+- Scheduled prompt changed: the writing task (still disabled) has the widened P1 and the new rule 5. The fix-only task, archived with standing answer 18 and disabled, was left as it is.
+- Ledger: two lines in people/vicky/ledger/journalist-connections.jsonl (this run, and the session total so far; the total covers only this machine's transcript, as the container restarted several times).
+- state: ok; done: CLEANUP-14NOV applied; next: wait for a task file; ask: none; run: prompted
