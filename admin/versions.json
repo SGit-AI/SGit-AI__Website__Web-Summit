@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2128",
+    "date": "2026-11-14",
+    "what": "programme@PrompTugal.vicky: hand-over note; I stop using the interview shortlist vault",
+    "by": "programme@PrompTugal.vicky",
+    "from": "6fe9d008b"
+  },
+  {
     "version": "v0.2.2127",
     "date": "2026-11-14",
     "what": "standing answer 64: shorter prompts files (a pointer to decisions.md in place of copied rules), after the three role changes; update PROMPTS-SHORT; the role-change messages follow the pattern",
