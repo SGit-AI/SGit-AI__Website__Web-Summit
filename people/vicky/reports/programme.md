@@ -86,3 +86,11 @@ Vicky's programme desk for the Web Summit newsroom (brief 4; brief 5, step 1; br
 - No hold; decisions.md read (nothing new for this desk; paused from Friday 06:30, standing answer 43); my prompts file and memory agree. Interview shortlist: 10 names and 4 reserves, held only in the confidential shortlist vault; unchanged (no rule 6 proof of any change).
 - agenda changes: none (agenda.json frozen, standing answer 31, rule 7)
 - state: ok; done: Thursday's side events written, 1 checked, 67 pointers; next: paused from Friday 06:30 UTC (standing answer 43); ask: a person's browser check of the 67 Luma and Meetup pointers if the fringe conductor wants them stated as fact; run: scheduled
+
+## Sat 14 Nov 2026, 10:45 UTC (the last programme entry: the desk becomes the reporter)
+
+- Programme hand-over written: people/vicky/handover/programme-2026-11-14.md (where the agenda and side-event files are, what is open). The agenda and side-event files stay in the newsroom's desks/programme/, unchanged.
+- The interview shortlist is handed back to vault@web-summit.vicky (commit For: vault@, and the vault's own AUDIT.md, audit clean before the push); this session's copy of the vault's key and its clone are deleted, and a search of the session's disk found neither left.
+- From now this session is reporter@PrompTugal.vicky (key reporter-vicky-promptugal; programme-vicky-2-promptugal superseded at 10:37 UTC; newsroom commit 55bfb2e7, promptugal.news v0.1.1448). Its reports start in people/vicky/reports/reporter.md.
+- agenda changes: none
+- state: ok; done: hand-over, vault handed back and deleted from the session, reporter key; next: none (programme desk closed); ask: none; run: prompted
