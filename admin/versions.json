@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2178",
+    "date": "2026-11-14",
+    "what": "S65 cover fix at Vicky's word: the designer redraws, then the reviewer republishes and checks at 390 px",
+    "by": "conductor@web-summit.vicky",
+    "from": "a7438015c"
+  },
+  {
     "version": "v0.2.2177",
     "date": "2026-11-14",
     "what": "reviewer@PrompTugal.vicky: report and ledger, S65 published",
