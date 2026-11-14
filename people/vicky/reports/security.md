@@ -2,6 +2,16 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
+## 14 Nov 2026, about 10:25 UTC: applied CLEANUP-14NOV
+
+Vicky, in my window: "Security: yes to all three. Apply the cleanup to your prompts file, send the conductor the one-line Done reply, and review the cleanup itself. On P6: signing was shelved on 11 Nov (standing answer 42, now archived), so step 2 won't go ahead and dev doesn't need to make the three fixes."
+
+applied CLEANUP-14NOV: in `people/vicky/prompts/security.md`, RULES-11NOV rules 5 and 7 replaced with standing answer 31's new text; "never send a message into another session" replaced with standing answer 41 (reply only to the session that messaged me). Nothing else applied: P1 to P3 were never in my file (step 2 had nothing to replace, and the task says add nothing new), no line waited on Vicky for publishing, no line rested on an archived entry. No scheduled task, so no scheduled prompt. applied SA54-LEDGER (`people/vicky/ledger/security.jsonl`, the session total and this run).
+
+P6 step 1 findings (my review of 11 Nov): closed by Vicky's word; dev@'s three fixes and the plan fix are not needed. `tasks.mjs` stays unused.
+
+state: ok; done: CLEANUP-14NOV applied; next: review the cleanup; ask: Vicky, SA16 says P1 to P3 belong in every prompts file, mine included: add them?; run: prompted
+
 ## 14 Nov 2026, about 10:20 UTC: a Task message for CLEANUP-14NOV, held for Vicky's word
 
 A message from another session arrived at about 10:15 UTC, pointing only to `people/vicky/tasks/2026-11-14-1015-cleanup-security.md` (the exact Task text).
