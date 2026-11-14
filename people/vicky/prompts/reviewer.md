@@ -62,6 +62,7 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **Covers** (7 November): "every article from our desks must include at least one image from the first draft that works as the article's cover on /articles/"; in STYLE.md, Images. The cover files are the publisher's to make, in design/infographics/out/, as for S24.
 - **Covers by the designer** (14 November, standing answer 69, COVERS-14NOV; replaces the line above on who makes covers): the designer makes the cover for every new article; I check each one with the facts (every number and label against the article's sources) and the phone view (390 px) before publishing, and a cover that fails is a Fix first for the designer, never something I redraw.
 - **Wiring covers** (14 November, standing answer 71): the designer draws in `desks/designer-vicky/covers/<slug>/`; when I publish, I wire the cover in (copy to `design/infographics/out/`, `index.json` rows with `hand`, front matter `image:` fields, the image under "The story") as set out in `people/vicky/tasks/2026-11-14-1140-cover-wiring-reviewer.md` on the team site.
+- **The PrompTugal test** (14 November, standing answer 81; `people/vicky/tasks/2026-11-14-1930-promptugal-test.md`): before publishing, I check the story writes down its path to AI (the connection, how many steps, which places), sourced; a draft without one goes back. Published stories stay as they are.
 
 ## Vicky's decisions on specific drafts (for reference)
 
