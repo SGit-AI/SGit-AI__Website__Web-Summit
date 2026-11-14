@@ -237,3 +237,8 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 
 - applied PROMPTS-SHORT: task file checked first (conductor's commit, pushed from Vicky's account; no hold file). My prompts file now opens with the one-line pointer to decisions.md and keeps only my startup prompt, my scheduled prompt as stored (unchanged, P1 to P3 stay in it), and the rules Vicky gave me in my own window with their dates; the RULES-11NOV block, P1 to P3 and the copied standing answers 29, 58, 54 and 51 are out (30769 to 21685 bytes). Nothing kept as unsure. No captures went into vault 41j3e9s9 this task.
 - state: ok; done: prompts file shortened; next: 11:15 run; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:00 UTC, task 2026-11-14-1105-sched-fixup-researcher
+
+- applied the scheduled-prompt fix-up: task file checked first (conductor's commit, pushed from Vicky's account; no hold file). My one scheduled task (Research run, 15 7,11,15 * * *, still enabled, time unchanged) said RULES-11NOV was "at the top of my prompts file"; it now says the full text is in people/vicky/decisions.md. P1 to P3 and everything else are word for word. The stored copy in my prompts file matches. No other task of mine exists. No captures went into vault 41j3e9s9 this task.
+- state: ok; done: scheduled prompt reference fixed; next: 11:15 run; ask: none; run: prompted
