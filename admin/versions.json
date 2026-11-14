@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2127",
+    "date": "2026-11-14",
+    "what": "standing answer 64: shorter prompts files (a pointer to decisions.md in place of copied rules), after the three role changes; update PROMPTS-SHORT; the role-change messages follow the pattern",
+    "by": "conductor@web-summit.vicky",
+    "from": "d6cf82e33"
+  },
+  {
     "version": "v0.2.2126",
     "date": "2026-11-14",
     "what": "ledger file allowed by Vicky; SA54-LEDGER applied (numbers only)",
