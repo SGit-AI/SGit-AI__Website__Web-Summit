@@ -131,15 +131,13 @@ async function zipMember(zb,name){ const dv=new DataView(zb.buffer,zb.byteOffset
     p+=46+fl+xl+cl }
   throw new Error('not in pack: '+name) }
 async function readChildFile(vault,path){
-  const viaLink='vaults/'+vault+'/'+path;
-  if(inVault()&&!S.master){ try{ return await readBytes(viaLink) }catch(e){} }
+  if(inVault()&&!S.master){ for(const via of [vault+'/'+path,'vaults/'+vault+'/'+path]){ try{ return await readBytes(via) }catch(e){} } }   // <vault>.link.json mounts the child read-only at /<vault>/ (vault in vault)
   if(!S.childReaders[vault]){ const k=await readJSON('keys/'+vault+'.json'); S.childReaders[vault]=openByKey(k) }
   const R=await S.childReaders[vault]; return R.readBytes(path) }
 async function readChild(vault,path,s){
   const pm=s&&s.pack_map&&s.pack_map[path.split('/').pop()];
   if(pm){ S.packs=S.packs||{}; const key=vault+'/'+pm[0]; if(!S.packs[key]) S.packs[key]=readChildFile(vault,pm[0]).then(toBytes); return gunzip(await zipMember(await S.packs[key],pm[1])) }
-  const viaLink='vaults/'+vault+'/'+path;
-  if(inVault()&&!S.master){ try{ return await gunzip(await readBytes(viaLink)) }catch(e){} }
+  if(inVault()&&!S.master){ for(const via of [vault+'/'+path,'vaults/'+vault+'/'+path]){ try{ return await gunzip(await readBytes(via)) }catch(e){} } }
   if(!S.childReaders[vault]){ const k=await readJSON('keys/'+vault+'.json'); S.childReaders[vault]=openByKey(k) }
   const R=await S.childReaders[vault]; return gunzip(await R.readBytes(path));
 }

@@ -33,7 +33,7 @@ You are archiving every Claude Code session on my account into encrypted sgit va
 
 Set these for every command: export ARCHIVE=~/session-archive VAULTS=~/vaults AGENT="archive@web-summit.<my name>" OWNER="<my full name>".
 
-Follow Part 3 of START.md step by step. Stop and ask me only at step 2 (the grouping) and whenever safeguards stop a helper (tell me which session, and go on). Never print a vault key or token. At the end, tell me how many sessions are in each vault, which were left out, and give me the master link in a way that does not show it in the chat (write it to a file I can open, and tell me the path).
+Follow Part 3 of START.md step by step, starting with step 0 (your master vault was pre-created for you by Dinis; its key reaches you sealed, never in this chat). Stop and ask me only at step 2 (the grouping) and whenever safeguards stop a helper (tell me which session, and go on). Never print a vault key or token. At the end, tell me how many sessions are in each vault, which were left out, and give me the master link in a way that does not show it in the chat (write it to a file I can open, and tell me the path).
 ```
 
 ---
@@ -49,6 +49,13 @@ Follow Part 3 of START.md step by step. Stop and ask me only at step 2 (the grou
 - **Helpers:** at most 4 at a time, on Opus, **one batch each (3 sessions or fewer)**. Give each helper the export prompt (step 3) and nothing else.
 - **When safeguards stop a helper:** tell your person, quoting the message and request ID. Run `finish_batch.sh` to build what was already complete. Leave out the session that was mid-fetch: record it in `skipped.json` with how many pages were stored. Requeue the untouched sessions in a new batch. Do not fetch the stopped session yourself.
 
+### 0. Get your pre-created master vault (its key never enters the chat)
+Dinis made a master vault for each team member on 14 November (`<id>-sessions-master`, with the explorer installed and an empty catalogue). Its key comes to you sealed to your own agent key:
+1. Make your session key and link it to the operator: `node pki-agent.mjs keygen --session --name "$AGENT"` then `node pki-agent.mjs operator sha256:db7f79fdd87e030a` and `node pki-agent.mjs submit` (tool: https://pki.sgit.ai/agents/pki-agent.mjs). Tell your person your fingerprint (`whoami`) and ask them to send it to Dinis.
+2. Dinis (or his conductor) seals your vault key to that fingerprint and sends the sealed QR or link to your person, who gives it to you (a sealed blob is safe to paste: only your key opens it).
+3. Open it to a file and clone, never printing the key: `node pki-agent.mjs open <qr.png|link> --save ~/.sg-send/archive-key` then `mkdir -p $VAULTS && cat <the saved file> | sgit clone - $VAULTS/sessions-master` (the `-` reads the key from stdin, out of argv).
+If you have no pre-created vault (you are not on the team), create one in step 2 instead.
+
 ### 1. List every session
 - Page `list_sessions` (limit 100, `after_id` = the previous page's `last_id`) until `has_more` is false. Each page is saved to a file; copy each file to `sessions/pages/p<NN>.txt`.
 - Then run `python3 -I sessions/build_list.py sessions`. This writes `sessions/all.jsonl`, one line per session.
@@ -59,7 +66,7 @@ Follow Part 3 of START.md step by step. Stop and ask me only at step 2 (the grou
 - Run `python3 -I tools/plan.py`. It writes `sessions/groups.json`, `vaults.json` and the catalogue files, and cuts `batches/b-NNN` (3 sessions each).
 - Create the vaults (not pushed yet):
   `mkdir -p $VAULTS && cd $VAULTS && sgit create <vault> --base-url https://dev.send.sgraph.ai --no-push`
-  Do this once per vault, and once for `sessions-master`.
+  Do this once per vault (and once for `sessions-master` only if you skipped step 0).
 
 ### 3. Export (helpers)
 For each batch, start a background helper (Opus) with this prompt:
