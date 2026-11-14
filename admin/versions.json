@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2125",
+    "date": "2026-11-14",
+    "what": "newsroom hold file read read-only for the hold check, at Vicky's word",
+    "by": "inbox@web-summit.vicky",
+    "from": "d7c21b7cf"
+  },
+  {
     "version": "v0.2.2124",
     "date": "2026-11-14",
     "what": "correct the times in my cleanup review and report (by the clock: about 10:25 UTC)",
