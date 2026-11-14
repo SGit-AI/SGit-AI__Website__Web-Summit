@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2150",
+    "date": "2026-11-14",
+    "what": "interview prompt and page: a fallback when Claude cannot create a file (Vicky, 14 Nov)",
+    "by": "conductor@web-summit.vicky",
+    "from": "646e82df2"
+  },
+  {
     "version": "v0.2.2149",
     "date": "2026-11-14",
     "what": "interview page: a new Claude chat, a file to download at the end, then send it privately or seal it through your conductor (standing answer 72)",
