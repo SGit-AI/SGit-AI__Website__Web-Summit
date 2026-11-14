@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2154",
+    "date": "2026-11-14",
+    "what": "12:30 wake: two asks for Jose (Dinis's session archive, Vicky's interview) as pointers while his conductor is off",
+    "by": "dashboard@web-summit.jose",
+    "from": "4a80b7289"
+  },
+  {
     "version": "v0.2.2153",
     "date": "2026-11-14",
     "what": "12:15 run, c8a239e..b8a8b01; A-28 and A-29 still open; Dinis's session-archive ask",
