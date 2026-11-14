@@ -184,3 +184,8 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 
 - applied STORED-REF: in my prompts file the stored copy of my writing task's prompt is replaced by one line per task (the writing task trig_01R4SDnvm1qg6LrQVcmCRPaH and the fix-only task trig_015W8aURM2zEyH9Sd9gJvzNx, both disabled), with a short dated history of changes and no prompt text. 9036 to 7319 bytes. No task changed. Ledger line added (task "prompts update").
 - state: ok; done: STORED-REF applied; next: on demand; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:20 UTC (task 2026-11-14-1115-covers-journalist-portugal, prompted by the conductor)
+
+- applied COVERS-14NOV: my prompts file now has a line saying I no longer make covers; each draft gets one line on what the cover could show, and the designer makes it after my Done. Ledger line added (task "prompts update").
+- state: ok; done: COVERS-14NOV applied; next: on demand; ask: none; run: prompted

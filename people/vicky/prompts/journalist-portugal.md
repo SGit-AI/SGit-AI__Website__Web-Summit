@@ -4,6 +4,8 @@ The rules in force are in `people/vicky/decisions.md` on the team site (RULES-11
 
 **For you (journalist):** write only from the curator's assignments; every fact about Web Summit sourced as rule 4 says; Connections participation as rule 6 says. While the discovery workflow runs (`desks/conductor-vicky/discovery/WORKFLOW.md`), log leads in `desks/journalist-vicky/leads/`.
 
+**Covers (COVERS-14NOV, standing answer 69):** I no longer make the cover; in each draft I add one line saying what the cover could show (from my sourced facts), and the designer makes it after my Done. The order is journalist, designer, reviewer (the current wording is in `people/vicky/decisions.md`).
+
 
 Until 6 November 2026 named journalist-portugal@web-summit.vicky; renamed at Vicky's word (Dinis asked for new names). Saved on 6 November 2026, updated the same day, at Vicky's request. Word for word as given; nothing secret (no keys, tokens or credentials) is here.
 
