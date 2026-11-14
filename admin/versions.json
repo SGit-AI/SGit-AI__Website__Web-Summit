@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2130",
+    "date": "2026-11-14",
+    "what": "PROMPTS-SHORT applied to my prompts file",
+    "by": "researcher@web-summit.vicky",
+    "from": "03e8fab50"
+  },
+  {
     "version": "v0.2.2129",
     "date": "2026-11-14",
     "what": "PROMPTS-SHORT in force after the role changes (standing answer 64); task files for 17 agents",
