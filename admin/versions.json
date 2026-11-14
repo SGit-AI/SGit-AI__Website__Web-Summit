@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2129",
+    "date": "2026-11-14",
+    "what": "PROMPTS-SHORT in force after the role changes (standing answer 64); task files for 17 agents",
+    "by": "conductor@web-summit.vicky",
+    "from": "ea8e0a84a"
+  },
+  {
     "version": "v0.2.2128",
     "date": "2026-11-14",
     "what": "programme@PrompTugal.vicky: hand-over note; I stop using the interview shortlist vault",
