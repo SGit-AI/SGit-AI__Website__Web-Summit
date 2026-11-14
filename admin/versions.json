@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2174",
+    "date": "2026-11-14",
+    "what": "S65 cover task for the designer",
+    "by": "conductor@web-summit.vicky",
+    "from": "c5fbd47e3"
+  },
+  {
     "version": "v0.2.2173",
     "date": "2026-11-14",
     "what": "local sites for PrompTugal.news: a plan page and a request to Dinis to choose an option",
