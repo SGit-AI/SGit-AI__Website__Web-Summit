@@ -44,7 +44,7 @@ export function sinceMd(C, id, up) {
 
 export function buildMeetings({ ROOT, C, PEOPLE, ISSUES, write, page, render, twin, pages }) {
     const today = NOW().toISOString().slice(0, 10), nx = C.next()
-    const show = C.all.filter(s => s.day >= today && s.day <= new Date(NOW().getTime() + 2 * 864e5).toISOString().slice(0, 10) || C.items(s.id).length)
+    const show = C.all.filter(s => s.day >= today && s.day <= new Date(NOW().getTime() + 2 * 864e5).toISOString().slice(0, 10) || C.items(s.id).length || s.id === nx.id)
     const itemMd = (x, up = '../../') => `- **${x.title}**${x.carried ? ` *(carried over from ${x.meeting})*` : ''}. For: ${(x.for || ['everyone']).join(', ')}. Added by ${x.by}.${x.detail ? ` ${x.detail}` : ''}${x.options ? ` Options: ${x.options.map((o, i) => `(${i + 1}) ${o}`).join('; ')}.` : ''}${x.recommend ? ` *Recommended:* ${x.recommend}` : ''}${x.issue ? ` [${x.issue}](${up}briefs/index.html#issues)` : ''}${x.status === 'decided' ? ` **Decided** by ${x.decided.by}: "${x.decided.said}" (${when(x.decided.at)})` : ''}`
     const agendaMd = (list, up = '../../') => TYPES.map(([k, h]) => { const xs = list.filter(x => x.type === k); return xs.length ? `### ${h}\n\n${xs.map(x => itemMd(x, up)).join('\n')}` : '' }).filter(Boolean).join('\n\n') || 'Nothing on the agenda yet. Add an item: `node admin/tools/agenda.mjs add --meeting ' + nx.id + ' --by <you> --type decision --title "..."`.'
     const rows = show.map(s => { const a = C.agenda(s.id); return `| [${s.day} ${s.time}](${s.id}/index.html)${s.id === nx.id ? ' **next**' : ''} | ${TYPES.map(([k]) => a.filter(x => x.type === k && x.status === 'open').length).join(' · ')} | ${a.filter(x => x.status === 'decided').length} |` })
