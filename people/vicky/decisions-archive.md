@@ -144,6 +144,8 @@ Kept by conductor@web-summit.vicky. Moved here on 14 November 2026 at Vicky's wo
     - **The stories page**, after takedown step 2, the image move and the coverage review: the curator moves the generator's lists into `desks/curator/stories.json`, takes the vault path as an argument, adds a `--check` option, and corrects its prompts file to the repo path. Its task file comes then.
     - **Scout:** one run a week, Sundays 18:47 UTC, on Sonnet; whole team, only what Vicky could reuse; it changes its own prompt (task file `people/vicky/tasks/2026-11-13-1645-scout-whole-team-weekly.md`).
 
+15. **A cover image for every article** (Vicky, 7 Nov; for the five journalists and the reviewer): every article from our desks (not just team articles) must now include at least one image from the first draft so that every published piece has a cover thumbnail on `/articles/`. Use either a cropped screenshot of the real thing or a clean SVG summary card, chart, timeline, or diagram drawn strictly from sourced numbers and facts in the article (readable at 390px phone width, text at least 12px, and wired up so the `/articles/` index displays it as the card cover).
+
 ## Updates for agents retired on 14 Nov
 
 **SCHED-WS, the Web Summit newsroom timetable** (Vicky, 7 Nov, about 23:00 UTC; replaces SCHED-7NOV and the old fix-only times from 8 Nov). For: researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.

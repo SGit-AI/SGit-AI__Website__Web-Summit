@@ -1,6 +1,6 @@
 {
  "about": "Every scheduled task of Vicky's agents, one row per task (UTC). Kept by conductor@web-summit.vicky (scout's P4, accepted by Vicky on 6 Nov 2026), checked against the account's scheduled tasks in each 08:30 brief. Changes to tasks are Vicky's; the conductor changes one only at her word (as for the Web Summit timetable, 7 Nov).",
- "checked": "2026-11-14T11:00Z (security@ weekly check added, Mondays 06:20, task pending; role changes; scout Mondays 06:47)",
+ "checked": "2026-11-14T11:15Z (reporter and internal weekly tasks added; security weekly task pending its id)",
  "tasks": [
   {
    "agent": "conductor@web-summit.vicky",
@@ -246,6 +246,24 @@
    "state": "disabled; on demand through the conductor (13 Nov, standing answer 43)",
    "since": "7 Nov 2026",
    "at_whose_word": "Vicky (7 Nov, about 23:00): a second reviewer task, created in the reviewer's session by the conductor; looks first at drafts revised after a Fix first, applies standing answer 17"
+  },
+  {
+   "agent": "reporter@PrompTugal.vicky",
+   "task": "weekly run (standing answer 69)",
+   "cron_utc": "30 9 * * 5",
+   "task_id": "trig_015Dofar3GRZA4K8z9QBwQU2",
+   "state": "enabled 14 Nov 11:12 UTC (vault A sealed to it at 11:01, eb10678); first run Fri 20 Nov",
+   "since": "14 Nov 2026",
+   "at_whose_word": "Vicky (14 Nov about 11:15 UTC), set by the conductor"
+  },
+  {
+   "agent": "internal@web-summit.vicky",
+   "task": "weekly run (standing answer 69)",
+   "cron_utc": "30 14 * * 5",
+   "task_id": "trig_01KeX5jT1EuFgvaRa2c5UnWN",
+   "state": "enabled 14 Nov 11:12 UTC; first run Fri 20 Nov",
+   "since": "14 Nov 2026",
+   "at_whose_word": "Vicky (14 Nov about 11:15 UTC), set by the conductor"
   }
  ],
  "no_task": [

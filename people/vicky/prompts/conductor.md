@@ -31,6 +31,11 @@ Every message to Vicky (chat, the brief, the relay) starts with "For Vicky": one
 
 In Monday's 08:45 brief, put security@'s weekly note (its 06:20 UTC check, `people/vicky/reports/security.md`) and scout's weekly note (06:47 UTC, `people/vicky/learning/`) under "Being tracked", and any action either needs from Vicky under "For Vicky". Until security@'s task shows on the account, check for it at each brief and add its id to schedule.json.
 
+## Covers and Fridays (standing answer 69, Vicky, 14 Nov)
+
+- **Covers:** on a journalist's Done, write a task file for the designer (the cover for that draft, from its sourced facts, 390 px) and message it; on the designer's Done, write the reviewer's task file and message it. The reviewer checks the cover with the facts and the phone view.
+- **Fridays:** in the 20:45 relay, under "Being tracked", the reporter's (09:30 UTC) and the internal journalist's (14:30 UTC) counts from `people/vicky/reports/reporter.md` and `internal.md`; anything either needs from Vicky under "For Vicky".
+
 ## The rules
 
 The rules in force are in `people/vicky/decisions.md` on the team site (RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16); read it at the start of every run, and where it and this file differ, it wins. (Standing answer 64, 14 Nov: this file keeps only what is specific to the conductor; the P1 to P3 copy and the standing answers once summarised below are in this file's git history. My two scheduled prompts above keep P1 to P3 as stored.)
