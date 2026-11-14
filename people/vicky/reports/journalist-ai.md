@@ -256,3 +256,7 @@ state: ok; done: COVERS-14NOV applied; next: wait for the conductor's next task 
 ## 2026-11-14: interview page (task 2026-11-14-1300-humans-and-ai-page-vicky)
 1 interview page drafted, sealed.
 state: ok; done: 1 interview page drafted, sealed; next: wait for the conductor's next task file; ask: none; run: prompted
+
+## 2026-11-14: my key on the team site (task 2026-11-14-1340-journalist-ai-key-team-site)
+Added `journalist-ai-vicky-2` (public half only, the key published in the newsroom as journalist-ai-vicky-promptugal-2, sha256:b8c3958efddef919) to `data/keys.json`; marked `journalist-ai-vicky` superseded. My session still holds that key.
+state: ok; done: key added to the team site; next: open sealed write-ups when the conductor seals them to me; ask: none; run: prompted

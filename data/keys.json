@@ -1136,6 +1136,24 @@
         "fingerprint": "sha256:96301f62bfbdb04c",
         "signing_fingerprint": "sha256:c173f1bc39a2ab0d"
       },
+      "status": "superseded: replaced by journalist-ai-vicky-2 on 14 November 2026 at 13:40 UTC, at Vicky's word (standing answer 74); the old session key is no longer used"
+    },
+    {
+      "id": "journalist-ai-vicky-2",
+      "agent": "journalist-ai@PrompTugal.vicky",
+      "label": "journalist-ai@PrompTugal.vicky (Claude Code session)",
+      "role": "Vicky Wang's AI and robotics journalist for PrompTugal.news (journalist-ai@PrompTugal.vicky): drafts articles and, from 14 November 2026, the team interview pages, which are sealed to the conductor and never put in the public repository. Never publishes or signs an article. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session (pki-agent.mjs keygen --session) and first published in the newsroom's board/keys.json as journalist-ai-vicky-promptugal-2 on 11 November 2026; added here by the same session on 14 November 2026, at Vicky's word (standing answer 74), so the conductor can seal write-ups to it. The push is the authorisation. Public halves only.",
+      "added": "2026-11-14",
+      "replaces": "journalist-ai-vicky",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAv0WUzXwB0sQOTStAks+t\nsnpA9Q0fTzA8NKhpTZZiCfYFWuk6Qa3hQID3279gLs/8BL34aQQB4C2/v3SLtHgc\nHDN2JdNRrtTR7MPUy3dyouaVE+Y5J0b637wL+v3/Mg8wBMiV5yaB2eGejgLXomd0\ncosesJ0Ofpu56dhj1MalniEje9K10cPqn5cecBKIjmHrkYafaDJbm/r3SOET1iTt\nDTbRjGb7CNmaRocTpdeOet0+DycIrCbN42Iwtgk8Z4yqBgg1UQXESh/uD/H64ffI\nRnRgIwQTYsa7CV+R5TgB8tP5TXuLwd/C0Spj+SeD2wiy/XggvWDf0EYIdLIU2XxQ\neSw/t9NaPR7QtxV1bgRjw2Ro9Xs0+AOZIDAMIN4lboeOCwp072UuLlQ5MKMOeF9I\nMebY9q2yqVwiMRyv7xV7oBMJM1cPkh10IQ85GYdmmZMSw5w8FP5eMzSQ/cfNuJXN\n4Xq2UEleH4ZY7mQpkb/h/FFhWdhntN9M8aE+ehEcXWiAwC8g5FKpXBlAUwDRSEyy\npW3EaUmZMV1U0Hvhmg1u9leQHvrGsfzc9i4dmhmUi+vP0sR66mXGAOVzYqQLuavz\nLd08N594rcmqd2HQxnzPo/catfRS1o7jkyy53qMS0r9aeM+xPauqB/4OGZJ+yfpo\nC+KKPcOpk9KkLwFupkHfcBECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEu8pi8BxzF/977LiCfiMCtTVIlYtW\nY/h5rQ3UO58KC3PNmpZhQyF1HtnMk2qhNX0kn2MTDu8xM3O1ASbeEdK4MA==\n-----END PUBLIC KEY-----\n",
+        "label": "journalist-ai@PrompTugal.vicky (Claude Code session)",
+        "fingerprint": "sha256:b8c3958efddef919",
+        "signing_fingerprint": "sha256:d4da9c136ca67397"
+      },
       "status": "active"
     },
     {
