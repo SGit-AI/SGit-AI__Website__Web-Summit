@@ -329,3 +329,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 
 - applied STORED-REF: the full copy of my scheduled task's prompt in `people/vicky/prompts/curator.md` is replaced by one reference line (task `trig_01QqwpxE9hhp5rwuxSS9D9ZF`, `35 7,11,15 * * *`, enabled) and a dates-only history; the file went from 39,164 to 23,694 bytes. No task prompt, state or time changed.
 - state: ok; done: stored prompt copy replaced; next: curator 11:35 and 15:35; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:35 UTC run
+
+- No hold on either site; decisions.md re-read to standing answer 71 (nothing new for the curator; the Humans and AI team piece is not commissioned until Vicky says); prompts file re-read, no difference. Applied tasks: all earlier ones stand, no machine reads of Web Summit, Luma, Meetup or Eventbrite.
+- Commissioned S64 for journalist-portugal (categories Portugal and AI, theme 2, the map of AI in Portugal): the government's own item on its [National AI Agenda](https://digital.gov.pt/en/noticias/publicada-a-agenda-nacional-de-ia-ania-portugal-reforca-compromisso-com-ia-responsavel-e-competitiva) and INESC-ID's own account of [AMALIA, the first language model for European Portuguese](https://www.inesc-id.pt/amalia-was-officially-launched-and-is-now-ready-for-open-use/); the two are not linked in the sources and the assignment says so. Map `desks/curator/2026-11-14-1150.json`; newsroom commit 032c0e32d, live in promptugal.news v0.1.1449. S62 and S63 are the Humans and AI pieces, so my ids continue from S64.
+- Gaps for the researcher: AMALIA's own pages and an official funding or consortium source; the ANIA documents; more companies and labs for theme 2.
+- state: ok; done: S64 commissioned, README and map released; next: curator 15:35; ask: none; run: scheduled
