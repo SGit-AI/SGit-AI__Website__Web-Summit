@@ -225,3 +225,8 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 
 - Scheduled-prompt fix-up done: both my tasks' prompts (trig_01RqSqjPAC6WuwNmTbjKFzwa, writing; trig_014fa4xbTLFyrXdfF4pzv8KD, fix-only) said the rules were "at the top of" my prompts file; both now point to people/vicky/decisions.md (RULES-11NOV standing answer 31, P1 to P3 standing answer 16). Everything else word for word; both stay disabled, times unchanged. The stored copy of the writing prompt in my prompts file now matches the live task; the fix-only prompt has no stored copy there (removed under CLEANUP-14NOV, as standing answer 18 is archived).
 - state: ok; done: scheduled prompts fixed up; next: wait for a task file; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:10 UTC (task 2026-11-14-1110-stored-ref-journalist-connections)
+
+- applied STORED-REF: the stored copy of my writing task's prompt (and its two change notes quoting old prompt text) is now one reference line per task (trig_01RqSqjPAC6WuwNmTbjKFzwa and trig_014fa4xbTLFyrXdfF4pzv8KD, both disabled), with a short history of dates, ids and times and no prompt text. No task's prompt, state or time changed. 11,914 to 7,742 bytes.
+- state: ok; done: STORED-REF applied; next: wait for a task file; ask: none; run: prompted

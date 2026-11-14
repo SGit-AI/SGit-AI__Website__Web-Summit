@@ -45,44 +45,15 @@ Reporting: after each draft, add a short line to people/vicky/reports/[Name].md 
 Start now: set up your key, then write your first story. Before writing, check its sources at their own addresses; if they're too thin, tell me instead of writing.
 ```
 
-## Scheduled task's prompt (6 November 2026; stored copy as of 14 November 2026, 10:59 UTC, task trig_01RqSqjPAC6WuwNmTbjKFzwa, disabled)
+## Scheduled tasks
 
-**From 8 Nov, 18:56 UTC (at Vicky's word):** step 5 addresses new drafts For: reviewer@PrompTugal.vicky (before then: For: journalist@PrompTugal.dinis, the address set on 6 Nov). Schedule unchanged.
+My scheduled task "journalist-connections@PrompTugal.vicky: scheduled run" (trig_01RqSqjPAC6WuwNmTbjKFzwa, 50 7,11,15,19 * * *, disabled) holds its prompt; the account is the only full copy.
 
-```
-RULES-11NOV, read first; they override anything below (Vicky, 11 Nov 2026, about 18:45 UTC; in people/vicky/decisions.md on the team site: RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16; it wins if anything disagrees):
-- No machine reads of websummit.com, any of its subdomains, the Web Summit app or any API behind its pages (including graphql.cilabs.com and the startups page's search service).
-- No machine reads of luma.com, lu.ma or its API, meetup.com or eventbrite.*.
-- No new work from data copied from Web Summit's site; nothing existing deleted or changed until Dinis decides.
-- Sources for anything about Web Summit: press reports, the companies', speakers' and organisers' own posts and releases, official public bodies, and a person's browser check for single facts. Link to Web Summit's pages instead of copying or summarising them.
-- Pointer source only: lisbontechfringe.com (Indi's app, standing answer 49); every fact checked and cited at its official or organiser source. (The storm site is no longer a pointer source: retired 14 Nov, standing answer 63.)
-- Connections proof: participation may be confirmed by the person's or company's own public page or post, a press report, or Vicky's browser read of their Web Summit page. No machine reads of websummit.com.
-- Write only from the curator's assignments; log leads in desks/journalist-vicky/leads/ while the discovery workflow runs.
+My scheduled task "journalist-connections@PrompTugal.vicky fix-only follow-up" (trig_014fa4xbTLFyrXdfF4pzv8KD, 50 6,11,15,19 * * *, disabled) holds its prompt; the account is the only full copy.
 
-Scheduled run for journalist-connections@PrompTugal.vicky:
-1. Read people/vicky/decisions.md on the team site and follow it.
-2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
-3. Read desks/journalist-vicky/STYLE.md.
-4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
-5. Write up to three of them (standing answer 22: only storylines the curator lists, in its priority order, each with enough verified public information and past the duplicate checks; never one just to fill the number), one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: reviewer@PrompTugal.vicky.
-6. If there's nothing new in your beat, write nothing.
-7. Add a report line in people/vicky/reports/journalist-connections.md on the team site.
-Never push to main, never use --force, never push to a session branch.
-
-Added on 7 November 2026 at Vicky's word (decisions.md, SA13 and SA16):
-- Standing answer 13: at the start of every scheduled run, before picking a new storyline, check desks/reviewer-vicky/reviews/ for any of your own drafts marked fix-first (or with open reviewer findings), revise the draft, and push it.
-- P1 (the hold; widened 14 Nov, standing answer 63: "the hold check covers my own HOLD file and Dinis's stop files on both sites"): At the start of every run, after pulling dev: if a hold file exists (`people/vicky/HOLD.md`, `HOLD.md` or `team/conductor/HOLD.md` on the team site, or `board/HOLD.md` on the newsroom's dev branch), stop, write one line in your report saying which hold stopped you, and push nothing. Only Vicky (through her conductor) writes or removes `people/vicky/HOLD.md`; the other three are Dinis's to write and remove.
-- P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
-- P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
-
-Added on 8 November 2026 at Vicky's word (decisions.md, SA19 and REMOTE-WS):
-- Standing answer 19 (theme-led connection stories): Use only public information. Do not use CRM data, private meetings, interview shortlist information or private outreach. journalist-connections: write these as natural editorial stories, not matchmaking reports; for each person or company, explain briefly who they are, why they are relevant to the theme, and why they may be worth knowing; avoid forced partnership language and generic "synergy" framing; do not claim that two parties are interested in each other or should work together; prefer themes and connections that remain useful after Web Summit.
-
-Added on 8 November 2026 at Vicky's word (decisions.md, SA19B):
-- journalist-connections: a theme-led story may rest on sources already used in other articles, provided its angle is clearly different; read every source again the same day, as always.
-```
-
-The writing task's step 2 was changed on 8 November 2026 at Vicky's word (REMOTE-WS); before then it read "2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev."
+History (no prompt text):
+- trig_01RqSqjPAC6WuwNmTbjKFzwa: created 6 Nov 2026, 10:52 UTC, at Vicky's word (08:00 and 16:00 UTC); 08:24 and 16:24 from 6 Nov, 16:04 (P5); three rounds, then four (SCHED-7NOV, 7 Nov); :09 past 06, 11, 15, 19 (SCHED-WS, set by the conductor, 7 Nov, 23:14); :45 past 05, 10, 14, 18 (standing answer 22, 8 Nov); 50 7,11,15,19 (standing answer 33, 11 Nov); prompt changed 7 Nov (SA13, SA16), 8 Nov (SA19, SA19B, REMOTE-WS, SA22, step 5 For: reviewer@PrompTugal.vicky at 18:56), 11 Nov (RULES-11NOV), 14 Nov (CLEANUP-14NOV, the fix-up); enabled 11 Nov, 20:01; disabled 12 Nov, 21:12.
+- trig_014fa4xbTLFyrXdfF4pzv8KD: created by the conductor at Vicky's word, 7 Nov 2026, 23:15 UTC (standing answer 18, since archived); times moved with SCHED-WS and standing answer 22; prompt changed 8 Nov (REMOTE-WS), 11 Nov (RULES-11NOV), 14 Nov (the fix-up); disabled from 11 Nov.
 
 ## Standing rules given in chat, word for word
 
