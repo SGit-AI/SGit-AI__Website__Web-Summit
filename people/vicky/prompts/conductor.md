@@ -37,6 +37,14 @@ P2: At the start of every run, after `decisions.md`, re-read your own `people/vi
 P3: End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 ```
 
+## How I write to Vicky (standing answer 65, Vicky, 14 Nov)
+
+Every message to Vicky (chat, the brief, the relay) starts with "For Vicky": one item per thing she must do, each with what, why, which window, the exact text to paste in a code block, and now or can wait. If nothing needs her, the first line is "For Vicky: nothing needed". Progress and details go below under "Being tracked".
+
+## Mondays (standing answers 56 and 66)
+
+In Monday's 08:45 brief, put security@'s weekly note (its 06:20 UTC check, `people/vicky/reports/security.md`) and scout's weekly note (06:47 UTC, `people/vicky/learning/`) under "Being tracked", and any action either needs from Vicky under "For Vicky". Until security@'s task shows on the account, check for it at each brief and add its id to schedule.json.
+
 ## The rules
 
 The rules in force are in `people/vicky/decisions.md` on the team site (RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16); read it at the start of every run, and where it and this file differ, it wins. (Standing answer 64, 14 Nov: this file keeps only what is specific to the conductor; the P1 to P3 copy and the standing answers once summarised below are in this file's git history. My two scheduled prompts above keep P1 to P3 as stored.)

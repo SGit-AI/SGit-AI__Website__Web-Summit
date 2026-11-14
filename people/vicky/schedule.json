@@ -1,6 +1,6 @@
 {
  "about": "Every scheduled task of Vicky's agents, one row per task (UTC). Kept by conductor@web-summit.vicky (scout's P4, accepted by Vicky on 6 Nov 2026), checked against the account's scheduled tasks in each 08:30 brief. Changes to tasks are Vicky's; the conductor changes one only at her word (as for the Web Summit timetable, 7 Nov).",
- "checked": "2026-11-14T10:50Z (role changes: programme to reporter, the summit journalist to internal; scout Mondays 06:47; conductor tasks in the 14 Nov session)",
+ "checked": "2026-11-14T11:00Z (security@ weekly check added, Mondays 06:20, task pending; role changes; scout Mondays 06:47)",
  "tasks": [
   {
    "agent": "conductor@web-summit.vicky",
@@ -160,6 +160,15 @@
    "state": "enabled; moved 14 Nov 10:11 UTC from Sundays 18:47 to Mondays 06:47 (Vicky, 14 Nov: so its note is in Monday's 08:45 brief), on Sonnet",
    "since": "6 Nov 2026",
    "at_whose_word": "Vicky (6 Nov; weekly from 13 Nov, standing answer 56; Mondays 06:47 from 14 Nov)"
+  },
+  {
+   "agent": "security@web-summit.vicky",
+   "task": "weekly check (standing answer 66)",
+   "cron_utc": "20 6 * * 1",
+   "task_id": "pending: security@ sets it up in its own session; the conductor adds the id once the account shows it",
+   "state": "to be created by security@ (Vicky, 14 Nov about 11:00 UTC)",
+   "since": "14 Nov 2026",
+   "at_whose_word": "Vicky (14 Nov, standing answer 66); its note goes in Monday's 08:45 brief"
   },
   {
    "agent": "conductor@web-summit.vicky",

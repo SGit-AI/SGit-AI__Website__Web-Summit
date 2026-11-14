@@ -7,6 +7,8 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **66** security@'s weekly check, Mondays 06:20 UTC; its note in Monday's brief.
+- **65** the "For Vicky" format in every message to Vicky: what, why, which window, the text to paste, now or can wait; "For Vicky: nothing needed" when nothing; details under "Being tracked".
 - **64** shorter prompts files: a one-line pointer to decisions.md in place of copied rules, after the three role changes (update PROMPTS-SHORT); the fix-only tasks stay disabled.
 - **63** the rules cleanup (this version, Vicky's yes 14 Nov); the prompts files follow (CLEANUP-14NOV); then the three role changes.
 - **62** the inbox lane requests are closed; agents work through task files and messages. The interview vault request stays open.
@@ -270,6 +272,13 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Fix-only tasks:** the three disabled ones (journalist-portugal, journalist-europe, journalist-ai) stay disabled, not deleted.
     - **Scout and inbox:** Vicky answered their CLEANUP-14NOV questions in their own windows.
     - The conductor sends update PROMPTS-SHORT by task files once the role changes are confirmed, and tells Vicky the total size before and after.
+
+65. **The "For Vicky" format, in every message to Vicky** (Vicky, 14 Nov, about 11:00 UTC, in this window: "Conductor: please go back to the "For Vicky" format in every message to me, and record it in decisions.md so it survives future handovers: - Start with "For Vicky". For each item: what I need to do, why, which window, the exact text to paste, and whether it's now or can wait. - If nothing needs me, say "For Vicky: nothing needed" on the first line. - Progress and details go below, under "Being tracked".")
+    - **For the conductor, and any agent of hers that writes to her directly.** First line "For Vicky", then one item per thing she must do: **what** to do, **why**, **which window**, the **exact text to paste** (in a code block), and **now** or **can wait**. If nothing needs her, the first line is "For Vicky: nothing needed". Progress, results and details go below, under a heading "Being tracked".
+    - It applies to chat messages, the brief and the relay alike; the brief keeps its sections, under "Being tracked". It survives every hand-over: a new conductor session reads it here.
+
+66. **security@'s weekly check** (Vicky, 14 Nov, about 11:00 UTC, in this window: "Conductor: security now has a weekly check, Mondays at 06:20 UTC, which it sets up itself. Add it to schedule.json and include its note in Monday's brief.")
+    - security@web-summit.vicky runs a weekly check on Mondays at 06:20 UTC, from a scheduled task it sets up itself in its own session. The conductor records it in `people/vicky/schedule.json` (its task id once the account shows it) and puts security@'s note from `people/vicky/reports/security.md` in Monday's 08:45 brief, beside scout's weekly note (Mondays 06:47 UTC).
 
 ## Updates for agents
 
