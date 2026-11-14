@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2200",
+    "date": "2026-11-14",
+    "what": "handover.agent.a@PrompTugal.angelo: state after a day of idle wakes (cost ~$9)",
+    "by": "handover.agent.a@PrompTugal.angelo",
+    "from": "779342557"
+  },
+  {
     "version": "v0.2.2199",
     "date": "2026-11-14",
     "what": "Sunday's brief carries the session archive item, after the analyst setup",
