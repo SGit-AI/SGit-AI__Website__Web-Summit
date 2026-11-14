@@ -242,3 +242,9 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 
 - **applied** the scheduled-prompt fix-up (task file people/vicky/tasks/2026-11-14-1105-sched-fixup-dashboard.md, committed by conductor@web-summit.vicky and pushed by riskmandate-vicky; the message came from the conductor's session). In both of my scheduled tasks (07:50 UTC, enabled; 17:45 UTC, disabled) the RULES-11NOV paragraph no longer says the rules are "at the top of" my prompts file: it now points at people/vicky/decisions.md (where RULES-11NOV, standing answer 31, and P1 to P3, standing answer 16, are kept). Everything else word for word; no task enabled, disabled or retimed. The stored copy in section 2 of my prompts file matches. Ledger line added (task "prompts update").
 - state: ok; done: scheduled-prompt fix-up in both tasks and the stored copy; next: 07:50 wake on Sun 15 Nov; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:25 UTC (prompted: STORED-REF)
+
+- **applied STORED-REF** (task file people/vicky/tasks/2026-11-14-1110-stored-ref-dashboard.md, committed by conductor@web-summit.vicky and pushed by riskmandate-vicky; the message came from the conductor's session). Section 2 of my prompts file no longer holds a copy of the scheduled prompt: one line per task (trig_01FSSzDCWMqwD5jwd8xGF6JT, 07:50 UTC, enabled; trig_012yhqHVsUHZ3iBiorQfbYyD, 17:45 UTC, disabled) plus a short history. The file went from 19,785 to 13,313 bytes. No task's prompt, state or time was changed.
+- One small correction beyond the task, to keep the file true: its intro said the two prompts were saved word for word, and now says only the startup prompt is. Ledger line added (task "prompts update").
+- state: ok; done: applied STORED-REF to my prompts file; next: 07:50 wake on Sun 15 Nov; ask: none; run: prompted
