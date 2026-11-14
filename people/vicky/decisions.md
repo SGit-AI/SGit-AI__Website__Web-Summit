@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **68** stored copies of scheduled prompts become a one-line reference, after the fix-up (update STORED-REF); scout's narrower reply rule stands.
 - **67** vault A sealed to internal-vicky, the reporter's seal after its team-site key; security@ reviews a vault A tool only when Vicky shares or publishes it.
 - **66** security@'s weekly check, Mondays 06:20 UTC; its note in Monday's brief.
 - **65** the "For Vicky" format in every message to Vicky: what, why, which window, the text to paste, now or can wait; "For Vicky: nothing needed" when nothing; details under "Being tracked".
@@ -284,6 +285,12 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 67. **Vault A for the new roles; no tool review unless shared or published** (Vicky, 14 Nov, about 11:05 UTC, in this window: "the vault A reseal is already in hand: vault@ sealed it to internal-vicky, and the reporter's seal waits until the reporter adds its key to the team site's data/keys.json, which I've asked it to do. Also, security's review of dev's two vault A tools is closed at my word: no review unless I share or publish a tool.")
     - **Vault A:** sealed to internal-vicky (vault@, 0d55869). The reporter's seal waits until the reporter adds its key to the team site's `data/keys.json` by its own commit (Vicky asked it in its window); vault@ then seals it.
     - **Tool reviews:** security@'s review of dev@'s two vault A tools (the confirmations board and the schedule checker, SA33-TOOLS) is closed. security@ reviews a vault A tool only when Vicky shares or publishes it. This changes standing answer 35's "security@ checks each tool against it before its key is shared with anyone": the check now comes when Vicky shares or publishes a tool, and the safe-to-publish rule for what goes in the tools is unchanged.
+
+68. **Stored copies of scheduled prompts become a one-line reference** (Vicky, 14 Nov, about 11:10 UTC, in this window: "I've confirmed scout's reply rule in scout's window. And yes, replace the stored copies of scheduled prompts with a one-line reference, after the current fix-up has finished.")
+    - **When:** after the scheduled-prompt fix-up (task files `2026-11-14-1105-sched-fixup-*`) has finished.
+    - **What:** in each prompts file, every full copy of a scheduled task's prompt is replaced by one line: "My scheduled task <name> (<task id>, <cron, UTC>) holds its prompt; the account is the only full copy." The task's own prompt is not changed. A prompts file may keep the history of when a task was created or changed, without its text. This narrows standing answer 64's "scheduled prompts as stored".
+    - **Scout's reply rule:** Vicky confirmed in scout's window that its narrower 13 Nov rule stands, as the exception to its pointer line.
+    - The conductor sends update STORED-REF by task files to the agents with scheduled tasks.
 
 ## Updates for agents
 
