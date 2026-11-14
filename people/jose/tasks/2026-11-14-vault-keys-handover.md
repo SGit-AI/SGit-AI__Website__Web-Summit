@@ -2,7 +2,7 @@
 for: dinis, conductor@web-summit.dinis, vault@web-summit.jose, jose
 from: conductor@web-summit.jose, at Jose's word (14 November 2026)
 date: 2026-11-14
-due: when Jose sends the sealed QR
+due: when Dinis's conductor confirms it opened the handover
 status: open
 ---
 # Jose's vault keys for Dinis's conductor: the report, and one key still to collect
@@ -11,7 +11,7 @@ On Dinis's brief of 13 November (`admin/tools/vault-keys/BRIEF.md`), at Jose's w
 
 ## Report (conductor@web-summit.jose, 14 November 2026)
 
-- **Handover vault:** `7zb2qu4r` (`ws26-keys-jose`, dev.send.sgraph.ai), pushed, one commit, checked by a fresh clone. Its key is sealed to `sha256:62eb11234d3237d5` (conductor.3@web-summit; the published bundle's fingerprint matched the brief's), signed by `sha256:006ceb9a9e3febbe`, expires in 7 days. The QR read back as kind sealed, to that fingerprint. **Jose carries the QR or its link to Dinis**; before he does, he compares the fingerprint with the one in Dinis's message to him.
+- **Handover vault:** `7zb2qu4r` (`ws26-keys-jose`, dev.send.sgraph.ai), pushed, one commit, checked by a fresh clone. Its key is sealed to `sha256:62eb11234d3237d5` (conductor.3@web-summit; the published bundle's fingerprint matched the brief's), signed by `sha256:006ceb9a9e3febbe`, expires in 7 days. The QR read back as kind sealed, to that fingerprint. **Delivered in the repository** on 14 November, in `people/jose/handover/` (the sealed QR and link, ciphertext only), after Jose confirmed in the conductor's session that the fingerprint in Dinis's message to him is the same one.
 - **Six vaults** were created by Jose's agents' sessions. **Five keys are in the handover vault**, each verified on 14 November by a read-only clone and fetch that decrypted the README and the file list:
 
 | Vault id | What | Created by | Key sent | Shown in a chat |
@@ -35,7 +35,7 @@ On Dinis's brief of 13 November (`admin/tools/vault-keys/BRIEF.md`), at Jose's w
 
 Either:
 
-1. **vault@web-summit.jose**, when Jose wakes it (its task is off, A-28): follow the brief's Setup and step A2, sealing to the conductor's published key (keys page `conductor-jose`, signing `sha256:006ceb9a9e3febbe`, encryption `sha256:5dc78b978e0a1750`) with `seal-to-key --from-vault <its rius8gwy folder>`, and give Jose the QR for the conductor. Never print the key. Report below.
+1. **vault@web-summit.jose** (asked by the conductor over a session message on 14 November, about 19:50 UTC, at Jose's word; no answer yet): follow the brief's Setup and step A2, sealing to the conductor's published key (keys page `conductor-jose`, signing `sha256:006ceb9a9e3febbe`, encryption `sha256:5dc78b978e0a1750`) with `seal-to-key --from-vault <its rius8gwy folder>`, and give Jose the QR for the conductor. Never print the key. Report below.
 2. **Jose**, from his password manager: the brief's step A3 (the conductor's send link, sealed in the browser), never pasted into a chat.
 
 The conductor then verifies it, adds `keys/rius8gwy.json` to the handover vault and pushes; the sealed QR Jose already holds stays valid, since it carries the handover vault's key.
