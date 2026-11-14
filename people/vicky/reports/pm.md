@@ -133,3 +133,9 @@ state: idle
 - applied PROMPTS-SHORT: prompts/pm.md now opens with the one-line pointer to decisions.md in place of the copied RULES-11NOV block, 14,963 to 11,006 bytes. My startup prompt, my scheduled prompt as stored (it keeps P1 to P3) and my own dated rules are unchanged; the scheduled task was not touched.
 - Kept as unsure: the 7 Nov line saying P1 to P3 are in the scheduled prompt, which stays true. I removed one line of mine, the 14 Nov note that summarised the retired rules 5 and 7, since the block it described is gone.
 - state: ok; done: PROMPTS-SHORT applied, one ledger line; next: on demand through the conductor; ask: none; run: prompted
+
+## 14 November 2026, about 11:10 UTC (task file 2026-11-14-1105-sched-fixup-pm, 0281a4f)
+
+- applied the scheduled-prompt fix-up: my scheduled task's prompt no longer says the rules are "at the top of" my prompts file; it points to people/vicky/decisions.md (RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16). Nothing else changed; the task is still disabled and its time is unchanged. The stored copy in prompts/pm.md matches.
+- Not changed: a finished one-off wake of mine from 11 Nov (the RULES-11NOV confirmation, cannot run again) still has the old wording. Say if it should change too. I checked the account's task list back to 11 Nov 18:46 for others that fire into this session and found none; older entries I did not page through.
+- state: ok; done: scheduled prompt fixed, one ledger line; next: on demand through the conductor; ask: none; run: prompted
