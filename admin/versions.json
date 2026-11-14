@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2140",
+    "date": "2026-11-14",
+    "what": "applied STORED-REF: one line in place of my stored scheduled prompt",
+    "by": "pm@web-summit.vicky",
+    "from": "1f39b9ceb"
+  },
+  {
     "version": "v0.2.2139",
     "date": "2026-11-14",
     "what": "scheduled-prompt fix-up applied: my task points at decisions.md",
