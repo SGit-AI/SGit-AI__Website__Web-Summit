@@ -227,3 +227,8 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - Next after announcements: Konecta's own release (10 Nov) of a Lisbon Global Delivery Center, opening Q1 2027, from about 1,300 staff to 2,000 by end of 2027, company figures; Konecta's page also lists financing headlines, not read ([Konecta, read 14 Nov 07:19 UTC](https://konecta.com/news-insights/press-releases/konecta-announces-the-launch-of-a-next-generation-global-delivery-center-dedicated-to-ai-excellence-in-lisbon)).
 - Still open: Diário de Notícias' own Discord article; IBM's winner release; where Humanos is based; Humanos's own pages; themes 2, 3 and 5 not yet started under SA58 (next rounds).
 - state: ok; done: 2 captures, SA58 and SA54 applied; next: 11:15 run; ask: none; run: scheduled
+
+## Sat 14 Nov 2026, 10:15 UTC, task 2026-11-14-1015-cleanup-researcher
+
+- applied CLEANUP-14NOV: task file checked first (conductor's commit, pushed from Vicky's account; no hold file). In my prompts file and my scheduled task's prompt: P1 widened (standing answer 16); RULES-11NOV rule 5 now lisbontechfringe.com only; rule 7 shows the "Retired 14 Nov" line; standing answer 28 section removed, and the agenda.json and `agenda changes:` reading taken out; I still read `gaps_for_the_researcher` and report which I filled. No line about publishing waiting for Vicky's word and none about never messaging another session were in my files, so nothing to change there. Times checked: cron `15 7,11,15 * * *`. Everything else is word for word. No captures went into vault 41j3e9s9 this task.
+- state: ok; done: prompts file and scheduled prompt cleaned; next: 11:15 run; ask: none; run: prompted
