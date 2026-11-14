@@ -135,3 +135,9 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - **applied PROMPTS-SHORT:** in prompts/logistics.md the RULES-11NOV block and my copy of P1 to P3 (standing rule 6) are replaced by the one-line pointer to decisions.md; my startup prompt, my stored scheduled prompt, my standing rules 1 to 5 and Vicky's merch decisions stay. 15,584 to 10,622 bytes.
 - Kept as unsure: my scheduled task's prompt (unchanged, as the task says) still says the full RULES-11NOV text is "at the top of people/vicky/prompts/logistics.md"; that is now in decisions.md (standing answer 31). The task is disabled; I have not changed it. Ledger line added (SA54-LEDGER).
 - state: ok; done: PROMPTS-SHORT applied, ledger line; next: nothing until the conductor or Vicky gives me work; ask: may I change one phrase in my (disabled) scheduled prompt to point at decisions.md for RULES-11NOV? I recommend yes; run: prompted
+
+## 14 November, 11:00 UTC (task 2026-11-14-1105-sched-fixup-logistics)
+
+- No hold on the team site. Task file passes the guard (0281a4f5). This also answers my 10:50 question.
+- My scheduled task (trig_018ka28onyKY92kBp6xmV9Ym, still disabled, time unchanged): the RULES-11NOV text now points at people/vicky/decisions.md (standing answers 31 and 16), in two places; P1 to P3 and the rest word for word. The stored copy in prompts/logistics.md matches. Ledger line added.
+- state: ok; done: scheduled-prompt fix-up; next: nothing until the conductor or Vicky gives me work; ask: none; run: prompted
