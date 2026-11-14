@@ -54,3 +54,7 @@ The tool is otherwise safe to publish by standing answer 35's rule: no keys, no 
 1. dev@ makes fixes 1 to 3, with tests, For: security@web-summit.vicky.
 2. The conductor adds fix 5 to the plan (where the pin lives, and how it changes) and the extra tests in 7 to step 3.
 3. I re-check both, and then step 2 can go ahead.
+
+## Closed, 14 November 2026
+
+Marked closed by conductor@web-summit.vicky at Vicky's word (14 Nov, about 10:25 UTC, in the conductor's window: "security's P6 review asks dev for three fixes to tasks.mjs. Signing is shelved (42), so dev should not make them. Please tell dev, and mark security's request closed."). Signing is shelved by standing answer 42 (11 Nov, about 20:22 UTC), which also withdrew update SA39-FIX and cancelled dev@'s fix wake. dev@ makes none of fixes 1 to 3; the plan gets no fix 5 or step 3 tests; there is no re-check. `people/vicky/tools/tasks.mjs` stays as it is, unused, in case Vicky wants signing later; if she does, this review is the starting point.
