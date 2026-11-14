@@ -92,6 +92,14 @@ What follows for the scout:
 - **The reply rule is unchanged** (13 November 17:00 entry): one short line to the conductor's tasks only, and nothing else to any session.
 - This widens the list of files in the startup prompt ("the only files you may write") by that one file, and nothing else.
 
+### 14 November 2026, about 11:20 UTC (Vicky, to the scout in its own window)
+
+```
+Your narrower reply rule from my 13 Nov message stands; it is the exception to the pointer line.
+```
+
+What follows for the scout: the pointer line at the top says `decisions.md` wins where it and this file differ. The one exception is the reply rule of the 13 November 17:00 entry (one short line to the conductor's tasks only, and nothing else to any session), which stays as written even where standing answer 41 is broader. Nothing else is changed by this entry.
+
 ## Scheduled task: the weekly whole-team note, Mondays 06:47 UTC (cron 47 6 * * 1)
 
 Replaced on 13 November 2026, 16:42 UTC, as standing answer 56 and the conductor's task file `people/vicky/tasks/2026-11-13-1645-scout-whole-team-weekly.md` ask: it was the daily 22:00 note on the next open topic; it is now one run a week on the whole team, reusable only, on Sonnet. The conductor set the schedule; the scout changed only the task's prompt, which wakes this same session. The task has been enabled again since 13 November, 16:40 UTC. Moved on 14 November to Mondays 06:47 UTC (Vicky, 14 Nov about 10:10 UTC, as quoted in the conductor's task file: "change scout's weekly run from Sunday 18:47 to Monday 06:47 UTC, so its note is in Monday's 08:45 brief"); the prompt updated for CLEANUP-14NOV on 14 November (widened P1, rules 5 and 7) and, the same day, for the ledger file (Vicky to the scout, below). The stored prompt below is unchanged (standing answer 64: scheduled task prompts keep P1 to P3 as they are); its "top of people/vicky/prompts/scout.md" for RULES-11NOV now means the pointer line at the top of this file and standing answer 31. The prompt as stored:
