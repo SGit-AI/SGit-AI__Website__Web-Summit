@@ -141,3 +141,8 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - No hold on the team site. Task file passes the guard (0281a4f5). This also answers my 10:50 question.
 - My scheduled task (trig_018ka28onyKY92kBp6xmV9Ym, still disabled, time unchanged): the RULES-11NOV text now points at people/vicky/decisions.md (standing answers 31 and 16), in two places; P1 to P3 and the rest word for word. The stored copy in prompts/logistics.md matches. Ledger line added.
 - state: ok; done: scheduled-prompt fix-up; next: nothing until the conductor or Vicky gives me work; ask: none; run: prompted
+
+## 14 November, 11:10 UTC (task 2026-11-14-1110-stored-ref-logistics)
+
+- No hold on the team site; task file passes the guard (9fec7848). **applied STORED-REF:** the stored copy of my scheduled prompt in prompts/logistics.md is now one line (task name, id, cron, disabled) plus a short dated history, no prompt text. The task itself is unchanged. 10,723 to 5,423 bytes. Ledger line added.
+- state: ok; done: STORED-REF applied; next: nothing until the conductor or Vicky gives me work; ask: none; run: prompted
