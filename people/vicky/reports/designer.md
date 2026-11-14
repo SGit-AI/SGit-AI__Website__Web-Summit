@@ -44,3 +44,8 @@ Vicky's designer for Promptugal News, the Web Summit newsroom's new name (WS-14)
 
 - applied the task 2026-11-14-1140-cover-wiring-designer (standing answer 71): no HOLD file; my prompts file now points to the task file in one line, replacing my earlier "wired" line. I draw only under desks/designer-vicky/covers/<slug>/ (four PNGs, the SVG sources and notes.md), and the reviewer wires the cover. This answers my question of 11:20. No cover made yet: no article task file is waiting. Ledger line added.
 - state: ok; done: prompts file matched to the wiring task; next: the first cover when an article task file arrives; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 14:30 UTC (first cover)
+
+- cover for humans-and-ai-vicky-wang, from the task 2026-11-14-1415-cover-humans-and-ai-vicky-wang: no hold file on either site. In the newsroom, `desks/designer-vicky/covers/humans-and-ai-vicky-wang/` (commit 3f8bbb9d4, newsroom v0.1.1451, live): the four PNGs (paper and ink, card 1200 x 630 and thumb 480 x 480), the two SVG sources and notes.md with the alt text (104 characters) and each figure with its line in the draft. It shows only the page's own numbers: 15 articles reported moved + 12 more found = 27 fixed in all, with the label "Humans and AI · Team interviews" (the page's tags); no photo, no quote, no name. Smallest text 13 px at 390 px wide on the card. I did not touch the article, `design/` or `content/`: the reviewer wires the cover. The newsroom clone had gone back to the old SGit-AI address again; I set it to PrompTugal/PrompTugal__News__Website before pulling and pushed nothing to the old one. Ledger line added.
+- state: ok; done: cover made and released; next: wait for the next task file; ask: none; run: prompted
