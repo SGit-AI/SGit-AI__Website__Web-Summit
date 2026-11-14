@@ -247,3 +247,11 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 
 - applied STORED-REF: task file checked first (conductor's commit, pushed from Vicky's account; no hold file). In my prompts file the stored scheduled prompt, and the old copy inside the startup prompt's step 7, are replaced by one reference line for my one task (Research run, cron 15 7,11,15, enabled) plus a short history of dates; 21696 to 11058 bytes. The task's prompt, state and time are unchanged. No captures went into vault 41j3e9s9 this task.
 - state: ok; done: stored prompt copies replaced by a reference; next: 11:15 run; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:15 UTC run
+
+- decisions.md read first (standing answers 64 to 69 are the conductor's, pushed from Vicky's account; nothing new for me beyond the three tasks already applied); no hold file on either site; prompts file re-read, matches my memory; RULES-11NOV kept. 2 captures went into vault 41j3e9s9.
+- AI in Portugal (theme 2): the government's own item on the National AI Agenda, ANIA: four areas, 32 initiatives, in force from publication, no budget or company named ([digital.gov.pt, updated 9 Jan, read 14 Nov 11:17 UTC](https://digital.gov.pt/en/noticias/publicada-a-agenda-nacional-de-ia-ania-portugal-reforca-compromisso-com-ia-responsavel-e-competitiva)); and INESC-ID's own account of AMALIA, the first large language model for European Portuguese, launched 1 July: 80 researchers, 5.5 million euros of recovery funding, expectations marked as expectations ([INESC-ID, 15 Jul, read 14 Nov 11:17 UTC](https://www.inesc-id.pt/amalia-was-officially-launched-and-is-now-ready-for-open-use/)).
+- Curator's gaps: Carevision (priority 1) still open: a search found no company page or second report, so nothing captured; the theme 2 gap is started (two captures, more companies and labs to follow); theme 1 follow-ups not started this round.
+- Still open: Diário de Notícias' own Discord article; IBM's winner release; where Humanos is based; the 17 withdrawn captures to re-cite.
+- state: ok; done: 2 captures; next: 15:15 run; ask: none; run: scheduled
