@@ -104,10 +104,32 @@ ${safe(c.linkedin) ? `<a href="${esc(c.linkedin)}" rel="noopener">LinkedIn</a>` 
 <h3>To follow up: ${esc(filter === 'All' ? 'everyone' : LABEL[filter].toLowerCase())}</h3>
 <ul class="fu-list">${todo.length ? todo.map(item).join('') : '<li class="meta">Nobody left in this category.</li>'}</ul>
 <details class="fu-donebox"><summary>Followed up (${done.length})</summary><ul class="fu-list">${done.length ? done.map(item).join('') : '<li class="meta">Nobody ticked yet.</li>'}</ul></details>
-<p class="meta" data-status>${LANE ? (REC.pending ? 'Your last save is waiting to be filed into the private CRM by conductor@web-summit.indi. It shows for others once filed.' : 'Tick someone or add a note: it is sealed in this browser, signed with your key and sent to the drop box. Others see it once conductor@web-summit.indi files it.') : `Read-only here until the drop box is set up (WS-217). To tick someone or add a note, use the working copy${REC.working_copy && /^https:\/\/claude\.ai\//.test(REC.working_copy) ? ` (<a href="${esc(REC.working_copy)}" rel="noopener">open it</a>; ask Indi to share it with you)` : ''}.`} Filed ${esc(REC.sealedAt || '')}${REC.updated_by ? ', last saved by ' + esc(REC.updated_by) : ''}.</p>`
+${LANE ? `<details class="fu-add"><summary>Add a contact</summary><form data-add>
+<p class="meta">Names and roles only: no email address, phone number or other contact details. They are sealed to the same readers as the rest of the list.</p>
+<label>Name <input name="name" required maxlength="120" autocomplete="off"></label>
+<label>Role or company <input name="role" maxlength="160" autocomplete="off"></label>
+<label>Connected on <input name="met" type="date"></label>
+<label>Category <select name="tag">${TAGS.map(t => `<option${t === (filter === 'All' ? 'Other' : filter) ? ' selected' : ''}>${t}</option>`).join('')}</select></label>
+<label>LinkedIn page (optional) <input name="linkedin" type="url" placeholder="https://www.linkedin.com/in/..." autocomplete="off"></label>
+<label>Note (optional) <input name="note" maxlength="1000" autocomplete="off"></label>
+<p><button type="submit">Add to the list</button> <span class="meta" data-add-msg></span></p></form></details>` : ''}
+<p class="meta" data-status>${LANE ? (REC.pending ? 'Your last save is waiting to be filed into the private CRM by conductor@web-summit.indi. It shows for others once filed.' : 'Tick someone, add a note or add a contact: it is sealed in this browser, signed with your key and sent to the drop box. Others see it once conductor@web-summit.indi files it.') : `Read-only here until the drop box is set up (WS-217). To tick someone or add a note, use the working copy${REC.working_copy && /^https:\/\/claude\.ai\//.test(REC.working_copy) ? ` (<a href="${esc(REC.working_copy)}" rel="noopener">open it</a>; ask Indi to share it with you)` : ''}.`} Filed ${esc(REC.sealedAt || '')}${REC.updated_by ? ', last saved by ' + esc(REC.updated_by) : ''}.</p>`
         if (LANE) {
             out.onchange = e => { const t = e.target.closest('[data-tick]'); if (!t) return; const c = all.find(x => x.id === t.dataset.tick); if (!c) return; c.followed_up = t.checked; c.followed_up_at = t.checked ? new Date().toISOString() : null; c.followed_up_by = t.checked ? KR.person : null; queue(); render() }
             out.addEventListener('focusout', e => { const t = e.target.closest && e.target.closest('[data-note]'); if (!t) return; const c = all.find(x => x.id === t.dataset.note); if (!c || (c.note || '') === t.value.trim()) return; c.note = t.value.trim().slice(0, 1000); queue() })
+        }
+        const af = out.querySelector('[data-add]')
+        if (af) af.onsubmit = e => {
+            e.preventDefault()
+            const f = Object.fromEntries(new FormData(af)), v = k => String(f[k] || '').trim(), msg = t => { af.querySelector('[data-add-msg]').textContent = t }
+            const contact = /[^\s@]+@[^\s@]+\.[a-z]{2,}/i, phoneRe = /\+?\d[\d\s().-]{7,}\d/g, phone = { test: t => (String(t).match(phoneRe) || []).some(m => m.replace(/\D/g, '').length >= 9 && !/^\d{4}-\d{2}-\d{2}$/.test(m.trim())) }
+            if (!v('name')) return msg('Add a name.')
+            if (['name', 'role', 'note'].some(k => contact.test(v(k)) || phone.test(v(k)))) return msg('That looks like an email address or phone number. Leave contact details out.')
+            if (v('linkedin') && !safe(v('linkedin'))) return msg('The LinkedIn page must start with https://www.linkedin.com/')
+            if (all.some(c => c.name.toLowerCase() === v('name').toLowerCase())) return msg(v('name') + ' is on the list already.')
+            const id = v('name').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) + '-' + Date.now().toString(36)
+            all.push({ id, name: v('name').slice(0, 120), role: v('role').slice(0, 160), met: v('met'), tag: TAGS.includes(f.tag) ? f.tag : 'Other', stage: 'to follow up', owner: KR.person, note: v('note').slice(0, 1000), linkedin: safe(v('linkedin')), followed_up: false, added_by: KR.person, added_at: new Date().toISOString() })
+            REC.contacts = all; filter = all[all.length - 1].tag; queue(); render()
         }
         out.querySelector('.fu-pills').onclick = e => { const b = e.target.closest('[data-f]'); if (!b) return; filter = b.dataset.f; try { localStorage.setItem('ws-fu-filter', filter) } catch { } render() }
     }

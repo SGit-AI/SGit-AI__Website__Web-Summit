@@ -707,6 +707,7 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
 .fu-who { display: grid; gap: 0.15rem; min-width: 0; }
 .fu-role { color: var(--ink-2); overflow-wrap: anywhere; }
 .fu-note-in { font: inherit; font-size: 0.9rem; width: 100%; box-sizing: border-box; padding: 0.3rem 0.5rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); resize: vertical; }
+.fu-add { margin: 1rem 0; } .fu-add form { display: grid; gap: 0.5rem; max-width: 32rem; } .fu-add label { display: grid; gap: 0.2rem; font-size: 0.9rem; } .fu-add input, .fu-add select { font: inherit; padding: 0.35rem 0.5rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); }
 .fu-note { font-size: 0.9rem; padding: 0.3rem 0.5rem; border-radius: 8px; background: var(--surface-2); }
 .fu-tag { font-size: 0.75rem; font-weight: 600; padding: 0.05rem 0.5rem; border-radius: 999px; justify-self: start; }
 .fu-done .fu-who b { text-decoration: line-through; color: var(--ink-2); }
