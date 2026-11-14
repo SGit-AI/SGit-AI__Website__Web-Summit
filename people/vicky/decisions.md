@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **74** only the conductor opens reports/humans-and-ai/; write-ups reach journalist-ai privately (Vicky's paste now, sealed later); interview page drafts stay sealed until approved.
 - **73** outside interviews on hold until Vicky talks to Dinis; nothing drafted or changed.
 - **72** the interview page (people/vicky/interview/) and a sealed way back to people/vicky/sealed/humans-and-ai/; the conductor reports arrivals in the brief.
 - **71** the interview series: AI and The newsroom, tags "Humans and AI" and "Team interviews"; titles in the person's own words; the designer draws covers in its own folder, the reviewer wires them in.
@@ -322,6 +323,12 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 
 73. **Outside interviews: on hold** (Vicky, 14 Nov, about 12:20 UTC, in this window: "can you keep the outside interview on hold for now, i need to talk to dinis about this. when i need this again, then we plan it more detailed")
     - The idea (interviewing people outside the team, contacted by Vicky on LinkedIn or Web Summit Connect, published on PrompTugal.news; storage in the interview shortlist vault, renamed; contacts in the CRM or nowhere) is on hold until Vicky has talked to Dinis. Nothing is drafted, no vault is renamed or resealed, no page is built, and nobody is contacted. When she raises it again, the conductor plans it in detail and shows her the drafts first.
+
+74. **Interview write-ups: who opens them, and how a page is drafted privately** (Vicky, 14 Nov, about 12:55 UTC, in this window: "keep the interview write-ups in vault A, and add a rule that only you open reports/humans-and-ai/; dev, the reporter and the internal journalist don't read it. Tell me how journalist-ai will get each write-up privately, since it doesn't hold vault A's key. Then go, start my humans-and-AI page.")
+    - **Vault A, PRIVATE.md rule 9:** only conductor@web-summit.vicky opens `reports/humans-and-ai/`; dev@, the reporter and the internal journalist do not read, list, copy or summarise it, and the internal journalist does not report on it.
+    - **How journalist-ai gets a write-up:** never through a task file, a message or any unsealed file (standing answer 42: private work only through the agent's own window or sealed). For now, Vicky pastes or attaches the write-up in journalist-ai's own window. The repeatable way, once journalist-ai's current key (journalist-ai-vicky-promptugal-2) is also on the team site's `data/keys.json` by its own commit (that needs Vicky's word): the conductor seals each write-up to it with `admin/tools/seal.mjs` and commits only the sealed file to `people/vicky/sealed/humans-and-ai/for-journalist-ai/`.
+    - **The draft stays private until approved:** journalist-ai does not put an interview page in `desks/journalist-vicky/drafts/` (the newsroom repository is public). It seals the draft page (the 150 to 250-word introduction, the Q&A unchanged, two or three title options in the person's own words, subtitle, categories AI and The newsroom, tags "Humans and AI" and "Team interviews") to conductor-vicky-3 and commits it to `people/vicky/sealed/humans-and-ai/drafts/`. The conductor opens it and shows Vicky; Vicky chooses the title; the person approves the whole page.
+    - **Then publishing:** after approval, the designer makes the cover (standing answer 71) and the reviewer checks and publishes; the page becomes public only then.
 
 ## Updates for agents
 
