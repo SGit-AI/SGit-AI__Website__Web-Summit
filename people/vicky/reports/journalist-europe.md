@@ -155,3 +155,10 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 - Stored copy: my prompts file now holds the writing task's prompt as it stands, including the 11 November rules paragraph that the stored copy had lacked (it was never in the file), so the file grew from 8,142 to 12,640 bytes. If you would rather keep the file short, the conductor can tell me to drop that paragraph from the stored copy. The fix-only task's prompt has no stored copy in the file (removed in CLEANUP-14NOV, standing answer 18 being archived).
 - Ledger line added (task "prompts update").
 - state: ok; done: both task prompts and the stored copy fixed; next: nothing until pointed; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:15 UTC (task people/vicky/tasks/2026-11-14-1110-stored-ref-journalist-europe.md, pointed by the conductor's session at 11:08)
+
+- Checked first: the task file was committed by conductor@web-summit.vicky (9fec7848, same session as the earlier tasks) and quotes Vicky's words (standing answer 68); no hold file.
+- applied STORED-REF. In people/vicky/prompts/journalist-europe.md the stored copy of the writing task's prompt (with its 11 November rules paragraph) is replaced by one line per task: the writing task (trig_01KRJSLJ46fntBKdqukvLoKx, cron `59 7,11,15,19 * * *`, disabled) and the fix-only task (trig_01A87nPnVKv8jMhzDzwi5eYU, cron `8 7,12,16,20 * * *`, disabled), plus a short dated history without prompt text. No task's prompt, state or time changed. Size: 12,640 bytes to 6,786 (the file was 18,776 this morning).
+- Ledger line added (task "prompts update").
+- state: ok; done: stored prompt copies replaced by references; next: nothing until pointed; ask: none; run: prompted

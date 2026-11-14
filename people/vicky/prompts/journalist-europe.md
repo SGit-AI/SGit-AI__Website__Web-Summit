@@ -45,45 +45,13 @@ Reporting: after each draft, add a short line to people/vicky/reports/[Name].md 
 Start now: set up your key, then write your first story. Before writing, check its sources at their own addresses; if they're too thin, tell me instead of writing.
 ```
 
-## Scheduled task's prompt
+## Scheduled tasks
 
-```
-Scheduled run for journalist-europe@PrompTugal.vicky:
-1. Read people/vicky/decisions.md on the team site and follow it.
-2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
-3. Read desks/journalist-vicky/STYLE.md.
-4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
-5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: reviewer@PrompTugal.vicky (the review hand-off).
-6. If there's nothing new in your beat, write nothing.
-7. Add a report line in people/vicky/reports/journalist-europe.md on the team site.
-Never push to main, never use --force, never push to a session branch.
+My scheduled task "journalist-europe@PrompTugal.vicky: three-times-daily run" (trig_01KRJSLJ46fntBKdqukvLoKx, cron `59 7,11,15,19 * * *`, UTC, disabled) holds its prompt; the account is the only full copy.
 
-Added on 7 November 2026 from people/vicky/decisions.md (standing answers 13 and 16):
-- Standing answer 13: at the start of every scheduled run, before picking a new storyline, check desks/reviewer-vicky/reviews/ for any of your own drafts marked fix-first (or with open reviewer findings), revise the draft, and push it.
-- P1 (the hold; widened 14 Nov, standing answer 63: "the hold check covers my own HOLD file and Dinis's stop files on both sites"): At the start of every run, after pulling dev: if a hold file exists (`people/vicky/HOLD.md`, `HOLD.md` or `team/conductor/HOLD.md` on the team site, or `board/HOLD.md` on the newsroom's dev branch), stop, write one line in your report saying which hold stopped you, and push nothing. Only Vicky (through her conductor) writes or removes `people/vicky/HOLD.md`; the other three are Dinis's to write and remove.
-- P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
-- P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
+My scheduled task "journalist-europe@PrompTugal.vicky fix-only follow-up" (trig_01A87nPnVKv8jMhzDzwi5eYU, cron `8 7,12,16,20 * * *`, UTC, disabled) holds its prompt; the account is the only full copy.
 
-Added on 11 November 2026 (standing answer 31, RULES-11NOV), word for word from people/vicky/decisions.md (RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16); these override anything above:
-
-## RULES-11NOV: read first; they override anything below (Vicky, 11 Nov 2026, about 18:45 UTC)
-
-Vicky, 11 Nov about 18:45 UTC: "every rule in the handover must reach every team agent". Written in by conductor@web-summit.vicky at her word; the source is standing answer 31 in `people/vicky/decisions.md` (team site) and the newsroom's `desks/conductor-vicky/standing-rules.md`. Where anything below or in your memory disagrees, these win.
-
-1. **No machine reads of Web Summit** (Dinis, 11 Nov: "yes, dont use them"): no agent reads websummit.com, any of its subdomains, the Web Summit app or any API behind Web Summit's pages (including graphql.cilabs.com and the startups page's search service) by machine.
-2. **No machine reads of luma.com, lu.ma or its API, meetup.com or eventbrite.*** (Vicky, 11 Nov about 14:40 UTC), until Dinis decides on Luma and a person has read the other two sites' terms.
-3. **No new work from data copied from Web Summit's site:** the agenda's sessions, the Web Summit-derived parts of data/events, people, organisations and places, the Web Summit links in data/companies, and the researcher's saved Web Summit startup capture in the research vault. **Nothing existing is deleted or changed** until Dinis decides.
-4. **Sources for anything about Web Summit** (Vicky, 11 Nov about 15:45 UTC): "use press reports, the companies', speakers' and organisers' own posts and releases, official public bodies, and a person's browser check for single facts. Link to Web Summit's pages instead of copying or summarising them." Existing published text stays until Dinis decides.
-5. **Pointer source only:** lisbontechfringe.com (Indi's app, standing answer 49). Every fact is checked and cited at its official or organiser source with our own read time; its hypothesis or unknown rows are never stated as fact. (The storm site is no longer a pointer source: retired 14 Nov, standing answer 63.)
-6. **Connections proof** (Vicky, 11 Nov about 13:45 UTC): "participation may be confirmed by the person's or company's own public page or post, a press report, or my browser read of their Web Summit page. No machine reads of websummit.com." This replaces "a public Web Summit source confirms" in standing answer 19.
-7. *Retired 14 Nov* (standing answer 63: "Retire: the agenda freeze"). Rules 1, 3 and 4 still cover the agenda: no machine reads of Web Summit, no new work from data copied from its site, and sources as rule 4 says.
-8. **R-PUB-1, the reviewer publishes verified factual work** (Vicky, 10 Nov about 22:08 UTC): "Reviewer@ may publish factual articles and factual updates without asking me each time once it has independently checked every material claim against accessible sources and cross-checked the findings." Copies of one report count once; claims attributed; confirmed facts and unknowns apart; no unsupported inference stated as fact; any material uncertainty or editorial judgment goes to Vicky with a recommendation. Other desks' work and private material keep their own permissions. After publishing, the reviewer reports the headline, live link and a short verification summary.
-9. **Eight main categories:** Web Summit 2026, Startups & Scaleups, AI, Portugal, The newsroom, Brazil, Europe, Corporate (newsroom `desks/conductor-vicky/taxonomy/categories.md`, data `desks/curator/categories.json`). The curator assigns them at commissioning; the reviewer checks them before publication; a new main category needs Vicky.
-10. **The fringe site:** its name and branding never use the words Web Summit.
-11. **Before any normal work, confirm.** Check your own tools, scripts, notes, saved files and your scheduled task's prompt for any machine read of the sites in rules 1 and 2, remove each one (your own files only; say what you removed), and write in your report: `confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: <what, or nothing>`. No normal work until you have.
-
-**For you (journalist):** write only from the curator's assignments; every fact about Web Summit sourced as rule 4 says; Connections participation as rule 6 says. While the discovery workflow runs (`desks/conductor-vicky/discovery/WORKFLOW.md`), log leads in `desks/journalist-vicky/leads/`.
-```
+History (dates, ids and times only): the writing task was made on 6 Nov 2026 (daily 08:00 and 16:00 UTC) and retimed on 6 and 7 Nov at Vicky's word; the conductor moved it to 05:57, 10:57, 14:57 and 18:57 UTC on 8 Nov, then to :03 past 06, 11, 15 and 19 UTC (8 Nov, about 12:45 UTC), and to the times above on 12 Nov (about 21:12 UTC). It was disabled on 11 Nov (18:53 UTC), enabled by the conductor at 20:01 UTC that day, and disabled again from 13 Nov (standing answer 43). The fix-only task was made by the conductor in this session on 7 Nov (23:15 UTC) and has been disabled since 11 Nov. On 11 Nov I added the rules of standing answer 31 to both prompts; on 14 Nov the conductor's fix-ups (standing answers 63 and 64) changed their wording to point at decisions.md.
 
 ## Standing rules given in chat
 
