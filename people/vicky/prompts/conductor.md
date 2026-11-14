@@ -15,27 +15,13 @@ First task: take Vicky through the onboarding on the start page, one step at a t
 
 The session became conductor@web-summit.vicky at Vicky's word (2 November: follow the start page exactly; its step 4 makes the first session the conductor), so it releases with `AGENT=conductor@web-summit.vicky`.
 
-## Scheduled task: the morning brief, 08:45 UTC (cron 45 8 * * *, trig_01PMwS7uN5ziYaG8zxEUK1Ze from 14 Nov 09:31 UTC, the session with key conductor-vicky-3; before it trig_016G4zCbDfCSU5A7mcAy3wq4 (9 Nov) and trig_013xdhaBHbA52GD47m1JaKDL; from 8 Nov, the Web Summit timetable; on 7 Nov briefly 09:00, 09:30 and 09:45)
+## Scheduled task: the morning brief
 
-```
-Scheduled wake: conductor@web-summit.vicky, the morning brief (08:45 UTC). Pull dev on the team site. Read people/vicky/decisions.md, then people/vicky/prompts/conductor.md, and do the brief exactly as its section "The daily brief" says (the hold first). Where the file and your memory disagree, the file wins.
+My scheduled task "conductor@web-summit.vicky: morning brief 08:45" (trig_01PMwS7uN5ziYaG8zxEUK1Ze, cron 45 8 * * *, enabled) holds its prompt; the account is the only full copy (standing answer 68). History: 08:30 from 4 Nov, 09:00 to 09:45 on 7 Nov, 08:30 from 8 Nov, 08:45 from 11 Nov; earlier ids trig_013xdhaBHbA52GD47m1JaKDL and trig_016G4zCbDfCSU5A7mcAy3wq4 (both disabled).
 
-P1 to P3, word for word (standing answer 16):
-P1: At the start of every run, after pulling dev: if a hold file exists (`people/vicky/HOLD.md`, `HOLD.md` or `team/conductor/HOLD.md` on the team site, or `board/HOLD.md` on the newsroom's dev branch), stop, write one line in your report saying which hold stopped you, and push nothing. Only Vicky (through her conductor) writes or removes `people/vicky/HOLD.md`; the other three are Dinis's to write and remove.
-P2: At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
-P3: End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
-```
+## Scheduled task: the evening relay
 
-## Scheduled task: the evening relay, 20:45 UTC (cron 45 20 * * *, trig_0193yADRBj3qQjo6qPbEr4Hh from 14 Nov 09:31 UTC, the session with key conductor-vicky-3; before it trig_01Xh41C12RjjrZQ14R6EEPHy (9 Nov) and trig_016MC7wrcBLcFqSgfthMqAnZ; from 8 Nov, the Web Summit timetable; 17:50 until 6 Nov, 21:30 on 7 Nov)
-
-```
-Scheduled wake: conductor@web-summit.vicky, the evening relay (20:45 UTC). Pull dev on the team site. Read people/vicky/decisions.md, then people/vicky/prompts/conductor.md, and do the relay exactly as its section "The evening relay" says (the hold first). Where the file and your memory disagree, the file wins.
-
-P1 to P3, word for word (standing answer 16):
-P1: At the start of every run, after pulling dev: if a hold file exists (`people/vicky/HOLD.md`, `HOLD.md` or `team/conductor/HOLD.md` on the team site, or `board/HOLD.md` on the newsroom's dev branch), stop, write one line in your report saying which hold stopped you, and push nothing. Only Vicky (through her conductor) writes or removes `people/vicky/HOLD.md`; the other three are Dinis's to write and remove.
-P2: At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
-P3: End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
-```
+My scheduled task "conductor@web-summit.vicky: evening relay 20:45" (trig_0193yADRBj3qQjo6qPbEr4Hh, cron 45 20 * * *, enabled) holds its prompt; the account is the only full copy (standing answer 68). History: 17:50 until 6 Nov, 21:30 on 7 Nov, 20:45 from 8 Nov; earlier ids trig_016MC7wrcBLcFqSgfthMqAnZ and trig_01Xh41C12RjjrZQ14R6EEPHy (both disabled).
 
 ## How I write to Vicky (standing answer 65, Vicky, 14 Nov)
 
