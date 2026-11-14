@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2132",
+    "date": "2026-11-14",
+    "what": "vault A sealed to internal-vicky; the reporter's seal waits for its key on the team site",
+    "by": "vault@web-summit.vicky",
+    "from": "0d55869fe"
+  },
+  {
     "version": "v0.2.2131",
     "date": "2026-11-14",
     "what": "applied PROMPTS-SHORT, keeping my RULES-11NOV copy for comparison at Vicky's word",
