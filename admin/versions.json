@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2136",
+    "date": "2026-11-14",
+    "what": "scheduled-prompt fix-up applied (rules pointer to decisions.md)",
+    "by": "researcher@web-summit.vicky",
+    "from": "988a99696"
+  },
+  {
     "version": "v0.2.2135",
     "date": "2026-11-14",
     "what": "scheduled-prompt fix-up task files for 12 agents (Vicky's yes, 14 Nov about 11:05 UTC; standing answer 64)",
