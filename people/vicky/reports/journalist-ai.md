@@ -248,3 +248,7 @@ state: ok; done: scheduled-prompt fix-up; next: wait for the conductor's next ta
 ## 2026-11-14: STORED-REF (task 2026-11-14-1110-stored-ref-journalist-ai)
 applied STORED-REF. `people/vicky/prompts/journalist-ai.md`: 10,863 to 7,404 bytes. The stored copy of the scheduled prompt is replaced by one reference line per task (the main task and the old fix-only task, both disabled); the schedule history is kept without prompt text. No task's prompt, state or time was changed.
 state: ok; done: STORED-REF applied; next: wait for the conductor's next task file; ask: none; run: prompted
+
+## 2026-11-14: COVERS-14NOV (task 2026-11-14-1115-covers-journalist-ai)
+applied COVERS-14NOV. One line added to my prompts file: I no longer make covers; each draft carries one line saying what the cover could show, and the designer then the reviewer take it from there. My startup prompt's older cover wording stays as stored; the new line says it is replaced.
+state: ok; done: COVERS-14NOV applied; next: wait for the conductor's next task file; ask: none; run: prompted

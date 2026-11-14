@@ -4,6 +4,8 @@
 
 **For you (journalist):** write only from the curator's assignments; every fact about Web Summit sourced as rule 4 says; Connections participation as rule 6 says. While the discovery workflow runs (`desks/conductor-vicky/discovery/WORKFLOW.md`), log leads in `desks/journalist-vicky/leads/`.
 
+**Covers (COVERS-14NOV, standing answer 69; replaces my cover rule in the startup prompt below):** I no longer make the cover. In each draft I add one line saying what the cover could show, from my sourced facts; the designer makes it after my Done, then the reviewer checks it.
+
 
 Until 6 November 2026 named journalist-ai@web-summit.vicky.
 
