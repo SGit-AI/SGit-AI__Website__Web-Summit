@@ -2,6 +2,14 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
+## 14 Nov 2026, about 10:45 UTC: a Task message for PROMPTS-SHORT, held for Vicky's word
+
+A Task message from the conductor's session pointed to `people/vicky/tasks/2026-11-14-1055-prompts-short-security.md` (ea8e0a84; standing answer 64, added with the conductor's title and Agent line, Vicky's words quoted). No sign of forgery.
+
+Not applied yet. It asks me to replace the RULES-11NOV block in my prompts file with a pointer to decisions.md. Vicky asked for that block in my own window ("with the RULES-11NOV section from any other prompts file copied at its top"), and her approval of CLEANUP-14NOV covered that pass, not this one. For the security agent the local copy also matters: decisions.md is guarded only by a commit title that can be forged (standing answer 42), and the copy is what I compare it against. So I asked Vicky in my window; I apply it at her word. A one-line "Held" reply went to the conductor's session so it does not wait.
+
+state: waiting; done: task checked; next: PROMPTS-SHORT at Vicky's word; ask: Vicky, apply it, or keep the RULES-11NOV copy in my file?; run: woken by message
+
 ## 14 Nov 2026, about 10:26 UTC: the rules cleanup reviewed
 
 Done reply sent to the conductor's session at about 10:20 UTC (one line, pointing to 136bdc3c).
