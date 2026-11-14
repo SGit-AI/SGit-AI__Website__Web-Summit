@@ -174,3 +174,8 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 - Kept as unsure: the "For you (journalist)" line (it names the discovery-workflow leads folder, so I judged it specific to me, but its "rule 4" and "rule 6" now point at standing answer 31 through the pointer).
 - Ledger line added (task "prompts update").
 - state: ok; done: PROMPTS-SHORT applied; next: on demand; ask: none; run: prompted
+
+## Sat 14 Nov 2026, 11:10 UTC (task 2026-11-14-1105-sched-fixup-journalist-portugal, prompted by the conductor)
+
+- Nothing to change: neither of my tasks (the writing task trig_01R4SDnvm1qg6LrQVcmCRPaH and the fix-only task trig_015W8aURM2zEyH9Sd9gJvzNx, both disabled) says the RULES-11NOV text or any rule is at the top of or in my prompts file; their line 0 already points at people/vicky/decisions.md (standing answer 31), and P2 only tells me to re-read my prompts file. The stored copy in my prompts file already matches. No ledger line (no prompts change).
+- state: ok; done: scheduled-prompt fix-up checked, nothing to change; next: on demand; ask: none; run: prompted
