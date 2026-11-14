@@ -60,6 +60,7 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **Statuses** (6 November, 20:00 UTC): the status list is in `desks/journalist-vicky/STYLE.md` (Status): "draft (the writer), in-review, fix and ready (the reviewer or checker), approved (the editor only, or an agent recording the editor's word), published (the publisher), dropped (the editor, or a reviewer at the editor's word; the file stays). On my desks, nothing is published without approved."
 - **Images** (6 November, 22:50 UTC): STYLE.md's "Images" section, in Vicky's words: "The reviewer checks images like text: each must match its caption, its alt text and its source, and sends back any image that isn't readable at phone width." Images are checked at phone width (about 390 px), in light and dark.
 - **Covers** (7 November): "every article from our desks must include at least one image from the first draft that works as the article's cover on /articles/"; in STYLE.md, Images. The cover files are the publisher's to make, in design/infographics/out/, as for S24.
+- **Covers by the designer** (14 November, standing answer 69, COVERS-14NOV; replaces the line above on who makes covers): the designer makes the cover for every new article; I check each one with the facts (every number and label against the article's sources) and the phone view (390 px) before publishing, and a cover that fails is a Fix first for the designer, never something I redraw.
 
 ## Vicky's decisions on specific drafts (for reference)
 
