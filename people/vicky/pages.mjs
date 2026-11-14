@@ -60,7 +60,7 @@ document.addEventListener('click', e => {
 })
 </script>`
     const twinMd = `The newsroom curator's story candidates, newest first, from ${SRC} (last updated by the curator on ${updated}). None is fact-checked yet.\n\n${stories.map(s => `- **${s.id}** (${s.beat}, added ${s.added}): ${s.title}. ${s.angle}${s.sources.map(x => `\n  - [${x.label}](${x.url})${x.read ? `, read ${x.read}` : ''}`).join('')}`).join('\n')}`
-    return [...promptugal(ROOT), ...workSoFar(ROOT), ...office(ROOT), ...interview(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
+    return [...promptugal(ROOT), ...workSoFar(ROOT), ...office(ROOT), ...interview(ROOT), ...localSites(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
 }
 
 // Promptugal News's logo options (Jose's request, through Vicky, 5 November 2026): /people/vicky/promptugal/. Built from
@@ -132,8 +132,8 @@ function workSoFar(ROOT) {
     if (!fs.existsSync(f)) return []
     const src = fs.readFileSync(f, 'utf8').replace(/^# .*\n/, '')
     const body = `<p class="meta">Written by Vicky's conductor (conductor@web-summit.vicky) on 6 November 2026, about 19:30 UTC, from her records on this site and the newsroom repository. Plain words, public material only.</p>\n${mdHtml(src)}`
-    const link = `\n<p><a href="../interview/index.html">Humans and AI: your interview</a> (14 November 2026)</p>`
-    return [{ rel: 'people/vicky/work-so-far/index.html', title: "Vicky's agents: the work so far", description: "Vicky's agents and their jobs, how a story reaches PrompTugal.news, what is live, the rules and files she set up, what changed on 6 November, and what is next.", body: body + link, md: src + '\n\n[Humans and AI: your interview](../interview/index.html)' }]
+    const link = `\n<p><a href="../interview/index.html">Humans and AI: your interview</a> (14 November 2026)</p>\n<p><a href="../local-sites/index.html">Local sites for PrompTugal.news: a plan for Dinis</a> (14 November 2026)</p>`
+    return [{ rel: 'people/vicky/work-so-far/index.html', title: "Vicky's agents: the work so far", description: "Vicky's agents and their jobs, how a story reaches PrompTugal.news, what is live, the rules and files she set up, what changed on 6 November, and what is next.", body: body + link, md: src + '\n\n[Humans and AI: your interview](../interview/index.html)\n\n[Local sites for PrompTugal.news: a plan for Dinis](../local-sites/index.html)' }]
 }
 
 // Humans and AI: the interview page (Vicky, 14 November 2026; decisions.md, standing answer 70): /people/vicky/interview/.
@@ -149,6 +149,15 @@ function interview(ROOT) {
     const body = `${mdHtml(before)}\n${box}\n${mdHtml('## What happens next' + (after || ''))}`
     const md = `${before.trim()}\n\n### The prompt\n\n\`\`\`\n${prompt}\n\`\`\`\n\n## What happens next${after || ''}`
     return [{ rel: 'people/vicky/interview/index.html', title: 'Humans and AI: your interview', description: "How to be interviewed by your own Claude for PrompTugal.news's Humans and AI team piece: the prompt to copy, and how to send the write-up back to Vicky.", body, md }]
+}
+
+// Local sites for PrompTugal.news: a plan for Dinis (Vicky, 14 November 2026): /people/vicky/local-sites/. Built from
+// people/vicky/local-sites/source.md, written by conductor@web-summit.vicky. Public material only.
+function localSites(ROOT) {
+    const f = path.join(ROOT, 'people/vicky/local-sites/source.md')
+    if (!fs.existsSync(f)) return []
+    const src = fs.readFileSync(f, 'utf8').replace(/^# .*\n/, '')
+    return [{ rel: 'people/vicky/local-sites/index.html', title: 'Local sites for PrompTugal.news: a plan for Dinis', description: "A plan for local PrompTugal.news sites by town, starting with Loulé: one set of agents, region and town tags under Portugal, three options, and what needs Dinis.", body: mdHtml(src), md: src }]
 }
 
 // The Live AI Office (Vicky, 8 November 2026; decisions.md, standing answer 21): /people/vicky/office/, a near-live
