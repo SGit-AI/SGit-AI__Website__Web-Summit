@@ -240,3 +240,7 @@ state: ok; done: CLEANUP-14NOV applied; next: wait for the conductor's next task
 ## 2026-11-14: PROMPTS-SHORT (task 2026-11-14-1055-prompts-short-journalist-ai)
 applied PROMPTS-SHORT. `people/vicky/prompts/journalist-ai.md`: 15,998 to 9,039 bytes. The RULES-11NOV block, the P1 to P3 section and the copies of standing answers 23, 26 and 43 are replaced by the one-line pointer to decisions.md; kept my "For you (journalist)" line, the startup prompt, the scheduled prompt as stored (with its own P1 to P3, and the scheduled task itself untouched), the desk-specific SA43 paragraph and my five chat rules. Kept as unsure: the "For you (journalist)" line still says "rule 4" and "rule 6", which now point at standing answer 31.
 state: ok; done: PROMPTS-SHORT applied; next: wait for the conductor's next task file; ask: none; run: prompted
+
+## 2026-11-14: scheduled-prompt fix-up (task 2026-11-14-1105-sched-fixup-journalist-ai)
+Both of my scheduled tasks (trig_014T4B2EkggPSUDazhhJZ1Gf and the old fix-only trig_01FpXptzb91YorA9vNLuwjUu, both still disabled, times unchanged) now point at `people/vicky/decisions.md` instead of "the top of your prompts file"; everything else word for word. The stored copy in my prompts file now matches the main task's prompt.
+state: ok; done: scheduled-prompt fix-up; next: wait for the conductor's next task file; ask: none; run: prompted

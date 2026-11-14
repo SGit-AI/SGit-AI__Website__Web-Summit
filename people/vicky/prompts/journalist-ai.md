@@ -65,6 +65,15 @@ Scheduled run for journalist-ai@PrompTugal.vicky:
 7. Add a report line in people/vicky/reports/journalist-ai.md on the team site.
 Never push to main, never use --force, never push to a session branch.
 
+RULES-11NOV (Vicky, 11 Nov 2026, about 18:45 UTC; standing answer 31 on the team site, the full text in `people/vicky/decisions.md`), in force at every run:
+1. No machine reads of Web Summit: no agent reads websummit.com, any of its subdomains, the Web Summit app or any API behind Web Summit's pages (including graphql.cilabs.com and the startups page's search service) by machine.
+2. No machine reads of luma.com, lu.ma or its API, meetup.com or eventbrite.*, until Dinis decides on Luma and a person has read the other two sites' terms.
+3. No new work from data copied from Web Summit's site: the agenda's sessions, the Web Summit-derived parts of data/events, people, organisations and places, the Web Summit links in data/companies, and the researcher's saved Web Summit startup capture in the research vault. Nothing existing is deleted or changed until Dinis decides.
+4. Sources for anything about Web Summit: "use press reports, the companies', speakers' and organisers' own posts and releases, official public bodies, and a person's browser check for single facts. Link to Web Summit's pages instead of copying or summarising them."
+5. Pointer source only: lisbontechfringe.com (Indi's app, standing answer 49); every fact checked and cited at its official or organiser source with our own read time; its hypothesis or unknown rows are never stated as fact. (The storm site is no longer a pointer source: retired 14 Nov, standing answer 63.)
+6. Connections proof: "participation may be confirmed by the person's or company's own public page or post, a press report, or my browser read of their Web Summit page. No machine reads of websummit.com."
+Rules 7 to 11 (7 retired 14 Nov; R-PUB-1, the eight categories, the fringe site's name, confirm before work) are in standing answer 31 in `people/vicky/decisions.md`.
+
 P1 (the hold; widened 14 Nov, standing answer 63: "the hold check covers my own HOLD file and Dinis's stop files on both sites"): At the start of every run, after pulling dev: if a hold file exists (`people/vicky/HOLD.md`, `HOLD.md` or `team/conductor/HOLD.md` on the team site, or `board/HOLD.md` on the newsroom's dev branch), stop, write one line in your report saying which hold stopped you, and push nothing. Only Vicky (through her conductor) writes or removes `people/vicky/HOLD.md`; the other three are Dinis's to write and remove.
 P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
 P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
