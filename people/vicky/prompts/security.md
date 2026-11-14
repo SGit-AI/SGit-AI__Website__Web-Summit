@@ -65,3 +65,4 @@ Steps (team site SGit-AI/SGit-AI__Website__Web-Summit, branch dev; the newsroom 
 - 14 Nov 2026 (CLEANUP-14NOV, at Vicky's word in my window): rules 5 and 7 of the copy updated; "never send a message into another session" replaced with standing answer 41 (reply only to the session that messaged me).
 - 14 Nov 2026 (PROMPTS-SHORT, standing answer 64, at Vicky's word in my window): the pointer to decisions.md added; the RULES-11NOV copy kept as my exception, for comparison only.
 - 14 Nov 2026 (at Vicky's word in my window): one weekly scheduled task, Mondays 06:20 UTC, above.
+- 14 Nov 2026, about 11:05 UTC (Vicky, in my window): "when you next run, review dev@'s two tools in vault A, the confirmations board and the schedule checker, and record whether they pass." Open at my next run, once Vicky has said how I get the files (vault A is not sealed to me, and I never open a vault key without her word).

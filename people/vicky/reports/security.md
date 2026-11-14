@@ -2,6 +2,16 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
+## 14 Nov 2026, about 11:05 UTC: the vault A tools review, asked for; blocked on access
+
+Vicky, in my window: "when you next run, review dev@'s two tools in vault A, the confirmations board and the schedule checker, and record whether they pass. vault@ can keep sealing vault A to my own agents meanwhile."
+
+- Recorded for vault@ and the conductor: Vicky allows vault A to be sealed to her own agents before my pass (this relaxes "none is shared until security@ passes it" in SA33-TOOLS and vault A's PRIVATE.md rule 2, for her own agents only).
+- **Blocked:** the tools exist only inside vault A (`tools/confirmations-board/`, `tools/schedule-checker/`, dev@'s a3e7ae9e); nothing is on the team site. Vault A is not sealed to my key, and my standing instruction from Vicky is never to seal or open a vault key. I asked Vicky in my window which way: (a) vault@ seals vault A to security-vicky and I may open that one key, read only, for this review; or (b) dev@ hands me the two tools' files another way that needs no vault key.
+- Due at my next run once she answers; noted in my prompts file.
+
+state: blocked; done: request recorded; next: review the two tools at my next run; ask: Vicky, (a) or (b)?; run: prompted
+
 ## 14 Nov 2026, about 10:55 UTC: weekly scheduled task set
 
 At Vicky's word in my window: one scheduled task, Mondays 06:20 UTC (first run Monday 16 Nov), firing into this session: compare standing answer 31 with my copy; check every change to decisions.md and the archive in the past week was the conductor's and quotes her words; check both keys pages (team site data/keys.json, newsroom board/keys.json) for keys not added by their own agent or that I cannot place. Report only, URGENT where anything looks wrong. Its prompt, as stored, is in my prompts file; its id is not in the repository. It carries P1 to P3 word for word (standing answer 16).
