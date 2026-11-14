@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **67** vault A sealed to internal-vicky, the reporter's seal after its team-site key; security@ reviews a vault A tool only when Vicky shares or publishes it.
 - **66** security@'s weekly check, Mondays 06:20 UTC; its note in Monday's brief.
 - **65** the "For Vicky" format in every message to Vicky: what, why, which window, the text to paste, now or can wait; "For Vicky: nothing needed" when nothing; details under "Being tracked".
 - **64** shorter prompts files: a one-line pointer to decisions.md in place of copied rules, after the three role changes (update PROMPTS-SHORT); the fix-only tasks stay disabled.
@@ -279,6 +280,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 
 66. **security@'s weekly check** (Vicky, 14 Nov, about 11:00 UTC, in this window: "Conductor: security now has a weekly check, Mondays at 06:20 UTC, which it sets up itself. Add it to schedule.json and include its note in Monday's brief.")
     - security@web-summit.vicky runs a weekly check on Mondays at 06:20 UTC, from a scheduled task it sets up itself in its own session. The conductor records it in `people/vicky/schedule.json` (its task id once the account shows it) and puts security@'s note from `people/vicky/reports/security.md` in Monday's 08:45 brief, beside scout's weekly note (Mondays 06:47 UTC).
+
+67. **Vault A for the new roles; no tool review unless shared or published** (Vicky, 14 Nov, about 11:05 UTC, in this window: "the vault A reseal is already in hand: vault@ sealed it to internal-vicky, and the reporter's seal waits until the reporter adds its key to the team site's data/keys.json, which I've asked it to do. Also, security's review of dev's two vault A tools is closed at my word: no review unless I share or publish a tool.")
+    - **Vault A:** sealed to internal-vicky (vault@, 0d55869). The reporter's seal waits until the reporter adds its key to the team site's `data/keys.json` by its own commit (Vicky asked it in its window); vault@ then seals it.
+    - **Tool reviews:** security@'s review of dev@'s two vault A tools (the confirmations board and the schedule checker, SA33-TOOLS) is closed. security@ reviews a vault A tool only when Vicky shares or publishes it. This changes standing answer 35's "security@ checks each tool against it before its key is shared with anyone": the check now comes when Vicky shares or publishes a tool, and the safe-to-publish rule for what goes in the tools is unchanged.
 
 ## Updates for agents
 
