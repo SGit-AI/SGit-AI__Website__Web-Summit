@@ -105,3 +105,10 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
 - Vicky's word (14 Nov): keep sealing vault A to her own agents; security@ reviews dev@'s two tools separately. Saved in my prompts file.
 - For the conductor: programme@'s hand-over says it deleted its copy of the interview shortlist vault's key and clone, but records no check that they are gone, which the plan asks for. programme-vicky is now superseded. The shortlist vault's key is still held by inbox@ (inbox-vicky), plus the read key sent to conductor@web-summit.dinis on 5 Nov.
 - state: ok; done: vault A sealed to the reporter; next: wait for the conductor or Vicky; ask: none; run: prompted
+
+## 14 November 2026, 18:20 UTC (the public vault app after the summit, from people/vicky/tasks/2026-11-14-1830-vault-app-update.md)
+
+- Vault `k64ma7jd`'s app is v1.3.0 (vault commit bdd52224ca72), at Vicky's word (standing answer 80). It has eight cards in the task's order, led by her Humans and AI interview and the PrompTugal.news front page (always the latest stories, so no card needs refreshing). The work so far, the agenda, Driving to Web Summit and Europe in Pavilion 4 are removed, and the women-in-AI article is added. The intro covers her work since the summit, and the light background is beige #F5F1E8 (text contrast 14.9:1, muted text 5.3:1); dark mode is unchanged.
+- Audited before the push: vault-audit.mjs clean on 18 revisions, and a separate security sub-agent clean (each new card line matches its public page; only the two public sites). Logged in the vault's PUBLIC.md. Checked in the real viewer: v1.3.0, beige, all eight previews load, all 12 files verify. people/vicky/vaults.json's entry is updated.
+- For the newsroom (no action needed for the app): inside a vault app's preview, PrompTugal.news pages log an error trying to use browser cache storage, which the sandbox does not allow. The pages still load and show correctly.
+- state: ok; done: public vault app v1.3.0; next: wait for the conductor or Vicky; ask: none; run: prompted
