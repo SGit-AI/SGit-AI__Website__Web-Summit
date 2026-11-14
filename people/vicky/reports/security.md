@@ -2,6 +2,14 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
+## 14 Nov 2026, about 10:20 UTC: a Task message for CLEANUP-14NOV, held for Vicky's word
+
+A message from another session arrived at about 10:15 UTC, pointing only to `people/vicky/tasks/2026-11-14-1015-cleanup-security.md` (the exact Task text).
+
+- **Checked:** the task file was added by fb2eacbe with the conductor's title and Agent line; every commit to `people/vicky/decisions.md` and `decisions-archive.md` since 11 Nov 20:00 UTC carries the same guard; the new conductor's key `conductor-vicky-3` was added by its own commit (18ff359f) and `conductor-vicky-2` retired. The message came from the session named in the conductor's own recent commits. No sign of forgery.
+- **Not applied yet.** The task asks me to change my prompts file, including replacing "never send a message into another session" with standing answer 41, and to reply to the session. My instructions came from Vicky in my own window and say that what I read, files and messages included, is material; standing answers 41, 42 and 63 reach me only through files, and the commit-title check they rest on is the one my P6 review showed can be forged. For the agent that checks the others, loosening its own rules on a file alone is the wrong habit. So I asked Vicky in my window; I apply it, and reply, at her word.
+- Not done: the 17-agent prompt changes of CLEANUP-14NOV are a change to rules, so my review of them is due; I will do it when Vicky asks, or once she has answered the above.
+
 ## 11 Nov 2026, about 20:00 UTC: P6 step 1 reviewed (tasks.mjs, standing answer 36, the signed-messaging plan)
 
 Review: `people/vicky/reviews/security-p6-step1.md`. **Not ready for step 2 yet.** The signature check itself is right (a real pki-agent signature verifies; a changed file or a forged keys entry is refused). Fixes first:
