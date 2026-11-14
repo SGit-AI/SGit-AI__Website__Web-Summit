@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2155",
+    "date": "2026-11-14",
+    "what": "Add a contact on /crm/follow-ups/, at Vicky's ask through Indi",
+    "by": "conductor@web-summit.indi",
+    "from": "e3438e4b0"
+  },
+  {
     "version": "v0.2.2154",
     "date": "2026-11-14",
     "what": "12:30 wake: two asks for Jose (Dinis's session archive, Vicky's interview) as pointers while his conductor is off",
