@@ -1,0 +1,12 @@
+{
+  "v": "pki-link",
+  "to": "conductor-vicky-3",
+  "agent": "conductor@web-summit.vicky",
+  "key": "sha256:6c7ad1aec4d55f31",
+  "by": "vault@web-summit.vicky",
+  "signing_fingerprint": "sha256:7039652f756f7269",
+  "at": "2026-11-14T1906Z",
+  "expires_days": 2,
+  "about": "Vault 41j3e9s9, the research vault (public, pack mode): its vault key, sealed to conductor-vicky-3 for Dinis's vault-key handover (admin/tools/vault-keys/BRIEF.md, Part A2), from the conductor's task 2026-11-14-2005. Opens only with conductor-vicky-3's private key: node pki-agent.mjs open \"<link>\" --save <0600 dir>. Never print the opened key.",
+  "link": "https://pki.sgit.ai/m/#m1.bef655df837f035a.Rco80g-0xRz_Aypd0fG1Cfu_5Rc1M-mxDU1VFslT510rX9TcXZD64MYI81-rMHgqyLyKsuzfzXwhn6v9bjRt1Z2FRuoKJnwfFN5RL0VAXp71AuCZt_e3tXuEKD-Q41QwDF2HaPGTq_u5WGWS8YPpPw_2XMPUy4te6_KjmsVeoxVPAxT0zV6ckJ2kzC195UWJWMxaIBqu0HSVxqlyS65X9tSwVk2Y_45MZirg8cZxfjj-AEJnfh7r6ZoK_aLfxC8aXJYIT54le04sA6HkFBfZ0i9MugtRk5foradukKcITnmzb0EvXxAh5-XZ1pSLyg5iAhyu5uqVGUMwHefOlrNz8f4_XKg5qKhtxzM-Enjul0XdRUchJ18Jws9foEUspz_y5dQpZX6n05ltJU6PFrTmIiW1u41EUsks1LJK35VLxwVaN-E8x3jCi1qHIpPVQQxCq5gkzA7W9bx-T4b3Rp5Aps7e-tbBn5YPnjoQ96dX2ap6UKsyfwWlCsvB4ip5SAyiNWWfg6SQE3fygmXZPF6Sw8xvDNkl71Sk2tNapFjbQyEEBeBQ14E_XJHenAPYSfTJ35RGsOx2NG3u-2k8SNA3QZMqllBvJva8LutJuu0SlwP1kCnR7dExdDDT1b6GkspgaU9LcBrRxROBkM7P1bA4KRncD_LHTssQ4V_4PLx7SlA.zU77VOqqepPLwYc-.lMeHHvKDb5_4d1duqedbckVN5k8NK296hmd8xyY6jF5UZD0PGbXRShsaJT6beDfaqzCpratNbIT4vURqmp_PjM74g_8WiFsxCXDCUHg_cPMYfW3XknIt7zFlG1buAGvb8SRBP5lzZThLxQKFHLJMgQDc9j_kP9OH9_OV1GbrN5-oiFZo7xzIYCcexS2J2fXNu7mZX072plxaAJMqNNWF_TmuD5m2WZDIILtNqDgnItGhS3FcimhgXAQfzVhm4aInotlCfvzRNu89msXztoQxFIKXU_hJCs5J3RXIrzSb0V9Ufk57hKC1sa7BlzgAwkEvCmvS2JcaTy9skhRA7dWgw9gVY1pxiVWNhAm042PxJxziZd9YGlHEPnT3VdF0vo-60cADhZqFBd93agmfHrUi2mpIxXimpC8VrCUb7OhJH1tyZbSRKRSFyXFw4_2_OHa4V20EbsffOFaDDO9MQ1XCUfpPlOTQeLOpayhqrMU7bjEWKeIIU7HM5BWA2PnMJMA7uzrSUk4JenIgyfJFGiJW6JoVY_ESxDcxqMxYUv-WsxhMHAWvNlpePsMYDvz3ilh1Pq8gF4iqA6l2pX73cUmEvBtvxRkfKkTCgwCy-LbhTPTWgKV7GA4DVuzM8B4ANJlpMxojquDSxi13FZWm1PYukYhm9Hs3C9Kf1m9X4xpE_u0Qo4uWgleNh5a3xBGH4gcaLcCvZOj1KbJndBPX0Lpia-8Rg3hiwIF8z4QL47_mAURGemYsBLyHhAhzNrFLvdxMsUKjOsW6zds2IYO_odDbuhMKiVwvN3H7tRW1tmrx-1t6CgOMbfsLIZAl5myj4t8T4NYkUKucbnTxOv5S1jxOka6bWD-xAJsW9vk5Cb7p18L4Do-kmb4zoTpSRnAlOPl0M5O0mBoh2mga-r72f9sSptIL5sog1wKEEjhxJJYzuZ9zqwnBG3vI8DVUcOYcS0FWDnT4.n_2svaM-xXAJ74iV855vpZlPNegItez-CaGzjlCKt7ab8xYZZyFmJNJo3z_leLVeV7jwqW4IIDkDyrbOibJ7wQ.7039652f756f7269"
+}

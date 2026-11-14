@@ -1,0 +1,12 @@
+{
+  "v": "pki-link",
+  "to": "conductor-vicky-3",
+  "agent": "conductor@web-summit.vicky",
+  "key": "sha256:6c7ad1aec4d55f31",
+  "by": "vault@web-summit.vicky",
+  "signing_fingerprint": "sha256:7039652f756f7269",
+  "at": "2026-11-14T1906Z",
+  "expires_days": 2,
+  "about": "Vault k64ma7jd, the public vault app Vicky at Web Summit: its vault key, sealed to conductor-vicky-3 for Dinis's vault-key handover (admin/tools/vault-keys/BRIEF.md, Part A2), from the conductor's task 2026-11-14-2005. Opens only with conductor-vicky-3's private key: node pki-agent.mjs open \"<link>\" --save <0600 dir>. Never print the opened key.",
+  "link": "https://pki.sgit.ai/m/#m1.bef655df837f035a.PBArsH5LcCW24cl26h9PIBIoMqDLp98G3M1mFJ-H08ayjCloWghCD-bFAcahkL2hiHImgeJHg-YFduj-cUpLg6VmNqCU6KrildVhcbmQUkPZF7dLJgtTDR7NiqvBHf3p1yqZtI2CSzMCreBTvX3iiDamdmNVSQIVQwR0V_Zv2K6_bA6LHxi41tqtN2TZp_wRcZRLomxyci4BzMOollD5aTtb419JTVhOLwHj6_lkbJoZNUixRo-La_yXjJyaRbUSyl6QjYZrBMap0yzo7q_k_nSFe6fkIx4Mc11Hoh0FwFaSJe_U6_KdYZ2gIR6iQ974xjWYctVxpu6WM-9zk87vFQH2Xxl_MCekPm0v42zwYZ4ShN7D6BBP6qH33PD26IH74jTz-wajIA5IkfT_I7W0d6Lz7_AGT9jT0Ms21HDjylcrrkRuiFBJfQQ4FOsOJdFmGLJs_zOUa03hWl0m8c_yX1johX7OUU6OKuIZmr0ZrmKegB5aF6_K2CZiG1tkJTEyPw5gbhEIC-yic6ufBzTpP4UV8aiXvScljThk-XiNTakrF8Npwfw1VlyZobEvstK6ai5ck9-w42IJ8ktzDSWVaPTt1Lu6a4CtW04gO2Q99mV9PKeYHDt6buGfMel7hbMmiRGMSXdCmWC8IE4UnDEepEFb5cJLnETk_f9buCs5_Go.76QKKEE44S35yrwL.Ovqbjp3B-BXImde86O_xKVBzIQLIax7nhLfxukkQTEXvN8Au5DMfL7QKmlNjwL_xRosGDZ5QibOjylnujiKqF5-YkJYubnvgXH1FV1YTXyGkoEroa9RcIG96Fxe2aBIjCD-cte_QsdbDsdhhlcQBitFc7vM1hmW_od7sqv54jVAhOAE1duIo6eKZtpi1Qp_r9rkAGlgsfeVgBnpn7r1Z9bsNe1A7lTHDNX28ffDTa5nc8kQhbbGf_UTZ7KyM6lhWQ_ifytw2akL7O_heTI-d-woylictnFJ-Cho-dgyHuFUmadFOYQ95RDYihEYCNFekG-oB57KPrRXx4xZDFFsRwwRZZNZ99WbmI1y0-sbHSaRq7iaGHjl5AyewXsEFQxNHH0-AQhj_fka8dopJ5ZmfDl0dWsgTMlejDwVpn1-qyv3MJvKpn3CnL5cqf26r0fD3khNdlimekuJ63RzJzmOZgNuGXb7fOiSFgeSVdr3f7_pQrH9oRH4yVlvlDyYPNG5pQEslOMsDaLcWF4WOSSXctAcnAd8IQazS1_e8ib1z2btu0GL6nmpO0-t2SaRJGYtsxPFgkWb2daT0rZpTddzkcyfgz9edrtmdBxFCqZhDOu-omgRTs50PWtkUzr5iR8HInkjjEYGjQCiGpgj3Thqri_k53FRKwYf6dd0NopLCeEyhEizXrBpyecqnll0d9vaq7PabCG8vXw6kZkvOjicfHvHBj6h4djiVQpqvmeuwPzh1A7R_i3cNxFVQglatIn_qS_chDSCq_1YyDzgWsFNhvp5h57r6rR6KqDa2a6Ef6OHTmOElG7hC7dC36FiCpfnyZja1dqcAPT46xBhXBw8baBAsX1p6_xmYoxe5Ahy4YLTlHNIFGd2QwPu1Zogd_9EIpPp32W0jmR--dBf9KAs9AF1SdkXqGSvWmImgHt5x5SykmbEhzGwXyu5LL5i3DdpHwrsMIVDhRQ.TvwD9sT7J4oRNarp5MqVezdtoa0qfARCDYRlno8Ar6cm7_0t59VyOleLc2fSSi7Ol-rA4YkcJTJfW9SCu4BUUw.7039652f756f7269"
+}
