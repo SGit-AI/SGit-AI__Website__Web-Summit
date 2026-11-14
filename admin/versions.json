@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2139",
+    "date": "2026-11-14",
+    "what": "scheduled-prompt fix-up applied: my task points at decisions.md",
+    "by": "scout@web-summit.vicky",
+    "from": "29e428569"
+  },
+  {
     "version": "v0.2.2138",
     "date": "2026-11-14",
     "what": "standing answer 68: stored copies of scheduled prompts become a one-line reference after the fix-up; scout's reply rule confirmed",
