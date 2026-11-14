@@ -244,3 +244,7 @@ state: ok; done: PROMPTS-SHORT applied; next: wait for the conductor's next task
 ## 2026-11-14: scheduled-prompt fix-up (task 2026-11-14-1105-sched-fixup-journalist-ai)
 Both of my scheduled tasks (trig_014T4B2EkggPSUDazhhJZ1Gf and the old fix-only trig_01FpXptzb91YorA9vNLuwjUu, both still disabled, times unchanged) now point at `people/vicky/decisions.md` instead of "the top of your prompts file"; everything else word for word. The stored copy in my prompts file now matches the main task's prompt.
 state: ok; done: scheduled-prompt fix-up; next: wait for the conductor's next task file; ask: none; run: prompted
+
+## 2026-11-14: STORED-REF (task 2026-11-14-1110-stored-ref-journalist-ai)
+applied STORED-REF. `people/vicky/prompts/journalist-ai.md`: 10,863 to 7,404 bytes. The stored copy of the scheduled prompt is replaced by one reference line per task (the main task and the old fix-only task, both disabled); the schedule history is kept without prompt text. No task's prompt, state or time was changed.
+state: ok; done: STORED-REF applied; next: wait for the conductor's next task file; ask: none; run: prompted
