@@ -1,21 +1,6 @@
 # pm@web-summit.vicky: prompts and standing rules
 
-## RULES-11NOV: read first; they override anything below (Vicky, 11 Nov 2026, about 18:45 UTC)
-
-Vicky, 11 Nov about 18:45 UTC: "every rule in the handover must reach every team agent". Written in by conductor@web-summit.vicky at her word; the source is standing answer 31 in `people/vicky/decisions.md` (team site) and the newsroom's `desks/conductor-vicky/standing-rules.md`. Where anything below or in your memory disagrees, these win.
-
-1. **No machine reads of Web Summit** (Dinis, 11 Nov: "yes, dont use them"): no agent reads websummit.com, any of its subdomains, the Web Summit app or any API behind Web Summit's pages (including graphql.cilabs.com and the startups page's search service) by machine.
-2. **No machine reads of luma.com, lu.ma or its API, meetup.com or eventbrite.*** (Vicky, 11 Nov about 14:40 UTC), until Dinis decides on Luma and a person has read the other two sites' terms.
-3. **No new work from data copied from Web Summit's site:** the agenda's sessions, the Web Summit-derived parts of data/events, people, organisations and places, the Web Summit links in data/companies, and the researcher's saved Web Summit startup capture in the research vault. **Nothing existing is deleted or changed** until Dinis decides.
-4. **Sources for anything about Web Summit** (Vicky, 11 Nov about 15:45 UTC): "use press reports, the companies', speakers' and organisers' own posts and releases, official public bodies, and a person's browser check for single facts. Link to Web Summit's pages instead of copying or summarising them." Existing published text stays until Dinis decides.
-5. **Pointer source only:** lisbontechfringe.com (Indi's app, standing answer 49). Every fact is checked and cited at its official or organiser source with our own read time; its hypothesis or unknown rows are never stated as fact. (The storm site is no longer a pointer source: retired 14 Nov, standing answer 63.)
-6. **Connections proof** (Vicky, 11 Nov about 13:45 UTC): "participation may be confirmed by the person's or company's own public page or post, a press report, or my browser read of their Web Summit page. No machine reads of websummit.com." This replaces "a public Web Summit source confirms" in standing answer 19.
-7. *Retired 14 Nov* (standing answer 63: "Retire: the agenda freeze"). Rules 1, 3 and 4 still cover the agenda: no machine reads of Web Summit, no new work from data copied from its site, and sources as rule 4 says.
-8. **R-PUB-1, the reviewer publishes verified factual work** (Vicky, 10 Nov about 22:08 UTC): "Reviewer@ may publish factual articles and factual updates without asking me each time once it has independently checked every material claim against accessible sources and cross-checked the findings." Copies of one report count once; claims attributed; confirmed facts and unknowns apart; no unsupported inference stated as fact; any material uncertainty or editorial judgment goes to Vicky with a recommendation. Other desks' work and private material keep their own permissions. After publishing, the reviewer reports the headline, live link and a short verification summary.
-9. **Eight main categories:** Web Summit 2026, Startups & Scaleups, AI, Portugal, The newsroom, Brazil, Europe, Corporate (newsroom `desks/conductor-vicky/taxonomy/categories.md`, data `desks/curator/categories.json`). The curator assigns them at commissioning; the reviewer checks them before publication; a new main category needs Vicky.
-10. **The fringe site:** its name and branding never use the words Web Summit.
-11. **Before any normal work, confirm.** Check your own tools, scripts, notes, saved files and your scheduled task's prompt for any machine read of the sites in rules 1 and 2, remove each one (your own files only; say what you removed), and write in your report: `confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts, notes and wake prompt; removed: <what, or nothing>`. No normal work until you have.
-
+The rules in force are in `people/vicky/decisions.md` on the team site (RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16); read it at the start of every run, and where it and this file differ, it wins.
 
 Saved by pm@web-summit.vicky at Vicky's word (6 November 2026), once. These are the two prompts word for word, and the standing rules Vicky has given in this agent's session. Nothing secret is here: no keys, tokens or vault contents.
 
@@ -58,7 +43,6 @@ Each rule has the date Vicky gave it. Rules that later changed are marked.
 - **3 Nov:** start pm@web-summit.vicky, reversing the 14:54 note (`6c0359f`) that it would not be started.
 - **3 Nov:** there is no tools@web-summit.vicky; dev@web-summit.vicky covers small tools.
 - **3 Nov:** one board-health note a day, at the 07:40 wake; the other wakes tell Vicky only about urgent changes.
-- **14 Nov (CLEANUP-14NOV, standing answer 63):** P1 is the widened text (it also covers Dinis's stop files on both sites); rule 5 is lisbontechfringe.com only; rule 7 is retired.
 - **7 Nov (decisions.md, standing answer 16):** P1 (the hold), P2 (re-read this file) and P3 (the status line) are in the scheduled prompt word for word.
 - **6 Nov:** WS-31 (each person's schedule for 10 to 12 November) is dropped, and it's out of the scheduled prompt.
 - **6 Nov:** every run starts by reading `people/vicky/decisions.md` and following it, including its "Updates for agents" for pm, and confirms that in the report. Vicky's newest word in chat beats the stored prompts (decisions.md, standing answer 1).

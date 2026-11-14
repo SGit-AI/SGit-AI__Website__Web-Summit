@@ -127,3 +127,9 @@ state: idle
 - Nothing else needed changing. No line said publishing waits for Vicky or never to message another session, and none rested only on an archived entry. I kept "Never send anything: draft, and Vicky sends" in the startup prompt: it is about messages to people, not sessions. Say so if it should go.
 - applied SA54-LEDGER: two lines in people/vicky/ledger/pm.jsonl, "prompts update" and the one-off "session total so far".
 - state: ok; done: CLEANUP-14NOV and SA54-LEDGER applied; next: on demand through the conductor; ask: none; run: prompted
+
+## 14 November 2026, about 10:50 UTC (task file 2026-11-14-1055-prompts-short-pm, ea8e0a8)
+
+- applied PROMPTS-SHORT: prompts/pm.md now opens with the one-line pointer to decisions.md in place of the copied RULES-11NOV block, 14,963 to 11,006 bytes. My startup prompt, my scheduled prompt as stored (it keeps P1 to P3) and my own dated rules are unchanged; the scheduled task was not touched.
+- Kept as unsure: the 7 Nov line saying P1 to P3 are in the scheduled prompt, which stays true. I removed one line of mine, the 14 Nov note that summarised the retired rules 5 and 7, since the block it described is gone.
+- state: ok; done: PROMPTS-SHORT applied, one ledger line; next: on demand through the conductor; ask: none; run: prompted
