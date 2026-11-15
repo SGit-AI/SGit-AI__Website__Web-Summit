@@ -58,7 +58,7 @@ Vicky's analysis desk for PrompTugal.news (standing answer 75). One entry per ru
 
 **Question for Vicky (my recommendation first):** may this session attach the newsroom repository? I recommend yes: allow the add-repository call for this session (or add the repository to the environment), and I copy the checked proposal and key there word for word.
 
-## Sun 15 Nov 2026, 10:20 UTC (newsroom attached)
+## Sun 15 Nov 2026, 10:12 UTC (newsroom attached)
 
 - At Vicky's word in this window, the newsroom is attached (push). Its CLAUDE.md and `desks/journalist-vicky/STYLE.md` are read. Done in newsroom commit `6036c620a` (live in v0.1.1470): key `analyst-vicky-promptugal` in `board/keys.json`, and the checked proposal copied word for word to `desks/analyst-vicky/proposals/2026-11-15.md` (byte for byte the same as `people/vicky/proposals/analyst-2026-11-15.md`).
 - state: waiting for a task file; done: key on both sites, checked proposal in the newsroom; next: a task file from the conductor; run: first run (second session).
