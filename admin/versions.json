@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2230",
+    "date": "2026-11-15",
+    "what": "conductor.b@PrompTugal.angelo: crm-pipeline stopped; its folder brought onto dev",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "479da421e"
+  },
+  {
     "version": "v0.2.2229",
     "date": "2026-11-15",
     "what": "conductor.b@PrompTugal.angelo: handover agents on hold",
