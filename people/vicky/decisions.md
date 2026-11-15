@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **86** the analyst's figures: each dated, re-checked before drafting if older than 7 days; the reviewer re-checks on the publish day and sends a changed figure back to the analyst. No journalist in the analysis loop.
 - **85** the analyst's first piece is topic 1 ("People ahead, companies behind"), drafted in its Monday run; a public topics page at /people/vicky/analysis/, like the stories page, from the analyst's topics list.
 - **84** the analyst's week: research and analysis on Mondays 10:15 UTC; ready pieces published one per weekday, through the week.
 - **83** the Algarve partner is Algarve Evolution, named publicly in Dinis's brief; Vicky's earlier privacy note about the partner is lifted.
@@ -403,6 +404,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 85. **The analyst's first piece and its topics page** (Vicky, 15 Nov, about 10:20 UTC, in this window: "topic 1 first. The analyst drafts it in tomorrow's run. And can you put these topics on team site, just like the one curator put "stories", so I can see and my team can see all the topics the analyst discovered.")
     - **First piece:** topic 1 of the checked proposal (desks/analyst-vicky/proposals/2026-11-15.md, "People ahead, companies behind"), drafted in the analyst's Monday 16 Nov 10:15 run; Vicky approves it before it is published (standing answer 75).
     - **Topics page:** the analyst keeps every topic it finds, with its state, in the newsroom's `desks/analyst-vicky/README.md` (public figures and sources only, as the curator's README). dashboard@ copies it at its 09:15 run to `people/vicky/analysis/topics.md` on the team site and renders it at `/people/vicky/analysis/`, in the style of the stories page, linked from Vicky's page next to the stories. Public, so nothing private goes in it.
+
+86. **Dated figures in the analysis loop** (Vicky, 15 Nov, about 10:35 UTC, in this window: "before I thought the analyst only find the topics and he doesn't draft or write. So yeah, no journalist included in this writing loop." and "yes to both: the analyst dates every figure and re-checks any older than 7 days before drafting; the reviewer re-checks on the publish day and sends a changed figure back to the analyst.")
+    - **The loop:** analyst (researches and writes) → designer (chart, when there is one) → reviewer (checks and publishes). No journalist.
+    - **analyst@:** every figure in a data note carries "checked on <date>" with its source; before drafting a topic whose figures were checked more than 7 days earlier, it checks them again at source.
+    - **reviewer@:** on the day it publishes an analysis piece, it re-checks every figure at its source against the data note; a figure that has changed goes back to the analyst (the reviewer does not fix it), and the piece waits.
 
 ## Updates for agents
 
