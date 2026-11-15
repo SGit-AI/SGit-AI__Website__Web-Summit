@@ -1765,6 +1765,24 @@
         "fingerprint": "sha256:07143845134c4bfd",
         "signing_fingerprint": "sha256:6cb6fbf8dcb82ed1"
       },
+      "status": "superseded: 15 November 2026, 09:55 UTC; its session (09:31 UTC, wrong environment) was retired and replaced by a new session, whose key is analyst-vicky-2; sign or seal nothing to it",
+      "superseded_at": "2026-11-15T09:55Z"
+    },
+    {
+      "id": "analyst-vicky-2",
+      "agent": "analyst@PrompTugal.vicky",
+      "label": "analyst@PrompTugal.vicky (Claude Code session, team account, 15 November 2026, second session)",
+      "role": "Vicky Wang’s analysis desk for PrompTugal.news (analyst@PrompTugal.vicky): reads public data and trends, checks every figure against its primary source and writes pieces labelled Analysis (standing answer 75 in people/vicky/decisions.md). It replaces the entry analyst-vicky (sha256:6cb6fbf8dcb82ed1), which is superseded. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on the team account on 15 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs). Not linked to an operator’s key or confirmed on pki.sgit.ai. The private halves stay in the session (~/.sg-send, outside this repository); the push of this entry is the authorisation.",
+      "added": "2026-11-15T09:55Z",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxvqBZwKulBx1FUOVdrdC\nxXam6vwweAofy7jH1aJWSV1ghC7DSDJbI3TslcV85GhLFz3DcY/tNmUu+dkB8jfB\npjG5EozmwQhIfXFMmY/hUXZqtuCY0YGQ3rR4O21WIn7Px7DPfC957OgN2wNSi6ND\nFc02dIumqUYouoBkpoHQkDYhRsx7NFbIza3HKVWqaTi/u5AjXH3mNjO/1r77PomG\n6rOFzk74At6WtMEv8aUxfBKfOElF3oqdTrRuDQ2nGQsEMNuhwn0bzrJHP3hT4874\nA9eLn/9zp6NqnAQYi38LRwRXn0hjSt+QDfANPB7+GfDOo1mV+JpoeODAsl25ZEy8\nvVpNf1V0cJ4quqBFBKXonG6KhmIMEMpZwbPnf1PYgrS+ThSC8BegfaIh8HPeOWUn\nWuOQWa2hw/UKgYjJy/TKVzmftwUDokxKh+q7xK9MvpXedGPzFhnErbtl7RLmYV9m\nNaPOsnmaxvfNPE9cBUDLKCsoTqoY0ZjrEcKqCm047KetwrxMrZpaJSS3D467Mu4I\nVSwSAmbGILiUohUeKtvJCi3MLmwHnMX4hzr7WdB2W2ICJTtq7wqHwiS6dDFz3pZY\nRNYmXGBVtJiAGbJ8IgF91K4THpD5aibuYtggmFmkH4FsYAkhT3pQFqf+ohCtt7ho\n2fM80fz2+FN2+VkkN4TLsp0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEr1sX8nJEB6SQUcLL0cHdhZh5RkiB\nOjE6LzOyKMXaUEemaDkA9VVqfYuMmfQ6ebUjOCayEWANFu0Qh5WaVGut+Q==\n-----END PUBLIC KEY-----\n",
+        "label": "analyst@PrompTugal.vicky",
+        "fingerprint": "sha256:26498861d27f220c",
+        "signing_fingerprint": "sha256:415487eeebe3bc44"
+      },
       "status": "active"
     }
   ]

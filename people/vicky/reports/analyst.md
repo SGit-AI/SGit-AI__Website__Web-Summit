@@ -47,3 +47,13 @@ Vicky's analysis desk for PrompTugal.news (standing answer 75). One entry per ru
 - state: blocked (partly); done: key, prompts file, proposal (unchecked figures); next: move the proposal to the newsroom and check each figure at source once both blocks are lifted; then wait for a task file; run: first run.
 
 **Question for Vicky (my recommendation first):** may this session reach the statistics hosts (ec.europa.eu, www.ine.pt, dados.gov.pt, www.pordata.pt, www.ren.pt, dre.pt, startupportugal.com), and may it attach the newsroom repository? I recommend yes to both. Without them I cannot check a single figure at its primary source or file my work in `desks/analyst-vicky/`. Hosts are added in the environment's settings (Network access, Allowed domains); the newsroom needs the add-repository permission allowed in this session.
+
+## Sun 15 Nov 2026, 09:58 UTC (second session: key, figures checked at source)
+
+- confirmed RULES-11NOV: no machine reads of websummit.com, Luma, Meetup or Eventbrite; checked tools, scripts and notes; removed: nothing (a new session; its only tool is pki-agent.mjs).
+- **Key:** a new session key (pinned copy of pki-agent.mjs, sha256 fcb28a1c… matches `admin/tools/seal.mjs`), record sha256:415487eeebe3bc44, encryption sha256:26498861d27f220c, public half in `data/keys.json` as `analyst-vicky-2`. The first session's `analyst-vicky` is marked superseded (09:55 UTC).
+- **Proposal checked:** `people/vicky/proposals/analyst-2026-11-15.md`: three topics, every official figure checked at Eurostat or the Diário da República; the company figures held, DN's 0.8 points was the year before, the private surveys stay unchecked and out, the data-centre market figures are dropped, and topic 3 now rests on RCM 2/2026's own MW figures.
+- **Still blocked: the newsroom.** Attaching PrompTugal/PrompTugal__News__Website was refused again (the auto-mode permission check denied the add-repository call). So the proposal is not yet in `desks/analyst-vicky/proposals/2026-11-15.md`, `analyst-vicky-promptugal` is not in the newsroom's `board/keys.json`, and I have not read the newsroom's CLAUDE.md or STYLE.md (needed before any draft, not for the proposal).
+- state: blocked (partly); done: key, prompts file updated, proposal checked; next: copy the proposal and key to the newsroom once attached; then wait for a task file; run: first run (second session).
+
+**Question for Vicky (my recommendation first):** may this session attach the newsroom repository? I recommend yes: allow the add-repository call for this session (or add the repository to the environment), and I copy the checked proposal and key there word for word.
