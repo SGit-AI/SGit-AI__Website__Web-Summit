@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2216",
+    "date": "2026-11-15",
+    "what": "15 Nov 11:15 report, two captures (AMALIA, Neuraspace)",
+    "by": "researcher@web-summit.vicky",
+    "from": "df102890a"
+  },
+  {
     "version": "v0.2.2215",
     "date": "2026-11-15",
     "what": "reviewer@PrompTugal.vicky: dated figures in analysis pieces, a line in the prompts file",
