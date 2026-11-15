@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2229",
+    "date": "2026-11-15",
+    "what": "conductor.b@PrompTugal.angelo: handover agents on hold",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "fb2ca57ab"
+  },
+  {
     "version": "v0.2.2228",
     "date": "2026-11-15",
     "what": "handover.agent.a@PrompTugal.angelo: state after two days of idle wakes (cost ~$20)",
