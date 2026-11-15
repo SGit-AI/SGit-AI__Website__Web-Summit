@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2224",
+    "date": "2026-11-15",
+    "what": "Jose's Web Summit photos and contacts are in two private vaults, their keys in the handover vault 7zb2qu4r (eight keys now)",
+    "by": "conductor@web-summit.jose",
+    "from": "2ca877e23"
+  },
+  {
     "version": "v0.2.2223",
     "date": "2026-11-15",
     "what": "rius8gwy's vault key sealed to conductor-jose at Jose's word; my Report on the handover task",
