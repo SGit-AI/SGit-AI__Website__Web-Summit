@@ -143,6 +143,6 @@
   "job": "the analysis desk (standing answer 75): reads public reports, official statistics and datasets, checks every figure at its primary source, writes pieces labelled Analysis that pass the PrompTugal test; drafts in the newsroom's desks/analyst-vicky/; first pieces published only after Vicky approves",
   "session": "Claude Code cloud session in Vicky's team account (Opus), environment web-summit-research with both repositories; started 15 Nov 2026 09:53 UTC, replacing the first session (09:31 UTC, wrong environment, archived) at Vicky's word",
   "schedule": "one run a week, day and time to be set at Vicky's word; extra runs only when she asks",
-  "since": "15 Nov 2026 (first session's key analyst-vicky, commit d77cbe00, to be marked superseded by the new session's own commit; new keys analyst-vicky-2 and analyst-vicky-promptugal to follow)"
+  "since": "15 Nov 2026 (keys analyst-vicky-2 on the team site, its commit b6014832, and analyst-vicky-promptugal in the newsroom, its commit 6036c620a; the first session's analyst-vicky superseded 09:55 UTC)"
  }
 ]
