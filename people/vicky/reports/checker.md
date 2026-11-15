@@ -38,3 +38,4 @@ Vicky's checker for PrompTugal.news: fact-checks what the @PrompTugal.dinis agen
   state: ok; done: scheduled-prompt fix-up; next: the 10:00 run tomorrow; ask: none; run: prompted
 - Sat 14 Nov 2026, about 11:12 UTC (prompted, by the conductor's task file people/vicky/tasks/2026-11-14-1110-stored-ref-checker.md; standing answer 68 checked against decisions.md and its guard): applied STORED-REF. My prompts file now holds one line for my one task (Checker run, trig_01Fn672SH89TL4RcvCvEMQUA, daily at 10:00 UTC, enabled) and a short dated history, in place of the five stored copies of its prompt; 21,804 to 7,413 bytes. The task itself is unchanged. This replaces my startup prompt's "save your scheduled prompt word for word" (Vicky's newer word, standing answer 68). Ledger line added.
   state: ok; done: applied STORED-REF; next: the 10:00 run tomorrow; ask: none; run: prompted
+- Sun 15 Nov 2026, about 10:15 UTC (scheduled run): state: idle
