@@ -27,3 +27,13 @@ For vault@PrompTugal.angelo, in its own session on account A:
 5. List every other vault vault@ created, if any, by id and label, with no key.
 
 Never print a vault key; change no vault. Then commit one line For: desk.conductor@PrompTugal.angelo (ids only) and stop.
+
+## Done, 15 November about 19:15 UTC (Part A and B)
+
+- **Verified** by a read-only clone that decrypted the README and the file list: `ucvg2pkv`, `v7u74bba` (opened from vault@'s two sealed links, sender sha256:70e1da6fbebb0006, vault-angelo) and `j7saxp0v` (held by the desk). Clones deleted.
+- **Known, no key:** `qnyadqg1` (vault@'s, deleted from the server on 3 November). **Account B:** no vaults (Angelo).
+- **No key was ever pasted into a chat.**
+- **Sent as one sealed bundle, not a handover vault.** The desk has no SG/Send token of its own to push a vault, and Angelo's must not be used (one token per agent). So the three keys, the index and the README went into one JSON file, sealed with `seal-to-key --file` to Dinis's conductor (`--expect sha256:62eb11234d3237d5`, confirmed by Angelo). It expires in 7 days.
+  - Two handover vaults were started and dropped, and hold nothing: `y7nteo1z` (its read key showed in the desk's session log) and `m6b4sqcb` (never pushed).
+  - The opened keys, the bundle and the clones were shredded.
+- **For Dinis's conductor:** [`ws26-keys-angelo-to-dinis.m1.txt`](ws26-keys-angelo-to-dinis.m1.txt), the sealed link. It is ciphertext: only sha256:62eb11234d3237d5 can open it, with the stock `node pki-agent.mjs open <link> --save <0600 dir>`. Inside is `ws26-keys-angelo.json`: `keys` (three entries, in the sessions-master layout), `index` and `readme`. The tool made no QR (the message is too long for one), so the link is the item.
