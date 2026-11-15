@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-15T07:17Z",
+ "run": "2026-11-15T17:16Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,26 +12,27 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "818f96f",
-  "to": "4933677",
+  "from": "4933677",
+  "to": "3d4281f",
   "branch": "dev"
  },
  "counts": {
-  "commits": 4,
-  "ci_releases": 2,
+  "commits": 58,
+  "ci_releases": 24,
   "watcher_own": 1,
-  "agents": 1,
+  "agents": 33,
   "no_agent_name": 0
  },
  "security": {
   "old_agent_last_review": "f4a9fbe, wake 11:51 on 7 November",
   "new_agent": "security.repos@web-summit.dinis, last report 2026-11-12T1225Z (run 30); not run since 12:19 on 12 November",
-  "gap_not_reviewed": "two gaps: dev from 11:51 on 7 November to 10:58 on 8 November, and dev after 4a4f30d (12:15 on 12 November), now 486 commits, including the vault-key handovers"
+  "gap_not_reviewed": "two gaps: dev from 11:51 on 7 November to 10:58 on 8 November, and dev after 4a4f30d (12:15 on 12 November), now 544 commits, including the vault-key handovers"
  },
  "by_person": {
-  "silvio": 1
+  "vicky": 30,
+  "jose": 3
  },
- "actions": "open A-28 (four of Jose's tasks disabled), A-06, A-21, A-14, A-23; closed A-29 (Silvio's video agent back at 00:28)",
+ "actions": "open A-28 (conductor, helper, vault and Fringe conductor tasks disabled; conductor and vault work in sessions), A-06, A-21, A-14, A-23",
  "task_report": {
   "task": "people/jose/tasks/2026-11-07-watcher-a06-pointers.md",
   "status": "done: the conductor marked people/jose/tasks/2026-11-07-watcher-a06-pointers.md done; A-06 itself stays open for dev",
@@ -60,17 +61,17 @@
   },
   {
    "level": "medium",
-   "what": "Jose's conductor pushed two commits with no review",
-   "where": "851c0b1 (19:35) and 00061a3 (19:43), the vault-key handover: no Reviewed-by line and no review record; its task file people/jose/tasks/2026-11-14-vault-keys-handover.md says 'Not run: reviewer'",
+   "what": "second report: Jose's conductor pushes without review when it works in a session",
+   "where": "851c0b1, 00061a3 (14 November) and now 7dd3449 (13:41) and 2ca877e (14:06) on 15 November: no Reviewed-by and no review record; vault's 1ede08e (13:43) is reviewed",
    "rule": "every commit by Jose's agents carries Reviewed-by (Jose's reviewer, WS-134)",
-   "context": "the watcher checked the content: no key in the clear; the committed handover (people/jose/handover/ws26-keys-jose-to-dinis.m1.txt and .png) is a sealed link and QR, sealed to conductor-3 (Dinis's conductor, on the keys page since 1 November), signed by conductor-jose. The miss is the process, not a leak. For conductor@web-summit.jose: run the reviewer on both after the fact and record it"
+   "context": "the watcher checked all four: no key, photo, name or contact detail in the clear; the miss is the process. For conductor@web-summit.jose: run the reviewer before every push in a session too, and review these four after the fact; Jose may want to remind it"
   },
   {
    "level": "note",
-   "what": "no email-rule lines in this range",
-   "where": "the one agent commit, 44d3e4a (a ledger line and a pipeline note)",
+   "what": "email-rule matches: 8 lines in 4 commits by the watcher's scan tool (which leaves out web-summit agent names, noreply headers and example domains, and skips some files); a plain address pattern finds PrompTugal agent names in 21 of the 58 commits",
+   "where": "agent names and CI's version rows",
    "rule": "an email address",
-   "context": "no matches"
+   "context": "none is a person's contact detail by shape"
   },
   {
    "level": "note",
@@ -78,13 +79,6 @@
    "where": "admin/tools/session-archive/FOR-EVERYONE.md",
    "rule": "none",
    "context": "Jose's choice; Vicky's conductor puts it in her Sunday brief"
-  },
-  {
-   "level": "low",
-   "what": "a trailer git does not read",
-   "where": "44d3e4a (video@web-summit.silvio)",
-   "rule": "the commit convention",
-   "context": "its Agent line sits above a blank line before Co-Authored-By"
   }
  ],
  "open_from_earlier_runs": [
@@ -111,8 +105,11 @@
   }
  ],
  "reviewer_trailer": {
-  "jose_commits_checked": 0,
-  "missing": [],
+  "jose_commits_checked": 3,
+  "missing": [
+   "7dd3449",
+   "2ca877e"
+  ],
   "misplaced": []
  },
  "branches": {
@@ -121,12 +118,25 @@
   "claude/optimistic-feynman-7pkot9": "unchanged, dc306d7",
   "claude/nifty-bell-f1rkca": "merges only"
  },
- "commits_jose": [],
+ "commits_jose": [
+  {
+   "sha": "7dd3449",
+   "agent": "conductor@web-summit.jose"
+  },
+  {
+   "sha": "1ede08e",
+   "agent": "vault@web-summit.jose"
+  },
+  {
+   "sha": "2ca877e",
+   "agent": "conductor@web-summit.jose"
+  }
+ ],
  "could_not_check": [
   "scheduled tasks in other people's accounts",
   "the agents' run logs in the public vault aym98gsm (no sgit client yet)",
   "work done in other repositories (the newsroom, the apps, Storm-Charles, and Jose's Fringe agents in PrompTugal__News__Fringe)"
  ],
- "context": "A quiet night: one agent commit, Silvio's video agent publishing the music video at 00:28 (44d3e4a)",
+ "context": "Sunday: Jose's vault-key handover finished. vault@web-summit.jose sealed the sixth key (rius8gwy) to conductor-jose (1ede08e, reviewed); the conductor put all six in the handover vault 7zb2qu4r (7dd3449), then, on Dinis's message, Jose's Web Summit photos (5 files) and contacts export (53 rows) went into two private vaults whose keys joined the handover vault (2ca877e: eight keys). The watcher checked the three diffs: no key, photo, name or contact detail in the repository. The 12:15 run was idle",
  "correction": "the watcher's schedule checker matched agent names as substrings, so 'Dinis's conductor last ...' times in runs before 12:18 on 12 November may have been incident.conductor@web-summit.dinis's; fixed (exact match)"
 }
