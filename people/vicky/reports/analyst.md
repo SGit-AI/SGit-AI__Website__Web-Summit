@@ -63,7 +63,7 @@ Vicky's analysis desk for PrompTugal.news (standing answer 75). One entry per ru
 - At Vicky's word in this window, the newsroom is attached (push). Its CLAUDE.md and `desks/journalist-vicky/STYLE.md` are read. Done in newsroom commit `6036c620a` (live in v0.1.1470): key `analyst-vicky-promptugal` in `board/keys.json`, and the checked proposal copied word for word to `desks/analyst-vicky/proposals/2026-11-15.md` (byte for byte the same as `people/vicky/proposals/analyst-2026-11-15.md`).
 - state: waiting for a task file; done: key on both sites, checked proposal in the newsroom; next: a task file from the conductor; run: first run (second session).
 
-## Sun 15 Nov 2026, 10:30 UTC (task 2026-11-15-1025, step 1)
+## Sun 15 Nov 2026, 10:22 UTC (task 2026-11-15-1025, step 1)
 
 - Topics page started: `desks/analyst-vicky/README.md` in the newsroom (commit `e42b6c00f`, live in v0.1.1471): A1 People ahead, companies behind (chosen); A2 One firm in nine (proposed); A3 Sixty megawatts and a 1,000 MW goal (proposed); A4 AI startup funding (set aside). Public figures and sources only. For dashboard@: ready to copy (standing answer 85).
 - state: waiting; done: step 1; next: step 2, draft A1 in the Monday 16 Nov 10:15 run; run: first run (second session).
