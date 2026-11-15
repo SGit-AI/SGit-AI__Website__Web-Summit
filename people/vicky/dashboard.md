@@ -4,11 +4,11 @@ summary: The page Vicky reads first: the newsroom this week, what waits on other
 compact: true
 office_link: office/index.html
 ---
-*Last updated: Sat 14 Nov, 18:07 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
+*Last updated: Sun 15 Nov, 09:17 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
 
 ## The newsroom this week {#newsroom-week}
 
-**Published from your desks in the last seven days (30 articles):**
+**Published from your desks in the last seven days (26 articles):**
 
 - 14 Nov: [When an agent says it's done, check a few things yourself](https://promptugal.news/articles/humans-and-ai-vicky-wang.html)
 - 14 Nov: [Loulé agency 3WX launches Best Number One, a free start page](https://promptugal.news/articles/best-number-one-3wx-loule.html)
@@ -19,7 +19,7 @@ office_link: office/index.html
 - 12 Nov: [Discord opens its first engineering hub outside San Francisco, in Lisbon](https://promptugal.news/articles/discord-lisbon-engineering-hub.html)
 - 11 Nov: [How Zalando rolled out AI coding agents across its engineering teams](https://promptugal.news/articles/zalando-ai-coding-agents.html)
 
-:::details Earlier this week (22 more)
+:::details Earlier this week (18 more)
 
 - 11 Nov: [EU says TikTok's For You feed may breach its platform law](https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html)
 - 11 Nov: [Thursday at Web Summit: a practical guide to the last day](https://promptugal.news/articles/thursday-last-day-guide.html)
@@ -39,20 +39,15 @@ office_link: office/index.html
 - 9 Nov: [Where to find Portugal at Web Summit: Pavilion 1, stand E145](https://promptugal.news/articles/where-to-find-portugal.html)
 - 9 Nov: [Beyond Lisbon: where Road 2 Web Summit's 78 startups come from](https://promptugal.news/articles/road-2-web-summit-beyond-lisbon.html)
 - 9 Nov: [Sports tech at Web Summit: IBM's startup challenge ends in Lisbon](https://promptugal.news/articles/ibm-sports-tech-challenge.html)
-- 7 Nov: [A map of Web Summit's buildings, and what each holds](https://promptugal.news/articles/venue-map.html)
-- 7 Nov: [The sign-in: how editors and agents prove who they are](https://promptugal.news/articles/the-sign-in.html)
-- 7 Nov: [Driving to Web Summit? Road closures and drop-off points](https://promptugal.news/articles/driving-to-web-summit.html)
-- 7 Nov: [Two editions a day: PrompTugal.news starts a daily newsletter](https://promptugal.news/articles/daily-newsletter.html)
 
 :::
 
-**Stories in the loop:** none right now. The latest, S65, went live today (the task files of 14 Nov, 17:20 to 17:45 UTC, ran it from commissioning to publishing).
+**Stories in the loop:** none right now. The latest, S65, went live on Sat 14 Nov.
 
 **Humans and AI interviews:** 1 of 6 pages published (yours). The five teammates' write-ups come back privately, and a page is published only after its person approves it.
 
 ## Waiting on others {#waiting}
 
-- **Dinis (conductor@web-summit.dinis): choose A, B or C for the local sites plan** ([the plan](local-sites/index.html)). Asked on Sat 14 Nov at 17:29 UTC; no reply yet.
 - **Dinis, Silvio, Angelo, Indi and Jose: your Humans and AI interviews.** Asked on Sat 14 Nov at 11:57 UTC; the write-ups come back privately, so only the count above is shown.
 - **The front page's owner (correspondent@PrompTugal.dinis): Lisbon Tech Fringe in place of the summit agenda block**, your suggestion. Sent on Fri 13 Nov at 20:03 UTC; it is their decision, and no reply yet.
 - 1 private request, see conductor.

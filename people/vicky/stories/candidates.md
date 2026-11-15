@@ -6,7 +6,7 @@ Kept by curator@PrompTugal.vicky (until 6 November curator@web-summit.vicky), Vi
 
 **Connections** (from 5 November, at Dinis's direction): stories that link startups and companies at Web Summit so each gets the most out of the week: startups in the same field, startups and the investors or programmes that back that field, companies on the same stage or day, Portuguese startups and the European ones they could work with. They are marked "Connections" in the beat. Each link is the curator's suggestion from public facts: no source says these organisations plan to meet, and no story should say so. Organisations only; nothing private about anyone.
 
-Last updated: Saturday 14 November 2026, 07:38 UTC.
+Last updated: Sunday 15 November 2026, 07:38 UTC.
 
 **Categories** (Vicky, 10 November 2026): the curator assigns every article its main categories from `desks/curator/categories.json` (one or more of Web Summit 2026, Startups & Scaleups, AI, Portugal, The newsroom, Brazil, Europe, Corporate) when commissioning it, and adds its line to that file before the article is published. A new main category only with Vicky's approval; routine corrections are the curator's. Corporate versus Startups & Scaleups by the story's subject and angle, never by size, valuation, funding round or headcount. No article file is edited for this.
 
@@ -30,6 +30,9 @@ Last updated: Saturday 14 November 2026, 07:38 UTC.
 
 | Id | Title | Beat | Added |
 |---|---|---|---|
+| S66 | Neuraspace of Coimbra raises 15.6 million euros for AI space software | Portugal | 15 Nov |
+| S65 | Loulé agency 3WX launches Best Number One, a free start page (published 14 Nov) | Portugal | 14 Nov |
+| S64 | AMALIA and ANIA: what Portugal says about its own AI plans | Portugal | 14 Nov |
 | S61 | Humanos wins Road 2 Web Summit's top prize, 15,000 euros (published 13 Nov) | Portugal | 12 Nov |
 | S60 | What PagerDuty says it learned running AI agents in production (published 12 Nov) | AI and robotics | 12 Nov |
 | S59 | Discord is opening its first engineering hub outside San Francisco, in Lisbon (published 12 Nov) | Portugal | 12 Nov |
@@ -85,6 +88,35 @@ Last updated: Saturday 14 November 2026, 07:38 UTC.
 | S3 | Road 2 Web Summit: Portugal's startups head for Lisbon | Portugal | 4 Nov |
 | S2 | Europe arrives in Pavilion 4: the Commission's week at Web Summit (withdrawn 11 Nov) | Europe | 4 Nov |
 | S1 | Web Summit Lisbon: your first day, from airport to arena | The summit | 4 Nov |
+
+## S66: Neuraspace of Coimbra raises 15.6 million euros for AI space software
+
+Portugal, added 15 Nov. AICEP's official item: Coimbra's Neuraspace secured 15.6 million euros for its AI-enabled space traffic products; the figures and customer claims are the item's account of the company. AI path: direct, 0 steps; Coimbra and Portugal, ESA, NATO. For journalist-portugal, categories Portugal and AI. One source: attribute every figure. Put the AI path in the story.
+
+Sources:
+
+- [AICEP Portugal Global (Portuguese trade and investment agency, official news), "Neuraspace secures €15.6m to scale AI space technology"](https://www.portugalglobal.pt/en/news/2026/setembro/neuraspace-secures-156m-to-scale-ai-space-technology/), read 15 November 2026
+
+## S65: Loulé agency 3WX launches Best Number One, a free start page
+
+Portugal, added 14 Nov. A Loulé agency, 3WX, says it presented Best Number One, a free start page for organising links, at Web Summit 2026 and passed 300 sign-ups; the figures and the launch claim are the company's, relayed by two regional papers. For journalist-portugal (Vicky's urgent request), categories Web Summit 2026 and Portugal. The two papers count as one source: attribute everything. Published on 14 Nov 2026: https://promptugal.news/articles/best-number-one-3wx-loule.html. Not to be written again.
+
+Sources:
+
+- [Postal do Algarve (regional newspaper), "Empresa de Loulé lança plataforma Best Number One no Web Summit e ultrapassa 300 inscrições"](https://postal.pt/algarve/empresa-de-loule-lanca-plataforma-best-number-one-no-web-summit-e-ultrapassa-300-inscricoes/), read 14 November 2026
+- [A Voz do Algarve (regional news site), "Empresa de Loulé lança plataforma Best Number One no Web Summit 2026"](https://www.avozdoalgarve.pt/d/empresa-de-loule-lanca-plataforma-best-number-one-no-web-summit-2026/98951), read 14 November 2026
+- [Best Number One (the platform's own site, a project of the agency 3WX), "Best Number One: Página inicial grátis para organizar os seus links"](https://www.bestnumberone.com/), read 14 November 2026
+
+## S64: AMALIA and ANIA: what Portugal says about its own AI plans
+
+Portugal, added 14 Nov. Official sources on AI in Portugal: the government's National AI Agenda (four areas, 32 initiatives) and what INESC-ID, NOVA FCT and the project's own model page say about AMALIA, the first language model for European Portuguese (five-university consortium, open-source release, 5.5 million euros); aims, not results. For journalist-portugal, categories Portugal and AI. Updated 14 Nov 15:45 before drafting. Do not link AMALIA to ANIA. INESC-ID says 80 researchers, NOVA FCT around 60: report both.
+
+Sources:
+
+- [INESC-ID (research institute, own news page), "AMALIA was officially launched and is now ready for open use"](https://www.inesc-id.pt/amalia-was-officially-launched-and-is-now-ready-for-open-use/), read 14 November 2026
+- [NOVA FCT (university faculty, own news page), "AMALIA: an LLM project led by NOVA FCT is now available."](https://www.fct.unl.pt/en/news/2026/07/amalia-llm-project-led-nova-fct-now-available), read 14 November 2026
+- [the AMALIA project's own organisation page on Hugging Face (model page), "amalia-llm/AMALIA-9B-0626-DPO (model page on Hugging Face)"](https://huggingface.co/amalia-llm/AMALIA-9B-0626-DPO), read 14 November 2026
+- [digital.gov.pt (Portuguese government's digital portal), "National AI Agenda (ANIA) Published: Portugal Reinforces Commitment to Responsible and Competitive AI"](https://digital.gov.pt/en/noticias/publicada-a-agenda-nacional-de-ia-ania-portugal-reforca-compromisso-com-ia-responsavel-e-competitiva), read 14 November 2026
 
 ## S61: Humanos wins Road 2 Web Summit's top prize, 15,000 euros
 
@@ -587,8 +619,10 @@ For the five journalists, in priority order (standing answers 20 and 22, the des
 
 Ready to write now:
 
+1. S64, AMALIA and ANIA: what Portugal says about its own AI plans: for the Portugal desk (journalist-portugal). The government says, in its own news item, what its National AI Agenda (ANIA) is; INESC-ID and NOVA FCT say what AMALIA is, the first language model for European Portuguese, and the project's own Hugging Face page shows a released checkpoint under Apache 2.0; re-read the pages yourself, attribute everything, treat use cases and impact as expectations, report the researcher counts (INESC-ID 80, NOVA FCT around 60) as they are, do not link AMALIA to ANIA, give no ANIA budget (the page gives none), no Web Summit pages; short and plain; categories Portugal and AI.
+2. S66, Neuraspace of Coimbra raises 15.6 million euros for AI space software: for the Portugal desk (journalist-portugal). AICEP's official item says Neuraspace of Coimbra secured 15.6 million euros for its AI-enabled space traffic products; re-read the item yourself, attribute every figure and customer claim to it or the company, say what it does not give, put the AI path in the story (AI connection: direct, AI-driven risk assessment for satellite traffic; steps away: none; places: Coimbra and Portugal, ESA, NATO and a European ministry of defence as named customers), no Web Summit pages; short and plain; categories Portugal and AI.
 
-Already published, not to be written again: S61 (https://promptugal.news/articles/humanos-road-2-web-summit-winner.html); S60 (https://promptugal.news/articles/pagerduty-agents-in-production.html); S59 (https://promptugal.news/articles/discord-lisbon-engineering-hub.html); S58 (https://promptugal.news/articles/thursday-last-day-guide.html); S37 (https://promptugal.news/articles/teamworks-coaches-agent.html); S38 (https://promptugal.news/articles/glovo-restaurant-agents-getvocal.html); S39 (https://promptugal.news/articles/wpp-call-transcripts-to-jira.html); S40 (https://promptugal.news/articles/gravitee-agent-security-survey.html); S42 (https://promptugal.news/articles/what-lovable-deleted.html); S49 (https://promptugal.news/articles/europe-in-pavilion-4.html); S56 (https://promptugal.news/articles/digital-fairness-act-ai-agents.html); S53 (https://promptugal.news/articles/eu-election-guidelines-generative-ai.html); S55 (https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html); S52 (https://promptugal.news/articles/konecta-lisbon-delivery-centre.html); S54 (https://promptugal.news/articles/breakout-startups-thursday-centre-stage.html); S46 (https://promptugal.news/articles/zalando-ai-coding-agents.html); S48 (https://promptugal.news/articles/manus-2-0-agents-own-email-phone-wallet.html); S50 (https://promptugal.news/articles/ai-act-first-harmonised-standard.html); S51 (https://promptugal.news/articles/getting-around-lisbon-wednesday.html); S45 (https://promptugal.news/articles/web-summit-day-2-refunds.html); S41 (https://promptugal.news/articles/red-wind-warning-lisbon-wednesday.html); S28 (https://promptugal.news/articles/five-ai-builders-to-know.html); S29 (https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html); S30 (https://promptugal.news/articles/health-startups-by-problem.html); S31 (https://promptugal.news/articles/road-2-web-summit-beyond-lisbon.html); S33 (https://promptugal.news/articles/ibm-sports-tech-challenge.html); S34 (https://promptugal.news/articles/where-to-find-portugal.html); S35 (https://promptugal.news/articles/press-conferences-day-by-day.html); S36 (https://promptugal.news/articles/portugal-on-the-programme.html).
+Already published, not to be written again: S61 (https://promptugal.news/articles/humanos-road-2-web-summit-winner.html); S60 (https://promptugal.news/articles/pagerduty-agents-in-production.html); S59 (https://promptugal.news/articles/discord-lisbon-engineering-hub.html); S58 (https://promptugal.news/articles/thursday-last-day-guide.html); S37 (https://promptugal.news/articles/teamworks-coaches-agent.html); S38 (https://promptugal.news/articles/glovo-restaurant-agents-getvocal.html); S39 (https://promptugal.news/articles/wpp-call-transcripts-to-jira.html); S40 (https://promptugal.news/articles/gravitee-agent-security-survey.html); S42 (https://promptugal.news/articles/what-lovable-deleted.html); S49 (https://promptugal.news/articles/europe-in-pavilion-4.html); S56 (https://promptugal.news/articles/digital-fairness-act-ai-agents.html); S53 (https://promptugal.news/articles/eu-election-guidelines-generative-ai.html); S55 (https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html); S52 (https://promptugal.news/articles/konecta-lisbon-delivery-centre.html); S54 (https://promptugal.news/articles/breakout-startups-thursday-centre-stage.html); S46 (https://promptugal.news/articles/zalando-ai-coding-agents.html); S48 (https://promptugal.news/articles/manus-2-0-agents-own-email-phone-wallet.html); S50 (https://promptugal.news/articles/ai-act-first-harmonised-standard.html); S51 (https://promptugal.news/articles/getting-around-lisbon-wednesday.html); S45 (https://promptugal.news/articles/web-summit-day-2-refunds.html); S41 (https://promptugal.news/articles/red-wind-warning-lisbon-wednesday.html); S28 (https://promptugal.news/articles/five-ai-builders-to-know.html); S29 (https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html); S30 (https://promptugal.news/articles/health-startups-by-problem.html); S31 (https://promptugal.news/articles/road-2-web-summit-beyond-lisbon.html); S33 (https://promptugal.news/articles/ibm-sports-tech-challenge.html); S34 (https://promptugal.news/articles/where-to-find-portugal.html); S35 (https://promptugal.news/articles/press-conferences-day-by-day.html); S36 (https://promptugal.news/articles/portugal-on-the-programme.html); S65 (https://promptugal.news/articles/best-number-one-3wx-loule.html).
 
 Already drafted, not to be written again: S44 (drafted, awaiting review); S47 (published as an update).
 
