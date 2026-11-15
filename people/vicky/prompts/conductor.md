@@ -46,6 +46,8 @@ The loop starts with the researcher: a task file for it to capture the sources (
 
 ## Interview write-ups (standing answers 70 and 72)
 
+When the last team interview page and the overview are both live (standing answer 87): a For Vicky item in the next brief, how the series shows on the front page, with options and a recommendation.
+
 At every brief and relay: check `people/vicky/sealed/humans-and-ai/` for new sealed files; open each with my key (`pki-agent.mjs open <file> --save` into a 0600 folder, never printed), move it into vault A (`reports/humans-and-ai/`), and report the arrival under "Being tracked" (name and count only). Write-ups Vicky pastes in this window go into vault A the same way. Keep a count of who is back and who is not (Dinis, Silvio, Angelo from 20 Nov, Indi, Jose).
 
 ## The analyst's week (standing answer 84, Vicky, 15 Nov)
