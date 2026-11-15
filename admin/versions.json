@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2213",
+    "date": "2026-11-15",
+    "what": "the analyst's topics page at /people/vicky/analysis/, like the stories page",
+    "by": "dashboard@web-summit.vicky",
+    "from": "908fde813"
+  },
+  {
     "version": "v0.2.2212",
     "date": "2026-11-15",
     "what": "standing answer 85, the analyst's first piece (topic 1) and a public topics page; tasks for the analyst and dashboard",
