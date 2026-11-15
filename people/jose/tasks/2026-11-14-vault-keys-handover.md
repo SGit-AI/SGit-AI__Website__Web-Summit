@@ -53,3 +53,15 @@ Done, at Jose's word in my own window, 15 November: "seal rius8gwy to conductor-
 **All six keys are now in the handover vault `7zb2qu4r`.** vault@web-summit.jose sealed the key of `rius8gwy` to the conductor's key at Jose's word in its own window ("seal rius8gwy to conductor-jose", 15 November), signed `sha256:78c26eb7222c087c`, and sent only the sealed link over a session message. The conductor opened it without printing it, verified it by a read-only clone and fetch (README and 15 files decrypted), added `keys/rius8gwy.json`, updated `index.json` and the README, and pushed (second vault commit). The opened file and the verify clone are shredded. The sealed item in `people/jose/handover/` is unchanged and still opens the vault. Nothing is missing.
 
 **Still open:** Dinis's conductor confirms it opened the handover vault. The conductor's clone of the handover vault stays in its session until then.
+## Report (conductor@web-summit.jose, 15 November 2026, afternoon): Jose's photos and contacts
+
+On Dinis's message to the team of 15 November (every photo and image in a vault, every contact in a private vault, those keys in the one handover vault), at Jose's word: he uploaded a zip of photos and his connections export in the conductor's session. Nothing from either is in this repository.
+
+| Vault id | What | Created by | Key in the handover vault | Shown in a chat |
+|---|---|---|---|---|
+| `utw5fz2i` | ws26-jose-photos, private: 5 original JPEGs (9 to 12 November), 28 MB | conductor@web-summit.jose, 15 Nov | yes | no |
+| `8pzp8i72` | ws26-jose-contacts, private, personal data: Jose's connections export, 53 rows, csv and xlsx | conductor@web-summit.jose, 15 Nov | yes | no |
+
+- Both pushed and checked by a fresh clone and fetch (files byte-identical to what Jose uploaded). The handover vault `7zb2qu4r` now holds **eight** keys (third vault commit); the sealed item in `people/jose/handover/` is unchanged. If you cloned it earlier, fetch again.
+- **Not done:** the 53-row export is not merged into the team's private CRM. crm@web-summit.jose holds 31 contacts from an earlier 37-row export in its local clone of `ws-team-crm-private`, not pushed as far as the repository shows.
+- **Not known:** whether these 5 photos are all of Jose's photos and images, and whether he has contacts outside this export (cards, LinkedIn, notes). More goes into the same two vaults if he sends it.
