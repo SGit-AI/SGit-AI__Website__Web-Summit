@@ -2,10 +2,10 @@
 title: "Project: the team's client pipeline on the private CRM (crm-pipeline)"
 lead: crm-pipeline.pm@PrompTugal.angelo
 started: 2026-11-13, by conductor.b@PrompTugal.angelo at Angelo's word
-status: running
+status: stopped 2026-11-15 by conductor.b@ at Angelo's word ("stop the pm and stop working on that features"); its work stays on project/crm-pipeline and the pool/crm-pipeline-* branches
 budget: none; the running cost (dollars and tokens) in STATE.md's "For the digest:" line (Angelo, 11 Nov: "Yeah, c works.")
 ---
-**Wake routine:** trig_01P4tAMLBsNBLGuw2mFPZMNY. It fires only when a worker fires it: no backstop schedule (Angelo paused all scheduled agents on 13 Nov: "Yes please, pause all agents."). Put "Wake routine: trig_01P4tAMLBsNBLGuw2mFPZMNY" in every worker's brief.md.
+**Wake routine:** set by conductor.b@ in its next commit. It fires only when a worker fires it: no backstop schedule (Angelo paused all scheduled agents on 13 Nov: "Yes please, pause all agents."). Put "Wake routine: <its id>" in every worker's brief.md.
 
 # The client pipeline on the private CRM
 

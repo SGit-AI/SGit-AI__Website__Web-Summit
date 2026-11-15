@@ -1,0 +1,38 @@
+{
+  "note": "made-up: every person and company in this file is invented for the mock; no real visitor, contact or note. Team members appear only as owners, by first name.",
+  "today": "2026-11-13",
+  "me": "angelo",
+  "owners": ["angelo", "dinis", "silvio", "indi", "jose", "vicky"],
+  "stages": [
+    { "id": "to_contact", "label": "To contact", "kind": "start" },
+    { "id": "to_follow_up", "label": "To follow up", "kind": "loop" },
+    { "id": "in_conversation", "label": "In conversation", "kind": "loop" },
+    { "id": "call_booked", "label": "Call booked", "kind": "loop" },
+    { "id": "proposal", "label": "Proposal", "kind": "step" },
+    { "id": "won", "label": "Won", "kind": "end" },
+    { "id": "parked", "label": "Parked", "kind": "end" }
+  ],
+  "deals": [
+    { "id": "tidecraft-robotics", "company": "Tidecraft Robotics", "contact": "Rita Okafor", "role": "Head of platform", "stage": "call_booked", "owner": "angelo", "due": "2026-11-13", "next": "Call at 15:00: show the policy demo", "consent": "Asked at the stand, 12 Nov: yes, keep name, role and work email",
+      "events": [
+        { "at": "2026-11-12T10:41Z", "by": "angelo", "kind": "created", "to": "to_contact", "note": "Met at the stand after the demo; asked how blocking works for tool calls." },
+        { "at": "2026-11-12T16:05Z", "by": "angelo", "kind": "stage", "from": "to_contact", "to": "to_follow_up" },
+        { "at": "2026-11-12T18:20Z", "by": "silvio", "kind": "note", "note": "Their platform team also came to the desk; same question about approvals." },
+        { "at": "2026-11-13T09:12Z", "by": "angelo", "kind": "stage", "from": "to_follow_up", "to": "in_conversation" },
+        { "at": "2026-11-13T11:30Z", "by": "angelo", "kind": "stage", "from": "in_conversation", "to": "call_booked", "note": "Call booked for today 15:00." }
+      ] },
+    { "id": "brightloom-analytics", "company": "Brightloom Analytics", "contact": "Tomas Lind", "role": "CTO", "stage": "to_follow_up", "owner": "angelo", "due": "2026-11-11", "next": "Send the one-page report" },
+    { "id": "quarry-vine-logistics", "company": "Quarry & Vine Logistics", "contact": "Mei Arden", "role": "AI lead", "stage": "in_conversation", "owner": "silvio", "due": "2026-11-12", "next": "Answer their pricing question" },
+    { "id": "nimbusfold-health", "company": "Nimbusfold Health", "contact": "Jonah Pell", "role": "CISO", "stage": "to_contact", "owner": "angelo", "due": "2026-11-13", "next": "First note after the stand" },
+    { "id": "oakline-insurance", "company": "Oakline Insurance", "contact": "Sara Voss", "role": "Head of risk", "stage": "proposal", "owner": "dinis", "due": "2026-11-17", "next": "Walk through the proposal" },
+    { "id": "saltmarsh-legal-ai", "company": "Saltmarsh Legal AI", "contact": "Ivo Brandt", "role": "Founder", "stage": "to_follow_up", "owner": "indi", "due": "2026-11-16", "next": "Follow up on the demo" },
+    { "id": "pebbleworks-retail", "company": "Pebbleworks Retail", "contact": "Lena Moor", "role": "VP engineering", "stage": "in_conversation", "owner": "angelo", "due": "2026-11-17", "next": "Share the agent setup guide" },
+    { "id": "cobaltfern-energy", "company": "Cobaltfern Energy", "contact": "Aziz Rahm", "role": "Platform owner", "stage": "call_booked", "owner": "jose", "due": "2026-11-18", "next": "Call with their security team" },
+    { "id": "harborlight-bank", "company": "Harborlight Bank", "contact": "Nora Quill", "role": "Innovation lead", "stage": "to_contact", "owner": "vicky", "due": "2026-11-14", "next": "First note, from the stand list" },
+    { "id": "wrenfield-software", "company": "Wrenfield Software", "contact": "Pablo Ries", "role": "CEO", "stage": "won", "owner": "dinis", "due": null, "next": "Pilot starts 1 Dec" },
+    { "id": "lumen-atlas", "company": "Lumen Atlas", "contact": "Cora Hale", "role": "Data lead", "stage": "parked", "owner": "silvio", "due": null, "next": "Not before Q2" },
+    { "id": "juniper-fleet", "company": "Juniper Fleet", "contact": "Ola Berg", "role": "COO", "stage": "to_follow_up", "owner": "angelo", "due": "2026-11-20", "next": "Send the case study" },
+    { "id": "fernway-media", "company": "Fernway Media", "contact": "Kit Morrow", "role": "Head of AI", "stage": "in_conversation", "owner": "vicky", "due": "2026-11-13", "next": "Reply on the trial terms" },
+    { "id": "granite-bay-ports", "company": "Granite Bay Ports", "contact": "Ugo Benn", "role": "IT director", "stage": "to_contact", "owner": "indi", "due": "2026-11-12", "next": "Book a first call" }
+  ]
+}
