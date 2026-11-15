@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2208",
+    "date": "2026-11-15",
+    "what": "analyst moved to the web-summit-research environment (new session, first one archived); start kit corrected",
+    "by": "conductor@web-summit.vicky",
+    "from": "2b81e94e4"
+  },
+  {
     "version": "v0.2.2207",
     "date": "2026-11-15",
     "what": "analyst@PrompTugal.vicky started (15 Nov 09:31 UTC); key checked; agents list and prompts index updated",
