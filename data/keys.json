@@ -1749,6 +1749,23 @@
       },
       "status": "active",
       "replaces": "programme-vicky"
+    },
+    {
+      "id": "analyst-vicky",
+      "agent": "analyst@PrompTugal.vicky",
+      "label": "analyst@PrompTugal.vicky (Claude Code session, team account)",
+      "role": "Vicky Wang's analysis desk for PrompTugal.news (analyst@PrompTugal.vicky): reads public data and trends, checks every figure against its primary source and writes pieces labelled Analysis (standing answer 75 in people/vicky/decisions.md). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on the team account on 15 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs). Not linked to an operator's key or confirmed on pki.sgit.ai. The private halves stay in the session (~/.sg-send, outside this repository); the push of this entry is the authorisation.",
+      "added": "2026-11-15T09:32Z",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA9SKjbGR88wQmP2kSXaDG\n9QE6/nV25Sv6bQCF6HQ5DvsGYR2sPRFLkv4Ott5obsNmcNvKSYLs+kGjYjS+ir89\nxojKvEsDJ/ia6seJtWAtEArdY5zPr5VOnmt78viuaOtnrLyAvaGUXRhg4BY80G3F\n1aTjr1CBX+shvzdFNDp0TE8gvK153ki17PzZfxLdUUSwAV40awAaU0moPKiWYX0y\n8+K9fOCP9ddskQe/Glw2Ls/eElP78TSyirg5kCf9VkAHDihK7a6HRJkLhJX0th+z\nz3mlAFDOGfZs1rGbWIiznxVTNU39FtieeJnlWPFzpibajs5R6VE7GNCjLkatkOqR\nUN02b+yJF06wQHfrU+FcR/lzlHHlzPguAXm+NjfaSuLZqml1cLJYv68bbWk0y6aw\nbsuFcP2v5CRW2wtSeBLOAQOaYtDxhtumwEmAT+F+WLkrsIfdK+F5WlUHTvYG0z7k\nxArFUWoATTrYeQU7IiY7gfrFvZzRvRo+5xY+EIjHu8Mgi45xVuBpW8eqI+eLvuHw\nZEvwaVnovspBEVmockjP8JUdE1u895GYrJa07il4slxbXOc1D3G0I5cEh9KCedh3\nY37MM6XB4TxI16WDrHJWR/3Zn4gQmQjXAR2Ch/32bk7fEd94ilFTor2OpLJ0L2QD\nrhfNHzhvUSJm+eZKQ2VqWR0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEfMECT2zHDbFKGXkOmkDAJ/jZv1ky\ndg/zDPASjh5zSjiJO3wxEBReKZHD28wpwGNmTnWtByZVOXzR6K5CLp/QNA==\n-----END PUBLIC KEY-----\n",
+        "label": "analyst@PrompTugal.vicky",
+        "fingerprint": "sha256:07143845134c4bfd",
+        "signing_fingerprint": "sha256:6cb6fbf8dcb82ed1"
+      },
+      "status": "active"
     }
   ]
 }
