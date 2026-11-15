@@ -1,6 +1,6 @@
 {
  "about": "Every scheduled task of Vicky's agents, one row per task (UTC). Kept by conductor@web-summit.vicky (scout's P4, accepted by Vicky on 6 Nov 2026), checked against the account's scheduled tasks in each 08:30 brief. Changes to tasks are Vicky's; the conductor changes one only at her word (as for the Web Summit timetable, 7 Nov).",
- "checked": "2026-11-15T08:55Z (security task id added; all others match the account)",
+ "checked": "2026-11-15T10:00Z (analyst weekly run added)",
  "tasks": [
   {
    "agent": "conductor@web-summit.vicky",
@@ -265,6 +265,17 @@
    "state": "enabled 14 Nov 11:12 UTC; first run Fri 20 Nov",
    "since": "14 Nov 2026",
    "at_whose_word": "Vicky (14 Nov about 11:15 UTC), set by the conductor"
+  },
+  {
+   "agent": "analyst@PrompTugal.vicky",
+   "task": "weekly research and analysis run",
+   "cron_utc": "15 10 * * 1",
+   "task_id": "trig_016v5vLsbJmtodXqcbkoCfZb",
+   "state": "enabled 15 Nov 09:59 UTC; first run Mon 16 Nov",
+   "since": "15 Nov 2026",
+   "at_whose_word": "Vicky (15 Nov about 09:58 UTC, standing answer 84)",
+   "session": "the analyst session in web-summit-research (from 15 Nov 09:53 UTC)",
+   "checked": "2026-11-15T10:00Z"
   }
  ],
  "no_task": [

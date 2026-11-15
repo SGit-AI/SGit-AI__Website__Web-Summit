@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **84** the analyst's week: research and analysis on Mondays 10:15 UTC; ready pieces published one per weekday, through the week.
 - **83** the Algarve partner is Algarve Evolution, named publicly in Dinis's brief; Vicky's earlier privacy note about the partner is lifted.
 - **82** covers by the reviewer again, in its own style and one fixed typeface (style file desks/reviewer-vicky/covers/STYLE.md); the designer stops covers, keeps charts and infographics inside articles, the analyst's included (changes 69 and 79 for covers).
 - **81** Dinis's brief "PrompTugal.news by place" replaces our local-sites plan; every story passes the PrompTugal test (AI within two or three steps, the path written down); Dinis's agents build, journalist-portugal writes the local stories; S65 checked for a sourced AI path.
@@ -392,6 +393,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 
 83. **The Algarve partner is public** (Vicky, 14 Nov, evening, in this window: "Algarve Evolution is the partner, and Dinis has named it publicly in his brief. The privacy note no longer applies.")
     - Vicky's earlier note (14 Nov) kept a local partner organisation in the Algarve out of the repository, commits, reports and public pages until Dinis made it public. Dinis's brief "PrompTugal.news by place" (people/dinis/local-sites/, 14 Nov) names it: Algarve Evolution. The note no longer applies; agents may name Algarve Evolution where a public source supports it, as with any organisation. Its people and any private conversation stay under the usual rules (public and professional only, no contact details).
+
+84. **The analyst's week** (Vicky, 15 Nov, about 09:58 UTC, in this window: "Weekly run: my idea is it does research and analyze on Monday the time you proposed. Then, if there're potential articles, release them throughout the weekday one by one")
+    - **Monday 10:15 UTC:** analyst@PrompTugal.vicky's one scheduled run: research and analysis covering the past week; every ready piece goes to desks/analyst-vicky/drafts/ with its data note, and its report gives the order it recommends for publishing. It never publishes.
+    - **Tuesday to Friday:** the pieces go out one per weekday, in that order. Each morning the conductor gives the reviewer one piece (a task file): it checks every figure and publishes under R-PUB-1. The first pieces wait for Vicky's approval first (standing answer 75), and a piece that needs a chart goes to the designer before the reviewer (standing answer 82). More pieces than weekdays carry over to the next week; none means nothing is published.
+    - Extra runs only when Vicky asks (standing answer 75).
 
 ## Updates for agents
 

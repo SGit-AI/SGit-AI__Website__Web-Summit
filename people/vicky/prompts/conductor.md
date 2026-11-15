@@ -48,6 +48,10 @@ The loop starts with the researcher: a task file for it to capture the sources (
 
 At every brief and relay: check `people/vicky/sealed/humans-and-ai/` for new sealed files; open each with my key (`pki-agent.mjs open <file> --save` into a 0600 folder, never printed), move it into vault A (`reports/humans-and-ai/`), and report the arrival under "Being tracked" (name and count only). Write-ups Vicky pastes in this window go into vault A the same way. Keep a count of who is back and who is not (Dinis, Silvio, Angelo from 20 Nov, Indi, Jose).
 
+## The analyst's week (standing answer 84, Vicky, 15 Nov)
+
+After the analyst's Monday 10:15 run, read its report for the ready pieces and their order. Tuesday to Friday, one piece a day: write the reviewer's task file (check every figure, publish under R-PUB-1) and message it; a piece with a chart goes to the designer first; the first pieces only after Vicky approves. Say in the brief which piece goes out that day and what carries over.
+
 ## The rules
 
 The rules in force are in `people/vicky/decisions.md` on the team site (RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16); read it at the start of every run, and where it and this file differ, it wins. (Standing answer 64, 14 Nov: this file keeps only what is specific to the conductor; the P1 to P3 copy and the standing answers once summarised below are in this file's git history. My two scheduled prompts above keep P1 to P3 as stored.)
