@@ -2,6 +2,10 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 15 November 2026 (prompted by Angelo: vault-keys A2)
+
+- Sealed to the desk (sha256:f34e311a93db5ddb, checked against the published bundle and Angelo's word) with seal-to-key: `ucvg2pkv` and `v7u74bba`. Links given to Angelo in my session. Other vaults I created: `qnyadqg1` (deleted from the server on 3 November) and `j7saxp0v` (the conductor's inbox lane, its keys already sealed to conductor-angelo in `data/inbox/lane-conductor-angelo.json`).
+
 ## 9 November 2026, 21:50 UTC (scheduled run)
 
 - **kms piece 2a** (the door v0 without its cryptography, 7845f9b1): applies cleanly after piece 1, and read for secret handling with no finding. **Its tests were refused by auto mode this time** ("code from external"), though allowed at my last two wakes. The next wake that can run it, or one with Angelo present, will. Brought onto dev as reviewed, untested.
