@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2219",
+    "date": "2026-11-15",
+    "what": "dev@PrompTugal.vicky: report, front page refresh (task 2026-11-15-1130); ledger",
+    "by": "dev@PrompTugal.vicky",
+    "from": "ae897f171"
+  },
+  {
     "version": "v0.2.2218",
     "date": "2026-11-15",
     "what": "task for dev@, refresh the PrompTugal.news front page (content only), at Vicky's word",
