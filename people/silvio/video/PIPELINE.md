@@ -8,6 +8,7 @@ Sources, read 5 November 2026: `content/videos.md` (the pipeline table), `data/v
 
 | Video | Length | State (7 November 2026) | Where |
 |---|---|---|---|
+| RiskMandate: Know the Reach, the music video (Music & Video by Silvio Switha) | 3 min 39 s, 1080p, the song with lyrics as captions | made by Silvio; checked 15 November (every 2.5 s, all on-screen labels read at full size: clean, no blocking imagery); **published at Silvio's word, 15 November** | the vault, `know-the-reach-music-video/` (web copy, 29 MB); on the video library |
 | The stand loop, six languages | 67 s each | checked, final | vault `ws-team-videos` (h9in5em4), `stand-loop-what-is-riskmandate/` |
 | Your AI has access. Does it have permission? | 30 s, subtitled | checked, final | the vault, `your-ai-has-access-does-it-have-permission/`; Silvio's Drive original to upload |
 | An X-ray, in 30 seconds (WS-197) | 30 s, silent | checked, final, for Silvio's yes | the vault, `riskmandate-xray-of-a-company/` |
