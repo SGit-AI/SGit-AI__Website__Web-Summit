@@ -61,7 +61,7 @@ document.addEventListener('click', e => {
 })
 </script>`
     const twinMd = `The newsroom curator's story candidates, newest first, from ${SRC} (last updated by the curator on ${updated}). None is fact-checked yet.\n\nAlso kept here: [the Promptugal logo options](../promptugal/index.html).\n\n${stories.map(s => `- **${s.id}** (${s.beat}, added ${s.added}): ${s.title}. ${s.angle}${s.sources.map(x => `\n  - [${x.label}](${x.url})${x.read ? `, read ${x.read}` : ''}`).join('')}`).join('\n')}`
-    return [...promptugal(ROOT), ...workSoFar(ROOT), ...office(ROOT), ...interview(ROOT), ...localSites(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
+    return [...promptugal(ROOT), ...workSoFar(ROOT), ...office(ROOT), ...interview(ROOT), ...localSites(ROOT), ...analysis(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
 }
 
 // Promptugal News's logo options (Jose's request, through Vicky, 5 November 2026): /people/vicky/promptugal/. Built from
@@ -160,6 +160,62 @@ function localSites(ROOT) {
     if (!fs.existsSync(f)) return []
     const src = fs.readFileSync(f, 'utf8').replace(/^# .*\n/, '')
     return [{ rel: 'people/vicky/local-sites/index.html', title: 'Local sites for PrompTugal.news: a plan for Dinis', description: "A plan for local PrompTugal.news sites by town, starting with Loulé: one set of agents, region and town tags under Portugal, three options, and what needs Dinis.", body: mdHtml(src), md: src }]
+}
+
+// The analyst's topics (Vicky, 15 November 2026; decisions.md, standing answer 85): /people/vicky/analysis/, in the style of
+// the stories page. Built from people/vicky/analysis/topics.md, an exact copy of desks/analyst-vicky/README.md in the public
+// newsroom repository (branch dev), refreshed at each run of dashboard@web-summit.vicky. The README has an "At a glance"
+// table and one "## A<n>: title" section per topic: bold-labelled bullets, some nested, with a "Sources" bullet of links.
+// Each section is one expandable card (native <details>, no script): collapsed it shows the id, state, title and the
+// question; open it shows the rest. The data lives in that one copy and in the newsroom; nothing else.
+const ANALYST = 'https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/analyst-vicky/README.md'
+function nestedList(lines) {
+    // lines of one section's bullets: "- " items, "  - " sub-items, and indented continuation lines
+    const items = []
+    for (const l of lines) {
+        if (/^- /.test(l)) items.push({ t: l.slice(2), kids: [] })
+        else if (/^\s+- /.test(l) && items.length) items[items.length - 1].kids.push(l.replace(/^\s+- /, ''))
+        else if (/^\s+\S/.test(l) && items.length) { const it = items[items.length - 1]; if (it.kids.length) it.kids[it.kids.length - 1] += ' ' + l.trim(); else it.t += ' ' + l.trim() }
+    }
+    return items.length ? `<ul>${items.map(i => `<li>${inline(i.t)}${i.kids.length ? `<ul>${i.kids.map(k => `<li>${inline(k)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ul>` : ''
+}
+function analysis(ROOT) {
+    const f = path.join(ROOT, 'people/vicky/analysis/topics.md')
+    if (!fs.existsSync(f)) return []
+    const md = fs.readFileSync(f, 'utf8').replace(/\r/g, '')
+    const updated = (md.match(/^Last updated: (.+?)\.?$/m) || [])[1] || 'unknown'
+    const glance = md.split('\n').filter(l => /^\|\s*A\d+\s*\|/.test(l)).map(l => l.split('|').slice(1, -1).map(c => c.trim()))
+    const topics = md.split(/^## (?=A\d+:)/m).slice(1).map(sec => {
+        const [head, ...rest] = sec.split('\n'), body = rest.join('\n')
+        const [, id, title] = head.match(/^(A\d+):\s*(.+)$/) || []
+        const bullets = body.split('\n').filter(l => l.trim())
+        const q = bullets.find(l => /^- \*\*The question\.?\*\*/.test(l)) || ''
+        const question = q.replace(/^- \*\*The question\.?\*\*\s*/, '')
+        const st = (bullets.find(l => /^- \*\*State:?\*\*/.test(l)) || '').replace(/^- \*\*State:?\*\*\s*/, '')
+        return { id, title, question, state: st.replace(/\s*\(.*$/, '').replace(/[;.].*$/, '').trim() || 'see card', more: bullets.filter(l => l !== q) }
+    }).filter(x => x.id)
+    const card = t => `<details class="card story" id="${esc(t.id.toLowerCase())}"><summary><span class="meta"><strong class="story-id">${esc(t.id)}</strong> · <span class="pill">${esc(t.state)}</span></span><h3 class="story-title">${esc(t.title)}</h3><span class="story-angle">${inline(t.question)}</span></summary><div class="story-more">${nestedList(t.more)}</div></details>`
+    const table = glance.length ? `<div style="overflow-x:auto"><table><tr><th>Id</th><th>Title</th><th>State</th><th>Added</th></tr>${glance.map(r => `<tr><td><a href="#${esc((r[0] || '').toLowerCase())}">${esc(r[0])}</a></td><td>${inline(r[1] || '')}</td><td>${inline(r[2] || '')}</td><td>${inline(r[3] || '')}</td></tr>`).join('')}</table></div>` : ''
+    const css = `<style>
+.analysis-list details.story > summary { cursor: pointer; list-style: none; display: block; min-height: 44px; -webkit-tap-highlight-color: transparent }
+.analysis-list details.story > summary::-webkit-details-marker { display: none }
+.analysis-list details.story > summary > * { display: block }
+.analysis-list details.story > summary .story-title { margin: .25rem 0 }
+.analysis-list details.story > summary .story-id, .analysis-list details.story > summary .pill { display: inline }
+.analysis-list details.story > summary::after { content: "Show more \\25BE"; display: block; margin-top: .5rem; padding: .25rem 0; font-size: .9rem; color: var(--accent-dk) }
+.analysis-list details.story[open] > summary::after { content: "Show less \\25B4" }
+.analysis-list details.story > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px }
+.analysis-list .story-more { margin-top: .75rem; border-top: 1px solid currentColor; padding-top: .5rem }
+.analysis-list a { overflow-wrap: anywhere }
+</style>`
+    const body = `<p><a href="../index.html">&larr; Vicky's dashboard</a></p>
+<p>The topics the newsroom's analyst (analyst@PrompTugal.vicky) has found, newest first, each with its state. Public figures and sources only. Source: <a href="${ANALYST}">desks/analyst-vicky/README.md</a> in the newsroom repository, last updated by the analyst on ${esc(updated)}; this page is refreshed at each run of Vicky's dashboard agent.</p>
+<h2>At a glance</h2>
+${table}
+${css}
+<div class="cards analysis-list">${topics.map(card).join('')}</div>`
+    const twinMd = `The topics the newsroom's analyst has found, newest first, from ${ANALYST} (last updated by the analyst on ${updated}). Public figures and sources only.\n\n[Back to Vicky's dashboard](../index.html)\n\n${md.replace(/^# .*\n+/, '')}`
+    return [{ rel: 'people/vicky/analysis/index.html', title: "The analyst's topics", description: "The topics the newsroom's analyst has found for PrompTugal.news: id, state, the question, the checked figures and the sources, one expandable card each.", body, md: twinMd }]
 }
 
 // The Live AI Office (Vicky, 8 November 2026; decisions.md, standing answer 21): /people/vicky/office/, a near-live

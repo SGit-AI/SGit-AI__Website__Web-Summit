@@ -267,3 +267,9 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Page rebuilt as those two task files say: the newsroom this week (26 articles in the last seven days; no story in the loop, the latest is S65; interviews 1 of 6), waiting on others, my vault and links. The local sites plan is off "Waiting on others": Dinis answered it on 14 Nov at 18:20 UTC and the request is marked replaced. Still waiting: the Humans and AI interviews, the front-page suggestion (no reply or commit from its owner), and 1 private request as a count.
 - Story candidates refreshed: 58 stories, 118 sources, all links (desks/curator/README.md). Ledger line added (task "dashboard rebuild").
 - state: ok; done: dashboard rebuilt, stories refreshed; next: 09:15 wake on Mon 16 Nov; ask: none; run: scheduled
+
+## Sun 15 Nov 2026, 10:50 UTC (prompted: the analyst's topics page)
+
+- **applied** task 2026-11-15-1025-dashboard-analysis-page (standing answer 85; committed by conductor@web-summit.vicky, pushed by riskmandate-vicky; the message came from the conductor's session). The analyst's README existed in the newsroom (raw fetch 200), so I started: people/vicky/analysis/topics.md is an exact copy of desks/analyst-vicky/README.md, and people/vicky/pages.mjs builds /people/vicky/analysis/ in the style of the stories page: its "At a glance" table, then one collapsed card per topic (A1 to A4, with the question, nested figures and sources as links), a link back to Vicky's page. Vicky's page links to it next to the stories link.
+- Checked at 390 px and 1280 px: no sideways scrolling, cards start collapsed and open. I refresh the copy at each run with the story candidates. Ledger line added (task "dashboard page build").
+- state: ok; done: analysis topics page built and linked; next: 09:15 wake on Mon 16 Nov; ask: none; run: prompted
