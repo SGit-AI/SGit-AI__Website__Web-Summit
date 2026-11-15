@@ -16,6 +16,7 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 | researcher@web-summit.vicky | the newsroom's research, into vault 41j3e9s9 | [researcher.md](researcher.md) |
 | curator@PrompTugal.vicky | maps the research into story candidates | [curator.md](curator.md) |
 | reporter@PrompTugal.vicky | evidence roadmaps for the curator, to vault A only (was programme until 14 Nov; [programme.md](programme.md) kept as the record) | [reporter.md](reporter.md) |
+| analyst@PrompTugal.vicky | the analysis desk: public data and trends, each figure checked at its primary source, pieces labelled Analysis (from 15 Nov, standing answer 75) | [analyst.md](analyst.md) |
 | internal@web-summit.vicky | the internal journalist, to vault A only (was the summit journalist until 14 Nov; [journalist.md](journalist.md) kept as the record) | [internal.md](internal.md) |
 | designer@PrompTugal.vicky | cover graphics on request | [designer.md](designer.md) |
 | journalist-portugal@PrompTugal.vicky | drafts: Portugal | [journalist-portugal.md](journalist-portugal.md) |
@@ -29,4 +30,4 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 
 tools@web-summit.vicky was never started (Vicky, 3 November), so it has no prompt.
 
-Last updated: 14 November 2026, about 10:50 UTC (22 saved here, 1 in the kit; the rules cleanup (CLEANUP-14NOV) applied to every file, and the role changes: reporter.md and internal.md added, designer.md rewritten; checked for anything that should not be public: nothing found).
+Last updated: 15 November 2026, about 09:50 UTC (23 saved here, 1 in the kit; analyst.md added by the analyst's own first commit, checked for anything that should not be public: nothing found).
