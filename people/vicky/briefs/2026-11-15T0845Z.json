@@ -1,0 +1,69 @@
+{
+ "number": 11,
+ "date": "15 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "A quiet Sunday: the analyst at 09:30, then your session archive",
+ "when": "15 November 2026, 08:45 UTC (since brief 10, 14 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "None. No hold on either site, every edit to decisions.md is mine (standing answers 64 to 83), no key changes, Gmail used only by your inbox agent, usage limit status \"allowed\"."
+ ],
+ "actions": [
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "Start the session archive (Dinis's second ask), after I tell you the analyst is ready",
+     "why": "Dinis asked every team member to archive their sessions this weekend; it only reads your sessions, about 5 to 8 hours unattended, roughly 2 to 5 million tokens (about $50 to $200 API-equivalent, not money). Check your usage first. I message you once the analyst is set up (from 09:30 UTC).",
+     "reply": "New session at claude.ai/code, team account, Web Summit environment, Opus, title \"archive\"; first message from START.md Part 2 with the kit-copy line (AGENT archive@web-summit.vicky, OWNER Vicky Wang). At its grouping question: Two vaults, both in this run. 1: \"ws26-vicky-ended\", label \"Web Summit 2026: Vicky's ended sessions\", all sessions whose title ends in \"(old)\" (7 sessions). 2: \"ws26-vicky-agents\", label \"Web Summit 2026: Vicky's agents\", all the other sessions. Export, review and ship both, push the master, and give me the master link in a file as START.md step 7 says."
+    },
+    {
+     "what": "Send Dinis the sealed vault-key handover, if not done yet",
+     "why": "Sent to you in this window last night (QR, link and short report); it expires Friday 20 Nov. Sealed, so WhatsApp is fine.",
+     "reply": "(no reply: send the QR or link and the report to Dinis)"
+    }
+   ]
+  },
+  {
+   "window": "For vault@",
+   "items": [
+    {
+     "what": "Nothing waiting",
+     "why": "All six vault keys reached me and are in the handover.",
+     "reply": "(none)"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Agent runs",
+   "items": [
+    "Grid, 14 and 15 Nov: researcher 11:15 ✓ 15:15 ✓ 07:15 ✓ (2 captures each). Curator 11:35 ✓ (S64) 15:35 ✓ 07:35 ✓ (S66 commissioned). Checker 10:00 ✓ (1 article); today's 10:00 after this brief. Dashboard: first run at its new time, 09:15 today. Scout and security: Monday 06:47 and 06:20. Reporter and internal: Friday 20 Nov.",
+    "On demand yesterday: researcher (Best Number One, then the S65 AI-path check: no sourced path, S65 stays as published); journalist-portugal (S65); journalist-ai (your interview page); reviewer (published both, then redrew both covers in IBM Plex Sans, standing answer 82); designer (covers stopped, keeps charts); vault@ (app v1.3.0, six keys for the handover).",
+    "Internal's session still shows \"awaiting go reseal\": out of date, vault A was sealed to it at 10:50 yesterday; it opens it at its first run, Friday.",
+    "Newsroom: 54 articles by your desks live, 2 published yesterday (your Humans and AI page, S65). Ready but not published: none. No new checker findings needing you."
+   ]
+  },
+  {
+   "title": "Usage & Checks",
+   "items": [
+    "Usage (API-equivalent, not money; whole session so far, output tokens, context): reviewer Opus $262.58, 1,084,560, 255k; internal Opus $169.64, 291,157, 187k; researcher Sonnet $142.89, 496,251, 313k; checker Opus $103.04, 380,193, 777k; conductor Opus $87.19, 342,678, 232k; reporter Opus $76.97, 230,738, 692k; curator Sonnet $69.44, 450,972, 471k; dashboard Sonnet $42.99, 295,574, 852k; scout Sonnet $36.67, 188,212, 560k; security Opus $8.03, 71,210, 269k.",
+    "Deepest three: dashboard 852k (compacts itself at about 902k), checker 777k, reporter 692k. Nothing to do: each compacts on its own.",
+    "Updates for agents: every agent applied CLEANUP-14NOV, PROMPTS-SHORT and STORED-REF that it was asked to; COVERS-14NOV changed by standing answer 82.",
+    "Schedule: matches schedule.json; security's weekly task now recorded (Mondays 06:20). decisions.md: all edits mine. Keys: no changes. Gmail: inbox@ only. Follow-up drafts waiting: no new count (last: 6 kept, 13 Nov about 22:10 UTC). Releases: all live. Scout notes: none new."
+   ]
+  }
+ ],
+ "next": [
+  "09:30 the analyst session, then my message to you",
+  "Your session archive",
+  "11:15 and 11:35 research and curation",
+  "Monday 06:20 security's and 06:47 scout's weekly notes, in Monday's brief"
+ ],
+ "sources": [
+  "people/vicky/reports/*.md since 14 Nov 08:45, read by a Sonnet sub-agent (P16)",
+  "get_session (usage only); the account's scheduled tasks",
+  "Newsroom PrompTugal/PrompTugal__News__Website dev"
+ ]
+}

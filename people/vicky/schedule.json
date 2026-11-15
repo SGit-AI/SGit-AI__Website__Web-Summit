@@ -1,6 +1,6 @@
 {
  "about": "Every scheduled task of Vicky's agents, one row per task (UTC). Kept by conductor@web-summit.vicky (scout's P4, accepted by Vicky on 6 Nov 2026), checked against the account's scheduled tasks in each 08:30 brief. Changes to tasks are Vicky's; the conductor changes one only at her word (as for the Web Summit timetable, 7 Nov).",
- "checked": "2026-11-14T17:46Z (dashboard moved to 09:15 UTC)",
+ "checked": "2026-11-15T08:55Z (security task id added; all others match the account)",
  "tasks": [
   {
    "agent": "conductor@web-summit.vicky",
@@ -165,10 +165,11 @@
    "agent": "security@web-summit.vicky",
    "task": "weekly check (standing answer 66)",
    "cron_utc": "20 6 * * 1",
-   "task_id": "pending: security@ sets it up in its own session; the conductor adds the id once the account shows it",
-   "state": "to be created by security@ (Vicky, 14 Nov about 11:00 UTC)",
+   "task_id": "trig_01Rk6xMaWjfg2saF3GHYAKYa",
+   "state": "enabled; created by security@ in its own session, 14 Nov 10:53 UTC (Vicky, standing answer 66)",
    "since": "14 Nov 2026",
-   "at_whose_word": "Vicky (14 Nov, standing answer 66); its note goes in Monday's 08:45 brief"
+   "at_whose_word": "Vicky (14 Nov, standing answer 66); its note goes in Monday's 08:45 brief",
+   "checked": "2026-11-15T08:55Z"
   },
   {
    "agent": "conductor@web-summit.vicky",
