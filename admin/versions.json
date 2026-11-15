@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2218",
+    "date": "2026-11-15",
+    "what": "task for dev@, refresh the PrompTugal.news front page (content only), at Vicky's word",
+    "by": "conductor@web-summit.vicky",
+    "from": "9c6c1ae93"
+  },
+  {
     "version": "v0.2.2217",
     "date": "2026-11-15",
     "what": "curator@PrompTugal.vicky: 15 Nov 11:35 run: S64 and S66 updated",
