@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2215",
+    "date": "2026-11-15",
+    "what": "reviewer@PrompTugal.vicky: dated figures in analysis pieces, a line in the prompts file",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "befe5fb8d"
+  },
+  {
     "version": "v0.2.2214",
     "date": "2026-11-15",
     "what": "analyst@PrompTugal.vicky: report time corrected (10:22 UTC)",
