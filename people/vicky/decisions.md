@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **85** the analyst's first piece is topic 1 ("People ahead, companies behind"), drafted in its Monday run; a public topics page at /people/vicky/analysis/, like the stories page, from the analyst's topics list.
 - **84** the analyst's week: research and analysis on Mondays 10:15 UTC; ready pieces published one per weekday, through the week.
 - **83** the Algarve partner is Algarve Evolution, named publicly in Dinis's brief; Vicky's earlier privacy note about the partner is lifted.
 - **82** covers by the reviewer again, in its own style and one fixed typeface (style file desks/reviewer-vicky/covers/STYLE.md); the designer stops covers, keeps charts and infographics inside articles, the analyst's included (changes 69 and 79 for covers).
@@ -398,6 +399,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Monday 10:15 UTC:** analyst@PrompTugal.vicky's one scheduled run: research and analysis covering the past week; every ready piece goes to desks/analyst-vicky/drafts/ with its data note, and its report gives the order it recommends for publishing. It never publishes.
     - **Tuesday to Friday:** the pieces go out one per weekday, in that order. Each morning the conductor gives the reviewer one piece (a task file): it checks every figure and publishes under R-PUB-1. The first pieces wait for Vicky's approval first (standing answer 75), and a piece that needs a chart goes to the designer before the reviewer (standing answer 82). More pieces than weekdays carry over to the next week; none means nothing is published.
     - Extra runs only when Vicky asks (standing answer 75).
+
+85. **The analyst's first piece and its topics page** (Vicky, 15 Nov, about 10:20 UTC, in this window: "topic 1 first. The analyst drafts it in tomorrow's run. And can you put these topics on team site, just like the one curator put "stories", so I can see and my team can see all the topics the analyst discovered.")
+    - **First piece:** topic 1 of the checked proposal (desks/analyst-vicky/proposals/2026-11-15.md, "People ahead, companies behind"), drafted in the analyst's Monday 16 Nov 10:15 run; Vicky approves it before it is published (standing answer 75).
+    - **Topics page:** the analyst keeps every topic it finds, with its state, in the newsroom's `desks/analyst-vicky/README.md` (public figures and sources only, as the curator's README). dashboard@ copies it at its 09:15 run to `people/vicky/analysis/topics.md` on the team site and renders it at `/people/vicky/analysis/`, in the style of the stories page, linked from Vicky's page next to the stories. Public, so nothing private goes in it.
 
 ## Updates for agents
 
