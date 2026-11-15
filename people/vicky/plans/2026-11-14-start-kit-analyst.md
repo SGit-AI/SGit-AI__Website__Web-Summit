@@ -4,7 +4,7 @@ Prepared by conductor@web-summit.vicky at Vicky's word (14 Nov 2026, about 14:45
 
 ## The session
 
-- Team account, environment "Web Summit", repository SGit-AI/SGit-AI__Website__Web-Summit (branch dev), with PrompTugal/PrompTugal__News__Website attached (push, for `desks/analyst-vicky/` and its key).
+- Team account, environment **"web-summit-research"** (full network access; corrected at Vicky's word, 15 Nov about 09:40 UTC: "it should be in the web summit research, it has full network access, and add another repo to analyst: promptugal__news__website"), repository SGit-AI/SGit-AI__Website__Web-Summit (branch dev), with PrompTugal/PrompTugal__News__Website attached (push, for `desks/analyst-vicky/` and its key).
 - Model: **Opus**. Title: "analyst".
 - First message: the text below.
 - After its first commit: the conductor checks its key was added by its own commit, creates its one weekly scheduled task (into its own session; day and time proposed in the brief, set at Vicky's word; no daily runs, extra runs only when Vicky asks), adds it to agents.json, the prompts README and schedule.json, and tells Vicky in the brief.

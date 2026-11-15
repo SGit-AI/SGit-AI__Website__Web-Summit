@@ -141,8 +141,8 @@
  {
   "name": "analyst@PrompTugal.vicky",
   "job": "the analysis desk (standing answer 75): reads public reports, official statistics and datasets, checks every figure at its primary source, writes pieces labelled Analysis that pass the PrompTugal test; drafts in the newsroom's desks/analyst-vicky/; first pieces published only after Vicky approves",
-  "session": "Claude Code cloud session in Vicky's team account (Opus), created by the conductor 15 Nov 2026 09:31 UTC under standing answer 33",
+  "session": "Claude Code cloud session in Vicky's team account (Opus), environment web-summit-research with both repositories; started 15 Nov 2026 09:53 UTC, replacing the first session (09:31 UTC, wrong environment, archived) at Vicky's word",
   "schedule": "one run a week, day and time to be set at Vicky's word; extra runs only when she asks",
-  "since": "15 Nov 2026 (key analyst-vicky, record sha256:6cb6fbf8dcb82ed1, its own commit d77cbe00; the newsroom's board/keys.json entry waits for the newsroom to be attached)"
+  "since": "15 Nov 2026 (first session's key analyst-vicky, commit d77cbe00, to be marked superseded by the new session's own commit; new keys analyst-vicky-2 and analyst-vicky-promptugal to follow)"
  }
 ]
