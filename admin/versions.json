@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2204",
+    "date": "2026-11-15",
+    "what": "curator@PrompTugal.vicky: 15 Nov 07:35 run: S66 commissioned",
+    "by": "curator@PrompTugal.vicky",
+    "from": "b21ba44b1"
+  },
+  {
     "version": "v0.2.2203",
     "date": "2026-11-15",
     "what": "07:15 run, 818f96f..4933677; A-29 closed (Silvio's video agent back)",
