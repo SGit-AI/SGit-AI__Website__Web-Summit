@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2233",
+    "date": "2026-11-15",
+    "what": "desk.conductor@PrompTugal.angelo: Angelo's vault keys sealed to Dinis's conductor (vault-keys brief, parts A and B)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "6d68bc63a"
+  },
+  {
     "version": "v0.2.2232",
     "date": "2026-11-15",
     "what": "vault@PrompTugal.angelo: A2: ucvg2pkv and v7u74bba sealed to the desk (sha256:f34e311a93db5ddb); others: qnyadqg1 (deleted), j7saxp0v (already sealed to you)",
