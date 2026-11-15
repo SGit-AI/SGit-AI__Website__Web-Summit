@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2209",
+    "date": "2026-11-15",
+    "what": "standing answer 84, the analyst's week (Mondays 10:15 UTC; pieces one per weekday); its scheduled task",
+    "by": "conductor@web-summit.vicky",
+    "from": "1dc250857"
+  },
+  {
     "version": "v0.2.2208",
     "date": "2026-11-15",
     "what": "analyst moved to the web-summit-research environment (new session, first one archived); start kit corrected",
