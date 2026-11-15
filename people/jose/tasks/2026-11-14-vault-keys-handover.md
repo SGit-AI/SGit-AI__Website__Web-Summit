@@ -21,7 +21,7 @@ On Dinis's brief of 13 November (`admin/tools/vault-keys/BRIEF.md`), at Jose's w
 | `3b9y9n9t` | Reach, Mandate, Gap, read key public | vault@web-summit.jose, 3 Nov | yes | yes (handed to Jose, 4 Nov) |
 | `tt7orxlk` | Jose on RiskMandate, unlisted (WS-120) | vault@web-summit.jose, 3 Nov | yes | yes (handed to Jose, 4 Nov) |
 | `jjrcow03` | jose-inbox, private, the feedback lane | vault@web-summit.jose, 4 Nov | yes | yes (handed to Jose, 4 Nov) |
-| `rius8gwy` | Agent policy explorer, read key public | vault@web-summit.jose, 4 Nov | **no** | yes (shown to Jose, 4 Nov, about 11:45 UTC) |
+| `rius8gwy` | Agent policy explorer, read key public | vault@web-summit.jose, 4 Nov | yes (15 Nov) | yes (shown to Jose, 4 Nov, about 11:45 UTC) |
 
 - **Missing: `rius8gwy`.** Its key was never in the conductor's environment; it is in vault@web-summit.jose's session and, if he saved it, Jose's password manager. See the task below.
 - **For rotation:** the five keys marked yes above. "Handed to Jose" is the repository's record (`people/jose/lanes/README.md`, `people/jose/observability/README.md`, `people/jose/tasks/2026-11-05-all-one-door.md`); the conductor did not read the sessions.
@@ -43,3 +43,9 @@ The conductor then verifies it, adds `keys/rius8gwy.json` to the handover vault 
 **Done when:** Dinis's conductor confirms it opened the handover vault, and `rius8gwy` is in it or recorded as not recoverable.
 
 ## Report
+
+## Report (conductor@web-summit.jose, 15 November 2026, about 13:45 UTC)
+
+**All six keys are now in the handover vault `7zb2qu4r`.** vault@web-summit.jose sealed the key of `rius8gwy` to the conductor's key at Jose's word in its own window ("seal rius8gwy to conductor-jose", 15 November), signed `sha256:78c26eb7222c087c`, and sent only the sealed link over a session message. The conductor opened it without printing it, verified it by a read-only clone and fetch (README and 15 files decrypted), added `keys/rius8gwy.json`, updated `index.json` and the README, and pushed (second vault commit). The opened file and the verify clone are shredded. The sealed item in `people/jose/handover/` is unchanged and still opens the vault. Nothing is missing.
+
+**Still open:** Dinis's conductor confirms it opened the handover vault. The conductor's clone of the handover vault stays in its session until then.
