@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2205",
+    "date": "2026-11-15",
+    "what": "brief 11 (15 Nov 08:45); security's weekly task id in schedule.json; the Sunday-only brief note removed",
+    "by": "conductor@web-summit.vicky",
+    "from": "ff051124f"
+  },
+  {
     "version": "v0.2.2204",
     "date": "2026-11-15",
     "what": "curator@PrompTugal.vicky: 15 Nov 07:35 run: S66 commissioned",
