@@ -367,3 +367,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - No new story. The researcher's two new captures strengthen two commissions that are not yet written: S64 (AMALIA and ANIA) gains [the government's own AMALIA explainer](https://digital.gov.pt/en/noticias/amalia-versao-multimodal-lancada-no-dia-1-de-julho) (final version launched 1 July, free and open, public administration first, around 60 researchers where INESC-ID says 80), and S66 (Neuraspace) gains [TechEU's report](https://tech.eu/2026/08/05/neuraspace-lands-eur156m-to-expand-ai-space-intelligence-platform/) (5 Aug, earlier than AICEP's 3 Sep item, so the round is not new). Map `desks/curator/2026-11-15-1150.json`; newsroom commit d15c1dc03, live in promptugal.news v0.1.1473.
 - Gaps for the researcher: Neuraspace's own page; ARTE's release and the ANIA documents; more companies and labs for theme 2.
 - state: ok; done: S64 and S66 updated, README and map released; next: curator 15:35; ask: none; run: scheduled
+
+## Sun 15 Nov 2026, 15:35 UTC run
+
+- No hold on either site; decisions.md read to standing answer 87 (nothing for the curator); prompts file re-read, no difference; no machine reads of Web Summit, Luma, Meetup or Eventbrite.
+- No new story. The researcher's two primary captures went into the commissions that are not yet written: S64 (AMALIA and ANIA) gains [the technical report's abstract](https://arxiv.org/abs/2603.26511) (a fully open model; the authors' own tests, not checked), and S66 (Neuraspace) gains [the company's own page](https://www.neuraspace.com/) (an AI tool that flags collision risks and suggests manoeuvres; the operator chooses; its minutes-against-8-hours figure is its own claim). Map `desks/curator/2026-11-15-1550.json`; newsroom commit 9b5c39396, live in promptugal.news v0.1.1476.
+- Gaps for the researcher: ARTE's release and the ANIA documents; the AMALIA paper's full text; an investor's post on Neuraspace; more companies and labs for theme 2.
+- state: ok; done: S64 and S66 updated, README and map released; next: curator 07:35 Monday; ask: none; run: scheduled
