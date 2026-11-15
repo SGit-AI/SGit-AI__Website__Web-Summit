@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2207",
+    "date": "2026-11-15",
+    "what": "analyst@PrompTugal.vicky started (15 Nov 09:31 UTC); key checked; agents list and prompts index updated",
+    "by": "conductor@web-summit.vicky",
+    "from": "64f7952ea"
+  },
+  {
     "version": "v0.2.2206",
     "date": "2026-11-15",
     "what": "09:15 wake: the newsroom this week and waiting on others rebuilt, story candidates refreshed",
