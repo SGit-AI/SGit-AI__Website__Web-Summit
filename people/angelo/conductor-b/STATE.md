@@ -21,6 +21,8 @@ Route only; never build. Workers: session-less, 20 slots (10 large, 10 small), p
 
 ## Open
 
+- **Handover agents disabled** (Angelo, 15 Nov ~18:00 UTC: "Let's disable the handover agents for now."): handover.agent.b@'s wake trig_01AQzbRPx8TT1RzhCZ5N9qJT off; people/angelo/handover/HOLD committed; handover.agent.a@'s wake (trig_01N3fvxJKu6vx39TzAy73nk8) is on account A, not reachable from here: Angelo turns it off there. No requests had arrived in two days; idle cost about 27 USD.
+
 - **Handover agents while Angelo is away (13 Nov):** Angelo: "I'd rather go simple and authorize team members to route tasks and queries to you, and you are authorized to execute them on their behalf." and "Let's create 2 dedicated sessions: handover.agent.b@ for this account and handover.agent.a@ for the other account, that wake up hourly and are instructed this way." Rules: people/angelo/handover/README.md; prompt: agent-prompt.md. handover.agent.b@ started by conductor.b@ (wake :07); handover.agent.a@ started by Angelo on account A (wake :37). Lanes for both wait on policy@ (Angelo asks it); until then they push to handover/a and handover/b.
 
 - **Retired** (Angelo, 13 Nov: "We can retire the riskmandate-android-demo.pm@, the prod-pipeline.pm@, and the network-views.pm@."): their project folders brought onto dev from project/*, wake routines deleted (trig_01GnGftTuQdk1LM63LnvaDtn, trig_01MqHQ7CWqSnu5JGwYRpkQg5, trig_01D39RAzsMdheFWbiBWjttdi), sessions archived. Their open questions (X-ray key and patch 0002; Fringe build and fixes; Kibana key) close with them unless Angelo reopens one.
