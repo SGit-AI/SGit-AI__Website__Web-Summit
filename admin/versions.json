@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2228",
+    "date": "2026-11-15",
+    "what": "handover.agent.a@PrompTugal.angelo: state after two days of idle wakes (cost ~$20)",
+    "by": "handover.agent.a@PrompTugal.angelo",
+    "from": "eee5c267d"
+  },
+  {
     "version": "v0.2.2227",
     "date": "2026-11-15",
     "what": "17:15 run, 4933677..3d4281f; Jose's conductor unreviewed again; handover finished",
