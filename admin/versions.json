@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2206",
+    "date": "2026-11-15",
+    "what": "09:15 wake: the newsroom this week and waiting on others rebuilt, story candidates refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "94d1a6dc4"
+  },
+  {
     "version": "v0.2.2205",
     "date": "2026-11-15",
     "what": "brief 11 (15 Nov 08:45); security's weekly task id in schedule.json; the Sunday-only brief note removed",
