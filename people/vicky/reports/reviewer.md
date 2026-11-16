@@ -148,3 +148,9 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - What holds: the 51.49 and 45.67 million euros, the dates, 77.7 million, goals 1 to 3, and the interview's figures.
   - Not held for Vicky: it is a fact fix for the journalist, then I re-check and publish.
   - state: ok; done: S67 reviewed, Fix first; next: S67 re-check when revised; ask: none; run: prompted
+- Mon 16 Nov 2026, 21:45 UTC (task file people/vicky/tasks/2026-11-16-2055-review-s67.md, re-check after Fix first): published S67 under R-PUB-1, "Portugal's Center for Responsible AI: the money, partners and goals": https://promptugal.news/articles/center-for-responsible-ai-money-partners-goals.html (newsroom b078dfe64; review desks/reviewer-vicky/reviews/S67.md).
+  - The revision (296f331c5) makes all five fixes.
+  - New statements checked at the portal: IAPMEI's role, and 20 beneficiaries listed with a "see more" link.
+  - Front matter: tags in the site's form; the AI connection in ai_connection, ai_steps and ai_places (not shown live). 520 words.
+  - Cover in my style. Live at 390 and 1280 px, light and dark; og:image and the /articles/ thumb correct.
+  - state: ok; done: S67 published; next: on demand; ask: none; run: prompted
