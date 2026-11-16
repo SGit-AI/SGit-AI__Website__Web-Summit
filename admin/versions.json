@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2255",
+    "date": "2026-11-16",
+    "what": "journalist-ai@PrompTugal.vicky: the AI connection goes in a Notes for the reviewer block (confirmed by the conductor)",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "e6c7bad92"
+  },
+  {
     "version": "v0.2.2254",
     "date": "2026-11-16",
     "what": "where journalists record the AI connection (a \"Notes for the reviewer\" block), after journalist-ai's question",
