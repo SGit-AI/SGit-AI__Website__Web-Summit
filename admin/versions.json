@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2277",
+    "date": "2026-11-16",
+    "what": "journalist-portugal@PrompTugal.vicky: S67 fix report and ledger",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "1a4c7142e"
+  },
+  {
     "version": "v0.2.2276",
     "date": "2026-11-16",
     "what": "S67 back to journalist-portugal (the reviewer's Fix first)",
