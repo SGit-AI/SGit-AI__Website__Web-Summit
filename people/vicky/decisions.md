@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **93** one-per-weekday spacing is for analysis pieces only; journalists' stories go out as soon as they pass review.
 - **92** no fixed word count: length follows the story (analysis usually 400 to 900 words, news 300 to 700, longer only with a reason), no repetition, no padding, the reviewer judges; A3 approved, published on 16 Nov as soon as its chart is in (moved from Thursday at Vicky's word).
 - **91** at publishing, the AI connection moves into the article's front matter (ai_connection, ai_steps, ai_places): kept with the story, not shown to readers.
 - **90** the AI connection lives in the data note, not the article text (81 changed); every writer explains a technical term in plain words at first use.
@@ -442,6 +443,9 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Length:** no fixed word count, for every writer of Vicky's desks. A piece is as long as it needs to tell its story properly, and no longer: usually 400 to 900 words for an analysis and 300 to 700 for a news story; longer only with a reason the writer gives in its notes. No repetition (standing answer 89), no padding. The reviewer judges at publishing: it cuts repetition and padding, and sends back a piece too thin to tell its story. This replaces the "about 600 words" of standing answer 89 for future pieces; A1 and A3 stay as they are.
     - **A3** ("Portugal has 60 MW of computing power and wants 1,000") is approved: the designer draws the chart from the data note's spec, then the reviewer re-checks every figure on the day (standing answer 86) and publishes it on Thursday 19 November. **Moved** (Vicky, 16 Nov, about 13:00 UTC, in this window: "publish A3 today, as soon as the chart is in."): published on 16 November, as soon as the designer's chart is in.
     - **After A3 is published,** the conductor checks the standing answers and the journalists' STYLE.md (`desks/journalist-vicky/STYLE.md` in the newsroom) are up to date with standing answers 81 to 92, and proposes any change to Vicky.
+
+93. **Spacing is for analysis only** (Vicky, 16 Nov, about 14:45 UTC, in this window: "what I wanted was only for the analysis. Articles like these go out one by one. These articles you can go out when you have it.")
+    - Standing answer 84's one piece per weekday applies to the analyst's pieces only. The journalists' stories are published by the reviewer as soon as they pass review (R-PUB-1), with no spacing. S66 goes out now.
 
 ## Updates for agents
 
