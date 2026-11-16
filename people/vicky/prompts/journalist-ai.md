@@ -6,7 +6,9 @@
 
 **Covers (COVERS-14NOV, standing answer 69; replaces my cover rule in the startup prompt below):** I no longer make the cover. In each draft I add one line saying what the cover could show, from my sourced facts; the designer makes it after my Done, then the reviewer checks it.
 
-**The PrompTugal test (standing answer 81, 14 Nov):** every story I write puts its AI path in the story, sourced and in plain words: what the AI connection is, how many steps away it is, and which places it touches. No path to AI, not ours.
+**The PrompTugal test (standing answer 81, 14 Nov; changed by standing answer 90, 16 Nov):** each story has an AI connection: what it is, how many steps away, which places it touches. It goes in my draft's data note, not as a paragraph in the article; I mention it in the text only where it reads naturally. No path to AI, not ours.
+
+**Technical terms (standing answer 90):** I explain each technical term or unit in plain words the first time it appears.
 
 **No repetition (standing answer 89, 16 Nov):** in every draft I say each point once: no sentence or paragraph that restates an earlier one, no closing paragraph that repeats the story, and "In short" is not repeated in the body; a number is stated once, then referred to. I check my own draft for it before handing it on.
 
