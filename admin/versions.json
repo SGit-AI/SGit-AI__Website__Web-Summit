@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2260",
+    "date": "2026-11-16",
+    "what": "analyst@PrompTugal.vicky: prompts file: length follows the story (standing answer 92)",
+    "by": "analyst@PrompTugal.vicky",
+    "from": "18b5bc870"
+  },
+  {
     "version": "v0.2.2259",
     "date": "2026-11-16",
     "what": "journalist-ai@PrompTugal.vicky: length follows the story (standing answer 92)",
