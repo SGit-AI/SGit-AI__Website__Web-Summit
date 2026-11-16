@@ -1,0 +1,78 @@
+{
+ "number": 12,
+ "date": "16 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "Monday: security's weekly check, scout's first note, the analyst drafts at 10:15",
+ "when": "16 November 2026, 08:45 UTC (since brief 11, 15 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "Security's weekly check (06:21, commit d4d151d4) marked two items urgent; neither is a breach. (1) On 11 Nov the reviewer's key commit (99d0a613) also removed an old, already superseded key entry of Dinis's fringe conductor from the newsroom keys page: an accident, still in git history; fix below. (2) Standing answers 81 to 83 quoted your words without a time: they are your words, and I have added the times (about 18:35, 18:45 and 18:55 UTC on 14 Nov).",
+  "Otherwise none: no hold, every decisions.md edit is mine, Gmail used only by your inbox agent, usage limit \"allowed\"."
+ ],
+ "actions": [
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "Let the reviewer restore the removed key entry",
+     "why": "Security recommends putting back the fringe conductor's old entry (still marked superseded, under a distinct id) and telling Dinis's conductor; keys need your word.",
+     "reply": "Conductor: yes, the reviewer restores conductor.fringe@PrompTugal.dinis's superseded entry on the newsroom keys page under a distinct id and tells conductor@PrompTugal.dinis in the commit."
+    },
+    {
+     "what": "Scout's proposals 31 to 33",
+     "why": "Scout's first weekly note (08) found three reusable ideas from other teams: lanes for your agents with a daily read-only audit (P31), saying why when writing outside one's lane (P32), and a ledger total without double counting (P33). P34 (the session archive) is already done. My view: P33 yes (small, numbers only); P31 and P32 can wait until after this week.",
+     "reply": "Conductor: accept scout's proposal 33; P31 and P32 wait until next week; P34 is done."
+    }
+   ]
+  },
+  {
+   "window": "personal archive",
+   "items": [
+    {
+     "what": "Dinis's key for your personal archive",
+     "why": "It is finished but saved only on its session's machine; attach his new QR when it comes, or back it up (text in yesterday's chat).",
+     "reply": "(attach Dinis's QR in the personal archive window)"
+    }
+   ]
+  },
+  {
+   "window": "For vault@",
+   "items": [
+    {
+     "what": "Nothing waiting",
+     "why": "Your contacts are in the shortlist vault (30, 15 Nov).",
+     "reply": "(none)"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Agent runs",
+   "items": [
+    "Grid, 15 and 16 Nov: researcher 11:15 ✓ 15:15 ✓ 07:15 ✓ (2, 2 and 1 captures: AMALIA, Neuraspace). Curator 11:35 ✓ 15:35 ✓ 07:35 ✓ (S64 and S66 updated, no new story). Dashboard 09:15 ✓. Checker 10:00 ○. Security 06:20 ✓. Scout 06:47 ✓. Analyst: first weekly run today 10:15 (topic A1 draft).",
+    "On demand yesterday: analyst started (second session, web-summit-research), checked proposal and topics page live (/people/vicky/analysis/); front page refreshed (PagerDuty leads, storm block off); reviewer added the storm-page link; vault@ saved your contacts; session archive done (30 sessions); personal archive waiting on Dinis's key.",
+    "Newsroom: 53 articles by your desks live (by today's count of author lines); nothing published yesterday; nothing Ready waiting for you.",
+    "Your dev agent asks whether the two newest-first lists and the layout under the lead may be changed in code, or left to Dinis's team. My recommendation stands: leave it to Dinis's team (the note to Dinis from yesterday)."
+   ]
+  },
+  {
+   "title": "Usage & Checks",
+   "items": [
+    "Usage (API-equivalent, not money; whole session so far): researcher Sonnet $148.60; conductor Opus $124.46; checker Opus $109.56; curator Sonnet $76.31; dashboard Sonnet $48.76; analyst Opus $3.78.",
+    "Deepest: dashboard 895k (compacts itself at about 902k), checker 784k, curator 523k. Nothing to do.",
+    "Schedule matches schedule.json (analyst Mondays 10:15 added yesterday). decisions.md: all edits mine. Keys: the security finding above. Gmail: inbox@ only. Follow-up drafts waiting: no new count (last 6, 13 Nov). Releases: all live."
+   ]
+  }
+ ],
+ "next": [
+  "10:15 the analyst drafts topic A1, then to you for approval",
+  "11:15 and 11:35 research and curation",
+  "Your personal archive, when Dinis sends the key"
+ ],
+ "sources": [
+  "people/vicky/reports/*.md since 15 Nov 08:45, read by a Sonnet sub-agent (P16)",
+  "get_session (usage only); the account's scheduled tasks",
+  "Newsroom PrompTugal/PrompTugal__News__Website dev"
+ ]
+}
