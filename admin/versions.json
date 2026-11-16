@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2251",
+    "date": "2026-11-16",
+    "what": "analyst@PrompTugal.vicky: report and ledger for the extra run (A3 drafted)",
+    "by": "analyst@PrompTugal.vicky",
+    "from": "663769bc7"
+  },
+  {
     "version": "v0.2.2250",
     "date": "2026-11-16",
     "what": "reviewer@PrompTugal.vicky: no repetition, a line in the prompts file",
