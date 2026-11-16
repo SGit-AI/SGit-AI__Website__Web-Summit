@@ -2,6 +2,24 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
+## Weekly check, Monday 16 Nov 2026 (scheduled run, 06:21 UTC)
+
+No hold file on either site. P2: my prompts file and my memory agree. Window: 9 Nov 06:21 UTC to now. Team site at 854439ff; newsroom at 265de75d.
+
+### URGENT
+
+1. **One of Vicky's agents removed another agent's key entry** (newsroom `board/keys.json`, 99d0a613, reviewer@PrompTugal.vicky, 11 Nov 19:20 UTC). Its own key commit (reviewer-vicky-promptugal-3 added, -b superseded, both correct) also took out conductor.fringe@PrompTugal.dinis's superseded entry (`conductor.fringe-promptugal`, signing sha256:2f7b009fb8c94153), without saying so. Most likely an accident: Dinis's agent had left two entries with the same id (c96f6613), and a rewrite keyed by id kept only one. Impact is low (the removed key had been superseded after five minutes; it is still in git history), but it is a change by Vicky's agent to a key of Dinis's agent, and a checker that reads the current file can no longer verify anything that key signed. Recommend: the reviewer restores the entry, still marked superseded, under a distinct id (for example `conductor.fringe-promptugal-old`), and says so to conductor@PrompTugal.dinis through the usual lanes. No hold.
+2. **Three standing answers quote Vicky without a time**: 81 (15c0c799), 82 (d162f1da) and 83 (f6f11e7b), all committed by the conductor on 14 Nov between 18:43 and 18:56 UTC, give "Vicky, 14 Nov, evening, in this window". The quotes are there; only the time is missing, so this is probably harmless, but my check requires the time. 83 lifts a privacy note (the Algarve partner is Algarve Evolution); the name is public in Dinis's brief and the newsroom's CLAUDE.md. Vicky: confirm the three are your words.
+
+### Checked, nothing wrong
+
+- **RULES-11NOV:** standing answer 31, rules 1 to 11, matches my copy word for word.
+- **decisions.md and the archive:** 91 commits since 9 Nov (CI releases left out); every one has the conductor's subject and its Agent line. Every new entry heading quotes Vicky with a time, except the three above. (Checked by entry heading; changes inside an entry were not checked one by one.)
+- **Team site keys (`data/keys.json`):** 35 changes. Each was committed by the agent the key names, with these explained exceptions: internal@web-summit.vicky marked journalist@'s key superseded (4d46bc08) and reporter@PrompTugal.vicky marked programme@'s (8f68f309), each the successor in the role changes of standing answer 63. New agents all belong to people on the team roster (Dinis, Silvio, Indi, Angelo) or to Vicky (security@, internal@, reporter@, analyst@ under standing answer 75). No private material, no reactivated entry, no duplicate id.
+- **Newsroom keys (`board/keys.json`):** 124 changes, 97 additions, mostly Dinis's new place agents (`place.*@PrompTugal.dinis`). Each was committed by its own agent, except: the URGENT item above; internal@ and reporter@ again marking their predecessors' newsroom keys superseded (4f3e757a, 55bfb2e7); conductor.B@ios.PrompTugal.dinis marking superseded a key it had made itself (f6de53a3); place.albufeira@ adding its own site's key (3ed6b7e8). No private material, no duplicate id now.
+
+state: partial; done: weekly check, two URGENT items; next: Monday 23 Nov 06:20 UTC; ask: Vicky, are standing answers 81 to 83 your words, and should the reviewer restore the removed key entry?; run: scheduled
+
 ## 14 Nov 2026, about 11:10 UTC: applied STORED-REF
 
 A Task message from the conductor's session pointed to `people/vicky/tasks/2026-11-14-1110-stored-ref-security.md` (9fec7848; standing answer 68, conductor's title and Agent line, Vicky's words quoted). Applied without asking: it changes only my own file, loosens no rule and is reversible.
