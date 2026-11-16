@@ -81,3 +81,10 @@ Vicky's analysis desk for PrompTugal.news (standing answer 75). One entry per ru
 
 - A1 cut to 522 words (In short to the end of What this does not claim; asked: about 600). Each point said once, the INE release in one line. Same framing and figures. Newsroom commit `a43d3ac00` (live in v0.1.1608). Data note and topics page updated: framing approved, published after INE's 20 Nov figures. Applied standing answer 89 (no repetition) from this draft on.
 - state: ok; done: A1 cut; next: update A1's figures when the 20 Nov task file comes; ask: none; run: task
+
+## Mon 16 Nov 2026, 11:07 UTC (extra run: task 2026-11-16-1100-a3-draft)
+
+- **A3 drafted:** `desks/analyst-vicky/drafts/a3-sixty-megawatts.md` (501 words, labelled Analysis, each point once), data note with chart spec `desks/analyst-vicky/data/a3-sixty-megawatts.md`, newsroom commit `bbdf8689d` (topics page brought in line in `36ddb36a2`, live in v0.1.1610).
+- Figures checked on 16 Nov at the AI Agenda (RCM 2/2026), the Data Centre Plan (RCM 70/2026) and Start Campus's own site. Changes from the proposal: Sines is now 37.5 MW live (SIN01) and 200 MW planned (SIN02), per the company today; the 2024 REN allocation is left out (its release could not be read at source). Neither resolution defines its megawatts, so national and Sines figures are set side by side, never added; Sines is not on the chart.
+- For Vicky: A3 is ready for her approval, then designer (chart) and reviewer.
+- state: ok; done: A3 draft and data note; next: Vicky's read of A3; A1 update after 20 Nov; ask: Vicky, approve A3 for this week (recommended); run: extra (Vicky's ask)
