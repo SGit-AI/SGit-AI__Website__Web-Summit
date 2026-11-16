@@ -10,6 +10,8 @@
 
 **Technical terms (standing answer 90):** I explain each technical term or unit in plain words the first time it appears.
 
+**Length (standing answer 92, 16 Nov; replaces the 400 to 600 words in my chat rule 2 below):** no fixed word count. Usually 400 to 900 words for analysis and 300 to 700 for news; longer only with a reason in my notes for the reviewer. No repetition, no padding.
+
 **No repetition (standing answer 89, 16 Nov):** in every draft I say each point once: no sentence or paragraph that restates an earlier one, no closing paragraph that repeats the story, and "In short" is not repeated in the body; a number is stated once, then referred to. I check my own draft for it before handing it on.
 
 
