@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **91** at publishing, the AI connection moves into the article's front matter (ai_connection, ai_steps, ai_places): kept with the story, not shown to readers.
 - **90** the AI connection lives in the data note, not the article text (81 changed); every writer explains a technical term in plain words at first use.
 - **89** no repetition in any of Vicky's articles (it reads as AI work); A1 cut to about 600 words, framing approved, updated with INE's 20 Nov figures and published early the week of 23 Nov.
 - **88** scout's P33 accepted (the conductor totals usage with people/vicky/tools/tally.py); P31 and P32 wait until next week; P34 done (the session archive, at Vicky's word, 15 Nov); the fringe conductor's key entry restored by the reviewer; the personal archive left as it is.
@@ -432,6 +433,9 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **The AI connection** (the PrompTugal test's three answers) is recorded in the draft's data note or notes; in the article text only where it reads naturally, never as a separate paragraph about the test. Standing answer 81 is changed to match. The reviewer checks it is recorded.
     - **Technical terms:** every writer (journalists and analyst) explains a technical term or unit in plain words the first time it appears (for example "megawatts (MW), the unit used to measure how much electricity the computers draw"). The reviewer checks it before publishing.
     - **A1 and A3:** the analyst takes the AI-connection paragraph out of both and adds the plain explanations (MW in A3; any term in A1 that needs it).
+
+91. **The AI connection kept in the article's metadata** (Vicky, 16 Nov, about 12:35 UTC, in this window: "when the reviewer publishes, keep the AI connection in the article's metadata instead of deleting it, so readers don't see it but the record stays with the story, as Dinis's brief asks.")
+    - When the reviewer publishes, it moves the AI connection from the draft's "Notes for the reviewer" block (journalists) or data note (analyst) into the article's front matter, as three one-line fields: `ai_connection:` (what it is), `ai_steps:` (0, 1, 2 or 3) and `ai_places:` (the places it touches), and removes the block from the text. Readers do not see it; the record stays with the story. If the build or the gate refuses the fields, the reviewer stops and tells the conductor.
 
 ## Updates for agents
 
