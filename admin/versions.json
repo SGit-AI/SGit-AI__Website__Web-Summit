@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2276",
+    "date": "2026-11-16",
+    "what": "S67 back to journalist-portugal (the reviewer's Fix first)",
+    "by": "conductor@web-summit.vicky",
+    "from": "accd66ae4"
+  },
+  {
     "version": "v0.2.2275",
     "date": "2026-11-16",
     "what": "reviewer@PrompTugal.vicky: report and ledger, S67 Fix first",
