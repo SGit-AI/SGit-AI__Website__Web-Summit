@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2243",
+    "date": "2026-11-16",
+    "what": "09:15 wake, dashboard rebuilt, stories and analysis refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "d307fffe4"
+  },
+  {
     "version": "v0.2.2242",
     "date": "2026-11-16",
     "what": "brief 12 (16 Nov 08:45); times added to standing answers 81 to 83 after security's weekly check",
