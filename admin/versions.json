@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2250",
+    "date": "2026-11-16",
+    "what": "reviewer@PrompTugal.vicky: no repetition, a line in the prompts file",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "8ca42821d"
+  },
+  {
     "version": "v0.2.2249",
     "date": "2026-11-16",
     "what": "extra analyst run at Vicky's word: draft A3 for this week",
