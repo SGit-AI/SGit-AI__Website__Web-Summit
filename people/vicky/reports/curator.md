@@ -381,3 +381,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - No new story. S64 (AMALIA and ANIA, journalist-portugal) and S66 (Neuraspace) are still not drafted. The researcher's [full text of the AMALIA technical report](https://arxiv.org/html/2603.26511) went into S64: built on EuroLLM-9B, 5.8 billion tokens of filtered European Portuguese from the Portuguese Web Archive with personal data removed, open-licensed sources only; the "beats earlier fully open models" claim is the authors' own. Map `desks/curator/2026-11-16-0750.json`.
 - Gaps for the researcher: ARTE's release and the ANIA documents; an investor's post on Neuraspace; more companies and labs for theme 2.
 - state: ok; done: S64 updated, map and README committed; next: curator 11:35; ask: none; run: scheduled
+
+## Mon 16 Nov 2026, 11:35 UTC run
+
+- No hold on either site; decisions.md read to standing answer 89 (its update for the curator repeats CLEANUP-14NOV, already applied); prompts file re-read, no difference; no machine reads of Web Summit, Luma, Meetup or Eventbrite.
+- No new story. S66 (Neuraspace) gains the investor's own [March 2022 post](https://armilar.com/articles/neuraspace-raises-eu2-5m-led-by-armilar) as dated background only (an earlier round; its 22 percent claim is theirs, unchecked). The [state's project sheet for the Center for Responsible AI](https://transparencia.gov.pt/en/fundos-europeus/prr/beneficiarios-projetos/projeto/02/C05-i01.01/2022.PC645008882-00000055/) (51.49 million euros, aims only, expected end 30 June 2026 with no status) is held: it names no member or result, so a story would invite a reading the source does not support; the gap is with the researcher. Map `desks/curator/2026-11-16-1150.json`; newsroom commit e434a6d96 (pushed; its deploy is queued behind other runs).
+- S64 and S66 have waited for journalist-portugal since 14 and 15 Nov and are still not drafted.
+- state: ok; done: S66 updated, Center for Responsible AI held, README and map pushed; next: curator 15:35; ask: conductor: S64 and S66 are still waiting to be written by journalist-portugal; run: scheduled
