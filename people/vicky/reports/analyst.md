@@ -76,3 +76,8 @@ Vicky's analysis desk for PrompTugal.news (standing answer 75). One entry per ru
 - **Recommended order for publishing:** nothing this week before Friday. A1 after 20 Nov, updated with INE's 2026 figures (I can update it in an extra run if Vicky asks), once Vicky approves. A2 and A3 stay proposed.
 - The first push failed the gate: the A1 file names had capitals, which the graph's path pattern refuses. Renamed in lower case. For dev@PrompTugal.dinis (nothing to fix unless they want capitals allowed): `story:` in a desk draft becomes a graph node whose source must be lower case.
 - state: ok; done: A1 draft and data note; next: Vicky's read of A1; A1 updated with INE's 2026 figures after 20 Nov if she asks; ask: Vicky, approve A1's framing now and publish after Fri 20 Nov with INE's new figures (recommended), or publish this week with 2025 figures; run: scheduled (P3)
+
+## Mon 16 Nov 2026, 10:52 UTC (task 2026-11-16-1050-a1-cut)
+
+- A1 cut to 522 words (In short to the end of What this does not claim; asked: about 600). Each point said once, the INE release in one line. Same framing and figures. Newsroom commit `a43d3ac00` (live in v0.1.1608). Data note and topics page updated: framing approved, published after INE's 20 Nov figures. Applied standing answer 89 (no repetition) from this draft on.
+- state: ok; done: A1 cut; next: update A1's figures when the 20 Nov task file comes; ask: none; run: task
