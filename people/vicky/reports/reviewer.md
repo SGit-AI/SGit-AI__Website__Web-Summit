@@ -123,3 +123,10 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Lesson: release.sh's "your commit is in v…" can match the run before yours. Check the page itself, not the version.
   - S66 publishes tomorrow, as the task asks (one today, A3 before it).
   - state: ok; done: A3 published; next: S66 tomorrow; ask: none; run: prompted
+- Mon 16 Nov 2026, 14:35 UTC (task file people/vicky/tasks/2026-11-16-1420-style-update.md): desks/journalist-vicky/STYLE.md brought up to date in one commit (newsroom a3a06be16), each change quoting its standing answer:
+  - covers by the reviewer in its style and fixed typeface, charts by the designer, journalists say what the cover could show (82);
+  - no fixed word count, 300 to 700 for news and 400 to 900 for analysis, longer only with a reason (92);
+  - the closing summit-connections line dropped, "where to find them" only where it fits;
+  - a new section, The AI connection: the test, the "Notes for the reviewer" block, and front matter at publishing (81, 90, 91);
+  - technical terms explained at first use (90).
+  "Say each fact once" kept, with a pointer to 89. Nothing else changed. state: ok; done: STYLE.md updated; next: S66 tomorrow; ask: none; run: prompted
