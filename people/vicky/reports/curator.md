@@ -374,3 +374,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - No new story. The researcher's two primary captures went into the commissions that are not yet written: S64 (AMALIA and ANIA) gains [the technical report's abstract](https://arxiv.org/abs/2603.26511) (a fully open model; the authors' own tests, not checked), and S66 (Neuraspace) gains [the company's own page](https://www.neuraspace.com/) (an AI tool that flags collision risks and suggests manoeuvres; the operator chooses; its minutes-against-8-hours figure is its own claim). Map `desks/curator/2026-11-15-1550.json`; newsroom commit 9b5c39396, live in promptugal.news v0.1.1476.
 - Gaps for the researcher: ARTE's release and the ANIA documents; the AMALIA paper's full text; an investor's post on Neuraspace; more companies and labs for theme 2.
 - state: ok; done: S64 and S66 updated, README and map released; next: curator 07:35 Monday; ask: none; run: scheduled
+
+## Mon 16 Nov 2026, 07:35 UTC run
+
+- No hold on either site; decisions.md read (the one new entry, an update to standing answer 81 on place subdomains, asks nothing of the curator); prompts file re-read, no difference; no machine reads of Web Summit, Luma, Meetup or Eventbrite.
+- No new story. S64 (AMALIA and ANIA, journalist-portugal) and S66 (Neuraspace) are still not drafted. The researcher's [full text of the AMALIA technical report](https://arxiv.org/html/2603.26511) went into S64: built on EuroLLM-9B, 5.8 billion tokens of filtered European Portuguese from the Portuguese Web Archive with personal data removed, open-licensed sources only; the "beats earlier fully open models" claim is the authors' own. Map `desks/curator/2026-11-16-0750.json`.
+- Gaps for the researcher: ARTE's release and the ANIA documents; an investor's post on Neuraspace; more companies and labs for theme 2.
+- state: ok; done: S64 updated, map and README committed; next: curator 11:35; ask: none; run: scheduled
