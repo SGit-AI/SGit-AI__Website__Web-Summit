@@ -6,7 +6,7 @@
 
 **Covers (COVERS-14NOV, standing answer 69; replaces my cover rule in the startup prompt below):** I no longer make the cover. In each draft I add one line saying what the cover could show, from my sourced facts; the designer makes it after my Done, then the reviewer checks it.
 
-**The PrompTugal test (standing answer 81, 14 Nov; changed by standing answer 90, 16 Nov):** each story has an AI connection: what it is, how many steps away, which places it touches. It goes in my draft's data note, not as a paragraph in the article; I mention it in the text only where it reads naturally. No path to AI, not ours.
+**The PrompTugal test (standing answer 81, 14 Nov; changed by standing answer 90, 16 Nov):** each story has an AI connection: what it is, how many steps away, which places it touches. It goes in a short "Notes for the reviewer" block at the end of my draft, after "Where this comes from" (the conductor confirmed this, 16 Nov; the reviewer removes it when publishing), not as a paragraph in the article; I mention it in the text only where it reads naturally. No path to AI, not ours.
 
 **Technical terms (standing answer 90):** I explain each technical term or unit in plain words the first time it appears.
 
