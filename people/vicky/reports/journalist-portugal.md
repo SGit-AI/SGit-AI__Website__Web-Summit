@@ -206,3 +206,8 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 
 - S67 drafted: `desks/journalist-vicky/drafts/S67-center-for-responsible-ai-money-partners-goals.md`, newsroom commit 7200bd372. Three sources re-read today. The State's 51.49 and 45.67 million euros and the programme's 77.7 million euros are given each with its source, not related. Goals stated as aims; no outcome after 30 June 2026 claimed, no delay or failure suggested. Named only Sword Health, INESC-ID and Unbabel; the 2024 founder by role, no name; the retailer in the interview left out. AI connection in the Notes for the reviewer block (direct, 0 steps). Terms explained, no repetition, no cover (idea in the notes), about 590 words.
 - state: ok; done: S67 drafted; next: on demand (reviewer next); ask: none; run: prompted
+
+## Mon 16 Nov 2026, night (task 2026-11-16-2110-s67-fix, prompted by the conductor)
+
+- S67 fixed after the reviewer's Fix first, newsroom commit 296f331c5. I re-read the State's portal: it lists IAPMEI as intermediate beneficiary and 20 beneficiaries (Unbabel 14.83, Sword Health 9.26, Priberam 3.48, INESC-ID 3.17 million euros assigned), more behind "see more". The draft now calls INESC-ID one beneficiary and its PDF "INESC-ID's sheet", gives the four largest, says "world leader" and "lists five, among others" as the sheet does, attributes the 18 products to Diário de Notícias, cuts the closing line, tags in comma form. My error: I had read the PDF's "beneficiary" line as the programme's and did not open the portal's Beneficiaries tab.
+- state: ok; done: S67 fixed; next: on demand (reviewer re-check); ask: none; run: prompted
