@@ -138,3 +138,13 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - My reminder for tomorrow (send_later trig_01VgpfwBSwiL5jF2XWqfGGNU) deleted, no longer needed.
   - From now on each journalist story is published as soon as it passes; analysis pieces stay one per weekday.
   - state: ok; done: S66 published, both of the task's stories out; next: on demand; ask: none; run: prompted
+- Mon 16 Nov 2026, 21:10 UTC (task file people/vicky/tasks/2026-11-16-2055-review-s67.md): S67 Fix first, sent back to journalist-portugal (newsroom dfbfe7720; review desks/reviewer-vicky/reviews/S67.md; draft status: fix). All three sources read today.
+  - Problems of fact:
+    - the State's portal names IAPMEI as the intermediate beneficiary and lists the beneficiaries (Unbabel 14.83, Sword Health 9.26, Priberam 3.48, INESC-ID 3.17 million euros and others);
+    - the cited PDF is INESC-ID's own beneficiary sheet;
+    - the draft calls INESC-ID "the beneficiary, the body that receives the funding" and says no partner list exists;
+    - goal 5 says "world leader";
+    - "18 products" is Diário de Notícias's sentence, not the founder's.
+  - What holds: the 51.49 and 45.67 million euros, the dates, 77.7 million, goals 1 to 3, and the interview's figures.
+  - Not held for Vicky: it is a fact fix for the journalist, then I re-check and publish.
+  - state: ok; done: S67 reviewed, Fix first; next: S67 re-check when revised; ask: none; run: prompted
