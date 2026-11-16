@@ -12,6 +12,8 @@
 //   SG_SEND_ACCESS_TOKEN=... node admin/tools/crm_followups.mjs drain --vault <clone of ws-team-crm-private> [--dry]
 //       list the lane, check each save, write the newest valid one to <vault>/actions/<id>.sealed.json, sgit commit
 //       and push, and only then mark the lane's files processed (a failed push loses nothing). Prints no secret.
+//       A save not built on the newest save's chain (someone else saved in between) is left in the drop box and
+//       reported as a CONFLICT by name, until that person saves again; then --clear-conflicts lets it go.
 //
 // A save is accepted only if: it is for the one record this lane serves; it is signed by a person in that record's
 // audience, with their active key on data/person-keys.json; the new envelope's audience and agents are exactly the
@@ -110,14 +112,22 @@ async function drain() {
             seen.push(f.file_id)
             let msg; try { msg = JSON.parse(Buffer.from(f.content, 'base64').toString('utf8')) } catch { msg = null }
             const r = check(msg, current)
-            if (typeof r === 'string') console.log(`crm_followups: ${f.file_id} refused: ${r}`); else saves.push(r)
+            if (typeof r === 'string') console.log(`crm_followups: ${f.file_id} refused: ${r}`); else saves.push({ ...r, file_id: f.file_id })
         }
     }
     saves.sort((a, b) => String(a.at).localeCompare(String(b.at)))
+    // a save is kept only if it is on the newest save's chain (each built on the one before, back to the filed list).
+    // Any other save would be overwritten by the newest (two people saving between collections): leave it unprocessed
+    // and say so, so its person can add their change again on top of the filed list (14 Nov: Vicky's additions were lost).
+    const top = saves[saves.length - 1], chain = new Set()
+    for (let s = top; s; s = saves.find(x => x.at === s.base)) { chain.add(s); if (s.base === current.at) break }
+    const clash = opt('clear-conflicts') ? [] : saves.filter(s => !chain.has(s))
+    for (const s of clash) console.log(`crm_followups: CONFLICT: ${s.by}'s save of ${s.at} was made on another copy and would be lost; left in the drop box. Ask ${s.by} to reopen the list and make the change again, then run drain with --clear-conflicts.`)
+    const keep = new Set(clash.map(s => s.file_id))
     const best = saves.pop()
     if (best && String(best.at) > String(current.at)) {
         fs.writeFileSync(target, JSON.stringify(best.env))
-        if (best.base !== current.at) console.log(`crm_followups: note: ${best.by}'s save was made on an older copy (${best.base}); a save made in between may be lost`)
+        if (best.base !== current.at && !saves.some(x => x.at === best.base)) console.log(`crm_followups: note: ${best.by}'s save was made on an older copy (${best.base}); a save made in between may be lost`)
         if (saves.length) console.log(`crm_followups: ${saves.length} older save(s) in this run superseded by the newest`)
         const sg = (...a) => execFileSync('sgit', a, { cwd: path.resolve(String(vault)), stdio: ['ignore', 'pipe', 'pipe'] }).toString()
         try { sg('commit', '-m', `the follow-up list, saved by ${best.by} at ${best.at} (WS-217)`) } catch (e) { if (!/nothing to commit/i.test(String(e.stdout) + String(e.stderr))) throw e }
@@ -125,7 +135,8 @@ async function drain() {
         sg('push', ...(tok ? ['--token', tok] : []))
         console.log(`crm_followups: filed ${best.by}'s save of ${best.at} to ${RECORD} and pushed`)
     } else console.log('crm_followups: nothing newer than the filed list')
-    const moved = (await lane(c, 'mark-processed', { inbox: c.append_token, file_ids: seen })).moved || []
+    const done = seen.filter(id => !keep.has(id))
+    const moved = done.length ? (await lane(c, 'mark-processed', { inbox: c.append_token, file_ids: done })).moved || [] : []
     console.log(`crm_followups: ${moved.length} lane file(s) marked processed`)
 }
 
