@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **94** next phase: Vicky takes card 5 (summit intersection) only, and her newsroom desks keep running as now; the sales agent is dropped for now.
 - **93** one-per-weekday spacing is for analysis pieces only; journalists' stories go out as soon as they pass review.
 - **92** no fixed word count: length follows the story (analysis usually 400 to 900 words, news 300 to 700, longer only with a reason), no repetition, no padding, the reviewer judges; A3 approved, published on 16 Nov as soon as its chart is in (moved from Thursday at Vicky's word).
 - **91** at publishing, the AI connection moves into the article's front matter (ai_connection, ai_steps, ai_places): kept with the story, not shown to readers.
@@ -446,6 +447,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 
 93. **Spacing is for analysis only** (Vicky, 16 Nov, about 14:45 UTC, in this window: "what I wanted was only for the analysis. Articles like these go out one by one. These articles you can go out when you have it.")
     - Standing answer 84's one piece per weekday applies to the analyst's pieces only. The journalists' stories are published by the reviewer as soon as they pass review (R-PUB-1), with no spacing. S66 goes out now.
+
+94. **The next phase: card 5 only** (Vicky, 16 Nov, about 18:20 UTC, in this window: "record my cards: card 5 only. Drop the sales agent reminder." Earlier, to Dinis at 17:52 UTC, shared here: "I'm starting to focus on looking for a job, so I may have less time. I'll do the summit intersection card and keep my newsroom desks running.")
+    - From Dinis's roadmap "PrompTugal.news, the next phase" (newsroom.sgit.ai, 16 Nov), Vicky takes **card 5, Summit intersection**: match the companies she met at Web Summit with the companies on PrompTugal.news's town pages, and follow up both. Not started until she says; her inbox agent drafts any follow-ups, she sends.
+    - Her newsroom desks keep running as now (researcher and curator three times a day, the analyst weekly).
+    - The sales agent (sales@web-summit.vicky) is dropped for now; its reminder is deleted. No other cards.
 
 ## Updates for agents
 
