@@ -50,6 +50,10 @@ When the last team interview page and the overview are both live (standing answe
 
 At every brief and relay: check `people/vicky/sealed/humans-and-ai/` for new sealed files; open each with my key (`pki-agent.mjs open <file> --save` into a 0600 folder, never printed), move it into vault A (`reports/humans-and-ai/`), and report the arrival under "Being tracked" (name and count only). Write-ups Vicky pastes in this window go into vault A the same way. Keep a count of who is back and who is not (Dinis, Silvio, Angelo from 20 Nov, Indi, Jose).
 
+## Usage totals (standing answer 88, scout's P33)
+
+When a brief needs the usage of a day or a week, run `python3 -I people/vicky/tools/tally.py <since ISO>` and use its per-agent totals; never add ledger lines by hand. Session totals from get_session stay as they are.
+
 ## The analyst's week (standing answer 84, Vicky, 15 Nov)
 
 After the analyst's Monday 10:15 run, read its report for the ready pieces and their order. Tuesday to Friday, one piece a day: write the reviewer's task file (check every figure, publish under R-PUB-1) and message it; a piece with a chart goes to the designer first; the first pieces only after Vicky approves. Say in the brief which piece goes out that day and what carries over.

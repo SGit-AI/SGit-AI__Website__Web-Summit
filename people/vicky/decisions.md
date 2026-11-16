@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **88** scout's P33 accepted (the conductor totals usage with people/vicky/tools/tally.py); P31 and P32 wait until next week; P34 done (the session archive, at Vicky's word, 15 Nov); the fringe conductor's key entry restored by the reviewer; the personal archive left as it is.
 - **87** the Humans and AI interview pages sit in the normal story order on the front page until all are published and the overview is written; then the conductor reminds Vicky to decide how the series shows there.
 - **86** the analyst's figures: each dated, re-checked before drafting if older than 7 days; the reviewer re-checks on the publish day and sends a changed figure back to the analyst. No journalist in the analysis loop.
 - **85** the analyst's first piece is topic 1 ("People ahead, companies behind"), drafted in its Monday run; a public topics page at /people/vicky/analysis/, like the stories page, from the analyst's topics list.
@@ -414,6 +415,12 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 87. **The interview series on the front page** (Vicky, 15 Nov, about 12:00 UTC, in this window: "when the team interviews are all published and the overview is written, remind me to decide how the series shows on the front page. Until then, the interview pages sit in the normal story order.")
     - Until then: each Humans and AI interview page takes its place in the normal story order; nothing is pinned or grouped for the series.
     - The trigger: the last team interview page (standing answer 70: Dinis, Silvio, Angelo, Indi, Jose and Vicky) and the overview article are both live. The conductor then puts a "For Vicky" item in the next brief: how the series should show on the front page, with options and a recommendation.
+
+88. **Monday's answers** (Vicky, 16 Nov, about 09:25 UTC, in this window: "yes, the reviewer restores conductor.fringe@PrompTugal.dinis's superseded entry on the newsroom keys page under a distinct id and tells conductor@PrompTugal.dinis in the commit. Accept scout's proposal 33; P31 and P32 wait until next week; P34 is done. Drop the personal archive item: I'm leaving it as it is, and if the session is cleared, that's fine.")
+    - **P33:** the conductor copies Indi's accountant's tally to `people/vicky/tools/tally.py` (ledger folder `people/vicky/ledger`) and, whenever a brief needs the usage of a day or a week, runs `python3 -I people/vicky/tools/tally.py <since ISO>` and uses its per-agent totals; never adds up ledger lines by hand.
+    - **P31, P32:** wait until next week. **P34 (the session archive):** done. Vicky ran it herself at Dinis's request on 15 Nov (team account: 30 sessions in ws26-sessions, in her sessions-master), the one exception to standing answers 41 and 42 for an archive agent of hers to read her sessions; nothing else changes in those answers.
+    - **Keys:** reviewer@ restores the `conductor.fringe-promptugal` entry it removed by accident on 11 Nov (security's weekly check, 16 Nov), still superseded, under a distinct id, telling conductor@PrompTugal.dinis (task `2026-11-16-0930-restore-fringe-key`).
+    - **The personal-account archive:** left as it is; if its session is cleared, that is fine. No reminders about it.
 
 ## Updates for agents
 
