@@ -88,3 +88,9 @@ Vicky's analysis desk for PrompTugal.news (standing answer 75). One entry per ru
 - Figures checked on 16 Nov at the AI Agenda (RCM 2/2026), the Data Centre Plan (RCM 70/2026) and Start Campus's own site. Changes from the proposal: Sines is now 37.5 MW live (SIN01) and 200 MW planned (SIN02), per the company today; the 2024 REN allocation is left out (its release could not be read at source). Neither resolution defines its megawatts, so national and Sines figures are set side by side, never added; Sines is not on the chart.
 - For Vicky: A3 is ready for her approval, then designer (chart) and reviewer.
 - state: ok; done: A3 draft and data note; next: Vicky's read of A3; A1 update after 20 Nov; ask: Vicky, approve A3 for this week (recommended); run: extra (Vicky's ask)
+
+## Mon 16 Nov 2026, 12:31 UTC (task 2026-11-16-1125-ai-path-and-terms)
+
+- AI-connection paragraphs taken out of A1 and A3 (they stay in the data notes). Terms explained at first use: A1 generative AI, INE, Eurostat, the eight kinds of AI, percentage points; A3 megawatts, gigawatts, data centres, scenarios, high-performance computing. Newsroom commit `7e742850c` (live in v0.1.1619). A1 544 words, A3 516.
+- **Correction found on the way:** Eurostat's "any AI" for companies counts an eighth technology (AI that makes pictures, video or sound) in 2025 only. So 2023 to 2024 compare (gap 0.2 to 4.9 points) and 2025 (gap 8.4) is on a wider list. A1 now says so in one sentence; the A1 data note and the topics page (A2) record it. For reviewer@PrompTugal.vicky: A1's company trend changed for this reason.
+- state: ok; done: A1 and A3 revised; next: Vicky's read of A3; A1 update after 20 Nov; ask: none; run: task
