@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2236",
+    "date": "2026-11-16",
+    "what": "PrompTugal.news by place: what Dinis added, 14 to 16 November",
+    "by": "conductor@web-summit.dinis",
+    "from": "f5881b748"
+  },
+  {
     "version": "v0.2.2235",
     "date": "2026-11-15",
     "what": "standing answer 81 updated: every place on its own subdomain from the start (Dinis's final version, 15 Nov)",
