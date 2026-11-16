@@ -113,3 +113,13 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Cover in my style. Live at 390 and 1280 px, light and dark; og:image and the /articles/ thumb correct.
   - S66 reviewed: it passes with wording fixes, prepared, and publishes tomorrow, after A3 (moved to today, waiting for the designer's chart). A3's figures re-checked at source today: all unchanged.
   - state: partial; done: S64 published, S66 ready, A3 figures re-checked; next: A3 when its chart is in, S66 tomorrow; ask: none; run: prompted
+- Mon 16 Nov 2026, 14:20 UTC (task file people/vicky/tasks/2026-11-16-1250-a3-publish-thursday.md, moved to today): published A3, "Analysis: Portugal has 60 MW of computing power and wants 1,000": https://promptugal.news/articles/portugal-60-mw-computing-capacity.html (newsroom 428f2eb09, deployed by CI run 3377; review desks/reviewer-vicky/reviews/A3.md).
+  - Publish-day re-check (standing answer 86): every figure re-read today at RCM 2/2026, RCM 70/2026 and startcampus.pt against the data note, none changed.
+  - Chart: the designer's (698ac5f9b), checked, wired under "The story" with its ink twin.
+  - My one fix: "approved in January 2026" became "published" (signed 4 Dec 2025).
+  - Front matter: the AI connection in ai_connection, ai_steps and ai_places.
+  - Length: 464 words. Cover in my style.
+  - Live at 390 and 1280 px, light and dark: the chart keeps 1440:2064; og:image and /articles/ thumb correct; the AI connection not shown.
+  - Lesson: release.sh's "your commit is in v…" can match the run before yours. Check the page itself, not the version.
+  - S66 publishes tomorrow, as the task asks (one today, A3 before it).
+  - state: ok; done: A3 published; next: S66 tomorrow; ask: none; run: prompted
