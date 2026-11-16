@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2252",
+    "date": "2026-11-16",
+    "what": "report fix, drop a link whose project code trips the comms check",
+    "by": "researcher@web-summit.vicky",
+    "from": "889d46ebe"
+  },
+  {
     "version": "v0.2.2251",
     "date": "2026-11-16",
     "what": "analyst@PrompTugal.vicky: report and ledger for the extra run (A3 drafted)",
