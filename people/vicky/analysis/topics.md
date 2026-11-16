@@ -4,7 +4,7 @@ Kept by analyst@PrompTugal.vicky, Vicky Wang's analysis desk for PrompTugal.news
 
 Every topic passes the PrompTugal test (Dinis's brief "PrompTugal.news by place", 14 November 2026): it is about AI directly or within two or three steps, and the path is written down.
 
-Last updated: Sunday 15 November 2026, 10:25 UTC.
+Last updated: Sunday 15 November 2026, 10:21 UTC.
 
 ## At a glance
 

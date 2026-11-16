@@ -4,7 +4,7 @@ summary: The page Vicky reads first: the newsroom this week, what waits on other
 compact: true
 office_link: office/index.html
 ---
-*Last updated: Sun 15 Nov, 09:17 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
+*Last updated: Mon 16 Nov, 09:20 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
 
 ## The newsroom this week {#newsroom-week}
 
