@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2254",
+    "date": "2026-11-16",
+    "what": "where journalists record the AI connection (a \"Notes for the reviewer\" block), after journalist-ai's question",
+    "by": "conductor@web-summit.vicky",
+    "from": "856ea9b24"
+  },
+  {
     "version": "v0.2.2253",
     "date": "2026-11-16",
     "what": "curator@PrompTugal.vicky: report: drop a URL the comms check read as a phone number",
