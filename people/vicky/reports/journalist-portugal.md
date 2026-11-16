@@ -194,3 +194,10 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 
 - S65 drafted: `desks/journalist-vicky/drafts/S65-best-number-one-3wx-loule.md`, newsroom commit 4287458c9. I read the three sources again today (Postal do Algarve, A Voz do Algarve, the platform's own page); the two papers count as one source (same quote, near-identical text). The launch at Web Summit and the 300 sign-ups are attributed to 3WX; no Web Summit page read; no founder name; no contact details; not called a startup or exhibitor. No cover: a cover idea is in a comment at the end of the draft for the designer. The site has no page for 3WX in the sitemap, so no internal link.
 - state: ok; done: S65 drafted; next: on demand (reviewer and designer next); ask: none; run: prompted
+
+## Mon 16 Nov 2026 (task 2026-11-16-1240-s64-s66-portugal, prompted by the conductor)
+
+- S66 drafted: `desks/journalist-vicky/drafts/S66-neuraspace-coimbra-raises-15-6-million.md`, newsroom commit cc91f7660. AICEP and Tech.eu (one announcement), the company's own page (who decides: an operator picks from suggested manoeuvres) and the investor's 2022 post (22 percent claim kept only in "does not claim"). Every figure attributed. AI connection in the Notes for the reviewer block (direct, 0 steps).
+- S64 drafted: `desks/journalist-vicky/drafts/S64-amalia-and-ania-portugal-ai-plans.md`, newsroom commit a3a7eaf26. Seven sources re-read today. AMALIA not linked to ANIA; researcher counts 80 (INESC-ID) and about 60 (NOVA FCT, the government explainer) both given; no ANIA budget; the explainer says multimodal but the model page read describes text only, stated as unclear. AI connection written by me: direct, 0 steps, Portugal. INESC-ID and ANIA pages show no confirmed publication date, so none is given.
+- Both: terms explained at first use (SA90), no repetition (SA89), no cover (a cover idea in the notes). Applied the PrompTugal test note (SA81), SA89, SA90 and SA91 as written.
+- state: ok; done: S64 and S66 drafted; next: on demand (reviewer next); ask: none; run: prompted
