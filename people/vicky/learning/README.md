@@ -2,7 +2,7 @@
 
 Kept by scout@web-summit.vicky, at Vicky's word (6 November 2026). One short note per topic: what Dinis's agents do and why it works, how Vicky's agents do it today, and proposals Vicky can accept. Accepted proposals reach her agents only through conductor@web-summit.vicky ("Updates for agents" in `people/vicky/decisions.md`); the scout never changes an agent's files, prompts or schedules. A proposal stays **open** until Vicky marks it accepted, on hold or rejected.
 
-The scout writes the next topic from the list below every day at 22:00 UTC (its scheduled task, Vicky's word of 6 November).
+From 13 November the scout writes one note a week, Mondays 06:47 UTC (standing answer 56): the whole team's week, only what Vicky could reuse.
 
 ## Notes
 
@@ -15,6 +15,7 @@ The scout writes the next topic from the list below every day at 22:00 UTC (its 
 | 05 | [The inbox agent](05-the-inbox-agent.md): how inbox@web-summit.dinis is set up, and what Vicky would copy | 6 Nov 2026 |
 | 06 | [Status, run reports and the dashboard](06-status-run-reports-and-the-dashboard.md) | 6 Nov 2026 |
 | 07 | [The operator's words, kept](07-the-operators-words-kept.md) | 7 Nov 2026 |
+| 08 | [What Vicky could reuse from the whole team's week, 9 to 16 Nov](08-reusable-this-week-16-nov.md): the weekly run's first note | 16 Nov 2026 |
 
 Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are answered: [questions-for-the-mentor.md](questions-for-the-mentor.md).
 
@@ -52,9 +53,13 @@ Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are a
 | P28 | "New from Vicky" (newest first) at the top of decisions.md | conductor; every agent reads it | a few hundred tokens per new rule | 07 | rejected (Vicky, 7 Nov: Updates for agents in decisions.md already covers it) |
 | P29 | Pass on a rule that other agents need too, in your report For: conductor | every agent | a line now and then | 07 | rejected (Vicky, 7 Nov: standing answer 14 already routes through the conductor) |
 | P30 | Keep Vicky's standing words as she gave them, in people/vicky/words/ | Vicky, then conductor | small, only on new rules | 07 | rejected (Vicky, 7 Nov: no further exception for storing her words in public files) |
+| P31 | Lanes for Vicky's agents (Vicky approves) and a daily read-only audit in the brief | conductor | one run once (about 50 to 100k tokens), then a few thousand a day | 08 | open |
+| P32 | Say why when a commit writes outside your lane: an `Outside:` line (after P31 is approved) | every agent | one line in the occasional commit | 08 | open |
+| P33 | Total the ledger with Indi's tally script, never by adding lines | conductor | small: a copy and one path change | 08 | open |
+| P34 | The session archive kit: decide whether to archive her sessions as Dinis asks (needs an exception to her rule against reading sessions) | Vicky (decision) | large: about 50,000 tokens a session | 08 | open |
 
 ## Next topics
 
-None left: every topic on the list has a note. The 22:00 run says so in one line and stops until Vicky adds a topic.
+The topic list is finished (notes 01 to 07). Since 13 November the scout writes one note a week instead, on Mondays at 06:47 UTC: only what Vicky could reuse from the whole team's week (note 08 is the first).
 
 Written: behaviour policies (02), cheap workers (03), hand-overs (04), at Vicky's request the inbox agent (05), status, run reports and the dashboard (06), and the operator's words, kept (07).
