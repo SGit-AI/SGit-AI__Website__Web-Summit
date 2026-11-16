@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **89** no repetition in any of Vicky's articles (it reads as AI work); A1 cut to about 600 words, framing approved, updated with INE's 20 Nov figures and published early the week of 23 Nov.
 - **88** scout's P33 accepted (the conductor totals usage with people/vicky/tools/tally.py); P31 and P32 wait until next week; P34 done (the session archive, at Vicky's word, 15 Nov); the fringe conductor's key entry restored by the reviewer; the personal archive left as it is.
 - **87** the Humans and AI interview pages sit in the normal story order on the front page until all are published and the overview is written; then the conductor reminds Vicky to decide how the series shows there.
 - **86** the analyst's figures: each dated, re-checked before drafting if older than 7 days; the reviewer re-checks on the publish day and sends a changed figure back to the analyst. No journalist in the analysis loop.
@@ -421,6 +422,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **P31, P32:** wait until next week. **P34 (the session archive):** done. Vicky ran it herself at Dinis's request on 15 Nov (team account: 30 sessions in ws26-sessions, in her sessions-master), the one exception to standing answers 41 and 42 for an archive agent of hers to read her sessions; nothing else changes in those answers.
     - **Keys:** reviewer@ restores the `conductor.fringe-promptugal` entry it removed by accident on 11 Nov (security's weekly check, 16 Nov), still superseded, under a distinct id, telling conductor@PrompTugal.dinis (task `2026-11-16-0930-restore-fringe-key`).
     - **The personal-account archive:** left as it is; if its session is cleared, that is fine. No reminders about it.
+
+89. **No repetition; A1's length and timing** (Vicky, 16 Nov, about 10:45 UTC, in this window: "the analyst cuts A1 to about 600 words before Friday's update; keep In short, the story, What this does not claim and the sources. I approve the framing; option A, published early next week after INE's 20 Nov figures." and "Remind that the repetitive in the articles that makes people think this is really AI work. So I don't want repetition in any of my articles.")
+    - **No repetition, for every article of Vicky's desks** (journalists, analyst, reviewer): say each point once. No sentence or paragraph that restates an earlier one in other words; no summary that repeats "In short"; no closing paragraph that repeats the story; one number stated once, then referred to. The reviewer checks it before publishing and cuts what repeats (standing answer 17: it may fix wording itself). Published articles stay as they are.
+    - **A1:** the analyst cuts it to about 600 words now, keeping In short, the story, What this does not claim and the sources; framing approved. After INE publishes its 2026 figures (Fri 20 Nov), the analyst updates the figures (standing answer 86), then the designer draws the chart and the reviewer checks and publishes early in the week of 23 Nov (standing answer 84's one per weekday).
 
 ## Updates for agents
 
