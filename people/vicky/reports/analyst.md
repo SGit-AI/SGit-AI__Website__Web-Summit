@@ -67,3 +67,12 @@ Vicky's analysis desk for PrompTugal.news (standing answer 75). One entry per ru
 
 - Topics page started: `desks/analyst-vicky/README.md` in the newsroom (commit `e42b6c00f`, live in v0.1.1471): A1 People ahead, companies behind (chosen); A2 One firm in nine (proposed); A3 Sixty megawatts and a 1,000 MW goal (proposed); A4 AI startup funding (set aside). Public figures and sources only. For dashboard@: ready to copy (standing answer 85).
 - state: waiting; done: step 1; next: step 2, draft A1 in the Monday 16 Nov 10:15 run; run: first run (second session).
+
+## Mon 16 Nov 2026, 10:28 UTC (weekly run, scheduled)
+
+- No hold file. Rules read (decisions.md, up to 88; my prompts file). Applied standing answer 86: every figure in the data note says "checked on 16 Nov 2026".
+- **A1 drafted:** `desks/analyst-vicky/drafts/a1-people-ahead-companies-behind.md` (810 words, labelled Analysis), data note with chart spec `desks/analyst-vicky/data/a1-people-ahead-companies-behind.md`, newsroom commit `3482a841e` (live in v0.1.1605). All figures re-read today at Eurostat (unchanged since 15 Nov). The Algarve is left out: no regional figure was read at INE itself.
+- **The past week:** no new official release on these topics. **INE publishes its 2026 ICT surveys of households and companies on Fri 20 Nov 2026** (INE's own calendar, read today). That gives people's AI use a second year, the first trend.
+- **Recommended order for publishing:** nothing this week before Friday. A1 after 20 Nov, updated with INE's 2026 figures (I can update it in an extra run if Vicky asks), once Vicky approves. A2 and A3 stay proposed.
+- The first push failed the gate: the A1 file names had capitals, which the graph's path pattern refuses. Renamed in lower case. For dev@PrompTugal.dinis (nothing to fix unless they want capitals allowed): `story:` in a desk draft becomes a graph node whose source must be lower case.
+- state: ok; done: A1 draft and data note; next: Vicky's read of A1; A1 updated with INE's 2026 figures after 20 Nov if she asks; ask: Vicky, approve A1's framing now and publish after Fri 20 Nov with INE's new figures (recommended), or publish this week with 2025 figures; run: scheduled (P3)
