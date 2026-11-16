@@ -76,7 +76,28 @@ Each town site gets a playful toggle that rewrites the page in an exaggerated lo
 - **Making a place is one entry in a list**: its name, its parent place, its mandate, its sources. The build does the rest.
 - **The PrompTugal team builds it**: dev@ (the build, and later the subdomains), ontologist@ (the places and the graph), dev.portugal@ (the Portugal section and the Algarve, Algarve Evolution first), researcher@ (the towns' sources and centres of gravity), designer@ (each town's look), correspondent@ (what leads on each site), journalist@ and Vicky's journalist-portugal (the stories). The usual rules hold: public sources, a source and the date read for every fact, no contact details.
 
+## What Dinis added, 14 to 16 November
+
+Confirmed by Dinis on 15 November (about 23:55 UTC: "start all the ones that are requested, especially because they come from me"). The working detail is on promptugal.news's board, in `board/guidance/` (three files dated 16 November).
+
+1. **A newsroom per place.** Every place gets its own small agentic newsroom: an agent per town researching in the open (`place.<town>@PrompTugal.dinis`, all 17 places live since 15 November), with a places team behind them (data, data science, detective, visualisation, design). Each runs under its own signed behaviour policy, so the policies can be seen at work. The agents run hourly, each at its own minute, so something is always moving.
+2. **Full research for every place:**
+   - companies, people (public and professional), government and public bodies, cooperatives and not-for-profits;
+   - local companies building or using AI;
+   - investors, investments and startups: an **investment map** where investors, companies and people intersect;
+   - local talent who have spoken publicly, starting with Angelo, Silvio and Jose (they agree; they are looking for work), then a way for anyone to add themselves;
+   - **"Starting a company here":** where to go and who to talk to, the government side included, from public sources;
+   - maps of all of it, in several styles, coloured by kind.
+3. **The graph is data.** Everything a page shows is JSON first, with GET endpoints and an OpenAPI description per place, and can be downloaded and queried (CSV and SQL in the browser), so it can be shown to Algarve Evolution and to anyone with only a spreadsheet.
+4. **Outreach: "is this correct?"** Everyone mapped in a place is asked whether what we hold is right, with where each fact came from and why they are listed, and for more references and people. Every published entity has a "this is wrong / comment" control. Messages are drafted by agents and sent by a person.
+5. **Local media first.** Every local news organisation, blogger and editor is listed and linked per place, with any feed we can read automatically noted. A local-news page amplifies them and sends readers their way, and a **virtual wallet** shows what each source would earn if we were paid (a concept). Each is offered an agentic team of its own. A big call for collaborators asks journalists, local media and bloggers to write for their town.
+6. **Live local signals.** Per place, the live signals that matter locally (warnings, transport disruptions, council notices), each with its source and the time read, from the storm site's connectors, connected to the stories, organisations and events they touch. Not a warning service: every signal points to the body that issued it.
+7. **Forget the Summit.** Web Summit becomes one of the events covered. Places come first, on the site and in the app.
+8. **The app is the reader and the command centre.** The PrompTugal iOS app reads the places' JSON, shows the agents at work, and lets a conductor see its own agents (Dinis sees all of his; each person sees theirs).
+9. **Paid from day one,** on the site and in the app, from one price list (`api/v1/billing/meter.json`).
+10. **Contacts: the rule changed.** A contact may be shown when it is published on a public website, above all a government or public body's site: the official channel, linked to the page it came from, with the date read. Never a private person's own contact, nothing from behind a login, nothing from the private CRM.
+
 ## What we agree first, and what is not now
 
 - **Agree now:** the north star and the PrompTugal test; the three levels; the graph and the lens; the 17 places of the first wave.
-- **Not now:** DNS, separate repositories, any new brand, a dedicated local desk (option C, Vicky's call when local stories outgrow journalist-portugal).
+- **Not now:** DNS, separate repositories, any new brand. Option C (a dedicated local desk) is overtaken: every place now has its own agent.
