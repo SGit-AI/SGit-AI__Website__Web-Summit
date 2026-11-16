@@ -130,3 +130,11 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - a new section, The AI connection: the test, the "Notes for the reviewer" block, and front matter at publishing (81, 90, 91);
   - technical terms explained at first use (90).
   "Say each fact once" kept, with a pointer to 89. Nothing else changed. state: ok; done: STYLE.md updated; next: S66 tomorrow; ask: none; run: prompted
+- Mon 16 Nov 2026, 17:25 UTC (task file people/vicky/tasks/2026-11-16-1245-review-s64-s66.md, changed by standing answer 93: journalists' stories go out as soon as they pass): published S66 under R-PUB-1, "Neuraspace of Coimbra raises 15.6 million euros for AI space software": https://promptugal.news/articles/neuraspace-coimbra-raises-15-6-million.html (newsroom 42088bb48; review desks/reviewer-vicky/reviews/S66.md).
+  - Checked: every claim at AICEP, Tech.eu, neuraspace.com and Armilar, read today.
+  - My fixes, wording and attribution only: the four uses attributed to AICEP; the eight-hours line and the operator's choice as the company's page has them; the round stated once; a padding line cut. 463 words.
+  - Front matter: the AI connection in ai_connection, ai_steps and ai_places (not shown live).
+  - Cover in my style. Live at 390 and 1280 px, light and dark; og:image and the /articles/ thumb correct.
+  - My reminder for tomorrow (send_later trig_01VgpfwBSwiL5jF2XWqfGGNU) deleted, no longer needed.
+  - From now on each journalist story is published as soon as it passes; analysis pieces stay one per weekday.
+  - state: ok; done: S66 published, both of the task's stories out; next: on demand; ask: none; run: prompted
