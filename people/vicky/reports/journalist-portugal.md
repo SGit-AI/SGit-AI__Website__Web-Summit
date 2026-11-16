@@ -201,3 +201,8 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 - S64 drafted: `desks/journalist-vicky/drafts/S64-amalia-and-ania-portugal-ai-plans.md`, newsroom commit a3a7eaf26. Seven sources re-read today. AMALIA not linked to ANIA; researcher counts 80 (INESC-ID) and about 60 (NOVA FCT, the government explainer) both given; no ANIA budget; the explainer says multimodal but the model page read describes text only, stated as unclear. AI connection written by me: direct, 0 steps, Portugal. INESC-ID and ANIA pages show no confirmed publication date, so none is given.
 - Both: terms explained at first use (SA90), no repetition (SA89), no cover (a cover idea in the notes). Applied the PrompTugal test note (SA81), SA89, SA90 and SA91 as written.
 - state: ok; done: S64 and S66 drafted; next: on demand (reviewer next); ask: none; run: prompted
+
+## Mon 16 Nov 2026, evening (task 2026-11-16-2050-s67-portugal, prompted by the conductor)
+
+- S67 drafted: `desks/journalist-vicky/drafts/S67-center-for-responsible-ai-money-partners-goals.md`, newsroom commit 7200bd372. Three sources re-read today. The State's 51.49 and 45.67 million euros and the programme's 77.7 million euros are given each with its source, not related. Goals stated as aims; no outcome after 30 June 2026 claimed, no delay or failure suggested. Named only Sword Health, INESC-ID and Unbabel; the 2024 founder by role, no name; the retailer in the interview left out. AI connection in the Notes for the reviewer block (direct, 0 steps). Terms explained, no repetition, no cover (idea in the notes), about 590 words.
+- state: ok; done: S67 drafted; next: on demand (reviewer next); ask: none; run: prompted
