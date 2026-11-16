@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **92** no fixed word count: length follows the story (analysis usually 400 to 900 words, news 300 to 700, longer only with a reason), no repetition, no padding, the reviewer judges; A3 approved, chart then published Thursday 19 Nov.
 - **91** at publishing, the AI connection moves into the article's front matter (ai_connection, ai_steps, ai_places): kept with the story, not shown to readers.
 - **90** the AI connection lives in the data note, not the article text (81 changed); every writer explains a technical term in plain words at first use.
 - **89** no repetition in any of Vicky's articles (it reads as AI work); A1 cut to about 600 words, framing approved, updated with INE's 20 Nov figures and published early the week of 23 Nov.
@@ -436,6 +437,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 
 91. **The AI connection kept in the article's metadata** (Vicky, 16 Nov, about 12:35 UTC, in this window: "when the reviewer publishes, keep the AI connection in the article's metadata instead of deleting it, so readers don't see it but the record stays with the story, as Dinis's brief asks.")
     - When the reviewer publishes, it moves the AI connection from the draft's "Notes for the reviewer" block (journalists) or data note (analyst) into the article's front matter, as three one-line fields: `ai_connection:` (what it is), `ai_steps:` (0, 1, 2 or 3) and `ai_places:` (the places it touches), and removes the block from the text. Readers do not see it; the record stays with the story. If the build or the gate refuses the fields, the reviewer stops and tells the conductor.
+
+92. **Length follows the story; A3 approved** (Vicky, 16 Nov, about 12:45 UTC, in this window: "I approve A3 for publishing. Designer draws the chart, then the reviewer checks and publishes on Thursday." and "no fixed word count. Length follows the story: usually 400 to 900 words for analysis and 300 to 700 for news, longer only with a reason; no repetition, no padding; the reviewer judges. Record it and tell the writers and reviewer." and "All this applies from now on, and after publishing A3 Can you go check standing answers, and style.md make sure all up to date")
+    - **Length:** no fixed word count, for every writer of Vicky's desks. A piece is as long as it needs to tell its story properly, and no longer: usually 400 to 900 words for an analysis and 300 to 700 for a news story; longer only with a reason the writer gives in its notes. No repetition (standing answer 89), no padding. The reviewer judges at publishing: it cuts repetition and padding, and sends back a piece too thin to tell its story. This replaces the "about 600 words" of standing answer 89 for future pieces; A1 and A3 stay as they are.
+    - **A3** ("Portugal has 60 MW of computing power and wants 1,000") is approved: the designer draws the chart from the data note's spec, then the reviewer re-checks every figure on the day (standing answer 86) and publishes it on Thursday 19 November.
+    - **After A3 is published,** the conductor checks the standing answers and the journalists' STYLE.md (`desks/journalist-vicky/STYLE.md` in the newsroom) are up to date with standing answers 81 to 92, and proposes any change to Vicky.
 
 ## Updates for agents
 
