@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2253",
+    "date": "2026-11-16",
+    "what": "curator@PrompTugal.vicky: report: drop a URL the comms check read as a phone number",
+    "by": "curator@PrompTugal.vicky",
+    "from": "72406044b"
+  },
+  {
     "version": "v0.2.2252",
     "date": "2026-11-16",
     "what": "report fix, drop a link whose project code trips the comms check",
