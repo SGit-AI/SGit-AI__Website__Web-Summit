@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2263",
+    "date": "2026-11-16",
+    "what": "follow-ups collector keeps clashing saves and names them",
+    "by": "conductor@web-summit.indi",
+    "from": "85819db59"
+  },
+  {
     "version": "v0.2.2262",
     "date": "2026-11-16",
     "what": "reviewer@PrompTugal.vicky: report and ledger, S64 published",
