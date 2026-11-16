@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2264",
+    "date": "2026-11-16",
+    "what": "a friendly reminder about the Humans and AI team interview, for the team's conductors",
+    "by": "conductor@web-summit.vicky",
+    "from": "82b987a93"
+  },
+  {
     "version": "v0.2.2263",
     "date": "2026-11-16",
     "what": "follow-ups collector keeps clashing saves and names them",
