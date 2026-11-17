@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **98** when Vicky asks or discusses, the conductor only answers; it acts only on her clear go. Routine work she already approved continues.
 - **97** card 5 for the rest of the team: each person checks their own Web Summit app export; the method is drafted, not sent, until Vicky decides how the team hears about it.
 - **96** inbox@ may read, read-only, the newsroom's data/companies/, data/by-place/, data/places/ and desks/outreach/ for card 5; card 5 uses Vicky's contacts export only (no follow-up list).
 - **95** update notes: one or two sentences for a single point; a short intro line and a list for several points; attribution once, at the end; STYLE.md carries the rule and an example (59 changed).
@@ -469,6 +470,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 
 97. **Card 5, each person their own** (Vicky, 17 Nov, about 19:00 UTC, in this window: "I think maybe it's better for each person just their own, and they can download their connection from the Web Summit application, so it's more complete. ... the follow-up list doesn't have all the connections we have from the Web Summit application.")
     - Vicky's part of card 5 is done (29 companies checked, 1 matched, already with Dinis's outreach desk, 0 drafts; inbox@'s commit af36e2c8). For the rest of the team, each person checks their own Web Summit app export; the shared follow-up list is not used. The method, with no names, is drafted in `people/vicky/drafts/2026-11-17-card5-summit-intersection-howto.md` and not sent: Vicky decides whether she tells the team on WhatsApp or the conductor sends the note. Card 5 and the team's follow-up list are separate tasks; card 5 does not use the follow-up list.
+
+98. **Answer when asked; act only on a clear go** (Vicky, 17 Nov, about 19:15 UTC, in this window: "I think you're doing things ahead a lot of time right now. I ask you a suggestion or I'm only discussing with you. You started to do something already without my permission." and "yes, record it: when I ask or discuss, you only answer; you act only on my clear go.")
+    - When Vicky asks a question, asks for a suggestion or is thinking something through, the conductor only answers and recommends: it writes, commits, sends and messages nothing.
+    - It acts only on her clear go: a "Conductor: ..." line, "go", "yes, do it", "send it" or the like. When it is unsure whether she means go, it asks first.
+    - Routine work she has already approved continues: the daily brief and relay, sending the curator's commissions to the journalists (standing answers 43 and 76), passing drafts to the reviewer, and the records those need.
 
 ## Updates for agents
 

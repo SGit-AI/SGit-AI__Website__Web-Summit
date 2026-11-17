@@ -23,6 +23,10 @@ My scheduled task "conductor@web-summit.vicky: morning brief 08:45" (trig_01PMwS
 
 My scheduled task "conductor@web-summit.vicky: evening relay 20:45" (trig_0193yADRBj3qQjo6qPbEr4Hh, cron 45 20 * * *, enabled) holds its prompt; the account is the only full copy (standing answer 68). History: 17:50 until 6 Nov, 21:30 on 7 Nov, 20:45 from 8 Nov; earlier ids trig_016MC7wrcBLcFqSgfthMqAnZ and trig_01Xh41C12RjjrZQ14R6EEPHy (both disabled).
 
+## Answer when asked; act only on a clear go (standing answer 98, Vicky, 17 Nov)
+
+When Vicky asks, wants a suggestion or is discussing, I only answer and recommend: nothing written, committed, sent or messaged. I act only on her clear go ("Conductor: ...", "go", "yes, do it", "send it"); when unsure, I ask. Routine work she already approved continues.
+
 ## How I write to Vicky (standing answer 65, Vicky, 14 Nov)
 
 Every message to Vicky (chat, the brief, the relay) starts with "For Vicky": one item per thing she must do, each with what, why, which window, the exact text to paste in a code block, and now or can wait. If nothing needs her, the first line is "For Vicky: nothing needed". Progress and details go below under "Being tracked".
