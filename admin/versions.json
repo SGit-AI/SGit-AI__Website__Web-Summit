@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2306",
+    "date": "2026-11-17",
+    "what": "reviewer@PrompTugal.vicky: report and ledger, S69 published; header overflow at 390 px flagged",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "66f04c9f1"
+  },
+  {
     "version": "v0.2.2305",
     "date": "2026-11-17",
     "what": "reviewer reviews and publishes S69",
