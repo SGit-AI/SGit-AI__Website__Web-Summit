@@ -159,3 +159,10 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - My one fix: "above" to "below". S67's text and date unchanged; re-signed.
   - Live at 390 and 1280 px: the note sits before In short, and its link works.
   - state: ok; done: S68 published as an update; next: on demand; ask: none; run: prompted
+- Tue 17 Nov 2026, 10:30 UTC (task file people/vicky/tasks/2026-11-17-0945-update-notes.md; standing answer 95). Newsroom 145aadb25, one commit.
+  - S67: the 17 Nov update replaced with the conductor's rewrite (an intro line with the linked interview and its date, then a five-point list, the attribution once at the end).
+  - Every fact re-checked against the Dinheiro Vivo / Diário de Notícias interview of 18 July 2026, and none changed.
+  - The rewrite had three semicolons (the task said two; the third was in the examples line). All three became full stops or commas, per STYLE.md.
+  - S67 re-signed. Live at 390 and 1280 px: the note renders as an intro, a list and a closing line, before In short.
+  - STYLE.md: a new section "Update notes" quoting standing answer 95, with S67's update as the example.
+  - state: ok; done: S67 update rewritten, the update-notes section added; next: on demand; ask: none; run: prompted
