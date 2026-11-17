@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2284",
+    "date": "2026-11-17",
+    "what": "standing answer 95, how to write an update note (in STYLE.md, with S67 as the example); S67's update rewritten",
+    "by": "conductor@web-summit.vicky",
+    "from": "579f2b0a2"
+  },
+  {
     "version": "v0.2.2283",
     "date": "2026-11-17",
     "what": "09:15 wake, dashboard rebuilt, stories and analysis refreshed",
