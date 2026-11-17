@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **97** card 5 for the rest of the team: each person checks their own Web Summit app export; the method is drafted, not sent, until Vicky decides how the team hears about it.
 - **96** inbox@ may read, read-only, the newsroom's data/companies/, data/by-place/, data/places/ and desks/outreach/ for card 5; card 5 uses Vicky's contacts export only (no follow-up list).
 - **95** update notes: one or two sentences for a single point; a short intro line and a list for several points; attribution once, at the end; STYLE.md carries the rule and an example (59 changed).
 - **94** next phase: Vicky takes card 5 (summit intersection) only, and her newsroom desks keep running as now; the sales agent is dropped for now.
@@ -465,6 +466,9 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - Widens Vicky's 14 Nov limit (inbox@ read only board/HOLD.md in the newsroom): for card 5, inbox@ may also read those four folders on the newsroom's dev branch, read-only (a sparse clone of those paths); nothing else there, and never write to the newsroom.
     - Card 5 matches only Vicky's Web Summit connections export (the shortlist vault's contacts/); the team's follow-up list is skipped.
     - The shortlist vault's key reaches inbox@ only at Vicky's word in vault@'s own window (standing answer 42).
+
+97. **Card 5, each person their own** (Vicky, 17 Nov, about 19:00 UTC, in this window: "I think maybe it's better for each person just their own, and they can download their connection from the Web Summit application, so it's more complete. ... the follow-up list doesn't have all the connections we have from the Web Summit application.")
+    - Vicky's part of card 5 is done (29 companies checked, 1 matched, already with Dinis's outreach desk, 0 drafts; inbox@'s commit af36e2c8). For the rest of the team, each person checks their own Web Summit app export; the shared follow-up list is not used. The method, with no names, is drafted in `people/vicky/drafts/2026-11-17-card5-summit-intersection-howto.md` and not sent: Vicky decides whether she tells the team on WhatsApp or the conductor sends the note. Card 5 and the team's follow-up list are separate tasks; card 5 does not use the follow-up list.
 
 ## Updates for agents
 
