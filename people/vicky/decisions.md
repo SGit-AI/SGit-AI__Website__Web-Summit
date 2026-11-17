@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **96** inbox@ may read, read-only, the newsroom's data/companies/, data/by-place/, data/places/ and desks/outreach/ for card 5; card 5 uses Vicky's contacts export only (no follow-up list).
 - **95** update notes: one or two sentences for a single point; a short intro line and a list for several points; attribution once, at the end; STYLE.md carries the rule and an example (59 changed).
 - **94** next phase: Vicky takes card 5 (summit intersection) only, and her newsroom desks keep running as now; the sales agent is dropped for now.
 - **93** one-per-weekday spacing is for analysis pieces only; journalists' stories go out as soon as they pass review.
@@ -459,6 +460,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - Changes standing answer 59 for update notes: a single new point is one or two plain sentences; several points get one intro line (what changed, and the source with its date) and then a short list, one point per line, grouped by subject, the key words in bold; the attribution or caveat is said once, at the end; no repeated "he said". Past tense and no semicolons still apply to sentences.
     - Where it lives: a section "Update notes" in the journalists' STYLE.md (`desks/journalist-vicky/STYLE.md` in the newsroom), with S67's rewritten update as the example; every writer reads it before writing an update, and the reviewer checks updates against it.
     - S67: the reviewer replaces its 17 Nov update with the conductor's rewrite, after re-checking each fact against the interview.
+
+96. **inbox@'s reads for card 5** (Vicky, 17 Nov, about 12:35 UTC, in this window: "inbox@ may read, read-only, the newsroom's data/companies/, data/by-place/, data/places/ and desks/outreach/ for card 5. Skip the follow-up list; my contacts export is enough.")
+    - Widens Vicky's 14 Nov limit (inbox@ read only board/HOLD.md in the newsroom): for card 5, inbox@ may also read those four folders on the newsroom's dev branch, read-only (a sparse clone of those paths); nothing else there, and never write to the newsroom.
+    - Card 5 matches only Vicky's Web Summit connections export (the shortlist vault's contacts/); the team's follow-up list is skipped.
+    - The shortlist vault's key reaches inbox@ only at Vicky's word in vault@'s own window (standing answer 42).
 
 ## Updates for agents
 
