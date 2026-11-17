@@ -166,3 +166,10 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - S67 re-signed. Live at 390 and 1280 px: the note renders as an intro, a list and a closing line, before In short.
   - STYLE.md: a new section "Update notes" quoting standing answer 95, with S67's update as the example.
   - state: ok; done: S67 update rewritten, the update-notes section added; next: on demand; ask: none; run: prompted
+- Tue 17 Nov 2026, 21:30 UTC (task file people/vicky/tasks/2026-11-17-2055-review-s69.md): published S69 under R-PUB-1, "AI physiotherapy in Portugal's health service: what the government says": https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html (newsroom b11d97f93; review desks/reviewer-vicky/reviews/S69.md).
+  - Checked: every claim at portugal.gov.pt (my fetch was cut off by the proxy, so it was read through the web-fetch agent) and Observador.
+  - My fixes, wording and attribution only: the 200 euros as Observador states it; "government order" for the despacho; the estimates' caveat said once; "certified medical device" explained; a padding line cut. 410 words.
+  - Front matter: the AI connection moved in (not shown live). Cover in my style, the estimate attributed on the card.
+  - Live: the cover keeps 1200:630 at 390 and 1280 px, light and dark; og:image and the thumb correct.
+  - Site-wide fault, not S69's: at 390 px every article page now scrolls sideways (434 px wide). The header toolbar (Search, EN, App, Ask) runs past the edge, and S66 and S67, which measured 390 yesterday, do the same. It is dev@'s code, so flagged to the conductor for dev@PrompTugal.dinis.
+  - state: ok; done: S69 published; next: on demand; ask: dev@ to fix the header toolbar's overflow at 390 px; run: prompted
