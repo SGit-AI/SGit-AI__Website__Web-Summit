@@ -1,0 +1,61 @@
+{
+ "number": 13,
+ "date": "17 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "Four articles out yesterday; S68 on its way; A1 waits for Friday",
+ "when": "17 November 2026, 08:45 UTC (since brief 12, 16 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "None: no hold, every decisions.md edit is mine (standing answers 88 to 94), no key changes, Gmail used only by your inbox agent."
+ ],
+ "actions": [
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "Optional: a privacy point in one of Dinis's articles",
+     "why": "Your checker flagged that a new article by Dinis's Loulé agent, \"Six people and 250 agents\", says where three teammates live (Angelo, Silvio and Jose, in Loulé and Quarteira), attributed to Dinis, with no record that they agreed. Town only, not addresses; you are not named. It is Dinis's article, so it is his call; a short note to him is enough if you want to raise it.",
+     "reply": "Hi Dinis, small one: the \"Six people and 250 agents\" article says where Angelo, Silvio and Jose live. Did they OK that? My checker flagged it, just in case."
+    }
+   ]
+  },
+  {
+   "window": "For vault@",
+   "items": [
+    {
+     "what": "Nothing waiting",
+     "why": "",
+     "reply": "(none)"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Agent runs",
+   "items": [
+    "Grid, 16 and 17 Nov: researcher 11:15 ✓ 15:15 ✓ 07:15 ✓ (Center for Responsible AI). Curator 11:35 ✓ 15:35 ✓ (S67) 07:35 ✓ (S68). Dashboard 09:15 ✓. Checker 10:00 ✓ (10 of 15 of Dinis's new articles checked, 5 waiting). Analyst 10:15 ✓ (A1 draft) and one extra run (A3).",
+    "Published yesterday from your desks: A3 (your first analysis piece), S64 (AMALIA and ANIA), S66 (Neuraspace) and S67 (the Center for Responsible AI, after a Fix first the reviewer caught). STYLE.md updated with standing answers 81, 82, 89 to 92.",
+    "Today: S68, an update to S67 (the Center's chief executive on its status), sent to journalist-portugal at 08:50; then the reviewer publishes it when it passes.",
+    "Waiting: A1, until INE's 2026 figures on Friday 20 Nov (my reminder is set for 13:00 UTC that day). No interview write-ups yet; no reply to yesterday's reminder to the team's conductors."
+   ]
+  },
+  {
+   "title": "Usage & Checks",
+   "items": [
+    "Usage since 16 Nov 08:45 (tally of the ledger, standing answer 88; API-equivalent, not money): about 7.9 million fresh tokens across 8 agents. Busiest: reviewer (10 wakes), curator, researcher, checker (with sub-agents).",
+    "Schedule: unchanged (analyst Mondays 10:15). decisions.md: all edits mine. Keys: no changes. Gmail: inbox@ only. Releases: all live."
+   ]
+  }
+ ],
+ "next": [
+  "S68 drafted, reviewed and published",
+  "Friday 20 Nov: INE's figures, then A1",
+  "Your website, with your site session"
+ ],
+ "sources": [
+  "people/vicky/reports/*.md since 16 Nov 08:45, read by a Sonnet sub-agent (P16)",
+  "people/vicky/tools/tally.py (standing answer 88)",
+  "Newsroom PrompTugal/PrompTugal__News__Website dev"
+ ]
+}
