@@ -135,3 +135,13 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
   - the meetings vault's PRIVATE.md names Nimay and Vicky as owners; only Vicky was asked;
   - the committed ciphertext stays public after its link expires; it opens only with conductor-vicky-3's private key.
 - state: ok; done: all four of my live vaults' keys (plus vault A and B earlier) with the conductor; next: wait for the conductor or Vicky; ask: none; run: prompted
+
+## 17 November 2026, 18:25 UTC (the shortlist vault's key to inbox@, for card 5)
+
+- At Vicky's word in vault@'s own window (17 Nov): the interview shortlist vault's key is sealed to inbox@web-summit.vicky's key `inbox-vicky`, in data/sealed/agents/inbox@web-summit.vicky/2026-11-17T1820Z-vault-key-shortlist-inbox-vicky.json, valid 2 days. It replaces the 9 Nov link, which expired. The recipient was checked by a security sub-agent (inbox@'s own commit 714a214, pushed by riskmandate-vicky, unchanged since, matches the live keys page), logged in the vault's own AUDIT.md.
+- For the conductor and inbox@ (points raised by the check, for Vicky to decide):
+  - The vault's PRIVATE.md says nothing in it leaves the vault without Vicky's word, contacts/ included (rules 1 and 7). Card 5's step 4 puts contacts into Gmail drafts, so that needs her word recorded first.
+  - The key opens the whole vault, shortlist/ as well as contacts/.
+  - inbox@'s prompts should keep the vault's content out of the CRM, reports and commits.
+  - Standing answer 27's 13:40 note ("inbox@ will not use the shortlist vault key") still stands in decisions.md.
+- state: ok; done: the shortlist key sealed to inbox@ for card 5; next: wait for the conductor or Vicky; ask: none; run: prompted
