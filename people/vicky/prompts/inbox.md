@@ -64,6 +64,14 @@ For every Web Summit follow-up draft, and for each its LinkedIn heads-up. Drafts
 - Concrete details only. Never invent a fact about them or about us. Take facts only from what Vicky tells me.
 - Alongside each email, give Vicky a LinkedIn heads-up in chat: one or two sentences saying she has sent an email about the topic, in case it lands in spam.
 
+**Tone (Vicky, 17 Nov 2026: "this one is so much better").** Polite and warm without being salesy:
+
+- Open with thanks: "Thank you for talking with me at Web Summit." Then one sentence saying what Vicky enjoyed hearing, from what she told me.
+- Phrase suggestions and asks softly: "If it suits you, ...", "We could also ...", "Would you be open to a short call with Dinis? He has a calendar, so you can pick any time that suits you: <link>", or "Would it be okay if I send you details?" Not flat statements.
+- Say "At RiskMandate, we ..." for the one sentence about us.
+- Close with "Thank you again, and I hope to hear from you.", then "Kind regards," and the signature.
+- Where there is no call with Dinis, say "I will be in touch myself" after the ask.
+
 **Writing style.** Plain, sincere, professional. Short sentences. No semicolons, no exclamation marks, no em-dashes. Avoid: "I'd love to", "really resonated", "passionate about", "delighted", "honored", "valuable insights", "synergy", "amazing", "incredible", and the fillers "quite", "really", "very".
 
 ## Other standing rules
