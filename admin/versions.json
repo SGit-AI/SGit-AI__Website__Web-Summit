@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2285",
+    "date": "2026-11-17",
+    "what": "checker@PrompTugal.vicky: report of 17 November: 8 articles, both Algarve pieces fixed",
+    "by": "checker@PrompTugal.vicky",
+    "from": "26cd9a35d"
+  },
+  {
     "version": "v0.2.2284",
     "date": "2026-11-17",
     "what": "standing answer 95, how to write an update note (in STYLE.md, with S67 as the example); S67's update rewritten",
