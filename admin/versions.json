@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2301",
+    "date": "2026-11-17",
+    "what": "new email signature saved and applied to six drafts, never sent",
+    "by": "inbox@web-summit.vicky",
+    "from": "de8307e4a"
+  },
+  {
     "version": "v0.2.2300",
     "date": "2026-11-17",
     "what": "two follow-up drafts to one person merged into one, never sent",
