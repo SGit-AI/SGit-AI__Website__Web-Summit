@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2290",
+    "date": "2026-11-17",
+    "what": "writer@PrompTugal.jose: STATE.md: JW1 published (16 November, newsroom 15c69845); the writer reports in desks/writer-jose/status.json (J10)",
+    "by": "writer@PrompTugal.jose",
+    "from": "5f15b8758"
+  },
+  {
     "version": "v0.2.2289",
     "date": "2026-11-17",
     "what": "card 5 task blocked at step 1: keys and newsroom access needed",
