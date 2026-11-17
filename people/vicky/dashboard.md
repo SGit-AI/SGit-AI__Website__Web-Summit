@@ -4,23 +4,27 @@ summary: The page Vicky reads first: the newsroom this week, what waits on other
 compact: true
 office_link: office/index.html
 ---
-*Last updated: Mon 16 Nov, 09:20 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
+*Last updated: Tue 17 Nov, 09:16 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
 
 ## The newsroom this week {#newsroom-week}
 
-**Published from your desks in the last seven days (26 articles):**
+**Published from your desks in the last seven days (27 articles):**
 
+- 16 Nov: [Analysis: Portugal has 60 MW of computing power and wants 1,000](https://promptugal.news/articles/portugal-60-mw-computing-capacity.html)
+- 16 Nov: [Neuraspace of Coimbra raises 15.6 million euros for AI space software](https://promptugal.news/articles/neuraspace-coimbra-raises-15-6-million.html)
+- 16 Nov: [Portugal's Center for Responsible AI: the money, partners and goals](https://promptugal.news/articles/center-for-responsible-ai-money-partners-goals.html)
+- 16 Nov: [AMALIA and ANIA: what Portugal says about its own AI plans](https://promptugal.news/articles/amalia-and-ania-portugal-ai-plans.html)
 - 14 Nov: [When an agent says it's done, check a few things yourself](https://promptugal.news/articles/humans-and-ai-vicky-wang.html)
 - 14 Nov: [Loulé agency 3WX launches Best Number One, a free start page](https://promptugal.news/articles/best-number-one-3wx-loule.html)
 - 13 Nov: [Where women in Portugal can learn and build with AI](https://promptugal.news/articles/women-learning-and-building-ai-in-portugal.html)
 - 13 Nov: [Why people trust AI summaries more than they check them](https://promptugal.news/articles/why-people-trust-ai-summaries.html)
+
+:::details Earlier this week (19 more)
+
 - 13 Nov: [Humanos wins Road 2 Web Summit's top prize, 15,000 euros](https://promptugal.news/articles/humanos-road-2-web-summit-winner.html)
 - 12 Nov: [What PagerDuty says it learned running AI agents in production](https://promptugal.news/articles/pagerduty-agents-in-production.html)
 - 12 Nov: [Discord opens its first engineering hub outside San Francisco, in Lisbon](https://promptugal.news/articles/discord-lisbon-engineering-hub.html)
 - 11 Nov: [How Zalando rolled out AI coding agents across its engineering teams](https://promptugal.news/articles/zalando-ai-coding-agents.html)
-
-:::details Earlier this week (18 more)
-
 - 11 Nov: [EU says TikTok's For You feed may breach its platform law](https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html)
 - 11 Nov: [Thursday at Web Summit: a practical guide to the last day](https://promptugal.news/articles/thursday-last-day-guide.html)
 - 11 Nov: [Manus 2.0 gives each agent its own email, phone and wallet](https://promptugal.news/articles/manus-2-0-agents-own-email-phone-wallet.html)
@@ -36,13 +40,10 @@ office_link: office/index.html
 - 10 Nov: [Web Summit calls off Wednesday on the government's advice](https://promptugal.news/articles/red-wind-warning-lisbon-wednesday.html)
 - 10 Nov: [AI agents are spreading faster than their security, Gravitee's survey finds](https://promptugal.news/articles/gravitee-agent-security-survey.html)
 - 10 Nov: [Glovo's restaurant partners meet 80 AI agents on WhatsApp, GetVocal says](https://promptugal.news/articles/glovo-restaurant-agents-getvocal.html)
-- 9 Nov: [Where to find Portugal at Web Summit: Pavilion 1, stand E145](https://promptugal.news/articles/where-to-find-portugal.html)
-- 9 Nov: [Beyond Lisbon: where Road 2 Web Summit's 78 startups come from](https://promptugal.news/articles/road-2-web-summit-beyond-lisbon.html)
-- 9 Nov: [Sports tech at Web Summit: IBM's startup challenge ends in Lisbon](https://promptugal.news/articles/ibm-sports-tech-challenge.html)
 
 :::
 
-**Stories in the loop:** none right now. The latest, S65, went live on Sat 14 Nov.
+**Stories in the loop:** S68, a short update to S67 (the Center for Responsible AI), is with the reviewer.
 
 **Humans and AI interviews:** 1 of 6 pages published (yours). The five teammates' write-ups come back privately, and a page is published only after its person approves it.
 

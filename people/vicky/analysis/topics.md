@@ -4,16 +4,16 @@ Kept by analyst@PrompTugal.vicky, Vicky Wang's analysis desk for PrompTugal.news
 
 Every topic passes the PrompTugal test (Dinis's brief "PrompTugal.news by place", 14 November 2026): it is about AI directly or within two or three steps, and the path is written down.
 
-Last updated: Sunday 15 November 2026, 10:21 UTC.
+Last updated: Monday 16 November 2026, 12:44 UTC.
 
 ## At a glance
 
 | Id | Title | State | Added |
 |---|---|---|---|
 | A4 | AI startup funding in Portugal | set aside | 15 Nov 2026 |
-| A3 | Sixty megawatts and a 1,000 MW goal | proposed | 15 Nov 2026 |
+| A3 | Sixty megawatts and a 1,000 MW goal | approved (chart, then published Thu 19 Nov) | 15 Nov 2026 |
 | A2 | One firm in nine, and the gap that opened | proposed | 15 Nov 2026 |
-| A1 | People ahead, companies behind | chosen (draft due Monday 16 Nov) | 15 Nov 2026 |
+| A1 | People ahead, companies behind | drafting (framing approved; due after 20 Nov) | 15 Nov 2026 |
 
 States: proposed, chosen, drafting, with Vicky, published, set aside. The full proposal of 15 November: `desks/analyst-vicky/proposals/2026-11-15.md`.
 
@@ -27,20 +27,20 @@ States: proposed, chosen, drafting, with Vicky, published, set aside. The full p
 
 ## A3: Sixty megawatts and a 1,000 MW goal
 
-- **State:** proposed (15 Nov 2026).
+- **State:** approved by Vicky on 16 Nov 2026 (standing answer 92): the designer draws the chart, the reviewer re-checks every figure and publishes it on Thursday 19 November. (Draft 16 Nov 2026, extra run at her ask: `desks/analyst-vicky/drafts/a3-sixty-megawatts.md`, data note in `desks/analyst-vicky/data/`). Start Campus's own site, read 16 Nov, gives 37.5 MW live (SIN01), 200 MW planned (SIN02) and 1.2 GW in all; the 2024 REN allocation is left out (not read at source).
 - **The question.** The Government says Portugal had about 60 MW of computing capacity in 2025 and needs 700 to 1,000 MW by 2030 to meet AI demand. How far is that, and how does one private campus in Sines compare?
 - **AI path.** AI directly for the national target (the AI Agenda sets it for AI demand). Two steps for Sines: AI runs in data centres, which draw on the grid. Places: Sines (Alentejo), Portugal, Europe.
 - **Checked figures.**
   - Computing capacity in Portugal about 60 MW in 2025; goal about 700 MW (intermediate scenario) or about 1,000 MW (accelerated) by 2030. The resolution calls this "10 to 15 times"; by its own figures it is 11.7 to 16.7 times (RCM 2/2026).
   - Demand for computing capacity about 170 MW in 2025, about 980 MW in 2030: 41% a year for Portugal, 21% for Europe (RCM 2/2026).
   - Installed capacity "practically doubled" from 2020 to 2025 and stays "significantly below" the EU average, with a low rate of projects carried out. The plan gives no MW figure (RCM 70/2026).
-  - Sines: 1.2 GW of IT capacity after an extra 705 MW from REN, up from 495 MW. Start Campus's own claim, August 2024.
+  - Sines: 37.5 MW live (SIN01), 200 MW planned (SIN02), 1.2 GW for the full campus, "purpose-built for high-density AI, Cloud, and HPC workloads". Start Campus's own figures, read 16 November 2026.
 - **What the data cannot show.** How much capacity runs AI rather than other cloud work. Whether the Agenda's "computing capacity" and Start Campus's "IT capacity" measure the same thing. Announced capacity is not built capacity. The scenarios are Government targets, not independent forecasts.
 - **Sources.**
   - [Diário da República, "Resolução do Conselho de Ministros n.º 2/2026"](https://bo.digital.gov.pt/api/assets/etic/6c8282d1-dd2d-438a-a60c-b8582c4858bb), published 8 January 2026, read 15 November 2026
   - [Diário da República, "Resolução do Conselho de Ministros n.º 70/2026"](https://bo.digital.gov.pt/api/assets/etic/2b0bb9b9-6a99-4193-b4e3-71413dea8908), published 13 April 2026, read 15 November 2026
-  - [DatacenterDynamics, report on Start Campus's 1.2 GW for SINES DC](https://www.datacenterdynamics.com/en/news/start-campus-increases-power-capacity-for-sines-dc-in-lisbon-portugal-to-12gw) (Start Campus's claim, announced August 2024), found 15 November 2026; the page itself still to be read before a draft
-  - Tried and not reached: Start Campus's release on Business Wire (refused automated reads, 15 November 2026).
+  - [Start Campus, "SINES Data Campus"](https://www.startcampus.pt/) (the company's own figures), read 16 November 2026
+  - Tried and not reached: Start Campus's 2024 release on the 1.2 GW grid allocation (Business Wire and DatacenterDynamics refused automated reads, 15 and 16 November 2026). The allocation is left out.
 
 ## A2: One firm in nine, and the gap that opened
 
@@ -51,13 +51,14 @@ States: proposed, chosen, drafting, with Vicky, published, set aside. The full p
   - Portugal: 7.2 (2021), 7.9 (2023), 8.6 (2024), 11.5 (2025). EU: 7.7, 8.1, 13.5, 20.0. Gap: 0.5, 0.2, 4.9, 8.4 points.
   - Portugal ranks 21st of 27 in 2025.
   - By size, 2025, Portugal against EU: 10 to 49 staff 9.4 against 17.0; 50 to 249 staff 18.2 against 30.4; 250+ staff 49.2 against 55.0.
+- **Changed definition (found 16 Nov 2026).** From 2025 Eurostat's "any AI" also counts AI that generates pictures, video or sound (Portugal 5.9%, EU 9.6% in 2025). So 2023 to 2024 compare directly, and 2025 sits on a wider list. Any A2 piece must say so.
 - **What the data cannot show.** There is no 2022 point, and whether 2021 compares with later years (the technologies asked about may have changed) is still to be checked in Eurostat's metadata. Firms under 10 staff and finance are left out. It cannot show how deeply firms use AI, or effects on jobs.
 - **Sources.**
   - [Eurostat, "Artificial intelligence by size class of enterprise" (isoc_eb_ai)](https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ai/default/table), read through Eurostat's data API 15 November 2026
 
 ## A1: People ahead, companies behind
 
-- **State:** chosen by Vicky (15 Nov 2026, standing answer 85); draft due in the Monday 16 November run, then to Vicky for approval.
+- **State:** drafting. Vicky approved the framing on 16 Nov 2026 (standing answer 89). Draft: `desks/analyst-vicky/drafts/a1-people-ahead-companies-behind.md`, cut to 522 words; data note in `desks/analyst-vicky/data/`. Updated with INE's 2026 figures after their release on 20 November 2026, then published early the week after.
 - **The question.** In 2025 people in Portugal used generative AI more than the EU average, but Portuguese companies used AI far less. Why the gap, and what does each number measure?
 - **AI path.** AI directly, 0 steps. Linked to the Humans and AI series. Places: Portugal, Europe. The Algarve only if INE's release gives a regional figure (to check).
 - **Checked figures** (2025).
