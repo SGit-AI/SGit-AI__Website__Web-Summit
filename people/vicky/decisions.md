@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **95** update notes: one or two sentences for a single point; a short intro line and a list for several points; attribution once, at the end; STYLE.md carries the rule and an example (59 changed).
 - **94** next phase: Vicky takes card 5 (summit intersection) only, and her newsroom desks keep running as now; the sales agent is dropped for now.
 - **93** one-per-weekday spacing is for analysis pieces only; journalists' stories go out as soon as they pass review.
 - **92** no fixed word count: length follows the story (analysis usually 400 to 900 words, news 300 to 700, longer only with a reason), no repetition, no padding, the reviewer judges; A3 approved, published on 16 Nov as soon as its chart is in (moved from Thursday at Vicky's word).
@@ -452,6 +453,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - From Dinis's roadmap "PrompTugal.news, the next phase" (newsroom.sgit.ai, 16 Nov), Vicky takes **card 5, Summit intersection**: match the companies she met at Web Summit with the companies on PrompTugal.news's town pages, and follow up both. Not started until she says; her inbox agent drafts any follow-ups, she sends.
     - Her newsroom desks keep running as now (researcher and curator three times a day, the analyst weekly).
     - The sales agent (sales@web-summit.vicky) is dropped for now; its reminder is deleted. No other cards.
+
+95. **How to write an update note** (Vicky, 17 Nov, about 09:40 UTC, in this window: "yes, the reviewer replaces S67's update with your rewrite (facts re-checked), and update notes may use a short list when they have several points." and "is it possible to have this requirement in some place, so later every time they need to write an update or something similar, they know how to write it properly?")
+    - Changes standing answer 59 for update notes: a single new point is one or two plain sentences; several points get one intro line (what changed, and the source with its date) and then a short list, one point per line, grouped by subject, the key words in bold; the attribution or caveat is said once, at the end; no repeated "he said". Past tense and no semicolons still apply to sentences.
+    - Where it lives: a section "Update notes" in the journalists' STYLE.md (`desks/journalist-vicky/STYLE.md` in the newsroom), with S67's rewritten update as the example; every writer reads it before writing an update, and the reviewer checks updates against it.
+    - S67: the reviewer replaces its 17 Nov update with the conductor's rewrite, after re-checking each fact against the interview.
 
 ## Updates for agents
 
