@@ -154,3 +154,8 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Front matter: tags in the site's form; the AI connection in ai_connection, ai_steps and ai_places (not shown live). 520 words.
   - Cover in my style. Live at 390 and 1280 px, light and dark; og:image and the /articles/ thumb correct.
   - state: ok; done: S67 published; next: on demand; ask: none; run: prompted
+- Tue 17 Nov 2026, 09:25 UTC (task file people/vicky/tasks/2026-11-17-0900-review-s68.md): S68 published as a dated update note at the top of S67 (https://promptugal.news/articles/center-for-responsible-ai-money-partners-goals.html), as the draft and the curator's note ask (newsroom c279a8a21; review desks/reviewer-vicky/reviews/S68.md).
+  - Checked: every figure and statement at Dinheiro Vivo / Diário de Notícias (18 July 2026), each attributed to the chief executive or the paper: coordination to Sword Health, Unbabel, 87 to 88%, 49 + 27 = 76 million, 150 million, the examples, two years to ten days.
+  - My one fix: "above" to "below". S67's text and date unchanged; re-signed.
+  - Live at 390 and 1280 px: the note sits before In short, and its link works.
+  - state: ok; done: S68 published as an update; next: on demand; ask: none; run: prompted
