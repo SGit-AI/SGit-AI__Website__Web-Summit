@@ -410,3 +410,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - For the reviewer, if it wants it: S67's update repeats the chief executive's ten-days claim as his; the government item gives only the 97 percent estimate.
 - Gaps for the researcher: whether the service started and any results; the Center's partner list and close; ARTE's release and the ANIA documents.
 - state: ok; done: S69 commissioned, S68 marked done, README and map pushed; next: curator 15:35; ask: none; run: scheduled
+
+## Tue 17 Nov 2026, 15:35 UTC run
+
+- No hold on either site; decisions.md read (the one new entry, card 5, is for the inbox agent: nothing for the curator); prompts file re-read, no difference; no machine reads of Web Summit, Luma, Meetup or Eventbrite.
+- No new story. S69 (AI physiotherapy in the health service, journalist-portugal) is not drafted yet, so [Observador's launch-day report](https://observador.pt/2026/06/18/tecnologia-da-sword-health-chega-ao-sns-com-fisioterapia-remota-com-inteligencia-artificial/) went into it: the announcement was on 18 June 2026, any health service doctor can prescribe, the agreement sets 200 euros per user fixed for a year (as reported), and the 97 percent and 45 percent figures are the company's forecast there but 'estimated' in the government item, so each is attributed to its source. Map `desks/curator/2026-11-17-1550.json`; newsroom commit 060db6263 (pushed; deploy queued).
+- Gaps for the researcher: whether the service started and any results after June; the Center's partner list and close; ARTE's release and the ANIA documents.
+- state: ok; done: S69 updated, README and map pushed; next: curator 07:35 Wednesday; ask: none; run: scheduled
