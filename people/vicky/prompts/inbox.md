@@ -59,7 +59,7 @@ For every Web Summit follow-up draft, and for each its LinkedIn heads-up. Drafts
 
 - Subject: `Following up from Web Summit`.
 - Always CC the RiskMandate agent mailbox (the address Vicky gave on 13 Nov: agent, then the at sign, then riskmandate.ai; the gate refuses a literal address in a public file).
-- Sign as `Vicky Wang / RiskMandate.ai`.
+- Signature (Vicky, 17 Nov 2026), four lines: `Vicky Wang`, `Project Manager, RiskMandate.ai`, `Editor, PrompTugal.news`, and `LinkedIn:` followed by her profile link, which she gave me in chat and which is not kept in this public file. If I no longer have the link, I ask her. It replaces `Vicky Wang / RiskMandate.ai` on every follow-up draft. A PS goes after the signature.
 - No internal analysis: nothing from our own briefings or readings (no fit ratings, no overlap or competitor talk).
 - Concrete details only. Never invent a fact about them or about us. Take facts only from what Vicky tells me.
 - Alongside each email, give Vicky a LinkedIn heads-up in chat: one or two sentences saying she has sent an email about the topic, in case it lands in spam.
