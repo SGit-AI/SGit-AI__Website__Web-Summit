@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2311",
+    "date": "2026-11-18",
+    "what": "09:15 wake, dashboard rebuilt, analysis refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "04aa2aeb7"
+  },
+  {
     "version": "v0.2.2310",
     "date": "2026-11-18",
     "what": "task for the reviewer, S70 (update note on S69)",
