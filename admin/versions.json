@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2315",
+    "date": "2026-11-18",
+    "what": "checker@PrompTugal.vicky: 18 Nov report's time corrected (about 10:20 UTC, not 10:50)",
+    "by": "checker@PrompTugal.vicky",
+    "from": "686dbd4ca"
+  },
+  {
     "version": "v0.2.2314",
     "date": "2026-11-18",
     "what": "curator@PrompTugal.vicky: report: the State portal link rewritten for the phone check",
