@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2332",
+    "date": "2026-11-18",
+    "what": "draft_lint checks an update note's intro links its source (standing answer 95)",
+    "by": "conductor@web-summit.vicky",
+    "from": "8d057c3f8"
+  },
+  {
     "version": "v0.2.2331",
     "date": "2026-11-18",
     "what": "reviewer@PrompTugal.vicky: report and ledger, switched to draft_lint and publish_check",
