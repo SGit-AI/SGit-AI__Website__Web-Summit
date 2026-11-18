@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2327",
+    "date": "2026-11-18",
+    "what": "length rule in the reviewer and journalist prompts matches standing answer 92 (news 300 to 700, analysis 400 to 900)",
+    "by": "conductor@web-summit.vicky",
+    "from": "107019443"
+  },
+  {
     "version": "v0.2.2326",
     "date": "2026-11-18",
     "what": "card 5 note: the 18 November check of the ten, in counts",
