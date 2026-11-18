@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2330",
+    "date": "2026-11-18",
+    "what": "designer@PrompTugal.vicky: report and ledger, the old cover style file marked replaced",
+    "by": "designer@PrompTugal.vicky",
+    "from": "a3c175e75"
+  },
+  {
     "version": "v0.2.2329",
     "date": "2026-11-18",
     "what": "standing answer 99: the reviewer switches to draft_lint and publish_check with lint_rules.yaml; contradictions 1 to 3 fixed",
