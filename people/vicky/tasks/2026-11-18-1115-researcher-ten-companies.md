@@ -22,4 +22,10 @@ Save what qualifies as captures in the research vault as usual, so the curator c
 
 The curator then commissions only the ones that hold up (AI, a real Portugal or Europe link, and a hook), with its usual duplicate check (standing answer 20).
 
+## Added: connections (Vicky, 18 Nov 2026, about 11:30 UTC)
+
+Vicky: "go, add to the researcher's task: for any company that doesn't hold up on its own, look for a public connection to companies or programmes PrompTugal.news already covers, for a possible connections story."
+
+5. For any company that does not hold up on its own (no Portugal or Europe link, or no hook), look for a **public connection** to companies or programmes PrompTugal.news already covers (its published articles and company pages): the same field, shared customers or partners, the same programme, accelerator or investor. Each connection needs a public source on both sides (standing answer 19; RULES-11NOV rule 6 for any Web Summit link). Never "these companies should meet", and still no mention of how the names reached us. Add a column to your table: connection (with what, and the source) / none. The curator decides whether it makes a connections story for journalist-connections.
+
 **Reply** to the session that messaged you, one line: `Done: 2026-11-18-1115-researcher-ten-companies, researcher, <commit>, <how many hold up>`.
