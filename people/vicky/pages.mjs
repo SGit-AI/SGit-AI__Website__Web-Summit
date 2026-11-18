@@ -61,7 +61,7 @@ document.addEventListener('click', e => {
 })
 </script>`
     const twinMd = `The newsroom curator's story candidates, newest first, from ${SRC} (last updated by the curator on ${updated}). None is fact-checked yet.\n\nAlso kept here: [the Promptugal logo options](../promptugal/index.html).\n\n${stories.map(s => `- **${s.id}** (${s.beat}, added ${s.added}): ${s.title}. ${s.angle}${s.sources.map(x => `\n  - [${x.label}](${x.url})${x.read ? `, read ${x.read}` : ''}`).join('')}`).join('\n')}`
-    return [...promptugal(ROOT), ...workSoFar(ROOT), ...office(ROOT), ...interview(ROOT), ...localSites(ROOT), ...analysis(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
+    return [...promptugal(ROOT), ...workSoFar(ROOT), ...office(ROOT), ...interview(ROOT), ...localSites(ROOT), ...card5(ROOT), ...analysis(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
 }
 
 // Promptugal News's logo options (Jose's request, through Vicky, 5 November 2026): /people/vicky/promptugal/. Built from
@@ -151,6 +151,16 @@ function interview(ROOT) {
     const body = `${mdHtml(before)}\n${box}\n${mdHtml('## What happens next' + (after || ''))}`
     const md = `${before.trim()}\n\n### The prompt\n\n\`\`\`\n${prompt}\n\`\`\`\n\n## What happens next${after || ''}`
     return [{ rel: 'people/vicky/interview/index.html', title: 'Humans and AI: your interview', description: "How to be interviewed by your own Claude for PrompTugal.news's Humans and AI team piece: the prompt to copy, and how to send the write-up back to Vicky.", body, md }]
+}
+
+// Card 5, summit intersection: the result note (Vicky, 18 November 2026: "go, publish the card 5 note as drafted, without
+// Humanos's name"): /people/vicky/card5/. Built from people/vicky/card5/source.md, written by conductor@web-summit.vicky.
+// Counts only: no people, contacts or company names.
+function card5(ROOT) {
+    const f = path.join(ROOT, 'people/vicky/card5/source.md')
+    if (!fs.existsSync(f)) return []
+    const src = fs.readFileSync(f, 'utf8').replace(/^# .*\n/, '')
+    return [{ rel: 'people/vicky/card5/index.html', title: 'Card 5: summit intersection', description: "Vicky's result for card 5 of PrompTugal.news's next phase: 36 summit contacts checked against the newsroom's coverage, in counts, and the method for the rest of the team.", body: mdHtml(src), md: src }]
 }
 
 // Local sites for PrompTugal.news: a plan for Dinis (Vicky, 14 November 2026): /people/vicky/local-sites/. Built from

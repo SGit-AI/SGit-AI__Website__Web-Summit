@@ -55,4 +55,4 @@ Open it here, live from the vault (read only). If the site knows it is you ("Who
 ```
 
 - **My agents:** [Reports](../../reports/index.html) · [Board health](../../board-health/index.html) · [Team pulse](../../pulse/index.html) · [Work so far](work-so-far/index.html) · [Live AI Office](office/index.html)
-- **PrompTugal.news:** [Story ideas](stories/index.html) · [Analysis topics](analysis/index.html)
+- **PrompTugal.news:** [Story ideas](stories/index.html) · [Analysis topics](analysis/index.html) · [Card 5: summit intersection](card5/index.html)
