@@ -152,6 +152,20 @@ def lint(path):
         note = '\n'.join(l for l in body.split('\n') if l.startswith('>'))
         if ';' in prose(note):
             errors.append('update note: a semicolon (standing answer 95: no semicolons)')
+        # standing answer 95: the intro line says what changed "and giving the source, linked, with its date"
+        # (reviewer's suggestion, Vicky's go, 18 Nov 2026). The intro is the note's first paragraph; its source is a
+        # link to an outside page (a link to one of our own articles is not the source).
+        if q:
+            intro = []
+            for l in body[q.start():].split('\n'):
+                if not l.startswith('>') or l.strip() == '>':
+                    break
+                intro.append(l)
+            links = [u for u in re.findall(r'\]\((https?://[^)\s]+)', '\n'.join(intro))
+                     if not re.match(r'https?://([\w-]+\.)*promptugal\.news/', u, re.I)]
+            if not links:
+                errors.append('update note: the intro line does not link its source (an outside page, with its date; '
+                              'standing answer 95)')
     else:
         if re.search(r'^# ', body, re.M):
             errors.append('a "# Title" line in the body: the page takes its title from the front matter')
