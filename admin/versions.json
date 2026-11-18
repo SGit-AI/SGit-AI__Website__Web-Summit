@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2312",
+    "date": "2026-11-18",
+    "what": "reviewer@PrompTugal.vicky: report and ledger, S70 published as an update to S69",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "492ae7c60"
+  },
+  {
     "version": "v0.2.2311",
     "date": "2026-11-18",
     "what": "09:15 wake, dashboard rebuilt, analysis refreshed",
