@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2329",
+    "date": "2026-11-18",
+    "what": "standing answer 99: the reviewer switches to draft_lint and publish_check with lint_rules.yaml; contradictions 1 to 3 fixed",
+    "by": "conductor@web-summit.vicky",
+    "from": "48520a5a3"
+  },
+  {
     "version": "v0.2.2328",
     "date": "2026-11-18",
     "what": "draft_lint.py and publish_check.py for the reviewer (not in use yet)",
