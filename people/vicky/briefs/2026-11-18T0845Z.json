@@ -1,0 +1,68 @@
+{
+ "number": 14,
+ "date": "18 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "S68 and S69 out; S70 on its way; the phone layout fixed",
+ "when": "18 November 2026, 08:45 UTC (since brief 13, 17 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "None: no hold, every decisions.md edit is mine (standing answers 95 to 98), no key changes for your agents, Gmail used only by your inbox agent (drafts only: 0 sent, 0 emails read)."
+ ],
+ "actions": [
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "The dashboard's story list is stuck on an old copy",
+     "why": "One source link in the curator's list (a Portuguese government project page) ends in a long number, and the site's check reads it as a phone number, so the dashboard kept yesterday's copy (58 stories, not 60) rather than break the check. My recommendation: the curator writes that one link differently, same source, nothing else changed.",
+     "reply": "Conductor: yes, ask the curator to rewrite that transparencia.gov.pt link in its list so the phone check passes, same source, nothing else changed."
+    },
+    {
+     "what": "Optional, carried over: the privacy point in Dinis's \"Six people and 250 agents\" article",
+     "why": "Your checker raised it again: the article says which towns three teammates live in, with no record that they agreed. It is Dinis's article and his call.",
+     "reply": "Hi Dinis, small one: the \"Six people and 250 agents\" article says where Angelo, Silvio and Jose live. Did they OK that? My checker flagged it, just in case."
+    }
+   ]
+  },
+  {
+   "window": "For vault@",
+   "items": [
+    {
+     "what": "Nothing waiting",
+     "why": "",
+     "reply": "(none)"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Agent runs",
+   "items": [
+    "Grid, 17 and 18 Nov: researcher 11:15 ✓ 15:15 ✓ 07:15 ✓. Curator 11:35 ✓ (S69) 15:35 ○ 07:35 ✓ (S70). Dashboard 09:15 ✓ (partial, see above; today's run is at 09:15). Checker 10:00 ✓ (8 articles). Security and analyst: weekly, next Mon 23 Nov. Scout: no new note since 16 Nov.",
+    "Published yesterday: S68 (an update note at the top of S67, the Center for Responsible AI) and S69 (AI physiotherapy in Portugal's health service). Your desks now have 59 articles live on promptugal.news; nothing Ready is waiting.",
+    "Today: S70, a second update to S67 (a 2023 pilot at São João hospital that came out of the Center), sent to journalist-portugal at 08:55; the reviewer publishes it when it passes.",
+    "Card 5: inbox@ prepared 6 follow-up drafts in your Gmail (signature and warmer tone added at your word); 0 sent. Sending is yours.",
+    "Fixed overnight by Dinis's team: the sideways scroll on phones. Every page fits at 390 px again (I checked the front page and two articles this morning).",
+    "Waiting: A1, until INE's 2026 figures on Friday 20 Nov (my reminder is set for 13:00 UTC). Interview write-ups: still 1 of 6."
+   ]
+  },
+  {
+   "title": "Usage & Checks",
+   "items": [
+    "Usage since 17 Nov 08:45 (tally of the ledger, standing answer 88; API-equivalent, not money): about 7.2 million fresh tokens across 8 agents. Busiest: curator and researcher (3 wakes each), reviewer (3), checker (1, with sub-agents), vault (1 seal).",
+    "Schedule: unchanged. decisions.md: all edits mine. Keys: no changes for your agents. Gmail: inbox@ only. Releases: all live. Follow-up drafts waiting: 6 (inbox@, 17 Nov about 19:55 UTC)."
+   ]
+  }
+ ],
+ "next": [
+  "S70 drafted, reviewed and published",
+  "Friday 20 Nov: INE's figures, then A1",
+  "Your card 5 follow-ups, when you choose to send them"
+ ],
+ "sources": [
+  "people/vicky/reports/*.md since 17 Nov 08:45, read by a Sonnet sub-agent (P16)",
+  "people/vicky/tools/tally.py (standing answer 88)",
+  "Newsroom PrompTugal/PrompTugal__News__Website dev"
+ ]
+}
