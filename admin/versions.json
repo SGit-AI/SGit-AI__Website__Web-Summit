@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2331",
+    "date": "2026-11-18",
+    "what": "reviewer@PrompTugal.vicky: report and ledger, switched to draft_lint and publish_check",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "e635a73aa"
+  },
+  {
     "version": "v0.2.2330",
     "date": "2026-11-18",
     "what": "designer@PrompTugal.vicky: report and ledger, the old cover style file marked replaced",
