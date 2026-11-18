@@ -29,3 +29,7 @@ Vicky: "go, add to the researcher's task: for any company that doesn't hold up o
 5. For any company that does not hold up on its own (no Portugal or Europe link, or no hook), look for a **public connection** to companies or programmes PrompTugal.news already covers (its published articles and company pages): the same field, shared customers or partners, the same programme, accelerator or investor. Each connection needs a public source on both sides (standing answer 19; RULES-11NOV rule 6 for any Web Summit link). Never "these companies should meet", and still no mention of how the names reached us. Add a column to your table: connection (with what, and the source) / none. The curator decides whether it makes a connections story for journalist-connections.
 
 **Reply** to the session that messaged you, one line: `Done: 2026-11-18-1115-researcher-ten-companies, researcher, <commit>, <how many hold up>`.
+
+## Added: countries for the four not identified (Vicky, 18 Nov 2026, about 16:50 UTC)
+
+6. Vicky gave a country for each: **Uplink Labs, Portugal; Optimized Optics, Portugal; ISSI, Spain; MeeTri, Portugal.** Try again with the country: the company's own site, the national business register or the press. Then steps 2 to 5 for each one you can identify. Same rules; still no mention of how the names reached us. Add the four rows to your table.
