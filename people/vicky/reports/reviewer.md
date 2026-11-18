@@ -180,3 +180,14 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Live at 390 and 1280 px: the note before In short, both links working.
   - The header overflow reported yesterday is fixed: the page is 390 px wide again.
   - state: ok; done: S70 published as an update; next: on demand; ask: none; run: prompted
+- Wed 18 Nov 2026, 20:15 UTC (task file people/vicky/tasks/2026-11-18-1950-reviewer-switch.md; standing answer 99): switched to the scripts.
+  - Read: my shortened prompts file and standing answer 99.
+  - README: the newsroom's desks/reviewer-vicky/README.md replaced word for word with people/vicky/drafts/2026-11-18-reviewer-README.md (newsroom 5178df7c5).
+  - STYLE.md: replaced word for word with people/vicky/drafts/2026-11-18-STYLE.md (newsroom e227dada3). It had not changed on dev since 17 Nov, and the diff was the six places named.
+  - From now on: draft_lint before every review, status: approved in the draft, and publish_check before every release.
+  - Tried:
+    - publish_check on S69 and S66: each fails only for the approval (expected); the categories check passes.
+    - draft_lint on the S69 and S70 drafts: 0 errors, 0 warnings. On a test draft I wrote (in the scratchpad, not committed): all 5 errors and 3 warnings it should give.
+  - Nothing it flags looks wrong.
+  - One gap, a suggestion only: draft_lint does not check that an update note's intro line links its source, which STYLE.md's "Update notes" asks for. I missed exactly that on S70 this morning and fixed it the same day.
+  - state: ok; done: switched to draft_lint and publish_check, README and STYLE.md replaced; next: on demand; ask: none; run: prompted
