@@ -6,7 +6,7 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 
 | Agent | Job | Prompt |
 |---|---|---|
-| conductor@web-summit.vicky | runs Vicky's agents, keeps her records, the 08:30 brief | [conductor.md](conductor.md) |
+| conductor@web-summit.vicky | runs Vicky's agents, keeps her records, the 08:45 brief and 20:45 relay | [conductor.md](conductor.md) |
 | dashboard@web-summit.vicky | Vicky's dashboard and the stories page | [dashboard.md](dashboard.md) (start prompt in the [kit](../kit/README.md#dashboardweb-summitvicky)) |
 | vault@web-summit.vicky | Vicky's vaults (on demand) | [vault.md](vault.md) |
 | dev@web-summit.vicky | replaced by dev@PrompTugal.vicky (6 Nov) | [kit: dev](../kit/README.md#devweb-summitvicky) |
@@ -18,16 +18,18 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 | reporter@PrompTugal.vicky | evidence roadmaps for the curator, to vault A only (was programme until 14 Nov; [programme.md](programme.md) kept as the record) | [reporter.md](reporter.md) |
 | analyst@PrompTugal.vicky | the analysis desk: public data and trends, each figure checked at its primary source, pieces labelled Analysis (from 15 Nov, standing answer 75) | [analyst.md](analyst.md) |
 | internal@web-summit.vicky | the internal journalist, to vault A only (was the summit journalist until 14 Nov; [journalist.md](journalist.md) kept as the record) | [internal.md](internal.md) |
-| designer@PrompTugal.vicky | cover graphics on request | [designer.md](designer.md) |
+| designer@PrompTugal.vicky | charts and infographics inside articles (the reviewer draws covers, standing answer 82) | [designer.md](designer.md) |
 | journalist-portugal@PrompTugal.vicky | drafts: Portugal | [journalist-portugal.md](journalist-portugal.md) |
 | journalist-europe@PrompTugal.vicky | drafts: Europe | [journalist-europe.md](journalist-europe.md) |
 | journalist-ai@PrompTugal.vicky | drafts: AI and robotics | [journalist-ai.md](journalist-ai.md) |
 | journalist-connections@PrompTugal.vicky | drafts: connections | [journalist-connections.md](journalist-connections.md) |
-| reviewer@PrompTugal.vicky | checks drafts against sources, tidies style; publishes when Vicky asks | [reviewer.md](reviewer.md) |
+| reviewer@PrompTugal.vicky | checks drafts against sources, tidies style, draws covers, publishes what passes (R-PUB-1) | [reviewer.md](reviewer.md) |
 | checker@PrompTugal.vicky | fact-checks published articles by desks outside Vicky's | [checker.md](checker.md) |
 | scout@web-summit.vicky | learning notes and proposals from how Dinis's agents work (daily 22:00 UTC) | [scout.md](scout.md) |
 | inbox@web-summit.vicky | the only agent that touches Vicky's mailbox; never sends (on demand) | [inbox.md](inbox.md) |
+| security@web-summit.vicky | the weekly rules and keys check, report only (Mondays 06:20 UTC) | [security.md](security.md) |
+| synthetic@web-summit.vicky | synthetic readers of PrompTugal.news pages (on demand) | [synthetic.md](synthetic.md) |
 
 tools@web-summit.vicky was never started (Vicky, 3 November), so it has no prompt.
 
-Last updated: 15 November 2026, about 09:50 UTC (23 saved here, 1 in the kit; analyst.md added by the analyst's own first commit, checked for anything that should not be public: nothing found).
+Last updated: 18 November 2026, about 19:45 UTC (24 saved here, 1 in the kit; security and synthetic added to this table, the conductor's, designer's and reviewer's rows brought up to date, at Vicky's word).

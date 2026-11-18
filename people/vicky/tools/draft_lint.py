@@ -25,6 +25,9 @@ people/vicky/decisions.md on the team site):
     "In short" to the end of "What this does not claim" (standing answer 92); semicolons; STYLE's filler words;
     sentences ending in a trailing ", -ing" clause (standing answer 60)
 
+The adjustable values (word limits, title limit, bullets, banned words, statuses, ai_steps, the spelling) are not in
+this file: they are in lint_rules.yaml beside it (Vicky, 18 November 2026), the one place they live.
+
 Usage (from anywhere; paths are files in the newsroom clone):
   python3 -I people/vicky/tools/draft_lint.py <draft.md> [<draft.md> ...] [--json]
 Exit 0: no errors (warnings may be printed). Exit 1: at least one error. Exit 2: usage.
@@ -40,16 +43,31 @@ try:
 except ImportError:  # the reviewer's sessions have PyYAML (it parses front matter with yaml.safe_load since 5 Nov)
     yaml = None
 
-FIELDS = ['title', 'date', 'story', 'author', 'summary', 'status', 'beat', 'license', 'tags']
-STATUSES = {'draft', 'in-review', 'fix', 'ready', 'approved', 'published', 'dropped'}
-SECTIONS = ['## In short', '## The story', '## What this does not claim', '## Where this comes from']
-FILLER = ['notably', "it's worth noting", 'it is worth noting', 'underscores', 'highlights', 'landscape',
-          'a testament to', 'plays a key role', 'navigate', 'robust', 'seamless', 'ever-evolving', 'delve',
-          'in a move that']
+RULES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lint_rules.yaml')
+
+
+def load_rules():
+    """The adjustable values (word limits, title limit, banned words, statuses) live in lint_rules.yaml (Vicky, 18 Nov)."""
+    if yaml is None:
+        sys.exit('draft_lint: PyYAML is needed to read lint_rules.yaml (pip install pyyaml)')
+    with open(RULES_FILE, encoding='utf-8') as f:
+        return yaml.safe_load(f)
+
+
+R = load_rules()
+FIELDS = list(R['front_matter_order'])
+STATUSES = set(R['statuses'])
+SECTIONS = ['## ' + x for x in R['sections']]
+FILLER = list(R['banned_words'])
+NEWS, ANALYSIS = tuple(R['length']['news']), tuple(R['length']['analysis'])
+TITLE_MAX = int(R['title_max_words'])
+BULLETS = tuple(R['in_short_bullets'])
+STEPS = tuple(R['ai_steps'])
+SPELLING = R['spelling']
+ING_OK = list(R['trailing_ing_allowed'])
 MONTHS = 'January|February|March|April|May|June|July|August|September|October|November|December'
 READ = re.compile(r'read \d{1,2} (%s) \d{4}' % MONTHS)
 LINK = re.compile(r'!?\[([^\]]*)\]\(([^)\s]+)[^)]*\)')
-NEWS, ANALYSIS = (300, 700), (400, 900)
 
 
 def split(text):
@@ -112,8 +130,8 @@ def lint(path):
             errors.append('status "%s" is not one of %s' % (status, ', '.join(sorted(STATUSES))))
         title = str(fm.get('title', '')) if fm else (re.search(r'^title:\s*(.+)$', fm_text, re.M) or [None, ''])[1]
         n = len(str(title).strip('"\'').split())
-        if n >= 12 and not re.search(r'^updates:', fm_text, re.M):
-            errors.append('title has %d words; the rule is under 12' % n)
+        if n > TITLE_MAX and not re.search(r'^updates:', fm_text, re.M):
+            errors.append('title has %d words; the rule is at most %d (lint_rules.yaml)' % (n, TITLE_MAX))
 
     update = bool(fm.get('updates')) if fm else bool(fm_text and re.search(r'^updates:', fm_text, re.M))
 
@@ -121,9 +139,9 @@ def lint(path):
     for i, line in enumerate(text.split('\n'), 1):
         if '\u2014' in line:
             errors.append('line %d: em-dash' % i)
-    for m in re.finditer(r'(?<![@./\w-])promptugal(?![./\w-])', prose(body), re.I):
-        if m.group(0) != 'PrompTugal':
-            errors.append('"%s": the one spelling is PrompTugal' % m.group(0))
+    for m in re.finditer(r'(?<![@./\w-])%s(?![./\w-])' % re.escape(SPELLING), prose(body), re.I):
+        if m.group(0) != SPELLING:
+            errors.append('"%s": the one spelling is %s' % (m.group(0), SPELLING))
     if re.search(r'<https?://', body):
         errors.append('a source written as <url>: write it as a link, [Publisher, "Title"](url)')
 
@@ -143,8 +161,8 @@ def lint(path):
         short = section(body, '## In short')
         if short is not None:
             b = len(re.findall(r'^- ', short, re.M))
-            if not 3 <= b <= 5:
-                errors.append('"In short" has %d bullets; the rule is 3 to 5' % b)
+            if not BULLETS[0] <= b <= BULLETS[1]:
+                errors.append('"In short" has %d bullets; the rule is %d to %d (lint_rules.yaml)' % (b, BULLETS[0], BULLETS[1]))
         if re.search(r'^## Who made this', body, re.M):
             errors.append('a "Who made this" section: the publisher adds it')
 
@@ -187,8 +205,8 @@ def lint(path):
                     if not re.search(r'%s:\s*\S' % k, notes):
                         errors.append('"Notes for the reviewer" has no %s' % k)
                 st = re.search(r'ai_steps:\s*"?(\d+)', notes)
-                if st and not 0 <= int(st.group(1)) <= 3:
-                    errors.append('ai_steps is %s; a story is within 0 to 3 steps of AI (standing answer 81)' % st.group(1))
+                if st and not STEPS[0] <= int(st.group(1)) <= STEPS[1]:
+                    errors.append('ai_steps is %s; a story is within %d to %d steps of AI (standing answer 81)' % (st.group(1), STEPS[0], STEPS[1]))
 
         # warnings: length, semicolons, filler, trailing -ing
         span = re.search(r'^## In short\s*$(.*?)(?=^## Where this comes from|\Z)', body, re.M | re.S)
@@ -197,7 +215,7 @@ def lint(path):
             lo, hi = ANALYSIS if analysis or str(fm.get('beat', '')).lower() == 'analysis' else NEWS
             kind = 'analysis' if (lo, hi) == ANALYSIS else 'news'
             if n > hi:
-                warnings.append('%d words (%s usually %d to %d): longer only with a reason in the notes (standing answer 92)' % (n, kind, lo, hi))
+                warnings.append('%d words (%s usually %d to %d, lint_rules.yaml): longer only with a reason in the notes (standing answer 92)' % (n, kind, lo, hi))
             elif n < lo:
                 warnings.append('%d words (%s usually %d to %d): is it enough to tell the story? (standing answer 92)' % (n, kind, lo, hi))
 
@@ -209,7 +227,7 @@ def lint(path):
     hits = sorted({w for w in FILLER if re.search(r'\b%s\b' % re.escape(w), low)})
     if hits:
         warnings.append('filler words (STYLE "Write like a person"): ' + ', '.join(hits))
-    ing = re.findall(r',\s+(?!including\b|according\b|meaning\b)\w+ing\b[^.!?\n]*[.!?]', text_body)
+    ing = re.findall(r',\s+(?!(?:%s)\b)\w+ing\b[^.!?\n]*[.!?]' % '|'.join(map(re.escape, ING_OK)), text_body)
     if ing:
         warnings.append('%d sentence(s) ending in a trailing ", -ing" clause, first: %s' % (len(ing), ing[0].strip()[:60]))
 

@@ -11,7 +11,7 @@ the signature, every internal link, no keys or contact details. This script does
   ai fields    ai_connection, ai_steps (0 to 3) and ai_places in the front matter, and no "Notes for the reviewer"
                block left in the text (standing answers 81, 90, 91)
   approval     the draft with the same story id has status approved or published (STYLE "Status"; R-PUB-1 records
-               the approval in the draft)
+               the approval in the draft; enforced at Vicky's word, 18 November 2026)
   cover        image: points to design/infographics/out/<slug>--paper--card.png; the four PNGs
                <slug>--{paper,ink}--{card,thumb}.png exist; index.json has their four rows, each "auto": false with a
                "hand" block; image_alt present, with no semicolon or em-dash; the body image is directly under
@@ -19,6 +19,9 @@ the signature, every internal link, no keys or contact details. This script does
                (desks/reviewer-vicky/covers/STYLE.md; standing answers 50, 82)
   figures      analysis pieces only: every "checked on <date>" in the data note (desks/analyst-vicky/data/) is at
                most 7 days old, or the piece goes back to the analyst (standing answer 86)
+
+The adjustable values (ai_steps range, figure age, which statuses allow publishing) are in lint_rules.yaml beside
+this file (Vicky, 18 November 2026), the one place they live.
 
 Usage, in the newsroom clone:
   python3 -I <team-site>/people/vicky/tools/publish_check.py <slug> [--root <newsroom clone>] [--today YYYY-MM-DD]
@@ -38,6 +41,15 @@ try:
     import yaml
 except ImportError:
     yaml = None
+
+RULES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lint_rules.yaml')
+if yaml is None:
+    sys.exit('publish_check: PyYAML is needed to read lint_rules.yaml (pip install pyyaml)')
+with open(RULES_FILE, encoding='utf-8') as _f:
+    R = yaml.safe_load(_f)  # the adjustable values (Vicky, 18 Nov 2026): one file for both scripts
+STEPS = tuple(R['ai_steps'])
+MAX_AGE = int(R['figures_max_age_days'])
+PUBLISH_OK = set(R['publish_ok'])
 
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october',
           'november', 'december']
@@ -100,8 +112,8 @@ def check(root, slug, today):
         if field(k) in (None, ''):
             fails.append('front matter has no %s (standing answer 91)' % k)
     st = field('ai_steps')
-    if st not in (None, '') and not re.match(r'^[0-3]$', str(st).strip()):
-        fails.append('ai_steps is "%s"; it is 0, 1, 2 or 3 (standing answer 81)' % st)
+    if st not in (None, '') and not (re.match(r'^\d+$', str(st).strip()) and STEPS[0] <= int(str(st).strip()) <= STEPS[1]):
+        fails.append('ai_steps is "%s"; it is a number from %d to %d (standing answer 81)' % (st, STEPS[0], STEPS[1]))
     if re.search(r'^## Notes for the reviewer', body, re.M):
         fails.append('the "Notes for the reviewer" block is still in the text: move it to the front matter (standing answer 91)')
 
@@ -114,8 +126,8 @@ def check(root, slug, today):
             notes.append('no draft with story %s found in desks/*-vicky/drafts/' % story)
         for d in drafts:
             s = re.search(r'^status:\s*(\S+)', open(d, encoding='utf-8').read(), re.M)
-            if not s or s.group(1) not in ('approved', 'published'):
-                warns.append('warn: draft %s has status %s: STYLE "Status" and R-PUB-1 say the approval is recorded in the draft'
+            if not s or s.group(1) not in PUBLISH_OK:
+                fails.append('draft %s has status %s: record the approval in the draft first (status: approved; Vicky, 18 Nov 2026)'
                              % (os.path.relpath(d, root), s.group(1) if s else 'none'))
     else:
         notes.append('no story id in the front matter: approval not checked')
@@ -168,14 +180,14 @@ def check(root, slug, today):
             old = []
             for s in re.findall(r'checked on (\d{1,2} [A-Za-z]+\.? \d{4})', open(dn, encoding='utf-8').read(), re.I):
                 d = date_of(s)
-                if d and (today - d).days > 7:
+                if d and (today - d).days > MAX_AGE:
                     old.append(s)
             if old:
-                fails.append('%d figure(s) in %s checked more than 7 days ago (%s): re-check them at source; '
+                fails.append('%d figure(s) in %s checked more than %d days ago (%s): re-check them at source; '
                              'if one changed, the piece goes back to the analyst (standing answer 86)'
-                             % (len(old), os.path.relpath(dn, root), ', '.join(sorted(set(old)))))
+                             % (len(old), os.path.relpath(dn, root), MAX_AGE, ', '.join(sorted(set(old)))))
             else:
-                notes.append('figures: every "checked on" date in the data note is 7 days old or less')
+                notes.append('figures: every "checked on" date in the data note is %d days old or less' % MAX_AGE)
     return fails, warns + notes
 
 

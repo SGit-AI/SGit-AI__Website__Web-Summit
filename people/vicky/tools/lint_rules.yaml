@@ -1,0 +1,60 @@
+# lint_rules.yaml: the adjustable values for Vicky's desks, read by draft_lint.py and publish_check.py.
+#
+# Vicky, 18 November 2026: "Put the adjustable values (word limits, title limit, banned words, allowed statuses) in one
+# config file, e.g. lint_rules.yaml, that both scripts read. STYLE.md and the standing answers should point to that file
+# instead of repeating the numbers." This file is the one place these numbers live. Changed only at Vicky's word, by
+# her conductor, with the standing answer that changes them named in the comment beside the value.
+
+length:                       # standing answer 92: usual range, counted from "In short" to the end of
+  news: [300, 700]            # "What this does not claim", without the sources; outside it is a warning,
+  analysis: [400, 900]        # the reviewer judges (longer only with the writer's reason)
+
+title_max_words: 11           # brief 8, rule 6: a title under 12 words (the newsroom's gate refuses 12 or more)
+
+in_short_bullets: [3, 5]      # STYLE.md "Format"
+
+ai_steps: [0, 3]              # standing answer 81: AI directly or within two or three steps
+
+figures_max_age_days: 7       # standing answer 86: re-check a figure older than this before publishing
+
+statuses:                     # STYLE.md "Status" (Vicky, 6 November 2026); publish_check needs one of `publish_ok`
+  - draft
+  - in-review
+  - fix
+  - ready
+  - approved
+  - published
+  - dropped
+publish_ok: [approved, published]   # standing answer 99: the approval is recorded in the draft
+
+front_matter_order:           # STYLE.md "Match the published format"
+  [title, date, story, author, summary, status, beat, license, tags]
+
+sections:                     # STYLE.md "Format"
+  - In short
+  - The story
+  - What this does not claim
+  - Where this comes from
+
+spelling: PrompTugal          # the one spelling (newsroom CLAUDE.md; Dinis, 6 November 2026)
+
+banned_words:                 # STYLE.md "Write like a person" (Vicky, 13 November 2026): a warning, the rewrite is the reviewer's
+  - notably
+  - it's worth noting
+  - it is worth noting
+  - underscores
+  - highlights
+  - landscape
+  - a testament to
+  - plays a key role
+  - navigate
+  - robust
+  - seamless
+  - ever-evolving
+  - delve
+  - in a move that
+
+trailing_ing_allowed:         # words after a comma that are not a trailing "-ing" clause (standing answer 60)
+  - including
+  - according
+  - meaning

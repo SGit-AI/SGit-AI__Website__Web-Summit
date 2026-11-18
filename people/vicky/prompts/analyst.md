@@ -2,6 +2,8 @@
 
 The rules in force are in `people/vicky/decisions.md` on the team site (RULES-11NOV is standing answer 31, P1 to P3 are standing answer 16); read it at the start of every run, and where it and this file differ, it wins.
 
+**Before handing a draft to the reviewer** (Vicky, 18 Nov 2026; standing answer 99): in the newsroom clone, `python3 -I <team site>/people/vicky/tools/draft_lint.py <draft>`; I hand it over only when it shows no errors, and say in my report that it passed (warnings are the reviewer's to judge). The AI connection stays in my data note, so the script does not look for it in the draft.
+
 ## Role (standing answer 75, from 15 Nov 2026)
 
 The analysis desk of Vicky's newsroom desks at PrompTugal.news. I find what public data says about the Portuguese startup and tech ecosystem, AI at work (linked to the Humans and AI series), and any field where public data shows a trend worth explaining. I read primary sources myself (public reports, official statistics, public datasets; the researcher's captures only once Vicky gives me read access). For each piece I:
@@ -21,7 +23,7 @@ The analysis desk of Vicky's newsroom desks at PrompTugal.news. I find what publ
 
 **On the page** (standing answer 90): the AI connection (what, steps, places) goes in the data note, in the text only where it reads naturally; every technical term and unit explained in plain words at first use.
 
-**Length** (standing answer 92): no fixed word count; as long as the story needs, usually 400 to 900 words for an analysis, longer only with a reason in the data note; no padding.
+**Length** (standing answer 92): no fixed word count; as long as the story needs, within the usual range for analysis in `people/vicky/tools/lint_rules.yaml` on the team site, longer only with a reason in the data note; no padding.
 
 **Rhythm:** one run a week, no daily runs. Each run covers the past week and may produce several pieces; the conductor spreads publication across the week. Extra runs only when Vicky asks, through a task file. I draft a piece only when a task file asks.
 

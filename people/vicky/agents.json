@@ -2,8 +2,8 @@
  {
   "name": "conductor@web-summit.vicky",
   "job": "coordinates Vicky's agents, keeps her records (onboarding.json, agents.json, inbox.md, merch.json, signoff/), reads every agent's report, relays anything urgent to Vicky, and writes her one brief a day",
-  "session": "Claude Code cloud session in Vicky's account, on Opus (new session from 9 Nov 11:00 UTC)",
-  "schedule": "08:30 UTC the morning brief, 12:50 UTC a midday check (from 9 Nov; silent unless something needs Vicky), 17:30 UTC a short newsroom check (silent unless actionable), 20:45 UTC the evening relay (Vicky, 7 Nov night and 9 Nov; earlier 08:30, 09:00, 09:30, 09:45, 17:50 and 21:30)",
+  "session": "Claude Code cloud session in Vicky's account, on Opus (new session from 14 Nov 09:30 UTC; key conductor-vicky-3)",
+  "schedule": "08:45 UTC the morning brief and 20:45 UTC the evening relay (from 14 Nov; the 12:50 midday and 17:30 checks ended 13 Nov, standing answer 43)",
   "handover": "old session replaced 9 Nov 11:00 UTC at Vicky's word (hand-over note people/vicky/handover/conductor-2026-11-09.md); key conductor-vicky retired, conductor-vicky-2 added by the new session's own commit; its three scheduled tasks moved to the new session and the old ones disabled (9 Nov 11:06 UTC)"
  },
  {
@@ -68,7 +68,7 @@
  },
  {
   "name": "designer@PrompTugal.vicky",
-  "job": "cover graphics on request only (from 14 Nov 2026, standing answer 34's hand-overs): covers and charts from an article's sourced numbers, asked for in a commit For: designer@PrompTugal.vicky; no brand changes, no publishing",
+  "job": "cover graphics on request only (from 14 Nov 2026, standing answer 34's hand-overs): covers and charts from an article's sourced numbers, asked for in a commit For: designer@PrompTugal.vicky; no brand changes, no publishing (from 14 Nov, standing answer 82: charts and infographics inside articles; the reviewer draws covers)",
   "session": "Claude Code cloud session in Vicky's account, in the main environment",
   "schedule": "on request, no scheduled task",
   "was": "designer@web-summit.vicky until 6 Nov 10:27 UTC (key in the newsroom repository's board/keys.json, added by its own commit)"
@@ -142,7 +142,21 @@
   "name": "analyst@PrompTugal.vicky",
   "job": "the analysis desk (standing answer 75): reads public reports, official statistics and datasets, checks every figure at its primary source, writes pieces labelled Analysis that pass the PrompTugal test; drafts in the newsroom's desks/analyst-vicky/; first pieces published only after Vicky approves",
   "session": "Claude Code cloud session in Vicky's team account (Opus), environment web-summit-research with both repositories; started 15 Nov 2026 09:53 UTC, replacing the first session (09:31 UTC, wrong environment, archived) at Vicky's word",
-  "schedule": "one run a week, day and time to be set at Vicky's word; extra runs only when she asks",
+  "schedule": "one run a week, Mondays 10:15 UTC (standing answer 84); extra runs only when Vicky asks",
   "since": "15 Nov 2026 (keys analyst-vicky-2 on the team site, its commit b6014832, and analyst-vicky-promptugal in the newsroom, its commit 6036c620a; the first session's analyst-vicky superseded 09:55 UTC)"
+ },
+ {
+  "name": "security@web-summit.vicky",
+  "job": "the weekly rules and keys check: compares standing answer 31 with its own copy, checks every commit to decisions.md and every new key on both keys pages; report only, changes nothing, marks anything wrong URGENT for Vicky",
+  "session": "Claude Code cloud session in Vicky's account",
+  "schedule": "Mondays 06:20 UTC (from 14 Nov 2026, at Vicky's word)",
+  "since": "11 Nov 2026"
+ },
+ {
+  "name": "synthetic@web-summit.vicky",
+  "job": "synthetic readers: reads PrompTugal.news pages in a real browser as imagined readers would, on a phone and a desktop, and reports what works and what confuses; never presented as a real person's view",
+  "session": "Claude Code cloud session in Vicky's account",
+  "schedule": "on demand",
+  "since": "8 Nov 2026"
  }
 ]
