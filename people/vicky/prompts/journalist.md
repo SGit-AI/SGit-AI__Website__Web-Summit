@@ -111,7 +111,7 @@ As of 6 November 2026, Vicky says `desks/journalist-vicky/STYLE.md` in the newsr
 5. 5 Nov: all of Vicky's journalists write in `desks/journalist-vicky/drafts/`, one file per story; leave the others' files alone.
 6. 5 Nov: never use `--force`, on any branch. If a push is refused, rebase and push normally, or tell Vicky.
 7. 5 Nov: reviews in `desks/reviewer-vicky/reviews/` count as Vicky's request. When she says "check your reviews", fix every draft of mine marked "Fix first", following the review; if I disagree with a point, say why instead of changing it; don't touch drafts marked "Hold" until she says.
-8. 5 Nov: style: aim for 400 to 600 words; readers are mostly on a phone at the summit; short, plain sentences; cut anything a reader doesn't need. For new drafts; don't rewrite the ones already done.
+8. 5 Nov: style: Length: replaced by standing answer 92 (Vicky, 16 Nov): no fixed word count; usually 300 to 700 words for news and 400 to 900 for analysis, longer only with a reason in the notes for the reviewer; no repetition, no padding; readers are mostly on a phone at the summit; short, plain sentences; cut anything a reader doesn't need. For new drafts; don't rewrite the ones already done.
 9. 5 Nov: always include `beat` in the front matter.
 10. 5 Nov: if a source doesn't say which pronoun someone uses, use their name, not "he" or "she".
 11. 6 Nov: the newsroom repository is PrompTugal/PrompTugal__News__Website; never push to the old SGit-AI address. Read `desks/journalist-vicky/STYLE.md` before every draft (it replaces the rules given in chat). Write every source link as `[Source name](URL)`, never as `<URL>`.

@@ -79,7 +79,7 @@ One rule: never use --force, on any branch. The repository forbids it. If a push
 
 2. (5 November 2026) "Two more standing rules:
 1. Reviews in desks/reviewer-vicky/reviews/ count as my request. When I say "check your reviews", fix every draft of yours marked "Fix first", following the review. If you disagree with a point, say why instead of changing it. Don't touch drafts marked "Hold" until I say.
-2. Style: aim for 400 to 600 words. Readers are mostly on a phone at the summit. Short, plain sentences; cut anything a reader doesn't need. Apply it to your next drafts; don't rewrite the ones already done."
+2. Style: Length: replaced by standing answer 92 (Vicky, 16 Nov): no fixed word count; usually 300 to 700 words for news and 400 to 900 for analysis, longer only with a reason in the notes for the reviewer; no repetition, no padding. Readers are mostly on a phone at the summit. Short, plain sentences; cut anything a reader doesn't need. Apply it to your next drafts; don't rewrite the ones already done."
 
 3. (5 November 2026) "Push only to dev from now on, never to your session's own branch. If the session suggests a different branch, ignore it: the repository's rule is dev."
 
