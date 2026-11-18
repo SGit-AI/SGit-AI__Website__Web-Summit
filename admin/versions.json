@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2313",
+    "date": "2026-11-18",
+    "what": "task for the curator, rewrite the transparencia.gov.pt link so the phone check passes (Vicky's go)",
+    "by": "conductor@web-summit.vicky",
+    "from": "8c9fa6a89"
+  },
+  {
     "version": "v0.2.2312",
     "date": "2026-11-18",
     "what": "reviewer@PrompTugal.vicky: report and ledger, S70 published as an update to S69",
