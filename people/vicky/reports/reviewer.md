@@ -191,3 +191,10 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Nothing it flags looks wrong.
   - One gap, a suggestion only: draft_lint does not check that an update note's intro line links its source, which STYLE.md's "Update notes" asks for. I missed exactly that on S70 this morning and fixed it the same day.
   - state: ok; done: switched to draft_lint and publish_check, README and STYLE.md replaced; next: on demand; ask: none; run: prompted
+- Wed 18 Nov 2026, 21:35 UTC (task file people/vicky/tasks/2026-11-18-2055-review-s71.md): S71 published as a dated update note at the top of S69 (https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html), with a one-point pointer note on S67, as the curator's commission says (newsroom e48007a73; review desks/reviewer-vicky/reviews/S71.md).
+  - Scripts: draft_lint 0 errors, 0 warnings; publish_check OK for S69 and S67.
+  - Checked: every point at DNOTICIAS (18 June 2026): the nine units, Cova da Beira first in 2025, "two years to 10 days" according to its board president. The two accounts are said to differ, neither decided.
+  - My fix: "told the press" became "citing".
+  - Approval recorded (standing answer 99): S71 approved, and S67's and S69's drafts set to published, which they have been since 16 and 17 November. publish_check reads the original story's draft for an update.
+  - Live at 390 and 1280 px: notes newest first before In short, all links work, 390 wide.
+  - state: ok; done: S71 published as updates; next: on demand; ask: none; run: prompted
