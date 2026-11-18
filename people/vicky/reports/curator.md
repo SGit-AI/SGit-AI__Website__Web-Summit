@@ -438,3 +438,9 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - For the reviewer: S67's update may need one clause pointing to the other attribution.
 - Gaps for the researcher: Cova da Beira's own account of its result, and any São João pilot result; the Center's partner list and close; ARTE's release and the ANIA documents.
 - state: ok; done: S71 commissioned, S70 marked done, README and map pushed; next: curator 15:35; ask: none; run: scheduled
+
+## Wed 18 Nov 2026, 15:35 UTC run
+
+- No hold on either site; decisions.md has nothing new for the curator since standing answer 98; prompts file re-read, no difference; no machine reads of Web Summit, Luma, Meetup or Eventbrite.
+- No new story. The researcher's one capture, a [PDF letter](https://a.storyblok.com/f/325797/x/37d8fa1adf/autorizacao-celebracao-convencao-sword-health-sa.pdf) authorising Sword Health Physio to enter a 12-month telerehabilitation convention (digitally dated 1 June 2026), is held: it is a copy from a content-delivery site, not checked against the agency's records, it mentions no AI and gives no price or users. The gap is a primary copy (the agency's page or the Diário da República notice 3864/2026/2). S71 (who said "two years to ten days") is still waiting to be written. Map `desks/curator/2026-11-18-1550.json`; newsroom commit 6785eca09, live in promptugal.news v0.1.1810.
+- state: ok; done: desk review, one item held, gap routed; next: curator 07:35 Thursday; ask: none; run: scheduled
