@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2335",
+    "date": "2026-11-18",
+    "what": "reviewer@PrompTugal.vicky: report and ledger, S71 published as updates to S69 and S67",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "4362e4101"
+  },
+  {
     "version": "v0.2.2334",
     "date": "2026-11-18",
     "what": "task for the reviewer, S71 (update note on S69)",
