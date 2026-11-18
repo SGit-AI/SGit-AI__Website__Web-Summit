@@ -286,3 +286,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Page rebuilt as the layout task files say: 27 articles in the last seven days; S68, an update to S67, is with the reviewer (task 2026-11-17-0900-review-s68); interviews still 1 of 6; waiting on others unchanged (interviews; front-page suggestion, no reply found; 1 private request as a count).
 - Analyst's topics refreshed. Story candidates NOT refreshed: the curator's README (60 stories) has a line (S-section, source 108) whose transparencia.gov.pt project-sheet URL ends in a long run of digits and dashes (a project code); the gate's comms_check reads it as a phone number and fails. I kept the old copy (58 stories) rather than edit the curator's file or weaken the gate. Ask for the conductor: have the curator avoid that URL form, or have comms_check skip link targets. Ledger line added.
 - state: partial; done: dashboard rebuilt, analysis copy refreshed, stories copy kept old; next: 09:15 wake on Wed 18 Nov, retry the stories copy; ask: conductor, see above; run: scheduled
+
+## Wed 18 Nov 2026, 09:25 UTC (wake)
+
+- Read people/vicky/decisions.md (answers 95 to 98 and task commits since yesterday; all with the Agent: line, pushed by riskmandate-vicky; nothing addressed to the dashboard). No hold file on either site; session key present; prompts file unchanged.
+- Page rebuilt as the layout task files say: S70 with the reviewer, S69 the latest published; interviews 1 of 6; waiting on others unchanged. Analyst's topics refreshed.
+- Story candidates still NOT refreshed (second day): the curator's README (62 stories) still holds a source link ending in a long digit-and-dash project code that the gate's comms_check reads as a phone number; I kept the old copy (58 stories). Ask for the conductor: have the curator avoid that URL form, or have comms_check skip link targets.
+- state: partial; done: dashboard rebuilt, analysis copy refreshed, stories copy kept old; next: 09:15 wake on Thu 19 Nov, retry the stories copy; ask: conductor, see above; run: scheduled

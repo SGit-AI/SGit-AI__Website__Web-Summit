@@ -4,12 +4,13 @@ summary: The page Vicky reads first: the newsroom this week, what waits on other
 compact: true
 office_link: office/index.html
 ---
-*Last updated: Tue 17 Nov, 09:16 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
+*Last updated: Wed 18 Nov, 09:17 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
 
 ## The newsroom this week {#newsroom-week}
 
-**Published from your desks in the last seven days (27 articles):**
+**Published from your desks in the last seven days (21 articles):**
 
+- 17 Nov: [AI physiotherapy in Portugal's health service: what the government says](https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html)
 - 16 Nov: [Analysis: Portugal has 60 MW of computing power and wants 1,000](https://promptugal.news/articles/portugal-60-mw-computing-capacity.html)
 - 16 Nov: [Neuraspace of Coimbra raises 15.6 million euros for AI space software](https://promptugal.news/articles/neuraspace-coimbra-raises-15-6-million.html)
 - 16 Nov: [Portugal's Center for Responsible AI: the money, partners and goals](https://promptugal.news/articles/center-for-responsible-ai-money-partners-goals.html)
@@ -17,10 +18,10 @@ office_link: office/index.html
 - 14 Nov: [When an agent says it's done, check a few things yourself](https://promptugal.news/articles/humans-and-ai-vicky-wang.html)
 - 14 Nov: [Loulé agency 3WX launches Best Number One, a free start page](https://promptugal.news/articles/best-number-one-3wx-loule.html)
 - 13 Nov: [Where women in Portugal can learn and build with AI](https://promptugal.news/articles/women-learning-and-building-ai-in-portugal.html)
+
+:::details Earlier this week (13 more)
+
 - 13 Nov: [Why people trust AI summaries more than they check them](https://promptugal.news/articles/why-people-trust-ai-summaries.html)
-
-:::details Earlier this week (19 more)
-
 - 13 Nov: [Humanos wins Road 2 Web Summit's top prize, 15,000 euros](https://promptugal.news/articles/humanos-road-2-web-summit-winner.html)
 - 12 Nov: [What PagerDuty says it learned running AI agents in production](https://promptugal.news/articles/pagerduty-agents-in-production.html)
 - 12 Nov: [Discord opens its first engineering hub outside San Francisco, in Lisbon](https://promptugal.news/articles/discord-lisbon-engineering-hub.html)
@@ -33,17 +34,10 @@ office_link: office/index.html
 - 11 Nov: [The EU asks for views on election rules for generative AI](https://promptugal.news/articles/eu-election-guidelines-generative-ai.html)
 - 11 Nov: [The EU's Digital Fairness Act: rules for AI agents that shop](https://promptugal.news/articles/digital-fairness-act-ai-agents.html)
 - 11 Nov: [The AI Act's first harmonised standard: what EN 18286 changes](https://promptugal.news/articles/ai-act-first-harmonised-standard.html)
-- 10 Nov: [How WPP turns call transcripts into reviewed Jira plans](https://promptugal.news/articles/wpp-call-transcripts-to-jira.html)
-- 10 Nov: [What Lovable deleted: its CEO on rebuilding an AI coding agent](https://promptugal.news/articles/what-lovable-deleted.html)
-- 10 Nov: [Web Summit's cancelled Day 2: what is known about refunds](https://promptugal.news/articles/web-summit-day-2-refunds.html)
-- 10 Nov: [What failed first as Teamworks builds an AI assistant for coaches](https://promptugal.news/articles/teamworks-coaches-agent.html)
-- 10 Nov: [Web Summit calls off Wednesday on the government's advice](https://promptugal.news/articles/red-wind-warning-lisbon-wednesday.html)
-- 10 Nov: [AI agents are spreading faster than their security, Gravitee's survey finds](https://promptugal.news/articles/gravitee-agent-security-survey.html)
-- 10 Nov: [Glovo's restaurant partners meet 80 AI agents on WhatsApp, GetVocal says](https://promptugal.news/articles/glovo-restaurant-agents-getvocal.html)
 
 :::
 
-**Stories in the loop:** S68, a short update to S67 (the Center for Responsible AI), is with the reviewer.
+**Stories in the loop:** S70 is with the reviewer. The latest published, S69 (AI physiotherapy in the health service), went live on Tue 17 Nov.
 
 **Humans and AI interviews:** 1 of 6 pages published (yours). The five teammates' write-ups come back privately, and a page is published only after its person approves it.
 
