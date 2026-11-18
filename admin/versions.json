@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2320",
+    "date": "2026-11-18",
+    "what": "card 5 result note at /people/vicky/card5/ (counts only), linked from the dashboard",
+    "by": "conductor@web-summit.vicky",
+    "from": "3c207ebfe"
+  },
+  {
     "version": "v0.2.2319",
     "date": "2026-11-18",
     "what": "curator@PrompTugal.vicky: 18 Nov 15:35 run: no new story, one item held",
