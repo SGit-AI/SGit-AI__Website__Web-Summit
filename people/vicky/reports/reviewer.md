@@ -173,3 +173,10 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Live: the cover keeps 1200:630 at 390 and 1280 px, light and dark; og:image and the thumb correct.
   - Site-wide fault, not S69's: at 390 px every article page now scrolls sideways (434 px wide). The header toolbar (Search, EN, App, Ask) runs past the edge, and S66 and S67, which measured 390 yesterday, do the same. It is dev@'s code, so flagged to the conductor for dev@PrompTugal.dinis.
   - state: ok; done: S69 published; next: on demand; ask: dev@ to fix the header toolbar's overflow at 390 px; run: prompted
+- Wed 18 Nov 2026, 09:45 UTC (task file people/vicky/tasks/2026-11-18-0900-review-s70.md): S70 published as a dated update note at the top of S69 (https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html), as the curator's commission says (newsroom fdd04725a, then a link fix; review desks/reviewer-vicky/reviews/S70.md).
+  - Checked: every point at RTP / Lusa (21 December 2023): the post-surgery hybrid pilot, the Sword Health platform with alerts supervised by the rehabilitation doctor, "criado a partir do Center for Responsible AI", six months, about 300 patients, no results.
+  - My fixes: two sentences put in the planned tense ("was to"); the intro line now links the RTP report (missed at first, fixed the same morning).
+  - The note links S67 where it names the Center. S69's text and date unchanged; re-signed.
+  - Live at 390 and 1280 px: the note before In short, both links working.
+  - The header overflow reported yesterday is fixed: the page is 390 px wide again.
+  - state: ok; done: S70 published as an update; next: on demand; ask: none; run: prompted
