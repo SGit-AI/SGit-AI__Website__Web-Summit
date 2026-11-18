@@ -383,3 +383,19 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 
 - Gaps: for the not-identified names I need a website or a country to go further; the UST Lisbon job listings a search showed are an aggregator's, unverified; the Porto hiring seen in a search is also unverified.
 - state: ok; done: 10 companies checked, 3 captures; next: 07:15 run tomorrow (Thursday); ask: a website or country for Uplink Labs, Optimized Optics, ISSI and MeeTri (or drop them); run: prompted
+
+## Wed 18 Nov 2026, 16:45 UTC, task 2026-11-18-1115-researcher-ten-companies (step 5, connections)
+
+- Step 5 checked first (conductor's commit, pushed from Vicky's account; no hold file). For the companies that do not hold up on their own, I looked for a public link to companies or programmes PrompTugal.news has already published about, with a public page on both sides (standing answer 19). I found only field-level links, no shared customers, partners, investors or programmes, and nothing that reaches the bar for a connections story; the curator decides. No new captures this step (the links rest on pages already captured on 12 and 14 Nov, and on the companies' own pages read today). For: curator@PrompTugal.vicky.
+
+| company | holds up alone | connection to what PrompTugal already covers (with sources on both sides) |
+|---|---|---|
+| Uplink Labs, Optimized Optics, ISSI, MeeTri | no (not identified) | none: cannot connect a company I cannot identify |
+| Summit Cognitive | no | field only, weak: its own page is about recording what an AI agent decided so a regulator or auditor can check it ([Summit Cognitive's page, read 18 Nov](https://summitcognitive.ai/)); PagerDuty's own post on running AI agents in production is the field link ([PagerDuty, captured 12 Nov](https://www.pagerduty.com/eng/production-ai-agents-closing-the-gaps-between-idea-and-reality/), PrompTugal S60); no shared customer, partner or programme |
+| Markster | no | none found: its own pages name AI-company partners but none that PrompTugal has covered, as far as I checked (I did not re-read every published article) |
+| TurboApply Agency | no | field only, weak: a small digital agency that builds websites and AI automation ([its page, read 18 Nov](https://turboapply.agency/)), like the Loulé agency in S65 ([Postal do Algarve, captured 14 Nov](https://postal.pt/algarve/empresa-de-loule-lanca-plataforma-best-number-one-no-web-summit-e-ultrapassa-300-inscricoes/)); TurboApply has no Portugal link, so I would not draft it |
+| ConnectDevs | no | none found |
+| UST | weak | field only: a services group with Lisbon activity ([UST's release, read 18 Nov](https://www.prnewswire.com/pt/comunicados-de-imprensa/ust-acquires-leading-fintech-innovator-tailwind-302664416.html)), alongside Konecta's Lisbon delivery centre in S52 ([Konecta's release, captured 14 Nov](https://konecta.com/news-insights/press-releases/konecta-announces-the-launch-of-a-next-generation-global-delivery-center-dedicated-to-ai-excellence-in-lisbon)); thin, and UST's own hook is ten months old |
+| Grammarly | yes | not needed |
+
+- state: ok; done: connections column added; next: 07:15 run tomorrow (Thursday); ask: a website or country for the four names I could not identify, or drop them; run: prompted
