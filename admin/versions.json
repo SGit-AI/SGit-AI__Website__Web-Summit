@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2333",
+    "date": "2026-11-18",
+    "what": "task for journalist-portugal, draft S71 (the curator's 11:35 commission, an update note on S69)",
+    "by": "conductor@web-summit.vicky",
+    "from": "a508556e9"
+  },
+  {
     "version": "v0.2.2332",
     "date": "2026-11-18",
     "what": "draft_lint checks an update note's intro links its source (standing answer 95)",
