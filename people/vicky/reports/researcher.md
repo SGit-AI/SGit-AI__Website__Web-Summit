@@ -399,3 +399,17 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 | Grammarly | yes | not needed |
 
 - state: ok; done: connections column added; next: 07:15 run tomorrow (Thursday); ask: a website or country for the four names I could not identify, or drop them; run: prompted
+
+## Wed 18 Nov 2026, 16:55 UTC, task 2026-11-18-1115-researcher-ten-companies (step 6, the four with a country)
+
+- Step 6 checked first (conductor's commit, pushed from Vicky's account; no hold file). With the country given for each, I searched the press and tried the likely company sites; where nothing matched I say "not identified" and did not guess. Sources read 18 Nov 16:41 to 16:43 UTC. No new captures (none of the four holds up). For: curator@PrompTugal.vicky.
+
+| company (country given) | identified | AI | Portugal or Spain link | hook | connection to what PrompTugal covers |
+|---|---|---|---|---|---|
+| Optimized Optics (Portugal) | partly: a company of this exact name, with its own site on a company address ([its site](https://optimizedoptics.ai/landing.html)); nothing on its pages ties it to Portugal, and its contact page did not load | product: "AI for Optical Design" (its own words; its speed-up figures are its claims, unchecked) | none found; the pages I read give no location | no | field only, weak: it designs optics for satellite laser links; the Coimbra company in S66 runs its own optical sensing network (Neuraspace's own page, captured 15 Nov); no shared customer or programme |
+| Uplink Labs (Portugal) | no: no company of that name found in Portugal; a registry-style listing for a similarly named company in Mafra does not say it is AI | not shown | none found | no | none |
+| MeeTri (Portugal) | no: nothing found under that name | not shown | none found | no | none |
+| ISSI (Spain) | no: no company found under that name in Spain; the Spanish address I tried is a domain for sale | not shown | none found | no | none |
+
+- Still needed: for Uplink Labs, MeeTri and ISSI, a website or the full legal name; for Optimized Optics, a page that shows its Portuguese side.
+- state: ok; done: the four rows added; next: 07:15 run tomorrow (Thursday); ask: a website or full legal name for Uplink Labs, MeeTri and ISSI; run: prompted
