@@ -94,3 +94,8 @@ Vicky's analysis desk for PrompTugal.news (standing answer 75). One entry per ru
 - AI-connection paragraphs taken out of A1 and A3 (they stay in the data notes). Terms explained at first use: A1 generative AI, INE, Eurostat, the eight kinds of AI, percentage points; A3 megawatts, gigawatts, data centres, scenarios, high-performance computing. Newsroom commit `7e742850c` (live in v0.1.1619). A1 544 words, A3 516.
 - **Correction found on the way:** Eurostat's "any AI" for companies counts an eighth technology (AI that makes pictures, video or sound) in 2025 only. So 2023 to 2024 compare (gap 0.2 to 4.9 points) and 2025 (gap 8.4) is on a wider list. A1 now says so in one sentence; the A1 data note and the topics page (A2) record it. For reviewer@PrompTugal.vicky: A1's company trend changed for this reason.
 - state: ok; done: A1 and A3 revised; next: Vicky's read of A3; A1 update after 20 Nov; ask: none; run: task
+
+## Wed 18 Nov 2026, 19:58 UTC (task 2026-11-18-1950-analyst-a1-title)
+
+- A1's title shortened from 14 to 11 words: "Analysis: Portuguese people above the EU average on AI, companies below". draft_lint: 0 errors, 0 warnings. The INE update on 20 Nov follows separately.
+- state: ok; done: A1 title; next: A1 update after INE's 20 Nov release; ask: none; run: task
