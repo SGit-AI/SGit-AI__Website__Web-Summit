@@ -362,3 +362,24 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - Curator's gap (which unit the ten-days figure belongs to, and on what basis): searches found no account from the Cova da Beira unit itself and no result from the São João pilot, so that stays open. What I found instead is the official step behind the service: an official health-system letter dated 1 June 2026 authorising Sword Health Physio to enter a telerehabilitation convention under standard terms published on 23 February 2026, for 12 months, renewable automatically; it gives no price, user numbers or results, and the copy was found online, not checked against the agency ([letter, read 18 Nov 15:17 UTC](https://a.storyblok.com/f/325797/x/37d8fa1adf/autorizacao-celebracao-convencao-sword-health-sa.pdf)). No contact details, identifiers or the signatory's name were copied.
 - Still open: Cova da Beira's own account and what the São João pilot found; the Center's member list and formal close; ARTE's release and the ANIA documents; an investor's post on the 2026 Neuraspace round; the AI Act final vote; an independent report on 3WX; the 17 withdrawn captures; Carevision; Diário de Notícias' Discord article; IBM's winner release; where Humanos is based.
 - state: ok; done: 1 capture; next: 07:15 run tomorrow (Thursday); ask: none; run: scheduled
+
+## Wed 18 Nov 2026, 16:30 UTC, task 2026-11-18-1115-researcher-ten-companies
+
+- Task file checked first (conductor's commit, pushed from Vicky's account; no hold file); public pages only, RULES-11NOV kept (no Web Summit, Luma, Meetup, Eventbrite or LinkedIn reads); where a company's own site was refused or missing, I say so and did not guess. 3 captures went into vault 41j3e9s9 (the Grammarly/Superhuman and Rows announcements, and UST's release). For: curator@PrompTugal.vicky.
+- Result: 1 of 10 holds up (AI, a real Portugal link, a hook); UST is a weak maybe (its January 2026 release is datelined Lisbon, ten months old). Sources read 18 Nov 16:31 to 16:33 UTC: [Superhuman's blog](https://blog.superhuman.com/superhuman-to-acquire-rows/), [Rows' own post](https://rows.com/blog/post/rows-is-joining-superhuman), [UST's release](https://www.prnewswire.com/pt/comunicados-de-imprensa/ust-acquires-leading-fintech-innovator-tailwind-302664416.html), and each company's own site where it opened.
+
+| company | identified | AI | Portugal or Europe link | hook |
+|---|---|---|---|---|
+| Uplink Labs | no: several companies share the name; the one site found is a one-person consultancy with no AI product stated | not shown | none found | no |
+| Optimized Optics | no: only directory listings, no own site found | not shown | none found | no |
+| Grammarly | yes (own site; it is a product of the Superhuman suite) | product (AI assistant, agents) | yes: the Porto-based Rows team joins it, expanding its European hubs (Superhuman, 23 Feb 2026) | yes: the acquisition; whether it closed is not stated |
+| Summit Cognitive | yes (own site) | part: signed records of AI decisions | none found (a small US company, incorporated April 2026) | no |
+| Markster | yes (own site) | part: services run with its own AI models | none found on its own pages | no |
+| ISSI | no: no company found under that name | not shown | none found | no |
+| TurboApply Agency | yes (own site; not the job-search tool with a similar name) | part: websites plus AI automation | none found, base not stated | no |
+| MeeTri | no: nothing found under that name | not shown | none found | no |
+| UST | yes (own release) | part: AI and technology services | partly: release datelined Lisbon; the firm it bought has a Portugal delivery centre | weak: January 2026 |
+| ConnectDevs | yes (own site) | product: AI recruiting | none found, base not stated | no |
+
+- Gaps: for the not-identified names I need a website or a country to go further; the UST Lisbon job listings a search showed are an aggregator's, unverified; the Porto hiring seen in a search is also unverified.
+- state: ok; done: 10 companies checked, 3 captures; next: 07:15 run tomorrow (Thursday); ask: a website or country for Uplink Labs, Optimized Optics, ISSI and MeeTri (or drop them); run: prompted
