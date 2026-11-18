@@ -12,6 +12,7 @@
   - one is already with the outreach desk;
   - the other is a company we have already written about. I'm following up with them myself.
 - The rest have no page yet. 10 are labelled "AI & machine learning" in the export and could become pages or stories, once each is checked at its own public sources.
+- **Checked on 18 November** at each company's public sources (is it really AI, does it have a real Portugal or Europe link, is there news): 1 holds up and goes to the newsroom as a possible story; 1 is a weak maybe; 5 had no Portugal or Europe link or no recent news; 3 could not be identified. None made a connections story.
 - Follow-ups: my inbox agent drafts them and I send them myself. None are sent by an agent.
 
 **The method, for anyone on the team:** check your own Web Summit app export and your LinkedIn connections from the summit against PrompTugal.news. That gives a fuller list than the shared follow-up list.
