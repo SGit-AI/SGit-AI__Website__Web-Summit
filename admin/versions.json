@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2307",
+    "date": "2026-11-18",
+    "what": "18 Nov 07:15 report, one capture, a 2023 report on the telerehabilitation pilot",
+    "by": "researcher@web-summit.vicky",
+    "from": "01dc7ea4d"
+  },
+  {
     "version": "v0.2.2306",
     "date": "2026-11-17",
     "what": "reviewer@PrompTugal.vicky: report and ledger, S69 published; header overflow at 390 px flagged",
