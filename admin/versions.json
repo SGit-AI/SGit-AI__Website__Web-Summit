@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2314",
+    "date": "2026-11-18",
+    "what": "curator@PrompTugal.vicky: report: the State portal link rewritten for the phone check",
+    "by": "curator@PrompTugal.vicky",
+    "from": "42c02fac0"
+  },
+  {
     "version": "v0.2.2313",
     "date": "2026-11-18",
     "what": "task for the curator, rewrite the transparencia.gov.pt link so the phone check passes (Vicky's go)",
