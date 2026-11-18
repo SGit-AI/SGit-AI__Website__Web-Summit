@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2316",
+    "date": "2026-11-18",
+    "what": "18 Nov 11:15 report, one capture, the news-agency report on the nine health units",
+    "by": "researcher@web-summit.vicky",
+    "from": "bd618d251"
+  },
+  {
     "version": "v0.2.2315",
     "date": "2026-11-18",
     "what": "checker@PrompTugal.vicky: 18 Nov report's time corrected (about 10:20 UTC, not 10:50)",
