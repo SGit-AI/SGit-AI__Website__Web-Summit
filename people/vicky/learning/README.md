@@ -16,6 +16,7 @@ From 13 November the scout writes one note a week, Mondays 06:47 UTC (standing a
 | 06 | [Status, run reports and the dashboard](06-status-run-reports-and-the-dashboard.md) | 6 Nov 2026 |
 | 07 | [The operator's words, kept](07-the-operators-words-kept.md) | 7 Nov 2026 |
 | 08 | [What Vicky could reuse from the whole team's week, 9 to 16 Nov](08-reusable-this-week-16-nov.md): the weekly run's first note | 16 Nov 2026 |
+| 09 | [How the team makes an iPhone app, and the ways Vicky could make her own](09-how-the-team-makes-an-iphone-app.md): at Vicky's request, 18 Nov | 18 Nov 2026 |
 
 Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are answered: [questions-for-the-mentor.md](questions-for-the-mentor.md).
 
@@ -57,6 +58,9 @@ Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are a
 | P32 | Say why when a commit writes outside your lane: an `Outside:` line (after P31 is approved) | every agent | one line in the occasional commit | 08 | open |
 | P33 | Total the ledger with Indi's tally script, never by adding lines | conductor | small: a copy and one path change | 08 | open |
 | P34 | The session archive kit: decide whether to archive her sessions as Dinis asks (needs an exception to her rule against reading sessions) | Vicky (decision) | large: about 50,000 tokens a session | 08 | open |
+| P35 | Try the apps on her own phone first: ask Dinis for the public TestFlight link and a team-app invitation | Vicky (a request to Dinis) | none | 09 | open |
+| P36 | Decide what her app is for in one sentence, and whether it holds anything private | Vicky (decision) | none | 09 | open |
+| P37 | A one-page brief for her app in the shape of the Fringe brief, sent to Dinis | conductor, after P36 | one run, about 20 to 40k tokens | 09 | open |
 
 ## Next topics
 
