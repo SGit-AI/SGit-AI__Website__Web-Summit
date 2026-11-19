@@ -4,12 +4,13 @@ summary: The page Vicky reads first: the newsroom this week, what waits on other
 compact: true
 office_link: office/index.html
 ---
-*Last updated: Wed 18 Nov, 09:17 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
+*Last updated: Thu 19 Nov, 09:16 UTC. This page is public: it shows only what is safe to publish, and private items as a count. Your command centre has the rest: [open it](app/index.html).*
 
 ## The newsroom this week {#newsroom-week}
 
-**Published from your desks in the last seven days (21 articles):**
+**Published from your desks in the last seven days (13 articles):**
 
+- 19 Nov: [Superhuman agreed to buy Rows, the AI spreadsheet company from Porto](https://promptugal.news/articles/superhuman-to-buy-rows-porto.html)
 - 17 Nov: [AI physiotherapy in Portugal's health service: what the government says](https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html)
 - 16 Nov: [Analysis: Portugal has 60 MW of computing power and wants 1,000](https://promptugal.news/articles/portugal-60-mw-computing-capacity.html)
 - 16 Nov: [Neuraspace of Coimbra raises 15.6 million euros for AI space software](https://promptugal.news/articles/neuraspace-coimbra-raises-15-6-million.html)
@@ -17,27 +18,18 @@ office_link: office/index.html
 - 16 Nov: [AMALIA and ANIA: what Portugal says about its own AI plans](https://promptugal.news/articles/amalia-and-ania-portugal-ai-plans.html)
 - 14 Nov: [When an agent says it's done, check a few things yourself](https://promptugal.news/articles/humans-and-ai-vicky-wang.html)
 - 14 Nov: [Loulé agency 3WX launches Best Number One, a free start page](https://promptugal.news/articles/best-number-one-3wx-loule.html)
+
+:::details Earlier this week (5 more)
+
 - 13 Nov: [Where women in Portugal can learn and build with AI](https://promptugal.news/articles/women-learning-and-building-ai-in-portugal.html)
-
-:::details Earlier this week (13 more)
-
 - 13 Nov: [Why people trust AI summaries more than they check them](https://promptugal.news/articles/why-people-trust-ai-summaries.html)
 - 13 Nov: [Humanos wins Road 2 Web Summit's top prize, 15,000 euros](https://promptugal.news/articles/humanos-road-2-web-summit-winner.html)
 - 12 Nov: [What PagerDuty says it learned running AI agents in production](https://promptugal.news/articles/pagerduty-agents-in-production.html)
 - 12 Nov: [Discord opens its first engineering hub outside San Francisco, in Lisbon](https://promptugal.news/articles/discord-lisbon-engineering-hub.html)
-- 11 Nov: [How Zalando rolled out AI coding agents across its engineering teams](https://promptugal.news/articles/zalando-ai-coding-agents.html)
-- 11 Nov: [EU says TikTok's For You feed may breach its platform law](https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html)
-- 11 Nov: [Thursday at Web Summit: a practical guide to the last day](https://promptugal.news/articles/thursday-last-day-guide.html)
-- 11 Nov: [Manus 2.0 gives each agent its own email, phone and wallet](https://promptugal.news/articles/manus-2-0-agents-own-email-phone-wallet.html)
-- 11 Nov: [Konecta picks Lisbon for a delivery centre and 700 jobs](https://promptugal.news/articles/konecta-lisbon-delivery-centre.html)
-- 11 Nov: [Getting around Lisbon on Wednesday: what operators and the government say](https://promptugal.news/articles/getting-around-lisbon-wednesday.html)
-- 11 Nov: [The EU asks for views on election rules for generative AI](https://promptugal.news/articles/eu-election-guidelines-generative-ai.html)
-- 11 Nov: [The EU's Digital Fairness Act: rules for AI agents that shop](https://promptugal.news/articles/digital-fairness-act-ai-agents.html)
-- 11 Nov: [The AI Act's first harmonised standard: what EN 18286 changes](https://promptugal.news/articles/ai-act-first-harmonised-standard.html)
 
 :::
 
-**Stories in the loop:** S70 is with the reviewer. The latest published, S69 (AI physiotherapy in the health service), went live on Tue 17 Nov.
+**Stories in the loop:** none right now. The latest, S73 (Superhuman agreed to buy Rows), went live on Thu 19 Nov.
 
 **Humans and AI interviews:** 1 of 6 pages published (yours). The five teammates' write-ups come back privately, and a page is published only after its person approves it.
 

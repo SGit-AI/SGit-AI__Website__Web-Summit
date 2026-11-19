@@ -6,7 +6,7 @@ Kept by curator@PrompTugal.vicky (until 6 November curator@web-summit.vicky), Vi
 
 **Connections** (from 5 November, at Dinis's direction): stories that link startups and companies at Web Summit so each gets the most out of the week: startups in the same field, startups and the investors or programmes that back that field, companies on the same stage or day, Portuguese startups and the European ones they could work with. They are marked "Connections" in the beat. Each link is the curator's suggestion from public facts: no source says these organisations plan to meet, and no story should say so. Organisations only; nothing private about anyone.
 
-Last updated: Monday 16 November 2026, 07:37 UTC.
+Last updated: Thursday 19 November 2026, 07:38 UTC.
 
 **Categories** (Vicky, 10 November 2026): the curator assigns every article its main categories from `desks/curator/categories.json` (one or more of Web Summit 2026, Startups & Scaleups, AI, Portugal, The newsroom, Brazil, Europe, Corporate) when commissioning it, and adds its line to that file before the article is published. A new main category only with Vicky's approval; routine corrections are the curator's. Corporate versus Startups & Scaleups by the story's subject and angle, never by size, valuation, funding round or headcount. No article file is edited for this.
 
@@ -30,9 +30,16 @@ Last updated: Monday 16 November 2026, 07:37 UTC.
 
 | Id | Title | Beat | Added |
 |---|---|---|---|
-| S66 | Neuraspace of Coimbra raises 15.6 million euros for AI space software | Portugal | 15 Nov |
+| S73 | Superhuman to buy Rows, the AI spreadsheet company from Porto | Portugal | 19 Nov |
+| S72 | Update: the health service's remote physiotherapy is open to any provider | Portugal | 19 Nov |
+| S71 | Update: who said waits fell from two years to ten days (published 18 Nov) | Portugal | 18 Nov |
+| S70 | Update: a 2023 pilot at São João came out of the Center (published 18 Nov) | Portugal | 18 Nov |
+| S69 | AI physiotherapy in Portugal's health service: what the government says (published 17 Nov) | Portugal | 17 Nov |
+| S68 | Update: the Center for Responsible AI's chief executive gives a status (published 17 Nov) | Portugal | 17 Nov |
+| S67 | Portugal's Center for Responsible AI: the money, partners and goals (published 16 Nov) | Portugal | 16 Nov |
+| S66 | Neuraspace of Coimbra raises 15.6 million euros for AI space software (published 16 Nov) | Portugal | 15 Nov |
 | S65 | Loulé agency 3WX launches Best Number One, a free start page (published 14 Nov) | Portugal | 14 Nov |
-| S64 | AMALIA and ANIA: what Portugal says about its own AI plans | Portugal | 14 Nov |
+| S64 | AMALIA and ANIA: what Portugal says about its own AI plans (published 16 Nov) | Portugal | 14 Nov |
 | S61 | Humanos wins Road 2 Web Summit's top prize, 15,000 euros (published 13 Nov) | Portugal | 12 Nov |
 | S60 | What PagerDuty says it learned running AI agents in production (published 12 Nov) | AI and robotics | 12 Nov |
 | S59 | Discord is opening its first engineering hub outside San Francisco, in Lisbon (published 12 Nov) | Portugal | 12 Nov |
@@ -89,15 +96,77 @@ Last updated: Monday 16 November 2026, 07:37 UTC.
 | S2 | Europe arrives in Pavilion 4: the Commission's week at Web Summit (withdrawn 11 Nov) | Europe | 4 Nov |
 | S1 | Web Summit Lisbon: your first day, from airport to arena | The summit | 4 Nov |
 
+## S73: Superhuman to buy Rows, the AI spreadsheet company from Porto
+
+Portugal, added 19 Nov. Superhuman says (23 Feb 2026) it agreed to acquire Rows, an AI spreadsheet company whose team joins from Porto; Rows says it would wind its product down by 31 May 2026; neither says the deal closed; the figures are the companies' own. For journalist-portugal, categories Portugal, AI and Corporate. Two company sources: attribute everything; nine months old.
+
+Sources:
+
+- [Superhuman (the company's own blog; the Superhuman Suite includes Grammarly), "Superhuman to Acquire Rows to Strengthen Its All-in-One AI Workspace"](https://blog.superhuman.com/superhuman-to-acquire-rows/), read 18 November 2026
+- [Rows (the company's own blog), "Rows will be joining Superhuman"](https://rows.com/blog/post/rows-is-joining-superhuman), read 18 November 2026
+
+## S72: Update: the health service's remote physiotherapy is open to any provider
+
+Portugal, added 19 Nov. An update note for S69: the gazette's standard terms (23 Feb 2026) show the service is an accession convention any health-sector provider can join, for referred patients with the digital literacy to use it alone; Sword Health Physio was authorised on 1 June 2026 for 12 months (an unchecked letter copy); AI is regulated only if present. For journalist-portugal, categories Portugal and AI. Short update (standing answer 95); do not say Sword is the only provider.
+
+Sources:
+
+- [Diário da República (the official gazette), the issue of 23 February 2026, PDF, "Aviso n.º 3864/2026/2, standard terms of the convention for remote physical medicine and rehabilitation (Diário da República, 2.ª série, n.º 37)"](https://files.diariodarepublica.pt/gratuitos/2s/2026/02/2S037A0000S00.pdf), read 19 November 2026
+- [Administração Central do Sistema de Saúde, I.P. (the letter's letterhead), as found online as a PDF; the copy was not checked against the agency's records, "Letter authorising the convention with Sword Health Physio (PDF)"](https://a.storyblok.com/f/325797/x/37d8fa1adf/autorizacao-celebracao-convencao-sword-health-sa.pdf), read 18 November 2026
+
+## S71: Update: who said waits fell from two years to ten days
+
+Portugal, added 18 Nov. An update note for S69 (and a pointer from S67's update): a launch-day DNOTICIAS report attaches the 'two years to ten days' wait to the Cova da Beira unit's board president; S67's update gave it as the Center's chief executive's claim about a Porto hospital; the accounts differ and neither is checked. Also the nine units that signed. For journalist-portugal, categories Portugal and AI. Short update (standing answer 95); say the sources differ; do not decide. Published on 18 Nov 2026: https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html. Not to be written again.
+
+Sources:
+
+- [DNOTICIAS (newspaper site), "Médicos vão poder prescrever fisioterapeuta em casa com inteligência artificial"](https://www.dnoticias.pt/2026/6/18/496006-medicos-vao-poder-prescrever-fisioterapeuta-em-casa-com-inteligencia-artificial/), read 18 November 2026
+
+## S70: Update: a 2023 pilot at São João came out of the Center
+
+Portugal, added 18 Nov. An update note for S69: a December 2023 RTP report (Lusa) says a telerehabilitation pilot at São João, monitored on a Sword Health platform, was created out of the Center for Responsible AI consortium; six months, about 300 patients, no results; a different project from the 2026 agreement. For journalist-portugal, categories Portugal and AI. Short update note (standing answer 95); attribute to the report; do not say the pilot became the service. Published on 18 Nov 2026: https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html. Not to be written again.
+
+Sources:
+
+- [RTP (public broadcaster's news site), "Futura ULS São João terá projeto-piloto de telerreabilitação pós-cirúrgica"](https://www.rtp.pt/noticias/pais/futura-uls-sao-joao-tera-projeto-piloto-de-telerreabilitacao-pos-cirurgica_n1538412), read 18 November 2026
+
+## S69: AI physiotherapy in Portugal's health service: what the government says
+
+Portugal, added 17 Nov. The government's own item and Observador's launch-day report (18 June 2026): the national health service and Sword Health offer remote physiotherapy with AI tools that analyse and correct movements; health professionals supervise; free to users; the agreement sets 200 euros per user, fixed for a year (as reported); the 97 percent and 45 percent figures are estimates and a company forecast, not measured results. For journalist-portugal, categories Portugal and AI. Two sources; attribute each figure to its source; do not confirm the interview's two-years-to-ten-days claim. Published on 17 Nov 2026: https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html. Not to be written again.
+
+Sources:
+
+- [the Portuguese government's website (news item), "Inteligência artificial no SNS reduz tempos de espera e alarga acesso à fisioterapia"](https://portugal.gov.pt/gc25/comunicacao/noticias/inteligencia-artificial-no-sns-reduz-tempos-de-espera-e-alarga-acesso-a-fisioterapia), read 17 November 2026
+- [Observador (national news site), "Tecnologia da Sword Health chega ao SNS com fisioterapia remota com inteligência artificial"](https://observador.pt/2026/06/18/tecnologia-da-sword-health-chega-ao-sns-com-fisioterapia-remota-com-inteligencia-artificial/), read 17 November 2026
+
+## S68: Update: the Center for Responsible AI's chief executive gives a status
+
+Portugal, added 17 Nov. An update note for S67: in a July 2026 interview the Center's chief executive gives a status (coordination moved to Sword Health, execution around 87 to 88 percent, funding about 49 million public and 27 million private, a 150 million euro turnover forecast); his account, not independently checked. For journalist-portugal, categories Portugal and AI. Attribute everything to the chief executive; the Unbabel collapse is the newspaper's wording. Published on 17 Nov 2026: https://promptugal.news/articles/center-for-responsible-ai-money-partners-goals.html. Not to be written again.
+
+Sources:
+
+- [Dinheiro Vivo / Diário de Notícias (national business newspaper), "Após a queda da Unbabel, a IA nacional resiste e prepara 150 milhões em exportações"](https://dinheirovivo.dn.pt/economia/aps-a-queda-da-unbabel-a-ia-nacional-resiste-e-prepara-150-milhes-em-exportaes), read 17 November 2026
+
+## S67: Portugal's Center for Responsible AI: the money, partners and goals
+
+Portugal, added 16 Nov. The State's project sheet, the programme's own sheet (led by Sword Health, 25 partners) and a 2024 interview on the Center for Responsible AI: money, goals and examples; the status after 30 June 2026 and any results are not known. For journalist-portugal, categories Portugal and AI. Aims, not results; do not suggest delay or failure; the two euro figures are different measures. Published on 16 Nov 2026: https://promptugal.news/articles/center-for-responsible-ai-money-partners-goals.html. Not to be written again.
+
+Sources:
+
+- [the Portuguese State's transparency portal (official project sheet for the Recovery and Resilience Plan), "PRR Project: Center for Responsible AI (project sheet)"](https://transparencia.gov.pt/en/fundos-europeus/prr/beneficiarios-projetos/projeto/02/C05-i01.01/2022.PC6450%308882-00000055/), read 16 November 2026
+- [INESC-ID (research institute; the programme's beneficiary entity), PDF on its own site, "Center for Responsible AI: agenda project sheet (PDF)"](https://www.inesc-id.pt/wp-content/uploads/2026/02/crai_edited_projectsheet.pdf), read 16 November 2026
+- [Diário de Notícias (national newspaper), "Já criámos 145 postos de trabalho altamente qualificados e temos 50 doutoramentos e mestrados em curso"](https://www.dn.pt/sociedade/ja-criamos-145-postos-de-trabalho-altamente-qualificados-e-temos-50-doutoramentos-e-mestrados-em-curso), read 16 November 2026
+
 ## S66: Neuraspace of Coimbra raises 15.6 million euros for AI space software
 
-Portugal, added 15 Nov. AICEP's official item and TechEU: Coimbra's Neuraspace secured 15.6 million euros for its AI-enabled space traffic products; the figures and customer claims are the reports' account of the company. AI path: direct, 0 steps; Coimbra and Portugal, ESA, NATO. For journalist-portugal, categories Portugal and AI. Two reports (AICEP 3 Sep, TechEU 5 Aug): attribute every figure. Put the AI path in the story. The company's own page says an operator chooses from suggested manoeuvres: say who decides.
+Portugal, added 15 Nov. AICEP's official item and TechEU: Coimbra's Neuraspace secured 15.6 million euros for its AI-enabled space traffic products; the figures and customer claims are the reports' account of the company. AI path: direct, 0 steps; Coimbra and Portugal, ESA, NATO. For journalist-portugal, categories Portugal and AI. Two reports (AICEP 3 Sep, TechEU 5 Aug): attribute every figure. Record the AI path in the data note (standing answer 90). The company's own page says an operator chooses from suggested manoeuvres: say who decides. The investor's own March 2022 post (earlier round) is dated background only: its 22 percent claim is theirs, unchecked. Published on 16 Nov 2026: https://promptugal.news/articles/neuraspace-coimbra-raises-15-6-million.html. Not to be written again.
 
 Sources:
 
 - [AICEP Portugal Global (Portuguese trade and investment agency, official news), "Neuraspace secures €15.6m to scale AI space technology"](https://www.portugalglobal.pt/en/news/2026/setembro/neuraspace-secures-156m-to-scale-ai-space-technology/), read 15 November 2026
 - [TechEU (European tech news site), "Neuraspace lands €15.6M to expand AI space intelligence platform"](https://tech.eu/2026/08/05/neuraspace-lands-eur156m-to-expand-ai-space-intelligence-platform/), read 15 November 2026
 - [Neuraspace (the company's own home page), "Smarter Space Traffic Management - Neuraspace"](https://www.neuraspace.com/), read 15 November 2026
+- [Armilar Venture Partners (the investor's own "Insights" page), "Neuraspace raises €2.5M led by Armilar"](https://armilar.com/articles/neuraspace-raises-eu2-5m-led-by-armilar), read 16 November 2026
 
 ## S65: Loulé agency 3WX launches Best Number One, a free start page
 
@@ -111,7 +180,7 @@ Sources:
 
 ## S64: AMALIA and ANIA: what Portugal says about its own AI plans
 
-Portugal, added 14 Nov. Official sources on AI in Portugal: the government's National AI Agenda (four areas, 32 initiatives) and what INESC-ID, NOVA FCT, the government's digital portal and the project's own model page say about AMALIA, the first language model for European Portuguese (consortium of universities, free and open, public administration first, 5.5 million euros); aims, not results. For journalist-portugal, categories Portugal and AI. Updated 15 Nov before drafting. Do not link AMALIA to ANIA. INESC-ID says 80 researchers, the government and NOVA FCT around 60: report both. The authors' own paper (abstract only) says it is a fully open model; their tests, not checked. Full text of the authors' paper: built on EuroLLM-9B, 5.8 billion tokens of filtered European Portuguese from the Portuguese Web Archive, personal data removed; their own claims, results tables not read.
+Portugal, added 14 Nov. Official sources on AI in Portugal: the government's National AI Agenda (four areas, 32 initiatives) and what INESC-ID, NOVA FCT, the government's digital portal and the project's own model page say about AMALIA, the first language model for European Portuguese (consortium of universities, free and open, public administration first, 5.5 million euros); aims, not results. For journalist-portugal, categories Portugal and AI. Updated 15 Nov before drafting. Do not link AMALIA to ANIA. INESC-ID says 80 researchers, the government and NOVA FCT around 60: report both. The authors' own paper (abstract only) says it is a fully open model; their tests, not checked. Full text of the authors' paper: built on EuroLLM-9B, 5.8 billion tokens of filtered European Portuguese from the Portuguese Web Archive, personal data removed; their own claims, results tables not read. Published on 16 Nov 2026: https://promptugal.news/articles/amalia-and-ania-portugal-ai-plans.html. Not to be written again.
 
 Sources:
 
@@ -624,10 +693,10 @@ For the five journalists, in priority order (standing answers 20 and 22, the des
 
 Ready to write now:
 
-1. S64, AMALIA and ANIA: what Portugal says about its own AI plans: for the Portugal desk (journalist-portugal). The government says, in its own news item, what its National AI Agenda (ANIA) is; INESC-ID and NOVA FCT say what AMALIA is, the first language model for European Portuguese, and the project's own Hugging Face page shows a released checkpoint under Apache 2.0; re-read the pages yourself, attribute everything, treat use cases and impact as expectations, report the researcher counts as they are (INESC-ID 80; NOVA FCT and the government's own explainer around 60); the explainer says the final version launched 1 July 2026, free and open, public administration first, do not link AMALIA to ANIA, give no ANIA budget (the page gives none), no Web Summit pages; short and plain; categories Portugal and AI; the authors' technical report (arXiv abstract) is a primary source: its test results are the authors' own, not checked; the paper's full text says how it was built (EuroLLM-9B base, 5.8 billion tokens of filtered European Portuguese from the Portuguese Web Archive with personal data removed, open-licensed sources only): attribute to the authors, do not tie the GPU-hour figures to a stage.
-2. S66, Neuraspace of Coimbra raises 15.6 million euros for AI space software: for the Portugal desk (journalist-portugal). AICEP's official item says Neuraspace of Coimbra secured 15.6 million euros for its AI-enabled space traffic products; re-read the AICEP item (3 Sep) and the TechEU report (5 Aug) yourself; give both dates, the round is not new, attribute every figure and customer claim to it or the company, say what it does not give, put the AI path in the story (AI connection: direct, AI-driven risk assessment for satellite traffic; steps away: none; places: Coimbra and Portugal, ESA, NATO and a European ministry of defence as named customers), no Web Summit pages; short and plain; categories Portugal and AI; the company's own home page says its tool flags risks and suggests manoeuvres and an operator chooses: say who decides, and treat its minutes-against-8-hours claim as the company's.
+1. S73, Superhuman to buy Rows, the AI spreadsheet company from Porto: for the Portugal desk (journalist-portugal). Superhuman's own blog (23 Feb 2026) and Rows' own post (22 Feb 2026) say Superhuman agreed to acquire Rows, whose team is based in Porto; re-read both yourself; two company sources, no independent report, attribute everything; the news is about nine months old, give the dates and say the sources do not state whether the deal closed or whether the Rows product ended on 31 May; the usage figures are Rows' own claims; Rows' post does not mention Porto, Superhuman's does; no price, headcount or Porto hiring plan, say so and do not infer; no personal details; record the AI connection (direct, 0 steps; Porto, Superhuman's other hubs) in the data note; explain technical terms at first use; categories Portugal, AI and Corporate.
+2. S72, Update: the health service's remote physiotherapy is open to any provider: for the Portugal desk (journalist-portugal). A short update note on S69 (standing answer 95 format): the gazette's standard terms (23 Feb 2026, Aviso 3864/2026/2) make the service an accession convention any health-sector provider can join, for referred patients with enough digital literacy; the researcher read clauses 1 to 12, 26 and 27 only, state nothing from the annexes or prices; the letter dated 1 June 2026 authorising Sword Health Physio for 12 months is an unchecked copy, use it attributed or leave it out; do not say Sword is the only provider or that others joined; explain 'convention' and 'accession' at first use; record the AI connection (one step: AI regulated only if present) in the data note; categories Portugal and AI.
 
-Already published, not to be written again: S61 (https://promptugal.news/articles/humanos-road-2-web-summit-winner.html); S60 (https://promptugal.news/articles/pagerduty-agents-in-production.html); S59 (https://promptugal.news/articles/discord-lisbon-engineering-hub.html); S58 (https://promptugal.news/articles/thursday-last-day-guide.html); S37 (https://promptugal.news/articles/teamworks-coaches-agent.html); S38 (https://promptugal.news/articles/glovo-restaurant-agents-getvocal.html); S39 (https://promptugal.news/articles/wpp-call-transcripts-to-jira.html); S40 (https://promptugal.news/articles/gravitee-agent-security-survey.html); S42 (https://promptugal.news/articles/what-lovable-deleted.html); S49 (https://promptugal.news/articles/europe-in-pavilion-4.html); S56 (https://promptugal.news/articles/digital-fairness-act-ai-agents.html); S53 (https://promptugal.news/articles/eu-election-guidelines-generative-ai.html); S55 (https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html); S52 (https://promptugal.news/articles/konecta-lisbon-delivery-centre.html); S54 (https://promptugal.news/articles/breakout-startups-thursday-centre-stage.html); S46 (https://promptugal.news/articles/zalando-ai-coding-agents.html); S48 (https://promptugal.news/articles/manus-2-0-agents-own-email-phone-wallet.html); S50 (https://promptugal.news/articles/ai-act-first-harmonised-standard.html); S51 (https://promptugal.news/articles/getting-around-lisbon-wednesday.html); S45 (https://promptugal.news/articles/web-summit-day-2-refunds.html); S41 (https://promptugal.news/articles/red-wind-warning-lisbon-wednesday.html); S28 (https://promptugal.news/articles/five-ai-builders-to-know.html); S29 (https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html); S30 (https://promptugal.news/articles/health-startups-by-problem.html); S31 (https://promptugal.news/articles/road-2-web-summit-beyond-lisbon.html); S33 (https://promptugal.news/articles/ibm-sports-tech-challenge.html); S34 (https://promptugal.news/articles/where-to-find-portugal.html); S35 (https://promptugal.news/articles/press-conferences-day-by-day.html); S36 (https://promptugal.news/articles/portugal-on-the-programme.html); S65 (https://promptugal.news/articles/best-number-one-3wx-loule.html).
+Already published, not to be written again: S61 (https://promptugal.news/articles/humanos-road-2-web-summit-winner.html); S60 (https://promptugal.news/articles/pagerduty-agents-in-production.html); S59 (https://promptugal.news/articles/discord-lisbon-engineering-hub.html); S58 (https://promptugal.news/articles/thursday-last-day-guide.html); S37 (https://promptugal.news/articles/teamworks-coaches-agent.html); S38 (https://promptugal.news/articles/glovo-restaurant-agents-getvocal.html); S39 (https://promptugal.news/articles/wpp-call-transcripts-to-jira.html); S40 (https://promptugal.news/articles/gravitee-agent-security-survey.html); S42 (https://promptugal.news/articles/what-lovable-deleted.html); S49 (https://promptugal.news/articles/europe-in-pavilion-4.html); S56 (https://promptugal.news/articles/digital-fairness-act-ai-agents.html); S53 (https://promptugal.news/articles/eu-election-guidelines-generative-ai.html); S55 (https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html); S52 (https://promptugal.news/articles/konecta-lisbon-delivery-centre.html); S54 (https://promptugal.news/articles/breakout-startups-thursday-centre-stage.html); S46 (https://promptugal.news/articles/zalando-ai-coding-agents.html); S48 (https://promptugal.news/articles/manus-2-0-agents-own-email-phone-wallet.html); S50 (https://promptugal.news/articles/ai-act-first-harmonised-standard.html); S51 (https://promptugal.news/articles/getting-around-lisbon-wednesday.html); S45 (https://promptugal.news/articles/web-summit-day-2-refunds.html); S41 (https://promptugal.news/articles/red-wind-warning-lisbon-wednesday.html); S28 (https://promptugal.news/articles/five-ai-builders-to-know.html); S29 (https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html); S30 (https://promptugal.news/articles/health-startups-by-problem.html); S31 (https://promptugal.news/articles/road-2-web-summit-beyond-lisbon.html); S33 (https://promptugal.news/articles/ibm-sports-tech-challenge.html); S34 (https://promptugal.news/articles/where-to-find-portugal.html); S35 (https://promptugal.news/articles/press-conferences-day-by-day.html); S36 (https://promptugal.news/articles/portugal-on-the-programme.html); S65 (https://promptugal.news/articles/best-number-one-3wx-loule.html); S64 (https://promptugal.news/articles/amalia-and-ania-portugal-ai-plans.html); S66 (https://promptugal.news/articles/neuraspace-coimbra-raises-15-6-million.html); S67 (https://promptugal.news/articles/center-for-responsible-ai-money-partners-goals.html); S68 (https://promptugal.news/articles/center-for-responsible-ai-money-partners-goals.html); S69 (https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html); S70 (https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html); S71 (https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html).
 
 Already drafted, not to be written again: S44 (drafted, awaiting review); S47 (published as an update).
 

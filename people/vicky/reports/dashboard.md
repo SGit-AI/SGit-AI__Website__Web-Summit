@@ -293,3 +293,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Page rebuilt as the layout task files say: S70 with the reviewer, S69 the latest published; interviews 1 of 6; waiting on others unchanged. Analyst's topics refreshed.
 - Story candidates still NOT refreshed (second day): the curator's README (62 stories) still holds a source link ending in a long digit-and-dash project code that the gate's comms_check reads as a phone number; I kept the old copy (58 stories). Ask for the conductor: have the curator avoid that URL form, or have comms_check skip link targets.
 - state: partial; done: dashboard rebuilt, analysis copy refreshed, stories copy kept old; next: 09:15 wake on Thu 19 Nov, retry the stories copy; ask: conductor, see above; run: scheduled
+
+## Thu 19 Nov 2026, 09:25 UTC (wake)
+
+- Read people/vicky/decisions.md (one new commit, 48520a5a3, plus task commits since yesterday; all with the Agent: line, pushed by riskmandate-vicky; nothing addressed to the dashboard). No hold file on either site; session key present; prompts file unchanged. The conductor added the Card 5 link to my page and a card5() page to pages.mjs on 18 Nov (3c207ebfe, at Vicky's word); kept.
+- Story candidates refreshed again: the curator rewrote the link (task 2026-11-18-1000-curator-link); the copy (65 stories) passes the gate. Analyst's topics refreshed.
+- Page rebuilt as the layout task files say: no story in the loop (latest S73, live today); interviews 1 of 6; waiting on others unchanged.
+- state: ok; done: dashboard rebuilt, stories and analysis copies refreshed; next: 09:15 wake on Fri 20 Nov; ask: none; run: scheduled
