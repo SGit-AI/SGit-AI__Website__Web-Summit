@@ -216,3 +216,14 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - STYLE.md "Update notes": the "Limits" bullet added word for word (newsroom 94b7d9bba).
   - S69 is now at the two-note limit: its next update is a follow-up article.
   - state: ok; done: notes merged, limits in STYLE.md; next: on demand; ask: none; run: prompted
+- Thu 19 Nov 2026, 21:55 UTC (task file people/vicky/tasks/2026-11-19-2100-review-s74-s75.md). Both drafts: draft_lint 0 errors, approval recorded, publish_check OK (S73, S75 and S69). Three articles re-signed.
+  - S74, published as S73's first update note: https://promptugal.news/articles/superhuman-to-buy-rows-porto.html
+    - Checked: at ECO (23 Feb 2026).
+    - My fix: "stays" attributed to the co-founder, since "assegura" continues from his quote. The draft had said ECO names no speaker.
+  - S75, published as a follow-up article: "What the health service pays for remote physiotherapy at home": https://promptugal.news/articles/health-service-pays-remote-physiotherapy.html
+    - Checked: Aviso 3864/2026/2 (prices, annex III's seven groups, clauses 6, 9, 21, 26) and Despacho 1573/2026 (200,00 and 100,00, no currency printed).
+    - My fixes: the AI-training sentence put in the clause's order (opt-in consent, then irreversible anonymisation); a padding line cut. 565 words. Cover in my style.
+  - S69: one "Follow-up, 19 November 2026" line at its top linking S75. Still two update notes (publish_check does not count the line).
+  - Newsroom commit and reviews: desks/reviewer-vicky/reviews/S74.md and S75.md.
+  - Live at 390 and 1280 px, light and dark: S75's cover 1200:630, og:image and thumb correct; the notes and the follow-up line before In short, links working.
+  - state: ok; done: S74 and S75 published; next: on demand; ask: none; run: prompted
