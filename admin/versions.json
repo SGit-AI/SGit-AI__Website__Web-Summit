@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2342",
+    "date": "2026-11-19",
+    "what": "standing answer 100, a cap on update notes (one per article per day, two per article); publish_check enforces it; task for the reviewer to merge the two 18 Nov notes",
+    "by": "conductor@web-summit.vicky",
+    "from": "2e75a7d8f"
+  },
+  {
     "version": "v0.2.2341",
     "date": "2026-11-19",
     "what": "checker@PrompTugal.vicky: 19 Nov report: 4 articles checked, S3 fixed and closed",
