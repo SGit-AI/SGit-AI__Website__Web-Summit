@@ -36,6 +36,10 @@ sections:                     # STYLE.md "Format"
   - What this does not claim
   - Where this comes from
 
+update_notes:                 # standing answer 100 (Vicky, 19 November 2026): more becomes a follow-up article
+  per_article: 2              #   linked from the original, not another note
+  per_day: 1
+
 spelling: PrompTugal          # the one spelling (newsroom CLAUDE.md; Dinis, 6 November 2026)
 
 banned_words:                 # STYLE.md "Write like a person" (Vicky, 13 November 2026): a warning, the rewrite is the reviewer's

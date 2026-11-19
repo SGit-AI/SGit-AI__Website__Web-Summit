@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **100** update notes: at most one per article per day and at most two per article (the numbers in `people/vicky/tools/lint_rules.yaml`); more becomes a follow-up article linked from the original; the two 18 Nov notes on the physiotherapy article merged into one.
 - **99** the numbers (word ranges, title limit, banned words, statuses) live in `people/vicky/tools/lint_rules.yaml`, read by both scripts; the reviewer works from two scripts (draft_lint.py, publish_check.py) and shorter files; it records `approved` in the draft; journalists and the analyst hand a draft over only when draft_lint shows no errors; length is standing answer 92 everywhere; the reviewer draws covers, the designer charts.
 - **98** when Vicky asks or discusses, the conductor only answers; it acts only on her clear go. Routine work she already approved continues.
 - **97** card 5 for the rest of the team: each person checks their own Web Summit app export; the method is drafted, not sent, until Vicky decides how the team hears about it.
@@ -485,6 +486,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Length** is standing answer 92 in every file. **Covers** are the reviewer's (standing answer 82); the designer draws charts and infographics inside articles.
     - **A1's title** goes under 12 words before 23 November (the analyst). **A3** stays as published.
     - **One file for the numbers** (Vicky, 18 Nov, about 19:50 UTC, in this window: "Put the adjustable values (word limits, title limit, banned words, allowed statuses) in one config file, e.g. lint_rules.yaml, that both scripts read. STYLE.md and the standing answers should point to that file instead of repeating the numbers."): `people/vicky/tools/lint_rules.yaml` holds the word ranges, the title limit, the "In short" bullets, the banned words, the statuses, the `ai_steps` range and the figure age; both scripts read it, and the prompts, the reviewer's README and STYLE.md point to it. Where a standing answer quotes Vicky's numbers, the quote stays as she said it; the file is what is checked, and a change of number is made there, at her word.
+
+100. **A cap on update notes** (Vicky, 19 Nov, about 09:35 UTC, in this window, after three update notes stacked on the physiotherapy article in two days: "Conductor: go, the reviewer merges the two 18 November notes on the physiotherapy article into one; and from now on, at most one update note per article per day and at most two per article; more becomes a follow-up article linked from the original.")
+    - **The limits** are in `people/vicky/tools/lint_rules.yaml` (`update_notes`, standing answer 99): at most one update note per article per day, at most two per article. `publish_check.py` refuses an article over either.
+    - **Beyond them:** the new material becomes a short follow-up article of its own (the normal loop: curator, journalist, reviewer), and the original gets one line at the top linking to it, not another note. The curator checks an article's notes before commissioning an update and commissions a follow-up article instead when the article is at its limit.
+    - **Now:** the reviewer merges the two "Update, 18 November 2026" notes on `ai-physiotherapy-portugal-health-service` into one note (STYLE.md "Update notes", standing answer 95), dates and sources unchanged, so the article carries two notes (19 and 18 November). STYLE.md's "Update notes" section points to the limits in `lint_rules.yaml`.
 
 ## Updates for agents
 

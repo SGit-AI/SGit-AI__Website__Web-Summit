@@ -10,6 +10,7 @@ the signature, every internal link, no keys or contact details. This script does
   categories   the article has its entry in desks/curator/categories.json (runs newsroom/tools/categories-check.mjs)
   ai fields    ai_connection, ai_steps (0 to 3) and ai_places in the front matter, and no "Notes for the reviewer"
                block left in the text (standing answers 81, 90, 91)
+  update notes at most update_notes.per_article per article and per_day on one date (standing answer 100)
   approval     the draft with the same story id has status approved or published (STYLE "Status"; R-PUB-1 records
                the approval in the draft; enforced at Vicky's word, 18 November 2026)
   cover        image: points to design/infographics/out/<slug>--paper--card.png; the four PNGs
@@ -50,6 +51,7 @@ with open(RULES_FILE, encoding='utf-8') as _f:
 STEPS = tuple(R['ai_steps'])
 MAX_AGE = int(R['figures_max_age_days'])
 PUBLISH_OK = set(R['publish_ok'])
+UPD = R.get('update_notes', {})
 
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october',
           'november', 'december']
@@ -116,6 +118,17 @@ def check(root, slug, today):
         fails.append('ai_steps is "%s"; it is a number from %d to %d (standing answer 81)' % (st, STEPS[0], STEPS[1]))
     if re.search(r'^## Notes for the reviewer', body, re.M):
         fails.append('the "Notes for the reviewer" block is still in the text: move it to the front matter (standing answer 91)')
+
+    # update notes (standing answer 100): at most per_article notes, at most per_day on any one date
+    dates = re.findall(r'^> \*\*Update, (\d{1,2} [A-Za-z]+ \d{4})\.\*\*', body, re.M)
+    if UPD and dates:
+        if len(dates) > int(UPD.get('per_article', 99)):
+            fails.append('%d update notes; the limit is %d per article: make the new material a follow-up article '
+                         'linked from this one (standing answer 100)' % (len(dates), int(UPD['per_article'])))
+        for d in sorted(set(dates)):
+            if dates.count(d) > int(UPD.get('per_day', 99)):
+                fails.append('%d update notes dated %s; the limit is %d per day: merge them (standing answer 100)'
+                             % (dates.count(d), d, int(UPD['per_day'])))
 
     # approval recorded in the draft
     story = str(field('story') or '')
