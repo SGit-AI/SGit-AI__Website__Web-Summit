@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2343",
+    "date": "2026-11-19",
+    "what": "reviewer@PrompTugal.vicky: report and ledger, S69's 18 Nov notes merged; limits in STYLE.md",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "d92e36490"
+  },
+  {
     "version": "v0.2.2342",
     "date": "2026-11-19",
     "what": "standing answer 100, a cap on update notes (one per article per day, two per article); publish_check enforces it; task for the reviewer to merge the two 18 Nov notes",
