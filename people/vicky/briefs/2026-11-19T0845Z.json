@@ -1,0 +1,68 @@
+{
+ "number": 15,
+ "date": "19 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "The reviewer on scripts; S70 and S71 out; S72 and S73 on their way",
+ "when": "19 November 2026, 08:45 UTC (since brief 14, 18 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "None: no hold, the one decisions.md edit is mine (standing answer 99), no key changes for your agents, no Gmail use."
+ ],
+ "actions": [
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "Scout's ideas for your own app (P35 to P37)",
+     "why": "Scout's note 09 explains how the team makes iPhone apps. It proposes you try the team's apps on your phone first (P35), then decide in one sentence what your app is for and whether it holds anything private (P36); then I write a one-page brief (P37). Nothing starts until you say. My recommendation: only if you still want an app; it is not part of card 5.",
+     "reply": "Conductor: accept scout's proposals 35 and 36; my app is for: <one sentence>."
+    },
+    {
+     "what": "Optional, carried over: the privacy point in Dinis's \"Six people and 250 agents\" article",
+     "why": "Your checker raised it again on 18 Nov. It is Dinis's article and his call.",
+     "reply": "Hi Dinis, small one: the \"Six people and 250 agents\" article says where Angelo, Silvio and Jose live. Did they OK that? My checker flagged it, just in case."
+    }
+   ]
+  },
+  {
+   "window": "For vault@",
+   "items": [
+    {
+     "what": "Nothing waiting",
+     "why": "",
+     "reply": "(none)"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Agent runs",
+   "items": [
+    "Grid, 18 and 19 Nov: researcher 11:15 ✓ 15:15 ✓ 07:15 ✓. Curator 11:35 ✓ (S71) 15:35 ○ 07:35 ✓ (S72, S73). Dashboard 09:15 ✓ (partial: the story list kept its old copy; the curator's link fix came at 10:00, so today's 09:15 run should refresh it). Checker 10:00 ✓ (3 articles, 9 earlier findings fixed). Scout: note 09.",
+    "The reviewer works from the scripts since 18 Nov evening (standing answer 99): new README and STYLE.md committed, draft_lint and publish_check tried, nothing flagged wrongly. S71 was the first draft through both: 0 errors, published.",
+    "Published yesterday: S70 and S71, two update notes at the top of S69 (AI physiotherapy), with a pointer on S67. Your desks have 59 articles live; nothing Ready is waiting.",
+    "Today: S72 (an update: the health service's remote physiotherapy is open to any provider) and S73 (Superhuman to buy Rows, the AI spreadsheet company from Porto; the one card 5 company that held up) sent to journalist-portugal at 08:50.",
+    "A1's title is now 11 words and passes draft_lint; it waits for INE's figures tomorrow (my reminder is at 13:00 UTC). The analyst's report still asks for A3's approval: A3 was published on 16 Nov, so nothing to do.",
+    "Card 5: the note is live on your team page with the 18 Nov check of the ten companies (counts only)."
+   ]
+  },
+  {
+   "title": "Usage & Checks",
+   "items": [
+    "Usage since 18 Nov 08:45 (tally of the ledger, standing answer 88; API-equivalent, not money): about 9.3 million fresh tokens across 9 agents. Busiest: researcher (6 wakes, with the ten companies), curator (4), checker (with sub-agents), reviewer (3).",
+    "Schedule: not re-listed today; no scheduled task was created or changed since yesterday's check. decisions.md: one edit, mine (standing answer 99). Keys: no changes for your agents. Gmail: none. Releases: all live. Follow-up drafts waiting: 6 (inbox@, 17 Nov about 19:55 UTC)."
+   ]
+  }
+ ],
+ "next": [
+  "S72 and S73 drafted, reviewed and published",
+  "Friday 20 Nov 13:00 UTC: INE's figures, then A1",
+  "The dashboard's story list refreshed at 09:15"
+ ],
+ "sources": [
+  "people/vicky/reports/*.md since 18 Nov 08:45, read by a Sonnet sub-agent (P16)",
+  "people/vicky/tools/tally.py (standing answer 88)",
+  "Newsroom PrompTugal/PrompTugal__News__Website dev"
+ ]
+}
