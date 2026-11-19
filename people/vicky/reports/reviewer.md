@@ -198,3 +198,14 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Approval recorded (standing answer 99): S71 approved, and S67's and S69's drafts set to published, which they have been since 16 and 17 November. publish_check reads the original story's draft for an update.
   - Live at 390 and 1280 px: notes newest first before In short, all links work, 390 wide.
   - state: ok; done: S71 published as updates; next: on demand; ask: none; run: prompted
+- Thu 19 Nov 2026, 09:55 UTC (task file people/vicky/tasks/2026-11-19-0900-review-s72-s73.md). Both drafts: draft_lint 0 errors, approval recorded, publish_check OK. Both re-signed.
+  - S72, published as the newest update note on S69: https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html
+    - Checked: the gazette's Aviso 3864/2026/2 (clauses 1 to 5) and the copy of the ACSS letter (12 months, renewable, signed 1 June 2026).
+    - My fixes: who may join narrowed to what clause 3 says (those providing this kind of care who meet the terms, not any health-sector provider); the letter's copy linked.
+  - S73, published: "Superhuman agreed to buy Rows, the AI spreadsheet company from Porto": https://promptugal.news/articles/superhuman-to-buy-rows-porto.html
+    - Checked: the two companies' February posts.
+    - The closing is not stated beyond the sources. "Rows joined Superhuman" is an undated banner across Rows' whole site (home, blog and pricing), reported as such, not as proof.
+    - My fixes: title "agreed to buy"; a padding line cut. 393 words. Cover in my style.
+  - Newsroom commit and reviews: desks/reviewer-vicky/reviews/S72.md and S73.md.
+  - Live at 390 and 1280 px, light and dark: S73's cover 1200:630, og:image and thumb correct; S69's three notes newest first, links working.
+  - state: ok; done: S72 and S73 published; next: on demand; ask: none; run: prompted
