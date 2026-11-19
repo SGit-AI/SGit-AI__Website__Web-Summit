@@ -209,3 +209,10 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Newsroom commit and reviews: desks/reviewer-vicky/reviews/S72.md and S73.md.
   - Live at 390 and 1280 px, light and dark: S73's cover 1200:630, og:image and thumb correct; S69's three notes newest first, links working.
   - state: ok; done: S72 and S73 published; next: on demand; ask: none; run: prompted
+- Thu 19 Nov 2026, 11:35 UTC (task file people/vicky/tasks/2026-11-19-0940-reviewer-merge-notes.md; standing answer 100).
+  - S69's two 18 November notes merged into one (newsroom ee3acf111): one intro line with both sources linked and dated (DNOTICIAS 18 June 2026, RTP / Lusa 21 December 2023), four points grouped by subject and source, and the caveats once at the end. Every fact, source, date and link kept.
+  - The 19 November note stays above it. publish_check: OK (2 notes, 1 per day). Re-signed.
+  - Live at 390 and 1280 px: the two notes before In short, all six links present, 390 wide.
+  - STYLE.md "Update notes": the "Limits" bullet added word for word (newsroom 94b7d9bba).
+  - S69 is now at the two-note limit: its next update is a follow-up article.
+  - state: ok; done: notes merged, limits in STYLE.md; next: on demand; ask: none; run: prompted
