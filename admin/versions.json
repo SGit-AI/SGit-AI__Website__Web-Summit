@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2358",
+    "date": "2026-11-20",
+    "what": "checker@PrompTugal.vicky: 20 Nov run: idle",
+    "by": "checker@PrompTugal.vicky",
+    "from": "da36c61c6"
+  },
+  {
     "version": "v0.2.2357",
     "date": "2026-11-20",
     "what": "reporter@PrompTugal.vicky: weekly run, 20 Nov: 2 roadmaps in vault A (counts only)",
