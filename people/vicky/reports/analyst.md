@@ -99,3 +99,11 @@ Vicky's analysis desk for PrompTugal.news (standing answer 75). One entry per ru
 
 - A1's title shortened from 14 to 11 words: "Analysis: Portuguese people above the EU average on AI, companies below". draft_lint: 0 errors, 0 warnings. The INE update on 20 Nov follows separately.
 - state: ok; done: A1 title; next: A1 update after INE's 20 Nov release; ask: none; run: task
+
+## Fri 20 Nov 2026, 13:23 UTC (task 2026-11-20-1300-analyst-a1-ine)
+
+- **INE's 2026 ICT surveys are out** (20 Nov, read at ine.pt). People 16 to 74 using AI tools: 54.4% (38.7% in 2025); for work 30.7% (19.9%); Algarve 56.3% (+16.6 points). Companies with 10+ staff: 19.6% (11.5%). The EU's 2026 figures are not yet published, so the EU comparison stays at 2025.
+- **A1 updated:** draft and data note, newsroom commit `ccbaf2ed5` (topics page fixed in `9cc599f06`; both pushed, their deploy queued). 596 words, draft_lint 0 errors. Every figure checked on 20 Nov; the data note lists what changed and gives a new chart spec (Portugal 2025 and 2026, EU 2025, in two panels).
+- **Caveats recorded:** INE's companies survey moved to a new classification of economic activities in 2026 (totals compare, sectors not); the companies' measure has counted an eighth kind of AI since 2025.
+- **For Vicky:** the title ("Portuguese people above the EU average on AI, companies below") holds for 2025, the latest year with EU figures. For 2026, Portugal's companies (19.6%) are close to the EU's 2025 level (20.0%), and the EU's 2026 figure is not out. Keep the title (my recommendation, the piece says the comparison waits for Eurostat) or change it.
+- state: ok; done: A1 updated with INE 2026; next: Vicky's look at A1; Monday's weekly run; ask: Vicky, keep A1's title as it is (recommended) or change it; run: task
