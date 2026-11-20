@@ -473,3 +473,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - S74 (the Rows update) and S75 (what the health service pays for remote physiotherapy) were published on 19 Nov, so they are off the ready list. The researcher has now read the whole [gazette notice](https://files.diariodarepublica.pt/gratuitos/2s/2026/02/2S037A0000S00.pdf), which adds points S75 does not carry: patients may choose their provider freely and pay nothing beyond the convention's prices, a provider with missing device documents is excluded at once, the agency may audit, the platform must not block data portability, and either side may end it on 60 days' notice after six months. Commissioned S76 for journalist-portugal, a short first update note on S75 (categories Portugal and AI; one per article per day, standing answer 100), with every point attributed to the gazette. Map `desks/curator/2026-11-20-0750.json`.
 - Gaps for the researcher: whether other providers joined; whether the Rows deal closed; UST's Lisbon activity; Cova da Beira's own account.
 - state: ok; done: S76 commissioned, README and map committed; next: curator 11:35; ask: none; run: scheduled
+
+## Fri 20 Nov 2026, 11:35 UTC run
+
+- No hold on either site; decisions.md has nothing new for the curator; prompts file re-read, no difference; no machine reads of Web Summit, Luma, Meetup or Eventbrite.
+- No new story. The researcher's one revision, [Rows' own post](https://rows.com/blog/post/rows-is-joining-superhuman) now carrying an undated past-tense line "Rows joined Superhuman.", repeats what S73 already says; no dated report of the closing exists yet. S76 (patients can pick their provider, a first update note on S75) is drafted. Map `desks/curator/2026-11-20-1150.json`.
+- Gaps for the researcher: a dated report of the Rows closing, the product end or Porto hiring; whether other providers joined the convention; UST's Lisbon activity; Cova da Beira's own account.
+- state: ok; done: desk review, nothing to commission; next: curator 15:35; ask: none; run: scheduled
