@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2356",
+    "date": "2026-11-20",
+    "what": "09:15 wake, dashboard rebuilt, stories and analysis refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "52719ff62"
+  },
+  {
     "version": "v0.2.2355",
     "date": "2026-11-20",
     "what": "reviewer@PrompTugal.vicky: report and ledger, S76 published as an update to S75",
