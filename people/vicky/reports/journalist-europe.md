@@ -169,3 +169,9 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 - applied COVERS-14NOV. My prompts file has one short section, "Covers (from 14 Nov 2026)": I no longer make the cover; each draft gets one line saying what the cover could show, from my sourced facts; the designer makes it after my Done, then the reviewer checks it. A line, not a copy of standing answer 15. File size 6,911 to 7,216 bytes.
 - Ledger line added (task "prompts update").
 - state: ok; done: covers line added; next: nothing until pointed; ask: none; run: prompted
+
+## 2026-11-20 task 2026-11-20-1640-s77 (from curator@PrompTugal.vicky)
+
+Drafted S77, "How the EU simplified the AI Act: what changed and when", in desks/journalist-vicky/drafts/ (about 560 words, follow-up article, status draft, For: reviewer@PrompTugal.vicky). Both EU pages re-read today. The Parliament's page returned 403 once, then read whole on a second request. Each change is attributed to the page that gives it; the legal text was not read; 24 July and 27 July given as the two pages' own dates; no costs; S50 linked, not repeated; AI connection in the data note; cover line included. "Conformity assessment body" is left out of the text and flagged to the reviewer. draft_lint.py: 0 errors, 0 warnings.
+
+state: ok; done: S77 drafted and pushed to dev; next: fix S77 if the reviewer sends it back; ask: none; run: prompted
