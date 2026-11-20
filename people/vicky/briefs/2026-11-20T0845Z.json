@@ -1,0 +1,66 @@
+{
+ "number": 16,
+ "date": "20 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "Four stories out yesterday; S76 on its way; INE's figures today",
+ "when": "20 November 2026, 08:45 UTC (since brief 15, 19 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "None: no hold, the one decisions.md edit is mine (standing answer 100), no key changes for your agents, no Gmail use."
+ ],
+ "actions": [
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "Commissions wait until my evening run (open since last night)",
+     "why": "For two days the curator's 11:35 commissions reached the journalist only at my 20:45 relay (S71, then S74 and S75), about 9 hours lost each time. My recommendation: the curator sends the journalist the same one-line message itself when it marks a story ready; no extra runs.",
+     "reply": "Conductor: go, option A: the curator messages the journalist itself when it marks a commission ready."
+    },
+    {
+     "what": "Optional, carried over: the privacy point in Dinis's \"Six people and 250 agents\" article",
+     "why": "Your checker raised it again on 19 Nov. It is Dinis's article and his call.",
+     "reply": "Hi Dinis, small one: the \"Six people and 250 agents\" article says where Angelo, Silvio and Jose live. Did they OK that? My checker flagged it, just in case."
+    }
+   ]
+  },
+  {
+   "window": "For vault@",
+   "items": [
+    {
+     "what": "Nothing waiting",
+     "why": "",
+     "reply": "(none)"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Agent runs",
+   "items": [
+    "Grid, 19 and 20 Nov: researcher 11:15 ✓ 15:15 ✓ 07:15 ✓. Curator 11:35 ✓ (S74, S75) 15:35 ✓ (S75 extended) 07:35 ✓ (S76). Dashboard 09:15 ✓ (story list refreshed with the fixed link). Checker 10:00 ✓ (4 articles, one finding closed). Scout: no new note.",
+    "Published yesterday, all through draft_lint and publish_check with no errors: S72 (update note on the physiotherapy article), S73 (Superhuman to buy Rows), S74 (first update note on S73) and S75 (what the health service pays for remote physiotherapy, a follow-up article because the physiotherapy article had its two notes: standing answer 100 working). The two 18 November notes were merged. Your desks have 61 articles live.",
+    "Today: S76, the first update note on S75 (patients can pick their provider), sent to journalist-portugal at 08:50. At 13:00 UTC I check INE's 2026 figures for A1. The reporter (09:30) and internal (14:30) run their weekly reports.",
+    "The reviewer notes that publish_check does not count a follow-up link line as an update note: that is intended (standing answer 100 asks for that line instead of a note)."
+   ]
+  },
+  {
+   "title": "Usage & Checks",
+   "items": [
+    "Usage since 19 Nov 08:45 (tally of the ledger, standing answer 88; API-equivalent, not money): about 7.3 million fresh tokens across 6 agents. Busiest: researcher, curator, reviewer (3 wakes each), journalist-portugal (4 drafts).",
+    "Schedule: no scheduled task created or changed since the last check. decisions.md: one edit, mine (standing answer 100). Keys: no changes for your agents. Gmail: none. Releases: all live. Follow-up drafts waiting: 6 (inbox@, 17 Nov about 19:55 UTC)."
+   ]
+  }
+ ],
+ "next": [
+  "S76 drafted, reviewed and published",
+  "13:00 UTC: INE's figures, then A1's update",
+  "Your answer on option A, when you have a moment"
+ ],
+ "sources": [
+  "people/vicky/reports/*.md since 19 Nov 08:45, read by a Sonnet sub-agent (P16)",
+  "people/vicky/tools/tally.py (standing answer 88)",
+  "Newsroom PrompTugal/PrompTugal__News__Website dev"
+ ]
+}
