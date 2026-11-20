@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **101** the curator passes its own ready commissions to the journalist (a task file and the one-line message), so they no longer wait for the conductor's evening run.
 - **100** update notes: at most one per article per day and at most two per article (the numbers in `people/vicky/tools/lint_rules.yaml`); more becomes a follow-up article linked from the original; the two 18 Nov notes on the physiotherapy article merged into one.
 - **99** the numbers (word ranges, title limit, banned words, statuses) live in `people/vicky/tools/lint_rules.yaml`, read by both scripts; the reviewer works from two scripts (draft_lint.py, publish_check.py) and shorter files; it records `approved` in the draft; journalists and the analyst hand a draft over only when draft_lint shows no errors; length is standing answer 92 everywhere; the reviewer draws covers, the designer charts.
 - **98** when Vicky asks or discusses, the conductor only answers; it acts only on her clear go. Routine work she already approved continues.
@@ -491,6 +492,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **The limits** are in `people/vicky/tools/lint_rules.yaml` (`update_notes`, standing answer 99): at most one update note per article per day, at most two per article. `publish_check.py` refuses an article over either.
     - **Beyond them:** the new material becomes a short follow-up article of its own (the normal loop: curator, journalist, reviewer), and the original gets one line at the top linking to it, not another note. The curator checks an article's notes before commissioning an update and commissions a follow-up article instead when the article is at its limit.
     - **Now:** the reviewer merges the two "Update, 18 November 2026" notes on `ai-physiotherapy-portugal-health-service` into one note (STYLE.md "Update notes", standing answer 95), dates and sources unchanged, so the article carries two notes (19 and 18 November). STYLE.md's "Update notes" section points to the limits in `lint_rules.yaml`.
+
+101. **The curator passes its ready commissions on itself** (Vicky, 20 Nov, about 14:00 UTC, in this window: "Conductor: go, option A: the curator messages the journalist itself when it marks a commission ready.", after the 11:35 commissions of 18 and 19 November waited about nine hours for the conductor's 20:45 relay)
+    - When the curator marks a story `ready: true`, in the same run it writes the task file `people/vicky/tasks/<YYYY-MM-DD-HHMM>-<sid>.md` for the journalist its note names, in the shape the conductor uses (front matter `id`, `for`, `from: curator@PrompTugal.vicky`; the story, the map file, update note or follow-up article (standing answer 100), draft_lint before hand-over (standing answer 99), the Done line), commits and releases it, and then sends that journalist's session exactly `Task: pull dev and read people/vicky/tasks/<file>.md.` It finds the session by its title with the session list tool; no session id is written in any file.
+    - The journalist replies Done to the curator. The curator lists what it passed on in its report line; the conductor still sends the review task when a draft lands, and checks at each brief and relay that every ready commission has a task.
+    - Everything else stays: the journalists write only from commissions, the reviewer publishes, Vicky decides what needs her.
 
 ## Updates for agents
 
