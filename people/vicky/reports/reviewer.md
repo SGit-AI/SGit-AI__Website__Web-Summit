@@ -233,3 +233,10 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - No changes needed. S75's text and date unchanged; re-signed.
   - Live at 390 and 1280 px: the note before In short, the gazette link working.
   - state: ok; done: S76 published as an update; next: on demand; ask: none; run: prompted
+- Fri 20 Nov 2026, 16:55 UTC (task file people/vicky/tasks/2026-11-20-1400-review-a1.md): A1's title set word for word in the draft (newsroom 30f91dab8; review desks/reviewer-vicky/reviews/A1.md).
+  - The summary and In short still fit the new title, so nothing else changed.
+  - The chart is checked: six bars match the data note, and it reads at 390 px.
+  - Held for Vicky, the title only: "Analysis: AI use in Portugal jumps in 2026, for people and companies" is 12 words. The newsroom's gate refuses article titles of 12 or more (validate.js rule 8), so A1 cannot be released with it.
+  - Recommendation: drop the "Analysis:" prefix, giving 11 words. The piece keeps its "Analysis." line and tag.
+  - On Monday 23 November I re-check every figure at source and publish, with the title Vicky gives.
+  - state: blocked; done: A1 title set, review first pass; next: A1 on Monday; ask: Vicky, A1's title is one word over the gate's limit (recommend dropping "Analysis:"); run: prompted
