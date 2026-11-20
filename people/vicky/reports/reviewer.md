@@ -227,3 +227,9 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Newsroom commit and reviews: desks/reviewer-vicky/reviews/S74.md and S75.md.
   - Live at 390 and 1280 px, light and dark: S75's cover 1200:630, og:image and thumb correct; the notes and the follow-up line before In short, links working.
   - state: ok; done: S74 and S75 published; next: on demand; ask: none; run: prompted
+- Fri 20 Nov 2026, 09:40 UTC (task file people/vicky/tasks/2026-11-20-0900-review-s76.md): S76 published as S75's first update note (https://promptugal.news/articles/health-service-pays-remote-physiotherapy.html; newsroom 2462b337c; review desks/reviewer-vicky/reviews/S76.md).
+  - Scripts: draft_lint 0 errors; approval recorded; publish_check OK (1 note).
+  - Checked: every point at the gazette's Aviso 3864/2026/2, clauses 13(6)-(7), 14 to 18 and 25: free choice of provider, no other price conditions, admission documents and automatic exclusion, audits and statistics, interoperability and portability, ending the convention.
+  - No changes needed. S75's text and date unchanged; re-signed.
+  - Live at 390 and 1280 px: the note before In short, the gazette link working.
+  - state: ok; done: S76 published as an update; next: on demand; ask: none; run: prompted
