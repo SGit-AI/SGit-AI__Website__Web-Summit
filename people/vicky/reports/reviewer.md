@@ -240,3 +240,11 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Recommendation: drop the "Analysis:" prefix, giving 11 words. The piece keeps its "Analysis." line and tag.
   - On Monday 23 November I re-check every figure at source and publish, with the title Vicky gives.
   - state: blocked; done: A1 title set, review first pass; next: A1 on Monday; ask: Vicky, A1's title is one word over the gate's limit (recommend dropping "Analysis:"); run: prompted
+- Fri 20 Nov 2026, 21:30 UTC (task file people/vicky/tasks/2026-11-20-2050-review-s77.md): published S77 under R-PUB-1, "How the EU simplified the AI Act: what changed and when": https://promptugal.news/articles/how-the-eu-simplified-the-ai-act.html (newsroom cb2999c8f; review desks/reviewer-vicky/reviews/S77.md).
+  - Scripts: draft_lint 0 errors; approval recorded; publish_check OK.
+  - Checked: every claim at the European Parliament's Legislative Train page (25 Oct 2026) and the Commission's questions and answers (20 Oct 2026).
+  - Each change is attributed to the page that gives it, the legal text is said to be unread, and the two pages' dates (24 July publication, 27 July entry into force) are kept apart.
+  - My fixes: the S50 link pointed at a page that does not exist (now <slug>.html, answering 200); "Promptugal.news" spelled "PrompTugal.news". 556 words. Cover in my style.
+  - Live at 390 and 1280 px, light and dark: cover 1200:630, og:image and thumb correct, the AI connection not shown.
+  - A1 still waits on Vicky's title for Monday.
+  - state: ok; done: S77 published; next: A1 on Monday; ask: Vicky, A1's title (see the 16:55 line); run: prompted
