@@ -248,3 +248,4 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Live at 390 and 1280 px, light and dark: cover 1200:630, og:image and thumb correct, the AI connection not shown.
   - A1 still waits on Vicky's title for Monday.
   - state: ok; done: S77 published; next: A1 on Monday; ask: Vicky, A1's title (see the 16:55 line); run: prompted
+- Fri 20 Nov 2026, 22:10 UTC (task file people/vicky/tasks/2026-11-20-2115-a1-title.md): A1's final title set word for word, "Analysis: Portugal's AI use jumps in 2026, for people and companies" (11 words). draft_lint passes (newsroom ffa31392b). The summary and In short still fit. Publishing stays on Monday 23 November, after the figures are re-checked at source. state: ok; done: A1 title settled; next: A1 on Monday; ask: none; run: prompted
