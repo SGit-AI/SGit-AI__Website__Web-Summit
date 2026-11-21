@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2382",
+    "date": "2026-11-21",
+    "what": "checker@PrompTugal.vicky: 21 Nov run: idle",
+    "by": "checker@PrompTugal.vicky",
+    "from": "38faa84b5"
+  },
+  {
     "version": "v0.2.2381",
     "date": "2026-11-21",
     "what": "09:15 wake, dashboard rebuilt, stories and analysis refreshed",
