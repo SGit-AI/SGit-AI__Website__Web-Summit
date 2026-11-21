@@ -1,0 +1,61 @@
+{
+ "number": 17,
+ "date": "21 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "The curator's new routine works; S78 to the reviewer; A1 on Monday",
+ "when": "21 November 2026, 08:45 UTC (since brief 16, 20 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "None: no hold, the one decisions.md edit is mine (standing answer 101), no key changes for your agents, no Gmail use."
+ ],
+ "actions": [
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "Optional, carried over: the privacy point in Dinis's \"Six people and 250 agents\" article",
+     "why": "Your checker raises it in every run since 16 Nov. It is Dinis's article and his call; if you send this once, I will ask the checker to stop repeating it.",
+     "reply": "Hi Dinis, small one: the \"Six people and 250 agents\" article says where Angelo, Silvio and Jose live. Did they OK that? My checker flagged it, just in case."
+    }
+   ]
+  },
+  {
+   "window": "For vault@",
+   "items": [
+    {
+     "what": "Nothing waiting",
+     "why": "The reporter's old ask to reseal vault A is out of date: it opened vault A and wrote two roadmaps on 20 Nov.",
+     "reply": "(none)"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Agent runs",
+   "items": [
+    "Grid, 20 and 21 Nov: researcher 11:15 ✓ 15:15 ✓ 07:15 ✓. Curator 11:35 ○ 15:35 ✓ (S77) 07:35 ✓ (S78). Dashboard 09:15 ✓. Checker 10:00 ○. Reporter Fri 09:30 ✓ (2 roadmaps in vault A). Internal Fri 14:30 ✓ (1 piece in vault A).",
+    "The curator's new routine (standing answer 101) works: it passed S77 and S78 to journalist-europe itself, minutes after marking them ready. S77 (how the EU simplified the AI Act) was published the same evening; S78 (a law firm's reading of the changes, an update note on S77) was drafted at 07:43 and is with the reviewer.",
+    "Published yesterday: S76 (update note on S75) and S77. Your desks have 62 articles live.",
+    "A1: INE's 2026 figures in, the designer's chart drawn, your title set (\"AI use in Portugal jumps in 2026, for people and companies\", 11 words, draft_lint clean). The reviewer re-checks the figures and publishes on Monday 23 Nov."
+   ]
+  },
+  {
+   "title": "Usage & Checks",
+   "items": [
+    "Usage since 20 Nov 08:45 (tally of the ledger, standing answer 88; API-equivalent, not money): about 10.4 million fresh tokens across 10 agents. Busiest: reviewer (5 wakes), curator (4), researcher (3), the weekly reporter and internal runs.",
+    "Schedule: no scheduled task created or changed (the INE reminder fired on 20 Nov and ended itself). decisions.md: one edit, mine (standing answer 101). Keys: no changes for your agents. Gmail: none. Releases: all live. Follow-up drafts waiting: 6 (inbox@, 17 Nov about 19:55 UTC)."
+   ]
+  }
+ ],
+ "next": [
+  "S78 reviewed and published",
+  "Monday 23 Nov: A1 published; analyst's weekly run 10:15; security's weekly check 06:20",
+  "Nothing else waits on you"
+ ],
+ "sources": [
+  "people/vicky/reports/*.md since 20 Nov 08:45, read by a Sonnet sub-agent (P16)",
+  "people/vicky/tools/tally.py (standing answer 88)",
+  "Newsroom PrompTugal/PrompTugal__News__Website dev"
+ ]
+}
