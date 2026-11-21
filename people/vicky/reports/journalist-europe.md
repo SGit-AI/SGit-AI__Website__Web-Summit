@@ -175,3 +175,9 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 Drafted S77, "How the EU simplified the AI Act: what changed and when", in desks/journalist-vicky/drafts/ (about 560 words, follow-up article, status draft, For: reviewer@PrompTugal.vicky). Both EU pages re-read today. The Parliament's page returned 403 once, then read whole on a second request. Each change is attributed to the page that gives it; the legal text was not read; 24 July and 27 July given as the two pages' own dates; no costs; S50 linked, not repeated; AI connection in the data note; cover line included. "Conformity assessment body" is left out of the text and flagged to the reviewer. draft_lint.py: 0 errors, 0 warnings.
 
 state: ok; done: S77 drafted and pushed to dev; next: fix S77 if the reviewer sends it back; ask: none; run: prompted
+
+## 2026-11-21 task 2026-11-21-0750-s78 (from curator@PrompTugal.vicky)
+
+Drafted S78, a first update note on the published S77 (desks/journalist-vicky/drafts/S78-law-firm-reading-ai-act-changes-update.md, about 250 words, status draft, For: reviewer@PrompTugal.vicky). William Fry's page (12 May 2026) read whole today; every point is "William Fry says"; stated as a reading of the 7 May provisional agreement, the final Regulation (EU) 2026/1744 not read, standards and code-of-practice statements as of May; products point not presented as a contradiction of S77; Article 50, code of practice, EU database explained; AI connection in the data note. draft_lint.py: 0 errors, 0 warnings.
+
+state: ok; done: S78 drafted and pushed to dev; next: fix S78 if the reviewer sends it back; ask: none; run: prompted
