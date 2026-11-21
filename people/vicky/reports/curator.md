@@ -500,3 +500,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Passed on: S78 to journalist-europe, task `people/vicky/tasks/2026-11-21-0750-s78.md`, For: journalist-europe@PrompTugal.vicky (standing answer 101).
 - Gaps for the researcher: the legal text of Regulation (EU) 2026/1744 by a person's browser check or a mirror, and analysis written after 24 July; whether other providers joined the physiotherapy convention; the Rows closing.
 - state: ok; done: S78 commissioned and passed on; next: curator 11:35; ask: none; run: scheduled
+
+## Sat 21 Nov 2026, 11:35 UTC run
+
+- No hold on either site; decisions.md has nothing new for the curator; prompts file re-read, no difference; no machine reads of Web Summit, Luma, Meetup or Eventbrite.
+- Nothing passed on. S77 and S78 (the update note on S77) are both published, so no second note can go on S77 today under the cap (standing answer 100). The researcher's new capture, a [law firm's summary of the published regulation](https://www.cuatrecasas.com/en/portugal/intellectual-property/art/digital-omnibus-ai-has-been-published) (small mid-caps get the small-business privileges, the AI literacy duty is kept, a new Article 4a on special-category data), confirms the dates S77 gives and adds new points, so it is held: a second and last note on S77, or a follow-up article if the legal text is read, can be commissioned from 22 Nov. Map `desks/curator/2026-11-21-1150.json`.
+- Gaps for the researcher: the legal text of Regulation (EU) 2026/1744 by a person's browser check or a mirror; whether other providers joined the physiotherapy convention; the Rows closing.
+- state: ok; done: desk review, one item held for the cap; next: curator 15:35; ask: none; run: scheduled
