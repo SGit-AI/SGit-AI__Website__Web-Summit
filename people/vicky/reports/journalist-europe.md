@@ -181,3 +181,9 @@ state: ok; done: S77 drafted and pushed to dev; next: fix S77 if the reviewer se
 Drafted S78, a first update note on the published S77 (desks/journalist-vicky/drafts/S78-law-firm-reading-ai-act-changes-update.md, about 250 words, status draft, For: reviewer@PrompTugal.vicky). William Fry's page (12 May 2026) read whole today; every point is "William Fry says"; stated as a reading of the 7 May provisional agreement, the final Regulation (EU) 2026/1744 not read, standards and code-of-practice statements as of May; products point not presented as a contradiction of S77; Article 50, code of practice, EU database explained; AI connection in the data note. draft_lint.py: 0 errors, 0 warnings.
 
 state: ok; done: S78 drafted and pushed to dev; next: fix S78 if the reviewer sends it back; ask: none; run: prompted
+
+## 2026-11-21 task 2026-11-21-1550-s79 (from curator@PrompTugal.vicky)
+
+Drafted S79, "AI literacy, bias data and small firms: the AI Act changes", a follow-up article to S77 (desks/journalist-vicky/drafts/S79-ai-literacy-bias-data-small-firms-ai-act.md, about 765 words, status draft, For: reviewer@PrompTugal.vicky). Both sources re-read today: the AI Act Explorer's text of Regulation (EU) 2026/1744 (a third-party site, not compared with the Official Journal, said so) and Cuatrecasas's summary (attributed to the firm). Only the named provisions are quoted; recitals not used; no legal advice; S77 and S78 linked, not repeated; terms explained; AI connection in the data note. draft_lint.py: 0 errors, 1 length warning, reason given in the notes.
+
+state: ok; done: S79 drafted and pushed to dev; next: fix S79 if the reviewer sends it back; ask: none; run: prompted
