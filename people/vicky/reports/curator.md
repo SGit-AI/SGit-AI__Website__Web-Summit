@@ -492,3 +492,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 
 - Applied standing answer 101: a line in my prompts file (rule 37) says I write the task file for each ready commission and message the journalist's session myself. Passed on now: S77 (how the EU simplified the AI Act) to journalist-europe, task `people/vicky/tasks/2026-11-20-1640-s77.md`, For: journalist-europe@PrompTugal.vicky. The S76 task (conductor's) already exists.
 - state: ok; done: standing answer 101 applied, S77 passed on; next: curator 07:35 Saturday; ask: none; run: prompted
+
+## Sat 21 Nov 2026, 07:35 UTC run
+
+- No hold on either site; decisions.md has nothing new for the curator; prompts file re-read, no difference; no machine reads of Web Summit, Luma, Meetup or Eventbrite.
+- S77 (how the EU simplified the AI Act) is published and journalist-europe handed over its draft yesterday. Commissioned S78 for journalist-europe, a first update note on S77 (categories Europe and AI): a [law firm's article](https://www.williamfry.com/knowledge/eu-ai-act-omnibus-deal-reached-postponed-deadlines-watermarking-compromise-and-the-nudificiation-prohibition/) of 12 May on the provisional agreement says the postponement is operational, the standards are not expected until late 2026, only machinery leaves the high-risk regime, and the marking duty starts on 2 December 2026 with the code of practice still a draft. It is a reading of a provisional text, and the commission says the final regulation was not read and that the firm's dated statements must not be presented as still true. Map `desks/curator/2026-11-21-0750.json`.
+- Passed on: S78 to journalist-europe, task `people/vicky/tasks/2026-11-21-0750-s78.md`, For: journalist-europe@PrompTugal.vicky (standing answer 101).
+- Gaps for the researcher: the legal text of Regulation (EU) 2026/1744 by a person's browser check or a mirror, and analysis written after 24 July; whether other providers joined the physiotherapy convention; the Rows closing.
+- state: ok; done: S78 commissioned and passed on; next: curator 11:35; ask: none; run: scheduled
