@@ -4,7 +4,7 @@ Kept by analyst@PrompTugal.vicky, Vicky Wang's analysis desk for PrompTugal.news
 
 Every topic passes the PrompTugal test (Dinis's brief "PrompTugal.news by place", 14 November 2026): it is about AI directly or within two or three steps, and the path is written down.
 
-Last updated: Monday 16 November 2026, 12:44 UTC.
+Last updated: Friday 20 November 2026, 13:07 UTC.
 
 ## At a glance
 
@@ -13,7 +13,7 @@ Last updated: Monday 16 November 2026, 12:44 UTC.
 | A4 | AI startup funding in Portugal | set aside | 15 Nov 2026 |
 | A3 | Sixty megawatts and a 1,000 MW goal | approved (chart, then published Thu 19 Nov) | 15 Nov 2026 |
 | A2 | One firm in nine, and the gap that opened | proposed | 15 Nov 2026 |
-| A1 | People ahead, companies behind | drafting (framing approved; due after 20 Nov) | 15 Nov 2026 |
+| A1 | People ahead, companies behind | drafting: updated with INE 2026 (20 Nov), for Vicky | 15 Nov 2026 |
 
 States: proposed, chosen, drafting, with Vicky, published, set aside. The full proposal of 15 November: `desks/analyst-vicky/proposals/2026-11-15.md`.
 
@@ -58,15 +58,18 @@ States: proposed, chosen, drafting, with Vicky, published, set aside. The full p
 
 ## A1: People ahead, companies behind
 
-- **State:** drafting. Vicky approved the framing on 16 Nov 2026 (standing answer 89). Draft: `desks/analyst-vicky/drafts/a1-people-ahead-companies-behind.md`, cut to 522 words; data note in `desks/analyst-vicky/data/`. Updated with INE's 2026 figures after their release on 20 November 2026, then published early the week after.
-- **The question.** In 2025 people in Portugal used generative AI more than the EU average, but Portuguese companies used AI far less. Why the gap, and what does each number measure?
-- **AI path.** AI directly, 0 steps. Linked to the Humans and AI series. Places: Portugal, Europe. The Algarve only if INE's release gives a regional figure (to check).
-- **Checked figures** (2025).
-  - People aged 16 to 74 who used generative AI tools in the last three months: Portugal 38.7%, EU 32.7%. Portugal ranks 13th of 27.
-  - For work: Portugal 19.9%, EU 15.4%.
-  - Ages 16 to 24: 76.5% against 63.8%. Ages 55 to 74: 12.1% against 12.0%.
-  - Companies with 10 or more staff using any AI technology: Portugal 11.5%, EU 20.0%. Portugal ranks 21st of 27.
-- **What the data cannot show.** A trend for people: the question exists only for 2025. Whether workers use AI with their employer's tools. People and companies are different units, so the two shares are never subtracted. How often or how well AI is used. Private surveys giving higher shares ("two in three", "almost 90%") are not official and are not used until each is read at the company's own report.
+- **State:** drafting. Updated on 20 Nov 2026 with INE's 2026 results (596 words; draft and data note in `desks/analyst-vicky/`). Framing approved by Vicky on 16 Nov (standing answer 89); published early next week after her look at the update.
+- **The question.** People in Portugal use AI more than the EU average, but Portuguese companies have used it less. Why the gap, what does each number measure, and is it closing?
+- **AI path.** AI directly, 0 steps. Linked to the Humans and AI series. Places: Portugal, the Algarve (INE's regional figure, 2026), Europe.
+- **Checked figures** (2026 checked on 20 Nov 2026; EU 2025 re-read the same day, unchanged).
+  - People 16 to 74 using AI tools in the last three months: Portugal 54.4% in 2026, 38.7% in 2025. EU 32.7% in 2025 (Portugal 13th of 27). EU 2026 not yet published.
+  - For work: 30.7% in 2026, 19.9% in 2025 (EU 15.4% in 2025).
+  - Regions 2026: Grande Lisboa 63.5%, Península de Setúbal 62.5%, Algarve 56.3% (+16.6 points), Alentejo lowest at 46.7%.
+  - Companies with 10 or more staff using AI: Portugal 19.6% in 2026, 11.5% in 2025. EU 20.0% in 2025 (Portugal 21st of 27).
+  - By size 2026 (2025): 10 to 49 staff 16.3% (9.4%), 50 to 249 staff 32.1% (18.2%), 250+ staff 65.5% (49.1%).
+- **What the data cannot show.** A 2026 comparison with the EU, until Eurostat publishes. Whether workers use AI with their employer's tools. People and companies are different units, so the two shares are never subtracted. Sector comparisons for companies across 2025 and 2026 (INE changed the classification of economic activities). From 2025 the companies' measure counts an eighth kind of AI (pictures, video, sound), so 2025 and 2026 compare with each other but not exactly with 2023 and 2024.
 - **Sources.**
-  - [Eurostat, "Individuals - use of generative AI tools" (isoc_ai_iaiu)](https://ec.europa.eu/eurostat/databrowser/view/isoc_ai_iaiu/default/table), read through Eurostat's data API 15 November 2026
-  - [Eurostat, "Artificial intelligence by size class of enterprise" (isoc_eb_ai)](https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ai/default/table), read through Eurostat's data API 15 November 2026
+  - [INE, "Mais de metade da população dos 16 aos 74 anos utilizava inteligência artificial"](https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUESdest_boui=770294261&DESTAQUESmodo=2), published 20 November 2026, read 20 November 2026
+  - [INE, "Utilização de Inteligência Artificial pelas empresas aumenta para 19,6%"](https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUESdest_boui=770294191&DESTAQUESmodo=2), published 20 November 2026, read 20 November 2026
+  - [Eurostat, "Individuals - use of generative AI tools" (isoc_ai_iaiu)](https://ec.europa.eu/eurostat/databrowser/view/isoc_ai_iaiu/default/table), read through Eurostat's data API 20 November 2026
+  - [Eurostat, "Artificial intelligence by size class of enterprise" (isoc_eb_ai)](https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ai/default/table), read through Eurostat's data API 20 November 2026
