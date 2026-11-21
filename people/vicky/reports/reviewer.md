@@ -256,3 +256,11 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - My one fix: the image and video controls are against misuse for the new ban's purposes, as the firm says, not misuse in general.
   - S77's text and date unchanged; re-signed. Live at 390 and 1280 px: the note before In short, the link working.
   - state: ok; done: S78 published as an update; next: A1 on Monday; ask: none; run: prompted
+- Sat 21 Nov 2026, 21:40 UTC (task file people/vicky/tasks/2026-11-21-2050-review-s79.md): published S79 under R-PUB-1, "AI literacy, bias data and small firms: the AI Act changes": https://promptugal.news/articles/ai-literacy-bias-data-small-firms-ai-act.html (newsroom ba0e3bbf0; review desks/reviewer-vicky/reviews/S79.md).
+  - Scripts: draft_lint 0 errors and 1 length warning; approval recorded; publish_check OK (S79 and S77).
+  - Checked: every quote at the amending text on the AI Act Explorer (Articles 3, 4, 4a(1), 57(1), 75(1), 99(6a)), and every law-firm point at Cuatrecasas.
+  - My fixes: the S77 links pointed at a page that does not exist; "Promptugal.news" spelled "PrompTugal.news"; two sentences repeating "What this does not claim" cut.
+  - Length: about 740 words, judged earned by five separate provisions (standing answer 92). Cover in my style.
+  - S77 gets one "Follow-up" line linking S79.
+  - Live at 390 and 1280 px, light and dark: cover 1200:630, og:image and thumb correct, the follow-up line on S77 working.
+  - state: ok; done: S79 published; next: A1 on Monday; ask: none; run: prompted
