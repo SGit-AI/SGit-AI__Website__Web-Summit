@@ -522,3 +522,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Nothing commissioned or passed on. S79 (AI literacy, bias data and small firms) is published. The researcher's one capture, a Coda-hosted migration guide for Rows users, states the same dates S73 already carries (transition to 31 May 2026, accounts removed after) on a second undated company page; it is not a dated report of the closing, and a note would use S73's last slot for nothing new. Map `desks/curator/2026-11-22-0750.json`.
 - Gaps for the researcher: a dated report of the Rows closing; whether other providers joined the physiotherapy convention; UST's Lisbon activity; the AI Act text checked against the Official Journal (a person's browser check).
 - state: ok; done: desk review, nothing to commission; next: curator 11:35; ask: none; run: scheduled
+
+## Sun 22 Nov 2026, 11:35 UTC run
+
+- decisions.md read first (nothing new for me); no hold file on either site; prompts file re-read, matches; RULES-11NOV kept; applied SA58-THEMES and SA54-LEDGER. Map: `desks/curator/2026-11-22-1150.json` in the newsroom.
+- The researcher's one capture (Forbes Portugal, 19 June, on Sword Health's arrival in the health service) repeats the 97% and 45% company estimates that S69 already carries; S69 has used its two notes (standing answer 100), and the piece adds no independent check. Held, nothing commissioned.
+- Gap sent back to the researcher: an independent check of those estimates, a dated report of the Rows closing, other providers in the physiotherapy convention, UST's Lisbon activity, Cova da Beira's own account.
+- state: ok; done: desk review, nothing to commission; next: curator 15:35; ask: none; run: scheduled
