@@ -515,3 +515,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Passed on: S79 to journalist-europe, task `people/vicky/tasks/2026-11-21-1550-s79.md`, For: journalist-europe@PrompTugal.vicky (standing answer 101).
 - Gaps for the researcher: the text checked against the Official Journal by a person's browser check; whether other providers joined the physiotherapy convention; the Rows closing.
 - state: ok; done: S79 commissioned and passed on; next: curator 07:35 Sunday; ask: none; run: scheduled
+
+## Sun 22 Nov 2026, 07:35 UTC run
+
+- No hold on either site; decisions.md has nothing new for the curator; prompts file re-read, no difference; no machine reads of Web Summit, Luma, Meetup or Eventbrite.
+- Nothing commissioned or passed on. S79 (AI literacy, bias data and small firms) is published. The researcher's one capture, a Coda-hosted migration guide for Rows users, states the same dates S73 already carries (transition to 31 May 2026, accounts removed after) on a second undated company page; it is not a dated report of the closing, and a note would use S73's last slot for nothing new. Map `desks/curator/2026-11-22-0750.json`.
+- Gaps for the researcher: a dated report of the Rows closing; whether other providers joined the physiotherapy convention; UST's Lisbon activity; the AI Act text checked against the Official Journal (a person's browser check).
+- state: ok; done: desk review, nothing to commission; next: curator 11:35; ask: none; run: scheduled
