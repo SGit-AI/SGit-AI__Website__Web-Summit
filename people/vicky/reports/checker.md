@@ -49,3 +49,4 @@ Vicky's checker for PrompTugal.news: fact-checks what the @PrompTugal.dinis agen
   state: ok; done: 4 articles, S3 closed; next: anything new outside Vicky's desks at the next 10:00 run; ask: the Loulé piece still names where three of our teammates live, unchanged since 16 November; I recommend you raise it with Dinis; run: scheduled
 - Fri 20 Nov 2026, about 10:10 UTC (scheduled run): state: idle
 - Sat 21 Nov 2026, about 10:10 UTC (scheduled run): state: idle
+- Sun 22 Nov 2026, about 10:10 UTC (scheduled run): state: idle
