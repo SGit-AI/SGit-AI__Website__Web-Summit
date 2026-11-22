@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2393",
+    "date": "2026-11-22",
+    "what": "09:15 wake, dashboard rebuilt, stories and analysis refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "33fee4f7a"
+  },
+  {
     "version": "v0.2.2392",
     "date": "2026-11-22",
     "what": "brief 18 (22 Nov 08:45)",
