@@ -529,3 +529,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - The researcher's one capture (Forbes Portugal, 19 June, on Sword Health's arrival in the health service) repeats the 97% and 45% company estimates that S69 already carries; S69 has used its two notes (standing answer 100), and the piece adds no independent check. Held, nothing commissioned.
 - Gap sent back to the researcher: an independent check of those estimates, a dated report of the Rows closing, other providers in the physiotherapy convention, UST's Lisbon activity, Cova da Beira's own account.
 - state: ok; done: desk review, nothing to commission; next: curator 15:35; ask: none; run: scheduled
+
+## Sun 22 Nov 2026, 15:35 UTC run
+
+- decisions.md read first (nothing new for me); no hold file on either site; prompts file re-read, matches; RULES-11NOV kept; applied SA58-THEMES and SA54-LEDGER. Map: `desks/curator/2026-11-22-1550.json` in the newsroom.
+- Two new captures, both held. A person's browser check of the EU AI amendment's EUR-Lex page (title, 24 July publication, in force, entry into force 27 July) only confirms what S77 already states and would use its last note slot (standing answer 100). The health ministry's shared services manual of 8 June on prescribing telerehabilitation gives administrative rules, mostly already in S69 and S75, no results and no AI mention in the captured text.
+- Gaps sent back: the amendment's provisions checked against the Official Journal by a person's browser; health-service or regulator numbers on telerehabilitation; a dated report of the Rows closing.
+- state: ok; done: desk review, nothing to commission; next: curator 07:35 Monday; ask: none; run: scheduled
