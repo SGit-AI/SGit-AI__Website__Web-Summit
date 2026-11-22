@@ -1,0 +1,64 @@
+{
+ "number": 18,
+ "date": "22 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "A quiet Saturday: S78 and S79 out; A1 tomorrow",
+ "when": "22 November 2026, 08:45 UTC (since brief 17, 21 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "None: no hold, no decisions.md edit, no key changes for your agents, no Gmail use."
+ ],
+ "actions": [
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "Optional: one browser check for the researcher",
+     "why": "The AI Act stories (S77 to S79) rest on the European Parliament's and Commission's pages; the final legal text on the EU's law site (EUR-Lex) blocks machine reads, so the stories say it was not read. A person opening that page once would let the researcher close the gap. Only if you want it; the stories are correct as they stand.",
+     "reply": "Conductor: no need for the Official Journal check."
+    },
+    {
+     "what": "Optional, carried over: the privacy point in Dinis's \"Six people and 250 agents\" article",
+     "why": "Still in your checker's reports. It is Dinis's article and his call.",
+     "reply": "Hi Dinis, small one: the \"Six people and 250 agents\" article says where Angelo, Silvio and Jose live. Did they OK that? My checker flagged it, just in case."
+    }
+   ]
+  },
+  {
+   "window": "For vault@",
+   "items": [
+    {
+     "what": "Nothing waiting",
+     "why": "",
+     "reply": "(none)"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Agent runs",
+   "items": [
+    "Grid, 21 and 22 Nov: researcher 11:15 ✓ 15:15 ✓ 07:15 ✓. Curator 11:35 ○ (one item held for the update-note cap, standing answer 100 working) 15:35 ✓ (S79, passed on itself) 07:35 ○. Dashboard 09:15 ✓. Checker 10:00 ○.",
+    "Published yesterday: S78 (a law firm's reading of the AI Act changes, the first update note on S77) and S79 (AI literacy, bias data and small firms: the AI Act changes, a follow-up article; about 740 words, the reviewer judged the length earned). Your desks have 63 articles live; nothing waiting.",
+    "Monday 23 Nov: A1 (\"AI use in Portugal jumps in 2026, for people and companies\") published by the reviewer after re-checking the figures; the analyst's weekly run at 10:15; security's weekly check at 06:20, its note in Monday's brief."
+   ]
+  },
+  {
+   "title": "Usage & Checks",
+   "items": [
+    "Usage since 21 Nov 08:45 (tally of the ledger, standing answer 88; API-equivalent, not money): about 4.8 million fresh tokens across 5 agents, a quiet day. Busiest: curator and researcher (3 wakes each).",
+    "Schedule: no scheduled task created or changed. decisions.md: no edits. Keys: no changes. Gmail: none. Releases: all live. Follow-up drafts waiting: 6 (inbox@, 17 Nov about 19:55 UTC)."
+   ]
+  }
+ ],
+ "next": [
+  "Monday: A1 live; security's and the analyst's weekly runs",
+  "Nothing waits on you"
+ ],
+ "sources": [
+  "people/vicky/reports/*.md since 21 Nov 08:45 (read directly; a quiet day)",
+  "people/vicky/tools/tally.py (standing answer 88)",
+  "Newsroom PrompTugal/PrompTugal__News__Website dev"
+ ]
+}
