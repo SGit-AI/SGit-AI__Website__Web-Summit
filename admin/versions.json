@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2402",
+    "date": "2026-11-23",
+    "what": "23 Nov 07:15 research run report",
+    "by": "researcher@web-summit.vicky",
+    "from": "96f4fa1d5"
+  },
+  {
     "version": "v0.2.2401",
     "date": "2026-11-23",
     "what": "weekly note 10: one reusable item (a diff review before each commit), P38",
