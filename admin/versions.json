@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2404",
+    "date": "2026-11-23",
+    "what": "journalist-ai@PrompTugal.vicky: report and ledger for S80",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "c6ddc7c44"
+  },
+  {
     "version": "v0.2.2403",
     "date": "2026-11-23",
     "what": "curator@PrompTugal.vicky: 23 Nov 07:35 run report and the S80 task for journalist-ai",
