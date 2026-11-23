@@ -264,3 +264,14 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - S77 gets one "Follow-up" line linking S79.
   - Live at 390 and 1280 px, light and dark: cover 1200:630, og:image and thumb correct, the follow-up line on S77 working.
   - state: ok; done: S79 published; next: A1 on Monday; ask: none; run: prompted
+- Mon 23 Nov 2026, 09:45 UTC (task file people/vicky/tasks/2026-11-20-1400-review-a1.md, with the title from 2026-11-20-2125-a1-title-corrected.md): published A1, "AI use in Portugal jumps in 2026, for people and companies": https://promptugal.news/articles/ai-use-in-portugal-2026.html (newsroom dc76c2530; review desks/reviewer-vicky/reviews/A1.md).
+  - Publish-day re-check (standing answer 86) at INE (the people report and the companies' Quadros 7 and 7.1) and the Eurostat API: every figure unchanged, so nothing back to the analyst. INE's "17.0 pp" is the personal-use share, so the draft's 15.7 pp total holds.
+  - The designer's chart wired under "The story"; the PrompTugal test moved into front matter. About 600 words. Cover in my style.
+  - Live at 390 and 1280 px, light and dark: the chart keeps 1280:1884 with its ink twin; og:image and the thumb are the cover.
+  - My send_later reminder for today (trig_016yYiA8dEvm7TQe8ee6pyDm) fired after I had started and is deleted.
+  - state: ok; done: A1 published; next: S80; ask: none; run: prompted
+- Mon 23 Nov 2026, 10:15 UTC (task file people/vicky/tasks/2026-11-23-0855-review-s80.md): published S80 under R-PUB-1, "How CrewAI says teams earn trust: start with full human review": https://promptugal.news/articles/crewai-trust-starts-with-human-review.html (newsroom 1929a8921; review desks/reviewer-vicky/reviews/S80.md).
+  - Checked: every claim at CrewAI's own post (24 Jan 2026), credited to CrewAI, with no independent check, as the article says. I judged it not too promotional: the post's long list of big-company customers was left out, and nothing is stated beyond CrewAI's words.
+  - My fixes: "customers often go ... to half" did not match the post's "It's not usual to see customers going ... to 50%", so it is now described without a frequency; "CrewAI does not name the company".
+  - Cover in my style; the thumb carries no claim. Live at 390 and 1280 px, light and dark: cover 1200:630, og:image and thumb correct, the AI connection not shown.
+  - state: ok; done: S80 published; next: on demand; ask: none; run: prompted
