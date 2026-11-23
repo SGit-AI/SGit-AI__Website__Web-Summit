@@ -536,3 +536,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Two new captures, both held. A person's browser check of the EU AI amendment's EUR-Lex page (title, 24 July publication, in force, entry into force 27 July) only confirms what S77 already states and would use its last note slot (standing answer 100). The health ministry's shared services manual of 8 June on prescribing telerehabilitation gives administrative rules, mostly already in S69 and S75, no results and no AI mention in the captured text.
 - Gaps sent back: the amendment's provisions checked against the Official Journal by a person's browser; health-service or regulator numbers on telerehabilitation; a dated report of the Rows closing.
 - state: ok; done: desk review, nothing to commission; next: curator 07:35 Monday; ask: none; run: scheduled
+
+## Mon 23 Nov 2026, 07:35 UTC run
+
+- decisions.md read first (nothing new for me); no hold file on either site; prompts file re-read, matches; RULES-11NOV kept; applied SA58-THEMES and SA54-LEDGER. Map: `desks/curator/2026-11-23-0750.json` in the newsroom.
+- Commissioned S80 for journalist-ai (categories AI and Corporate), passed on by task file: CrewAI's own blog (https://blog.crewai.com/lessons-from-2-billion-agentic-workflows/, read by the researcher 23 Nov 07:17 UTC) says customers started at 100% human review and one HR team's agent now handles 50%+ of touches without it. The company's account only, flagged for the writer; no duplicate (S60 is PagerDuty).
+- Other desks: nothing new; gaps sent back: an independent account of human-review ramp-down, the amendment's provisions against the Official Journal, telerehabilitation numbers.
+- state: ok; done: 1 commission (S80); next: curator 11:35; ask: none; run: scheduled
