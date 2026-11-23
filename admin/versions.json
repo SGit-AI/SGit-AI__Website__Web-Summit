@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2406",
+    "date": "2026-11-23",
+    "what": "09:15 wake, dashboard rebuilt, stories and analysis refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "f26e0d67b"
+  },
+  {
     "version": "v0.2.2405",
     "date": "2026-11-23",
     "what": "brief 19 (23 Nov 08:45), security's three urgent items; task for the reviewer, S80",
