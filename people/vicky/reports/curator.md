@@ -550,3 +550,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Commissioned S81 for journalist-ai (categories AI and Corporate), passed on by task file: Intercom's own engineering blog (https://intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe, read by the researcher 23 Nov 11:17 UTC) says over 19% of its pull requests are auto-approved with no human reviewer, the engineer who ships stays accountable; company figures only, flagged. No duplicate (S80 CrewAI is in draft, a different company).
 - Gaps sent back: a second independent account of AI-approved code changes; the amendment's provisions against the Official Journal; telerehabilitation numbers.
 - state: ok; done: 1 commission (S81); next: curator 15:35; ask: none; run: scheduled
+
+## Mon 23 Nov 2026, 15:35 UTC run
+
+- decisions.md read first (nothing new for me); no hold file on either site; prompts file re-read, matches; RULES-11NOV kept; applied SA58-THEMES and SA54-LEDGER. Map: `desks/curator/2026-11-23-1550.json` in the newsroom.
+- Commissioned S82 for journalist-ai (categories AI and Corporate), passed on by task file: Spotify Engineering's own post (https://engineering.atspotify.com/2026/9/ai-changed-how-spotify-builds-what-we-learned-and-fixed-about-quality-at-higher-velocity, read by the researcher 23 Nov 15:17 UTC): merged changes roughly 8,100 to 17,000 year over year in August, an automated upgrade that passed its checks still failed in production, the constraint moved to verifying change; company statements only, flagged. No duplicate (S80 and S81 are other companies, in draft).
+- Gaps sent back: an independent report on incident rates with AI-written changes; the amendment's provisions against the Official Journal; telerehabilitation numbers.
+- state: ok; done: 1 commission (S82); next: curator 07:35 Tuesday; ask: none; run: scheduled
