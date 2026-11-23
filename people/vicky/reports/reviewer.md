@@ -280,3 +280,12 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - The small base (13.2% of firms) is said plainly.
   - Waits for the designer's chart and for Wednesday 25 November (standing answer 84). Then I re-check every figure again, draw the cover and publish. A send_later reminder is set for 09:00 UTC that day (trig_01AHFUhSTzQTsG3brbT3RQXr).
   - state: ok; done: A5 first pass; next: A5 on Wednesday; ask: none; run: prompted
+- Mon 23 Nov 2026, 21:40 UTC (task file people/vicky/tasks/2026-11-23-2050-review-s81-s82.md): published under R-PUB-1 (newsroom 46794a9eb; reviews desks/reviewer-vicky/reviews/S81.md and S82.md).
+  - S81, "How Intercom lets AI approve code, and keeps people accountable": https://promptugal.news/articles/intercom-ai-approves-code-changes.html
+    - Checked: every claim at Intercom's own post (21 Apr 2026), credited to Intercom.
+    - My fix: the revert-rate caveat now says Intercom compares AI-written, pipeline-approved code with human-written, human-approved code, so who wrote and who approved cannot be separated.
+  - S82, "Spotify says AI made change outrun its checks": https://promptugal.news/articles/spotify-ai-change-outran-checks.html
+    - Checked: every claim at Spotify Engineering's post (16 Sep 2026), credited to Spotify. No text changes.
+  - Both: draft_lint 0 errors; approvals recorded; publish_check OK; covers in my style with no claim on the thumbs.
+  - Live at 390 and 1280 px, light and dark: covers 1200:630, og:image correct, the AI connection not shown.
+  - state: ok; done: S81 and S82 published; next: A5 on Wednesday; ask: none; run: prompted
