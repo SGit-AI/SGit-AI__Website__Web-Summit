@@ -17,6 +17,7 @@ From 13 November the scout writes one note a week, Mondays 06:47 UTC (standing a
 | 07 | [The operator's words, kept](07-the-operators-words-kept.md) | 7 Nov 2026 |
 | 08 | [What Vicky could reuse from the whole team's week, 9 to 16 Nov](08-reusable-this-week-16-nov.md): the weekly run's first note | 16 Nov 2026 |
 | 09 | [How the team makes an iPhone app, and the ways Vicky could make her own](09-how-the-team-makes-an-iphone-app.md): at Vicky's request, 18 Nov | 18 Nov 2026 |
+| 10 | [What Vicky could reuse from the whole team's week, 16 to 23 Nov](10-reusable-this-week-23-nov.md): one item, a diff review before each commit | 23 Nov 2026 |
 
 Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are answered: [questions-for-the-mentor.md](questions-for-the-mentor.md).
 
@@ -54,13 +55,14 @@ Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are a
 | P28 | "New from Vicky" (newest first) at the top of decisions.md | conductor; every agent reads it | a few hundred tokens per new rule | 07 | rejected (Vicky, 7 Nov: Updates for agents in decisions.md already covers it) |
 | P29 | Pass on a rule that other agents need too, in your report For: conductor | every agent | a line now and then | 07 | rejected (Vicky, 7 Nov: standing answer 14 already routes through the conductor) |
 | P30 | Keep Vicky's standing words as she gave them, in people/vicky/words/ | Vicky, then conductor | small, only on new rules | 07 | rejected (Vicky, 7 Nov: no further exception for storing her words in public files) |
-| P31 | Lanes for Vicky's agents (Vicky approves) and a daily read-only audit in the brief | conductor | one run once (about 50 to 100k tokens), then a few thousand a day | 08 | open |
-| P32 | Say why when a commit writes outside your lane: an `Outside:` line (after P31 is approved) | every agent | one line in the occasional commit | 08 | open |
-| P33 | Total the ledger with Indi's tally script, never by adding lines | conductor | small: a copy and one path change | 08 | open |
-| P34 | The session archive kit: decide whether to archive her sessions as Dinis asks (needs an exception to her rule against reading sessions) | Vicky (decision) | large: about 50,000 tokens a session | 08 | open |
+| P31 | Lanes for Vicky's agents (Vicky approves) and a daily read-only audit in the brief | conductor | one run once (about 50 to 100k tokens), then a few thousand a day | 08 | deferred to the week of 23 Nov (Vicky, 16 Nov, standing answer 88); ready |
+| P32 | Say why when a commit writes outside your lane: an `Outside:` line (after P31 is approved) | every agent | one line in the occasional commit | 08 | deferred to the week of 23 Nov (Vicky, 16 Nov, standing answer 88); ready |
+| P33 | Total the ledger with Indi's tally script, never by adding lines | conductor | small: a copy and one path change | 08 | accepted (Vicky, 16 Nov, standing answer 88) |
+| P34 | The session archive kit: decide whether to archive her sessions as Dinis asks (needs an exception to her rule against reading sessions) | Vicky (decision) | large: about 50,000 tokens a session | 08 | done (Vicky ran the archive herself, 15 Nov; standing answer 88) |
 | P35 | Try the apps on her own phone first: ask Dinis for the public TestFlight link and a team-app invitation | Vicky (a request to Dinis) | none | 09 | open |
 | P36 | Decide what her app is for in one sentence, and whether it holds anything private | Vicky (decision) | none | 09 | open |
 | P37 | A one-page brief for her app in the shape of the Fringe brief, sent to Dinis | conductor, after P36 | one run, about 20 to 40k tokens | 09 | open |
+| P38 | A short Sonnet review of the diff for private material before each commit of public text, with `post-review: clean` in the report | journalists, reviewer, curator, researcher, analyst, designer, checker | one short Sonnet call per run that commits, about 5 to 15k tokens (my estimate) | 10 | open |
 
 ## Next topics
 
