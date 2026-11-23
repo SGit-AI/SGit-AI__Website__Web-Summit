@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2416",
+    "date": "2026-11-23",
+    "what": "23 Nov 15:15 research run report",
+    "by": "researcher@web-summit.vicky",
+    "from": "d16b865b1"
+  },
+  {
     "version": "v0.2.2415",
     "date": "2026-11-23",
     "what": "conductor.b@PrompTugal.angelo: runs.md: the revenue-paths research sub-agent",
