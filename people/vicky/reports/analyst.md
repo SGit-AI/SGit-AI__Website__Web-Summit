@@ -107,3 +107,12 @@ Vicky's analysis desk for PrompTugal.news (standing answer 75). One entry per ru
 - **Caveats recorded:** INE's companies survey moved to a new classification of economic activities in 2026 (totals compare, sectors not); the companies' measure has counted an eighth kind of AI since 2025.
 - **For Vicky:** the title ("Portuguese people above the EU average on AI, companies below") holds for 2025, the latest year with EU figures. For 2026, Portugal's companies (19.6%) are close to the EU's 2025 level (20.0%), and the EU's 2026 figure is not out. Keep the title (my recommendation, the piece says the comparison waits for Eurostat) or change it.
 - state: ok; done: A1 updated with INE 2026; next: Vicky's look at A1; Monday's weekly run; ask: Vicky, keep A1's title as it is (recommended) or change it; run: task
+
+## Mon 23 Nov 2026, 10:30 UTC (weekly run, scheduled)
+
+- No hold file. Rules read (decisions.md to 101; my prompts file).
+- **The past week:** INE's 2026 ICT surveys (20 Nov) went into A1, which the reviewer published today; A3 was published on 16 Nov. Eurostat's 2026 tables are not out yet (checked today).
+- **A5 drafted:** "Cost holds back Portuguese firms from AI more than EU peers", `desks/analyst-vicky/drafts/a5-what-stops-firms-using-ai.md` with data note and chart spec, newsroom commit `375d5b4fe` (live in v0.1.2126). 463 words, draft_lint 0 errors. Among firms that considered AI but did not use it, cost was cited by 60.4% in Portugal against 38.4% in the EU (2025, Eurostat); in 2026 cost (64.7%) drew level with a lack of skills (65.6%) in Portugal (INE). The base is small (13.2% of firms) and is said so in the piece.
+- **Topics page:** A1 and A3 marked published, A2 set aside (A1 now carries its figures), A5 added.
+- **Recommended order for publishing:** A5 only this week, after Vicky agrees, then designer (chart), then reviewer. Any weekday; no date-sensitive data in it.
+- state: ok; done: A5 draft and data note, topics page; next: Vicky's read of A5; next Monday's run (Eurostat's 2026 tables when they appear); ask: Vicky, agree A5 for this week (recommended); run: scheduled (P3)
