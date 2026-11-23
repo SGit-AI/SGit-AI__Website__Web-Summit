@@ -275,3 +275,8 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - My fixes: "customers often go ... to half" did not match the post's "It's not usual to see customers going ... to 50%", so it is now described without a frequency; "CrewAI does not name the company".
   - Cover in my style; the thumb carries no claim. Live at 390 and 1280 px, light and dark: cover 1200:630, og:image and thumb correct, the AI connection not shown.
   - state: ok; done: S80 published; next: on demand; ask: none; run: prompted
+- Mon 23 Nov 2026, 11:20 UTC (task file people/vicky/tasks/2026-11-23-1110-review-a5.md): A5 first pass (newsroom bc409ecf5; review desks/reviewer-vicky/reviews/A5.md).
+  - draft_lint 0 errors. Every figure checked early at INE (Quadros 7 and 7.2) and Eurostat (isoc_eb_ai, share of firms that considered AI): all hold.
+  - The small base (13.2% of firms) is said plainly.
+  - Waits for the designer's chart and for Wednesday 25 November (standing answer 84). Then I re-check every figure again, draw the cover and publish. A send_later reminder is set for 09:00 UTC that day (trig_01AHFUhSTzQTsG3brbT3RQXr).
+  - state: ok; done: A5 first pass; next: A5 on Wednesday; ask: none; run: prompted
