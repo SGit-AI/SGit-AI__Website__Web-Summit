@@ -6,7 +6,7 @@ Kept by curator@PrompTugal.vicky (until 6 November curator@web-summit.vicky), Vi
 
 **Connections** (from 5 November, at Dinis's direction): stories that link startups and companies at Web Summit so each gets the most out of the week: startups in the same field, startups and the investors or programmes that back that field, companies on the same stage or day, Portuguese startups and the European ones they could work with. They are marked "Connections" in the beat. Each link is the curator's suggestion from public facts: no source says these organisations plan to meet, and no story should say so. Organisations only; nothing private about anyone.
 
-Last updated: Sunday 22 November 2026, 07:37 UTC.
+Last updated: Monday 23 November 2026, 07:55 UTC.
 
 **Categories** (Vicky, 10 November 2026): the curator assigns every article its main categories from `desks/curator/categories.json` (one or more of Web Summit 2026, Startups & Scaleups, AI, Portugal, The newsroom, Brazil, Europe, Corporate) when commissioning it, and adds its line to that file before the article is published. A new main category only with Vicky's approval; routine corrections are the curator's. Corporate versus Startups & Scaleups by the story's subject and angle, never by size, valuation, funding round or headcount. No article file is edited for this.
 
@@ -30,6 +30,7 @@ Last updated: Sunday 22 November 2026, 07:37 UTC.
 
 | Id | Title | Beat | Added |
 |---|---|---|---|
+| S80 | How one AI-agent vendor says teams earn trust: start with full human review | AI and robotics | 23 Nov |
 | S79 | AI literacy, bias data and small firms: the AI Act changes (published 22 Nov) | Europe | 21 Nov |
 | S78 | Update: a law firm's reading of what the AI Act changes mean (published 21 Nov) | Europe | 21 Nov |
 | S77 | How the EU simplified the AI Act: what changed and when (published 20 Nov) | Europe | 20 Nov |
@@ -101,6 +102,14 @@ Last updated: Sunday 22 November 2026, 07:37 UTC.
 | S3 | Road 2 Web Summit: Portugal's startups head for Lisbon | Portugal | 4 Nov |
 | S2 | Europe arrives in Pavilion 4: the Commission's week at Web Summit (withdrawn 11 Nov) | Europe | 4 Nov |
 | S1 | Web Summit Lisbon: your first day, from airport to arena | The summit | 4 Nov |
+
+## S80: How one AI-agent vendor says teams earn trust: start with full human review
+
+AI and robotics, added 23 Nov. CrewAI's own blog post: customers started with 100% human review and, by the company's account, one HR team now has its agent handle over half of tickets without it; as the vendor's account, not a verdict. For journalist-ai, categories AI and Corporate. Ready. A vendor's own blog (CrewAI, 24 January 2026 from the page's metadata): say every figure and case is the company's own statement and was not independently checked. Read the post yourself; give the 2 billion executions, the 100% human review start, the HR ticket case (3,000+ tickets a month, now 50%+ of touches without review) and the five-agent sales flow with three validation layers as the company's account; no figures for the sales results (the post gives none); do not name the customers beyond what the post says; no advice or claim beyond the post. Link S60 (PagerDuty) as a comparison only, repeating none of its content. Explain 'agentic workflow' and 'human review' in plain words at first use; 300 to 700 words.
+
+Sources:
+
+- [CrewAI (the company's own blog), "Lessons From 2 Billion Agentic Workflows"](https://blog.crewai.com/lessons-from-2-billion-agentic-workflows/), read 23 November 2026
 
 ## S79: AI literacy, bias data and small firms: the AI Act changes
 
@@ -752,6 +761,7 @@ For the five journalists, in priority order (standing answers 20 and 22, the des
 
 Ready to write now:
 
+1. S80, How one AI-agent vendor says teams earn trust: start with full human review: for journalist-ai. A vendor's own blog post, so every figure and case is the company's statement, not checked; follow the note in the story's section.
 
 Already published, not to be written again: S61 (https://promptugal.news/articles/humanos-road-2-web-summit-winner.html); S60 (https://promptugal.news/articles/pagerduty-agents-in-production.html); S59 (https://promptugal.news/articles/discord-lisbon-engineering-hub.html); S58 (https://promptugal.news/articles/thursday-last-day-guide.html); S37 (https://promptugal.news/articles/teamworks-coaches-agent.html); S38 (https://promptugal.news/articles/glovo-restaurant-agents-getvocal.html); S39 (https://promptugal.news/articles/wpp-call-transcripts-to-jira.html); S40 (https://promptugal.news/articles/gravitee-agent-security-survey.html); S42 (https://promptugal.news/articles/what-lovable-deleted.html); S49 (https://promptugal.news/articles/europe-in-pavilion-4.html); S56 (https://promptugal.news/articles/digital-fairness-act-ai-agents.html); S53 (https://promptugal.news/articles/eu-election-guidelines-generative-ai.html); S55 (https://promptugal.news/articles/tiktok-for-you-dsa-preliminary-finding.html); S52 (https://promptugal.news/articles/konecta-lisbon-delivery-centre.html); S54 (https://promptugal.news/articles/breakout-startups-thursday-centre-stage.html); S46 (https://promptugal.news/articles/zalando-ai-coding-agents.html); S48 (https://promptugal.news/articles/manus-2-0-agents-own-email-phone-wallet.html); S50 (https://promptugal.news/articles/ai-act-first-harmonised-standard.html); S51 (https://promptugal.news/articles/getting-around-lisbon-wednesday.html); S45 (https://promptugal.news/articles/web-summit-day-2-refunds.html); S41 (https://promptugal.news/articles/red-wind-warning-lisbon-wednesday.html); S28 (https://promptugal.news/articles/five-ai-builders-to-know.html); S29 (https://promptugal.news/articles/who-builds-the-parts-of-an-ai-agent.html); S30 (https://promptugal.news/articles/health-startups-by-problem.html); S31 (https://promptugal.news/articles/road-2-web-summit-beyond-lisbon.html); S33 (https://promptugal.news/articles/ibm-sports-tech-challenge.html); S34 (https://promptugal.news/articles/where-to-find-portugal.html); S35 (https://promptugal.news/articles/press-conferences-day-by-day.html); S36 (https://promptugal.news/articles/portugal-on-the-programme.html); S65 (https://promptugal.news/articles/best-number-one-3wx-loule.html); S64 (https://promptugal.news/articles/amalia-and-ania-portugal-ai-plans.html); S66 (https://promptugal.news/articles/neuraspace-coimbra-raises-15-6-million.html); S67 (https://promptugal.news/articles/center-for-responsible-ai-money-partners-goals.html); S68 (https://promptugal.news/articles/center-for-responsible-ai-money-partners-goals.html); S69 (https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html); S70 (https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html); S71 (https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html); S72 (https://promptugal.news/articles/ai-physiotherapy-portugal-health-service.html); S73 (https://promptugal.news/articles/superhuman-to-buy-rows-porto.html); S74 (https://promptugal.news/articles/superhuman-to-buy-rows-porto.html); S75 (https://promptugal.news/articles/health-service-pays-remote-physiotherapy.html); S77 (https://promptugal.news/articles/how-the-eu-simplified-the-ai-act.html); S78 (https://promptugal.news/articles/how-the-eu-simplified-the-ai-act.html); S79 (https://promptugal.news/articles/ai-literacy-bias-data-small-firms-ai-act.html).
 
