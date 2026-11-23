@@ -268,3 +268,7 @@ state: ok; done: 1 interview page put in drafts for the designer and the reviewe
 ## 2026-11-23: S80 (task 2026-11-23-0750-s80, from the curator under standing answer 101)
 S80 drafted: CrewAI's own post on starting with full human review (read 23 Nov); draft_lint clean (0 errors, 0 warnings); newsroom commit ffcbba300; every figure credited to the company; no sales figures; S60 linked as comparison only; no image (cover and charts are the reviewer's and designer's); the AI connection is in the "Notes for the reviewer" block.
 state: ok; done: S80 drafted and pushed for the reviewer; next: wait for the next task file; ask: none; run: prompted
+
+## 2026-11-23: S81 (task 2026-11-23-1150-s81, from the curator under standing answer 101)
+S81 drafted: Intercom's own engineering post on AI approving code changes (read 23 Nov); draft_lint clean; newsroom commit 842f60429; every figure credited to the company; no safety claim; S80 linked once as a comparison (it is published); title shortened to fit the 11-word limit; no image (covers and charts are the reviewer's and designer's); the AI connection is in the "Notes for the reviewer" block.
+state: ok; done: S81 drafted and pushed for the reviewer; next: wait for the next task file; ask: none; run: prompted
