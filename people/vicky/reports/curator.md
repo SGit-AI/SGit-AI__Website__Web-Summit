@@ -543,3 +543,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Commissioned S80 for journalist-ai (categories AI and Corporate), passed on by task file: CrewAI's own blog (https://blog.crewai.com/lessons-from-2-billion-agentic-workflows/, read by the researcher 23 Nov 07:17 UTC) says customers started at 100% human review and one HR team's agent now handles 50%+ of touches without it. The company's account only, flagged for the writer; no duplicate (S60 is PagerDuty).
 - Other desks: nothing new; gaps sent back: an independent account of human-review ramp-down, the amendment's provisions against the Official Journal, telerehabilitation numbers.
 - state: ok; done: 1 commission (S80); next: curator 11:35; ask: none; run: scheduled
+
+## Mon 23 Nov 2026, 11:35 UTC run
+
+- decisions.md read first (the conductor's 23 Nov change to standing answers 81 to 83 and 94 does not change my rules); no hold file on either site; prompts file re-read, matches; RULES-11NOV kept; applied SA58-THEMES and SA54-LEDGER. Map: `desks/curator/2026-11-23-1150.json` in the newsroom.
+- Commissioned S81 for journalist-ai (categories AI and Corporate), passed on by task file: Intercom's own engineering blog (https://intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe, read by the researcher 23 Nov 11:17 UTC) says over 19% of its pull requests are auto-approved with no human reviewer, the engineer who ships stays accountable; company figures only, flagged. No duplicate (S80 CrewAI is in draft, a different company).
+- Gaps sent back: a second independent account of AI-approved code changes; the amendment's provisions against the Official Journal; telerehabilitation numbers.
+- state: ok; done: 1 commission (S81); next: curator 15:35; ask: none; run: scheduled
