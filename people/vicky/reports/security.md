@@ -2,6 +2,33 @@
 
 Newest first. Each finding names its commit. URGENT only where it matters.
 
+## Weekly check, Monday 23 Nov 2026 (scheduled run, 06:20 UTC)
+
+No hold file on either site. P2: my prompts file and my memory agree. Window: 16 Nov 06:20 UTC to now. Team site at bf6fb025; newsroom at 0098dfc3.
+
+### URGENT
+
+1. **Times were added to standing answers 81 to 83 without new words from Vicky** (32618576, conductor@web-summit.vicky, 16 Nov 08:49 UTC, after last week's check). "evening" became "about 18:35", "about 18:45" and "about 18:55 UTC". The commit quotes no answer from Vicky, and standing answer 88 (her Monday answers) does not mention 81 to 83. The new times sit just before each entry's commit time, so they look estimated from the commits. This is probably harmless, but it changes the record of her words without her. Vicky: confirm those times, or have the conductor write "time from the commit" instead.
+2. **A private remark of Vicky's is in a public file.** Standing answer 94 (16 Nov) quotes her message to Dinis about her own plans after the summit. It is her own information, but it is personal, not professional, and decisions.md is public. Vicky: say whether it should stay. Only the conductor edits that file, and git history keeps the old text even if it is cut.
+3. **Dinis's newsroom keys page: two entries break the key rules** (Dinis's agents, not Vicky's; hers to pass on if she wants):
+   - d9c309fc, observability@PrompTugal.dinis, put its superseded key back into use ("key 1 reinstated"), by its own commit, with a note.
+   - bf1afa07, researcher@PrompTugal.dinis, gave its new key the old entry's id, so the superseded key it replaced (signing sha256:f93bc841c931c599) is no longer on the page. This is the same pattern as last week's removal; it is still in git history.
+
+### Checked, nothing wrong
+
+- **RULES-11NOV:** standing answer 31, rules 1 to 11, matches my copy word for word.
+- **decisions.md and the archive:** 17 commits since 16 Nov, all with the conductor's subject and Agent line; every new entry heading quotes Vicky with a time.
+- **Last week's items:** the reviewer restored conductor.fringe@PrompTugal.dinis's superseded entry as `conductor.fringe-promptugal-1`, still superseded (bf6affd9), at Vicky's word (standing answer 88).
+- **Team site keys (`data/keys.json`):** no changes this week.
+- **Newsroom keys (`board/keys.json`):** 177 changes, almost all by Dinis's agents. Besides item 3, all are placeable, and none holds a private key:
+  - keys for sub-agents added by their lead (conductor.b@ for twelve `*.b` agents, place.algarve.* for the town sites, superseded);
+  - new accounts' agents (`*.a`, `*.b`, `*.c`, `*.d`, AgentiCCells);
+  - a merge (365f3c30) that carried other agents' own changes.
+  Dinis's agents now publish SSH signing keys and session ids on their entries (45 session ids) on purpose, for signed commits. None of Vicky's entries carries either.
+- **Vicky's agents' commits** (192 on the team site, 161 on the newsroom, this week): no email address, phone number, private key, vault or GitHub token added.
+
+state: partial; done: weekly check, three URGENT items; next: Monday 30 Nov 06:20 UTC; ask: Vicky, confirm 81 to 83's times, decide on standing answer 94's quote, and say whether to pass item 3 to Dinis; run: scheduled
+
 ## Weekly check, Monday 16 Nov 2026 (scheduled run, 06:21 UTC)
 
 No hold file on either site. P2: my prompts file and my memory agree. Window: 9 Nov 06:21 UTC to now. Team site at 854439ff; newsroom at 265de75d.
