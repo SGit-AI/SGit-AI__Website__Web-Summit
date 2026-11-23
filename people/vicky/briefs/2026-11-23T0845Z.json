@@ -1,0 +1,72 @@
+{
+ "number": 19,
+ "date": "23 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "Security's three urgent items; A1 goes out today; S80 to the reviewer",
+ "when": "23 November 2026, 08:45 UTC (since brief 18, 22 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "Security's weekly check (06:20) marks three items URGENT. None is a breach of keys or private data by your agents. Two are about decisions.md, and one of those is my doing; the third is on Dinis's side. Each is in section 2 with my recommendation."
+ ],
+ "actions": [
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "Security 1: times I added to standing answers 81 to 83",
+     "why": "Last week security asked for times on 81 to 83. On 16 Nov I wrote \"about 18:35/18:45/18:55 UTC\", estimated from the commit times, without asking you. That changes the record of your words. My recommendation: replace them with \"evening, time from the commit\", which is what I actually know.",
+     "reply": "Conductor: go, mark the times in standing answers 81 to 83 as \"evening, time from the commit\"."
+    },
+    {
+     "what": "Security 2: your message to Dinis quoted in standing answer 94",
+     "why": "Standing answer 94 quotes what you wrote to Dinis about your own plans after the summit (looking for a job). It is yours to share, but it is personal and decisions.md is public. My recommendation: keep the decision (card 5 only, desks keep running) and cut the quote to \"Vicky told Dinis she would take card 5 only\". The old text stays in the file's history.",
+     "reply": "Conductor: go, cut my message to Dinis from standing answer 94; keep only that I take card 5."
+    },
+    {
+     "what": "Security 3, optional: two key entries of Dinis's agents",
+     "why": "On the newsroom's keys page, observability@PrompTugal.dinis put a retired key back into use, and researcher@PrompTugal.dinis reused an id so its old key no longer shows. Not your agents; only if you want Dinis to know.",
+     "reply": "Hi Dinis, my security agent flagged two entries on the newsroom keys page: observability@ reinstated a superseded key (d9c309fc), and researcher@ reused an old id so its superseded key dropped off the page (bf1afa07). Just so you know."
+    }
+   ]
+  },
+  {
+   "window": "For vault@",
+   "items": [
+    {
+     "what": "Nothing waiting",
+     "why": "",
+     "reply": "(none)"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Agent runs",
+   "items": [
+    "Grid, 22 and 23 Nov: researcher 11:15 ✓ 15:15 ✓ 07:15 ✓ (and your EUR-Lex check recorded at 12:12). Curator 11:35 ○ 15:35 ○ 07:35 ✓ (S80, passed on to journalist-ai itself). Dashboard 09:15 ✓. Checker 10:00 ○. Security Mon 06:20 ✓ (three URGENT, above). Scout Mon 06:47 ✓ (note 10, P38).",
+    "Your EUR-Lex check confirmed S77 to S79's dates (published 24 July, in force 27 July). The curator did not use S77's last update-note slot for it, since nothing in the story was wrong; the optional wording fix from last night's relay still stands.",
+    "Today: A1 (\"AI use in Portugal jumps in 2026, for people and companies\") published by the reviewer after re-checking the figures; S80 (how one AI-agent vendor says teams earn trust, start with full human review; from the vendor's own blog) sent to the reviewer at 08:55; the analyst's weekly run at 10:15.",
+    "Scout's note 10 proposes P38: a short Sonnet check of each diff for private names, contacts and keys before public commits. Your agents' commits have had none this week (security's count: 192 team site, 161 newsroom); I would keep it for later.",
+    "Your desks have 63 articles live."
+   ]
+  },
+  {
+   "title": "Usage & Checks",
+   "items": [
+    "Usage since 22 Nov 08:45 (tally of the ledger, standing answer 88; API-equivalent, not money): about 3.7 million fresh tokens across 6 agents. Busiest: researcher (4 wakes), curator (3).",
+    "Schedule: no scheduled task created or changed. decisions.md: no edits since 20 Nov. Keys: no changes for your agents. Gmail: none. Releases: all live. Follow-up drafts waiting: 6 (inbox@, 17 Nov about 19:55 UTC)."
+   ]
+  }
+ ],
+ "next": [
+  "A1 and S80 published",
+  "Your answers on security 1 and 2",
+  "The analyst's weekly drafts, then one analysis piece per weekday"
+ ],
+ "sources": [
+  "people/vicky/reports/security.md (weekly check, 23 Nov 06:20)",
+  "people/vicky/reports/*.md since 22 Nov 08:45 (read directly)",
+  "people/vicky/tools/tally.py (standing answer 88)"
+ ]
+}
