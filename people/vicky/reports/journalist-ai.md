@@ -264,3 +264,7 @@ state: ok; done: key added to the team site; next: open sealed write-ups when th
 ## 2026-11-14: Vicky's approved page in the drafts folder (task 2026-11-14-1355-humans-and-ai-vicky-final)
 1 interview page opened, put in the newsroom drafts as ready (newsroom commit b83f3c5a3), unsealed copy deleted.
 state: ok; done: 1 interview page put in drafts for the designer and the reviewer; next: wait for the conductor's next task file; ask: none; run: prompted
+
+## 2026-11-23: S80 (task 2026-11-23-0750-s80, from the curator under standing answer 101)
+S80 drafted: CrewAI's own post on starting with full human review (read 23 Nov); draft_lint clean (0 errors, 0 warnings); newsroom commit ffcbba300; every figure credited to the company; no sales figures; S60 linked as comparison only; no image (cover and charts are the reviewer's and designer's); the AI connection is in the "Notes for the reviewer" block.
+state: ok; done: S80 drafted and pushed for the reviewer; next: wait for the next task file; ask: none; run: prompted
