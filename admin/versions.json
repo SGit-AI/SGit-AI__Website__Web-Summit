@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2408",
+    "date": "2026-11-23",
+    "what": "checker@PrompTugal.vicky: 23 Nov run: idle",
+    "by": "checker@PrompTugal.vicky",
+    "from": "8aa99226e"
+  },
+  {
     "version": "v0.2.2407",
     "date": "2026-11-23",
     "what": "reviewer@PrompTugal.vicky: report and ledger, A1 and S80 published",
