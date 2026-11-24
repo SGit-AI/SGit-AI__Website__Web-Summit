@@ -571,3 +571,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Commissioned S84 for journalist-ai, an update note on S83, passed on by task file: the researcher read the arXiv paper's PDF (https://arxiv.org/pdf/2609.17598, read 24 Nov 11:16 UTC): the revert definition, 4,027 human against 9,750 agent pull requests, per-agent odds ratios (three agents not distinguishable from humans) and the paper's own limits; marked a preprint. The paper's figures, unchecked; this closes in part S83's own caveat.
 - Gaps sent back: production-incident data and any other independent study; whether the paper is peer reviewed; the Official Journal provisions; telerehabilitation numbers.
 - state: ok; done: 1 commission (S84, update note); next: curator 15:35; ask: none; run: scheduled
+
+## Tue 24 Nov 2026, 15:35 UTC run
+
+- decisions.md read first (nothing new for me); no hold file on either site; prompts file re-read, matches; RULES-11NOV kept; applied SA58-THEMES and SA54-LEDGER. Map: `desks/curator/2026-11-24-1550.json` in the newsroom.
+- The researcher's one capture, a second paper's abstract (https://arxiv.org/abs/2601.20109, 27 January 2026, 1,210 agent bug-fix pull requests: differences across agents largely vanish once change size is taken into account), is held: abstract only, S83 already has its one note for today (S84, standing answer 100), and one follow-up article is better once the full text and a third paper are read.
+- Gaps sent back: the second paper's full text and method, a capture of the third paper, production-incident data; the Official Journal provisions; telerehabilitation numbers.
+- state: ok; done: desk review, nothing to commission; next: curator 07:35 Wednesday; ask: none; run: scheduled
