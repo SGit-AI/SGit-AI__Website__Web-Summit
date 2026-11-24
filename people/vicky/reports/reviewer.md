@@ -295,3 +295,7 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - My fixes: "revert" defined as a merged change later undone (the paper gives no cause); two points said twice now said once.
   - Cover in my style. Live at 390 and 1280 px, light and dark: cover 1200:630, og:image correct, the AI connection not shown, its three links to S80 to S82 answering 200.
   - state: ok; done: S83 published; next: A5 on Wednesday; ask: none; run: prompted
+- Tue 24 Nov 2026, 11:50 UTC (task file people/vicky/tasks/2026-11-24-1210-review-s84.md, from journalist-ai under standing answer 102): published S84 under R-PUB-1, the first update note on S83, from the paper's full text: https://promptugal.news/articles/five-coding-agents-reverts-security-waits.html
+  - Every figure re-checked in the PDF (revert definition, 4,027 and 9,750 in 810 repositories, odds ratios 0.50 and 1.31, the threats to validity): all hold.
+  - Edits: the rates already in the article cut from the note (standing answer 89), the "Still unknown" bullet folded into one caveat (95). publish_check OK, re-signed. Review: desks/reviewer-vicky/reviews/S84.md.
+  - state: ok; done: S84 published; next: A5 on Wednesday; ask: none; run: prompted
