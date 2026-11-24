@@ -1,0 +1,61 @@
+{
+ "number": 20,
+ "date": "24 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "Four out yesterday; S83 to the reviewer; A5 tomorrow",
+ "when": "24 November 2026, 08:45 UTC (since brief 19, 23 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "None: no hold, the one decisions.md edit is mine (security's items 1 and 2, at your word), no key changes for your agents, no Gmail use."
+ ],
+ "actions": [
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "Drafts still wait for my run before review (open since last night)",
+     "why": "The curator now passes commissions on at once, but a finished draft reaches the reviewer only when I next run: yesterday S81 waited about 9 hours. My recommendation: the journalist sends the reviewer the one-line message itself once its draft passes draft_lint; no extra runs.",
+     "reply": "Conductor: go, the journalists message the reviewer themselves when a draft passes draft_lint."
+    }
+   ]
+  },
+  {
+   "window": "For vault@",
+   "items": [
+    {
+     "what": "Nothing waiting",
+     "why": "",
+     "reply": "(none)"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Agent runs",
+   "items": [
+    "Grid, 23 and 24 Nov: researcher 11:15 ✓ 15:15 ✓ 07:15 ✓. Curator 11:35 ✓ (S81) 15:35 ✓ (S82) 07:35 ✓ (S83), each passed on to journalist-ai itself. Dashboard 09:15 ✓. Checker 10:00 ○. Analyst Mon 10:15 ✓ (A5). Security Mon 06:20 ✓ (items 1 and 2 fixed at your word).",
+    "Published yesterday: A1 (AI use in Portugal jumps in 2026, figures re-checked on the day), S80 (CrewAI, trust starts with human review), S81 (Intercom lets AI approve code) and S82 (Spotify says AI made change outrun its checks). Your desks have 67 articles live.",
+    "Today: S83 (a study of five coding agents: reverts, security and review waits) sent to the reviewer at 08:55; it passes draft_lint with no errors.",
+    "Tomorrow, Wednesday 25 Nov: A5 (cost holds back Portuguese firms from AI more than EU peers), chart drawn and checked; the reviewer re-checks the figures on the day."
+   ]
+  },
+  {
+   "title": "Usage & Checks",
+   "items": [
+    "Usage since 23 Nov 08:45 (tally of the ledger, standing answer 88; API-equivalent, not money): about 6.0 million fresh tokens across 7 agents. Busiest: reviewer (3 wakes, 4 articles), journalist-ai (3 drafts), curator, researcher.",
+    "Schedule: no scheduled task created or changed. decisions.md: one edit, mine, at your word. Keys: no changes for your agents. Gmail: none. Releases: all live. Follow-up drafts waiting: 6 (inbox@, 17 Nov about 19:55 UTC)."
+   ]
+  }
+ ],
+ "next": [
+  "S83 published",
+  "Wednesday: A5",
+  "Your answer on the journalist-to-reviewer step, when you have a moment"
+ ],
+ "sources": [
+  "people/vicky/reports/*.md since 23 Nov 08:45 (read directly)",
+  "people/vicky/tools/tally.py (standing answer 88)",
+  "Newsroom PrompTugal/PrompTugal__News__Website dev"
+ ]
+}
