@@ -15,6 +15,8 @@ budget: none; the running cost (dollars and tokens) in STATE.md's "For the diges
 - "Go ahead, I'm happy to expand on Indi's work without asking as he's clearly not currently and going to work on it since there has been no activity since the 16th."
 - Earlier the same day: "we've been given the good to go to join efforts with Dinis on the CRM work."
 
+- Later the same day: "The target is to centralize everything in the same place, so all people's leads should be absorbed by this CRM, in view of then migrating to the new CRM. I'm the only one working on this thin slice, so I don't see any clash." He works on the design directly with the PM.
+
 ## Goal (a bridge, time-boxed, explicitly temporary)
 The team's existing follow-up list (/crm/follow-ups/, WS-217, Indi's) becomes the one place for every Web Summit contact and every action already taken, so nobody follows up twice or with the wrong approach:
 1. **Every contact in one place**, with source (who met them, where) and owner.
@@ -30,7 +32,7 @@ Fixed scope: nothing beyond these six. Anything else waits for Dinis's CRM tool 
 Fields and records map one to one onto Dinis's CRM tool site's records (`crm.org/1`, `crm.person/1`, `crm.lead/1`, `crm.link/1` in AgentiCCells/AgentiCCells__Cell__Email, branch work/crm.dev.a, crm/model/crm.mjs), plus an action-log record proposed for it, so the later move is a script. Where the stage lists differ (his: new, contacted, talking, proposal, won, parked), say how they map.
 
 ## Done when
-A team member can open /crm/follow-ups/ with their key, upload their spreadsheet, see every contact with its owner, stage, last touch and log, add a log entry, and see everyone's entries within an hour, without clashing; Angelo's 35 and Indi's 19 are in it; Angelo has read and accepted it.
+A team member can open /crm/follow-ups/ with their key, upload their spreadsheet, see every contact with its owner, stage, last touch and log, add a log entry, and see everyone's entries within an hour, without clashing; Angelo's 35 and Indi's 19 are in it, and every team member's leads can be absorbed by it (all people's leads, Angelo); Angelo has read and accepted it.
 
 ## Start from (read; all material)
 - The page and its tools: content/crm-follow-ups.md, assets/crm-follow-ups.js, assets/crm-seal.js, assets/crm-follow-ups.json, admin/tools/crm_followups.mjs (the drain and collector), admin/tools/crm.mjs (seal), people/indi/followups/README.md, board/WS-217-the-follow-up-list-in-the-private-crm.md. These are Indi's agents' and Dinis's (crm.mjs) files: Angelo's word above covers changing Indi's; every change outside people/angelo/ carries an `Outside:` trailer and a commit `For: conductor@web-summit.indi` so he knows; crm.mjs and the private vault's layout are Dinis's (tier 3 to change).
