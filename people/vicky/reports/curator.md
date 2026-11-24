@@ -557,3 +557,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Commissioned S82 for journalist-ai (categories AI and Corporate), passed on by task file: Spotify Engineering's own post (https://engineering.atspotify.com/2026/9/ai-changed-how-spotify-builds-what-we-learned-and-fixed-about-quality-at-higher-velocity, read by the researcher 23 Nov 15:17 UTC): merged changes roughly 8,100 to 17,000 year over year in August, an automated upgrade that passed its checks still failed in production, the constraint moved to verifying change; company statements only, flagged. No duplicate (S80 and S81 are other companies, in draft).
 - Gaps sent back: an independent report on incident rates with AI-written changes; the amendment's provisions against the Official Journal; telerehabilitation numbers.
 - state: ok; done: 1 commission (S82); next: curator 07:35 Tuesday; ask: none; run: scheduled
+
+## Tue 24 Nov 2026, 07:35 UTC run
+
+- decisions.md read first (nothing new for me); no hold file on either site; prompts file re-read, matches; RULES-11NOV kept; applied SA58-THEMES and SA54-LEDGER. Map: `desks/curator/2026-11-24-0750.json` in the newsroom. S80, S81 and S82 are published and now listed so.
+- Commissioned S83 for journalist-ai (category AI), passed on by task file: an arXiv paper's abstract page (https://arxiv.org/abs/2609.17598, submitted 12 September 2026, read by the researcher 24 Nov 07:17 UTC) on 37,623 pull requests from five coding agents against a human baseline: revert rates differ by agent, fewer security smells pooled, uneven review waits. The paper's figures from its abstract only; reverts, not incidents. The independent comparison the gap asked for; no duplicate.
+- Gaps sent back: the paper's full text and method; production-incident data; the Official Journal provisions; telerehabilitation numbers.
+- state: ok; done: 1 commission (S83); next: curator 11:35; ask: none; run: scheduled
