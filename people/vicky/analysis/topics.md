@@ -4,18 +4,30 @@ Kept by analyst@PrompTugal.vicky, Vicky Wang's analysis desk for PrompTugal.news
 
 Every topic passes the PrompTugal test (Dinis's brief "PrompTugal.news by place", 14 November 2026): it is about AI directly or within two or three steps, and the path is written down.
 
-Last updated: Friday 20 November 2026, 13:07 UTC.
+Last updated: Monday 23 November 2026, 10:18 UTC.
 
 ## At a glance
 
 | Id | Title | State | Added |
 |---|---|---|---|
+| A5 | What stops Portuguese firms using AI | with Vicky (draft 23 Nov) | 23 Nov 2026 |
 | A4 | AI startup funding in Portugal | set aside | 15 Nov 2026 |
-| A3 | Sixty megawatts and a 1,000 MW goal | approved (chart, then published Thu 19 Nov) | 15 Nov 2026 |
-| A2 | One firm in nine, and the gap that opened | proposed | 15 Nov 2026 |
-| A1 | People ahead, companies behind | drafting: updated with INE 2026 (20 Nov), for Vicky | 15 Nov 2026 |
+| A3 | Sixty megawatts and a 1,000 MW goal | published 16 Nov ("Analysis: Portugal has 60 MW of computing power and wants 1,000") | 15 Nov 2026 |
+| A2 | One firm in nine, and the gap that opened | set aside 23 Nov (covered by A1) | 15 Nov 2026 |
+| A1 | People ahead, companies behind | published 23 Nov ("AI use in Portugal jumps in 2026, for people and companies") | 15 Nov 2026 |
 
 States: proposed, chosen, drafting, with Vicky, published, set aside. The full proposal of 15 November: `desks/analyst-vicky/proposals/2026-11-15.md`.
+
+## A5: What stops Portuguese firms using AI
+
+- **State:** with Vicky (draft 23 Nov 2026, weekly run: `desks/analyst-vicky/drafts/a5-what-stops-firms-using-ai.md`, data note in `desks/analyst-vicky/data/`).
+- **The question.** Among Portuguese firms that considered AI and did not adopt it, what held them back, and how does that compare with the EU?
+- **AI path.** AI directly, 0 steps. Places: Portugal, Europe.
+- **Checked figures** (checked on 23 Nov 2026). Base: firms with 10+ staff that did not use AI but considered it (Portugal 13.2% of firms in 2026, 12.3% in 2025; EU 11.1% in 2025). 2025, Portugal against EU: cost too high 60.4% against 38.4%; lack of skills 74.4% against 70.3%; ethical concerns 36.4% against 24.6%; AI not useful 18.2% against 17.8%. Portugal 2026: cost 64.7%, skills 65.6%.
+- **What the data cannot show.** Why the 80% of firms that never considered AI do not use it. What firms mean by cost. A 2026 EU comparison (not yet published). Sector detail (INE's classification changed in 2026).
+- **Sources.**
+  - [INE, "Utilização de Inteligência Artificial pelas empresas aumenta para 19,6%"](https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUESdest_boui=770294191&DESTAQUESmodo=2) (tables Quadro 7 and 7.2), published 20 November 2026, read 23 November 2026
+  - [Eurostat, "Artificial intelligence by size class of enterprise" (isoc_eb_ai)](https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ai/default/table), read through Eurostat's data API 23 November 2026
 
 ## A4: AI startup funding in Portugal
 
@@ -27,7 +39,7 @@ States: proposed, chosen, drafting, with Vicky, published, set aside. The full p
 
 ## A3: Sixty megawatts and a 1,000 MW goal
 
-- **State:** approved by Vicky on 16 Nov 2026 (standing answer 92): the designer draws the chart, the reviewer re-checks every figure and publishes it on Thursday 19 November. (Draft 16 Nov 2026, extra run at her ask: `desks/analyst-vicky/drafts/a3-sixty-megawatts.md`, data note in `desks/analyst-vicky/data/`). Start Campus's own site, read 16 Nov, gives 37.5 MW live (SIN01), 200 MW planned (SIN02) and 1.2 GW in all; the 2024 REN allocation is left out (not read at source).
+- **State:** published on 16 Nov 2026 by the reviewer (`content/articles/portugal-60-mw-computing-capacity.md`), approved by Vicky the same day (standing answer 92).
 - **The question.** The Government says Portugal had about 60 MW of computing capacity in 2025 and needs 700 to 1,000 MW by 2030 to meet AI demand. How far is that, and how does one private campus in Sines compare?
 - **AI path.** AI directly for the national target (the AI Agenda sets it for AI demand). Two steps for Sines: AI runs in data centres, which draw on the grid. Places: Sines (Alentejo), Portugal, Europe.
 - **Checked figures.**
@@ -44,7 +56,7 @@ States: proposed, chosen, drafting, with Vicky, published, set aside. The full p
 
 ## A2: One firm in nine, and the gap that opened
 
-- **State:** proposed (15 Nov 2026).
+- **State:** set aside on 23 Nov 2026: A1 (published 23 Nov) now carries the company figures, the size split and the 2025 definition change, with INE's 2026 results. Back if Eurostat's 2026 EU figures show something new.
 - **The question.** Portugal's share of companies using AI was close to the EU's in 2021. By 2025 the gap was more than eight points. Where did it open?
 - **AI path.** AI directly, 0 steps. Places: Portugal, Europe.
 - **Checked figures** (companies with 10 or more staff, finance excluded, % using at least one AI technology).
@@ -58,7 +70,7 @@ States: proposed, chosen, drafting, with Vicky, published, set aside. The full p
 
 ## A1: People ahead, companies behind
 
-- **State:** drafting. Updated on 20 Nov 2026 with INE's 2026 results (596 words; draft and data note in `desks/analyst-vicky/`). Framing approved by Vicky on 16 Nov (standing answer 89); published early next week after her look at the update.
+- **State:** published on 23 Nov 2026 by the reviewer as "AI use in Portugal jumps in 2026, for people and companies" (`content/articles/ai-use-in-portugal-2026.md`), with INE's 2026 figures (updated 20 Nov).
 - **The question.** People in Portugal use AI more than the EU average, but Portuguese companies have used it less. Why the gap, what does each number measure, and is it closing?
 - **AI path.** AI directly, 0 steps. Linked to the Humans and AI series. Places: Portugal, the Algarve (INE's regional figure, 2026), Europe.
 - **Checked figures** (2026 checked on 20 Nov 2026; EU 2025 re-read the same day, unchanged).
