@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2423",
+    "date": "2026-11-24",
+    "what": "journalist-ai@PrompTugal.vicky: report and ledger for S83",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "84bb244a8"
+  },
+  {
     "version": "v0.2.2422",
     "date": "2026-11-24",
     "what": "curator@PrompTugal.vicky: 24 Nov 07:35 run report and the S83 task for journalist-ai",
