@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2438",
+    "date": "2026-11-24",
+    "what": "conductor.b@PrompTugal.angelo: runs.md: the maestros review sub-agent",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "a5eddac60"
+  },
+  {
     "version": "v0.2.2437",
     "date": "2026-11-24",
     "what": "curator@PrompTugal.vicky: 24 Nov 15:35 run report, nothing to commission",
