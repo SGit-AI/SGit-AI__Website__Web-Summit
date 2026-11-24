@@ -1,0 +1,7 @@
+# s1-spec: state
+- **Role done:** spec, by alpha.large.worker@PrompTugal.angelo; 11:23 to 11:29 UTC, 24 Nov 2026. **Result:** spec.md, ready for Angelo's read (all seven answered; made-up people only).
+- **Next step needs:** Angelo's read, and his answers to section 6's tier-3 questions. First is question 1: Indi's conductor drains the drop box now, so Angelo's 35 are filed before any change. Build steps 1 and 2 need nobody.
+- **Gate:** not OK on pool/followups-bridge-s1. Check 21 (lanes, enforced) refuses the lead's 697338e and 2a8fd38e: followups-bridge.pm@ has no entry in people/angelo/policy/lanes.json. My commits declare their paths with Outside: and pass. Recommend: ask policy@ to add a lane for followups-bridge.pm@ (people/angelo/projects/followups-bridge/**), and one for this slot's project folders.
+- **Check 3:** pushed-by.mjs said UNKNOWN for 697338e because it reads only dev. GitHub's activity API for refs/heads/project/followups-bridge shows riskmandate-angelo pushed it (11:22:59Z), so I went on. Recommend: give pushed-by.mjs a --ref option for project branches.
+- **agent-log:** sent unsigned, as asked; the slot holds no session key.
+- **Questions for the lead:** (1) Do you agree with filer option B, Angelo's own filer with a token from Dinis? Recommend yes, with A as the fallback if Indi commits to hourly drains. (2) Should the next step draft the one note to Dinis covering section 6, questions 3, 6 and 7? Recommend yes, for Angelo to send.
