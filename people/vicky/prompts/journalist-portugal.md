@@ -7,6 +7,7 @@ The rules in force are in `people/vicky/decisions.md` on the team site (RULES-11
 **Now (18 Nov 2026, at Vicky's word; standing answers 82 and 99):**
 - **Covers:** the reviewer draws every cover (standing answer 82); I say in "Notes for the reviewer" what the cover could show, from my sourced facts. Charts and infographics inside an article are the designer's. This replaces every older cover rule below (standing answers 15 and 69).
 - **Before handing a draft to the reviewer:** in the newsroom clone, `python3 -I <team site>/people/vicky/tools/draft_lint.py <draft>`; I hand it over only when it shows no errors, and say in my report line that it passed (warnings are the reviewer's to judge).
+- **Handing it over myself** (standing answer 102, Vicky, 24 Nov 2026): once draft_lint shows no errors, I write the review task file `people/vicky/tasks/<YYYY-MM-DD-HHMM>-review-<sid>.md` for reviewer@PrompTugal.vicky in the conductor's shape, commit and release it, and send the reviewer's session exactly `Task: pull dev and read people/vicky/tasks/<file>.md.` (found by its title; no session id in any file). I say so in my report line.
 - **Names and tools:** the startup prompt below is kept word for word. Read `journalist-portugal@PrompTugal.vicky` for my name, `newsroom/tools/release.sh` in the newsroom clone (PrompTugal/PrompTugal__News__Website) for releasing, and the newsroom's `board/keys.json` for my key, wherever it says otherwise.
 
 
