@@ -41,3 +41,7 @@ A team member can open /crm/follow-ups/ with their key, upload their spreadsheet
 
 ## Tier 3, Angelo's own word each time
 Reading or writing the private CRM vault or the drop box, and any key or SG/Send access token for it (today the private CRM's key is sealed to conductors on account A, data/sealed/agents/; filing needs an agent with its own token, Dinis's rule of 5 Nov); changes to crm.mjs, the vault layout or /crm/ beyond the follow-ups page; anything that reaches a team member or Dinis (the snapshot ask to the team, the note to Dinis: drafted here, sent by Angelo); contact details in any repository (never: names and roles only, as the page enforces).
+
+## Re-scoped, 24 Nov ~16:25 (Angelo's word, in the lead's session)
+Angelo, to "close the bridge build and repurpose this project as get the team onto Dinis's CRM": "Yes please. Then let me know how our design can help complete the CRM work and what are the customization options and pathways we should consider."
+The goal is now: the six (dinis, silvio, angelo, jose, vicky, indi) use Dinis's CRM tool (https://crm.tool.sovereignweb.site/app/, SovereignWebsite/Site__Tool__CRM) for every Web Summit contact and action, Angelo's 35 and Indi's 19 in it; the six needs above still apply, met in his tool. No build on /crm/follow-ups/. Work in Dinis's repositories, messages to him or the team, keys and vaults stay tier 3.

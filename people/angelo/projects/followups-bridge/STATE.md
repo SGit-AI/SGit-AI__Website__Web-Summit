@@ -1,6 +1,6 @@
 # followups-bridge: state
 
-For the digest: Dinis's CRM tool went live today (crm.tool.sovereignweb.site/app/, CSV import, QR key hand-out); recommended to Angelo: close the bridge build and re-scope to getting the team onto it. Cost so far 2.68 USD plus sub-agent tokens.
+For the digest: re-scoped at Angelo's word: get the team onto Dinis's CRM tool (bridge build closed); s2 (how our design completes it, customisation options and pathways) running. Cost so far 2.68 USD plus sub-agent tokens.
 
 ## Goal
 BRIEF.md: the follow-up list (/crm/follow-ups/, WS-217) becomes the one place for every Web Summit contact and every action taken; six items, fixed scope, a bridge to Dinis's CRM tool site. Done when BRIEF.md's "Done when" holds and Angelo accepts it.
@@ -27,6 +27,9 @@ BRIEF.md: the follow-up list (/crm/follow-ups/, WS-217) becomes the one place fo
   Recommended to Angelo: join; pause the bridge build; keep only the recovery of his 35; offer Dinis's effort the import, "in progress by", notes and the team-vault model (from s1's spec). Waiting on his answer (tier 3: work in Dinis's repository).
 
 - Angelo, 24 Nov ~16:00: "Ok things have moved on, can you review the situation with the CRM?" Sub-agent review (read only): Site__Tool__CRM made 12:03; app live at https://crm.tool.sovereignweb.site/app/ (v0.1.21); CSV import live (template crm/site/template.csv; made-up data only; no XLSX); browser key + QR to Dinis, crm.dev.a seals a vault key to it (tested by Dinis 14:05); RiskMandate CRM vault made (empty). Still missing for six people: a team contacts vault (who makes it and holds its key: Dinis; security@'s condition 4 first: lawful basis, removal route, retention, key holders), hand-outs hang on one agent's session key, real-data import untested, "in progress by" and notes absent. Nothing addressed to Angelo; from-a.md 12:10Z: "Still held: Angelo's access (Dinis's direct word)".
+
+- Angelo, 24 Nov ~16:25, to "close the bridge build and repurpose this project as get the team onto Dinis's CRM": "Yes please. Then let me know how our design can help complete the CRM work and what are the customization options and pathways we should consider." Re-scoped: no build on /crm/follow-ups/; s1's spec is material for s2.
+- Decided by default, Angelo can reverse: s2 is a spec step (large), read only, writing s2-join/plan.md.
 
 ## Keys today (checked 24 Nov from the repository, no vault read)
 - Six people can open and save: dinis, silvio, angelo, jose, vicky, indi. Each has an active site key (data/person-keys.json) and the private CRM key sealed to that same key (data/sealed/<id>/2026-11-05T1447Z-team-crm-key.json): all six match.
