@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2439",
+    "date": "2026-11-24",
+    "what": "conductor.b@PrompTugal.angelo: Angelo's word: the maestros model replaces the handover approach, account A first",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "f00c93294"
+  },
+  {
     "version": "v0.2.2438",
     "date": "2026-11-24",
     "what": "conductor.b@PrompTugal.angelo: runs.md: the maestros review sub-agent",
