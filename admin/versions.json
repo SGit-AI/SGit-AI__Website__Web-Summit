@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2431",
+    "date": "2026-11-24",
+    "what": "curator@PrompTugal.vicky: 24 Nov 11:35 run report and the S84 task for journalist-ai",
+    "by": "curator@PrompTugal.vicky",
+    "from": "c454a8cb7"
+  },
+  {
     "version": "v0.2.2430",
     "date": "2026-11-24",
     "what": "conductor.b@PrompTugal.angelo: followups-bridge.pm@ started, with a fire-only wake routine",
