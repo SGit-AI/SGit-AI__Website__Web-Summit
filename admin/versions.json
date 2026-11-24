@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2430",
+    "date": "2026-11-24",
+    "what": "conductor.b@PrompTugal.angelo: followups-bridge.pm@ started, with a fire-only wake routine",
+    "by": "conductor.b@PrompTugal.angelo",
+    "from": "e3998f390"
+  },
+  {
     "version": "v0.2.2429",
     "date": "2026-11-24",
     "what": "conductor.b@PrompTugal.angelo: project followups-bridge opened for its PM",
