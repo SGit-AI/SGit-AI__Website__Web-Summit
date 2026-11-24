@@ -34,6 +34,6 @@ The last ran on 15 Nov (handover.agent.a@); the others on or before 10 Nov.
 - Writer drafts gw1 (Google Workspace) and pr1 (the protocols) still wait on Angelo's review, in the newsroom's desks/writer-angelo/drafts/.
 - 0-FOLLOW (PrompTugal.news follow links; the Instagram handle) is still in the backlog.
 - maestro.e's environment on this account is Angelo's next decision.
-- Environment maestro-e (for maestro.e, no secrets): NOT created. This session has no get_environment or create_environment tool. Angelo creates it in the app: personal; network Limited, package managers and MCP servers allowed; allowed hosts dev.send.sgraph.ai, pki.sgit.ai, sgit.ai, decisions.agents.sovereignweb.site, web-summit.sgit.ai; setup `pip install sgit-ai==0.27.0`; no variables, no secrets, no repositories.
+- Environment maestro-e (env_017dBwMytuQnH25cqPfT3wTC), for maestro.e, no secrets: created by Angelo in the app on 24 Nov about 17:46 UTC with the settings he gave (personal; network Limited, package managers and MCP servers allowed; hosts dev.send.sgraph.ai, pki.sgit.ai, sgit.ai, decisions.agents.sovereignweb.site, web-summit.sgit.ai; setup `pip install sgit-ai==0.27.0`; no variables, secrets or repositories). The desk confirmed it exists and is active; it cannot read the settings themselves.
 
 **The desk stays idle, with no routine, until Angelo archives it.**
