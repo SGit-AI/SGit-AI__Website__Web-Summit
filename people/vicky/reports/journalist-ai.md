@@ -280,3 +280,7 @@ state: ok; done: S82 drafted and pushed for the reviewer; next: wait for the nex
 ## 2026-11-24: S83 (task 2026-11-24-0750-s83, from the curator under standing answer 101)
 S83 drafted: an arXiv paper on five coding agents, read from its abstract page only (24 Nov); draft_lint clean; newsroom commit 6eb2c69de; every figure credited to the paper and not checked; the full paper and method not read; measures reverts, not production incidents; period earlier than the companies' posts; no ranking beyond the paper's wording; S80, S81 and S82 each linked once as comparisons; no image; the AI connection is in the "Notes for the reviewer" block.
 state: ok; done: S83 drafted and pushed for the reviewer; next: wait for the next task file; ask: none; run: prompted
+
+## 2026-11-24: S84 (task 2026-11-24-1150-s84, from the curator under standing answers 100, 101 and 102)
+S84 drafted: an update note on S83 from the paper's PDF (read 24 Nov); draft_lint clean; newsroom commit c0ecc58dc; the article's first note, within standing answer 100; figures the paper's and not checked; production incidents and peer review still unknown. Passed to the reviewer as standing answer 102 says (task file 2026-11-24-1210-review-s84).
+state: ok; done: S84 drafted, pushed and passed to the reviewer; next: wait for the next task file; ask: none; run: prompted
