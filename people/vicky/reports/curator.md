@@ -564,3 +564,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Commissioned S83 for journalist-ai (category AI), passed on by task file: an arXiv paper's abstract page (https://arxiv.org/abs/2609.17598, submitted 12 September 2026, read by the researcher 24 Nov 07:17 UTC) on 37,623 pull requests from five coding agents against a human baseline: revert rates differ by agent, fewer security smells pooled, uneven review waits. The paper's figures from its abstract only; reverts, not incidents. The independent comparison the gap asked for; no duplicate.
 - Gaps sent back: the paper's full text and method; production-incident data; the Official Journal provisions; telerehabilitation numbers.
 - state: ok; done: 1 commission (S83); next: curator 11:35; ask: none; run: scheduled
+
+## Tue 24 Nov 2026, 11:35 UTC run
+
+- decisions.md read first (standing answer 102 is for the journalists and the reviewer, nothing for me); no hold file on either site; prompts file re-read, matches; RULES-11NOV kept; applied SA58-THEMES and SA54-LEDGER. Map: `desks/curator/2026-11-24-1150.json` in the newsroom. S83 is published and now listed so.
+- Commissioned S84 for journalist-ai, an update note on S83, passed on by task file: the researcher read the arXiv paper's PDF (https://arxiv.org/pdf/2609.17598, read 24 Nov 11:16 UTC): the revert definition, 4,027 human against 9,750 agent pull requests, per-agent odds ratios (three agents not distinguishable from humans) and the paper's own limits; marked a preprint. The paper's figures, unchecked; this closes in part S83's own caveat.
+- Gaps sent back: production-incident data and any other independent study; whether the paper is peer reviewed; the Official Journal provisions; telerehabilitation numbers.
+- state: ok; done: 1 commission (S84, update note); next: curator 15:35; ask: none; run: scheduled
