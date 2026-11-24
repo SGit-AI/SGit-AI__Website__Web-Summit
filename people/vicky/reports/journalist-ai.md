@@ -276,3 +276,7 @@ state: ok; done: S81 drafted and pushed for the reviewer; next: wait for the nex
 ## 2026-11-23: S82 (task 2026-11-23-1550-s82, from the curator under standing answer 101)
 S82 drafted: Spotify Engineering's own post on change outrunning checking (read 23 Nov); draft_lint clean; newsroom commit 1db9485a3; every figure and finding credited to the company; no verdict on AI code quality; S80 linked once as a comparison, S81 not linked (not yet published); title shortened to fit the 11-word limit; no image; the AI connection is in the "Notes for the reviewer" block.
 state: ok; done: S82 drafted and pushed for the reviewer; next: wait for the next task file; ask: none; run: prompted
+
+## 2026-11-24: S83 (task 2026-11-24-0750-s83, from the curator under standing answer 101)
+S83 drafted: an arXiv paper on five coding agents, read from its abstract page only (24 Nov); draft_lint clean; newsroom commit 6eb2c69de; every figure credited to the paper and not checked; the full paper and method not read; measures reverts, not production incidents; period earlier than the companies' posts; no ranking beyond the paper's wording; S80, S81 and S82 each linked once as comparisons; no image; the AI connection is in the "Notes for the reviewer" block.
+state: ok; done: S83 drafted and pushed for the reviewer; next: wait for the next task file; ask: none; run: prompted
