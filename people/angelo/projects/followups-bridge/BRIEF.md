@@ -5,7 +5,7 @@ started: 2026-11-24, by conductor.b@PrompTugal.angelo at Angelo's word
 status: running
 budget: none; the running cost (dollars and tokens) in STATE.md's "For the digest:" line
 ---
-**Wake routine:** set by conductor.b@ in its next commit. It fires only when a worker fires it (no backstop schedule). Put "Wake routine: <its id>" in every worker's brief.md.
+**Wake routine:** trig_01AVamZUMw45sJAxPkJZnq3k. It fires only when a worker fires it (no backstop schedule). Put "Wake routine: trig_01AVamZUMw45sJAxPkJZnq3k" in every worker's brief.md.
 
 # The follow-ups bridge
 
