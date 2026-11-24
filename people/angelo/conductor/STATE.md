@@ -174,3 +174,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 last_run: 2026-11-10T16:22:10Z (the runner)
 
+- 24 Nov 2026: account A cleared for maestro.e (21 routines disabled, 10 agent sessions archived); the desk idle, no routine: people/angelo/conductor/2026-11-24-account-a-cleared.md
