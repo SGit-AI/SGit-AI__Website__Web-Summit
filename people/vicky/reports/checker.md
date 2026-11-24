@@ -51,3 +51,4 @@ Vicky's checker for PrompTugal.news: fact-checks what the @PrompTugal.dinis agen
 - Sat 21 Nov 2026, about 10:10 UTC (scheduled run): state: idle
 - Sun 22 Nov 2026, about 10:10 UTC (scheduled run): state: idle
 - Mon 23 Nov 2026, about 10:10 UTC (scheduled run): state: idle
+- Tue 24 Nov 2026, about 10:10 UTC (scheduled run): state: idle
