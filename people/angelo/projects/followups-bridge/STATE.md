@@ -19,6 +19,9 @@ BRIEF.md: the follow-up list (/crm/follow-ups/, WS-217) becomes the one place fo
 - Angelo, 24 Nov, in this session: "Are we losing anything in adopting from the start directly the fields Dinis has planned in the new CRM? I think that would make the migration later easier." Taken as his direction: the bridge uses Dinis's crm.org/1, crm.person/1, crm.lead/1 field names as they are; only what his model lacks (the action log, "in progress by", possibly "call booked") is added, as proposals to Dinis. The s1 spec started before this: its Angelo's-read revision applies it.
 - Angelo, 24 Nov: "Can you clarify all the keys requirements and what are the blockers to get everyone the ability to interact with CRM to add contacts, actions, notes, etc?" Answered in the session from the repository (below); the spec's revision carries it.
 
+- Angelo, 24 Nov: "We won't be bringing the other 3 members of the team in, they have no leads to add, so we'll leave them for now." Audience stays the six.
+- Angelo, 24 Nov: "In case Indi is not around to answer or he lost his key, what's the alternative?" Answered: (A) his 35 are likely still in his own browser (the page keeps an unfiled save, sealed to him, in localStorage 'ws-fu-pending', assets/crm-follow-ups.js:75,152) in the browser he saved from; (B) our own filing agent with its own token and a new drop box (crm_followups.mjs lane, already written), the old box abandoned; (C) saving straight into the private CRM from the browser (WS-189 question 4, Dinis's). Recommended A now, B as the fix.
+
 ## Keys today (checked 24 Nov from the repository, no vault read)
 - Six people can open and save: dinis, silvio, angelo, jose, vicky, indi. Each has an active site key (data/person-keys.json) and the private CRM key sealed to that same key (data/sealed/<id>/2026-11-05T1447Z-team-crm-key.json): all six match.
 - Not in: nimay, daniela, sarah (team.json, "briefed"): no site key, nothing sealed, not in the list's audience (assets/crm-follow-ups.json).
@@ -29,7 +32,6 @@ BRIEF.md: the follow-up list (/crm/follow-ups/, WS-217) becomes the one place fo
 2. A filing agent with its own SG/Send access token (Dinis's rule of 5 Nov), and in whose environment it lives.
 3. Any change to crm.mjs or the vault layout (Dinis's); the note to Dinis that this is a bridge (drafted here, sent by Angelo).
 4. The snapshot ask to the team (drafted here, sent by Angelo).
-5. Bringing in nimay, daniela, sarah: each makes a site key; a holder of the private CRM key seals it to them; the list's audience grows (Dinis's conductor today).
 6. Asking Indi whether conductor@web-summit.indi still holds the drop box's keys, and whether filing moves to an agent of ours with its own token.
 
 ## Last
