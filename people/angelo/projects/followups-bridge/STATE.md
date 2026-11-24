@@ -1,6 +1,6 @@
 # followups-bridge: state
 
-For the digest: spec step (s1) running on a large slot, read-only; then Angelo's read, then build; nothing waiting on Angelo yet beyond the tier-3 list. Cost so far 0 USD (s1 running).
+For the digest: spec step (s1) running on alpha (large), read-only; then Angelo's read, then build; 4 tier-3 items listed, none blocking. Cost so far 0 USD (s1 running).
 
 ## Goal
 BRIEF.md: the follow-up list (/crm/follow-ups/, WS-217) becomes the one place for every Web Summit contact and every action taken; six items, fixed scope, a bridge to Dinis's CRM tool site. Done when BRIEF.md's "Done when" holds and Angelo accepts it.
