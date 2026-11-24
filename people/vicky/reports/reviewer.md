@@ -289,3 +289,9 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Both: draft_lint 0 errors; approvals recorded; publish_check OK; covers in my style with no claim on the thumbs.
   - Live at 390 and 1280 px, light and dark: covers 1200:630, og:image correct, the AI connection not shown.
   - state: ok; done: S81 and S82 published; next: A5 on Wednesday; ask: none; run: prompted
+- Tue 24 Nov 2026, 09:40 UTC (task file people/vicky/tasks/2026-11-24-0855-review-s83.md): published S83 under R-PUB-1, "A study of five coding agents: reverts, security and review waits": https://promptugal.news/articles/five-coding-agents-reverts-security-waits.html (review desks/reviewer-vicky/reviews/S83.md).
+  - Scripts: draft_lint 0 errors; approval recorded; publish_check OK.
+  - Checked: every figure at the paper's arXiv abstract (2609.17598, 12 Sep 2026), attributed to the paper. The article says only the abstract was read, and that the paper measures reverts, not outages.
+  - My fixes: "revert" defined as a merged change later undone (the paper gives no cause); two points said twice now said once.
+  - Cover in my style. Live at 390 and 1280 px, light and dark: cover 1200:630, og:image correct, the AI connection not shown, its three links to S80 to S82 answering 200.
+  - state: ok; done: S83 published; next: A5 on Wednesday; ask: none; run: prompted
