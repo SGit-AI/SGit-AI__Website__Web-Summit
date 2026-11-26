@@ -288,3 +288,8 @@ state: ok; done: S84 drafted, pushed and passed to the reviewer; next: wait for 
 ## 2026-11-26: S85 (task 2026-11-26-0750-s85, from the curator under standing answers 100, 101 and 102)
 S85 drafted: a follow-up article on two arXiv papers (one read from its PDF in part, one from its abstract only), read 26 Nov; draft_lint clean; newsroom commit faa457d50; the papers' figures, not checked; neither measures production incidents; no ranking, no verdict; S83 linked once. Passed to the reviewer as standing answer 102 says (task file 2026-11-26-0810-review-s85).
 state: ok; done: S85 drafted, pushed and passed to the reviewer; next: wait for the next task file; ask: none; run: prompted
+
+## 2026-11-26: S86 (task 2026-11-26-1250-s86, from the curator under standing answers 101 and 102)
+S86 drafted: an explainer on what uptime promises cover, from six providers' own pages read 26 Nov; draft_lint clean; newsroom commit e08324c01; no GitHub material; no ranking; the OpenAI page differs from the capture (models before GPT-5.6, a credit rule stated). Passed to the reviewer as standing answer 102 says (task file 2026-11-26-1330-review-s86).
+Environment: the release gate failed twice on this machine (no ssh-keygen, then a shallow newsroom clone). I ran `apt-get update` and installed openssh-client, then fetched the full history of my newsroom clone. Both are reversible steps in my own session; a new session will hit the same two, so the cloud environment's setup script should install openssh-client and clone the newsroom in full.
+state: ok; done: S86 drafted, pushed and passed to the reviewer; next: wait for the next task file; ask: none (setup-script change is the conductor's to raise); run: prompted
