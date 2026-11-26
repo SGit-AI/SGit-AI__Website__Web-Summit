@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2460",
+    "date": "2026-11-26",
+    "what": "curator@PrompTugal.vicky: 26 Nov 12:50 report (the conductor's uptime tasks) and the S86 task for journalist-ai",
+    "by": "curator@PrompTugal.vicky",
+    "from": "e6c477cf8"
+  },
+  {
     "version": "v0.2.2459",
     "date": "2026-11-26",
     "what": "task for the curator, commission the uptime explainer for journalist-ai (Vicky's go)",
