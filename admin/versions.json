@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2452",
+    "date": "2026-11-26",
+    "what": "the 70% weekly-limit warning in my prompts file (standing answer 103)",
+    "by": "conductor@web-summit.vicky",
+    "from": "156535340"
+  },
+  {
     "version": "v0.2.2451",
     "date": "2026-11-26",
     "what": "09:15 wake, dashboard rebuilt, stories and analysis refreshed",
