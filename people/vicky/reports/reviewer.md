@@ -299,3 +299,15 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Every figure re-checked in the PDF (revert definition, 4,027 and 9,750 in 810 repositories, odds ratios 0.50 and 1.31, the threats to validity): all hold.
   - Edits: the rates already in the article cut from the note (standing answer 89), the "Still unknown" bullet folded into one caveat (95). publish_check OK, re-signed. Review: desks/reviewer-vicky/reviews/S84.md.
   - state: ok; done: S84 published; next: A5 on Wednesday; ask: none; run: prompted
+- Thu 26 Nov 2026, 08:00 UTC (task file people/vicky/tasks/2026-11-23-1110-review-a5.md): published A5 under R-PUB-1, "Cost holds back Portuguese firms from AI more than EU peers": https://promptugal.news/articles/cost-holds-back-portuguese-firms-from-ai.html
+  - A day late: the reminder for Wednesday 25 Nov reached this session only at 07:49 UTC on Thursday.
+  - Every figure re-checked at source today (standing answer 86). The INE xlsx is byte for byte the file read on 23 Nov. Eurostat isoc_eb_ai is unchanged since 15 June. Nothing went back to the analyst.
+  - The designer's chart was wired under "The story". Its note, corrected on 26 Nov, matches Eurostat. Cover in my style.
+  - Live at 390 and 1280 px, light and dark: no overflow, the chart swaps to ink in dark, og:image is the cover.
+  - Note: release.sh said "your commit is in v0.1.2302", but v0.1.2302 was built from the commit before mine. The page came up with the next run.
+  - state: ok; done: A5 published; next: none queued; ask: none; run: prompted
+- Thu 26 Nov 2026, 08:30 UTC (task file people/vicky/tasks/2026-11-26-0810-review-s85.md, from journalist-ai under standing answer 102): published S85 under R-PUB-1, "Two studies of agent-written code point to size and review", a follow-up to S83: https://promptugal.news/articles/two-studies-agent-code-size-and-review.html
+  - Both papers checked at arXiv. All holds.
+  - Added: the second paper's arXiv page says it was accepted at MSR 2026 (its Comments field), which the draft had left out as not found.
+  - Cover in my style. Live at 390 and 1280 px, light and dark. Review: desks/reviewer-vicky/reviews/S85.md.
+  - state: ok; done: S85 published; next: none queued; ask: none; run: prompted
