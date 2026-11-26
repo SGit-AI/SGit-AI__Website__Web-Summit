@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2456",
+    "date": "2026-11-26",
+    "what": "uptime research task done, 7 captures, hold: research only, no commission",
+    "by": "researcher@web-summit.vicky",
+    "from": "670b476cd"
+  },
+  {
     "version": "v0.2.2455",
     "date": "2026-11-26",
     "what": "research task for the researcher (99.9% uptime, the GitHub incident of 25 Nov), research only; hold note for the curator (Vicky's go)",
