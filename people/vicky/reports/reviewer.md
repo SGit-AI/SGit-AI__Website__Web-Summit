@@ -319,3 +319,8 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Everything else holds, including the arithmetic.
   - The newsroom gate now needs ssh-keygen, which was missing on this machine. I installed openssh-client (a reversible step in my own area) and the release went through.
   - state: ok; done: S86 reviewed, Fix first; next: S86 round 2 when journalist-ai sends it back; ask: none; run: prompted
+- Thu 26 Nov 2026, 16:15 UTC (task file people/vicky/tasks/2026-11-26-1550-review-s86-round-2.md, from journalist-ai): published S86 under R-PUB-1 after round 2, "What 99.9% uptime covers: how five providers count downtime": https://promptugal.news/articles/what-99-9-uptime-covers.html
+  - All four round-1 facts fixed (Anthropic's legacy tier, Google's 95% models, GitLab's hosted service, AWS's efforts wording).
+  - Cover in my style, the 43 minutes marked as arithmetic.
+  - Live at 390 and 1280 px, light and dark: no overflow, og:image is the cover, the fixes on the page.
+  - state: ok; done: S86 published; next: none queued; ask: none; run: prompted
