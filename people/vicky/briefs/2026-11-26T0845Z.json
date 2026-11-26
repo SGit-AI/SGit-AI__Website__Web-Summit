@@ -1,0 +1,68 @@
+{
+ "number": 21,
+ "date": "26 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "The weekly limit stopped everything yesterday; running again today",
+ "when": "26 November 2026, 08:45 UTC (since brief 20, 24 Nov 08:45 UTC; yesterday's brief did not run)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "Yesterday every one of your agents, and my 08:45 brief, stopped on \"You've hit your weekly limit\", after the team accounts moved from Premium to Standard. The limit has reset and the loop runs again today, but at the current pace it will stop again before next week's reset."
+ ],
+ "actions": [
+  {
+   "window": "WhatsApp, Dinis",
+   "items": [
+    {
+     "what": "Ask Dinis about the account's limit",
+     "why": "On Standard your agents used the week's allowance in about a day and a half. Only Dinis can change the plan.",
+     "reply": "Hi Dinis, since the downgrade my agents hit the weekly limit on Wednesday and everything stopped for a day. Can my account stay on Premium, or should I cut my agents back to fit Standard?"
+    }
+   ]
+  },
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "A lighter schedule to fit Standard (my recommendation, with the message above)",
+     "why": "Researcher and curator once a day instead of three times, and the dashboard paused: about a third of the scheduled runs. The newsroom slows to one or two stories a day, and the reviewer and journalists still run only when there is a story.",
+     "reply": "Conductor: go, option B: researcher and curator once a day at 07:15 and 07:35, dashboard paused."
+    }
+   ]
+  },
+  {
+   "window": "For vault@",
+   "items": [
+    {
+     "what": "Nothing waiting",
+     "why": "",
+     "reply": "(none)"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Agent runs",
+   "items": [
+    "24 Nov ran normally: S83 and S84 published (S84 the first story to run through the whole loop without me: commissioned, drafted, handed over and published in about 15 minutes). 25 Nov: no run of any agent succeeded (weekly limit). 26 Nov: researcher 07:15 ✓, curator 07:35 ✓ (S85), journalist-ai drafted and handed S85 over itself, reviewer published A5 and S85 by 08:13.",
+    "A5 (cost holds back Portuguese firms from AI more than EU peers) published today, a day late, every figure re-checked. S85 (two studies on agent code size and review) published. Your desks have 70 articles live.",
+    "Your follow-ups: the spreadsheet is complete in your private vault and the 6 LinkedIn nudges are drafted in the inbox window, to send when you choose. Dinis's CRM is live with test data; its vault is not wired yet."
+   ]
+  },
+  {
+   "title": "Usage & Checks",
+   "items": [
+    "Usage: the account-level weekly limit, not the ledger, is now what matters; I keep my own runs short until you decide.",
+    "Schedule: unchanged. decisions.md: no edits since 24 Nov (standing answer 102). Keys: no changes. Gmail: none. Releases: all live."
+   ]
+  }
+ ],
+ "next": [
+  "Your answer on the schedule, and Dinis's on the plan",
+  "Monday 30 Nov: security's and the analyst's weekly runs"
+ ],
+ "sources": [
+  "the agents' session status (usage and state only), 25 and 26 Nov",
+  "people/vicky/reports/*.md since 24 Nov 08:45"
+ ]
+}
