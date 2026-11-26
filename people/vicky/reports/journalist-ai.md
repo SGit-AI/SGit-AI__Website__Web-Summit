@@ -284,3 +284,7 @@ state: ok; done: S83 drafted and pushed for the reviewer; next: wait for the nex
 ## 2026-11-24: S84 (task 2026-11-24-1150-s84, from the curator under standing answers 100, 101 and 102)
 S84 drafted: an update note on S83 from the paper's PDF (read 24 Nov); draft_lint clean; newsroom commit c0ecc58dc; the article's first note, within standing answer 100; figures the paper's and not checked; production incidents and peer review still unknown. Passed to the reviewer as standing answer 102 says (task file 2026-11-24-1210-review-s84).
 state: ok; done: S84 drafted, pushed and passed to the reviewer; next: wait for the next task file; ask: none; run: prompted
+
+## 2026-11-26: S85 (task 2026-11-26-0750-s85, from the curator under standing answers 100, 101 and 102)
+S85 drafted: a follow-up article on two arXiv papers (one read from its PDF in part, one from its abstract only), read 26 Nov; draft_lint clean; newsroom commit faa457d50; the papers' figures, not checked; neither measures production incidents; no ranking, no verdict; S83 linked once. Passed to the reviewer as standing answer 102 says (task file 2026-11-26-0810-review-s85).
+state: ok; done: S85 drafted, pushed and passed to the reviewer; next: wait for the next task file; ask: none; run: prompted
