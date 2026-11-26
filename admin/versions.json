@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2446",
+    "date": "2026-11-26",
+    "what": "26 Nov 07:15 research run report (three 25 Nov runs missed)",
+    "by": "researcher@web-summit.vicky",
+    "from": "83080e17d"
+  },
+  {
     "version": "v0.2.2445",
     "date": "2026-11-25",
     "what": "conductor.b@PrompTugal.angelo: g.maestro's start prompt prepared for this account",
