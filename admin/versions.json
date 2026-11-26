@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2451",
+    "date": "2026-11-26",
+    "what": "09:15 wake, dashboard rebuilt, stories and analysis refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "36f91d20e"
+  },
+  {
     "version": "v0.2.2450",
     "date": "2026-11-26",
     "what": "brief 21 (26 Nov 08:45): the weekly limit",
