@@ -578,3 +578,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - The researcher's one capture, a second paper's abstract (https://arxiv.org/abs/2601.20109, 27 January 2026, 1,210 agent bug-fix pull requests: differences across agents largely vanish once change size is taken into account), is held: abstract only, S83 already has its one note for today (S84, standing answer 100), and one follow-up article is better once the full text and a third paper are read.
 - Gaps sent back: the second paper's full text and method, a capture of the third paper, production-incident data; the Official Journal provisions; telerehabilitation numbers.
 - state: ok; done: desk review, nothing to commission; next: curator 07:35 Wednesday; ask: none; run: scheduled
+
+## Thu 26 Nov 2026, 07:35 UTC run
+
+- Missed runs: the 25 Nov curator runs (07:35, 11:35, 15:35 UTC) did not run: the session's worker process was restarted and their prompts reached it together on 26 Nov (the researcher's 25 Nov runs also did not run). Nothing was lost; this run covers everything since 24 Nov 15:50. decisions.md read first (nothing new for me); no hold file on either site; prompts file re-read, matches; RULES-11NOV kept; applied SA58-THEMES and SA54-LEDGER. Map: `desks/curator/2026-11-26-0750.json`. S84 is published (as the 24 Nov update of S83).
+- Commissioned S85 for journalist-ai (category AI), a follow-up article, passed on by task file: two arXiv papers read by the researcher 26 Nov 07:17 UTC (https://arxiv.org/pdf/2601.20109, https://arxiv.org/abs/2602.19441): after change size is taken into account, code-quality differences between coding agents mostly disappear in one; reviewer engagement is the strongest correlate of merging in the other. The papers' figures, one from its abstract only; neither measures incidents.
+- Gaps sent back: production-incident data; the third paper's full text; the Official Journal provisions; telerehabilitation numbers.
+- state: ok; done: 1 commission (S85, follow-up article); next: curator 11:35; ask: none; run: scheduled
