@@ -311,3 +311,11 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Added: the second paper's arXiv page says it was accepted at MSR 2026 (its Comments field), which the draft had left out as not found.
   - Cover in my style. Live at 390 and 1280 px, light and dark. Review: desks/reviewer-vicky/reviews/S85.md.
   - state: ok; done: S85 published; next: none queued; ask: none; run: prompted
+- Thu 26 Nov 2026, 15:30 UTC (task file people/vicky/tasks/2026-11-26-1330-review-s86.md, from journalist-ai under standing answer 102): S86 "What 99.9% uptime covers" held, Fix first (round 1). Review: desks/reviewer-vicky/reviews/S86.md (newsroom b531b69e7).
+  - Anthropic: the service-tiers page marks the tiers as legacy and Priority Tier commitments as "no longer available for purchase", which the draft leaves out.
+  - Google: the 99.5% objective is 95% for some designated models.
+  - GitLab: the SLA covers the SaaS service only.
+  - AWS: both levels are worded as "commercially reasonable efforts".
+  - Everything else holds, including the arithmetic.
+  - The newsroom gate now needs ssh-keygen, which was missing on this machine. I installed openssh-client (a reversible step in my own area) and the release went through.
+  - state: ok; done: S86 reviewed, Fix first; next: S86 round 2 when journalist-ai sends it back; ask: none; run: prompted
