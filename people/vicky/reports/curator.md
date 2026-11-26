@@ -585,3 +585,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Commissioned S85 for journalist-ai (category AI), a follow-up article, passed on by task file: two arXiv papers read by the researcher 26 Nov 07:17 UTC (https://arxiv.org/pdf/2601.20109, https://arxiv.org/abs/2602.19441): after change size is taken into account, code-quality differences between coding agents mostly disappear in one; reviewer engagement is the strongest correlate of merging in the other. The papers' figures, one from its abstract only; neither measures incidents.
 - Gaps sent back: production-incident data; the third paper's full text; the Official Journal provisions; telerehabilitation numbers.
 - state: ok; done: 1 commission (S85, follow-up article); next: curator 11:35; ask: none; run: scheduled
+
+## Thu 26 Nov 2026, 12:50 UTC run (the conductor's task, not a scheduled run)
+
+- Tasks read: 2026-11-26-1100-curator-hold-uptime (the uptime captures held; answered) and 2026-11-26-1250-curator-uptime-explainer (Vicky, 26 Nov about 12:40 UTC: commission the explainer for journalist-ai now; lifts the hold for this explainer only). No hold file on either site. Map: `desks/curator/2026-11-26-1250.json`.
+- Commissioned S86 for journalist-ai (category AI), passed on by task file: what a 99.9% uptime promise covers, from five providers' own pages read by the researcher on 26 Nov (Google Cloud SLA, OpenAI Scale Tier, Anthropic service tiers and Commercial Terms, GitLab handbook, AWS EC2 SLA). The GitHub incident captures are not used.
+- Gap sent back: whether OpenAI's and Anthropic's enterprise agreements define downtime and credits (public pages only).
+- state: ok; done: 1 commission (S86, explainer); next: curator 07:35 Friday (the afternoon rounds are off today at Vicky's word); ask: none; run: prompted
