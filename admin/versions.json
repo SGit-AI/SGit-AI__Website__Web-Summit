@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2459",
+    "date": "2026-11-26",
+    "what": "task for the curator, commission the uptime explainer for journalist-ai (Vicky's go)",
+    "by": "conductor@web-summit.vicky",
+    "from": "34cd989b3"
+  },
+  {
     "version": "v0.2.2458",
     "date": "2026-11-26",
     "what": "AI providers' uptime terms done, 4 captures, for: uptime explainer",
