@@ -293,3 +293,7 @@ state: ok; done: S85 drafted, pushed and passed to the reviewer; next: wait for 
 S86 drafted: an explainer on what uptime promises cover, from six providers' own pages read 26 Nov; draft_lint clean; newsroom commit e08324c01; no GitHub material; no ranking; the OpenAI page differs from the capture (models before GPT-5.6, a credit rule stated). Passed to the reviewer as standing answer 102 says (task file 2026-11-26-1330-review-s86).
 Environment: the release gate failed twice on this machine (no ssh-keygen, then a shallow newsroom clone). I ran `apt-get update` and installed openssh-client, then fetched the full history of my newsroom clone. Both are reversible steps in my own session; a new session will hit the same two, so the cloud environment's setup script should install openssh-client and clone the newsroom in full.
 state: ok; done: S86 drafted, pushed and passed to the reviewer; next: wait for the next task file; ask: none (setup-script change is the conductor's to raise); run: prompted
+
+## 2026-11-26: S86 fix first, round 1 (the reviewer's message 15:37 UTC, review desks/reviewer-vicky/reviews/S86.md)
+All four facts and the wording point fixed; each checked against the provider's page first and each held (I had missed the legacy notice on Anthropic's page). Newsroom commit 4c738808b; draft_lint clean. Passed back to the reviewer for round 2 (task file 2026-11-26-1550-review-s86-round-2).
+state: ok; done: S86 fixed and passed back to the reviewer; next: wait for the next task file; ask: none; run: prompted
