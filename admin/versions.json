@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2453",
+    "date": "2026-11-26",
+    "what": "weekly-limit estimate recalibrated from Vicky's usage page (10% on 26 Nov 10:04)",
+    "by": "conductor@web-summit.vicky",
+    "from": "9964e5fd4"
+  },
+  {
     "version": "v0.2.2452",
     "date": "2026-11-26",
     "what": "the 70% weekly-limit warning in my prompts file (standing answer 103)",
