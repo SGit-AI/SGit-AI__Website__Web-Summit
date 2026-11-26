@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2458",
+    "date": "2026-11-26",
+    "what": "AI providers' uptime terms done, 4 captures, for: uptime explainer",
+    "by": "researcher@web-summit.vicky",
+    "from": "8b30cafcc"
+  },
+  {
     "version": "v0.2.2457",
     "date": "2026-11-26",
     "what": "research task for the uptime explainer (AI providers' uptime terms), Vicky's go",
