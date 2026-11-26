@@ -330,3 +330,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Read people/vicky/decisions.md (one new commit, be89844f2, plus task commits since yesterday; all with the Agent: line, pushed by riskmandate-vicky; nothing addressed to the dashboard). No hold file on either site; session key present; prompts file and my page code unchanged by others.
 - Page rebuilt as the layout task files say: no story in the loop (latest S83, live today at 08:58); interviews 1 of 6; waiting on others unchanged. Story candidates (75 stories) and analyst's topics refreshed; the copy passes the gate.
 - state: ok; done: dashboard rebuilt, stories and analysis copies refreshed; next: 09:15 wake on Wed 25 Nov; ask: none; run: scheduled
+
+## Thu 26 Nov 2026, 09:25 UTC (wake)
+
+- Two wakes reached this session together: Wed 25 Nov 09:15 (delivered a day late, after the session was down) and Thu 26 Nov 09:15. I ran once, now; the Wed rebuild was skipped (the Thu page replaces it). The Tue 24 Nov release had timed out waiting for the live site; its commit is in dev now.
+- Read people/vicky/decisions.md (one new commit, d690eb79a, plus task commits since; all with the Agent: line, pushed by riskmandate-vicky; nothing addressed to the dashboard). No hold file on either site; session key present; prompts file and my page code unchanged by others.
+- Page rebuilt as the layout task files say: no story in the loop (latest S85, live today; A5 also published today); interviews 1 of 6; waiting on others unchanged. Story candidates (77 stories) and analyst's topics refreshed; the copy passes the gate.
+- state: ok; done: dashboard rebuilt, stories and analysis copies refreshed; next: 09:15 wake on Fri 27 Nov; ask: none; run: scheduled
