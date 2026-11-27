@@ -297,3 +297,7 @@ state: ok; done: S86 drafted, pushed and passed to the reviewer; next: wait for 
 ## 2026-11-26: S86 fix first, round 1 (the reviewer's message 15:37 UTC, review desks/reviewer-vicky/reviews/S86.md)
 All four facts and the wording point fixed; each checked against the provider's page first and each held (I had missed the legacy notice on Anthropic's page). Newsroom commit 4c738808b; draft_lint clean. Passed back to the reviewer for round 2 (task file 2026-11-26-1550-review-s86-round-2).
 state: ok; done: S86 fixed and passed back to the reviewer; next: wait for the next task file; ask: none; run: prompted
+
+## 2026-11-27: S87 (task 2026-11-27-0750-s87, from the curator under standing answers 95, 100, 101 and 102)
+S87 drafted: an update note on S85 from the second paper's PDF (read 27 Nov); draft_lint clean; newsroom commit 0dfb1197a; the article's first note, within standing answer 100; the paper's figures, not checked; no ranking; measures merging, not quality or incidents. Passed to the reviewer as standing answer 102 says (task file 2026-11-27-0810-review-s87).
+state: ok; done: S87 drafted, pushed and passed to the reviewer; next: wait for the next task file; ask: none; run: prompted
