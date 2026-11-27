@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2469",
+    "date": "2026-11-27",
+    "what": "reviewer@PrompTugal.vicky: report and ledger, S87 Fix first (round 1)",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "853a6fcd6"
+  },
+  {
     "version": "v0.2.2468",
     "date": "2026-11-27",
     "what": "journalist-ai@PrompTugal.vicky: review task for S87, report and ledger",
