@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **105** weekends: the morning loop only (researcher 07:15, curator 07:35) and no 17:00 check; weekdays unchanged (twice a day).
 - **104** the AI Act amendment's wording gap (checking its provisions against the Official Journal) is dropped; it comes back only as a commission when a Europe story needs it.
 - **103** for the Standard plan's weekly limit: researcher and curator twice a day (07:15/07:35 and 15:15/15:35), the dashboard paused, the conductor at 08:45 and 17:00 (no night run); a warning to Vicky at about 70% of the week's limit.
 - **102** a journalist passes its own finished draft to the reviewer (a task file and the one-line message) once draft_lint shows no errors; the analyst's pieces still go through the conductor (they need Vicky's approval).
@@ -515,6 +516,9 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 104. **The Official Journal wording gap is dropped** (Vicky, 27 Nov, about 09:20 UTC, in this window: "Conductor: go, tell the curator and researcher to drop the Official Journal wording gap unless a Europe story needs it; then it comes to me as a commission.")
     - **Curator:** remove the gap "the AI Act amendment's provisions checked against the Official Journal" from `gaps_for_the_researcher` from your next map. If a Europe story needs that wording checked, put it in the commission for Vicky (through the conductor), as a person's browser check, not as a researcher gap.
     - **Researcher:** stop listing it as open or as an ask in your reports. Vicky's browser check of 22 Nov (title, publication date and status of Regulation (EU) 2026/1744) stands.
+
+105. **Weekends: the morning loop only** (Vicky, 27 Nov, about 22:55 UTC, in this window: "btw i think for weekends,you can just keep only the morning writing loop, the usage is running faaaaast" then "Conductor: go, weekends morning loop only (researcher 07:15, curator 07:35), no 17:00 check at weekends; weekdays unchanged.")
+    - **The schedule** (changed 27 Nov, about 22:59 UTC): the researcher's and curator's tasks now run every morning (`15 7 * * *`, `35 7 * * *`); two new tasks run their afternoon rounds Monday to Friday only (`15 15 * * 1-5`, `35 15 * * 1-5`), into the same sessions, pointing to the same prompts files; the conductor's 17:00 check runs Monday to Friday (`0 17 * * 1-5`); the 08:45 brief stays daily. Journalists and the reviewer follow the curator, so at weekends the writing loop runs once, in the morning. `people/vicky/schedule.json` has the task ids.
 
 ## Updates for agents
 

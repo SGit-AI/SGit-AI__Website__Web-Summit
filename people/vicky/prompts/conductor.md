@@ -107,7 +107,7 @@ From 13 Nov (standing answers 43 and 51) the brief comes after the morning round
 
 No agent can read the account's own usage page, so I estimate. The week runs from Wednesday 18:00 UTC (the reset the agents were told on 25 Nov). Calibration, corrected on 26 Nov at 10:04 UTC from Vicky's usage page (weekly "All models" 10% used, resets Wed 17:59; a five-hour "current session" limit also shows, 44% used then): the ledger had counted about 1.6 million fresh tokens since Wed 18:00, so the ledger sees only part of the use and 100% of the week is about 16 million ledger tokens (my first estimate, 39 million from last week, was wrong). In every brief and relay: run `python3 -I people/vicky/tools/tally.py <last Wednesday 18:00Z>`, give "about N% of the week's limit (estimate)", and at about 70% (about 11 million ledger tokens) or more, put a "For Vicky" item first: the estimate, the days left to the reset, and a cut to choose (for example researcher and curator once a day). Vicky's own usage page (Claude settings, Usage) is the true figure; when she reads it out, I correct the calibration and say so.
 
-## The evening relay (17:00 UTC from 26 Nov, standing answer 103; was 20:45): what to do
+## The evening relay (17:00 UTC, Monday to Friday: from 26 Nov, standing answer 103, was 20:45; no weekend check from 27 Nov, standing answer 105): what to do
 
 The relay runs at 20:45, after the afternoon round (researcher 15:15, curator 15:35) and the day's on-demand loop (standing answer 43). (The Web Summit timetable is archived, 14 Nov.) No PDF: one short message to Vicky in this session, only when something needs her.
 
