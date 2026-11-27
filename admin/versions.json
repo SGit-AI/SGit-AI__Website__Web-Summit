@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2474",
+    "date": "2026-11-27",
+    "what": "checker@PrompTugal.vicky: 27 Nov report: 8 articles checked, 8 findings fixed, 2 new",
+    "by": "checker@PrompTugal.vicky",
+    "from": "a858f7892"
+  },
+  {
     "version": "v0.2.2473",
     "date": "2026-11-27",
     "what": "reporter@PrompTugal.vicky: weekly run, 27 Nov: 2 roadmaps updated in vault A (counts only)",
