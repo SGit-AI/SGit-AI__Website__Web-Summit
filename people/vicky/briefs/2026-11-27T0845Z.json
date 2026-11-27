@@ -1,0 +1,47 @@
+{
+ "number": 22,
+ "date": "27 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "Two pieces published since yesterday; the week's limit at about 35%",
+ "when": "27 November 2026, 08:45 UTC (since brief 21, 26 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "None broken. One risk: the week's limit is at about 35% (estimate) after a day and a half. At this pace it reaches the 70% warning around Saturday evening and runs out before Wednesday's reset. Tomorrow's brief reviews the lighter schedule, as you asked."
+ ],
+ "actions": [
+  {"window": "manual settings (the cloud environment)", "items": [
+   {"what": "Add two lines to the environment's setup script",
+    "why": "Since yesterday the newsroom's gate checks signed commits, and it needs the ssh-keygen tool and the full history. Curator, journalist-ai and reviewer each installed the tool by hand yesterday; a new container starts without it again.",
+    "reply": "In Claude, Settings, the cloud environment's setup script, add: apt-get install -y openssh-client (and, if the newsroom is cloned there, clone it without --depth). If you prefer, ask Dinis whose environment it is."}
+  ]},
+  {"window": "your browser (EUR-Lex), then researcher",
+   "items": [
+   {"what": "One browser check for the researcher (optional)",
+    "why": "The curator's gap on the AI Act amendment can only close with a person reading its provisions in the Official Journal; machines cannot open that page cleanly.",
+    "reply": "Researcher: I checked the amendment in the Official Journal on EUR-Lex at <time>: <what it says>. Use it as my browser check."}
+  ]},
+  {"window": "Dinis / WhatsApp", "items": [
+   {"what": "The Loulé article's privacy point (still open, optional)",
+    "why": "The checker says the Loulé piece still names where three teammates live, unchanged since 16 Nov. It is Dinis's article, so only he can change it.",
+    "reply": "Hi Dinis, small privacy point: the Loulé article still says where three of us live. Could your journalist take that out?"}
+  ]}
+ ],
+ "sections": [
+  {"title": "Agent runs", "items": [
+   "Grid (26 Nov, 27 Nov): researcher 07:15 ✓ ✓, 15:15 off; curator 07:35 ✓ ✓, 15:35 off; checker 10:00 ✓ (today's at 10:00); conductor 08:45 ✓ ✓, 17:00 off yesterday. The 26 Nov afternoon runs were off at your word; all three are back on today.",
+   "Researcher: the uptime research yesterday (11 captures), and this morning the review paper's full data (33,596 agent pull requests, 71.5% merged) for the curator's gap. Curator: commissioned S86 yesterday and S87 this morning. Journalist-ai: drafted both and fixed each after round 1. Reviewer: published both under R-PUB-1 after round 2.",
+   "Published: S86 \"What 99.9% uptime covers: how five providers count downtime\" (26 Nov 15:45) and S87, an update note on S85 \"Two studies of agent-written code point to size and review\" (27 Nov 08:11). Your desks have 71 articles live (author field names one of your desks).",
+   "The loop ran without me both times: curator handed S87 to journalist-ai, which handed it to the reviewer (standing answers 101 and 102).",
+   "Checker (26 Nov 10:13): 9 of Dinis's journalist's articles checked, 8 findings on 6; his journalist edited 7 articles after them. Dashboard ran once before its pause. No runs from analyst, security or scout (Mondays), nor the others on demand."
+  ]},
+  {"title": "Usage & Checks", "items": [
+   "Week's limit: about 35% (estimate; 5.6 million ledger tokens since Wed 18:00, 100% is about 16 million). 4.4 days to the reset.",
+   "Usage (API-equivalent, not money; context depth): reviewer Opus $433, 258k; conductor Opus $365, 129k; researcher Sonnet $245, 648k (deepest; set to Opus but runs Sonnet); checker Opus $164, 231k; curator Sonnet $156, 375k. Deepest three: researcher, curator, reviewer.",
+   "Schedule: the account's tasks match schedule.json (checked 06:31 today).",
+   "decisions.md: one change since the last brief, mine (standing answer 103). Keys: no new entry for your agents on either keys page. Gmail: nothing in any report. Releases: all went live.",
+   "Follow-up drafts waiting: 6 (inbox report, 17 Nov); the 6 LinkedIn nudges drafted 24 Nov. No new scout note."
+  ]}
+ ],
+ "next": ["17:00 afternoon check", "Saturday 28 Nov brief: the schedule review against the week's limit", "Monday 30 Nov: security, scout and the analyst's weekly runs"],
+ "sources": ["people/vicky/reports/*.md and both repositories' commits since 26 Nov 08:45", "the agents' session status (usage and model only), 27 Nov", "people/vicky/tools/tally.py"]
+}
