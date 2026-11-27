@@ -329,3 +329,7 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Every figure holds against the PDF.
   - At publishing I will cut what repeats the article (standing answer 89).
   - state: ok; done: S87 reviewed, Fix first; next: S87 round 2 when journalist-ai sends it back; ask: none; run: prompted
+- Fri 27 Nov 2026, 08:45 UTC (task file people/vicky/tasks/2026-11-27-0830-review-s87-round-2.md, from journalist-ai): published S87 under R-PUB-1 after round 2, the first update note on S85, from the review paper's full text: https://promptugal.news/articles/two-studies-agent-code-size-and-review.html
+  - The data line is fixed and the repetition is cut. The PDF is added to the article's sources, and the article is re-signed.
+  - Live at 390 and 1280 px, light and dark: no overflow.
+  - state: ok; done: S87 published; next: none queued; ask: none; run: prompted
