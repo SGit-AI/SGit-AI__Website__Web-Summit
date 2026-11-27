@@ -324,3 +324,8 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - Cover in my style, the 43 minutes marked as arithmetic.
   - Live at 390 and 1280 px, light and dark: no overflow, og:image is the cover, the fixes on the page.
   - state: ok; done: S86 published; next: none queued; ask: none; run: prompted
+- Fri 27 Nov 2026, 08:10 UTC (task file people/vicky/tasks/2026-11-27-0810-review-s87.md, from journalist-ai under standing answer 102): S87, the first update note on S85, held: Fix first (round 1). Review: desks/reviewer-vicky/reviews/S87.md (newsroom 6a16a0afe).
+  - One line misreads the paper's reason for treating all pull requests alike. A suggested sentence is in the review.
+  - Every figure holds against the PDF.
+  - At publishing I will cut what repeats the article (standing answer 89).
+  - state: ok; done: S87 reviewed, Fix first; next: S87 round 2 when journalist-ai sends it back; ask: none; run: prompted
