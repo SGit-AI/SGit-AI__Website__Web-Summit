@@ -592,3 +592,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Commissioned S86 for journalist-ai (category AI), passed on by task file: what a 99.9% uptime promise covers, from five providers' own pages read by the researcher on 26 Nov (Google Cloud SLA, OpenAI Scale Tier, Anthropic service tiers and Commercial Terms, GitLab handbook, AWS EC2 SLA). The GitHub incident captures are not used.
 - Gap sent back: whether OpenAI's and Anthropic's enterprise agreements define downtime and credits (public pages only).
 - state: ok; done: 1 commission (S86, explainer); next: curator 07:35 Friday (the afternoon rounds are off today at Vicky's word); ask: none; run: prompted
+
+## Fri 27 Nov 2026, 07:35 UTC run
+
+- decisions.md read first (nothing new for me); no hold file on either site; prompts file re-read, matches; RULES-11NOV kept; applied SA58-THEMES and SA54-LEDGER. Map: `desks/curator/2026-11-27-0750.json`. S85 is published and listed so; S86 is with the reviewer. Environment steps taken yesterday, listed as the exceptions rule asks: on 26 Nov about 14:40 UTC I installed `openssh-client` and ran `git fetch --unshallow` in the newsroom clone, because the release gate failed on a container without `ssh-keygen` and a shallow clone (my 13:01 note to the conductor blaming three files was wrong and was corrected).
+- Commissioned S87 for journalist-ai, an update note on S85, passed on by task file: the researcher read the review paper's PDF (https://arxiv.org/pdf/2602.19441, read 27 Nov 07:17 UTC): 33,596 agent pull requests, 71.5% merged, merge shares by agent, review and force-push signals, own limits (observational). The paper's figures, unchecked; merging, not quality or incidents.
+- Gaps sent back: production-incident data; an independent post-merge study beyond the revert paper; the Official Journal provisions.
+- state: ok; done: 1 commission (S87, update note); next: curator 11:35; ask: none; run: scheduled
