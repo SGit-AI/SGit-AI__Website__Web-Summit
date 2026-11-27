@@ -599,3 +599,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Commissioned S87 for journalist-ai, an update note on S85, passed on by task file: the researcher read the review paper's PDF (https://arxiv.org/pdf/2602.19441, read 27 Nov 07:17 UTC): 33,596 agent pull requests, 71.5% merged, merge shares by agent, review and force-push signals, own limits (observational). The paper's figures, unchecked; merging, not quality or incidents.
 - Gaps sent back: production-incident data; an independent post-merge study beyond the revert paper; the Official Journal provisions.
 - state: ok; done: 1 commission (S87, update note); next: curator 11:35; ask: none; run: scheduled
+
+## Fri 27 Nov 2026, 15:35 UTC run
+
+- decisions.md read first and my prompts file re-read in full this run (92 lines, matches what I follow); applied standing answer 104 (the Official Journal gap is out of my gaps; rule 38 added to my prompts file); no hold file on either site; RULES-11NOV kept; applied SA58-THEMES and SA54-LEDGER. Map: `desks/curator/2026-11-27-1550.json`. S85 and S86 are published and listed so.
+- Nothing commissioned. The researcher's two captures (DORA 2025 on AI adoption and delivery instability, a survey association; an abstract on 500k code samples, https://arxiv.org/abs/2508.21634) are held: the coding-agent evidence thread already has eight stories (S80 to S87) and neither is incident data, the gap that would justify a ninth.
+- Gaps sent back, reordered: Portugal and Europe have had nothing new for a week (themes 1 and 2 first: the AI-in-Portugal map, what happened next to covered stories); real incident data for AI-written changes second.
+- state: ok; done: desk review, nothing to commission; next: curator 07:35 Saturday; ask: none; run: scheduled
