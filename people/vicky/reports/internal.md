@@ -9,3 +9,7 @@ One line per run, counts only (Vicky, 14 Nov 2026).
 ## Friday 20 November 2026, 14:50 UTC (scheduled)
 
 - Weekly run: 1 piece in vault A (reports/internal/), 545 commits read (368 team site, 177 newsroom), 0 holds. Vault A opened for the first time (sealed by vault@ on 14 Nov). Where my file and memory differed: none. state: ok; done: the week of 14 to 20 November; next: the week to 27 November; ask: none; run: scheduled
+
+## Friday 27 November 2026, 14:45 UTC (scheduled)
+
+- Weekly run: 1 piece in vault A (reports/internal/), 213 commits read (112 team site, 101 newsroom), 0 holds. Where my file and memory differed: none. state: ok; done: the week of 20 to 27 November; next: the week to 4 December; ask: none; run: scheduled
