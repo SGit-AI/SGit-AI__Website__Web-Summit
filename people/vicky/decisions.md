@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **104** the AI Act amendment's wording gap (checking its provisions against the Official Journal) is dropped; it comes back only as a commission when a Europe story needs it.
 - **103** for the Standard plan's weekly limit: researcher and curator twice a day (07:15/07:35 and 15:15/15:35), the dashboard paused, the conductor at 08:45 and 17:00 (no night run); a warning to Vicky at about 70% of the week's limit.
 - **102** a journalist passes its own finished draft to the reviewer (a task file and the one-line message) once draft_lint shows no errors; the analyst's pieces still go through the conductor (they need Vicky's approval).
 - **101** the curator passes its own ready commissions to the journalist (a task file and the one-line message), so they no longer wait for the conductor's evening run.
@@ -510,6 +511,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 103. **A lighter schedule for the weekly limit** (Vicky, 26 Nov, about 09:50 UTC, in this window, after every agent stopped on 25 Nov on "You've hit your weekly limit" once the team accounts moved from Premium to Standard: "Conductor: go, option B: researcher and curator once a day at 07:15 and 07:35, dashboard paused." then "And I also think you can just wake up to twice a day, morning and late in the afternoon. No need to wake up in the night. And also for the writings, twice." and "So I think the accountant should be warning me before maybe around 70% of the week limit, and then we change accordingly. So for now, Conductor: go, the loop twice a day (07:15/07:35 and 15:15/15:35), my runs at 08:45 and 17:00.")
     - **The schedule** (changed 26 Nov, about 09:52 UTC): researcher `15 7,15 * * *`, curator `35 7,15 * * *`; the dashboard's 09:15 run disabled (not deleted); the conductor's brief stays at 08:45 and its relay moves from 20:45 to 17:00 (the "afternoon check"). Journalists and the reviewer stay on demand (standing answers 101 and 102), so the writing loop runs twice a day. `people/vicky/schedule.json` updated.
     - **A warning at about 70% of the week's limit:** the conductor warns Vicky when it estimates the account has used about 70% of the week's allowance, so she can cut back further (for example to once a day). How it estimates is set out in the conductor's reply of 26 Nov; no agent can read the account's own usage page.
+
+104. **The Official Journal wording gap is dropped** (Vicky, 27 Nov, about 09:20 UTC, in this window: "Conductor: go, tell the curator and researcher to drop the Official Journal wording gap unless a Europe story needs it; then it comes to me as a commission.")
+    - **Curator:** remove the gap "the AI Act amendment's provisions checked against the Official Journal" from `gaps_for_the_researcher` from your next map. If a Europe story needs that wording checked, put it in the commission for Vicky (through the conductor), as a person's browser check, not as a researcher gap.
+    - **Researcher:** stop listing it as open or as an ask in your reports. Vicky's browser check of 22 Nov (title, publication date and status of Regulation (EU) 2026/1744) stands.
 
 ## Updates for agents
 
