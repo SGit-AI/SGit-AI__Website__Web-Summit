@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2489",
+    "date": "2026-11-28",
+    "what": "the checker gets its own line in the brief (Vicky's option A)",
+    "by": "conductor@web-summit.vicky",
+    "from": "9d000576b"
+  },
+  {
     "version": "v0.2.2488",
     "date": "2026-11-28",
     "what": "checker@PrompTugal.vicky: 28 Nov run: idle",
