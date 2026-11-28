@@ -333,3 +333,9 @@ Vicky's reviewer and copy editor for Promptugal News: checks the journalists' dr
   - The data line is fixed and the repetition is cut. The PDF is added to the article's sources, and the article is re-signed.
   - Live at 390 and 1280 px, light and dark: no overflow.
   - state: ok; done: S87 published; next: none queued; ask: none; run: prompted
+- Sat 28 Nov 2026, 08:30 UTC (task file people/vicky/tasks/2026-11-28-0805-review-s88.md, from journalist-portugal under standing answer 102): published S88 under R-PUB-1, the first update note on S64, AMALIA's second phase from ECO's report of 15 September: https://promptugal.news/articles/amalia-and-ania-portugal-ai-plans.html
+  - Every point holds against ECO.
+  - "Who runs it" cut as the journalist offered, and the intro tightened (about 250 words). ECO added to the sources, re-signed.
+  - S64's draft now records status approved: it was published before publish_check needed it.
+  - Live at 390 and 1280 px, light and dark: no overflow.
+  - state: ok; done: S88 published; next: none queued; ask: none; run: prompted
