@@ -1,0 +1,35 @@
+{
+ "number": 23,
+ "date": "28 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "First weekend morning loop ran; the week's limit at about 56%",
+ "when": "28 November 2026, 08:45 UTC (since brief 22, 27 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "The week's limit is at about 56% (estimate) with 3.4 days to Wednesday's reset. With weekend mornings only and weekdays twice a day, I forecast about 70% on Monday afternoon and about 100% around Wednesday, so it may run out a few hours before the reset."
+ ],
+ "actions": [
+  {"window": "conductor (this window)", "items": [
+   {"what": "The schedule review you asked for: mornings only until the reset (my recommendation)",
+    "why": "Monday to Wednesday at one round a day instead of two saves about 3 million ledger tokens, which keeps the week under 100%. From Thursday, after the reset, back to twice a day on weekdays.",
+    "reply": "Conductor: go, mornings only on Monday 30 Nov to Wednesday 2 Dec (no 15:15/15:35 rounds), back to twice a day on weekdays from Thursday 3 Dec."}
+  ]}
+ ],
+ "sections": [
+  {"title": "Agent runs", "items": [
+   "Grid (27 Nov, 28 Nov): researcher 07:15 ✓ ✓, 15:15 ✓ (none at weekends); curator 07:35 ✓ ✓, 15:35 ○ (nothing to commission); checker 10:00 ✓; reporter 09:30 ✓, internal 14:30 ✓ (Fridays); conductor 08:45 ✓ ✓, 17:00 ○.",
+   "This morning's loop ran on its own in under an hour: researcher 2 captures (07:19), curator commissioned S88 (07:37), journalist-portugal drafted it (07:44), reviewer published it (08:05).",
+   "Published: S88, an update note on S64 (AMALIA's second phase, from ECO). Your desks still have 71 articles live (an update note does not add one). Yesterday afternoon: nothing new to commission.",
+   "Checker (27 Nov): all 8 earlier findings on Dinis's journalist's articles fixed, 2 new ones on the London Tube piece. Reporter and internal: weekly pieces to vault A (counts only). Inbox (27 Nov, at your word): one reply recorded, one contact parked."
+  ]},
+  {"title": "Usage & Checks", "items": [
+   "Week's limit: about 56% (estimate; 9.0 million ledger tokens since Wed 18:00, 100% is about 16 million). Reset Wed 2 Dec 17:59.",
+   "Deepest sessions (27 Nov, not re-read today to save usage): reporter about 744k of 1M, journalist-ai 654k, researcher 648k.",
+   "Schedule: matches standing answer 105 (weekend mornings only, weekday afternoon rounds from Monday, no 17:00 check at weekends).",
+   "Journalist-portugal asks for openssh-client in the setup script: done by you on 27 Nov, so new containers have it.",
+   "decisions.md: two changes since the last brief, both mine (standing answers 104 and 105). Keys: no new entry for your agents. Gmail: nothing in any report. Releases: all went live. Follow-up drafts waiting: 6 (17 Nov); 1 of your 6 LinkedIn nudges answered."
+  ]}
+ ],
+ "next": ["Sunday 08:45 brief (morning loop only)", "Monday 30 Nov: security, scout and the analyst's weekly runs; the first weekday afternoon rounds unless you choose mornings only"],
+ "sources": ["people/vicky/reports/*.md and both repositories' commits since 27 Nov 08:45", "people/vicky/tools/tally.py", "the account's scheduled tasks"]
+}
