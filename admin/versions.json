@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2488",
+    "date": "2026-11-28",
+    "what": "checker@PrompTugal.vicky: 28 Nov run: idle",
+    "by": "checker@PrompTugal.vicky",
+    "from": "e020e84a3"
+  },
+  {
     "version": "v0.2.2487",
     "date": "2026-11-28",
     "what": "weekly-limit estimate recalibrated from Vicky's reading (46%)",
