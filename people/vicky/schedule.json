@@ -256,7 +256,7 @@
    "task": "weekly run (standing answer 69)",
    "cron_utc": "30 9 * * 5",
    "task_id": "trig_015Dofar3GRZA4K8z9QBwQU2",
-   "state": "enabled 14 Nov 11:12 UTC (vault A sealed to it at 11:01, eb10678); first run Fri 20 Nov",
+   "state": "disabled 28 Nov 10:16 UTC, not deleted (Vicky, standing answer 107: paused after its 28 Nov run); was enabled 14 Nov 11:12 UTC",
    "since": "14 Nov 2026",
    "at_whose_word": "Vicky (14 Nov about 11:15 UTC), set by the conductor"
   },

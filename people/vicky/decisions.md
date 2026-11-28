@@ -7,6 +7,7 @@ For every agent of Vicky's. Vicky's words, 6 November 2026; kept by conductor@we
 ## Rules in force (index; the full text is below)
 
 Kept by the conductor at Vicky's word (11 Nov, "adopt the five"); cleaned up on 14 Nov at her word (standing answer 63). Retired and done entries are in `people/vicky/decisions-archive.md`, in full; their numbers are not reused. Newest first.
+- **107** the reporter is paused after its 28 Nov run (its Friday task off, not deleted); Vicky decides on its R1 to R3 titles.
 - **106** the reporter covers our team's use of AI and agents (public evidence only) and writes notes for journalist-ai; no more other companies.
 - **105** weekends: the morning loop only (researcher 07:15, curator 07:35) and no 17:00 check; weekdays unchanged (twice a day).
 - **104** the AI Act amendment's wording gap (checking its provisions against the Official Journal) is dropped; it comes back only as a commission when a Europe story needs it.
@@ -526,6 +527,9 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **Its notes are public**, one per story, in the newsroom repository at `desks/reporter-vicky/notes/<id>-<slug>.md`, ids R1, R2 and so on: the angle, what the public record establishes (each point with its link and the date read), what is missing, and a working title under 12 words. Before each note, it checks published articles, every desk's drafts and journalist-ai's T1 to T5 series so nothing is written twice (standing answer 20).
     - **Hand-over:** for each ready note it writes a task file for journalist-ai in `people/vicky/tasks/` and sends the one-line message, as the curator does (standing answer 101); journalist-ai drafts and hands to the reviewer (standing answer 102), category The newsroom or AI. The curator checks the reporter's notes before listing a team topic of its own.
     - **Unchanged:** Fridays 09:30 UTC; the old roadmaps on other companies stay in vault A and are not continued; the internal journalist's private weekly record is unchanged.
+
+107. **The reporter paused** (Vicky, 28 Nov, about 10:15 UTC, in this window: "Conductor: go, pause the reporter after today's run (its Friday task off, not deleted); I'll decide on its R1 to R3 titles.", after "I'm not sure for now I can get the activity of the whole team ... after the summit, everyone is quite quiet in the group")
+    - Its Friday 09:30 task is disabled (not deleted) from 28 Nov 10:16 UTC; it finishes the task of 28 Nov 09:30 (its prompts file and up to three notes, R1 to R3) and then runs only when Vicky says. Its notes go to journalist-ai only once Vicky has decided on their titles; the conductor relays her choice in a task file. Standing answer 106 stays the remit if it is restarted.
 
 ## Updates for agents
 
