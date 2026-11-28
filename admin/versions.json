@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2490",
+    "date": "2026-11-28",
+    "what": "reporter@PrompTugal.vicky: applied SA106 (team remit); notes R1 to R3 listed for Vicky's look at the titles",
+    "by": "reporter@PrompTugal.vicky",
+    "from": "5c3d75050"
+  },
+  {
     "version": "v0.2.2489",
     "date": "2026-11-28",
     "what": "the checker gets its own line in the brief (Vicky's option A)",
