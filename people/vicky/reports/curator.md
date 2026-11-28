@@ -606,3 +606,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Nothing commissioned. The researcher's two captures (DORA 2025 on AI adoption and delivery instability, a survey association; an abstract on 500k code samples, https://arxiv.org/abs/2508.21634) are held: the coding-agent evidence thread already has eight stories (S80 to S87) and neither is incident data, the gap that would justify a ninth.
 - Gaps sent back, reordered: Portugal and Europe have had nothing new for a week (themes 1 and 2 first: the AI-in-Portugal map, what happened next to covered stories); real incident data for AI-written changes second.
 - state: ok; done: desk review, nothing to commission; next: curator 07:35 Saturday; ask: none; run: scheduled
+
+## Sat 28 Nov 2026, 07:35 UTC run
+
+- decisions.md read first and my prompts file re-read (94 lines, matches); standing answer 105 noted (weekends: the morning loop only); no hold file on either site; RULES-11NOV kept; applied SA58-THEMES and SA54-LEDGER. Map: `desks/curator/2026-11-28-0750.json`. S87 is published (as the update note of S85).
+- Commissioned S88 for journalist-portugal, an update note on S64, passed on by task file: ECO (https://eco.sapo.pt/2026/09/15/amalia-ganha-ferramentas-de-agentificacao-ate-final-do-ano/, read by the researcher 28 Nov 07:17 UTC) reports Amalia's second phase: 1,8 million euros more, total cost 7,3 million, agent tools for the public administration, an aim to leave the prototype stage. One press report of a government statement; the resolution was not read.
+- Held: the government page of 25 June on the Iberian AI gigafactory bid (up to 200 million euros for computing time): whether the bid was selected is not known, so it would present a five-month-old plan as news. Gap sent back: the bid's outcome.
+- state: ok; done: 1 commission (S88, update note); next: curator 07:35 Sunday (weekends: morning only); ask: none; run: scheduled
